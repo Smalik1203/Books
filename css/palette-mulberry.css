@@ -1,8 +1,8 @@
 /* ============================================================
-   TEAL — chapter palette (teal)
+   MULBERRY — chapter palette (mulberry)
 
    One of fourteen, and a whole triad rather than a recolouring:
-   structure 201deg, action 321deg, attention 81deg. Every pair
+   structure 356deg, action 116deg, attention 236deg. Every pair
    is 120 degrees apart, which is as far as three hues can get from
    one another. The book's default palette is not built that way —
    rust and gold sit 39 degrees apart — which is why action and
@@ -16,23 +16,23 @@
    The token names say teal, rust and gold because that is what the
    components ask for. Read them as the roles.
 
-   Assigned to chapter 13.
+   Assigned to chapter 12.
    ============================================================ */
 
 :root {
   /* structure — headings, section tabs, discs, folio bar, summary */
-  --teal:       #05555a;
-  --teal-deep:  #023b3e;
-  --teal-soft:  #69a4a8;
-  --teal-tint:  #e5f5f6;
+  --teal:       #6f344c;
+  --teal-deep:  #521d34;
+  --teal-soft:  #b8899a;
+  --teal-tint:  #fbedf1;
 
   /* action — the chapter title and the worked example */
-  --rust:       #83558b;
-  --rust-deep:  #673d6e;
-  --rust-tint:  #f6eef8;
+  --rust:       #676f25;
+  --rust-deep:  #4e5509;
+  --rust-tint:  #f0f3e7;
 
   /* attention — the question put to the reader */
-  --gold:       #a2844d;
-  --gold-deep:  #866a36;
-  --gold-tint:  #f7f0e5;
+  --gold:       #5591b4;
+  --gold-deep:  #3d7696;
+  --gold-tint:  #e7f3fb;
 }

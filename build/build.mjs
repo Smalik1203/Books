@@ -307,20 +307,20 @@ const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': 
    teal and aqua, three near-neighbours stacked down the fore edge.
    Interleaved, consecutive chapters sit about 140 degrees apart. */
 const CHAPTER_ACCENTS = [
-  '#803d17', //  1  ember
-  '#075e64', //  2  aqua
-  '#744702', //  3  bronze
-  '#065b74', //  4  steel
-  '#655002', //  5  olive
-  '#115689', //  6  cobalt
-  '#535803', //  7  moss
-  '#3a4e8c', //  8  indigo
-  '#365f1e', //  9  fern
-  '#534688', // 10  violet
-  '#01633c', // 11  jade
-  '#663f7b', // 12  amethyst
-  '#036054', // 13  teal
-  '#753969', // 14  plum
+  '#70391c', //  1  ember
+  '#03526b', //  2  lagoon
+  '#664203', //  3  bronze
+  '#234c79', //  4  cobalt
+  '#564a02', //  5  olive
+  '#404479', //  6  indigo
+  '#405214', //  7  moss
+  '#553d71', //  8  violet
+  '#20572f', //  9  fern
+  '#643761', // 10  amethyst
+  '#035748', // 11  emerald
+  '#6f344c', // 12  mulberry
+  '#05555a', // 13  teal
+  '#733435', // 14  garnet
 ];
 
 /* The tabs must all land on the page. Spread them over the run rather

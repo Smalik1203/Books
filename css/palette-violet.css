@@ -1,27 +1,38 @@
 /* ============================================================
-   VIOLET — chapter palette (violet, hue 291)
+   VIOLET — chapter palette (violet)
 
-   One of fourteen. tokens.css holds the standard, where teal is the
-   structural colour; this sheet moves that one family and nothing
-   else. Type, trim, spacing, components and the diagram vocabulary
-   are shared, exactly as an edition sheet works.
+   One of fourteen, and a whole triad rather than a recolouring:
+   structure 304deg, action 64deg, attention 184deg. Every pair
+   is 120 degrees apart, which is as far as three hues can get from
+   one another. The book's default palette is not built that way —
+   rust and gold sit 39 degrees apart — which is why action and
+   attention used to look like relatives.
 
-   The token names still say teal because that is what the components
-   ask for. Read them as the role — structure.
+   On top of hue the three roles keep a lightness ladder: structure
+   darkest, attention lightest. White on structure is about 8:1, on
+   action about 5:1, on attention about 3.4:1. So they separate by
+   value as well, and the hierarchy still reads in a mono proof.
 
-   Generated from the OKLCH ramp: lightness 0.44, chroma 0.105, so
-   every chapter's structure colour carries the same weight on the
-   page and sits in the same dark band. That band is the point. Rust
-   and gold are both lighter, so structure never competes with a
-   worked example or a reader's question — including in the warm
-   chapters, where hue alone could not have separated them.
+   The token names say teal, rust and gold because that is what the
+   components ask for. Read them as the roles.
 
-   Assigned to chapter 10.
+   Assigned to chapter 8.
    ============================================================ */
 
 :root {
-  --teal:       #534688;
-  --teal-deep:  #3e316d;
-  --teal-soft:  #9890c6;
-  --teal-tint:  #f0eefc;
+  /* structure — headings, section tabs, discs, folio bar, summary */
+  --teal:       #553d71;
+  --teal-deep:  #3c2655;
+  --teal-soft:  #a08fb8;
+  --teal-tint:  #f3effa;
+
+  /* action — the chapter title and the worked example */
+  --rust:       #905b23;
+  --rust-deep:  #724308;
+  --rust-tint:  #f9efe6;
+
+  /* attention — the question put to the reader */
+  --gold:       #47998f;
+  --gold-deep:  #2e7d74;
+  --gold-tint:  #e6f5f2;
 }

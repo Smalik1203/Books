@@ -23,35 +23,30 @@ Each has one pale tint, used **only** as a panel background:
 **Every component uses exactly one colour.** None mixes two. If a component
 seems to need a second colour, it is doing two jobs and should be split.
 
-**A chapter may move the structure colour, not the system.** `chapter.json`
-names a `palette`, which loads `css/palette-<name>.css` over the tokens — the
-same mechanism as an edition sheet, and with the same discipline: it moves one
-colour family and nothing else. Action stays rust, attention stays gold, in
-every chapter of the book. Three roles in, three roles out.
+**A chapter may move the palette, not the system.** `chapter.json` names a
+`palette`, which loads `css/palette-<name>.css` over the tokens — the same
+mechanism as an edition sheet. It moves all three working colours together.
 
-**The fourteen palettes are one ramp, not fourteen choices.** They are
-generated in OKLCH at a fixed lightness of 0.44 and chroma 0.105, hues spread
-over a 288° arc. Two things follow, and both matter more than the individual
-colours:
+**Each palette is a triad**: structure at hue *h*, action at *h*+120°,
+attention at *h*+240°. Three facts follow, and they are the whole argument:
 
-- **Every structure colour sits in the same dark band.** White on any of them
-  runs 7.3–8.2:1, against 5.4 for rust and 3.2 for gold. So structure is
-  always the darkest of the three, and the hierarchy holds without depending
-  on hue — which is the only reason a warm chapter works at all. Ember sits a
-  few degrees from rust; it reads as different because it is *darker*, not
-  because it is another colour.
-- **Equal weight.** A fixed lightness means chapter 9 does not print heavier
-  than chapter 3. Picking fourteen colours by eye will not give you that.
+- **No two roles can look alike.** 120° is the furthest three hues can get
+  from one another. The book default is not built this way — rust and gold
+  sit **39°** apart — which is why action and attention always read as
+  relatives, and why recolouring structure alone could never fix a warm
+  chapter. Rotating one colour cannot repair a harmony the other two do not
+  have.
+- **A lightness ladder underneath.** Structure 0.41, action 0.52, attention
+  0.63 in OKLCH; white on them runs about 9, 5.5 and 3.4 to one. So the roles
+  separate by value as well as hue, and the hierarchy survives a mono proof.
+- **Chroma stays low** — around 0.09. The triad is chosen for separation, not
+  for brightness; at full chroma the same geometry gives an emerald title and
+  a periwinkle reflect box, which is a toy, not a textbook.
 
-The arc stops short of rust's own hue. Spread evenly over the full 360° it
-would have put two chapters at hue 356 and 21 — red on red, distinguishable
-only by value, and muddy.
-
-Two ways to get this wrong, both found by rendering rather than by reasoning:
-recolour structure to a *light* orange and a section head stops outranking a
-worked example; move action to a cool colour instead and the chapter title,
-which is action-coloured, turns green on an otherwise orange opener.
-
+Two failures worth not repeating, both found by rendering: recolour structure
+to a *light* orange and a section head stops outranking a worked example; move
+action to a cool colour while leaving attention gold and the chapter title —
+which is action-coloured — turns green beside a warm numeral block.
 Ink, rules and paper are neutral and belong to no component.
 
 ## 2. Typography — two faces, locked

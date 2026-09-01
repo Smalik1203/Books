@@ -86,39 +86,48 @@ is fitted separately. `build/repack.mjs` does the measuring.
 
 ## Palettes
 
-A chapter may also name a `palette`, which loads `css/palette-<name>.css`
-over the tokens. It moves the colour families only — components, type and
-spacing are shared, exactly as with an edition.
-
-Fourteen are defined, one per chapter. They are a single OKLCH ramp at fixed
-lightness, so no chapter prints heavier than another, and all of them are
-darker than rust and gold — which is what keeps the three roles apart.
-
-| ch | palette | colour | structure | hue |
-|---|---|---|---|---|
-| 1 | `ember` | burnt orange | `#803d17` | 47° |
-| 2 | `aqua` | dark aqua | `#075e64` | 202° |
-| 3 | `bronze` | bronze | `#744702` | 69° |
-| 4 | `steel` | steel blue | `#065b74` | 224° |
-| 5 | `olive` | dark olive | `#655002` | 91° |
-| 6 | `cobalt` | cobalt | `#115689` | 246° |
-| 7 | `moss` | moss green | `#535803` | 113° |
-| 8 | `indigo` | indigo | `#3a4e8c` | 269° |
-| 9 | `fern` | fern green | `#365f1e` | 136° |
-| 10 | `violet` | violet | `#534688` | 291° |
-| 11 | `jade` | jade | `#01633c` | 158° |
-| 12 | `amethyst` | amethyst | `#663f7b` | 313° |
-| 13 | `teal` | teal | `#036054` | 180° |
-| 14 | `plum` | plum | `#753969` | 335° |
-
-The order interleaves the warm half of the ramp with the cool half, so
-consecutive chapters sit about 140° apart and the thumb tabs down the fore
-edge stay legible as an index.
+A chapter names a `palette` in `chapter.json`, which loads
+`css/palette-<name>.css` over the tokens — the same mechanism as an edition
+sheet. Unlike an edition it moves **all three** working colours, because a
+chapter palette is a whole harmony, not a recolouring.
 
 ```json
 { "class": "9", "number": "1", "title": "…", "palette": "ember" }
 ```
 
+Each palette is a **triad**: structure at hue *h*, action at *h*+120°,
+attention at *h*+240°. Every pair is 120° apart — as far as three hues can be
+from one another — so no two roles on a page can be mistaken for each other.
+The three also keep a fixed lightness ladder, structure darkest and attention
+lightest, so they separate by value as well as hue and the hierarchy still
+reads in a mono proof.
+
+| ch | palette | structure | action | attention |
+|---|---|---|---|---|
+| 1 | `ember` | `#70391c` | `#1b7b5d` | `#8582b9` |
+| 2 | `lagoon` | `#03526b` | `#915074` | `#8f8d50` |
+| 3 | `bronze` | `#664203` | `#057977` | `#9a7bad` |
+| 4 | `cobalt` | `#234c79` | `#994f59` | `#769460` |
+| 5 | `olive` | `#564a02` | `#08758c` | `#aa769a` |
+| 6 | `indigo` | `#404479` | `#98533d` | `#5c9877` |
+| 7 | `moss` | `#405214` | `#306e9d` | `#b37483` |
+| 8 | `violet` | `#553d71` | `#905b23` | `#47998f` |
+| 9 | `fern` | `#20572f` | `#5365a1` | `#b5766c` |
+| 10 | `amethyst` | `#643761` | `#7f6616` | `#4497a4` |
+| 11 | `emerald` | `#035748` | `#6e5c9b` | `#b07c58` |
+| 12 | `mulberry` | `#6f344c` | `#676f25` | `#5591b4` |
+| 13 | `teal` | `#05555a` | `#83558b` | `#a2844d` |
+| 14 | `garnet` | `#733435` | `#477740` | `#6d8abb` |
+
+Chapter order interleaves the warm half of the ramp with the cool half, so
+consecutive chapters sit roughly opposite one another and the thumb tabs down
+the fore edge stay legible as an index.
+
+`css/tokens.css` still holds the book default — teal, rust and gold. It is
+not a triad: rust and gold are only 39° apart, which is why action and
+attention have always looked like relatives there, and why a chapter that
+went warm had three warm colours. A chapter that names a palette does not
+inherit that problem.
 ## Build
 
 ```bash
