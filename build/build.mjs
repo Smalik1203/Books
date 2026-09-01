@@ -305,14 +305,15 @@ const pagefoot = (n) => '<div class="pagefoot">'
   + `<span class="pagefoot__folio">${n}</span></div>`;
 
 /* ---- Shell ------------------------------------------------ */
-const shell = (meta, body, cssHref = '../../css/book.css', sheet = null) => ((theme) => `<!doctype html>
+const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = null) => ((theme) => `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — Mathematics Class ${escapeHtml(meta.class)}</title>
 <link rel="stylesheet" href="${cssHref}">${meta.edition && meta.edition !== "b5" ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}
-<style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }` : ``}</style>
+<style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
+  : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}</style>
 </head>
 <body${sheet ? ' class="bleed"' : ''}>
 <svg class="dg-defs" aria-hidden="true"><defs>
@@ -411,7 +412,7 @@ async function buildChapter(rel) {
   const outDir = p('build', path.dirname(rel));
   await mkdir(outDir, { recursive: true });
   const outHtml = path.join(outDir, path.basename(rel) + '.html');
-  await writeFile(outHtml, shell(meta, rendered));
+  await writeFile(outHtml, shell(meta, rendered, '../../css/book.css', null, sheet));
 
   // The print-ready sheet is the same pages on a larger piece of paper:
   // artwork carried 3mm past the trim, and marks showing where to cut.
