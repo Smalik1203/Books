@@ -1,0 +1,31 @@
+/* ============================================================
+   EMBER PALETTE — a chapter that reads warm.
+
+   tokens.css holds the book's standard palette, where teal is the
+   structural colour. This sheet moves that one family and nothing
+   else: type, trim, spacing, components and the diagram
+   vocabulary are all shared, exactly as an edition sheet works.
+
+   The token names still say teal because that is what the
+   components ask for. Read them as their roles — structure,
+   action, attention — which is how DESIGN.md names them anyway.
+
+   Structure is a DARK burnt orange, and that is the whole trick.
+   Action stays rust, and rust is itself a red-orange, so the two
+   cannot be told apart by hue. They are separated by value
+   instead: the structural colour is markedly darker, which keeps
+   a section tab and a worked example distinct on a page that is
+   warm throughout. A lighter orange here — anything close to
+   rust's own value — collapses that distinction, and the chapter
+   title stops outranking the section heads.
+
+   Attention keeps gold. It is lighter and yellower than either,
+   so the question put to the reader still reads as a third thing.
+   ============================================================ */
+
+:root {
+  --teal:       #8a3c0e;
+  --teal-deep:  #63290a;
+  --teal-soft:  #c07f4d;
+  --teal-tint:  #fbeee4;
+}

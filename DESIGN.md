@@ -23,6 +23,20 @@ Each has one pale tint, used **only** as a panel background:
 **Every component uses exactly one colour.** None mixes two. If a component
 seems to need a second colour, it is doing two jobs and should be split.
 
+**A chapter may move the palette, not the system.** `chapter.json` can name a
+`palette`, which loads `css/palette-<name>.css` over the tokens — the same
+mechanism as an edition sheet, and with the same discipline: it moves colour
+families and nothing else. Three roles in, three roles out.
+
+The trap is that the three roles must stay *distinguishable*, and hue is not
+the only way to do it. Chapter 1 runs warm (`palette-ember.css`): structure
+goes to burnt orange, which sits a few degrees from rust, so the two are
+separated by **value** instead — structure much darker than action. Recolour
+structure to a light orange and a section head stops outranking a worked
+example. Swapping action to a cool colour instead does not work either: the
+chapter title is action-coloured, so it turns green on an otherwise orange
+opener.
+
 Ink, rules and paper are neutral and belong to no component.
 
 ## 2. Typography — two faces, locked

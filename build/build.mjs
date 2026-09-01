@@ -330,7 +330,8 @@ const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = 
 <meta charset="utf-8">
 <title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — Mathematics Class ${escapeHtml(meta.class)}</title>
 <link rel="stylesheet" href="${cssHref}">${meta.edition ? `
-<link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}
+<link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}${meta.palette ? `
+<link rel="stylesheet" href="${cssHref.replace("book.css", "palette-" + meta.palette + ".css")}">` : ``}
 <style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
   : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}</style>
 </head>

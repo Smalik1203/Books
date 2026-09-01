@@ -71,19 +71,33 @@ One design system, two trims. `css/tokens.css` holds the standard — **A4,
 trim, margins, measure, type scale, figure widths, spacing rhythm. Colour,
 components, hierarchy and the diagram vocabulary are shared.
 
-| chapter folder | edition | trim | pages |
-|---|---|---|---|
-| `ch04-algebraic-identities` | A4 (standard) | 210 × 297 | 29 |
-| `ch04-algebraic-identities-b5` | B5 | 176 × 250 | 30 |
-
 A chapter is A4 unless its `chapter.json` names an edition:
 
 ```json
 { "class": "9", "number": "4", "title": "…", "edition": "b5" }
 ```
 
+Every chapter in the book is A4 today. `css/edition-b5.css` is kept and still
+works — name the edition and the builder, the bleed sheet, the proofs and the
+studio all follow it.
+
 The page breaks differ between editions — a bigger page holds more, so each
 is fitted separately. `build/repack.mjs` does the measuring.
+
+## Palettes
+
+A chapter may also name a `palette`, which loads `css/palette-<name>.css`
+over the tokens. It moves the colour families only — components, type and
+spacing are shared, exactly as with an edition.
+
+| chapter | palette | structure colour |
+|---|---|---|
+| `ch01-coordinates` | `ember` | burnt orange |
+| everything else | — | teal (the standard) |
+
+```json
+{ "class": "9", "number": "1", "title": "…", "palette": "ember" }
+```
 
 ## Build
 
