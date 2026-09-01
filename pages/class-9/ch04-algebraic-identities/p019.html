@@ -36,6 +36,31 @@
       </p>
 
       <p>
+        Arithmetic gets shorter too: a number just below a round one is a
+        difference, and the identity trades a hard multiplication for four
+        easy terms:
+      </p>
+
+      <div class="work">
+        <p>$98^3 = (100 - 2)^3 = 100^3 - 3(100)^2(2) + 3(100)(2)^2 - 2^3$</p>
+        <p>$= 1000000 - 60000 + 1200 - 8 = 941192$</p>
+      </div>
+
+      <div class="c-tip">
+        <span class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 6.5S10 4.5 6 4.5H3v14h3.5c3.5 0 5.5 1.5 5.5 1.5s2-1.5 5.5-1.5H21v-14h-3c-4 0-6 2-6 2z"/>
+            <path d="M12 6.5v13.5"/>
+          </svg>
+        </span>
+        <div class="c-tip__body">
+          <p>Test any expansion by putting $b = a$. The right side collapses to
+            $a^3 - 3a^3 + 3a^3 - a^3 = 0$, which is what $(a - a)^3$ has to be. A
+            wrong coefficient or a stray sign fails it at once.</p>
+        </div>
+      </div>
+
+      <p>
         Both are worth recognising in the other direction too. Given a
         four-term expression, can you tell that it <em>is</em> a cube?
       </p>
