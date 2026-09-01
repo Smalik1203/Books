@@ -364,6 +364,7 @@ const bookShell = (meta, body, scopes, sheet = null, trim = null) => `<!doctype 
 <title>${escapeHtml(meta.title)} — Class ${escapeHtml(meta.class)}</title>
 <link rel="stylesheet" href="../../css/book.css">${meta.edition ? `
 <link rel="stylesheet" href="../../css/edition-${meta.edition}.css">` : ``}
+<link rel="stylesheet" href="../../css/frontmatter.css">
 <style>
 ${scopes.join('\n')}
 .page--blank .pagefoot, .page--blank .runhead { display: none; }
@@ -637,6 +638,65 @@ async function checkOverflow(htmlPath, meta, sheet) {
   return bad;
 }
 
+/* ---- Front matter ------------------------------------------
+   Title, imprint, contents. The book's own metadata already
+   exists — the cover carries it — so this reads that rather than
+   inventing a second place for the same facts.
+
+   These pages take no folio, which is why Chapter 1 opens on
+   page 1 and not page 5. Their count is kept even so the body
+   still begins on a recto. */
+async function bookMeta(cls) {
+  const dir = p('covers', cls);
+  const names = await readdir(dir, { withFileTypes: true }).catch(() => []);
+  for (const e of names) {
+    if (!e.isDirectory()) continue;
+    const file = path.join(dir, e.name, 'cover.json');
+    if (existsSync(file)) return JSON.parse(await readFile(file, 'utf8'));
+  }
+  return null;
+}
+
+function frontMatter(book, contents) {
+  const page = (cls, inner) =>
+    `<section class="page page--front ${cls}">\n  <div class="page__body">`
+    + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>\n</section>`;
+
+  const title = page('page--title', `      <div class="titlepage">
+        <div class="titlepage__imprint">${escapeHtml(book.imprint || '')}</div>
+        <h1 class="titlepage__title">${escapeHtml(book.title || '')}</h1>
+        <div class="titlepage__rule"></div>
+        <div class="titlepage__subtitle">${escapeHtml(book.subtitle || '')}</div>
+        ${book.part ? `<div class="titlepage__part">Part ${escapeHtml(book.part)}</div>` : ''}
+      </div>`);
+
+  const imprint = page('page--verso', `      <div class="imprint">
+        <p class="imprint__name">${escapeHtml(book.imprint || '')}</p>
+        ${book.url ? `<p>${escapeHtml(book.url)}</p>` : ''}
+        ${book.isbn ? `<p>ISBN ${escapeHtml(book.isbn)}</p>` : ''}
+        <p>${escapeHtml(book.title || '')}${book.part ? `, Part ${escapeHtml(book.part)}` : ''}
+           &mdash; Class ${escapeHtml(book.class || '')}.</p>
+        <p>Typeset in Spectral and Vollkorn. Printed on a ${book.edition === 'b5' ? '176 &times; 250' : '210 &times; 297'} mm page.</p>
+      </div>`);
+
+  const rows = contents.map((c) => `          <li>
+            <span class="contents__num">${escapeHtml(c.n)}</span>
+            <span class="contents__name">${escapeHtml(c.title)}</span>
+            <span class="contents__dots"></span>
+            <span class="contents__folio">${c.from}</span>
+          </li>`).join('\n');
+
+  const toc = page('', `      <div class="contents__title">Contents</div>
+      <ol class="contents">
+${rows}
+      </ol>`);
+
+  const pages = [title, imprint, toc];
+  // the body must open on a recto, so the front matter is kept even
+  if (pages.length % 2) pages.push(page('page--verso page--blank', ''));
+  return pages;
+}
+
 /* ---- Build the whole class as one book ---------------------
    Chapters printed separately each start at folio 1. Bound
    together they must run continuously, and — by long convention —
@@ -724,6 +784,19 @@ async function buildBook(cls) {
     folio += files.length;
   }
 
+  // Title, imprint and contents go in front. They carry no folio, so
+  // chapter 1 still opens on page 1 — but their count is kept even, or
+  // the body would start on a verso.
+  const book = await bookMeta(cls);
+  let front = 0;
+  if (book) {
+    const fm = frontMatter(book, contents);
+    front = fm.length;
+    bodies.unshift(...fm);
+  } else {
+    console.warn(`    ! ${cls}: no cover.json found, so the book has no title page`);
+  }
+
   const { html: rendered, errors } = renderMath(bodies.join(String.fromCharCode(10, 10)));
   const meta = {
     class: chapters[0].meta.class,
@@ -743,7 +816,8 @@ async function buildBook(cls) {
     await writeFile(bleedHtml, bookShell(meta, rendered, scopes, sheet, sheet));
   }
 
-  console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} pages`
+  console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} numbered pages`
+    + `${front ? `, plus ${front} pages of front matter` : ``}`
     + `${blanks ? `, ${blanks} blank verso inserted so each chapter opens on a recto` : ''}`
     + `${errors ? `, ${errors} math error(s)` : ''}`);
   for (const c of contents) {
