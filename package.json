@@ -7,7 +7,9 @@
   "scripts": {
     "studio": "node build/serve.mjs",
     "build": "node build/build.mjs class-9 --pdf --png",
-    "press": "node build/build.mjs class-9 --pdf --bleed"
+    "press": "node build/build.mjs class-9 --pdf --bleed",
+    "cover": "node build/cover.mjs class-9 --png",
+    "cover:press": "node build/cover.mjs class-9 --pdf --bleed"
   },
   "dependencies": {
     "katex": "^0.16.11",

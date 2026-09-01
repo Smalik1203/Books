@@ -85,6 +85,14 @@ The page before `p101` carries `data-close`. That tells the fill check the
 chapter proper ends there and may end part-way down the page — without it,
 every chapter's closing page is reported as short.
 
+## Binding a book
+
+`--book` concatenates a class into one volume with continuous folios. Two
+things it does that a chapter build does not: it inserts a blank verso so
+each chapter opens on a recto, and it re-scopes every palette from `:root`
+to `[data-ch="N"]`. Leave the palettes at `:root` and the last chapter
+recolours the whole book.
+
 ## Two editions
 
 `css/tokens.css` holds **A4, the standard trim**. `css/edition-b5.css`
@@ -97,6 +105,39 @@ A chapter with no `edition` field is A4. Never fix a B5 problem by editing
 
 `chapter.json` declares `"edition": "b5"`. The builder, the bleed sheet, the
 proofs and the studio all follow it.
+
+## Covers
+
+A cover is not a page and does not go through `build.mjs`.
+
+```bash
+node build/cover.mjs class-9/maths-part1 --png
+```
+
+Source is `covers/<class>/<name>/cover.json`. Its `content` is a list of panel
+files, in back-spine-front order, and they live in `covers/<class>/_shared/`
+so several covers share one blurb — a blurb edited in three places is a blurb
+that will differ. `direction` and `finish` become classes on the wrap:
+a **direction** brings its own display face, artwork and front arrangement
+(`arc` is the current one); a **finish** only repaints, through the token
+contract at the top of `css/cover.css`.
+
+The spine width, the EAN-13 and the ISBN check digit are computed, not typed —
+see §7b of DESIGN.md. `--bleed` refuses to write a press sheet while the QR is
+a placeholder; `--allow-placeholder` overrides.
+
+Two tools beside it:
+
+```bash
+node build/fetch-cover-fonts.mjs                       # vendor the cover faces
+node build/qr-vectorise.mjs in.png assets/qr-x.svg     # bitmap QR -> vector
+node build/cover-swatch.mjs arc                        # colourways, one sheet
+```
+
+`fetch-cover-fonts.mjs` is deliberately separate from `fetch-fonts.mjs`, which
+owns the book's two locked faces and rewrites `css/fonts.css` wholesale. A
+jacket carrying a display face the text block does not have is ordinary book
+practice; nothing under `pages/` can reach it.
 
 ## Studio
 

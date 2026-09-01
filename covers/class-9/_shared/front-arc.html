@@ -1,0 +1,98 @@
+<!-- ══════════════════ FRONT — direction: arc ══════════════════
+     Type in the upper third, a composition of translucent discs and
+     line-drawn mathematics in the lower two. One user unit is one
+     printed millimetre.
+     ============================================================ -->
+<div class="jacket__front">
+
+  <div class="front__art">
+    <svg class="jk-art" viewBox="0 0 176 250" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="Overlapping translucent discs behind a coordinate plane, a
+                     triangle inscribed in a circle, a parabola and a wireframe cube.">
+      <defs>
+        <linearGradient id="arc-coral" x1="0.1" y1="0" x2="0.9" y2="1">
+          <stop offset="0" stop-color="#f4a08c"/>
+          <stop offset="0.55" stop-color="#e8705f"/>
+          <stop offset="1" stop-color="#c9524a"/>
+        </linearGradient>
+      </defs>
+
+      <!-- discs: a contained cluster, clear of the strapline at the foot -->
+      <circle class="arc-disc--ghost" cx="126" cy="176" r="30"/>
+      <circle class="arc-disc--coral" cx="54" cy="172" r="34"/>
+      <circle class="arc-disc--slate" cx="98" cy="148" r="34"/>
+
+      <!-- dot fields -->
+      <g class="arc-dot">
+        <circle cx="150" cy="88" r="0.8"/><circle cx="156" cy="88" r="0.8"/><circle cx="162" cy="88" r="0.8"/><circle cx="168" cy="88" r="0.8"/>
+        <circle cx="150" cy="94" r="0.8"/><circle cx="156" cy="94" r="0.8"/><circle cx="162" cy="94" r="0.8"/><circle cx="168" cy="94" r="0.8"/>
+        <circle cx="150" cy="100" r="0.8"/><circle cx="156" cy="100" r="0.8"/><circle cx="162" cy="100" r="0.8"/>
+      </g>
+      <g class="arc-dot--pale">
+        <circle cx="10" cy="146" r="0.8"/><circle cx="16" cy="146" r="0.8"/><circle cx="22" cy="146" r="0.8"/>
+        <circle cx="10" cy="152" r="0.8"/><circle cx="16" cy="152" r="0.8"/><circle cx="22" cy="152" r="0.8"/>
+      </g>
+
+      <!-- coordinate plane with a plotted point -->
+      <g transform="translate(16 92)">
+        <path class="arc-fig" d="M22 2V42M2 28H50"/>
+        <path class="arc-fig" d="M22 2 20 5.4M22 2 24 5.4M50 28l-3.4-2M50 28l-3.4 2"/>
+        <path class="arc-fig arc-fig--dash" d="M38 14V28M38 14H22"/>
+        <circle class="arc-fig" cx="38" cy="14" r="1.4"/>
+        <text class="jk-fig-label" x="18.2" y="1.6">y</text>
+        <text class="jk-fig-label" x="51.6" y="30.6">x</text>
+        <text class="jk-fig-label jk-fig-label--sm" x="17.6" y="32.6">O</text>
+      </g>
+
+      <!-- triangle inscribed in a circle -->
+      <g transform="translate(98 84)">
+        <circle class="arc-fig" cx="24" cy="24" r="21"/>
+        <path class="arc-fig" d="M6.6 35.4 41.4 35.4 27 4z"/>
+        <path class="arc-fig" d="M24 24 6.6 35.4M24 24 41.4 35.4M24 24 27 4"/>
+        <text class="jk-fig-label" x="25.6" y="2">C</text>
+        <text class="jk-fig-label" x="1.6" y="38.4">A</text>
+        <text class="jk-fig-label" x="43.6" y="38.4">B</text>
+        <text class="jk-fig-label jk-fig-label--sm" x="25.4" y="27.4">O</text>
+      </g>
+
+      <!-- parabola, drawn in the ink so it reads over the pale disc -->
+      <g transform="translate(112 172)">
+        <path class="arc-fig" d="M6 2V36H48"/>
+        <path class="arc-fig" d="M6 2 4 5.4M6 2 8 5.4M48 36l-3.4-2M48 36l-3.4 2"/>
+        <path class="arc-fig" d="M12 8Q27 44 42 8"/>
+        <text class="jk-fig-label" x="2.4" y="1.6">y</text>
+        <text class="jk-fig-label" x="49.6" y="38.6">x</text>
+        <text class="jk-fig-label" x="12" y="45">y = ax² + bx + c</text>
+      </g>
+
+      <!-- wireframe cube, pale where it crosses the coral -->
+      <g transform="translate(24 164)">
+        <path class="arc-fig arc-fig--pale" d="M4 12H32V40H4Z"/>
+        <path class="arc-fig arc-fig--pale" d="M14 4H42V32H14Z"/>
+        <path class="arc-fig arc-fig--pale arc-fig--dash" d="M4 12 14 4M32 12 42 4M32 40 42 32M4 40 14 32"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="front__head">
+    <div>
+      <div class="wordmark">Class<em>Bridge</em></div>
+      <p class="front__tagline">Textbooks for school mathematics.</p>
+    </div>
+    <div class="classmark">
+      <span class="jk-label">Class</span>
+      <span class="classmark__num">9</span>
+      <span class="classmark__part"><span class="jk-label">Part 1</span></span>
+    </div>
+  </div>
+
+  <div class="front__title">
+    <h1>MATHEMATICS</h1>
+    <span class="arc-rule" aria-hidden="true"></span>
+    <p class="front__subtitle">Textbook for Class IX</p>
+  </div>
+
+  <p class="arc-strap">Theory <span>·</span> Worked examples <span>·</span> Practice<br>
+    The Class 9 syllabus, in two parts</p>
+</div>
