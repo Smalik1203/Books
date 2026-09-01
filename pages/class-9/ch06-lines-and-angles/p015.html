@@ -1,0 +1,73 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Several familiar facts now come for free, and each takes one line.</p>
+
+      <div class="work work--list">
+        <div class="work__row"><span class="work__label work__label--wide">Two right angles?</span>
+          <span>impossible — the third angle would be $0^\circ$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">Two obtuse angles?</span>
+          <span>impossible — those two alone exceed $180^\circ$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">Equilateral</span>
+          <span>three equal angles, so each is $60^\circ$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">Right-angled</span>
+          <span>the other two angles are complementary</span></div>
+      </div>
+
+      <p>Now extend one side of the triangle past a vertex. The angle between the extended
+      side and the next side of the triangle is an <span class="term">exterior angle</span>.
+      The two angles of the triangle not touching it are its
+      <span class="term">interior opposite angles</span>.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The Exterior Angle Theorem</div>
+        <p>An exterior angle of a triangle equals the sum of the two interior opposite
+        angles.</p>
+      </div>
+
+      <p>The proof is two lines. Let the triangle be $ABC$ with $BC$ produced to $D$, so
+      the exterior angle is $\angle ACD$.</p>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label">1</span>
+          <span>$\angle ACB + \angle ACD = 180^\circ$</span>
+          <span class="chip">linear pair on $BD$</span></div>
+        <div class="work__row"><span class="work__label">2</span>
+          <span>$\angle ACB + \angle A + \angle B = 180^\circ$</span>
+          <span class="chip">angle sum of the triangle</span></div>
+        <div class="work__row"><span class="work__label">3</span>
+          <span>$\angle ACD = \angle A + \angle B$</span>
+          <span class="chip">take $\angle ACB$ from both</span></div>
+      </div>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 214 108" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Triangle ABC with side BC produced to D, showing the exterior angle at C">
+            <path class="dg-fill-d" d="M74 20 L34 88 L142 88 Z"/>
+            <path class="dg-line" d="M74 20 L34 88 L142 88 Z"/>
+            <path class="dg-thin" d="M142 88 H190" stroke-dasharray="0"/>
+            <path class="dg-thin" d="M158 88 A16 16 0 0 0 148.4 73.3"/>
+            <path class="dg-thin" d="M126 88 A16 16 0 0 1 135.6 73.3"/>
+            <path class="dg-thin" d="M50 88 A16 16 0 0 0 43.6 74.1"/>
+            <path class="dg-thin" d="M67.4 33.2 A16 16 0 0 0 83.6 30.6"/>
+            <circle class="dg-fill-teal" cx="142" cy="88" r="2.6"/>
+            <text class="dg-label" x="74" y="14">A</text>
+            <text class="dg-label" x="27" y="97">B</text>
+            <text class="dg-label" x="139" y="99">C</text>
+            <text class="dg-label" x="193" y="92">D</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.9</span> $\angle ACD$ is exterior at
+          $C$; $\angle A$ and $\angle B$ are its interior opposite angles.</figcaption>
+        </figure>
+      </div>
+
+      <p>One consequence is used constantly and deserves its own sentence: an exterior
+      angle is greater than either interior opposite angle, since it is their sum and
+      neither is zero. That is often more useful than the equality, because it is a
+      statement about which of two angles is bigger without either being known.</p>
+
+    </div>
+  </div>
+</section>
