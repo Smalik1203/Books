@@ -28,7 +28,7 @@ The studio is the library, the viewer and the live preview in one:
 node build/serve.mjs
 ```
 
-Then open <http://localhost:5173/>. It lists every class, groups the chapters by
+Then open <http://localhost:5180/>. It lists every class, groups the chapters by
 subject (from `subject` in `chapter.json`), and shows what has been built.
 Pass a chapter to open straight into it:
 

@@ -23,7 +23,7 @@ import path from 'node:path';
 import { impositionPlan, verify, fitsOn } from './impose.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PORT = Number(process.env.PORT) || 5173;
+const PORT = Number(process.env.PORT) || 5180;   // override: PORT=5199 node build/serve.mjs
 const openAt = process.argv[2] || null;
 
 const MIME = {
@@ -363,7 +363,7 @@ for (const dir of ['pages', 'css']) {
 }
 
 /* ---- Server ----------------------------------------------- */
-createServer(async (req, res) => {
+const server = createServer(async (req, res) => {
   const [rawUrl, rawQuery] = req.url.split('?');
   const url = decodeURIComponent(rawUrl);
   const query = new URLSearchParams(rawQuery || '');
@@ -449,9 +449,38 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404, { 'Content-Type': 'text/plain' }).end('Not found: ' + url);
   }
-}).listen(PORT, async () => {
-  console.log('\n  Studio   http://localhost:' + PORT + '/');
-  if (openAt) console.log('  Chapter  http://localhost:' + PORT + '/read/' + openAt);
+});
+
+/* A studio that dies with a stack trace because some other project holds
+   the port is a papercut, not a failure. Step to the next free port and
+   say so — an explicit PORT= is honoured exactly, since asking for a
+   particular port and silently getting another one is worse.
+
+   The success message is bound ONCE, outside the retry, and reads the
+   port the socket actually got: server.listen(port, cb) registers cb as a
+   'listening' listener that outlives a failed attempt, so re-passing it
+   each try makes every earlier port announce itself on the one that
+   finally works. */
+server.on('listening', async () => {
+  const port = server.address().port;
+  console.log('\n  Studio   http://localhost:' + port + '/');
+  if (openAt) console.log('  Chapter  http://localhost:' + port + '/read/' + openAt);
   console.log('  Watching pages/ and css/ — a save rebuilds that chapter and reloads.\n');
   if (openAt) await build(openAt);
 });
+
+const listen = (port, tries) => {
+  server.once('error', (err) => {
+    if (err.code !== 'EADDRINUSE') throw err;
+    if (process.env.PORT || tries <= 0) {
+      console.error(`\n  Port ${port} is already in use.` +
+        (process.env.PORT ? '  (PORT was set explicitly, so nothing else was tried.)\n'
+                          : '\n'));
+      process.exit(1);
+    }
+    console.log(`  Port ${port} is busy — trying ${port + 1}`);
+    listen(port + 1, tries - 1);
+  });
+  server.listen(port);
+};
+listen(PORT, 20);
