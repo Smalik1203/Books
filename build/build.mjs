@@ -167,10 +167,24 @@ async function lintClasses(root, pageFiles) {
    physical size in every figure. Stamp each figure with its
    viewBox width and its printed width so diagram.css can convert.
    Without this a label set once prints anywhere from 5pt to 10pt. */
-const FIG_MM = { sm: 48, md: 58, lg: 68, xl: 82 };
+/* The printed widths come from the same tokens the stylesheet
+   lays the figure out with — and from the edition's sheet when
+   there is one, exactly as the cascade would have it. Repeating
+   them here is what once set every label in the A4 book 6% small:
+   the table held the B5 numbers. --fig-full resolves through
+   --measure, so it is followed rather than parsed. */
+async function figWidths(root, edition) {
+  const px = await tokenReader(root, edition);
+  const w = {};
+  for (const step of ['sm', 'md', 'lg', 'xl', 'full']) {
+    const raw = px('fig-' + step);
+    w[step] = /var\(\s*--measure/.test(raw) ? parseFloat(px('measure')) : parseFloat(raw);
+  }
+  return w;
+}
 
-function stampFigureScale(html) {
-  const re = /class="[^"]*c-figure--(sm|md|lg|xl)[^"]*"/g;
+function stampFigureScale(html, figMM) {
+  const re = /class="[^"]*c-figure--(sm|md|lg|xl|full)[^"]*"/g;
   const edits = [];
   let m;
   while ((m = re.exec(html))) {
@@ -180,7 +194,7 @@ function stampFigureScale(html) {
     const close = html.indexOf('>', svg);
     const vb = html.slice(svg, close).match(/viewBox="\s*[-\d.]+\s+[-\d.]+\s+([\d.]+)/);
     if (!vb) continue;
-    edits.push({ at: svg + 4, text: ` style="--dg-v:${vb[1]};--dg-w:${FIG_MM[m[1]]}"` });
+    edits.push({ at: svg + 4, text: ` style="--dg-v:${vb[1]};--dg-w:${figMM[m[1]]}"` });
   }
   let out = html;
   for (const e of edits.reverse()) out = out.slice(0, e.at) + e.text + out.slice(e.at);
@@ -197,16 +211,21 @@ function closePages(body, marks) {
    Read from the tokens rather than repeated here, so the page
    box Chrome is told to print can never drift from the box the
    stylesheet lays the book out in. */
-async function sheetMetrics(root, edition) {
+async function tokenReader(root, edition) {
   const src = await readFile(path.join(root, 'css', 'tokens.css'), 'utf8');
   const over = edition
     ? await readFile(path.join(root, 'css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
     : '';
-  const mm = (name) => {
+  return (name) => {
     // an edition sheet wins, exactly as the cascade would have it
     const from = over.includes('--' + name + ':') ? over : src;
-    return parseFloat(from.slice(from.indexOf("--" + name + ":") + name.length + 3, from.indexOf("--" + name + ":") + name.length + 30));
+    return from.slice(from.indexOf("--" + name + ":") + name.length + 3, from.indexOf("--" + name + ":") + name.length + 30);
   };
+}
+
+async function sheetMetrics(root, edition) {
+  const raw = await tokenReader(root, edition);
+  const mm = (name) => parseFloat(raw(name));
   const trimW = mm('trim-w'), trimH = mm('trim-h');
   const bleed = mm('bleed'), slug = mm('slug');
   const out = bleed + slug;
@@ -404,7 +423,8 @@ async function buildChapter(rel) {
   lint += await lintClasses(ROOT, files.map(f => path.join(src, f)));
 
   const sheet = await sheetMetrics(ROOT, meta.edition);
-  let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta));
+  const figMM = await figWidths(ROOT, meta.edition);
+  let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta), figMM);
   body = closePages(body, cropMarks(sheet));
   const { html: rendered, errors } = renderMath(body);
 

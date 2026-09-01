@@ -37,4 +37,6 @@
   --fig-md: 58mm;
   --fig-lg: 68mm;
   --fig-xl: 82mm;
+  /* --fig-full needs no override: it is var(--measure), and the
+     measure is overridden a few lines above. */
 }

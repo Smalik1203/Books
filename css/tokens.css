@@ -92,12 +92,16 @@
   --margin-outside: 28mm;
   --measure: 154mm;
 
-  /* Printed width of a figure — four steps, so figures across the
-     book relate to each other rather than to their own artwork. */
+  /* Printed width of a figure — five steps, so figures across the
+     book relate to each other rather than to their own artwork.
+     --fig-full is the measure itself, and is for the one drawing
+     that genuinely needs it: a ruled coordinate grid, where the
+     tick numerals collide long before the figure looks large. */
   --fig-sm: 51mm;
   --fig-md: 62mm;
   --fig-lg: 72mm;
   --fig-xl: 87mm;
+  --fig-full: var(--measure);
   --bleed: 3mm;
   --slug:  7mm;             /* room outside the bleed for crop marks */
   --mark:  #000000;         /* crop marks: prepress black, not an ink of the book */
