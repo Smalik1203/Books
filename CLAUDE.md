@@ -87,7 +87,7 @@ proofs and the studio all follow it.
 node build/serve.mjs
 ```
 
-<http://localhost:5173> — library, page/spread/signature views, true-size
+<http://localhost:5180> — library, page/spread/signature views, true-size
 calibration, and a Build button. Watches `pages/` and `css/` and rebuilds the
 chapter that changed. The book renders in an iframe so the studio's
 stylesheet and the book's can never reach each other.

@@ -2,83 +2,76 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Two facts you now have:</p>
-            <div class="work work--centred">
-              <p>$x^2 - y^2 = (x - y)(x + y)$</p>
-              <p>$x^3 - y^3 = (x - y)\left(x^2 + xy + y^2\right)$</p>
-            </div>
-            <p>
-              In both, $x - y$ is a factor. Is it a factor of $x^4 - y^4$ as
-              well? Start from $x^4 - y^4 = (x^2)^2 - (y^2)^2$ and see what the
-              first fact gives you.
-            </p>
-            <p class="c-reflect__hint">
-              Then try $x^5 - y^5$. Do you think $x - y$ divides $x^n - y^n$ for
-              <em>every</em> $n$? What happens if you put $x = y$?
-            </p>
+      <div class="c-example c-example--tail">
+        <div class="c-example__body">
+          <p>
+            One quantity is still missing: $xy + xz + yz$. Nothing in the
+            question gives it directly — but the squared identity from
+            Section 4.4 does, because it is the only place that quantity ever
+            appears:
+          </p>
+          <div class="work">
+            <p>$(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + xz + yz)$</p>
+            <p>$100 = 38 + 2(xy + xz + yz), \quad\text{so}\quad xy + xz + yz = 31$</p>
+          </div>
+          <p>Putting that back:</p>
+          <div class="work">
+            <p>$x^3 + y^3 + z^3 = 455 - 10(31) = 455 - 310 = 145$</p>
           </div>
         </div>
       </div>
 
-      <h3>Three letters at once</h3>
-
       <p>
-        The same experiment works with three letters. Multiply $x + y + z$ by
-        $x^2 + y^2 + z^2 - xy - xz - yz$, taking the second bracket once with
-        each term of the first:
+        Notice that the three numbers were never found. They did not need to be:
+        the identities work with the sums and products directly.
       </p>
 
-      <div class="work">
-        <p>$x\left(x^2 + y^2 + z^2 - xy - xz - yz\right) = x^3 + xy^2 + xz^2 - x^2y - x^2z - xyz$</p>
-        <p>$y\left(\;\cdots\;\right) = x^2y + y^3 + yz^2 - xy^2 - xyz - y^2z$</p>
-        <p>$z\left(\;\cdots\;\right) = x^2z + y^2z + z^3 - xyz - xz^2 - yz^2$</p>
+      <h2><span class="badge">4.8</span><span class="name">Simplifying Rational Expressions</span></h2>
+
+      <p>
+        Everything so far has been about turning expressions into products. Here
+        is where that pays off. A <span class="term">rational expression</span>
+        is one algebraic expression divided by another, and simplifying it means
+        the same thing as simplifying a fraction of numbers: cancel whatever the
+        top and the bottom have in common.
+      </p>
+
+      <p>
+        You cannot cancel a term, only a factor. So before anything can be
+        cancelled, both the numerator and the denominator have to be
+        <em>factorised</em> — which is exactly what this chapter has been
+        teaching you to do.
+      </p>
+
+      <div class="c-example c-example--head">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>
+            Simplify $\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100}$, given that
+            $5x^2 + 5x - 100 \neq 0$.
+          </p>
+          <p>
+            Factorise each part. For the numerator, find two numbers with sum $-7$
+            and product $12$. Both are negative, since the product is positive
+            and the sum is not; the pair is $-3$ and $-4$:
+          </p>
+          <div class="work">
+            <p>$x^2 - 7x + 12 = (x - 3)(x - 4)$</p>
+          </div>
+          <p>
+            The denominator needs a step first — all three terms are multiples
+            of 5, so take that out before hunting for a pair. Then the sum is
+            $1$ and the product $-20$, which gives $5$ and $-4$:
+          </p>
+          <div class="work">
+            <p>$5x^2 + 5x - 100 = 5\left(x^2 + x - 20\right) = 5(x - 4)(x + 5)$</p>
+          </div>
+          <p>Now the fraction can be written as a product of factors:</p>
+          <div class="work work--centred">
+            <p>$\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100} = \dfrac{(x - 3)(x - 4)}{5(x - 4)(x + 5)}$</p>
+          </div>
+        </div>
       </div>
-
-      <p>
-        Now add the three lines. Every term with two different letters appears
-        twice, once with each sign: $xy^2$ against $-xy^2$, $xz^2$ against
-        $-xz^2$, $x^2y$ against $-x^2y$, and so on. All of them vanish. What
-        survives is the three cubes and three copies of $-xyz$:
-      </p>
-
-      <div class="eq eq--anchor">
-        $$(x + y + z)\left(x^2 + y^2 + z^2 - xy - xz - yz\right) = x^3 + y^3 + z^3 - 3xyz$$
-      </div>
-
-      <p>
-        That identity looks forbidding, but it earns its keep. It ties together
-        four quantities — the sum of three numbers, the sum of their squares,
-        the sum of their cubes, and their product — so that knowing any three
-        of them gives you the fourth.
-      </p>
-
-      <p>
-        One case is worth remembering on its own. If the three numbers add to
-        zero, the first bracket on the left is zero, so the whole product is
-        zero however large the second bracket may be:
-      </p>
-
-      <div class="work work--centred">
-        <p>when $x + y + z = 0$, &nbsp; $x^3 + y^3 + z^3 = 3xyz$</p>
-      </div>
-
-      <p>
-        Three numbers that add to zero always have cubes adding to three times
-        their product. Try $1$, $2$ and $-3$: the cubes give
-        $1 + 8 - 27 = -18$, and $3xyz = 3(1)(2)(-3) = -18$ as promised.
-      </p>
 
     </div>
   </div>

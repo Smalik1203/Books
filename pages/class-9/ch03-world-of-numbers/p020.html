@@ -1,0 +1,92 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Write $0.\overline{45}$ in the form $\dfrac{p}{q}$.</p>
+          <p>
+            Same idea, but the repeating block is two digits long, so the shift
+            has to be two places to bring the tails into line.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.454545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>Two digits repeat, so multiply by $10^2$:
+              $\;100x = 45.454545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Subtract: $\;100x - x = 45.4545\ldots - 0.4545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>$99x = 45$, so $x = \dfrac{45}{99} = \dfrac{5}{11}$.</span>
+            </div>
+          </div>
+          <p>
+            Which agrees with Example 7, where dividing 5 by 11 gave
+            $0.\overline{45}$ in the first place — the two directions meet.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        In both of those the repetition began immediately after the decimal
+        point. Very often it does not — a digit or two occurs once and only
+        then does the cycle start, and a single shift can no longer bring the
+        tails into agreement.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>Write $0.1\overline{6}$ in the form $\dfrac{p}{q}$.</p>
+          <p>
+            This one does not repeat immediately: the 1 occurs once and only
+            the 6 recurs. One shift will not do, because the two numbers must
+            agree in their tails <em>and</em> the tails only match once the
+            non-repeating part is out of the way. So shift twice, for two
+            different reasons.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.16666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>One digit does not repeat. Multiply by $10^1$ to push it
+              past the point: $\;10x = 1.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>One digit repeats. Multiply by $10^1$ again to move a whole
+              cycle: $\;100x = 16.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>Subtract the Step 2 line from the Step 3 line — both end in
+              $.6666\ldots$: $\;90x = 15$.</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 5</span>
+              <span>$x = \dfrac{15}{90} = \dfrac{1}{6}$.</span>
+            </div>
+          </div>
+          <p>
+            Check: $1 \div 6 = 0.16666\ldots$ The two multipliers had different
+            jobs — the first cleared the non-repeating digit, the second moved
+            one full cycle — and it is worth naming which is which as you go.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

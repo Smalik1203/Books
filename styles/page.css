@@ -1,0 +1,174 @@
+/* ============================================================
+   PAGE SHELL
+   Fixed B5 boxes. One full-measure column. The running head and
+   the foot are furniture: the builder adds them to every page so
+   no page file repeats them and none can drift.
+   ============================================================ */
+
+@page { size: 176mm 250mm; margin: 0; }
+
+body {
+  /* Vollkorn defaults to oldstyle figures, which turn "4.1" into
+     "4.i" in a caption. A maths book wants lining figures. */
+  font-variant-numeric: lining-nums;
+  margin: 0;
+  background: #55605b;
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.spread {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7mm;
+  padding: 7mm 0;
+}
+
+.page {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--trim-w);
+  height: var(--trim-h);
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.page__body {
+  position: absolute;
+  top: var(--margin-top);
+  bottom: var(--margin-bottom);
+  left: var(--margin-inside);
+  right: var(--margin-outside);
+}
+.page--verso .page__body {
+  left: var(--margin-outside);
+  right: var(--margin-inside);
+}
+.page__main { min-width: 0; }
+
+/* The shared arrowhead lives in a hidden sprite at the top of the
+   document; it must not occupy layout. */
+.dg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---- Running head ----------------------------------------- */
+.runhead {
+  position: absolute;
+  top: 10.5mm;
+  left: var(--margin-inside);
+  right: var(--margin-outside);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;   /* recto: title to the outer edge */
+  padding-bottom: 2.4mm;
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+.page--verso .runhead {
+  left: var(--margin-outside);
+  right: var(--margin-inside);
+  flex-direction: row;            /* verso: the outer edge is the left */
+}
+.runhead__chapter {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-style: italic;
+  color: var(--teal);
+}
+.runhead__mark {
+  width: 7mm;
+  height: 1.1mm;
+  border-radius: 1mm;
+  background: var(--teal);
+}
+.page--opener .runhead { display: none; }
+
+/* ---- Foot -------------------------------------------------
+   A teal bar on the OUTER edge carrying the folio, and a rust
+   outline on the inner side. Both are parallelograms made by
+   skewing, not clipping: a clip-path would cut away the very
+   border that draws the outlined one. */
+.pagefoot { position: absolute; left: 0; right: 0; bottom: 0; height: 10mm; }
+.pagefoot__bar { position: absolute; bottom: 0; height: 5.4mm; transform: skewX(-26deg); }
+.pagefoot__bar--fill { right: -12mm; width: 40%; background: var(--teal); }
+.pagefoot__bar--line {
+  left: -12mm;
+  width: 25%;
+  border-top: 0.5mm solid var(--rust);
+  border-right: 0.5mm solid var(--rust);
+}
+.page--verso .pagefoot__bar { transform: skewX(26deg); }
+.page--verso .pagefoot__bar--fill { right: auto; left: -12mm; }
+.page--verso .pagefoot__bar--line {
+  left: auto;
+  right: -12mm;
+  border-right: none;
+  border-left: 0.5mm solid var(--rust);
+}
+.pagefoot__folio {
+  position: absolute;
+  bottom: 0;
+  right: var(--margin-outside);
+  height: 5.4mm;
+  line-height: 5.4mm;
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  color: var(--paper);
+}
+.page--verso .pagefoot__folio { right: auto; left: var(--margin-outside); }
+
+/* ---- Print ------------------------------------------------ */
+@media print {
+  body { background: none; }
+  .spread { display: block; gap: 0; padding: 0; }
+  .page { break-after: page; page-break-after: always; }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+}
+
+
+/* ============================================================
+   BLEED — the print-ready sheet.
+
+   Two wrappers sit inside every page. At trim size they are
+   both the page itself and change nothing; with --bleed they
+   become the bleed box (which clips the artwork) and the trim
+   box (which everything is still positioned against), leaving
+   a slug outside for crop marks.
+
+     .page        the sheet the press prints    196 x 270 mm
+     .page__bleed artwork, clipped 3mm past trim 182 x 256 mm
+     .page__trim  the book as the reader sees it 176 x 250 mm
+   ============================================================ */
+.page__bleed,
+.page__trim { position: absolute; inset: 0; }
+
+body.bleed .page {
+  width:  calc(var(--trim-w) + 2 * (var(--bleed) + var(--slug)));
+  height: calc(var(--trim-h) + 2 * (var(--bleed) + var(--slug)));
+  overflow: visible;
+  background: var(--sheet);      /* not inherited from the preview backdrop */
+}
+body.bleed .page__bleed {
+  inset: var(--slug);
+  overflow: hidden;
+  background: var(--paper);
+}
+body.bleed .page__trim { inset: var(--bleed); }
+
+/* Marks sit outside the bleed box, so they can never print over
+   artwork: each runs from the bleed edge outward. */
+.cropmarks { display: none; }
+body.bleed .cropmarks {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cropmarks line {
+  stroke: var(--mark);
+  stroke-width: 0.09;            /* 0.25pt, in the millimetre viewBox */
+}

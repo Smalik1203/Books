@@ -49,6 +49,29 @@ action to a cool colour while leaving attention gold and the chapter title —
 which is action-coloured — turns green beside a warm numeral block.
 Ink, rules and paper are neutral and belong to no component.
 
+### The structure colour is per chapter
+
+`--teal` is the *role*, not the hex. A chapter may own the structure hue so
+that two chapters in the same class do not read identically, and the name is
+kept only because renaming it would touch every stylesheet.
+
+Declare four tones in `CHAPTER_PALETTES` in `build/build.mjs`, keyed by
+chapter number — or `"palette"` in `chapter.json`:
+
+```js
+'3': { base: '#1c3a6b', deep: '#12294e', soft: '#5c7cad', tint: '#e8edf6' },
+```
+
+The builder emits them as `--ch-structure*`; `--teal*` reads through with the
+original green as its fallback, so **a chapter with no entry is unchanged.**
+Chapter 4 owns the green. Chapter 3 is indigo.
+
+**Only the structure colour moves.** Rust and gold are common to the whole
+book, so a page is still the three-colour system above — the same semantics,
+in one different hue. Do not give a chapter its own action or attention
+colour, and do not use a hue for structure that a diagram fill already uses
+in the same chapter.
+
 ## 2. Typography — two faces, locked
 
 | | | used for |
@@ -215,6 +238,23 @@ algebra in the text), `.dg-dim-label` for measurements (rust),
 instruction can never be mistaken for a quantity).
 `.dg-label--on-fill` where a label sits on a dark region.
 
+**Coordinate graphs** are a frame with relations laid over it, and the two must
+not compete. `.dg-grid` is the faintest thing in the figure, `.dg-axis` is quiet
+structure, `.dg-tick` sets the axis numerals upright (they are numbers, not
+quantities), and only `.dg-plot` carries mathematics. `.dg-plot-label` names a
+relation and takes a paper knockout, so a label is never struck through by a
+grid line or another plot.
+
+Axes carry **no arrowhead**: the book's one marker is rust, which on an axis
+reads as a measurement. The line running out to the frame says *continues*.
+
+Where several relations share one pair of axes they are told apart by role, in
+a fixed order, so the same relation keeps its colour across a series of
+figures. `.dg-plot` follows the chapter's structure colour; `--b` is rust; and
+`--c` is the diagram palette's green rather than a working colour — a chapter
+that owns a warm structure hue would otherwise put three warm lines on one
+pair of axes.
+
 **One arrowhead in the whole book.** The builder puts a single `#dg-arrow`
 marker in the page shell; every figure references it.
 
@@ -294,3 +334,32 @@ If a page needs something the system does not have, **add it to the system** —
 a component, or a modifier on one — rather than reaching for an inline style.
 That is the whole point: the book stays one designed object instead of twenty
 pages that each looked reasonable on their own.
+
+## 8. Running a panel over a page break
+
+A page must not ship a third empty because the next block will not fit
+whole. **Text divides; pictures do not.**
+
+- A **figure** is never split — half a diagram is unreadable, so a gap held
+  open by one is accepted and left alone.
+- A **worked example**, a **key idea** and a **reflect prompt** may run over
+  the break: `--head` is the part that stays, `--tail` the part that
+  continues. The join is squared off and its padding removed on both sides,
+  so the two halves read as one field interrupted by the page edge. The tail
+  carries no tab or title: it is the same panel resumed, not a new one.
+- **Running text** may be broken mid-paragraph. Paragraphs here have no
+  first-line indent, so a continued one is indistinguishable from a new one.
+
+Split at a step boundary, never inside a line of working.
+
+```bash
+node build/close-gaps.mjs class-9/ch04-algebraic-identities   # divide panels
+node build/flow.mjs       class-9/ch04-algebraic-identities   # divide prose
+```
+
+Both measure every trial with the real builder and keep the largest move
+that does not overfill. `flow` refuses a move that fills one page by
+emptying the next — that relocates the hole rather than closing it.
+
+Run these **after** `repack`, never before: repack re-packs whole blocks
+globally and will undo them.

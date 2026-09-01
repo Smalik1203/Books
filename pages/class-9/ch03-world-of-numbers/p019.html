@@ -1,0 +1,91 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Write $0.35$ in the form $\dfrac{p}{q}$.</p>
+          <p>
+            A terminating decimal needs no algebra. Read it as what it says:
+            35 hundredths.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">two decimal places</span>
+              <span>so the denominator is $100$</span>
+              <span class="chip">$\dfrac{35}{100}$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">lowest terms</span>
+              <span>divide both by 5</span>
+              <span class="chip">$\dfrac{7}{20}$</span>
+            </div>
+          </div>
+          <p>Check by dividing back: $7 \div 20 = 0.35$.</p>
+        </div>
+      </div>
+
+      <p>
+        That was the easy direction, and it needed no algebra at all — only a
+        reading of what the decimal already said. The moment the digits stop
+        stopping, that reading is unavailable, and something else has to take
+        its place.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Write $0.\overline{6}$ in the form $\dfrac{p}{q}$.</p>
+          <p>
+            Now the digits never stop, so there is nothing to read off. The
+            trick is to make two numbers whose infinite tails are
+            <em>identical</em>, and then subtract, so that the tails cancel and
+            leave something finite behind.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>One digit repeats, so multiply by $10^1$:
+              $\;10x = 6.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Subtract. Both tails are $.6666\ldots$, so they vanish:
+              $\;10x - x = 6.6666\ldots - 0.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>$9x = 6$, so $x = \dfrac{6}{9} = \dfrac{2}{3}$.</span>
+            </div>
+          </div>
+          <p>
+            Check: $2 \div 3 = 0.6666\ldots$ Notice why the multiplier was 10
+            and not 100 — one repeating digit needs a shift of exactly one
+            place, or the tails would not have lined up.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        The multiplier there was chosen to match the cycle: one repeating digit,
+        one shift. That is not a rule to memorise but the reason the two tails
+        lined up, and a longer cycle will need a longer shift.
+      </p>
+
+      <p>
+        It is worth saying plainly what has just been done, because the same
+        move settles every repeating decimal there is. An infinite tail cannot
+        be subtracted away on its own — but two numbers carrying the
+        <em>identical</em> tail can be subtracted from each other, and the
+        tails go together. Choosing the multiplier is nothing more than
+        arranging for those two tails to match.
+      </p>
+
+    </div>
+  </div>
+</section>
