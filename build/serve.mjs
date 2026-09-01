@@ -232,7 +232,7 @@ function viewerHtml(chapter, s) {
 
       <div class="stage" id="stage">
         <div class="stage__inner" id="inner">
-          <iframe id="frame" title="${esc(chapter.meta.title)}"></iframe>
+          <iframe id="frame" scrolling="no" title="${esc(chapter.meta.title)}"></iframe>
         </div>
       </div>
     </div>

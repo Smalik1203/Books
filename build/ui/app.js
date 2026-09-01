@@ -53,7 +53,7 @@
       ? Math.max(320, stage.clientWidth - 24)
       : Math.round(sheetWidthMm() * CSS_PX_PER_MM * perRow) + 40;
     inner.style.width = contentW + "px";
-    if (doc && doc.documentElement) frame.style.height = doc.documentElement.scrollHeight + "px";
+    fitFrame();
 
     let k = 1;
     if (state.zoom === "fit") k = Math.min(1, (stage.clientWidth - 24) / contentW);
@@ -67,9 +67,29 @@
     $("cal-val").textContent = state.ppmm.toFixed(3) + " px/mm";
   }
 
+  // The book keeps growing after load — webfonts arrive, KaTeX lays out,
+  // a save reloads it. Measured once, the iframe ends up a few pixels
+  // short and grows a second scrollbar inside the one the stage already
+  // has. Watch it instead.
+  let watching = null;
+  function fitFrame() {
+    const doc = frame.contentDocument;
+    if (!doc || !doc.documentElement) return;
+    frame.style.height = doc.documentElement.scrollHeight + "px";
+  }
+  function watchFrame() {
+    const doc = frame.contentDocument;
+    if (!doc || !doc.documentElement) return;
+    if (watching) watching.disconnect();
+    watching = new ResizeObserver(fitFrame);
+    watching.observe(doc.documentElement);
+    if (doc.fonts) doc.fonts.ready.then(fitFrame);
+  }
+
   frame.addEventListener('load', () => {
     applyZoom();
     countPages();
+    watchFrame();
     // the book reloads itself on save; keep the frame height honest
     setTimeout(applyZoom, 400);
   });
