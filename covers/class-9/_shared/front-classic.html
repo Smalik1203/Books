@@ -1,0 +1,121 @@
+<!-- ══════════════════ FRONT ══════════════════ -->
+<div class="jacket__front">
+
+  <!-- Artwork. The box is the trim exactly, so one user unit is one
+       printed millimetre; anything drawn past the viewBox still paints,
+       and the panel clips it at the bleed edge. -->
+  <div class="front__art">
+    <svg class="jk-art" viewBox="0 0 176 250" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="A navy disc holding a golden spiral, a sphere resting on a stone
+                     plinth, and three small diagrams: a straight line, a triangle
+                     inscribed in a circle, and a parabola.">
+      <defs>
+        <radialGradient id="jk-sphere" cx="0.36" cy="0.30" r="0.82">
+          <stop class="jk-sphere-lit"   offset="0"/>
+          <stop class="jk-sphere-mid"   offset="0.55"/>
+          <stop class="jk-sphere-shade" offset="1"/>
+        </radialGradient>
+        <linearGradient id="jk-plinth-side" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#b7ab92"/>
+          <stop offset="0.4" stop-color="#d5cbb6"/>
+          <stop offset="1" stop-color="#a99d84"/>
+        </linearGradient>
+      </defs>
+
+      <!-- discs -->
+      <circle class="jk-disc--terra" cx="52" cy="150" r="34"/>
+      <circle class="jk-disc--sage"  cx="140" cy="198" r="30"/>
+      <circle class="jk-disc--navy"  cx="92" cy="154" r="48"/>
+
+      <!-- the golden rectangle and its spiral, inside the navy disc -->
+      <g transform="translate(57.6 132.75) scale(1.25)">
+        <g class="jk-spiral jk-spiral--guide">
+          <rect x="0" y="0" width="55" height="34"/>
+          <path d="M34 0V34M34 21H55M42 21V34M34 26H42M39 21V26"/>
+        </g>
+        <path class="jk-spiral" d="M0 34A34 34 0 0 1 34 0A21 21 0 0 1 55 21A13 13 0 0 1 42 34A8 8 0 0 1 34 26A5 5 0 0 1 39 21A3 3 0 0 1 42 24"/>
+      </g>
+
+      <!-- dot fields -->
+      <g class="jk-dot">
+        <circle cx="20" cy="108" r="0.9"/><circle cx="26" cy="108" r="0.9"/><circle cx="32" cy="108" r="0.9"/><circle cx="38" cy="108" r="0.9"/>
+        <circle cx="20" cy="114" r="0.9"/><circle cx="26" cy="114" r="0.9"/><circle cx="32" cy="114" r="0.9"/><circle cx="38" cy="114" r="0.9"/>
+        <circle cx="20" cy="120" r="0.9"/><circle cx="26" cy="120" r="0.9"/><circle cx="32" cy="120" r="0.9"/>
+      </g>
+      <g class="jk-dot--cream">
+        <circle cx="74" cy="112" r="0.8"/><circle cx="80" cy="112" r="0.8"/><circle cx="86" cy="112" r="0.8"/>
+        <circle cx="74" cy="118" r="0.8"/><circle cx="80" cy="118" r="0.8"/><circle cx="86" cy="118" r="0.8"/>
+        <circle cx="74" cy="124" r="0.8"/><circle cx="80" cy="124" r="0.8"/><circle cx="86" cy="124" r="0.8"/>
+      </g>
+
+      <!-- sphere on a stone slab: the one solid object, and the reason
+           the composition has a floor to sit on. Three faces, no
+           perspective beyond an isometric top — a drum reads as a
+           pedestal, a slab reads as a surface. -->
+      <path class="jk-plinth--side" d="M64 208 L96 220 L96 236 L64 224 Z"/>
+      <path class="jk-plinth" d="M96 220 L128 208 L128 224 L96 236 Z"/>
+      <path class="jk-plinth--top" d="M64 208 L96 196 L128 208 L96 220 Z"/>
+      <ellipse cx="96" cy="209" rx="15" ry="4" fill="#0d1626" opacity="0.13"/>
+      <circle class="jk-sphere" cx="96" cy="188" r="17"/>
+
+      <!-- ---- straight line: y = mx + c ---- -->
+      <g transform="translate(134 68)">
+        <path class="jk-fig" d="M4 0V28H36"/>
+        <path class="jk-fig jk-fig--thin" d="M4 4 1.8 7M4 4 6.2 7M36 28l-3-2.2M36 28l-3 2.2"/>
+        <path class="jk-fig" d="M8 25 32 7"/>
+        <path class="jk-fig jk-fig--dash" d="M24 13.5V28M24 13.5H4"/>
+        <circle class="jk-fig-fill" cx="24" cy="13.5" r="1.1"/>
+        <text class="jk-fig-label" x="0.4" y="2.6">y</text>
+        <text class="jk-fig-label" x="37.4" y="30.6">x</text>
+        <text class="jk-fig-label jk-fig-label--sm" x="0.2" y="31.4">O</text>
+        <text class="jk-fig-label" x="20" y="5.4">y = mx + c</text>
+      </g>
+
+      <!-- ---- triangle inscribed in a circle ---- -->
+      <g transform="translate(136 102)">
+        <circle class="jk-fig" cx="16" cy="16" r="13"/>
+        <path class="jk-fig" d="M4.4 22 27.6 22 16 3z"/>
+        <path class="jk-fig jk-fig--thin" d="M16 16 4.4 22M16 16 27.6 22M16 16 16 3"/>
+        <text class="jk-fig-label" x="14.6" y="1.4">C</text>
+        <text class="jk-fig-label" x="-1.4" y="25">A</text>
+        <text class="jk-fig-label" x="30" y="25">B</text>
+        <text class="jk-fig-label jk-fig-label--sm" x="17.4" y="19.2">O</text>
+      </g>
+
+      <!-- ---- parabola: y = ax² + bx + c ---- -->
+      <g transform="translate(134 180)">
+        <path class="jk-fig" d="M4 0V28H38"/>
+        <path class="jk-fig jk-fig--thin" d="M4 4 1.8 7M4 4 6.2 7M38 28l-3-2.2M38 28l-3 2.2"/>
+        <path class="jk-fig" d="M9 6Q21 34 33 6"/>
+        <text class="jk-fig-label" x="0.4" y="2.6">y</text>
+        <text class="jk-fig-label" x="39.4" y="30.6">x</text>
+        <text class="jk-fig-label" x="6" y="37">y = ax² + bx + c</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="front__head">
+    <div>
+      <div class="wordmark">Class<em>Bridge</em></div>
+      <p class="front__tagline">Textbooks for school mathematics.</p>
+    </div>
+    <div class="classmark">
+      <span class="jk-label">Class</span>
+      <span class="classmark__num">9</span>
+      <span class="classmark__part"><span class="jk-label">Part 1</span></span>
+    </div>
+  </div>
+
+  <div class="front__title">
+    <h1>MATHEMATICS</h1>
+    <p class="front__subtitle">Textbook for Class IX</p>
+    <span class="jk-label jk-label--terra">Based on NCERT</span>
+  </div>
+
+  <div class="front__foot">
+    <p class="jk-kicker">Powered by</p>
+    <div class="learnlab">Learn<em>Lab</em></div>
+    <p class="front__promise">Lessons, simulations and practice online,<br>for the same chapters.</p>
+  </div>
+</div>
