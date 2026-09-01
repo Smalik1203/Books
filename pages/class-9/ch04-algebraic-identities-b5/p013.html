@@ -2,33 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Evaluate each of these, choosing whichever identity suits it best.</p>
-            <ol class="c-parts c-parts--4">
-              <li>$35^2$</li>
-              <li>$65^2$</li>
-              <li>$85^2$</li>
-              <li>$105^2$</li>
-            </ol>
-            <p class="c-reflect__hint">
-              Look at your four answers side by side: every one ends the same
-              way. Can you see why, and for which numbers?
-            </p>
-          </div>
-        </div>
-      </div>
-
       <p>
         Identities can also be read straight off a picture, without a word of
         algebra. The two rows of squares in Fig. 4.6 are one such statement.
@@ -40,27 +13,27 @@
       <figure class="c-figure c-figure--lg">
         <svg viewBox="0 0 356 356" role="img"
              aria-label="Two rows of squares. The top row has four squares with sides a plus b plus c, a plus b minus c, a minus b plus c, and a minus b minus c. The bottom row has three squares with sides two a, two b and two c.">
-      
+
           <!-- top row: sides 11, 7, 5, 1 (a = 6, b = 3, c = 2), bottoms aligned -->
           <rect class="dg-line dg-fill-a" x="10"  y="24"  width="132" height="132"/>
           <rect class="dg-line dg-fill-b" x="152" y="72"  width="84"  height="84" />
           <rect class="dg-line dg-fill-c" x="246" y="96"  width="60"  height="60" />
           <rect class="dg-line dg-fill-teal" x="316" y="144" width="12"  height="12" />
-      
+
           <text class="dg-label" x="76"  y="18">a + b + c</text>
           <text class="dg-label" x="194" y="66"  text-anchor="middle">a + b − c</text>
           <text class="dg-label" x="276" y="90"  text-anchor="middle">a − b + c</text>
           <text class="dg-label" x="322" y="176" text-anchor="middle">a − b − c</text>
-      
+
           <!-- bottom row: sides 12, 6, 4 -->
           <rect class="dg-line dg-fill-a" x="10"  y="196" width="144" height="144"/>
           <rect class="dg-line dg-fill-b" x="164" y="268" width="72"  height="72" />
           <rect class="dg-line dg-fill-c" x="246" y="292" width="48"  height="48" />
-      
+
           <text class="dg-label" x="82"  y="190" text-anchor="middle">2a</text>
           <text class="dg-label" x="200" y="262" text-anchor="middle">2b</text>
           <text class="dg-label" x="270" y="286" text-anchor="middle">2c</text>
-      
+
         </svg>
         <figcaption>
           <span class="fignum">Fig. 4.6</span> &nbsp;Two rows of squares, drawn
@@ -82,7 +55,9 @@
           <div class="c-reflect__body">
             <p>
               What identity does Fig. 4.6 state? The squares are drawn to scale,
-              so compare the two rows by <em>area</em>, not by counting shapes.
+              so compare the two rows by <em>area</em> rather than by counting
+              shapes. Then check your answer by expanding all four squares in
+              the top row.
             </p>
           </div>
         </div>
@@ -98,6 +73,13 @@
       <div class="work">
         <p>$(x + 3)(x + 4) = x^2 + 3x + 4x + 12 = x^2 + 7x + 12$</p>
       </div>
+
+      <p>
+        The same statement can be built out of tiles. Three shapes are needed: a
+        square of side $x$, a rectangle $x$ by 1, and a unit square. Then
+        $x + 3$ is one <span class="nb">$x$-tile</span> beside three unit tiles, and $x + 4$ is one
+        <span class="nb">$x$-tile</span> beside four. Fig. 4.7 lays out their product.
+      </p>
 
     </div>
   </div>

@@ -199,7 +199,7 @@ function closePages(body, marks) {
    stylesheet lays the book out in. */
 async function sheetMetrics(root, edition) {
   const src = await readFile(path.join(root, 'css', 'tokens.css'), 'utf8');
-  const over = edition && edition !== 'b5'
+  const over = edition
     ? await readFile(path.join(root, 'css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
     : '';
   const mm = (name) => {
@@ -310,7 +310,7 @@ const shell = (meta, body, cssHref = '../../css/book.css', sheet = null) => ((th
 <head>
 <meta charset="utf-8">
 <title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — Mathematics Class ${escapeHtml(meta.class)}</title>
-<link rel="stylesheet" href="${cssHref}">${meta.edition && meta.edition !== "b5" ? `
+<link rel="stylesheet" href="${cssHref}">${meta.edition ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}
 <style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }` : ``}</style>
 </head>
