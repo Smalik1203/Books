@@ -143,13 +143,33 @@
       });
       const out = await r.json();
       $('build-log').textContent = out.ok ? out.summary : ('failed — ' + out.summary);
-      if (out.ok) load();
+      if (out.ok) {
+        load();
+        // the artefacts the page was rendered without now exist
+        document.querySelectorAll('a.btn--off').forEach((a) => {
+          a.classList.remove('btn--off');
+          a.removeAttribute('aria-disabled');
+          a.removeAttribute('title');
+        });
+        const bleed = $('sheet-bleed');
+        if (bleed) { bleed.disabled = false; bleed.removeAttribute('title'); }
+      }
     } catch (e) {
       $('build-log').textContent = 'failed — ' + e.message;
     }
     btn.textContent = was;
     btn.disabled = false;
   };
+
+  /* A greyed-out download link is still a link. Without this the browser
+     follows it, saves the 404 body, and the download history fills up with
+     plausible-looking .txt files. */
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[aria-disabled="true"]');
+    if (!a) return;
+    e.preventDefault();
+    $('build-log').textContent = 'Not built yet — press Build.';
+  });
 
   sizeCard();
   load();
