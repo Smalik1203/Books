@@ -1,0 +1,633 @@
+/* ============================================================
+   THE COMPONENT LIBRARY — eight components, locked.
+
+     .c-keyidea    teal   a definition or a result to remember
+     .c-example    rust   a worked instance
+     .c-practice   teal   an exercise set
+     .c-reflect    gold   a question for the reader
+     .c-tip        teal   a one-breath aside
+     .c-figure     —      a diagram and its caption
+     .c-summary    teal   what a section established
+
+   Rules the library obeys:
+
+   1. ONLY THREE COMPONENTS ARE PANELS — key idea, example and
+      reflect. Everything else sits on the page. Running text and
+      figures must breathe; boxing them makes a page look like a
+      dashboard.
+
+   2. EACH COMPONENT USES EXACTLY ONE COLOUR. No component mixes
+      teal with rust, or rust with gold.
+
+   3. NOTHING HERE INTRODUCES A VALUE. Colours, sizes, strokes and
+      spacing all come from tokens.css.
+   ============================================================ */
+
+
+/* ============================================================
+   LEVEL 1 — CHAPTER HEAD
+   ============================================================ */
+.chapterhead { position: absolute; top: 0; left: 0; right: 0; height: 40mm; }
+
+.chapterhead__num {
+  position: absolute;
+  box-sizing: border-box;
+  left: calc(-1 * var(--bleed));
+  padding-left: var(--bleed);
+  top: 3mm;
+  width: calc(30mm + var(--bleed));
+  height: 24mm;
+  background: var(--teal);
+  border-bottom-right-radius: 7mm;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-numeral);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  line-height: 24mm;
+  text-align: center;
+}
+.chapterhead__title {
+  position: absolute;
+  left: 39mm;
+  right: 50mm;
+  top: 15mm;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: var(--size-chapter);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--rust);
+}
+.chapterhead__sketch {
+  position: absolute;
+  right: var(--margin-outside);
+  top: 15mm;
+  transform: translateY(-50%);
+  width: 42mm;
+}
+.chapterhead__sketch svg { --dg-v: 210; --dg-w: 42; }
+.chapterhead__sketch svg { display: block; width: 100%; height: auto; }
+
+.chapterhead__rule {
+  position: absolute;
+  left: 10mm;
+  right: var(--margin-outside);
+  bottom: 6mm;
+  height: 0.7mm;
+  background: var(--teal);
+  border-radius: 1mm;
+}
+.chapterhead__rule::before {
+  content: "";
+  position: absolute;
+  left: -8mm;
+  top: -1.6mm;
+  width: 9mm;
+  height: 4mm;
+  background: var(--rust);
+  border-radius: 1mm;
+  transform: skewX(-14deg);
+}
+.page--haschead .page__body { top: 45mm; }
+
+/* A chapter opener is conventionally a recto. Should one fall on a
+   verso the whole head mirrors, or it lands in the gutter. */
+.page--verso .chapterhead__num {
+  left: auto;
+  right: calc(-1 * var(--bleed));
+  padding-left: 0;
+  padding-right: var(--bleed);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 7mm;
+}
+.page--verso .chapterhead__title { left: 50mm; right: 39mm; text-align: right; }
+.page--verso .chapterhead__sketch { right: auto; left: var(--margin-outside); }
+.page--verso .chapterhead__rule { left: var(--margin-outside); right: 10mm; }
+.page--verso .chapterhead__rule::before { left: auto; right: -8mm; transform: skewX(14deg); }
+
+
+/* ============================================================
+   EQUATIONS — the visual anchors of a maths page.
+
+   Two treatments only:
+     .eq          a displayed equation. No decoration.
+     .eq--anchor  an identity the chapter turns on. Teal rules
+                  above and below, and real air around it.
+
+   Use --anchor sparingly: if every equation is anchored, none is.
+   ============================================================ */
+.eq {
+  break-inside: avoid;
+  margin: var(--space-step) 0;
+  text-align: center;
+}
+.eq .katex-display { margin: 0; }
+
+.eq--anchor {
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-rule) solid var(--teal);
+  border-bottom: var(--stroke-rule) solid var(--teal);
+}
+.eq--anchor .katex { font-size: calc(var(--size-concept) * 1.05); }
+
+
+/* Stepped working, in running text or inside a component. */
+.work {
+  margin: var(--space-tight) 0;
+  text-align: left;
+}
+.work p { margin: 0 0 1.2mm; text-align: left; }
+.work p:last-child { margin-bottom: 0; }
+.work p + p { padding-left: 9mm; }        /* continuation lines align */
+.work--centred p { text-align: center; padding-left: 0; }
+
+/* A row of working with a label on the left and a result chip. */
+.work__row {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin-bottom: 1.8mm;
+}
+.work__row:last-child { margin-bottom: 0; }
+.work__label {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-soft);
+  min-width: 24mm;
+}
+.work__label--wide { min-width: 34mm; }
+.chip {
+  background: var(--teal-tint);
+  border-radius: 1.6mm;
+  padding: 0.6mm 2.6mm;
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+}
+
+
+/* ============================================================
+   1. KEY IDEA — teal. A definition, or a result worth keeping.
+   NOT a panel: a heavy rule above, a hairline below, and the
+   statement set at full measure between them. A tinted card with
+   a rounded corner reads as an interface, not as a book.
+   ============================================================ */
+.c-keyidea {
+  break-inside: avoid;
+  margin: var(--space-rest) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-band) solid var(--teal);
+  border-bottom: var(--stroke-rule) solid var(--teal);
+  line-height: var(--lh-body);
+}
+.c-keyidea > :last-child { margin-bottom: 0; }
+.c-keyidea__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  text-align: center;
+  margin-bottom: var(--space-tight);
+}
+
+
+/* ============================================================
+   2. EXAMPLE — rust. PANEL, with a tab.
+   ============================================================ */
+.c-example {
+  break-inside: avoid;
+  position: relative;
+  margin: var(--space-step) 0;
+  padding-top: 4mm;
+}
+.c-example__tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: var(--rust);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 1.5mm 4mm;
+  border-radius: var(--radius);
+}
+.c-example__body {
+  background: var(--rust-tint);
+  border-radius: var(--radius-lg);
+  padding: 4.6mm 8mm 3.6mm;
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+  min-height: 0;
+}
+.c-example__body > p:first-child { margin-top: 0.4mm; }
+.c-example .work:last-child { margin-bottom: 0; }
+
+
+
+
+/* ============================================================
+   4. PRACTICE — teal. NOT a panel: a band header over an open
+   list, so a page of questions does not read as one huge box.
+   ============================================================ */
+.c-practice { margin-top: var(--space-rest); break-inside: avoid; }
+.c-practice__head {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 1.4mm 4mm;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-tight);
+}
+
+.c-questions { list-style: none; padding-left: 7mm; margin: 0; counter-reset: q; }
+.c-questions > li {
+  position: relative;
+  margin-bottom: var(--space-tight);
+  break-inside: avoid;
+}
+.c-questions > li::before {
+  counter-increment: q;
+  content: counter(q) ".";
+  position: absolute;
+  left: -7mm;
+  width: 6mm;
+  color: var(--teal);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+}
+
+/* Sub-parts. A grid, not CSS columns: columns fill top-to-bottom,
+   so the first row would read (i), (iii), (v). */
+.c-parts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5mm;
+  margin: var(--space-hair) 0 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: part;
+  line-height: 1.85;                 /* fractions need the room */
+}
+.c-parts > li {
+  position: relative;
+  padding-left: 8mm;
+  margin-bottom: 1mm;
+  break-inside: avoid;
+}
+.c-parts > li::before {
+  counter-increment: part;
+  content: "(" counter(part, lower-roman) ")";
+  position: absolute;
+  left: 0;
+  width: 7mm;
+  color: var(--ink-soft);
+}
+.c-parts--1 { grid-template-columns: 1fr; }
+.c-parts--3 { grid-template-columns: repeat(3, 1fr); column-gap: 4mm; }
+.c-parts--4 { grid-template-columns: repeat(4, 1fr); column-gap: 3mm; }
+
+/* the harder parts carry a star in the marker, not in the maths */
+.c-parts--starred > li { padding-left: 10mm; }
+.c-parts--starred > li::before { width: 9mm; }
+.c-parts > li.hard::before {
+  counter-increment: part;
+  content: "*(" counter(part, lower-roman) ")";
+  color: var(--rust);
+}
+
+/* a blank for the reader to fill in */
+.blank {
+  display: inline-block;
+  min-width: 13mm;
+  height: 1em;                       /* empty inline-blocks have none */
+  vertical-align: -0.16em;
+  border-bottom: var(--stroke-rule) solid var(--ink-faint);
+  margin: 0 0.4mm;
+}
+.blank--sm { min-width: 6mm; }
+.blank--lg { min-width: 22mm; }
+
+/* a parenthetical nudge under a question */
+.hint {
+  margin-top: var(--space-hair);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+.pip { font-family: var(--font-display); font-style: italic;
+       font-size: var(--size-caption); color: var(--ink-faint); }
+.pip::before { content: "["; }
+.pip::after { content: "]"; }
+
+
+/* ============================================================
+   5. REFLECT — gold. PANEL. The disc and the title band sit
+   astride the top edge as one unit, so the box keeps the full
+   measure; nothing is indented to make room for an icon.
+   ============================================================ */
+.c-reflect {
+  break-inside: avoid;
+  position: relative;
+  margin: var(--space-step) 0;
+  padding-top: 4.5mm;
+}
+.c-reflect__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 11mm;
+  height: 11mm;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 0.5mm solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-reflect__icon svg { width: 5.8mm; height: 5.8mm; }
+.c-reflect__box {
+  position: relative;
+  background: var(--gold-tint);
+  border: var(--stroke-hair) solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 7.6mm 6mm 4mm;
+}
+.c-reflect__title {
+  position: absolute;
+  left: 5.5mm;
+  top: -2mm;
+  z-index: 2;
+  background: var(--gold-deep);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 1.1mm 4.5mm 1.1mm 7.5mm;
+  border-radius: var(--radius);
+}
+.c-reflect__body {
+  position: relative;
+  z-index: 1;
+  font-size: var(--size-note);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.c-reflect__body p { margin: 0 0 1mm; }
+.c-reflect__body ol { margin: 1.4mm 0 1.8mm; padding-left: 6mm; list-style: decimal; }
+.c-reflect__body ol li { margin-bottom: 0.8mm; }
+.c-reflect__body ol li::marker { color: var(--gold-deep); font-weight: var(--weight-bold); }
+.c-reflect__body ol.c-parts { list-style: none; padding-left: 0; }
+.c-reflect__hint {
+  margin-top: 2mm;
+  padding-top: 2mm;
+  border-top: var(--stroke-hair) solid var(--gold);
+  color: var(--ink-soft);
+}
+.c-reflect__mark {
+  position: absolute;
+  right: 6mm;
+  top: 5mm;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-size: var(--size-ornament);
+  font-weight: var(--weight-bold);
+  color: var(--gold);
+  opacity: 0.14;
+  line-height: 1;
+}
+
+
+/* ============================================================
+   6. TIP — teal. NOT a panel: a disc and a rule. One breath.
+   ============================================================ */
+.c-tip {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-hair) solid var(--rule);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+.c-tip__icon {
+  flex: none;
+  width: 11mm;
+  height: 11mm;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-tip__icon svg { width: 6mm; height: 6mm; }
+.c-tip__body {
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+  color: var(--teal-deep);
+}
+.c-tip__body p { margin: 0; }
+
+
+/* ============================================================
+   7. FIGURE — no panel. A diagram sits on the page with air
+   around it; boxing every figure is what made the book look
+   like a set of cards.
+   ============================================================ */
+.c-figure {
+  break-inside: avoid;
+  margin: var(--space-rest) auto;
+  text-align: center;
+}
+.c-figure svg, .c-figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.c-figure img { mix-blend-mode: multiply; }
+
+/* A figure beside its key. The key is plain text with swatches —
+   not a second panel. */
+.c-figure--keyed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+  align-items: center;
+  text-align: left;
+}
+.c-figure--keyed > figure { margin: 0; }
+
+.c-key { font-size: var(--size-note); line-height: var(--lh-panel); }
+.c-key ul { list-style: none; margin: 0; padding: 0; }
+.c-key li { display: flex; gap: 3mm; margin-bottom: 2.4mm; }
+.c-key li:last-child { margin-bottom: 0; }
+.c-key__swatch {
+  flex: none;
+  width: 6mm;
+  height: 6mm;
+  border-radius: 1.4mm;
+  margin-top: 0.6mm;
+  border: var(--stroke-hair) solid rgba(0, 0, 0, 0.12);
+}
+/* swatches read the same tokens the diagram fills use */
+.c-key__swatch--a { background: var(--dg-a); }
+.c-key__swatch--b { background: var(--dg-b); }
+.c-key__swatch--c { background: var(--dg-c); }
+.c-key__swatch--d { background: var(--dg-d); }
+.c-key__swatch--face-front { background: var(--dg-face-front); }
+.c-key__swatch--face-top   { background: var(--dg-face-top); }
+.c-key__swatch--face-side  { background: var(--dg-face-side); }
+
+.c-key__total {
+  margin-top: 3mm;
+  padding-top: 2.6mm;
+  border-top: var(--stroke-hair) solid var(--rule);
+  font-weight: var(--weight-bold);
+  color: var(--teal-deep);
+}
+
+
+/* ============================================================
+   8. SUMMARY — teal. NOT a panel: a rule and a list.
+   ============================================================ */
+.c-summary {
+  break-inside: avoid;
+  margin: var(--space-rest) 0;
+  padding-top: var(--space-tight);
+  border-top: var(--stroke-rule) solid var(--teal);
+}
+.c-summary__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  margin-bottom: var(--space-tight);
+}
+.c-summary ol { counter-reset: key; list-style: none; padding-left: 7mm; margin: 0; }
+.c-summary ol > li {
+  position: relative;
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+  margin-bottom: var(--space-hair);
+}
+.c-summary ol > li::before {
+  counter-increment: key;
+  content: counter(key) ".";
+  position: absolute;
+  left: -7mm;
+  color: var(--teal);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+}
+
+
+/* ============================================================
+   TABLES — a book table: rules above and below the head, one
+   under the last row, nothing else.
+   ============================================================ */
+table {
+  border-collapse: collapse;
+  margin: var(--space-tight) auto;
+  font-size: var(--size-note);
+  font-variant-numeric: lining-nums;
+  break-inside: avoid;
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  color: var(--ink-soft);
+  padding-bottom: var(--space-hair);
+}
+th {
+  text-align: left;
+  font-weight: var(--weight-bold);
+  color: var(--teal);
+  border-top: var(--stroke-rule) solid var(--teal);
+  border-bottom: var(--stroke-hair) solid var(--teal);
+  padding: 1.6mm 3mm;
+}
+td { padding: 1.5mm 3mm; }
+tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
+
+
+/* ============================================================
+   ICONS — the three discs in the book. Their colour and weight
+   come from here, never from an attribute in a page file.
+   ============================================================ */
+.c-reflect__icon svg,
+.c-tip__icon svg,
+.c-key__total svg,
+.c-reflect__icon svg { stroke: var(--gold); }
+.c-tip__icon svg     { stroke: var(--paper); }
+.c-key__total svg    { stroke: var(--teal); flex: none; width: 8mm; height: 8mm; }
+.c-key__total { display: flex; gap: 3mm; align-items: center; }
+
+/* Figure size scale. A diagram's printed width is chosen from four
+   steps, not set per figure — so figures across the book relate to
+   one another instead of each finding its own size. */
+.c-figure--sm svg, .c-figure--sm img { max-width: 48mm; }
+.c-figure--md svg, .c-figure--md img { max-width: 58mm; }
+.c-figure--lg svg, .c-figure--lg img { max-width: 68mm; }
+.c-figure--xl svg, .c-figure--xl img { max-width: 82mm; }
+
+
+/* An exercise set that carries on over a page break: the second
+   list must keep counting, not restart at 1. */
+.c-questions[data-start="2"]  { counter-reset: q 1;  }
+.c-questions[data-start="3"]  { counter-reset: q 2;  }
+.c-questions[data-start="4"]  { counter-reset: q 3;  }
+.c-questions[data-start="5"]  { counter-reset: q 4;  }
+.c-questions[data-start="6"]  { counter-reset: q 5;  }
+.c-questions[data-start="7"]  { counter-reset: q 6;  }
+.c-questions[data-start="8"]  { counter-reset: q 7;  }
+.c-questions[data-start="9"]  { counter-reset: q 8;  }
+.c-questions[data-start="10"] { counter-reset: q 9;  }
+.c-questions[data-start="11"] { counter-reset: q 10; }
+.c-questions[data-start="12"] { counter-reset: q 11; }
+.c-questions[data-start="13"] { counter-reset: q 12; }
+.c-questions[data-start="14"] { counter-reset: q 13; }
+
+/* a question the book marks as harder — a star in the marker,
+   in rust, never in the question itself */
+.c-questions--starred { padding-left: 9mm; }
+.c-questions--starred > li::before { left: -9mm; width: 8mm; }
+.c-questions > li.hard::before {
+  counter-increment: q;
+  content: "*" counter(q) ".";
+  color: var(--rust);
+}
+
+/* A part whose whole item is a fraction. Left to itself the fraction
+   overflows its line box and the rows collide, so let the maths set
+   the height of the row. */
+.c-parts--tall { line-height: 1.6; }
+.c-parts--tall > li { margin-bottom: 2.4mm; }
+.c-parts--tall .katex { display: inline-block; vertical-align: middle; }
+
+/* A stack of independent statements rather than one calculation:
+   no continuation indent, and a little more air between lines. */
+.work--list p + p { padding-left: 0; }
+.work--list p { margin-bottom: 2mm; }

@@ -1,0 +1,47 @@
+<p>The same holds for the other pair, <m>\angle ABC</m> and <m>\angle ADC</m>, by the
+identical argument on the arcs through <m>D</m> and through <m>B</m>. And the
+converse is true as well.</p>
+
+<div class="c-example">
+  <div class="c-example__tab">Example 12</div>
+  <div class="c-example__body">
+    <p>A cyclic quadrilateral <m>ABCD</m> has <m>\angle A = 95^\circ</m> and
+    <m>\angle B = 70^\circ</m>. Find its other two angles.</p>
+    <p>Theorem 11 pairs each angle with the one <em>opposite</em> it, never with a
+    neighbour. So <m>A</m> goes with <m>C</m>, and <m>B</m> with <m>D</m>.</p>
+    <div class="work">
+      <div class="work__row"><span class="work__label">A with C</span>
+        <span><m>\angle C = 180^\circ - 95^\circ</m></span>
+        <span class="chip"><m>85^\circ</m></span></div>
+      <div class="work__row"><span class="work__label">B with D</span>
+        <span><m>\angle D = 180^\circ - 70^\circ</m></span>
+        <span class="chip"><m>110^\circ</m></span></div>
+    </div>
+    <p>Check the total: <m>95 + 70 + 85 + 110 = 360</m>, which the angles of any
+    quadrilateral must come to. That check is worth doing every time, because it
+    catches the commonest slip here — pairing angles that sit next to each other
+    instead of across from each other.</p>
+  </div>
+</div>
+
+<div class="c-keyidea">
+  <div class="c-keyidea__title">Theorem 12</div>
+  <p>If two opposite angles of a quadrilateral add up to <m>180^\circ</m>, then its
+  four vertices are concyclic.</p>
+</div>
+
+<p>The proof runs like Theorem 10's — by showing the fourth vertex has nowhere else
+to go. Suppose <m>\angle BAD + \angle BCD = 180^\circ</m>. Since <m>A</m>, <m>B</m>,
+<m>D</m> are not collinear there is a circle through them; suppose <m>C</m> lay
+outside it, and let <m>E</m> be where <m>DC</m> meets the circle. Then <m>ABED</m> is
+cyclic, so Theorem 11 gives <m>\angle BAD + \angle BED = 180^\circ</m>. Comparing
+with what we were given, <m>\angle BED = \angle BCD</m>. But <m>\angle BED</m> is an
+exterior angle of <m>\triangle BEC</m> and so exceeds <m>\angle BCE</m>, which is
+<m>\angle BCD</m>. Once again a quantity is greater than itself. The case with
+<m>C</m> inside is the same argument with the roles exchanged, and is worth writing
+out.</p>
+
+<h3>Closing an old debt</h3>
+
+<p>Twice now this chapter has promised that the circumcentre of a right-angled
+triangle sits at the midpoint of the hypotenuse. Theorem 10 pays up.</p>
