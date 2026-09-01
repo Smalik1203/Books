@@ -1,0 +1,72 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The proof runs like Theorem 10's — by showing the fourth vertex has nowhere else
+      to go. Suppose $\angle BAD + \angle BCD = 180^\circ$. Since $A$, $B$,
+      $D$ are not collinear there is a circle through them; suppose $C$ lay
+      outside it, and let $E$ be where $DC$ meets the circle. Then $ABED$ is
+      cyclic, so Theorem 11 gives $\angle BAD + \angle BED = 180^\circ$. Comparing
+      with what we were given, $\angle BED = \angle BCD$. But $\angle BED$ is an
+      exterior angle of $\triangle BEC$ and so exceeds $\angle BCE$, which is
+      $\angle BCD$. Once again a quantity is greater than itself. The case with
+      $C$ inside is the same argument with the roles exchanged, and is worth writing
+      out.</p>
+
+      <h3>Closing an old debt</h3>
+
+      <p>Twice now this chapter has promised that the circumcentre of a right-angled
+      triangle sits at the midpoint of the hypotenuse. Theorem 10 pays up.</p>
+
+      <p>Let $\triangle ABD$ have its right angle at $D$, and let $M$ be the
+      midpoint of the hypotenuse $AB$. Draw the circle with centre $M$ and radius
+      $MA$, so that $AB$ is a diameter of it, and mark any point $D'$ of
+      that circle on the same side of $AB$ as $D$. By the corollary in Section
+      5.8, $\angle AD'B = 90^\circ$ — which is also $\angle ADB$. Two points,
+      equal angles, same side: by Theorem 10 the four points $A$, $B$, $D'$
+      and $D$ are concyclic, so $D$ is on that circle too. Its centre $M$ is
+      therefore equidistant from $A$, $B$ and $D$ — which is exactly what it
+      means to be the circumcentre.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>A quadrilateral has angles $85^\circ$, $100^\circ$, $95^\circ$
+          and $80^\circ$, taken in order round the shape. Can a circle be drawn through
+          all four vertices?</p>
+          <p>Theorem 12 is the test, and it is a test on opposite pairs — so the angles have
+          to be paired first and second with third and fourth, not as they are listed.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label work__label--wide">first and third</span>
+              <span>$85^\circ + 95^\circ$</span>
+              <span class="chip">$180^\circ$</span></div>
+            <div class="work__row"><span class="work__label work__label--wide">second and fourth</span>
+              <span>$100^\circ + 80^\circ$</span>
+              <span class="chip">$180^\circ$</span></div>
+          </div>
+          <p>Both pairs come to $180^\circ$, so by Theorem 12 the four vertices are
+          concyclic and the circle can be drawn. In fact only one pair ever needs checking:
+          all four angles total $360^\circ$, so if one opposite pair makes
+          $180^\circ$ the other pair has no choice but to do the same.</p>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.7</div>
+        <ol class="c-questions">
+          <li>A cyclic quadrilateral has $\angle A = 75^\circ$ and
+            $\angle B = 110^\circ$. Find $\angle C$ and $\angle D$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>A quadrilateral has angles $80^\circ$, $110^\circ$,
+            $100^\circ$ and $70^\circ$, in that order round the shape. Can it be
+            cyclic? Can it be drawn at all?</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
