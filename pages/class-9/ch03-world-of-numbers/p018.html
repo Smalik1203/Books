@@ -1,0 +1,81 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>
+            Will $\dfrac{3}{20}$ terminate? Decide without dividing, then
+            check.
+          </p>
+          <p>
+            A terminating decimal is one that can be written over $10$, $100$,
+            $1000$ and so on. So the question is whether $20$ can be turned
+            into a power of ten by multiplying it by something.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">factorise 20</span>
+              <span>$20 = 2^2 \times 5$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">a power of ten is</span>
+              <span>$10^n = 2^n \times 5^n$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">what is missing</span>
+              <span>one more 5, to match the two 2s</span>
+              <span class="chip">$\times \dfrac{5}{5}$</span>
+            </div>
+          </div>
+          <p>So multiply top and bottom by 5, which changes nothing:</p>
+          <div class="work work--centred">
+            <p>$\dfrac{3}{20} = \dfrac{3 \times 5}{2^2 \times 5 \times 5}
+               = \dfrac{15}{100} = 0.15$</p>
+          </div>
+          <p>
+            It terminates, in two places. Had the denominator contained any
+            prime other than 2 or 5 — a 3, say, or an 11 — no multiplier could
+            ever have cleared it, because a power of ten contains no such
+            factor to cancel against.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Which decimals terminate</div>
+        <p>
+          Let $\dfrac{p}{q}$ be a rational number in lowest terms. Its decimal
+          expansion terminates exactly when the only prime factors of $q$ are
+          2 and 5. Otherwise it repeats.
+        </p>
+      </div>
+
+      <p>
+        The words <em>in lowest terms</em> are doing real work there. Written
+        as $\tfrac{6}{40}$ the same number looks no different, but $40$ has the
+        same prime factors as $20$, so the test survives cancelling — try it on
+        a fraction that is not in lowest terms and you may get the wrong answer
+        for the right reason.
+      </p>
+
+      <h3>Going back: from a decimal to a fraction</h3>
+
+      <p>
+        Every terminating or repeating decimal is a rational number, so each
+        one must be $\tfrac{p}{q}$ for some integers. Finding them takes three
+        different techniques, according to where the repetition starts.
+      </p>
+
+      <p>
+        A decimal that terminates needs no technique at all — it can simply be
+        read. One that repeats from the very first digit needs a short piece of
+        algebra. And one that settles into its cycle only after a few stray
+        digits needs the same algebra with one extra step. The three examples
+        that follow take them in that order.
+      </p>
+
+    </div>
+  </div>
+</section>

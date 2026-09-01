@@ -19,10 +19,15 @@
      Tints exist only as panel backgrounds. Ink and rules are
      neutral and belong to no component.
      ========================================================== */
-  --teal:       #12503f;
-  --teal-deep:  #0c3a2d;
-  --teal-soft:  #4a8271;
-  --teal-tint:  #e7f0ec;
+  /* The structure colour is the one a chapter may own, so that two
+     chapters do not read identically on the page. The builder supplies
+     --ch-structure-* when a chapter declares a palette; with none, these
+     fall back to the teal the book was built in and nothing changes.
+     Action and attention below stay common to the whole book. */
+  --teal:       var(--ch-structure,      #12503f);
+  --teal-deep:  var(--ch-structure-deep, #0c3a2d);
+  --teal-soft:  var(--ch-structure-soft, #4a8271);
+  --teal-tint:  var(--ch-structure-tint, #e7f0ec);
 
   --rust:       #b4462a;
   --rust-deep:  #8d3520;
@@ -52,7 +57,7 @@
   --size-caption: 9pt;   /* figure captions, hints, folio */
   --size-note: 10.5pt;   /* panel text, legends, exercises */
   --size-body: 11.5pt;   /* running text */
-  --size-concept: 12.5pt;   /* concept heading (level 3) */
+  --size-concept: 13.5pt;   /* concept heading (level 3) */
   --size-section: 16.5pt;     /* section heading (level 2) */
   --size-chapter: 27pt;     /* chapter title (level 1) */
   --size-numeral: 44pt;     /* chapter numeral */

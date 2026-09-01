@@ -1,0 +1,52 @@
+<p>Both positions are ruled out, so <m>D</m> lies on the circle through <m>A</m>,
+<m>B</m> and <m>C</m>. The four points are concyclic.</p>
+
+<p>A quadrilateral whose four vertices are concyclic is called a
+<span class="term">cyclic quadrilateral</span>. Theorem 10 tells us when four points
+form one; the next result tells us what we get in return.</p>
+
+<div class="c-keyidea">
+  <div class="c-keyidea__title">Theorem 11</div>
+  <p>The two opposite angles of a cyclic quadrilateral add up to
+  <m>180^\circ</m>.</p>
+</div>
+
+<p>Let <m>ABCD</m> be cyclic, with centre <m>O</m>, and consider the two opposite
+angles at <m>A</m> and at <m>C</m>. Each is an angle subtended by an arc at a point
+of the circle outside it, so Theorem 9 applies to both — and the trick is to be
+careful about <em>which</em> arc.</p>
+
+<div class="work work--list">
+  <p><m>\angle BAD</m> is subtended at <m>A</m> by the arc from <m>B</m> to <m>D</m>
+  that passes through <m>C</m>. So it is half the angle that arc sweeps at <m>O</m>.</p>
+  <p><m>\angle BCD</m> is subtended at <m>C</m> by the arc from <m>B</m> to <m>D</m>
+  that passes through <m>A</m>. So it is half the angle <em>that</em> arc sweeps at
+  <m>O</m>.</p>
+</div>
+
+<p>Between them the two arcs make up the whole circle, so the two angles they sweep
+at <m>O</m> add to a complete turn of <m>360^\circ</m>. Halving,</p>
+
+<div class="eq eq--anchor">
+  <md>\angle BAD + \angle BCD = \tfrac{1}{2}\times 360^\circ = 180^\circ</md>
+</div>
+
+<div class="c-figure c-figure--md">
+  <figure>
+    <svg viewBox="20 24 156 152" data-size="md" xmlns="http://www.w3.org/2000/svg"
+         role="img" aria-label="A quadrilateral with all four vertices on a circle">
+      <circle class="dg-line" cx="100" cy="100" r="70"/>
+      <path class="dg-line" d="M34.22 76.06 L135 39.38 L153.62 145 L42.66 140.15 Z"/>
+      <path class="dg-thin" d="M100 100 L135 39.38"/>
+      <path class="dg-thin" d="M100 100 L42.66 140.15"/>
+      <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
+      <text class="dg-label" x="28"  y="73"  text-anchor="end">A</text>
+      <text class="dg-label" x="139" y="35">B</text>
+      <text class="dg-label" x="159" y="150">C</text>
+      <text class="dg-label" x="37"  y="149" text-anchor="end">D</text>
+      <text class="dg-label" x="96"  y="112" text-anchor="end">O</text>
+    </svg>
+    <figcaption><span class="fignum">Fig. 5.14</span> A cyclic quadrilateral. The arcs
+    <m>BAD</m> and <m>BCD</m> together make the whole circle.</figcaption>
+  </figure>
+</div>

@@ -2,107 +2,92 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">4.9</span><span class="name">Putting Factorisation to Work</span></h2>
-
-      <p>
-        Every question in the chapter so far has arrived already stripped down
-        to an expression, with the word <em>factorise</em> attached. Outside a
-        textbook they do not come that way. A question turns up as an area, a
-        volume, a length someone has measured — and factorising is what turns
-        that one measured quantity back into the dimensions that produced it.
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 17</div>
-        <div class="c-example__body">
-          <p>
-            Saira has one square tile of side $x$ units, eight rectangular
-            strips $x$ units long and 1 unit wide, and fifteen small squares of
-            side 1 unit. She fits all of them together, with no gaps and no
-            overlaps, into a single larger rectangle. What are its sides?
-          </p>
-          <p>
-            Nothing is said about how the pieces are arranged, and nothing needs
-            to be. Whatever the arrangement, the area of the rectangle is the
-            total area of the tiles:
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">square</span>
-              <span>$1 \times x^2 = x^2$ sq. units</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">strips</span>
-              <span>$8 \times x \times 1 = 8x$ sq. units</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">units</span>
-              <span>$15 \times 1 = 15$ sq. units</span>
-            </div>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              You could have found that pool by trial: $11 \times 7 = 77$,
+              then $12 \times 8 = 96$.
+            </p>
+            <p class="c-reflect__hint">
+              So why bother? Say what the search by trial does <em>not</em> tell
+              you that the factorised form does — and what would happen to the
+              search if the area were 96.25 square metres.
+            </p>
           </div>
-          <p>
-            So the rectangle has area $x^2 + 8x + 15$ square units. Its sides
-            are two expressions that multiply to give this — which is to say,
-            its factors. Two numbers with sum 8 and product 15: the pair is 3
-            and 5.
-          </p>
-          <div class="work">
-            <p>$x^2 + 8x + 15 = (x + 3)(x + 5)$</p>
-          </div>
-          <p>
-            The rectangle is $x + 5$ units long and $x + 3$ units wide. Fig.
-            4.11 shows the pieces in place; count them and check that all
-            twenty-four are used.
-          </p>
         </div>
       </div>
 
-      <figure class="c-figure c-figure--md">
-        <svg viewBox="0 0 244 184" role="img"
-             aria-label="One x squared tile, eight x tiles and fifteen unit tiles arranged into a rectangle of length x plus five and width x plus three">
-      
-          <!-- x = 3 units, unit = 22px -->
-          <g class="dg-line dg-fill-a">
-            <rect x="56" y="40" width="66" height="66"/>
-          </g>
-          <text class="dg-label" x="89" y="78" text-anchor="middle">x²</text>
-      
-          <!-- five x-tiles standing along the right of the square -->
-          <g class="dg-line dg-fill-b">
-            <rect x="122" y="40" width="22" height="66"/>
-            <rect x="144" y="40" width="22" height="66"/>
-            <rect x="166" y="40" width="22" height="66"/>
-            <rect x="188" y="40" width="22" height="66"/>
-            <rect x="210" y="40" width="22" height="66"/>
-          </g>
-      
-          <!-- three x-tiles lying below it -->
-          <g class="dg-line dg-fill-b">
-            <rect x="56" y="106" width="66" height="22"/>
-            <rect x="56" y="128" width="66" height="22"/>
-            <rect x="56" y="150" width="66" height="22"/>
-          </g>
-      
-          <!-- fifteen unit tiles filling the corner -->
-          <g class="dg-line dg-fill-d">
-            <rect x="122" y="106" width="22" height="22"/><rect x="144" y="106" width="22" height="22"/><rect x="166" y="106" width="22" height="22"/><rect x="188" y="106" width="22" height="22"/><rect x="210" y="106" width="22" height="22"/>
-            <rect x="122" y="128" width="22" height="22"/><rect x="144" y="128" width="22" height="22"/><rect x="166" y="128" width="22" height="22"/><rect x="188" y="128" width="22" height="22"/><rect x="210" y="128" width="22" height="22"/>
-            <rect x="122" y="150" width="22" height="22"/><rect x="144" y="150" width="22" height="22"/><rect x="166" y="150" width="22" height="22"/><rect x="188" y="150" width="22" height="22"/><rect x="210" y="150" width="22" height="22"/>
-          </g>
-      
-          <line class="dg-dim" x1="56" y1="26" x2="232" y2="26"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-dim-label" x="144" y="19" text-anchor="middle">x + 5</text>
-      
-          <line class="dg-dim" x1="40" y1="40" x2="40" y2="172"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-dim-label" x="32" y="110" text-anchor="end">x + 3</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 4.11</span> &nbsp;Saira's twenty-four tiles,
-          arranged as a rectangle of area $x^2 + 8x + 15$.
-        </figcaption>
-      </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">End-of-Chapter Exercises</div>
+        <ol class="c-questions">
+          <li>
+                                Choose a suitable identity and use it to expand each product.
+                                <ol class="c-parts">
+                                  <li>$(-3x + 4)^2$</li>
+                                  <li>$(2s + 7)(2s - 7)$</li>
+                                  <li>$\left(p^2 + \frac{1}{2}\right)\left(p^2 - \frac{1}{2}\right)$</li>
+                                  <li>$(2n + 7)(2n + 3)$</li>
+                                  <li>$(s - 2t)\left(s^2 + 2st + 4t^2\right)$</li>
+                                  <li>$\left(\frac{1}{2}r - \frac{4}{r}\right)^2$</li>
+                                  <li>$(-3m + 4k - l)^2$</li>
+                                  <li>$\left(xy - \frac{1}{3}\right)^3$</li>
+                                  <li>$\left(\frac{7}{2}k - \frac{2}{3}m\right)^3$</li>
+                                </ol>
+                              </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>
+                                Evaluate each of these using an identity, not a long multiplication.
+                                <ol class="c-parts c-parts--4">
+                                  <li>$17 \times 21$</li>
+                                  <li>$104 \times 96$</li>
+                                  <li>$24 \times 16$</li>
+                                  <li>$147^3$</li>
+                                  <li>$199^3$</li>
+                                  <li>$127^3$</li>
+                                  <li>$(-107)^3$</li>
+                                  <li>$(-299)^3$</li>
+                                </ol>
+                                <p class="hint">
+                                  Each number here is a round one nudged a little — write it that way first.
+                                </p>
+                              </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>
+                                Factorise.
+                                <ol class="c-parts">
+                                  <li>$4y^2 + y + \frac{1}{16}$</li>
+                                  <li>$9m^2 - \frac{n^2}{25}$</li>
+                                  <li>$27b^3 - \frac{1}{64b^3}$</li>
+                                  <li>$x^2 + \frac{5x}{6} + \frac{1}{6}$</li>
+                                  <li>$27u^3 - \frac{27u^2}{5} + \frac{9u}{25} - \frac{1}{125}$</li>
+                                  <li>$64y^3 + \frac{z^3}{125}$</li>
+                                  <li>$p^3 + q^3 + 27r^3 - 9pqr$</li>
+                                  <li>$9m^2 - 12m + 4$</li>
+                                  <li>$8x^3 - 27y^3 + z^3 + 18xyz$</li>
+                                  <li>$4x^2 + 9y^2 + 36z^2 + 12xy + 36yz + 24zx$</li>
+                                  <li>$27u^3 - \frac{9u^2}{2} + \frac{u}{4} - \frac{1}{216}$</li>
+                                </ol>
+                              </li>
+        </ol>
+      </div>
 
     </div>
   </div>

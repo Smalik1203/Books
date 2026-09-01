@@ -108,3 +108,62 @@
 .dg-grid   { stroke: var(--rule-soft); stroke-width: 0.7; fill: none; }
 .dg-sketch { stroke: var(--teal-soft); stroke-width: 1.5; fill: none; stroke-linecap: round; }
 .dg-doodle { stroke: var(--rule); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+
+/* ---- Coordinate graphs ------------------------------------
+   A graph is not a picture of a shape. It is a frame — a unit
+   grid and a pair of axes — with one or more plotted relations
+   laid over it, and the two must not compete: the grid is the
+   faintest thing in the figure, the axes are quiet structure,
+   and only the plotted line carries mathematics. So the line
+   takes a working colour and the frame never does.
+
+   Where several relations share one pair of axes they are told
+   apart the way the fills are — by role, in a fixed order — so
+   the same relation keeps its colour across a series of figures
+   (Fig. 2.12 A, B, C and their combination all obey this).
+
+   Axes carry no arrowhead. The book defines exactly one marker
+   and it is rust, which here would read as a measurement; the
+   plotted line running out to the frame says "continues" well
+   enough without it. */
+.dg-axis {                       /* the two axes of a graph */
+  stroke: var(--ink-soft);
+  stroke-width: var(--stroke-dim);
+  fill: none;
+}
+.dg-tick {                       /* an axis numeral — upright, not a quantity */
+  font-family: var(--font-body);
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+  font-weight: var(--weight-text);
+  font-variant-numeric: lining-nums;
+  fill: var(--ink-soft);
+}
+.dg-plot {                       /* a plotted relation — first role */
+  stroke: var(--teal);
+  stroke-width: var(--stroke-line);
+  fill: none;
+  stroke-linecap: round;
+}
+.dg-plot--b { stroke: var(--rust); }      /* second role */
+.dg-plot--c { stroke: var(--dg-b); }     /* third role — the diagram
+   palette's green, not a working colour. A chapter may own the structure
+   hue, so .dg-plot follows it; if the third line followed gold as well, a
+   warm chapter would put three warm lines on one pair of axes. */
+
+/* A label naming a plotted relation sits in the open field of the
+   graph, where a grid line or another plot may pass behind it. Give
+   it a knockout in the paper colour so the type is never struck
+   through — the halo scales with the figure exactly as the type
+   does, or it would be a hairline in one figure and a blob in the
+   next. */
+.dg-plot-label {
+  font-family: var(--font-body);
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+  font-style: italic;
+  font-weight: var(--weight-text);
+  fill: var(--ink);
+  paint-order: stroke fill;
+  stroke: var(--paper);
+  stroke-width: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 0.36px);
+  stroke-linejoin: round;
+}

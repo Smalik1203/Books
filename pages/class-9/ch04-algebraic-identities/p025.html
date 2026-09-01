@@ -2,52 +2,118 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.5</div>
-        <ol class="c-questions">
-          <li>
-                                Simplify. In every part, assume that the denominator is not zero.
-                                <ol class="c-parts c-parts--1 c-parts--tall">
-                                  <li>$\dfrac{3p^2 - 3pq - 18q^2}{3p^2 + 10pq + 8q^2}$</li>
-                                  <li>$\dfrac{n^3 - 3n^2m + 3nm^2 - m^3}{5m^2 - 10mn + 5n^2}$</li>
-                                  <li>$\dfrac{w^3 - v^3 + x^3 + 3wvx}{w^2 + v^2 + x^2 + wv + vx - wx}$</li>
-                                  <li>$\dfrac{4y^2 - 20yz + 25z^2}{25z^2 - 4y^2}$</li>
-                                  <li>$\dfrac{\left(x^2 + 6x - 7\right)\left(x^2 - 7x + 12\right)}{\left(x^2 - 6x + 8\right)\left(x^2 - 9\right)}$</li>
-                                  <li>$\dfrac{p^4 - 16}{p^2 - 4p + 4}$</li>
-                                </ol>
-                                <p class="hint">
-                                  Part (iv) rewards a careful look at the order of the letters, and
-                                  part (vi) needs the difference of squares twice.
-                                </p>
-                              </li>
-        </ol>
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 0 244 184" role="img"
+             aria-label="One x squared tile, eight x tiles and fifteen unit tiles arranged into a rectangle of length x plus five and width x plus three">
+      
+          <!-- x = 3 units, unit = 22px -->
+          <g class="dg-line dg-fill-a">
+            <rect x="56" y="40" width="66" height="66"/>
+          </g>
+          <text class="dg-label" x="89" y="78" text-anchor="middle">x²</text>
+      
+          <!-- five x-tiles standing along the right of the square -->
+          <g class="dg-line dg-fill-b">
+            <rect x="122" y="40" width="22" height="66"/>
+            <rect x="144" y="40" width="22" height="66"/>
+            <rect x="166" y="40" width="22" height="66"/>
+            <rect x="188" y="40" width="22" height="66"/>
+            <rect x="210" y="40" width="22" height="66"/>
+          </g>
+      
+          <!-- three x-tiles lying below it -->
+          <g class="dg-line dg-fill-b">
+            <rect x="56" y="106" width="66" height="22"/>
+            <rect x="56" y="128" width="66" height="22"/>
+            <rect x="56" y="150" width="66" height="22"/>
+          </g>
+      
+          <!-- fifteen unit tiles filling the corner -->
+          <g class="dg-line dg-fill-d">
+            <rect x="122" y="106" width="22" height="22"/><rect x="144" y="106" width="22" height="22"/><rect x="166" y="106" width="22" height="22"/><rect x="188" y="106" width="22" height="22"/><rect x="210" y="106" width="22" height="22"/>
+            <rect x="122" y="128" width="22" height="22"/><rect x="144" y="128" width="22" height="22"/><rect x="166" y="128" width="22" height="22"/><rect x="188" y="128" width="22" height="22"/><rect x="210" y="128" width="22" height="22"/>
+            <rect x="122" y="150" width="22" height="22"/><rect x="144" y="150" width="22" height="22"/><rect x="166" y="150" width="22" height="22"/><rect x="188" y="150" width="22" height="22"/><rect x="210" y="150" width="22" height="22"/>
+          </g>
+      
+          <line class="dg-dim" x1="56" y1="26" x2="232" y2="26"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="144" y="19" text-anchor="middle">x + 5</text>
+      
+          <line class="dg-dim" x1="40" y1="40" x2="40" y2="172"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="32" y="110" text-anchor="end">x + 3</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.11</span> &nbsp;Saira's twenty-four tiles,
+          arranged as a rectangle of area $x^2 + 8x + 15$.
+        </figcaption>
+      </figure>
+
+      <p>
+        That question handed you the pieces and asked what they made. The next
+        one goes the other way: it hands you the finished rectangle — its area,
+        and how its two sides are related — and asks what those sides measure.
+      </p>
+
+      <div class="c-example c-example--head">
+        <div class="c-example__tab">Example 18</div>
+        <div class="c-example__body">
+          <p>
+            A rectangular pool is 4 metres narrower than it is long, and its
+            surface covers 96 square metres. How long and how wide is it?
+          </p>
+          <p>
+            Let the length be $x$ metres. The breadth is then $x - 4$ metres,
+            and the area gives an equation:
+          </p>
+          <div class="work">
+            <p>$x(x - 4) = 96, \quad\text{so}\quad x^2 - 4x - 96 = 0$</p>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-                                Devi cancels the $x^2$ from the top and the bottom of
-                                $\frac{x^2 + 5x}{x^2 + 5}$ and reports the answer as
-                                $\frac{5x}{5} = x$. Put $x = 2$ into the original expression and
-                                into her answer. What has she cancelled that she was not entitled
-                                to cancel?
-                              </li>
-        </ol>
+      <div class="c-example c-example--tail">
+        <div class="c-example__body">
+          <p>
+            Now split the middle term. Two numbers with product $-96$ and sum $-4$:
+            since $(-12) \times 8 = -96$ and $(-12) + 8 = -4$, write $-4x$ as
+            $-12x + 8x$.
+          </p>
+          <div class="work">
+            <p>$x^2 - 12x + 8x - 96 = x(x - 12) + 8(x - 12) = (x - 12)(x + 8)$</p>
+          </div>
+          <p>
+            So $(x - 12)(x + 8) = 0$, which means $x - 12 = 0$ or $x + 8 = 0$;
+            that is, $x = 12$ or $x = -8$. But $x$ is the length of a pool, so
+            it cannot be negative. The length is 12 metres and the breadth is
+            $12 - 4 = 8$ metres — and <span class="nb">$12 \times 8 = 96$,</span>
+            as required.
+          </p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-                                Simplify each of these, then say which values of the letter had to
-                                be ruled out for the simplification to be legitimate.
-                                <ol class="c-parts c-parts--tall">
-                                  <li>$\dfrac{x^2 - 9}{x^2 - x - 6}$</li>
-                                  <li>$\dfrac{2a^2 - 8}{a^2 + 4a + 4}$</li>
-                                  <li>$\dfrac{t^3 - 1}{t^2 - 1}$</li>
-                                </ol>
-                              </li>
-        </ol>
+      <p>
+        Something new happened there. Every earlier use of factorising
+        <em>rewrote an expression</em>; this one <em>solved an equation</em>.
+        The step that allowed it is easy to walk past:
+      </p>
+
+      <div class="eq">
+        $$\text{if } AB = 0, \text{ then } A = 0 \text{ or } B = 0$$
       </div>
+
+      <p>
+        Nothing like this holds for any other number. That
+        $(x - 12)(x + 8) = 5$ tells you nothing about either bracket, because 5
+        splits as a product in endlessly many ways — but zero cannot. So the
+        equation had to be rearranged with 0 on one side <em>before</em>
+        factorising.
+      </p>
+
+      <p>
+        The last step is worth a habit too: the algebra offered two answers,
+        the situation kept one.
+      </p>
 
     </div>
   </div>

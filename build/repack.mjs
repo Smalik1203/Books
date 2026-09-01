@@ -146,6 +146,37 @@ async function measure(htmlPath) {
    is its height plus whichever margin is larger at the join. */
 const isHeading = (b) => b.tag === 'h2' || b.tag === 'h3';
 
+/* A heading that clears the page edge by a hair is still stranded: the
+   reader gets a section title and three lines, then a page turn. So a
+   heading has to bring a real opening with it — a sixth of the text
+   block, roughly five lines — or it waits for the next page. */
+const MIN_AFTER_HEAD = 0.16;
+
+/* Would this heading seat a real opening in the `room` left under it?
+   Blocks are atomic, so counting raw heights lies: the paragraph after
+   the heading may be three lines and the block after that a figure
+   that was never going to fit. Only what actually lands here counts.
+   A section shorter than the quota is judged against its own length.
+
+   This has to charge each block exactly what the packing loop below
+   charges it — collapsed margin and all. Costing a block at h + mt
+   when the loop pays max(prevMb, mt) reads as a few millimetres of
+   optimism per block, which is the difference between predicting five
+   lines under a heading and printing three. */
+function opensWell(flat, i, room, avail, headMb) {
+  const quota = avail * MIN_AFTER_HEAD;
+  let seated = 0, whole = 0, prevMb = headMb;
+  for (let k = i + 1; k < flat.length; k++) {
+    if (isHeading(flat[k]) && whole > 0) break;   // an h2 may lead straight into an h3
+    const cost = Math.max(prevMb, flat[k].mt) + flat[k].h;
+    whole += cost;
+    if (seated + cost > room) break;
+    seated += cost;
+    prevMb = flat[k].mb;
+  }
+  return seated >= Math.min(quota, whole);
+}
+
 function pack(pages) {
   const flat = [];
   for (const [p, page] of pages.entries()) {
@@ -158,12 +189,14 @@ function pack(pages) {
 
   const push = () => { out.push(page); };
 
-  for (const b of flat) {
+  for (const [idx, b] of flat.entries()) {
     const join = Math.max(prevMb, b.mt);
     const cost = (page.blocks.length ? join : 0) + b.h;
+    const stranded = isHeading(b)
+      && !opensWell(flat, idx, page.avail - page.used - cost, page.avail, b.mb);
     // margins collapse in ways this arithmetic only approximates, so
     // leave a little air rather than shipping a page that overflows
-    if (page.blocks.length && page.used + cost > page.avail) {
+    if (page.blocks.length && (page.used + cost > page.avail || stranded)) {
       // never strand a heading at the foot of a page
       while (page.blocks.length && isHeading(page.blocks[page.blocks.length - 1])) {
         const moved = page.blocks.pop();

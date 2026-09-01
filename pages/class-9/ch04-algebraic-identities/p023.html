@@ -2,81 +2,84 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 15</div>
+      <div class="c-example c-example--tail">
         <div class="c-example__body">
           <p>
-            Three numbers add to 10, multiply to 25, and their squares add to
-            38. What do their cubes add to?
+            The factor $x - 4$ appears top and bottom, so it cancels — and it
+            is allowed to, because $x - 4$ cannot be zero here: if it were, the
+            whole denominator would be zero, which we were told it is not.
           </p>
-          <p>
-            Call them $x$, $y$ and $z$, so $x + y + z = 10$, $xyz = 25$ and
-            $x^2 + y^2 + z^2 = 38$. Substituting into the identity:
-          </p>
-          <div class="work">
-            <p>$10\left(38 - (xy + xz + yz)\right) = x^3 + y^3 + z^3 - 3(25)$</p>
-            <p>$x^3 + y^3 + z^3 = 455 - 10(xy + xz + yz)$</p>
-          </div>
-          <p>
-            One quantity is still missing: $xy + xz + yz$. Nothing in the
-            question gives it directly — but the squared identity from
-            Section 4.4 does, because it is the only place that quantity ever
-            appears:
-          </p>
-          <div class="work">
-            <p>$(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + xz + yz)$</p>
-            <p>$100 = 38 + 2(xy + xz + yz), \quad\text{so}\quad xy + xz + yz = 31$</p>
-          </div>
-          <p>Putting that back:</p>
-          <div class="work">
-            <p>$x^3 + y^3 + z^3 = 455 - 10(31) = 455 - 310 = 145$</p>
+          <div class="work work--centred">
+            <p>$\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100} = \dfrac{x - 3}{5(x + 5)}$</p>
           </div>
         </div>
       </div>
 
       <p>
-        Notice that the three numbers were never found. They did not need to be:
-        the identities work with the sums and products directly.
+        One caution. The two agree wherever the original makes sense, but not
+        everywhere: at $x = 4$ the simplified form gives $\frac{1}{45}$, while
+        the original reads $\frac{0}{0}$.
       </p>
 
-      <h2><span class="badge">4.8</span><span class="name">Simplifying Rational Expressions</span></h2>
-
-      <p>
-        Everything so far has been about turning expressions into products. Here
-        is where that pays off. A <span class="term">rational expression</span>
-        is one algebraic expression divided by another, and simplifying it means
-        the same thing as simplifying a fraction of numbers: cancel whatever the
-        top and the bottom have in common.
-      </p>
-
-      <p>
-        You cannot cancel a term, only a factor. So before anything can be
-        cancelled, both the numerator and the denominator have to be
-        <em>factorised</em> — which is exactly what this chapter has been
-        teaching you to do.
-      </p>
-
-      <p>
-        So simplifying is a three-step routine: factorise the top, factorise the
-        bottom, then strike out the factors they share. Almost all of the work
-        is in the first two steps. The cancelling itself is the easy part, and
-        it is also where the temptation to cheat arrives.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/>
-            <path d="M15 3.5v17"/><path d="M3.5 15h17"/>
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
           </svg>
         </div>
-        <div class="c-tip__body">
-          <p>$\frac{x^2 - 9}{x - 3}$ simplifies to $x + 3$, because the top is
-            the product $(x - 3)(x + 3)$ and $x - 3$ is one of its factors. But
-            $\frac{x^2 + 9}{x + 3}$ simplifies to nothing at all: $x^2 + 9$ is a
-            sum, and $x + 3$ is not a factor of it. Striking out matching
-            symbols is not cancelling.</p>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Simplify this one, assuming $t^2 + 2ts - 48s^2 \neq 0$:
+            </p>
+            <div class="work work--centred">
+              <p>$\dfrac{36s^2 - 12st + t^2}{t^2 + 2ts - 48s^2}$</p>
+            </div>
+            <p class="c-reflect__hint">
+              The numerator is one of the identities from Section 4.2 in
+              disguise. For the denominator, look for two numbers with sum $2s$
+              and product $-48s^2$. One factor will then appear on both lines —
+              but check the order of the letters before you cancel.
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.5</div>
+        <ol class="c-questions">
+          <li>
+                                Simplify. In every part, assume that the denominator is not zero.
+                                <ol class="c-parts c-parts--1 c-parts--tall">
+                                  <li>$\dfrac{3p^2 - 3pq - 18q^2}{3p^2 + 10pq + 8q^2}$</li>
+                                  <li>$\dfrac{n^3 - 3n^2m + 3nm^2 - m^3}{5m^2 - 10mn + 5n^2}$</li>
+                                  <li>$\dfrac{w^3 - v^3 + x^3 + 3wvx}{w^2 + v^2 + x^2 + wv + vx - wx}$</li>
+                                  <li>$\dfrac{4y^2 - 20yz + 25z^2}{25z^2 - 4y^2}$</li>
+                                  <li>$\dfrac{\left(x^2 + 6x - 7\right)\left(x^2 - 7x + 12\right)}{\left(x^2 - 6x + 8\right)\left(x^2 - 9\right)}$</li>
+                                  <li>$\dfrac{p^4 - 16}{p^2 - 4p + 4}$</li>
+                                </ol>
+                                <p class="hint">
+                                  Part (iv) rewards a careful look at the order of the letters, and
+                                  part (vi) needs the difference of squares twice.
+                                </p>
+                              </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>
+                                Devi cancels the $x^2$ from the top and the bottom of
+                                $\frac{x^2 + 5x}{x^2 + 5}$ and reports the answer as
+                                $\frac{5x}{5} = x$. Put $x = 2$ into the original expression and
+                                into her answer. What has she cancelled that she was not entitled
+                                to cancel?
+                              </li>
+        </ol>
       </div>
 
     </div>
