@@ -1,0 +1,107 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 400 132" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Four stages of a growing pattern of square tiles">
+            <rect class="dg-fill-d" x="14" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="14" y="90" width="24" height="24"/>
+            <text class="dg-note" x="26" y="128" text-anchor="middle">Stage 1</text>
+      
+            <rect class="dg-fill-d" x="102" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="126" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="126" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="102" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="126" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="126" y="66" width="24" height="24"/>
+            <text class="dg-note" x="126" y="128" text-anchor="middle">Stage 2</text>
+      
+            <rect class="dg-fill-d" x="202" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="226" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="202" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="226" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="226" y="42" width="24" height="24"/>
+            <rect class="dg-thin" x="202" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="226" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="202" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="226" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="226" y="42" width="24" height="24"/>
+            <text class="dg-note" x="226" y="128" text-anchor="middle">Stage 3</text>
+      
+            <rect class="dg-fill-d" x="314" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="314" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="314" y="42" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="42" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="18" width="24" height="24"/>
+            <rect class="dg-thin" x="314" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="314" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="314" y="42" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="42" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="18" width="24" height="24"/>
+            <text class="dg-note" x="338" y="128" text-anchor="middle">Stage 4</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.4</span> A growing pattern of square
+          tiles. Each stage is the one before it with two more tiles added.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>How many tiles are in the next three stages? Write the sequence of tile
+            counts as far as Stage 7 before reading on.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Counting the first seven stages gives this.</p>
+
+      <table>
+        <thead>
+          <tr><th>Stage</th><th>Number of tiles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>1</td></tr>
+          <tr><td>2</td><td>3</td></tr>
+          <tr><td>3</td><td>5</td></tr>
+          <tr><td>4</td><td>7</td></tr>
+          <tr><td>5</td><td>9</td></tr>
+          <tr><td>6</td><td>11</td></tr>
+          <tr><td>7</td><td>13</td></tr>
+        </tbody>
+      </table>
+
+      <p>Two tiles are added each time, so the counts run $1, 3, 5, 7, 9, \ldots$ —
+      a linear pattern, with constant difference $2$.</p>
+
+      <p>Knowing the difference is $2$ is not the same as being able to answer for
+      Stage $40$ without drawing thirty-nine pictures first. For that the count has to
+      be tied to the stage number, and the table already says how: each count is one
+      less than twice its stage. Stage $2$ gives $2 \times 2 - 1 = 3$, Stage $5$ gives
+      $2 \times 5 - 1 = 9$, and in general</p>
+
+      <div class="eq eq--anchor">$$\text{tiles at Stage } n = 2n - 1$$</div>
+
+      <p>which is a polynomial of degree $1$ — a linear polynomial. That is the whole
+      pattern in four characters, and it is the first time in this chapter that an
+      expression has been <em>found</em> rather than handed over. The relationship
+      between the stage number and the tile count is a
+      <span class="term">linear relationship</span>.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The constant term differs in what it means, though, and it is worth being
+      clear about. In $200 + 50m$ the $200$ is the joining fee — what is owed before
+      any chess is played. In $100 - 5n$ the $100$ is what Bela starts with — what she
+      has before any spending. Both are the value of the expression when the variable
+      is $0$, which is the one interpretation that covers every case.</p>
+
+      <p>One more, because it has a wrinkle the others do not: the pattern does not
+      start at the beginning.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>An auto-rickshaw charges ₹$25$ for the first $2$ km and ₹$15$ for every
+          kilometre after that. What is the fare for $10$ km?</p>
+          <table>
+            <thead>
+              <tr><th>Distance (km)</th><th>Fare (₹)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>25</td></tr>
+              <tr><td>2</td><td>25</td></tr>
+              <tr><td>3</td><td>$25 + 1 \times 15 = 40$</td></tr>
+              <tr><td>4</td><td>$25 + 2 \times 15 = 55$</td></tr>
+              <tr><td>5</td><td>$25 + 3 \times 15 = 70$</td></tr>
+              <tr><td>6</td><td>$25 + 4 \times 15 = 85$</td></tr>
+            </tbody>
+          </table>
+          <p>The first two kilometres are already paid for, so a $10$ km ride is
+          charged for $8$ of them: ₹$25 + 15 \times 8 =$ ₹$145$.</p>
+          <p>For any $n \geq 2$ the fare is</p>
+          <div class="eq">$$25 + 15(n - 2) = 15n - 5$$</div>
+          <p>a linear polynomial again — but only from the second kilometre on. The
+          first two rows of the table do not obey it, and no amount of algebra will
+          make them.</p>
+        </div>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>How far can you travel for ₹$130$?</p>
+          </div>
+        </div>
+      </div>
+
+      <p>In every example of this section the $n$th term has turned out to be a linear
+      expression in $n$, and the sequence of terms a linear pattern. Sequences of this
+      kind are taken further in the chapter on Sequences and Progressions.</p>
+
+    </div>
+  </div>
+</section>
