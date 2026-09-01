@@ -1,76 +1,83 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-stage">
+        <div class="c-stage__num">8</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">The Trap Room</div>
+          <div class="c-stage__for">Two students, one question, and a mistake.</div>
+        </div>
+      </div>
+      <p class="c-stage__ask">Answer (a) A only, (b) B only, (c) both,
+      (d) neither &mdash; then say in one line what went wrong.</p>
+
       <div class="c-practice">
-        <div class="c-practice__head">B8 &middot; The Trap Room</div>
         <ol class="c-questions">
           <li>
-            Ravi writes $(a + b)^2 = a^2 + b^2$, because the square "goes into
-            the bracket, one term at a time". Destroy the claim with one pair
-            of numbers, and name the term he has lost.
+            <strong>A.</strong> $(a + b)^2 = a^2 + b^2$ &mdash; the square goes
+            into the bracket a term at a time. &nbsp;<strong>B.</strong>
+            $(a + b)^2 = a^2 + b^2 + ab$.
           </li>
           <li>
-            Meera simplifies $\frac{x^2 + 9}{x + 3}$ to $x + 3$, because
-            "$x^2$ over $x$ is $x$, and $9$ over $3$ is $3$". Test her answer at
-            $x = 1$, and say what she is cancelling that she may not cancel.
+            <strong>A.</strong> $\dfrac{x^2 + 9}{x + 3}$ simplifies to $x + 3$.
+            &nbsp;<strong>B.</strong> It does not simplify at all.
           </li>
           <li>
-            Asked to factorise $x^2 - 4x + 4$, a student writes
-            $(x - 2)(x + 2)$: both brackets look plausible and the constant
-            comes out right. Multiply them back, and say which term exposes it.
+            $x^2 - 4x + 4$ factorises as <strong>A.</strong> $(x - 2)^2$.
+            &nbsp;<strong>B.</strong> $(x - 2)(x + 2)$ &mdash; the constant
+            comes out right.
           </li>
           <li>
-            Amit says $(a - b)^2 = -(b - a)^2$, because reversing a
-            subtraction changes the sign; Nisha says the two are equal. Decide
-            with one substitution, then say exactly where Amit's rule is true
-            and where it is not.
+            <strong>A.</strong> $(a - b)^2 = (b - a)^2$.
+            &nbsp;<strong>B.</strong> $(a - b)^2 = -(b - a)^2$, because
+            reversing a subtraction changes the sign.
           </li>
           <li>
-            "$4x^2 + 9y^2$ cannot be factorised, so $4x^2 + 12xy + 9y^2$
-            cannot be either." Is the conclusion right? Is the reason?
+            <strong>A.</strong> $4x^2 + 9y^2$ cannot be factorised.
+            &nbsp;<strong>B.</strong> Therefore $4x^2 + 12xy + 9y^2$ cannot be
+            either.
           </li>
           <li>
-            To solve $(x - 12)(x + 8) = 5$ a student writes $x - 12 = 5$ or
-            $x + 8 = 5$, giving $x = 17$ or $x = -3$. Substitute both back.
-            Which rule of Section 4.9 was used outside the one case where it
-            holds, and why does that case work when no other does?
+            To solve $(x - 12)(x + 8) = 5$: <strong>A.</strong> Set
+            $x - 12 = 5$ or $x + 8 = 5$. &nbsp;<strong>B.</strong> Multiply out
+            first, then bring everything to one side.
           </li>
           <li>
-            A student simplifies $\frac{x^2 - 4}{x - 2}$ to $x + 2$, evaluates
-            at $x = 2$ and reports $4$. The algebra is right and the answer is
-            not. Explain the gap in one sentence.
+            <strong>A.</strong> $\dfrac{x^2 - 4}{x - 2} = x + 2$ for every $x$.
+            &nbsp;<strong>B.</strong> It equals $x + 2$ for every $x$ except
+            $2$.
+          </li>
+          <li>
+            <strong>A.</strong> $x^3 + y^3 + z^3 = 3xyz$ whenever
+            $x + y + z = 0$. &nbsp;<strong>B.</strong> It holds whenever
+            $xyz \neq 0$.
+          </li>
+          <li>
+            <strong>A.</strong> $a^2 + b^2 \geq 2ab$ for every $a$ and $b$.
+            &nbsp;<strong>B.</strong> Equality happens only when $a = b$.
+          </li>
+          <li>
+            <strong>A.</strong> $x^2 + 5x + 6 = 0$ is an identity.
+            &nbsp;<strong>B.</strong> $(x + 2)(x + 3) = x^2 + 5x + 6$ is an
+            identity.
           </li>
         </ol>
       </div>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Four shapes of mistake</div>
+        <div class="c-keyidea__title">Three shapes of mistake</div>
         <ol>
-          <li>
-            <strong>Spreading an operation that does not spread</strong>
-            (traps 1, 4). Multiplication distributes over addition; squaring
-            does not, and a minus sign cannot be carried out through a square.
-            The false rule is shaped like a true one.
-          </li>
-          <li>
-            <strong>Cancelling a term instead of a factor</strong> (trap 2).
-            A fraction cancels only what multiplies the whole of the top and
-            the whole of the bottom; <em>appearing</em> on both lines earns
-            nothing.
-          </li>
-          <li>
-            <strong>Matching a shape on too little evidence</strong>
-            (traps 3, 5). Two squares at the ends do not make a perfect square
-            — the middle term decides — and what a two-term expression will not
-            do says nothing about a three-term one.
-          </li>
-          <li>
-            <strong>Using a rule outside its one condition</strong>
-            (traps 6, 7). $AB = 0$ forces $A = 0$ or $B = 0$; $AB = 5$ forces
-            nothing. Here the working is flawless — until the condition is
-            checked.
-          </li>
+          <li><strong>Distributing what does not distribute</strong> (1, 2, 5).
+            A power does not go into a sum a term at a time, and a sum on top
+            of a fraction cannot be cancelled piece by piece.</li>
+          <li><strong>Using a rule outside its one case</strong> (3, 4, 6, 8).
+            A product equals zero only if a factor does &mdash; the rule says
+            nothing about a product equal to $5$ &mdash; and the cube identity
+            needs $x + y + z = 0$, not $xyz \neq 0$.</li>
+          <li><strong>Forgetting where an expression is undefined</strong>
+            (7, 10). Cancelling $x - 2$ is legal only away from $x = 2$; an
+            identity holds for <em>every</em> value, an equation for some.</li>
         </ol>
       </div>
 

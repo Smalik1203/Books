@@ -8,18 +8,31 @@
    their worked instances are .c-example panels. A reader who
    can read the chapter can read this.
 
-   Three things the library did not already have:
+   What the library did not already have:
 
      .c-bridge    the division opener — announced once, so the
                   reader knows a different kind of work starts
+     .c-stage     one stage's head: its number, its name, what
+                  it is for, and how to answer it
+     .c-shift     a relationship read both ways — as this rises,
+                  that falls
+     .c-results   the chapter's results as a row of marks, so a
+                  reader can see what is about to be used
      .tier        one question's difficulty, as a tag
      .c-answers   an answer key: sixty short answers that must
                   not set as sixty paragraphs
 
-   Each takes exactly one colour. The opener is structure — it
-   is a division of the chapter, the same job the section tab
-   does. The tier tag and the key are attention: both are the
-   book speaking about a question put to the reader.
+   Each takes exactly one colour. The opener, the stage head and
+   the results strip are structure, and take teal — they say
+   where the reader is. The tier tag and the key are attention,
+   and take gold: both are the book speaking about a question
+   put to the reader. .c-shift is the relationship itself, so it
+   takes no colour at all — rules and space carry it.
+
+   The stage number is the same teal in all ten stages and in
+   every chapter. A hue per stage would read as ten unrelated
+   modules and would look different in each chapter's palette;
+   one mark, ten numerals, is what makes the Bridge one thing.
    ============================================================ */
 
 /* ---- The division opener -----------------------------------
@@ -57,6 +70,181 @@
   line-height: var(--lh-snug);
   color: var(--teal-tint);
   margin-top: var(--space-hair);
+}
+
+/* ---- A stage head ------------------------------------------
+   Ten of these run consecutively, so the head has to do three
+   jobs at once and stay light: say which stage this is, say
+   what the stage is for, and say how to answer it. A solid band
+   across the measure does the first and none of the others, and
+   ten of them in a row is a great deal of ink.
+
+   So: a numeral in a small solid mark — findable while flipping
+   — then the name and the stage's promise beside it, and a
+   hairline under the pair. The instruction sits below the rule
+   because it is addressed to the reader, not part of the name. */
+.c-stage {
+  break-inside: avoid;
+  break-after: avoid;
+  margin: 0 0 var(--space-step);
+  padding-bottom: var(--space-tight);
+  border-bottom: var(--stroke-rule) solid var(--teal);
+  display: flex;
+  align-items: flex-start;
+  gap: 3.4mm;
+}
+
+/* The mark is square, so ten of them stack to the same width
+   whatever the numeral — a two-digit stage must not push the
+   title across. */
+.c-stage__num {
+  flex: none;
+  width: 8.4mm;
+  height: 8.4mm;
+  background: var(--teal);
+  border-radius: var(--radius);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  line-height: 8.4mm;
+  text-align: center;
+}
+
+.c-stage__text { flex: 1; }
+
+.c-stage__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: var(--lh-tight);
+  color: var(--teal-deep);
+}
+
+/* What the stage is for. Quieter than the name, and italic, so
+   the pair reads as one head rather than two. */
+.c-stage__for {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+  margin-top: var(--space-hair);
+}
+
+/* How to answer — the one line an examination paper would put
+   at the top of a section. Below the rule, because it speaks to
+   the reader rather than naming the stage. */
+.c-stage__ask {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+  margin: calc(-1 * var(--space-tight)) 0 var(--space-step);
+}
+
+/* The head has already set the space before the questions, so
+   the practice band must not set it again. */
+.c-stage + .c-practice,
+.c-stage__ask + .c-practice,
+.c-stage + .c-tip,
+.c-stage__ask + .c-tip { margin-top: 0; }
+
+/* ---- A relationship, read both ways ------------------------
+   Two lines that say the same law twice, in opposite
+   directions. Seeing both is the point: a reader who has only
+   ever seen "as d rises, c falls" tends to hear a proportion.
+   No tint and no box — the rules and the two arrows carry it. */
+.c-shift {
+  break-inside: avoid;
+  margin: var(--space-step) 0;
+  border-top: var(--stroke-hair) solid var(--rule);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+  padding: var(--space-tight) 0;
+}
+.c-shift__title {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-hair);
+}
+/* Two cells, each a quantity and the way it goes. Equal
+   columns, so the two arrows of a row line up with the two of
+   the row below and the reversal is visible down the column. */
+.c-shift__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4mm;
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+  padding: 0.6mm 0;
+}
+/* The arrow carries the whole statement, so it takes the rust
+   every other measurement in the book takes. */
+.c-shift__way {
+  color: var(--rust-deep);
+  font-weight: var(--weight-bold);
+  margin-left: 1.6mm;
+}
+
+/* ---- The chapter's results, as marks ------------------------
+   Four small line drawings in a row, each under one line of
+   text. It is an index, not a figure: the reader is checking
+   what is available before starting, so the marks are drawn at
+   the size of a thumbnail and captioned in a single line. */
+.c-results {
+  break-inside: avoid;
+  margin: var(--space-step) 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  border-top: var(--stroke-hair) solid var(--rule);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+  padding: var(--space-tight) 0;
+}
+.c-results__item { text-align: center; }
+.c-results__item svg {
+  width: 100%;
+  height: auto;
+  max-height: 18mm;
+  display: block;
+  margin: 0 auto var(--space-hair);
+}
+.c-results__cap {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+
+/* ---- What the test is made of ------------------------------
+   The shape of the paper, set once at its foot: how many
+   questions of each kind. No marks and no clock — a book that
+   is used in six different classrooms cannot know either, and
+   inventing them would make the test look like an examination
+   it is not. Gold, because like the tier tag it is the book
+   addressing the reader about the questions, not asking one. */
+.c-terms {
+  break-inside: avoid;
+  margin-top: var(--space-step);
+  border-top: var(--stroke-rule) solid var(--gold);
+  padding-top: var(--space-tight);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--gold-deep);
 }
 
 /* ---- A question's difficulty -------------------------------

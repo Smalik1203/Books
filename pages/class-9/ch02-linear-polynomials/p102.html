@@ -1,64 +1,97 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        A reasoning question has no working to show. It wants the sentence that
-        would convince someone who disagreed &mdash; so answer in words, and
-        kill a false claim with one counter-example rather than an argument.
-      </p>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Think and Reason</div>
+          <div class="c-stage__for">Judge a claim &mdash; and the reason offered for it.</div>
+        </div>
+      </div>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 20 L21 6"/>
+            <circle cx="7" cy="16.9" r="1.6"/>
+            <circle cx="17" cy="9.1" r="1.6"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Questions 1&ndash;4 take this key.
+            <strong>(a)</strong> both true, R explains A;
+            <strong>(b)</strong> both true, R does not explain A;
+            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
+            R true.</p>
+        </div>
+      </div>
 
       <div class="c-practice">
-        <div class="c-practice__head">B2 &middot; Think and Reason</div>
         <ol class="c-questions">
           <li>
-            The chapter says two observations are enough to recover $a$ and
-            $b$, and that they must differ in $x$.
+            <strong>A.</strong> Evaluating a linear polynomial at
+            $1, 2, 3, \ldots$ always gives a linear pattern.
+            &nbsp;<strong>R.</strong> $a(n+1) + b - (an + b) = a$, the same
+            number for every $n$.
+          </li>
+          <li>
+            <strong>A.</strong> A sequence whose first differences are all
+            equal comes from a polynomial of degree at most $1$.
+            &nbsp;<strong>R.</strong> A polynomial of degree $2$ has constant
+            second differences.
+          </li>
+          <li>
+            <strong>A.</strong> Any two readings determine $a$ and $b$.
+            &nbsp;<strong>R.</strong> Two unknowns need two equations.
+          </li>
+          <li>
+            <strong>A.</strong> The graphs of $y = 4x - 3$ and $y = -4x - 3$
+            meet on the $y$-axis. &nbsp;<strong>R.</strong> Both have the same
+            constant term.
+          </li>
+          <li>
+            For $y = -3x + 4$, which must be true?
             <ol class="c-parts c-parts--1">
-              <li>Explain what goes wrong if both readings are taken at the
-                  same $x$.</li>
-              <li>Two readings are to be taken between $x = 0$ and $x = 20$.
-                  Which two would you choose, and why?</li>
+              <li>Its slope is $-3$.</li>
+              <li>It meets the $y$-axis at $(0, 4)$.</li>
+              <li>It passes through $(2, 2)$.</li>
+            </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(i) and (ii)</li>
+              <li>(ii) and (iii)</li><li>all three</li>
             </ol>
           </li>
           <li>
-            A tree grows every year, but by more in some years than in others.
-            Its height is increasing, and yet no expression $at + b$ describes
-            it. Say exactly which word in the definition of linear growth rules
-            the tree out &mdash; and name one growing quantity that the
-            definition does admit.
+            A quantity measured hourly has differences $7, 7, 7, 7$. Which
+            must be true?
+            <ol class="c-parts c-parts--1">
+              <li>The rule has the form $7t + b$.</li>
+              <li>The rule is $7t$.</li>
+              <li>One further reading would settle it.</li>
+            </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(ii) and (iii)</li>
+              <li>(i) and (iii)</li><li>all three</li>
+            </ol>
+          </li>
+          <li>
+            In $y = ax + b$, $a$ is positive and $b$ is negative. Which must be true?
+            <ol class="c-parts c-parts--1">
+              <li>It crosses the $x$-axis at a positive $x$.</li>
+              <li>It crosses the $y$-axis below the origin.</li>
+              <li>It passes through Quadrant III.</li>
+            </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(i) and (ii)</li>
+              <li>(ii) and (iii)</li><li>all three</li>
+            </ol>
           </li>
           <li>
             The chess club charged $200 + 50m$ and Bela's money ran
-            $100 - 5n$. Both constants are what you have at the start, and yet
-            one is money owed and the other money held. Explain how a single
-            piece of algebra can describe two opposite situations, and what in
-            the expression records the difference.
-          </li>
-          <li>
-            Predict, without drawing: how do the graphs of $y = 4x - 3$ and
-            $y = -4x - 3$ differ, and what do they have in common? Name the
-            single point both are certain to pass through, and say why.
-          </li>
-          <li>
-            The auto-rickshaw fare obeys $15n - 5$ only from the second
-            kilometre on. Put $n = 1$ into the formula, compare it with the
-            real fare, and say what the algebra is describing at that point.
-            Then invent one more charging rule with the same defect.
-          </li>
-          <li>
-            $y = ax$ always passes through the origin. State the one-line
-            reason, and then say what changes &mdash; and what does not
-            &mdash; when a constant $b$ is added to it.
-          </li>
-          <li>
-            A quantity is measured every hour and its differences come out
-            $7, 7, 7, 7$. A student concludes the rule must be $7t$.
-            <ol class="c-parts c-parts--1">
-              <li>Is the conclusion safe? Say what has been left
-                  undetermined.</li>
-              <li>What single further measurement would settle it?</li>
-            </ol>
+            $100 - 5n$. Both constants are what you have at the start, yet one
+            is money owed and the other money held. Say what in the expression
+            records the difference.
           </li>
         </ol>
       </div>

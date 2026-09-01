@@ -198,7 +198,7 @@ A page can declare its own number when pages are written out of order:
 ```
 
 Everything after it continues from that number. And the page that closes a
-division — the last page of the chapter proper, before its Foundation Bridge —
+division — the last page of the chapter proper, before its Beyond the Book pages —
 says so, which is what stops the fill check reporting it as unfinished:
 
 ```html
@@ -242,10 +242,10 @@ Anything running off the trim — the chapter numeral block, the foot bars —
 overhangs by `--bleed` (3 mm), so a trim landing slightly off centre still
 cuts through colour rather than white paper.
 
-## The Foundation Bridge
+## Beyond the Book
 
 Every chapter carries ten further pages after its own last page: the
-**Foundation Bridge**, a division that takes the chapter's material and asks
+**Beyond the Book**, a division that takes the chapter's material and asks
 harder questions about it, in the way an examination outside school would.
 No new syllabus is introduced — the depth comes from what the chapter already
 proved.
@@ -254,19 +254,19 @@ The ten stages run in a fixed order, and the difficulty rises along it:
 
 | | |
 |---|---|
-| **B1** Beyond the Chapter | two or three deeper ideas, drawn from the chapter |
-| **B2** Think and Reason | 5–7 questions that want a sentence, not a calculation |
-| **B3** Connect the Concepts | 4–6 problems reaching into other chapters, or out of the book |
-| **B4** Foundation MCQs, Level 1 | 9–10, conceptual and direct |
-| **B5** Foundation MCQs, Level 2 | 8–10, multi-step, with traps |
-| **B6** Competitive-Style Thinking | assertion–reason, statement sets, data to interpret |
-| **B7** The Challenge Zone | 5 problems, tiered `Think` → `Apply` → `Challenge` |
-| **B8** The Trap Room | 7 misconceptions, then the shapes of mistake behind them |
-| **B9** Foundation Test | 12–13 mixed questions, not sorted by concept |
-| **B10** Answers, Solutions & Takeaways | the key, two worked solutions, five takeaways |
+| **B1** The Idea Underneath | one relation the whole chapter turns on, carried by a figure, a two-way reading of the law, and four of the chapter's results as thumbnail marks |
+| **B2** Think and Reason | assertion–reason against a fixed four-option key, then statement sets — objective throughout |
+| **B3** Connect the Concepts | every question chains two of the chapter's results, or reaches into another chapter |
+| **B4** Multiple Choice, Level 1 | 9–10, one step from one result |
+| **B5** Multiple Choice, Level 2 | 9–10, two steps, and a figure to settle first |
+| **B6** Competitive-Style Thinking | four named moves — *eliminate*, *check sufficiency*, *find the constraint*, *estimate first* — demonstrated in one line each, then drilled |
+| **B7** The Challenge Zone | 5–8 problems, tiered `Think` → `Apply` → `Challenge` |
+| **B8** The Trap Room | 10 Student A / Student B pairs answered (a)/(b)/(c)/(d), then the shapes of mistake behind them |
+| **B9** The Mixed Test | 10–13 mixed questions, not sorted by concept, with what the paper is made of at its foot |
+| **B10** Answers, Solutions & Takeaways | the key, two or three worked solutions each ending in a transferable idea, then the takeaways |
 
 The pages are numbered `p101.html`–`p110.html` in the chapter's page directory,
-so the Bridge always sorts last and a chapter can grow to a hundred pages
+so the division always sorts last and a chapter can grow to a hundred pages
 without colliding with it. The page before `p101` carries `data-close`.
 
 The design of the section — what was added to the component library for it, and

@@ -1,71 +1,126 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
       <div class="c-bridge">
-        <div class="c-bridge__title">The Foundation Bridge</div>
+        <div class="c-bridge__title">Beyond the Book</div>
         <div class="c-bridge__strap">Take what you know. Go further.</div>
       </div>
 
-      <p>
-        One expression, $ax + b$, and everything in the chapter followed from
-        it. Ten pages of harder work on that same expression follow &mdash; no
-        new syllabus, only questions of the kind asked outside school.
-      </p>
-
-      <h3>Two points are enough. Three are often too many</h3>
-
-      <p>
-        Two observations fix $a$ and $b$, because there are two unknowns and
-        each observation gives one equation. Take a third and something new can
-        happen: it may <em>disagree</em>. The bills $(10, 350)$, $(20, 550)$ and
-        $(30, 780)$ cannot all come from one linear rule, since the first two
-        force $y = 20x + 150$ and that predicts $750$, not $780$.
-      </p>
-
-      <p>
-        A scientist measuring a spring takes a dozen readings, not two, knowing
-        they will not lie on one line exactly. Then the question stops being
-        <em>what line passes through these points</em> and becomes
-        <span class="pop">what line comes closest to all of them</span> &mdash;
-        a different question, and the beginning of statistics.
-      </p>
-
-      <h3>Differences, and differences of differences</h3>
-
-      <p>
-        A linear polynomial has constant first differences. That is a test you
-        can run on any table, and it goes further than degree $1$. Evaluate
-        $x^2$ at $1, 2, 3, 4, 5$: the values $1, 4, 9, 16, 25$ have differences
-        $3, 5, 7, 9$, which are not constant &mdash; but <em>their</em>
-        differences are all $2$.
-      </p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Reading the degree off a table</div>
-        <p>
-          Constant first differences mean degree $1$; constant second
-          differences mean degree $2$; and the constant never appears at all
-          for a pattern that doubles. Differencing a table is the fastest way
-          to find out what kind of rule made it.
-        </p>
+      <div class="c-stage">
+        <div class="c-stage__num">1</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">The Idea Underneath</div>
+          <div class="c-stage__for">Two points fix a line. A third can disagree.</div>
+        </div>
       </div>
 
-      <h3>Where a formula stops being true</h3>
-
       <p>
-        The auto-rickshaw fare was $15n - 5$, and the tank's depth was
-        $3 - 0.5t$. Both formulas go on answering long after they have stopped
-        describing anything: the fare rule is wrong for the first two
-        kilometres, and the depth rule reports $-1$ metres of water in the
-        eighth month.
+        Everything in the chapter came out of one expression:
       </p>
 
+      <div class="eq eq--anchor">
+        $$p(x) = ax + b$$
+      </div>
+
       <p>
-        Reading a value <em>between</em> your measurements is usually safe.
-        Reading one beyond them is a bet on the pattern continuing, and the
-        pattern is under no obligation to.
+        Two readings fix $a$ and $b$ &mdash; two unknowns, two equations. A
+        third reading can do something new: <span class="pop">it can
+        disagree</span>. The bills $(10, 350)$ and $(20, 550)$ force
+        $y = 20x + 150$, which predicts $750$ at $x = 30$, not $780$.
       </p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 150 130" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two points on a line and a third point sitting above it">
+            <g class="dg-grid">
+              <path d="M40 12 V110 M70 12 V110 M100 12 V110 M130 12 V110"/>
+              <path d="M20 90 H140 M20 70 H140 M20 50 H140 M20 30 H140"/>
+            </g>
+
+            <path class="dg-axis" d="M12 110 H140"/>
+            <path class="dg-axis" d="M20 120 V12"/>
+
+            <path class="dg-line" d="M32 98 L136 20"/>
+
+            <circle class="dg-plot" cx="40" cy="92" r="2.8"/>
+            <circle class="dg-plot" cx="70" cy="69.5" r="2.8"/>
+            <circle class="dg-plot dg-plot--c" cx="100" cy="32" r="2.8"/>
+            <path class="dg-dim" d="M100 47 V36"/>
+
+            <text class="dg-label dg-label--sm" x="36" y="106">10</text>
+            <text class="dg-label dg-label--sm" x="66" y="106">20</text>
+            <text class="dg-label dg-label--sm" x="96" y="106">30</text>
+            <text class="dg-dim-label" x="106" y="34">780</text>
+            <text class="dg-note" x="108" y="52">750</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2B.1</span> The first two
+          readings settle the rule. The third does not lie on it, and no
+          linear rule can hold all three.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-shift">
+        <div class="c-shift__title">Which number does which job</div>
+        <div class="c-shift__row">
+          <span>$a$ grows<span class="c-shift__way">&uarr;</span></span>
+          <span>the line tilts steeper<span class="c-shift__way">&uarr;</span></span>
+        </div>
+        <div class="c-shift__row">
+          <span>$b$ grows<span class="c-shift__way">&uarr;</span></span>
+          <span>the line slides up, tilt unchanged<span class="c-shift__way">&uarr;</span></span>
+        </div>
+      </div>
+
+      <p>
+        $a$ tilts and $b$ slides. Half the traps in this section come of
+        swapping the two, because both numbers are in the equation somewhere
+        and either answer looks plausible.
+      </p>
+
+      <div class="c-results">
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-axis" d="M4 38 H44"/>
+            <path class="dg-axis" d="M8 40 V4"/>
+            <path class="dg-line" d="M12 34 L40 6"/>
+            <circle class="dg-plot" cx="12" cy="34" r="1.8"/>
+            <circle class="dg-plot" cx="19" cy="27" r="1.8"/>
+            <circle class="dg-plot" cx="26" cy="20" r="1.8"/>
+            <circle class="dg-plot" cx="33" cy="13" r="1.8"/>
+            <circle class="dg-plot" cx="40" cy="6" r="1.8"/>
+          </svg>
+          <div class="c-results__cap">Equal steps across, equal steps up</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-axis" d="M4 38 H44"/>
+            <path class="dg-axis" d="M8 40 V4"/>
+            <path class="dg-line" d="M10 34 L42 12"/>
+            <path class="dg-dim" d="M20 27 H34 V17.4"/>
+          </svg>
+          <div class="c-results__cap">$a$ is the tilt</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-axis" d="M4 38 H44"/>
+            <path class="dg-axis" d="M10 40 V4"/>
+            <path class="dg-line" d="M10 14 L40 32"/>
+            <circle class="dg-fill-teal" cx="10" cy="14" r="2.4"/>
+          </svg>
+          <div class="c-results__cap">$b$ is where it crosses</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-axis" d="M4 22 H44"/>
+            <path class="dg-axis" d="M10 40 V4"/>
+            <path class="dg-line" d="M12 8 L40 34"/>
+            <circle class="dg-fill-teal" cx="27" cy="22" r="2.4"/>
+          </svg>
+          <div class="c-results__cap">A falling rule is still positive for a while</div>
+        </div>
+      </div>
 
     </div>
   </div>

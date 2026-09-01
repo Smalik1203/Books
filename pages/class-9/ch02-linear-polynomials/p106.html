@@ -1,82 +1,92 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 20 L21 6"/>
-            <circle cx="7" cy="16.9" r="1.6"/>
-            <circle cx="17" cy="9.1" r="1.6"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>In an assertion&ndash;reason question, answer from this list every
-            time: <strong>(a)</strong> both true, R explains A;
-            <strong>(b)</strong> both true, R does not explain A;
-            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
-            R true.</p>
+      <div class="c-stage">
+        <div class="c-stage__num">6</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Competitive-Style Thinking</div>
+          <div class="c-stage__for">Four moves worth more than another formula.</div>
         </div>
       </div>
 
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">Eliminate</span>
+          <span>A rising rule has a positive $a$, a falling one a negative
+            $a$. The sign alone usually kills two options.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Check sufficiency</span>
+          <span>Two readings fix a line only if they differ in $x$. The same
+            $x$ measured twice fixes nothing at all.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Find the constraint</span>
+          <span>$a$ is the step per unit of $x$; $b$ is the value at $x = 0$.
+            Any two points hand you both.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Estimate first</span>
+          <span>Reading between your measurements is safe. Reading beyond them
+            is a bet on the pattern continuing.</span>
+        </div>
+      </div>
+
+      <p class="c-stage__ask">Name the move, then use it.</p>
+
       <div class="c-practice">
-        <div class="c-practice__head">B6 &middot; Competitive-Style Thinking</div>
         <ol class="c-questions">
           <li>
-            <strong>Assertion.</strong> Evaluating a linear polynomial at
-            $1, 2, 3, \ldots$ always gives a linear pattern.
-            &nbsp;<strong>Reason.</strong>
-            $a(n+1) + b - (an + b) = a$, the same number for every $n$.
-          </li>
-          <li>
-            <strong>Assertion.</strong> A sequence whose first differences are
-            all equal comes from a polynomial of degree at most $1$.
-            &nbsp;<strong>Reason.</strong> A polynomial of degree $2$ has
-            constant second differences.
-          </li>
-          <li>
-            For the line $y = -3x + 4$, which of the following hold?
-            <ol class="c-parts c-parts--1">
-              <li>Its slope is $-3$.</li>
-              <li>It meets the y-axis at $(0, 4)$.</li>
-              <li>It passes through $(2, 2)$.</li>
+            <strong>Eliminate.</strong> $p(x) = ax + b$ passes through $(1,5)$
+            and $(3,11)$. Then $a$ is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$2$</li><li>$3$</li><li>$6$</li><li>$8$</li>
             </ol>
-            Choose: (a) (i) only &nbsp; (b) (i) and (ii) &nbsp; (c) (ii) and
-            (iii) &nbsp; (d) all three.
           </li>
           <li>
-            The graph of $p(x) = ax + b$ passes through $(1, 5)$ and $(3, 11)$.
-            Find $p(x)$, the point where it cuts each axis, and $p(10)$.
+            <strong>Eliminate.</strong> $p(0) = 7$ and $p(4) = -5$. Without
+            solving, the sign of $a$ kills two options. Then $a$ is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$-3$</li><li>$-2$</li><li>$3$</li><li>$12$</li>
+            </ol>
           </li>
           <li>
-            A shop's bill is meant to follow one linear rule. One row of the
-            table breaks it. Find the row, say what the bill there should be,
-            and give the rule.
+            <strong>Sufficiency.</strong> To find $a$ and $b$, a student takes
+            two readings both at $x = 4$, getting $y = 9$ each time. Show that
+            the equations cannot be solved, and say what the second reading
+            contributed.
+          </li>
+          <li>
+            <strong>Sufficiency.</strong> Given the slope of a line, which one
+            further fact fixes it completely?
+            <ol class="c-parts c-parts--alpha">
+              <li>That it is steep</li>
+              <li>One point that lies on it</li>
+              <li>The slope of a parallel line</li>
+              <li>The direction it rises in</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Constraint.</strong> A shop's bill should follow one linear
+            rule, but a row breaks it. Find the row, say what the bill there
+            should be, and give the rule.
             <table>
               <thead>
                 <tr><th>Units</th><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td></tr>
               </thead>
               <tbody>
-                <tr><th>Bill (₹)</th><td>$150$</td><td>$170$</td><td>$190$</td><td>$215$</td><td>$230$</td></tr>
+                <tr><th>Bill (&#8377;)</th><td>$150$</td><td>$170$</td><td>$190$</td><td>$215$</td><td>$230$</td></tr>
               </tbody>
             </table>
           </li>
           <li>
-            A spring is loaded and its length measured.
-            <table>
-              <thead>
-                <tr><th>Load (kg)</th><td>$0$</td><td>$2$</td><td>$4$</td><td>$6$</td></tr>
-              </thead>
-              <tbody>
-                <tr><th>Length (cm)</th><td>$20$</td><td>$23$</td><td>$26$</td><td>$29$</td></tr>
-              </tbody>
-            </table>
-            <ol class="c-parts c-parts--1">
-              <li>Find the rule relating length to load, and predict the length
-                  under $10$ kg.</li>
-              <li>The same prediction at $100$ kg would be worthless. Say why,
-                  and which of the two readings &mdash; interpolation or
-                  extrapolation &mdash; you have been asked for.</li>
+            <strong>Estimate.</strong> A spring is measured under loads of
+            $0$, $2$, $4$ and $6$ kg. Which prediction is an interpolation
+            rather than a bet?
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$5$ kg</li><li>$8$ kg</li>
+              <li>$10$ kg</li><li>$100$ kg</li>
             </ol>
           </li>
         </ol>
