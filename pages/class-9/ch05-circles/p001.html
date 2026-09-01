@@ -2,14 +2,32 @@
 
 <div class="chapterhead">
     <div class="chapterhead__num">5</div>
-    <h1 class="chapterhead__title">Exploring<br>Circles</h1>
+    <h1 class="chapterhead__title">Exploring Circles</h1>
 
     <div class="chapterhead__sketch">
       <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- the disc, and the ripples it sits in -->
         <circle class="dg-doodle" cx="105" cy="60" r="56"/>
-        <circle class="dg-doodle" cx="105" cy="60" r="42"/>
-        <circle class="dg-sketch" cx="105" cy="60" r="27"/>
-        <circle class="dg-sketch" cx="105" cy="60" r="12"/>
+        <circle class="dg-doodle" cx="105" cy="60" r="44"/>
+        <circle class="dg-fill-d"  cx="105" cy="60" r="30"/>
+        <circle class="dg-sketch"  cx="105" cy="60" r="30"/>
+
+        <!-- two folds, crossing where the centre must be -->
+        <path class="dg-sketch" d="M74.8 48.7 L135.2 71.3"/>
+        <path class="dg-sketch" d="M116.3 30.8 L93.7 91.2"/>
+
+        <!-- and the radius that the whole chapter turns on -->
+        <path class="dg-dim" d="M105 60 L132.2 47.3"/>
+        <text class="dg-dim-label" x="136" y="45">r</text>
+
         <circle class="dg-fill-teal" cx="105" cy="60" r="3.4"/>
       </svg>
     </div>
