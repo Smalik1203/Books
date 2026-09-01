@@ -130,10 +130,24 @@ A panel spans the **full measure**, with equal padding on both sides. The
 example's tab sits astride its top-left corner — it is a label on the box, not
 a column the text has to make room for. Indenting every line of an example to
 clear a one-line tab throws away 33mm of measure and leaves a dead strip of
+tint down the left of the page.
+
 The reflect box follows the same rule: its disc and title band sit astride the
 top edge as one unit — the disc caps the band rather than floating beside the
 box — so the text keeps the full measure there too.
-tint down the left of the page.
+
+**The disc marks are line drawings, and the stylesheet owns them.** A page
+supplies the path data and nothing else — no `fill`, no `stroke-width`, no
+colour. Miss that and the outline closes and prints as a solid black shape,
+with the stroke colour still applied on top, so it looks deliberate.
+
+`.c-reflect` keeps one mark across the book — the gold bulb, because the
+question it asks is always the same kind of question. **`.c-tip` takes a mark
+from its own chapter's subject:** crossed axes and a plotted point for
+coordinates, a square cut into a square, two rectangles and a smaller square
+for identities, a circle with its centre and radius for circles. Three strokes,
+no more — a fourth stops reading at 6mm. Never a generic mark: an open book or
+a lightbulb says only "here is a remark", which the two rules already say.
 
 Two treatments, and no others:
 
@@ -151,7 +165,7 @@ reference list of identities, say) with no continuation indent.
 **Fraction size is not a free choice.** A fraction that *is* the whole
 expression — an exercise item, a line of working — is set display size
 (`dfrac`). A fraction that is one term inside a longer expression, or that
-sits in running prose, is set inline size (`rac`). Display fractions
+sits in running prose, is set inline size (`frac`). Display fractions
 overflow their line box, so any list of them takes `.c-parts--tall`, which
 lets the maths set the row height instead of the leading. Without it the rows
 collide, and the builder reports an overflow the page does not appear to have.
@@ -208,7 +222,11 @@ How a page is assembled.
 - **When several pages run short, add the fills up before moving anything.**
   Three pages at 60% hold two pages of content: that is a repack, not padding.
 - **Do not split a component across a page.** Move the whole thing.
-- **Do not strand a section heading** at the foot of a page.
+- **Do not strand a section heading** at the foot of a page. A heading must
+  seat **at least a sixth of the text block** — about five lines — beneath it,
+  or it moves to the next page. Clearing the page edge by three lines still
+  reads as stranded. `repack.mjs` enforces this; the white it leaves behind is
+  the cheaper fault.
 - **An exercise set is a natural page unit.** Prefer keeping one whole.
 
 **Exercise sets that run over a page break** carry `data-start="n"` on the
