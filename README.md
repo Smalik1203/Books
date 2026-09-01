@@ -40,7 +40,7 @@ In a chapter you get:
 
 | control | what it does |
 |---|---|
-| **Trim / Bleed** | the reading page, or the 196 × 270 mm press sheet with crop marks |
+| **Trim / Bleed** | the reading page, or the 216 × 303 mm press sheet — trim plus 3 mm bleed |
 | **Pages / Spreads / Signature** | one page at a time; verso-and-recto side by side (the only way to check the mirroring); or the press sheet, 8/16/32 pages up |
 | **Fit / 50% / 100% / Actual size** | Actual size is true millimetres once you calibrate |
 | **Calibrate** | hold a bank card to the screen and drag; every card is 85.6 × 54 mm |
@@ -128,6 +128,7 @@ not a triad: rust and gold are only 39° apart, which is why action and
 attention have always looked like relatives there, and why a chapter that
 went warm had three warm colours. A chapter that names a palette does not
 inherit that problem.
+
 ## Build
 
 ```bash
@@ -139,7 +140,7 @@ node build/build.mjs class-9/ch04-algebraic-identities --pdf --png
 | *(none)* | assemble HTML + run the overflow check |
 | `--pdf` | print to PDF through headless Chrome |
 | `--png` | render one PNG proof per page at 2×, for review |
-| `--bleed` | also emit the press sheet: 196 × 270 mm, 3 mm bleed, crop marks |
+| `--bleed` | also emit the press sheet: 216 × 303 mm — the trim plus 3 mm of bleed, no marks |
 
 A bare class name (`class-9`) builds every chapter under it.
 

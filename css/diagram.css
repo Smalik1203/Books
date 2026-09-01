@@ -64,6 +64,16 @@
   fill: var(--ink);
 }
 .dg-label--sm { font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px); }
+
+/* A subscript on a point name. Spectral carries no Unicode subscript
+   digits, so a literal U+2081 falls through to the fallback face and
+   puts a third typeface in the PDF — which does not show on screen.
+   Set it from the ordinary digit instead: relative units, so it works
+   at any figure density. */
+.dg-sub {
+  font-size: 0.72em;
+  baseline-shift: -0.22em;
+}
 .dg-label--on-fill { fill: var(--paper); }
 
 .dg-dim-label {                  /* a measurement label — rust */

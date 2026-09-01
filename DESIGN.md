@@ -263,19 +263,20 @@ goes in the marker, in rust, never in the question text.
 `--bleed` emits a second PDF beside the reading one. Every page carries two
 wrappers that are the page itself at trim size and change nothing there:
 
-| | | |
-|---|---|---|
-| `.page` | the sheet the press prints | 196 × 270 mm |
-| `.page__bleed` | artwork, clipped 3 mm past the trim | 182 × 256 mm |
-| `.page__trim` | the book as the reader sees it | 176 × 250 mm |
+| | | A4 | B5 |
+|---|---|---|---|
+| `.page` / `.page__bleed` | what the press gets | 216 × 303 mm | 182 × 256 mm |
+| `.page__trim` | the book as the reader sees it | 210 × 297 mm | 176 × 250 mm |
 
 Everything is still positioned against the trim box, so no component knows
 which sheet it is on. The chapter numeral and both footer bars deliberately run
-off the edge; the bleed box is what stops them at 3 mm and keeps the slug clear
-for the crop marks. Marks run from the bleed edge outward, so they can never
-cross artwork, and the slug is painted white rather than inheriting the preview
-backdrop. The page box is read from the tokens, not repeated in the builder, and
-the build measures what Chrome actually wrote.
+off the edge; the bleed box is what stops them at exactly 3 mm.
+
+**No crop marks, and no slug to hold them.** A press PDF carries the trim plus
+its bleed and nothing else. The printer imposes the job and lays its own marks
+over the sheet, so a second set from us is at best ignored and at worst mistaken
+for the real ones. The page box is read from the tokens, not repeated in the
+builder, and the build measures what Chrome actually wrote.
 
 ## 8. What the builder rejects
 

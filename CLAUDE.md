@@ -33,8 +33,8 @@ It is the only thing that will tell you the truth. It checks:
 | font sizes | a literal `12pt` anywhere in `css/` — everything must come from the scale |
 | maths | a collapsed escape (`\times` arriving as a tab) or a missing backslash (`\dfrac` as `dfrac`, which KaTeX cheerfully sets as a product of variables) |
 
-Flags: `--pdf`, `--png` (2x page proofs), `--bleed` (press sheet with crop
-marks). A bare class name builds every chapter under it.
+Flags: `--pdf`, `--png` (2x page proofs), `--bleed` (press sheet: trim plus
+3mm bleed, no marks). A bare class name builds every chapter under it.
 
 ## Escaping — read this before writing any LaTeX
 
