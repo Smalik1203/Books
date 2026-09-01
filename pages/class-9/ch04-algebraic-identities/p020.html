@@ -2,77 +2,87 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 14</div>
-        <div class="c-example__body">
-          <p>
-            Write $8n^3 - 60n^2m + 150nm^2 - 125m^3$ in the form $(a - b)^3$.
-            What are $a$ and $b$?
-          </p>
-          <p>
-            The alternating signs point to the difference identity. The two
-            cubes at the ends are $8n^3 = (2n)^3$ and $125m^3 = (5m)^3$, so try
-            $a = 2n$ and $b = 5m$:
-          </p>
-          <div class="work">
-            <p>$8n^3 - 60n^2m + 150nm^2 - 125m^3$</p>
-            <p>$= (2n)^3 - 3(2n)^2(5m) + 3(2n)(5m)^2 - (5m)^3$</p>
-            <p>$= (2n - 5m)^3$</p>
-          </div>
-          <p>
-            The two middle terms confirm it: $3(2n)^2(5m) = 60n^2m$ and
-            $3(2n)(5m)^2 = 150nm^2$.
-          </p>
-        </div>
-      </div>
-
-      <h3>Playing with what you have</h3>
+      <h3>And the difference</h3>
 
       <p>
-        New identities also come from multiplying things out and seeing what
-        survives. Try these two products with the distributive property:
-      </p>
-
-      <div class="work work--centred">
-        <p>$(x - y)(x^2 + xy + y^2)
-          \qquad\text{and}\qquad
-          (x + y)(x^2 - xy + y^2)$</p>
-      </div>
-
-      <p>
-        Take the first. Multiply every term of the second bracket by $x$, then
-        by $-y$, and line the results up:
+        The trick that gave the second identity from the first works here too.
+        Replace $b$ by $-b$ throughout, and watch the signs:
       </p>
 
       <div class="work">
-        <p>$(x - y)(x^2 + xy + y^2) = x^3 + x^2y + xy^2 - x^2y - xy^2 - y^3$</p>
-        <p>$= x^3 - y^3$</p>
+        <p>$(a + (-b))^3 = a^3 + 3a^2(-b) + 3a(-b)^2 + (-b)^3$</p>
       </div>
 
       <p>
-        Everything in the middle cancels in pairs — $x^2y$ against $-x^2y$, and
-        $xy^2$ against $-xy^2$ — and two terms are left.
+        The odd powers of $-b$ turn negative and the even one stays positive,
+        which leaves
       </p>
-
-      <p>So that product is an identity in its own right:</p>
 
       <div class="eq eq--anchor">
-        $$(x - y)\left(x^2 + xy + y^2\right) = x^3 - y^3$$
+        $$(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$$
       </div>
 
       <p>
-        That is the difference of cubes, and it repays reading in both
-        directions. Left to right it multiplies out; right to left it factorises
-        any difference of two cubes. So $8t^3 - 27$ is $(2t)^3 - 3^3$, and it
-        splits at once into $(2t - 3)(4t^2 + 6t + 9)$.
+        Four terms, two positive and two negative, and the signs alternate along
+        the line. Compare it with $(a + b)^3$: the terms are identical, and only
+        the signs have changed.
       </p>
 
       <p>
-        Check it for yourself with a few values of $x$ and $y$. Then look at the
-        second product, $(x + y)(x^2 - xy + y^2)$, and predict its value before
-        multiplying it out. Only two signs differ from the first — what does
-        that do to the answer?
+        The alternation is not an accident: replacing $b$ by $-b$ leaves the even
+        powers of $b$ alone and flips the odd ones, and a cube uses $b^0$, $b^1$,
+        $b^2$, $b^3$ in turn. The same substitution turned $(a+b)^2$ into
+        $(a-b)^2$ in Section 4.2, where only the middle term changed sign.
       </p>
+
+      <p>
+        Arithmetic gets shorter too: a number just below a round one is a
+        difference, and the identity trades a hard multiplication for four
+        easy terms:
+      </p>
+
+      <div class="work">
+        <p>$98^3 = (100 - 2)^3 = 100^3 - 3(100)^2(2) + 3(100)(2)^2 - 2^3$</p>
+        <p>$= 1000000 - 60000 + 1200 - 8 = 941192$</p>
+      </div>
+
+      <div class="c-tip">
+        <span class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 6.5S10 4.5 6 4.5H3v14h3.5c3.5 0 5.5 1.5 5.5 1.5s2-1.5 5.5-1.5H21v-14h-3c-4 0-6 2-6 2z"/>
+            <path d="M12 6.5v13.5"/>
+          </svg>
+        </span>
+        <div class="c-tip__body">
+          <p>Test any expansion by putting $b = a$. The right side collapses to
+            $a^3 - 3a^3 + 3a^3 - a^3 = 0$, which is what $(a - a)^3$ has to be. A
+            wrong coefficient or a stray sign fails it at once.</p>
+        </div>
+      </div>
+
+      <p>
+        Both are worth recognising in the other direction too. Given a
+        four-term expression, can you tell that it <em>is</em> a cube?
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>
+            A cube has volume $p^3 + 6p^2q + 12pq^2 + 8q^3$ cubic units. What is
+            the length of its side?
+          </p>
+          <p>
+            The side is whatever this expression is the cube of. Set it beside
+            $a^3 + 3a^2b + 3ab^2 + b^3$ and look for $a$ and $b$:
+          </p>
+          <div class="work">
+            <p>$p^3 + 6p^2q + 12pq^2 + 8q^3 = p^3 + 3(p)^2(2q) + 3(p)(2q)^2 + (2q)^3$</p>
+            <p>$= (p + 2q)^3$</p>
+          </div>
+          <p>So $a = p$ and $b = 2q$, and the side is $p + 2q$ units.</p>
+        </div>
+      </div>
 
     </div>
   </div>
