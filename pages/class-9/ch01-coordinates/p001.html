@@ -1,0 +1,127 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">1</div>
+    <h1 class="chapterhead__title">Orienting Yourself:<br>The Use of Coordinates</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 150" role="img" aria-label="A sketched pair of axes with a point plotted at x comma y">
+
+        <!-- faint graph paper behind the sketch -->
+        <g class="dg-grid">
+          <path d="M70 0 V150 M92 0 V150 M114 0 V150 M136 0 V150 M158 0 V150 M180 0 V150 M202 0 V150"/>
+          <path d="M0 8 H210 M0 30 H210 M0 52 H210 M0 74 H210 M0 96 H210 M0 118 H210 M0 140 H210"/>
+        </g>
+
+        <text class="dg-dim-label" x="8" y="22">(x, y)</text>
+
+        <!-- a hand-drawn pair of axes -->
+        <path class="dg-sketch" d="M40 118 L186 117"/>
+        <path class="dg-sketch" d="M74 26 L75 140"/>
+
+        <path class="dg-doodle" d="M75 62 L146 62 M146 62 L146 117"/>
+        <circle class="dg-fill-teal" cx="146" cy="62" r="5"/>
+        <text class="dg-label dg-label--sm" x="110" y="56">y</text>
+        <text class="dg-label dg-label--sm" x="152" y="96">x</text>
+        <text class="dg-label dg-label--sm" x="62" y="132">O</text>
+
+        <circle class="dg-doodle" cx="192" cy="20" r="9"/>
+        <circle class="dg-doodle" cx="204" cy="40" r="5"/>
+        <path class="dg-doodle" d="M32 24 l8 8 M40 24 l-8 8"/>
+        <path class="dg-doodle" d="M186 138 l8 8 M194 138 l-8 8"/>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">1.1</span><span class="name">Introduction</span></h2>
+
+      <p>
+        A <span class="term">system of coordinates</span> is a framework of
+        reference — the ruled lines of a map, the squares of graph paper — that
+        lets numbers do the pointing. Give the numbers and you have named a
+        place exactly: no landmarks, no gestures, no room for argument about
+        which corner you meant.
+      </p>
+
+      <p>
+        Grid-based thinking, and the geometry that goes with it, has deep roots
+        in Bhārat. The earliest systematic use of a grid was not drawn on paper
+        at all. It was built, thousands of years ago, at the scale of a whole
+        city. In the Sindhu–Sarasvatī Civilisation the streets ran North–South
+        and East–West with striking precision, set about 10 metres apart — a
+        coordinate system in daily use, since a merchant could find a shop or a
+        warehouse by counting so many units north and so many east of the city
+        centre.
+      </p>
+
+      <p>
+        Baudhāyana (c. 800 BCE) later took the same two directions into
+        geometry, using North–South and East–West lines for the constructions
+        that gave us the <span class="term">Baudhāyana–Pythagoras
+        Theorem</span> — the result this chapter will lean on when it comes to
+        measuring distance. Between them, the city planners and the geometers
+        had laid the ground for coordinate geometry.
+      </p>
+
+      <p>
+        Putting coordinates on the Earth itself mattered next, for navigation.
+        Ujjayinī was described in the ancient world — as early as the 4th
+        century BCE, in the early Siddhāntas — as the central meridian, the line
+        of longitude from which every other place was measured. Ptolemy
+        (c. 150 CE), building on Hipparchus and others, later listed the
+        latitudes and longitudes of thousands of locations, among them ‘Ozine’,
+        which is Ujjayinī.
+      </p>
+
+      <figure class="c-figure c-figure--full">
+                <svg data-fig="timeline" viewBox="0 0 690 176" role="img" aria-label="A timeline running from the Sindhu-Sarasvati grid cities through Baudhayana, Aryabhata, Brahmagupta and Al-Biruni to Descartes">
+    <line class="dg-line" x1="92" y1="74" x2="598" y2="74"/>
+    <circle class="dg-fill-teal" cx="92" cy="74" r="5"/>
+    <line class="dg-thin" x1="92" y1="74" x2="92" y2="54"/>
+    <text class="dg-dim-label" x="92" y="44" text-anchor="middle">c. 2600 BCE</text>
+    <text class="dg-label" x="92" y="28" text-anchor="middle">Sindhu–Sarasvatī</text>
+    <text class="dg-note" x="92" y="12" text-anchor="middle">streets on a grid</text>
+    <circle class="dg-fill-teal" cx="193.2" cy="74" r="5"/>
+    <line class="dg-thin" x1="193.2" y1="74" x2="193.2" y2="94"/>
+    <text class="dg-dim-label" x="193.2" y="116" text-anchor="middle">c. 800 BCE</text>
+    <text class="dg-label" x="193.2" y="132" text-anchor="middle">Baudhāyana</text>
+    <text class="dg-note" x="193.2" y="148" text-anchor="middle">two directions, one theorem</text>
+    <circle class="dg-fill-teal" cx="294.4" cy="74" r="5"/>
+    <line class="dg-thin" x1="294.4" y1="74" x2="294.4" y2="54"/>
+    <text class="dg-dim-label" x="294.4" y="44" text-anchor="middle">c. 499 CE</text>
+    <text class="dg-label" x="294.4" y="28" text-anchor="middle">Āryabhaṭa</text>
+    <text class="dg-note" x="294.4" y="12" text-anchor="middle">the sky mapped</text>
+    <circle class="dg-fill-teal" cx="395.6" cy="74" r="5"/>
+    <line class="dg-thin" x1="395.6" y1="74" x2="395.6" y2="94"/>
+    <text class="dg-dim-label" x="395.6" y="116" text-anchor="middle">c. 628 CE</text>
+    <text class="dg-label" x="395.6" y="132" text-anchor="middle">Brahmagupta</text>
+    <text class="dg-note" x="395.6" y="148" text-anchor="middle">zero and the negatives</text>
+    <circle class="dg-fill-teal" cx="496.8" cy="74" r="5"/>
+    <line class="dg-thin" x1="496.8" y1="74" x2="496.8" y2="54"/>
+    <text class="dg-dim-label" x="496.8" y="44" text-anchor="middle">c. 1000 CE</text>
+    <text class="dg-label" x="496.8" y="28" text-anchor="middle">Al-Bīrūnī</text>
+    <text class="dg-note" x="496.8" y="12" text-anchor="middle">coordinates across Asia</text>
+    <circle class="dg-fill-teal" cx="598" cy="74" r="5"/>
+    <line class="dg-thin" x1="598" y1="74" x2="598" y2="94"/>
+    <text class="dg-dim-label" x="598" y="116" text-anchor="middle">1637 CE</text>
+    <text class="dg-label" x="598" y="132" text-anchor="middle">Descartes</text>
+    <text class="dg-note" x="598" y="148" text-anchor="middle">two numbers, any point</text>
+  </svg>
+                <figcaption>Six moments in a long history: from streets on a grid to any point named by two numbers.</figcaption>
+              </figure>
+
+      <p>
+        Āryabhaṭa (c. 499 CE) replaced the Greek ‘chords’ with ‘sines’, which
+        made the coordinates of a star or a city far easier to compute. He
+        mapped the sky with <span class="term">celestial coordinates</span>,
+        measuring from the ecliptic — the path the Sun appears to take.
+      </p>
+
+    </div>
+  </div>
+</section>
