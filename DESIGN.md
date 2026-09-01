@@ -23,19 +23,34 @@ Each has one pale tint, used **only** as a panel background:
 **Every component uses exactly one colour.** None mixes two. If a component
 seems to need a second colour, it is doing two jobs and should be split.
 
-**A chapter may move the palette, not the system.** `chapter.json` can name a
-`palette`, which loads `css/palette-<name>.css` over the tokens — the same
-mechanism as an edition sheet, and with the same discipline: it moves colour
-families and nothing else. Three roles in, three roles out.
+**A chapter may move the structure colour, not the system.** `chapter.json`
+names a `palette`, which loads `css/palette-<name>.css` over the tokens — the
+same mechanism as an edition sheet, and with the same discipline: it moves one
+colour family and nothing else. Action stays rust, attention stays gold, in
+every chapter of the book. Three roles in, three roles out.
 
-The trap is that the three roles must stay *distinguishable*, and hue is not
-the only way to do it. Chapter 1 runs warm (`palette-ember.css`): structure
-goes to burnt orange, which sits a few degrees from rust, so the two are
-separated by **value** instead — structure much darker than action. Recolour
-structure to a light orange and a section head stops outranking a worked
-example. Swapping action to a cool colour instead does not work either: the
-chapter title is action-coloured, so it turns green on an otherwise orange
-opener.
+**The fourteen palettes are one ramp, not fourteen choices.** They are
+generated in OKLCH at a fixed lightness of 0.44 and chroma 0.105, hues spread
+over a 288° arc. Two things follow, and both matter more than the individual
+colours:
+
+- **Every structure colour sits in the same dark band.** White on any of them
+  runs 7.3–8.2:1, against 5.4 for rust and 3.2 for gold. So structure is
+  always the darkest of the three, and the hierarchy holds without depending
+  on hue — which is the only reason a warm chapter works at all. Ember sits a
+  few degrees from rust; it reads as different because it is *darker*, not
+  because it is another colour.
+- **Equal weight.** A fixed lightness means chapter 9 does not print heavier
+  than chapter 3. Picking fourteen colours by eye will not give you that.
+
+The arc stops short of rust's own hue. Spread evenly over the full 360° it
+would have put two chapters at hue 356 and 21 — red on red, distinguishable
+only by value, and muddy.
+
+Two ways to get this wrong, both found by rendering rather than by reasoning:
+recolour structure to a *light* orange and a section head stops outranking a
+worked example; move action to a cool colour instead and the chapter title,
+which is action-coloured, turns green on an otherwise orange opener.
 
 Ink, rules and paper are neutral and belong to no component.
 
