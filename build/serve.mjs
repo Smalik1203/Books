@@ -144,6 +144,19 @@ function viewerHtml(chapter, s) {
   };
   const noBleed = !existsSync(path.join(ROOT, 'build', chapter.target + '-bleed.html'));
 
+  /* A download link to an artefact that was never built is worse than no
+     link: the browser follows it, gets the 404 body, and saves that as
+     <chapter>-bleed.txt — so the download history shows a file that looks
+     real and is a error message. Offer the link only when the PDF is
+     there, and say why when it is not. */
+  const built = (suffix) => existsSync(path.join(ROOT, 'build', chapter.target + suffix));
+  const dl = (suffix, label) => {
+    const ok = built(suffix);
+    return `<a class="btn${ok ? '' : ' btn--off'}" href="/build/${esc(chapter.target)}${suffix}"`
+      + (ok ? ' download' : ' download aria-disabled="true" title="Not built yet — press Build"')
+      + `>${label}</a>`;
+  };
+
   return page(chapter.meta.title + ' — LearnLab Studio', `
     <div class="viewer">
       <div class="bar">
@@ -205,8 +218,8 @@ function viewerHtml(chapter, s) {
         </div>
 
         <button class="btn" id="print">Print&hellip;</button>
-        <a class="btn" href="/build/${esc(chapter.target)}.pdf" download>Reading PDF</a>
-        <a class="btn" href="/build/${esc(chapter.target)}-bleed.pdf" download>Print PDF</a>
+        ${dl('.pdf', 'Reading PDF')}
+        ${dl('-bleed.pdf', 'Print PDF')}
         <button class="btn btn--go" id="build">Build</button>
       </div>
 
