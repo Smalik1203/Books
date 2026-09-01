@@ -2,28 +2,9 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
+      <div class="c-reflect c-reflect--tail">
         <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-            <p>Two facts you now have:</p>
-            <div class="work work--centred">
-              <p>$x^2 - y^2 = (x - y)(x + y)$</p>
-              <p>$x^3 - y^3 = (x - y)\left(x^2 + xy + y^2\right)$</p>
-            </div>
-            <p>
-              In both, $x - y$ is a factor. Is it a factor of $x^4 - y^4$ as
-              well? Start from $x^4 - y^4 = (x^2)^2 - (y^2)^2$ and see what the
-              first fact gives you.
-            </p>
             <p class="c-reflect__hint">
               Then try $x^5 - y^5$. Do you think $x - y$ divides $x^n - y^n$ for
               <em>every</em> $n$? What happens if you put $x = y$?
@@ -63,6 +44,24 @@
         the sum of their cubes, and their product — so that knowing any three
         of them gives you the fourth.
       </p>
+
+      <div class="c-example c-example--head">
+        <div class="c-example__tab">Example 15</div>
+        <div class="c-example__body">
+          <p>
+            Three numbers add to 10, multiply to 25, and their squares add to
+            38. What do their cubes add to?
+          </p>
+          <p>
+            Call them $x$, $y$ and $z$, so $x + y + z = 10$, $xyz = 25$ and
+            $x^2 + y^2 + z^2 = 38$. Substituting into the identity:
+          </p>
+          <div class="work">
+            <p>$10\left(38 - (xy + xz + yz)\right) = x^3 + y^3 + z^3 - 3(25)$</p>
+            <p>$x^3 + y^3 + z^3 = 455 - 10(xy + xz + yz)$</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

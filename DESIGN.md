@@ -274,3 +274,32 @@ If a page needs something the system does not have, **add it to the system** —
 a component, or a modifier on one — rather than reaching for an inline style.
 That is the whole point: the book stays one designed object instead of twenty
 pages that each looked reasonable on their own.
+
+## 8. Running a panel over a page break
+
+A page must not ship a third empty because the next block will not fit
+whole. **Text divides; pictures do not.**
+
+- A **figure** is never split — half a diagram is unreadable, so a gap held
+  open by one is accepted and left alone.
+- A **worked example**, a **key idea** and a **reflect prompt** may run over
+  the break: `--head` is the part that stays, `--tail` the part that
+  continues. The join is squared off and its padding removed on both sides,
+  so the two halves read as one field interrupted by the page edge. The tail
+  carries no tab or title: it is the same panel resumed, not a new one.
+- **Running text** may be broken mid-paragraph. Paragraphs here have no
+  first-line indent, so a continued one is indistinguishable from a new one.
+
+Split at a step boundary, never inside a line of working.
+
+```bash
+node build/close-gaps.mjs class-9/ch04-algebraic-identities   # divide panels
+node build/flow.mjs       class-9/ch04-algebraic-identities   # divide prose
+```
+
+Both measure every trial with the real builder and keep the largest move
+that does not overfill. `flow` refuses a move that fills one page by
+emptying the next — that relocates the hole rather than closing it.
+
+Run these **after** `repack`, never before: repack re-packs whole blocks
+globally and will undo them.
