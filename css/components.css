@@ -67,7 +67,13 @@
   width: 42mm;
 }
 .chapterhead__sketch svg { --dg-v: 210; --dg-w: 42; }
-.chapterhead__sketch svg { display: block; width: 100%; height: auto; }
+/* The opener motif may be drawn or supplied as artwork, so an image
+   sits here on the same terms as the svg — sized by the 42mm box, and
+   multiplied onto the paper so its white ground drops away, exactly
+   as a figure image is. */
+.chapterhead__sketch svg,
+.chapterhead__sketch img { display: block; width: 100%; height: auto; }
+.chapterhead__sketch img { mix-blend-mode: multiply; }
 
 .chapterhead__rule {
   position: absolute;
