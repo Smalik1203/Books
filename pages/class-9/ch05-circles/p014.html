@@ -1,0 +1,59 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 4</div>
+        <p>The segment joining the centre of a circle to the midpoint of a chord is
+        perpendicular to that chord.</p>
+      </div>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="22 22 156 156" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A chord with its midpoint joined to the centre, meeting at a right angle">
+            <circle class="dg-line" cx="100" cy="100" r="70"/>
+            <path class="dg-line" d="M36.56 70.42 L140.15 42.66"/>
+            <path class="dg-thin" d="M100 100 L36.56 70.42"/>
+            <path class="dg-thin" d="M100 100 L140.15 42.66"/>
+            <path class="dg-dim" d="M100 100 L88.36 56.54"/>
+            <path class="dg-thin" d="M97.05 54.21 L99.38 62.9 L90.69 65.23"/>
+            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
+            <circle class="dg-fill-c" cx="88.36" cy="56.54" r="2.4"/>
+      
+            <text class="dg-label" x="30"  y="70"  text-anchor="end">A</text>
+            <text class="dg-label" x="145" y="39">B</text>
+            <text class="dg-label" x="83"  y="51"  text-anchor="end">M</text>
+            <text class="dg-label" x="104" y="111">C</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.7</span> $M$ is the midpoint of the
+          chord $AB$. The segment $CM$ meets the chord at a right angle.</figcaption>
+        </figure>
+      </div>
+
+      <p>Why is this true? Compare the two triangles that $CM$ cuts the big one
+      into.</p>
+
+      <div class="work work--list">
+      <p>$CA = CB$, both being radii.</p>
+      <p>$AM = BM$, because $M$ is the midpoint.</p>
+      <p>$CM$ is common to both.</p>
+      <p>So $\triangle CMA \cong \triangle CMB$, by <span class="pop">SSS</span>.</p>
+      </div>
+
+      <p>Congruent triangles give $\angle CMA = \angle CMB$. But those two angles sit
+      side by side on the straight line $AB$, so they add to $180^\circ$. Two
+      equal angles adding to $180^\circ$ are $90^\circ$ each. So $CM$ is
+      perpendicular to $AB$.</p>
+
+      <p>Now the converse. Drop a perpendicular from the centre onto a chord instead, and
+      ask where it lands.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 5</div>
+        <p>The perpendicular from the centre of a circle to a chord bisects the chord.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
