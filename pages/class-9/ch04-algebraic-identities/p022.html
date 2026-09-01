@@ -2,21 +2,8 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 15</div>
+      <div class="c-example c-example--tail">
         <div class="c-example__body">
-          <p>
-            Three numbers add to 10, multiply to 25, and their squares add to
-            38. What do their cubes add to?
-          </p>
-          <p>
-            Call them $x$, $y$ and $z$, so $x + y + z = 10$, $xyz = 25$ and
-            $x^2 + y^2 + z^2 = 38$. Substituting into the identity:
-          </p>
-          <div class="work">
-            <p>$10\left(38 - (xy + xz + yz)\right) = x^3 + y^3 + z^3 - 3(25)$</p>
-            <p>$x^3 + y^3 + z^3 = 455 - 10(xy + xz + yz)$</p>
-          </div>
           <p>
             One quantity is still missing: $xy + xz + yz$. Nothing in the
             question gives it directly — but the squared identity from
@@ -55,6 +42,36 @@
         <em>factorised</em> — which is exactly what this chapter has been
         teaching you to do.
       </p>
+
+      <div class="c-example c-example--head">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>
+            Simplify $\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100}$, given that
+            $5x^2 + 5x - 100 \neq 0$.
+          </p>
+          <p>
+            Factorise each part. For the numerator, find two numbers with sum $-7$
+            and product $12$. Both are negative, since the product is positive
+            and the sum is not; the pair is $-3$ and $-4$:
+          </p>
+          <div class="work">
+            <p>$x^2 - 7x + 12 = (x - 3)(x - 4)$</p>
+          </div>
+          <p>
+            The denominator needs a step first — all three terms are multiples
+            of 5, so take that out before hunting for a pair. Then the sum is
+            $1$ and the product $-20$, which gives $5$ and $-4$:
+          </p>
+          <div class="work">
+            <p>$5x^2 + 5x - 100 = 5\left(x^2 + x - 20\right) = 5(x - 4)(x + 5)$</p>
+          </div>
+          <p>Now the fraction can be written as a product of factors:</p>
+          <div class="work work--centred">
+            <p>$\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100} = \dfrac{(x - 3)(x - 4)}{5(x - 4)(x + 5)}$</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

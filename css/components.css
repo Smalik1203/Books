@@ -130,7 +130,12 @@
   border-top: var(--stroke-rule) solid var(--teal);
   border-bottom: var(--stroke-rule) solid var(--teal);
 }
-.eq--anchor .katex { font-size: calc(var(--size-concept) * 1.05); }
+/* An anchor equation is maths, not a heading, so it takes its size
+   from the running text it sits in rather than from the concept tier
+   — otherwise raising a heading silently resizes every display
+   equation in the book. The factor reproduces the size it has always
+   had, so nothing on the page moves. */
+.eq--anchor .katex { font-size: calc(var(--size-body) * 1.15); }
 
 
 /* Stepped working, in running text or inside a component. */
@@ -228,6 +233,56 @@
 }
 .c-example__body > p:first-child { margin-top: 0.4mm; }
 .c-example .work:last-child { margin-bottom: 0; }
+
+/* ---- Running an example over a page break -------------------
+   A worked example is text, and a page must not be left a third
+   empty merely because the next example will not fit whole. So an
+   example may run over the break: --head is the part that stays,
+   --tail the part that continues overleaf.
+
+   The join is squared off and its padding removed on both sides, so
+   the two halves read as one tinted field interrupted by the page
+   edge rather than as two separate panels. --tail carries no tab —
+   it is the same example, not a new one — so it loses the space the
+   tab would have sat in.
+
+   Split at a step boundary, never inside a line of working, and
+   never split a figure: half a diagram is unreadable, which is why
+   there is no such modifier for .c-figure. */
+.c-example--head { margin-bottom: 0; }
+.c-example--head .c-example__body {
+  padding-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.c-example--tail { margin-top: 0; padding-top: 0; }
+.c-example--tail .c-example__body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* The same, for the two other panels long enough to need it. */
+.c-keyidea--head { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.c-keyidea--tail { margin-top: 0; padding-top: 0; border-top: none; }
+
+/* A reflect panel that will not fit whole. The head keeps the icon and
+   the title; the tail is the same gold field resumed, so it carries
+   neither — a second title would read as a second question. Both
+   halves lose the border and the rounding at the join. */
+.c-reflect--head { margin-bottom: 0; }
+.c-reflect--head .c-reflect__box {
+  padding-bottom: 0;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.c-reflect--tail { margin-top: 0; padding-top: 0; }
+.c-reflect--tail .c-reflect__box {
+  padding-top: 4mm;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
 
 
