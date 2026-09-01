@@ -577,9 +577,17 @@ tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
    ICONS — the three discs in the book. Their colour and weight
    come from here, never from an attribute in a page file.
    ============================================================ */
+/* These are line drawings. Without fill: none an icon's outline
+   closes and prints as a solid black shape — the stroke colour below
+   is still obeyed, so the disc looks deliberate and is simply wrong. */
 .c-reflect__icon svg,
 .c-tip__icon svg,
-.c-key__total svg,
+.c-key__total svg {
+  fill: none;
+  stroke-width: var(--stroke-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .c-reflect__icon svg { stroke: var(--gold); }
 .c-tip__icon svg     { stroke: var(--paper); }
 .c-key__total svg    { stroke: var(--teal); flex: none; width: 8mm; height: 8mm; }
