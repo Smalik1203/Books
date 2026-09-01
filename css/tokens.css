@@ -3,7 +3,7 @@
    The single source of truth. Nothing downstream may introduce a
    colour, a size, a weight or a stroke that is not defined here.
 
-   Trim: B5, 176 × 250 mm.
+   Trim: A4, 210 × 297 mm. B5 is an edition — see css/edition-b5.css.
    ============================================================ */
 
 :root {
@@ -49,13 +49,13 @@
   --font-display: Vollkorn, Spectral, Georgia, serif;
 
   /* One scale. Sizes are named by role, not by number. */
-  --size-caption:  8.5pt;   /* figure captions, hints, folio */
-  --size-note:     9.5pt;   /* panel text, legends, exercises */
-  --size-body:    10.5pt;   /* running text */
-  --size-concept: 11.5pt;   /* concept heading (level 3) */
-  --size-section: 15pt;     /* section heading (level 2) */
-  --size-chapter: 24pt;     /* chapter title (level 1) */
-  --size-numeral: 40pt;     /* chapter numeral */
+  --size-caption: 9pt;   /* figure captions, hints, folio */
+  --size-note: 10.5pt;   /* panel text, legends, exercises */
+  --size-body: 11.5pt;   /* running text */
+  --size-concept: 12.5pt;   /* concept heading (level 3) */
+  --size-section: 16.5pt;     /* section heading (level 2) */
+  --size-chapter: 27pt;     /* chapter title (level 1) */
+  --size-numeral: 44pt;     /* chapter numeral */
   --size-ornament: 30pt;    /* the one watermark glyph */
 
   /* Diagram type is specified in printed millimetres, not in SVG
@@ -70,7 +70,7 @@
 
   --lh-tight:  1.14;
   --lh-snug:   1.30;
-  --lh-body:   1.42;
+  --lh-body: 1.43;
   --lh-panel:  1.40;
 
   --weight-text: 500;   /* KaTeX has one weight; text must match it */
@@ -82,22 +82,22 @@
   /* ==========================================================
      3. PAGE GEOMETRY
      ========================================================== */
-  --trim-w: 176mm;
-  --trim-h: 250mm;
+  --trim-w: 210mm;
+  --trim-h: 297mm;
 
-  --margin-top:    23mm;
-  --margin-bottom: 17mm;
+  --margin-top: 26mm;
+  --margin-bottom: 20mm;
   --gutter-allowance: 5mm;                              /* binding */
-  --margin-inside: calc(18mm + var(--gutter-allowance));
-  --margin-outside: 19mm;
-  --measure:  134mm;
+  --margin-inside: calc(23mm + var(--gutter-allowance));
+  --margin-outside: 28mm;
+  --measure: 154mm;
 
   /* Printed width of a figure — four steps, so figures across the
      book relate to each other rather than to their own artwork. */
-  --fig-sm: 48mm;
-  --fig-md: 58mm;
-  --fig-lg: 68mm;
-  --fig-xl: 82mm;
+  --fig-sm: 51mm;
+  --fig-md: 62mm;
+  --fig-lg: 72mm;
+  --fig-xl: 87mm;
   --bleed: 3mm;
   --slug:  7mm;             /* room outside the bleed for crop marks */
   --mark:  #000000;         /* crop marks: prepress black, not an ink of the book */
@@ -107,11 +107,11 @@
      4. RHYTHM — one spacing scale. Components use these names,
      never raw millimetres.
      ========================================================== */
-  --space-hair:  1.4mm;
-  --space-tight: 2.5mm;
-  --space-step:  4.2mm;   /* between a component and its neighbour */
-  --space-rest:  6mm;     /* the visual pause before a new idea */
-  --space-break: 9mm;     /* before a section heading */
+  --space-hair: 1.5mm;
+  --space-tight: 2.7mm;
+  --space-step: 4.6mm;   /* between a component and its neighbour */
+  --space-rest: 6.6mm;     /* the visual pause before a new idea */
+  --space-break: 9.9mm;     /* before a section heading */
 
   /* ==========================================================
      5. STROKE AND SHAPE — one vocabulary, shared by panels and

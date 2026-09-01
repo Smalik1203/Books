@@ -2,77 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        Notice its shape. Every term is a square of one letter or twice a
-        product of two, and every pairing appears once. If one is missing,
-        something has gone wrong.
-      </p>
-
-      <p>
-        The picture behind it is the one from Section 4.2, grown by a term.
-        Build a square of side $a + b + c$ and cut it at $a$ and at $a + b$
-        along both edges: nine pieces, three squares and six rectangles.
-      </p>
-
-      <figure class="c-figure c-figure--md">
-        <svg viewBox="36 30 312 316" role="img"
-             aria-label="A square of side a plus b plus c, cut into a three by three grid of nine unlabelled regions, with the sides marked a, b and c">
-
-          <!-- side a+b+c = 260, split 120 / 80 / 60 -->
-          <rect class="dg-line" x="76" y="72" width="260" height="260"/>
-          <line class="dg-thin" x1="196" y1="72" x2="196" y2="332"/>
-          <line class="dg-thin" x1="276" y1="72" x2="276" y2="332"/>
-          <line class="dg-thin" x1="76" y1="192" x2="336" y2="192"/>
-          <line class="dg-thin" x1="76" y1="272" x2="336" y2="272"/>
-
-          <!-- top dimensions -->
-          <line class="dg-dim" x1="76"  y1="52" x2="196" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <line class="dg-dim" x1="196" y1="52" x2="276" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <line class="dg-dim" x1="276" y1="52" x2="336" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-dim-label" x="136" y="44" text-anchor="middle">a</text>
-          <text class="dg-dim-label" x="236" y="44" text-anchor="middle">b</text>
-          <text class="dg-dim-label" x="306" y="44" text-anchor="middle">c</text>
-
-          <!-- left dimensions -->
-          <line class="dg-dim" x1="56" y1="72"  x2="56" y2="192" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <line class="dg-dim" x1="56" y1="192" x2="56" y2="272" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <line class="dg-dim" x1="56" y1="272" x2="56" y2="332" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-dim-label" x="46" y="138" text-anchor="end">a</text>
-          <text class="dg-dim-label" x="46" y="238" text-anchor="end">b</text>
-          <text class="dg-dim-label" x="46" y="308" text-anchor="end">c</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 4.4</span> &nbsp;A square of side $(a+b+c)$.
-          The nine pieces are left blank on purpose.
-        </figcaption>
-      </figure>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>
-              Write the area inside each of the nine pieces of Fig. 4.4. Then
-              add them up. Do you get every term of the identity — and does each
-              rectangle you labelled $ab$, $bc$ or $ca$ turn up exactly twice?
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        The identity earns its keep the same way the others did: a number that is
-        awkward to square often splits neatly into hundreds, tens and units.
-      </p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 9</div>
         <div class="c-example__body">
@@ -86,6 +15,55 @@
             <p>$= 14161$</p>
           </div>
         </div>
+      </div>
+
+      <p>
+        Every one of those six numbers is easy on its own. The identity does
+        not make the arithmetic disappear; it breaks one hard multiplication
+        into six easy ones, and easy ones you can do in your head.
+      </p>
+
+      <h3>Where we have got to</h3>
+
+      <p>
+        Three identities so far, each verified, each proved, and each usable in
+        both directions — to expand a bracket, to factorise an expression, or
+        to square a number without writing anything down.
+      </p>
+
+      <div class="c-summary">
+        <div class="c-summary__title">The three identities</div>
+        <ol>
+          <li>$(a + b)^2 = a^2 + 2ab + b^2$</li>
+          <li>$(a - b)^2 = a^2 - 2ab + b^2$</li>
+          <li>$(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$</li>
+        </ol>
+      </div>
+
+      <p>
+        The second came from the first by replacing $b$ with $-b$; the third by
+        grouping two terms into one. Neither needed a fresh argument — and the
+        identities still to come are built the same way, from the ones you
+        already have.
+      </p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.3</div>
+        <ol class="c-questions">
+          <li>
+                                Find each of the following squares using one of the identities
+                                above. For each one, decide first <em>which</em> identity makes the
+                                calculation easiest.
+                                <ol class="c-parts c-parts--3">
+                                  <li>$117^2$</li>
+                                  <li>$78^2$</li>
+                                  <li>$198^2$</li>
+                                  <li>$214^2$</li>
+                                  <li>$1104^2$</li>
+                                  <li>$1120^2$</li>
+                                </ol>
+                              </li>
+        </ol>
       </div>
 
     </div>

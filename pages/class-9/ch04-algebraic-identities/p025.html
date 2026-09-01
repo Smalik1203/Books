@@ -2,55 +2,102 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.5</div>
-
-        <ol class="c-questions">
-          <li>
-            Simplify. In every part, assume that the denominator is not zero.
-            <ol class="c-parts c-parts--1 c-parts--tall">
-              <li>$\dfrac{3p^2 - 3pq - 18q^2}{3p^2 + 10pq + 8q^2}$</li>
-              <li>$\dfrac{n^3 - 3n^2m + 3nm^2 - m^3}{5m^2 - 10mn + 5n^2}$</li>
-              <li>$\dfrac{w^3 - v^3 + x^3 + 3wvx}{w^2 + v^2 + x^2 + wv + vx - wx}$</li>
-              <li>$\dfrac{4y^2 - 20yz + 25z^2}{25z^2 - 4y^2}$</li>
-              <li>$\dfrac{\left(x^2 + 6x - 7\right)\left(x^2 - 7x + 12\right)}{\left(x^2 - 6x + 8\right)\left(x^2 - 9\right)}$</li>
-              <li>$\dfrac{p^4 - 16}{p^2 - 4p + 4}$</li>
-            </ol>
-            <p class="hint">
-              Part (iv) rewards a careful look at the order of the letters, and
-              part (vi) needs the difference of squares twice.
-            </p>
-          </li>
-
-          <li>
-            Devi cancels the $x^2$ from the top and the bottom of
-            $\frac{x^2 + 5x}{x^2 + 5}$ and reports the answer as
-            $\frac{5x}{5} = x$. Put $x = 2$ into the original expression and
-            into her answer. What has she cancelled that she was not entitled
-            to cancel?
-          </li>
-
-          <li>
-            Simplify each of these, then say which values of the letter had to
-            be ruled out for the simplification to be legitimate.
-            <ol class="c-parts c-parts--tall">
-              <li>$\dfrac{x^2 - 9}{x^2 - x - 6}$</li>
-              <li>$\dfrac{2a^2 - 8}{a^2 + 4a + 4}$</li>
-              <li>$\dfrac{t^3 - 1}{t^2 - 1}$</li>
-            </ol>
-          </li>
-
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
+        <div class="c-example__body">
+          <p>
+            Saira has one square tile of side $x$ units, eight rectangular
+            strips $x$ units long and 1 unit wide, and fifteen small squares of
+            side 1 unit. She fits all of them together, with no gaps and no
+            overlaps, into a single larger rectangle. What are its sides?
+          </p>
+          <p>
+            Nothing is said about how the pieces are arranged, and nothing needs
+            to be. Whatever the arrangement, the area of the rectangle is the
+            total area of the tiles:
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">square</span>
+              <span>$1 \times x^2 = x^2$ sq. units</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">strips</span>
+              <span>$8 \times x \times 1 = 8x$ sq. units</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">units</span>
+              <span>$15 \times 1 = 15$ sq. units</span>
+            </div>
+          </div>
+          <p>
+            So the rectangle has area $x^2 + 8x + 15$ square units. Its sides
+            are two expressions that multiply to give this — which is to say,
+            its factors. Two numbers with sum 8 and product 15: the pair is 3
+            and 5.
+          </p>
+          <div class="work">
+            <p>$x^2 + 8x + 15 = (x + 3)(x + 5)$</p>
+          </div>
+          <p>
+            The rectangle is $x + 5$ units long and $x + 3$ units wide. Fig.
+            4.11 shows the pieces in place; count them and check that all
+            twenty-four are used.
+          </p>
+        </div>
       </div>
 
-      <h2><span class="badge">4.9</span><span class="name">Putting Factorisation to Work</span></h2>
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 0 244 184" role="img"
+             aria-label="One x squared tile, eight x tiles and fifteen unit tiles arranged into a rectangle of length x plus five and width x plus three">
+      
+          <!-- x = 3 units, unit = 22px -->
+          <g class="dg-line dg-fill-a">
+            <rect x="56" y="40" width="66" height="66"/>
+          </g>
+          <text class="dg-label" x="89" y="78" text-anchor="middle">x²</text>
+      
+          <!-- five x-tiles standing along the right of the square -->
+          <g class="dg-line dg-fill-b">
+            <rect x="122" y="40" width="22" height="66"/>
+            <rect x="144" y="40" width="22" height="66"/>
+            <rect x="166" y="40" width="22" height="66"/>
+            <rect x="188" y="40" width="22" height="66"/>
+            <rect x="210" y="40" width="22" height="66"/>
+          </g>
+      
+          <!-- three x-tiles lying below it -->
+          <g class="dg-line dg-fill-b">
+            <rect x="56" y="106" width="66" height="22"/>
+            <rect x="56" y="128" width="66" height="22"/>
+            <rect x="56" y="150" width="66" height="22"/>
+          </g>
+      
+          <!-- fifteen unit tiles filling the corner -->
+          <g class="dg-line dg-fill-d">
+            <rect x="122" y="106" width="22" height="22"/><rect x="144" y="106" width="22" height="22"/><rect x="166" y="106" width="22" height="22"/><rect x="188" y="106" width="22" height="22"/><rect x="210" y="106" width="22" height="22"/>
+            <rect x="122" y="128" width="22" height="22"/><rect x="144" y="128" width="22" height="22"/><rect x="166" y="128" width="22" height="22"/><rect x="188" y="128" width="22" height="22"/><rect x="210" y="128" width="22" height="22"/>
+            <rect x="122" y="150" width="22" height="22"/><rect x="144" y="150" width="22" height="22"/><rect x="166" y="150" width="22" height="22"/><rect x="188" y="150" width="22" height="22"/><rect x="210" y="150" width="22" height="22"/>
+          </g>
+      
+          <line class="dg-dim" x1="56" y1="26" x2="232" y2="26"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="144" y="19" text-anchor="middle">x + 5</text>
+      
+          <line class="dg-dim" x1="40" y1="40" x2="40" y2="172"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="32" y="110" text-anchor="end">x + 3</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.11</span> &nbsp;Saira's twenty-four tiles,
+          arranged as a rectangle of area $x^2 + 8x + 15$.
+        </figcaption>
+      </figure>
 
       <p>
-        Every question in the chapter so far has arrived already stripped down
-        to an expression, with the word <em>factorise</em> attached. Outside a
-        textbook they do not come that way. A question turns up as an area, a
-        volume, a length someone has measured — and factorising is what turns
-        that one measured quantity back into the dimensions that produced it.
+        That question handed you the pieces and asked what they made. The next
+        one goes the other way: it hands you the finished rectangle — its area,
+        and how its two sides are related — and asks what those sides measure.
       </p>
 
     </div>

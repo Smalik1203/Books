@@ -3,40 +3,6 @@
     <div class="page__main">
 
       <p>
-        In both cases the expression turned out to be a perfect square, so the
-        factor appears <em>twice</em>: $x^2 + 4x + 4 = (x + 2)(x + 2)$. That is
-        worth saying plainly, because it is easy to read $(x + 2)^2$ and report
-        only one factor.
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>Factorise $50p^2 + 60pq + 18q^2$.</p>
-          <p>
-            What are $a$ and $b$ here? You would need a term whose square is
-            $50p^2$, and that is $\sqrt{50}\,p$ — a surd, and awkward to carry
-            through the working.
-          </p>
-          <p>
-            So look again before reaching for a square root. All three terms
-            share a factor of 2:
-          </p>
-          <div class="work">
-            <p>$50p^2 + 60pq + 18q^2 = 2\left(25p^2 + 30pq + 9q^2\right)$</p>
-          </div>
-          <p>
-            The bracket is friendly: $25p^2 = (5p)^2$, $9q^2 = (3q)^2$, and
-            twice $5p \times 3q$ is $30pq$. So $a = 5p$ and $b = 3q$:
-          </p>
-          <div class="work">
-            <p>$50p^2 + 60pq + 18q^2 = 2\left[(5p)^2 + 2(5p)(3q) + (3q)^2\right]$</p>
-            <p>$= 2(5p + 3q)^2$</p>
-          </div>
-        </div>
-      </div>
-
-      <p>
         That is worth remembering as a habit: <span class="pop">take out any
         common factor first</span>. It can turn an expression that seems to
         need surds into one that does not.
@@ -65,7 +31,8 @@
 
       <p>
         Since $(-b)^2 = b^2$ and $2a(-b) = -2ab$, only the middle term changes
-        sign. That gives a second identity, free of charge:
+        sign — a second identity, free of charge:
+      
       </p>
 
       <div class="eq eq--anchor">
@@ -78,6 +45,44 @@
         expanding brackets, squaring numbers in the head, and spotting perfect
         squares to factorise.
       </p>
+
+      <h3>Back to the pattern</h3>
+
+      <p>
+        Return now to the first page of this chapter. Three consecutive squares,
+        add the outer two, subtract twice the middle — always 2. Arithmetic can
+        confirm that forever without saying why; algebra says it in one line.
+      </p>
+
+      <p>
+        The move that unlocks it is choosing how to name the numbers. Three
+        consecutive whole numbers are not $n$, $n + 1$, $n + 2$; they are more
+        usefully written with the middle one at the centre:
+      </p>
+
+      <div class="eq">
+        $$n - 1, \qquad n, \qquad n + 1$$
+      </div>
+
+      <p>
+        Now the outer two squares are $(n - 1)^2$ and $(n + 1)^2$ — one needing
+        each identity. Add them:
+      </p>
+
+      <div class="work">
+        <p>$(n - 1)^2 + (n + 1)^2 = \left(n^2 - 2n + 1\right) + \left(n^2 + 2n + 1\right)$</p>
+        <p>$= 2n^2 + 2$</p>
+      </div>
+
+      <p>
+        Watch what happened to the middle terms: $-2n$ from the first bracket
+        and $+2n$ from the second cancel exactly. That cancellation is the whole
+        secret of the pattern. Now subtract twice the middle square, $2n^2$:
+      </p>
+
+      <div class="eq">
+        $$\left(2n^2 + 2\right) - 2n^2 = 2$$
+      </div>
 
     </div>
   </div>

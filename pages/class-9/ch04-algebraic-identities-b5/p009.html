@@ -3,15 +3,6 @@
     <div class="page__main">
 
       <p>
-        Those six terms are easier to remember grouped by kind: the three
-        squares first, then the three cross terms.
-      </p>
-
-      <div class="eq eq--anchor">
-        $$(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$$
-      </div>
-
-      <p>
         Notice its shape. Every term is a square of one letter or twice a
         product of two, and every pairing appears once. If one is missing,
         something has gone wrong.
@@ -26,14 +17,14 @@
       <figure class="c-figure c-figure--md">
         <svg viewBox="36 30 312 316" role="img"
              aria-label="A square of side a plus b plus c, cut into a three by three grid of nine unlabelled regions, with the sides marked a, b and c">
-      
+
           <!-- side a+b+c = 260, split 120 / 80 / 60 -->
           <rect class="dg-line" x="76" y="72" width="260" height="260"/>
           <line class="dg-thin" x1="196" y1="72" x2="196" y2="332"/>
           <line class="dg-thin" x1="276" y1="72" x2="276" y2="332"/>
           <line class="dg-thin" x1="76" y1="192" x2="336" y2="192"/>
           <line class="dg-thin" x1="76" y1="272" x2="336" y2="272"/>
-      
+
           <!-- top dimensions -->
           <line class="dg-dim" x1="76"  y1="52" x2="196" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
           <line class="dg-dim" x1="196" y1="52" x2="276" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
@@ -41,7 +32,7 @@
           <text class="dg-dim-label" x="136" y="44" text-anchor="middle">a</text>
           <text class="dg-dim-label" x="236" y="44" text-anchor="middle">b</text>
           <text class="dg-dim-label" x="306" y="44" text-anchor="middle">c</text>
-      
+
           <!-- left dimensions -->
           <line class="dg-dim" x1="56" y1="72"  x2="56" y2="192" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
           <line class="dg-dim" x1="56" y1="192" x2="56" y2="272" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
@@ -78,9 +69,24 @@
       </div>
 
       <p>
-        It earns its keep as the others did: an awkward number often splits neatly
-        into hundreds, tens and units.
+        The identity earns its keep the same way the others did: a number that is
+        awkward to square often splits neatly into hundreds, tens and units.
       </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Find $119^2$.</p>
+          <p>
+            Split 119 into $100 + 10 + 9$, so $a = 100$, $b = 10$ and $c = 9$:
+          </p>
+          <div class="work">
+            <p>$119^2 = 100^2 + 10^2 + 9^2 + 2(100)(10) + 2(100)(9) + 2(10)(9)$</p>
+            <p>$= 10000 + 100 + 81 + 2000 + 1800 + 180$</p>
+            <p>$= 14161$</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
