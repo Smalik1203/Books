@@ -198,18 +198,30 @@ Everything after it continues from that number.
 
 ## Grid and binding
 
-| | |
-|---|---|
-| trim | 176 × 250 mm |
-| margins | top 23, bottom 17, **inside 23**, outside 19 mm |
-| measure | 134 mm, a single column |
-| body type | Spectral, 10.5 pt / 1.468, **weight 500**, justified |
+| | A4 — the standard | B5 — the edition |
+|---|---|---|
+| trim | 210 × 297 mm | 176 × 250 mm |
+| margins | top 26, bottom 20, **inside 30.5**, outside 25.5 mm | top 23, bottom 17, **inside 23**, outside 19 mm |
+| measure | 154 mm, a single column | 134 mm, a single column |
+| body type | Spectral, 11.5 pt / 1.43, **weight 500**, justified | Spectral, 10.5 pt / 1.43, **weight 500**, justified |
 
 **The book is bound, so the margins are mirrored, not symmetric.** The inside
-margin is the text inset (18 mm) plus a `--gutter-allowance` (5 mm), because a
-reader should never have to flatten the spine to reach the first word of a
-line. The allowance is its own token: a printer quoting a different binding is
-answered by changing one number.
+margin is the text inset plus a `--gutter-allowance` (5 mm), because a reader
+should never have to flatten the spine to reach the first word of a line. The
+allowance is its own token: a printer quoting a different binding is answered
+by changing one number.
+
+That only works if the outside margin is the inset *alone*. Set it to the same
+number as the inside and the allowance cancels out: the block sits dead centre,
+and once binding has taken its few millimetres the inner margin is the narrower
+of the two — the opposite of what was intended. A4 was symmetric at 28/28 until
+this was measured on a rendered page.
+
+**The measure is deliberately not wider.** 154 mm holds a median of **72
+characters** per line — 2.9 alphabets — against the usual comfortable range of
+45–75, and 2.5 alphabets as the ideal. It is already at the long end, so the
+side margins are what the line length costs, not slack to be reclaimed.
+Narrowing them would push the line past readable.
 
 Every mirrored thing keys off `.page--verso`, which the builder sets from the
 folio: margins, running head, foot bars, folio, and the whole chapter head.
