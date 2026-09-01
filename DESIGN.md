@@ -181,7 +181,19 @@ instruction can never be mistaken for a quantity).
 marker in the page shell; every figure references it.
 
 **Size comes from a scale**, not from a per-figure pixel width:
-`.c-figure--sm` 48 mm · `--md` 58 mm · `--lg` 68 mm · `--xl` 82 mm.
+`.c-figure--sm` · `--md` · `--lg` · `--xl` · `--full`. The printed widths
+live in the tokens (51/62/72/87 mm on A4, one step smaller on B5), and
+`--full` is the measure itself.
+
+`--full` is for the one drawing that genuinely needs the whole measure: a
+**ruled coordinate grid**, where the tick numerals collide long before the
+figure starts to look large. A diagram that is not a grid does not get it.
+
+A figure carries about **4.5 viewBox units per printed millimetre** — a
+`--full` drawing has a viewBox 690 units wide, an `--xl` one 390. That is
+what keeps a structural line the same weight on every page: strokes are
+declared in viewBox units, so a figure drawn at a different density prints
+a heavier or fainter line than its neighbour.
 
 ## 7. Page grammar
 

@@ -39,7 +39,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ESCAPES[c]);
 /* ---- Sheet sizes, read from the tokens --------------------- */
 async function sheet(edition) {
   const src = await readFile(path.join(ROOT, 'css', 'tokens.css'), 'utf8');
-  const over = edition && edition !== 'b5'
+  const over = edition
     ? await readFile(path.join(ROOT, 'css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
     : '';
   const mm = (name) => {
@@ -79,7 +79,7 @@ async function library() {
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
         bleed: existsSync(out + '-bleed.pdf'),
-        edition: (meta.edition || 'b5').toUpperCase(),
+        edition: (meta.edition || 'a4').toUpperCase(),
       });
     }
     chapters.sort((a, b) => String(a.meta.number)

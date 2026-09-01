@@ -42,10 +42,19 @@ for (const f of (await readdir(dir)).filter((x) => /^p\d+.*\.html$/.test(x))) {
   let changed = false;
 
   for (;;) {
+    // A set that already carries on from the previous page is just as
+    // splittable as one that opens with a band header — and it is
+    // usually the one holding the long questions. Taking only the
+    // opening block left those sets as single indivisible atoms.
     const pi = html.indexOf('<div class="c-practice">');
     const ai = html.indexOf('<div class="c-practice c-practice--cont">');
-    const at = pi < 0 ? -1 : pi;
+    const at = pi < 0 ? ai : (ai < 0 ? pi : Math.min(pi, ai));
     if (at < 0) break;
+    const cont = at === ai && (pi < 0 || ai < pi);
+    const done = cont ? 'c-practice-done c-practice--cont' : 'c-practice-done';
+    const openTag = cont
+      ? '<div class="c-practice c-practice--cont">'
+      : '<div class="c-practice">';
 
     // find this practice block's extent
     const blockEnd = (() => {
@@ -64,11 +73,11 @@ for (const f of (await readdir(dir)).filter((x) => /^p\d+.*\.html$/.test(x))) {
     const block = html.slice(at, blockEnd);
 
     const olStart = block.indexOf('<ol class="c-questions');
-    if (olStart < 0) { html = html.slice(0, at) + block.replace('c-practice"', 'c-practice-done"') + html.slice(blockEnd); continue; }
+    if (olStart < 0) { html = html.slice(0, at) + block.replace(openTag, `<div class="${done}">`) + html.slice(blockEnd); continue; }
     const olTagEnd = block.indexOf('>', olStart) + 1;
     const olTag = block.slice(olStart, olTagEnd);
     const { items } = topLevel(block, olTagEnd, 'li');
-    if (items.length < 2) { html = html.slice(0, at) + block.replace('c-practice"', 'c-practice-done"') + html.slice(blockEnd); continue; }
+    if (items.length < 2) { html = html.slice(0, at) + block.replace(openTag, `<div class="${done}">`) + html.slice(blockEnd); continue; }
 
     const head = block.slice(block.indexOf('>', at - at) + 1, olStart).trim();
     const startNo = Number(olTag.match(/data-start="(\d+)"/)?.[1] || 1);
@@ -76,7 +85,7 @@ for (const f of (await readdir(dir)).filter((x) => /^p\d+.*\.html$/.test(x))) {
 
     const parts = items.map(([s, e], n) => {
       const li = block.slice(s, e);
-      const wrapper = n === 0 ? 'c-practice-done' : 'c-practice-done c-practice--cont';
+      const wrapper = n === 0 ? done : 'c-practice-done c-practice--cont';
       const ol = n === 0 && startNo === 1
         ? `<ol class="${cls}">`
         : `<ol class="${cls}" data-start="${startNo + n}">`;

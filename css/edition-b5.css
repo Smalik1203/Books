@@ -1,0 +1,42 @@
+/* ============================================================
+   B5 EDITION — the compact trim.
+
+   A4 is the standard and lives in tokens.css. This sheet moves
+   only the size-dependent tokens back to B5: 176 x 250, a 134mm
+   measure, and a type scale one step down. Everything else —
+   colour, components, hierarchy, the diagram vocabulary — is
+   shared, which is the whole point of an edition sheet.
+   ============================================================ */
+
+:root {
+  --trim-w: 176mm;
+  --trim-h: 250mm;
+
+  --margin-top:     23mm;
+  --margin-bottom:  17mm;
+  --margin-inside:  calc(18mm + var(--gutter-allowance));
+  --margin-outside: 19mm;
+  --measure:        134mm;
+
+  --size-caption:  8.5pt;
+  --size-note:     9.5pt;
+  --size-body:     10.5pt;
+  --size-concept:  11.5pt;
+  --size-section:  15pt;
+  --size-chapter:  24pt;
+  --size-numeral:  40pt;
+
+  --space-hair:  1.4mm;
+  --space-tight: 2.5mm;
+  --space-step:  4.2mm;
+  --space-rest:  6mm;
+  --space-break: 9mm;
+  --lh-body:     1.42;
+
+  --fig-sm: 48mm;
+  --fig-md: 58mm;
+  --fig-lg: 68mm;
+  --fig-xl: 82mm;
+  /* --fig-full needs no override: it is var(--measure), and the
+     measure is overridden a few lines above. */
+}
