@@ -68,6 +68,14 @@ component too large for the space left. Closing those gaps means either
 editing prose at the join or letting a component break across a page, which
 is a design decision.
 
+## Binding a book
+
+`--book` concatenates a class into one volume with continuous folios. Two
+things it does that a chapter build does not: it inserts a blank verso so
+each chapter opens on a recto, and it re-scopes every palette from `:root`
+to `[data-ch="N"]`. Leave the palettes at `:root` and the last chapter
+recolours the whole book.
+
 ## Two editions
 
 `css/tokens.css` holds **A4, the standard trim**. `css/edition-b5.css`

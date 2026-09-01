@@ -354,6 +354,37 @@ ${body}
 </html>
 `)(chapterTheme(meta));
 
+/* The book's own shell. Same head as a chapter's, but the palettes
+   are inlined and scoped per chapter instead of one linked file
+   setting :root for the whole document. */
+const bookShell = (meta, body, scopes, sheet = null, trim = null) => `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>${escapeHtml(meta.title)} — Class ${escapeHtml(meta.class)}</title>
+<link rel="stylesheet" href="../../css/book.css">${meta.edition ? `
+<link rel="stylesheet" href="../../css/edition-${meta.edition}.css">` : ``}
+<style>
+${scopes.join('\n')}
+.page--blank .pagefoot, .page--blank .runhead { display: none; }
+${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
+  : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}
+</style>
+</head>
+<body${sheet ? ' class="bleed"' : ''}>
+<svg class="dg-defs" aria-hidden="true"><defs>
+<marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+        markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+  <path class="dg-arrowhead" d="M0,1 L10,5 L0,9 z"/>
+</marker>
+</defs></svg>
+<div class="spread">
+${body}
+</div>
+</body>
+</html>
+`;
+
 /* ---- Design-system linter ---------------------------------
    A page file describes CONTENT. Every decision about colour,
    type, stroke and spacing belongs to the system. These checks
@@ -606,6 +637,121 @@ async function checkOverflow(htmlPath, meta, sheet) {
   return bad;
 }
 
+/* ---- Build the whole class as one book ---------------------
+   Chapters printed separately each start at folio 1. Bound
+   together they must run continuously, and — by long convention —
+   each chapter opens on a recto, so a blank verso is inserted
+   wherever the previous chapter ended on an odd page.
+
+   The colour needs care. A palette file sets --teal, --rust and
+   --gold at :root, which is right for a chapter printed alone but
+   would let the last chapter recolour the whole book. Here each
+   chapter's page carries data-ch, and its palette is re-scoped to
+   that attribute. Custom properties inherit, so every component
+   inside the page picks up its own chapter's triad. */
+async function paletteScope(meta) {
+  const rules = [];
+  if (meta.palette) {
+    const file = p('css', 'palette-' + meta.palette + '.css');
+    const css = await readFile(file, 'utf8').catch(() => null);
+    if (css === null) {
+      console.warn(`    ! chapter ${meta.number}: no palette file for "${meta.palette}"`);
+    } else {
+      const open = css.indexOf(':root {');
+      const close = css.indexOf('}', open);
+      if (open >= 0 && close > open) rules.push(css.slice(open + ':root {'.length, close).trim());
+    }
+  }
+  const theme = chapterTheme(meta);
+  rules.push(`--ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop};`);
+  return `[data-ch="${meta.number}"] {\n  ${rules.join('\n  ')}\n}`;
+}
+
+const blankVerso = (folio) =>
+  `<section class="page page--verso page--blank" data-folio="${folio}">`
+  + `<div class="page__body"></div></section>`;
+
+async function buildBook(cls) {
+  const root = p('pages', cls);
+  const dirs = (await readdir(root, { withFileTypes: true }))
+    .filter((e) => e.isDirectory()).map((e) => e.name);
+
+  const chapters = [];
+  for (const dir of dirs) {
+    const metaPath = path.join(root, dir, 'chapter.json');
+    if (!existsSync(metaPath)) continue;
+    chapters.push({ dir, meta: JSON.parse(await readFile(metaPath, 'utf8')) });
+  }
+  if (!chapters.length) { console.log(`  ${cls}: no chapters`); return null; }
+  chapters.sort((a, b) => Number(a.meta.number) - Number(b.meta.number));
+
+  // One book, one trim. Mixed editions would print at two sizes.
+  const editions = [...new Set(chapters.map((c) => c.meta.edition || 'standard'))];
+  if (editions.length > 1) {
+    console.error(`  ${cls}: chapters use different editions (${editions.join(', ')}) — a book needs one trim`);
+    return null;
+  }
+
+  const edition = chapters[0].meta.edition;
+  const sheet = await sheetMetrics(ROOT, edition);
+  const figMM = await figWidths(ROOT, edition);
+
+  const bodies = [];
+  const scopes = [];
+  const contents = [];
+  let folio = 1;
+  let blanks = 0;
+
+  for (const ch of chapters) {
+    const src = path.join(root, ch.dir);
+    const files = (await readdir(src)).filter((f) => /^p\d+.*\.html$/.test(f)).sort();
+    if (!files.length) continue;
+
+    if (folio % 2 === 0) { bodies.push(blankVerso(folio)); folio++; blanks++; }
+
+    const parts = [];
+    for (const f of files) {
+      parts.push(`<!-- ${ch.dir}/${f} -->\n` + (await readFile(path.join(src, f), 'utf8')).trim());
+    }
+    const meta = { ...ch.meta, startFolio: folio };
+    let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta), figMM);
+    body = closePages(body);
+    body = body.split('<section class="page').join(`<section data-ch="${ch.meta.number}" class="page`);
+
+    bodies.push(body);
+    scopes.push(await paletteScope(ch.meta));
+    contents.push({ n: ch.meta.number, title: ch.meta.title, from: folio, to: folio + files.length - 1 });
+    folio += files.length;
+  }
+
+  const { html: rendered, errors } = renderMath(bodies.join(String.fromCharCode(10, 10)));
+  const meta = {
+    class: chapters[0].meta.class,
+    number: '', title: 'Mathematics',
+    edition, palette: null,
+  };
+
+  const outDir = p('build', cls);
+  await mkdir(outDir, { recursive: true });
+  const name = cls + '-book';
+  const outHtml = path.join(outDir, name + '.html');
+  await writeFile(outHtml, bookShell(meta, rendered, scopes, null, sheet));
+
+  let bleedHtml = null;
+  if (wantBleed) {
+    bleedHtml = path.join(outDir, name + '-bleed.html');
+    await writeFile(bleedHtml, bookShell(meta, rendered, scopes, sheet, sheet));
+  }
+
+  console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} pages`
+    + `${blanks ? `, ${blanks} blank verso inserted so each chapter opens on a recto` : ''}`
+    + `${errors ? `, ${errors} math error(s)` : ''}`);
+  for (const c of contents) {
+    console.log(`      ${String(c.n).padStart(2)}. ${c.title.padEnd(38)} ${String(c.from).padStart(3)}–${c.to}`);
+  }
+  return { htmlPath: outHtml, bleedHtml, meta, sheet };
+}
+
 /* ---- Sheet check -------------------------------------------
    Chrome writes the page box itself, and rounds when it does.
    Measure what actually came out rather than trusting the CSS. */
@@ -632,10 +778,11 @@ const args = process.argv.slice(2);
 const wantPdf = args.includes('--pdf');
 const wantPng = args.includes('--png');
 const wantBleed = args.includes('--bleed');
+const wantBook = args.includes('--book');
 const target = args.find(a => !a.startsWith('--'));
 
 if (!target) {
-  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed]');
+  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book]');
   process.exit(1);
 }
 
@@ -667,5 +814,22 @@ for (const ch of chapters) {
     await verifySheet(pdf, built.sheet);
   }
   if (wantPng) await toPngs(built.htmlPath, built.meta, built.sheet);
+}
+
+// --book binds the whole class into one volume: folios run straight
+// through and every chapter opens on a recto.
+if (wantBook) {
+  const cls = target.split('/')[0];
+  console.log(`
+Binding ${cls} as one book:`);
+  const book = await buildBook(cls);
+  if (book) {
+    await checkOverflow(book.htmlPath, book.meta, book.sheet);
+    if (wantPdf) await toPdf(book.htmlPath);
+    if (book.bleedHtml) {
+      const pdf = await toPdf(book.bleedHtml);
+      await verifySheet(pdf, book.sheet);
+    }
+  }
 }
 console.log('Done.');
