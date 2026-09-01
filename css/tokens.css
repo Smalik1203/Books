@@ -88,8 +88,17 @@
   --margin-top: 26mm;
   --margin-bottom: 20mm;
   --gutter-allowance: 5mm;                              /* binding */
-  --margin-inside: calc(23mm + var(--gutter-allowance));
-  --margin-outside: 28mm;
+  /* The book is bound, so these are mirrored, not symmetric: the inside
+     margin is the text inset plus the allowance, and the outside margin
+     is the inset alone. Set outside to the full 28mm and the allowance
+     cancels out — inside and outside come to the same number, the text
+     block sits dead centre, and after binding eats its few millimetres
+     the inner margin reads as the narrower of the two. The B5 edition
+     always had this right; A4 did not.
+     30.5 + 154 + 25.5 = 210, so the measure is untouched and no page
+     reflows — only the block's position on the sheet changes. */
+  --margin-inside: calc(25.5mm + var(--gutter-allowance));
+  --margin-outside: 25.5mm;
   --measure: 154mm;
 
   /* Printed width of a figure — five steps, so figures across the
