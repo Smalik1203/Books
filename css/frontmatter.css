@@ -1,0 +1,133 @@
+/* ============================================================
+   FRONT MATTER — title page, imprint, contents.
+
+   Only in a bound book; a chapter printed alone has none. These
+   pages carry no folio and no running head, which is why the
+   arabic numbering starts at the first page of Chapter 1 rather
+   than at the title.
+
+   Nothing here invents a value. The book's own colours, faces and
+   type scale do all of it, so the front matter reads as the same
+   object as the chapters that follow.
+   ============================================================ */
+
+.page--front .pagefoot,
+.page--front .runhead { display: none; }
+
+/* the title block centres against the text block, so the column
+   it sits in has to have that height to centre against */
+.page--front .page__main { height: 100%; }
+
+/* ---- Title page -------------------------------------------- */
+.titlepage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.titlepage__imprint {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-label);
+  color: var(--teal);
+  margin-bottom: var(--space-break);
+}
+.titlepage__rule {
+  width: 28mm;
+  height: var(--stroke-band);
+  background: var(--teal);
+  margin: var(--space-rest) auto;
+}
+.titlepage__title {
+  font-family: var(--font-display);
+  font-size: var(--size-numeral);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--rust);
+  margin: 0;
+}
+.titlepage__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--size-section);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  margin-top: var(--space-step);
+}
+.titlepage__part {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: var(--space-tight);
+}
+
+/* ---- Imprint ----------------------------------------------- */
+.imprint {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+  color: var(--ink-soft);
+}
+.imprint p { margin: 0 0 var(--space-tight); }
+.imprint__name {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  color: var(--teal);
+}
+
+/* ---- Contents ---------------------------------------------- */
+.contents__title {
+  font-family: var(--font-display);
+  font-size: var(--size-section);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  padding-bottom: 2.4mm;
+  border-bottom: var(--stroke-band) solid var(--teal);
+  margin: 0 0 var(--space-rest);
+}
+.contents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;       /* running text is justified; a contents line is not */
+}
+.contents li {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  padding: var(--space-tight) 0;
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+.contents__num {
+  flex: none;
+  width: 12mm;
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  color: var(--teal);
+}
+/* the title takes the width it needs and the leader fills the rest —
+   flex: 1 on both would halve the row and wrap short titles */
+.contents__name { flex: 0 1 auto; }
+.contents__dots {
+  flex: 1;
+  border-bottom: var(--stroke-hair) dotted var(--ink-faint);
+  transform: translateY(-0.9mm);
+}
+.contents__folio {
+  flex: none;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  color: var(--ink);
+}

@@ -203,7 +203,7 @@ body.bleed .jacket__spine {
 
 .jacket__back { padding: var(--jk-margin); display: flex; flex-direction: column; }
 
-.back__head { margin-bottom: 7mm; }
+.back__head { margin-bottom: 5mm; }
 .back__head .wordmark { margin-bottom: 4mm; }
 .back__head .jk-lede { max-width: 62mm; }
 
@@ -280,7 +280,7 @@ body.bleed .jacket__spine {
 
 /* ---- Trade furniture ------------------------------------- */
 .trade {
-  margin-top: 6mm;
+  margin-top: 4.5mm;
   border: var(--jk-hair) solid var(--jk-ground-rule);
   border-radius: 2.5mm;
   padding: 5mm;
@@ -471,7 +471,7 @@ body.bleed .jacket__spine {
 }
 .front__title h1 {
   font-family: var(--font-display);
-  font-size: calc(var(--size-numeral) * 1.62);
+  font-size: calc(var(--size-numeral) * 1.43);
   font-weight: var(--weight-bold);
   line-height: 0.9;
   letter-spacing: -0.018em;
@@ -537,3 +537,55 @@ body.bleed .jacket__spine {
 .claim__icon svg   { color: var(--jk-cream); }
 .feature__icon svg { color: var(--jk-ground-ink); }
 .social__dot svg   { color: var(--jk-ground-ink); }
+
+/* ============================================================
+   FRONT ARTWORK
+   The art is drawn in millimetres: its viewBox is the trim of the
+   front panel, so one user unit is one printed millimetre and a
+   stroke written as 0.35 really is 0.35mm on the sheet. Label type
+   is converted the same way diagram.css converts it, through
+   --dg-v / --dg-w, which here are equal.
+   ============================================================ */
+.jk-art { --dg-v: 176; --dg-w: 176; }
+
+.jk-fig        { fill: none; stroke: var(--jk-navy); stroke-width: 0.32; stroke-linecap: round; }
+.jk-fig--thin  { stroke-width: 0.22; }
+.jk-fig--dash  { stroke-width: 0.22; stroke-dasharray: 1 1; }
+.jk-fig-fill   { fill: var(--jk-navy); stroke: none; }
+.jk-fig-label {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: calc(var(--dg-type) * var(--dg-v) / var(--dg-w) * 1px);
+  fill: var(--jk-navy);
+  stroke: none;
+}
+.jk-fig-label--sm { font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px); }
+
+.jk-disc--navy  { fill: var(--jk-navy); }
+.jk-disc--terra { fill: var(--jk-terra); }
+.jk-disc--sage  { fill: var(--jk-sage); opacity: 0.5; }
+.jk-spiral      { fill: none; stroke: var(--jk-gold); stroke-width: 0.34; opacity: 0.85; }
+.jk-spiral--guide { stroke-width: 0.18; opacity: 0.45; }
+.jk-dot         { fill: var(--jk-gold); opacity: 0.55; }
+.jk-dot--cream  { fill: var(--jk-cream); opacity: 0.32; }
+.jk-plinth      { fill: var(--jk-stone); }
+.jk-plinth--top { fill: #e0d7c4; }
+.jk-sphere      { fill: url(#jk-sphere); }
+
+/* ============================================================
+   TRADE MARKS — barcode and QR
+   Both are scanned, not read, so they keep pure black on pure
+   white whatever the finish: a terracotta bar on cream stock is
+   a bar that fails at the till.
+   ============================================================ */
+.ean { --dg-v: 113; --dg-w: 34; }
+.ean__bar   { fill: #111111; }
+.ean__digit {
+  font-family: var(--font-body);
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+  fill: #111111;
+}
+
+.qr { background: #ffffff; }
+.qr__mod   { fill: #1c211f; }
+.qr__quiet { fill: #ffffff; }
