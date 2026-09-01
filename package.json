@@ -1,0 +1,16 @@
+{
+  "name": "learnlab-b5-maths",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Print-ready B5 textbooks. Fixed-page HTML to PDF, no runtime.",
+  "type": "commonjs",
+  "scripts": {
+    "studio": "node build/serve.mjs",
+    "build": "node build/build.mjs class-9 --pdf --png",
+    "press": "node build/build.mjs class-9 --pdf --bleed"
+  },
+  "dependencies": {
+    "katex": "^0.16.11",
+    "sharp": "^0.35.4"
+  }
+}

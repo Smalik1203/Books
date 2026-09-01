@@ -1,0 +1,47 @@
+/* ============================================================
+   A4 EDITION — the same book on a larger page.
+
+   Only the size-dependent tokens move. Colour, components,
+   diagram vocabulary, hierarchy and every rule in DESIGN.md are
+   shared with the B5 edition, which is the point: one design
+   system, two trims.
+
+   The measure is the constraint. At 210mm wide, generous margins
+   keep the line to 154mm — about 76 characters at 11.5pt, which
+   is still a comfortable single column. Narrower margins would
+   force two columns, and two columns break displayed equations
+   and full-width figures.
+   ============================================================ */
+
+:root {
+  --trim-w: 210mm;
+  --trim-h: 297mm;
+
+  --margin-top:     26mm;
+  --margin-bottom:  20mm;
+  --margin-inside:  calc(23mm + var(--gutter-allowance));
+  --margin-outside: 28mm;
+  --measure:       154mm;
+
+  --size-caption:   9pt;
+  --size-note:     10.5pt;
+  --size-body:     11.5pt;
+  --size-concept:  12.5pt;
+  --size-section:  16.5pt;
+  --size-chapter:  27pt;
+  --size-numeral:  44pt;
+
+  /* A bigger page wants proportionally more air between things,
+     not more words in them. The rhythm scales with the trim. */
+  --space-hair:  1.5mm;
+  --space-tight: 2.7mm;
+  --space-step:  4.6mm;
+  --space-rest:  6.6mm;
+  --space-break: 9.9mm;
+  --lh-body:     1.43;
+
+  --fig-sm: 51mm;
+  --fig-md: 62mm;
+  --fig-lg: 72mm;
+  --fig-xl: 87mm;
+}

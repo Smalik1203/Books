@@ -1,0 +1,98 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Take two negative numbers: $a = -2$ and $b = -3$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$(a + b)^2$</span>
+              <span>$= (-5)^2 =$</span>
+              <span class="chip">25</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$a^2 + 2ab + b^2$</span>
+              <span>$= 4 + 12 + 9 =$</span>
+              <span class="chip">25</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The two sides agree. Now try a pair of rational numbers, say
+        $a = -\frac{2}{3}$ and $b = \frac{3}{4}$. Then
+        $a + b = \frac{-8 + 9}{12} = \frac{1}{12}$, so the left-hand side is
+        $\frac{1}{144}$. The right-hand side gives
+      </p>
+
+      <div class="work work--centred">
+        <p>
+          $a^2 + 2ab + b^2 = \dfrac{4}{9} - 1 + \dfrac{9}{16}
+          = \dfrac{64 - 144 + 81}{144} = \dfrac{1}{144}$
+        </p>
+      </div>
+
+      <p>
+        Agreement again — but two successes prove nothing. You met that limit
+        on the first page, where arithmetic kept confirming a pattern it could
+        not explain. What settles it is algebra: multiply the bracket out.
+      </p>
+
+      <div class="work">
+        <p>$(a + b)^2 = (a + b)(a + b)$</p>
+        <p>$= a(a + b) + b(a + b)$</p>
+        <p>$= a^2 + ab + ba + b^2$</p>
+        <p>$= a^2 + 2ab + b^2$</p>
+      </div>
+
+      <p>
+        No particular numbers appear in that chain, so it cannot fail for an
+        awkward choice. That is what earns an equation the name
+        <span class="term">identity</span>.
+      </p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Algebraic identity</div>
+        <p>
+          An <strong>algebraic identity</strong> is an equation that is true for
+          <em>every</em> value of the variables occurring in it. An ordinary
+          equation need not be: $x + 5 = 12$ is true only when $x = 7$.
+        </p>
+      </div>
+
+      <p>
+        So $x^2 - 1 = 24$ is an equation and not an identity: it is true only
+        when $x = 5$ or $x = -5$. But $(x + y)^2 = x^2 + 2xy + y^2$ is true
+        whatever $x$ and $y$ you choose, so that one is an identity.
+      </p>
+
+      <p>
+        The identity also settles something you may have suspected: $(a + b)^2$
+        and $a^2 + b^2$ are <em>not</em> the same. Which is larger? With
+        $a = 10$ and $b = 2$,
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$(a + b)^2$</span>
+          <span>$= 12^2 =$</span>
+          <span class="chip">144</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$a^2 + b^2$</span>
+          <span>$= 100 + 4 =$</span>
+          <span class="chip">104</span>
+        </div>
+      </div>
+
+      <p>
+        So here $(a + b)^2 > a^2 + b^2$. But that is one pair out of infinitely
+        many. Is it always so?
+      </p>
+
+    </div>
+  </div>
+</section>

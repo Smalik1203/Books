@@ -1,0 +1,87 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>
+        Those six terms are easier to remember grouped by kind: the three
+        squares first, then the three cross terms.
+      </p>
+
+      <div class="eq eq--anchor">
+        $$(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$$
+      </div>
+
+      <p>
+        Notice its shape. Every term is a square of one letter or twice a
+        product of two, and every pairing appears once. If one is missing,
+        something has gone wrong.
+      </p>
+
+      <p>
+        The picture behind it is the one from Section 4.2, grown by a term.
+        Build a square of side $a + b + c$ and cut it at $a$ and at $a + b$
+        along both edges: nine pieces, three squares and six rectangles.
+      </p>
+
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="36 30 312 316" role="img"
+             aria-label="A square of side a plus b plus c, cut into a three by three grid of nine unlabelled regions, with the sides marked a, b and c">
+      
+          <!-- side a+b+c = 260, split 120 / 80 / 60 -->
+          <rect class="dg-line" x="76" y="72" width="260" height="260"/>
+          <line class="dg-thin" x1="196" y1="72" x2="196" y2="332"/>
+          <line class="dg-thin" x1="276" y1="72" x2="276" y2="332"/>
+          <line class="dg-thin" x1="76" y1="192" x2="336" y2="192"/>
+          <line class="dg-thin" x1="76" y1="272" x2="336" y2="272"/>
+      
+          <!-- top dimensions -->
+          <line class="dg-dim" x1="76"  y1="52" x2="196" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <line class="dg-dim" x1="196" y1="52" x2="276" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <line class="dg-dim" x1="276" y1="52" x2="336" y2="52" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="136" y="44" text-anchor="middle">a</text>
+          <text class="dg-dim-label" x="236" y="44" text-anchor="middle">b</text>
+          <text class="dg-dim-label" x="306" y="44" text-anchor="middle">c</text>
+      
+          <!-- left dimensions -->
+          <line class="dg-dim" x1="56" y1="72"  x2="56" y2="192" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <line class="dg-dim" x1="56" y1="192" x2="56" y2="272" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <line class="dg-dim" x1="56" y1="272" x2="56" y2="332" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="46" y="138" text-anchor="end">a</text>
+          <text class="dg-dim-label" x="46" y="238" text-anchor="end">b</text>
+          <text class="dg-dim-label" x="46" y="308" text-anchor="end">c</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.4</span> &nbsp;A square of side $(a+b+c)$.
+          The nine pieces are left blank on purpose.
+        </figcaption>
+      </figure>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Write the area inside each of the nine pieces of Fig. 4.4. Then
+              add them up. Do you get every term of the identity — and does each
+              rectangle you labelled $ab$, $bc$ or $ca$ turn up exactly twice?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        It earns its keep as the others did: an awkward number often splits neatly
+        into hundreds, tens and units.
+      </p>
+
+    </div>
+  </div>
+</section>
