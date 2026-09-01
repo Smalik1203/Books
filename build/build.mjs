@@ -201,10 +201,9 @@ function stampFigureScale(html, figMM) {
   return out;
 }
 
-/* The wrappers stampPages opened are closed here, and the marks
-   hung outside the bleed box so clipping cannot reach them. */
-function closePages(body, marks) {
-  return body.split("</section>").join("</div></div>" + marks + "</section>");
+/* The wrappers stampPages opened are closed here. */
+function closePages(body) {
+  return body.split("</section>").join("</div></div></section>");
 }
 
 /* ---- Sheet metrics ----------------------------------------
@@ -227,29 +226,12 @@ async function sheetMetrics(root, edition) {
   const raw = await tokenReader(root, edition);
   const mm = (name) => parseFloat(raw(name));
   const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const bleed = mm('bleed'), slug = mm('slug');
-  const out = bleed + slug;
+  const bleed = mm('bleed');
   return {
-    trimW, trimH, bleed, slug,
-    mediaW: trimW + 2 * out,
-    mediaH: trimH + 2 * out,
+    trimW, trimH, bleed,
+    mediaW: trimW + 2 * bleed,
+    mediaH: trimH + 2 * bleed,
   };
-}
-
-/* Crop marks: eight hairlines in the slug, each running from the
-   bleed edge outward, so none of them can cross artwork. The
-   viewBox is in millimetres to keep the arithmetic readable. */
-function cropMarks(m) {
-  const o = m.bleed + m.slug;          // trim origin within the sheet
-  const R = o + m.trimW, B = o + m.trimH;
-  const gap = m.bleed, len = 5;
-  const l = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
-  return `<svg class="cropmarks" viewBox="0 0 ${m.mediaW} ${m.mediaH}" aria-hidden="true">`
-    + l(o - gap - len, o, o - gap, o) + l(o, o - gap - len, o, o - gap)
-    + l(R + gap, o, R + gap + len, o) + l(R, o - gap - len, R, o - gap)
-    + l(o - gap - len, B, o - gap, B) + l(o, B + gap, o, B + gap + len)
-    + l(R + gap, B, R + gap + len, B) + l(R, B + gap, R, B + gap + len)
-    + `</svg>`;
 }
 
 /* ---- Page stamping ---------------------------------------
@@ -450,7 +432,7 @@ async function buildChapter(rel) {
   const sheet = await sheetMetrics(ROOT, meta.edition);
   const figMM = await figWidths(ROOT, meta.edition);
   let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta), figMM);
-  body = closePages(body, cropMarks(sheet));
+  body = closePages(body);
   const { html: rendered, errors } = renderMath(body);
 
   const outDir = p('build', path.dirname(rel));
@@ -637,7 +619,8 @@ async function verifySheet(pdfPath, sheet) {
   const odd = boxes.filter(b => b[0] !== boxes[0][0] || b[1] !== boxes[0][1]).length;
   const dw = Math.abs(w - sheet.mediaW), dh = Math.abs(h - sheet.mediaH);
   console.log(`    sheet ${w.toFixed(2)} x ${h.toFixed(2)}mm`
-    + ` (trim ${sheet.trimW} x ${sheet.trimH}, bleed ${sheet.bleed}mm, marks in a ${sheet.slug}mm slug)`);
+    + ` (trim ${sheet.trimW} x ${sheet.trimH} plus ${sheet.bleed}mm bleed, no marks)`);
+
   if (odd) console.warn(`    ! ${odd} page(s) carry a different box`);
   if (dw > 0.5 || dh > 0.5) {
     console.warn(`    ! that is ${dw.toFixed(2)} x ${dh.toFixed(2)}mm off the intended sheet`);

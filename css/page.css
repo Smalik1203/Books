@@ -133,42 +133,31 @@ body {
    BLEED — the print-ready sheet.
 
    Two wrappers sit inside every page. At trim size they are
-   both the page itself and change nothing; with --bleed they
-   become the bleed box (which clips the artwork) and the trim
-   box (which everything is still positioned against), leaving
-   a slug outside for crop marks.
+   both the page itself and change nothing; with --bleed the page
+   grows to the bleed box, which clips the artwork, and the trim
+   box sits inside it — everything is still positioned against the
+   trim.
 
-     .page        the sheet the press prints    196 x 270 mm
-     .page__bleed artwork, clipped 3mm past trim 182 x 256 mm
-     .page__trim  the book as the reader sees it 176 x 250 mm
+   No crop marks and no slug. A press PDF carries the trim plus its
+   bleed and nothing else; the printer imposes the job and lays its
+   own marks over the sheet, and a second set of marks from us is at
+   best ignored and at worst mistaken for the real ones.
+
+     .page / .page__bleed  what the press gets  216 x 303 mm
+     .page__trim           what the reader sees 210 x 297 mm
    ============================================================ */
 .page__bleed,
 .page__trim { position: absolute; inset: 0; }
 
 body.bleed .page {
-  width:  calc(var(--trim-w) + 2 * (var(--bleed) + var(--slug)));
-  height: calc(var(--trim-h) + 2 * (var(--bleed) + var(--slug)));
-  overflow: visible;
-  background: var(--sheet);      /* not inherited from the preview backdrop */
+  width:  calc(var(--trim-w) + 2 * var(--bleed));
+  height: calc(var(--trim-h) + 2 * var(--bleed));
+  overflow: hidden;
+  background: var(--paper);      /* not inherited from the preview backdrop */
 }
 body.bleed .page__bleed {
-  inset: var(--slug);
+  inset: 0;
   overflow: hidden;
   background: var(--paper);
 }
 body.bleed .page__trim { inset: var(--bleed); }
-
-/* Marks sit outside the bleed box, so they can never print over
-   artwork: each runs from the bleed edge outward. */
-.cropmarks { display: none; }
-body.bleed .cropmarks {
-  display: block;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.cropmarks line {
-  stroke: var(--mark);
-  stroke-width: 0.09;            /* 0.25pt, in the millimetre viewBox */
-}
