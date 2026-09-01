@@ -318,6 +318,67 @@ over the sheet, so a second set from us is at best ignored and at worst mistaken
 for the real ones. The page box is read from the tokens, not repeated in the
 builder, and the build measures what Chrome actually wrote.
 
+## 7b. The cover — one sheet, its own system
+
+A cover is not a page. It has no text block, no folio, no running head and no
+measure, and its sheet is back + spine + front rather than one trim. So it gets
+`css/cover.css` and `build/cover.mjs` instead of bending `page.css` around it.
+
+```
+node build/cover.mjs class-9/maths-part1 --png
+node build/cover.mjs class-9 --pdf --bleed        (every cover under the class)
+```
+
+What it keeps from the book: the tokens, the two faces, and the type scale.
+Every size on the wrap is `var(--size-*)` or a scale token times a factor — the
+same lint the interior gets. What it does not keep is the chapter palette. A
+cover belongs to the series, not to a chapter, so the palette sheets do not
+reach it; the jacket ink is its own short list, and `.jacket--night` is a second
+finish of the same layout rather than a second layout.
+
+| | | A4 | B5 |
+|---|---|---|---|
+| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 210 mm | 176 mm |
+| `.jacket__spine` | from the page count, not from taste | `--spine-w` | `--spine-w` |
+| `.jacket__front` | title and artwork | 210 mm | 176 mm |
+| **wrap, trim** | back + spine + front | **435.8 × 297** | **367.8 × 250** |
+| **wrap, press sheet** | plus 3mm bleed on the cut edges | **441.8 × 303** | **373.8 × 256** |
+
+An A4 wrap is A3 **plus the spine** — 420mm of paper for the two panels and
+15.8 more for the fold. Ordering "A3" gets a sheet 16mm too narrow.
+
+Nothing on the wrap is typed in millimetres that depends on the trim. The
+margin and the back panel's column are fractions of `--trim-w`, the title's
+drop is a fraction of `--trim-h`, and the artwork keeps its own coordinate
+space and is scaled to whatever panel it lands on — the builder stamps
+`--jk-art-w` so its labels still convert to printed millimetres.
+
+**Directions and finishes.** A *finish* repaints the cover: it is the twelve
+front tokens, the ground tokens and the four working colours, and nothing
+else. If a finish needs a rule as well as a value, the contract is short a
+token and the fix is to add one. A *direction* rebuilds it — its own display
+face, its own artwork, its own arrangement of the front — and shares the back
+and spine markup, which follow on tokens alone.
+
+`node build/cover-swatch.mjs <direction>` lays every candidate colourway on one
+sheet at the same size in the real stylesheet. Comparing covers one build at a
+time compares a colour in front of you against one you saw ten minutes ago.
+
+**Three numbers the build works out rather than trusting the source:**
+
+- **the spine**, from `pages`, `paperCaliper` and `caseAllowance`. A spine typed
+  by hand is a spine that is wrong the next time the extent changes. A printer
+  who has measured the stock overrides it with `spineWidth`.
+- **the ISBN check digit**, recomputed from the first twelve and used in both
+  the printed ISBN and the bars. The build says when it differed.
+- **the EAN-13 bars themselves**, including the 11- and 7-module quiet zones,
+  which are part of the symbol and not padding around it.
+
+The QR is the one thing it cannot generate. Until `cover.json` points at a real
+one, a placeholder is drawn, every build says so, and `--bleed` **refuses to
+write a press sheet** — `--allow-placeholder` is the deliberate way past. A
+placeholder that looks like a QR is exactly the kind of thing that ships.
+
 ## 8. What the builder rejects
 
 ```

@@ -158,7 +158,24 @@ function eanSvg(digits) {
 async function qrSvg(meta) {
   if (meta.qr) {
     const file = p(meta.qr);
-    if (existsSync(file)) return { svg: await readFile(file, 'utf8'), real: true };
+    if (existsSync(file)) {
+      // SVG goes in as markup; a bitmap goes in as a data URI, because a
+      // press PDF must carry the image rather than a path to it.
+      const ext = path.extname(file).toLowerCase();
+      if (ext === '.svg') return { svg: await readFile(file, 'utf8'), real: true };
+      const type = ext === '.png' ? 'image/png'
+        : ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg'
+        : ext === '.webp' ? 'image/webp' : null;
+      if (!type) throw new Error(`qr: ${meta.qr} — use .svg, .png, .jpg or .webp`);
+      const b64 = (await readFile(file)).toString('base64');
+      const px = Buffer.byteLength(b64, 'utf8');
+      if (ext !== '.svg' && px < 2000) {
+        console.warn('    ! the QR image is very small — at 24mm on the sheet it wants'
+          + ' at least 600px square, or the modules will print soft');
+      }
+      return { real: true, svg: `<img class="qr" alt="QR code for ${escapeHtml(meta.url ?? '')}"`
+        + ` src="data:${type};base64,${b64}">` };
+    }
     console.warn(`    ! qr: ${meta.qr} not found — falling back to the placeholder`);
   }
 
@@ -195,6 +212,11 @@ async function qrSvg(meta) {
   };
 }
 
+/* Below this the spine cannot carry type across its width — the
+   word "PART" alone is wider than the spine — so the furniture
+   turns to read head-to-foot. */
+const SLIM_SPINE = 14;
+
 /* ---- Shell ------------------------------------------------- */
 const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 <html lang="en">
@@ -203,13 +225,14 @@ const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 <title>${escapeHtml(meta.imprint)} ${escapeHtml(meta.title)} — Class ${escapeHtml(meta.class)}, Part ${escapeHtml(meta.part)} — cover</title>
 <link rel="stylesheet" href="../../../css/book.css">${meta.edition ? `
 <link rel="stylesheet" href="../../../css/edition-${escapeHtml(meta.edition)}.css">` : ``}
+<link rel="stylesheet" href="../../../css/cover-fonts.css">
 <link rel="stylesheet" href="../../../css/cover.css">
-<style>:root { --spine-w: ${spine.mm}mm; }
+<style>:root { --spine-w: ${spine.mm}mm; --jk-art-w: ${sheet.trimW}; }
 @page { size: ${bleed ? sheet.mediaW : sheet.sheetW}mm ${bleed ? sheet.mediaH : sheet.trimH}mm; margin: 0; }</style>
 </head>
 <body class="cover${bleed ? ' bleed' : ''}">
 <div class="cover-stage">
-<div class="jacket${meta.finish === 'night' ? ' jacket--night' : ''}">
+<div class="jacket jacket--${escapeHtml(meta.edition ?? 'a4')} jacket--${escapeHtml(meta.finish ?? 'light')}${meta.direction ? ` jacket--${escapeHtml(meta.direction)}` : ''}${spine.mm < SLIM_SPINE ? ' jacket--spine-slim' : ''}">
 ${body}
 </div>
 </div>
@@ -221,7 +244,14 @@ ${body}
 async function buildCover(rel) {
   const src = p('covers', rel);
   const meta = JSON.parse(await readFile(path.join(src, 'cover.json'), 'utf8'));
-  let body = await readFile(path.join(src, 'cover.html'), 'utf8');
+  /* Several covers of the same book are the same words on different stock,
+     so they point at shared content rather than copying it — a blurb that
+     has to be edited three times is a blurb that will differ. `content` is
+     one file or a list of them, concatenated in panel order. */
+  const parts = [meta.content ?? 'cover.html'].flat();
+  let body = (await Promise.all(
+    parts.map(part => readFile(path.resolve(src, part), 'utf8'))
+  )).join(String.fromCharCode(10, 10));
 
   const tok = await tokenReader(meta.edition);
   const mm = (name) => parseFloat(tok(name));
@@ -285,7 +315,8 @@ async function buildCover(rel) {
     }
   }
 
-  console.log(`  ${rel}: ${meta.finish ?? 'light'} finish, spine ${spine.mm}mm (${spine.how})`);
+  console.log(`  ${rel}: ${meta.edition ?? 'a4'}, ${meta.finish ?? 'light'} finish,`
+    + ` spine ${spine.mm}mm (${spine.how})`);
   console.log(`    wrap ${sheet.sheetW} x ${sheet.trimH}mm trim`
     + `  =  ${trimW} back + ${spine.mm} spine + ${trimW} front`);
   return { outHtml, bleedHtml, meta, sheet };
