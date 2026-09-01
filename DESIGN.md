@@ -200,6 +200,23 @@ algebra in the text), `.dg-dim-label` for measurements (rust),
 instruction can never be mistaken for a quantity).
 `.dg-label--on-fill` where a label sits on a dark region.
 
+**Coordinate graphs** are a frame with relations laid over it, and the two must
+not compete. `.dg-grid` is the faintest thing in the figure, `.dg-axis` is quiet
+structure, `.dg-tick` sets the axis numerals upright (they are numbers, not
+quantities), and only `.dg-plot` carries mathematics. `.dg-plot-label` names a
+relation and takes a paper knockout, so a label is never struck through by a
+grid line or another plot.
+
+Axes carry **no arrowhead**: the book's one marker is rust, which on an axis
+reads as a measurement. The line running out to the frame says *continues*.
+
+Where several relations share one pair of axes they are told apart by role, in
+a fixed order, so the same relation keeps its colour across a series of
+figures. `.dg-plot` follows the chapter's structure colour; `--b` is rust; and
+`--c` is the diagram palette's green rather than a working colour — a chapter
+that owns a warm structure hue would otherwise put three warm lines on one
+pair of axes.
+
 **One arrowhead in the whole book.** The builder puts a single `#dg-arrow`
 marker in the page shell; every figure references it.
 
