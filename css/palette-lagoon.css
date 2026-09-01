@@ -1,8 +1,8 @@
 /* ============================================================
-   TEAL — chapter palette (teal)
+   LAGOON — chapter palette (deep lagoon)
 
    One of fourteen, and a whole triad rather than a recolouring:
-   structure 201deg, action 321deg, attention 81deg. Every pair
+   structure 227deg, action 347deg, attention 107deg. Every pair
    is 120 degrees apart, which is as far as three hues can get from
    one another. The book's default palette is not built that way —
    rust and gold sit 39 degrees apart — which is why action and
@@ -16,23 +16,23 @@
    The token names say teal, rust and gold because that is what the
    components ask for. Read them as the roles.
 
-   Assigned to chapter 13.
+   Assigned to chapter 2.
    ============================================================ */
 
 :root {
   /* structure — headings, section tabs, discs, folio bar, summary */
-  --teal:       #05555a;
-  --teal-deep:  #023b3e;
-  --teal-soft:  #69a4a8;
-  --teal-tint:  #e5f5f6;
+  --teal:       #03526b;
+  --teal-deep:  #00394b;
+  --teal-soft:  #6fa0b6;
+  --teal-tint:  #e7f4fa;
 
   /* action — the chapter title and the worked example */
-  --rust:       #83558b;
-  --rust-deep:  #673d6e;
-  --rust-tint:  #f6eef8;
+  --rust:       #915074;
+  --rust-deep:  #74395a;
+  --rust-tint:  #faedf3;
 
   /* attention — the question put to the reader */
-  --gold:       #a2844d;
-  --gold-deep:  #866a36;
-  --gold-tint:  #f7f0e5;
+  --gold:       #8f8d50;
+  --gold-deep:  #747239;
+  --gold-tint:  #f2f2e6;
 }
