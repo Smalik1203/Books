@@ -19,10 +19,15 @@
      Tints exist only as panel backgrounds. Ink and rules are
      neutral and belong to no component.
      ========================================================== */
-  --teal:       #12503f;
-  --teal-deep:  #0c3a2d;
-  --teal-soft:  #4a8271;
-  --teal-tint:  #e7f0ec;
+  /* The structure colour is the one a chapter may own, so that two
+     chapters do not read identically on the page. The builder supplies
+     --ch-structure-* when a chapter declares a palette; with none, these
+     fall back to the teal the book was built in and nothing changes.
+     Action and attention below stay common to the whole book. */
+  --teal:       var(--ch-structure,      #12503f);
+  --teal-deep:  var(--ch-structure-deep, #0c3a2d);
+  --teal-soft:  var(--ch-structure-soft, #4a8271);
+  --teal-tint:  var(--ch-structure-tint, #e7f0ec);
 
   --rust:       #b4462a;
   --rust-deep:  #8d3520;
