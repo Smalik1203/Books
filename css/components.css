@@ -298,6 +298,11 @@
 .c-parts--3 { grid-template-columns: repeat(3, 1fr); column-gap: 4mm; }
 .c-parts--4 { grid-template-columns: repeat(4, 1fr); column-gap: 3mm; }
 
+/* Multiple-choice options are lettered, not numbered. A roman (i)
+   under a question already numbered (i) reads as the same label
+   twice, and the reader has to work out which one is being cited. */
+.c-parts--alpha > li::before { content: "(" counter(part, lower-alpha) ")"; }
+
 /* the harder parts carry a star in the marker, not in the maths */
 .c-parts--starred > li { padding-left: 10mm; }
 .c-parts--starred > li::before { width: 9mm; }
