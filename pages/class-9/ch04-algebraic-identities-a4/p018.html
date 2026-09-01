@@ -1,0 +1,172 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>
+        Look at the coefficients: $1, 3, 3, 1$, against the $1, 2, 1$ of the
+        squared identity. Powers of $a$ fall as powers of $b$ rise, and the
+        numbers in front are symmetric — a pattern you will meet again.
+      </p>
+
+      <p>
+        So take a cube of edge $a + b$ and cut it with three planes, one
+        perpendicular to each direction, each at a distance $a$ from the same
+        corner. Fig. 4.9 shows those cuts on the three visible faces.
+      </p>
+
+      <div class="c-figure c-figure--keyed">
+        <figure class="c-figure c-figure--md">
+          <svg viewBox="20 40 300 280" role="img"
+               aria-label="A cube of edge a plus b, drawn in oblique projection, with each edge divided into a length a and a length b, and the cutting planes shown on the three visible faces">
+      
+            <!-- oblique projection: front face 160 square, depth vector (+56, -56).
+                 Each edge splits a : b = 100 : 60. -->
+      
+            <!-- top face -->
+            <polygon class="dg-line dg-face-top" points="60,120 220,120 276,64 116,64"/>
+            <!-- right face -->
+            <polygon class="dg-line dg-face-side" points="220,120 276,64 276,224 220,280"/>
+            <!-- front face -->
+            <polygon class="dg-line dg-face-front" points="60,120 220,120 220,280 60,280"/>
+      
+            <!-- hidden edges of the far corner -->
+            <path class="dg-hidden" d="M116,64 L116,224 L276,224 M116,224 L60,280"/>
+      
+            <!-- cutting planes, front face -->
+            <line class="dg-thin" x1="160" y1="120" x2="160" y2="280"/>
+            <line class="dg-thin" x1="60"  y1="180" x2="220" y2="180"/>
+            <!-- carried onto the top face -->
+            <line class="dg-thin" x1="160" y1="120" x2="216" y2="64"/>
+            <line class="dg-thin" x1="95"  y1="85"  x2="255" y2="85"/>
+            <!-- carried onto the right face -->
+            <line class="dg-thin" x1="255" y1="85"  x2="255" y2="245"/>
+            <line class="dg-thin" x1="220" y1="180" x2="276" y2="124"/>
+      
+            <!-- edge divisions -->
+            <line class="dg-dim" x1="160" y1="274" x2="160" y2="288"/>
+            <text class="dg-label" x="110" y="308" text-anchor="middle">a</text>
+            <text class="dg-label" x="190" y="308" text-anchor="middle">b</text>
+      
+            <line class="dg-dim" x1="52" y1="180" x2="66" y2="180"/>
+            <text class="dg-label" x="42" y="236" text-anchor="end">a</text>
+            <text class="dg-label" x="42" y="156" text-anchor="end">b</text>
+      
+            <text class="dg-label" x="248" y="112">a</text>
+            <text class="dg-label" x="282" y="78">b</text>
+          </svg>
+          <figcaption>
+            <span class="fignum">Fig. 4.9</span> &nbsp;A cube of edge $(a + b)$.
+          </figcaption>
+        </figure>
+      
+        <div class="c-key">
+          <ul>
+            <li><span class="c-key__swatch c-key__swatch--face-front"></span>
+              <span>Three planes, one per direction, each cutting at $a$.</span></li>
+            <li><span class="c-key__swatch c-key__swatch--face-side"></span>
+              <span>They divide the cube into <strong>eight</strong> pieces.</span></li>
+            <li><span class="c-key__swatch c-key__swatch--face-top"></span>
+              <span>Two are cubes; the other six are cuboids.</span></li>
+          </ul>
+          <div class="c-key__total">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="17" rx="2"/>
+              <path d="M9 4V2.6h6V4"/>
+              <path d="M8.5 12.5l2.2 2.2 4.3-4.3"/>
+            </svg>
+            <span>The whole cube has volume $(a + b)^3$.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+      <p>
+        Work out the volume of each of the eight pieces. You should find one $a^3$,
+        one $b^3$, and six cuboids of two kinds — then add them up.
+      </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Here is what the three cuts leave. Two of the eight pieces are cubes —
+        one of edge $a$, one of edge $b$. The other six are cuboids in two
+        kinds: three $a \times a \times b$, and three $a \times b \times b$.
+      
+      </p>
+
+      <figure class="c-figure c-figure--xl">
+        <svg viewBox="0 0 340 142" role="img"
+             aria-label="The eight pieces of the cube shown separately: a cube of edge a, three cuboids a by a by b, three cuboids a by b by b, and a cube of edge b">
+      
+          <!-- 1. cube of edge a -->
+          <polygon class="dg-line dg-face-top"   points="16,50 64,50 80,34 32,34"/>
+          <polygon class="dg-line dg-face-side"  points="64,50 80,34 80,82 64,98"/>
+          <polygon class="dg-line dg-face-front" points="16,50 64,50 64,98 16,98"/>
+          <text class="dg-label dg-label--sm" x="40" y="110" text-anchor="middle">a</text>
+          <text class="dg-label dg-label--sm" x="10" y="78" text-anchor="middle">a</text>
+          <text class="dg-label dg-label--sm" x="74" y="30" text-anchor="middle">a</text>
+      
+          <text class="dg-label" x="92" y="80" text-anchor="middle">+</text>
+      
+          <!-- 2. cuboid a by a by b -->
+          <polygon class="dg-line dg-face-top"   points="116,50 164,50 173,41 125,41"/>
+          <polygon class="dg-line dg-face-side"  points="164,50 173,41 173,89 164,98"/>
+          <polygon class="dg-line dg-face-front" points="116,50 164,50 164,98 116,98"/>
+          <text class="dg-label dg-label--sm" x="140" y="110" text-anchor="middle">a</text>
+          <text class="dg-label dg-label--sm" x="110" y="78" text-anchor="middle">a</text>
+          <text class="dg-label dg-label--sm" x="176" y="38" text-anchor="middle">b</text>
+      
+          <text class="dg-label" x="190" y="80" text-anchor="middle">+</text>
+      
+          <!-- 3. cuboid a by b by b -->
+          <polygon class="dg-line dg-face-top"   points="209,74 257,74 266,65 218,65"/>
+          <polygon class="dg-line dg-face-side"  points="257,74 266,65 266,89 257,98"/>
+          <polygon class="dg-line dg-face-front" points="209,74 257,74 257,98 209,98"/>
+          <text class="dg-label dg-label--sm" x="233" y="110" text-anchor="middle">a</text>
+          <text class="dg-label dg-label--sm" x="203" y="90" text-anchor="middle">b</text>
+          <text class="dg-label dg-label--sm" x="269" y="62" text-anchor="middle">b</text>
+      
+          <text class="dg-label" x="278" y="80" text-anchor="middle">+</text>
+      
+          <!-- 4. cube of edge b -->
+          <polygon class="dg-line dg-face-top"   points="292,74 316,74 325,65 301,65"/>
+          <polygon class="dg-line dg-face-side"  points="316,74 325,65 325,89 316,98"/>
+          <polygon class="dg-line dg-face-front" points="292,74 316,74 316,98 292,98"/>
+          <text class="dg-label dg-label--sm" x="304" y="110" text-anchor="middle">b</text>
+          <text class="dg-label dg-label--sm" x="286" y="90" text-anchor="middle">b</text>
+          <text class="dg-label dg-label--sm" x="328" y="62" text-anchor="middle">b</text>
+      
+          <!-- what each contributes -->
+          <text class="dg-dim-label" x="44"  y="132" text-anchor="middle">a³</text>
+          <text class="dg-dim-label" x="144" y="132" text-anchor="middle">3a²b</text>
+          <text class="dg-dim-label" x="237" y="132" text-anchor="middle">3ab²</text>
+          <text class="dg-dim-label" x="308" y="132" text-anchor="middle">b³</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.10</span> &nbsp;The eight pieces of a cube
+          of edge $(a+b)$, and what each contributes to its volume.
+        </figcaption>
+      </figure>
+
+      <p>
+        Add the volumes. The two cubes give $a^3$ and $b^3$. Each of the three
+        $a \times a \times b$ cuboids has volume $a^2b$, and each of the three
+        $a \times b \times b$ cuboids has volume $ab^2$, so the six contribute
+        $3a^2b + 3ab^2$ — the identity again, counted rather than multiplied out.
+      </p>
+
+    </div>
+  </div>
+</section>

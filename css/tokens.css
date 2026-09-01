@@ -1,0 +1,148 @@
+/* ============================================================
+   LearnLab Textbook Design System — TOKENS
+   The single source of truth. Nothing downstream may introduce a
+   colour, a size, a weight or a stroke that is not defined here.
+
+   Trim: B5, 176 × 250 mm.
+   ============================================================ */
+
+:root {
+
+  /* ==========================================================
+     1. COLOUR — three working colours, used semantically.
+     Every component takes EXACTLY ONE. None mixes two.
+
+       teal   mathematics, core concept, structure
+       rust   activity, example, action
+       gold   attention, reflection
+
+     Tints exist only as panel backgrounds. Ink and rules are
+     neutral and belong to no component.
+     ========================================================== */
+  --teal:       #12503f;
+  --teal-deep:  #0c3a2d;
+  --teal-soft:  #4a8271;
+  --teal-tint:  #e7f0ec;
+
+  --rust:       #b4462a;
+  --rust-deep:  #8d3520;
+  --rust-tint:  #fbeee7;
+
+  --gold:       #c1841c;
+  --gold-deep:  #96650f;
+  --gold-tint:  #fdf5e6;
+
+  /* Neutrals */
+  --paper:      #fffefb;
+  --ink:        #1c211f;
+  --ink-soft:   #4a524e;
+  --ink-faint:  #7d837e;
+  --rule:       #ded9cd;
+  --rule-soft:  #ece8dd;
+
+  /* ==========================================================
+     2. TYPE — two faces. No third face may be introduced.
+       body    Spectral  — running text, equations, diagram labels
+       display Vollkorn  — headings, component labels, captions
+     ========================================================== */
+  --font-body:    Spectral, Georgia, serif;
+  --font-display: Vollkorn, Spectral, Georgia, serif;
+
+  /* One scale. Sizes are named by role, not by number. */
+  --size-caption:  8.5pt;   /* figure captions, hints, folio */
+  --size-note:     9.5pt;   /* panel text, legends, exercises */
+  --size-body:    10.5pt;   /* running text */
+  --size-concept: 11.5pt;   /* concept heading (level 3) */
+  --size-section: 15pt;     /* section heading (level 2) */
+  --size-chapter: 24pt;     /* chapter title (level 1) */
+  --size-numeral: 40pt;     /* chapter numeral */
+  --size-ornament: 30pt;    /* the one watermark glyph */
+
+  /* Diagram type is specified in printed millimetres, not in SVG
+     user units: a viewBox unit means a different physical size in
+     every figure. The builder stamps --dg-v (viewBox width) and
+     --dg-w (printed width, mm) on each figure so the two below can
+     be converted. Fallbacks keep an unstamped figure sane. */
+  --dg-type:     3;         /* label height, mm  (~8.5pt) */
+  --dg-type-sm:  2.65;      /* small label, mm   (~7.5pt) */
+  --dg-v:      290;
+  --dg-w:       58;
+
+  --lh-tight:  1.14;
+  --lh-snug:   1.30;
+  --lh-body:   1.42;
+  --lh-panel:  1.40;
+
+  --weight-text: 500;   /* KaTeX has one weight; text must match it */
+  --weight-bold: 700;
+
+  --track-title: 0.055em;   /* section and concept titles */
+  --track-label: 0.10em;    /* the small uppercase component labels */
+
+  /* ==========================================================
+     3. PAGE GEOMETRY
+     ========================================================== */
+  --trim-w: 176mm;
+  --trim-h: 250mm;
+
+  --margin-top:    23mm;
+  --margin-bottom: 17mm;
+  --gutter-allowance: 5mm;                              /* binding */
+  --margin-inside: calc(18mm + var(--gutter-allowance));
+  --margin-outside: 19mm;
+  --measure:  134mm;
+
+  /* Printed width of a figure — four steps, so figures across the
+     book relate to each other rather than to their own artwork. */
+  --fig-sm: 48mm;
+  --fig-md: 58mm;
+  --fig-lg: 68mm;
+  --fig-xl: 82mm;
+  --bleed: 3mm;
+  --slug:  7mm;             /* room outside the bleed for crop marks */
+  --mark:  #000000;         /* crop marks: prepress black, not an ink of the book */
+  --sheet: #ffffff;         /* the slug outside the bleed: bare paper, no ink */
+
+  /* ==========================================================
+     4. RHYTHM — one spacing scale. Components use these names,
+     never raw millimetres.
+     ========================================================== */
+  --space-hair:  1.4mm;
+  --space-tight: 2.5mm;
+  --space-step:  4.2mm;   /* between a component and its neighbour */
+  --space-rest:  6mm;     /* the visual pause before a new idea */
+  --space-break: 9mm;     /* before a section heading */
+
+  /* ==========================================================
+     5. STROKE AND SHAPE — one vocabulary, shared by panels and
+     by every diagram in the book.
+     ========================================================== */
+  --stroke-hair:  0.2mm;   /* panel hairlines */
+  --stroke-fine:  0.9;     /* diagram: secondary lines, cuts (px) */
+  --stroke-line:  1.4;     /* diagram: structural outlines (px)   */
+  --stroke-dim:   1.0;     /* diagram: dimension lines (px)       */
+  --stroke-rule:  0.35mm;  /* component rules */
+  --stroke-band:  0.9mm;   /* the heavy rule under a section head */
+
+  --radius: 2.6mm;
+  --radius-lg: 3.6mm;
+
+  /* ==========================================================
+     6. DIAGRAM FILLS — the only fills a figure may use. Named by
+     role so a legend swatch and its region cannot drift apart.
+     ========================================================== */
+  --dg-a: #e3bc55;   /* first quantity  — squares of a */
+  --dg-b: #4e9078;   /* second quantity — products, ab */
+  --dg-c: #b4462a;   /* third quantity  — squares of b */
+  --dg-d: #f7e6cf;   /* unit / remainder */
+
+  /* Soft variants, for dissections where solid fills would shout */
+  --dg-a-soft: #f0e3bd;
+  --dg-b-soft: #cfe4da;
+  --dg-c-soft: #f2d3c8;
+
+  /* The three faces of a solid, so every 3-D figure is lit alike */
+  --dg-face-front: #faf0dc;
+  --dg-face-top:   #f3e3c4;
+  --dg-face-side:  #e0cfae;
+}

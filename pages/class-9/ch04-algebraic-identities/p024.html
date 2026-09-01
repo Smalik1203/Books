@@ -1,0 +1,79 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>
+            Simplify $\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100}$, given that
+            $5x^2 + 5x - 100 \neq 0$.
+          </p>
+          <p>
+            Factorise each part. For the numerator, find two numbers with sum $-7$
+            and product $12$. Both are negative, since the product is positive
+            and the sum is not; the pair is $-3$ and $-4$:
+          </p>
+          <div class="work">
+            <p>$x^2 - 7x + 12 = (x - 3)(x - 4)$</p>
+          </div>
+          <p>
+            The denominator needs a step first — all three terms are multiples
+            of 5, so take that out before hunting for a pair. Then the sum is
+            $1$ and the product $-20$, which gives $5$ and $-4$:
+          </p>
+          <div class="work">
+            <p>$5x^2 + 5x - 100 = 5\left(x^2 + x - 20\right) = 5(x - 4)(x + 5)$</p>
+          </div>
+          <p>Now the fraction can be written as a product of factors:</p>
+          <div class="work work--centred">
+            <p>$\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100} = \dfrac{(x - 3)(x - 4)}{5(x - 4)(x + 5)}$</p>
+          </div>
+          <p>
+            The factor $x - 4$ appears top and bottom, so it cancels — and it
+            is allowed to, because $x - 4$ cannot be zero here: if it were, the
+            whole denominator would be zero, which we were told it is not.
+          </p>
+          <div class="work work--centred">
+            <p>$\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100} = \dfrac{x - 3}{5(x + 5)}$</p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        One caution. The two agree wherever the original makes sense, but not
+        everywhere: at $x = 4$ the simplified form gives $\frac{1}{45}$, while
+        the original reads $\frac{0}{0}$.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Simplify this one, assuming $t^2 + 2ts - 48s^2 \neq 0$:
+            </p>
+            <div class="work work--centred">
+              <p>$\dfrac{36s^2 - 12st + t^2}{t^2 + 2ts - 48s^2}$</p>
+            </div>
+            <p class="c-reflect__hint">
+              The numerator is one of the identities from Section 4.2 in
+              disguise. For the denominator, look for two numbers with sum $2s$
+              and product $-48s^2$. One factor will then appear on both lines —
+              but check the order of the letters before you cancel.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

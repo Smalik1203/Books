@@ -1,0 +1,27 @@
+/* ============================================================
+   EQUATION TYPOGRAPHY — one size, everywhere.
+
+   KaTeX's roman has an x-height of 0.430 em; Spectral's is 0.452.
+   Measured, not guessed: maths is set 1.05x so the two sit on the
+   same visual line.
+
+   The size is ABSOLUTE, not relative. A panel sets its prose a
+   shade below running text — but its mathematics does not follow,
+   or the same identity prints at four different sizes depending
+   on which box it happened to land in.
+   ============================================================ */
+
+.katex { font-size: calc(var(--size-body) * 1.05); line-height: inherit; }
+.page__main .katex { padding: 0 0.03em; }
+.katex-display { margin: var(--space-tight) 0; break-inside: avoid; }
+
+/* Captions, legends and asides are the exception. There the maths
+   annotates smaller text and must follow it, or a caption would
+   stand taller than the line it belongs to. */
+figcaption .katex,
+.hint .katex,
+.pip .katex { font-size: calc(var(--size-caption) * 1.05); }
+.c-key .katex { font-size: calc(var(--size-note) * 1.05); }
+
+/* So an unrendered expression can never pass as prose. */
+.math-error { background: #ffe9e9; color: #a01020; padding: 0 0.2em; }
