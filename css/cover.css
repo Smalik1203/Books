@@ -1,0 +1,539 @@
+/* ============================================================
+   COVER — the printed wrap.
+
+   A cover is not a page. It has no text block, no folio, no
+   running head and no measure; it is one sheet the width of
+   back + spine + front, printed edge to edge and folded twice.
+   So it gets its own shell rather than bending page.css.
+
+   What it does share is everything that makes it the same book:
+   the two faces, the type scale, and the ink. The jacket colours
+   below are the imprint's, not a chapter's — a cover is the one
+   surface in the book that belongs to the series rather than to
+   a chapter, which is why the palette sheets do not reach it.
+
+     .jacket           the whole wrap, trim size
+     .jacket__back     176mm — blurb, features, barcode
+     .jacket__spine    --spine-w — set from the page count
+     .jacket__front    176mm — title and artwork
+
+   Two finishes, same layout: the default light stock, and
+   .jacket--night for the dark edition.
+   ============================================================ */
+
+:root {
+  /* ---- Jacket geometry -----------------------------------
+     --spine-w is stamped by the builder from the cover's own
+     metadata: it depends on the page count and the paper, and
+     no stylesheet can know either. This is the fallback. */
+  --spine-w: 16mm;
+
+  --jk-margin:   14mm;   /* the panel's own quiet edge */
+  --jk-gap:      6mm;
+  --jk-hair:     0.3mm;
+
+  /* ---- Jacket ink ----------------------------------------
+     Four colours and two neutrals. Navy carries the identity,
+     terracotta the one accent, sage the counterweight; gold is
+     reserved for the small caps that label things. */
+  --jk-cream:      #f3f0e8;
+  --jk-cream-deep: #e7e2d6;
+  --jk-navy:       #1e3a5e;
+  --jk-navy-deep:  #16293f;
+  --jk-navy-soft:  #6d8099;
+  --jk-terra:      #bc5b38;
+  --jk-sage:       #8a9c84;
+  --jk-gold:       #8d7a3c;
+  --jk-stone:      #cec4ae;
+  --jk-stone-deep: #a99d84;
+
+  /* the night finish overrides only the ground and its ink */
+  --jk-ground:      var(--jk-cream);
+  --jk-ground-ink:  var(--jk-navy);
+  --jk-ground-soft: #55617a;
+  --jk-ground-rule: #cdc6b6;
+  --jk-ground-panel:#eae5da;
+  --jk-ground-mark: var(--jk-sage);
+}
+
+.jacket--night {
+  --jk-ground:      #150f27;
+  --jk-ground-ink:  #f1ece4;
+  --jk-ground-soft: #a79fc0;
+  --jk-ground-rule: #3a2f56;
+  --jk-ground-panel:#1f1637;
+  --jk-ground-mark: var(--jk-terra);
+  --jk-navy:        #1b1233;
+  --jk-navy-deep:   #120c22;
+}
+
+/* ============================================================
+   SHELL
+   ============================================================ */
+
+body.cover {
+  margin: 0;
+  background: #55605b;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cover-stage {
+  display: flex;
+  justify-content: center;
+  padding: 8mm;
+}
+
+.jacket {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--trim-w) var(--spine-w) var(--trim-w);
+  width: calc(2 * var(--trim-w) + var(--spine-w));
+  height: var(--trim-h);
+  overflow: hidden;
+  background: var(--jk-ground);
+}
+
+.jacket__back,
+.jacket__spine,
+.jacket__front { position: relative; overflow: hidden; }
+
+/* The press sheet: the wrap grows by its bleed on all four sides
+   and the artwork is carried out into it. Nothing is repositioned
+   — every panel is still measured from the trim. */
+.jacket__bleed { position: absolute; inset: 0; }
+
+body.bleed .cover-stage { padding: 0; }
+body.bleed .jacket {
+  width:  calc(2 * var(--trim-w) + var(--spine-w) + 2 * var(--bleed));
+  height: calc(var(--trim-h) + 2 * var(--bleed));
+  grid-template-columns:
+    calc(var(--trim-w) + var(--bleed))
+    var(--spine-w)
+    calc(var(--trim-w) + var(--bleed));
+  padding: var(--bleed) 0;
+}
+body.bleed .jacket__back  { margin-left: calc(-1 * var(--bleed)); padding-left: var(--bleed); }
+body.bleed .jacket__front { margin-right: calc(-1 * var(--bleed)); padding-right: var(--bleed); }
+body.bleed .jacket__back,
+body.bleed .jacket__front,
+body.bleed .jacket__spine {
+  margin-top: calc(-1 * var(--bleed));
+  margin-bottom: calc(-1 * var(--bleed));
+  padding-top: var(--bleed);
+  padding-bottom: var(--bleed);
+}
+
+/* ============================================================
+   THE WORDMARK
+   Two words, one break in colour. Nothing else distinguishes it,
+   so it survives being set at any size on any ground.
+   ============================================================ */
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-chapter) * 1.02);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.012em;
+  color: var(--jk-ground-ink);
+  white-space: nowrap;
+}
+.wordmark em { font-style: normal; color: var(--jk-ground-mark); }
+.wordmark--sm { font-size: calc(var(--size-section) * 1.12); }
+
+.learnlab {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-section) * 1.15);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--jk-ground-ink);
+}
+.learnlab em { font-style: normal; color: var(--jk-terra); }
+
+/* ============================================================
+   SHARED SMALL TYPE
+   ============================================================ */
+
+.jk-label {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--jk-gold);
+}
+.jk-label--terra { color: var(--jk-terra); }
+
+.jk-lede {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-concept) * 1.42);
+  font-weight: var(--weight-text);
+  line-height: 1.24;
+  color: var(--jk-ground-ink);
+  margin: 0;
+}
+
+.jk-text {
+  font-size: var(--size-note);
+  line-height: 1.52;
+  color: var(--jk-ground-soft);
+  margin: 0;
+}
+.jk-text--tight { font-size: var(--size-caption); line-height: 1.46; }
+
+.jk-rule {
+  border: 0;
+  height: var(--jk-hair);
+  background: var(--jk-ground-rule);
+  margin: 0;
+}
+.jk-rule--short { width: 14mm; background: var(--jk-terra); height: 0.5mm; }
+
+/* ============================================================
+   BACK PANEL
+   A column of claims down the left, the LearnLab panel down the
+   right, and the trade furniture — QR, ISBN, barcode — held in a
+   band at the foot where a bookseller expects to find it.
+   ============================================================ */
+
+.jacket__back { padding: var(--jk-margin); display: flex; flex-direction: column; }
+
+.back__head { margin-bottom: 7mm; }
+.back__head .wordmark { margin-bottom: 4mm; }
+.back__head .jk-lede { max-width: 62mm; }
+
+.back__body {
+  display: grid;
+  grid-template-columns: 1fr 62mm;
+  gap: var(--jk-gap);
+  align-items: start;
+  flex: 1 1 auto;
+}
+
+.back__blurb { margin-bottom: 6mm; max-width: 62mm; }
+
+/* ---- The three claims ------------------------------------ */
+.claim { display: grid; grid-template-columns: 11mm 1fr; gap: 4mm; padding: 3.4mm 0; }
+.claim + .claim { border-top: var(--jk-hair) solid var(--jk-ground-rule); }
+.claim__icon {
+  width: 11mm; height: 11mm;
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.claim__icon svg { width: 5.6mm; height: 5.6mm; }
+.claim__icon--sage  { background: var(--jk-sage); }
+.claim__icon--terra { background: var(--jk-terra); }
+.claim__icon--navy  { background: var(--jk-navy); }
+.claim__title {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--jk-ground-ink);
+  margin: 0 0 1.4mm;
+}
+.claim--terra .claim__title { color: var(--jk-terra); }
+.claim__text { font-size: var(--size-caption); line-height: 1.46; color: var(--jk-ground-soft); margin: 0; }
+
+/* ---- The LearnLab panel ---------------------------------- */
+.ll-panel {
+  border: var(--jk-hair) solid var(--jk-ground-rule);
+  border-radius: 2.5mm;
+  background: var(--jk-ground-panel);
+  padding: 6mm 5.5mm;
+}
+.ll-panel__kicker {
+  font-size: var(--size-caption);
+  color: var(--jk-ground-soft);
+  margin: 0 0 1.2mm;
+}
+.ll-panel__lede {
+  font-size: var(--size-caption);
+  line-height: 1.46;
+  color: var(--jk-ground-soft);
+  margin: 3mm 0 5mm;
+}
+
+.feature { display: grid; grid-template-columns: 8.5mm 1fr; gap: 3.2mm; }
+.feature + .feature { margin-top: 4.2mm; }
+.feature__icon {
+  width: 8.5mm; height: 8.5mm;
+  border-radius: 50%;
+  border: var(--jk-hair) solid var(--jk-ground-ink);
+  display: grid; place-items: center;
+}
+.feature__icon svg { width: 4.4mm; height: 4.4mm; }
+.feature__title {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  color: var(--jk-ground-ink);
+  margin: 0 0 0.8mm;
+}
+.feature__text { font-size: calc(var(--size-caption) * 0.94); line-height: 1.4; color: var(--jk-ground-soft); margin: 0; }
+
+/* ---- Trade furniture ------------------------------------- */
+.trade {
+  margin-top: 6mm;
+  border: var(--jk-hair) solid var(--jk-ground-rule);
+  border-radius: 2.5mm;
+  padding: 5mm;
+  display: grid;
+  grid-template-columns: 24mm 1fr auto;
+  gap: 5mm;
+  align-items: center;
+}
+.trade__qr { width: 24mm; height: 24mm; }
+.trade__qr svg { display: block; width: 100%; height: 100%; }
+.trade__title {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  color: var(--jk-ground-ink);
+  margin: 0 0 1.4mm;
+}
+.trade__list { margin: 0; padding-left: 3.6mm; }
+.trade__list li { font-size: calc(var(--size-caption) * 0.94); line-height: 1.42; color: var(--jk-ground-soft); }
+.trade__note { font-size: calc(var(--size-caption) * 0.94); color: var(--jk-ground-soft); margin: 2mm 0 0; }
+
+.barcode { text-align: center; }
+.barcode__isbn {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-caption) * 0.94);
+  color: #1c211f;
+  border: var(--jk-hair) solid var(--jk-stone-deep);
+  border-radius: 1mm;
+  padding: 1mm 2.5mm;
+  display: inline-block;
+  margin-bottom: 1.6mm;
+  background: #ffffff;
+}
+.barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
+.barcode__mark svg { display: block; width: 34mm; height: 17mm; }
+
+.back__foot {
+  margin-top: 5mm;
+  padding-top: 3.5mm;
+  border-top: var(--jk-hair) solid var(--jk-ground-rule);
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+}
+.back__foot .jk-text--tight { color: var(--jk-ground-soft); }
+.social { display: flex; gap: 2.4mm; }
+.social svg { width: 4.6mm; height: 4.6mm; }
+.social__dot {
+  width: 6.4mm; height: 6.4mm;
+  border-radius: 50%;
+  border: var(--jk-hair) solid var(--jk-ground-ink);
+  display: grid; place-items: center;
+}
+
+/* ============================================================
+   SPINE
+   Read head-to-foot, which is the convention on a shelf in
+   India as in Britain: the title runs downward so it is right
+   way up when the book lies face-up.
+   ============================================================ */
+
+.jacket__spine {
+  background: var(--jk-navy);
+  color: var(--jk-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10mm 0;
+}
+.spine__mark {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-concept) * 1.05);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--jk-cream);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+.spine__mark em { font-style: normal; color: var(--jk-sage); }
+.jacket--night .spine__mark em { color: var(--jk-terra); }
+
+.spine__title {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-section) * 1.25);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.11em;
+  color: var(--jk-cream);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  margin: 6mm 0;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+.spine__tick { width: 4.5mm; height: var(--jk-hair); background: var(--jk-navy-soft); margin: 4mm 0; }
+
+.spine__badge {
+  border: var(--jk-hair) solid var(--jk-navy-soft);
+  border-radius: 1mm;
+  padding: 1.6mm 1.8mm;
+  text-align: center;
+  margin-bottom: 3.5mm;
+}
+.spine__badge .jk-label { color: var(--jk-sage); letter-spacing: 0.1em; }
+.jacket--night .spine__badge .jk-label { color: var(--jk-terra); }
+.spine__badge-num {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--jk-cream);
+}
+.spine__class {
+  text-align: center;
+  color: var(--jk-cream);
+  margin-bottom: 4mm;
+}
+.spine__class .jk-label { color: var(--jk-navy-soft); }
+.spine__class-num {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-section) * 1.18);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+}
+.spine__dots { width: 7mm; height: 7mm; }
+.spine__dots svg { display: block; width: 100%; height: 100%; }
+
+/* ============================================================
+   FRONT PANEL
+   Artwork sits behind; every piece of type is positioned against
+   the trim so the composition does not move when the spine does.
+   ============================================================ */
+
+.jacket__front { background: var(--jk-cream); color: var(--jk-navy); }
+
+.front__art { position: absolute; inset: 0; }
+.front__art svg { display: block; width: 100%; height: 100%; }
+
+.front__head {
+  position: absolute;
+  top: var(--jk-margin);
+  left: var(--jk-margin);
+  right: var(--jk-margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.front__head .wordmark { color: var(--jk-navy); }
+.front__head .wordmark em { color: var(--jk-sage); }
+.jacket--night .front__head .wordmark em { color: var(--jk-terra); }
+.front__tagline {
+  font-size: var(--size-caption);
+  color: #55617a;
+  margin: 1.6mm 0 0;
+}
+
+.classmark {
+  text-align: right;
+  padding-left: 4mm;
+  border-left: 0.4mm solid var(--jk-sage);
+}
+.jacket--night .classmark { border-left-color: var(--jk-terra); }
+.classmark .jk-label { color: var(--jk-navy); letter-spacing: 0.18em; }
+.classmark__num {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-numeral) * 1.15);
+  font-weight: var(--weight-bold);
+  line-height: 0.94;
+  color: var(--jk-navy);
+  display: block;
+  margin: 0.5mm 0 1.5mm;
+}
+.classmark__part {
+  display: inline-block;
+  border: 0.35mm solid var(--jk-sage);
+  border-radius: 1mm;
+  padding: 0.8mm 2mm;
+}
+.jacket--night .classmark__part { border-color: var(--jk-terra); }
+.classmark__part .jk-label { color: var(--jk-gold); letter-spacing: 0.12em; }
+.jacket--night .classmark__part .jk-label { color: var(--jk-terra); }
+
+.front__title {
+  position: absolute;
+  top: 46mm;
+  left: var(--jk-margin);
+  right: var(--jk-margin);
+}
+.front__title h1 {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-numeral) * 1.62);
+  font-weight: var(--weight-bold);
+  line-height: 0.9;
+  letter-spacing: -0.018em;
+  color: var(--jk-navy);
+  margin: 0;
+  /* The word is the widest thing on the cover; let it set to the
+     panel exactly rather than to whatever the face happens to
+     measure at this size. */
+  transform-origin: left center;
+}
+.front__subtitle {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-concept) * 1.16);
+  font-weight: var(--weight-text);
+  color: var(--jk-navy);
+  margin: 6mm 0 3mm;
+}
+
+.front__foot {
+  position: absolute;
+  left: var(--jk-margin);
+  bottom: var(--jk-margin);
+  right: var(--jk-margin);
+}
+.front__foot .ll-panel__kicker { color: #55617a; }
+.front__foot .learnlab { color: var(--jk-navy); margin-bottom: 3mm; }
+.front__promise {
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: #55617a;
+  margin: 0;
+}
+.front__strap {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  color: var(--jk-terra);
+  margin: 3mm 0 0;
+}
+
+/* ============================================================
+   PRINT
+   One sheet. No preview chrome, no second page.
+   ============================================================ */
+@media print {
+  body.cover { background: none; }
+  .cover-stage { padding: 0; display: block; }
+  .jacket { box-shadow: none; }
+}
+
+/* ============================================================
+   ICONS
+   One stroke vocabulary for every mark on the cover, so an icon
+   drawn for the back panel can be reused on the front without
+   carrying its own weight with it.
+   ============================================================ */
+.jk-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.claim__icon svg   { color: var(--jk-cream); }
+.feature__icon svg { color: var(--jk-ground-ink); }
+.social__dot svg   { color: var(--jk-ground-ink); }
