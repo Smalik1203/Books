@@ -1,0 +1,125 @@
+/* ============================================================
+   THE FOUNDATION BRIDGE
+
+   A division at the end of a chapter, not a second book bolted
+   onto it. So almost everything here is the chapter's own
+   library: the ten stages are ordinary level-2 sections (h2,
+   badge B1-B10), their question sets are .c-practice bands, and
+   their worked instances are .c-example panels. A reader who
+   can read the chapter can read this.
+
+   Three things the library did not already have:
+
+     .c-bridge    the division opener — announced once, so the
+                  reader knows a different kind of work starts
+     .tier        one question's difficulty, as a tag
+     .c-answers   an answer key: sixty short answers that must
+                  not set as sixty paragraphs
+
+   Each takes exactly one colour. The opener is structure — it
+   is a division of the chapter, the same job the section tab
+   does. The tier tag and the key are attention: both are the
+   book speaking about a question put to the reader.
+   ============================================================ */
+
+/* ---- The division opener -----------------------------------
+   The one solid full-measure block in the book. Nothing else
+   is a filled band across the whole measure, which is what
+   makes the start of the Bridge unmistakable at arm's length
+   without inventing a colour or a face for it. */
+.c-bridge {
+  break-inside: avoid;
+  break-after: avoid;
+  margin: 0 0 var(--space-rest);
+  padding: var(--space-step) 5mm var(--space-tight);
+  background: var(--teal);
+  border-radius: var(--radius-lg);
+  text-align: left;
+}
+
+.c-bridge__title {
+  font-family: var(--font-display);
+  font-size: var(--size-section);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: var(--lh-tight);
+  color: var(--paper);
+}
+
+/* The strapline is the section's promise, and it is the same
+   promise in every chapter. Set quieter than the title, or the
+   two compete and the band reads as two headings. */
+.c-bridge__strap {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--teal-tint);
+  margin-top: var(--space-hair);
+}
+
+/* ---- A question's difficulty -------------------------------
+   Three tiers, and the label is a tag: it sits on a coloured
+   ground, so it can never be misread as the first words of the
+   question. Gold, because saying how hard a question is is the
+   book addressing the reader about it. */
+.tier {
+  display: inline-block;
+  vertical-align: 0.06em;
+  background: var(--gold);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  font-style: normal;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 1mm 2.2mm 0.8mm;
+  border-radius: var(--radius);
+  margin-right: 2mm;
+}
+
+/* ---- The answer key ----------------------------------------
+   A grid, not a list: the reader is looking one answer up, not
+   reading down. Rows in fixed order so the eye can jump — the
+   stage, then its answers, all on one line where they fit. */
+.c-answers {
+  margin: var(--space-hair) 0 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+}
+.c-answers > li {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  padding: 0.9mm 0;
+  border-top: var(--stroke-hair) solid var(--rule-soft);
+  margin: 0;
+  break-inside: avoid;
+}
+.c-answers > li:first-child { border-top: 0; }
+
+/* The stage this row answers. Fixed width, so every row's
+   answers start at the same place and the column reads. */
+.c-answers__stage {
+  flex: none;
+  width: 29mm;
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.c-answers__list {
+  flex: 1;
+  font-variant-numeric: lining-nums;
+  color: var(--ink);
+}
+/* The question number in front of each answer, kept quiet: the
+   answer is what is being looked for, the number only locates it. */
+.c-answers__list .n { color: var(--ink-faint); font-weight: var(--weight-bold); }

@@ -1,11 +1,13 @@
 /* Single entry point. Order matters:
    tokens define every value, then the shell, then type, then the
-   component library, then the diagram vocabulary, then maths. */
+   component library and the Foundation Bridge additions to it, then
+   the diagram vocabulary, then maths. */
 @import url("../assets/vendor/katex/katex.min.css");
 @import url("fonts.css");
 @import url("tokens.css");
 @import url("page.css");
 @import url("typography.css");
 @import url("components.css");
+@import url("bridge.css");
 @import url("diagram.css");
 @import url("math.css");
