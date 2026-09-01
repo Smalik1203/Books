@@ -557,7 +557,8 @@ async function checkOverflow(htmlPath, meta, sheet) {
           deepest = Math.max(deepest, el.getBoundingClientRect().bottom);
         });
         var fill = avail > 0 ? (deepest - top) / avail : 0;
-        out.push({ folio: pg.dataset.folio, over: Math.round(over), fill: Math.round(fill * 100) });
+        out.push({ folio: pg.dataset.folio, over: Math.round(over),
+                   fill: Math.round(fill * 100), close: pg.hasAttribute('data-close') });
       });
       document.title = 'OVERSET' + JSON.stringify(out);
     });
@@ -594,9 +595,12 @@ async function checkOverflow(htmlPath, meta, sheet) {
 
   // A short page is a defect too: it reads as unfinished rather than
   // designed. The LAST page is exempt — a chapter, or the content
-  // supplied so far, is allowed to end part-way down.
+  // supplied so far, is allowed to end part-way down. So is a page
+  // that carries data-close: it ends a division rather than merely
+  // running out, which is the same fault forgiven for the same reason.
+  // A chapter with a Foundation Bridge after it has two such endings.
   const SHORT = 88;
-  const short = rows.slice(0, -1).filter(r => !r.over && r.fill < SHORT);
+  const short = rows.slice(0, -1).filter(r => !r.over && !r.close && r.fill < SHORT);
   for (const r of short) {
     const gap = ((100 - r.fill) / 100 * 213).toFixed(0);
     console.warn(`    ~ page ${r.folio} is ${r.fill}% full — ${gap}mm of white at the foot`);

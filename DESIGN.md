@@ -167,6 +167,9 @@ Size alone is not a signature. Each level differs in *kind*.
 | `.c-figure` | — | no — a diagram and its caption |
 | `.c-summary` | teal | no — a rule and a numbered list |
 
+Three more — the Bridge opener, the difficulty tag and the answer key — are
+added by §6a for the Foundation Bridge, and by nothing else.
+
 **Only two components are panels** — the example and the reflect prompt, both
 of which the mockups called for. Everything else sits on the page, held by
 rules and space. A tinted box with a rounded corner and a coloured bar down
@@ -272,6 +275,54 @@ A figure carries about **4.5 viewBox units per printed millimetre** — a
 what keeps a structural line the same weight on every page: strokes are
 declared in viewBox units, so a figure drawn at a different density prints
 a heavier or fainter line than its neighbour.
+
+## 6a. The Foundation Bridge — a division, not a second book
+
+Every chapter closes with ten pages of harder work on the same material: the
+**Foundation Bridge**, announced once by a band across the measure and then
+carried by the components already in the library. Its ten stages are
+
+    B1 Beyond the Chapter    B6 Competitive-Style Thinking
+    B2 Think and Reason      B7 The Challenge Zone
+    B3 Connect the Concepts  B8 The Trap Room
+    B4 Foundation MCQs, 1    B9 Foundation Test
+    B5 Foundation MCQs, 2    B10 Answers, Solutions & Takeaways
+
+and the point of the numbering is that a reader can name the stage from the
+page, not from the contents. **B1 is prose, so it takes level-3 concept
+headings; the question stages take a level-5 practice band whose head names
+the stage; B10 takes level-3 headings and a summary.** Nothing here is a new
+hierarchy — the Bridge is read exactly the way the chapter before it is read,
+which is the whole reason it does not feel like a coaching module bolted on.
+
+Three things the library did not already have, and they live in
+`css/bridge.css`:
+
+| | colour | |
+|---|---|---|
+| `.c-bridge` | teal | the division opener — the one solid full-measure block in the book, so the start of the Bridge is unmistakable at arm's length |
+| `.tier` | gold | one question's difficulty (`Think` · `Apply` · `Challenge`), set as a tag so it cannot be misread as the first words of the question |
+| `.c-answers` | gold | the answer key — a stage label in a fixed 29mm column, then its answers on one line where they fit |
+
+The opener is **structure**: it divides the chapter, which is the section
+tab's job. The tier tag and the answer key are **attention**: both are the
+book speaking to the reader about a question. Each takes one colour, as
+every other component does.
+
+Everything else the Bridge needs it already had. MCQ options are
+`.c-parts--alpha`; statement lists are the plain roman `.c-parts`; the
+assertion–reason key is a `.c-tip` carrying the chapter's own mark; data
+questions are ordinary book tables; worked answers are `.work__row` with the
+label reading *hint*, *solution*, *key idea*.
+
+### A chapter now ends twice
+
+The fill check exempts the last page of a build, because a chapter is allowed
+to end part-way down. With a Bridge after it, the chapter's own closing page
+is no longer last and was being reported as short. A page that closes a
+division carries **`data-close`** on its `<section class="page">`, and the
+fill check forgives it for the same reason it forgives the last page. It is
+metadata, not a style: there is nothing to see on the sheet.
 
 ## 7. Page grammar
 

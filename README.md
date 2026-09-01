@@ -167,9 +167,11 @@ fill  63:99%  69:99%  70:100%  71:99%  72:95%  73:87%  74:98%
 ```
 
 Aim for 95–100%. Anything under 88% is flagged, except the **last** page of a
-chapter, which is allowed to end part-way down. When several pages run short,
-do not nudge them one at a time — add up the fills. Three pages at 60% hold
-two pages of content, and the fix is to repack, not to pad.
+chapter, which is allowed to end part-way down — and any page carrying
+`data-close`, which ends a division and is forgiven for the same reason. When
+several pages run short, do not nudge them one at a time — add up the fills.
+Three pages at 60% hold two pages of content, and the fix is to repack, not to
+pad.
 
 A page fragment supplies only its own content. The builder stamps the
 furniture — running head, folio, and the recto/verso flip — from
@@ -195,7 +197,13 @@ A page can declare its own number when pages are written out of order:
 <section class="page" data-folio="69">
 ```
 
-Everything after it continues from that number.
+Everything after it continues from that number. And the page that closes a
+division — the last page of the chapter proper, before its Foundation Bridge —
+says so, which is what stops the fill check reporting it as unfinished:
+
+```html
+<section class="page" data-close>
+```
 
 ## Grid and binding
 
@@ -234,10 +242,41 @@ Anything running off the trim — the chapter numeral block, the foot bars —
 overhangs by `--bleed` (3 mm), so a trim landing slightly off centre still
 cuts through colour rather than white paper.
 
+## The Foundation Bridge
+
+Every chapter carries ten further pages after its own last page: the
+**Foundation Bridge**, a division that takes the chapter's material and asks
+harder questions about it, in the way an examination outside school would.
+No new syllabus is introduced — the depth comes from what the chapter already
+proved.
+
+The ten stages run in a fixed order, and the difficulty rises along it:
+
+| | |
+|---|---|
+| **B1** Beyond the Chapter | two or three deeper ideas, drawn from the chapter |
+| **B2** Think and Reason | 5–7 questions that want a sentence, not a calculation |
+| **B3** Connect the Concepts | 4–6 problems reaching into other chapters, or out of the book |
+| **B4** Foundation MCQs, Level 1 | 9–10, conceptual and direct |
+| **B5** Foundation MCQs, Level 2 | 8–10, multi-step, with traps |
+| **B6** Competitive-Style Thinking | assertion–reason, statement sets, data to interpret |
+| **B7** The Challenge Zone | 5 problems, tiered `Think` → `Apply` → `Challenge` |
+| **B8** The Trap Room | 7 misconceptions, then the shapes of mistake behind them |
+| **B9** Foundation Test | 12–13 mixed questions, not sorted by concept |
+| **B10** Answers, Solutions & Takeaways | the key, two worked solutions, five takeaways |
+
+The pages are numbered `p101.html`–`p110.html` in the chapter's page directory,
+so the Bridge always sorts last and a chapter can grow to a hundred pages
+without colliding with it. The page before `p101` carries `data-close`.
+
+The design of the section — what was added to the component library for it, and
+what was deliberately not — is in
+**[DESIGN.md §6a](DESIGN.md)**.
+
 ## Design
 
-The palette, the two typefaces, the five hierarchy levels, the eight components,
-the diagram vocabulary and the page grammar all live in **[DESIGN.md](DESIGN.md)**.
+The palette, the two typefaces, the five hierarchy levels, the components, the
+diagram vocabulary and the page grammar all live in **[DESIGN.md](DESIGN.md)**.
 
 The build enforces them. A page that carries an inline `style`, a `<style>`
 block, a hex colour, a `stroke-width` attribute, a font attribute or a private
