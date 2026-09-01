@@ -307,12 +307,32 @@ const CHAPTER_ACCENTS = [
   '#7a5230', // 8  bronze
 ];
 
+/* A chapter may also own its STRUCTURE colour — the one the section
+   tabs, key ideas, practice bands and rules are set in. Action (rust)
+   and attention (gold) stay common to the whole book, so a page is
+   still the three-colour system DESIGN.md describes; only the hue of
+   the first of the three moves.
+
+   Four tones are needed, not one: the accent above inks a thumb tab,
+   where a single value is enough, but the structure role also needs a
+   deep, a soft and a pale tint. A chapter with no entry here falls
+   back to the teal the book was built in and looks exactly as before,
+   which is why chapters 1, 4 and 5 are absent.
+
+   Declare one per chapter with "palette" in chapter.json to override. */
+const CHAPTER_PALETTES = {
+  // 3 — indigo. Chapter 4 owns the green, and the slot-3 olive of the
+  // accent table sits too close to gold to carry a whole chapter.
+  '3': { base: '#1c3a6b', deep: '#12294e', soft: '#5c7cad', tint: '#e8edf6' },
+};
+
 function chapterTheme(meta) {
   const i = (Number(meta.number) || 1) - 1;
   const slot = ((i % CHAPTER_ACCENTS.length) + CHAPTER_ACCENTS.length) % CHAPTER_ACCENTS.length;
   return {
     accent: meta.accent ?? CHAPTER_ACCENTS[slot],
     tabTop: meta.tabTop ?? `${40 + slot * 22}mm`,
+    palette: meta.palette ?? CHAPTER_PALETTES[String(meta.number)] ?? null,
   };
 }
 
@@ -331,7 +351,9 @@ const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = 
 <title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — Mathematics Class ${escapeHtml(meta.class)}</title>
 <link rel="stylesheet" href="${cssHref}">${meta.edition ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}
-<style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
+<style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop};${theme.palette ? `
+  --ch-structure: ${theme.palette.base}; --ch-structure-deep: ${theme.palette.deep};
+  --ch-structure-soft: ${theme.palette.soft}; --ch-structure-tint: ${theme.palette.tint};` : ``} }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
   : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}</style>
 </head>
 <body${sheet ? ' class="bleed"' : ''}>

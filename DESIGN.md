@@ -25,6 +25,29 @@ seems to need a second colour, it is doing two jobs and should be split.
 
 Ink, rules and paper are neutral and belong to no component.
 
+### The structure colour is per chapter
+
+`--teal` is the *role*, not the hex. A chapter may own the structure hue so
+that two chapters in the same class do not read identically, and the name is
+kept only because renaming it would touch every stylesheet.
+
+Declare four tones in `CHAPTER_PALETTES` in `build/build.mjs`, keyed by
+chapter number — or `"palette"` in `chapter.json`:
+
+```js
+'3': { base: '#1c3a6b', deep: '#12294e', soft: '#5c7cad', tint: '#e8edf6' },
+```
+
+The builder emits them as `--ch-structure*`; `--teal*` reads through with the
+original green as its fallback, so **a chapter with no entry is unchanged.**
+Chapter 4 owns the green. Chapter 3 is indigo.
+
+**Only the structure colour moves.** Rust and gold are common to the whole
+book, so a page is still the three-colour system above — the same semantics,
+in one different hue. Do not give a chapter its own action or attention
+colour, and do not use a hue for structure that a diagram fill already uses
+in the same chapter.
+
 ## 2. Typography — two faces, locked
 
 | | | used for |
