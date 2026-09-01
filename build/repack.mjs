@@ -19,6 +19,7 @@
    ============================================================ */
 
 import { readFile, writeFile, readdir, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
@@ -29,7 +30,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CHROME = [
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
 
 const target = process.argv[2];
@@ -122,9 +125,8 @@ window.addEventListener('load', function () {
 <\/script>`;
 
 async function measure(htmlPath) {
-  const chrome = CHROME.find((c) => {
-    try { return require('node:fs').existsSync(c); } catch { return false; }
-  }) || CHROME[0];
+  const chrome = CHROME.find(existsSync);
+  if (!chrome) throw new Error('No Chrome or Edge found — set one in CHROME.');
   const tmp = htmlPath.replace(/\.html$/, '-pack.html');
   const src = await readFile(htmlPath, 'utf8');
   await writeFile(tmp, src.replace('</head>', PROBE + '\n</head>'));

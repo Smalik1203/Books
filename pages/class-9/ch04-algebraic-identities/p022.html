@@ -2,73 +2,59 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>So that product is an identity in its own right:</p>
-
-      <div class="eq eq--anchor">
-        $$(x - y)\left(x^2 + xy + y^2\right) = x^3 - y^3$$
-      </div>
-
-      <p>
-        Check it for yourself with a few values of $x$ and $y$. Then look at the
-        second product, $(x + y)(x^2 - xy + y^2)$, and predict its value before
-        multiplying it out. Only two signs differ from the first — what does
-        that do to the answer?
-      </p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Two facts you now have:</p>
-            <div class="work work--centred">
-              <p>$x^2 - y^2 = (x - y)(x + y)$</p>
-              <p>$x^3 - y^3 = (x - y)\left(x^2 + xy + y^2\right)$</p>
-            </div>
-            <p>
-              In both, $x - y$ is a factor. Is it a factor of $x^4 - y^4$ as
-              well? Start from $x^4 - y^4 = (x^2)^2 - (y^2)^2$ and see what the
-              first fact gives you.
-            </p>
-            <p class="c-reflect__hint">
-              Then try $x^5 - y^5$. Do you think $x - y$ divides $x^n - y^n$ for
-              <em>every</em> $n$? What happens if you put $x = y$?
-            </p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 15</div>
+        <div class="c-example__body">
+          <p>
+            Three numbers add to 10, multiply to 25, and their squares add to
+            38. What do their cubes add to?
+          </p>
+          <p>
+            Call them $x$, $y$ and $z$, so $x + y + z = 10$, $xyz = 25$ and
+            $x^2 + y^2 + z^2 = 38$. Substituting into the identity:
+          </p>
+          <div class="work">
+            <p>$10\left(38 - (xy + xz + yz)\right) = x^3 + y^3 + z^3 - 3(25)$</p>
+            <p>$x^3 + y^3 + z^3 = 455 - 10(xy + xz + yz)$</p>
+          </div>
+          <p>
+            One quantity is still missing: $xy + xz + yz$. Nothing in the
+            question gives it directly — but the squared identity from
+            Section 4.4 does, because it is the only place that quantity ever
+            appears:
+          </p>
+          <div class="work">
+            <p>$(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + xz + yz)$</p>
+            <p>$100 = 38 + 2(xy + xz + yz), \quad\text{so}\quad xy + xz + yz = 31$</p>
+          </div>
+          <p>Putting that back:</p>
+          <div class="work">
+            <p>$x^3 + y^3 + z^3 = 455 - 10(31) = 455 - 310 = 145$</p>
           </div>
         </div>
       </div>
 
-      <h3>Three letters at once</h3>
-
       <p>
-        The same experiment works with three letters. Multiply $x + y + z$ by
-        $x^2 + y^2 + z^2 - xy - xz - yz$, taking the second bracket once with
-        each term of the first:
+        Notice that the three numbers were never found. They did not need to be:
+        the identities work with the sums and products directly.
       </p>
 
-      <div class="work">
-        <p>$x\left(x^2 + y^2 + z^2 - xy - xz - yz\right) = x^3 + xy^2 + xz^2 - x^2y - x^2z - xyz$</p>
-        <p>$y\left(\;\cdots\;\right) = x^2y + y^3 + yz^2 - xy^2 - xyz - y^2z$</p>
-        <p>$z\left(\;\cdots\;\right) = x^2z + y^2z + z^3 - xyz - xz^2 - yz^2$</p>
-      </div>
+      <h2><span class="badge">4.8</span><span class="name">Simplifying Rational Expressions</span></h2>
 
       <p>
-        Now add the three lines. Every term with two different letters appears
-        twice, once with each sign: $xy^2$ against $-xy^2$, $xz^2$ against
-        $-xz^2$, $x^2y$ against $-x^2y$, and so on. All of them vanish. What
-        survives is the three cubes and three copies of $-xyz$:
+        Everything so far has been about turning expressions into products. Here
+        is where that pays off. A <span class="term">rational expression</span>
+        is one algebraic expression divided by another, and simplifying it means
+        the same thing as simplifying a fraction of numbers: cancel whatever the
+        top and the bottom have in common.
       </p>
 
-      <div class="eq eq--anchor">
-        $$(x + y + z)\left(x^2 + y^2 + z^2 - xy - xz - yz\right) = x^3 + y^3 + z^3 - 3xyz$$
-      </div>
+      <p>
+        You cannot cancel a term, only a factor. So before anything can be
+        cancelled, both the numerator and the denominator have to be
+        <em>factorised</em> — which is exactly what this chapter has been
+        teaching you to do.
+      </p>
 
     </div>
   </div>

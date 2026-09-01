@@ -70,13 +70,15 @@ is a design decision.
 
 ## Two editions
 
-`css/tokens.css` holds B5. `css/edition-a4.css` overrides **only** the
+`css/tokens.css` holds **A4, the standard trim**. `css/edition-b5.css`
+overrides **only** the
 size-dependent tokens — trim, margins, measure, type scale, figure widths,
 spacing rhythm. Colour, components and hierarchy are shared.
 
-Never fix an A4 problem by editing `tokens.css`; it will change the B5 book.
+A chapter with no `edition` field is A4. Never fix a B5 problem by editing
+`tokens.css` — that is the A4 book.
 
-`chapter.json` declares `"edition": "a4"`. The builder, the bleed sheet, the
+`chapter.json` declares `"edition": "b5"`. The builder, the bleed sheet, the
 proofs and the studio all follow it.
 
 ## Studio

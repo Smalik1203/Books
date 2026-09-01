@@ -1,0 +1,114 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-practice">
+        <ol class="c-questions" data-start="3">
+          <li>
+            Expand, using the identity
+            $(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$.
+            <ol class="c-parts">
+              <li>$(p + 3q + 7r)^2$</li>
+              <li>$(3x - 2y + 4z)^2$</li>
+            </ol>
+          </li>
+
+          <li>
+            Is the following an identity? Give a reason for your answer.
+            <div class="work work--centred">
+              <p>$(a + b - c)^2 + (a - b + c)^2 + (a - b - c)^2 = 2a^2 + 2b^2 + 2c^2$</p>
+            </div>
+            <p class="hint">
+              You can settle this without expanding everything. How many $a^2$
+              terms must the left-hand side produce?
+            </p>
+          </li>
+        </ol>
+      </div>
+
+      <h3>A difference of squares</h3>
+
+      <p>
+        In Grade 8 you met one more identity, and it is the odd one out — the
+        only one so far that is not about squaring a sum:
+      </p>
+
+      <div class="eq eq--anchor">
+        $$a^2 - b^2 = (a + b)(a - b)$$
+      </div>
+
+      <p>
+        Read left to right it factorises. But rearranged, it becomes something
+        else entirely — a way of computing a square:
+      </p>
+
+      <div class="eq">
+        $$a^2 = (a + b)(a - b) + b^2$$
+      </div>
+
+      <p>
+        That looks like a poor trade — one square swapped for a product and
+        another square. It is not, and a picture shows why. Slice a strip of
+        width $b$ off the bottom of a square of side $a$, then cut that strip
+        again at $a - b$. What is left is a $b \times b$ square; the long
+        piece, stood on its end, is exactly the width needed to widen the top
+        block from $a$ to $a + b$.
+      </p>
+
+      <figure class="c-figure c-figure--sm">
+        <svg viewBox="32 10 404 292" role="img"
+             aria-label="A square of side a, with a strip of width b cut from the bottom and the longer part of that strip moved to the right-hand edge, leaving a b by b square">
+
+          <!-- square of side a = 220, strip of width b = 60 -->
+          <rect class="dg-fill-b-soft" x="80" y="40"  width="220" height="160"/>
+          <rect class="dg-fill-b-soft" x="80" y="200" width="160" height="60" />
+          <rect class="dg-fill-c-soft" x="240" y="200" width="60" height="60" />
+
+          <rect class="dg-line" x="80" y="40" width="220" height="220"/>
+          <line class="dg-thin" x1="80"  y1="200" x2="300" y2="200"/>
+          <line class="dg-thin" x1="240" y1="200" x2="240" y2="260"/>
+
+          <text class="dg-note" x="190" y="124" text-anchor="middle">stays</text>
+          <text class="dg-note" x="160" y="235" text-anchor="middle">moves</text>
+          <text class="dg-label dg-label--on-fill"  x="270" y="236" text-anchor="middle">b²</text>
+
+          <!-- where the long piece goes -->
+          <rect class="dg-ghost" x="300" y="40" width="60" height="160"/>
+          <path class="dg-move" d="M152 274 Q 258 308 330 214" marker-end="url(#dg-arrow)"/>
+
+          <!-- dimensions -->
+          <line class="dg-dim" x1="80" y1="26" x2="300" y2="26"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="190" y="20" text-anchor="middle">a</text>
+
+          <line class="dg-dim" x1="300" y1="26" x2="360" y2="26"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="330" y="20" text-anchor="middle">b</text>
+
+          <line class="dg-dim" x1="62" y1="40" x2="62" y2="260"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="52" y="156" text-anchor="end">a</text>
+
+          <line class="dg-dim" x1="44" y1="200" x2="44" y2="260"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="38" y="236" text-anchor="end">b</text>
+
+          <line class="dg-dim" x1="376" y1="40" x2="376" y2="200"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="384" y="126">a − b</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.5</span> &nbsp;The pieces rearrange into an $(a+b)$ by $(a-b)$ rectangle, leaving $b^2$.
+        </figcaption>
+      </figure>
+
+<p>
+        Now the trade makes sense. Choose $b$ so that $a - b$ and $a + b$ are both
+        round numbers, and the product on the right is one you can do in your
+        head, with $b^2$ small. An awkward square becomes an easy
+        multiplication plus a correction.
+      </p>
+
+    </div>
+  </div>
+</section>

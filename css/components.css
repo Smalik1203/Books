@@ -298,6 +298,11 @@
 .c-parts--3 { grid-template-columns: repeat(3, 1fr); column-gap: 4mm; }
 .c-parts--4 { grid-template-columns: repeat(4, 1fr); column-gap: 3mm; }
 
+/* Multiple-choice options are lettered, not numbered. A roman (i)
+   under a question already numbered (i) reads as the same label
+   twice, and the reader has to work out which one is being cited. */
+.c-parts--alpha > li::before { content: "(" counter(part, lower-alpha) ")"; }
+
 /* the harder parts carry a star in the marker, not in the maths */
 .c-parts--starred > li { padding-left: 10mm; }
 .c-parts--starred > li::before { width: 9mm; }
@@ -592,6 +597,7 @@ tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
 .c-figure--md svg, .c-figure--md img { max-width: var(--fig-md); }
 .c-figure--lg svg, .c-figure--lg img { max-width: var(--fig-lg); }
 .c-figure--xl svg, .c-figure--xl img { max-width: var(--fig-xl); }
+.c-figure--full svg, .c-figure--full img { max-width: var(--fig-full); }
 
 
 /* An exercise set that carries on over a page break: the second
@@ -609,6 +615,10 @@ tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
 .c-questions[data-start="12"] { counter-reset: q 11; }
 .c-questions[data-start="13"] { counter-reset: q 12; }
 .c-questions[data-start="14"] { counter-reset: q 13; }
+.c-questions[data-start="15"] { counter-reset: q 14; }
+.c-questions[data-start="16"] { counter-reset: q 15; }
+.c-questions[data-start="17"] { counter-reset: q 16; }
+.c-questions[data-start="18"] { counter-reset: q 17; }
 
 /* a question the book marks as harder — a star in the marker,
    in rust, never in the question itself */

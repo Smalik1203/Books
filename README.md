@@ -1,6 +1,7 @@
-# LearnLab B5 Maths
+# LearnLab Books
 
-Print-ready maths textbooks. **B5 trim, 176 × 250 mm.** One folder per class.
+Print-ready maths textbooks. **A4 trim, 210 × 297 mm**, with a B5 edition
+alongside. One folder per class.
 
 **Read [DESIGN.md](DESIGN.md) before writing a page.** Every page is assembled
 from a locked component library; the builder reports a design violation for any
@@ -63,10 +64,31 @@ never reach one another. For a quick look without the server, open
 `build/<class>/<chapter>.html` in Chrome, or use the 2× proofs in
 `build/<class>/<chapter>-proofs/`.
 
+## Editions
+
+One design system, two trims. `css/tokens.css` holds the standard — **A4,
+210 × 297 mm**. An edition sheet overrides only the size-dependent tokens:
+trim, margins, measure, type scale, figure widths, spacing rhythm. Colour,
+components, hierarchy and the diagram vocabulary are shared.
+
+| chapter folder | edition | trim | pages |
+|---|---|---|---|
+| `ch04-algebraic-identities` | A4 (standard) | 210 × 297 | 29 |
+| `ch04-algebraic-identities-b5` | B5 | 176 × 250 | 30 |
+
+A chapter is A4 unless its `chapter.json` names an edition:
+
+```json
+{ "class": "9", "number": "4", "title": "…", "edition": "b5" }
+```
+
+The page breaks differ between editions — a bigger page holds more, so each
+is fitted separately. `build/repack.mjs` does the measuring.
+
 ## Build
 
 ```bash
-node build/build.mjs class-9/ch01-number-systems --pdf --png
+node build/build.mjs class-9/ch04-algebraic-identities --pdf --png
 ```
 
 | flag | effect |
