@@ -1,68 +1,123 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
       <div class="c-bridge">
-        <div class="c-bridge__title">The Foundation Bridge</div>
+        <div class="c-bridge__title">Beyond the Book</div>
         <div class="c-bridge__strap">Take what you know. Go further.</div>
       </div>
 
-      <p>
-        Twelve theorems, and one sentence underneath them all. Ten pages of
-        harder work on exactly those follow &mdash; no new syllabus, only
-        questions of the kind asked outside school.
-      </p>
-
-      <h3>One relation, doing the work of four theorems</h3>
-
-      <p>
-        Section 5.7 proved that a chord at distance $d$ from the centre of a
-        circle of radius $r$ has length $2\sqrt{r^2 - d^2}$. Four separate
-        theorems collapse into it, because in a fixed circle the formula ties
-        $c$ and $d$ together with nothing else allowed in.
-      </p>
-
-      <div class="eq">
-        $$c = 2\sqrt{r^2 - d^2} \qquad\Longleftrightarrow\qquad
-        d = \sqrt{r^2 - \left(\tfrac{c}{2}\right)^2}$$
+      <div class="c-stage">
+        <div class="c-stage__num">1</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">The Idea Underneath</div>
+          <div class="c-stage__for">One relation, doing the work of four theorems.</div>
+        </div>
       </div>
 
       <p>
-        Read it as a locus and it says something the theorems do not: all the
-        chords of one length have their midpoints at the same distance from
-        the centre, so <span class="pop">those midpoints trace a circle</span>,
-        concentric with the first.
+        A chord at distance $d$ from the centre of a circle of radius $r$ has
+        length
       </p>
 
-      <h3>A hidden circle, wherever two equal angles are</h3>
-
-      <p>
-        Theorems 9 and 10 together say more than either says alone. Fix a
-        segment $AB$ and an angle $\theta$, and ask which points of the plane
-        see $AB$ under exactly $\theta$. Theorem 9 says every point of one arc
-        does; Theorem 10 says no point off that arc does. So the answer is an
-        arc &mdash; a pair of them, one each side of $AB$.
-      </p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Equal angles mean a circle is present</div>
-        <p>
-          When a figure gives you two equal angles standing on the same segment
-          from the same side, four points are concyclic whether or not anybody
-          has drawn the circle. Drawing it is usually the whole solution.
-        </p>
+      <div class="eq eq--anchor">
+        $$c = 2\sqrt{r^2 - d^2}$$
       </div>
 
-      <h3>Why the right angle is the famous case</h3>
+      <p>
+        Fix $c$ and $d$ is fixed too, so <span class="pop">every chord of one
+        length keeps its midpoint the same distance from $O$</span> &mdash; and
+        those midpoints trace a circle of their own.
+      </p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="22 16 156 156" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three chords of equal length in a circle, their midpoints lying on a smaller concentric circle">
+            <circle class="dg-fill-d" cx="100" cy="92" r="68"/>
+            <circle class="dg-line" cx="100" cy="92" r="68"/>
+
+            <circle class="dg-ghost" cx="100" cy="92" r="40"/>
+
+            <path class="dg-thin" d="M45 52 L155 52"/>
+            <path class="dg-thin" d="M129.9 153.1 L148.9 44.7"/>
+            <path class="dg-thin" d="M32.0 93.3 L122.2 156.3"/>
+
+            <path class="dg-dim" d="M100 92 L100 52"/>
+
+            <circle class="dg-fill-teal" cx="100" cy="92" r="2.6"/>
+            <circle class="dg-fill-teal" cx="100" cy="52" r="2.2"/>
+            <circle class="dg-fill-teal" cx="139.4" cy="98.9" r="2.2"/>
+            <circle class="dg-fill-teal" cx="77.1" cy="124.8" r="2.2"/>
+
+            <text class="dg-label" x="95" y="99" text-anchor="end">O</text>
+            <text class="dg-dim-label" x="105" y="76">d</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5B.1</span> Three chords of one
+          length. Every midpoint sits at the same $d$, so they trace a
+          concentric circle.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-shift">
+        <div class="c-shift__title">Read it both ways</div>
+        <div class="c-shift__row">
+          <span>distance from centre $d$<span class="c-shift__way">&uarr;</span></span>
+          <span>chord length $c$<span class="c-shift__way">&darr;</span></span>
+        </div>
+        <div class="c-shift__row">
+          <span>distance from centre $d$<span class="c-shift__way">&darr;</span></span>
+          <span>chord length $c$<span class="c-shift__way">&uarr;</span></span>
+        </div>
+      </div>
 
       <p>
-        Take $\theta = 90^\circ$ and the two arcs become the two halves of one
-        circle on $AB$ as diameter. That is the corollary of Section 5.8 read
-        backwards, and it is what finally settled the circumcentre of a
-        right-angled triangle. A right angle is not a special theorem; it is
-        the one value of $\theta$ for which the two arcs close up into a single
-        circle.
+        Neither is a proportion. Doubling $d$ does not halve $c$; the square
+        root sees to that, and half the traps in this section are built on
+        forgetting it.
       </p>
+
+      <div class="c-results">
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="dg-line" cx="24" cy="22" r="17"/>
+            <path class="dg-line" d="M7.8 27 H40.2"/>
+            <path class="dg-thin" d="M9.6 13 H38.4"/>
+            <circle class="dg-fill-teal" cx="24" cy="22" r="1.4"/>
+          </svg>
+          <div class="c-results__cap">The longer chord lies nearer the centre</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="dg-line" cx="24" cy="22" r="17"/>
+            <path class="dg-line" d="M9.6 13 H38.4"/>
+            <path class="dg-line" d="M9.6 31 H38.4"/>
+            <path class="dg-dim" d="M24 22 V13"/>
+            <path class="dg-dim" d="M24 22 V31"/>
+          </svg>
+          <div class="c-results__cap">Equal chords keep equal distances</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="dg-line" cx="24" cy="22" r="17"/>
+            <path class="dg-line" d="M8.5 29 H39.5"/>
+            <path class="dg-dim" d="M24 22 V29"/>
+            <path class="dg-thin" d="M16 27 V31"/>
+            <path class="dg-thin" d="M32 27 V31"/>
+          </svg>
+          <div class="c-results__cap">That perpendicular bisects the chord</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="dg-line" cx="24" cy="22" r="17"/>
+            <path class="dg-line" d="M11 33 H37"/>
+            <path class="dg-thin" d="M11 33 L24 22 L37 33"/>
+            <path class="dg-thin" d="M24 5 L11 33 M24 5 L37 33"/>
+            <circle class="dg-fill-teal" cx="24" cy="22" r="1.4"/>
+          </svg>
+          <div class="c-results__cap">The angle at the centre is twice the one on the arc</div>
+        </div>
+      </div>
 
     </div>
   </div>

@@ -257,9 +257,14 @@ function stampPages(body, meta) {
     // Interior pages carry the folio in the running head, beside the
     // chapter title, on the outer edge. Openers take neither, and get a
     // quiet folio at the foot instead.
+    //
+    // A page marked data-bridge names the division too. Ten consecutive
+    // pages of a different kind of work should say so at every opening,
+    // not only on the one page carrying the opener band.
+    const bridge = /\sdata-bridge(?=[\s=]|$)/.test(attrs);
     const runhead = opener ? '' : `
       <div class="runhead">
-        <span class="runhead__chapter">${escapeHtml(meta.title)}</span>
+        <span class="runhead__chapter">${escapeHtml(meta.title)}${bridge ? ' &middot; Beyond the Book' : ''}</span>
         <i class="runhead__mark" aria-hidden="true"></i>
       </div>`;
 
@@ -598,7 +603,7 @@ async function checkOverflow(htmlPath, meta, sheet) {
   // supplied so far, is allowed to end part-way down. So is a page
   // that carries data-close: it ends a division rather than merely
   // running out, which is the same fault forgiven for the same reason.
-  // A chapter with a Foundation Bridge after it has two such endings.
+  // A chapter with a Beyond the Book division after it has two such endings.
   const SHORT = 88;
   const short = rows.slice(0, -1).filter(r => !r.over && !r.close && r.fill < SHORT);
   for (const r of short) {

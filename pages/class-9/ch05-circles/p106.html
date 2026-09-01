@@ -1,56 +1,78 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 12 L18.4 8"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>In an assertion&ndash;reason question, answer from this list every
-            time: <strong>(a)</strong> both true, R explains A;
-            <strong>(b)</strong> both true, R does not explain A;
-            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
-            R true.</p>
+      <div class="c-stage">
+        <div class="c-stage__num">6</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Competitive-Style Thinking</div>
+          <div class="c-stage__for">Four moves worth more than another theorem.</div>
         </div>
       </div>
 
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">Eliminate</span>
+          <span>No chord exceeds $2r$, and none is negative. Two options are
+            usually dead before any arithmetic starts.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Check sufficiency</span>
+          <span>Ask what has been fixed. "Two parallel chords" has not fixed
+            which side of the centre &mdash; so the answer is a pair.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Find the constraint</span>
+          <span>$r^2 = d^2 + \left(\tfrac{c}{2}\right)^2$. Any two of $r$, $d$,
+            $c$ give the third; a question naming three is testing one.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Estimate first</span>
+          <span>$\sqrt{r^2 - d^2}$ lies between $r - d$ and $r$. Bound the
+            answer, then see which option survives.</span>
+        </div>
+      </div>
+
+      <p class="c-stage__ask">Name the move, then use it.</p>
+
       <div class="c-practice">
-        <div class="c-practice__head">B6 &middot; Competitive-Style Thinking</div>
         <ol class="c-questions">
           <li>
-            <strong>Assertion.</strong> The perpendicular bisector of a chord
-            passes through the centre. &nbsp;<strong>Reason.</strong> The
-            centre is equidistant from the two ends of the chord, and every
-            such point lies on that bisector.
-          </li>
-          <li>
-            <strong>Assertion.</strong> A quadrilateral whose opposite angles
-            add to $180^\circ$ is cyclic. &nbsp;<strong>Reason.</strong>
-            Opposite angles of a cyclic quadrilateral add to $180^\circ$.
-          </li>
-          <li>
-            A circle has radius $10$ cm. Which of these hold?
-            <ol class="c-parts c-parts--1">
-              <li>It has a chord $20$ cm long.</li>
-              <li>It has a chord $21$ cm long.</li>
-              <li>A chord of it lying $6$ cm from the centre is $16$ cm long.</li>
+            <strong>Eliminate.</strong> A chord of a circle of radius $9$ cm
+            lies $6$ cm from the centre. Strike out two options on sight, then
+            answer. Its length is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$3\sqrt{5}$ cm</li><li>$6\sqrt{5}$ cm</li>
+              <li>$12\sqrt{5}$ cm</li><li>$20$ cm</li>
             </ol>
-            Choose: (a) (i) only &nbsp; (b) (i) and (iii) &nbsp; (c) (ii) and
-            (iii) &nbsp; (d) all three.
           </li>
           <li>
-            Two parallel chords of a circle, $10$ cm and $24$ cm long, lie on
-            the same side of the centre and $7$ cm apart. Find the radius, then
-            say what the distance between them would have been had they lain on
-            opposite sides of the centre instead.
+            <strong>Eliminate.</strong> In cyclic $ABCD$, $\angle B$ is twice
+            $\angle D$. Then $\angle B$ is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$60^\circ$</li><li>$100^\circ$</li>
+              <li>$120^\circ$</li><li>$200^\circ$</li>
+            </ol>
           </li>
           <li>
-            All four chords below belong to one circle, but one row is wrong.
-            Find the radius from the rows that agree, then correct the row that
-            does not.
+            <strong>Sufficiency.</strong> Parallel chords $10$ cm and $24$ cm
+            long lie $7$ cm apart. Say why the radius is not yet fixed, add the
+            word that fixes it, and find it.
+          </li>
+          <li>
+            <strong>Sufficiency.</strong> To find a chord's length, which one
+            fact is enough on its own beside the radius?
+            <ol class="c-parts c-parts--alpha">
+              <li>That it is longer than the radius</li>
+              <li>Its distance from the centre</li>
+              <li>That it is parallel to a diameter</li>
+              <li>The area of the circle</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Constraint.</strong> All four chords below are drawn in one
+            circle, but a row is wrong. Find the radius from the rows that
+            agree, then correct the row that does not.
             <table>
               <thead>
                 <tr><th>Chord (cm)</th><td>$48$</td><td>$14$</td><td>$40$</td><td>$30$</td></tr>
@@ -61,17 +83,12 @@
             </table>
           </li>
           <li>
-            $ABCD$ is a cyclic quadrilateral in which $AB = AD$. Prove that
-            $CA$ bisects $\angle BCD$, naming every theorem you use.
-          </li>
-          <li>
-            Three villages are to share one well, equidistant from all three.
-            <ol class="c-parts c-parts--1">
-              <li>Which point of the chapter is the well, and how would a
-                  surveyor with only a rope find it?</li>
-              <li>The villages turn out to lie almost in a straight line. Say
-                  what happens to the well, and what the surveyor should
-                  report.</li>
+            <strong>Estimate.</strong> A chord lies $10$ cm from the centre of
+            a circle of radius $26$ cm. The half-chord lies between $r - d$ and
+            $r$, and that bound kills three of these. Its length is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$24$ cm</li><li>$30$ cm</li>
+              <li>$48$ cm</li><li>$60$ cm</li>
             </ol>
           </li>
         </ol>

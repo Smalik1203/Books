@@ -68,14 +68,18 @@ component too large for the space left. Closing those gaps means either
 editing prose at the join or letting a component break across a page, which
 is a design decision.
 
-## The Foundation Bridge
+## Beyond the Book
 
 Every chapter ends with ten more pages — `p101.html` to `p110.html` — that take
 the chapter further without adding syllabus. They sort last whatever the
 chapter does, so a chapter may grow to a hundred pages without renumbering
-them. The stages, their contents and the three components they added to the
-library are in [DESIGN.md §6a](DESIGN.md); **the rest of the Bridge is built
-from the components the chapter already uses**, which is the point.
+them. The stages, their contents and the components they added to the library
+are in [DESIGN.md §6a](DESIGN.md); **the rest of the section is built from the
+components the chapter already uses**, which is the point.
+
+Every stage opens with a `.c-stage` head — number, name, and what the stage
+is for — and every Bridge page carries **`data-bridge`**, which puts
+*· Beyond the Book* in the running head.
 
 The page before `p101` carries `data-close`. That tells the fill check the
 chapter proper ends there and may end part-way down the page — without it,

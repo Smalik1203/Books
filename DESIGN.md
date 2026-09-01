@@ -167,8 +167,8 @@ Size alone is not a signature. Each level differs in *kind*.
 | `.c-figure` | — | no — a diagram and its caption |
 | `.c-summary` | teal | no — a rule and a numbered list |
 
-Three more — the Bridge opener, the difficulty tag and the answer key — are
-added by §6a for the Foundation Bridge, and by nothing else.
+Three more — the division opener, the difficulty tag and the answer key — are
+added by §6a for Beyond the Book, and by nothing else.
 
 **Only two components are panels** — the example and the reflect prompt, both
 of which the mockups called for. Everything else sits on the page, held by
@@ -276,40 +276,58 @@ what keeps a structural line the same weight on every page: strokes are
 declared in viewBox units, so a figure drawn at a different density prints
 a heavier or fainter line than its neighbour.
 
-## 6a. The Foundation Bridge — a division, not a second book
+## 6a. Beyond the Book — a division, not a second book
 
 Every chapter closes with ten pages of harder work on the same material: the
-**Foundation Bridge**, announced once by a band across the measure and then
+**Beyond the Book**, announced once by a band across the measure and then
 carried by the components already in the library. Its ten stages are
 
-    B1 Beyond the Chapter    B6 Competitive-Style Thinking
+    B1 The Idea Underneath   B6 Competitive-Style Thinking
     B2 Think and Reason      B7 The Challenge Zone
     B3 Connect the Concepts  B8 The Trap Room
-    B4 Foundation MCQs, 1    B9 Foundation Test
-    B5 Foundation MCQs, 2    B10 Answers, Solutions & Takeaways
+    B4 Multiple Choice, 1    B9 The Mixed Test
+    B5 Multiple Choice, 2    B10 Answers, Solutions & Takeaways
+
+No stage name repeats a word of the division's own name. *Beyond* belongs to
+the band at the top of B1 and to nothing else in the section.
 
 and the point of the numbering is that a reader can name the stage from the
-page, not from the contents. **B1 is prose, so it takes level-3 concept
-headings; the question stages take a level-5 practice band whose head names
-the stage; B10 takes level-3 headings and a summary.** Nothing here is a new
-hierarchy — the Bridge is read exactly the way the chapter before it is read,
-which is the whole reason it does not feel like a coaching module bolted on.
+page, not from the contents. **Every stage opens with `.c-stage`** — its
+number, its name, and one line saying what the stage is for. Nothing here is
+a new hierarchy: the division is read exactly the way the chapter before it is
+read, which is the whole reason it does not feel like a coaching module
+bolted on.
 
-Three things the library did not already have, and they live in
-`css/bridge.css`:
+What the library did not already have lives in `css/bridge.css`:
 
 | | colour | |
 |---|---|---|
-| `.c-bridge` | teal | the division opener — the one solid full-measure block in the book, so the start of the Bridge is unmistakable at arm's length |
+| `.c-bridge` | teal | the division opener — the one solid full-measure block in the book, so the start of the division is unmistakable at arm's length |
+| `.c-stage` | teal | one stage's head: a numeral in a solid mark, the stage name, and what the stage is for. `.c-stage__ask` follows it with the one line an examination paper would print — *Choose the correct option* |
+| `.c-shift` | none | a relationship read both ways — *as $d$ rises, $c$ falls* over *as $d$ falls, $c$ rises*. Rules and two arrows; a reader who has seen the law only once tends to hear a proportion |
+| `.c-results` | teal | four of the chapter's results as thumbnail marks in a row, so a reader sees what is available before starting. An index, not a figure: no text inside the drawings |
 | `.tier` | gold | one question's difficulty (`Think` · `Apply` · `Challenge`), set as a tag so it cannot be misread as the first words of the question |
+| `.c-terms` | gold | what the test is made of — how many questions of each kind. **Never marks and never a time:** a book used in six classrooms cannot know either, and printing them would make the test look like an examination it is not |
 | `.c-answers` | gold | the answer key — a stage label in a fixed 29mm column, then its answers on one line where they fit |
 
-The opener is **structure**: it divides the chapter, which is the section
-tab's job. The tier tag and the answer key are **attention**: both are the
-book speaking to the reader about a question. Each takes one colour, as
-every other component does.
+The opener, the stage head and the results strip are **structure**: they say
+where the reader is, which is the section tab's job. The tier tag, the terms
+and the answer key are **attention**: all three are the book speaking to the
+reader about a question. `.c-shift` is the relationship itself, so it takes
+no colour — rules and space carry it.
 
-Everything else the Bridge needs it already had. MCQ options are
+**One numeral colour, not ten.** Every stage mark is the same teal, in every
+chapter. A hue per stage would read as ten unrelated modules, and would come
+out differently in each chapter's palette; one mark with ten numerals is what
+makes the division read as one thing.
+
+A Bridge page carries **`data-bridge`** on its `<section class="page">`. The
+builder puts *· Beyond the Book* after the chapter title in the running
+head, so a reader who opens the book anywhere in those ten pages knows what
+kind of work they are looking at. Like `data-close` it is metadata, not a
+style.
+
+Everything else the division needs it already had. MCQ options are
 `.c-parts--alpha`; statement lists are the plain roman `.c-parts`; the
 assertion–reason key is a `.c-tip` carrying the chapter's own mark; data
 questions are ordinary book tables; worked answers are `.work__row` with the
@@ -318,7 +336,7 @@ label reading *hint*, *solution*, *key idea*.
 ### A chapter now ends twice
 
 The fill check exempts the last page of a build, because a chapter is allowed
-to end part-way down. With a Bridge after it, the chapter's own closing page
+to end part-way down. With this division after it, the chapter's own closing page
 is no longer last and was being reported as short. A page that closes a
 division carries **`data-close`** on its `<section class="page">`, and the
 fill check forgives it for the same reason it forgives the last page. It is

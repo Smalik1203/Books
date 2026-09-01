@@ -1,72 +1,121 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
       <div class="c-bridge">
-        <div class="c-bridge__title">The Foundation Bridge</div>
+        <div class="c-bridge__title">Beyond the Book</div>
         <div class="c-bridge__strap">Take what you know. Go further.</div>
       </div>
 
-      <p>
-        Five kinds of number, one line, and a decimal expansion that tells you
-        which kind you are holding. Ten pages of harder work on exactly those
-        follow &mdash; no new syllabus, only questions of the kind asked
-        outside school.
-      </p>
-
-      <h3>What arithmetic does to the two kinds</h3>
-
-      <p>
-        The rationals are closed: combine two of them and you get another. The
-        irrationals are not, and the mixed cases are where examinations live.
-        One line settles the most useful of them. If $r$ is rational and
-        $i$ is irrational, could $r + i$ be some rational $s$? Then
-        $i = s - r$, a difference of two rationals &mdash; and so rational,
-        which it is not.
-      </p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Four cases, and only two are settled</div>
-        <ol>
-          <li>rational $+$ irrational is <em>always</em> irrational; so is
-            (non-zero) rational $\times$ irrational;</li>
-          <li>irrational $+$ irrational, and irrational $\times$ irrational,
-            may be either &mdash; $\sqrt{2} + \left(-\sqrt{2}\right) = 0$, but
-            $\sqrt{2} + \sqrt{3}$ is not rational.</li>
-        </ol>
+      <div class="c-stage">
+        <div class="c-stage__num">1</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">The Idea Underneath</div>
+          <div class="c-stage__for">Two kinds of number, interleaved everywhere.</div>
+        </div>
       </div>
 
-      <h3>How long a cycle can be</h3>
-
       <p>
-        Dividing by $7$, the only possible remainders are $1$ to $6$, so the
-        cycle of $\frac{1}{7}$ cannot be longer than six digits &mdash; and it
-        is exactly six. Dividing by $11$ there are ten possible remainders, and
-        yet $\frac{1}{11} = 0.\overline{09}$ has a cycle of only two.
+        Could a rational $r$ plus an irrational $i$ come out rational? One line
+        settles it:
       </p>
 
-      <p>
-        So $q - 1$ is a ceiling, not a promise. Which primes reach it is a real
-        question, unanswered to this day: $7$, $17$, $19$, $23$ do; $11$, $13$,
-        $31$ do not. A number whose cycle reaches the ceiling gives a
-        <span class="pop">cyclic</span> block, which is why $142857$ behaves as
-        it does and $090909$ does not.
-      </p>
-
-      <h3>The irrationals are crowded too</h3>
+      <div class="eq eq--anchor">
+        $$r + i = s \;\Longrightarrow\; i = s - r$$
+      </div>
 
       <p>
-        The chapter showed the rationals are dense: between any two lies
-        another. The same is true of the irrationals, and the proof is a
-        single trick. Given $a \lt b$, the interval between them contains a
-        rational $r$, and then $r + \frac{\sqrt{2}}{n}$ is irrational for every
-        $n$ &mdash; choose $n$ large enough and it still lies below $b$.
+        A difference of two rationals is rational, and $i$ is not. So
+        <span class="pop">rational plus irrational is always irrational</span>
+        &mdash; but nothing here settles irrational plus irrational, and that is
+        where examinations live.
       </p>
 
+      <div class="c-shift">
+        <div class="c-shift__title">What arithmetic does to the two kinds</div>
+        <div class="c-shift__row">
+          <span>rational $+$ irrational<span class="c-shift__way">&rarr;</span></span>
+          <span>always irrational</span>
+        </div>
+        <div class="c-shift__row">
+          <span>irrational $+$ irrational<span class="c-shift__way">&rarr;</span></span>
+          <span>may be either</span>
+        </div>
+      </div>
+
       <p>
-        So the two kinds are interleaved everywhere on the line, no matter how
-        far you magnify. Neither has an interval to itself.
+        $\sqrt{2} + \left(-\sqrt{2}\right) = 0$, and yet $\sqrt{2} + \sqrt{3}$
+        is irrational. Both kinds sit everywhere on the line, however far you
+        magnify it.
       </p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 150 118" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A number line, with a short stretch of it magnified below to show both kinds of number again">
+            <path class="dg-line" d="M15 26 H135"/>
+            <path class="dg-thin" d="M15 22 V30 M135 22 V30"/>
+            <path class="dg-dim" d="M60 26 H78"/>
+
+            <path class="dg-ghost" d="M60 30 L15 78 M78 30 L135 78"/>
+
+            <path class="dg-line" d="M15 84 H135"/>
+            <circle class="dg-fill-teal" cx="27" cy="84" r="2.4"/>
+            <circle class="dg-plot" cx="42" cy="84" r="2.4"/>
+            <circle class="dg-fill-teal" cx="57" cy="84" r="2.4"/>
+            <circle class="dg-plot" cx="72" cy="84" r="2.4"/>
+            <circle class="dg-fill-teal" cx="87" cy="84" r="2.4"/>
+            <circle class="dg-plot" cx="102" cy="84" r="2.4"/>
+            <circle class="dg-fill-teal" cx="117" cy="84" r="2.4"/>
+            <circle class="dg-plot" cx="130" cy="84" r="2.4"/>
+
+            <text class="dg-label dg-label--sm" x="15" y="19" text-anchor="middle">0</text>
+            <text class="dg-label dg-label--sm" x="135" y="19" text-anchor="middle">1</text>
+            <text class="dg-note" x="75" y="102" text-anchor="middle">the same picture again</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3B.1</span> Magnify any stretch
+          of the line and both kinds are still there. Neither has an interval
+          to itself.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-results">
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-line" d="M6 22 H42"/>
+            <path class="dg-thin" d="M24 16 V28"/>
+            <path class="dg-move" d="M20 34 H8" marker-end="url(#dg-arrow)"/>
+            <path class="dg-move" d="M28 34 H40" marker-end="url(#dg-arrow)"/>
+          </svg>
+          <div class="c-results__cap">Zero split the line in two</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-line" d="M6 22 H42"/>
+            <circle class="dg-plot" cx="12" cy="22" r="2.4"/>
+            <circle class="dg-plot" cx="36" cy="22" r="2.4"/>
+            <circle class="dg-fill-teal" cx="24" cy="22" r="2.4"/>
+          </svg>
+          <div class="c-results__cap">Between any two lies another</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-line" d="M6 34 H42"/>
+            <path class="dg-thin" d="M12 34 V16 H30 V34"/>
+            <path class="dg-dim" d="M12 34 L30 16"/>
+            <circle class="dg-plot" cx="37" cy="34" r="2.2"/>
+          </svg>
+          <div class="c-results__cap">A diagonal can be a length no ratio names</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="dg-line" cx="24" cy="22" r="13"/>
+            <path class="dg-thin" d="M24 9 V4 M37 22 H42 M24 35 V40 M11 22 H6"/>
+            <path class="dg-thin" d="M33.2 12.8 L36.7 9.3 M33.2 31.2 L36.7 34.7"/>
+          </svg>
+          <div class="c-results__cap">A remainder must come round again</div>
+        </div>
+      </div>
 
     </div>
   </div>

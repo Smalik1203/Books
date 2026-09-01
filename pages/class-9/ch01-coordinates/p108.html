@@ -1,47 +1,67 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-stage">
+        <div class="c-stage__num">8</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">The Trap Room</div>
+          <div class="c-stage__for">Two students, one question, and a mistake.</div>
+        </div>
+      </div>
+      <p class="c-stage__ask">Answer (a) A only, (b) B only, (c) both,
+      (d) neither &mdash; then say in one line what went wrong.</p>
+
       <div class="c-practice">
-        <div class="c-practice__head">B8 &middot; The Trap Room</div>
         <ol class="c-questions">
           <li>
-            Kavya reports the distance between $(2, 5)$ and $(7, 9)$ as
-            $(7 - 2) + (9 - 5) = 9$, "because you move 5 across and 4 up".
-            Her arithmetic is right. Say what she has actually measured, and
-            when that number is the one you want.
+            How far is it from $(2,5)$ to $(7,9)$? <strong>A.</strong>
+            $\sqrt{41}$, by the formula. &nbsp;<strong>B.</strong> $9$ &mdash;
+            five across and four up.
           </li>
           <li>
-            "The point $(-3, -3)$ is in the fourth quadrant, because both its
-            coordinates are negative." Correct the statement, and say which
-            single fact about the numbering was misremembered.
+            <strong>A.</strong> $(-3,-3)$ is in Quadrant IV, since both
+            coordinates are negative. &nbsp;<strong>B.</strong> It is in
+            Quadrant III.
           </li>
           <li>
-            "$(0, 5)$ is in the first quadrant, since neither coordinate is
-            negative." Decide, then give the rule that settles every such case
-            in one line, and say how many points of the plane lie in no
-            quadrant at all.
+            <strong>A.</strong> $(0,5)$ is in no quadrant at all.
+            &nbsp;<strong>B.</strong> It is in Quadrant I, since neither
+            coordinate is negative.
           </li>
           <li>
-            Asked for the midpoint of $(2, 6)$ and $(8, 10)$, a student halves
-            the differences and reports $(3, 2)$. Show what that point actually
-            is, and name the operation that should have been used instead.
+            The midpoint of $(2,6)$ and $(8,10)$ is
+            <strong>A.</strong> $(3,2)$, halving each difference.
+            &nbsp;<strong>B.</strong> $(10,16)$, adding each pair.
           </li>
           <li>
-            A student argues: <em>since $\sqrt{(x_2-x_1)^2} = x_2 - x_1$, the
-            distance from $(5, 0)$ to $(1, 0)$ is $1 - 5 = -4$.</em> Both steps
-            look like algebra you have seen. Find the false one.
+            <strong>A.</strong> The distance from $(5,0)$ to $(1,0)$ is $4$:
+            a square root returns the size, not the sign.
+            &nbsp;<strong>B.</strong> It is $-4$, since
+            $\sqrt{(x_2-x_1)^2} = x_2 - x_1$.
           </li>
           <li>
-            "$P(3, 4)$ and $Q(4, 3)$ are the same point &mdash; they are built
-            from the same two numbers." Refute it with a calculation rather
-            than an assertion, and then describe every pair of numbers for
-            which the claim would in fact be true.
+            <strong>A.</strong> $P(3,4)$ and $Q(4,3)$ are the same point
+            &mdash; the same two numbers built them. &nbsp;<strong>B.</strong>
+            They coincide only when the two numbers are equal.
           </li>
           <li>
-            "$A(1, 2)$, $B(3, 6)$ and $C(4, 8)$ are not in a straight line,
-            because $AB \neq BC$." Test the claim, and say what has been
-            confused with what.
+            For $A(1,2)$, $B(3,6)$, $C(4,8)$: <strong>A.</strong> The three lie
+            in a straight line. &nbsp;<strong>B.</strong> $AB \neq BC$.
+          </li>
+          <li>
+            <strong>A.</strong> Doubling both coordinates of a point doubles
+            its distance from the origin. &nbsp;<strong>B.</strong> Doubling
+            just the $x$-coordinate doubles it too.
+          </li>
+          <li>
+            Two points are $10$ apart and one of them is $(0,0)$.
+            <strong>A.</strong> The other is $(6,8)$. &nbsp;<strong>B.</strong>
+            The other cannot be named from what is given.
+          </li>
+          <li>
+            <strong>A.</strong> The distance from $(x,y)$ to the $x$-axis is
+            $y$. &nbsp;<strong>B.</strong> It is $|y|$.
           </li>
         </ol>
       </div>
@@ -49,22 +69,16 @@
       <div class="c-keyidea">
         <div class="c-keyidea__title">Three shapes of mistake</div>
         <ol>
-          <li>
-            <strong>Measuring the wrong journey</strong> (traps 1, 5). Adding
-            the shifts, or keeping their sign, both answer a question that was
-            not asked. A distance is one number and it is never negative.
-          </li>
-          <li>
-            <strong>Trusting a half-remembered convention</strong> (traps 2, 3).
+          <li><strong>Measuring the wrong journey</strong> (1, 5, 10). Adding
+            the shifts, or keeping a sign, answers a question nobody asked. A
+            distance is one number and never negative.</li>
+          <li><strong>Trusting a half-remembered convention</strong> (2, 3).
             The quadrant order and the meaning of a zero coordinate are
-            agreements, not deductions: check them, do not reconstruct them.
-          </li>
-          <li>
-            <strong>Confusing a pair with a set</strong> (traps 4, 6, 7).
-            $(x, y)$ is an <em>ordered</em> pair, a midpoint is an average and
-            not a difference, and three points in a row need not be evenly
-            spaced.
-          </li>
+            agreements. Check them; do not reconstruct them.</li>
+          <li><strong>Answering before the point is fixed</strong> (4, 6, 7,
+            8, 9). $(x,y)$ is an <em>ordered</em> pair, a midpoint is an
+            average not a difference, three points in a row need not be evenly
+            spaced, and one distance fixes a circle rather than a point.</li>
         </ol>
       </div>
 

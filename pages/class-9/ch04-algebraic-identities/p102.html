@@ -1,70 +1,92 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        A reasoning question has no working to show. It wants the sentence
-        that would convince someone who disagreed — so answer in words, name
-        the identity you lean on, and kill a false claim with one
-        counter-example rather than an argument.
-      </p>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Think and Reason</div>
+          <div class="c-stage__for">Judge a claim &mdash; and the reason offered for it.</div>
+        </div>
+      </div>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/>
+            <path d="M15 3.5v17"/><path d="M3.5 15h17"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Questions 1&ndash;4 take this key.
+            <strong>(a)</strong> both true, R explains A;
+            <strong>(b)</strong> both true, R does not explain A;
+            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
+            R true.</p>
+        </div>
+      </div>
 
       <div class="c-practice">
-        <div class="c-practice__head">B2 &middot; Think and Reason</div>
         <ol class="c-questions">
           <li>
-            Section 4.2 checked $(a+b)^2 = a^2 + 2ab + b^2$ at three pairs of
-            numbers, and then proved it in four lines. Explain what the four
-            lines gave you that three thousand checks could not — and say what
-            a <em>single</em> failed check would have given you.
+            <strong>A.</strong> $(a - b)^2 = (b - a)^2$ for every $a$ and $b$.
+            &nbsp;<strong>R.</strong> A number and its negative have the same
+            square.
           </li>
           <li>
-            The picture in Fig. 4.2 argues the identity only for positive $a$
-            and $b$: a side of length $-2$ cannot be drawn. Yet the identity
-            holds for negatives too.
-            <ol class="c-parts c-parts--1">
-              <li>Does that make the picture worthless? Say precisely what it
-                  establishes and what it leaves open.</li>
-              <li>Which later argument in the chapter closed the gap, and what
-                  was it about that argument that made it general?</li>
+            <strong>A.</strong> $x^3 + y^3 + z^3 = 3xyz$ for all $x$, $y$, $z$
+            with $xyz \neq 0$. &nbsp;<strong>R.</strong>
+            $x^3 + y^3 + z^3 - 3xyz = (x+y+z)\left(x^2+y^2+z^2-xy-yz-zx\right)$.
+          </li>
+          <li>
+            <strong>A.</strong> $a^2 + b^2 \geq 2ab$ for every $a$ and $b$.
+            &nbsp;<strong>R.</strong> $a^2 + b^2$ and $2ab$ are both
+            non-negative.
+          </li>
+          <li>
+            <strong>A.</strong> $(x+2)(x+3) = x^2 + 5x + 6$ is an identity.
+            &nbsp;<strong>R.</strong> It is true at $x = 1$.
+          </li>
+          <li>
+            Which of these are identities?
+            <ol class="c-parts c-parts--1 c-parts--tall">
+              <li>$(x + 2)(x + 3) = x^2 + 5x + 6$</li>
+              <li>$x^2 + 5x + 6 = 0$</li>
+              <li>$x^2 - 4 = (x - 2)(x + 2)$</li>
+            </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(i) and (iii)</li>
+              <li>(ii) and (iii)</li><li>all three</li>
             </ol>
           </li>
           <li>
-            Without expanding anything, decide whether
-            $(a+b+c)^2 - (a-b-c)^2$ is a multiple of $4$ for every choice of
-            $a$, $b$ and $c$. Which single identity settles it, and what are
-            its two brackets here?
-          </li>
-          <li>
-            In Example 7 a common factor of $2$ came out first and the surds
-            vanished.
+            Given $a + b = 5$ and $ab = 6$, which must be true?
             <ol class="c-parts c-parts--1">
-              <li>Does the same rescue work on $75p^2 + 90pq + 27q^2$?</li>
-              <li>Invent an expression $Ap^2 + Bpq + Cq^2$ for which taking out
-                  the common factor leaves something that is <em>not</em> a
-                  perfect square, and say what fails.</li>
+              <li>$a^2 + b^2 = 13$</li>
+              <li>$(a - b)^2 = 1$</li>
+              <li>$a^3 + b^3 = 35$</li>
+            </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(i) and (ii)</li>
+              <li>(ii) and (iii)</li><li>all three</li>
             </ol>
           </li>
           <li>
-            The chapter factorises $x^3 + y^3$, $x^3 - y^3$ and $x^2 - y^2$,
-            but never $x^2 + y^2$. Try to build a factorisation for it by the
-            method of Section 4.7, and report where the attempt stops.
-          </li>
-          <li>
-            Put $x = y$ into $x^3 - y^3 = (x-y)\left(x^2+xy+y^2\right)$. Both
-            sides become $0$: the statement stays true and tells you nothing.
-            Explain how a true statement can carry no information, and what
-            that means for the claim <em>$x - y$ divides $x^n - y^n$</em>.
-          </li>
-          <li>
-            For positive $a$ and $b$ the chapter found
-            $(a+b)^2 > a^2 + b^2$.
+            For every whole number $n$, which must be true of $n^3 - n$?
             <ol class="c-parts c-parts--1">
-              <li>Give a pair for which the inequality runs the other way, and
-                  a pair for which the two sides are equal.</li>
-              <li>State the one condition on $ab$ that decides all three cases
-                  at once, and prove it from the identity.</li>
+              <li>It is even.</li>
+              <li>It is a multiple of $3$.</li>
+              <li>It is a multiple of $12$.</li>
             </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(ii) and (iii)</li>
+              <li>(i) and (ii)</li><li>all three</li>
+            </ol>
+          </li>
+          <li>
+            Write $p = x + y + z$, $q = xy + yz + zx$ and $r = xyz$. Show that
+            $x^2 + y^2 + z^2 = p^2 - 2q$, and say why no fourth quantity is
+            ever needed for a symmetric expression.
           </li>
         </ol>
       </div>

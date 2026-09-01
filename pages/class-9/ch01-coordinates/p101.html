@@ -1,76 +1,121 @@
-<section class="page">
+<section class="page" data-bridge>
   <div class="page__body">
     <div class="page__main">
 
       <div class="c-bridge">
-        <div class="c-bridge__title">The Foundation Bridge</div>
+        <div class="c-bridge__title">Beyond the Book</div>
         <div class="c-bridge__strap">Take what you know. Go further.</div>
       </div>
 
-      <p>
-        The chapter gave you two numbers and one formula. Ten pages of harder
-        work on exactly those follow — no new syllabus, only questions of the
-        kind asked outside school.
-      </p>
-
-      <h3>The distance you walk is not the distance you measure</h3>
-
-      <p>
-        In the gridded city at the end of the chapter, nobody walks along a
-        hypotenuse. To get from the crossing $(1, 2)$ to the crossing $(5, 7)$
-        you go four blocks east and five north, in whatever order — and the
-        walk is nine blocks however you arrange them, while the straight line
-        is only $\sqrt{41} \approx 6.4$.
-      </p>
-
-      <div class="eq">
-        $$\text{grid distance} = |x_2 - x_1| + |y_2 - y_1|$$
-      </div>
-
-      <p>
-        Both are honest measurements of the same pair of points. Which one is
-        the <em>right</em> distance depends on what may move along it —
-        a pedestrian, or a bird.
-      </p>
-
-      <h3>Two numbers, then three</h3>
-
-      <p>
-        Nothing in the argument of Section 1.4 used the fact that the plane is
-        flat. Drop a perpendicular in space instead and the same theorem,
-        applied twice, gives the distance between $(x_1, y_1, z_1)$ and
-        $(x_2, y_2, z_2)$ as
-      </p>
-
-      <div class="eq">
-        $$\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}$$
-      </div>
-
-      <p>
-        The plane formula is that one with $z_1 = z_2$. A pattern that keeps
-        working when a dimension is added is usually a definition worth
-        trusting, not a coincidence.
-      </p>
-
-      <h3>Any fraction of the way</h3>
-
-      <p>
-        The midpoint of $A(x_1, y_1)$ and $B(x_2, y_2)$ is the average of the
-        two coordinate pairs. That is the halfway case of something more
-        useful: to go a fraction $t$ of the way from $A$ to $B$, take $t$ of
-        each shift and add it to $A$.
-      </p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A point part of the way along</div>
-        <div class="work work--list">
-          <p>$\left(x_1 + t(x_2 - x_1),\; y_1 + t(y_2 - y_1)\right)$</p>
+      <div class="c-stage">
+        <div class="c-stage__num">1</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">The Idea Underneath</div>
+          <div class="c-stage__for">One formula, and the question it does not answer.</div>
         </div>
-        <p>
-          $t = \frac{1}{2}$ gives the midpoint, $t = \frac{1}{3}$ and
-          $t = \frac{2}{3}$ the two points of trisection, $t = 0$ gives $A$ and
-          $t = 1$ gives $B$.
-        </p>
+      </div>
+
+      <p>
+        Section 1.4 measured the straight line between two points:
+      </p>
+
+      <div class="eq eq--anchor">
+        $$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$
+      </div>
+
+      <p>
+        But nobody in a gridded city walks along a hypotenuse.
+        <span class="pop">Two honest numbers measure the same pair of
+        points</span>, and which one is wanted depends on what may travel
+        along it.
+      </p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 150 150" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two plotted points joined both by a straight line and by a path along the grid">
+            <g class="dg-grid">
+              <path d="M36 12 V140 M52 12 V140 M68 12 V140 M84 12 V140 M100 12 V140 M116 12 V140"/>
+              <path d="M20 116 H140 M20 100 H140 M20 84 H140 M20 68 H140 M20 52 H140 M20 36 H140 M20 20 H140"/>
+            </g>
+
+            <path class="dg-axis" d="M12 132 H140"/>
+            <path class="dg-axis" d="M20 140 V12"/>
+
+            <path class="dg-line" d="M36 100 H100 V20"/>
+            <path class="dg-dim" d="M36 100 L100 20"/>
+
+            <circle class="dg-plot" cx="36" cy="100" r="2.6"/>
+            <circle class="dg-plot" cx="100" cy="20" r="2.6"/>
+
+            <text class="dg-label" x="28" y="106" text-anchor="end">A</text>
+            <text class="dg-label" x="106" y="18">B</text>
+            <text class="dg-note" x="66" y="112" text-anchor="middle">9 blocks</text>
+            <text class="dg-dim-label" x="58" y="52">&radic;41</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1B.1</span> From $A(1,2)$ to
+          $B(5,7)$: nine blocks on foot, $\sqrt{41} \approx 6.4$ as the crow
+          flies.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-shift">
+        <div class="c-shift__title">What the square root does</div>
+        <div class="c-shift__row">
+          <span>both shifts double<span class="c-shift__way">&uarr;</span></span>
+          <span>the distance doubles<span class="c-shift__way">&uarr;</span></span>
+        </div>
+        <div class="c-shift__row">
+          <span>one shift doubles<span class="c-shift__way">&uarr;</span></span>
+          <span>the distance rises by less<span class="c-shift__way">&uarr;</span></span>
+        </div>
+      </div>
+
+      <p>
+        The formula is not a proportion in either coordinate on its own. Half
+        the traps in this section are built on treating it as one.
+      </p>
+
+      <div class="c-results">
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-axis" d="M4 22 H44"/>
+            <path class="dg-axis" d="M24 4 V40"/>
+            <circle class="dg-plot" cx="34" cy="12" r="1.8"/>
+            <circle class="dg-plot" cx="14" cy="12" r="1.8"/>
+            <circle class="dg-plot" cx="14" cy="32" r="1.8"/>
+            <circle class="dg-plot" cx="34" cy="32" r="1.8"/>
+          </svg>
+          <div class="c-results__cap">Two signs name the quadrant</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-line" d="M10 34 H38 V12"/>
+            <path class="dg-dim" d="M10 34 L38 12"/>
+            <circle class="dg-plot" cx="10" cy="34" r="1.8"/>
+            <circle class="dg-plot" cx="38" cy="12" r="1.8"/>
+          </svg>
+          <div class="c-results__cap">A distance is one Pythagoras</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-line" d="M8 22 H40"/>
+            <path class="dg-thin" d="M16 18 V26 M32 18 V26"/>
+            <circle class="dg-plot" cx="8" cy="22" r="1.8"/>
+            <circle class="dg-plot" cx="40" cy="22" r="1.8"/>
+            <circle class="dg-fill-teal" cx="24" cy="22" r="2.2"/>
+          </svg>
+          <div class="c-results__cap">A midpoint is an average</div>
+        </div>
+        <div class="c-results__item">
+          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="dg-line" d="M10 34 H24 V22 H38 V12"/>
+            <path class="dg-dim" d="M10 34 L38 12"/>
+            <circle class="dg-plot" cx="10" cy="34" r="1.8"/>
+            <circle class="dg-plot" cx="38" cy="12" r="1.8"/>
+          </svg>
+          <div class="c-results__cap">A walk is not a distance</div>
+        </div>
       </div>
 
     </div>
