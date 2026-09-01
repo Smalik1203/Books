@@ -135,7 +135,10 @@
   stroke-linecap: round;
 }
 .dg-plot--b { stroke: var(--rust); }      /* second role */
-.dg-plot--c { stroke: var(--gold-deep); } /* third role */
+.dg-plot--c { stroke: var(--dg-b); }     /* third role — the diagram
+   palette's green, not a working colour. A chapter may own the structure
+   hue, so .dg-plot follows it; if the third line followed gold as well, a
+   warm chapter would put three warm lines on one pair of axes. */
 
 /* A label naming a plotted relation sits in the open field of the
    graph, where a grid line or another plot may pass behind it. Give
