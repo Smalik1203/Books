@@ -1,0 +1,1194 @@
+/* ============================================================
+   COVER — the printed wrap.
+
+   A cover is not a page. It has no text block, no folio, no
+   running head and no measure; it is one sheet the width of
+   back + spine + front, printed edge to edge and folded twice.
+   So it gets its own shell rather than bending page.css.
+
+   What it does share is everything that makes it the same book:
+   the two faces, the type scale, and the ink. The jacket colours
+   below are the imprint's, not a chapter's — a cover is the one
+   surface in the book that belongs to the series rather than to
+   a chapter, which is why the palette sheets do not reach it.
+
+     .jacket           the whole wrap, trim size
+     .jacket__back     176mm — blurb, features, barcode
+     .jacket__spine    --spine-w — set from the page count
+     .jacket__front    176mm — title and artwork
+
+   Two finishes, same layout: the default light stock, and
+   .jacket--night for the dark edition.
+   ============================================================ */
+
+:root {
+  /* ---- Jacket geometry -----------------------------------
+     --spine-w is stamped by the builder from the cover's own
+     metadata: it depends on the page count and the paper, and
+     no stylesheet can know either. This is the fallback. */
+  --spine-w: 16mm;
+
+  /* The panel's own quiet edge, and the two widths the back panel is
+     built on. All three are fractions of the trim rather than
+     millimetres: A4 is the standard here, B5 is an edition, and a
+     margin typed in millimetres is a margin that only suits one of
+     them. 0.08 of the width gives 16.8mm on A4 and 14.1mm on B5. */
+  --jk-margin: calc(var(--trim-w) * 0.08);
+  --jk-col:    calc(var(--trim-w) * 0.352);
+  --jk-gap:      6mm;
+  --jk-hair:     0.3mm;
+
+  /* ---- Jacket ink ----------------------------------------
+     Four colours and two neutrals. Navy carries the identity,
+     terracotta the one accent, sage the counterweight; gold is
+     reserved for the small caps that label things. */
+  --jk-cream:      #f3f0e8;
+  --jk-cream-deep: #e7e2d6;
+  --jk-navy:       #1e3a5e;
+  --jk-navy-deep:  #16293f;
+  --jk-navy-soft:  #6d8099;
+  --jk-terra:      #bc5b38;
+  --jk-sage:       #8a9c84;
+  --jk-gold:       #8d7a3c;
+  --jk-stone:      #cec4ae;
+  --jk-stone-deep: #a99d84;
+
+  /* the night finish overrides only the ground and its ink */
+  --jk-ground:      var(--jk-cream);
+  --jk-ground-ink:  var(--jk-navy);
+  --jk-ground-soft: #55617a;
+  --jk-ground-rule: #cdc6b6;
+  --jk-ground-panel:#eae5da;
+  --jk-ground-mark: var(--jk-sage);
+  --jk-ground-art:  none;
+
+  /* ---- The front panel's contract -------------------------
+     A finish is these twelve values and nothing else. Anything
+     the front paints that is not one of them is a colour a new
+     finish cannot reach — which is how the night edition ended
+     up as eight scattered overrides instead of a palette. */
+  --jk-front:        var(--jk-cream);
+  --jk-front-ink:    var(--jk-navy);   /* title, wordmark, diagrams */
+  --jk-front-soft:   #55617a;          /* taglines, the promise */
+  --jk-front-mark:   var(--jk-sage);   /* "Bridge", the classmark rules */
+  --jk-front-accent: var(--jk-terra);  /* "Lab", NCERT, the strap */
+  --jk-front-label:  var(--jk-gold);   /* the Part badge */
+  --jk-disc-1:       var(--jk-navy);
+  --jk-disc-2:       var(--jk-terra);
+  --jk-disc-3:       var(--jk-sage);
+  --jk-disc-3-op:    0.5;
+  --jk-spiral-c:     var(--jk-gold);
+  --jk-dot-c:        var(--jk-gold);
+  --jk-display:      var(--font-display);
+  --jk-sphere-1:     #4a6285;
+  --jk-sphere-2:     #26436a;
+  --jk-sphere-3:     #131f33;
+}
+
+/* ============================================================
+   FINISHES
+   One layout, several palettes. A finish is the twelve front
+   tokens plus the four ground tokens and the four working
+   colours the back and spine take — nothing else. If a finish
+   needs a rule as well as a value, the contract is short of a
+   token and the fix is to add one, not to bolt an override onto
+   the finish.
+   ============================================================ */
+
+/* ---- night: a light front against a dark back -------------
+   The one that was asked for, and the one nothing else here is.
+   Its brightness is not saturation — every colour below is muted —
+   it is the jump from an ivory front to a near-black aubergine
+   back, with terracotta doing all the pointing. Flood the front
+   with a colour and that jump is the first thing you lose, which
+   is why twelve flooded colourways all read as too bright. */
+.jacket--night {
+  --jk-cream:     #f2ede3;
+  --jk-navy:      #201538;
+  --jk-navy-deep: #150d24;
+  --jk-navy-soft: #7b6f96;
+  --jk-terra:     #c25a34;
+  --jk-sage:      #8a8299;
+  --jk-gold:      #cca25c;
+
+  --jk-ground:      #170e26;
+  --jk-ground-ink:  #f4f0e8;
+  --jk-ground-soft: #d2ccdf;
+  --jk-ground-rule: #443659;
+  --jk-ground-panel:#20142f;
+  --jk-ground-mark: var(--jk-terra);
+  --jk-ground-accent: #dd7a46;
+  /* The lift sits behind the headline, where the eye enters, and the
+     panel falls away toward the trade block at the foot — a barcode
+     wants the calmest, darkest ground on the cover. Its peak is held
+     below the front's disc (#2a1a4a): a background lighter than the
+     artwork it faces inverts the hierarchy across the spine. */
+  --jk-ground-art:  radial-gradient(130% 90% at 20% 18%,
+                      #241c39 0%, #1a1429 55%, #141020 100%);
+
+  --jk-front:        #f2ede3;
+  --jk-front-ink:    #201538;
+  --jk-front-soft:   #5f5673;
+  --jk-front-mark:   #c25a34;
+  --jk-front-accent: #c25a34;
+  --jk-front-label:  #c25a34;
+  --jk-disc-1:    #2a1a4a;
+  --jk-disc-2:    #c05230;
+  --jk-disc-3:    #9d97ad;
+  --jk-disc-3-op: 0.45;
+  --jk-spiral-c:  #c2a05f;
+  --jk-dot-c:     #c2a05f;
+  --jk-sphere-1:  #3a3742;
+  --jk-sphere-2:  #232029;
+  --jk-sphere-3:  #0e0d12;
+}
+
+/* ---- vivid: the same cream stock, saturated ink -----------
+   The cheapest of the bright options to print: one stock, no
+   solid flooded panel, so no mottling and no show-through on
+   the fold. */
+.jacket--vivid {
+  --jk-navy:  #0d47c4;
+  --jk-terra: #ff5a1f;
+  --jk-sage:  #00a86b;
+  --jk-gold:  #d99400;
+  --jk-navy-soft: #7fa4ee;
+  --jk-ground:      #fbf8f0;
+  --jk-ground-panel:#f4efe2;
+  --jk-ground-rule: #d8d0bc;
+  --jk-ground-soft: #5b6480;
+
+  --jk-front:        #fbf8f0;
+  --jk-front-ink:    #0d47c4;
+  --jk-front-soft:   #5b6480;
+  --jk-front-mark:   #00a86b;
+  --jk-front-accent: #ff5a1f;
+  --jk-front-label:  #d99400;
+  --jk-disc-1: #0d47c4;
+  --jk-disc-2: #ff5a1f;
+  --jk-disc-3: #ffd028;
+  --jk-disc-3-op: 0.8;
+  --jk-spiral-c: #ffd028;
+  --jk-dot-c:    #ff5a1f;
+  --jk-sphere-1: #4f86f0;
+  --jk-sphere-2: #1450cf;
+  --jk-sphere-3: #072a7d;
+}
+
+/* ---- cobalt: a flooded blue front -------------------------
+   The front is a solid, so it wants a matt laminate; an
+   unlaminated flood this size scuffs white along the fore-edge
+   before the book reaches a desk. */
+.jacket--cobalt {
+  --jk-navy:  #0b53d6;
+  --jk-terra: #ff5a1f;
+  --jk-sage:  #0e9f6e;
+  --jk-gold:  #b07d10;
+  --jk-navy-soft: #86aefa;
+  --jk-ground:      #fbf8f0;
+  --jk-ground-panel:#f2eee1;
+  --jk-ground-rule: #d6cebb;
+  --jk-ground-soft: #55617a;
+
+  --jk-front:        #0b53d6;
+  --jk-front-ink:    #ffffff;
+  --jk-front-soft:   #c3d6ff;
+  --jk-front-mark:   #ffd028;
+  --jk-front-accent: #ff9250;
+  --jk-front-label:  #ffd028;
+  --jk-disc-1: #0a3ea6;
+  --jk-disc-2: #ff5a1f;
+  --jk-disc-3: #ffd028;
+  --jk-disc-3-op: 0.85;
+  --jk-spiral-c: #ffd028;
+  --jk-dot-c:    #ffffff;
+  --jk-sphere-1: #ffffff;
+  --jk-sphere-2: #e4d8bd;
+  --jk-sphere-3: #9c8c6b;
+}
+
+/* ---- solar: a flooded marigold front ----------------------
+   The brightest of the three and the least forgiving: marigold
+   is out of gamut in CMYK and will print duller than the
+   screen. It wants a Pantone hit, or an accepted knock-back. */
+.jacket--solar {
+  --jk-navy:  #14213d;
+  --jk-terra: #d62828;
+  --jk-sage:  #0e7c5a;
+  --jk-gold:  #b8860b;
+  --jk-navy-soft: #7e88a6;
+  --jk-ground:      #fdf7e6;
+  --jk-ground-panel:#f7eed6;
+  --jk-ground-rule: #ded0aa;
+  --jk-ground-soft: #55617a;
+
+  --jk-front:        #ffb703;
+  --jk-front-ink:    #14213d;
+  --jk-front-soft:   #34406b;
+  --jk-front-mark:   #d62828;
+  --jk-front-accent: #d62828;
+  --jk-front-label:  #14213d;
+  --jk-disc-1: #14213d;
+  --jk-disc-2: #d62828;
+  --jk-disc-3: #ffffff;
+  --jk-disc-3-op: 0.4;
+  --jk-spiral-c: #ffe08a;
+  --jk-dot-c:    #14213d;
+  --jk-sphere-1: #3d4a70;
+  --jk-sphere-2: #1b2a4d;
+  --jk-sphere-3: #080d1a;
+}
+
+/* ============================================================
+   SHELL
+   ============================================================ */
+
+body.cover {
+  margin: 0;
+  background: #55605b;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cover-stage {
+  display: flex;
+  justify-content: center;
+  padding: 8mm;
+}
+
+.jacket {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--trim-w) var(--spine-w) var(--trim-w);
+  width: calc(2 * var(--trim-w) + var(--spine-w));
+  height: var(--trim-h);
+  overflow: hidden;
+  background: var(--jk-ground);
+
+  /* Every panel measures its content from these four, never from the
+     panel's own edge — which is what lets the press sheet grow without
+     anything printed moving. "in" is the spine side and "out" is the
+     fore-edge; only the outer three take the bleed, because the spine
+     side of a panel is a fold, not a cut. */
+  --jk-top:    var(--jk-margin);
+  --jk-bottom: var(--jk-margin);
+  --jk-in:     var(--jk-margin);
+  --jk-out:    var(--jk-margin);
+  --jk-spine-pad: 10mm;
+  --jk-art-top: 0mm;
+}
+
+.jacket__back,
+.jacket__spine,
+.jacket__front { position: relative; overflow: hidden; }
+
+/* ---- The press sheet ---------------------------------------
+   The wrap grows by its bleed on all four cut edges. The grid
+   columns absorb it — the back column and the front column each
+   carry one bleed on their outer side, the spine keeps its exact
+   width — and the four inset tokens carry it too, so type and
+   artwork stay where the trim put them. No crop marks: the
+   printer imposes the job and lays its own.
+   ------------------------------------------------------------ */
+body.bleed .cover-stage { padding: 0; }
+body.bleed .jacket {
+  width:  calc(2 * var(--trim-w) + var(--spine-w) + 2 * var(--bleed));
+  height: calc(var(--trim-h) + 2 * var(--bleed));
+  grid-template-columns:
+    calc(var(--trim-w) + var(--bleed))
+    var(--spine-w)
+    calc(var(--trim-w) + var(--bleed));
+
+  --jk-top:    calc(var(--jk-margin) + var(--bleed));
+  --jk-bottom: calc(var(--jk-margin) + var(--bleed));
+  --jk-out:    calc(var(--jk-margin) + var(--bleed));
+  --jk-spine-pad: calc(10mm + var(--bleed));
+  --jk-art-top: var(--bleed);
+}
+
+/* ============================================================
+   THE WORDMARK
+   Two words, one break in colour. Nothing else distinguishes it,
+   so it survives being set at any size on any ground.
+   ============================================================ */
+
+.wordmark {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-chapter) * 1.02);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.012em;
+  color: var(--jk-ground-ink);
+  white-space: nowrap;
+}
+/* The wordmark is one colour. The two-tone version made the accent
+   compete with the accents that actually point at something — the
+   NCERT label, the classmark rules — and a logo that changes colour
+   with the finish is a logo with no fixed form. */
+.wordmark em { font-style: normal; color: inherit; }
+.wordmark--sm { font-size: calc(var(--size-section) * 1.12); }
+
+.learnlab {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-section) * 1.15);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--jk-ground-ink);
+}
+.learnlab em { font-style: normal; color: var(--jk-terra); }
+
+/* ============================================================
+   SHARED SMALL TYPE
+   ============================================================ */
+
+.jk-label {
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--jk-gold);
+}
+.jk-label--terra { color: var(--jk-terra); }
+
+.jk-lede {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.58);
+  font-weight: var(--weight-text);
+  line-height: 1.24;
+  color: var(--jk-ground-ink);
+  margin: 0;
+}
+
+.jk-text {
+  font-size: var(--size-body);
+  line-height: 1.52;
+  color: var(--jk-ground-soft);
+  margin: 0;
+}
+.jk-text--tight { font-size: var(--size-caption); line-height: 1.46; }
+
+.jk-rule {
+  border: 0;
+  height: var(--jk-hair);
+  background: var(--jk-ground-rule);
+  margin: 0;
+}
+.jk-rule--short { width: 14mm; background: var(--jk-terra); height: 0.5mm; }
+
+/* ============================================================
+   BACK PANEL
+   A column of claims down the left, the LearnLab panel down the
+   right, and the trade furniture — QR, ISBN, barcode — held in a
+   band at the foot where a bookseller expects to find it.
+   ============================================================ */
+
+.jacket__back {
+  background-image: var(--jk-ground-art);
+  padding: var(--jk-top) var(--jk-in) var(--jk-bottom) var(--jk-out);
+  display: flex; flex-direction: column;
+}
+
+.back__head { margin-bottom: 8mm; }
+.back__head .wordmark { margin-bottom: 4mm; }
+.back__head .jk-lede { max-width: none; white-space: nowrap; }
+
+/* Both columns run the full height of what is left of the panel and
+   distribute their own contents down it. A4 gives the back 47mm more
+   than B5 does, and a column that keeps its B5 rhythm and stops
+   two-thirds of the way down reads as unfinished rather than airy —
+   the same defect the page builder calls a short page. */
+
+
+.back__blurb { margin: 4mm 0 0; max-width: calc(var(--trim-w) * 0.48); }
+
+/* ---- The list ---------------------------------------------
+   Run-in headings. Three earlier versions were a grid of some
+   kind — two panels, then grouped rows, then a ruled two-column
+   table — and every one of them read as a table on a book. There
+   are no rules here and no columns: the term leads its sentence,
+   and the space between items separates them.
+   ------------------------------------------------------------ */
+.blist {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: calc(var(--trim-w) * 0.48);
+}
+.bitem {
+  font-size: var(--size-body);
+  line-height: 1.5;
+  color: var(--jk-ground-soft);
+  margin: 0;
+}
+.bitem__term {
+  font-family: var(--jk-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--jk-ground-ink);
+}
+/* The dash belongs to the setting, not to the copy — an em dash typed
+   into six strings is an em dash that will be a hyphen in one of them.
+   Written as the character rather than as a CSS escape: 24
+   parses as one 6-digit escape, not two, and sets a stray glyph. */
+.bitem__term::after {
+  content: " — ";
+  letter-spacing: 0;
+  color: var(--jk-ground-accent);
+}
+
+/* ---- Trade furniture ------------------------------------- */
+.trade {
+  margin-top: 8mm;
+  display: grid;
+  grid-template-columns: 24mm 1fr auto;
+  gap: 5mm;
+  align-items: center;
+}
+.trade__qr { width: 24mm; height: 24mm; }
+.trade__qr svg,
+.trade__qr img { display: block; width: 100%; height: 100%; }
+/* A scanner reads contrast, not colour: a supplied QR sits on its own
+   white tile whatever the finish behind it. */
+.trade__qr { background: #ffffff; }
+.trade__title {
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  color: var(--jk-ground-ink);
+  margin: 0 0 1.4mm;
+}
+.trade__list { margin: 0; padding-left: 3.6mm; }
+.trade__list li { font-size: var(--size-caption); line-height: 1.42; color: var(--jk-ground-soft); }
+.trade__note { font-size: var(--size-caption); color: var(--jk-ground-soft); margin: 2mm 0 0; }
+
+.barcode { text-align: left; }
+/* The ISBN is type, not a chip. Only the two things a scanner reads —
+   the EAN and the QR — keep a white ground. */
+.barcode__isbn {
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  color: var(--jk-ground-soft);
+  display: block;
+  margin-top: 2mm;
+  text-align: left;
+}
+.barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
+.barcode__mark svg { display: block; width: 34mm; height: 17mm; }
+
+.back__foot {
+  margin-top: 7mm;
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+}
+.back__foot .jk-text--tight { color: var(--jk-ground-soft); }
+.social { display: flex; gap: 2.4mm; }
+.social svg { width: 4.6mm; height: 4.6mm; }
+.social__dot {
+  width: 6.4mm; height: 6.4mm;
+  border-radius: 50%;
+  border: var(--jk-hair) solid var(--jk-ground-ink);
+  display: grid; place-items: center;
+}
+
+/* ============================================================
+   SPINE
+   Read head-to-foot, which is the convention on a shelf in
+   India as in Britain: the title runs downward so it is right
+   way up when the book lies face-up.
+   ============================================================ */
+
+.jacket__spine {
+  background: var(--jk-navy);
+  color: var(--jk-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--jk-spine-pad) 0;
+}
+.spine__mark {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.05);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--jk-cream);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+.spine__mark em { font-style: normal; color: inherit; }
+
+.spine__title {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-section) * 1.25);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.11em;
+  color: var(--jk-cream);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  margin: 6mm 0;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+.spine__tick { width: 4.5mm; height: var(--jk-hair); background: var(--jk-navy-soft); margin: 4mm 0; }
+
+.spine__badge {
+  border: var(--jk-hair) solid var(--jk-navy-soft);
+  border-radius: 1mm;
+  padding: 1.6mm 1.8mm;
+  text-align: center;
+  margin-bottom: 3.5mm;
+}
+.spine__badge .jk-label { color: var(--jk-sage); letter-spacing: 0.1em; }
+.jacket--night .spine__badge .jk-label { color: var(--jk-terra); }
+.spine__badge-num {
+  font-family: var(--jk-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--jk-cream);
+}
+.spine__class {
+  text-align: center;
+  color: var(--jk-cream);
+  margin-bottom: 4mm;
+}
+.spine__class .jk-label { color: var(--jk-navy-soft); }
+.spine__class-num {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-section) * 1.18);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+}
+.spine__dots { width: 7mm; height: 7mm; }
+
+/* ---- A slim spine -----------------------------------------
+   153pp bulks to 8.6mm, and "PART" set across an 8.6mm spine is
+   wider than the spine before it has any padding at all. Below
+   14mm the horizontal furniture turns to read head-to-foot with
+   the title — which is what a thin spine does anyway — and the
+   dot field, which is decoration, goes. In vertical-rl the inline
+   axis runs down the page, so flex-direction: row stacks these
+   top to bottom. */
+.jacket--spine-slim .spine__badge,
+.jacket--spine-slim .spine__class {
+  writing-mode: vertical-rl;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6mm;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 0 5mm;
+  white-space: nowrap;
+}
+.jacket--spine-slim .spine__dots { display: none; }
+.jacket--spine-slim .spine__title { font-size: calc(var(--size-section) * 0.92); }
+.jacket--spine-slim .spine__mark { font-size: var(--size-note); }
+.spine__dots svg { display: block; width: 100%; height: 100%; }
+
+/* ============================================================
+   FRONT PANEL
+   Artwork sits behind; every piece of type is positioned against
+   the trim so the composition does not move when the spine does.
+   ============================================================ */
+
+.jacket__front { background: var(--jk-front); color: var(--jk-front-ink); }
+
+.front__art {
+  position: absolute;
+  top: var(--jk-art-top);
+  left: 0;
+  width: var(--trim-w);
+  height: var(--trim-h);
+}
+.front__art svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+.front__head {
+  position: absolute;
+  top: var(--jk-top);
+  left: var(--jk-in);
+  right: var(--jk-out);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.front__head .wordmark { color: var(--jk-front-ink); }
+.front__head .wordmark em { color: inherit; }
+.front__tagline {
+  font-size: var(--size-caption);
+  color: var(--jk-front-soft);
+  margin: 1.6mm 0 0;
+}
+
+.classmark {
+  text-align: right;
+  padding-left: 4mm;
+  border-left: 0.4mm solid var(--jk-front-mark);
+}
+.classmark .jk-label { color: var(--jk-front-ink); letter-spacing: 0.18em; }
+.classmark__num {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-numeral) * 1.15);
+  font-weight: var(--weight-bold);
+  line-height: 0.94;
+  color: var(--jk-front-ink);
+  display: block;
+  margin: 0.5mm 0 1.5mm;
+}
+.classmark__part {
+  display: inline-block;
+  border: 0.35mm solid var(--jk-front-mark);
+  border-radius: 1mm;
+  padding: 0.8mm 2mm;
+}
+.classmark__part .jk-label { color: var(--jk-front-label); letter-spacing: 0.12em; }
+
+.front__title {
+  position: absolute;
+  top: calc(var(--jk-top) + var(--trim-h) * 0.128);
+  left: var(--jk-in);
+  right: var(--jk-out);
+}
+.front__title h1 {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-numeral) * 1.55);
+  font-weight: var(--weight-bold);
+  line-height: 0.9;
+  letter-spacing: -0.018em;
+  color: var(--jk-front-ink);
+  margin: 0;
+  /* The word is the widest thing on the cover; let it set to the
+     panel exactly rather than to whatever the face happens to
+     measure at this size. */
+  transform-origin: left center;
+}
+.jacket--b5 .front__title h1 { font-size: calc(var(--size-numeral) * 1.43); }
+
+.front__subtitle {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.16);
+  font-weight: var(--weight-text);
+  color: var(--jk-front-ink);
+  margin: 6mm 0 3mm;
+}
+
+.front__foot {
+  position: absolute;
+  left: var(--jk-in);
+  bottom: var(--jk-bottom);
+  right: var(--jk-out);
+}
+.front__foot .jk-kicker { color: var(--jk-front-soft); }
+.front__foot .learnlab { color: var(--jk-front-ink); margin-bottom: 3mm; }
+.front__foot .learnlab em { color: var(--jk-front-accent); }
+.jacket__front .jk-label--terra { color: var(--jk-front-accent); }
+.front__promise {
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: var(--jk-front-soft);
+  margin: 0;
+}
+.front__strap {
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  color: var(--jk-front-accent);
+  margin: 3mm 0 0;
+}
+
+/* ============================================================
+   PRINT
+   One sheet. No preview chrome, no second page.
+   ============================================================ */
+@media print {
+  body.cover { background: none; }
+  .cover-stage { padding: 0; display: block; }
+  .jacket { box-shadow: none; }
+}
+
+/* ============================================================
+   ICONS
+   One stroke vocabulary for every mark on the cover, so an icon
+   drawn for the back panel can be reused on the front without
+   carrying its own weight with it.
+   ============================================================ */
+.jk-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.claim__icon svg   { color: var(--jk-cream); }
+.social__dot svg   { color: var(--jk-ground-ink); }
+
+/* ============================================================
+   FRONT ARTWORK
+   The art is drawn in millimetres: its viewBox is the trim of the
+   front panel, so one user unit is one printed millimetre and a
+   stroke written as 0.35 really is 0.35mm on the sheet. Label type
+   is converted the same way diagram.css converts it, through
+   --dg-v / --dg-w, which here are equal.
+   ============================================================ */
+.jk-art { --dg-v: 176; --dg-w: 176; }
+
+.jk-art        { color: var(--jk-front-ink); }
+.jk-fig        { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.32; stroke-linecap: round; }
+.jk-fig--thin  { stroke-width: 0.22; }
+.jk-fig--dash  { stroke-width: 0.22; stroke-dasharray: 1 1; }
+.jk-fig-fill   { fill: currentColor; stroke: none; }
+.jk-fig-label {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: calc(var(--dg-type) * var(--dg-v) / var(--dg-w) * 1px);
+  fill: var(--jk-front-ink);
+  stroke: none;
+}
+.jk-fig-label--sm { font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px); }
+
+.jk-disc--navy  { fill: var(--jk-disc-1); }
+.jk-disc--terra { fill: var(--jk-disc-2); }
+.jk-disc--sage  { fill: var(--jk-disc-3); opacity: var(--jk-disc-3-op); }
+.jk-spiral      { fill: none; stroke: var(--jk-spiral-c); stroke-width: 0.34; opacity: 0.85; }
+.jk-spiral--guide { stroke-width: 0.18; opacity: 0.45; }
+.jk-dot         { fill: var(--jk-dot-c); opacity: 0.55; }
+.jk-dot--cream  { fill: var(--jk-cream); opacity: 0.32; }
+.jk-plinth      { fill: var(--jk-stone); }
+.jk-plinth--top { fill: #e0d7c4; }
+.jk-plinth--side{ fill: #bdb29a; }
+.jk-sphere      { fill: url(#jk-sphere); }
+/* The one lit object on the cover. Its three stops live here rather
+   than in the drawing so the night finish can turn it over without a
+   second copy of the artwork. */
+.jk-sphere-lit   { stop-color: var(--jk-sphere-1); }
+.jk-sphere-mid   { stop-color: var(--jk-sphere-2); }
+.jk-sphere-shade { stop-color: var(--jk-sphere-3); }
+
+/* On the dark stock a filled navy disc is a hole, not a mark, so the
+   icons that carry the structure colour become rings instead. */
+.jacket--night .claim__icon--navy,
+.jacket--night .claim__icon--sage {
+  background: transparent;
+  border: 0.3mm solid var(--jk-gold);
+}
+.jacket--night .claim__icon--navy svg,
+.jacket--night .claim__icon--sage svg { color: var(--jk-gold); }
+
+/* ============================================================
+   TRADE MARKS — barcode and QR
+   Both are scanned, not read, so they keep pure black on pure
+   white whatever the finish: a terracotta bar on cream stock is
+   a bar that fails at the till.
+   ============================================================ */
+.ean { --dg-v: 113; --dg-w: 34; }
+.ean__bar   { fill: #111111; }
+.ean__digit {
+  font-family: var(--font-body);
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+  fill: #111111;
+}
+
+.qr { background: #ffffff; }
+.qr__mod   { fill: #1c211f; }
+.qr__quiet { fill: #ffffff; }
+
+/* ============================================================
+   DIRECTIONS
+
+   A finish repaints the cover. A direction rebuilds it: its own
+   display face, its own artwork, its own arrangement of the
+   front. The back and the spine are shared markup and follow
+   along on tokens alone.
+
+   Each direction carries its own face because a cover is allowed
+   one the interior does not have — a jacket in a display sans
+   over a text block in Spectral and Vollkorn is ordinary book
+   practice, not a third face smuggled into the pages. Nothing
+   below is reachable from a page file.
+   ============================================================ */
+
+/* ---- grid: a plotted field, no illustration ---------------
+   The cover is graph paper and a number. Everything decorative
+   is gone; what is left is the largest thing the panel can hold
+   and the class it is for, cropped by the trim the way a poster
+   crops. */
+.jacket--grid {
+  --jk-display: Archivo, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:  #1f47e0;
+  --jk-terra: #ff5a1f;
+  --jk-sage:  #00a86b;
+  --jk-gold:  #b8860b;
+  --jk-navy-soft: #93a9f5;
+  --jk-ground:      #f6f4ed;
+  --jk-ground-panel:#eeebe0;
+  --jk-ground-rule: #d5cfbd;
+
+  --jk-front:        #1f47e0;
+  --jk-front-ink:    #ffffff;
+  --jk-front-soft:   #c2d0ff;
+  --jk-front-mark:   #ffd42e;
+  --jk-front-accent: #ffd42e;
+  --jk-front-label:  #ffd42e;
+}
+.jacket--grid .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.20); }
+.jacket--grid .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.52);
+  font-weight: 800;
+  line-height: 0.84;
+  letter-spacing: -0.035em;
+}
+.jacket--grid .front__subtitle { font-weight: 500; margin: 7mm 0 3mm; }
+.jacket--grid .wordmark,
+.jacket--grid .learnlab { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--grid .classmark { border-left: 0; padding-left: 0; }
+.jacket--grid .classmark__num { display: none; }
+
+/* The numeral is the artwork. It is set past the trim on two
+   sides so the page crops it, which is what stops it reading as
+   a big number sitting politely on a page. */
+.front__bleedbox { position: absolute; inset: 0; overflow: hidden; }
+.dir-num {
+  position: absolute;
+  right: calc(var(--trim-w) * -0.035);
+  bottom: calc(var(--trim-h) * -0.075);
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-numeral) * 6.6);
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.1mm var(--jk-front-mark);
+}
+.dir-rule {
+  position: absolute;
+  /* Without a top it takes its static position, which is the top edge of
+     the title block — i.e. straight through the word. */
+  top: calc(var(--trim-h) * -0.028);
+  left: var(--jk-in);
+  height: 1.6mm;
+  width: calc(var(--trim-w) * 0.3);
+  background: var(--jk-front-accent);
+}
+
+/* ---- lattice: the drawing is the mathematics --------------
+   A packed field of circles, every one tangent to its
+   neighbours, run off three edges. No sphere, no plinth, no
+   metaphor — the ornament is a construction. */
+.jacket--lattice {
+  --jk-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:  #12131a;
+  --jk-terra: #ff4d17;
+  --jk-sage:  #0aa06e;
+  --jk-gold:  #9a7b12;
+  --jk-navy-soft: #8b8d99;
+  --jk-ground:      #ffffff;
+  --jk-ground-panel:#f4f4f1;
+  --jk-ground-rule: #dcdcd6;
+  --jk-ground-soft: #5c5f68;
+
+  --jk-front:        #ffffff;
+  --jk-front-ink:    #12131a;
+  --jk-front-soft:   #6a6d78;
+  --jk-front-mark:   #ff4d17;
+  --jk-front-accent: #ff4d17;
+  --jk-front-label:  #12131a;
+}
+.jacket--lattice .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.78);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+.jacket--lattice .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.115); }
+.jacket--lattice .front__subtitle { font-weight: 500; }
+.jacket--lattice .wordmark,
+.jacket--lattice .learnlab { font-weight: 700; letter-spacing: -0.03em; }
+.jacket--lattice .classmark { border-left-width: 0.6mm; }
+
+/* ---- curve: one family of functions -----------------------
+   The same equation drawn eleven times with one parameter
+   changed. It is the only cover of the three that shows a
+   student something true before they open it. */
+.jacket--curve {
+  --jk-display: Poppins, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:  #16123d;
+  --jk-terra: #f4511e;
+  --jk-sage:  #00996b;
+  --jk-gold:  #b07d10;
+  --jk-navy-soft: #8b87b5;
+  --jk-ground:      #fffdf7;
+  --jk-ground-panel:#f6f2e6;
+  --jk-ground-rule: #ded8c6;
+
+  --jk-front:        #fffdf7;
+  --jk-front-ink:    #16123d;
+  --jk-front-soft:   #5f5a85;
+  --jk-front-mark:   #f4511e;
+  --jk-front-accent: #f4511e;
+  --jk-front-label:  #00996b;
+}
+.jacket--curve .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.62);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+.jacket--curve .front__subtitle { font-weight: 500; }
+.jacket--curve .wordmark,
+.jacket--curve .learnlab { font-weight: 700; letter-spacing: -0.03em; }
+
+/* A direction that sets its title in a sans and its taglines in the
+   book's serif reads as two covers stapled together. The display face
+   takes the whole wrap; only the interior keeps Spectral. */
+.jacket--grid,
+.jacket--lattice,
+.jacket--curve { font-family: var(--jk-display); }
+
+/* ---- The foot band ----------------------------------------
+   All three directions run their artwork to the bottom edge, and
+   the LearnLab lockup was landing on top of it. The fix is not to
+   stop the artwork — a packing that stops politely above the foot
+   is no longer a packing — but to give the type a band of its own
+   that reads as part of the composition rather than as a patch. */
+.jacket--grid .front__foot,
+.jacket--lattice .front__foot,
+.jacket--curve .front__foot {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--jk-front);
+  padding: 6mm var(--jk-out) var(--jk-bottom) var(--jk-in);
+}
+
+/* The numeral bleeds off one edge, not two: cropped on both it
+   stopped reading as a nine and started reading as a shape. It
+   also has the empty middle of the panel to fill, which is what
+   the direction is short of. */
+.jacket--grid .dir-num {
+  right: calc(var(--trim-w) * -0.065);
+  bottom: auto;
+  top: calc(var(--trim-h) * 0.345);
+}
+
+/* ---- artwork vocabulary the directions draw with ---------- */
+.jk-grid-line  { fill: none; stroke: currentColor; stroke-width: 0.18; opacity: 0.28; }
+.jk-lat        { fill: none; stroke-width: 0.55; }
+.jk-lat--ink   { stroke: var(--jk-front-ink); }
+.jk-lat--mark  { stroke: var(--jk-front-mark); }
+.jk-lat--two   { stroke: var(--jk-sage); }
+.jk-lat-fill   { fill: var(--jk-front-mark); opacity: 0.14; stroke: none; }
+.jk-curve      { fill: none; stroke-width: 0.7; stroke-linecap: round; }
+.jk-axis       { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.3; opacity: 0.5; }
+
+/* The curve family: one hue per parameter, so the eye reads the
+   sequence as a sequence rather than as ten unrelated lines. */
+.jacket--curve .jk-curve--1 { stroke: #f4511e; }
+.jacket--curve .jk-curve--2 { stroke: #ffb300; }
+.jacket--curve .jk-curve--3 { stroke: #00996b; }
+.jacket--curve .jk-curve--4 { stroke: #1f6feb; }
+.jacket--curve .jk-curve--5 { stroke: #7b3fe4; }
+.jk-grid-line--major { stroke-width: 0.34; opacity: 0.45; }
+
+/* ============================================================
+   ARC — a light half, a dark half, and a curve between them.
+
+   The division is the design. Everything before this separated
+   content with rules and boxes; here one curve does it, and
+   nothing else on the panel needs a line at all. The accent is
+   coral rather than terracotta — warmer and brighter against
+   both the blush ground and the plum.
+   ============================================================ */
+.jacket--arc {
+  --jk-display: Archivo, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #263a63;
+  --jk-navy-deep: #1a2745;
+  --jk-navy-soft: #8f9ab4;
+  --jk-terra:     #e8705f;
+  --jk-sage:      #8f96ae;
+  --jk-gold:      #d9a05b;
+  --jk-cream:     #fbf1ec;
+
+  /* the light half */
+  --jk-ground:      #fbf1ec;
+  --jk-ground-ink:  #263a63;
+  --jk-ground-soft: #6b7490;
+  --jk-ground-rule: #e6d5cd;
+  --jk-ground-accent: #e8705f;
+  --jk-ground-art:  none;
+
+  /* the dark half, below the curve */
+  --jk-deep:        #3a2140;
+  --jk-deep-ink:    #f7ece8;
+  --jk-deep-soft:   #c3aec0;
+
+  --jk-front:        #fbf1ec;
+  --jk-front-ink:    #263a63;
+  --jk-front-soft:   #6b7490;
+  --jk-front-mark:   #e8705f;
+  --jk-front-accent: #e8705f;
+  --jk-front-label:  #e8705f;
+}
+.jacket--arc { font-family: var(--jk-display); }
+
+/* ---- the curve ------------------------------------------- */
+.arc__wave { position: absolute; inset: 0; }
+.arc__wave svg { display: block; width: 100%; height: 100%; }
+.arc-fill { fill: var(--jk-deep); }
+.arc-line { fill: none; stroke: #ffffff; stroke-width: 0.25; opacity: 0.10; }
+
+/* ---- back ------------------------------------------------- */
+.jacket--arc .jacket__back { display: block; }
+.arc-back { position: absolute; inset: 0; }
+.arc-back__top {
+  position: absolute;
+  top: var(--jk-top); left: var(--jk-out); right: var(--jk-out);
+}
+.arc-back__lede {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.32);
+  font-weight: 600;
+  line-height: 1.24;
+  color: var(--jk-ground-accent);
+  margin: 6mm 0 5mm;
+}
+.arc-back__blurb {
+  font-family: var(--font-body);
+  font-size: var(--size-note);
+  line-height: 1.55;
+  color: var(--jk-ground-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.55);
+}
+
+.arc-back__deep {
+  position: absolute;
+  left: var(--jk-out); right: var(--jk-out);
+  top: calc(var(--trim-h) * 0.44);
+  bottom: var(--jk-bottom);
+  display: flex;
+  flex-direction: column;
+}
+.arc-list { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 7mm; }
+.arc-row { display: grid; grid-template-columns: 12mm 1fr; gap: 5mm; align-items: start; }
+.arc-row__mark {
+  width: 12mm; height: 12mm;
+  border-radius: 50%;
+  background: var(--jk-terra);
+  display: grid; place-items: center;
+}
+.arc-row__mark svg { width: 6.2mm; height: 6.2mm; color: #ffffff; }
+.arc-row__term {
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--jk-deep-ink);
+  margin: 1mm 0 1.2mm;
+}
+.arc-row__def {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.45;
+  color: var(--jk-deep-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.5);
+}
+
+.arc-foot { display: grid; grid-template-columns: auto 1fr auto; gap: 6mm; align-items: end; }
+.arc-foot__qr { width: 19mm; height: 19mm; background: #fff; padding: 1mm; }
+.arc-foot__qr svg, .arc-foot__qr img { display: block; width: 100%; height: 100%; }
+.arc-foot__by {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: var(--jk-deep-soft);
+  margin: 0;
+}
+.arc-foot__by strong { font-family: var(--jk-display); font-weight: 700; color: var(--jk-deep-ink); }
+.arc-foot .barcode__mark { background: #fff; padding: 1.5mm 2mm; display: block; }
+.arc-foot .barcode__mark svg { display: block; width: 32mm; height: 16mm; }
+.arc-foot__isbn {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-caption) * 0.9);
+  color: var(--jk-deep-soft);
+  display: block;
+  text-align: center;
+  margin-top: 1.4mm;
+}
+
+/* ---- front ------------------------------------------------ */
+.jacket--arc .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.115); }
+.jacket--arc .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.5);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+}
+.jacket--arc .front__subtitle {
+  font-family: var(--font-body);
+  font-weight: var(--weight-text);
+  margin: 5mm 0 0;
+}
+.jacket--arc .wordmark { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--arc .classmark { border-left-width: 0.5mm; }
+.jacket--arc .classmark__num { font-weight: 700; }
+
+.arc-rule {
+  display: block;
+  width: 26mm; height: 0.9mm;
+  background: var(--jk-front-accent);
+  margin: 5mm 0 0;
+}
+.arc-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: var(--jk-front-ink);
+  margin: 0;
+}
+.arc-strap span { color: var(--jk-front-accent); }
+
+/* ---- front artwork --------------------------------------- */
+.arc-disc--coral { fill: url(#arc-coral); }
+.arc-disc--slate { fill: #4a5570; opacity: 0.62; }
+.arc-disc--ghost { fill: #8f96ae; opacity: 0.28; }
+.arc-fig       { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.3; stroke-linecap: round; }
+.arc-fig--pale { stroke: #ffffff; opacity: 0.55; }
+.arc-fig--dash { stroke-width: 0.22; stroke-dasharray: 1.2 1.2; }
+.arc-dot       { fill: var(--jk-front-accent); opacity: 0.42; }
+.arc-dot--pale { fill: var(--jk-front-ink); opacity: 0.18; }
+.jk-fig-label--pale { fill: #ffffff; opacity: 0.62; }
+/* The spine takes the light half, so it reads as part of the front on a
+   shelf rather than as a strip of the back. */
+.jacket--arc .jacket__spine { background: var(--jk-cream); color: var(--jk-navy); }
+.jacket--arc .spine__mark,
+.jacket--arc .spine__title,
+.jacket--arc .spine__class-num { color: var(--jk-navy); }
+.jacket--arc .spine__mark { font-weight: 700; }
+.jacket--arc .spine__title { font-weight: 700; letter-spacing: 0.14em; }
+.jacket--arc .spine__tick { background: var(--jk-terra); width: 6mm; height: 0.5mm; }
+.jacket--arc .spine__badge { border-color: var(--jk-terra); }
+.jacket--arc .spine__badge .jk-label,
+.jacket--arc .spine__class .jk-label { color: var(--jk-terra); }
+.jacket--arc .spine__badge-num { color: var(--jk-navy); }
+.jacket--arc .spine__class-num { color: var(--jk-terra); font-weight: 700; }
