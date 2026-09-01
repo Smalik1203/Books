@@ -628,6 +628,16 @@ tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
   counter-increment: q;
   content: "*" counter(q) ".";
   color: var(--rust);
+  /* The star is a glyph the plain numbers do not carry, so it needs
+     room the shared 6mm marker box does not have — at two digits,
+     "*14." ran straight into the question text. Hang the star to the
+     left instead of letting the marker grow rightwards: the digits
+     still begin at -7mm, so a starred question lines up with its
+     neighbours and only the star sits outside. --starred on the list
+     sets exactly these values, so lists already using it are
+     unchanged; this makes it work without one. */
+  left: -9mm;
+  width: 8mm;
 }
 
 /* A part whose whole item is a fraction. Left to itself the fraction
