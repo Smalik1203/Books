@@ -291,28 +291,51 @@ const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': 
 
 /* ---- Chapter accent ---------------------------------------
    Each chapter owns a hue. It inks the frame's thumb tab and the
-   chapter-head tab, and nothing else — so the reading page stays a
-   three-colour system while the closed book shows a stepped index
-   down its fore edge. The tab steps down the page by chapter, which
-   is what makes that index legible. Override per chapter with
-   "accent" and "tabTop" in chapter.json. */
+   chapter-head tab, so the closed book shows a stepped index down
+   its fore edge. The tab steps down the page by chapter, which is
+   what makes that index legible. Override per chapter with
+   "accent" and "tabTop" in chapter.json.
+
+   These are the fourteen chapter palettes' own structure colours, so
+   a chapter's tab is the colour the chapter is — see
+   css/palette-*.css. A chapter that names no palette still gets its
+   accent from here; only the tab changes, and the reading page stays
+   the standard three colours.
+
+   The order interleaves the warm half of the ramp with the cool
+   half: in ramp order, chapters 6, 7 and 8 would have been jade,
+   teal and aqua, three near-neighbours stacked down the fore edge.
+   Interleaved, consecutive chapters sit about 140 degrees apart. */
 const CHAPTER_ACCENTS = [
-  '#a2482f', // 1  clay
-  '#c1841c', // 2  saffron
-  '#7d7a24', // 3  olive
-  '#2b7a63', // 4  jade
-  '#2c5f86', // 5  steel
-  '#55488c', // 6  indigo
-  '#8f3a63', // 7  plum
-  '#7a5230', // 8  bronze
+  '#803d17', //  1  ember
+  '#075e64', //  2  aqua
+  '#744702', //  3  bronze
+  '#065b74', //  4  steel
+  '#655002', //  5  olive
+  '#115689', //  6  cobalt
+  '#535803', //  7  moss
+  '#3a4e8c', //  8  indigo
+  '#365f1e', //  9  fern
+  '#534688', // 10  violet
+  '#01633c', // 11  jade
+  '#663f7b', // 12  amethyst
+  '#036054', // 13  teal
+  '#753969', // 14  plum
 ];
+
+/* The tabs must all land on the page. Spread them over the run rather
+   than stepping by a fixed millimetre count — at 22mm a fourteenth
+   chapter's tab would sit 326mm down a 297mm page. */
+const TAB_FIRST = 38, TAB_LAST = 232;
 
 function chapterTheme(meta) {
   const i = (Number(meta.number) || 1) - 1;
-  const slot = ((i % CHAPTER_ACCENTS.length) + CHAPTER_ACCENTS.length) % CHAPTER_ACCENTS.length;
+  const n = CHAPTER_ACCENTS.length;
+  const slot = ((i % n) + n) % n;
+  const step = (TAB_LAST - TAB_FIRST) / (n - 1);
   return {
     accent: meta.accent ?? CHAPTER_ACCENTS[slot],
-    tabTop: meta.tabTop ?? `${40 + slot * 22}mm`,
+    tabTop: meta.tabTop ?? `${(TAB_FIRST + slot * step).toFixed(1)}mm`,
   };
 }
 

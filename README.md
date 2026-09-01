@@ -90,10 +90,30 @@ A chapter may also name a `palette`, which loads `css/palette-<name>.css`
 over the tokens. It moves the colour families only — components, type and
 spacing are shared, exactly as with an edition.
 
-| chapter | palette | structure colour |
-|---|---|---|
-| `ch01-coordinates` | `ember` | burnt orange |
-| everything else | — | teal (the standard) |
+Fourteen are defined, one per chapter. They are a single OKLCH ramp at fixed
+lightness, so no chapter prints heavier than another, and all of them are
+darker than rust and gold — which is what keeps the three roles apart.
+
+| ch | palette | colour | structure | hue |
+|---|---|---|---|---|
+| 1 | `ember` | burnt orange | `#803d17` | 47° |
+| 2 | `aqua` | dark aqua | `#075e64` | 202° |
+| 3 | `bronze` | bronze | `#744702` | 69° |
+| 4 | `steel` | steel blue | `#065b74` | 224° |
+| 5 | `olive` | dark olive | `#655002` | 91° |
+| 6 | `cobalt` | cobalt | `#115689` | 246° |
+| 7 | `moss` | moss green | `#535803` | 113° |
+| 8 | `indigo` | indigo | `#3a4e8c` | 269° |
+| 9 | `fern` | fern green | `#365f1e` | 136° |
+| 10 | `violet` | violet | `#534688` | 291° |
+| 11 | `jade` | jade | `#01633c` | 158° |
+| 12 | `amethyst` | amethyst | `#663f7b` | 313° |
+| 13 | `teal` | teal | `#036054` | 180° |
+| 14 | `plum` | plum | `#753969` | 335° |
+
+The order interleaves the warm half of the ramp with the cool half, so
+consecutive chapters sit about 140° apart and the thumb tabs down the fore
+edge stay legible as an index.
 
 ```json
 { "class": "9", "number": "1", "title": "…", "palette": "ember" }
