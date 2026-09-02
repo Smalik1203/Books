@@ -117,6 +117,10 @@ window.addEventListener('load', function () {
           mb: parseFloat(cs.marginBottom) || 0,
           tag: el.tagName.toLowerCase(),
           cls: el.className || '',
+          // a block that only announces: a stage head, or an exercise
+          // band with no questions of its own under it
+          leads: !!el.querySelector('.c-stage__title')
+            || (!!el.querySelector('.c-practice__head') && !el.querySelector('.c-questions')),
         });
       }
       out.push({
@@ -151,7 +155,16 @@ async function measure(htmlPath) {
 /* ---- Pack --------------------------------------------------
    Margins collapse between siblings, so a block's cost on a page
    is its height plus whichever margin is larger at the join. */
-const isHeading = (b) => b.tag === 'h2' || b.tag === 'h3';
+/* A heading is anything that announces what comes after it, whatever
+   tag it wears. h2 and h3 are the obvious ones. A Beyond the Book
+   stage head is a div, and so is the band that opens an exercise set
+   — and both were invisible here, so the packer happily set one as
+   the last block on a page and left the reader a promise whose
+   content is overleaf. The css says break-after: avoid on all of
+   them, but css never breaks these pages: one source file is one
+   page, so the rule has to live in the packer. */
+const isHeading = (b) =>
+  b.tag === 'h2' || b.tag === 'h3' || b.leads === true;
 
 /* A heading that clears the page edge by a hair is still stranded: the
    reader gets a section title and three lines, then a page turn. So a
