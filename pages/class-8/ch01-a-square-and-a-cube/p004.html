@@ -1,0 +1,94 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>Patterns in the units digit</h3>
+
+      <p>
+        Look first at the last digit of each square. Every number in the
+        table ends in <span class="pop">0, 1, 4, 5, 6 or 9</span>. Not one
+        ends in 2, 3, 7 or 8 — and that will stay true however far the table
+        is extended, because the last digit of a square depends only on the
+        last digit of the number being squared.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>number ends in</th><th>0</th><th>1 or 9</th><th>2 or 8</th><th>3 or 7</th><th>4 or 6</th><th>5</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>its square ends in</td><td>0</td><td>1</td><td>4</td><td>9</td><td>6</td><td>5</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Is a number that ends in one of those six digits always a square? No.
+        16 and 36 are squares, but 26, which also ends in 6, is not. So the
+        units digit can never <em>prove</em> that a number is a square. What it
+        can do is prove that a number is not one: anything ending in 2, 3, 7
+        or 8 is out at a glance.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Which of 452, 733 and 1156 are certainly not perfect squares?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">452</span>
+              <span>ends in 2, and no square does</span>
+              <span class="chip">not a square</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">733</span>
+              <span>ends in 3, and no square does</span>
+              <span class="chip">not a square</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">1156</span>
+              <span>ends in 6, so the digit decides nothing</span>
+              <span class="chip">undecided</span>
+            </div>
+          </div>
+          <p>
+            The third needs more work. It happens that $34^2 = 1156$, but
+            the units digit alone could not have told us so.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Read the table the other way and it says something about the number
+        itself. The squares $1^2, 9^2, 11^2, 19^2, 21^2$ and $29^2$ all end
+        in 1: a number ending in 1 or 9 has a square ending in 1. And the
+        squares ending in 6 — $4^2 = 16$, $6^2 = 36$, $14^2 = 196$,
+        $16^2 = 256$, $24^2 = 576$, $26^2 = 676$ — all come from numbers
+        ending in 4 or 6.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <ol>
+              <li>Without multiplying, say which of $38^2$, $34^2$, $46^2$,
+                $56^2$, $74^2$ and $82^2$ end in 6.</li>
+              <li>Write five numbers that you can tell are not squares just by
+                looking at their units digit.</li>
+              <li>Find more patterns of this kind in your table.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

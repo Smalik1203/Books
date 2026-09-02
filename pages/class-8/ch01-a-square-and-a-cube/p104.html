@@ -1,0 +1,78 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 2</div>
+        <div class="c-example__body">
+          <p>
+            The squares between the two bounds are $n^2$ for whole numbers
+            $n$ in a run, so the question is really where that run starts and
+            ends. $14^2 = 196$, which is below $200$, and $15^2 = 225$, which
+            is above it. At the other end, $44^2 = 1936$ and
+            $45^2 = 2025$.
+          </p>
+          <div class="work">
+            <p>$n$ runs from $15$ to $44$, so there are $44 - 15 + 1 = 30$ of them</p>
+          </div>
+          <p>
+            The answer is (b). Option (a) comes from forgetting to add the
+            $1$ — the count of numbers from $15$ to $44$ is not $44 - 15$.
+            Option (c) comes from letting $n$ start at $14$, whose square is
+            below $200$.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-try">
+        <span class="c-try__tag">Problem 3 &middot; Try it first</span>
+        <p>A cube of side $12$ cm is cut into cubes of side $2$ cm. How many
+          are there, and how does the total surface area change?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
+          <li>$36$; it is unchanged</li>
+          <li>$216$; it is $6$ times bigger</li>
+          <li>$216$; it is unchanged</li>
+          <li>$1728$; it is $6$ times bigger</li>
+        </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 3</div>
+        <div class="c-example__body">
+          <p>
+            Along each edge, $12 \div 2 = 6$ small cubes fit. So the big cube
+            is $6$ small cubes long, $6$ wide and $6$ tall.
+          </p>
+          <div class="work">
+            <p>$6 \times 6 \times 6 = 6^3 = 216$ small cubes</p>
+          </div>
+          <p>
+            For the surface: the big cube has six faces of area
+            $12^2 = 144$ cm², so $864$ cm² in all. Each small cube has six
+            faces of area $2^2 = 4$ cm², so $24$ cm², and $216$ of them give
+            $5184$ cm² — six times as much. The answer is (b). Every cut
+            makes two new faces that were inside the solid before, so
+            surface is created while volume is not.
+          </p>
+          <p>
+            Option (d) counts the volume in cubic centimetres, $12^3 = 1728$,
+            rather than the number of $2$ cm cubes; option (a) divides the
+            faces rather than the edges.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-try">
+        <span class="c-try__tag">Problem 4 &middot; Try it first</span>
+        <p>For which of these is $\sqrt{n}$ a whole number?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$1444$</li>
+          <li>$1447$</li>
+          <li>$1450$</li>
+          <li>$1452$</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

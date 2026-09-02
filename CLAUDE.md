@@ -59,6 +59,7 @@ Tools, in the order you usually want them:
 ```bash
 node build/repack.mjs  <chapter> [--dry]   # measure every block, refill the pages
 node build/settle.mjs  <dir> 4 7 12        # push a page's last block forward
+node build/unsettle.mjs <dir> 13          # pull a page's first block back
 node build/split-practice.mjs <dir>        # one block per question, so exercises can flow
 ```
 

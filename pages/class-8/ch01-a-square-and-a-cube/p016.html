@@ -1,0 +1,83 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>
+        Each row takes up the odd numbers where the last row left off, and
+        the $n$th row has $n$ of them. Squares used the odd numbers from 1
+        every time; cubes use each odd number exactly once, in runs of
+        growing length. Later in the series comes the row
+      </p>
+
+      <div class="work work--centred">
+        <p>$91 + 93 + 95 + 97 + 99 + 101 + 103 + 105 + 107 + 109$</p>
+      </div>
+
+      <p>
+        Can you tell what this sum is without doing the addition? Count the
+        terms: there are ten, so this is the tenth row, and its sum is
+        $10^3 = 1000$ — the ten numbers are centred on 100.
+      </p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="8.5" width="12" height="12"/>
+            <path d="M3.5 8.5l5-5h12v12l-5 5"/><path d="M15.5 8.5l5-5"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>The odd numbers build the squares and the cubes both — the same
+            bricks, stacked in two different ways.</p>
+        </div>
+      </div>
+
+      <h2><span class="badge">1.5</span><span class="name">Cube Roots</span></h2>
+
+      <p>
+        We know that $8 = 2^3$. We call 2 the <span class="term">cube
+        root</span> of 8, and write $\sqrt[3]{8} = 2$. Cubing takes 2 to 8;
+        the cube root brings it back.
+      </p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Cube root</div>
+        <p>
+          If $y = x^3$, then $x$ is the <strong>cube root</strong> of $y$,
+          written $x = \sqrt[3]{y}$. So $\sqrt[3]{27} = \sqrt[3]{3^3} = 3$,
+          $\sqrt[3]{1000} = \sqrt[3]{10^3} = 10$, and in general
+          $\sqrt[3]{n^3} = n$.
+        </p>
+      </div>
+
+      <p>
+        There is one difference from square roots. The square roots of 64
+        were $8$ and $-8$, because both square to 64. But $(-2)^3 = -8$, not
+        8, so $-2$ is not a cube root of 8: it is the cube root of $-8$.
+        Every number has exactly one cube root, and a negative number's cube
+        root is negative — $\sqrt[3]{-8} = -2$ and $\sqrt[3]{-216} = -6$.
+      </p>
+
+      <p>
+        How do we find out whether a number is a cube? Taking our cue from
+        squares, let us try prime factorisation.
+      </p>
+
+      <div class="c-example c-example--head">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Is 3375 a perfect cube? Is 500?</p>
+          <p>
+            $3375 = 3 \times 3 \times 3 \times 5 \times 5 \times 5$. Can the
+            factors be split into <em>three</em> identical groups? Yes: three
+            groups of $3 \times 5$.
+          </p>
+          <div class="work work--centred">
+            <p>$3375 = (3 \times 5) \times (3 \times 5) \times (3 \times 5) = (3 \times 5)^3 = 15^3$</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

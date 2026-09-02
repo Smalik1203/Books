@@ -1,0 +1,84 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Perfect squares by prime factors</div>
+        <p>
+          A number is a perfect square exactly when its prime factors can be
+          split into two identical groups — every prime occurs an even number
+          of times. The square root is the product of one group.
+        </p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Use prime factorisation to decide whether 1156 and 2800 are
+              perfect squares. For the one that is, write down its square root.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Prime factors also tell you how to <em>make</em> a square out of a
+        number that is not one: supply the partner that each unpaired prime
+        is missing.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>
+            Find the smallest number by which 252 must be multiplied to give
+            a perfect square, and the square root of the result.
+          </p>
+          <p>
+            $252 = 2 \times 2 \times 3 \times 3 \times 7$. The 2s pair and the
+            3s pair; the 7 is alone. One more 7 completes it:
+          </p>
+          <div class="work work--centred">
+            <p>$252 \times 7 = (2 \times 2) \times (3 \times 3) \times (7 \times 7) = (2 \times 3 \times 7)^2 = 42^2$</p>
+          </div>
+          <p>
+            So the smallest multiplier is <span class="pop">7</span>, and
+            $\sqrt{1764} = 42$. Multiplying by any other number would either
+            leave the 7 unpaired or add more than was needed.
+          </p>
+        </div>
+      </div>
+
+      <h3>Estimating a square root</h3>
+
+      <p>
+        For a larger perfect square there is a quicker route: trap the root
+        between two squares you know, then use the last digit. To find
+        $\sqrt{1936}$:
+      </p>
+
+      <div class="work work--list">
+        <p>1936 lies between $1600 = 40^2$ and $2500 = 50^2$, so $40 < \sqrt{1936} < 50$.</p>
+        <p>1936 ends in 6, so its root ends in 4 or 6. It can only be 44 or 46.</p>
+        <p>$45^2 = (40 + 5)^2 = 40^2 + 2 \times 40 \times 5 + 5^2 = 1600 + 400 + 25 = 2025$, which is more than 1936.</p>
+        <p>So $40 < \sqrt{1936} < 45$, and the root must be <span class="pop">44</span>. Check: $44^2 = 1936$.</p>
+      </div>
+
+      <p>
+        The same bracketing gives a useful answer even when the number is not
+        a perfect square at all.
+      </p>
+
+    </div>
+  </div>
+</section>

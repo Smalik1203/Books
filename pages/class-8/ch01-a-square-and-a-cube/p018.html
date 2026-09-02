@@ -1,0 +1,118 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>
+                    The last-digit table on page 12 gives a shortcut for a cube root when
+                    you already know the number is a perfect cube: the last digit of the
+                    number fixes the last digit of the root, and a bracket between two
+                    cubes you know fixes the rest.
+                  </p>
+
+      <div class="c-example">
+                    <div class="c-example__tab">Example 11</div>
+                    <div class="c-example__body">
+                      <p>You are told that 12167 is a perfect cube. Find its cube root without factorising.</p>
+                      <div class="work">
+                        <div class="work__row">
+                          <span class="work__label work__label--wide">last digit</span>
+                          <span>12167 ends in 7, and only a number ending in 3 has a cube ending in 7</span>
+                          <span class="chip">ends in 3</span>
+                        </div>
+                        <div class="work__row">
+                          <span class="work__label work__label--wide">bracket</span>
+                          <span>$20^3 = 8000 < 12167 < 27000 = 30^3$, so the root lies between 20 and 30</span>
+                          <span class="chip">23</span>
+                        </div>
+                      </div>
+                      <p>Check: $23^3 = 23 \times 23 \times 23 = 529 \times 23 = 12167$.</p>
+                    </div>
+                  </div>
+
+      <h3>Successive differences</h3>
+
+      <p>
+                    We know that the differences between consecutive perfect squares are
+                    the odd numbers. Take the differences of <em>those</em>, and something
+                    simpler appears (Fig. 1.7): after two levels, every difference is 2.
+                  </p>
+
+      <figure class="c-figure c-figure--xl">
+                    <svg viewBox="0 0 390 96" role="img"
+                         aria-label="The squares 1, 4, 9, 16, 25, 36 in a row; beneath them their differences 3, 5, 7, 9, 11; beneath those the differences 2, 2, 2, 2">
+                      <text class="dg-note" x="4" y="22">squares</text>
+                      <text class="dg-tick" x="70" y="22" text-anchor="middle">1</text>
+                      <text class="dg-tick" x="122" y="22" text-anchor="middle">4</text>
+                      <text class="dg-tick" x="174" y="22" text-anchor="middle">9</text>
+                      <text class="dg-tick" x="226" y="22" text-anchor="middle">16</text>
+                      <text class="dg-tick" x="278" y="22" text-anchor="middle">25</text>
+                      <text class="dg-tick" x="330" y="22" text-anchor="middle">36</text>
+                      <text class="dg-tick" x="370" y="22" text-anchor="middle">…</text>
+                  
+                      <path class="dg-thin" d="M78 28 Q96 44 114 28 M130 28 Q148 44 166 28 M182 28 Q200 44 218 28 M234 28 Q252 44 270 28 M286 28 Q304 44 322 28"/>
+                  
+                      <text class="dg-note" x="4" y="58">level 1</text>
+                      <text class="dg-dim-label" x="96" y="58" text-anchor="middle">3</text>
+                      <text class="dg-dim-label" x="148" y="58" text-anchor="middle">5</text>
+                      <text class="dg-dim-label" x="200" y="58" text-anchor="middle">7</text>
+                      <text class="dg-dim-label" x="252" y="58" text-anchor="middle">9</text>
+                      <text class="dg-dim-label" x="304" y="58" text-anchor="middle">11</text>
+                      <text class="dg-tick" x="350" y="58" text-anchor="middle">…</text>
+                  
+                      <path class="dg-thin" d="M104 64 Q122 80 140 64 M156 64 Q174 80 192 64 M208 64 Q226 80 244 64 M260 64 Q278 80 296 64"/>
+                  
+                      <text class="dg-note" x="4" y="92">level 2</text>
+                      <text class="dg-dim-label" x="122" y="92" text-anchor="middle">2</text>
+                      <text class="dg-dim-label" x="174" y="92" text-anchor="middle">2</text>
+                      <text class="dg-dim-label" x="226" y="92" text-anchor="middle">2</text>
+                      <text class="dg-dim-label" x="278" y="92" text-anchor="middle">2</text>
+                      <text class="dg-tick" x="324" y="92" text-anchor="middle">…</text>
+                    </svg>
+                    <figcaption><span class="fignum">Fig. 1.7</span> &nbsp;Differences of the squares, taken twice. The second level is constant.</figcaption>
+                  </figure>
+
+      <div class="c-reflect">
+                    <div class="c-reflect__icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 18h6"/><path d="M10 21h4"/>
+                        <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+                        <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+                      </svg>
+                    </div>
+                    <div class="c-reflect__box">
+                      <div class="c-reflect__mark">?</div>
+                      <div class="c-reflect__title">Think and Reflect</div>
+                      <div class="c-reflect__body">
+                        <p>
+                          Start from the cubes $1, 8, 27, 64, 125, 216, 343$ and take
+                          successive differences, level by level, until every difference
+                          at a level is the same. How many levels does it take, and what
+                          is the constant? What do you notice?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+      <div class="c-practice">
+                    <div class="c-practice__head">Exercise Set 1.2</div>
+                    <ol class="c-questions">
+                      <li>
+                          Find the cube roots of 27000 and 10648.
+                        </li>
+                    </ol>
+                  </div>
+
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="2">
+                      <li>
+                          What number will you multiply by 1323 to make it a cube number?
+                          <p class="hint">
+                            Factorise first. Which prime is short of a triplet, and by how many?
+                          </p>
+                        </li>
+                    </ol>
+                  </div>
+
+    </div>
+  </div>
+</section>
