@@ -34,7 +34,8 @@ It is the only thing that will tell you the truth. It checks:
 | maths | a collapsed escape (`\times` arriving as a tab) or a missing backslash (`\dfrac` as `dfrac`, which KaTeX cheerfully sets as a product of variables) |
 
 Flags: `--pdf`, `--png` (2x page proofs), `--bleed` (press sheet: trim plus
-3mm bleed, no marks). A bare class name builds every chapter under it.
+3mm bleed, with crop marks in a 7mm slug). A bare class name builds every
+chapter under it.
 
 **A proof is the whole sheet, and it was not always.** Headless Chrome
 lays a page out in a viewport shorter than the window it is given — 23mm

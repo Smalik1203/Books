@@ -447,7 +447,7 @@ wrappers that are the page itself at trim size and change nothing there:
 
 | | | A4 | B5 |
 |---|---|---|---|
-| `.page` / `.page__bleed` | what the press gets | 216 × 303 mm | 182 × 256 mm |
+| `.page` | the sheet the press prints | 230 × 317 mm | 196 × 270 mm |
 | `.page__trim` | the book as the reader sees it | 210 × 297 mm | 176 × 250 mm |
 
 Everything is still positioned against the trim box, so no component knows
