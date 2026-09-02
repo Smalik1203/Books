@@ -23,6 +23,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import katex from 'katex';
+import { cropHeight } from './png.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -30,13 +31,44 @@ const p = (...parts) => path.join(ROOT, ...parts);
 
 /* ---- Chrome ---------------------------------------------- */
 const CHROME_CANDIDATES = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
-const findChrome = () => CHROME_CANDIDATES.find(c => existsSync(c));
+const findChrome = () => CHROME_CANDIDATES.find(c => c && existsSync(c));
+// Chrome refuses to start its sandbox as root, which is how a CI container
+// usually runs. Only then is the flag added — never on a developer machine.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
+
+/* --window-size sizes the WINDOW, and the window carries chrome of
+   its own whose height is that build of Chrome's business, not ours.
+   Ask for a 297mm window and this one lays the page out in a viewport
+   23mm shorter — and a page proof captured that way loses the foot of
+   every page: the folio, and any overrun. Which is what a proof is
+   for. So the difference is measured once and added back. */
+let windowPadding = null;
+async function windowPad(chrome) {
+  if (windowPadding !== null) return windowPadding;
+  const probe = p('build', '_viewport-probe.html');
+  await mkdir(path.dirname(probe), { recursive: true });
+  await writeFile(probe, '<html><head><script>addEventListener("load", function () '
+    + '{ document.title = "V" + innerHeight; });<' + '/script></head><body></body></html>');
+  const { stdout } = await run(chrome, [
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+    '--window-size=800,1000', '--virtual-time-budget=2000', '--dump-dom',
+    'file:///' + probe.replace(/\\/g, '/'),
+  ], { maxBuffer: 1 << 20 }).catch(() => ({ stdout: '' }));
+  await rm(probe, { force: true });
+  const seen = Number(stdout.match(/<title>V(\d+)<\/title>/)?.[1]);
+  windowPadding = seen ? 1000 - seen : 0;
+  return windowPadding;
+}
 
 /* ---- Maths ------------------------------------------------
    Replace display maths first, then inline. Anything inside a
@@ -498,7 +530,7 @@ async function toPdf(htmlPath) {
   const url = 'file:///' + htmlPath.replace(/\\/g, '/');
 
   await run(chrome, [
-    '--headless=new',
+    '--headless=new', ...SANDBOX,
     '--disable-gpu',
     '--no-pdf-header-footer',
     '--print-to-pdf-no-header',
@@ -545,17 +577,20 @@ async function toPngs(htmlPath, meta, sheet) {
 
     const png = path.join(dir, `p${String(folio).padStart(3, '0')}.png`);
     await run(chrome, [
-      '--headless=new',
+      '--headless=new', ...SANDBOX,
       '--disable-gpu',
       '--hide-scrollbars',
       '--force-device-scale-factor=2',
-      `--window-size=${px(sheet.trimW)},${px(sheet.trimH)}`,
+      `--window-size=${px(sheet.trimW)},${px(sheet.trimH) + await windowPad(chrome)}`,
       '--virtual-time-budget=8000',
       `--screenshot=${png}`,
       'file:///' + tmp.replace(/\\/g, '/'),
     ], { maxBuffer: 1 << 24 });
 
     await rm(tmp, { force: true });
+    // Chrome captured the window, so the proof carries the empty
+    // strip below the sheet. Take it back off, at capture scale.
+    await cropHeight(png, px(sheet.trimH) * 2);
     out.push(png);
   }
   console.log(`  → ${out.length} proof(s) in ${path.relative(ROOT, dir)}`);
@@ -607,7 +642,7 @@ async function checkOverflow(htmlPath, meta, sheet) {
     'href="../../css/book.css"', 'href="../../css/book.css"'));
 
   const { stdout } = await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     `--window-size=${px(sheet.trimW)},${px(sheet.trimH)}`,
     '--virtual-time-budget=8000', '--dump-dom',
     'file:///' + tmp.replace(/\\/g, '/'),

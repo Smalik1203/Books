@@ -27,6 +27,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
 
 const CHROME = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
@@ -52,6 +56,9 @@ const WAYS = [
   ['marigold',    '#ffb703', '#14213d', '#3c4a72', '#d62828'],
   ['ink',         '#101014', '#ffffff', '#9a9aa8', '#c8ff2e'],
 ];
+// Chrome refuses to start its sandbox as root, which is how a CI
+// container usually runs. Only then is the flag added.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
 const direction = process.argv[2] ?? 'grid';
 const front = await readFile(p('covers', 'class-9', '_shared', `front-${direction}.html`), 'utf8');
@@ -109,7 +116,7 @@ const h = Math.ceil((297 * SCALE + 18) * Math.ceil(WAYS.length / COLS) * MM) + 8
 const png = p('build', 'covers', `_swatch-${direction}.png`);
 
 await run(CHROME, [
-  '--headless=new', '--disable-gpu', '--hide-scrollbars',
+  '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
   '--force-device-scale-factor=2',
   `--window-size=${w},${h}`,
   '--virtual-time-budget=8000',

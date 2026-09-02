@@ -39,13 +39,20 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...parts) => path.join(ROOT, ...parts);
 
 const CHROME_CANDIDATES = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
-const findChrome = () => CHROME_CANDIDATES.find(c => existsSync(c));
+const findChrome = () => CHROME_CANDIDATES.find(c => c && existsSync(c));
+// Chrome refuses to start its sandbox as root, which is how a CI container
+// usually runs. Only then is the flag added — never on a developer machine.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
 const escapeHtml = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -338,7 +345,7 @@ async function checkFit(htmlPath, sheet) {
   await writeFile(tmp, src.replace('</head>', probe + '\n</head>'));
 
   const { stdout } = await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     `--window-size=${px(sheet.sheetW)},${px(sheet.trimH)}`,
     '--virtual-time-budget=8000', '--dump-dom',
     'file:///' + tmp.replace(/\\/g, '/'),
@@ -370,7 +377,7 @@ async function toPdf(htmlPath) {
   if (!chrome) throw new Error('No Chrome or Edge found — set one in CHROME_CANDIDATES.');
   const pdfPath = htmlPath.replace(/\.html$/, '.pdf');
   await run(chrome, [
-    '--headless=new', '--disable-gpu',
+    '--headless=new', ...SANDBOX, '--disable-gpu',
     '--no-pdf-header-footer', '--print-to-pdf-no-header',
     '--virtual-time-budget=15000',
     `--print-to-pdf=${pdfPath}`,
@@ -393,7 +400,7 @@ async function toPng(htmlPath, sheet) {
 
   const wide = htmlPath.includes('-bleed');
   await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     '--force-device-scale-factor=2',
     `--window-size=${px(wide ? sheet.mediaW : sheet.sheetW)},${px(wide ? sheet.mediaH : sheet.trimH)}`,
     '--virtual-time-budget=8000',

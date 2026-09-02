@@ -12,6 +12,11 @@ import path from 'node:path';
 const [dir, ...nums] = process.argv.slice(2);
 if (!dir || !nums.length) { console.error('usage: node build/settle.mjs <dir> <page> ...'); process.exit(1); }
 
+// Elements that close nothing: counted as openings, a <br> puts the
+// depth out by one and every block after it is lost.
+const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img',
+  'input', 'link', 'meta', 'source', 'track', 'wbr']);
+
 function split(html) {
   const i = html.indexOf('<div class="page__main">');
   const from = html.indexOf('>', i) + 1;
@@ -22,14 +27,16 @@ function split(html) {
     if (lt < 0) break;
     if (!/[a-zA-Z/!]/.test(html[lt + 1] || '')) { j = lt + 1; continue; }
     if (html.startsWith('<!--', lt)) { j = html.indexOf('-->', lt) + 3; continue; }
-    const close = html.startsWith('</', lt);
     const gt = html.indexOf('>', lt);
+    if (gt < 0) break;
+    const close = html.startsWith('</', lt);
+    const tag = html.slice(lt + (close ? 2 : 1), gt).match(/^[\w-]+/)?.[0]?.toLowerCase();
     const self = html[gt - 1] === '/';
     if (close) {
       depth--;
       if (depth === 0 && start >= 0) { blocks.push(html.slice(start, gt + 1)); start = -1; }
       if (depth < 0) return { head: html.slice(0, from), blocks, tail: html.slice(lt) };
-    } else if (!self) { if (depth === 0) start = lt; depth++; }
+    } else if (!self && !VOID.has(tag)) { if (depth === 0) start = lt; depth++; }
     j = gt + 1;
   }
   return { head: html.slice(0, from), blocks, tail: '' };

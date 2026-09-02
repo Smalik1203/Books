@@ -17,9 +17,16 @@ const chapter = process.argv[2] || 'ch05';
 const port = Number(process.argv[3]) || 4399;
 
 const CHROME = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
 ];
+// Chrome refuses to start its sandbox as root, which is how a CI
+// container usually runs. Only then is the flag added.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
 async function findChrome() {
   for (const p of CHROME) {
@@ -46,7 +53,7 @@ await new Promise((r) => setTimeout(r, 400));
 try {
   const out = join(ROOT, 'out', `${chapter}.pdf`);
   await run(await findChrome(), [
-    '--headless=new',
+    '--headless=new', ...SANDBOX,
     '--disable-gpu',
     '--no-sandbox',
     '--no-pdf-header-footer',
