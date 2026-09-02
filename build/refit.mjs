@@ -91,4 +91,8 @@ for (const [i, f] of packed.entries()) {
   await writeFile(path.join(src, named(i) + '.html'), html);
 }
 await rm(scratch, { recursive: true, force: true });
-console.log(`  wrote ${named(0)}–${named(packed.length - 1)} — now build the chapter`);
+// The chapter's own build still shows the pages as they were, and a tool
+// that measures the build and edits the source will act on the wrong
+// page. Leave the two in step.
+node('build/build.mjs', rel);
+console.log(`  wrote ${named(0)}–${named(packed.length - 1)}`);

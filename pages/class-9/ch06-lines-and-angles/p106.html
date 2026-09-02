@@ -2,99 +2,84 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">6</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Competitive-Style Thinking</div>
-          <div class="c-stage__for">Four moves worth more than another theorem.</div>
-        </div>
-      </div>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">Eliminate</span>
-          <span>No angle of a triangle reaches $180^\circ$, and no two of them
-            can both be obtuse. Two options usually die on sight.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Check sufficiency</span>
-          <span>A pair of equal angles proves nothing until you name its
-            position &mdash; corresponding, alternate, or co-interior.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Find the constraint</span>
-          <span>Every figure here carries one total: $180^\circ$ along a line,
-            $360^\circ$ round a point, $180^\circ$ in a triangle. Decide which
-            applies before writing anything.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Estimate first</span>
-          <span>Read the drawing. An angle drawn clearly acute is not
-            $130^\circ$, whatever the algebra seems to say.</span>
-        </div>
-      </div>
-
-      <p class="c-stage__ask">Name the move, then use it.</p>
-
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            <strong>Eliminate.</strong> The angles of a triangle are $x$, $2x$
-            and $3x + 30$. Strike out two options on sight, then answer. Here
-            $x$ is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$25^\circ$</li><li>$30^\circ$</li>
-              <li>$50^\circ$</li><li>$75^\circ$</li>
-            </ol>
-          </li>
-          <li>
-            <strong>Eliminate.</strong> Two angles of a triangle are $95^\circ$
-            and $50^\circ$. The third is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$45^\circ$</li><li>$35^\circ$</li>
-              <li>$85^\circ$</li><li>$135^\circ$</li>
-            </ol>
-          </li>
-          <li>
-            <strong>Sufficiency.</strong> A transversal cuts two lines and one
-            pair of angles is found to be equal. Which pair proves the two
-            lines parallel?
-            <ol class="c-parts c-parts--alpha c-parts--1">
-              <li>A corresponding pair</li>
-              <li>Any equal pair at all</li>
-              <li>Two angles at the same crossing</li>
-              <li>Two angles on the same side of the transversal</li>
-            </ol>
-          </li>
-          <li>
-            <strong>Sufficiency.</strong> Two angles in a figure are equal. Say
-            exactly what more must be known before that fact can prove two
-            lines parallel.
-          </li>
-          <li>
-            <strong>Constraint.</strong> Four triangles are recorded below, but
-            one row is wrong. Find it, name the total that was mishandled, and
-            give the right value.
-            <table>
-              <thead>
-                <tr><th>Two angles</th><td>$40, 60$</td><td>$90, 45$</td><td>$100, 35$</td><td>$70, 80$</td></tr>
-              </thead>
-              <tbody>
-                <tr><th>Third angle</th><td>$80$</td><td>$45$</td><td>$55$</td><td>$30$</td></tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            <strong>Estimate.</strong> A triangle is drawn with one angle
-            clearly obtuse. Its other two angles
-            <ol class="c-parts c-parts--alpha">
-              <li>may both be obtuse</li>
-              <li>may include a right angle</li>
-              <li>must both be acute</li>
-              <li>must be equal to each other</li>
-            </ol>
-          </li>
+      <div class="c-try">
+        <span class="c-try__tag">Problem 4 &middot; Try it first</span>
+        <p>In triangle $ABC$, $\angle A = 60^\circ$, and the bisectors of
+          $\angle B$ and $\angle C$ meet at $O$. Then $\angle BOC$ is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$120^\circ$</li>
+          <li>$60^\circ$</li>
+          <li>$90^\circ$</li>
+          <li>$150^\circ$</li>
         </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 4</div>
+        <div class="c-example__body">
+          <p>
+            This is the first question of the section, with a number in it.
+            The bisectors give
+            $\angle BOC = 90^\circ + \tfrac{1}{2}\angle A$, and with
+            $\angle A = 60^\circ$ that is $120^\circ$ &mdash; option (a).
+          </p>
+          <p>
+            Option (b) is $\angle A$ itself. Option (c) is what the formula
+            leaves if the $\tfrac{1}{2}\angle A$ is dropped, and it is the
+            answer to a different question: $90^\circ$ is where the
+            bisectors meet only when $\angle A$ is $0$, which no triangle
+            allows. Option (d) is $90^\circ + \angle A$, the formula with
+            the halving forgotten.
+          </p>
+          <p>
+            The halving is not decoration. $\angle B$ and $\angle C$ add to
+            $120^\circ$ here, and it is their halves &mdash; $60^\circ$
+            between them &mdash; that sit in triangle $BOC$.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-try">
+        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+        <p>A transversal cuts two parallel lines, and one pair of
+          co-interior angles turns out to be equal. Each of them is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$45^\circ$</li>
+          <li>$90^\circ$</li>
+          <li>$60^\circ$</li>
+          <li>impossible</li>
+        </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 5</div>
+        <div class="c-example__body">
+          <p>
+            Two facts are in play at once. Between parallels a co-interior
+            pair is supplementary, and this particular pair is also equal.
+            Two equal angles adding to $180^\circ$ are $90^\circ$ each, so
+            the answer is option (b), and the transversal is perpendicular
+            to both lines.
+          </p>
+          <div class="work">
+            <p>$a + b = 180^\circ$ &nbsp;and&nbsp; $a = b$,
+              &nbsp;so&nbsp; $a = b = 90^\circ$</p>
+          </div>
+          <p>
+            Option (d) is the tempting one, because "equal co-interior
+            angles" sounds like a contradiction of the result just quoted.
+            It is not. Supplementary does not mean unequal; it leaves one
+            case where the two are the same, and that case is a real
+            drawing, not an impossibility.
+          </p>
+          <p>
+            Options (a) and (c) would need the pair to add to $90^\circ$ or
+            $120^\circ$, and between parallels the sum is $180^\circ$ for
+            every transversal there is. A theorem and one extra condition
+            will often leave exactly one possibility standing; the question
+            to ask is what the two of them together still allow.
+          </p>
+        </div>
       </div>
 
     </div>

@@ -165,6 +165,34 @@ const raw = stdout.match(/OPTS(\[.*?\])<\/title>/s)?.[1];
 if (!raw) throw new Error('option check did not report');
 
 const rows = JSON.parse(raw);
+
+/* The measurements come from the built chapter and the edits go to the
+   page sources, so the two have to be the same chapter. Refitting
+   rewrites the sources without rebuilding, and a run against a stale
+   build renumbers every list on the page: list 2 in the DOM is list 2
+   of a page that no longer exists, and the fix lands on whatever list
+   now sits third in the file. It widened a one-column list that way.
+
+   So each page's lists are compared with its source, in order and by
+   the count each one declares, before a single edit is written. */
+const measured = new Map();
+for (const r of rows) {
+  if (!/^p\d+.*\.html$/.test(r.src)) continue;
+  if (!measured.has(r.src)) measured.set(r.src, []);
+  measured.get(r.src).push(declared(r.cls));
+}
+for (const [file, want] of measured) {
+  const src = await readFile(p('pages', rel, file), 'utf8').catch(() => null);
+  const have = src === null ? null
+    : (src.match(/class="([^"]*\bc-parts\b[^"]*)"/g) || [])
+        .map(m => declared(m.slice(7, -1)));
+  if (!have || have.length !== want.length || have.some((n, i) => n !== want[i])) {
+    console.error(`    ! ${file} does not match the build it was measured in`
+      + ` — rebuild ${rel} first`);
+    process.exit(1);
+  }
+}
+
 const edits = new Map();
 for (const r of rows) {
   const have = declared(r.cls);
