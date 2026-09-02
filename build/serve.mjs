@@ -49,9 +49,9 @@ async function sheet(edition) {
     return parseFloat(from.slice(i + name.length + 3, i + name.length + 30));
   };
   const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const out = mm('bleed');
+  const out = mm('bleed') + mm('slug');
   return {
-    trimW, trimH, bleed: mm('bleed'),
+    trimW, trimH, bleed: mm('bleed'), slug: mm('slug'),
     mediaW: trimW + 2 * out, mediaH: trimH + 2 * out,
   };
 }

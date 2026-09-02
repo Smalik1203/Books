@@ -40,7 +40,7 @@ In a chapter you get:
 
 | control | what it does |
 |---|---|
-| **Trim / Bleed** | the reading page, or the 216 × 303 mm press sheet — trim plus 3 mm bleed |
+| **Trim / Bleed** | the reading page, or the 230 × 317 mm press sheet — trim, 3 mm bleed and the marks |
 | **Pages / Spreads / Signature** | one page at a time; verso-and-recto side by side (the only way to check the mirroring); or the press sheet, 8/16/32 pages up |
 | **Fit / 50% / 100% / Actual size** | Actual size is true millimetres once you calibrate |
 | **Calibrate** | hold a bank card to the screen and drag; every card is 85.6 × 54 mm |
@@ -140,7 +140,7 @@ node build/build.mjs class-9/ch04-algebraic-identities --pdf --png
 | *(none)* | assemble HTML + run the overflow check |
 | `--pdf` | print to PDF through headless Chrome |
 | `--png` | render one PNG proof per page at 2×, for review |
-| `--bleed` | also emit the press sheet: 216 × 303 mm — the trim plus 3 mm of bleed, no marks |
+| `--bleed` | also emit the press sheet: 230 × 317 mm — the trim, 3 mm of bleed, and crop marks in a 7 mm slug |
 | `--book` | bind the whole class into one volume — continuous folios |
 
 A bare class name (`class-9`) builds every chapter under it.
