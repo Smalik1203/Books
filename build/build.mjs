@@ -701,7 +701,7 @@ async function bookMeta(cls) {
   return null;
 }
 
-function frontMatter(book, contents) {
+function frontMatter(book, contents, preface) {
   const page = (cls, inner) =>
     `<section class="page page--front ${cls}">\n  <div class="page__body">`
     + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>\n</section>`;
@@ -714,7 +714,14 @@ function frontMatter(book, contents) {
         ${book.part ? `<div class="titlepage__part">Part ${escapeHtml(book.part)}</div>` : ''}
       </div>`);
 
-  const imprint = page('page--verso', `      <div class="imprint">
+  /* The verso facing the title page carries the preface. Its prose
+     lives in pages/<class>/preface.html, not here: the builder places
+     front matter, it does not author it. With no such file the page
+     falls back to the imprint it used to be, so a class that has not
+     written one still gets its ISBN and edition into the book. */
+  const imprint = preface
+    ? page('page--verso', preface.trimEnd().split('\n').map((l) => '      ' + l).join('\n'))
+    : page('page--verso', `      <div class="imprint">
         <p class="imprint__name">${escapeHtml(book.imprint || '')}</p>
         ${book.url ? `<p>${escapeHtml(book.url)}</p>` : ''}
         ${book.isbn ? `<p>ISBN ${escapeHtml(book.isbn)}</p>` : ''}
@@ -834,7 +841,9 @@ async function buildBook(cls) {
   const book = await bookMeta(cls);
   let front = 0;
   if (book) {
-    const fm = frontMatter(book, contents);
+    const prefacePath = p('pages', cls, 'preface.html');
+    const preface = existsSync(prefacePath) ? await readFile(prefacePath, 'utf8') : null;
+    const fm = frontMatter(book, contents, preface);
     front = fm.length;
     bodies.unshift(...fm);
   } else {
