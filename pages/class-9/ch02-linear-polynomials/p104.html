@@ -5,13 +5,13 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Worked in Full</div>
+          <div class="c-stage__title">Behind Each Answer</div>
           <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
         </div>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
         <p>A linear polynomial has $p(2) = 7$ and $p(5) = 16$. Then $p(0)$
           is</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
@@ -22,28 +22,32 @@
         </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 1</div>
-        <div class="c-example__body">
-          <p>
-            From $x = 2$ to $x = 5$ is three steps, and the value rises by
-            $9$. So each step adds $3$, and $a = 3$. To go back from $x = 2$
-            to $x = 0$ is two steps, so take away $6$:
-          </p>
-          <div class="work">
-            <p>$p(0) = 7 - 6 = 1$</p>
-          </div>
-          <p>
-            Option (a). Check: $p(x) = 3x + 1$ gives $p(5) = 16$. Option (b)
-            is the slope, not the value at $0$. Option (c) takes one step
-            back instead of two. Option (d) goes forward three steps instead
-            of back two.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Write it as $p(x) = ax + b$. Three steps in $x$ carry $p$ from
+          $7$ to $16$.
+        </p>
+        <div class="work work--list">
+          <p>$3a = 16 - 7 = 9$</p>
+          <p>$a = 3$</p>
         </div>
+        <p>
+          From $x = 2$ back to $x = 0$ is two steps, so $p$ falls by $2a$.
+        </p>
+        <div class="work work--list">
+          <p>$p(0) = 7 - 2(3) = 1$</p>
+        </div>
+        <p>
+          Option (a). Check: $p(x) = 3x + 1$ gives $p(5) = 16$. Option (b)
+          is the slope, not the value at $0$. Option (c) takes one step
+          back instead of two. Option (d) goes forward three steps instead
+          of back two.
+        </p>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 2 &middot; Try it first</span>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
         <p>An auto-rickshaw charges &#8377;$25$ for the first $2$ km and
           &#8377;$15$ for every kilometre after that. The fare for $n$ km is
           $15n - 5$ rupees for $n \geq 2$. The fare for a $1$ km ride is</p>
@@ -55,23 +59,29 @@
         </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 2</div>
-        <div class="c-example__body">
-          <p>
-            The rule $15n - 5$ was found in Example 8, and it was found from
-            the rows for $2$ km onwards. It says nothing about $1$ km. For
-            that we go back to the words. The first $2$ km cost &#8377;$25$,
-            so a $1$ km ride costs &#8377;$25$, option (c).
-          </p>
-          <p>
-            Option (a) is what the rule gives at $n = 1$. The rule works
-            there as arithmetic, but not as a fare. Option (b) is the rate
-            for each extra kilometre. Option (d) is the fare for $3$ km. A
-            rule fitted to part of a table holds only on that part. Before
-            using a rule, ask where it came from.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Putting $n = 1$ into the rule does give an answer.
+        </p>
+        <div class="work">
+          <p>$15(1) - 5 = 10$</p>
         </div>
+        <p>
+          But the rule was found in Example 8 from the rows for $2$ km
+          onwards, and it holds only there. The fare for $1$ km comes from
+          the words instead: the first $2$ km cost a flat &#8377;$25$, and a
+          $1$ km ride is inside that first $2$ km.
+        </p>
+        <div class="work">
+          <p>fare for $1$ km $=$ &#8377;$25$</p>
+        </div>
+        <p>
+          Option (c). Option (a) is the &#8377;$10$ above: the rule works
+          there as arithmetic, but not as a fare. Option (b) is the rate for
+          each extra kilometre. Option (d) is $15(3) - 5$, the fare for $3$
+          km. A rule fitted to part of a table holds only on that part.
+        </p>
       </div>
 
     </div>

@@ -2,31 +2,8 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 3</div>
-        <div class="c-example__body">
-          <p>
-            The distance of $(x, y)$ from the origin is $\sqrt{x^2 + y^2}$.
-            To compare four of them there is no need for a single square
-            root: the larger distance has the larger square.
-          </p>
-          <div class="work">
-            <p>$7^2 + 1^2 = 50$, &nbsp; $5^2 + 5^2 = 50$, &nbsp;
-              $(-6)^2 + 4^2 = 52$, &nbsp; $0^2 + (-7)^2 = 49$</p>
-          </div>
-          <p>
-            The largest is $52$, so the farthest point is $(-6, 4)$: option
-            (c). Option (d) has the largest single coordinate, but its other
-            coordinate is $0$ and adds nothing. Options (a) and (b) are
-            equally far from $O$, which is easy to miss without the squares.
-            And the negative coordinate in (c) makes no difference to the
-            distance, because it is squared.
-          </p>
-        </div>
-      </div>
-
-      <div class="c-try">
-        <span class="c-try__tag">Problem 4 &middot; Try it first</span>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
         <p>The point of the y-axis that is equidistant from $A (-5, 2)$ and
           $B (3, 4)$ is</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
@@ -37,32 +14,29 @@
         </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 4</div>
-        <div class="c-example__body">
-          <p>
-            A point of the y-axis is $(0, y)$. Equidistant means the two
-            distances are equal, and then their squares are equal too:
-          </p>
-          <div class="work">
-            <p>$(0 + 5)^2 + (y - 2)^2 = (0 - 3)^2 + (y - 4)^2$</p>
-          </div>
-          <p>
-            Expand both sides: $25 + y^2 - 4y + 4 = 9 + y^2 - 8y + 16$. The
-            $y^2$ cancels, as it did in stage 1, and $29 - 4y = 25 - 8y$
-            gives $4y = -4$, so $y = -1$. The point is $(0, -1)$: option (a).
-            Check: its distance from $A$ is $\sqrt{25 + 9}$ and from $B$ is
-            $\sqrt{9 + 25}$, both $\sqrt{34}$. Option (d) is $1$ unit along
-            the wrong axis. Option (c) is the height half way between $A$
-            and $B$, which is where the point would be if $A$ and $B$ were
-            the same distance from the y-axis. They are not: $A$ is $5$ away
-            and $B$ is $3$.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          A point of the y-axis is $(0, y)$. Equidistant means the two
+          distances are equal, and then their squares are equal too:
+        </p>
+        <div class="work">
+          <p>$(0 + 5)^2 + (y - 2)^2 = (0 - 3)^2 + (y - 4)^2$</p>
+          <p>$29 - 4y = 25 - 8y$</p>
+          <p>$4y = -4$, so $y = -1$</p>
         </div>
+        <p>
+          The $y^2$ cancels, as it did in stage 1. The point is $(0, -1)$:
+          option (a), and its distance from each of $A$ and $B$ is
+          $\sqrt{34}$. Option (d) is $1$ unit along the wrong axis. Option
+          (c) is the height half way between $A$ and $B$, which would be
+          the answer only if the two were the same distance from the
+          y-axis. They are not: $A$ is $5$ away and $B$ is $3$.
+        </p>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 5</span>
         <p>The number of points with whole-number coordinates that are
           exactly $5$ units from the origin is</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
@@ -71,6 +45,24 @@
           <li>$12$</li>
           <li>$16$</li>
         </ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          A point $(x, y)$ is $5$ from the origin when $x^2 + y^2 = 25$, so
+          the question is in how many ways $25$ is a sum of two squares.
+        </p>
+        <div class="work work--list">
+          <p>$25 = 25 + 0 \rightarrow (\pm 5, 0), (0, \pm 5)$ &mdash; $4$ points</p>
+          <p>$25 = 9 + 16 \rightarrow (\pm 3, \pm 4), (\pm 4, \pm 3)$ &mdash; $8$ points</p>
+        </div>
+        <p>
+          Twelve in all, option (c), shown in Fig. 1B.4. No other pair of
+          squares adds to $25$. Option (a) counts only the points on the
+          axes. Option (b) forgets those four. Option (d) would allow
+          $(\pm 5, \pm 5)$, which are $\sqrt{50}$ from the origin, not $5$.
+        </p>
       </div>
 
     </div>
