@@ -528,7 +528,12 @@
   max-width: 100%;
   height: auto;
 }
-.c-figure img { mix-blend-mode: multiply; }
+/* A photograph drops its ground onto the paper. This also covers a
+   photograph placed inside an <svg>, which is how a figure carries
+   live labels over artwork — the numerals stay Spectral at the
+   diagram type scale instead of being baked into the pixels. */
+.c-figure img,
+.c-figure svg image { mix-blend-mode: multiply; }
 
 /* A figure beside its key. The key is plain text with swatches —
    not a second panel. */
