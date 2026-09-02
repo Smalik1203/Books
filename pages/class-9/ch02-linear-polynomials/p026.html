@@ -1,52 +1,87 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <p>The third is the pattern. The sequences $1, 3, 5, 7, \ldots$ and
-      $100, 95, 90, \ldots$ were called linear because their consecutive terms differ
-      by a constant. Sequences and Progressions takes that constant difference as the
-      defining property and asks the questions this chapter did not: what the $n$th
-      term is in general, and what the first $n$ terms add up to.</p>
-
-      <p>What ties all three together is the thing worth carrying out of this chapter.
-      A relationship you can write as $ax + b$ is completely determined by two
-      numbers, and two observations are enough to find them. That is a strong claim,
-      and it is false the moment the degree rises above one.</p>
-
-      <div class="c-summary">
-        <div class="c-summary__title">What this chapter established</div>
-        <ol>
-          <li>An algebraic expression is built from numbers, variables and operation
-          symbols. Its <span class="term">terms</span> are the parts added together,
-          its <span class="term">coefficients</span> the numbers multiplying the
-          variables.</li>
-          <li>A <span class="term">univariate polynomial</span> is an expression in one
-          variable and its whole-number powers. Its <span class="term">degree</span> is
-          the highest power appearing in it, and the degree is what sorts polynomials
-          into families: cubic, quadratic, linear, constant.</li>
-          <li>A polynomial of degree $1$ is a <span class="term">linear
-          polynomial</span>. Evaluated at $1$, $2$, $3$, … it produces a
-          <span class="term">linear pattern</span> — a sequence whose consecutive terms
-          differ by the same amount throughout.</li>
-          <li><span class="term">Linear growth</span> is a pattern increasing by a
-          constant amount over equal intervals; <span class="term">linear decay</span>
-          is one decreasing by a constant amount. They differ only in the sign of that
-          constant.</li>
-          <li>A <span class="term">linear relationship</span> between $x$ and $y$ is
-          written $y = ax + b$. Two observations are enough to recover $a$ and $b$,
-          since each supplies one equation.</li>
-          <li>Its graph is a straight line. The slope is $a$, and it is the constant
-          difference of the pattern: positive for growth, negative for decay. The
-          $y$-intercept is $b$, and the line cuts the $y$-axis at $(0, b)$.</li>
-          <li>The two numbers act independently. Changing $a$ tilts the line about its
-          intercept; changing $b$ slides it without tilting — so lines of equal slope
-          and unequal intercept are parallel and never meet.</li>
-          <li>A table, an expression and a graph are three views of one relationship.
-          Which to reach for is a matter of what you want to see: a table gives
-          particular values, an expression gives all of them at once, and a graph shows
-          you the shape of the whole thing.</li>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions c-questions--starred" data-start="11">
+          <li class="hard">Let $p(x) = ax + b$ and $q(x) = cx + d$ be linear
+            polynomials with
+              <ol class="c-parts c-parts--1">
+                <li>$p(0) = 5$;</li>
+                <li>$p(x) - q(x)$ cutting the $x$-axis at $(3, 0)$;</li>
+                <li>$p(x) + q(x) = 6x + 4$ for every real $x$.</li>
+              </ol>
+              Find $p(x)$ and $q(x)$.
+            </li>
         </ol>
       </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions c-questions--starred" data-start="12">
+          <li class="hard">Below are the first three stages of a growing pattern of
+          hexagons made from matchsticks. At each stage a new hexagon is added,
+          sharing one side with the last hexagon of the stage before.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 374 82" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three stages of a growing pattern of hexagons made from matchsticks">
+            <path class="dg-line" d="M63.3 24.0L46.0 14.0L28.7 24.0L28.7 44.0L46.0 54.0L63.3 44.0Z"/>
+            <text class="dg-note" x="46.0" y="72" text-anchor="middle">Stage 1</text>
+            <path class="dg-line" d="M167.3 24.0L150.0 14.0L132.7 24.0L132.7 44.0L150.0 54.0L167.3 44.0Z"/>
+            <path class="dg-line" d="M202.0 24.0L184.6 14.0L167.3 24.0L167.3 44.0L184.6 54.0L202.0 44.0Z"/>
+            <text class="dg-note" x="167.3" y="72" text-anchor="middle">Stage 2</text>
+            <path class="dg-line" d="M285.3 24.0L268.0 14.0L250.7 24.0L250.7 44.0L268.0 54.0L285.3 44.0Z"/>
+            <path class="dg-line" d="M320.0 24.0L302.6 14.0L285.3 24.0L285.3 44.0L302.6 54.0L320.0 44.0Z"/>
+            <path class="dg-line" d="M354.6 24.0L337.3 14.0L320.0 24.0L320.0 44.0L337.3 54.0L354.6 44.0Z"/>
+            <text class="dg-note" x="302.6" y="72" text-anchor="middle">Stage 3</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.12</span> Each new hexagon borrows a
+          side from the one before it, so it costs fewer than six matchsticks.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-parts c-parts--1">
+          <li>Draw the next two stages. How many matchsticks does each need?</li>
+          <li>Tabulate the number of matchsticks for stages $1$ to $5$, and for
+          stage $n$.</li>
+          <li>Find a rule for the number of matchsticks at the $n$th stage.</li>
+          <li>How many are needed for the $15$th stage?</li>
+          <li>Can $200$ matchsticks make a stage of this pattern? Justify your
+          answer.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        
+        <ol class="c-questions c-questions--starred" data-start="13">
+          <li class="hard">Let $p(x) = ax + b$ and $q(x) = cx + d$ be linear
+            polynomials such that the graph of $p(x)$ passes through $(2, 3)$ and
+            $(6, 11)$, the graph of $q(x)$ passes through $(4, -1)$, and the two graphs
+            are parallel. Find $p(x)$ and $q(x)$, and the point where each meets the
+            $x$-axis.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions c-questions--starred" data-start="14">
+          <li class="hard">What do all the linear functions $f(x) = ax + a$ with
+            $a \gt 0$ have in common?</li>
+        </ol>
+      </div>
+
+      <p class="hint">The starred questions are the harder ones. Several of them are
+      settled by noticing which of $a$ and $b$ the question has actually fixed, rather
+      than by calculating.</p>
+
+      <p>One chapter, sixteen examples and a single expression underneath all of them:
+      $ax + b$. Everything else here was a consequence of the degree being $1$ — the
+      constant difference, the growth and the decay, the straightness of the graph,
+      and the two numbers you can read off it by eye. A polynomial of degree $2$ would
+      have behaved differently in every one of those respects.</p>
 
     </div>
   </div>

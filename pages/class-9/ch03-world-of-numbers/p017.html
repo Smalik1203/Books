@@ -2,6 +2,36 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h2><span class="badge">3.6</span><span class="name">Real Numbers and Their Decimals</span></h2>
+
+      <p>
+        Put the dense web of rationals together with the irrationals that fill
+        its gaps and you get the <span class="term">real numbers</span>,
+        $\mathbb{R}$ — a line with nothing missing from it anywhere.
+      </p>
+
+      <p>
+        Which raises a practical question. Handed a number, how do you tell
+        which kind it is? The quickest test is to look at its decimal
+        expansion, because the two kinds behave quite differently there.
+      </p>
+
+      <h3>Terminating and repeating</h3>
+
+      <p>
+        Divide the numerator of a rational number by its denominator and
+        exactly one of two things happens.
+      </p>
+
+      <p>
+        Either the division runs out — a remainder of 0 appears, there is
+        nothing further to bring down, and the decimal simply stops. Or it
+        never runs out, in which case the digits settle into a block that
+        repeats for ever. There is no third outcome, and the example below
+        shows both, so that the difference can be seen happening in the
+        arithmetic rather than taken on trust.
+      </p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
@@ -40,30 +70,6 @@
         That argument does not care which number you divide by. It proves that
         every rational number has a decimal that either terminates or repeats —
         there is no third possibility.
-      </p>
-
-      <h3>Telling which, without dividing</h3>
-
-      <p>
-        You can predict which of the two will happen by looking at the
-        denominator alone — no long division needed. The reason is that a
-        decimal <em>is</em> a fraction whose denominator is a power of ten.
-      </p>
-
-      <p>
-        Write out what that means. $0.375$ is $\dfrac{375}{1000}$, and
-        $0.15$ is $\dfrac{15}{100}$. So a decimal that terminates is exactly
-        a number that can be written over some $10^n$ — and
-        $10^n = 2^n \times 5^n$ carries no prime factor except 2 and 5.
-      </p>
-
-      <p>
-        Now run that backwards. Suppose $\dfrac{p}{q}$ is in lowest terms
-        and can be rewritten over a power of ten. Then $q$ can only have
-        been built out of 2s and 5s in the first place: a factor of 3, or 7,
-        or 11 sitting in $q$ would still be sitting there afterwards, and
-        $10^n$ has no matching factor to cancel it against. The test on the
-        next page is that one observation, stated once and used ever after.
       </p>
 
     </div>

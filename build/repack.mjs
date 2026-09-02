@@ -11,8 +11,9 @@
    It renders the chapter once, asks the browser how tall every
    block actually is, fills each page until the next block will
    not fit, and rewrites the files. Blocks are never split — a
-   component that says break-inside: avoid means it — and a
-   heading is never left as the last thing on a page.
+   component that says break-inside: avoid means it — and nothing
+   that opens new matter is left at the foot of a page over fewer
+   than five lines of it. build/orphans.mjs reports on that rule.
 
    Run the builder afterwards: this proposes the packing, the
    overflow check is still what proves it.
@@ -100,6 +101,25 @@ window.addEventListener('load', function () {
       if (!body || !main) return;
       var blocks = [];
       var kids = main.children;
+      // What an opener is, and where its own head stops. A section
+      // head is all head and its matter is the blocks after it; an
+      // example carries its tab and its matter in one box, so the
+      // box's own height is partly promise and partly payment.
+      // A --head panel is neither: it is the near half of a panel
+      // close-gaps ran over the break on purpose, and its matter
+      // continues overleaf as the same tinted field.
+      var opensWith = function (el) {
+        var t = el.tagName.toLowerCase();
+        var cn = ' ' + (el.className || '') + ' ';
+        if (cn.indexOf('--head') >= 0) return null;
+        if (t === 'h2' || t === 'h3') return { kind: t, head: el };
+        if (el.querySelector('.c-stage__title')) return { kind: 'stage', head: el };
+        var band = el.querySelector('.c-practice__head');
+        if (band) return { kind: 'exercise', head: band };
+        if (cn.indexOf('c-example') >= 0)
+          return { kind: 'example', head: el.querySelector('.c-example__tab') || el };
+        return null;
+      };
       for (var n = 0; n < kids.length; n++) {
         var el = kids[n];
         var cs = getComputedStyle(el);
@@ -111,6 +131,7 @@ window.addEventListener('load', function () {
           var kr = inner[k].getBoundingClientRect();
           if (kr.height && kr.bottom > deep) deep = kr.bottom;
         }
+        var o = opensWith(el);
         blocks.push({
           h: Math.max(r.height, deep - r.top),
           mt: parseFloat(cs.marginTop) || 0,
@@ -121,12 +142,22 @@ window.addEventListener('load', function () {
           // band with no questions of its own under it
           leads: !!el.querySelector('.c-stage__title')
             || (!!el.querySelector('.c-practice__head') && !el.querySelector('.c-questions')),
+          // what this block starts, and how much of its own height is
+          // the title rather than the matter under it
+          opens: o ? o.kind : null,
+          headH: o ? Math.max(0, o.head.getBoundingClientRect().bottom - r.top) : 0,
         });
       }
       out.push({
         folio: pg.dataset.folio,
         avail: body.getBoundingClientRect().height,
         opener: pg.className.indexOf('page--opener') >= 0,
+        // one line of body text, measured rather than assumed: the
+        // two editions set different scales
+        lh: (function () {
+          var q = main.querySelector('p');
+          return q ? parseFloat(getComputedStyle(q).lineHeight) || 0 : 0;
+        })(),
         blocks: blocks,
       });
     });
@@ -166,35 +197,81 @@ async function measure(htmlPath) {
 const isHeading = (b) =>
   b.tag === 'h2' || b.tag === 'h3' || b.leads === true;
 
-/* A heading that clears the page edge by a hair is still stranded: the
-   reader gets a section title and three lines, then a page turn. So a
-   heading has to bring a real opening with it — a sixth of the text
-   block, roughly five lines — or it waits for the next page. */
-const MIN_AFTER_HEAD = 0.16;
+/* An opener is anything that starts new matter, which is more than the
+   headings: a worked example is a promise too, and an example set four
+   lines from the foot sends the reader over the page for the figure it
+   was drawn to explain. Headings, stage heads, exercise bands and
+   examples all answer to the same rule. */
+const isOpener = (b) => !!b.opens || isHeading(b);
 
-/* Would this heading seat a real opening in the `room` left under it?
+/* An opener that clears the page edge by a hair is still stranded: the
+   reader gets a title and three lines, then a page turn. So an opener
+   has to bring a real opening with it — five lines of set matter — or
+   it waits for the next page.
+
+   Five lines, not a fraction of the text block: the number is what the
+   eye counts, and it has to mean the same thing in both editions.
+   build/orphans.mjs reports against the same figure. */
+const MIN_OPENER_LINES = 5;
+
+/* Would this opener seat a real opening in the `room` left under it?
    Blocks are atomic, so counting raw heights lies: the paragraph after
-   the heading may be three lines and the block after that a figure
-   that was never going to fit. Only what actually lands here counts.
-   A section shorter than the quota is judged against its own length.
+   a heading may be three lines and the block after that a figure that
+   was never going to fit. Only what actually lands here counts. A
+   section shorter than the quota is judged against its own length.
+
+   Matter arrives from two places. A heading is all title and its matter
+   is entirely in the blocks that follow. An example carries its tab and
+   its body in one box, so part of its own height already pays — which
+   is `inner`, the block less its own head.
 
    This has to charge each block exactly what the packing loop below
    charges it — collapsed margin and all. Costing a block at h + mt
    when the loop pays max(prevMb, mt) reads as a few millimetres of
    optimism per block, which is the difference between predicting five
    lines under a heading and printing three. */
-function opensWell(flat, i, room, avail, headMb) {
-  const quota = avail * MIN_AFTER_HEAD;
-  let seated = 0, whole = 0, prevMb = headMb;
-  for (let k = i + 1; k < flat.length; k++) {
-    if (isHeading(flat[k]) && whole > 0) break;   // an h2 may lead straight into an h3
-    const cost = Math.max(prevMb, flat[k].mt) + flat[k].h;
-    whole += cost;
-    if (seated + cost > room) break;
-    seated += cost;
-    prevMb = flat[k].mb;
+function opensWell(flat, i, room, lh, headMb, depth = 0) {
+  const quota = MIN_OPENER_LINES * lh;
+  const inner = Math.max(0, flat[i].h - (flat[i].headH || 0));
+
+  /* Two accumulators, and they have to be kept apart. `after` is what
+     lands on this page under the opener; `whole` is everything the
+     section holds. Running them off one loop — stopping both at the
+     first block too big for the room left — makes a section that runs
+     for pages look like a short one, and the escape below then passes
+     any heading with a paragraph under it.
+
+     Nothing past the quota need be counted: once the section is that
+     long the quota is what it is judged against either way. */
+  let whole = inner, after = 0, seatMb = headMb, wholeMb = headMb, seating = true;
+  let spent = true;   // did the matter run out, or did a heading stop the count?
+  for (let k = i + 1; k < flat.length && whole < quota; k++) {
+    // only a heading ends the section: an example or an exercise band
+    // under one is that section's matter, not a rival for it
+    if (isHeading(flat[k]) && whole > 0) { spent = false; break; }  // h2 may lead into h3
+    whole += Math.max(wholeMb, flat[k].mt) + flat[k].h;
+    wholeMb = flat[k].mb;
+    if (!seating) continue;
+    const cost = Math.max(seatMb, flat[k].mt) + flat[k].h;
+    if (after + cost > room) { seating = false; continue; }
+    /* An opener under an opener only seats here if it opens well
+       itself. Counting it regardless is how a heading came to pass
+       this test on the strength of an example that the same test
+       then moved to the next page, leaving the heading over three
+       lines — the two answers have to be the one answer. */
+    if (isOpener(flat[k]) && (depth >= 2
+        || !opensWell(flat, k, room - after - cost, lh, flat[k].mb, depth + 1))) {
+      seating = false; continue;
+    }
+    after += cost;
+    seatMb = flat[k].mb;
   }
-  return seated >= Math.min(quota, whole);
+  /* The escape is for matter that has genuinely run out — the last few
+     lines of a chapter, judged against their own length rather than a
+     quota they can never meet. It is not for a section a heading merely
+     interrupts: that let a stage head sit at the foot over four lines
+     of answers with the rest of the stage overleaf. */
+  return inner + after >= (spent ? Math.min(quota, whole) : quota);
 }
 
 function pack(pages) {
@@ -206,14 +283,16 @@ function pack(pages) {
   const out = [];
   let page = { blocks: [], used: 0, avail: pages[0].avail, opener: true };
   let prevMb = 0;
+  // the measured body line, which is the unit the opener rule counts in
+  const lh = pages.find(p => p.lh)?.lh || pages[0].avail * 0.024;
 
   const push = () => { out.push(page); };
 
   for (const [idx, b] of flat.entries()) {
     const join = Math.max(prevMb, b.mt);
     const cost = (page.blocks.length ? join : 0) + b.h;
-    const stranded = isHeading(b)
-      && !opensWell(flat, idx, page.avail - page.used - cost, page.avail, b.mb);
+    const stranded = isOpener(b)
+      && !opensWell(flat, idx, page.avail - page.used - cost, lh, b.mb);
     // margins collapse in ways this arithmetic only approximates, so
     // leave a little air rather than shipping a page that overflows
     if (page.blocks.length && (page.used + cost > page.avail || stranded)) {

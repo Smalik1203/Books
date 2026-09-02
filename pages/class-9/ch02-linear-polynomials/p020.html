@@ -5,7 +5,7 @@
       <div class="c-figure c-figure--lg">
             <figure>
               <svg viewBox="0 0 240 232" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-                 role="img" aria-label="2.9">
+                 role="img" aria-label="2.8">
       <path class="dg-grid" d="M16 12V220M42 12V220M68 12V220M94 12V220M120 12V220M146 12V220M172 12V220M198 12V220M224 12V220M16 220H224M16 194H224M16 168H224M16 142H224M16 116H224M16 90H224M16 64H224M16 38H224M16 12H224"/>
       <path class="dg-axis" d="M16 116H224 M120 12V220"/>
       <text class="dg-tick" x="16" y="124.5" text-anchor="middle">–4</text>
@@ -27,57 +27,47 @@
       <text class="dg-tick" x="117" y="124.5" text-anchor="end">0</text>
       <text class="dg-label" x="224" y="112.5" text-anchor="end">x</text>
       <text class="dg-label" x="123.5" y="19">y</text>
-      <path class="dg-plot" d="M16 81.3L224 150.7"/>
-      <text class="dg-plot-label" x="52.6" y="86.5" text-anchor="start">y = –⅓x</text>
-      <path class="dg-plot dg-plot--b" d="M16 12L224 220"/>
-      <text class="dg-plot-label" x="61.4" y="47.0" text-anchor="start">y = –x</text>
-      <path class="dg-plot dg-plot--c" d="M85.3 12L154.7 220"/>
-      <text class="dg-plot-label" x="96" y="30" text-anchor="end">y = –3x</text>
+      <path class="dg-plot" d="M16 168L224 64"/>
+      <text class="dg-plot-label" x="186.2" y="75.3" text-anchor="end">y = ½x</text>
+      <path class="dg-plot dg-plot--b" d="M16 220L224 12"/>
+      <text class="dg-plot-label" x="178.6" y="47.0" text-anchor="end">y = x</text>
+      <path class="dg-plot dg-plot--c" d="M68 220L172 12"/>
+      <text class="dg-plot-label" x="151.0" y="36.4" text-anchor="end">y = 2x</text>
             </svg>
-              <figcaption><span class="fignum">Fig. 2.9</span> The graphs of $y = -\dfrac{1}{3}x$, $y = -x$ and $y = -3x$. A negative slope falls from left to right.</figcaption>
+              <figcaption><span class="fignum">Fig. 2.8</span> The graphs of $y = \dfrac{1}{2}x$, $y = x$ and $y = 2x$. Every one passes through the origin, and the larger $a$ is, the steeper the line.</figcaption>
             </figure>
           </div>
 
-      <p>The fan is the same fan, turned over. Every line still goes through the
-      origin, and the more negative $a$ is, the more steeply the line dives. Comparing
-      Fig. 2.9 with Fig. 2.8: a positive slope climbs to the right, a negative
-      slope falls, and the size of $a$ decides how sharply either happens.</p>
+      <p>Two things are visible at once. Every line of the form $y = ax$ passes
+      through the origin — unavoidably, since $x = 0$ forces $y = 0$. And the lines
+      fan out in order of $a$: the line $y = x$ leans equally on both axes, $y = 2x$
+      is steeper than it, and $y = \dfrac{1}{2}x$ is shallower.</p>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__body">
-            <p>How do the graphs of $y = 3x + 1$ and $y = -3x + 1$ differ? Say it in
-            terms of slope before you draw either.</p>
-          </div>
-        </div>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Slope</div>
+        <p>In $y = ax$ the multiplier $a$ is the <span class="term">slope</span> of the
+        line. It is what steepness <em>is</em>, measured: a line with $a \gt 1$ rises
+        more sharply than $y = x$, and one with $a \lt 1$ less sharply. Slope is taken
+        up properly in the chapter on linear equations.</p>
       </div>
 
-      <p>There is a case the two figures between them leave out, and it is worth
-      naming. If $a = 0$ the expression is not $ax$ at all but the constant $0$, and
-      the graph is the $x$-axis itself — flat, going neither up nor down. A slope of
-      zero is a pattern that never changes, which is why a constant polynomial sits at
-      degree $0$ rather than degree $1$.</p>
+      <p>Slope also settles a question left open earlier in this chapter. A linear
+      growth has a positive slope and a linear decay a negative one — and the size of
+      the slope is exactly the constant difference the pattern goes up or down by. The
+      tile pattern of Fig. 2.4 had relationship $y = 2x - 1$ and gained two tiles a
+      stage; its slope is $2$. Bela's pocket money fell by ₹$5$ a day and its
+      relationship was $y = 100 - 5x$; its slope is $-5$.</p>
 
-      <p>So much for $a$. Every line so far has passed through the origin, because
-      every equation so far has been $y = ax$ with nothing added. That was not an
-      accident of the examples chosen: $x = 0$ forces $y = 0$ whenever there is
-      nothing on the end to stop it. It is time to put the $b$ back.</p>
+      <p>That is a genuine unification. Until this section the constant difference
+      was a fact about a <em>list</em> of numbers — you found it by subtracting one
+      term from the next — while the steepness of a line was a fact about a
+      <em>picture</em>. They have turned out to be the same number arrived at two
+      ways, and either one can be used to find the other.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>Draw $y = 2x - 1$, $y = 2x + 1$ and $y = 2x + 5$ on one pair of axes.
-          The slope is $2$ every time; only the constant changes.</p>
-        </div>
-      </div>
+      <p>It also explains why a linear pattern has to plot as a straight line rather
+      than a curve. Going one step to the right always changes $y$ by the same amount,
+      so the direction never alters; and a path whose direction never alters is
+      straight. A pattern whose difference itself changed would bend.</p>
 
     </div>
   </div>
