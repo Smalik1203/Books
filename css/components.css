@@ -97,20 +97,23 @@
 }
 .page--haschead .page__body { top: 45mm; }
 
-/* A chapter opener is conventionally a recto. Should one fall on a
-   verso the whole head mirrors, or it lands in the gutter. */
-.page--verso .chapterhead__num {
-  left: auto;
-  right: calc(-1 * var(--bleed));
-  padding-left: 0;
-  padding-right: var(--bleed);
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 7mm;
-}
-.page--verso .chapterhead__title { left: 50mm; right: 39mm; text-align: right; }
-.page--verso .chapterhead__sketch { right: auto; left: var(--margin-outside); }
-.page--verso .chapterhead__rule { left: var(--margin-outside); right: 10mm; }
-.page--verso .chapterhead__rule::before { left: auto; right: -8mm; transform: skewX(14deg); }
+/* A chapter opener is conventionally a recto, and it used to mirror
+   whole when one fell on a verso — numeral to the right, title
+   right-aligned, sketch to the left. That kept everything clear of the
+   gutter, but it also meant a reader flipping the book met two
+   different chapter heads: numeral left in one chapter, numeral right
+   in the next. A chapter opener is the most recognisable page in the
+   book and it has to be the same page every time.
+
+   So the arrangement no longer mirrors. What changes on a verso is
+   only which edge is the spine: everything measured from it gains the
+   binding allowance, so the sketch and the rule stand off by
+   --margin-inside rather than --margin-outside and the title's own
+   right edge moves with them. The numeral is unmoved — it bleeds off
+   the left on both sides, which on a verso is the fore-edge. */
+.page--verso .chapterhead__sketch { right: var(--margin-inside); }
+.page--verso .chapterhead__rule { right: var(--margin-inside); }
+.page--verso .chapterhead__title { right: calc(50mm + var(--gutter-allowance)); }
 
 
 /* ============================================================
