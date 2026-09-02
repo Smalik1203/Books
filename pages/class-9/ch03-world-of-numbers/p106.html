@@ -2,105 +2,81 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>
-              How many numbers of the form $\dfrac{k}{24}$, with $k$ a whole
-              number, lie strictly between $\dfrac{1}{4}$ and $\dfrac{1}{3}$?
-              <ol class="c-parts c-parts--alpha">
-                <li>$0$</li>
-                <li>$1$</li>
-                <li>$2$</li>
-                <li>infinitely many</li>
-              </ol>
-            </li>
+      <div class="c-example">
+        <div class="c-example__tab">Solution 4</div>
+        <div class="c-example__body">
+          <p>
+            Option (b) is a difference of squares, the identity from
+            Chapter 4, and the roots disappear when it is multiplied out:
+          </p>
+          <div class="work">
+            <p>$\left(\sqrt{5} - \sqrt{3}\right)\left(\sqrt{5} + \sqrt{3}\right)
+              = 5 - 3 = 2$</p>
+          </div>
+          <p>
+            So (b) is rational, and it is the answer. Option (a) was settled
+            in the second question of this section: it is irrational. Option
+            (c) is $\pi$ with a rational taken away, and a rational subtracted
+            from an irrational leaves an irrational, for the same reason a
+            rational added to one does.
+          </p>
+          <p>
+            Option (d) is $\sqrt{6}$, which is irrational. It is worth being
+            clear about why it has to be checked rather than assumed: two
+            irrational numbers multiplied can perfectly well give a rational.
+            $\sqrt{2} \times \sqrt{8} = 4$. What makes a product of surds
+            rational is not the surds but what is under them, and $6$ is not
+            a perfect square.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-try">
+        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+        <p>How many numbers of the form $\dfrac{k}{24}$, with $k$ a whole
+          number, lie strictly between $\dfrac{1}{4}$ and $\dfrac{1}{3}$?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$0$</li>
+          <li>$1$</li>
+          <li>$2$</li>
+          <li>infinitely many</li>
         </ol>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>
-              If $a$ and $b$ are both irrational, then $a + b$ is
-              <ol class="c-parts c-parts--alpha c-parts--1">
-                <li>always irrational</li>
-                <li>always rational</li>
-                <li>rational only when $a = b$</li>
-                <li>sometimes one, sometimes the other</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Solution 5</div>
+        <div class="c-example__body">
+          <p>
+            Put the two ends over $24$ as well, and the counting is done for
+            you:
+          </p>
+          <div class="work">
+            <p>$\dfrac{1}{4} = \dfrac{6}{24}$, &nbsp;
+              $\dfrac{1}{3} = \dfrac{8}{24}$</p>
+          </div>
+          <p>
+            Strictly between $6$ and $8$ there is one whole number, so
+            $k = 7$ and the answer is (b). Option (c) counts $6$ and $8$
+            themselves, which the word <em>strictly</em> rules out.
+          </p>
+          <p>
+            Option (d) is the one to think about. Infinitely many rationals do
+            lie between $\dfrac{1}{4}$ and $\dfrac{1}{3}$ &mdash; that is
+            what density says, and the previous question used it. But this
+            question fixes the denominator at $24$, and a fixed denominator
+            leaves only whole numbers to choose. Density is a statement about
+            all denominators at once; take that freedom away and the count
+            becomes finite, and usually small.
+          </p>
+        </div>
       </div>
 
       <div class="c-stage">
-        <div class="c-stage__num">6</div>
+        <div class="c-stage__num">3</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Competitive-Style Thinking</div>
-          <div class="c-stage__for">Four moves worth more than another rule.</div>
+          <div class="c-stage__title">Problem Sets</div>
+          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
         </div>
-      </div>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">Eliminate</span>
-          <span>A root sign proves nothing. Test the number under it for a
-            perfect square before touching the options.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Check sufficiency</span>
-          <span>The terminating test needs the fraction <em>in lowest terms</em>.
-            Reduce first, then look at the denominator's factors.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Find the constraint</span>
-          <span>Dividing by $q$ there are only $q - 1$ possible remainders, so
-            the cycle cannot be longer than that.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Estimate first</span>
-          <span>Bound a surd between two whole numbers before comparing.
-            $\sqrt{50}$ lies between $7$ and $8$, and that is often enough.</span>
-        </div>
-      </div>
-
-      <p class="c-stage__ask">Name the move, then use it.</p>
-
-      <div class="c-practice">
-        
-        <ol class="c-questions">
-          <li>
-              <strong>Eliminate.</strong> Which of these is rational?
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\sqrt{18}$</li><li>$\sqrt{20}$</li>
-                <li>$\sqrt{45}$</li><li>$\sqrt{49}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              <strong>Sufficiency.</strong> Which of these has a terminating
-              decimal?
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\dfrac{7}{30}$</li><li>$\dfrac{6}{15}$</li>
-                <li>$\dfrac{5}{12}$</li><li>$\dfrac{4}{21}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              <strong>Constraint.</strong> The cycle of $\dfrac{1}{13}$ cannot be
-              longer than
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$6$ digits</li><li>$12$ digits</li>
-                <li>$13$ digits</li><li>$130$ digits</li>
-              </ol>
-            </li>
-        </ol>
       </div>
 
     </div>

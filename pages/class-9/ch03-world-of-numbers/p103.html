@@ -2,96 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>
-              For $\dfrac{1}{7} = 0.\overline{142857}$, which must be true?
-              <ol class="c-parts c-parts--1">
-                <li>Its cycle is six digits long.</li>
-                <li>Six is the longest a cycle over $7$ could be.</li>
-                <li>The block $142857$ is cyclic.</li>
-              </ol>
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>(i) only</li><li>(i) and (ii)</li>
-                <li>(ii) and (iii)</li><li>all three</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="work">
+        <p>$10x = 4.272727\ldots$</p>
+        <p>$1000x = 427.272727\ldots$</p>
+        <p>$990x = 423$, &nbsp;so&nbsp;
+          $x = \dfrac{423}{990} = \dfrac{47}{110}$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>
-              $q - 1$ is a ceiling on the cycle length, not a promise: $7$, $17$
-              and $19$ reach it, while $11$ and $13$ do not. Say what a division
-              reaching the ceiling means about its remainders.
-            </li>
-        </ol>
+      <p>
+        Look at the denominator before the cancelling: $990$ is two $9$s and
+        one $0$, one $9$ for each repeating digit and one $0$ for the digit
+        that does not. The denominator is a record of the decimal's shape.
+        And $110 = 2 \times 5 \times 11$, whose factor of $11$ is what keeps
+        the decimal from terminating &mdash; the same test as in the second
+        question, read in the other direction.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>A student says there are only two rationals between
+          $\dfrac{1}{3}$ and $\dfrac{1}{2}$, namely $\dfrac{2}{6}$ and
+          $\dfrac{3}{6}$, since over $6$ there is nothing in between. Is the
+          student right?</p>
       </div>
+
+      <p>
+        No, and one example settles it. The average of the two,
+        $\tfrac{1}{2}\left(\tfrac{1}{3} + \tfrac{1}{2}\right) = \tfrac{5}{12}$,
+        lies strictly between them and is neither of the two named. So the
+        list was not complete.
+      </p>
+
+      <p>
+        What went wrong is worth naming. The student checked one denominator
+        and reported the answer for all of them. Over $6$ there is indeed
+        nothing between $\tfrac{2}{6}$ and $\tfrac{3}{6}$; over $12$ there is
+        $\tfrac{5}{12}$, and over $120$ there are nineteen. Averaging can be
+        done again on the new pair, and again, without ever running out, which
+        is what it means to say the rationals are dense. A check on one case
+        never settles a claim about every case &mdash; and here the claim was
+        false, so one case was enough to bring it down.
+      </p>
+
+      <p>
+        Look back at the five questions. Three were settled by supposing the
+        opposite and letting closure do the rest; one was settled by reading
+        the denominator instead of dividing; and one was brought down by a
+        single example. Not one of them needed a decimal place to be written
+        out. That is the shape of most questions about number: decide what
+        kind of number you are dealing with, and the arithmetic either becomes
+        easy or turns out to be unnecessary.
+      </p>
 
       <div class="c-stage">
-        <div class="c-stage__num">3</div>
+        <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Connect the Concepts</div>
-          <div class="c-stage__for">Two results of the chapter, one after the other.</div>
+          <div class="c-stage__title">Worked in Full</div>
+          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
         </div>
       </div>
 
-      <p class="c-stage__ask">A question about number is rarely only about
-      number. Each of these reaches into a chapter you have met, or out of the
-      book altogether. Name both results as you go.</p>
-
-      <div class="c-practice">
-        
-        <ol class="c-questions">
-          <li>
-              Chapter 1 measured the distance between two points. Take
-              $A(0, 0)$ and $B(1, 1)$.
-              <ol class="c-parts c-parts--1">
-                <li>Find $AB$, and say which section of this chapter proves that
-                    the answer is not a fraction.</li>
-                <li>Give a pair of points with whole-number coordinates whose
-                    distance apart <em>is</em> a whole number, and say what has
-                    to be true of the two shifts.</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              Chapter 4 proved $(x + y)(x - y) = x^2 - y^2$. Use it on
-              $\left(\sqrt{5} + \sqrt{3}\right)\left(\sqrt{5} - \sqrt{3}\right)$,
-              and hence write $\dfrac{1}{\sqrt{5} + \sqrt{3}}$ with no root in
-              its denominator. Which of the two numbers you have written is
-              easier to place on a number line, and why?
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              Chapter 2 drew the line $y = ax$. Let $a = \sqrt{2}$.
-              <ol class="c-parts c-parts--1">
-                <li>Does the line pass through any point other than the origin
-                    whose coordinates are both whole numbers?</li>
-                <li>Answer the same question for $a = \frac{3}{4}$, and say what
-                    the difference between the two cases really is.</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              Chapter 5 defines $\pi$ as the ratio of a circle's circumference to
-              its diameter. A ratio of two lengths &mdash; and yet $\pi$ is
-              irrational. Explain why there is no contradiction, and say what the
-              word <em>ratio</em> means in each of the two sentences.
-            </li>
+      <div class="c-try">
+        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
+        <p>$0.\overline{123}$ in lowest terms is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$\dfrac{41}{333}$</li>
+          <li>$\dfrac{41}{330}$</li>
+          <li>$\dfrac{123}{990}$</li>
+          <li>$\dfrac{123}{1000}$</li>
         </ol>
       </div>
 
