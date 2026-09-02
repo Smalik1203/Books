@@ -36,6 +36,41 @@ It is the only thing that will tell you the truth. It checks:
 Flags: `--pdf`, `--png` (2x page proofs), `--bleed` (press sheet: trim plus
 3mm bleed, no marks). A bare class name builds every chapter under it.
 
+**A proof is the whole sheet, and it was not always.** Headless Chrome
+lays a page out in a viewport shorter than the window it is given — 23mm
+shorter, on the build this was found with — so every proof rendered here
+before that was measured came back blank below the last 23mm of the page.
+That is where an overrun shows and where the folio sits, which is why five
+of the six chapters were shipping clipped pages nobody had seen. The
+builder measures the difference now and crops the capture back to the trim;
+if a proof ever looks short at the foot again, that measurement is the
+first thing to check.
+
+## Three checks the builder does not do
+
+The builder measures pages. These measure what is on them, and each was
+written after the thing it catches had already shipped.
+
+```bash
+node build/fit-options.mjs  <chapter> [--fix]   # options set in more columns than they fit
+node build/check-labels.mjs <chapter>           # figure labels printing through each other
+node build/gaps.mjs         <chapter> [--min N] # what is holding each short page open
+```
+
+`fit-options` measures every option at its natural width. A set of
+**options** is read as a set, so every one has to fit and the count has to
+divide them evenly — four options in three columns leave the fourth alone
+on a second row. A list of exercise **parts** is read one at a time, so one
+long part wrapping is ordinary setting and is left alone; parts are
+narrowed only when more than a third of them overflow. It only ever
+narrows. It also refuses to run against a build older than the sources,
+because it measures the build and edits the source, and the two have to be
+the same chapter.
+
+`gaps` does not fix anything. It names the block that would not fit, which
+is the difference between a fitting problem and a design decision: a gap
+held by a figure or a heading stays, and repack cannot help you.
+
 ## Escaping — read this before writing any LaTeX
 
 Backslashes are eaten when content passes through a shell heredoc or a JS
@@ -57,10 +92,25 @@ edit did not apply.
 Tools, in the order you usually want them:
 
 ```bash
+node build/refit.mjs   <chapter> body|bridge [--dry]  # refit one half of a chapter
 node build/repack.mjs  <chapter> [--dry]   # measure every block, refill the pages
 node build/settle.mjs  <dir> 4 7 12        # push a page's last block forward
 node build/split-practice.mjs <dir>        # one block per question, so exercises can flow
+node build/close-gaps.mjs <chapter>        # run a panel over a break to fill a short page
+node build/join-panels.mjs <dir>           # put a divided panel back together
 ```
+
+**`refit` is the one to reach for**, because `repack` has no page range: run
+it on a chapter and it packs the chapter proper and Beyond the Book as one
+flow, which merges the division into the chapter and moves every break in
+the half you were not editing. `refit` does one half in a scratch chapter
+beside it, stamps `data-bridge` and `data-close` back on afterwards, and
+rebuilds so nothing downstream is left measuring a chapter that no longer
+exists.
+
+`close-gaps` divides a panel across a break; **`join-panels` must follow
+any repack of a chapter it has touched**, or a head and its tail land back
+on one page and print as two panels, one tabbed and one not.
 
 `repack` is optimal for whole blocks in fixed order — if it says *29 in, 29
 out*, nothing can move up and the remaining white is locked behind a
@@ -70,25 +120,34 @@ is a design decision.
 
 ## Beyond the Book
 
-Every chapter ends with ten more pages — `p101.html` to `p110.html` — that take
+Every chapter ends with ten or so more pages — `p101.html` up — that take
 the chapter further without adding syllabus. They sort last whatever the
 chapter does, so a chapter may grow to a hundred pages without renumbering
-them. The stages, their contents and the components they added to the library
+them. Ten is the budget, not the boundary: four of the six run to eleven or
+twelve, because that is what the four stages came to. Holding a chapter at
+ten by letting its last page clip is not the alternative, and was what five
+of the six were doing. The stages, their contents and the components they added to the library
 are in [DESIGN.md §6a](DESIGN.md); **the rest of the section is built from the
 components the chapter already uses**, which is the point.
 
 Every stage opens with a `.c-stage` head — number, name, and what the stage
 is for — and every Bridge page carries **`data-bridge`**, which puts
-*· Beyond the Book* in the running head. **`repack.mjs` drops that
-attribute** when it rewrites a page; put it back before you build.
+*· Beyond the Book* in the running head. `repack.mjs` drops that attribute
+when it rewrites a page; `refit.mjs` stamps it back on, which is the reason
+to refit through it rather than repacking by hand.
 
 The section is four stages (questions tried and explained, worked problems,
 problem sets, answers) and a stage may start part-way down a page. It is
 written as a lesson, not a method: no named strategies, no coaching
-vocabulary — see DESIGN.md §6a before writing one. To refit it without disturbing
-the chapter proper, copy `p101`–`p110` into a scratch chapter directory,
-`split-practice` and `repack` there, then copy them back — `repack` has no
-page range and would re-pack the whole chapter.
+vocabulary — see DESIGN.md §6a before writing one. Two chapters were still
+carrying the ten-stage draft that §6a describes being thrown out, complete
+with The Trap Room and named moves to memorise; if a stage head is not one
+of the four, that is what you are looking at.
+
+To refit the division without disturbing the chapter proper, use
+`node build/refit.mjs <chapter> bridge`, which does the scratch-chapter
+dance for you — `repack` has no page range and would re-pack the whole
+chapter as one flow.
 
 The page before `p101` carries `data-close`. That tells the fill check the
 chapter proper ends there and may end part-way down the page — without it,

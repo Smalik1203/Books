@@ -278,12 +278,13 @@ a heavier or fainter line than its neighbour.
 
 ## 6a. Beyond the Book — a division, not a second book
 
-Every chapter closes with ten pages of harder work on the same material: the
-**Beyond the Book**, announced once by a band across the measure and then
-carried by the components already in the library. It is **four stages, not
-ten** — the first design had a stage a page, and seven of the ten were
-question pages with no worked problem anywhere; a reader was tested on a
-kind of question the book had never shown being solved. The stages are
+Every chapter closes with ten or so pages of harder work on the same
+material: the **Beyond the Book**, announced once by a band across the
+measure and then carried by the components already in the library. It is
+**four stages, not ten** — the first design had a stage a page, and seven
+of the ten were question pages with no worked problem anywhere; a reader
+was tested on a kind of question the book had never shown being solved.
+The stages are
 
     1 Using What You Know five questions, each tried first and then
                           explained, through which the reader finds that
@@ -327,6 +328,11 @@ missed.
 
 A stage starts where the previous one ends, part-way down a page if that is
 where it falls: the stages are the structure, the pages are only the paper.
+**Ten pages is the budget, not the boundary.** Four of the six chapters run
+to eleven or twelve, because the four stages came to that much, and the
+division sorts last whatever it grows to. What is not allowed is to hold it
+at ten by letting the last page clip, which is what five of the six were
+doing before anyone rendered a proof that showed the foot of a page.
 No stage name repeats a word of the division's own name. *Beyond* belongs to
 the band at the top of stage 1 and to nothing else in the section.
 

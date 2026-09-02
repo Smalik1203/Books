@@ -86,8 +86,14 @@ if (kind.body) {
 if (k >= rowsHost.length) { console.error('panel has only ' + rowsHost.length + ' row(s)'); process.exit(1); }
 
 const cutAt = rowsOffset + rowsHost[k - 1][1];
+// Both halves are bounded by rows, never by the end of the panel.
+// Slicing the tail to the end of the panel carried the panel's own
+// closing tags into it — one for a key idea, two for an example,
+// three for a reflect box — and every split shipped a page with a
+// stray </div> that the browser repaired and the reader never saw.
+const lastEnd = rowsOffset + rowsHost[rowsHost.length - 1][1];
 const headRows = panel.slice(rowsOffset + rowsHost[0][0], cutAt).replace(/\s+$/, '');
-const tailRows = panel.slice(cutAt).replace(/^\s*\n/, '').replace(/\s*<\/div>\s*$/, '');
+const tailRows = panel.slice(cutAt, lastEnd).replace(/^\s*\n/, '').replace(/\s+$/, '');
 
 const keptMarkup = kind.keep
   .map(c => (panel.match(new RegExp('<div class="' + c + '">[\\s\\S]*?<\\/div>\\s*(?=<div|$)')) || [''])[0].trimEnd())
@@ -114,7 +120,9 @@ if (kind.cls === 'c-reflect') {
 const closeAt = headHtml.lastIndexOf('    </div>\n  </div>\n</section>');
 if (closeAt < 0) { console.error('page ' + short + ': unexpected shape'); process.exit(1); }
 headHtml = headHtml.slice(0, closeAt).replace(/\s+$/, '\n') + headBlock + '\n    </div>\n  </div>\n</section>\n';
-tailHtml = tailHtml.slice(0, panelStart) + tailBlock + tailHtml.slice(panelEnd);
+// The panel's own indentation is already in the text before it, and
+// the new block brings its own, so one of the two has to go.
+tailHtml = tailHtml.slice(0, panelStart).replace(/[ \t]+$/, '') + tailBlock + tailHtml.slice(panelEnd);
 
 await wr(headFile, headHtml, headCRLF);
 await wr(tailFile, tailHtml, tailCRLF);
