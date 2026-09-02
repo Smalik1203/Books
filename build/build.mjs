@@ -719,10 +719,14 @@ async function bookMeta(cls) {
   return null;
 }
 
-function frontMatter(book, contents, preface) {
+function frontMatter(book, contents, preface, marks = "") {
+  /* These pages are assembled here rather than through closePages, so
+     they have to be handed the marks themselves. Without that the
+     title, the preface and the contents were the only sheets in the
+     press PDF with no marks on them. */
   const page = (cls, inner) =>
     `<section class="page page--front ${cls}">\n  <div class="page__body">`
-    + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>\n</section>`;
+    + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>${marks}\n</section>`;
 
   const title = page('page--title', `      <div class="titlepage">
         <div class="titlepage__imprint">${escapeHtml(book.imprint || '')}</div>
@@ -796,9 +800,9 @@ async function paletteScope(meta) {
   return `[data-ch="${meta.number}"] {\n  ${rules.join('\n  ')}\n}`;
 }
 
-const blankVerso = (folio) =>
+const blankVerso = (folio, marks = "") =>
   `<section class="page page--verso page--blank" data-folio="${folio}">`
-  + `<div class="page__body"></div></section>`;
+  + `<div class="page__body"></div>${marks}</section>`;
 
 async function buildBook(cls) {
   const root = p('pages', cls);
@@ -836,7 +840,7 @@ async function buildBook(cls) {
     const files = (await readdir(src)).filter((f) => /^p\d+.*\.html$/.test(f)).sort();
     if (!files.length) continue;
 
-    if (!wantTight && folio % 2 === 0) { bodies.push(blankVerso(folio)); folio++; blanks++; }
+    if (!wantTight && folio % 2 === 0) { bodies.push(blankVerso(folio, cropMarks(sheet))); folio++; blanks++; }
 
     const parts = [];
     for (const f of files) {
@@ -861,7 +865,7 @@ async function buildBook(cls) {
   if (book) {
     const prefacePath = p('pages', cls, 'preface.html');
     const preface = existsSync(prefacePath) ? await readFile(prefacePath, 'utf8') : null;
-    const fm = frontMatter(book, contents, preface);
+    const fm = frontMatter(book, contents, preface, cropMarks(sheet));
     front = fm.length;
     bodies.unshift(...fm);
   } else {
