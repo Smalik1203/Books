@@ -47,6 +47,22 @@ builder measures the difference now and crops the capture back to the trim;
 if a proof ever looks short at the foot again, that measurement is the
 first thing to check.
 
+```bash
+node build/footer-swatch.mjs [palette]     # the foot of the page, treatments side by side
+```
+
+The foot is the one piece of furniture on every leaf, so it is worth
+judging as a set rather than one page at a time. This renders the foot of a
+verso and a recto for each candidate at trim width in the book's own
+stylesheet — a footer judged in other type at another size is judged wrong.
+It writes a proof under `build/_footer-swatch/` and nothing else; a
+treatment that wins goes into `css/page.css` by hand.
+
+The foot was reviewed this way and **left as it is**: the slab is long for
+one numeral and the outline bar carries nothing, but both bleeding off the
+edge is deliberate (§ the bleed sheet), and the skew ties the foot to the
+chapter openers. Reopen it with the tool rather than from memory.
+
 ## Four checks the builder does not do
 
 The builder measures pages. These measure what is on them, and each was
