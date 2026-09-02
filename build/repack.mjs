@@ -118,6 +118,10 @@ window.addEventListener('load', function () {
         if (band) return { kind: 'exercise', head: band };
         if (cn.indexOf('c-example') >= 0)
           return { kind: 'example', head: el.querySelector('.c-example__tab') || el };
+        // a Beyond the Book problem. Its answer, .c-solution, is the
+        // other half of the same item and opens nothing.
+        if (cn.indexOf('c-problem') >= 0)
+          return { kind: 'problem', head: el.querySelector('.c-problem__tag') || el };
         return null;
       };
       for (var n = 0; n < kids.length; n++) {
@@ -234,43 +238,35 @@ function opensWell(flat, i, room, lh, headMb, depth = 0) {
   const quota = MIN_OPENER_LINES * lh;
   const inner = Math.max(0, flat[i].h - (flat[i].headH || 0));
 
-  /* Two accumulators, and they have to be kept apart. `after` is what
-     lands on this page under the opener; `whole` is everything the
-     section holds. Running them off one loop — stopping both at the
-     first block too big for the room left — makes a section that runs
-     for pages look like a short one, and the escape below then passes
-     any heading with a paragraph under it.
+  /* Two accumulators, and they measure different things.
 
-     Nothing past the quota need be counted: once the section is that
-     long the quota is what it is judged against either way. */
-  let whole = inner, after = 0, seatMb = headMb, wholeMb = headMb, seating = true;
-  let spent = true;   // did the matter run out, or did a heading stop the count?
-  for (let k = i + 1; k < flat.length && whole < quota; k++) {
-    // only a heading ends the section: an example or an exercise band
-    // under one is that section's matter, not a rival for it
-    if (isHeading(flat[k]) && whole > 0) { spent = false; break; }  // h2 may lead into h3
-    whole += Math.max(wholeMb, flat[k].mt) + flat[k].h;
-    wholeMb = flat[k].mb;
-    if (!seating) continue;
-    const cost = Math.max(seatMb, flat[k].mt) + flat[k].h;
-    if (after + cost > room) { seating = false; continue; }
-    /* An opener under an opener only seats here if it opens well
-       itself. Counting it regardless is how a heading came to pass
-       this test on the strength of an example that the same test
-       then moved to the next page, leaving the heading over three
-       lines — the two answers have to be the one answer. */
-    if (isOpener(flat[k]) && (depth >= 2
-        || !opensWell(flat, k, room - after - cost, lh, flat[k].mb, depth + 1))) {
-      seating = false; continue;
+     `after` is simply what lands on this page under the opener. It
+     counts every block that fits, heading or not: what makes a stranded
+     opener bad is a page left nearly empty behind it, and a subsection
+     heading two blocks down does not leave the page empty — its own
+     matter sets on the same page. Stopping this count at a heading
+     refused a stage head with 160mm of room going spare.
+
+     `whole` is the section's own length, and that one does stop at the
+     next heading, because it exists only for the escape below: the last
+     few lines of a chapter are judged against their own length rather
+     than a quota they can never meet. Nothing past the quota need be
+     counted — beyond it the quota is what is judged against either
+     way. */
+  let whole = inner, after = 0, seatMb = headMb, wholeMb = headMb;
+  let seating = true, counting = true, spent = true;
+  for (let k = i + 1; k < flat.length; k++) {
+    if (counting && whole < quota) {
+      if (isHeading(flat[k]) && whole > 0) { spent = false; counting = false; } // h2 into h3
+      else { whole += Math.max(wholeMb, flat[k].mt) + flat[k].h; wholeMb = flat[k].mb; }
     }
-    after += cost;
-    seatMb = flat[k].mb;
+    if (seating) {
+      const cost = Math.max(seatMb, flat[k].mt) + flat[k].h;
+      if (after + cost > room) seating = false;
+      else { after += cost; seatMb = flat[k].mb; }
+    }
+    if (!seating && (!counting || whole >= quota)) break;
   }
-  /* The escape is for matter that has genuinely run out — the last few
-     lines of a chapter, judged against their own length rather than a
-     quota they can never meet. It is not for a section a heading merely
-     interrupts: that let a stage head sit at the foot over four lines
-     of answers with the rest of the stage overleaf. */
   return inner + after >= (spent ? Math.min(quota, whole) : quota);
 }
 

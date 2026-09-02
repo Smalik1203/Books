@@ -2,8 +2,29 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Theorem 12 is the test: a quadrilateral is cyclic exactly when two
+          <em>opposite</em> angles add to $180^\circ$.
+        </p>
+        <div class="work work--list">
+          <p>(b) rectangle: &nbsp; $90^\circ + 90^\circ = 180^\circ$</p>
+          <p>(a) rhombus: &nbsp; equal opposite angles, $180^\circ$ only if each is $90^\circ$</p>
+          <p>(c) parallelogram: &nbsp; $60^\circ + 60^\circ \ne 180^\circ$</p>
+          <p>(d) &nbsp; $100^\circ + 100^\circ = 200^\circ$</p>
+        </div>
+        <p>
+          Only (b) must be cyclic. A rhombus with a right angle is a square,
+          so some rhombuses are cyclic but a rhombus need not be. In (d) it
+          is the neighbours $100^\circ + 80^\circ$ that add to $180^\circ$,
+          which is how it gets chosen. Exercise Set 5.7 had already shown
+          the rectangle is the only parallelogram a circle passes through.
+        </p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 5</span>
         <p>Two circles of radii $10$ cm and $17$ cm have centres $A$ and
           $B$ that are $21$ cm apart. They cross at $P$ and $Q$
           (Fig. 5B.4). The length of $PQ$ is</p>
@@ -45,37 +66,6 @@
           both circles, so both centres lie on its perpendicular bisector.
         </figcaption>
       </figure>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 5</div>
-        <div class="c-example__body">
-          <p>
-            $PQ$ is a chord of both circles. $A$ is the centre of one, so
-            $A$ lies on the perpendicular bisector of $PQ$ (Exercise Set
-            5.4). So does $B$. Two points fix a line, so $AB$ is that
-            perpendicular bisector, and it meets $PQ$ at its midpoint $M$.
-            Let $AM = x$, so that $MB = 21 - x$. The half-chord $PM$ is a
-            leg of two right-angled triangles:
-          </p>
-          <div class="work">
-            <p>$PM^2 = 10^2 - x^2 = 17^2 - (21 - x)^2$</p>
-          </div>
-          <p>
-            So $100 - x^2 = 289 - 441 + 42x - x^2$, which gives $42x = 252$
-            and $x = 6$. Then $PM^2 = 100 - 36 = 64$, $PM = 8$ and
-            $PQ = 16$ cm, option (c). Check from the other side:
-            $289 - 225 = 64$.
-          </p>
-          <p>
-            Option (a) is the half-chord. Option (b) is $MB$. Option (d) is
-            the diameter of the smaller circle, its longest chord, and $PQ$
-            does not pass through $A$, so it must be shorter. Notice that
-            the two circles were never treated as two. One chord, two
-            centres, and the relation $r^2 = d^2 + (\tfrac{1}{2}\,\text{chord})^2$
-            written twice.
-          </p>
-        </div>
-      </div>
 
     </div>
   </div>

@@ -2,37 +2,59 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 4</div>
-        <div class="c-example__body">
-          <p>
-            Option (b) is a difference of squares, the identity from
-            Chapter 4, and the roots disappear when it is multiplied out:
-          </p>
-          <div class="work">
-            <p>$\left(\sqrt{5} - \sqrt{3}\right)\left(\sqrt{5} + \sqrt{3}\right)
-              = 5 - 3 = 2$</p>
-          </div>
-          <p>
-            So (b) is rational, and it is the answer. Option (a) was settled
-            in the second question of this section: it is irrational. Option
-            (c) is $\pi$ with a rational taken away, and a rational subtracted
-            from an irrational leaves an irrational, for the same reason a
-            rational added to one does.
-          </p>
-          <p>
-            Option (d) is $\sqrt{6}$, which is irrational. It is worth being
-            clear about why it has to be checked rather than assumed: two
-            irrational numbers multiplied can perfectly well give a rational.
-            $\sqrt{2} \times \sqrt{8} = 4$. What makes a product of surds
-            rational is not the surds but what is under them, and $6$ is not
-            a perfect square.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          A decimal of four places is a whole number over $10^4$.
+        </p>
+        <div class="work work--list">
+          <p>$\dfrac{p}{q} = \dfrac{N}{10^4}$, so $q$ divides $10^4$</p>
+          <p><em>exactly</em> four, so $q$ does not divide $10^3$</p>
         </div>
+        <p>
+          Option (a). Option (b) is one case of it rather than the whole:
+          $\dfrac{1}{16} = 0.0625$ stops after exactly four places, and $16$
+          divides $10^4 = 2^4 5^4$ without being it. Option (c) has the
+          divisibility the wrong way round. Option (d) would stop the
+          decimal terminating at all, since a prime factor other than $2$
+          or $5$ is what makes a decimal repeat.
+        </p>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>Which of these is rational?</p>
+        <ol class="c-parts c-parts--alpha c-parts--1">
+          <li>$\sqrt{2} + \sqrt{3}$</li>
+          <li>$\left(\sqrt{5} - \sqrt{3}\right)\left(\sqrt{5} + \sqrt{3}\right)$</li>
+          <li>$\pi - 3$</li>
+          <li>$\sqrt{2} \times \sqrt{3}$</li>
+        </ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Option (b) is a difference of squares, the identity from
+          Chapter 4, and the roots disappear when it is multiplied out:
+        </p>
+        <div class="work">
+          <p>$\left(\sqrt{5} - \sqrt{3}\right)\left(\sqrt{5} + \sqrt{3}\right)
+            = 5 - 3 = 2$</p>
+        </div>
+        <p>
+          Option (b). Option (a) was settled in the second question of this
+          section: it is irrational. Option (c) is $\pi$ with a rational
+          taken away, which leaves an irrational. Option (d) is $\sqrt{6}$,
+          and it has to be checked rather than assumed: two irrationals
+          multiplied can give a rational, since
+          $\sqrt{2} \times \sqrt{8} = 4$. What settles it is what is under
+          the root, and $6$ is not a perfect square.
+        </p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 5</span>
         <p>How many numbers of the form $\dfrac{k}{24}$, with $k$ a whole
           number, lie strictly between $\dfrac{1}{4}$ and $\dfrac{1}{3}$?</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
@@ -41,34 +63,6 @@
           <li>$2$</li>
           <li>infinitely many</li>
         </ol>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 5</div>
-        <div class="c-example__body">
-          <p>
-            Put the two ends over $24$ as well, and the counting is done for
-            you:
-          </p>
-          <div class="work">
-            <p>$\dfrac{1}{4} = \dfrac{6}{24}$, &nbsp;
-              $\dfrac{1}{3} = \dfrac{8}{24}$</p>
-          </div>
-          <p>
-            Strictly between $6$ and $8$ there is one whole number, so
-            $k = 7$ and the answer is (b). Option (c) counts $6$ and $8$
-            themselves, which the word <em>strictly</em> rules out.
-          </p>
-          <p>
-            Option (d) is the one to think about. Infinitely many rationals do
-            lie between $\dfrac{1}{4}$ and $\dfrac{1}{3}$ &mdash; that is
-            what density says, and the previous question used it. But this
-            question fixes the denominator at $24$, and a fixed denominator
-            leaves only whole numbers to choose. Density is a statement about
-            all denominators at once; take that freedom away and the count
-            becomes finite, and usually small.
-          </p>
-        </div>
       </div>
 
     </div>

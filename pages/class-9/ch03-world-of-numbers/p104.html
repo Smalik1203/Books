@@ -2,73 +2,46 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 1</div>
-        <div class="c-example__body">
-          <p>
-            The block is three digits long and it starts at the point, so one
-            multiplier is enough. With $x = 0.123123\ldots$,
-            $1000x = 123.123123\ldots$, and subtracting leaves $999x = 123$:
-          </p>
-          <div class="work">
-            <p>$x = \dfrac{123}{999} = \dfrac{41}{333}$</p>
-          </div>
-          <p>
-            That is option (a). Option (c) is $\dfrac{123}{990}$, which has a
-            $0$ in its denominator's $99\ldots9$ and so belongs to a decimal
-            with one digit outside the cycle &mdash; the answer to
-            $0.1\overline{23}$, not to this one. Option (b) is that same
-            fraction reduced.
-          </p>
-          <p>
-            Option (d) is $\dfrac{123}{1000}$, which is $0.123$ exactly, a
-            terminating decimal. A denominator of $9$s is what a repeating
-            decimal leaves behind, and a denominator of $10$s is what a
-            terminating one leaves. Reading the denominator tells you which
-            kind of decimal it came from.
-          </p>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
         </div>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 2 &middot; Try it first</span>
-        <p>$2.3\overline{5}$ in lowest terms is</p>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
+        <p>$0.\overline{123}$ in lowest terms is</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$\dfrac{47}{20}$</li>
-          <li>$\dfrac{106}{45}$</li>
-          <li>$\dfrac{212}{99}$</li>
-          <li>$\dfrac{235}{99}$</li>
+          <li>$\dfrac{41}{333}$</li>
+          <li>$\dfrac{41}{330}$</li>
+          <li>$\dfrac{123}{990}$</li>
+          <li>$\dfrac{123}{1000}$</li>
         </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 2</div>
-        <div class="c-example__body">
-          <p>
-            One digit after the point does not repeat and one does, so two
-            multipliers are needed. Put $x = 2.3555\ldots$ The first pushes
-            the $3$ past the point; the second moves the cycle on by one
-            place, so the tails line up and cancel:
-          </p>
-          <div class="work">
-            <p>$10x = 23.5555\ldots$, &nbsp; $100x = 235.5555\ldots$</p>
-            <p>$90x = 212$, &nbsp;so&nbsp;
-              $x = \dfrac{212}{90} = \dfrac{106}{45}$</p>
-          </div>
-          <p>
-            The answer is (b). Option (a) is $\dfrac{47}{20} = 2.35$, the
-            number this would be if the $5$ stopped instead of repeating.
-            Options (c) and (d) both carry a $99$, and $99$ belongs to a
-            decimal that repeats from the point onwards: (d) is
-            $2.\overline{35}$, and (c) is what comes of using $99$ where the
-            $90$ belongs.
-          </p>
-          <p>
-            The $90$ is the whole point. One $9$ for the digit that repeats,
-            one $0$ for the digit that does not &mdash; and the denominator
-            says so before any cancelling is done.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          The block is three digits long and starts at the point, so one
+          multiplier is enough.
+        </p>
+        <div class="work work--list">
+          <p>$x = 0.123123\ldots$</p>
+          <p>$1000x = 123.123123\ldots$</p>
+          <p>$999x = 123$</p>
+          <p>$x = \dfrac{123}{999} = \dfrac{41}{333}$</p>
         </div>
+        <p>
+          Option (a). Option (c) is $\dfrac{123}{990}$, whose $0$ belongs to
+          a decimal with one digit outside the cycle &mdash; the answer to
+          $0.1\overline{23}$, not to this one; option (b) is that same
+          fraction reduced. Option (d) is $\dfrac{123}{1000}$, which is
+          $0.123$ exactly. A denominator of $9$s is what a repeating decimal
+          leaves behind and a denominator of $10$s what a terminating one
+          leaves, so the denominator says which kind it came from.
+        </p>
       </div>
 
     </div>

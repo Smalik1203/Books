@@ -77,6 +77,10 @@ window.addEventListener('load', function () {
       if (band) return { kind: 'exercise', head: band };
       if (cn.indexOf('c-example') >= 0)
         return { kind: 'example', head: el.querySelector('.c-example__tab') || el };
+      // a Beyond the Book problem. Its answer, .c-solution, is the other
+      // half of the same item and opens nothing.
+      if (cn.indexOf('c-problem') >= 0)
+        return { kind: 'problem', head: el.querySelector('.c-problem__tag') || el };
       return null;
     };
     var ink = function (el) {
