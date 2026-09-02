@@ -204,6 +204,31 @@ async function qrSvg(meta) {
 const SLIM_SPINE = 14;
 
 /* ---- Shell ------------------------------------------------- */
+/* Marks for a wrap. The four corners are the trim, as on a page — but
+   a cover also has to be creased, and a printer cannot guess where:
+   the two folds either side of the spine get their own marks, top and
+   bottom. Every mark starts a bleed's distance outside the trim and
+   runs outward into the slug, so none can cross artwork. The viewBox
+   is in millimetres to keep the arithmetic readable. */
+function coverMarks(m) {
+  const o = m.bleed + m.slug;                  // trim origin within the sheet
+  const R = o + 2 * m.trimW + m.spine, B = o + m.trimH;
+  const gap = m.bleed, len = 5;
+  const l = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+  const corners = [
+    l(o - gap - len, o, o - gap, o), l(o, o - gap - len, o, o - gap),
+    l(R + gap, o, R + gap + len, o), l(R, o - gap - len, R, o - gap),
+    l(o - gap - len, B, o - gap, B), l(o, B + gap, o, B + gap + len),
+    l(R + gap, B, R + gap + len, B), l(R, B + gap, R, B + gap + len),
+  ];
+  const folds = [o + m.trimW, o + m.trimW + m.spine].flatMap((x) => [
+    l(x, o - gap - len, x, o - gap),
+    l(x, B + gap, x, B + gap + len),
+  ]);
+  return `<svg class="cropmarks" viewBox="0 0 ${m.mediaW} ${m.mediaH}" aria-hidden="true">`
+    + corners.join('') + folds.join('') + `</svg>`;
+}
+
 const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 <html lang="en">
 <head>
@@ -221,6 +246,7 @@ const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 <div class="jacket jacket--${escapeHtml(meta.edition ?? 'a4')} jacket--${escapeHtml(meta.finish ?? 'light')}${meta.direction ? ` jacket--${escapeHtml(meta.direction)}` : ''}${spine.mm < SLIM_SPINE ? ' jacket--spine-slim' : ''}">
 ${body}
 </div>
+${bleed ? coverMarks(sheet) : ''}
 </div>
 </body>
 </html>
@@ -242,12 +268,14 @@ async function buildCover(rel) {
   const tok = await tokenReader(meta.edition);
   const mm = (name) => parseFloat(tok(name));
   const trimW = mm('trim-w'), trimH = mm('trim-h'), bleedMM = mm('bleed');
+  const slugMM = mm('slug');
   const spine = spineWidth(meta);
+  const out = bleedMM + slugMM;
   const sheet = {
-    trimW, trimH, bleed: bleedMM, spine: spine.mm,
+    trimW, trimH, bleed: bleedMM, slug: slugMM, spine: spine.mm,
     sheetW: 2 * trimW + spine.mm,
-    mediaW: 2 * trimW + spine.mm + 2 * bleedMM,
-    mediaH: trimH + 2 * bleedMM,
+    mediaW: 2 * trimW + spine.mm + 2 * out,
+    mediaH: trimH + 2 * out,
   };
 
   /* ISBN. The thirteenth digit is arithmetic, not data: recompute it
@@ -420,7 +448,7 @@ async function verifySheet(pdfPath, sheet) {
   const toMM = pt => pt * 25.4 / 72;
   const w = toMM(boxes[0][0]), h = toMM(boxes[0][1]);
   console.log(`    sheet ${w.toFixed(2)} x ${h.toFixed(2)}mm`
-    + ` (wrap ${sheet.mediaW} x ${sheet.mediaH} — trim plus ${sheet.bleed}mm bleed, no marks)`);
+    + ` (wrap ${sheet.mediaW} x ${sheet.mediaH} — trim, ${sheet.bleed}mm bleed, and marks in a ${sheet.slug}mm slug)`);
   if (boxes.length > 1) console.warn(`    ! the cover came out as ${boxes.length} pages — it must be one`);
   if (Math.abs(w - sheet.mediaW) > 0.5 || Math.abs(h - sheet.mediaH) > 0.5) {
     console.warn('    ! that is off the intended sheet');

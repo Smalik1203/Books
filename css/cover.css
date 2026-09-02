@@ -290,10 +290,31 @@ body.cover {
    columns absorb it — the back column and the front column each
    carry one bleed on their outer side, the spine keeps its exact
    width — and the four inset tokens carry it too, so type and
-   artwork stay where the trim put them. No crop marks: the
-   printer imposes the job and lays its own.
+   artwork stay where the trim put them.
+
+   Outside the bleed sits the slug, holding the marks: the four trim
+   corners, and — because a wrap has to be creased and a printer
+   cannot guess where — a fold mark above and below each side of the
+   spine.
    ------------------------------------------------------------ */
-body.bleed .cover-stage { padding: 0; }
+body.bleed .cover-stage { padding: var(--slug); position: relative; }
+
+/* Laid over the whole sheet and measured in millimetres by the
+   viewBox, so every mark sits outside the bleed by construction and
+   none can print over artwork. */
+.cropmarks { display: none; }
+body.bleed .cropmarks {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.cropmarks line {
+  stroke: var(--mark);
+  stroke-width: 0.09;            /* 0.25pt, in the millimetre viewBox */
+}
 body.bleed .jacket {
   width:  calc(2 * var(--trim-w) + var(--spine-w) + 2 * var(--bleed));
   height: calc(var(--trim-h) + 2 * var(--bleed));
