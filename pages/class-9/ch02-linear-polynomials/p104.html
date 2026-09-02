@@ -3,6 +3,38 @@
     <div class="page__main">
 
       <div class="c-try">
+        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
+        <p>A linear polynomial has $p(2) = 7$ and $p(5) = 16$. Then $p(0)$
+          is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$1$</li>
+          <li>$3$</li>
+          <li>$4$</li>
+          <li>$10$</li>
+        </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 1</div>
+        <div class="c-example__body">
+          <p>
+            From $x = 2$ to $x = 5$ is three steps, and the value rises by
+            $9$. So each step adds $3$, and $a = 3$. To go back from $x = 2$
+            to $x = 0$ is two steps, so take away $6$:
+          </p>
+          <div class="work">
+            <p>$p(0) = 7 - 6 = 1$</p>
+          </div>
+          <p>
+            Option (a). Check: $p(x) = 3x + 1$ gives $p(5) = 16$. Option (b)
+            is the slope, not the value at $0$. Option (c) takes one step
+            back instead of two. Option (d) goes forward three steps instead
+            of back two.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-try">
         <span class="c-try__tag">Problem 2 &middot; Try it first</span>
         <p>An auto-rickshaw charges &#8377;$25$ for the first $2$ km and
           &#8377;$15$ for every kilometre after that. The fare for $n$ km is
@@ -45,28 +77,6 @@
           <li>$30$ cm</li>
           <li>$33$ cm</li>
         </ol>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 3</div>
-        <div class="c-example__body">
-          <p>
-            A steady rate means linear decay, so the height is $at + b$
-            with $a$ negative. In three hours the candle lost $9$ cm, so it
-            loses $3$ cm an hour, and $a = -3$. When it was lit, $t = 0$,
-            which is two hours before the first reading. In those two hours
-            it lost $6$ cm, so at the start it was
-          </p>
-          <div class="work">
-            <p>$24 + 6 = 30$ cm</p>
-          </div>
-          <p>
-            Option (c). The rule is $h = 30 - 3t$, and at $t = 5$ it gives
-            $15$. Option (b) adds only one hour's loss. Option (d) adds three
-            hours' loss, the whole gap between the readings. Option (a)
-            takes $6$ cm away, going forward in time instead of back.
-          </p>
-        </div>
       </div>
 
     </div>

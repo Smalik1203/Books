@@ -28,12 +28,19 @@ import path from 'node:path';
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CHROME = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
+// Chrome refuses to start its sandbox as root, which is how a CI
+// container usually runs. Only then is the flag added.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
 const target = process.argv[2];
 const DRY = process.argv.includes('--dry');
@@ -125,13 +132,13 @@ window.addEventListener('load', function () {
 <\/script>`;
 
 async function measure(htmlPath) {
-  const chrome = CHROME.find(existsSync);
+  const chrome = CHROME.find(c => c && existsSync(c));
   if (!chrome) throw new Error('No Chrome or Edge found — set one in CHROME.');
   const tmp = htmlPath.replace(/\.html$/, '-pack.html');
   const src = await readFile(htmlPath, 'utf8');
   await writeFile(tmp, src.replace('</head>', PROBE + '\n</head>'));
   const { stdout } = await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     '--virtual-time-budget=12000', '--dump-dom',
     'file:///' + tmp.replace(/\\/g, '/'),
   ], { maxBuffer: 1 << 26 });

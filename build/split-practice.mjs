@@ -9,6 +9,11 @@ import path from 'node:path';
 const dir = process.argv[2];
 if (!dir) { console.error('usage: node build/split-practice.mjs <pages dir>'); process.exit(1); }
 
+// Elements that close nothing. A <br> counted as an opening tag puts
+// the depth permanently out by one, and every list after it is missed.
+const VOID_TAGS = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img',
+  'input', 'link', 'meta', 'source', 'track', 'wbr']);
+
 function topLevel(html, from, tagName) {
   const out = [];
   let i = from, depth = 0, start = -1;
@@ -26,7 +31,7 @@ function topLevel(html, from, tagName) {
       depth--;
       if (depth === 0 && start >= 0) { out.push([start, gt + 1]); start = -1; }
       if (depth < 0) return { items: out, end: lt };
-    } else if (!self) {
+    } else if (!self && !VOID_TAGS.has(tag)) {
       if (depth === 0 && tag === tagName) start = lt;
       depth++;
     }
@@ -57,15 +62,30 @@ for (const f of (await readdir(dir)).filter((x) => /^p\d+.*\.html$/.test(x))) {
       : '<div class="c-practice">';
 
     // find this practice block's extent
+    // Maths writes a bare '<', and a comment writes a '<' that opens
+    // nothing. Both were counted as tags here: the depth went wrong,
+    // and once the scan ran out of tags altogether it restarted from
+    // the first '>' in the file and never stopped. Same guards as the
+    // parser above.
     const blockEnd = (() => {
       let depth = 0, i = at;
       while (i < html.length) {
         const lt = html.indexOf('<', i);
-        const close = html.startsWith('</', lt);
+        if (lt < 0) break;
+        if (html.startsWith('<!--', lt)) {
+          const end = html.indexOf('-->', lt);
+          if (end < 0) break;
+          i = end + 3;
+          continue;
+        }
+        if (!/[a-zA-Z/!]/.test(html[lt + 1] || '')) { i = lt + 1; continue; }
         const gt = html.indexOf('>', lt);
+        if (gt < 0) break;
+        const close = html.startsWith('</', lt);
+        const tag = html.slice(lt + (close ? 2 : 1), gt).match(/^[\w-]+/)?.[0]?.toLowerCase();
         const self = html[gt - 1] === '/';
         if (close) { depth--; if (depth === 0) return gt + 1; }
-        else if (!self) depth++;
+        else if (!self && !VOID_TAGS.has(tag)) depth++;
         i = gt + 1;
       }
       return html.length;
