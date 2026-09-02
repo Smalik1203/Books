@@ -1,0 +1,132 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">1</div>
+    <h1 class="chapterhead__title">A Square<br>and a Cube</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 150" role="img" aria-label="A sketched square of sixteen dots beside a sketched cube, with the squares 1, 4, 9, 16 written above">
+
+        <!-- faint graph paper behind the sketch -->
+        <g class="dg-grid">
+          <path d="M70 0 V150 M92 0 V150 M114 0 V150 M136 0 V150 M158 0 V150 M180 0 V150 M202 0 V150"/>
+          <path d="M0 8 H210 M0 30 H210 M0 52 H210 M0 74 H210 M0 96 H210 M0 118 H210 M0 140 H210"/>
+        </g>
+
+        <text class="dg-dim-label" x="8" y="22">1, 4, 9, 16, …</text>
+
+        <!-- a four-by-four square of dots -->
+        <g class="dg-doodle">
+          <circle cx="40" cy="52" r="3.2"/><circle cx="56" cy="52" r="3.2"/><circle cx="72" cy="52" r="3.2"/><circle cx="88" cy="52" r="3.2"/>
+          <circle cx="40" cy="68" r="3.2"/><circle cx="56" cy="68" r="3.2"/><circle cx="72" cy="68" r="3.2"/><circle cx="88" cy="68" r="3.2"/>
+          <circle cx="40" cy="84" r="3.2"/><circle cx="56" cy="84" r="3.2"/><circle cx="72" cy="84" r="3.2"/><circle cx="88" cy="84" r="3.2"/>
+          <circle cx="40" cy="100" r="3.2"/><circle cx="56" cy="100" r="3.2"/><circle cx="72" cy="100" r="3.2"/><circle cx="88" cy="100" r="3.2"/>
+        </g>
+        <path class="dg-sketch" d="M30 42 L98 43 L97 111 L31 110 Z"/>
+        <text class="dg-label dg-label--sm" x="64" y="128" text-anchor="middle">4 × 4 = 4²</text>
+
+        <!-- a hand-drawn cube -->
+        <path class="dg-sketch" d="M126 66 L168 67 L167 109 L125 108 Z"/>
+        <path class="dg-sketch" d="M126 66 L142 50 L184 51 L168 67"/>
+        <path class="dg-sketch" d="M184 51 L183 93 L167 109"/>
+        <text class="dg-label dg-label--sm" x="156" y="128" text-anchor="middle">n × n × n = n³</text>
+
+        <circle class="dg-doodle" cx="192" cy="20" r="8"/>
+        <path class="dg-doodle" d="M14 122 l8 8 M22 122 l-8 8"/>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">1.1</span><span class="name">The Hundred Lockers</span></h2>
+
+      <p>
+        Queen Ratnamanjuri left her fortune of <em>ratnas</em> — precious
+        stones — behind a puzzle. She wanted her son Khoisnam to have it all,
+        but she knew that if she simply gave it to him, their ninety-nine
+        relatives would pester him for ever. So her will invited all hundred
+        of them to a reading, and said: <em>if you all solve my puzzle at the
+        same time, you will share the ratnas equally. If one of you is first,
+        that one keeps everything.</em>
+      </p>
+
+      <p>
+        The minister led them to a room with a hundred lockers, all closed,
+        and gave each person a number from 1 to 100. Then he read the rules.
+      </p>
+
+      <div class="work work--list">
+        <p>Person 1 opens every locker.</p>
+        <p>Person 2 <span class="term">toggles</span> every 2nd locker — closes it if it is open, opens it if it is closed.</p>
+        <p>Person 3 toggles every 3rd locker: the 3rd, the 6th, the 9th, and so on.</p>
+        <p>Person 4 toggles every 4th locker: the 4th, the 8th, the 12th, and so on.</p>
+      </div>
+
+      <p>
+        This goes on until all hundred have had their turn. At the end some
+        lockers are open and the rest are closed, and the numbers of the open
+        ones are the code to the safe.
+      </p>
+
+      <p>
+        Before anyone had moved, Khoisnam knew which lockers would be open.
+        How?
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Follow locker 6 through the whole process. Which people touch
+              it, and does it end open or closed? Then do the same for
+              lockers 1, 4 and 9.
+            </p>
+            <p class="c-reflect__hint">
+              Person $k$ touches locker $n$ exactly when $k$ is a factor of $n$.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        A locker that is toggled an odd number of times ends open; toggled an
+        even number of times, it ends closed. And the number of times locker
+        $n$ is toggled is the number of <span class="term">factors</span> of
+        $n$, because Person $k$ touches it only when $k$ divides $n$.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Locker 6 and locker 9, followed to the end.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">locker 6</span>
+              <span>1 opens, 2 closes, 3 opens, 6 closes — four factors, so</span>
+              <span class="chip">closed</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">locker 9</span>
+              <span>1 opens, 3 closes, 9 opens — three factors, so</span>
+              <span class="chip">open</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

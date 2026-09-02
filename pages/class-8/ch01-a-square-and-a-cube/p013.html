@@ -1,0 +1,92 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">1.4</span><span class="name">Cubic Numbers</span></h2>
+
+      <p>
+        You know the word <span class="term">cube</span> from geometry: a
+        solid whose faces are all squares, meeting at right angles, with every
+        edge the same length. How many cubes of side 1 cm make a cube of side
+        2 cm? Fig. 1.5 shows them — two layers of $2 \times 2$, eight in all.
+        A cube of side 3 cm needs three layers of $3 \times 3$: twenty-seven.
+      </p>
+
+      <figure class="c-figure c-figure--lg">
+        <svg viewBox="0 0 300 135" role="img"
+             aria-label="A cube of side 2 built from 8 unit cubes, and a cube of side 3 built from 27 unit cubes">
+          <!-- cube of side 2 -->
+          <rect class="dg-face-front" x="24" y="36" width="60" height="60"/>
+          <path class="dg-face-top" d="M24 36 L39 21 L99 21 L84 36 Z"/>
+          <path class="dg-face-side" d="M84 36 L99 21 L99 81 L84 96 Z"/>
+          <path class="dg-thin" d="M54 36 V96 M24 66 H84 M54 36 L69 21 M31.5 28.5 H91.5 M84 66 L99 51 M91.5 28.5 V88.5"/>
+          <path class="dg-line" d="M24 36 L39 21 L99 21 L99 81 L84 96 L24 96 Z M84 36 V96 M84 36 L99 21 M24 36 H84"/>
+          <text class="dg-note" x="61" y="118" text-anchor="middle">2 × 2 × 2 = 8</text>
+      
+          <!-- cube of side 3 -->
+          <rect class="dg-face-front" x="180" y="33" width="72" height="72"/>
+          <path class="dg-face-top" d="M180 33 L195 18 L267 18 L252 33 Z"/>
+          <path class="dg-face-side" d="M252 33 L267 18 L267 90 L252 105 Z"/>
+          <path class="dg-thin" d="M204 33 V105 M228 33 V105 M180 57 H252 M180 81 H252 M204 33 L219 18 M228 33 L243 18 M185 28 H257 M190 23 H262 M252 57 L267 42 M252 81 L267 66 M257 28 V100 M262 23 V95"/>
+          <path class="dg-line" d="M180 33 L195 18 L267 18 L267 90 L252 105 L180 105 Z M252 33 V105 M252 33 L267 18 M180 33 H252"/>
+          <text class="dg-note" x="223" y="124" text-anchor="middle">3 × 3 × 3 = 27</text>
+        </svg>
+        <figcaption><span class="fignum">Fig. 1.5</span> &nbsp;A cube of side 2 holds 8 unit cubes; a cube of side 3 holds 27.</figcaption>
+      </figure>
+
+      <p>
+        The numbers $1, 8, 27, \ldots$ are called <span class="term">perfect
+        cubes</span>, and now you can see why. Each is obtained by multiplying
+        a number by itself three times:
+      </p>
+
+      <div class="work work--centred">
+        <p>$1 = 1 \times 1 \times 1, \quad 8 = 2 \times 2 \times 2, \quad 27 = 3 \times 3 \times 3$</p>
+      </div>
+
+      <p>
+        Is 9 a cube? We have $2 \times 2 \times 2 = 8$ and
+        $3 \times 3 \times 3 = 27$, and 9 falls between them. So 9 is not a
+        perfect cube — and nor is any number from 10 to 26.
+      </p>
+
+      <div class="c-figure c-figure--keyed c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 230 250" role="img"
+               aria-label="A cube of side 4 built from 64 unit cubes, drawn with its grid of edges">
+            <rect class="dg-face-front" x="30" y="100" width="120" height="120"/>
+            <path class="dg-face-top" d="M30 100 L50 80 L170 80 L150 100 Z"/>
+            <path class="dg-face-side" d="M150 100 L170 80 L170 200 L150 220 Z"/>
+            <path class="dg-thin" d="M60 100 V220 M90 100 V220 M120 100 V220 M30 130 H150 M30 160 H150 M30 190 H150 M60 100 L80 80 M90 100 L110 80 M120 100 L140 80 M35 95 H155 M40 90 H160 M45 85 H165 M150 130 L170 110 M150 160 L170 140 M150 190 L170 170 M155 95 V215 M160 90 V210 M165 85 V205"/>
+            <path class="dg-line" d="M30 100 L50 80 L170 80 L170 200 L150 220 L30 220 Z M150 100 V220 M150 100 L170 80 M30 100 H150"/>
+            <text class="dg-note" x="100" y="243" text-anchor="middle">4 × 4 × 4 = 64</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.6</span> &nbsp;Four layers of sixteen.</figcaption>
+        </figure>
+        <div>
+          <p>
+            Can you estimate the number of unit cubes in a cube of edge 4
+            units? Look at it carefully: each layer is a $4 \times 4$ square
+            of 16 unit cubes, and there are 4 such layers, so the total is
+            $4 \times 4 \times 4 = 64$. In the same way,
+            $5 \times 5 \times 5 = 125$, so 125 is a cube.
+          </p>
+          <p>
+            For any number $n$, the product $n \times n \times n$ is written
+            $n^3$ and read <em>$n$ cubed</em>. So $4^3 = 64$ and $5^3 = 125$.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Perfect cube</div>
+        <p>
+          A <strong>perfect cube</strong> is the cube of a natural number:
+          $1, 8, 27, 64, 125, \ldots$ Every perfect cube is the number of
+          unit cubes in a cube whose edge is a whole number of units.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

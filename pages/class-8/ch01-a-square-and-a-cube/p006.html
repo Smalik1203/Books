@@ -1,0 +1,102 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <figure class="c-figure c-figure--xl">
+        <svg viewBox="0 0 390 125" role="img"
+             aria-label="Squares of 4, 9 and 16 dots, each with its newest inverted L of dots shown in a second colour: three dots, then five, then seven">
+          <g transform="scale(1.2)">
+          <!-- 2 x 2 -->
+          <circle class="dg-fill-a" cx="34" cy="22" r="4"/>
+          <circle class="dg-fill-c" cx="48" cy="22" r="4"/>
+          <circle class="dg-fill-c" cx="34" cy="36" r="4"/>
+          <circle class="dg-fill-c" cx="48" cy="36" r="4"/>
+          <path class="dg-thin" d="M41 15 H55 V43 H27 V29 H41 Z"/>
+      
+          <!-- 3 x 3 -->
+          <circle class="dg-fill-a" cx="118" cy="22" r="4"/><circle class="dg-fill-a" cx="132" cy="22" r="4"/><circle class="dg-fill-c" cx="146" cy="22" r="4"/>
+          <circle class="dg-fill-a" cx="118" cy="36" r="4"/><circle class="dg-fill-a" cx="132" cy="36" r="4"/><circle class="dg-fill-c" cx="146" cy="36" r="4"/>
+          <circle class="dg-fill-c" cx="118" cy="50" r="4"/><circle class="dg-fill-c" cx="132" cy="50" r="4"/><circle class="dg-fill-c" cx="146" cy="50" r="4"/>
+          <path class="dg-thin" d="M139 15 H153 V57 H111 V43 H139 Z"/>
+      
+          <!-- 4 x 4 -->
+          <circle class="dg-fill-a" cx="230" cy="22" r="4"/><circle class="dg-fill-a" cx="244" cy="22" r="4"/><circle class="dg-fill-a" cx="258" cy="22" r="4"/><circle class="dg-fill-c" cx="272" cy="22" r="4"/>
+          <circle class="dg-fill-a" cx="230" cy="36" r="4"/><circle class="dg-fill-a" cx="244" cy="36" r="4"/><circle class="dg-fill-a" cx="258" cy="36" r="4"/><circle class="dg-fill-c" cx="272" cy="36" r="4"/>
+          <circle class="dg-fill-a" cx="230" cy="50" r="4"/><circle class="dg-fill-a" cx="244" cy="50" r="4"/><circle class="dg-fill-a" cx="258" cy="50" r="4"/><circle class="dg-fill-c" cx="272" cy="50" r="4"/>
+          <circle class="dg-fill-c" cx="230" cy="64" r="4"/><circle class="dg-fill-c" cx="244" cy="64" r="4"/><circle class="dg-fill-c" cx="258" cy="64" r="4"/><circle class="dg-fill-c" cx="272" cy="64" r="4"/>
+          <path class="dg-thin" d="M265 15 H279 V71 H223 V57 H265 Z"/>
+      
+          <path class="dg-move" d="M72 36 H98" marker-end="url(#dg-arrow)"/>
+          <path class="dg-move" d="M172 36 H208" marker-end="url(#dg-arrow)"/>
+      
+          <text class="dg-note" x="41" y="94" text-anchor="middle">1 + 3</text>
+          <text class="dg-note" x="132" y="94" text-anchor="middle">1 + 3 + 5</text>
+          <text class="dg-note" x="251" y="94" text-anchor="middle">1 + 3 + 5 + 7</text>
+          </g>
+        </svg>
+        <figcaption><span class="fignum">Fig. 1.2</span> &nbsp;Each inverted L adds the next odd number, and the square grows by one along each side.</figcaption>
+      </figure>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="8.5" width="12" height="12"/>
+            <path d="M3.5 8.5l5-5h12v12l-5 5"/><path d="M15.5 8.5l5-5"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>An argument can be made without words. Fig. 1.2 is a complete
+            proof, on its own, that the sum of the first $n$ odd numbers is $n^2$.</p>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Squares and odd numbers</div>
+        <p>
+          The sum of the first $n$ odd numbers is $n^2$. Every perfect square
+          is a sum of consecutive odd numbers starting from 1 — and the $n$th
+          odd number is $2n - 1$.
+        </p>
+      </div>
+
+      <h3>A test for perfect squares</h3>
+
+      <p>
+        This gives a way to test a number without knowing any square roots.
+        Subtract 1, then 3, then 5, and so on, and watch whether you land
+        exactly on 0.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Is 25 a perfect square? Is 38?</p>
+          <div class="work work--centred">
+            <p>$25 - 1 = 24, \quad 24 - 3 = 21, \quad 21 - 5 = 16, \quad 16 - 7 = 9, \quad 9 - 9 = 0$</p>
+          </div>
+          <p>
+            Five subtractions bring 25 exactly to 0, so
+            $25 = 1 + 3 + 5 + 7 + 9$, the sum of the first five odd numbers,
+            and $25 = 5^2$. Now 38:
+          </p>
+          <div class="work work--centred">
+            <p>$38 - 1 = 37, \quad 37 - 3 = 34, \quad 34 - 5 = 29, \quad 29 - 7 = 22, \quad 22 - 9 = 13, \quad 13 - 11 = 2, \quad 2 - 13 = -11$</p>
+          </div>
+          <p>
+            The subtractions jump over 0 without landing on it. So 38 is not
+            a sum of consecutive odd numbers from 1, and it is not a perfect
+            square.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        The rule, then: a natural number is a perfect square exactly when
+        subtracting $1, 3, 5, \ldots$ in turn lands on 0, and the number of
+        subtractions is its square root. The same fact answers a different
+        kind of question.
+      </p>
+
+    </div>
+  </div>
+</section>

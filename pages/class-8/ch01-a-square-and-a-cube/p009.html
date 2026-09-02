@@ -1,0 +1,79 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>Is it a perfect square?</h3>
+
+      <p>
+        Given a number such as 576 or 327, how do we tell whether it is a
+        perfect square — and if it is, find its square root? The units digit
+        settles 327 at once: it ends in 7, and no square does. But 576 ends
+        in 6, which decides nothing. There are three ways to go on.
+      </p>
+
+      <p>
+        <strong>List the squares.</strong> We know $20^2 = 400$, so we can
+        square 21, 22, 23, … until we reach 576 or pass it:
+      </p>
+
+      <div class="work work--centred">
+        <p>$20^2 = 400, \quad 21^2 = 441, \quad 22^2 = 484, \quad 23^2 = 529, \quad 24^2 = 576$</p>
+      </div>
+
+      <p>
+        So $\sqrt{576} = 24$. This works, but for a large number it means a
+        great many multiplications.
+      </p>
+
+      <p>
+        <strong>Subtract odd numbers.</strong> Every perfect square is a sum
+        of consecutive odd numbers from 1, so the test of Example 3 finds the
+        root as it goes.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Find $\sqrt{81}$ by subtracting odd numbers.</p>
+          <div class="work work--centred">
+            <p>$81 - 1 = 80, \quad 80 - 3 = 77, \quad 77 - 5 = 72, \quad 72 - 7 = 65, \quad 65 - 9 = 56$</p>
+            <p>$56 - 11 = 45, \quad 45 - 13 = 32, \quad 32 - 15 = 17, \quad 17 - 17 = 0$</p>
+          </div>
+          <p>
+            We reached 0 at the ninth step, so $\sqrt{81} = 9$. Could we find
+            $\sqrt{729}$ the same way? Yes — but it would take 27 subtractions.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        <strong>Factorise into primes.</strong> A perfect square is a number
+        multiplied by itself, so its prime factors ought to split into two
+        identical groups. This is the method that scales.
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Is 324 a perfect square? Is 156?</p>
+          <p>$324 = 2 \times 2 \times 3 \times 3 \times 3 \times 3$. Split the factors into two equal groups:</p>
+          <div class="work work--centred">
+            <p>$324 = (2 \times 3 \times 3) \times (2 \times 3 \times 3) = (2 \times 3 \times 3)^2 = 18^2$</p>
+          </div>
+          <p>
+            The same thing seen as pairs: $324 = (2 \times 2) \times (3 \times 3) \times (3 \times 3)$,
+            every prime paired off. So 324 is a perfect square and
+            $\sqrt{324} = 2 \times 3 \times 3 = 18$.
+          </p>
+          <p>
+            For 156, the factorisation is $2 \times 2 \times 3 \times 13$.
+            The two 2s pair, but the 3 and the 13 have no partners. The
+            factors cannot be split into two identical groups, so 156 is not
+            a perfect square.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
