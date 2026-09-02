@@ -737,7 +737,7 @@ ${rows}
 
   const pages = [title, imprint, toc];
   // the body must open on a recto, so the front matter is kept even
-  if (pages.length % 2) pages.push(page('page--verso page--blank', ''));
+  if (!wantTight && pages.length % 2) pages.push(page('page--verso page--blank', ''));
   return pages;
 }
 
@@ -811,7 +811,7 @@ async function buildBook(cls) {
     const files = (await readdir(src)).filter((f) => /^p\d+.*\.html$/.test(f)).sort();
     if (!files.length) continue;
 
-    if (folio % 2 === 0) { bodies.push(blankVerso(folio)); folio++; blanks++; }
+    if (!wantTight && folio % 2 === 0) { bodies.push(blankVerso(folio)); folio++; blanks++; }
 
     const parts = [];
     for (const f of files) {
@@ -897,10 +897,15 @@ const wantPdf = args.includes('--pdf');
 const wantPng = args.includes('--png');
 const wantBleed = args.includes('--bleed');
 const wantBook = args.includes('--book');
+/* A bound book opens each chapter on a recto, which costs a blank
+   verso wherever the previous chapter ended odd. That is the right
+   default for print. --tight drops those blanks, for a copy that is
+   going to be read on a screen and scrolled rather than turned. */
+const wantTight = args.includes('--tight');
 const target = args.find(a => !a.startsWith('--'));
 
 if (!target) {
-  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book]');
+  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book] [--tight]');
   process.exit(1);
 }
 
