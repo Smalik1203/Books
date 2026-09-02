@@ -765,8 +765,15 @@ ${rows}
       </ol>`);
 
   const pages = [title, imprint, toc];
-  // the body must open on a recto, so the front matter is kept even
-  if (!wantTight && pages.length % 2) pages.push(page('page--verso page--blank', ''));
+  /* The body must open on a recto, so the front matter is kept even.
+     This blank is NOT one of the blanks --tight drops: those buy a
+     chapter opening on a right-hand page and cost a leaf each, while
+     this one sets the parity of the whole book. Without it the front
+     matter is odd, folio 1 lands on the second side of a leaf, and
+     every page after it is styled for the side it is not on — inner
+     margin and gutter allowance at the fore-edge, folio and footer
+     slab against the spine. It shipped that way once. */
+  if (pages.length % 2) pages.push(page('page--verso page--blank', ''));
   return pages;
 }
 
@@ -889,6 +896,26 @@ async function buildBook(cls) {
   if (wantBleed) {
     bleedHtml = path.join(outDir, name + '-bleed.html');
     await writeFile(bleedHtml, bookShell(meta, rendered, scopes, sheet, sheet));
+  }
+
+  /* Every leaf has two sides and the first sheet of a bound book is a
+     recto, so sheet n is a recto exactly when n is odd. A page styled
+     for the other side puts its gutter allowance, its running head and
+     its folio on the wrong edge — and since the offset comes from the
+     count of pages before it, one page out of place inverts the whole
+     book rather than one leaf of it. Cheap to check, invisible in a
+     PDF reader that shows one page at a time, and wrong on paper. */
+  const sides = [...rendered.matchAll(/<section ([^>]*class="page[^>]*)>/g)]
+    .map((m, i) => ({
+      sheet: i + 1,
+      styled: /page--verso/.test(m[1]) ? 'verso' : 'recto',
+      physical: (i + 1) % 2 ? 'recto' : 'verso',
+    }));
+  const wrong = sides.filter((s) => s.styled !== s.physical);
+  if (wrong.length) {
+    console.warn(`    ! ${wrong.length} of ${sides.length} sheets are styled for the side they are not on`
+      + ` — first at sheet ${wrong[0].sheet}, styled ${wrong[0].styled} on a ${wrong[0].physical}.`
+      + ` The front matter has to be an even number of pages.`);
   }
 
   console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} numbered pages`
