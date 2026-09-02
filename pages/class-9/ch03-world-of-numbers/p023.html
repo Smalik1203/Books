@@ -2,75 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
+      <h3>A rational number with a secret</h3>
+
+      <p>
+        Expand $\dfrac{1}{7}$ and you get $0.\overline{142857}$ — a cycle six
+        digits long. Now multiply that block by each of 1 to 6:
+      </p>
+
+      <div class="work work--list">
+        <p>$142857 \times 1 = 142857$</p>
+        <p>$142857 \times 2 = 285714$</p>
+        <p>$142857 \times 3 = 428571$</p>
+        <p>$142857 \times 4 = 571428$</p>
+        <p>$142857 \times 5 = 714285$</p>
+        <p>$142857 \times 6 = 857142$</p>
+      </div>
+
+      <p>
+        Every answer uses the same six digits in the same cyclic order — they
+        have only been rotated. A number that behaves this way is called a
+        <span class="term">cyclic number</span>, and $142857$ is the smallest
+        of them. Nothing was arranged here; it falls out of the long division
+        by 7, whose six possible remainders come round in a fixed order.
+      </p>
+
+      <h3>What an irrational decimal looks like</h3>
+
+      <p>
+        Irrational numbers have decimal expansions that never end and never
+        settle into a cycle. There is no repeating block, however far you look:
+      </p>
+
+      <div class="work work--list">
+        <p>$\sqrt{2} = 1.4142135623730950488\ldots$</p>
+        <p>$\pi = 3.1415926535897932384\ldots$</p>
+      </div>
+
+      <p>
+        This gives a clean test in both directions. Terminating or repeating
+        means rational; non-terminating and non-repeating means irrational.
+        And it explains the earlier proof from a second angle: if $\sqrt{2}$
+        were $\tfrac{p}{q}$, its expansion would have had to fall into a cycle
+        of at most $q - 1$ digits, and it never does.
+      </p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>
+            Beware of $1.01001000100001\ldots$ — the pattern is obvious, but no
+            fixed block repeats. A pattern you can describe is not the same as
+            a cycle.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.5</div>
+        <ol class="c-questions">
           <li>
-              Classify each as rational or irrational, and give the fraction
-              where there is one:
-              <ol class="c-parts c-parts--1">
-                <li>$\sqrt{81}$</li>
-                <li>$\sqrt{12}$</li>
-                <li>$0.3333\ldots$</li>
-                <li>$0.123451234512345\ldots$</li>
-                <li>$1.01001000100001\ldots$ — is any single block repeating?</li>
-                <li>$23.560185612239874790120$</li>
-              </ol>
+              Without dividing, say which of $\dfrac{7}{20}$, $\dfrac{4}{15}$ and
+              $\dfrac{13}{250}$ have terminating decimals and which repeat. Then
+              do the divisions and check yourself.
             </li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
+        <ol class="c-questions" data-start="2">
           <li>
-              The number $0.\overline{9}$ is rational. Using the method of
-              Example 10 — let $x = 0.\overline{9}$, multiply by 10, subtract —
-              show that it is exactly equal to 1. Then say why that is less
-              surprising than it looks.
+              Work out $\dfrac{3}{13}$ by long division and identify the
+              repeating block. Now do $\dfrac{1}{13}$ and $\dfrac{2}{13}$. What
+              do the three blocks have to do with one another?
             </li>
         </ol>
       </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li class="hard">
-              The repeating block of $\dfrac{1}{7}$ is cyclic. Find other numbers
-              $n$ whose reciprocal $\dfrac{1}{n}$ has a cyclic block. What do the
-              values of $n$ that work have in common?
-            </li>
-        </ol>
-      </div>
-
-      <p>
-        One last oddity, which question 4 walks into. Terminating decimals are
-        not unique. Just as $1 = \tfrac{10}{10} = \tfrac{100}{100}$, every
-        terminating decimal has a second form ending in repeating nines:
-        $1.000\ldots = 0.999\ldots$ and $2.47000\ldots = 2.46999\ldots$
-      </p>
-
-      <p>
-        Most people meet $0.\overline{9} = 1$ with resistance, feeling it must
-        fall a little short. It does not. There is no room between them — any
-        number you propose as lying in the gap can be shown to be larger than
-        $0.\overline{9}$, and the algebra of question 4 settles it outright.
-      </p>
-
-      <h2><span class="badge">3.7</span><span class="name">The Never-Ending Journey</span></h2>
-
-      <p>
-        We have come a long way. From notches cut into the Ishango bone to
-        keep track of days, to the philosophical void of <em>śūnya</em> and
-        Brahmagupta's decision to make a number of it. Across zero into debts
-        and fortunes. Into the space between the integers, which turned out to
-        be infinitely crowded with fractions — and then turned out, all the
-        same, to have gaps in it that no fraction reaches.
-      </p>
-
-      <p>
-        Each stage was forced by a question the previous stage could not
-        answer. That is worth noticing, because it is how the subject grows:
-        not by decree, but because someone wrote down something the existing
-        numbers could not name.
-      </p>
 
     </div>
   </div>

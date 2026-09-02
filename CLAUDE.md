@@ -47,7 +47,7 @@ builder measures the difference now and crops the capture back to the trim;
 if a proof ever looks short at the foot again, that measurement is the
 first thing to check.
 
-## Three checks the builder does not do
+## Four checks the builder does not do
 
 The builder measures pages. These measure what is on them, and each was
 written after the thing it catches had already shipped.
@@ -56,6 +56,7 @@ written after the thing it catches had already shipped.
 node build/fit-options.mjs  <chapter> [--fix]   # options set in more columns than they fit
 node build/check-labels.mjs <chapter>           # figure labels printing through each other
 node build/gaps.mjs         <chapter> [--min N] # what is holding each short page open
+node build/orphans.mjs      <class|chapter> [--all]  # openers stranded at the foot
 ```
 
 `fit-options` measures every option at its natural width. A set of
@@ -71,6 +72,22 @@ the same chapter.
 `gaps` does not fix anything. It names the block that would not fit, which
 is the difference between a fitting problem and a design decision: a gap
 held by a figure or a heading stays, and repack cannot help you.
+
+`orphans` reports openers stranded at the foot of a page. An **opener** is
+anything that starts new matter — a section head, a subtopic head, a stage
+head, the band that opens an exercise set, or a worked example — and under
+it, measured from the foot of its own title, there must be at least five
+lines of set matter. Less than that and the reader is handed a promise and
+a page turn, with the figure the example was drawn to explain overleaf.
+`--all` lists every page that ends on an opener with its count.
+
+It only reports; the rule that acts on it is in `repack.mjs`, so **run
+`refit` to apply it**. A `--head` panel is not an opener — that is the near
+half of a panel `close-gaps` ran over the break on purpose. Which is also
+why `close-gaps` is at odds with this rule: it fills a short page by
+setting the next example's first rows at the foot, and three lines of an
+example above a page turn is the thing being removed. Close those gaps by
+editing the prose at the join instead.
 
 ## Escaping — read this before writing any LaTeX
 

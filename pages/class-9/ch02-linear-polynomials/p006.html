@@ -2,6 +2,53 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A chess club charges a joining fee of ₹$200$, and ₹$50$ for every match
+          a member plays. What does a member pay?</p>
+          <p>It depends how much chess she plays, so tabulate it.</p>
+          <table>
+            <thead>
+              <tr><th>Matches played</th><th>Amount paid (₹)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>250</td></tr>
+              <tr><td>2</td><td>300</td></tr>
+              <tr><td>3</td><td>350</td></tr>
+              <tr><td>4</td><td>400</td></tr>
+              <tr><td>5</td><td>450</td></tr>
+              <tr><td>…</td><td>…</td></tr>
+              <tr><td>$m$</td><td>$200 + 50m$</td></tr>
+            </tbody>
+          </table>
+          <p>So a member who has played $m$ matches has paid ₹$(200 + 50m)$, and
+          $200 + 50m$ is a linear polynomial in $m$. Each new match adds ₹$50$ —
+          the same ₹$50$, whether it is her second match or her fortieth.</p>
+        </div>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>A member has paid ₹$750$. How many matches has she played?</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Examples 4 and 5 have the same shape underneath. In the first, every extra
+      half-centimetre of side added $2$ cm to the perimeter. In the second, every extra
+      match added ₹$50$. Neither increase grows or fades: it is the same step each
+      time, and that constant step is what a linear polynomial is for.</p>
+
       <div class="c-keyidea">
         <div class="c-keyidea__title">Linear pattern</div>
         <p>Take a linear polynomial and evaluate it at $1$, $2$, $3$, and so on. The
@@ -13,54 +60,6 @@
       <p>There is a second thing to do with a linear polynomial besides evaluating it.
       Set it equal to a number, and you have a <span class="term">linear
       equation</span> — a question rather than a rule, with an answer to be found.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Two numbers add to $64$, and one of them is $10$ more than the other.
-          Find them.</p>
-          <p>Call the smaller one $x$. Then the larger is $x + 10$, and their sum is
-          $64$.</p>
-          <div class="work">
-            <p>$x + (x + 10) = 64$</p>
-            <p>$2x + 10 = 64$</p>
-            <p>$2x = 54$</p>
-            <p>$x = 27$</p>
-          </div>
-          <p>So the numbers are $27$ and $37$. Notice what was equated to what:
-          $2x + 10$ is a linear polynomial, and setting it equal to $64$ turned it
-          into a linear equation with a single answer.</p>
-        </div>
-      </div>
-
-      <p>There is another way to look at a polynomial, and for the rest of this
-      chapter it is the more useful one. Rather than an expression to be simplified,
-      treat it as a machine: feed it a number, and it hands one back.</p>
-
-      <p>Take $2x + 3$. Put in $x = 4$ and it returns $2 \times 4 + 3 = 11$. Put in
-      $x = -6$ and it returns $2 \times (-6) + 3 = -9$. Every input has exactly one
-      output, and a rule of that kind is called a <span class="term">function</span>
-      of $x$.</p>
-
-      <div class="c-figure c-figure--md">
-        <figure>
-          <svg viewBox="0 0 200 176" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="An input-output machine: 4 goes in, 2x + 3 acts on it, 11 comes out">
-            <rect class="dg-fill-d" x="70" y="4" width="60" height="24" rx="3"/>
-            <text class="dg-label" x="100" y="21" text-anchor="middle">x = 4</text>
-            <path class="dg-move" d="M100 30V52" marker-end="url(#dg-arrow)"/>
-            <rect class="dg-face-front" x="40" y="56" width="120" height="62" rx="4"/>
-            <rect class="dg-line" x="40" y="56" width="120" height="62" rx="4"/>
-            <text class="dg-note" x="100" y="76" text-anchor="middle">the machine</text>
-            <text class="dg-label" x="100" y="98" text-anchor="middle">2x + 3</text>
-            <path class="dg-move" d="M100 122V144" marker-end="url(#dg-arrow)"/>
-            <rect class="dg-fill-d" x="70" y="148" width="60" height="24" rx="3"/>
-            <text class="dg-label" x="100" y="165" text-anchor="middle">11</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 2.3</span> A linear expression as an
-          input–output process. Change the input and the output changes with it.</figcaption>
-        </figure>
-      </div>
 
     </div>
   </div>
