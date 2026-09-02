@@ -2,80 +2,102 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+        <p>The number of whole numbers $n$ for which $n^4 + 4$ is a prime
+          number is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$0$</li>
+          <li>$1$</li>
+          <li>$2$</li>
+          <li>infinitely many</li>
+        </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 5</div>
+        <div class="c-example__body">
+          <p>
+            $n^4 + 4$ is $x^4 + 4y^4$ with $x = n$ and $y = 1$. Stage 1
+            factorised that:
+          </p>
+          <div class="work">
+            <p>$n^4 + 4 = \left(n^2 - 2n + 2\right)\left(n^2 + 2n + 2\right)$</p>
+          </div>
+          <p>
+            A number written as a product of two factors is prime only if
+            one of the factors is $1$. The smaller factor is
+            $n^2 - 2n + 2 = (n - 1)^2 + 1$. This is $1$ only when $n = 1$.
+            For every other whole number $n$ it is at least $2$. The other
+            factor is also at least $2$. So the product is not prime. At
+            $n = 1$ itself, $n^4 + 4 = 5$, which is prime. So there is
+            exactly one such $n$, option (b).
+          </p>
+        </div>
+      </div>
+
       <div class="c-stage">
-        <div class="c-stage__num">6</div>
+        <div class="c-stage__num">3</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Competitive-Style Thinking</div>
-          <div class="c-stage__for">Four moves worth more than another identity.</div>
+          <div class="c-stage__title">Problem Sets</div>
+          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
         </div>
       </div>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">Eliminate</span>
-          <span>The middle term is the fastest check. Multiply a candidate
-            factorisation back and look only at the term in $x$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Check sufficiency</span>
-          <span>$a + b$ and $ab$ together fix every symmetric expression in
-            $a$ and $b$. Neither on its own fixes any of them.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Find the constraint</span>
-          <span>$(a - b)^2 = (a + b)^2 - 4ab$. Any two of those three
-            quantities hand you the third.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Estimate first</span>
-          <span>No square is negative. If an answer would need $(a-b)^2$ to be
-            negative, the two numbers are not real.</span>
-        </div>
-      </div>
-
-      <p class="c-stage__ask">Name the move, then use it.</p>
 
       <div class="c-practice">
+        <div class="c-practice__head">Set A &middot; One identity each</div>
         <ol class="c-questions">
           <li>
-            <strong>Eliminate.</strong> Check only the middle term.
-            $x^2 - 4x + 4$ factorises as
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$(x-2)(x+2)$</li><li>$(x-2)^2$</li>
-              <li>$(x+2)^2$</li><li>$(x-4)(x-1)$</li>
-            </ol>
-          </li>
+              The value of $103 \times 97$ is
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$9891$</li>
+                <li>$9991$</li>
+                <li>$9999$</li>
+                <li>$10009$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
           <li>
-            <strong>Sufficiency.</strong> Given $a + b = 7$ and
-            $a^3 + b^3 = 133$, find $ab$ and then $(a - b)^2$. How many real
-            pairs $(a, b)$ are there?
-          </li>
+              If $x + \dfrac{1}{x} = 5$, then $x^2 + \dfrac{1}{x^2}$ equals
+              <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
+                <li>$21$</li>
+                <li>$23$</li>
+                <li>$25$</li>
+                <li>$27$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
           <li>
-            <strong>Constraint.</strong> A student squares numbers by
-            $a^2 = (a+b)(a-b) + b^2$. One row is wrong: find it, say what was
-            done, and give the right answer.
-            <table>
-              <thead>
-                <tr><th>$a$</th><th>$b$</th><th>$(a+b)(a-b)$</th><th>$b^2$</th><th>$a^2$</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>45</td><td>5</td><td>$50 \times 40 = 2000$</td><td>25</td><td>2025</td></tr>
-                <tr><td>68</td><td>2</td><td>$70 \times 66 = 4620$</td><td>4</td><td>4624</td></tr>
-                <tr><td>91</td><td>9</td><td>$100 \times 82 = 8200$</td><td>81</td><td>8119</td></tr>
-                <tr><td>37</td><td>3</td><td>$40 \times 34 = 1360$</td><td>9</td><td>1369</td></tr>
-              </tbody>
-            </table>
-          </li>
+              $(a + b + c)^2 - \left(a^2 + b^2 + c^2\right)$ is equal to
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$0$</li>
+                <li>$abc$</li>
+                <li>$ab + bc + ca$</li>
+                <li>$2(ab + bc + ca)$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
           <li>
-            <strong>Estimate.</strong> $n^3 - n$ comes out a multiple of $6$
-            at $n = 2, 3, 4, 5$. Which of these explains it?
-            <ol class="c-parts c-parts--alpha c-parts--1">
-              <li>It is even, and every even number is a multiple of $6$</li>
-              <li>$n^3 - n = (n-1)n(n+1)$, three consecutive whole numbers</li>
-              <li>It was checked for four values of $n$</li>
-              <li>$6$ divides $n^3$ for every $n$</li>
-            </ol>
-          </li>
+              $27a^3 + 8b^3$ factorises as
+              <ol class="c-parts c-parts--alpha">
+                <li>$(3a + 2b)\left(9a^2 - 6ab + 4b^2\right)$</li>
+                <li>$(3a + 2b)\left(9a^2 + 6ab + 4b^2\right)$</li>
+                <li>$(3a - 2b)\left(9a^2 + 6ab + 4b^2\right)$</li>
+                <li>$(3a + 2b)\left(3a^2 - 6ab + 2b^2\right)$</li>
+              </ol>
+            </li>
         </ol>
       </div>
 

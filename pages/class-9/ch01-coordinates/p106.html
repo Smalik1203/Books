@@ -2,90 +2,158 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+        <p>The number of points with whole-number coordinates that are
+          exactly $5$ units from the origin is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$4$</li>
+          <li>$8$</li>
+          <li>$12$</li>
+          <li>$16$</li>
+        </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 5</div>
+        <div class="c-example__body">
+          <p>
+            A point $(x, y)$ is $5$ from the origin when $x^2 + y^2 = 25$.
+            So the question asks: in how many ways is $25$ a sum of two
+            squares of whole numbers? The squares up to $25$ are $0$, $1$,
+            $4$, $9$, $16$ and $25$, and the only pairs that add to $25$ are
+          </p>
+          <div class="work">
+            <p>$25 + 0$ &nbsp;and&nbsp; $9 + 16$</p>
+          </div>
+          <p>
+            The first gives $(\pm 5, 0)$ and $(0, \pm 5)$, four points on the
+            axes. The second gives $(\pm 3, \pm 4)$ and $(\pm 4, \pm 3)$,
+            eight points off them. Twelve in all, option (c), shown in
+            Fig. 1B.4. Option (a) counts only the points on the axes.
+            Option (b) is the eight points off the axes with the four on
+            the axes forgotten. Option (d) would allow $(\pm 5, \pm 5)$,
+            which are $\sqrt{50}$ from the origin, not $5$.
+          </p>
+        </div>
+      </div>
+
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 0 300 292" role="img"
+             aria-label="A coordinate grid from minus six to six in both directions, with the twelve whole-number points at distance five from the origin marked, and a dashed circle through them">
+        <g class="dg-grid"><path d="M28 28 V268 M48 28 V268 M68 28 V268 M88 28 V268 M108 28 V268 M128 28 V268 M148 28 V268 M168 28 V268 M188 28 V268 M208 28 V268 M228 28 V268 M248 28 V268 M268 28 V268 M28 268 H268 M28 248 H268 M28 228 H268 M28 208 H268 M28 188 H268 M28 168 H268 M28 148 H268 M28 128 H268 M28 108 H268 M28 88 H268 M28 68 H268 M28 48 H268 M28 28 H268"/></g>
+        <line class="dg-axis" x1="28" y1="148" x2="268" y2="148"/>
+        <line class="dg-axis" x1="148" y1="28" x2="148" y2="268"/>
+        <line class="dg-thin" x1="28" y1="144" x2="28" y2="152"/>
+        <text class="dg-tick" x="28" y="165" text-anchor="middle">&minus;6</text>
+        <line class="dg-thin" x1="48" y1="144" x2="48" y2="152"/>
+        <text class="dg-tick" x="48" y="165" text-anchor="middle">&minus;5</text>
+        <line class="dg-thin" x1="68" y1="144" x2="68" y2="152"/>
+        <text class="dg-tick" x="68" y="165" text-anchor="middle">&minus;4</text>
+        <line class="dg-thin" x1="88" y1="144" x2="88" y2="152"/>
+        <text class="dg-tick" x="88" y="165" text-anchor="middle">&minus;3</text>
+        <line class="dg-thin" x1="108" y1="144" x2="108" y2="152"/>
+        <text class="dg-tick" x="108" y="165" text-anchor="middle">&minus;2</text>
+        <line class="dg-thin" x1="128" y1="144" x2="128" y2="152"/>
+        <text class="dg-tick" x="128" y="165" text-anchor="middle">&minus;1</text>
+        <line class="dg-thin" x1="168" y1="144" x2="168" y2="152"/>
+        <text class="dg-tick" x="168" y="165" text-anchor="middle">1</text>
+        <line class="dg-thin" x1="188" y1="144" x2="188" y2="152"/>
+        <text class="dg-tick" x="188" y="165" text-anchor="middle">2</text>
+        <line class="dg-thin" x1="208" y1="144" x2="208" y2="152"/>
+        <text class="dg-tick" x="208" y="165" text-anchor="middle">3</text>
+        <line class="dg-thin" x1="228" y1="144" x2="228" y2="152"/>
+        <text class="dg-tick" x="228" y="165" text-anchor="middle">4</text>
+        <line class="dg-thin" x1="248" y1="144" x2="248" y2="152"/>
+        <text class="dg-tick" x="248" y="165" text-anchor="middle">5</text>
+        <line class="dg-thin" x1="268" y1="144" x2="268" y2="152"/>
+        <text class="dg-tick" x="268" y="165" text-anchor="middle">6</text>
+        <line class="dg-thin" x1="144" y1="268" x2="152" y2="268"/>
+        <text class="dg-tick" x="140" y="272" text-anchor="end">&minus;6</text>
+        <line class="dg-thin" x1="144" y1="248" x2="152" y2="248"/>
+        <text class="dg-tick" x="140" y="252" text-anchor="end">&minus;5</text>
+        <line class="dg-thin" x1="144" y1="228" x2="152" y2="228"/>
+        <text class="dg-tick" x="140" y="232" text-anchor="end">&minus;4</text>
+        <line class="dg-thin" x1="144" y1="208" x2="152" y2="208"/>
+        <text class="dg-tick" x="140" y="212" text-anchor="end">&minus;3</text>
+        <line class="dg-thin" x1="144" y1="188" x2="152" y2="188"/>
+        <text class="dg-tick" x="140" y="192" text-anchor="end">&minus;2</text>
+        <line class="dg-thin" x1="144" y1="168" x2="152" y2="168"/>
+        <text class="dg-tick" x="140" y="172" text-anchor="end">&minus;1</text>
+        <line class="dg-thin" x1="144" y1="128" x2="152" y2="128"/>
+        <text class="dg-tick" x="140" y="132" text-anchor="end">1</text>
+        <line class="dg-thin" x1="144" y1="108" x2="152" y2="108"/>
+        <text class="dg-tick" x="140" y="112" text-anchor="end">2</text>
+        <line class="dg-thin" x1="144" y1="88" x2="152" y2="88"/>
+        <text class="dg-tick" x="140" y="92" text-anchor="end">3</text>
+        <line class="dg-thin" x1="144" y1="68" x2="152" y2="68"/>
+        <text class="dg-tick" x="140" y="72" text-anchor="end">4</text>
+        <line class="dg-thin" x1="144" y1="48" x2="152" y2="48"/>
+        <text class="dg-tick" x="140" y="52" text-anchor="end">5</text>
+        <line class="dg-thin" x1="144" y1="28" x2="152" y2="28"/>
+        <text class="dg-tick" x="140" y="32" text-anchor="end">6</text>
+        <circle class="dg-ghost" cx="148" cy="148" r="100"/>
+        <circle class="dg-fill-teal" cx="248" cy="148" r="3.6"/>
+        <circle class="dg-fill-teal" cx="48" cy="148" r="3.6"/>
+        <circle class="dg-fill-teal" cx="148" cy="48" r="3.6"/>
+        <circle class="dg-fill-teal" cx="148" cy="248" r="3.6"/>
+        <circle class="dg-fill-teal" cx="208" cy="68" r="3.6"/>
+        <circle class="dg-fill-teal" cx="228" cy="88" r="3.6"/>
+        <circle class="dg-fill-teal" cx="88" cy="68" r="3.6"/>
+        <circle class="dg-fill-teal" cx="68" cy="88" r="3.6"/>
+        <circle class="dg-fill-teal" cx="208" cy="228" r="3.6"/>
+        <circle class="dg-fill-teal" cx="228" cy="208" r="3.6"/>
+        <circle class="dg-fill-teal" cx="88" cy="228" r="3.6"/>
+        <circle class="dg-fill-teal" cx="68" cy="208" r="3.6"/>
+        <text class="dg-label" x="214" y="62" text-anchor="start">(3, 4)</text>
+        <text class="dg-label" x="236" y="92" text-anchor="start">(4, 3)</text>
+        <text class="dg-label" x="254" y="140" text-anchor="start">(5, 0)</text>
+        <text class="dg-label" x="82" y="242" text-anchor="end">(&minus;3, &minus;4)</text>
+        <text class="dg-label" x="151" y="166" text-anchor="start">O</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 1B.4</span> &nbsp;The twelve points with
+          whole-number coordinates at distance $5$ from $O$. All of them lie
+          on one circle, the set of every point $5$ units from $O$.
+        </figcaption>
+      </figure>
+
       <div class="c-stage">
-        <div class="c-stage__num">6</div>
+        <div class="c-stage__num">3</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Competitive-Style Thinking</div>
-          <div class="c-stage__for">Four moves worth more than another formula.</div>
+          <div class="c-stage__title">Problem Sets</div>
+          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
         </div>
       </div>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">Eliminate</span>
-          <span>No distance is negative, and none is smaller than either
-            shift. Two options are usually dead before any arithmetic.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Check sufficiency</span>
-          <span>Ask what has been fixed. One distance fixes a circle, not a
-            point &mdash; so the answer is often a pair.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Find the constraint</span>
-          <span>$d^2 = (\Delta x)^2 + (\Delta y)^2$. Any three of those four
-            numbers give the fourth.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Estimate first</span>
-          <span>$d$ lies between the larger shift and the sum of the two.
-            Bound it, then see which option survives.</span>
-        </div>
-      </div>
-
-      <p class="c-stage__ask">Name the move, then use it.</p>
 
       <div class="c-practice">
+        <div class="c-practice__head">Set A &middot; One result each</div>
         <ol class="c-questions">
           <li>
-            <strong>Eliminate.</strong> Strike out two options on sight, then
-            answer. The distance between $(2,3)$ and $(14,8)$ is
+            The point $(0, -6)$ lies
             <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$7$</li><li>$13$</li><li>$17$</li><li>$60$</li>
+              <li>in Quadrant III</li>
+              <li>in Quadrant IV</li>
+              <li>on the x-axis</li>
+              <li>on the y-axis</li>
             </ol>
           </li>
           <li>
-            <strong>Eliminate.</strong> A point $25$ units from the origin has
-            $x = 7$. Then $|y|$ is
+            The distance between $(2, 3)$ and $(6, 6)$ is
             <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$18$</li><li>$24$</li><li>$32$</li><li>$625$</li>
+              <li>$5$</li>
+              <li>$7$</li>
+              <li>$\sqrt{13}$</li>
+              <li>$25$</li>
             </ol>
           </li>
           <li>
-            <strong>Sufficiency.</strong> The distance between $(3, a)$ and
-            $(6, 5)$ is $5$. Say why this does not fix $a$, and give every
-            value it allows.
-          </li>
-          <li>
-            <strong>Sufficiency.</strong> A circle is centred at the origin
-            through $(6, 8)$. Which single fact settles whether $(-9, 5)$ lies
-            inside it?
-            <ol class="c-parts c-parts--alpha">
-              <li>The circle's radius</li>
-              <li>The distance of $(-9,5)$ from the origin</li>
-              <li>The quadrant $(-9,5)$ lies in</li>
-              <li>The circle's area</li>
-            </ol>
-          </li>
-          <li>
-            <strong>Constraint.</strong> Four points' distances from the origin
-            are tabulated. One row is wrong: find it, name the mistake, and
-            give the right value.
-            <table>
-              <thead>
-                <tr><th>Point</th><td>$(3, 4)$</td><td>$(-6, 8)$</td><td>$(5, 12)$</td><td>$(9, 12)$</td></tr>
-              </thead>
-              <tbody>
-                <tr><th>Distance</th><td>$5$</td><td>$14$</td><td>$13$</td><td>$15$</td></tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            <strong>Estimate.</strong> The shifts from $(-6, 2)$ to $(2, 17)$
-            are $8$ and $15$, so the bound kills three of these. The distance
-            is
+            The distance of $(-7, 24)$ from the origin is
             <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$11$</li><li>$13$</li><li>$17$</li><li>$25$</li>
+              <li>$17$</li>
+              <li>$25$</li>
+              <li>$31$</li>
+              <li>$625$</li>
             </ol>
           </li>
         </ol>

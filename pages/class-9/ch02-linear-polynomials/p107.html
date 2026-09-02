@@ -2,78 +2,99 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">7</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">The Challenge Zone</div>
-          <div class="c-stage__for">Think, then apply, then challenge.</div>
-        </div>
-      </div>
-      <p class="c-stage__ask">Not one of these says which idea to use. Show every step of the reasoning.</p>
-
-      <div class="c-practice">
-        <ol class="c-questions">
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
           <li>
-            <span class="tier">Think</span>
-            Show that if $p(x) = ax + b$ then $p(x + 1) - p(x) = a$ for every
-            $x$, so that the constant difference of the pattern and the slope
-            of the graph are the same number. Then find a polynomial for which
-            $p(x+1) - p(x)$ is <em>not</em> constant, and say what its
-            differences do instead.
+            A taxi charges &#8377;$30$ and then &#8377;$12$ for each
+            kilometre. The fare for $d$ kilometres is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$12d + 30$</li>
+              <li>$30d + 12$</li>
+              <li>$42d$</li>
+              <li>$12(d + 30)$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Apply</span>
-            Read the line in Fig. 2.13 off the grid: give its slope, its
-            y-intercept, its equation, and the point where it cuts the x-axis.
-            Then say which of those four you could have found without the
-            picture, given only two of its points.
+            The lines $y = 3x + 2$ and $y = 3x - 5$ are
+            <ol class="c-parts c-parts--alpha">
+              <li>parallel</li>
+              <li>the same line</li>
+              <li>meeting at the origin</li>
+              <li>meeting at $(0, 2)$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Apply</span>
-            One candle is $30$ cm long and burns down $2$ cm an hour; another
-            is $20$ cm and burns down $1$ cm an hour. Both are lit together.
-            When are they the same height, what height is that, which is the
-            taller before that moment, and which burns out first?
+            The $n$th term of $8, 5, 2, -1, \ldots$ is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$8 - 3n$</li>
+              <li>$5 - 3n$</li>
+              <li>$11 - 3n$</li>
+              <li>$3n + 5$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Challenge</span>
-            The points $(1, k)$, $(4, 3k - 2)$ and $(7, 16)$ lie on one
-            straight line. Find $k$, using the fact that the three x-values are
-            equally spaced.
+            A tank holds water $3$ m deep and loses $0.5$ m a month. By the
+            rule $h = 3 - 0.5t$, it is empty after
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$5$ months</li>
+              <li>$6$ months</li>
+              <li>$8$ months</li>
+              <li>$10$ months</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Challenge</span>
-            A polynomial $p(x) = ax + b$ satisfies $p\bigl(p(x)\bigr) = 4x + 9$
-            for every $x$. Find every $p$ that works.
-            <p class="hint">Substitute and compare coefficients. Two equations
-              come out, and one of them has two solutions.</p>
+            A pattern of tiles has $2n - 1$ tiles at stage $n$. The stage
+            with $47$ tiles is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$23$</li>
+              <li>$24$</li>
+              <li>$46$</li>
+              <li>there is none</li>
+            </ol>
           </li>
         </ol>
       </div>
 
-      <figure class="c-figure c-figure--xl">
-        <svg viewBox="0 0 390 390" role="img"
-             aria-label="A ruled coordinate grid from minus two to six across and minus two to six up, with one straight line drawn across it">
-          <g class="dg-grid">
-            <path d="M15 15V375 M60 15V375 M105 15V375 M150 15V375 M195 15V375 M240 15V375 M285 15V375 M330 15V375 M375 15V375"/>
-            <path d="M15 15H375 M15 60H375 M15 105H375 M15 150H375 M15 195H375 M15 240H375 M15 285H375 M15 330H375 M15 375H375"/>
-          </g>
-          <path class="dg-axis" d="M15 285H375"/>
-          <path class="dg-axis" d="M105 15V375"/>
-          <path class="dg-plot" d="M82.5 375 L262.5 15"/>
-          <text class="dg-tick" x="150" y="300" text-anchor="middle">1</text>
-          <text class="dg-tick" x="240" y="300" text-anchor="middle">3</text>
-          <text class="dg-tick" x="330" y="300" text-anchor="middle">5</text>
-          <text class="dg-tick" x="97" y="243" text-anchor="end">1</text>
-          <text class="dg-tick" x="97" y="153" text-anchor="end">3</text>
-          <text class="dg-tick" x="97" y="63" text-anchor="end">5</text>
-          <text class="dg-tick" x="97" y="333" text-anchor="end">&minus;1</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 2.13</span> &nbsp;One line on a ruled grid.
-          Everything the equation says is somewhere in this picture.
-        </figcaption>
-      </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">Set B &middot; Two ideas together</div>
+      </div>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 20 L21 6"/>
+            <circle cx="7" cy="16.9" r="1.6"/>
+            <circle cx="17" cy="9.1" r="1.6"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Questions 1 to 3 take this key.
+            <strong>(a)</strong> both true, R explains A;
+            <strong>(b)</strong> both true, R does not explain A;
+            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
+            R true.</p>
+        </div>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions">
+          <li>
+            <strong>A.</strong> Evaluating a linear polynomial at
+            $1, 2, 3, \ldots$ always gives a linear pattern.
+            &nbsp;<strong>R.</strong> $a(n + 1) + b - (an + b) = a$, the same
+            number for every $n$.
+          </li>
+          <li>
+            <strong>A.</strong> The graphs of $y = 4x - 3$ and $y = -4x - 3$
+            meet on the $y$-axis. &nbsp;<strong>R.</strong> Both have the
+            same constant term.
+          </li>
+          <li>
+            <strong>A.</strong> Any two readings of $y = ax + b$ fix $a$ and
+            $b$. &nbsp;<strong>R.</strong> Two unknowns need two equations.
+          </li>
+        </ol>
+      </div>
 
     </div>
   </div>

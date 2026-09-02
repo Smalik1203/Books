@@ -2,68 +2,82 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>A line crosses the $y$-axis at $(0, 6)$ and the $x$-axis at
+          $(3, 0)$. Find its equation. Then find where the line
+          $y = 4x - 10$ crosses each axis.</p>
+      </div>
 
-<div class="c-stage">
-        <div class="c-stage__num">3</div>
+      <p>
+        The two crossing points are two points on the line, and two points
+        are all we need. The crossing on the $y$-axis gives $b$ at once:
+        $b = 6$. From $x = 0$ to $x = 3$, $y$ falls from $6$ to $0$, so
+        $a = -2$. The line is $y = -2x + 6$.
+      </p>
+
+      <p>
+        For the second line, a point on the $y$-axis has $x = 0$. Put
+        $x = 0$: $y = -10$, and the crossing is $(0, -10)$. A point on the
+        $x$-axis has $y = 0$. Put $y = 0$:
+      </p>
+
+      <div class="eq eq--anchor">
+        $$4x - 10 = 0, \quad x = 2.5$$
+      </div>
+
+      <p>
+        and the crossing is $(2.5, 0)$. Notice that the two crossings come
+        from the same idea, one coordinate is zero, but they are not found
+        the same way. The $y$-crossing is read off the equation. The
+        $x$-crossing needs a linear equation to be solved, just as the
+        tank of Example 10 needed one to say when it was empty.
+      </p>
+
+      <p>
+        None of these questions used anything outside the chapter. What each
+        needed was the question: what can I use from what I already know?
+        The five problems that follow ask it again.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Connect the Concepts</div>
-          <div class="c-stage__for">Two results of the chapter, one after the other.</div>
+          <div class="c-stage__title">Worked in Full</div>
+          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
         </div>
       </div>
-      <p class="c-stage__ask">Name both results as you go.</p>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            Chapter 1 put points on axes; this chapter put lines through them.
-            The line $y = 2x - 1$ passes through $A(1, 1)$ and $B(4, 7)$.
-            <ol class="c-parts c-parts--1">
-              <li>Find $AB$ with the distance formula.</li>
-              <li>The slope is $2$ and the distance is not. Say what each of
-                  the two numbers measures, and why one changes if the line is
-                  drawn on a different scale while the other does not.</li>
-            </ol>
-          </li>
-          <li>
-            Chapter 4 expanded $(n+1)^2$. Use that identity to show that the
-            first differences of the sequence $n^2$ are $2n + 1$ &mdash; which
-            is itself linear &mdash; and hence that the second differences are
-            all $2$.
-          </li>
-          <li>
-            In science, a body moving with constant acceleration obeys
-            $v = u + at$.
-            <ol class="c-parts c-parts--1">
-              <li>Match this against $y = ax + b$: what plays the part of the
-                  slope, and what of the intercept?</li>
-              <li>A body starts at 4 m/s and reaches 19 m/s after 5 s. Find
-                  its acceleration, and its speed after 12 s.</li>
-            </ol>
-          </li>
-          <li>
-            Celsius and Fahrenheit are related linearly: $0^\circ$C is
-            $32^\circ$F, and $100^\circ$C is $212^\circ$F. Find the rule, then
-            find the one temperature at which the two scales read the very same
-            number.
-          </li>
-          <li>
-            A workshop's costs are ₹$4000$ a month plus ₹$120$ for each item
-            made, and each item sells for ₹$200$.
-            <ol class="c-parts c-parts--1">
-              <li>Write linear expressions for the total cost and the total
-                  income after $n$ items.</li>
-              <li>How many items must be sold before the income overtakes the
-                  cost? Explain why the answer depends on the difference of
-                  the two slopes and not on either alone.</li>
-            </ol>
-          </li>
-          <li>
-            Chapter 3 sorted the numbers into ratios and non-ratios. A line has
-            slope $\sqrt{2}$ and passes through the origin. Does it pass
-            through any point whose coordinates are both non-zero whole
-            numbers? Give your reasoning.
-          </li>
+      <div class="c-try">
+        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
+        <p>A linear polynomial has $p(2) = 7$ and $p(5) = 16$. Then $p(0)$
+          is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$1$</li>
+          <li>$3$</li>
+          <li>$4$</li>
+          <li>$10$</li>
         </ol>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 1</div>
+        <div class="c-example__body">
+          <p>
+            From $x = 2$ to $x = 5$ is three steps, and the value rises by
+            $9$. So each step adds $3$, and $a = 3$. To go back from $x = 2$
+            to $x = 0$ is two steps, so take away $6$:
+          </p>
+          <div class="work">
+            <p>$p(0) = 7 - 6 = 1$</p>
+          </div>
+          <p>
+            Option (a). Check: $p(x) = 3x + 1$ gives $p(5) = 16$. Option (b)
+            is the slope, not the value at $0$. Option (c) takes one step
+            back instead of two. Option (d) goes forward three steps instead
+            of back two.
+          </p>
+        </div>
       </div>
 
     </div>

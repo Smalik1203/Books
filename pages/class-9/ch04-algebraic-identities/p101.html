@@ -10,104 +10,59 @@
       <div class="c-stage">
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">The Idea Underneath</div>
-          <div class="c-stage__for">An identity is an equation until you add one inequality.</div>
+          <div class="c-stage__title">Using What You Know</div>
+          <div class="c-stage__for">The chapter's identities, in questions that do not say which one to use.</div>
         </div>
       </div>
 
       <p>
-        Every identity in the chapter was an equation. Combine one with the
-        single fact that no square is negative and out comes a statement of a
-        different kind. From $(a - b)^2 \geq 0$:
+        The chapter ended with eight identities. Every question below can
+        be answered with those eight alone. What is new is that the
+        question no longer says which one to use. Try each question before
+        you read on.
       </p>
 
-      <div class="eq eq--anchor">
-        $$a^2 + b^2 \geq 2ab$$
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>If $x + y + z = 0$, find the value of $x^3 + y^3 + z^3 - 3xyz$.</p>
       </div>
 
       <p>
-        with equality only when $a = b$. Put $a = t$ and $b = 1$, divide by a
-        positive $t$, and <span class="pop">$t + \frac{1}{t} \geq 2$,
-        always</span> &mdash; which is why the chapter offered
-        $\frac{10}{3}$ and never $\frac{1}{3}$.
+        The last identity of the chapter is
       </p>
 
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="0 0 150 106" data-size="sm" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A square of side a plus b, cut into a square on a, a square on b, and two equal rectangles">
-            <rect class="dg-fill-a-soft" x="18" y="12" width="52" height="52"/>
-            <rect class="dg-fill-b-soft" x="70" y="64" width="30" height="30"/>
-            <rect class="dg-fill-c-soft" x="70" y="12" width="30" height="52"/>
-            <rect class="dg-fill-c-soft" x="18" y="64" width="52" height="30"/>
-
-            <rect class="dg-line" x="18" y="12" width="82" height="82"/>
-            <path class="dg-thin" d="M70 12 V94 M18 64 H100"/>
-
-            <path class="dg-dim" d="M110 12 V64"/>
-            <path class="dg-dim" d="M110 64 V94"/>
-            <text class="dg-dim-label" x="116" y="42">a</text>
-            <text class="dg-dim-label" x="116" y="83">b</text>
-            <text class="dg-note" x="44" y="42" text-anchor="middle">a&#178;</text>
-            <text class="dg-note" x="85" y="82" text-anchor="middle">b&#178;</text>
-            <text class="dg-note" x="85" y="42" text-anchor="middle">ab</text>
-            <text class="dg-note" x="44" y="82" text-anchor="middle">ab</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 4B.1</span> The two corner
-          squares together never cover less than the two rectangles. They are
-          equal only when the cut falls in the middle.</figcaption>
-        </figure>
+      <div class="eq">
+        $$x^3 + y^3 + z^3 - 3xyz = (x + y + z)\left(x^2 + y^2 + z^2 - xy - yz - zx\right)$$
       </div>
 
-      <div class="c-shift">
-        <div class="c-shift__title">Read it both ways</div>
-        <div class="c-shift__row">
-          <span>$a$ and $b$ move apart<span class="c-shift__way">&uarr;</span></span>
-          <span>$a^2 + b^2$ beats $2ab$ by more<span class="c-shift__way">&uarr;</span></span>
-        </div>
-        <div class="c-shift__row">
-          <span>$a$ and $b$ move together<span class="c-shift__way">&darr;</span></span>
-          <span>the gap closes to nothing<span class="c-shift__way">&darr;</span></span>
-        </div>
+      <p>
+        The first bracket on the right is $x + y + z$. We are told it is
+        $0$. So the product is $0$. This means $x^3 + y^3 + z^3 = 3xyz$
+        whenever $x + y + z = 0$. Notice that we did not need to find $x$,
+        $y$ and $z$. There are infinitely many triples that add to zero.
+        One of them is $1, 2, -3$. The result holds for every one of them.
+        A condition given in a question is often one side of an identity.
+        Read the condition first. Then ask which identity it belongs to.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>If $a + b = 5$ and $ab = 6$, find $a^2 + b^2$ and $a^3 + b^3$.</p>
       </div>
 
-      <div class="c-results">
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect class="dg-fill-a-soft" x="8" y="8" width="15" height="15"/>
-            <rect class="dg-fill-b-soft" x="23" y="23" width="15" height="15"/>
-            <rect class="dg-line" x="8" y="8" width="30" height="30"/>
-            <path class="dg-thin" d="M23 8 V38 M8 23 H38"/>
-          </svg>
-          <div class="c-results__cap">$(a+b)^2$ is four pieces</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect class="dg-fill-a-soft" x="8" y="8" width="30" height="30"/>
-            <rect class="dg-line" x="8" y="8" width="30" height="30"/>
-            <rect class="dg-ghost" x="26" y="26" width="12" height="12"/>
-            <path class="dg-thin" d="M26 8 V26 H38"/>
-          </svg>
-          <div class="c-results__cap">$a^2 - b^2$ is a square minus a square</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect class="dg-fill-c-soft" x="8" y="14" width="32" height="18"/>
-            <rect class="dg-line" x="8" y="14" width="32" height="18"/>
-            <path class="dg-thin" d="M20 14 V32 M30 14 V32"/>
-          </svg>
-          <div class="c-results__cap">A product is a rectangle</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect class="dg-fill-a-soft" x="8" y="8" width="22" height="22"/>
-            <rect class="dg-fill-b-soft" x="30" y="30" width="8" height="8"/>
-            <rect class="dg-line" x="8" y="8" width="30" height="30"/>
-            <path class="dg-thin" d="M30 8 V38 M8 30 H38"/>
-          </svg>
-          <div class="c-results__cap">Off the middle, the two squares win</div>
-        </div>
-      </div>
+      <p>
+        We know $(a + b)^2 = a^2 + 2ab + b^2$. So
+        $a^2 + b^2 = 25 - 12 = 13$. We also know
+        $(a + b)^3 = a^3 + b^3 + 3ab(a + b)$. So
+        $a^3 + b^3 = 125 - 90 = 35$. Here $a$ and $b$ happen to be $2$ and
+        $3$. Check: $4 + 9 = 13$ and $8 + 27 = 35$. But we never needed to
+        find them. Often it is not even possible. Take $a + b = 5$ and
+        $ab = 7$. There are no whole numbers with this sum and product.
+        Still, $a^2 + b^2 = 11$ is just as certain. The sum and the product
+        fix every expression that treats $a$ and $b$ in the same way. Only
+        the difference needs one more step, $(a - b)^2 = (a + b)^2 - 4ab$.
+        Even that does not tell us the sign of $a - b$.
+      </p>
 
     </div>
   </div>

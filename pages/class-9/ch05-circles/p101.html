@@ -10,114 +10,64 @@
       <div class="c-stage">
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">The Idea Underneath</div>
-          <div class="c-stage__for">One relation, doing the work of four theorems.</div>
+          <div class="c-stage__title">Using What You Know</div>
+          <div class="c-stage__for">The chapter's results, in questions that do not say which one to use.</div>
         </div>
       </div>
 
       <p>
-        A chord at distance $d$ from the centre of a circle of radius $r$ has
-        length
+        The chapter ended with twelve results, and every question below can
+        be answered with those alone. What is new is that the question no
+        longer says which result to use. Often it does not even mention the
+        thing the result is about. Try each one before reading on.
       </p>
 
-      <div class="eq eq--anchor">
-        $$c = 2\sqrt{r^2 - d^2}$$
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>A chord $AB$ of a circle of radius $8$ cm subtends an angle of
+          $30^\circ$ at a point $P$ of the major arc. Find the length of
+          $AB$.</p>
       </div>
 
       <p>
-        Fix $c$ and $d$ is fixed too, so <span class="pop">every chord of one
-        length keeps its midpoint the same distance from $O$</span> &mdash; and
-        those midpoints trace a circle of their own.
+        The angle given is at $P$, and no result in the chapter finds a
+        chord from an angle at a point of the circle. But Theorem 9 connects
+        the angle at $P$ with the angle at the centre $O$:
       </p>
 
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="22 16 156 156" data-size="sm" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Three chords of equal length in a circle, their midpoints lying on a smaller concentric circle">
-            <circle class="dg-fill-d" cx="100" cy="92" r="68"/>
-            <circle class="dg-line" cx="100" cy="92" r="68"/>
-
-            <circle class="dg-ghost" cx="100" cy="92" r="40"/>
-
-            <path class="dg-thin" d="M45 52 L155 52"/>
-            <path class="dg-thin" d="M129.9 153.1 L148.9 44.7"/>
-            <path class="dg-thin" d="M32.0 93.3 L122.2 156.3"/>
-
-            <path class="dg-dim" d="M100 92 L100 52"/>
-
-            <circle class="dg-fill-teal" cx="100" cy="92" r="2.6"/>
-            <circle class="dg-fill-teal" cx="100" cy="52" r="2.2"/>
-            <circle class="dg-fill-teal" cx="139.4" cy="98.9" r="2.2"/>
-            <circle class="dg-fill-teal" cx="77.1" cy="124.8" r="2.2"/>
-
-            <text class="dg-label" x="95" y="99" text-anchor="end">O</text>
-            <text class="dg-dim-label" x="105" y="76">d</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5B.1</span> Three chords of one
-          length. Every midpoint sits at the same $d$, so they trace a
-          concentric circle.</figcaption>
-        </figure>
-      </div>
-
-      <div class="c-shift">
-        <div class="c-shift__title">Read it both ways</div>
-        <div class="c-shift__row">
-          <span>distance from centre $d$<span class="c-shift__way">&uarr;</span></span>
-          <span>chord length $c$<span class="c-shift__way">&darr;</span></span>
-        </div>
-        <div class="c-shift__row">
-          <span>distance from centre $d$<span class="c-shift__way">&darr;</span></span>
-          <span>chord length $c$<span class="c-shift__way">&uarr;</span></span>
-        </div>
+      <div class="eq">
+        $$\angle AOB = 2\,\angle APB = 60^\circ$$
       </div>
 
       <p>
-        Neither is a proportion. Doubling $d$ does not halve $c$; the square
-        root sees to that, and half the traps in this section are built on
-        forgetting it.
+        Now the picture is the one in Example 5. $OA$ and $OB$ are radii, so
+        triangle $OAB$ is isosceles with its apex angle $60^\circ$, and the
+        two base angles are $60^\circ$ each. All three angles are equal, so
+        all three sides are equal, and $AB = 8$ cm. Notice that the question
+        never mentioned the centre. We put it in ourselves, because the
+        results of the chapter are all about the centre. An angle on the
+        circle became an angle at the centre, and there the chapter could
+        work.
       </p>
 
-      <div class="c-results">
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="dg-line" cx="24" cy="22" r="17"/>
-            <path class="dg-line" d="M7.8 27 H40.2"/>
-            <path class="dg-thin" d="M9.6 13 H38.4"/>
-            <circle class="dg-fill-teal" cx="24" cy="22" r="1.4"/>
-          </svg>
-          <div class="c-results__cap">The longer chord lies nearer the centre</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="dg-line" cx="24" cy="22" r="17"/>
-            <path class="dg-line" d="M9.6 13 H38.4"/>
-            <path class="dg-line" d="M9.6 31 H38.4"/>
-            <path class="dg-dim" d="M24 22 V13"/>
-            <path class="dg-dim" d="M24 22 V31"/>
-          </svg>
-          <div class="c-results__cap">Equal chords keep equal distances</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="dg-line" cx="24" cy="22" r="17"/>
-            <path class="dg-line" d="M8.5 29 H39.5"/>
-            <path class="dg-dim" d="M24 22 V29"/>
-            <path class="dg-thin" d="M16 27 V31"/>
-            <path class="dg-thin" d="M32 27 V31"/>
-          </svg>
-          <div class="c-results__cap">That perpendicular bisects the chord</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="dg-line" cx="24" cy="22" r="17"/>
-            <path class="dg-line" d="M11 33 H37"/>
-            <path class="dg-thin" d="M11 33 L24 22 L37 33"/>
-            <path class="dg-thin" d="M24 5 L11 33 M24 5 L37 33"/>
-            <circle class="dg-fill-teal" cx="24" cy="22" r="1.4"/>
-          </svg>
-          <div class="c-results__cap">The angle at the centre is twice the one on the arc</div>
-        </div>
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>A triangle has sides $6$ cm, $8$ cm and $10$ cm. Find the radius
+          of the circle that passes through its three vertices.</p>
       </div>
+
+      <p>
+        Theorem 1 says there is exactly one such circle, and Section 5.4
+        says where its centre is: where the perpendicular bisectors of the
+        sides meet. Finding that point would take a drawing. But look at the
+        sides first. $6^2 + 8^2 = 36 + 64 = 100 = 10^2$, so the angle
+        opposite the $10$ cm side is a right angle. Section 5.9 proved that
+        the circumcentre of a right-angled triangle is the midpoint of the
+        hypotenuse. So the centre is the midpoint of the $10$ cm side, and
+        the radius is $5$ cm. Notice that no bisector was drawn. The numbers
+        held a right angle, the right angle picked out a result, and that
+        result did all the work.
+      </p>
 
     </div>
   </div>

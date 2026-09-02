@@ -2,94 +2,83 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Think and Reason</div>
-          <div class="c-stage__for">Judge a claim &mdash; and the reason offered for it.</div>
-        </div>
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Factorise $x^4 + 4y^4$.</p>
       </div>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/>
-            <path d="M15 3.5v17"/><path d="M3.5 15h17"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Questions 1&ndash;4 take this key.
-            <strong>(a)</strong> both true, R explains A;
-            <strong>(b)</strong> both true, R does not explain A;
-            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
-            R true.</p>
-        </div>
+      <p>
+        As it stands, this is not a perfect square. It is not a difference
+        of squares either. But it has two of the three terms of a perfect
+        square: $\left(x^2 + 2y^2\right)^2 = x^4 + 4x^2y^2 + 4y^4$. Add the
+        missing middle term, and take it away again. The expression has not
+        changed. Now it becomes
+      </p>
+
+      <div class="eq">
+        $$x^4 + 4y^4 = \left(x^2 + 2y^2\right)^2 - (2xy)^2$$
       </div>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            <strong>A.</strong> $(a - b)^2 = (b - a)^2$ for every $a$ and $b$.
-            &nbsp;<strong>R.</strong> A number and its negative have the same
-            square.
-          </li>
-          <li>
-            <strong>A.</strong> $x^3 + y^3 + z^3 = 3xyz$ for all $x$, $y$, $z$
-            with $xyz \neq 0$. &nbsp;<strong>R.</strong>
-            $x^3 + y^3 + z^3 - 3xyz = (x+y+z)\left(x^2+y^2+z^2-xy-yz-zx\right)$.
-          </li>
-          <li>
-            <strong>A.</strong> $a^2 + b^2 \geq 2ab$ for every $a$ and $b$.
-            &nbsp;<strong>R.</strong> $a^2 + b^2$ and $2ab$ are both
-            non-negative.
-          </li>
-          <li>
-            <strong>A.</strong> $(x+2)(x+3) = x^2 + 5x + 6$ is an identity.
-            &nbsp;<strong>R.</strong> It is true at $x = 1$.
-          </li>
-          <li>
-            Which of these are identities?
-            <ol class="c-parts c-parts--1 c-parts--tall">
-              <li>$(x + 2)(x + 3) = x^2 + 5x + 6$</li>
-              <li>$x^2 + 5x + 6 = 0$</li>
-              <li>$x^2 - 4 = (x - 2)(x + 2)$</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(i) and (iii)</li>
-              <li>(ii) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            Given $a + b = 5$ and $ab = 6$, which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>$a^2 + b^2 = 13$</li>
-              <li>$(a - b)^2 = 1$</li>
-              <li>$a^3 + b^3 = 35$</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(i) and (ii)</li>
-              <li>(ii) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            For every whole number $n$, which must be true of $n^3 - n$?
-            <ol class="c-parts c-parts--1">
-              <li>It is even.</li>
-              <li>It is a multiple of $3$.</li>
-              <li>It is a multiple of $12$.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(ii) and (iii)</li>
-              <li>(i) and (ii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            Write $p = x + y + z$, $q = xy + yz + zx$ and $r = xyz$. Show that
-            $x^2 + y^2 + z^2 = p^2 - 2q$, and say why no fourth quantity is
-            ever needed for a symmetric expression.
-          </li>
-        </ol>
+      <p>
+        This is a difference of squares (Fig. 4B.2). So
+        $x^4 + 4y^4 = \left(x^2 + 2y^2 - 2xy\right)\left(x^2 + 2y^2 + 2xy\right)$.
+        Check at $x = y = 1$. The left side is $5$ and the right side is
+        $1 \times 5$. When no identity fits an expression, ask what single
+        term would make one fit. The same step writes
+        $a^4 + a^2 + 1$ as $\left(a^2 + 1\right)^2 - a^2$.
+      </p>
+
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 -10 300 160" role="img"
+             aria-label="A square of side x squared plus 2 y squared with a smaller square of side 2xy cut from one corner, and beside it the rectangle the remaining pieces make, of sides x squared plus 2 y squared plus 2xy and x squared plus 2 y squared minus 2xy">
+          <rect class="dg-fill-a-soft" x="16" y="24" width="100" height="100"/>
+          <rect class="dg-fill-c-soft" x="80" y="88" width="36" height="36"/>
+          <rect class="dg-line" x="16" y="24" width="100" height="100"/>
+          <path class="dg-thin" d="M80 88 H116 M80 88 V124"/>
+          <text class="dg-note" x="98" y="109" text-anchor="middle">cut</text>
+      
+          <line class="dg-dim" x1="16" y1="14" x2="116" y2="14"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="66" y="9" text-anchor="middle">x&#178; + 2y&#178;</text>
+          <line class="dg-dim" x1="126" y1="88" x2="126" y2="124"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="132" y="110">2xy</text>
+      
+          <path class="dg-move" d="M136 60 L156 60" marker-end="url(#dg-arrow)"/>
+      
+          <rect class="dg-line dg-fill-a-soft" x="160" y="44" width="136" height="64"/>
+          <line class="dg-dim" x1="160" y1="34" x2="296" y2="34"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="228" y="29" text-anchor="middle">x&#178; + 2y&#178; + 2xy</text>
+          <line class="dg-dim" x1="160" y1="118" x2="296" y2="118"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="228" y="134" text-anchor="middle">x&#178; + 2y&#178; &minus; 2xy</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4B.2</span> &nbsp;The big square we
+          made, minus the small square we added. A square minus a square is
+          a rectangle, just as in Fig. 4.5.
+        </figcaption>
+      </figure>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Is $(a + b)^3 = a^3 + b^3$ an identity? Is
+          $x^2 + 5x + 6 = (x + 2)(x + 3)$ an identity?</p>
       </div>
+
+      <p>
+        Put $a = b = 1$ in the first. The left side is $8$ and the right
+        side is $2$. One value where the two sides differ is enough. The
+        first is not an identity. Now put $x = 1$ in the second. Both sides
+        are $12$. That proves nothing. An equation can hold at one value
+        without holding at all values. For example, $x^2 + 5x + 6 = 12$ is
+        also true at $x = 1$. To show the second is an identity, we
+        multiply out the right side. It is an identity. So a value can
+        disprove, but it cannot prove. In a question with four options, one
+        value can rule out an option quickly. Only the identity can confirm
+        the option that is left.
+      </p>
 
     </div>
   </div>

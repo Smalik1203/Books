@@ -3,10 +3,12 @@
 
    A division at the end of a chapter, not a second book bolted
    onto it. So almost everything here is the chapter's own
-   library: the ten stages are ordinary level-2 sections (h2,
-   badge B1-B10), their question sets are .c-practice bands, and
-   their worked instances are .c-example panels. A reader who
-   can read the chapter can read this.
+   library: the stages open with a .c-stage head, every question
+   is put in a .c-try before it is explained, the explanations are
+   running text or a .c-example panel, and the question sets are
+   .c-practice bands. A reader who can read the chapter can read
+   this. (Four stages since chapter 4 was rebuilt; the earlier
+   chapters still carry ten, on the same components.)
 
    What the library did not already have:
 
@@ -224,6 +226,55 @@
   line-height: var(--lh-snug);
   color: var(--ink-soft);
 }
+
+/* ---- A question to try before reading on --------------------
+   The section teaches by example: a question is put first, the
+   reader attempts it, and only then does the explanation follow.
+   So the question needs its own place on the page, and a little
+   room beneath it for the attempt. Not a panel — the book has
+   two, and this is neither a worked instance nor a reflection —
+   but the key idea's rule-and-hairline, in gold, because a
+   question put to the reader is attention. The tag says what to
+   do with it; the padding below is the space to do it in. */
+.c-try {
+  break-inside: avoid;
+  break-after: avoid;
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0 var(--space-rest);
+  border-top: var(--stroke-rule) solid var(--gold);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+.c-try__tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 1mm 2.2mm 0.8mm;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-hair);
+}
+.c-try p { margin: 0; }
+.c-try p + p { margin-top: var(--space-hair); }
+.c-try .c-parts { margin-top: var(--space-hair); }
+
+/* The solution that follows a tried question is an example panel,
+   and the question has already set the space between them. */
+.c-try + .c-example { margin-top: 0; }
+
+/* ---- A solution traced, not just written --------------------
+   The worked problems of stage 2 show the thinking, one row per
+   move: what is noticed, what is tried, why it works, the check,
+   and the trap a hurried solver falls into. A row runs to
+   several lines, so its label sits on the first line instead of
+   floating centred beside the block, and the label column is
+   only as wide as the longest of those five words. */
+.work--trace .work__row { align-items: flex-start; margin-bottom: 1.4mm; }
+.work--trace .work__label { flex: none; min-width: 14mm; }
 
 /* ---- What the test is made of ------------------------------
    The shape of the paper, set once at its foot: how many

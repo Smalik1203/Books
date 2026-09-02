@@ -32,6 +32,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { spineWidth } from './spine.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -62,28 +63,6 @@ async function tokenReader(edition) {
     const from = over.includes('--' + name + ':') ? over : src;
     const at = from.indexOf('--' + name + ':');
     return from.slice(at + name.length + 3, at + name.length + 30);
-  };
-}
-
-/* ---- Spine ------------------------------------------------
-   Bulk, not taste. Leaves are half the page count; each leaf is
-   one caliper thick; the covers and the glue add a fixed
-   allowance. A cover may state a width outright — a printer who
-   has measured the stock always wins — and then this is skipped. */
-function spineWidth(meta) {
-  if (meta.spineWidth != null) {
-    return { mm: Number(meta.spineWidth), how: 'declared in cover.json' };
-  }
-  const pages = Number(meta.pages);
-  const caliper = Number(meta.paperCaliper);
-  if (!pages || !caliper) {
-    return { mm: 16, how: 'FALLBACK — no pages/paperCaliper in cover.json' };
-  }
-  const allowance = Number(meta.caseAllowance ?? 0);
-  const mm = (pages / 2) * caliper + allowance;
-  return {
-    mm: Math.round(mm * 10) / 10,
-    how: `${pages}pp / 2 x ${caliper}mm + ${allowance}mm case`,
   };
 }
 
@@ -462,7 +441,15 @@ if (!existsSync(p('covers', target, 'cover.json'))) {
     console.error(`Not found: covers/${target}`);
     process.exit(1);
   });
-  covers = entries.filter(e => e.isDirectory()).map(e => `${target}/${e.name}`);
+  /* _shared holds the panels several covers quote, not a cover — it has no
+     cover.json, and treating it as one crashed the whole class build. A
+     directory is a cover when it says so. */
+  covers = entries.filter(e => e.isDirectory()).map(e => `${target}/${e.name}`)
+    .filter(c => existsSync(p('covers', c, 'cover.json')));
+  if (!covers.length) {
+    console.error(`No cover.json under covers/${target}`);
+    process.exit(1);
+  }
 }
 
 console.log(`Building ${covers.length} cover(s):`);

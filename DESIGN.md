@@ -280,23 +280,79 @@ a heavier or fainter line than its neighbour.
 
 Every chapter closes with ten pages of harder work on the same material: the
 **Beyond the Book**, announced once by a band across the measure and then
-carried by the components already in the library. Its ten stages are
+carried by the components already in the library. It is **four stages, not
+ten** — the first design had a stage a page, and seven of the ten were
+question pages with no worked problem anywhere; a reader was tested on a
+kind of question the book had never shown being solved. The stages are
 
-    B1 The Idea Underneath   B6 Competitive-Style Thinking
-    B2 Think and Reason      B7 The Challenge Zone
-    B3 Connect the Concepts  B8 The Trap Room
-    B4 Multiple Choice, 1    B9 The Mixed Test
-    B5 Multiple Choice, 2    B10 Answers, Solutions & Takeaways
+    1 Using What You Know five questions, each tried first and then
+                          explained, through which the reader finds that
+                          the identities work in less direct ways —
+                          about two and a half pages
+    2 Worked in Full      five multiple-choice problems, each put first and
+                          solved after, with the reasoning as well as the
+                          working — about three pages
+    3 Problem Sets        three multiple-choice sets: A one identity each,
+                          B two ideas together, C the whole chapter — about
+                          three and a half pages
+    4 Answers & Takeaways the key, why the other options are wrong, three
+                          things to keep — the last page
 
+**Everything after stage 1 is multiple choice**, because the papers this age
+group sits are. The worked problems carry four options each and their
+solutions say why the other options are there; the sets are options
+throughout, with the assertion–reason and the two-student questions cast as
+options too. A section that also set short answers and full proofs was doing
+three jobs, and the reader has one examination.
+
+**It is a lesson, not a method.** The section reads as the chapter carrying
+on: a question is put, the reader tries it, and the explanation follows in
+running text and ends with a plain observation — *notice that we did not
+need to find $x$, $y$ and $z$*. The ideas the reader meets this way are:
+use a condition directly with an identity; find an expression without
+finding the variables; make a familiar form when none is visible; use a
+value to disprove a claim; use *a square is never negative* to prove an
+inequality or an impossibility. **None of them is named, numbered or listed
+on the page.** An earlier draft opened with "Five Moves", Move 1 to Move 5,
+and read as a coaching module; the reader was being handed a method to
+memorise instead of a habit to form. The habit the section is for is the
+question *what can I use from what I already know?*, and a reader forms it
+by being asked it, not by being told it.
+
+The same restraint applies to the prose. Words like *trap*, *hurried
+solver*, *competitor's rough work*, *the question collapses* are the sound
+of a coaching book, and the section uses none of them. A wrong option is
+explained the way NCERT would explain it: what was done, and what was
+missed.
+
+A stage starts where the previous one ends, part-way down a page if that is
+where it falls: the stages are the structure, the pages are only the paper.
 No stage name repeats a word of the division's own name. *Beyond* belongs to
-the band at the top of B1 and to nothing else in the section.
+the band at the top of stage 1 and to nothing else in the section.
 
-and the point of the numbering is that a reader can name the stage from the
-page, not from the contents. **Every stage opens with `.c-stage`** — its
-number, its name, and one line saying what the stage is for. Nothing here is
-a new hierarchy: the division is read exactly the way the chapter before it is
-read, which is the whole reason it does not feel like a coaching module
-bolted on.
+**Every stage opens with `.c-stage`** — its number, its name, and one line
+saying what the stage is for — so a reader can name the stage from the page,
+not from the contents. Nothing here is a new hierarchy: the moves are `h3`
+concept heads, the worked problems are `.c-example` panels tabbed *Problem
+1* to *Problem 6*, the sets are `.c-practice` bands, and the division is read
+exactly the way the chapter before it is read, which is the whole reason it
+does not feel like a coaching module bolted on.
+
+**The reader thinks before reading.** Every question in stages 1 and 2 is
+put in a `.c-try` — a gold rule, a *Try it first* tag, the question, and
+room beneath it for the attempt — and only then comes the explanation. In
+stage 1 that explanation is running text, as in the chapter. In stage 2 it
+is a `.c-example` tabbed *Solution 1* to *Solution 5*, written as prose
+with a `.work` line where the algebra needs one: it says what was noticed,
+which identity that suggested, and why the other options were there, in
+whatever order the problem makes natural. An earlier draft set every
+solution in fixed rows — *notice, try, why, check, trap* — and the rows
+read as a template to be filled rather than a solution to be followed.
+
+Stage 1 opens as the chapter continuing: one sentence on what the chapter
+left the reader with, one on what changes in the question, and then the
+first question. No examination is named anywhere in the section: a board's
+name dates the book and tells the reader nothing about the mathematics.
 
 What the library did not already have lives in `css/bridge.css`:
 
@@ -305,10 +361,12 @@ What the library did not already have lives in `css/bridge.css`:
 | `.c-bridge` | teal | the division opener — the one solid full-measure block in the book, so the start of the division is unmistakable at arm's length |
 | `.c-stage` | teal | one stage's head: a numeral in a solid mark, the stage name, and what the stage is for. `.c-stage__ask` follows it with the one line an examination paper would print — *Choose the correct option* |
 | `.c-shift` | none | a relationship read both ways — *as $d$ rises, $c$ falls* over *as $d$ falls, $c$ rises*. Rules and two arrows; a reader who has seen the law only once tends to hear a proportion |
-| `.c-results` | teal | four of the chapter's results as thumbnail marks in a row, so a reader sees what is available before starting. An index, not a figure: no text inside the drawings |
+| `.c-results` | teal | four of the chapter's results as thumbnail marks in a row, so a reader sees what is available before starting. An index, not a figure: no text inside the drawings. The four-stage design does not use it — the moves are that index — but the ten-stage chapters still do |
+| `.c-try` | gold | a question to try before reading on: a gold rule above, a *Try it first* tag, the question (with its options, if it has them), and room beneath for the attempt, closed by a hairline. Not a panel — the key idea's rule-and-hairline in the attention colour — because the book has two panels and this is neither a worked instance nor a reflection |
+| `.work--trace` | none | a modifier on `.work`: rows whose label sits on the first line rather than centred beside a block that runs to three. Used on the answer page, where each row is one question's *why the other options are wrong* |
 | `.tier` | gold | one question's difficulty (`Think` · `Apply` · `Challenge`), set as a tag so it cannot be misread as the first words of the question |
-| `.c-terms` | gold | what the test is made of — how many questions of each kind. **Never marks and never a time:** a book used in six classrooms cannot know either, and printing them would make the test look like an examination it is not |
-| `.c-answers` | gold | the answer key — a stage label in a fixed 29mm column, then its answers on one line where they fit |
+| `.c-terms` | gold | what the test is made of — how many questions of each kind. **Never marks and never a time:** a book used in six classrooms cannot know either, and printing them would make the test look like an examination it is not. Three short spans, or it wraps; the four-stage design says the same thing in the stage head's own line instead |
+| `.c-answers` | gold | the answer key — a set label in a fixed 29mm column, then its answers on one line where they fit |
 
 The opener, the stage head and the results strip are **structure**: they say
 where the reader is, which is the section tab's job. The tier tag, the terms
@@ -316,10 +374,19 @@ and the answer key are **attention**: all three are the book speaking to the
 reader about a question. `.c-shift` is the relationship itself, so it takes
 no colour — rules and space carry it.
 
-**One numeral colour, not ten.** Every stage mark is the same teal, in every
-chapter. A hue per stage would read as ten unrelated modules, and would come
-out differently in each chapter's palette; one mark with ten numerals is what
+**One numeral colour, not four.** Every stage mark is the same teal, in every
+chapter. A hue per stage would read as four unrelated modules, and would come
+out differently in each chapter's palette; one mark with four numerals is what
 makes the division read as one thing.
+
+**Fitting the section.** The worked problems are panels and do not split, so
+the stage-2 pages pack in whole problems, and the length of a trace row is
+the lever when two of them run a few millimetres over. The sets are split
+one question per block (`split-practice.mjs`) so they flow, and a figure a
+set question refers to is placed as a block straight after that question,
+between two `.c-practice--cont` runs, so the packer keeps them together. Chapter 4 is the built example of the
+four-stage design; chapters 1–3, 5 and 6 still carry the ten-stage one until
+they are rebuilt to this shape.
 
 A Bridge page carries **`data-bridge`** on its `<section class="page">`. The
 builder puts *· Beyond the Book* after the chapter title in the running

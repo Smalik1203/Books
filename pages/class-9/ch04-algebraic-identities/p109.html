@@ -2,88 +2,121 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">9</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">The Mixed Test</div>
-          <div class="c-stage__for">Everything these ten pages have covered, mixed.</div>
-        </div>
-      </div>
-      <p class="c-stage__ask">No hints. Work straight through.</p>
-
       <div class="c-practice">
+        <div class="c-practice__head">Set C &middot; The whole chapter</div>
         <ol class="c-questions">
           <li>
-            If $x + y = 12$ and $xy = 27$, then $x^3 + y^3$ is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$756$</li>
-              <li>$810$</li>
-              <li>$972$</li>
-              <li>$1728$</li>
-            </ol>
-          </li>
-          <li>Factorise $4a^2 - 4a + 1 - b^2$ completely.</li>
+              <span class="tier">Think</span>
+              If $x$, $y$ and $z$ are all positive, then
+              $x^3 + y^3 + z^3 - 3xyz$ is
+              <ol class="c-parts c-parts--alpha">
+                <li>always positive</li>
+                <li>never negative, and zero only when $x = y = z$</li>
+                <li>always negative</li>
+                <li>always zero</li>
+              </ol>
+              <p class="hint">Write the second factor of the identity as
+                $\tfrac{1}{2}\left[(x-y)^2 + (y-z)^2 + (z-x)^2\right]$.
+                Remember that a square is never negative.</p>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
           <li>
-            The value of
-            $\dfrac{(0.87)^3 + (0.13)^3}{(0.87)^2 - 0.87 \times 0.13 + (0.13)^2}$
-            is
-            <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
-              <li>$0.74$</li>
-              <li>$0.87$</li>
-              <li>$1$</li>
-              <li>$1.13$</li>
-            </ol>
-          </li>
+              <span class="tier">Apply</span>
+              Three numbers satisfy $a + b + c = 6$, $a^2 + b^2 + c^2 = 14$ and
+              $abc = 6$. Then $a^3 + b^3 + c^3$ equals
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$18$</li>
+                <li>$36$</li>
+                <li>$54$</li>
+                <li>$216$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
           <li>
-            Simplify $\dfrac{x^2 - 5x + 6}{x^2 - 9}$, and state the values of
-            $x$ that had to be excluded.
-          </li>
+              <span class="tier">Apply</span>
+              A square field of side $a$ metres has a square pond of side $b$
+              metres cut out of one corner (Fig. 4B.6). The owner does not
+              measure either side. He measures their sum as $84$ m and their
+              difference as $12$ m. The area of the field that is left, in
+              m$^2$, is
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$1008$</li>
+                <li>$2016$</li>
+                <li>$3600$</li>
+                <li>$7056$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <figure class="c-figure c-figure--sm">
+        <svg viewBox="0 -10 230 175" role="img"
+             aria-label="A square field of side a with a smaller square pond of side b cut from its top right corner">
+          <path class="dg-line dg-fill-a-soft" d="M30 18 H106 V62 H150 V138 H30 Z"/>
+          <rect class="dg-fill-c-soft" x="106" y="18" width="44" height="44"/>
+          <path class="dg-thin" d="M106 18 H150 V62"/>
+          <text class="dg-note" x="128" y="44" text-anchor="middle">pond</text>
+      
+          <line class="dg-dim" x1="18" y1="18" x2="18" y2="138"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="10" y="82" text-anchor="end">a</text>
+          <line class="dg-dim" x1="30" y1="152" x2="150" y2="152"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="90" y="163" text-anchor="middle">a</text>
+          <line class="dg-dim" x1="106" y1="8" x2="150" y2="8"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="128" y="4" text-anchor="middle">b</text>
+          <line class="dg-dim" x1="162" y1="18" x2="162" y2="62"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="170" y="44">b</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4B.6</span> &nbsp;The part left is
+          $a^2 - b^2$. The owner knows $a + b$ and $a - b$. He has
+          measured the answer without measuring either side.
+        </figcaption>
+      </figure>
+
+      <div class="c-practice c-practice--cont">
+        
+        <ol class="c-questions" data-start="4">
           <li>
-            Is $(a + b)^3 = a^3 + b^3$ ever true? Find every pair $(a, b)$ for
-            which it holds, and explain why there are no others.
-          </li>
-          <li>Evaluate $998^3$ using an identity, showing each term.</li>
+              <span class="tier">Apply</span>
+              The number of pairs of positive whole numbers $(x, y)$ with
+              $x^2 - y^2 = 45$ is
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$2$</li>
+                <li>$3$</li>
+                <li>$4$</li>
+                <li>$6$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
           <li>
-            The table gives the value of $x^2 + bx + c$ at four points. Find
-            $b$ and $c$, then factorise the expression.
-            <table>
-              <thead>
-                <tr><th>$x$</th><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td></tr>
-              </thead>
-              <tbody>
-                <tr><th>$x^2 + bx + c$</th><td>$12$</td><td>$6$</td><td>$2$</td><td>$0$</td></tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            If $a - b = 5$ and $ab = 14$, then $a^2 + b^2$ is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$39$</li>
-              <li>$53$</li>
-              <li>$81$</li>
-              <li>$95$</li>
-            </ol>
-          </li>
-          <li>Given $x + \dfrac{1}{x} = 3$, show that $x^3 + \dfrac{1}{x^3} = 18$.</li>
-          <li>
-            A rectangular garden has area $x^2 + 11x + 24$ square metres and
-            length $x + 8$ metres. Find its breadth and its perimeter.
-          </li>
-          <li>If $a + b + c = 0$, show that $(a+b)(b+c)(c+a) = -abc$.</li>
-          <li>
-            $\tfrac{1}{2}\left[(a+b)^2 - (a-b)^2\right]$ equals
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$ab$</li>
-              <li>$2ab$</li>
-              <li>$4ab$</li>
-              <li>$a^2 + b^2$</li>
-            </ol>
-          </li>
-          <li>
-            A student claims $n^2 + n$ is even for every whole number $n$.
-            Prove it by factorising. Is $n^3 + n$ always even as well? Give
-            your reasoning, not examples.
-          </li>
+              <span class="tier">Challenge</span>
+              The largest number that must divide $n^5 - n$ for every whole
+              number $n$ is
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$6$</li>
+                <li>$10$</li>
+                <li>$30$</li>
+                <li>$60$</li>
+              </ol>
+              <p class="hint">$n^5 - n = (n - 1)\,n\,(n + 1)\left(n^2 + 1\right)$.
+                Also, $n^2 + 1 = (n - 2)(n + 2) + 5$. Problem 4 does the rest.</p>
+            </li>
         </ol>
       </div>
 

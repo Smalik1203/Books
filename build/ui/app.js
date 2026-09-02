@@ -9,6 +9,13 @@
   const inner = document.getElementById('inner');
   const stage = document.getElementById('stage');
   const $ = (id) => document.getElementById(id);
+  /* A cover is one sheet, not a run of pages, so its bar carries no pager,
+     no spread and no signature. Rather than a second viewer that would
+     drift from this one, every control that a cover leaves out is reached
+     through these — absent means nothing to do, not a crash. */
+  const set = (id, attr, val) => { const el = $(id); if (el) el[attr] = val; };
+  const press = (id, val) => { const el = $(id); if (el) el.setAttribute('aria-pressed', val); };
+  const on = (id, ev, fn) => { const el = $(id); if (el) el[ev] = fn; };
 
   const CSS_PX_PER_MM = 96 / 25.4;                 // what the browser assumes
   const state = {
@@ -27,18 +34,18 @@
   }
   function load() {
     frame.src = src();
-    $('sheet-trim').setAttribute('aria-pressed', state.sheet === 'trim');
-    $('sheet-bleed').setAttribute('aria-pressed', state.sheet === 'bleed');
-    $('view-pages').setAttribute('aria-pressed', state.view === 'pages');
-    $('view-spread').setAttribute('aria-pressed', state.view === 'spread');
-    $('view-impose').setAttribute('aria-pressed', state.view === 'impose');
-    $('sig-size').hidden = state.view !== 'impose';
+    press('sheet-trim', state.sheet === 'trim');
+    press('sheet-bleed', state.sheet === 'bleed');
+    press('view-pages', state.view === 'pages');
+    press('view-spread', state.view === 'spread');
+    press('view-impose', state.view === 'impose');
+    set('sig-size', 'hidden', state.view !== 'impose');
     // page nav and the sheet toggle mean nothing on a press sheet
     const onSheet = state.view === 'impose';
     for (const id of ['prev', 'next', 'page-no', 'sheet-trim', 'sheet-bleed']) {
-      $(id).disabled = onSheet;
+      set(id, 'disabled', onSheet);
     }
-    if (onSheet) $('page-count').textContent = '';
+    if (onSheet) set('page-count', 'textContent', '');
   }
 
   /* ---- sizing -------------------------------------------- */
@@ -100,31 +107,32 @@
   function countPages() {
     const doc = frame.contentDocument;
     pages = doc ? [...doc.querySelectorAll('.page')] : [];
-    if (state.view !== 'impose') $('page-count').textContent = 'of ' + pages.length;
-    $('page-no').max = pages.length;
+    if (state.view !== 'impose') set('page-count', 'textContent', 'of ' + pages.length);
+    set('page-no', 'max', pages.length);
   }
   function goto(n) {
     if (!pages.length) return;
     const i = Math.max(1, Math.min(pages.length, n)) - 1;
     const k = Number(inner.style.zoom) || 1;
     stage.scrollTop = pages[i].getBoundingClientRect().top * k - 10;
-    $("page-no").value = pages[i].dataset.folio || String(i + 1);
+    set('page-no', 'value', pages[i].dataset.folio || String(i + 1));
   }
 
   /* ---- controls ------------------------------------------ */
-  $('sheet-trim').onclick  = () => { state.sheet = 'trim';  load(); };
-  $('sheet-bleed').onclick = () => { state.sheet = 'bleed'; load(); };
-  $('view-pages').onclick  = () => { state.view = 'pages';  load(); };
-  $('view-spread').onclick = () => { state.view = 'spread'; load(); };
-  $('view-impose').onclick = () => { state.view = 'impose'; load(); };
-  $('sig-size').onchange = (e) => { state.sig = Number(e.target.value); load(); };
+  on('sheet-trim', 'onclick',  () => { state.sheet = 'trim';  load(); });
+  on('sheet-bleed', 'onclick', () => { state.sheet = 'bleed'; load(); });
+  on('view-pages', 'onclick',  () => { state.view = 'pages';  load(); });
+  on('view-spread', 'onclick', () => { state.view = 'spread'; load(); });
+  on('view-impose', 'onclick', () => { state.view = 'impose'; load(); });
+  on('sig-size', 'onchange', (e) => { state.sig = Number(e.target.value); load(); });
   for (const b of document.querySelectorAll('[data-zoom]')) {
     b.onclick = () => { state.zoom = b.dataset.zoom; applyZoom(); };
   }
-  $('prev').onclick = () => goto(Number($('page-no').value) - 1);
-  $('next').onclick = () => goto(Number($('page-no').value) + 1);
-  $('page-no').onchange = () => goto(Number($('page-no').value));
-  $('print').onclick = () => { frame.contentWindow.focus(); frame.contentWindow.print(); };
+  const pageNo = () => Number(($('page-no') || {}).value || 0);
+  on('prev', 'onclick', () => goto(pageNo() - 1));
+  on('next', 'onclick', () => goto(pageNo() + 1));
+  on('page-no', 'onchange', () => goto(pageNo()));
+  on('print', 'onclick', () => { frame.contentWindow.focus(); frame.contentWindow.print(); });
 
   /* ---- calibration --------------------------------------- */
   const panel = $('cal-panel');
@@ -159,7 +167,7 @@
       const r = await fetch('/api/build', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ target: cfg.target, pdf: true, bleed: true }),
+        body: JSON.stringify({ target: cfg.target, kind: cfg.kind, pdf: true, bleed: true }),
       });
       const out = await r.json();
       $('build-log').textContent = out.ok ? out.summary : ('failed — ' + out.summary);
