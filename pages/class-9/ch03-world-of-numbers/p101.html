@@ -10,112 +10,78 @@
       <div class="c-stage">
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">The Idea Underneath</div>
-          <div class="c-stage__for">Two kinds of number, interleaved everywhere.</div>
+          <div class="c-stage__title">Using What You Know</div>
+          <div class="c-stage__for">The chapter's results, in questions that do not say which one to use.</div>
         </div>
       </div>
 
       <p>
-        Could a rational $r$ plus an irrational $i$ come out rational? One line
-        settles it:
+        The chapter ended with a line full of numbers and a few facts about
+        them. The rationals are closed under the four operations. A number is
+        rational exactly when its decimal terminates or repeats. $|a - b|$ is
+        a distance. And $\sqrt{2}$ is not a ratio. Every question below can be
+        answered with those facts alone. What is new is that the question no
+        longer says which fact to use. Try each before reading on.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Is $\sqrt{2} + 1$ rational or irrational? Then decide: is the sum
+          of two irrational numbers always irrational?</p>
+      </div>
+
+      <p>
+        Suppose $\sqrt{2} + 1$ were rational, and call it $r$. Then
       </p>
 
       <div class="eq eq--anchor">
-        $$r + i = s \;\Longrightarrow\; i = s - r$$
+        $$\sqrt{2} = r - 1$$
       </div>
 
       <p>
-        A difference of two rationals is rational, and $i$ is not. So
-        <span class="pop">rational plus irrational is always irrational</span>
-        &mdash; but nothing here settles irrational plus irrational, and that is
-        where examinations live.
+        The right side is a difference of two rationals, and the rationals are
+        closed under subtraction. So $\sqrt{2}$ would be rational, and Section
+        3.5 proved that it is not. The supposition fails: $\sqrt{2} + 1$ is
+        irrational. Notice that we did not write down a single decimal place
+        of $\sqrt{2}$. Nothing in the argument depended on the $1$ either. A
+        rational number added to any irrational number gives an irrational
+        number, for the same reason.
       </p>
 
-      <div class="c-shift">
-        <div class="c-shift__title">What arithmetic does to the two kinds</div>
-        <div class="c-shift__row">
-          <span>rational $+$ irrational<span class="c-shift__way">&rarr;</span></span>
-          <span>always irrational</span>
-        </div>
-        <div class="c-shift__row">
-          <span>irrational $+$ irrational<span class="c-shift__way">&rarr;</span></span>
-          <span>may be either</span>
-        </div>
+      <p>
+        The second question has a different answer. $\sqrt{2}$ is irrational,
+        and so is $-\sqrt{2}$, since if $-\sqrt{2}$ were a rational $s$ then
+        $\sqrt{2} = -s$ would be rational too. Their sum is $0$. One example
+        is enough: the sum of two irrational numbers is not always irrational.
+        The argument above does not apply here, because it needed one of the
+        two numbers to be rational.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Does $\dfrac{7}{80}$ have a terminating decimal? If it does, after
+          how many places does it stop? Answer without dividing.</p>
       </div>
 
       <p>
-        $\sqrt{2} + \left(-\sqrt{2}\right) = 0$, and yet $\sqrt{2} + \sqrt{3}$
-        is irrational. Both kinds sit everywhere on the line, however far you
-        magnify it.
+        The fraction is in lowest terms, and $80 = 2^4 \times 5$. The only
+        prime factors are $2$ and $5$, so the decimal terminates. To see where
+        it stops, do what Example 8 did and turn the denominator into a power
+        of ten. There are four $2$s and one $5$, so three more $5$s are
+        needed.
       </p>
 
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="0 0 150 118" data-size="sm" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A number line, with a short stretch of it magnified below to show both kinds of number again">
-            <path class="dg-line" d="M15 26 H135"/>
-            <path class="dg-thin" d="M15 22 V30 M135 22 V30"/>
-            <path class="dg-dim" d="M60 26 H78"/>
-
-            <path class="dg-ghost" d="M60 30 L15 78 M78 30 L135 78"/>
-
-            <path class="dg-line" d="M15 84 H135"/>
-            <circle class="dg-fill-teal" cx="27" cy="84" r="2.4"/>
-            <circle class="dg-plot" cx="42" cy="84" r="2.4"/>
-            <circle class="dg-fill-teal" cx="57" cy="84" r="2.4"/>
-            <circle class="dg-plot" cx="72" cy="84" r="2.4"/>
-            <circle class="dg-fill-teal" cx="87" cy="84" r="2.4"/>
-            <circle class="dg-plot" cx="102" cy="84" r="2.4"/>
-            <circle class="dg-fill-teal" cx="117" cy="84" r="2.4"/>
-            <circle class="dg-plot" cx="130" cy="84" r="2.4"/>
-
-            <text class="dg-label dg-label--sm" x="15" y="19" text-anchor="middle">0</text>
-            <text class="dg-label dg-label--sm" x="135" y="19" text-anchor="middle">1</text>
-            <text class="dg-note" x="75" y="102" text-anchor="middle">the same picture again</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3B.1</span> Magnify any stretch
-          of the line and both kinds are still there. Neither has an interval
-          to itself.</figcaption>
-        </figure>
+      <div class="eq">
+        $$\dfrac{7}{80} = \dfrac{7 \times 125}{2^4 \times 5^4} = \dfrac{875}{10000} = 0.0875$$
       </div>
 
-      <div class="c-results">
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-line" d="M6 22 H42"/>
-            <path class="dg-thin" d="M24 16 V28"/>
-            <path class="dg-move" d="M20 34 H8" marker-end="url(#dg-arrow)"/>
-            <path class="dg-move" d="M28 34 H40" marker-end="url(#dg-arrow)"/>
-          </svg>
-          <div class="c-results__cap">Zero split the line in two</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-line" d="M6 22 H42"/>
-            <circle class="dg-plot" cx="12" cy="22" r="2.4"/>
-            <circle class="dg-plot" cx="36" cy="22" r="2.4"/>
-            <circle class="dg-fill-teal" cx="24" cy="22" r="2.4"/>
-          </svg>
-          <div class="c-results__cap">Between any two lies another</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-line" d="M6 34 H42"/>
-            <path class="dg-thin" d="M12 34 V16 H30 V34"/>
-            <path class="dg-dim" d="M12 34 L30 16"/>
-            <circle class="dg-plot" cx="37" cy="34" r="2.2"/>
-          </svg>
-          <div class="c-results__cap">A diagonal can be a length no ratio names</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="dg-line" cx="24" cy="22" r="13"/>
-            <path class="dg-thin" d="M24 9 V4 M37 22 H42 M24 35 V40 M11 22 H6"/>
-            <path class="dg-thin" d="M33.2 12.8 L36.7 9.3 M33.2 31.2 L36.7 34.7"/>
-          </svg>
-          <div class="c-results__cap">A remainder must come round again</div>
-        </div>
-      </div>
+      <p>
+        It stops after four places. Notice that the four came from $2^4$, the
+        larger of the two powers. The single $5$ was matched by the $2$s
+        without any help. A denominator of $2^3 \times 5$ would give three
+        places, and so would $5^3$ on its own. We knew the length of the
+        decimal before we knew any of its digits.
+      </p>
 
     </div>
   </div>

@@ -10,113 +10,107 @@
       <div class="c-stage">
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">The Idea Underneath</div>
-          <div class="c-stage__for">One formula, and the question it does not answer.</div>
+          <div class="c-stage__title">Using What You Know</div>
+          <div class="c-stage__for">The chapter's results, in questions that do not say which one to use.</div>
         </div>
       </div>
 
       <p>
-        Section 1.4 measured the straight line between two points:
+        The chapter ended with one formula and a few facts about the plane.
+        Two numbers fix a point. The signs of the two numbers fix its
+        quadrant, and a zero puts it on an axis. And the distance between
+        $(x_1, y_1)$ and $(x_2, y_2)$ is
+        $\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Every question below can be
+        answered with those alone. What is new is that the question no
+        longer says which one to use. Try each before reading on.
       </p>
 
-      <div class="eq eq--anchor">
-        $$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Find every point of the x-axis that is $5$ units from
+          $P (3, 4)$.</p>
       </div>
 
       <p>
-        But nobody in a gridded city walks along a hypotenuse.
-        <span class="pop">Two honest numbers measure the same pair of
-        points</span>, and which one is wanted depends on what may travel
-        along it.
+        A point of the x-axis has the form $(x, 0)$. That is the chapter's
+        first fact, and it turns the question into algebra. The distance
+        from $(x, 0)$ to $(3, 4)$ is $5$, so
       </p>
 
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="0 0 150 150" data-size="sm" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Two plotted points joined both by a straight line and by a path along the grid">
-            <g class="dg-grid">
-              <path d="M36 12 V140 M52 12 V140 M68 12 V140 M84 12 V140 M100 12 V140 M116 12 V140"/>
-              <path d="M20 116 H140 M20 100 H140 M20 84 H140 M20 68 H140 M20 52 H140 M20 36 H140 M20 20 H140"/>
-            </g>
-
-            <path class="dg-axis" d="M12 132 H140"/>
-            <path class="dg-axis" d="M20 140 V12"/>
-
-            <path class="dg-line" d="M36 100 H100 V20"/>
-            <path class="dg-dim" d="M36 100 L100 20"/>
-
-            <circle class="dg-plot" cx="36" cy="100" r="2.6"/>
-            <circle class="dg-plot" cx="100" cy="20" r="2.6"/>
-
-            <text class="dg-label" x="28" y="106" text-anchor="end">A</text>
-            <text class="dg-label" x="106" y="18">B</text>
-            <text class="dg-note" x="66" y="112" text-anchor="middle">9 blocks</text>
-            <text class="dg-dim-label" x="58" y="52">&radic;41</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 1B.1</span> From $A(1,2)$ to
-          $B(5,7)$: nine blocks on foot, $\sqrt{41} \approx 6.4$ as the crow
-          flies.</figcaption>
-        </figure>
-      </div>
-
-      <div class="c-shift">
-        <div class="c-shift__title">What the square root does</div>
-        <div class="c-shift__row">
-          <span>both shifts double<span class="c-shift__way">&uarr;</span></span>
-          <span>the distance doubles<span class="c-shift__way">&uarr;</span></span>
-        </div>
-        <div class="c-shift__row">
-          <span>one shift doubles<span class="c-shift__way">&uarr;</span></span>
-          <span>the distance rises by less<span class="c-shift__way">&uarr;</span></span>
-        </div>
+      <div class="eq">
+        $$(x - 3)^2 + (0 - 4)^2 = 25$$
       </div>
 
       <p>
-        The formula is not a proportion in either coordinate on its own. Half
-        the traps in this section are built on treating it as one.
+        We squared both sides at once, and the root is gone. Now
+        $(x - 3)^2 = 25 - 16 = 9$, so $x - 3 = 3$ or $x - 3 = -3$. That
+        gives $x = 6$ or $x = 0$. The two points are $(6, 0)$ and the origin
+        itself (Fig. 1B.1). Notice that we never drew the picture. We wrote
+        the unknown point in the form the axis gives it, and the formula did
+        the rest. Notice also that there were two answers. A square root has
+        two signs, and a question that gives one distance usually leaves two
+        points open.
       </p>
 
-      <div class="c-results">
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-axis" d="M4 22 H44"/>
-            <path class="dg-axis" d="M24 4 V40"/>
-            <circle class="dg-plot" cx="34" cy="12" r="1.8"/>
-            <circle class="dg-plot" cx="14" cy="12" r="1.8"/>
-            <circle class="dg-plot" cx="14" cy="32" r="1.8"/>
-            <circle class="dg-plot" cx="34" cy="32" r="1.8"/>
-          </svg>
-          <div class="c-results__cap">Two signs name the quadrant</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-line" d="M10 34 H38 V12"/>
-            <path class="dg-dim" d="M10 34 L38 12"/>
-            <circle class="dg-plot" cx="10" cy="34" r="1.8"/>
-            <circle class="dg-plot" cx="38" cy="12" r="1.8"/>
-          </svg>
-          <div class="c-results__cap">A distance is one Pythagoras</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-line" d="M8 22 H40"/>
-            <path class="dg-thin" d="M16 18 V26 M32 18 V26"/>
-            <circle class="dg-plot" cx="8" cy="22" r="1.8"/>
-            <circle class="dg-plot" cx="40" cy="22" r="1.8"/>
-            <circle class="dg-fill-teal" cx="24" cy="22" r="2.2"/>
-          </svg>
-          <div class="c-results__cap">A midpoint is an average</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-line" d="M10 34 H24 V22 H38 V12"/>
-            <path class="dg-dim" d="M10 34 L38 12"/>
-            <circle class="dg-plot" cx="10" cy="34" r="1.8"/>
-            <circle class="dg-plot" cx="38" cy="12" r="1.8"/>
-          </svg>
-          <div class="c-results__cap">A walk is not a distance</div>
-        </div>
-      </div>
+      <figure class="c-figure c-figure--lg">
+        <svg viewBox="0 0 325 232" role="img"
+             aria-label="A coordinate grid with the point P at three four, and the two points of the x-axis five units from it, the origin and six zero, each joined to P">
+        <g class="dg-grid"><path d="M28 42 V198 M54 42 V198 M80 42 V198 M106 42 V198 M132 42 V198 M158 42 V198 M184 42 V198 M210 42 V198 M236 42 V198 M262 42 V198 M288 42 V198 M28 198 H288 M28 172 H288 M28 146 H288 M28 120 H288 M28 94 H288 M28 68 H288 M28 42 H288"/></g>
+        <line class="dg-axis" x1="28" y1="172" x2="288" y2="172"/>
+        <line class="dg-axis" x1="54" y1="42" x2="54" y2="198"/>
+        <line class="dg-thin" x1="28" y1="168" x2="28" y2="176"/>
+        <text class="dg-tick" x="28" y="189" text-anchor="middle">&minus;1</text>
+        <line class="dg-thin" x1="80" y1="168" x2="80" y2="176"/>
+        <text class="dg-tick" x="80" y="189" text-anchor="middle">1</text>
+        <line class="dg-thin" x1="106" y1="168" x2="106" y2="176"/>
+        <text class="dg-tick" x="106" y="189" text-anchor="middle">2</text>
+        <line class="dg-thin" x1="132" y1="168" x2="132" y2="176"/>
+        <text class="dg-tick" x="132" y="189" text-anchor="middle">3</text>
+        <line class="dg-thin" x1="158" y1="168" x2="158" y2="176"/>
+        <text class="dg-tick" x="158" y="189" text-anchor="middle">4</text>
+        <line class="dg-thin" x1="184" y1="168" x2="184" y2="176"/>
+        <text class="dg-tick" x="184" y="189" text-anchor="middle">5</text>
+        <line class="dg-thin" x1="210" y1="168" x2="210" y2="176"/>
+        <text class="dg-tick" x="210" y="189" text-anchor="middle">6</text>
+        <line class="dg-thin" x1="236" y1="168" x2="236" y2="176"/>
+        <text class="dg-tick" x="236" y="189" text-anchor="middle">7</text>
+        <line class="dg-thin" x1="262" y1="168" x2="262" y2="176"/>
+        <text class="dg-tick" x="262" y="189" text-anchor="middle">8</text>
+        <line class="dg-thin" x1="288" y1="168" x2="288" y2="176"/>
+        <text class="dg-tick" x="288" y="189" text-anchor="middle">9</text>
+        <line class="dg-thin" x1="50" y1="198" x2="58" y2="198"/>
+        <text class="dg-tick" x="46" y="202" text-anchor="end">&minus;1</text>
+        <line class="dg-thin" x1="50" y1="146" x2="58" y2="146"/>
+        <text class="dg-tick" x="46" y="150" text-anchor="end">1</text>
+        <line class="dg-thin" x1="50" y1="120" x2="58" y2="120"/>
+        <text class="dg-tick" x="46" y="124" text-anchor="end">2</text>
+        <line class="dg-thin" x1="50" y1="94" x2="58" y2="94"/>
+        <text class="dg-tick" x="46" y="98" text-anchor="end">3</text>
+        <line class="dg-thin" x1="50" y1="68" x2="58" y2="68"/>
+        <text class="dg-tick" x="46" y="72" text-anchor="end">4</text>
+        <line class="dg-thin" x1="50" y1="42" x2="58" y2="42"/>
+        <text class="dg-tick" x="46" y="46" text-anchor="end">5</text>
+        <text class="dg-note" x="296" y="166">x-axis</text>
+        <text class="dg-note" x="62" y="34">y-axis</text>
+        <line class="dg-dim" x1="132" y1="68" x2="54" y2="172"/>
+        <line class="dg-dim" x1="132" y1="68" x2="210" y2="172"/>
+        <line class="dg-thin" x1="132" y1="68" x2="132" y2="172"/>
+        <circle class="dg-fill-teal" cx="132" cy="68" r="4"/>
+        <circle class="dg-fill-teal" cx="54" cy="172" r="4"/>
+        <circle class="dg-fill-teal" cx="210" cy="172" r="4"/>
+        <text class="dg-label" x="124" y="60" text-anchor="end">P (3, 4)</text>
+        <text class="dg-label" x="62" y="190" text-anchor="start">O</text>
+        <text class="dg-label" x="218" y="202" text-anchor="start">(6, 0)</text>
+        <text class="dg-dim-label" x="87" y="116" text-anchor="end">5</text>
+        <text class="dg-dim-label" x="179" y="116" text-anchor="start">5</text>
+        <text class="dg-label" x="138" y="124" text-anchor="start">4</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 1B.1</span> &nbsp;The two points of the
+          x-axis that are $5$ units from $P$. Each one closes a $3$, $4$, $5$
+          triangle with the foot of $P$.
+        </figcaption>
+      </figure>
 
     </div>
   </div>

@@ -2,98 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Think and Reason</div>
-          <div class="c-stage__for">Judge a claim &mdash; and the reason offered for it.</div>
-        </div>
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>In Fig. 5B.1, $O$ is the centre and $\angle OAB = 25^\circ$. The
+          point $P$ lies on the major arc and $Q$ on the minor arc. Find
+          $\angle APB$ and $\angle AQB$.</p>
       </div>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 12 L18.4 8"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Questions 1&ndash;4 take this key.
-            <strong>(a)</strong> both true, R explains A;
-            <strong>(b)</strong> both true, R does not explain A;
-            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
-            R true.</p>
-        </div>
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 -6 290 200" role="img"
+             aria-label="A circle with centre O, a chord AB below the centre joined to O by two radii, a point P on the major arc above and a point Q on the minor arc below, each joined to A and B">
+          <circle class="dg-fill-d" cx="145" cy="95" r="80"/>
+          <path class="dg-fill-c-soft" d="M72.5 128.8 L88.5 128.8 A16 16 0 0 0 87 122.04 Z"/>
+          <path class="dg-fill-c-soft" d="M145 15 L134.25 31.87 A20 20 0 0 0 155.75 31.87 Z"/>
+          <path class="dg-fill-c-soft" d="M145 175 L128.13 164.25 A20 20 0 0 1 161.87 164.25 Z"/>
+          <circle class="dg-line" cx="145" cy="95" r="80"/>
+          <path class="dg-line" d="M72.5 128.8 L217.5 128.8"/>
+          <path class="dg-thin" d="M145 95 L72.5 128.8 M145 95 L217.5 128.8"/>
+          <path class="dg-thin" d="M145 15 L72.5 128.8 M145 15 L217.5 128.8"/>
+          <path class="dg-thin" d="M145 175 L72.5 128.8 M145 175 L217.5 128.8"/>
+          <circle class="dg-fill-teal" cx="145" cy="95" r="3.5"/>
+          <circle class="dg-fill-c" cx="145" cy="15" r="3"/>
+          <circle class="dg-fill-c" cx="145" cy="175" r="3"/>
+
+          <text class="dg-label" x="151" y="91">O</text>
+          <text class="dg-label" x="66" y="135" text-anchor="end">A</text>
+          <text class="dg-label" x="224" y="135">B</text>
+          <text class="dg-label" x="145" y="7" text-anchor="middle">P</text>
+          <text class="dg-label" x="145" y="191" text-anchor="middle">Q</text>
+          <text class="dg-dim-label" x="104" y="125">25&deg;</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 5B.1</span> &nbsp;One chord, two radii,
+          and a point on each arc. The angle given is at $A$, where no
+          theorem of the chapter looks.
+        </figcaption>
+      </figure>
+
+      <p>
+        The angle given is at $A$, at the end of a chord, and no theorem of
+        the chapter says anything about an angle there. But $OA$ and $OB$
+        are radii, so triangle $OAB$ is isosceles and
+        $\angle OBA = \angle OAB = 25^\circ$. Then
+        $\angle AOB = 180^\circ - 25^\circ - 25^\circ = 130^\circ$. Now the
+        chapter can take over. By Theorem 9,
+        $\angle APB = \tfrac{1}{2} \times 130^\circ = 65^\circ$. The point
+        $Q$ stands on the other arc, and the arc it looks at is the major
+        arc, which sweeps $360^\circ - 130^\circ = 230^\circ$ at the centre.
+        So $\angle AQB = 115^\circ$. As a check, $65^\circ + 115^\circ =
+        180^\circ$, which Example 10 said must happen. Notice that the first
+        step was not a circle theorem at all. It was an isosceles triangle.
+        The radii make it isosceles, and that step is often what turns a
+        question about a chord into one the chapter has already answered.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>$P$ is a point $6$ cm from the centre $O$ of a circle of radius
+          $10$ cm. Find the length of the longest chord through $P$, and of
+          the shortest.</p>
       </div>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            <strong>A.</strong> The perpendicular bisector of a chord passes
-            through the centre. &nbsp;<strong>R.</strong> The centre is
-            equidistant from the chord's two ends, and every such point lies on
-            that bisector.
-          </li>
-          <li>
-            <strong>A.</strong> A quadrilateral whose opposite angles add to
-            $180^\circ$ is cyclic. &nbsp;<strong>R.</strong> Opposite angles of
-            a cyclic quadrilateral add to $180^\circ$.
-          </li>
-          <li>
-            <strong>A.</strong> A circle can be drawn through any three points.
-            &nbsp;<strong>R.</strong> Three points lying in a straight line have
-            no circle through them.
-          </li>
-          <li>
-            <strong>A.</strong> A chord subtending $90^\circ$ at the centre has
-            length $r\sqrt{2}$. &nbsp;<strong>R.</strong> The two radii to its
-            ends are equal, so the triangle they close is isosceles.
-          </li>
-          <li>
-            A circle has radius $10$ cm. Which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>Some chord of it is $20$ cm long.</li>
-              <li>A chord $6$ cm from the centre is $16$ cm long.</li>
-              <li>No chord of it is longer than $20$ cm.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li>
-              <li>(i) and (iii)</li>
-              <li>(ii) and (iii)</li>
-              <li>all three</li>
-            </ol>
-          </li>
-          <li>
-            $ABCD$ is cyclic with $\angle A = 70^\circ$. Which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>$\angle C = 110^\circ$.</li>
-              <li>$\angle B = 110^\circ$.</li>
-              <li>$\angle B = \angle D$.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li>
-              <li>(i) and (iii)</li>
-              <li>(ii) and (iii)</li>
-              <li>all three</li>
-            </ol>
-          </li>
-          <li>
-            Points $P$ and $Q$ lie on the same side of a segment $AB$, and
-            $\angle APB = \angle AQB$. Which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>$A$, $B$, $P$, $Q$ are concyclic.</li>
-              <li>$PQ$ is parallel to $AB$.</li>
-              <li>$\angle APB$ is half the angle $AB$ subtends at that
-                  circle's centre.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li>
-              <li>(i) and (iii)</li>
-              <li>(ii) and (iii)</li>
-              <li>all three</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
+      <p>
+        The longest chord of any circle is a diameter, and one diameter
+        passes through $P$. That is $20$ cm. The shortest needs Theorem 8
+        read the other way round: the shorter a chord, the farther it lies
+        from the centre. So we want the chord through $P$ that is as far
+        from $O$ as a chord through $P$ can be. The distance from $O$ to a
+        line through $P$ is measured along the perpendicular from $O$, and a
+        perpendicular is never longer than $OP$ itself. It is exactly $OP$
+        when the chord is at right angles to $OP$, as in Fig. 5B.2.
+      </p>
 
     </div>
   </div>

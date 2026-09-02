@@ -2,82 +2,103 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">8</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">The Trap Room</div>
-          <div class="c-stage__for">Two students, one question, and a mistake.</div>
-        </div>
-      </div>
-      <p class="c-stage__ask">Answer (a) A only, (b) B only, (c) both,
-      (d) neither &mdash; then say in one line what went wrong.</p>
-
-      <div class="c-practice">
-        <ol class="c-questions">
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
           <li>
-            <strong>A.</strong> $(a + b)^2 = a^2 + b^2$ &mdash; the square goes
-            into the bracket a term at a time. &nbsp;<strong>B.</strong>
-            $(a + b)^2 = a^2 + b^2 + ab$.
-          </li>
-          <li>
-            <strong>A.</strong> $\dfrac{x^2 + 9}{x + 3}$ simplifies to $x + 3$.
-            &nbsp;<strong>B.</strong> It does not simplify at all.
-          </li>
-          <li>
-            $x^2 - 4x + 4$ factorises as <strong>A.</strong> $(x - 2)^2$.
-            &nbsp;<strong>B.</strong> $(x - 2)(x + 2)$ &mdash; the constant
-            comes out right.
-          </li>
-          <li>
-            <strong>A.</strong> $(a - b)^2 = (b - a)^2$.
-            &nbsp;<strong>B.</strong> $(a - b)^2 = -(b - a)^2$, because
-            reversing a subtraction changes the sign.
-          </li>
-          <li>
-            <strong>A.</strong> $4x^2 + 9y^2$ cannot be factorised.
-            &nbsp;<strong>B.</strong> Therefore $4x^2 + 12xy + 9y^2$ cannot be
-            either.
-          </li>
-          <li>
-            To solve $(x - 12)(x + 8) = 5$: <strong>A.</strong> Set
-            $x - 12 = 5$ or $x + 8 = 5$. &nbsp;<strong>B.</strong> Multiply out
-            first, then bring everything to one side.
-          </li>
-          <li>
-            <strong>A.</strong> $\dfrac{x^2 - 4}{x - 2} = x + 2$ for every $x$.
-            &nbsp;<strong>B.</strong> It equals $x + 2$ for every $x$ except
-            $2$.
-          </li>
-          <li>
-            <strong>A.</strong> $x^3 + y^3 + z^3 = 3xyz$ whenever
-            $x + y + z = 0$. &nbsp;<strong>B.</strong> It holds whenever
-            $xyz \neq 0$.
-          </li>
-          <li>
-            <strong>A.</strong> $a^2 + b^2 \geq 2ab$ for every $a$ and $b$.
-            &nbsp;<strong>B.</strong> Equality happens only when $a = b$.
-          </li>
-          <li>
-            <strong>A.</strong> $x^2 + 5x + 6 = 0$ is an identity.
-            &nbsp;<strong>B.</strong> $(x + 2)(x + 3) = x^2 + 5x + 6$ is an
-            identity.
-          </li>
+              Given $a + b = 5$ and $ab = 6$, which of these must be true?
+              <ol class="c-parts c-parts--3">
+                <li>$a^2 + b^2 = 13$</li>
+                <li>$(a - b)^2 = 1$</li>
+                <li>$a^3 + b^3 = 35$</li>
+              </ol>
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>(i) only</li><li>(i) and (ii)</li>
+                <li>(ii) and (iii)</li><li>all three</li>
+              </ol>
+            </li>
         </ol>
       </div>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Three shapes of mistake</div>
-        <ol>
-          <li><strong>Distributing what does not distribute</strong> (1, 2, 5).
-            A power does not go into a sum a term at a time, and a sum on top
-            of a fraction cannot be cancelled piece by piece.</li>
-          <li><strong>Using a rule outside its one case</strong> (3, 4, 6, 8).
-            A product equals zero only if a factor does &mdash; the rule says
-            nothing about a product equal to $5$ &mdash; and the cube identity
-            needs $x + y + z = 0$, not $xyz \neq 0$.</li>
-          <li><strong>Forgetting where an expression is undefined</strong>
-            (7, 10). Cancelling $x - 2$ is legal only away from $x = 2$; an
-            identity holds for <em>every</em> value, an equation for some.</li>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>
+              $\dfrac{x^2 - 4}{x - 2} = x + 2$ holds
+              <ol class="c-parts c-parts--alpha c-parts--tall">
+                <li>for every $x$</li>
+                <li>for every $x$ except $2$</li>
+                <li>for every $x$ except $2$ and $-2$</li>
+                <li>for no $x$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        
+        <ol class="c-questions" data-start="6">
+          <li>
+              To solve $(x - 12)(x + 8) = 5$, a student writes $x - 12 = 5$
+              or $x + 8 = 5$. The student answers $17$ and $-3$. This method
+              <ol class="c-parts c-parts--alpha c-parts--1">
+                <li>gives both solutions</li>
+                <li>gives one of the two solutions</li>
+                <li>gives neither, because a product is $0$ only if a factor is, and this product is $5$</li>
+                <li>gives neither, because the equation has no solutions</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>
+              The table gives the value of $x^2 + bx + c$ at four values of $x$.
+              <table>
+                <thead>
+                  <tr><th>$x$</th><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td></tr>
+                </thead>
+                <tbody>
+                  <tr><th>$x^2 + bx + c$</th><td>$12$</td><td>$6$</td><td>$2$</td><td>$0$</td></tr>
+                </tbody>
+              </table>
+              The expression is
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$(x - 3)(x - 4)$</li>
+                <li>$(x + 3)(x + 4)$</li>
+                <li>$(x - 2)(x - 6)$</li>
+                <li>$(x - 1)(x - 12)$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="8">
+          <li>
+              If $x = 2 + \sqrt{3}$, then $x^2 + \dfrac{1}{x^2}$ equals
+              <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
+                <li>$4$</li>
+                <li>$7$</li>
+                <li>$14$</li>
+                <li>$16$</li>
+              </ol>
+              <p class="hint">Multiply $\left(2 + \sqrt{3}\right)\left(2 - \sqrt{3}\right)$
+                first. Then you never need to square a surd.</p>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>
+              $(a + b)^3 = a^3 + b^3$ holds
+              <ol class="c-parts c-parts--alpha">
+                <li>never</li>
+                <li>only when $a = b = 0$</li>
+                <li>exactly when $a = 0$, $b = 0$ or $a = -b$</li>
+                <li>only when $ab = 0$</li>
+              </ol>
+            </li>
         </ol>
       </div>
 

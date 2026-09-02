@@ -2,99 +2,95 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Think and Reason</div>
-          <div class="c-stage__for">Judge a claim &mdash; and the reason offered for it.</div>
-        </div>
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>A shop's bill should follow one linear rule, but one row of the
+          table was copied wrongly. Which row, and what should it say?</p>
+        <table>
+          <thead>
+            <tr><th>Units</th><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td></tr>
+          </thead>
+          <tbody>
+            <tr><th>Bill (&#8377;)</th><td>$150$</td><td>$170$</td><td>$190$</td><td>$215$</td><td>$230$</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 20 L21 6"/>
-            <circle cx="7" cy="16.9" r="1.6"/>
-            <circle cx="17" cy="9.1" r="1.6"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Questions 1&ndash;4 take this key.
-            <strong>(a)</strong> both true, R explains A;
-            <strong>(b)</strong> both true, R does not explain A;
-            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
-            R true.</p>
-        </div>
+      <p>
+        The differences are $20$, $20$, $25$, $15$. They are not all equal,
+        so as it stands the table is not linear. But look at where the
+        differences go wrong. The first two are $20$. The last two are $25$
+        and $15$, and those two are the differences on either side of the
+        bill for $3$ units. That is the only row that touches both. So the
+        bill for $3$ units is the wrong one. The rule from the other rows is
+        $150 + 20u$, and at $u = 3$ it gives $210$, not $215$. Check the last
+        row: $150 + 80 = 230$. Notice that the differences told us more than
+        yes or no. When one row is wrong, two differences are wrong, and
+        they sit either side of it. Notice too that $25 + 15 = 40$, which is
+        two steps of $20$. The wrong row pushed one difference up by $5$ and
+        the next one down by $5$.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Do the points $(1, 5)$, $(3, 11)$ and $(6, 23)$ lie on one
+          straight line?</p>
       </div>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            <strong>A.</strong> Evaluating a linear polynomial at
-            $1, 2, 3, \ldots$ always gives a linear pattern.
-            &nbsp;<strong>R.</strong> $a(n+1) + b - (an + b) = a$, the same
-            number for every $n$.
-          </li>
-          <li>
-            <strong>A.</strong> A sequence whose first differences are all
-            equal comes from a polynomial of degree at most $1$.
-            &nbsp;<strong>R.</strong> A polynomial of degree $2$ has constant
-            second differences.
-          </li>
-          <li>
-            <strong>A.</strong> Any two readings determine $a$ and $b$.
-            &nbsp;<strong>R.</strong> Two unknowns need two equations.
-          </li>
-          <li>
-            <strong>A.</strong> The graphs of $y = 4x - 3$ and $y = -4x - 3$
-            meet on the $y$-axis. &nbsp;<strong>R.</strong> Both have the same
-            constant term.
-          </li>
-          <li>
-            For $y = -3x + 4$, which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>Its slope is $-3$.</li>
-              <li>It meets the $y$-axis at $(0, 4)$.</li>
-              <li>It passes through $(2, 2)$.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(i) and (ii)</li>
-              <li>(ii) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            A quantity measured hourly has differences $7, 7, 7, 7$. Which
-            must be true?
-            <ol class="c-parts c-parts--1">
-              <li>The rule has the form $7t + b$.</li>
-              <li>The rule is $7t$.</li>
-              <li>One further reading would settle it.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(ii) and (iii)</li>
-              <li>(i) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            In $y = ax + b$, $a$ is positive and $b$ is negative. Which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>It crosses the $x$-axis at a positive $x$.</li>
-              <li>It crosses the $y$-axis below the origin.</li>
-              <li>It passes through Quadrant III.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(i) and (ii)</li>
-              <li>(ii) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            The chess club charged $200 + 50m$ and Bela's money ran
-            $100 - 5n$. Both constants are what you have at the start, yet one
-            is money owed and the other money held. Say what in the expression
-            records the difference.
-          </li>
-        </ol>
-      </div>
+      <p>
+        Two points fix a line, so use the first two. From $x = 1$ to
+        $x = 3$ is two steps, and $y$ rises by $6$, so $a = 3$. Then
+        $5 = 3 + b$ gives $b = 2$, and the line through the first two points
+        is $y = 3x + 2$. At $x = 6$ this line gives $20$, not $23$. So the
+        third point is not on it, and no straight line passes through all
+        three (Fig. 2B.1). There is another way to see it. From $(3, 11)$ to
+        $(6, 23)$ is three steps and a rise of $12$, which is $4$ a step.
+        The first pair gave $3$ a step. A straight line has one slope, so
+        the three points cannot share one.
+      </p>
+
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 0 280 232" role="img"
+             aria-label="A coordinate grid with the line y equals 3x plus 2 through the points (1, 5) and (3, 11), and the point (6, 23) sitting above the line">
+          <path class="dg-grid" d="M40 10V210M70 10V210M100 10V210M130 10V210M160 10V210M190 10V210M220 10V210M250 10V210M40 210H250M40 170H250M40 130H250M40 90H250M40 50H250M40 10H250"/>
+          <path class="dg-axis" d="M40 210H250 M40 10V210"/>
+          <text class="dg-tick" x="70" y="222" text-anchor="middle">1</text>
+          <text class="dg-tick" x="100" y="222" text-anchor="middle">2</text>
+          <text class="dg-tick" x="130" y="222" text-anchor="middle">3</text>
+          <text class="dg-tick" x="160" y="222" text-anchor="middle">4</text>
+          <text class="dg-tick" x="190" y="222" text-anchor="middle">5</text>
+          <text class="dg-tick" x="220" y="222" text-anchor="middle">6</text>
+          <text class="dg-tick" x="250" y="222" text-anchor="middle">7</text>
+          <text class="dg-tick" x="35" y="173" text-anchor="end">5</text>
+          <text class="dg-tick" x="35" y="133" text-anchor="end">10</text>
+          <text class="dg-tick" x="35" y="93" text-anchor="end">15</text>
+          <text class="dg-tick" x="35" y="53" text-anchor="end">20</text>
+          <text class="dg-tick" x="35" y="222" text-anchor="end">0</text>
+          <text class="dg-label" x="262" y="214">x</text>
+          <text class="dg-label" x="46" y="18">y</text>
+          <path class="dg-plot" d="M40 194L244 30.8"/>
+          <text class="dg-plot-label" x="150" y="112" text-anchor="start">y = 3x + 2</text>
+          <circle class="dg-fill-teal" cx="70" cy="170" r="2.6"/>
+          <text class="dg-label" x="76" y="181">(1, 5)</text>
+          <circle class="dg-fill-teal" cx="130" cy="122" r="2.6"/>
+          <text class="dg-label" x="136" y="133">(3, 11)</text>
+          <circle class="dg-line" cx="220" cy="50" r="2.6"/>
+          <text class="dg-label" x="227" y="56">(6, 20)</text>
+          <circle class="dg-fill-teal" cx="220" cy="26" r="2.6"/>
+          <text class="dg-label" x="227" y="29">(6, 23)</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 2B.1</span> &nbsp;The line through the
+          first two points reaches $(6, 20)$. The third point is three units
+          above it.
+        </figcaption>
+      </figure>
+
+      <p>
+        Notice that nothing was drawn. A drawing shows that a point is far
+        from a line. When it is only a little off, the arithmetic is what
+        settles it.
+      </p>
 
     </div>
   </div>

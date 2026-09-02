@@ -10,117 +10,71 @@
       <div class="c-stage">
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">The Idea Underneath</div>
-          <div class="c-stage__for">Two points fix a line. A third can disagree.</div>
+          <div class="c-stage__title">Using What You Know</div>
+          <div class="c-stage__for">The chapter's results, in questions that do not say which one to use.</div>
         </div>
       </div>
 
       <p>
-        Everything in the chapter came out of one expression:
+        The chapter ended with one expression, $ax + b$, and a few facts
+        about it. A linear pattern has a constant difference. Two readings
+        fix $a$ and $b$. The graph is a straight line, with slope $a$ and
+        $y$-intercept $b$. Every question below can be answered with those
+        facts alone. What is new is that the question no longer says which
+        fact to use. Try each one before reading on.
       </p>
 
-      <div class="eq eq--anchor">
-        $$p(x) = ax + b$$
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>The table gives $y$ at four values of $x$. Find the rule, and
+          find $y$ when $x = 20$.</p>
+        <table>
+          <thead>
+            <tr><th>$x$</th><td>$3$</td><td>$5$</td><td>$7$</td><td>$9$</td></tr>
+          </thead>
+          <tbody>
+            <tr><th>$y$</th><td>$11$</td><td>$17$</td><td>$23$</td><td>$29$</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <p>
-        Two readings fix $a$ and $b$ &mdash; two unknowns, two equations. A
-        third reading can do something new: <span class="pop">it can
-        disagree</span>. The bills $(10, 350)$ and $(20, 550)$ force
-        $y = 20x + 150$, which predicts $750$ at $x = 30$, not $780$.
+        The differences down the $y$ row are $6$, $6$, $6$. So the pattern
+        is linear. But $6$ is not the slope, because $x$ goes up by $2$ each
+        time, not by $1$. Two steps of $x$ add $6$ to $y$, so one step adds
+        $3$. That gives $a = 3$. For $b$, take any one row. At $x = 3$ we
+        have $11 = 3 \times 3 + b$, so $b = 2$. The rule is
       </p>
 
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="0 0 150 130" data-size="sm" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Two points on a line and a third point sitting above it">
-            <g class="dg-grid">
-              <path d="M40 12 V110 M70 12 V110 M100 12 V110 M130 12 V110"/>
-              <path d="M20 90 H140 M20 70 H140 M20 50 H140 M20 30 H140"/>
-            </g>
-
-            <path class="dg-axis" d="M12 110 H140"/>
-            <path class="dg-axis" d="M20 120 V12"/>
-
-            <path class="dg-line" d="M32 98 L136 20"/>
-
-            <circle class="dg-plot" cx="40" cy="92" r="2.8"/>
-            <circle class="dg-plot" cx="70" cy="69.5" r="2.8"/>
-            <circle class="dg-plot dg-plot--c" cx="100" cy="32" r="2.8"/>
-            <path class="dg-dim" d="M100 47 V36"/>
-
-            <text class="dg-label dg-label--sm" x="36" y="106">10</text>
-            <text class="dg-label dg-label--sm" x="66" y="106">20</text>
-            <text class="dg-label dg-label--sm" x="96" y="106">30</text>
-            <text class="dg-dim-label" x="106" y="34">780</text>
-            <text class="dg-note" x="108" y="52">750</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 2B.1</span> The first two
-          readings settle the rule. The third does not lie on it, and no
-          linear rule can hold all three.</figcaption>
-        </figure>
-      </div>
-
-      <div class="c-shift">
-        <div class="c-shift__title">Which number does which job</div>
-        <div class="c-shift__row">
-          <span>$a$ grows<span class="c-shift__way">&uarr;</span></span>
-          <span>the line tilts steeper<span class="c-shift__way">&uarr;</span></span>
-        </div>
-        <div class="c-shift__row">
-          <span>$b$ grows<span class="c-shift__way">&uarr;</span></span>
-          <span>the line slides up, tilt unchanged<span class="c-shift__way">&uarr;</span></span>
-        </div>
+      <div class="eq">
+        $$y = 3x + 2$$
       </div>
 
       <p>
-        $a$ tilts and $b$ slides. Half the traps in this section come of
-        swapping the two, because both numbers are in the equation somewhere
-        and either answer looks plausible.
+        and at $x = 20$ it gives $62$. Check with another row: at $x = 9$,
+        $27 + 2 = 29$. Notice that we did not solve two equations, as
+        Example 11 did. The constant difference gave $a$ by itself, and then
+        one row was enough for $b$. The step in $x$ has to be watched,
+        though. A table that goes up in twos shows twice the slope.
       </p>
 
-      <div class="c-results">
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-axis" d="M4 38 H44"/>
-            <path class="dg-axis" d="M8 40 V4"/>
-            <path class="dg-line" d="M12 34 L40 6"/>
-            <circle class="dg-plot" cx="12" cy="34" r="1.8"/>
-            <circle class="dg-plot" cx="19" cy="27" r="1.8"/>
-            <circle class="dg-plot" cx="26" cy="20" r="1.8"/>
-            <circle class="dg-plot" cx="33" cy="13" r="1.8"/>
-            <circle class="dg-plot" cx="40" cy="6" r="1.8"/>
-          </svg>
-          <div class="c-results__cap">Equal steps across, equal steps up</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-axis" d="M4 38 H44"/>
-            <path class="dg-axis" d="M8 40 V4"/>
-            <path class="dg-line" d="M10 34 L42 12"/>
-            <path class="dg-dim" d="M20 27 H34 V17.4"/>
-          </svg>
-          <div class="c-results__cap">$a$ is the tilt</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-axis" d="M4 38 H44"/>
-            <path class="dg-axis" d="M10 40 V4"/>
-            <path class="dg-line" d="M10 14 L40 32"/>
-            <circle class="dg-fill-teal" cx="10" cy="14" r="2.4"/>
-          </svg>
-          <div class="c-results__cap">$b$ is where it crosses</div>
-        </div>
-        <div class="c-results__item">
-          <svg viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="dg-axis" d="M4 22 H44"/>
-            <path class="dg-axis" d="M10 40 V4"/>
-            <path class="dg-line" d="M12 8 L40 34"/>
-            <circle class="dg-fill-teal" cx="27" cy="22" r="2.4"/>
-          </svg>
-          <div class="c-results__cap">A falling rule is still positive for a while</div>
-        </div>
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>The pattern $4, 11, 18, 25, \ldots$ continues. Which term is
+          $179$? Is $150$ a term?</p>
       </div>
+
+      <p>
+        The difference is $7$, so the $n$th term is $7n + b$. The first term
+        is $4$, so $7 + b = 4$ and $b = -3$. The $n$th term is $7n - 3$. For
+        $179$, set $7n - 3 = 179$. Then $7n = 182$ and $n = 26$. So $179$ is
+        the $26$th term. For $150$ the same step gives $7n = 153$. But $153$
+        is not a multiple of $7$, so $n$ is not a whole number, and $150$ is
+        not a term. Notice that a term of the pattern is a value of a linear
+        polynomial, so asking which term a number is means solving a linear
+        equation. The equation always has an answer. Only a whole-number
+        answer names a term.
+      </p>
 
     </div>
   </div>

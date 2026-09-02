@@ -2,93 +2,130 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <span class="c-try__tag">Problem 5 &middot; Try it first</span>
+        <p>Two circles of radii $10$ cm and $17$ cm have centres $A$ and
+          $B$ that are $21$ cm apart. They cross at $P$ and $Q$
+          (Fig. 5B.4). The length of $PQ$ is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$8$ cm</li>
+          <li>$15$ cm</li>
+          <li>$16$ cm</li>
+          <li>$20$ cm</li>
+        </ol>
+      </div>
+
+      <figure class="c-figure c-figure--sm">
+        <svg viewBox="0 5 230 165" role="img"
+             aria-label="Two overlapping circles with centres A and B, crossing at P and Q. The line of centres AB cuts the common chord PQ at right angles at M">
+          <circle class="dg-fill-d" cx="60" cy="85" r="40"/>
+          <circle class="dg-fill-d" cx="144" cy="85" r="68"/>
+          <circle class="dg-line" cx="60" cy="85" r="40"/>
+          <circle class="dg-line" cx="144" cy="85" r="68"/>
+          <path class="dg-thin" d="M60 85 L144 85"/>
+          <path class="dg-thin" d="M60 85 L84 53 M144 85 L84 53"/>
+          <path class="dg-line" d="M84 53 L84 117"/>
+          <path class="dg-thin" d="M84 79 L90 79 L90 85"/>
+          <circle class="dg-fill-teal" cx="60" cy="85" r="3.5"/>
+          <circle class="dg-fill-teal" cx="144" cy="85" r="3.5"/>
+          <circle class="dg-fill-c" cx="84" cy="53" r="3"/>
+          <circle class="dg-fill-c" cx="84" cy="117" r="3"/>
+
+          <text class="dg-label" x="54" y="81" text-anchor="end">A</text>
+          <text class="dg-label" x="150" y="81">B</text>
+          <text class="dg-label" x="89" y="50">P</text>
+          <text class="dg-label" x="89" y="128">Q</text>
+          <text class="dg-label" x="79" y="97" text-anchor="end">M</text>
+          <text class="dg-dim-label" x="65" y="66" text-anchor="end">10</text>
+          <text class="dg-dim-label" x="117" y="64">17</text>
+          <text class="dg-dim-label" x="116" y="99" text-anchor="middle">21</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 5B.4</span> &nbsp;$PQ$ is a chord of
+          both circles, so both centres lie on its perpendicular bisector.
+        </figcaption>
+      </figure>
+
+      <div class="c-example">
+        <div class="c-example__tab">Solution 5</div>
+        <div class="c-example__body">
+          <p>
+            $PQ$ is a chord of both circles. $A$ is the centre of one, so
+            $A$ lies on the perpendicular bisector of $PQ$ (Exercise Set
+            5.4). So does $B$. Two points fix a line, so $AB$ is that
+            perpendicular bisector, and it meets $PQ$ at its midpoint $M$.
+            Let $AM = x$, so that $MB = 21 - x$. The half-chord $PM$ is a
+            leg of two right-angled triangles:
+          </p>
+          <div class="work">
+            <p>$PM^2 = 10^2 - x^2 = 17^2 - (21 - x)^2$</p>
+          </div>
+          <p>
+            So $100 - x^2 = 289 - 441 + 42x - x^2$, which gives $42x = 252$
+            and $x = 6$. Then $PM^2 = 100 - 36 = 64$, $PM = 8$ and
+            $PQ = 16$ cm, option (c). Check from the other side:
+            $289 - 225 = 64$.
+          </p>
+          <p>
+            Option (a) is the half-chord. Option (b) is $MB$. Option (d) is
+            the diameter of the smaller circle, its longest chord, and $PQ$
+            does not pass through $A$, so it must be shorter. Notice that
+            the two circles were never treated as two. One chord, two
+            centres, and the relation $r^2 = d^2 + (\tfrac{1}{2}\,\text{chord})^2$
+            written twice.
+          </p>
+        </div>
+      </div>
+
       <div class="c-stage">
-        <div class="c-stage__num">6</div>
+        <div class="c-stage__num">3</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Competitive-Style Thinking</div>
-          <div class="c-stage__for">Four moves worth more than another theorem.</div>
+          <div class="c-stage__title">Problem Sets</div>
+          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
         </div>
       </div>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">Eliminate</span>
-          <span>No chord exceeds $2r$, and none is negative. Two options are
-            usually dead before any arithmetic starts.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Check sufficiency</span>
-          <span>Ask what has been fixed. "Two parallel chords" has not fixed
-            which side of the centre &mdash; so the answer is a pair.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Find the constraint</span>
-          <span>$r^2 = d^2 + \left(\tfrac{c}{2}\right)^2$. Any two of $r$, $d$,
-            $c$ give the third; a question naming three is testing one.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">Estimate first</span>
-          <span>$\sqrt{r^2 - d^2}$ lies between $r - d$ and $r$. Bound the
-            answer, then see which option survives.</span>
-        </div>
-      </div>
-
-      <p class="c-stage__ask">Name the move, then use it.</p>
 
       <div class="c-practice">
+        <div class="c-practice__head">Set A &middot; One result each</div>
         <ol class="c-questions">
           <li>
-            <strong>Eliminate.</strong> A chord of a circle of radius $9$ cm
-            lies $6$ cm from the centre. Strike out two options on sight, then
-            answer. Its length is
+            A chord $24$ cm long lies in a circle of radius $13$ cm. Its
+            distance from the centre is
             <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$3\sqrt{5}$ cm</li><li>$6\sqrt{5}$ cm</li>
-              <li>$12\sqrt{5}$ cm</li><li>$20$ cm</li>
+              <li>$5$ cm</li>
+              <li>$6$ cm</li>
+              <li>$7$ cm</li>
+              <li>$12$ cm</li>
             </ol>
           </li>
           <li>
-            <strong>Eliminate.</strong> In cyclic $ABCD$, $\angle B$ is twice
-            $\angle D$. Then $\angle B$ is
+            A chord lies $6$ cm from the centre of a circle of radius
+            $10$ cm. Its length is
             <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$60^\circ$</li><li>$100^\circ$</li>
-              <li>$120^\circ$</li><li>$200^\circ$</li>
+              <li>$8$ cm</li>
+              <li>$12$ cm</li>
+              <li>$16$ cm</li>
+              <li>$20$ cm</li>
             </ol>
           </li>
           <li>
-            <strong>Sufficiency.</strong> Parallel chords $10$ cm and $24$ cm
-            long lie $7$ cm apart. Say why the radius is not yet fixed, add the
-            word that fixes it, and find it.
-          </li>
-          <li>
-            <strong>Sufficiency.</strong> To find a chord's length, which one
-            fact is enough on its own beside the radius?
-            <ol class="c-parts c-parts--alpha">
-              <li>That it is longer than the radius</li>
-              <li>Its distance from the centre</li>
-              <li>That it is parallel to a diameter</li>
-              <li>The area of the circle</li>
+            An arc subtends $80^\circ$ at the centre. At a point of the
+            circle outside the arc it subtends
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$40^\circ$</li>
+              <li>$80^\circ$</li>
+              <li>$100^\circ$</li>
+              <li>$160^\circ$</li>
             </ol>
           </li>
           <li>
-            <strong>Constraint.</strong> All four chords below are drawn in one
-            circle, but a row is wrong. Find the radius from the rows that
-            agree, then correct the row that does not.
-            <table>
-              <thead>
-                <tr><th>Chord (cm)</th><td>$48$</td><td>$14$</td><td>$40$</td><td>$30$</td></tr>
-              </thead>
-              <tbody>
-                <tr><th>Distance (cm)</th><td>$7$</td><td>$24$</td><td>$20$</td><td>$20$</td></tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            <strong>Estimate.</strong> A chord lies $10$ cm from the centre of
-            a circle of radius $26$ cm. The half-chord lies between $r - d$ and
-            $r$, and that bound kills three of these. Its length is
+            In a cyclic quadrilateral $ABCD$, $\angle A = 105^\circ$. Then
+            $\angle C$ is
             <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$24$ cm</li><li>$30$ cm</li>
-              <li>$48$ cm</li><li>$60$ cm</li>
+              <li>$75^\circ$</li>
+              <li>$85^\circ$</li>
+              <li>$105^\circ$</li>
+              <li>$255^\circ$</li>
             </ol>
           </li>
         </ol>

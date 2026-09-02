@@ -2,77 +2,88 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Do the points $P (-2, -1)$, $Q (1, 1)$ and $R (7, 5)$ lie on one
+          straight line?</p>
+      </div>
+
+      <p>
+        If $Q$ lies on the segment $PR$, the two parts add up to the whole:
+        $PQ + QR = PR$. If $Q$ is off the line, the three points make a
+        triangle, and two sides of a triangle always add to more than the
+        third. So three distances decide it.
+      </p>
+
+      <div class="work work--list">
+        <p>$PQ = \sqrt{3^2 + 2^2} = \sqrt{13}$</p>
+        <p>$QR = \sqrt{6^2 + 4^2} = \sqrt{52} = 2\sqrt{13}$</p>
+        <p>$PR = \sqrt{9^2 + 6^2} = \sqrt{117} = 3\sqrt{13}$</p>
+      </div>
+
+      <p>
+        So $PQ + QR = 3\sqrt{13} = PR$, and the three points are in line,
+        with $Q$ one third of the way from $P$ to $R$. Notice that a question
+        about a straight line was answered by three distances, and the line
+        was never drawn. This is the method that Question 6 of the chapter's
+        exercises asked you to find. Notice also the shifts. From $P$ to $Q$
+        they are $3$ and $2$. From $Q$ to $R$ they are $6$ and $4$, twice as
+        much in each direction. That is what being in line looks like in the
+        coordinates.
+      </p>
+
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>A point is $5$ units from the origin and also $5$ units from
+          $(6, 0)$. Find it.</p>
+      </div>
+
+      <p>
+        Call the point $(x, y)$. Both distances are given, so both can be
+        squared:
+      </p>
+
+      <div class="work work--list">
+        <p>$x^2 + y^2 = 25$</p>
+        <p>$(x - 6)^2 + y^2 = 25$</p>
+      </div>
+
+      <p>
+        Two equations, two unknowns, and both contain $x^2$ and $y^2$.
+        Subtract the second from the first. The $y^2$ goes at once, and
+        $x^2 - (x - 6)^2 = 12x - 36$, so $12x - 36 = 0$ and $x = 3$. Then
+        $y^2 = 25 - 9 = 16$, so $y = 4$ or $y = -4$. There are two such
+        points, $(3, 4)$ and $(3, -4)$. The first is the point $P$ of the
+        first question, and that is no accident: $P$ is $5$ from both $O$
+        and $(6, 0)$, so both of them are $5$ from $P$. Notice that the
+        squares cancelled. When two distances from a point are given,
+        subtracting the squared equations removes $x^2$ and $y^2$ together,
+        and what is left is an equation of the kind you solved in Grade 8.
+      </p>
+
+      <p>
+        None of these questions used anything outside the chapter. What each
+        needed was the question: what can I use from what I already know?
+        The five problems that follow ask it again.
+      </p>
+
       <div class="c-stage">
-        <div class="c-stage__num">3</div>
+        <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Connect the Concepts</div>
-          <div class="c-stage__for">Two results of the chapter, one after the other.</div>
+          <div class="c-stage__title">Worked in Full</div>
+          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
         </div>
       </div>
-      <p class="c-stage__ask">Name both results as you go.</p>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            $M(2,-3)$ is the midpoint of $AB$ and $A$ is $(-1,4)$. The distance
-            $AB$ is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$\sqrt{58}$</li><li>$2\sqrt{58}$</li>
-              <li>$\sqrt{116}$</li><li>$29$</li>
-            </ol>
-          </li>
-          <li>
-            A circle centred at the origin passes through $(9,12)$. The point
-            $(-15,0)$ lies
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>inside it</li><li>on it</li>
-              <li>outside it</li><li>at the centre</li>
-            </ol>
-          </li>
-          <li>
-            Points with whole-number coordinates at distance $13$ from the
-            origin number
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$4$</li><li>$8$</li><li>$12$</li><li>$16$</li>
-            </ol>
-          </li>
-          <li>
-            $(1,5)$, $(2,8)$, $(3,11)$ and $(4,14)$ come from a pattern with a
-            constant difference. Using distances alone, they are
-            <ol class="c-parts c-parts--alpha">
-              <li>on one line, evenly spaced</li>
-              <li>on one line, unevenly spaced</li>
-              <li>not on one line</li>
-              <li>on one line only if the first is dropped</li>
-            </ol>
-          </li>
-          <li>
-            In the triangle $A(0,0)$, $B(6,0)$, $C(6,8)$, the median from $A$
-            has length
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$5$</li><li>$\sqrt{52}$</li><li>$8$</li><li>$10$</li>
-            </ol>
-          </li>
-          <li>
-            Two circular icons, of radii $80$ and $100$ pixels, sit at
-            $(100,150)$ and $(250,230)$. They
-            <ol class="c-parts c-parts--alpha">
-              <li>overlap</li><li>touch exactly</li>
-              <li>do not meet</li><li>cannot be decided without a picture</li>
-            </ol>
-          </li>
-          <li>
-            The distance between two grid points is a whole number exactly
-            when the two shifts satisfy one condition. State it, then give
-            three pairs of shifts that satisfy it, none a multiple of
-            $(3, 4)$.
-          </li>
-          <li>
-            On a globe, two places one degree of longitude apart lie about
-            $111$ km apart at the equator and about $28$ km apart at
-            $75^\circ$ north. Say what that shows about reading a coordinate
-            difference as a distance.
-          </li>
+      <div class="c-try">
+        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
+        <p>The points $A (2, 4)$, $B (5, 8)$, $C (9, 5)$ and $D (6, 1)$ are
+          joined in that order (Fig. 1B.3). $ABCD$ is</p>
+        <ol class="c-parts c-parts--alpha">
+          <li>a square</li>
+          <li>a rhombus that is not a square</li>
+          <li>a rectangle that is not a square</li>
+          <li>a parallelogram with no right angle</li>
         </ol>
       </div>
 

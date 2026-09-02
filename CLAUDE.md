@@ -79,7 +79,16 @@ components the chapter already uses**, which is the point.
 
 Every stage opens with a `.c-stage` head — number, name, and what the stage
 is for — and every Bridge page carries **`data-bridge`**, which puts
-*· Beyond the Book* in the running head.
+*· Beyond the Book* in the running head. **`repack.mjs` drops that
+attribute** when it rewrites a page; put it back before you build.
+
+The section is four stages (questions tried and explained, worked problems,
+problem sets, answers) and a stage may start part-way down a page. It is
+written as a lesson, not a method: no named strategies, no coaching
+vocabulary — see DESIGN.md §6a before writing one. To refit it without disturbing
+the chapter proper, copy `p101`–`p110` into a scratch chapter directory,
+`split-practice` and `repack` there, then copy them back — `repack` has no
+page range and would re-pack the whole chapter.
 
 The page before `p101` carries `data-close`. That tells the fill check the
 chapter proper ends there and may end part-way down the page — without it,
@@ -108,7 +117,8 @@ proofs and the studio all follow it.
 
 ## Covers
 
-A cover is not a page and does not go through `build.mjs`.
+A cover is not a page and does not go through `build.mjs` — but the studio
+does show it; see below.
 
 ```bash
 node build/cover.mjs class-9/maths-part1 --png
@@ -146,9 +156,16 @@ node build/serve.mjs
 ```
 
 <http://localhost:5180> — library, page/spread/signature views, true-size
-calibration, and a Build button. Watches `pages/` and `css/` and rebuilds the
-chapter that changed. The book renders in an iframe so the studio's
+calibration, and a Build button. Watches `pages/`, `css/` and `covers/` and
+rebuilds whichever changed. The book renders in an iframe so the studio's
 stylesheet and the book's can never reach each other.
+
+Covers appear in the library under their class, in a group of their own, and
+open at `/cover/<class>/<name>`. That viewer has no pager, no spreads and no
+signature — a wrap is one sheet, not a run of pages — but the sheet toggle
+shows trim against the press sheet, and Build runs `cover.mjs` with the proof
+and the press sheet. A panel edited in `covers/<class>/_shared/` rebuilds every
+cover of that class, since that is who shares it.
 
 ## Don't
 

@@ -2,77 +2,89 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <span class="c-try__tag">Try it first</span>
+        <p>Show that $a^2 + b^2 \geq 2ab$ for all numbers $a$ and $b$.
+          Then decide: is there a rectangle with perimeter $34$ cm and
+          diagonal $12$ cm?</p>
+      </div>
 
-<div class="c-stage">
-        <div class="c-stage__num">3</div>
+      <p>
+        A square is never negative, so $(a - b)^2 \geq 0$. Expand this:
+        $a^2 - 2ab + b^2 \geq 0$. That is
+      </p>
+
+      <div class="eq eq--anchor">
+        $$a^2 + b^2 \geq 2ab$$
+      </div>
+
+      <p>
+        The two sides are equal only when $a = b$ (Fig. 4B.3). Every
+        identity in the chapter was an equation. This one fact turns it
+        into an inequality.
+      </p>
+
+      <figure class="c-figure c-figure--sm">
+        <svg viewBox="0 0 230 160" role="img"
+             aria-label="A square of side a plus b, cut into a square on a, a square on b, and two equal rectangles a by b">
+          <rect class="dg-fill-a-soft" x="20" y="14" width="82" height="82"/>
+          <rect class="dg-fill-b-soft" x="102" y="96" width="46" height="46"/>
+          <rect class="dg-fill-c-soft" x="102" y="14" width="46" height="82"/>
+          <rect class="dg-fill-c-soft" x="20" y="96" width="82" height="46"/>
+      
+          <rect class="dg-line" x="20" y="14" width="128" height="128"/>
+          <path class="dg-thin" d="M102 14 V142 M20 96 H148"/>
+      
+          <line class="dg-dim" x1="162" y1="14" x2="162" y2="96"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <line class="dg-dim" x1="162" y1="96" x2="162" y2="142"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="170" y="59">a</text>
+          <text class="dg-label" x="170" y="123">b</text>
+          <text class="dg-note" x="61" y="59" text-anchor="middle">a&#178;</text>
+          <text class="dg-note" x="125" y="123" text-anchor="middle">b&#178;</text>
+          <text class="dg-note" x="125" y="59" text-anchor="middle">ab</text>
+          <text class="dg-note" x="61" y="123" text-anchor="middle">ab</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4B.3</span> &nbsp;The two corner squares
+          together are never smaller than the two rectangles together. They
+          are equal only when the cut is in the middle.
+        </figcaption>
+      </figure>
+
+      <p>
+        The same fact answers the second question. Let the sides be $x$
+        and $y$. Then $x + y = 17$. By Pythagoras, $x^2 + y^2 = 144$.
+        So $2xy = 289 - 144 = 145$. Then
+        $(x - y)^2 = x^2 + y^2 - 2xy = 144 - 145 = -1$. A square cannot be
+        $-1$. So there is no such rectangle. The algebra found this
+        without finding a side.
+      </p>
+
+      <p>
+        None of these questions used anything outside the chapter. Each
+        needed the same question: what can I use from what I already know?
+        Five more problems ask it next.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Connect the Concepts</div>
-          <div class="c-stage__for">Two results of the chapter, one after the other.</div>
+          <div class="c-stage__title">Worked in Full</div>
+          <div class="c-stage__for">Five questions, with the reasoning and the working. Try each one before you read its solution.</div>
         </div>
       </div>
-      <p class="c-stage__ask">Name both results as you go.</p>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            Chapter 1 measured a point $P(a, b)$'s distance from the origin by
-            $OP^2 = a^2 + b^2$. A point in the first quadrant has $a + b = 7$
-            and $ab = 10$.
-            <ol class="c-parts c-parts--1">
-              <li>Find $OP^2$ without finding $a$ or $b$.</li>
-              <li>Now find $a$ and $b$, and say which quadrilateral the four
-                  points $(\pm a, \pm b)$ form.</li>
-            </ol>
-          </li>
-          <li>
-            A linear pattern (Chapter 2) has a constant difference between
-            consecutive terms. Evaluate $x^2 + 7x + 12$ at
-            $x = 1, 2, 3, 4, 5$ and write down the differences; they are not
-            constant. Take the differences <em>again</em>. Use the identity
-            $(n+1)^2 = n^2 + 2n + 1$ to explain the number you get, and say
-            what it would be for $x^2 + 7x + 100$.
-          </li>
-          <li>
-            Chapter 3 met numbers that are not ratios. Let
-            $x = 2 + \sqrt{3}$.
-            <ol class="c-parts c-parts--1">
-              <li>Multiply $\left(2+\sqrt{3}\right)\left(2-\sqrt{3}\right)$
-                  using one identity, and deduce
-                  $\dfrac{1}{x} = 2 - \sqrt{3}$.</li>
-              <li>Hence find $x + \dfrac{1}{x}$ and then
-                  $x^2 + \dfrac{1}{x^2}$, without squaring any surd.</li>
-            </ol>
-          </li>
-          <li>
-            In science you met $v^2 - u^2 = 2as$ for motion with constant
-            acceleration. Factorise the left-hand side, and write the equation
-            as a statement about the <em>sum</em> and the <em>difference</em>
-            of the two speeds. A car goes from
-            18 to 22 metres per second over a distance of 80 metres: find
-            $a$ using the factorised form, and say why the numbers are kinder
-            that way round.
-          </li>
-          <li>
-            A square field of side $a$ metres has a square pond of side $b$
-            metres cut out of one corner. The owner never measures $a$ or $b$
-            at all; he measures their sum as $84$ m and their difference as
-            $12$ m.
-            <ol class="c-parts c-parts--1">
-              <li>Find the area of field that is left.</li>
-              <li>Explain why no further measurement is needed &mdash; and what
-                  he would have to measure instead if the pond were
-                  <em>rectangular</em>.</li>
-            </ol>
-          </li>
-          <li>
-            A shopkeeper sells 49 items at 51 rupees each and works the total
-            out in his head as $2500 - 1$.
-            <ol class="c-parts c-parts--1">
-              <li>Which identity is he using, and with which $a$ and $b$?</li>
-              <li>Use the same trick on $58 \times 62$ and on
-                  $97 \times 103$.</li>
-            </ol>
-          </li>
+      <div class="c-try">
+        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
+        <p>If $x + y + z = 9$ and $xy + yz + zx = 26$, then
+          $x^3 + y^3 + z^3 - 3xyz$ equals</p>
+        <ol class="c-parts c-parts--alpha">
+          <li>$9$</li>
+          <li>$27$</li>
+          <li>$81$</li>
+          <li>cannot be found</li>
         </ol>
       </div>
 

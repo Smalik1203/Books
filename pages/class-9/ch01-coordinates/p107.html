@@ -2,76 +2,122 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">7</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">The Challenge Zone</div>
-          <div class="c-stage__for">Think, then apply, then challenge.</div>
-        </div>
-      </div>
-      <p class="c-stage__ask">Not one of these says which idea to use. Show
-      every step of the reasoning.</p>
-
-      <div class="c-practice">
-        <ol class="c-questions">
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
           <li>
-            <span class="tier">Think</span>
-            Let $M$ be the midpoint of $A(x_1, y_1)$ and $B(x_2, y_2)$. Using
-            the distance formula and nothing else, show that
-            $AM = MB = \tfrac{1}{2}AB$. Then say which step would fail if $M$
-            were the point one third of the way from $A$ to $B$.
+            $P (x, y)$ lies in Quadrant III. Then
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$x > 0$, $y > 0$</li>
+              <li>$x < 0$, $y > 0$</li>
+              <li>$x < 0$, $y < 0$</li>
+              <li>$x > 0$, $y < 0$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Apply</span>
-            Find every point of the y-axis lying at distance $10$ from
-            $(6, 3)$, and explain from the algebra why there are exactly two.
-            For which points $(a, b)$ would there be exactly one?
+            The distance between $(-3, 5)$ and $(4, 5)$ is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$1$</li>
+              <li>$7$</li>
+              <li>$10$</li>
+              <li>$\sqrt{74}$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Apply</span>
-            $A(1, 1)$, $B(7, 1)$ and $C(7, 9)$ are three corners of a
-            rectangle. Find the fourth, then prove by computing two midpoints
-            that the diagonals of this rectangle bisect each other.
+            A rectangle has vertices $(0, 0)$, $(6, 0)$, $(6, 4)$ and
+            $(0, 4)$. The length of its diagonal is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$10$</li>
+              <li>$2\sqrt{13}$</li>
+              <li>$24$</li>
+              <li>$52$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Challenge</span>
-            Three villages stand at $A(0, 0)$, $B(8, 0)$ and $C(0, 6)$, in
-            kilometres (Fig. 1.10). A water tank is to be built at a point
-            equidistant from all three. Find it, give that common distance, and
-            say what the point turns out to be with respect to $BC$.
+            Which of these points lies on the x-axis?
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$(-6, 0)$</li>
+              <li>$(0, -6)$</li>
+              <li>$(6, 6)$</li>
+              <li>$(-6, -6)$</li>
+            </ol>
           </li>
           <li>
-            <span class="tier">Challenge</span>
-            A point $P(x, y)$ moves so that its distance from $A(-3, 0)$ is
-            always twice its distance from $B(3, 0)$. Show that $P$ satisfies
-            $x^2 + y^2 - 10x + 9 = 0$, and hence that $P$ travels on a circle.
-            Give its centre and radius.
-            <p class="hint">Square both distances before doing anything else,
-              then complete the square in $x$ &mdash; the move from Chapter 4.</p>
+            The distance between $(1, 1)$ and $(3, 3)$ is
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$2$</li>
+              <li>$2\sqrt{2}$</li>
+              <li>$\sqrt{6}$</li>
+              <li>$4$</li>
+            </ol>
+          </li>
+          <li>
+            The pairs $(a, b)$ and $(b, a)$ name the same point
+            <ol class="c-parts c-parts--alpha">
+              <li>for every $a$ and $b$</li>
+              <li>for no $a$ and $b$</li>
+              <li>only when $a = b$</li>
+              <li>only when $a = -b$</li>
+            </ol>
+          </li>
+          <li>
+            Whatever the value of $x$, the distance between $(x, 3)$ and
+            $(x, -2)$ is
+            <ol class="c-parts c-parts--alpha">
+              <li>$1$</li>
+              <li>$5$</li>
+              <li>$2x$</li>
+              <li>cannot be found without $x$</li>
+            </ol>
           </li>
         </ol>
       </div>
 
-      <figure class="c-figure c-figure--xl">
-        <svg viewBox="0 0 280 240" role="img"
-             aria-label="A right-angled triangle with vertices at the origin, at eight along the x-axis and at six up the y-axis, marking three villages">
-          <path class="dg-axis" d="M28 200 H268"/>
-          <path class="dg-axis" d="M40 216 V34"/>
-          <path class="dg-line dg-fill-a-soft" d="M40 200 H240 L40 50 Z"/>
-          <circle class="dg-plot" cx="40" cy="200" r="4"/>
-          <circle class="dg-plot" cx="240" cy="200" r="4"/>
-          <circle class="dg-plot" cx="40" cy="50" r="4"/>
-          <text class="dg-label" x="24" y="216">A</text>
-          <text class="dg-label" x="238" y="216">B</text>
-          <text class="dg-label" x="22" y="46">C</text>
-          <text class="dg-dim-label" x="240" y="228" text-anchor="middle">(8, 0)</text>
-          <text class="dg-dim-label" x="52" y="44">(0, 6)</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 1.10</span> &nbsp;Three villages. The tank
-          is not marked &mdash; finding it is the question.
-        </figcaption>
-      </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">Set B &middot; Two ideas together</div>
+      </div>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 15h18"/><path d="M9 21V3"/>
+            <circle cx="16" cy="9" r="1.6"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Questions 1 and 2 take this key.
+            <strong>(a)</strong> both true, R explains A;
+            <strong>(b)</strong> both true, R does not explain A;
+            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
+            R true.</p>
+        </div>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions">
+          <li>
+            <strong>A.</strong> It never matters which of two points is
+            called the first when finding the distance between them.
+            &nbsp;<strong>R.</strong> The formula squares each shift, and a
+            square is never negative.
+          </li>
+          <li>
+            <strong>A.</strong> The point $(-3, -3)$ lies in Quadrant IV.
+            &nbsp;<strong>R.</strong> Both its coordinates are negative.
+          </li>
+          <li>
+            For $P (-4, 0)$, which of these must be true?
+            <ol class="c-parts c-parts--3">
+              <li>$P$ lies in Quadrant II.</li>
+              <li>$P$ lies on the x-axis.</li>
+              <li>$P$ is $4$ units from the origin.</li>
+            </ol>
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>(i) only</li><li>(ii) only</li>
+              <li>(ii) and (iii)</li><li>all three</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
 
     </div>
   </div>
