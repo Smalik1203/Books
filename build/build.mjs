@@ -24,6 +24,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import katex from 'katex';
 import { cropHeight } from './png.mjs';
+import { windowPad } from './viewport.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -46,29 +47,6 @@ const findChrome = () => CHROME_CANDIDATES.find(c => c && existsSync(c));
 // usually runs. Only then is the flag added — never on a developer machine.
 const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
-/* --window-size sizes the WINDOW, and the window carries chrome of
-   its own whose height is that build of Chrome's business, not ours.
-   Ask for a 297mm window and this one lays the page out in a viewport
-   23mm shorter — and a page proof captured that way loses the foot of
-   every page: the folio, and any overrun. Which is what a proof is
-   for. So the difference is measured once and added back. */
-let windowPadding = null;
-async function windowPad(chrome) {
-  if (windowPadding !== null) return windowPadding;
-  const probe = p('build', '_viewport-probe.html');
-  await mkdir(path.dirname(probe), { recursive: true });
-  await writeFile(probe, '<html><head><script>addEventListener("load", function () '
-    + '{ document.title = "V" + innerHeight; });<' + '/script></head><body></body></html>');
-  const { stdout } = await run(chrome, [
-    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
-    '--window-size=800,1000', '--virtual-time-budget=2000', '--dump-dom',
-    'file:///' + probe.replace(/\\/g, '/'),
-  ], { maxBuffer: 1 << 20 }).catch(() => ({ stdout: '' }));
-  await rm(probe, { force: true });
-  const seen = Number(stdout.match(/<title>V(\d+)<\/title>/)?.[1]);
-  windowPadding = seen ? 1000 - seen : 0;
-  return windowPadding;
-}
 
 /* ---- Maths ------------------------------------------------
    Replace display maths first, then inline. Anything inside a

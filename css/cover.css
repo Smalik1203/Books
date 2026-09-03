@@ -244,6 +244,12 @@
    ============================================================ */
 
 body.cover {
+  /* The wrap's bleed, not the page's. Every bleed rule below is already
+     written against --bleed, so pointing it at the jacket's own token
+     here is the whole change — and build/cover.mjs sizes the press
+     sheet from the same token, so the layout and the media box cannot
+     drift apart. */
+  --bleed: var(--jk-bleed);
   margin: 0;
   background: #55605b;
   color: var(--ink);

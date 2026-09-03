@@ -33,6 +33,8 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { spineWidth } from './spine.mjs';
+import { windowPad } from './viewport.mjs';
+import { cropHeight } from './png.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -267,7 +269,9 @@ async function buildCover(rel) {
 
   const tok = await tokenReader(meta.edition);
   const mm = (name) => parseFloat(tok(name));
-  const trimW = mm('trim-w'), trimH = mm('trim-h'), bleedMM = mm('bleed');
+  // the wrap has its own bleed: it is folded round the board, not just cut
+  const trimW = mm('trim-w'), trimH = mm('trim-h');
+  const bleedMM = mm('jk-bleed') || mm('bleed');
   const slugMM = mm('slug');
   const spine = spineWidth(meta);
   const out = bleedMM + slugMM;
@@ -427,15 +431,20 @@ async function toPng(htmlPath, sheet) {
     '<style>body.cover{background:#fff}.cover-stage{padding:0}</style>\n</head>'));
 
   const wide = htmlPath.includes('-bleed');
+  const tall = px(wide ? sheet.mediaH : sheet.trimH);
   await run(chrome, [
     '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     '--force-device-scale-factor=2',
-    `--window-size=${px(wide ? sheet.mediaW : sheet.sheetW)},${px(wide ? sheet.mediaH : sheet.trimH)}`,
+    // the window is taller than the viewport inside it, so ask for the
+    // difference and cut it off after — without this the wrap proof
+    // lost its bottom bleed, and at 3mm nobody noticed
+    `--window-size=${px(wide ? sheet.mediaW : sheet.sheetW)},${tall + await windowPad(chrome)}`,
     '--virtual-time-budget=8000',
     `--screenshot=${png}`,
     'file:///' + tmp.replace(/\\/g, '/'),
   ], { maxBuffer: 1 << 24 });
   await rm(tmp, { force: true });
+  await cropHeight(png, tall * 2);   // captured at 2x
   console.log(`  → ${path.relative(ROOT, png)}`);
   return png;
 }
