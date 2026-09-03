@@ -10,9 +10,9 @@
   "edition_statement": "First edition, 2026.",
   "isbn": "978-93-00000-00-2",
   "url": "classbridge.in",
-  "_spine": "Spine width is normally bulk, not a design choice: pages / 2 x caliper, plus the two covers. 244pp of 80gsm bookwove at 0.106mm bulks to 12.9mm, and 0.5mm of board and case takes it to 13.4. spineWidth overrides that arithmetic and is set to 15mm to the printer's specification, a bulkier stock than the caliper here describes. Keep pages and paperCaliper current anyway: cover.mjs prints the computed bulk beside the declared width, so a spine that has drifted from its stock is visible. Re-derive the count from --book before the cover goes to press and round up to a multiple of four.",
+  "_spine": "Spine width is normally bulk, not a design choice: pages / 2 x caliper, plus the two covers. 236pp of 80gsm bookwove at 0.106mm bulks to 12.5mm, and 0.5mm of board and case takes it to 13.0. spineWidth overrides that arithmetic and is set to 15mm to the printer's specification, a bulkier stock than the caliper here describes. Keep pages and paperCaliper current anyway: cover.mjs prints the computed bulk beside the declared width, so a spine that has drifted from its stock is visible. Re-derive the count from --book before the cover goes to press and round up to a multiple of four.",
   "spineWidth": 15,
-  "pages": 244,
+  "pages": 236,
   "paperCaliper": 0.106,
   "caseAllowance": 0.5,
   "content": [
