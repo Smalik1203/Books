@@ -182,3 +182,35 @@ a { color: inherit; text-decoration: none; }
 .imp__inv { fill: var(--accent-2); font-size: 8px; }
 .imp__fold { stroke: var(--accent); stroke-width: 0.6; stroke-dasharray: 3 3; }
 .imp__trim { fill: none; stroke: var(--text-2); stroke-width: 1; }
+
+/* ---- Library chooser --------------------------------------
+   Two required choices, side by side where the class heading used
+   to be. The selects take the same chrome as .btn rather than a
+   second look for the same job. */
+.lib-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 34px;
+}
+.lib-field { display: flex; flex-direction: column; gap: 6px; }
+.lib-field > span {
+  font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-2);
+}
+.lib-select {
+  font: inherit;
+  font-family: var(--sans);
+  min-width: 190px;
+  padding: 7px 10px;
+  color: var(--text);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.lib-select:hover { border-color: var(--accent); }
+.lib-select:focus-visible { outline: none; border-color: var(--accent); }
+
+/* the prompt before a choice is made, and the answer when a pair
+   holds nothing — the same muted grey .empty already uses */
+.lib-note { color: var(--text-2); padding: 40px 0; }
