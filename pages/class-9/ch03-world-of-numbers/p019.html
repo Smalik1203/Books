@@ -2,59 +2,60 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        The words <em>in lowest terms</em> are doing real work there. Written
-        as $\tfrac{6}{40}$ the same number looks no different, but $40$ has the
-        same prime factors as $20$, so the test survives cancelling — try it on
-        a fraction that is not in lowest terms and you may get the wrong answer
-        for the right reason.
-      </p>
-
-      <h3>Going back: from a decimal to a fraction</h3>
+      <h3>Terminating and repeating</h3>
 
       <p>
-        Every terminating or repeating decimal is a rational number, so each
-        one must be $\tfrac{p}{q}$ for some integers. Finding them takes three
-        different techniques, according to where the repetition starts.
+        Divide the numerator of a rational number by its denominator and
+        exactly one of two things happens.
       </p>
 
       <p>
-        A decimal that terminates needs no technique at all — it can simply be
-        read. One that repeats from the very first digit needs a short piece of
-        algebra. And one that settles into its cycle only after a few stray
-        digits needs the same algebra with one extra step. The three examples
-        that follow take them in that order.
+        Either the division runs out — a remainder of 0 appears, there is
+        nothing further to bring down, and the decimal simply stops. Or it
+        never runs out, in which case the digits settle into a block that
+        repeats for ever. There is no third outcome, and the example below
+        shows both, so that the difference can be seen happening in the
+        arithmetic rather than taken on trust.
       </p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
-          <p>Write $0.35$ in the form $\dfrac{p}{q}$.</p>
+          <p>Expand $\dfrac{3}{8}$ and $\dfrac{5}{11}$ as decimals.</p>
           <p>
-            A terminating decimal needs no algebra. Read it as what it says:
-            35 hundredths.
+            <strong>The first stops.</strong> Dividing 3 by 8 gives remainders
+            6, then 4, then 0 — and once the remainder is 0 there is nothing
+            left to bring down.
           </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">two decimal places</span>
-              <span>so the denominator is $100$</span>
-              <span class="chip">$\dfrac{35}{100}$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">lowest terms</span>
-              <span>divide both by 5</span>
-              <span class="chip">$\dfrac{7}{20}$</span>
-            </div>
+          <div class="work work--centred">
+            <p>$\dfrac{3}{8} = 0.375$</p>
           </div>
-          <p>Check by dividing back: $7 \div 20 = 0.35$.</p>
+          <p>
+            <strong>The second never does.</strong> Dividing 5 by 11 gives
+            remainder 5, then 6, then 5 again — and the moment a remainder
+            comes back, every step after it must repeat what happened before.
+          </p>
+          <div class="work work--centred">
+            <p>$\dfrac{5}{11} = 0.454545\ldots = 0.\overline{45}$</p>
+          </div>
+          <p>
+            The bar marks the block that repeats for ever.
+          </p>
         </div>
       </div>
 
       <p>
-        That was the easy direction, and it needed no algebra at all — only a
-        reading of what the decimal already said. The moment the digits stop
-        stopping, that reading is unavailable, and something else has to take
-        its place.
+        The second case is not bad luck; it is forced. Dividing by 11, the only
+        possible remainders are $1, 2, \ldots, 10$ — ten of them, and zero
+        would have ended the division. Keep going and a remainder
+        <em>must</em> eventually recur, because there are only finitely many to
+        choose from. Once one does, the whole cycle starts again.
+      </p>
+
+      <p>
+        That argument does not care which number you divide by. It proves that
+        every rational number has a decimal that either terminates or repeats —
+        there is no third possibility.
       </p>
 
     </div>

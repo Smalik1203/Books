@@ -195,18 +195,34 @@ each chapter opens on a recto, and it re-scopes every palette from `:root`
 to `[data-ch="N"]`. Leave the palettes at `:root` and the last chapter
 recolours the whole book.
 
-## Two editions
+## Three trims, one standard
 
-`css/tokens.css` holds **A4, the standard trim**. `css/edition-b5.css`
-overrides **only** the
+`css/tokens.css` holds **Crown Quarto, 189 × 246 mm — the standard**.
+`css/edition-a4.css` and `css/edition-b5.css` override **only** the
 size-dependent tokens — trim, margins, measure, type scale, figure widths,
 spacing rhythm. Colour, components and hierarchy are shared.
 
-A chapter with no `edition` field is A4. Never fix a B5 problem by editing
-`tokens.css` — that is the A4 book.
+A chapter with no `edition` field is Crown Quarto. Never fix an edition's
+problem by editing `tokens.css` — that is the standard book.
 
-`chapter.json` declares `"edition": "b5"`. The builder, the bleed sheet, the
-proofs and the studio all follow it.
+`chapter.json` declares `"edition": "a4"` or `"b5"`. The builder, the bleed
+sheet, the proofs and the studio all follow it.
+
+**Changing a trim re-breaks every page in the book,** because the page break
+*is* the source file. The pages under `pages/` are fitted to Crown Quarto;
+building them at A4 produces a valid but badly fitted book until every
+chapter is refit. Two things learned doing it, both now in the tokens:
+
+* **Figure widths are set against the height of the text block, not the
+  measure.** A figure's height belongs to its artwork; width is all a
+  stylesheet controls, and what decides whether a figure packs is how much
+  of the page it eats vertically. Crown Quarto is squarer than A4, so
+  scaling figures with the measure grew every one of them by a tenth as a
+  share of the page — enough to turn six short pages in a chapter into
+  sixteen.
+* **`--fig-full` is a step like the others,** not `var(--measure)`. At the
+  full measure a grid came to 55% of the page here, and one chapter had
+  seven of them.
 
 ## Covers
 
@@ -267,5 +283,8 @@ cover of that class, since that is who shares it.
 - Reach for an inline style. If the system lacks something, **add it to the
   system** — a component or a modifier — so the next page can use it too.
 - Trust a proof rendered at the wrong page size. `toPngs` takes the sheet
-  from the edition; an A4 page in a B5 window comes back cropped and reads
-  as though it were clipped.
+  from the edition; a Crown Quarto page in an A4 window comes back with a
+  strip of blank paper at the foot, and an A4 page in a Crown Quarto window
+  comes back cropped and reads as though it were clipped. Everything that
+  measures a page takes the trim from `build/sheet.mjs`, which reads the
+  tokens; nothing may carry a page size of its own.

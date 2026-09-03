@@ -91,15 +91,18 @@ Numerals are **lining** throughout. Vollkorn defaults to oldstyle, which turns
 Seven sizes, named by role and never by number. **Nothing may sit off the
 scale** — a literal `12pt` in a rule is a defect, not a nuance.
 
+Sizes below are the standard trim's. An edition sheet moves the whole scale
+together — never one step of it.
+
 | token | size | used for |
 |---|---|---|
 | `--size-caption` | 8.5 pt | captions, hints, the aside in brackets |
-| `--size-note` | 9.5 pt | panel text, exercises, legends, component tags, folio |
-| `--size-body` | 10.5 pt | running text |
-| `--size-concept` | 11.5 pt | concept headings, rubrics, the section numeral |
-| `--size-section` | 15 pt | section headings |
-| `--size-chapter` | 24 pt | chapter title |
-| `--size-numeral` | 40 pt | chapter numeral |
+| `--size-note` | 9 pt | panel text, exercises, legends, component tags, folio |
+| `--size-body` | 10 pt | running text |
+| `--size-concept` | 12 pt | concept headings, rubrics, the section numeral |
+| `--size-section` | 14.5 pt | section headings |
+| `--size-chapter` | 23 pt | chapter title |
+| `--size-numeral` | 38 pt | chapter numeral |
 
 ### Two label treatments, not five
 
@@ -262,13 +265,25 @@ pair of axes.
 marker in the page shell; every figure references it.
 
 **Size comes from a scale**, not from a per-figure pixel width:
-`.c-figure--sm` · `--md` · `--lg` · `--xl` · `--full`. The printed widths
-live in the tokens (51/62/72/87 mm on A4, one step smaller on B5), and
-`--full` is the measure itself.
+`.c-figure--sm` · `--md` · `--lg` · `--xl` · `--full`. The printed widths live
+in the tokens — 42/51/59/71/126 mm on the standard trim, and a set of their
+own on each edition.
 
-`--full` is for the one drawing that genuinely needs the whole measure: a
-**ruled coordinate grid**, where the tick numerals collide long before the
-figure starts to look large. A diagram that is not a grid does not get it.
+**The steps are set against the height of the text block, not its width.** A
+figure's height is its artwork's business; the width is all a stylesheet
+controls, and what decides whether a figure packs onto a page is the fraction
+of the page it eats vertically. Scale the steps with the measure instead and a
+squarer trim grows every figure by a tenth as a share of the page, which is
+enough to stop a heading seating under itself; the change from A4 to Crown
+Quarto turned six short pages in one chapter into sixteen before this was
+measured.
+
+`--full` used to be the measure itself. It is a step now, for the same reason:
+a full-measure grid came to 55% of a Crown Quarto page, and one chapter has
+seven of them. It is still comfortably the largest, and still for the one
+drawing that genuinely needs it — a **ruled coordinate grid**, where the tick
+numerals collide long before the figure starts to look large. A diagram that
+is not a grid does not get it.
 
 A figure carries about **4.5 viewBox units per printed millimetre** — a
 `--full` drawing has a viewBox 690 units wide, an `--xl` one 390. That is
@@ -464,10 +479,10 @@ goes in the marker, in rust, never in the question text.
 `--bleed` emits a second PDF beside the reading one. Every page carries two
 wrappers that are the page itself at trim size and change nothing there:
 
-| | | A4 | B5 |
-|---|---|---|---|
-| `.page` | the sheet the press prints | 230 × 317 mm | 196 × 270 mm |
-| `.page__trim` | the book as the reader sees it | 210 × 297 mm | 176 × 250 mm |
+| | | Crown Quarto | A4 | B5 |
+|---|---|---|---|---|
+| `.page` | the sheet the press prints | 209 × 266 mm | 230 × 317 mm | 196 × 270 mm |
+| `.page__trim` | the book as the reader sees it | 189 × 246 mm | 210 × 297 mm | 176 × 250 mm |
 
 Everything is still positioned against the trim box, so no component knows
 which sheet it is on. The chapter numeral and both footer bars deliberately run
@@ -497,16 +512,33 @@ cover belongs to the series, not to a chapter, so the palette sheets do not
 reach it; the jacket ink is its own short list, and `.jacket--night` is a second
 finish of the same layout rather than a second layout.
 
-| | | A4 | B5 |
-|---|---|---|---|
-| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 210 mm | 176 mm |
-| `.jacket__spine` | from the page count, not from taste | `--spine-w` | `--spine-w` |
-| `.jacket__front` | title and artwork | 210 mm | 176 mm |
-| **wrap, trim** | back + spine + front | **435.8 × 297** | **367.8 × 250** |
-| **wrap, press sheet** | plus 3mm bleed on the cut edges | **441.8 × 303** | **373.8 × 256** |
+| | | Crown Quarto | A4 | B5 |
+|---|---|---|---|---|
+| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 189 mm | 210 mm | 176 mm |
+| `.jacket__spine` | bulk, not taste — see below | `--spine-w` | `--spine-w` | `--spine-w` |
+| `.jacket__front` | title and artwork | 189 mm | 210 mm | 176 mm |
+| **wrap, trim** | back + spine + front | **393 × 246** | **435 × 297** | **367 × 250** |
+| **wrap, plus bleed** | 15mm on all four cut edges | **423 × 276** | **465 × 327** | **397 × 280** |
+| **wrap, press sheet** | plus a 7mm slug holding the marks | **437 × 290** | **479 × 341** | **411 × 294** |
 
-An A4 wrap is A3 **plus the spine** — 420mm of paper for the two panels and
-15.8 more for the fold. Ordering "A3" gets a sheet 16mm too narrow.
+The wrap widths above are at a 15mm spine; the spine is bulk, so they move
+with the page count. A Crown Quarto wrap is a little wider than SRA3 and
+shorter than it — no standard sheet fits it, which is normal for a cover and
+is what the press sheet with its marks is for.
+
+**The wrap's bleed is not the page's.** An interior sheet is cut and that is
+the end of it, so `--bleed` is 3mm. A wrap is cut and then folded round the
+board, and what turns in at the edges has to be ink and not bare paper, so
+`--jk-bleed` is **15mm**. `body.cover` points `--bleed` at it, which is why
+every bleed rule in `cover.css` follows without being touched, and
+`cover.mjs` sizes the press sheet from the same token so the layout and the
+media box cannot drift apart.
+
+**The spine is bulk**: pages ÷ 2 × caliper, plus the case. `spineWidth` in
+`cover.json` overrides that when a printer quotes its own stock — this cover
+declares **15mm** against a computed bulk of 12.4mm — and the builder then
+prints both, because a spine declared once and left while the book grew is
+exactly the spine that goes to press wrong.
 
 Nothing on the wrap is typed in millimetres that depends on the trim. The
 margin and the back panel's column are fractions of `--trim-w`, the title's

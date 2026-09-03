@@ -1,11 +1,18 @@
 /* ============================================================
    B5 EDITION — the compact trim.
 
-   A4 is the standard and lives in tokens.css. This sheet moves
-   only the size-dependent tokens back to B5: 176 x 250, a 134mm
-   measure, and a type scale one step down. Everything else —
-   colour, components, hierarchy, the diagram vocabulary — is
-   shared, which is the whole point of an edition sheet.
+   Crown Quarto is the standard and lives in tokens.css. This sheet
+   moves only the size-dependent tokens to B5: 176 x 250 and a
+   134mm measure. Everything else — colour, components, hierarchy,
+   the diagram vocabulary — is shared, which is the whole point of
+   an edition sheet.
+
+   It used to carry the type scale and the spacing rhythm as well,
+   a step down from the A4 book. The standard came down to Crown
+   Quarto and took the same step with it, so those lines said what
+   tokens.css already says and are gone: an override that repeats
+   the value it overrides is the one that gets left behind when the
+   standard next moves.
    ============================================================ */
 
 :root {
@@ -17,21 +24,6 @@
   --margin-inside:  calc(18mm + var(--gutter-allowance));
   --margin-outside: 19mm;
   --measure:        134mm;
-
-  --size-caption:  8.5pt;
-  --size-note:     9.5pt;
-  --size-body:     10.5pt;
-  --size-concept:  12.5pt;
-  --size-section:  15pt;
-  --size-chapter:  24pt;
-  --size-numeral:  40pt;
-
-  --space-hair:  1.4mm;
-  --space-tight: 2.5mm;
-  --space-step:  4.2mm;
-  --space-rest:  6mm;
-  --space-break: 9mm;
-  --lh-body:     1.42;
 
   --fig-sm: 48mm;
   --fig-md: 58mm;

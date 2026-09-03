@@ -2,6 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>
+        The layout is doing something specific: the $7x$ has been split as
+        $3x + 4x$. Three <span class="nb">$x$-tiles</span> stand to the right of the
+        <span class="nb">$x^2$-tile</span> and four
+        lie below it, and that is exactly what forces the twelve unit tiles into
+        a 3 by 4 block. Once the whole thing closes up into a rectangle, its
+        sides can be read off — $x + 3$ across and $x + 4$ down.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Suppose the $7x$ were split as $2x + 5x$ instead. Can the tiles
+              still be closed up into a rectangle? Try the other splittings too,
+              and see which ones work.
+            </p>
+            <p class="c-reflect__hint">
+              There are only three ways to split 7 into two positive whole
+              numbers: 1 and 6, 2 and 5, 3 and 4. Try each. How many close up,
+              and what does that tell you?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        That one picture holds two statements at once, depending on which way
+        you read it. Multiplying and factorising are not two skills but one,
+        run in opposite directions.
+      </p>
+
+      <div class="c-summary">
+        <div class="c-summary__title">What Fig. 4.7 shows</div>
+        <ol>
+          <li>Read as a <strong>product</strong>: the two linear expressions
+            $x + 3$ and $x + 4$ multiply to give
+            $(x + 3)(x + 4) = x^2 + 7x + 12$.</li>
+          <li>Read as a <strong>factorisation</strong>: the expression
+            $x^2 + 7x + 12$ breaks into the linear factors $x + 3$ and $x + 4$,
+            giving $x^2 + 7x + 12 = (x + 3)(x + 4)$.</li>
+        </ol>
+      </div>
+
+      <p>
+        These are the same identity, met from the two directions this chapter
+        keeps returning to. Multiplying out is the easy direction: you always
+        can. Factorising is the
+      </p>
+
       <div class="c-summary">
         <div class="c-summary__title">What Fig. 4.7 shows</div>
         <ol>
@@ -18,65 +77,6 @@
         hard one, because you are being asked to find
         the two numbers that fit — and the tiles turn that search into something
         you can see. If the pieces close into a rectangle, you have found them.
-      </p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Algebra tiles can show a product, and can find factors.</p>
-            <ol>
-              <li>Work out the product of $x + 2$ and $x + 3$ using tiles.</li>
-              <li>Lay out tiles for $x^2 + 11x + 30$ so that its factors become
-                visible.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        Two products worked out so far look like this:
-      </p>
-
-      <div class="work">
-        <p>$(x + 3)(x + 4) = x^2 + 7x + 12$</p>
-        <p>$(x + 6)(x + 7) = x^2 + 13x + 42$</p>
-      </div>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>
-              Look at where each number on the right came from. Then generalise:
-              what is $(x + a)(x + b)$?
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        Every rectangle so far has had sides of the form $x + \text{something}$,
-        so exactly one $x^2$-tile appeared each time. Change that and the
-        picture grows. Fig. 4.8 shows a rectangle with sides $2x + 3$ and
-        $3x + 1$: two $x$-tiles along one edge, three along the other, so the
-        $x^2$-tiles now fill a block rather than sit alone.
       </p>
 
     </div>

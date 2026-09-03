@@ -1,7 +1,7 @@
 # LearnLab Books
 
-Print-ready maths textbooks. **A4 trim, 210 × 297 mm**, with a B5 edition
-alongside. One folder per class.
+Print-ready maths textbooks. **Crown Quarto trim, 189 × 246 mm**, with A4 and
+B5 editions alongside. One folder per class.
 
 **Read [DESIGN.md](DESIGN.md) before writing a page.** Every page is assembled
 from a locked component library; the builder reports a design violation for any
@@ -66,23 +66,26 @@ never reach one another. For a quick look without the server, open
 
 ## Editions
 
-One design system, two trims. `css/tokens.css` holds the standard — **A4,
-210 × 297 mm**. An edition sheet overrides only the size-dependent tokens:
-trim, margins, measure, type scale, figure widths, spacing rhythm. Colour,
-components, hierarchy and the diagram vocabulary are shared.
+One design system, three trims. `css/tokens.css` holds the standard — **Crown
+Quarto, 189 × 246 mm**. An edition sheet overrides only the size-dependent
+tokens: trim, margins, measure, type scale, figure widths, spacing rhythm.
+Colour, components, hierarchy and the diagram vocabulary are shared.
 
-A chapter is A4 unless its `chapter.json` names an edition:
+A chapter is Crown Quarto unless its `chapter.json` names an edition:
 
 ```json
-{ "class": "9", "number": "4", "title": "…", "edition": "b5" }
+{ "class": "9", "number": "4", "title": "…", "edition": "a4" }
 ```
 
-Every chapter in the book is A4 today. `css/edition-b5.css` is kept and still
-works — name the edition and the builder, the bleed sheet, the proofs and the
-studio all follow it.
+Every chapter in the book is Crown Quarto today. `css/edition-a4.css` and
+`css/edition-b5.css` are kept and still work — name the edition and the
+builder, the bleed sheet, the proofs and the studio all follow it.
 
 The page breaks differ between editions — a bigger page holds more, so each
-is fitted separately. `build/repack.mjs` does the measuring.
+is fitted separately, and the sources here are fitted to Crown Quarto.
+`build/repack.mjs` does the measuring; `build/sheet.mjs` is where every tool
+gets the trim from, so none of them can be measuring a different page than
+the one being printed.
 
 ## Palettes
 
@@ -225,12 +228,13 @@ says so, which is what stops the fill check reporting it as unfinished:
 
 ## Grid and binding
 
-| | A4 — the standard | B5 — the edition |
-|---|---|---|
-| trim | 210 × 297 mm | 176 × 250 mm |
-| margins | top 26, bottom 20, **inside 30.5**, outside 25.5 mm | top 23, bottom 17, **inside 23**, outside 19 mm |
-| measure | 154 mm, a single column | 134 mm, a single column |
-| body type | Spectral, 11.5 pt / 1.43, **weight 500**, justified | Spectral, 10.5 pt / 1.43, **weight 500**, justified |
+| | Crown Quarto — the standard | A4 — an edition | B5 — an edition |
+|---|---|---|---|
+| trim | 189 × 246 mm | 210 × 297 mm | 176 × 250 mm |
+| margins | top 22, bottom 17, **inside 28**, outside 21 mm | top 26, bottom 20, **inside 30.5**, outside 25.5 mm | top 23, bottom 17, **inside 23**, outside 19 mm |
+| measure | 140 mm, a single column | 154 mm, a single column | 134 mm, a single column |
+| body type | Spectral, 10 pt / 1.42, **weight 500**, justified | Spectral, 11.5 pt / 1.43, **weight 500**, justified | Spectral, 10 pt / 1.42, **weight 500**, justified |
+| text block | 140 × 207 mm | 154 × 251 mm | 134 × 210 mm |
 
 **The book is bound, so the margins are mirrored, not symmetric.** The inside
 margin is the text inset plus a `--gutter-allowance` (5 mm), because a reader
@@ -242,12 +246,21 @@ That only works if the outside margin is the inset *alone*. Set it to the same
 number as the inside and the allowance cancels out: the block sits dead centre,
 and once binding has taken its few millimetres the inner margin is the narrower
 of the two — the opposite of what was intended. A4 was symmetric at 28/28 until
-this was measured on a rendered page.
+this was measured on a rendered page; Crown Quarto was drawn with the
+allowance in it from the start — 28 + 140 + 21 = 189.
 
-**The measure is deliberately not wider.** 154 mm holds a median of **72
-characters** per line — 2.9 alphabets — against the usual comfortable range of
-45–75, and 2.5 alphabets as the ideal. It is already at the long end, so the
-side margins are what the line length costs, not slack to be reclaimed.
+**The measure is deliberately not wider.** 140 mm at 10 pt holds a median of
+about **76 characters** per line, against the usual comfortable range of
+45–75. It is already at the long end, so the side margins are what the line
+length costs, not slack to be reclaimed.
+
+**The type came down a step with the trim, and had to.** Held at 11.5 pt the
+line would have run past 80 characters — but the deciding reason is the page,
+not the line. A block's height goes as the square of the type size over the
+measure, so type held still on a page 18% shorter makes every paragraph,
+panel and worked example a tenth larger as a share of it. Two worked examples
+that shared an A4 page will not share this one. 10 pt on 140 mm puts blocks
+back in the proportion to the page that they had at A4.
 Narrowing them would push the line past readable.
 
 Every mirrored thing keys off `.page--verso`, which the builder sets from the

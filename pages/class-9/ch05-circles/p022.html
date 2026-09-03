@@ -2,56 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>In $\triangle BCD$: $CB = CD$, so $\angle CBD = \angle CDB$.</p>
-        <p>$\angle BCE$ is the exterior angle of $\triangle BCD$ at $C$, so
-        $\angle BCE = \angle CBD + \angle CDB = 2\,\angle BDC$.</p>
-        <p>In $\triangle ACD$: $CA = CD$, so $\angle CAD = \angle CDA$, and
-        in the same way $\angle ACE = 2\,\angle ADC$.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+      <p>A circle has radius $25$ cm. One of its chords is $48$ cm long and
+          another is $14$ cm long. Which lies nearer the centre, and by how much?</p>
+      <p>Theorem 8 answers the first half before any arithmetic starts: the longer chord
+          is the nearer, so the $48$ cm chord is the closer of the two. Only the
+          <em>how much</em> needs calculating, and for that we halve each chord and use the
+          right-angled triangle again.</p>
+      <div class="work">
+            <div class="work__row"><span class="work__label work__label--wide">the 48 cm chord</span>
+              <span>$\sqrt{25^{2}-24^{2}} = \sqrt{49}$</span>
+              <span class="chip">$7$ cm</span></div>
+            <div class="work__row"><span class="work__label work__label--wide">the 14 cm chord</span>
+              <span>$\sqrt{25^{2}-7^{2}} = \sqrt{576}$</span>
+              <span class="chip">$24$ cm</span></div>
+          </div>
+      <p>The longer chord sits $7$ cm out and the shorter $24$ cm, a
+          difference of $17$ cm — the ordering Theorem 8 promised before any
+          arithmetic began.</p>
+        </div>
       </div>
 
-      <p>Adding the two results, $\angle BCA = \angle BCE + \angle ECA = 2\,\angle BDC +
-      2\,\angle ADC = 2\,\angle BDA$, which is the theorem.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="22 17 156 164" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Arc AFB, the angle it makes at the centre, and the angle it makes at a point D">
-            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-b-soft" d="M100 100 L34.22 76.06 A70 70 0 0 1 165.78 76.06 Z"/>
-            <path class="dg-fill-c-soft" d="M76.06 165.78 L66.76 145.84 A22 22 0 0 1 91.62 150.22 Z"/>
-            <circle class="dg-line" cx="100" cy="100" r="70"/>
-            <path class="dg-line" d="M76.06 165.78 L34.22 76.06"/>
-            <path class="dg-line" d="M76.06 165.78 L165.78 76.06"/>
-            <path class="dg-thin" d="M100 100 L34.22 76.06"/>
-            <path class="dg-thin" d="M100 100 L165.78 76.06"/>
-            <path class="dg-dim" d="M76.06 165.78 L123.94 34.22"/>
-            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
-      
-            <text class="dg-label" x="28"  y="73"  text-anchor="end">A</text>
-            <text class="dg-label" x="172" y="73">B</text>
-            <text class="dg-label" x="100" y="26"  text-anchor="middle">F</text>
-            <text class="dg-label" x="70"  y="176" text-anchor="end">D</text>
-            <text class="dg-label" x="129" y="31">E</text>
-            <text class="dg-label" x="105" y="112">C</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.11</span> The arc $AFB$ subtends
-          $\angle ACB$ at the centre and $\angle ADB$ at $D$. The first is
-          twice the second.</figcaption>
-        </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.5</div>
+        <ol class="c-questions">
+          <li>Fill in the blanks. In a circle of radius $13$ cm, a chord lying
+            $5$ cm from the centre is <span class="blank"></span> cm long; and a chord
+            of that circle $10$ cm long lies <span class="blank"></span> cm from the
+            centre.</li>
+        </ol>
       </div>
 
-      <p>One step there was taken without comment: that the line $DC$, carried on,
-      lands on the arc $AFB$ — which is what put $E$ between $A$ and
-      $B$ and let the two angles at $C$ be added. For some positions of $D$
-      it lands outside the arc instead, and the figure looks different.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Find the length of a chord of a circle of radius $7$ cm that lies
+            $6$ cm from the centre.</li>
+        </ol>
+      </div>
 
-      <p>Nothing else changes. The same two isosceles triangles appear, and the same exterior-angle step applies to each; only now the angles at $C$ must be subtracted rather than added, and so must the angles at $D$. That gives $\angle ACB = \angle ACE - \angle BCE = 2\,\angle ADC - 2\,\angle BDC = 2\,\angle
-      ADB$,
-      and the theorem stands in that case too. It is worth drawing.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Explain, using Fig. 5.8, why a chord lying $d$ from the centre of a
+            circle of radius $r$ has length $2\sqrt{r^{2}-d^{2}}$.</li>
+        </ol>
+      </div>
 
-      <p>Theorem 9 is stated about the centre, but the useful part is what it says about everywhere else. The angle at the centre plainly does not depend on $D$ — the
-      centre does not know where $D$ is. So the angle at $D$, being exactly half of it, cannot depend on $D$ either.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>One chord of a circle of radius $10$ cm lies $6$ cm from the
+            centre, another lies $8$ cm from it. Which is longer, and by how much?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li class="hard">In a circle, the chord $AB$ is twice as far from the centre
+            as the chord $CD$. Does it follow that $CD = 2\,AB$? Give reasons, and
+            a counter-example if there is one.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li class="hard">What happens to the length of a chord as its distance from the
+            centre creeps up towards $r$? And what is the greatest number of chords of a
+            given length a circle can have?</li>
+        </ol>
+      </div>
 
     </div>
   </div>

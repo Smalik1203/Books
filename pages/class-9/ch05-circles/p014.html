@@ -2,62 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="22 22 156 156" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A chord with its midpoint joined to the centre, meeting at a right angle">
-            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-b-soft" d="M100 100 L36.56 70.42 L88.36 56.54 Z"/>
-            <path class="dg-fill-b-soft" d="M100 100 L88.36 56.54 L140.15 42.66 Z"/>
-            <circle class="dg-line" cx="100" cy="100" r="70"/>
-            <path class="dg-line" d="M36.56 70.42 L140.15 42.66"/>
-            <path class="dg-thin" d="M100 100 L36.56 70.42"/>
-            <path class="dg-thin" d="M100 100 L140.15 42.66"/>
-            <path class="dg-dim" d="M100 100 L88.36 56.54"/>
-            <path class="dg-thin" d="M97.05 54.21 L99.38 62.9 L90.69 65.23"/>
-            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
-            <circle class="dg-fill-c" cx="88.36" cy="56.54" r="2.4"/>
-      
-            <text class="dg-label" x="30"  y="70"  text-anchor="end">A</text>
-            <text class="dg-label" x="145" y="39">B</text>
-            <text class="dg-label" x="83"  y="51"  text-anchor="end">M</text>
-            <text class="dg-label" x="104" y="111">C</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.7</span> $M$ is the midpoint of the
-          chord $AB$. The segment $CM$ meets the chord at a right angle.</figcaption>
-        </figure>
+      <p>Notice how little separates the two proofs: the same figure, the same two
+      triangles, the same four radii. All that changes is which fact is given and which is
+      wanted — and with it, the congruence rule that does the work.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A chord of a circle of radius $9$ cm subtends $60^\circ$ at the
+          centre. How long is the chord? And if a second chord of the same circle is also
+          $9$ cm long, what angle does it subtend?</p>
+          <p>Join the ends of the chord to the centre. The two radii and the chord make a
+          triangle, and here it is better than isosceles.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">two sides</span>
+              <span>both are radii, so $9$ cm each</span>
+              <span class="chip">isosceles</span></div>
+            <div class="work__row"><span class="work__label">apex angle</span>
+              <span>$60^\circ$, at the centre</span>
+              <span class="chip">equilateral</span></div>
+          </div>
+          <p>The base angles of an isosceles triangle are equal, and if the apex takes
+          $60^\circ$ the remaining $120^\circ$ splits into $60^\circ$ each.
+          All three angles equal makes all three sides equal, so the chord is $9$ cm —
+          exactly the radius.</p>
+          <p>The second part needs no calculation. The other chord is the same
+          length, so by Theorem 2 it subtends the same angle.</p>
+        </div>
       </div>
 
-      <p>Why is this true? Compare the two triangles that $CM$ cuts the big one
-      into.</p>
-
-      <div class="work work--list">
-      <p>$CA = CB$, both being radii.</p>
-      <p>$AM = BM$, because $M$ is the midpoint.</p>
-      <p>$CM$ is common to both.</p>
-      <p>So $\triangle CMA \cong \triangle CMB$, by <span class="pop">SSS</span>.</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.3</div>
+        <ol class="c-questions">
+          <li>Show that the triangle formed by a chord of a circle and the two radii to its
+            ends is isosceles.</li>
+        </ol>
       </div>
 
-      <p>Congruent triangles give $\angle CMA = \angle CMB$. But those two angles sit
-      side by side on the straight line $AB$, so they add to $180^\circ$. Two
-      equal angles adding to $180^\circ$ are $90^\circ$ each. So $CM$ is
-      perpendicular to $AB$.</p>
-
-      <p>Now the converse. Drop a perpendicular from the centre onto a chord instead, and
-      ask where it lands.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 5</div>
-        <p>The perpendicular from the centre of a circle to a chord bisects the chord.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Two such triangles, in the same circle, have bases of equal length. Show that
+            they are congruent.</li>
+        </ol>
       </div>
 
-      <div class="work work--list">
-      <p>$CA = CB$, both radii — and in the right-angled triangles $CMA$ and
-        $CMB$ these are the hypotenuses.</p>
-      <p>$CM$ is common, and $\angle CMA = \angle CMB = 90^\circ$ is now what
-        is given.</p>
-      <p>So $\triangle CMA \cong \triangle CMB$, by <span class="pop">RHS</span>,
-        and therefore $AM = BM$.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Two chords of a circle of radius $10$ cm each subtend $60^\circ$ at
+            the centre. How long is each chord? (No calculation should be needed.)</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>A chord of a circle of radius $8$ cm subtends a right angle at the
+            centre. Find its length.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li class="hard">One chord subtends $60^\circ$ at the centre and another
+            subtends $120^\circ$. Is the second chord twice as long as the first? Give a
+            reason.</li>
+        </ol>
       </div>
 
     </div>

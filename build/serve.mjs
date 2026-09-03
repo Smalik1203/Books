@@ -80,7 +80,7 @@ async function library() {
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
         bleed: existsSync(out + '-bleed.pdf'),
-        edition: (meta.edition || 'a4').toUpperCase(),
+        edition: (meta.edition || 'crown quarto').toUpperCase(),
       });
     }
     chapters.sort((a, b) => String(a.meta.number)
@@ -126,7 +126,7 @@ async function coverLibrary() {
       covers.push({
         target: cls + '/' + dir, dir, meta, sheet: s,
         name: meta.title + (meta.part ? ', Part ' + meta.part : ''),
-        edition: (meta.edition || 'a4').toUpperCase(),
+        edition: (meta.edition || 'crown quarto').toUpperCase(),
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
         bleed: existsSync(out + '-bleed.pdf'),

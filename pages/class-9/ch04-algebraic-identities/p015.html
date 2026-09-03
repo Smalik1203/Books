@@ -2,6 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Algebra tiles can show a product, and can find factors.</p>
+            <ol>
+              <li>Work out the product of $x + 2$ and $x + 3$ using tiles.</li>
+              <li>Lay out tiles for $x^2 + 11x + 30$ so that its factors become
+                visible.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Two products worked out so far look like this:
+      </p>
+
+      <div class="work">
+        <p>$(x + 3)(x + 4) = x^2 + 7x + 12$</p>
+        <p>$(x + 6)(x + 7) = x^2 + 13x + 42$</p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Look at where each number on the right came from. Then generalise:
+              what is $(x + a)(x + b)$?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Every rectangle so far has had sides of the form $x + \text{something}$,
+        so exactly one $x^2$-tile appeared each time. Change that and the
+        picture grows. Fig. 4.8 shows a rectangle with sides $2x + 3$ and
+        $3x + 1$: two $x$-tiles along one edge, three along the other, so the
+        $x^2$-tiles now fill a block rather than sit alone.
+      </p>
+
       <figure class="c-figure c-figure--sm">
         <svg viewBox="0 0 300 262" role="img"
              aria-label="Algebra tiles forming a rectangle of width three x plus one and height two x plus three: six x squared tiles, eleven x tiles, and three unit tiles">
@@ -54,66 +113,6 @@
           $(2x + 3)(3x + 1)$.
         </figcaption>
       </figure>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>
-              Count the tiles of each kind in Fig. 4.8. What is the area
-              $(2x + 3)(3x + 1)$?
-            </p>
-            <p>Then fill in the blanks so that the general statement is true:</p>
-            <div class="work work--centred">
-              <p>$(px + a)(qx + b) =$ (<span class="blank"></span>)$x^2$ + (<span class="blank"></span>)$x$ + <span class="blank"></span></p>
-            </div>
-            <p class="c-reflect__hint">
-              Check your answer by multiplying the brackets out with the
-              distributive property. The two routes must agree.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <h2><span class="badge">4.6</span><span class="name">Factorising Without Tiles</span></h2>
-
-      <p>
-        The tiles made one thing visible: to factorise $x^2 + 7x + 12$ you have
-        to split the $7x$ as $3x + 4x$. Get the split right and the pieces close
-        into a rectangle; get it wrong and they do not. But laying out tiles for
-        every expression is slow, and impossible once the numbers grow. So how
-        do you find the split without them?
-      </p>
-
-      <p>
-        The answer is to write down what a factorised expression must look like.
-        Multiplying $(x + a)(x + b)$ gives
-      </p>
-
-      <div class="eq">
-        $$x^2 + (a + b)x + ab$$
-      </div>
-
-      <p>
-        So the coefficient of $x$ is the <em>sum</em> of the two numbers, and the
-        constant is their <em>product</em>. Factorising is now a search for two
-        numbers with a known sum and a known product.
-      </p>
-
-      <div class="c-example c-example--head">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-<p>Factorise $x^2 + 7x + 12$.</p>
-        </div>
-      </div>
 
     </div>
   </div>

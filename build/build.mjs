@@ -24,6 +24,8 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import katex from 'katex';
 import { cropHeight } from './png.mjs';
+import { windowPad } from './viewport.mjs';
+import { tokenReader, sheetMetrics, px } from './sheet.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -46,29 +48,6 @@ const findChrome = () => CHROME_CANDIDATES.find(c => c && existsSync(c));
 // usually runs. Only then is the flag added — never on a developer machine.
 const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
-/* --window-size sizes the WINDOW, and the window carries chrome of
-   its own whose height is that build of Chrome's business, not ours.
-   Ask for a 297mm window and this one lays the page out in a viewport
-   23mm shorter — and a page proof captured that way loses the foot of
-   every page: the folio, and any overrun. Which is what a proof is
-   for. So the difference is measured once and added back. */
-let windowPadding = null;
-async function windowPad(chrome) {
-  if (windowPadding !== null) return windowPadding;
-  const probe = p('build', '_viewport-probe.html');
-  await mkdir(path.dirname(probe), { recursive: true });
-  await writeFile(probe, '<html><head><script>addEventListener("load", function () '
-    + '{ document.title = "V" + innerHeight; });<' + '/script></head><body></body></html>');
-  const { stdout } = await run(chrome, [
-    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
-    '--window-size=800,1000', '--virtual-time-budget=2000', '--dump-dom',
-    'file:///' + probe.replace(/\\/g, '/'),
-  ], { maxBuffer: 1 << 20 }).catch(() => ({ stdout: '' }));
-  await rm(probe, { force: true });
-  const seen = Number(stdout.match(/<title>V(\d+)<\/title>/)?.[1]);
-  windowPadding = seen ? 1000 - seen : 0;
-  return windowPadding;
-}
 
 /* ---- Maths ------------------------------------------------
    Replace display maths first, then inline. Anything inside a
@@ -206,11 +185,11 @@ async function lintClasses(root, pageFiles) {
    the table held the B5 numbers. --fig-full resolves through
    --measure, so it is followed rather than parsed. */
 async function figWidths(root, edition) {
-  const px = await tokenReader(root, edition);
+  const token = await tokenReader(root, edition);
   const w = {};
   for (const step of ['sm', 'md', 'lg', 'xl', 'full']) {
-    const raw = px('fig-' + step);
-    w[step] = /var\(\s*--measure/.test(raw) ? parseFloat(px('measure')) : parseFloat(raw);
+    const raw = token('fig-' + step);
+    w[step] = /var\(\s*--measure/.test(raw) ? parseFloat(token('measure')) : parseFloat(raw);
   }
   return w;
 }
@@ -240,33 +219,9 @@ function closePages(body, marks = "") {
 }
 
 /* ---- Sheet metrics ----------------------------------------
-   Read from the tokens rather than repeated here, so the page
-   box Chrome is told to print can never drift from the box the
-   stylesheet lays the book out in. */
-async function tokenReader(root, edition) {
-  const src = await readFile(path.join(root, 'css', 'tokens.css'), 'utf8');
-  const over = edition
-    ? await readFile(path.join(root, 'css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
-    : '';
-  return (name) => {
-    // an edition sheet wins, exactly as the cascade would have it
-    const from = over.includes('--' + name + ':') ? over : src;
-    return from.slice(from.indexOf("--" + name + ":") + name.length + 3, from.indexOf("--" + name + ":") + name.length + 30);
-  };
-}
-
-async function sheetMetrics(root, edition) {
-  const raw = await tokenReader(root, edition);
-  const mm = (name) => parseFloat(raw(name));
-  const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const bleed = mm('bleed'), slug = mm('slug');
-  const out = bleed + slug;
-  return {
-    trimW, trimH, bleed, slug,
-    mediaW: trimW + 2 * out,
-    mediaH: trimH + 2 * out,
-  };
-}
+   tokenReader and sheetMetrics live in build/sheet.mjs, because
+   the tools that measure a chapter need the same trim this one
+   prints it at. */
 
 /* Crop marks: eight hairlines in the slug, each running from the
    bleed edge outward, so none of them can cross artwork. The
@@ -570,10 +525,9 @@ async function toPdf(htmlPath) {
    Renders each page on its own at 2× so a spread can be read
    and marked up during design review. Same engine as the PDF,
    so what a proof shows is what the PDF gets. */
-const MM_TO_PX = 96 / 25.4;               // CSS px per mm
-// The proof window must match the edition being rendered, or an A4 page
-// comes back cropped to a B5 frame and reads as though it were clipped.
-const px = (mm) => Math.round(mm * MM_TO_PX);
+// px comes from sheet.mjs. The proof window must match
+// the edition being rendered, or a standard-trim page comes back
+// cropped to a smaller frame and reads as though it were clipped.
 
 async function toPngs(htmlPath, meta, sheet) {
   const chrome = findChrome();
@@ -653,7 +607,8 @@ async function checkOverflow(htmlPath, meta, sheet) {
         });
         var fill = avail > 0 ? (deepest - top) / avail : 0;
         out.push({ folio: pg.dataset.folio, over: Math.round(over),
-                   fill: Math.round(fill * 100), close: pg.hasAttribute('data-close') });
+                   fill: Math.round(fill * 100), avail: Math.round(avail),
+                   close: pg.hasAttribute('data-close') });
       });
       document.title = 'OVERSET' + JSON.stringify(out);
     });
@@ -697,7 +652,8 @@ async function checkOverflow(htmlPath, meta, sheet) {
   const SHORT = 88;
   const short = rows.slice(0, -1).filter(r => !r.over && !r.close && r.fill < SHORT);
   for (const r of short) {
-    const gap = ((100 - r.fill) / 100 * 213).toFixed(0);
+    // the text block's own height, measured — the trim is not a constant
+    const gap = ((100 - r.fill) / 100 * (r.avail / PX_PER_MM)).toFixed(0);
     console.warn(`    ~ page ${r.folio} is ${r.fill}% full — ${gap}mm of white at the foot`);
   }
   // one compact line so page fullness is visible at a glance
@@ -724,7 +680,7 @@ async function bookMeta(cls) {
   return null;
 }
 
-function frontMatter(book, contents, preface, marks = "") {
+function frontMatter(book, contents, preface, sheet, marks = "") {
   /* These pages are assembled here rather than through closePages, so
      they have to be handed the marks themselves. Without that the
      title, the preface and the contents were the only sheets in the
@@ -763,7 +719,7 @@ function frontMatter(book, contents, preface, marks = "") {
            ${book.edition_statement ? escapeHtml(book.edition_statement) : ''}
            ${book.isbn ? `ISBN ${escapeHtml(book.isbn)}.` : ''}
            ${book.copyright ? `&copy; ${escapeHtml(String(book.year || ''))} ${escapeHtml(book.copyright)}. All rights reserved.` : ''}</p>
-        <p>Typeset in Spectral and Vollkorn. Printed on a ${book.edition === 'b5' ? '176 &times; 250' : '210 &times; 297'} mm page.</p>
+        <p>Typeset in Spectral and Vollkorn. Printed on a ${sheet.trimW} &times; ${sheet.trimH} mm page.</p>
       </div>`;
 
   /* The preface is prose, so it is read rather than consulted, and it
@@ -909,7 +865,7 @@ async function buildBook(cls) {
   // chapter 1 still opens on page 1 — but their count is kept even, or
   // the body would start on a verso.
   if (book) {
-    const fm = frontMatter(book, contents, preface, cropMarks(sheet));
+    const fm = frontMatter(book, contents, preface, sheet, cropMarks(sheet));
     if (fm.length !== front) {
       console.warn(`    ! front matter came to ${fm.length} pages but ${front} were counted`
         + ` before the body was stamped — every folio is on the wrong side`);
