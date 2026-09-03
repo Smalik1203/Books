@@ -50,8 +50,12 @@ const node = (...args) =>
 
 /* ---- the scratch chapter ---------------------------------- */
 // Beyond the Book is p101 up; the chapter proper is everything
-// below it. The two never mix.
-const isBridge = f => /^p1\d\d.*\.html$/.test(f);
+// below it. The two never mix. Read the number and compare it,
+// rather than matching p1NN — that pattern also claims p100, which
+// is the hundredth page of the chapter proper, and a chapter is
+// allowed to reach a hundred pages without renumbering anything.
+const folioOf = f => Number(f.match(/^p(\d+)/)?.[1]);
+const isBridge = f => folioOf(f) >= 101;
 const own = (await readdir(src))
   .filter(f => /^p\d+.*\.html$/.test(f) && isBridge(f) === BRIDGE).sort();
 if (!own.length) { console.log(`  ${rel}: no ${part} pages`); process.exit(0); }

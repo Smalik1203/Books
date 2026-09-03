@@ -152,6 +152,74 @@ component too large for the space left. Closing those gaps means either
 editing prose at the join or letting a component break across a page, which
 is a design decision.
 
+## Figures, and the ones you cannot draw
+
+A page that could carry a picture and carries a paragraph instead is a page
+set short. Reach for one. But there are two kinds here and the difference
+decides who makes it.
+
+**A mathematical diagram is hand-authored SVG.** Never generated. The
+vocabulary is in `css/diagram.css`, the geometry is exact, the labels are set
+in the book's own type, and a wrong dimension is fixed by editing a number.
+About 4.5 viewBox units to the printed millimetre, so a stroke weighs the
+same on every page — see DESIGN.md. Draw these yourself; `build/geom.mjs`
+computes path data.
+
+**An illustration is generated raster art** — the scene that sets a chapter
+up, the artefact, the pair of boxes a problem is about. It lives in
+`figures/<class>/`, and there are three in the book.
+
+**You cannot generate one.** So when a page wants an illustration, do not
+quietly settle for prose, and do not draw a diagram that is not a diagram.
+Say what the picture is for and hand the user a prompt they can paste
+straight into an image model, in a fenced block, ready to use. A prompt they
+have to rewrite is a prompt you did not finish.
+
+A prompt for this book carries six things, and every one of them is here
+because a figure already in the book got it wrong:
+
+1. **The subject, and what it has to show.** The figure is an argument, not
+   decoration — say what a reader must be able to see in it.
+2. **No lettering. None.** No labels, no captions, no numbers, no signage.
+   The book has two locked faces and sets its maths with KaTeX; type inside
+   a picture is a third face at whatever size the figure was scaled to, and
+   it cannot be corrected without generating the whole image again.
+   `ch02-pens-pencils.png` came back with *Pencils* written across the blue
+   box twice. It is still in the book.
+3. **A plain near-white ground.** No frame, border, vignette or drop shadow.
+   `.c-figure img` composites with `mix-blend-mode: multiply`, which sinks a
+   near-white ground into the cream of the paper and leaves no rectangle
+   edge. A dark or textured background defeats that and prints as a patch.
+4. **The aspect ratio, and prefer wider than tall.** The step caps the
+   width; the height is the artwork's own business and is what decides
+   whether the page still packs. A tall figure is how a short page happens.
+5. **At least 2000px on the long edge.** `prep-figure.mjs` downsamples to
+   300 dpi at the printed width and cannot invent detail.
+   `ch03-ishango-tally.png` arrived 297px wide and prints at 148 dpi on a
+   51mm step — half the resolution the rest of the book holds, and its
+   `_raw-` original is no bigger, so it cannot be re-cut. It has to be
+   generated again.
+6. **The style, named.** The two full-size figures in the book do not match
+   each other — one is bold black-outline cartoon, the other soft
+   watercolour. Say which one a new figure is joining, and describe it in
+   enough detail that it comes back in that register rather than the
+   model's house style.
+
+When it arrives, save the original as `_raw-<name>.png` beside the cut one
+and prepare it at the width it will actually print:
+
+```bash
+node build/prep-figure.mjs figures/class-9/_raw-name.png figures/class-9/name.png 71
+```
+
+The steps are `sm` 42, `md` 51, `lg` 59, `xl` 71, `full` 126 mm — pass the
+one matching the `.c-figure--` modifier you set, not the width of the file.
+Keep `_raw-`, so the figure can be re-cut at another size later.
+
+Write real alt text: what a reader who cannot see it would need, not the
+file name. Then **rebuild and refit** — a figure changes the fill of its
+page and usually of the two after it.
+
 ## Beyond the Book
 
 Every chapter ends with ten or so more pages — `p101.html` up — that take

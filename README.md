@@ -339,6 +339,11 @@ into the paper.
 the vocabulary in `css/diagram.css` — exact geometry, labels set in the book’s
 own type, and a wrong dimension fixable by editing a number.
 
+What a generated illustration has to be asked for — no lettering, a plain
+near-white ground, wider than tall, 2000px or more on the long edge — is in
+[CLAUDE.md](CLAUDE.md#figures-and-the-ones-you-cannot-draw), along with what
+each of those rules cost when a figure in the book got it wrong.
+
 ## Maths
 
 Write `$...$` inline and `$$...$$` for display. KaTeX renders at **build time**,

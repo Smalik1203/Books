@@ -33,6 +33,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { spineWidth } from './spine.mjs';
+import { tokenReader } from './sheet.mjs';
 import { windowPad } from './viewport.mjs';
 import { cropHeight } from './png.mjs';
 
@@ -60,20 +61,12 @@ const escapeHtml = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /* ---- Sheet metrics -----------------------------------------
-   Read out of the tokens, exactly as build.mjs does, so the box
+   Read out of the tokens through build/sheet.mjs, so the box
    Chrome is told to print can never drift from the box the
-   stylesheet lays the wrap out in. */
-async function tokenReader(edition) {
-  const src = await readFile(p('css', 'tokens.css'), 'utf8');
-  const over = edition
-    ? await readFile(p('css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
-    : '';
-  return (name) => {
-    const from = over.includes('--' + name + ':') ? over : src;
-    const at = from.indexOf('--' + name + ':');
-    return from.slice(at + name.length + 3, at + name.length + 30);
-  };
-}
+   stylesheet lays the wrap out in. This file carried its own copy
+   of the reader for a while, which is the duplication sheet.mjs
+   exists to end: the copy kept the two bugs the original had long
+   after they were fixed once. */
 
 /* ---- EAN-13 ------------------------------------------------
    95 modules: a 3-module guard, six digits, a 5-module centre
@@ -267,11 +260,12 @@ async function buildCover(rel) {
     parts.map(part => readFile(path.resolve(src, part), 'utf8'))
   )).join(String.fromCharCode(10, 10));
 
-  const tok = await tokenReader(meta.edition);
+  const tok = await tokenReader(ROOT, meta.edition);
   const mm = (name) => parseFloat(tok(name));
   // the wrap has its own bleed: it is folded round the board, not just cut
   const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const bleedMM = mm('jk-bleed') || mm('bleed');
+  const jk = tok.opt('jk-bleed');
+  const bleedMM = jk !== null ? parseFloat(jk) : mm('bleed');
   const slugMM = mm('slug');
   const spine = spineWidth(meta);
   const out = bleedMM + slugMM;

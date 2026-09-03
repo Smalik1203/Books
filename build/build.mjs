@@ -633,7 +633,13 @@ async function checkOverflow(htmlPath, meta, sheet) {
 
   const PX_PER_MM = 96 / 25.4;
   const rows = JSON.parse(raw);
-  const bad = rows.filter(r => r.over > 2);   // 2px slack for rounding
+  // One slack figure, used by both checks below. It was 2px here and
+  // an exact zero in the fill check, so a page overrunning by a single
+  // rounding pixel was too full to report as overrunning and too
+  // overrun to report as short. Four pages across two chapters were
+  // sitting in that gap, one of them 64% full.
+  const SLACK = 2;
+  const bad = rows.filter(r => r.over > SLACK);
   // Past the text block is a fitting problem; past the margin as well is
   // a printing one. Saying "clipped" for 1mm sends you chasing ghosts.
   for (const r of bad) {
@@ -651,7 +657,7 @@ async function checkOverflow(htmlPath, meta, sheet) {
   // running out, which is the same fault forgiven for the same reason.
   // A chapter with a Beyond the Book division after it has two such endings.
   const SHORT = 88;
-  const short = rows.slice(0, -1).filter(r => !r.over && !r.close && r.fill < SHORT);
+  const short = rows.slice(0, -1).filter(r => r.over <= SLACK && !r.close && r.fill < SHORT);
   for (const r of short) {
     // the text block's own height, measured — the trim is not a constant
     const gap = ((100 - r.fill) / 100 * (r.avail / PX_PER_MM)).toFixed(0);
@@ -800,7 +806,7 @@ const blankVerso = (folio, marks = "") =>
 async function buildBook(cls) {
   const root = p('pages', cls);
   const dirs = (await readdir(root, { withFileTypes: true }))
-    .filter((e) => e.isDirectory()).map((e) => e.name);
+    .filter((e) => e.isDirectory() && !e.name.startsWith('_')).map((e) => e.name);
 
   const chapters = [];
   for (const dir of dirs) {
@@ -810,6 +816,22 @@ async function buildBook(cls) {
   }
   if (!chapters.length) { console.log(`  ${cls}: no chapters`); return null; }
   chapters.sort((a, b) => Number(a.meta.number) - Number(b.meta.number));
+
+  /* Two chapters claiming one number is not a book. refit leaves a
+     scratch copy of a chapter beside it under --dry, and that copy
+     carries the same chapter.json; bound, it went in a second time
+     and a 239-page book came out at 249 without a word. The
+     underscore is skipped above, and this catches every other way
+     two directories end up with one number. */
+  const byNumber = new Map();
+  for (const c of chapters) {
+    const n = String(c.meta.number);
+    if (byNumber.has(n)) {
+      console.error(`  ${cls}: chapters ${byNumber.get(n)} and ${c.dir} are both numbered ${n}`);
+      return null;
+    }
+    byNumber.set(n, c.dir);
+  }
 
   // One book, one trim. Mixed editions would print at two sizes.
   const editions = [...new Set(chapters.map((c) => c.meta.edition || 'standard'))];
@@ -971,7 +993,10 @@ if (!existsSync(path.join(asDir, 'chapter.json'))) {
     console.error(`Not found: pages/${target}`);
     process.exit(1);
   });
-  chapters = entries.filter(e => e.isDirectory()).map(e => `${target}/${e.name}`);
+  // an underscore marks a scratch chapter — refit's, say — which is
+  // built by name when it is wanted and never swept up with the class
+  chapters = entries.filter(e => e.isDirectory() && !e.name.startsWith('_'))
+    .map(e => `${target}/${e.name}`);
 }
 
 const styleErrors = await lintStylesheets(ROOT);

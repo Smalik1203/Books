@@ -43,6 +43,16 @@ export async function windowPad(chrome) {
   ], { maxBuffer: 1 << 20 }).catch(() => ({ stdout: '' }));
   await rm(probe, { force: true });
   const seen = Number(stdout.match(/<title>V(\d+)<\/title>/)?.[1]);
-  cached = seen ? 1000 - seen : 0;
+  /* A probe that does not report used to return 0, which is the
+     unpadded window this file exists to stop anyone asking for —
+     and it did it silently, so a run of short proofs looked like a
+     run of good ones. Say so instead. */
+  if (!seen) {
+    console.warn('    ! could not measure the window padding —'
+      + ' proofs may be short at the foot of the sheet');
+    cached = 0;
+    return cached;
+  }
+  cached = 1000 - seen;
   return cached;
 }

@@ -25,20 +25,46 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const MM_TO_PX = 96 / 25.4;               // CSS px per mm
 export const px = (mm) => Math.round(mm * MM_TO_PX);
 
+/* One declaration out of a stylesheet, by name.
+
+   This was an indexOf and a pair of offsets, which had two faults
+   a token reader cannot afford. It matched the name anywhere, so
+   --bleed also matched the --jk-bleed declared eight lines below
+   it and only the order of the file kept the press sheet at 3mm
+   rather than 15. And a name that was not there at all indexed
+   from -1 and returned thirty characters of whatever happened to
+   sit at the top of the file, which parseFloat read as NaN and
+   passed on to @page as "NaNmm". So the name is anchored, and the
+   value is the declaration, not a fixed-width window over it. */
+const declared = (css, name) => {
+  const m = css.match(new RegExp('(?:^|[\\s;{])--' + name + '\\s*:\\s*([^;}]+)'));
+  return m ? m[1].trim() : null;
+};
+
 /* A reader for one token, following the cascade an edition sets up:
    tokens.css holds the standard trim, an edition sheet overrides
    only what its size changes, and a name the edition does not
-   mention falls through to the standard. */
+   mention falls through to the standard.
+
+   An unknown name throws. Everything downstream turns what this
+   returns into a millimetre, and a millimetre that is quietly NaN
+   prints a sheet nobody asked for. Where a token is genuinely
+   optional, ask for it with .opt() and handle the null. */
 export async function tokenReader(root = ROOT, edition) {
   const src = await readFile(path.join(root, 'css', 'tokens.css'), 'utf8');
   const over = edition
     ? await readFile(path.join(root, 'css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
     : '';
-  return (name) => {
-    // an edition sheet wins, exactly as the cascade would have it
-    const from = over.includes('--' + name + ':') ? over : src;
-    return from.slice(from.indexOf("--" + name + ":") + name.length + 3, from.indexOf("--" + name + ":") + name.length + 30);
+  // an edition sheet wins, exactly as the cascade would have it
+  const look = (name) => declared(over, name) ?? declared(src, name);
+  const read = (name) => {
+    const v = look(name);
+    if (v === null) throw new Error(`no token --${name} in css/tokens.css`
+      + (edition ? ` or css/edition-${edition}.css` : ''));
+    return v;
   };
+  read.opt = look;
+  return read;
 }
 
 export async function sheetMetrics(root = ROOT, edition) {
