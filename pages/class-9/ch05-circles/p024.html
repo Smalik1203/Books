@@ -3,70 +3,59 @@
     <div class="page__main">
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Corollary</div>
-        <p>The angle subtended by a diameter at any point of the circle is a right
-        angle.</p>
+        <div class="c-keyidea__title">Theorem 9</div>
+        <p>The angle an arc subtends at the centre of a circle is twice the angle it
+        subtends at any point of the circle outside the arc.</p>
       </div>
 
-      <p>Let $AB$ be a diameter and $D$ any other point of the circle. The arc
-      from $A$ to $B$ that avoids $D$ is a semicircle, and the angle it
-      sweeps at the centre is a straight angle, $180^\circ$. By Theorem 9 the angle at
-      $D$ is half of that: $\angle ADB = 90^\circ$, wherever on the circle
-      $D$ happens to be.</p>
+      <p>Let the arc be $AFB$ with centre $C$, and let $D$ be a point of the
+      circle outside it. Join $D$ to $C$ and carry the line on until it meets the
+      circle again, at $E$. Two isosceles triangles now do all the work, because
+      $CA$, $CB$ and $CD$ are all radii.</p>
 
-      <p>Section 5.4 left a debt here. It claimed that the circumcentre of a right-angled
-      triangle lands on the midpoint of the hypotenuse, and gave no reason. The corollary
-      is half of the reason. The other half — that a point seeing $AB$ under a right
-      angle has no choice but to lie on the circle with $AB$ as diameter — is exactly
-      the sort of statement Section 5.9 is about, and you will be able to finish the
-      argument there.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-      <p>$AB$ is a diameter of a circle and $C$ is a point on the circle, with
-          $\angle ABC = 35^\circ$. Find $\angle BAC$.</p>
-      <p>Nothing is said about the angle at $C$ — and nothing needs to be, because
-          $AB$ is a diameter, and the corollary fixes that angle wherever on the circle
-          $C$ happens to sit.</p>
-      <div class="work">
-            <div class="work__row"><span class="work__label">angle at C</span>
-              <span>the angle in a semicircle</span>
-              <span class="chip">$90^\circ$</span></div>
-            <div class="work__row"><span class="work__label">angle at B</span>
-              <span>given</span>
-              <span class="chip">$35^\circ$</span></div>
-          </div>
-      <p>The three angles of $\triangle ABC$ add to $180^\circ$, so</p>
-      <div class="work work--centred">
-            <p>$\angle BAC = 180^\circ - 90^\circ - 35^\circ = 55^\circ$</p>
-          </div>
-      <p>The corollary did all the work: without it, one angle and a diameter
-          would not determine the triangle at all.</p>
-        </div>
+      <div class="work work--list">
+        <p>In $\triangle BCD$: $CB = CD$, so $\angle CBD = \angle CDB$.</p>
+        <p>$\angle BCE$ is the exterior angle of $\triangle BCD$ at $C$, so
+        $\angle BCE = \angle CBD + \angle CDB = 2\,\angle BDC$.</p>
+        <p>In $\triangle ACD$: $CA = CD$, so $\angle CAD = \angle CDA$, and
+        in the same way $\angle ACE = 2\,\angle ADC$.</p>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.6</div>
-        <ol class="c-questions">
-          <li>In a circle of radius $12$ cm with centre $O$, the angle
-            $\angle AOB$ is $60^\circ$. How long is the chord $AB$?</li>
-        </ol>
+      <p>Adding the two results, $\angle BCA = \angle BCE + \angle ECA = 2\,\angle BDC +
+      2\,\angle ADC = 2\,\angle BDA$, which is the theorem.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="22 17 156 164" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Arc AFB, the angle it makes at the centre, and the angle it makes at a point D">
+            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
+            <path class="dg-fill-b-soft" d="M100 100 L34.22 76.06 A70 70 0 0 1 165.78 76.06 Z"/>
+            <path class="dg-fill-c-soft" d="M76.06 165.78 L66.76 145.84 A22 22 0 0 1 91.62 150.22 Z"/>
+            <circle class="dg-line" cx="100" cy="100" r="70"/>
+            <path class="dg-line" d="M76.06 165.78 L34.22 76.06"/>
+            <path class="dg-line" d="M76.06 165.78 L165.78 76.06"/>
+            <path class="dg-thin" d="M100 100 L34.22 76.06"/>
+            <path class="dg-thin" d="M100 100 L165.78 76.06"/>
+            <path class="dg-dim" d="M76.06 165.78 L123.94 34.22"/>
+            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
+      
+            <text class="dg-label" x="28"  y="73"  text-anchor="end">A</text>
+            <text class="dg-label" x="172" y="73">B</text>
+            <text class="dg-label" x="100" y="26"  text-anchor="middle">F</text>
+            <text class="dg-label" x="70"  y="176" text-anchor="end">D</text>
+            <text class="dg-label" x="129" y="31">E</text>
+            <text class="dg-label" x="105" y="112">C</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.11</span> The arc $AFB$ subtends
+          $\angle ACB$ at the centre and $\angle ADB$ at $D$. The first is
+          twice the second.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>An arc subtends $70^\circ$ at the centre. What angle does it subtend at a
-            point of the circle outside the arc?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>An arc subtends $250^\circ$ at the centre, measured the long way round.
-            What angle does it subtend at a point of the circle outside it?</li>
-        </ol>
-      </div>
+      <p>One step there was taken without comment: that the line $DC$, carried on,
+      lands on the arc $AFB$ — which is what put $E$ between $A$ and
+      $B$ and let the two angles at $C$ be added. For some positions of $D$
+      it lands outside the arc instead, and the figure looks different.</p>
 
     </div>
   </div>

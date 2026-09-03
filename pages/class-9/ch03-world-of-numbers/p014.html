@@ -2,113 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__body">
-            <p>
-              Run the same argument for $\sqrt{3}$. Then try it on $\sqrt{5}$
-              and $\sqrt{7}$.
-            </p>
-            <p>
-              Now try it on $\sqrt{9}$ — where it must fail, since
-              $\sqrt{9} = 3$. Find the exact step that breaks, and you will have
-              found what the argument was really using about 2, 3, 5 and 7.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <h3>Putting $\sqrt{2}$ on the line</h3>
+      <h2><span class="badge">3.5</span><span class="name">Numbers That Are Not Ratios</span></h2>
 
       <p>
-        We have a number that is not a ratio. Does it still have a place on the
-        number line? It does, and a ruler and compass will find it exactly —
-        not approximately, and without a single decimal.
+        The rationals are dense. Between any two of them lies another, and
+        between those, another again. It is very hard to look at that and not
+        conclude that they must fill the line completely, leaving no gap
+        anywhere. For a long time that is exactly what was believed.
       </p>
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">Step 1</span>
-          <span>Mark $OA = 1$ unit on the line, and raise a perpendicular at
-          $A$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 2</span>
-          <span>On it mark $B$ with $AB = 1$ unit, and join $OB$. Then
-          $OB = \sqrt{2}$, by the theorem again.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 3</span>
-          <span>With centre $O$ and radius $OB$, swing an arc down to the line.
-          It cuts it at $P$, and $OP = \sqrt{2}$.</span>
-        </div>
-      </div>
+      <p>
+        It is false, and the counter-example is embarrassingly easy to draw.
+      </p>
 
-      <div class="c-figure c-figure--lg">
+      <p>
+        When Baudhāyana composed his <em>Śulbasūtra</em> around 800 BCE — a
+        manual for laying out fire altars — he met lengths that no ratio would
+        name. The Greeks ran into the same wall a few centuries later. The
+        offending shape is a square of side 1.
+      </p>
+
+      <div class="c-figure c-figure--md">
         <figure>
-          <svg viewBox="6 8 140 84" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Constructing a length of root two on the number line with a right triangle and an arc">
-            <path class="dg-fill-c-soft" d="M20 70 H70 V20 Z"/>
+          <svg viewBox="4 4 112 96" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A unit square filled and divided by its diagonal into two right triangles, the diagonal marked d">
+            <rect class="dg-fill-a-soft" x="24" y="20" width="60" height="60"/>
+            <path class="dg-fill-c-soft" d="M24 80 H84 V20 Z"/>
       
-            <rect class="dg-fill-a-soft" x="10" y="70" width="134" height="18" rx="1.6"/>
-            <rect class="dg-line"        x="10" y="70" width="134" height="18" rx="1.6"/>
-            <g class="dg-thin">
-              <path d="M45 70 V74 M95 70 V74"/>
-            </g>
-            <g class="dg-line">
-              <path d="M20 70 V77 M70 70 V77 M120 70 V77"/>
-            </g>
+            <path class="dg-line" d="M24 20 H84 V80 H24 Z"/>
+            <path class="dg-dim"  d="M24 80 L84 20"/>
+            <path class="dg-thin" d="M74 80 V70 H84"/>
       
-            <path class="dg-thin" d="M70 70 V20"/>
-            <path class="dg-line" d="M20 70 L70 20"/>
-            <path class="dg-ghost" d="M70 20 A 70.71 70.71 0 0 1 90.71 70"/>
-            <path class="dg-thin" d="M62 70 V62 H70"/>
-      
-            <circle class="dg-fill-c" cx="90.71" cy="70" r="3"/>
-      
-            <text class="dg-label" x="18"  y="85" text-anchor="end">O</text>
-            <text class="dg-label" x="70"  y="85" text-anchor="middle">A</text>
-            <text class="dg-label" x="74"  y="20">B</text>
-            <text class="dg-label" x="95"  y="85">P</text>
-            <text class="dg-dim-label" x="36" y="40">√2</text>
-            <text class="dg-label dg-label--sm" x="120" y="85" text-anchor="middle">2</text>
+            <text class="dg-label" x="54" y="90" text-anchor="middle">1</text>
+            <text class="dg-label" x="89" y="54">1</text>
+            <text class="dg-dim-label" x="48" y="46" text-anchor="middle">d</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 3.6</span> The arc carries the
-          diagonal down onto the line. $P$ marks the square root of 2
-          exactly.</figcaption>
+          <figcaption><span class="fignum">Fig. 3.5</span> A square of side 1.
+          What number is the length of its diagonal?</figcaption>
         </figure>
       </div>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__body">
-            <p>
-              Extend the method to $\sqrt{3}$: what should the two legs of the
-              right triangle be? Then $\sqrt{5}$.
-            </p>
-            <p>
-              Now generalise. Given a segment of length $\sqrt{n}$ already
-              built, how would you get $\sqrt{n+1}$ from it — and what does
-              repeating that for ever draw on the page?
-            </p>
-          </div>
-        </div>
+      <p>
+        By the Baudhāyana–Pythagoras theorem the diagonal $d$ satisfies
+        $1^2 + 1^2 = d^2$, so $d^2 = 2$ and $d = \sqrt{2}$. The length is
+        perfectly definite — you can draw it with a ruler, and it is shorter
+        than $1.5$ and longer than $1.4$. The question is whether any ratio of
+        whole numbers names it.
+      </p>
+
+      <p>
+        It does not, and the argument that shows so is one of the oldest and
+        cleanest in mathematics. It is credited to Hippasus of the Pythagorean
+        school, around 400 BCE, and it works by
+        <span class="term">contradiction</span>: assume the opposite of what
+        you want, and follow it until it collapses.
+      </p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Irrational number</div>
+        <p>
+          A number on the number line that cannot be written as a ratio of two
+          integers is called an <span class="term">irrational number</span>.
+        </p>
       </div>
 
     </div>

@@ -2,82 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>How rationals are combined</h3>
+      <h2><span class="badge">3.4</span><span class="name">Filling the Spaces</span></h2>
 
       <p>
-        Brahmagupta gave rules for adding, subtracting, multiplying and
-        dividing fractions too, and noticed that they hold for the negative
-        ones exactly as they do for the positive. Four laws cover everything.
+        Counting was never the only thing numbers had to do. As soon as land
+        was divided or grain was shared, measuring mattered as much — and
+        measuring does not stay on the integers. If a farmer divides a field
+        among three children, how much does each get? If a recipe asks for half
+        a cup of ghee, what number is that?
       </p>
 
-      <div class="work work--list">
-        <p>
-          <strong>Equality.</strong> $\dfrac{a}{b} = \dfrac{c}{d}$ exactly when
-          $ad = bc$.
-        </p>
-        <p>
-          <strong>Addition.</strong> Put both over the same denominator, then
-          $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a+c}{b}$, and likewise for
-          subtraction.
-        </p>
-        <p>
-          <strong>Multiplication and division.</strong>
-          $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{ac}{bd}$, and
-          $\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \times \dfrac{d}{c}
-          = \dfrac{ad}{bc}$, provided no denominator is zero.
-        </p>
-        <p>
-          <strong>Order and grouping.</strong> Addition and multiplication are
-          commutative, and multiplication distributes over addition:
-          $p(q + r) = pq + pr$.
-        </p>
-      </div>
+      <p>
+        Numbers that name parts of a whole are <span class="term">fractions</span>.
+        Every positive fraction has an additive inverse just as every natural
+        number does — $\tfrac{3}{4}$ has $-\tfrac{3}{4}$ — and the minus sign
+        may be written against the fraction, its numerator or its denominator
+        without changing what it means:
+      </p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>Find $\dfrac{3}{4} + \dfrac{5}{6}$.</p>
-          <p>
-            Thirds of a thing and quarters of it are not the same size, so the
-            numerators cannot simply be added. Both have to be rewritten in
-            parts of one common size first, and the smallest size that works
-            is the LCM of the denominators.
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">common denominator</span>
-              <span>LCM of 4 and 6</span>
-              <span class="chip">12</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">rewrite the first</span>
-              <span>$\dfrac{3}{4} = \dfrac{3 \times 3}{4 \times 3}$</span>
-              <span class="chip">$\dfrac{9}{12}$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">rewrite the second</span>
-              <span>$\dfrac{5}{6} = \dfrac{5 \times 2}{6 \times 2}$</span>
-              <span class="chip">$\dfrac{10}{12}$</span>
-            </div>
-          </div>
-          <p>Now the numerators may be added, because the parts match:</p>
-          <div class="work work--centred">
-            <p>$\dfrac{9}{12} + \dfrac{10}{12} = \dfrac{19}{12}$</p>
-          </div>
-          <p>
-            Is it in lowest terms? The only factor of 19 is 19 itself, and 19
-            does not divide 12, so yes. As a check on size: $\tfrac{3}{4}$ and
-            $\tfrac{5}{6}$ are each a little under 1, so the sum should be a
-            little over $1\tfrac{1}{2}$ — and $\tfrac{19}{12} = 1\tfrac{7}{12}$.
-          </p>
-        </div>
+      <div class="eq">
+        $$-\frac{1}{5} \;=\; \frac{-1}{5} \;=\; \frac{1}{-5}$$
       </div>
 
       <p>
-        The rationals are <span class="term">closed</span> under addition,
-        subtraction and multiplication: combine any two that way and the result
-        is another rational. They are closed under division too, with the one
-        exception you would expect — you may not divide by zero.
+        Put all the integers together with all the fractions, positive and
+        negative, and you have the <span class="term">rational numbers</span>,
+        written $\mathbb{Q}$ — for <em>quotient</em>.
+      </p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Rational number</div>
+        <p>
+          A <span class="term">rational number</span> is any number that can be
+          written as $\dfrac{p}{q}$, where $p$ and $q$ are integers and
+          $q \neq 0$.
+        </p>
+      </div>
+
+      <p>
+        Three things follow from that definition, and each is worth stating
+        before we use it.
+      </p>
+
+      <p>
+        <strong>Every integer is already rational.</strong> Write $5$ as
+        $\tfrac{5}{1}$ and $-10$ as $\tfrac{-10}{1}$. So the rationals contain
+        the naturals, the whole numbers and the integers — nothing has been
+        left behind by the extension.
+      </p>
+
+      <p>
+        <strong>The writing is not unique.</strong> The same rational number has
+        endlessly many forms: $-\tfrac{1}{3} = -\tfrac{2}{6} = -\tfrac{3}{9} =
+        -\tfrac{10}{30}$, and so on. These are equivalent fractions, and it is
+        this freedom that lets us cancel a common factor from top and bottom
+        whenever it helps.
+      </p>
+
+      <p>
+        <strong>So we agree on one form.</strong> When we say <em>the</em>
+        rational number $\tfrac{p}{q}$, or mark it on the number line, we take
+        $q \neq 0$ and take $p$ and $q$ to share no factor but 1 — to be
+        <span class="term">co-prime</span>. Among all the fractions equal to a
+        half we choose $\tfrac{1}{2}$ to stand for them.
       </p>
 
     </div>

@@ -2,6 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The Exterior Angle Theorem</div>
+        <p>An exterior angle of a triangle equals the sum of the two interior opposite
+        angles.</p>
+      </div>
+
+      <p>The proof is two lines. Let the triangle be $ABC$ with $BC$ produced to $D$, so
+      the exterior angle is $\angle ACD$.</p>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label">1</span>
+          <span>$\angle ACB + \angle ACD = 180^\circ$</span>
+          <span class="chip">linear pair on $BD$</span></div>
+        <div class="work__row"><span class="work__label">2</span>
+          <span>$\angle ACB + \angle A + \angle B = 180^\circ$</span>
+          <span class="chip">angle sum of the triangle</span></div>
+        <div class="work__row"><span class="work__label">3</span>
+          <span>$\angle ACD = \angle A + \angle B$</span>
+          <span class="chip">take $\angle ACB$ from both</span></div>
+      </div>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 214 108" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Triangle ABC with side BC produced to D, showing the exterior angle at C">
+            <path class="dg-fill-d" d="M74 20 L34 88 L142 88 Z"/>
+            <path class="dg-line" d="M74 20 L34 88 L142 88 Z"/>
+            <path class="dg-thin" d="M142 88 H190" stroke-dasharray="0"/>
+            <path class="dg-thin" d="M158 88 A16 16 0 0 0 148.4 73.3"/>
+            <path class="dg-thin" d="M126 88 A16 16 0 0 1 135.6 73.3"/>
+            <path class="dg-thin" d="M50 88 A16 16 0 0 0 43.6 74.1"/>
+            <path class="dg-thin" d="M67.4 33.2 A16 16 0 0 0 83.6 30.6"/>
+            <circle class="dg-fill-teal" cx="142" cy="88" r="2.6"/>
+            <text class="dg-label" x="74" y="14">A</text>
+            <text class="dg-label" x="27" y="97">B</text>
+            <text class="dg-label" x="139" y="99">C</text>
+            <text class="dg-label" x="193" y="92">D</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.9</span> $\angle ACD$ is exterior at
+          $C$; $\angle A$ and $\angle B$ are its interior opposite angles.</figcaption>
+        </figure>
+      </div>
+
+      <p>One consequence is used constantly and deserves its own sentence: an exterior
+      angle is greater than either interior opposite angle, since it is their sum and
+      neither is zero. That is often more useful than the equality, because it is a
+      statement about which of two angles is bigger without either being known.</p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 8</div>
         <div class="c-example__body">
@@ -12,20 +60,6 @@
           <p>The angles are $47.5^\circ$, $45^\circ$ and $87.5^\circ$. All three are
           acute, so the triangle is acute-angled, and since no two are equal it is
           scalene.</p>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
-        <div class="c-example__body">
-          <p>In triangle $ABC$, side $BC$ is produced to $D$. If $\angle ACD = 128^\circ$
-          and $\angle B = 47^\circ$, find $\angle A$ and $\angle ACB$.</p>
-          <p>The exterior angle at $C$ is the sum of the two interior opposite angles.</p>
-          <div class="eq">$\angle A + \angle B = 128^\circ$</div>
-          <div class="eq">$\angle A = 128^\circ - 47^\circ = 81^\circ$</div>
-          <p>And $\angle ACB$ makes a linear pair with $\angle ACD$, so it is
-          $180^\circ - 128^\circ = 52^\circ$. Check: $81 + 47 + 52 = 180$. The check is
-          not a formality — it catches a wrong subtraction at once.</p>
         </div>
       </div>
 

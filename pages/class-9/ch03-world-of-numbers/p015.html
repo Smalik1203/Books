@@ -2,71 +2,101 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        The answer to that last question is worth drawing. Build the triangle
-        for $\sqrt{2}$; then stand a new unit perpendicular on its hypotenuse
-        and join back to the origin, which gives $\sqrt{3}$; then do it again.
-        Each new hypotenuse is $\sqrt{n+1}$, because its legs are $\sqrt{n}$
-        and 1, and the theorem does the rest.
-      </p>
+      <h3>Why $\sqrt{2}$ is irrational</h3>
 
       <p>
-        Two things about that are worth noticing. The construction never
-        approximates: at no point is $\sqrt{2}$ replaced by $1.414$. The arc
-        puts the length down exactly, and the compass is entirely untroubled
-        by the fact that the number has no finite decimal. And it never
-        runs out — every whole number, however large, has its square root
-        placed on the line by a finite number of steps.
+        Suppose it were rational. Then it could be written as a fraction in
+        lowest terms — and everything that follows is squeezed out of those
+        two words, <em>lowest terms</em>.
       </p>
 
-      <p>
-        The figure this produces is an old one. It is credited to Theodorus
-        of Cyrene, a teacher of Plato's, who is said to have carried it as
-        far as $\sqrt{17}$ and then stopped. Nobody is certain why he
-        stopped there, because the method plainly does not.
-      </p>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">Step 1</span>
+          <span>Assume $\sqrt{2} = \dfrac{p}{q}$, with $p$, $q$ integers,
+          $q \neq 0$, and $p$, $q$ co-prime.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 2</span>
+          <span>Square both sides: $2 = \dfrac{p^2}{q^2}$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 3</span>
+          <span>Multiply by $q^2$: $\;2q^2 = p^2$.</span>
+        </div>
+      </div>
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="26 14 128 132" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The square root spiral: right triangles stacked so each hypotenuse is the square root of the next whole number">
-            <path class="dg-fill-a-soft" d="M104 78 L130 78   L130 52 Z"/>
-            <path class="dg-fill-c-soft" d="M104 78 L130 52   L111.6 33.6 Z"/>
-            <path class="dg-fill-a-soft" d="M104 78 L111.6 33.6 L86 29.2 Z"/>
-            <path class="dg-fill-c-soft" d="M104 78 L86 29.2  L61.6 38.2 Z"/>
-            <path class="dg-fill-a-soft" d="M104 78 L61.6 38.2 L43.8 57.2 Z"/>
-            <path class="dg-fill-c-soft" d="M104 78 L43.8 57.2 L35.3 81.8 Z"/>
-            <path class="dg-fill-a-soft" d="M104 78 L35.3 81.8 L36.7 107.7 Z"/>
-            <path class="dg-fill-c-soft" d="M104 78 L36.7 107.7 L47.2 131.5 Z"/>
-      
-            <path class="dg-thin" d="M104 78 L130 78 M104 78 L130 52 M104 78 L111.6 33.6
-                                     M104 78 L86 29.2 M104 78 L61.6 38.2 M104 78 L43.8 57.2
-                                     M104 78 L35.3 81.8 M104 78 L36.7 107.7 M104 78 L47.2 131.5"/>
-            <path class="dg-line" d="M130 78 L130 52 L111.6 33.6 L86 29.2 L61.6 38.2
-                                     L43.8 57.2 L35.3 81.8 L36.7 107.7 L47.2 131.5"/>
-            <circle class="dg-fill-teal" cx="104" cy="78" r="2.6"/>
-      
-            <text class="dg-label dg-label--sm" x="140" y="81">√1</text>
-            <text class="dg-label dg-label--sm" x="137" y="45">√2</text>
-            <text class="dg-label dg-label--sm" x="114" y="25">√3</text>
-            <text class="dg-label dg-label--sm" x="83"  y="20" text-anchor="middle">√4</text>
-            <text class="dg-label dg-label--sm" x="54"  y="31" text-anchor="end">√5</text>
-            <text class="dg-label dg-label--sm" x="40"  y="140" text-anchor="end">√9</text>
-            <text class="dg-note" x="100" y="88" text-anchor="end">O</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3.7</span> The square-root
-          spiral. Every outer edge is 1 unit; every spoke is the square root of
-          the next whole number.</figcaption>
-        </figure>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">Step 4</span>
+          <span>$p^2$ is twice an integer, so $p^2$ is even; and if a square is
+          even the number itself must be. So $p$ is even — write $p = 2k$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 5</span>
+          <span>Substitute: $2q^2 = (2k)^2 = 4k^2$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 6</span>
+          <span>Divide by 2: $\;q^2 = 2k^2$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 7</span>
+          <span>By the same reasoning as Step 4, $q^2$ is even, so $q$ is
+          even.</span>
+        </div>
       </div>
 
       <p>
-        The spiral is a construction, not a picture: it places $\sqrt{2}$,
-        $\sqrt{3}$, $\sqrt{5}$, $\sqrt{7}$ and every other square root exactly,
-        with nothing but a straight edge and a compass. Whatever it means for
-        these numbers to be beyond the reach of fractions, it clearly does not
-        put them beyond the reach of a drawing.
+        And there is the collapse. Step 4 makes $p$ even, Step 7 makes $q$
+        even — so both are divisible by 2, and share a common factor. But Step
+        1 said they share none. Both cannot be true.
       </p>
+
+      <p>
+        Every step from 2 to 7 is forced; none of them can be the mistake. So
+        the mistake is the only thing not forced — the assumption itself.
+        $\sqrt{2}$ is not a ratio of integers.
+      </p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>
+            Notice what the proof never does: it never computes a single
+            decimal place of $\sqrt{2}$. No amount of computing could have
+            settled the question anyway.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>
+              Run the same argument for $\sqrt{3}$. Then try it on $\sqrt{5}$
+              and $\sqrt{7}$.
+            </p>
+            <p>
+              Now try it on $\sqrt{9}$ — where it must fail, since
+              $\sqrt{9} = 3$. Find the exact step that breaks, and you will have
+              found what the argument was really using about 2, 3, 5 and 7.
+            </p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

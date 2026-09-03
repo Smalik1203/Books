@@ -2,64 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Suppose $AB > DE$, at distances $d_1$ and $d_2$ from the centre.
-      Then $2\sqrt{r^2 - d_1^2} > 2\sqrt{r^2 - d_2^2}$, so $r^2 - d_1^2 > r^2 -
-      d_2^2$, so $d_1^2 < d_2^2$ — and since distances are never negative,
-      $d_1 < d_2$. The longer chord is the nearer one.</p>
-
       <div class="c-figure c-figure--lg">
         <figure>
-          <svg viewBox="22 22 156 162" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A long chord close to the centre and a short chord far from it">
+          <svg viewBox="22 17 156 167" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two chords of equal length, each with its perpendicular distance from the centre marked">
             <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-b-soft" d="M100 100 L46.38 55 L153.62 55 Z"/>
-            <path class="dg-fill-c-soft" d="M100 100 L157.34 140.15 L106.1 169.73 Z"/>
+            <path class="dg-fill-b-soft" d="M100 100 L39.38 65 L112.16 31.06 Z"/>
+            <path class="dg-fill-b-soft" d="M100 100 L165.78 123.94 L100 170 Z"/>
             <circle class="dg-line" cx="100" cy="100" r="70"/>
-            <path class="dg-line" d="M46.38 55 L153.62 55"/>
-            <path class="dg-line" d="M157.34 140.15 L106.1 169.73"/>
-            <path class="dg-dim" d="M100 100 L100 55"/>
-            <path class="dg-dim" d="M100 100 L131.72 154.94"/>
-            <path class="dg-thin" d="M108 55 L108 63 L100 63"/>
-            <path class="dg-thin" d="M138.65 150.94 L134.65 144.01 L127.72 148.01"/>
+            <path class="dg-line" d="M39.38 65 L112.16 31.06"/>
+            <path class="dg-line" d="M165.78 123.94 L100 170"/>
+            <path class="dg-thin" d="M100 100 L39.38 65"/>
+            <path class="dg-thin" d="M100 100 L165.78 123.94"/>
+            <path class="dg-dim" d="M100 100 L75.77 48.03"/>
+            <path class="dg-dim" d="M100 100 L132.89 146.97"/>
+            <path class="dg-thin" d="M83.02 44.65 L86.4 51.9 L79.15 55.28"/>
+            <path class="dg-thin" d="M139.44 142.38 L134.85 135.83 L128.3 140.42"/>
             <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
       
-            <text class="dg-label" x="40"  y="52"  text-anchor="end">A</text>
-            <text class="dg-label" x="159" y="52">B</text>
-            <text class="dg-label" x="163" y="142">D</text>
-            <text class="dg-label" x="102" y="179" text-anchor="middle">E</text>
-            <text class="dg-dim-label" x="104" y="82">d</text>
-            <text class="dg-dim-label" x="108" y="134">d</text>
-            <text class="dg-label" x="92"  y="111" text-anchor="end">C</text>
+            <text class="dg-label" x="33"  y="62"  text-anchor="end">A</text>
+            <text class="dg-label" x="115" y="26">B</text>
+            <text class="dg-label" x="171" y="126">F</text>
+            <text class="dg-label" x="100" y="179" text-anchor="middle">G</text>
+            <text class="dg-label" x="70"  y="44"  text-anchor="end">E</text>
+            <text class="dg-label" x="138" y="153">H</text>
+            <text class="dg-label" x="104" y="111">C</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 5.9</span> The longer chord $AB$ lies
-          closer to the centre than the shorter chord $DE$.</figcaption>
+          <figcaption><span class="fignum">Fig. 5.8</span> Equal chords $AB$ and
+          $FG$. The perpendiculars $CE$ and $CH$ have the same
+          length.</figcaption>
         </figure>
       </div>
 
-      <p>The two extreme cases are worth following to the end. Slide a chord towards the centre until $d = 0$: the formula gives length $2r$, and the chord has become a diameter. That is Section 5.2's result — no chord is longer than a diameter — arriving by an entirely different road. Slide it the other way until $d = r$ and the length falls to zero: the chord has shrunk to a single point of the circle. Which is
-      the answer to the question left hanging in Section 5.2. There is no shortest chord, because the moment a chord is short enough to be a candidate it has stopped being a chord at all.</p>
+      <p>There is a second route. Triangles $CAB$ and $CFG$ are congruent by
+      <span class="pop">SSS</span> — two pairs of radii and the given equal chords — and
+      $CE$ and $CH$ are corresponding altitudes of congruent triangles. Either
+      argument will do; the first has the advantage of never leaving the right-angled
+      halves.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
-        <div class="c-example__body">
-      <p>A circle has radius $25$ cm. One of its chords is $48$ cm long and
-          another is $14$ cm long. Which lies nearer the centre, and by how much?</p>
-      <p>Theorem 8 answers the first half before any arithmetic starts: the longer chord
-          is the nearer, so the $48$ cm chord is the closer of the two. Only the
-          <em>how much</em> needs calculating, and for that we halve each chord and use the
-          right-angled triangle again.</p>
-      <div class="work">
-            <div class="work__row"><span class="work__label work__label--wide">the 48 cm chord</span>
-              <span>$\sqrt{25^{2}-24^{2}} = \sqrt{49}$</span>
-              <span class="chip">$7$ cm</span></div>
-            <div class="work__row"><span class="work__label work__label--wide">the 14 cm chord</span>
-              <span>$\sqrt{25^{2}-7^{2}} = \sqrt{576}$</span>
-              <span class="chip">$24$ cm</span></div>
-          </div>
-      <p>The longer chord sits $7$ cm out and the shorter $24$ cm, a
-          difference of $17$ cm — the ordering Theorem 8 promised before any
-          arithmetic began.</p>
-        </div>
+      <p>Turn it round and the converse follows from the same two triangles, with the
+      given fact and the wanted one exchanged once more.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 7</div>
+        <p>Chords of a circle that lie at the same distance from the centre are equal in
+        length.</p>
+      </div>
+
+      <div class="work work--list">
+        <p>$CE = CH$ is now given, and $CA = CF = r$.</p>
+        <p>$\angle CEA = \angle CHF = 90^\circ$, so <span class="pop">RHS</span> gives
+        $\triangle CEA \cong \triangle CHF$ again.</p>
+        <p>Hence $AE = FH$, and doubling gives $AB = FG$.</p>
+      </div>
+
+      <p>Both theorems come out of one relation, which is worth having on its own. Look
+      again at the right-angled triangle $CEA$ in Fig. 5.8. Its hypotenuse is the
+      radius $r$, one leg is the distance $d = CE$, and the other leg is half the
+      chord. The Baudhāyana–Pythagoras theorem gives</p>
+
+      <div class="eq eq--anchor">
+        $$r^{2} = d^{2} + \left(\tfrac{1}{2}\,AB\right)^{2}, \qquad\text{so}\qquad AB = 2\sqrt{\,r^{2} - d^{2}\,}$$
       </div>
 
     </div>

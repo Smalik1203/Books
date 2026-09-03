@@ -245,7 +245,7 @@ const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 </head>
 <body class="cover${bleed ? ' bleed' : ''}">
 <div class="cover-stage">
-<div class="jacket jacket--${escapeHtml(meta.edition ?? 'a4')} jacket--${escapeHtml(meta.finish ?? 'light')}${meta.direction ? ` jacket--${escapeHtml(meta.direction)}` : ''}${spine.mm < SLIM_SPINE ? ' jacket--spine-slim' : ''}">
+<div class="jacket jacket--${escapeHtml(meta.edition ?? 'standard')} jacket--${escapeHtml(meta.finish ?? 'light')}${meta.direction ? ` jacket--${escapeHtml(meta.direction)}` : ''}${spine.mm < SLIM_SPINE ? ' jacket--spine-slim' : ''}">
 ${body}
 </div>
 ${bleed ? coverMarks(sheet) : ''}
@@ -333,7 +333,7 @@ async function buildCover(rel) {
     }
   }
 
-  console.log(`  ${rel}: ${meta.edition ?? 'a4'}, ${meta.finish ?? 'light'} finish,`
+  console.log(`  ${rel}: ${meta.edition ?? 'standard'}, ${meta.finish ?? 'light'} finish,`
     + ` spine ${spine.mm}mm (${spine.how})`);
   console.log(`    wrap ${sheet.sheetW} x ${sheet.trimH}mm trim`
     + `  =  ${trimW} back + ${spine.mm} spine + ${trimW} front`);

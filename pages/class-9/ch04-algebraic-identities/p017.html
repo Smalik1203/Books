@@ -2,70 +2,81 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea c-keyidea--tail">
-        <table>
-          <thead>
-            <tr><th>$q$</th><th>$p$</th><th>the two numbers</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>positive</td><td>positive</td><td>both positive</td></tr>
-            <tr><td>positive</td><td>negative</td><td>both negative</td></tr>
-            <tr><td>negative</td><td>either</td><td>opposite signs</td></tr>
-          </tbody>
-        </table>
+      <div class="c-example c-example--tail">
+        <div class="c-example__body">
+          <p>
+            Compare it with $x^2 + (a + b)x + ab$. Matching terms gives two
+            conditions at once:
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">sum</span>
+              <span>$a + b = 7$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">product</span>
+              <span>$ab = 12$</span>
+            </div>
+          </div>
+          <p>
+            Only 3 and 4 satisfy both, in either order, so
+            $x^2 + 7x + 12 = (x + 3)(x + 4)$.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Factorise $x^2 + 11x + 30$.</p>
+          <p>
+            Here $a + b = 11$ and $ab = 30$, and both must hold at once — which
+            is what rules most candidates out: 2 and 15 multiply to 30 but add
+            to 17, 3 and 10 add to 13. The factor pairs of 30 leave 5 and 6.
+          </p>
+          <div class="work">
+            <p>$x^2 + 11x + 30 = x^2 + 5x + 6x + 30 = (x + 5)(x + 6)$</p>
+          </div>
+        </div>
       </div>
 
       <p>
-        Example 12 is the middle row: the product 6 is positive, so the numbers
-        share a sign, and the sum $-5$ tells you which. Reading the signs off
-        first halves the search.
+        So far both numbers have been positive. What changes when a sign does?
       </p>
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>Factorise $x^2 - 5x + 6$.</p>
+          <p>
+            The coefficient of $x$ is negative, so comparing with
+            $x^2 + (a + b)x + ab$ gives
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">sum</span>
+              <span>$a + b = -5$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">product</span>
+              <span>$ab = 6$</span>
+            </div>
+          </div>
+          <p>
+            A positive product with a negative sum means both are negative:
+            $-2$ and $-3$, in either order.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-keyidea c-keyidea--head">
+              <div class="c-keyidea__title">Factorising by sum and product</div>
       <p>
-        The bottom row is the one worth practising, because there the search is
-        widest. In $x^2 - x - 12$ the product $-12$ is negative, so the two
-        numbers carry opposite signs. The pairs are $1$ and $-12$, $2$ and $-6$,
-        $3$ and $-4$, with sums $-11$, $-4$ and $-1$. Only the last is the $-1$
-        wanted, so $x^2 - x - 12 = (x + 3)(x - 4)$.
-      </p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.4</div>
-        <ol class="c-questions">
-          <li>
-                                Fill in the blanks to complete each identity.
-                                <ol class="c-parts c-parts--1">
-                                  <li>$s^2 - 11s + 24 = ($<span class="blank blank--lg"></span>$)($<span class="blank blank--lg"></span>$)$</li>
-                                  <li>$($<span class="blank blank--lg"></span>$)(x + 1) = 3x^2 - 4x - 7$</li>
-                                  <li>$10x^2 - 11x - 6 = (2x - $<span class="blank blank--sm"></span>$)($<span class="blank blank--sm"></span>$+ 2)$</li>
-                                  <li>$6x^2 + 7x + 2 = ($<span class="blank blank--lg"></span>$)($<span class="blank blank--lg"></span>$)$</li>
-                                </ol>
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-                                Choose an identity that lets you find each of these without
-                                multiplying directly, and use it.
-                                <ol class="c-parts c-parts--4">
-                                  <li>$41^2$</li>
-                                  <li>$27^2$</li>
-                                  <li>$23 \times 17$</li>
-                                  <li>$135^2$</li>
-                                  <li>$97^2$</li>
-                                  <li>$18 \times 29$</li>
-                                  <li>$34 \times 43$</li>
-                                  <li>$205^2$</li>
-                                </ol>
-                                <p class="hint">
-                                  One or two of these may not suit any identity you have met. Say so
-                                  if you find one, and explain what stops it.
-                                </p>
-                              </li>
-        </ol>
-      </div>
+                To factorise $x^2 + px + q$, look for two numbers whose
+                <strong>sum</strong> is $p$ and whose <strong>product</strong> is $q$.
+                Their signs are settled before you start hunting:
+              </p>
+            </div>
 
     </div>
   </div>

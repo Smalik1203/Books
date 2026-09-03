@@ -2,75 +2,57 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Three things have been in play: that the segment runs from the centre, that it
-      meets the chord at a right angle, and that it hits the midpoint. Theorem 4 takes the
-      first and third and delivers the second; Theorem 5 takes the first and second and
-      delivers the third. Any two of the three force the remaining one — and the last
-      pairing is the first question below.</p>
+      <h2><span class="badge">5.6</span><span class="name">Chords, Midpoints and Perpendiculars</span></h2>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-      <p>A chord of length $16$ cm is drawn in a circle of radius $10$ cm. How
-          far is the chord from the centre?</p>
-      <p>Distance from the centre means the perpendicular distance, and Theorem 5 says
-          that perpendicular lands on the midpoint of the chord. That is what makes the
-          calculation possible: it produces a right-angled triangle with a radius as its
-          hypotenuse and half the chord as one leg.</p>
-      <div class="work">
-            <div class="work__row"><span class="work__label work__label--wide">half the chord</span>
-              <span>$\tfrac{1}{2}\times 16$</span>
-              <span class="chip">$8$ cm</span></div>
-            <div class="work__row"><span class="work__label work__label--wide">hypotenuse</span>
-              <span>a radius of the circle</span>
-              <span class="chip">$10$ cm</span></div>
-          </div>
-      <p>The Baudhāyana–Pythagoras theorem <span class="pip">set out in the Śulbasūtra,
-          centuries before Pythagoras</span> now gives the remaining side:</p>
-      <div class="work work--centred">
-            <p>$d^{2} = 10^{2} - 8^{2} = 100 - 64 = 36, \qquad d = 6$</p>
-          </div>
-      <p>The chord lies $6$ cm from the centre — less than the radius, as it
-          must be: a line $10$ cm out would only touch the circle.</p>
-        </div>
+      <p>Section 5.5 took the triangle made by a chord and the two radii to its ends, and
+      got two theorems out of it. That triangle has more to give. It is isosceles — which
+      is what Exercise Set 5.3 asked you to show — and an isosceles triangle is symmetric
+      about the line through its apex and the midpoint of its base.</p>
+
+      <p>Here the apex is the centre. So draw a circle with centre $C$, take any chord
+      $AB$, and let $M$ be the midpoint of $AB$. What can be said about the
+      segment $CM$?</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 4</div>
+        <p>The segment joining the centre of a circle to the midpoint of a chord is
+        perpendicular to that chord.</p>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.4</div>
-        <ol class="c-questions">
-          <li>Explain why the perpendicular bisector of a chord must pass through the
-            centre of the circle. (This is the third of the three pairings.)</li>
-        </ol>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="22 22 156 156" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A chord with its midpoint joined to the centre, meeting at a right angle">
+            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
+            <path class="dg-fill-b-soft" d="M100 100 L36.56 70.42 L88.36 56.54 Z"/>
+            <path class="dg-fill-b-soft" d="M100 100 L88.36 56.54 L140.15 42.66 Z"/>
+            <circle class="dg-line" cx="100" cy="100" r="70"/>
+            <path class="dg-line" d="M36.56 70.42 L140.15 42.66"/>
+            <path class="dg-thin" d="M100 100 L36.56 70.42"/>
+            <path class="dg-thin" d="M100 100 L140.15 42.66"/>
+            <path class="dg-dim" d="M100 100 L88.36 56.54"/>
+            <path class="dg-thin" d="M97.05 54.21 L99.38 62.9 L90.69 65.23"/>
+            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
+            <circle class="dg-fill-c" cx="88.36" cy="56.54" r="2.4"/>
+      
+            <text class="dg-label" x="30"  y="70"  text-anchor="end">A</text>
+            <text class="dg-label" x="145" y="39">B</text>
+            <text class="dg-label" x="83"  y="51"  text-anchor="end">M</text>
+            <text class="dg-label" x="104" y="111">C</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.7</span> $M$ is the midpoint of the
+          chord $AB$. The segment $CM$ meets the chord at a right angle.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>An isosceles triangle $ABC$ with $AB = AC$ is inscribed in a
-            circle. Show that the altitude from $A$ to $BC$ passes through the
-            centre.</li>
-        </ol>
-      </div>
+      <p>Why is this true? Compare the two triangles that $CM$ cuts the big one
+      into.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A chord of length $24$ cm lies $5$ cm from the centre of a circle.
-            Find the radius.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Two parallel chords, of lengths $6$ cm and $8$ cm, lie on opposite
-            sides of the centre of a circle of radius $5$ cm. Find the distance between
-            their midpoints.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li class="hard">In the previous question, what would the distance be if the two
-            chords lay on the <em>same</em> side of the centre?</li>
-        </ol>
+      <div class="work work--list">
+      <p>$CA = CB$, both being radii.</p>
+      <p>$AM = BM$, because $M$ is the midpoint.</p>
+      <p>$CM$ is common to both.</p>
+      <p>So $\triangle CMA \cong \triangle CMB$, by <span class="pop">SSS</span>.</p>
       </div>
 
     </div>

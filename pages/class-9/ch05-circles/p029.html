@@ -2,120 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.7</div>
-        <ol class="c-questions">
-          <li>A cyclic quadrilateral has $\angle A = 75^\circ$ and
-            $\angle B = 110^\circ$. Find $\angle C$ and $\angle D$.</li>
-        </ol>
+      <p><strong>Suppose $D$ lies outside.</strong> Then the segment $AD$ crosses
+      the circle at some point $E$. Now $C$ and $E$ are both on the circle
+      and on the same side of $AB$, so $\angle ACB = \angle AEB$. But
+      $\angle AEB$ is an exterior angle of $\triangle BED$, and an exterior angle
+      is larger than either interior angle opposite it, so $\angle AEB > \angle ADB$.
+      Putting the two together, $\angle ACB > \angle ADB$ — and we were given that
+      those two angles are equal. So $\angle ACB$ would be greater than itself.</p>
+
+      <p><strong>Suppose instead $D$ lies inside.</strong> Extend $AD$ until it
+      meets the circle at $E$. This time $\angle ADB$ is the exterior angle of
+      $\triangle BED$, so $\angle ADB > \angle AEB = \angle ACB$, and the same
+      impossibility arrives from the other direction.</p>
+
+      <p>Both positions are ruled out, so $D$ lies on the circle through $A$,
+      $B$ and $C$. The four points are concyclic.</p>
+
+      <p>A quadrilateral whose four vertices are concyclic is called a
+      <span class="term">cyclic quadrilateral</span>. Theorem 10 tells us when four points
+      form one; the next result tells us what we get in return.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 11</div>
+        <p>The two opposite angles of a cyclic quadrilateral add up to
+        $180^\circ$.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A quadrilateral has angles $80^\circ$, $110^\circ$,
-            $100^\circ$ and $70^\circ$, in that order round the shape. Can it be
-            cyclic? Can it be drawn at all?</li>
-        </ol>
+      <p>Let $ABCD$ be cyclic, with centre $O$, and consider the two opposite
+      angles at $A$ and at $C$. Each is an angle subtended by an arc at a point
+      of the circle outside it, so Theorem 9 applies to both — and the trick is to be
+      careful about <em>which</em> arc.</p>
+
+      <div class="work work--list">
+        <p>$\angle BAD$ is subtended at $A$ by the arc from $B$ to $D$
+        that passes through $C$. So it is half the angle that arc sweeps at $O$.</p>
+        <p>$\angle BCD$ is subtended at $C$ by the arc from $B$ to $D$
+        that passes through $A$. So it is half the angle <em>that</em> arc sweeps at
+        $O$.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>$PQRS$ is cyclic with $\angle P = (2x + 10)^\circ$ and
-            $\angle R = (3x - 20)^\circ$. Find $x$, and then both angles.</li>
-        </ol>
-      </div>
+      <p>Between them the two arcs make up the whole circle, so the two angles they sweep
+      at $O$ add to a complete turn of $360^\circ$. Halving,</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li class="hard">Show that a rectangle is the only parallelogram that can be
-            inscribed in a circle.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li class="hard">Let $ABCD$ be cyclic and let $E$ lie on $CD$
-            extended. Explain why the exterior angle $\angle BCE$ equals the interior
-            opposite angle $\angle BAD$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">End-of-Chapter Exercises</div>
-        <ol class="c-questions">
-          <li>A chord of a circle lies $5$ cm from the centre, and the radius is
-            $13$ cm. How long is the chord?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A circle has diameter $26$ cm, and a chord of length $24$ cm is
-            drawn in it. How far is that chord from the centre?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A chord of length $16$ cm lies $6$ cm from the centre. Find the
-            radius.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Prove that the perpendicular bisector of a chord passes through the centre of
-            the circle.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>$AB$ is a diameter of a circle and $C$ is another point on it. What
-            is $\angle ACB$? Give the reasoning, not just the number.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A cyclic quadrilateral has $\angle A = 75^\circ$ and
-            $\angle B = 110^\circ$. Find $\angle C$ and $\angle D$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>A cyclic quadrilateral has sides $5$, $5$, $12$, $12$
-            units, in that order round the shape. Find its area.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>Two parallel chords, of lengths $10$ cm and $24$ cm, lie on the same
-          side of the centre and $7$ cm apart. Find the radius of the circle.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li class="hard">Draw a circle in which a chord of length $6$ cm stands
-          $3$ cm from the centre. What must the radius be?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li class="hard">Justify the claim that no chord of a circle is longer than a
-          diameter. Give two arguments, one of them from Section 5.7.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="11">
-          <li class="hard">Take all the chords of a circle that have one fixed length. What
-          shape do their midpoints trace out?</li>
-        </ol>
+      <div class="eq eq--anchor">
+        $$\angle BAD + \angle BCD = \tfrac{1}{2}\times 360^\circ = 180^\circ$$
       </div>
 
     </div>

@@ -2,6 +2,51 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
+        <div class="c-example__body">
+          <p>
+            Saira has one square tile of side $x$ units, eight rectangular
+            strips $x$ units long and 1 unit wide, and fifteen small squares of
+            side 1 unit. She fits all of them together, with no gaps and no
+            overlaps, into a single larger rectangle. What are its sides?
+          </p>
+          <p>
+            Nothing is said about how the pieces are arranged, and nothing needs
+            to be. Whatever the arrangement, the area of the rectangle is the
+            total area of the tiles:
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">square</span>
+              <span>$1 \times x^2 = x^2$ sq. units</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">strips</span>
+              <span>$8 \times x \times 1 = 8x$ sq. units</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">units</span>
+              <span>$15 \times 1 = 15$ sq. units</span>
+            </div>
+          </div>
+          <p>
+            So the rectangle has area $x^2 + 8x + 15$ square units. Its sides
+            are two expressions that multiply to give this — which is to say,
+            its factors. Two numbers with sum 8 and product 15: the pair is 3
+            and 5.
+          </p>
+          <div class="work">
+            <p>$x^2 + 8x + 15 = (x + 3)(x + 5)$</p>
+          </div>
+          <p>
+            The rectangle is $x + 5$ units long and $x + 3$ units wide. Fig.
+            4.11 shows the pieces in place; count them and check that all
+            twenty-four are used.
+          </p>
+        </div>
+      </div>
+
       <figure class="c-figure c-figure--md">
         <svg viewBox="0 0 244 184" role="img"
              aria-label="One x squared tile, eight x tiles and fifteen unit tiles arranged into a rectangle of length x plus five and width x plus three">
@@ -53,61 +98,6 @@
         That question handed you the pieces and asked what they made. The next
         one goes the other way: it hands you the finished rectangle — its area,
         and how its two sides are related — and asks what those sides measure.
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 18</div>
-        <div class="c-example__body">
-          <p>
-            A rectangular pool is 4 metres narrower than it is long, and its
-            surface covers 96 square metres. How long and how wide is it?
-          </p>
-          <p>
-            Let the length be $x$ metres. The breadth is then $x - 4$ metres,
-            and the area gives an equation:
-          </p>
-          <div class="work">
-            <p>$x(x - 4) = 96, \quad\text{so}\quad x^2 - 4x - 96 = 0$</p>
-          </div>
-          <p>
-            Now split the middle term. Two numbers with product $-96$ and sum $-4$:
-            since $(-12) \times 8 = -96$ and $(-12) + 8 = -4$, write $-4x$ as
-            $-12x + 8x$.
-          </p>
-          <div class="work">
-            <p>$x^2 - 12x + 8x - 96 = x(x - 12) + 8(x - 12) = (x - 12)(x + 8)$</p>
-          </div>
-          <p>
-            So $(x - 12)(x + 8) = 0$, which means $x - 12 = 0$ or $x + 8 = 0$;
-            that is, $x = 12$ or $x = -8$. But $x$ is the length of a pool, so
-            it cannot be negative. The length is 12 metres and the breadth is
-            $12 - 4 = 8$ metres — and <span class="nb">$12 \times 8 = 96$,</span>
-            as required.
-          </p>
-        </div>
-      </div>
-
-      <p>
-        Something new happened there. Every earlier use of factorising
-        <em>rewrote an expression</em>; this one <em>solved an equation</em>.
-        The step that allowed it is easy to walk past:
-      </p>
-
-      <div class="eq">
-        $$\text{if } AB = 0, \text{ then } A = 0 \text{ or } B = 0$$
-      </div>
-
-      <p>
-        Nothing like this holds for any other number. That
-        $(x - 12)(x + 8) = 5$ tells you nothing about either bracket, because 5
-        splits as a product in endlessly many ways — but zero cannot. So the
-        equation had to be rearranged with 0 on one side <em>before</em>
-        factorising.
-      </p>
-
-      <p>
-        The last step is worth a habit too: the algebra offered two answers,
-        the situation kept one.
       </p>
 
     </div>

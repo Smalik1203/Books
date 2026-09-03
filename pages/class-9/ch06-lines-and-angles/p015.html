@@ -2,6 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 214 128" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Triangle ABC with a line PQ drawn through A parallel to BC">
+            <path class="dg-ghost" d="M24 32 H190"/>
+            <path class="dg-fill-d" d="M96 32 L44 106 L172 106 Z"/>
+            <path class="dg-line" d="M96 32 L44 106 L172 106 Z"/>
+            <path class="dg-thin" d="M78 32 A18 18 0 0 0 83.6 44.9"/>
+            <path class="dg-thin" d="M110.6 40.1 A18 18 0 0 0 114 32"/>
+            <path class="dg-thin" d="M60 106 A16 16 0 0 0 52.4 92.2"/>
+            <path class="dg-thin" d="M156 106 A16 16 0 0 1 163.6 92.2"/>
+            <path class="dg-thin" d="M87.6 47 A20 20 0 0 0 106.8 45.8"/>
+            <circle class="dg-fill-teal" cx="96" cy="32" r="2.6"/>
+            <text class="dg-label" x="96" y="26">A</text>
+            <text class="dg-label" x="37" y="115">B</text>
+            <text class="dg-label" x="176" y="115">C</text>
+            <text class="dg-label" x="18" y="30">P</text>
+            <text class="dg-label" x="193" y="30">Q</text>
+            <text class="dg-label" x="72" y="45">1</text>
+            <text class="dg-label" x="97" y="55">2</text>
+            <text class="dg-label" x="118" y="45">3</text>
+            <text class="dg-label" x="58" y="98">4</text>
+            <text class="dg-label" x="152" y="98">5</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.8</span> $PQ$ is drawn through $A$
+          parallel to $BC$. Angles $1$, $2$ and $3$ lie along a straight line.</figcaption>
+        </figure>
+      </div>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label">1</span>
+          <span>$\angle 1 + \angle 2 + \angle 3 = 180^\circ$</span>
+          <span class="chip">angles on the line $PQ$ at $A$</span></div>
+        <div class="work__row"><span class="work__label">2</span>
+          <span>$\angle 1 = \angle 4$</span>
+          <span class="chip">alternate interior, $PQ \parallel BC$, transversal $AB$</span></div>
+        <div class="work__row"><span class="work__label">3</span>
+          <span>$\angle 3 = \angle 5$</span>
+          <span class="chip">alternate interior, $PQ \parallel BC$, transversal $AC$</span></div>
+        <div class="work__row"><span class="work__label">4</span>
+          <span>$\angle 4 + \angle 2 + \angle 5 = 180^\circ$</span>
+          <span class="chip">substituting into line 1</span></div>
+      </div>
+
+      <p>And $\angle 4$, $\angle 2$, $\angle 5$ are the three angles of the triangle. The
+      proof is finished.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Angle Sum of a Triangle</div>
+        <p>The three interior angles of any triangle add to $180^\circ$.</p>
+      </div>
+
+      <p>It is worth being clear about what carried the weight. Line 1 of the proof is
+      just the straight angle. Lines 2 and 3 are the parallel-line theorem — which came
+      from the axiom. So the angle sum of a triangle rests on the axiom about parallels,
+      and on nothing else. Change that axiom and the $180^\circ$ changes with it, which
+      is not an idle remark: geometries in which it does change were built in the
+      nineteenth century, and one of them describes the universe rather better than this
+      one does.</p>
+
       <p>Several familiar facts now come for free, and each takes one line.</p>
 
       <div class="work work--list">
@@ -19,54 +79,6 @@
       side and the next side of the triangle is an <span class="term">exterior angle</span>.
       The two angles of the triangle not touching it are its
       <span class="term">interior opposite angles</span>.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The Exterior Angle Theorem</div>
-        <p>An exterior angle of a triangle equals the sum of the two interior opposite
-        angles.</p>
-      </div>
-
-      <p>The proof is two lines. Let the triangle be $ABC$ with $BC$ produced to $D$, so
-      the exterior angle is $\angle ACD$.</p>
-
-      <div class="work">
-        <div class="work__row"><span class="work__label">1</span>
-          <span>$\angle ACB + \angle ACD = 180^\circ$</span>
-          <span class="chip">linear pair on $BD$</span></div>
-        <div class="work__row"><span class="work__label">2</span>
-          <span>$\angle ACB + \angle A + \angle B = 180^\circ$</span>
-          <span class="chip">angle sum of the triangle</span></div>
-        <div class="work__row"><span class="work__label">3</span>
-          <span>$\angle ACD = \angle A + \angle B$</span>
-          <span class="chip">take $\angle ACB$ from both</span></div>
-      </div>
-
-      <div class="c-figure c-figure--md">
-        <figure>
-          <svg viewBox="0 0 214 108" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Triangle ABC with side BC produced to D, showing the exterior angle at C">
-            <path class="dg-fill-d" d="M74 20 L34 88 L142 88 Z"/>
-            <path class="dg-line" d="M74 20 L34 88 L142 88 Z"/>
-            <path class="dg-thin" d="M142 88 H190" stroke-dasharray="0"/>
-            <path class="dg-thin" d="M158 88 A16 16 0 0 0 148.4 73.3"/>
-            <path class="dg-thin" d="M126 88 A16 16 0 0 1 135.6 73.3"/>
-            <path class="dg-thin" d="M50 88 A16 16 0 0 0 43.6 74.1"/>
-            <path class="dg-thin" d="M67.4 33.2 A16 16 0 0 0 83.6 30.6"/>
-            <circle class="dg-fill-teal" cx="142" cy="88" r="2.6"/>
-            <text class="dg-label" x="74" y="14">A</text>
-            <text class="dg-label" x="27" y="97">B</text>
-            <text class="dg-label" x="139" y="99">C</text>
-            <text class="dg-label" x="193" y="92">D</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 6.9</span> $\angle ACD$ is exterior at
-          $C$; $\angle A$ and $\angle B$ are its interior opposite angles.</figcaption>
-        </figure>
-      </div>
-
-      <p>One consequence is used constantly and deserves its own sentence: an exterior
-      angle is greater than either interior opposite angle, since it is their sum and
-      neither is zero. That is often more useful than the equality, because it is a
-      statement about which of two angles is bigger without either being known.</p>
 
     </div>
   </div>

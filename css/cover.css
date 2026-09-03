@@ -13,9 +13,9 @@
    a chapter, which is why the palette sheets do not reach it.
 
      .jacket           the whole wrap, trim size
-     .jacket__back     176mm — blurb, features, barcode
+     .jacket__back     --trim-w — blurb, features, barcode
      .jacket__spine    --spine-w — set from the page count
-     .jacket__front    176mm — title and artwork
+     .jacket__front    --trim-w — title and artwork
 
    Two finishes, same layout: the default light stock, and
    .jacket--night for the dark edition.
@@ -30,9 +30,10 @@
 
   /* The panel's own quiet edge, and the two widths the back panel is
      built on. All three are fractions of the trim rather than
-     millimetres: A4 is the standard here, B5 is an edition, and a
-     margin typed in millimetres is a margin that only suits one of
-     them. 0.08 of the width gives 16.8mm on A4 and 14.1mm on B5. */
+     millimetres: Crown Quarto is the standard here, A4 and B5 are
+     editions, and a margin typed in millimetres is a margin that only
+     suits one of them. 0.08 of the width gives 15.1mm on Crown
+     Quarto, 16.8mm on A4 and 14.1mm on B5. */
   --jk-margin: calc(var(--trim-w) * 0.08);
   --jk-col:    calc(var(--trim-w) * 0.352);
   --jk-gap:      6mm;
@@ -425,10 +426,10 @@ body.bleed .jacket {
 .back__head .jk-lede { max-width: none; white-space: nowrap; }
 
 /* Both columns run the full height of what is left of the panel and
-   distribute their own contents down it. A4 gives the back 47mm more
-   than B5 does, and a column that keeps its B5 rhythm and stops
-   two-thirds of the way down reads as unfinished rather than airy —
-   the same defect the page builder calls a short page. */
+   distribute their own contents down it. The trims differ by tens of
+   millimetres, and a column that keeps a smaller trim's rhythm and
+   stops two-thirds of the way down reads as unfinished rather than
+   airy — the same defect the page builder calls a short page. */
 
 
 .back__blurb { margin: 4mm 0 0; max-width: calc(var(--trim-w) * 0.48); }

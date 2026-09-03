@@ -2,6 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-practice">
+        
+        <ol class="c-questions" data-start="3">
+          <li>
+                                Expand, using the identity
+                                $(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$.
+                                <ol class="c-parts">
+                                  <li>$(p + 3q + 7r)^2$</li>
+                                  <li>$(3x - 2y + 4z)^2$</li>
+                                  <li>$(2m - 5n - 3p)^2$</li>
+                                  <li>$(a - 2b - 5c)^2$</li>
+                                </ol>
+                              </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>
+                                Is the following an identity? Give a reason for your answer.
+                                <div class="work work--centred">
+                                  <p>$(a + b - c)^2 + (a - b + c)^2 + (a - b - c)^2 = 2a^2 + 2b^2 + 2c^2$</p>
+                                </div>
+                                <p class="hint">
+                                  You can settle this without expanding everything. How many $a^2$
+                                  terms must the left-hand side produce?
+                                </p>
+                              </li>
+        </ol>
+      </div>
+
+      <h3>A difference of squares</h3>
+
+      <p>
+        In Grade 8 you met one more identity, and it is the odd one out — the
+        only one so far that is not about squaring a sum:
+      </p>
+
+      <div class="eq eq--anchor">
+        $$a^2 - b^2 = (a + b)(a - b)$$
+      </div>
+
+      <p>
+        Read left to right it factorises. But rearranged, it becomes something
+        else entirely — a way of computing a square:
+      </p>
+
+      <div class="eq">
+        $$a^2 = (a + b)(a - b) + b^2$$
+      </div>
+
+      <p>
+        That looks like a poor trade — one square swapped for a product and another
+        square. It is not, and a picture shows why. Slice a strip of width $b$ off the
+        bottom of a square of side $a$, then cut that strip again at $a - b$. What is
+        left is a $b \times b$ square; the long piece, stood on its end, widens the top
+        block from $a$ to $a + b$.
+      </p>
+
       <figure class="c-figure c-figure--sm">
         <svg viewBox="32 10 404 292" role="img"
              aria-label="A square of side a, with a strip of width b cut from the bottom and the longer part of that strip moved to the right-hand edge, leaving a b by b square">
@@ -54,70 +113,6 @@
         round numbers, and the product on the right is one you can do in your
         head, with $b^2$ small. An awkward square becomes an easy
         multiplication plus a correction.
-      </p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>
-              Check the rearranged rectangle for yourself. How tall is it, and
-              how wide? Multiply those out, add the $b^2$ you set aside, and see
-              whether you get back the area of the original square.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A method from 750 <span class="n">CE</span></div>
-        <p>
-          <strong>Śhrīdharāchārya</strong> set this out as a way to square numbers
-          quickly. To find $55^2$, take $b = 5$, so that the two factors
-          become 60 and 50:
-        </p>
-        <div class="work">
-          <p>$55^2 = (55 + 5)(55 - 5) + 5^2$</p>
-          <p>$= 60 \times 50 + 25$</p>
-          <p>$= 3000 + 25 = 3025$</p>
-        </div>
-      </div>
-
-      <p>
-        The whole calculation is $6 \times 5$ and a small addition. What made
-        $b = 5$ the right choice? It is the distance from 55 to the nearest
-        multiple of ten — and that is the rule in general: take $b$ to be
-        whatever carries $a$ to a round number.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/>
-            <path d="M15 3.5v17"/><path d="M3.5 15h17"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>
-            Try it on $98^2$. Taking $b = 2$ gives $100 \times 96 + 4$, which is
-            $9604$ — with no two-digit multiplication at all.
-          </p>
-        </div>
-      </div>
-
-      <p>
-        Notice how little separates these identities in practice. Each one swaps
-        an expression you cannot handle directly for one you can: a bracket for
-        a sum of terms, a hard multiplication for an easy one. That is the whole
-        business of this chapter.
       </p>
 
     </div>
