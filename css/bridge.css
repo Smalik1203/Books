@@ -314,13 +314,18 @@
 .c-solution p { margin: 0; }
 .c-solution p + p { margin-top: var(--space-hair); }
 
-/* ---- A solution traced, not just written --------------------
-   The worked problems of stage 2 show the thinking, one row per
-   move: what is noticed, what is tried, why it works, the check,
-   and the trap a hurried solver falls into. A row runs to
+/* ---- A row with a label beside it ---------------------------
+   Used on the answer page, where each row is one question's id
+   and the reason the other options are wrong. A row runs to
    several lines, so its label sits on the first line instead of
-   floating centred beside the block, and the label column is
-   only as wide as the longest of those five words. */
+   floating centred beside the block.
+
+   This comment used to describe the rows as one per move —
+   noticed, tried, why, check, trap — which is the ten-stage draft
+   §6a records being thrown out for reading as a coaching module,
+   in the very words §6a bans. Stage 2 has never used this: its
+   solutions are .c-problem and .c-solution, and their steps are
+   algebra, not named moves. */
 .work--trace .work__row { align-items: flex-start; margin-bottom: 1.4mm; }
 .work--trace .work__label { flex: none; min-width: 14mm; }
 
