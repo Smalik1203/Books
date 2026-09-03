@@ -192,29 +192,77 @@ function libraryHtml(classes, coverClasses) {
   const names = [...new Set([...classes.map((c) => c.cls),
                              ...coverClasses.map((c) => c.cls)])].sort();
 
-  const body = names.map((cls) => {
+  /* The two subjects a class holds, listed whether or not either has
+     chapters yet. A dropdown that grows as content lands is a dropdown
+     that reads differently every month; this one is the finished shape,
+     and a subject with nothing in it resolves to the empty state, which
+     is the honest answer. */
+  const SUBJECTS = ['Mathematics', 'Science'];
+
+  /* Every class-and-subject pair is rendered, and every class's covers,
+     each tagged so the script can show exactly one pair at a time. They
+     ship hidden: the page opens on the prompt rather than flashing the
+     whole library and then collapsing it. */
+  const sections = names.map((cls) => {
     const chapters = (classes.find((c) => c.cls === cls) || { chapters: [] }).chapters;
     const covers = (coverClasses.find((c) => c.cls === cls) || { covers: [] }).covers;
-    const subjects = [...new Set(chapters.map((c) => c.subject))].sort();
-    return '<div class="class-head">Class ' + esc(cls.replace(/^class-/, '')) + '</div>'
-      + subjects.map((sub) => '<div class="subject-head">' + esc(sub) + '</div>'
-        + '<div class="grid">'
-        + chapters.filter((c) => c.subject === sub).map(card).join('')
-        + '</div>').join('')
-      + (covers.length
-        ? '<div class="subject-head">Covers</div><div class="grid">'
-          + covers.map(coverCard).join('') + '</div>'
-        : '');
+    const shown = esc(cls.replace(/^class-/, ''));
+
+    const perSubject = SUBJECTS.map((sub) => {
+      const mine = chapters.filter((c) => c.subject === sub);
+      return `<section class="lib-set" hidden data-class="${esc(cls)}" data-subject="${esc(sub)}"`
+        + ` data-count="${mine.length}">`
+        + `<div class="class-head">Class ${shown} &middot; ${esc(sub)}</div>`
+        + (mine.length ? `<div class="grid">${mine.map(card).join('')}</div>` : '')
+        + `</section>`;
+    }).join('');
+
+    const coverSet = covers.length
+      ? `<section class="lib-set" hidden data-class="${esc(cls)}" data-covers="1">`
+        + '<div class="subject-head">Covers</div>'
+        + `<div class="grid">${covers.map(coverCard).join('')}</div></section>`
+      : '';
+
+    return perSubject + coverSet;
   }).join('');
+
+  /* A directory is named class-9; a reader is offered "Class 9". The value
+     stays the directory name, because that is what the sections are keyed on. */
+  const opts = (list, placeholder, label = (v) => v) =>
+    `<option value="">${placeholder}</option>`
+    + list.map((v) => `<option value="${esc(v)}">${esc(label(v))}</option>`).join('');
+
+  const controls = `
+      <div class="lib-controls">
+        <label class="lib-field">
+          <span>Class</span>
+          <select class="lib-select" id="pick-class">${
+            opts(names, 'Choose a class', (v) => 'Class ' + v.replace(/^class-/, ''))
+          }</select>
+        </label>
+        <label class="lib-field">
+          <span>Subject</span>
+          <select class="lib-select" id="pick-subject">${
+            opts(SUBJECTS, 'Choose a subject')
+          }</select>
+        </label>
+      </div>`;
 
   return page('LearnLab Studio', `
     <div class="wrap">
       <div class="masthead"><h1>LearnLab</h1><span class="tag">studio</span></div>
-      <p class="masthead-sub">Pick a chapter to read it at size, check the print sheet,
-         or build the PDFs. Covers are built and viewed separately &mdash; a wrap is
-         one sheet, not a run of pages.</p>
-      ${body || '<p class="empty">Nothing in pages/ or covers/ yet.</p>'}
-    </div>`);
+      <p class="masthead-sub">Choose a class and a subject. Then pick a chapter to read
+         it at size, check the print sheet, or build the PDFs. Covers are built and
+         viewed separately &mdash; a wrap is one sheet, not a run of pages.</p>
+      ${names.length ? controls : ''}
+      ${sections}
+      <p class="lib-note" id="lib-prompt">Choose a class and a subject to see its chapters.</p>
+      <p class="lib-note" id="lib-empty" hidden>Nothing here yet.</p>
+      ${names.length ? '' : '<p class="empty">Nothing in pages/ or covers/ yet.</p>'}
+      <noscript><p class="lib-note">The chooser needs JavaScript. Without it the
+         library cannot be filtered.</p></noscript>
+    </div>
+    <script src="/build/ui/library.js"></script>`);
 }
 
 /* A download link to an artefact that was never built is worse than no
