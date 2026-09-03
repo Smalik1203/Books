@@ -20,19 +20,6 @@
 
 /* ---- Title page -------------------------------------------- */
 
-/* The text block is inset 26mm at the head and 20mm at the foot to
-   make room for a running head and a folio. A title page shows
-   neither, so that asymmetry has nothing to do here except push the
-   title 3mm below the centre of the sheet — which on a page holding
-   one block and nothing else is exactly where the eye checks. So this
-   page, and only this page, centres on the sheet rather than in the
-   text block.
-
-   The horizontal inset is left alone. It is wider at the spine by the
-   gutter allowance, and that is what makes a block look centred once
-   binding has eaten part of the inner margin. */
-.page--title .page__body { top: 0; bottom: 0; }
-
 /* The title page is the cover restated in the book's own two faces.
    It was five lines centred in an empty sheet — no rule, no marker,
    nothing of the arrangement the jacket and every chapter opener
