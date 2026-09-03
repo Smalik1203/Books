@@ -2,6 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Two numbers add to $64$, and one of them is $10$ more than the other.
+          Find them.</p>
+          <p>Call the smaller one $x$. Then the larger is $x + 10$, and their sum is
+          $64$.</p>
+          <div class="work">
+            <p>$x + (x + 10) = 64$</p>
+            <p>$2x + 10 = 64$</p>
+            <p>$2x = 54$</p>
+            <p>$x = 27$</p>
+          </div>
+          <p>So the numbers are $27$ and $37$. Notice what was equated to what:
+          $2x + 10$ is a linear polynomial, and setting it equal to $64$ turned it
+          into a linear equation with a single answer.</p>
+        </div>
+      </div>
+
+      <p>There is another way to look at a polynomial, and for the rest of this
+      chapter it is the more useful one. Rather than an expression to be simplified,
+      treat it as a machine: feed it a number, and it hands one back.</p>
+
+      <p>Take $2x + 3$. Put in $x = 4$ and it returns $2 \times 4 + 3 = 11$. Put in
+      $x = -6$ and it returns $2 \times (-6) + 3 = -9$. Every input has exactly one
+      output, and a rule of that kind is called a <span class="term">function</span>
+      of $x$.</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 200 176" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="An input-output machine: 4 goes in, 2x + 3 acts on it, 11 comes out">
+            <rect class="dg-fill-d" x="70" y="4" width="60" height="24" rx="3"/>
+            <text class="dg-label" x="100" y="21" text-anchor="middle">x = 4</text>
+            <path class="dg-move" d="M100 30V52" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-face-front" x="40" y="56" width="120" height="62" rx="4"/>
+            <rect class="dg-line" x="40" y="56" width="120" height="62" rx="4"/>
+            <text class="dg-note" x="100" y="76" text-anchor="middle">the machine</text>
+            <text class="dg-label" x="100" y="98" text-anchor="middle">2x + 3</text>
+            <path class="dg-move" d="M100 122V144" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-d" x="70" y="148" width="60" height="24" rx="3"/>
+            <text class="dg-label" x="100" y="165" text-anchor="middle">11</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.3</span> A linear expression as an
+          input–output process. Change the input and the output changes with it.</figcaption>
+        </figure>
+      </div>
+
       <div class="c-reflect">
         <div class="c-reflect__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -18,78 +66,6 @@
           </div>
         </div>
       </div>
-
-      <p>The word <em>function</em> is not reserved for linear expressions. Feeding a
-      number to $10x - x^{2}$ works exactly the same way, and it too returns one
-      output for each input — it is a quadratic function rather than a linear one.
-      The difference is not in the machine but in what comes out of it, which is what
-      the rest of the chapter is about.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.2</div>
-        <ol class="c-questions">
-          <li>Find the value of the linear polynomial $5x - 3$ when
-              <ol class="c-parts c-parts--3">
-                <li>$x = 0$</li>
-                <li>$x = -1$</li>
-                <li>$x = 2$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Find the value of the quadratic polynomial $7s^{2} - 4s + 6$ when
-              <ol class="c-parts c-parts--3">
-                <li>$s = 0$</li>
-                <li>$s = -3$</li>
-                <li>$s = 4$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Salil's mother is three times as old as Salil. In five years their ages
-            will add up to $70$. How old is each of them now?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Two positive integers differ by $63$ and are in the ratio $2 : 5$. Find
-            them.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Ruby has three times as many two-rupee coins as five-rupee coins, and
-            ₹$88$ in all. How many of each has she?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A farmer cuts a $300$-foot fence into two pieces, the longer four times
-            the shorter. How long is each piece?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>A rectangle is three more than twice as long as it is wide, and its
-            perimeter is $24$ cm. Find its length and its width.</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">2.3</span><span class="name">Exploring Linear Patterns</span></h2>
-
-      <p>So far the linear patterns have arrived already written as expressions. The
-      more common situation is the other way round: a pattern is in front of you, and
-      the expression has to be found. Here is one built out of square tiles.</p>
 
     </div>
   </div>

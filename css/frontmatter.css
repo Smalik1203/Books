@@ -33,12 +33,33 @@
    binding has eaten part of the inner margin. */
 .page--title .page__body { top: 0; bottom: 0; }
 
+/* The title page is the cover restated in the book's own two faces.
+   It was five lines centred in an empty sheet — no rule, no marker,
+   nothing of the arrangement the jacket and every chapter opener
+   share, and two thirds of the page dead. So it now sets flush left
+   on the text block like the openers do, carries the class and part
+   at the head where the jacket carries them, and closes on the line
+   the jacket closes on. Nothing new is invented: the rule under the
+   title is the chapter opener's own rule, cap and all. */
+/* The title sits in the upper middle, where the jacket sets it, not
+   at the centre of the sheet: centred between a head and a foot it
+   floats, with eighty millimetres of nothing above it. The strapline
+   holds the foot; the white gathers between the two, which is where
+   a title page wants it. */
 .titlepage {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  box-sizing: border-box;
+  padding: 46mm 0 30mm;
+}
+.titlepage__main { margin-top: 28mm; }
+.titlepage__foot { margin-top: auto; }
+.titlepage__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8mm;
 }
 .titlepage__imprint {
   font-family: var(--font-display);
@@ -47,13 +68,63 @@
   font-variant-caps: small-caps;
   letter-spacing: var(--track-label);
   color: var(--teal);
-  margin-bottom: var(--space-break);
 }
+/* class and part, against a rule — the jacket's own marker */
+.titlepage__marker {
+  border-left: var(--stroke-rule) solid var(--teal-soft);
+  padding-left: 5mm;
+  text-align: left;
+}
+.titlepage__class {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-label);
+  color: var(--teal);
+}
+.titlepage__part {
+  display: inline-block;
+  margin-top: var(--space-hair);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-label);
+  color: var(--rust);
+  border: var(--stroke-rule) solid var(--rust);
+  border-radius: var(--radius);
+  padding: 0.6mm 2.4mm;
+}
+.titlepage__foot {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-label);
+  color: var(--teal-soft);
+}
+/* the chapter opener's rule: a teal band with the rust cap outdented
+   at its left, so the title page and a chapter head are plainly the
+   same book */
 .titlepage__rule {
-  width: 28mm;
+  position: relative;
   height: var(--stroke-band);
   background: var(--teal);
-  margin: var(--space-rest) auto;
+  border-radius: 1mm;
+  margin: var(--space-rest) 0 0;
+}
+.titlepage__rule::before {
+  content: "";
+  position: absolute;
+  left: -8mm;
+  top: -1.6mm;
+  width: 9mm;
+  height: 4mm;
+  background: var(--rust);
+  border-radius: 1mm;
+  transform: skewX(-14deg);
 }
 .titlepage__title {
   font-family: var(--font-display);
@@ -70,13 +141,6 @@
   letter-spacing: var(--track-title);
   color: var(--teal);
   margin-top: var(--space-step);
-}
-.titlepage__part {
-  font-family: var(--font-display);
-  font-size: var(--size-concept);
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-top: var(--space-tight);
 }
 
 /* ---- Imprint ----------------------------------------------- */
@@ -115,6 +179,18 @@
   font-size: var(--size-note);
   line-height: var(--lh-panel);
   color: var(--ink-soft);
+}
+/* The imprint has no page of its own: it rides at the foot of whatever
+   page ends the front matter, under a hairline, below that page's own
+   last line. Eight lines of small print do not earn a leaf. */
+.page--imprinted .page__main { display: flex; flex-direction: column; }
+.page--imprinted .preface { height: auto; }
+.imprint--tail {
+  height: auto;
+  margin-top: auto;
+  padding-top: var(--space-step);
+  border-top: var(--stroke-hair) solid var(--rule);
+  font-size: var(--size-caption);
 }
 .imprint p { margin: 0 0 var(--space-tight); }
 .imprint__name {

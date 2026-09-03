@@ -2,38 +2,43 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 2</div>
-        <div class="c-example__body">
-          <p>
-            One digit after the point does not repeat and one does, so two
-            multipliers are needed. Put $x = 2.3555\ldots$ The first pushes
-            the $3$ past the point; the second moves the cycle on by one
-            place, so the tails line up and cancel:
-          </p>
-          <div class="work">
-            <p>$10x = 23.5555\ldots$, &nbsp; $100x = 235.5555\ldots$</p>
-            <p>$90x = 212$, &nbsp;so&nbsp;
-              $x = \dfrac{212}{90} = \dfrac{106}{45}$</p>
-          </div>
-          <p>
-            The answer is (b). Option (a) is $\dfrac{47}{20} = 2.35$, the
-            number this would be if the $5$ stopped instead of repeating.
-            Options (c) and (d) both carry a $99$, and $99$ belongs to a
-            decimal that repeats from the point onwards: (d) is
-            $2.\overline{35}$, and (c) is what comes of using $99$ where the
-            $90$ belongs.
-          </p>
-          <p>
-            The $90$ is the whole point. One $9$ for the digit that repeats,
-            one $0$ for the digit that does not &mdash; and the denominator
-            says so before any cancelling is done.
-          </p>
-        </div>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>$2.3\overline{5}$ in lowest terms is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$\dfrac{47}{20}$</li>
+          <li>$\dfrac{106}{45}$</li>
+          <li>$\dfrac{212}{99}$</li>
+          <li>$\dfrac{235}{99}$</li>
+        </ol>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 3 &middot; Try it first</span>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          One digit after the point does not repeat and one does, so two
+          multipliers are needed: the first pushes the $3$ past the point,
+          the second moves the cycle on a place so the tails cancel.
+        </p>
+        <div class="work work--list">
+          <p>$x = 2.3555\ldots$</p>
+          <p>$10x = 23.555\ldots$</p>
+          <p>$100x = 235.555\ldots$</p>
+          <p>$90x = 212$</p>
+          <p>$x = \dfrac{212}{90} = \dfrac{106}{45}$</p>
+        </div>
+        <p>
+          Option (b). The $90$ is the whole point: one $9$ for the digit
+          that repeats, one $0$ for the digit that does not. Option (a) is
+          $\dfrac{47}{20} = 2.35$, this number with the $5$ stopped instead
+          of repeating. Options (c) and (d) carry a $99$, which belongs to a
+          decimal repeating from the point onwards: (d) is
+          $2.\overline{35}$, and (c) uses $99$ where the $90$ belongs.
+        </p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
         <p>$\dfrac{p}{q}$ is in lowest terms and terminates after exactly
           four decimal places. Then</p>
         <ol class="c-parts c-parts--alpha c-parts--1">
@@ -42,32 +47,6 @@
           <li>$q$ is a multiple of $10^4$</li>
           <li>$q$ has $3$ as a prime factor</li>
         </ol>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 3</div>
-        <div class="c-example__body">
-          <p>
-            A decimal of four places is a whole number over $10^4$. So
-            $\dfrac{p}{q} = \dfrac{N}{10^4}$ for some whole $N$, which needs
-            $q$ to divide $10^4$. And <em>exactly</em> four places means it is
-            not also a decimal of three, so $q$ must not divide $10^3$. That
-            is option (a), and it is the answer.
-          </p>
-          <p>
-            Option (b) is one case of (a) rather than the whole of it:
-            $\dfrac{1}{16} = 0.0625$ stops after exactly four places with
-            $q = 16$, and $16$ divides $10^4 = 2^4 5^4$ without being it.
-            Option (c) has the divisibility the wrong way round; a $q$ larger
-            than $10^4$ runs longer, not the same.
-          </p>
-          <p>
-            Option (d) would stop the decimal terminating at all, since a
-            prime factor other than $2$ or $5$ is exactly what makes a decimal
-            repeat. It is the one option that can be struck out without
-            reading the rest of the question.
-          </p>
-        </div>
       </div>
 
     </div>

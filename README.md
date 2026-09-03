@@ -11,7 +11,7 @@ page that invents its own colour, type, stroke or spacing.
 css/        the design system
               tokens.css      every colour, size, weight, stroke — the only source
               typography.css  two faces, five hierarchy levels
-              components.css  the eight locked components
+              components.css  the seven locked components
               diagram.css     the diagram vocabulary every figure must use
 fonts/      self-hosted Spectral + Vollkorn (woff2)
 assets/     vendored KaTeX

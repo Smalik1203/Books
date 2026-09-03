@@ -2,83 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 1</div>
-        <div class="c-example__body">
-          <p>
-            There are two conditions and three unknowns. So $x$, $y$ and
-            $z$ cannot be found. That is why option (d) is there. But both
-            conditions are sides of identities. From
-            $(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + yz + zx)$,
-          </p>
-          <div class="work">
-            <p>$x^2 + y^2 + z^2 = 81 - 52 = 29$</p>
-          </div>
-          <p>
-            The identity for $x^3 + y^3 + z^3 - 3xyz$ has two factors.
-            They are $x + y + z$ and $x^2 + y^2 + z^2 - (xy + yz + zx)$.
-            We now have both of these:
-          </p>
-          <div class="work">
-            <p>$x^3 + y^3 + z^3 - 3xyz = 9 \times (29 - 26) = 27$</p>
-          </div>
-          <p>
-            The answer is (b). As a check, $2, 3, 4$ add to $9$, and
-            $6 + 12 + 8 = 26$. Their cubes add to $99$, and
-            $99 - 72 = 27$.
-          </p>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">Five questions, with the reasoning and the working. Try each one before you read its solution.</div>
         </div>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 2 &middot; Try it first</span>
-        <p>If $a + b = 7$ and $a^3 + b^3 = 133$, the number of real pairs
-          $(a, b)$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$0$</li>
-          <li>$1$</li>
-          <li>$2$</li>
-          <li>$4$</li>
-        </ol>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 2</div>
-        <div class="c-example__body">
-          <p>
-            We are given a sum and a sum of cubes. The identity
-            $a^3 + b^3 = (a + b)^3 - 3ab(a + b)$ connects them through the
-            product:
-          </p>
-          <div class="work">
-            <p>$133 = 343 - 21ab$, &nbsp;so&nbsp; $ab = 10$</p>
-          </div>
-          <p>
-            Now the sum and the product are both known. The difference
-            follows from $(a - b)^2 = (a + b)^2 - 4ab = 49 - 40 = 9$. So
-            $a - b$ is $3$ or $-3$. The pairs are $(5, 2)$ and
-            $(2, 5)$. There are two of them, option (c). Check:
-            $125 + 8 = 133$.
-          </p>
-          <p>
-            Option (b) comes from writing $a - b = 3$ and stopping there. A
-            square root has two signs. Option (a) would be right only if
-            $(a - b)^2$ had come out negative. It is worth noticing that it
-            could have.
-          </p>
-        </div>
-      </div>
-
-      <div class="c-try">
-        <span class="c-try__tag">Problem 3 &middot; Try it first</span>
-        <p>A rectangle has perimeter $34$ cm and diagonal $13$ cm
-          (Fig. 4B.4). Its area, in cm$^2$, is</p>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
+        <p>If $x + y + z = 9$ and $xy + yz + zx = 26$, then
+          $x^3 + y^3 + z^3 - 3xyz$ equals</p>
         <ol class="c-parts c-parts--alpha">
-          <li>$30$</li>
-          <li>$60$</li>
-          <li>$120$</li>
+          <li>$9$</li>
+          <li>$27$</li>
+          <li>$81$</li>
           <li>cannot be found</li>
         </ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Two conditions and three unknowns, so $x$, $y$ and $z$ cannot be
+          found &mdash; which is why option (d) is there. But both
+          conditions are sides of identities.
+        </p>
+        <div class="work work--list">
+          <p>$(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + yz + zx)$</p>
+          <p>$81 = x^2 + y^2 + z^2 + 52$</p>
+          <p>$x^2 + y^2 + z^2 = 29$</p>
+        </div>
+        <p>
+          The identity for $x^3 + y^3 + z^3 - 3xyz$ has the two factors
+          $x + y + z$ and $x^2 + y^2 + z^2 - (xy + yz + zx)$, and both are
+          now known.
+        </p>
+        <div class="work work--list">
+          <p>$x^3 + y^3 + z^3 - 3xyz = 9(29 - 26) = 27$</p>
+        </div>
+        <p>
+          Option (b). Check with $2, 3, 4$: they add to $9$, their products
+          to $26$, their cubes to $99$, and $99 - 72 = 27$.
+        </p>
       </div>
 
     </div>

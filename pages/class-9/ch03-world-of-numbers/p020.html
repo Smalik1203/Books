@@ -3,6 +3,59 @@
     <div class="page__main">
 
       <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Write $0.\overline{6}$ in the form $\dfrac{p}{q}$.</p>
+          <p>
+            Now the digits never stop, so there is nothing to read off. The
+            trick is to make two numbers whose infinite tails are
+            <em>identical</em>, and then subtract, so that the tails cancel and
+            leave something finite behind.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>One digit repeats, so multiply by $10^1$:
+              $\;10x = 6.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Subtract. Both tails are $.6666\ldots$, so they vanish:
+              $\;10x - x = 6.6666\ldots - 0.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>$9x = 6$, so $x = \dfrac{6}{9} = \dfrac{2}{3}$.</span>
+            </div>
+          </div>
+          <p>
+            Check: $2 \div 3 = 0.6666\ldots$ Notice why the multiplier was 10
+            and not 100 — one repeating digit needs a shift of exactly one
+            place, or the tails would not have lined up.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        The multiplier there was chosen to match the cycle: one repeating digit,
+        one shift. That is not a rule to memorise but the reason the two tails
+        lined up, and a longer cycle will need a longer shift.
+      </p>
+
+      <p>
+        It is worth saying plainly what has just been done, because the same
+        move settles every repeating decimal there is. An infinite tail cannot
+        be subtracted away on its own — but two numbers carrying the
+        <em>identical</em> tail can be subtracted from each other, and the
+        tails go together. Choosing the multiplier is nothing more than
+        arranging for those two tails to match.
+      </p>
+
+      <div class="c-example">
         <div class="c-example__tab">Example 11</div>
         <div class="c-example__body">
           <p>Write $0.\overline{45}$ in the form $\dfrac{p}{q}$.</p>
@@ -32,57 +85,6 @@
           <p>
             Which agrees with Example 7, where dividing 5 by 11 gave
             $0.\overline{45}$ in the first place — the two directions meet.
-          </p>
-        </div>
-      </div>
-
-      <p>
-        In both of those the repetition began immediately after the decimal
-        point. Very often it does not — a digit or two occurs once and only
-        then does the cycle start, and a single shift can no longer bring the
-        tails into agreement.
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 12</div>
-        <div class="c-example__body">
-          <p>Write $0.1\overline{6}$ in the form $\dfrac{p}{q}$.</p>
-          <p>
-            This one does not repeat immediately: the 1 occurs once and only
-            the 6 recurs. One shift will not do, because the two numbers must
-            agree in their tails <em>and</em> the tails only match once the
-            non-repeating part is out of the way. So shift twice, for two
-            different reasons.
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">Step 1</span>
-              <span>Let $x = 0.16666\ldots$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 2</span>
-              <span>One digit does not repeat. Multiply by $10^1$ to push it
-              past the point: $\;10x = 1.6666\ldots$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 3</span>
-              <span>One digit repeats. Multiply by $10^1$ again to move a whole
-              cycle: $\;100x = 16.6666\ldots$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 4</span>
-              <span>Subtract the Step 2 line from the Step 3 line — both end in
-              $.6666\ldots$: $\;90x = 15$.</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 5</span>
-              <span>$x = \dfrac{15}{90} = \dfrac{1}{6}$.</span>
-            </div>
-          </div>
-          <p>
-            Check: $1 \div 6 = 0.16666\ldots$ The two multipliers had different
-            jobs — the first cleared the non-repeating digit, the second moved
-            one full cycle — and it is worth naming which is which as you go.
           </p>
         </div>
       </div>

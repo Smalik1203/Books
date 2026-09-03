@@ -290,7 +290,7 @@ The stages are
                           explained, through which the reader finds that
                           the identities work in less direct ways —
                           about two and a half pages
-    2 Worked in Full      five multiple-choice problems, each put first and
+    2 Behind Each Answer  five multiple-choice problems, each put first and
                           solved after, with the reasoning as well as the
                           working — about three pages
     3 Problem Sets        three multiple-choice sets: A one identity each,
@@ -339,21 +339,38 @@ the band at the top of stage 1 and to nothing else in the section.
 **Every stage opens with `.c-stage`** — its number, its name, and one line
 saying what the stage is for — so a reader can name the stage from the page,
 not from the contents. Nothing here is a new hierarchy: the moves are `h3`
-concept heads, the worked problems are `.c-example` panels tabbed *Problem
-1* to *Problem 6*, the sets are `.c-practice` bands, and the division is read
+concept heads, the worked problems are `.c-problem` blocks tagged *Problem
+1* to *Problem 5*, the sets are `.c-practice` bands, and the division is read
 exactly the way the chapter before it is read, which is the whole reason it
 does not feel like a coaching module bolted on.
 
-**The reader thinks before reading.** Every question in stages 1 and 2 is
-put in a `.c-try` — a gold rule, a *Try it first* tag, the question, and
-room beneath it for the attempt — and only then comes the explanation. In
-stage 1 that explanation is running text, as in the chapter. In stage 2 it
-is a `.c-example` tabbed *Solution 1* to *Solution 5*, written as prose
-with a `.work` line where the algebra needs one: it says what was noticed,
-which identity that suggested, and why the other options were there, in
-whatever order the problem makes natural. An earlier draft set every
-solution in fixed rows — *notice, try, why, check, trap* — and the rows
-read as a template to be filled rather than a solution to be followed.
+**The reader thinks before reading.** Every question in stages 1 and 2 is put
+first and answered after. In stage 1 it sits in a `.c-try` — a gold rule, the
+question, and room beneath it for the attempt — and the explanation follows as
+running text, as in the chapter. In stage 2 the question is a `.c-problem` and
+its answer a `.c-solution`, and the two are one field: one rule opens the
+problem, one hairline closes the answer, both in the action colour, and the
+turn between them is the word *Solution* rather than a panel of its own. They
+read as one item because they are one item. Neither carries an instruction to
+try it first — the stage head says that once, and saying it again on every
+question is the coaching register this section does without.
+
+**A solution shows its working.** The reasoning is prose, but the algebra is
+set as stepped working in `.work`, a step to a line — independent statements
+flush (`--list`), a continued expression keeping its aligned indent — and not
+buried in the paragraph. A solution written as paragraphs with one displayed
+line at the end is a solution the reader cannot follow at the point they are
+stuck. What the steps are never carry is a name: an earlier draft set every
+solution in fixed rows — *notice, try, why, check, trap* — and the rows read
+as a template to be filled rather than a solution to be followed.
+
+**Both halves stay whole, so length is the thing to cut.** A page ends on a
+finished item; a reader never turns the page in the middle of an answer. That
+fixes the size of an item, and two of them have to fit a page — a little under
+half the text block each — or every page in the stage prints half empty. When
+a solution runs long, the option analysis is merged into one paragraph and the
+linking prose trimmed. The number of problems is the last thing to cut, not
+the first.
 
 Stage 1 opens as the chapter continuing: one sentence on what the chapter
 left the reader with, one on what changes in the question, and then the
@@ -368,7 +385,9 @@ What the library did not already have lives in `css/bridge.css`:
 | `.c-stage` | teal | one stage's head: a numeral in a solid mark, the stage name, and what the stage is for. `.c-stage__ask` follows it with the one line an examination paper would print — *Choose the correct option* |
 | `.c-shift` | none | a relationship read both ways — *as $d$ rises, $c$ falls* over *as $d$ falls, $c$ rises*. Rules and two arrows; a reader who has seen the law only once tends to hear a proportion |
 | `.c-results` | teal | four of the chapter's results as thumbnail marks in a row, so a reader sees what is available before starting. An index, not a figure: no text inside the drawings. The four-stage design does not use it — the moves are that index — but the ten-stage chapters still do |
-| `.c-try` | gold | a question to try before reading on: a gold rule above, a *Try it first* tag, the question (with its options, if it has them), and room beneath for the attempt, closed by a hairline. Not a panel — the key idea's rule-and-hairline in the attention colour — because the book has two panels and this is neither a worked instance nor a reflection |
+| `.c-try` | gold | a question to try before reading on, used in stage 1, where the explanation follows as running text: a gold rule above, the question (with its options, if it has them), and room beneath for the attempt, closed by a hairline. It carries no tag — the stage head has already said to try it, and a tag on every question says it four more times. Not a panel — the key idea's rule-and-hairline in the attention colour — because the book has two panels and this is neither a worked instance nor a reflection |
+| `.c-problem` | rust | one worked problem's question, in stage 2: a rule above in the action colour, a *Problem N* tag, the question and its options. The rule is what separates one problem from the next, so nothing closes it at the foot |
+| `.c-solution` | rust | the answer to the `.c-problem` above it, and the other half of the same item: the word *Solution*, the reasoning in prose, and the algebra stepped in `.work`, closed by a hairline. Not a panel and not the action colour's tint — the question and the answer share one open field, or they read as two components for the two halves of one problem. Both blocks are whole: a page ends on a finished item |
 | `.work--trace` | none | a modifier on `.work`: rows whose label sits on the first line rather than centred beside a block that runs to three. Used on the answer page, where each row is one question's *why the other options are wrong* |
 | `.tier` | gold | one question's difficulty (`Think` · `Apply` · `Challenge`), set as a tag so it cannot be misread as the first words of the question |
 | `.c-terms` | gold | what the test is made of — how many questions of each kind. **Never marks and never a time:** a book used in six classrooms cannot know either, and printing them would make the test look like an examination it is not. Three short spans, or it wraps; the four-stage design says the same thing in the stage head's own line instead |
@@ -538,7 +557,7 @@ a component, or a modifier on one — rather than reaching for an inline style.
 That is the whole point: the book stays one designed object instead of twenty
 pages that each looked reasonable on their own.
 
-## 8. Running a panel over a page break
+## 9. Running a panel over a page break
 
 A page must not ship a third empty because the next block will not fit
 whole. **Text divides; pictures do not.**
