@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   LearnLab B5 Maths — cover builder
+   LearnLab Maths — cover builder
 
      node build/cover.mjs class-9/maths-part1
      node build/cover.mjs class-9/maths-part1 --pdf --png

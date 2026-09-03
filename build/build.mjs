@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   LearnLab B5 Maths — chapter builder
+   LearnLab Maths — chapter builder
 
      node build/build.mjs class-9/ch01-number-systems
      node build/build.mjs class-9/ch01-number-systems --pdf
@@ -182,7 +182,8 @@ async function lintClasses(root, pageFiles) {
    lays the figure out with — and from the edition's sheet when
    there is one, exactly as the cascade would have it. Repeating
    them here is what once set every label in the A4 book 6% small:
-   the table held the B5 numbers. --fig-full resolves through
+   the table held the numbers of the original trim. --fig-full
+   resolves through
    --measure, so it is followed rather than parsed. */
 async function figWidths(root, edition) {
   const token = await tokenReader(root, edition);

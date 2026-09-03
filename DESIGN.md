@@ -479,10 +479,10 @@ goes in the marker, in rust, never in the question text.
 `--bleed` emits a second PDF beside the reading one. Every page carries two
 wrappers that are the page itself at trim size and change nothing there:
 
-| | | Crown Quarto | A4 | B5 |
-|---|---|---|---|---|
-| `.page` | the sheet the press prints | 209 × 266 mm | 230 × 317 mm | 196 × 270 mm |
-| `.page__trim` | the book as the reader sees it | 189 × 246 mm | 210 × 297 mm | 176 × 250 mm |
+| | | Crown Quarto | A4 |
+|---|---|---|---|
+| `.page` | the sheet the press prints | 209 × 266 mm | 230 × 317 mm |
+| `.page__trim` | the book as the reader sees it | 189 × 246 mm | 210 × 297 mm |
 
 Everything is still positioned against the trim box, so no component knows
 which sheet it is on. The chapter numeral and both footer bars deliberately run
@@ -512,14 +512,14 @@ cover belongs to the series, not to a chapter, so the palette sheets do not
 reach it; the jacket ink is its own short list, and `.jacket--night` is a second
 finish of the same layout rather than a second layout.
 
-| | | Crown Quarto | A4 | B5 |
-|---|---|---|---|---|
-| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 189 mm | 210 mm | 176 mm |
-| `.jacket__spine` | bulk, not taste — see below | `--spine-w` | `--spine-w` | `--spine-w` |
-| `.jacket__front` | title and artwork | 189 mm | 210 mm | 176 mm |
-| **wrap, trim** | back + spine + front | **393 × 246** | **435 × 297** | **367 × 250** |
-| **wrap, plus bleed** | 15mm on all four cut edges | **423 × 276** | **465 × 327** | **397 × 280** |
-| **wrap, press sheet** | plus a 7mm slug holding the marks | **437 × 290** | **479 × 341** | **411 × 294** |
+| | | Crown Quarto | A4 |
+|---|---|---|---|
+| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 189 mm | 210 mm |
+| `.jacket__spine` | bulk, not taste — see below | `--spine-w` | `--spine-w` |
+| `.jacket__front` | title and artwork | 189 mm | 210 mm |
+| **wrap, trim** | back + spine + front | **393 × 246** | **435 × 297** |
+| **wrap, plus bleed** | 15mm on all four cut edges | **423 × 276** | **465 × 327** |
+| **wrap, press sheet** | plus a 7mm slug holding the marks | **437 × 290** | **479 × 341** |
 
 The wrap widths above are at a 15mm spine; the spine is bulk, so they move
 with the page count. A Crown Quarto wrap is a little wider than SRA3 and

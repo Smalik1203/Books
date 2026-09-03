@@ -30,10 +30,10 @@
 
   /* The panel's own quiet edge, and the two widths the back panel is
      built on. All three are fractions of the trim rather than
-     millimetres: Crown Quarto is the standard here, A4 and B5 are
-     editions, and a margin typed in millimetres is a margin that only
+     millimetres: Crown Quarto is the standard here and A4 is an
+     edition, and a margin typed in millimetres is a margin that only
      suits one of them. 0.08 of the width gives 15.1mm on Crown
-     Quarto, 16.8mm on A4 and 14.1mm on B5. */
+     Quarto and 16.8mm on A4. */
   --jk-margin: calc(var(--trim-w) * 0.08);
   --jk-col:    calc(var(--trim-w) * 0.352);
   --jk-gap:      6mm;
@@ -699,7 +699,6 @@ body.bleed .jacket {
      measure at this size. */
   transform-origin: left center;
 }
-.jacket--b5 .front__title h1 { font-size: calc(var(--size-numeral) * 1.43); }
 
 .front__subtitle {
   font-family: var(--jk-display);

@@ -1,5 +1,5 @@
 /* Authoring-time coordinate helper. NOT part of the book pipeline —
-   nothing in chapters/ depends on it. Run it to compute path data for a
+   nothing under pages/ depends on it. Run it to compute path data for a
    figure, paste the numbers into the page file.
 
    SVG screen convention: y grows downward, so a mathematical angle t is

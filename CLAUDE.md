@@ -195,18 +195,20 @@ each chapter opens on a recto, and it re-scopes every palette from `:root`
 to `[data-ch="N"]`. Leave the palettes at `:root` and the last chapter
 recolours the whole book.
 
-## Three trims, one standard
+## Two trims, one standard
 
 `css/tokens.css` holds **Crown Quarto, 189 × 246 mm — the standard**.
-`css/edition-a4.css` and `css/edition-b5.css` override **only** the
-size-dependent tokens — trim, margins, measure, type scale, figure widths,
-spacing rhythm. Colour, components and hierarchy are shared.
+`css/edition-a4.css` overrides **only** the size-dependent tokens — trim,
+margins, measure, type scale, figure widths, spacing rhythm. Colour,
+components and hierarchy are shared.
 
 A chapter with no `edition` field is Crown Quarto. Never fix an edition's
 problem by editing `tokens.css` — that is the standard book.
 
-`chapter.json` declares `"edition": "a4"` or `"b5"`. The builder, the bleed
-sheet, the proofs and the studio all follow it.
+`chapter.json` declares `"edition": "a4"`. The builder, the bleed sheet, the
+proofs and the studio all follow it. There was a B5 edition and it is gone;
+an `edition` naming a sheet that does not exist falls through to the
+standard trim without a word, so check the name against `css/`.
 
 **Changing a trim re-breaks every page in the book,** because the page break
 *is* the source file. The pages under `pages/` are fitted to Crown Quarto;

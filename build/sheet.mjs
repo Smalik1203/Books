@@ -8,7 +8,8 @@
    This lived in build.mjs, and the three measuring tools beside it
    — check-labels, fit-options, gaps — each carried the trim as a
    pair of pixel literals instead (794 x 1123, the A4 sheet at
-   96dpi, with a B5 branch beside it). That was survivable while
+   96dpi, with a branch beside it for the original trim). That was
+   survivable while
    the standard trim never moved. It moved. A tool measuring a
    Crown Quarto chapter in an A4 window sees a wider column than
    the book has, finds no collision and no overflow, and reports

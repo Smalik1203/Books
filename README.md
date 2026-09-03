@@ -1,7 +1,7 @@
 # LearnLab Books
 
-Print-ready maths textbooks. **Crown Quarto trim, 189 × 246 mm**, with A4 and
-B5 editions alongside. One folder per class.
+Print-ready maths textbooks. **Crown Quarto trim, 189 × 246 mm**, with an A4
+edition alongside. One folder per class.
 
 **Read [DESIGN.md](DESIGN.md) before writing a page.** Every page is assembled
 from a locked component library; the builder reports a design violation for any
@@ -77,9 +77,9 @@ A chapter is Crown Quarto unless its `chapter.json` names an edition:
 { "class": "9", "number": "4", "title": "…", "edition": "a4" }
 ```
 
-Every chapter in the book is Crown Quarto today. `css/edition-a4.css` and
-`css/edition-b5.css` are kept and still work — name the edition and the
-builder, the bleed sheet, the proofs and the studio all follow it.
+Every chapter in the book is Crown Quarto today. `css/edition-a4.css` is kept
+and still works — name the edition and the builder, the bleed sheet, the
+proofs and the studio all follow it.
 
 The page breaks differ between editions — a bigger page holds more, so each
 is fitted separately, and the sources here are fitted to Crown Quarto.
@@ -228,13 +228,13 @@ says so, which is what stops the fill check reporting it as unfinished:
 
 ## Grid and binding
 
-| | Crown Quarto — the standard | A4 — an edition | B5 — an edition |
-|---|---|---|---|
-| trim | 189 × 246 mm | 210 × 297 mm | 176 × 250 mm |
-| margins | top 22, bottom 17, **inside 28**, outside 21 mm | top 26, bottom 20, **inside 30.5**, outside 25.5 mm | top 23, bottom 17, **inside 23**, outside 19 mm |
-| measure | 140 mm, a single column | 154 mm, a single column | 134 mm, a single column |
-| body type | Spectral, 10 pt / 1.42, **weight 500**, justified | Spectral, 11.5 pt / 1.43, **weight 500**, justified | Spectral, 10 pt / 1.42, **weight 500**, justified |
-| text block | 140 × 207 mm | 154 × 251 mm | 134 × 210 mm |
+| | Crown Quarto — the standard | A4 — an edition |
+|---|---|---|
+| trim | 189 × 246 mm | 210 × 297 mm |
+| margins | top 22, bottom 17, **inside 28**, outside 21 mm | top 26, bottom 20, **inside 30.5**, outside 25.5 mm |
+| measure | 140 mm, a single column | 154 mm, a single column |
+| body type | Spectral, 10 pt / 1.42, **weight 500**, justified | Spectral, 11.5 pt / 1.43, **weight 500**, justified |
+| text block | 140 × 207 mm | 154 × 251 mm |
 
 **The book is bound, so the margins are mirrored, not symmetric.** The inside
 margin is the text inset plus a `--gutter-allowance` (5 mm), because a reader

@@ -1,11 +1,16 @@
 /* ============================================================
    PAGE SHELL
-   Fixed B5 boxes. One full-measure column. The running head and
-   the foot are furniture: the builder adds them to every page so
-   no page file repeats them and none can drift.
-   ============================================================ */
+   Fixed page boxes at the trim the tokens set. One full-measure
+   column. The running head and the foot are furniture: the builder
+   adds them to every page so no page file repeats them and none
+   can drift.
 
-@page { size: 176mm 250mm; margin: 0; }
+   No @page here. The sheet is the edition's business, so build.mjs
+   emits it per chapter from build/sheet.mjs, which reads the
+   tokens. A size written here would be a second source of truth,
+   and it was: this file carried a 176 x 250 literal from the
+   original trim long after the standard moved to Crown Quarto.
+   ============================================================ */
 
 body {
   /* Vollkorn defaults to oldstyle figures, which turn "4.1" into

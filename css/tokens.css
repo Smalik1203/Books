@@ -3,8 +3,8 @@
    The single source of truth. Nothing downstream may introduce a
    colour, a size, a weight or a stroke that is not defined here.
 
-   Trim: Crown Quarto, 189 × 246 mm — the standard. A4 and B5 are
-   editions — see css/edition-a4.css and css/edition-b5.css.
+   Trim: Crown Quarto, 189 × 246 mm — the standard. A4 is an
+   edition — see css/edition-a4.css.
    ============================================================ */
 
 :root {
@@ -91,8 +91,8 @@
   /* Crown Quarto. A trade trim rather than a stationery one: A4 is the
      size of the paper a school printer happens to hold, and a 210mm-wide
      textbook is a wide, heavy, awkward thing to hold open. 189 x 246 is
-     what a printed textbook is, and it is the standard here. A4 and B5
-     survive as edition sheets for anyone who needs them. */
+     what a printed textbook is, and it is the standard here. A4
+     survives as an edition sheet for anyone who needs it. */
   --trim-w: 189mm;
   --trim-h: 246mm;
 
