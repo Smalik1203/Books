@@ -2,6 +2,22 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>A transversal cuts two lines so that a pair of co-interior angles measure
+          $(3x + 10)^\circ$ and $(2x + 40)^\circ$. For what value of $x$ are the two lines
+          parallel?</p>
+          <p>The lines are parallel exactly when co-interior angles are supplementary. So
+          set the sum to $180^\circ$ and see what $x$ must be.</p>
+          <div class="eq">$(3x + 10) + (2x + 40) = 180$</div>
+          <div class="eq">$5x + 50 = 180$, so $x = 26$</div>
+          <p>Then the angles are $88^\circ$ and $92^\circ$, which do add to $180^\circ$.
+          For any other value of $x$ the lines meet somewhere — and the algebra even tells
+          you on which side, though we shall not chase that here.</p>
+        </div>
+      </div>
+
       <h2><span class="badge">6.7</span><span class="name">Parallel to the Same Line</span></h2>
 
       <p>Here is a fact that feels too obvious to need proving, which is usually a sign
@@ -17,54 +33,6 @@
       <p>Once again the whole argument is "two things equal to a third are equal to each
       other", dressed in geometry. A surprising amount of this chapter is that sentence
       wearing different clothes.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>In Fig. 6.7, $AB \parallel CD$. A point $E$ lies between the two lines, and
-          $\angle BAE = 44^\circ$, $\angle ECD = 31^\circ$. Find $\angle AEC$.</p>
-          <div class="c-figure c-figure--md">
-            <figure>
-              <svg viewBox="0 0 214 118" data-size="md" xmlns="http://www.w3.org/2000/svg"
-                   role="img" aria-label="Point E between two parallel lines, with a construction line through E parallel to both">
-                <path class="dg-line" d="M20 26 H194"/>
-                <path class="dg-line" d="M20 100 H194"/>
-                <path class="dg-ghost" d="M20 64 H194"/>
-                <path class="dg-line" d="M46 26 L104 64"/>
-                <path class="dg-line" d="M104 64 L156 100"/>
-                <circle class="dg-fill-teal" cx="104" cy="64" r="2.6"/>
-                <text class="dg-label" x="104" y="58">E</text>
-                <text class="dg-label" x="40" y="21">A</text>
-                <text class="dg-label" x="197" y="24">B</text>
-                <text class="dg-label" x="150" y="112">C</text>
-                <text class="dg-label" x="197" y="98">D</text>
-                <text class="dg-note" x="197" y="62">k</text>
-              </svg>
-              <figcaption><span class="fignum">Fig. 6.7</span> The dashed line $k$ is not
-              given. We put it there.</figcaption>
-            </figure>
-          </div>
-          <p>As it stands there is nothing to work with: $\angle AEC$ is not part of any
-          transversal figure. So make one. Through $E$ draw the line $k$ parallel to $AB$
-          — and therefore, by Section 6.7, parallel to $CD$ as well.</p>
-          <p>Now $AE$ is a transversal of $AB$ and $k$, and $CE$ is a transversal of $CD$
-          and $k$. The single line $k$ has turned one hard figure into two easy ones.</p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">1</span>
-              <span>$\angle AEk = 44^\circ$</span>
-              <span class="chip">alternate interior, $AB \parallel k$</span></div>
-            <div class="work__row"><span class="work__label">2</span>
-              <span>$\angle kEC = 31^\circ$</span>
-              <span class="chip">alternate interior, $CD \parallel k$</span></div>
-            <div class="work__row"><span class="work__label">3</span>
-              <span>$\angle AEC = 44^\circ + 31^\circ = 75^\circ$</span>
-              <span class="chip">the ray $Ek$ lies inside</span></div>
-          </div>
-          <p>Adding a line that was not given is called a <span class="term">construction</span>,
-          and it is the single most useful move in geometry. Nothing forced us to draw
-          $k$; we drew it because it made the transversal facts apply.</p>
-        </div>
-      </div>
 
     </div>
   </div>

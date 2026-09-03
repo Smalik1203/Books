@@ -2,66 +2,45 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Read that formula and both theorems fall out of it at once. In a given circle
-      $r$ is fixed, so the length of a chord depends on $d$ and on nothing else
-      whatever. Equal distances therefore force equal lengths, and equal lengths force
-      equal distances. Theorems 6 and 7 are the two directions of a single statement.</p>
+      <h2><span class="badge">5.7</span><span class="name">How Far a Chord Lies from the Centre</span></h2>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-      <p>A chord lies $8$ cm from the centre of a circle of radius $17$ cm.
-          How long is it?</p>
-      <p>This is the relation just proved, used in the direction it was built for. Put
-          $r = 17$ and $d = 8$ into it and there is nothing left to decide.</p>
-      <div class="work work--centred">
-            <p>$\text{chord} = 2\sqrt{r^{2}-d^{2}} = 2\sqrt{17^{2}-8^{2}}$</p>
-            <p>$= 2\sqrt{289-64} = 2\sqrt{225} = 2 \times 15 = 30$</p>
-          </div>
-      <p>The chord is $30$ cm long. Compare it with the diameter, $34$ cm: it
-          is shorter, as every chord must be, and it would have reached $34$ cm only if
-          $d$ had been $0$.</p>
-        </div>
-      </div>
+      <p>The distance from a point to a line means the perpendicular distance — the
+      shortest way across. So the distance from the centre to a chord is measured along the
+      perpendicular from the centre, and Theorem 5 has already told us where that
+      perpendicular lands: on the midpoint of the chord.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
-        <div class="c-example__body">
-          <p>Two parallel chords of a circle of radius $10$ cm are $16$ cm and
-          $12$ cm long. How far apart are they?</p>
-          <p>Take each chord's distance from the centre first. The combining comes second,
-          and it is where the care is needed, because the question as asked has two
-          answers.</p>
-          <div class="work">
-            <div class="work__row"><span class="work__label work__label--wide">the 16 cm chord</span>
-              <span>$d_1 = \sqrt{10^{2}-8^{2}} = \sqrt{36}$</span>
-              <span class="chip">$6$ cm</span></div>
-            <div class="work__row"><span class="work__label work__label--wide">the 12 cm chord</span>
-              <span>$d_2 = \sqrt{10^{2}-6^{2}} = \sqrt{64}$</span>
-              <span class="chip">$8$ cm</span></div>
-          </div>
-          <p>Nothing in the question says which side of the centre each chord is on, and the
-          two arrangements do not agree:</p>
-          <div class="work">
-            <div class="work__row"><span class="work__label work__label--wide">opposite sides</span>
-              <span>$6 + 8$</span>
-              <span class="chip">$14$ cm</span></div>
-            <div class="work__row"><span class="work__label work__label--wide">the same side</span>
-              <span>$8 - 6$</span>
-              <span class="chip">$2$ cm</span></div>
-          </div>
-          <p>Both are right. A question like this is not finished until you say which
-          case you are in — or give both.</p>
-        </div>
-      </div>
+      <p>Take a paper circle and fold a piece of the boundary inwards; the crease is a
+      chord. Fold again so that the two ends of that crease meet, and open both folds. The
+      second crease crosses the first at its midpoint, square on. Theorems 4 and 5, in
+      paper.</p>
 
-      <p>It settles the comparison of unequal chords too, which no amount of congruence was
-      going to give us.</p>
+      <p>Now make a second chord of the same length somewhere else on the circle, and
+      measure how far it lies from the centre. The two distances come out equal. Try
+      another pair and they come out equal again.</p>
+
+      <p>Is that convincing? It is the same trap as Jamuna's folded disc on the first page
+      of this chapter. A statement can hold in every case you have patience to try and
+      still be false; and even when it is true, a stack of measurements never says
+      <em>why</em>. So here is why.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 8</div>
-        <p>Of two chords of a circle that are not equal, the longer lies nearer the
+        <div class="c-keyidea__title">Theorem 6</div>
+        <p>Chords of a circle that have the same length lie at the same distance from the
         centre.</p>
+      </div>
+
+      <p>Let $AB$ and $FG$ be chords of a circle with centre $C$ and radius
+      $r$, with $AB = FG$. Let $E$ and $H$ be their midpoints, so that
+      by Theorem 4 the segments $CE$ and $CH$ are perpendicular to the chords —
+      and are therefore the two distances we are comparing.</p>
+
+      <div class="work work--list">
+        <p>$AE = \tfrac{1}{2}AB = \tfrac{1}{2}FG = FH$, since $E$ and $H$
+        are the midpoints.</p>
+        <p>$CA = CF = r$, and these are the hypotenuses.</p>
+        <p>$\angle CEA = \angle CHF = 90^\circ$.</p>
+        <p>So $\triangle CEA \cong \triangle CHF$, by <span class="pop">RHS</span>,
+        and therefore $CE = CH$.</p>
       </div>
 
     </div>

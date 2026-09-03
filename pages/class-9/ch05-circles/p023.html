@@ -2,72 +2,57 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Angles in the same segment</div>
-        <p>All the points of a circle lying outside a given arc see that arc's chord under
-        the same angle.</p>
-      </div>
+      <h2><span class="badge">5.8</span><span class="name">Angles Subtended by an Arc</span></h2>
+
+      <p>Everything so far has been about chords. But a chord comes with arcs attached —
+      two of them — and an arc subtends angles of its own.</p>
+
+      <p>An <span class="term">arc</span> is a connected piece of a circle, fixed by its two
+      end points. Two points $A$ and $B$ cut a circle into two arcs, and unless
+      $AB$ is a diameter one is shorter than the other: the shorter is the
+      <span class="term">minor arc</span>, the longer the <span class="term">major
+      arc</span>. Naming a third point says which you mean — in Fig. 5.10, arc $AXB$
+      is the minor one and arc $AYB$ the major.</p>
 
       <div class="c-figure c-figure--lg">
         <figure>
-          <svg viewBox="22 16 156 162" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Three points on the major arc, each seeing the chord under the same angle">
-            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-c-soft" d="M135 39.38 L119.68 52.24 A20 20 0 0 0 141.84 58.17 Z"/>
-            <path class="dg-fill-c-soft" d="M100 30 L88.53 46.38 A20 20 0 0 0 111.47 46.38 Z"/>
-            <path class="dg-fill-c-soft" d="M55 46.38 L49.82 65.70 A20 20 0 0 0 71.38 57.85 Z"/>
+          <svg viewBox="22 17 156 167" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A circle cut by a chord into a minor arc and a major arc">
+            <path class="dg-fill-b-soft" d="M34.22 123.94 A70 70 0 1 1 165.78 123.94 Z"/>
+            <path class="dg-fill-c-soft" d="M34.22 123.94 A70 70 0 0 0 165.78 123.94 Z"/>
             <circle class="dg-line" cx="100" cy="100" r="70"/>
-            <path class="dg-line" d="M34.22 123.94 L165.78 123.94"/>
-            <path class="dg-thin" d="M135 39.38 L34.22 123.94"/>
-            <path class="dg-thin" d="M135 39.38 L165.78 123.94"/>
-            <path class="dg-thin" d="M100 30 L34.22 123.94"/>
-            <path class="dg-thin" d="M100 30 L165.78 123.94"/>
-            <path class="dg-thin" d="M55 46.38 L34.22 123.94"/>
-            <path class="dg-thin" d="M55 46.38 L165.78 123.94"/>
-            <circle class="dg-fill-c" cx="135" cy="39.38" r="2.4"/>
-            <circle class="dg-fill-c" cx="100" cy="30" r="2.4"/>
-            <circle class="dg-fill-c" cx="55" cy="46.38" r="2.4"/>
+            <path class="dg-thin" d="M34.22 123.94 L165.78 123.94"/>
+            <path class="dg-thin" d="M100 100 L34.22 123.94"/>
+            <path class="dg-thin" d="M100 100 L165.78 123.94"/>
+            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
+            <circle class="dg-fill-c" cx="34.22" cy="123.94" r="2.4"/>
+            <circle class="dg-fill-c" cx="165.78" cy="123.94" r="2.4"/>
       
             <text class="dg-label" x="28"  y="133" text-anchor="end">A</text>
             <text class="dg-label" x="172" y="133">B</text>
-            <text class="dg-label" x="141" y="35">P</text>
-            <text class="dg-label" x="100" y="25"  text-anchor="middle">Q</text>
-            <text class="dg-label" x="49"  y="42"  text-anchor="end">R</text>
+            <text class="dg-label" x="100" y="179" text-anchor="middle">X</text>
+            <text class="dg-label" x="100" y="26"  text-anchor="middle">Y</text>
+            <text class="dg-label" x="104" y="96">O</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 5.12</span> $\angle APB$,
-          $\angle AQB$ and $\angle ARB$ are equal — and so is the angle at every
-          other point of the major arc.</figcaption>
+          <figcaption><span class="fignum">Fig. 5.10</span> The chord $AB$ cuts the
+          circle into the minor arc $AXB$ and the major arc $AYB$.</figcaption>
         </figure>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-      <p>An arc $AXB$ subtends $110^\circ$ at the centre of a circle. What
-          angle does it subtend at a point of the major arc? And what angle does the
-          <em>other</em> arc subtend at a point of the minor arc?</p>
-      <p>The first is Theorem 9 read straight off. The second asks about a different
-          arc, so the angle to halve is the one that arc sweeps at the centre — the reflex
-          one.</p>
-      <div class="work">
-            <div class="work__row"><span class="work__label work__label--wide">arc AXB</span>
-              <span>$110^\circ$ at the centre, halved</span>
-              <span class="chip">$55^\circ$</span></div>
-            <div class="work__row"><span class="work__label work__label--wide">the other arc</span>
-              <span>$360^\circ - 110^\circ = 250^\circ$, halved</span>
-              <span class="chip">$125^\circ$</span></div>
-          </div>
-      <p>A point on the major arc sees the chord at $55^\circ$; a point on the
-          minor arc sees it at $125^\circ$. Notice that the two add to
-          $180^\circ$. That is not a coincidence of these numbers — the two central
-          angles always make a full turn, so their halves always make a straight angle.
-          Section 5.9 turns the observation into a theorem.</p>
-        </div>
-      </div>
+      <p>The angle an arc subtends at the centre is the angle swept out as you travel along
+      it: start with the radius at $A$, move round to $B$ the way the arc goes,
+      and measure how far the radius has turned. For the minor arc that is the ordinary
+      angle $\angle AOB$. For the major arc you sweep the other way and get the reflex
+      angle instead. The two together make a complete turn.</p>
 
-      <p>One case of Theorem 9 is used so often that it has a name of its own. A
-      <span class="term">corollary</span> is a fact that drops out of a result already
-      proved, with no fresh argument needed.</p>
+      <p>Now a question that is not about the centre at all. Take the arc $AXB$, and a
+      point $D$ lying on the circle but <em>not</em> on that arc. Join $D$ to
+      $A$ and to $B$. How big is $\angle ADB$?</p>
+
+      <p>You would expect the answer to depend on where $D$ sits. It does not. Slide
+      $D$ anywhere along the rest of the circle and the angle under which it sees
+      $AB$ does not move at all. Check it before reading on — draw a circle, fix a
+      chord, and measure the angle at three or four points of the far arc.</p>
 
     </div>
   </div>

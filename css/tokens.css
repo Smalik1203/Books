@@ -3,7 +3,8 @@
    The single source of truth. Nothing downstream may introduce a
    colour, a size, a weight or a stroke that is not defined here.
 
-   Trim: A4, 210 × 297 mm. B5 is an edition — see css/edition-b5.css.
+   Trim: Crown Quarto, 189 × 246 mm — the standard. A4 and B5 are
+   editions — see css/edition-a4.css and css/edition-b5.css.
    ============================================================ */
 
 :root {
@@ -54,28 +55,28 @@
   --font-display: Vollkorn, Spectral, Georgia, serif;
 
   /* One scale. Sizes are named by role, not by number. */
-  --size-caption: 9pt;   /* figure captions, hints, folio */
-  --size-note: 10.5pt;   /* panel text, legends, exercises */
-  --size-body: 11.5pt;   /* running text */
-  --size-concept: 13.5pt;   /* concept heading (level 3) */
-  --size-section: 16.5pt;     /* section heading (level 2) */
-  --size-chapter: 27pt;     /* chapter title (level 1) */
-  --size-numeral: 44pt;     /* chapter numeral */
-  --size-ornament: 30pt;    /* the one watermark glyph */
+  --size-caption: 8.5pt;    /* figure captions, hints, folio */
+  --size-note:    9pt;      /* panel text, legends, exercises */
+  --size-body:   10pt;      /* running text */
+  --size-concept: 12pt;     /* concept heading (level 3) */
+  --size-section: 14.5pt;   /* section heading (level 2) */
+  --size-chapter: 23pt;     /* chapter title (level 1) */
+  --size-numeral: 38pt;     /* chapter numeral */
+  --size-ornament: 26pt;    /* the one watermark glyph */
 
   /* Diagram type is specified in printed millimetres, not in SVG
      user units: a viewBox unit means a different physical size in
      every figure. The builder stamps --dg-v (viewBox width) and
      --dg-w (printed width, mm) on each figure so the two below can
      be converted. Fallbacks keep an unstamped figure sane. */
-  --dg-type:     3;         /* label height, mm  (~8.5pt) */
-  --dg-type-sm:  2.65;      /* small label, mm   (~7.5pt) */
+  --dg-type:     2.75;      /* label height, mm  (~7.8pt) */
+  --dg-type-sm:  2.45;      /* small label, mm   (~7pt)   */
   --dg-v:      290;
   --dg-w:       58;
 
   --lh-tight:  1.14;
   --lh-snug:   1.30;
-  --lh-body: 1.43;
+  --lh-body: 1.42;
   --lh-panel:  1.40;
 
   --weight-text: 500;   /* KaTeX has one weight; text must match it */
@@ -87,35 +88,58 @@
   /* ==========================================================
      3. PAGE GEOMETRY
      ========================================================== */
-  --trim-w: 210mm;
-  --trim-h: 297mm;
+  /* Crown Quarto. A trade trim rather than a stationery one: A4 is the
+     size of the paper a school printer happens to hold, and a 210mm-wide
+     textbook is a wide, heavy, awkward thing to hold open. 189 x 246 is
+     what a printed textbook is, and it is the standard here. A4 and B5
+     survive as edition sheets for anyone who needs them. */
+  --trim-w: 189mm;
+  --trim-h: 246mm;
 
-  --margin-top: 26mm;
-  --margin-bottom: 20mm;
+  --margin-top: 22mm;
+  --margin-bottom: 17mm;
   --gutter-allowance: 5mm;                              /* binding */
   /* The book is bound, so these are mirrored, not symmetric: the inside
      margin is the text inset plus the allowance, and the outside margin
-     is the inset alone. Set outside to the full 28mm and the allowance
-     cancels out — inside and outside come to the same number, the text
-     block sits dead centre, and after binding eats its few millimetres
-     the inner margin reads as the narrower of the two. The B5 edition
-     always had this right; A4 did not.
-     30.5 + 154 + 25.5 = 210, so the measure is untouched and no page
-     reflows — only the block's position on the sheet changes. */
-  --margin-inside: calc(25.5mm + var(--gutter-allowance));
-  --margin-outside: 25.5mm;
-  --measure: 154mm;
+     is the inset alone. Set outside to the full inside figure and the
+     allowance cancels out — inside and outside come to the same number,
+     the text block sits dead centre, and after binding eats its few
+     millimetres the inner margin reads as the narrower of the two.
+     28 + 140 + 21 = 189. */
+  --margin-inside: calc(23mm + var(--gutter-allowance));
+  --margin-outside: 21mm;
+  /* 140mm at 10.5pt sets about 76 characters to the line — the same
+     count the 154mm/11.5pt A4 block set, which is why the type came
+     down a step with the trim rather than staying where it was. */
+  --measure: 140mm;
 
   /* Printed width of a figure — five steps, so figures across the
      book relate to each other rather than to their own artwork.
      --fig-full is the measure itself, and is for the one drawing
      that genuinely needs it: a ruled coordinate grid, where the
-     tick numerals collide long before the figure looks large. */
-  --fig-sm: 51mm;
-  --fig-md: 62mm;
-  --fig-lg: 72mm;
-  --fig-xl: 87mm;
-  --fig-full: var(--measure);
+     tick numerals collide long before the figure looks large.
+
+     These are set against the HEIGHT of the text block, not its
+     width. A figure's height is its artwork's business — the width
+     is all a stylesheet controls — so what decides whether a figure
+     packs is the fraction of the page it eats vertically. Crown
+     Quarto is a squarer trim than A4: scale these with the measure
+     and every figure grows by a tenth as a share of the page, which
+     is enough to stop headings seating under themselves and turn
+     six short pages in a chapter into sixteen. Measured that way,
+     and then measured again. */
+  --fig-sm: 42mm;
+  --fig-md: 51mm;
+  --fig-lg: 59mm;
+  --fig-xl: 71mm;
+  /* --fig-full was var(--measure): the widest a figure can be set is
+     as wide as the text. That was right on A4, where a full-measure
+     grid came to half the text block; on a squarer trim the same rule
+     gives a figure 55% of the page tall, and seven of them in one
+     chapter is what turns a well-packed chapter into a run of
+     half-empty pages. So it is a step like the others, set against
+     the block's height, and it is still comfortably the largest. */
+  --fig-full: 126mm;
   --bleed: 3mm;
   /* A cover is not a page and its bleed is not a page's. An interior
      sheet is cut and that is the end of it, so 3mm is plenty; a wrap is
@@ -133,11 +157,11 @@
      4. RHYTHM — one spacing scale. Components use these names,
      never raw millimetres.
      ========================================================== */
-  --space-hair: 1.5mm;
-  --space-tight: 2.7mm;
-  --space-step: 4.6mm;   /* between a component and its neighbour */
-  --space-rest: 6.6mm;     /* the visual pause before a new idea */
-  --space-break: 9.9mm;     /* before a section heading */
+  --space-hair:  1.4mm;
+  --space-tight: 2.5mm;
+  --space-step:  4.2mm;   /* between a component and its neighbour */
+  --space-rest:  6mm;     /* the visual pause before a new idea */
+  --space-break: 9mm;     /* before a section heading */
 
   /* ==========================================================
      5. STROKE AND SHAPE — one vocabulary, shared by panels and

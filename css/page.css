@@ -47,6 +47,15 @@ body {
   right: var(--margin-inside);
 }
 .page__main { min-width: 0; }
+/* The top edge of the text block is set by --margin-top, and nothing
+   that happens to fall first on a page may push itself below it: two
+   pages of a spread have to start their text at the same height. Only
+   h2 said this for itself. So a page opening with an exercise band sat
+   6mm lower than the page facing it — and the packer, which budgets no
+   margin above a page's first block, was right about h2 and up to 6mm
+   wrong about every other component, which is where the overruns of a
+   millimetre or two into the bottom margin were coming from. */
+.page__main > :first-child { margin-top: 0; }
 
 /* The shared arrowhead lives in a hidden sprite at the top of the
    document; it must not occupy layout. */

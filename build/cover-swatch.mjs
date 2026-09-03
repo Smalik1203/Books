@@ -21,6 +21,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { sheetMetrics } from './sheet.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -74,7 +75,7 @@ const ways = WAYS.map(([name, bg, ink, soft, mark]) => `
 
 const cells = WAYS.map(([name]) => `
 <figure class="cell">
-  <div class="frame"><div class="jacket jacket--a4 jacket--${direction} sw--${name}">${front}</div></div>
+  <div class="frame"><div class="jacket jacket--standard jacket--${direction} sw--${name}">${front}</div></div>
   <figcaption>${name}</figcaption>
 </figure>`).join('');
 
@@ -110,9 +111,13 @@ await mkdir(p('build', 'covers'), { recursive: true });
 const html = p('build', 'covers', `_swatch-${direction}.html`);
 await writeFile(html, page);
 
+// The sheet is as big as the trim makes it. Typing the trim here is
+// how a swatch sheet ends up cropping its own last column the day the
+// standard trim changes.
+const { trimW, trimH } = await sheetMetrics();
 const MM = 96 / 25.4;
-const w = Math.ceil((210 * SCALE + 8) * COLS * MM) + 80;
-const h = Math.ceil((297 * SCALE + 18) * Math.ceil(WAYS.length / COLS) * MM) + 80;
+const w = Math.ceil((trimW * SCALE + 8) * COLS * MM) + 80;
+const h = Math.ceil((trimH * SCALE + 18) * Math.ceil(WAYS.length / COLS) * MM) + 80;
 const png = p('build', 'covers', `_swatch-${direction}.png`);
 
 await run(CHROME, [

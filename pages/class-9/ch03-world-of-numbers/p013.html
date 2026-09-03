@@ -2,100 +2,107 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        By the Baudhāyana–Pythagoras theorem the diagonal $d$ satisfies
-        $1^2 + 1^2 = d^2$, so $d^2 = 2$ and $d = \sqrt{2}$. The length is
-        perfectly definite — you can draw it with a ruler, and it is shorter
-        than $1.5$ and longer than $1.4$. The question is whether any ratio of
-        whole numbers names it.
-      </p>
-
-      <p>
-        It does not, and the argument that shows so is one of the oldest and
-        cleanest in mathematics. It is credited to Hippasus of the Pythagorean
-        school, around 400 BCE, and it works by
-        <span class="term">contradiction</span>: assume the opposite of what
-        you want, and follow it until it collapses.
-      </p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Irrational number</div>
-        <p>
-          A number on the number line that cannot be written as a ratio of two
-          integers is called an <span class="term">irrational number</span>.
-        </p>
-      </div>
-
-      <h3>Why $\sqrt{2}$ is irrational</h3>
-
-      <p>
-        Suppose it were rational. Then it could be written as a fraction in
-        lowest terms — and everything that follows is squeezed out of those
-        two words, <em>lowest terms</em>.
-      </p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">Step 1</span>
-          <span>Assume $\sqrt{2} = \dfrac{p}{q}$, with $p$, $q$ integers,
-          $q \neq 0$, and $p$, $q$ co-prime.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 2</span>
-          <span>Square both sides: $2 = \dfrac{p^2}{q^2}$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 3</span>
-          <span>Multiply by $q^2$: $\;2q^2 = p^2$.</span>
-        </div>
-      </div>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">Step 4</span>
-          <span>$p^2$ is twice an integer, so $p^2$ is even; and if a square is
-          even the number itself must be. So $p$ is even — write $p = 2k$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 5</span>
-          <span>Substitute: $2q^2 = (2k)^2 = 4k^2$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 6</span>
-          <span>Divide by 2: $\;q^2 = 2k^2$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 7</span>
-          <span>By the same reasoning as Step 4, $q^2$ is even, so $q$ is
-          even.</span>
-        </div>
-      </div>
-
-      <p>
-        And there is the collapse. Step 4 makes $p$ even, Step 7 makes $q$
-        even — so both are divisible by 2, and share a common factor. But Step
-        1 said they share none. Both cannot be true.
-      </p>
-
-      <p>
-        Every step from 2 to 7 is forced; none of them can be the mistake. So
-        the mistake is the only thing not forced — the assumption itself.
-        $\sqrt{2}$ is not a ratio of integers.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
           <p>
-            Notice what the proof never does: it never computes a single
-            decimal place of $\sqrt{2}$. No amount of computing could have
-            settled the question anyway.
+            Find three rational numbers lying strictly between
+            $-\dfrac{1}{2}$ and $\dfrac{1}{4}$.
+          </p>
+          <p>
+            Averaging would give them one at a time. It is quicker to put both
+            over one denominator and read off the numerators in between — but
+            the first attempt shows why the denominator has to be chosen with
+            care.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">common denominator</span>
+              <span>$-\dfrac{1}{2} = -\dfrac{2}{4}$ and $\dfrac{1}{4}$</span>
+              <span class="chip">only $0$ between</span>
+            </div>
+          </div>
+          <p>
+            Between the numerators $-2$ and $1$ there is just one whole number
+            to spare, and we need three. So widen the denominator — multiply
+            top and bottom of both by 4, which changes neither number:
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">widened</span>
+              <span>$-\dfrac{8}{16}$ and $\dfrac{4}{16}$</span>
+              <span class="chip">$11$ numerators between</span>
+            </div>
+          </div>
+          <p>Now take any three of them, say $-7$, $-4$ and $1$:</p>
+          <div class="work work--centred">
+            <p>$-\dfrac{7}{16}, \qquad -\dfrac{4}{16} = -\dfrac{1}{4},
+               \qquad \dfrac{1}{16}$</p>
+          </div>
+          <p>
+            Check the ends rather than trusting the method: $-0.5 < -0.4375 <
+            -0.25 < 0.0625 < 0.25$. All three are strictly inside. The lesson
+            generalises — to fit $n$ numbers between two rationals, widen the
+            denominator until at least $n$ whole numbers separate the
+            numerators.
           </p>
         </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.4</div>
+        <ol class="c-questions">
+          <li>
+              Represent $\dfrac{2}{3}$, $-\dfrac{5}{4}$ and $\dfrac{11}{2}$ on a
+              single number line. Say for each how many parts you cut the unit
+              into, and why.
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>
+              Find three distinct rational numbers lying strictly between
+              $\dfrac{1}{3}$ and $\dfrac{1}{2}$.
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>
+              Simplify $-\dfrac{1}{4} + \dfrac{5}{12}$.
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>
+              A tailor has $15\dfrac{3}{4}$ metres of silk. One kurta takes
+              $2\dfrac{1}{4}$ metres. Exactly how many kurtas can he cut, and how
+              much silk is left over?
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>
+              Find three rational numbers between $3.1415$ and $3.1416$.
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li class="hard">
+              Example 5 found numbers between two rationals by widening the
+              denominator. Averaging is another way. Can you find a third? Say
+              what each method gives you that the others do not.
+            </li>
+        </ol>
       </div>
 
     </div>

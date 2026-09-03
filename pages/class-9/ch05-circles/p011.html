@@ -2,67 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Draw $\triangle ABC$ with $AB = 6$ cm, $BC = 7$ cm and
-            $CA = 7$ cm, and let $O$ be its circumcentre. Measure $OA$,
-            $OB$ and $OC$. What must you find, and why?</li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+      <p>Is there a circle through $P(1,2)$, $Q(3,6)$ and $R(5,10)$?</p>
+      <p>Theorem 1 promises one for any three points that are not collinear, so the real
+          question is whether these three are in a row. Compare the step from $P$ to
+          $Q$ with the step from $Q$ to $R$.</p>
+      <div class="work">
+            <div class="work__row"><span class="work__label">P to Q</span>
+              <span>across $2$, up $4$</span>
+              <span class="chip">$2$ up per $1$ across</span></div>
+            <div class="work__row"><span class="work__label">Q to R</span>
+              <span>across $2$, up $4$</span>
+              <span class="chip">$2$ up per $1$ across</span></div>
+          </div>
+      <p>The two steps rise at the same rate and share the point $Q$, so all three
+          points lie on one straight line. There is no circle through them — and the reason
+          is the one given above: the perpendicular bisectors of $PQ$ and $QR$ are
+          parallel, so they never meet to give a centre.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>What is the least possible radius of a circle passing through two points
-            $8$ cm apart?</li>
-        </ol>
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 12 285 152" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Circumcentre outside an obtuse triangle, and at the hypotenuse midpoint of a right triangle">
+            <circle class="dg-fill-d" cx="67.26" cy="82.22" r="57.69"/>
+            <path class="dg-fill-b-soft" d="M117 53 L22 118 L82 138 Z"/>
+            <circle class="dg-fill-d" cx="213.3" cy="83.3" r="58.34"/>
+            <path class="dg-fill-b-soft" d="M172.3 41.8 L172.3 124.8 L254.3 124.8 Z"/>
+            <circle class="dg-line" cx="67.26" cy="82.22" r="57.69"/>
+            <path class="dg-line" d="M117 53 L22 118 L82 138 Z"/>
+            <circle class="dg-fill-teal" cx="67.26" cy="82.22" r="2.8"/>
+            <text class="dg-label" x="63" y="79" text-anchor="end">O</text>
+            <text class="dg-note" x="67" y="160" text-anchor="middle">obtuse-angled</text>
+      
+            <circle class="dg-line" cx="213.3" cy="83.3" r="58.34"/>
+            <path class="dg-line" d="M172.3 41.8 L172.3 124.8 L254.3 124.8 Z"/>
+            <path class="dg-thin" d="M172.3 113.8 L183.3 113.8 L183.3 124.8"/>
+            <circle class="dg-fill-teal" cx="213.3" cy="83.3" r="2.8"/>
+            <text class="dg-label" x="217" y="80">O</text>
+            <text class="dg-note" x="213" y="160" text-anchor="middle">right-angled</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.5</span> Where the circumcentre lands.
+          Outside an obtuse-angled triangle; on the midpoint of the hypotenuse of a
+          right-angled one.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Can a straight line cut a circle in three distinct points? Give a reason.</li>
-        </ol>
-      </div>
+      <p>For an acute-angled triangle the circumcentre lies inside — Fig. 5.4 is one such.
+      For an obtuse-angled triangle it lies outside the triangle altogether. And for a
+      right-angled triangle it lands exactly on the midpoint of the hypotenuse, which is
+      another way of saying that the hypotenuse is a diameter of the circumcircle.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li class="hard">The circumcircle of a triangle $ABC$ is drawn. Can a
-            different triangle, congruent to $ABC$, have the same circumcircle? How
-            many such triangles are there?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">5.5</span><span class="name">Chords and the Angles They Subtend</span></h2>
-
-      <p>Tie a thread between two points of a wheel and pull it tight. What you have is a
-      chord. Join its two ends to the centre, and the thread subtends an angle there — the
-      angle named in Section 5.2.</p>
-
-      <p>Now turn the wheel. The thread goes round with it and comes to rest across a
-      different pair of points; but it is the same thread, so its length has not changed.
-      Has the angle at the centre changed with it?</p>
-
-      <p>Section 5.3 all but answers this. Turning the circle about its centre carries the
-      circle onto itself and carries the thread along without stretching it, so nothing in
-      the picture is different except which part of the rim the ends are tied to. The angle
-      cannot have moved.</p>
-
-      <p>That is a good reason to believe what follows. It is not yet a proof of it, because the argument assumed the second chord was the first one turned — and a chord
-      of the same length lying somewhere else on the circle has not been shown to be that. Congruent triangles settle the matter without the assumption.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 2</div>
-        <p>Equal chords of a circle subtend equal angles at the centre.</p>
-      </div>
-
-      <p>Let the chords be $AB$ and $DE$, with $AB = DE$, in a circle of
-      centre $C$ and radius $r$. We want $\angle ACB = \angle DCE$. Join all
-      four ends to the centre, as in Fig. 5.6, and compare the two triangles that
-      appear.</p>
-
-      <div class="work work--list">
-        <p>$CA = CB = r$ and $CD = CE = r$, so $CA = CD$ and $CB = CE$.</p>
-        <p>$AB = DE$ is given.</p>
-        <p>So $\triangle CAB \cong \triangle CDE$, by <span class="pop">SSS</span>.</p>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 12 L18.4 8"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>That last case is not a coincidence, and it is not proved here. Section 5.8
+          will hand it to you in a line.</p>
+        </div>
       </div>
 
     </div>

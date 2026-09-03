@@ -2,6 +2,44 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h3>Back to the pattern</h3>
+
+      <p>
+        Return now to the first page of this chapter. Three consecutive squares,
+        add the outer two, subtract twice the middle — always 2. Arithmetic can
+        confirm that forever without saying why; algebra says it in one line.
+      </p>
+
+      <p>
+        The move that unlocks it is choosing how to name the numbers. Three
+        consecutive whole numbers are not $n$, $n + 1$, $n + 2$; they are more
+        usefully written with the middle one at the centre:
+      </p>
+
+      <div class="eq">
+        $$n - 1, \qquad n, \qquad n + 1$$
+      </div>
+
+      <p>
+        Now the outer two squares are $(n - 1)^2$ and $(n + 1)^2$ — one needing
+        each identity. Add them:
+      </p>
+
+      <div class="work">
+        <p>$(n - 1)^2 + (n + 1)^2 = \left(n^2 - 2n + 1\right) + \left(n^2 + 2n + 1\right)$</p>
+        <p>$= 2n^2 + 2$</p>
+      </div>
+
+      <p>
+        Watch what happened to the middle terms: $-2n$ from the first bracket
+        and $+2n$ from the second cancel exactly. That cancellation is the whole
+        secret of the pattern. Now subtract twice the middle square, $2n^2$:
+      </p>
+
+      <div class="eq">
+        $$\left(2n^2 + 2\right) - 2n^2 = 2$$
+      </div>
+
       <p>
         The $n$ has vanished. Whatever number you started from — 4, or 40, or
         four million — the answer is 2, because nothing in the working depended
@@ -30,62 +68,6 @@
         $(a + b)^2$ lets you square a number by splitting it into a round part
         and a small one, $(a - b)^2$ does the same job for a number sitting just
         <em>below</em> a round one — which is often the easier split of the two.
-      </p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.2</div>
-        <ol class="c-questions">
-          <li>
-                                Factorise completely.
-                                <ol class="c-parts c-parts--starred">
-                                  <li>$9x^2 + 24xy + 16y^2$</li>
-                                  <li>$4s^2 + 20st + 25t^2$</li>
-                                  <li>$49x^2 + 28xy + 4y^2$</li>
-                                  <li>$64p^2 + \frac{32}{3}pq + \frac{4}{9}q^2$</li>
-                                  <li class="hard">$3a^2 + 4ab + \frac{4}{3}b^2$</li>
-                                  <li class="hard">$\frac{9}{5}s^2 + 6sv + 5v^2$</li>
-                                </ol>
-                                <p class="hint">
-                                  In Example 7 a common factor of 2 came out first. Can you do
-                                  something similar in the two starred parts?
-                                </p>
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-                                Using the identity $(a - b)^2 = a^2 - 2ab + b^2$, find the value of
-                                each of the following.
-                                <ol class="c-parts c-parts--3">
-                                  <li>$79^2$</li>
-                                  <li>$193^2$</li>
-                                  <li>$299^2$</li>
-                                </ol>
-                              </li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">4.4</span><span class="name">More Identities</span></h2>
-
-      <p>
-        Both identities so far squared a sum of <em>two</em> terms. What if there are
-        three? You could multiply $(a + b + c)(a + b + c)$ out, but there is less work
-        in it than that.
-      </p>
-
-      <p>
-        Group the last two terms and call them one quantity, $d = b + c$. Then
-        $a + b + c$ is just $a + d$, which you can already square:
-      </p>
-
-      <div class="work">
-        <p>$(a + d)^2 = a^2 + 2ad + d^2$</p>
-      </div>
-
-      <p>
-        Now put $b + c$ back in place of $d$, and expand what appears:
       </p>
 
     </div>

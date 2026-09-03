@@ -3,6 +3,65 @@
     <div class="page__main">
 
       <p>
+        Identities can also be read straight off a picture, without a word of
+        algebra. The two rows of squares in Fig. 4.6 are one such statement.
+        The four squares in the top row have sides $a + b + c$, $a + b - c$,
+        $a - b + c$ and $a - b - c$; the three in the bottom row have sides
+        $2a$, $2b$ and $2c$.
+      </p>
+
+      <figure class="c-figure c-figure--lg">
+        <svg viewBox="0 0 356 356" role="img"
+             aria-label="Two rows of squares. The top row has four squares with sides a plus b plus c, a plus b minus c, a minus b plus c, and a minus b minus c. The bottom row has three squares with sides two a, two b and two c.">
+      
+          <!-- top row: sides 11, 7, 5, 1 (a = 6, b = 3, c = 2), bottoms aligned -->
+          <rect class="dg-line dg-fill-a" x="10"  y="24"  width="132" height="132"/>
+          <rect class="dg-line dg-fill-b" x="152" y="72"  width="84"  height="84" />
+          <rect class="dg-line dg-fill-c" x="246" y="96"  width="60"  height="60" />
+          <rect class="dg-line dg-fill-teal" x="316" y="144" width="12"  height="12" />
+      
+          <text class="dg-label" x="76"  y="18">a + b + c</text>
+          <text class="dg-label" x="194" y="66"  text-anchor="middle">a + b − c</text>
+          <text class="dg-label" x="276" y="90"  text-anchor="middle">a − b + c</text>
+          <text class="dg-label" x="322" y="176" text-anchor="middle">a − b − c</text>
+      
+          <!-- bottom row: sides 12, 6, 4 -->
+          <rect class="dg-line dg-fill-a" x="10"  y="196" width="144" height="144"/>
+          <rect class="dg-line dg-fill-b" x="164" y="268" width="72"  height="72" />
+          <rect class="dg-line dg-fill-c" x="246" y="292" width="48"  height="48" />
+      
+          <text class="dg-label" x="82"  y="190" text-anchor="middle">2a</text>
+          <text class="dg-label" x="200" y="262" text-anchor="middle">2b</text>
+          <text class="dg-label" x="270" y="286" text-anchor="middle">2c</text>
+      
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.6</span> &nbsp;Two rows of squares, drawn
+          to scale. Together they state an identity.
+        </figcaption>
+      </figure>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              What identity does Fig. 4.6 state? The squares are drawn to scale,
+              so compare the two rows by <em>area</em>, not by counting shapes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
         The same statement can be built out of tiles. Three shapes are needed: a
         square of side $x$, a rectangle $x$ by 1, and a unit square. Then
         $x + 3$ is one <span class="nb">$x$-tile</span> beside three unit tiles, and $x + 4$ is one
@@ -78,65 +137,6 @@
           </div>
         </div>
       </div>
-
-      <p>
-        The layout is doing something specific: the $7x$ has been split as
-        $3x + 4x$. Three <span class="nb">$x$-tiles</span> stand to the right of the
-        <span class="nb">$x^2$-tile</span> and four
-        lie below it, and that is exactly what forces the twelve unit tiles into
-        a 3 by 4 block. Once the whole thing closes up into a rectangle, its
-        sides can be read off — $x + 3$ across and $x + 4$ down.
-      </p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 18h6"/><path d="M10 21h4"/>
-            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
-            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>
-              Suppose the $7x$ were split as $2x + 5x$ instead. Can the tiles
-              still be closed up into a rectangle? Try the other splittings too,
-              and see which ones work.
-            </p>
-            <p class="c-reflect__hint">
-              There are only three ways to split 7 into two positive whole
-              numbers: 1 and 6, 2 and 5, 3 and 4. Try each. How many close up,
-              and what does that tell you?
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        That one picture holds two statements at once, depending on which way
-        you read it. Multiplying and factorising are not two skills but one,
-        run in opposite directions.
-      </p>
-
-      <div class="c-summary">
-        <div class="c-summary__title">What Fig. 4.7 shows</div>
-        <ol>
-          <li>Read as a <strong>product</strong>: the two linear expressions
-            $x + 3$ and $x + 4$ multiply to give
-            $(x + 3)(x + 4) = x^2 + 7x + 12$.</li>
-          <li>Read as a <strong>factorisation</strong>: the expression
-            $x^2 + 7x + 12$ breaks into the linear factors $x + 3$ and $x + 4$,
-            giving $x^2 + 7x + 12 = (x + 3)(x + 4)$.</li>
-        </ol>
-      </div>
-
-      <p>
-        These are the same identity, met from the two directions this chapter
-        keeps returning to. Multiplying out is the easy direction: you always
-        can. Factorising is the
-      </p>
 
     </div>
   </div>

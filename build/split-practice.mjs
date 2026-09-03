@@ -40,6 +40,11 @@ function topLevel(html, from, tagName) {
   return { items: out, end: html.length };
 }
 
+/* components.css spells out one counter-reset rule per data-start,
+   because there is no arithmetic in CSS. Split past the last one and
+   the questions silently renumber from 1. */
+const COUNTER_MAX = 18;
+
 let total = 0;
 for (const f of (await readdir(dir)).filter((x) => /^p\d+.*\.html$/.test(x))) {
   const p = path.join(dir, f);
@@ -119,6 +124,45 @@ for (const f of (await readdir(dir)).filter((x) => /^p\d+.*\.html$/.test(x))) {
   }
 
   html = html.replace(/c-practice-done/g, 'c-practice');
+
+  /* A set does not have to arrive in a .c-practice wrapper. Some pages
+     carry a bare <ol class="c-questions"> as a direct child of
+     page__main — no band, because the band was two pages back — and the
+     loop above never saw those: it looks for the wrapper. One of them
+     was 35 items long and stood as a single 230mm atom, which fitted
+     an A4 text block with 20mm to spare and clipped the moment the
+     standard trim came down. Same split, same shape out: one <ol> per
+     question, numbering carried on data-start, no wrapper introduced
+     so nothing about the page changes but where it may break. */
+  const mainAt = html.indexOf('<div class="page__main">');
+  if (mainAt >= 0) {
+    const from = html.indexOf('>', mainAt) + 1;
+    const bare = topLevel(html, from, 'ol').items
+      .filter(([s]) => /^<ol class="[^"]*c-questions/.test(html.slice(s, s + 60)));
+    for (const [s, e] of bare.reverse()) {
+      const ol = html.slice(s, e);
+      const tagEnd = ol.indexOf('>') + 1;
+      const cls = ol.slice(0, tagEnd).match(/class="([^"]*)"/)[1];
+      const startNo = Number(ol.slice(0, tagEnd).match(/data-start="(\d+)"/)?.[1] || 1);
+      const { items } = topLevel(ol, tagEnd, 'li');
+      if (items.length < 2) continue;
+      const indent = (html.slice(0, s).match(/\n([ \t]*)$/) || [, '      '])[1];
+      const parts = items.map(([a, b], n) => {
+        const open = startNo + n === 1
+          ? `<ol class="${cls}">`
+          : `<ol class="${cls}" data-start="${startNo + n}">`;
+        return open + '\n' + indent + '  ' + ol.slice(a, b).trim() + '\n' + indent + '</ol>';
+      });
+      html = html.slice(0, s) + parts.join('\n\n' + indent) + html.slice(e);
+      changed = true;
+      total += items.length - 1;
+      if (startNo + items.length - 1 > COUNTER_MAX) {
+        console.warn(`  ! ${f}: numbering reaches ${startNo + items.length - 1};`
+          + ` components.css defines data-start only to ${COUNTER_MAX}`);
+      }
+    }
+  }
+
   if (changed) await writeFile(p, html);
 }
 console.log(`  split into ${total} extra question blocks`);

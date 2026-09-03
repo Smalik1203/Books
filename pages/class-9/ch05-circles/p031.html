@@ -1,38 +1,53 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The results, in one place</div>
-        <ol>
-          <li>There is exactly one circle through three non-collinear points.</li>
-          <li>Equal chords subtend equal angles at the centre.</li>
-          <li>Chords subtending equal angles at the centre are equal.</li>
-          <li>The centre joined to the midpoint of a chord is perpendicular to it.</li>
-          <li>The perpendicular from the centre to a chord bisects it.</li>
-          <li>Chords of equal length are equidistant from the centre.</li>
-          <li>Chords equidistant from the centre are of equal length.</li>
-          <li>Of two unequal chords, the longer lies nearer the centre.</li>
-          <li>An arc subtends at the centre twice the angle it subtends at a point of the
-          circle outside the arc.</li>
-          <li>If a segment subtends equal angles at two points on the same side of it, the
-          four points are concyclic.</li>
-          <li>Opposite angles of a cyclic quadrilateral add to $180^\circ$.</li>
-          <li>If opposite angles of a quadrilateral add to $180^\circ$, it is
-          cyclic.</li>
-        </ol>
-      </div>
+      <p>The proof runs like Theorem 10's — by showing the fourth vertex has nowhere else
+      to go. Suppose $\angle BAD + \angle BCD = 180^\circ$. Since $A$, $B$,
+      $D$ are not collinear there is a circle through them; suppose $C$ lay
+      outside it, and let $E$ be where $DC$ meets the circle. Then $ABED$ is
+      cyclic, so Theorem 11 gives $\angle BAD + \angle BED = 180^\circ$. Comparing
+      with what we were given, $\angle BED = \angle BCD$. But $\angle BED$ is an
+      exterior angle of $\triangle BEC$ and so exceeds $\angle BCE$, which is
+      $\angle BCD$. Once again a quantity is greater than itself. The case with
+      $C$ inside is the same argument with the roles exchanged, and is worth writing
+      out.</p>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6"/><path d="M12 12 L18.4 8"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Next year the circle gives up more: tangents, the lengths cut off when two
-          chords cross, and circles that touch one another. All of it comes from the same
-          one sentence.</p>
+      <h3>Closing an old debt</h3>
+
+      <p>Twice now this chapter has promised that the circumcentre of a right-angled
+      triangle sits at the midpoint of the hypotenuse. Theorem 10 pays up.</p>
+
+      <p>Let $\triangle ABD$ have its right angle at $D$, and let $M$ be the
+      midpoint of the hypotenuse $AB$. Draw the circle with centre $M$ and radius
+      $MA$, so that $AB$ is a diameter of it, and mark any point $D'$ of
+      that circle on the same side of $AB$ as $D$. By the corollary in Section
+      5.8, $\angle AD'B = 90^\circ$ — which is also $\angle ADB$. Two points,
+      equal angles, same side: by Theorem 10 the four points $A$, $B$, $D'$
+      and $D$ are concyclic, so $D$ is on that circle too. Its centre $M$ is
+      therefore equidistant from $A$, $B$ and $D$ — which is exactly what it
+      means to be the circumcentre.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>A quadrilateral has angles $85^\circ$, $100^\circ$, $95^\circ$
+          and $80^\circ$, taken in order round the shape. Can a circle be drawn through
+          all four vertices?</p>
+          <p>Theorem 12 is the test, and it is a test on opposite pairs — so the angles have
+          to be paired first and second with third and fourth, not as they are listed.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label work__label--wide">first and third</span>
+              <span>$85^\circ + 95^\circ$</span>
+              <span class="chip">$180^\circ$</span></div>
+            <div class="work__row"><span class="work__label work__label--wide">second and fourth</span>
+              <span>$100^\circ + 80^\circ$</span>
+              <span class="chip">$180^\circ$</span></div>
+          </div>
+          <p>Both pairs come to $180^\circ$, so by Theorem 12 the four vertices are
+          concyclic and the circle can be drawn. In fact only one pair ever needs checking:
+          all four angles total $360^\circ$, so if one opposite pair makes
+          $180^\circ$ the other pair has no choice but to do the same.</p>
         </div>
       </div>
 

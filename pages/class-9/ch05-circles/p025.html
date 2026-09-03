@@ -2,52 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Let $A$ and $B$ be points of a circle.
-              <ol class="c-parts c-parts--1">
-                <li>Are there points $X$ and $Y$ on the same side of $AB$ with
-                $\angle AXB$ different from $\angle AYB$?</li>
-                <li>If $\angle AXB = \angle AYB$, must $X$ and $Y$ be on the
-                same side of $AB$?</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>Nothing else changes. The same two isosceles triangles appear, and the same exterior-angle step applies to each; only now the angles at $C$ must be subtracted rather than added, and so must the angles at $D$. That gives $\angle ACB = \angle ACE - \angle BCE = 2\,\angle ADC - 2\,\angle BDC = 2\,\angle
+      ADB$,
+      and the theorem stands in that case too. It is worth drawing.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li class="hard">A chord of a circle is exactly as long as the radius. What angle
-            does it subtend at the centre, and what angle at a point of the major arc?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">5.9</span><span class="name">Points on One Circle</span></h2>
-
-      <p>Section 5.4 counted the circles through two points — infinitely many — and through
-      three, where there is exactly one so long as they are not in a row. Four points are a
-      different matter altogether. Any three of them already fix a circle, so the fourth
-      has no freedom left: either it happens to land on that circle or it does not. Points
-      that all lie on one circle are called <span class="term">concyclic</span>.</p>
-
-      <p>So when does the fourth point land? Theorem 9 supplies the clue. If $A$, $B$, $C$ and $D$ are concyclic, with $C$ and $D$ on the same side of $AB$, then $C$ and $D$ are on the
-      same arc, and angles in the same segment are equal: $\angle ACB = \angle ADB$. That much is forced. The question is whether it works in reverse.</p>
+      <p>Theorem 9 is stated about the centre, but the useful part is what it says about everywhere else. The angle at the centre plainly does not depend on $D$ — the
+      centre does not know where $D$ is. So the angle at $D$, being exactly half of it, cannot depend on $D$ either.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 10</div>
-        <p>If a segment $AB$ subtends equal angles at two points $C$ and $D$
-        lying on the same side of it, then $A$, $B$, $C$ and $D$ are
-        concyclic.</p>
+        <div class="c-keyidea__title">Angles in the same segment</div>
+        <p>All the points of a circle lying outside a given arc see that arc's chord under
+        the same angle.</p>
       </div>
 
-      <p>The proof takes a shape not used anywhere else in this chapter: rather than
-      building the circle, we show that $D$ has nowhere else to be.</p>
-
-      <p>The points $A$, $B$, $C$ are not collinear — if they were,
-      $\angle ACB$ would be a straight angle or nothing at all — so by Theorem 1 there
-      is exactly one circle through them. Draw it. Now $D$ is either outside that
-      circle, or inside it, or on it. Rule out the first two and only the third is
-      left.</p>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="22 16 156 162" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three points on the major arc, each seeing the chord under the same angle">
+            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
+            <path class="dg-fill-c-soft" d="M135 39.38 L119.68 52.24 A20 20 0 0 0 141.84 58.17 Z"/>
+            <path class="dg-fill-c-soft" d="M100 30 L88.53 46.38 A20 20 0 0 0 111.47 46.38 Z"/>
+            <path class="dg-fill-c-soft" d="M55 46.38 L49.82 65.70 A20 20 0 0 0 71.38 57.85 Z"/>
+            <circle class="dg-line" cx="100" cy="100" r="70"/>
+            <path class="dg-line" d="M34.22 123.94 L165.78 123.94"/>
+            <path class="dg-thin" d="M135 39.38 L34.22 123.94"/>
+            <path class="dg-thin" d="M135 39.38 L165.78 123.94"/>
+            <path class="dg-thin" d="M100 30 L34.22 123.94"/>
+            <path class="dg-thin" d="M100 30 L165.78 123.94"/>
+            <path class="dg-thin" d="M55 46.38 L34.22 123.94"/>
+            <path class="dg-thin" d="M55 46.38 L165.78 123.94"/>
+            <circle class="dg-fill-c" cx="135" cy="39.38" r="2.4"/>
+            <circle class="dg-fill-c" cx="100" cy="30" r="2.4"/>
+            <circle class="dg-fill-c" cx="55" cy="46.38" r="2.4"/>
+      
+            <text class="dg-label" x="28"  y="133" text-anchor="end">A</text>
+            <text class="dg-label" x="172" y="133">B</text>
+            <text class="dg-label" x="141" y="35">P</text>
+            <text class="dg-label" x="100" y="25"  text-anchor="middle">Q</text>
+            <text class="dg-label" x="49"  y="42"  text-anchor="end">R</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.12</span> $\angle APB$,
+          $\angle AQB$ and $\angle ARB$ are equal — and so is the angle at every
+          other point of the major arc.</figcaption>
+        </figure>
+      </div>
 
     </div>
   </div>

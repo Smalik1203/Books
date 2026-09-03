@@ -100,7 +100,20 @@ window.addEventListener('load', function () {
       var main = pg.querySelector('.page__main');
       if (!body || !main) return;
       var blocks = [];
-      var kids = main.children;
+      /* A block's top margin has to be the one it will have wherever
+         this repack puts it, and page.css zeroes the margin of
+         whatever lands first on a page. Read it where it stands and
+         every block that happens to be first on its page reports 0 —
+         which is why a page could come back one to seven millimetres
+         into the bottom margin after a pack that thought it fitted.
+         A spacer at the head of the flow makes nothing :first-child,
+         so every margin below is the natural one. It has no height
+         and no margins of its own, so no measurement moves but the
+         one being corrected. */
+      var shim = document.createElement('div');
+      shim.style.cssText = 'height:0;margin:0;padding:0;border:0';
+      main.insertBefore(shim, main.firstChild);
+      var kids = Array.prototype.slice.call(main.children, 1);
       // What an opener is, and where its own head stops. A section
       // head is all head and its matter is the blocks after it; an
       // example carries its tab and its matter in one box, so the
@@ -152,6 +165,7 @@ window.addEventListener('load', function () {
           headH: o ? Math.max(0, o.head.getBoundingClientRect().bottom - r.top) : 0,
         });
       }
+      main.removeChild(shim);
       out.push({
         folio: pg.dataset.folio,
         avail: body.getBoundingClientRect().height,

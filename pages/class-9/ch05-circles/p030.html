@@ -2,62 +2,58 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="12">
-          <li class="hard">Two chords $AB$ and $AC$ of a circle have the same
-          length. Explain why the centre must lie on the bisector of $\angle BAC$.</li>
-        </ol>
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="20 24 156 152" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A quadrilateral with all four vertices on a circle">
+            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
+            <path class="dg-fill-b-soft" d="M34.22 76.06 L135 39.38 L153.62 145 L42.66 140.15 Z"/>
+            <circle class="dg-line" cx="100" cy="100" r="70"/>
+            <path class="dg-line" d="M34.22 76.06 L135 39.38 L153.62 145 L42.66 140.15 Z"/>
+            <path class="dg-thin" d="M100 100 L135 39.38"/>
+            <path class="dg-thin" d="M100 100 L42.66 140.15"/>
+            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
+            <text class="dg-label" x="28"  y="73"  text-anchor="end">A</text>
+            <text class="dg-label" x="139" y="35">B</text>
+            <text class="dg-label" x="159" y="150">C</text>
+            <text class="dg-label" x="37"  y="149" text-anchor="end">D</text>
+            <text class="dg-label" x="96"  y="112" text-anchor="end">O</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.14</span> A cyclic quadrilateral. The arcs
+          $BAD$ and $BCD$ together make the whole circle.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="13">
-          <li class="hard">Let $A$ be a point inside a circle with centre $O$. Show
-          that the shortest chord through $A$ is the one perpendicular to $OA$.</li>
-        </ol>
+      <p>The same holds for the other pair, $\angle ABC$ and $\angle ADC$, by the
+      identical argument on the arcs through $D$ and through $B$. And the
+      converse is true as well.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>A cyclic quadrilateral $ABCD$ has $\angle A = 95^\circ$ and
+          $\angle B = 70^\circ$. Find its other two angles.</p>
+          <p>Theorem 11 pairs each angle with the one <em>opposite</em> it, never with a
+          neighbour. So $A$ goes with $C$, and $B$ with $D$.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">A with C</span>
+              <span>$\angle C = 180^\circ - 95^\circ$</span>
+              <span class="chip">$85^\circ$</span></div>
+            <div class="work__row"><span class="work__label">B with D</span>
+              <span>$\angle D = 180^\circ - 70^\circ$</span>
+              <span class="chip">$110^\circ$</span></div>
+          </div>
+          <p>Check the total: $95 + 70 + 85 + 110 = 360$, which the angles of any
+          quadrilateral must come to. That check is worth doing every time, because it
+          catches the commonest slip here — pairing angles that sit next to each other
+          instead of across from each other.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="14">
-          <li class="hard">A regular hexagon is inscribed in a circle of radius $r$.
-          Find the length of a side, and the distance of each side from the centre.</li>
-        </ol>
-      </div>
-
-      <p class="hint">The starred questions are harder. Most can be settled by picking the
-      right theorem rather than by calculating — and deciding which one is part of the
-      work.</p>
-
-      <p>One chapter, twelve theorems, and a single sentence underneath all of them: a
-      circle is the set of points at a fixed distance from a fixed point. Nothing else was
-      ever assumed. Every symmetry, every chord, every angle in this chapter was squeezed
-      out of that one sentence — which is what a good definition is for.</p>
-
-      <div class="c-summary">
-        <div class="c-summary__title">What this chapter established</div>
-        <ol>
-          <li>A circle is the locus of points of a plane lying at a fixed distance, the
-          radius, from a fixed point, the centre.</li>
-          <li>A circle has complete rotational symmetry about its centre, and reflection
-          symmetry in every diameter — and in no other line.</li>
-          <li>Infinitely many circles pass through two given points, with their centres
-          strung along the perpendicular bisector of the segment joining them. Through three
-          points that are not collinear there passes exactly one.</li>
-          <li>The segment from the centre to the midpoint of a chord is perpendicular to
-          it, and the perpendicular from the centre bisects it. Of the three facts — from
-          the centre, through the midpoint, at a right angle — any two force the third.</li>
-          <li>Equal chords subtend equal angles at the centre and lie at equal distances
-          from it, and each of those statements holds in reverse. A chord at distance
-          $d$ has length $2\sqrt{r^{2}-d^{2}}$, which settles all of it at once,
-          including that the longer of two chords is the nearer.</li>
-          <li>An arc subtends at the centre twice the angle it subtends at any point of the
-          circle outside it. So every point of the far arc sees a chord under the same
-          angle, and a diameter is seen at a right angle from everywhere on the circle.</li>
-          <li>Four points are concyclic exactly when a segment joining two of them subtends
-          equal angles at the other two on the same side — equivalently, when opposite
-          angles of the quadrilateral they form add to $180^\circ$.</li>
-          <li>Measuring confirms; only an argument explains. More than once in this chapter
-          the measurements were right and still proved nothing at all.</li>
-        </ol>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 12</div>
+        <p>If two opposite angles of a quadrilateral add up to $180^\circ$, then its
+        four vertices are concyclic.</p>
       </div>
 
     </div>
