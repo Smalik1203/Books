@@ -180,6 +180,18 @@
   line-height: var(--lh-panel);
   color: var(--ink-soft);
 }
+/* The imprint has no page of its own: it rides at the foot of whatever
+   page ends the front matter, under a hairline, below that page's own
+   last line. Eight lines of small print do not earn a leaf. */
+.page--imprinted .page__main { display: flex; flex-direction: column; }
+.page--imprinted .preface { height: auto; }
+.imprint--tail {
+  height: auto;
+  margin-top: auto;
+  padding-top: var(--space-step);
+  border-top: var(--stroke-hair) solid var(--rule);
+  font-size: var(--size-caption);
+}
 .imprint p { margin: 0 0 var(--space-tight); }
 .imprint__name {
   font-family: var(--font-display);

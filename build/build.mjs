@@ -300,7 +300,12 @@ function stampPages(body, meta) {
       attrs = attrs.replace(declared[0], '');
     }
     const n = folio++;
-    const verso = n % 2 === 0;
+    /* Which side a folio prints on is its position in the book, not its
+       number. Sheet 1 is a recto, so sheet s is a recto when s is odd —
+       and the sheet holding folio n is the n-th after the front matter.
+       A chapter printed on its own has no front matter and the two are
+       the same thing, which is why this read as `n % 2` for so long. */
+    const verso = ((meta.front || 0) + n) % 2 === 0;
     const classes = `page${cls}${verso ? ' page--verso' : ''}`;
     const opener = cls.includes('page--opener');
 
@@ -744,29 +749,30 @@ function frontMatter(book, contents, preface, marks = "") {
         <div class="titlepage__foot">Every idea explained &middot; demonstrated &middot; practised</div>
       </div>`);
 
-  /* The verso facing the title page carries the imprint, where a
-     printed book carries it. It used to be dropped whenever a class
-     had written a preface — the preface took its page — and the ISBN,
-     the edition statement and the copyright then appeared nowhere in
-     the volume at all. They are not optional matter. */
-  const imprint = page('page--verso', `      <div class="imprint">
-        <p class="imprint__name">${escapeHtml(book.imprint || '')}</p>
-        ${book.url ? `<p>${escapeHtml(book.url)}</p>` : ''}
-        <p>${escapeHtml(book.title || '')}${book.part ? `, Part ${escapeHtml(book.part)}` : ''}
-           &mdash; Class ${escapeHtml(book.class || '')}.</p>
-        ${book.edition_statement ? `<p>${escapeHtml(book.edition_statement)}</p>` : ''}
-        ${book.isbn ? `<p>ISBN ${escapeHtml(book.isbn)}</p>` : ''}
-        ${book.copyright ? `<p>&copy; ${escapeHtml(String(book.year || ''))} ${escapeHtml(book.copyright)}. All rights reserved.</p>` : ''}
+  /* The imprint has no page of its own. A leaf spent on eight lines of
+     small print is a leaf, and these eight lines sit perfectly well at
+     the foot of the page that already ends the front matter — under a
+     hairline, below the preface's own signoff. What is not allowed is
+     to drop them: the ISBN, the edition statement and the copyright are
+     not optional matter in a printed book, and they were missing from
+     the volume entirely for as long as the imprint was only a fallback
+     for classes that had written no preface. */
+  const imprint = `      <div class="imprint imprint--tail">
+        <p><span class="imprint__name">${escapeHtml(book.imprint || '')}</span>${book.url ? ` &middot; ${escapeHtml(book.url)}` : ''}
+           &middot; ${escapeHtml(book.title || '')}${book.part ? `, Part ${escapeHtml(book.part)}` : ''}, Class ${escapeHtml(book.class || '')}.
+           ${book.edition_statement ? escapeHtml(book.edition_statement) : ''}
+           ${book.isbn ? `ISBN ${escapeHtml(book.isbn)}.` : ''}
+           ${book.copyright ? `&copy; ${escapeHtml(String(book.year || ''))} ${escapeHtml(book.copyright)}. All rights reserved.` : ''}</p>
         <p>Typeset in Spectral and Vollkorn. Printed on a ${book.edition === 'b5' ? '176 &times; 250' : '210 &times; 297'} mm page.</p>
-      </div>`);
+      </div>`;
 
   /* The preface is prose, so it is read rather than consulted, and it
-     sits last in the front matter — on the verso facing the opening of
-     Chapter 1, which is the page a reader is on when they start. Its
-     text lives in pages/<class>/preface.html: the builder places front
-     matter, it does not author it. */
+     ends the front matter — facing the opening of Chapter 1, which is
+     the page a reader is on when they start. Its text lives in
+     pages/<class>/preface.html: the builder places front matter, it
+     does not author it. The imprint rides at its foot. */
   const prefacePage = preface
-    ? page('page--verso', preface.trimEnd().split('\n').map((l) => '      ' + l).join('\n'))
+    ? page('page--imprinted', preface.trimEnd().split('\n').map((l) => '      ' + l).join('\n') + '\n' + imprint)
     : null;
 
   const rows = contents.map((c) => `          <li>
@@ -781,18 +787,23 @@ function frontMatter(book, contents, preface, marks = "") {
 ${rows}
       </ol>`);
 
-  const pages = [title, imprint, toc];
+  /* No padding leaf. The front matter used to be forced to an even
+     count so that folio 1 fell on a recto and the body's recto/verso
+     stamping came out right — but that is a rule about where a page
+     sits in the book, and the book can simply be asked. frontMatter
+     reports its length, the body stamps each folio from its real
+     position, and any count works. A blank leaf is only ever inserted
+     now to open a chapter on a recto, which --tight drops. */
+  const pages = [title, toc];
   if (prefacePage) pages.push(prefacePage);
-  /* The body must open on a recto, so the front matter is kept even.
-     This blank is NOT one of the blanks --tight drops: those buy a
-     chapter opening on a right-hand page and cost a leaf each, while
-     this one sets the parity of the whole book. Without it the front
-     matter is odd, folio 1 lands on the second side of a leaf, and
-     every page after it is styled for the side it is not on — inner
-     margin and gutter allowance at the fore-edge, folio and footer
-     slab against the spine. It shipped that way once. */
-  if (pages.length % 2) pages.push(page('page--verso page--blank', ''));
-  return pages;
+  /* Front matter carries no folio, so its pages have no number to take
+     a side from — only their place in the stack. The first leaf of a
+     book is a recto and they alternate from there. Hard-coding the
+     side on each page instead worked only while the front matter was
+     one fixed length. */
+  return pages.map((html, i) => i % 2
+    ? html.replace('<section class="page ', '<section class="page page--verso ')
+    : html);
 }
 
 /* ---- Build the whole class as one book ---------------------
@@ -860,18 +871,30 @@ async function buildBook(cls) {
   let folio = 1;
   let blanks = 0;
 
+  /* How many leaves precede folio 1 has to be known before the body is
+     stamped, because it decides which side every folio falls on. The
+     front matter itself is assembled further down — it needs the
+     contents, which the loop below collects — so its length is counted
+     here rather than measured there. */
+  const book = await bookMeta(cls);
+  const prefacePath = p('pages', cls, 'preface.html');
+  const preface = book && existsSync(prefacePath)
+    ? await readFile(prefacePath, 'utf8') : null;
+  const front = book ? 2 + (preface ? 1 : 0) : 0;
+
   for (const ch of chapters) {
     const src = path.join(root, ch.dir);
     const files = (await readdir(src)).filter((f) => /^p\d+.*\.html$/.test(f)).sort();
     if (!files.length) continue;
 
-    if (!wantTight && folio % 2 === 0) { bodies.push(blankVerso(folio, cropMarks(sheet))); folio++; blanks++; }
+    // a chapter opens on a recto when the sheet it starts on is odd
+    if (!wantTight && (front + folio) % 2 === 0) { bodies.push(blankVerso(folio, cropMarks(sheet))); folio++; blanks++; }
 
     const parts = [];
     for (const f of files) {
       parts.push(`<!-- ${ch.dir}/${f} -->\n` + (await readFile(path.join(src, f), 'utf8')).trim());
     }
-    const meta = { ...ch.meta, startFolio: folio };
+    const meta = { ...ch.meta, startFolio: folio, front };
     let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta), figMM);
     body = closePages(body, cropMarks(sheet));
     body = body.split('<section class="page').join(`<section data-ch="${ch.meta.number}" class="page`);
@@ -885,13 +908,12 @@ async function buildBook(cls) {
   // Title, imprint and contents go in front. They carry no folio, so
   // chapter 1 still opens on page 1 — but their count is kept even, or
   // the body would start on a verso.
-  const book = await bookMeta(cls);
-  let front = 0;
   if (book) {
-    const prefacePath = p('pages', cls, 'preface.html');
-    const preface = existsSync(prefacePath) ? await readFile(prefacePath, 'utf8') : null;
     const fm = frontMatter(book, contents, preface, cropMarks(sheet));
-    front = fm.length;
+    if (fm.length !== front) {
+      console.warn(`    ! front matter came to ${fm.length} pages but ${front} were counted`
+        + ` before the body was stamped — every folio is on the wrong side`);
+    }
     bodies.unshift(...fm);
   } else {
     console.warn(`    ! ${cls}: no cover.json found, so the book has no title page`);
@@ -933,7 +955,7 @@ async function buildBook(cls) {
   if (wrong.length) {
     console.warn(`    ! ${wrong.length} of ${sides.length} sheets are styled for the side they are not on`
       + ` — first at sheet ${wrong[0].sheet}, styled ${wrong[0].styled} on a ${wrong[0].physical}.`
-      + ` The front matter has to be an even number of pages.`);
+      + ` A page's side comes from its place in the book: sheet 1 is a recto.`);
   }
 
   console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} numbered pages`
