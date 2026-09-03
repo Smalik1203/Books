@@ -2,21 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <span class="c-try__tag">Try it first</span>
-        <p>Two parallel lines are cut by a transversal, and the bisectors of
-          a pair of co-interior angles are drawn. At what angle do they
-          meet?</p>
-      </div>
-
-      <p>
-        Call the two co-interior angles $2x$ and $2y$. Between parallels
-        they are supplementary, so $2x + 2y = 180^\circ$ and
-        $x + y = 90^\circ$. The two bisectors and the transversal enclose a
-        triangle, and its angles at the two parallel lines are $x$ and $y$.
-        Its third angle is therefore
-      </p>
-
       <div class="eq">
         $$180^\circ - (x + y) = 180^\circ - 90^\circ = 90^\circ$$
       </div>
@@ -31,7 +16,6 @@
       </p>
 
       <div class="c-try">
-        <span class="c-try__tag">Try it first</span>
         <p>A transversal cuts two lines so that the co-interior angles on
           one side add to $174^\circ$. Do the two lines meet? If they do, on
           which side of the transversal?</p>
@@ -58,11 +42,33 @@
       </p>
 
       <div class="c-try">
-        <span class="c-try__tag">Try it first</span>
         <p>This time the bisectors of the <em>exterior</em> angles at $B$
           and $C$ of triangle $ABC$ meet at $O$. Find $\angle BOC$, and
           compare it with the answer to the first question.</p>
       </div>
+
+      <p>
+        The exterior angle at $B$ is $180^\circ - \angle B$, so its half is
+        $90^\circ - \tfrac{1}{2}\angle B$, and the same at $C$. In triangle
+        $BOC$ those two halves add to
+        $180^\circ - \tfrac{1}{2}\left(\angle B + \angle C\right)$, which by
+        the angle sum is $180^\circ - \tfrac{1}{2}(180^\circ - \angle A)$,
+        or $90^\circ + \tfrac{1}{2}\angle A$. The third angle is what is
+        left:
+      </p>
+
+      <div class="eq">
+        $$\angle BOC = 180^\circ - \left(90^\circ + \tfrac{1}{2}\angle A\right)
+        = 90^\circ - \tfrac{1}{2}\angle A$$
+      </div>
+
+      <p>
+        The interior bisectors gave $90^\circ + \tfrac{1}{2}\angle A$ and
+        the exterior ones give $90^\circ - \tfrac{1}{2}\angle A$. The two
+        answers differ by $\angle A$, which is exactly what the two pairs of
+        halves differ by, and the whole difference between the two questions
+        came from replacing each angle by its supplement.
+      </p>
 
     </div>
   </div>

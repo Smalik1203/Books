@@ -2,78 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>$142857 \times 1 = 142857$</p>
-        <p>$142857 \times 2 = 285714$</p>
-        <p>$142857 \times 3 = 428571$</p>
-        <p>$142857 \times 4 = 571428$</p>
-        <p>$142857 \times 5 = 714285$</p>
-        <p>$142857 \times 6 = 857142$</p>
-      </div>
-
-      <p>
-        Every answer uses the same six digits in the same cyclic order — they
-        have only been rotated. A number that behaves this way is called a
-        <span class="term">cyclic number</span>, and $142857$ is the smallest
-        of them. Nothing was arranged here; it falls out of the long division
-        by 7, whose six possible remainders come round in a fixed order.
-      </p>
-
-      <h3>What an irrational decimal looks like</h3>
-
-      <p>
-        Irrational numbers have decimal expansions that never end and never
-        settle into a cycle. There is no repeating block, however far you look:
-      </p>
-
-      <div class="work work--list">
-        <p>$\sqrt{2} = 1.4142135623730950488\ldots$</p>
-        <p>$\pi = 3.1415926535897932384\ldots$</p>
-      </div>
-
-      <p>
-        This gives a clean test in both directions. Terminating or repeating
-        means rational; non-terminating and non-repeating means irrational.
-        And it explains the earlier proof from a second angle: if $\sqrt{2}$
-        were $\tfrac{p}{q}$, its expansion would have had to fall into a cycle
-        of at most $q - 1$ digits, and it never does.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>Write $2.35\overline{7}$ in the form $\dfrac{p}{q}$.</p>
           <p>
-            Beware of $1.01001000100001\ldots$ — the pattern is obvious, but no
-            fixed block repeats. A pattern you can describe is not the same as
-            a cycle.
+            The general case, with everything at once: a whole part, two
+            non-repeating digits and a one-digit cycle. The method of Example 12
+            handles it unchanged — count the two kinds of digit, and use one
+            multiplier for each.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 2.35777\ldots$; the block $35$ does not repeat
+              (2 digits), the $7$ does (1 digit).</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>Clear the 2 non-repeating digits with $10^2$:
+              $\;100x = 235.777\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Move 1 full cycle with a further $10^1$:
+              $\;1000x = 2357.777\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>Subtract: $\;900x = 2357.777\ldots - 235.777\ldots
+              = 2122$.</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 5</span>
+              <span>$x = \dfrac{2122}{900} = \dfrac{1061}{450}$, dividing both
+              by 2.</span>
+            </div>
+          </div>
+          <p>
+            Check: $1061 \div 450 = 2.35777\ldots$ And notice the denominator
+            that emerged — $900 = 9 \times 100$. The nine comes from the single
+            repeating digit, the hundred from the two that do not repeat. The
+            shape of the answer records the shape of the decimal.
           </p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.5</div>
-        <ol class="c-questions">
-          <li>
-              Without dividing, say which of $\dfrac{7}{20}$, $\dfrac{4}{15}$ and
-              $\dfrac{13}{250}$ have terminating decimals and which repeat. Then
-              do the divisions and check yourself.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              Work out $\dfrac{3}{13}$ by long division and identify the
-              repeating block. Now do $\dfrac{1}{13}$ and $\dfrac{2}{13}$. What
-              do the three blocks have to do with one another?
-            </li>
-        </ol>
-      </div>
+      <table>
+        <caption>Converting a repeating decimal to a fraction</caption>
+        <thead>
+          <tr><th>If the decimal is</th><th>Then</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>terminating</td>
+            <td>read it over $10$, $100$, … and cancel</td>
+          </tr>
+          <tr>
+            <td>purely repeating,<br>$n$ digits in the cycle</td>
+            <td>let $x$ be the number, multiply by $10^n$, subtract, solve</td>
+          </tr>
+          <tr>
+            <td>repeating after $m$ other digits,<br>$n$ digits in the cycle</td>
+            <td>multiply by $10^m$, then by a further $10^n$, subtract the
+            first from the second, solve</td>
+          </tr>
+        </tbody>
+      </table>
 
     </div>
   </div>
