@@ -9,7 +9,9 @@
     "build": "node build/build.mjs class-9 --pdf --png",
     "press": "node build/build.mjs class-9 --pdf --bleed",
     "cover": "node build/cover.mjs class-9 --png",
-    "cover:press": "node build/cover.mjs class-9 --pdf --bleed"
+    "cover:press": "node build/cover.mjs class-9 --pdf --bleed",
+    "check:library": "node build/check-library.mjs",
+    "studio:watch": "node --watch build/serve.mjs"
   },
   "dependencies": {
     "katex": "^0.16.11",

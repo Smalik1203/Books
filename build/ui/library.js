@@ -10,6 +10,13 @@
    class's covers, each tagged and hidden. All this does is decide
    which one is on show. Both choices are required — a class on its
    own is not a selection, it is half of one.
+
+   Everything is read off those sections, and nothing off a second
+   list kept beside them. An earlier version took the subjects from
+   a data attribute on the select, which meant a stale server could
+   serve markup without it and this script would enable an empty
+   dropdown and say nothing was wrong. What is on the page is now
+   the only source of what the dropdowns offer.
    ============================================================ */
 (() => {
   const pickClass = document.getElementById('pick-class');
@@ -24,36 +31,49 @@
      using anything else here would leave two mechanisms disagreeing. */
   const show = (el, on) => { if (el) el.hidden = !on; };
 
-  const SUBJECTS = JSON.parse(pickSubject.dataset.subjects || '[]');
+  /* The subjects a class actually has sections for, in the order the
+     server rendered them. Derived per class, so a class carrying only
+     Science offers only Science and nothing has to be kept in step. */
+  const subjectsOf = (cls) => sets
+    .filter((s) => s.dataset.class === cls && s.dataset.subject)
+    .map((s) => s.dataset.subject);
 
-  /* The subject list exists only once there is a class for it to belong
-     to. Rebuilt rather than merely enabled, so a reader never reads a
-     subject off a dropdown that cannot yet be acted on — and so the
-     choice cannot survive the class being cleared. */
-  function fillSubjects(hasClass) {
+  const option = (value, text) => {
+    const o = document.createElement('option');
+    o.value = value;
+    o.textContent = text;
+    return o;
+  };
+
+  /* Rebuilt rather than merely enabled, so a reader never reads a subject
+     off a dropdown that cannot yet be acted on — and so a choice cannot
+     survive the class it belonged to being cleared. */
+  function fillSubjects(cls) {
     const keep = pickSubject.value;
+    const list = cls ? subjectsOf(cls) : [];
     pickSubject.textContent = '';
-    const add = (value, text) => {
-      const o = document.createElement('option');
-      o.value = value;
-      o.textContent = text;
-      pickSubject.appendChild(o);
-    };
-    if (!hasClass) {
-      add('', 'Choose a class first');
+
+    if (!cls) {
+      pickSubject.appendChild(option('', 'Choose a class first'));
       pickSubject.disabled = true;
       return;
     }
-    add('', 'Choose a subject');
-    SUBJECTS.forEach((s) => add(s, s));
+    if (!list.length) {
+      // a class with no sections at all: say so rather than offer nothing
+      pickSubject.appendChild(option('', 'No subjects in this class'));
+      pickSubject.disabled = true;
+      return;
+    }
+    pickSubject.appendChild(option('', 'Choose a subject'));
+    list.forEach((s) => pickSubject.appendChild(option(s, s)));
     pickSubject.disabled = false;
-    if (SUBJECTS.includes(keep)) pickSubject.value = keep;
+    if (list.includes(keep)) pickSubject.value = keep;
   }
 
   function apply() {
     const cls = pickClass.value;
     const sub = pickSubject.value;
-    const chosen = cls && sub;
+    const chosen = Boolean(cls && sub);
 
     sets.forEach((s) => show(s, false));
     show(prompt, !chosen);
@@ -67,8 +87,7 @@
       /* The pair exists but holds nothing — Science, today. Say so, and
          leave the covers hidden: they belong to the book, and there is no
          book of this subject to belong to. */
-      empty.textContent = 'No '
-        + sub.toLowerCase()
+      empty.textContent = 'No ' + sub.toLowerCase()
         + ' chapters in Class ' + cls.replace(/^class-/, '') + ' yet.';
       show(empty, true);
       return;
@@ -82,11 +101,11 @@
      rebuilding it on its own change would replace the element the reader
      just used, under their cursor. */
   pickClass.addEventListener('change', () => {
-    fillSubjects(Boolean(pickClass.value));
+    fillSubjects(pickClass.value);
     apply();
   });
   pickSubject.addEventListener('change', apply);
 
-  fillSubjects(Boolean(pickClass.value));
+  fillSubjects(pickClass.value);
   apply();
 })();
