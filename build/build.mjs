@@ -729,28 +729,45 @@ function frontMatter(book, contents, preface, marks = "") {
     + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>${marks}\n</section>`;
 
   const title = page('page--title', `      <div class="titlepage">
-        <div class="titlepage__imprint">${escapeHtml(book.imprint || '')}</div>
-        <h1 class="titlepage__title">${escapeHtml(book.title || '')}</h1>
-        <div class="titlepage__rule"></div>
-        <div class="titlepage__subtitle">${escapeHtml(book.subtitle || '')}</div>
-        ${book.part ? `<div class="titlepage__part">Part ${escapeHtml(book.part)}</div>` : ''}
+        <div class="titlepage__head">
+          <div class="titlepage__imprint">${escapeHtml(book.imprint || '')}</div>
+          <div class="titlepage__marker">
+            <span class="titlepage__class">Class ${escapeHtml(book.class || '')}</span>
+            ${book.part ? `<span class="titlepage__part">Part ${escapeHtml(book.part)}</span>` : ''}
+          </div>
+        </div>
+        <div class="titlepage__main">
+          <h1 class="titlepage__title">${escapeHtml(book.title || '')}</h1>
+          <div class="titlepage__rule"></div>
+          <div class="titlepage__subtitle">${escapeHtml(book.subtitle || '')}</div>
+        </div>
+        <div class="titlepage__foot">Every idea explained &middot; demonstrated &middot; practised</div>
       </div>`);
 
-  /* The verso facing the title page carries the preface. Its prose
-     lives in pages/<class>/preface.html, not here: the builder places
-     front matter, it does not author it. With no such file the page
-     falls back to the imprint it used to be, so a class that has not
-     written one still gets its ISBN and edition into the book. */
-  const imprint = preface
-    ? page('page--verso', preface.trimEnd().split('\n').map((l) => '      ' + l).join('\n'))
-    : page('page--verso', `      <div class="imprint">
+  /* The verso facing the title page carries the imprint, where a
+     printed book carries it. It used to be dropped whenever a class
+     had written a preface — the preface took its page — and the ISBN,
+     the edition statement and the copyright then appeared nowhere in
+     the volume at all. They are not optional matter. */
+  const imprint = page('page--verso', `      <div class="imprint">
         <p class="imprint__name">${escapeHtml(book.imprint || '')}</p>
         ${book.url ? `<p>${escapeHtml(book.url)}</p>` : ''}
-        ${book.isbn ? `<p>ISBN ${escapeHtml(book.isbn)}</p>` : ''}
         <p>${escapeHtml(book.title || '')}${book.part ? `, Part ${escapeHtml(book.part)}` : ''}
            &mdash; Class ${escapeHtml(book.class || '')}.</p>
+        ${book.edition_statement ? `<p>${escapeHtml(book.edition_statement)}</p>` : ''}
+        ${book.isbn ? `<p>ISBN ${escapeHtml(book.isbn)}</p>` : ''}
+        ${book.copyright ? `<p>&copy; ${escapeHtml(String(book.year || ''))} ${escapeHtml(book.copyright)}. All rights reserved.</p>` : ''}
         <p>Typeset in Spectral and Vollkorn. Printed on a ${book.edition === 'b5' ? '176 &times; 250' : '210 &times; 297'} mm page.</p>
       </div>`);
+
+  /* The preface is prose, so it is read rather than consulted, and it
+     sits last in the front matter — on the verso facing the opening of
+     Chapter 1, which is the page a reader is on when they start. Its
+     text lives in pages/<class>/preface.html: the builder places front
+     matter, it does not author it. */
+  const prefacePage = preface
+    ? page('page--verso', preface.trimEnd().split('\n').map((l) => '      ' + l).join('\n'))
+    : null;
 
   const rows = contents.map((c) => `          <li>
             <span class="contents__num">${escapeHtml(c.n)}</span>
@@ -765,6 +782,7 @@ ${rows}
       </ol>`);
 
   const pages = [title, imprint, toc];
+  if (prefacePage) pages.push(prefacePage);
   /* The body must open on a recto, so the front matter is kept even.
      This blank is NOT one of the blanks --tight drops: those buy a
      chapter opening on a right-hand page and cost a leaf each, while
