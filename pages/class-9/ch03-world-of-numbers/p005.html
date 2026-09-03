@@ -2,73 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>The arithmetic of integers</h3>
-
       <p>
-        Brahmagupta wrote the rules out, and we still use them exactly as he
-        stated them thirteen centuries ago. What is striking is that every one
-        of them is justified by what it would mean for a merchant, not by any
-        appeal to the symbols.
+        Read those three lines again and notice how ordinary they look. That is
+        the achievement. Zero has stopped being a hole in the notation and
+        become a number that arithmetic can be done <em>to</em> — and once it
+        is, the question of what lies on the other side of it becomes
+        impossible to avoid.
       </p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Brahmagupta's laws of signs</div>
-        <div class="work work--list">
-          <p>A fortune plus a fortune is a fortune: $5 + 4 = 9$.</p>
-          <p>A debt plus a debt is a debt: $(-5) + (-4) = -9$.</p>
-          <p>A fortune less zero is a fortune; a debt less zero is a debt.</p>
-          <p>A debt times a fortune is a debt: $(-3) \times 4 = -12$.</p>
-          <p>A debt times a debt is a fortune: $(-3) \times (-4) = 12$.</p>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>
-            A trader takes a loan of ₹640. The next day he makes a profit of
-            ₹900. The week after, he takes a loss of ₹380. Where does he stand?
-          </p>
-          <p>
-            Write each event as an integer before combining anything. A loan is
-            a debt, so it is negative; a profit is a fortune, so it is positive;
-            a loss reduces what he holds, so it is subtracted.
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">the loan</span>
-              <span>a debt of ₹640</span>
-              <span class="chip">$-640$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">the profit</span>
-              <span>a fortune of ₹900</span>
-              <span class="chip">$+900$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">the loss</span>
-              <span>₹380 taken away</span>
-              <span class="chip">$-380$</span>
-            </div>
-          </div>
-          <p>Now add them in order, keeping the running total:</p>
-          <div class="work work--centred">
-            <p>$-640 + 900 = 260$</p>
-            <p>$260 - 380 = -120$</p>
-          </div>
-          <p>
-            He ends with $-120$: a debt of ₹120. Note that the answer is
-            negative even though the single largest figure was a profit —
-            which is the point of carrying the signs rather than the words.
-          </p>
-        </div>
-      </div>
+      <h2><span class="badge">3.3</span><span class="name">Integers: Going Left of Zero</span></h2>
 
       <p>
-        The signs did the work there, not the words. Once each event is written as
-        an integer the running total can be trusted, without asking at every stage
-        whether the trader is up or down.
+        Brahmagupta did not stop at zero. He had defined it as $5 - 5 = 0$, and
+        that definition invites an obvious next question: what is $3 - 5$? The
+        notation permits it. Does anything answer it?
       </p>
+
+      <p>
+        His answer came from commerce rather than from arithmetic. A merchant
+        deals in two kinds of quantity, and always has: what he owns and what
+        he owes. Brahmagupta named them <span class="term">dhana</span>,
+        fortunes, and <span class="term">ṛṇa</span>, debts — and treated the
+        second as a number in its own right rather than as a fortune with a
+        note attached.
+      </p>
+
+      <p>
+        Going left of zero on the line gives the
+        <span class="term">negative numbers</span>. Together with the positive
+        naturals and zero they make the <span class="term">integers</span>,
+        written $\mathbb{Z}$ — from the German <em>Zahlen</em>, numbers.
+      </p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 240 74" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A number line from minus five to five, debts to the left of zero and fortunes to the right">
+            <rect class="dg-fill-a-soft" x="6" y="40" width="228" height="28" rx="2"/>
+            <rect class="dg-line"        x="6" y="40" width="228" height="28" rx="2"/>
+      
+            <g class="dg-line">
+              <path d="M15 40 V50 M36 40 V50 M57 40 V50 M78 40 V50 M99 40 V50
+                       M141 40 V50 M162 40 V50 M183 40 V50 M204 40 V50 M225 40 V50"/>
+            </g>
+            <path class="dg-line" d="M120 40 V54"/>
+            <circle class="dg-fill-teal" cx="120" cy="40" r="3.2"/>
+      
+            <text class="dg-label" x="15"  y="63" text-anchor="middle">−5</text>
+            <text class="dg-label" x="57"  y="63" text-anchor="middle">−3</text>
+            <text class="dg-label" x="99"  y="63" text-anchor="middle">−1</text>
+            <text class="dg-label" x="120" y="63" text-anchor="middle">0</text>
+            <text class="dg-label" x="141" y="63" text-anchor="middle">1</text>
+            <text class="dg-label" x="183" y="63" text-anchor="middle">3</text>
+            <text class="dg-label" x="225" y="63" text-anchor="middle">5</text>
+      
+            <text class="dg-note" x="57"  y="24" text-anchor="middle">debts · ṛṇa</text>
+            <text class="dg-note" x="183" y="24" text-anchor="middle">fortunes · dhana</text>
+            <text class="dg-note" x="120" y="14" text-anchor="middle">śūnya</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.2</span> Zero sits between the
+          debts and the fortunes, belonging to neither.</figcaption>
+        </figure>
+      </div>
 
     </div>
   </div>

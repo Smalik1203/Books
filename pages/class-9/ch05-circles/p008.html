@@ -2,28 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Why is this true? The argument is the one just used, run forwards instead of
-      backwards. Suppose some circle passes through $A$, $B$ and $C$, and
-      call its centre $O$.</p>
-
-      <div class="work work--list">
-        <p>Since $OA = OB$, the point $O$ lies on the perpendicular bisector of
-        $AB$.</p>
-        <p>Since $OA = OC$, the point $O$ lies on the perpendicular bisector of
-        $AC$.</p>
-      </div>
-
-      <p>Now $A$, $B$ and $C$ are not collinear, so $AB$ and $AC$
-      point in different directions, and the two bisectors are therefore not parallel. Two
-      non-parallel lines of a plane meet at exactly one point. So there is only one
-      candidate for $O$ — which settles the <em>exactly one</em> before we have even
-      shown that a circle exists.</p>
-
-      <p>And it does exist. Take that meeting point as centre and draw the circle of radius
-      $OA$. Because $O$ is on the bisector of $AB$ we have $OB = OA$,
-      and because it is on the bisector of $AC$ we have $OC = OA$. So $B$
-      and $C$ lie on that circle as well, and all three points are on it.</p>
-
       <div class="c-reflect">
         <div class="c-reflect__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -35,40 +13,54 @@
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__body">
-            <p>Draw three collinear points $A$, $B$, $C$ and construct the
-            perpendicular bisectors of $AB$ and $BC$. Check that they really are
-            parallel.</p>
-            <p>Now nudge $C$ off the line, a little at a time. The two bisectors begin
-            to meet. Where does their meeting point go as $C$ approaches the line
-            again — and what is happening to the circle?</p>
+            <ol>
+              <li>As the centre travels along the bisector away from $AB$, do the
+              radii grow or shrink? Is there a largest circle through $A$ and
+              $B$?</li>
+              <li>Which is the smallest, and what is its radius?</li>
+              <li>Far out along the bisector, the circle still passes through $A$ and
+              $B$. Does the arc between them look more curved or less?</li>
+            </ol>
+            <div class="c-reflect__hint">For the third, ask what the arc is turning into.
+            Nothing in the argument ever lets it become a straight line — but see how close
+            it is willing to get.</div>
           </div>
         </div>
       </div>
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="20 14 158 166" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangle, its circumcircle, and the three perpendicular bisectors meeting at the centre">
-            <circle class="dg-fill-d" cx="97.55" cy="100.09" r="68.39"/>
-            <path class="dg-fill-b-soft" d="M104 32 L42 140 L160 128 Z"/>
-            <circle class="dg-line" cx="97.55" cy="100.09" r="68.39"/>
-            <path class="dg-line" d="M104 32 L42 140 L160 128 Z"/>
-      
-            <path class="dg-thin" d="M61.73 79.53 L112.29 108.55"/>
-            <path class="dg-thin" d="M102.32 146.93 L95.83 83.18"/>
-            <path class="dg-thin" d="M143.23 73.45 L82.86 108.65"/>
-      
-            <circle class="dg-fill-teal" cx="97.55" cy="100.09" r="2.8"/>
-      
-            <text class="dg-label" x="104" y="26"  text-anchor="middle">A</text>
-            <text class="dg-label" x="36"  y="150" text-anchor="end">B</text>
-            <text class="dg-label" x="166" y="131">C</text>
-            <text class="dg-label" x="108" y="119">O</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.4</span> The circumcircle of triangle
-          $ABC$. The perpendicular bisectors of the three sides meet at the
-          centre.</figcaption>
-        </figure>
+      <p>Two points, then, are not enough to pin a circle down. Three might be — and the
+      answer turns out to depend on how the three are arranged.</p>
+
+      <p>The first thing to notice about three points is that they need not have any circle
+      through them at all.</p>
+
+      <p>Suppose $A$, $B$ and $C$ lie on one straight line — that they are
+      <span class="term">collinear</span>. A circle through all three would need a centre
+      equidistant from $A$ and $B$, so lying on the perpendicular bisector of
+      $AB$; and equidistant from $B$ and $C$, so lying on the perpendicular
+      bisector of $BC$. But both of those bisectors are perpendicular to the same
+      line, which makes them parallel, and they are not the same line, because $AB$
+      and $BC$ have different midpoints. Parallel and distinct: they never meet.
+      There is no such centre, and so no such circle.</p>
+
+      <p>Three points in a row, then, are hopeless. Rule that case out and everything
+      changes.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 1</div>
+        <p>Through any three points that are not collinear there passes exactly one
+        circle.</p>
+      </div>
+
+      <p>Why is this true? The argument is the one just used, run forwards instead of
+      backwards. Suppose some circle passes through $A$, $B$ and $C$, and
+      call its centre $O$.</p>
+
+      <div class="work work--list">
+        <p>Since $OA = OB$, the point $O$ lies on the perpendicular bisector of
+        $AB$.</p>
+        <p>Since $OA = OC$, the point $O$ lies on the perpendicular bisector of
+        $AC$.</p>
       </div>
 
     </div>

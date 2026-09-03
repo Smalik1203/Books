@@ -24,6 +24,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { trimPx } from './sheet.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -98,7 +99,7 @@ if (!CHROME) throw new Error('No Chrome found — set CHROME.');
 const built = p('build', rel + '.html');
 if (!existsSync(built)) throw new Error(`Build ${rel} first`);
 const meta = JSON.parse(await readFile(p('pages', rel, 'chapter.json'), 'utf8'));
-const W = meta.edition === 'b5' ? 665 : 794;
+const { w: W } = await trimPx(meta.edition);   // the trim, from the tokens
 
 const tmp = built.replace(/\.html$/, '-labels.html');
 await writeFile(tmp, (await readFile(built, 'utf8')).replace('</head>', PROBE + '\n</head>'));

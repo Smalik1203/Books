@@ -2,88 +2,107 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>$\pi$, and what an infinite sum is for</h3>
+      <h3>Putting $\sqrt{2}$ on the line</h3>
 
       <p>
-        The other famous irrational is $\pi$, the ratio of a circle's
-        circumference to its diameter. For centuries the effort went into
-        better and better fractions for it. Āryabhaṭa (499 CE) gave
-        $\dfrac{3927}{1250} = 3.1416$, which is very good — and he was careful
-        to call it an <em>āsanna</em>, an approximation, suspecting that no
-        fraction would ever be exact.
+        We have a number that is not a ratio. Does it still have a place on the
+        number line? It does, and a ruler and compass will find it exactly —
+        not approximately, and without a single decimal.
       </p>
 
-      <p>
-        He was right, though it took until 1761 for Lambert to prove it. And
-        that leaves a real problem: if no fraction can name $\pi$, and no
-        finite list of fractions either, what could possibly give it exactly?
-      </p>
-
-      <p>
-        Mādhava of Sangamagrāma, who founded the Kerala school in the
-        fourteenth century, saw the answer. If a finite expression will not do,
-        use one that never finishes:
-      </p>
-
-      <div class="eq eq--anchor">
-        $$\pi = 4\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots\right)$$
-      </div>
-
-      <p>
-        We know what adding a hundred numbers means. What does adding
-        infinitely many mean? It means watching the running total as more terms
-        are taken, and asking what value it settles towards.
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>
-            Take the first few terms of Mādhava's series in turn and watch the
-            running total.
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">1 term</span>
-              <span>$4(1)$</span>
-              <span class="chip">$4.000$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">2 terms</span>
-              <span>$4\left(1 - \tfrac{1}{3}\right) = 4 \times \tfrac{2}{3}$</span>
-              <span class="chip">$2.667$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">3 terms</span>
-              <span>$4 \times \tfrac{13}{15}$</span>
-              <span class="chip">$3.467$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">4 terms</span>
-              <span>$4 \times \tfrac{76}{105}$</span>
-              <span class="chip">$2.895$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">5 terms</span>
-              <span>$4 \times \tfrac{263}{315}$</span>
-              <span class="chip">$3.340$</span>
-            </div>
-          </div>
-          <p>
-            The totals swing above and below, and the swings get smaller:
-            $4.000$, $2.667$, $3.467$, $2.895$, $3.340$ — closing in on
-            $3.14159\ldots$ from alternate sides. Every partial sum is
-            rational, being a finite sum of fractions. Only the value they
-            approach is not.
-          </p>
-          <p>
-            Do not mistake this for a fast method. After 500 terms the total is
-            $3.1396$ — barely two decimal places. Mādhava's series is a
-            statement about what $\pi$ <em>is</em>, not a good way to compute
-            it.
-          </p>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">Step 1</span>
+          <span>Mark $OA = 1$ unit on the line, and raise a perpendicular at
+          $A$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 2</span>
+          <span>On it mark $B$ with $AB = 1$ unit, and join $OB$. Then
+          $OB = \sqrt{2}$, by the theorem again.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 3</span>
+          <span>With centre $O$ and radius $OB$, swing an arc down to the line.
+          It cuts it at $P$, and $OP = \sqrt{2}$.</span>
         </div>
       </div>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="6 8 140 84" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Constructing a length of root two on the number line with a right triangle and an arc">
+            <path class="dg-fill-c-soft" d="M20 70 H70 V20 Z"/>
+      
+            <rect class="dg-fill-a-soft" x="10" y="70" width="134" height="18" rx="1.6"/>
+            <rect class="dg-line"        x="10" y="70" width="134" height="18" rx="1.6"/>
+            <g class="dg-thin">
+              <path d="M45 70 V74 M95 70 V74"/>
+            </g>
+            <g class="dg-line">
+              <path d="M20 70 V77 M70 70 V77 M120 70 V77"/>
+            </g>
+      
+            <path class="dg-thin" d="M70 70 V20"/>
+            <path class="dg-line" d="M20 70 L70 20"/>
+            <path class="dg-ghost" d="M70 20 A 70.71 70.71 0 0 1 90.71 70"/>
+            <path class="dg-thin" d="M62 70 V62 H70"/>
+      
+            <circle class="dg-fill-c" cx="90.71" cy="70" r="3"/>
+      
+            <text class="dg-label" x="18"  y="85" text-anchor="end">O</text>
+            <text class="dg-label" x="70"  y="85" text-anchor="middle">A</text>
+            <text class="dg-label" x="74"  y="20">B</text>
+            <text class="dg-label" x="95"  y="85">P</text>
+            <text class="dg-dim-label" x="36" y="40">√2</text>
+            <text class="dg-label dg-label--sm" x="120" y="85" text-anchor="middle">2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.6</span> The arc carries the
+          diagonal down onto the line. $P$ marks the square root of 2
+          exactly.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>
+              Extend the method to $\sqrt{3}$: what should the two legs of the
+              right triangle be? Then $\sqrt{5}$.
+            </p>
+            <p>
+              Now generalise. Given a segment of length $\sqrt{n}$ already
+              built, how would you get $\sqrt{n+1}$ from it — and what does
+              repeating that for ever draw on the page?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The answer to that last question is worth drawing. Build the triangle
+        for $\sqrt{2}$; then stand a new unit perpendicular on its hypotenuse
+        and join back to the origin, which gives $\sqrt{3}$; then do it again.
+        Each new hypotenuse is $\sqrt{n+1}$, because its legs are $\sqrt{n}$
+        and 1, and the theorem does the rest.
+      </p>
+
+      <p>
+        Two things about that are worth noticing. The construction never
+        approximates: at no point is $\sqrt{2}$ replaced by $1.414$. The arc
+        puts the length down exactly, and the compass is entirely untroubled
+        by the fact that the number has no finite decimal. And it never
+        runs out — every whole number, however large, has its square root
+        placed on the line by a finite number of steps.
+      </p>
 
     </div>
   </div>

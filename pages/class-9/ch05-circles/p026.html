@@ -2,85 +2,53 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="26 19 328 161" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The two impossible cases: D outside the circle, and D inside it">
-            <circle class="dg-fill-d" cx="100" cy="100" r="60"/>
-            <circle class="dg-fill-d" cx="280" cy="100" r="60"/>
-            <circle class="dg-line" cx="100" cy="100" r="60"/>
-            <path class="dg-thin" d="M43.62 120.52 L156.38 120.52"/>
-            <path class="dg-thin" d="M100 40 L43.62 120.52"/>
-            <path class="dg-thin" d="M100 40 L156.38 120.52"/>
-            <path class="dg-dim" d="M43.62 120.52 L159.46 39.41"/>
-            <path class="dg-dim" d="M159.46 39.41 L156.38 120.52"/>
-            <path class="dg-thin" d="M138.57 54.04 L156.38 120.52"/>
-            <circle class="dg-fill-c" cx="159.46" cy="39.41" r="2.6"/>
-            <text class="dg-label" x="37"  y="131" text-anchor="end">A</text>
-            <text class="dg-label" x="162" y="131">B</text>
-            <text class="dg-label" x="100" y="34"  text-anchor="middle">C</text>
-            <text class="dg-label" x="130" y="50"  text-anchor="end">E</text>
-            <text class="dg-label" x="165" y="36">D</text>
-            <text class="dg-note"  x="100" y="174" text-anchor="middle">D outside</text>
-      
-            <circle class="dg-line" cx="280" cy="100" r="60"/>
-            <path class="dg-thin" d="M223.62 120.52 L336.38 120.52"/>
-            <path class="dg-thin" d="M280 40 L223.62 120.52"/>
-            <path class="dg-thin" d="M280 40 L336.38 120.52"/>
-            <path class="dg-dim" d="M223.62 120.52 L318.57 54.04"/>
-            <path class="dg-dim" d="M275.84 83.96 L336.38 120.52"/>
-            <path class="dg-thin" d="M318.57 54.04 L336.38 120.52"/>
-            <circle class="dg-fill-c" cx="275.84" cy="83.96" r="2.6"/>
-            <text class="dg-label" x="217" y="131" text-anchor="end">A</text>
-            <text class="dg-label" x="342" y="131">B</text>
-            <text class="dg-label" x="280" y="34"  text-anchor="middle">C</text>
-            <text class="dg-label" x="324" y="50">E</text>
-            <text class="dg-label" x="271" y="80"  text-anchor="end">D</text>
-            <text class="dg-note"  x="280" y="174" text-anchor="middle">D inside</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.13</span> Neither case can happen. Each
-          forces $\angle ACB$ to be bigger, or smaller, than itself.</figcaption>
-        </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+      <p>An arc $AXB$ subtends $110^\circ$ at the centre of a circle. What
+          angle does it subtend at a point of the major arc? And what angle does the
+          <em>other</em> arc subtend at a point of the minor arc?</p>
+      <p>The first is Theorem 9 read straight off. The second asks about a different
+          arc, so the angle to halve is the one that arc sweeps at the centre — the reflex
+          one.</p>
+      <div class="work">
+            <div class="work__row"><span class="work__label work__label--wide">arc AXB</span>
+              <span>$110^\circ$ at the centre, halved</span>
+              <span class="chip">$55^\circ$</span></div>
+            <div class="work__row"><span class="work__label work__label--wide">the other arc</span>
+              <span>$360^\circ - 110^\circ = 250^\circ$, halved</span>
+              <span class="chip">$125^\circ$</span></div>
+          </div>
+      <p>A point on the major arc sees the chord at $55^\circ$; a point on the
+          minor arc sees it at $125^\circ$. Notice that the two add to
+          $180^\circ$. That is not a coincidence of these numbers — the two central
+          angles always make a full turn, so their halves always make a straight angle.
+          Section 5.9 turns the observation into a theorem.</p>
+        </div>
       </div>
 
-      <p><strong>Suppose $D$ lies outside.</strong> Then the segment $AD$ crosses
-      the circle at some point $E$. Now $C$ and $E$ are both on the circle
-      and on the same side of $AB$, so $\angle ACB = \angle AEB$. But
-      $\angle AEB$ is an exterior angle of $\triangle BED$, and an exterior angle
-      is larger than either interior angle opposite it, so $\angle AEB > \angle ADB$.
-      Putting the two together, $\angle ACB > \angle ADB$ — and we were given that
-      those two angles are equal. So $\angle ACB$ would be greater than itself.</p>
-
-      <p><strong>Suppose instead $D$ lies inside.</strong> Extend $AD$ until it
-      meets the circle at $E$. This time $\angle ADB$ is the exterior angle of
-      $\triangle BED$, so $\angle ADB > \angle AEB = \angle ACB$, and the same
-      impossibility arrives from the other direction.</p>
-
-      <p>Both positions are ruled out, so $D$ lies on the circle through $A$,
-      $B$ and $C$. The four points are concyclic.</p>
-
-      <p>A quadrilateral whose four vertices are concyclic is called a
-      <span class="term">cyclic quadrilateral</span>. Theorem 10 tells us when four points
-      form one; the next result tells us what we get in return.</p>
+      <p>One case of Theorem 9 is used so often that it has a name of its own. A
+      <span class="term">corollary</span> is a fact that drops out of a result already
+      proved, with no fresh argument needed.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 11</div>
-        <p>The two opposite angles of a cyclic quadrilateral add up to
-        $180^\circ$.</p>
+        <div class="c-keyidea__title">Corollary</div>
+        <p>The angle subtended by a diameter at any point of the circle is a right
+        angle.</p>
       </div>
 
-      <p>Let $ABCD$ be cyclic, with centre $O$, and consider the two opposite
-      angles at $A$ and at $C$. Each is an angle subtended by an arc at a point
-      of the circle outside it, so Theorem 9 applies to both — and the trick is to be
-      careful about <em>which</em> arc.</p>
+      <p>Let $AB$ be a diameter and $D$ any other point of the circle. The arc
+      from $A$ to $B$ that avoids $D$ is a semicircle, and the angle it
+      sweeps at the centre is a straight angle, $180^\circ$. By Theorem 9 the angle at
+      $D$ is half of that: $\angle ADB = 90^\circ$, wherever on the circle
+      $D$ happens to be.</p>
 
-      <div class="work work--list">
-        <p>$\angle BAD$ is subtended at $A$ by the arc from $B$ to $D$
-        that passes through $C$. So it is half the angle that arc sweeps at $O$.</p>
-        <p>$\angle BCD$ is subtended at $C$ by the arc from $B$ to $D$
-        that passes through $A$. So it is half the angle <em>that</em> arc sweeps at
-        $O$.</p>
-      </div>
+      <p>Section 5.4 left a debt here. It claimed that the circumcentre of a right-angled
+      triangle lands on the midpoint of the hypotenuse, and gave no reason. The corollary
+      is half of the reason. The other half — that a point seeing $AB$ under a right
+      angle has no choice but to lie on the circle with $AB$ as diameter — is exactly
+      the sort of statement Section 5.9 is about, and you will be able to finish the
+      argument there.</p>
 
     </div>
   </div>

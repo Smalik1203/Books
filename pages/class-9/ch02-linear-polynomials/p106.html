@@ -3,6 +3,43 @@
     <div class="page__main">
 
       <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>The points $(1, 2)$, $(4, 11)$ and $(6, k)$ lie on one straight
+          line. Then $k$ is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$15$</li>
+          <li>$16$</li>
+          <li>$17$</li>
+          <li>$18$</li>
+        </ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          The first two points fix the line. Three steps in $x$ raise $y$
+          by $9$.
+        </p>
+        <div class="work work--list">
+          <p>$3a = 11 - 2 = 9$, so $a = 3$</p>
+          <p>$2 = 3(1) + b$, so $b = -1$</p>
+        </div>
+        <p>
+          The line is $y = 3x - 1$, and $k$ is its value at $x = 6$.
+        </p>
+        <div class="work work--list">
+          <p>$k = 3(6) - 1 = 17$</p>
+        </div>
+        <p>
+          Option (c). The line need not be found in full: from $x = 4$ to
+          $x = 6$ is two steps, so $k = 11 + 2 \times 3 = 17$ as well.
+          Option (d) is $3 \times 6$, which forgets $b$. Option (a) adds
+          $4$, the difference in $x$, as if the slope were $2$. Option (b)
+          adds the slope only once.
+        </p>
+      </div>
+
+      <div class="c-problem">
         <span class="c-problem__tag">Problem 5</span>
         <p>A line passes through $(2, 6)$ and $(5, 0)$. It crosses the
           $y$-axis at</p>
@@ -37,79 +74,6 @@
           Option (d) is the $y$-coordinate of the first point, as if that
           point were on the axis.
         </p>
-      </div>
-
-      <figure class="c-figure c-figure--md">
-        <svg viewBox="0 0 260 192" role="img"
-             aria-label="A coordinate grid with the line y equals minus 2x plus 10 through the points (2, 6) and (5, 0), crossing the y-axis at (0, 10)">
-          <path class="dg-grid" d="M40 26V182M70 26V182M100 26V182M130 26V182M160 26V182M190 26V182M220 26V182M40 182H220M40 170H220M40 146H220M40 122H220M40 98H220M40 74H220M40 50H220M40 26H220"/>
-          <path class="dg-axis" d="M40 170H220 M40 26V182"/>
-          <text class="dg-tick" x="70" y="181" text-anchor="middle">1</text>
-          <text class="dg-tick" x="100" y="181" text-anchor="middle">2</text>
-          <text class="dg-tick" x="130" y="181" text-anchor="middle">3</text>
-          <text class="dg-tick" x="160" y="181" text-anchor="middle">4</text>
-          <text class="dg-tick" x="190" y="181" text-anchor="middle">5</text>
-          <text class="dg-tick" x="220" y="181" text-anchor="middle">6</text>
-          <text class="dg-tick" x="35" y="149" text-anchor="end">2</text>
-          <text class="dg-tick" x="35" y="125" text-anchor="end">4</text>
-          <text class="dg-tick" x="35" y="101" text-anchor="end">6</text>
-          <text class="dg-tick" x="35" y="77" text-anchor="end">8</text>
-          <text class="dg-tick" x="35" y="53" text-anchor="end">10</text>
-          <text class="dg-tick" x="35" y="29" text-anchor="end">12</text>
-          <text class="dg-tick" x="35" y="181" text-anchor="end">0</text>
-          <text class="dg-label" x="232" y="166">x</text>
-          <text class="dg-label" x="46" y="20">y</text>
-          <path class="dg-plot" d="M40 50L202 179.6"/>
-          <text class="dg-plot-label" x="122" y="70" text-anchor="start">y = &minus;2x + 10</text>
-          <circle class="dg-fill-teal" cx="40" cy="50" r="2.6"/>
-          <text class="dg-label" x="46" y="44">(0, 10)</text>
-          <circle class="dg-fill-teal" cx="100" cy="98" r="2.6"/>
-          <text class="dg-label" x="106" y="92">(2, 6)</text>
-          <circle class="dg-fill-teal" cx="190" cy="170" r="2.6"/>
-          <text class="dg-label" x="196" y="164">(5, 0)</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 2B.2</span> &nbsp;The line through
-          $(2, 6)$ and $(5, 0)$. Two steps back from $x = 2$ is the
-          $y$-axis, and the line has risen $4$ by then.
-        </figcaption>
-      </figure>
-
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
-        </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One result each</div>
-        <ol class="c-questions">
-          <li>
-              The degree of the polynomial $7 - 4x$ is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$0$</li>
-                <li>$1$</li>
-                <li>$4$</li>
-                <li>$7$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              The line $y = 4x - 12$ crosses the $x$-axis at
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$(0, -12)$</li>
-                <li>$(-3, 0)$</li>
-                <li>$(3, 0)$</li>
-                <li>$(12, 0)$</li>
-              </ol>
-            </li>
-        </ol>
       </div>
 
     </div>

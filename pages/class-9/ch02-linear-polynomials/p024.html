@@ -2,51 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">y-intercept</div>
-        <p>The line $y = ax + b$ meets the $y$-axis at $(0, b)$. The number $b$ is the
-        <span class="term">y-intercept</span> of the line: its distance from the
-        origin along the $y$-axis, positive upwards and negative downwards.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>What does Fig. 2.10 say about $y = ax + b$ when $a$ is held fixed and
+            $b$ is allowed to vary? Here $a = 2$ throughout, and $b$ took the values
+            $-1$, $1$ and $5$.</p>
+          </div>
+        </div>
       </div>
 
-      <p>So $y = x + 3$ has $y$-intercept $3$, three units above the origin, and
-      $y = 3x - 2$ has $y$-intercept $-2$, two units below it. Both numbers can be
-      read straight off the equation without drawing anything — and, going the other
-      way, read off the drawing without solving anything.</p>
+      <p>Check it against the arithmetic rather than the eye. At $x = 1$ the three
+      expressions give $1$, $3$ and $7$; at $x = 2$ they give $3$, $5$ and $9$. The
+      gaps between them — $2$ and $4$ — are the same at both values of $x$, and will
+      stay the same at every other, because the $2x$ cancels when one expression is
+      subtracted from another. What is left is the difference of the constants.</p>
 
-      <p>Putting the last several figures together, the two numbers in $y = ax + b$
-      have separate jobs and neither interferes with the other.</p>
+      <p>That is the whole of it. Two lines with the same slope differ by a fixed
+      amount everywhere, so the distance between them never closes, so they never
+      meet. The picture and the algebra are saying the same thing.</p>
 
-      <div class="c-summary">
-        <div class="c-summary__title">What the graphs showed</div>
-        <ol>
-          <li>$a$ is the slope of the line and $b$ is its $y$-intercept.</li>
-          <li>Change $a$ and keep $b$ fixed: the line tilts, but goes on cutting the
-          $y$-axis at the same point.</li>
-          <li>Change $b$ and keep $a$ fixed: the line slides without tilting, so lines
-          with equal slopes and different intercepts are parallel.</li>
-        </ol>
+      <p>If $b$ slides the line, it should be readable off the picture somewhere. It
+      is — at the one place every one of these lines is easy to find.</p>
+
+      <p>Draw $y = x + 3$, $y = 2x + 5$ and $y = 3x - 2$ — three different slopes this
+      time — and watch where each one crosses the $y$-axis.</p>
+
+      <div class="c-figure c-figure--md">
+            <figure>
+              <svg viewBox="0 0 266 310" data-size="md" xmlns="http://www.w3.org/2000/svg"
+                 role="img" aria-label="2.11">
+      <path class="dg-grid" d="M16 12V298M42 12V298M68 12V298M94 12V298M120 12V298M146 12V298M172 12V298M198 12V298M224 12V298M250 12V298M16 298H250M16 272H250M16 246H250M16 220H250M16 194H250M16 168H250M16 142H250M16 116H250M16 90H250M16 64H250M16 38H250M16 12H250"/>
+      <path class="dg-axis" d="M16 220H250 M120 12V298"/>
+      <text class="dg-tick" x="16" y="228.5" text-anchor="middle">–4</text>
+      <text class="dg-tick" x="42" y="228.5" text-anchor="middle">–3</text>
+      <text class="dg-tick" x="68" y="228.5" text-anchor="middle">–2</text>
+      <text class="dg-tick" x="94" y="228.5" text-anchor="middle">–1</text>
+      <text class="dg-tick" x="146" y="228.5" text-anchor="middle">1</text>
+      <text class="dg-tick" x="172" y="228.5" text-anchor="middle">2</text>
+      <text class="dg-tick" x="198" y="228.5" text-anchor="middle">3</text>
+      <text class="dg-tick" x="224" y="228.5" text-anchor="middle">4</text>
+      <text class="dg-tick" x="250" y="228.5" text-anchor="middle">5</text>
+      <text class="dg-tick" x="117" y="274.6" text-anchor="end">–2</text>
+      <text class="dg-tick" x="117" y="170.6" text-anchor="end">2</text>
+      <text class="dg-tick" x="117" y="118.6" text-anchor="end">4</text>
+      <text class="dg-tick" x="117" y="66.6" text-anchor="end">6</text>
+      <text class="dg-tick" x="117" y="14.6" text-anchor="end">8</text>
+      <text class="dg-tick" x="117" y="228.5" text-anchor="end">0</text>
+      <text class="dg-label" x="250" y="216.5" text-anchor="end">x</text>
+      <text class="dg-label" x="123.5" y="19">y</text>
+      <path class="dg-plot" d="M16 246L250 12"/>
+      <text class="dg-plot-label" x="215.7" y="37.3" text-anchor="end">y = x + 3</text>
+      <path class="dg-plot dg-plot--b" d="M16 298L159 12"/>
+      <text class="dg-plot-label" x="53.0" y="208.4" text-anchor="end">y = 2x + 5</text>
+      <path class="dg-plot dg-plot--c" d="M111.3 298L206.7 12"/>
+      <text class="dg-plot-label" x="195.2" y="74.1" text-anchor="start">y = 3x – 2</text>
+      <circle class="dg-fill-teal" cx="120" cy="90" r="2.6"/>
+      <text class="dg-label" x="127" y="87">A</text>
+      <circle class="dg-fill-teal" cx="120" cy="142" r="2.6"/>
+      <text class="dg-label" x="127" y="139">B</text>
+      <circle class="dg-fill-teal" cx="120" cy="272" r="2.6"/>
+      <text class="dg-label" x="127" y="269">C</text>
+            </svg>
+              <figcaption><span class="fignum">Fig. 2.11</span> Three lines, and the point at which each cuts the $y$-axis.</figcaption>
+            </figure>
+          </div>
+
+      <div class="work work--list">
+        <p>$y = 2x + 5$ cuts the $y$-axis at $A\,(0, 5)$</p>
+        <p>$y = x + 3$ cuts the $y$-axis at $B\,(0, 3)$</p>
+        <p>$y = 3x - 2$ cuts the $y$-axis at $C\,(0, -2)$</p>
       </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.6</div>
-        <ol class="c-questions">
-          <li>Draw each set of lines on one pair of axes, and in each case say what
-          role $a$ and $b$ are playing.
-            <ol class="c-parts c-parts--1">
-              <li>$y = 4x$, $y = 2x$, $y = x$</li>
-              <li>$y = -6x$, $y = -3x$, $y = -x$</li>
-              <li>$y = 5x$, $y = -5x$</li>
-              <li>$y = 3x - 1$, $y = 3x$, $y = 3x + 1$</li>
-              <li>$y = -2x - 3$, $y = -2x$, $y = 2x + 3$</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <p>The chapter's own exercises follow. They range wider than the sets above:
-      some are about polynomials rather than lines, and the starred ones will take
-      more than one idea each.</p>
 
     </div>
   </div>

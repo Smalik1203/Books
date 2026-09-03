@@ -2,6 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>In Fig. 6.7, $AB \parallel CD$. A point $E$ lies between the two lines, and
+          $\angle BAE = 44^\circ$, $\angle ECD = 31^\circ$. Find $\angle AEC$.</p>
+          <div class="c-figure c-figure--md">
+            <figure>
+              <svg viewBox="0 0 214 118" data-size="md" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="Point E between two parallel lines, with a construction line through E parallel to both">
+                <path class="dg-line" d="M20 26 H194"/>
+                <path class="dg-line" d="M20 100 H194"/>
+                <path class="dg-ghost" d="M20 64 H194"/>
+                <path class="dg-line" d="M46 26 L104 64"/>
+                <path class="dg-line" d="M104 64 L156 100"/>
+                <circle class="dg-fill-teal" cx="104" cy="64" r="2.6"/>
+                <text class="dg-label" x="104" y="58">E</text>
+                <text class="dg-label" x="40" y="21">A</text>
+                <text class="dg-label" x="197" y="24">B</text>
+                <text class="dg-label" x="150" y="112">C</text>
+                <text class="dg-label" x="197" y="98">D</text>
+                <text class="dg-note" x="197" y="62">k</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 6.7</span> The dashed line $k$ is not
+              given. We put it there.</figcaption>
+            </figure>
+          </div>
+          <p>As it stands there is nothing to work with: $\angle AEC$ is not part of any
+          transversal figure. So make one. Through $E$ draw the line $k$ parallel to $AB$
+          — and therefore, by Section 6.7, parallel to $CD$ as well.</p>
+          <p>Now $AE$ is a transversal of $AB$ and $k$, and $CE$ is a transversal of $CD$
+          and $k$. The single line $k$ has turned one hard figure into two easy ones.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">1</span>
+              <span>$\angle AEk = 44^\circ$</span>
+              <span class="chip">alternate interior, $AB \parallel k$</span></div>
+            <div class="work__row"><span class="work__label">2</span>
+              <span>$\angle kEC = 31^\circ$</span>
+              <span class="chip">alternate interior, $CD \parallel k$</span></div>
+            <div class="work__row"><span class="work__label">3</span>
+              <span>$\angle AEC = 44^\circ + 31^\circ = 75^\circ$</span>
+              <span class="chip">the ray $Ek$ lies inside</span></div>
+          </div>
+          <p>Adding a line that was not given is called a <span class="term">construction</span>,
+          and it is the single most useful move in geometry. Nothing forced us to draw
+          $k$; we drew it because it made the transversal facts apply.</p>
+        </div>
+      </div>
+
       <div class="c-reflect">
         <div class="c-reflect__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -26,43 +74,6 @@
             informative. That is worth noticing about theorems in general.</div>
           </div>
         </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 6.2</div>
-        <ol class="c-questions">
-          <li>A transversal cuts two parallel lines. One of the eight angles is
-          $73^\circ$. Find the other seven, naming the reason for each.</li>
-          <li>Two lines are cut by a transversal so that a pair of alternate interior
-          angles are $(4x - 6)^\circ$ and $(2x + 30)^\circ$. Find the value of $x$ that
-          makes the lines parallel.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Say whether each is enough to prove two lines parallel, and why.
-            <ol class="c-parts c-parts--1">
-              <li>A pair of alternate exterior angles are equal.</li>
-              <li>A pair of co-interior angles are equal.</li>
-              <li>A pair of co-interior angles add to $180^\circ$.</li>
-              <li>Both lines are perpendicular to the same line.</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>In a figure, $PQ \parallel RS$ and a point $T$ lies between them with
-          $\angle QPT = 52^\circ$ and $\angle PTS$ measured as $137^\circ$. Find
-          $\angle TSR$. (Draw the construction line first.)</li>
-          <li>Lines $a$ and $b$ are both parallel to line $c$. A transversal meets $a$ at
-          an angle of $64^\circ$. What angle does it make with $b$? Explain without
-          measuring.</li>
-          <li>Two parallel lines are cut by a transversal. Prove that the bisectors of a
-          pair of co-interior angles meet at right angles.</li>
-        </ol>
       </div>
 
     </div>

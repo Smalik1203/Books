@@ -2,103 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.3</div>
-        <ol class="c-questions">
-          <li>
-              Show that each pair names the same rational number, by the
-              equality law:
-              <ol class="c-parts c-parts--tall">
-                <li>$\dfrac{2}{3}$ and $\dfrac{4}{6}$</li>
-                <li>$\dfrac{5}{4}$ and $\dfrac{10}{8}$</li>
-                <li>$-\dfrac{3}{5}$ and $\dfrac{-6}{10}$</li>
-                <li>$\dfrac{9}{12}$ and $\dfrac{3}{4}$</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>
+              Why must the definition insist that $q \neq 0$? Try to say what
+              would go wrong, rather than only that it is not allowed.
+            </p>
+            <div class="c-reflect__hint">
+              A quotient $\tfrac{p}{q}$ is meant to be the number which, times
+              $q$, gives back $p$. Ask whether any number does that when
+              $q = 0$ — first when $p$ is not zero, then when it is. The two
+              cases fail differently, and both failures matter.
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              Find the sum:
-              <ol class="c-parts c-parts--tall c-parts--3">
-                <li>$\dfrac{2}{5} + \dfrac{3}{10}$</li>
-                <li>$\dfrac{7}{12} + \dfrac{5}{8}$</li>
-                <li>$-\dfrac{4}{7} + \dfrac{3}{14}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              Find the difference:
-              <ol class="c-parts c-parts--tall c-parts--3">
-                <li>$\dfrac{5}{6} - \dfrac{1}{4}$</li>
-                <li>$\dfrac{11}{8} - \dfrac{3}{4}$</li>
-                <li>$-\dfrac{7}{9} - \left(-\dfrac{2}{3}\right)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              Find the product, and then the quotient, of
-              $\dfrac{2}{3}$ and $\dfrac{3}{10}$. Do the same for
-              $-\dfrac{4}{7}$ and $\dfrac{5}{14}$.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>
-              Simplify $\dfrac{7}{9} \times \left( \dfrac{6}{7} - \dfrac{3}{4}
-              \right)$ in two ways — once by working out the bracket first, and
-              once by distributing. The two routes must agree.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>
-              Find the rational number $x$ for which
-              $x + \dfrac{5}{6} = \dfrac{1}{2}$.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li class="hard">
-              The rationals are closed under division except by zero. Are the
-              <em>integers</em> closed under division? Give an example that
-              settles it, and say what the rationals had to add to repair it.
-            </li>
-        </ol>
-      </div>
-
-      <h3>Rationals on the number line</h3>
+      <h3>How rationals are combined</h3>
 
       <p>
-        Integers are easy to place. Mark a point and call it 0, the origin;
-        step one unit right for 1, another for 2, and left for $-1$, $-2$, and
-        so on, each the same distance from the next. Rational numbers go on the
-        same line, but they will generally fall <em>between</em> the integers,
-        and the recipe has to say where.
+        Brahmagupta gave rules for adding, subtracting, multiplying and
+        dividing fractions too, and noticed that they hold for the negative
+        ones exactly as they do for the positive. Four laws cover everything.
       </p>
 
-      <p>
-        To place $\dfrac{p}{q}$, cut the unit interval into $q$ equal parts,
-        then step $p$ of those parts from 0 — right if the number is positive,
-        left if it is negative. The denominator chooses the size of the step;
-        the numerator says how many to take.
-      </p>
+      <div class="work work--list">
+        <p>
+          <strong>Equality.</strong> $\dfrac{a}{b} = \dfrac{c}{d}$ exactly when
+          $ad = bc$.
+        </p>
+        <p>
+          <strong>Addition.</strong> Put both over the same denominator, then
+          $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a+c}{b}$, and likewise for
+          subtraction.
+        </p>
+        <p>
+          <strong>Multiplication and division.</strong>
+          $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{ac}{bd}$, and
+          $\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \times \dfrac{d}{c}
+          = \dfrac{ad}{bc}$, provided no denominator is zero.
+        </p>
+        <p>
+          <strong>Order and grouping.</strong> Addition and multiplication are
+          commutative, and multiplication distributes over addition:
+          $p(q + r) = pq + pr$.
+        </p>
+      </div>
 
     </div>
   </div>

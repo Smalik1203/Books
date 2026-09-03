@@ -2,70 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Corresponding angles of congruent triangles are equal, and $\angle ACB$ and
-      $\angle DCE$ are corresponding. So the two chords subtend the same angle at the
-      centre.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="22 17 156 167" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Two equal chords of a circle, each joined to the centre">
-            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-b-soft" d="M100 100 L39.38 65 L112.16 31.06 Z"/>
-            <path class="dg-fill-b-soft" d="M100 100 L165.78 123.94 L100 170 Z"/>
-            <circle class="dg-line" cx="100" cy="100" r="70"/>
-      
-            <path class="dg-thin" d="M100 100 L39.38 65"/>
-            <path class="dg-thin" d="M100 100 L112.16 31.06"/>
-            <path class="dg-thin" d="M100 100 L165.78 123.94"/>
-            <path class="dg-thin" d="M100 100 L100 170"/>
-      
-            <path class="dg-line" d="M39.38 65 L112.16 31.06"/>
-            <path class="dg-line" d="M165.78 123.94 L100 170"/>
-      
-            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
-      
-            <text class="dg-label" x="33"  y="62"  text-anchor="end">A</text>
-            <text class="dg-label" x="115" y="26">B</text>
-            <text class="dg-label" x="171" y="126">D</text>
-            <text class="dg-label" x="100" y="179" text-anchor="middle">E</text>
-            <text class="dg-label" x="96"  y="112" text-anchor="end">C</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.6</span> Two chords of the same length.
-          The triangles $CAB$ and $CDE$ have three pairs of equal sides.</figcaption>
-        </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.2</div>
+        <ol class="c-questions">
+          <li>Draw $\triangle ABC$ with $AB = 5$ cm, $\angle A = 70^\circ$
+            and $\angle B = 60^\circ$. Draw its circumcircle. Is the centre inside the
+            triangle or outside it?</li>
+        </ol>
       </div>
 
-      <p>Now run the argument backwards. Suppose instead that the two angles at the centre
-      are equal — must the chords be?</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Draw $\triangle ABC$ with $AB = 5$ cm, $\angle A = 100^\circ$
+            and $AC = 4$ cm. Draw its circumcircle. Inside or outside this time, and
+            does that agree with Fig. 5.5?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Draw $\triangle ABC$ with $AB = 6$ cm, $BC = 7$ cm and
+            $CA = 7$ cm, and let $O$ be its circumcentre. Measure $OA$,
+            $OB$ and $OC$. What must you find, and why?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>What is the least possible radius of a circle passing through two points
+            $8$ cm apart?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Can a straight line cut a circle in three distinct points? Give a reason.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li class="hard">The circumcircle of a triangle $ABC$ is drawn. Can a
+            different triangle, congruent to $ABC$, have the same circumcircle? How
+            many such triangles are there?</li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">5.5</span><span class="name">Chords and the Angles They Subtend</span></h2>
+
+      <p>Tie a thread between two points of a wheel and pull it tight. What you have is a
+      chord. Join its two ends to the centre, and the thread subtends an angle there — the
+      angle named in Section 5.2.</p>
+
+      <p>Now turn the wheel. The thread goes round with it and comes to rest across a
+      different pair of points; but it is the same thread, so its length has not changed.
+      Has the angle at the centre changed with it?</p>
+
+      <p>Section 5.3 all but answers this. Turning the circle about its centre carries the
+      circle onto itself and carries the thread along without stretching it, so nothing in
+      the picture is different except which part of the rim the ends are tied to. The angle
+      cannot have moved.</p>
+
+      <p>That is a good reason to believe what follows. It is not yet a proof of it, because the argument assumed the second chord was the first one turned — and a chord
+      of the same length lying somewhere else on the circle has not been shown to be that. Congruent triangles settle the matter without the assumption.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 3</div>
-        <p>Chords of a circle that subtend equal angles at the centre are equal in
-        length.</p>
-      </div>
-
-      <div class="work work--list">
-        <p>$CA = CD = r$ and $CB = CE = r$.</p>
-        <p>$\angle ACB = \angle DCE$ is now what is given, and it is the angle
-        <em>between</em> those two pairs of sides.</p>
-        <p>So $\triangle CAB \cong \triangle CDE$, by <span class="pop">SAS</span>,
-        and therefore $AB = DE$.</p>
-      </div>
-
-      <p>Notice how little separates the two proofs: the same figure, the same two
-      triangles, the same four radii. All that changes is which fact is given and which is
-      wanted — and with it, the congruence rule that does the work.</p>
-
-      <div class="c-example c-example--head">
-        <div class="c-example__tab">Example 5</div>
-        <div class="c-example__body">
-          <p>A chord of a circle of radius $9$ cm subtends $60^\circ$ at the
-          centre. How long is the chord? And if a second chord of the same circle is also
-          $9$ cm long, what angle does it subtend?</p>
-          <p>Join the ends of the chord to the centre. The two radii and the chord make a
-          triangle, and here it is better than isosceles.</p>
-        </div>
+        <div class="c-keyidea__title">Theorem 2</div>
+        <p>Equal chords of a circle subtend equal angles at the centre.</p>
       </div>
 
     </div>

@@ -28,6 +28,11 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+// Chrome refuses to start its sandbox as root, which is how a CI
+// container usually runs. Only then is the flag added — the same
+// guard every other tool in build/ carries.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
+
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
@@ -167,7 +172,7 @@ async function checkBehaviour() {
   await writeFile(file, html);
 
   const { stdout } = await run(CHROME, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     '--virtual-time-budget=4000', '--dump-dom',
     'file:///' + file.replace(/\\/g, '/'),
   ], { maxBuffer: 1 << 24 });

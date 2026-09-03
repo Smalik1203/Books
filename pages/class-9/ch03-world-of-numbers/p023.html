@@ -2,85 +2,46 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>A rational number with a secret</h3>
-
-      <p>
-        Expand $\dfrac{1}{7}$ and you get $0.\overline{142857}$ — a cycle six
-        digits long. Now multiply that block by each of 1 to 6:
-      </p>
-
-      <div class="work work--list">
-        <p>$142857 \times 1 = 142857$</p>
-        <p>$142857 \times 2 = 285714$</p>
-        <p>$142857 \times 3 = 428571$</p>
-        <p>$142857 \times 4 = 571428$</p>
-        <p>$142857 \times 5 = 714285$</p>
-        <p>$142857 \times 6 = 857142$</p>
-      </div>
-
-      <p>
-        Every answer uses the same six digits in the same cyclic order — they
-        have only been rotated. A number that behaves this way is called a
-        <span class="term">cyclic number</span>, and $142857$ is the smallest
-        of them. Nothing was arranged here; it falls out of the long division
-        by 7, whose six possible remainders come round in a fixed order.
-      </p>
-
-      <h3>What an irrational decimal looks like</h3>
-
-      <p>
-        Irrational numbers have decimal expansions that never end and never
-        settle into a cycle. There is no repeating block, however far you look:
-      </p>
-
-      <div class="work work--list">
-        <p>$\sqrt{2} = 1.4142135623730950488\ldots$</p>
-        <p>$\pi = 3.1415926535897932384\ldots$</p>
-      </div>
-
-      <p>
-        This gives a clean test in both directions. Terminating or repeating
-        means rational; non-terminating and non-repeating means irrational.
-        And it explains the earlier proof from a second angle: if $\sqrt{2}$
-        were $\tfrac{p}{q}$, its expansion would have had to fall into a cycle
-        of at most $q - 1$ digits, and it never does.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Write $0.\overline{45}$ in the form $\dfrac{p}{q}$.</p>
           <p>
-            Beware of $1.01001000100001\ldots$ — the pattern is obvious, but no
-            fixed block repeats. A pattern you can describe is not the same as
-            a cycle.
+            Same idea, but the repeating block is two digits long, so the shift
+            has to be two places to bring the tails into line.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.454545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>Two digits repeat, so multiply by $10^2$:
+              $\;100x = 45.454545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Subtract: $\;100x - x = 45.4545\ldots - 0.4545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>$99x = 45$, so $x = \dfrac{45}{99} = \dfrac{5}{11}$.</span>
+            </div>
+          </div>
+          <p>
+            Which agrees with Example 7, where dividing 5 by 11 gave
+            $0.\overline{45}$ in the first place — the two directions meet.
           </p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.5</div>
-        <ol class="c-questions">
-          <li>
-              Without dividing, say which of $\dfrac{7}{20}$, $\dfrac{4}{15}$ and
-              $\dfrac{13}{250}$ have terminating decimals and which repeat. Then
-              do the divisions and check yourself.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              Work out $\dfrac{3}{13}$ by long division and identify the
-              repeating block. Now do $\dfrac{1}{13}$ and $\dfrac{2}{13}$. What
-              do the three blocks have to do with one another?
-            </li>
-        </ol>
-      </div>
+      <p>
+        In both of those the repetition began immediately after the decimal
+        point. Very often it does not — a digit or two occurs once and only
+        then does the cycle start, and a single shift can no longer bring the
+        tails into agreement.
+      </p>
 
     </div>
   </div>

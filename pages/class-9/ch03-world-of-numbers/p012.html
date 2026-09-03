@@ -2,101 +2,103 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.4</div>
-        <ol class="c-questions">
-          <li>
-              Represent $\dfrac{2}{3}$, $-\dfrac{5}{4}$ and $\dfrac{11}{2}$ on a
-              single number line. Say for each how many parts you cut the unit
-              into, and why.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              Find three distinct rational numbers lying strictly between
-              $\dfrac{1}{3}$ and $\dfrac{1}{2}$.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              Simplify $-\dfrac{1}{4} + \dfrac{5}{12}$.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              A tailor has $15\dfrac{3}{4}$ metres of silk. One kurta takes
-              $2\dfrac{1}{4}$ metres. Exactly how many kurtas can he cut, and how
-              much silk is left over?
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>
-              Find three rational numbers between $3.1415$ and $3.1416$.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li class="hard">
-              Example 5 found numbers between two rationals by widening the
-              denominator. Averaging is another way. Can you find a third? Say
-              what each method gives you that the others do not.
-            </li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">3.5</span><span class="name">Numbers That Are Not Ratios</span></h2>
+      <h3>Absolute value</h3>
 
       <p>
-        The rationals are dense. Between any two of them lies another, and
-        between those, another again. It is very hard to look at that and not
-        conclude that they must fill the line completely, leaving no gap
-        anywhere. For a long time that is exactly what was believed.
+        The <span class="term">absolute value</span> of a rational number $x$,
+        written $|x|$, is its distance from 0 on the number line. Distance has
+        no direction, so the sign is discarded.
       </p>
 
-      <p>
-        It is false, and the counter-example is embarrassingly easy to draw.
-      </p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>
+            Find $\left|\dfrac{5}{3}\right|$,
+            $\left|-\dfrac{5}{3}\right|$ and $|0|$. Then find the distance
+            between $-4$ and $3$ on the number line.
+          </p>
+          <p>
+            Take each as a question about distance, not about signs.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$\left|\dfrac{5}{3}\right|$</span>
+              <span>already to the right of 0</span>
+              <span class="chip">$\dfrac{5}{3}$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$\left|-\dfrac{5}{3}\right|$</span>
+              <span>the same distance, other side</span>
+              <span class="chip">$\dfrac{5}{3}$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$|0|$</span>
+              <span>no distance at all</span>
+              <span class="chip">$0$</span>
+            </div>
+          </div>
+          <p>
+            For the distance between two numbers, subtract and take the
+            absolute value of what you get — $|a - b|$. Here $a = 3$ and
+            $b = -4$:
+          </p>
+          <div class="work work--centred">
+            <p>$|a - b| = |3 - (-4)| = |3 + 4| = |7| = 7$</p>
+          </div>
+          <p>
+            Seven units, and the order does not matter: $|b - a| = |-7| = 7$
+            gives the same answer, as a distance must. Note that
+            $|x| \geq 0$ always — the one thing an absolute value can never be
+            is negative.
+          </p>
+        </div>
+      </div>
 
-      <p>
-        When Baudhāyana composed his <em>Śulbasūtra</em> around 800 BCE — a
-        manual for laying out fire altars — he met lengths that no ratio would
-        name. The Greeks ran into the same wall a few centuries later. The
-        offending shape is a square of side 1.
-      </p>
-
-      <div class="c-figure c-figure--md">
+      <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="4 4 112 96" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A unit square filled and divided by its diagonal into two right triangles, the diagonal marked d">
-            <rect class="dg-fill-a-soft" x="24" y="20" width="60" height="60"/>
-            <path class="dg-fill-c-soft" d="M24 80 H84 V20 Z"/>
+          <svg viewBox="0 0 240 72" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="The distance of seven units between minus four and three on a number line">
+            <rect class="dg-fill-a-soft" x="6" y="40" width="228" height="28" rx="2"/>
+            <rect class="dg-line"        x="6" y="40" width="228" height="28" rx="2"/>
       
-            <path class="dg-line" d="M24 20 H84 V80 H24 Z"/>
-            <path class="dg-dim"  d="M24 80 L84 20"/>
-            <path class="dg-thin" d="M74 80 V70 H84"/>
+            <g class="dg-line">
+              <path d="M12 40 V50 M36 40 V50 M60 40 V50 M84 40 V50 M108 40 V50
+                       M156 40 V50 M180 40 V50 M204 40 V50 M228 40 V50"/>
+            </g>
+            <path class="dg-line" d="M132 40 V52"/>
       
-            <text class="dg-label" x="54" y="90" text-anchor="middle">1</text>
-            <text class="dg-label" x="89" y="54">1</text>
-            <text class="dg-dim-label" x="48" y="46" text-anchor="middle">d</text>
+            <path class="dg-dim" d="M36 30 H204 M36 30 V38 M204 30 V38"/>
+            <text class="dg-dim-label" x="120" y="24" text-anchor="middle">|a − b| = 7</text>
+      
+            <circle class="dg-fill-c" cx="36"  cy="40" r="3.4"/>
+            <circle class="dg-fill-c" cx="204" cy="40" r="3.4"/>
+      
+            <text class="dg-label" x="36"  y="63" text-anchor="middle">b = −4</text>
+            <text class="dg-label" x="132" y="63" text-anchor="middle">0</text>
+            <text class="dg-label" x="204" y="63" text-anchor="middle">a = 3</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 3.5</span> A square of side 1.
-          What number is the length of its diagonal?</figcaption>
+          <figcaption><span class="fignum">Fig. 3.4</span> The distance between
+          two numbers is $|a - b|$, whichever way round you subtract.</figcaption>
         </figure>
       </div>
+
+      <h3>How crowded the rationals are</h3>
+
+      <p>
+        Between 1 and 2 there is $\tfrac{3}{2}$. Between 1 and $\tfrac{3}{2}$
+        there is $\tfrac{5}{4}$. Between 1 and $\tfrac{5}{4}$ there is
+        $\tfrac{9}{8}$ — and the process has no reason to stop.
+      </p>
+
+      <p>
+        Take any two rationals $a$ and $b$ with $a < b$. Their average
+        $\dfrac{a+b}{2}$ is a rational number, since the rationals are closed
+        under addition and division; and it lies strictly between them. So
+        between <em>any</em> two rationals there is another, and therefore
+        infinitely many. We say the rationals are
+        <span class="term">dense</span>.
+      </p>
 
     </div>
   </div>
