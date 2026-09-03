@@ -242,9 +242,15 @@ function libraryHtml(classes, coverClasses) {
         </label>
         <label class="lib-field">
           <span>Subject</span>
-          <select class="lib-select" id="pick-subject">${
-            opts(SUBJECTS, 'Choose a subject')
-          }</select>
+          <!-- Empty and disabled until a class is chosen. The subjects ride
+               along in an attribute and the script fills the list once there
+               is a class for them to belong to: a subject on its own is not
+               half a selection, it is a meaningless one. Rendered in this
+               state so it is right before any script runs. -->
+          <select class="lib-select" id="pick-subject" disabled
+                  data-subjects="${esc(JSON.stringify(SUBJECTS))}">
+            <option value="">Choose a class first</option>
+          </select>
         </label>
       </div>`;
 

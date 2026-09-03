@@ -24,6 +24,32 @@
      using anything else here would leave two mechanisms disagreeing. */
   const show = (el, on) => { if (el) el.hidden = !on; };
 
+  const SUBJECTS = JSON.parse(pickSubject.dataset.subjects || '[]');
+
+  /* The subject list exists only once there is a class for it to belong
+     to. Rebuilt rather than merely enabled, so a reader never reads a
+     subject off a dropdown that cannot yet be acted on — and so the
+     choice cannot survive the class being cleared. */
+  function fillSubjects(hasClass) {
+    const keep = pickSubject.value;
+    pickSubject.textContent = '';
+    const add = (value, text) => {
+      const o = document.createElement('option');
+      o.value = value;
+      o.textContent = text;
+      pickSubject.appendChild(o);
+    };
+    if (!hasClass) {
+      add('', 'Choose a class first');
+      pickSubject.disabled = true;
+      return;
+    }
+    add('', 'Choose a subject');
+    SUBJECTS.forEach((s) => add(s, s));
+    pickSubject.disabled = false;
+    if (SUBJECTS.includes(keep)) pickSubject.value = keep;
+  }
+
   function apply() {
     const cls = pickClass.value;
     const sub = pickSubject.value;
@@ -52,7 +78,15 @@
     show(sets.find((s) => s.dataset.class === cls && s.dataset.covers), true);
   }
 
-  pickClass.addEventListener('change', apply);
+  /* The subject list is rebuilt when the class changes and not otherwise:
+     rebuilding it on its own change would replace the element the reader
+     just used, under their cursor. */
+  pickClass.addEventListener('change', () => {
+    fillSubjects(Boolean(pickClass.value));
+    apply();
+  });
   pickSubject.addEventListener('change', apply);
+
+  fillSubjects(Boolean(pickClass.value));
   apply();
 })();
