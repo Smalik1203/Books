@@ -117,6 +117,14 @@
   --fig-xl: 87mm;
   --fig-full: var(--measure);
   --bleed: 3mm;
+  /* A cover is not a page and its bleed is not a page's. An interior
+     sheet is cut and that is the end of it, so 3mm is plenty; a wrap is
+     cut and then folded round the board, and what turns in at the edges
+     has to be ink and not bare paper. 15mm carries the artwork past the
+     fold with enough to spare for the turn-in. cover.mjs reads this one
+     and css/cover.css maps --bleed to it, so every rule on the wrap
+     already written against --bleed follows without being touched. */
+  --jk-bleed: 15mm;
   --slug:  7mm;             /* room outside the bleed for crop marks */
   --mark:  #000000;         /* crop marks: prepress black, not an ink of the book */
   --sheet: #ffffff;         /* the slug outside the bleed: bare paper, no ink */

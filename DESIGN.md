@@ -500,13 +500,29 @@ finish of the same layout rather than a second layout.
 | | | A4 | B5 |
 |---|---|---|---|
 | `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 210 mm | 176 mm |
-| `.jacket__spine` | from the page count, not from taste | `--spine-w` | `--spine-w` |
+| `.jacket__spine` | bulk, not taste — see below | `--spine-w` | `--spine-w` |
 | `.jacket__front` | title and artwork | 210 mm | 176 mm |
-| **wrap, trim** | back + spine + front | **435.8 × 297** | **367.8 × 250** |
-| **wrap, press sheet** | plus 3mm bleed on the cut edges | **441.8 × 303** | **373.8 × 256** |
+| **wrap, trim** | back + spine + front | **435 × 297** | **367 × 250** |
+| **wrap, plus bleed** | 15mm on all four cut edges | **465 × 327** | **397 × 280** |
+| **wrap, press sheet** | plus a 7mm slug holding the marks | **479 × 341** | **411 × 294** |
 
-An A4 wrap is A3 **plus the spine** — 420mm of paper for the two panels and
-15.8 more for the fold. Ordering "A3" gets a sheet 16mm too narrow.
+At a 15mm spine an A4 wrap is A3 **plus the spine** — 420mm of paper for the
+two panels and 15 more for the fold. Ordering "A3" gets a sheet 15mm too
+narrow.
+
+**The wrap's bleed is not the page's.** An interior sheet is cut and that is
+the end of it, so `--bleed` is 3mm. A wrap is cut and then folded round the
+board, and what turns in at the edges has to be ink and not bare paper, so
+`--jk-bleed` is **15mm**. `body.cover` points `--bleed` at it, which is why
+every bleed rule in `cover.css` follows without being touched, and
+`cover.mjs` sizes the press sheet from the same token so the layout and the
+media box cannot drift apart.
+
+**The spine is bulk**: pages ÷ 2 × caliper, plus the case. `spineWidth` in
+`cover.json` overrides that when a printer quotes its own stock — this cover
+declares **15mm** against a computed bulk of 12.4mm — and the builder then
+prints both, because a spine declared once and left while the book grew is
+exactly the spine that goes to press wrong.
 
 Nothing on the wrap is typed in millimetres that depends on the trim. The
 margin and the back panel's column are fractions of `--trim-w`, the title's
