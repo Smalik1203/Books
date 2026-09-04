@@ -107,6 +107,8 @@ async function checkStructure() {
        chapter above the title, not run together beside it. */
     eq('the label is stacked, class and chapter first',
       /class="bar__where">[\s\S]*?bar__sub[\s\S]*?bar__title/.test(view), true);
+    eq('the chapter is named in caps',
+      /class="bar__sub">Class \d+ &middot; CH \d+/.test(view), true);
     const covLink = (html.match(/href="\/cover\/([^"]+)"/) || [])[1];
     if (covLink) {
       const cov = await fetch('http://localhost:' + port + '/cover/' + covLink)

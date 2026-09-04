@@ -364,7 +364,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 93 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 94 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly

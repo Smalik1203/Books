@@ -468,7 +468,7 @@ function viewerHtml(chapter, s) {
 ${navPair(
   '/?class=' + encodeURIComponent(chapter.target.split('/')[0])
     + '&amp;subject=' + encodeURIComponent(chapter.subject),
-  'Class ' + esc(chapter.meta.class) + ' &middot; ch ' + esc(chapter.meta.number),
+  'Class ' + esc(chapter.meta.class) + ' &middot; CH ' + esc(chapter.meta.number),
   chapter.meta.title)}
 
         <!-- Two switches, and neither names the state it is already in.
