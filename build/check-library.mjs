@@ -245,8 +245,15 @@ async function checkViewerStructure() {
     eq('the info strip is gone', html.includes('class="note"'), false);
     eq('no signature view', html.includes('id="view-impose"'), false);
     eq('no pages-per-signature select', html.includes('id="sig-size"'), false);
-    eq('the two views that remain', ['view-pages', 'view-spread']
-      .every((i) => html.includes('id="' + i + '"')), true);
+    /* Pages is the view a chapter opens on and the trim is the sheet it
+       opens on, so neither has a button: what is left is two switches,
+       both off, and no segmented group to hold a pressed pair. */
+    eq('no pages button', html.includes('id="view-pages"'), false);
+    eq('spreads is a switch', /id="view-spread"[^>]*aria-pressed="false"/.test(html), true);
+    eq('no segmented groups', html.includes('class="seg"'), false);
+    /* A measurement is a fact about the sheet, not a thing to press. */
+    eq('bleed carries no measurement', /id="sheet-bleed"[\s\S]{0,400}?>Bleed<\/button>/.test(html), true);
+    eq('the press size is in the tooltip', /title="Show the press sheet, \d/.test(html), true);
     eq('the build log ships hidden', /id="build-log"[^>]*hidden/.test(html), true);
 
     const covLink = (lib.match(/href="\/cover\/([^"]+)"/) || [])[1];

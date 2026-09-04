@@ -379,22 +379,25 @@ function viewerHtml(chapter, s) {
           ch ${esc(chapter.meta.number)} &middot; ${chapter.pages} pp &middot;
           ${s.trimW} &times; ${s.trimH} mm</span>
 
+        <!-- Two switches, and neither names the state it is already in.
+             Pages is the default view and the trim is the default sheet,
+             so a Pages button and a Trim button were labels for "as you
+             found it" — and a measurement on a button is a fact about
+             the sheet, not a thing you can press. Both sizes are in the
+             subtitle and the tooltips, where facts belong.
+
+             The signature view went the same way, being a schematic of
+             a press sheet rather than a way of looking at the book. It
+             is still built and still served, at
+             /impose/<class>/<chapter>?sig=32, and nothing links to it:
+             it is reached by typing the address. -->
         <button class="btn" id="sheet-bleed" aria-pressed="false"
           ${noBleed ? 'disabled title="Build first"'
-                    : `title="Show the press sheet — trim plus ${s.bleed}mm bleed, in a ${s.slug}mm slug with the crop marks"`}
-          >Bleed ${s.mediaW}&times;${s.mediaH}</button>
+                    : `title="Show the press sheet, ${s.mediaW} × ${s.mediaH} mm — the ${s.trimW} × ${s.trimH} trim plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop marks"`}
+          >Bleed</button>
 
-        <!-- Two views, not three. The signature came off the bar with
-             the rest of the clutter: it is a schematic of a press sheet,
-             not a way of looking at the book, and it brought a second
-             control — pages per signature — that meant nothing beside
-             the other two. It is still built and still served, at
-             /impose/<class>/<chapter>?sig=32, and nothing else links
-             to it: it is reached by typing the address. -->
-        <div class="seg" role="group" aria-label="View">
-          <button id="view-pages" aria-pressed="true">Pages</button>
-          <button id="view-spread" aria-pressed="false">Spreads</button>
-        </div>
+        <button class="btn" id="view-spread" aria-pressed="false"
+          title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>
 
 ${zoomBar()}
 
@@ -449,8 +452,8 @@ function coverViewerHtml(cover) {
 
         <button class="btn" id="sheet-bleed" aria-pressed="false"
           ${noBleed ? 'disabled title="Build first"'
-                    : `title="Show the press sheet — the wrap plus ${s.bleed}mm bleed"`}
-          >Bleed ${s.wrapW}&times;${s.wrapH}</button>
+                    : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed"`}
+          >Bleed</button>
 
 ${zoomBar(false)}
 

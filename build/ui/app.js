@@ -46,7 +46,6 @@
        trim. A pressed pair where one of them was always the answer
        was two controls doing one control's work. */
     press('sheet-bleed', state.sheet === 'bleed');
-    press('view-pages', state.view === 'pages');
     press('view-spread', state.view === 'spread');
   }
 
@@ -196,8 +195,13 @@
     state.sheet = state.sheet === 'bleed' ? 'trim' : 'bleed';
     load();
   });
-  on('view-pages', 'onclick',  () => { state.view = 'pages';  load(); });
-  on('view-spread', 'onclick', () => { state.view = 'spread'; load(); });
+  /* Both switches, both off by default, and neither with a button for
+     the state it is already in: pages is the view a chapter opens on
+     and the trim is the sheet it opens on. */
+  on('view-spread', 'onclick', () => {
+    state.view = state.view === 'spread' ? 'pages' : 'spread';
+    load();
+  });
 
   /* ---- zoom ---------------------------------------------- */
   const menu = $('zoom-menu');
