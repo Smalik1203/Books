@@ -1,0 +1,117 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>8.6.2 A shape that is a progression</h3>
+
+      <p>Start with a paper triangle. Join the midpoints of its three sides, which cuts
+      it into four smaller triangles, and remove the middle one. Now do the same to each
+      of the three that remain. Then again, and again.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 240 66" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Stages 0 to 3 of the Sierpinski triangle, holding 1, 3, 9 and 27 black triangles">
+      
+            <!-- Stage 0 - 1: 0 holes -->
+            <path class="dg-fill-b" d="M30 12 L8 58 L52 58 Z"/>
+            <path class="dg-line" d="M30 12 L8 58 L52 58 Z"/>
+            <text class="dg-note" x="30" y="66" text-anchor="middle">Stage 0 &middot; 1</text>
+
+            <!-- Stage 1 - 3: 1 holes -->
+            <path class="dg-fill-b" d="M88 12 L66 58 L110 58 Z"/>
+            <g class="dg-fill-d">
+              <path d="M77 35 L99 35 L88 58 Z"/>
+            </g>
+            <path class="dg-line" d="M88 12 L66 58 L110 58 Z"/>
+            <path class="dg-thin" d="M77 35 L99 35 L88 58 Z"/>
+            <text class="dg-note" x="88" y="66" text-anchor="middle">Stage 1 &middot; 3</text>
+
+            <!-- Stage 2 - 9: 4 holes -->
+            <path class="dg-fill-b" d="M146 12 L124 58 L168 58 Z"/>
+            <g class="dg-fill-d">
+              <path d="M135 35 L157 35 L146 58 Z"/>
+              <path d="M140.5 23.5 L151.5 23.5 L146 35 Z"/>
+              <path d="M129.5 46.5 L140.5 46.5 L135 58 Z"/>
+              <path d="M151.5 46.5 L162.5 46.5 L157 58 Z"/>
+            </g>
+            <path class="dg-line" d="M146 12 L124 58 L168 58 Z"/>
+            <path class="dg-thin" d="M135 35 L157 35 L146 58 Z"/>
+            <text class="dg-note" x="146" y="66" text-anchor="middle">Stage 2 &middot; 9</text>
+
+            <!-- Stage 3 - 27: 13 holes -->
+            <path class="dg-fill-b" d="M204 12 L182 58 L226 58 Z"/>
+            <g class="dg-fill-d">
+              <path d="M193 35 L215 35 L204 58 Z"/>
+              <path d="M198.5 23.5 L209.5 23.5 L204 35 Z"/>
+              <path d="M201.25 17.75 L206.75 17.75 L204 23.5 Z"/>
+              <path d="M195.75 29.25 L201.25 29.25 L198.5 35 Z"/>
+              <path d="M206.75 29.25 L212.25 29.25 L209.5 35 Z"/>
+              <path d="M187.5 46.5 L198.5 46.5 L193 58 Z"/>
+              <path d="M190.25 40.75 L195.75 40.75 L193 46.5 Z"/>
+              <path d="M184.75 52.25 L190.25 52.25 L187.5 58 Z"/>
+              <path d="M195.75 52.25 L201.25 52.25 L198.5 58 Z"/>
+              <path d="M209.5 46.5 L220.5 46.5 L215 58 Z"/>
+              <path d="M212.25 40.75 L217.75 40.75 L215 46.5 Z"/>
+              <path d="M206.75 52.25 L212.25 52.25 L209.5 58 Z"/>
+              <path d="M217.75 52.25 L223.25 52.25 L220.5 58 Z"/>
+            </g>
+            <path class="dg-line" d="M204 12 L182 58 L226 58 Z"/>
+            <path class="dg-thin" d="M193 35 L215 35 L204 58 Z"/>
+            <text class="dg-note" x="204" y="66" text-anchor="middle">Stage 3 &middot; 27</text>
+            </svg>
+          <figcaption><span class="fignum">Fig. 8.8</span> Four stages of the
+          Sierpiński triangle. Every shaded triangle becomes three at the next
+          stage.</figcaption>
+        </figure>
+      </div>
+
+      <p>The number of shaded triangles goes $1, 3, 9, 27, \ldots$ — a GP with $a = 1$
+      and $r = 3$, because each one is replaced by three. At stage $n$ there are $3^n$ of
+      them, and by stage $10$ that is $59\,049$.</p>
+
+      <p>Now ask about the area instead. Take the whole triangle at stage $0$ to be one
+      square unit. Cutting it into four and throwing one away leaves $\tfrac34$ of it. Do
+      the same again and $\tfrac34$ of <em>that</em> is left, and so on:</p>
+
+      <div class="work work--centred">
+        <p>$1, \quad \tfrac34, \quad \tfrac{9}{16}, \quad \tfrac{27}{64}, \ \ldots$</p>
+      </div>
+
+      <p>another GP, this one with $r = \tfrac34$, and its $n$th stage has area
+      $\left(\tfrac34\right)^n$.</p>
+
+      <p>So the same figure carries two progressions at once, running opposite ways. The
+      number of triangles multiplies by $3$ and races away; the area they cover
+      multiplies by $\tfrac34$ and dwindles towards nothing. More and more pieces, less
+      and less paper.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>A shape like this, which contains smaller copies of itself at every scale,
+          is called a <span class="term">fractal</span>. Zoom in on any corner of it and
+          you find the whole thing again.</p>
+        </div>
+      </div>
+
+      <p>The figure is named for <strong>Wacław Sierpiński</strong> (1882–1969), the
+      Polish mathematician who described it in 1915. Fractals are not only a curiosity of
+      paper and scissors: the branching of a tree, the florets of a cauliflower, the arms
+      of a snowflake and the ragged edge of a coastline all repeat themselves at
+      different scales in much the same way.</p>
+
+
+      <p>The two sequences in the figure are worth keeping together in mind, because
+      between them they show what a common ratio does. A ratio greater than $1$ runs
+      away: three, nine, twenty-seven, and by stage twenty there are more than three
+      thousand million triangles. A ratio less than $1$ closes down: the paper left is
+      three quarters, then a little over a half, and it goes on shrinking without ever
+      quite reaching nothing. Same rule, same figure, opposite directions.</p>
+    </div>
+  </div>
+</section>

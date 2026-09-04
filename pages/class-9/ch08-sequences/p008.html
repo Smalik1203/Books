@@ -1,0 +1,82 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Both describe the same sequence, and each is better at something. To find the
+      $500$th term, the explicit rule answers at once and the recursive one asks you to
+      take $499$ steps. But a recursive rule is often the easier of the two to
+      <em>discover</em>, because it only asks what one step does — and for some sequences
+      it is the only rule anybody has.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Find the first four terms of the sequence given by
+          $u_1 = 1$, $u_n = 2u_{n-1} + 3$ for $n \geq 2$.</p>
+          <p>Each term needs the one before it, so they come out in order.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">$u_2$</span>
+              <span>$= 2 \times 1 + 3 = 5$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$u_3$</span>
+              <span>$= 2 \times 5 + 3 = 13$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$u_4$</span>
+              <span>$= 2 \times 13 + 3 = 29$</span>
+            </div>
+          </div>
+          <p>The sequence begins $1, 5, 13, 29$.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Find the first four terms of the sequence given by
+          $s_1 = 3$, $s_n = s_{n-1}(s_{n-1} - 1)$ for $n \geq 2$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">$s_2$</span>
+              <span>$= 3 \times (3 - 1) = 3 \times 2 = 6$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$s_3$</span>
+              <span>$= 6 \times (6 - 1) = 6 \times 5 = 30$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$s_4$</span>
+              <span>$= 30 \times (30 - 1) = 30 \times 29 = 870$</span>
+            </div>
+          </div>
+          <p>So the sequence is $3, 6, 30, 870, \ldots$ — and the fifth term is already
+          $756\,030$.</p>
+        </div>
+      </div>
+
+      <p>That last remark is not an aside. A recursive rule can hide how fast a sequence
+      moves: nothing in $s_n = s_{n-1}(s_{n-1} - 1)$ looks violent, and four steps take
+      you from $3$ to nearly nine hundred. Walking the sequence is the only way to find
+      out.</p>
+
+      <h3>8.3.1 A rule that looks further back</h3>
+
+      <p>A recursive rule need not stop at the previous term. It may reach back two, or
+      more. The most famous sequence in mathematics is built exactly that way:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">start</span>
+          <span>$s_1 = 1$, &nbsp; $s_2 = 2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">then</span>
+          <span>$s_n = s_{n-1} + s_{n-2}$ &nbsp; for $n \geq 3$</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

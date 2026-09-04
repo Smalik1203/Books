@@ -1,0 +1,71 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A sequence is given by $u_n = 2n - 1$. Write its first three terms.</p>
+          <p>Substitute $n = 1$, then $2$, then $3$:</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">$u_1$</span>
+              <span>$= 2 \times 1 - 1 = 1$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$u_2$</span>
+              <span>$= 2 \times 2 - 1 = 3$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$u_3$</span>
+              <span>$= 2 \times 3 - 1 = 5$</span>
+            </div>
+          </div>
+          <p>So the sequence begins $1, 3, 5$ — the odd numbers, as expected.</p>
+        </div>
+      </div>
+
+      <h3>8.2.1 Reading the rule backwards</h3>
+
+      <p>An explicit rule is an equation, and an equation can be read in either
+      direction. Forwards it turns a position into a term. Backwards it answers a
+      different and more interesting question: <em>is this number in the sequence at
+      all, and if so, where?</em></p>
+
+      <p>Take $137$. Is it an odd number — and if it is, which one? Solve $t_n = 137$:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">set</span>
+          <span>$2n - 1 = 137$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$2n = 138$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">and</span>
+          <span>$n = 69$</span>
+        </div>
+      </div>
+
+      <p>So $137$ is the $69$th odd number. The answer came out a whole number, and that
+      is what settled it.</p>
+
+
+      <p>That last remark carries the whole method. Solving $t_n = 137$ would have given
+      an answer whatever number was put on the right, and the arithmetic would have
+      looked no different. What decided the question was the kind of answer that came
+      out. A position is a counting number, so a whole number means the number is in the
+      sequence and a fraction means it is not — and the equation cannot tell you which
+      until you look.</p>
+
+      <p>The same reading answers a question that sounds harder than it is: how many
+      terms of a sequence fall below some limit. Ask where the odd numbers pass $200$ and
+      you are solving $2n - 1 = 200$, which gives $n = 100.5$. No term sits at that
+      position, so the hundredth term is the last one under $200$, and there are exactly
+      a hundred of them. The fraction was not a failure of the method; it was the
+      answer.</p>
+    </div>
+  </div>
+</section>

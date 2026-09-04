@@ -1,0 +1,80 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 8.2</div>
+        <ol class="c-questions">
+          <li>Find the first five terms of the sequence whose $n$th term is
+              <ol class="c-parts c-parts--1">
+                <li>$t_n = 3n - 4$</li>
+                <li>$t_n = 2 - 5n$</li>
+                <li>$t_n = n^2 - 2n + 3$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Find the $10$th and the $15$th terms of the sequence $t_n = 5n - 3$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Determine whether $97$ and $172$ are terms of the sequence
+            $t_n = 5n + 3$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Which term of the sequence $t_n = 5n - 3$ is $607$?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>For $t_n = 3n + 7$, find the first, second, third, $12$th and $50$th terms;
+            say which term is $332$; and decide whether $557$ belongs to the sequence,
+            with a reason.</li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">8.3</span><span class="name">The Recursive Rule</span></h2>
+
+      <p>There is a second way to write down a sequence, and it is the way most people
+      describe one out loud. Asked about $1, 4, 7, 10, 13, \ldots$ you would probably not
+      say "the $n$th term is $3n - 2$". You would say: <em>start at $1$ and keep adding
+      $3$</em>.</p>
+
+      <p>That is a rule too, and it is worth writing properly. Each term is $3$ more than
+      the one before, so</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">start</span>
+          <span>$t_1 = 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">then</span>
+          <span>$t_n = t_{n-1} + 3$ &nbsp; for $n \geq 2$</span>
+        </div>
+      </div>
+
+      <p>This is a <span class="term">recursive rule</span>. It says where to start and
+      how to get from any term to the next, and between them those two things pin the
+      sequence down completely.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two Rules, Two Jobs</div>
+        <p>An <strong>explicit</strong> rule gives $t_n$ from $n$: it reaches any term
+        directly.</p>
+        <p>A <strong>recursive</strong> rule gives $t_n$ from the terms before it, and a
+        starting value: it walks.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

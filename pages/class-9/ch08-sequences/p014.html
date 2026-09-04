@@ -1,0 +1,92 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="eq eq--anchor">
+        $$1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}$$
+      </div>
+
+      <p>The same argument can be drawn rather than written. Set out $1 + 2 + \cdots + 6$
+      as a staircase of circles, then set a second copy of it upside down against the
+      first. The two together make a rectangle.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 176 84" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two staircases of circles fitted together to make a 7 by 6 rectangle, showing that twice the sum 1 to 6 is 7 times 6">
+      
+            <!-- the staircase: column k has k circles, from the bottom -->
+            <g class="dg-fill-b">
+              <circle cx="30" cy="70" r="4"/>
+              <circle cx="48" cy="70" r="4"/><circle cx="48" cy="58" r="4"/>
+              <circle cx="66" cy="70" r="4"/><circle cx="66" cy="58" r="4"/><circle cx="66" cy="46" r="4"/>
+              <circle cx="84" cy="70" r="4"/><circle cx="84" cy="58" r="4"/><circle cx="84" cy="46" r="4"/>
+              <circle cx="84" cy="34" r="4"/>
+              <circle cx="102" cy="70" r="4"/><circle cx="102" cy="58" r="4"/><circle cx="102" cy="46" r="4"/>
+              <circle cx="102" cy="34" r="4"/><circle cx="102" cy="22" r="4"/>
+              <circle cx="120" cy="70" r="4"/><circle cx="120" cy="58" r="4"/><circle cx="120" cy="46" r="4"/>
+              <circle cx="120" cy="34" r="4"/><circle cx="120" cy="22" r="4"/><circle cx="120" cy="10" r="4"/>
+            </g>
+      
+            <!-- the same staircase turned about, filling the rest of the rectangle -->
+            <g class="dg-fill-a">
+              <circle cx="30" cy="58" r="4"/><circle cx="30" cy="46" r="4"/><circle cx="30" cy="34" r="4"/>
+              <circle cx="30" cy="22" r="4"/><circle cx="30" cy="10" r="4"/>
+              <circle cx="48" cy="46" r="4"/><circle cx="48" cy="34" r="4"/><circle cx="48" cy="22" r="4"/>
+              <circle cx="48" cy="10" r="4"/>
+              <circle cx="66" cy="34" r="4"/><circle cx="66" cy="22" r="4"/><circle cx="66" cy="10" r="4"/>
+              <circle cx="84" cy="22" r="4"/><circle cx="84" cy="10" r="4"/>
+              <circle cx="102" cy="10" r="4"/>
+              <circle cx="138" cy="70" r="4"/><circle cx="138" cy="58" r="4"/><circle cx="138" cy="46" r="4"/>
+              <circle cx="138" cy="34" r="4"/><circle cx="138" cy="22" r="4"/><circle cx="138" cy="10" r="4"/>
+            </g>
+      
+            <line class="dg-dim" x1="24" y1="80" x2="144" y2="80"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="84" y="76" text-anchor="middle">7</text>
+            <line class="dg-dim" x1="16" y1="6" x2="16" y2="74"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="10" y="42" text-anchor="end">6</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 8.5</span> Two copies of
+          $1 + 2 + \cdots + 6$ make a $7 \times 6$ rectangle, so the sum is
+          $\tfrac{7 \times 6}{2} = 21$.</figcaption>
+        </figure>
+      </div>
+
+      <p>The rectangle is $7$ across and $6$ high, so it holds $42$ circles — and it is
+      made of two copies of the sum. That gives $1 + 2 + \cdots + 6 = 21$, and it gives
+      the general rule too: the rectangle for $1 + 2 + \cdots + n$ is always $n + 1$
+      across and $n$ high.</p>
+
+      <p>Writing $S_n$ for the sum of the first $n$ natural numbers,</p>
+
+      <div class="eq eq--anchor">
+        $$S_n = \frac{n(n+1)}{2}$$
+      </div>
+
+      <p>And now look back at the triangular numbers from the first section. Their $n$th
+      term was the sum of the naturals up to $n$ — so it is this formula, and the two
+      pictures are the same picture. The tenth triangular number is
+      $\tfrac{10 \times 11}{2} = 55$.</p>
+
+      <p>The earliest written record of this result is in
+      <strong>Āryabhaṭa's</strong> <em>Āryabhaṭīya</em>, chapter 2, verse 19, from the
+      early sixth century. The verse gives two ways to reach it, and the second is the
+      one drawn above in other words: take the first term and the last, halve their sum,
+      and multiply by how many terms there are. For $1$ to $10$ that is
+      $\tfrac{1 + 10}{2} \times 10 = 55$.</p>
+
+      <p>Stated that way it is not a fact about the naturals at all. It is a fact about
+      any AP — first plus last, halved, times the count — and you will meet it again in
+      that form.</p>
+
+
+      <p>That is worth holding on to. An AP is symmetrical about its middle in exactly
+      the way the two written-out rows were: pair the first term with the last, the
+      second with the second-last, and every pair has the same total. Which is why the
+      average of the first and last terms is the average of all of them, and multiplying
+      that average by the count gives the sum.</p>
+    </div>
+  </div>
+</section>

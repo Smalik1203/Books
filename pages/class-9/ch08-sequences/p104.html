@@ -1,0 +1,75 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">What a ratio of a half can and cannot do</div>
+        <p>
+          The classmate is wrong, and no arithmetic is needed to say so.
+        </p>
+        <p>
+          Every term of this GP is $\tfrac12$ times the one before it. Half of a positive
+          number is positive. So if the first term is positive every term after it is
+          positive too, however far the sequence runs — the terms fall towards zero and
+          never arrive, and they certainly never cross it.
+        </p>
+        <p>
+          What the classmate has done is confuse <em>shrinking</em> with
+          <em>decreasing past zero</em>. Only a negative ratio changes signs, and it
+          changes them at every single step: $r = -\tfrac12$ would give
+          $5, -\tfrac52, \tfrac54, -\tfrac58, \ldots$, alternating rather than descending.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Counting three-digit multiples of seven</div>
+        <p>
+          The multiples of $7$ form an AP with $d = 7$, so the whole question is: where
+          does it start, where does it stop, and how many steps between?
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">first</span>
+            <span>$7 \times 15 = 105$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">last</span>
+            <span>$7 \times 142 = 994$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">count</span>
+            <span>$142 - 15 + 1$</span>
+            <span class="chip">128</span>
+          </div>
+        </div>
+        <p>
+          The $+1$ is the whole difficulty. From the fifteenth multiple to the
+          hundred-and-forty-second there are $127$ <em>steps</em> but $128$
+          <em>multiples</em>, because both ends are being counted. It is the same
+          off-by-one as the $n-1$ in $t_n = a + (n-1)d$, met from the other side.
+        </p>
+        <p>
+          The same could be had from the formula: solve $105 + (n-1)7 = 994$ to get
+          $n = 128$. The arithmetic is identical; the fence-post is just easier to see
+          when the multiples are numbered.
+        </p>
+        <p>
+          Finding the two ends is the part worth practising. The smallest three-digit
+          multiple of $7$ is not $100$ rounded somehow — it is the first multiple at or
+          above $100$, and $100 \div 7$ is a little over $14$, so it is the fifteenth.
+          The largest is found the same way from the top: $999 \div 7$ is a little over
+          $142$, so the hundred-and-forty-second, $994$, is the last one that fits.
+        </p>
+        <p>
+          Every counting question of this shape comes apart the same way: find the first,
+          find the last, count the steps between them, add one. It does not matter
+          whether the question is about multiples of $7$, two-digit numbers divisible by
+          $3$, or the terms of an AP between two limits — those are the same question in
+          different clothes, and the last of the four operations is the one that gets
+          left out.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

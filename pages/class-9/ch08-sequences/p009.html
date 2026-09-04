@@ -1,0 +1,89 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Each term is the sum of the two before it. Two starting values are needed now
+      rather than one, because the rule reaches back two places and has to have something
+      to reach for.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$s_3$</span>
+          <span>$= 2 + 1 = 3$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$s_4$</span>
+          <span>$= 3 + 2 = 5$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$s_5$</span>
+          <span>$= 5 + 3 = 8$</span>
+        </div>
+      </div>
+
+      <p>giving $1, 2, 3, 5, 8, 13, 21, 34, \ldots$</p>
+
+      <p>This is the <span class="term">Virahānka–Fibonacci sequence</span>, and it is
+      the oldest sequence in this chapter by some centuries.</p>
+
+      <p>It was written down and studied by <strong>Virahānka</strong> in the seventh
+      century, in his <em>Vṛttajātisamuchaya</em> — and not as a curiosity about numbers.
+      He was working on Prakrit metre. A line of verse is built from syllables that are
+      short or long, a long one lasting exactly as long as two short ones, and he asked
+      how many different rhythms fill a line of a given length. The answer is this
+      sequence, and the reason is the rule itself: a rhythm of length $n$ ends either in
+      a short syllable, leaving a rhythm of length $n-1$ before it, or in a long one,
+      leaving $n-2$.</p>
+
+      <p>The linguist-mathematicians <strong>Gopāla</strong> (c. 1135) and
+      <strong>Hemachandra</strong> (c. 1150) took it further. It reached Europe with
+      <strong>Fibonacci</strong> around 1200, whose name it has carried since — though he
+      was some five hundred years behind.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>This sequence has no simple explicit rule of the kind $t_n = 3n - 2$. It is
+          a case where the recursive rule is not the convenient description but the only
+          one within reach.</p>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 8.3</div>
+        <ol class="c-questions">
+          <li>A sequence is given by $t_1 = -5$ and $t_{n+1} = t_n + 3$ for $n \geq 1$.
+            Find the first five terms. Is $52$ a term of it, and if so which?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Let $T_1 = 1$, $T_2 = 2$, $T_3 = 4$, and
+            $T_n = T_{n-1} + T_{n-2} + T_{n-3}$ for $n \geq 4$. Find $T_4$ to $T_8$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Write a recursive rule for the sequence $2, 5, 8, 11, \ldots$, and then an
+            explicit one. Which did you find first?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li class="hard">The sequence $1, 4, 7, 10, \ldots$ has the explicit rule
+            $t_n = 3n - 2$ and the recursive rule $t_1 = 1$, $t_n = t_{n-1} + 3$. Use the
+            recursive rule to find the $8$th term, then check it with the explicit one. How
+            many additions did each take?</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

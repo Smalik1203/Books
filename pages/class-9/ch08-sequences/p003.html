@@ -1,0 +1,105 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>That one is worth seeing rather than checking. Take a square of dots and add an
+      L-shaped border along two of its sides: the border is always an odd number of dots,
+      and what you get is the next square.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 62" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Square numbers built from odd numbers: each square gains an L-shaped border of 3, 5 then 7 dots">
+      
+            <!-- 1 -->
+            <g class="dg-fill-b"><circle cx="12" cy="50" r="3.2"/></g>
+            <text class="dg-note" x="12" y="60" text-anchor="middle">1</text>
+      
+            <!-- 4 = 1 + 3 -->
+            <g class="dg-fill-b"><circle cx="42" cy="50" r="3.2"/></g>
+            <g class="dg-fill-a">
+              <circle cx="52" cy="50" r="3.2"/>
+              <circle cx="42" cy="40" r="3.2"/><circle cx="52" cy="40" r="3.2"/>
+            </g>
+            <text class="dg-note" x="47" y="60" text-anchor="middle">4</text>
+      
+            <!-- 9 = 4 + 5 -->
+            <g class="dg-fill-b">
+              <circle cx="86" cy="50" r="3.2"/><circle cx="96" cy="50" r="3.2"/>
+              <circle cx="86" cy="40" r="3.2"/><circle cx="96" cy="40" r="3.2"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="106" cy="50" r="3.2"/><circle cx="106" cy="40" r="3.2"/>
+              <circle cx="86" cy="30" r="3.2"/><circle cx="96" cy="30" r="3.2"/>
+              <circle cx="106" cy="30" r="3.2"/>
+            </g>
+            <text class="dg-note" x="96" y="60" text-anchor="middle">9</text>
+      
+            <!-- 16 = 9 + 7 -->
+            <g class="dg-fill-b">
+              <circle cx="146" cy="50" r="3.2"/><circle cx="156" cy="50" r="3.2"/><circle cx="166" cy="50" r="3.2"/>
+              <circle cx="146" cy="40" r="3.2"/><circle cx="156" cy="40" r="3.2"/><circle cx="166" cy="40" r="3.2"/>
+              <circle cx="146" cy="30" r="3.2"/><circle cx="156" cy="30" r="3.2"/><circle cx="166" cy="30" r="3.2"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="176" cy="50" r="3.2"/><circle cx="176" cy="40" r="3.2"/><circle cx="176" cy="30" r="3.2"/>
+              <circle cx="146" cy="20" r="3.2"/><circle cx="156" cy="20" r="3.2"/>
+              <circle cx="166" cy="20" r="3.2"/><circle cx="176" cy="20" r="3.2"/>
+            </g>
+            <text class="dg-note" x="161" y="60" text-anchor="middle">16</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 8.2</span> Each square is the one before
+          it plus an L of $3$, then $5$, then $7$ dots — the odd numbers, in order.</figcaption>
+        </figure>
+      </div>
+
+      <p>Two lists, then, that looked like separate curiosities, and each turns out to be
+      the running total of a list you already had. That is the first hint of what this
+      chapter is about: sequences are not a collection of tricks to be memorised one at a
+      time, but a small number of ideas that keep reappearing.</p>
+
+      <h3>8.1.2 Naming the terms</h3>
+
+      <p>To say anything general about a sequence we need to be able to point at a
+      particular term without writing the whole list out. The usual notation is a letter
+      with a subscript: $t_1$ for the first term, $t_2$ for the second, and $t_n$ for the
+      term in position $n$. The subscript is the position, and nothing else.</p>
+
+      <p>So for the odd numbers,</p>
+
+      <div class="work work--centred">
+        <p>$t_1 = 1, \quad t_2 = 3, \quad t_3 = 5, \quad t_4 = 7, \quad \ldots$</p>
+      </div>
+
+      <p>and $t_4 = 7$ says exactly one thing: the term in the fourth position is $7$.
+      When two sequences are in play at once they take different letters — $t_1, t_2,
+      t_3, \ldots$ for one, $s_1, s_2, s_3, \ldots$ for another, $u_1, u_2, u_3, \ldots$
+      for a third.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>The subscript $n$ counts positions, so it is a natural number. The
+          <em>term</em> $t_n$ is under no such rule: it may be a fraction, a negative
+          number, or any real number at all.</p>
+        </div>
+      </div>
+
+      <p>The terms need not grow. Every sequence so far has increased, but</p>
+
+      <div class="work work--centred">
+        <p>$1,\ \tfrac12,\ \tfrac13,\ \tfrac14,\ \ldots$</p>
+        <p>$7,\ 3,\ -1,\ -5,\ -9,\ \ldots$</p>
+      </div>
+
+      <p>are sequences too. The first shrinks towards nothing without ever reaching it;
+      the second falls by $4$ each time and goes on past zero into the negatives. Both
+      have a rule, and the rule is what makes them sequences rather than lists.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,78 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+        </div>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Neither, and how to be sure</div>
+        <p>
+          The sequence is $2, 6, 12, 20, 30$. Run both tests rather than one.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">differences</span>
+            <span>$4,\ 6,\ 8,\ 10$ — not constant</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">ratios</span>
+            <span>$3,\ 2,\ \tfrac53,\ \tfrac32$ — not constant</span>
+          </div>
+        </div>
+        <p>
+          So it is neither. But the reason asked for is the one that survives a hundred
+          terms, and for that look at what the numbers are: $1 \times 2$, $2 \times 3$,
+          $3 \times 4$, $4 \times 5$, $5 \times 6$. The $n$th term is $n(n+1)$, which is
+          twice the $n$th triangular number.
+        </p>
+        <p>
+          That settles it for good. The differences of $n(n+1)$ are $2n$, which grows,
+          so no AP; and the ratios fall towards $1$, so no GP. Four differences would
+          have been evidence — the formula is a proof.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">An AP from two facts</div>
+        <p>
+          Write both facts in terms of $a$ and $d$ and the question becomes a pair of
+          equations. The seventh term exceeding the fifth by $12$ is worth reading
+          carefully: it says $t_7 - t_5 = 12$, and $t_7 - t_5$ is two steps of $d$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label">given</span>
+            <span>$a + 2d = 16$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">and</span>
+            <span>$2d = 12$, so $d = 6$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">then</span>
+            <span>$a = 16 - 12$</span>
+            <span class="chip">4</span>
+          </div>
+        </div>
+        <p>
+          The AP is $4, 10, 16, 22, \ldots$ Notice that the second fact never needed the
+          first: any two terms the same distance apart differ by that many $d$'s, whether
+          they are the fifth and seventh or the fiftieth and fifty-second.
+        </p>
+        <p>
+          That is worth keeping. In an AP the gap between two terms depends only on how
+          far apart they stand, never on where they stand — so a fact of the form "this
+          term exceeds that one by so much" is a fact about $d$ alone, and it can be read
+          off without touching $a$. Half the questions about APs are built on it.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
