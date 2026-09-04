@@ -40,7 +40,7 @@ In a chapter you get:
 
 | control | what it does |
 |---|---|
-| **Bleed** | a switch, not one of a pair: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in the subtitle and the tooltip, not on the button |
+| **Bleed** | a switch, not one of a pair: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in its tooltip; nothing on the bar carries a measurement |
 | **Spreads** | the other switch: off is one page at a time, on is verso-and-recto side by side — the only way to check the mirroring |
 | **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. The level opens the presets, fit to page and fit to width |
 | the keyboard | `↑` `↓` scroll, `←` `→` turn the page — or scroll sideways, once the zoom is past the width of the stage. Space and shift-space take a screenful, `PageUp`/`PageDown`/`Home`/`End` whole pages, and `ctrl` with `+` `-` `0` works the zoom |

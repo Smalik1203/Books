@@ -432,9 +432,14 @@ function viewerHtml(chapter, s) {
         <a class="btn" title="Back to the chapters"
            href="/?class=${encodeURIComponent(chapter.target.split('/')[0])}&amp;subject=${encodeURIComponent(chapter.subject)}">&larr;</a>
         <span class="bar__title">${esc(chapter.meta.title)}</span>
+        <!-- Which class and which chapter, and nothing else. The page
+             count is in the page box a few inches to the right, and the
+             trim was only here because it had just come off the Bleed
+             button — a measurement neither pressed nor read, sitting in
+             the one part of the bar a reader glances at to know where
+             they are. Both sizes are in the Bleed tooltip. -->
         <span class="bar__sub">Class ${esc(chapter.meta.class)} &middot;
-          ch ${esc(chapter.meta.number)} &middot; ${chapter.pages} pp &middot;
-          ${s.trimW} &times; ${s.trimH} mm</span>
+          ch ${esc(chapter.meta.number)}</span>
 
         <!-- Two switches, and neither names the state it is already in.
              Pages is the default view and the trim is the default sheet,
@@ -508,8 +513,7 @@ function coverViewerHtml(cover) {
            href="/?class=${encodeURIComponent(cover.target.split('/')[0])}">&larr;</a>
         <span class="bar__title">${esc(cover.name)}</span>
         <span class="bar__sub">Class ${esc(cover.meta.class)} &middot; cover &middot;
-          ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')} &middot;
-          wrap ${s.sheetW} &times; ${s.trimH} mm</span>
+          ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')}</span>
 
         <button class="btn" id="sheet-bleed" aria-pressed="false"
           ${noBleed ? 'disabled title="Build first"'
