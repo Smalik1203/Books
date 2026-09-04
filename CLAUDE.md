@@ -309,7 +309,9 @@ off disk is how two studio bugs started, so this is not only convenience.
 The bar is Chrome's PDF toolbar, in Chrome's order: the page box, a rule,
 minus, the level, plus, a rule, the fit toggle — **centred**, on a
 `1fr auto 1fr` grid rather than a flex row with spacers, since spacers
-centre the middle only when the two sides happen to be the same width. `ctrl` with `+`, `-` and `0`.
+centre the middle only when the two sides happen to be the same width.
+`ctrl` with `+` and `-` walks the ladder, and **`ctrl+0` resets to 100%** —
+what the browser's own does, and what a chapter opens at.
 The arrows read the book: **up and down scroll, left and right turn the
 page** — sideways instead while there is anywhere sideways to go, and at
 the far edge they turn the page rather than dead-ending. Space and
