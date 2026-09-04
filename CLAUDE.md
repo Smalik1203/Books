@@ -280,7 +280,7 @@ practice; nothing under `pages/` can reach it.
 node build/serve.mjs
 ```
 
-<http://localhost:5180> — library, page/spread/signature views, and a Build
+<http://localhost:5180> — library, page and spread views, and a Build
 button. Watches `pages/`, `css/` and `covers/` and rebuilds whichever
 changed. **`build/` is not watched**, so a change to `serve.mjs`,
 `ui/app.js` or `ui/app.css` needs the server restarted — and a running
@@ -288,14 +288,19 @@ studio serving yesterday's compiled markup to today's script off disk is
 how two studio bugs have started.
 
 The bar is Chrome's PDF toolbar, in Chrome's order: the page box, a rule,
-minus, the level, plus, a rule, the fit toggle. `ctrl` with `+`, `-` and
-`0`; `PageUp`/`PageDown`/`Home`/`End` page it, since the `‹ ›` pair went
-with the old shape. **Actual size lives in the level menu**, with the
-calibration behind it, and the menu says whether the screen is calibrated
+minus, the level, plus, a rule, the fit toggle. `ctrl` with `+`, `-` and `0`.
+The arrows read the book: **up and down scroll, left and right turn the
+page** (sideways instead, once the zoom is past the width of the stage),
+with space and shift-space for a screenful and PageUp/PageDown/Home/End
+for whole pages. They are answered by `app.js` rather than the browser —
+the book is in an iframe and the stage around it never holds focus, so
+nothing scrolled at all until they were.
+
+**Actual size lives in the level menu**, with the calibration behind it, and the menu says whether the screen is calibrated
 or still the browser's 96 dpi guess — that was the thing that read as
 broken, because uncalibrated the two are the same button pressed twice.
 
-Three things were taken off the bar and are not to be pasted back:
+Four things were taken off the bar and are not to be pasted back:
 
 * **Trim.** It was one of a pressed pair where one was always the answer.
   Bleed is a switch now, and off is the trim; the trim size moved into the
@@ -309,14 +314,19 @@ Three things were taken off the bar and are not to be pasted back:
   clear*), and the numbers stay on the terminal. The cover viewer keeps its
   one line, because the spine is the only thing there that can be wrong in
   a way the proof will not show.
+* **The signature view.** A schematic of a press sheet is not a way of
+  looking at the book, and it brought a second control — pages per
+  signature — that meant nothing beside Pages and Spreads. It is still
+  built and still served at `/impose/<class>/<chapter>?sig=32`, and
+  nothing links to it: it is reached by typing the address.
 
 ```bash
-npm run check:studio     # 64 assertions: the chooser, the bar, the build report
+npm run check:studio     # 73 assertions: the chooser, the bar, the build report
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
 started server, that the compiled markup carries every id the scripts reach
-for — and that each of the three removals above is still removed.
+for — and that each of the four removals above is still removed.
 **Behaviour** drives the real `library.js` and `app.js` in headless Chrome
 — the chooser against a two-class fixture, the toolbar against a stub book
 at the real trim. The toolbar fixture lifts `zoomBar()` out of `serve.mjs`

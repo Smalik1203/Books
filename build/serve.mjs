@@ -384,17 +384,17 @@ function viewerHtml(chapter, s) {
                     : `title="Show the press sheet — trim plus ${s.bleed}mm bleed, in a ${s.slug}mm slug with the crop marks"`}
           >Bleed ${s.mediaW}&times;${s.mediaH}</button>
 
+        <!-- Two views, not three. The signature came off the bar with
+             the rest of the clutter: it is a schematic of a press sheet,
+             not a way of looking at the book, and it brought a second
+             control — pages per signature — that meant nothing beside
+             the other two. It is still built and still served, at
+             /impose/<class>/<chapter>?sig=32, and nothing else links
+             to it: it is reached by typing the address. -->
         <div class="seg" role="group" aria-label="View">
           <button id="view-pages" aria-pressed="true">Pages</button>
           <button id="view-spread" aria-pressed="false">Spreads</button>
-          <button id="view-impose" aria-pressed="false">Signature</button>
         </div>
-
-        <select class="btn" id="sig-size" title="Pages per signature">
-          <option value="8">8 pp</option>
-          <option value="16">16 pp</option>
-          <option value="32" selected>32 pp</option>
-        </select>
 
 ${zoomBar()}
 
