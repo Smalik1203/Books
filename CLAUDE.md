@@ -334,11 +334,14 @@ a fixed percentage it returns to fit to page, so it is a way back as well as
 a toggle.
 
 **A chapter opens at 100%**, the page at the size the stylesheet says.
-**Fit to page is 70%** and measures nothing: it used to measure the stage,
-which put it anywhere from 46% to 116%, so the same book came up a
-different size on every screen and no two people describing a page were
-describing the same one. Fit to width still measures, because the width of
-the stage is the whole question there.
+**Fit to page is 70% on the trim and 66% on the press sheet**, and measures
+nothing: it used to measure the stage, which put it anywhere from 46% to
+116%, so the same book came up a different size on every screen and no two
+people describing a page were describing the same one. Two numbers because
+there are two sheets — 209 × 266 against 189 × 246 — and one number would
+make the page jump larger the moment Bleed went on, which is the one moment
+it should sit still. Fit to width still measures, because the width of the
+stage is the whole question there.
 
 **The level is typed, not chosen.** Any percentage from 10 to 500 — a
 proof gets read at whatever makes one figure legible, and 137 was never

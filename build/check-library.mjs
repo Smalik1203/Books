@@ -468,6 +468,12 @@ async function checkViewerBehaviour() {
     stg.style.height = '260px';  toFitPage(); R.fitOnShort = lvl();
     stg.style.height = keptH;    toFitPage();
 
+    /* The press sheet is larger than the trim, so it fits at a lower
+       level — 66% against 70%, which keeps the page itself the same
+       size on the screen as Bleed goes on and off. */
+    $('sheet-bleed').click(); toFitPage(); R.fitOnBleed = lvl();
+    $('sheet-bleed').click(); toFitPage(); R.fitBackOnTrim = lvl();
+
     $('fit-toggle').click(); R.fitWidth = lvl();
     R.iconAtWidth = fitIcon();
     $('fit-toggle').click(); R.backToPage = lvl();
@@ -610,7 +616,10 @@ async function checkViewerBehaviour() {
     + '<span class="bar__title">A Long Chapter Title</span></span></div>'
     + bar
     + '<div class="bar__side bar__side--end">'
-    + '<button class="btn">Bleed</button>'
+    /* The real id, so the sheet switch is wired: the two sheets fit at
+       different levels and nothing could have told them apart while
+       this was a dummy button. */
+    + '<button class="btn" id="sheet-bleed" aria-pressed="false">Bleed</button>'
     + '<a class="btn">Print PDF</a><button class="btn btn--go">Build</button></div>'
     + '</div>'
     + '<div class="stage" id="stage" style="width:900px;height:700px">'
@@ -649,6 +658,8 @@ async function checkViewerBehaviour() {
   eq('fit to page is 70%', R.fitPage, '70%');
   eq('70% on a tall stage and a short one alike',
     [R.fitOnTall, R.fitOnShort], ['70%', '70%']);
+  eq('and 66% on the press sheet, which is the larger one',
+    [R.fitOnBleed, R.fitBackOnTrim], ['66%', '70%']);
   eq('fit to width is wider than fit to page', pc(R.fitWidth) > pc(R.fitPage), true);
   eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
   eq('minus steps back', R.minus, R.plus1);

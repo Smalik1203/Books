@@ -29,13 +29,19 @@
      so the ladder only says where a press of the button lands next. */
   const ZOOMS = [0.25, 0.33, 0.5, 0.67, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3];
   const MIN_Z = 0.1, MAX_Z = 5;
-  /* What the fit button gives: 70%, and nothing else. It used to
-     measure the stage, which put it anywhere from 46% to 116% — the
-     same book came up a different size every time it was opened and on
-     every screen it was opened on, so no two people describing a page
-     were describing the same thing. A window too short for 70% scrolls,
-     which is what a window does. */
-  const FIT_Z = 0.7;
+  /* What the fit button gives — a number, not a measurement of the
+     stage. It used to measure, which put it anywhere from 46% to 116%:
+     the same book came up a different size every time it was opened and
+     on every screen it was opened on, so no two people describing a
+     page were describing the same thing. A window too short for it
+     scrolls, which is what a window does.
+
+     Two numbers, because there are two sheets. The press sheet is
+     209 × 266 where the trim is 189 × 246, so holding the level at 70%
+     would make the page itself jump larger the moment Bleed went on —
+     the one moment you want it to sit still, since what you are looking
+     for is what falls outside the trim. */
+  const FIT_Z = { trim: 0.7, bleed: 0.66 };
   const state = {
     sheet: 'trim',
     view: 'pages',
@@ -73,7 +79,7 @@
      the stage is the whole question. Fit to page does not: it is 70%,
      the size this book is read at. */
   function factor(contentW) {
-    if (state.zoom === 'fit') return FIT_Z;
+    if (state.zoom === 'fit') return FIT_Z[state.sheet] || FIT_Z.trim;
     if (state.zoom === 'fitw') return (stage.clientWidth - 24) / contentW;
     return Number(state.zoom);
   }
@@ -217,6 +223,11 @@
   on('sheet-bleed', 'onclick', () => {
     state.sheet = state.sheet === 'bleed' ? 'trim' : 'bleed';
     load();
+    /* The two sheets fit at different levels, and load() only sets the
+       iframe going — applyZoom would not run until it came back, so the
+       level lagged a sheet behind for as long as the book took to
+       arrive. */
+    applyZoom();
   });
   /* Both switches, both off by default, and neither with a button for
      the state it is already in: pages is the view a chapter opens on
