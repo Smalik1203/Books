@@ -191,10 +191,180 @@ async function checkBehaviour() {
   }
 }
 
+/* ---- 3. The viewer's zoom cluster --------------------------
+   Same two halves, for the same reason. The toolbar is compiled
+   into serve.mjs and driven by build/ui/app.js off disk, so a
+   running studio serves yesterday's markup to today's script —
+   which is how the chooser broke, and the zoom would break the
+   same way. Structure asserts the ids the script reaches for;
+   behaviour drives the real app.js against a stub book. */
+async function checkViewerStructure() {
+  const port = freePort();
+  const child = spawn(process.execPath, ['build/serve.mjs'],
+    { cwd: ROOT, env: { ...process.env, PORT: String(port) }, stdio: 'ignore' });
+  try {
+    const get = async (url) => {
+      for (let i = 0; i < 60; i++) {
+        await new Promise((r) => setTimeout(r, 200));
+        const t = await fetch(url).then((r) => r.ok ? r.text() : '').catch(() => '');
+        if (t) return t;
+      }
+      return '';
+    };
+    const lib = await get('http://localhost:' + port + '/');
+    const first = (lib.match(/href="\/read\/([^"]+)"/) || [])[1];
+    if (!first) { bad('a chapter to open', 'none', 'a /read/ link in the library'); return; }
+    const html = await get('http://localhost:' + port + '/read/' + first);
+    if (!html) { bad('viewer responds', 'no response', 'the viewer page'); return; }
+    ok('viewer responds');
+
+    for (const id of ['zoom-out', 'zoom-in', 'zoom-level', 'fit-toggle', 'zoom-menu',
+      'cal-panel', 'cal-open', 'cal-done', 'cal-range', 'cal-state']) {
+      eq('#' + id + ' present', html.includes('id="' + id + '"'), true);
+    }
+    for (const z of ['fit', 'fitw', 'actual', '1']) {
+      eq('zoom preset ' + z, html.includes('data-zoom="' + z + '"'), true);
+    }
+    // fit to page needs the sheet height, which the old cfg did not carry
+    const cfg = JSON.parse(html.match(/id="cfg">([\s\S]*?)<\/script>/)[1]);
+    eq('cfg carries sheet heights',
+      typeof cfg.trimH === 'number' && typeof cfg.mediaH === 'number', true);
+    // and the four buttons it replaced must be gone
+    eq('old preset row gone', /aria-label="Zoom"[\s\S]{0,120}>Fit</.test(html), false);
+
+    const covLink = (lib.match(/href="\/cover\/([^"]+)"/) || [])[1];
+    if (covLink) {
+      const cov = await get('http://localhost:' + port + '/cover/' + covLink);
+      eq('cover viewer carries the same cluster',
+        ['zoom-level', 'fit-toggle', 'zoom-menu', 'cal-done'].every((i) => cov.includes('id="' + i + '"')),
+        true);
+    }
+  } finally {
+    child.kill();
+  }
+}
+
+/* The book the stub viewer shows: two pages at the real trim, so a
+   percentage means the same thing here as on a chapter. */
+const STUB_TRIM = { w: 189, h: 246 };
+
+async function checkViewerBehaviour() {
+  if (!CHROME) { bad('chrome found', 'none', 'a chrome or chromium binary'); return; }
+  const script = await readFile(p('build', 'ui', 'app.js'), 'utf8');
+  const css = await readFile(p('build', 'ui', 'app.css'), 'utf8');
+  const dir = p('build', '_check');
+  await mkdir(dir, { recursive: true });
+
+  const mm = (v) => (v * 96 / 25.4) + 'px';
+  await writeFile(path.join(dir, 'book-stub.html'),
+    '<!doctype html><html><head><style>body{margin:0}'
+    + `.page{width:${mm(STUB_TRIM.w)};height:${mm(STUB_TRIM.h)};background:#fff;margin:0 auto 8px}`
+    + '</style></head><body>'
+    + '<div class="page" data-folio="1"></div><div class="page" data-folio="2"></div>'
+    + '</body></html>');
+
+  const cfg = {
+    target: 'stub', trimUrl: 'book-stub.html', bleedUrl: 'book-stub.html',
+    imposeUrl: 'book-stub.html',
+    trimW: STUB_TRIM.w, mediaW: STUB_TRIM.w + 6,
+    trimH: STUB_TRIM.h, mediaH: STUB_TRIM.h + 6,
+  };
+
+  /* The toolbar, taken from serve.mjs rather than retyped, so this
+     tests what the studio actually serves. */
+  const serve = await readFile(p('build', 'serve.mjs'), 'utf8');
+  const bar = serve.slice(serve.indexOf('const zoomBar = () => `') + 'const zoomBar = () => `'.length,
+    serve.indexOf('`;', serve.indexOf('const zoomBar = () => `')))
+    .replace(/&minus;/g, '−').replace(/&hellip;/g, '…')
+    .replace(/&times;/g, '×').replace(/&ldquo;|&rdquo;/g, '"')
+    .replace(/&mdash;/g, '—').replace(/&nbsp;/g, ' ');
+
+  const driver = `
+    const $ = (id) => document.getElementById(id);
+    const lvl = () => $('zoom-level').textContent;
+    const R = {};
+    R.fitPage = lvl();
+    $('zoom-in').click();  R.plus1 = lvl();
+    $('zoom-in').click();  R.plus2 = lvl();
+    $('zoom-out').click(); R.minus = lvl();
+    $('fit-toggle').click(); R.fitWidth = lvl();
+    $('fit-toggle').click(); R.backToPage = lvl();
+    $('zoom-level').click(); R.menuOpen = !$('zoom-menu').hidden;
+    document.querySelector('[data-zoom="1.5"]').click();
+    R.preset = lvl();
+    R.menuClosedAfterPick = $('zoom-menu').hidden;
+    R.checked = [...document.querySelectorAll('[data-zoom]')]
+      .filter((b) => b.getAttribute('aria-checked') === 'true').map((b) => b.dataset.zoom);
+    // the ladder has ends, and the buttons must say so
+    for (let i = 0; i < 12; i++) $('zoom-in').click();
+    R.ceiling = lvl(); R.inDisabled = $('zoom-in').disabled;
+    for (let i = 0; i < 20; i++) $('zoom-out').click();
+    R.floor = lvl(); R.outDisabled = $('zoom-out').disabled;
+    // calibration: 3.4 px/mm is 90% of the 96dpi the browser assumes
+    $('zoom-level').click(); $('cal-open').click();
+    R.calPanelOpen = !$('cal-panel').hidden;
+    const rg = $('cal-range');
+    rg.value = '3.4'; rg.dispatchEvent(new Event('input', { bubbles: true }));
+    R.calNote = $('cal-state').textContent;
+    $('cal-done').click();
+    R.actual = lvl();
+    R.calPanelClosed = $('cal-panel').hidden;
+    $('cal-open') && ($('zoom-level').click(), $('cal-open').click(), $('cal-reset').click());
+    R.uncalNote = $('cal-state').textContent;
+    document.title = 'R' + JSON.stringify(R);`;
+
+  const html = '<!doctype html><html><head><style>' + css + '</style></head><body>'
+    + '<div class="viewer"><div class="bar">' + bar + '</div>'
+    + '<div class="stage" id="stage" style="width:900px;height:700px">'
+    + '<div class="stage__inner" id="inner">'
+    + '<iframe id="frame" scrolling="no"></iframe></div></div></div>'
+    + '<span id="page-count"></span><input id="page-no" type="number">'
+    + '<button id="build"></button><span id="build-log"></span>'
+    + '<script type="application/json" id="cfg">' + JSON.stringify(cfg) + '</' + 'script>'
+    + '<script>' + script + '</' + 'script>'
+    + '<script>addEventListener("load", () => setTimeout(() => {' + driver + '}, 300));</' + 'script>'
+    + '</body></html>';
+
+  const file = path.join(dir, 'viewer-fixture.html');
+  await writeFile(file, html);
+  const { stdout } = await run(CHROME, [
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+    '--window-size=1400,900', '--virtual-time-budget=6000', '--dump-dom',
+    'file:///' + file.replace(/\\/g, '/'),
+  ], { maxBuffer: 1 << 24 });
+  await rm(dir, { recursive: true, force: true });
+
+  const raw = stdout.match(/<title>R([\s\S]*?)<\/title>/);
+  if (!raw) { bad('viewer fixture ran', 'no result in the dom', 'the driver output'); return; }
+  const R = JSON.parse(raw[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+
+  const pc = (s) => Number(String(s).replace('%', ''));
+  eq('fit to page fits the height', pc(R.fitPage) > 0 && pc(R.fitPage) < 100, true);
+  eq('fit to width is wider than fit to page', pc(R.fitWidth) > pc(R.fitPage), true);
+  eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
+  eq('minus steps back', R.minus, R.plus1);
+  eq('the fit toggle returns', R.backToPage, R.fitPage);
+  eq('the level opens the menu', R.menuOpen, true);
+  eq('a preset sets the level', R.preset, '150%');
+  eq('picking closes the menu', R.menuClosedAfterPick, true);
+  eq('the chosen preset is ticked', R.checked, ['1.5']);
+  eq('the ladder has a ceiling', [R.ceiling, R.inDisabled], ['300%', true]);
+  eq('the ladder has a floor', [R.floor, R.outDisabled], ['25%', true]);
+  eq('calibrate opens from the menu', R.calPanelOpen, true);
+  eq('an uncalibrated screen says so', R.uncalNote, '96 dpi');
+  eq('a calibrated one says so', R.calNote, 'calibrated');
+  eq('actual size follows the calibration', R.actual, '90%');
+  eq('done closes the panel', R.calPanelClosed, true);
+}
+
 console.log('Structure — the markup carries what the script needs:');
 await checkStructure();
 console.log('\nBehaviour — two classes, uneven subjects:');
 await checkBehaviour();
+console.log('\nViewer — the zoom cluster the studio serves:');
+await checkViewerStructure();
+console.log('\nViewer — driving the real app.js against a stub book:');
+await checkViewerBehaviour();
 
 console.log();
 if (failures) {

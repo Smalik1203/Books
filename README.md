@@ -42,8 +42,8 @@ In a chapter you get:
 |---|---|
 | **Trim / Bleed** | the reading page, or the 230 × 317 mm press sheet — trim, 3 mm bleed and the marks |
 | **Pages / Spreads / Signature** | one page at a time; verso-and-recto side by side (the only way to check the mirroring); or the press sheet, 8/16/32 pages up |
-| **Fit / 50% / 100% / Actual size** | Actual size is true millimetres once you calibrate |
-| **Calibrate** | hold a bank card to the screen and drag; every card is 85.6 × 54 mm |
+| **− / level / + / fit** | Chrome's PDF zoom, and `ctrl` with `+`, `-`, `0`. The level opens the presets, fit to page and fit to width |
+| **Actual size**, in that menu | true millimetres once you calibrate — hold a bank card to the screen and drag; every card is 85.6 × 54 mm. Until then the menu says *96 dpi*, because uncalibrated it is only 100% under another name |
 | **Print…** | the browser dialog. Save as PDF honours the page size; a printer will scale to its paper |
 | **Reading PDF / Print PDF** | download either artefact |
 | **Build** | run the builder with `--pdf --bleed` and reload, without leaving the page |
