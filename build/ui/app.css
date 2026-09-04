@@ -106,8 +106,14 @@ a { color: inherit; text-decoration: none; }
    screen. The shorter, fixed-length line goes on top. */
 .bar__where {
   display: flex; flex-direction: column; justify-content: center;
-  min-width: 0; margin-left: 2px; line-height: 1.2;
+  min-width: 0; line-height: 1.2;
+  /* Set off from the two icon buttons on one side and from the switches
+     on the other: a label pressed up against a control reads as that
+     control's caption. Wider on the right, because that is the join
+     between naming the page and acting on it. */
+  margin-left: 10px;
 }
+.bar__where + .btn { margin-left: 18px; }
 .bar__title {
   font-weight: 600; font-size: 14px;
   /* the one thing here with no length limit */
