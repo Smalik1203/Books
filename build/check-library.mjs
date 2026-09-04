@@ -61,7 +61,7 @@ const freePort = () => 5300 + Math.floor(Math.random() * 400);
 async function checkStructure() {
   const port = freePort();
   const child = spawn(process.execPath, ['build/serve.mjs'],
-    { cwd: ROOT, env: { ...process.env, PORT: String(port) }, stdio: 'ignore' });
+    { cwd: ROOT, env: { ...process.env, PORT: String(port), NO_WATCH: '1' }, stdio: 'ignore' });
   try {
     let html = '';
     for (let i = 0; i < 60 && !html; i++) {
@@ -201,7 +201,7 @@ async function checkBehaviour() {
 async function checkViewerStructure() {
   const port = freePort();
   const child = spawn(process.execPath, ['build/serve.mjs'],
-    { cwd: ROOT, env: { ...process.env, PORT: String(port) }, stdio: 'ignore' });
+    { cwd: ROOT, env: { ...process.env, PORT: String(port), NO_WATCH: '1' }, stdio: 'ignore' });
   try {
     const get = async (url) => {
       for (let i = 0; i < 60; i++) {
@@ -439,7 +439,7 @@ async function checkViewerBehaviour() {
 async function checkBuildReport() {
   const port = freePort();
   const child = spawn(process.execPath, ['build/serve.mjs'],
-    { cwd: ROOT, env: { ...process.env, PORT: String(port) }, stdio: 'ignore' });
+    { cwd: ROOT, env: { ...process.env, PORT: String(port), NO_WATCH: '1' }, stdio: 'ignore' });
   try {
     let lib = '';
     for (let i = 0; i < 60 && !lib; i++) {
@@ -460,6 +460,54 @@ async function checkBuildReport() {
   }
 }
 
+/* ---- 6. Restarting itself ---------------------------------
+   The studio re-execs under `node --watch` so an edit to
+   serve.mjs restarts it and the open tabs come back on their
+   own. If that ever stops working the failure is silent — the
+   studio simply serves yesterday's markup again, which is the
+   whole class of bug this file exists for. So it is driven:
+   start one plainly, change the toolbar, and see the change
+   served without anyone touching the process. */
+async function checkSelfRestart() {
+  const port = freePort();
+  const file = p('build', 'serve.mjs');
+  const before = await readFile(file, 'utf8');
+  const MARK = '<!--restart-check-' + Date.now() + '-->';
+  const child = spawn(process.execPath, ['build/serve.mjs'],
+    { cwd: ROOT, env: { ...process.env, PORT: String(port) }, stdio: 'ignore' });
+
+  const get = async (tries) => {
+    for (let i = 0; i < tries; i++) {
+      await new Promise((r) => setTimeout(r, 250));
+      const t = await fetch('http://localhost:' + port + '/read/' + target)
+        .then((r) => r.ok ? r.text() : '').catch(() => '');
+      if (t) return t;
+    }
+    return '';
+  };
+  let target = '';
+  try {
+    for (let i = 0; i < 60 && !target; i++) {
+      await new Promise((r) => setTimeout(r, 250));
+      const lib = await fetch('http://localhost:' + port + '/')
+        .then((r) => r.text()).catch(() => '');
+      target = (lib.match(/href="\/read\/([^"]+)"/) || [])[1] || '';
+    }
+    if (!target) { bad('the watched studio starts', 'no response', 'the library'); return; }
+    ok('the watched studio starts');
+    eq('and does not carry the mark yet', (await get(20)).includes(MARK), false);
+
+    await writeFile(file, before.replace('>Spreads</button>', '>Spreads</button>' + MARK));
+    let served = '';
+    for (let i = 0; i < 40 && !served.includes(MARK); i++) served = await get(2);
+    eq('an edit to serve.mjs is served without a manual restart',
+      served.includes(MARK), true);
+  } finally {
+    await writeFile(file, before);
+    child.kill();
+  }
+}
+
 console.log('Structure — the markup carries what the script needs:');
 await checkStructure();
 console.log('\nBehaviour — two classes, uneven subjects:');
@@ -470,6 +518,8 @@ console.log('\nViewer — driving the real app.js against a stub book:');
 await checkViewerBehaviour();
 console.log('\nBuild — what it reports back to the bar:');
 await checkBuildReport();
+console.log('\nRestart — an edit to serve.mjs, without touching the process:');
+await checkSelfRestart();
 
 console.log();
 if (failures) {

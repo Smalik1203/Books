@@ -57,8 +57,14 @@ rules hold for any folder — facing pages on one side of a sheet sum to
 asserts both before drawing. Which slot each pair takes depends on the fold
 scheme, so it's a tool for checking structure, not a file to send to press.
 
-Editing anything under `pages/` or `css/` rebuilds **that chapter** and reloads
-the tab. `Ctrl+C` stops the server.
+**Start it once and leave it.** Editing anything under `pages/`, `css/` or
+`covers/` rebuilds that one and reloads the tab; editing the studio's own
+front end under `build/ui/` reloads the tab; and editing `build/serve.mjs`
+restarts the studio itself, because the viewer is compiled into it and node
+cannot swap that out from under itself. The open tabs come back on their
+own — the reload client reloads on a reconnect as well as on a message.
+
+`NO_WATCH=1` turns the self-restart off. `Ctrl+C` stops the server.
 
 The book is shown in an iframe, so the studio's stylesheet and the book's can
 never reach one another. For a quick look without the server, open

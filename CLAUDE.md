@@ -281,11 +281,30 @@ node build/serve.mjs
 ```
 
 <http://localhost:5180> — library, page and spread views, and a Build
-button. Watches `pages/`, `css/` and `covers/` and rebuilds whichever
-changed. **`build/` is not watched**, so a change to `serve.mjs`,
-`ui/app.js` or `ui/app.css` needs the server restarted — and a running
-studio serving yesterday's compiled markup to today's script off disk is
-how two studio bugs have started.
+button.
+
+**It restarts itself. Start it once and leave it.** Three different things
+used to need a kill and a re-run, and all three are handled now:
+
+| you change | what happens |
+|---|---|
+| `pages/`, `css/`, `covers/` | that chapter or cover rebuilds, the tab reloads |
+| `build/ui/app.js`, `app.css` | the tab reloads — nothing to rebuild, nothing to restart |
+| `build/serve.mjs` and what it imports | the studio restarts and the tab comes back on its own |
+
+The last one is why this was tedious. Every toolbar, every id and the whole
+viewer live in template literals compiled into `serve.mjs`, and node cannot
+swap them out from under itself — so the process has to go. It now re-execs
+under `node --watch` and steps aside, picking the port once and handing it
+down so a restart cannot race its own closing socket into 5181 while the tab
+knocks at 5180. `NO_WATCH=1` opts out; `PORT=` still wins.
+
+The tabs come back because the reload client reloads on a **reconnect** as
+well as on a message, and because it now goes into the studio's own pages
+and not only into the book inside the iframe.
+
+A running studio handing yesterday's compiled markup to a script read fresh
+off disk is how two studio bugs started, so this is not only convenience.
 
 The bar is Chrome's PDF toolbar, in Chrome's order: the page box, a rule,
 minus, the level, plus, a rule, the fit toggle. `ctrl` with `+`, `-` and `0`.
@@ -327,7 +346,7 @@ pasted back:
   nothing links to it: it is reached by typing the address.
 
 ```bash
-npm run check:studio     # 77 assertions: the chooser, the bar, the build report
+npm run check:studio     # 80 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly

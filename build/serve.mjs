@@ -24,8 +24,54 @@ import { impositionPlan, verify, fitsOn } from './impose.mjs';
 import { spineWidth } from './spine.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PORT = Number(process.env.PORT) || 5180;   // override: PORT=5199 node build/serve.mjs
 const openAt = process.argv[2] || null;
+
+/* ---- Restarting itself ------------------------------------
+   This file is compiled into the process running it: the whole
+   viewer, every toolbar and every id lives in the template
+   literals below, and node cannot swap them out from under
+   itself. So a change here used to mean killing the studio and
+   starting it again by hand, every time — and forgetting to do
+   it meant a running server handing yesterday's markup to a
+   script read fresh off disk, which is how the class chooser
+   came to enable itself with nothing in it.
+
+   So it starts itself again. Run plainly, it re-execs under
+   `node --watch` and steps aside; the watcher restarts the real
+   server whenever this file or anything it imports changes, and
+   the open tabs come back on their own, because the reload
+   client reloads on a reconnect as well as on a message.
+
+   The port is chosen once, here, and handed down — otherwise
+   every restart would race its own closing socket and the
+   port-stepping below would quietly move the studio to 5181
+   while the tab kept knocking at 5180.
+
+   LL_STUDIO_CHILD is what tells the child it is the child.
+   PORT= still wins, and NO_WATCH=1 opts out entirely. */
+if (!process.env.LL_STUDIO_CHILD && !process.env.NO_WATCH) {
+  const { spawn } = await import('node:child_process');
+  const net = await import('node:net');
+
+  const free = (from) => new Promise((resolve) => {
+    const probe = net.createServer();
+    probe.once('error', () => resolve(free(from + 1)));
+    probe.listen(from, () => probe.close(() => resolve(from)));
+  });
+  const port = Number(process.env.PORT) || await free(5180);
+
+  const child = spawn(process.execPath,
+    ['--watch', '--watch-preserve-output', fileURLToPath(import.meta.url), ...process.argv.slice(2)],
+    { stdio: 'inherit', env: { ...process.env, LL_STUDIO_CHILD: '1', PORT: String(port) } });
+
+  for (const sig of ['SIGINT', 'SIGTERM']) {
+    process.on(sig, () => { child.kill(sig); process.exit(0); });
+  }
+  child.on('exit', (code) => process.exit(code ?? 0));
+  await new Promise(() => {});     // the child has the terminal from here
+}
+
+const PORT = Number(process.env.PORT) || 5180;   // override: PORT=5199 node build/serve.mjs
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
@@ -138,12 +184,16 @@ async function coverLibrary() {
   return classes;
 }
 
+/* The studio's own pages carry the reload client too. They did not:
+   it went only into the book inside the iframe, so a change to the
+   toolbar or to app.js left the shell around the book exactly as it
+   was until the tab was reloaded by hand. */
 const page = (title, body) => '<!doctype html>\n'
   + '<html lang="en"><head><meta charset="utf-8">\n'
   + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
   + '<title>' + esc(title) + '</title>\n'
   + '<link rel="stylesheet" href="/build/ui/app.css">\n'
-  + '</head><body>' + body + '</body></html>';
+  + '</head><body>' + body + RELOAD + '</body></html>';
 
 /* ---- Library page -----------------------------------------
    Chapters are grouped by subject; the covers of a class are a
@@ -561,9 +611,19 @@ function impositionHtml(chapter, s, sigSize) {
 }
 
 /* ---- Live reload ------------------------------------------ */
+/* Two things bring a tab back. A message, when a chapter or a cover
+   has been rebuilt — and a reconnect, when the server itself has
+   restarted under the watcher and is serving markup this page was
+   rendered before. EventSource retries on its own; all this has to
+   do is notice that the connection it just opened is not its
+   first. */
 const clients = new Set();
-const RELOAD = '\n<script>new EventSource("/__reload").onmessage='
-  + 'function(){location.reload()};</script>';
+const RELOAD = `
+<script>(function () {
+  var es = new EventSource('/__reload'), opened = false;
+  es.onmessage = function () { location.reload(); };
+  es.onopen = function () { if (opened) location.reload(); opened = true; };
+}());</script>`;
 
 /* ---- Two pages to a spread, for the viewer only ------------ */
 const SPREAD = '\n<style>'
@@ -657,8 +717,13 @@ function build(target, flags = [], kind = 'chapter') {
 let timer = null;
 const pending = new Set();
 const onChange = (dir) => (_evt, file) => {
-  if (!file || !/\.(html|css|json|svg)$/.test(String(file))) return;
+  if (!file || !/\.(html|css|json|svg|js)$/.test(String(file))) return;
   const parts = String(file).split(/[\\/]/);
+  /* build/ui is the studio's own front end, served off disk rather
+     than compiled in — so nothing needs rebuilding and nothing needs
+     restarting, the tab only needs telling. It was not watched at all,
+     which is why an edit to app.js looked like it had not applied. */
+  if (dir === 'build/ui') { for (const res of clients) res.write('data: reload\n\n'); return; }
   if (dir === 'pages' && parts.length >= 2) pending.add('chapter:' + parts[0] + '/' + parts[1]);
   else if (dir === 'covers' && parts.length >= 1) {
     // a panel in _shared is shared by every cover of that class, so rebuild them all
@@ -680,7 +745,7 @@ const onChange = (dir) => (_evt, file) => {
     }
   }, 140);
 };
-for (const dir of ['pages', 'css', 'covers']) {
+for (const dir of ['pages', 'css', 'covers', 'build/ui']) {
   watch(path.join(ROOT, dir), { recursive: true }, onChange(dir));
 }
 
@@ -808,7 +873,9 @@ server.on('listening', async () => {
   if (focus) console.log('  ' + (focus.kind === 'cover' ? 'Cover    ' : 'Chapter  ')
     + 'http://localhost:' + port + '/'
     + (focus.kind === 'cover' ? 'cover' : 'read') + '/' + focus.target);
-  console.log('  Watching pages/, css/ and covers/ — a save rebuilds that one and reloads.\n');
+  console.log('  Watching pages/, css/ and covers/ — a save rebuilds that one and reloads.');
+  console.log('  build/ui reloads the tab; build/serve.mjs restarts the studio itself.'
+    + (process.env.NO_WATCH ? '  (NO_WATCH is set — restart it yourself.)' : '') + '\n');
   if (focus) await build(focus.target, [], focus.kind);
 });
 
