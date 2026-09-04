@@ -99,6 +99,16 @@ async function checkStructure() {
     eq('a card counts its pages', /<span>\d+ pages?<\/span>/.test(html), true);
     eq('and does not print a folio range', /folios\s/.test(html), false);
     eq('nor a cover card its wrap size', /wrap \d/.test(html), false);
+    /* A cover card names the book and says how thick it is. The folder
+       it happens to live in is an address, not a fact about the wrap,
+       and the card is already a link to it. */
+    const coverCard = (html.match(/<a class="card" href="\/cover\/[\s\S]*?<\/a>/) || [])[0];
+    if (coverCard) {
+      const meta = (coverCard.match(/class="card__meta">([\s\S]*?)<\/div>/) || [])[1] || '';
+      eq('a cover card carries one fact, the spine',
+        (meta.match(/<span>/g) || []).length, 1);
+      eq('and it is the spine', /<span>spine \d/.test(meta), true);
+    }
 
     /* The back arrow means "back to the chapters", not "start over".
        It went to a bare "/", which opened on two empty dropdowns and

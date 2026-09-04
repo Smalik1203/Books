@@ -409,7 +409,7 @@ missing, not a bare arrival. A class or subject with no section behind it is
 ignored rather than selected.
 
 ```bash
-npm run check:studio     # 117 assertions: the chooser, the cards, the bar, the wrap, the build, the restart
+npm run check:studio     # 119 assertions: the chooser, the cards, the bar, the wrap, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
