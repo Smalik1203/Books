@@ -40,6 +40,7 @@ In a chapter you get:
 
 | control | what it does |
 |---|---|
+| **home / back** | two journeys, two buttons: home goes to the top of the studio with nothing chosen, back to the chapter list this page came from, carrying its class and subject. Beside them, where you are — class and chapter — over what you are looking at |
 | **Bleed** | a switch, not one of a pair: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in its tooltip; nothing on the bar carries a measurement |
 | **Spreads** | the other switch: off is one page at a time, on is verso-and-recto side by side — the only way to check the mirroring |
 | **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. The level opens the presets, fit to page and fit to width |

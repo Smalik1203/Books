@@ -120,9 +120,14 @@
     } catch { /* private window, or storage refused — not worth a failure */ }
   };
   const recall = () => {
+    const q = new URLSearchParams(location.search);
+    /* The home button is not the back button under another icon: it goes
+       to the top of the studio, where nothing is chosen yet. Without
+       this it would restore the last choice and land exactly where back
+       lands, and one of the two would be decoration. */
+    if (q.has('home')) return {};
     let kept = {};
     try { kept = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { /* no storage */ }
-    const q = new URLSearchParams(location.search);
     if (!q.get('class')) return kept;
     /* A cover belongs to a class and to no subject, so its link carries
        only the class. Falling through to the remembered subject is what

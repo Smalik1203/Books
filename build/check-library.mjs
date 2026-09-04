@@ -100,7 +100,13 @@ async function checkStructure() {
       .then((r) => r.text()).catch(() => '');
     eq('the chapter back link carries class and subject',
       /href="\/\?class=[^"]+&amp;subject=[^"]+"/.test(view), true);
-    eq('and is not a bare slash', /<a class="btn"[^>]*href="\/"/.test(view), false);
+    eq('and is not a bare slash', /href="\/"/.test(view), false);
+    eq('a home button beside it', /href="\/\?home"[^>]*title="The library"/.test(view), true);
+    eq('both are icons', (view.match(/class="btn btn--icon"/g) || []).length >= 2, true);
+    /* Where you are, then what you are looking at — the class and the
+       chapter above the title, not run together beside it. */
+    eq('the label is stacked, class and chapter first',
+      /class="bar__where">[\s\S]*?bar__sub[\s\S]*?bar__title/.test(view), true);
     const covLink = (html.match(/href="\/cover\/([^"]+)"/) || [])[1];
     if (covLink) {
       const cov = await fetch('http://localhost:' + port + '/cover/' + covLink)
@@ -222,6 +228,11 @@ const ARRIVALS = [
     { cls: 'class-9', sub: '', prompt: true, visible: [] }],
   // a class that has gone: ignored, not applied
   ['a pair that no longer exists', '?class=class-99&subject=Alchemy',
+    { cls: '', sub: '', prompt: true, visible: [] }],
+  /* Home is not back under another icon: it goes to the top of the
+     studio, where nothing is chosen. Asserted against a class carried
+     beside it, which is the same branch a remembered one takes. */
+  ['home ignores a choice carried with it', '?home&class=class-9&subject=Mathematics',
     { cls: '', sub: '', prompt: true, visible: [] }],
 ];
 
