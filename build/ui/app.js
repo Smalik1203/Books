@@ -29,10 +29,19 @@
      so the ladder only says where a press of the button lands next. */
   const ZOOMS = [0.25, 0.33, 0.5, 0.67, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3];
   const MIN_Z = 0.1, MAX_Z = 5;
+  /* What the fit button gives: 70%, and nothing else. It used to
+     measure the stage, which put it anywhere from 46% to 116% — the
+     same book came up a different size every time it was opened and on
+     every screen it was opened on, so no two people describing a page
+     were describing the same thing. A window too short for 70% scrolls,
+     which is what a window does. */
+  const FIT_Z = 0.7;
   const state = {
     sheet: 'trim',
     view: 'pages',
-    zoom: 'fit',
+    /* A chapter opens at 100% — the page at the size the stylesheet
+       says, before anything has been decided about the window. */
+    zoom: '1',
   };
 
   /* ---- loading the book ---------------------------------- */
@@ -54,22 +63,18 @@
   function sheetWidthMm() {
     return state.sheet === 'bleed' ? cfg.mediaW : cfg.trimW;
   }
-  function sheetHeightMm() {
-    return state.sheet === 'bleed' ? cfg.mediaH : cfg.trimH;
-  }
+  /* cfg.trimH and cfg.mediaH are still sent and are no longer read:
+     fit to page is a number now, not a measurement of the stage
+     against the sheet. They are left in cfg because the next thing
+     that wants the sheet's height will want it there. */
 
   /* What the level actually comes to, for each of the three kinds it
-     can be. "fit" is the whole sheet inside the stage — width and
-     height both — which is what fit to page means and what this
-     used to get wrong: it fitted the width and capped at 100%, so a
-     tall page still ran off the bottom. */
+     can be. Fit to width still measures — it has to, since the width of
+     the stage is the whole question. Fit to page does not: it is 70%,
+     the size this book is read at. */
   function factor(contentW) {
-    const padW = stage.clientWidth - 24;
-    if (state.zoom === 'fitw') return padW / contentW;
-    if (state.zoom === 'fit') {
-      const sheetH = sheetHeightMm() * CSS_PX_PER_MM + 40;
-      return Math.min(padW / contentW, (stage.clientHeight - 24) / sheetH);
-    }
+    if (state.zoom === 'fit') return FIT_Z;
+    if (state.zoom === 'fitw') return (stage.clientWidth - 24) / contentW;
     return Number(state.zoom);
   }
 

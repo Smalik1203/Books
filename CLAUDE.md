@@ -331,6 +331,13 @@ icon says. A control that names its own opposite has to be read twice. From
 a fixed percentage it returns to fit to page, so it is a way back as well as
 a toggle.
 
+**A chapter opens at 100%**, the page at the size the stylesheet says.
+**Fit to page is 70%** and measures nothing: it used to measure the stage,
+which put it anywhere from 46% to 116%, so the same book came up a
+different size on every screen and no two people describing a page were
+describing the same one. Fit to width still measures, because the width of
+the stage is the whole question there.
+
 **The level is typed, not chosen.** Any percentage from 10 to 500 — a
 proof gets read at whatever makes one figure legible, and 137 was never
 going to be on a menu. The − and + buttons walk a ladder through that
