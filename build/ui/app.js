@@ -87,14 +87,39 @@
     set('zoom-level', 'textContent', Math.round(k * 100) + '%');
     set('zoom-out', 'disabled', k <= ZOOMS[0] + 1e-9);
     set('zoom-in', 'disabled', k >= ZOOMS[ZOOMS.length - 1] - 1e-9);
-    press('fit-toggle', state.zoom === 'fitw');
-    set('fit-toggle', 'title', state.zoom === 'fitw' ? 'Fit to page' : 'Fit to width');
+    fitIcon();
     for (const b of document.querySelectorAll('[data-zoom]')) {
       b.setAttribute('aria-checked', String(b.dataset.zoom === String(state.zoom)));
     }
     calState();
     at = [];                 // every page offset just moved with the zoom
     syncPage();
+  }
+
+  /* The fit button shows the mode it is in, not the mode it would give:
+     a sheet with the arrows running down it for fit to page, across it
+     for fit to width, and the tooltip saying the same thing the picture
+     does. A control that names its own opposite has to be read twice.
+
+     At a fixed percentage neither fit is in force, so it shows the page
+     icon unpressed — which is also what clicking will give, since the
+     toggle returns to fit to page from anywhere that is not fit to
+     width. */
+  function fitIcon() {
+    const wide = state.zoom === 'fitw';
+    for (const svg of document.querySelectorAll('#fit-toggle svg')) {
+      /* toggleAttribute, not .hidden. `hidden` is an IDL property of
+         HTMLElement and an SVG element is not one, so `svg.hidden = true`
+         quietly sets a JavaScript expando and leaves the attribute — and
+         the CSS that keys off it — untouched. The two icons came out
+         exactly inverted, and a check that read `.hidden` back agreed
+         with itself and passed. */
+      svg.toggleAttribute('hidden', (svg.dataset.fit === 'fitw') !== wide);
+    }
+    press('fit-toggle', state.zoom === 'fit' || wide);
+    set('fit-toggle', 'title', wide
+      ? 'Fit to width — click for fit to page'
+      : 'Fit to page — click for fit to width');
   }
 
   /* Until the screen is calibrated, Actual size and 100% are the same
@@ -222,7 +247,10 @@
   }
   on('zoom-out', 'onclick', () => step(-1));
   on('zoom-in', 'onclick', () => step(1));
-  on('fit-toggle', 'onclick', () => setZoom(state.zoom === 'fitw' ? 'fit' : 'fitw'));
+  /* Fit to width from fit to page, and fit to page from anywhere else —
+     so the button is a way back from a percentage as well as a toggle
+     between the two fits. */
+  on('fit-toggle', 'onclick', () => setZoom(state.zoom === 'fit' ? 'fitw' : 'fit'));
   on('zoom-level', 'onclick', (e) => {
     e.stopPropagation();
     closeCal();
