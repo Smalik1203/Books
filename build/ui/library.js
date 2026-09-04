@@ -97,15 +97,61 @@
     show(sets.find((s) => s.dataset.class === cls && s.dataset.covers), true);
   }
 
+  /* ---- Remembering the choice ------------------------------
+     The back arrow in a chapter goes to "/", and this page opened
+     with both dropdowns empty — so coming back from a chapter meant
+     choosing the class and the subject again to reach the list you
+     had just been looking at. The arrow means "back to the
+     chapters", not "start over".
+
+     Two sources, in order. The link the reader arrived on carries
+     the chapter's own class and subject, which is right even for a
+     chapter opened by its address without ever touching this page.
+     Failing that, the last choice made here — so opening the studio
+     fresh puts you back where you left off.
+
+     Neither is trusted: a class or subject that no longer has a
+     section is ignored, and the dropdowns stay as they were. */
+  const KEY = 'll.pick';
+  const remember = () => {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(
+        { cls: pickClass.value, sub: pickSubject.value }));
+    } catch { /* private window, or storage refused — not worth a failure */ }
+  };
+  const recall = () => {
+    let kept = {};
+    try { kept = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { /* no storage */ }
+    const q = new URLSearchParams(location.search);
+    if (!q.get('class')) return kept;
+    /* A cover belongs to a class and to no subject, so its link carries
+       only the class. Falling through to the remembered subject is what
+       stops the arrow on a cover landing on the prompt. */
+    return {
+      cls: q.get('class'),
+      sub: q.get('subject') || (q.get('class') === kept.cls ? kept.sub : '') || '',
+    };
+  };
+
+  function restore() {
+    const { cls, sub } = recall();
+    if (!cls || ![...pickClass.options].some((o) => o.value === cls)) return;
+    pickClass.value = cls;
+    fillSubjects(cls);
+    if (sub && subjectsOf(cls).includes(sub)) pickSubject.value = sub;
+  }
+
   /* The subject list is rebuilt when the class changes and not otherwise:
      rebuilding it on its own change would replace the element the reader
      just used, under their cursor. */
   pickClass.addEventListener('change', () => {
     fillSubjects(pickClass.value);
+    remember();
     apply();
   });
-  pickSubject.addEventListener('change', apply);
+  pickSubject.addEventListener('change', () => { remember(); apply(); });
 
   fillSubjects(pickClass.value);
+  restore();
   apply();
 })();

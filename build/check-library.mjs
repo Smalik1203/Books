@@ -90,6 +90,24 @@ async function checkStructure() {
     eq('subject sections carry a count',
       subjectSets.every((s) => /data-count="\d+"/.test(s)), true);
     eq('a subject section exists', subjectSets.length > 0, true);
+
+    /* The back arrow means "back to the chapters", not "start over".
+       It went to a bare "/", which opened on two empty dropdowns and
+       made the reader choose the class and subject again to reach the
+       list they had just left. */
+    const first = (html.match(/href="\/read\/([^"]+)"/) || [])[1];
+    const view = await fetch('http://localhost:' + port + '/read/' + first)
+      .then((r) => r.text()).catch(() => '');
+    eq('the chapter back link carries class and subject',
+      /href="\/\?class=[^"]+&amp;subject=[^"]+"/.test(view), true);
+    eq('and is not a bare slash', /<a class="btn"[^>]*href="\/"/.test(view), false);
+    const covLink = (html.match(/href="\/cover\/([^"]+)"/) || [])[1];
+    if (covLink) {
+      const cov = await fetch('http://localhost:' + port + '/cover/' + covLink)
+        .then((r) => r.text()).catch(() => '');
+      // a cover belongs to a class and to no subject
+      eq('the cover back link carries the class', /href="\/\?class=[^"&]+"/.test(cov), true);
+    }
   } finally {
     child.kill();
   }
@@ -189,6 +207,66 @@ async function checkBehaviour() {
     if (!mine) { bad(name, 'missing', want); continue; }
     eq(name, mine[1], want);
   }
+}
+
+/* ---- 2b. Arriving with a choice already made ---------------
+   What the back arrow depends on: the page reads the class and
+   subject off the link it was opened with, and ignores a pair
+   that no longer has a section rather than selecting nothing and
+   looking broken. Same fixture, loaded three times. */
+const ARRIVALS = [
+  ['both carried', '?class=class-8&subject=Science',
+    { cls: 'class-8', sub: 'Science', prompt: false, visible: ['class-8/Science'] }],
+  // a cover carries only its class, and lands on the prompt without a subject
+  ['class alone', '?class=class-9',
+    { cls: 'class-9', sub: '', prompt: true, visible: [] }],
+  // a class that has gone: ignored, not applied
+  ['a pair that no longer exists', '?class=class-99&subject=Alchemy',
+    { cls: '', sub: '', prompt: true, visible: [] }],
+];
+
+async function checkArrival() {
+  if (!CHROME) return;                       // already reported by checkBehaviour
+  const script = await readFile(p('build', 'ui', 'library.js'), 'utf8');
+  const dir = p('build', '_check');
+  await mkdir(dir, { recursive: true });
+
+  const driver = `
+    const cls = document.getElementById('pick-class');
+    const sub = document.getElementById('pick-subject');
+    const label = (s) => s.dataset.covers
+      ? s.dataset.class + '/covers' : s.dataset.class + '/' + s.dataset.subject;
+    document.title = 'R' + JSON.stringify({
+      cls: cls.value, sub: sub.value,
+      prompt: !document.getElementById('lib-prompt').hidden,
+      visible: [...document.querySelectorAll('.lib-set')]
+        .filter((x) => !x.hidden && !x.dataset.covers).map(label),
+    });`;
+
+  const html = '<!doctype html><html><body>'
+    + '<select id="pick-class"><option value="">Choose a class</option>'
+    + '<option value="class-9">Class 9</option><option value="class-8">Class 8</option></select>'
+    + '<select id="pick-subject" disabled><option value="">Choose a class first</option></select>'
+    + FIXTURE_SETS
+    + '<p id="lib-prompt"></p><p id="lib-empty" hidden></p>'
+    + '<script>' + script + '</' + 'script>'
+    + '<script>' + driver + '</' + 'script>'
+    + '</body></html>';
+
+  const file = path.join(dir, 'arrival-fixture.html');
+  await writeFile(file, html);
+  const url = 'file:///' + file.replace(/\\/g, '/');
+
+  for (const [name, query, want] of ARRIVALS) {
+    const { stdout } = await run(CHROME, [
+      '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+      '--virtual-time-budget=4000', '--dump-dom', url + query,
+    ], { maxBuffer: 1 << 24 });
+    const raw = stdout.match(/<title>R([\s\S]*?)<\/title>/);
+    if (!raw) { bad(name, 'no result in the dom', want); continue; }
+    eq(name, JSON.parse(raw[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&')), want);
+  }
+  await rm(dir, { recursive: true, force: true });
 }
 
 /* ---- 3. The viewer's zoom cluster --------------------------
@@ -512,6 +590,8 @@ console.log('Structure — the markup carries what the script needs:');
 await checkStructure();
 console.log('\nBehaviour — two classes, uneven subjects:');
 await checkBehaviour();
+console.log('\nArriving back from a chapter, with the choice already made:');
+await checkArrival();
 console.log('\nViewer — the zoom cluster the studio serves:');
 await checkViewerStructure();
 console.log('\nViewer — driving the real app.js against a stub book:');

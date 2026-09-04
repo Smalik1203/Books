@@ -423,7 +423,14 @@ function viewerHtml(chapter, s) {
   return page(chapter.meta.title + ' — LearnLab Studio', `
     <div class="viewer">
       <div class="bar">
-        <a class="btn" href="/" title="Back to the library">&larr;</a>
+        <!-- Back to the chapters, not back to the beginning. The arrow
+             carries the class and subject this chapter belongs to, so
+             the library opens on the list the reader just left instead
+             of on two empty dropdowns — and it is right even for a
+             chapter reached by its address without passing through the
+             library at all. -->
+        <a class="btn" title="Back to the chapters"
+           href="/?class=${encodeURIComponent(chapter.target.split('/')[0])}&amp;subject=${encodeURIComponent(chapter.subject)}">&larr;</a>
         <span class="bar__title">${esc(chapter.meta.title)}</span>
         <span class="bar__sub">Class ${esc(chapter.meta.class)} &middot;
           ch ${esc(chapter.meta.number)} &middot; ${chapter.pages} pp &middot;
@@ -494,7 +501,11 @@ function coverViewerHtml(cover) {
   return page(cover.name + ' — cover — LearnLab Studio', `
     <div class="viewer">
       <div class="bar">
-        <a class="btn" href="/" title="Back to the library">&larr;</a>
+        <!-- A cover belongs to a class but to no subject, so the arrow
+             carries the class only and the subject is whatever was last
+             chosen. -->
+        <a class="btn" title="Back to the chapters"
+           href="/?class=${encodeURIComponent(cover.target.split('/')[0])}">&larr;</a>
         <span class="bar__title">${esc(cover.name)}</span>
         <span class="bar__sub">Class ${esc(cover.meta.class)} &middot; cover &middot;
           ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')} &middot;
