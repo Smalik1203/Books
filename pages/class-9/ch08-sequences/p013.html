@@ -1,0 +1,94 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 8.4</div>
+        <ol class="c-questions">
+          <li>Find the $9$th and $26$th terms of the AP $3, 8, 13, 18, \ldots$</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Which term of the AP $21, 18, 15, \ldots$ is $-81$? Is $0$ a term of this
+            AP? Give reasons.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Find the $n$th term of the AP $11, 8, 5, 2, \ldots$ and write its recursive
+            rule as well.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Verify that each of these is an AP and write its $n$th term.
+              <ol class="c-parts c-parts--1">
+                <li>$2,\ 5,\ 8,\ 11,\ \ldots$</li>
+                <li>$-5,\ -1,\ 3,\ 7,\ \ldots$</li>
+                <li>$1.5,\ 3.5,\ 5.5,\ 7.5,\ \ldots$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">8.5</span><span class="name">Adding Up the Naturals</span></h2>
+
+      <p>What is $1 + 2 + 3 + \cdots + 10$? You can add them one at a time and get $55$
+      in half a minute. But there is a way of doing it that takes no adding to speak of,
+      and — this is the point — it goes on working when the ten becomes a hundred, or a
+      million.</p>
+
+      <p>Call the answer $S$ and write it out. Then write it out again backwards.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1$</span>
+        </div>
+      </div>
+
+      <p>Now add the two lines <em>column by column</em>. The first column gives
+      $1 + 10 = 11$. The second gives $2 + 9 = 11$. So does every other: as one row
+      climbs by one, the other falls by one, and the total cannot move. Ten columns, each
+      worth $11$.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$2S = 11 \times 10 = 110$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">and</span>
+          <span>$S = 55$</span>
+        </div>
+      </div>
+
+      <p>Nothing in that argument cared that the last number was $10$. Run it again with
+      $n$ in place of $10$:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= 1 + 2 + \cdots + n$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= n + (n-1) + \cdots + 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$2S = n(n+1)$</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

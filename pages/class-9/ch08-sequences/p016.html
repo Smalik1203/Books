@@ -1,0 +1,121 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">8.6</span><span class="name">Geometric Progressions</span></h2>
+
+      <p>An AP grows by adding the same amount each time. There is one other rule of the
+      same kind and the same simplicity, and it is what this section is about: growing by
+      <em>multiplying</em> by the same amount each time.</p>
+
+      <p>Here is a second pattern of tiles.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 240 68" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Four stages of a pattern that doubles: 3, 6, 12 and 24 squares">
+      
+            <!-- stage 1: 3 -->
+            <g class="dg-fill-b">
+              <rect x="14" y="40" width="7" height="7"/><rect x="21" y="40" width="7" height="7"/>
+              <rect x="14" y="33" width="7" height="7"/>
+            </g>
+            <g class="dg-line">
+              <rect x="14" y="40" width="7" height="7"/><rect x="21" y="40" width="7" height="7"/>
+              <rect x="14" y="33" width="7" height="7"/>
+            </g>
+            <text class="dg-note" x="21" y="58" text-anchor="middle">Stage 1</text>
+            <text class="dg-label dg-label--sm" x="21" y="66" text-anchor="middle">3</text>
+      
+            <!-- stage 2: 6 -->
+            <g class="dg-fill-b">
+              <rect x="62" y="40" width="7" height="7"/><rect x="69" y="40" width="7" height="7"/>
+              <rect x="62" y="33" width="7" height="7"/>
+            </g>
+            <g class="dg-fill-a">
+              <rect x="76" y="40" width="7" height="7"/><rect x="69" y="33" width="7" height="7"/>
+              <rect x="76" y="33" width="7" height="7"/>
+            </g>
+            <g class="dg-line">
+              <rect x="62" y="40" width="7" height="7"/><rect x="69" y="40" width="7" height="7"/>
+              <rect x="62" y="33" width="7" height="7"/><rect x="76" y="40" width="7" height="7"/>
+              <rect x="69" y="33" width="7" height="7"/><rect x="76" y="33" width="7" height="7"/>
+            </g>
+            <text class="dg-note" x="72" y="58" text-anchor="middle">Stage 2</text>
+            <text class="dg-label dg-label--sm" x="72" y="66" text-anchor="middle">6</text>
+      
+            <!-- stage 3: 12 -->
+            <g class="dg-fill-b">
+              <rect x="116" y="40" width="7" height="7"/><rect x="123" y="40" width="7" height="7"/>
+              <rect x="130" y="40" width="7" height="7"/><rect x="116" y="33" width="7" height="7"/>
+              <rect x="123" y="33" width="7" height="7"/><rect x="130" y="33" width="7" height="7"/>
+            </g>
+            <g class="dg-fill-a">
+              <rect x="116" y="26" width="7" height="7"/><rect x="123" y="26" width="7" height="7"/>
+              <rect x="130" y="26" width="7" height="7"/><rect x="116" y="19" width="7" height="7"/>
+              <rect x="123" y="19" width="7" height="7"/><rect x="130" y="19" width="7" height="7"/>
+            </g>
+            <g class="dg-line">
+              <rect x="116" y="19" width="21" height="28"/>
+              <path d="M123 19 V47 M130 19 V47 M116 26 H137 M116 33 H137 M116 40 H137"/>
+            </g>
+            <text class="dg-note" x="126" y="58" text-anchor="middle">Stage 3</text>
+            <text class="dg-label dg-label--sm" x="126" y="66" text-anchor="middle">12</text>
+      
+            <!-- stage 4: 24 -->
+            <g class="dg-fill-b">
+              <rect x="186" y="33" width="42" height="14"/>
+            </g>
+            <g class="dg-fill-a">
+              <rect x="186" y="19" width="42" height="14"/>
+            </g>
+            <g class="dg-line">
+              <rect x="186" y="19" width="42" height="28"/>
+              <path d="M193 19 V47 M200 19 V47 M207 19 V47 M214 19 V47 M221 19 V47
+                       M186 26 H228 M186 33 H228 M186 40 H228"/>
+            </g>
+            <text class="dg-note" x="207" y="58" text-anchor="middle">Stage 4</text>
+            <text class="dg-label dg-label--sm" x="207" y="66" text-anchor="middle">24</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 8.6</span> A pattern that doubles. Each
+          stage holds twice the squares of the one before it.</figcaption>
+        </figure>
+      </div>
+
+      <p>The counts are $3, 6, 12, 24, \ldots$ Nothing is being added here; the pattern
+      is doubling. So the terms can be written</p>
+
+      <div class="work work--centred">
+        <p>$3, \quad 3 \times 2, \quad 3 \times 2^2, \quad 3 \times 2^3, \ \ldots$</p>
+      </div>
+
+      <p>and the $n$th term is $t_n = 3 \times 2^{\,n-1}$ — with the same $n-1$ as
+      before, and for the same reason: the first term has been doubled no times at
+      all.</p>
+
+      <p>The first six terms are $3, 6, 12, 24, 48, 96$. What is constant here is not the
+      difference between consecutive terms but the <em>ratio</em>:</p>
+
+      <div class="work work--centred">
+        <p>$\dfrac{6}{3} = \dfrac{12}{6} = \dfrac{24}{12} = \dfrac{48}{24} = 2$</p>
+      </div>
+
+      <p>A sequence in which the ratio of consecutive terms is the same throughout is a
+      <span class="term">geometric progression</span>, or <span class="term">GP</span>,
+      and that fixed multiplier is its <span class="term">common ratio</span>.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A Geometric Progression</div>
+        <p>A GP with first term $a$ and common ratio $r$ runs</p>
+        <p>$a, \ ar, \ ar^2, \ ar^3, \ \ldots$</p>
+        <p>and its $n$th term is $t_n = ar^{\,n-1}$.</p>
+      </div>
+
+      <p>Set the two side by side and the family resemblance is exact. An AP adds $d$ at
+      every step and its $n$th term is $a + (n-1)d$; a GP multiplies by $r$ at every step
+      and its $n$th term is $ar^{\,n-1}$. The recursive rules match too: $t_n = t_{n-1} +
+      d$ against $t_n = r\,t_{n-1}$.</p>
+
+    </div>
+  </div>
+</section>

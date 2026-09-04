@@ -1,0 +1,74 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The one difference that matters is what the constancy is measured on. To tell
+      which kind a sequence is, do both tests: take differences, and take ratios. One of
+      them will be constant, or neither.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>Which of these are geometric progressions, and what is the common ratio?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$1, 2, 4, 8, 16, \ldots$</span>
+              <span>ratios all $2$</span>
+              <span class="chip">GP, $r = 2$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$1, 3, 9, 27, 81, \ldots$</span>
+              <span>ratios all $3$</span>
+              <span class="chip">GP, $r = 3$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$1, -1, 1, -1, \ldots$</span>
+              <span>ratios all $-1$</span>
+              <span class="chip">GP, $r = -1$</span>
+            </div>
+          </div>
+          <p>The third is worth a moment. It neither grows nor shrinks — it alternates —
+          and it is a perfectly good GP. A negative ratio flips the sign at every step,
+          which is what a multiplier of $-1$ does.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Is $5,\ \tfrac{15}{4},\ \tfrac{45}{16},\ \tfrac{135}{64}, \ldots$ a
+          geometric progression? If so, find its $n$th term.</p>
+          <p>Take the ratio of each term to the one before it.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">$\dfrac{t_2}{t_1}$</span>
+              <span>$= \dfrac{15}{4} \div 5 = \dfrac{15}{20} = \dfrac34$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$\dfrac{t_3}{t_2}$</span>
+              <span>$= \dfrac{45}{16} \div \dfrac{15}{4} = \dfrac{45}{16} \times \dfrac{4}{15} = \dfrac34$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">$\dfrac{t_4}{t_3}$</span>
+              <span>$= \dfrac{135}{64} \times \dfrac{16}{45} = \dfrac34$</span>
+            </div>
+          </div>
+          <p>The ratio is $\tfrac34$ throughout, so this is a GP with $a = 5$ and
+          $r = \tfrac34$. Its $n$th term is</p>
+          <div class="eq">
+            $$t_n = 5 \left(\frac34\right)^{n-1}$$
+          </div>
+          <p>Here the ratio is less than $1$, so the terms shrink. They never reach zero
+          — multiplying by $\tfrac34$ can make a positive number small but not nothing —
+          and that is a GP as much as a doubling one is.</p>
+        </div>
+      </div>
+
+
+      <p>Notice how the test was carried out. Three ratios were computed, not one. A
+      single ratio proves nothing at all — any two numbers have a ratio — and it is only
+      when the same one keeps coming back that the sequence has been shown to be
+      geometric. The same warning applies to an AP and its differences.</p>
+    </div>
+  </div>
+</section>

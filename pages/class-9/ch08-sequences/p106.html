@@ -1,0 +1,83 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">One hundred, as a run of consecutives</div>
+        <p>
+          Suppose the run has $k$ terms and starts at $a$. It is an AP with $d = 1$, so
+          by the rule from the chapter — first plus last, halved, times the count —
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label">sum</span>
+            <span>$= \dfrac{k\,\bigl(2a + k - 1\bigr)}{2} = 100$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">so</span>
+            <span>$k\,(2a + k - 1) = 200$</span>
+          </div>
+        </div>
+        <p>
+          Now look at the two brackets. If $k$ is even then $2a + k - 1$ is odd, and if
+          $k$ is odd then $2a + k - 1$ is even — one of the two factors is always odd.
+          But $200 = 2^3 \times 5^2$, whose only odd factors are $1$, $5$ and $25$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$k = 5$</span>
+            <span>$2a + 4 = 40$, so $a = 18$</span>
+            <span class="chip">18 + 19 + 20 + 21 + 22</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$k = 8$</span>
+            <span>$2a + 7 = 25$, so $a = 9$</span>
+            <span class="chip">9 + 10 + &hellip; + 16</span>
+          </div>
+        </div>
+        <p>
+          The other cases give no whole $a$, or the single term $100$ itself. So there
+          are exactly two ways, and the reason there are so few is that $200$ is nearly
+          all twos.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The GP with product $-1$</div>
+        <p>
+          Write the three terms as $\dfrac{a}{r}$, $a$, $ar$ rather than $a$, $ar$,
+          $ar^2$. It is the same GP, centred on its middle term, and the product
+          collapses at once:
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label">product</span>
+            <span>$\dfrac{a}{r} \times a \times ar = a^3 = -1$, so $a = -1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">sum</span>
+            <span>$-\dfrac1r - 1 - r = \dfrac{13}{12}$</span>
+          </div>
+        </div>
+        <p>
+          That gives $12r^2 + 25r + 12 = 0$, whose roots are $r = -\tfrac34$ and
+          $r = -\tfrac43$. Either gives the same three numbers in opposite orders:
+          $\tfrac43,\ -1,\ \tfrac34$.
+        </p>
+        <p>
+          The choice of notation did the work. Written $a, ar, ar^2$ the product is
+          $a^3r^3$ and both unknowns remain; written about the middle, the $r$ cancels
+          and one of them falls out immediately.
+        </p>
+        <p>
+          The same trick is worth remembering for three terms of an AP: write them
+          $a - d$, $a$, $a + d$ and their sum is $3a$, with the $d$ gone. Whenever a
+          question gives you a symmetric fact about an odd number of terms — their sum,
+          their product — centring the notation on the middle one is what makes it
+          fall out.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
