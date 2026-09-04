@@ -98,12 +98,29 @@ a page turn, with the figure the example was drawn to explain overleaf.
 `--all` lists every page that ends on an opener with its count.
 
 It only reports; the rule that acts on it is in `repack.mjs`, so **run
-`refit` to apply it**. A `--head` panel is not an opener — that is the near
-half of a panel `close-gaps` ran over the break on purpose. Which is also
-why `close-gaps` is at odds with this rule: it fills a short page by
-setting the next example's first rows at the foot, and three lines of an
-example above a page turn is the thing being removed. Close those gaps by
-editing the prose at the join instead.
+`refit` to apply it**.
+
+## A panel is never divided over a page break
+
+An example, a key idea, a tip, a Think and Reflect, a solution — every box
+with a border round it goes on one page or moves whole to the next. It may
+not be cut.
+
+There used to be `--head` and `--tail` modifiers that let one run over the
+break, and `close-gaps.mjs` spent them to buy back a short page. What the
+reader got was an open-bottomed tray at the foot of one page and a lidless
+one at the head of the next, with the folio and the running head set
+between two halves of one thought. Four shipped that way.
+
+Both tools are gone, `splitExample` in `fragment.mjs` throws, and **the
+builder reports `--head` or `--tail` in a page as a design violation**. A
+panel that will not fit moves to the next page, and the white it leaves
+behind is closed by **editing the prose at the join** — which is the one
+repair that costs the reader nothing.
+
+An exercise band is not a panel: `.c-practice` is a coloured head over an
+open list, so a numbered list may continue overleaf under a
+`.c-practice--cont` block. `split-practice` still does that, and should.
 
 ## Escaping — read this before writing any LaTeX
 
@@ -130,7 +147,6 @@ node build/refit.mjs   <chapter> body|bridge [--dry]  # refit one half of a chap
 node build/repack.mjs  <chapter> [--dry]   # measure every block, refill the pages
 node build/settle.mjs  <dir> 4 7 12        # push a page's last block forward
 node build/split-practice.mjs <dir>        # one block per question, so exercises can flow
-node build/close-gaps.mjs <chapter>        # run a panel over a break to fill a short page
 node build/join-panels.mjs <dir>           # put a divided panel back together
 ```
 
@@ -142,15 +158,15 @@ beside it, stamps `data-bridge` and `data-close` back on afterwards, and
 rebuilds so nothing downstream is left measuring a chapter that no longer
 exists.
 
-`close-gaps` divides a panel across a break; **`join-panels` must follow
-any repack of a chapter it has touched**, or a head and its tail land back
-on one page and print as two panels, one tabbed and one not.
+`join-panels` is now only a repair tool: nothing divides a panel any more,
+so it should find nothing to join. If it does, something has reintroduced
+`--head`/`--tail` — and the builder will already have said so.
 
 `repack` is optimal for whole blocks in fixed order — if it says *29 in, 29
 out*, nothing can move up and the remaining white is locked behind a
-component too large for the space left. Closing those gaps means either
-editing prose at the join or letting a component break across a page, which
-is a design decision.
+component too large for the space left. Closing those gaps means editing
+the prose at the join — a panel is never divided, so there is no other
+lever.
 
 ## Beyond the Book
 

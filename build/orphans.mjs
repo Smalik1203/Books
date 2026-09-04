@@ -63,13 +63,9 @@ window.addEventListener('load', function () {
     // but where its own title stops and its matter starts: a section
     // head is a block of its own and its matter is the blocks after
     // it, while an example carries its tab and its body in one box.
-    // A --head panel is not an opener: it is the near half of a panel
-    // close-gaps ran over the break on purpose, and its matter carries
-    // on overleaf as the same tinted field.
     var isOpener = function (el) {
       var t = el.tagName.toLowerCase();
       var cn = ' ' + (el.className || '') + ' ';
-      if (cn.indexOf('--head') >= 0) return null;
       if (t === 'h2' || t === 'h3') return { kind: t, head: el };
       var stage = el.querySelector('.c-stage__title');
       if (stage) return { kind: 'stage', head: el };

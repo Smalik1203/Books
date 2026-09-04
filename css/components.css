@@ -243,57 +243,22 @@
 .c-example__body > p:first-child { margin-top: 0.4mm; }
 .c-example .work:last-child { margin-bottom: 0; }
 
-/* ---- Running an example over a page break -------------------
-   A worked example is text, and a page must not be left a third
-   empty merely because the next example will not fit whole. So an
-   example may run over the break: --head is the part that stays,
-   --tail the part that continues overleaf.
+/* ---- Panels are never divided over a page break -------------
+   There were --head and --tail modifiers here, on example, key
+   idea and reflect, so close-gaps could run a panel over a break
+   and buy back a short page. They are gone.
 
-   The join is squared off and its padding removed on both sides, so
-   the two halves read as one tinted field interrupted by the page
-   edge rather than as two separate panels. --tail carries no tab —
-   it is the same example, not a new one — so it loses the space the
-   tab would have sat in.
+   A panel is a box, and the reader who meets one across a break
+   sees neither its bottom nor its top: an open tray at the foot of
+   one page, a lidless one at the head of the next, and the folio
+   and the running head set between two halves of one thought.
+   Four shipped that way before anyone saw them side by side. The
+   builder now treats --head and --tail as a design violation, and
+   close-gaps refuses to divide.
 
-   Split at a step boundary, never inside a line of working, and
-   never split a figure: half a diagram is unreadable, which is why
-   there is no such modifier for .c-figure. */
-.c-example--head { margin-bottom: 0; }
-.c-example--head .c-example__body {
-  padding-bottom: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.c-example--tail { margin-top: 0; padding-top: 0; }
-.c-example--tail .c-example__body {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-/* The same, for the two other panels long enough to need it. */
-.c-keyidea--head { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.c-keyidea--tail { margin-top: 0; padding-top: 0; border-top: none; }
-
-/* A reflect panel that will not fit whole. The head keeps the icon and
-   the title; the tail is the same gold field resumed, so it carries
-   neither — a second title would read as a second question. Both
-   halves lose the border and the rounding at the join. */
-.c-reflect--head { margin-bottom: 0; }
-.c-reflect--head .c-reflect__box {
-  padding-bottom: 0;
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.c-reflect--tail { margin-top: 0; padding-top: 0; }
-.c-reflect--tail .c-reflect__box {
-  padding-top: 4mm;
-  border-top: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-
+   A panel that will not fit moves whole to the next page. The
+   white it leaves behind is closed by editing the prose at the
+   join, which is the one repair that costs the reader nothing. */
 
 
 /* ============================================================

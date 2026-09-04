@@ -118,13 +118,9 @@ window.addEventListener('load', function () {
       // head is all head and its matter is the blocks after it; an
       // example carries its tab and its matter in one box, so the
       // box's own height is partly promise and partly payment.
-      // A --head panel is neither: it is the near half of a panel
-      // close-gaps ran over the break on purpose, and its matter
-      // continues overleaf as the same tinted field.
       var opensWith = function (el) {
         var t = el.tagName.toLowerCase();
         var cn = ' ' + (el.className || '') + ' ';
-        if (cn.indexOf('--head') >= 0) return null;
         if (t === 'h2' || t === 'h3') return { kind: t, head: el };
         if (el.querySelector('.c-stage__title')) return { kind: 'stage', head: el };
         var band = el.querySelector('.c-practice__head');

@@ -418,6 +418,18 @@ const DESIGN_RULES = [
     msg: 'font attribute in a diagram — use .dg-label or .dg-note' },
   { re: /<marker[\s>]/g,
     msg: 'private marker — reference the shared url(#dg-arrow)' },
+  /* A panel is a box, and a box has a top and a bottom. Divided
+     over a break it shows the reader neither: an open-bottomed
+     tray at the foot of one page and a lidless one at the head of
+     the next, with the folio and the running head set between the
+     two halves of a single thought. Four of them shipped that way
+     — an example, a key idea and two Think and Reflects — because
+     close-gaps could buy a page's white with one, and the white
+     was the cheaper thing to lose. It is not. Move the whole
+     panel to the next page and close the gap by editing the prose
+     at the join. */
+  { re: /class="[^"]*c-[a-z]+--(head|tail)\b/g,
+    msg: 'a panel divided across a break — move it whole and close the gap in prose' },
 ];
 
 /* An element left unclosed still renders — the browser repairs it
