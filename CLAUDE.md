@@ -307,7 +307,9 @@ A running studio handing yesterday's compiled markup to a script read fresh
 off disk is how two studio bugs started, so this is not only convenience.
 
 The bar is Chrome's PDF toolbar, in Chrome's order: the page box, a rule,
-minus, the level, plus, a rule, the fit toggle. `ctrl` with `+`, `-` and `0`.
+minus, the level, plus, a rule, the fit toggle — **centred**, on a
+`1fr auto 1fr` grid rather than a flex row with spacers, since spacers
+centre the middle only when the two sides happen to be the same width. `ctrl` with `+`, `-` and `0`.
 The arrows read the book: **up and down scroll, left and right turn the
 page** (sideways instead, once the zoom is past the width of the stage),
 with space and shift-space for a screenful and PageUp/PageDown/Home/End
@@ -356,7 +358,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 87 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 89 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly

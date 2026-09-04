@@ -429,6 +429,12 @@ function viewerHtml(chapter, s) {
              of on two empty dropdowns — and it is right even for a
              chapter reached by its address without passing through the
              library at all. -->
+        <!-- Three parts, so the zoom cluster is centred on the bar and
+             not merely on what is left over. Flexed, the two sides have
+             to be the same width for the middle to land in the middle,
+             and here one holds a title and two switches while the other
+             holds a download and a button. A grid does not care. -->
+        <div class="bar__side">
         <a class="btn" title="Back to the chapters"
            href="/?class=${encodeURIComponent(chapter.target.split('/')[0])}&amp;subject=${encodeURIComponent(chapter.subject)}">&larr;</a>
         <span class="bar__title">${esc(chapter.meta.title)}</span>
@@ -460,14 +466,15 @@ function viewerHtml(chapter, s) {
 
         <button class="btn" id="view-spread" aria-pressed="false"
           title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>
+        </div>
 
 ${zoomBar()}
 
-        <span class="bar__spacer"></span>
-
-        <span class="bar__log" id="build-log" hidden></span>
-        ${dl('-bleed.pdf', 'Print PDF')}
-        <button class="btn btn--go" id="build">Build</button>
+        <div class="bar__side bar__side--end">
+          <span class="bar__log" id="build-log" hidden></span>
+          ${dl('-bleed.pdf', 'Print PDF')}
+          <button class="btn btn--go" id="build">Build</button>
+        </div>
       </div>
 
       <div class="stage" id="stage">
@@ -509,6 +516,7 @@ function coverViewerHtml(cover) {
         <!-- A cover belongs to a class but to no subject, so the arrow
              carries the class only and the subject is whatever was last
              chosen. -->
+        <div class="bar__side">
         <a class="btn" title="Back to the chapters"
            href="/?class=${encodeURIComponent(cover.target.split('/')[0])}">&larr;</a>
         <span class="bar__title">${esc(cover.name)}</span>
@@ -519,15 +527,16 @@ function coverViewerHtml(cover) {
           ${noBleed ? 'disabled title="Build first"'
                     : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed"`}
           >Bleed</button>
+        </div>
 
 ${zoomBar(false)}
 
-        <span class="bar__spacer"></span>
-
-        <span class="bar__log" id="build-log" hidden></span>
-        ${dl('-bleed.pdf', 'Press PDF')}
-        ${dl('-proof.png', 'Proof PNG')}
-        <button class="btn btn--go" id="build">Build</button>
+        <div class="bar__side bar__side--end">
+          <span class="bar__log" id="build-log" hidden></span>
+          ${dl('-bleed.pdf', 'Press PDF')}
+          ${dl('-proof.png', 'Proof PNG')}
+          <button class="btn btn--go" id="build">Build</button>
+        </div>
       </div>
 
       <!-- The spine is the one thing on this page that can be wrong in a
