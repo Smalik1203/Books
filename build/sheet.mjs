@@ -53,6 +53,39 @@ export async function sheetMetrics(root = ROOT, edition) {
   };
 }
 
+/* The wrap a cover prints on, which is a different sheet from a
+   page's and had drifted into three different answers.
+
+   Two things make it different. Its width is two trims and a spine,
+   not one trim; and its bleed is `--jk-bleed`, 15mm rather than the
+   page's 3mm, because a wrap is cut and then folded round the board
+   and what turns in at the edges has to be ink. css/cover.css maps
+   `--bleed` to that token for the same reason.
+
+   It lives here because it was being worked out twice — in cover.mjs
+   for the media box, and in serve.mjs for the iframe the studio shows
+   it in — and the studio's copy used the page's 3mm and forgot the
+   slug. So the viewer sized a 437mm sheet to 399mm, the jacket was
+   squeezed into it while the crop marks kept their proportions, and
+   every mark on the press sheet stood out of register with the
+   artwork it was marking. Nothing may carry a sheet size of its own,
+   and a wrap is a sheet. */
+export async function coverMetrics(spineMM, edition, root = ROOT) {
+  const raw = await tokenReader(root, edition);
+  const mm = (name) => parseFloat(raw(name));
+  const r1 = (n) => Math.round(n * 10) / 10;
+  const trimW = mm('trim-w'), trimH = mm('trim-h');
+  const bleed = mm('jk-bleed') || mm('bleed');
+  const slug = mm('slug');
+  const out = bleed + slug;
+  return {
+    trimW, trimH, bleed, slug, spine: spineMM,
+    sheetW: r1(2 * trimW + spineMM),           // the wrap at trim, no bleed
+    mediaW: r1(2 * trimW + spineMM + 2 * out), // and on the press sheet
+    mediaH: r1(trimH + 2 * out),
+  };
+}
+
 /* The window a probe should measure a page in. Width is the trim,
    because that is what sets the column; height is the caller's
    business — a probe that reads the whole flow wants a tall window,

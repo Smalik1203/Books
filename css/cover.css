@@ -304,7 +304,20 @@ body.cover {
    cannot guess where — a fold mark above and below each side of the
    spine.
    ------------------------------------------------------------ */
-body.bleed .cover-stage { padding: var(--slug); position: relative; }
+/* The stage IS the press sheet here: the wrap, and a slug of padding
+   round it. `width: max-content` is what makes that true — without it
+   the stage is as wide as whatever window it is opened in, and since
+   the marks below are laid over it by `inset: 0`, their millimetre
+   viewBox was being stretched across a box that was not the sheet.
+   In print it looked right, because the @page box is the sheet and
+   nothing else; on screen every mark sat wide of the trim it marked,
+   by whatever slack the viewer happened to leave. */
+body.bleed .cover-stage {
+  padding: var(--slug);
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
 
 /* Laid over the whole sheet and measured in millimetres by the
    viewBox, so every mark sits outside the bleed by construction and

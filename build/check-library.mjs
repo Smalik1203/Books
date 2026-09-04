@@ -21,7 +21,7 @@
 
    Exits non-zero on the first failure, so it can gate a commit.
    ============================================================ */
-import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { readFile, writeFile, readdir, mkdir, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawn, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -90,6 +90,15 @@ async function checkStructure() {
     eq('subject sections carry a count',
       subjectSets.every((s) => /data-count="\d+"/.test(s)), true);
     eq('a subject section exists', subjectSets.length > 0, true);
+
+    /* A card says how long the chapter is and not where it sits in the
+       volume. The folio range was a second number saying almost the
+       same thing, and it was the wrong one: a chapter's own first folio
+       comes from its chapter.json and holds only until the book is
+       bound, where --book renumbers the lot. */
+    eq('a card counts its pages', /<span>\d+ pages?<\/span>/.test(html), true);
+    eq('and does not print a folio range', /folios\s/.test(html), false);
+    eq('nor a cover card its wrap size', /wrap \d/.test(html), false);
 
     /* The back arrow means "back to the chapters", not "start over".
        It went to a bare "/", which opened on two empty dropdowns and
@@ -397,6 +406,24 @@ async function checkViewerStructure() {
       eq('cover viewer carries the same cluster',
         ['zoom-level', 'fit-toggle', 'zoom-out', 'zoom-in'].every((i) => cov.includes('id="' + i + '"')),
         true);
+      /* And carries nothing else. The strip under the bar has gone from
+         here too — the spine paragraph was standing advice, not a note
+         about this wrap — and the subtitle is where you are and not how
+         the jacket is specified: direction and finish are in
+         cover.json, which is where they are set. */
+      eq('no strip under the cover bar', cov.includes('class="note"'), false);
+      eq('and no spine paragraph with it', /Spine \d+mm/.test(cov), false);
+      eq('the cover subtitle is where you are, not how it is finished',
+        /class="bar__sub">Class \d+ &middot; cover<\/span>/.test(cov), true);
+      /* Both downloads are prints. "Press" and "proof" name the trade
+         the file goes to, not the button a reader is looking for. */
+      eq('the cover downloads are named for printing',
+        [/>Print PDF</.test(cov), />Print PNG</.test(cov)], [true, true]);
+      eq('and neither is still called a press or a proof',
+        /Press PDF|Proof PNG/.test(cov), false);
+      /* A wrap is two trims and a spine, better than twice as wide as
+         a page, so it fits at its own level and not the book's. */
+      eq('a cover declares itself to app.js', /"kind":"cover"/.test(cov), true);
     }
   } finally {
     child.kill();
@@ -485,17 +512,17 @@ async function checkViewerBehaviour() {
     R.fitPage = lvl();
     R.iconAtPage = fitIcon();
 
-    /* Fit to page is 70% and does not measure anything, so it is 70% on
+    /* Fit to page is 71% and does not measure anything, so it is 71% on
        a tall stage and on a short one alike — which is the point of it,
        and the only way to tell it apart from a measurement that happens
-       to land near 70% on the fixture's stage. */
+       to land near 71% on the fixture's stage. */
     const stg = $('stage'), keptH = stg.style.height;
     stg.style.height = '1400px'; toFitPage(); R.fitOnTall = lvl();
     stg.style.height = '260px';  toFitPage(); R.fitOnShort = lvl();
     stg.style.height = keptH;    toFitPage();
 
     /* The press sheet is larger than the trim, so it fits at a lower
-       level — 66% against 70%, which keeps the page itself the same
+       level — 66% against 71%, which keeps the page itself the same
        size on the screen as Bleed goes on and off. */
     $('sheet-bleed').click(); toFitPage(); R.fitOnBleed = lvl();
     $('sheet-bleed').click(); toFitPage(); R.fitBackOnTrim = lvl();
@@ -634,7 +661,8 @@ async function checkViewerBehaviour() {
      so the fixture has to carry all three — with sides of deliberately
      unequal width, since equal ones would centre under a flex row with
      spacers too and prove nothing. */
-  const html = '<!doctype html><html><head><style>' + css + '</style></head><body>'
+  const fixture = (theCfg, theDriver) =>
+    '<!doctype html><html><head><style>' + css + '</style></head><body>'
     + '<div class="viewer"><div class="bar">'
     + '<div class="bar__side">'
     + '<a class="btn btn--icon">h</a><a class="btn btn--icon">b</a>'
@@ -652,40 +680,68 @@ async function checkViewerBehaviour() {
     + '<div class="stage__inner" id="inner">'
     + '<iframe id="frame" scrolling="no"></iframe></div></div></div>'
     + '<button id="build"></button><span id="build-log" hidden></span>'
-    + '<script type="application/json" id="cfg">' + JSON.stringify(cfg) + '</' + 'script>'
+    + '<script type="application/json" id="cfg">' + JSON.stringify(theCfg) + '</' + 'script>'
     + '<script>' + script + '</' + 'script>'
-    + '<script>addEventListener("load", () => setTimeout(() => {' + driver + '}, 300));</' + 'script>'
+    + '<script>addEventListener("load", () => setTimeout(() => {' + theDriver + '}, 300));</' + 'script>'
     + '</body></html>';
 
-  const file = path.join(dir, 'viewer-fixture.html');
-  await writeFile(file, html);
-  const { stdout } = await run(CHROME, [
-    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
-    /* Two file:// documents are separate opaque origins by default, so
-       the fixture could not read the stub book inside its own iframe:
-       contentDocument came back null, the page count stayed 0, and only
-       the checks that never touch the book passed. */
-    '--allow-file-access-from-files',
-    '--window-size=1400,900', '--virtual-time-budget=6000', '--dump-dom',
-    'file:///' + file.replace(/\\/g, '/'),
-  ], { maxBuffer: 1 << 24 });
-  await rm(dir, { recursive: true, force: true });
+  /* One run of the fixture, named so a failure to start says which. */
+  const drive = async (name, theCfg, theDriver) => {
+    const file = path.join(dir, name + '-fixture.html');
+    await writeFile(file, fixture(theCfg, theDriver));
+    const { stdout } = await run(CHROME, [
+      '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+      /* Two file:// documents are separate opaque origins by default, so
+         the fixture could not read the stub book inside its own iframe:
+         contentDocument came back null, the page count stayed 0, and only
+         the checks that never touch the book passed. */
+      '--allow-file-access-from-files',
+      '--window-size=1400,900', '--virtual-time-budget=6000', '--dump-dom',
+      'file:///' + file.replace(/\\/g, '/'),
+    ], { maxBuffer: 1 << 24 });
+    const found = stdout.match(/<title>R([\s\S]*?)<\/title>/);
+    if (!found) { bad(name + ' fixture ran', 'no result in the dom', 'the driver output'); return null; }
+    return JSON.parse(found[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+  };
 
-  const raw = stdout.match(/<title>R([\s\S]*?)<\/title>/);
-  if (!raw) { bad('viewer fixture ran', 'no result in the dom', 'the driver output'); return; }
-  const R = JSON.parse(raw[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+  const R = await drive('viewer', cfg, driver);
+
+  /* The same app.js against a cover's cfg. A wrap is two trims and a
+     spine — better than twice as wide as a page — so fit to page is
+     its own number there, and the only thing that tells app.js which
+     book it is showing is cfg.kind. Driven rather than read off the
+     source, because "the constant says 0.66" is not the same claim as
+     "the field reads 66% when the button is pressed". */
+  const C = await drive('cover', { ...cfg, kind: 'cover' }, `
+    const $ = (id) => document.getElementById(id);
+    const lvl = () => $('zoom-level').value;
+    const R = {};
+    R.opensAt = lvl();
+    $('fit-toggle').click();          // a percentage returns to fit to page
+    R.fitPage = lvl();
+    $('sheet-bleed').click(); R.fitOnBleed = lvl();
+    document.title = 'R' + JSON.stringify(R);`);
+
+  await rm(dir, { recursive: true, force: true });
+  if (!R || !C) return;
 
   const pc = (s) => Number(String(s).replace('%', ''));
   /* A chapter opens at the size the stylesheet says, and the fit button
-     gives 70% — a fixed size rather than whatever the window makes of
+     gives 71% — a fixed size rather than whatever the window makes of
      it, since the same book coming up at 46% on one screen and 116% on
      another is not a proof of anything. */
   eq('a chapter opens at 100%', R.opensAt, '100%');
-  eq('fit to page is 70%', R.fitPage, '70%');
-  eq('70% on a tall stage and a short one alike',
-    [R.fitOnTall, R.fitOnShort], ['70%', '70%']);
+  eq('fit to page is 71%', R.fitPage, '71%');
+  eq('71% on a tall stage and a short one alike',
+    [R.fitOnTall, R.fitOnShort], ['71%', '71%']);
   eq('and 66% on the press sheet, which is the larger one',
-    [R.fitOnBleed, R.fitBackOnTrim], ['66%', '70%']);
+    [R.fitOnBleed, R.fitBackOnTrim], ['66%', '71%']);
+  /* A cover opens at 100% like everything else, and fits at its own
+     number: 66%, on either sheet, because a wrap is wide enough that
+     the page's 71% would put half of it past the edge of the stage. */
+  eq('a cover opens at 100% too', C.opensAt, '100%');
+  eq('but fits to page at 70%, not the book’s 71%', C.fitPage, '70%');
+  eq('and drops to 62% on the press sheet', C.fitOnBleed, '62%');
   eq('fit to width is wider than fit to page', pc(R.fitWidth) > pc(R.fitPage), true);
   eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
   eq('minus steps back', R.minus, R.plus1);
@@ -730,6 +786,182 @@ async function checkViewerBehaviour() {
     R.arrowsEverywhere, { 'fit page': true, 'fit width': true, '200%': true });
   eq('right turns the page at the far edge rather than dead-ending',
     R.turnsAtTheEdge, true);
+}
+
+/* ---- 4b. The foot of a card -------------------------------
+   Every card in the grid must put its page count and its flags at
+   the same height, so that the two are read across the grid rather
+   than card by card. Two titles decide it: "Orienting Yourself: The
+   Use of Coordinates" takes two lines and "What Comes Next" takes
+   one, and before the title reserved two lines the foot of the short
+   card sat a line above the foot of the long one.
+
+   Measured from the rendered boxes and not from the CSS. A
+   min-height that a later rule overrides still reads back as set,
+   and only the geometry can say where the line actually fell. The
+   cards are the ones the studio serves, lifted out of the library
+   page, so this cannot go on passing against markup that has since
+   changed shape. */
+async function checkCardFeet() {
+  if (!CHROME) return;                       // already reported by checkBehaviour
+  const port = freePort();
+  const child = spawn(process.execPath, ['build/serve.mjs'],
+    { cwd: ROOT, env: { ...process.env, PORT: String(port), NO_WATCH: '1' }, stdio: 'ignore' });
+  const dir = p('build', '_check');
+  try {
+    let lib = '';
+    for (let i = 0; i < 60 && !lib; i++) {
+      await new Promise((r) => setTimeout(r, 200));
+      lib = await fetch('http://localhost:' + port + '/')
+        .then((r) => r.text()).catch(() => '');
+    }
+    if (!lib) { bad('the library for its cards', 'no response', 'the library page'); return; }
+
+    const cards = lib.match(/<a class="card"[\s\S]*?<\/a>/g) || [];
+    if (cards.length < 2) {
+      bad('two cards to compare', cards.length + ' card(s)', 'at least two'); return;
+    }
+
+    const css = await readFile(p('build', 'ui', 'app.css'), 'utf8');
+    const driver = `
+      const feet = [...document.querySelectorAll('.card')].map((c) => {
+        const top = c.getBoundingClientRect().top;
+        const at = (sel) => Math.round(
+          c.querySelector(sel).getBoundingClientRect().top - top);
+        return at('.card__meta') + ':' + at('.card__flags');
+      });
+      document.title = 'R' + JSON.stringify({
+        cards: feet.length, distinct: [...new Set(feet)],
+      });`;
+
+    await mkdir(dir, { recursive: true });
+    const file = path.join(dir, 'card-fixture.html');
+    await writeFile(file,
+      '<!doctype html><html><head><style>' + css + '</style></head><body>'
+      + '<div class="wrap"><div class="grid">' + cards.join('') + '</div></div>'
+      + '<script>' + driver + '</' + 'script></body></html>');
+
+    const { stdout } = await run(CHROME, [
+      '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+      '--window-size=1280,1600', '--virtual-time-budget=4000', '--dump-dom',
+      'file:///' + file.replace(/\\/g, '/'),
+    ], { maxBuffer: 1 << 24 });
+    const raw = stdout.match(/<title>R([\s\S]*?)<\/title>/);
+    if (!raw) { bad('card fixture ran', 'no result in the dom', 'the driver output'); return; }
+    const R = JSON.parse(raw[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+
+    eq('the whole library was measured', R.cards, cards.length);
+    eq('every card puts its foot at the same height', R.distinct.length, 1);
+  } finally {
+    child.kill();
+    await rm(dir, { recursive: true, force: true });
+  }
+}
+
+/* ---- 4c. The press sheet a cover prints on -----------------
+   Two things had to be true here and neither was.
+
+   The wrap is 2 trims + a spine, and it bleeds 15mm rather than the
+   page's 3, because it is folded round the board and what turns in
+   has to be ink. That arithmetic was written out three times — in
+   sheet.mjs, in cover.mjs and again in serve.mjs — and the studio's
+   copy used the page's bleed and forgot the slug, so it sized a
+   437mm sheet to 399 and the jacket was squeezed to fit it.
+
+   And the marks are laid over the stage by inset:0 with a viewBox in
+   millimetres, which is only 1mm to the millimetre while the stage is
+   the sheet. It was as wide as whatever window it was opened in.
+
+   Both are geometry, so both are measured: the marks are checked
+   against the trim they mark, in the rendered document, and a mark
+   that has drifted cannot report otherwise. */
+async function checkCoverSheet() {
+  if (!CHROME) return;                       // already reported by checkBehaviour
+  const built = p('build', 'covers');
+  const found = [];
+  for (const cls of await readdir(built).catch(() => [])) {
+    for (const f of await readdir(path.join(built, cls)).catch(() => [])) {
+      if (f.endsWith('-bleed.html')) found.push(path.join(built, cls, f));
+    }
+  }
+  if (!found.length) { ok('no built press sheet to measure — skipped'); return; }
+
+  const driver = `
+    const stage = document.querySelector('.cover-stage');
+    const svg = document.querySelector('.cropmarks');
+    const jacket = document.querySelector('.jacket');
+    const MM = 96 / 25.4, mm = (v) => Math.round(v / MM * 100) / 100;
+    const sr = stage.getBoundingClientRect();
+    const vr = svg.getBoundingClientRect();
+    const jr = jacket.getBoundingClientRect();
+    const box = svg.getAttribute('viewBox').split(' ').map(Number);
+    /* The trim, from the jacket the marks are meant to mark: on the
+       press sheet the jacket is the trim plus one bleed all round. */
+    const bleed = parseFloat(getComputedStyle(jacket).getPropertyValue('--bleed'));
+    const L = mm(jr.left - vr.left) + bleed, T = mm(jr.top - vr.top) + bleed;
+    const R = mm(jr.right - vr.left) - bleed, B = mm(jr.bottom - vr.top) - bleed;
+    const near = (a, b) => Math.abs(a - b) < 0.4;
+    const lines = [...svg.querySelectorAll('line')].map((l) => {
+      const r = l.getBoundingClientRect();
+      return {
+        x: mm(r.left - vr.left), y: mm(r.top - vr.top),
+        w: mm(r.width), h: mm(r.height),
+      };
+    });
+    document.title = 'R' + JSON.stringify({
+      marks: lines.length,
+      /* The stage is the sheet, and the marks are laid over the stage,
+         so both have to be the size the viewBox says. */
+      sheetIsSheet: near(mm(sr.width), box[2]) && near(mm(sr.height), box[3]),
+      marksAreSheet: near(mm(vr.width), box[2]) && near(mm(vr.height), box[3]),
+      /* Every mark on a trim or a fold line. A horizontal one marks the
+         head or the foot, a vertical one marks a cut or a crease. */
+      onALine: lines.every((m) => m.w > m.h
+        ? near(m.y, T) || near(m.y, B)
+        : near(m.x, L) || near(m.x, R)
+          || (m.x > L && m.x < R)),        // the two folds, either side of the spine
+      /* And every one of them clear of the artwork: the jacket runs to
+         the bleed, so a mark that touches it will print. */
+      clearOfArt: lines.every((m) => {
+        const r = { l: m.x, t: m.y, r: m.x + m.w, b: m.y + m.h };
+        const j = { l: mm(jr.left - vr.left), t: mm(jr.top - vr.top),
+                    r: mm(jr.right - vr.left), b: mm(jr.bottom - vr.top) };
+        return r.r <= j.l + 0.01 || r.l >= j.r - 0.01
+            || r.b <= j.t + 0.01 || r.t >= j.b - 0.01;
+      }),
+    });`;
+
+  const file = found[0];
+  const html = await readFile(file, 'utf8');
+  const probe = file.replace(/-bleed\.html$/, '-bleed-probe.html');
+  await writeFile(probe, html.replace('</body>',
+    '<script>addEventListener("load", () => setTimeout(() => {'
+    + driver + '}, 200));</' + 'script></body>'));
+  try {
+    const { stdout } = await run(CHROME, [
+      '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+      '--allow-file-access-from-files',
+      /* Deliberately not the sheet's own width. The stage used to be
+         as wide as the window, and at 1600px it would have looked
+         right at whatever size that happened to make it. */
+      '--window-size=1600,1200', '--virtual-time-budget=5000', '--dump-dom',
+      'file:///' + probe.replace(/\\/g, '/'),
+    ], { maxBuffer: 1 << 24 });
+    const raw = stdout.match(/<title>R([\s\S]*?)<\/title>/);
+    if (!raw) { bad('the press sheet rendered', 'no result in the dom', 'the driver output'); return; }
+    const R = JSON.parse(raw[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+
+    /* Eight corners and four folds: a wrap is creased either side of
+       the spine and a printer cannot guess where. */
+    eq('twelve marks — eight corners and four folds', R.marks, 12);
+    eq('the stage is the press sheet, whatever the window',
+      R.sheetIsSheet, true);
+    eq('and the marks are laid over exactly that', R.marksAreSheet, true);
+    eq('every mark sits on a trim or a fold line', R.onALine, true);
+    eq('and none of them touches the artwork', R.clearOfArt, true);
+  } finally {
+    await rm(probe, { force: true });
+  }
 }
 
 /* ---- 5. What a build reports ------------------------------
@@ -818,6 +1050,10 @@ console.log('\nViewer — the zoom cluster the studio serves:');
 await checkViewerStructure();
 console.log('\nViewer — driving the real app.js against a stub book:');
 await checkViewerBehaviour();
+console.log('\nCards — where the foot of each one sits:');
+await checkCardFeet();
+console.log('\nCover — the press sheet, and the marks on it:');
+await checkCoverSheet();
 console.log('\nBuild — what it reports back to the bar:');
 await checkBuildReport();
 console.log('\nRestart — an edit to serve.mjs, without touching the process:');

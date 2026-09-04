@@ -33,6 +33,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { spineWidth } from './spine.mjs';
+import { coverMetrics } from './sheet.mjs';
 import { windowPad } from './viewport.mjs';
 import { cropHeight } from './png.mjs';
 
@@ -59,21 +60,9 @@ const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 const escapeHtml = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-/* ---- Sheet metrics -----------------------------------------
-   Read out of the tokens, exactly as build.mjs does, so the box
-   Chrome is told to print can never drift from the box the
-   stylesheet lays the wrap out in. */
-async function tokenReader(edition) {
-  const src = await readFile(p('css', 'tokens.css'), 'utf8');
-  const over = edition
-    ? await readFile(p('css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
-    : '';
-  return (name) => {
-    const from = over.includes('--' + name + ':') ? over : src;
-    const at = from.indexOf('--' + name + ':');
-    return from.slice(at + name.length + 3, at + name.length + 30);
-  };
-}
+/* The sheet a wrap prints on comes from sheet.mjs — the third copy
+   of a token reader lived here, and it is what let the studio and
+   this file disagree about how wide the press sheet is. */
 
 /* ---- EAN-13 ------------------------------------------------
    95 modules: a 3-module guard, six digits, a 5-module centre
@@ -267,20 +256,12 @@ async function buildCover(rel) {
     parts.map(part => readFile(path.resolve(src, part), 'utf8'))
   )).join(String.fromCharCode(10, 10));
 
-  const tok = await tokenReader(meta.edition);
-  const mm = (name) => parseFloat(tok(name));
-  // the wrap has its own bleed: it is folded round the board, not just cut
-  const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const bleedMM = mm('jk-bleed') || mm('bleed');
-  const slugMM = mm('slug');
   const spine = spineWidth(meta);
-  const out = bleedMM + slugMM;
-  const sheet = {
-    trimW, trimH, bleed: bleedMM, slug: slugMM, spine: spine.mm,
-    sheetW: 2 * trimW + spine.mm,
-    mediaW: 2 * trimW + spine.mm + 2 * out,
-    mediaH: trimH + 2 * out,
-  };
+  /* The wrap, from sheet.mjs — the one place that knows a cover is
+     two trims and a spine and bleeds by 15mm rather than 3. It was
+     worked out here and again in serve.mjs, and the two answers had
+     drifted. */
+  const sheet = await coverMetrics(spine.mm, meta.edition);
 
   /* ISBN. The thirteenth digit is arithmetic, not data: recompute it
      and say so rather than printing a barcode that will not scan. */
@@ -336,7 +317,7 @@ async function buildCover(rel) {
   console.log(`  ${rel}: ${meta.edition ?? 'standard'}, ${meta.finish ?? 'light'} finish,`
     + ` spine ${spine.mm}mm (${spine.how})`);
   console.log(`    wrap ${sheet.sheetW} x ${sheet.trimH}mm trim`
-    + `  =  ${trimW} back + ${spine.mm} spine + ${trimW} front`);
+    + `  =  ${sheet.trimW} back + ${spine.mm} spine + ${sheet.trimW} front`);
   return { outHtml, bleedHtml, meta, sheet };
 }
 
