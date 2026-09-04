@@ -97,21 +97,28 @@
     show(sets.find((s) => s.dataset.class === cls && s.dataset.covers), true);
   }
 
-  /* ---- Remembering the choice ------------------------------
+  /* ---- Arriving with a choice already made -----------------
      The back arrow in a chapter goes to "/", and this page opened
      with both dropdowns empty — so coming back from a chapter meant
      choosing the class and the subject again to reach the list you
      had just been looking at. The arrow means "back to the
      chapters", not "start over".
 
-     Two sources, in order. The link the reader arrived on carries
-     the chapter's own class and subject, which is right even for a
-     chapter opened by its address without ever touching this page.
-     Failing that, the last choice made here — so opening the studio
-     fresh puts you back where you left off.
+     So the link carries the choice: the back arrow puts the
+     chapter's own class and subject in the query, which is right
+     even for a chapter opened by its address without ever touching
+     this page. **The address is the only source.** Opening the
+     studio at a bare "/" chooses nothing — that is the front door,
+     and a front door that quietly reopens the last room is a front
+     door you cannot use to start somewhere else.
 
-     Neither is trusted: a class or subject that no longer has a
-     section is ignored, and the dropdowns stay as they were. */
+     Storage is kept for one job only: a cover belongs to a class
+     and to no subject, so its arrow can only carry the class, and
+     the subject is filled in from the last one chosen. That is a
+     link with half its answer missing, not a bare arrival.
+
+     Nothing here is trusted: a class or subject with no section is
+     ignored and the dropdowns stay as they were. */
   const KEY = 'll.pick';
   const remember = () => {
     try {
@@ -121,17 +128,9 @@
   };
   const recall = () => {
     const q = new URLSearchParams(location.search);
-    /* The home button is not the back button under another icon: it goes
-       to the top of the studio, where nothing is chosen yet. Without
-       this it would restore the last choice and land exactly where back
-       lands, and one of the two would be decoration. */
-    if (q.has('home')) return {};
+    if (!q.get('class')) return {};            // a bare "/" starts fresh
     let kept = {};
     try { kept = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { /* no storage */ }
-    if (!q.get('class')) return kept;
-    /* A cover belongs to a class and to no subject, so its link carries
-       only the class. Falling through to the remembered subject is what
-       stops the arrow on a cover landing on the prompt. */
     return {
       cls: q.get('class'),
       sub: q.get('subject') || (q.get('class') === kept.cls ? kept.sub : '') || '',

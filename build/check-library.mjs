@@ -100,8 +100,13 @@ async function checkStructure() {
       .then((r) => r.text()).catch(() => '');
     eq('the chapter back link carries class and subject',
       /href="\/\?class=[^"]+&amp;subject=[^"]+"/.test(view), true);
-    eq('and is not a bare slash', /href="\/"/.test(view), false);
-    eq('a home button beside it', /href="\/\?home"[^>]*title="The library"/.test(view), true);
+    /* Named by their titles rather than by counting slashes: home is a
+       bare "/" now, so "no bare slash on the page" would be asserting
+       the opposite of what home has to be. */
+    eq('the back link is not a bare slash',
+      /href="\/"[^>]*title="Back to the chapters"/.test(view), false);
+    eq('a home button beside it, and it is bare',
+      /href="\/"[^>]*title="The library"/.test(view), true);
     eq('both are icons', (view.match(/class="btn btn--icon"/g) || []).length >= 2, true);
     /* Where you are, then what you are looking at — the class and the
        chapter above the title, not run together beside it. */
@@ -219,23 +224,29 @@ async function checkBehaviour() {
 
 /* ---- 2b. Arriving with a choice already made ---------------
    What the back arrow depends on: the page reads the class and
-   subject off the link it was opened with, and ignores a pair
-   that no longer has a section rather than selecting nothing and
-   looking broken. Same fixture, loaded three times. */
+   subject off the link it was opened with, and ignores a pair that
+   no longer has a section rather than selecting nothing and looking
+   broken. Same fixture, loaded once per row.
+
+   The address is the only source. Nothing in the query means
+   nothing chosen — the front door opens on the chooser, whatever
+   was last looked at. */
 const ARRIVALS = [
+  /* The one that matters: storage holds class-9 + Mathematics and the
+     front door still opens on the chooser. */
+  ['a bare slash chooses nothing, whatever is remembered', '',
+    { cls: '', sub: '', prompt: true, visible: [], seeded: true }],
   ['both carried', '?class=class-8&subject=Science',
-    { cls: 'class-8', sub: 'Science', prompt: false, visible: ['class-8/Science'] }],
-  // a cover carries only its class, and lands on the prompt without a subject
-  ['class alone', '?class=class-9',
-    { cls: 'class-9', sub: '', prompt: true, visible: [] }],
+    { cls: 'class-8', sub: 'Science', prompt: false,
+      visible: ['class-8/Science'], seeded: true }],
+  /* A cover's arrow can only carry the class, so the subject comes from
+     what was last chosen — the one job storage still has. */
+  ['class alone falls through to the remembered subject', '?class=class-9',
+    { cls: 'class-9', sub: 'Mathematics', prompt: false,
+      visible: ['class-9/Mathematics'], seeded: true }],
   // a class that has gone: ignored, not applied
   ['a pair that no longer exists', '?class=class-99&subject=Alchemy',
-    { cls: '', sub: '', prompt: true, visible: [] }],
-  /* Home is not back under another icon: it goes to the top of the
-     studio, where nothing is chosen. Asserted against a class carried
-     beside it, which is the same branch a remembered one takes. */
-  ['home ignores a choice carried with it', '?home&class=class-9&subject=Mathematics',
-    { cls: '', sub: '', prompt: true, visible: [] }],
+    { cls: '', sub: '', prompt: true, visible: [], seeded: true }],
 ];
 
 async function checkArrival() {
@@ -254,7 +265,21 @@ async function checkArrival() {
       prompt: !document.getElementById('lib-prompt').hidden,
       visible: [...document.querySelectorAll('.lib-set')]
         .filter((x) => !x.hidden && !x.dataset.covers).map(label),
+      seeded: window.__seeded,
     });`;
+
+  /* Storage is seeded before the chooser runs, and every row below is
+     read against it. Without a value in there, "a bare / chooses
+     nothing" would pass on an empty store and prove nothing — which is
+     the exact failure it exists to catch. The rows report whether the
+     seed took, so a browser that refuses storage fails loudly rather
+     than passing vacuously. */
+  const seed = `
+    try {
+      localStorage.setItem('ll.pick',
+        JSON.stringify({ cls: 'class-9', sub: 'Mathematics' }));
+      window.__seeded = localStorage.getItem('ll.pick') !== null;
+    } catch (e) { window.__seeded = false; }`;
 
   const html = '<!doctype html><html><body>'
     + '<select id="pick-class"><option value="">Choose a class</option>'
@@ -262,6 +287,7 @@ async function checkArrival() {
     + '<select id="pick-subject" disabled><option value="">Choose a class first</option></select>'
     + FIXTURE_SETS
     + '<p id="lib-prompt"></p><p id="lib-empty" hidden></p>'
+    + '<script>' + seed + '</' + 'script>'
     + '<script>' + script + '</' + 'script>'
     + '<script>' + driver + '</' + 'script>'
     + '</body></html>';
