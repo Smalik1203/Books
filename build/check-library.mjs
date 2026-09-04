@@ -509,6 +509,50 @@ async function checkViewerBehaviour() {
     key('ArrowDown');
     R.notWhileTyping = st.scrollTop;
     $('page-no').blur();
+
+    /* The arrows must work in every mode, and from the book's own
+       document as well as this one — one click on the page moves focus
+       into the iframe, and for a while everything after that went to a
+       document listening for nothing.
+
+       Synchronous on purpose: the handlers act at once, and a window
+       that is not being painted throttles timers to about one a second,
+       which turns a chain of awaits into a check that times out rather
+       than a check that fails. */
+    const send = (k, doc) => (doc || document).dispatchEvent(
+      new KeyboardEvent('keydown', { key: k, bubbles: true, cancelable: true }));
+    const arrows = (doc) => {
+      st.scrollLeft = 0; st.scrollTop = 0;
+      const t0 = st.scrollTop; send('ArrowDown', doc);
+      const down = st.scrollTop > t0;
+      const t1 = st.scrollTop; send('ArrowUp', doc);
+      const up = st.scrollTop < t1;
+      st.scrollTop = 0;
+      const p1 = $('page-no').value, l1 = st.scrollLeft; send('ArrowRight', doc);
+      const right = $('page-no').value !== p1 || st.scrollLeft > l1;
+      const p2 = $('page-no').value, l2 = st.scrollLeft; send('ArrowLeft', doc);
+      const left = $('page-no').value !== p2 || st.scrollLeft < l2;
+      return down && up && right && left;
+    };
+    const book = document.getElementById('frame').contentDocument;
+    const inEveryMode = {};
+    for (const [name, pick] of [
+      ['fit page', 'fit'], ['fit width', 'fitw'], ['200%', '2'],
+    ]) {
+      document.querySelector('[data-zoom="' + pick + '"]').click();
+      inEveryMode[name] = arrows() && arrows(book);
+    }
+    R.arrowsEverywhere = inEveryMode;
+
+    /* And at the far edge of a zoomed page, right must turn the page
+       rather than dead-end: it used to scroll sideways for ever the
+       moment the content was wider than the stage. */
+    document.querySelector('[data-zoom="2"]').click();
+    st.scrollLeft = st.scrollWidth;
+    const edge = $('page-no').value; send('ArrowRight');
+    R.turnsAtTheEdge = $('page-no').value !== edge;
+    document.querySelector('[data-zoom="fit"]').click();
+
     document.title = 'R' + JSON.stringify(R);`;
 
   /* The bar has three parts and the middle one is centred by the grid,
@@ -590,6 +634,11 @@ async function checkViewerBehaviour() {
   eq('shift-space gives it back', R.shiftSpace < R.space, true);
   eq('the page box follows the scroll', R.boxFollowedAfter, '2');
   eq('an arrow does not fire while typing a page number', R.notWhileTyping, 0);
+  /* Every mode, and from the book's document as well as the studio's. */
+  eq('the arrows work in every mode, from either document',
+    R.arrowsEverywhere, { 'fit page': true, 'fit width': true, '200%': true });
+  eq('right turns the page at the far edge rather than dead-ending',
+    R.turnsAtTheEdge, true);
 }
 
 /* ---- 5. What a build reports ------------------------------
