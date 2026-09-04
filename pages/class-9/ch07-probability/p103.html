@@ -1,0 +1,80 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+        </div>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Marbles, from the probability back</div>
+        <p>
+          Most probability questions hand you the counts and ask for the probability.
+          This one runs the other way, and the formula works just as well read
+          backwards.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">given</span>
+            <span>$P(\text{red}) = \dfrac{\text{red}}{12} = \dfrac13$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$\text{red} = \dfrac{12}{3} = 4$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">blue</span>
+            <span>$12 - 4$</span>
+            <span class="chip">8</span>
+          </div>
+        </div>
+        <p>
+          Eight blue. Check it the other way round before trusting it: 4 red out of 12
+          is $\tfrac13$, as required.
+        </p>
+        <p>
+          What made this work is that the formula is an equation, not an instruction. It
+          relates three quantities — favourable, possible, and the probability — and any
+          two of them fix the third. Given the counts you find the probability; given the
+          probability and the total you find the count; given the probability and a count
+          you find the total. The same three lines of algebra serve all three questions.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Eight heads, and what they prove</div>
+        <p>
+          Neither student is right, and the interesting part is why each is wrong in a
+          different direction.
+        </p>
+        <p>
+          The first treats evidence as proof. Eight heads from a fair coin is unlikely —
+          it happens about once in every 256 attempts — but unlikely is not impossible,
+          and once in 256 is not never. The run is evidence of bias, not proof of it.
+        </p>
+        <p>
+          The second has the gambler's fallacy inside out. It is true that a fair coin
+          gives $\tfrac12$ every toss, but that is a statement about a coin already known
+          to be fair. Here the fairness is exactly what is in question, so the argument
+          assumes what it is trying to show.
+        </p>
+        <p>
+          What you can say is this: the run is weak evidence that something is wrong with
+          the coin, and the way to strengthen or dismiss it is more tosses. That is the
+          law of large numbers used as an instrument rather than a slogan.
+        </p>
+        <p>
+          Say the coin is tossed 800 more times. If it is fair, the proportion of heads
+          will drift towards $\tfrac12$ and the eight will be lost in the crowd. If it is
+          weighted, the proportion will settle somewhere else and stay there. Either way
+          the answer arrives, and it arrives from the same evidence — more of it.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
