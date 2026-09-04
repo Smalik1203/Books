@@ -348,6 +348,15 @@ async function checkViewerStructure() {
     eq('no pages button', html.includes('id="view-pages"'), false);
     eq('spreads is a switch', /id="view-spread"[^>]*aria-pressed="false"/.test(html), true);
     eq('no segmented groups', html.includes('class="seg"'), false);
+    /* Where the two switches live. Spreads is in the middle cluster,
+       past the fit toggle — everything there changes how the book is
+       laid out on the screen. Bleed is over on the right beside the
+       download, because it changes which sheet you are looking at,
+       which is the question that download answers. */
+    eq('spreads sits in the cluster',
+      /class="zoom"[\s\S]*?id="view-spread"[\s\S]*?id="zoom-menu"/.test(html), true);
+    eq('bleed sits beside Print PDF',
+      /id="sheet-bleed"[\s\S]{0,400}?Print PDF/.test(html), true);
     /* A measurement is a fact about the sheet, not a thing to press. */
     eq('bleed carries no measurement', /id="sheet-bleed"[\s\S]{0,400}?>Bleed<\/button>/.test(html), true);
     eq('the press size is in the tooltip', /title="Show the press sheet, \d/.test(html), true);
@@ -483,12 +492,13 @@ async function checkViewerBehaviour() {
      spacers too and prove nothing. */
   const html = '<!doctype html><html><head><style>' + css + '</style></head><body>'
     + '<div class="viewer"><div class="bar">'
-    + '<div class="bar__side"><a class="btn">&larr;</a>'
-    + '<span class="bar__title">A Long Chapter Title</span>'
-    + '<span class="bar__sub">Class 9 &middot; ch 7</span>'
-    + '<button class="btn">Bleed</button><button class="btn">Spreads</button></div>'
+    + '<div class="bar__side">'
+    + '<a class="btn btn--icon">h</a><a class="btn btn--icon">b</a>'
+    + '<span class="bar__where"><span class="bar__sub">Class 9 &middot; CH 7</span>'
+    + '<span class="bar__title">A Long Chapter Title</span></span></div>'
     + bar
     + '<div class="bar__side bar__side--end">'
+    + '<button class="btn">Bleed</button>'
     + '<a class="btn">Print PDF</a><button class="btn btn--go">Build</button></div>'
     + '</div>'
     + '<div class="stage" id="stage" style="width:900px;height:700px">'

@@ -41,8 +41,8 @@ In a chapter you get:
 | control | what it does |
 |---|---|
 | **home / back** | two journeys, two buttons: home goes to the top of the studio with nothing chosen, back to the chapter list this page came from, carrying its class and subject. Beside them, where you are — class and chapter — over what you are looking at |
-| **Bleed** | a switch, not one of a pair: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in its tooltip; nothing on the bar carries a measurement |
-| **Spreads** | the other switch: off is one page at a time, on is verso-and-recto side by side — the only way to check the mirroring |
+| **Bleed** | a switch on the right beside Print PDF, since both answer which sheet you want: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in its tooltip; nothing on the bar carries a measurement |
+| **Spreads** | the other switch, in the middle cluster past the fit toggle: off is one page at a time, on is verso-and-recto side by side — the only way to check the mirroring |
 | **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. The level opens the presets, fit to page and fit to width |
 | the keyboard | `↑` `↓` scroll, `←` `→` turn the page — or scroll sideways, once the zoom is past the width of the stage. Space and shift-space take a screenful, `PageUp`/`PageDown`/`Home`/`End` whole pages, and `ctrl` with `+` `-` `0` works the zoom |
 | **Actual size**, in that menu | true millimetres once you calibrate — hold a bank card to the screen and drag; every card is 85.6 × 54 mm. Until then the menu says *96 dpi*, because uncalibrated it is only 100% under another name |
