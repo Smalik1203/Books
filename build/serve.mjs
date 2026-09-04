@@ -171,7 +171,7 @@ async function coverLibrary() {
       const s = await coverSheet(meta);
       const out = path.join(ROOT, 'build', 'covers', cls, dir);
       covers.push({
-        target: cls + '/' + dir, dir, meta, sheet: s,
+        target: cls + '/' + dir, meta, sheet: s,
         name: meta.title + (meta.part ? ', Part ' + meta.part : ''),
         edition: (meta.edition || 'crown quarto').toUpperCase(),
         built: existsSync(out + '.html'),
@@ -225,7 +225,6 @@ function libraryHtml(classes, coverClasses) {
       <div class="card__num">Cover &middot; ${esc(c.edition)}</div>
       <div class="card__title">${esc(c.name)}</div>
       <div class="card__meta">
-        <span>${esc(c.dir)}</span>
         <span>spine ${c.sheet.spine.mm} mm</span>
       </div>
       <div class="card__flags">
