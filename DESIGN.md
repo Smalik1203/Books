@@ -534,6 +534,32 @@ every bleed rule in `cover.css` follows without being touched, and
 `cover.mjs` sizes the press sheet from the same token so the layout and the
 media box cannot drift apart.
 
+**The marks on the wrap were measured and left as they are.** They look
+detached beside a chapter's — hard against the sheet edge, a long way from
+the line they denote — and they are not. `cropMarks` in `build.mjs` and
+`coverMarks` in `cover.mjs` are the same function: a mark starts at the bleed
+edge and runs 5mm outward into the slug, so it can never print over artwork.
+On a 437 × 290 sheet that puts the trim at 22 / 22 / 415 / 268 with twelve
+marks, each on a trim or a fold line and none of them touching the jacket.
+What differs is the bleed. A page bleeds 3mm, so its marks stand 3mm out and
+visibly bracket the trim; a wrap bleeds 15mm, so a 5mm tick sits that far from
+its own cut line and reads as furniture at the sheet edge. Offset equals bleed
+is the standard rule and the reason for it is exactly that a shorter offset
+would put the mark on the bleed. Reopen it with the check
+(`npm run check:studio`, *Cover — the press sheet, and the marks on it*)
+rather than from the proof.
+
+**One thing to settle before the cover goes to press.** The 15mm above is
+justified as a turn-in, which is a case binding; `cover.json` declares
+`caseAllowance: 0.5`, which is a limp card cover. They describe different
+books. If it is perfect-bound the wrap is cut flush and wants 3–5mm like any
+other cut edge — the press sheet becomes 413 × 266 and the marks land 3mm out,
+like a chapter's. If it is case-bound the 15mm is real, but then the cut is at
+423 × 276 and the 393 × 246 lines are board-edge folds, which nothing on the
+sheet marks as folds, and the allowance is too thin for two boards. Neither
+reading makes the sheet as printed today wrong — the marks sit outside the
+artwork either way — so this is a question for the printer, not a fault to fix.
+
 **The spine is bulk**: pages ÷ 2 × caliper, plus the case. `spineWidth` in
 `cover.json` overrides that when a printer quotes its own stock — this cover
 declares **15mm** against a computed bulk of 12.4mm — and the builder then
