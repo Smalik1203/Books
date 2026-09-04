@@ -243,6 +243,10 @@ async function checkViewerStructure() {
     eq('the trim size is still stated', html.includes('mm</span>'), true);
     eq('no browser-print button', html.includes('id="print"'), false);
     eq('the info strip is gone', html.includes('class="note"'), false);
+    eq('no signature view', html.includes('id="view-impose"'), false);
+    eq('no pages-per-signature select', html.includes('id="sig-size"'), false);
+    eq('the two views that remain', ['view-pages', 'view-spread']
+      .every((i) => html.includes('id="' + i + '"')), true);
     eq('the build log ships hidden', /id="build-log"[^>]*hidden/.test(html), true);
 
     const covLink = (lib.match(/href="\/cover\/([^"]+)"/) || [])[1];
@@ -333,10 +337,36 @@ async function checkViewerBehaviour() {
     R.uncalNote = $('cal-state').textContent;
     // the page box counts the stub's two pages, and the keys page it
     R.pageCount = $('page-count').textContent;
-    const key = (k) => document.dispatchEvent(
-      new KeyboardEvent('keydown', { key: k, bubbles: true, cancelable: true }));
+    const key = (k, shift) => document.dispatchEvent(
+      new KeyboardEvent('keydown', { key: k, shiftKey: !!shift, bubbles: true, cancelable: true }));
     key('End');  R.end = $('page-no').value;
     key('Home'); R.home = $('page-no').value;
+
+    /* The arrow keys move the document. They are answered by the script
+       and not by the browser — the book is in an iframe and the stage
+       around it has no focus — so if the handler goes, nothing scrolls
+       and nothing says so. */
+    const st = $('stage');
+    st.scrollTop = 0;
+    key('ArrowDown'); key('ArrowDown'); key('ArrowDown');
+    R.arrowDown = st.scrollTop;
+    key('ArrowUp');
+    R.arrowUp = st.scrollTop;
+    key(' ');
+    R.space = st.scrollTop;
+    key(' ', true);
+    R.shiftSpace = st.scrollTop;
+    // and the box follows the scroll, not only a typed page number
+    st.scrollTop = 0;
+    let guard = 0;
+    while ($('page-no').value === '1' && guard++ < 200) key('ArrowDown');
+    R.boxFollowedAfter = guard < 200 ? $('page-no').value : 'never';
+    // an arrow must not fire while the page number is being typed
+    st.scrollTop = 0;
+    $('page-no').focus();
+    key('ArrowDown');
+    R.notWhileTyping = st.scrollTop;
+    $('page-no').blur();
     document.title = 'R' + JSON.stringify(R);`;
 
   const html = '<!doctype html><html><head><style>' + css + '</style></head><body>'
@@ -387,6 +417,12 @@ async function checkViewerBehaviour() {
   eq('done closes the panel', R.calPanelClosed, true);
   eq('the page box counts the book', R.pageCount, '/ 2');
   eq('End and Home page it', [R.end, R.home], ['2', '1']);
+  eq('the down arrow scrolls', R.arrowDown > 0, true);
+  eq('the up arrow scrolls back', R.arrowUp < R.arrowDown && R.arrowUp > 0, true);
+  eq('space takes a screenful', R.space > R.arrowDown, true);
+  eq('shift-space gives it back', R.shiftSpace < R.space, true);
+  eq('the page box follows the scroll', R.boxFollowedAfter, '2');
+  eq('an arrow does not fire while typing a page number', R.notWhileTyping, 0);
 }
 
 /* ---- 5. What a build reports ------------------------------

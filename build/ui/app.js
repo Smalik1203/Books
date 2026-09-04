@@ -16,10 +16,10 @@
   const inner = document.getElementById('inner');
   const stage = document.getElementById('stage');
   const $ = (id) => document.getElementById(id);
-  /* A cover is one sheet, not a run of pages, so its bar carries no pager,
-     no spread and no signature. Rather than a second viewer that would
-     drift from this one, every control that a cover leaves out is reached
-     through these — absent means nothing to do, not a crash. */
+  /* A cover is one sheet, not a run of pages, so its bar carries neither
+     pager nor spread. Rather than a second viewer that would drift from
+     this one, every control a cover leaves out is reached through these
+     — absent means nothing to do, not a crash. */
   const set = (id, attr, val) => { const el = $(id); if (el) el[attr] = val; };
   const press = (id, val) => { const el = $(id); if (el) el.setAttribute('aria-pressed', val); };
   const on = (id, ev, fn) => { const el = $(id); if (el) el[ev] = fn; };
@@ -31,13 +31,11 @@
     sheet: 'trim',
     view: 'pages',
     zoom: 'fit',
-    sig: 32,
     ppmm: Number(localStorage.getItem('ll.ppmm')) || CSS_PX_PER_MM,
   };
 
   /* ---- loading the book ---------------------------------- */
   function src() {
-    if (state.view === 'impose') return cfg.imposeUrl + '?sig=' + state.sig;
     const base = state.sheet === 'bleed' ? cfg.bleedUrl : cfg.trimUrl;
     return base + (state.view === 'spread' ? '?view=spread' : '');
   }
@@ -50,14 +48,6 @@
     press('sheet-bleed', state.sheet === 'bleed');
     press('view-pages', state.view === 'pages');
     press('view-spread', state.view === 'spread');
-    press('view-impose', state.view === 'impose');
-    set('sig-size', 'hidden', state.view !== 'impose');
-    // page nav and the sheet toggle mean nothing on a press sheet
-    const onSheet = state.view === 'impose';
-    for (const id of ['page-no', 'sheet-bleed']) {
-      set(id, 'disabled', onSheet);
-    }
-    if (onSheet) set('page-count', 'textContent', '');
   }
 
   /* ---- sizing -------------------------------------------- */
@@ -77,11 +67,8 @@
     const padW = stage.clientWidth - 24;
     if (state.zoom === 'fitw') return padW / contentW;
     if (state.zoom === 'fit') {
-      const perRow = state.view === 'spread' ? 2 : 1;
       const sheetH = sheetHeightMm() * CSS_PX_PER_MM + 40;
-      return state.view === 'impose'
-        ? Math.min(1, padW / contentW)
-        : Math.min(padW / contentW, (stage.clientHeight - 24) / sheetH);
+      return Math.min(padW / contentW, (stage.clientHeight - 24) / sheetH);
     }
     if (state.zoom === 'actual') return state.ppmm / CSS_PX_PER_MM;
     return Number(state.zoom);
@@ -90,9 +77,7 @@
   // CSS zoom, not a transform: zoom reflows, so the scrollbars stay honest.
   function applyZoom() {
     const perRow = state.view === "spread" ? 2 : 1;
-    const contentW = state.view === "impose"
-      ? Math.max(320, stage.clientWidth - 24)
-      : Math.round(sheetWidthMm() * CSS_PX_PER_MM * perRow) + 40;
+    const contentW = Math.round(sheetWidthMm() * CSS_PX_PER_MM * perRow) + 40;
     inner.style.width = contentW + "px";
     fitFrame();
 
@@ -109,6 +94,8 @@
       b.setAttribute('aria-checked', String(b.dataset.zoom === String(state.zoom)));
     }
     calState();
+    at = [];                 // every page offset just moved with the zoom
+    syncPage();
   }
 
   /* Until the screen is calibrated, Actual size and 100% are the same
@@ -154,16 +141,55 @@
   function countPages() {
     const doc = frame.contentDocument;
     pages = doc ? [...doc.querySelectorAll('.page')] : [];
-    if (state.view !== 'impose') set('page-count', 'textContent', '/ ' + pages.length);
+    at = [];
+    set('page-count', 'textContent', '/ ' + pages.length);
     set('page-no', 'max', pages.length);
   }
+  /* Where each page starts, measured down the stage. A page's rect is
+     taken inside the iframe, which does not scroll — it is laid out at
+     its full height — so the top is its offset into the book, and the
+     zoom is what turns that into stage pixels.
+
+     Cached, and remeasured when the zoom or the book changes. It is
+     read on every scroll event, and reaching across into another
+     document twenty-eight times a frame to learn what has not moved is
+     work for nothing. */
+  let at = [];
+  function measurePages() {
+    const k = Number(inner.style.zoom) || 1;
+    at = pages.map((el) => el.getBoundingClientRect().top * k);
+  }
+  const showPage = (i) =>
+    set('page-no', 'value', (pages[i] && pages[i].dataset.folio) || String(i + 1));
+
   function goto(n) {
     if (!pages.length) return;
+    if (at.length !== pages.length) measurePages();
     const i = Math.max(1, Math.min(pages.length, n)) - 1;
-    const k = Number(inner.style.zoom) || 1;
-    stage.scrollTop = pages[i].getBoundingClientRect().top * k - 10;
-    set('page-no', 'value', pages[i].dataset.folio || String(i + 1));
+    stage.scrollTop = at[i] - 10;
+    showPage(i);
   }
+
+  /* Which page the stage is actually showing. Without this the box says
+     1 all the way to the end of the chapter as soon as you scroll or
+     arrow rather than type — which is what made the arrow keys feel as
+     though they had done nothing.
+
+     Synchronous, deliberately. The first version threw the work into
+     requestAnimationFrame behind a busy flag, and a background tab
+     suspends rAF: the flag never cleared and the counter stuck at
+     whatever page it was on when the tab lost focus. Scroll events are
+     already coalesced to the frame, and a scan of a cached array is
+     nothing. */
+  function syncPage() {
+    if (!pages.length) return;
+    if (at.length !== pages.length) measurePages();
+    const y = stage.scrollTop + 24;
+    let i = 0;
+    while (i + 1 < at.length && at[i + 1] <= y) i++;
+    showPage(i);
+  }
+  stage.addEventListener('scroll', syncPage, { passive: true });
 
   /* ---- controls ------------------------------------------ */
   on('sheet-bleed', 'onclick', () => {
@@ -172,8 +198,6 @@
   });
   on('view-pages', 'onclick',  () => { state.view = 'pages';  load(); });
   on('view-spread', 'onclick', () => { state.view = 'spread'; load(); });
-  on('view-impose', 'onclick', () => { state.view = 'impose'; load(); });
-  on('sig-size', 'onchange', (e) => { state.sig = Number(e.target.value); load(); });
 
   /* ---- zoom ---------------------------------------------- */
   const menu = $('zoom-menu');
@@ -220,16 +244,45 @@
   });
   const pageNo = () => Number(($('page-no') || {}).value || 0);
   on('page-no', 'onchange', () => goto(pageNo()));
-  /* The ‹ › buttons went when the cluster took Chrome's shape, and
-     Chrome has no such pair either — it pages with the keyboard and
-     the scroll. So must this, or the paging is simply gone. */
+  /* Reading the book from the keyboard.
+
+     The ‹ › buttons went when the cluster took Chrome's shape, and
+     Chrome has no such pair either — it pages with the keyboard. But
+     the book is in an iframe, and the thing that scrolls is the stage
+     around it, so nothing here has focus by default and the arrow keys
+     did nothing at all. They are answered here rather than left to the
+     browser, which is also why they can be given Chrome's meanings:
+     up and down scroll, left and right turn the page. */
+  const LINE = 64;                                   // about three lines, at fit
+  /* The counter is brought up to date here rather than left to the
+     scroll event. The event is dispatched on a rendering step, so a
+     window that is not being painted — hidden, minimised, behind
+     another — delivers none of them, and the box would sit on the page
+     it was on when the window went away. The listener stays for the
+     wheel; the keys do not need it. */
+  const scrollBy = (dy) => { stage.scrollTop += dy; syncPage(); };
+  const wide = () => stage.scrollWidth > stage.clientWidth + 1;
+
   document.addEventListener('keydown', (e) => {
     if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
-    if (e.key === 'PageDown') { e.preventDefault(); goto(pageNo() + 1); }
-    else if (e.key === 'PageUp') { e.preventDefault(); goto(pageNo() - 1); }
-    else if (e.key === 'Home') { e.preventDefault(); goto(1); }
-    else if (e.key === 'End') { e.preventDefault(); goto(pages.length); }
+    const screenful = stage.clientHeight * 0.9;
+    switch (e.key) {
+      case 'ArrowDown':  scrollBy(LINE); break;
+      case 'ArrowUp':    scrollBy(-LINE); break;
+      case 'PageDown':   goto(pageNo() + 1); break;
+      case 'PageUp':     goto(pageNo() - 1); break;
+      case ' ':          e.shiftKey ? scrollBy(-screenful) : scrollBy(screenful); break;
+      case 'Home':       goto(1); break;
+      case 'End':        goto(pages.length); break;
+      /* Zoomed past the width of the stage there is somewhere sideways
+         to go, so left and right go there; otherwise they turn the
+         page, as they do in a reader. */
+      case 'ArrowRight': wide() ? (stage.scrollLeft += LINE) : goto(pageNo() + 1); break;
+      case 'ArrowLeft':  wide() ? (stage.scrollLeft -= LINE) : goto(pageNo() - 1); break;
+      default: return;
+    }
+    e.preventDefault();
   });
   /* What the last build came to, and only while there is something to
      say. It used to be a permanent strip under the bar. */

@@ -41,14 +41,16 @@ In a chapter you get:
 | control | what it does |
 |---|---|
 | **Bleed** | a switch, not one of a pair: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug |
-| **Pages / Spreads / Signature** | one page at a time; verso-and-recto side by side (the only way to check the mirroring); or the press sheet, 8/16/32 pages up |
-| **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. `ctrl` with `+`, `-`, `0`; `PageUp`/`PageDown`/`Home`/`End` page it. The level opens the presets, fit to page and fit to width |
+| **Pages / Spreads** | one page at a time, or verso-and-recto side by side — the only way to check the mirroring |
+| **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. The level opens the presets, fit to page and fit to width |
+| the keyboard | `↑` `↓` scroll, `←` `→` turn the page — or scroll sideways, once the zoom is past the width of the stage. Space and shift-space take a screenful, `PageUp`/`PageDown`/`Home`/`End` whole pages, and `ctrl` with `+` `-` `0` works the zoom |
 | **Actual size**, in that menu | true millimetres once you calibrate — hold a bank card to the screen and drag; every card is 85.6 × 54 mm. Until then the menu says *96 dpi*, because uncalibrated it is only 100% under another name |
 | **Print PDF** | download the press artefact |
 | **Build** | run the builder with `--pdf --bleed` and reload, without leaving the page. What it came to appears beside the button as a phrase — *28 pages · all clear*, or the clipping, violations and short pages it found |
 
-The **Signature** view imposes the chapter onto a press sheet and reports the
-page count, the signature count, how many blank pages the run leaves, the
+The **signature schematic** — no longer on the bar, but still served at
+`/impose/<class>/<chapter>?sig=32` — imposes the chapter onto a press sheet
+and reports the page count, the signature count, how many blank pages the run leaves, the
 imposed area and the standard sheet it fits with its waste percentage. Two
 rules hold for any folder — facing pages on one side of a sheet sum to
 (signature + 1), and the two sides of a leaf are consecutive — and the builder
