@@ -40,7 +40,7 @@ In a chapter you get:
 
 | control | what it does |
 |---|---|
-| **home / back** | two journeys, two buttons: home goes to the top of the studio with nothing chosen, back to the chapter list this page came from, carrying its class and subject. Beside them, where you are — class and chapter — over what you are looking at |
+| **home / back** | two journeys, two buttons: home goes to a bare `/`, which chooses nothing — the front door opens on the chooser whatever was last looked at. Back goes to the chapter list this page came from, carrying its class and subject in the query. Beside them, where you are — class and chapter — over what you are looking at |
 | **Bleed** | a switch on the right beside Print PDF, since both answer which sheet you want: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in its tooltip; nothing on the bar carries a measurement |
 | **Spreads** | the other switch, in the middle cluster past the fit toggle: off is one page at a time, on is verso-and-recto side by side — the only way to check the mirroring |
 | **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. A chapter opens at 100%. The level is typed — any percentage from 10 to 500, since a proof gets read at whatever makes one figure legible. Fit to page is a flat 70% on every screen, and 66% on the press sheet so the page stays the same size as Bleed goes on; fit to width measures the stage. The button shows the mode it is in — an upright sheet for the one, a wide one for the other — and returns to fit to page from any fixed percentage |

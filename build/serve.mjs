@@ -364,17 +364,17 @@ const downloadBtn = (base, suffix, label) => {
    annotate: a note wanted on a proof belongs in the source. */
 /* ---- Home and back ----------------------------------------
    Two different journeys, so two buttons. Back goes to the list
-   this page came from, carrying its class and subject; home goes
-   to the top of the studio, and says so with ?home, which tells
-   the chooser to ignore the choice it remembers. Without that the
-   two would land in the same place and one of them would be a lie.
+   this page came from, carrying its class and subject in the query;
+   home goes to a bare "/", where nothing is chosen. The chooser
+   reads the address and nothing else, so those are two different
+   places without either button having to say so.
 
    The label beside them reads downwards: where you are, then what
    you are looking at. Class and chapter first because that is what
    you check when you have three tabs open, and it is the shorter
    line — a title can run to any length and takes the ellipsis. */
 const navPair = (backHref, sub, title) => `
-        <a class="btn btn--icon" href="/?home" title="The library">
+        <a class="btn btn--icon" href="/" title="The library">
           <svg viewBox="0 0 20 20" aria-hidden="true">
             <path d="M3 9.2 10 3.4l7 5.8" />
             <path d="M4.8 8.2V16h10.4V8.2" />
