@@ -1,0 +1,79 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Two dice, and a list that lies</div>
+        <p>
+          The list $\{2, 3, \ldots, 12\}$ really does contain every possible sum, and it
+          really does contain eleven of them. The fault is not in the list. It is in the
+          assumption underneath the formula.
+        </p>
+        <p>
+          Favourable over possible only works when the outcomes are
+          <em>equally likely</em>, and these are not. There is one way to make a sum of
+          2 — both dice show 1 — but six ways to make a 7:
+        </p>
+        <div class="work work--centred">
+          <p>$1{+}6$, &nbsp; $2{+}5$, &nbsp; $3{+}4$, &nbsp; $4{+}3$, &nbsp; $5{+}2$,
+          &nbsp; $6{+}1$</p>
+        </div>
+        <p>
+          The equally likely outcomes are not the sums but the pairs, and there are
+          $6 \times 6 = 36$ of them. Counted properly:
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$P(\text{sum} = 2)$</span>
+            <span>$\dfrac{1}{36}$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$P(\text{sum} = 7)$</span>
+            <span>$\dfrac{6}{36} = \dfrac16$</span>
+          </div>
+        </div>
+        <p>
+          This is the most useful mistake in the chapter, because it is invisible. Every
+          step after the bad list is correct, and the answer still comes out wrong. When
+          a sample space is handed to you, ask not only whether it is complete but
+          whether its entries are the things that are equally likely.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The spinner, and the word "and"</div>
+        <p>
+          Take the two conditions one at a time and then keep only what satisfies both.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">even</span>
+            <span>$\{2, 4, 6, 8\}$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">greater than 5</span>
+            <span>$\{6, 7, 8\}$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">both</span>
+            <span>$\{6, 8\}$</span>
+            <span class="chip">$\tfrac28 = \tfrac14$</span>
+          </div>
+        </div>
+        <p>
+          Writing the two sets out is worth the few seconds. Read quickly, "even and
+          greater than 5" invites you to add the counts — four and three — and answer
+          $\tfrac78$, which is larger than either condition alone. An <em>and</em> can
+          only ever make an event smaller.
+        </p>
+        <p>
+          It is worth reading the two sets once more. "Even" holds four of the eight
+          numbers and "greater than 5" holds three, but only two numbers are in both, and
+          those two are the whole event. An <em>or</em> would have given six — the union,
+          with 6 and 8 counted once each rather than twice.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

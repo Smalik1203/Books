@@ -1,0 +1,77 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Two surveys, one of them useless</div>
+        <p>
+          Both give a probability, and the arithmetic of each is sound: $\tfrac{150}{200}
+          = 0.75$ and $\tfrac{19}{20} = 0.95$. The question is which estimates the
+          town.
+        </p>
+        <p>
+          The second sample was taken at a cycle repair shop. Everyone there has already
+          been sorted by the very thing being measured — you do not queue at a repair
+          shop without a bicycle. The sample cannot represent the town, and no increase
+          in its size would help: a thousand people at that shop would give an answer
+          closer to 1, not closer to the truth.
+        </p>
+        <p>
+          So use the first, and notice what settled it. Not the sample size, though 200
+          beats 20. It was <em>how the sample was chosen</em>. A biased sample does not
+          give a vague answer; it gives a precise answer to a different question.
+        </p>
+        <p>
+          And the different question here is a real one, worth asking on its own terms:
+          what proportion of people at a cycle repair shop own a bicycle? The answer,
+          near enough, is all of them, and the survey establishes it. Nothing about the
+          20 responses is false. They simply describe a queue, not a town.
+        </p>
+        <p>
+          This is the flaw that made the first survey worth taking, and it is the flaw to
+          look for whenever a figure is quoted at you. Ask who was asked, and where. A
+          survey of shoppers taken in a market at eleven on a Tuesday morning will find
+          the town oddly free of people who work in offices.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Three coins, listed</div>
+        <p>
+          Eight outcomes, from two choices made three times over — $2 \times 2 \times 2$.
+          Listing them costs a line and settles the question:
+        </p>
+        <div class="work work--centred">
+          <p>HHH &nbsp; HHT &nbsp; HTH &nbsp; HTT &nbsp; THH &nbsp; THT &nbsp; TTH
+          &nbsp; TTT</p>
+        </div>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">exactly two heads</span>
+            <span>HHT, HTH, THH</span>
+            <span class="chip">$\tfrac38$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">three heads</span>
+            <span>HHH</span>
+            <span class="chip">$\tfrac18$</span>
+          </div>
+        </div>
+        <p>
+          Exactly two heads is three times as likely. The reason is that "three heads"
+          names one outcome while "exactly two heads" names three — the two heads can
+          arrive in three different orders, and order is what the sample space is made
+          of.
+        </p>
+        <p>
+          Feel says otherwise, and it is worth knowing why. Two heads and three heads
+          sound like neighbouring results, so they sound about equally likely. But
+          "three heads" is a description that fits one outcome only, while "exactly two"
+          fits a small family of them, and the probability follows the size of the
+          family rather than the sound of the description.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

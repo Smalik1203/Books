@@ -1,0 +1,112 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>A probability outside that range is not unlikely — it is meaningless, in the
+      way a length of $-3$ metres is meaningless. If a calculation ever hands you one,
+      the calculation is wrong, and it is worth stopping to find out where.</p>
+
+      <h3>Reading the scale</h3>
+
+      <p>It is worth walking along the line once with real events on it, because the
+      five names are easy to say and easy to misapply.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">impossible</span>
+          <span>a number greater than 6 on a die — the faces stop at 6</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">less likely</span>
+          <span>rolling a 3 — possible, but only one face in six</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">even chance</span>
+          <span>a coin landing heads — the two faces have nothing to choose between them</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">more likely</span>
+          <span>drawing a card numbered 2 to 10 — 36 of the 52 qualify</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">certain</span>
+          <span>taking a red sweet from a bag of red sweets</span>
+        </div>
+      </div>
+
+      <p>Notice the second and fourth. Neither is settled, and both are often described
+      loosely as "unlikely" and "likely" — but the die gives $\tfrac16$ and the card
+      gives $\tfrac{36}{52}$, which is close to $\tfrac{7}{10}$. Those are very different
+      positions on the line, and the words hide the difference.</p>
+
+      <p>Here is a way to watch a probability move. Take a deck of cards in which some
+      are purple and the rest are green, and ask for the probability of drawing a purple
+      one. With no purple cards at all the answer is 0. Add purple cards one at a time
+      and the answer slides steadily to the right, through less likely, through the even
+      chance where the two colours are matched, and on towards certain — which it
+      reaches only when the last green card has gone.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 240 74" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Four decks with increasing numbers of purple cards, placed along the probability scale">
+      
+            <g class="dg-line">
+              <rect x="14"  y="12" width="14" height="20" rx="2"/>
+              <rect x="30"  y="12" width="14" height="20" rx="2"/>
+              <rect x="46"  y="12" width="14" height="20" rx="2"/>
+            </g>
+            <g class="dg-fill-b-soft">
+              <rect x="15"  y="13" width="12" height="18" rx="1.6"/>
+              <rect x="31"  y="13" width="12" height="18" rx="1.6"/>
+              <rect x="47"  y="13" width="12" height="18" rx="1.6"/>
+            </g>
+      
+            <g class="dg-line">
+              <rect x="98"  y="12" width="14" height="20" rx="2"/>
+              <rect x="114" y="12" width="14" height="20" rx="2"/>
+              <rect x="130" y="12" width="14" height="20" rx="2"/>
+            </g>
+            <g class="dg-fill-b-soft">
+              <rect x="99"  y="13" width="12" height="18" rx="1.6"/>
+              <rect x="115" y="13" width="12" height="18" rx="1.6"/>
+            </g>
+            <rect class="dg-fill-c-soft" x="131" y="13" width="12" height="18" rx="1.6"/>
+      
+            <g class="dg-line">
+              <rect x="184" y="12" width="14" height="20" rx="2"/>
+              <rect x="200" y="12" width="14" height="20" rx="2"/>
+              <rect x="216" y="12" width="14" height="20" rx="2"/>
+            </g>
+            <g class="dg-fill-c-soft">
+              <rect x="185" y="13" width="12" height="18" rx="1.6"/>
+              <rect x="201" y="13" width="12" height="18" rx="1.6"/>
+              <rect x="217" y="13" width="12" height="18" rx="1.6"/>
+            </g>
+      
+            <rect class="dg-fill-d" x="14" y="44" width="212" height="10" rx="2"/>
+            <rect class="dg-line"   x="14" y="44" width="212" height="10" rx="2"/>
+            <g class="dg-thin"><path d="M37 44 V38 M120 44 V38 M223 44 V38"/></g>
+      
+            <text class="dg-note" x="14"  y="68">0 · impossible</text>
+            <text class="dg-note" x="120" y="68" text-anchor="middle">even chance</text>
+            <text class="dg-note" x="226" y="68" text-anchor="end">1 · certain</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.3</span> As purple replaces green, the
+          probability of drawing purple slides along the scale.</figcaption>
+        </figure>
+      </div>
+
+      <p>Notice that the scale has no gaps in it. Any number between 0 and 1 can be the
+      probability of something, and by adding purple counters one at a time we could
+      land as close to any point on that bar as we liked. Probability is not a set of
+      five verdicts with nothing in between; those are names for stretches of the scale,
+      useful in conversation and too coarse for anything else.</p>
+
+      <p>What the numbers buy us is comparison. Told one event is unlikely and another
+      very unlikely, we know which is rarer but not by how much; told $0.1$ and $0.001$,
+      we know the first happens a hundred times as often.</p>
+
+    </div>
+  </div>
+</section>

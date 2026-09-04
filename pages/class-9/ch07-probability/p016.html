@@ -1,0 +1,101 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Write the sample space before the probability. The counting is the hard
+          part, and it is the part a formula cannot do for you.</p>
+        </div>
+      </div>
+
+      <h3>The tree diagram</h3>
+
+      <p>When an experiment happens in stages — toss a coin, then toss it again — the
+      outcomes multiply, and a list written by hand starts to miss things. A
+      <span class="term">tree diagram</span> makes missing them difficult.</p>
+
+      <p>Draw a branch for every outcome of the first stage. From the end of each of
+      those, draw a branch for every outcome of the second. Every path from the root to
+      a tip is then one complete outcome, and the tips are the sample space.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>A fair coin is tossed twice. List the sample space, and find the
+          probability of two heads.</p>
+          <p>The first toss gives H or T. From each of those the second toss gives H or
+          T again, which is two branches from each of two — four paths in all.</p>
+      
+          <div class="c-figure c-figure--lg">
+            <figure>
+              <svg viewBox="0 0 200 116" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A tree diagram for tossing a coin twice, giving the four outcomes HH, HT, TH and TT">
+      
+                <g class="dg-line">
+                  <path d="M18 58 L70 30 M18 58 L70 86"/>
+                  <path d="M70 30 L128 16 M70 30 L128 44"/>
+                  <path d="M70 86 L128 72 M70 86 L128 100"/>
+                </g>
+      
+                <circle class="dg-fill-teal" cx="18" cy="58" r="3"/>
+                <g class="dg-fill-c">
+                  <circle cx="70" cy="30" r="2.6"/><circle cx="70" cy="86" r="2.6"/>
+                </g>
+      
+                <text class="dg-label" x="76" y="26">H</text>
+                <text class="dg-label" x="76" y="96">T</text>
+      
+                <text class="dg-label" x="134" y="20">H</text>
+                <text class="dg-label" x="134" y="48">T</text>
+                <text class="dg-label" x="134" y="76">H</text>
+                <text class="dg-label" x="134" y="104">T</text>
+      
+                <text class="dg-note" x="156" y="20">HH</text>
+                <text class="dg-note" x="156" y="48">HT</text>
+                <text class="dg-note" x="156" y="76">TH</text>
+                <text class="dg-note" x="156" y="104">TT</text>
+      
+                <text class="dg-note" x="44"  y="108" text-anchor="middle">first toss</text>
+                <text class="dg-note" x="110" y="108" text-anchor="middle">second toss</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 7.6</span> Two tosses, four paths.
+              Each tip is one outcome of the pair.</figcaption>
+            </figure>
+          </div>
+      
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">sample space</span>
+              <span>$S = \{\,\text{HH},\ \text{HT},\ \text{TH},\ \text{TT}\,\}$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$n(S)$</span>
+              <span>4</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">two heads</span>
+              <span>$\{\,\text{HH}\,\}$</span>
+              <span class="chip">$\tfrac14$</span>
+            </div>
+          </div>
+      
+          <p>So $P(\text{HH}) = \tfrac14$. Notice that HT and TH are two different
+          outcomes, not one: heads-then-tails is a different history from
+          tails-then-heads, even though both leave you with one of each.</p>
+        </div>
+      </div>
+
+      <p>The same picture answers questions the list alone would not. Reading the four
+      tips, exactly two of them — HT and TH — have one head and one tail, so that event
+      has probability $\tfrac24 = \tfrac12$. Getting at least one head takes three of the
+      four tips, giving $\tfrac34$.</p>
+
+    </div>
+  </div>
+</section>

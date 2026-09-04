@@ -1,0 +1,66 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>7.2.2 Theoretical probability</h3>
+
+      <p>The other route never touches a die at all. If every outcome is equally likely
+      — if there is no reason for the world to prefer one over another — then the
+      probability of an event is simply the share of the outcomes that count as
+      favourable.</p>
+
+      <div class="eq eq--anchor">
+        $$P(\text{event}) = \frac{\text{number of favourable outcomes}}{\text{number of possible outcomes}}$$
+      </div>
+
+      <p>The condition in front of that formula is not decoration. <em>Equally likely</em>
+      is an assumption, and the whole calculation rests on it. For a well-made die it is
+      a good assumption: the faces are alike, the cube is balanced, and nothing
+      distinguishes 4 from 5. For a drawing pin it is a bad one, which is why the pin
+      had to be dropped rather than reasoned about.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Roll a fair six-sided die. What is the theoretical probability of
+          getting a 4?</p>
+          <p>Count the two numbers the formula asks for. The possible outcomes are 1, 2,
+          3, 4, 5 and 6 — six of them. The favourable ones are those that count as
+          success: just the single face 4.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">favourable</span>
+              <span>1 &nbsp; (the face 4)</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">possible</span>
+              <span>6 &nbsp; (the faces 1 to 6)</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">probability</span>
+              <span>$\dfrac{1}{6}$</span>
+              <span class="chip">0.167</span>
+            </div>
+          </div>
+          <p>So $P(4) = \tfrac16 \approx 0.167$, or about $16.7\%$.</p>
+          <p>Compare that with the $0.16$ measured in Example 1. The two are close, and
+          they are answering different questions: one reports what 50 rolls did, the
+          other what a fair die must do in the long run. That they nearly agree is the
+          first hint of something this chapter returns to.</p>
+        </div>
+      </div>
+
+      <p>The word <em>fair</em> was doing quiet work in that example. When we call a
+      coin or a die fair, we mean it is symmetrical — that there is no reason for it to
+      come down one way more often than another. The usual word for this is
+      <span class="term">unbiased</span>. An unbiased die is not one that behaves
+      perfectly; it is one with no reason to behave otherwise.</p>
+
+      <p>The distinction matters, because the theoretical probability was found by
+      assuming it. Divide favourable by possible and you have assumed the outcomes are
+      equally likely; nothing in the arithmetic checks that they are. Put a lump of lead
+      under the 6 and the formula gives $\tfrac16$ just as cheerfully, and is wrong.</p>
+
+    </div>
+  </div>
+</section>
