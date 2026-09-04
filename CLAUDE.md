@@ -331,9 +331,17 @@ icon says. A control that names its own opposite has to be read twice. From
 a fixed percentage it returns to fit to page, so it is a way back as well as
 a toggle.
 
-**Actual size lives in the level menu**, with the calibration behind it, and the menu says whether the screen is calibrated
-or still the browser's 96 dpi guess — that was the thing that read as
-broken, because uncalibrated the two are the same button pressed twice.
+**The level is typed, not chosen.** Any percentage from 10 to 500 — a
+proof gets read at whatever makes one figure legible, and 137 was never
+going to be on a menu. The − and + buttons walk a ladder through that
+range; nonsense in the field puts the level back to what it was.
+
+The menu of six presets went with it, and **Actual size and the bank-card
+calibration went with the menu**. Uncalibrated, Actual size was 100% under
+another name, and the calibration behind it was the one control here that
+had to be set up before it told the truth. If true-size proofing is wanted
+back, it wants to be its own thing rather than a menu entry that lies
+until configured.
 
 The bar carries two switches — **Bleed** and **Spreads** — and neither
 names the state it is already in: a chapter opens on the trim, in pages.
@@ -383,7 +391,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 101 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 91 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly

@@ -1,12 +1,11 @@
 /* ============================================================
-   Studio viewer — zoom, paging, calibration, build.
+   Studio viewer — zoom, paging, build.
 
    The zoom cluster is Chrome's PDF toolbar: minus, the level, plus,
-   and a fit toggle, with the presets behind the level. It replaced
-   four preset buttons and a Calibrate that read as broken — because
-   until the screen is calibrated, Actual size and 100% are the same
-   button pressed twice, and nothing said so. The menu says so now,
-   and "fit" fits the page rather than only its width.
+   and a fit toggle. The level is a field and not a menu — a preset is
+   a guess at what somebody wants, and a proof gets read at whatever
+   percentage makes one figure legible. Anything from 10% to 500% can
+   be typed; the buttons walk a ladder through it.
    The book itself lives in an iframe so its stylesheet and this
    one can never reach each other.
    ============================================================ */
@@ -25,13 +24,15 @@
   const on = (id, ev, fn) => { const el = $(id); if (el) el[ev] = fn; };
 
   const CSS_PX_PER_MM = 96 / 25.4;                 // what the browser assumes
-  // Chrome's own ladder, which is what the + and − buttons step along.
+  /* The ladder the − and + buttons walk. It is not a limit on the
+     level: that is typed, and anything between MIN and MAX is allowed,
+     so the ladder only says where a press of the button lands next. */
   const ZOOMS = [0.25, 0.33, 0.5, 0.67, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3];
+  const MIN_Z = 0.1, MAX_Z = 5;
   const state = {
     sheet: 'trim',
     view: 'pages',
     zoom: 'fit',
-    ppmm: Number(localStorage.getItem('ll.ppmm')) || CSS_PX_PER_MM,
   };
 
   /* ---- loading the book ---------------------------------- */
@@ -57,7 +58,7 @@
     return state.sheet === 'bleed' ? cfg.mediaH : cfg.trimH;
   }
 
-  /* What the level actually comes to, for each of the four kinds it
+  /* What the level actually comes to, for each of the three kinds it
      can be. "fit" is the whole sheet inside the stage — width and
      height both — which is what fit to page means and what this
      used to get wrong: it fitted the width and capped at 100%, so a
@@ -69,7 +70,6 @@
       const sheetH = sheetHeightMm() * CSS_PX_PER_MM + 40;
       return Math.min(padW / contentW, (stage.clientHeight - 24) / sheetH);
     }
-    if (state.zoom === 'actual') return state.ppmm / CSS_PX_PER_MM;
     return Number(state.zoom);
   }
 
@@ -80,18 +80,17 @@
     inner.style.width = contentW + "px";
     fitFrame();
 
-    const k = Math.max(ZOOMS[0], Math.min(ZOOMS[ZOOMS.length - 1], factor(contentW)));
+    const k = Math.max(MIN_Z, Math.min(MAX_Z, factor(contentW)));
     inner.style.zoom = String(k);
     state.k = k;
 
-    set('zoom-level', 'textContent', Math.round(k * 100) + '%');
-    set('zoom-out', 'disabled', k <= ZOOMS[0] + 1e-9);
-    set('zoom-in', 'disabled', k >= ZOOMS[ZOOMS.length - 1] - 1e-9);
+    /* Not while it is being typed into: rewriting the field under the
+       cursor would eat the second digit of every number entered. */
+    const box = $('zoom-level');
+    if (box && document.activeElement !== box) box.value = Math.round(k * 100) + '%';
+    set('zoom-out', 'disabled', k <= MIN_Z + 1e-9);
+    set('zoom-in', 'disabled', k >= MAX_Z - 1e-9);
     fitIcon();
-    for (const b of document.querySelectorAll('[data-zoom]')) {
-      b.setAttribute('aria-checked', String(b.dataset.zoom === String(state.zoom)));
-    }
-    calState();
     at = [];                 // every page offset just moved with the zoom
     syncPage();
   }
@@ -120,16 +119,6 @@
     set('fit-toggle', 'title', wide
       ? 'Fit to width — click for fit to page'
       : 'Fit to page — click for fit to width');
-  }
-
-  /* Until the screen is calibrated, Actual size and 100% are the same
-     button pressed twice — which is why the old Calibrate read as
-     broken. Say which of the two it is. */
-  function calState() {
-    const cal = Math.abs(state.ppmm - CSS_PX_PER_MM) > 1e-6;
-    set('cal-state', 'textContent', cal ? 'calibrated' : '96 dpi');
-    const v = $('cal-val');
-    if (v) v.textContent = state.ppmm.toFixed(3) + ' px/mm';
   }
 
   // The book keeps growing after load — webfonts arrive, KaTeX lays out,
@@ -230,21 +219,19 @@
   });
 
   /* ---- zoom ---------------------------------------------- */
-  const menu = $('zoom-menu');
-  const closeMenu = () => { if (menu) { menu.hidden = true; set('zoom-level', 'ariaExpanded', 'false'); } };
-  const closeCal = () => { const p = $('cal-panel'); if (p) p.hidden = true; };
+  function setZoom(z) { state.zoom = z; applyZoom(); }
 
-  function setZoom(z) { state.zoom = z; applyZoom(); closeMenu(); }
-
-  /* Stepping starts from where the level actually is, not from the
-     last preset chosen — so + from "fit to page" at 63% goes to 67%
-     and not to some remembered 100%. */
+  /* Stepping starts from where the level actually is, not from the last
+     thing chosen — so + from "fit to page" at 63% goes to 67% and not
+     to some remembered 100%. Past either end of the ladder it keeps
+     going by a quarter each time, because the level can be typed well
+     beyond it and the button should not simply stop. */
   function step(dir) {
     const k = state.k || 1;
     const next = dir > 0
-      ? ZOOMS.find((z) => z > k + 1e-6)
-      : [...ZOOMS].reverse().find((z) => z < k - 1e-6);
-    if (next) setZoom(String(next));
+      ? ZOOMS.find((z) => z > k + 1e-6) || k * 1.25
+      : [...ZOOMS].reverse().find((z) => z < k - 1e-6) || k / 1.25;
+    setZoom(String(Math.max(MIN_Z, Math.min(MAX_Z, next))));
   }
   on('zoom-out', 'onclick', () => step(-1));
   on('zoom-in', 'onclick', () => step(1));
@@ -252,24 +239,35 @@
      so the button is a way back from a percentage as well as a toggle
      between the two fits. */
   on('fit-toggle', 'onclick', () => setZoom(state.zoom === 'fit' ? 'fitw' : 'fit'));
-  on('zoom-level', 'onclick', (e) => {
-    e.stopPropagation();
-    closeCal();
-    menu.hidden = !menu.hidden;
-    set('zoom-level', 'ariaExpanded', String(!menu.hidden));
-  });
-  for (const b of document.querySelectorAll('[data-zoom]')) {
-    b.onclick = () => setZoom(b.dataset.zoom);
+
+  /* The level is typed. Any number between MIN and MAX, in or out of
+     the ladder — a proof is read at whatever percentage makes one
+     figure legible, and that is rarely a round number. Nonsense in the
+     field is not an error to report; the level simply says again what
+     it already was. */
+  const levelBox = $('zoom-level');
+  if (levelBox) {
+    const commit = () => {
+      const typed = parseFloat(String(levelBox.value).replace(/[^0-9.]/g, ''));
+      if (Number.isFinite(typed) && typed > 0) {
+        setZoom(String(Math.max(MIN_Z, Math.min(MAX_Z, typed / 100))));
+      }
+      levelBox.value = Math.round((state.k || 1) * 100) + '%';
+    };
+    levelBox.onfocus = () => levelBox.select();
+    levelBox.onchange = commit;
+    levelBox.onblur = commit;
+    levelBox.onkeydown = (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); commit(); levelBox.blur(); }
+      else if (e.key === 'Escape') { levelBox.value = Math.round((state.k || 1) * 100) + '%'; levelBox.blur(); }
+      e.stopPropagation();          // the reading keys are not for this field
+    };
   }
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest || !e.target.closest('.zoom')) { closeMenu(); closeCal(); }
-  });
 
   /* The shortcuts Chrome answers to, so the hands do not have to move.
-     Not while a page number is being typed. */
+     Not while a page number or a zoom level is being typed. */
   function onZoomKey(e) {
     if (typing()) return;
-    if (e.key === 'Escape') { closeMenu(); closeCal(); return; }
     if (!(e.ctrlKey || e.metaKey)) return;
     if (e.key === '=' || e.key === '+') { e.preventDefault(); step(1); }
     else if (e.key === '-' || e.key === '_') { e.preventDefault(); step(-1); }
@@ -363,35 +361,6 @@
     el.title = text;
   }
 
-  /* ---- calibration --------------------------------------- */
-  const panel = $('cal-panel');
-  on('cal-open', 'onclick', (e) => {
-    e.stopPropagation();
-    closeMenu();
-    panel.hidden = !panel.hidden;
-    sizeCard();
-  });
-  on('cal-done', 'onclick', () => { closeCal(); setZoom('actual'); });
-  function sizeCard() {
-    // ISO/IEC 7810 ID-1: every bank card in the world is 85.60 x 53.98 mm
-    $('cal-card').style.width = (85.6 * state.ppmm) + 'px';
-    $('cal-card').style.height = (53.98 * state.ppmm) + 'px';
-    $('cal-range').value = String(state.ppmm);
-    calState();
-  }
-  $('cal-range').oninput = (e) => {
-    state.ppmm = Number(e.target.value);
-    localStorage.setItem('ll.ppmm', String(state.ppmm));
-    sizeCard();
-    if (state.zoom === 'actual') applyZoom();
-  };
-  $('cal-reset').onclick = () => {
-    state.ppmm = CSS_PX_PER_MM;
-    localStorage.removeItem('ll.ppmm');
-    sizeCard();
-    if (state.zoom === 'actual') applyZoom();
-  };
-
   /* ---- build --------------------------------------------- */
   $('build').onclick = async () => {
     const btn = $('build');
@@ -434,6 +403,5 @@
     say('Not built yet — press Build.', true);
   });
 
-  sizeCard();
   load();
 })();
