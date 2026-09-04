@@ -318,7 +318,13 @@ async function checkViewerStructure() {
     eq('no prev/next pair', /id="(prev|next)"/.test(html), false);
     eq('trim has no button of its own', html.includes('id="sheet-trim"'), false);
     eq('bleed is a switch', /id="sheet-bleed"[^>]*aria-pressed="false"/.test(html), true);
-    eq('the trim size is still stated', html.includes('mm</span>'), true);
+    /* No measurement anywhere on the bar. It moved from the Bleed
+       button into the subtitle and then off altogether — a number
+       that cannot be pressed and never changes belongs in a tooltip,
+       not in the line a reader glances at to know where they are. */
+    eq('no measurement in the subtitle', /class="bar__sub">[\s\S]*?mm<\/span>/.test(html), false);
+    eq('and no page count either — the page box has it',
+      /class="bar__sub">[\s\S]*?\d+ pp/.test(html), false);
     eq('no browser-print button', html.includes('id="print"'), false);
     eq('the info strip is gone', html.includes('class="note"'), false);
     eq('no signature view', html.includes('id="view-impose"'), false);

@@ -321,15 +321,17 @@ broken, because uncalibrated the two are the same button pressed twice.
 
 The bar carries two switches — **Bleed** and **Spreads** — and neither
 names the state it is already in: a chapter opens on the trim, in pages.
-A measurement is not a thing you can press either, so the sheet sizes live
-in the subtitle and the tooltips. Five things came off and are not to be
-pasted back:
+A measurement is not a thing you can press either, and the sheet sizes live
+in the tooltips. Five things came off and are not to be pasted back:
 
 * **Trim, and Pages.** Each was one of a pressed pair where one was always
   the answer. Both are switches now, off in the state a chapter opens in,
   and the `.seg` group went with them.
-* **The sizes on the Bleed button.** `Bleed 209×266` was a control wearing
-  a fact. The trim size is in the subtitle, the press sheet in the tooltip.
+* **Every measurement.** `Bleed 209×266` was a control wearing a fact; the
+  trim went into the subtitle for a while and then off it too, along with
+  the page count, which the page box already carries. The subtitle says
+  which class and which chapter and nothing else — it is the line a reader
+  glances at to know where they are. Both sizes are in the Bleed tooltip.
 * **Print… and Reading PDF.** The browser dialog duplicated the artefact
   the builder already writes.
 * **The strip under the bar.** It described the buttons beside it and then
@@ -354,7 +356,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 86 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 87 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
