@@ -280,10 +280,33 @@ practice; nothing under `pages/` can reach it.
 node build/serve.mjs
 ```
 
-<http://localhost:5180> — library, page/spread/signature views, true-size
-calibration, and a Build button. Watches `pages/`, `css/` and `covers/` and
-rebuilds whichever changed. The book renders in an iframe so the studio's
-stylesheet and the book's can never reach each other.
+<http://localhost:5180> — library, page/spread/signature views, and a Build
+button. Watches `pages/`, `css/` and `covers/` and rebuilds whichever
+changed. **`build/` is not watched**, so a change to `serve.mjs`,
+`ui/app.js` or `ui/app.css` needs the server restarted — and a running
+studio serving yesterday's compiled markup to today's script off disk is
+how two studio bugs have started.
+
+The zoom cluster is Chrome's PDF toolbar: minus, the level, plus, a fit
+toggle, and the presets behind the level — `ctrl` with `+`, `-` and `0` as
+well. **Actual size lives in that menu**, with the calibration behind it,
+and the menu says whether the screen is calibrated or still the browser's
+96 dpi guess. That was the thing that read as broken: uncalibrated, Actual
+size and 100% are the same button pressed twice, and nothing said so.
+
+```bash
+npm run check:studio     # 52 assertions: the chooser and the zoom cluster
+```
+
+Two halves, and both are needed. **Structure** asserts, against a freshly
+started server, that the compiled markup carries every id the scripts reach
+for. **Behaviour** drives the real `library.js` and `app.js` in headless
+Chrome — the chooser against a two-class fixture, the toolbar against a
+stub book at the real trim. The toolbar fixture lifts `zoomBar()` out of
+`serve.mjs` rather than retyping it, so it tests what the studio serves.
+
+The book renders in an iframe so the studio's stylesheet and the book's can
+never reach each other.
 
 Covers appear in the library under their class, in a group of their own, and
 open at `/cover/<class>/<name>`. That viewer has no pager, no spreads and no

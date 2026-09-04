@@ -282,6 +282,64 @@ const downloadBtn = (base, suffix, label) => {
     + `>${label}</a>`;
 };
 
+/* ---- The zoom cluster -------------------------------------
+   Chrome's PDF toolbar, because that is the control every reader
+   of this book already knows: minus, the level, plus, and a fit
+   toggle beside them. It replaces a row of four preset buttons
+   and a Calibrate that opened a panel — and that read as broken,
+   because until you calibrate, Actual size and 100% are the same
+   button pressed twice.
+
+   Actual size did not go away; it moved into the level menu with
+   the calibration behind it, and the menu now says which of the
+   two you are looking at. Both viewers show the same cluster, so
+   it is built once here rather than pasted into each. */
+const zoomBar = () => `
+        <div class="zoom" role="group" aria-label="Zoom">
+          <button class="zoom__step" id="zoom-out" title="Zoom out">&minus;</button>
+          <button class="zoom__level" id="zoom-level"
+                  aria-haspopup="true" aria-expanded="false" title="Zoom level">100%</button>
+          <button class="zoom__step" id="zoom-in" title="Zoom in">+</button>
+          <span class="zoom__rule"></span>
+          <button class="zoom__step" id="fit-toggle" title="Fit to width">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2.5 4v12M17.5 4v12" />
+              <path d="M6 10h8M6 10l2.4-2.4M6 10l2.4 2.4M14 10l-2.4-2.4M14 10l-2.4 2.4" />
+            </svg>
+          </button>
+
+          <div class="zoom__menu" id="zoom-menu" role="menu" hidden>
+            <button role="menuitem" data-zoom="fit">Fit to page</button>
+            <button role="menuitem" data-zoom="fitw">Fit to width</button>
+            <hr>
+            <button role="menuitem" data-zoom="0.5">50%</button>
+            <button role="menuitem" data-zoom="0.75">75%</button>
+            <button role="menuitem" data-zoom="1">100%</button>
+            <button role="menuitem" data-zoom="1.25">125%</button>
+            <button role="menuitem" data-zoom="1.5">150%</button>
+            <button role="menuitem" data-zoom="2">200%</button>
+            <hr>
+            <button role="menuitem" data-zoom="actual">Actual size <span class="zoom__note" id="cal-state"></span></button>
+            <button role="menuitem" id="cal-open">Calibrate this screen&hellip;</button>
+          </div>
+
+          <div class="cal__panel" id="cal-panel" hidden>
+            <h3>Actual size</h3>
+            <p>Hold a bank card against the box and drag until they match. Every card is
+               85.6 &times; 54 mm, so this makes &ldquo;Actual size&rdquo; true on
+               <em>your</em> screen &mdash; until you do, it is only 96&nbsp;dpi guesswork.</p>
+            <div class="cal__card" id="cal-card">bank card</div>
+            <div class="cal__row">
+              <input type="range" id="cal-range" min="2" max="10" step="0.001">
+              <span class="cal__val" id="cal-val"></span>
+            </div>
+            <div class="cal__row cal__row--foot">
+              <button class="btn" id="cal-reset">Reset to 96 dpi</button>
+              <button class="btn btn--go" id="cal-done">Done</button>
+            </div>
+          </div>
+        </div>`;
+
 /* ---- Viewer page ------------------------------------------ */
 function viewerHtml(chapter, s) {
   const cfg = {
@@ -290,6 +348,7 @@ function viewerHtml(chapter, s) {
     bleedUrl: '/build/' + chapter.target + '-bleed.html',
     imposeUrl: '/impose/' + chapter.target,
     trimW: s.trimW, mediaW: s.mediaW,
+    trimH: s.trimH, mediaH: s.mediaH,
   };
   const noBleed = !existsSync(path.join(ROOT, 'build', chapter.target + '-bleed.html'));
 
@@ -321,38 +380,15 @@ function viewerHtml(chapter, s) {
           <option value="32" selected>32 pp</option>
         </select>
 
-        <div class="seg" role="group" aria-label="Zoom">
-          <button data-zoom="fit" aria-pressed="true">Fit</button>
-          <button data-zoom="0.5">50%</button>
-          <button data-zoom="1">100%</button>
-          <button data-zoom="actual">Actual size</button>
-        </div>
-
-        <div class="cal">
-          <button class="btn" id="cal-open" title="Match the screen to real millimetres">Calibrate</button>
-          <div class="cal__panel" id="cal-panel" hidden>
-            <h3>Actual size</h3>
-            <p>Hold a bank card against the box and drag until they match. Every card is
-               85.6 &times; 54 mm, so this makes &ldquo;Actual size&rdquo; true on
-               <em>your</em> screen.</p>
-            <div class="cal__card" id="cal-card">bank card</div>
-            <div class="cal__row">
-              <input type="range" id="cal-range" min="2" max="10" step="0.001">
-              <span class="cal__val" id="cal-val"></span>
-            </div>
-            <div class="cal__row cal__row--foot">
-              <button class="btn" id="cal-reset">Reset to 96 dpi</button>
-            </div>
-          </div>
-        </div>
+${zoomBar()}
 
         <span class="bar__spacer"></span>
 
         <div class="pager">
-          <button class="btn" id="prev">&lsaquo;</button>
+          <button class="btn" id="prev" title="Previous page">&lsaquo;</button>
           <input id="page-no" type="number" min="1" value="1">
-          <span id="page-count">of ?</span>
-          <button class="btn" id="next">&rsaquo;</button>
+          <span id="page-count">/ ?</span>
+          <button class="btn" id="next" title="Next page">&rsaquo;</button>
         </div>
 
         <button class="btn" id="print">Print&hellip;</button>
@@ -396,6 +432,7 @@ function coverViewerHtml(cover) {
        the press sheet has no padding. Only the trim width carries it. */
     trimW: s.sheetW + 16,
     mediaW: s.wrapW,
+    trimH: s.trimH, mediaH: s.wrapH,
   };
   const noBleed = !existsSync(path.join(ROOT, 'build', base + '-bleed.html'));
   const dl = (suffix, label) => downloadBtn(base, suffix, label);
@@ -414,30 +451,7 @@ function coverViewerHtml(cover) {
             ${noBleed ? 'disabled title="Build first"' : ''}>Bleed ${s.wrapW}&times;${s.wrapH}</button>
         </div>
 
-        <div class="seg" role="group" aria-label="Zoom">
-          <button data-zoom="fit" aria-pressed="true">Fit</button>
-          <button data-zoom="0.5">50%</button>
-          <button data-zoom="1">100%</button>
-          <button data-zoom="actual">Actual size</button>
-        </div>
-
-        <div class="cal">
-          <button class="btn" id="cal-open" title="Match the screen to real millimetres">Calibrate</button>
-          <div class="cal__panel" id="cal-panel" hidden>
-            <h3>Actual size</h3>
-            <p>Hold a bank card against the box and drag until they match. Every card is
-               85.6 &times; 54 mm, so this makes &ldquo;Actual size&rdquo; true on
-               <em>your</em> screen.</p>
-            <div class="cal__card" id="cal-card">bank card</div>
-            <div class="cal__row">
-              <input type="range" id="cal-range" min="2" max="10" step="0.001">
-              <span class="cal__val" id="cal-val"></span>
-            </div>
-            <div class="cal__row cal__row--foot">
-              <button class="btn" id="cal-reset">Reset to 96 dpi</button>
-            </div>
-          </div>
-        </div>
+${zoomBar()}
 
         <span class="bar__spacer"></span>
 

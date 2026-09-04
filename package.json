@@ -10,6 +10,7 @@
     "press": "node build/build.mjs class-9 --pdf --bleed",
     "cover": "node build/cover.mjs class-9 --png",
     "cover:press": "node build/cover.mjs class-9 --pdf --bleed",
+    "check:studio": "node build/check-library.mjs",
     "check:library": "node build/check-library.mjs",
     "studio:watch": "node --watch build/serve.mjs"
   },
