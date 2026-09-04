@@ -293,9 +293,25 @@ const downloadBtn = (base, suffix, label) => {
    Actual size did not go away; it moved into the level menu with
    the calibration behind it, and the menu now says which of the
    two you are looking at. Both viewers show the same cluster, so
-   it is built once here rather than pasted into each. */
-const zoomBar = () => `
-        <div class="zoom" role="group" aria-label="Zoom">
+   it is built once here rather than pasted into each.
+
+   The order is Chrome's too: the page box first, then a rule, then
+   the level, then a rule and the fit toggle. `pager` is false on a
+   cover, which is one sheet and has no page to be on.
+
+   Four of Chrome's buttons are deliberately absent. Rotate turns
+   one page at a time, and this viewer shows a chapter as a single
+   scrolling column — rotating that gives a strip twenty-eight
+   pages wide, which is not what the button means. Draw, undo and
+   redo are its annotation layer, and there is nothing here to
+   annotate: a note wanted on a proof belongs in the source. */
+const zoomBar = (pager = true) => `
+        <div class="zoom" role="group" aria-label="Zoom and paging">
+          ${pager ? `<span class="pager">
+            <input id="page-no" type="number" min="1" value="1" aria-label="Page">
+            <span id="page-count">/ ?</span>
+          </span>
+          <span class="zoom__rule"></span>` : ''}
           <button class="zoom__step" id="zoom-out" title="Zoom out">&minus;</button>
           <button class="zoom__level" id="zoom-level"
                   aria-haspopup="true" aria-expanded="false" title="Zoom level">100%</button>
@@ -360,13 +376,13 @@ function viewerHtml(chapter, s) {
         <a class="btn" href="/" title="Back to the library">&larr;</a>
         <span class="bar__title">${esc(chapter.meta.title)}</span>
         <span class="bar__sub">Class ${esc(chapter.meta.class)} &middot;
-          ch ${esc(chapter.meta.number)} &middot; ${chapter.pages} pp</span>
+          ch ${esc(chapter.meta.number)} &middot; ${chapter.pages} pp &middot;
+          ${s.trimW} &times; ${s.trimH} mm</span>
 
-        <div class="seg" role="group" aria-label="Sheet">
-          <button id="sheet-trim" aria-pressed="true">Trim ${s.trimW}&times;${s.trimH}</button>
-          <button id="sheet-bleed" aria-pressed="false"
-            ${noBleed ? 'disabled title="Build first"' : ''}>Bleed ${s.mediaW}&times;${s.mediaH}</button>
-        </div>
+        <button class="btn" id="sheet-bleed" aria-pressed="false"
+          ${noBleed ? 'disabled title="Build first"'
+                    : `title="Show the press sheet — trim plus ${s.bleed}mm bleed, in a ${s.slug}mm slug with the crop marks"`}
+          >Bleed ${s.mediaW}&times;${s.mediaH}</button>
 
         <div class="seg" role="group" aria-label="View">
           <button id="view-pages" aria-pressed="true">Pages</button>
@@ -384,24 +400,9 @@ ${zoomBar()}
 
         <span class="bar__spacer"></span>
 
-        <div class="pager">
-          <button class="btn" id="prev" title="Previous page">&lsaquo;</button>
-          <input id="page-no" type="number" min="1" value="1">
-          <span id="page-count">/ ?</span>
-          <button class="btn" id="next" title="Next page">&rsaquo;</button>
-        </div>
-
-        <button class="btn" id="print">Print&hellip;</button>
-        ${dl('.pdf', 'Reading PDF')}
+        <span class="bar__log" id="build-log" hidden></span>
         ${dl('-bleed.pdf', 'Print PDF')}
         <button class="btn btn--go" id="build">Build</button>
-      </div>
-
-      <div class="note">
-        <b>Print&hellip;</b> uses the browser dialog. Save as PDF honours the
-        ${s.trimW} &times; ${s.trimH} mm page; a physical printer scales it to whatever paper
-        you pick &mdash; for the press, send <b>Print PDF</b>.
-        <span id="build-log"></span>
       </div>
 
       <div class="stage" id="stage">
@@ -443,31 +444,33 @@ function coverViewerHtml(cover) {
         <a class="btn" href="/" title="Back to the library">&larr;</a>
         <span class="bar__title">${esc(cover.name)}</span>
         <span class="bar__sub">Class ${esc(cover.meta.class)} &middot; cover &middot;
-          ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')}</span>
+          ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')} &middot;
+          wrap ${s.sheetW} &times; ${s.trimH} mm</span>
 
-        <div class="seg" role="group" aria-label="Sheet">
-          <button id="sheet-trim" aria-pressed="true">Wrap ${s.sheetW}&times;${s.trimH}</button>
-          <button id="sheet-bleed" aria-pressed="false"
-            ${noBleed ? 'disabled title="Build first"' : ''}>Bleed ${s.wrapW}&times;${s.wrapH}</button>
-        </div>
+        <button class="btn" id="sheet-bleed" aria-pressed="false"
+          ${noBleed ? 'disabled title="Build first"'
+                    : `title="Show the press sheet — the wrap plus ${s.bleed}mm bleed"`}
+          >Bleed ${s.wrapW}&times;${s.wrapH}</button>
 
-${zoomBar()}
+${zoomBar(false)}
 
         <span class="bar__spacer"></span>
 
-        <button class="btn" id="print">Print&hellip;</button>
-        ${dl('.pdf', 'Cover PDF')}
+        <span class="bar__log" id="build-log" hidden></span>
         ${dl('-bleed.pdf', 'Press PDF')}
         ${dl('-proof.png', 'Proof PNG')}
         <button class="btn btn--go" id="build">Build</button>
       </div>
 
+      <!-- The spine is the one thing on this page that can be wrong in a
+           way the proof will not show, so it keeps its line. Everything
+           else the bar used to explain has gone: a strip that described
+           the buttons beside it, and then printed the whole fill map of
+           the last build, is a catalogue and not a note. -->
       <div class="note">
         <b>Spine ${s.spine.mm}mm</b> &mdash; ${esc(s.spine.how)}. It is bulk, not a
         choice: re-derive the page count from a <b>--book</b> run before this goes to
-        press. Build here runs <b>cover.mjs</b> with the proof and the press sheet;
-        a placeholder QR will refuse the press sheet and say so.
-        <span id="build-log"></span>
+        press. A placeholder QR will refuse the press sheet and say so.
       </div>
 
       <div class="stage" id="stage">
@@ -605,13 +608,37 @@ function build(target, flags = [], kind = 'chapter') {
         const failure = errLines.find((l) => l.startsWith('x '))
           || errLines.find((l) => !l.startsWith('! ') && !l.startsWith('~ '))
           || (err ? err.message : '');
-        /* Quote back the line that carries the news: for a chapter the fill
-           map, for a cover a refusal first, then a warning, then the wrap. */
+        /* Say what the build came to, in a phrase. This used to quote the
+           whole fill line back — twenty-eight percentages, wrapped across
+           the bar — which is a table, and a table wants reading rather
+           than glancing at. The numbers are on the terminal, where they
+           can be read; what belongs here is whether anything is wrong. */
+        const fillLine = lines.find((l) => l.startsWith('fill')) || '';
+        const digest = () => {
+          const pages = fillLine.match(/(\d+):\d+%/g);
+          const clip = lines.filter((l) => /overruns by/.test(l)).length;
+          const viol = Number((lines.find((l) => /design violation/.test(l)) || '')
+            .match(/(\d+) design violation/)?.[1] || 0);
+          /* Count the builder's own short-page warnings rather than
+             re-deriving them from the fill map: the map does not say
+             which page is the last or which carries data-close, and
+             both are exempt. Counting the percentages called ch07's
+             closing page short when the builder had excused it. */
+          const short = lines.filter((l) => /is \d+% full/.test(l)).length;
+          return [
+            pages ? pages.length + ' pages' : 'built',
+            clip ? clip + ' clipping' : null,
+            viol ? viol + ' violation' + (viol === 1 ? '' : 's') : null,
+            short ? short + ' short' : null,
+          ].filter(Boolean).join(' · ') + (clip || viol || short ? '' : ' · all clear');
+        };
+        /* A cover has no fill map: a refusal first, then a warning, then
+           the wrap it settled on. */
         const pick = kind === 'cover'
           ? (lines.find((l) => l.startsWith('x '))
              || lines.find((l) => l.startsWith('! '))
              || lines.find((l) => l.startsWith('wrap ')))
-          : lines.find((l) => l.startsWith('fill'));
+          : digest();
         const fill = pick || lines[lines.length - 1] || '';
         if (err) console.error('  build failed:', failure);
         for (const res of clients) res.write('data: reload\n\n');

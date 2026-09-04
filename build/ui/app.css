@@ -109,17 +109,32 @@ a { color: inherit; text-decoration: none; }
 }
 .btn:hover:not(:disabled) { border-color: var(--accent); }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+/* A switch rather than one of a pressed pair — Bleed on, or trim,
+   which is what the viewer opens on and needs no button of its own. */
+.btn[aria-pressed="true"] {
+  background: var(--bg-3); color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+}
 /* :disabled does not apply to an <a>, so a link to an artefact that has
    not been built yet carries this instead. */
 .btn--off { opacity: 0.4; cursor: not-allowed; }
 .btn--go { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); color: var(--accent); }
 
-.pager { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-2); }
+/* The page box, first in the cluster and shaped like Chrome's: a
+   dark field for the number and the count set plainly beside it. */
+.pager { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-2); }
 .pager input {
-  width: 46px; text-align: center; font: inherit; font-family: var(--mono);
-  background: var(--bg); color: var(--text);
-  border: 1px solid var(--line); border-radius: 5px; padding: 4px 2px;
+  width: 34px; height: 26px; text-align: center; padding: 0 2px;
+  font: inherit; font-family: var(--mono); font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  background: var(--bg-3); color: var(--text);
+  border: 0; border-radius: 6px;
 }
+.pager input::-webkit-outer-spin-button,
+.pager input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.pager input { -moz-appearance: textfield; }
+.pager input:focus { outline: 1px solid var(--accent); outline-offset: 0; }
+.pager input:disabled { opacity: 0.35; }
 
 .stage { flex: 1; overflow: auto; background: #55605b; }
 .stage__inner { margin: 0 auto; }
@@ -130,6 +145,18 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-2); border-bottom: 1px solid var(--line);
 }
 .note b { color: var(--text); font-weight: 600; }
+
+/* What the last build came to, in the bar and only while there is
+   something to say. It replaced a strip under the bar that carried
+   the whole fill map — twenty-eight percentages wrapped over two
+   lines, which reads as a catalogue rather than a result. */
+.bar__log {
+  font-size: 12px; color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.bar__log[hidden] { display: none; }
+.bar__log--bad { color: var(--warn, #d98b6a); }
 
 /* ---- Zoom, after Chrome's PDF toolbar ----------------------
    Minus, the level, plus, then a rule and the fit toggle. The

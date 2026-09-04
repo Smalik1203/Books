@@ -1,5 +1,5 @@
 /* ============================================================
-   Studio viewer — zoom, paging, calibration, print, build.
+   Studio viewer — zoom, paging, calibration, build.
 
    The zoom cluster is Chrome's PDF toolbar: minus, the level, plus,
    and a fit toggle, with the presets behind the level. It replaced
@@ -43,7 +43,10 @@
   }
   function load() {
     frame.src = src();
-    press('sheet-trim', state.sheet === 'trim');
+    /* Trim is what the reader gets and what the viewer opens on, so
+       there is no button for it: Bleed is a switch, and off means
+       trim. A pressed pair where one of them was always the answer
+       was two controls doing one control's work. */
     press('sheet-bleed', state.sheet === 'bleed');
     press('view-pages', state.view === 'pages');
     press('view-spread', state.view === 'spread');
@@ -51,7 +54,7 @@
     set('sig-size', 'hidden', state.view !== 'impose');
     // page nav and the sheet toggle mean nothing on a press sheet
     const onSheet = state.view === 'impose';
-    for (const id of ['prev', 'next', 'page-no', 'sheet-trim', 'sheet-bleed']) {
+    for (const id of ['page-no', 'sheet-bleed']) {
       set(id, 'disabled', onSheet);
     }
     if (onSheet) set('page-count', 'textContent', '');
@@ -163,8 +166,10 @@
   }
 
   /* ---- controls ------------------------------------------ */
-  on('sheet-trim', 'onclick',  () => { state.sheet = 'trim';  load(); });
-  on('sheet-bleed', 'onclick', () => { state.sheet = 'bleed'; load(); });
+  on('sheet-bleed', 'onclick', () => {
+    state.sheet = state.sheet === 'bleed' ? 'trim' : 'bleed';
+    load();
+  });
   on('view-pages', 'onclick',  () => { state.view = 'pages';  load(); });
   on('view-spread', 'onclick', () => { state.view = 'spread'; load(); });
   on('view-impose', 'onclick', () => { state.view = 'impose'; load(); });
@@ -214,10 +219,28 @@
     else if (e.key === '0') { e.preventDefault(); setZoom('fit'); }
   });
   const pageNo = () => Number(($('page-no') || {}).value || 0);
-  on('prev', 'onclick', () => goto(pageNo() - 1));
-  on('next', 'onclick', () => goto(pageNo() + 1));
   on('page-no', 'onchange', () => goto(pageNo()));
-  on('print', 'onclick', () => { frame.contentWindow.focus(); frame.contentWindow.print(); });
+  /* The ‹ › buttons went when the cluster took Chrome's shape, and
+     Chrome has no such pair either — it pages with the keyboard and
+     the scroll. So must this, or the paging is simply gone. */
+  document.addEventListener('keydown', (e) => {
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'PageDown') { e.preventDefault(); goto(pageNo() + 1); }
+    else if (e.key === 'PageUp') { e.preventDefault(); goto(pageNo() - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); goto(1); }
+    else if (e.key === 'End') { e.preventDefault(); goto(pages.length); }
+  });
+  /* What the last build came to, and only while there is something to
+     say. It used to be a permanent strip under the bar. */
+  function say(text, bad) {
+    const el = $('build-log');
+    if (!el) return;
+    el.textContent = text;
+    el.classList.toggle('bar__log--bad', !!bad);
+    el.hidden = !text;
+    el.title = text;
+  }
 
   /* ---- calibration --------------------------------------- */
   const panel = $('cal-panel');
@@ -261,7 +284,7 @@
         body: JSON.stringify({ target: cfg.target, kind: cfg.kind, pdf: true, bleed: true }),
       });
       const out = await r.json();
-      $('build-log').textContent = out.ok ? out.summary : ('failed — ' + out.summary);
+      say(out.ok ? out.summary : ('failed — ' + out.summary), !out.ok);
       if (out.ok) {
         load();
         // the artefacts the page was rendered without now exist
@@ -274,7 +297,7 @@
         if (bleed) { bleed.disabled = false; bleed.removeAttribute('title'); }
       }
     } catch (e) {
-      $('build-log').textContent = 'failed — ' + e.message;
+      say('failed — ' + e.message, true);
     }
     btn.textContent = was;
     btn.disabled = false;
@@ -287,7 +310,7 @@
     const a = e.target.closest && e.target.closest('a[aria-disabled="true"]');
     if (!a) return;
     e.preventDefault();
-    $('build-log').textContent = 'Not built yet — press Build.';
+    say('Not built yet — press Build.', true);
   });
 
   sizeCard();
