@@ -287,23 +287,41 @@ changed. **`build/` is not watched**, so a change to `serve.mjs`,
 studio serving yesterday's compiled markup to today's script off disk is
 how two studio bugs have started.
 
-The zoom cluster is Chrome's PDF toolbar: minus, the level, plus, a fit
-toggle, and the presets behind the level — `ctrl` with `+`, `-` and `0` as
-well. **Actual size lives in that menu**, with the calibration behind it,
-and the menu says whether the screen is calibrated or still the browser's
-96 dpi guess. That was the thing that read as broken: uncalibrated, Actual
-size and 100% are the same button pressed twice, and nothing said so.
+The bar is Chrome's PDF toolbar, in Chrome's order: the page box, a rule,
+minus, the level, plus, a rule, the fit toggle. `ctrl` with `+`, `-` and
+`0`; `PageUp`/`PageDown`/`Home`/`End` page it, since the `‹ ›` pair went
+with the old shape. **Actual size lives in the level menu**, with the
+calibration behind it, and the menu says whether the screen is calibrated
+or still the browser's 96 dpi guess — that was the thing that read as
+broken, because uncalibrated the two are the same button pressed twice.
+
+Three things were taken off the bar and are not to be pasted back:
+
+* **Trim.** It was one of a pressed pair where one was always the answer.
+  Bleed is a switch now, and off is the trim; the trim size moved into the
+  subtitle beside the page count.
+* **Print… and Reading PDF.** The browser dialog duplicated the artefact
+  the builder already writes.
+* **The strip under the bar.** It described the buttons beside it and then
+  printed the whole fill map of the last build — twenty-eight percentages
+  over two lines, which is a table and wants reading, not glancing at. What
+  a build came to now appears beside Build as a phrase (*28 pages · all
+  clear*), and the numbers stay on the terminal. The cover viewer keeps its
+  one line, because the spine is the only thing there that can be wrong in
+  a way the proof will not show.
 
 ```bash
-npm run check:studio     # 52 assertions: the chooser and the zoom cluster
+npm run check:studio     # 64 assertions: the chooser, the bar, the build report
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
 started server, that the compiled markup carries every id the scripts reach
-for. **Behaviour** drives the real `library.js` and `app.js` in headless
-Chrome — the chooser against a two-class fixture, the toolbar against a
-stub book at the real trim. The toolbar fixture lifts `zoomBar()` out of
-`serve.mjs` rather than retyping it, so it tests what the studio serves.
+for — and that each of the three removals above is still removed.
+**Behaviour** drives the real `library.js` and `app.js` in headless Chrome
+— the chooser against a two-class fixture, the toolbar against a stub book
+at the real trim. The toolbar fixture lifts `zoomBar()` out of `serve.mjs`
+rather than retyping it, so it tests what the studio serves. A last check
+posts to `/api/build` and asserts the reply is a phrase and not a fill map.
 
 The book renders in an iframe so the studio's stylesheet and the book's can
 never reach each other.

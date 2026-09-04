@@ -232,6 +232,19 @@ async function checkViewerStructure() {
     // and the four buttons it replaced must be gone
     eq('old preset row gone', /aria-label="Zoom"[\s\S]{0,120}>Fit</.test(html), false);
 
+    /* The bar was stripped after the cluster landed, and each of these
+       was removed for a reason that would be undone by pasting the old
+       markup back. */
+    eq('the page box sits in the cluster',
+      /class="zoom"[\s\S]{0,400}id="page-no"/.test(html), true);
+    eq('no prev/next pair', /id="(prev|next)"/.test(html), false);
+    eq('trim has no button of its own', html.includes('id="sheet-trim"'), false);
+    eq('bleed is a switch', /id="sheet-bleed"[^>]*aria-pressed="false"/.test(html), true);
+    eq('the trim size is still stated', html.includes('mm</span>'), true);
+    eq('no browser-print button', html.includes('id="print"'), false);
+    eq('the info strip is gone', html.includes('class="note"'), false);
+    eq('the build log ships hidden', /id="build-log"[^>]*hidden/.test(html), true);
+
     const covLink = (lib.match(/href="\/cover\/([^"]+)"/) || [])[1];
     if (covLink) {
       const cov = await get('http://localhost:' + port + '/cover/' + covLink);
@@ -273,8 +286,15 @@ async function checkViewerBehaviour() {
   /* The toolbar, taken from serve.mjs rather than retyped, so this
      tests what the studio actually serves. */
   const serve = await readFile(p('build', 'serve.mjs'), 'utf8');
-  const bar = serve.slice(serve.indexOf('const zoomBar = () => `') + 'const zoomBar = () => `'.length,
-    serve.indexOf('`;', serve.indexOf('const zoomBar = () => `')))
+  /* Matched rather than sliced from a literal string: the signature
+     grew a `pager` argument and an indexOf on the old text silently
+     returned -1, which fed the fixture garbage and failed as "no
+     result in the dom" — a long way from the cause. */
+  const decl = serve.match(/const zoomBar = \([^)]*\) => `/);
+  if (!decl) { bad('zoomBar found in serve.mjs', 'no match', 'the toolbar template'); return; }
+  const from = decl.index + decl[0].length;
+  const bar = serve.slice(from, serve.indexOf('`;', from))
+    .replace(/\$\{pager \? `/, '').replace(/` : ''\}/, '')   // the pager is on here
     .replace(/&minus;/g, '−').replace(/&hellip;/g, '…')
     .replace(/&times;/g, '×').replace(/&ldquo;|&rdquo;/g, '"')
     .replace(/&mdash;/g, '—').replace(/&nbsp;/g, ' ');
@@ -311,6 +331,12 @@ async function checkViewerBehaviour() {
     R.calPanelClosed = $('cal-panel').hidden;
     $('cal-open') && ($('zoom-level').click(), $('cal-open').click(), $('cal-reset').click());
     R.uncalNote = $('cal-state').textContent;
+    // the page box counts the stub's two pages, and the keys page it
+    R.pageCount = $('page-count').textContent;
+    const key = (k) => document.dispatchEvent(
+      new KeyboardEvent('keydown', { key: k, bubbles: true, cancelable: true }));
+    key('End');  R.end = $('page-no').value;
+    key('Home'); R.home = $('page-no').value;
     document.title = 'R' + JSON.stringify(R);`;
 
   const html = '<!doctype html><html><head><style>' + css + '</style></head><body>'
@@ -318,8 +344,7 @@ async function checkViewerBehaviour() {
     + '<div class="stage" id="stage" style="width:900px;height:700px">'
     + '<div class="stage__inner" id="inner">'
     + '<iframe id="frame" scrolling="no"></iframe></div></div></div>'
-    + '<span id="page-count"></span><input id="page-no" type="number">'
-    + '<button id="build"></button><span id="build-log"></span>'
+    + '<button id="build"></button><span id="build-log" hidden></span>'
     + '<script type="application/json" id="cfg">' + JSON.stringify(cfg) + '</' + 'script>'
     + '<script>' + script + '</' + 'script>'
     + '<script>addEventListener("load", () => setTimeout(() => {' + driver + '}, 300));</' + 'script>'
@@ -329,6 +354,11 @@ async function checkViewerBehaviour() {
   await writeFile(file, html);
   const { stdout } = await run(CHROME, [
     '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
+    /* Two file:// documents are separate opaque origins by default, so
+       the fixture could not read the stub book inside its own iframe:
+       contentDocument came back null, the page count stayed 0, and only
+       the checks that never touch the book passed. */
+    '--allow-file-access-from-files',
     '--window-size=1400,900', '--virtual-time-budget=6000', '--dump-dom',
     'file:///' + file.replace(/\\/g, '/'),
   ], { maxBuffer: 1 << 24 });
@@ -355,6 +385,36 @@ async function checkViewerBehaviour() {
   eq('a calibrated one says so', R.calNote, 'calibrated');
   eq('actual size follows the calibration', R.actual, '90%');
   eq('done closes the panel', R.calPanelClosed, true);
+  eq('the page box counts the book', R.pageCount, '/ 2');
+  eq('End and Home page it', [R.end, R.home], ['2', '1']);
+}
+
+/* ---- 5. What a build reports ------------------------------
+   The bar used to carry the whole fill map — twenty-eight
+   percentages wrapped over two lines. It says what happened now,
+   and a chapter the builder is happy with must say so. */
+async function checkBuildReport() {
+  const port = freePort();
+  const child = spawn(process.execPath, ['build/serve.mjs'],
+    { cwd: ROOT, env: { ...process.env, PORT: String(port) }, stdio: 'ignore' });
+  try {
+    let lib = '';
+    for (let i = 0; i < 60 && !lib; i++) {
+      await new Promise((r) => setTimeout(r, 200));
+      lib = await fetch('http://localhost:' + port + '/').then((r) => r.text()).catch(() => '');
+    }
+    const target = (lib.match(/href="\/read\/([^"]+)"/) || [])[1];
+    if (!target) { bad('a chapter to build', 'none', 'a /read/ link'); return; }
+    const out = await fetch('http://localhost:' + port + '/api/build', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ target }),
+    }).then((r) => r.json());
+    eq('the build reports ok', out.ok, true);
+    eq('the report is a phrase, not the fill map',
+      /^\d+ pages( · .+)?$/.test(out.summary) && !/\d+:\d+%/.test(out.summary), true);
+  } finally {
+    child.kill();
+  }
 }
 
 console.log('Structure — the markup carries what the script needs:');
@@ -365,6 +425,8 @@ console.log('\nViewer — the zoom cluster the studio serves:');
 await checkViewerStructure();
 console.log('\nViewer — driving the real app.js against a stub book:');
 await checkViewerBehaviour();
+console.log('\nBuild — what it reports back to the bar:');
+await checkBuildReport();
 
 console.log();
 if (failures) {
