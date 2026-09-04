@@ -300,11 +300,17 @@ nothing scrolled at all until they were.
 or still the browser's 96 dpi guess — that was the thing that read as
 broken, because uncalibrated the two are the same button pressed twice.
 
-Four things were taken off the bar and are not to be pasted back:
+The bar carries two switches — **Bleed** and **Spreads** — and neither
+names the state it is already in: a chapter opens on the trim, in pages.
+A measurement is not a thing you can press either, so the sheet sizes live
+in the subtitle and the tooltips. Five things came off and are not to be
+pasted back:
 
-* **Trim.** It was one of a pressed pair where one was always the answer.
-  Bleed is a switch now, and off is the trim; the trim size moved into the
-  subtitle beside the page count.
+* **Trim, and Pages.** Each was one of a pressed pair where one was always
+  the answer. Both are switches now, off in the state a chapter opens in,
+  and the `.seg` group went with them.
+* **The sizes on the Bleed button.** `Bleed 209×266` was a control wearing
+  a fact. The trim size is in the subtitle, the press sheet in the tooltip.
 * **Print… and Reading PDF.** The browser dialog duplicated the artefact
   the builder already writes.
 * **The strip under the bar.** It described the buttons beside it and then
@@ -321,12 +327,12 @@ Four things were taken off the bar and are not to be pasted back:
   nothing links to it: it is reached by typing the address.
 
 ```bash
-npm run check:studio     # 73 assertions: the chooser, the bar, the build report
+npm run check:studio     # 77 assertions: the chooser, the bar, the build report
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
 started server, that the compiled markup carries every id the scripts reach
-for — and that each of the four removals above is still removed.
+for — and that each of the five removals above is still removed.
 **Behaviour** drives the real `library.js` and `app.js` in headless Chrome
 — the chooser against a two-class fixture, the toolbar against a stub book
 at the real trim. The toolbar fixture lifts `zoomBar()` out of `serve.mjs`
