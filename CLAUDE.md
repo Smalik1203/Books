@@ -317,6 +317,13 @@ for whole pages. They are answered by `app.js` rather than the browser —
 the book is in an iframe and the stage around it never holds focus, so
 nothing scrolled at all until they were.
 
+The **fit button shows the mode it is in**, not the mode it would give: an
+upright sheet with the arrows running down it for fit to page, a wide one
+with them running across for fit to width, and a tooltip saying what the
+icon says. A control that names its own opposite has to be read twice. From
+a fixed percentage it returns to fit to page, so it is a way back as well as
+a toggle.
+
 **Actual size lives in the level menu**, with the calibration behind it, and the menu says whether the screen is calibrated
 or still the browser's 96 dpi guess — that was the thing that read as
 broken, because uncalibrated the two are the same button pressed twice.
@@ -369,7 +376,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 96 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 99 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly

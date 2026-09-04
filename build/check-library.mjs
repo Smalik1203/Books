@@ -424,8 +424,33 @@ async function checkViewerBehaviour() {
     $('zoom-in').click();  R.plus1 = lvl();
     $('zoom-in').click();  R.plus2 = lvl();
     $('zoom-out').click(); R.minus = lvl();
+    /* Which icon is on show, measured from what is rendered rather than
+       from any attribute. "hidden" is an IDL property of HTMLElement and
+       an SVG element is not one, so setting svg.hidden leaves the
+       attribute alone and only writes a JavaScript expando — the two
+       icons came out inverted and a check that read .hidden back agreed
+       with itself. The rectangle's own shape cannot lie.
+       (No backticks in here: this comment lives inside a template
+       literal, and one would end it.) */
+    const fitIcon = () => {
+      const btn = $('fit-toggle');
+      const shown = [...btn.querySelectorAll('svg')]
+        .find((s) => getComputedStyle(s).display !== 'none');
+      if (!shown) return { icon: 'none', title: btn.title };
+      const r = shown.querySelector('rect').getBoundingClientRect();
+      return { icon: r.width > r.height ? 'landscape' : 'portrait', title: btn.title };
+    };
+    /* Back to fit to page first. The zoom steps above left a fixed
+       percentage, and from there the button returns to fit to page
+       rather than alternating — which is the point of it, but it means
+       the toggle cannot be tested from wherever the last check left
+       off. */
+    document.querySelector('[data-zoom="fit"]').click();
+    R.iconAtPage = fitIcon();
     $('fit-toggle').click(); R.fitWidth = lvl();
+    R.iconAtWidth = fitIcon();
     $('fit-toggle').click(); R.backToPage = lvl();
+    R.iconBack = fitIcon();
     $('zoom-level').click(); R.menuOpen = !$('zoom-menu').hidden;
     document.querySelector('[data-zoom="1.5"]').click();
     R.preset = lvl();
@@ -534,6 +559,13 @@ async function checkViewerBehaviour() {
   eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
   eq('minus steps back', R.minus, R.plus1);
   eq('the fit toggle returns', R.backToPage, R.fitPage);
+  /* The button shows the mode it is in, and the tooltip says the same
+     thing the picture does. */
+  eq('fit to page shows an upright sheet',
+    R.iconAtPage, { icon: 'portrait', title: 'Fit to page — click for fit to width' });
+  eq('fit to width shows a wide one',
+    R.iconAtWidth, { icon: 'landscape', title: 'Fit to width — click for fit to page' });
+  eq('and the icon comes back with the mode', R.iconBack, R.iconAtPage);
   eq('the level opens the menu', R.menuOpen, true);
   eq('a preset sets the level', R.preset, '150%');
   eq('picking closes the menu', R.menuClosedAfterPick, true);

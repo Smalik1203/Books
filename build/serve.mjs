@@ -396,10 +396,23 @@ const zoomBar = (pager = true, switches = '') => `
                   aria-haspopup="true" aria-expanded="false" title="Zoom level">100%</button>
           <button class="zoom__step" id="zoom-in" title="Zoom in">+</button>
           <span class="zoom__rule"></span>
-          <button class="zoom__step" id="fit-toggle" title="Fit to width">
-            <svg viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M2.5 4v12M17.5 4v12" />
-              <path d="M6 10h8M6 10l2.4-2.4M6 10l2.4 2.4M14 10l-2.4-2.4M14 10l-2.4 2.4" />
+          <!-- One button, two icons: a portrait sheet with the arrows
+               running down it, and a landscape one with them running
+               across. The button shows the mode it is in rather than
+               the mode it would give, so the icon and the tooltip say
+               the same thing — a control that names its own opposite
+               has to be read twice. app.js hides one of the two. -->
+          <button class="zoom__step" id="fit-toggle"
+                  title="Fit to page — click for fit to width">
+            <svg data-fit="fit" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="5.2" y="2.4" width="9.6" height="15.2" rx="1.7" />
+              <path class="solid" d="M10 5.1 12 7.6H8z" />
+              <path class="solid" d="M10 14.9 8 12.4h4z" />
+            </svg>
+            <svg data-fit="fitw" viewBox="0 0 20 20" aria-hidden="true" hidden>
+              <rect x="2.4" y="5.2" width="15.2" height="9.6" rx="1.7" />
+              <path class="solid" d="M5.1 10 7.6 8v4z" />
+              <path class="solid" d="M14.9 10 12.4 12V8z" />
             </svg>
           </button>
           ${switches ? `<span class="zoom__rule"></span>${switches}` : ''}
