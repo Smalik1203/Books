@@ -589,31 +589,50 @@ a component, or a modifier on one — rather than reaching for an inline style.
 That is the whole point: the book stays one designed object instead of twenty
 pages that each looked reasonable on their own.
 
-## 9. Running a panel over a page break
+## 9. A panel is never divided over a page break
 
 A page must not ship a third empty because the next block will not fit
-whole. **Text divides; pictures do not.**
+whole. But of the two ways to answer that, only one is open.
 
-- A **figure** is never split — half a diagram is unreadable, so a gap held
-  open by one is accepted and left alone.
-- A **worked example**, a **key idea** and a **reflect prompt** may run over
-  the break: `--head` is the part that stays, `--tail` the part that
-  continues. The join is squared off and its padding removed on both sides,
-  so the two halves read as one field interrupted by the page edge. The tail
-  carries no tab or title: it is the same panel resumed, not a new one.
-- **Running text** may be broken mid-paragraph. Paragraphs here have no
-  first-line indent, so a continued one is indistinguishable from a new one.
+**Nothing in a box may be cut.** A figure, a worked example, a key idea, a
+tip, a Think and Reflect, a solution, a summary — each goes whole on one
+page or moves whole to the next.
 
-Split at a step boundary, never inside a line of working.
+There were once `--head` and `--tail` modifiers on example, key idea and
+reflect, and a `close-gaps.mjs` that spent them to buy back a short page.
+The join was squared off so the two halves would read as one field
+interrupted by the page edge. Seen side by side they do not: the reader
+gets an open-bottomed tray at the foot of one page and a lidless one at the
+head of the next, with the folio, the fold and the running head set between
+two halves of a single thought. Four shipped that way — an example, a key
+idea and two Think and Reflects.
+
+So the modifiers are gone from `components.css`, `close-gaps.mjs` and
+`split-panel.mjs` are deleted, `splitExample` in `fragment.mjs` throws, and
+**the builder reports `--head` or `--tail` in a page as a design
+violation**.
+
+Two things still divide, and both are lists rather than boxes:
+
+- **Running text.** Paragraphs here have no first-line indent, so a
+  continued one is indistinguishable from a new one.
+- **An exercise band.** `.c-practice` is a coloured head over an open list,
+  not a panel, so a numbered list continues overleaf under a
+  `.c-practice--cont` block that repeats no head.
 
 ```bash
-node build/close-gaps.mjs class-9/ch04-algebraic-identities   # divide panels
-node build/flow.mjs       class-9/ch04-algebraic-identities   # divide prose
+node build/flow.mjs          class-9/ch04-algebraic-identities   # divide prose
+node build/split-practice.mjs pages/class-9/ch04-algebraic-identities
 ```
 
-Both measure every trial with the real builder and keep the largest move
-that does not overfill. `flow` refuses a move that fills one page by
+`flow` measures every trial with the real builder and keeps the largest
+move that does not overfill. It refuses a move that fills one page by
 emptying the next — that relocates the hole rather than closing it.
 
 Run these **after** `repack`, never before: repack re-packs whole blocks
 globally and will undo them.
+
+Everything else closes one way only: **edit the prose at the join.** Write a
+few more lines into the short page, or take a few out of what precedes the
+panel so the panel comes up. It is slower than a tool and it is the only
+repair that costs the reader nothing.

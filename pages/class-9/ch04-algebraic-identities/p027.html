@@ -2,79 +2,84 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">End-of-Chapter Exercises</div>
-        <ol class="c-questions">
-          <li>
-                                Choose a suitable identity and use it to expand each product.
-                                <ol class="c-parts">
-                                  <li>$(-3x + 4)^2$</li>
-                                  <li>$(2s + 7)(2s - 7)$</li>
-                                  <li>$\left(p^2 + \frac{1}{2}\right)\left(p^2 - \frac{1}{2}\right)$</li>
-                                  <li>$(2n + 7)(2n + 3)$</li>
-                                  <li>$(s - 2t)\left(s^2 + 2st + 4t^2\right)$</li>
-                                  <li>$\left(\frac{1}{2}r - \frac{4}{r}\right)^2$</li>
-                                  <li>$(-3m + 4k - l)^2$</li>
-                                  <li>$\left(xy - \frac{1}{3}\right)^3$</li>
-                                  <li>$\left(\frac{7}{2}k - \frac{2}{3}m\right)^3$</li>
-                                </ol>
-                              </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 18</div>
+        <div class="c-example__body">
+          <p>
+            A rectangular pool is 4 metres narrower than it is long, and its
+            surface covers 96 square metres. How long and how wide is it?
+          </p>
+          <p>
+            Let the length be $x$ metres. The breadth is then $x - 4$ metres,
+            and the area gives an equation:
+          </p>
+          <div class="work">
+            <p>$x(x - 4) = 96, \quad\text{so}\quad x^2 - 4x - 96 = 0$</p>
+          </div>
+          <p>
+            Now split the middle term. Two numbers with product $-96$ and sum $-4$:
+            since $(-12) \times 8 = -96$ and $(-12) + 8 = -4$, write $-4x$ as
+            $-12x + 8x$.
+          </p>
+          <div class="work">
+            <p>$x^2 - 12x + 8x - 96 = x(x - 12) + 8(x - 12) = (x - 12)(x + 8)$</p>
+          </div>
+          <p>
+            So $(x - 12)(x + 8) = 0$, which means $x - 12 = 0$ or $x + 8 = 0$;
+            that is, $x = 12$ or $x = -8$. But $x$ is the length of a pool, so
+            it cannot be negative. The length is 12 metres and the breadth is
+            $12 - 4 = 8$ metres — and <span class="nb">$12 \times 8 = 96$,</span>
+            as required.
+          </p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-                                Evaluate each of these using an identity, not a long multiplication.
-                                <ol class="c-parts c-parts--4">
-                                  <li>$17 \times 21$</li>
-                                  <li>$104 \times 96$</li>
-                                  <li>$24 \times 16$</li>
-                                  <li>$147^3$</li>
-                                  <li>$199^3$</li>
-                                  <li>$127^3$</li>
-                                  <li>$(-107)^3$</li>
-                                  <li>$(-299)^3$</li>
-                                </ol>
-                                <p class="hint">
-                                  Each number here is a round one nudged a little — write it that way first.
-                                </p>
-                              </li>
-        </ol>
+      <p>
+        Something new happened there. Every earlier use of factorising
+        <em>rewrote an expression</em>; this one <em>solved an equation</em>.
+        The step that allowed it is easy to walk past:
+      </p>
+
+      <div class="eq">
+        $$\text{if } AB = 0, \text{ then } A = 0 \text{ or } B = 0$$
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-                                Factorise.
-                                <ol class="c-parts">
-                                  <li>$4y^2 + y + \frac{1}{16}$</li>
-                                  <li>$9m^2 - \frac{n^2}{25}$</li>
-                                  <li>$27b^3 - \frac{1}{64b^3}$</li>
-                                  <li>$x^2 + \frac{5x}{6} + \frac{1}{6}$</li>
-                                  <li>$27u^3 - \frac{27u^2}{5} + \frac{9u}{25} - \frac{1}{125}$</li>
-                                  <li>$64y^3 + \frac{z^3}{125}$</li>
-                                  <li>$p^3 + q^3 + 27r^3 - 9pqr$</li>
-                                  <li>$9m^2 - 12m + 4$</li>
-                                  <li>$8x^3 - 27y^3 + z^3 + 18xyz$</li>
-                                  <li>$4x^2 + 9y^2 + 36z^2 + 12xy + 36yz + 24zx$</li>
-                                  <li>$27u^3 - \frac{9u^2}{2} + \frac{u}{4} - \frac{1}{216}$</li>
-                                </ol>
-                              </li>
-        </ol>
-      </div>
+      <p>
+        Nothing like this holds for any other number. That
+        $(x - 12)(x + 8) = 5$ tells you nothing about either bracket, because 5
+        splits as a product in endlessly many ways — but zero cannot. So the
+        equation had to be rearranged with 0 on one side <em>before</em>
+        factorising.
+      </p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-                                Simplify. Assume that no denominator is zero.
-                                <ol class="c-parts c-parts--tall">
-                                  <li>$\dfrac{4x^2 + 4x + 1}{4x^2 - 1}$</li>
-                                  <li>$\dfrac{(3a - 2b)^3}{9a^2 - 4b^2}$</li>
-                                  <li>$\dfrac{s^3 + 125t^3}{s^2 - 2st - 35t^2}$</li>
-                                </ol>
-                              </li>
-        </ol>
+      <p>
+        The last step is worth a habit too: the algebra offered two answers,
+        the situation kept one.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              You could have found that pool by trial: $11 \times 7 = 77$,
+              then $12 \times 8 = 96$.
+            </p>
+            <p class="c-reflect__hint">
+              So why bother? Say what the search by trial does <em>not</em> tell
+              you that the factorised form does — and what would happen to the
+              search if the area were 96.25 square metres.
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>
