@@ -276,7 +276,12 @@
     if (!(e.ctrlKey || e.metaKey)) return;
     if (e.key === '=' || e.key === '+') { e.preventDefault(); step(1); }
     else if (e.key === '-' || e.key === '_') { e.preventDefault(); step(-1); }
-    else if (e.key === '0') { e.preventDefault(); setZoom('fit'); }
+    /* ctrl+0 resets, and resetting means 100% — what the browser's own
+       ctrl+0 does, and what a chapter opens at. It was wired to the fit
+       mode back when that was what a chapter opened at, and stayed
+       wired to it when the default became 100%, so the one key whose
+       whole job is "put it back" was the one key that did not. */
+    else if (e.key === '0') { e.preventDefault(); setZoom('1'); }
   }
   const pageNo = () => Number(($('page-no') || {}).value || 0);
   on('page-no', 'onchange', () => goto(pageNo()));

@@ -483,6 +483,19 @@ async function checkViewerBehaviour() {
     R.nonsense = typeLevel('abc');
     R.hundred = typeLevel(100);
 
+    /* ctrl with +, - and 0 — the browser's own zoom keys, answered here
+       because the book is in an iframe. ctrl+0 was the one that went
+       unchecked, and it was the one that broke: wired to the fit mode
+       when that was what a chapter opened at, and left there when the
+       default became 100%, so the key whose whole job is "put it back"
+       put it somewhere else. */
+    const ctrl = (k) => document.dispatchEvent(new KeyboardEvent('keydown',
+      { key: k, ctrlKey: true, bubbles: true, cancelable: true }));
+    typeLevel(137); ctrl('0'); R.ctrlZero = lvl();
+    ctrl('=');                 R.ctrlPlus = lvl();
+    ctrl('-');                 R.ctrlMinus = lvl();
+    toFitPage(); ctrl('0');    R.ctrlZeroFromFit = lvl();
+
     // the ladder has ends, and the buttons must say so
     for (let i = 0; i < 24; i++) $('zoom-in').click();
     R.ceiling = lvl(); R.inDisabled = $('zoom-in').disabled;
@@ -655,6 +668,11 @@ async function checkViewerBehaviour() {
   eq('too low clamps', R.clampedLow, '10%');
   eq('nonsense puts the level back', R.nonsense, '10%');
   eq('and a round number still works', R.hundred, '100%');
+  /* Reset means 100%, from a typed level and from a fit alike. */
+  eq('ctrl+0 resets to 100%', R.ctrlZero, '100%');
+  eq('ctrl+0 resets from fit to page too', R.ctrlZeroFromFit, '100%');
+  eq('ctrl+plus steps up from there', R.ctrlPlus, '110%');
+  eq('ctrl+minus steps back', R.ctrlMinus, '100%');
   eq('the buttons have a ceiling', [R.ceiling, R.inDisabled], ['500%', true]);
   eq('the buttons have a floor', [R.floor, R.outDisabled], ['10%', true]);
   /* Centred on the bar, not merely on what is left over — the two
