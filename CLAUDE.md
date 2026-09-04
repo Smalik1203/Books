@@ -311,11 +311,18 @@ minus, the level, plus, a rule, the fit toggle — **centred**, on a
 `1fr auto 1fr` grid rather than a flex row with spacers, since spacers
 centre the middle only when the two sides happen to be the same width. `ctrl` with `+`, `-` and `0`.
 The arrows read the book: **up and down scroll, left and right turn the
-page** (sideways instead, once the zoom is past the width of the stage),
-with space and shift-space for a screenful and PageUp/PageDown/Home/End
-for whole pages. They are answered by `app.js` rather than the browser —
-the book is in an iframe and the stage around it never holds focus, so
-nothing scrolled at all until they were.
+page** — sideways instead while there is anywhere sideways to go, and at
+the far edge they turn the page rather than dead-ending. Space and
+shift-space take a screenful, PageUp/PageDown/Home/End whole pages.
+
+**They work in every mode and from either document, and both halves of
+that had to be made true.** They are answered by `app.js` rather than the
+browser, because the book is in an iframe and the stage around it never
+holds focus — so nothing scrolled at all until they were. And the handlers
+go on the book's document as well as the studio's: one click on the page
+moves focus into the iframe, and for a while every key after that went to
+a document listening for nothing. The book's document is replaced on every
+load, so they are wired again there.
 
 The **fit button shows the mode it is in**, not the mode it would give: an
 upright sheet with the arrows running down it for fit to page, a wide one
@@ -376,7 +383,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 99 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 101 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly

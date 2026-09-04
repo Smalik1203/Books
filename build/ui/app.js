@@ -155,6 +155,7 @@
     applyZoom();
     countPages();
     watchFrame();
+    wireKeys(frame.contentDocument);   // a fresh document, listening to nothing
     // the book reloads itself on save; keep the frame height honest
     setTimeout(applyZoom, 400);
   });
@@ -266,14 +267,14 @@
 
   /* The shortcuts Chrome answers to, so the hands do not have to move.
      Not while a page number is being typed. */
-  document.addEventListener('keydown', (e) => {
-    if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+  function onZoomKey(e) {
+    if (typing()) return;
     if (e.key === 'Escape') { closeMenu(); closeCal(); return; }
     if (!(e.ctrlKey || e.metaKey)) return;
     if (e.key === '=' || e.key === '+') { e.preventDefault(); step(1); }
     else if (e.key === '-' || e.key === '_') { e.preventDefault(); step(-1); }
     else if (e.key === '0') { e.preventDefault(); setZoom('fit'); }
-  });
+  }
   const pageNo = () => Number(($('page-no') || {}).value || 0);
   on('page-no', 'onchange', () => goto(pageNo()));
   /* Reading the book from the keyboard.
@@ -286,6 +287,16 @@
      browser, which is also why they can be given Chrome's meanings:
      up and down scroll, left and right turn the page. */
   const LINE = 64;                                   // about three lines, at fit
+
+  /* Whether a key belongs to a field rather than to the book. Read from
+     whichever document has focus, since these handlers run in two. */
+  const typing = () => {
+    for (const doc of [document, frame.contentDocument]) {
+      const el = doc && doc.activeElement;
+      if (el && /^(INPUT|SELECT|TEXTAREA)$/.test(el.tagName)) return true;
+    }
+    return false;
+  };
   /* The counter is brought up to date here rather than left to the
      scroll event. The event is dispatched on a rendering step, so a
      window that is not being painted — hidden, minimised, behind
@@ -293,10 +304,21 @@
      it was on when the window went away. The listener stays for the
      wheel; the keys do not need it. */
   const scrollBy = (dy) => { stage.scrollTop += dy; syncPage(); };
-  const wide = () => stage.scrollWidth > stage.clientWidth + 1;
 
-  document.addEventListener('keydown', (e) => {
-    if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+  /* Whether there is anywhere left to go sideways in that direction.
+     Not merely "is the content wider than the stage": at 200% it always
+     is, so left and right used to scroll for ever and never turn a page
+     — the far edge was a dead end. Asked this way they scroll while
+     there is something to scroll to and turn the page at the margin,
+     which is what they do in any reader. */
+  const roomX = (dir) => {
+    const max = stage.scrollWidth - stage.clientWidth;
+    if (max <= 1) return false;
+    return dir > 0 ? stage.scrollLeft < max - 1 : stage.scrollLeft > 1;
+  };
+
+  function onReadKey(e) {
+    if (typing()) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const screenful = stage.clientHeight * 0.9;
     switch (e.key) {
@@ -307,15 +329,29 @@
       case ' ':          e.shiftKey ? scrollBy(-screenful) : scrollBy(screenful); break;
       case 'Home':       goto(1); break;
       case 'End':        goto(pages.length); break;
-      /* Zoomed past the width of the stage there is somewhere sideways
-         to go, so left and right go there; otherwise they turn the
-         page, as they do in a reader. */
-      case 'ArrowRight': wide() ? (stage.scrollLeft += LINE) : goto(pageNo() + 1); break;
-      case 'ArrowLeft':  wide() ? (stage.scrollLeft -= LINE) : goto(pageNo() - 1); break;
+      case 'ArrowRight':
+        if (roomX(1)) stage.scrollLeft += LINE; else goto(pageNo() + 1);
+        break;
+      case 'ArrowLeft':
+        if (roomX(-1)) stage.scrollLeft -= LINE; else goto(pageNo() - 1);
+        break;
       default: return;
     }
     e.preventDefault();
-  });
+  }
+
+  /* Both handlers go on both documents. A key is delivered to whichever
+     document has focus, and one click on the book moves that into the
+     iframe — after which every one of these went to the book's own
+     document, which listens for nothing, and the keyboard was simply
+     dead until the reader thought to click the toolbar. The book's
+     document is replaced on every load, so this is done again there. */
+  function wireKeys(doc) {
+    if (!doc) return;
+    doc.addEventListener('keydown', onZoomKey);
+    doc.addEventListener('keydown', onReadKey);
+  }
+  wireKeys(document);
   /* What the last build came to, and only while there is something to
      say. It used to be a permanent strip under the bar. */
   function say(text, bad) {
