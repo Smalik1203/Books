@@ -334,7 +334,7 @@ a fixed percentage it returns to fit to page, so it is a way back as well as
 a toggle.
 
 **A chapter opens at 100%**, the page at the size the stylesheet says.
-**Fit to page is 70% on the trim and 66% on the press sheet**, and measures
+**Fit to page is 71% on the trim and 66% on the press sheet**, and measures
 nothing: it used to measure the stage, which put it anywhere from 46% to
 116%, so the same book came up a different size on every screen and no two
 people describing a page were describing the same one. Two numbers because
@@ -379,9 +379,13 @@ in the tooltips. Five things came off and are not to be pasted back:
   printed the whole fill map of the last build — twenty-eight percentages
   over two lines, which is a table and wants reading, not glancing at. What
   a build came to now appears beside Build as a phrase (*28 pages · all
-  clear*), and the numbers stay on the terminal. The cover viewer keeps its
-  one line, because the spine is the only thing there that can be wrong in
-  a way the proof will not show.
+  clear*), and the numbers stay on the terminal. The cover viewer kept a
+  line for a while, on the argument that the spine is the one thing there
+  the proof cannot show to be wrong — but a paragraph of standing advice
+  is read once and looked past on every visit after, and it sat between
+  the bar and the sheet each time. `cover.mjs` computes the spine and says
+  so on the terminal, and the press sheet still refuses a placeholder QR
+  outright. `.note` is gone from `app.css` with it.
 * **The signature view.** A schematic of a press sheet is not a way of
   looking at the book, and it brought a second control — pages per
   signature — that meant nothing beside Pages and Spreads. It is still
@@ -405,7 +409,7 @@ missing, not a bare arrival. A class or subject with no section behind it is
 ignored rather than selected.
 
 ```bash
-npm run check:studio     # 91 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 117 assertions: the chooser, the cards, the bar, the wrap, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
@@ -423,9 +427,37 @@ never reach each other.
 Covers appear in the library under their class, in a group of their own, and
 open at `/cover/<class>/<name>`. That viewer has no pager, no spreads and no
 signature — a wrap is one sheet, not a run of pages — but the sheet toggle
-shows trim against the press sheet, and Build runs `cover.mjs` with the proof
-and the press sheet. A panel edited in `covers/<class>/_shared/` rebuilds every
-cover of that class, since that is who shares it.
+shows trim against the press sheet, and Build runs `cover.mjs` with both
+files, offered as **Print PDF** and **Print PNG**. A panel edited in
+`covers/<class>/_shared/` rebuilds every cover of that class, since that is
+who shares it.
+
+**A cover fits to page at 70% on the wrap and 62% on the press sheet**, and
+the subtitle says *Class 9 · cover* and nothing more. Both are departures
+from the book's own numbers and both are deliberate: a wrap is two trims
+and a spine, so the page's 71% puts a third of it past the edge of the
+stage, and the drop to 62% is steeper than the book's because a jacket
+bleeds 15mm where a page bleeds 3 — the press sheet grows by 44mm in each
+direction rather than 20. `cfg.kind` is the only thing that tells `app.js`
+which of the two it is showing. The direction and finish used to be in that
+subtitle — they are set in `cover.json`, which is where to read them.
+
+**A wrap is a sheet, and nothing may carry a sheet size of its own.**
+`coverMetrics` in `build/sheet.mjs` is where the press sheet is worked out —
+two trims and a spine, plus `--jk-bleed` and the slug on every side. That
+arithmetic was written out twice, in `cover.mjs` for the media box and again
+in `serve.mjs` for the iframe, and the studio's copy used the page's 3mm
+bleed and forgot the slug: it sized a 437mm sheet to 399, the jacket was
+squeezed to fit, and every crop mark stood out of register with the artwork
+it marked. A cover's own token reader is gone with it.
+
+The marks come out right only while the stage **is** the sheet, which is
+what `width: max-content` on `body.bleed .cover-stage` makes true. They are
+laid over it by `inset: 0` with a viewBox in millimetres, so a stage as wide
+as the window stretches every one of them. In print it always looked right,
+because the `@page` box is the sheet and nothing else. Five assertions
+measure the rendered marks against the trim they mark — deliberately in a
+window that is not the sheet's width.
 
 ## Don't
 

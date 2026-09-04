@@ -37,11 +37,18 @@
      scrolls, which is what a window does.
 
      Two numbers, because there are two sheets. The press sheet is
-     209 × 266 where the trim is 189 × 246, so holding the level at 70%
+     209 × 266 where the trim is 189 × 246, so holding the level at 71%
      would make the page itself jump larger the moment Bleed went on —
      the one moment you want it to sit still, since what you are looking
-     for is what falls outside the trim. */
-  const FIT_Z = { trim: 0.7, bleed: 0.66 };
+     for is what falls outside the trim.
+
+     A cover has its own pair, and needs them: its wrap is two trims
+     and a spine, better than twice as wide as a page, so a level
+     chosen for a single leaf shows it at a size nothing can be judged
+     at. cfg carries them, and a viewer that sends none gets the
+     book's. */
+  const FIT_BOOK = { trim: 0.71, bleed: 0.66 };
+  const FIT_COVER = { trim: 0.70, bleed: 0.62 };
   const state = {
     sheet: 'trim',
     view: 'pages',
@@ -76,8 +83,10 @@
 
   /* What the level actually comes to, for each of the three kinds it
      can be. Fit to width still measures — it has to, since the width of
-     the stage is the whole question. Fit to page does not: it is 70%,
-     the size this book is read at. */
+     the stage is the whole question. Fit to page does not: it is 71% on
+     a page and 70% on a wrap, and drops to 66% and 62% on the two press
+     sheets, which are the sizes each is read at. */
+  const FIT_Z = cfg.kind === 'cover' ? FIT_COVER : FIT_BOOK;
   function factor(contentW) {
     if (state.zoom === 'fit') return FIT_Z[state.sheet] || FIT_Z.trim;
     if (state.zoom === 'fitw') return (stage.clientWidth - 24) / contentW;

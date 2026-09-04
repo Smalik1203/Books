@@ -22,6 +22,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { impositionPlan, verify, fitsOn } from './impose.mjs';
 import { spineWidth } from './spine.mjs';
+import { coverMetrics } from './sheet.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const openAt = process.argv[2] || null;
@@ -122,7 +123,6 @@ async function library() {
         target: cls + '/' + dir, dir, meta,
         subject: meta.subject || 'Mathematics',
         pages: files.length,
-        first: meta.startFolio ?? 1,
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
         bleed: existsSync(out + '-bleed.pdf'),
@@ -143,15 +143,16 @@ async function library() {
    viewed on its own path, shown beside the chapters rather than
    among them. */
 async function coverSheet(meta) {
-  const s = await sheet(meta.edition);
   const spine = spineWidth(meta);
-  const mm = (n) => Math.round(n * 10) / 10;
-  return {
-    ...s, spine,
-    sheetW: mm(2 * s.trimW + spine.mm),
-    wrapW: mm(2 * s.trimW + spine.mm + 2 * s.bleed),
-    wrapH: mm(s.trimH + 2 * s.bleed),
-  };
+  /* From sheet.mjs, not worked out here. This function used to do its
+     own arithmetic off the page's sheet, which got it wrong twice: the
+     page bleeds 3mm where a wrap bleeds 15, and the slug holding the
+     crop marks was left out altogether. The viewer then sized a 437mm
+     sheet to 399, the jacket was squeezed to fit while the marks kept
+     their own proportions, and every mark on the press sheet sat out
+     of register with the artwork it marked. */
+  const s = await coverMetrics(spine.mm, meta.edition);
+  return { ...s, spine, wrapW: s.mediaW, wrapH: s.mediaH };
 }
 
 async function coverLibrary() {
@@ -209,7 +210,6 @@ function libraryHtml(classes, coverClasses) {
       <div class="card__title">${esc(c.meta.title)}</div>
       <div class="card__meta">
         <span>${c.pages} page${c.pages === 1 ? '' : 's'}</span>
-        <span>folios ${c.first}&ndash;${c.first + c.pages - 1}</span>
       </div>
       <div class="card__flags">
         ${c.built ? '<span class="flag flag--on">built</span>'
@@ -226,7 +226,6 @@ function libraryHtml(classes, coverClasses) {
       <div class="card__title">${esc(c.name)}</div>
       <div class="card__meta">
         <span>${esc(c.dir)}</span>
-        <span>wrap ${c.sheet.sheetW} &times; ${c.sheet.trimH} mm</span>
         <span>spine ${c.sheet.spine.mm} mm</span>
       </div>
       <div class="card__flags">
@@ -544,8 +543,7 @@ function coverViewerHtml(cover) {
         <div class="bar__side">
 ${navPair(
   '/?class=' + encodeURIComponent(cover.target.split('/')[0]),
-  'Class ' + esc(cover.meta.class) + ' &middot; cover &middot; '
-    + esc(cover.meta.direction || 'plain') + ' / ' + esc(cover.meta.finish || 'light'),
+  'Class ' + esc(cover.meta.class) + ' &middot; cover',
   cover.name)}
         </div>
 
@@ -555,24 +553,22 @@ ${zoomBar(false)}
           <span class="bar__log" id="build-log" hidden></span>
           <button class="btn" id="sheet-bleed" aria-pressed="false"
             ${noBleed ? 'disabled title="Build first"'
-                      : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed"`}
+                      : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop and fold marks"`}
             >Bleed</button>
-          ${dl('-bleed.pdf', 'Press PDF')}
-          ${dl('-proof.png', 'Proof PNG')}
+          ${dl('-bleed.pdf', 'Print PDF')}
+          ${dl('-proof.png', 'Print PNG')}
           <button class="btn btn--go" id="build">Build</button>
         </div>
       </div>
 
-      <!-- The spine is the one thing on this page that can be wrong in a
-           way the proof will not show, so it keeps its line. Everything
-           else the bar used to explain has gone: a strip that described
-           the buttons beside it, and then printed the whole fill map of
-           the last build, is a catalogue and not a note. -->
-      <div class="note">
-        <b>Spine ${s.spine.mm}mm</b> &mdash; ${esc(s.spine.how)}. It is bulk, not a
-        choice: re-derive the page count from a <b>--book</b> run before this goes to
-        press. A placeholder QR will refuse the press sheet and say so.
-      </div>
+      <!-- No strip under the bar here either. The spine kept a line for
+           a while, on the argument that it is the one thing here the
+           proof cannot show to be wrong — but a paragraph of standing
+           advice is read once and then looked past, and this one sat
+           between the bar and the sheet on every visit. cover.mjs
+           computes the spine from the page count and says so on the
+           terminal, which is where a warning belongs; the press sheet
+           still refuses a placeholder QR outright. -->
 
       <div class="stage" id="stage">
         <div class="stage__inner" id="inner">
