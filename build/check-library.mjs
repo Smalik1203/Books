@@ -428,6 +428,10 @@ async function checkViewerBehaviour() {
     R.uncalNote = $('cal-state').textContent;
     // the page box counts the stub's two pages, and the keys page it
     R.pageCount = $('page-count').textContent;
+    const bar = document.querySelector('.bar').getBoundingClientRect();
+    const zoom = document.querySelector('.zoom').getBoundingClientRect();
+    R.offCentre = Math.round((zoom.x + zoom.width / 2) - (bar.x + bar.width / 2));
+    R.barRow = bar.height < 60;
     const key = (k, shift) => document.dispatchEvent(
       new KeyboardEvent('keydown', { key: k, shiftKey: !!shift, bubbles: true, cancelable: true }));
     key('End');  R.end = $('page-no').value;
@@ -460,8 +464,20 @@ async function checkViewerBehaviour() {
     $('page-no').blur();
     document.title = 'R' + JSON.stringify(R);`;
 
+  /* The bar has three parts and the middle one is centred by the grid,
+     so the fixture has to carry all three — with sides of deliberately
+     unequal width, since equal ones would centre under a flex row with
+     spacers too and prove nothing. */
   const html = '<!doctype html><html><head><style>' + css + '</style></head><body>'
-    + '<div class="viewer"><div class="bar">' + bar + '</div>'
+    + '<div class="viewer"><div class="bar">'
+    + '<div class="bar__side"><a class="btn">&larr;</a>'
+    + '<span class="bar__title">A Long Chapter Title</span>'
+    + '<span class="bar__sub">Class 9 &middot; ch 7</span>'
+    + '<button class="btn">Bleed</button><button class="btn">Spreads</button></div>'
+    + bar
+    + '<div class="bar__side bar__side--end">'
+    + '<a class="btn">Print PDF</a><button class="btn btn--go">Build</button></div>'
+    + '</div>'
     + '<div class="stage" id="stage" style="width:900px;height:700px">'
     + '<div class="stage__inner" id="inner">'
     + '<iframe id="frame" scrolling="no"></iframe></div></div></div>'
@@ -506,6 +522,11 @@ async function checkViewerBehaviour() {
   eq('a calibrated one says so', R.calNote, 'calibrated');
   eq('actual size follows the calibration', R.actual, '90%');
   eq('done closes the panel', R.calPanelClosed, true);
+  /* Centred on the bar, not merely on what is left over — the two
+     sides differ in width, so a flex row with spacers would sit it
+     off to one side and look almost right. */
+  eq('the cluster is centred on the bar', Math.abs(R.offCentre) <= 1, true);
+  eq('and the bar is a single row', R.barRow, true);
   eq('the page box counts the book', R.pageCount, '/ 2');
   eq('End and Home page it', [R.end, R.home], ['2', '1']);
   eq('the down arrow scrolls', R.arrowDown > 0, true);
