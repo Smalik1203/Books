@@ -384,7 +384,7 @@ const navPair = (backHref, sub, title) => `
           <span class="bar__title">${esc(title)}</span>
         </span>`;
 
-const zoomBar = (pager = true) => `
+const zoomBar = (pager = true, switches = '') => `
         <div class="zoom" role="group" aria-label="Zoom and paging">
           ${pager ? `<span class="pager">
             <input id="page-no" type="number" min="1" value="1" aria-label="Page">
@@ -402,6 +402,7 @@ const zoomBar = (pager = true) => `
               <path d="M6 10h8M6 10l2.4-2.4M6 10l2.4 2.4M14 10l-2.4-2.4M14 10l-2.4 2.4" />
             </svg>
           </button>
+          ${switches ? `<span class="zoom__rule"></span>${switches}` : ''}
 
           <div class="zoom__menu" id="zoom-menu" role="menu" hidden>
             <button role="menuitem" data-zoom="fit">Fit to page</button>
@@ -470,32 +471,37 @@ ${navPair(
     + '&amp;subject=' + encodeURIComponent(chapter.subject),
   'Class ' + esc(chapter.meta.class) + ' &middot; CH ' + esc(chapter.meta.number),
   chapter.meta.title)}
+        </div>
 
         <!-- Two switches, and neither names the state it is already in.
              Pages is the default view and the trim is the default sheet,
              so a Pages button and a Trim button were labels for "as you
              found it" — and a measurement on a button is a fact about
              the sheet, not a thing you can press. Both sizes are in the
-             subtitle and the tooltips, where facts belong.
+             tooltips, where facts belong.
+
+             Spreads sits in the middle cluster, past the fit toggle:
+             everything there changes how the book is laid out on the
+             screen. Bleed is over on the right, beside Print PDF,
+             because it changes which sheet you are looking at — the
+             reading page or the one that goes to press — and that is
+             the same question the download beside it answers.
 
              The signature view went the same way, being a schematic of
              a press sheet rather than a way of looking at the book. It
              is still built and still served, at
              /impose/<class>/<chapter>?sig=32, and nothing links to it:
              it is reached by typing the address. -->
-        <button class="btn" id="sheet-bleed" aria-pressed="false"
-          ${noBleed ? 'disabled title="Build first"'
-                    : `title="Show the press sheet, ${s.mediaW} × ${s.mediaH} mm — the ${s.trimW} × ${s.trimH} trim plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop marks"`}
-          >Bleed</button>
-
-        <button class="btn" id="view-spread" aria-pressed="false"
-          title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>
-        </div>
-
-${zoomBar()}
+${zoomBar(true, `
+          <button class="btn" id="view-spread" aria-pressed="false"
+            title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>`)}
 
         <div class="bar__side bar__side--end">
           <span class="bar__log" id="build-log" hidden></span>
+          <button class="btn" id="sheet-bleed" aria-pressed="false"
+            ${noBleed ? 'disabled title="Build first"'
+                      : `title="Show the press sheet, ${s.mediaW} × ${s.mediaH} mm — the ${s.trimW} × ${s.trimH} trim plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop marks"`}
+            >Bleed</button>
           ${dl('-bleed.pdf', 'Print PDF')}
           <button class="btn btn--go" id="build">Build</button>
         </div>
@@ -546,17 +552,16 @@ ${navPair(
   'Class ' + esc(cover.meta.class) + ' &middot; cover &middot; '
     + esc(cover.meta.direction || 'plain') + ' / ' + esc(cover.meta.finish || 'light'),
   cover.name)}
-
-        <button class="btn" id="sheet-bleed" aria-pressed="false"
-          ${noBleed ? 'disabled title="Build first"'
-                    : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed"`}
-          >Bleed</button>
         </div>
 
 ${zoomBar(false)}
 
         <div class="bar__side bar__side--end">
           <span class="bar__log" id="build-log" hidden></span>
+          <button class="btn" id="sheet-bleed" aria-pressed="false"
+            ${noBleed ? 'disabled title="Build first"'
+                      : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed"`}
+            >Bleed</button>
           ${dl('-bleed.pdf', 'Press PDF')}
           ${dl('-proof.png', 'Proof PNG')}
           <button class="btn btn--go" id="build">Build</button>

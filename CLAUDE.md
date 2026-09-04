@@ -323,6 +323,11 @@ broken, because uncalibrated the two are the same button pressed twice.
 
 The bar carries two switches — **Bleed** and **Spreads** — and neither
 names the state it is already in: a chapter opens on the trim, in pages.
+They sit apart, and on purpose. **Spreads** is in the middle cluster past
+the fit toggle, with everything else that changes how the book is laid out
+on the screen. **Bleed** is on the right beside Print PDF, because it
+changes which sheet you are looking at — the reading page or the one that
+goes to press — and that is the question the download beside it answers.
 A measurement is not a thing you can press either, and the sheet sizes live
 in the tooltips. Five things came off and are not to be pasted back:
 
@@ -364,7 +369,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 94 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 96 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
