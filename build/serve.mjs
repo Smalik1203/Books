@@ -355,6 +355,35 @@ const downloadBtn = (base, suffix, label) => {
    pages wide, which is not what the button means. Draw, undo and
    redo are its annotation layer, and there is nothing here to
    annotate: a note wanted on a proof belongs in the source. */
+/* ---- Home and back ----------------------------------------
+   Two different journeys, so two buttons. Back goes to the list
+   this page came from, carrying its class and subject; home goes
+   to the top of the studio, and says so with ?home, which tells
+   the chooser to ignore the choice it remembers. Without that the
+   two would land in the same place and one of them would be a lie.
+
+   The label beside them reads downwards: where you are, then what
+   you are looking at. Class and chapter first because that is what
+   you check when you have three tabs open, and it is the shorter
+   line — a title can run to any length and takes the ellipsis. */
+const navPair = (backHref, sub, title) => `
+        <a class="btn btn--icon" href="/?home" title="The library">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M3 9.2 10 3.4l7 5.8" />
+            <path d="M4.8 8.2V16h10.4V8.2" />
+            <path d="M8.1 16v-4.4h3.8V16" />
+          </svg>
+        </a>
+        <a class="btn btn--icon" href="${backHref}" title="Back to the chapters">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M16 10H4.6" /><path d="M9.4 4.8 4.2 10l5.2 5.2" />
+          </svg>
+        </a>
+        <span class="bar__where">
+          <span class="bar__sub">${sub}</span>
+          <span class="bar__title">${esc(title)}</span>
+        </span>`;
+
 const zoomBar = (pager = true) => `
         <div class="zoom" role="group" aria-label="Zoom and paging">
           ${pager ? `<span class="pager">
@@ -423,29 +452,24 @@ function viewerHtml(chapter, s) {
   return page(chapter.meta.title + ' — LearnLab Studio', `
     <div class="viewer">
       <div class="bar">
-        <!-- Back to the chapters, not back to the beginning. The arrow
-             carries the class and subject this chapter belongs to, so
-             the library opens on the list the reader just left instead
-             of on two empty dropdowns — and it is right even for a
-             chapter reached by its address without passing through the
-             library at all. -->
         <!-- Three parts, so the zoom cluster is centred on the bar and
              not merely on what is left over. Flexed, the two sides have
              to be the same width for the middle to land in the middle,
              and here one holds a title and two switches while the other
-             holds a download and a button. A grid does not care. -->
+             holds a download and a button. A grid does not care.
+
+             The back link carries the class and subject this chapter
+             belongs to, so the library opens on the list the reader just
+             left instead of on two empty dropdowns — right even for a
+             chapter reached by its address. The label beside it names
+             neither the page count nor the trim: the page box carries
+             one and the Bleed tooltip the other. -->
         <div class="bar__side">
-        <a class="btn" title="Back to the chapters"
-           href="/?class=${encodeURIComponent(chapter.target.split('/')[0])}&amp;subject=${encodeURIComponent(chapter.subject)}">&larr;</a>
-        <span class="bar__title">${esc(chapter.meta.title)}</span>
-        <!-- Which class and which chapter, and nothing else. The page
-             count is in the page box a few inches to the right, and the
-             trim was only here because it had just come off the Bleed
-             button — a measurement neither pressed nor read, sitting in
-             the one part of the bar a reader glances at to know where
-             they are. Both sizes are in the Bleed tooltip. -->
-        <span class="bar__sub">Class ${esc(chapter.meta.class)} &middot;
-          ch ${esc(chapter.meta.number)}</span>
+${navPair(
+  '/?class=' + encodeURIComponent(chapter.target.split('/')[0])
+    + '&amp;subject=' + encodeURIComponent(chapter.subject),
+  'Class ' + esc(chapter.meta.class) + ' &middot; ch ' + esc(chapter.meta.number),
+  chapter.meta.title)}
 
         <!-- Two switches, and neither names the state it is already in.
              Pages is the default view and the trim is the default sheet,
@@ -517,11 +541,11 @@ function coverViewerHtml(cover) {
              carries the class only and the subject is whatever was last
              chosen. -->
         <div class="bar__side">
-        <a class="btn" title="Back to the chapters"
-           href="/?class=${encodeURIComponent(cover.target.split('/')[0])}">&larr;</a>
-        <span class="bar__title">${esc(cover.name)}</span>
-        <span class="bar__sub">Class ${esc(cover.meta.class)} &middot; cover &middot;
-          ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')}</span>
+${navPair(
+  '/?class=' + encodeURIComponent(cover.target.split('/')[0]),
+  'Class ' + esc(cover.meta.class) + ' &middot; cover &middot; '
+    + esc(cover.meta.direction || 'plain') + ' / ' + esc(cover.meta.finish || 'light'),
+  cover.name)}
 
         <button class="btn" id="sheet-bleed" aria-pressed="false"
           ${noBleed ? 'disabled title="Build first"'

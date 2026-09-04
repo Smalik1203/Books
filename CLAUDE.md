@@ -349,8 +349,14 @@ in the tooltips. Five things came off and are not to be pasted back:
   built and still served at `/impose/<class>/<chapter>?sig=32`, and
   nothing links to it: it is reached by typing the address.
 
-The back arrow means **back to the chapters**, not back to the beginning.
-It carries the chapter's own class and subject, so the library opens on the
+Two buttons at the left, because there are two journeys. **Home** goes to
+the top of the studio and says so with `?home`, which tells the chooser to
+ignore the choice it remembers — without that it would land exactly where
+back lands and one of the two would be decoration. It does not clear the
+memory, only this arrival, so a bare `/` still restores.
+
+Beside it, the **back arrow** means back to the chapters, not back to the
+beginning: it carries the chapter's own class and subject, so the library opens on the
 list you just left — right even for a chapter opened by its address. A cover
 carries only its class, since a cover belongs to no subject, and the subject
 falls through to the last one chosen. That choice is kept in `localStorage`
@@ -358,7 +364,7 @@ under `ll.pick`, so a bare `/` opens where you left off; a class or subject
 with no section is ignored rather than selected.
 
 ```bash
-npm run check:studio     # 89 assertions: the chooser, the bar, the build, the restart
+npm run check:studio     # 93 assertions: the chooser, the bar, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
