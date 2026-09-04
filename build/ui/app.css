@@ -235,7 +235,10 @@ a { color: inherit; text-decoration: none; }
 .zoom__step svg[hidden] { display: none; }
 .zoom__step:hover:not(:disabled) { background: var(--bg-3); }
 .zoom__step:disabled { opacity: 0.35; cursor: not-allowed; }
-.zoom__step[aria-pressed="true"] { background: var(--bg-3); color: var(--accent); }
+/* Nothing in the cluster takes a pressed state. The fit button used to,
+   and it read as a switch that was on — which on this bar is what the
+   accent means, and a fit is not on or off. Its icon says which fit it
+   is, and that is once. */
 /* A field, not a button: the level is typed. It keeps the dark well the
    button had, so the cluster still reads as one thing, and the number
    is centred because the number is what matters, not the caret. */

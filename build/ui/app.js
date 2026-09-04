@@ -120,7 +120,10 @@
          with itself and passed. */
       svg.toggleAttribute('hidden', (svg.dataset.fit === 'fitw') !== wide);
     }
-    press('fit-toggle', state.zoom === 'fit' || wide);
+    /* No pressed state. The icon and the tooltip already say which fit
+       this is, and lighting the button as well says it a third time —
+       and says it in the accent, which on this bar means a switch that
+       is on. Bleed and Spreads are on or off; a fit is neither. */
     set('fit-toggle', 'title', wide
       ? 'Fit to width — click for fit to page'
       : 'Fit to page — click for fit to width');
