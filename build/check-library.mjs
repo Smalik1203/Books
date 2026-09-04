@@ -309,13 +309,16 @@ async function checkViewerStructure() {
     if (!html) { bad('viewer responds', 'no response', 'the viewer page'); return; }
     ok('viewer responds');
 
-    for (const id of ['zoom-out', 'zoom-in', 'zoom-level', 'fit-toggle', 'zoom-menu',
-      'cal-panel', 'cal-open', 'cal-done', 'cal-range', 'cal-state']) {
+    for (const id of ['zoom-out', 'zoom-in', 'zoom-level', 'fit-toggle']) {
       eq('#' + id + ' present', html.includes('id="' + id + '"'), true);
     }
-    for (const z of ['fit', 'fitw', 'actual', '1']) {
-      eq('zoom preset ' + z, html.includes('data-zoom="' + z + '"'), true);
-    }
+    /* The level is typed. The menu of presets, Actual size and the
+       bank-card calibration all went with it — a preset is a guess at
+       what somebody wants, and a proof is read at whatever percentage
+       makes one figure legible. */
+    eq('the level is a field', /id="zoom-level"[^>]*type="text"/.test(html), true);
+    eq('no preset menu', /id="zoom-menu"|data-zoom=/.test(html), false);
+    eq('no calibration panel', /id="cal-/.test(html), false);
     // fit to page needs the sheet height, which the old cfg did not carry
     const cfg = JSON.parse(html.match(/id="cfg">([\s\S]*?)<\/script>/)[1]);
     eq('cfg carries sheet heights',
@@ -354,7 +357,7 @@ async function checkViewerStructure() {
        download, because it changes which sheet you are looking at,
        which is the question that download answers. */
     eq('spreads sits in the cluster',
-      /class="zoom"[\s\S]*?id="view-spread"[\s\S]*?id="zoom-menu"/.test(html), true);
+      /class="zoom"[\s\S]*?id="fit-toggle"[\s\S]*?id="view-spread"/.test(html), true);
     eq('bleed sits beside Print PDF',
       /id="sheet-bleed"[\s\S]{0,400}?Print PDF/.test(html), true);
     /* A measurement is a fact about the sheet, not a thing to press. */
@@ -366,7 +369,7 @@ async function checkViewerStructure() {
     if (covLink) {
       const cov = await get('http://localhost:' + port + '/cover/' + covLink);
       eq('cover viewer carries the same cluster',
-        ['zoom-level', 'fit-toggle', 'zoom-menu', 'cal-done'].every((i) => cov.includes('id="' + i + '"')),
+        ['zoom-level', 'fit-toggle', 'zoom-out', 'zoom-in'].every((i) => cov.includes('id="' + i + '"')),
         true);
     }
   } finally {
@@ -418,7 +421,7 @@ async function checkViewerBehaviour() {
 
   const driver = `
     const $ = (id) => document.getElementById(id);
-    const lvl = () => $('zoom-level').textContent;
+    const lvl = () => $('zoom-level').value;   // a field now, not a button
     const R = {};
     R.fitPage = lvl();
     $('zoom-in').click();  R.plus1 = lvl();
@@ -440,39 +443,48 @@ async function checkViewerBehaviour() {
       const r = shown.querySelector('rect').getBoundingClientRect();
       return { icon: r.width > r.height ? 'landscape' : 'portrait', title: btn.title };
     };
-    /* Back to fit to page first. The zoom steps above left a fixed
-       percentage, and from there the button returns to fit to page
-       rather than alternating — which is the point of it, but it means
-       the toggle cannot be tested from wherever the last check left
-       off. */
-    document.querySelector('[data-zoom="fit"]').click();
+    /* The level is a field now, so this is how a mode is reached from
+       whatever the last check left behind: type a percentage, and the
+       fit button returns to fit to page from anywhere that is not fit
+       to width. */
+    const typeLevel = (v) => {
+      const box = $('zoom-level');
+      box.value = String(v);
+      box.dispatchEvent(new Event('change', { bubbles: true }));
+      return box.value;
+    };
+    const toFitPage = () => { typeLevel(150); $('fit-toggle').click(); };
+
+    toFitPage();
     R.iconAtPage = fitIcon();
     $('fit-toggle').click(); R.fitWidth = lvl();
     R.iconAtWidth = fitIcon();
     $('fit-toggle').click(); R.backToPage = lvl();
     R.iconBack = fitIcon();
-    $('zoom-level').click(); R.menuOpen = !$('zoom-menu').hidden;
-    document.querySelector('[data-zoom="1.5"]').click();
-    R.preset = lvl();
-    R.menuClosedAfterPick = $('zoom-menu').hidden;
-    R.checked = [...document.querySelectorAll('[data-zoom]')]
-      .filter((b) => b.getAttribute('aria-checked') === 'true').map((b) => b.dataset.zoom);
+
+    /* Any number, not a choice from a list — which is the whole point
+       of the field. A percentage sign is tolerated, nonsense puts the
+       level back to what it was, and both ends clamp. */
+    R.typedOdd = typeLevel(137);
+    R.typedWithSign = typeLevel('42%');
+    R.clampedHigh = typeLevel(900);
+    R.clampedLow = typeLevel(1);
+    R.nonsense = typeLevel('abc');
+    R.hundred = typeLevel(100);
+
     // the ladder has ends, and the buttons must say so
-    for (let i = 0; i < 12; i++) $('zoom-in').click();
+    for (let i = 0; i < 24; i++) $('zoom-in').click();
     R.ceiling = lvl(); R.inDisabled = $('zoom-in').disabled;
-    for (let i = 0; i < 20; i++) $('zoom-out').click();
+    for (let i = 0; i < 40; i++) $('zoom-out').click();
     R.floor = lvl(); R.outDisabled = $('zoom-out').disabled;
-    // calibration: 3.4 px/mm is 90% of the 96dpi the browser assumes
-    $('zoom-level').click(); $('cal-open').click();
-    R.calPanelOpen = !$('cal-panel').hidden;
-    const rg = $('cal-range');
-    rg.value = '3.4'; rg.dispatchEvent(new Event('input', { bubbles: true }));
-    R.calNote = $('cal-state').textContent;
-    $('cal-done').click();
-    R.actual = lvl();
-    R.calPanelClosed = $('cal-panel').hidden;
-    $('cal-open') && ($('zoom-level').click(), $('cal-open').click(), $('cal-reset').click());
-    R.uncalNote = $('cal-state').textContent;
+
+    /* Back to fit to page before anything is asked about scrolling. The
+       floor test above leaves the level at 10%, where the whole stub
+       book is shorter than the stage and there is nothing to scroll —
+       every keyboard assertion below would fail, and would look like a
+       broken handler rather than a book that already fits. */
+    toFitPage();
+
     // the page box counts the stub's two pages, and the keys page it
     R.pageCount = $('page-count').textContent;
     const bar = document.querySelector('.bar').getBoundingClientRect();
@@ -498,11 +510,16 @@ async function checkViewerBehaviour() {
     R.space = st.scrollTop;
     key(' ', true);
     R.shiftSpace = st.scrollTop;
-    // and the box follows the scroll, not only a typed page number
+    /* And the box follows the scroll, not only a typed page number.
+       At 100%, because at fit to page the whole of the stub's second
+       page lies past the end of the scroll — the counter could never
+       reach it, and the check would be asserting the impossible. */
+    typeLevel(100);
     st.scrollTop = 0;
     let guard = 0;
     while ($('page-no').value === '1' && guard++ < 200) key('ArrowDown');
     R.boxFollowedAfter = guard < 200 ? $('page-no').value : 'never';
+    toFitPage();
     // an arrow must not fire while the page number is being typed
     st.scrollTop = 0;
     $('page-no').focus();
@@ -536,10 +553,12 @@ async function checkViewerBehaviour() {
     };
     const book = document.getElementById('frame').contentDocument;
     const inEveryMode = {};
-    for (const [name, pick] of [
-      ['fit page', 'fit'], ['fit width', 'fitw'], ['200%', '2'],
+    for (const [name, reach] of [
+      ['fit page', toFitPage],
+      ['fit width', () => { toFitPage(); $('fit-toggle').click(); }],
+      ['200%', () => typeLevel(200)],
     ]) {
-      document.querySelector('[data-zoom="' + pick + '"]').click();
+      reach();
       inEveryMode[name] = arrows() && arrows(book);
     }
     R.arrowsEverywhere = inEveryMode;
@@ -547,11 +566,11 @@ async function checkViewerBehaviour() {
     /* And at the far edge of a zoomed page, right must turn the page
        rather than dead-end: it used to scroll sideways for ever the
        moment the content was wider than the stage. */
-    document.querySelector('[data-zoom="2"]').click();
+    typeLevel(200);
     st.scrollLeft = st.scrollWidth;
     const edge = $('page-no').value; send('ArrowRight');
     R.turnsAtTheEdge = $('page-no').value !== edge;
-    document.querySelector('[data-zoom="fit"]').click();
+    toFitPage();
 
     document.title = 'R' + JSON.stringify(R);`;
 
@@ -610,17 +629,16 @@ async function checkViewerBehaviour() {
   eq('fit to width shows a wide one',
     R.iconAtWidth, { icon: 'landscape', title: 'Fit to width — click for fit to page' });
   eq('and the icon comes back with the mode', R.iconBack, R.iconAtPage);
-  eq('the level opens the menu', R.menuOpen, true);
-  eq('a preset sets the level', R.preset, '150%');
-  eq('picking closes the menu', R.menuClosedAfterPick, true);
-  eq('the chosen preset is ticked', R.checked, ['1.5']);
-  eq('the ladder has a ceiling', [R.ceiling, R.inDisabled], ['300%', true]);
-  eq('the ladder has a floor', [R.floor, R.outDisabled], ['25%', true]);
-  eq('calibrate opens from the menu', R.calPanelOpen, true);
-  eq('an uncalibrated screen says so', R.uncalNote, '96 dpi');
-  eq('a calibrated one says so', R.calNote, 'calibrated');
-  eq('actual size follows the calibration', R.actual, '90%');
-  eq('done closes the panel', R.calPanelClosed, true);
+  /* Any number, not a choice from a list. 137 is the point of the
+     whole change: it was never going to be on a menu. */
+  eq('any percentage can be typed', R.typedOdd, '137%');
+  eq('a percent sign is tolerated', R.typedWithSign, '42%');
+  eq('too high clamps', R.clampedHigh, '500%');
+  eq('too low clamps', R.clampedLow, '10%');
+  eq('nonsense puts the level back', R.nonsense, '10%');
+  eq('and a round number still works', R.hundred, '100%');
+  eq('the buttons have a ceiling', [R.ceiling, R.inDisabled], ['500%', true]);
+  eq('the buttons have a floor', [R.floor, R.outDisabled], ['10%', true]);
   /* Centred on the bar, not merely on what is left over — the two
      sides differ in width, so a flex row with spacers would sit it
      off to one side and look almost right. */

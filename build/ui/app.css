@@ -236,58 +236,25 @@ a { color: inherit; text-decoration: none; }
 .zoom__step:hover:not(:disabled) { background: var(--bg-3); }
 .zoom__step:disabled { opacity: 0.35; cursor: not-allowed; }
 .zoom__step[aria-pressed="true"] { background: var(--bg-3); color: var(--accent); }
+/* A field, not a button: the level is typed. It keeps the dark well the
+   button had, so the cluster still reads as one thing, and the number
+   is centred because the number is what matters, not the caret. */
 .zoom__level {
-  min-width: 54px; height: 26px; padding: 0 8px;
+  width: 58px; height: 26px; padding: 0 6px; text-align: center;
   background: var(--bg-3); color: var(--text); border: 0;
-  border-radius: 6px; cursor: pointer;
+  border-radius: 6px;
   font: inherit; font-family: var(--mono); font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
 .zoom__level:hover { background: var(--line); }
+.zoom__level:focus { outline: 1px solid var(--accent); outline-offset: 0; }
 .zoom__rule { width: 1px; height: 18px; margin: 0 4px; background: var(--line); }
 
-.zoom__menu {
-  position: absolute; left: 0; top: calc(100% + 8px); z-index: 21;
-  min-width: 190px; padding: 5px;
-  display: flex; flex-direction: column;
-  background: var(--bg-2); border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 32px rgba(0,0,0,.45);
-}
-.zoom__menu[hidden] { display: none; }
-.zoom__menu button {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 6px 9px; text-align: left;
-  background: transparent; color: var(--text-2); border: 0;
-  border-radius: 5px; font: inherit; font-size: 12.5px; cursor: pointer;
-}
-.zoom__menu button:hover { background: var(--bg-3); color: var(--text); }
-.zoom__menu button[aria-checked="true"] { color: var(--accent); }
-.zoom__menu button[aria-checked="true"]::after { content: "\2713"; }
-.zoom__menu hr { height: 1px; margin: 5px 3px; border: 0; background: var(--line); }
-.zoom__note { font-family: var(--mono); font-size: 11px; color: var(--text-2); }
-
-/* ---- Calibration ------------------------------------------ */
-.cal__panel {
-  position: absolute; left: 0; top: calc(100% + 8px); z-index: 22;
-  width: 320px; padding: 14px;
-  background: var(--bg-2); border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 32px rgba(0,0,0,.45);
-}
-.cal__panel[hidden] { display: none; }
-.cal__panel h3 { margin: 0 0 6px; font-size: 13px; font-weight: 650; }
-.cal__panel p { margin: 0 0 10px; color: var(--text-2); font-size: 12px; }
-.cal__card {
-  height: 54px; border: 1.5px dashed var(--accent);
-  border-radius: 5px; margin-bottom: 10px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-2); font-size: 11px;
-}
-.cal__row { display: flex; align-items: center; gap: 10px; }
-.cal__row input[type=range] { flex: 1; accent-color: var(--accent); }
-.cal__val { font-family: var(--mono); font-size: 12px; color: var(--text-2); min-width: 78px; text-align: right; }
-.cal__row--foot { margin-top: 10px; }
+/* The level menu and the bank-card calibration panel were here.
+   Both are gone: six presets are a guess at what somebody wants, and
+   Actual size was 100% under another name until a card had been held
+   to the screen. The level is typed instead, and the two fits keep the
+   button beside it. */
 
 /* ---- Imposition sheet -------------------------------------- */
 .imp { padding: 22px 24px 40px; }

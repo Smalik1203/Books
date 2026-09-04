@@ -335,15 +335,22 @@ const downloadBtn = (base, suffix, label) => {
 /* ---- The zoom cluster -------------------------------------
    Chrome's PDF toolbar, because that is the control every reader
    of this book already knows: minus, the level, plus, and a fit
-   toggle beside them. It replaces a row of four preset buttons
-   and a Calibrate that opened a panel — and that read as broken,
-   because until you calibrate, Actual size and 100% are the same
-   button pressed twice.
+   toggle beside them. Both viewers show the same cluster, so it is
+   built once here rather than pasted into each.
 
-   Actual size did not go away; it moved into the level menu with
-   the calibration behind it, and the menu now says which of the
-   two you are looking at. Both viewers show the same cluster, so
-   it is built once here rather than pasted into each.
+   The level is a field, not a menu. It began as four preset
+   buttons, became a menu of six presets plus the two fits, Actual
+   size and a calibration panel — and a preset is a guess at what
+   somebody wants. A proof gets read at whatever percentage makes
+   one figure legible, and that number was never on the list. So
+   the presets are gone and the level is typed; the two fits keep
+   the button beside it, which is where they were always reached
+   from anyway.
+
+   Actual size and the bank-card calibration went with the menu.
+   Uncalibrated, Actual size was 100% under another name, and the
+   calibration behind it was the one control here that had to be
+   set up before it told the truth.
 
    The order is Chrome's too: the page box first, then a rule, then
    the level, then a rule and the fit toggle. `pager` is false on a
@@ -392,8 +399,14 @@ const zoomBar = (pager = true, switches = '') => `
           </span>
           <span class="zoom__rule"></span>` : ''}
           <button class="zoom__step" id="zoom-out" title="Zoom out">&minus;</button>
-          <button class="zoom__level" id="zoom-level"
-                  aria-haspopup="true" aria-expanded="false" title="Zoom level">100%</button>
+          <!-- The level is typed, not chosen. It was a button opening a
+               menu of six presets, and a preset is a guess at what
+               somebody wants: a proof is often read at whatever
+               percentage makes one figure legible, and 137 was not on
+               the list. Type it. -->
+          <input class="zoom__level" id="zoom-level" type="text"
+                 inputmode="numeric" autocomplete="off" spellcheck="false"
+                 aria-label="Zoom" title="Zoom — type any percentage" value="100%">
           <button class="zoom__step" id="zoom-in" title="Zoom in">+</button>
           <span class="zoom__rule"></span>
           <!-- One button, two icons: a portrait sheet with the arrows
@@ -416,37 +429,6 @@ const zoomBar = (pager = true, switches = '') => `
             </svg>
           </button>
           ${switches ? `<span class="zoom__rule"></span>${switches}` : ''}
-
-          <div class="zoom__menu" id="zoom-menu" role="menu" hidden>
-            <button role="menuitem" data-zoom="fit">Fit to page</button>
-            <button role="menuitem" data-zoom="fitw">Fit to width</button>
-            <hr>
-            <button role="menuitem" data-zoom="0.5">50%</button>
-            <button role="menuitem" data-zoom="0.75">75%</button>
-            <button role="menuitem" data-zoom="1">100%</button>
-            <button role="menuitem" data-zoom="1.25">125%</button>
-            <button role="menuitem" data-zoom="1.5">150%</button>
-            <button role="menuitem" data-zoom="2">200%</button>
-            <hr>
-            <button role="menuitem" data-zoom="actual">Actual size <span class="zoom__note" id="cal-state"></span></button>
-            <button role="menuitem" id="cal-open">Calibrate this screen&hellip;</button>
-          </div>
-
-          <div class="cal__panel" id="cal-panel" hidden>
-            <h3>Actual size</h3>
-            <p>Hold a bank card against the box and drag until they match. Every card is
-               85.6 &times; 54 mm, so this makes &ldquo;Actual size&rdquo; true on
-               <em>your</em> screen &mdash; until you do, it is only 96&nbsp;dpi guesswork.</p>
-            <div class="cal__card" id="cal-card">bank card</div>
-            <div class="cal__row">
-              <input type="range" id="cal-range" min="2" max="10" step="0.001">
-              <span class="cal__val" id="cal-val"></span>
-            </div>
-            <div class="cal__row cal__row--foot">
-              <button class="btn" id="cal-reset">Reset to 96 dpi</button>
-              <button class="btn btn--go" id="cal-done">Done</button>
-            </div>
-          </div>
         </div>`;
 
 /* ---- Viewer page ------------------------------------------ */
