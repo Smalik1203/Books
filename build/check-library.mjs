@@ -423,7 +423,7 @@ async function checkViewerBehaviour() {
     const $ = (id) => document.getElementById(id);
     const lvl = () => $('zoom-level').value;   // a field now, not a button
     const R = {};
-    R.fitPage = lvl();
+    R.opensAt = lvl();          // before anything is pressed
     $('zoom-in').click();  R.plus1 = lvl();
     $('zoom-in').click();  R.plus2 = lvl();
     $('zoom-out').click(); R.minus = lvl();
@@ -456,7 +456,18 @@ async function checkViewerBehaviour() {
     const toFitPage = () => { typeLevel(150); $('fit-toggle').click(); };
 
     toFitPage();
+    R.fitPage = lvl();
     R.iconAtPage = fitIcon();
+
+    /* Fit to page is 70% and does not measure anything, so it is 70% on
+       a tall stage and on a short one alike — which is the point of it,
+       and the only way to tell it apart from a measurement that happens
+       to land near 70% on the fixture's stage. */
+    const stg = $('stage'), keptH = stg.style.height;
+    stg.style.height = '1400px'; toFitPage(); R.fitOnTall = lvl();
+    stg.style.height = '260px';  toFitPage(); R.fitOnShort = lvl();
+    stg.style.height = keptH;    toFitPage();
+
     $('fit-toggle').click(); R.fitWidth = lvl();
     R.iconAtWidth = fitIcon();
     $('fit-toggle').click(); R.backToPage = lvl();
@@ -617,7 +628,14 @@ async function checkViewerBehaviour() {
   const R = JSON.parse(raw[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
 
   const pc = (s) => Number(String(s).replace('%', ''));
-  eq('fit to page fits the height', pc(R.fitPage) > 0 && pc(R.fitPage) < 100, true);
+  /* A chapter opens at the size the stylesheet says, and the fit button
+     gives 70% — a fixed size rather than whatever the window makes of
+     it, since the same book coming up at 46% on one screen and 116% on
+     another is not a proof of anything. */
+  eq('a chapter opens at 100%', R.opensAt, '100%');
+  eq('fit to page is 70%', R.fitPage, '70%');
+  eq('70% on a tall stage and a short one alike',
+    [R.fitOnTall, R.fitOnShort], ['70%', '70%']);
   eq('fit to width is wider than fit to page', pc(R.fitWidth) > pc(R.fitPage), true);
   eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
   eq('minus steps back', R.minus, R.plus1);
