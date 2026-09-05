@@ -1,0 +1,83 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Counting the symbols each system needs</div>
+        <p>
+          To write every number up to a million, Egypt needs a picture for each power of
+          ten it can reach:
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">Egypt</span>
+            <span>$1, 10, 100, 1000, 10^4, 10^5, 10^6$</span>
+            <span class="chip">7 symbols</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">the Hindu system</span>
+            <span>$0, 1, 2, 3, 4, 5, 6, 7, 8, 9$</span>
+            <span class="chip">10 symbols</span>
+          </div>
+        </div>
+        <p>
+          Seven against ten, and Egypt appears to win. It does not, and the reason is
+          what happens next. Ask for numbers up to a billion and Egypt needs three more
+          symbols; ask for a trillion and it needs another three. The Hindu system needs
+          ten, for ever.
+        </p>
+        <p>
+          That is the whole argument of the chapter in one comparison. Egypt's symbol
+          count grows with the size of the numbers you want to write; ours does not.
+          A fixed alphabet against a growing one is not a small advantage — it is the
+          difference between a system that runs out and a system that does not.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Dividing repeatedly, and why it stops</div>
+        <p>
+          To convert $143$ to base $5$, divide by $5$ and keep the remainder; then
+          divide the quotient by $5$ and keep that remainder; and so on until the
+          quotient is zero.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$143 \div 5$</span>
+            <span>$= 28$ remainder $3$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$28 \div 5$</span>
+            <span>$= 5$ remainder $3$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$5 \div 5$</span>
+            <span>$= 1$ remainder $0$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$1 \div 5$</span>
+            <span>$= 0$ remainder $1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">reading upwards</span>
+            <span>$1033$</span>
+            <span class="chip">$143 = 1033_{\,5}$</span>
+          </div>
+        </div>
+        <p>
+          <em>Why it stops:</em> each division makes the number at least five times
+          smaller, and a whole number cannot shrink for ever. It must reach zero, and it
+          reaches it quickly — the number of steps is the number of digits.
+        </p>
+        <p>
+          <em>Why the remainders come out backwards:</em> the first division asks how
+          many are left over after taking out all the fives, which is precisely the units
+          digit. The second asks the same of the fives, which is the next digit up. Each
+          step peels off the lowest place, so the digits emerge in the reverse of the
+          order they are written.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

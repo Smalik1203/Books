@@ -1,0 +1,68 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A base</div>
+        <p>A number system whose first landmark is $1$ and whose every later landmark is
+        $n$ times the one before is a <span class="term">base-$n$</span> system. Its
+        landmarks are exactly the powers of $n$. Base $10$ is also called
+        <span class="term">decimal</span>.</p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Write $143$ in a base-$5$ system.</p>
+          <p>Take as many of the largest landmark that fits, then work down.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">largest that fits</span>
+              <span>$125$, and one of them leaves $18$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">then</span>
+              <span>$18 = 5 + 5 + 5 + 1 + 1 + 1$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">so</span>
+              <span>$143 = 125 + 5 + 5 + 5 + 1 + 1 + 1$</span>
+            </div>
+          </div>
+          <p>One hundred-and-twenty-five, three fives and three ones. In Egyptian style
+          that would be one symbol of the third landmark, three of the second and three
+          of the first — seven symbols in all, where base ten would have needed eight.</p>
+          <p>Notice that no landmark is ever needed five or more times. If it were, five
+          of them would combine into one of the next landmark up, and the grouping was
+          not finished.</p>
+        </div>
+      </div>
+
+      <p>That last remark holds for every base. In a base-$n$ system no landmark is ever
+      needed $n$ times or more, because $n$ of them make the next one — and it is the
+      single most useful fact about bases, because it says exactly how many of each
+      symbol a numeral can carry.</p>
+
+      <h3>3.5.1 Why a base makes arithmetic easy</h3>
+
+      <p>Adding in a base system is the trading of Example 2 with one improvement: the
+      rate never changes. Ten of anything makes the next thing up, all the way. In the
+      Roman system you had to remember that five Is make a V but two Vs make an X; here
+      there is one rule and it is the same at every level.</p>
+
+      <p>The real gain is in multiplication, and it comes from a single fact.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$10 \times 100$</span>
+          <span>$= 10^1 \times 10^2 = 10^3 = 1000$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$100 \times 1000$</span>
+          <span>$= 10^2 \times 10^3 = 10^5$</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
