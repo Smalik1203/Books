@@ -1,0 +1,85 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+        </div>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">When the exponent overtakes the base</div>
+        <p>
+          $100^2 = 10\,000$, which is five digits. $2^{100}$ is a great deal more: since
+          $2^{10} = 1024$ is a little over $10^3$, raising both sides to the tenth power
+          gives $2^{100}$ a little over $10^{30}$. So $2^{100}$ wins, and not
+          narrowly — it is about $10^{26}$ times larger.
+        </p>
+        <p>
+          The second half is more interesting, because for small $n$ the answer goes the
+          other way. Tabulate:
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$n$</span>
+            <span>$1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$2^n$</span>
+            <span>$2 \quad 4 \quad 8 \quad 16 \quad 32 \quad 64$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$n^2$</span>
+            <span>$1 \quad 4 \quad 9 \quad 16 \quad 25 \quad 36$</span>
+          </div>
+        </div>
+        <p>
+          They tie at $n = 2$ and $n = 4$, and $n^2$ is ahead at $n = 3$. From $n = 5$
+          onward $2^n$ leads and never gives the lead back — each step doubles the first
+          while the second grows by only $2n + 1$, and doubling wins the moment the
+          total exceeds $2n+1$, which it has by then.
+        </p>
+        <p>
+          That is the shape of every such race. A power with the variable in the
+          exponent starts slowly, loses for a while, and then wins by a distance nothing
+          can close.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The last digit of a very large power</div>
+        <p>
+          You cannot compute $7^{100}$, and you do not need to: last digits depend only
+          on last digits, so work with those alone.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label">$7^1$</span><span>ends in $7$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$7^2 = 49$</span><span>ends in $9$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$7^3 = 343$</span><span>ends in $3$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$7^4 = 2401$</span><span>ends in $1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$7^5$</span><span>ends in $7$ — and round it goes</span>
+          </div>
+        </div>
+        <p>
+          The cycle has length $4$ and it must repeat for ever, because once the last
+          digit returns to $7$ everything that follows is a repeat of what followed the
+          first $7$. So the answer depends only on where $100$ falls in the cycle:
+          $100 = 4 \times 25$, exactly at the end of a cycle, so $7^{100}$ ends in $1$.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
