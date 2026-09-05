@@ -1,0 +1,84 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The third is the second cut in half, and it is worth saying exactly which height
+      is meant: the <span class="term">perpendicular height</span>, measured square to the
+      base, and not the length of a slanting side. A triangle leaning far over has the
+      same area as one standing upright, provided the base and the perpendicular height
+      are the same.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 84" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="An L-shaped figure cut into two rectangles, and the same figure treated as a large rectangle with a corner rectangle removed">
+      
+            <path class="dg-fill-a" d="M12 20 H52 V44 H80 V70 H12 Z"/>
+            <path class="dg-line"   d="M12 20 H52 V44 H80 V70 H12 Z"/>
+            <path class="dg-thin"   d="M12 44 H52"/>
+            <text class="dg-note" x="46" y="80" text-anchor="middle">cut in two</text>
+      
+            <path class="dg-fill-a" d="M120 20 H160 V44 H188 V70 H120 Z"/>
+            <path class="dg-line"   d="M120 20 H188 V70 H120 Z"/>
+            <path class="dg-ghost"  d="M160 20 H188 V44 H160 Z"/>
+            <path class="dg-thin"   d="M160 20 V44 H188"/>
+            <text class="dg-note" x="154" y="80" text-anchor="middle">or one, less a corner</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.1</span> The same L-shaped figure, done
+          two ways. Both give the same answer, because both count every square inside it
+          exactly once.</figcaption>
+        </figure>
+      </div>
+
+      <p>Neither route is the correct one. Choose whichever leaves you with the fewest
+      pieces, and check the two agree if you have the time — an area found twice by
+      different cuts is an area you can trust.</p>
+
+      <h2><span class="badge">7.3</span><span class="name">The Trapezium</span></h2>
+
+      <p>A <span class="term">trapezium</span> has one pair of parallel sides — call them
+      $a$ and $b$ — and a perpendicular height $h$ between them. It is the first figure
+      whose area is not obvious, and there are two ways to see it. The second is the one
+      worth keeping.</p>
+
+      <p><strong>The first way is to cut.</strong> Drop a perpendicular from each end of
+      the shorter parallel side and the trapezium falls into a rectangle with a triangle
+      on each side. Add the three areas and, after some algebra, the answer appears.</p>
+
+      <p><strong>The second way needs no cutting at all.</strong> Take a second copy of
+      the trapezium, turn it upside down, and set it beside the first. The two fit
+      together exactly — the slanting sides match because they are the same slant — and
+      what they make is a parallelogram.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 200 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A trapezium with parallel sides a and b and height h, and a second copy of it turned upside down and set alongside, the two together making a parallelogram of base a plus b and height h">
+      
+            <path class="dg-fill-a" d="M8 52 H56 L46 26 H22 Z"/>
+            <path class="dg-line"   d="M8 52 H56 L46 26 H22 Z"/>
+            <text class="dg-label dg-label--sm" x="32" y="60" text-anchor="middle">a</text>
+            <text class="dg-label dg-label--sm" x="34" y="22" text-anchor="middle">b</text>
+            <line class="dg-dim" x1="64" y1="26" x2="64" y2="52"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label dg-label--sm" x="69" y="42">h</text>
+      
+            <line class="dg-move" x1="78" y1="39" x2="90" y2="39" marker-end="url(#dg-arrow)"/>
+      
+            <path class="dg-fill-a" d="M108 52 H156 L146 26 H122 Z"/>
+            <path class="dg-fill-c" d="M146 26 H194 L180 52 H156 Z"/>
+            <path class="dg-line"   d="M108 52 H180 L194 26 H122 Z"/>
+            <path class="dg-thin"   d="M156 52 L146 26"/>
+            <line class="dg-dim" x1="108" y1="60" x2="180" y2="60"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="144" y="70" text-anchor="middle">a + b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.2</span> Two copies make a
+          parallelogram whose base is $a + b$ and whose height is still $h$. So one
+          trapezium is half of it.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
