@@ -151,7 +151,7 @@ node build/build.mjs class-9/ch04-algebraic-identities --pdf --png
 | `--pdf` | print to PDF through headless Chrome |
 | `--png` | render one PNG proof per page at 2×, for review |
 | `--bleed` | also emit the press sheet: 230 × 317 mm — the trim, 3 mm of bleed, and crop marks in a 7 mm slug |
-| `--book` | bind the whole class into one volume — continuous folios |
+| `--book` | bind each of the class's volumes — continuous folios within one |
 
 A bare class name (`class-9`) builds every chapter under it.
 
@@ -162,9 +162,15 @@ node build/build.mjs class-9 --book --pdf
 ```
 
 Chapters built separately each start at folio 1. `--book` binds them into
-`build/class-9/class-9-book.pdf`: chapters in number order, folios running
-straight through, and a blank verso wherever a chapter would otherwise open
-on a left-hand page.
+`build/class-9/class-9-mathematics-i-book.pdf`: chapters in number order,
+folios running straight through, and a blank verso wherever a chapter would
+otherwise open on a left-hand page.
+
+A volume, not a class. A class may hold two — class 8 is Mathematics I and
+Mathematics II — and each binds on its own, because each is printed on its
+own. Chapters are grouped by the `subject` in `chapter.json`, and a volume
+takes its title page from the cover whose title and part compose that
+subject: `Mathematics` and part 1 make *Mathematics I*.
 
 Each chapter keeps its own palette. A palette file sets `--teal`, `--rust`
 and `--gold` at `:root`, which is right for a chapter printed alone but would
