@@ -46,10 +46,15 @@
   };
 
   /* Rebuilt rather than merely enabled, so a reader never reads a subject
-     off a dropdown that cannot yet be acted on — and so a choice cannot
-     survive the class it belonged to being cleared. */
+     off a dropdown that cannot yet be acted on — and rebuilt back to the
+     prompt, so no choice survives the class it was made about.
+
+     A subject is a choice about a class. "Science" held over from Class 9
+     into Class 8 looks like the same choice when it is a different book,
+     and the list it was chosen from has been replaced underneath it. The
+     one place a subject is set on a class the reader did not just pick is
+     restore(), which sets it itself, after this. */
   function fillSubjects(cls) {
-    const keep = pickSubject.value;
     const list = cls ? subjectsOf(cls) : [];
     pickSubject.textContent = '';
 
@@ -67,7 +72,6 @@
     pickSubject.appendChild(option('', 'Choose a subject'));
     list.forEach((s) => pickSubject.appendChild(option(s, s)));
     pickSubject.disabled = false;
-    if (list.includes(keep)) pickSubject.value = keep;
   }
 
   function apply() {

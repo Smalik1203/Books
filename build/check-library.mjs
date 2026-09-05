@@ -158,30 +158,43 @@ const FIXTURE_SETS = `
     <a class="card">only science</a></section>
 `;
 
+/* The rows run in order and the chooser keeps its state between them,
+   which is what makes the reset row below mean anything. */
 const CASES = [
   ['no class chosen', ['', ''], {
     subjectDisabled: true, subjectOptions: ['Choose a class first'],
-    visible: [], prompt: true, empty: false }],
+    subjectValue: '', visible: [], prompt: true, empty: false }],
   ['class 9, no subject', ['class-9', ''], {
     subjectDisabled: false,
     subjectOptions: ['Choose a subject', 'Mathematics', 'Science'],
-    visible: [], prompt: true, empty: false }],
+    subjectValue: '', visible: [], prompt: true, empty: false }],
   ['class 9 + Mathematics', ['class-9', 'Mathematics'], {
     subjectDisabled: false,
     subjectOptions: ['Choose a subject', 'Mathematics', 'Science'],
+    subjectValue: 'Mathematics',
     visible: ['class-9/Mathematics', 'class-9/covers'], prompt: false, empty: false }],
   ['class 9 + Science (empty)', ['class-9', 'Science'], {
     subjectDisabled: false,
     subjectOptions: ['Choose a subject', 'Mathematics', 'Science'],
-    visible: [], prompt: false, empty: true }],
+    subjectValue: 'Science', visible: [], prompt: false, empty: true }],
+  /* Changing the class puts the subject back to the prompt. Science is
+     the subject to test it with, because both classes in the fixture
+     have one — a subject the new class does not offer would fall out of
+     the rebuilt list anyway and prove nothing. The row leaves the
+     subject alone (null) so that what is measured is what the chooser
+     did by itself. */
+  ['changing class clears the subject', ['class-8', null], {
+    subjectDisabled: false,
+    subjectOptions: ['Choose a subject', 'Science'],
+    subjectValue: '', visible: [], prompt: true, empty: false }],
   // the multi-class case: class 8 offers only the subject it actually has
   ['class 8 offers only Science', ['class-8', ''], {
     subjectDisabled: false,
     subjectOptions: ['Choose a subject', 'Science'],
-    visible: [], prompt: true, empty: false }],
+    subjectValue: '', visible: [], prompt: true, empty: false }],
   ['class 8 + Science', ['class-8', 'Science'], {
     subjectDisabled: false, subjectOptions: ['Choose a subject', 'Science'],
-    visible: ['class-8/Science'], prompt: false, empty: false }],
+    subjectValue: 'Science', visible: ['class-8/Science'], prompt: false, empty: false }],
 ];
 
 async function checkBehaviour() {
@@ -195,10 +208,13 @@ async function checkBehaviour() {
       ? s.dataset.class + '/covers' : s.dataset.class + '/' + s.dataset.subject;
     const out = ${JSON.stringify(CASES)}.map(([name, [c, s]]) => {
       cls.value = c; cls.dispatchEvent(new Event('change'));
-      sub.value = s; sub.dispatchEvent(new Event('change'));
+      // null is not a selection: setting the subject here would paint
+      // over the very thing the reset row is asking about.
+      if (s !== null) { sub.value = s; sub.dispatchEvent(new Event('change')); }
       return [name, {
         subjectDisabled: sub.disabled,
         subjectOptions: [...sub.options].map((o) => o.textContent),
+        subjectValue: sub.value,
         visible: [...document.querySelectorAll('.lib-set')].filter((x) => !x.hidden).map(label),
         prompt: !document.getElementById('lib-prompt').hidden,
         empty: !document.getElementById('lib-empty').hidden,
