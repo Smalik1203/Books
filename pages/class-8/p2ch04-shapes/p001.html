@@ -1,0 +1,105 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">4</div>
+    <h1 class="chapterhead__title">Taking a Shape Apart</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- A triangle made of three copies of itself, three times over.
+             Nothing is drawn left of x=108: the title box runs into this one. -->
+        <path class="dg-fill-a" fill-rule="evenodd"
+              d="M108 86 L180 86 L144 24 Z M144 86 L162 55 L126 55 Z M126 86 L135 70.5 L117 70.5 Z
+                 M117 86 L121.5 78.3 L112.5 78.3 Z M135 86 L139.5 78.3 L130.5 78.3 Z
+                 M126 70.5 L130.5 62.8 L121.5 62.8 Z M162 86 L171 70.5 L153 70.5 Z
+                 M153 86 L157.5 78.3 L148.5 78.3 Z M171 86 L175.5 78.3 L166.5 78.3 Z
+                 M162 70.5 L166.5 62.8 L157.5 62.8 Z M144 55 L153 39.5 L135 39.5 Z
+                 M135 55 L139.5 47.3 L130.5 47.3 Z M153 55 L157.5 47.3 L148.5 47.3 Z
+                 M144 39.5 L148.5 31.8 L139.5 31.8 Z"/>
+        <path class="dg-line" d="M108 86 L180 86 L144 24 Z"/>
+
+        <text class="dg-dim-label" x="144" y="100" text-anchor="middle">three copies of itself</text>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">4.1</span><span class="name">Introduction</span></h2>
+
+      <p>Look closely at a fern. A frond carries small leaves, and each leaf is shaped
+      like the frond; each leaf carries smaller leaflets, and each of those is shaped like
+      the leaf. The same form appears again at every scale, until the plant runs out of
+      room to keep going.</p>
+
+      <p>Trees do it — trunk, limb, branch, twig. So do clouds, coastlines, mountain
+      ridges and a fork of lightning. A shape built of smaller copies of itself is called
+      a <span class="term">fractal</span>, and the first half of this chapter is about
+      three of them that can be drawn exactly.</p>
+
+      <p>The second half is about solid shapes, and it is the same question turned round.
+      A fern is a shape you cannot draw in full because it never ends; a box is a shape
+      you cannot draw in full because paper is flat. Both are handled the same way — by
+      taking the shape apart into pieces you already understand, and reading it back from
+      them.</p>
+
+      <h2><span class="badge">4.2</span><span class="name">The Sierpiński Carpet</span></h2>
+
+      <p>The Polish mathematician Wacław Sierpiński described this one in 1916. Start
+      with a square. Divide it into nine equal squares and take the middle one away. Now
+      do the same to each of the eight squares that are left, and then to each of the
+      squares left after that, for ever.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three steps of the Sierpinski carpet: a full square, the same square with its middle ninth removed, and then with the middle of each remaining ninth removed too">
+      
+            <path class="dg-fill-a" d="M5 8 h54 v54 h-54 Z"/>
+            <path class="dg-line"   d="M5 8 h54 v54 h-54 Z"/>
+            <text class="dg-note" x="32" y="73" text-anchor="middle">Step 0</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M71 8 h54 v54 h-54 Z M89 26 h18 v18 h-18 Z"/>
+            <path class="dg-line"   d="M71 8 h54 v54 h-54 Z M89 26 h18 v18 h-18 Z"/>
+            <text class="dg-note" x="98" y="73" text-anchor="middle">Step 1</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M137 8 h54 v54 h-54 Z M155 26 h18 v18 h-18 Z
+                     M143 14 h6 v6 h-6 Z M161 14 h6 v6 h-6 Z M179 14 h6 v6 h-6 Z
+                     M143 32 h6 v6 h-6 Z M179 32 h6 v6 h-6 Z
+                     M143 50 h6 v6 h-6 Z M161 50 h6 v6 h-6 Z M179 50 h6 v6 h-6 Z"/>
+            <path class="dg-line"
+                  d="M137 8 h54 v54 h-54 Z M155 26 h18 v18 h-18 Z
+                     M143 14 h6 v6 h-6 Z M161 14 h6 v6 h-6 Z M179 14 h6 v6 h-6 Z
+                     M143 32 h6 v6 h-6 Z M179 32 h6 v6 h-6 Z
+                     M143 50 h6 v6 h-6 Z M161 50 h6 v6 h-6 Z M179 50 h6 v6 h-6 Z"/>
+            <text class="dg-note" x="164" y="73" text-anchor="middle">Step 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.1</span> The first three steps. Step 2
+          holds eight copies of Step 1, each a third of the size — which is what
+          self-similarity means when it is written down exactly.</figcaption>
+        </figure>
+      </div>
+
+      <p>Nobody can draw the carpet itself; every drawing is a step on the way to it. But
+      the steps can be counted, and counting them is where the mathematics is.</p>
+
+      <p>Write $R_n$ for the number of squares remaining at step $n$, and $H_n$ for the
+      number of holes. Every remaining square becomes eight remaining squares at the next
+      step, so</p>
+
+    </div>
+  </div>
+</section>

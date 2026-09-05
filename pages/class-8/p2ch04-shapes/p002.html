@@ -1,0 +1,72 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="eq eq--anchor">$$R_{n+1} = 8 R_n, \qquad\text{and since } R_0 = 1,
+      \qquad R_n = 8^{\,n}.$$</div>
+
+      <p>Holes are easier to miscount. Every remaining square makes exactly one new hole
+      at the next step, and every hole already there stays. So $H_{n+1} = H_n + R_n$, and
+      the holes pile up as a sum rather than a single power.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">step 0</span>
+          <span>$R_0 = 1$, &nbsp; $H_0 = 0$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">step 1</span>
+          <span>$R_1 = 8$, &nbsp; $H_1 = 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">step 2</span>
+          <span>$R_2 = 64$, &nbsp; $H_2 = 1 + 8 = 9$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">step 3</span>
+          <span>$R_3 = 512$, &nbsp; $H_3 = 1 + 8 + 64 = 73$</span>
+        </div>
+      </div>
+
+      <p>The more interesting quantity is how much paper is left. Take the first square's
+      area to be $1$. At each step the square is cut into nine and one ninth is thrown
+      away, so eight ninths of the area survives — and that happens at every step, to
+      whatever is left.</p>
+
+      <div class="eq">$$\text{area at step } n \;=\; \left(\frac89\right)^{\! n}.$$</div>
+
+      <p>That is Chapter 1's compounding, downwards: a fixed fraction of what remains
+      goes at every step. And it means the carpet has an area of nothing at all. Eight
+      ninths of eight ninths of eight ninths, taken for ever, shrinks below any figure
+      you care to name — at step $60$ it is under a thousandth, at step $120$ under a
+      millionth — while the eight-copies rule keeps the pattern visible however far you
+      look in.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A Sierpiński carpet is begun from a square of side $27$ cm. At step $3$, how
+          big is each remaining square, how many are there, and what area is left?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">side</span>
+              <span>divided by $3$ each step: $27 \to 9 \to 3 \to 1$ cm</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">how many</span>
+              <span>$R_3 = 8^3 = 512$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">area left</span>
+              <span>$512 \times 1 = 512$ cm<sup>2</sup></span>
+            </div>
+          </div>
+          <p>The formula agrees: $729 \times \left(\tfrac89\right)^3 = 729 \times
+          \tfrac{512}{729} = 512$. Counting the little squares and taking eight ninths
+          three times are the same calculation written two ways.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

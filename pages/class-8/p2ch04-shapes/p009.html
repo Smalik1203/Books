@@ -1,0 +1,64 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>So the shortest route belongs to the most balanced pair, which is what you get
+      by setting the longest dimension against the other two added together. That is
+      worth keeping: the winner can usually be named before any arithmetic is done.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Straight on the net, shortest on the box</div>
+        <p>A net makes the surface flat, and on a flat surface the straight line is
+        shortest. So every candidate is a straight line on <em>some</em> net, and an
+        impossible search among endless paths becomes a short list to compare.</p>
+        <p>Here the list has three entries and $\sqrt{193}$ wins: the most balanced
+        triangle, made by setting the longest dimension against the other two added
+        together.</p>
+      </div>
+
+      <p>It is worth seeing why the answer is not $12 + 4$, or $12 + 3$, or any of the
+      routes along the edges. Walking along edges is allowed but never wise: the ant is
+      free to cut across a face, and cutting the corner is exactly what the straight line
+      on the net does.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A box is $10$ cm by $5$ cm by $2$ cm. An ant crosses from one corner to the
+          opposite one. Which unfolding gives the shortest route?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$10$ and $5+2$</span>
+              <span>$\sqrt{100 + 49} = \sqrt{149} \approx 12.2$ cm</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$10+2$ and $5$</span>
+              <span>$\sqrt{144 + 25} = \sqrt{169} = 13$ cm</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$10+5$ and $2$</span>
+              <span>$\sqrt{225 + 4} = \sqrt{229} \approx 15.1$ cm</span>
+            </div>
+          </div>
+          <p>The first, at about $12.2$ cm — and the rule named it in advance. The two
+          short sides always add to $17$ here; $10$ and $7$ is the most balanced way of
+          splitting that, so it gives the shortest hypotenuse.</p>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.2</div>
+        <ol class="c-questions">
+          <li>How many faces, edges and vertices has each of these?
+              <ol class="c-parts c-parts--1">
+                <li>a pentagonal prism</li>
+                <li>a hexagonal pyramid</li>
+                <li>a prism whose ends have $12$ sides</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

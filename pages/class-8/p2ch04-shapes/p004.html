@@ -1,0 +1,74 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 198 76" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three steps of the Koch snowflake: a triangle, a six-pointed star, and a star with a bump on every one of its sides">
+      
+            <path class="dg-fill-a" d="M11 46.7 L55 46.7 L33 8.6 Z"/>
+            <path class="dg-line"   d="M11 46.7 L55 46.7 L33 8.6 Z"/>
+            <text class="dg-note" x="33" y="71" text-anchor="middle">Step 0</text>
+      
+            <path class="dg-fill-a" d="M77 46.7 L91.7 46.7 L99 59.4 L106.3 46.7 L121 46.7 L113.7 34 L121 21.3 L106.3 21.3 L99 8.6 L91.7 21.3 L77 21.3 L84.3 34 Z"/>
+            <path class="dg-line"   d="M77 46.7 L91.7 46.7 L99 59.4 L106.3 46.7 L121 46.7 L113.7 34 L121 21.3 L106.3 21.3 L99 8.6 L91.7 21.3 L77 21.3 L84.3 34 Z"/>
+            <text class="dg-note" x="99" y="71" text-anchor="middle">Step 1</text>
+      
+            <path class="dg-fill-a" d="M143 46.7 L147.9 46.7 L150.3 50.9 L152.8 46.7 L157.7 46.7 L160.1 50.9 L157.7 55.2 L162.6 55.2 L165 59.4 L167.4 55.2 L172.3 55.2 L169.9 50.9 L172.3 46.7 L177.2 46.7 L179.7 50.9 L182.1 46.7 L187 46.7 L184.6 42.5 L187 38.2 L182.1 38.2 L179.7 34 L182.1 29.8 L187 29.8 L184.6 25.5 L187 21.3 L182.1 21.3 L179.7 17.1 L177.2 21.3 L172.3 21.3 L169.9 17.1 L172.3 12.8 L167.4 12.8 L165 8.6 L162.6 12.8 L157.7 12.8 L160.1 17.1 L157.7 21.3 L152.8 21.3 L150.3 17.1 L147.9 21.3 L143 21.3 L145.4 25.5 L143 29.8 L147.9 29.8 L150.3 34 L147.9 38.2 L143 38.2 L145.4 42.5 Z"/>
+            <path class="dg-line"   d="M143 46.7 L147.9 46.7 L150.3 50.9 L152.8 46.7 L157.7 46.7 L160.1 50.9 L157.7 55.2 L162.6 55.2 L165 59.4 L167.4 55.2 L172.3 55.2 L169.9 50.9 L172.3 46.7 L177.2 46.7 L179.7 50.9 L182.1 46.7 L187 46.7 L184.6 42.5 L187 38.2 L182.1 38.2 L179.7 34 L182.1 29.8 L187 29.8 L184.6 25.5 L187 21.3 L182.1 21.3 L179.7 17.1 L177.2 21.3 L172.3 21.3 L169.9 17.1 L172.3 12.8 L167.4 12.8 L165 8.6 L162.6 12.8 L157.7 12.8 L160.1 17.1 L157.7 21.3 L152.8 21.3 L150.3 17.1 L147.9 21.3 L143 21.3 L145.4 25.5 L143 29.8 L147.9 29.8 L150.3 34 L147.9 38.2 L143 38.2 L145.4 42.5 Z"/>
+            <text class="dg-note" x="165" y="71" text-anchor="middle">Step 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.3</span> Step 1 is a six-pointed star.
+          Step 2 puts a bump on each of its twelve sides, giving forty-eight.</figcaption>
+        </figure>
+      </div>
+
+      <p>Each side becomes four sides a third as long. So if $S_n$ is the number of sides
+      and the first triangle has sides of length $1$,</p>
+
+      <div class="eq">$$S_n = 3 \times 4^{\,n}, \qquad
+      \text{perimeter} = 3 \times 4^{\,n} \times \frac{1}{3^{\,n}}
+      = 3 \left(\frac43\right)^{\! n}.$$</div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A Koch snowflake is begun from a triangle of side $9$ cm. How many sides has
+          it at step $2$, and what is its perimeter?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">sides</span>
+              <span>$3 \times 4^2 = 48$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">each side</span>
+              <span>$9 \div 3 \div 3 = 1$ cm</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">perimeter</span>
+              <span>$48 \times 1 = 48$ cm</span>
+            </div>
+          </div>
+          <p>It started at $27$ cm, so the perimeter is nearly twice what it was after
+          only two steps — and $27 \times \left(\tfrac43\right)^2 = 48$, as the formula
+          says.</p>
+        </div>
+      </div>
+
+      <p>Now look at what those two formulas say together, because it is one of the
+      strangest facts in school mathematics.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">An endless edge round a small patch</div>
+        <p>The perimeter is multiplied by $\tfrac43$ at every step, so it grows without
+        limit — past a hundred, past a million, past any number you name. The area does
+        not: every bump added is smaller than the last, and the whole snowflake fits
+        comfortably inside a circle drawn round the first triangle.</p>
+        <p>So the Koch snowflake has a boundary of infinite length enclosing a finite
+        area. You could never walk its edge; you could paint its inside with one tin.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

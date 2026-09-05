@@ -1,0 +1,64 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">4.3</span><span class="name">The Sierpiński Triangle</span></h2>
+
+      <p>The same idea with a triangle instead of a square. Take an equilateral triangle,
+      join the midpoints of its three sides, and remove the middle triangle that appears.
+      Three triangles are left, each half the size of the original; do the same to each of
+      them, and go on for ever.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 198 76" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three steps of the Sierpinski triangle: a full triangle, the same with its middle quarter removed, and then with the middle of each remaining quarter removed too">
+      
+            <path class="dg-fill-a" d="M5 56 L61 56 L33 8 Z"/>
+            <path class="dg-line"   d="M5 56 L61 56 L33 8 Z"/>
+            <text class="dg-note" x="33" y="71" text-anchor="middle">Step 0</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M71 56 L127 56 L99 8 Z M99 56 L113 32 L85 32 Z"/>
+            <path class="dg-line"   d="M71 56 L127 56 L99 8 Z M99 56 L113 32 L85 32 Z"/>
+            <text class="dg-note" x="99" y="71" text-anchor="middle">Step 1</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M137 56 L193 56 L165 8 Z M165 56 L179 32 L151 32 Z
+                     M151 56 L158 44 L144 44 Z M179 56 L186 44 L172 44 Z
+                     M165 32 L172 20 L158 20 Z"/>
+            <path class="dg-line"
+                  d="M137 56 L193 56 L165 8 Z M165 56 L179 32 L151 32 Z
+                     M151 56 L158 44 L144 44 Z M179 56 L186 44 L172 44 Z
+                     M165 32 L172 20 L158 20 Z"/>
+            <text class="dg-note" x="165" y="71" text-anchor="middle">Step 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.2</span> Three steps of the Sierpiński
+          triangle. Each step keeps three copies of the one before, at half the
+          size.</figcaption>
+        </figure>
+      </div>
+
+      <p>Why do the midpoints cut the triangle into four <em>identical</em> triangles?
+      Because each of the three corner pieces has two sides that are halves of the
+      original's sides and the same angle between them — so all three are copies of one
+      another, and the middle one, made of the three midpoint-joining segments, matches
+      them too.</p>
+
+      <p>The counting runs as before, with three where the carpet had eight. At step $n$
+      there are $3^{\,n}$ triangles left. And each step keeps three quarters of the area,
+      since one of four identical triangles goes.</p>
+
+      <div class="eq">$$\text{area at step } n \;=\; \left(\frac34\right)^{\! n}.$$</div>
+
+      <h2><span class="badge">4.4</span><span class="name">The Koch Snowflake</span></h2>
+
+      <p>Helge von Koch described this one in 1904, and it works the other way round: it
+      adds instead of taking away. Start again with an equilateral triangle. Divide every
+      side into three equal parts, build a small equilateral triangle outwards on the
+      middle part, and rub out the middle part itself. Each straight side has become a
+      bump with four sides. Then do the same to every one of the new sides.</p>
+
+    </div>
+  </div>
+</section>

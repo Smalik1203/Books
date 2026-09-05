@@ -1,0 +1,73 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Three quarters, five times</div>
+        <p>Every step keeps three quarters of the area, so five steps keep
+        $\left(\tfrac34\right)^5$ of it — not five times a quarter off, which is the slip
+        this question is watching for.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">area</span>
+            <span>$\left(\tfrac34\right)^5 = \dfrac{243}{1024}$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">as a decimal</span>
+            <span>about $0.24$</span>
+          </div>
+        </div>
+        <p>So about a quarter of the triangle is left — comfortably more than a tenth.
+        Compounding downwards is slower than it feels: five steps of losing a quarter
+        leave far more than nothing.</p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The cubes you cannot see</div>
+        <p>There are $3^3 = 27$ small cubes. A cube is hidden only if it touches no face
+        of the block, so peel one layer off every side: what is left is a
+        $1 \times 1 \times 1$ block in the middle.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">altogether</span>
+            <span>$3 \times 3 \times 3 = 27$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">hidden</span>
+            <span>$1 \times 1 \times 1 = 1$</span>
+          </div>
+        </div>
+        <p>Just one. For a $4 \times 4 \times 4$ block the same argument gives $2^3 = 8$
+        hidden, and for $n \times n \times n$ it gives $(n-2)^3$ — a formula that came
+        from peeling rather than from counting.</p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Six faces in three pairs</div>
+        <p>A cuboid's net is six rectangles, and they come in matching pairs — the two
+        ends, the two sides, the top and the bottom. So the surface area is twice the sum
+        of three different rectangles, and the net is really only three shapes drawn
+        twice.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">the three</span>
+            <span>$2 \times 3$, $\ 3 \times 4$, $\ 4 \times 2$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$2(6 + 12 + 8) = 52$ cm<sup>2</sup></span>
+          </div>
+        </div>
+        <p>That is Part I's formula $2(lb + bh + hl)$, and drawing the net is where it
+        comes from. Anyone who has laid the six rectangles out flat never has to remember
+        the formula again.</p>
+        <p>The net also answers a question the formula cannot: how big a sheet of card is
+        needed to make the box. That is not $52$ cm<sup>2</sup>, because the six
+        rectangles have to be cut from one piece and the corners of the sheet go to
+        waste. How much waste depends on which of the nets you choose, which is a good
+        reason for a packaging designer to know all of them.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
