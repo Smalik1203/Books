@@ -588,14 +588,23 @@ It could be otherwise — the back palette could move to `.jacket` and leave
 directions owning the front alone — but a shared block would have to sit either
 before the finishes, where a finish would then repaint the back, or after them,
 where it would stop a finish repainting anything. Each direction is
-self-contained for that reason, and a new one repeats the back's six tokens
-rather than inventing any: `comb`, Class 8's front, is the worked example.
+self-contained for that reason.
 
-**The back panel is the same in every book, and a direction is how you change
-only the front.** `comb` floods the panel with a deep green and runs a
-hexagonal comb off three edges where `arc` floats discs on cream, but it
-repeats arc's ground, deep and spine values exactly, so the back and the shelf
-edge still line up across the series.
+**The back panel's content is the series'; its colour is the direction's.**
+The blurb, the four claims and the foot are the same in every book — they live
+in `covers/<class>/_shared/` and are quoted, not copied. What changes with the
+direction is the palette they are set in, and it changes without a line of
+markup, because every rule on that panel reads a token. The only colours
+written down there are three `#ffffff`: the icon glyphs, and the two white
+tiles the QR and the barcode need on any ground.
+
+`comb`, Class 8's, is the worked example. It floods the front with a deep green
+where `arc` has cream, and takes the same green for the back's deep half and
+for the spine, so the colour runs from the front round the shelf edge and into
+the foot of the back, leaving the back's upper half as the one light area —
+which is where the words are. Arc's spine rule reasons that the spine should
+read as part of the front rather than as a strip of the back; comb applies the
+same reasoning to a dark front and arrives at the opposite panel.
 
 `node build/cover-swatch.mjs <direction>` lays every candidate colourway on one
 sheet at the same size in the real stylesheet. Comparing covers one build at a

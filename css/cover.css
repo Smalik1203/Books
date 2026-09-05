@@ -1240,47 +1240,52 @@ body.bleed .jacket {
    Class 8's front, and the first direction written for a volume
    other than Class 9.
 
-   The back and the spine are deliberately Class 9's: the back
-   panel is the same in every book of the series, so the ground
-   and deep tokens below are arc's values repeated rather than
-   new ones. They are repeated and not lifted into .jacket
-   because arc sets them in order to beat the finish blocks, and
-   a shared block would have to sit either side of those and
-   would break one of the two. Every direction here is
-   self-contained for the same reason.
+   The back panel's *content* is the series' and does not change
+   from book to book — the same blurb, the same four claims, the
+   same foot. Its colour is not: it takes this direction's
+   palette, so the green runs from the front, over the spine and
+   round into the back's deep half, and the one light area left
+   is the back's upper half, which is where the words are. Every
+   rule on that panel reads a token, so this needs no markup of
+   its own: only #ffffff is written down there, for the icon
+   glyphs and the two white tiles the QR and the barcode need on
+   any ground.
 
-   What is new is the front. Arc floats three translucent discs
-   and labelled figures on cream; this floods the panel with a
-   deep green and runs a hexagonal comb off three edges, so the
-   ornament is a tiling rather than a cluster — one of the three
-   regular polygons that fill a plane, which is a Class 8 result
-   and not a decoration borrowed from anywhere.
+   The front is where the direction earns its name. Arc floats
+   three translucent discs and labelled figures on cream; this
+   floods the panel and runs a hexagonal comb off three edges,
+   so the ornament is a tiling rather than a cluster — one of the
+   three regular polygons that fill a plane, which is a Class 8
+   result and not a decoration borrowed from anywhere.
    ============================================================ */
 .jacket--comb {
   --jk-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
 
-  --jk-navy:      #263a63;
-  --jk-navy-deep: #1a2745;
-  --jk-navy-soft: #8f9ab4;
-  --jk-terra:     #e8705f;
-  --jk-sage:      #8f96ae;
-  --jk-gold:      #d9a05b;
-  --jk-cream:     #fbf1ec;
+  /* the four working colours the back and spine are built from:
+     green carries the identity where arc has navy, and coral
+     stays the one accent so the series still rhymes */
+  --jk-navy:      #0f3b35;
+  --jk-navy-deep: #0a2a26;
+  --jk-navy-soft: #7fa79b;
+  --jk-terra:     #f07a5f;
+  --jk-sage:      #7fa79b;
+  --jk-gold:      #e9a13c;
+  --jk-cream:     #f5efe1;
 
-  /* the back's light half — the series' own, unchanged */
-  --jk-ground:      #fbf1ec;
-  --jk-ground-ink:  #263a63;
-  --jk-ground-soft: #6b7490;
-  --jk-ground-rule: #e6d5cd;
-  --jk-ground-accent: #e8705f;
+  /* the back's light half — the clearing the blurb sits in */
+  --jk-ground:      #f5efe1;
+  --jk-ground-ink:  #0f3b35;
+  --jk-ground-soft: #5d7a72;
+  --jk-ground-rule: #ddd5c2;
+  --jk-ground-accent: #f07a5f;
   --jk-ground-art:  none;
 
-  /* the back's dark half, below the curve — likewise */
-  --jk-deep:        #3a2140;
-  --jk-deep-ink:    #f7ece8;
-  --jk-deep-soft:   #c3aec0;
+  /* the back's deep half, below the curve — the front's own
+     green, so the wrap is one colour bent round a spine */
+  --jk-deep:        #0f3b35;
+  --jk-deep-ink:    #f6efe1;
+  --jk-deep-soft:   #9dc0b4;
 
-  /* the front, and this is the part that is new */
   --jk-front:        #0f3b35;
   --jk-front-ink:    #f6efe1;
   --jk-front-soft:   #9dc0b4;
@@ -1342,17 +1347,20 @@ body.bleed .jacket {
 .comb-hero  { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.55; opacity: 0.85; }
 
 /* ---- spine ------------------------------------------------
-   Unchanged from arc: the spine is what a shelf shows, and the
-   series is meant to line up there. */
-.jacket--comb .jacket__spine { background: var(--jk-cream); color: var(--jk-navy); }
+   Arc's spine takes the light half so that it reads as part of
+   the front on a shelf rather than as a strip of the back. The
+   reasoning is the same here and the answer is the other one:
+   comb's front is the dark panel, so the spine goes green with
+   it, and the green runs unbroken from the front round to the
+   back's deep half. */
+.jacket--comb .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
 .jacket--comb .spine__mark,
 .jacket--comb .spine__title,
-.jacket--comb .spine__class-num { color: var(--jk-navy); }
+.jacket--comb .spine__badge-num { color: var(--jk-front-ink); }
 .jacket--comb .spine__mark { font-weight: 700; }
 .jacket--comb .spine__title { font-weight: 700; letter-spacing: 0.14em; }
-.jacket--comb .spine__tick { background: var(--jk-terra); width: 6mm; height: 0.5mm; }
-.jacket--comb .spine__badge { border-color: var(--jk-terra); }
+.jacket--comb .spine__tick { background: var(--jk-front-accent); width: 6mm; height: 0.5mm; }
+.jacket--comb .spine__badge { border-color: var(--jk-front-label); }
 .jacket--comb .spine__badge .jk-label,
-.jacket--comb .spine__class .jk-label { color: var(--jk-terra); }
-.jacket--comb .spine__badge-num { color: var(--jk-navy); }
-.jacket--comb .spine__class-num { color: var(--jk-terra); font-weight: 700; }
+.jacket--comb .spine__class .jk-label { color: var(--jk-front-label); }
+.jacket--comb .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
