@@ -223,6 +223,12 @@ builder too — and each group binds on its own, into
 even where a class has one, so the path does not change shape on the day a
 second one lands.
 
+Both volumes live under `pages/class-8/`, and both restart at Chapter 1, so
+the directory carries the volume: `p2ch01-percentages` beside
+`ch01-square-and-cube`. Nothing parses a directory name for a number — the
+builder reads `chapter.json` and nothing else — so the prefix is free, and
+it sorts the second volume after the first.
+
 A volume finds its title page by composing the same name from a cover: a
 cover's `title` and `part` make *Mathematics* + 1 = **Mathematics I**. No
 match, no title page — a volume stamped with the other volume's part
