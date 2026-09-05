@@ -1234,3 +1234,125 @@ body.bleed .jacket {
 .jacket--arc .spine__class .jk-label { color: var(--jk-terra); }
 .jacket--arc .spine__badge-num { color: var(--jk-navy); }
 .jacket--arc .spine__class-num { color: var(--jk-terra); font-weight: 700; }
+
+/* ============================================================
+   DIRECTION — comb
+   Class 8's front, and the first direction written for a volume
+   other than Class 9.
+
+   The back and the spine are deliberately Class 9's: the back
+   panel is the same in every book of the series, so the ground
+   and deep tokens below are arc's values repeated rather than
+   new ones. They are repeated and not lifted into .jacket
+   because arc sets them in order to beat the finish blocks, and
+   a shared block would have to sit either side of those and
+   would break one of the two. Every direction here is
+   self-contained for the same reason.
+
+   What is new is the front. Arc floats three translucent discs
+   and labelled figures on cream; this floods the panel with a
+   deep green and runs a hexagonal comb off three edges, so the
+   ornament is a tiling rather than a cluster — one of the three
+   regular polygons that fill a plane, which is a Class 8 result
+   and not a decoration borrowed from anywhere.
+   ============================================================ */
+.jacket--comb {
+  --jk-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #263a63;
+  --jk-navy-deep: #1a2745;
+  --jk-navy-soft: #8f9ab4;
+  --jk-terra:     #e8705f;
+  --jk-sage:      #8f96ae;
+  --jk-gold:      #d9a05b;
+  --jk-cream:     #fbf1ec;
+
+  /* the back's light half — the series' own, unchanged */
+  --jk-ground:      #fbf1ec;
+  --jk-ground-ink:  #263a63;
+  --jk-ground-soft: #6b7490;
+  --jk-ground-rule: #e6d5cd;
+  --jk-ground-accent: #e8705f;
+  --jk-ground-art:  none;
+
+  /* the back's dark half, below the curve — likewise */
+  --jk-deep:        #3a2140;
+  --jk-deep-ink:    #f7ece8;
+  --jk-deep-soft:   #c3aec0;
+
+  /* the front, and this is the part that is new */
+  --jk-front:        #0f3b35;
+  --jk-front-ink:    #f6efe1;
+  --jk-front-soft:   #9dc0b4;
+  --jk-front-mark:   #e9a13c;
+  --jk-front-accent: #f07a5f;
+  --jk-front-label:  #e9a13c;
+}
+.jacket--comb { font-family: var(--jk-display); }
+
+/* ---- front type ------------------------------------------- */
+.jacket--comb .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.125); }
+.jacket--comb .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.42);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.jacket--comb .front__subtitle {
+  font-family: var(--font-body);
+  font-weight: var(--weight-text);
+  margin: 5mm 0 0;
+}
+.jacket--comb .wordmark { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--comb .classmark { border-left-width: 0.5mm; }
+.jacket--comb .classmark__num { font-weight: 700; }
+
+.comb-rule {
+  display: block;
+  width: 26mm; height: 0.9mm;
+  background: var(--jk-front-accent);
+  margin: 5mm 0 0;
+}
+.comb-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: var(--jk-front-ink);
+  margin: 0;
+}
+.comb-strap span { color: var(--jk-front-accent); }
+
+/* ---- the comb --------------------------------------------
+   Cells are one path in a defs and a <use> apiece, so a cell
+   that moves moves once. The line is the ink at low opacity,
+   which is what keeps the field behind the type rather than
+   in front of it. */
+.comb-line  { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.4; opacity: 0.26; }
+.comb-cell--gold  { fill: #e9a13c; opacity: 0.82; }
+.comb-cell--coral { fill: #f07a5f; opacity: 0.82; }
+.comb-cell--pale  { fill: #f6efe1; opacity: 0.13; }
+.comb-cell--deep  { fill: #0a2a26; opacity: 0.5; }
+.comb-hero  { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.55; opacity: 0.85; }
+
+/* ---- spine ------------------------------------------------
+   Unchanged from arc: the spine is what a shelf shows, and the
+   series is meant to line up there. */
+.jacket--comb .jacket__spine { background: var(--jk-cream); color: var(--jk-navy); }
+.jacket--comb .spine__mark,
+.jacket--comb .spine__title,
+.jacket--comb .spine__class-num { color: var(--jk-navy); }
+.jacket--comb .spine__mark { font-weight: 700; }
+.jacket--comb .spine__title { font-weight: 700; letter-spacing: 0.14em; }
+.jacket--comb .spine__tick { background: var(--jk-terra); width: 6mm; height: 0.5mm; }
+.jacket--comb .spine__badge { border-color: var(--jk-terra); }
+.jacket--comb .spine__badge .jk-label,
+.jacket--comb .spine__class .jk-label { color: var(--jk-terra); }
+.jacket--comb .spine__badge-num { color: var(--jk-navy); }
+.jacket--comb .spine__class-num { color: var(--jk-terra); font-weight: 700; }

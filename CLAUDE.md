@@ -254,8 +254,18 @@ files, in back-spine-front order, and they live in `covers/<class>/_shared/`
 so several covers share one blurb — a blurb edited in three places is a blurb
 that will differ. `direction` and `finish` become classes on the wrap:
 a **direction** brings its own display face, artwork and front arrangement
-(`arc` is the current one); a **finish** only repaints, through the token
-contract at the top of `css/cover.css`.
+(`grid`, `lattice`, `curve`, `arc` for Class 9 and `comb` for Class 8); a
+**finish** only repaints, through the token contract at the top of
+`css/cover.css`.
+
+**A direction currently swallows the finish, so `finish` is inert on one.**
+Every direction block sets the same tokens the finish blocks set and comes
+later in `cover.css`, so it wins the cascade at equal specificity: `night`,
+`solar`, `cobalt` and `vivid` all render a byte-identical proof of an `arc`
+cover. That is why Class 9 declares `night` and gets arc's palette anyway,
+and why Class 8 declares no finish at all. `cover-swatch.mjs` is unaffected
+because it injects `--jk-front-*` of its own. Colour on a cover is a
+direction's business until someone decides otherwise.
 
 The spine width, the EAN-13 and the ISBN check digit are computed, not typed —
 see §7b of DESIGN.md. `--bleed` refuses to write a press sheet while the QR is
