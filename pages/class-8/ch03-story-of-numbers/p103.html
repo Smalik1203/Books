@@ -1,0 +1,84 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+        </div>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Digits in a numeral, symbols in a system</div>
+        <p>
+          Two different counts, and the question was really about telling them apart.
+        </p>
+        <p>
+          <em>How many digits does $1000$ need in base $7$?</em> Find the largest
+          landmark that fits. The powers of seven are $1, 7, 49, 343, 2401$, and $343$
+          fits while $2401$ does not — so the numeral runs from the $343$ place down to
+          the units, which is four places.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$1000$</span>
+            <span>$= 2 \times 343 + 6 \times 49 + 2 \times 7 + 6$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$2626$ in base $7$</span>
+            <span class="chip">4 digits</span>
+          </div>
+        </div>
+        <p>
+          <em>How many symbols does the system need?</em> Seven — the digits $0$ to $6$.
+          A place can hold anything from none of its landmark up to six of them, and
+          seven would become one of the next landmark instead.
+        </p>
+        <p>
+          So the first number counts <em>places in one numeral</em> and grows as the
+          number grows; the second counts <em>symbols in the alphabet</em> and never
+          changes at all. Confusing them is the commonest error with bases, and the
+          Egyptians' problem was exactly that their second number grew too.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Two thousand and twenty-five in twos</div>
+        <p>
+          Divide by $2$ repeatedly and keep the remainders, reading them upwards at the
+          end.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$2025$</span>
+            <span>$= 1024 + 512 + 256 + 128 + 64 + 32 + 8 + 1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">in base 2</span>
+            <span>$11111101001$</span>
+            <span class="chip">11 digits</span>
+          </div>
+        </div>
+        <p>
+          For a number near a million, do not convert — estimate. Chapter 2 gave us
+          $2^{10} \approx 10^3$, so $2^{20} \approx 10^6$: a million needs about twenty
+          binary digits. The true answer is exactly twenty, and it was got without
+          dividing anything.
+        </p>
+      </div>
+
+      <p>
+        Those twenty binary digits are worth a moment. A computer stores a number as a
+        row of switches, each on or off, and twenty switches is what it takes to count
+        to a million. Sixty-four of them — the size of a modern machine's word — reach
+        past $10^{19}$, which is the chessboard of grain from the last chapter. That is
+        the whole reason base two is the base of computing: it is the only base whose
+        digits a piece of wire can hold.
+      </p>
+
+    </div>
+  </div>
+</section>
