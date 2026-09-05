@@ -1,0 +1,93 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>How many triangles? One for each side of the polygon except the two that meet
+      at the chosen vertex, so $n - 2$ of them. Each carries $180^\circ$.</p>
+
+      <div class="eq eq--anchor">$$\text{angle sum of an } n\text{-gon} = (n-2) \times 180^\circ$$</div>
+
+      <p>Check it against what you already know. A triangle gives $(3-2) \times 180^\circ
+      = 180^\circ$, which is the fact we started from; a quadrilateral gives
+      $2 \times 180^\circ = 360^\circ$, which is the last section.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">triangle</span>
+          <span>$180^\circ$</span><span class="work__label work__label--wide">heptagon</span>
+          <span>$900^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">quadrilateral</span>
+          <span>$360^\circ$</span><span class="work__label work__label--wide">octagon</span>
+          <span>$1080^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">pentagon</span>
+          <span>$540^\circ$</span><span class="work__label work__label--wide">nonagon</span>
+          <span>$1260^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">hexagon</span>
+          <span>$720^\circ$</span><span class="work__label work__label--wide">decagon</span>
+          <span>$1440^\circ$</span>
+        </div>
+      </div>
+
+      <p>Every entry is $180^\circ$ more than the one above it, which is the formula seen
+      from another side: adding a side adds a triangle.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Three angles of a quadrilateral are $85^\circ$, $110^\circ$ and $47^\circ$.
+          Find the fourth.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">the four add to</span>
+              <span>$360^\circ$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">three of them</span>
+              <span>$85 + 110 + 47 = 242$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">fourth</span>
+              <span>$360^\circ - 242^\circ = 118^\circ$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>The formula runs backwards just as readily. If you are told the angle sum, you
+      can find the number of sides, because $(n-2) \times 180^\circ$ has only one $n$
+      that fits.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The interior angles of a polygon add to $1440^\circ$. How many sides has
+          it?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">set up</span>
+              <span>$(n-2) \times 180 = 1440$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">divide</span>
+              <span>$n - 2 = 8$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">so</span>
+              <span>$n = 10$, a decagon</span>
+            </div>
+          </div>
+          <p>The division must come out exactly. An angle sum of $1500^\circ$ would give
+          $n - 2 = 8\tfrac13$, and no polygon has $10\tfrac13$ sides — so a figure with
+          that angle sum does not exist, and saying so is the whole answer.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

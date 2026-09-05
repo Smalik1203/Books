@@ -1,0 +1,79 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>5.2.2 Diagonals</h3>
+
+      <p>A <span class="term">diagonal</span> is a segment joining two vertices that are
+      not next to each other. A triangle has none, because every pair of its vertices is
+      already joined by a side. A quadrilateral has two, and they are the reason this
+      chapter works at all: draw one diagonal and a quadrilateral becomes two
+      triangles.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 82" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle with no diagonals, a quadrilateral with two, and a pentagon with five">
+      
+            <path class="dg-line" d="M14 68 L34 20 L58 68 Z"/>
+            <text class="dg-note" x="36" y="80" text-anchor="middle">none</text>
+      
+            <path class="dg-line" d="M78 66 L86 24 L128 20 L134 62 Z"/>
+            <path class="dg-thin" d="M78 66 L128 20 M86 24 L134 62"/>
+            <text class="dg-note" x="106" y="80" text-anchor="middle">two</text>
+      
+            <path class="dg-line" d="M166 14 L192 34 L182 66 L150 66 L140 34 Z"/>
+            <path class="dg-thin" d="M166 14 L182 66 M166 14 L150 66
+                                     M192 34 L150 66 M192 34 L140 34
+                                     M182 66 L140 34"/>
+            <text class="dg-note" x="166" y="80" text-anchor="middle">five</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.2</span> The diagonals of a triangle, a
+          quadrilateral and a pentagon. Each new vertex can be joined to every vertex but
+          itself and its two neighbours.</figcaption>
+        </figure>
+      </div>
+
+      <p>Counting them is a piece of Chapter 2's arithmetic. Each of the $n$ vertices can
+      be joined to $n - 3$ others — every vertex except itself and the two beside it —
+      which gives $n(n-3)$ joins. But each diagonal has been counted at both ends, so
+      halve it.</p>
+
+      <div class="eq">$$\text{number of diagonals} = \frac{n(n-3)}{2}$$</div>
+
+      <p>For a quadrilateral that is $\dfrac{4 \times 1}{2} = 2$, and for a pentagon
+      $\dfrac{5 \times 2}{2} = 5$, which is what Fig. 5.2 shows. A twenty-sided figure
+      has $170$ of them, which is worth knowing before you try to draw one.</p>
+
+      <h3>5.2.3 Regular polygons</h3>
+
+      <p>A polygon is <span class="term">regular</span> when all its sides are equal
+      <em>and</em> all its angles are equal. Both conditions are needed, and it is easy
+      to believe otherwise. A rhombus has four equal sides and is not regular; a
+      rectangle has four equal angles and is not regular. Only when a quadrilateral has
+      both is it a square.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.1</div>
+        <ol class="c-questions">
+          <li>Name the polygon with each number of sides.
+              <ol class="c-parts c-parts--4">
+                <li>$6$</li>
+                <li>$8$</li>
+                <li>$5$</li>
+                <li>$10$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>How many vertices has a heptagon? How many sides has a figure with
+              fourteen vertices?</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

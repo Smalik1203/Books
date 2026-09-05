@@ -1,0 +1,60 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The diagonal that still works</div>
+        <p>
+          A concave quadrilateral has one vertex whose angle is more than $180^\circ$.
+          The diagonal joining the other two vertices falls outside the figure, and the
+          proof cannot use it. But a quadrilateral has two diagonals, and the other one —
+          the one from the reflex vertex to the vertex opposite — lies inside.
+        </p>
+        <p>
+          Use that one. It cuts the figure into two triangles exactly as before, the
+          reflex angle is divided into two pieces by it, and the angles of the two
+          triangles are once again precisely the four angles of the quadrilateral.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">two triangles</span>
+            <span>$180^\circ + 180^\circ = 360^\circ$</span>
+          </div>
+        </div>
+        <p>
+          Nothing else changes. What the concave case shows is that the proof needed
+          <em>a</em> diagonal inside the figure, not any particular one — and every
+          quadrilateral, concave or not, has at least one.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Bisecting diagonals, read backwards</div>
+        <p>
+          Let the diagonals of $ABCD$ meet at $O$ with $AO = OC$ and $BO = OD$. Compare
+          triangles $AOB$ and $COD$.
+        </p>
+        <div class="work work--list">
+          <div class="work__row">
+            <span class="work__label work__label--wide">sides</span>
+            <span>$AO = OC$ and $BO = OD$, given</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">angle between</span>
+            <span>$\angle AOB = \angle COD$, vertically opposite</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>the triangles are congruent</span>
+          </div>
+        </div>
+        <p>
+          That gives $\angle OAB = \angle OCD$ — alternate angles equal, so $AB$ is
+          parallel to $CD$. The same argument on triangles $BOC$ and $DOA$ makes $BC$
+          parallel to $AD$, and the figure is a parallelogram.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

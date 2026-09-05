@@ -1,0 +1,74 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Which shapes fill a floor</div>
+        <p>
+          Copies meeting at a point fill it when a whole number of interior angles come
+          to $360^\circ$ — so the interior angle must divide $360^\circ$ exactly. Run
+          through the regular polygons and read off the angles.
+        </p>
+        <div class="work work--list">
+          <div class="work__row">
+            <span class="work__label work__label--wide">triangle</span>
+            <span>$60^\circ$, six of them</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">square</span>
+            <span>$90^\circ$, four of them</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">pentagon</span>
+            <span>$108^\circ$ — does not divide $360$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">hexagon</span>
+            <span>$120^\circ$, three of them</span>
+          </div>
+        </div>
+        <p>
+          Past the hexagon the interior angle is bigger than $120^\circ$, so only two
+          copies would fit and two are never enough to close a point. The list therefore
+          stops at three: triangle, square, hexagon. That is why floor tiles and
+          honeycombs look the way they do.
+        </p>
+        <p>
+          For a mixed pair, the angles need only add to $360^\circ$ between them. A
+          regular octagon has $135^\circ$, and two octagons with one square give
+          $135 + 135 + 90 = 360$ — the pattern on a great many bathroom floors.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">When the angle is a whole number</div>
+        <p>
+          Each interior angle is $180^\circ - \dfrac{360^\circ}{n}$. The $180$ is already
+          whole, so the whole question is when $\dfrac{360}{n}$ is — that is, when $n$
+          divides $360$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$360$</span>
+            <span>$= 2^3 \times 3^2 \times 5$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">divisors</span>
+            <span>$4 \times 3 \times 2 = 24$ of them</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">drop $n = 1, 2$</span>
+            <span>$22$ values</span>
+          </div>
+        </div>
+        <p>
+          The count of divisors comes from Chapter 2: each prime can appear from none of
+          it up to all of it, which is $3+1$ choices for the $2$s, $2+1$ for the $3$s and
+          $1+1$ for the $5$. Only $n = 1$ and $n = 2$ have to go, since no polygon has
+          fewer than three sides.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

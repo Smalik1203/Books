@@ -1,0 +1,74 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-try">
+        <p>A quadrilateral's diagonals bisect each other. Prove that it must be a
+        parallelogram — the chapter proved this the other way round.</p>
+      </div>
+
+      <div class="c-try">
+        <p>Copies of one regular polygon are laid round a point with no gaps and no
+        overlaps. Only three polygons can do it. Find them, and then find a pair of
+        <em>different</em> regular polygons that can do it together.</p>
+      </div>
+
+      <div class="c-try">
+        <p>For how many values of $n$ is each interior angle of a regular $n$-gon a whole
+        number of degrees?</p>
+      </div>
+
+      <p>
+        The fourth and fifth questions are the two that catch people out, and for
+        opposite reasons. The fourth looks as though both halves must have the same
+        answer, and they do not. The fifth looks as though the proof has broken, and it
+        has not — one diagonal fails, and a quadrilateral has two.
+      </p>
+
+      <p>
+        For the rest, the habit worth forming is to ask which of the two angle sums makes
+        the question easier. The interior sum grows with $n$ and is the one to use when
+        you are told a total. The exterior sum is fixed at $360^\circ$, so it is the one
+        to use when you are told about a single angle of a regular figure, or when you
+        need to know whether a figure can exist at all.
+      </p>
+
+      <p>
+        The last question has a short answer and a long way of reaching it. If you find
+        yourself testing values of $n$ one at a time, stop and write down what has to
+        divide what.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+        </div>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The interior sum, without the interior formula</div>
+        <p>
+          At every vertex the two angles add to $180^\circ$, so a $20$-gon's forty
+          angles come to $20 \times 180^\circ$ altogether.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">all the angles</span>
+            <span>$20 \times 180^\circ = 3600^\circ$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">less the outside</span>
+            <span>$3600^\circ - 360^\circ = 3240^\circ$</span>
+          </div>
+        </div>
+        <p>
+          With $n$ for $20$ that reads $180n - 360 = (n-2) \times 180$ — the chapter's
+          formula again, proved without a single diagonal.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
