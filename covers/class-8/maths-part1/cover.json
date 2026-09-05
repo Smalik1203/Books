@@ -1,0 +1,17 @@
+{
+  "title": "Mathematics",
+  "subtitle": "Textbook for Class VIII",
+  "class": "8",
+  "part": "1",
+  "imprint": "ClassBridge",
+  "copyright": "ClassBridge",
+  "year": 2026,
+  "edition_statement": "First edition, 2026.",
+  "isbn": "978-93-00000-01-9",
+  "url": "classbridge.in",
+  "_jacket": "There is no jacket yet, and that is deliberate. This file exists first because build.mjs reads the volume's title page, contents and imprint out of it — bookMeta() looks for covers/<class>/*/cover.json — so without it a --book run concatenates the chapters with no front matter at all. The wrap itself comes last, when the seven chapters are written: a spine is bulk, so a jacket built against a guessed extent would go to press wrong. Until then this cover shows in the library as not built, which is what it is. Adding it means adding finish, direction, content, qr and the panels under covers/class-8/_shared/.",
+  "_spine": "pages is an estimate — seven chapters at about forty pages each, plus three of front matter, rounded up to a multiple of four. It is here so the studio computes a spine rather than falling back to 16mm, and it is not to be trusted: re-derive the count from a --book run and correct it before the jacket is drawn. 0.106mm is the caliper of the 80gsm bookwove Class 9 is printed on, and 0.5mm is the cover board.",
+  "pages": 288,
+  "paperCaliper": 0.106,
+  "caseAllowance": 0.5
+}

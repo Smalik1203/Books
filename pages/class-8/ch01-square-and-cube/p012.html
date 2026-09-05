@@ -1,0 +1,70 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Is $324$ a perfect square? If so, what is its square root?</p>
+          <p>Break it into primes by dividing repeatedly.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$324$</span>
+              <span>$= 2 \times 2 \times 3 \times 3 \times 3 \times 3$</span>
+            </div>
+          </div>
+          <p>Now pair them off: $(2 \times 2)$ and $(3 \times 3)$ and $(3 \times 3)$.
+          Every prime is used an even number of times, so $324$ is a perfect square, and
+          the two identical piles are</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$324$</span>
+              <span>$= (2 \times 3 \times 3) \times (2 \times 3 \times 3) = 18^2$</span>
+              <span class="chip">$\sqrt{324} = 18$</span>
+            </div>
+          </div>
+          <p>Notice that the method hands over the root as part of the answer. Take one
+          member from each pair and multiply: $2 \times 3 \times 3 = 18$.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Is $156$ a perfect square?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$156$</span>
+              <span>$= 2 \times 2 \times 3 \times 13$</span>
+            </div>
+          </div>
+          <p>The two $2$s pair, but $3$ and $13$ are each alone. There is no way to split
+          these four primes into two identical piles, so $156$ is not a perfect
+          square.</p>
+          <p>The last digit would not have caught this one: $156$ ends in $6$, which is a
+          perfectly respectable ending for a square. The factorisation settles it.</p>
+        </div>
+      </div>
+
+      <p>The unpaired primes are worth staring at, because they say exactly what is
+      missing. In $156$ the strays are $3$ and $13$; multiply by $3 \times 13 = 39$ and
+      the result, $6084$, is a square — it is $78^2$. That turns a test into a
+      construction.</p>
+
+      <p>It is worth being clear about why this third method displaces the other two
+      rather than sitting beside them. Listing and subtracting both do work proportional
+      to the size of the number: testing a six-digit number by subtraction takes about a
+      thousand subtractions. Factorising does work proportional to the size of the
+      <em>factors</em>, which is a different and usually much smaller thing — and it
+      answers questions the other two cannot answer at all, as the next two examples
+      show.</p>
+
+      <p>There is also a habit here that will serve you long after this chapter. Neither
+      example below is solved by remembering a procedure. Both are solved by writing the
+      number in a form where the answer is visible — and choosing that form is the whole
+      of the work. A number written as $9408$ tells you nothing; the same number written
+      as $2^6 \times 3 \times 7^2$ tells you everything the question was asking.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,112 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">1</div>
+    <h1 class="chapterhead__title">The Shape of a Number</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- sixteen dots in a square: the number that is a square figure -->
+        <g class="dg-fill-c">
+          <circle cx="30" cy="34" r="3.4"/><circle cx="44" cy="34" r="3.4"/>
+          <circle cx="58" cy="34" r="3.4"/><circle cx="72" cy="34" r="3.4"/>
+          <circle cx="30" cy="48" r="3.4"/><circle cx="44" cy="48" r="3.4"/>
+          <circle cx="58" cy="48" r="3.4"/><circle cx="72" cy="48" r="3.4"/>
+          <circle cx="30" cy="62" r="3.4"/><circle cx="44" cy="62" r="3.4"/>
+          <circle cx="58" cy="62" r="3.4"/><circle cx="72" cy="62" r="3.4"/>
+          <circle cx="30" cy="76" r="3.4"/><circle cx="44" cy="76" r="3.4"/>
+          <circle cx="58" cy="76" r="3.4"/><circle cx="72" cy="76" r="3.4"/>
+        </g>
+        <g class="dg-ghost">
+          <rect x="23" y="27" width="56" height="56"/>
+        </g>
+
+        <!-- twenty-seven unit cubes in a cube: the number that is a solid -->
+        <g class="dg-fill-a-soft">
+          <path d="M158 24 L188 42 L158 60 L128 42 Z"/>
+        </g>
+        <g class="dg-fill-d">
+          <path d="M188 42 L188 78 L158 96 L158 60 Z"/>
+          <path d="M128 42 L158 60 L158 96 L128 78 Z"/>
+        </g>
+        <g class="dg-thin">
+          <path d="M168 30 L138 48 M178 36 L148 54 M148 30 L178 48 M138 36 L168 54"/>
+          <path d="M178 84 L178 48 M168 90 L168 54 M188 66 L158 84 M188 54 L158 72"/>
+          <path d="M138 84 L138 48 M148 90 L148 54 M128 66 L158 84 M128 54 L158 72"/>
+        </g>
+        <g class="dg-line">
+          <path d="M158 24 L188 42 L188 78 L158 96 L128 78 L128 42 Z"/>
+          <path d="M158 60 L158 96 M158 60 L188 42 M158 60 L128 42"/>
+        </g>
+
+        <text class="dg-note" x="51"  y="103" text-anchor="middle">16</text>
+        <text class="dg-note" x="158" y="112" text-anchor="middle">27</text>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">1.1</span><span class="name">Introduction</span></h2>
+
+      <p>Some numbers have a shape. Sixteen dots can be laid out as a square with four
+      to a side, and twenty-seven small cubes can be stacked into a larger cube three
+      along each edge. Fifteen dots cannot be made into a square, however they are
+      arranged, and twenty-six cubes will not stack into a cube.</p>
+
+      <p>That is not a decorative fact. Numbers with a shape behave differently from
+      numbers without one, and this chapter is about the difference — how to recognise
+      such a number, what patterns it obeys, and how to work backwards from the number
+      to the side of the square or the edge of the cube that made it.</p>
+
+      <p>Here is a puzzle that turns entirely on it.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>A corridor has $100$ lockers, numbered $1$ to $100$, and all of them are
+            shut. A hundred students walk down it in turn.</p>
+            <p>Student $1$ changes every locker — opens each shut one. Student $2$
+            changes every second locker: $2, 4, 6, \ldots$ Student $3$ changes every
+            third: $3, 6, 9, \ldots$ and so on, until student $100$ has changed locker
+            $100$ alone.</p>
+            <p>When all hundred have gone past, which lockers are open?</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Guessing is no use here, and neither is opening and shutting a hundred lockers
+      on paper. What settles it is one small question: <em>how many times is any one
+      locker touched?</em></p>
+
+      <p>Locker $12$ is touched by student $1$, by student $2$, by student $3$, by
+      student $4$, by student $6$ and by student $12$ — and by nobody else, because
+      student $5$ skips it and so does student $7$. Those six students are exactly the
+      six factors of $12$.</p>
+
+      <p>That is the whole of it. <strong>A locker is touched once for each factor of
+      its number.</strong> It starts shut, and every touch changes it, so it ends open
+      when the number of factors is odd and shut when the number is even.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+        </div>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A number with exactly three factors</div>
+        <p>
+          Three is an odd number of factors, so by the chapter's first result the number
+          must be a square. That alone cuts the field to $1, 4, 9, 16, 25, \ldots$
+        </p>
+        <p>
+          Now look at which squares have exactly three. A square $n^2$ always has $1$,
+          $n$ and $n^2$ among its factors, so three is the fewest it could have — and it
+          has exactly three when $n$ brings nothing else in with it, which is to say
+          when $n$ is prime.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$4 = 2^2$</span>
+            <span>$1, 2, 4$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$9 = 3^2$</span>
+            <span>$1, 3, 9$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$25 = 5^2$</span>
+            <span>$1, 5, 25$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$49 = 7^2$</span>
+            <span>$1, 7, 49$</span>
+            <span class="chip">the four smallest</span>
+          </div>
+        </div>
+        <p>
+          Check that $16$ is properly excluded: $16 = 2^4$ has factors $1, 2, 4, 8, 16$
+          — five of them, because $4$ is not prime and drags $2$ along. So the answer is
+          <em>the square of a prime</em>, and nothing else.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Adding fifty odd numbers by subtracting two squares</div>
+        <p>
+          The sum runs over odd numbers, so reach for $1 + 3 + \cdots + (2n-1) = n^2$.
+          It does not start at $1$, but that is easily arranged: add the missing front
+          and take it away again.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$1 + 3 + \cdots + 99$</span>
+            <span>$= 50^2 = 2500$</span>
+            <span>since $99 = 2 \times 50 - 1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$1 + 3 + \cdots + 49$</span>
+            <span>$= 25^2 = 625$</span>
+            <span>since $49 = 2 \times 25 - 1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">the difference</span>
+            <span>$= 2500 - 625$</span>
+            <span class="chip">$1875$</span>
+          </div>
+        </div>
+        <p>
+          Twenty-five numbers added by subtracting two you already knew. The general
+          move is worth keeping: a run that starts in the wrong place becomes two runs
+          that both start in the right one.
+        </p>
+      </div>
+
+      <p>
+        Notice that the second solution never added a single one of the twenty-five
+        numbers it was asked about. It found a formula that covered a longer run,
+        another that covered the unwanted front of it, and subtracted. That manoeuvre —
+        solve a bigger problem you can handle, then remove the part you did not want —
+        turns up everywhere in mathematics, and it is worth recognising as a move rather
+        than meeting it fresh each time.
+      </p>
+
+    </div>
+  </div>
+</section>

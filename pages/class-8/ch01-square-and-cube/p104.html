@@ -1,0 +1,81 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Why $n^2 + n$ is always trapped</div>
+        <p>
+          No calculation will settle this, because there are infinitely many cases. What
+          settles it is showing that $n^2 + n$ always falls in a place where no square
+          can be.
+        </p>
+        <p>
+          Take any natural number $n$ and put $n^2 + n$ between the two squares nearest
+          it. Since $n \ge 1$, it is certainly bigger than $n^2$. And it is smaller than
+          the next square up:
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$(n+1)^2$</span>
+            <span>$= n^2 + 2n + 1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$n^2 \;\lt\; n^2 + n \;\lt\; n^2 + 2n + 1$</span>
+          </div>
+        </div>
+        <p>
+          So $n^2 + n$ sits strictly between two consecutive squares — and § 1.2.2
+          established that there is nothing but ordinary numbers in that gap. A square
+          would have to be one of the two ends, and it is neither.
+        </p>
+        <p>
+          Try it once to see the trap close: $n = 12$ gives $156$, which lies between
+          $144$ and $169$ with no square anywhere near it. The argument says that will
+          happen every time, and it says so without checking a single further case.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Numbers that are a square and a cube at once</div>
+        <p>
+          Ask what such a number looks like in its prime factorisation. To be a square,
+          every exponent must be even. To be a cube, every exponent must be a multiple
+          of three. To be both, every exponent must be a multiple of $6$ — and a number
+          whose every exponent is a multiple of six is a sixth power.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label">$1^6$</span><span>$= 1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$2^6$</span><span>$= 64 = 8^2 = 4^3$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$3^6$</span><span>$= 729 = 27^2 = 9^3$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$4^6$</span><span>$= 4096$</span>
+            <span class="chip">the next one</span>
+          </div>
+        </div>
+        <p>
+          Three of them below $1000$, then a long wait. Notice how the answer came: not
+          by testing numbers one at a time, but by asking what the two conditions
+          together demanded, and finding they demanded a single thing. Two conditions
+          that combine into one are always worth looking for.
+        </p>
+      </div>
+
+      <p>
+        Both of these last two solutions did their real work before any arithmetic
+        started. One reframed a question about squares as a question about where a
+        number sits between two others; the other reframed a question about two
+        properties as a question about exponents. In each case the arithmetic that
+        followed was trivial, which is usually a sign that the reframing was the right
+        one.
+      </p>
+
+    </div>
+  </div>
+</section>
