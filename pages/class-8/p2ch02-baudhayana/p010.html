@@ -1,0 +1,90 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>2.6.1 Is this triangle right-angled?</h3>
+
+      <p>The theorem also runs the other way, and that is the half of it the altar
+      builders relied on. If the three sides of a triangle happen to satisfy
+      $a^2 + b^2 = c^2$, then the angle opposite the longest side <em>is</em> a right
+      angle. So a triangle can be tested for squareness with nothing but a tape measure
+      and some arithmetic.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$13$, $84$, $85$</span>
+          <span>$169 + 7056 = 7225 = 85^2$ — right-angled</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$9$, $12$, $16$</span>
+          <span>$81 + 144 = 225$, but $16^2 = 256$ — not right-angled</span>
+        </div>
+      </div>
+
+      <p>The second is a near miss on purpose: $9$, $12$, $15$ would have been a right
+      angle, and lengthening the longest side by one centimetre opens the corner past
+      $90^\circ$. It is the same test a carpenter uses on a door frame — measure across
+      the two diagonals, and if they do not agree the frame is not square.</p>
+
+      <h3>2.6.2 Using it twice: the diagonal of a box</h3>
+
+      <p>A hall is $4$ m by $3$ m on the floor and $12$ m to the ceiling. How far is it
+      from one bottom corner to the opposite top corner — the longest straight line that
+      fits inside the room?</p>
+
+      <p>The floor diagonal is found first. It is then one short side of a second right
+      triangle whose other short side is the height, and whose hypotenuse is the line we
+      want.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">across the floor</span>
+          <span>$d^2 = 4^2 + 3^2 = 25$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">then up</span>
+          <span>$D^2 = d^2 + 12^2 = 25 + 144 = 169$, so $D = 13$ m</span>
+        </div>
+      </div>
+
+      <p>The floor diagonal itself was never needed, only its square — which is why the
+      whole thing collapses into one line, $\ D^2 = l^2 + b^2 + h^2$. Two Baudhāyana
+      triples went by on the way: $(3,4,5)$ across the floor and $(5,12,13)$ up to the
+      corner.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 2.2</div>
+        <ol class="c-questions">
+          <li>Find the hypotenuse of a right-angled triangle whose short sides are
+              <ol class="c-parts c-parts--4">
+                <li>$6$ and $8$</li>
+                <li>$5$ and $12$</li>
+                <li>$9$ and $40$</li>
+                <li>$1$ and $1$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Find the missing short side.
+              <ol class="c-parts c-parts--1">
+                <li>hypotenuse $10$, one side $6$</li>
+                <li>hypotenuse $25$, one side $7$</li>
+                <li>hypotenuse $17$, one side $15$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Find the diagonal of a square of side $5$ cm, and of a rectangle $9$ cm by
+          $12$ cm.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

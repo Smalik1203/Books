@@ -1,0 +1,67 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">2.2</span><span class="name">The Square on the Diagonal</span></h2>
+
+      <p>Draw a square, draw one of its diagonals, and then build a new square standing
+      on that diagonal. The new square is tilted, and the claim is that it holds exactly
+      twice the area of the one you started with. Why should that be?</p>
+
+      <p>Extend two sides of the original square — the bottom one and the right-hand one
+      — and something helpful happens. Those two lines are the diagonals of the new
+      square, and they cross at a corner of the old one.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 140 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A shaded square with a tilted square standing on its diagonal, the tilted square cut by its own diagonals into four triangles each equal to half the shaded square">
+      
+            <path class="dg-fill-a" d="M30 12 H70 V52 H30 Z"/>
+            <path class="dg-line"   d="M30 12 H70 V52 H30 Z"/>
+      
+            <path class="dg-line" d="M30 52 L70 12 L110 52 L70 92 Z"/>
+            <path class="dg-thin" d="M30 52 H110 M70 12 V92"/>
+      
+            <text class="dg-label dg-label--sm" x="43" y="28" text-anchor="middle">1</text>
+            <text class="dg-label dg-label--sm" x="57" y="42" text-anchor="middle">2</text>
+            <text class="dg-label dg-label--sm" x="84" y="42" text-anchor="middle">3</text>
+            <text class="dg-label dg-label--sm" x="84" y="66" text-anchor="middle">4</text>
+            <text class="dg-label dg-label--sm" x="57" y="66" text-anchor="middle">5</text>
+      
+            <text class="dg-note" x="70" y="102" text-anchor="middle">2, 3, 4 and 5 are the tilted square</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.2</span> The two lines through the
+          corner are the diagonals of the tilted square, and they cut it into four
+          triangles. Each is half of the shaded square — which is made of the two marked
+          $1$ and $2$.</figcaption>
+        </figure>
+      </div>
+
+      <p>Every one of those four triangles has the same two short sides, each a side of
+      the original square, and a right angle between them. So they are all copies of one
+      another, and each is half the original square, because the original square's own
+      diagonal cuts it into two of them.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the first square</span>
+          <span>two triangles</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the tilted square</span>
+          <span>four of the same triangles</span>
+        </div>
+      </div>
+
+      <p>Twice as many pieces of the same size is twice the area, and Baudhāyana's rule
+      is proved. Nothing was measured to prove it, which is worth noticing: the argument
+      counts pieces, and counting is exact where measuring never quite is.</p>
+
+      <p>And once you can double a square you can double it again, and again. Each new
+      square stands on the diagonal of the last, turning a half-turn of the compass each
+      time and holding twice the area.</p>
+
+    </div>
+  </div>
+</section>
