@@ -1,0 +1,81 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">How long a two-digit number's cube can be</div>
+        <p>
+          The two-digit numbers run from $10$ to $99$, and cubing preserves order — a
+          bigger number has a bigger cube — so the shortest and longest answers come
+          from the two ends.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">smallest</span>
+            <span>$10^3 = 1000$</span>
+            <span class="chip">4 digits</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">largest</span>
+            <span>$99^3 = 970\,299$</span>
+            <span class="chip">6 digits</span>
+          </div>
+        </div>
+        <p>
+          So every answer has $4$, $5$ or $6$ digits, and all three lengths occur:
+          $10^3 = 1000$ has four, $22^3 = 10\,648$ has five, $99^3 = 970\,299$ has six.
+        </p>
+        <p>
+          There is a shortcut hiding here that is worth naming, because § 1.5.1 leaned
+          on it without saying so. Cubing a number multiplies its digit count by about
+          three, so stripping the last three digits of a cube is the same as asking for
+          the cube of the tens part. That is exactly why the digit method for cube roots
+          works, and why it stops working above six digits — beyond that the root has
+          three digits, and there are three digits to find rather than two.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The smallest number that is a sum of two squares twice over</div>
+        <p>
+          The answer is $50$, and the way to find it is to organise the search so that
+          it finishes rather than wanders.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$50$</span>
+            <span>$= 1^2 + 7^2 = 1 + 49$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide"></span>
+            <span>$= 5^2 + 5^2 = 25 + 25$</span>
+          </div>
+        </div>
+        <p>
+          To be sure nothing smaller works, go up through the numbers in order. For each
+          one, run the smaller square from $1^2$ upwards, stopping when it passes half
+          the number — beyond that point you would only be finding the same pair the
+          other way round. Ask whether what remains is a square. Most numbers give no
+          pair at all; $25$, $34$ and $45$ each give exactly one; $50$ is the first to
+          give two.
+        </p>
+        <p>
+          That stopping rule is the whole art of it. Without it the search never ends;
+          with it, testing all fifty numbers takes a few minutes on paper. A search you
+          can prove has finished is worth far more than one you merely got tired of.
+        </p>
+      </div>
+
+      <p>
+        That is the end of the worked answers. Read back over the eight and notice how
+        few of them needed a calculation of any size: two were settled by an inequality,
+        two by counting exponents, one by counting the prime 2 on each side of an
+        equation, and one by choosing where to stop searching. The arithmetic in this
+        chapter is easy. Deciding which of the chapter's few facts a question is really
+        about is the part worth practising, and the problem sets overleaf are arranged
+        to give you that practice rather than more sums.
+      </p>
+
+    </div>
+  </div>
+</section>

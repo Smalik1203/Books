@@ -1,0 +1,83 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Look back at the corridor of lockers in Fig. 1.2 with that in mind. The open
+      ones were $1, 4, 9, 16, 25$, and the gaps between them were $3, 5, 7, 9$ — the odd
+      numbers again, which is exactly the same fact seen from the side. Squares are not
+      spread evenly along the number line and they never were; they start close together
+      and draw apart for ever. That is why the last-digit test matters so much for large
+      numbers: by the time you reach five figures, a number picked at random has almost
+      no chance of being a square, and a test that rules four endings out in a glance is
+      worth having.</p>
+
+      <h3>1.2.3 Two triangles make a square</h3>
+
+      <p>You have met the <span class="term">triangular numbers</span> before:
+      $1, 3, 6, 10, 15, \ldots$, the counts of dots in a growing triangle, each got from
+      the one before by adding a row. They have nothing obvious to do with squares. Add
+      two neighbours together and see what happens.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$1 + 3$</span><span>$= 4 = 2^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$3 + 6$</span><span>$= 9 = 3^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$6 + 10$</span><span>$= 16 = 4^2$</span>
+        </div>
+      </div>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 170 86" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Square arrays of dots split along the diagonal into two triangular numbers: three and six making nine, six and ten making sixteen">
+      
+            <g class="dg-fill-b">
+              <circle cx="20" cy="38" r="3.6"/>
+              <circle cx="20" cy="52" r="3.6"/><circle cx="34" cy="52" r="3.6"/>
+              <circle cx="20" cy="66" r="3.6"/><circle cx="34" cy="66" r="3.6"/><circle cx="48" cy="66" r="3.6"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="34" cy="38" r="3.6"/><circle cx="48" cy="38" r="3.6"/>
+              <circle cx="48" cy="52" r="3.6"/>
+            </g>
+            <text class="dg-note" x="34" y="82" text-anchor="middle">6 + 3 = 9</text>
+      
+            <g class="dg-fill-b">
+              <circle cx="100" cy="24" r="3.6"/>
+              <circle cx="100" cy="38" r="3.6"/><circle cx="114" cy="38" r="3.6"/>
+              <circle cx="100" cy="52" r="3.6"/><circle cx="114" cy="52" r="3.6"/><circle cx="128" cy="52" r="3.6"/>
+              <circle cx="100" cy="66" r="3.6"/><circle cx="114" cy="66" r="3.6"/>
+              <circle cx="128" cy="66" r="3.6"/><circle cx="142" cy="66" r="3.6"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="114" cy="24" r="3.6"/><circle cx="128" cy="24" r="3.6"/><circle cx="142" cy="24" r="3.6"/>
+              <circle cx="128" cy="38" r="3.6"/><circle cx="142" cy="38" r="3.6"/>
+              <circle cx="142" cy="52" r="3.6"/>
+            </g>
+            <text class="dg-note" x="121" y="82" text-anchor="middle">10 + 6 = 16</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.4</span> A square array cut along its
+          diagonal falls into two triangles — one with the diagonal, one without — and
+          those are consecutive triangular numbers.</figcaption>
+        </figure>
+      </div>
+
+      <p>Cut a square array of dots along its diagonal. The half that keeps the diagonal
+      is a triangle of $1 + 2 + \cdots + n$ dots; the half that loses it is a triangle
+      one row shorter. Between them they account for every dot, so two consecutive
+      triangular numbers always add to a square.</p>
+
+      <p>Both facts in this section came from the same manoeuvre, which is worth naming
+      because you will want it again. A number was counted twice — once as a total and
+      once as a shape — and the two counts were set equal. Nothing was calculated and
+      nothing was checked case by case; the argument was finished the moment the picture
+      was drawn correctly. Mathematicians call this counting two ways, and it settles a
+      surprising number of questions that look as though they need algebra.</p>
+
+    </div>
+  </div>
+</section>

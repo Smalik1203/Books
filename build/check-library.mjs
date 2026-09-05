@@ -407,7 +407,15 @@ async function checkViewerStructure() {
       /id="sheet-bleed"[\s\S]{0,400}?Print PDF/.test(html), true);
     /* A measurement is a fact about the sheet, not a thing to press. */
     eq('bleed carries no measurement', /id="sheet-bleed"[\s\S]{0,400}?>Bleed<\/button>/.test(html), true);
-    eq('the press size is in the tooltip', /title="Show the press sheet, \d/.test(html), true);
+    /* Either the press sheet has been built, in which case the button
+       carries its size, or it has not, in which case the button is
+       disabled and says so. Asserting only the first made this check
+       depend on which chapter the library happens to list first — a
+       chapter written but not yet built through --bleed failed it, and
+       the studio was not at fault. */
+    eq('the press size is in the tooltip, or the button says build first',
+      /title="Show the press sheet, \d/.test(html)
+        || /id="sheet-bleed"[\s\S]{0,200}?disabled title="Build first"/.test(html), true);
     eq('the build log ships hidden', /id="build-log"[^>]*hidden/.test(html), true);
 
     const covLink = (lib.match(/href="\/cover\/([^"]+)"/) || [])[1];

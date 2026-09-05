@@ -1,0 +1,84 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>1.5.1 Reading a cube root off the digits</h3>
+
+      <p>For a cube of up to six digits there is a method that needs no factorising at
+      all, and it uses the two facts we have. It works because a two-digit root has a
+      cube of at most six digits, so the answer's two digits can be found one at a
+      time — the units digit from the end of the number, the tens digit from the front.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>Given that $4913$ is a perfect cube, find $\sqrt[3]{4913}$ without
+          factorising.</p>
+          <p><em>The units digit, from the last digit.</em> $4913$ ends in $3$, and a
+          cube ends in $3$ only when its root ends in $7$. So the root ends in $7$.</p>
+          <p><em>The tens digit, from what is left.</em> Strike out the last three
+          digits and $4$ remains. Find the largest cube not exceeding it: $1^3 = 1$ fits
+          and $2^3 = 8$ does not, so the tens digit is $1$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$\sqrt[3]{4913}$</span>
+              <span></span>
+              <span class="chip">$17$</span>
+            </div>
+          </div>
+          <p>Check: $17^3 = 4913$.</p>
+          <p>Striking out three digits is not a trick. It divides by $1000$, and
+          $1000 = 10^3$, so it is really asking which cube the <em>tens</em> part of the
+          root must be — exactly the same question one size down.</p>
+        </div>
+      </div>
+
+      <p>Run it on the rest and it is quick: $12\,167$ ends in $7$, so the root ends in
+      $3$; strike three digits to leave $12$, and $2^3 = 8$ fits where $3^3 = 27$ does
+      not, so the root is $23$. And $32\,768$ ends in $8$, so the root ends in $2$;
+      $32$ leaves $3^3 = 27$ as the largest cube that fits, so the root is $32$.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>The method assumes it has been given a perfect cube. Fed $4900$ it would
+          answer $10$ and be wrong, since $4900$ is not a cube at all. It finds a root;
+          it does not test for one.</p>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 1.5</div>
+        <ol class="c-questions">
+          <li>Find each cube root by prime factorisation.
+              <ol class="c-parts c-parts--4">
+                <li>$\sqrt[3]{512}$</li>
+                <li>$\sqrt[3]{729}$</li>
+                <li>$\sqrt[3]{27000}$</li>
+                <li>$\sqrt[3]{10648}$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>What is the smallest number by which $1323$ must be multiplied to give a
+              perfect cube? Give the cube root of the result.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>What is the smallest number by which $8640$ must be divided to leave a
+              perfect cube?</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

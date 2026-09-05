@@ -1,0 +1,72 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A side that is neither a whole number nor a fraction</div>
+        <p>
+          The side is $\sqrt{2}$, and the first half is quick. If the side were a whole
+          number $n$ then $n^2 = 2$, and $1^2 = 1$ is too small while $2^2 = 4$ is too
+          big. There is no whole number between $1$ and $2$, so there is no such $n$.
+        </p>
+        <p>
+          The second half is the interesting one, and it is the pairing argument used
+          once more. Suppose the side were a fraction $\tfrac{a}{b}$, written in lowest
+          terms. Squaring gives
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$\left(\tfrac{a}{b}\right)^2 = 2$</span>
+            <span>so $a^2 = 2b^2$</span>
+          </div>
+        </div>
+        <p>
+          Now count how many $2$s each side contains. On the left, $a^2$ is a square, so
+          the prime $2$ appears in it an even number of times — that is exactly what
+          being a square means. On the right, $b^2$ likewise has an even number of $2$s,
+          and then one more $2$ is bolted on, making the count odd.
+        </p>
+        <p>
+          One number cannot contain the prime $2$ an even number of times and an odd
+          number of times at the same moment. So no such fraction exists, and the side
+          of that sheet of cardboard cannot be written as a fraction at all.
+        </p>
+        <p>
+          This is worth more than the question that produced it. Numbers of this kind
+          are called <em>irrational</em>, and finding the first of them was a genuine
+          shock — a length you can draw with a ruler, and cannot write down. You will
+          meet them properly in a chapter of their own; the argument above is the whole
+          proof, and you have just followed it.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Odd squares and the number eight</div>
+        <p>
+          Check first, then explain. $1, 9, 25, 49, 81$ divided by $8$ leave $1, 1, 1,
+          1, 1$. It is not a coincidence and the reason is one line of algebra.
+        </p>
+        <p>
+          Every odd number can be written $2k + 1$. Square it:
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$(2k+1)^2$</span>
+            <span>$= 4k^2 + 4k + 1 = 4k(k+1) + 1$</span>
+          </div>
+        </div>
+        <p>
+          Now $k$ and $k+1$ are consecutive, so one of them is even, so $k(k+1)$ is
+          even. Write it as $2m$. Then the square is $8m + 1$ — a multiple of $8$, plus
+          one.
+        </p>
+        <p>
+          The useful part is the test it gives you. A number that leaves any remainder
+          but $1$ on division by $8$ cannot be an odd square: $2019$ leaves $3$, so it
+          is out, and no factorisation was needed to say so.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

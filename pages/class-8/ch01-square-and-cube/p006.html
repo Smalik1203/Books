@@ -1,0 +1,89 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Each trailing zero of $n$ is a factor of $10$, and squaring uses it twice — so
+      the square has exactly twice as many. A number with three zeros at the end has a
+      square with six. Read backwards: <strong>a perfect square can only end in an even
+      number of zeros</strong>, so $2000$ is not a square and neither is any number
+      ending in an odd run of them.</p>
+
+      <p><strong>Squaring keeps parity.</strong> An even number is $2k$, and
+      $(2k)^2 = 4k^2$, which is even. An odd number is $2k+1$, and its square is
+      $4k^2 + 4k + 1$, which is odd. So a square is even exactly when the number it came
+      from is even — $6^2 = 36$, $7^2 = 49$ — and no square is ever the wrong parity for
+      its root.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 1.2</div>
+        <ol class="c-questions">
+          <li>Say which of these cannot be perfect squares, and give the reason in each
+              case.
+              <ol class="c-parts c-parts--4">
+                <li>$4093$</li>
+                <li>$6250$</li>
+                <li>$1444$</li>
+                <li>$8877$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write five numbers, each of at least four digits, that you can rule out as
+              squares by looking at the last digit alone.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A perfect square ends in $6$. What are the possible last digits of the
+              number it is the square of?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>How many zeros are at the end of $(4000)^2$? Answer without
+              multiplying.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Is $441$ odd or even? Is its square root odd or even? Say how you knew the
+              second without finding the root.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>Which of $64^2$, $108^2$, $292^2$ and $36^2$ end in the digit $4$? Use the
+              last-digit rule rather than a calculation.</li>
+        </ol>
+      </div>
+
+      <h3>1.2.2 Every square is a sum of odd numbers</h3>
+
+      <p>Set the squares in a row and take the difference of each pair of neighbours:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">squares</span>
+          <span>$1 \qquad 4 \qquad 9 \qquad 16 \qquad 25 \qquad 36$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">differences</span>
+          <span>$3 \quad\ \ 5 \quad\ \ 7 \quad\ \ \ 9 \quad\ \ 11$</span>
+        </div>
+      </div>
+
+      <p>The odd numbers, in order, and no exception anywhere down the list. Turned
+      round, that says every square is what you get by adding up odd numbers from $1$:
+      stop after one and you have $1$, stop after two and you have $4$, and the running
+      total is a square at every step and never at any other moment.</p>
+
+    </div>
+  </div>
+</section>

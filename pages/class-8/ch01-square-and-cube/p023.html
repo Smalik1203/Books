@@ -1,0 +1,108 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>True or false, with a reason in each case.
+              <ol class="c-parts c-parts--1">
+                <li>The cube of an odd number is even.</li>
+                <li>No perfect cube ends in $8$.</li>
+                <li>The cube of a two-digit number may have three digits.</li>
+                <li>The cube of a two-digit number may have seven digits.</li>
+                <li>Cube numbers have an odd number of factors.</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Which is greater, $67^3 - 66^3$ or $43^3 - 42^3$? And which of
+              $67^2 - 66^2$ and $43^2 - 42^2$? Answer without evaluating the cubes.</li>
+        </ol>
+      </div>
+
+      <h3>1.5.2 Differencing until it stops changing</h3>
+
+      <p>Section 1.2.2 took the differences of the squares once and found the odd
+      numbers. There is no reason to stop after one round. Take the differences of the
+      differences:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">squares</span>
+          <span>$1 \qquad 4 \qquad 9 \qquad 16 \qquad 25 \qquad 36$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">first</span>
+          <span>$3 \quad\ \ 5 \quad\ \ 7 \quad\ \ \ 9 \quad\ \ 11$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">second</span>
+          <span>$2 \quad\ \ 2 \quad\ \ 2 \quad\ \ \ 2$</span>
+        </div>
+      </div>
+
+      <p>After two rounds the squares have gone flat. Try the same on the cubes and see
+      how many rounds they take.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 170 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A difference table for the cubes: the cubes, then first differences, then second, then third differences which are all six">
+      
+            <g class="dg-thin">
+              <path d="M39 21 L43 31 M53 21 L49 31 M63 21 L67 31 M77 21 L73 31
+                       M87 21 L91 31 M101 21 L97 31 M111 21 L115 31 M125 21 L121 31
+                       M135 21 L139 31 M149 21 L145 31"/>
+              <path d="M51 43 L55 53 M65 43 L61 53 M75 43 L79 53 M89 43 L85 53
+                       M99 43 L103 53 M113 43 L109 53 M123 43 L127 53 M137 43 L133 53"/>
+              <path d="M63 65 L67 75 M77 65 L73 75 M87 65 L91 75 M101 65 L97 75
+                       M111 65 L115 75 M125 65 L121 75"/>
+            </g>
+      
+            <g class="dg-note">
+              <text x="2" y="16">cubes</text>
+              <text x="2" y="38">first</text>
+              <text x="2" y="60">second</text>
+              <text x="2" y="82">third</text>
+            </g>
+      
+            <g class="dg-note" text-anchor="middle">
+              <text x="34"  y="16">1</text><text x="58"  y="16">8</text>
+              <text x="82"  y="16">27</text><text x="106" y="16">64</text>
+              <text x="130" y="16">125</text><text x="154" y="16">216</text>
+      
+              <text x="46"  y="38">7</text><text x="70"  y="38">19</text>
+              <text x="94"  y="38">37</text><text x="118" y="38">61</text>
+              <text x="142" y="38">91</text>
+      
+              <text x="58"  y="60">12</text><text x="82"  y="60">18</text>
+              <text x="106" y="60">24</text><text x="130" y="60">30</text>
+            </g>
+            <g class="dg-label" text-anchor="middle">
+              <text x="70"  y="82">6</text><text x="94"  y="82">6</text>
+              <text x="118" y="82">6</text>
+            </g>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.7</span> The cubes go flat after three
+          rounds of differencing, and the constant they settle on is $6$.</figcaption>
+        </figure>
+      </div>
+
+      <p>Three rounds, and the constant is $6$. The squares took two rounds and settled
+      on $2$. That is not a coincidence: the squares are $n^2$ and $2 = 1 \times 2$; the
+      cubes are $n^3$ and $6 = 1 \times 2 \times 3$. Difference the fourth powers four
+      times and they settle on $1 \times 2 \times 3 \times 4 = 24$ — which you can check
+      from $1, 16, 81, 256, 625, 1296$ if you have the patience.</p>
+
+      <p>The count of rounds is the useful part. A list that goes flat after three
+      rounds is behaving like a cube; one that goes flat after two is behaving like a
+      square. Given a run of numbers and no rule, differencing is the first thing to
+      try — and this is a trick you will meet again whenever a sequence has to be
+      identified rather than remembered.</p>
+
+    </div>
+  </div>
+</section>
