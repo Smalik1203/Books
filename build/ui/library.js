@@ -84,10 +84,15 @@
     const count = set ? Number(set.dataset.count) : 0;
 
     if (!count) {
-      /* The pair exists but holds nothing — Science, today. Say so, and
-         leave the covers hidden: they belong to the book, and there is no
-         book of this subject to belong to. */
-      empty.textContent = 'No ' + sub.toLowerCase()
+      /* The pair exists but holds nothing — Mathematics II and Science,
+         today. Say so, and leave the covers hidden: they belong to the
+         book, and there is no book of this subject to belong to.
+
+         The subject goes in as it is written and is not lowercased. It
+         was, while the subjects were single words; "Mathematics II" comes
+         back from that as "mathematics ii", and a roman numeral in lower
+         case reads as a typo rather than as a numeral. */
+      empty.textContent = 'No ' + sub
         + ' chapters in Class ' + cls.replace(/^class-/, '') + ' yet.';
       show(empty, true);
       return;

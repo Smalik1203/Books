@@ -121,7 +121,10 @@ async function library() {
       const out = path.join(ROOT, 'build', cls, dir);
       chapters.push({
         target: cls + '/' + dir, dir, meta,
-        subject: meta.subject || 'Mathematics',
+        /* The fallback has to name a subject the chooser actually offers,
+           or a chapter that forgot the field would be filed under a
+           heading no section exists for and vanish from the library. */
+        subject: meta.subject || 'Mathematics I',
         pages: files.length,
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
@@ -240,12 +243,20 @@ function libraryHtml(classes, coverClasses) {
   const names = [...new Set([...classes.map((c) => c.cls),
                              ...coverClasses.map((c) => c.cls)])].sort();
 
-  /* The two subjects a class holds, listed whether or not either has
+  /* The subjects a class holds, listed whether or not any of them has
      chapters yet. A dropdown that grows as content lands is a dropdown
      that reads differently every month; this one is the finished shape,
      and a subject with nothing in it resolves to the empty state, which
-     is the honest answer. */
-  const SUBJECTS = ['Mathematics', 'Science'];
+     is the honest answer.
+
+     Mathematics is two volumes and so it is two entries. They are the
+     parts the covers already name — cover.json carries "part": "1" and
+     the jacket prints PART 1 — set in the roman the spine and the title
+     page use, so a reader meets the same numeral in the chooser, on the
+     shelf and on the book. Every chapter written so far is Part I; the
+     II entry is here because the shape is the shape whether or not the
+     second volume has been started. */
+  const SUBJECTS = ['Mathematics I', 'Mathematics II', 'Science'];
 
   /* Every class-and-subject pair is rendered, and every class's covers,
      each tagged so the script can show exactly one pair at a time. They
