@@ -1,0 +1,107 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="8" width="17" height="12"/>
+            <path d="M3.5 8 8 3.5h12L20.5 8"/>
+            <path d="M20.5 8v12"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Read the question for what is actually being covered. A closed box needs six
+          faces; an open tank needs five; a room to be painted needs four walls and a
+          ceiling, but not the floor. The formula is never wrong — what goes wrong is
+          using all of it when the question asked for part.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A closed box measures $8$ cm by $5$ cm by $3$ cm. Find its total surface
+          area.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">the three pairs</span>
+              <span>$lb = 40$, &nbsp; $bh = 15$, &nbsp; $hl = 24$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">total</span>
+              <span>$2(40 + 15 + 24) = 2 \times 79$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">answer</span>
+              <span>$158$ cm<sup>2</sup></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>7.6.1 The cylinder, unrolled</h3>
+
+      <p>A tin's curved surface looks like nothing you have a formula for, until you cut
+      it down its side and unroll it. What you get is a rectangle — and its two
+      measurements are already known.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 78" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A cylinder cut down its side and unrolled into a rectangle whose width is the circumference two pi r and whose height is h">
+      
+            <ellipse class="dg-face-top" cx="40" cy="18" rx="24" ry="8"/>
+            <path class="dg-face-front" d="M16 18 V54 A24 8 0 0 0 64 54 V18 A24 8 0 0 1 16 18 Z"/>
+            <g class="dg-line">
+              <ellipse cx="40" cy="18" rx="24" ry="8"/>
+              <path d="M16 18 V54 M64 18 V54"/>
+              <path d="M16 54 A24 8 0 0 0 64 54"/>
+            </g>
+            <path class="dg-hidden" d="M16 54 A24 8 0 0 1 64 54"/>
+            <line class="dg-dim" x1="40" y1="18" x2="64" y2="18" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="50" y="14">r</text>
+      
+            <line class="dg-move" x1="76" y1="36" x2="92" y2="36" marker-end="url(#dg-arrow)"/>
+      
+            <rect class="dg-fill-b-soft" x="106" y="18" width="76" height="36"/>
+            <rect class="dg-line"        x="106" y="18" width="76" height="36"/>
+            <line class="dg-dim" x1="106" y1="62" x2="182" y2="62"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="144" y="72" text-anchor="middle">2πr</text>
+            <line class="dg-dim" x1="190" y1="18" x2="190" y2="54"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="196" y="38">h</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.5</span> The rectangle's height is the
+          tin's height. Its width is the distance round the tin — which is the
+          circumference of the circle it was rolled from.</figcaption>
+        </figure>
+      </div>
+
+      <p>So the curved surface is a rectangle $2\pi r$ by $h$, and the two flat ends are
+      circles of area $\pi r^2$ each.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">curved surface</span>
+          <span>$2\pi r h$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">two ends</span>
+          <span>$2\pi r^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">total surface</span>
+          <span>$2\pi r h + 2\pi r^2 = 2\pi r (h + r)$</span>
+        </div>
+      </div>
+
+      <p>The last step took out the common factor $2\pi r$, which is Chapter 4 again.
+      Throughout this chapter $\pi$ is taken as $\tfrac{22}{7}$ where the numbers invite
+      it and $3.14$ otherwise; a question that gives a radius which is a multiple of
+      seven is telling you which to use.</p>
+
+    </div>
+  </div>
+</section>
