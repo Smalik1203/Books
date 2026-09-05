@@ -1,0 +1,84 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">4.4</span><span class="name">Multiplying</span></h2>
+
+      <p>Adding expressions asked whether two terms were alike. Multiplying never asks:
+      any term can be multiplied by any other, and the answer is always a single term.
+      That is why multiplication turns out to be the easier of the two operations, and
+      also why it produces so much more.</p>
+
+      <h3>4.4.1 One term by one term</h3>
+
+      <p>Multiply the coefficients, and multiply the letters — which, since a repeated
+      letter is a power, means adding the exponents. That last step is the index law
+      $x^m \times x^n = x^{m+n}$ from Chapter 2, doing its work here for the first time.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$3x \times 5x$</span>
+          <span>$= (3 \times 5)(x \times x) = 15x^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$2a^2b \times 4ab^3$</span>
+          <span>$= (2 \times 4)(a^2 \times a)(b \times b^3) = 8a^3b^4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$-6p \times \tfrac12 pq$</span>
+          <span>$= -3p^2q$</span>
+        </div>
+      </div>
+
+      <p>The degrees add too, and that is a check worth having: a term of degree $3$
+      times a term of degree $4$ must give degree $7$, whatever the letters are.</p>
+
+      <h3>4.4.2 One term by a whole expression</h3>
+
+      <p>Here is the rectangle from the first page, drawn properly. A rectangle $a$ tall
+      and $b + c$ wide is cut by one vertical line into a rectangle $a$ by $b$ and a
+      rectangle $a$ by $c$.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 190 88" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rectangle of height a and width b plus c, divided by a vertical line into a rectangle of area a b and a rectangle of area a c">
+      
+            <rect class="dg-fill-a" x="34" y="22" width="90" height="46"/>
+            <rect class="dg-fill-c" x="124" y="22" width="42" height="46"/>
+            <rect class="dg-line"   x="34" y="22" width="132" height="46"/>
+            <line class="dg-thin" x1="124" y1="22" x2="124" y2="68"/>
+      
+            <text class="dg-label" x="79" y="49" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="145" y="49" text-anchor="middle">ac</text>
+      
+            <line class="dg-dim" x1="34" y1="14" x2="124" y2="14"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="124" y1="14" x2="166" y2="14"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="79" y="9" text-anchor="middle">b</text>
+            <text class="dg-label" x="145" y="9" text-anchor="middle">c</text>
+      
+            <line class="dg-dim" x1="24" y1="22" x2="24" y2="68"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="16" y="48" text-anchor="middle">a</text>
+      
+            <line class="dg-dim" x1="34" y1="80" x2="166" y2="80"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="100" y="88" text-anchor="middle">width <tspan font-style="italic">b</tspan> + <tspan font-style="italic">c</tspan></text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.1</span> The area is $a(b+c)$ if you
+          measure the whole thing, and $ab + ac$ if you measure the pieces. It is one
+          rectangle, so the two are equal.</figcaption>
+        </figure>
+      </div>
+
+      <p>So to multiply an expression by a single term, multiply every term of it by
+      that term. The picture only shows two pieces, but nothing stops you cutting the
+      rectangle three times or ten, and the argument does not change.</p>
+
+      <div class="eq">$$a(b + c + d + \cdots) = ab + ac + ad + \cdots$$</div>
+
+    </div>
+  </div>
+</section>
