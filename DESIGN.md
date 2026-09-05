@@ -579,6 +579,24 @@ token and the fix is to add one. A *direction* rebuilds it — its own display
 face, its own artwork, its own arrangement of the front — and shares the back
 and spine markup, which follow on tokens alone.
 
+**In practice a direction swallows the finish, and that is worth knowing before
+you set one.** Each direction block declares the ground and front tokens itself
+and sits later in this stylesheet than the finishes, so at equal specificity it
+wins: `night`, `solar`, `cobalt` and `vivid` all produce a byte-identical proof
+of an `arc` cover. Class 9 declares `night` and is painted by `arc` regardless.
+It could be otherwise — the back palette could move to `.jacket` and leave
+directions owning the front alone — but a shared block would have to sit either
+before the finishes, where a finish would then repaint the back, or after them,
+where it would stop a finish repainting anything. Each direction is
+self-contained for that reason, and a new one repeats the back's six tokens
+rather than inventing any: `comb`, Class 8's front, is the worked example.
+
+**The back panel is the same in every book, and a direction is how you change
+only the front.** `comb` floods the panel with a deep green and runs a
+hexagonal comb off three edges where `arc` floats discs on cream, but it
+repeats arc's ground, deep and spine values exactly, so the back and the shelf
+edge still line up across the series.
+
 `node build/cover-swatch.mjs <direction>` lays every candidate colourway on one
 sheet at the same size in the real stylesheet. Comparing covers one build at a
 time compares a colour in front of you against one you saw ten minutes ago.

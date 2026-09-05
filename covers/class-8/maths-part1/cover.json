@@ -4,13 +4,12 @@
   "class": "8",
   "part": "1",
   "imprint": "ClassBridge",
-  "finish": "night",
   "copyright": "ClassBridge",
   "year": 2026,
   "edition_statement": "First edition, 2026.",
   "isbn": "978-93-00000-01-9",
   "url": "classbridge.in",
-  "_finish": "night is declared to match Class 9, and on this direction it changes nothing. .jacket--arc in cover.css redefines --jk-navy, --jk-terra, --jk-cream, the ground tokens and the front tokens at the same specificity as the finish blocks and later in the file, so the direction wins the cascade and every finish renders identically: night, solar, cobalt and vivid all produced a byte-identical proof of this cover. cover-swatch.mjs repaints by injecting --jk-front-* overrides of its own and so is unaffected, which is why the twelve colourways it lays out do not contradict this. If the two volumes are ever to be told apart by colour, the fix is in cover.css and it changes the Class 9 wrap as well, so it is a decision about the series rather than about this file. For now the class numeral, the subtitle and the front artwork are what distinguish them.",
+  "_direction": "comb is this volume's own front and nothing else: the back panel and the spine are Class 9's, and comb repeats their ground and deep tokens rather than inventing any, so the two wraps still line up on a shelf. No finish is declared, because on a direction the finish is inert — .jacket--comb, like .jacket--arc before it, sets the same tokens the finish blocks set and wins the cascade by coming later in cover.css. night, solar, cobalt and vivid all rendered a byte-identical proof of the arc version of this cover, which is how that was found.",
   "_spine": "No spineWidth is declared here, and that is deliberate. pages is now measured rather than guessed: a --book run of class-8 comes to 229 leaves (three of front matter and 226 numbered), rounded up to 232 for a multiple of four. At 0.106mm the block bulks to 12.3mm and the case takes it to 12.8, which is what the builder computes and prints. Class 9 overrides its own arithmetic with a printer-quoted 15mm on a stock the caliper here does not describe; if this volume goes to the same press on the same paper its spine is nearer 14.8 than 12.8, so get the quote and set spineWidth before the wrap goes to press. Re-derive pages from --book whenever a chapter changes length.",
   "pages": 232,
   "paperCaliper": 0.106,
@@ -18,8 +17,8 @@
   "content": [
     "../_shared/back-arc.html",
     "../_shared/spine.html",
-    "../_shared/front-arc.html"
+    "../_shared/front-comb.html"
   ],
   "qr": "assets/qr-classbridge.svg",
-  "direction": "arc"
+  "direction": "comb"
 }

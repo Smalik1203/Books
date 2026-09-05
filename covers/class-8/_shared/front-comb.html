@@ -1,0 +1,132 @@
+<!-- ══════════════════ FRONT — direction: comb ══════════════════
+     Type in the upper third against a deep green ground, and below
+     it a hexagonal comb run off the left, right and bottom edges.
+     One user unit is one printed millimetre.
+
+     The hexagon is not an ornament borrowed from somewhere. It is
+     one of exactly three regular polygons that fill a plane — the
+     others being the triangle and the square — because its interior
+     angle of 120° divides 360° and a pentagon's 108° does not. That
+     is a Class 8 result, and it is why the field can run off the
+     edges without a gap anywhere in it.
+
+     Every cell is one path in the defs and a <use> apiece, so the
+     geometry lives in one place: flat-top, circumradius 16, which
+     puts the columns 24 apart and the rows 27.71, with the odd
+     columns dropped half a row.
+     ============================================================ -->
+<div class="jacket__front">
+
+  <div class="front__art">
+    <svg class="jk-art" viewBox="0 0 176 250" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="A hexagonal comb filling the lower two thirds of the cover and
+                     running off three edges, a few of its cells flooded in gold and
+                     coral, and one cell divided into the six equilateral triangles
+                     that make it.">
+      <defs>
+        <path id="comb-hex" d="M16 0 8 13.856 -8 13.856 -16 0 -8 -13.856 8 -13.856Z"/>
+      </defs>
+
+      <!-- The flooded cells, under the line so the line closes them. All of
+           them sit above y=210: the strapline crosses the panel at about 220
+           and a flooded cell behind it puts a hard edge through the type.
+           Thinning downwards also lets the comb fade rather than stop. -->
+      <use class="comb-cell--gold"  href="#comb-hex" x="32"  y="151.7"/>
+      <use class="comb-cell--gold"  href="#comb-hex" x="176" y="151.7"/>
+      <use class="comb-cell--pale"  href="#comb-hex" x="8"   y="165.57"/>
+      <use class="comb-cell--coral" href="#comb-hex" x="104" y="165.57"/>
+      <use class="comb-cell--deep"  href="#comb-hex" x="128" y="179.4"/>
+      <use class="comb-cell--pale"  href="#comb-hex" x="56"  y="193.28"/>
+      <use class="comb-cell--coral" href="#comb-hex" x="80"  y="207.1"/>
+      <use class="comb-cell--deep"  href="#comb-hex" x="176" y="207.1"/>
+
+      <!-- the comb: five even columns and five odd, the odd dropped half a row -->
+      <g class="comb-line">
+        <use href="#comb-hex" x="-16" y="124"/>
+        <use href="#comb-hex" x="-16" y="151.7"/>
+        <use href="#comb-hex" x="-16" y="179.4"/>
+        <use href="#comb-hex" x="-16" y="207.1"/>
+        <use href="#comb-hex" x="-16" y="234.8"/>
+        <use href="#comb-hex" x="-16" y="262.5"/>
+
+        <use href="#comb-hex" x="32" y="124"/>
+        <use href="#comb-hex" x="32" y="151.7"/>
+        <use href="#comb-hex" x="32" y="179.4"/>
+        <use href="#comb-hex" x="32" y="207.1"/>
+        <use href="#comb-hex" x="32" y="234.8"/>
+        <use href="#comb-hex" x="32" y="262.5"/>
+
+        <use href="#comb-hex" x="80" y="124"/>
+        <use href="#comb-hex" x="80" y="151.7"/>
+        <use href="#comb-hex" x="80" y="179.4"/>
+        <use href="#comb-hex" x="80" y="207.1"/>
+        <use href="#comb-hex" x="80" y="234.8"/>
+        <use href="#comb-hex" x="80" y="262.5"/>
+
+        <use href="#comb-hex" x="128" y="124"/>
+        <use href="#comb-hex" x="128" y="151.7"/>
+        <use href="#comb-hex" x="128" y="179.4"/>
+        <use href="#comb-hex" x="128" y="207.1"/>
+        <use href="#comb-hex" x="128" y="234.8"/>
+        <use href="#comb-hex" x="128" y="262.5"/>
+
+        <use href="#comb-hex" x="176" y="124"/>
+        <use href="#comb-hex" x="176" y="151.7"/>
+        <use href="#comb-hex" x="176" y="179.4"/>
+        <use href="#comb-hex" x="176" y="207.1"/>
+        <use href="#comb-hex" x="176" y="234.8"/>
+        <use href="#comb-hex" x="176" y="262.5"/>
+
+        <use href="#comb-hex" x="8" y="137.86"/>
+        <use href="#comb-hex" x="8" y="165.57"/>
+        <use href="#comb-hex" x="8" y="193.28"/>
+        <use href="#comb-hex" x="8" y="220.99"/>
+        <use href="#comb-hex" x="8" y="248.7"/>
+
+        <use href="#comb-hex" x="56" y="137.86"/>
+        <use href="#comb-hex" x="56" y="165.57"/>
+        <use href="#comb-hex" x="56" y="193.28"/>
+        <use href="#comb-hex" x="56" y="220.99"/>
+        <use href="#comb-hex" x="56" y="248.7"/>
+
+        <use href="#comb-hex" x="104" y="137.86"/>
+        <use href="#comb-hex" x="104" y="165.57"/>
+        <use href="#comb-hex" x="104" y="193.28"/>
+        <use href="#comb-hex" x="104" y="220.99"/>
+        <use href="#comb-hex" x="104" y="248.7"/>
+
+        <use href="#comb-hex" x="152" y="137.86"/>
+        <use href="#comb-hex" x="152" y="165.57"/>
+        <use href="#comb-hex" x="152" y="193.28"/>
+        <use href="#comb-hex" x="152" y="220.99"/>
+        <use href="#comb-hex" x="152" y="248.7"/>
+      </g>
+
+      <!-- one cell divided into the six equilateral triangles it is made of -->
+      <path class="comb-hero" d="M80 179.4 96 179.4M80 179.4 88 193.256M80 179.4 72 193.256M80 179.4 64 179.4M80 179.4 72 165.544M80 179.4 88 165.544"/>
+      <use class="comb-hero" href="#comb-hex" x="80" y="179.4"/>
+    </svg>
+  </div>
+
+  <div class="front__head">
+    <div>
+      <div class="wordmark">Class<em>Bridge</em></div>
+      <p class="front__tagline">Textbooks for school mathematics.</p>
+    </div>
+    <div class="classmark">
+      <span class="jk-label">Class</span>
+      <span class="classmark__num">8</span>
+      <span class="classmark__part"><span class="jk-label">Part 1</span></span>
+    </div>
+  </div>
+
+  <div class="front__title">
+    <h1>MATHEMATICS</h1>
+    <span class="comb-rule" aria-hidden="true"></span>
+    <p class="front__subtitle">Textbook for Class VIII</p>
+  </div>
+
+  <p class="comb-strap">Every idea explained <span>·</span> demonstrated <span>·</span> practised<br>
+    The full NCERT Class 8 syllabus</p>
+</div>
