@@ -418,8 +418,14 @@ in `localStorage` under `ll.pick`. That is a link with half its answer
 missing, not a bare arrival. A class or subject with no section behind it is
 ignored rather than selected.
 
+**Changing the class puts the subject back to *Choose a subject*.** The list
+is rebuilt from the new class either way; leaving the old choice standing in
+it means the reader is shown a book they did not ask for, under a heading
+that happens to read the same. Only arrival sets a subject on a class the
+reader did not just pick, and it sets it itself, after the rebuild.
+
 ```bash
-npm run check:studio     # 119 assertions: the chooser, the cards, the bar, the wrap, the build, the restart
+npm run check:studio     # 120 assertions: the chooser, the cards, the bar, the wrap, the build, the restart
 ```
 
 Two halves, and both are needed. **Structure** asserts, against a freshly
