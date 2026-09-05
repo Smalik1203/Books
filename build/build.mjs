@@ -681,13 +681,24 @@ async function checkOverflow(htmlPath, meta, sheet) {
    These pages take no folio, which is why Chapter 1 opens on
    page 1 and not page 5. Their count is kept even so the body
    still begins on a recto. */
-async function bookMeta(cls) {
+/* A cover names its volume with a title and a part; a chapter names it
+   with a subject. "Mathematics" and part 1 compose "Mathematics I", which
+   is how a volume's chapters find their own jacket. Taking the first
+   cover in the folder was right while a class was one book — with two it
+   stamped Part I's part number and Part I's ISBN on Part II. */
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V'];
+const volumeName = (book) =>
+  book.part ? `${book.title} ${ROMAN[Number(book.part)] || book.part}` : book.title;
+
+async function bookMeta(cls, subject) {
   const dir = p('covers', cls);
   const names = await readdir(dir, { withFileTypes: true }).catch(() => []);
   for (const e of names) {
     if (!e.isDirectory()) continue;
     const file = path.join(dir, e.name, 'cover.json');
-    if (existsSync(file)) return JSON.parse(await readFile(file, 'utf8'));
+    if (!existsSync(file)) continue;
+    const book = JSON.parse(await readFile(file, 'utf8'));
+    if (volumeName(book) === subject) return book;
   }
   return null;
 }
@@ -808,7 +819,13 @@ const blankVerso = (folio, marks = "") =>
   `<section class="page page--verso page--blank" data-folio="${folio}">`
   + `<div class="page__body"></div>${marks}</section>`;
 
-async function buildBook(cls) {
+/* A class is not one book. Class 8 is two volumes — Mathematics I and
+   Mathematics II — and a volume is what gets printed, so a volume is what
+   gets bound. Binding the class instead collides on the chapter number:
+   both volumes open at 1, so their chapters interleave 1, 1, 2, 2, and
+   paletteScope writes [data-ch="1"] twice at equal specificity, which
+   hands both chapter ones to whichever palette came last. */
+async function buildBooks(cls) {
   const root = p('pages', cls);
   const dirs = (await readdir(root, { withFileTypes: true }))
     .filter((e) => e.isDirectory()).map((e) => e.name);
@@ -819,13 +836,53 @@ async function buildBook(cls) {
     if (!existsSync(metaPath)) continue;
     chapters.push({ dir, meta: JSON.parse(await readFile(metaPath, 'utf8')) });
   }
-  if (!chapters.length) { console.log(`  ${cls}: no chapters`); return null; }
+  if (!chapters.length) { console.log(`  ${cls}: no chapters`); return []; }
+
+  /* Grouped by the field the studio already files them under, with the
+     same fallback it uses, so a chapter that forgot the field is bound
+     into the volume it is listed under rather than into one of its own. */
+  const volumes = new Map();
+  for (const ch of chapters) {
+    const subject = ch.meta.subject || 'Mathematics I';
+    if (!volumes.has(subject)) volumes.set(subject, []);
+    volumes.get(subject).push(ch);
+  }
+
+  /* "Mathematics I" sorts before "Mathematics II" before "Science" on the
+     plain string, a prefix being shorter than what extends it, so the
+     volumes bind in the order they are shelved without parsing a numeral
+     out of the subject. */
+  const subjects = [...volumes.keys()].sort();
+  console.log(`  ${cls}: ${subjects.length} volume(s) — `
+    + subjects.map((s) => `${s} (${volumes.get(s).length})`).join(', '));
+
+  const books = [];
+  for (const subject of subjects) {
+    const book = await bindVolume(cls, subject, volumes.get(subject));
+    if (book) books.push(book);
+  }
+  return books;
+}
+
+async function bindVolume(cls, subject, chapters) {
+  const root = p('pages', cls);
   chapters.sort((a, b) => Number(a.meta.number) - Number(b.meta.number));
+
+  /* The whole point of binding a volume rather than a class is that a
+     chapter number is unique inside one, and a repeat would put the same
+     collision back inside a single bind. */
+  const nums = chapters.map((c) => String(c.meta.number));
+  const twice = nums.find((n, i) => nums.indexOf(n) !== i);
+  if (twice !== undefined) {
+    console.warn(`    ! ${cls} · ${subject}: chapter ${twice} appears twice`
+      + ` — two [data-ch="${twice}"] palettes, and the later one repaints both`);
+  }
 
   // One book, one trim. Mixed editions would print at two sizes.
   const editions = [...new Set(chapters.map((c) => c.meta.edition || 'standard'))];
   if (editions.length > 1) {
-    console.error(`  ${cls}: chapters use different editions (${editions.join(', ')}) — a book needs one trim`);
+    console.error(`  ${cls} · ${subject}: chapters use different editions (${editions.join(', ')})`
+      + ` — a book needs one trim`);
     return null;
   }
 
@@ -844,7 +901,7 @@ async function buildBook(cls) {
      front matter itself is assembled further down — it needs the
      contents, which the loop below collects — so its length is counted
      here rather than measured there. */
-  const book = await bookMeta(cls);
+  const book = await bookMeta(cls, subject);
   const prefacePath = p('pages', cls, 'preface.html');
   const preface = book && existsSync(prefacePath)
     ? await readFile(prefacePath, 'utf8') : null;
@@ -884,19 +941,23 @@ async function buildBook(cls) {
     }
     bodies.unshift(...fm);
   } else {
-    console.warn(`    ! ${cls}: no cover.json found, so the book has no title page`);
+    console.warn(`    ! ${cls} · ${subject}: no cover.json for this volume,`
+      + ` so the book has no title page`);
   }
 
   const { html: rendered, errors } = renderMath(bodies.join(String.fromCharCode(10, 10)));
   const meta = {
     class: chapters[0].meta.class,
-    number: '', title: 'Mathematics',
+    number: '', title: (book && book.title) || subject,
     edition, palette: null,
   };
 
   const outDir = p('build', cls);
   await mkdir(outDir, { recursive: true });
-  const name = cls + '-book';
+  /* Named for the volume even when a class holds one, so the path does
+     not change shape on the day a second volume lands — which is the day
+     every note that quotes it is most likely to be followed. */
+  const name = `${cls}-${subject.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-book`;
   const outHtml = path.join(outDir, name + '.html');
   await writeFile(outHtml, bookShell(meta, rendered, scopes, null, sheet));
 
@@ -926,7 +987,7 @@ async function buildBook(cls) {
       + ` A page's side comes from its place in the book: sheet 1 is a recto.`);
   }
 
-  console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} numbered pages`
+  console.log(`  ${cls} · ${subject}: ${chapters.length} chapters → ${folio - 1} numbered pages`
     + `${front ? `, plus ${front} pages of front matter` : ``}`
     + `${blanks ? `, ${blanks} blank verso inserted so each chapter opens on a recto` : ''}`
     + `${errors ? `, ${errors} math error(s)` : ''}`);
@@ -1004,14 +1065,13 @@ for (const ch of chapters) {
   if (wantPng) await toPngs(built.htmlPath, built.meta, built.sheet);
 }
 
-// --book binds the whole class into one volume: folios run straight
-// through and every chapter opens on a recto.
+// --book binds each of the class's volumes: within a volume the folios
+// run straight through and every chapter opens on a recto.
 if (wantBook) {
   const cls = target.split('/')[0];
   console.log(`
-Binding ${cls} as one book:`);
-  const book = await buildBook(cls);
-  if (book) {
+Binding ${cls}:`);
+  for (const book of await buildBooks(cls)) {
     await checkOverflow(book.htmlPath, book.meta, book.sheet);
     if (wantPdf) await toPdf(book.htmlPath);
     if (book.bleedHtml) {

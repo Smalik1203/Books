@@ -205,11 +205,31 @@ every chapter's closing page is reported as short.
 
 ## Binding a book
 
-`--book` concatenates a class into one volume with continuous folios. Two
-things it does that a chapter build does not: it inserts a blank verso so
-each chapter opens on a recto, and it re-scopes every palette from `:root`
-to `[data-ch="N"]`. Leave the palettes at `:root` and the last chapter
+`--book` concatenates a **volume** with continuous folios. Two things it
+does that a chapter build does not: it inserts a blank verso so each
+chapter opens on a recto, and it re-scopes every palette from `:root` to
+`[data-ch="N"]`. Leave the palettes at `:root` and the last chapter
 recolours the whole book.
+
+**A class is not a volume, and binding one as the other collides.** Class 8
+is two books — Mathematics I and Mathematics II — and each restarts at
+Chapter 1, so binding the class interleaves them 1, 1, 2, 2 and writes
+`[data-ch="1"]` twice at equal specificity: both chapter ones come out in
+whichever palette was written last, which is the failure the re-scoping
+exists to prevent. So chapters are grouped by the `subject` in
+`chapter.json` — the field the studio files them under, now read by the
+builder too — and each group binds on its own, into
+`build/<class>/<class>-<subject>-book.html`. That name carries the volume
+even where a class has one, so the path does not change shape on the day a
+second one lands.
+
+A volume finds its title page by composing the same name from a cover: a
+cover's `title` and `part` make *Mathematics* + 1 = **Mathematics I**. No
+match, no title page — a volume stamped with the other volume's part
+number and ISBN is worse than a volume with no title page, and the warning
+names the title and part it looked for. One consequence worth knowing: the
+`pages` count in a `cover.json`, which the spine is computed from, is one
+volume's, and the bind's summary now reports it that way.
 
 ## Three trims, one standard
 
