@@ -1,0 +1,79 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>That last case is worth stating on its own, since it is easy to miss. Any two
+      numbers equally spaced about a round number have a product one can do in the head:
+      $48 \times 52$ is $2500 - 4$, $95 \times 105$ is $10000 - 25$, and $17 \times 23$
+      is $400 - 9$.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Find $1002^2 - 998^2$.</p>
+          <p>Squaring either number is unpleasant, so do not. This is a difference of
+          two squares, with $a = 1002$ and $b = 998$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">as a product</span>
+              <span>$= (1002 + 998)(1002 - 998)$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">the brackets</span>
+              <span>$= 2000 \times 4$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">answer</span>
+              <span>$= 8000$</span>
+            </div>
+          </div>
+          <p>Read right to left, the identity turns a difference into a product; read
+          left to right, it turns a product into a difference. Which direction is useful
+          depends entirely on which side is the awkward one.</p>
+        </div>
+      </div>
+
+      <h3>4.7.1 A fourth result, from the same picture</h3>
+
+      <p>Expand $(x + a)(x + b)$ and something useful appears.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">four products</span>
+          <span>$x^2 + bx + ax + ab$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">gather</span>
+          <span>$x^2 + (a+b)x + ab$</span>
+        </div>
+      </div>
+
+      <p>The middle coefficient is the <em>sum</em> of the two numbers and the last term
+      is their <em>product</em>. That is why $(x+3)(x+8)$ can be written down as
+      $x^2 + 11x + 24$ with no working at all, and why the square of a sum is only the
+      special case $a = b$.</p>
+
+      <h3>4.7.2 Answering without finding the letters</h3>
+
+      <p>The identities are also the tool for a kind of question that looks impossible.
+      Suppose you are told that $a + b = 7$ and $ab = 10$, and asked for $a^2 + b^2$.
+      There is no need to find $a$ and $b$ at all.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">identity</span>
+          <span>$(a+b)^2 = a^2 + 2ab + b^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">rearrange</span>
+          <span>$a^2 + b^2 = (a+b)^2 - 2ab$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">substitute</span>
+          <span>$= 7^2 - 2 \times 10 = 49 - 20 = 29$</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

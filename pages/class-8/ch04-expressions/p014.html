@@ -1,0 +1,105 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>4.6.1 The square of a sum</h3>
+
+      <p>Take a square of side $a + b$ and cut it once each way, at the point where $a$
+      ends. The four pieces are a square $a$ by $a$, two rectangles $a$ by $b$, and a
+      square $b$ by $b$.</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 150 130" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a plus b cut into a square of area a squared, two rectangles each of area a b, and a square of area b squared">
+      
+            <rect class="dg-fill-a" x="32" y="20" width="70" height="70"/>
+            <rect class="dg-fill-b" x="102" y="20" width="30" height="70"/>
+            <rect class="dg-fill-b" x="32" y="90" width="70" height="30"/>
+            <rect class="dg-fill-c" x="102" y="90" width="30" height="30"/>
+      
+            <rect class="dg-line" x="32" y="20" width="100" height="100"/>
+            <line class="dg-thin" x1="102" y1="20" x2="102" y2="120"/>
+            <line class="dg-thin" x1="32" y1="90" x2="132" y2="90"/>
+      
+            <text class="dg-label" x="67" y="59" text-anchor="middle">a²</text>
+            <text class="dg-label dg-label--on-fill" x="117" y="59" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="67" y="109" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="117" y="109" text-anchor="middle">b²</text>
+      
+            <line class="dg-dim" x1="32" y1="12" x2="102" y2="12"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="102" y1="12" x2="132" y2="12"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="67" y="7" text-anchor="middle">a</text>
+            <text class="dg-label" x="117" y="7" text-anchor="middle">b</text>
+      
+            <line class="dg-dim" x1="24" y1="20" x2="24" y2="90"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="24" y1="90" x2="24" y2="120"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="16" y="58" text-anchor="middle">a</text>
+            <text class="dg-label" x="16" y="109" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.3</span> The middle term is $2ab$
+          because there are two rectangles, one above the small square and one beside
+          it.</figcaption>
+        </figure>
+      </div>
+
+      <div class="eq eq--anchor">$$(a+b)^2 = a^2 + 2ab + b^2$$</div>
+
+      <p>The commonest error in algebra is to write $(a+b)^2 = a^2 + b^2$, and the
+      picture says exactly what that leaves out: the two rectangles, which between them
+      are most of the square. At $a = 3$ and $b = 4$ the true answer is $49$ and the
+      wrong one is $25$; the missing $24$ is the two rectangles.</p>
+
+      <h3>4.6.2 The square of a difference</h3>
+
+      <p>Now a square of side $a - b$, where $b$ is the smaller of the two. It is easiest
+      to see as what is left of a square of side $a$ after two strips have been taken
+      off — one across the top and one down the side, each of them $a$ long and $b$
+      wide.</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 170 126" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a with a strip of width b across the top and another down the right side; the two strips overlap in a corner square of area b squared, and what is left is a square of side a minus b">
+      
+            <rect class="dg-fill-a" x="30" y="46" width="64" height="64"/>
+            <rect class="dg-fill-b" x="30" y="18" width="64" height="28"/>
+            <rect class="dg-fill-b" x="94" y="46" width="28" height="64"/>
+            <rect class="dg-fill-c" x="94" y="18" width="28" height="28"/>
+      
+            <rect class="dg-line" x="30" y="18" width="92" height="92"/>
+            <line class="dg-thin" x1="94" y1="18" x2="94" y2="110"/>
+            <line class="dg-thin" x1="30" y1="46" x2="122" y2="46"/>
+      
+            <text class="dg-label" x="62" y="82" text-anchor="middle">(a − b)²</text>
+            <text class="dg-label dg-label--on-fill" x="108" y="36" text-anchor="middle">b²</text>
+      
+            <line class="dg-dim" x1="30" y1="11" x2="122" y2="11"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="76" y="6" text-anchor="middle">top strip, area <tspan font-style="italic">ab</tspan></text>
+      
+            <line class="dg-dim" x1="132" y1="18" x2="132" y2="110"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="142" y="64" text-anchor="middle"
+                  transform="rotate(-90 142 64)">side strip, area <tspan font-style="italic">ab</tspan></text>
+      
+            <line class="dg-dim" x1="30" y1="118" x2="94" y2="118"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="94" y1="118" x2="122" y2="118"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="62" y="125" text-anchor="middle">a − b</text>
+            <text class="dg-label" x="108" y="125" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.4</span> The two strips overlap, and
+          the dark corner is the piece they share. Take both strips away and that corner
+          has gone twice, so one of it must be put back.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

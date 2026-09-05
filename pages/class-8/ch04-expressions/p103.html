@@ -1,0 +1,87 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Two products either side of a round number</div>
+        <p>
+          $49$ and $51$ are each one away from $50$, so their product is a difference of
+          two squares with $a = 50$ and $b = 1$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$49 \times 51$</span>
+            <span>$= (50-1)(50+1) = 2500 - 1 = 2499$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$4.9 \times 5.1$</span>
+            <span>$= (5 - 0.1)(5 + 0.1) = 25 - 0.01 = 24.99$</span>
+          </div>
+        </div>
+        <p>
+          What changed is only the place of the decimal point. Each factor was divided by
+          ten, so the product was divided by a hundred, and $2499$ became $24.99$. What
+          did not change is the shape of the calculation: the identity does not care
+          whether $a$ and $b$ are whole numbers.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A field that grows by sixty-nine</div>
+        <p>
+          Call the original side $a$. The new field has side $a + 3$, and the extra area
+          is one square less the other.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">extra area</span>
+            <span>$(a+3)^2 - a^2 = 69$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">expand</span>
+            <span>$a^2 + 6a + 9 - a^2 = 69$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$6a = 60$, &nbsp; $a = 10$</span>
+          </div>
+        </div>
+        <p>
+          The difference of two squares gives the same answer with less writing:
+          $(a+3)^2 - a^2 = \big((a+3)+a\big)\big((a+3)-a\big) = 3(2a+3)$, so $2a + 3 =
+          23$. Either route works. What both rely on is that the $a^2$ terms go, which is
+          why the equation is an easy one rather than a squared one.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A difference of squares in disguise</div>
+        <p>
+          The instruction not to expand is a hint about which identity to use. Two
+          squares are being subtracted, so take $a = 2x + 3$ and $b = 2x - 3$ and use
+          $a^2 - b^2 = (a+b)(a-b)$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$a + b$</span>
+            <span>$= (2x+3) + (2x-3) = 4x$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$a - b$</span>
+            <span>$= (2x+3) - (2x-3) = 6$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">product</span>
+            <span>$= 4x \times 6 = 24x$</span>
+          </div>
+        </div>
+        <p>
+          Expanding both squares gives $4x^2 + 12x + 9 - (4x^2 - 12x + 9)$, which comes
+          to $24x$ as well, after six terms have been written and four of them cancelled.
+          The identity did the cancelling in advance.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

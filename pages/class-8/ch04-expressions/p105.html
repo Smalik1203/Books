@@ -1,0 +1,93 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Four in a row, and one more</div>
+        <p>
+          The arithmetic first: $3 \times 4 \times 5 \times 6 = 360$, and $361 = 19^2$.
+          Then $7 \times 8 \times 9 \times 10 = 5040$, and $5041 = 71^2$. Twice is not a
+          proof, and the proof is in the choice of which pair to multiply first.
+        </p>
+        <p>
+          Call the numbers $n$, $n+1$, $n+2$, $n+3$. Pair the outer two and the inner
+          two.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">outer pair</span>
+            <span>$n(n+3) = n^2 + 3n$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">inner pair</span>
+            <span>$(n+1)(n+2) = n^2 + 3n + 2$</span>
+          </div>
+        </div>
+        <p>
+          The two differ by exactly $2$. Writing $m$ for $n^2 + 3n$, the product is
+          $m(m+2)$, and adding one gives $m^2 + 2m + 1$, which is $(m+1)^2$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">the square</span>
+            <span>$(n^2 + 3n + 1)^2$</span>
+          </div>
+        </div>
+        <p>
+          Check it at $n = 3$: $9 + 9 + 1 = 19$, and $19^2 = 361$. The pairing was the
+          whole idea — pair them the other way and the two brackets differ by $3$, and
+          nothing tidy happens.
+        </p>
+      </div>
+
+      <div class="c-stage">
+        <div class="c-stage__num">3</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Problem Sets</div>
+          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Set A &middot; One result each</div>
+        <ol class="c-questions">
+          <li>$(x + 5)^2$ is equal to
+                <ol class="c-parts c-parts--alpha c-parts--1">
+                  <li>$x^2 + 25$</li>
+                  <li>$x^2 + 10x + 25$</li>
+                  <li>$x^2 + 5x + 25$</li>
+                  <li>$x^2 + 25x + 25$</li>
+                </ol>
+              </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>The number of terms in $3x^2 - 7x + 2$ is
+                <ol class="c-parts c-parts--alpha c-parts--4">
+                  <li>$1$</li>
+                  <li>$2$</li>
+                  <li>$3$</li>
+                  <li>$4$</li>
+                </ol>
+              </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>The coefficient of $x$ in $8 - x$ is
+                <ol class="c-parts c-parts--alpha c-parts--4">
+                  <li>$1$</li>
+                  <li>$-1$</li>
+                  <li>$8$</li>
+                  <li>$0$</li>
+                </ol>
+              </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
