@@ -1,0 +1,64 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">5.2</span><span class="name">Polygons</span></h2>
+
+      <p>A <span class="term">polygon</span> is a closed figure made of straight sides.
+      Three conditions, all of them doing work: the sides are <em>straight</em>, so a
+      circle is not one; the figure is <em>closed</em>, so a path that stops short is
+      not one; and the sides meet only at their ends, so a figure whose sides cross each
+      other is not one either.</p>
+
+      <p>The points where two sides meet are the <span class="term">vertices</span>, and
+      there are always exactly as many vertices as sides. Polygons are named by that
+      number, and the names are Greek: <em>gonia</em> is a corner, so a
+      <em>pentagon</em> has five of them.</p>
+
+      <p>Three sides is a triangle, four a quadrilateral, five a pentagon and six a
+      hexagon; then seven a heptagon, eight an octagon, nine a nonagon and ten a
+      decagon.</p>
+
+      <p>Past ten the names are more trouble than they are worth, and a figure with
+      seventeen sides is called a $17$-gon by everybody, including the people who know
+      the Greek for it.</p>
+
+      <h3>5.2.1 Convex and concave</h3>
+
+      <p>Polygons come in two kinds, and the difference matters for almost everything
+      that follows. Pick any two points inside a polygon and join them. In a
+      <span class="term">convex</span> polygon the joining segment stays inside, wherever
+      the two points were. In a <span class="term">concave</span> one you can find two
+      points whose segment leaves the figure and comes back.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 96" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A convex pentagon with a segment joining two interior points staying inside, and a concave pentagon with a segment between two interior points passing outside the figure">
+      
+            <path class="dg-line" d="M48 16 L78 38 L67 74 L29 74 L18 38 Z"/>
+            <circle class="dg-fill-teal" cx="34" cy="40" r="2.2"/>
+            <circle class="dg-fill-teal" cx="62" cy="60" r="2.2"/>
+            <path class="dg-thin" d="M34 40 L62 60"/>
+            <text class="dg-note" x="48" y="92" text-anchor="middle">convex</text>
+      
+            <path class="dg-line" d="M112 20 H160 V52 H188 V84 H112 Z"/>
+            <circle class="dg-fill-teal" cx="124" cy="26" r="2.2"/>
+            <circle class="dg-fill-teal" cx="184" cy="56" r="2.2"/>
+            <path class="dg-thin" d="M124 26 L184 56"/>
+            <text class="dg-note" x="150" y="92" text-anchor="middle">concave</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.1</span> In the second figure the
+          segment leaves through one side and comes back through another. A polygon is
+          concave exactly when one of its angles is bigger than a straight angle.</figcaption>
+        </figure>
+      </div>
+
+      <p>Everything in this chapter is about convex polygons unless it says otherwise.
+      That is not because the concave ones misbehave — most of the results survive — but
+      because the pictures are easier to read, and a reader who has to keep checking
+      whether a corner points inwards is not thinking about the mathematics.</p>
+
+    </div>
+  </div>
+</section>
