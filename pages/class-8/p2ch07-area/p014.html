@@ -1,0 +1,64 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>The trapezium, in one cut</h3>
+
+      <p>The first book found the area of a trapezium by taking two copies, turning one
+      of them over, and fitting the pair together into a parallelogram. That works, and
+      it needs a second trapezium. The half-turn of Fig. 7.9 does the same job with one.</p>
+
+      <p>Let the parallel sides be $a$ at the top and $b$ at the bottom, with height $h$
+      between them. Join the midpoints of the two slanting sides and cut along that line.
+      Now turn the upper piece half a circle about one end of the cut, exactly as the
+      triangle's top was turned about $N$. The side of length $a$ swings round and comes
+      to rest in line with the side of length $b$, so what is left is a parallelogram —
+      of base $a + b$, and of height $\tfrac{h}{2}$, since the cut was halfway up.</p>
+
+      <div class="eq eq--anchor">$$\text{area of a trapezium} = \tfrac12 \, h \, (a + b).$$</div>
+
+      <p>And now look back at Fig. 7.9 with that in mind. A triangle is a trapezium whose
+      top side has shrunk to nothing — the case $a = 0$ — and the formula duly reads
+      $\tfrac12 h(0 + b)$, which is $\tfrac12 bh$. The two arguments were never different
+      arguments. The triangle was the trapezium all along, cut at the same halfway line
+      and turned about the same kind of point.</p>
+
+      <h2><span class="badge">7.9</span><span class="name">Every Polygon Is Triangles</span></h2>
+
+      <p>A field is rarely a rectangle and almost never a rhombus. It is some shape with
+      five or six corners and no name at all, and there is no formula waiting for it —
+      but there does not need to be one.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 92" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A quadrilateral divided by one diagonal into two triangles, and a pentagon divided from one vertex into three triangles">
+      
+            <path class="dg-fill-a" d="M20 25 L80 18 L14 68 Z"/>
+            <path class="dg-fill-d" d="M80 18 L88 72 L14 68 Z"/>
+            <path class="dg-thin"   d="M80 18 L14 68"/>
+            <path class="dg-line"   d="M20 25 L80 18 L88 72 L14 68 Z"/>
+      
+            <path class="dg-fill-a" d="M112 44 L140 18 L178 32 Z"/>
+            <path class="dg-fill-d" d="M112 44 L178 32 L180 70 Z"/>
+            <path class="dg-fill-c" d="M112 44 L180 70 L126 80 Z"/>
+            <path class="dg-thin"   d="M112 44 L178 32 M112 44 L180 70"/>
+            <path class="dg-line"   d="M112 44 L140 18 L178 32 L180 70 L126 80 Z"/>
+      
+            <text class="dg-label" x="16" y="21">A</text>
+            <text class="dg-label" x="82" y="14">B</text>
+            <text class="dg-label" x="90" y="80">C</text>
+            <text class="dg-label" x="8" y="76">D</text>
+      
+            <text class="dg-note" x="49" y="90" text-anchor="middle">two triangles</text>
+            <text class="dg-note" x="146" y="90" text-anchor="middle">three triangles</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.10</span> One diagonal cuts a
+          quadrilateral into two triangles; two diagonals from one corner cut a pentagon
+          into three. A polygon of $n$ sides gives $n - 2$ triangles this way.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

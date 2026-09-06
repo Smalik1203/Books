@@ -1,0 +1,73 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Look at the left-hand rectangle on its own. Its diagonal is $AB$, and a diagonal
+      halves a rectangle, so the shaded piece $ABX$ is exactly half of it. The same
+      argument on the right makes $AXC$ half of the right-hand rectangle. Two halves of
+      two rectangles that together make $EBCD$ come to half of $EBCD$, and $EBCD$ has
+      area $b \times h$.</p>
+
+      <div class="eq eq--anchor">$$\text{area of a triangle} = \tfrac12 \times \text{base} \times \text{height}.$$</div>
+
+      <p>The height here is the <em>perpendicular</em> height — the distance from the
+      apex square to the base, not the length of a sloping side. Fig. 7.3 is the reason
+      for insisting: $ZDC$ has two long sides and the same area as the upright triangle
+      beside it, because what counts is how far $Z$ stands from the line $DC$, and
+      nothing else.</p>
+
+      <p>One case escapes that argument. If the triangle leans far enough over, the
+      perpendicular from the apex misses the base altogether and lands outside it, and no
+      rectangle can be drawn round the triangle with $BC$ as a side. The formula still
+      holds, and the reason is a subtraction rather than a halving.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 163 88" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="An obtuse triangle A B C whose altitude from A meets the extended base at a point D lying outside B C">
+      
+            <path class="dg-fill-d" d="M43 26 L43 70 L73 70 Z"/>
+            <path class="dg-fill-a" d="M43 26 L73 70 L153 70 Z"/>
+            <path class="dg-thin"   d="M43 70 H73"/>
+            <path class="dg-line"   d="M43 26 L73 70 L153 70 Z"/>
+            <path class="dg-dim"    d="M43 26 V70"/>
+      
+            <text class="dg-label" x="40" y="22">A</text>
+            <text class="dg-label" x="38" y="78">D</text>
+            <text class="dg-label" x="70" y="78">B</text>
+            <text class="dg-label" x="151" y="78">C</text>
+            <text class="dg-dim-label" x="47" y="50">h</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.5</span> The foot $D$ of the
+          perpendicular lies outside $BC$. The shaded triangle is what is left when
+          $ADB$ is taken away from $ADC$.</figcaption>
+        </figure>
+      </div>
+
+      <p>Both $ADC$ and $ADB$ are right-angled at $D$, so each of them <em>can</em> be
+      put in a rectangle and each obeys the formula already proved. Take the smaller from
+      the larger.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the difference</span>
+          <span>$\tfrac12 h \times DC - \tfrac12 h \times DB$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">common factor</span>
+          <span>$\tfrac12 h (DC - DB)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">and</span>
+          <span>$DC - DB = BC$, so the area is $\tfrac12 h \times BC$</span>
+        </div>
+      </div>
+
+      <p>Same formula, arrived at by a different route. That is worth noticing in itself:
+      a result proved for the easy case and then rescued for the awkward one is a
+      commoner shape of argument in mathematics than a single proof that covers
+      everything.</p>
+
+    </div>
+  </div>
+</section>
