@@ -1,60 +1,54 @@
-<section class="page">
+<section class="page" data-close>
   <div class="page__body">
     <div class="page__main">
 
-      <p>Two consequences come straight out of the fraction. The top can never exceed the
-      bottom, so $P(E)$ is never more than $1$; and it cannot be negative, so it is never
-      less than $0$. An event that must happen has every outcome in it and probability
-      $1$; an event that cannot happen has none and probability $0$. Everything real
-      lives between.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>A fair die is thrown once. Find the probability that the face is even, that
-          it is more than $4$, that it is $7$, and that it is less than $7$.</p>
-          <div class="work work--list">
-            <div class="work__row">
-              <span class="work__label work__label--wide">even</span>
-              <span>$2, 4, 6$ — three outcomes, so $\dfrac{3}{6} = \dfrac12$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">more than 4</span>
-              <span>$5, 6$ — two outcomes, so $\dfrac{2}{6} = \dfrac13$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">a seven</span>
-              <span>no outcome at all, so $\dfrac{0}{6} = 0$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">less than 7</span>
-              <span>all six outcomes, so $\dfrac{6}{6} = 1$</span>
-            </div>
-          </div>
-          <p>Every one of these was answered by counting faces. Nothing was thrown, and
-          nothing needed to be — the six outcomes were equally likely by the shape of the
-          die, and that is all the formula asks for.</p>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li class="hard">A quantity starts at $1$ and doubles every year for six years.
+            Plot it as a line graph, and explain why joining the points with straight
+            segments overstates the quantity at every moment in between.</li>
+        </ol>
       </div>
 
-      <p>An event and its opposite between them use up every outcome, so their
-      probabilities add to $1$. A bag holds $3$ red marbles, $2$ blue and $5$ green;
-      $P(\text{red}) = \tfrac{3}{10}$, and the probability of drawing something that is
-      not red is $\tfrac{7}{10}$, which is $1 - \tfrac{3}{10}$. When an event is awkward
-      to count and its opposite is easy, that subtraction is the shorter road.</p>
+      <div class="c-summary">
+        <div class="c-summary__title">What this chapter established</div>
+        <ol>
+          <li>The <span class="term">mean</span> is a fair share, and it is also a
+          balance point: the distances from it to the values below add up to the
+          distances to the values above. There is exactly one such point.</li>
+          <li>Including a value above the mean raises the mean, one below lowers it, and
+          one equal to it changes nothing. Removing a value does the opposite in each
+          case.</li>
+          <li>A set of new values leaves the mean untouched exactly when the new values
+          have that same mean themselves.</li>
+          <li>Add $c$ to every value and the mean rises by $c$; multiply every value by
+          $k$ and the mean is multiplied by $k$. So an error repeated in every reading
+          becomes the same error in the mean, and can be taken off at the end.</li>
+          <li>The <span class="term">median</span> is the middle value of the sorted
+          data, or the average of the two middle ones. It moves in the same direction as
+          the mean and by less, because it asks which side a value is on and not how far
+          away it is.</li>
+          <li>A mean and a count between them carry the sum, which is what lets a missing
+          value, or a correction to one, be recovered without knowing the rest.</li>
+          <li>In a <span class="term">frequency table</span>, multiply each value by its
+          frequency before adding, and divide by the total of the frequencies. A running
+          total of frequencies gives the median without sorting anything.</li>
+          <li>Where readings come in time order, plot them and join them: a
+          <span class="term">line graph</span>. Its steepness shows a rate, and a value
+          read between two dots is an estimate, not a measurement.</li>
+          <li>Read a graph in two steps — first what is given, then what follows. A bar's
+          length must be proportional to its value, so a bar graph's axis starts at
+          zero.</li>
+          <li>A picture is data when a stated rule links what is drawn to what is meant.
+          Axes, a colour scale, a key of five colours: find the rule before reading the
+          picture.</li>
+        </ol>
+      </div>
 
-      <p>Now look again at Example 1, where twenty throws of a die gave five threes and
-      only two fives. Each face has probability $\tfrac16$, so about three or four of
-      each were to be expected, and what turned up was neither. That is not evidence of a
-      loaded die. Twenty throws are far too few, and a fair die is under no obligation to
-      be tidy over twenty throws — or over twenty thousand, though by then the six counts
-      will be very close to equal indeed.</p>
-
-      <p>This is the honest relation between the two halves of the chapter. Data records
-      what happened; probability says what to expect; and the two agree in the long run
-      and need not agree at all in the short one. A record of twenty throws is a fact
-      about those twenty throws, and reading a verdict on the die out of it is the same
-      mistake as reading a temperature off a graph at a time nobody measured.</p>
+      <p>Both halves of the chapter were about the same discipline. A mean, a median and
+      a line graph are all summaries, and each of them is worth having because it throws
+      something away. Knowing what a summary has thrown away is the difference between
+      reading it and being told what to think by it.</p>
 
     </div>
   </div>

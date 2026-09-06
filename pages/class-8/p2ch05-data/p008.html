@@ -2,76 +2,79 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.5</span><span class="name">Bars That Touch</span></h2>
+      <p>The next one is harder in an interesting way, because the individual values are
+      never given at all.</p>
 
-      <p>Drawn as bars, this table becomes a <span class="term">histogram</span>. It
-      looks almost like a bar graph and differs in one visible way: the bars touch.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 128" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A histogram of the heights of forty students in five classes of five centimetres each, with bars of height four, seven, twelve, ten and seven standing side by side with no gaps">
-      
-            <text class="dg-note" x="6" y="9">students</text>
-      
-            <path class="dg-grid" d="M28 86 H188 M28 72 H188 M28 58 H188 M28 44 H188 M28 30 H188 M28 16 H188"/>
-            <path class="dg-axis" d="M28 100 H188 M28 100 V16"/>
-      
-            <path class="dg-fill-a" d="M28 72 H60 V100 H28 Z M60 51 H92 V100 H60 Z
-                                       M92 16 H124 V100 H92 Z M124 30 H156 V100 H124 Z
-                                       M156 51 H188 V100 H156 Z"/>
-            <path class="dg-line"   d="M28 72 H60 V100 H28 Z M60 51 H92 V100 H60 Z
-                                       M92 16 H124 V100 H92 Z M124 30 H156 V100 H124 Z
-                                       M156 51 H188 V100 H156 Z"/>
-      
-            <text class="dg-tick" x="25" y="103" text-anchor="end">0</text>
-            <text class="dg-tick" x="25" y="89" text-anchor="end">2</text>
-            <text class="dg-tick" x="25" y="75" text-anchor="end">4</text>
-            <text class="dg-tick" x="25" y="61" text-anchor="end">6</text>
-            <text class="dg-tick" x="25" y="47" text-anchor="end">8</text>
-            <text class="dg-tick" x="25" y="33" text-anchor="end">10</text>
-            <text class="dg-tick" x="25" y="19" text-anchor="end">12</text>
-      
-            <text class="dg-tick" x="28" y="111" text-anchor="middle">130</text>
-            <text class="dg-tick" x="60" y="111" text-anchor="middle">135</text>
-            <text class="dg-tick" x="92" y="111" text-anchor="middle">140</text>
-            <text class="dg-tick" x="124" y="111" text-anchor="middle">145</text>
-            <text class="dg-tick" x="156" y="111" text-anchor="middle">150</text>
-            <text class="dg-tick" x="188" y="111" text-anchor="middle">155</text>
-      
-            <text class="dg-note" x="108" y="123" text-anchor="middle">height (cm)</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.4</span> The forty heights. The numbers
-          on the horizontal axis mark the <em>edges</em> of the bars, not their middles —
-          that is what makes this a histogram and not a bar graph.</figcaption>
-        </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Venkayya records the coconut harvest from each of his $15$ trees and works
+          out an average of $25.6$ per tree. His son checks the counts and finds that one
+          tree's figure was written down as $3$ more than it should have been. What is
+          the correct average?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">the recorded total</span>
+              <span>$25.6 \times 15 = 384$ coconuts</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">the true total</span>
+              <span>$384 - 3 = 381$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">the true average</span>
+              <span>$381 \div 15 = 25.4$</span>
+            </div>
+          </div>
+          <p>Fifteen numbers were never needed. The error was in the total by exactly
+          $3$, and $3$ shared among $15$ trees is $0.2$ — which is precisely how much the
+          average came down. Compare Example 3, where the error was in every value; here
+          it was in one, and the effect on the mean is smaller by a factor of the number
+          of values.</p>
+        </div>
       </div>
 
-      <p>The touching is not a matter of style. In Fig. 5.2 the gaps said that a
-      household of four and a household of five are two separate answers with nothing in
-      between. Here there <em>is</em> something in between: a height of $139.6$ cm is a
-      real height, and it belongs to the second bar. The classes butt against each other
-      and cover the range without a break, so the bars must do the same. A gap would be a
-      claim that no student is that tall.</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.1</div>
+        <ol class="c-questions">
+          <li>Find the mean of each, and say what you notice about the third answer
+            beside the first.
+                <ol class="c-parts c-parts--1">
+                  <li>the first $50$ natural numbers</li>
+                  <li>the first $50$ odd numbers</li>
+                  <li>the first $50$ multiples of $4$</li>
+                </ol>
+            </li>
+        </ol>
+      </div>
 
-      <p>A second difference follows from the first, and it is the one that settles any
-      doubt about which kind of graph you are looking at. The bars of a bar graph may be
-      put in any order — alphabetical, tallest first, or the order the survey happened to
-      use — because the horizontal axis is only a row of labels. The bars of a histogram
-      may not be moved at all. Its horizontal axis is a number line, and $150$ has to
-      come after $145$ for the same reason it does on a ruler.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Check by balancing, without adding and dividing, that the mean of $5$, $6$,
+            $9$ and $12$ is $8$.</li>
+        </ol>
+      </div>
 
-      <p>One number is often wanted from a class in place of the class itself — for a
-      rough average, or to plot a single point. The number used is the
-      <span class="term">class mark</span>, the halfway point between the two ends: for
-      $140$&ndash;$145$ it is $142.5$, found as $(140 + 145) \div 2$. It is a stand-in
-      and not a measurement, and it is the fairest one available, because within its
-      class the table gives no reason to prefer any value to any other.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>The mean of $8$, $13$, $10$, $4$, $5$, $20$, $y$ and $10$ is $10.375$. Find
+            $y$.</li>
+        </ol>
+      </div>
 
-      <p>It is also how a rough average is got out of a grouped table. Take each class
-      mark, multiply it by the frequency of its class, add the five products and divide
-      by $40$. The answer is not the true average of the forty heights — those are gone
-      — but it is close, and it is the best the table can do.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>A set of $15$ values has a mean of $134$. Find the sum of the values.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>The mean of a collection is $20$. Two more values, $12$ and $28$, are added
+            to it. What is the new mean? Explain how you know without being told anything
+            else about the collection.</li>
+        </ol>
+      </div>
 
     </div>
   </div>

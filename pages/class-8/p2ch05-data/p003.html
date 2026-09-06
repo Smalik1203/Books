@@ -5,78 +5,51 @@
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
-          <p>A die is thrown twenty times and the faces come up in this order. Make a
-          frequency table.</p>
-          <div class="eq">$$3 \quad 6 \quad 1 \quad 4 \quad 3 \quad 2 \quad 6 \quad 5
-          \quad 3 \quad 1 \quad 4 \quad 6 \quad 2 \quad 3 \quad 5 \quad 4 \quad 6 \quad 3
-          \quad 1 \quad 2$$</div>
-          <table>
-            <thead>
-              <tr><th>Face</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Times it came up</td><td>3</td><td>3</td><td>5</td><td>3</td><td>2</td><td>4</td></tr>
-            </tbody>
-          </table>
-          <p>The counts add to $20$, so nothing has been dropped. They are not equal, and
-          a reader may be tempted to conclude that the die favours a three. Twenty throws
-          are far too few to conclude anything of the kind — which is a matter the last
-          section of this chapter takes up properly.</p>
+          <p>Check by balancing that the mean of $4$, $7$, $8$, $8$ and $18$ is $9$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">below 9</span>
+              <span>$5 + 2 + 1 + 1 = 9$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">above 9</span>
+              <span>$9$</span>
+            </div>
+          </div>
+          <p>They agree, so $9$ is the mean — and no adding up of the five values and
+          dividing by five was needed. The check works as a check because balance and
+          mean are the same condition written two ways.</p>
         </div>
       </div>
 
-      <h2><span class="badge">5.3</span><span class="name">Bars You Can Compare</span></h2>
+      <p>One thing the picture makes plain that the arithmetic hides: a single distant
+      value can hold up a great many near ones. In Fig. 5.1 three dots huddled near $11$
+      are balanced by one dot at $17$, and if that one were dragged out to $37$ the mean
+      would have to move nearly five places to keep up. A mean is not a promise that most
+      of the data is near it.</p>
 
-      <p>The frequency table is a great improvement on the raw list, but it still has to
-      be <em>read</em>: to see that houses of five are commonest you must compare six
-      numbers, one pair at a time. A <span class="term">bar graph</span> does that
-      comparison for you by turning each count into a length. Nine is taller than seven
-      before you have thought about it at all.</p>
+      <h2><span class="badge">5.3</span><span class="name">What Moves the Mean</span></h2>
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 124" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A bar graph of household sizes for thirty students, with bars of height four, seven, nine, five, three and two against household sizes three to eight">
-      
-            <text class="dg-note" x="10" y="7">students</text>
-      
-            <path class="dg-grid" d="M26 82 H190 M26 64 H190 M26 46 H190 M26 28 H190 M26 10 H190"/>
-            <path class="dg-axis" d="M26 100 H190 M26 100 V10"/>
-      
-            <path class="dg-fill-a" d="M32 64 H48 V100 H32 Z M59 37 H75 V100 H59 Z
-                                       M86 19 H102 V100 H86 Z M113 55 H129 V100 H113 Z
-                                       M140 73 H156 V100 H140 Z M167 82 H183 V100 H167 Z"/>
-            <path class="dg-line"   d="M32 64 H48 V100 H32 Z M59 37 H75 V100 H59 Z
-                                       M86 19 H102 V100 H86 Z M113 55 H129 V100 H113 Z
-                                       M140 73 H156 V100 H140 Z M167 82 H183 V100 H167 Z"/>
-      
-            <text class="dg-tick" x="23" y="103" text-anchor="end">0</text>
-            <text class="dg-tick" x="23" y="85" text-anchor="end">2</text>
-            <text class="dg-tick" x="23" y="67" text-anchor="end">4</text>
-            <text class="dg-tick" x="23" y="49" text-anchor="end">6</text>
-            <text class="dg-tick" x="23" y="31" text-anchor="end">8</text>
-            <text class="dg-tick" x="23" y="13" text-anchor="end">10</text>
-      
-            <text class="dg-tick" x="40" y="110" text-anchor="middle">3</text>
-            <text class="dg-tick" x="67" y="110" text-anchor="middle">4</text>
-            <text class="dg-tick" x="94" y="110" text-anchor="middle">5</text>
-            <text class="dg-tick" x="121" y="110" text-anchor="middle">6</text>
-            <text class="dg-tick" x="148" y="110" text-anchor="middle">7</text>
-            <text class="dg-tick" x="175" y="110" text-anchor="middle">8</text>
-      
-            <text class="dg-note" x="108" y="120" text-anchor="middle">members in the household</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.2</span> The same thirty answers as a
-          bar graph. The shape of the top edge — up to a peak at five, then down — is
-          the thing the table could not show.</figcaption>
-        </figure>
-      </div>
+      <p>Add a new value to a collection. Does the mean go up or down? The fair-share
+      description gives no quick answer — the total changes and so does the number of
+      shares, and which effect wins is not obvious. The balance picture answers it in a
+      sentence.</p>
 
-      <p>Three decisions were made in drawing it, and none of them is free.</p>
+      <p>A new dot to the right of the fulcrum adds to the right-hand total and nothing
+      to the left, so the row tips that way and the fulcrum must slide right to restore
+      it. A new dot to the left does the opposite. So including a value bigger than the
+      mean raises the mean, and including one smaller lowers it — every time, whatever
+      the rest of the data is doing.</p>
 
-      <p><strong>The bars are all the same width.</strong> Width carries no meaning here,
-      so it must not vary; a wider bar looks like more even when it is no taller. What
-      the reader is asked to compare is height, and only height.</p>
+      <p>A value exactly equal to the mean is the interesting case. It sits on the
+      fulcrum, contributes nothing to either total, and leaves the balance where it was.
+      Adding the mean to a collection changes the mean not at all, which is worth
+      remembering because it looks as though it ought to change something.</p>
+
+      <p>It has a use. A collection can be padded out to any size you like without
+      disturbing its mean, simply by adding copies of the mean — which is how one checks
+      that a rule about means really is about the values and not about how many of them
+      there happen to be.</p>
 
     </div>
   </div>
