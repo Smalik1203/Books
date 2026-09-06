@@ -1,0 +1,71 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A condition that fixes a digit pattern</div>
+        <p>Write the number as $10a + b$ and the sum of its digits as $a + b$. The
+        condition is then a single equation, and collecting it is the whole
+        argument.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">the condition</span>
+            <span>$10a + b = 4(a + b)$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">expanding</span>
+            <span>$10a + b = 4a + 4b$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">collecting</span>
+            <span>$6a = 3b$, so $b = 2a$</span>
+          </div>
+        </div>
+        <p>One equation in two unknowns does not give a number, and it was never going to
+        — it gives a <em>relationship</em>: the units digit is twice the tens digit. What
+        turns that into a finite list is something the algebra does not know, namely that
+        a digit runs from $0$ to $9$. So $a$ can be $1$, $2$, $3$ or $4$ and no more,
+        giving $12$, $24$, $36$ and $48$. Check one: $4 + 8 = 12$, and $4 \times 12 =
+        48$.</p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The best arrangement of the best digits</div>
+        <p>Two questions are hiding here, and the chapter answered only one of them. Its
+        rule says how to arrange three <em>given</em> digits: largest as the multiplier,
+        the other two in decreasing order, giving $qp \times r$. Which three digits to
+        choose is a separate matter, and for the largest product the answer is
+        unsurprising — take $7$, $8$ and $9$.</p>
+        <div class="work work--list">
+          <div class="work__row">
+            <span class="work__label work__label--wide">largest</span>
+            <span>$87 \times 9 = 783$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">the near miss</span>
+            <span>$97 \times 8 = 776$</span>
+          </div>
+        </div>
+        <p>For the smallest, both halves of the rule turn over, so $1$, $2$ and $3$ give
+        $23 \times 1 = 23$. That is worth a check, because the smallest two-digit number
+        does <em>not</em> win: $13 \times 2 = 26$ and $12 \times 3 = 36$. Both
+        $23 \times 1$ and $13 \times 2$ put the two smallest digits into the tens part
+        and tie there at $20$, and the leftover — $3 \times 1$ against $3 \times 2$ —
+        decides between them.</p>
+      </div>
+
+      <p>Those two questions are worth keeping apart, because they are answered by
+      different kinds of argument and it is easy to slide from one to the other. A rule
+      for arranging the digits you have been given is a piece of algebra: it was proved
+      once, for every $p < q < r$, and it never has to be checked again. Choosing which
+      digits to be given is a search, and it was settled by noticing that larger digits
+      make larger products and then letting the rule arrange the largest three.</p>
+
+      <p>The same division runs through the chapter. The pyramid formula says what the
+      top is once a bottom row is chosen; which bottom row to choose is a separate
+      question. Knowing which of the two you are being asked is most of knowing where to
+      start.</p>
+
+    </div>
+  </div>
+</section>

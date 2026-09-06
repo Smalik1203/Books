@@ -1,0 +1,75 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Three equations look like more than one unknown's worth of work, and they are
+      not: the last two say what $a$ and $b$ are in terms of $c$, so putting them into
+      the first leaves an equation in $c$ alone.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">substituting</span>
+          <span>$(12 + c) + (c + 8) = 60$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">collecting</span>
+          <span>$2c + 20 = 60$, so $2c = 40$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">giving</span>
+          <span>$c = 20$, and then $a = 32$ and $b = 28$</span>
+        </div>
+      </div>
+
+      <p>Notice what carried the argument. Nothing was guessed, and no pyramid was tried
+      out to see whether it fitted. The rule was written down as it stood, and the
+      writing did the rest — which is the second use of algebra in this chapter, and the
+      more useful one. The first was to explain a trick already known to work; this is to
+      find something not yet known at all.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A three-row pyramid has $44$ at the top and $7$ and $9$ at the two ends of
+          its bottom row. Complete it.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">call the middle</span>
+              <span>$c$, so the second row is $7 + c$ and $c + 9$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">the top</span>
+              <span>$(7 + c) + (c + 9) = 44$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">so</span>
+              <span>$2c + 16 = 44$, giving $c = 14$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">and the row above</span>
+              <span>$21$ and $23$, which do add to $44$</span>
+            </div>
+          </div>
+          <p>The last line is the check, and it is free — the two numbers were built from
+          $c$, so if they fail to add to $44$ the arithmetic went wrong somewhere
+          earlier.</p>
+        </div>
+      </div>
+
+      <p>How much has to be given before a pyramid has one answer? Three numbers were
+      supplied both times, and three is what it takes: a three-row pyramid has three free
+      entries along its bottom, and everything above them follows. Supply only the top
+      and one end and the equation left over has two unknowns in it, so there are many
+      pyramids and no way to choose between them. Supply four numbers and you may have
+      supplied a contradiction — a top of $44$ over a bottom row of $7$, $10$ and $9$
+      simply is not a pyramid, and the algebra says so by contradicting itself rather
+      than by handing you a wrong answer.</p>
+
+      <p>Both faults are worth recognising on sight, because they ask for opposite
+      things. Too little given means you must go back for another number; too much given
+      means one of the numbers you have is wrong. Neither is a failure of arithmetic, and
+      neither is repaired by doing the arithmetic again more carefully.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">6</div>
+    <h1 class="chapterhead__title">Why the Trick Always Works</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- A number pyramid, three rows. Nothing is drawn left of x=110:
+             the title box runs into this one. -->
+        <path class="dg-fill-d" d="M106 70 h26 v17 h-26 Z M136 70 h26 v17 h-26 Z M166 70 h26 v17 h-26 Z
+                                   M121 48 h26 v17 h-26 Z M151 48 h26 v17 h-26 Z"/>
+        <path class="dg-fill-a" d="M136 26 h26 v17 h-26 Z"/>
+        <path class="dg-line"   d="M106 70 h26 v17 h-26 Z M136 70 h26 v17 h-26 Z M166 70 h26 v17 h-26 Z
+                                   M121 48 h26 v17 h-26 Z M151 48 h26 v17 h-26 Z
+                                   M136 26 h26 v17 h-26 Z"/>
+
+        <text class="dg-tick" x="119" y="82" text-anchor="middle">1</text>
+        <text class="dg-tick" x="149" y="82" text-anchor="middle">9</text>
+        <text class="dg-tick" x="179" y="82" text-anchor="middle">4</text>
+        <text class="dg-tick" x="134" y="60" text-anchor="middle">10</text>
+        <text class="dg-tick" x="164" y="60" text-anchor="middle">13</text>
+        <text class="dg-tick" x="149" y="38" text-anchor="middle">23</text>
+
+        <text class="dg-dim-label" x="149" y="102" text-anchor="middle">sum of the two below</text>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">6.1</span><span class="name">Introduction</span></h2>
+
+      <p>Mukta says to Shubham: think of a number, and do not tell me what it is.
+      Double it. Add four. Divide by two. Now subtract the number you started with.
+      Shubham does all of it in his head, and before he can speak Mukta says
+      <em>two</em>.</p>
+
+      <p>He tries again with a different number and gets two again. He tries $1{,}000$,
+      and gets two. Something is going on, and it is not that Mukta can read minds — it
+      is that she does not need to know the starting number at all. The trick was built
+      so that the starting number would disappear.</p>
+
+      <p>This chapter is about how that is done, and the tool for it is one the last two
+      years have already put in your hands. A letter-number stands for
+      <em>any</em> number, so a calculation carried out in letters is every case of that
+      calculation at once. That is what turns <em>it worked for the six numbers I
+      tried</em> into <em>it works, and here is why</em>.</p>
+
+      <p>The tricks that follow are worth doing on somebody. But the useful half is the
+      second half: once you can see why a trick works, you can take it apart and build
+      another one that ends wherever you like.</p>
+
+      <h2><span class="badge">6.2</span><span class="name">Think of a Number</span></h2>
+
+      <p>Write Mukta's five steps in a column, and beside them the same five steps
+      carried out on a letter-number $x$ instead of on a particular number.</p>
+
+      <table>
+        <thead>
+          <tr><th>The step</th><th>Starting with $7$</th><th>Starting with $x$</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Think of a number</td><td>$7$</td><td>$x$</td></tr>
+          <tr><td>Double it</td><td>$14$</td><td>$2x$</td></tr>
+          <tr><td>Add four</td><td>$18$</td><td>$2x + 4$</td></tr>
+          <tr><td>Divide by two</td><td>$9$</td><td>$x + 2$</td></tr>
+          <tr><td>Subtract the original number</td><td>$2$</td><td>$2$</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
