@@ -1,0 +1,87 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the difference</span>
+          <span>$(10b + a) - (10a + b)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">collecting</span>
+          <span>$10b - b - 10a + a = 9b - 9a$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">factorising</span>
+          <span>$9(b - a)$</span>
+        </div>
+      </div>
+
+      <p>So the difference is not merely a multiple of $9$ — it is $9$ times the gap
+      between the digits, which is a second trick hidden inside the first. Shubham's
+      $47$ gave $27$, and the quotient $3$ is exactly $7 - 4$. If $a$ is the larger digit
+      the working is the same with the two lines the other way round, giving $9(a - b)$,
+      and the quotient is again the gap. And if the digits are equal the gap is zero, the
+      difference is zero, and Mukta's insistence that the digits differ was there to keep
+      the trick from being dull rather than from being wrong.</p>
+
+      <p>Adding instead of subtracting gives a different divisor and the same kind of
+      answer. Since $(10a + b) + (10b + a) = 11a + 11b = 11(a + b)$, the sum of a
+      two-digit number and its reverse is always a multiple of $11$, and the quotient is
+      the sum of the digits.</p>
+
+      <p>Three digits give more room to play in. Take any three-digit number $abc$ and
+      make two more by cycling the digits round — $bca$ and $cab$ — then add all
+      three.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">written out</span>
+          <span>$(100a + 10b + c) + (100b + 10c + a) + (100c + 10a + b)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">collecting</span>
+          <span>$111a + 111b + 111c$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">factorising</span>
+          <span>$111(a + b + c)$</span>
+        </div>
+      </div>
+
+      <p>Each digit has taken every position exactly once, so each is counted once as a
+      hundred, once as a ten and once as a unit — which is $111$ of it. And $111$ is
+      $3 \times 37$, so the total is always divisible by $3$ and always divisible by
+      $37$. Neither of those is a fact about the number chosen; both are facts about the
+      cycling.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Take a three-digit number, write it twice over to make a six-digit number —
+          $482$ becomes $482482$ — and divide by $7$, then by $11$, then by $13$. Why
+          does it come out exactly, and what is left at the end?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">what repeating does</span>
+              <span>$482482 = 482 \times 1000 + 482 = 482 \times 1001$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">and</span>
+              <span>$1001 = 7 \times 11 \times 13$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">so</span>
+              <span>the three divisions undo the $1001$, leaving $482$</span>
+            </div>
+          </div>
+          <p>The number you started with comes back, which is what makes this one feel
+          like magic. Repeating a three-digit number is multiplying it by $1001$, and
+          $1001$ happens to be the product of those three small primes — so the three
+          divisions are just that multiplication taken apart again.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

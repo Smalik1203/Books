@@ -1,0 +1,90 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A friend says their square adds to $70$. Find the dates. Another says
+          theirs adds to $50$. What do you tell them?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">first friend</span>
+              <span>$4a + 16 = 70$, so $4a = 54$ — not a whole number</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">second friend</span>
+              <span>$4a + 16 = 50$, so $4a = 34$ — not a whole number either</span>
+            </div>
+          </div>
+          <p>Both have added up wrongly, and you can say so without seeing the calendar.
+          Every possible total is $4a + 16$, which is a multiple of $4$; a total of $70$
+          or $50$ cannot come from any square anywhere on any calendar page. The trick
+          checks its own input, which no amount of trying out squares would have told
+          you.</p>
+        </div>
+      </div>
+
+      <p>The same handful of lines settles a bigger square. A $3 \times 3$ block holds
+      $a$, $a+1$, $a+2$ across the top, then the same three plus $7$, then plus $14$,
+      and those nine add to $9a + 72$. That factorises as $9(a + 8)$ — and $a + 8$ is the
+      date in the middle of the block. So the nine dates in any $3 \times 3$ square on a
+      calendar come to nine times the one at its centre, which is quicker to say than to
+      believe until you have seen the algebra.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v16"/>
+            <path d="M6 10h12"/>
+            <path d="M8 16h8"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Two things the algebra does not know: that a square must not run off the
+          right-hand edge of the week, and that it must not run past the end of the
+          month. The expression $4a + 16$ is happy with $a = 30$ in August and gives
+          $136$, which no square can produce. A formula answers the question it was
+          given, and the question of whether the square fits on the page has to be
+          asked separately.</p>
+        </div>
+      </div>
+
+      <h2><span class="badge">6.7</span><span class="name">Shapes That Stand for Numbers</span></h2>
+
+      <p>A letter-number need not be a letter. In the grid below each shape stands for a
+      number — the same number every time it appears — and the figure at the end of each
+      row is the total of that row.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 66" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A two-row grid: the first row holds three triangles and totals twenty-seven, the second holds two circles and a triangle and totals nineteen">
+      
+            <text class="dg-note" x="133" y="11" text-anchor="middle">row total</text>
+      
+            <path class="dg-thin" d="M48 16 V60 M82 16 V60 M14 38 H150"/>
+            <path class="dg-line" d="M14 16 H150 V60 H14 Z M116 16 V60"/>
+      
+            <path class="dg-fill-a" d="M24 33 L38 33 L31 21 Z M58 33 L72 33 L65 21 Z M92 33 L106 33 L99 21 Z
+                                       M92 55 L106 55 L99 43 Z"/>
+            <path class="dg-line"   d="M24 33 L38 33 L31 21 Z M58 33 L72 33 L65 21 Z M92 33 L106 33 L99 21 Z
+                                       M92 55 L106 55 L99 43 Z"/>
+      
+            <circle class="dg-fill-c" cx="31" cy="49" r="6"/>
+            <circle class="dg-fill-c" cx="65" cy="49" r="6"/>
+            <circle class="dg-line"   cx="31" cy="49" r="6"/>
+            <circle class="dg-line"   cx="65" cy="49" r="6"/>
+      
+            <text class="dg-tick" x="133" y="31" text-anchor="middle">27</text>
+            <text class="dg-tick" x="133" y="53" text-anchor="middle">19</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.6</span> Each shape is a number, the
+          same number wherever it appears. The first row settles the triangle; the
+          triangle then settles the circle.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

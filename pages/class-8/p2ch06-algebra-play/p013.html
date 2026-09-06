@@ -1,0 +1,61 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Largest digit multiplies, the rest go in order</div>
+        <p>To make $\square\,\square \times \square$ as large as possible from three
+        digits, use the biggest digit as the multiplier and put the other two in
+        decreasing order to make the two-digit number: $qp \times r$ when
+        $p < q < r$. Six cases were checked in the first instance and none in the
+        second, because the letters covered them all.</p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Arrange $3$, $5$ and $9$ to make the largest product, and check the rule
+          against the runner-up.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">by the rule</span>
+              <span>$r = 9$, and $q = 5$, $p = 3$, giving $53 \times 9 = 477$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">runner-up</span>
+              <span>$93 \times 5 = 465$</span>
+            </div>
+          </div>
+          <p>Both use $10 \times 5 \times 9 = 450$ for the tens part, and the $12$ that
+          separates them is $3 \times 9$ against $3 \times 5$. The gap between first and
+          second is exactly $3 \times (9 - 5)$, which is the argument again in
+          numbers.</p>
+        </div>
+      </div>
+
+      <h2><span class="badge">6.9</span><span class="name">Turning a Number Round</span></h2>
+
+      <p>It is Mukta's turn again. Choose a two-digit number whose digits differ, she
+      says, and keep it to yourself. Reverse the digits to make a second number. Subtract
+      the smaller from the larger. Now divide by $9$ — and there will be no
+      remainder.</p>
+
+      <p>Shubham takes $47$, reverses it to $74$, and finds $74 - 47 = 27$, which is
+      $3$ nines exactly. He tries $52$: reversed it is $25$, the difference is $27$
+      again, and again it divides. He tries $91$ and $19$ and gets $72$, which is
+      $8$ nines. Whatever he starts with, the nine is there.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A two-digit number is $10a + b$</div>
+        <p>The digits $a$ and $b$ written side by side do not mean $a$ times $b$. They
+        mean $10a + b$, because the left digit counts tens. Writing that down is the one
+        move every trick in this section needs, and without it there is nothing algebra
+        can get hold of.</p>
+      </div>
+
+      <p>With the number written as $10a + b$, its reverse is $10b + a$, and the
+      subtraction is three lines of collecting.</p>
+
+    </div>
+  </div>
+</section>
