@@ -2,6 +2,57 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>The commonest error in algebra is to write $(a+b)^2 = a^2 + b^2$, and the
+      picture says exactly what that leaves out: the two rectangles, which between them
+      are most of the square. At $a = 3$ and $b = 4$ the true answer is $49$ and the
+      wrong one is $25$; the missing $24$ is the two rectangles.</p>
+
+      <h3>4.6.2 The square of a difference</h3>
+
+      <p>Now a square of side $a - b$, where $b$ is the smaller of the two. It is easiest
+      to see as what is left of a square of side $a$ after two strips have been taken
+      off — one across the top and one down the side, each of them $a$ long and $b$
+      wide.</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 170 126" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a with a strip of width b across the top and another down the right side; the two strips overlap in a corner square of area b squared, and what is left is a square of side a minus b">
+      
+            <rect class="dg-fill-a" x="30" y="46" width="64" height="64"/>
+            <rect class="dg-fill-b" x="30" y="18" width="64" height="28"/>
+            <rect class="dg-fill-b" x="94" y="46" width="28" height="64"/>
+            <rect class="dg-fill-c" x="94" y="18" width="28" height="28"/>
+      
+            <rect class="dg-line" x="30" y="18" width="92" height="92"/>
+            <line class="dg-thin" x1="94" y1="18" x2="94" y2="110"/>
+            <line class="dg-thin" x1="30" y1="46" x2="122" y2="46"/>
+      
+            <text class="dg-label" x="62" y="82" text-anchor="middle">(a − b)²</text>
+            <text class="dg-label dg-label--on-fill" x="108" y="36" text-anchor="middle">b²</text>
+      
+            <line class="dg-dim" x1="30" y1="11" x2="122" y2="11"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="76" y="6" text-anchor="middle">top strip, area <tspan font-style="italic">ab</tspan></text>
+      
+            <line class="dg-dim" x1="132" y1="18" x2="132" y2="110"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="142" y="64" text-anchor="middle"
+                  transform="rotate(-90 142 64)">side strip, area <tspan font-style="italic">ab</tspan></text>
+      
+            <line class="dg-dim" x1="30" y1="118" x2="94" y2="118"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="94" y1="118" x2="122" y2="118"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="62" y="125" text-anchor="middle">a − b</text>
+            <text class="dg-label" x="108" y="125" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.4</span> The two strips overlap, and
+          the dark corner is the piece they share. Take both strips away and that corner
+          has gone twice, so one of it must be put back.</figcaption>
+        </figure>
+      </div>
+
       <p>The whole square is $a^2$. Each strip is $a$ long and $b$ wide, so each is $ab$.
       Removing both removes the corner square twice over, and the corner is $b^2$, so
       one $b^2$ has to be returned.</p>
@@ -29,67 +80,9 @@
       one to keep, because it says <em>why</em> the middle term is the part that changes
       sign while the two squares do not.</p>
 
-      <h3>4.6.3 A difference of two squares</h3>
-
-      <p>The third result is the one that looks least likely and turns out to be used
-      most. Start with a square of side $a$ and cut a square of side $b$ out of one
-      corner. What is left has area $a^2 - b^2$, which is obvious and is not on its own
-      very useful. What is useful is that the L-shaped piece left behind can be cut once
-      and laid out again as a plain rectangle — and the two sides of that rectangle can
-      be read straight off the drawing.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 216 100" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A square of side a with a square of side b cut from one corner; the remaining L shape is cut in two and reassembled into a rectangle a plus b wide and a minus b tall">
-      
-            <rect class="dg-fill-b" x="12" y="16" width="40" height="20"/>
-            <rect class="dg-fill-a" x="12" y="36" width="60" height="40"/>
-            <rect class="dg-ghost"  x="52" y="16" width="20" height="20"/>
-      
-            <path class="dg-line" d="M12 16 H52 V36 H72 V76 H12 Z"/>
-            <line class="dg-thin" x1="12" y1="36" x2="52" y2="36"/>
-      
-            <text class="dg-note" x="32" y="30" text-anchor="middle">moves</text>
-            <text class="dg-note" x="42" y="60" text-anchor="middle">stays</text>
-            <text class="dg-label dg-label--sm" x="62" y="30" text-anchor="middle">b²</text>
-      
-            <line class="dg-dim" x1="6" y1="16" x2="6" y2="76"
-                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-label" x="2" y="49" text-anchor="start">a</text>
-      
-            <line class="dg-dim" x1="52" y1="9" x2="72" y2="9"
-                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-label" x="62" y="6" text-anchor="middle">b</text>
-      
-            <line class="dg-move" x1="84" y1="46" x2="102" y2="46" marker-end="url(#dg-arrow)"/>
-      
-            <rect class="dg-fill-a" x="114" y="26" width="60" height="40"/>
-            <rect class="dg-fill-b" x="174" y="26" width="20" height="40"/>
-            <rect class="dg-line"   x="114" y="26" width="80" height="40"/>
-            <line class="dg-thin" x1="174" y1="26" x2="174" y2="66"/>
-      
-            <line class="dg-dim" x1="114" y1="74" x2="194" y2="74"
-                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-dim-label" x="154" y="82" text-anchor="middle">a + b</text>
-      
-            <line class="dg-dim" x1="200" y1="26" x2="200" y2="66"
-                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-dim-label" x="208" y="46" text-anchor="middle"
-                  transform="rotate(-90 208 46)">a − b</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 4.5</span> The upper piece is turned
-          through a right angle and set against the side of the lower one. Nothing has
-          been added or lost, so the rectangle has the same area as the cut square.</figcaption>
-        </figure>
-      </div>
-
-      <p>Check the two sides of the rectangle before believing it. The lower piece is
-      $a$ long and $a - b$ tall. The upper piece is $a - b$ long and $b$ tall; stood on
-      end it is $b$ wide and $a - b$ tall, so it matches the height exactly and adds $b$
-      to the width. The rectangle is therefore $(a+b)$ by $(a-b)$.</p>
-
-      <div class="eq eq--anchor">$$(a+b)(a-b) = a^2 - b^2$$</div>
+      <p>One consequence is worth having in advance. Since the middle term carries the
+      sign and the two squares do not, $(a-b)^2$ and $(b-a)^2$ come to the same thing —
+      squaring destroys the order, exactly as it does with numbers.</p>
 
     </div>
   </div>

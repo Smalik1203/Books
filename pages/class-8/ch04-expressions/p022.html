@@ -1,45 +1,83 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-summary">
-        <div class="c-summary__title">What this chapter established</div>
-        <ol>
-          <li>An <span class="term">expression</span> is a recipe for a number with the
-          number left out, and its letters are <span class="term">variables</span>. It
-          breaks at its $+$ and $-$ signs into <span class="term">terms</span>, each
-          keeping the sign in front of it; a term's numerical factor is its
-          <span class="term">coefficient</span> and its <span class="term">degree</span>
-          is the sum of the powers of its letters.</li>
-          <li>Expressions are named by their number of terms. A
-          <span class="term">polynomial</span> is one in which every power is a whole
-          number, so nothing sits in a denominator or under a root.</li>
-          <li>Only <span class="term">like terms</span> — those whose letter parts match
-          exactly — can be gathered, and gathering them is the distributive law read
-          backwards: $5xy - 2xy = (5-2)xy$.</li>
-          <li>Subtracting a bracket reverses the sign of <em>every</em> term inside it.
-          To multiply term by term, multiply the coefficients and add the exponents; the
-          degrees add too, which is a free check.</li>
-          <li>The <span class="term">distributive law</span> $a(b+c) = ab + ac$ is one
-          rectangle's area counted two ways. Cut the rectangle both ways and every term
-          of one bracket multiplies every term of the other — two terms times three give
-          six products.</li>
-          <li>An <span class="term">identity</span> holds for every value of its letters;
-          an equation only for particular ones. The three to know:
-          $(a+b)^2 = a^2 + 2ab + b^2$, &nbsp; $(a-b)^2 = a^2 - 2ab + b^2$, &nbsp;
-          $(a+b)(a-b) = a^2 - b^2$.</li>
-          <li>Each is a picture: a square cut into four, a square with two overlapping
-          strips taken off, a cut corner rearranged into a rectangle. $(a+b)^2$ is not
-          $a^2 + b^2$, and Fig. 4.3 shows what is missing. The letters stand for whole
-          terms, so in $(3x + 5y)^2$ the $a$ is $3x$.</li>
-          <li>$(x+a)(x+b) = x^2 + (a+b)x + ab$: the middle coefficient is the sum of the
-          two numbers, the last term their product.</li>
-          <li>Read backwards, the identities turn sums into products:
-          $x^2 + 10x + 25 = (x+5)^2$ and $m^2 - 81 = (m+9)(m-9)$. Read as arithmetic,
-          they give $103 \times 97 = 10000 - 9$, and $a^2 + b^2$ from $a+b$ and $ab$
-          without ever finding $a$ and $b$.</li>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="12">
+          <li>A rectangle has perimeter $24$ centimetres and area $32$ square
+              centimetres. Without finding the two sides, work out the sum of their
+              squares.</li>
         </ol>
       </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="13">
+          <li>Which is larger, $99 \times 101$ or $100^2$, and by how much? Answer
+              without multiplying anything out.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="14">
+          <li>Show that the difference between the squares of two consecutive whole
+              numbers is always odd, and that it is always the sum of the two
+              numbers.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="15">
+          <li>Write $x^2 + 8x + 20$ in the form $(x + p)^2 + q$. Use your answer to say
+              what the smallest value of the expression is, and which $x$ gives it.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="16">
+          <li>Decide which of these are identities and which are equations, by trying
+              two or three values in each.
+              <ol class="c-parts c-parts--1">
+                <li>$(x + 1)^2 = x^2 + 2x + 1$</li>
+                <li>$(x + 1)^2 = x^2 + 1$</li>
+                <li>$3x - 4 = 11$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">4.8</span><span class="name">More Than One Road</span></h2>
+
+      <p>The identities are shortcuts, and a shortcut is not the only way through. It is
+      worth seeing a single question answered several ways, because the habit of looking
+      for a second route is both a pleasure and the cheapest check there is.</p>
+
+      <p>Take $98^2$. Three of this chapter's results reach it, and so does ordinary
+      multiplication.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">square of a difference</span>
+          <span>$(100 - 2)^2 = 10000 - 400 + 4 = 9604$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">expanding once</span>
+          <span>$98 \times (100 - 2) = 9800 - 196 = 9604$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">difference of squares</span>
+          <span>$96 \times 100 + 2^2 = 9600 + 4 = 9604$</span>
+        </div>
+      </div>
+
+      <p>The third is the least obvious and the quickest. It works because
+      $a^2 - b^2 = (a-b)(a+b)$ read backwards gives $a^2 = (a-b)(a+b) + b^2$, and with
+      $a = 98$ and $b = 2$ the product on the right is $96 \times 100$ — a multiplication
+      nobody has to write down.</p>
+
+      <p>All three agree, as they must. That is the point worth carrying: a problem has
+      one answer and often several roads to it, and choosing between them is a matter of
+      which numbers are in front of you. Finding a second road is not wasted work — it is
+      how you find out that the first one was right.</p>
 
     </div>
   </div>

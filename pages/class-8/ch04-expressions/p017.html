@@ -2,6 +2,55 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Expand $(3x + 5y)^2$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">here</span>
+              <span>$a = 3x$, &nbsp; $b = 5y$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$a^2$</span>
+              <span>$= (3x)^2 = 9x^2$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$2ab$</span>
+              <span>$= 2 \times 3x \times 5y = 30xy$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$b^2$</span>
+              <span>$= (5y)^2 = 25y^2$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">answer</span>
+              <span>$9x^2 + 30xy + 25y^2$</span>
+            </div>
+          </div>
+          <p>Note $(3x)^2 = 9x^2$ and not $3x^2$: the square is on the whole term,
+          coefficient included.</p>
+        </div>
+      </div>
+
+      <p>Nothing changes when the sign does. Take $a = 7p$ and $b = 2q$, so that
+      $a^2 = 49p^2$ and $b^2 = 4q^2$ in every one of the three results, and only the
+      middle term can differ.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$(7p - 2q)^2$</span>
+          <span>$= 49p^2 - 28pq + 4q^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$(7p - 2q)(7p + 2q)$</span>
+          <span>$= 49p^2 - 4q^2$</span>
+        </div>
+      </div>
+
+      <p>The second has no middle term at all, and that is the whole point of it: two
+      brackets differing in one sign give two terms, not three.</p>
+
       <p>The identities also run backwards. If an expression is $a^2 + 2ab + b^2$ for
       some $a$ and $b$, it can be written as $(a+b)^2$ — and a product is far easier to
       work with than a sum. That is the whole of Class 9's work on factorisation, and it
@@ -24,79 +73,10 @@
       you: $x^2 + 9x + 25$ has the same two squares at its ends, but $9$ is not $2 \times
       1 \times 5$, so it is not $(x+5)^2$ and there is nothing to be done with it here.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.5</div>
-        <ol class="c-questions">
-          <li>Expand, using the square of a sum.
-              <ol class="c-parts c-parts--4">
-                <li>$(x + 3)^2$</li>
-                <li>$(2a + 1)^2$</li>
-                <li>$(m + 5n)^2$</li>
-                <li>$(4p + 3q)^2$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Expand, using the square of a difference.
-              <ol class="c-parts c-parts--4">
-                <li>$(y - 6)^2$</li>
-                <li>$(3t - 2)^2$</li>
-                <li>$(a - 7b)^2$</li>
-                <li>$(5x - 4y)^2$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Write down each product in two terms.
-              <ol class="c-parts c-parts--3">
-                <li>$(x + 8)(x - 8)$</li>
-                <li>$(2m - 3)(2m + 3)$</li>
-                <li>$(a + 5b)(a - 5b)$</li>
-                <li>$(7 - k)(7 + k)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>For each, say which of the three identities applies — or that none does —
-              and then expand.
-              <ol class="c-parts c-parts--4">
-                <li>$(3 + z)^2$</li>
-                <li>$(x + 2)(x + 7)$</li>
-                <li>$(4a - b)(4a + b)$</li>
-                <li>$(p - q)(q - p)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Write each as a square or as a product of two brackets.
-              <ol class="c-parts c-parts--4">
-                <li>$x^2 + 12x + 36$</li>
-                <li>$y^2 - 100$</li>
-                <li>$4a^2 - 4a + 1$</li>
-                <li>$9m^2 - 25n^2$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Simplify $(x + 4)^2 - (x - 4)^2$. Then explain the answer by looking at
-              the difference of two squares with $a = x+4$ and $b = x-4$.</li>
-        </ol>
-      </div>
+      <p>Reading an identity backwards like this is a different skill from reading it
+      forwards, and a harder one. Forwards you are told what to do; backwards you must
+      first recognise that there is anything to do at all, and the recognising is done on
+      the shape of the expression rather than on its numbers.</p>
 
     </div>
   </div>
