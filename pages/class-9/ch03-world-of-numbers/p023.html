@@ -37,6 +37,44 @@
       </div>
 
       <p>
+        Two examples in, a pattern in the denominators is already showing. One
+        repeating digit left $9x = 6$; two repeating digits left $99x = 45$. The
+        subtraction always removes a power of ten and leaves one behind, so what
+        multiplies $x$ is $10^{n} - 1$ — a string of $n$ nines, and nothing else
+        is possible.
+      </p>
+
+      <p>
+        Read backwards that is a small gift. A cycle of $n$ digits, starting
+        immediately, is simply that block of digits over $n$ nines: so
+        $0.\overline{7} = \tfrac{7}{9}$, $0.\overline{45} = \tfrac{45}{99}$ and
+        $0.\overline{123} = \tfrac{123}{999}$, each waiting only to be reduced.
+      </p>
+
+      <p>
+        Turn it round once more and it says something about the nines
+        themselves. $\tfrac{1}{9} = 0.\overline{1}$, $\tfrac{1}{99} =
+        0.\overline{01}$, $\tfrac{1}{999} = 0.\overline{001}$ — and the reason
+        $9$ and $99$ behave this way is the reason $10$ and $100$ do not: they
+        are the numbers a power of ten falls just short of.
+      </p>
+
+      <p>
+        Reducing the fraction hides all this, of course. Once $\tfrac{45}{99}$
+        has become $\tfrac{5}{11}$ there is no $99$ left to see, and coming the
+        other way there is no obvious reason why $11$ should give a cycle of two
+        digits. But the $99$ has not gone anywhere: $11$ divides $99$, which is
+        $10^{2} - 1$, and two is the length of the cycle.
+      </p>
+
+      <p>
+        That works generally, and it can be checked on a case worth checking.
+        Seven divides $999999$, which is $10^{6} - 1$, and no shorter string of
+        nines — so $\tfrac{1}{7}$ ought to repeat with a cycle of exactly six
+        digits. Divide it out and it does.
+      </p>
+
+      <p>
         In both of those the repetition began immediately after the decimal
         point. Very often it does not — a digit or two occurs once and only
         then does the cycle start, and a single shift can no longer bring the

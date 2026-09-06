@@ -46,6 +46,15 @@
         of at most $q - 1$ digits, and it never does.
       </p>
 
+      <p>
+        There is a reason the six digits behave so obligingly, and it is the
+        $999999$ from earlier. Multiply the block by $7$ and you get
+        $142857 \times 7 = 999999$ exactly — so the block is $\tfrac{999999}{7}$,
+        and multiplying it by $1$ to $6$ is the same as running through
+        $\tfrac{1}{7}, \tfrac{2}{7}, \ldots, \tfrac{6}{7}$, which are the same
+        cycle entered at six different points.
+      </p>
+
       <div class="c-tip">
         <div class="c-tip__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
