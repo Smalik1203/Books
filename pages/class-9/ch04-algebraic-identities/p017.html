@@ -2,6 +2,55 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h2><span class="badge">4.6</span><span class="name">Factorising Without Tiles</span></h2>
+
+      <p>
+        The tiles made one thing visible: to factorise $x^2 + 7x + 12$ you have
+        to split the $7x$ as $3x + 4x$. Get the split right and the pieces close
+        into a rectangle; get it wrong and they do not. But laying out tiles for
+        every expression is slow, and impossible once the numbers grow. So how
+        do you find the split without them?
+      </p>
+
+      <p>
+        The answer is to write down what a factorised expression must look like.
+        Multiplying $(x + a)(x + b)$ gives
+      </p>
+
+      <div class="eq">
+        $$x^2 + (a + b)x + ab$$
+      </div>
+
+      <p>
+        So the coefficient of $x$ is the <em>sum</em> of the two numbers, and the
+        constant is their <em>product</em>. Factorising is now a search for two
+        numbers with a known sum and a known product.
+      </p>
+
+      <p>
+        That is a genuine narrowing. A quadratic has infinitely many pairs of
+        numbers adding to 7, and infinitely many multiplying to 12, but very few
+        do both — and once the constant is a whole number, its factor pairs can
+        simply be listed. The search is short because two conditions have to
+        hold at the same time.
+      </p>
+
+      <p>
+        Of the two, start with the product. Sums are cheap — every whole number
+        is the sum of a pair in a hundred ways — while a product pins the two
+        numbers down to a handful of candidates you can write out on one line.
+        For a constant of 12 they are $1$ and $12$, $2$ and $6$, $3$ and $4$,
+        and that is the entire field. Then read the sums off and see which one
+        is wanted.
+      </p>
+
+      <p>
+        A word on what happens when none of them works. It does not mean you
+        have made a mistake; it means the quadratic does not factorise over the
+        whole numbers, and plenty do not. $x^2 + x + 1$ is one. Knowing that a
+        search can honestly come up empty is part of knowing how to conduct it.
+      </p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 10</div>
         <div class="c-example__body">
@@ -26,64 +75,6 @@
           </p>
         </div>
       </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-          <p>Factorise $x^2 + 11x + 30$.</p>
-          <p>
-            Here $a + b = 11$ and $ab = 30$, and both must hold at once — which
-            is what rules most candidates out: 2 and 15 multiply to 30 but add
-            to 17, 3 and 10 add to 13. The factor pairs of 30 leave 5 and 6.
-          </p>
-          <div class="work">
-            <p>$x^2 + 11x + 30 = x^2 + 5x + 6x + 30 = (x + 5)(x + 6)$</p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        So far both numbers have been positive. What changes when a sign does?
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 12</div>
-        <div class="c-example__body">
-          <p>Factorise $x^2 - 5x + 6$.</p>
-          <p>
-            The coefficient of $x$ is negative, so comparing with
-            $x^2 + (a + b)x + ab$ gives
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">sum</span>
-              <span>$a + b = -5$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">product</span>
-              <span>$ab = 6$</span>
-            </div>
-          </div>
-          <p>
-            A positive product with a negative sum means both are negative:
-            $-2$ and $-3$, in either order.
-          </p>
-        </div>
-      </div>
-
-      <p>
-        That last step deserves a second look, because it did real work before
-        any candidates were tried. The product 6 is positive, which means the
-        two numbers share a sign — a positive times a negative could never
-        reach it. The sum $-5$ then says which sign they share. Between them the
-        two conditions settled the signs before a single pair was tested.
-      </p>
-
-      <p>
-        The saving is larger than it looks. Without that reasoning the factor
-        pairs of 6 are $1$ and $6$, $2$ and $3$, and each may carry either sign
-        — eight candidates. With it there are two.
-      </p>
 
     </div>
   </div>
