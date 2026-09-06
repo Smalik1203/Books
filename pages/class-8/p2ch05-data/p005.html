@@ -2,100 +2,106 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Two sets on one pair of axes</h3>
+      <h2><span class="badge">5.4</span><span class="name">Shifting Every Value</span></h2>
 
-      <p>Two years of rainfall, or two sections' marks, are usually asked about together:
-      the question is not what either one is but how they differ. Drawing two graphs side
-      by side answers it badly — the eye must carry a height across the gap between them.
-      Put the pairs together instead, and the comparison becomes a glance.</p>
+      <p>Now change every value at once. The five numbers $3$, $5$, $7$, $9$, $11$ have
+      a mean of $7$. Add ten to each of them and they become $13$, $15$, $17$, $19$,
+      $21$. Their mean is $17$ — and adding up the new five to find that out is doing
+      more work than the question deserves.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="0 0 196 114" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A double bar graph of monsoon rainfall in four months for two years, with the pairs of bars standing together for each month">
+          <svg viewBox="0 0 196 110" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two dot plots with identical patterns, the first running from two to twelve with its balance point at seven, the second from twelve to twenty-two with its balance point at seventeen">
       
-            <text class="dg-note" x="6" y="9">rainfall (mm)</text>
+            <circle class="dg-fill-teal" cx="36" cy="29" r="3"/>
+            <circle class="dg-fill-teal" cx="68" cy="29" r="3"/>
+            <circle class="dg-fill-teal" cx="100" cy="29" r="3"/>
+            <circle class="dg-fill-teal" cx="132" cy="29" r="3"/>
+            <circle class="dg-fill-teal" cx="164" cy="29" r="3"/>
       
-            <path class="dg-fill-a" d="M112 3 H121 V10 H112 Z"/>
-            <path class="dg-line"   d="M112 3 H121 V10 H112 Z"/>
-            <text class="dg-note" x="124" y="9.5">2023</text>
-            <path class="dg-fill-c" d="M146 3 H155 V10 H146 Z"/>
-            <path class="dg-line"   d="M146 3 H155 V10 H146 Z"/>
-            <text class="dg-note" x="158" y="9.5">2024</text>
+            <path class="dg-axis" d="M14 34 H186"/>
+            <path class="dg-thin" d="M20 34 V37 M36 34 V37 M52 34 V37 M68 34 V37 M84 34 V37 M100 34 V37
+                                     M116 34 V37 M132 34 V37 M148 34 V37 M164 34 V37 M180 34 V37"/>
       
-            <path class="dg-grid" d="M30 76 H190 M30 56 H190 M30 36 H190 M30 16 H190"/>
-            <path class="dg-axis" d="M30 96 H190 M30 96 V16"/>
+            <text class="dg-tick" x="20" y="45" text-anchor="middle">2</text>
+            <text class="dg-tick" x="36" y="45" text-anchor="middle">3</text>
+            <text class="dg-tick" x="52" y="45" text-anchor="middle">4</text>
+            <text class="dg-tick" x="68" y="45" text-anchor="middle">5</text>
+            <text class="dg-tick" x="84" y="45" text-anchor="middle">6</text>
+            <text class="dg-tick" x="100" y="45" text-anchor="middle">7</text>
+            <text class="dg-tick" x="116" y="45" text-anchor="middle">8</text>
+            <text class="dg-tick" x="132" y="45" text-anchor="middle">9</text>
+            <text class="dg-tick" x="148" y="45" text-anchor="middle">10</text>
+            <text class="dg-tick" x="164" y="45" text-anchor="middle">11</text>
+            <text class="dg-tick" x="180" y="45" text-anchor="middle">12</text>
       
-            <path class="dg-fill-a" d="M36 54 H49 V96 H36 Z M76 28 H89 V96 H76 Z
-                                       M116 36 H129 V96 H116 Z M156 66 H169 V96 H156 Z"/>
-            <path class="dg-fill-c" d="M51 64 H64 V96 H51 Z M91 38 H104 V96 H91 Z
-                                       M131 25 H144 V96 H131 Z M171 72 H184 V96 H171 Z"/>
-            <path class="dg-line"   d="M36 54 H49 V96 H36 Z M76 28 H89 V96 H76 Z
-                                       M116 36 H129 V96 H116 Z M156 66 H169 V96 H156 Z
-                                       M51 64 H64 V96 H51 Z M91 38 H104 V96 H91 Z
-                                       M131 25 H144 V96 H131 Z M171 72 H184 V96 H171 Z"/>
+            <path class="dg-fill-c" d="M100 49 L94 59 L106 59 Z"/>
+            <text class="dg-note" x="98" y="68" text-anchor="middle">every value up by 10</text>
       
-            <text class="dg-tick" x="27" y="99" text-anchor="end">0</text>
-            <text class="dg-tick" x="27" y="79" text-anchor="end">100</text>
-            <text class="dg-tick" x="27" y="59" text-anchor="end">200</text>
-            <text class="dg-tick" x="27" y="39" text-anchor="end">300</text>
-            <text class="dg-tick" x="27" y="19" text-anchor="end">400</text>
+            <circle class="dg-fill-teal" cx="36" cy="75" r="3"/>
+            <circle class="dg-fill-teal" cx="68" cy="75" r="3"/>
+            <circle class="dg-fill-teal" cx="100" cy="75" r="3"/>
+            <circle class="dg-fill-teal" cx="132" cy="75" r="3"/>
+            <circle class="dg-fill-teal" cx="164" cy="75" r="3"/>
       
-            <text class="dg-tick" x="50" y="106" text-anchor="middle">June</text>
-            <text class="dg-tick" x="90" y="106" text-anchor="middle">July</text>
-            <text class="dg-tick" x="130" y="106" text-anchor="middle">Aug</text>
-            <text class="dg-tick" x="170" y="106" text-anchor="middle">Sept</text>
+            <path class="dg-axis" d="M14 80 H186"/>
+            <path class="dg-thin" d="M20 80 V83 M36 80 V83 M52 80 V83 M68 80 V83 M84 80 V83 M100 80 V83
+                                     M116 80 V83 M132 80 V83 M148 80 V83 M164 80 V83 M180 80 V83"/>
+      
+            <text class="dg-tick" x="20" y="91" text-anchor="middle">12</text>
+            <text class="dg-tick" x="36" y="91" text-anchor="middle">13</text>
+            <text class="dg-tick" x="52" y="91" text-anchor="middle">14</text>
+            <text class="dg-tick" x="68" y="91" text-anchor="middle">15</text>
+            <text class="dg-tick" x="84" y="91" text-anchor="middle">16</text>
+            <text class="dg-tick" x="100" y="91" text-anchor="middle">17</text>
+            <text class="dg-tick" x="116" y="91" text-anchor="middle">18</text>
+            <text class="dg-tick" x="132" y="91" text-anchor="middle">19</text>
+            <text class="dg-tick" x="148" y="91" text-anchor="middle">20</text>
+            <text class="dg-tick" x="164" y="91" text-anchor="middle">21</text>
+            <text class="dg-tick" x="180" y="91" text-anchor="middle">22</text>
+      
+            <path class="dg-fill-c" d="M100 95 L94 105 L106 105 Z"/>
           </svg>
-          <figcaption><span class="fignum">Fig. 5.3</span> Monsoon rainfall in a town,
-          two years together. This is a <span class="term">double bar graph</span>: the
-          pairs touch, the months stand apart, and a key says which colour is which
-          year.</figcaption>
+          <figcaption><span class="fignum">Fig. 5.2</span> The two dot plots are the same
+          picture. Only the numbering under them has changed, and the fulcrum has stayed
+          where it was relative to the dots.</figcaption>
         </figure>
       </div>
 
-      <p>Read the pairs across and one thing is plain at once: $2024$ was the drier year
-      in June, July and September. Read them again and a second thing appears that is
-      easy to miss — August went the other way, and by a wide margin. A reader who
-      glances at the graph and says <em>a bad monsoon in 2024</em> has seen three of the
-      four months and stopped.</p>
+      <p>Nothing about the arrangement was disturbed. Every dot moved ten places to the
+      right, so every distance from every dot to every other dot is what it was, and the
+      point that balanced them still balances them — ten places along.</p>
 
-      <p>The totals settle it: $1{,}000$ mm against $925$ mm, so the season really was
-      drier, but only by about a fourteenth, and all of the shortfall and more came in
-      the months on either side of August. That total is not on the graph. It never is —
-      a bar graph shows the parts, and any question about the whole is arithmetic the
-      reader has to do.</p>
+      <p>The picture is convincing and algebra makes it certain. Let the values be
+      $x_1, x_2, \ldots, x_n$, with mean $a$, so that</p>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 19h16"/>
-            <path d="M9 19v-7"/>
-            <path d="M15 19v-11"/>
-          </svg>
+      <div class="eq">$$\frac{x_1 + x_2 + \cdots + x_n}{n} = a.$$</div>
+
+      <p>Add a fixed number $c$ to every one of them and work out the new mean.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the new sum</span>
+          <span>$(x_1 + c) + (x_2 + c) + \cdots + (x_n + c) = x_1 + \cdots + x_n + nc$</span>
         </div>
-        <div class="c-tip__body">
-          <p>In a double bar graph the spacing carries meaning. The two bars of a pair
-          touch, because they belong to the same month; the pairs stand apart, because
-          the months do not. Space the eight bars evenly and the graph still contains all
-          the numbers, and the reader can no longer see which belongs with which.</p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">divide by n</span>
+          <span>$\dfrac{x_1 + \cdots + x_n}{n} + \dfrac{nc}{n}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">which is</span>
+          <span>$a + c$</span>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.1</div>
-        <ol class="c-questions">
-          <li>Twenty-five students were asked how many siblings they have. The answers
-            were $1, 0, 2, 1, 3, 1, 0, 2, 1, 1, 4, 2, 0, 1, 2, 3, 1, 0, 2, 1, 1, 2, 0, 3,
-            1$. Make a frequency table and check that your counts add to $25$.</li>
-        </ol>
-      </div>
+      <p>There were $n$ values and each gained $c$, so the total gained $nc$ — and $nc$
+      shared among $n$ values is $c$ each. Multiplying instead of adding goes the same
+      way. If every value is multiplied by $k$, the new sum is $k$ times the old sum by
+      the distributive property, and dividing by $n$ gives $ka$.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Draw a bar graph of your answer to question $1$. State the scale you have
-            used, and say why you chose it.</li>
-        </ol>
-      </div>
+      <div class="eq eq--anchor">$$\text{add } c \text{ to every value} \to \text{mean } a + c;
+      \qquad \text{multiply every value by } k \to \text{mean } ka.$$</div>
 
     </div>
   </div>

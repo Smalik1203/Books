@@ -2,63 +2,91 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Forty families were asked how many litres of milk they buy in a week. The
-            grouped table is $0$&ndash;$4$: $6$; $4$&ndash;$8$: $11$; $8$&ndash;$12$: $14$;
-            $12$&ndash;$16$: $7$; $16$&ndash;$20$: $2$.
-                <ol class="c-parts c-parts--1">
-                  <li>Draw the histogram.</li>
-                  <li>How many families buy under $8$ litres?</li>
-                  <li>What fraction buy $12$ litres or more?</li>
-                </ol>
-            </li>
-        </ol>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 163 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A tally sheet with six rows, one for each household size from three to eight, the strokes bundled in fives and the counts written beside them">
+      
+            <text class="dg-note" x="22" y="9" text-anchor="end">members</text>
+            <text class="dg-note" x="150" y="9" text-anchor="end">students</text>
+      
+            <path class="dg-line" d="M34 14 V26 M40 14 V26 M46 14 V26 M52 14 V26
+                                     M34 28 V40 M40 28 V40 M46 28 V40 M52 28 V40 M32 40 L54 28 M63 28 V40 M69 28 V40
+                                     M34 42 V54 M40 42 V54 M46 42 V54 M52 42 V54 M32 54 L54 42 M63 42 V54 M69 42 V54 M75 42 V54 M81 42 V54
+                                     M34 56 V68 M40 56 V68 M46 56 V68 M52 56 V68 M32 68 L54 56
+                                     M34 70 V82 M40 70 V82 M46 70 V82
+                                     M34 84 V96 M40 84 V96"/>
+      
+            <text class="dg-tick" x="22" y="26" text-anchor="end">3</text>
+            <text class="dg-tick" x="22" y="40" text-anchor="end">4</text>
+            <text class="dg-tick" x="22" y="54" text-anchor="end">5</text>
+            <text class="dg-tick" x="22" y="68" text-anchor="end">6</text>
+            <text class="dg-tick" x="22" y="82" text-anchor="end">7</text>
+            <text class="dg-tick" x="22" y="96" text-anchor="end">8</text>
+      
+            <text class="dg-tick" x="150" y="26" text-anchor="end">4</text>
+            <text class="dg-tick" x="150" y="40" text-anchor="end">7</text>
+            <text class="dg-tick" x="150" y="54" text-anchor="end">9</text>
+            <text class="dg-tick" x="150" y="68" text-anchor="end">5</text>
+            <text class="dg-tick" x="150" y="82" text-anchor="end">3</text>
+            <text class="dg-tick" x="150" y="96" text-anchor="end">2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.3</span> The thirty answers, tallied.
+          The counts add to $30$, which is the one check worth making: a total of $29$
+          means a stroke was missed, and there is no way to find it but to count
+          again.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A histogram has classes of size $10$ and its tallest bar covers
-            $40$&ndash;$50$. A reader says, &ldquo;so the commonest value is $45$.&rdquo;
-            Is that reader right? Say exactly what the bar does and does not tell you.</li>
-        </ol>
+      <p>How often a value occurs is its <span class="term">frequency</span>, and the
+      table of those counts is a <span class="term">frequency table</span>. It is a
+      shorter thing than the raw list and holds everything the raw list holds, except the
+      order the answers arrived in — which nobody wanted.</p>
+
+      <p>Now find the average household size. There is a tempting short answer — add the
+      six different sizes and divide by six, giving $\tfrac{33}{6} = 5.5$ — and it is
+      wrong. The mean is the sum of all thirty <em>answers</em> divided by thirty, and a
+      household of five was given as an answer nine times over, so it must count nine
+      times.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the sum</span>
+          <span>$(3 \times 4) + (4 \times 7) + (5 \times 9) + (6 \times 5) + (7 \times 3) + (8 \times 2)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">which is</span>
+          <span>$12 + 28 + 45 + 30 + 21 + 16 = 152$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the mean</span>
+          <span>$152 \div 30 = 5.07$, to two places</span>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>The marks of a class are grouped as $0$&ndash;$20$, $20$&ndash;$40$,
-            $40$&ndash;$60$, $60$&ndash;$80$, $80$&ndash;$100$ with frequencies $2$, $5$,
-            $14$, $12$, $7$. How many students sat the test, and how many scored less than
-            $60$?</li>
-        </ol>
-      </div>
+      <p>Each value is multiplied by its own frequency before anything is added, and the
+      divisor is the total of the frequencies rather than the number of rows. That is the
+      whole adjustment, and forgetting it is the commonest mistake made with a frequency
+      table.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li class="hard">Two histograms are drawn from the same $60$ measurements, one
-            with classes of size $5$ and one with classes of size $10$. A student notices
-            that the taller histogram has fewer bars. Explain why the total area of the
-            bars is the same in both, even though no bar has the same height.</li>
-        </ol>
-      </div>
+      <p>The median needs no multiplying at all, and it does not need the thirty answers
+      written out in order either. There are thirty values, so the median is the average
+      of the fifteenth and sixteenth. Add the frequencies from the top until those
+      positions are reached.</p>
 
-      <h2><span class="badge">5.6</span><span class="name">A Line for Something That Changes</span></h2>
+      <table>
+        <thead>
+          <tr><th>Household size</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Students</td><td>4</td><td>7</td><td>9</td><td>5</td><td>3</td><td>2</td></tr>
+          <tr><td>Running total</td><td>4</td><td>11</td><td>20</td><td>25</td><td>28</td><td>30</td></tr>
+        </tbody>
+      </table>
 
-      <p>Both graphs so far have counted things. A different kind of question asks what a
-      single quantity was doing over a stretch of time: the temperature through a day,
-      the water level in a well through a year, a patient's fever through a night. Here
-      the horizontal axis is time, which runs without stopping, so there is a value at
-      every moment and not only at the moments somebody wrote down.</p>
-
-      <p>That is what allows the points to be joined. A <span class="term">line
-      graph</span> plots the readings and joins each to the next, and the joining line is
-      a claim: between two readings the quantity moved from one to the other.</p>
-
-      <p>Bars would be wrong here, and it is worth seeing why. Six bars would say that
-      the temperature was $22^\circ$ for three hours, then $26^\circ$ for three hours,
-      then jumped again — six flat stretches and five leaps, which is not what a morning
-      does. Every reading would be carried correctly, and the picture would describe a
-      day nobody has ever lived through.</p>
+      <p>The running total reaches $11$ after the fours and $20$ after the fives, so
+      positions $12$ to $20$ in the sorted list are all fives. The fifteenth and
+      sixteenth are among them, and the median is $5$.</p>
 
     </div>
   </div>
