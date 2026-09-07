@@ -343,12 +343,18 @@ const pagefoot = (n) => '<div class="pagefoot">'
   + '<i class="pagefoot__bar pagefoot__bar--line" aria-hidden="true"></i>'
   + `<span class="pagefoot__folio">${n}</span></div>`;
 
+/* The tab says what the book is. `subject` carries the volume —
+   "Mathematics II", "Science" — and the volume numeral belongs to
+   the binder, not to a browser tab, so it comes off here. Without
+   this a science chapter announced itself as maths. */
+const subjectName = (s) => (s || 'Mathematics').replace(/\s+(I{1,3}|IV)$/, '');
+
 /* ---- Shell ------------------------------------------------ */
 const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = null) => ((theme) => `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — Mathematics Class ${escapeHtml(meta.class)}</title>
+<title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — ${escapeHtml(subjectName(meta.subject))} Class ${escapeHtml(meta.class)}</title>
 <link rel="stylesheet" href="${cssHref}">${meta.edition ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}${meta.palette ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "palette-" + meta.palette + ".css")}">` : ``}
