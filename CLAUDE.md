@@ -438,10 +438,12 @@ the library opens on the list you just left — right even for a chapter
 opened by its address.
 
 **The address is the only source.** A cover is the one exception, and only
-half of one: its arrow can carry the class but not a subject, since a cover
-belongs to none, so the subject is filled in from the last one chosen — kept
-in `localStorage` under `ll.pick`. That is a link with half its answer
-missing, not a bare arrival. A class or subject with no section behind it is
+half of one: its arrow carries the class and not the subject, so the subject
+is filled in from the last one chosen — kept in `localStorage` under
+`ll.pick`. That is a link with half its answer missing, not a bare arrival.
+The cover does know which volume it wraps, now that the library files it that
+way, so the arrow could carry the subject and this mechanism could go; what
+would have to move is the link, not the filing. A class or subject with no section behind it is
 ignored rather than selected.
 
 **Changing the class puts the subject back to *Choose a subject*.** The list
@@ -466,8 +468,14 @@ posts to `/api/build` and asserts the reply is a phrase and not a fill map.
 The book renders in an iframe so the studio's stylesheet and the book's can
 never reach each other.
 
-Covers appear in the library under their class, in a group of their own, and
-open at `/cover/<class>/<name>`. That viewer has no pager, no spreads and no
+Covers appear in the library **under the volume they wrap**, in a group of
+their own, and open at `/cover/<class>/<name>`. They were filed by class,
+which put the Mathematics jacket under Class 9 Science the day Science had a
+chapter. A cover names its volume the same way a chapter does — `cover.json`'s
+`title` and `part` compose *Mathematics I*, which is a chapter's `subject` —
+and that composition now lives in `build/volume.mjs` so the binder and the
+studio cannot disagree about it. A cover whose name composes to no subject is
+reported on the terminal rather than quietly showing up nowhere. That viewer has no pager, no spreads and no
 signature — a wrap is one sheet, not a run of pages — but the sheet toggle
 shows trim against the press sheet, and Build runs `cover.mjs` with both
 files, offered as **Print PDF** and **Print PNG**. A panel edited in
