@@ -342,21 +342,26 @@ a { color: inherit; text-decoration: none; }
 /* Two strokes rotated a quarter turn — no image, so it takes its colour
    from the palette like everything else here.
 
-   `bottom` is measured from the foot of the field because the select is
-   its last child: the select is 37px tall (7px padding, a 21px line, a
-   1px border, twice over), so its middle is 18.5px up, and the mark is
-   half its own 8px lower than that. Change the padding or the type size
-   above and this moves with them. */
+   The size is the native mark's size, measured against one rather than
+   guessed at: a 5.5px box turned 45 degrees is 7.8px across and 3.9px
+   high, which is what Chrome draws. The first attempt at this was an 8px
+   box with a 1.5px stroke and read as noticeably heavier.
+
+   `bottom` is measured from the foot of the field, because the select is
+   its last child: the select is 37px tall — 7px padding, a 21px line and
+   a 1px border, twice over — so its middle is 18.5px up. translateY(50%)
+   then centres the mark on that line whatever size it is, so only the
+   select's own height is written down here. */
 .lib-field::after {
   content: "";
   position: absolute;
   right: 14px;
-  bottom: 14px;
-  width: 8px;
-  height: 8px;
-  border-right: 1.5px solid var(--text-2);
-  border-bottom: 1.5px solid var(--text-2);
-  transform: rotate(45deg);
+  bottom: 18.5px;
+  width: 5.5px;
+  height: 5.5px;
+  border-right: 1px solid var(--text-2);
+  border-bottom: 1px solid var(--text-2);
+  transform: translateY(50%) rotate(45deg);
   pointer-events: none;      /* the click belongs to the select underneath */
 }
 /* the mark dims with the control it belongs to */
