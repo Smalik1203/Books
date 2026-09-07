@@ -171,7 +171,8 @@ Size alone is not a signature. Each level differs in *kind*.
 | `.c-summary` | teal | no — a rule and a numbered list |
 
 Three more — the division opener, the difficulty tag and the answer key — are
-added by §6a for Beyond the Book, and by nothing else.
+added by §6a for Beyond the Book, and by nothing else. Four more are added by
+§4a for the science volumes, and by nothing else.
 
 **Only two components are panels** — the example and the reflect prompt, both
 of which the mockups called for. Everything else sits on the page, held by
@@ -222,6 +223,65 @@ sits in running prose, is set inline size (`frac`). Display fractions
 overflow their line box, so any list of them takes `.c-parts--tall`, which
 lets the maths set the row height instead of the leading. Without it the rows
 collide, and the builder reports an overflow the page does not appear to have.
+
+## 4a. Science — four more, and a placeholder
+
+The science volumes carry furniture the maths volumes have no use for. NCERT's
+*Exploration* runs a large named set — Threads of Curiosity, Ready to Go
+Beyond, Meet a Scientist, Pause and Ponder, Activity, Think as a Scientist,
+What if…, The Quest Continues…, At a Glance, Revise Reflect Refine. Most of
+those already have a house component doing the same job, and reuse is the
+default:
+
+| the science book calls it | it is |
+|---|---|
+| Pause and Ponder | `.c-reflect`, retitled — the title is markup |
+| Example n.n | `.c-example` |
+| Note | `.c-tip` |
+| At a Glance | `.c-summary` |
+| Revise, Reflect, Refine | `.c-practice` |
+
+Four had no equivalent, and live in `css/science.css`:
+
+| component | colour | panel? |
+|---|---|---|
+| `.c-scientist` | teal | no — rules, a portrait beside a short life |
+| `.c-beyond` | teal | **yes** — a tab over a tinted box, built as the example is |
+| `.c-thread` | gold | no — rules, the question as its title |
+| `.c-activity` | rust | no — a band header over the steps |
+
+**Only one of the four is a panel**, and that is deliberate. The reflect box
+already owns the gold tint; a second gold box on the same spread would read as
+decoration rather than as a different kind of matter. So the thread of
+curiosity is set between rules instead, and the activity takes a band header
+like practice, because an activity is a set of instructions to work through
+rather than a box to read.
+
+`.c-activity__safety` is a rule and a line of rust under the steps, for the
+*Safety first* precaution the source calls for wherever a heating device,
+a corrosive or a blade is involved. It is not decoration and it is not
+optional: if an activity needs one, it goes there and nowhere else.
+
+**A photograph that has not arrived yet is `.c-photo`.** It prints a ruled box
+carrying the figure number, the width it is holding open, and a written brief
+of the wanted picture. Nothing about it is subtle, because a placeholder that
+could be mistaken for artwork is a placeholder that ships. It takes its width
+from the `.c-figure--*` modifier around it, and `.c-photo--wide` and
+`--portrait` set the shape it is reserving.
+
+When the real image arrives it goes in `figures/<class>/`, prepared with
+`build/prep-figure.mjs`, with the untouched original kept beside it as
+`_raw-<name>.png`. Then either a plain `<img>` if the artwork carries no
+callouts, or an `<image href>` inside the figure's `<svg>` if labels have to
+stay live type over the picture.
+
+**Science does not get a sidebar.** NCERT sets several of these boxes in a
+margin rail. This book has none: every page is one column at the full measure.
+`.page__side` exists in the builder's measurement probe and in no stylesheet,
+so adding it is possible and would be measured correctly from the first build —
+but it changes the page grammar of every book in the repo, and the boxes read
+perfectly well full-measure. If a physics or biology chapter genuinely needs a
+rail for an apparatus list, that is the moment to decide it, on its own merits.
 
 ## 6. Diagrams — first-class components
 
