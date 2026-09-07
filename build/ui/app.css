@@ -316,7 +316,7 @@ a { color: inherit; text-decoration: none; }
   gap: 14px;
   margin: 0 0 34px;
 }
-.lib-field { display: flex; flex-direction: column; gap: 6px; }
+.lib-field { display: flex; flex-direction: column; gap: 6px; position: relative; }
 .lib-field > span {
   font-size: 11px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--text-2);
@@ -325,12 +325,42 @@ a { color: inherit; text-decoration: none; }
   font: inherit;
   font-family: var(--sans);
   min-width: 190px;
-  padding: 7px 10px;
+  /* room on the right for the mark below, which the text must not run under */
+  padding: 7px 30px 7px 10px;
   color: var(--text);
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  /* The native mark sat hard against the rounded corner, and no amount of
+     padding-right moves it: Chrome draws it against the border box and
+     ignores the padding entirely. So the control gives it up and the
+     chevron below is ours, where it can be placed. */
+  appearance: none;
+  -webkit-appearance: none;
 }
+
+/* Two strokes rotated a quarter turn — no image, so it takes its colour
+   from the palette like everything else here.
+
+   `bottom` is measured from the foot of the field because the select is
+   its last child: the select is 37px tall (7px padding, a 21px line, a
+   1px border, twice over), so its middle is 18.5px up, and the mark is
+   half its own 8px lower than that. Change the padding or the type size
+   above and this moves with them. */
+.lib-field::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--text-2);
+  border-bottom: 1.5px solid var(--text-2);
+  transform: rotate(45deg);
+  pointer-events: none;      /* the click belongs to the select underneath */
+}
+/* the mark dims with the control it belongs to */
+.lib-field:has(select:disabled)::after { opacity: 0.45; }
 .lib-select:hover { border-color: var(--accent); }
 .lib-select:focus-visible { outline: none; border-color: var(--accent); }
 
