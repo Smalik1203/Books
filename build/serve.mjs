@@ -23,6 +23,7 @@ import path from 'node:path';
 import { impositionPlan, verify, fitsOn } from './impose.mjs';
 import { spineWidth } from './spine.mjs';
 import { coverMetrics } from './sheet.mjs';
+import { volumeName } from './volume.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const openAt = process.argv[2] || null;
@@ -175,6 +176,10 @@ async function coverLibrary() {
       const out = path.join(ROOT, 'build', 'covers', cls, dir);
       covers.push({
         target: cls + '/' + dir, meta, sheet: s,
+        /* Which volume this jacket is for, composed exactly as the
+           binder composes it, so a cover files under the subject its
+           own chapters carry and under no other. */
+        subject: volumeName(meta),
         name: meta.title + (meta.part ? ', Part ' + meta.part : ''),
         edition: (meta.edition || 'crown quarto').toUpperCase(),
         built: existsSync(out + '.html'),
@@ -276,13 +281,30 @@ function libraryHtml(classes, coverClasses) {
         + `</section>`;
     }).join('');
 
-    const coverSet = covers.length
-      ? `<section class="lib-set" hidden data-class="${esc(cls)}" data-covers="1">`
-        + '<div class="subject-head">Covers</div>'
-        + `<div class="grid">${covers.map(coverCard).join('')}</div></section>`
-      : '';
+    /* Covers are filed by volume, not by class. A jacket belongs to one
+       book — Mathematics I has one and Science will have its own — so
+       choosing Science used to be shown the Mathematics jacket, which is
+       the wrong book on the wrong shelf.
 
-    return perSubject + coverSet;
+       A cover whose composed volume name matches no subject would show
+       under none of them, so it is named on the terminal rather than
+       disappearing quietly. */
+    const filed = new Set();
+    const coverSets = SUBJECTS.map((sub) => {
+      const mine = covers.filter((c) => c.subject === sub);
+      mine.forEach((c) => filed.add(c.target));
+      return mine.length
+        ? `<section class="lib-set" hidden data-class="${esc(cls)}" data-covers="${esc(sub)}">`
+          + '<div class="subject-head">Covers</div>'
+          + `<div class="grid">${mine.map(coverCard).join('')}</div></section>`
+        : '';
+    }).join('');
+
+    covers.filter((c) => !filed.has(c.target)).forEach((c) => console.warn(
+      `    ! covers/${c.target}: "${c.subject}" is not a subject, so it is`
+      + ' not shown in the library'));
+
+    return perSubject + coverSets;
   }).join('');
 
   /* A directory is named class-9; a reader is offered "Class 9". The value

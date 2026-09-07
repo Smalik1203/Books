@@ -152,10 +152,12 @@ const FIXTURE_SETS = `
   <section class="lib-set" hidden data-class="class-9" data-subject="Mathematics" data-count="2">
     <a class="card">one</a><a class="card">two</a></section>
   <section class="lib-set" hidden data-class="class-9" data-subject="Science" data-count="0"></section>
-  <section class="lib-set" hidden data-class="class-9" data-covers="1">
+  <section class="lib-set" hidden data-class="class-9" data-covers="Mathematics">
     <a class="card">cover</a></section>
   <section class="lib-set" hidden data-class="class-8" data-subject="Science" data-count="1">
     <a class="card">only science</a></section>
+  <section class="lib-set" hidden data-class="class-8" data-covers="Mathematics">
+    <a class="card">maths cover</a></section>
 `;
 
 /* The rows run in order and the chooser keeps its state between them,
@@ -192,7 +194,11 @@ const CASES = [
     subjectDisabled: false,
     subjectOptions: ['Choose a subject', 'Science'],
     subjectValue: '', visible: [], prompt: true, empty: false }],
-  ['class 8 + Science', ['class-8', 'Science'], {
+  /* Class 8 in the fixture holds a Mathematics cover and no Mathematics
+     chapters. Choosing Science must show the Science chapters and NOT
+     that jacket: a cover belongs to one volume, and the library filed
+     them by class until this row was written. */
+  ['class 8 + Science, and no Mathematics cover with it', ['class-8', 'Science'], {
     subjectDisabled: false, subjectOptions: ['Choose a subject', 'Science'],
     subjectValue: 'Science', visible: ['class-8/Science'], prompt: false, empty: false }],
 ];

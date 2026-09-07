@@ -26,6 +26,7 @@ import katex from 'katex';
 import { cropHeight } from './png.mjs';
 import { windowPad } from './viewport.mjs';
 import { tokenReader, sheetMetrics, px } from './sheet.mjs';
+import { volumeName } from './volume.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -691,10 +692,10 @@ async function checkOverflow(htmlPath, meta, sheet) {
    with a subject. "Mathematics" and part 1 compose "Mathematics I", which
    is how a volume's chapters find their own jacket. Taking the first
    cover in the folder was right while a class was one book — with two it
-   stamped Part I's part number and Part I's ISBN on Part II. */
-const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V'];
-const volumeName = (book) =>
-  book.part ? `${book.title} ${ROMAN[Number(book.part)] || book.part}` : book.title;
+   stamped Part I's part number and Part I's ISBN on Part II.
+
+   The composition itself is in volume.mjs, because the studio needs the
+   same answer and cannot import this file. */
 
 async function bookMeta(cls, subject) {
   const dir = p('covers', cls);

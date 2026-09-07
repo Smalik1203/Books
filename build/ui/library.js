@@ -6,8 +6,8 @@
    about the library is a viewer with a reason to break when the
    library changes.
 
-   The server renders every class-and-subject pair and every
-   class's covers, each tagged and hidden. All this does is decide
+   The server renders every class-and-subject pair and the covers of
+   every volume, each tagged and hidden. All this does is decide
    which one is on show. Both choices are required — a class on its
    own is not a selection, it is half of one.
 
@@ -103,7 +103,11 @@
     }
 
     show(set, true);
-    show(sets.find((s) => s.dataset.class === cls && s.dataset.covers), true);
+    /* A cover is filed under the volume it wraps, so `data-covers` holds
+       a subject rather than a flag. It used to hold "1" and be shown for
+       whichever subject was chosen, which put the Mathematics jacket
+       under Science. */
+    show(sets.find((s) => s.dataset.class === cls && s.dataset.covers === sub), true);
   }
 
   /* ---- Arriving with a choice already made -----------------
@@ -121,10 +125,15 @@
      and a front door that quietly reopens the last room is a front
      door you cannot use to start somewhere else.
 
-     Storage is kept for one job only: a cover belongs to a class
-     and to no subject, so its arrow can only carry the class, and
-     the subject is filled in from the last one chosen. That is a
-     link with half its answer missing, not a bare arrival.
+     Storage is kept for one job only: a cover's back arrow carries
+     the class and not the subject, so the subject is filled in from
+     the last one chosen. That is a link with half its answer
+     missing, not a bare arrival.
+
+     The cover does know which volume it wraps — that is what files
+     it in the library — so the arrow could carry the subject too,
+     and this mechanism could go. It has not been changed here
+     because the link, not the filing, is what would have to move.
 
      Nothing here is trusted: a class or subject with no section is
      ignored and the dropdowns stay as they were. */
