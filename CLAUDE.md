@@ -302,10 +302,18 @@ ones a new direction has to restate.
 Every direction block sets the same tokens the finish blocks set and comes
 later in `cover.css`, so it wins the cascade at equal specificity: `night`,
 `solar`, `cobalt` and `vivid` all render a byte-identical proof of an `arc`
-cover. That is why Class 9 declares `night` and gets arc's palette anyway,
-and why Class 8 declares no finish at all. `cover-swatch.mjs` is unaffected
-because it injects `--jk-front-*` of its own. Colour on a cover is a
-direction's business until someone decides otherwise.
+cover. **No cover declares one any more.** Class 9 Mathematics carried
+`"finish": "night"` and rendered arc's palette regardless; removing it left
+the proof byte-identical, which is how it was checked rather than reasoned
+about. A setting a file claims and does not have is worse than no setting,
+because the next reader believes it.
+
+`night` does set two tokens no direction does — `--jk-ground-panel` and
+`--jk-ground-mark` — so the removal was not obviously safe. Neither is ever
+read: they are defined in the finish blocks and consumed by no rule.
+`cover-swatch.mjs` is unaffected because it injects `--jk-front-*` of its
+own. Colour on a cover is a direction's business until someone decides
+otherwise.
 
 The spine width, the EAN-13 and the ISBN check digit are computed, not typed —
 see §7b of DESIGN.md. `--bleed` refuses to write a press sheet while the QR is
