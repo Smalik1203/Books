@@ -1364,3 +1364,95 @@ body.bleed .jacket {
 .jacket--comb .spine__badge .jk-label,
 .jacket--comb .spine__class .jk-label { color: var(--jk-front-label); }
 .jacket--comb .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
+
+/* ---- tile: Class 8 Part 2 ---------------------------------
+   Part 1 is comb and this was arc, which is Class 9 mathematics —
+   so the two volumes of Class 9 and the second volume of Class 8
+   all came off the press the same colour. A direction owns the
+   palette of the whole wrap, so sharing one is sharing a book's
+   whole identity.
+
+   Two parts of one class should read as a pair rather than as two
+   unrelated books, so this mirrors comb's arrangement — a dark
+   front, the spine going with it, the accent doing the pointing —
+   and changes the hue. Green and wine sit together on a shelf and
+   are never mistaken for each other.
+
+   The front arrangement is arc's, because the panel that uses this
+   was drawn to it, and the .arc-* classes are global and read the
+   tokens below. Only the two discs carry their own hex, so those
+   are the only rules that have to be restated here.
+   ------------------------------------------------------------ */
+.jacket--tile {
+  --jk-display: Poppins, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #5c1f33;
+  --jk-navy-deep: #401423;
+  --jk-navy-soft: #b98d9b;
+  --jk-terra:     #e3a24b;
+  --jk-sage:      #8a9c86;
+  --jk-gold:      #e3a24b;
+  --jk-cream:     #f8f0e3;
+
+  /* the back's light half — the clearing the blurb sits in */
+  --jk-ground:        #f8f0e3;
+  --jk-ground-ink:    #5c1f33;
+  --jk-ground-soft:   #8a6470;
+  --jk-ground-rule:   #e6d6c6;
+  --jk-ground-accent: #c2683a;
+  --jk-ground-art:    none;
+
+  /* the back's deep half — the front's own wine, so the colour runs
+     from the front round the shelf edge into the foot of the back */
+  --jk-deep:      #5c1f33;
+  --jk-deep-ink:  #f8f0e3;
+  --jk-deep-soft: #d1a9b4;
+
+  --jk-front:        #5c1f33;
+  --jk-front-ink:    #f8f0e3;
+  --jk-front-soft:   #d1a9b4;
+  --jk-front-mark:   #e3a24b;
+  --jk-front-accent: #e3a24b;
+  --jk-front-label:  #e3a24b;
+}
+.jacket--tile { font-family: var(--jk-display); }
+
+/* ---- front type ------------------------------------------- */
+.jacket--tile .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.125); }
+.jacket--tile .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.38);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.jacket--tile .front__subtitle {
+  font-family: var(--font-body);
+  font-weight: var(--weight-text);
+  margin: 5mm 0 0;
+}
+.jacket--tile .wordmark,
+.jacket--tile .learnlab { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--tile .classmark { border-left-width: 0.5mm; }
+.jacket--tile .classmark__num { font-weight: 700; }
+
+/* The two discs are the only part of arc's composition that carries
+   its own colour rather than a token — slate and ghost are bluish
+   greys, which on wine read as dirt. */
+.jacket--tile .arc-disc--slate { fill: #7c3049; opacity: 0.55; }
+.jacket--tile .arc-disc--ghost { fill: #e3a24b; opacity: 0.16; }
+
+/* ---- spine ------------------------------------------------
+   The front is the dark panel, as comb's is, so the spine goes wine
+   with it and the colour runs unbroken from the front round to the
+   back's deep half. */
+.jacket--tile .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--tile .spine__mark,
+.jacket--tile .spine__title,
+.jacket--tile .spine__badge-num { color: var(--jk-front-ink); }
+.jacket--tile .spine__mark { font-weight: 700; }
+.jacket--tile .spine__title { font-weight: 700; letter-spacing: 0.14em; }
+.jacket--tile .spine__tick { background: var(--jk-front-accent); width: 6mm; height: 0.5mm; }
+.jacket--tile .spine__badge { border-color: var(--jk-front-label); }
+.jacket--tile .spine__badge .jk-label,
+.jacket--tile .spine__class .jk-label { color: var(--jk-front-label); }
+.jacket--tile .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
