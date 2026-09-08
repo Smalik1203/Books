@@ -280,9 +280,23 @@ files, in back-spine-front order, and they live in `covers/<class>/_shared/`
 so several covers share one blurb — a blurb edited in three places is a blurb
 that will differ. `direction` and `finish` become classes on the wrap:
 a **direction** brings its own display face, artwork and front arrangement
-(`grid`, `lattice`, `curve`, `arc` for Class 9 and `comb` for Class 8); a
-**finish** only repaints, through the token contract at the top of
-`css/cover.css`.
+(`grid`, `lattice`, `curve`, `arc`, `comb`, `tile`); a **finish** only
+repaints, through the token contract at the top of `css/cover.css`.
+
+**A direction owns the colour of a whole wrap, so no two volumes may share
+one.** They did: Class 8 Part 2 was written as `arc`, which is Class 9
+Mathematics, and the two came off the press the same book in different
+words. Four wraps, four directions now — Class 8 Part 1 `comb`, Part 2
+`tile`, Class 9 Mathematics `arc`, Class 9 Science `lattice`. Two parts of
+one class are meant to read as a pair rather than as strangers, which is why
+`tile` mirrors `comb`'s arrangement — a dark front, the spine going with it —
+and changes only the hue.
+
+The front arrangements are **not** tied to their directions: `.arc-*` and the
+rest are global and read `--jk-front-*`, so a panel drawn to arc's
+composition renders in any direction's colour. Only a handful of rules carry
+their own hex — arc's slate and ghost discs, comb's cells — and those are the
+ones a new direction has to restate.
 
 **A direction currently swallows the finish, so `finish` is inert on one.**
 Every direction block sets the same tokens the finish blocks set and comes

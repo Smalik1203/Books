@@ -117,6 +117,51 @@
       <circle class="jk-lat jk-lat--mark" cx="165.0" cy="251.37" r="11.0"/>
       <circle class="jk-lat jk-lat--ink" cx="187.0" cy="251.37" r="11.0"/>
       <circle class="jk-lat jk-lat--ink" cx="187.0" cy="251.37" r="5.72"/>
+
+      <!-- ── four of the cells are the things science looks at ──
+           The packing on its own is a construction, and a construction
+           could be any subject: the first version of this cover could
+           as easily have been mathematics. So four circles already in
+           the field are filled in — a cell, an atom, a molecule and a
+           wave — drawn at the packing's own stroke weight so the whole
+           thing still reads as one drawing rather than as stickers laid
+           on top of it. They are chapters 2, 8, 9 and 10. -->
+
+      <!-- a cell. Drawn as an oval and not a circle on purpose: the
+           packing already has circles inside circles, so a round nucleus
+           in a round membrane read as more packing rather than as a
+           cell. The one shape here that is not a circle is the one the
+           eye stops on. -->
+      <ellipse class="jk-lat jk-lat--ink" cx="44.0" cy="137.05" rx="10.4" ry="7.4"
+               transform="rotate(-14 44 137.05)"/>
+      <circle class="jk-lat-fill" cx="42.4" cy="137.6" r="3.4"/>
+      <circle class="jk-lat jk-lat--ink" cx="42.4" cy="137.6" r="3.4"/>
+      <circle class="jk-lat jk-lat--mark" cx="49.4" cy="133.4" r="1.5"/>
+
+      <!-- an atom: three orbits and an electron on one of them -->
+      <g class="jk-lat jk-lat--ink">
+        <ellipse cx="110.0" cy="156.11" rx="10.2" ry="3.9"/>
+        <ellipse cx="110.0" cy="156.11" rx="10.2" ry="3.9"
+                 transform="rotate(60 110 156.11)"/>
+        <ellipse cx="110.0" cy="156.11" rx="10.2" ry="3.9"
+                 transform="rotate(-60 110 156.11)"/>
+      </g>
+      <circle class="jk-lat-fill" cx="110.0" cy="156.11" r="2.6"/>
+      <circle class="jk-lat jk-lat--mark" cx="110.0" cy="156.11" r="2.6"/>
+      <circle class="jk-lat jk-lat--mark" cx="119.6" cy="153.6" r="1.4"/>
+
+      <!-- a molecule: two bonds and three atoms -->
+      <g class="jk-lat jk-lat--ink">
+        <path d="M136.6 132.0 141.0 137.4M149.4 132.0 145.0 137.4"/>
+      </g>
+      <circle class="jk-lat-fill" cx="143.0" cy="140.2" r="4.2"/>
+      <circle class="jk-lat jk-lat--ink" cx="143.0" cy="140.2" r="4.2"/>
+      <circle class="jk-lat jk-lat--mark" cx="135.2" cy="130.8" r="2.5"/>
+      <circle class="jk-lat jk-lat--mark" cx="150.8" cy="130.8" r="2.5"/>
+
+      <!-- a wave, one wavelength across the cell it sits in -->
+      <path class="jk-lat jk-lat--mark"
+            d="M55.5 175.16 q 5.5 -6.8 11 0 t 11 0"/>
     </svg>
   </div>
 
@@ -134,7 +179,11 @@
   <div class="front__title">
     <h1>SCIENCE</h1>
     <p class="front__subtitle">Textbook for Class IX</p>
-    <span class="jk-label jk-label--terra">Based on NCERT</span>
+    <!-- The four branches, named. A cover that says only SCIENCE leaves
+         the reader to guess which of them is inside; the back's first
+         claim still carries "Based on NCERT", so nothing is lost by
+         spending this line on what the book is actually about. -->
+    <span class="jk-label jk-label--terra">Physics &middot; Chemistry &middot; Biology &middot; Earth science</span>
   </div>
 
   <div class="front__foot">
