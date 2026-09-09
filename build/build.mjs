@@ -359,6 +359,7 @@ const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = 
 <link rel="stylesheet" href="${cssHref}">${meta.edition ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}${meta.palette ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "palette-" + meta.palette + ".css")}">` : ``}
+${meta.design === 'food-reference' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'food-reference.css')}">` : ''}
 <style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
   : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}</style>
 </head>
