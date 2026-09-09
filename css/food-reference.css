@@ -1,0 +1,72 @@
+/* Reference reconstruction: deliberately scoped outside the house design.
+   Geometry is in source-image coordinates; the SVG fits the A4 sheet. */
+@font-face {
+  font-family: Food Poppins;
+  src: url('../fonts/cover-poppins-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: Food Poppins;
+  src: url('../fonts/cover-poppins-700-latin.woff2') format('woff2');
+  font-weight: 700;
+  font-display: block;
+}
+.page--food {
+  --food-ink: #11131b;
+  --food-teal: #00768b;
+  --food-navy: #071c4f;
+  --food-gold: #ffaf00;
+  --food-blue: #f1f7f9;
+  --food-cream: #fff8e4;
+  --food-green: #567d2b;
+  --size-body: 100px;
+  background: white;
+}
+.page--food .runhead, .page--food .pagefoot { display: none; }
+.page--food .page__body { inset: 0; }
+.page--food .page__main { height: 100%; width: 100%; max-width: none; }
+.food-sheet { width: 100%; height: 100%; display: block; }
+.food-symbol { clip-path: ellipse(48% 48% at 50% 50%); }
+.food-text {
+  font-family: Food Poppins, Arial, sans-serif;
+  font-size: var(--size-body);
+  font-weight: 400;
+  fill: var(--food-ink);
+}
+.food-bold { font-weight: 700; }
+.food-ink { fill: var(--food-ink); }
+.food-teal { fill: var(--food-teal); }
+.food-navy { fill: var(--food-navy); }
+.food-white { fill: white; }
+.food-red { fill: #bd1616; }
+.food-purple { fill: #6e3684; }
+.food-green { fill: var(--food-green); }
+.food-rule { stroke: var(--food-teal); stroke-width: 1.2; fill: none; }
+.food-gold-rule { stroke: var(--food-gold); stroke-width: 1.4; fill: none; }
+.food-dots { stroke-dasharray: 2 3; }
+.food-panel { fill: var(--food-blue); stroke: var(--food-teal); stroke-width: 1.2; }
+.food-prompt { fill: #fffcf4; stroke: var(--food-gold); stroke-width: 1.3; }
+.food-paper { fill: var(--food-cream); stroke: #ead8a5; stroke-width: 1; }
+.food-blue-paper { fill: #eaf3f6; stroke: #a9d1dc; stroke-width: 1; }
+.food-green-panel { fill: #f6f8ed; stroke: var(--food-green); stroke-width: 1; }
+.food-red-panel { fill: #fff0e9; stroke: #d51c20; stroke-width: 1.4; }
+.food-clear { fill: white; stroke: var(--food-teal); stroke-width: 1; }
+.food-tag { fill: var(--food-teal); }
+.food-gold-tag { fill: var(--food-gold); }
+.food-red-tag { fill: #ba1111; }
+.food-green-tag { fill: var(--food-green); }
+.food-table-head { fill: #dbecef; }
+.food-table-side { fill: #f0f8fa; }
+.food-table-rule { stroke: #79b2c0; stroke-width: 1; fill: none; }
+.food-table-white-rule { stroke: white; stroke-width: 3; fill: none; }
+.food-row-a { fill: #fde6d6; }
+.food-row-b { fill: #fff0bb; }
+.food-row-c { fill: #e4f1ce; }
+.food-row-d { fill: #d8eef7; }
+.food-row-e { fill: #e7e2f0; }
+.food-row-f { fill: #d9edef; }
+.food-row-g { fill: #f9dce1; }
+.food-icon { fill: white; stroke: var(--food-teal); stroke-width: 1.2; }
+.food-icon-stroke { fill: none; stroke: var(--food-teal); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.food-flow-arrow { fill: none; stroke: var(--food-green); stroke-width: 4; }
