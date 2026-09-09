@@ -1,0 +1,69 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>That single fact does two jobs. The first is a test. If every square is
+      $1 + 3 + 5 + \cdots$, then subtracting the odd numbers in order from a square must
+      land exactly on zero — and from anything else it must overshoot.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Is $25$ a perfect square? Is $38$?</p>
+          <p>Subtract $1$, then $3$, then $5$, and keep going.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">from 25</span>
+              <span>$24,\ 21,\ 16,\ 9,\ 0$</span>
+              <span class="chip">$5$ steps</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">from 38</span>
+              <span>$37,\ 34,\ 29,\ 22,\ 13,\ 2,\ -11$</span>
+              <span class="chip">overshot</span>
+            </div>
+          </div>
+          <p>Twenty-five reaches zero after five subtractions, so $25 = 1+3+5+7+9$ and
+          $25 = 5^2$. The count of steps is the root, which is a useful extra: the
+          method does not merely say <em>yes</em>, it says <em>five</em>.</p>
+          <p>Thirty-eight steps over zero, from $2$ to $-11$, so it is not a square.
+          Between $6^2 = 36$ and $7^2 = 49$ there is no square, and $38$ is stuck
+          between them.</p>
+        </div>
+      </div>
+
+      <p>The second job is arithmetic. If you already know one square, the next one is a
+      single addition away.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Given that $35^2 = 1225$, find $36^2$ without multiplying.</p>
+          <p>$1225$ is the sum of the first $35$ odd numbers. To reach the sum of the
+          first $36$, add the $36$th odd number.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">36th odd number</span>
+              <span>$2 \times 36 - 1 = 71$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">$36^2$</span>
+              <span>$1225 + 71$</span>
+              <span class="chip">$1296$</span>
+            </div>
+          </div>
+          <p>The same step run the other way is just as useful: $34^2 = 1225 - 69$,
+          since the $35$th odd number is $69$.</p>
+        </div>
+      </div>
+
+      <p>The gap between neighbouring squares also settles a question that looks harder
+      than it is: how many numbers lie strictly between two consecutive squares? The gap
+      from $n^2$ to $(n+1)^2$ is $2n+1$, and the two ends are not counted, so there are
+      $2n$ numbers in between. Between $16^2$ and $17^2$ there are $32$; between $99^2$
+      and $100^2$ there are $198$; and the count grows steadily, which is why large
+      squares are thinly scattered.</p>
+
+    </div>
+  </div>
+</section>

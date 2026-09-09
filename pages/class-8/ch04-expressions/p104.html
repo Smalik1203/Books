@@ -1,0 +1,85 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A number and its reciprocal</div>
+        <p>
+          The expression asked for has squares in it and the one given has not, so
+          square what you are given. The middle term of $(a+b)^2$ is $2ab$, and here
+          $a \times b$ is $x \times \frac{1}{x}$, which is $1$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">square it</span>
+            <span>$\left(x + \dfrac{1}{x}\right)^2 = x^2 + 2 + \dfrac{1}{x^2} = 16$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$x^2 + \dfrac{1}{x^2} = 14$</span>
+          </div>
+        </div>
+        <p>
+          The middle term collapsing to a plain $2$ is what makes these questions work,
+          and it happens because $x$ and $\frac{1}{x}$ multiply to $1$ whatever $x$ is.
+          The same step run with the other square gives
+          $\left(x - \frac{1}{x}\right)^2 = 14 - 2 = 12$.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">An expression that is never zero</div>
+        <p>
+          Trying values will not settle this: there are infinitely many to try. What
+          settles it is finding a square, because a square is never negative.
+        </p>
+        <p>
+          The first two terms, $x^2 - 6x$, are the beginning of $(x-3)^2 = x^2 - 6x + 9$.
+          So write the $10$ as $9 + 1$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">rewrite</span>
+            <span>$x^2 - 6x + 10 = (x^2 - 6x + 9) + 1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">as a square</span>
+            <span>$= (x-3)^2 + 1$</span>
+          </div>
+        </div>
+        <p>
+          Whatever $x$ is, $(x-3)^2$ is zero or more, so the whole thing is $1$ or more,
+          and it is never zero. It is smallest when $x = 3$, which the original form does
+          not show at all. Making a square appear where none was visible is the single
+          most useful thing the identities do.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Nearly right, and where it fails</div>
+        <p>
+          Move everything to one side and the claim becomes a statement about
+          $x^2 - 2xy + y^2$, which is a square.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">difference</span>
+            <span>$x^2 + y^2 - 2xy = (x-y)^2$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$x^2 + y^2 \geq 2xy$ always</span>
+          </div>
+        </div>
+        <p>
+          A square is never negative, so $x^2 + y^2$ is never less than $2xy$. But a
+          square can be zero, and $(x-y)^2$ is zero exactly when $x = y$: at
+          $x = y = 3$ both sides come to $18$. So the claim should read <em>at least</em>
+          rather than <em>bigger than</em> — and notice that disproving it took one
+          value, while proving the corrected version took an argument.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

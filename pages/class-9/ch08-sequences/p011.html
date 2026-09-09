@@ -1,0 +1,65 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">An Arithmetic Progression</div>
+        <p>An AP with first term $a$ and common difference $d$ runs</p>
+        <p>$a, \ a + d, \ a + 2d, \ a + 3d, \ \ldots$</p>
+        <p>and its $n$th term is $t_n = a + (n - 1)d$.</p>
+      </div>
+
+      <p>Look at where the $(n-1)$ comes from. The first term has had no $d$ added to it
+      at all, the second has had one, the third two. By the $n$th you have taken $n - 1$
+      steps, not $n$. That single offset is where most mistakes with APs are made.</p>
+
+      <p>The common difference may be negative. In $11, 7, 3, -1, -5, \ldots$ the terms
+      fall by $4$ each time, so $a = 11$ and $d = -4$, and the sequence is an AP as much
+      as any rising one is.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Go back through every sequence in this chapter so far. Which are
+            arithmetic progressions and which are not?</p>
+            <p>For each one that is not, say what goes wrong — and be precise: it is not
+            enough to say the numbers grow differently.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>The recursive rule for an AP is even shorter than the explicit one, and it is
+      the rule the definition itself gives you:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">start</span>
+          <span>$t_1 = a$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">then</span>
+          <span>$t_n = t_{n-1} + d$ &nbsp; for $n \geq 2$</span>
+        </div>
+      </div>
+
+
+      <p>Written this way an AP says almost nothing: start here, and keep adding the same
+      amount. That is the whole of it. Everything else in this section — the formula for
+      the $n$th term, the straight line it draws, the way its terms can be summed in one
+      step — follows from those two lines and adds no new assumption.</p>
+
+      <p>It is worth noticing how little is being asked of the numbers. They need not be
+      whole, or positive, or increasing. A common difference of $-4$ gives a falling AP,
+      one of $0.5$ gives a sequence of halves, and one of $0$ gives the same number over
+      and over — which is a perfectly good, if dull, arithmetic progression.</p>
+    </div>
+  </div>
+</section>

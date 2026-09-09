@@ -2,119 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Competitive Practice</div>
-        <p class="hint">
-          One option is correct in each. These are the forms the chapter's
-          ideas take in entrance and olympiad papers — most can be settled by
-          reasoning rather than by working, if you can see which idea is being
-          asked about.
-        </p>
-        <ol class="c-questions">
-          <li>
-              Which of these is irrational?
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\sqrt{36}$</li>
-                <li>$0.25$</li>
-                <li>$\sqrt{7}$</li>
-                <li>$\dfrac{22}{7}$</li>
-              </ol>
-            </li>
-        </ol>
+      <h3>A rational number with a secret</h3>
+
+      <p>
+        Expand $\dfrac{1}{7}$ and you get $0.\overline{142857}$ — a cycle six
+        digits long. Now multiply that block by each of 1 to 6:
+      </p>
+
+      <div class="work work--list">
+        <p>$142857 \times 1 = 142857$</p>
+        <p>$142857 \times 2 = 285714$</p>
+        <p>$142857 \times 3 = 428571$</p>
+        <p>$142857 \times 4 = 571428$</p>
+        <p>$142857 \times 5 = 714285$</p>
+        <p>$142857 \times 6 = 857142$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              The decimal expansion of $\dfrac{17}{8}$ is
-              <ol class="c-parts c-parts--alpha">
-                <li>terminating</li>
-                <li>non-terminating, repeating</li>
-                <li>non-terminating, non-repeating</li>
-                <li>none of these</li>
-              </ol>
-            </li>
-        </ol>
+      <p>
+        Every answer uses the same six digits in the same cyclic order — they
+        have only been rotated. A number that behaves this way is called a
+        <span class="term">cyclic number</span>, and $142857$ is the smallest
+        of them. Nothing was arranged here; it falls out of the long division
+        by 7, whose six possible remainders come round in a fixed order.
+      </p>
+
+      <h3>What an irrational decimal looks like</h3>
+
+      <p>
+        Irrational numbers have decimal expansions that never end and never
+        settle into a cycle. There is no repeating block, however far you look:
+      </p>
+
+      <div class="work work--list">
+        <p>$\sqrt{2} = 1.4142135623730950488\ldots$</p>
+        <p>$\pi = 3.1415926535897932384\ldots$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              $0.\overline{3} + 0.\overline{4}$ equals
-              <ol class="c-parts c-parts--alpha">
-                <li>$0.\overline{7}$</li>
-                <li>$\dfrac{7}{9}$</li>
-                <li>both (a) and (b)</li>
-                <li>neither</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>
+        This gives a clean test in both directions. Terminating or repeating
+        means rational; non-terminating and non-repeating means irrational.
+        And it explains the earlier proof from a second angle: if $\sqrt{2}$
+        were $\tfrac{p}{q}$, its expansion would have had to fall into a cycle
+        of at most $q - 1$ digits, and it never does.
+      </p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              Between any two distinct rational numbers there are
-              <ol class="c-parts c-parts--alpha">
-                <li>exactly one rational number</li>
-                <li>finitely many rational numbers</li>
-                <li>infinitely many rational numbers</li>
-                <li>no rational number at all</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>
+        There is a reason the six digits behave so obligingly, and it is the
+        $999999$ from earlier. Multiply the block by $7$ and you get
+        $142857 \times 7 = 999999$ exactly — so the block is $\tfrac{999999}{7}$,
+        and multiplying it by $1$ to $6$ is the same as running through
+        $\tfrac{1}{7}, \tfrac{2}{7}, \ldots, \tfrac{6}{7}$, which are the same
+        cycle entered at six different points.
+      </p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>
-              In lowest terms, which of these cannot be the denominator of a
-              terminating decimal?
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$16$</li>
-                <li>$25$</li>
-                <li>$40$</li>
-                <li>$30$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>
-              $\sqrt{2} \times \sqrt{8}$ equals
-              <ol class="c-parts c-parts--alpha">
-                <li>an irrational number</li>
-                <li>$4$</li>
-                <li>$\sqrt{10}$</li>
-                <li>$2\sqrt{2}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>
-              If $x = 0.\overline{7}$, then $9x$ equals
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$7$</li>
-                <li>$0.7$</li>
-                <li>$70$</li>
-                <li>$63$</li>
-              </ol>
-            </li>
-            <li>
-              $0.\overline{9}$ equals
-              <ol class="c-parts c-parts--alpha">
-                <li>a number slightly less than $1$</li>
-                <li>$1$</li>
-                <li>$0.99$</li>
-                <li>an irrational number</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>
+            Beware of $1.01001000100001\ldots$ — the pattern is obvious, but no
+            fixed block repeats. A pattern you can describe is not the same as
+            a cycle.
+          </p>
+        </div>
       </div>
 
     </div>

@@ -1,0 +1,120 @@
+<!-- ══════════════════ FRONT — direction: arc ══════════════════
+     Type in the upper third, a composition of translucent discs and
+     line-drawn mathematics in the lower two. One user unit is one
+     printed millimetre.
+
+     The discs, the dot fields and the arrangement are the direction's
+     and are shared with Class 9. The four figures are not: they are
+     this volume's own, and they are the three pictures the preface
+     promises — nine dots make a square and eight make a cube, a
+     rectangle cut in two, a quadrilateral with its diagonal — with the
+     balance from the chapter on equations.
+     ============================================================ -->
+<div class="jacket__front">
+
+  <div class="front__art">
+    <svg class="jk-art" viewBox="0 0 176 250" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="Overlapping translucent discs behind nine dots in a square and
+                     eight at the corners of a cube, a rectangle divided in two, a
+                     quadrilateral with one diagonal, and a level balance.">
+      <defs>
+        <linearGradient id="arc-coral" x1="0.1" y1="0" x2="0.9" y2="1">
+          <stop offset="0" stop-color="#f4a08c"/>
+          <stop offset="0.55" stop-color="#e8705f"/>
+          <stop offset="1" stop-color="#c9524a"/>
+        </linearGradient>
+      </defs>
+
+      <!-- discs: a contained cluster, clear of the strapline at the foot -->
+      <circle class="arc-disc--ghost" cx="126" cy="176" r="30"/>
+      <circle class="arc-disc--coral" cx="54" cy="172" r="34"/>
+      <circle class="arc-disc--slate" cx="98" cy="150" r="34"/>
+
+      <!-- dot fields -->
+      <g class="arc-dot">
+        <circle cx="150" cy="88" r="0.8"/><circle cx="156" cy="88" r="0.8"/><circle cx="162" cy="88" r="0.8"/><circle cx="168" cy="88" r="0.8"/>
+        <circle cx="150" cy="94" r="0.8"/><circle cx="156" cy="94" r="0.8"/><circle cx="162" cy="94" r="0.8"/><circle cx="168" cy="94" r="0.8"/>
+        <circle cx="150" cy="100" r="0.8"/><circle cx="156" cy="100" r="0.8"/><circle cx="162" cy="100" r="0.8"/>
+      </g>
+      <g class="arc-dot--pale">
+        <circle cx="10" cy="146" r="0.8"/><circle cx="16" cy="146" r="0.8"/><circle cx="22" cy="146" r="0.8"/>
+        <circle cx="10" cy="152" r="0.8"/><circle cx="16" cy="152" r="0.8"/><circle cx="22" cy="152" r="0.8"/>
+      </g>
+
+      <!-- nine dots in a square, eight at the corners of a cube -->
+      <g transform="translate(14 88)">
+        <path class="arc-fig" d="M0 0H24V24H0Z"/>
+        <g class="arc-fig">
+          <circle cx="4"  cy="4"  r="1.5"/><circle cx="12" cy="4"  r="1.5"/><circle cx="20" cy="4"  r="1.5"/>
+          <circle cx="4"  cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="20" cy="12" r="1.5"/>
+          <circle cx="4"  cy="20" r="1.5"/><circle cx="12" cy="20" r="1.5"/><circle cx="20" cy="20" r="1.5"/>
+        </g>
+        <text class="jk-fig-label jk-fig-label--sm" x="12" y="31.4" text-anchor="middle">3² = 9</text>
+
+        <path class="arc-fig" d="M34 8H50V24H34Z"/>
+        <path class="arc-fig" d="M40 2H56V18H40Z"/>
+        <path class="arc-fig" d="M34 8 40 2M50 8 56 2M50 24 56 18"/>
+        <path class="arc-fig arc-fig--dash" d="M34 24 40 18"/>
+        <g class="arc-fig">
+          <circle cx="34" cy="8"  r="1.3"/><circle cx="50" cy="8"  r="1.3"/>
+          <circle cx="50" cy="24" r="1.3"/><circle cx="34" cy="24" r="1.3"/>
+          <circle cx="40" cy="2"  r="1.3"/><circle cx="56" cy="2"  r="1.3"/>
+          <circle cx="56" cy="18" r="1.3"/><circle cx="40" cy="18" r="1.3"/>
+        </g>
+        <text class="jk-fig-label jk-fig-label--sm" x="45" y="31.4" text-anchor="middle">2³ = 8</text>
+      </g>
+
+      <!-- a rectangle, cut in two -->
+      <g transform="translate(98 76)">
+        <path class="arc-fig" d="M0 0H44V26H0Z"/>
+        <path class="arc-fig arc-fig--dash" d="M28 0V26"/>
+        <text class="jk-fig-label" x="-5.4" y="15">a</text>
+        <text class="jk-fig-label" x="14" y="-2.6" text-anchor="middle">b</text>
+        <text class="jk-fig-label" x="36" y="-2.6" text-anchor="middle">c</text>
+        <text class="jk-fig-label jk-fig-label--sm" x="22" y="33.4" text-anchor="middle">a(b + c) = ab + ac</text>
+      </g>
+
+      <!-- a level balance, over the pale disc and clear of the slate one:
+           drawn in the ink so it reads. Nothing stands on the pans — every
+           figure here is stroke and no fill, so a block on a pan would have
+           the hanger showing straight through it. The equation says it
+           instead. -->
+      <g transform="translate(118 172)">
+        <path class="arc-fig" d="M0 0H40"/>
+        <path class="arc-fig" d="M16 24 20 2 24 24Z"/>
+        <path class="arc-fig" d="M11 24H29"/>
+        <path class="arc-fig" d="M7 0V12M0 12H14M33 0V12M26 12H40"/>
+        <text class="jk-fig-label jk-fig-label--sm" x="20" y="31" text-anchor="middle">3x + 2 = x + 8</text>
+      </g>
+
+      <!-- a quadrilateral and its diagonal, pale, wholly inside the coral
+           disc: its strokes are near-white and vanish the moment they leave it -->
+      <g transform="translate(28 150)">
+        <path class="arc-fig arc-fig--pale" d="M0 12 18 0 48 14 16 38Z"/>
+        <path class="arc-fig arc-fig--pale arc-fig--dash" d="M0 12 48 14"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="front__head">
+    <div>
+      <div class="wordmark">Class<em>Bridge</em></div>
+      <p class="front__tagline">Textbooks for school mathematics.</p>
+    </div>
+    <div class="classmark">
+      <span class="jk-label">Class</span>
+      <span class="classmark__num">8</span>
+      <span class="classmark__part"><span class="jk-label">Part 1</span></span>
+    </div>
+  </div>
+
+  <div class="front__title">
+    <h1>MATHEMATICS</h1>
+    <span class="arc-rule" aria-hidden="true"></span>
+    <p class="front__subtitle">Textbook for Class VIII</p>
+  </div>
+
+  <p class="arc-strap">Every idea explained <span>·</span> demonstrated <span>·</span> practised<br>
+    The full NCERT Class 8 syllabus</p>
+</div>

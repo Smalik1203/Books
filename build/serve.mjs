@@ -22,10 +22,58 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { impositionPlan, verify, fitsOn } from './impose.mjs';
 import { spineWidth } from './spine.mjs';
+import { coverMetrics } from './sheet.mjs';
+import { volumeName } from './volume.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PORT = Number(process.env.PORT) || 5180;   // override: PORT=5199 node build/serve.mjs
 const openAt = process.argv[2] || null;
+
+/* ---- Restarting itself ------------------------------------
+   This file is compiled into the process running it: the whole
+   viewer, every toolbar and every id lives in the template
+   literals below, and node cannot swap them out from under
+   itself. So a change here used to mean killing the studio and
+   starting it again by hand, every time — and forgetting to do
+   it meant a running server handing yesterday's markup to a
+   script read fresh off disk, which is how the class chooser
+   came to enable itself with nothing in it.
+
+   So it starts itself again. Run plainly, it re-execs under
+   `node --watch` and steps aside; the watcher restarts the real
+   server whenever this file or anything it imports changes, and
+   the open tabs come back on their own, because the reload
+   client reloads on a reconnect as well as on a message.
+
+   The port is chosen once, here, and handed down — otherwise
+   every restart would race its own closing socket and the
+   port-stepping below would quietly move the studio to 5181
+   while the tab kept knocking at 5180.
+
+   LL_STUDIO_CHILD is what tells the child it is the child.
+   PORT= still wins, and NO_WATCH=1 opts out entirely. */
+if (!process.env.LL_STUDIO_CHILD && !process.env.NO_WATCH) {
+  const { spawn } = await import('node:child_process');
+  const net = await import('node:net');
+
+  const free = (from) => new Promise((resolve) => {
+    const probe = net.createServer();
+    probe.once('error', () => resolve(free(from + 1)));
+    probe.listen(from, () => probe.close(() => resolve(from)));
+  });
+  const port = Number(process.env.PORT) || await free(5180);
+
+  const child = spawn(process.execPath,
+    ['--watch', '--watch-preserve-output', fileURLToPath(import.meta.url), ...process.argv.slice(2)],
+    { stdio: 'inherit', env: { ...process.env, LL_STUDIO_CHILD: '1', PORT: String(port) } });
+
+  for (const sig of ['SIGINT', 'SIGTERM']) {
+    process.on(sig, () => { child.kill(sig); process.exit(0); });
+  }
+  child.on('exit', (code) => process.exit(code ?? 0));
+  await new Promise(() => {});     // the child has the terminal from here
+}
+
+const PORT = Number(process.env.PORT) || 5180;   // override: PORT=5199 node build/serve.mjs
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
@@ -49,9 +97,9 @@ async function sheet(edition) {
     return parseFloat(from.slice(i + name.length + 3, i + name.length + 30));
   };
   const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const out = mm('bleed');
+  const out = mm('bleed') + mm('slug');
   return {
-    trimW, trimH, bleed: mm('bleed'),
+    trimW, trimH, bleed: mm('bleed'), slug: mm('slug'),
     mediaW: trimW + 2 * out, mediaH: trimH + 2 * out,
   };
 }
@@ -74,13 +122,15 @@ async function library() {
       const out = path.join(ROOT, 'build', cls, dir);
       chapters.push({
         target: cls + '/' + dir, dir, meta,
-        subject: meta.subject || 'Mathematics',
+        /* The fallback has to name a subject the chooser actually offers,
+           or a chapter that forgot the field would be filed under a
+           heading no section exists for and vanish from the library. */
+        subject: meta.subject || 'Mathematics I',
         pages: files.length,
-        first: meta.startFolio ?? 1,
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
         bleed: existsSync(out + '-bleed.pdf'),
-        edition: (meta.edition || 'a4').toUpperCase(),
+        edition: (meta.edition || 'crown quarto').toUpperCase(),
       });
     }
     chapters.sort((a, b) => String(a.meta.number)
@@ -97,15 +147,16 @@ async function library() {
    viewed on its own path, shown beside the chapters rather than
    among them. */
 async function coverSheet(meta) {
-  const s = await sheet(meta.edition);
   const spine = spineWidth(meta);
-  const mm = (n) => Math.round(n * 10) / 10;
-  return {
-    ...s, spine,
-    sheetW: mm(2 * s.trimW + spine.mm),
-    wrapW: mm(2 * s.trimW + spine.mm + 2 * s.bleed),
-    wrapH: mm(s.trimH + 2 * s.bleed),
-  };
+  /* From sheet.mjs, not worked out here. This function used to do its
+     own arithmetic off the page's sheet, which got it wrong twice: the
+     page bleeds 3mm where a wrap bleeds 15, and the slug holding the
+     crop marks was left out altogether. The viewer then sized a 437mm
+     sheet to 399, the jacket was squeezed to fit while the marks kept
+     their own proportions, and every mark on the press sheet sat out
+     of register with the artwork it marked. */
+  const s = await coverMetrics(spine.mm, meta.edition);
+  return { ...s, spine, wrapW: s.mediaW, wrapH: s.mediaH };
 }
 
 async function coverLibrary() {
@@ -124,9 +175,13 @@ async function coverLibrary() {
       const s = await coverSheet(meta);
       const out = path.join(ROOT, 'build', 'covers', cls, dir);
       covers.push({
-        target: cls + '/' + dir, dir, meta, sheet: s,
+        target: cls + '/' + dir, meta, sheet: s,
+        /* Which volume this jacket is for, composed exactly as the
+           binder composes it, so a cover files under the subject its
+           own chapters carry and under no other. */
+        subject: volumeName(meta),
         name: meta.title + (meta.part ? ', Part ' + meta.part : ''),
-        edition: (meta.edition || 'a4').toUpperCase(),
+        edition: (meta.edition || 'crown quarto').toUpperCase(),
         built: existsSync(out + '.html'),
         pdf: existsSync(out + '.pdf'),
         bleed: existsSync(out + '-bleed.pdf'),
@@ -138,12 +193,16 @@ async function coverLibrary() {
   return classes;
 }
 
+/* The studio's own pages carry the reload client too. They did not:
+   it went only into the book inside the iframe, so a change to the
+   toolbar or to app.js left the shell around the book exactly as it
+   was until the tab was reloaded by hand. */
 const page = (title, body) => '<!doctype html>\n'
   + '<html lang="en"><head><meta charset="utf-8">\n'
   + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
   + '<title>' + esc(title) + '</title>\n'
   + '<link rel="stylesheet" href="/build/ui/app.css">\n'
-  + '</head><body>' + body + '</body></html>';
+  + '</head><body>' + body + RELOAD + '</body></html>';
 
 /* ---- Library page -----------------------------------------
    Chapters are grouped by subject; the covers of a class are a
@@ -159,7 +218,6 @@ function libraryHtml(classes, coverClasses) {
       <div class="card__title">${esc(c.meta.title)}</div>
       <div class="card__meta">
         <span>${c.pages} page${c.pages === 1 ? '' : 's'}</span>
-        <span>folios ${c.first}&ndash;${c.first + c.pages - 1}</span>
       </div>
       <div class="card__flags">
         ${c.built ? '<span class="flag flag--on">built</span>'
@@ -175,8 +233,6 @@ function libraryHtml(classes, coverClasses) {
       <div class="card__num">Cover &middot; ${esc(c.edition)}</div>
       <div class="card__title">${esc(c.name)}</div>
       <div class="card__meta">
-        <span>${esc(c.dir)}</span>
-        <span>wrap ${c.sheet.sheetW} &times; ${c.sheet.trimH} mm</span>
         <span>spine ${c.sheet.spine.mm} mm</span>
       </div>
       <div class="card__flags">
@@ -192,29 +248,107 @@ function libraryHtml(classes, coverClasses) {
   const names = [...new Set([...classes.map((c) => c.cls),
                              ...coverClasses.map((c) => c.cls)])].sort();
 
-  const body = names.map((cls) => {
+  /* The subjects a class holds, listed whether or not any of them has
+     chapters yet. A dropdown that grows as content lands is a dropdown
+     that reads differently every month; this one is the finished shape,
+     and a subject with nothing in it resolves to the empty state, which
+     is the honest answer.
+
+     Mathematics is two volumes and so it is two entries. They are the
+     parts the covers already name — cover.json carries "part": "1" and
+     the jacket prints PART 1 — set in the roman the spine and the title
+     page use, so a reader meets the same numeral in the chooser, on the
+     shelf and on the book. Every chapter written so far is Part I; the
+     II entry is here because the shape is the shape whether or not the
+     second volume has been started. */
+  const SUBJECTS = ['Mathematics I', 'Mathematics II', 'Science'];
+
+  /* Every class-and-subject pair is rendered, and every class's covers,
+     each tagged so the script can show exactly one pair at a time. They
+     ship hidden: the page opens on the prompt rather than flashing the
+     whole library and then collapsing it. */
+  const sections = names.map((cls) => {
     const chapters = (classes.find((c) => c.cls === cls) || { chapters: [] }).chapters;
     const covers = (coverClasses.find((c) => c.cls === cls) || { covers: [] }).covers;
-    const subjects = [...new Set(chapters.map((c) => c.subject))].sort();
-    return '<div class="class-head">Class ' + esc(cls.replace(/^class-/, '')) + '</div>'
-      + subjects.map((sub) => '<div class="subject-head">' + esc(sub) + '</div>'
-        + '<div class="grid">'
-        + chapters.filter((c) => c.subject === sub).map(card).join('')
-        + '</div>').join('')
-      + (covers.length
-        ? '<div class="subject-head">Covers</div><div class="grid">'
-          + covers.map(coverCard).join('') + '</div>'
-        : '');
+    const shown = esc(cls.replace(/^class-/, ''));
+
+    const perSubject = SUBJECTS.map((sub) => {
+      const mine = chapters.filter((c) => c.subject === sub);
+      return `<section class="lib-set" hidden data-class="${esc(cls)}" data-subject="${esc(sub)}"`
+        + ` data-count="${mine.length}">`
+        + `<div class="class-head">Class ${shown} &middot; ${esc(sub)}</div>`
+        + (mine.length ? `<div class="grid">${mine.map(card).join('')}</div>` : '')
+        + `</section>`;
+    }).join('');
+
+    /* Covers are filed by volume, not by class. A jacket belongs to one
+       book — Mathematics I has one and Science will have its own — so
+       choosing Science used to be shown the Mathematics jacket, which is
+       the wrong book on the wrong shelf.
+
+       A cover whose composed volume name matches no subject would show
+       under none of them, so it is named on the terminal rather than
+       disappearing quietly. */
+    const filed = new Set();
+    const coverSets = SUBJECTS.map((sub) => {
+      const mine = covers.filter((c) => c.subject === sub);
+      mine.forEach((c) => filed.add(c.target));
+      return mine.length
+        ? `<section class="lib-set" hidden data-class="${esc(cls)}" data-covers="${esc(sub)}">`
+          + '<div class="subject-head">Covers</div>'
+          + `<div class="grid">${mine.map(coverCard).join('')}</div></section>`
+        : '';
+    }).join('');
+
+    covers.filter((c) => !filed.has(c.target)).forEach((c) => console.warn(
+      `    ! covers/${c.target}: "${c.subject}" is not a subject, so it is`
+      + ' not shown in the library'));
+
+    return perSubject + coverSets;
   }).join('');
+
+  /* A directory is named class-9; a reader is offered "Class 9". The value
+     stays the directory name, because that is what the sections are keyed on. */
+  const opts = (list, placeholder, label = (v) => v) =>
+    `<option value="">${placeholder}</option>`
+    + list.map((v) => `<option value="${esc(v)}">${esc(label(v))}</option>`).join('');
+
+  const controls = `
+      <div class="lib-controls">
+        <label class="lib-field">
+          <span>Class</span>
+          <select class="lib-select" id="pick-class">${
+            opts(names, 'Choose a class', (v) => 'Class ' + v.replace(/^class-/, ''))
+          }</select>
+        </label>
+        <label class="lib-field">
+          <span>Subject</span>
+          <!-- Empty and disabled until a class is chosen: a subject on its
+               own is not half a selection, it is a meaningless one. The
+               script fills it from the sections below, so there is no second
+               list of subjects here to fall out of step with them. Rendered
+               in this state so it is right before any script runs. -->
+          <select class="lib-select" id="pick-subject" disabled>
+            <option value="">Choose a class first</option>
+          </select>
+        </label>
+      </div>`;
 
   return page('LearnLab Studio', `
     <div class="wrap">
       <div class="masthead"><h1>LearnLab</h1><span class="tag">studio</span></div>
-      <p class="masthead-sub">Pick a chapter to read it at size, check the print sheet,
-         or build the PDFs. Covers are built and viewed separately &mdash; a wrap is
-         one sheet, not a run of pages.</p>
-      ${body || '<p class="empty">Nothing in pages/ or covers/ yet.</p>'}
-    </div>`);
+      <p class="masthead-sub">Choose a class and a subject. Then pick a chapter to read
+         it at size, check the print sheet, or build the PDFs. Covers are built and
+         viewed separately &mdash; a wrap is one sheet, not a run of pages.</p>
+      ${names.length ? controls : ''}
+      ${sections}
+      <p class="lib-note" id="lib-prompt">Choose a class and a subject to see its chapters.</p>
+      <p class="lib-note" id="lib-empty" hidden>Nothing here yet.</p>
+      ${names.length ? '' : '<p class="empty">Nothing in pages/ or covers/ yet.</p>'}
+      <noscript><p class="lib-note">The chooser needs JavaScript. Without it the
+         library cannot be filtered.</p></noscript>
+    </div>
+    <script src="/build/ui/library.js"></script>`);
 }
 
 /* A download link to an artefact that was never built is worse than no
@@ -229,6 +363,105 @@ const downloadBtn = (base, suffix, label) => {
     + `>${label}</a>`;
 };
 
+/* ---- The zoom cluster -------------------------------------
+   Chrome's PDF toolbar, because that is the control every reader
+   of this book already knows: minus, the level, plus, and a fit
+   toggle beside them. Both viewers show the same cluster, so it is
+   built once here rather than pasted into each.
+
+   The level is a field, not a menu. It began as four preset
+   buttons, became a menu of six presets plus the two fits, Actual
+   size and a calibration panel — and a preset is a guess at what
+   somebody wants. A proof gets read at whatever percentage makes
+   one figure legible, and that number was never on the list. So
+   the presets are gone and the level is typed; the two fits keep
+   the button beside it, which is where they were always reached
+   from anyway.
+
+   Actual size and the bank-card calibration went with the menu.
+   Uncalibrated, Actual size was 100% under another name, and the
+   calibration behind it was the one control here that had to be
+   set up before it told the truth.
+
+   The order is Chrome's too: the page box first, then a rule, then
+   the level, then a rule and the fit toggle. `pager` is false on a
+   cover, which is one sheet and has no page to be on.
+
+   Four of Chrome's buttons are deliberately absent. Rotate turns
+   one page at a time, and this viewer shows a chapter as a single
+   scrolling column — rotating that gives a strip twenty-eight
+   pages wide, which is not what the button means. Draw, undo and
+   redo are its annotation layer, and there is nothing here to
+   annotate: a note wanted on a proof belongs in the source. */
+/* ---- Home and back ----------------------------------------
+   Two different journeys, so two buttons. Back goes to the list
+   this page came from, carrying its class and subject in the query;
+   home goes to a bare "/", where nothing is chosen. The chooser
+   reads the address and nothing else, so those are two different
+   places without either button having to say so.
+
+   The label beside them reads downwards: where you are, then what
+   you are looking at. Class and chapter first because that is what
+   you check when you have three tabs open, and it is the shorter
+   line — a title can run to any length and takes the ellipsis. */
+const navPair = (backHref, sub, title) => `
+        <a class="btn btn--icon" href="/" title="The library">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M3 9.2 10 3.4l7 5.8" />
+            <path d="M4.8 8.2V16h10.4V8.2" />
+            <path d="M8.1 16v-4.4h3.8V16" />
+          </svg>
+        </a>
+        <a class="btn btn--icon" href="${backHref}" title="Back to the chapters">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M16 10H4.6" /><path d="M9.4 4.8 4.2 10l5.2 5.2" />
+          </svg>
+        </a>
+        <span class="bar__where">
+          <span class="bar__sub">${sub}</span>
+          <span class="bar__title">${esc(title)}</span>
+        </span>`;
+
+const zoomBar = (pager = true, switches = '') => `
+        <div class="zoom" role="group" aria-label="Zoom and paging">
+          ${pager ? `<span class="pager">
+            <input id="page-no" type="number" min="1" value="1" aria-label="Page">
+            <span id="page-count">/ ?</span>
+          </span>
+          <span class="zoom__rule"></span>` : ''}
+          <button class="zoom__step" id="zoom-out" title="Zoom out">&minus;</button>
+          <!-- The level is typed, not chosen. It was a button opening a
+               menu of six presets, and a preset is a guess at what
+               somebody wants: a proof is often read at whatever
+               percentage makes one figure legible, and 137 was not on
+               the list. Type it. -->
+          <input class="zoom__level" id="zoom-level" type="text"
+                 inputmode="numeric" autocomplete="off" spellcheck="false"
+                 aria-label="Zoom" title="Zoom — type any percentage" value="100%">
+          <button class="zoom__step" id="zoom-in" title="Zoom in">+</button>
+          <span class="zoom__rule"></span>
+          <!-- One button, two icons: a portrait sheet with the arrows
+               running down it, and a landscape one with them running
+               across. The button shows the mode it is in rather than
+               the mode it would give, so the icon and the tooltip say
+               the same thing — a control that names its own opposite
+               has to be read twice. app.js hides one of the two. -->
+          <button class="zoom__step" id="fit-toggle"
+                  title="Fit to page — click for fit to width">
+            <svg data-fit="fit" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="5.2" y="2.4" width="9.6" height="15.2" rx="1.7" />
+              <path class="solid" d="M10 5.1 12 7.6H8z" />
+              <path class="solid" d="M10 14.9 8 12.4h4z" />
+            </svg>
+            <svg data-fit="fitw" viewBox="0 0 20 20" aria-hidden="true" hidden>
+              <rect x="2.4" y="5.2" width="15.2" height="9.6" rx="1.7" />
+              <path class="solid" d="M5.1 10 7.6 8v4z" />
+              <path class="solid" d="M14.9 10 12.4 12V8z" />
+            </svg>
+          </button>
+          ${switches ? `<span class="zoom__rule"></span>${switches}` : ''}
+        </div>`;
+
 /* ---- Viewer page ------------------------------------------ */
 function viewerHtml(chapter, s) {
   const cfg = {
@@ -237,6 +470,7 @@ function viewerHtml(chapter, s) {
     bleedUrl: '/build/' + chapter.target + '-bleed.html',
     imposeUrl: '/impose/' + chapter.target,
     trimW: s.trimW, mediaW: s.mediaW,
+    trimH: s.trimH, mediaH: s.mediaH,
   };
   const noBleed = !existsSync(path.join(ROOT, 'build', chapter.target + '-bleed.html'));
 
@@ -245,74 +479,58 @@ function viewerHtml(chapter, s) {
   return page(chapter.meta.title + ' — LearnLab Studio', `
     <div class="viewer">
       <div class="bar">
-        <a class="btn" href="/" title="Back to the library">&larr;</a>
-        <span class="bar__title">${esc(chapter.meta.title)}</span>
-        <span class="bar__sub">Class ${esc(chapter.meta.class)} &middot;
-          ch ${esc(chapter.meta.number)} &middot; ${chapter.pages} pp</span>
+        <!-- Three parts, so the zoom cluster is centred on the bar and
+             not merely on what is left over. Flexed, the two sides have
+             to be the same width for the middle to land in the middle,
+             and here one holds a title and two switches while the other
+             holds a download and a button. A grid does not care.
 
-        <div class="seg" role="group" aria-label="Sheet">
-          <button id="sheet-trim" aria-pressed="true">Trim ${s.trimW}&times;${s.trimH}</button>
-          <button id="sheet-bleed" aria-pressed="false"
-            ${noBleed ? 'disabled title="Build first"' : ''}>Bleed ${s.mediaW}&times;${s.mediaH}</button>
+             The back link carries the class and subject this chapter
+             belongs to, so the library opens on the list the reader just
+             left instead of on two empty dropdowns — right even for a
+             chapter reached by its address. The label beside it names
+             neither the page count nor the trim: the page box carries
+             one and the Bleed tooltip the other. -->
+        <div class="bar__side">
+${navPair(
+  '/?class=' + encodeURIComponent(chapter.target.split('/')[0])
+    + '&amp;subject=' + encodeURIComponent(chapter.subject),
+  'Class ' + esc(chapter.meta.class) + ' &middot; CH ' + esc(chapter.meta.number),
+  chapter.meta.title)}
         </div>
 
-        <div class="seg" role="group" aria-label="View">
-          <button id="view-pages" aria-pressed="true">Pages</button>
-          <button id="view-spread" aria-pressed="false">Spreads</button>
-          <button id="view-impose" aria-pressed="false">Signature</button>
+        <!-- Two switches, and neither names the state it is already in.
+             Pages is the default view and the trim is the default sheet,
+             so a Pages button and a Trim button were labels for "as you
+             found it" — and a measurement on a button is a fact about
+             the sheet, not a thing you can press. Both sizes are in the
+             tooltips, where facts belong.
+
+             Spreads sits in the middle cluster, past the fit toggle:
+             everything there changes how the book is laid out on the
+             screen. Bleed is over on the right, beside Print PDF,
+             because it changes which sheet you are looking at — the
+             reading page or the one that goes to press — and that is
+             the same question the download beside it answers.
+
+             The signature view went the same way, being a schematic of
+             a press sheet rather than a way of looking at the book. It
+             is still built and still served, at
+             /impose/<class>/<chapter>?sig=32, and nothing links to it:
+             it is reached by typing the address. -->
+${zoomBar(true, `
+          <button class="btn" id="view-spread" aria-pressed="false"
+            title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>`)}
+
+        <div class="bar__side bar__side--end">
+          <span class="bar__log" id="build-log" hidden></span>
+          <button class="btn" id="sheet-bleed" aria-pressed="false"
+            ${noBleed ? 'disabled title="Build first"'
+                      : `title="Show the press sheet, ${s.mediaW} × ${s.mediaH} mm — the ${s.trimW} × ${s.trimH} trim plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop marks"`}
+            >Bleed</button>
+          ${dl('-bleed.pdf', 'Print PDF')}
+          <button class="btn btn--go" id="build">Build</button>
         </div>
-
-        <select class="btn" id="sig-size" title="Pages per signature">
-          <option value="8">8 pp</option>
-          <option value="16">16 pp</option>
-          <option value="32" selected>32 pp</option>
-        </select>
-
-        <div class="seg" role="group" aria-label="Zoom">
-          <button data-zoom="fit" aria-pressed="true">Fit</button>
-          <button data-zoom="0.5">50%</button>
-          <button data-zoom="1">100%</button>
-          <button data-zoom="actual">Actual size</button>
-        </div>
-
-        <div class="cal">
-          <button class="btn" id="cal-open" title="Match the screen to real millimetres">Calibrate</button>
-          <div class="cal__panel" id="cal-panel" hidden>
-            <h3>Actual size</h3>
-            <p>Hold a bank card against the box and drag until they match. Every card is
-               85.6 &times; 54 mm, so this makes &ldquo;Actual size&rdquo; true on
-               <em>your</em> screen.</p>
-            <div class="cal__card" id="cal-card">bank card</div>
-            <div class="cal__row">
-              <input type="range" id="cal-range" min="2" max="10" step="0.001">
-              <span class="cal__val" id="cal-val"></span>
-            </div>
-            <div class="cal__row cal__row--foot">
-              <button class="btn" id="cal-reset">Reset to 96 dpi</button>
-            </div>
-          </div>
-        </div>
-
-        <span class="bar__spacer"></span>
-
-        <div class="pager">
-          <button class="btn" id="prev">&lsaquo;</button>
-          <input id="page-no" type="number" min="1" value="1">
-          <span id="page-count">of ?</span>
-          <button class="btn" id="next">&rsaquo;</button>
-        </div>
-
-        <button class="btn" id="print">Print&hellip;</button>
-        ${dl('.pdf', 'Reading PDF')}
-        ${dl('-bleed.pdf', 'Print PDF')}
-        <button class="btn btn--go" id="build">Build</button>
-      </div>
-
-      <div class="note">
-        <b>Print&hellip;</b> uses the browser dialog. Save as PDF honours the
-        ${s.trimW} &times; ${s.trimH} mm page; a physical printer scales it to whatever paper
-        you pick &mdash; for the press, send <b>Print PDF</b>.
-        <span id="build-log"></span>
       </div>
 
       <div class="stage" id="stage">
@@ -343,6 +561,7 @@ function coverViewerHtml(cover) {
        the press sheet has no padding. Only the trim width carries it. */
     trimW: s.sheetW + 16,
     mediaW: s.wrapW,
+    trimH: s.trimH, mediaH: s.wrapH,
   };
   const noBleed = !existsSync(path.join(ROOT, 'build', base + '-bleed.html'));
   const dl = (suffix, label) => downloadBtn(base, suffix, label);
@@ -350,58 +569,38 @@ function coverViewerHtml(cover) {
   return page(cover.name + ' — cover — LearnLab Studio', `
     <div class="viewer">
       <div class="bar">
-        <a class="btn" href="/" title="Back to the library">&larr;</a>
-        <span class="bar__title">${esc(cover.name)}</span>
-        <span class="bar__sub">Class ${esc(cover.meta.class)} &middot; cover &middot;
-          ${esc(cover.meta.direction || 'plain')} / ${esc(cover.meta.finish || 'light')}</span>
-
-        <div class="seg" role="group" aria-label="Sheet">
-          <button id="sheet-trim" aria-pressed="true">Wrap ${s.sheetW}&times;${s.trimH}</button>
-          <button id="sheet-bleed" aria-pressed="false"
-            ${noBleed ? 'disabled title="Build first"' : ''}>Bleed ${s.wrapW}&times;${s.wrapH}</button>
+        <!-- A cover belongs to a class but to no subject, so the arrow
+             carries the class only and the subject is whatever was last
+             chosen. -->
+        <div class="bar__side">
+${navPair(
+  '/?class=' + encodeURIComponent(cover.target.split('/')[0]),
+  'Class ' + esc(cover.meta.class) + ' &middot; cover',
+  cover.name)}
         </div>
 
-        <div class="seg" role="group" aria-label="Zoom">
-          <button data-zoom="fit" aria-pressed="true">Fit</button>
-          <button data-zoom="0.5">50%</button>
-          <button data-zoom="1">100%</button>
-          <button data-zoom="actual">Actual size</button>
+${zoomBar(false)}
+
+        <div class="bar__side bar__side--end">
+          <span class="bar__log" id="build-log" hidden></span>
+          <button class="btn" id="sheet-bleed" aria-pressed="false"
+            ${noBleed ? 'disabled title="Build first"'
+                      : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop and fold marks"`}
+            >Bleed</button>
+          ${dl('-bleed.pdf', 'Print PDF')}
+          ${dl('-proof.png', 'Print PNG')}
+          <button class="btn btn--go" id="build">Build</button>
         </div>
-
-        <div class="cal">
-          <button class="btn" id="cal-open" title="Match the screen to real millimetres">Calibrate</button>
-          <div class="cal__panel" id="cal-panel" hidden>
-            <h3>Actual size</h3>
-            <p>Hold a bank card against the box and drag until they match. Every card is
-               85.6 &times; 54 mm, so this makes &ldquo;Actual size&rdquo; true on
-               <em>your</em> screen.</p>
-            <div class="cal__card" id="cal-card">bank card</div>
-            <div class="cal__row">
-              <input type="range" id="cal-range" min="2" max="10" step="0.001">
-              <span class="cal__val" id="cal-val"></span>
-            </div>
-            <div class="cal__row cal__row--foot">
-              <button class="btn" id="cal-reset">Reset to 96 dpi</button>
-            </div>
-          </div>
-        </div>
-
-        <span class="bar__spacer"></span>
-
-        <button class="btn" id="print">Print&hellip;</button>
-        ${dl('.pdf', 'Cover PDF')}
-        ${dl('-bleed.pdf', 'Press PDF')}
-        ${dl('-proof.png', 'Proof PNG')}
-        <button class="btn btn--go" id="build">Build</button>
       </div>
 
-      <div class="note">
-        <b>Spine ${s.spine.mm}mm</b> &mdash; ${esc(s.spine.how)}. It is bulk, not a
-        choice: re-derive the page count from a <b>--book</b> run before this goes to
-        press. Build here runs <b>cover.mjs</b> with the proof and the press sheet;
-        a placeholder QR will refuse the press sheet and say so.
-        <span id="build-log"></span>
-      </div>
+      <!-- No strip under the bar here either. The spine kept a line for
+           a while, on the argument that it is the one thing here the
+           proof cannot show to be wrong — but a paragraph of standing
+           advice is read once and then looked past, and this one sat
+           between the bar and the sheet on every visit. cover.mjs
+           computes the spine from the page count and says so on the
+           terminal, which is where a warning belongs; the press sheet
+           still refuses a placeholder QR outright. -->
 
       <div class="stage" id="stage">
         <div class="stage__inner" id="inner">
@@ -488,9 +687,19 @@ function impositionHtml(chapter, s, sigSize) {
 }
 
 /* ---- Live reload ------------------------------------------ */
+/* Two things bring a tab back. A message, when a chapter or a cover
+   has been rebuilt — and a reconnect, when the server itself has
+   restarted under the watcher and is serving markup this page was
+   rendered before. EventSource retries on its own; all this has to
+   do is notice that the connection it just opened is not its
+   first. */
 const clients = new Set();
-const RELOAD = '\n<script>new EventSource("/__reload").onmessage='
-  + 'function(){location.reload()};</script>';
+const RELOAD = `
+<script>(function () {
+  var es = new EventSource('/__reload'), opened = false;
+  es.onmessage = function () { location.reload(); };
+  es.onopen = function () { if (opened) location.reload(); opened = true; };
+}());</script>`;
 
 /* ---- Two pages to a spread, for the viewer only ------------ */
 const SPREAD = '\n<style>'
@@ -538,13 +747,37 @@ function build(target, flags = [], kind = 'chapter') {
         const failure = errLines.find((l) => l.startsWith('x '))
           || errLines.find((l) => !l.startsWith('! ') && !l.startsWith('~ '))
           || (err ? err.message : '');
-        /* Quote back the line that carries the news: for a chapter the fill
-           map, for a cover a refusal first, then a warning, then the wrap. */
+        /* Say what the build came to, in a phrase. This used to quote the
+           whole fill line back — twenty-eight percentages, wrapped across
+           the bar — which is a table, and a table wants reading rather
+           than glancing at. The numbers are on the terminal, where they
+           can be read; what belongs here is whether anything is wrong. */
+        const fillLine = lines.find((l) => l.startsWith('fill')) || '';
+        const digest = () => {
+          const pages = fillLine.match(/(\d+):\d+%/g);
+          const clip = lines.filter((l) => /overruns by/.test(l)).length;
+          const viol = Number((lines.find((l) => /design violation/.test(l)) || '')
+            .match(/(\d+) design violation/)?.[1] || 0);
+          /* Count the builder's own short-page warnings rather than
+             re-deriving them from the fill map: the map does not say
+             which page is the last or which carries data-close, and
+             both are exempt. Counting the percentages called ch07's
+             closing page short when the builder had excused it. */
+          const short = lines.filter((l) => /is \d+% full/.test(l)).length;
+          return [
+            pages ? pages.length + ' pages' : 'built',
+            clip ? clip + ' clipping' : null,
+            viol ? viol + ' violation' + (viol === 1 ? '' : 's') : null,
+            short ? short + ' short' : null,
+          ].filter(Boolean).join(' · ') + (clip || viol || short ? '' : ' · all clear');
+        };
+        /* A cover has no fill map: a refusal first, then a warning, then
+           the wrap it settled on. */
         const pick = kind === 'cover'
           ? (lines.find((l) => l.startsWith('x '))
              || lines.find((l) => l.startsWith('! '))
              || lines.find((l) => l.startsWith('wrap ')))
-          : lines.find((l) => l.startsWith('fill'));
+          : digest();
         const fill = pick || lines[lines.length - 1] || '';
         if (err) console.error('  build failed:', failure);
         for (const res of clients) res.write('data: reload\n\n');
@@ -560,8 +793,13 @@ function build(target, flags = [], kind = 'chapter') {
 let timer = null;
 const pending = new Set();
 const onChange = (dir) => (_evt, file) => {
-  if (!file || !/\.(html|css|json|svg)$/.test(String(file))) return;
+  if (!file || !/\.(html|css|json|svg|js)$/.test(String(file))) return;
   const parts = String(file).split(/[\\/]/);
+  /* build/ui is the studio's own front end, served off disk rather
+     than compiled in — so nothing needs rebuilding and nothing needs
+     restarting, the tab only needs telling. It was not watched at all,
+     which is why an edit to app.js looked like it had not applied. */
+  if (dir === 'build/ui') { for (const res of clients) res.write('data: reload\n\n'); return; }
   if (dir === 'pages' && parts.length >= 2) pending.add('chapter:' + parts[0] + '/' + parts[1]);
   else if (dir === 'covers' && parts.length >= 1) {
     // a panel in _shared is shared by every cover of that class, so rebuild them all
@@ -583,7 +821,7 @@ const onChange = (dir) => (_evt, file) => {
     }
   }, 140);
 };
-for (const dir of ['pages', 'css', 'covers']) {
+for (const dir of ['pages', 'css', 'covers', 'build/ui']) {
   watch(path.join(ROOT, dir), { recursive: true }, onChange(dir));
 }
 
@@ -711,7 +949,9 @@ server.on('listening', async () => {
   if (focus) console.log('  ' + (focus.kind === 'cover' ? 'Cover    ' : 'Chapter  ')
     + 'http://localhost:' + port + '/'
     + (focus.kind === 'cover' ? 'cover' : 'read') + '/' + focus.target);
-  console.log('  Watching pages/, css/ and covers/ — a save rebuilds that one and reloads.\n');
+  console.log('  Watching pages/, css/ and covers/ — a save rebuilds that one and reloads.');
+  console.log('  build/ui reloads the tab; build/serve.mjs restarts the studio itself.'
+    + (process.env.NO_WATCH ? '  (NO_WATCH is set — restart it yourself.)' : '') + '\n');
   if (focus) await build(focus.target, [], focus.kind);
 });
 

@@ -1,0 +1,82 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">How fast a rumour travels</div>
+        <p>
+          Read the situation carefully before writing anything, because the obvious
+          answer is the wrong one. If everybody who knows tells three people who do not,
+          then after an hour there are the original knowers <em>and</em> three times as
+          many new ones — so the number knowing is multiplied by $4$, not by $3$.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">start</span>
+            <span>$1$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">after 1 hour</span>
+            <span>$1 + 3 = 4$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">after 2 hours</span>
+            <span>$4 + 12 = 16 = 4^2$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">after $n$ hours</span>
+            <span>$4^n$</span>
+          </div>
+        </div>
+        <p>
+          We need $4^n \ge 10^6$. Since $4^{10} = 2^{20} = (2^{10})^2$, and $2^{10}$ is
+          just over $10^3$, we get $4^{10}$ just over $10^6$ — in fact $1\,048\,576$.
+          And $4^9$ is a quarter of that, about $2.6 \times 10^5$, which is not enough.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">answer</span>
+            <span>$10$ hours</span>
+            <span class="chip">a city of a million</span>
+          </div>
+        </div>
+        <p>
+          Ten hours, from one person, using nothing but conversation. The result is not
+          really about rumours — it is the same arithmetic that governs how an epidemic
+          spreads, how a chain letter propagates, and how a video goes around the world
+          overnight. In each case what looks like an explosion is only a modest number
+          multiplied a modest number of times.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The rice on the chessboard</div>
+        <p>
+          The squares hold $1, 2, 4, 8, \ldots$ so the sixty-fourth holds $2^{63}$ and
+          the total is
+        </p>
+        <div class="work work--centred">
+          <p>$1 + 2 + 4 + \cdots + 2^{63} = 2^{64} - 1$</p>
+        </div>
+        <p>
+          The sum is one short of the next power, which you can see by noticing that
+          $1 + 2 = 3$, $1 + 2 + 4 = 7$, $1+2+4+8 = 15$ — always one less than the
+          doubling that comes next.
+        </p>
+        <p>
+          Estimate it with the same trick as before: $2^{64} = (2^{10})^6 \times 2^4
+          \approx (10^3)^6 \times 16 = 1.6 \times 10^{19}$, and the true value is
+          $1.8 \times 10^{19}$.
+        </p>
+        <p>
+          Is it payable? A grain of rice weighs about $0.025$ g, so this is around
+          $4.6 \times 10^{14}$ kg, or $4.6 \times 10^{11}$ tonnes. The world grows about
+          $5 \times 10^8$ tonnes of rice a year, so the debt is roughly a thousand years
+          of the entire world harvest. The king should have read the second half of the
+          contract.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

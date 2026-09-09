@@ -33,38 +33,36 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { spineWidth } from './spine.mjs';
+import { coverMetrics } from './sheet.mjs';
+import { windowPad } from './viewport.mjs';
+import { cropHeight } from './png.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...parts) => path.join(ROOT, ...parts);
 
 const CHROME_CANDIDATES = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
-const findChrome = () => CHROME_CANDIDATES.find(c => existsSync(c));
+const findChrome = () => CHROME_CANDIDATES.find(c => c && existsSync(c));
+// Chrome refuses to start its sandbox as root, which is how a CI container
+// usually runs. Only then is the flag added — never on a developer machine.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
 const escapeHtml = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-/* ---- Sheet metrics -----------------------------------------
-   Read out of the tokens, exactly as build.mjs does, so the box
-   Chrome is told to print can never drift from the box the
-   stylesheet lays the wrap out in. */
-async function tokenReader(edition) {
-  const src = await readFile(p('css', 'tokens.css'), 'utf8');
-  const over = edition
-    ? await readFile(p('css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
-    : '';
-  return (name) => {
-    const from = over.includes('--' + name + ':') ? over : src;
-    const at = from.indexOf('--' + name + ':');
-    return from.slice(at + name.length + 3, at + name.length + 30);
-  };
-}
+/* The sheet a wrap prints on comes from sheet.mjs — the third copy
+   of a token reader lived here, and it is what let the studio and
+   this file disagree about how wide the press sheet is. */
 
 /* ---- EAN-13 ------------------------------------------------
    95 modules: a 3-module guard, six digits, a 5-module centre
@@ -197,6 +195,31 @@ async function qrSvg(meta) {
 const SLIM_SPINE = 14;
 
 /* ---- Shell ------------------------------------------------- */
+/* Marks for a wrap. The four corners are the trim, as on a page — but
+   a cover also has to be creased, and a printer cannot guess where:
+   the two folds either side of the spine get their own marks, top and
+   bottom. Every mark starts a bleed's distance outside the trim and
+   runs outward into the slug, so none can cross artwork. The viewBox
+   is in millimetres to keep the arithmetic readable. */
+function coverMarks(m) {
+  const o = m.bleed + m.slug;                  // trim origin within the sheet
+  const R = o + 2 * m.trimW + m.spine, B = o + m.trimH;
+  const gap = m.bleed, len = 5;
+  const l = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+  const corners = [
+    l(o - gap - len, o, o - gap, o), l(o, o - gap - len, o, o - gap),
+    l(R + gap, o, R + gap + len, o), l(R, o - gap - len, R, o - gap),
+    l(o - gap - len, B, o - gap, B), l(o, B + gap, o, B + gap + len),
+    l(R + gap, B, R + gap + len, B), l(R, B + gap, R, B + gap + len),
+  ];
+  const folds = [o + m.trimW, o + m.trimW + m.spine].flatMap((x) => [
+    l(x, o - gap - len, x, o - gap),
+    l(x, B + gap, x, B + gap + len),
+  ]);
+  return `<svg class="cropmarks" viewBox="0 0 ${m.mediaW} ${m.mediaH}" aria-hidden="true">`
+    + corners.join('') + folds.join('') + `</svg>`;
+}
+
 const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 <html lang="en">
 <head>
@@ -211,9 +234,10 @@ const shell = (meta, body, spine, sheet, bleed) => `<!doctype html>
 </head>
 <body class="cover${bleed ? ' bleed' : ''}">
 <div class="cover-stage">
-<div class="jacket jacket--${escapeHtml(meta.edition ?? 'a4')} jacket--${escapeHtml(meta.finish ?? 'light')}${meta.direction ? ` jacket--${escapeHtml(meta.direction)}` : ''}${spine.mm < SLIM_SPINE ? ' jacket--spine-slim' : ''}">
+<div class="jacket jacket--${escapeHtml(meta.edition ?? 'standard')} jacket--${escapeHtml(meta.finish ?? 'light')}${meta.direction ? ` jacket--${escapeHtml(meta.direction)}` : ''}${spine.mm < SLIM_SPINE ? ' jacket--spine-slim' : ''}">
 ${body}
 </div>
+${bleed ? coverMarks(sheet) : ''}
 </div>
 </body>
 </html>
@@ -232,16 +256,12 @@ async function buildCover(rel) {
     parts.map(part => readFile(path.resolve(src, part), 'utf8'))
   )).join(String.fromCharCode(10, 10));
 
-  const tok = await tokenReader(meta.edition);
-  const mm = (name) => parseFloat(tok(name));
-  const trimW = mm('trim-w'), trimH = mm('trim-h'), bleedMM = mm('bleed');
   const spine = spineWidth(meta);
-  const sheet = {
-    trimW, trimH, bleed: bleedMM, spine: spine.mm,
-    sheetW: 2 * trimW + spine.mm,
-    mediaW: 2 * trimW + spine.mm + 2 * bleedMM,
-    mediaH: trimH + 2 * bleedMM,
-  };
+  /* The wrap, from sheet.mjs — the one place that knows a cover is
+     two trims and a spine and bleeds by 15mm rather than 3. It was
+     worked out here and again in serve.mjs, and the two answers had
+     drifted. */
+  const sheet = await coverMetrics(spine.mm, meta.edition);
 
   /* ISBN. The thirteenth digit is arithmetic, not data: recompute it
      and say so rather than printing a barcode that will not scan. */
@@ -294,10 +314,10 @@ async function buildCover(rel) {
     }
   }
 
-  console.log(`  ${rel}: ${meta.edition ?? 'a4'}, ${meta.finish ?? 'light'} finish,`
+  console.log(`  ${rel}: ${meta.edition ?? 'standard'}, ${meta.finish ?? 'light'} finish,`
     + ` spine ${spine.mm}mm (${spine.how})`);
   console.log(`    wrap ${sheet.sheetW} x ${sheet.trimH}mm trim`
-    + `  =  ${trimW} back + ${spine.mm} spine + ${trimW} front`);
+    + `  =  ${sheet.trimW} back + ${spine.mm} spine + ${sheet.trimW} front`);
   return { outHtml, bleedHtml, meta, sheet };
 }
 
@@ -338,7 +358,7 @@ async function checkFit(htmlPath, sheet) {
   await writeFile(tmp, src.replace('</head>', probe + '\n</head>'));
 
   const { stdout } = await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     `--window-size=${px(sheet.sheetW)},${px(sheet.trimH)}`,
     '--virtual-time-budget=8000', '--dump-dom',
     'file:///' + tmp.replace(/\\/g, '/'),
@@ -370,7 +390,7 @@ async function toPdf(htmlPath) {
   if (!chrome) throw new Error('No Chrome or Edge found — set one in CHROME_CANDIDATES.');
   const pdfPath = htmlPath.replace(/\.html$/, '.pdf');
   await run(chrome, [
-    '--headless=new', '--disable-gpu',
+    '--headless=new', ...SANDBOX, '--disable-gpu',
     '--no-pdf-header-footer', '--print-to-pdf-no-header',
     '--virtual-time-budget=15000',
     `--print-to-pdf=${pdfPath}`,
@@ -392,15 +412,20 @@ async function toPng(htmlPath, sheet) {
     '<style>body.cover{background:#fff}.cover-stage{padding:0}</style>\n</head>'));
 
   const wide = htmlPath.includes('-bleed');
+  const tall = px(wide ? sheet.mediaH : sheet.trimH);
   await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     '--force-device-scale-factor=2',
-    `--window-size=${px(wide ? sheet.mediaW : sheet.sheetW)},${px(wide ? sheet.mediaH : sheet.trimH)}`,
+    // the window is taller than the viewport inside it, so ask for the
+    // difference and cut it off after — without this the wrap proof
+    // lost its bottom bleed, and at 3mm nobody noticed
+    `--window-size=${px(wide ? sheet.mediaW : sheet.sheetW)},${tall + await windowPad(chrome)}`,
     '--virtual-time-budget=8000',
     `--screenshot=${png}`,
     'file:///' + tmp.replace(/\\/g, '/'),
   ], { maxBuffer: 1 << 24 });
   await rm(tmp, { force: true });
+  await cropHeight(png, tall * 2);   // captured at 2x
   console.log(`  → ${path.relative(ROOT, png)}`);
   return png;
 }
@@ -413,7 +438,7 @@ async function verifySheet(pdfPath, sheet) {
   const toMM = pt => pt * 25.4 / 72;
   const w = toMM(boxes[0][0]), h = toMM(boxes[0][1]);
   console.log(`    sheet ${w.toFixed(2)} x ${h.toFixed(2)}mm`
-    + ` (wrap ${sheet.mediaW} x ${sheet.mediaH} — trim plus ${sheet.bleed}mm bleed, no marks)`);
+    + ` (wrap ${sheet.mediaW} x ${sheet.mediaH} — trim, ${sheet.bleed}mm bleed, and marks in a ${sheet.slug}mm slug)`);
   if (boxes.length > 1) console.warn(`    ! the cover came out as ${boxes.length} pages — it must be one`);
   if (Math.abs(w - sheet.mediaW) > 0.5 || Math.abs(h - sheet.mediaH) > 0.5) {
     console.warn('    ! that is off the intended sheet');

@@ -1,0 +1,30 @@
+<!-- ══════════════════ SPINE — Class 9 Science ══════════════════
+     The shared spine carries a Part badge. Science is one book, so
+     there is no part to badge and the badge is simply absent rather
+     than set to 1 — a "Part 1" on a shelf implies a Part 2 that does
+     not exist.
+
+     This spine is very slim while the volume is one chapter long, so
+     .jacket--spine-slim turns the furniture head-to-foot. Re-derive
+     pages from --book as chapters land and the badge-less layout will
+     still be right; only the width changes.
+     ============================================================== -->
+<div class="jacket__spine">
+  <div class="spine__mark">Class<em>Bridge</em></div>
+  <span class="spine__tick"></span>
+  <div class="spine__title">SCIENCE</div>
+
+  <div class="spine__class">
+    <span class="jk-label">Class</span>
+    <div class="spine__class-num">9</div>
+  </div>
+  <span class="spine__dots">
+    <svg viewBox="0 0 20 20" aria-hidden="true">
+      <g class="jk-dot--cream">
+        <circle cx="3" cy="3" r="1.2"/><circle cx="10" cy="3" r="1.2"/><circle cx="17" cy="3" r="1.2"/>
+        <circle cx="3" cy="10" r="1.2"/><circle cx="10" cy="10" r="1.2"/><circle cx="17" cy="10" r="1.2"/>
+        <circle cx="3" cy="17" r="1.2"/><circle cx="10" cy="17" r="1.2"/><circle cx="17" cy="17" r="1.2"/>
+      </g>
+    </svg>
+  </span>
+</div>

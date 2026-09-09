@@ -2,131 +2,110 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-                                Simplify. Assume that no denominator is zero.
-                                <ol class="c-parts c-parts--tall">
-                                  <li>$\dfrac{4x^2 + 4x + 1}{4x^2 - 1}$</li>
-                                  <li>$\dfrac{(3a - 2b)^3}{9a^2 - 4b^2}$</li>
-                                  <li>$\dfrac{s^3 + 125t^3}{s^2 - 2st - 35t^2}$</li>
-                                </ol>
-                              </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
+        <div class="c-example__body">
+          <p>
+            Saira has one square tile of side $x$ units, eight rectangular
+            strips $x$ units long and 1 unit wide, and fifteen small squares of
+            side 1 unit. She fits all of them together, with no gaps and no
+            overlaps, into a single larger rectangle. What are its sides?
+          </p>
+          <p>
+            Nothing is said about how the pieces are arranged, and nothing needs
+            to be. Whatever the arrangement, the area of the rectangle is the
+            total area of the tiles:
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">square</span>
+              <span>$1 \times x^2 = x^2$ sq. units</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">strips</span>
+              <span>$8 \times x \times 1 = 8x$ sq. units</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">units</span>
+              <span>$15 \times 1 = 15$ sq. units</span>
+            </div>
+          </div>
+          <p>
+            So the rectangle has area $x^2 + 8x + 15$ square units. Its sides
+            are two expressions that multiply to give this — which is to say,
+            its factors. Two numbers with sum 8 and product 15: the pair is 3
+            and 5.
+          </p>
+          <div class="work">
+            <p>$x^2 + 8x + 15 = (x + 3)(x + 5)$</p>
+          </div>
+          <p>
+            The rectangle is $x + 5$ units long and $x + 3$ units wide. Fig.
+            4.11 shows the pieces in place; count them and check that all
+            twenty-four are used.
+          </p>
+        </div>
       </div>
 
-      <div class="c-practice">
-        
-        <ol class="c-questions" data-start="5">
-          <li>
-                                Each expression below is the area of a rectangle, in square units.
-                                Find possible expressions for its length and its breadth.
-                                <ol class="c-parts">
-                                  <li>$25a^2 - 30ab + 9b^2$</li>
-                                  <li>$36s^2 - 49t^2$</li>
-                                </ol>
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>
-                                Each expression below is the volume of a cuboid, in cubic units.
-                                Find possible expressions for its length, breadth and height.
-                                <ol class="c-parts">
-                                  <li>$6a^2 - 24b^2$</li>
-                                  <li>$3ps^2 - 15ps + 12p$</li>
-                                </ol>
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>
-                                A village playground is a square of side 40 metres. A path of width
-                                $s$ metres is laid all the way round the outside of it. Write an
-                                expression, in terms of $s$, for the area of the path.
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>
-                                A number added to its own reciprocal gives $\frac{10}{3}$. Find the
-                                number. There are two answers; find both, and say how they are
-                                related.
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>
-                                A rectangular pool has area $2x^2 + 7x + 3$ square hastas and width
-                                $2x + 1$ hastas. Find its length.
-                                <span class="pip">the hasta was an old unit of length</span>
-                              </li>
-        </ol>
-      </div>
+      <figure class="c-figure c-figure--md">
+        <svg viewBox="0 0 244 184" role="img"
+             aria-label="One x squared tile, eight x tiles and fifteen unit tiles arranged into a rectangle of length x plus five and width x plus three">
+      
+          <!-- x = 3 units, unit = 22px -->
+          <g class="dg-line dg-fill-a">
+            <rect x="56" y="40" width="66" height="66"/>
+          </g>
+          <text class="dg-label" x="89" y="78" text-anchor="middle">x²</text>
+      
+          <!-- five x-tiles standing along the right of the square -->
+          <g class="dg-line dg-fill-b">
+            <rect x="122" y="40" width="22" height="66"/>
+            <rect x="144" y="40" width="22" height="66"/>
+            <rect x="166" y="40" width="22" height="66"/>
+            <rect x="188" y="40" width="22" height="66"/>
+            <rect x="210" y="40" width="22" height="66"/>
+          </g>
+      
+          <!-- three x-tiles lying below it -->
+          <g class="dg-line dg-fill-b">
+            <rect x="56" y="106" width="66" height="22"/>
+            <rect x="56" y="128" width="66" height="22"/>
+            <rect x="56" y="150" width="66" height="22"/>
+          </g>
+      
+          <!-- fifteen unit tiles filling the corner -->
+          <g class="dg-line dg-fill-d">
+            <rect x="122" y="106" width="22" height="22"/><rect x="144" y="106" width="22" height="22"/><rect x="166" y="106" width="22" height="22"/><rect x="188" y="106" width="22" height="22"/><rect x="210" y="106" width="22" height="22"/>
+            <rect x="122" y="128" width="22" height="22"/><rect x="144" y="128" width="22" height="22"/><rect x="166" y="128" width="22" height="22"/><rect x="188" y="128" width="22" height="22"/><rect x="210" y="128" width="22" height="22"/>
+            <rect x="122" y="150" width="22" height="22"/><rect x="144" y="150" width="22" height="22"/><rect x="166" y="150" width="22" height="22"/><rect x="188" y="150" width="22" height="22"/><rect x="210" y="150" width="22" height="22"/>
+          </g>
+      
+          <line class="dg-dim" x1="56" y1="26" x2="232" y2="26"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="144" y="19" text-anchor="middle">x + 5</text>
+      
+          <line class="dg-dim" x1="40" y1="40" x2="40" y2="172"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="32" y="110" text-anchor="end">x + 3</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.11</span> &nbsp;Saira's twenty-four tiles,
+          arranged as a rectangle of area $x^2 + 8x + 15$.
+        </figcaption>
+      </figure>
 
       <p>
-        The last four are harder. Each can be settled with an identity from
-        this chapter — but deciding which one is part of the work.
+        Notice that the arrangement was not a matter of taste. Saira's
+        twenty-four tiles make exactly one rectangle, because $15$ has one
+        factor pair whose sum is $8$. Had she been given one tile more or one
+        fewer, no arrangement would have worked at all.
       </p>
 
-      <div class="c-practice">
-        
-        <ol class="c-questions c-questions--starred" data-start="10">
-          <li class="hard">
-                                Both $x - 2$ and $x - \frac{1}{2}$ are factors of $px^2 + 5x + r$.
-                                Show that $p = r$.
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions c-questions--starred" data-start="11">
-          <li class="hard">
-                                Given that $a + b + c = 5$ and $ab + bc + ca = 10$, prove that
-                                $a^3 + b^3 + c^3 - 3abc = -25$.
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions c-questions--starred" data-start="12">
-          <li class="hard">
-                                Factorise $n^3 - n$, and use the factorisation to show that
-                                $n^3 - n$ is divisible by 6 for every natural number $n$. Give your
-                                reasons.
-                                <p class="hint">
-                                  The factors are three consecutive whole numbers. What must be true
-                                  of any three whole numbers in a row?
-                                </p>
-                              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions c-questions--starred" data-start="13">
-          <li class="hard">
-                                Find the value of
-                                <ol class="c-parts c-parts--1">
-                                  <li>$x^3 + y^3 - 12xy + 64$, &nbsp;when $x + y = -4$</li>
-                                  <li>$x^3 - 8y^3 - 36xy - 216$, &nbsp;when $x = 2y + 6$</li>
-                                </ol>
-                                <p class="hint">
-                                  In each part the constant is a cube and the middle term is
-                                  $-3$ times a product of three things. Which identity has that
-                                  shape — and what does the given condition do to its first bracket?
-                                </p>
-                              </li>
-        </ol>
-      </div>
-
+      <p>
+        That question handed you the pieces and asked what they made. The next
+        one goes the other way: it hands you the finished rectangle — its area,
+        and how its two sides are related — and asks what those sides measure.
+      </p>
 
     </div>
   </div>

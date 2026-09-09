@@ -1,0 +1,74 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 100" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A dot plot of ten, ten, eleven and seventeen on a number line, with a fulcrum under twelve showing that the row balances there">
+      
+            <text class="dg-note" x="50" y="18" text-anchor="middle">five below</text>
+            <text class="dg-note" x="118" y="18" text-anchor="middle">five above</text>
+      
+            <circle class="dg-fill-teal" cx="38" cy="56" r="3"/>
+            <circle class="dg-fill-teal" cx="38" cy="48" r="3"/>
+            <circle class="dg-fill-teal" cx="56" cy="56" r="3"/>
+            <circle class="dg-fill-teal" cx="162" cy="56" r="3"/>
+      
+            <path class="dg-axis" d="M14 60 H186"/>
+            <path class="dg-thin" d="M20 60 V64 M38 60 V64 M56 60 V64 M73 60 V64 M91 60 V64
+                                     M109 60 V64 M127 60 V64 M144 60 V64 M162 60 V64 M180 60 V64"/>
+      
+            <text class="dg-tick" x="20" y="72" text-anchor="middle">9</text>
+            <text class="dg-tick" x="38" y="72" text-anchor="middle">10</text>
+            <text class="dg-tick" x="56" y="72" text-anchor="middle">11</text>
+            <text class="dg-tick" x="73" y="72" text-anchor="middle">12</text>
+            <text class="dg-tick" x="91" y="72" text-anchor="middle">13</text>
+            <text class="dg-tick" x="109" y="72" text-anchor="middle">14</text>
+            <text class="dg-tick" x="127" y="72" text-anchor="middle">15</text>
+            <text class="dg-tick" x="144" y="72" text-anchor="middle">16</text>
+            <text class="dg-tick" x="162" y="72" text-anchor="middle">17</text>
+            <text class="dg-tick" x="180" y="72" text-anchor="middle">18</text>
+      
+            <path class="dg-fill-c" d="M73 76 L67 88 L79 88 Z"/>
+            <text class="dg-note" x="73" y="96" text-anchor="middle">mean</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.1</span> The four values as dots, with
+          a fulcrum at $12$. Put the fulcrum anywhere else and the row tips.</figcaption>
+        </figure>
+      </div>
+
+      <p>Measure how far each dot stands from $12$. The two tens are $2$ away each and
+      the eleven is $1$ away, so the dots on the left are $2 + 2 + 1 = 5$ away in total.
+      The seventeen, alone on the right, is $5$ away. The two totals match — and that is
+      the sense in which $12$ is the centre.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The mean is where the distances balance</div>
+        <p>Add up how far every value below the mean falls short of it, and add up how
+        far every value above it overshoots. The two totals are always equal. That is a
+        second description of the same number the fair share gave, and for most of the
+        questions in this chapter it is the more useful one.</p>
+      </div>
+
+      <p>Could there be a second such point? Suppose someone proposes $13$ instead. Every
+      dot on the left is now further away than before — the two tens by one more each,
+      the eleven by one more — so the total below has grown from $5$ to $8$. And the
+      seventeen is now only $4$ away, so the total above has shrunk. The two no longer
+      match, and the row tips.</p>
+
+      <p>The same thing happens for any point above $12$, and the mirror image for any
+      point below it: moving left grows the right-hand total and shrinks the left. So the
+      totals can agree in one place only. The mean is not merely <em>a</em> balancing
+      point; it is the only one there is.</p>
+
+      <p>The two descriptions are the same statement in different clothes, and a line of
+      algebra shows it. To say the balance holds at $m$ is to say that the overshoots and
+      the shortfalls cancel — that adding up $x - m$ over every value gives nothing at
+      all. Since there are $n$ values, that total is $(x_1 + \cdots + x_n) - nm$, so it
+      is zero exactly when $nm$ is the sum, which is exactly when $m$ is the sum divided
+      by $n$.</p>
+
+    </div>
+  </div>
+</section>

@@ -2,66 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect c-reflect--tail">
-        <div class="c-reflect__box">
-          <div class="c-reflect__body">
-            <p class="c-reflect__hint">
-              Then try $x^5 - y^5$. Do you think $x - y$ divides $x^n - y^n$ for
-              <em>every</em> $n$? What happens if you put $x = y$?
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <h3>Three letters at once</h3>
+      <h3>And the difference</h3>
 
       <p>
-        The same experiment works with three letters. Multiply $x + y + z$ by
-        $x^2 + y^2 + z^2 - xy - xz - yz$, taking the second bracket once with
-        each term of the first:
+        The trick that gave the second identity from the first works here too.
+        Replace $b$ by $-b$ throughout, and watch the signs:
       </p>
 
       <div class="work">
-        <p>$x\left(x^2 + y^2 + z^2 - xy - xz - yz\right) = x^3 + xy^2 + xz^2 - x^2y - x^2z - xyz$</p>
-        <p>$y\left(\;\cdots\;\right) = x^2y + y^3 + yz^2 - xy^2 - xyz - y^2z$</p>
-        <p>$z\left(\;\cdots\;\right) = x^2z + y^2z + z^3 - xyz - xz^2 - yz^2$</p>
+        <p>$(a + (-b))^3 = a^3 + 3a^2(-b) + 3a(-b)^2 + (-b)^3$</p>
       </div>
 
       <p>
-        Now add the three lines. Every term with two different letters appears
-        twice, once with each sign: $xy^2$ against $-xy^2$, $xz^2$ against
-        $-xz^2$, $x^2y$ against $-x^2y$, and so on. All of them vanish. What
-        survives is the three cubes and three copies of $-xyz$:
+        The odd powers of $-b$ turn negative and the even one stays positive,
+        which leaves
       </p>
 
       <div class="eq eq--anchor">
-        $$(x + y + z)\left(x^2 + y^2 + z^2 - xy - xz - yz\right) = x^3 + y^3 + z^3 - 3xyz$$
+        $$(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$$
       </div>
 
       <p>
-        That identity looks forbidding, but it earns its keep. It ties together
-        four quantities — the sum of three numbers, the sum of their squares,
-        the sum of their cubes, and their product — so that knowing any three
-        of them gives you the fourth.
+        Four terms, two positive and two negative, and the signs alternate along
+        the line. Compare it with $(a + b)^3$: the terms are identical, and only
+        the signs have changed.
       </p>
 
-      <div class="c-example c-example--head">
-        <div class="c-example__tab">Example 15</div>
+      <p>
+        The alternation is not an accident: replacing $b$ by $-b$ leaves the even
+        powers of $b$ alone and flips the odd ones, and a cube uses $b^0$, $b^1$,
+        $b^2$, $b^3$ in turn. The same substitution turned $(a+b)^2$ into
+        $(a-b)^2$ in Section 4.2, where only the middle term changed sign.
+      </p>
+
+      <p>
+        Both are worth recognising in the other direction too. Given a
+        four-term expression, can you tell that it <em>is</em> a cube?
+      </p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
         <div class="c-example__body">
           <p>
-            Three numbers add to 10, multiply to 25, and their squares add to
-            38. What do their cubes add to?
+            A cube has volume $p^3 + 6p^2q + 12pq^2 + 8q^3$ cubic units. What is
+            the length of its side?
           </p>
           <p>
-            Call them $x$, $y$ and $z$, so $x + y + z = 10$, $xyz = 25$ and
-            $x^2 + y^2 + z^2 = 38$. Substituting into the identity:
+            The side is whatever this expression is the cube of. Set it beside
+            $a^3 + 3a^2b + 3ab^2 + b^3$ and look for $a$ and $b$:
           </p>
           <div class="work">
-            <p>$10\left(38 - (xy + xz + yz)\right) = x^3 + y^3 + z^3 - 3(25)$</p>
-            <p>$x^3 + y^3 + z^3 = 455 - 10(xy + xz + yz)$</p>
+            <p>$p^3 + 6p^2q + 12pq^2 + 8q^3 = p^3 + 3(p)^2(2q) + 3(p)(2q)^2 + (2q)^3$</p>
+            <p>$= (p + 2q)^3$</p>
           </div>
+          <p>So $a = p$ and $b = 2q$, and the side is $p + 2q$ units.</p>
         </div>
       </div>
+
+      <p>
+        The step worth naming there is the one in the middle, where
+        $6p^2q$ was rewritten as $3(p)^2(2q)$ and $8q^3$ as $(2q)^3$. Nothing
+        changed in value; the expression was simply written in the shape of the
+        identity so the two could be compared term by term. Most uses of an
+        identity are that move.
+      </p>
+
+      <p>
+        It also gives you a check. If $a = p$ and $b = 2q$ are right, then every
+        term must agree, not merely the first and the last — and here the middle
+        two do: $3(p)(2q)^2 = 12pq^2$. An expression that matches at the ends
+        and fails in the middle is not a cube, and the check costs a line.
+      </p>
 
     </div>
   </div>

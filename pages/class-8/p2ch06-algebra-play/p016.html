@@ -1,0 +1,78 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">at the end</span>
+          <span>$8$ coins, just after the third doubling</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">before that doubling</span>
+          <span>$8 \div 2 = 4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">before the second payment</span>
+          <span>$4 + 8 = 12$, so before that doubling $6$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">before the first payment</span>
+          <span>$6 + 8 = 14$, so before that doubling $7$</span>
+        </div>
+      </div>
+
+      <p>Karim began with seven coins. Every step of that was an undoing: a doubling was
+      undone by halving, a payment by adding back, and the steps were taken in reverse
+      order because the last thing done is the first thing to unpick.</p>
+
+      <p>Algebra does the same job facing forwards. Call the starting number of coins
+      $x$, follow the story through in order, and read off what the last line must
+      equal.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">after round 1</span>
+          <span>$2x - 8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after round 2</span>
+          <span>$2(2x - 8) - 8 = 4x - 24$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the third doubling</span>
+          <span>$2(4x - 24) = 8x - 48$, and this is $8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$8x = 56$, giving $x = 7$</span>
+        </div>
+      </div>
+
+      <p>Both roads reach seven, and for this question the backwards one is shorter. The
+      forwards one earns its keep as soon as the question changes — because $2x - 8$,
+      $4x - 24$, $8x - 48$ is not an answer about Karim but a description of the deal,
+      and it can be asked things the story never asked.</p>
+
+      <p>Here is one. Was the deal ever worth taking? After a single round Karim holds
+      $2x - 8$ where he held $x$, so he is better off exactly when $2x - 8 > x$, which is
+      to say when $x > 8$. The bargain is good for anybody who starts with more than
+      eight coins and bad for everybody else, and Karim, with seven, was one coin short
+      of breaking even. Had he started with eight he would have walked round the tree all
+      day and come away with eight.</p>
+
+      <p>Replace the eight by a charge of $c$ and the same working gives $2x - c$ after
+      one round, $4x - 3c$ after two, and after $n$ rounds</p>
+
+      <div class="eq">$$2^{\,n}(x - c) + c.$$</div>
+
+      <p>Everything about the deal is in that expression. If $x$ is bigger than $c$ the
+      bracket is positive and the doubling runs away with it, so Karim gets rich. If $x$
+      equals $c$ the bracket is zero and he stays where he is for ever. And if $x$ is
+      smaller than $c$ — Karim's case — the bracket is negative, and each round doubles
+      how far behind he is. The genie did not need luck. Knowing that Karim had seven
+      coins, it had only to name a charge above seven, and eight was the smallest whole
+      number that would do.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,264 @@
+/* ============================================================
+   SCIENCE — the four components the science volumes need and the
+   maths volumes do not.
+
+   DESIGN.md §4 calls the library "seven, locked", and this is a
+   deliberate extension rather than a drift. Each addition obeys
+   the two rules that make the library legible:
+
+     * one working colour per component, never two (§1);
+     * break-inside: avoid, because each is read as one thing (§9).
+
+   Only ONE of the four is a tinted panel. The other three are
+   built from rules and bands, so a science page does not turn
+   into a stack of coloured boxes — which is the failure the
+   locked library was protecting against.
+
+   Colour is assigned by what the box is FOR, following §1:
+     structure  a scientist, and depth on the main thread
+     action     an activity — something being done
+     attention  a thread of curiosity — a question put to the reader
+   ============================================================ */
+
+
+/* ============================================================
+   1. MEET A SCIENTIST — structure. Rules, not a panel: a portrait
+   beside a short life. Same rule treatment as the key idea, so it
+   reads as context on the main thread rather than as an aside.
+   ============================================================ */
+.c-scientist {
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 30mm 1fr;
+  gap: 5mm;
+  align-items: start;
+  margin: var(--space-rest) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-band) solid var(--teal);
+  border-bottom: var(--stroke-rule) solid var(--teal);
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+}
+/* A grid item defaults to min-width: auto, so a long word in the
+   placeholder pushed the track past its 30mm and walked into the
+   text beside it. This holds the column to its declared width and
+   makes the label wrap instead. */
+.c-scientist__portrait {
+  margin: 0;
+  min-width: 0;
+}
+.c-scientist__portrait img,
+.c-scientist__portrait svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+.c-scientist__strap {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: var(--space-hair);
+}
+.c-scientist__name {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal-deep);
+}
+.c-scientist__life {
+  font-size: var(--size-caption);
+  color: var(--ink-soft);
+  margin-bottom: var(--space-hair);
+}
+.c-scientist__body > :last-child { margin-bottom: 0; }
+.c-scientist__body > p:first-child { margin-top: 0; }
+
+
+/* ============================================================
+   2. READY TO GO BEYOND — structure. The one new panel: a tinted
+   box with a tab, built exactly as the example is, because it does
+   the same job for the reader — a bounded piece of matter set
+   apart from the argument — one step further out.
+   ============================================================ */
+.c-beyond {
+  break-inside: avoid;
+  position: relative;
+  margin: var(--space-step) 0;
+  padding-top: 4mm;
+}
+.c-beyond__tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: var(--teal);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 1.5mm 4mm;
+  border-radius: var(--radius);
+}
+.c-beyond__body {
+  background: var(--teal-tint);
+  border-radius: var(--radius-lg);
+  padding: 4.6mm 8mm 3.6mm;
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+}
+.c-beyond__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal-deep);
+  margin-bottom: var(--space-hair);
+}
+.c-beyond__body > :last-child { margin-bottom: 0; }
+
+
+/* ============================================================
+   3. THREADS OF CURIOSITY — attention. Rules, not a box: the
+   reflect panel already owns the gold tint, and two gold boxes on
+   a spread would be one too many. Its title is the question.
+   ============================================================ */
+.c-thread {
+  break-inside: avoid;
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-rule) solid var(--gold);
+  border-bottom: var(--stroke-hair) solid var(--gold);
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+}
+.c-thread__strap {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: var(--space-hair);
+}
+.c-thread__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--gold-deep);
+  margin-bottom: var(--space-hair);
+}
+.c-thread > :last-child { margin-bottom: 0; }
+
+
+/* ============================================================
+   4. ACTIVITY — action. A band header over open content, built as
+   practice is, because an activity is a set of instructions to
+   work through rather than a box to read. Rust, since the action
+   colour is for something being done.
+   ============================================================ */
+.c-activity {
+  break-inside: avoid;
+  margin: var(--space-rest) 0;
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+}
+.c-activity__head {
+  display: inline-block;
+  background: var(--rust);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 1.4mm 4mm;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-tight);
+}
+.c-activity__body > :last-child { margin-bottom: 0; }
+
+/* Safety first — the precaution the source calls for, set apart
+   from the steps so it cannot be read past. */
+.c-activity__safety {
+  margin-top: var(--space-tight);
+  padding-top: var(--space-hair);
+  border-top: var(--stroke-hair) solid var(--rust);
+  font-size: var(--size-caption);
+  color: var(--rust-deep);
+}
+.c-activity__safety strong {
+  font-family: var(--font-display);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+}
+
+
+/* ============================================================
+   5. PHOTOGRAPH PLACEHOLDER — a figure whose artwork has not
+   arrived. It prints as a ruled box carrying the figure number,
+   the printed width it is reserving, and a brief of the wanted
+   picture, so that a proof shows plainly what is still missing.
+   Nothing here is subtle on purpose: a placeholder that could be
+   mistaken for artwork is a placeholder that ships.
+   ============================================================ */
+.c-photo {
+  /* content-box is the default here, so width:100% would size the
+     content and then add the padding and the border on top — which
+     pushed the portrait slot 32px into the text beside it. */
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-hair);
+  padding: 3mm 4mm;
+  text-align: center;
+  border: var(--stroke-rule) dashed var(--teal-soft);
+  border-radius: var(--radius);
+  background: var(--rule-soft);
+}
+.c-photo--wide     { aspect-ratio: 16 / 9; }
+.c-photo--portrait { aspect-ratio: 3 / 4; }
+
+.c-photo__label {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+.c-photo__brief {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+.c-photo__size {
+  font-size: var(--size-caption);
+  color: var(--ink-faint);
+  font-variant-numeric: lining-nums;
+}
+
+/* The figure size modifiers reach svg and img only, so the
+   placeholder needs the same widths naming itself. */
+.c-figure--sm   .c-photo { max-width: var(--fig-sm); }
+.c-figure--md   .c-photo { max-width: var(--fig-md); }
+.c-figure--lg   .c-photo { max-width: var(--fig-lg); }
+.c-figure--xl   .c-photo { max-width: var(--fig-xl); }
+.c-figure--full .c-photo { max-width: var(--fig-full); }

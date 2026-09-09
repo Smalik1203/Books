@@ -1,0 +1,70 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Is $3375$ a perfect cube? Is $500$?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$3375$</span>
+              <span>$= 3 \times 3 \times 3 \times 5 \times 5 \times 5$</span>
+            </div>
+          </div>
+          <p>Three $3$s and three $5$s. Deal them into three piles and each pile is
+          $3 \times 5 = 15$, so</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$3375$</span>
+              <span>$= 15 \times 15 \times 15 = 15^3$</span>
+              <span class="chip">$\sqrt[3]{3375} = 15$</span>
+            </div>
+          </div>
+          <p>Now $500$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$500$</span>
+              <span>$= 2 \times 2 \times 5 \times 5 \times 5$</span>
+            </div>
+          </div>
+          <p>The three $5$s deal out one to each pile, but the two $2$s cannot be shared
+          three ways. So $500$ is not a perfect cube. Its two trailing zeros said as much
+          before we started.</p>
+        </div>
+      </div>
+
+      <p>As with squares, the leftovers say what is missing. In $500$ there are two $2$s
+      and a third is wanted, so $500 \times 2 = 1000 = 10^3$. In $1323 = 3^3 \times 7^2$
+      one more $7$ is wanted, and $1323 \times 7 = 9261 = 21^3$.</p>
+
+      <p>A word of warning about the trailing-zero rule, since it is the one most often
+      mangled. It says a cube has a multiple of three zeros at the end — none, three,
+      six, and so on. It does not say that a number with three zeros is a cube: $2000$
+      ends in three zeros and $2000 = 2^4 \times 5^3$, where the four $2$s cannot be
+      shared three ways. As with the last digit of a square, the rule is a rejection and
+      not a proof.</p>
+
+      <p>Set the two tests side by side, because the difference between them is only a
+      number:</p>
+
+      <table>
+        <thead>
+          <tr><th></th><th>perfect square</th><th>perfect cube</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>each prime appears</td><td>an even number of times</td><td>a multiple of three times</td></tr>
+          <tr><td>primes deal into</td><td>2 identical piles</td><td>3 identical piles</td></tr>
+          <tr><td>the root is</td><td>one pile</td><td>one pile</td></tr>
+          <tr><td>trailing zeros</td><td>a multiple of 2</td><td>a multiple of 3</td></tr>
+          <tr><td>last digit rules out</td><td>2, 3, 7, 8</td><td>nothing</td></tr>
+        </tbody>
+      </table>
+
+      <p>The last row is the one to remember. For squares the last digit is a quick
+      rejection and a poor clue to the root; for cubes it rejects nothing and names the
+      root's last digit exactly.</p>
+
+    </div>
+  </div>
+</section>

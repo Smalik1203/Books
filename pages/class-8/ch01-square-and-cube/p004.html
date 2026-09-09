@@ -1,0 +1,76 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <table>
+        <thead>
+          <tr><th>$n$</th><th>$n^2$</th><th>$n$</th><th>$n^2$</th><th>$n$</th><th>$n^2$</th><th>$n$</th><th>$n^2$</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>1</td><td>6</td><td>36</td><td>11</td><td>121</td><td>16</td><td>256</td></tr>
+          <tr><td>2</td><td>4</td><td>7</td><td>49</td><td>12</td><td>144</td><td>17</td><td>289</td></tr>
+          <tr><td>3</td><td>9</td><td>8</td><td>64</td><td>13</td><td>169</td><td>18</td><td>324</td></tr>
+          <tr><td>4</td><td>16</td><td>9</td><td>81</td><td>14</td><td>196</td><td>19</td><td>361</td></tr>
+          <tr><td>5</td><td>25</td><td>10</td><td>100</td><td>15</td><td>225</td><td>20</td><td>400</td></tr>
+        </tbody>
+      </table>
+
+      <p>Nothing in the definition insists that $n$ be a whole number. A square of side
+      $2.5$ cm has an area of $6.25$ cm², and a square of side $\tfrac53$ has an area of
+      $\tfrac{25}{9}$:</p>
+
+      <div class="work work--centred">
+        <p>$(2.5)^2 = 2.5 \times 2.5 = 6.25 \qquad
+           \left(\tfrac53\right)^2 = \tfrac53 \times \tfrac53 = \tfrac{25}{9}$</p>
+      </div>
+
+      <p>Those are squares of numbers, and perfectly good ones. They are not
+      <em>perfect</em> squares, because $6.25$ and $\tfrac{25}{9}$ are not natural
+      numbers. Keep the two ideas apart: squaring is something you do to any number,
+      while a perfect square is a natural number that happens to be the result of
+      squaring another.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>A negative number squared is positive: $(-6)^2 = -6 \times -6 = 36$. So
+          $36$ is the square of $6$ and also the square of $-6$, which will matter when
+          we come to undo the squaring.</p>
+        </div>
+      </div>
+
+      <h3>1.2.1 What the last digit tells you</h3>
+
+      <p>Look down the right-hand column of the table and read only the final digit of
+      each square:</p>
+
+      <div class="work work--centred">
+        <p>$1,\ 4,\ 9,\ 6,\ 5,\ 6,\ 9,\ 4,\ 1,\ 0,\ 1,\ 4,\ 9,\ 6,\ 5,\ 6,\ 9,\ 4,\ 1,\ 0$</p>
+      </div>
+
+      <p>Six digits appear — $0, 1, 4, 5, 6, 9$ — and four never do. No square in the
+      table ends in $2$, $3$, $7$ or $8$, and no square anywhere does, because the last
+      digit of $n^2$ depends only on the last digit of $n$, and there are only ten cases
+      to check:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$n$ ends in</span>
+          <span>$0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$n^2$ ends in</span>
+          <span>$0 \quad 1 \quad 4 \quad 9 \quad 6 \quad 5 \quad 6 \quad 9 \quad 4 \quad 1$</span>
+        </div>
+      </div>
+
+      <p>That is the whole proof. Ten cases, all checked, and the four missing digits
+      can never appear however large the number.</p>
+
+    </div>
+  </div>
+</section>

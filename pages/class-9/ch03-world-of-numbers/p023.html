@@ -2,74 +2,83 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              Classify each as rational or irrational, and give the fraction
-              where there is one:
-              <ol class="c-parts c-parts--1">
-                <li>$\sqrt{81}$</li>
-                <li>$\sqrt{12}$</li>
-                <li>$0.3333\ldots$</li>
-                <li>$0.123451234512345\ldots$</li>
-                <li>$1.01001000100001\ldots$ — is any single block repeating?</li>
-                <li>$23.560185612239874790120$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              The number $0.\overline{9}$ is rational. Using the method of
-              Example 10 — let $x = 0.\overline{9}$, multiply by 10, subtract —
-              show that it is exactly equal to 1. Then say why that is less
-              surprising than it looks.
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li class="hard">
-              The repeating block of $\dfrac{1}{7}$ is cyclic. Find other numbers
-              $n$ whose reciprocal $\dfrac{1}{n}$ has a cyclic block. What do the
-              values of $n$ that work have in common?
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Write $0.\overline{45}$ in the form $\dfrac{p}{q}$.</p>
+          <p>
+            Same idea, but the repeating block is two digits long, so the shift
+            has to be two places to bring the tails into line.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.454545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>Two digits repeat, so multiply by $10^2$:
+              $\;100x = 45.454545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Subtract: $\;100x - x = 45.4545\ldots - 0.4545\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>$99x = 45$, so $x = \dfrac{45}{99} = \dfrac{5}{11}$.</span>
+            </div>
+          </div>
+          <p>
+            Which agrees with Example 7, where dividing 5 by 11 gave
+            $0.\overline{45}$ in the first place — the two directions meet.
+          </p>
+        </div>
       </div>
 
       <p>
-        One last oddity, which question 4 walks into. Terminating decimals are
-        not unique. Just as $1 = \tfrac{10}{10} = \tfrac{100}{100}$, every
-        terminating decimal has a second form ending in repeating nines:
-        $1.000\ldots = 0.999\ldots$ and $2.47000\ldots = 2.46999\ldots$
+        Two examples in, a pattern in the denominators is already showing. One
+        repeating digit left $9x = 6$; two repeating digits left $99x = 45$. The
+        subtraction always removes a power of ten and leaves one behind, so what
+        multiplies $x$ is $10^{n} - 1$ — a string of $n$ nines, and nothing else
+        is possible.
       </p>
 
       <p>
-        Most people meet $0.\overline{9} = 1$ with resistance, feeling it must
-        fall a little short. It does not. There is no room between them — any
-        number you propose as lying in the gap can be shown to be larger than
-        $0.\overline{9}$, and the algebra of question 4 settles it outright.
-      </p>
-
-      <h2><span class="badge">3.7</span><span class="name">The Never-Ending Journey</span></h2>
-
-      <p>
-        We have come a long way. From notches cut into the Ishango bone to
-        keep track of days, to the philosophical void of <em>śūnya</em> and
-        Brahmagupta's decision to make a number of it. Across zero into debts
-        and fortunes. Into the space between the integers, which turned out to
-        be infinitely crowded with fractions — and then turned out, all the
-        same, to have gaps in it that no fraction reaches.
+        Read backwards that is a small gift. A cycle of $n$ digits, starting
+        immediately, is simply that block of digits over $n$ nines: so
+        $0.\overline{7} = \tfrac{7}{9}$, $0.\overline{45} = \tfrac{45}{99}$ and
+        $0.\overline{123} = \tfrac{123}{999}$, each waiting only to be reduced.
       </p>
 
       <p>
-        Each stage was forced by a question the previous stage could not
-        answer. That is worth noticing, because it is how the subject grows:
-        not by decree, but because someone wrote down something the existing
-        numbers could not name.
+        Turn it round once more and it says something about the nines
+        themselves. $\tfrac{1}{9} = 0.\overline{1}$, $\tfrac{1}{99} =
+        0.\overline{01}$, $\tfrac{1}{999} = 0.\overline{001}$ — and the reason
+        $9$ and $99$ behave this way is the reason $10$ and $100$ do not: they
+        are the numbers a power of ten falls just short of.
+      </p>
+
+      <p>
+        Reducing the fraction hides all this, of course. Once $\tfrac{45}{99}$
+        has become $\tfrac{5}{11}$ there is no $99$ left to see, and coming the
+        other way there is no obvious reason why $11$ should give a cycle of two
+        digits. But the $99$ has not gone anywhere: $11$ divides $99$, which is
+        $10^{2} - 1$, and two is the length of the cycle.
+      </p>
+
+      <p>
+        That works generally, and it can be checked on a case worth checking.
+        Seven divides $999999$, which is $10^{6} - 1$, and no shorter string of
+        nines — so $\tfrac{1}{7}$ ought to repeat with a cycle of exactly six
+        digits. Divide it out and it does.
+      </p>
+
+      <p>
+        In both of those the repetition began immediately after the decimal
+        point. Very often it does not — a digit or two occurs once and only
+        then does the cycle start, and a single shift can no longer bring the
+        tails into agreement.
       </p>
 
     </div>

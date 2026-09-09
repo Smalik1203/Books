@@ -1,0 +1,73 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Three digits? Every one of those hundred can be followed by any of ten, so
+      $100 \times 10 = 1000$. The pattern is now visible, and it is a power.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$2$ digits</span>
+          <span>$10 \times 10 = 10^2 = 100$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$3$ digits</span>
+          <span>$10 \times 10 \times 10 = 10^3 = 1000$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$5$ digits</span>
+          <span>$10^5$</span>
+          <span class="chip">$1\,00\,000$</span>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Independent choices multiply</div>
+        <p>If a thing is built by making $a$ choices in turn, and each choice has $n$
+        options whatever the earlier ones were, then there are $n^a$ possibilities. Each
+        new slot multiplies the count rather than adding to it — which is why the total
+        grows the way § 2.1 described.</p>
+      </div>
+
+      <p>The two words to watch are <em>independent</em> and <em>whatever the earlier
+      ones were</em>. If the options change as you go, the count is a product but not a
+      power. Roxie has $7$ dresses, $2$ hats and $3$ pairs of shoes, so she has
+      $7 \times 2 \times 3 = 42$ ways to dress — a product of three different numbers,
+      because the three choices offer different amounts.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>A lock has six slots and each slot takes any capital letter, A to Z. How
+          many codes are there? How does that compare with a five-digit numeric lock?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">letters</span>
+              <span>$26^6 = 308\,915\,776$</span>
+              <span>$\approx 3.1 \times 10^8$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">digits</span>
+              <span>$10^5 = 1\,00\,000$</span>
+              <span>$= 1 \times 10^5$</span>
+            </div>
+          </div>
+          <p>The exponents are $8$ and $5$, so the letter lock has roughly three
+          thousand times as many codes.</p>
+          <p>It is worth asking which of the two changes did more work, and the answer
+          says something about powers generally. Adding a seventh slot would multiply
+          the count by $26$. Adding a twenty-seventh letter to the alphabet would
+          multiply it by only $(27/26)^6$, which is about $1.25$. The exponent is by far
+          the stronger lever, and that is true of every power: a small change to what is
+          being repeated is nothing beside a change to how often.</p>
+        </div>
+      </div>
+
+      <p>The same arithmetic explains why a password of eight characters is so much
+      safer than one of six, and why adding a couple of characters helps far more than
+      choosing cleverer ones. It is the folded sheet again, in a different costume: the
+      count is multiplied at every step, and steps are the thing to spend on.</p>
+
+    </div>
+  </div>
+</section>

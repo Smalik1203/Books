@@ -1,0 +1,68 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Nothing about $4$ and $3$ was special. Seven threes can be split anywhere at
+      all — $3^2 \times 3^5$, or $3^6 \times 3^1$ — because all that is happening is
+      that a row of seven threes is being divided into two shorter rows.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Multiplying powers of the same base</div>
+        <p>$n^a \times n^b = n^{a+b}$. A row of $a$ copies of $n$ set beside a row of
+        $b$ copies is a row of $a + b$ copies, and nothing else has happened.</p>
+      </div>
+
+      <p>Two warnings about that law, both of which cost marks every year. It is about
+      <em>multiplying</em>, so $n^a + n^b$ is not $n^{a+b}$ and is not usually anything
+      tidy at all. And the bases must match: $2^3 \times 5^4$ cannot be gathered into a
+      single power, because there is no single number being repeated.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Simplify $p^4 \times p^6$, and then $2^3 \times 2^5 \times 2$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$p^4 \times p^6$</span>
+              <span>$= (p\,p\,p\,p) \times (p\,p\,p\,p\,p\,p) = p^{10}$</span>
+            </div>
+          </div>
+          <p>For the second, remember that a base written alone carries an invisible
+          exponent of $1$: $2$ means $2^1$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$2^3 \times 2^5 \times 2^1$</span>
+              <span>$= 2^{3+5+1} = 2^9$</span>
+              <span class="chip">$512$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>2.3.1 A power of a power</h3>
+
+      <p>There is more than one way to split a row of factors, and taking the splits
+      seriously gives the second law. Here is $4^6$, cut into two rows of three and then
+      into three rows of two:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">two rows of three</span>
+          <span>$(4 \times 4 \times 4) \times (4 \times 4 \times 4) = 4^3 \times 4^3 = (4^3)^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">three rows of two</span>
+          <span>$(4 \times 4) \times (4 \times 4) \times (4 \times 4) = (4^2)^3$</span>
+        </div>
+      </div>
+
+      <p>Both are $4096$, because both are six fours however they are bracketed. And the
+      count of fours is what the two exponents multiply to:</p>
+
+      <div class="work work--centred">
+        <p>$(4^3)^2 = 4^{3 \times 2} = 4^6 \qquad (4^2)^3 = 4^{2 \times 3} = 4^6$</p>
+      </div>
+
+    </div>
+  </div>
+</section>

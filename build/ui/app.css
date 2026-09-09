@@ -56,8 +56,18 @@ a { color: inherit; text-decoration: none; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
 
+/* A column, and the foot of it pushed down, so that the page count
+   and the flags land at the same height on every card: they are read
+   across the grid rather than card by card, and a title that runs to
+   two lines must not carry them down with it. Two things together do
+   that. The title reserves two lines whether it needs them or not,
+   which is what "Orienting Yourself: The Use of Coordinates" takes
+   and "What Comes Next" does not; and an auto margin above the meta
+   holds the foot down, so a title longer than two lines grows the
+   card without moving anything under it out of line. */
 .card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -66,8 +76,14 @@ a { color: inherit; text-decoration: none; }
 }
 .card:hover { border-color: var(--accent); background: var(--bg-3); }
 .card__num { color: var(--text-2); font-family: var(--mono); font-size: 12px; }
-.card__title { font-size: 15px; font-weight: 600; margin: 2px 0 8px; }
-.card__meta { color: var(--text-2); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.card__title {
+  font-size: 15px; font-weight: 600; margin: 2px 0 8px;
+  line-height: 1.35; min-height: 2.7em;          /* two lines of it */
+}
+.card__meta {
+  margin-top: auto;                              /* the foot sits at the foot */
+  color: var(--text-2); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 4px 12px;
+}
 .card__flags { margin-top: 9px; display: flex; gap: 6px; flex-wrap: wrap; }
 
 .flag {
@@ -82,26 +98,66 @@ a { color: inherit; text-decoration: none; }
 /* ---- Viewer ----------------------------------------------- */
 .viewer { display: flex; flex-direction: column; height: 100%; }
 
+/* Three parts: what the page is, the zoom cluster, and what you can
+   do with it. A grid rather than a flex row with spacers, because
+   spacers only centre the middle when the two sides happen to be the
+   same width — and here one side holds a title and two switches while
+   the other holds a download and a button. `1fr auto 1fr` puts the
+   cluster on the centre line of the bar whatever the sides come to. */
 .bar {
-  display: flex; align-items: center; gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 8px;
   padding: 8px 12px;
   background: var(--bg-2);
   border-bottom: 1px solid var(--line);
   flex: none;
-  flex-wrap: wrap;
 }
-.bar__title { font-weight: 600; margin-right: 4px; }
-.bar__sub { color: var(--text-2); font-size: 12.5px; }
-.bar__spacer { flex: 1; }
+.bar__side { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.bar__side--end { justify-content: flex-end; }
 
-.seg { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-.seg button {
-  background: transparent; color: var(--text-2); border: 0;
-  padding: 5px 11px; font: inherit; font-size: 12.5px; cursor: pointer;
+/* Where you are, then what you are looking at. Stacked rather than run
+   together, because the two answer different questions: the first is
+   how you tell three open tabs apart, the second is what is on the
+   screen. The shorter, fixed-length line goes on top. */
+.bar__where {
+  display: flex; flex-direction: column; justify-content: center;
+  min-width: 0; line-height: 1.2;
+  /* Set off from the two icon buttons: a label pressed up against a
+     control reads as that control's caption. */
+  margin-left: 10px;
 }
-.seg button + button { border-left: 1px solid var(--line); }
-.seg button[aria-pressed="true"] { background: var(--bg-3); color: var(--text); }
-.seg button:disabled { opacity: 0.4; cursor: not-allowed; }
+/* The switches moved into the middle cluster, past the fit toggle, so
+   they need the same air from it that the label was given from the
+   icons. Everything in that cluster changes how the book is shown. */
+.zoom .btn { margin-left: 2px; }
+.zoom__rule + .btn { margin-left: 6px; }
+.bar__title {
+  font-weight: 600; font-size: 14px;
+  /* the one thing here with no length limit */
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.bar__sub {
+  color: var(--text-2); font-size: 11px;
+  letter-spacing: 0.04em; white-space: nowrap;
+}
+
+
+/* Narrow, the three columns have nowhere to go. Two rows then, with the
+   cluster centred across the whole of the second — placed explicitly,
+   because in source order the cluster sits between the two sides and
+   would otherwise push the right-hand one onto a third row of its own. */
+@media (max-width: 980px) {
+  .bar { grid-template-columns: 1fr auto; row-gap: 8px; }
+  .bar__side { grid-row: 1; }
+  .bar__side--end { grid-column: 2; }
+  .zoom { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
+}
+
+/* The segmented groups are gone with the last of the pressed pairs —
+   Trim/Bleed and Pages/Spreads/Signature. What is left is two plain
+   switches, both off in the state a chapter opens in, and .btn already
+   knows how to look pressed. */
 
 .btn {
   background: transparent; color: var(--text); border: 1px solid var(--line);
@@ -109,50 +165,117 @@ a { color: inherit; text-decoration: none; }
 }
 .btn:hover:not(:disabled) { border-color: var(--accent); }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+/* A switch rather than one of a pressed pair — Bleed on, or trim,
+   which is what the viewer opens on and needs no button of its own. */
+.btn[aria-pressed="true"] {
+  background: var(--bg-3); color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+}
 /* :disabled does not apply to an <a>, so a link to an artefact that has
    not been built yet carries this instead. */
 .btn--off { opacity: 0.4; cursor: not-allowed; }
 .btn--go { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); color: var(--accent); }
 
-.pager { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-2); }
-.pager input {
-  width: 46px; text-align: center; font: inherit; font-family: var(--mono);
-  background: var(--bg); color: var(--text);
-  border: 1px solid var(--line); border-radius: 5px; padding: 4px 2px;
+/* A square button holding a glyph and nothing else. It must come after
+   .btn: same specificity, so the padding it clears is only cleared if
+   it is read later — set above, the glyph was squeezed to 6px wide by
+   .btn's 11px side padding and read as a dash. */
+.btn--icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; padding: 0; flex: none;
 }
+.btn--icon svg {
+  flex: none;
+  width: 17px; height: 17px; fill: none;
+  stroke: currentColor; stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* The page box, first in the cluster and shaped like Chrome's: a
+   dark field for the number and the count set plainly beside it. */
+.pager { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-2); }
+.pager input {
+  width: 34px; height: 26px; text-align: center; padding: 0 2px;
+  font: inherit; font-family: var(--mono); font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  background: var(--bg-3); color: var(--text);
+  border: 0; border-radius: 6px;
+}
+.pager input::-webkit-outer-spin-button,
+.pager input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.pager input { -moz-appearance: textfield; }
+.pager input:focus { outline: 1px solid var(--accent); outline-offset: 0; }
+.pager input:disabled { opacity: 0.35; }
 
 .stage { flex: 1; overflow: auto; background: #55605b; }
 .stage__inner { margin: 0 auto; }
 .stage iframe { display: block; width: 100%; border: 0; background: #55605b; }
 
-.note {
-  padding: 6px 12px; font-size: 12px; color: var(--text-2);
-  background: var(--bg-2); border-bottom: 1px solid var(--line);
-}
-.note b { color: var(--text); font-weight: 600; }
+/* .note is gone from both viewers and its rules with it. It was the
+   strip under the bar: on a chapter it described the buttons beside it
+   and printed the fill map of the last build, and on a cover it carried
+   a paragraph about the spine. Neither is a note — one is a catalogue
+   and the other is standing advice, read once and looked past on every
+   visit after. What a build came to is a phrase beside Build now, and
+   the spine is checked on the terminal by the tool that computes it. */
 
-/* ---- Calibration ------------------------------------------ */
-.cal { position: relative; }
-.cal__panel {
-  position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
-  width: 320px; padding: 14px;
-  background: var(--bg-2); border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 32px rgba(0,0,0,.45);
+/* What the last build came to, in the bar and only while there is
+   something to say. It replaced a strip under the bar that carried
+   the whole fill map — twenty-eight percentages wrapped over two
+   lines, which reads as a catalogue rather than a result. */
+.bar__log {
+  font-size: 12px; color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.cal__panel[hidden] { display: none; }
-.cal__panel h3 { margin: 0 0 6px; font-size: 13px; font-weight: 650; }
-.cal__panel p { margin: 0 0 10px; color: var(--text-2); font-size: 12px; }
-.cal__card {
-  height: 54px; border: 1.5px dashed var(--accent);
-  border-radius: 5px; margin-bottom: 10px;
+.bar__log[hidden] { display: none; }
+.bar__log--bad { color: var(--warn, #d98b6a); }
+
+/* ---- Zoom, after Chrome's PDF toolbar ----------------------
+   Minus, the level, plus, then a rule and the fit toggle. The
+   level is a button, not a label: it opens the menu that holds
+   the presets, fit to page and width, and Actual size with the
+   calibration behind it. */
+.zoom { position: relative; display: flex; align-items: center; gap: 2px; }
+.zoom__step {
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-2); font-size: 11px;
+  width: 26px; height: 26px; padding: 0;
+  background: transparent; color: var(--text); border: 0;
+  border-radius: 6px; font: inherit; font-size: 15px; line-height: 1; cursor: pointer;
 }
-.cal__row { display: flex; align-items: center; gap: 10px; }
-.cal__row input[type=range] { flex: 1; accent-color: var(--accent); }
-.cal__val { font-family: var(--mono); font-size: 12px; color: var(--text-2); min-width: 78px; text-align: right; }
-.cal__row--foot { margin-top: 10px; }
+.zoom__step svg {
+  width: 17px; height: 17px; fill: none;
+  stroke: currentColor; stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+/* The arrowheads inside the fit icons are solid, not outlined. */
+.zoom__step svg .solid { fill: currentColor; stroke: none; }
+.zoom__step svg[hidden] { display: none; }
+.zoom__step:hover:not(:disabled) { background: var(--bg-3); }
+.zoom__step:disabled { opacity: 0.35; cursor: not-allowed; }
+/* Nothing in the cluster takes a pressed state. The fit button used to,
+   and it read as a switch that was on — which on this bar is what the
+   accent means, and a fit is not on or off. Its icon says which fit it
+   is, and that is once. */
+/* A field, not a button: the level is typed. It keeps the dark well the
+   button had, so the cluster still reads as one thing, and the number
+   is centred because the number is what matters, not the caret. */
+.zoom__level {
+  width: 58px; height: 26px; padding: 0 6px; text-align: center;
+  background: var(--bg-3); color: var(--text); border: 0;
+  border-radius: 6px;
+  font: inherit; font-family: var(--mono); font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.zoom__level:hover { background: var(--line); }
+.zoom__level:focus { outline: 1px solid var(--accent); outline-offset: 0; }
+.zoom__rule { width: 1px; height: 18px; margin: 0 4px; background: var(--line); }
+
+/* The level menu and the bank-card calibration panel were here.
+   Both are gone: six presets are a guess at what somebody wants, and
+   Actual size was 100% under another name until a card had been held
+   to the screen. The level is typed instead, and the two fits keep the
+   button beside it. */
 
 /* ---- Imposition sheet -------------------------------------- */
 .imp { padding: 22px 24px 40px; }
@@ -182,3 +305,76 @@ a { color: inherit; text-decoration: none; }
 .imp__inv { fill: var(--accent-2); font-size: 8px; }
 .imp__fold { stroke: var(--accent); stroke-width: 0.6; stroke-dasharray: 3 3; }
 .imp__trim { fill: none; stroke: var(--text-2); stroke-width: 1; }
+
+/* ---- Library chooser --------------------------------------
+   Two required choices, side by side where the class heading used
+   to be. The selects take the same chrome as .btn rather than a
+   second look for the same job. */
+.lib-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 34px;
+}
+.lib-field { display: flex; flex-direction: column; gap: 6px; position: relative; }
+.lib-field > span {
+  font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-2);
+}
+.lib-select {
+  font: inherit;
+  font-family: var(--sans);
+  min-width: 190px;
+  /* room on the right for the mark below, which the text must not run under */
+  padding: 7px 30px 7px 10px;
+  color: var(--text);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  /* The native mark sat hard against the rounded corner, and no amount of
+     padding-right moves it: Chrome draws it against the border box and
+     ignores the padding entirely. So the control gives it up and the
+     chevron below is ours, where it can be placed. */
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Two strokes rotated a quarter turn — no image, so it takes its colour
+   from the palette like everything else here.
+
+   The size is the native mark's size, measured against one rather than
+   guessed at: a 5.5px box turned 45 degrees is 7.8px across and 3.9px
+   high, which is what Chrome draws. The first attempt at this was an 8px
+   box with a 1.5px stroke and read as noticeably heavier.
+
+   `bottom` is measured from the foot of the field, because the select is
+   its last child: the select is 37px tall — 7px padding, a 21px line and
+   a 1px border, twice over — so its middle is 18.5px up. translateY(50%)
+   then centres the mark on that line whatever size it is, so only the
+   select's own height is written down here. */
+.lib-field::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 18.5px;
+  width: 5.5px;
+  height: 5.5px;
+  border-right: 1px solid var(--text-2);
+  border-bottom: 1px solid var(--text-2);
+  transform: translateY(50%) rotate(45deg);
+  pointer-events: none;      /* the click belongs to the select underneath */
+}
+/* the mark dims with the control it belongs to */
+.lib-field:has(select:disabled)::after { opacity: 0.45; }
+.lib-select:hover { border-color: var(--accent); }
+.lib-select:focus-visible { outline: none; border-color: var(--accent); }
+
+/* the prompt before a choice is made, and the answer when a pair
+   holds nothing — the same muted grey .empty already uses */
+.lib-note { color: var(--text-2); padding: 40px 0; }
+.lib-select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--line);
+}
+.lib-select:disabled:hover { border-color: var(--line); }

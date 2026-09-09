@@ -1,0 +1,89 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 160 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A quadrilateral A B C D with the diagonal A C drawn, and perpendiculars of lengths h one and h two dropped onto it from B and from D">
+      
+            <path class="dg-line" d="M12 62 L56 14 L140 34 L64 80 Z"/>
+            <path class="dg-thin" d="M12 62 L140 34"/>
+      
+            <g class="dg-dim">
+              <path d="M56 14 L64.1 50.6"/>
+              <path d="M64 80 L57.8 52.0"/>
+            </g>
+      
+            <circle class="dg-fill-teal" cx="12"  cy="62" r="2.2"/>
+            <circle class="dg-fill-teal" cx="56"  cy="14" r="2.2"/>
+            <circle class="dg-fill-teal" cx="140" cy="34" r="2.2"/>
+            <circle class="dg-fill-teal" cx="64"  cy="80" r="2.2"/>
+      
+            <text class="dg-label" x="4"   y="70">A</text>
+            <text class="dg-label" x="52"  y="9">B</text>
+            <text class="dg-label" x="145" y="31">C</text>
+            <text class="dg-label" x="62"  y="90">D</text>
+      
+            <text class="dg-dim-label" x="112" y="36">d</text>
+            <text class="dg-dim-label" x="68"  y="32">h₁</text>
+            <text class="dg-dim-label" x="68"  y="70">h₂</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.3</span> The diagonal $AC$ is a base
+          for both triangles. All that is then needed is how far $B$ and $D$ stand from
+          it.</figcaption>
+        </figure>
+      </div>
+
+      <p>Triangle $ABC$ has base $d$ and height $h_1$; triangle $ACD$ has the same base
+      $d$ and height $h_2$. Add them.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">two triangles</span>
+          <span>$\tfrac12 d h_1 + \tfrac12 d h_2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">common factor</span>
+          <span>$\tfrac12 d (h_1 + h_2)$</span>
+        </div>
+      </div>
+
+      <p>Taking out the common factor is Chapter 4's distributive law, read backwards,
+      and it is what makes the formula short enough to remember: <strong>half the
+      diagonal, times the sum of the two perpendiculars onto it</strong>.</p>
+
+      <h3>7.4.1 The rhombus, from the same rule</h3>
+
+      <p>A rhombus is a quadrilateral, so the rule applies — and because of what Chapter
+      5 proved about its diagonals, it collapses into something much shorter.</p>
+
+      <p>Take one diagonal as the base, of length $d_1$. The other diagonal is
+      perpendicular to it and is cut in half by it, so the two vertices off the base each
+      stand exactly $\tfrac12 d_2$ away. Put that into the rule.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">general rule</span>
+          <span>$\tfrac12 d_1 (h_1 + h_2)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">here</span>
+          <span>$h_1 = h_2 = \tfrac12 d_2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$\tfrac12 d_1 \big(\tfrac12 d_2 + \tfrac12 d_2\big) = \tfrac12 d_1 d_2$</span>
+        </div>
+      </div>
+
+      <div class="eq">$$\text{area of a rhombus} = \tfrac12 d_1 d_2$$</div>
+
+      <p>It is not a new formula so much as the old one with what is known about a
+      rhombus put into it. The same is true of a square, whose diagonals are also
+      perpendicular and equal: its area is $\tfrac12 d^2$, which is a genuinely useful
+      thing to know when the diagonal is given and the side is not.</p>
+
+    </div>
+  </div>
+</section>
