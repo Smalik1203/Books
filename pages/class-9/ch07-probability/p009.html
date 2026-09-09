@@ -1,0 +1,81 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>7.2.3 Reading data as probability</h3>
+
+      <p>Coins and dice are convenient because their outcomes are equally likely by
+      construction. Most of the world is not like that. There is no symmetry that tells
+      you how many people prefer mangoes, or how far a tyre runs before it is replaced.
+      For those, the only route is the first one: collect evidence and divide.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>You ask all 50 students in your class for their favourite fruit. Twenty say
+          mango, fifteen say apple, ten say banana and five say grapes. Pick one student
+          at random. What is the probability that their favourite is mango?</p>
+          <p>The trials here are the students, and the event is "this student says
+          mango". Nothing about the situation is symmetrical — mango is more popular
+          than grapes, and only the data can say by how much.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">students saying mango</span>
+              <span>20</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">students in all</span>
+              <span>50</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">probability</span>
+              <span>$\dfrac{20}{50}$</span>
+              <span class="chip">0.4</span>
+            </div>
+          </div>
+          <p>So there is a $0.4$, or $40\%$, chance that a student picked at random from
+          this class likes mango best.</p>
+        </div>
+      </div>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 240 74" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A bar of fifty students divided into mango, apple, banana and grapes">
+      
+            <rect class="dg-fill-c-soft" x="14"  y="18" width="84.8" height="24"/>
+            <rect class="dg-fill-a-soft" x="98.8" y="18" width="63.6" height="24"/>
+            <rect class="dg-fill-b-soft" x="162.4" y="18" width="42.4" height="24"/>
+            <rect class="dg-fill-d"      x="204.8" y="18" width="21.2" height="24"/>
+            <rect class="dg-line"        x="14"  y="18" width="212" height="24"/>
+            <g class="dg-thin"><path d="M98.8 18 V42 M162.4 18 V42 M204.8 18 V42"/></g>
+      
+            <text class="dg-label dg-label--sm" x="56"   y="34" text-anchor="middle">20</text>
+            <text class="dg-label dg-label--sm" x="130"  y="34" text-anchor="middle">15</text>
+            <text class="dg-label dg-label--sm" x="183"  y="34" text-anchor="middle">10</text>
+            <text class="dg-label dg-label--sm" x="215"  y="34" text-anchor="middle">5</text>
+      
+            <text class="dg-note" x="56"  y="56" text-anchor="middle">mango</text>
+            <text class="dg-note" x="130" y="56" text-anchor="middle">apple</text>
+            <text class="dg-note" x="183" y="56" text-anchor="middle">banana</text>
+            <text class="dg-note" x="215" y="66" text-anchor="middle">grapes</text>
+            <text class="dg-note" x="14"  y="12">50 students</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.4</span> The whole bar is the class.
+          Each probability is the share of the bar that answer takes.</figcaption>
+        </figure>
+      </div>
+
+      <p>Drawn this way the four probabilities are the four widths, and they add to the
+      whole bar — which is another way of seeing that the probabilities of all the
+      outcomes must add to 1. Every student likes exactly one of the four best, so
+      between them the four answers use up all the certainty there is.</p>
+
+      <p>It also shows what a probability found this way can and cannot be asked to do.
+      These four numbers describe the fifty students who answered. Whether they describe
+      the school depends entirely on how those fifty were chosen — and that question is
+      not answered by the bar, however neatly it divides.</p>
+
+    </div>
+  </div>
+</section>

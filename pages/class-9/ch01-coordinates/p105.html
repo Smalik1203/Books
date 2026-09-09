@@ -2,8 +2,39 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 3 &middot; Try it first</span>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>The distance between $(a, 2)$ and $(7, 6)$ is $5$. Then $a$ is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$4$ only</li>
+          <li>$10$ only</li>
+          <li>$4$ or $10$</li>
+          <li>$3$ or $11$</li>
+        </ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          The shift in $y$ is $6 - 2 = 4$, and the distance is $5$.
+        </p>
+        <div class="work work--list">
+          <p>$(7 - a)^2 + 4^2 = 25$</p>
+          <p>$(7 - a)^2 = 9$</p>
+          <p>$7 - a = 3$ &nbsp;or&nbsp; $7 - a = -3$</p>
+          <p>$a = 4$ &nbsp;or&nbsp; $a = 10$</p>
+        </div>
+        <p>
+          Option (c). The two points are $(4, 2)$ and $(10, 2)$, one on each
+          side of $(7, 2)$ and $3$ units from it. Options (a) and (b) each
+          keep one sign of the square root and drop the other. Option (d)
+          comes from $7 - a = \pm 4$, which would need the other shift to
+          be $3$. It is $4$.
+        </p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
         <p>Which of these points is farthest from the origin?</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
           <li>$(7, 1)$</li>
@@ -13,63 +44,27 @@
         </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 3</div>
-        <div class="c-example__body">
-          <p>
-            The distance of $(x, y)$ from the origin is $\sqrt{x^2 + y^2}$.
-            To compare four of them there is no need for a single square
-            root: the larger distance has the larger square.
-          </p>
-          <div class="work">
-            <p>$7^2 + 1^2 = 50$, &nbsp; $5^2 + 5^2 = 50$, &nbsp;
-              $(-6)^2 + 4^2 = 52$, &nbsp; $0^2 + (-7)^2 = 49$</p>
-          </div>
-          <p>
-            The largest is $52$, so the farthest point is $(-6, 4)$: option
-            (c). Option (d) has the largest single coordinate, but its other
-            coordinate is $0$ and adds nothing. Options (a) and (b) are
-            equally far from $O$, which is easy to miss without the squares.
-            And the negative coordinate in (c) makes no difference to the
-            distance, because it is squared.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          The distance of $(x, y)$ from the origin is $\sqrt{x^2 + y^2}$.
+          To compare four of them there is no need for a single square
+          root: the larger distance has the larger square.
+        </p>
+        <div class="work work--list">
+          <p>$7^2 + 1^2 = 50$</p>
+          <p>$5^2 + 5^2 = 50$</p>
+          <p>$(-6)^2 + 4^2 = 52$</p>
+          <p>$0^2 + (-7)^2 = 49$</p>
         </div>
-      </div>
-
-      <div class="c-try">
-        <span class="c-try__tag">Problem 4 &middot; Try it first</span>
-        <p>The point of the y-axis that is equidistant from $A (-5, 2)$ and
-          $B (3, 4)$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$(0, -1)$</li>
-          <li>$(0, 1)$</li>
-          <li>$(0, 3)$</li>
-          <li>$(-1, 0)$</li>
-        </ol>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 4</div>
-        <div class="c-example__body">
-          <p>
-            A point of the y-axis is $(0, y)$. Equidistant means the two
-            distances are equal, and then their squares are equal too:
-          </p>
-          <div class="work">
-            <p>$(0 + 5)^2 + (y - 2)^2 = (0 - 3)^2 + (y - 4)^2$</p>
-          </div>
-          <p>
-            Expand both sides: $25 + y^2 - 4y + 4 = 9 + y^2 - 8y + 16$. The
-            $y^2$ cancels, as it did in stage 1, and $29 - 4y = 25 - 8y$
-            gives $4y = -4$, so $y = -1$. The point is $(0, -1)$: option (a).
-            Check: its distance from $A$ is $\sqrt{25 + 9}$ and from $B$ is
-            $\sqrt{9 + 25}$, both $\sqrt{34}$. Option (d) is $1$ unit along
-            the wrong axis. Option (c) is the height half way between $A$
-            and $B$, which is where the point would be if $A$ and $B$ were
-            the same distance from the y-axis. They are not: $A$ is $5$ away
-            and $B$ is $3$.
-          </p>
-        </div>
+        <p>
+          The largest is $52$, so the farthest point is $(-6, 4)$: option
+          (c). Option (d) has the largest single coordinate, but its other
+          coordinate is $0$ and adds nothing. Options (a) and (b) are
+          equally far from $O$, which is easy to miss without the squares.
+          And the negative coordinate in (c) makes no difference to the
+          distance, because it is squared.
+        </p>
       </div>
 
     </div>

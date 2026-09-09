@@ -1,0 +1,81 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Trading powers of two for powers of ten</div>
+        <p>
+          $2^{10} = 1024$ and $10^3 = 1000$, so $2^{10}$ is larger — by $2.4\%$, which
+          is small enough to ignore and large enough to matter later.
+        </p>
+        <p>
+          Now raise both to the tenth power. Raising the larger of two positive numbers
+          to a power keeps it the larger, so
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$2^{100}$</span>
+            <span>$= (2^{10})^{10} = 1024^{10}$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$10^{30}$</span>
+            <span>$= (10^3)^{10} = 1000^{10}$</span>
+          </div>
+        </div>
+        <p>
+          So $2^{100}$ is larger. And the margin can be estimated too: each of the ten
+          factors is $2.4\%$ bigger, and $1.024^{10}$ is about $1.27$, so $2^{100}$ is
+          roughly $1.27 \times 10^{30}$. That is the true value to three figures.
+        </p>
+        <p>
+          <strong>$2^{10} \approx 10^3$ is the single most useful approximation in this
+          chapter.</strong> It says that ten doublings are about a thousandfold, which
+          is why computer memories come in sizes like $1024$ and why the folded sheet
+          reached the Moon: forty-six doublings are about four and a half thousandfolds
+          stacked up.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Two powers with nothing in common, made comparable</div>
+        <p>
+          $3^{500}$ and $5^{300}$ share neither base nor exponent, so neither law
+          applies as written. The move is to force a shared exponent, and $500$ and
+          $300$ have $100$ as a common factor.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">$3^{500}$</span>
+            <span>$= (3^5)^{100} = 243^{100}$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">$5^{300}$</span>
+            <span>$= (5^3)^{100} = 125^{100}$</span>
+          </div>
+        </div>
+        <p>
+          Now they are comparable at a glance: same exponent, and $243 \gt 125$, so
+          $3^{500}$ is the larger. It is larger by a factor of $(243/125)^{100}$, which
+          works out at around $10^{29}$ — an enormous margin, from what had looked like
+          a close-run thing.
+        </p>
+        <p>
+          The general recipe is worth keeping. To compare $a^m$ with $b^n$, take the
+          highest common factor of $m$ and $n$, write both with that as the exponent,
+          and compare the new bases. It converts an impossible arithmetic problem into
+          one you can do in your head.
+        </p>
+      </div>
+
+      <p>
+        Those two solutions used the same idea from opposite ends. The first forced a
+        shared <em>base</em> — powers of ten — so that the exponents could be compared.
+        The second forced a shared <em>exponent</em> so that the bases could be. Which
+        of the two is available depends on the numbers, and finding out costs a moment:
+        look at whether the bases are powers of a common number, and look at whether the
+        exponents have a common factor. One of the two nearly always works.
+      </p>
+
+    </div>
+  </div>
+</section>

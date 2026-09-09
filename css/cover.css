@@ -13,9 +13,9 @@
    a chapter, which is why the palette sheets do not reach it.
 
      .jacket           the whole wrap, trim size
-     .jacket__back     176mm — blurb, features, barcode
+     .jacket__back     --trim-w — blurb, features, barcode
      .jacket__spine    --spine-w — set from the page count
-     .jacket__front    176mm — title and artwork
+     .jacket__front    --trim-w — title and artwork
 
    Two finishes, same layout: the default light stock, and
    .jacket--night for the dark edition.
@@ -30,9 +30,10 @@
 
   /* The panel's own quiet edge, and the two widths the back panel is
      built on. All three are fractions of the trim rather than
-     millimetres: A4 is the standard here, B5 is an edition, and a
-     margin typed in millimetres is a margin that only suits one of
-     them. 0.08 of the width gives 16.8mm on A4 and 14.1mm on B5. */
+     millimetres: Crown Quarto is the standard here, A4 and B5 are
+     editions, and a margin typed in millimetres is a margin that only
+     suits one of them. 0.08 of the width gives 15.1mm on Crown
+     Quarto, 16.8mm on A4 and 14.1mm on B5. */
   --jk-margin: calc(var(--trim-w) * 0.08);
   --jk-col:    calc(var(--trim-w) * 0.352);
   --jk-gap:      6mm;
@@ -244,6 +245,12 @@
    ============================================================ */
 
 body.cover {
+  /* The wrap's bleed, not the page's. Every bleed rule below is already
+     written against --bleed, so pointing it at the jacket's own token
+     here is the whole change — and build/cover.mjs sizes the press
+     sheet from the same token, so the layout and the media box cannot
+     drift apart. */
+  --bleed: var(--jk-bleed);
   margin: 0;
   background: #55605b;
   color: var(--ink);
@@ -290,10 +297,44 @@ body.cover {
    columns absorb it — the back column and the front column each
    carry one bleed on their outer side, the spine keeps its exact
    width — and the four inset tokens carry it too, so type and
-   artwork stay where the trim put them. No crop marks: the
-   printer imposes the job and lays its own.
+   artwork stay where the trim put them.
+
+   Outside the bleed sits the slug, holding the marks: the four trim
+   corners, and — because a wrap has to be creased and a printer
+   cannot guess where — a fold mark above and below each side of the
+   spine.
    ------------------------------------------------------------ */
-body.bleed .cover-stage { padding: 0; }
+/* The stage IS the press sheet here: the wrap, and a slug of padding
+   round it. `width: max-content` is what makes that true — without it
+   the stage is as wide as whatever window it is opened in, and since
+   the marks below are laid over it by `inset: 0`, their millimetre
+   viewBox was being stretched across a box that was not the sheet.
+   In print it looked right, because the @page box is the sheet and
+   nothing else; on screen every mark sat wide of the trim it marked,
+   by whatever slack the viewer happened to leave. */
+body.bleed .cover-stage {
+  padding: var(--slug);
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+/* Laid over the whole sheet and measured in millimetres by the
+   viewBox, so every mark sits outside the bleed by construction and
+   none can print over artwork. */
+.cropmarks { display: none; }
+body.bleed .cropmarks {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.cropmarks line {
+  stroke: var(--mark);
+  stroke-width: 0.09;            /* 0.25pt, in the millimetre viewBox */
+}
 body.bleed .jacket {
   width:  calc(2 * var(--trim-w) + var(--spine-w) + 2 * var(--bleed));
   height: calc(var(--trim-h) + 2 * var(--bleed));
@@ -398,10 +439,10 @@ body.bleed .jacket {
 .back__head .jk-lede { max-width: none; white-space: nowrap; }
 
 /* Both columns run the full height of what is left of the panel and
-   distribute their own contents down it. A4 gives the back 47mm more
-   than B5 does, and a column that keeps its B5 rhythm and stops
-   two-thirds of the way down reads as unfinished rather than airy —
-   the same defect the page builder calls a short page. */
+   distribute their own contents down it. The trims differ by tens of
+   millimetres, and a column that keeps a smaller trim's rhythm and
+   stops two-thirds of the way down reads as unfinished rather than
+   airy — the same defect the page builder calls a short page. */
 
 
 .back__blurb { margin: 4mm 0 0; max-width: calc(var(--trim-w) * 0.48); }
@@ -1111,6 +1152,7 @@ body.bleed .jacket {
 .arc-foot__qr { width: 19mm; height: 19mm; background: #fff; padding: 1mm; }
 .arc-foot__qr svg, .arc-foot__qr img { display: block; width: 100%; height: 100%; }
 .arc-foot__by {
+  align-self: center;   /* the lines sit centred on the code, not hung from its foot */
   font-family: var(--font-body);
   font-size: var(--size-caption);
   line-height: 1.5;
@@ -1192,3 +1234,225 @@ body.bleed .jacket {
 .jacket--arc .spine__class .jk-label { color: var(--jk-terra); }
 .jacket--arc .spine__badge-num { color: var(--jk-navy); }
 .jacket--arc .spine__class-num { color: var(--jk-terra); font-weight: 700; }
+
+/* ============================================================
+   DIRECTION — comb
+   Class 8's front, and the first direction written for a volume
+   other than Class 9.
+
+   The back panel's *content* is the series' and does not change
+   from book to book — the same blurb, the same four claims, the
+   same foot. Its colour is not: it takes this direction's
+   palette, so the green runs from the front, over the spine and
+   round into the back's deep half, and the one light area left
+   is the back's upper half, which is where the words are. Every
+   rule on that panel reads a token, so this needs no markup of
+   its own: only #ffffff is written down there, for the icon
+   glyphs and the two white tiles the QR and the barcode need on
+   any ground.
+
+   The front is where the direction earns its name. Arc floats
+   three translucent discs and labelled figures on cream; this
+   floods the panel and runs a hexagonal comb off three edges,
+   so the ornament is a tiling rather than a cluster — one of the
+   three regular polygons that fill a plane, which is a Class 8
+   result and not a decoration borrowed from anywhere.
+   ============================================================ */
+.jacket--comb {
+  --jk-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  /* the four working colours the back and spine are built from:
+     green carries the identity where arc has navy, and coral
+     stays the one accent so the series still rhymes */
+  --jk-navy:      #0f3b35;
+  --jk-navy-deep: #0a2a26;
+  --jk-navy-soft: #7fa79b;
+  --jk-terra:     #f07a5f;
+  --jk-sage:      #7fa79b;
+  --jk-gold:      #e9a13c;
+  --jk-cream:     #f5efe1;
+
+  /* the back's light half — the clearing the blurb sits in */
+  --jk-ground:      #f5efe1;
+  --jk-ground-ink:  #0f3b35;
+  --jk-ground-soft: #5d7a72;
+  --jk-ground-rule: #ddd5c2;
+  --jk-ground-accent: #f07a5f;
+  --jk-ground-art:  none;
+
+  /* the back's deep half, below the curve — the front's own
+     green, so the wrap is one colour bent round a spine */
+  --jk-deep:        #0f3b35;
+  --jk-deep-ink:    #f6efe1;
+  --jk-deep-soft:   #9dc0b4;
+
+  --jk-front:        #0f3b35;
+  --jk-front-ink:    #f6efe1;
+  --jk-front-soft:   #9dc0b4;
+  --jk-front-mark:   #e9a13c;
+  --jk-front-accent: #f07a5f;
+  --jk-front-label:  #e9a13c;
+}
+.jacket--comb { font-family: var(--jk-display); }
+
+/* ---- front type ------------------------------------------- */
+.jacket--comb .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.125); }
+.jacket--comb .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.42);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.jacket--comb .front__subtitle {
+  font-family: var(--font-body);
+  font-weight: var(--weight-text);
+  margin: 5mm 0 0;
+}
+.jacket--comb .wordmark { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--comb .classmark { border-left-width: 0.5mm; }
+.jacket--comb .classmark__num { font-weight: 700; }
+
+.comb-rule {
+  display: block;
+  width: 26mm; height: 0.9mm;
+  background: var(--jk-front-accent);
+  margin: 5mm 0 0;
+}
+.comb-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: var(--jk-front-ink);
+  margin: 0;
+}
+.comb-strap span { color: var(--jk-front-accent); }
+
+/* ---- the comb --------------------------------------------
+   Cells are one path in a defs and a <use> apiece, so a cell
+   that moves moves once. The line is the ink at low opacity,
+   which is what keeps the field behind the type rather than
+   in front of it. */
+.comb-line  { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.4; opacity: 0.26; }
+.comb-cell--gold  { fill: #e9a13c; opacity: 0.82; }
+.comb-cell--coral { fill: #f07a5f; opacity: 0.82; }
+.comb-cell--pale  { fill: #f6efe1; opacity: 0.13; }
+.comb-cell--deep  { fill: #0a2a26; opacity: 0.5; }
+.comb-hero  { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.55; opacity: 0.85; }
+
+/* ---- spine ------------------------------------------------
+   Arc's spine takes the light half so that it reads as part of
+   the front on a shelf rather than as a strip of the back. The
+   reasoning is the same here and the answer is the other one:
+   comb's front is the dark panel, so the spine goes green with
+   it, and the green runs unbroken from the front round to the
+   back's deep half. */
+.jacket--comb .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--comb .spine__mark,
+.jacket--comb .spine__title,
+.jacket--comb .spine__badge-num { color: var(--jk-front-ink); }
+.jacket--comb .spine__mark { font-weight: 700; }
+.jacket--comb .spine__title { font-weight: 700; letter-spacing: 0.14em; }
+.jacket--comb .spine__tick { background: var(--jk-front-accent); width: 6mm; height: 0.5mm; }
+.jacket--comb .spine__badge { border-color: var(--jk-front-label); }
+.jacket--comb .spine__badge .jk-label,
+.jacket--comb .spine__class .jk-label { color: var(--jk-front-label); }
+.jacket--comb .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
+
+/* ---- tile: Class 8 Part 2 ---------------------------------
+   Part 1 is comb and this was arc, which is Class 9 mathematics —
+   so the two volumes of Class 9 and the second volume of Class 8
+   all came off the press the same colour. A direction owns the
+   palette of the whole wrap, so sharing one is sharing a book's
+   whole identity.
+
+   Two parts of one class should read as a pair rather than as two
+   unrelated books, so this mirrors comb's arrangement — a dark
+   front, the spine going with it, the accent doing the pointing —
+   and changes the hue. Green and wine sit together on a shelf and
+   are never mistaken for each other.
+
+   The front arrangement is arc's, because the panel that uses this
+   was drawn to it, and the .arc-* classes are global and read the
+   tokens below. Only the two discs carry their own hex, so those
+   are the only rules that have to be restated here.
+   ------------------------------------------------------------ */
+.jacket--tile {
+  --jk-display: Poppins, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #5c1f33;
+  --jk-navy-deep: #401423;
+  --jk-navy-soft: #b98d9b;
+  --jk-terra:     #e3a24b;
+  --jk-sage:      #8a9c86;
+  --jk-gold:      #e3a24b;
+  --jk-cream:     #f8f0e3;
+
+  /* the back's light half — the clearing the blurb sits in */
+  --jk-ground:        #f8f0e3;
+  --jk-ground-ink:    #5c1f33;
+  --jk-ground-soft:   #8a6470;
+  --jk-ground-rule:   #e6d6c6;
+  --jk-ground-accent: #c2683a;
+  --jk-ground-art:    none;
+
+  /* the back's deep half — the front's own wine, so the colour runs
+     from the front round the shelf edge into the foot of the back */
+  --jk-deep:      #5c1f33;
+  --jk-deep-ink:  #f8f0e3;
+  --jk-deep-soft: #d1a9b4;
+
+  --jk-front:        #5c1f33;
+  --jk-front-ink:    #f8f0e3;
+  --jk-front-soft:   #d1a9b4;
+  --jk-front-mark:   #e3a24b;
+  --jk-front-accent: #e3a24b;
+  --jk-front-label:  #e3a24b;
+}
+.jacket--tile { font-family: var(--jk-display); }
+
+/* ---- front type ------------------------------------------- */
+.jacket--tile .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.125); }
+.jacket--tile .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.38);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.jacket--tile .front__subtitle {
+  font-family: var(--font-body);
+  font-weight: var(--weight-text);
+  margin: 5mm 0 0;
+}
+.jacket--tile .wordmark,
+.jacket--tile .learnlab { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--tile .classmark { border-left-width: 0.5mm; }
+.jacket--tile .classmark__num { font-weight: 700; }
+
+/* The two discs are the only part of arc's composition that carries
+   its own colour rather than a token — slate and ghost are bluish
+   greys, which on wine read as dirt. */
+.jacket--tile .arc-disc--slate { fill: #7c3049; opacity: 0.55; }
+.jacket--tile .arc-disc--ghost { fill: #e3a24b; opacity: 0.16; }
+
+/* ---- spine ------------------------------------------------
+   The front is the dark panel, as comb's is, so the spine goes wine
+   with it and the colour runs unbroken from the front round to the
+   back's deep half. */
+.jacket--tile .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--tile .spine__mark,
+.jacket--tile .spine__title,
+.jacket--tile .spine__badge-num { color: var(--jk-front-ink); }
+.jacket--tile .spine__mark { font-weight: 700; }
+.jacket--tile .spine__title { font-weight: 700; letter-spacing: 0.14em; }
+.jacket--tile .spine__tick { background: var(--jk-front-accent); width: 6mm; height: 0.5mm; }
+.jacket--tile .spine__badge { border-color: var(--jk-front-label); }
+.jacket--tile .spine__badge .jk-label,
+.jacket--tile .spine__class .jk-label { color: var(--jk-front-label); }
+.jacket--tile .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }

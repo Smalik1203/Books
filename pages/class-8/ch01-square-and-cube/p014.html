@@ -1,0 +1,81 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>One more thing follows from the factorisation, and it is worth noticing even
+      though nothing here depends on it. If a number is not a perfect square then its
+      root is not a whole number — that much is now obvious, since a stray prime cannot
+      be paired. What is far less obvious is that the root is not a fraction either.
+      There is no fraction whose square is $2$, and the reason is the pairing argument
+      run once more. That is a fact about the number line rather than a gap in our
+      methods, and it has a chapter of its own further on. For now it explains why
+      estimating a root well is a skill and not a consolation prize: for most numbers
+      an estimate is the only answer there is.</p>
+
+      <h3>1.3.1 Estimating a root you do not know</h3>
+
+      <p>Factorising a large number takes time, and often it is not needed. Two facts
+      already established will corner a root between two whole numbers in a few lines:
+      the squares you know, and the last-digit rule.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Find $\sqrt{1936}$ without factorising.</p>
+          <p><em>Trap it between two squares you know.</em> $40^2 = 1600$ and
+          $50^2 = 2500$, and $1936$ lies between them, so the root lies between $40$ and
+          $50$.</p>
+          <p><em>Use the last digit.</em> $1936$ ends in $6$, and a square ends in $6$
+          only when its root ends in $4$ or $6$. The only candidates left are $44$ and
+          $46$.</p>
+          <div class="c-figure c-figure--md">
+            <figure>
+              <svg viewBox="0 0 190 52" data-size="md" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A number line from 1600 to 2500 showing 1936 lying between 40 squared and 45 squared">
+      
+                <g class="dg-fill-a-soft">
+                  <rect x="15" y="24" width="75.6" height="8"/>
+                </g>
+                <g class="dg-axis">
+                  <path d="M15 28 H175"/>
+                </g>
+                <g class="dg-line">
+                  <path d="M15 22 V34 M90.6 22 V34 M175 22 V34"/>
+                </g>
+                <g class="dg-fill-c">
+                  <circle cx="74.7" cy="28" r="3"/>
+                </g>
+      
+                <text class="dg-note" x="15"  y="16">40² = 1600</text>
+                <text class="dg-note" x="90.6" y="16" text-anchor="middle">45² = 2025</text>
+                <text class="dg-note" x="175" y="16" text-anchor="end">50² = 2500</text>
+                <text class="dg-label" x="74.7" y="46" text-anchor="middle">1936</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 1.5</span> $1936$ falls in the shaded
+              stretch, so its root is between $40$ and $45$.</figcaption>
+            </figure>
+          </div>
+      
+          <p><em>Split the difference.</em> Which side of $45$ is it? We need $45^2$,
+          and it can be had without long multiplication:</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$45^2$</span>
+              <span>$= (40 + 5)(40 + 5) = 1600 + 400 + 25 = 2025$</span>
+            </div>
+          </div>
+          <p>$2025$ is more than $1936$, so the root is below $45$ — and of the two
+          candidates only $44$ is. Check: $44^2 = 1936$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$\sqrt{1936}$</span>
+              <span></span>
+              <span class="chip">$44$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

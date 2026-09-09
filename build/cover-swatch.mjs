@@ -21,12 +21,17 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { sheetMetrics } from './sheet.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
 
 const CHROME = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
@@ -52,6 +57,9 @@ const WAYS = [
   ['marigold',    '#ffb703', '#14213d', '#3c4a72', '#d62828'],
   ['ink',         '#101014', '#ffffff', '#9a9aa8', '#c8ff2e'],
 ];
+// Chrome refuses to start its sandbox as root, which is how a CI
+// container usually runs. Only then is the flag added.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 
 const direction = process.argv[2] ?? 'grid';
 const front = await readFile(p('covers', 'class-9', '_shared', `front-${direction}.html`), 'utf8');
@@ -67,7 +75,7 @@ const ways = WAYS.map(([name, bg, ink, soft, mark]) => `
 
 const cells = WAYS.map(([name]) => `
 <figure class="cell">
-  <div class="frame"><div class="jacket jacket--a4 jacket--${direction} sw--${name}">${front}</div></div>
+  <div class="frame"><div class="jacket jacket--standard jacket--${direction} sw--${name}">${front}</div></div>
   <figcaption>${name}</figcaption>
 </figure>`).join('');
 
@@ -103,13 +111,17 @@ await mkdir(p('build', 'covers'), { recursive: true });
 const html = p('build', 'covers', `_swatch-${direction}.html`);
 await writeFile(html, page);
 
+// The sheet is as big as the trim makes it. Typing the trim here is
+// how a swatch sheet ends up cropping its own last column the day the
+// standard trim changes.
+const { trimW, trimH } = await sheetMetrics();
 const MM = 96 / 25.4;
-const w = Math.ceil((210 * SCALE + 8) * COLS * MM) + 80;
-const h = Math.ceil((297 * SCALE + 18) * Math.ceil(WAYS.length / COLS) * MM) + 80;
+const w = Math.ceil((trimW * SCALE + 8) * COLS * MM) + 80;
+const h = Math.ceil((trimH * SCALE + 18) * Math.ceil(WAYS.length / COLS) * MM) + 80;
 const png = p('build', 'covers', `_swatch-${direction}.png`);
 
 await run(CHROME, [
-  '--headless=new', '--disable-gpu', '--hide-scrollbars',
+  '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
   '--force-device-scale-factor=2',
   `--window-size=${w},${h}`,
   '--virtual-time-budget=8000',

@@ -1,0 +1,90 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A lotus stands with the tip of its stem $1$ unit above the water. A breeze
+          pushes it over until the tip touches the water $3$ units from where it stood.
+          How deep is the lake?</p>
+      
+          <div class="c-figure c-figure--lg">
+            <figure>
+              <svg viewBox="0 0 180 100" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A lotus stem rising one unit above the water, and the same stem pushed over so its tip touches the water three units away, making a right triangle">
+      
+                <path class="dg-line" d="M10 38 H170"/>
+                <path class="dg-ghost" d="M60 86 V26"/>
+                <path class="dg-line"  d="M60 86 L96 38"/>
+                <path class="dg-thin"  d="M60 38 H96"/>
+                <path class="dg-thin"  d="M60 44 H66 V38"/>
+      
+                <circle class="dg-fill-c" cx="60" cy="24" r="3"/>
+                <circle class="dg-fill-c" cx="96" cy="38" r="3"/>
+      
+                <text class="dg-label dg-label--sm" x="54" y="34" text-anchor="end">1</text>
+                <text class="dg-label dg-label--sm" x="54" y="66" text-anchor="end">x</text>
+                <text class="dg-label dg-label--sm" x="78" y="34" text-anchor="middle">3</text>
+                <text class="dg-label dg-label--sm" x="86" y="70">x + 1</text>
+                <text class="dg-note" x="150" y="34" text-anchor="middle">water</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 2.8</span> The stem does not stretch,
+              so the slanting stem is as long as the upright one: $x$ below the water and
+              $1$ above it.</figcaption>
+            </figure>
+          </div>
+      
+          <p>Let $x$ be the depth. The stem is $x + 1$ long, and bending it over does not
+          change its length, so the slanting stem is the hypotenuse of a right triangle
+          with short sides $3$ and $x$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">the theorem</span>
+              <span>$3^2 + x^2 = (x+1)^2$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">expand</span>
+              <span>$9 + x^2 = x^2 + 2x + 1$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">take $x^2$ off both sides</span>
+              <span>$9 = 2x + 1$, so $x = 4$</span>
+            </div>
+          </div>
+          <p>The lake is $4$ units deep. The $x^2$ that vanished is the whole trick: the
+          unknown appears squared on both sides, and once it goes what is left is a
+          linear equation of the kind Part I's Chapter 6 was about.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>The diagonals of a rhombus are $24$ and $70$ units long. Find the length of
+          a side.</p>
+          <p>Part I's Chapter 5 established that the diagonals of a rhombus cut each
+          other in half and cross at right angles. So each side of the rhombus is the
+          hypotenuse of a right triangle whose short sides are half of each diagonal.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">half-diagonals</span>
+              <span>$12$ and $35$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">so</span>
+              <span>$s^2 = 12^2 + 35^2 = 144 + 1225 = 1369$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">and</span>
+              <span>$s = \sqrt{1369} = 37$</span>
+            </div>
+          </div>
+          <p>All four sides come to $37$, which they had to: the four right triangles have
+          the same two short sides.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

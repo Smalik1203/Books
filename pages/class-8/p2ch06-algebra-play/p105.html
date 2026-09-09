@@ -1,0 +1,70 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The same trick, one row taller</div>
+        <p>Four consecutive numbers are $a$, $a+1$, $a+2$, $a+3$, and the top of a
+        four-row pyramid is $a + 3b + 3c + d$ with those put in for $b$, $c$ and
+        $d$.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">the top</span>
+            <span>$a + 3(a+1) + 3(a+2) + (a+3)$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">collecting</span>
+            <span>$8a + 12$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$8a + 12 = 204$, giving $a = 24$</span>
+          </div>
+        </div>
+        <p>The row is $24$, $25$, $26$, $27$. Compare it with the three-row answer, which
+        was $4a + 4$: both tops are $2^{\,n-1}$ times the smallest number, plus a
+        constant. The doubling comes from the number of rows and nothing else, which is
+        why the same bottom number can appear under two quite different tops.</p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A charge set to empty a pocket</div>
+        <p>The chapter's expression for the coins after $n$ rounds does this one without
+        any further thought. Put $x = 15$, $n = 4$, and set the whole thing to
+        nothing.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">the expression</span>
+            <span>$2^{\,4}(15 - c) + c = 0$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">expanding</span>
+            <span>$240 - 16c + c = 0$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>$15c = 240$, giving $c = 16$</span>
+          </div>
+        </div>
+        <p>Sixteen, against a purse of fifteen — the same shape as Karim's eight against
+        seven, and the same one-coin margin. That is not a coincidence: emptying a
+        traveller in $n$ rounds needs a charge of $2^{\,n}x \div (2^{\,n} - 1)$, and for
+        a start that is one less than a power of two, that division comes out at a whole
+        number exactly one bigger. A genie who wants round figures picks travellers with
+        $7$, $15$ or $31$ coins.</p>
+      </div>
+
+      <p>Eight questions, and not one of them needed an idea the chapter had not already
+      given. What they needed was the willingness to write the situation down before
+      looking for the answer — three consecutive numbers as $a$, $a+1$, $a+2$; a
+      two-digit number as $10a + b$; a whole bargain as $2^{\,n}(x - c) + c$. In every
+      one of the eight, the line that did the work was the first line.</p>
+
+      <p>Two of them also needed something the algebra could not supply. The digits had
+      to stop at $9$, and the coins had to be whole. An expression will happily hand back
+      $a = 4.5$ or a charge of two-thirds of a coin, and knowing which answers the
+      situation can actually accept is the reader's job and not the equation's.</p>
+
+    </div>
+  </div>
+</section>

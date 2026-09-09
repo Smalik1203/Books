@@ -1,0 +1,77 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">7.4</span><span class="name">Same Base, Same Height</span></h2>
+
+      <p>Draw a line, mark a segment $DC$ on it, and draw a second line parallel to the
+      first. Now pick any point on that second line and join it to $D$ and to $C$. The
+      three triangles below were all made that way, and they have the same area.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 84" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three triangles on one base D C, with their apexes at different points on a line parallel to the base">
+      
+            <path class="dg-thin" d="M10 26 H186 M10 70 H186"/>
+            <path class="dg-line" d="M30 70 L110 70 L40 26 Z M30 70 L110 70 L86 26 Z M30 70 L110 70 L150 26 Z"/>
+            <path class="dg-dim"  d="M170 26 V70"/>
+      
+            <text class="dg-label" x="26" y="78">D</text>
+            <text class="dg-label" x="110" y="78">C</text>
+            <text class="dg-label" x="38" y="22">X</text>
+            <text class="dg-label" x="84" y="22">Y</text>
+            <text class="dg-label" x="148" y="22">Z</text>
+            <text class="dg-dim-label" x="174" y="51">h</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.3</span> $XDC$, $YDC$ and $ZDC$ all
+          stand on $DC$, and every apex is the same distance $h$ from it, because the two
+          lines are parallel. The leaning of $ZDC$ costs it nothing.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two parallels fix the height</div>
+        <p>Triangles on the same base, with their apexes on one line parallel to that
+        base, all have the same area. The apex may be slid anywhere along the line —
+        even past the end of the base — and nothing changes, because the distance
+        between two parallel lines is the same everywhere.</p>
+      </div>
+
+      <p>That is worth having on its own, but it also settles what the area actually
+      <em>is</em>. Slide the apex until it sits directly above one end of the base, and
+      the triangle becomes half of a rectangle — which section 7.2 has already
+      counted.</p>
+
+      <p>The general triangle does it in two halves at once. Draw the rectangle that just
+      encloses the triangle, and drop the perpendicular from the apex to the base.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 88" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle A B C enclosed in a rectangle E B C D, with the perpendicular from A to the base dividing both into a left half and a right half">
+      
+            <path class="dg-fill-d" d="M98 26 L48 26 L48 70 Z M98 26 L148 26 L148 70 Z"/>
+            <path class="dg-fill-a" d="M48 70 L148 70 L98 26 Z"/>
+            <path class="dg-thin"  d="M48 26 H148 V70 H48 Z"/>
+            <path class="dg-line"  d="M48 70 L148 70 L98 26 Z"/>
+            <path class="dg-dim"   d="M98 26 V70"/>
+      
+            <text class="dg-label" x="96" y="22">A</text>
+            <text class="dg-label" x="42" y="78">B</text>
+            <text class="dg-label" x="146" y="78">C</text>
+            <text class="dg-label" x="42" y="22">E</text>
+            <text class="dg-label" x="146" y="22">D</text>
+            <text class="dg-label" x="96" y="78">X</text>
+            <text class="dg-dim-label" x="102" y="50">h</text>
+            <text class="dg-dim-label" x="98" y="86" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.4</span> $AX$ cuts the rectangle
+          $EBCD$ into two smaller rectangles, and cuts the triangle into two pieces —
+          one being half of each. So the triangle is half of the whole.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

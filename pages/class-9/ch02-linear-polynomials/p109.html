@@ -2,152 +2,108 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set C &middot; The whole chapter</div>
-        <ol class="c-questions">
-          <li>
-            <span class="tier">Think</span>
-            The points $(1, k)$, $(4, 3k - 2)$ and $(7, 16)$ lie on one
-            straight line. Then $k$ is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$2$</li>
-              <li>$3$</li>
-              <li>$4$</li>
-              <li>$5$</li>
-            </ol>
-            <p class="hint">The three $x$-values are equally spaced, so
-              the $y$-values must rise by equal amounts.</p>
-          </li>
-          <li>
-            <span class="tier">Apply</span>
-            Fig. 2B.3 shows the first three stages of a pattern of tiles.
-            The stage with exactly $100$ tiles is
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$32$</li>
-              <li>$33$</li>
-              <li>$34$</li>
-              <li>there is none</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <figure class="c-figure c-figure--xl">
-        <svg viewBox="0 0 360 104" role="img"
-             aria-label="Three stages of a growing pattern of square tiles shaped like the letter T: a bar of 3, 5 and 7 tiles with a stem of 1, 2 and 3 tiles hanging below its middle">
-          <rect class="dg-fill-d" x="20" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="36" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="52" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="36" y="30" width="16" height="16"/>
-          <rect class="dg-thin" x="20" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="36" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="52" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="36" y="30" width="16" height="16"/>
-          <text class="dg-note" x="44" y="96" text-anchor="middle">Stage 1</text>
-
-          <rect class="dg-fill-d" x="110" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="126" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="142" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="158" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="174" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="142" y="30" width="16" height="16"/>
-          <rect class="dg-fill-d" x="142" y="46" width="16" height="16"/>
-          <rect class="dg-thin" x="110" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="126" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="142" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="158" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="174" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="142" y="30" width="16" height="16"/>
-          <rect class="dg-thin" x="142" y="46" width="16" height="16"/>
-          <text class="dg-note" x="150" y="96" text-anchor="middle">Stage 2</text>
-
-          <rect class="dg-fill-d" x="230" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="246" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="262" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="278" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="294" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="310" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="326" y="14" width="16" height="16"/>
-          <rect class="dg-fill-d" x="278" y="30" width="16" height="16"/>
-          <rect class="dg-fill-d" x="278" y="46" width="16" height="16"/>
-          <rect class="dg-fill-d" x="278" y="62" width="16" height="16"/>
-          <rect class="dg-thin" x="230" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="246" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="262" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="278" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="294" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="310" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="326" y="14" width="16" height="16"/>
-          <rect class="dg-thin" x="278" y="30" width="16" height="16"/>
-          <rect class="dg-thin" x="278" y="46" width="16" height="16"/>
-          <rect class="dg-thin" x="278" y="62" width="16" height="16"/>
-          <text class="dg-note" x="286" y="96" text-anchor="middle">Stage 3</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 2B.3</span> &nbsp;A growing pattern of
-          tiles. Each stage adds one tile to each end of the bar and one to
-          the stem.
-        </figcaption>
-      </figure>
-
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-            <span class="tier">Apply</span>
-            The line in Fig. 2B.4 has equation
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$y = 2x + 1$</li>
-              <li>$y = 2x - 1$</li>
-              <li>$y = x - 1$</li>
-              <li>$y = -2x - 1$</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <figure class="c-figure c-figure--xl">
-        <svg viewBox="0 0 390 405" role="img"
-             aria-label="A ruled coordinate grid from minus two to five across and minus two to six up, with one straight line drawn across it, crossing the y-axis one unit below the origin">
-          <path class="dg-grid" d="M45 15V375M90 15V375M135 15V375M180 15V375M225 15V375M270 15V375M315 15V375M360 15V375M45 15H360M45 60H360M45 105H360M45 150H360M45 195H360M45 240H360M45 285H360M45 330H360M45 375H360"/>
-          <path class="dg-axis" d="M45 285H360 M135 15V375"/>
-          <text class="dg-tick" x="45" y="300" text-anchor="middle">&minus;2</text>
-          <text class="dg-tick" x="90" y="300" text-anchor="middle">&minus;1</text>
-          <text class="dg-tick" x="180" y="300" text-anchor="middle">1</text>
-          <text class="dg-tick" x="225" y="300" text-anchor="middle">2</text>
-          <text class="dg-tick" x="270" y="300" text-anchor="middle">3</text>
-          <text class="dg-tick" x="315" y="300" text-anchor="middle">4</text>
-          <text class="dg-tick" x="360" y="300" text-anchor="middle">5</text>
-          <text class="dg-tick" x="127" y="334" text-anchor="end">&minus;1</text>
-          <text class="dg-tick" x="127" y="244" text-anchor="end">1</text>
-          <text class="dg-tick" x="127" y="199" text-anchor="end">2</text>
-          <text class="dg-tick" x="127" y="154" text-anchor="end">3</text>
-          <text class="dg-tick" x="127" y="109" text-anchor="end">4</text>
-          <text class="dg-tick" x="127" y="64" text-anchor="end">5</text>
-          <text class="dg-tick" x="127" y="19" text-anchor="end">6</text>
-          <text class="dg-label" x="370" y="280">x</text>
-          <text class="dg-label" x="141" y="24">y</text>
-          <path class="dg-plot" d="M112.5 375L292.5 15"/>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 2B.4</span> &nbsp;One line on a ruled
-          grid. Everything the equation says is somewhere in this picture.
-        </figcaption>
-      </figure>
-
-      <div class="c-practice c-practice--cont">
+        
         <ol class="c-questions" data-start="4">
           <li>
-            <span class="tier">Apply</span>
-            One candle is $30$ cm long and burns down $2$ cm an hour. Another
-            is $20$ cm long and burns down $1$ cm an hour. Both are lit
-            together. They are the same height after
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>$5$ hours</li>
-              <li>$8$ hours</li>
-              <li>$10$ hours</li>
-              <li>never</li>
-            </ol>
-          </li>
+              For the line $y = -3x + 4$, which of these are true?
+              <ol class="c-parts">
+                <li>Its slope is $-3$.</li>
+                <li>It meets the $y$-axis at $(0, 4)$.</li>
+                <li>It passes through $(2, -2)$.</li>
+              </ol>
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>(i) only</li><li>(i) and (ii)</li>
+                <li>(ii) and (iii)</li><li>all three</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>
+              A quantity measured every hour has differences $7, 7, 7, 7$.
+              Which of these must be true?
+              <ol class="c-parts c-parts--1">
+                <li>The rule has the form $7t + b$.</li>
+                <li>The rule is $7t$.</li>
+                <li>One reading would settle the rule completely.</li>
+              </ol>
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>(i) only</li><li>(ii) and (iii)</li>
+                <li>(i) and (iii)</li><li>all three</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>
+              The table gives $y$ at four values of $x$.
+              <table>
+                <thead>
+                  <tr><th>$x$</th><td>$1$</td><td>$2$</td><td>$4$</td><td>$7$</td></tr>
+                </thead>
+                <tbody>
+                  <tr><th>$y$</th><td>$5$</td><td>$8$</td><td>$14$</td><td>$23$</td></tr>
+                </tbody>
+              </table>
+              The rule is
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$y = 3x + 5$</li>
+                <li>$y = 2x + 3$</li>
+                <li>$y = 3x + 2$</li>
+                <li>$y = 4x + 1$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>
+              To find where $y = 2x - 6$ crosses the $x$-axis, Meena puts
+              $x = 0$ and gets $(0, -6)$. Ravi puts $y = 0$ and gets $(3, 0)$.
+              <ol class="c-parts c-parts--alpha">
+                <li>Meena is right</li>
+                <li>Ravi is right</li>
+                <li>both are right</li>
+                <li>neither is right</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="8">
+          <li>
+              Two students look at $1, 2, 4, 8, 16$. Asha says it is not a
+              linear pattern, because its differences are $1, 2, 4, 8$. Bilal
+              says it is linear, because the same thing is done at every step.
+              <ol class="c-parts c-parts--alpha">
+                <li>Asha is right</li>
+                <li>Bilal is right</li>
+                <li>both are right</li>
+                <li>neither is right</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>
+              Which of these points lies on the line through $(0, 3)$ and
+              $(2, 7)$?
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$(1, 4)$</li>
+                <li>$(3, 9)$</li>
+                <li>$(4, 10)$</li>
+                <li>$(5, 12)$</li>
+              </ol>
+            </li>
         </ol>
       </div>
 

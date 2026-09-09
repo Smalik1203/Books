@@ -1,0 +1,89 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The commonest error in algebra is to write $(a+b)^2 = a^2 + b^2$, and the
+      picture says exactly what that leaves out: the two rectangles, which between them
+      are most of the square. At $a = 3$ and $b = 4$ the true answer is $49$ and the
+      wrong one is $25$; the missing $24$ is the two rectangles.</p>
+
+      <h3>4.6.2 The square of a difference</h3>
+
+      <p>Now a square of side $a - b$, where $b$ is the smaller of the two. It is easiest
+      to see as what is left of a square of side $a$ after two strips have been taken
+      off — one across the top and one down the side, each of them $a$ long and $b$
+      wide.</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 170 126" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a with a strip of width b across the top and another down the right side; the two strips overlap in a corner square of area b squared, and what is left is a square of side a minus b">
+      
+            <rect class="dg-fill-a" x="30" y="46" width="64" height="64"/>
+            <rect class="dg-fill-b" x="30" y="18" width="64" height="28"/>
+            <rect class="dg-fill-b" x="94" y="46" width="28" height="64"/>
+            <rect class="dg-fill-c" x="94" y="18" width="28" height="28"/>
+      
+            <rect class="dg-line" x="30" y="18" width="92" height="92"/>
+            <line class="dg-thin" x1="94" y1="18" x2="94" y2="110"/>
+            <line class="dg-thin" x1="30" y1="46" x2="122" y2="46"/>
+      
+            <text class="dg-label" x="62" y="82" text-anchor="middle">(a − b)²</text>
+            <text class="dg-label dg-label--on-fill" x="108" y="36" text-anchor="middle">b²</text>
+      
+            <line class="dg-dim" x1="30" y1="11" x2="122" y2="11"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="76" y="6" text-anchor="middle">top strip, area <tspan font-style="italic">ab</tspan></text>
+      
+            <line class="dg-dim" x1="132" y1="18" x2="132" y2="110"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="142" y="64" text-anchor="middle"
+                  transform="rotate(-90 142 64)">side strip, area <tspan font-style="italic">ab</tspan></text>
+      
+            <line class="dg-dim" x1="30" y1="118" x2="94" y2="118"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="94" y1="118" x2="122" y2="118"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="62" y="125" text-anchor="middle">a − b</text>
+            <text class="dg-label" x="108" y="125" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.4</span> The two strips overlap, and
+          the dark corner is the piece they share. Take both strips away and that corner
+          has gone twice, so one of it must be put back.</figcaption>
+        </figure>
+      </div>
+
+      <p>The whole square is $a^2$. Each strip is $a$ long and $b$ wide, so each is $ab$.
+      Removing both removes the corner square twice over, and the corner is $b^2$, so
+      one $b^2$ has to be returned.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">start</span>
+          <span>$a^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">two strips off</span>
+          <span>$a^2 - ab - ab$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">corner back</span>
+          <span>$a^2 - 2ab + b^2$</span>
+        </div>
+      </div>
+
+      <div class="eq">$$(a-b)^2 = a^2 - 2ab + b^2$$</div>
+
+      <p>It is the first identity with the sign of $b$ reversed throughout, which is what
+      you would expect: $a - b$ is $a + (-b)$, and squaring $-b$ gives $+b^2$ while
+      doubling $a \times (-b)$ gives $-2ab$. Either argument will do. The picture is the
+      one to keep, because it says <em>why</em> the middle term is the part that changes
+      sign while the two squares do not.</p>
+
+      <p>One consequence is worth having in advance. Since the middle term carries the
+      sign and the two squares do not, $(a-b)^2$ and $(b-a)^2$ come to the same thing —
+      squaring destroys the order, exactly as it does with numbers.</p>
+
+    </div>
+  </div>
+</section>

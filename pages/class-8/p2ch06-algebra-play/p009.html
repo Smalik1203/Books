@@ -1,0 +1,101 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">6.6</span><span class="name">A Square on a Calendar</span></h2>
+
+      <p>Here is a trick that needs no instructions at all. Hand a friend a page from a
+      calendar and ask them to draw a square round any four dates that touch, add the
+      four, and tell you the total. From that one number you name all four dates.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 104" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A calendar page for August 2025 with the four dates six, seven, thirteen and fourteen shaded as a two by two square">
+      
+            <path class="dg-fill-a" d="M85 34 h52 v26 h-52 Z"/>
+      
+            <path class="dg-thin" d="M33 8 V99 M59 8 V99 M85 8 V99 M111 8 V99 M137 8 V99 M163 8 V99
+                                     M7 21 H189 M7 34 H189 M7 47 H189 M7 60 H189 M7 73 H189 M7 86 H189"/>
+            <path class="dg-line" d="M7 8 H189 V99 H7 Z M85 34 h52 v26 h-52 Z"/>
+      
+            <text class="dg-note" x="20" y="17" text-anchor="middle">Sun</text>
+            <text class="dg-note" x="46" y="17" text-anchor="middle">Mon</text>
+            <text class="dg-note" x="72" y="17" text-anchor="middle">Tue</text>
+            <text class="dg-note" x="98" y="17" text-anchor="middle">Wed</text>
+            <text class="dg-note" x="124" y="17" text-anchor="middle">Thu</text>
+            <text class="dg-note" x="150" y="17" text-anchor="middle">Fri</text>
+            <text class="dg-note" x="176" y="17" text-anchor="middle">Sat</text>
+      
+            <text class="dg-tick" x="150" y="30" text-anchor="middle">1</text>
+            <text class="dg-tick" x="176" y="30" text-anchor="middle">2</text>
+      
+            <text class="dg-tick" x="20" y="43" text-anchor="middle">3</text>
+            <text class="dg-tick" x="46" y="43" text-anchor="middle">4</text>
+            <text class="dg-tick" x="72" y="43" text-anchor="middle">5</text>
+            <text class="dg-tick" x="98" y="43" text-anchor="middle">6</text>
+            <text class="dg-tick" x="124" y="43" text-anchor="middle">7</text>
+            <text class="dg-tick" x="150" y="43" text-anchor="middle">8</text>
+            <text class="dg-tick" x="176" y="43" text-anchor="middle">9</text>
+      
+            <text class="dg-tick" x="20" y="56" text-anchor="middle">10</text>
+            <text class="dg-tick" x="46" y="56" text-anchor="middle">11</text>
+            <text class="dg-tick" x="72" y="56" text-anchor="middle">12</text>
+            <text class="dg-tick" x="98" y="56" text-anchor="middle">13</text>
+            <text class="dg-tick" x="124" y="56" text-anchor="middle">14</text>
+            <text class="dg-tick" x="150" y="56" text-anchor="middle">15</text>
+            <text class="dg-tick" x="176" y="56" text-anchor="middle">16</text>
+      
+            <text class="dg-tick" x="20" y="69" text-anchor="middle">17</text>
+            <text class="dg-tick" x="46" y="69" text-anchor="middle">18</text>
+            <text class="dg-tick" x="72" y="69" text-anchor="middle">19</text>
+            <text class="dg-tick" x="98" y="69" text-anchor="middle">20</text>
+            <text class="dg-tick" x="124" y="69" text-anchor="middle">21</text>
+            <text class="dg-tick" x="150" y="69" text-anchor="middle">22</text>
+            <text class="dg-tick" x="176" y="69" text-anchor="middle">23</text>
+      
+            <text class="dg-tick" x="20" y="82" text-anchor="middle">24</text>
+            <text class="dg-tick" x="46" y="82" text-anchor="middle">25</text>
+            <text class="dg-tick" x="72" y="82" text-anchor="middle">26</text>
+            <text class="dg-tick" x="98" y="82" text-anchor="middle">27</text>
+            <text class="dg-tick" x="124" y="82" text-anchor="middle">28</text>
+            <text class="dg-tick" x="150" y="82" text-anchor="middle">29</text>
+            <text class="dg-tick" x="176" y="82" text-anchor="middle">30</text>
+      
+            <text class="dg-tick" x="20" y="95" text-anchor="middle">31</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.5</span> August $2025$, with one such
+          square shaded. Its four dates add to $6 + 7 + 13 + 14 = 40$.</figcaption>
+        </figure>
+      </div>
+
+      <p>What makes it possible is that the four dates are not four free numbers. A
+      calendar row runs in ones and a calendar column runs in sevens, so once the
+      top-left date is known the other three follow.</p>
+
+      <p>Call the top-left date $a$. Then the square holds $a$, $a + 1$ below it in the
+      same week, $a + 7$ in the week after, and $a + 8$ in the corner, and the four add
+      to</p>
+
+      <div class="eq eq--anchor">$$a + (a+1) + (a+7) + (a+8) = 4a + 16.$$</div>
+
+      <p>For the shaded square $a = 6$, and $4 \times 6 + 16 = 40$, which is the total
+      counted out on the calendar. Going the other way is now an equation with one
+      unknown: told the total is $36$, subtract $16$ and divide by $4$ to get $a = 5$, so
+      the square is $5$, $6$, $12$, $13$.</p>
+
+      <p>Only one number in $4a + 16$ came from the calendar, and it is the $7$ hiding
+      inside the $16$: the four dates were $a$, $a+1$, $a+7$ and $a+8$, so the constant
+      is $0 + 1 + 7 + 8$. Everything else came from there being four of them. A calendar
+      with a ten-day week — and there have been such calendars — would give
+      $a$, $a+1$, $a+10$, $a+11$ and a total of $4a + 22$, and the trick would work
+      exactly as well with a different number to subtract.</p>
+
+      <p>That is a question worth putting to any formula: which of its numbers came from
+      the situation, and which came from the shape of the question asked? Here the $4$
+      counts the dates in the square, and the $16$ is the only place the length of the
+      week gets in. Change the week and just one of the two moves.</p>
+
+    </div>
+  </div>
+</section>

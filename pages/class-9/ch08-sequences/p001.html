@@ -1,0 +1,125 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">8</div>
+    <h1 class="chapterhead__title">What Comes Next</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- four stages of a growing square, and the fifth left to the reader -->
+        <g class="dg-fill-b-soft">
+          <rect x="20" y="86" width="9" height="9"/>
+        </g>
+        <rect class="dg-line" x="20" y="86" width="9" height="9"/>
+
+        <g class="dg-fill-b-soft">
+          <rect x="55" y="77" width="9" height="9"/><rect x="64" y="86" width="9" height="9"/>
+          <rect x="46" y="86" width="9" height="9"/><rect x="55" y="95" width="9" height="9"/>
+          <rect x="55" y="86" width="9" height="9"/>
+        </g>
+        <g class="dg-line">
+          <rect x="55" y="77" width="9" height="9"/><rect x="64" y="86" width="9" height="9"/>
+          <rect x="46" y="86" width="9" height="9"/><rect x="55" y="95" width="9" height="9"/>
+          <rect x="55" y="86" width="9" height="9"/>
+        </g>
+
+        <g class="dg-fill-b-soft">
+          <rect x="99" y="68" width="9" height="9"/><rect x="99" y="77" width="9" height="9"/>
+          <rect x="90" y="77" width="9" height="9"/><rect x="108" y="77" width="9" height="9"/>
+          <rect x="81" y="86" width="9" height="9"/><rect x="90" y="86" width="9" height="9"/>
+          <rect x="99" y="86" width="9" height="9"/><rect x="108" y="86" width="9" height="9"/>
+          <rect x="117" y="86" width="9" height="9"/>
+        </g>
+        <g class="dg-line">
+          <rect x="99" y="68" width="9" height="9"/><rect x="99" y="77" width="9" height="9"/>
+          <rect x="90" y="77" width="9" height="9"/><rect x="108" y="77" width="9" height="9"/>
+          <rect x="81" y="86" width="9" height="9"/><rect x="90" y="86" width="9" height="9"/>
+          <rect x="99" y="86" width="9" height="9"/><rect x="108" y="86" width="9" height="9"/>
+          <rect x="117" y="86" width="9" height="9"/>
+        </g>
+
+        <!-- the one not drawn: a question mark where the next stage goes -->
+        <g class="dg-ghost">
+          <rect x="150" y="59" width="42" height="42" rx="2"/>
+        </g>
+        <text class="dg-label" x="171" y="87" text-anchor="middle">?</text>
+
+        <text class="dg-note" x="24"  y="112">1</text>
+        <text class="dg-note" x="59"  y="112">5</text>
+        <text class="dg-note" x="103" y="112">9</text>
+        <text class="dg-note" x="167" y="112">13</text>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">8.1</span><span class="name">Introduction</span></h2>
+
+      <p>A pattern is a promise about what has not happened yet. That is what makes
+      patterns worth studying, and it is why this chapter exists: given the beginning of
+      a list, we want to say what comes next — and to say it with a reason, not a
+      guess.</p>
+
+      <p>You have been reading patterns for years. Here are four lists you already
+      know:</p>
+
+      <div class="work work--centred">
+        <p>$1,\ 2,\ 3,\ 4,\ 5,\ 6,\ \ldots$</p>
+        <p>$1,\ 3,\ 5,\ 7,\ 9,\ 11,\ \ldots$</p>
+        <p>$1,\ 3,\ 6,\ 10,\ 15,\ 21,\ \ldots$</p>
+        <p>$1,\ 4,\ 9,\ 16,\ 25,\ 36,\ \ldots$</p>
+      </div>
+
+      <p>The natural numbers, the odd numbers, the triangular numbers and the square
+      numbers. The three dots at the end of each are doing real work: they say the list
+      does not stop, and that you are expected to know how it goes on.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Describe the pattern in each of those four lists in a sentence, and
+            predict the next three numbers of each.</p>
+            <p>Then try to say <em>why</em> your rule is the right one, and not merely a
+            rule that happens to fit the six numbers shown.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>An ordered list of numbers like these is a
+      <span class="term">sequence</span>, and each number in it is a
+      <span class="term">term</span>. Order is part of what a sequence is: the list
+      $1, 4, 9$ and the list $9, 4, 1$ are made of the same numbers and are not the same
+      sequence. In the square numbers, $1$ is the first term, $4$ the second, $25$ the
+      fifth.</p>
+
+      <p>A sequence may be <span class="term">finite</span> or
+      <span class="term">infinite</span>. All four above are infinite — they have no
+      last term. The list of the twelve months, or</p>
+
+      <div class="work work--centred">
+        <p>$2,\ 4,\ 6,\ 8,\ 10$</p>
+      </div>
+
+    </div>
+  </div>
+</section>

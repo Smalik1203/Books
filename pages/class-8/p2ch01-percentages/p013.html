@@ -1,0 +1,88 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The same rate, the same principal, the same three years, and ₹$186$ more. That
+      difference is called <span class="term">compounding</span>, and it is what happens
+      whenever a percentage is taken of an amount that the percentage itself has already
+      changed.</p>
+
+      <p>Written with letters, the two are short. Let $p$ be the principal, $r$ the rate
+      as a decimal — $10\%$ is $r = 0.1$ — and $t$ the number of years.</p>
+
+      <div class="eq eq--anchor">$$\text{without compounding} \quad p(1 + rt)
+      \qquad\qquad \text{with compounding} \quad p(1 + r)^{\,t}$$</div>
+
+      <p>The first adds the same interest $t$ times. The second multiplies by $(1+r)$ $t$
+      times, and the exponent is doing exactly what the repeated multiplication did in
+      the table opposite.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 74" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two rows of bars over three years: the upper row grows by equal steps, the lower row by steps that get larger each year">
+      
+            <text class="dg-label dg-label--sm" x="10" y="20">no compounding</text>
+            <path class="dg-fill-d" d="M10 24 H70 V34 H10 Z"/>
+            <path class="dg-fill-a" d="M70 24 H88 V34 H70 Z"/>
+            <path class="dg-fill-a" d="M88 24 H106 V34 H88 Z"/>
+            <path class="dg-fill-a" d="M106 24 H124 V34 H106 Z"/>
+            <path class="dg-line"   d="M10 24 H124 V34 H10 Z"/>
+            <path class="dg-thin"   d="M70 24 V34 M88 24 V34 M106 24 V34"/>
+            <text class="dg-label dg-label--sm" x="130" y="32">₹7,800</text>
+      
+            <text class="dg-label dg-label--sm" x="10" y="52">with compounding</text>
+            <path class="dg-fill-d" d="M10 56 H70 V66 H10 Z"/>
+            <path class="dg-fill-b" d="M70 56 H88 V66 H70 Z"/>
+            <path class="dg-fill-b" d="M88 56 H108 V66 H88 Z"/>
+            <path class="dg-fill-b" d="M108 56 H130 V66 H108 Z"/>
+            <path class="dg-line"   d="M10 56 H130 V66 H10 Z"/>
+            <path class="dg-thin"   d="M70 56 V66 M88 56 V66 M108 56 V66"/>
+            <text class="dg-label dg-label--sm" x="136" y="64">₹7,986</text>
+      
+            <text class="dg-note" x="40" y="73" text-anchor="middle">the principal, unchanged</text>
+            <path class="dg-hidden" d="M70 6 V68"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.5</span> Three years at $10\%$ on
+          ₹$6{,}000$. The steps are equal when the interest is taken away each year and
+          grow when it is left in, because each year's $10\%$ is taken of a longer
+          bar.</figcaption>
+        </figure>
+      </div>
+
+      <p>Compounding is not only about money, and it is not only about growth. A quantity
+      that falls by the same percentage over and over is compounding downwards, and the
+      arithmetic is the multiplier again — this time smaller than one.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>A television bought for ₹$21{,}000$ loses $5\%$ of its value every year.
+          What is it worth after one year, and after three?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">after 1 year</span>
+              <span>$21{,}000 \times 0.95 = $ ₹$19{,}950$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">after 3 years</span>
+              <span>$21{,}000 \times 0.95^3 = $ ₹$18{,}015$ (to the nearest rupee)</span>
+            </div>
+          </div>
+          <p>This loss of value with age and use is called
+          <span class="term">depreciation</span>. Note that three years did not take away
+          $15\%$: each year's $5\%$ was of a smaller television than the year
+          before.</p>
+        </div>
+      </div>
+
+      <p>So one formula covers both directions, and the sign of the change is carried by
+      the multiplier rather than by a separate rule. Growth at $r$ and decline at $r$ are
+      $(1+r)^t$ and $(1-r)^t$, and a quantity falling by a fixed percentage never reaches
+      zero — it only ever loses a share of what is left. That is why an old television is
+      still worth something, and why the population of a village that keeps losing a
+      tenth of itself takes a very long time to empty.</p>
+
+    </div>
+  </div>
+</section>

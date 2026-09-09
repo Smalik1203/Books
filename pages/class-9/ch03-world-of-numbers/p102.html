@@ -2,81 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Think and Reason</div>
-          <div class="c-stage__for">Judge a claim &mdash; and the reason offered for it.</div>
-        </div>
+      <p>
+        The fraction is in lowest terms, and $80 = 2^4 \times 5$. The only
+        prime factors are $2$ and $5$, so the decimal terminates. To see where
+        it stops, do what Example 8 did and turn the denominator into a power
+        of ten. There are four $2$s and one $5$, so three more $5$s are
+        needed.
+      </p>
+
+      <div class="eq">
+        $$\dfrac{7}{80} = \dfrac{7 \times 125}{2^4 \times 5^4} = \dfrac{875}{10000} = 0.0875$$
       </div>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Questions 1&ndash;4 take this key.
-            <strong>(a)</strong> both true, R explains A;
-            <strong>(b)</strong> both true, R does not explain A;
-            <strong>(c)</strong> A true, R false; <strong>(d)</strong> A false,
-            R true.</p>
-        </div>
+      <p>
+        It stops after four places. Notice that the four came from $2^4$, the
+        larger of the two powers. The single $5$ was matched by the $2$s
+        without any help. A denominator of $2^3 \times 5$ would give three
+        places, and so would $5^3$ on its own. We knew the length of the
+        decimal before we knew any of its digits.
+      </p>
+
+      <div class="c-try">
+        <p>Given that $\sqrt{6}$ is irrational, show that
+          $\sqrt{2} + \sqrt{3}$ is irrational too.</p>
       </div>
 
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            <strong>A.</strong> Every terminating decimal is rational.
-            &nbsp;<strong>R.</strong> A decimal with $n$ places can be written
-            over $10^n$.
-          </li>
-          <li>
-            <strong>A.</strong> $\sqrt{9}$ is irrational.
-            &nbsp;<strong>R.</strong> The square root of a natural number is
-            irrational unless that number is a perfect square.
-          </li>
-          <li>
-            <strong>A.</strong> Between any two rationals lies an irrational.
-            &nbsp;<strong>R.</strong> The rationals are dense in the line.
-          </li>
-          <li>
-            <strong>A.</strong> A non-zero rational times an irrational is
-            irrational. &nbsp;<strong>R.</strong> If $ri$ were a rational $s$,
-            then $i = s / r$ would be rational.
-          </li>
-          <li>
-            For $\dfrac{13}{125}$, which must be true?
-            <ol class="c-parts c-parts--1 c-parts--tall">
-              <li>Its decimal terminates.</li>
-              <li>It terminates after exactly two places.</li>
-              <li>$125 = 5^3$, and that is what decides the matter.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(i) and (iii)</li>
-              <li>(ii) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            For $\dfrac{1}{7} = 0.\overline{142857}$, which must be true?
-            <ol class="c-parts c-parts--1">
-              <li>Its cycle is six digits long.</li>
-              <li>Six is the longest a cycle over $7$ could be.</li>
-              <li>The block $142857$ is cyclic.</li>
-            </ol>
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>(i) only</li><li>(i) and (ii)</li>
-              <li>(ii) and (iii)</li><li>all three</li>
-            </ol>
-          </li>
-          <li>
-            $q - 1$ is a ceiling on the cycle length, not a promise: $7$, $17$
-            and $19$ reach it, while $11$ and $13$ do not. Say what a division
-            reaching the ceiling means about its remainders.
-          </li>
-        </ol>
+      <p>
+        The first question was settled by supposing the opposite, and the
+        same opening works here. Suppose $\sqrt{2} + \sqrt{3}$ were a rational
+        $r$. Squaring both sides of an equation keeps it true, and squaring a
+        sum of two roots is the one move that reduces the number of roots:
+      </p>
+
+      <div class="eq">
+        $$\left(\sqrt{2} + \sqrt{3}\right)^2 = 2 + 2\sqrt{6} + 3 = 5 + 2\sqrt{6}$$
       </div>
+
+      <p>
+        So $5 + 2\sqrt{6} = r^2$, and rearranging gives
+        $\sqrt{6} = \tfrac{1}{2}\left(r^2 - 5\right)$. The right side is built
+        from a rational by subtracting and halving, and the rationals are
+        closed under both. So $\sqrt{6}$ would be rational, and it is not.
+        The supposition fails.
+      </p>
+
+      <p>
+        The identity that did the work is $(a + b)^2 = a^2 + 2ab + b^2$ from
+        Chapter 4, and what makes it useful here is that $a^2$ and $b^2$ come
+        out whole and only the middle term keeps a root. Squaring is worth
+        trying on any sum of two surds for exactly that reason.
+      </p>
+
+      <div class="c-try">
+        <p>Write $0.4\overline{27}$ as $\dfrac{p}{q}$ in lowest terms. Say
+          what each multiplier you use is for.</p>
+      </div>
+
+      <p>
+        One digit does not repeat and two do, so two multipliers are needed
+        and they do different jobs. Put $x = 0.4272727\ldots$ The first
+        multiplier pushes the part that does not repeat past the point; the
+        second moves the repeating block on by exactly one cycle, so that the
+        two tails match and cancel:
+      </p>
 
     </div>
   </div>

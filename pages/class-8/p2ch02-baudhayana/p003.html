@@ -1,0 +1,63 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 140 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three squares about one centre: a small upright square, a tilted square of twice the area, and an upright square of four times the area">
+      
+            <path class="dg-line" d="M30 12 H110 V92 H30 Z"/>
+            <path class="dg-line" d="M30 52 L70 12 L110 52 L70 92 Z"/>
+            <path class="dg-fill-a" d="M50 32 H90 V72 H50 Z"/>
+            <path class="dg-line"   d="M50 32 H90 V72 H50 Z"/>
+      
+            <text class="dg-label dg-label--sm" x="70" y="55" text-anchor="middle">1</text>
+            <text class="dg-label dg-label--sm" x="70" y="24" text-anchor="middle">2</text>
+            <text class="dg-label dg-label--sm" x="42" y="24" text-anchor="middle">4</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.3</span> Areas $1$, $2$ and $4$. The
+          corners of the middle square are the midpoints of the sides of the outer one,
+          which is the same fact seen from the other end.</figcaption>
+        </figure>
+      </div>
+
+      <h2><span class="badge">2.3</span><span class="name">Halving a Square</span></h2>
+
+      <p>Baudhāyana's construction runs backwards just as well, and the picture above has
+      already given the answer away. To make a square of <em>half</em> the area of a
+      given one, join the midpoints of its four sides.</p>
+
+      <p>Why is the inside square half? Because the four corners left over are four
+      triangles, and each of them is a quarter of the inside square — fold the four
+      corners inwards and they cover it exactly, with nothing over and nothing short.</p>
+
+      <p>It is worth pausing on what does <em>not</em> work. Halving the side does not
+      halve the area; it quarters it, for the same reason that doubling the side
+      quadrupled it. Four squares of half the side fit inside the original.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 140 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square with the midpoints of its sides joined, the four corner triangles shaded and dotted lines showing each corner folding in to the centre">
+      
+            <path class="dg-fill-b" d="M30 12 H70 L30 52 Z"/>
+            <path class="dg-fill-b" d="M70 12 H110 V52 Z"/>
+            <path class="dg-fill-b" d="M110 52 V92 H70 Z"/>
+            <path class="dg-fill-b" d="M30 52 V92 H70 Z"/>
+      
+            <path class="dg-line" d="M30 12 H110 V92 H30 Z"/>
+            <path class="dg-line" d="M30 52 L70 12 L110 52 L70 92 Z"/>
+            <path class="dg-ghost" d="M30 12 L110 92 M110 12 L30 92"/>
+      
+            <text class="dg-note" x="70" y="102" text-anchor="middle">the four corners fold in and fill the middle</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.4</span> Each shaded corner is a quarter
+          of the inner square, so the four of them together are the whole of it. The
+          inner square is therefore half of the outer one.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -2,82 +2,80 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">7</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">The Challenge Zone</div>
-          <div class="c-stage__for">Think, then apply, then challenge.</div>
-        </div>
-      </div>
-      <p class="c-stage__ask">Not one of these says which idea to use. Show every step of the reasoning.</p>
-
-      <div class="c-practice">
-        <ol class="c-questions">
-          <li>
-            <span class="tier">Think</span>
-            Prove that a rational number plus an irrational number is always
-            irrational.
-            <ol class="c-parts c-parts--1">
-              <li>Show, with two numbers of your own, that an irrational plus
-                  an irrational need not be.</li>
-              <li>Say exactly which line of your first proof fails when both
-                  numbers are irrational.</li>
-            </ol>
-          </li>
-          <li>
-            <span class="tier">Apply</span>
-            Given that $\sqrt{6}$ is irrational, prove that
-            $\sqrt{2} + \sqrt{3}$ is irrational too.
-            <p class="hint">Suppose it equalled a rational $r$ and square both
-              sides. One identity from Chapter 4 does the rest.</p>
-          </li>
-          <li>
-            <span class="tier">Apply</span>
-            Fig. 3.9 places $\sqrt{10}$ on the number line with a straight edge
-            and a compass.
-            <ol class="c-parts c-parts--1">
-              <li>Say why $OB$ is $\sqrt{10}$, and why the arc puts the length
-                  down exactly rather than nearly.</li>
-              <li>How would you get $\sqrt{11}$ from the same drawing? And
-                  $\sqrt{2}$, which is smaller than every length in it?</li>
-            </ol>
-          </li>
-          <li>
-            <span class="tier">Challenge</span>
-            Show that a decimal whose $n$-digit block repeats from the very
-            first place is always that block divided by the $n$-digit number
-            $99\ldots9$. Use it on $0.\overline{285714}$, put the answer in
-            lowest terms, and say why the answer is one you have met already.
-          </li>
-          <li>
-            <span class="tier">Challenge</span>
-            Let $\dfrac{1}{n}$ have a terminating decimal, so that
-            $n = 2^a 5^b$. Show that the expansion has exactly $\max(a, b)$
-            decimal places, test the rule on $n = 16$, $n = 40$ and $n = 125$,
-            and say why the smaller of $a$ and $b$ has no say in the matter.
-          </li>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 5</span>
+        <p>How many numbers of the form $\dfrac{k}{24}$, with $k$ a whole
+          number, lie strictly between $\dfrac{1}{4}$ and $\dfrac{1}{3}$?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4">
+          <li>$0$</li>
+          <li>$1$</li>
+          <li>$2$</li>
+          <li>infinitely many</li>
         </ol>
       </div>
 
-      <figure class="c-figure c-figure--lg">
-        <svg viewBox="0 0 280 170" role="img"
-             aria-label="A number line with a right-angled triangle of legs three and one standing on it, and an arc swinging its hypotenuse down onto the line">
-          <path class="dg-axis" d="M10 130H272"/>
-          <path class="dg-thin" d="M90 126v8 M150 126v8"/>
-          <path class="dg-line" d="M30 130 H210 V70 Z"/>
-          <path class="dg-ghost" d="M210 70 A190 190 0 0 1 220 130"/>
-          <text class="dg-tick" x="30" y="148" text-anchor="middle">0</text>
-          <text class="dg-tick" x="210" y="148" text-anchor="middle">3</text>
-          <text class="dg-tick" x="222" y="163" text-anchor="middle">P</text>
-          <text class="dg-label" x="216" y="64">B</text>
-          <text class="dg-dim-label" x="204" y="104" text-anchor="end">1</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 3.9</span> &nbsp;Legs of $3$ and $1$, and
-          an arc. The point $P$ is not near $\sqrt{10}$ &mdash; it is
-          $\sqrt{10}$.
-        </figcaption>
-      </figure>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Put the two ends over $24$ as well, and the counting is done for
+          you.
+        </p>
+        <div class="work work--list">
+          <p>$\dfrac{1}{4} = \dfrac{6}{24}$</p>
+          <p>$\dfrac{1}{3} = \dfrac{8}{24}$</p>
+          <p>$6 \lt k \lt 8$, so $k = 7$</p>
+        </div>
+        <p>
+          The answer is (b). Option (c) counts $6$ and $8$ themselves, which
+          the word <em>strictly</em> rules out.
+        </p>
+        <p>
+          Option (d) is the one to think about. Infinitely many rationals do
+          lie between $\dfrac{1}{4}$ and $\dfrac{1}{3}$ &mdash; that is
+          what density says, and the previous question used it. But this
+          question fixes the denominator at $24$, and a fixed denominator
+          leaves only whole numbers to choose. Density is a statement about
+          all denominators at once; take that freedom away and the count
+          becomes finite, and usually small.
+        </p>
+      </div>
+
+      <div class="c-stage">
+        <div class="c-stage__num">3</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Problem Sets</div>
+          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Set A &middot; One result each</div>
+        <ol class="c-questions">
+          <li>
+              Which of these is irrational?
+              <ol class="c-parts c-parts--alpha c-parts--4">
+                <li>$\sqrt{49}$</li>
+                <li>$\sqrt{50}$</li>
+                <li>$0.\overline{6}$</li>
+                <li>$\dfrac{9}{4}$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>
+              The decimal expansion of $\dfrac{7}{40}$
+              <ol class="c-parts c-parts--alpha c-parts--1">
+                <li>terminates after two places</li>
+                <li>terminates after three places</li>
+                <li>repeats with a one-digit cycle</li>
+                <li>repeats with a three-digit cycle</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
 
     </div>
   </div>

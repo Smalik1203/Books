@@ -1,7 +1,7 @@
 # LearnLab Books
 
-Print-ready maths textbooks. **A4 trim, 210 × 297 mm**, with a B5 edition
-alongside. One folder per class.
+Print-ready maths textbooks. **Crown Quarto trim, 189 × 246 mm**, with A4 and
+B5 editions alongside. One folder per class.
 
 **Read [DESIGN.md](DESIGN.md) before writing a page.** Every page is assembled
 from a locked component library; the builder reports a design violation for any
@@ -11,7 +11,7 @@ page that invents its own colour, type, stroke or spacing.
 css/        the design system
               tokens.css      every colour, size, weight, stroke — the only source
               typography.css  two faces, five hierarchy levels
-              components.css  the eight locked components
+              components.css  the seven locked components
               diagram.css     the diagram vocabulary every figure must use
 fonts/      self-hosted Spectral + Vollkorn (woff2)
 assets/     vendored KaTeX
@@ -40,24 +40,31 @@ In a chapter you get:
 
 | control | what it does |
 |---|---|
-| **Trim / Bleed** | the reading page, or the 216 × 303 mm press sheet — trim plus 3 mm bleed |
-| **Pages / Spreads / Signature** | one page at a time; verso-and-recto side by side (the only way to check the mirroring); or the press sheet, 8/16/32 pages up |
-| **Fit / 50% / 100% / Actual size** | Actual size is true millimetres once you calibrate |
-| **Calibrate** | hold a bank card to the screen and drag; every card is 85.6 × 54 mm |
-| **Print…** | the browser dialog. Save as PDF honours the page size; a printer will scale to its paper |
-| **Reading PDF / Print PDF** | download either artefact |
-| **Build** | run the builder with `--pdf --bleed` and reload, without leaving the page |
+| **home / back** | two journeys, two buttons: home goes to a bare `/`, which chooses nothing — the front door opens on the chooser whatever was last looked at. Back goes to the chapter list this page came from, carrying its class and subject in the query. Beside them, where you are — class and chapter — over what you are looking at |
+| **Bleed** | a switch on the right beside Print PDF, since both answer which sheet you want: off is the trim, which is what the viewer opens on and what the reader gets. On shows the press sheet — trim, 3 mm bleed and the crop marks in the slug. The sizes are in its tooltip; nothing on the bar carries a measurement |
+| **Spreads** | the other switch, in the middle cluster past the fit toggle: off is one page at a time, on is verso-and-recto side by side — the only way to check the mirroring |
+| **page box, − / level / + / fit** | Chrome's PDF toolbar, in Chrome's order. A chapter opens at 100%. The level is typed — any percentage from 10 to 500, since a proof gets read at whatever makes one figure legible. Fit to page is a flat 71% on every screen, and 66% on the press sheet so the page stays the same size as Bleed goes on; fit to width measures the stage. The button shows the mode it is in — an upright sheet for the one, a wide one for the other — and returns to fit to page from any fixed percentage |
+| the keyboard | `↑` `↓` scroll, `←` `→` turn the page — or scroll sideways while there is anywhere sideways to go, turning the page at the far edge. Space and shift-space take a screenful, `PageUp`/`PageDown`/`Home`/`End` whole pages, `ctrl` with `+` `-` walks the zoom ladder and `ctrl+0` resets to 100%. All of it works in every mode, and whether the focus is on the studio or on the book |
+| **Print PDF** | download the press artefact |
+| **Build** | run the builder with `--pdf --bleed` and reload, without leaving the page. What it came to appears beside the button as a phrase — *28 pages · all clear*, or the clipping, violations and short pages it found |
 
-The **Signature** view imposes the chapter onto a press sheet and reports the
-page count, the signature count, how many blank pages the run leaves, the
+The **signature schematic** — no longer on the bar, but still served at
+`/impose/<class>/<chapter>?sig=32` — imposes the chapter onto a press sheet
+and reports the page count, the signature count, how many blank pages the run leaves, the
 imposed area and the standard sheet it fits with its waste percentage. Two
 rules hold for any folder — facing pages on one side of a sheet sum to
 (signature + 1), and the two sides of a leaf are consecutive — and the builder
 asserts both before drawing. Which slot each pair takes depends on the fold
 scheme, so it's a tool for checking structure, not a file to send to press.
 
-Editing anything under `pages/` or `css/` rebuilds **that chapter** and reloads
-the tab. `Ctrl+C` stops the server.
+**Start it once and leave it.** Editing anything under `pages/`, `css/` or
+`covers/` rebuilds that one and reloads the tab; editing the studio's own
+front end under `build/ui/` reloads the tab; and editing `build/serve.mjs`
+restarts the studio itself, because the viewer is compiled into it and node
+cannot swap that out from under itself. The open tabs come back on their
+own — the reload client reloads on a reconnect as well as on a message.
+
+`NO_WATCH=1` turns the self-restart off. `Ctrl+C` stops the server.
 
 The book is shown in an iframe, so the studio's stylesheet and the book's can
 never reach one another. For a quick look without the server, open
@@ -66,23 +73,26 @@ never reach one another. For a quick look without the server, open
 
 ## Editions
 
-One design system, two trims. `css/tokens.css` holds the standard — **A4,
-210 × 297 mm**. An edition sheet overrides only the size-dependent tokens:
-trim, margins, measure, type scale, figure widths, spacing rhythm. Colour,
-components, hierarchy and the diagram vocabulary are shared.
+One design system, three trims. `css/tokens.css` holds the standard — **Crown
+Quarto, 189 × 246 mm**. An edition sheet overrides only the size-dependent
+tokens: trim, margins, measure, type scale, figure widths, spacing rhythm.
+Colour, components, hierarchy and the diagram vocabulary are shared.
 
-A chapter is A4 unless its `chapter.json` names an edition:
+A chapter is Crown Quarto unless its `chapter.json` names an edition:
 
 ```json
-{ "class": "9", "number": "4", "title": "…", "edition": "b5" }
+{ "class": "9", "number": "4", "title": "…", "edition": "a4" }
 ```
 
-Every chapter in the book is A4 today. `css/edition-b5.css` is kept and still
-works — name the edition and the builder, the bleed sheet, the proofs and the
-studio all follow it.
+Every chapter in the book is Crown Quarto today. `css/edition-a4.css` and
+`css/edition-b5.css` are kept and still work — name the edition and the
+builder, the bleed sheet, the proofs and the studio all follow it.
 
 The page breaks differ between editions — a bigger page holds more, so each
-is fitted separately. `build/repack.mjs` does the measuring.
+is fitted separately, and the sources here are fitted to Crown Quarto.
+`build/repack.mjs` does the measuring; `build/sheet.mjs` is where every tool
+gets the trim from, so none of them can be measuring a different page than
+the one being printed.
 
 ## Palettes
 
@@ -140,8 +150,8 @@ node build/build.mjs class-9/ch04-algebraic-identities --pdf --png
 | *(none)* | assemble HTML + run the overflow check |
 | `--pdf` | print to PDF through headless Chrome |
 | `--png` | render one PNG proof per page at 2×, for review |
-| `--bleed` | also emit the press sheet: 216 × 303 mm — the trim plus 3 mm of bleed, no marks |
-| `--book` | bind the whole class into one volume — continuous folios |
+| `--bleed` | also emit the press sheet: 230 × 317 mm — the trim, 3 mm of bleed, and crop marks in a 7 mm slug |
+| `--book` | bind each of the class's volumes — continuous folios within one |
 
 A bare class name (`class-9`) builds every chapter under it.
 
@@ -152,9 +162,15 @@ node build/build.mjs class-9 --book --pdf
 ```
 
 Chapters built separately each start at folio 1. `--book` binds them into
-`build/class-9/class-9-book.pdf`: chapters in number order, folios running
-straight through, and a blank verso wherever a chapter would otherwise open
-on a left-hand page.
+`build/class-9/class-9-mathematics-i-book.pdf`: chapters in number order,
+folios running straight through, and a blank verso wherever a chapter would
+otherwise open on a left-hand page.
+
+A volume, not a class. A class may hold two — class 8 is Mathematics I and
+Mathematics II — and each binds on its own, because each is printed on its
+own. Chapters are grouped by the `subject` in `chapter.json`, and a volume
+takes its title page from the cover whose title and part compose that
+subject: `Mathematics` and part 1 make *Mathematics I*.
 
 Each chapter keeps its own palette. A palette file sets `--teal`, `--rust`
 and `--gold` at `:root`, which is right for a chapter printed alone but would
@@ -225,12 +241,13 @@ says so, which is what stops the fill check reporting it as unfinished:
 
 ## Grid and binding
 
-| | A4 — the standard | B5 — the edition |
-|---|---|---|
-| trim | 210 × 297 mm | 176 × 250 mm |
-| margins | top 26, bottom 20, **inside 30.5**, outside 25.5 mm | top 23, bottom 17, **inside 23**, outside 19 mm |
-| measure | 154 mm, a single column | 134 mm, a single column |
-| body type | Spectral, 11.5 pt / 1.43, **weight 500**, justified | Spectral, 10.5 pt / 1.43, **weight 500**, justified |
+| | Crown Quarto — the standard | A4 — an edition | B5 — an edition |
+|---|---|---|---|
+| trim | 189 × 246 mm | 210 × 297 mm | 176 × 250 mm |
+| margins | top 22, bottom 17, **inside 28**, outside 21 mm | top 26, bottom 20, **inside 30.5**, outside 25.5 mm | top 23, bottom 17, **inside 23**, outside 19 mm |
+| measure | 140 mm, a single column | 154 mm, a single column | 134 mm, a single column |
+| body type | Spectral, 10 pt / 1.42, **weight 500**, justified | Spectral, 11.5 pt / 1.43, **weight 500**, justified | Spectral, 10 pt / 1.42, **weight 500**, justified |
+| text block | 140 × 207 mm | 154 × 251 mm | 134 × 210 mm |
 
 **The book is bound, so the margins are mirrored, not symmetric.** The inside
 margin is the text inset plus a `--gutter-allowance` (5 mm), because a reader
@@ -242,12 +259,21 @@ That only works if the outside margin is the inset *alone*. Set it to the same
 number as the inside and the allowance cancels out: the block sits dead centre,
 and once binding has taken its few millimetres the inner margin is the narrower
 of the two — the opposite of what was intended. A4 was symmetric at 28/28 until
-this was measured on a rendered page.
+this was measured on a rendered page; Crown Quarto was drawn with the
+allowance in it from the start — 28 + 140 + 21 = 189.
 
-**The measure is deliberately not wider.** 154 mm holds a median of **72
-characters** per line — 2.9 alphabets — against the usual comfortable range of
-45–75, and 2.5 alphabets as the ideal. It is already at the long end, so the
-side margins are what the line length costs, not slack to be reclaimed.
+**The measure is deliberately not wider.** 140 mm at 10 pt holds a median of
+about **76 characters** per line, against the usual comfortable range of
+45–75. It is already at the long end, so the side margins are what the line
+length costs, not slack to be reclaimed.
+
+**The type came down a step with the trim, and had to.** Held at 11.5 pt the
+line would have run past 80 characters — but the deciding reason is the page,
+not the line. A block's height goes as the square of the type size over the
+measure, so type held still on a page 18% shorter makes every paragraph,
+panel and worked example a tenth larger as a share of it. Two worked examples
+that shared an A4 page will not share this one. 10 pt on 140 mm puts blocks
+back in the proportion to the page that they had at A4.
 Narrowing them would push the line past readable.
 
 Every mirrored thing keys off `.page--verso`, which the builder sets from the

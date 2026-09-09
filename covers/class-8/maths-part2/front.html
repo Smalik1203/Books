@@ -1,0 +1,114 @@
+<!-- ══════════ FRONT — Class 8 Part 2, direction: arc ══════════
+     Part 1 is comb and this is arc, so the two volumes of one class do
+     not read as the same book from across a room. The discs, the dot
+     fields and the arrangement are the direction's and are quoted from
+     the shared arc front unchanged.
+
+     The four figures are this volume's own, one from each corner of
+     it: the right triangle with squares on its legs (Baudhāyana), a
+     bar read as a percentage, four values balancing at their mean, and
+     a parallelogram sheared into the rectangle it shares an area with,
+     which is what the last chapter is called.
+     ============================================================ -->
+<div class="jacket__front">
+
+  <div class="front__art">
+    <svg class="jk-art" viewBox="0 0 176 250" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="Overlapping translucent discs behind a right triangle with a square
+                     on each leg, a bar showing forty-five per cent, four values balancing
+                     at their mean, and a parallelogram over the rectangle of equal area.">
+      <defs>
+        <!-- .arc-disc--coral fills from this gradient, and the gradient
+             lives in the panel rather than the stylesheet — which is
+             what lets a wine cover carry a gold disc where the cream
+             ones carry a coral one. -->
+        <linearGradient id="arc-coral" x1="0.1" y1="0" x2="0.9" y2="1">
+          <stop offset="0" stop-color="#f0c079"/>
+          <stop offset="0.55" stop-color="#e3a24b"/>
+          <stop offset="1" stop-color="#c07c2c"/>
+        </linearGradient>
+      </defs>
+
+      <!-- discs: a contained cluster, clear of the strapline at the foot -->
+      <circle class="arc-disc--ghost" cx="126" cy="176" r="30"/>
+      <circle class="arc-disc--coral" cx="54" cy="172" r="34"/>
+      <circle class="arc-disc--slate" cx="98" cy="150" r="34"/>
+
+      <!-- dot fields -->
+      <g class="arc-dot">
+        <circle cx="150" cy="88" r="0.8"/><circle cx="156" cy="88" r="0.8"/><circle cx="162" cy="88" r="0.8"/><circle cx="168" cy="88" r="0.8"/>
+        <circle cx="150" cy="94" r="0.8"/><circle cx="156" cy="94" r="0.8"/><circle cx="162" cy="94" r="0.8"/><circle cx="168" cy="94" r="0.8"/>
+        <circle cx="150" cy="100" r="0.8"/><circle cx="156" cy="100" r="0.8"/><circle cx="162" cy="100" r="0.8"/>
+      </g>
+      <g class="arc-dot--pale">
+        <circle cx="10" cy="146" r="0.8"/><circle cx="16" cy="146" r="0.8"/><circle cx="22" cy="146" r="0.8"/>
+        <circle cx="10" cy="152" r="0.8"/><circle cx="16" cy="152" r="0.8"/><circle cx="22" cy="152" r="0.8"/>
+      </g>
+
+      <!-- a right triangle with a square on each leg. Both squares are
+           square: the first draft made the one on the longer leg as tall
+           as the shorter, which is a rectangle and makes the caption
+           false. The hypotenuse belongs to the triangle and is drawn
+           once — the first draft laid a dashed copy over it. -->
+      <g transform="translate(12 84)">
+        <path class="arc-fig" d="M14 8 V22 H32 Z"/>
+        <path class="arc-fig" d="M14 8 H0 V22 H14"/>
+        <path class="arc-fig" d="M14 22 V40 H32 V22"/>
+        <text class="jk-fig-label" x="7" y="17">a</text>
+        <text class="jk-fig-label" x="23" y="34">b</text>
+        <text class="jk-fig-label" x="25" y="13">c</text>
+        <text class="jk-fig-label jk-fig-label--sm" x="16" y="50" text-anchor="middle">a² + b² = c²</text>
+      </g>
+
+      <!-- a bar read as a percentage -->
+      <g transform="translate(98 78)">
+        <path class="arc-fig" d="M0 0H44V14H0Z"/>
+        <path class="arc-fig arc-fig--dash" d="M19.8 0V14"/>
+        <g class="arc-fig">
+          <path d="M4.4 14v2.4M8.8 14v2.4M13.2 14v2.4M17.6 14v2.4M22 14v2.4M26.4 14v2.4M30.8 14v2.4M35.2 14v2.4M39.6 14v2.4"/>
+        </g>
+        <text class="jk-fig-label jk-fig-label--sm" x="22" y="26" text-anchor="middle">45% of 80 = 36</text>
+      </g>
+
+      <!-- four values, and the point they balance at -->
+      <g transform="translate(118 170)">
+        <path class="arc-fig" d="M0 14H40"/>
+        <g class="arc-fig">
+          <circle cx="4" cy="10" r="1.6"/><circle cx="4" cy="5" r="1.6"/>
+          <circle cx="8" cy="10" r="1.6"/><circle cx="32" cy="10" r="1.6"/>
+        </g>
+        <path class="arc-fig" d="M12 16 8 24H16Z"/>
+        <text class="jk-fig-label jk-fig-label--sm" x="20" y="32" text-anchor="middle">mean = 12</text>
+      </g>
+
+      <!-- the same area, a different shape: pale, wholly inside the coral
+           disc, so its near-white strokes vanish the moment they leave it -->
+      <g transform="translate(26 152)">
+        <path class="arc-fig arc-fig--pale arc-fig--dash" d="M0 26H36V0H0Z"/>
+        <path class="arc-fig arc-fig--pale" d="M0 26 12 0H48L36 26Z"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="front__head">
+    <div>
+      <div class="wordmark">Class<em>Bridge</em></div>
+      <p class="front__tagline">Textbooks for school mathematics.</p>
+    </div>
+    <div class="classmark">
+      <span class="jk-label">Class</span>
+      <span class="classmark__num">8</span>
+      <span class="classmark__part"><span class="jk-label">Part 2</span></span>
+    </div>
+  </div>
+
+  <div class="front__title">
+    <h1>MATHEMATICS</h1>
+    <span class="arc-rule" aria-hidden="true"></span>
+    <p class="front__subtitle">Textbook for Class VIII</p>
+  </div>
+
+  <p class="arc-strap">Every idea explained <span>·</span> demonstrated <span>·</span> practised<br>
+    The full NCERT Class 8 syllabus</p>
+</div>

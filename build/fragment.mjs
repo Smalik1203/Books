@@ -125,15 +125,16 @@ export function exampleParts(b) {
   return { tab: tab ? tab[0] : '', kids: body.kids };
 }
 
-export function splitExample(b, k) {
-  const p = exampleParts(b);
-  const head = '<div class="c-example c-example--head">\n  ' + p.tab +
-    '\n  <div class="c-example__body">\n' + p.kids.slice(0, k).join('\n') +
-    '\n  </div>\n</div>';
-  const tail = '<div class="c-example c-example--tail" data-cont="1">\n' +
-    '  <div class="c-example__body">\n' + p.kids.slice(k).join('\n') +
-    '\n  </div>\n</div>';
-  return [head, tail];
+/* Panels are never divided over a page break. This used to cut an
+   example in two, --head above the break and --tail below, so that a
+   short page could be filled; the reader got an open-bottomed box at
+   the foot of one page and a lidless one at the head of the next.
+   The builder now treats --head and --tail as a design violation.
+   A panel that will not fit moves whole to the next page, and the
+   white it leaves is closed by editing the prose at the join. */
+export function splitExample() {
+  throw new Error('splitExample: a panel may not be divided across a page break — '
+    + 'move it whole to the next page and close the gap in prose');
 }
 
 export function joinExample(prev, b) {

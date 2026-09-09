@@ -1,0 +1,25 @@
+{
+  "title": "Science",
+  "subtitle": "Textbook for Class IX",
+  "class": "9",
+  "imprint": "ClassBridge",
+  "copyright": "ClassBridge",
+  "year": 2026,
+  "edition_statement": "First edition, 2026.",
+  "isbn": "978-93-00000-03-3",
+  "url": "classbridge.in",
+  "_volume": "No part number, deliberately. volumeName() composes title + part, so a part here would make this volume \"Science I\" and the chapters carry \"Science\" — the binder would then find no title page and the studio would file this jacket under a subject that does not exist. Science is one book; if it ever becomes two, both cover.json and every chapter.json move together.",
+  "_direction": "lattice, where Class 9 mathematics is arc, so the two volumes of this class do not read as the same book from across a room. The packing earns its place twice: it is how cells pack in a tissue and how atoms pack in a solid, which are two of the thirteen chapters. The back is quoted from _shared/back.html and not from back-arc.html, because the arc panel's deep half reads --jk-deep and only the arc and comb directions define it — under lattice that curve would fill with nothing. No finish is declared: on a direction the finish is inert.",
+  "_spine": "Two numbers here, and they disagree on purpose. pages is measured and not guessed: a --book run of class-9 Science is 18 numbered pages plus 3 of front matter, rounded up to 24, which bulks to 1.8mm — too thin to carry the spine's own furniture, which clipped by 2.9mm before spineWidth was declared. So spineWidth is a forecast of the finished volume: the NCERT source runs to 271 pages, and 270pp of this stock bulks to 14.3mm, plus 0.5 of case. It is deliberately just over SLIM_SPINE (14mm) because that is where the spine furniture turns, and a wrap reviewed with the type running the wrong way is a wrap reviewed wrong. cover.mjs prints the computed bulk beside the declared width at every build, so the gap is visible until it closes. Re-derive pages from --book as chapters land, and replace this forecast with a printer's quote before press.",
+  "spineWidth": 14.8,
+  "pages": 24,
+  "paperCaliper": 0.106,
+  "caseAllowance": 0.5,
+  "content": [
+    "back.html",
+    "spine.html",
+    "front.html"
+  ],
+  "qr": "assets/qr-classbridge.svg",
+  "direction": "lattice"
+}

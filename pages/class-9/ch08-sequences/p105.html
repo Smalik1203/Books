@@ -1,0 +1,72 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A recursion that turns out to be familiar</div>
+        <p>
+          The rule is $t_1 = 1$, $t_n = t_{n-1} + 2n - 1$. Walk it.
+        </p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label">$t_2$</span>
+            <span>$= 1 + 3 = 4$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$t_3$</span>
+            <span>$= 4 + 5 = 9$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$t_4$</span>
+            <span>$= 9 + 7 = 16$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label">$t_5$</span>
+            <span>$= 16 + 9 = 25$</span>
+          </div>
+        </div>
+        <p>
+          The square numbers — and the recursion says why, if you read what is being
+          added. The amount added at step $n$ is $2n - 1$, which is the $n$th odd number.
+          So this rule is the picture from the first section of the chapter written as
+          algebra: each square is the one before it plus an L of odd many dots.
+        </p>
+        <p>
+          It is worth noticing that the explicit rule, $t_n = n^2$, is far the simpler of
+          the two here — and that the recursive one is what you would have found first
+          from the picture. Neither is the better rule; they are answers to different
+          questions.
+        </p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Two terms decide nothing</div>
+        <p>
+          For $3, 6, \ldots$ to be an AP the common difference is $3$, so the third term
+          is $9$. For it to be a GP the common ratio is $2$, so the third term is $12$.
+          Both continuations are perfectly legitimate.
+        </p>
+        <p>
+          And they are not the only two. The third term could be $7$, or $-40$, or
+          anything at all: some rule can be written to produce it. Two terms fix a
+          difference and a ratio, and that is all they fix.
+        </p>
+        <p>
+          Which is why a question that shows you a few terms and asks what comes next is
+          strictly speaking unanswerable, and why it is asked anyway. What is really
+          wanted is the <em>simplest</em> rule that fits — and simplest is a judgement,
+          not a calculation. That judgement is usually right, and it is worth knowing
+          that it is a judgement.
+        </p>
+        <p>
+          Three terms are no better in principle, but they are far better in practice,
+          because now the two tests can disagree. Given $3, 6, 9$ the differences are
+          equal and the ratios are not; given $3, 6, 12$ it is the other way round. With
+          only two terms both tests pass, which is precisely why two terms settle
+          nothing.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

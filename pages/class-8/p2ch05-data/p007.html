@@ -1,0 +1,59 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The median counts values; the mean weighs them</div>
+        <p>Both move up when a large value is added and down when a small one is. The
+        difference is by how much. The mean asks each value how far away it is; the
+        median asks only which side it is on. A value a long way out therefore drags the
+        mean and barely touches the median.</p>
+      </div>
+
+      <p>Section 5.2 had exactly such a set. The values $10$, $10$, $11$, $17$ have a
+      mean of $12$ and a median of $10.5$, the average of the two middle values. Drag the
+      $17$ out to $37$ and the mean climbs all the way to $17$ — but the sorted order is
+      unchanged, the two middle values are still $10$ and $11$, and the median stays at
+      $10.5$ exactly.</p>
+
+      <p>Neither is the right answer and neither is wrong. They are answers to two
+      questions, and which one a reader wants depends on whether the far-out value is the
+      point of the data or a distraction from it.</p>
+
+      <h2><span class="badge">5.6</span><span class="name">An Average with a Piece Missing</span></h2>
+
+      <p>Everything so far has run forwards: here is the data, find the average. Run it
+      backwards and the average becomes a piece of given information like any other, with
+      an unknown sitting inside it — which makes it an equation.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Coach Balwan wrote down the weights, in kilograms, of his ten kushti
+          players: $42$, $40$, $39$, $33$, $48$, $38$, $42$, $35$, $32$ and one more that
+          has since been smudged. He also wrote that the mean was $39.2$ kg. What was the
+          missing weight?</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">call it w</span>
+              <span>$\dfrac{42 + 40 + 39 + 33 + 48 + 38 + 42 + 35 + 32 + w}{10} = 39.2$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">the nine add to</span>
+              <span>$349$, so $349 + w = 392$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label work__label--wide">giving</span>
+              <span>$w = 392 - 349 = 43$ kg</span>
+            </div>
+          </div>
+          <p>The mean was used in reverse: instead of dividing a known total by ten, the
+          known mean was multiplied by ten to recover the total. A mean and a count
+          between them carry the sum, and the sum is what the missing value is hiding
+          in.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

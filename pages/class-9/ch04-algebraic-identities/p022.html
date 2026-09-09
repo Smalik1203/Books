@@ -2,76 +2,76 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example c-example--tail">
+      <div class="c-example">
+        <div class="c-example__tab">Example 14</div>
         <div class="c-example__body">
           <p>
-            One quantity is still missing: $xy + xz + yz$. Nothing in the
-            question gives it directly — but the squared identity from
-            Section 4.4 does, because it is the only place that quantity ever
-            appears:
+            Write $8n^3 - 60n^2m + 150nm^2 - 125m^3$ in the form $(a - b)^3$.
+            What are $a$ and $b$?
+          </p>
+          <p>
+            The alternating signs point to the difference identity. The two
+            cubes at the ends are $8n^3 = (2n)^3$ and $125m^3 = (5m)^3$, so try
+            $a = 2n$ and $b = 5m$:
           </p>
           <div class="work">
-            <p>$(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + xz + yz)$</p>
-            <p>$100 = 38 + 2(xy + xz + yz), \quad\text{so}\quad xy + xz + yz = 31$</p>
+            <p>$8n^3 - 60n^2m + 150nm^2 - 125m^3$</p>
+            <p>$= (2n)^3 - 3(2n)^2(5m) + 3(2n)(5m)^2 - (5m)^3$</p>
+            <p>$= (2n - 5m)^3$</p>
           </div>
-          <p>Putting that back:</p>
-          <div class="work">
-            <p>$x^3 + y^3 + z^3 = 455 - 10(31) = 455 - 310 = 145$</p>
-          </div>
+          <p>
+            The two middle terms confirm it: $3(2n)^2(5m) = 60n^2m$ and
+            $3(2n)(5m)^2 = 150nm^2$.
+          </p>
         </div>
       </div>
 
-      <p>
-        Notice that the three numbers were never found. They did not need to be:
-        the identities work with the sums and products directly.
-      </p>
-
-      <h2><span class="badge">4.8</span><span class="name">Simplifying Rational Expressions</span></h2>
+      <h3>Playing with what you have</h3>
 
       <p>
-        Everything so far has been about turning expressions into products. Here
-        is where that pays off. A <span class="term">rational expression</span>
-        is one algebraic expression divided by another, and simplifying it means
-        the same thing as simplifying a fraction of numbers: cancel whatever the
-        top and the bottom have in common.
+        New identities also come from multiplying things out and seeing what
+        survives. Try these two products with the distributive property:
       </p>
 
-      <p>
-        You cannot cancel a term, only a factor. So before anything can be
-        cancelled, both the numerator and the denominator have to be
-        <em>factorised</em> — which is exactly what this chapter has been
-        teaching you to do.
-      </p>
-
-      <div class="c-example c-example--head">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>
-            Simplify $\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100}$, given that
-            $5x^2 + 5x - 100 \neq 0$.
-          </p>
-          <p>
-            Factorise each part. For the numerator, find two numbers with sum $-7$
-            and product $12$. Both are negative, since the product is positive
-            and the sum is not; the pair is $-3$ and $-4$:
-          </p>
-          <div class="work">
-            <p>$x^2 - 7x + 12 = (x - 3)(x - 4)$</p>
-          </div>
-          <p>
-            The denominator needs a step first — all three terms are multiples
-            of 5, so take that out before hunting for a pair. Then the sum is
-            $1$ and the product $-20$, which gives $5$ and $-4$:
-          </p>
-          <div class="work">
-            <p>$5x^2 + 5x - 100 = 5\left(x^2 + x - 20\right) = 5(x - 4)(x + 5)$</p>
-          </div>
-          <p>Now the fraction can be written as a product of factors:</p>
-          <div class="work work--centred">
-            <p>$\dfrac{x^2 - 7x + 12}{5x^2 + 5x - 100} = \dfrac{(x - 3)(x - 4)}{5(x - 4)(x + 5)}$</p>
-          </div>
-        </div>
+      <div class="work work--centred">
+        <p>$(x - y)(x^2 + xy + y^2)
+          \qquad\text{and}\qquad
+          (x + y)(x^2 - xy + y^2)$</p>
       </div>
+
+      <p>
+        Take the first. Multiply every term of the second bracket by $x$, then
+        by $-y$, and line the results up:
+      </p>
+
+      <div class="work">
+        <p>$(x - y)(x^2 + xy + y^2) = x^3 + x^2y + xy^2 - x^2y - xy^2 - y^3$</p>
+        <p>$= x^3 - y^3$</p>
+      </div>
+
+      <p>
+        Everything in the middle cancels in pairs — $x^2y$ against $-x^2y$, and
+        $xy^2$ against $-xy^2$ — and two terms are left.
+      </p>
+
+      <p>So that product is an identity in its own right:</p>
+
+      <div class="eq eq--anchor">
+        $$(x - y)\left(x^2 + xy + y^2\right) = x^3 - y^3$$
+      </div>
+
+      <p>
+        It is worth noticing how little survives. Six terms come out of the
+        multiplication and four of them destroy each other in pairs, which is
+        why an identity this useful can be stated in seven symbols.
+      </p>
+
+      <p>
+        Check it for yourself with a few values of $x$ and $y$. Then look at the
+        second product, $(x + y)(x^2 - xy + y^2)$, and predict its value before
+        multiplying it out. Only two signs differ from the first — what does
+        that do to the answer?
+      </p>
 
     </div>
   </div>

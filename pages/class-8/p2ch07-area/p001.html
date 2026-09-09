@@ -1,0 +1,73 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">7</div>
+    <h1 class="chapterhead__title">The Same Area, a Different Shape</h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- A parallelogram with one end cut off and carried to the other,
+             which makes it a rectangle. Nothing is drawn left of x=110:
+             the title box runs into this one. -->
+        <path class="dg-fill-a" d="M132 88 L172 88 L192 52 L132 52 Z"/>
+        <path class="dg-fill-c" d="M112 88 L132 88 L132 52 Z"/>
+        <path class="dg-ghost"  d="M172 88 L192 88 L192 52 Z"/>
+        <path class="dg-line"   d="M112 88 L172 88 L192 52 L132 52 Z"/>
+        <path class="dg-thin"   d="M132 52 L132 88"/>
+
+        <line class="dg-move" x1="126" y1="42" x2="180" y2="42" marker-end="url(#dg-arrow)"/>
+
+        <text class="dg-dim-label" x="152" y="106" text-anchor="middle">a cut and a move</text>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">7.1</span><span class="name">Introduction</span></h2>
+
+      <p>Divide a square into four parts of equal area. Two ways come to anybody at once
+      — four strips, or four smaller squares — and a third, cutting along both diagonals,
+      comes almost as quickly. After that it begins to look as though the supply has run
+      out.</p>
+
+      <p>It has not. Take any of those divisions and push one of the cutting lines
+      sideways: whatever area a part loses along one edge it gains along the other, so
+      all four parts still match. The line can be pushed by any amount at all, so there
+      are infinitely many divisions, and hardly any of them make four congruent
+      pieces.</p>
+
+      <p>That is the idea this whole chapter turns on. <span class="term">Area</span>
+      does not care what shape a region is in. Cut a shape into pieces and lay the pieces
+      down somewhere else, and the area you finish with is the area you began with,
+      because nothing was added and nothing thrown away.</p>
+
+      <p>Every area formula in this chapter is a record of one such rearrangement. The
+      first book found the area of a trapezium by doubling it into a parallelogram, and
+      took the parallelogram's own rule on trust; here that rule is earned, by cutting a
+      triangle off one end of the parallelogram and carrying it to the other. The picture
+      on this page is the whole argument.</p>
+
+      <h2><span class="badge">7.2</span><span class="name">Counting Squares</span></h2>
+
+      <p>A rangoli is to be filled in evenly with coloured powder, and there are two
+      patches to choose between: one $7$ cm by $4$ cm, the other $8$ cm by $3$ cm. Which
+      will take more powder?</p>
+
+      <p>The question is settled by covering each patch with unit squares — squares of
+      side $1$ cm — laid down without gaps and without overlaps, and counting them.</p>
+
+    </div>
+  </div>
+</section>

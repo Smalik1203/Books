@@ -2,72 +2,125 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-          <p>Factorise $x^2 + 7x + 12$.</p>
-          <p>
-            Compare it with $x^2 + (a + b)x + ab$. Matching terms gives two
-            conditions at once:
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">sum</span>
-              <span>$a + b = 7$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">product</span>
-              <span>$ab = 12$</span>
-            </div>
-          </div>
-          <p>
-            Only 3 and 4 satisfy both, in either order, so
-            $x^2 + 7x + 12 = (x + 3)(x + 4)$.
-          </p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
         </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-          <p>Factorise $x^2 + 11x + 30$.</p>
-          <p>
-            Here $a + b = 11$ and $ab = 30$, and both must hold at once — which
-            is what rules most candidates out: 2 and 15 multiply to 30 but add
-            to 17, 3 and 10 add to 13. The factor pairs of 30 leave 5 and 6.
-          </p>
-          <div class="work">
-            <p>$x^2 + 11x + 30 = x^2 + 5x + 6x + 30 = (x + 5)(x + 6)$</p>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Look at where each number on the right came from. Then generalise:
+              what is $(x + a)(x + b)$?
+            </p>
           </div>
         </div>
       </div>
 
       <p>
-        So far both numbers have been positive. What changes when a sign does?
+        Every rectangle so far has had sides of the form $x + \text{something}$,
+        so exactly one $x^2$-tile appeared each time. Change that and the
+        picture grows. Fig. 4.8 shows a rectangle with sides $2x + 3$ and
+        $3x + 1$: two $x$-tiles along one edge, three along the other, so the
+        $x^2$-tiles now fill a block rather than sit alone.
       </p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 12</div>
-        <div class="c-example__body">
-          <p>Factorise $x^2 - 5x + 6$.</p>
-          <p>
-            The coefficient of $x$ is negative, so comparing with
-            $x^2 + (a + b)x + ab$ gives
-          </p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">sum</span>
-              <span>$a + b = -5$</span>
+      <figure class="c-figure c-figure--sm">
+        <svg viewBox="0 0 300 262" role="img"
+             aria-label="Algebra tiles forming a rectangle of width three x plus one and height two x plus three: six x squared tiles, eleven x tiles, and three unit tiles">
+      
+          <!-- x = 3 units, unit = 22px. Width 3x+1 = 10 units, height 2x+3 = 9. -->
+          <!-- six x²-tiles: 3 across, 2 down, each 66 x 66 -->
+          <g class="dg-line dg-fill-a">
+            <rect x="56"  y="40"  width="66" height="66"/>
+            <rect x="122" y="40"  width="66" height="66"/>
+            <rect x="188" y="40"  width="66" height="66"/>
+            <rect x="56"  y="106" width="66" height="66"/>
+            <rect x="122" y="106" width="66" height="66"/>
+            <rect x="188" y="106" width="66" height="66"/>
+          </g>
+          <g class="dg-label" text-anchor="middle">
+            <text x="89"  y="78">x²</text><text x="155" y="78">x²</text><text x="221" y="78">x²</text>
+            <text x="89"  y="144">x²</text><text x="155" y="144">x²</text><text x="221" y="144">x²</text>
+          </g>
+      
+          <!-- two x-tiles down the right edge -->
+          <g class="dg-line dg-fill-b">
+            <rect x="254" y="40"  width="22" height="66"/>
+            <rect x="254" y="106" width="22" height="66"/>
+          </g>
+      
+          <!-- nine x-tiles below, three across by three down -->
+          <g class="dg-line dg-fill-b">
+            <rect x="56"  y="172" width="66" height="22"/><rect x="122" y="172" width="66" height="22"/><rect x="188" y="172" width="66" height="22"/>
+            <rect x="56"  y="194" width="66" height="22"/><rect x="122" y="194" width="66" height="22"/><rect x="188" y="194" width="66" height="22"/>
+            <rect x="56"  y="216" width="66" height="22"/><rect x="122" y="216" width="66" height="22"/><rect x="188" y="216" width="66" height="22"/>
+          </g>
+      
+          <!-- three unit tiles in the corner -->
+          <g class="dg-line dg-fill-d">
+            <rect x="254" y="172" width="22" height="22"/>
+            <rect x="254" y="194" width="22" height="22"/>
+            <rect x="254" y="216" width="22" height="22"/>
+          </g>
+      
+          <line class="dg-dim" x1="56" y1="26" x2="276" y2="26"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="166" y="19" text-anchor="middle">3x + 1</text>
+      
+          <line class="dg-dim" x1="40" y1="40" x2="40" y2="238"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-dim-label" x="32" y="143" text-anchor="end">2x + 3</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.8</span> &nbsp;Algebra tiles representing
+          $(2x + 3)(3x + 1)$.
+        </figcaption>
+      </figure>
+
+      <p>
+        Count what the picture contains and you have the product without
+        multiplying anything: six large squares of area $x^2$, eleven strips of
+        area $x$, and three unit tiles. That is $6x^2 + 11x + 3$, and the two
+        edge labels are the factors it came from.
+      </p>
+
+      <p>
+        Keep the tiles in mind for the section that follows, because
+        factorising is this picture read backwards: you are handed the loose
+        tiles and asked what rectangle they make. Most collections make none.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M10 21h4"/>
+            <path d="M12 3a5.5 5.5 0 0 0-3.3 9.9c.5.4.8 1 .9 1.6l.1.5h4.6l.1-.5c.1-.6.4-1.2.9-1.6A5.5 5.5 0 0 0 12 3z"/>
+            <path d="M12 1V0M3.5 5l-.8-.8M20.5 5l.8-.8M2 12H1M23 12h-1"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>
+              Count the tiles of each kind in Fig. 4.8. What is the area
+              $(2x + 3)(3x + 1)$?
+            </p>
+            <p>Then fill in the blanks so that the general statement is true:</p>
+            <div class="work work--centred">
+              <p>$(px + a)(qx + b) =$ (<span class="blank"></span>)$x^2$ + (<span class="blank"></span>)$x$ + <span class="blank"></span></p>
             </div>
-            <div class="work__row">
-              <span class="work__label">product</span>
-              <span>$ab = 6$</span>
-            </div>
+            <p class="c-reflect__hint">
+              Check your answer by multiplying the brackets out with the
+              distributive property. The two routes must agree.
+            </p>
           </div>
-          <p>
-            A positive product with a negative sum means both are negative:
-            $-2$ and $-3$, in either order.
-          </p>
         </div>
       </div>
 

@@ -1,0 +1,71 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 140 98" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A unit square shaded, with the square standing on its diagonal outlined and marked as having area 2 and side c">
+      
+            <path class="dg-fill-a" d="M30 12 H70 V52 H30 Z"/>
+            <path class="dg-line"   d="M30 12 H70 V52 H30 Z"/>
+            <path class="dg-line"   d="M30 52 L70 12 L110 52 L70 92 Z"/>
+            <path class="dg-thin"   d="M30 52 L70 12"/>
+      
+            <text class="dg-label dg-label--sm" x="50" y="8" text-anchor="middle">1</text>
+            <text class="dg-label dg-label--sm" x="24" y="34" text-anchor="middle">1</text>
+            <text class="dg-label dg-label--sm" x="96" y="28">c</text>
+            <text class="dg-label dg-label--sm" x="86" y="66">area 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.5</span> The shaded square has area $1$,
+          so the square on its diagonal has area $2$. That square's side is the
+          hypotenuse $c$.</figcaption>
+        </figure>
+      </div>
+
+      <p>We do not know $c$, but we know the area of the square built on it — Section 2.2
+      settled that, and it is $2$. A square of side $c$ has area $c \times c$, so</p>
+
+      <div class="eq eq--anchor">$$c^2 = 2, \qquad\text{that is,}\qquad c = \sqrt{2}.$$</div>
+
+      <p>The diagonal of a square of side $1$ is $\sqrt{2}$. Which raises the obvious
+      question: what number is that?</p>
+
+      <p>It can be cornered. Squaring is the only tool needed: if $c^2 = 2$, then any
+      number whose square is below $2$ is too small, and any number whose square is above
+      $2$ is too big. Each line below traps $\sqrt{2}$ between two numbers a little
+      closer together than the last.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1^2 = 1$, $\ 2^2 = 4$</span>
+          <span>so $1 < \sqrt{2} < 2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1.4^2 = 1.96$, $\ 1.5^2 = 2.25$</span>
+          <span>so $1.4 < \sqrt{2} < 1.5$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1.41^2 = 1.9881$, $\ 1.42^2 = 2.0164$</span>
+          <span>so $1.41 < \sqrt{2} < 1.42$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1.414^2 = 1.999396$</span>
+          <span>so $1.414 < \sqrt{2} < 1.415$</span>
+        </div>
+      </div>
+
+      <p>The trap can be tightened as long as you have patience, and it never shuts. The
+      decimal runs $1.41421356\ldots$ and goes on for ever without falling into a
+      repeating pattern. No fraction gives it exactly — which is a claim worth being
+      suspicious of, and one you will meet a proof of later.</p>
+
+      <p>Baudhāyana knew a value, and set it down as a sum of fractions rather than a
+      decimal, since decimals were still more than a thousand years away.</p>
+
+      <div class="eq">$$\sqrt{2} \;\approx\; 1 + \frac13 + \frac{1}{3 \times 4}
+      - \frac{1}{3 \times 4 \times 34} \;=\; 1.4142156\ldots$$</div>
+
+    </div>
+  </div>
+</section>

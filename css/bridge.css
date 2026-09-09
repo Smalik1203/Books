@@ -244,9 +244,40 @@
   border-top: var(--stroke-rule) solid var(--gold);
   border-bottom: var(--stroke-hair) solid var(--rule);
 }
-.c-try__tag {
+.c-try p { margin: 0; }
+.c-try p + p { margin-top: var(--space-hair); }
+.c-try .c-parts { margin-top: var(--space-hair); }
+
+/* ---- A problem and the answer to it -------------------------
+   Stage 2 sets a question and then answers it in full. That is one
+   item, and it used to read as two: the question an open band ruled
+   in the attention colour, the answer a filled panel in the action
+   colour with a tab of its own — two colours and two shapes for the
+   two halves of the same thing.
+
+   Now they share one field. One rule opens the problem, one hairline
+   closes the answer, both in the action colour because a problem
+   worked through is a worked instance, and the turn between them is
+   a word rather than a panel of its own.
+
+   Both halves stay whole. A page ends on a finished item — a reader
+   never turns the page in the middle of an answer — so the answer is
+   one block and the packer places it entire or not at all.
+
+   That fixes the size of an item, and the item has to earn its space:
+   a problem and its answer together must come to about half the text
+   block, or two of them will not sit on one page and every page in the
+   stage prints half empty. Length is the thing to cut, not the rule. */
+.c-problem {
+  break-inside: avoid;
+  break-after: avoid;
+  margin: var(--space-step) 0 0;
+  padding: var(--space-tight) 0 0;
+  border-top: var(--stroke-rule) solid var(--rust);
+}
+.c-problem__tag {
   display: inline-block;
-  background: var(--gold);
+  background: var(--rust);
   color: var(--paper);
   font-family: var(--font-display);
   font-size: var(--size-caption);
@@ -258,21 +289,43 @@
   border-radius: var(--radius);
   margin-bottom: var(--space-hair);
 }
-.c-try p { margin: 0; }
-.c-try p + p { margin-top: var(--space-hair); }
-.c-try .c-parts { margin-top: var(--space-hair); }
+.c-problem p { margin: 0; }
+.c-problem p + p { margin-top: var(--space-hair); }
+.c-problem .c-parts { margin-top: var(--space-hair); }
 
-/* The solution that follows a tried question is an example panel,
-   and the question has already set the space between them. */
-.c-try + .c-example { margin-top: 0; }
+.c-solution {
+  break-inside: avoid;
+  margin: 0 0 var(--space-step);
+  padding: 0 0 var(--space-rest);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+/* The turn from the question to its answer: a word, and the space
+   around it. It leads the block, so it carries the gap that the
+   problem's own padding no longer has to. */
+.c-solution__turn {
+  margin: var(--space-tight) 0 var(--space-hair);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.c-solution p { margin: 0; }
+.c-solution p + p { margin-top: var(--space-hair); }
 
-/* ---- A solution traced, not just written --------------------
-   The worked problems of stage 2 show the thinking, one row per
-   move: what is noticed, what is tried, why it works, the check,
-   and the trap a hurried solver falls into. A row runs to
+/* ---- A row with a label beside it ---------------------------
+   Used on the answer page, where each row is one question's id
+   and the reason the other options are wrong. A row runs to
    several lines, so its label sits on the first line instead of
-   floating centred beside the block, and the label column is
-   only as wide as the longest of those five words. */
+   floating centred beside the block.
+
+   This comment used to describe the rows as one per move —
+   noticed, tried, why, check, trap — which is the ten-stage draft
+   §6a records being thrown out for reading as a coaching module,
+   in the very words §6a bans. Stage 2 has never used this: its
+   solutions are .c-problem and .c-solution, and their steps are
+   algebra, not named moves. */
 .work--trace .work__row { align-items: flex-start; margin-bottom: 1.4mm; }
 .work--trace .work__label { flex: none; min-width: 14mm; }
 

@@ -2,72 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 2 &middot; Try it first</span>
-        <p>An auto-rickshaw charges &#8377;$25$ for the first $2$ km and
-          &#8377;$15$ for every kilometre after that. The fare for $n$ km is
-          $15n - 5$ rupees for $n \geq 2$. The fare for a $1$ km ride is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>&#8377;$10$</li>
-          <li>&#8377;$15$</li>
-          <li>&#8377;$25$</li>
-          <li>&#8377;$40$</li>
-        </ol>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Solution 2</div>
-        <div class="c-example__body">
-          <p>
-            The rule $15n - 5$ was found in Example 8, and it was found from
-            the rows for $2$ km onwards. It says nothing about $1$ km. For
-            that we go back to the words. The first $2$ km cost &#8377;$25$,
-            so a $1$ km ride costs &#8377;$25$, option (c).
-          </p>
-          <p>
-            Option (a) is what the rule gives at $n = 1$. The rule works
-            there as arithmetic, but not as a fare. Option (b) is the rate
-            for each extra kilometre. Option (d) is the fare for $3$ km. A
-            rule fitted to part of a table holds only on that part. Before
-            using a rule, ask where it came from.
-          </p>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
         </div>
       </div>
 
-      <div class="c-try">
-        <span class="c-try__tag">Problem 3 &middot; Try it first</span>
-        <p>A candle is $24$ cm tall two hours after it is lit and $15$ cm
-          tall five hours after. It burns at a steady rate. Its height when
-          it was lit was</p>
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
+        <p>A linear polynomial has $p(2) = 7$ and $p(5) = 16$. Then $p(0)$
+          is</p>
         <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$18$ cm</li>
-          <li>$27$ cm</li>
-          <li>$30$ cm</li>
-          <li>$33$ cm</li>
+          <li>$1$</li>
+          <li>$3$</li>
+          <li>$4$</li>
+          <li>$10$</li>
         </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Solution 3</div>
-        <div class="c-example__body">
-          <p>
-            A steady rate means linear decay, so the height is $at + b$
-            with $a$ negative. In three hours the candle lost $9$ cm, so it
-            loses $3$ cm an hour, and $a = -3$. When it was lit, $t = 0$,
-            which is two hours before the first reading. In those two hours
-            it lost $6$ cm, so at the start it was
-          </p>
-          <div class="work">
-            <p>$24 + 6 = 30$ cm</p>
-          </div>
-          <p>
-            Option (c). The rule is $h = 30 - 3t$, and at $t = 5$ it gives
-            $15$. Option (b) adds only one hour's loss. Option (d) adds three
-            hours' loss, the whole gap between the readings. Option (a)
-            takes $6$ cm away, going forward in time instead of back.
-          </p>
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>
+          Write it as $p(x) = ax + b$. Three steps in $x$ carry $p$ from
+          $7$ to $16$.
+        </p>
+        <div class="work work--list">
+          <p>$3a = 16 - 7 = 9$</p>
+          <p>$a = 3$</p>
         </div>
+        <p>
+          From $x = 2$ back to $x = 0$ is two steps, so $p$ falls by $2a$.
+        </p>
+        <div class="work work--list">
+          <p>$p(0) = 7 - 2(3) = 1$</p>
+        </div>
+        <p>
+          Option (a). Check: $p(x) = 3x + 1$ gives $p(5) = 16$. Option (b)
+          is the slope, not the value at $0$. Option (c) takes one step
+          back instead of two. Option (d) goes forward three steps instead
+          of back two.
+        </p>
       </div>
+
+      <p>
+        There is a second road to the same place, and it is worth seeing
+        because it does not depend on the steps being whole ones. Write down
+        what the two given values say, exactly as they stand.
+      </p>
+      <div class="work work--list">
+        <p>$2a + b = 7$</p>
+        <p>$5a + b = 16$</p>
+      </div>
+      <p>
+        Subtract the first from the second. The $b$ disappears — it is the same
+        $b$ in both lines, and subtracting removes it without any arrangement
+        on our part — leaving $3a = 9$, so $a = 3$; and then either line gives
+        $b = 1$.
+      </p>
+      <p>
+        That is the step-counting written out formally, and it is the reason
+        the step-counting worked. Two conditions, two unknowns, and one
+        subtraction that clears the constant away.
+      </p>
 
     </div>
   </div>

@@ -2,78 +2,78 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>$142857 \times 1 = 142857$</p>
-        <p>$142857 \times 2 = 285714$</p>
-        <p>$142857 \times 3 = 428571$</p>
-        <p>$142857 \times 4 = 571428$</p>
-        <p>$142857 \times 5 = 714285$</p>
-        <p>$142857 \times 6 = 857142$</p>
-      </div>
-
-      <p>
-        Every answer uses the same six digits in the same cyclic order — they
-        have only been rotated. A number that behaves this way is called a
-        <span class="term">cyclic number</span>, and $142857$ is the smallest
-        of them. Nothing was arranged here; it falls out of the long division
-        by 7, whose six possible remainders come round in a fixed order.
-      </p>
-
-      <h3>What an irrational decimal looks like</h3>
-
-      <p>
-        Irrational numbers have decimal expansions that never end and never
-        settle into a cycle. There is no repeating block, however far you look:
-      </p>
-
-      <div class="work work--list">
-        <p>$\sqrt{2} = 1.4142135623730950488\ldots$</p>
-        <p>$\pi = 3.1415926535897932384\ldots$</p>
-      </div>
-
-      <p>
-        This gives a clean test in both directions. Terminating or repeating
-        means rational; non-terminating and non-repeating means irrational.
-        And it explains the earlier proof from a second angle: if $\sqrt{2}$
-        were $\tfrac{p}{q}$, its expansion would have had to fall into a cycle
-        of at most $q - 1$ digits, and it never does.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Write $0.\overline{6}$ in the form $\dfrac{p}{q}$.</p>
           <p>
-            Beware of $1.01001000100001\ldots$ — the pattern is obvious, but no
-            fixed block repeats. A pattern you can describe is not the same as
-            a cycle.
+            Now the digits never stop, so there is nothing to read off. The
+            trick is to make two numbers whose infinite tails are
+            <em>identical</em>, and then subtract, so that the tails cancel and
+            leave something finite behind.
+          </p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label">Step 1</span>
+              <span>Let $x = 0.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 2</span>
+              <span>One digit repeats, so multiply by $10^1$:
+              $\;10x = 6.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 3</span>
+              <span>Subtract. Both tails are $.6666\ldots$, so they vanish:
+              $\;10x - x = 6.6666\ldots - 0.6666\ldots$</span>
+            </div>
+            <div class="work__row">
+              <span class="work__label">Step 4</span>
+              <span>$9x = 6$, so $x = \dfrac{6}{9} = \dfrac{2}{3}$.</span>
+            </div>
+          </div>
+          <p>
+            Check: $2 \div 3 = 0.6666\ldots$ Notice why the multiplier was 10
+            and not 100 — one repeating digit needs a shift of exactly one
+            place, or the tails would not have lined up.
           </p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.5</div>
-        <ol class="c-questions">
-          <li>
-              Without dividing, say which of $\dfrac{7}{20}$, $\dfrac{4}{15}$ and
-              $\dfrac{13}{250}$ have terminating decimals and which repeat. Then
-              do the divisions and check yourself.
-            </li>
-        </ol>
+      <p>
+        The multiplier there was chosen to match the cycle: one repeating digit,
+        one shift. That is not a rule to memorise but the reason the two tails
+        lined up, and a longer cycle will need a longer shift.
+      </p>
+
+      <p>
+        It is worth saying plainly what has just been done, because the same
+        move settles every repeating decimal there is. An infinite tail cannot
+        be subtracted away on its own — but two numbers carrying the
+        <em>identical</em> tail can be subtracted from each other, and the
+        tails go together. Choosing the multiplier is nothing more than
+        arranging for those two tails to match.
+      </p>
+
+      <p>
+        It is worth seeing the move fail once, because that is what shows which
+        part of it was doing the work. Suppose the same shift of one place were
+        tried on $0.\overline{45}$, whose cycle is two digits long.
+      </p>
+
+      <div class="work work--centred">
+        <p>$10x = 4.545454\ldots$ &nbsp;and&nbsp; $x = 0.454545\ldots$</p>
+        <p>$9x = 4.090909\ldots$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              Work out $\dfrac{3}{13}$ by long division and identify the
-              repeating block. Now do $\dfrac{1}{13}$ and $\dfrac{2}{13}$. What
-              do the three blocks have to do with one another?
-            </li>
-        </ol>
-      </div>
+      <p>
+        Nothing is wrong with that line — it is perfectly true — but it has not
+        got us anywhere, because the right-hand side is still an infinite
+        decimal. The tails did not match, so they did not cancel, and we are
+        left with the same kind of object we began with. The multiplier has to
+        move the number by a whole cycle, and that is the only thing being asked
+        of it.
+      </p>
 
     </div>
   </div>

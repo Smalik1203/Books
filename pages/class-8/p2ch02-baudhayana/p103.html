@@ -1,0 +1,71 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The square on a diagonal, twice over</div>
+        <p>A rectangle's diagonal cuts it into two right-angled triangles whose short
+        sides are the rectangle's own sides.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">diagonal</span>
+            <span>$d^2 = 8^2 + 15^2 = 64 + 225 = 289$, so $d = 17$ cm</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">square on it</span>
+            <span>$17^2 = 289$ cm<sup>2</sup></span>
+          </div>
+        </div>
+        <p>The second answer was already written down in the first line, because $d^2$
+        <em>is</em> the area of the square on $d$. That is the theorem's real shape:
+        it is about areas, and the lengths are what we take out of it afterwards.</p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">A triple in disguise</div>
+        <p>An area needs a base and a perpendicular height, and this triangle offers
+        neither — unless it happens to be right-angled. Test it.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">test</span>
+            <span>$12^2 + 16^2 = 144 + 256 = 400 = 20^2$</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">so</span>
+            <span>area $= \tfrac12 \times 12 \times 16 = 96$</span>
+          </div>
+        </div>
+        <p>It is $(3,4,5)$ multiplied by $4$, which is worth spotting: the two short
+        sides are the base and the height of each other, so no extra line has to be
+        drawn.</p>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">The ladder that slips</div>
+        <p>The ladder does not change length, so both positions are right-angled
+        triangles with the same hypotenuse. Find where the foot started.</p>
+        <div class="work">
+          <div class="work__row">
+            <span class="work__label work__label--wide">foot at first</span>
+            <span>$25^2 - 24^2 = 625 - 576 = 49$, so $7$ m out</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">foot after</span>
+            <span>$7 + 8 = 15$ m out</span>
+          </div>
+          <div class="work__row">
+            <span class="work__label work__label--wide">new height</span>
+            <span>$625 - 225 = 400$, so $20$ m up</span>
+          </div>
+        </div>
+        <p>The top has come down $4$ m. Notice that the foot moved $8$ m and the top
+        moved half that: a ladder that is nearly upright loses very little height when
+        its foot slips, and one that is nearly flat loses a great deal. The two
+        movements are not equal and never are, because the theorem ties the
+        <em>squares</em> of the two distances together and not the distances
+        themselves.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

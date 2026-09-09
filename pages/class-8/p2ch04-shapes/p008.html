@@ -1,0 +1,79 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">4.8</span><span class="name">The Shortest Way Across a Box</span></h2>
+
+      <p>A net is not only for making boxes. It answers a question that is very hard to
+      think about on the box itself.</p>
+
+      <p>An ant is at one corner of a closed box $12$ cm long, $4$ cm wide and $3$ cm
+      high. A laddu sits at the opposite corner. The ant can walk on the surface but not
+      through the box or through the air. What is its shortest route?</p>
+
+      <p>On a flat floor the shortest path between two points is the straight line, and
+      that is the only fact needed — because a net turns the box's surface into a flat
+      floor. Any path on the box becomes a path of exactly the same length on the net,
+      and the other way about. So unfold the box, join the two points with a ruler, and
+      fold it back up.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 170 74" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A cuboid with an ant at one corner and a laddu at the opposite corner, and beside it two faces of the box unfolded flat with a straight line drawn between the same two points">
+      
+            <path class="dg-face-front" d="M12 44 H48 V53 H12 Z"/>
+            <path class="dg-face-top"   d="M12 44 L24 36 L60 36 L48 44 Z"/>
+            <path class="dg-face-side"  d="M48 44 L60 36 V45 L48 53 Z"/>
+            <path class="dg-line" d="M12 44 H48 V53 H12 Z M12 44 L24 36 H60 L48 44 M48 53 L60 45 L60 36"/>
+            <circle class="dg-fill-c" cx="12" cy="53" r="2"/>
+            <circle class="dg-fill-c" cx="60" cy="36" r="2"/>
+            <text class="dg-note" x="36" y="68" text-anchor="middle">on the box</text>
+      
+            <path class="dg-face-top"   d="M100 26 H136 V38 H100 Z"/>
+            <path class="dg-face-front" d="M100 38 H136 V47 H100 Z"/>
+            <path class="dg-line" d="M100 26 H136 V47 H100 Z"/>
+            <path class="dg-thin" d="M100 38 H136"/>
+            <path class="dg-dim" d="M100 47 L136 26"/>
+            <circle class="dg-fill-c" cx="100" cy="47" r="2"/>
+            <circle class="dg-fill-c" cx="136" cy="26" r="2"/>
+            <text class="dg-label dg-label--sm" x="96" y="44" text-anchor="end">3</text>
+            <text class="dg-label dg-label--sm" x="96" y="34" text-anchor="end">4</text>
+            <text class="dg-label dg-label--sm" x="118" y="55" text-anchor="middle">12</text>
+            <text class="dg-note" x="118" y="68" text-anchor="middle">on the net</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.6</span> The front face and the top face
+          unfolded into one rectangle. The ant's route is now a straight line across a
+          right-angled triangle with short sides $12$ and $3 + 4$.</figcaption>
+        </figure>
+      </div>
+
+      <p>Chapter 2 finishes it. The straight line is the hypotenuse of a right-angled
+      triangle whose short sides are $12$ and $3 + 4 = 7$.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the theorem</span>
+          <span>$d^2 = 12^2 + 7^2 = 144 + 49 = 193$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$d = \sqrt{193} \approx 13.9$ cm</span>
+        </div>
+      </div>
+
+      <p>But there was a choice in the unfolding, and other choices give other answers.
+      Go over the top and down the far end and the triangle has sides $12 + 3$ and $4$,
+      giving $\sqrt{241} \approx 15.5$ cm. Go round the end first and it is $12 + 4$ and
+      $3$, giving $\sqrt{265} \approx 16.3$ cm. All three are straight lines on their own
+      nets, and all three are genuine routes across the box.</p>
+
+      <p>Why does the first win? Look at the two short sides in each case: $12$ and $7$,
+      then $15$ and $4$, then $16$ and $3$. Every pair adds to $19$, because every
+      unfolding lays out the same three dimensions — what changes is only how they are
+      shared between the two sides. And for a fixed total, the sum of two squares is
+      smallest when the two numbers are closest to equal.</p>
+
+    </div>
+  </div>
+</section>

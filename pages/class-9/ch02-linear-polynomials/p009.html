@@ -2,6 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h2><span class="badge">2.3</span><span class="name">Exploring Linear Patterns</span></h2>
+
+      <p>So far the linear patterns have arrived already written as expressions. The
+      more common situation is the other way round: a pattern is in front of you, and
+      the expression has to be found. Here is one built out of square tiles.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 400 132" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Four stages of a growing pattern of square tiles">
+            <rect class="dg-fill-d" x="14" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="14" y="90" width="24" height="24"/>
+            <text class="dg-note" x="26" y="128" text-anchor="middle">Stage 1</text>
+      
+            <rect class="dg-fill-d" x="102" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="126" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="126" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="102" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="126" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="126" y="66" width="24" height="24"/>
+            <text class="dg-note" x="126" y="128" text-anchor="middle">Stage 2</text>
+      
+            <rect class="dg-fill-d" x="202" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="226" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="202" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="226" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="226" y="42" width="24" height="24"/>
+            <rect class="dg-thin" x="202" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="226" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="202" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="226" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="226" y="42" width="24" height="24"/>
+            <text class="dg-note" x="226" y="128" text-anchor="middle">Stage 3</text>
+      
+            <rect class="dg-fill-d" x="314" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="90" width="24" height="24"/>
+            <rect class="dg-fill-d" x="314" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="66" width="24" height="24"/>
+            <rect class="dg-fill-d" x="314" y="42" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="42" width="24" height="24"/>
+            <rect class="dg-fill-d" x="338" y="18" width="24" height="24"/>
+            <rect class="dg-thin" x="314" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="90" width="24" height="24"/>
+            <rect class="dg-thin" x="314" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="66" width="24" height="24"/>
+            <rect class="dg-thin" x="314" y="42" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="42" width="24" height="24"/>
+            <rect class="dg-thin" x="338" y="18" width="24" height="24"/>
+            <text class="dg-note" x="338" y="128" text-anchor="middle">Stage 4</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.4</span> A growing pattern of square
+          tiles. Each stage is the one before it with two more tiles added.</figcaption>
+        </figure>
+      </div>
+
       <div class="c-reflect">
         <div class="c-reflect__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -13,61 +68,37 @@
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__body">
-            <p>Use $2n - 1$ to find the number of tiles at Stage $15$ and at
-            Stage $26$.</p>
-            <p>Now go the other way. Which stage has $21$ tiles? Which has $47$? Is
-            there a stage with $50$?</p>
+            <p>How many tiles are in the next three stages? Write the sequence of tile
+            counts as far as Stage 7 before reading on.</p>
           </div>
         </div>
       </div>
 
-      <p>A pattern need not grow. The next one shrinks, and the arithmetic is
-      identical apart from a sign.</p>
+      <p>Counting the first seven stages gives this.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>Bela starts the month with ₹$100$ of pocket money and spends ₹$5$ a day.
-          After how many days is she left with ₹$40$?</p>
-          <table>
-            <thead>
-              <tr><th>Day</th><th>Amount left (₹)</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>0</td><td>100</td></tr>
-              <tr><td>1</td><td>$100 - 1 \times 5 = 95$</td></tr>
-              <tr><td>2</td><td>$100 - 2 \times 5 = 90$</td></tr>
-              <tr><td>3</td><td>$100 - 3 \times 5 = 85$</td></tr>
-              <tr><td>4</td><td>$100 - 4 \times 5 = 80$</td></tr>
-            </tbody>
-          </table>
-          <p>On day $n$ she has ₹$(100 - 5n)$ left. Setting that equal to $40$ gives
-          $5n = 60$, so $n = 12$: on the twelfth day she is down to ₹$40$.</p>
-        </div>
-      </div>
+      <table>
+        <thead>
+          <tr><th>Stage</th><th>Number of tiles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>1</td></tr>
+          <tr><td>2</td><td>3</td></tr>
+          <tr><td>3</td><td>5</td></tr>
+          <tr><td>4</td><td>7</td></tr>
+          <tr><td>5</td><td>9</td></tr>
+          <tr><td>6</td><td>11</td></tr>
+          <tr><td>7</td><td>13</td></tr>
+        </tbody>
+      </table>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__body">
-            <p>How much has Bela left on day $15$? On which day does the money run
-            out altogether?</p>
-          </div>
-        </div>
-      </div>
+      <p>Two tiles are added each time, so the counts run $1, 3, 5, 7, 9, \ldots$ —
+      a linear pattern, with constant difference $2$.</p>
 
-      <p>Compare that with the chess club of Example 5. There the total was
-      $200 + 50m$ and every match <em>added</em> ₹$50$; here it is $100 - 5n$ and every
-      day <em>takes away</em> ₹$5$. The two expressions are the same shape, and the
-      only thing distinguishing a total that climbs from one that falls is the sign in
-      front of the coefficient. Nothing else in the algebra changes at all.</p>
+      <p>Knowing the difference is $2$ is not the same as being able to answer for
+      Stage $40$ without drawing thirty-nine pictures first. For that the count has to
+      be tied to the stage number, and the table already says how: each count is one
+      less than twice its stage. Stage $2$ gives $2 \times 2 - 1 = 3$, Stage $5$ gives
+      $2 \times 5 - 1 = 9$, and in general</p>
 
     </div>
   </div>

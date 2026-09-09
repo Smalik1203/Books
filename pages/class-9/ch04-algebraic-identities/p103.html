@@ -2,18 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <span class="c-try__tag">Try it first</span>
-        <p>Show that $a^2 + b^2 \geq 2ab$ for all numbers $a$ and $b$.
-          Then decide: is there a rectangle with perimeter $34$ cm and
-          diagonal $12$ cm?</p>
-      </div>
-
-      <p>
-        A square is never negative, so $(a - b)^2 \geq 0$. Expand this:
-        $a^2 - 2ab + b^2 \geq 0$. That is
-      </p>
-
       <div class="eq eq--anchor">
         $$a^2 + b^2 \geq 2ab$$
       </div>
@@ -63,30 +51,38 @@
       </p>
 
       <p>
+        That last answer is worth looking at a second time, because the
+        inequality explains it. Among all rectangles with $x + y = 17$, which
+        has the shortest diagonal? Since $x^2 + y^2 = 289 - 2xy$, the diagonal
+        is shortest when $xy$ is largest, and $a^2 + b^2 \geq 2ab$ says that
+        happens when the two sides are equal.
+      </p>
+
+      <div class="eq">
+        $$x = y = 8.5 \quad \Rightarrow \quad x^2 + y^2 = 144.5$$
+      </div>
+
+      <p>
+        So no rectangle of perimeter $34$ has a diagonal shorter than
+        $\sqrt{144.5}$, a little over $12.02$. A diagonal of $12$ was never
+        available. The algebra found this by arriving at $(x - y)^2 = -1$; the
+        geometry finds it by noticing that the square is the extreme case and
+        that the question asked for something past it. The two arguments are
+        the same argument.
+      </p>
+
+      <p>
+        The inequality has a use of its own, too. Put $b = 1$ and divide
+        through: for any positive $a$, $a + \dfrac{1}{a} \geq 2$. A positive
+        number and its reciprocal can never average less than $1$, and they
+        average exactly $1$ only when the number is $1$ itself.
+      </p>
+
+      <p>
         None of these questions used anything outside the chapter. Each
         needed the same question: what can I use from what I already know?
         Five more problems ask it next.
       </p>
-
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Worked in Full</div>
-          <div class="c-stage__for">Five questions, with the reasoning and the working. Try each one before you read its solution.</div>
-        </div>
-      </div>
-
-      <div class="c-try">
-        <span class="c-try__tag">Problem 1 &middot; Try it first</span>
-        <p>If $x + y + z = 9$ and $xy + yz + zx = 26$, then
-          $x^3 + y^3 + z^3 - 3xyz$ equals</p>
-        <ol class="c-parts c-parts--alpha">
-          <li>$9$</li>
-          <li>$27$</li>
-          <li>$81$</li>
-          <li>cannot be found</li>
-        </ol>
-      </div>
 
     </div>
   </div>

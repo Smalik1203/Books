@@ -1,0 +1,62 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <table>
+        <thead>
+          <tr><th>$n$</th><th>$n^3$</th><th>$n$</th><th>$n^3$</th><th>$n$</th><th>$n^3$</th><th>$n$</th><th>$n^3$</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>1</td><td>6</td><td>216</td><td>11</td><td>1331</td><td>16</td><td>4096</td></tr>
+          <tr><td>2</td><td>8</td><td>7</td><td>343</td><td>12</td><td>1728</td><td>17</td><td>4913</td></tr>
+          <tr><td>3</td><td>27</td><td>8</td><td>512</td><td>13</td><td>2197</td><td>18</td><td>5832</td></tr>
+          <tr><td>4</td><td>64</td><td>9</td><td>729</td><td>14</td><td>2744</td><td>19</td><td>6859</td></tr>
+          <tr><td>5</td><td>125</td><td>10</td><td>1000</td><td>15</td><td>3375</td><td>20</td><td>8000</td></tr>
+        </tbody>
+      </table>
+
+      <p>Cubes are scarce. There are only three of them below $30$ and only nine below
+      $1000$, where there are thirty-one squares — which is worth remembering, because
+      it means a number picked at random is very unlikely to be one.</p>
+
+      <p>Read the last digits down the table of cubes and something happens that did not
+      happen with squares:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$n$ ends in</span>
+          <span>$0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$n^3$ ends in</span>
+          <span>$0 \quad 1 \quad 8 \quad 7 \quad 4 \quad 5 \quad 6 \quad 3 \quad 2 \quad 9$</span>
+        </div>
+      </div>
+
+      <p>All ten digits appear, and each appears exactly once. So the last-digit test is
+      useless for ruling a cube out — every ending is possible — but it is far more
+      powerful in the other direction. <strong>The last digit of a cube tells you the
+      last digit of its root, with no ambiguity at all.</strong> A cube ending in $7$
+      came from a number ending in $3$; a cube ending in $2$ came from a number ending in
+      $8$. Only $0, 1, 4, 5, 6$ and $9$ send themselves.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Squares hide their roots; cubes do not</div>
+        <p>A square ending in $6$ might come from a number ending in $4$ or in $6$. A
+        cube ending in $6$ can only have come from a number ending in $6$. That single
+        difference makes cube roots of large numbers easier to guess than square
+        roots.</p>
+      </div>
+
+      <p>Two smaller habits follow the same way as they did for squares. Cubing a number
+      that ends in a zero triples the zeros: $10^3 = 1000$, $20^3 = 8000$,
+      $200^3 = 8\,000\,000$. So <strong>a perfect cube has a number of trailing zeros
+      that is a multiple of three</strong>, and a number ending in exactly two zeros —
+      $500$, or $1200$ — cannot be a cube. And cubing keeps parity as squaring did: odd
+      cubed is odd, even cubed is even.</p>
+
+      <p>Cubing is not restricted to whole numbers either.</p>
+
+    </div>
+  </div>
+</section>

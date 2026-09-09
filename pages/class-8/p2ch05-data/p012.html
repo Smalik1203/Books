@@ -1,0 +1,76 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">5.8</span><span class="name">Lines for Things That Change</span></h2>
+
+      <p>Every collection so far has been a heap. The thirty household sizes could have
+      been collected in any order and the mean and the median would be the same, which is
+      exactly why a frequency table was allowed to throw the order away.</p>
+
+      <p>Some data is not like that. A temperature taken every three hours, a price
+      recorded every year, a patient's pulse through a night — here the readings come in
+      an order that is part of the information, and the thing being measured has a value
+      at every moment in between, not only at the moments somebody wrote it down. That is
+      what allows the dots to be joined.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 124" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A line graph of temperature through one day, rising from twenty-two degrees at six in the morning to thirty-four at three in the afternoon and falling to twenty-five by nine at night">
+      
+            <text class="dg-note" x="6" y="9">&deg;C</text>
+      
+            <path class="dg-grid" d="M26 100 H182 M26 80 H182 M26 60 H182 M26 40 H182 M26 20 H182
+                                     M26 20 V100 M57 20 V100 M88 20 V100 M120 20 V100 M151 20 V100 M182 20 V100"/>
+            <path class="dg-axis" d="M26 100 H182 M26 100 V20"/>
+      
+            <path class="dg-plot" d="M26 90 L57 70 L88 45 L120 30 L151 50 L182 75"/>
+            <circle class="dg-fill-teal" cx="26" cy="90" r="2.4"/>
+            <circle class="dg-fill-teal" cx="57" cy="70" r="2.4"/>
+            <circle class="dg-fill-teal" cx="88" cy="45" r="2.4"/>
+            <circle class="dg-fill-teal" cx="120" cy="30" r="2.4"/>
+            <circle class="dg-fill-teal" cx="151" cy="50" r="2.4"/>
+            <circle class="dg-fill-teal" cx="182" cy="75" r="2.4"/>
+      
+            <text class="dg-tick" x="23" y="103" text-anchor="end">20</text>
+            <text class="dg-tick" x="23" y="83" text-anchor="end">24</text>
+            <text class="dg-tick" x="23" y="63" text-anchor="end">28</text>
+            <text class="dg-tick" x="23" y="43" text-anchor="end">32</text>
+            <text class="dg-tick" x="23" y="23" text-anchor="end">36</text>
+      
+            <text class="dg-tick" x="26" y="108" text-anchor="middle">6 am</text>
+            <text class="dg-tick" x="57" y="108" text-anchor="middle">9 am</text>
+            <text class="dg-tick" x="88" y="108" text-anchor="middle">12</text>
+            <text class="dg-tick" x="120" y="108" text-anchor="middle">3 pm</text>
+            <text class="dg-tick" x="151" y="108" text-anchor="middle">6 pm</text>
+            <text class="dg-tick" x="182" y="108" text-anchor="middle">9 pm</text>
+      
+            <text class="dg-note" x="104" y="120" text-anchor="middle">time of day</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.4</span> Six readings, three hours
+          apart, joined. This is a <span class="term">line graph</span>, and it is what
+          to draw when the horizontal axis is time.</figcaption>
+        </figure>
+      </div>
+
+      <p>Bars would be wrong here, and it is worth seeing why. Six bars would say that
+      the temperature stood at $22^\circ$ for three hours, then at $26^\circ$ for three
+      hours, then jumped again — six flat stretches and five leaps, which is not what a
+      morning does. Every reading would be carried correctly and the picture would
+      describe a day nobody has lived through.</p>
+
+      <p>Because the line is unbroken it can be read at places where nothing was
+      measured. At half past ten it stands a little over $28^\circ$, and that is a
+      reasonable estimate of the temperature then. It is an estimate and not a
+      measurement: the real temperature wandered about between the readings, and a
+      straight segment from one dot to the next is the simplest guess, not the truth.</p>
+
+      <p>The same graph also settles what could not be settled from a table. The steepest
+      climb is between $9$ am and noon, and steepness is the whole point of the picture —
+      the eye reads a rate off a slope without being asked to subtract anything. A table
+      of the same six numbers holds that information and hides it.</p>
+
+    </div>
+  </div>
+</section>

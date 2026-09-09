@@ -1,0 +1,68 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Find $2^5 \times 5^5$.</p>
+          <p>Evaluating $32 \times 3125$ would work. Noticing the shared exponent is
+          quicker.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$2^5 \times 5^5$</span>
+              <span>$= (2 \times 5)^5 = 10^5$</span>
+              <span class="chip">$100000$</span>
+            </div>
+          </div>
+          <p>Whenever a pair of bases multiplies to something convenient — and $2$ and
+          $5$ almost always do, because they make $10$ — this is the law to look
+          for.</p>
+        </div>
+      </div>
+
+      <p>There is a matching law for division, which we shall be able to state properly
+      in a moment: $\dfrac{m^a}{n^a} = \left(\dfrac{m}{n}\right)^a$, on the same
+      argument with the pairs written as fractions.</p>
+
+      <h3>2.3.3 Dividing</h3>
+
+      <p>A line is $16$ units long — that is $2^4$ — and half of it is rubbed out. What
+      is left is $2^4 \div 2$, and it is easiest to see written as a fraction with the
+      cancelling shown:</p>
+
+      <div class="work work--centred">
+        <p>$\dfrac{2^4}{2^1} = \dfrac{2 \times 2 \times 2 \times 2}{2}
+           = 2 \times 2 \times 2 = 2^3 = 8$</p>
+      </div>
+
+      <p>Rub out half of what is left, twice more, and the same cancelling happens each
+      time:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$2^4 \div 2^2$</span>
+          <span>$= 2^2 = 4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$2^4 \div 2^3$</span>
+          <span>$= 2^1 = 2$</span>
+        </div>
+      </div>
+
+      <p>Every factor on the bottom cancels one on the top, so the exponents subtract.
+      That is the third law, and it is the first law run backwards — which it has to be,
+      since division undoes multiplication.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Dividing powers of the same base</div>
+        <p>$n^a \div n^b = n^{a-b}$, for any $n$ other than $0$. Multiplying adds the
+        exponents, so dividing subtracts them.</p>
+      </div>
+
+      <p>The exclusion of $n = 0$ is not fussiness. Dividing by $0^b$ would be dividing
+      by zero, which is not defined, so the law has nothing to say there.</p>
+
+    </div>
+  </div>
+</section>

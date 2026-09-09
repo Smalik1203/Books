@@ -91,15 +91,18 @@ Numerals are **lining** throughout. Vollkorn defaults to oldstyle, which turns
 Seven sizes, named by role and never by number. **Nothing may sit off the
 scale** — a literal `12pt` in a rule is a defect, not a nuance.
 
+Sizes below are the standard trim's. An edition sheet moves the whole scale
+together — never one step of it.
+
 | token | size | used for |
 |---|---|---|
 | `--size-caption` | 8.5 pt | captions, hints, the aside in brackets |
-| `--size-note` | 9.5 pt | panel text, exercises, legends, component tags, folio |
-| `--size-body` | 10.5 pt | running text |
-| `--size-concept` | 11.5 pt | concept headings, rubrics, the section numeral |
-| `--size-section` | 15 pt | section headings |
-| `--size-chapter` | 24 pt | chapter title |
-| `--size-numeral` | 40 pt | chapter numeral |
+| `--size-note` | 9 pt | panel text, exercises, legends, component tags, folio |
+| `--size-body` | 10 pt | running text |
+| `--size-concept` | 12 pt | concept headings, rubrics, the section numeral |
+| `--size-section` | 14.5 pt | section headings |
+| `--size-chapter` | 23 pt | chapter title |
+| `--size-numeral` | 38 pt | chapter numeral |
 
 ### Two label treatments, not five
 
@@ -168,7 +171,8 @@ Size alone is not a signature. Each level differs in *kind*.
 | `.c-summary` | teal | no — a rule and a numbered list |
 
 Three more — the division opener, the difficulty tag and the answer key — are
-added by §6a for Beyond the Book, and by nothing else.
+added by §6a for Beyond the Book, and by nothing else. Four more are added by
+§4a for the science volumes, and by nothing else.
 
 **Only two components are panels** — the example and the reflect prompt, both
 of which the mockups called for. Everything else sits on the page, held by
@@ -220,6 +224,65 @@ overflow their line box, so any list of them takes `.c-parts--tall`, which
 lets the maths set the row height instead of the leading. Without it the rows
 collide, and the builder reports an overflow the page does not appear to have.
 
+## 4a. Science — four more, and a placeholder
+
+The science volumes carry furniture the maths volumes have no use for. NCERT's
+*Exploration* runs a large named set — Threads of Curiosity, Ready to Go
+Beyond, Meet a Scientist, Pause and Ponder, Activity, Think as a Scientist,
+What if…, The Quest Continues…, At a Glance, Revise Reflect Refine. Most of
+those already have a house component doing the same job, and reuse is the
+default:
+
+| the science book calls it | it is |
+|---|---|
+| Pause and Ponder | `.c-reflect`, retitled — the title is markup |
+| Example n.n | `.c-example` |
+| Note | `.c-tip` |
+| At a Glance | `.c-summary` |
+| Revise, Reflect, Refine | `.c-practice` |
+
+Four had no equivalent, and live in `css/science.css`:
+
+| component | colour | panel? |
+|---|---|---|
+| `.c-scientist` | teal | no — rules, a portrait beside a short life |
+| `.c-beyond` | teal | **yes** — a tab over a tinted box, built as the example is |
+| `.c-thread` | gold | no — rules, the question as its title |
+| `.c-activity` | rust | no — a band header over the steps |
+
+**Only one of the four is a panel**, and that is deliberate. The reflect box
+already owns the gold tint; a second gold box on the same spread would read as
+decoration rather than as a different kind of matter. So the thread of
+curiosity is set between rules instead, and the activity takes a band header
+like practice, because an activity is a set of instructions to work through
+rather than a box to read.
+
+`.c-activity__safety` is a rule and a line of rust under the steps, for the
+*Safety first* precaution the source calls for wherever a heating device,
+a corrosive or a blade is involved. It is not decoration and it is not
+optional: if an activity needs one, it goes there and nowhere else.
+
+**A photograph that has not arrived yet is `.c-photo`.** It prints a ruled box
+carrying the figure number, the width it is holding open, and a written brief
+of the wanted picture. Nothing about it is subtle, because a placeholder that
+could be mistaken for artwork is a placeholder that ships. It takes its width
+from the `.c-figure--*` modifier around it, and `.c-photo--wide` and
+`--portrait` set the shape it is reserving.
+
+When the real image arrives it goes in `figures/<class>/`, prepared with
+`build/prep-figure.mjs`, with the untouched original kept beside it as
+`_raw-<name>.png`. Then either a plain `<img>` if the artwork carries no
+callouts, or an `<image href>` inside the figure's `<svg>` if labels have to
+stay live type over the picture.
+
+**Science does not get a sidebar.** NCERT sets several of these boxes in a
+margin rail. This book has none: every page is one column at the full measure.
+`.page__side` exists in the builder's measurement probe and in no stylesheet,
+so adding it is possible and would be measured correctly from the first build —
+but it changes the page grammar of every book in the repo, and the boxes read
+perfectly well full-measure. If a physics or biology chapter genuinely needs a
+rail for an apparatus list, that is the moment to decide it, on its own merits.
+
 ## 6. Diagrams — first-class components
 
 Every mathematical diagram is drawn with the vocabulary in `css/diagram.css`
@@ -262,13 +325,25 @@ pair of axes.
 marker in the page shell; every figure references it.
 
 **Size comes from a scale**, not from a per-figure pixel width:
-`.c-figure--sm` · `--md` · `--lg` · `--xl` · `--full`. The printed widths
-live in the tokens (51/62/72/87 mm on A4, one step smaller on B5), and
-`--full` is the measure itself.
+`.c-figure--sm` · `--md` · `--lg` · `--xl` · `--full`. The printed widths live
+in the tokens — 42/51/59/71/126 mm on the standard trim, and a set of their
+own on each edition.
 
-`--full` is for the one drawing that genuinely needs the whole measure: a
-**ruled coordinate grid**, where the tick numerals collide long before the
-figure starts to look large. A diagram that is not a grid does not get it.
+**The steps are set against the height of the text block, not its width.** A
+figure's height is its artwork's business; the width is all a stylesheet
+controls, and what decides whether a figure packs onto a page is the fraction
+of the page it eats vertically. Scale the steps with the measure instead and a
+squarer trim grows every figure by a tenth as a share of the page, which is
+enough to stop a heading seating under itself; the change from A4 to Crown
+Quarto turned six short pages in one chapter into sixteen before this was
+measured.
+
+`--full` used to be the measure itself. It is a step now, for the same reason:
+a full-measure grid came to 55% of a Crown Quarto page, and one chapter has
+seven of them. It is still comfortably the largest, and still for the one
+drawing that genuinely needs it — a **ruled coordinate grid**, where the tick
+numerals collide long before the figure starts to look large. A diagram that
+is not a grid does not get it.
 
 A figure carries about **4.5 viewBox units per printed millimetre** — a
 `--full` drawing has a viewBox 690 units wide, an `--xl` one 390. That is
@@ -278,18 +353,19 @@ a heavier or fainter line than its neighbour.
 
 ## 6a. Beyond the Book — a division, not a second book
 
-Every chapter closes with ten pages of harder work on the same material: the
-**Beyond the Book**, announced once by a band across the measure and then
-carried by the components already in the library. It is **four stages, not
-ten** — the first design had a stage a page, and seven of the ten were
-question pages with no worked problem anywhere; a reader was tested on a
-kind of question the book had never shown being solved. The stages are
+Every chapter closes with ten or so pages of harder work on the same
+material: the **Beyond the Book**, announced once by a band across the
+measure and then carried by the components already in the library. It is
+**four stages, not ten** — the first design had a stage a page, and seven
+of the ten were question pages with no worked problem anywhere; a reader
+was tested on a kind of question the book had never shown being solved.
+The stages are
 
     1 Using What You Know five questions, each tried first and then
                           explained, through which the reader finds that
                           the identities work in less direct ways —
                           about two and a half pages
-    2 Worked in Full      five multiple-choice problems, each put first and
+    2 Behind Each Answer  five multiple-choice problems, each put first and
                           solved after, with the reasoning as well as the
                           working — about three pages
     3 Problem Sets        three multiple-choice sets: A one identity each,
@@ -327,27 +403,49 @@ missed.
 
 A stage starts where the previous one ends, part-way down a page if that is
 where it falls: the stages are the structure, the pages are only the paper.
+**Ten pages is the budget, not the boundary.** Four of the six chapters run
+to eleven or twelve, because the four stages came to that much, and the
+division sorts last whatever it grows to. What is not allowed is to hold it
+at ten by letting the last page clip, which is what five of the six were
+doing before anyone rendered a proof that showed the foot of a page.
 No stage name repeats a word of the division's own name. *Beyond* belongs to
 the band at the top of stage 1 and to nothing else in the section.
 
 **Every stage opens with `.c-stage`** — its number, its name, and one line
 saying what the stage is for — so a reader can name the stage from the page,
 not from the contents. Nothing here is a new hierarchy: the moves are `h3`
-concept heads, the worked problems are `.c-example` panels tabbed *Problem
-1* to *Problem 6*, the sets are `.c-practice` bands, and the division is read
+concept heads, the worked problems are `.c-problem` blocks tagged *Problem
+1* to *Problem 5*, the sets are `.c-practice` bands, and the division is read
 exactly the way the chapter before it is read, which is the whole reason it
 does not feel like a coaching module bolted on.
 
-**The reader thinks before reading.** Every question in stages 1 and 2 is
-put in a `.c-try` — a gold rule, a *Try it first* tag, the question, and
-room beneath it for the attempt — and only then comes the explanation. In
-stage 1 that explanation is running text, as in the chapter. In stage 2 it
-is a `.c-example` tabbed *Solution 1* to *Solution 5*, written as prose
-with a `.work` line where the algebra needs one: it says what was noticed,
-which identity that suggested, and why the other options were there, in
-whatever order the problem makes natural. An earlier draft set every
-solution in fixed rows — *notice, try, why, check, trap* — and the rows
-read as a template to be filled rather than a solution to be followed.
+**The reader thinks before reading.** Every question in stages 1 and 2 is put
+first and answered after. In stage 1 it sits in a `.c-try` — a gold rule, the
+question, and room beneath it for the attempt — and the explanation follows as
+running text, as in the chapter. In stage 2 the question is a `.c-problem` and
+its answer a `.c-solution`, and the two are one field: one rule opens the
+problem, one hairline closes the answer, both in the action colour, and the
+turn between them is the word *Solution* rather than a panel of its own. They
+read as one item because they are one item. Neither carries an instruction to
+try it first — the stage head says that once, and saying it again on every
+question is the coaching register this section does without.
+
+**A solution shows its working.** The reasoning is prose, but the algebra is
+set as stepped working in `.work`, a step to a line — independent statements
+flush (`--list`), a continued expression keeping its aligned indent — and not
+buried in the paragraph. A solution written as paragraphs with one displayed
+line at the end is a solution the reader cannot follow at the point they are
+stuck. What the steps are never carry is a name: an earlier draft set every
+solution in fixed rows — *notice, try, why, check, trap* — and the rows read
+as a template to be filled rather than a solution to be followed.
+
+**Both halves stay whole, so length is the thing to cut.** A page ends on a
+finished item; a reader never turns the page in the middle of an answer. That
+fixes the size of an item, and two of them have to fit a page — a little under
+half the text block each — or every page in the stage prints half empty. When
+a solution runs long, the option analysis is merged into one paragraph and the
+linking prose trimmed. The number of problems is the last thing to cut, not
+the first.
 
 Stage 1 opens as the chapter continuing: one sentence on what the chapter
 left the reader with, one on what changes in the question, and then the
@@ -362,7 +460,9 @@ What the library did not already have lives in `css/bridge.css`:
 | `.c-stage` | teal | one stage's head: a numeral in a solid mark, the stage name, and what the stage is for. `.c-stage__ask` follows it with the one line an examination paper would print — *Choose the correct option* |
 | `.c-shift` | none | a relationship read both ways — *as $d$ rises, $c$ falls* over *as $d$ falls, $c$ rises*. Rules and two arrows; a reader who has seen the law only once tends to hear a proportion |
 | `.c-results` | teal | four of the chapter's results as thumbnail marks in a row, so a reader sees what is available before starting. An index, not a figure: no text inside the drawings. The four-stage design does not use it — the moves are that index — but the ten-stage chapters still do |
-| `.c-try` | gold | a question to try before reading on: a gold rule above, a *Try it first* tag, the question (with its options, if it has them), and room beneath for the attempt, closed by a hairline. Not a panel — the key idea's rule-and-hairline in the attention colour — because the book has two panels and this is neither a worked instance nor a reflection |
+| `.c-try` | gold | a question to try before reading on, used in stage 1, where the explanation follows as running text: a gold rule above, the question (with its options, if it has them), and room beneath for the attempt, closed by a hairline. It carries no tag — the stage head has already said to try it, and a tag on every question says it four more times. Not a panel — the key idea's rule-and-hairline in the attention colour — because the book has two panels and this is neither a worked instance nor a reflection |
+| `.c-problem` | rust | one worked problem's question, in stage 2: a rule above in the action colour, a *Problem N* tag, the question and its options. The rule is what separates one problem from the next, so nothing closes it at the foot |
+| `.c-solution` | rust | the answer to the `.c-problem` above it, and the other half of the same item: the word *Solution*, the reasoning in prose, and the algebra stepped in `.work`, closed by a hairline. Not a panel and not the action colour's tint — the question and the answer share one open field, or they read as two components for the two halves of one problem. Both blocks are whole: a page ends on a finished item |
 | `.work--trace` | none | a modifier on `.work`: rows whose label sits on the first line rather than centred beside a block that runs to three. Used on the answer page, where each row is one question's *why the other options are wrong* |
 | `.tier` | gold | one question's difficulty (`Think` · `Apply` · `Challenge`), set as a tag so it cannot be misread as the first words of the question |
 | `.c-terms` | gold | what the test is made of — how many questions of each kind. **Never marks and never a time:** a book used in six classrooms cannot know either, and printing them would make the test look like an examination it is not. Three short spans, or it wraps; the four-stage design says the same thing in the stage head's own line instead |
@@ -439,10 +539,10 @@ goes in the marker, in rust, never in the question text.
 `--bleed` emits a second PDF beside the reading one. Every page carries two
 wrappers that are the page itself at trim size and change nothing there:
 
-| | | A4 | B5 |
-|---|---|---|---|
-| `.page` / `.page__bleed` | what the press gets | 216 × 303 mm | 182 × 256 mm |
-| `.page__trim` | the book as the reader sees it | 210 × 297 mm | 176 × 250 mm |
+| | | Crown Quarto | A4 | B5 |
+|---|---|---|---|---|
+| `.page` | the sheet the press prints | 209 × 266 mm | 230 × 317 mm | 196 × 270 mm |
+| `.page__trim` | the book as the reader sees it | 189 × 246 mm | 210 × 297 mm | 176 × 250 mm |
 
 Everything is still positioned against the trim box, so no component knows
 which sheet it is on. The chapter numeral and both footer bars deliberately run
@@ -472,16 +572,59 @@ cover belongs to the series, not to a chapter, so the palette sheets do not
 reach it; the jacket ink is its own short list, and `.jacket--night` is a second
 finish of the same layout rather than a second layout.
 
-| | | A4 | B5 |
-|---|---|---|---|
-| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 210 mm | 176 mm |
-| `.jacket__spine` | from the page count, not from taste | `--spine-w` | `--spine-w` |
-| `.jacket__front` | title and artwork | 210 mm | 176 mm |
-| **wrap, trim** | back + spine + front | **435.8 × 297** | **367.8 × 250** |
-| **wrap, press sheet** | plus 3mm bleed on the cut edges | **441.8 × 303** | **373.8 × 256** |
+| | | Crown Quarto | A4 | B5 |
+|---|---|---|---|---|
+| `.jacket__back` | blurb, claims, LearnLab panel, trade furniture | 189 mm | 210 mm | 176 mm |
+| `.jacket__spine` | bulk, not taste — see below | `--spine-w` | `--spine-w` | `--spine-w` |
+| `.jacket__front` | title and artwork | 189 mm | 210 mm | 176 mm |
+| **wrap, trim** | back + spine + front | **393 × 246** | **435 × 297** | **367 × 250** |
+| **wrap, plus bleed** | 15mm on all four cut edges | **423 × 276** | **465 × 327** | **397 × 280** |
+| **wrap, press sheet** | plus a 7mm slug holding the marks | **437 × 290** | **479 × 341** | **411 × 294** |
 
-An A4 wrap is A3 **plus the spine** — 420mm of paper for the two panels and
-15.8 more for the fold. Ordering "A3" gets a sheet 16mm too narrow.
+The wrap widths above are at a 15mm spine; the spine is bulk, so they move
+with the page count. A Crown Quarto wrap is a little wider than SRA3 and
+shorter than it — no standard sheet fits it, which is normal for a cover and
+is what the press sheet with its marks is for.
+
+**The wrap's bleed is not the page's.** An interior sheet is cut and that is
+the end of it, so `--bleed` is 3mm. A wrap is cut and then folded round the
+board, and what turns in at the edges has to be ink and not bare paper, so
+`--jk-bleed` is **15mm**. `body.cover` points `--bleed` at it, which is why
+every bleed rule in `cover.css` follows without being touched, and
+`cover.mjs` sizes the press sheet from the same token so the layout and the
+media box cannot drift apart.
+
+**The marks on the wrap were measured and left as they are.** They look
+detached beside a chapter's — hard against the sheet edge, a long way from
+the line they denote — and they are not. `cropMarks` in `build.mjs` and
+`coverMarks` in `cover.mjs` are the same function: a mark starts at the bleed
+edge and runs 5mm outward into the slug, so it can never print over artwork.
+On a 437 × 290 sheet that puts the trim at 22 / 22 / 415 / 268 with twelve
+marks, each on a trim or a fold line and none of them touching the jacket.
+What differs is the bleed. A page bleeds 3mm, so its marks stand 3mm out and
+visibly bracket the trim; a wrap bleeds 15mm, so a 5mm tick sits that far from
+its own cut line and reads as furniture at the sheet edge. Offset equals bleed
+is the standard rule and the reason for it is exactly that a shorter offset
+would put the mark on the bleed. Reopen it with the check
+(`npm run check:studio`, *Cover — the press sheet, and the marks on it*)
+rather than from the proof.
+
+**One thing to settle before the cover goes to press.** The 15mm above is
+justified as a turn-in, which is a case binding; `cover.json` declares
+`caseAllowance: 0.5`, which is a limp card cover. They describe different
+books. If it is perfect-bound the wrap is cut flush and wants 3–5mm like any
+other cut edge — the press sheet becomes 413 × 266 and the marks land 3mm out,
+like a chapter's. If it is case-bound the 15mm is real, but then the cut is at
+423 × 276 and the 393 × 246 lines are board-edge folds, which nothing on the
+sheet marks as folds, and the allowance is too thin for two boards. Neither
+reading makes the sheet as printed today wrong — the marks sit outside the
+artwork either way — so this is a question for the printer, not a fault to fix.
+
+**The spine is bulk**: pages ÷ 2 × caliper, plus the case. `spineWidth` in
+`cover.json` overrides that when a printer quotes its own stock — this cover
+declares **15mm** against a computed bulk of 12.4mm — and the builder then
+prints both, because a spine declared once and left while the book grew is
+exactly the spine that goes to press wrong.
 
 Nothing on the wrap is typed in millimetres that depends on the trim. The
 margin and the back panel's column are fractions of `--trim-w`, the title's
@@ -495,6 +638,33 @@ else. If a finish needs a rule as well as a value, the contract is short a
 token and the fix is to add one. A *direction* rebuilds it — its own display
 face, its own artwork, its own arrangement of the front — and shares the back
 and spine markup, which follow on tokens alone.
+
+**In practice a direction swallows the finish, and that is worth knowing before
+you set one.** Each direction block declares the ground and front tokens itself
+and sits later in this stylesheet than the finishes, so at equal specificity it
+wins: `night`, `solar`, `cobalt` and `vivid` all produce a byte-identical proof
+of an `arc` cover. Class 9 declares `night` and is painted by `arc` regardless.
+It could be otherwise — the back palette could move to `.jacket` and leave
+directions owning the front alone — but a shared block would have to sit either
+before the finishes, where a finish would then repaint the back, or after them,
+where it would stop a finish repainting anything. Each direction is
+self-contained for that reason.
+
+**The back panel's content is the series'; its colour is the direction's.**
+The blurb, the four claims and the foot are the same in every book — they live
+in `covers/<class>/_shared/` and are quoted, not copied. What changes with the
+direction is the palette they are set in, and it changes without a line of
+markup, because every rule on that panel reads a token. The only colours
+written down there are three `#ffffff`: the icon glyphs, and the two white
+tiles the QR and the barcode need on any ground.
+
+`comb`, Class 8's, is the worked example. It floods the front with a deep green
+where `arc` has cream, and takes the same green for the back's deep half and
+for the spine, so the colour runs from the front round the shelf edge and into
+the foot of the back, leaving the back's upper half as the one light area —
+which is where the words are. Arc's spine rule reasons that the spine should
+read as part of the front rather than as a strip of the back; comb applies the
+same reasoning to a dark front and arrives at the opposite panel.
 
 `node build/cover-swatch.mjs <direction>` lays every candidate colourway on one
 sheet at the same size in the real stylesheet. Comparing covers one build at a
@@ -532,31 +702,50 @@ a component, or a modifier on one — rather than reaching for an inline style.
 That is the whole point: the book stays one designed object instead of twenty
 pages that each looked reasonable on their own.
 
-## 8. Running a panel over a page break
+## 9. A panel is never divided over a page break
 
 A page must not ship a third empty because the next block will not fit
-whole. **Text divides; pictures do not.**
+whole. But of the two ways to answer that, only one is open.
 
-- A **figure** is never split — half a diagram is unreadable, so a gap held
-  open by one is accepted and left alone.
-- A **worked example**, a **key idea** and a **reflect prompt** may run over
-  the break: `--head` is the part that stays, `--tail` the part that
-  continues. The join is squared off and its padding removed on both sides,
-  so the two halves read as one field interrupted by the page edge. The tail
-  carries no tab or title: it is the same panel resumed, not a new one.
-- **Running text** may be broken mid-paragraph. Paragraphs here have no
-  first-line indent, so a continued one is indistinguishable from a new one.
+**Nothing in a box may be cut.** A figure, a worked example, a key idea, a
+tip, a Think and Reflect, a solution, a summary — each goes whole on one
+page or moves whole to the next.
 
-Split at a step boundary, never inside a line of working.
+There were once `--head` and `--tail` modifiers on example, key idea and
+reflect, and a `close-gaps.mjs` that spent them to buy back a short page.
+The join was squared off so the two halves would read as one field
+interrupted by the page edge. Seen side by side they do not: the reader
+gets an open-bottomed tray at the foot of one page and a lidless one at the
+head of the next, with the folio, the fold and the running head set between
+two halves of a single thought. Four shipped that way — an example, a key
+idea and two Think and Reflects.
+
+So the modifiers are gone from `components.css`, `close-gaps.mjs` and
+`split-panel.mjs` are deleted, `splitExample` in `fragment.mjs` throws, and
+**the builder reports `--head` or `--tail` in a page as a design
+violation**.
+
+Two things still divide, and both are lists rather than boxes:
+
+- **Running text.** Paragraphs here have no first-line indent, so a
+  continued one is indistinguishable from a new one.
+- **An exercise band.** `.c-practice` is a coloured head over an open list,
+  not a panel, so a numbered list continues overleaf under a
+  `.c-practice--cont` block that repeats no head.
 
 ```bash
-node build/close-gaps.mjs class-9/ch04-algebraic-identities   # divide panels
-node build/flow.mjs       class-9/ch04-algebraic-identities   # divide prose
+node build/flow.mjs          class-9/ch04-algebraic-identities   # divide prose
+node build/split-practice.mjs pages/class-9/ch04-algebraic-identities
 ```
 
-Both measure every trial with the real builder and keep the largest move
-that does not overfill. `flow` refuses a move that fills one page by
+`flow` measures every trial with the real builder and keeps the largest
+move that does not overfill. It refuses a move that fills one page by
 emptying the next — that relocates the hole rather than closing it.
 
 Run these **after** `repack`, never before: repack re-packs whole blocks
 globally and will undo them.
+
+Everything else closes one way only: **edit the prose at the join.** Write a
+few more lines into the short page, or take a few out of what precedes the
+panel so the panel comes up. It is slower than a tool and it is the only
+repair that costs the reader nothing.

@@ -2,14 +2,17 @@
   "name": "learnlab-books",
   "version": "1.0.0",
   "private": true,
-  "description": "Print-ready textbooks. Fixed-page HTML to PDF, A4 and B5 editions, no runtime.",
+  "description": "Print-ready textbooks. Fixed-page HTML to PDF, Crown Quarto with A4 and B5 editions, no runtime.",
   "type": "commonjs",
   "scripts": {
     "studio": "node build/serve.mjs",
     "build": "node build/build.mjs class-9 --pdf --png",
     "press": "node build/build.mjs class-9 --pdf --bleed",
     "cover": "node build/cover.mjs class-9 --png",
-    "cover:press": "node build/cover.mjs class-9 --pdf --bleed"
+    "cover:press": "node build/cover.mjs class-9 --pdf --bleed",
+    "check:studio": "node build/check-library.mjs",
+    "check:library": "node build/check-library.mjs",
+    "studio:watch": "node --watch build/serve.mjs"
   },
   "dependencies": {
     "katex": "^0.16.11",

@@ -1,0 +1,105 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Taking differences is a habit worth acquiring, and it will earn its keep well
+      beyond this chapter. Faced with a list you do not understand, the useful question
+      is often not <em>what are these numbers?</em> but <em>by how much does each one
+      exceed the last?</em> A list that looks arbitrary can have differences that are
+      perfectly orderly, and the differences are then the thing to explain. Here the
+      squares — which grow in a lumpy, accelerating way — turn out to be built from a
+      list as plain as the odd numbers.</p>
+
+      <div class="work work--centred">
+        <p>$1 = 1$</p>
+        <p>$1 + 3 = 4$</p>
+        <p>$1 + 3 + 5 = 9$</p>
+        <p>$1 + 3 + 5 + 7 = 16$</p>
+        <p>$1 + 3 + 5 + 7 + 9 = 25$</p>
+      </div>
+
+      <p>You could check another twenty lines and they would all work, and you would
+      still not know why. The reason is best seen rather than argued.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 170 76" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Squares of side one to four built from L-shaped borders of one, three, five and seven unit tiles">
+      
+            <!-- the first gnomon: one tile, in every square -->
+            <g class="dg-fill-b">
+              <rect x="12" y="55" width="7" height="7"/>
+              <rect x="40" y="55" width="7" height="7"/>
+              <rect x="76" y="55" width="7" height="7"/>
+              <rect x="119" y="55" width="7" height="7"/>
+            </g>
+            <!-- the second: three tiles -->
+            <g class="dg-fill-a">
+              <rect x="47" y="55" width="7" height="7"/>
+              <rect x="40" y="48" width="7" height="7"/><rect x="47" y="48" width="7" height="7"/>
+              <rect x="83" y="55" width="7" height="7"/>
+              <rect x="76" y="48" width="7" height="7"/><rect x="83" y="48" width="7" height="7"/>
+              <rect x="126" y="55" width="7" height="7"/>
+              <rect x="119" y="48" width="7" height="7"/><rect x="126" y="48" width="7" height="7"/>
+            </g>
+            <!-- the third: five tiles -->
+            <g class="dg-fill-c-soft">
+              <rect x="90" y="55" width="7" height="7"/><rect x="90" y="48" width="7" height="7"/>
+              <rect x="76" y="41" width="7" height="7"/><rect x="83" y="41" width="7" height="7"/>
+              <rect x="90" y="41" width="7" height="7"/>
+              <rect x="133" y="55" width="7" height="7"/><rect x="133" y="48" width="7" height="7"/>
+              <rect x="119" y="41" width="7" height="7"/><rect x="126" y="41" width="7" height="7"/>
+              <rect x="133" y="41" width="7" height="7"/>
+            </g>
+            <!-- the fourth: seven tiles -->
+            <g class="dg-fill-d">
+              <rect x="140" y="55" width="7" height="7"/><rect x="140" y="48" width="7" height="7"/>
+              <rect x="140" y="41" width="7" height="7"/>
+              <rect x="119" y="34" width="7" height="7"/><rect x="126" y="34" width="7" height="7"/>
+              <rect x="133" y="34" width="7" height="7"/><rect x="140" y="34" width="7" height="7"/>
+            </g>
+      
+            <g class="dg-thin">
+              <path d="M47 48 V62 M40 55 H54"/>
+              <path d="M83 41 V62 M90 41 V62 M76 48 H97 M76 55 H97"/>
+              <path d="M126 34 V62 M133 34 V62 M140 34 V62 M119 41 H147 M119 48 H147 M119 55 H147"/>
+            </g>
+            <g class="dg-line">
+              <rect x="12" y="55" width="7" height="7"/>
+              <rect x="40" y="48" width="14" height="14"/>
+              <rect x="76" y="41" width="21" height="21"/>
+              <rect x="119" y="34" width="28" height="28"/>
+            </g>
+      
+            <text class="dg-note" x="15.5" y="72" text-anchor="middle">1</text>
+            <text class="dg-note" x="47"   y="72" text-anchor="middle">4</text>
+            <text class="dg-note" x="86.5" y="72" text-anchor="middle">9</text>
+            <text class="dg-note" x="133"  y="72" text-anchor="middle">16</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.3</span> Each square is the one before
+          it with an L added along two sides. The L holds $3$, then $5$, then $7$
+          tiles — the odd numbers, in order.</figcaption>
+        </figure>
+      </div>
+
+      <p>To grow a square of side $n$ into one of side $n+1$, you add a column of $n$
+      down one side, a row of $n$ along another, and a single tile at the corner where
+      they meet: $n + n + 1 = 2n + 1$ tiles, which is odd whatever $n$ is. That is the
+      argument, and the picture is the argument — nothing has been left out of it.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The sum of the odd numbers</div>
+        <p>The first $n$ odd numbers add up to $n^2$:
+        $1 + 3 + 5 + \cdots + (2n-1) = n^2$. The $n$th odd number is $2n - 1$.</p>
+      </div>
+
+      <p>The picture and the formula are worth keeping both. The picture is what
+      convinces; the formula is what calculates. Asked for
+      $1 + 3 + 5 + \cdots + 99$, you do not want to draw anything — you want to notice
+      that $99 = 2 \times 50 - 1$, so this is the first fifty odd numbers, so the answer
+      is $50^2 = 2500$. Fifty numbers added in one line, because the shape of the sum
+      was recognised rather than the sum performed.</p>
+
+    </div>
+  </div>
+</section>

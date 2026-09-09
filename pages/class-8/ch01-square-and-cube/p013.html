@@ -1,0 +1,81 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Find the smallest number by which $9408$ must be multiplied to give a
+          perfect square, and find the square root of the product.</p>
+          <p>Factorise, then look for the primes that have no partner.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$9408$</span>
+              <span>$= 2^6 \times 3 \times 7^2$</span>
+            </div>
+          </div>
+          <p>The six $2$s make three pairs and the two $7$s make one. The single $3$ is
+          the only stray, so multiplying by $3$ is enough — and nothing smaller will do,
+          because that $3$ has to be paired somehow.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$9408 \times 3$</span>
+              <span>$= 2^6 \times 3^2 \times 7^2 = (2^3 \times 3 \times 7)^2$</span>
+              <span class="chip">$28224 = 168^2$</span>
+            </div>
+          </div>
+          <p>The root is read straight off: one member of each pair, $8 \times 3 \times 7
+          = 168$.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>Find the smallest perfect square divisible by $4$, $9$ and $10$.</p>
+          <p>It must be a multiple of all three, so it must be a multiple of their
+          lowest common multiple.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">LCM</span>
+              <span>$= 2^2 \times 3^2 \times 5 = 180$</span>
+            </div>
+          </div>
+          <p>$180$ is not itself a square — the $5$ is unpaired — and every multiple of
+          $180$ that is a square must contain that $5$ twice. The smallest way to arrange
+          it is to multiply by $5$.</p>
+          <div class="work">
+            <div class="work__row">
+              <span class="work__label work__label--wide">$180 \times 5$</span>
+              <span>$= 2^2 \times 3^2 \times 5^2 = 30^2$</span>
+              <span class="chip">$900$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>Both examples are the same move: factorise, find the primes standing alone,
+      and supply their partners. Whether the question asks you to <em>test</em> a number
+      or to <em>repair</em> one, the unpaired primes are what you are looking for.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Example 6 asks what to <em>multiply</em> by. What is the smallest number
+            you could <em>divide</em> $9408$ by to leave a perfect square?</p>
+            <p>Is the answer the same number? Should you expect it to be?</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

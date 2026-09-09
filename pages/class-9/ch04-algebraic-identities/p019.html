@@ -2,76 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>And the difference</h3>
-
-      <p>
-        The trick that gave the second identity from the first works here too.
-        Replace $b$ by $-b$ throughout, and watch the signs:
-      </p>
-
-      <div class="work">
-        <p>$(a + (-b))^3 = a^3 + 3a^2(-b) + 3a(-b)^2 + (-b)^3$</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Factorising by sum and product</div>
+        <p>
+          To factorise $x^2 + px + q$, look for two numbers whose
+          <strong>sum</strong> is $p$ and whose <strong>product</strong> is $q$.
+          Their signs are settled before you start hunting:
+        </p>
+        <table>
+          <thead>
+            <tr><th>$q$</th><th>$p$</th><th>the two numbers</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>positive</td><td>positive</td><td>both positive</td></tr>
+            <tr><td>positive</td><td>negative</td><td>both negative</td></tr>
+            <tr><td>negative</td><td>either</td><td>opposite signs</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <p>
-        The odd powers of $-b$ turn negative and the even one stays positive,
-        which leaves
+        Example 12 is the middle row: the product 6 is positive, so the numbers
+        share a sign, and the sum $-5$ tells you which. Reading the signs off
+        first halves the search.
       </p>
 
-      <div class="eq eq--anchor">
-        $$(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$$
+      <p>
+        The bottom row is the one worth practising, because there the search is
+        widest. In $x^2 - x - 12$ the product $-12$ is negative, so the two
+        numbers carry opposite signs. The pairs are $1$ and $-12$, $2$ and $-6$,
+        $3$ and $-4$, with sums $-11$, $-4$ and $-1$. Only the last is the $-1$
+        wanted, so $x^2 - x - 12 = (x + 3)(x - 4)$.
+      </p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.4</div>
+        <ol class="c-questions">
+          <li>
+                                Fill in the blanks to complete each identity.
+                                <ol class="c-parts c-parts--1">
+                                  <li>$s^2 - 11s + 24 = ($<span class="blank blank--lg"></span>$)($<span class="blank blank--lg"></span>$)$</li>
+                                  <li>$($<span class="blank blank--lg"></span>$)(x + 1) = 3x^2 - 4x - 7$</li>
+                                  <li>$10x^2 - 11x - 6 = (2x - $<span class="blank blank--sm"></span>$)($<span class="blank blank--sm"></span>$+ 2)$</li>
+                                  <li>$6x^2 + 7x + 2 = ($<span class="blank blank--lg"></span>$)($<span class="blank blank--lg"></span>$)$</li>
+                                </ol>
+                              </li>
+        </ol>
       </div>
 
-      <p>
-        Four terms, two positive and two negative, and the signs alternate along
-        the line. Compare it with $(a + b)^3$: the terms are identical, and only
-        the signs have changed.
-      </p>
-
-      <p>
-        The alternation is not an accident: replacing $b$ by $-b$ leaves the even
-        powers of $b$ alone and flips the odd ones, and a cube uses $b^0$, $b^1$,
-        $b^2$, $b^3$ in turn. The same substitution turned $(a+b)^2$ into
-        $(a-b)^2$ in Section 4.2, where only the middle term changed sign.
-      </p>
-
-      <p>
-        Both are worth recognising in the other direction too. Given a
-        four-term expression, can you tell that it <em>is</em> a cube?
-      </p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 13</div>
-        <div class="c-example__body">
-          <p>
-            A cube has volume $p^3 + 6p^2q + 12pq^2 + 8q^3$ cubic units. What is
-            the length of its side?
-          </p>
-          <p>
-            The side is whatever this expression is the cube of. Set it beside
-            $a^3 + 3a^2b + 3ab^2 + b^3$ and look for $a$ and $b$:
-          </p>
-          <div class="work">
-            <p>$p^3 + 6p^2q + 12pq^2 + 8q^3 = p^3 + 3(p)^2(2q) + 3(p)(2q)^2 + (2q)^3$</p>
-            <p>$= (p + 2q)^3$</p>
-          </div>
-          <p>So $a = p$ and $b = 2q$, and the side is $p + 2q$ units.</p>
-        </div>
-      </div>
-
-      <div class="c-example c-example--head">
-        <div class="c-example__tab">Example 14</div>
-        <div class="c-example__body">
-          <p>
-            Write $8n^3 - 60n^2m + 150nm^2 - 125m^3$ in the form $(a - b)^3$.
-            What are $a$ and $b$?
-          </p>
-          <p>
-            The alternating signs point to the difference identity. The two
-            cubes at the ends are $8n^3 = (2n)^3$ and $125m^3 = (5m)^3$, so try
-            $a = 2n$ and $b = 5m$:
-          </p>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>
+                                Choose an identity that lets you find each of these without
+                                multiplying directly, and use it.
+                                <ol class="c-parts c-parts--4">
+                                  <li>$41^2$</li>
+                                  <li>$27^2$</li>
+                                  <li>$23 \times 17$</li>
+                                  <li>$135^2$</li>
+                                  <li>$97^2$</li>
+                                  <li>$18 \times 29$</li>
+                                  <li>$34 \times 43$</li>
+                                  <li>$205^2$</li>
+                                </ol>
+                                <p class="hint">
+                                  One or two of these may not suit any identity you have met. Say so
+                                  if you find one, and explain what stops it.
+                                </p>
+                              </li>
+        </ol>
       </div>
 
     </div>

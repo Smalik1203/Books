@@ -1,0 +1,52 @@
+/* ============================================================
+   A4 EDITION — the stationery trim.
+
+   Crown Quarto is the standard and lives in tokens.css. This sheet
+   moves the size-dependent tokens back up to A4: 210 x 297, a
+   154mm measure, and a type scale one step larger, which is what
+   holds the line to the same 76 characters over the wider block.
+   Everything else — colour, components, hierarchy, the diagram
+   vocabulary — is shared, which is the whole point of an edition
+   sheet.
+
+   This is the trim the book was built in until the standard
+   changed, so the numbers here are the ones every chapter was set
+   to. Declaring "edition": "a4" in a chapter.json prints it that
+   way again — but the page breaks in pages/ are fitted to Crown
+   Quarto now, so an A4 build needs its own refit and will not
+   simply come out right.
+   ============================================================ */
+
+:root {
+  --trim-w: 210mm;
+  --trim-h: 297mm;
+
+  --margin-top:     26mm;
+  --margin-bottom:  20mm;
+  --margin-inside:  calc(25.5mm + var(--gutter-allowance));
+  --margin-outside: 25.5mm;
+  --measure:        154mm;
+
+  --size-caption:  9pt;
+  --size-note:    10.5pt;
+  --size-body:    11.5pt;
+  --size-concept: 13.5pt;
+  --size-section: 16.5pt;
+  --size-chapter: 27pt;
+  --size-numeral: 44pt;
+  --size-ornament: 30pt;
+
+  --space-hair:  1.5mm;
+  --space-tight: 2.7mm;
+  --space-step:  4.6mm;
+  --space-rest:  6.6mm;
+  --space-break: 9.9mm;
+  --lh-body:     1.43;
+
+  --fig-sm: 51mm;
+  --fig-md: 62mm;
+  --fig-lg: 72mm;
+  --fig-xl: 87mm;
+  /* --fig-full needs no override: it is var(--measure), and the
+     measure is overridden a few lines above. */
+}

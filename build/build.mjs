@@ -23,6 +23,10 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import katex from 'katex';
+import { cropHeight } from './png.mjs';
+import { windowPad } from './viewport.mjs';
+import { tokenReader, sheetMetrics, px } from './sheet.mjs';
+import { volumeName } from './volume.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -30,13 +34,21 @@ const p = (...parts) => path.join(ROOT, ...parts);
 
 /* ---- Chrome ---------------------------------------------- */
 const CHROME_CANDIDATES = [
+  process.env.CHROME,
+  process.env.CHROME_PATH,
+  '/usr/bin/chromium',
+  '/usr/bin/chromium-browser',
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
   '/usr/bin/google-chrome',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ];
-const findChrome = () => CHROME_CANDIDATES.find(c => existsSync(c));
+const findChrome = () => CHROME_CANDIDATES.find(c => c && existsSync(c));
+// Chrome refuses to start its sandbox as root, which is how a CI container
+// usually runs. Only then is the flag added — never on a developer machine.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
+
 
 /* ---- Maths ------------------------------------------------
    Replace display maths first, then inline. Anything inside a
@@ -174,11 +186,11 @@ async function lintClasses(root, pageFiles) {
    the table held the B5 numbers. --fig-full resolves through
    --measure, so it is followed rather than parsed. */
 async function figWidths(root, edition) {
-  const px = await tokenReader(root, edition);
+  const token = await tokenReader(root, edition);
   const w = {};
   for (const step of ['sm', 'md', 'lg', 'xl', 'full']) {
-    const raw = px('fig-' + step);
-    w[step] = /var\(\s*--measure/.test(raw) ? parseFloat(px('measure')) : parseFloat(raw);
+    const raw = token('fig-' + step);
+    w[step] = /var\(\s*--measure/.test(raw) ? parseFloat(token('measure')) : parseFloat(raw);
   }
   return w;
 }
@@ -201,37 +213,31 @@ function stampFigureScale(html, figMM) {
   return out;
 }
 
-/* The wrappers stampPages opened are closed here. */
-function closePages(body) {
-  return body.split("</section>").join("</div></div></section>");
+/* The wrappers stampPages opened are closed here, and the marks
+   hung outside the bleed box so clipping cannot reach them. */
+function closePages(body, marks = "") {
+  return body.split("</section>").join("</div></div>" + marks + "</section>");
 }
 
 /* ---- Sheet metrics ----------------------------------------
-   Read from the tokens rather than repeated here, so the page
-   box Chrome is told to print can never drift from the box the
-   stylesheet lays the book out in. */
-async function tokenReader(root, edition) {
-  const src = await readFile(path.join(root, 'css', 'tokens.css'), 'utf8');
-  const over = edition
-    ? await readFile(path.join(root, 'css', 'edition-' + edition + '.css'), 'utf8').catch(() => '')
-    : '';
-  return (name) => {
-    // an edition sheet wins, exactly as the cascade would have it
-    const from = over.includes('--' + name + ':') ? over : src;
-    return from.slice(from.indexOf("--" + name + ":") + name.length + 3, from.indexOf("--" + name + ":") + name.length + 30);
-  };
-}
+   tokenReader and sheetMetrics live in build/sheet.mjs, because
+   the tools that measure a chapter need the same trim this one
+   prints it at. */
 
-async function sheetMetrics(root, edition) {
-  const raw = await tokenReader(root, edition);
-  const mm = (name) => parseFloat(raw(name));
-  const trimW = mm('trim-w'), trimH = mm('trim-h');
-  const bleed = mm('bleed');
-  return {
-    trimW, trimH, bleed,
-    mediaW: trimW + 2 * bleed,
-    mediaH: trimH + 2 * bleed,
-  };
+/* Crop marks: eight hairlines in the slug, each running from the
+   bleed edge outward, so none of them can cross artwork. The
+   viewBox is in millimetres to keep the arithmetic readable. */
+function cropMarks(m) {
+  const o = m.bleed + m.slug;          // trim origin within the sheet
+  const R = o + m.trimW, B = o + m.trimH;
+  const gap = m.bleed, len = 5;
+  const l = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+  return `<svg class="cropmarks" viewBox="0 0 ${m.mediaW} ${m.mediaH}" aria-hidden="true">`
+    + l(o - gap - len, o, o - gap, o) + l(o, o - gap - len, o, o - gap)
+    + l(R + gap, o, R + gap + len, o) + l(R, o - gap - len, R, o - gap)
+    + l(o - gap - len, B, o - gap, B) + l(o, B + gap, o, B + gap + len)
+    + l(R + gap, B, R + gap + len, B) + l(R, B + gap, R, B + gap + len)
+    + `</svg>`;
 }
 
 /* ---- Page stamping ---------------------------------------
@@ -250,7 +256,12 @@ function stampPages(body, meta) {
       attrs = attrs.replace(declared[0], '');
     }
     const n = folio++;
-    const verso = n % 2 === 0;
+    /* Which side a folio prints on is its position in the book, not its
+       number. Sheet 1 is a recto, so sheet s is a recto when s is odd —
+       and the sheet holding folio n is the n-th after the front matter.
+       A chapter printed on its own has no front matter and the two are
+       the same thing, which is why this read as `n % 2` for so long. */
+    const verso = ((meta.front || 0) + n) % 2 === 0;
     const classes = `page${cls}${verso ? ' page--verso' : ''}`;
     const opener = cls.includes('page--opener');
 
@@ -333,12 +344,18 @@ const pagefoot = (n) => '<div class="pagefoot">'
   + '<i class="pagefoot__bar pagefoot__bar--line" aria-hidden="true"></i>'
   + `<span class="pagefoot__folio">${n}</span></div>`;
 
+/* The tab says what the book is. `subject` carries the volume —
+   "Mathematics II", "Science" — and the volume numeral belongs to
+   the binder, not to a browser tab, so it comes off here. Without
+   this a science chapter announced itself as maths. */
+const subjectName = (s) => (s || 'Mathematics').replace(/\s+(I{1,3}|IV)$/, '');
+
 /* ---- Shell ------------------------------------------------ */
 const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = null) => ((theme) => `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — Mathematics Class ${escapeHtml(meta.class)}</title>
+<title>${escapeHtml(meta.number)}. ${escapeHtml(meta.title)} — ${escapeHtml(subjectName(meta.subject))} Class ${escapeHtml(meta.class)}</title>
 <link rel="stylesheet" href="${cssHref}">${meta.edition ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}${meta.palette ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "palette-" + meta.palette + ".css")}">` : ``}
@@ -408,6 +425,18 @@ const DESIGN_RULES = [
     msg: 'font attribute in a diagram — use .dg-label or .dg-note' },
   { re: /<marker[\s>]/g,
     msg: 'private marker — reference the shared url(#dg-arrow)' },
+  /* A panel is a box, and a box has a top and a bottom. Divided
+     over a break it shows the reader neither: an open-bottomed
+     tray at the foot of one page and a lidless one at the head of
+     the next, with the folio and the running head set between the
+     two halves of a single thought. Four of them shipped that way
+     — an example, a key idea and two Think and Reflects — because
+     close-gaps could buy a page's white with one, and the white
+     was the cheaper thing to lose. It is not. Move the whole
+     panel to the next page and close the gap by editing the prose
+     at the join. */
+  { re: /class="[^"]*c-[a-z]+--(head|tail)\b/g,
+    msg: 'a panel divided across a break — move it whole and close the gap in prose' },
 ];
 
 /* An element left unclosed still renders — the browser repairs it
@@ -469,7 +498,7 @@ async function buildChapter(rel) {
   const sheet = await sheetMetrics(ROOT, meta.edition);
   const figMM = await figWidths(ROOT, meta.edition);
   let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta), figMM);
-  body = closePages(body);
+  body = closePages(body, cropMarks(sheet));
   const { html: rendered, errors } = renderMath(body);
 
   const outDir = p('build', path.dirname(rel));
@@ -498,7 +527,7 @@ async function toPdf(htmlPath) {
   const url = 'file:///' + htmlPath.replace(/\\/g, '/');
 
   await run(chrome, [
-    '--headless=new',
+    '--headless=new', ...SANDBOX,
     '--disable-gpu',
     '--no-pdf-header-footer',
     '--print-to-pdf-no-header',
@@ -515,10 +544,9 @@ async function toPdf(htmlPath) {
    Renders each page on its own at 2× so a spread can be read
    and marked up during design review. Same engine as the PDF,
    so what a proof shows is what the PDF gets. */
-const MM_TO_PX = 96 / 25.4;               // CSS px per mm
-// The proof window must match the edition being rendered, or an A4 page
-// comes back cropped to a B5 frame and reads as though it were clipped.
-const px = (mm) => Math.round(mm * MM_TO_PX);
+// px comes from sheet.mjs. The proof window must match
+// the edition being rendered, or a standard-trim page comes back
+// cropped to a smaller frame and reads as though it were clipped.
 
 async function toPngs(htmlPath, meta, sheet) {
   const chrome = findChrome();
@@ -545,17 +573,20 @@ async function toPngs(htmlPath, meta, sheet) {
 
     const png = path.join(dir, `p${String(folio).padStart(3, '0')}.png`);
     await run(chrome, [
-      '--headless=new',
+      '--headless=new', ...SANDBOX,
       '--disable-gpu',
       '--hide-scrollbars',
       '--force-device-scale-factor=2',
-      `--window-size=${px(sheet.trimW)},${px(sheet.trimH)}`,
+      `--window-size=${px(sheet.trimW)},${px(sheet.trimH) + await windowPad(chrome)}`,
       '--virtual-time-budget=8000',
       `--screenshot=${png}`,
       'file:///' + tmp.replace(/\\/g, '/'),
     ], { maxBuffer: 1 << 24 });
 
     await rm(tmp, { force: true });
+    // Chrome captured the window, so the proof carries the empty
+    // strip below the sheet. Take it back off, at capture scale.
+    await cropHeight(png, px(sheet.trimH) * 2);
     out.push(png);
   }
   console.log(`  → ${out.length} proof(s) in ${path.relative(ROOT, dir)}`);
@@ -595,7 +626,8 @@ async function checkOverflow(htmlPath, meta, sheet) {
         });
         var fill = avail > 0 ? (deepest - top) / avail : 0;
         out.push({ folio: pg.dataset.folio, over: Math.round(over),
-                   fill: Math.round(fill * 100), close: pg.hasAttribute('data-close') });
+                   fill: Math.round(fill * 100), avail: Math.round(avail),
+                   close: pg.hasAttribute('data-close') });
       });
       document.title = 'OVERSET' + JSON.stringify(out);
     });
@@ -607,7 +639,7 @@ async function checkOverflow(htmlPath, meta, sheet) {
     'href="../../css/book.css"', 'href="../../css/book.css"'));
 
   const { stdout } = await run(chrome, [
-    '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    '--headless=new', ...SANDBOX, '--disable-gpu', '--hide-scrollbars',
     `--window-size=${px(sheet.trimW)},${px(sheet.trimH)}`,
     '--virtual-time-budget=8000', '--dump-dom',
     'file:///' + tmp.replace(/\\/g, '/'),
@@ -639,7 +671,8 @@ async function checkOverflow(htmlPath, meta, sheet) {
   const SHORT = 88;
   const short = rows.slice(0, -1).filter(r => !r.over && !r.close && r.fill < SHORT);
   for (const r of short) {
-    const gap = ((100 - r.fill) / 100 * 213).toFixed(0);
+    // the text block's own height, measured — the trim is not a constant
+    const gap = ((100 - r.fill) / 100 * (r.avail / PX_PER_MM)).toFixed(0);
     console.warn(`    ~ page ${r.folio} is ${r.fill}% full — ${gap}mm of white at the foot`);
   }
   // one compact line so page fullness is visible at a glance
@@ -655,38 +688,78 @@ async function checkOverflow(htmlPath, meta, sheet) {
    These pages take no folio, which is why Chapter 1 opens on
    page 1 and not page 5. Their count is kept even so the body
    still begins on a recto. */
-async function bookMeta(cls) {
+/* A cover names its volume with a title and a part; a chapter names it
+   with a subject. "Mathematics" and part 1 compose "Mathematics I", which
+   is how a volume's chapters find their own jacket. Taking the first
+   cover in the folder was right while a class was one book — with two it
+   stamped Part I's part number and Part I's ISBN on Part II.
+
+   The composition itself is in volume.mjs, because the studio needs the
+   same answer and cannot import this file. */
+
+async function bookMeta(cls, subject) {
   const dir = p('covers', cls);
   const names = await readdir(dir, { withFileTypes: true }).catch(() => []);
   for (const e of names) {
     if (!e.isDirectory()) continue;
     const file = path.join(dir, e.name, 'cover.json');
-    if (existsSync(file)) return JSON.parse(await readFile(file, 'utf8'));
+    if (!existsSync(file)) continue;
+    const book = JSON.parse(await readFile(file, 'utf8'));
+    if (volumeName(book) === subject) return book;
   }
   return null;
 }
 
-function frontMatter(book, contents) {
+function frontMatter(book, contents, preface, sheet, marks = "") {
+  /* These pages are assembled here rather than through closePages, so
+     they have to be handed the marks themselves. Without that the
+     title, the preface and the contents were the only sheets in the
+     press PDF with no marks on them. */
   const page = (cls, inner) =>
     `<section class="page page--front ${cls}">\n  <div class="page__body">`
-    + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>\n</section>`;
+    + `\n    <div class="page__main">\n${inner}\n    </div>\n  </div>${marks}\n</section>`;
 
   const title = page('page--title', `      <div class="titlepage">
-        <div class="titlepage__imprint">${escapeHtml(book.imprint || '')}</div>
-        <h1 class="titlepage__title">${escapeHtml(book.title || '')}</h1>
-        <div class="titlepage__rule"></div>
-        <div class="titlepage__subtitle">${escapeHtml(book.subtitle || '')}</div>
-        ${book.part ? `<div class="titlepage__part">Part ${escapeHtml(book.part)}</div>` : ''}
+        <div class="titlepage__head">
+          <div class="titlepage__imprint">${escapeHtml(book.imprint || '')}</div>
+          <div class="titlepage__marker">
+            <span class="titlepage__class">Class ${escapeHtml(book.class || '')}</span>
+            ${book.part ? `<span class="titlepage__part">Part ${escapeHtml(book.part)}</span>` : ''}
+          </div>
+        </div>
+        <div class="titlepage__main">
+          <h1 class="titlepage__title">${escapeHtml(book.title || '')}</h1>
+          <div class="titlepage__rule"></div>
+          <div class="titlepage__subtitle">${escapeHtml(book.subtitle || '')}</div>
+        </div>
+        <div class="titlepage__foot">Every idea explained &middot; demonstrated &middot; practised</div>
       </div>`);
 
-  const imprint = page('page--verso', `      <div class="imprint">
-        <p class="imprint__name">${escapeHtml(book.imprint || '')}</p>
-        ${book.url ? `<p>${escapeHtml(book.url)}</p>` : ''}
-        ${book.isbn ? `<p>ISBN ${escapeHtml(book.isbn)}</p>` : ''}
-        <p>${escapeHtml(book.title || '')}${book.part ? `, Part ${escapeHtml(book.part)}` : ''}
-           &mdash; Class ${escapeHtml(book.class || '')}.</p>
-        <p>Typeset in Spectral and Vollkorn. Printed on a ${book.edition === 'b5' ? '176 &times; 250' : '210 &times; 297'} mm page.</p>
-      </div>`);
+  /* The imprint has no page of its own. A leaf spent on eight lines of
+     small print is a leaf, and these eight lines sit perfectly well at
+     the foot of the page that already ends the front matter — under a
+     hairline, below the preface's own signoff. What is not allowed is
+     to drop them: the ISBN, the edition statement and the copyright are
+     not optional matter in a printed book, and they were missing from
+     the volume entirely for as long as the imprint was only a fallback
+     for classes that had written no preface. */
+  const imprint = `      <div class="imprint imprint--tail">
+        <p><span class="imprint__name">${escapeHtml(book.imprint || '')}</span>${book.url ? ` &middot; ${escapeHtml(book.url)}` : ''}
+           &middot; ${escapeHtml(book.title || '')}${book.part ? `, Part ${escapeHtml(book.part)}` : ''}, Class ${escapeHtml(book.class || '')}.
+           ${book.edition_statement ? escapeHtml(book.edition_statement) : ''}
+           ${book.isbn ? `ISBN ${escapeHtml(book.isbn)}.` : ''}
+           ${book.copyright ? `&copy; ${escapeHtml(String(book.year || ''))} ${escapeHtml(book.copyright)}. All rights reserved.` : ''}</p>
+        <p>Typeset in Spectral and Vollkorn. Printed on a ${sheet.trimW} &times; ${sheet.trimH} mm page.</p>
+      </div>`;
+
+  /* The preface is prose, so it is read rather than consulted, and it
+     ends the front matter — facing the opening of Chapter 1, which is
+     the page a reader is on when they start. Its text lives in
+     pages/<class>/preface.html: the builder places front matter, it
+     does not author it. The imprint rides at its foot. */
+  const prefacePage = preface
+    ? page('page--imprinted', preface.trimEnd().split('\n').map((l) => '      ' + l).join('\n') + '\n' + imprint)
+    : null;
 
   const rows = contents.map((c) => `          <li>
             <span class="contents__num">${escapeHtml(c.n)}</span>
@@ -700,10 +773,23 @@ function frontMatter(book, contents) {
 ${rows}
       </ol>`);
 
-  const pages = [title, imprint, toc];
-  // the body must open on a recto, so the front matter is kept even
-  if (pages.length % 2) pages.push(page('page--verso page--blank', ''));
-  return pages;
+  /* No padding leaf. The front matter used to be forced to an even
+     count so that folio 1 fell on a recto and the body's recto/verso
+     stamping came out right — but that is a rule about where a page
+     sits in the book, and the book can simply be asked. frontMatter
+     reports its length, the body stamps each folio from its real
+     position, and any count works. A blank leaf is only ever inserted
+     now to open a chapter on a recto, which --tight drops. */
+  const pages = [title, toc];
+  if (prefacePage) pages.push(prefacePage);
+  /* Front matter carries no folio, so its pages have no number to take
+     a side from — only their place in the stack. The first leaf of a
+     book is a recto and they alternate from there. Hard-coding the
+     side on each page instead worked only while the front matter was
+     one fixed length. */
+  return pages.map((html, i) => i % 2
+    ? html.replace('<section class="page ', '<section class="page page--verso ')
+    : html);
 }
 
 /* ---- Build the whole class as one book ---------------------
@@ -736,11 +822,17 @@ async function paletteScope(meta) {
   return `[data-ch="${meta.number}"] {\n  ${rules.join('\n  ')}\n}`;
 }
 
-const blankVerso = (folio) =>
+const blankVerso = (folio, marks = "") =>
   `<section class="page page--verso page--blank" data-folio="${folio}">`
-  + `<div class="page__body"></div></section>`;
+  + `<div class="page__body"></div>${marks}</section>`;
 
-async function buildBook(cls) {
+/* A class is not one book. Class 8 is two volumes — Mathematics I and
+   Mathematics II — and a volume is what gets printed, so a volume is what
+   gets bound. Binding the class instead collides on the chapter number:
+   both volumes open at 1, so their chapters interleave 1, 1, 2, 2, and
+   paletteScope writes [data-ch="1"] twice at equal specificity, which
+   hands both chapter ones to whichever palette came last. */
+async function buildBooks(cls) {
   const root = p('pages', cls);
   const dirs = (await readdir(root, { withFileTypes: true }))
     .filter((e) => e.isDirectory()).map((e) => e.name);
@@ -751,13 +843,53 @@ async function buildBook(cls) {
     if (!existsSync(metaPath)) continue;
     chapters.push({ dir, meta: JSON.parse(await readFile(metaPath, 'utf8')) });
   }
-  if (!chapters.length) { console.log(`  ${cls}: no chapters`); return null; }
+  if (!chapters.length) { console.log(`  ${cls}: no chapters`); return []; }
+
+  /* Grouped by the field the studio already files them under, with the
+     same fallback it uses, so a chapter that forgot the field is bound
+     into the volume it is listed under rather than into one of its own. */
+  const volumes = new Map();
+  for (const ch of chapters) {
+    const subject = ch.meta.subject || 'Mathematics I';
+    if (!volumes.has(subject)) volumes.set(subject, []);
+    volumes.get(subject).push(ch);
+  }
+
+  /* "Mathematics I" sorts before "Mathematics II" before "Science" on the
+     plain string, a prefix being shorter than what extends it, so the
+     volumes bind in the order they are shelved without parsing a numeral
+     out of the subject. */
+  const subjects = [...volumes.keys()].sort();
+  console.log(`  ${cls}: ${subjects.length} volume(s) — `
+    + subjects.map((s) => `${s} (${volumes.get(s).length})`).join(', '));
+
+  const books = [];
+  for (const subject of subjects) {
+    const book = await bindVolume(cls, subject, volumes.get(subject));
+    if (book) books.push(book);
+  }
+  return books;
+}
+
+async function bindVolume(cls, subject, chapters) {
+  const root = p('pages', cls);
   chapters.sort((a, b) => Number(a.meta.number) - Number(b.meta.number));
+
+  /* The whole point of binding a volume rather than a class is that a
+     chapter number is unique inside one, and a repeat would put the same
+     collision back inside a single bind. */
+  const nums = chapters.map((c) => String(c.meta.number));
+  const twice = nums.find((n, i) => nums.indexOf(n) !== i);
+  if (twice !== undefined) {
+    console.warn(`    ! ${cls} · ${subject}: chapter ${twice} appears twice`
+      + ` — two [data-ch="${twice}"] palettes, and the later one repaints both`);
+  }
 
   // One book, one trim. Mixed editions would print at two sizes.
   const editions = [...new Set(chapters.map((c) => c.meta.edition || 'standard'))];
   if (editions.length > 1) {
-    console.error(`  ${cls}: chapters use different editions (${editions.join(', ')}) — a book needs one trim`);
+    console.error(`  ${cls} · ${subject}: chapters use different editions (${editions.join(', ')})`
+      + ` — a book needs one trim`);
     return null;
   }
 
@@ -771,20 +903,32 @@ async function buildBook(cls) {
   let folio = 1;
   let blanks = 0;
 
+  /* How many leaves precede folio 1 has to be known before the body is
+     stamped, because it decides which side every folio falls on. The
+     front matter itself is assembled further down — it needs the
+     contents, which the loop below collects — so its length is counted
+     here rather than measured there. */
+  const book = await bookMeta(cls, subject);
+  const prefacePath = p('pages', cls, 'preface.html');
+  const preface = book && existsSync(prefacePath)
+    ? await readFile(prefacePath, 'utf8') : null;
+  const front = book ? 2 + (preface ? 1 : 0) : 0;
+
   for (const ch of chapters) {
     const src = path.join(root, ch.dir);
     const files = (await readdir(src)).filter((f) => /^p\d+.*\.html$/.test(f)).sort();
     if (!files.length) continue;
 
-    if (folio % 2 === 0) { bodies.push(blankVerso(folio)); folio++; blanks++; }
+    // a chapter opens on a recto when the sheet it starts on is odd
+    if (!wantTight && (front + folio) % 2 === 0) { bodies.push(blankVerso(folio, cropMarks(sheet))); folio++; blanks++; }
 
     const parts = [];
     for (const f of files) {
       parts.push(`<!-- ${ch.dir}/${f} -->\n` + (await readFile(path.join(src, f), 'utf8')).trim());
     }
-    const meta = { ...ch.meta, startFolio: folio };
+    const meta = { ...ch.meta, startFolio: folio, front };
     let body = stampFigureScale(stampPages(parts.join(String.fromCharCode(10, 10)), meta), figMM);
-    body = closePages(body);
+    body = closePages(body, cropMarks(sheet));
     body = body.split('<section class="page').join(`<section data-ch="${ch.meta.number}" class="page`);
 
     bodies.push(body);
@@ -796,26 +940,31 @@ async function buildBook(cls) {
   // Title, imprint and contents go in front. They carry no folio, so
   // chapter 1 still opens on page 1 — but their count is kept even, or
   // the body would start on a verso.
-  const book = await bookMeta(cls);
-  let front = 0;
   if (book) {
-    const fm = frontMatter(book, contents);
-    front = fm.length;
+    const fm = frontMatter(book, contents, preface, sheet, cropMarks(sheet));
+    if (fm.length !== front) {
+      console.warn(`    ! front matter came to ${fm.length} pages but ${front} were counted`
+        + ` before the body was stamped — every folio is on the wrong side`);
+    }
     bodies.unshift(...fm);
   } else {
-    console.warn(`    ! ${cls}: no cover.json found, so the book has no title page`);
+    console.warn(`    ! ${cls} · ${subject}: no cover.json for this volume,`
+      + ` so the book has no title page`);
   }
 
   const { html: rendered, errors } = renderMath(bodies.join(String.fromCharCode(10, 10)));
   const meta = {
     class: chapters[0].meta.class,
-    number: '', title: 'Mathematics',
+    number: '', title: (book && book.title) || subject,
     edition, palette: null,
   };
 
   const outDir = p('build', cls);
   await mkdir(outDir, { recursive: true });
-  const name = cls + '-book';
+  /* Named for the volume even when a class holds one, so the path does
+     not change shape on the day a second volume lands — which is the day
+     every note that quotes it is most likely to be followed. */
+  const name = `${cls}-${subject.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-book`;
   const outHtml = path.join(outDir, name + '.html');
   await writeFile(outHtml, bookShell(meta, rendered, scopes, null, sheet));
 
@@ -825,7 +974,27 @@ async function buildBook(cls) {
     await writeFile(bleedHtml, bookShell(meta, rendered, scopes, sheet, sheet));
   }
 
-  console.log(`  ${cls}: ${chapters.length} chapters → ${folio - 1} numbered pages`
+  /* Every leaf has two sides and the first sheet of a bound book is a
+     recto, so sheet n is a recto exactly when n is odd. A page styled
+     for the other side puts its gutter allowance, its running head and
+     its folio on the wrong edge — and since the offset comes from the
+     count of pages before it, one page out of place inverts the whole
+     book rather than one leaf of it. Cheap to check, invisible in a
+     PDF reader that shows one page at a time, and wrong on paper. */
+  const sides = [...rendered.matchAll(/<section ([^>]*class="page[^>]*)>/g)]
+    .map((m, i) => ({
+      sheet: i + 1,
+      styled: /page--verso/.test(m[1]) ? 'verso' : 'recto',
+      physical: (i + 1) % 2 ? 'recto' : 'verso',
+    }));
+  const wrong = sides.filter((s) => s.styled !== s.physical);
+  if (wrong.length) {
+    console.warn(`    ! ${wrong.length} of ${sides.length} sheets are styled for the side they are not on`
+      + ` — first at sheet ${wrong[0].sheet}, styled ${wrong[0].styled} on a ${wrong[0].physical}.`
+      + ` A page's side comes from its place in the book: sheet 1 is a recto.`);
+  }
+
+  console.log(`  ${cls} · ${subject}: ${chapters.length} chapters → ${folio - 1} numbered pages`
     + `${front ? `, plus ${front} pages of front matter` : ``}`
     + `${blanks ? `, ${blanks} blank verso inserted so each chapter opens on a recto` : ''}`
     + `${errors ? `, ${errors} math error(s)` : ''}`);
@@ -848,8 +1017,7 @@ async function verifySheet(pdfPath, sheet) {
   const odd = boxes.filter(b => b[0] !== boxes[0][0] || b[1] !== boxes[0][1]).length;
   const dw = Math.abs(w - sheet.mediaW), dh = Math.abs(h - sheet.mediaH);
   console.log(`    sheet ${w.toFixed(2)} x ${h.toFixed(2)}mm`
-    + ` (trim ${sheet.trimW} x ${sheet.trimH} plus ${sheet.bleed}mm bleed, no marks)`);
-
+    + ` (trim ${sheet.trimW} x ${sheet.trimH}, bleed ${sheet.bleed}mm, marks in a ${sheet.slug}mm slug)`);
   if (odd) console.warn(`    ! ${odd} page(s) carry a different box`);
   if (dw > 0.5 || dh > 0.5) {
     console.warn(`    ! that is ${dw.toFixed(2)} x ${dh.toFixed(2)}mm off the intended sheet`);
@@ -862,10 +1030,15 @@ const wantPdf = args.includes('--pdf');
 const wantPng = args.includes('--png');
 const wantBleed = args.includes('--bleed');
 const wantBook = args.includes('--book');
+/* A bound book opens each chapter on a recto, which costs a blank
+   verso wherever the previous chapter ended odd. That is the right
+   default for print. --tight drops those blanks, for a copy that is
+   going to be read on a screen and scrolled rather than turned. */
+const wantTight = args.includes('--tight');
 const target = args.find(a => !a.startsWith('--'));
 
 if (!target) {
-  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book]');
+  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book] [--tight]');
   process.exit(1);
 }
 
@@ -899,14 +1072,13 @@ for (const ch of chapters) {
   if (wantPng) await toPngs(built.htmlPath, built.meta, built.sheet);
 }
 
-// --book binds the whole class into one volume: folios run straight
-// through and every chapter opens on a recto.
+// --book binds each of the class's volumes: within a volume the folios
+// run straight through and every chapter opens on a recto.
 if (wantBook) {
   const cls = target.split('/')[0];
   console.log(`
-Binding ${cls} as one book:`);
-  const book = await buildBook(cls);
-  if (book) {
+Binding ${cls}:`);
+  for (const book of await buildBooks(cls)) {
     await checkOverflow(book.htmlPath, book.meta, book.sheet);
     if (wantPdf) await toPdf(book.htmlPath);
     if (book.bleedHtml) {
