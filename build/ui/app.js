@@ -62,6 +62,20 @@
     const base = state.sheet === 'bleed' ? cfg.bleedUrl : cfg.trimUrl;
     return base + (state.view === 'spread' ? '?view=spread' : '');
   }
+  function syncDownloads() {
+    for (const a of document.querySelectorAll('[data-sheet-download]')) {
+      const ready = a.dataset[state.sheet + 'Ready'] === 'true';
+      a.href = a.dataset[state.sheet + 'Url'];
+      a.classList.toggle('btn--off', !ready);
+      if (ready) {
+        a.removeAttribute('aria-disabled');
+        a.removeAttribute('title');
+      } else {
+        a.setAttribute('aria-disabled', 'true');
+        a.title = 'Not built yet — press Build';
+      }
+    }
+  }
   function load() {
     frame.src = src();
     /* Trim is what the reader gets and what the viewer opens on, so
@@ -70,6 +84,7 @@
        was two controls doing one control's work. */
     press('sheet-bleed', state.sheet === 'bleed');
     press('view-spread', state.view === 'spread');
+    syncDownloads();
   }
 
   /* ---- sizing -------------------------------------------- */
@@ -409,7 +424,11 @@
       const out = await r.json();
       say(out.ok ? out.summary : ('failed — ' + out.summary), !out.ok);
       if (out.ok) {
-        load();
+        // Build creates both PDF sheets; select the one currently being viewed.
+        document.querySelectorAll('[data-sheet-download]').forEach((a) => {
+          a.dataset.trimReady = 'true';
+          a.dataset.bleedReady = 'true';
+        });
         // the artefacts the page was rendered without now exist
         document.querySelectorAll('a.btn--off').forEach((a) => {
           a.classList.remove('btn--off');
@@ -418,6 +437,7 @@
         });
         const bleed = $('sheet-bleed');
         if (bleed) { bleed.disabled = false; bleed.removeAttribute('title'); }
+        load();
       }
     } catch (e) {
       say('failed — ' + e.message, true);

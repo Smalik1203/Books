@@ -262,7 +262,8 @@ function stampPages(body, meta) {
        A chapter printed on its own has no front matter and the two are
        the same thing, which is why this read as `n % 2` for so long. */
     const verso = ((meta.front || 0) + n) % 2 === 0;
-    const classes = `page${cls}${verso ? ' page--verso' : ''}`;
+    const designClass = meta.design === 'living-world' && !cls.includes('page--living') ? ' page--living' : '';
+    const classes = `page${cls}${designClass}${verso ? ' page--verso' : ''}`;
     const opener = cls.includes('page--opener');
 
     // Interior pages carry the folio in the running head, beside the
@@ -273,7 +274,7 @@ function stampPages(body, meta) {
     // pages of a different kind of work should say so at every opening,
     // not only on the one page carrying the opener band.
     const bridge = /\sdata-bridge(?=[\s=]|$)/.test(attrs);
-    const runhead = opener ? '' : `
+    const runhead = opener && meta.design !== 'living-world' ? '' : `
       <div class="runhead">
         <span class="runhead__chapter">${escapeHtml(meta.title)}${bridge ? ' &middot; Beyond the Book' : ''}</span>
         <i class="runhead__mark" aria-hidden="true"></i>

@@ -358,7 +358,12 @@ function libraryHtml(classes, coverClasses) {
    there, and say why when it is not. */
 const downloadBtn = (base, suffix, label) => {
   const ok = existsSync(path.join(ROOT, 'build', base + suffix));
+  const sheet = suffix === '.pdf'
+    ? ` data-sheet-download data-trim-url="/build/${esc(base)}.pdf" data-bleed-url="/build/${esc(base)}-bleed.pdf"`
+      + ` data-trim-ready="${ok}" data-bleed-ready="${existsSync(path.join(ROOT, 'build', base + '-bleed.pdf'))}"`
+    : '';
   return `<a class="btn${ok ? '' : ' btn--off'}" href="/build/${esc(base)}${suffix}"`
+    + sheet
     + (ok ? ' download' : ' download aria-disabled="true" title="Not built yet — press Build"')
     + `>${label}</a>`;
 };
@@ -528,7 +533,7 @@ ${zoomBar(true, `
             ${noBleed ? 'disabled title="Build first"'
                       : `title="Show the press sheet, ${s.mediaW} × ${s.mediaH} mm — the ${s.trimW} × ${s.trimH} trim plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop marks"`}
             >Bleed</button>
-          ${dl('-bleed.pdf', 'Print PDF')}
+          ${dl('.pdf', 'Print PDF')}
           <button class="btn btn--go" id="build">Build</button>
         </div>
       </div>
@@ -587,7 +592,7 @@ ${zoomBar(false)}
             ${noBleed ? 'disabled title="Build first"'
                       : `title="Show the press sheet, ${s.wrapW} × ${s.wrapH} mm — the ${s.sheetW} × ${s.trimH} wrap plus ${s.bleed}mm of bleed, in a ${s.slug}mm slug with the crop and fold marks"`}
             >Bleed</button>
-          ${dl('-bleed.pdf', 'Print PDF')}
+          ${dl('.pdf', 'Print PDF')}
           ${dl('-proof.png', 'Print PNG')}
           <button class="btn btn--go" id="build">Build</button>
         </div>

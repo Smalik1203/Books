@@ -1,0 +1,238 @@
+/* Photographic science edition: Spectral + Vollkorn, with a botanical
+   editorial system. All rules are isolated from other book designs. */
+/* Keep this chapter buildable without the separate, shared-opener redesign. */
+@font-face {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/cover-archivo-400-latin.woff2') format('woff2');
+}
+.page--living .chapter-opening { position: relative; isolation: isolate; margin-bottom: var(--space-rest); }
+.page--living .chapter-opening__heading { position: relative; padding: var(--space-step) 0; }
+.page--living .chapter-opening__num { width: auto; height: auto; padding: 0; border-radius: 0; background: none; font-family: var(--font-display); font-weight: var(--weight-bold); font-variant-numeric: lining-nums; }
+.page--living .chapter-opening__title { color: var(--teal-deep); font-family: var(--font-display); line-height: var(--lh-tight); letter-spacing: normal; margin: 0; text-align: left; hyphens: none; }
+.page--living .chapter-opening__subtitle { font-family: Archivo, Arial, sans-serif; font-weight: 400; line-height: var(--lh-snug); color: var(--ink-soft); text-align: left; hyphens: none; }
+.page--living .chapter-opening__question { border-top: var(--stroke-rule) solid var(--teal); padding-top: var(--space-step); margin-top: var(--space-step); break-inside: avoid; }
+.page--living .chapter-opening__question h3 { margin: 0 0 var(--space-tight); }
+.page--living.page--opener .runhead { display: block; opacity: .65; }
+.page--living.page--opener .runhead__chapter { font-size: var(--size-caption); color: var(--ink-soft); }
+.page--living {
+  --size-opener-number: calc(var(--size-numeral) * 2);
+  --font-body: Spectral, Georgia, serif;
+  --font-display: Vollkorn, Spectral, Georgia, serif;
+  --weight-text: 500;
+  --life-blue: #244d40; --life-navy: #203b32; --life-green: #45674e;
+  --life-orange: #a34c32; --life-pale: #f3f3eb; --life-mint: #edf1e8;
+  --life-sun: #faf3e4; --life-ink: #282c26; --life-rule: #d4d6c8;
+  --teal: var(--life-blue); --teal-deep: var(--life-navy);
+  --rust: var(--life-orange); --rust-deep: var(--life-orange);
+  --life-photo-h: calc(var(--trim-h) * .22);
+  --life-radius: 0;
+}
+.page--living .page__main { text-align: left; color: var(--life-ink); hyphens: none; line-height: var(--lh-body); }
+.page--living.page--haschead .page__body { top: var(--margin-top); }
+.page--living p { margin-bottom: var(--space-tight); }
+.page--living h1, .page--living h2, .page--living h3 { font-variant-caps: normal; letter-spacing: normal; color: var(--life-navy); line-height: var(--lh-snug); }
+.page--living h2 { display: block; border: 0; padding: 0; margin: var(--space-step) 0 var(--space-tight); font-size: var(--size-section); }
+.page--living h2 .badge { display: inline; padding: 0; background: none; color: var(--life-orange); border-radius: 0; font-size: var(--size-section); margin-right: var(--space-tight); }
+.page--living h2 .name { color: inherit; font-variant-caps: normal; letter-spacing: normal; }
+.page--living h3 { font-size: var(--size-concept); margin: var(--space-step) 0 var(--space-tight); color: var(--life-green); }
+.page--living strong { color: var(--life-navy); }
+.page--living .runhead { border: 0; padding: 0 0 var(--space-hair); border-bottom: var(--stroke-hair) solid var(--life-rule); }
+.page--living .runhead__chapter { color: var(--life-blue); font-family: var(--font-body); font-style: normal; font-size: var(--size-caption); font-weight: 400; }
+.page--living .runhead__mark { display: none; }
+.page--living .pagefoot__bar { display: none; }
+.page--living .pagefoot__folio { color: white; background: var(--life-blue); border-radius: 50%; width: calc(var(--space-step) * 2); height: calc(var(--space-step) * 2); line-height: calc(var(--space-step) * 2); text-align: center; bottom: var(--space-tight); }
+.page--living .pagefoot::before { content: 'SCIENCE · GRADE 6'; position: absolute; left: var(--margin-inside); bottom: var(--space-step); color: var(--life-blue); font-family: var(--font-body); font-size: var(--size-caption); letter-spacing: var(--track-title); }
+.page--living.page--verso .pagefoot::before { left: auto; right: var(--margin-inside); }
+.life-opener { background: var(--life-blue); color: white; padding: var(--space-step); border-radius: 0 var(--life-radius) var(--life-radius) var(--life-radius); margin-bottom: var(--space-step); }
+.life-opener h1 { color: white; font-size: var(--size-chapter); margin: var(--space-hair) 0; }
+.life-kicker { font-family: var(--font-display); font-size: var(--size-note); letter-spacing: var(--track-label); text-transform: uppercase; margin: 0; }
+.life-deck { font-size: var(--size-concept); line-height: var(--lh-snug); }
+.life-photo { margin: var(--space-step) 0; break-inside: avoid; }
+.life-photo img { display: block; width: 100%; height: var(--life-photo-h); object-fit: cover; border-radius: var(--life-radius); }
+.life-photo--hero img { height: calc(var(--trim-h) * .37); }
+.life-photo--contain img { object-fit: contain; background: var(--life-pale); }
+.life-photo--wide img { height: calc(var(--trim-h) * .27); }
+.life-photo--small img { height: calc(var(--trim-h) * .17); }
+.life-photo figcaption, .life-gallery figcaption { color: var(--life-blue); font-family: var(--font-body); font-size: var(--size-caption); font-style: normal; text-align: left; margin-top: var(--space-hair); line-height: var(--lh-snug); }
+.life-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-tight) var(--space-step); margin: var(--space-step) 0; break-inside: avoid; }
+.life-gallery figure { margin: 0; min-width: 0; }
+.life-gallery img { display: block; width: 100%; height: calc(var(--trim-h) * .18); object-fit: cover; border-radius: var(--life-radius); }
+.life-gallery--stages img { height: calc(var(--trim-h) * .17); object-fit: contain; background: var(--life-pale); }
+.life-gallery figcaption strong { display: block; font-family: var(--font-display); color: var(--life-blue); margin-bottom: var(--space-hair); }
+.life-note { background: var(--life-mint); border: var(--stroke-hair) solid var(--life-rule); border-radius: var(--life-radius); padding: var(--space-tight) var(--space-step); margin: var(--space-step) 0; font-size: var(--size-note); break-inside: avoid; }
+.life-note h3 { margin: 0 0 var(--space-hair); }
+.life-note--question { background: var(--life-sun); border-color: var(--life-orange); }
+.life-note--question h3 { color: var(--life-orange); }
+.life-activity { margin: var(--space-step) 0; border-top: var(--stroke-band) solid var(--life-orange); padding-top: var(--space-tight); break-inside: avoid; font-size: var(--size-note); }
+.life-activity h3 { margin: 0 0 var(--space-tight); color: var(--life-orange); }
+.life-activity li::marker { color: var(--life-orange); }
+.life-safety { font-size: var(--size-caption); color: var(--life-orange); border-top: var(--stroke-hair) solid var(--life-rule); padding-top: var(--space-hair); margin-top: var(--space-tight); }
+.life-example { background: var(--life-pale); border-radius: var(--life-radius); padding: var(--space-step); margin: var(--space-step) 0; break-inside: avoid; font-size: var(--size-note); }
+.life-example > :first-child { margin-top: 0; }
+.life-example h3 { color: var(--life-blue); }
+.life-summary { border: var(--stroke-hair) solid var(--life-green); background: var(--life-mint); padding: var(--space-step); border-radius: var(--life-radius); margin: var(--space-step) 0; break-inside: avoid; }
+.life-summary h3 { margin-top: 0; }
+.page--living table { width: 100%; border-collapse: collapse; font-size: var(--size-note); line-height: var(--lh-snug); margin: var(--space-tight) 0; }
+.page--living th, .page--living td { padding: var(--space-tight); border: var(--stroke-hair) solid var(--life-rule); text-align: left; vertical-align: top; }
+.page--living th { color: var(--life-navy); background: #e6eddf; font-family: var(--font-body); font-weight: 700; }
+.page--living tbody tr:nth-child(even) { background: var(--life-pale); }
+.life-division { padding: var(--space-step); border-radius: var(--life-radius); color: white; background: var(--life-green); margin-bottom: var(--space-step); }
+.life-division h2 { color: white; margin: 0 0 var(--space-hair); }
+.life-division p { margin: 0; font-size: var(--size-note); }
+.life-stage { border-bottom: var(--stroke-hair) solid var(--life-rule); padding-bottom: var(--space-tight); margin: var(--space-step) 0; break-inside: avoid; }
+.life-stage h2 { margin: 0; color: var(--life-blue); }
+.life-stage p { font-size: var(--size-note); margin-top: var(--space-hair); }
+.life-try { background: var(--life-sun); padding: var(--space-tight) var(--space-step); border-radius: var(--life-radius); margin: var(--space-step) 0; break-inside: avoid; }
+.life-solved { border: var(--stroke-hair) solid var(--life-rule); border-radius: var(--life-radius); padding: var(--space-step); margin: var(--space-step) 0; break-inside: avoid; font-size: var(--size-note); }
+.life-solved h3 { margin-top: 0; color: var(--life-orange); }
+.life-answer { border-top: var(--stroke-hair) solid var(--life-rule); margin-top: var(--space-tight); padding-top: var(--space-tight); }
+.page--living .c-practice { margin: var(--space-step) 0; font-size: var(--size-note); }
+.page--living .c-practice--cont { margin-top: 0; }
+.page--living .c-practice__head { background: var(--life-pale); color: var(--life-blue); font-family: var(--font-display); font-size: var(--size-concept); text-transform: none; letter-spacing: normal; padding: var(--space-tight); border-radius: var(--life-radius); }
+.page--living .c-parts { line-height: var(--lh-panel); row-gap: var(--space-hair); }
+.life-credits { font-size: var(--size-caption); line-height: var(--lh-snug); }
+.life-credits p { margin-bottom: var(--space-tight); overflow-wrap: anywhere; }
+.life-credits a { color: var(--life-blue); }
+
+/* Editorial hierarchy and furniture */
+.page--living { --life-gold: #a17a35; --life-gold-tint: #faf3e4; }
+.page--living .page__main { font-family: var(--font-body); font-weight: var(--weight-text); }
+.page--living h2 { display: flex; align-items: baseline; gap: var(--space-tight); padding-bottom: var(--space-hair); border-bottom: var(--stroke-hair) solid var(--life-rule); }
+.page--living h2 .badge { font-size: var(--size-concept); margin: 0; font-weight: var(--weight-bold); }
+.page--living h2 .name { flex: 1; }
+.page--living h3 { letter-spacing: normal; font-weight: var(--weight-bold); }
+.page--living .runhead__chapter { font-family: var(--font-display); font-style: italic; font-weight: var(--weight-text); }
+.page--living .runhead__mark { display: block; width: var(--space-step); height: var(--space-tight); border-radius: 0 75% 0 75%; background: var(--life-green); }
+.page--living .pagefoot__folio { color: var(--life-navy); background: none; border-top: var(--stroke-rule) solid var(--life-gold); border-radius: 0; font-size: var(--size-concept); }
+.page--living .pagefoot::before { content: 'THE LIVING WORLD  /  SCIENCE 6'; font-family: var(--font-display); font-size: var(--size-caption); letter-spacing: var(--track-label); }
+
+/* A chapter opening composed as a title and a photographic plate. */
+.life-opener { position: relative; background: none; color: var(--life-navy); padding: 0 0 var(--space-step); border-bottom: var(--stroke-rule) solid var(--life-gold); }
+.life-opener h1 { color: var(--life-navy); font-size: var(--size-numeral); line-height: var(--lh-tight); margin: var(--space-step) 0; }
+.life-kicker { color: var(--life-orange); font-size: var(--size-note); letter-spacing: var(--track-label); }
+.life-deck { font-family: var(--font-body); font-style: italic; color: var(--life-green); }
+.life-opener__art { position: absolute; width: calc(var(--space-rest) * 4); height: calc(var(--space-rest) * 4); right: 0; bottom: var(--space-step); opacity: .55; }
+.life-photo img, .life-gallery img { box-sizing: border-box; border: var(--stroke-hair) solid var(--life-rule); }
+.life-photo figcaption, .life-gallery figcaption { font-family: var(--font-body); color: var(--ink-soft); font-style: italic; }
+.life-gallery figcaption strong { font-size: var(--size-note); font-style: normal; color: var(--life-navy); }
+
+/* A small, consistent set of hand-drawn scientific marks. */
+.life-icon { width: calc(var(--space-tight) * 2); height: calc(var(--space-tight) * 2); display: inline-block; vertical-align: -.18em; margin-right: var(--space-tight); fill: none; stroke: currentColor; stroke-width: var(--stroke-line); stroke-linecap: round; stroke-linejoin: round; }
+.life-art { display: block; width: 100%; height: 100%; fill: none; stroke: var(--life-green); stroke-width: var(--stroke-line); stroke-linecap: round; stroke-linejoin: round; }
+.life-art__wash { fill: var(--life-mint); stroke: none; }
+.life-art__accent { stroke: var(--life-gold); }
+.life-fieldnote { display: grid; grid-template-columns: calc(var(--space-rest) * 5) 1fr; gap: var(--space-step); align-items: center; padding: var(--space-tight) 0; margin: var(--space-step) 0; border-top: var(--stroke-hair) solid var(--life-rule); border-bottom: var(--stroke-hair) solid var(--life-rule); break-inside: avoid; }
+.life-fieldnote > svg { height: calc(var(--space-rest) * 5); }
+.life-fieldnote h3 { margin: 0 0 var(--space-hair); color: var(--life-green); }
+.life-fieldnote p { font-size: var(--size-note); line-height: var(--lh-panel); margin-bottom: 0; }
+
+/* Open lists provide rhythm without breaking the explanation into fragments. */
+.life-list { padding-left: var(--space-rest); margin: var(--space-tight) 0 var(--space-step); }
+.life-list > li { padding-left: var(--space-hair); margin-bottom: var(--space-hair); }
+.life-list > li::marker { content: '◆  '; color: var(--life-gold); font-size: var(--size-caption); }
+.life-list--columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: var(--space-rest); font-size: var(--size-note); }
+.life-list--columns > li { break-inside: avoid; }
+
+/* The colour of each teaching component follows its purpose. */
+.life-note { background: var(--life-mint); border: 0; border-top: var(--stroke-rule) solid var(--life-green); padding: var(--space-tight) var(--space-step); }
+.life-note--question { background: var(--life-gold-tint); border: var(--stroke-hair) solid var(--life-gold); }
+.life-note--question h3 { color: var(--life-gold); }
+.life-example { background: none; border: var(--stroke-hair) solid var(--life-rule); border-top: var(--stroke-rule) solid var(--life-orange); }
+.life-example h3 { color: var(--life-orange); }
+.life-activity { border-top: var(--stroke-rule) solid var(--life-orange); border-bottom: var(--stroke-hair) solid var(--life-rule); padding: var(--space-tight) var(--space-step); background: var(--life-pale); }
+.life-activity ol { padding-left: var(--space-step); }
+.life-safety { color: var(--ink-soft); font-style: italic; }
+.life-summary { border: 0; border-top: var(--stroke-rule) solid var(--life-green); border-bottom: var(--stroke-hair) solid var(--life-green); background: var(--life-mint); }
+.life-summary .life-list { margin-bottom: 0; }
+.page--living th, .page--living td { border: 0; border-bottom: var(--stroke-hair) solid var(--life-rule); }
+.page--living th { font-family: var(--font-display); border-top: var(--stroke-rule) solid var(--life-green); }
+.life-division { position: relative; background: var(--life-navy); padding: var(--space-rest); }
+.life-division h2 { border: 0; padding: 0; font-size: var(--size-chapter); }
+.life-stage h2 { border: 0; color: var(--life-navy); }
+.life-try { background: var(--life-gold-tint); border-top: var(--stroke-hair) solid var(--life-gold); }
+.life-solved { border-color: var(--life-rule); border-top: var(--stroke-rule) solid var(--life-orange); }
+.page--living .c-practice__head { background: var(--life-navy); color: var(--paper); padding: var(--space-tight) var(--space-step); }
+.page--living .c-practice__head .life-icon { color: var(--paper); }
+.life-credits a { color: var(--life-green); }
+.life-photo--specimen img { height: calc(var(--trim-h) * .15); }
+.life-gallery--macro img { height: calc(var(--trim-h) * .30); object-fit: cover; }
+.life-gallery--feature img { height: calc(var(--trim-h) * .22); }
+.life-fieldnote--plate { grid-template-columns: calc(var(--space-rest) * 8) 1fr; }
+.life-fieldnote--plate > svg { height: calc(var(--space-rest) * 9); }
+.life-fieldnote--feature > svg { height: calc(var(--space-rest) * 7); }
+.life-photo--portrait img { height: calc(var(--trim-h) * .225); }
+.life-tailpiece { text-align: center; margin: var(--space-rest) 0 0; break-inside: avoid; }
+.life-tailpiece .life-art { width: calc(var(--space-rest) * 5); height: calc(var(--space-rest) * 5); margin: 0 auto var(--space-tight); }
+.life-tailpiece p { font-family: var(--font-display); font-size: var(--size-note); color: var(--life-green); font-style: italic; }
+
+/* Scientific plates: live labels, consistent anatomy strokes, no colour-only key. */
+.lw-figure { margin: var(--space-step) 0; break-inside: avoid; }
+.lw-diagram { display: block; width: 100%; height: auto; overflow: visible; }
+.lw-label { font-family: var(--font-body); font-size: var(--size-caption); font-weight: var(--weight-text); fill: var(--life-ink); }
+.lw-heading { font-family: var(--font-display); font-size: var(--size-concept); font-weight: var(--weight-bold); fill: var(--life-navy); }
+.lw-figure figcaption { font-size: var(--size-caption); line-height: var(--lh-snug); color: var(--ink-soft); margin-top: var(--space-tight); text-align: left; font-style: normal; }
+.lw-line, .lw-leader, .lw-vein, .lw-ghost, .lw-mesh, .lw-vent { fill: none; stroke: var(--life-navy); stroke-width: var(--stroke-line); stroke-linecap: round; stroke-linejoin: round; }
+.lw-leader, .lw-vein, .lw-mesh { stroke-width: var(--stroke-fine); }
+.lw-vein { stroke: var(--paper); }
+.lw-ghost { stroke-dasharray: 5 4; stroke: var(--ink-soft); }
+.lw-arrow, .lw-reproduction { fill: none; stroke: var(--life-orange); stroke-width: var(--stroke-line); marker-end: url(#dg-arrow); }
+.lw-reproduction { stroke-dasharray: 6 4; }
+.lw-green, .lw-seed, .lw-coat, .lw-gold, .lw-petal, .lw-pot, .lw-wing, .lw-jelly { stroke: var(--life-navy); stroke-width: var(--stroke-line); stroke-linejoin: round; }
+.lw-green { fill: var(--life-green); }
+.lw-seed, .lw-coat { fill: var(--life-orange); }
+.lw-gold { fill: var(--life-gold-tint); }
+.lw-petal, .lw-paper { fill: var(--paper); }
+.lw-pot { fill: var(--life-pale); }
+.lw-wing, .lw-jelly { fill: var(--life-mint); }
+.lw-dark { fill: var(--life-navy); }
+.lw-stem, .lw-root, .lw-embryo, .lw-larva, .lw-newshoot, .lw-newroot { fill: none; stroke: var(--life-navy); stroke-width: calc(var(--stroke-line) * 3); stroke-linecap: round; stroke-linejoin: round; }
+.lw-root { stroke-width: calc(var(--stroke-line) * 2); }
+.lw-embryo { stroke: var(--life-green); stroke-width: calc(var(--stroke-line) * 7); }
+.lw-newshoot, .lw-newroot { stroke: var(--life-orange); }
+.lw-larva { stroke-width: calc(var(--stroke-line) * 6); }
+.lw-water { fill: var(--life-mint); }
+.lw-surface { stroke: var(--life-green); stroke-width: calc(var(--stroke-line) * 2); fill: none; }
+.lw-box { fill: none; stroke: var(--ink-soft); stroke-width: var(--stroke-line); stroke-dasharray: 5 4; }
+.lw-window { stroke: var(--paper); stroke-width: calc(var(--stroke-line) * 5); }
+.lw-tissue { fill: none; stroke: var(--ink-soft); stroke-width: calc(var(--stroke-line) * 2); }
+.lw-reading { border-top: var(--stroke-hair) solid var(--life-gold); padding-top: var(--space-tight); margin-top: var(--space-step); font-size: var(--size-note); break-inside: avoid; }
+.lw-reading h3 { color: var(--life-orange); margin-top: 0; }
+.page--living .life-fieldnote:not(:has(> svg)) { display: block; }
+.page--living .life-note:not(.life-note--question), .page--living .life-example { background: none; border: 0; border-left: var(--stroke-rule) solid var(--life-green); padding: 0 var(--space-step); }
+.page--living .life-activity { background: none; padding-left: 0; padding-right: 0; }
+.page--living .lw-portrait img { height: calc(var(--trim-h) * .16); }
+.page--living .lw-opening { display: grid; grid-template-columns: 1fr auto; column-gap: var(--space-step); }
+.page--living .lw-opening .chapter-opening__num { position: static; opacity: 1; z-index: auto; grid-column: 2; grid-row: 1 / 3; color: var(--life-green); font-size: var(--size-numeral); align-self: start; }
+.page--living .lw-opening .chapter-opening__title { grid-column: 1; grid-row: 1; }
+.page--living .lw-opening .chapter-opening__subtitle { grid-column: 1; grid-row: 2; }
+.lw-snail img { height: calc(var(--trim-h) * .12); }
+.page--living .lw-habitat { margin-top: var(--space-rest); }
+.lw-micrograph { display: block; width: 100%; height: auto; }
+.lw-photo-leader { fill: none; stroke: var(--paper); stroke-width: calc(var(--stroke-line) * 2); }
+.lw-icon-key { list-style: none; padding: 0; margin: var(--space-tight) 0; }
+.lw-icon-key li { margin-bottom: var(--space-tight); }
+.lw-gallery-three figure:last-child { grid-column: 1 / -1; }
+.lw-gallery-three figure:last-child img { object-fit: cover; }
+.lw-gallery-seed img { height: calc(var(--trim-h) * .23); object-fit: contain; background: var(--life-pale); }
+.lw-gallery-response img { height: calc(var(--trim-h) * .31); object-fit: contain; background: var(--life-pale); }
+.lw-label--light { fill: var(--paper); }
+
+/* Photographic edition: quiet framing and live explanatory overlays. */
+.page--living .lw-photo-opening .chapter-opening__title { padding-right: 0; font-size: var(--size-numeral); }
+.page--living .lw-photo-opening .chapter-opening__num { font-size: var(--size-opener-number); line-height: var(--lh-tight); }
+.page--living .lw-photo-opening .chapter-opening__subtitle { padding: 0; margin: var(--space-step) 0 0; font-size: var(--size-concept); }
+.page--living .lw-photo-opening { margin-bottom: var(--space-step); }
+.lw-cover-photo img { display: block; width: 100%; height: auto; }
+.lw-cover-photo { margin-top: var(--space-step); }
+.lp-biography { display: grid; grid-template-columns: 1fr 2.4fr; gap: var(--space-step); align-items: start; margin: var(--space-step) 0; }
+.lp-biography .life-photo { margin: 0; }
+.lp-biography p { font-size: var(--size-note); }
+.lp-response-gallery img { height: calc(var(--trim-h) * .22); object-fit: contain; background: var(--life-pale); }
+.lp-specimen-note { font-size: var(--size-caption); line-height: var(--lh-snug); }
+.lp-photo-crop { overflow: hidden; }
+.lp-photo-ghost { fill: none; stroke: var(--paper); stroke-width: var(--stroke-line); stroke-dasharray: 3 3; }
+.lp-credits-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); column-gap: var(--space-rest); row-gap: var(--space-hair); margin: var(--space-step) 0; }
+.lp-credits-grid p { margin: 0; }
