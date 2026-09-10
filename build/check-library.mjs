@@ -401,6 +401,10 @@ async function checkViewerStructure() {
     eq('no prev/next pair', /id="(prev|next)"/.test(html), false);
     eq('trim has no button of its own', html.includes('id="sheet-trim"'), false);
     eq('bleed is a switch', /id="sheet-bleed"[^>]*aria-pressed="false"/.test(html), true);
+    const chapterPdf = html.match(/<a\b[^>]*data-sheet-download[^>]*>/)?.[0] || '';
+    eq('chapter PDF opens on trim', /href="[^" ]+(?<!-bleed)\.pdf"/.test(chapterPdf), true);
+    eq('chapter PDF carries both sheet choices',
+      /data-trim-url="[^"]+\.pdf"/.test(chapterPdf) && /data-bleed-url="[^"]+-bleed\.pdf"/.test(chapterPdf), true);
     /* No measurement anywhere on the bar. It moved from the Bleed
        button into the subtitle and then off altogether — a number
        that cannot be pressed and never changes belongs in a tooltip,
@@ -426,7 +430,7 @@ async function checkViewerStructure() {
     eq('spreads sits in the cluster',
       /class="zoom"[\s\S]*?id="fit-toggle"[\s\S]*?id="view-spread"/.test(html), true);
     eq('bleed sits beside Print PDF',
-      /id="sheet-bleed"[\s\S]{0,400}?Print PDF/.test(html), true);
+      /id="sheet-bleed"[^>]*>Bleed<\/button>\s*<a[^>]*>Print PDF/.test(html), true);
     /* A measurement is a fact about the sheet, not a thing to press. */
     eq('bleed carries no measurement', /id="sheet-bleed"[\s\S]{0,400}?>Bleed<\/button>/.test(html), true);
     /* Either the press sheet has been built, in which case the button
@@ -459,6 +463,8 @@ async function checkViewerStructure() {
          the file goes to, not the button a reader is looking for. */
       eq('the cover downloads are named for printing',
         [/>Print PDF</.test(cov), />Print PNG</.test(cov)], [true, true]);
+      const coverPdf = cov.match(/<a\b[^>]*data-sheet-download[^>]*>/)?.[0] || '';
+      eq('cover PDF opens on trim', /href="[^" ]+(?<!-bleed)\.pdf"/.test(coverPdf), true);
       eq('and neither is still called a press or a proof',
         /Press PDF|Proof PNG/.test(cov), false);
       /* A wrap is two trims and a spine, better than twice as wide as
@@ -714,7 +720,7 @@ async function checkViewerBehaviour() {
        different levels and nothing could have told them apart while
        this was a dummy button. */
     + '<button class="btn" id="sheet-bleed" aria-pressed="false">Bleed</button>'
-    + '<a class="btn">Print PDF</a><button class="btn btn--go">Build</button></div>'
+    + '<a id="pdf-download" class="btn" href="trim.pdf" data-sheet-download data-trim-url="trim.pdf" data-bleed-url="bleed.pdf" data-trim-ready="true" data-bleed-ready="false" download>Print PDF</a><button class="btn btn--go">Build</button></div>'
     + '</div>'
     + '<div class="stage" id="stage" style="width:900px;height:700px">'
     + '<div class="stage__inner" id="inner">'
@@ -722,7 +728,7 @@ async function checkViewerBehaviour() {
     + '<button id="build"></button><span id="build-log" hidden></span>'
     + '<script type="application/json" id="cfg">' + JSON.stringify(theCfg) + '</' + 'script>'
     + '<script>' + script + '</' + 'script>'
-    + '<script>addEventListener("load", () => setTimeout(() => {' + theDriver + '}, 300));</' + 'script>'
+    + '<script>addEventListener("load", () => setTimeout(async () => {' + theDriver + '}, 300));</' + 'script>'
     + '</body></html>';
 
   /* One run of the fixture, named so a failure to start says which. */
@@ -745,6 +751,41 @@ async function checkViewerBehaviour() {
   };
 
   const R = await drive('viewer', cfg, driver);
+  const downloadDriver = `
+    const $ = id => document.getElementById(id);
+    const link = $('pdf-download');
+    const snapshot = () => ({ url: link.getAttribute('href'), disabled: link.getAttribute('aria-disabled') === 'true', off: link.classList.contains('btn--off') });
+    const R = { initial: snapshot() };
+    $('sheet-bleed').click(); R.missingBleed = snapshot();
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true });
+    link.dispatchEvent(click); R.missingBlocked = click.defaultPrevented;
+    $('sheet-bleed').click(); R.back = snapshot();
+    window.fetch = async () => ({ json: async () => ({ ok: false, summary: 'failed' }) });
+    await $('build').onclick(); $('sheet-bleed').click(); R.afterFailure = snapshot();
+    let complete;
+    window.fetch = async () => ({ json: () => new Promise(resolve => { complete = resolve; }) });
+    const pending = $('build').onclick();
+    await Promise.resolve(); await Promise.resolve();
+    $('sheet-bleed').click();
+    complete({ ok: true, summary: '2 pages · all clear' }); await pending;
+    R.builtOnTrim = snapshot();
+    $('sheet-bleed').click(); R.builtOnBleed = snapshot();
+    $('sheet-bleed').click(); R.finalTrim = snapshot();
+    document.title = 'R' + JSON.stringify(R);`;
+  for (const kind of ['chapter', 'cover']) {
+    const D = await drive('download-' + kind, { ...cfg, kind }, downloadDriver);
+    if (!D) continue;
+    const trim = { url: 'trim.pdf', disabled: false, off: false };
+    const missing = { url: 'bleed.pdf', disabled: true, off: true };
+    eq(kind + ' download starts at trim', D.initial, trim);
+    eq(kind + ' unavailable bleed is disabled', D.missingBleed, missing);
+    eq(kind + ' missing download click is blocked', D.missingBlocked, true);
+    eq(kind + ' returning to trim restores its download', D.back, trim);
+    eq(kind + ' failed build does not enable missing PDF', D.afterFailure, missing);
+    eq(kind + ' build honours a sheet change while running', D.builtOnTrim, trim);
+    eq(kind + ' successful build enables selected bleed PDF', D.builtOnBleed, { url: 'bleed.pdf', disabled: false, off: false });
+    eq(kind + ' bleed off returns download to trim', D.finalTrim, trim);
+  }
 
   /* The same app.js against a cover's cfg. A wrap is two trims and a
      spine — better than twice as wide as a page — so fit to page is
