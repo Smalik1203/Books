@@ -1266,3 +1266,29 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Names:** Jonali, Pallabi, Arshad, Ajay, Thejus, Meenu, Dwarakanath, Anuja,
    Neenu, Anu, Ravi and Shyamala are the source's; Beyond the Book adds Asha
    and Kabir.
+
+## Class 7 · Mathematics II · Chapter 5 — Connecting the Dots…
+
+1. **Terms defined here:** *statistical statement*, *statistical question*,
+   *statistics*; *average*, *arithmetic mean* and *mean* as one idea; *median*;
+   *outlier*; *measures of central tendency*; *dot plot*; *data visualisation*;
+   *clustered column graph* and *double column graph*. Column and bar graphs are
+   assumed from Class 6.
+2. **Results stated:** mean = sum of the values ÷ number of values, also read as
+   a fair share; the median of an even number of values is the average of the
+   two middle ones; an outlier pulls the mean towards itself and hardly moves
+   the median, so a low outlier puts the mean below the median and a high one
+   above it; a score of 0 is a value and a match not played is not.
+3. **Notation:** means that do not end are printed to two decimal places or
+   described as "a little more than", never called rounded; money in ₹, heights
+   in cm, Indian grouping (1,00,000).
+4. **Not taught:** *range* by name (the chapter says "the difference between the
+   largest and smallest values"), *mode*, rounding.
+5. **Figures:** a dot plot marks its mean with a solid line (`dg-line`) and its
+   median with a dashed one (`dg-hidden`); two data series are the structure
+   colour and `dg-fill-b`, a third is `dg-fill-a`. A chapter that draws data
+   again should keep these.
+6. **Names:** Jemimah, David, Shubman, Yashasvi, Shreyas, Vaishnavi, Parag,
+   Khushboo, Nafisa, Vishal, Sampat, Jithin, Yaangba, Poovizhi, Sita, Sanskruti,
+   Rintu, Nikhil, Sunil, Preyashi and Aditi are the source's; Beyond the Book
+   adds Asha, Riya and Arjun.
