@@ -1247,3 +1247,22 @@ settings the rest of the volume inherits rather than conflicts found.
    denominators; Mathematics I Chapter 8 multiplied and divided fractions only.
 5. **Names:** Sameeksha, Lekhana, Anshu, Guna and Kabamai are the source's;
    Beyond the Book adds Riya and Sameer.
+
+## Class 7 · Mathematics II · Chapter 4 — Another Peek Beyond the Point
+
+1. **Terms defined here:** *leap year*; *long division* (dividing by place
+   value) is recalled and carried past the ones place. *Ones* for the place, as
+   Mathematics I Chapter 3 settled.
+2. **Results stated:** the decimal-place rule for products; moving the point for
+   $\times$ and $\div$ by powers of ten; making a decimal divisor a counting
+   number; some divisions never end ($10 \div 3 = 3.333\ldots$). Beyond the Book
+   adds that a fraction in lowest form ends as a decimal only when its
+   denominator has no prime factors but 2 and 5, using Chapter 3's
+   factorisation.
+3. **Notation:** never-ending decimals are written with "…", not a bar; money
+   with ₹ and two decimal places; Indian grouping in large numbers (3,65,242).
+4. **Not taught:** rounding a decimal to a given number of places; recurring
+   decimal notation.
+5. **Names:** Jonali, Pallabi, Arshad, Ajay, Thejus, Meenu, Dwarakanath, Anuja,
+   Neenu, Anu, Ravi and Shyamala are the source's; Beyond the Book adds Asha
+   and Kabir.
