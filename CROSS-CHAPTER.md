@@ -1102,3 +1102,27 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Names:** Shabnam, Aftab, Parthiv, Ketaki, Munirathna, Krithika,
    Venkatalakshmi, Charu, Krishita, Somjit, Pushpita and Radha are the
    source's; Beyond the Book adds Rani, Asha and Priya.
+
+## Class 7 · Mathematics I · Chapter 5 — Parallel and Crossing Lines
+
+1. **Terms defined here:** *plane*, *intersect*, *linear pair*, *vertically
+   opposite angles*, *proof*, *perpendicular*, *parallel lines*,
+   *transversal*, *corresponding angles*, *alternate angles*, *interior
+   angles* (on the same side of a transversal). Later chapters should use
+   them without defining them again.
+2. **What is proved and what is not.** Vertically opposite angles are equal,
+   and alternate angles between parallel lines are equal: both are proved by
+   reasoning. That corresponding angles are equal exactly when the lines are
+   parallel is taken from drawing and tracing, and stated as a key idea, not
+   proved. Interior angles adding to $180^\circ$ is left as a question with a
+   reason asked for. A straight angle is $180^\circ$ and a full turn
+   $360^\circ$ are taken as known.
+3. **Not taught:** the angle sum of a triangle (Chapter 7) and the symbol
+   $\parallel$. Nothing in this chapter or its Beyond the Book uses either —
+   a four-sided figure's angles are found only through pairs of parallel
+   sides. Chapter 7 may introduce $\parallel$ if it wants it.
+4. **Notation in figures:** parallel lines carry arrowheads, one per line for
+   the first set and two for the second; a right angle is a small square.
+   Angles are named $\angle a$, $\angle 1$ or $\angle ABC$.
+5. **Names:** none. The source's figure values for its exercises could not be
+   read and were chosen here; see the chapter's EDIT-LOG.
