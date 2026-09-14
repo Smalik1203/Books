@@ -1363,3 +1363,24 @@ settings the rest of the volume inherits rather than conflicts found.
    Mathematics I, Crown Quarto house design, one palette per chapter
    (ch01 `cobalt`). The studio sorts classes numerically so Class 10 follows
    Class 9.
+
+## Class 10 · Mathematics I · Chapter 2 — Polynomials
+
+1. **Terms defined here:** *degree*, *linear*, *quadratic* and *cubic
+   polynomial*, *value* of a polynomial at x = k, written p(k), *zero* of a
+   polynomial, *parabola*. alpha, beta and gamma are introduced as names for
+   zeroes.
+2. **Results stated:** the zeroes of p(x) are the x-coordinates of the points
+   where the graph of y = p(x) meets the x-axis; a polynomial of degree n has
+   at most n zeroes; for a quadratic, sum of zeroes = −b/a and product = c/a
+   (shown by comparing coefficients); for a cubic, sum = −b/a, sum of products
+   two at a time = c/a, product = −d/a (stated, not proved).
+3. **Notation:** coordinate graphs use `dg-grid`, `dg-axis`, `dg-tick`,
+   `dg-plot` and `dg-plot-label`, with marked points as `dg-fill-teal` dots;
+   graphs read but not plotted are unruled sketches with axes X′X and Y′Y and
+   the origin O. Relations between zeroes and coefficients are written both in
+   letters and in words ("coefficient of x" over "coefficient of x squared").
+4. **Not taught:** the division algorithm for polynomials (named in the
+   source's introduction, not in this edition's chapter); drawing graphs of
+   quadratic and cubic polynomials (read only).
+5. **Names:** none in the source. Beyond the Book adds Riya, Kiran and Lata.
