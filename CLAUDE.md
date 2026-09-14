@@ -353,11 +353,13 @@ repaints, through the token contract at the top of `css/cover.css`.
 **A direction owns the colour of a whole wrap, so no two volumes may share
 one.** They did: Class 8 Part 2 was written as `arc`, which is Class 9
 Mathematics, and the two came off the press the same book in different
-words. Six wraps, six directions now — Class 7 Part 1 `ribbon`, Part 2 `braid`,
+words. Six wraps, six directions now — Class 7 Part 1 `zoom`, Part 2 `mobile`,
 Class 8 Part 1 `comb`, Part 2 `tile`, Class 9 Mathematics `arc`, Class 9
-Science `lattice`. Class 7’s pair share no colour with any other wrap and
-nothing of arc’s: their own back (`covers/class-7/_shared/back-ribbon.html`)
-and their own face, Lexend. Two parts of
+Science `lattice`. The two Class 7 parts deliberately share no arrangement
+or motif: each front draws something its volume teaches (a place-value
+zoom; a hanging toy from Finding the Unknown). They share no colour with any
+other wrap, nothing of arc’s, one back (`covers/class-7/_shared/back.html`,
+whose edge differs by direction) and their own face, Lexend. Two parts of
 one class are meant to read as a pair rather than as strangers, which is why
 `tile` mirrors `comb`'s arrangement — a dark front, the spine going with it —
 and changes only the hue.

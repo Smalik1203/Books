@@ -1,0 +1,114 @@
+<!-- ══════════════════ BACK — Class 7, directions: zoom and mobile ══════════════════
+     The words are the series' — the same lede, blurb, four claims and foot as
+     every other volume — and the blurb names the class and not the part, so
+     both volumes quote this one file. What is not shared is the edge of the
+     coloured block. Each volume draws its own, from its own chapters, and
+     cover.css shows the one that belongs to the direction:
+
+       zoom    a ruler: the block's top edge is a scale in tenths, with one
+               stretch picked out, as the front zooms into one stretch
+       mobile  a bar chart: the block rises in bars, with the dashed mean
+               across them (Connecting the Dots)
+
+     The claims sit in a two-by-two grid under square markers.
+     ============================================================ -->
+<div class="jacket__back">
+
+  <div class="c7-edge c7-edge--ruler" aria-hidden="true">
+    <svg viewBox="0 0 189 246" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="c7-edge__fill" d="M0 112 H189 V246 H0 Z"/>
+      <rect class="c7-edge__hi" x="70.9" y="104.6" width="23.6" height="3.4"/>
+      <!-- ticks drawn as dashes: minor every 4.725, major every 23.625 -->
+      <path class="c7-edge__tick c7-edge__tick--minor" d="M0 110.9 H189"/>
+      <path class="c7-edge__tick c7-edge__tick--major" d="M0 109.5 H189"/>
+    </svg>
+  </div>
+
+  <div class="c7-edge c7-edge--bars" aria-hidden="true">
+    <svg viewBox="0 0 189 246" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <rect class="c7-edge__fill" x="0" y="122" width="189" height="124"/>
+      <rect class="c7-edge__fill" x="0.6"   y="114" width="19.8" height="10"/>
+      <rect class="c7-edge__fill" x="21.6"  y="109" width="19.8" height="15"/>
+      <rect class="c7-edge__fill" x="42.6"  y="102" width="19.8" height="22"/>
+      <rect class="c7-edge__fill" x="63.6"  y="107" width="19.8" height="17"/>
+      <rect class="c7-edge__bar--hi" x="84.6" y="98" width="19.8" height="26"/>
+      <rect class="c7-edge__fill" x="105.6" y="105" width="19.8" height="19"/>
+      <rect class="c7-edge__fill" x="126.6" y="111" width="19.8" height="13"/>
+      <rect class="c7-edge__fill" x="147.6" y="100" width="19.8" height="24"/>
+      <rect class="c7-edge__fill" x="168.6" y="108" width="19.8" height="16"/>
+      <!-- the mean of the nine heights, 144 / 9 = 16 -->
+      <path class="c7-edge__mean" d="M0 106 H189"/>
+    </svg>
+  </div>
+
+  <div class="c7-back__top">
+    <div class="wordmark">Class<em>Bridge</em></div>
+    <p class="c7-back__lede">From the first idea<br>to the last exercise.</p>
+    <p class="c7-back__blurb">Class&nbsp;7 mathematics, following the NCERT syllabus.
+      Each chapter sets out the reasoning, works through examples beside the
+      theory, and ends with graded practice.</p>
+  </div>
+
+  <div class="c7-back__deep">
+    <div class="c7-claims">
+
+      <div class="c7-claim">
+        <span class="c7-claim__mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="jk-icon" d="M3 5.2h6.2A2.8 2.8 0 0 1 12 8v11a2.4 2.4 0 0 0-2.4-2.4H3z"/>
+            <path class="jk-icon" d="M21 5.2h-6.2A2.8 2.8 0 0 0 12 8v11a2.4 2.4 0 0 1 2.4-2.4H21z"/>
+          </svg>
+        </span>
+        <p class="c7-claim__term">NCERT aligned</p>
+        <p class="c7-claim__def">Chapters and exercises follow the Class&nbsp;7 syllabus,
+          in the order it is taught.</p>
+      </div>
+
+      <div class="c7-claim">
+        <span class="c7-claim__mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="jk-icon" d="M12 3.2a5.8 5.8 0 0 0-3.4 10.5c.6.5 1 1.2 1 2v.5h4.8v-.5c0-.8.4-1.5 1-2A5.8 5.8 0 0 0 12 3.2z"/>
+            <path class="jk-icon" d="M10 19.2h4M10.6 21.2h2.8"/>
+          </svg>
+        </span>
+        <p class="c7-claim__term">Beyond the Book</p>
+        <p class="c7-claim__def">Every chapter goes further: harder questions the reader
+          tries first and then reads explained, in pages of their own at the end.</p>
+      </div>
+
+      <div class="c7-claim">
+        <span class="c7-claim__mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect class="jk-icon" x="5" y="3.6" width="14" height="16.8" rx="1.8"/>
+            <path class="jk-icon" d="M8.6 9.4h6.8M8.6 13h6.8M8.6 16.6h4"/>
+          </svg>
+        </span>
+        <p class="c7-claim__term">Practice</p>
+        <p class="c7-claim__def">Graded exercises close every chapter, and multiple&#8209;choice sets
+          for competitive papers explain every wrong option.</p>
+      </div>
+
+      <div class="c7-claim">
+        <span class="c7-claim__mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle class="jk-icon" cx="12" cy="12" r="8.4"/>
+            <circle class="jk-icon" cx="12" cy="12" r="4"/>
+            <circle class="jk-icon" cx="12" cy="12" r="0.7"/>
+          </svg>
+        </span>
+        <p class="c7-claim__term">Powered by LearnLab</p>
+        <p class="c7-claim__def">Every chapter has its lessons, simulations and practice
+          online. Scan the code to open them.</p>
+      </div>
+    </div>
+
+    <div class="c7-foot">
+      <span class="c7-foot__qr"><!--QR--></span>
+      <p class="c7-foot__by"><strong>Scan here to access LearnLab</strong><br>A product of Operium Labs</p>
+      <div class="barcode">
+        <span class="barcode__mark"><!--BARCODE--></span>
+        <span class="c7-foot__isbn">ISBN <!--ISBN--></span>
+      </div>
+    </div>
+  </div>
+</div>

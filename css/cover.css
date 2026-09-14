@@ -1458,29 +1458,27 @@ body.bleed .jacket {
 .jacket--tile .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
 
 /* ============================================================
-   DIRECTIONS — ribbon and braid: Class 7 Parts 1 and 2
+   DIRECTIONS — zoom and mobile: Class 7 Parts 1 and 2
 
-   Written to share nothing with arc. The front is not discs and
-   figures floating on a ground: it is five parallel ribbons laid
-   across the panel and off both edges, and the mathematics is
-   drawn *through* them — a transversal in Part 1, a compass
-   construction in Part 2. The back is not a curve over a column
-   of discs: a straight slant with two ribbon stripes along it,
-   and the claims in a two-by-two grid under square markers. The
-   type block has its own furniture too — the class in a solid
-   badge rather than behind a rule, and the part as a pill beside
-   the subtitle.
+   Two covers, not one cover in two colours. Each front is a drawing
+   of something the volume teaches, and the two share neither
+   arrangement nor motif:
 
-   Neither palette repeats a colour from an earlier wrap. Part 1
-   is cerulean with flamingo and lime; Part 2 is blue-violet with
-   mint and lemon. The two share an arrangement, mirrored, so the
-   pair reads as a pair — the relation tile has to comb — and the
-   one face, Lexend, which no other cover sets.
+     zoom    Part 1, cerulean. Place value as a zoom: a number line
+             from 0 to 10 opens out into tenths and then hundredths.
+             Type at the top, the drawing below it.
+     mobile  Part 2, blue-violet. A balanced hanging toy from Finding
+             the Unknown, hung from the top edge, with its equation
+             beneath. The drawing at the top, the title at the foot.
 
-   Every .rb-* rule reads the tokens below, so the two directions
-   differ in these two blocks and in one transform.
+   Nothing is taken from arc — no discs, no curve, no dot fields —
+   and neither palette repeats a colour from an earlier wrap. What
+   the two do share is the series furniture a reader needs to find
+   the book (wordmark, class badge, part pill, strapline), the face,
+   Lexend, and the back's words. Even the back's edge differs: a
+   ruler under zoom, a bar chart with its mean under mobile.
    ============================================================ */
-.jacket--ribbon {
+.jacket--zoom {
   --jk-display: Lexend, 'Helvetica Neue', Arial, sans-serif;
 
   --jk-navy:      #17708f;
@@ -1509,11 +1507,11 @@ body.bleed .jacket {
   --jk-front-accent: #ff8fb1;
   --jk-front-label:  #c8e26b;
 
-  --rb-a:    #ff8fb1;
-  --rb-b:    #c8e26b;
-  --rb-deep: #0f5670;
+  --c7-a:    #ff8fb1;
+  --c7-b:    #c8e26b;
+  --c7-deep: #0f5670;
 }
-.jacket--braid {
+.jacket--mobile {
   --jk-display: Lexend, 'Helvetica Neue', Arial, sans-serif;
 
   --jk-navy:      #4b3fa6;
@@ -1542,15 +1540,15 @@ body.bleed .jacket {
   --jk-front-accent: #7de2c5;
   --jk-front-label:  #f2ea6d;
 
-  --rb-a:    #7de2c5;
-  --rb-b:    #f2ea6d;
-  --rb-deep: #372d85;
+  --c7-a:    #7de2c5;
+  --c7-b:    #f2ea6d;
+  --c7-deep: #372d85;
 }
-.jacket--ribbon,
-.jacket--braid { font-family: var(--jk-display); }
+.jacket--zoom,
+.jacket--mobile { font-family: var(--jk-display); }
 
-/* ---- front type ------------------------------------------- */
-.rb-head {
+/* ---- front type: the series furniture ---------------------- */
+.c7-head {
   position: absolute;
   top: var(--jk-top);
   left: var(--jk-in);
@@ -1559,50 +1557,53 @@ body.bleed .jacket {
   justify-content: space-between;
   align-items: flex-start;
 }
-.rb-head .wordmark { color: var(--jk-front-ink); font-weight: 700; letter-spacing: -0.02em; }
-.rb-badge {
+.c7-head .wordmark { color: var(--jk-front-ink); font-weight: 700; letter-spacing: -0.02em; }
+.c7-badge {
   width: 21mm; height: 23mm;
   border-radius: 3mm;
-  background: var(--rb-b);
+  background: var(--c7-b);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
 }
-.rb-badge .jk-label { color: var(--rb-deep); letter-spacing: 0.16em; }
-.rb-badge__num {
+.c7-badge .jk-label { color: var(--c7-deep); letter-spacing: 0.16em; }
+.c7-badge__num {
   font-family: var(--jk-display);
   font-size: calc(var(--size-numeral) * 1.1);
   font-weight: 700;
   line-height: 0.95;
-  color: var(--rb-deep);
+  color: var(--c7-deep);
 }
-.jacket--ribbon .front__title,
-.jacket--braid .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.135); }
-.jacket--ribbon .front__title h1,
-.jacket--braid .front__title h1 {
+.jacket--zoom .front__title h1,
+.jacket--mobile .front__title h1 {
   font-size: calc(var(--size-numeral) * 1.3);
   font-weight: 700;
   line-height: 0.92;
   letter-spacing: -0.02em;
   color: var(--jk-front-ink);
 }
-.rb-meta { display: flex; align-items: center; gap: 4mm; margin-top: 5mm; }
-.rb-part {
+/* zoom sets its title under the head; mobile hangs its drawing there
+   and stands the title at the foot, above the strapline */
+.jacket--zoom .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.135); }
+.jacket--mobile .front__title { top: auto; bottom: calc(var(--jk-bottom) + 13mm); }
+
+.c7-meta { display: flex; align-items: center; gap: 4mm; margin-top: 5mm; }
+.c7-part {
   font-family: var(--jk-display);
   font-size: var(--size-note);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--rb-deep);
-  background: var(--rb-a);
+  color: var(--c7-deep);
+  background: var(--c7-a);
   border-radius: 10mm;
   padding: 1mm 3.2mm;
 }
-.rb-sub {
+.c7-sub {
   font-family: var(--font-body);
   font-size: calc(var(--size-concept) * 1.16);
   color: var(--jk-front-ink);
 }
-.rb-strap {
+.c7-strap {
   position: absolute;
   left: var(--jk-in); right: var(--jk-out);
   bottom: var(--jk-bottom);
@@ -1613,46 +1614,88 @@ body.bleed .jacket {
   letter-spacing: 0.16em;
   line-height: 1.8;
   text-transform: uppercase;
-  text-align: left;
   color: var(--jk-front-ink);
 }
-.rb-strap span { color: var(--rb-b); }
-.rb-strap em { font-style: normal; color: var(--jk-front-soft); }
-.jacket--braid .rb-strap { text-align: right; }
+.c7-strap span { color: var(--c7-b); }
+.c7-strap em { font-style: normal; color: var(--jk-front-soft); }
 
-/* ---- front artwork ---------------------------------------- */
-.rb-band--a      { fill: var(--rb-a); }
-.rb-band--b      { fill: var(--rb-b); }
-.rb-band--deep   { fill: var(--rb-deep); }
-.rb-band--pale   { fill: #ffffff; opacity: 0.16; }
-.rb-fig {
-  fill: none;
-  stroke: var(--jk-front-ink);
-  stroke-width: 0.42;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* ---- zoom: the drawing ------------------------------------- */
+.zm-line  { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.45; stroke-linecap: round; }
+.zm-hi--a { fill: none; stroke: var(--c7-a); stroke-width: 2.2; }
+.zm-hi--b { fill: none; stroke: var(--c7-b); stroke-width: 2.2; }
+.zm-zoom--a { fill: #ffffff; opacity: 0.14; }
+.zm-zoom--b { fill: var(--c7-b); opacity: 0.3; }
+.zm-dot { fill: var(--c7-a); stroke: var(--jk-front-ink); stroke-width: 0.5; }
+.zm-note {
+  font-family: var(--jk-display);
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--jk-front-soft);
 }
-.rb-fig--thin { stroke-width: 0.3; }
-.rb-fig--dash { stroke-width: 0.3; stroke-dasharray: 1.2 1.2; }
-.rb-dot    { fill: var(--jk-front-ink); }
-.rb-dot--b { fill: var(--rb-b); }
+.zm-big {
+  font-family: var(--jk-display);
+  font-size: calc(var(--dg-type) * 1.3 * var(--dg-v) / var(--dg-w) * 1px);
+  font-weight: 700;
+  fill: var(--jk-front-ink);
+}
 
-/* ---- back ------------------------------------------------- */
-.jacket--ribbon .jacket__back,
-.jacket--braid .jacket__back { display: block; padding: 0; background: var(--jk-ground); }
-.rb-slant { position: absolute; inset: 0; }
-.rb-slant svg { display: block; width: 100%; height: 100%; }
-.jacket--braid .rb-slant svg { transform: scaleX(-1); }
-.rb-slant__fill      { fill: var(--jk-deep); }
-.rb-slant__stripe--a { fill: var(--rb-a); }
-.rb-slant__stripe--b { fill: var(--rb-b); }
+/* ---- mobile: the drawing ----------------------------------- */
+.mb-string { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.4; }
+.mb-bar    { fill: none; stroke: var(--jk-front-ink); stroke-width: 1.3; stroke-linecap: round; }
+.mb-disc   { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.6; }
+.mb-knot   { fill: var(--jk-front-ink); }
+.mb-sq     { fill: var(--c7-b); }
+.mb-tri    { fill: var(--c7-a); }
+.mb-circ   { fill: #ffffff; opacity: 0.92; }
+.mb-num {
+  font-family: var(--jk-display);
+  font-size: calc(var(--dg-type) * 1.3 * var(--dg-v) / var(--dg-w) * 1px);
+  font-weight: 700;
+  fill: var(--c7-deep);
+}
+.mb-num--ink { fill: var(--jk-front-ink); }
+.mb-x {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 700;
+  font-size: calc(var(--dg-type) * 1.75 * var(--dg-v) / var(--dg-w) * 1px);
+  fill: var(--c7-deep);
+}
+.mb-eq {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: calc(var(--dg-type) * 2.2 * var(--dg-v) / var(--dg-w) * 1px);
+  fill: var(--jk-front-ink);
+}
+.mb-eq--q {
+  font-size: calc(var(--dg-type) * 1.6 * var(--dg-v) / var(--dg-w) * 1px);
+  fill: var(--c7-a);
+}
 
-.rb-back__top {
+/* ---- back -------------------------------------------------- */
+.jacket--zoom .jacket__back,
+.jacket--mobile .jacket__back { display: block; padding: 0; background: var(--jk-ground); }
+
+.c7-edge { position: absolute; inset: 0; display: none; }
+.c7-edge svg { display: block; width: 100%; height: 100%; }
+.jacket--zoom .c7-edge--ruler,
+.jacket--mobile .c7-edge--bars { display: block; }
+.c7-edge__fill    { fill: var(--jk-deep); }
+.c7-edge__hi      { fill: var(--c7-a); }
+.c7-edge__bar--hi { fill: var(--c7-a); }
+.c7-edge__tick    { fill: none; stroke: var(--jk-deep); }
+.c7-edge__tick--minor { stroke-width: 2.2; stroke-dasharray: 0.35 4.375; }
+.c7-edge__tick--major { stroke-width: 5;   stroke-dasharray: 0.5 23.125; }
+.c7-edge__mean { fill: none; stroke: var(--jk-ground-accent); stroke-width: 0.5; stroke-dasharray: 2 1.5; }
+
+.c7-back__top {
   position: absolute;
   top: var(--jk-top); left: var(--jk-out); right: var(--jk-in);
 }
-.rb-back__top .wordmark { color: var(--jk-ground-ink); font-weight: 700; letter-spacing: -0.02em; }
-.rb-back__lede {
+.c7-back__top .wordmark { color: var(--jk-ground-ink); font-weight: 700; letter-spacing: -0.02em; }
+.c7-back__lede {
   font-family: var(--jk-display);
   font-size: calc(var(--size-concept) * 1.32);
   font-weight: 600;
@@ -1660,7 +1703,7 @@ body.bleed .jacket {
   color: var(--jk-ground-accent);
   margin: 6mm 0 5mm;
 }
-.rb-back__blurb {
+.c7-back__blurb {
   font-family: var(--font-body);
   font-size: var(--size-note);
   line-height: 1.55;
@@ -1669,15 +1712,15 @@ body.bleed .jacket {
   max-width: calc(var(--trim-w) * 0.58);
 }
 
-.rb-back__deep {
+.c7-back__deep {
   position: absolute;
   left: var(--jk-out); right: var(--jk-in);
-  top: calc(var(--trim-h) * 0.52);
+  top: calc(var(--trim-h) * 0.53);
   bottom: var(--jk-bottom);
   display: flex;
   flex-direction: column;
 }
-.rb-claims {
+.c7-claims {
   flex: 1 1 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1685,15 +1728,15 @@ body.bleed .jacket {
   row-gap: 6mm;
   align-content: center;
 }
-.rb-claim__mark {
+.c7-claim__mark {
   width: 9mm; height: 9mm;
   border-radius: 2mm;
-  background: var(--rb-b);
+  background: var(--c7-b);
   display: grid; place-items: center;
   margin-bottom: 2.4mm;
 }
-.rb-claim__mark svg { width: 5.4mm; height: 5.4mm; color: var(--rb-deep); }
-.rb-claim__term {
+.c7-claim__mark svg { width: 5.4mm; height: 5.4mm; color: var(--c7-deep); }
+.c7-claim__term {
   font-family: var(--jk-display);
   font-size: var(--size-note);
   font-weight: 700;
@@ -1702,7 +1745,7 @@ body.bleed .jacket {
   color: var(--jk-deep-ink);
   margin: 0 0 1.2mm;
 }
-.rb-claim__def {
+.c7-claim__def {
   font-family: var(--font-body);
   font-size: var(--size-caption);
   line-height: 1.45;
@@ -1710,7 +1753,7 @@ body.bleed .jacket {
   margin: 0;
 }
 
-.rb-foot {
+.c7-foot {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 6mm;
@@ -1718,9 +1761,9 @@ body.bleed .jacket {
   padding-top: 5mm;
   border-top: var(--jk-hair) solid var(--jk-deep-soft);
 }
-.rb-foot__qr { width: 19mm; height: 19mm; background: #ffffff; padding: 1mm; display: block; }
-.rb-foot__qr svg, .rb-foot__qr img { display: block; width: 100%; height: 100%; }
-.rb-foot__by {
+.c7-foot__qr { width: 19mm; height: 19mm; background: #ffffff; padding: 1mm; display: block; }
+.c7-foot__qr svg, .c7-foot__qr img { display: block; width: 100%; height: 100%; }
+.c7-foot__by {
   align-self: center;
   font-family: var(--font-body);
   font-size: var(--size-caption);
@@ -1728,10 +1771,10 @@ body.bleed .jacket {
   color: var(--jk-deep-soft);
   margin: 0;
 }
-.rb-foot__by strong { font-family: var(--jk-display); font-weight: 700; color: var(--jk-deep-ink); }
-.rb-foot .barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
-.rb-foot .barcode__mark svg { display: block; width: 32mm; height: 16mm; }
-.rb-foot__isbn {
+.c7-foot__by strong { font-family: var(--jk-display); font-weight: 700; color: var(--jk-deep-ink); }
+.c7-foot .barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
+.c7-foot .barcode__mark svg { display: block; width: 32mm; height: 16mm; }
+.c7-foot__isbn {
   font-family: var(--jk-display);
   font-size: calc(var(--size-caption) * 0.9);
   color: var(--jk-deep-soft);
@@ -1742,24 +1785,24 @@ body.bleed .jacket {
 
 /* ---- spine ------------------------------------------------
    The front is the coloured panel, so the spine goes with it and
-   the colour runs unbroken into the back's slanted block. */
-.jacket--ribbon .jacket__spine,
-.jacket--braid .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
-.jacket--ribbon .spine__mark,
-.jacket--ribbon .spine__title,
-.jacket--ribbon .spine__badge-num,
-.jacket--braid .spine__mark,
-.jacket--braid .spine__title,
-.jacket--braid .spine__badge-num { color: var(--jk-front-ink); font-weight: 700; }
-.jacket--ribbon .spine__title,
-.jacket--braid .spine__title { letter-spacing: 0.14em; }
-.jacket--ribbon .spine__tick,
-.jacket--braid .spine__tick { background: var(--rb-a); width: 6mm; height: 0.5mm; }
-.jacket--ribbon .spine__badge,
-.jacket--braid .spine__badge { border-color: var(--rb-b); }
-.jacket--ribbon .spine__badge .jk-label,
-.jacket--ribbon .spine__class .jk-label,
-.jacket--braid .spine__badge .jk-label,
-.jacket--braid .spine__class .jk-label { color: var(--rb-b); }
-.jacket--ribbon .spine__class-num,
-.jacket--braid .spine__class-num { color: var(--rb-a); font-weight: 700; }
+   the colour runs unbroken into the back's block. */
+.jacket--zoom .jacket__spine,
+.jacket--mobile .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--zoom .spine__mark,
+.jacket--zoom .spine__title,
+.jacket--zoom .spine__badge-num,
+.jacket--mobile .spine__mark,
+.jacket--mobile .spine__title,
+.jacket--mobile .spine__badge-num { color: var(--jk-front-ink); font-weight: 700; }
+.jacket--zoom .spine__title,
+.jacket--mobile .spine__title { letter-spacing: 0.14em; }
+.jacket--zoom .spine__tick,
+.jacket--mobile .spine__tick { background: var(--c7-a); width: 6mm; height: 0.5mm; }
+.jacket--zoom .spine__badge,
+.jacket--mobile .spine__badge { border-color: var(--c7-b); }
+.jacket--zoom .spine__badge .jk-label,
+.jacket--zoom .spine__class .jk-label,
+.jacket--mobile .spine__badge .jk-label,
+.jacket--mobile .spine__class .jk-label { color: var(--c7-b); }
+.jacket--zoom .spine__class-num,
+.jacket--mobile .spine__class-num { color: var(--c7-a); font-weight: 700; }
