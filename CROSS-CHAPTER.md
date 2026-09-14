@@ -1052,3 +1052,30 @@ settings the rest of the volume inherits rather than conflicts found.
    `<span class="blank">` never open maths with a space — `</span>$+ 4)`,
    not `</span>$ + 4)`. The builder reports both, but only after a wasted
    build.
+
+## Class 7 · Mathematics I · Chapter 3 — The Decimal Point
+
+1. **Ones, not units, for the place.** From 3.4 on, the place is *ones* in
+   every table and sentence, and *unit* means a unit of measure. Sections
+   3.1–3.3 come before decimal notation and measure in *units* and *tenths of
+   a unit*, which is that second meaning. Chapter 8 (fractions) and any later
+   place value table should say *ones*.
+2. **Terms defined here:** *hundredth*, *thousandth*, *decimal system*,
+   *decimal point*. *Tenth* is used as an ordinary word from 3.1. Later
+   chapters should use these without defining them again.
+3. **The stacked notation lives only in 3.2–3.3.** The source writes 4 units,
+   4 tenths and 5 hundredths as $4\frac{4}{10}\frac{5}{100}$, a bridge to
+   decimal notation that this chapter drops from 3.4 on. Chapter 8 must not
+   meet it as a way of writing a fraction.
+4. **Not yet taught: multiplying or dividing a decimal.** Beyond the Book
+   stays inside that — 0.7 hour is read as 7 parts of 6 minutes, and
+   $7 \times 6$ is whole-number work. A later chapter must teach it before it
+   is used.
+5. **Money** is written with ₹ and two decimal places (₹0.50, ₹2.45). *p* for
+   paise appears only in fill-in blanks.
+6. **A fitting trap worth knowing.** The opener rule counts five body lines at
+   the measured line height, 5.01 mm, so a heading with exactly five 5.0 mm
+   lines of room under it is stranded by 0.05 mm. That held a page of this
+   chapter at 81% until one line was cut from the page before.
+7. **Names:** Sonu, Zara, Priya, Shylaja, Sarayu, Mahi, Pinto and Tinku are the
+   source's; Beyond the Book adds Ravi and Shreya.
