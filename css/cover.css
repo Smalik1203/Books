@@ -1456,3 +1456,310 @@ body.bleed .jacket {
 .jacket--tile .spine__badge .jk-label,
 .jacket--tile .spine__class .jk-label { color: var(--jk-front-label); }
 .jacket--tile .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
+
+/* ============================================================
+   DIRECTIONS — ribbon and braid: Class 7 Parts 1 and 2
+
+   Written to share nothing with arc. The front is not discs and
+   figures floating on a ground: it is five parallel ribbons laid
+   across the panel and off both edges, and the mathematics is
+   drawn *through* them — a transversal in Part 1, a compass
+   construction in Part 2. The back is not a curve over a column
+   of discs: a straight slant with two ribbon stripes along it,
+   and the claims in a two-by-two grid under square markers. The
+   type block has its own furniture too — the class in a solid
+   badge rather than behind a rule, and the part as a pill beside
+   the subtitle.
+
+   Neither palette repeats a colour from an earlier wrap. Part 1
+   is cerulean with flamingo and lime; Part 2 is blue-violet with
+   mint and lemon. The two share an arrangement, mirrored, so the
+   pair reads as a pair — the relation tile has to comb — and the
+   one face, Lexend, which no other cover sets.
+
+   Every .rb-* rule reads the tokens below, so the two directions
+   differ in these two blocks and in one transform.
+   ============================================================ */
+.jacket--ribbon {
+  --jk-display: Lexend, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #17708f;
+  --jk-navy-deep: #0f5670;
+  --jk-navy-soft: #9fcbd8;
+  --jk-terra:     #ff8fb1;
+  --jk-sage:      #9fcbd8;
+  --jk-gold:      #c8e26b;
+  --jk-cream:     #fbfdfc;
+
+  --jk-ground:        #eaf4f6;
+  --jk-ground-ink:    #0f4f66;
+  --jk-ground-soft:   #557e8c;
+  --jk-ground-rule:   #cfe2e7;
+  --jk-ground-accent: #c23f73;
+  --jk-ground-art:    none;
+
+  --jk-deep:      #17708f;
+  --jk-deep-ink:  #fbfdfc;
+  --jk-deep-soft: #c3e1e9;
+
+  --jk-front:        #17708f;
+  --jk-front-ink:    #fbfdfc;
+  --jk-front-soft:   #c3e1e9;
+  --jk-front-mark:   #c8e26b;
+  --jk-front-accent: #ff8fb1;
+  --jk-front-label:  #c8e26b;
+
+  --rb-a:    #ff8fb1;
+  --rb-b:    #c8e26b;
+  --rb-deep: #0f5670;
+}
+.jacket--braid {
+  --jk-display: Lexend, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #4b3fa6;
+  --jk-navy-deep: #372d85;
+  --jk-navy-soft: #b3acdf;
+  --jk-terra:     #7de2c5;
+  --jk-sage:      #b3acdf;
+  --jk-gold:      #f2ea6d;
+  --jk-cream:     #fbfaff;
+
+  --jk-ground:        #efecf8;
+  --jk-ground-ink:    #33287a;
+  --jk-ground-soft:   #6c6598;
+  --jk-ground-rule:   #dcd6ef;
+  --jk-ground-accent: #1f8a70;
+  --jk-ground-art:    none;
+
+  --jk-deep:      #4b3fa6;
+  --jk-deep-ink:  #fbfaff;
+  --jk-deep-soft: #d3cef2;
+
+  --jk-front:        #4b3fa6;
+  --jk-front-ink:    #fbfaff;
+  --jk-front-soft:   #d3cef2;
+  --jk-front-mark:   #f2ea6d;
+  --jk-front-accent: #7de2c5;
+  --jk-front-label:  #f2ea6d;
+
+  --rb-a:    #7de2c5;
+  --rb-b:    #f2ea6d;
+  --rb-deep: #372d85;
+}
+.jacket--ribbon,
+.jacket--braid { font-family: var(--jk-display); }
+
+/* ---- front type ------------------------------------------- */
+.rb-head {
+  position: absolute;
+  top: var(--jk-top);
+  left: var(--jk-in);
+  right: var(--jk-out);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.rb-head .wordmark { color: var(--jk-front-ink); font-weight: 700; letter-spacing: -0.02em; }
+.rb-badge {
+  width: 21mm; height: 23mm;
+  border-radius: 3mm;
+  background: var(--rb-b);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.rb-badge .jk-label { color: var(--rb-deep); letter-spacing: 0.16em; }
+.rb-badge__num {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-numeral) * 1.1);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--rb-deep);
+}
+.jacket--ribbon .front__title,
+.jacket--braid .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.135); }
+.jacket--ribbon .front__title h1,
+.jacket--braid .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.3);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--jk-front-ink);
+}
+.rb-meta { display: flex; align-items: center; gap: 4mm; margin-top: 5mm; }
+.rb-part {
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rb-deep);
+  background: var(--rb-a);
+  border-radius: 10mm;
+  padding: 1mm 3.2mm;
+}
+.rb-sub {
+  font-family: var(--font-body);
+  font-size: calc(var(--size-concept) * 1.16);
+  color: var(--jk-front-ink);
+}
+.rb-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  margin: 0;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--jk-front-ink);
+}
+.rb-strap span { color: var(--rb-b); }
+.rb-strap em { font-style: normal; color: var(--jk-front-soft); }
+.jacket--braid .rb-strap { text-align: right; }
+
+/* ---- front artwork ---------------------------------------- */
+.rb-band--a      { fill: var(--rb-a); }
+.rb-band--b      { fill: var(--rb-b); }
+.rb-band--deep   { fill: var(--rb-deep); }
+.rb-band--pale   { fill: #ffffff; opacity: 0.16; }
+.rb-fig {
+  fill: none;
+  stroke: var(--jk-front-ink);
+  stroke-width: 0.42;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.rb-fig--thin { stroke-width: 0.3; }
+.rb-fig--dash { stroke-width: 0.3; stroke-dasharray: 1.2 1.2; }
+.rb-dot    { fill: var(--jk-front-ink); }
+.rb-dot--b { fill: var(--rb-b); }
+
+/* ---- back ------------------------------------------------- */
+.jacket--ribbon .jacket__back,
+.jacket--braid .jacket__back { display: block; padding: 0; background: var(--jk-ground); }
+.rb-slant { position: absolute; inset: 0; }
+.rb-slant svg { display: block; width: 100%; height: 100%; }
+.jacket--braid .rb-slant svg { transform: scaleX(-1); }
+.rb-slant__fill      { fill: var(--jk-deep); }
+.rb-slant__stripe--a { fill: var(--rb-a); }
+.rb-slant__stripe--b { fill: var(--rb-b); }
+
+.rb-back__top {
+  position: absolute;
+  top: var(--jk-top); left: var(--jk-out); right: var(--jk-in);
+}
+.rb-back__top .wordmark { color: var(--jk-ground-ink); font-weight: 700; letter-spacing: -0.02em; }
+.rb-back__lede {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.32);
+  font-weight: 600;
+  line-height: 1.24;
+  color: var(--jk-ground-accent);
+  margin: 6mm 0 5mm;
+}
+.rb-back__blurb {
+  font-family: var(--font-body);
+  font-size: var(--size-note);
+  line-height: 1.55;
+  color: var(--jk-ground-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.58);
+}
+
+.rb-back__deep {
+  position: absolute;
+  left: var(--jk-out); right: var(--jk-in);
+  top: calc(var(--trim-h) * 0.52);
+  bottom: var(--jk-bottom);
+  display: flex;
+  flex-direction: column;
+}
+.rb-claims {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 9mm;
+  row-gap: 6mm;
+  align-content: center;
+}
+.rb-claim__mark {
+  width: 9mm; height: 9mm;
+  border-radius: 2mm;
+  background: var(--rb-b);
+  display: grid; place-items: center;
+  margin-bottom: 2.4mm;
+}
+.rb-claim__mark svg { width: 5.4mm; height: 5.4mm; color: var(--rb-deep); }
+.rb-claim__term {
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--jk-deep-ink);
+  margin: 0 0 1.2mm;
+}
+.rb-claim__def {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.45;
+  color: var(--jk-deep-soft);
+  margin: 0;
+}
+
+.rb-foot {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 6mm;
+  align-items: end;
+  padding-top: 5mm;
+  border-top: var(--jk-hair) solid var(--jk-deep-soft);
+}
+.rb-foot__qr { width: 19mm; height: 19mm; background: #ffffff; padding: 1mm; display: block; }
+.rb-foot__qr svg, .rb-foot__qr img { display: block; width: 100%; height: 100%; }
+.rb-foot__by {
+  align-self: center;
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: var(--jk-deep-soft);
+  margin: 0;
+}
+.rb-foot__by strong { font-family: var(--jk-display); font-weight: 700; color: var(--jk-deep-ink); }
+.rb-foot .barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
+.rb-foot .barcode__mark svg { display: block; width: 32mm; height: 16mm; }
+.rb-foot__isbn {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-caption) * 0.9);
+  color: var(--jk-deep-soft);
+  display: block;
+  text-align: center;
+  margin-top: 1.4mm;
+}
+
+/* ---- spine ------------------------------------------------
+   The front is the coloured panel, so the spine goes with it and
+   the colour runs unbroken into the back's slanted block. */
+.jacket--ribbon .jacket__spine,
+.jacket--braid .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--ribbon .spine__mark,
+.jacket--ribbon .spine__title,
+.jacket--ribbon .spine__badge-num,
+.jacket--braid .spine__mark,
+.jacket--braid .spine__title,
+.jacket--braid .spine__badge-num { color: var(--jk-front-ink); font-weight: 700; }
+.jacket--ribbon .spine__title,
+.jacket--braid .spine__title { letter-spacing: 0.14em; }
+.jacket--ribbon .spine__tick,
+.jacket--braid .spine__tick { background: var(--rb-a); width: 6mm; height: 0.5mm; }
+.jacket--ribbon .spine__badge,
+.jacket--braid .spine__badge { border-color: var(--rb-b); }
+.jacket--ribbon .spine__badge .jk-label,
+.jacket--ribbon .spine__class .jk-label,
+.jacket--braid .spine__badge .jk-label,
+.jacket--braid .spine__class .jk-label { color: var(--rb-b); }
+.jacket--ribbon .spine__class-num,
+.jacket--braid .spine__class-num { color: var(--rb-a); font-weight: 700; }
