@@ -259,11 +259,13 @@ function libraryHtml(classes, coverClasses) {
      page use, so a reader meets the same numeral in the chooser, on the
      shelf and on the book.
 
-     A volume of Mathematics is offered only to a class that has a chapter
-     in it. Most classes are one volume, and a Class 6 reader offered
-     Mathematics II was offered a book that is not going to exist, where
-     "nothing here yet" reads as a promise. The day a chapter lands in a
-     volume, the volume appears. Science keeps its place in every class.
+     A subject is offered only to a class that has a chapter in it, or a
+     cover that wraps it. A Class 6 reader offered Mathematics II was
+     offered a book that is not going to exist, and a Class 10 reader
+     offered Science, before any Science chapter was built, was offered an
+     empty page: "nothing here yet" reads as a promise either way. Science
+     used to keep its place in every class and that is what showed it. The
+     day a chapter lands in a subject, the subject appears.
 
      The list orders the subjects it knows; it does not gate the rest. A
      chapter whose subject is none of the three — Class 3's తెలుగు — gets a
@@ -271,7 +273,6 @@ function libraryHtml(classes, coverClasses) {
      Before this its card was dropped without a word, and Class 3 sat in
      the class menu with only an empty Science under it. */
   const SUBJECTS = ['Mathematics I', 'Mathematics II', 'Science'];
-  const VOLUMED = (sub) => sub.startsWith('Mathematics');
 
   /* Every class-and-subject pair is rendered, and every class's covers,
      each tagged so the script can show exactly one pair at a time. They
@@ -283,7 +284,7 @@ function libraryHtml(classes, coverClasses) {
     const shown = esc(cls.replace(/^class-/, ''));
 
     const known = SUBJECTS.filter((sub) =>
-      !VOLUMED(sub) || chapters.some((c) => c.subject === sub));
+      chapters.some((c) => c.subject === sub));
     const extra = [...new Set(chapters.map((c) => c.subject))]
       .filter((sub) => sub && !SUBJECTS.includes(sub)).sort();
     const listed = [...known, ...extra];

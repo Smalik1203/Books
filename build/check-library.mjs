@@ -90,11 +90,11 @@ async function checkStructure() {
     eq('subject sections carry a count',
       subjectSets.every((s) => /data-count="\d+"/.test(s)), true);
     eq('a subject section exists', subjectSets.length > 0, true);
-    /* A volume of Mathematics is offered only where it has chapters:
-       Class 6 was offered a Mathematics II that no one is writing. */
-    eq('no Mathematics volume is offered empty',
-      subjectSets.filter((s) => /data-subject="Mathematics/.test(s)
-        && s.includes('data-count="0"')), []);
+    /* A subject is offered only where it has chapters: Class 6 was offered
+       a Mathematics II that no one is writing, and Classes 6, 7, 8 and 10
+       an empty Science. */
+    eq('no subject is offered empty',
+      subjectSets.filter((s) => s.includes('data-count="0"')), []);
     /* The subject list orders the subjects it knows and does not gate the
        rest: a chapter whose subject is none of them still gets a section.
        Class 3's Telugu sample sat in the class menu with no way to reach
