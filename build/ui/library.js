@@ -88,8 +88,8 @@
     const count = set ? Number(set.dataset.count) : 0;
 
     if (!count) {
-      /* The pair exists but holds nothing — Mathematics II and Science,
-         today. Say so, and leave the covers hidden: they belong to the
+      /* The pair exists but holds nothing — Science, in a class that has
+         none yet. A volume of Mathematics is never rendered empty. Say so, and leave the covers hidden: they belong to the
          book, and there is no book of this subject to belong to.
 
          The subject goes in as it is written and is not lowercased. It

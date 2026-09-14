@@ -90,6 +90,11 @@ async function checkStructure() {
     eq('subject sections carry a count',
       subjectSets.every((s) => /data-count="\d+"/.test(s)), true);
     eq('a subject section exists', subjectSets.length > 0, true);
+    /* A volume of Mathematics is offered only where it has chapters:
+       Class 6 was offered a Mathematics II that no one is writing. */
+    eq('no Mathematics volume is offered empty',
+      subjectSets.filter((s) => /data-subject="Mathematics/.test(s)
+        && s.includes('data-count="0"')), []);
 
     /* A card says how long the chapter is and not where it sits in the
        volume. The folio range was a second number saying almost the
