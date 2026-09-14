@@ -1384,3 +1384,23 @@ settings the rest of the volume inherits rather than conflicts found.
    source's introduction, not in this edition's chapter); drawing graphs of
    quadratic and cubic polynomials (read only).
 5. **Names:** none in the source. Beyond the Book adds Riya, Kiran and Lata.
+
+## Class 10 · Mathematics I · Chapter 3 — Pair of Linear Equations in Two Variables
+
+1. **Terms defined here:** *consistent*, *inconsistent* and *dependent* pair,
+   *substitution method*, *elimination method*; the general form
+   a1x + b1y + c1 = 0, a2x + b2y + c2 = 0 is recalled from Class IX.
+2. **Results stated:** two lines intersect, are parallel or coincide, giving
+   one solution, none or infinitely many; the ratio test (a1/a2 against
+   b1/b2 against c1/c2) and its converse; a true statement with no variable
+   means infinitely many solutions, a false one means none.
+3. **Notation:** equations in working are numbered (1), (2), (3) after the
+   equation; method steps are `.work` rows labelled Step 1, Step 2; graphs
+   draw the first line of a pair in the structure colour and the second in
+   rust (`dg-plot--b`), and label marked points A(0, 2) with no space before
+   the bracket. Money as ₹x with the variable in maths.
+4. **Not taught:** equations reducible to a pair of linear equations (named in
+   the source's summary, not in this edition's chapter); cross-multiplication.
+5. **Names:** Akhila, Champa, Aftab, Jacob, Nuri, Sonu, Meena, Saritha and
+   Susy are the source's. Beyond the Book adds Riya, Kiran
+   and Lata.

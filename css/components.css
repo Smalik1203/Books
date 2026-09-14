@@ -666,6 +666,19 @@ tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
 .c-questions[data-start="19"] { counter-reset: q 18; }
 .c-questions[data-start="20"] { counter-reset: q 19; }
 
+/* A question whose parts carry on in a block of their own, so that a
+   long list of word problems can run over a page break the way a set
+   does. The continued block repeats no question number, and its parts
+   keep counting: (iii) after (ii), not (i) again. */
+.c-questions > li.cont::before { content: none; }
+.c-parts[data-start="2"] { counter-reset: part 1; }
+.c-parts[data-start="3"] { counter-reset: part 2; }
+.c-parts[data-start="4"] { counter-reset: part 3; }
+.c-parts[data-start="5"] { counter-reset: part 4; }
+.c-parts[data-start="6"] { counter-reset: part 5; }
+.c-parts[data-start="7"] { counter-reset: part 6; }
+.c-parts[data-start="8"] { counter-reset: part 7; }
+
 /* a question the book marks as harder — a star in the marker,
    in rust, never in the question itself */
 .c-questions--starred { padding-left: 9mm; }
