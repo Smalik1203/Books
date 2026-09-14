@@ -1190,3 +1190,27 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Names:** Aaron, Tenzin, Manju, Safia, Somu, Krishna, Bora, Tsewang,
    Leena, Maria, Mira, Amritpal and Mariam are the source's; Beyond the Book
    adds none.
+
+## Class 7 · Mathematics II · Chapter 1 — Geometric Twins
+
+1. **Mathematics II lives beside Mathematics I** in `pages/class-7/`, as
+   `p2chNN-…` with `subject: "Mathematics II"`, the Class 8 convention; each
+   volume restarts at Chapter 1 and binds on its own.
+2. **Terms defined here:** *congruent*, *superimpose*, *corresponding*
+   (vertices, sides, angles), *SSS*, *SAS*, *SSA*, *ASA*, *AAS*, *RHS*,
+   *hypotenuse*. *Included angle* and the triangle words are used as Mathematics
+   I Chapter 7 left them.
+3. **Notation:** triangle names are set as maths, $\triangle ABC$, because the
+   congruence sign has to be; Mathematics I Chapter 7 wrote △ABC as text.
+   Side names in prose stay plain (AB = 4 cm); equalities with several parts are
+   maths ($AB = XY = 6$ cm). Equal sides carry matching ticks and equal angles
+   matching arcs.
+4. **Results stated:** angles opposite equal sides are equal (proved by RHS);
+   every angle of an equilateral triangle is $60^\circ$. This settles the
+   question Mathematics I Chapter 7 left for "a later chapter" in one
+   direction only: the converse (equal angles give equal sides) is not stated.
+5. **Used without proof:** the converse of alternate angles (equal alternate
+   angles make lines parallel), in Set 1.4 Q3; Mathematics I Chapter 5 states it
+   only for corresponding angles.
+6. **Names:** Meera and Rabia are the source's; Beyond the Book adds Riya and
+   Sameer.
