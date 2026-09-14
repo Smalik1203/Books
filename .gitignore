@@ -7,6 +7,10 @@ node_modules/
 build/class-*/
 build/_*/
 
+# PDFs — every one is a build artefact or a source kept for reference
+*.pdf
+*.PDF
+
 # Scratch
 *.tmp
 .guard.tmp
