@@ -1942,8 +1942,7 @@ body.bleed .jacket {
    quarters, a mirror line — so the cover is a map of the book
    rather than an ornament. Nothing is taken from arc (no discs, no
    curve) or from Class 7 (no number-line zoom, no hanging toy, no
-   grid of claims): the back carries a strip of tiles along its
-   edge and sets the claims down one column under square tiles.
+   grid of claims): the back has a plain straight edge and sets the claims down one column under square tiles.
 
    Brick red with sky blue and peach, and the face Outfit; no other
    wrap uses any of them. The edition is class6, so the wrap is two
@@ -2084,10 +2083,6 @@ body.bleed .jacket {
 .p6-edge { position: absolute; inset: 0; }
 .p6-edge svg { display: block; width: 100%; height: 100%; }
 .p6-edge__fill  { fill: var(--jk-deep); }
-.p6-edge__sky   { fill: var(--p6-sky); }
-.p6-edge__peach { fill: var(--p6-peach); }
-.p6-edge__deep  { fill: var(--p6-deep); }
-
 .p6-back__top {
   position: absolute;
   top: var(--jk-top); left: var(--jk-out); right: var(--jk-in);
