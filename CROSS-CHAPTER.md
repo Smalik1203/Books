@@ -1008,3 +1008,27 @@ group is the vocabulary sweep: "Grade" -> "Class" (four Class 9 chapters), the
 three dangling forward references, *base*'s five meanings, *root*'s two,
 *degree*'s two definitions, and the four undefined terms in Class 9 Ch 5
 (*equidistant*, *altitude*, SSS, SAS). None needs a refit; all are words.
+
+## Class 7 · Mathematics I · Chapter 1 — Living with Large Numbers
+
+The first Class 7 chapter, written new rather than edited, so these are
+settings the rest of the volume inherits rather than conflicts found.
+
+1. **The volume is Crown Quarto in the house design**, one palette per chapter
+   (`garnet` here), no `edition`, no `design`. Class 6's `maths-clear` and
+   `class6` were offered and declined. `keepExerciseSets` is not used.
+2. **Terms this chapter defines, which later chapters must use the same way:**
+   *lakh*, *crore*, *arab* (singular after a number: "ten lakh", never "ten
+   lakhs"); *Indian system* and *American system* (the chapter says the latter
+   "is also called the International system" once and then uses *American*);
+   *nearest neighbours* of a number; *round up*, *round down*; *assumption*.
+3. **Numbers in maths carry braced commas** in the Indian grouping,
+   `$4{,}63{,}128$`; in running text they are plain, 4,63,128. Four-digit
+   numbers take no comma in either (5072, 8300), five digits and up do.
+4. **Roxie and Estu** are NCERT's recurring pair and are kept, so a teacher
+   moving between the two books meets the same children. Chapter 1 also uses
+   Eshwarappa (their father), Ramanna, Lakshmamma, Somu, Riya, Anu, Kabir and
+   Preetham.
+5. **Chapter 3 (decimals) and Chapter 8 (fractions)** should know that Chapter 1
+   avoided fraction notation entirely: halving is written $116 \div 2$ and the
+   hint is $125 = 1000 \div 8$.
