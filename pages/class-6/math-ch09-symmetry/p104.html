@@ -1,0 +1,43 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
+        <p>A square sheet of paper is given a vertical fold and then a horizontal fold. One hole is punched through it, away from the edges and folds. When the sheet is opened, the number of holes is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>1</li><li>2</li><li>4</li><li>8</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Each fold doubles the number of layers. The hole goes through every layer, so there is one hole for each layer.</p>
+        <div class="work work--list">
+          <p>after the vertical fold: 2 layers</p>
+          <p>after the horizontal fold: $2 \times 2 = 4$ layers</p>
+          <p>one hole through 4 layers gives 4 holes</p>
+        </div>
+        <p>The answer is 4, option (c). The two fold lines are both lines of symmetry of the pattern of holes. Option (b) counts only one fold. Option (d) doubles once too often. Option (a) forgets that the hole goes through every layer.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>$90^\circ$ is an angle of symmetry of a figure, and exactly two of its angles of symmetry are less than $90^\circ$. Its smallest angle of symmetry is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>$45^\circ$</li><li>$30^\circ$</li><li>$60^\circ$</li><li>$15^\circ$</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Every angle of symmetry is a multiple of the smallest one. So the angles below $90^\circ$, together with $90^\circ$ itself, are the first three multiples of the smallest angle.</p>
+        <div class="work work--list">
+          <p>smallest angle $\times 3 = 90$</p>
+          <p>smallest angle $= 90 \div 3 = 30$</p>
+          <p>angles below $90^\circ$: $30^\circ$ and $60^\circ$, exactly two</p>
+        </div>
+        <p>The answer is $30^\circ$, option (b). With $45^\circ$, only one angle ($45^\circ$) is less than $90^\circ$. With $15^\circ$, there are five: $15^\circ$, $30^\circ$, $45^\circ$, $60^\circ$ and $75^\circ$. And $60^\circ$ cannot be the smallest angle, because 90 is not a multiple of 60.</p>
+      </div>
+
+      <p>The same reasoning answers other questions of this kind. Suppose $120^\circ$ is an angle of symmetry, and exactly three angles of symmetry are smaller. Then $120^\circ$ is the fourth multiple of the smallest angle, so the smallest angle is $120 \div 4 = 30$ degrees. Check: the angles below $120^\circ$ are $30^\circ$, $60^\circ$ and $90^\circ$, which is exactly three.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>A rectangle is split into four smaller rectangles by one line across and one line down. The two top rectangles have areas 12 sq cm and 18 sq cm. The bottom-left rectangle has area 20 sq cm. The area of the bottom-right rectangle is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>26 sq cm</li><li>30 sq cm</li><li>24 sq cm</li><li>36 sq cm</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>The two top rectangles have the same height. So the right one is as many times wider as its area is bigger: $18 \div 12 = 1\frac{1}{2}$ times. The two bottom rectangles have the same widths as the two top ones, and they share a height too.</p>
+        <div class="work work--list">
+          <p>Right width $= 1\frac{1}{2} \times$ left width</p>
+          <p>Bottom-right area $= 1\frac{1}{2} \times 20 = 30$ sq cm</p>
+        </div>
+        <p>The answer is (b). Option (a) adds 6, as 12 grew to 18, but areas grow by multiplying. Option (c) doubles 12, and option (d) doubles 18; neither uses the bottom row.</p>
+      </div>
+
+      <p>You can check the answer another way. Multiply the two areas on one diagonal, and then the two on the other: $12 \times 30 = 360$ and $18 \times 20 = 360$. In a rectangle cut by one line across and one line down, the two products always match, because each one is the same four side lengths multiplied together.</p>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
+        <p>How many different rectangles with whole-number sides have an area of 36 square units? (A 4 by 9 rectangle and a 9 by 4 rectangle count as the same.)</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>5</li><li>9</li><li>10</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>List the pairs of whole numbers that multiply to 36, smaller number first.</p>
+        <div class="work work--list">
+          <p>$1 \times 36$, $2 \times 18$, $3 \times 12$, $4 \times 9$, $6 \times 6$</p>
+        </div>
+        <p>There are 5, option (b). A square is also a rectangle, so $6 \times 6$ counts. Option (a) leaves the square out. Option (c) counts each pair twice, once each way round, but $6 \times 6$ only once. Option (d) counts $6 \times 6$ twice as well.</p>
+      </div>
+
+      <p>The number of rectangles depends on how many ways the area can be written as one whole number times another. An area that is a prime number, such as 13 square units, gives only one rectangle, 1 by 13. An area that is a square number, such as 36, always has a square among its rectangles.</p>
+
+    </div>
+  </div>
+</section>

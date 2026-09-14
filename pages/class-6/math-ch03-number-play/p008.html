@@ -1,0 +1,57 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Here is what is known about the reverse-and-add question. Every 2-digit number reaches a palindrome in the end. For 3-digit numbers, nobody knows. Starting from 196, people have reversed and added a huge number of times without ever reaching a palindrome. But nobody has shown that it can never happen.</p>
+
+      <h2><span class="badge">3.6</span><span class="name">The Magic Number of Kaprekar</span></h2>
+
+      <p>D. R. Kaprekar was a mathematics teacher at a government school in Devlali, in Maharashtra. He loved playing with numbers, and he found many beautiful patterns in numbers that nobody had noticed before. In 1949 he discovered something magical about 4-digit numbers.</p>
+
+      <p>Here are his steps. Pick any 4-digit number whose digits are not all the same, and follow Fig. 3.10. Doing the steps once, from A to C, is called one <em>round</em>. If C has fewer than 4 digits, write zeros in front of it: 558 is read as 0558.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 196" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A flowchart: take a 4-digit number; make the largest number from its digits, A; make the smallest, B; subtract to get C; then use the digits of C and repeat from the largest-number step">
+            <rect class="dg-fill-c-soft" x="14" y="6" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="6" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="26.2" text-anchor="middle">Take a 4-digit number.</text>
+            <line class="dg-move" x1="132" y1="39" x2="132" y2="54" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-c-soft" x="14" y="56" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="56" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="76.2" text-anchor="middle">Make the largest number from its digits: A</text>
+            <line class="dg-move" x1="132" y1="89" x2="132" y2="104" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-c-soft" x="14" y="106" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="106" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="126.2" text-anchor="middle">Make the smallest number from its digits: B</text>
+            <line class="dg-move" x1="132" y1="139" x2="132" y2="154" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-c-soft" x="14" y="156" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="156" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="176.2" text-anchor="middle">Subtract: C = A − B</text>
+            <path class="dg-move" d="M251 172 H272 V72 H253" marker-end="url(#dg-arrow)"/>
+            <text class="dg-note" x="282" y="108" text-anchor="start">use the</text>
+            <text class="dg-note" x="282" y="122" text-anchor="start">digits</text>
+            <text class="dg-note" x="282" y="136" text-anchor="start">of C</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.10</span> The Kaprekar steps. After each subtraction, start again with the digits of C.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Start with 6382. Follow the Kaprekar steps.</p>
+          <div class="work work--list">
+            <p>Round 1: $A = 8632$, $B = 2368$, $C = 8632 - 2368 = 6264$</p>
+            <p>Round 2: $A = 6642$, $B = 2466$, $C = 6642 - 2466 = 4176$</p>
+            <p>Round 3: $A = 7641$, $B = 1467$, $C = 7641 - 1467 = 6174$</p>
+          </div>
+          <p>6382 reaches 6174 in 3 rounds. The digits of 6174 give $A = 7641$ and $B = 1467$ again, so every round after this gives 6174 once more.</p>
+        </div>
+      </div>
+
+      <p>Now take some 4-digit numbers of your own, and follow the steps. What happens? Check with your friends what they got.</p>
+
+    </div>
+  </div>
+</section>

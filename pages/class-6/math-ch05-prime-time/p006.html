@@ -1,0 +1,291 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>The Sieve of Eratosthenes</h3>
+
+      <p>Can we list all the primes from 1 to 100? Here is a neat way to do it. Write the numbers from 1 to 100 in ten rows, and follow these steps.</p>
+
+      <div class="work work--list">
+        <p><strong>Step 1.</strong> Cross out 1, because it is neither prime nor composite.</p>
+        <p><strong>Step 2.</strong> Circle 2. Then cross out every multiple of 2 after it: 4, 6, 8, and so on.</p>
+        <p><strong>Step 3.</strong> The next number that is not crossed out is 3. Circle it. Then cross out every multiple of 3 after it: 6, 9, 12, and so on.</p>
+        <p><strong>Step 4.</strong> The next number that is not crossed out is 5. Circle it. Then cross out every multiple of 5 after it: 10, 15, 20, and so on.</p>
+        <p><strong>Step 5.</strong> Carry on in the same way until every number is either circled or crossed out.</p>
+      </div>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 350" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The numbers 1 to 100 in ten rows after the sieve. The 25 primes are shaded and circled, and every other number is crossed out">
+            <rect class="dg-fill-a-soft" x="41.5" y="5" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="5" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="143.5" y="5" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="211.5" y="5" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="7.5" y="39" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="39" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="211.5" y="39" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="279.5" y="39" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="73" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="279.5" y="73" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="7.5" y="107" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="211.5" y="107" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="7.5" y="141" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="141" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="211.5" y="141" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="175" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="279.5" y="175" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="7.5" y="209" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="211.5" y="209" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="7.5" y="243" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="243" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="279.5" y="243" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="75.5" y="277" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="279.5" y="277" width="34" height="34"/>
+            <rect class="dg-fill-a-soft" x="211.5" y="311" width="34" height="34"/>
+            <line class="dg-thin" x1="7.5" y1="5" x2="7.5" y2="345"/>
+            <line class="dg-thin" x1="41.5" y1="5" x2="41.5" y2="345"/>
+            <line class="dg-thin" x1="75.5" y1="5" x2="75.5" y2="345"/>
+            <line class="dg-thin" x1="109.5" y1="5" x2="109.5" y2="345"/>
+            <line class="dg-thin" x1="143.5" y1="5" x2="143.5" y2="345"/>
+            <line class="dg-thin" x1="177.5" y1="5" x2="177.5" y2="345"/>
+            <line class="dg-thin" x1="211.5" y1="5" x2="211.5" y2="345"/>
+            <line class="dg-thin" x1="245.5" y1="5" x2="245.5" y2="345"/>
+            <line class="dg-thin" x1="279.5" y1="5" x2="279.5" y2="345"/>
+            <line class="dg-thin" x1="313.5" y1="5" x2="313.5" y2="345"/>
+            <line class="dg-thin" x1="347.5" y1="5" x2="347.5" y2="345"/>
+            <line class="dg-thin" x1="7.5" y1="5" x2="347.5" y2="5"/>
+            <line class="dg-thin" x1="7.5" y1="39" x2="347.5" y2="39"/>
+            <line class="dg-thin" x1="7.5" y1="73" x2="347.5" y2="73"/>
+            <line class="dg-thin" x1="7.5" y1="107" x2="347.5" y2="107"/>
+            <line class="dg-thin" x1="7.5" y1="141" x2="347.5" y2="141"/>
+            <line class="dg-thin" x1="7.5" y1="175" x2="347.5" y2="175"/>
+            <line class="dg-thin" x1="7.5" y1="209" x2="347.5" y2="209"/>
+            <line class="dg-thin" x1="7.5" y1="243" x2="347.5" y2="243"/>
+            <line class="dg-thin" x1="7.5" y1="277" x2="347.5" y2="277"/>
+            <line class="dg-thin" x1="7.5" y1="311" x2="347.5" y2="311"/>
+            <line class="dg-thin" x1="7.5" y1="345" x2="347.5" y2="345"/>
+            <line class="dg-ghost" x1="12.5" y1="34" x2="36.5" y2="10"/>
+            <text class="dg-tick" x="24.5" y="26" text-anchor="middle">1</text>
+            <circle class="dg-line" cx="58.5" cy="22" r="12.5"/>
+            <text class="dg-tick" x="58.5" y="26" text-anchor="middle">2</text>
+            <circle class="dg-line" cx="92.5" cy="22" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="26" text-anchor="middle">3</text>
+            <line class="dg-ghost" x1="114.5" y1="34" x2="138.5" y2="10"/>
+            <text class="dg-tick" x="126.5" y="26" text-anchor="middle">4</text>
+            <circle class="dg-line" cx="160.5" cy="22" r="12.5"/>
+            <text class="dg-tick" x="160.5" y="26" text-anchor="middle">5</text>
+            <line class="dg-ghost" x1="182.5" y1="34" x2="206.5" y2="10"/>
+            <text class="dg-tick" x="194.5" y="26" text-anchor="middle">6</text>
+            <circle class="dg-line" cx="228.5" cy="22" r="12.5"/>
+            <text class="dg-tick" x="228.5" y="26" text-anchor="middle">7</text>
+            <line class="dg-ghost" x1="250.5" y1="34" x2="274.5" y2="10"/>
+            <text class="dg-tick" x="262.5" y="26" text-anchor="middle">8</text>
+            <line class="dg-ghost" x1="284.5" y1="34" x2="308.5" y2="10"/>
+            <text class="dg-tick" x="296.5" y="26" text-anchor="middle">9</text>
+            <line class="dg-ghost" x1="318.5" y1="34" x2="342.5" y2="10"/>
+            <text class="dg-tick" x="330.5" y="26" text-anchor="middle">10</text>
+            <circle class="dg-line" cx="24.5" cy="56" r="12.5"/>
+            <text class="dg-tick" x="24.5" y="60" text-anchor="middle">11</text>
+            <line class="dg-ghost" x1="46.5" y1="68" x2="70.5" y2="44"/>
+            <text class="dg-tick" x="58.5" y="60" text-anchor="middle">12</text>
+            <circle class="dg-line" cx="92.5" cy="56" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="60" text-anchor="middle">13</text>
+            <line class="dg-ghost" x1="114.5" y1="68" x2="138.5" y2="44"/>
+            <text class="dg-tick" x="126.5" y="60" text-anchor="middle">14</text>
+            <line class="dg-ghost" x1="148.5" y1="68" x2="172.5" y2="44"/>
+            <text class="dg-tick" x="160.5" y="60" text-anchor="middle">15</text>
+            <line class="dg-ghost" x1="182.5" y1="68" x2="206.5" y2="44"/>
+            <text class="dg-tick" x="194.5" y="60" text-anchor="middle">16</text>
+            <circle class="dg-line" cx="228.5" cy="56" r="12.5"/>
+            <text class="dg-tick" x="228.5" y="60" text-anchor="middle">17</text>
+            <line class="dg-ghost" x1="250.5" y1="68" x2="274.5" y2="44"/>
+            <text class="dg-tick" x="262.5" y="60" text-anchor="middle">18</text>
+            <circle class="dg-line" cx="296.5" cy="56" r="12.5"/>
+            <text class="dg-tick" x="296.5" y="60" text-anchor="middle">19</text>
+            <line class="dg-ghost" x1="318.5" y1="68" x2="342.5" y2="44"/>
+            <text class="dg-tick" x="330.5" y="60" text-anchor="middle">20</text>
+            <line class="dg-ghost" x1="12.5" y1="102" x2="36.5" y2="78"/>
+            <text class="dg-tick" x="24.5" y="94" text-anchor="middle">21</text>
+            <line class="dg-ghost" x1="46.5" y1="102" x2="70.5" y2="78"/>
+            <text class="dg-tick" x="58.5" y="94" text-anchor="middle">22</text>
+            <circle class="dg-line" cx="92.5" cy="90" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="94" text-anchor="middle">23</text>
+            <line class="dg-ghost" x1="114.5" y1="102" x2="138.5" y2="78"/>
+            <text class="dg-tick" x="126.5" y="94" text-anchor="middle">24</text>
+            <line class="dg-ghost" x1="148.5" y1="102" x2="172.5" y2="78"/>
+            <text class="dg-tick" x="160.5" y="94" text-anchor="middle">25</text>
+            <line class="dg-ghost" x1="182.5" y1="102" x2="206.5" y2="78"/>
+            <text class="dg-tick" x="194.5" y="94" text-anchor="middle">26</text>
+            <line class="dg-ghost" x1="216.5" y1="102" x2="240.5" y2="78"/>
+            <text class="dg-tick" x="228.5" y="94" text-anchor="middle">27</text>
+            <line class="dg-ghost" x1="250.5" y1="102" x2="274.5" y2="78"/>
+            <text class="dg-tick" x="262.5" y="94" text-anchor="middle">28</text>
+            <circle class="dg-line" cx="296.5" cy="90" r="12.5"/>
+            <text class="dg-tick" x="296.5" y="94" text-anchor="middle">29</text>
+            <line class="dg-ghost" x1="318.5" y1="102" x2="342.5" y2="78"/>
+            <text class="dg-tick" x="330.5" y="94" text-anchor="middle">30</text>
+            <circle class="dg-line" cx="24.5" cy="124" r="12.5"/>
+            <text class="dg-tick" x="24.5" y="128" text-anchor="middle">31</text>
+            <line class="dg-ghost" x1="46.5" y1="136" x2="70.5" y2="112"/>
+            <text class="dg-tick" x="58.5" y="128" text-anchor="middle">32</text>
+            <line class="dg-ghost" x1="80.5" y1="136" x2="104.5" y2="112"/>
+            <text class="dg-tick" x="92.5" y="128" text-anchor="middle">33</text>
+            <line class="dg-ghost" x1="114.5" y1="136" x2="138.5" y2="112"/>
+            <text class="dg-tick" x="126.5" y="128" text-anchor="middle">34</text>
+            <line class="dg-ghost" x1="148.5" y1="136" x2="172.5" y2="112"/>
+            <text class="dg-tick" x="160.5" y="128" text-anchor="middle">35</text>
+            <line class="dg-ghost" x1="182.5" y1="136" x2="206.5" y2="112"/>
+            <text class="dg-tick" x="194.5" y="128" text-anchor="middle">36</text>
+            <circle class="dg-line" cx="228.5" cy="124" r="12.5"/>
+            <text class="dg-tick" x="228.5" y="128" text-anchor="middle">37</text>
+            <line class="dg-ghost" x1="250.5" y1="136" x2="274.5" y2="112"/>
+            <text class="dg-tick" x="262.5" y="128" text-anchor="middle">38</text>
+            <line class="dg-ghost" x1="284.5" y1="136" x2="308.5" y2="112"/>
+            <text class="dg-tick" x="296.5" y="128" text-anchor="middle">39</text>
+            <line class="dg-ghost" x1="318.5" y1="136" x2="342.5" y2="112"/>
+            <text class="dg-tick" x="330.5" y="128" text-anchor="middle">40</text>
+            <circle class="dg-line" cx="24.5" cy="158" r="12.5"/>
+            <text class="dg-tick" x="24.5" y="162" text-anchor="middle">41</text>
+            <line class="dg-ghost" x1="46.5" y1="170" x2="70.5" y2="146"/>
+            <text class="dg-tick" x="58.5" y="162" text-anchor="middle">42</text>
+            <circle class="dg-line" cx="92.5" cy="158" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="162" text-anchor="middle">43</text>
+            <line class="dg-ghost" x1="114.5" y1="170" x2="138.5" y2="146"/>
+            <text class="dg-tick" x="126.5" y="162" text-anchor="middle">44</text>
+            <line class="dg-ghost" x1="148.5" y1="170" x2="172.5" y2="146"/>
+            <text class="dg-tick" x="160.5" y="162" text-anchor="middle">45</text>
+            <line class="dg-ghost" x1="182.5" y1="170" x2="206.5" y2="146"/>
+            <text class="dg-tick" x="194.5" y="162" text-anchor="middle">46</text>
+            <circle class="dg-line" cx="228.5" cy="158" r="12.5"/>
+            <text class="dg-tick" x="228.5" y="162" text-anchor="middle">47</text>
+            <line class="dg-ghost" x1="250.5" y1="170" x2="274.5" y2="146"/>
+            <text class="dg-tick" x="262.5" y="162" text-anchor="middle">48</text>
+            <line class="dg-ghost" x1="284.5" y1="170" x2="308.5" y2="146"/>
+            <text class="dg-tick" x="296.5" y="162" text-anchor="middle">49</text>
+            <line class="dg-ghost" x1="318.5" y1="170" x2="342.5" y2="146"/>
+            <text class="dg-tick" x="330.5" y="162" text-anchor="middle">50</text>
+            <line class="dg-ghost" x1="12.5" y1="204" x2="36.5" y2="180"/>
+            <text class="dg-tick" x="24.5" y="196" text-anchor="middle">51</text>
+            <line class="dg-ghost" x1="46.5" y1="204" x2="70.5" y2="180"/>
+            <text class="dg-tick" x="58.5" y="196" text-anchor="middle">52</text>
+            <circle class="dg-line" cx="92.5" cy="192" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="196" text-anchor="middle">53</text>
+            <line class="dg-ghost" x1="114.5" y1="204" x2="138.5" y2="180"/>
+            <text class="dg-tick" x="126.5" y="196" text-anchor="middle">54</text>
+            <line class="dg-ghost" x1="148.5" y1="204" x2="172.5" y2="180"/>
+            <text class="dg-tick" x="160.5" y="196" text-anchor="middle">55</text>
+            <line class="dg-ghost" x1="182.5" y1="204" x2="206.5" y2="180"/>
+            <text class="dg-tick" x="194.5" y="196" text-anchor="middle">56</text>
+            <line class="dg-ghost" x1="216.5" y1="204" x2="240.5" y2="180"/>
+            <text class="dg-tick" x="228.5" y="196" text-anchor="middle">57</text>
+            <line class="dg-ghost" x1="250.5" y1="204" x2="274.5" y2="180"/>
+            <text class="dg-tick" x="262.5" y="196" text-anchor="middle">58</text>
+            <circle class="dg-line" cx="296.5" cy="192" r="12.5"/>
+            <text class="dg-tick" x="296.5" y="196" text-anchor="middle">59</text>
+            <line class="dg-ghost" x1="318.5" y1="204" x2="342.5" y2="180"/>
+            <text class="dg-tick" x="330.5" y="196" text-anchor="middle">60</text>
+            <circle class="dg-line" cx="24.5" cy="226" r="12.5"/>
+            <text class="dg-tick" x="24.5" y="230" text-anchor="middle">61</text>
+            <line class="dg-ghost" x1="46.5" y1="238" x2="70.5" y2="214"/>
+            <text class="dg-tick" x="58.5" y="230" text-anchor="middle">62</text>
+            <line class="dg-ghost" x1="80.5" y1="238" x2="104.5" y2="214"/>
+            <text class="dg-tick" x="92.5" y="230" text-anchor="middle">63</text>
+            <line class="dg-ghost" x1="114.5" y1="238" x2="138.5" y2="214"/>
+            <text class="dg-tick" x="126.5" y="230" text-anchor="middle">64</text>
+            <line class="dg-ghost" x1="148.5" y1="238" x2="172.5" y2="214"/>
+            <text class="dg-tick" x="160.5" y="230" text-anchor="middle">65</text>
+            <line class="dg-ghost" x1="182.5" y1="238" x2="206.5" y2="214"/>
+            <text class="dg-tick" x="194.5" y="230" text-anchor="middle">66</text>
+            <circle class="dg-line" cx="228.5" cy="226" r="12.5"/>
+            <text class="dg-tick" x="228.5" y="230" text-anchor="middle">67</text>
+            <line class="dg-ghost" x1="250.5" y1="238" x2="274.5" y2="214"/>
+            <text class="dg-tick" x="262.5" y="230" text-anchor="middle">68</text>
+            <line class="dg-ghost" x1="284.5" y1="238" x2="308.5" y2="214"/>
+            <text class="dg-tick" x="296.5" y="230" text-anchor="middle">69</text>
+            <line class="dg-ghost" x1="318.5" y1="238" x2="342.5" y2="214"/>
+            <text class="dg-tick" x="330.5" y="230" text-anchor="middle">70</text>
+            <circle class="dg-line" cx="24.5" cy="260" r="12.5"/>
+            <text class="dg-tick" x="24.5" y="264" text-anchor="middle">71</text>
+            <line class="dg-ghost" x1="46.5" y1="272" x2="70.5" y2="248"/>
+            <text class="dg-tick" x="58.5" y="264" text-anchor="middle">72</text>
+            <circle class="dg-line" cx="92.5" cy="260" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="264" text-anchor="middle">73</text>
+            <line class="dg-ghost" x1="114.5" y1="272" x2="138.5" y2="248"/>
+            <text class="dg-tick" x="126.5" y="264" text-anchor="middle">74</text>
+            <line class="dg-ghost" x1="148.5" y1="272" x2="172.5" y2="248"/>
+            <text class="dg-tick" x="160.5" y="264" text-anchor="middle">75</text>
+            <line class="dg-ghost" x1="182.5" y1="272" x2="206.5" y2="248"/>
+            <text class="dg-tick" x="194.5" y="264" text-anchor="middle">76</text>
+            <line class="dg-ghost" x1="216.5" y1="272" x2="240.5" y2="248"/>
+            <text class="dg-tick" x="228.5" y="264" text-anchor="middle">77</text>
+            <line class="dg-ghost" x1="250.5" y1="272" x2="274.5" y2="248"/>
+            <text class="dg-tick" x="262.5" y="264" text-anchor="middle">78</text>
+            <circle class="dg-line" cx="296.5" cy="260" r="12.5"/>
+            <text class="dg-tick" x="296.5" y="264" text-anchor="middle">79</text>
+            <line class="dg-ghost" x1="318.5" y1="272" x2="342.5" y2="248"/>
+            <text class="dg-tick" x="330.5" y="264" text-anchor="middle">80</text>
+            <line class="dg-ghost" x1="12.5" y1="306" x2="36.5" y2="282"/>
+            <text class="dg-tick" x="24.5" y="298" text-anchor="middle">81</text>
+            <line class="dg-ghost" x1="46.5" y1="306" x2="70.5" y2="282"/>
+            <text class="dg-tick" x="58.5" y="298" text-anchor="middle">82</text>
+            <circle class="dg-line" cx="92.5" cy="294" r="12.5"/>
+            <text class="dg-tick" x="92.5" y="298" text-anchor="middle">83</text>
+            <line class="dg-ghost" x1="114.5" y1="306" x2="138.5" y2="282"/>
+            <text class="dg-tick" x="126.5" y="298" text-anchor="middle">84</text>
+            <line class="dg-ghost" x1="148.5" y1="306" x2="172.5" y2="282"/>
+            <text class="dg-tick" x="160.5" y="298" text-anchor="middle">85</text>
+            <line class="dg-ghost" x1="182.5" y1="306" x2="206.5" y2="282"/>
+            <text class="dg-tick" x="194.5" y="298" text-anchor="middle">86</text>
+            <line class="dg-ghost" x1="216.5" y1="306" x2="240.5" y2="282"/>
+            <text class="dg-tick" x="228.5" y="298" text-anchor="middle">87</text>
+            <line class="dg-ghost" x1="250.5" y1="306" x2="274.5" y2="282"/>
+            <text class="dg-tick" x="262.5" y="298" text-anchor="middle">88</text>
+            <circle class="dg-line" cx="296.5" cy="294" r="12.5"/>
+            <text class="dg-tick" x="296.5" y="298" text-anchor="middle">89</text>
+            <line class="dg-ghost" x1="318.5" y1="306" x2="342.5" y2="282"/>
+            <text class="dg-tick" x="330.5" y="298" text-anchor="middle">90</text>
+            <line class="dg-ghost" x1="12.5" y1="340" x2="36.5" y2="316"/>
+            <text class="dg-tick" x="24.5" y="332" text-anchor="middle">91</text>
+            <line class="dg-ghost" x1="46.5" y1="340" x2="70.5" y2="316"/>
+            <text class="dg-tick" x="58.5" y="332" text-anchor="middle">92</text>
+            <line class="dg-ghost" x1="80.5" y1="340" x2="104.5" y2="316"/>
+            <text class="dg-tick" x="92.5" y="332" text-anchor="middle">93</text>
+            <line class="dg-ghost" x1="114.5" y1="340" x2="138.5" y2="316"/>
+            <text class="dg-tick" x="126.5" y="332" text-anchor="middle">94</text>
+            <line class="dg-ghost" x1="148.5" y1="340" x2="172.5" y2="316"/>
+            <text class="dg-tick" x="160.5" y="332" text-anchor="middle">95</text>
+            <line class="dg-ghost" x1="182.5" y1="340" x2="206.5" y2="316"/>
+            <text class="dg-tick" x="194.5" y="332" text-anchor="middle">96</text>
+            <circle class="dg-line" cx="228.5" cy="328" r="12.5"/>
+            <text class="dg-tick" x="228.5" y="332" text-anchor="middle">97</text>
+            <line class="dg-ghost" x1="250.5" y1="340" x2="274.5" y2="316"/>
+            <text class="dg-tick" x="262.5" y="332" text-anchor="middle">98</text>
+            <line class="dg-ghost" x1="284.5" y1="340" x2="308.5" y2="316"/>
+            <text class="dg-tick" x="296.5" y="332" text-anchor="middle">99</text>
+            <line class="dg-ghost" x1="318.5" y1="340" x2="342.5" y2="316"/>
+            <text class="dg-tick" x="330.5" y="332" text-anchor="middle">100</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.6</span> The numbers from 1 to 100 after the sieve. The circled numbers are the primes.</figcaption>
+        </figure>
+      </div>
+
+      <p>The circled numbers are the primes. The crossed-out numbers, except for 1, are the composite numbers. This method is called the <span class="term">Sieve of Eratosthenes</span>. A sieve keeps some things and lets the rest fall through, and this one keeps only the primes. Eratosthenes was a Greek mathematician who lived about 2200 years ago. His method works for numbers larger than 100 too.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <p>Guna and Anshu wonder how such a simple method can find the primes. It is not magic, so there must be a reason why it works.</p>
+          <ol>
+            <li>Read the steps again. What does each step remove from the grid?</li>
+            <li>Why is every number that is left at the end a prime?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

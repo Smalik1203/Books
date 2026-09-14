@@ -2,19 +2,19 @@
    SCIENCE — the four components the science volumes need and the
    maths volumes do not.
 
-   DESIGN.md §4 calls the library "seven, locked", and this is a
+   DESIGN-MATHS.md §4 calls the library "seven, locked", and this is a
    deliberate extension rather than a drift. Each addition obeys
    the two rules that make the library legible:
 
-     * one working colour per component, never two (§1);
-     * break-inside: avoid, because each is read as one thing (§9).
+     * one working colour per component, never two (DESIGN-MATHS.md §1);
+     * break-inside: avoid, because each is read as one thing (DESIGN.md §9).
 
    Only ONE of the four is a tinted panel. The other three are
    built from rules and bands, so a science page does not turn
    into a stack of coloured boxes — which is the failure the
    locked library was protecting against.
 
-   Colour is assigned by what the box is FOR, following §1:
+   Colour is assigned by what the box is FOR, following DESIGN-MATHS.md §1:
      structure  a scientist, and depth on the main thread
      action     an activity — something being done
      attention  a thread of curiosity — a question put to the reader

@@ -1,0 +1,102 @@
+.telugu-page .runhead { display: none; }
+.telugu-page { font-family: var(--font-body); }
+.telugu-page p { font-size: var(--size-body); line-height: var(--lh-body); margin: 0 0 var(--space-tight); text-align: start; }
+.telugu-page h1 { font-family: var(--font-display); font-size: var(--size-chapter); line-height: 1.5; color: var(--teal); margin: 0; letter-spacing: 0; }
+.telugu-page h2 { font-family: var(--font-display); font-size: var(--size-section); line-height: 1.5; color: var(--teal); margin: 0 0 var(--space-step); border: 0; padding: 0; letter-spacing: 0; font-variant: normal; }
+.telugu-page h3 { font-family: var(--font-display); font-size: var(--size-concept); line-height: 1.5; color: var(--rust); margin: var(--space-step) 0 var(--space-tight); letter-spacing: 0; font-variant: normal; }
+.tg-kicker { font-size: var(--size-note); color: var(--teal); padding-bottom: var(--space-tight); border-bottom: var(--stroke-hair) solid var(--rule); margin-bottom: var(--space-step); }
+.tg-deck { color: var(--ink-soft); }
+.tg-art { display: block; width: 100%; height: auto; margin: var(--space-step) 0; }
+.tg-art--story { width: 70%; margin-left: auto; margin-right: auto; }
+.tg-art--small { width: 62%; margin-left: auto; margin-right: auto; }
+.tg-prompts { margin: 0; padding-left: var(--space-rest); font-size: var(--size-body); line-height: var(--lh-body); }
+.tg-prompts li { margin-bottom: var(--space-tight); padding-left: var(--space-hair); }
+.tg-labels { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-step); text-align: center; font-size: var(--size-body); margin-bottom: var(--space-tight); }
+.tg-blank { display: block; height: var(--space-break); border-bottom: var(--stroke-hair) solid var(--rule); }
+.tg-bank { color: var(--teal); font-size: var(--size-body); padding: var(--space-tight) 0; border-top: var(--stroke-hair) solid var(--rule); border-bottom: var(--stroke-hair) solid var(--rule); margin-bottom: var(--space-step); }
+.tg-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-rest); margin-bottom: var(--space-tight); }
+.tg-song { color: var(--teal); border-left: var(--stroke-band) solid var(--teal); padding-left: var(--space-rest); margin: var(--space-step) 0 var(--space-rest); }
+.tg-drawing { height: calc(var(--space-break) * 5); border: var(--stroke-hair) solid var(--rule); margin: var(--space-tight) 0; }
+.tg-note { font-size: var(--size-note) !important; color: var(--ink-soft); margin-top: var(--space-step) !important; }
+
+/* Primary-reader detail vocabulary. Icons are reusable line drawings, not emoji.
+   Roles keep the book's inks; decorative details stay outside reading lines. */
+.tg-icon { width: 8mm; height: 8mm; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.tg-kicker { display: flex; align-items: center; justify-content: space-between; border: 0; padding: 0; margin-bottom: var(--space-step); }
+.tg-kicker span:first-child { display: flex; gap: var(--space-hair); align-items: center; }
+.tg-kicker .tg-icon { width: 5mm; height: 5mm; }
+.tg-kicker span:last-child { color: var(--ink-soft); }
+.tg-title-row { display: flex; align-items: center; gap: var(--space-step); position: relative; margin-bottom: var(--space-step); }
+.tg-title-row h1 { font-size: var(--size-chapter); line-height: 1.5; }
+.tg-title-row .tg-deck { font-size: var(--size-note); margin: 0; }
+.tg-chapter-seed { background: var(--teal); color: var(--paper); border-radius: 50% 50% 12% 50%; width: 22mm; height: 28mm; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(-5deg); position: relative; }
+.tg-chapter-seed span { font-size: var(--size-caption); }
+.tg-chapter-seed strong { font-size: var(--size-section); line-height: 1; }
+.tg-chapter-seed .tg-icon { width: 6mm; height: 6mm; }
+.tg-title-butterfly { position: absolute; right: 0; top: var(--space-hair); color: var(--gold); transform: rotate(17deg); width: 11mm; height: 11mm; }
+.tg-scene { position: relative; margin: 0 0 var(--space-step); padding: var(--space-hair); border: var(--stroke-hair) solid var(--teal-soft); border-radius: 4% 4% 1% 1%; }
+.tg-scene .tg-art { margin: 0; border-radius: 3% 3% 0 0; }
+.tg-scene-sun { position: absolute; right: -3mm; top: -4mm; background: var(--paper); border-radius: 50%; width: 11mm; height: 11mm; color: var(--gold); }
+.telugu-page .tg-heading { display: flex; align-items: center; gap: var(--space-tight); }
+.tg-icon-disc { display: inline-flex; align-items: center; justify-content: center; width: 11mm; height: 11mm; border-radius: 50%; background: var(--rust-tint); }
+.tg-icon-disc .tg-icon { width: 7mm; height: 7mm; }
+.tg-prompts { list-style: none; counter-reset: garden-question; padding: 0; }
+.tg-prompts li { counter-increment: garden-question; display: flex; align-items: baseline; gap: var(--space-tight); margin-bottom: var(--space-tight); }
+.tg-prompts li::before { content: counter(garden-question); color: var(--teal); background: var(--teal-tint); border-radius: 50% 50% 15% 50%; font-size: var(--size-note); width: 6mm; height: 6mm; line-height: 6mm; text-align: center; flex: 0 0 6mm; }
+.tg-whisper { display: flex; align-items: center; gap: var(--space-tight); margin-top: var(--space-step); color: var(--teal); }
+.tg-whisper p { font-size: var(--size-note); color: var(--ink-soft); margin: 0; }
+.tg-whisper .tg-icon { width: 6mm; height: 6mm; }
+.tg-garden-foot { position: absolute; bottom: 5mm; left: var(--margin-inside); right: var(--margin-outside); display: flex; align-items: center; gap: var(--space-hair); color: var(--teal-soft); }
+.page--verso .tg-garden-foot { left: var(--margin-outside); right: var(--margin-inside); }
+.tg-garden-foot .tg-icon { width: 5mm; height: 5mm; }
+.tg-garden-foot .tg-icon:nth-child(2) { color: var(--rust); }
+.tg-garden-foot .tg-icon:last-child { color: var(--gold); margin-right: 12mm; }
+.tg-garden-foot span { flex: 1; border-top: var(--stroke-hair) dotted var(--rule); }
+.telugu-page .pagefoot__bar { display: none; }
+.telugu-page .pagefoot__folio { right: var(--margin-outside); left: auto; bottom: 5mm; width: 8mm; height: 8mm; line-height: 8mm; text-align: center; background: var(--teal); border-radius: 50% 50% 15% 50%; }
+.telugu-page.page--verso .pagefoot__folio { right: var(--margin-inside); left: auto; }
+.tg-story-opening { display: grid; grid-template-columns: 44% 56%; align-items: center; margin: var(--space-step) 0 var(--space-rest); }
+.tg-story-text { padding-right: var(--space-step); }
+.tg-story-picture { width: 100%; height: auto; border-radius: var(--radius-lg); transform: rotate(2deg); }
+.tg-dialogue { display: flex; align-items: baseline; gap: var(--space-tight); padding: var(--space-tight) var(--space-step); margin-bottom: var(--space-tight); background: var(--teal-tint); border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0; color: var(--teal-deep); }
+.tg-dialogue--ravi { margin-left: var(--space-rest); background: var(--gold-tint); color: var(--gold-deep); border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg); }
+.tg-speaker { font-size: var(--size-note); font-weight: 700; }
+.tg-dialogue p { font-size: var(--size-body); margin: 0; }
+.tg-story-end { margin: var(--space-step) 0; }
+.tg-observe { display: flex; gap: var(--space-tight); align-items: center; border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-tight); }
+.tg-observe .tg-icon { color: var(--rust); }
+.tg-observe strong { font-size: var(--size-note); color: var(--rust); }
+.tg-observe p { margin: 0; }
+.tg-word-trail { display: flex; align-items: center; justify-content: center; gap: var(--space-step); color: var(--teal); margin-top: var(--space-rest); font-size: var(--size-body); }
+.tg-word-trail b { color: var(--teal-soft); font-weight: 400; }
+.tg-word-bank { display: flex; justify-content: space-between; gap: var(--space-step); margin: var(--space-tight) 0; }
+.tg-word-bank span { color: var(--teal); background: var(--teal-tint); padding: var(--space-hair) var(--space-step); font-size: var(--size-body); border-radius: 50% 15% 50% 15%; }
+.tg-picture-words { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--space-tight); margin-bottom: var(--space-tight); }
+.tg-picture-word { position: relative; text-align: center; }
+.tg-crop { position: relative; overflow: hidden; width: 100%; aspect-ratio: 0.75; }
+.tg-word-image { display: block; width: 400%; height: 100%; max-width: none; object-fit: fill; }
+.tg-crop--0 .tg-word-image { transform: translateX(0); }
+.tg-crop--1 .tg-word-image { transform: translateX(-25%); }
+.tg-crop--2 .tg-word-image { transform: translateX(-50%); }
+.tg-crop--3 .tg-word-image { transform: translateX(-75%); }
+.tg-word-number { display: inline-block; background: var(--gold-tint); color: var(--gold-deep); border-radius: 50%; width: 6mm; line-height: 6mm; font-size: var(--size-note); }
+.tg-picture-word .tg-blank { height: var(--space-rest); }
+.tg-plurals { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-rest); margin: var(--space-step) 0 var(--space-tight); }
+.tg-plurals > div { border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-tight); }
+.tg-plurals p { margin-bottom: var(--space-step); }
+.tg-plurals p > span:not(.tg-blank) { color: var(--teal-soft); }
+.tg-plurals .tg-blank { display: inline-block; width: 29mm; height: 7mm; }
+.tg-blank { border-bottom-style: dotted; height: 10mm; }
+.tg-poem-garden { display: grid; grid-template-columns: 60% 40%; align-items: center; margin-top: var(--space-step); }
+.tg-song { border: 0; padding: 0 0 0 var(--space-step); margin: 0; }
+.tg-song p { line-height: 1.95; }
+.tg-poem-art { position: relative; padding: 0; }
+.tg-poem-bird { width: 100%; height: auto; display: block; }
+.tg-vocabulary-art { margin-bottom: 0; }
+.tg-poem-art .tg-crop { width: 39mm; }
+.tg-poem-butterfly { position: absolute; top: 0; right: 0; color: var(--gold); width: 12mm; height: 12mm; }
+.tg-poem-music { position: absolute; left: 0; top: 8mm; color: var(--rust); width: 6mm; height: 6mm; }
+.tg-drawing { position: relative; height: 57mm; border: var(--stroke-hair) solid var(--teal-soft); border-radius: var(--radius-lg); margin: var(--space-step) 0; }
+.tg-drawing > span { position: absolute; bottom: -3mm; left: 50%; transform: translateX(-50%); background: var(--paper); padding: 0 var(--space-step); color: var(--teal-soft); font-size: var(--size-note); white-space: nowrap; }
+.tg-draw-sun { position: absolute; top: -4mm; right: var(--space-step); color: var(--gold); background: var(--paper); width: 10mm; height: 10mm; }
+.tg-draw-leaf { position: absolute; bottom: -3mm; left: -3mm; color: var(--teal); background: var(--paper); transform: rotate(-20deg); }

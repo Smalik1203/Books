@@ -3,7 +3,7 @@
 Print-ready maths textbooks. **Crown Quarto trim, 189 × 246 mm**, with A4 and
 B5 editions alongside. One folder per class.
 
-**Read [DESIGN.md](DESIGN.md) before writing a page.** Every page is assembled
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before writing a page.** Every page is assembled
 from a locked component library; the builder reports a design violation for any
 page that invents its own colour, type, stroke or spacing.
 
@@ -315,12 +315,15 @@ without colliding with it. The page before `p101` carries `data-close`.
 
 The design of the section — what was added to the component library for it, and
 what was deliberately not — is in
-**[DESIGN.md §6a](DESIGN.md)**.
+**[DESIGN-MATHS.md §6a](DESIGN-MATHS.md)**.
 
 ## Design
 
-The palette, the two typefaces, the five hierarchy levels, the components, the
-diagram vocabulary and the page grammar all live in **[DESIGN.md](DESIGN.md)**.
+The palette, the two typefaces, the five hierarchy levels, the components and the
+diagram vocabulary live in **[DESIGN-MATHS.md](DESIGN-MATHS.md)**. The page
+grammar, the two sheets and the covers, which every subject shares, live in
+**[DESIGN.md](DESIGN.md)**, and the science volumes in
+**[DESIGN-SCIENCE.md](DESIGN-SCIENCE.md)**.
 
 The build enforces them. A page that carries an inline `style`, a `<style>`
 block, a hex colour, a `stroke-width` attribute, a font attribute or a private

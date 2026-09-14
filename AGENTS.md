@@ -3,9 +3,15 @@
 A print book, not a web app. Every decision below exists because getting it
 wrong wasted real time.
 
-**Read [DESIGN.md](DESIGN.md) before touching a page.** The design system is
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** The design system is
 enforced by the builder, not by discipline — a page that invents its own
 colour, type, stroke or spacing fails the build.
+
+For science, also read [SCIENCE-TEMPLATE.md](SCIENCE-TEMPLATE.md) and
+[SCIENCE-EDITORIAL-CHECKLIST.md](SCIENCE-EDITORIAL-CHECKLIST.md). The locked
+do/think/explain system supersedes the earlier Think Spark, painted-icon
+and per-feature colour experiments. Audit mechanisms, evidence and activity
+sequence before fitting pages; run the science regression checks after edits.
 
 ## The one idea
 
@@ -178,7 +184,7 @@ them. Ten is the budget, not the boundary: four of the six run to eleven or
 twelve, because that is what the four stages came to. Holding a chapter at
 ten by letting its last page clip is not the alternative, and was what five
 of the six were doing. The stages, their contents and the components they added to the library
-are in [DESIGN.md §6a](DESIGN.md); **the rest of the section is built from the
+are in [DESIGN-MATHS.md §6a](DESIGN-MATHS.md); **the rest of the section is built from the
 components the chapter already uses**, which is the point.
 
 Every stage opens with a `.c-stage` head — number, name, and what the stage
@@ -190,7 +196,7 @@ to refit through it rather than repacking by hand.
 The section is four stages (questions tried and explained, worked problems,
 problem sets, answers) and a stage may start part-way down a page. It is
 written as a lesson, not a method: no named strategies, no coaching
-vocabulary — see DESIGN.md §6a before writing one. Two chapters were still
+vocabulary — see DESIGN-MATHS.md §6a before writing one. Two chapters were still
 carrying the ten-stage draft that §6a describes being thrown out, complete
 with The Trap Room and named moves to memorise; if a stage head is not one
 of the four, that is what you are looking at.

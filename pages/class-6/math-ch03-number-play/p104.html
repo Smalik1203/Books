@@ -1,0 +1,57 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
+        <p>A 12-hour clock shows 9:59. The number of minutes until it next shows a palindromic time is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>2</li><li>11</li><li>72</li><li>142</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Read each time without its colon, and check whether it reads the same from both ends.</p>
+        <div class="work work--list">
+          <p>10:00 reads 1000, and 10:01 reads 1001, which is a palindrome.</p>
+          <p>From 9:59 to 10:01 is 2 minutes.</p>
+        </div>
+        <p>The answer is 2, option (a). Option (b) is 10:10, but 1010 read from the right is 0101, so it is not a palindrome. Option (c) is 11:11 and option (d) is 12:21, which are the palindromic times after 10:01.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>Starting from 6, the number of steps the Collatz rule takes to reach 1 is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>6</li><li>8</li><li>9</li><li>never</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Apply the rule one step at a time, and count the steps, not the numbers.</p>
+        <div class="work work--list">
+          <p>$6 \to 3 \to 10 \to 5 \to 16 \to 8 \to 4 \to 2 \to 1$</p>
+          <p>9 numbers in the sequence, so 8 steps between them</p>
+        </div>
+        <p>The answer is 8, option (b). Option (c) counts the numbers in the sequence instead of the steps between them. Option (a) misses the two odd steps, from 3 to 10 and from 5 to 16.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 5</span>
+        <p>Anil adds a 4-digit number and a 3-digit number. His answer could have</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>3 digits</li><li>4 or 5 digits</li><li>only 4 digits</li><li>6 digits</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Find the smallest and the largest answers that are possible.</p>
+        <div class="work work--list">
+          <p>smallest: $1000 + 100 = 1100$, which has 4 digits</p>
+          <p>largest: $9999 + 999 = 10{,}998$, which has 5 digits</p>
+        </div>
+        <p>So the answer can have 4 digits or 5 digits, option (b). Option (c) forgets that a large sum can carry into a fifth digit. Options (a) and (d) are ruled out by the smallest and largest sums.</p>
+      </div>
+
+      <p>In Problem 5 we did not try any ordinary sums. We looked only at the smallest and the largest sums, because every other sum lies between them.</p>
+
+    </div>
+  </div>
+</section>

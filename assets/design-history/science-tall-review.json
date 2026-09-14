@@ -1,0 +1,32 @@
+{
+  "trim_mm": [
+    189,
+    272
+  ],
+  "edition": "science-tall",
+  "chapters": [
+    {
+      "chapter": 1,
+      "pages": 8,
+      "palette": "muted blue"
+    },
+    {
+      "chapter": 2,
+      "pages": 24,
+      "palette": "botanical green"
+    },
+    {
+      "chapter": 3,
+      "pages": 31,
+      "palette": "muted ochre"
+    }
+  ],
+  "checks": [
+    "builder: all pages fit",
+    "reference-fit: no height overflow, width overflow, artwork collisions, uneven leading or trim mismatch",
+    "full-sheet contact proofs reviewed"
+  ],
+  "scope": "Shared typography, chapter-specific palette and motif, activity and table treatment, final-trim refitting. Existing explanatory artwork retained.",
+  "provenance": "before-science-tall backups and original manuscripts retained; Chapter 3 semantic repairs are reproducible in prepare-science-food.py",
+  "production": "Cover spine remains separate; compute with final bound page count and paper caliper."
+}

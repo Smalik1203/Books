@@ -1,0 +1,23 @@
+/* Telugu primary edition: script-compatible replacements, not extra Latin faces.
+   Geometry follows Crown Quarto; larger reading type for Class 3. */
+@import url('telugu-primary.css');
+:root {
+  --trim-w: 189mm;
+  --trim-h: 246mm;
+  --margin-top: 15mm;
+  --margin-bottom: 17mm;
+  --margin-inside: 21mm;
+  --margin-outside: 16mm;
+  --measure: 152mm;
+  --font-body: 'Nirmala UI', sans-serif;
+  --font-display: 'Nirmala UI', sans-serif;
+  --size-caption: 10pt;
+  --size-note: 11pt;
+  --size-body: 14pt;
+  --size-concept: 16pt;
+  --size-section: 19pt;
+  --size-chapter: 34pt;
+  --size-numeral: 38pt;
+  --lh-body: 1.65;
+  --weight-text: 400;
+}

@@ -6,7 +6,7 @@
 
       <p>For a cube of up to six digits there is a method that needs no factorising at
       all, and it uses the two facts we have. It works because a two-digit root has a
-      cube of at most six digits, so the answer's two digits can be found one at a
+      cube of at most six digits, so you can find the two digits one at a
       time — the units digit from the end of the number, the tens digit from the front.</p>
 
       <div class="c-example">
@@ -17,7 +17,7 @@
           <p><em>The units digit, from the last digit.</em> $4913$ ends in $3$, and a
           cube ends in $3$ only when its root ends in $7$. So the root ends in $7$.</p>
           <p><em>The tens digit, from what is left.</em> Strike out the last three
-          digits and $4$ remains. Find the largest cube not exceeding it: $1^3 = 1$ fits
+          digits and $4$ remains. Find the largest cube that fits inside it: $1^3 = 1$ fits
           and $2^3 = 8$ does not, so the tens digit is $1$.</p>
           <div class="work">
             <div class="work__row">
@@ -33,9 +33,9 @@
         </div>
       </div>
 
-      <p>Run it on the rest and it is quick: $12\,167$ ends in $7$, so the root ends in
-      $3$; strike three digits to leave $12$, and $2^3 = 8$ fits where $3^3 = 27$ does
-      not, so the root is $23$. And $32\,768$ ends in $8$, so the root ends in $2$;
+      <p>Run it on the rest and it is quick. $12\,167$ ends in $7$, so the root ends in
+      $3$. Strike three digits to leave $12$, and $2^3 = 8$ fits where $3^3 = 27$ does
+      not, so the root is $23$. And $32\,768$ ends in $8$, so the root ends in $2$. Here
       $32$ leaves $3^3 = 27$ as the largest cube that fits, so the root is $32$.</p>
 
       <div class="c-tip">
@@ -45,7 +45,7 @@
           </svg>
         </div>
         <div class="c-tip__body">
-          <p>The method assumes it has been given a perfect cube. Fed $4900$ it would
+          <p>The method assumes it has been given a perfect cube. Given $4900$ it would
           answer $10$ and be wrong, since $4900$ is not a cube at all. It finds a root;
           it does not test for one.</p>
         </div>

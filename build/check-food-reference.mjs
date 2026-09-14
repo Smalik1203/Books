@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const built=path.join(root,'build/reference/ch03-food-on-our-plate.html');
+const built=path.join(root,'build/class-6/ch03-food-on-our-plate.html');
 const html=await readFile(built,'utf8');
 const assets=[...new Set([...html.matchAll(/<image href="([^"]+)"/g)].map(m=>m[1]))];
 for(const asset of assets)await access(path.resolve(path.dirname(built),asset));

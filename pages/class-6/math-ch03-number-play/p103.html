@@ -1,0 +1,52 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
+        </div>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
+        <p>Starting from 1000, the number of Kaprekar rounds needed to reach 6174 is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>3</li><li>4</li><li>5</li><li>never</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Remember to keep every number at 4 digits by writing zeros in front. Each line below is one round: A, then B, then C.</p>
+        <div class="work work--list">
+          <p>$1000 - 0001 = 0999$</p>
+          <p>$9990 - 0999 = 8991$</p>
+          <p>$9981 - 1899 = 8082$</p>
+          <p>$8820 - 0288 = 8532$</p>
+          <p>$8532 - 2358 = 6174$</p>
+        </div>
+        <p>The answer is 5 rounds, option (c). Option (d) comes from reading 0999 as the 3-digit number 999: then A and B are both 999, C is 0, and the steps stop. Options (a) and (b) stop counting too soon.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>The grid has rows 5, 9, 2 and 8, 1, 7 and 3, 6, 4. How many of its cells are supercells?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>1</li><li>2</li><li>4</li><li>5</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Check each cell against the cells just left, right, above and below it. A corner cell has 2 neighbours, an edge cell 3 and the centre cell 4.</p>
+        <div class="work work--list">
+          <p>9 beats 5, 2 and 1, so it is a supercell.</p>
+          <p>8 beats 5, 1 and 3, so it is a supercell.</p>
+          <p>7 beats 2, 1 and 4, so it is a supercell.</p>
+          <p>6 beats 1, 3 and 4, so it is a supercell.</p>
+        </div>
+        <p>No other cell beats all its neighbours, so the answer is 4, option (c). Option (a) counts the cells on the slant as neighbours too; then only 9 is a supercell. Option (d) forgets that 5 has a bigger neighbour, 9. The cells 5, 2, 1, 3 and 4 each have at least one bigger neighbour.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
