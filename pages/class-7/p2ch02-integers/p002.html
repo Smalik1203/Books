@@ -1,0 +1,66 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Play this game with a partner. One of you thinks of two integers and gives their sum and their difference, and the other finds the integers. Take turns. With some practice, you can surprise your family with it. Start with small numbers, and then try pairs in which one or both integers are negative.</li>
+        </ol>
+      </div>
+
+      <h3>Carrom coin integers</h3>
+
+      <p>A carrom coin starts at 0 on a line marked in units. A strike moves the coin to the right by some number of units, depending on how hard it is struck. If the first strike moves it 4 units and the second moves it 3 units, the coin ends up $4 + 3 = 7$ units from 0. In general, if the first strike moves the coin $a$ units to the right and the second moves it $b$ units to the right, its final position is $P = a + b$.</p>
+
+      <p>Now suppose the coin can be struck to the left as well as to the right. Can we still give one formula for the final position after two strikes? We could look at four cases separately: both strikes to the right, both to the left, the first to the right and the second to the left, and the first to the left and the second to the right.</p>
+
+      <p>There is a quicker way. Treat the line as a number line, and count a movement to the right as positive and a movement to the left as negative. If the first strike moves the coin 5 units to the right, the first movement is 5. If the second moves it 7 units to the left, the second movement is $-7$. The final position is the sum of the two movements, $5 + (-7) = -2$, which is 2 units to the left of 0 (Fig. 2.1).</p>
+
+      <div class="c-figure c-figure--full">
+                    <figure>
+                      <svg viewBox="0 0 570 122" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A number line from minus 6 to 6. An arrow goes from 0 to 5 for the first strike. A second arrow goes from 5 back to minus 2 for the second strike of minus 7. The coin ends at minus 2.">
+      <path class="dg-line" d="M35 84 L535 84"/>
+      <path class="dg-thin" d="M45 81 L45 87"/>
+      <text class="dg-label" x="45" y="99" text-anchor="middle">−6</text>
+      <path class="dg-thin" d="M85 81 L85 87"/>
+      <text class="dg-label" x="85" y="99" text-anchor="middle">−5</text>
+      <path class="dg-thin" d="M125 81 L125 87"/>
+      <text class="dg-label" x="125" y="99" text-anchor="middle">−4</text>
+      <path class="dg-thin" d="M165 81 L165 87"/>
+      <text class="dg-label" x="165" y="99" text-anchor="middle">−3</text>
+      <path class="dg-thin" d="M205 81 L205 87"/>
+      <text class="dg-label" x="205" y="99" text-anchor="middle">−2</text>
+      <path class="dg-thin" d="M245 81 L245 87"/>
+      <text class="dg-label" x="245" y="99" text-anchor="middle">−1</text>
+      <path class="dg-thin" d="M285 81 L285 87"/>
+      <text class="dg-label" x="285" y="99" text-anchor="middle">0</text>
+      <path class="dg-thin" d="M325 81 L325 87"/>
+      <text class="dg-label" x="325" y="99" text-anchor="middle">1</text>
+      <path class="dg-thin" d="M365 81 L365 87"/>
+      <text class="dg-label" x="365" y="99" text-anchor="middle">2</text>
+      <path class="dg-thin" d="M405 81 L405 87"/>
+      <text class="dg-label" x="405" y="99" text-anchor="middle">3</text>
+      <path class="dg-thin" d="M445 81 L445 87"/>
+      <text class="dg-label" x="445" y="99" text-anchor="middle">4</text>
+      <path class="dg-thin" d="M485 81 L485 87"/>
+      <text class="dg-label" x="485" y="99" text-anchor="middle">5</text>
+      <path class="dg-thin" d="M525 81 L525 87"/>
+      <text class="dg-label" x="525" y="99" text-anchor="middle">6</text>
+      <path class="dg-move" d="M285 80 Q385 44 485 80" marker-end="url(#dg-arrow)"/>
+      <text class="dg-dim-label" x="385" y="56" text-anchor="middle">first strike: 5</text>
+      <path class="dg-move" d="M485 80 Q345 -44 205 80" marker-end="url(#dg-arrow)"/>
+      <text class="dg-dim-label" x="345" y="14" text-anchor="middle">second strike: −7</text>
+      <circle class="dg-fill-b" cx="205" cy="84" r="3.5"/>
+      <text class="dg-note" x="205" y="114" text-anchor="middle">final position</text>
+      </svg>
+                      <figcaption><span class="fignum">Fig. 2.1</span> Movements of 5 and then $-7$ end at $-2$.</figcaption>
+                    </figure>
+                  </div>
+
+      <p>So whatever the directions, if the two movements are $a$ and $b$, each positive for a strike to the right and negative for a strike to the left, the final position is again $P = a + b$. Use this to answer two questions. If the first movement is $-4$ and the final position is 5, what is the second movement? If the movements are $1, -2, 3, -4, \ldots, -10$, in that order, where does the coin end up?</p>
+
+      <p>A movement written as an integer carries two facts: how far the coin goes, called the <span class="term">magnitude</span>, and in which direction. A movement of $-4$ has magnitude 4 and goes to the left.</p>
+
+    </div>
+  </div>
+</section>
