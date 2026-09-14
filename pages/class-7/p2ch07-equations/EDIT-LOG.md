@@ -1,0 +1,108 @@
+# Class 7 · Mathematics II · Chapter 7 — Finding the Unknown
+
+Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 7,
+*Finding the Unknown* (textbook pages 165–190). Original LearnLab text in
+NCERT's order of topics and questions; no sentence is carried over. Crown
+Quarto, house design, palette `lagoon`: every palette is now used once in
+Class 7, and this one is reused from Mathematics I Chapter 2, which is in the
+other volume. The source PDF has no answer key; every answer below was worked
+here.
+
+Sections: 7.1 Find the Unknowns · 7.2 Solving Equations Systematically ·
+7.3 Mind the Mistake, Mend the Mistake · 7.4 A Pinch of History. The source's
+subtopics are `h3`; its three *Figure it Out* blocks are Exercise Sets 7.1–7.3.
+*Math Talk* and *Try This* prompts are plain questions, and the closing
+puzzle, *A Magic Trick*, is a `c-reflect`.
+
+## Every figure is drawn new
+
+All 18 figures come from `fig7.mjs` (with `geo.mjs`) in the session scratchpad.
+Source pages were rendered with pdf.js, and the numbers in the pictures were
+read from 3x crops.
+
+| figure | note |
+|---|---|
+| Figs. 7.1–7.4 | the source's hanging toys carry pictures (leaves, fish, books, bread, eggs, fruit); here they are shapes (triangle, square, circle, diamond, hexagon) with the **same weights**. The source's two unnumbered rule pictures are Fig. 7.1; its Figs. 7.1–7.3, 7.4–7.5 and 7.6–7.8 are Figs. 7.2, 7.3 and 7.4 |
+| Figs. 7.5, 7.6 | the source's four scales (7.9–7.12) as two figures of two |
+| Fig. 7.9 | Methods 1 and 2 for Step 4 only; the source also draws Steps 1–3 for each method, which the text now gives as $3k + 1$ |
+| Fig. 7.10 | Fatima's diagram with its brace marked ₹500 |
+| Fig. 7.14 | the two machines of Set 7.3 Q5 side by side |
+| Fig. 7.15 | **redrawn to scale** from the question's numbers: bars 3 cm, five rods 2 cm, six equal gaps of 3 cm, 34 cm in all |
+| Fig. 7.17 | pattern 2 at positions 1–3; the source shows 4 |
+| Fig. 7.18 | **redrawn**: the source's maze of arrows could not be read reliably from the picture. The same twelve equations sit in a 4 × 3 board, with numbered doors placed so that exactly one path runs Start → End; every wrong door leads to a box with no way on |
+| left out | the LHS/RHS labelled equation (said in the text), the savings diagram of Example 9, the marbles photograph, the Riyaz and Akash picture, the tangram cut-out pages at the end of the PDF |
+
+## Every answer worked
+
+| where | answers |
+|---|---|
+| Figs. 7.2–7.4 | (a) square 2, circle 8 · (b) hexagon 8, circle 4 · (c) square 4, triangle 2 · 7.3 (a) square 1, triangle 3 · (b) triangle 5, hexagon 3 · 7.4 (a) circle 3 · (b) circle 6 · (c) diamond 3 |
+| Figs. 7.5, 7.6 | 10 kg · 14 kg · 7 kg ($5s = 21 + 2s$) · 15 kg ($90s + 50 = 60s + 500$) |
+| matchsticks | $n = 49$; 200 sticks is impossible, $2n + 1$ is odd |
+| 7.2 | $5x - 4 = 7$ gives $\frac{11}{5}$; Example 1 13265; Example 2 82,984; Example 3 7024; Example 4 $\frac{11760}{113}$ |
+| Set 7.1 | 1 (a) 15 (b) 0 (c) 10 (d) $-10$ (e) 90 · 2 e.g. $x + 4 = x + 5$ |
+| Examples 7–12 | $k = 33$ · 13 friends · 7 months (₹8550 each) · $x = 21$ · 7, and the rule "divide by 4, add 1" · Suresh 15, Ramesh 45 |
+| chains | every equation in both chains has the solution $y = 5$ |
+| Set 7.2 | 1 e.g. $x + 2 = 0$ · 2 (a) 30 (b) $-1$ (c) 9 (d) 5 (e) 2 (f) $-\frac{1}{2}$ (g) 5 · 3 258 · 4 2 kg · 5 12 · 6 (a) 26 (b) 12 (c) 3 (d) 11 (e) $-5$ |
+| 7.3 | 1 $4x = 10 - 6$, $x = 1$ · 2 steps right to $8z = 2$, then $z = \frac{1}{4}$ · 3 $2v = 10$, $v = 5$ · 4 $2z = -6$, $z = -3$ · 5 $11w = 26$, $w = \frac{26}{11}$ · 6 $3x = -13$, $x = -\frac{13}{3}$ · 7 the 2 is multiplied too: $16q = 42$, $q = \frac{21}{8}$ · 8 $-6 + 8x = 14$, $x = \frac{5}{2}$ · 9 5y is not divided, and $2y = 4 - 3$ has the wrong sign: $16y = -3$, $y = -\frac{3}{16}$ |
+| 7.4 | horse ₹100 · Brahmagupta's rule: 2, 10, $m = 7$, and $2x + 3 = 4x + 5$ gives $-1$ |
+| Set 7.3 | 1 (a) 9 (b) 31 (c) $-4$ · 2 five of each · 3 7 dots, $3b + 4 = 25$ · 4 (a) 9 (b) 17 (c) 33 (d) 115 · 5 45 and $-3$ · 6 70 km · 7 19 and 57 · 8 3 cm · 9 juice ₹45, milkshake ₹60 · 10 48 and 96 · 11 (a) the 6 was cancelled from $6x$ and 66 alone: $6x = 57$, $x = \frac{19}{2}$ (b) correct (c) $-5$ moved without changing sign, and the last step inverted the fraction: $-5x = 13$, $x = -\frac{13}{5}$ · 12 $50^\circ, 65^\circ, 65^\circ$ and $60^\circ, 50^\circ, 70^\circ$ · 13 e.g. $u - 6 = 0$ · 14 4 ($33a = 132$) · 15 5 m · 16 pattern 1 ($3n + 3$ sticks): 11 squares, 36 sticks, 85 no, 150 yes at 49 · pattern 2 ($3n + 1$ squares, $9n + 4$ sticks): 34 squares, 103 sticks, 85 yes at 9, 150 no · 17 4 · 18 (a) 0 (b) $-\frac{4}{5}$ (c) 5 (d) $-4$ (e) 0 (f) $-1$ (g) 2 (h) $\frac{4}{3}$ · 19 4 → 3 → 21 → 13 → 8 → 4 → End · 20 12 donkeys, 16 children |
+| magic trick | $\frac{2x + 10}{2} - x + 3 = 8$ for every $x$ |
+
+Beyond the Book: Stage 1 — 44; Meena is right; no solution; the son is 12;
+the rule divides by 0 and the equation has no solution. Stage 2 — (a), (b),
+(a), (a), (b). Set A b a d b c b a c; Set B b c d a b c; Set C d a c b a.
+
+## What changed from the source, deliberately
+
+| source | here | why |
+|---|---|---|
+| "Grade 6", "Grade 7" | Class | house usage |
+| *bījagaṇita*, *Brāhmasphuṭasiddhānta*, *yā*, *kā*, *nī*, *rūpa*, *Bhāskarācārya*, *Bakhshālī* | set without diacritics | the body face would fall back to a third face for the marked letters |
+| Example 3 working "12345 − 5432 + 132 − 24" | 135 | a typo; the question has 135, and 7024 is right only for 135 |
+| Mistake 8 "−6v − 8x = 14" | "−6 − 8x = 14" | a stray letter; the mistake being tested is the sign of $8x$ |
+| Example 16 (after Example 13) | Example 14 | the source's numbering skips 14 and 15 |
+| Example 13: "100 as the number of units and x as the cost per unit", a plate of snacks | a plumber's visit charge of ₹75 and ₹100 an hour, $x$ hours | the same equation; the source's reading makes a plate cost ₹1.75 |
+| Set 7.3 Q8: a picture marked 3 cm, 2 cm and an unmarked gap | the question says which parts are 3 cm and 2 cm, and that the gaps are equal | without that the question cannot be answered from the text |
+| Set 7.3 Q4: three pictures for each machine | one picture of each machine with its worked input, and the outputs listed as parts (a)–(d) | the picture carries the rule; the parts carry the questions |
+| David Mumford's words, quoted | reported, not quoted | no sentence of the source is carried over |
+| Note to the Teacher | a sentence asking the reader to compare methods | the book has no teacher's notes |
+| Summary, four points | five: the fifth is the key idea *Moving a term or a factor* | a stated result the summary left out |
+
+## Flagged
+
+| location | code | what is wrong | what it needs |
+|---|---|---|---|
+| Set 7.2 Q2(c) | C4 | the source prints "− 53w = −15" in flat type; the text layer shows every fraction in the chapter collapsed the same way (u/15 as "u15"), so this is set as $-\frac{5}{3}w = -15$, answer 9 | confirm; if 53 was meant, the answer is $\frac{15}{53}$ |
+| Fig. 7.18 | C4 | the maze is a different board from the source's | confirm, or supply the source's door layout |
+| Set 7.3 Q8 | C4 | the source figure does not say that the gaps are equal | confirm the reading (answer 3 cm) |
+| 7.4 | C6 | the dates (Aryabhata 499 CE, Brahmagupta 628 CE, Al-Khwarizmi c. 825 CE, Bhaskaracharya 1150 CE, Bakhshali Manuscript 300 CE) and the Mumford attribution are the source's and were not checked against another source | check if the history page is to be cited |
+| Table 7.5 | — | the nine solutions are three tables of three, so that the section can start at the foot of a page; the caption is on the first | none, unless a single table is preferred |
+
+## Checks
+
+Builder: all pages fit, and every page is at 88% or more except the two
+closing pages (the magic trick and the tip, and the last page of Beyond the
+Book). `gaps`, `orphans`, `check-labels`, `fit-options` and the width probe
+report nothing, and a scan finds no maths command without its backslash. All
+18 figures were checked in the PNG proofs: the triangle labels were moved
+apart, the blobs made rounder, the matchsticks enlarged, and the maze and the
+grill drawn smaller. One answer row had a line break between $-3 = 2$ and its
+comma; it was reworded.
+
+`css/components.css` gains `data-start` 19 and 20 (Set 7.3 has 20 questions)
+and `.table--top`, so that columns of stepped working start together at the
+top of their cells.
+
+Fitting, in the chapter proper: the first draft's two tables of the shorter
+way are one table with two `tbody` groups; the two chains of equations are set
+across the page; the nine solutions of 7.3 are three tables of three, so the
+section can start under Exercise Set 7.2; the definition of trial and error
+moved above Table 7.1 so the section head seats on the page before it.
+Sentences were added, after checking each in the simulator, on the rule for
+level toys, the balance on arithmetic, Examples 1–3, the shorter way, and the
+history (restoring and balancing, *ya* 2); two questions of Set 7.3 and one
+paragraph in 7.1 were shortened. The two machines of Fig. 7.14 are side by
+side. `fit-options --fix` set three part lists to one column, which added two
+pages; the proofs show two columns fit, `fit-options` passes them, and two are
+used.

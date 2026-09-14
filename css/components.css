@@ -609,6 +609,8 @@ th {
   padding: 1.6mm 3mm;
 }
 td { padding: 1.5mm 3mm; }
+/* cells of unequal length that are read line by line, like columns of working, start together at the top */
+.table--top td { vertical-align: top; }
 tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
 
 
@@ -661,6 +663,8 @@ tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
 .c-questions[data-start="16"] { counter-reset: q 15; }
 .c-questions[data-start="17"] { counter-reset: q 16; }
 .c-questions[data-start="18"] { counter-reset: q 17; }
+.c-questions[data-start="19"] { counter-reset: q 18; }
+.c-questions[data-start="20"] { counter-reset: q 19; }
 
 /* a question the book marks as harder — a star in the marker,
    in rust, never in the question itself */

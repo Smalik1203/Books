@@ -1314,3 +1314,28 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Names:** Sulba-sutras, Katyayana-sulbasutra and Vedangas are set without
    diacritics, as the body face lacks the marked letters; M. C. Escher is named.
    Beyond the Book adds Riya.
+
+## Class 7 · Mathematics II · Chapter 7 — Finding the Unknown
+
+1. **Terms defined here:** *equation*, *left-hand side* (LHS), *right-hand
+   side* (RHS), *solving* an equation, *trial and error method*. *Letter-number*
+   is taken from Mathematics I Chapter 4 and *additive inverse* from Chapter 2.
+2. **Results stated:** doing the same operation on both sides keeps the two
+   sides equal (dividing by a number other than 0); a term can be moved to the
+   other side as its additive inverse, a factor as a divisor and a divisor as a
+   factor; Brahmagupta's rule x = (D − B) ÷ (A − C) for Ax + B = Cx + D.
+3. **Notation:** an equation is solved one step to a line in `.work--list`,
+   with the operation in brackets after the line; "the shorter way" is taught
+   beside "the same operation on both sides" (Table 7.2). A table of stepped
+   working read line by line takes the new `.table--top` modifier.
+4. **Not taught:** simultaneous equations (Example 12 turns two unknowns into
+   one); equations with no solution, or with every number as a solution, are
+   met only in exercises and Beyond the Book.
+5. **Names:** Jasmine, Ranjana, Madhubanti, Fatima, Mahesh, Srikanth, Jahnavi,
+   Sunita, Riyaz, Akash, Ramesh, Suresh and Ranju are the source's; Brahmagupta,
+   Aryabhata, Al-Khwarizmi, Bhaskaracharya and the Bakhshali Manuscript are set
+   without diacritics. Beyond the Book adds Asha, Meena, Rahul, Kiran, Lata and
+   Mohan.
+6. **System:** `css/components.css` gains `data-start` 19 and 20 on
+   `.c-questions`, and `.table--top`, which starts table cells of unequal
+   length together at the top.
