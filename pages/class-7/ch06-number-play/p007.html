@@ -1,0 +1,53 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Look again at the grids you filled, and add up the three row sums of each. Then add up the three column sums. Kishor noticed that all six circled numbers of a grid always add up to 90, and Vidya that the three rows alone, or the three columns alone, always make 45. Why? Between them the three rows hold every number from 1 to 9 exactly once, so their sums add up to $1 + 2 + 3 + \cdots + 9 = 45$. The same is true of the columns.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Magic squares</div>
+        <p>A square grid of numbers is a <span class="term">magic square</span> if every row, every column and both diagonals have the same sum. That sum is the <span class="term">magic sum</span>.</p>
+      </div>
+
+      <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 230 112" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An empty 3 by 3 grid with its two diagonals drawn as dashed lines from corner to corner.">
+      <rect class="dg-line" x="60" y="8" width="32" height="32"/>
+      <rect class="dg-line" x="92" y="8" width="32" height="32"/>
+      <rect class="dg-line" x="124" y="8" width="32" height="32"/>
+      <rect class="dg-line" x="60" y="40" width="32" height="32"/>
+      <rect class="dg-line" x="92" y="40" width="32" height="32"/>
+      <rect class="dg-line" x="124" y="40" width="32" height="32"/>
+      <rect class="dg-line" x="60" y="72" width="32" height="32"/>
+      <rect class="dg-line" x="92" y="72" width="32" height="32"/>
+      <rect class="dg-line" x="124" y="72" width="32" height="32"/>
+      <path class="dg-hidden" d="M60 8 L156 104 M156 8 L60 104"/>
+      <text class="dg-note" x="166" y="42" text-anchor="start">rows, columns</text>
+      <text class="dg-note" x="166" y="56" text-anchor="start">and the two</text>
+      <text class="dg-note" x="166" y="70" text-anchor="start">diagonals</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.11</span> The lines of a $3 \times 3$ magic square.</figcaption>
+                          </figure>
+                        </div>
+
+      <p>There are 3,62,880 different ways to put the numbers 1 to 9 into a $3 \times 3$ grid, so guessing is hopeless. Instead, let us ask questions and let the answers build the square.</p>
+
+      <h3>What must the magic sum be?</h3>
+
+      <p>The row sums of any grid of the numbers 1 to 9 add up to 45. In a magic square the three row sums are equal, so each of them is $45 \div 3 = 15$.</p>
+
+      <div class="work">
+        <p>Observation 1: a magic square of the numbers 1 to 9 has magic sum 15.</p>
+      </div>
+
+      <h3>What can go in the centre?</h3>
+
+      <p>The centre lies on a row, a column and both diagonals. Suppose 9 were in the centre. The 8 must go somewhere, and the line through 8 and the centre would need $8 + 9 + {}$another number $= 15$. That is impossible, since $8 + 9$ is already 17. Suppose instead 1 were in the centre. The line through 2 and the centre would need a third number of $15 - 3 = 12$, and there is no 12. Check 2, 3, 4, 6, 7 and 8 in the same way.</p>
+
+      <div class="work">
+        <p>Observation 2: the centre must be 5.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
