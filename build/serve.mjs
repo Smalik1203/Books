@@ -250,20 +250,21 @@ function libraryHtml(classes, coverClasses) {
   const names = [...new Set([...classes.map((c) => c.cls),
                              ...coverClasses.map((c) => c.cls)])].sort();
 
-  /* The subjects a class holds, listed whether or not any of them has
-     chapters yet. A dropdown that grows as content lands is a dropdown
-     that reads differently every month; this one is the finished shape,
-     and a subject with nothing in it resolves to the empty state, which
-     is the honest answer.
+  /* The subjects a class can hold, in the order the chooser lists them.
 
      Mathematics is two volumes and so it is two entries. They are the
      parts the covers already name — cover.json carries "part": "1" and
      the jacket prints PART 1 — set in the roman the spine and the title
      page use, so a reader meets the same numeral in the chooser, on the
-     shelf and on the book. Every chapter written so far is Part I; the
-     II entry is here because the shape is the shape whether or not the
-     second volume has been started. */
+     shelf and on the book.
+
+     A volume of Mathematics is offered only to a class that has a chapter
+     in it. Most classes are one volume, and a Class 6 reader offered
+     Mathematics II was offered a book that is not going to exist, where
+     "nothing here yet" reads as a promise. The day a chapter lands in a
+     volume, the volume appears. Science keeps its place in every class. */
   const SUBJECTS = ['Mathematics I', 'Mathematics II', 'Science'];
+  const VOLUMED = (sub) => sub.startsWith('Mathematics');
 
   /* Every class-and-subject pair is rendered, and every class's covers,
      each tagged so the script can show exactly one pair at a time. They
@@ -274,7 +275,10 @@ function libraryHtml(classes, coverClasses) {
     const covers = (coverClasses.find((c) => c.cls === cls) || { covers: [] }).covers;
     const shown = esc(cls.replace(/^class-/, ''));
 
-    const perSubject = SUBJECTS.map((sub) => {
+    const listed = SUBJECTS.filter((sub) =>
+      !VOLUMED(sub) || chapters.some((c) => c.subject === sub));
+
+    const perSubject = listed.map((sub) => {
       const mine = chapters.filter((c) => c.subject === sub);
       return `<section class="lib-set" hidden data-class="${esc(cls)}" data-subject="${esc(sub)}"`
         + ` data-count="${mine.length}">`
@@ -288,11 +292,12 @@ function libraryHtml(classes, coverClasses) {
        choosing Science used to be shown the Mathematics jacket, which is
        the wrong book on the wrong shelf.
 
-       A cover whose composed volume name matches no subject would show
-       under none of them, so it is named on the terminal rather than
-       disappearing quietly. */
+       A cover whose composed volume name matches no subject listed for
+       its class — a misspelt title, or a jacket drawn before the volume
+       has a chapter — would show under none of them, so it is named on
+       the terminal rather than disappearing quietly. */
     const filed = new Set();
-    const coverSets = SUBJECTS.map((sub) => {
+    const coverSets = listed.map((sub) => {
       const mine = covers.filter((c) => c.subject === sub);
       mine.forEach((c) => filed.add(c.target));
       return mine.length
@@ -303,8 +308,8 @@ function libraryHtml(classes, coverClasses) {
     }).join('');
 
     covers.filter((c) => !filed.has(c.target)).forEach((c) => console.warn(
-      `    ! covers/${c.target}: "${c.subject}" is not a subject, so it is`
-      + ' not shown in the library'));
+      `    ! covers/${c.target}: "${c.subject}" is not a subject of ${cls}`
+      + ' with chapters, so it is not shown in the library'));
 
     return perSubject + coverSets;
   }).join('');
