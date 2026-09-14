@@ -1,0 +1,89 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Find the HCF of 225 and 750. Here $225 = 3 \times 3 \times 5 \times 5$ and $750 = 2 \times 3 \times 5 \times 5 \times 5$.</p>
+          <p>The fewest 3s is one, in 750, and the fewest 5s is two, in 225, so the HCF is $3 \times 5 \times 5 = 75$.</p>
+        </div>
+      </div>
+
+      <p>The same method finds the HCF of three or more numbers.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.3</div>
+        <ol class="c-questions">
+          <li>Find the HCF.
+            <ol class="c-parts c-parts--alpha c-parts--3">
+              <li>24, 180</li>
+              <li>42, 75, 24</li>
+              <li>240, 378</li>
+              <li>400, 2500</li>
+              <li>300, 800</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>From $72 = 6 \times 12$ and $144 = 8 \times 18$, can we say that 72 and 144 have no common factor but 1? Why not?</li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">3.2</span><span class="name">The Lowest Common Multiple</span></h2>
+
+      <h3>Torans of the same length</h3>
+
+      <p>Anshu and Guna make torans by placing strips of cloth end to end. Anshu’s strips are 6 cm long and Guna’s are 8 cm long. They want to make torans of the same length. What is the shortest toran they can both make?</p>
+
+      <p>Any toran Anshu makes is a multiple of 6 cm long: 6, 12, 18, 24, 30, 36, 42, 48 cm, … Any toran Guna makes is a multiple of 8 cm: 8, 16, 24, 32, 40, 48 cm, … A toran both can make must be a common multiple of 6 and 8, such as 24 cm or 48 cm (Fig. 3.4). The smallest common multiple is 24, so the shortest toran is 24 cm. Is there a largest common multiple?</p>
+
+      <div class="c-figure c-figure--full">
+              <figure>
+                <svg viewBox="0 0 570 86" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two rows of strips. The top row is made of strips 6 cm long and the bottom row of strips 8 cm long. Dashed lines at 24 cm and 48 cm show where the ends of strips in both rows line up.">
+      <rect class="dg-fill-a" x="40" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="40" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a-soft" x="94" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="94" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a" x="148" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="148" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a-soft" x="202" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="202" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a" x="256" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="256" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a-soft" x="310" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="310" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a" x="364" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="364" y="14" width="54" height="14"/>
+      <rect class="dg-fill-a-soft" x="418" y="14" width="54" height="14"/>
+      <rect class="dg-line" x="418" y="14" width="54" height="14"/>
+      <rect class="dg-fill-c" x="40" y="44" width="72" height="14"/>
+      <rect class="dg-line" x="40" y="44" width="72" height="14"/>
+      <rect class="dg-fill-c-soft" x="112" y="44" width="72" height="14"/>
+      <rect class="dg-line" x="112" y="44" width="72" height="14"/>
+      <rect class="dg-fill-c" x="184" y="44" width="72" height="14"/>
+      <rect class="dg-line" x="184" y="44" width="72" height="14"/>
+      <rect class="dg-fill-c-soft" x="256" y="44" width="72" height="14"/>
+      <rect class="dg-line" x="256" y="44" width="72" height="14"/>
+      <rect class="dg-fill-c" x="328" y="44" width="72" height="14"/>
+      <rect class="dg-line" x="328" y="44" width="72" height="14"/>
+      <rect class="dg-fill-c-soft" x="400" y="44" width="72" height="14"/>
+      <rect class="dg-line" x="400" y="44" width="72" height="14"/>
+      <path class="dg-hidden" d="M256 8 V66 M472 8 V66"/>
+      <text class="dg-note" x="34" y="25" text-anchor="end">Anshu</text>
+      <text class="dg-note" x="34" y="55" text-anchor="end">Guna</text>
+      <text class="dg-dim-label" x="67" y="11" text-anchor="middle">6 cm</text>
+      <text class="dg-dim-label" x="76" y="72" text-anchor="middle">8 cm</text>
+      <text class="dg-dim-label" x="256" y="80" text-anchor="middle">24 cm</text>
+      <text class="dg-dim-label" x="472" y="80" text-anchor="middle">48 cm</text>
+      </svg>
+                <figcaption><span class="fignum">Fig. 3.4</span> Strips of 6 cm and 8 cm line up at 24 cm and 48 cm.</figcaption>
+              </figure>
+            </div>
+
+    </div>
+  </div>
+</section>
