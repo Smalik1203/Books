@@ -1,0 +1,43 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <table>
+        <caption>Table 4.12 Matchsticks at each step</caption>
+        <thead><tr><th>Step</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+        <tbody>
+          <tr><td>matchsticks</td><td>3</td><td>5</td><td>7</td><td>9</td><td>11</td></tr>
+          <tr><td>as a sum</td><td>3</td><td>$3 + 2$</td><td>$3 + 2 + 2$</td><td>$3 + 2 + 2 + 2$</td><td>$3 + 2 + 2 + 2 + 2$</td></tr>
+        </tbody>
+      </table>
+
+      <p>Step 10 is 3 and nine 2s, which is $3 + 2 \times 9$. Step 11 is $3 + 2 \times 10$. So Step 33 needs <span class="blank"></span> matchsticks; find Steps 84 and 108 in the same way. At Step $y$ there are $y - 1$ twos added to the 3, so the number of matchsticks is</p>
+
+      <div class="work work--centred">
+        <p>$3 + 2 \times (y - 1)$</p>
+      </div>
+
+      <p>We could also notice that the 3 in Step 1 is itself $1 + 2$. That way of counting gives the expression $2y + 1$. Do both expressions give the right number at every step? Simplifying the first one shows that they are equal:</p>
+
+      <div class="work work--centred">
+        <p>$3 + 2 \times (y - 1) = 3 + 2y - 2 = 2y + 1$</p>
+      </div>
+
+      <p>There is another way to count. Some matchsticks lie flat, along the top and bottom, and the rest slope across the middle. Step 2 has 2 flat matchsticks and 3 sloping ones. How many of each are there in Step 3 and in Step 4? Write an expression for each kind at Step $y$. Do the two add up to $2y + 1$?</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">End-of-Chapter Exercises</div>
+        <ol class="c-questions">
+          <li>A plate of jowar roti costs ₹30 and a plate of pulao costs ₹20. One day, $x$ plates of jowar roti and $y$ plates of pulao are sold. Which expression gives the money earned that day, in rupees?<ol class="c-parts c-parts--alpha"><li>$30x + 20y$</li><li>$(30 + 20) \times (x + y)$</li><li>$20x + 30y$</li><li>$(30 + 20) \times x + y$</li><li>$30x - 20y$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>On Independence Day, Pushpita sells champak and marigold flowers. $p$ customers buy only champak, $q$ buy only marigold, and $r$ buy both. She gives every customer one small national flag. How many flags does she give away?<ol class="c-parts c-parts--alpha c-parts--3"><li>$p + q + r$</li><li>$p + q + 2r$</li><li>$2 \times (p + q + r)$</li><li>$p + q + r + 2$</li><li>$p + q + r + 1$</li><li>$2 \times (p + q)$</li></ol></li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

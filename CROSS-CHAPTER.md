@@ -1079,3 +1079,26 @@ settings the rest of the volume inherits rather than conflicts found.
    chapter at 81% until one line was cut from the page before.
 7. **Names:** Sonu, Zara, Priya, Shylaja, Sarayu, Mahi, Pinto and Tinku are the
    source's; Beyond the Book adds Ravi and Shreya.
+
+## Class 7 · Mathematics I · Chapter 4 — Letter-Numbers
+
+1. **Terms defined here:** *letter-number*, *algebraic expression*, *formula*,
+   *simplified form*, *simplest form*, *like terms*, *unlike terms*. The
+   chapter follows Chapter 2's *terms*, *brackets* and *distributive
+   property* and does not define them again; later chapters should do the
+   same.
+2. **Notation.** The multiplication sign is written ($2 \times n$) until 4.3,
+   where $4n$, $pq$ and $3(m + 1)$ are introduced together. Subtraction is
+   still read as adding the inverse, written with brackets:
+   $23 + (-10 \times 2)$. Terms are shaded with `.chip` once, in 4.1 and 4.2,
+   as Chapter 2 allowed; nothing later should shade them.
+3. **Not taught:** dividing an expression, and solving an equation. Beyond the
+   Book avoids both — "halve it" is kept out of the number trick, and the
+   matchstick question with 100 sticks is answered by checking $3 \times 33 + 1$.
+   A later chapter that needs either must teach it first.
+4. **Two expressions are equal** only if they agree for every value; one value
+   where they differ shows they are not. Chapter 4 relies on this in
+   Examples 10 and Stage 1; a later chapter should use the same wording.
+5. **Names:** Shabnam, Aftab, Parthiv, Ketaki, Munirathna, Krithika,
+   Venkatalakshmi, Charu, Krishita, Somjit, Pushpita and Radha are the
+   source's; Beyond the Book adds Rani, Asha and Priya.
