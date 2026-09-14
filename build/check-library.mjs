@@ -95,6 +95,13 @@ async function checkStructure() {
     eq('no Mathematics volume is offered empty',
       subjectSets.filter((s) => /data-subject="Mathematics/.test(s)
         && s.includes('data-count="0"')), []);
+    /* The subject list orders the subjects it knows and does not gate the
+       rest: a chapter whose subject is none of them still gets a section.
+       Class 3's Telugu sample sat in the class menu with no way to reach
+       its chapter until this held. */
+    eq('a subject outside the fixed list gets its section',
+      subjectSets.some((s) => s.includes('data-class="class-3"')
+        && s.includes('data-subject="తెలుగు"') && s.includes('data-count="1"')), true);
 
     /* A card says how long the chapter is and not where it sits in the
        volume. The folio range was a second number saying almost the
