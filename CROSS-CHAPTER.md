@@ -1032,3 +1032,23 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Chapter 3 (decimals) and Chapter 8 (fractions)** should know that Chapter 1
    avoided fraction notation entirely: halving is written $116 \div 2$ and the
    hint is $125 = 1000 \div 8$.
+
+## Class 7 · Mathematics I · Chapter 2 — Terms and Brackets
+
+1. **Terms, not an order-of-operations rule.** The chapter works out an
+   expression by splitting it into terms (the parts joined by + once every
+   subtraction is written as adding the inverse), working out each term, then
+   adding. It never teaches BODMAS or "left to right". Later chapters must
+   not assume either, and should not print a term mixing × and ÷ such as
+   $12 \div 3 \times 2$ — nothing in the volume says how to read it.
+2. **Terms defined here:** *arithmetic expression*, *value*, *terms*, *inverse*
+   (of a number), *commutative property of addition*, *associative property of
+   addition*, *distributive property*. Chapter 4 (letter-numbers) revisits all
+   of them and should refer back rather than redefine.
+3. **Terms are shaded with `.chip`** in this chapter, and the text says it is a
+   learning aid. Chapter 4 may use the same shading; nothing later should.
+4. **Two markup traps, both hit here:** inside `$…$` write `\lt` and `\gt`,
+   never `&lt;`/`&gt;` (KaTeX sees the entity and fails); and after a
+   `<span class="blank">` never open maths with a space — `</span>$+ 4)`,
+   not `</span>$ + 4)`. The builder reports both, but only after a wasted
+   build.
