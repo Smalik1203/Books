@@ -1,0 +1,44 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Take 5 away from such a number. What is left is divisible by 12, 18 and 30, so it is a common multiple of the three numbers, and so a multiple of their LCM. Since ${12 = 2^2 \times 3}$, $18 = 2 \times 3^2$ and $30 = 2 \times 3 \times 5$, the LCM is $2^2 \times 3^2 \times 5 = 180$. The number we want is 5 more than a multiple of 180. Now $900 + 5 = 905$ has only three digits, and the next multiple of 180 is 1080. So the answer is $1080 + 5 = 1085$.</p>
+
+      <div class="c-try">
+        <p>Is the product of two irrational numbers always irrational?</p>
+      </div>
+
+      <p>Try some numbers. Both $\sqrt{2}$ and $\sqrt{8} = 2\sqrt{2}$ are irrational, but $\sqrt{2} \times \sqrt{8} = \sqrt{16} = 4$, which is rational. One example like this is enough to show that the claim is false. The product can also be irrational: $\sqrt{2} \times (1 + \sqrt{2}) = \sqrt{2} + 2$, which is the sum of a rational and an irrational number. So each product has to be worked out; no rule decides it in advance.</p>
+
+      <div class="c-try">
+        <p>Is $\sqrt{2} + \sqrt{3}$ rational or irrational?</p>
+      </div>
+
+      <p>Suppose it is rational, say $\sqrt{2} + \sqrt{3} = r$. Then $\sqrt{3} = r - \sqrt{2}$. Squaring both sides gives $3 = r^2 - 2r\sqrt{2} + 2$, so $2r\sqrt{2} = r^2 - 1$ and $\sqrt{2} = \dfrac{r^2 - 1}{2r}$. Here $r$ is not 0, because $\sqrt{2} + \sqrt{3}$ is positive. The right-hand side is rational, but $\sqrt{2}$ is irrational. This contradiction shows that $\sqrt{2} + \sqrt{3}$ is irrational.</p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+        </div>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
+        <p>The HCF and the LCM of $2^3 \times 3^2 \times 5$ and $2^2 \times 3^3 \times 7$ are, in that order,</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>216, 1260</li><li>36, 7560</li><li>36, 1260</li><li>6, 7560</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <div class="work work--list">
+          <p>common primes 2 and 3, smallest powers: $\text{HCF} = 2^2 \times 3^2 = 36$</p>
+          <p>primes 2, 3, 5 and 7, greatest powers: $\text{LCM} = 2^3 \times 3^3 \times 5 \times 7 = 7560$</p>
+        </div>
+        <p>The answer is (b). Option (a) swaps the rules for the HCF and the LCM, (c) uses the smallest powers for the LCM too, and (d) takes every power as 1.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

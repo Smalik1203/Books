@@ -1,0 +1,52 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>Two numbers have HCF 16. Which of these cannot be their LCM?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>64</li><li>240</li><li>124</li><li>160</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>The HCF divides each number, and each number divides the LCM, so the HCF must divide the LCM. Now $64 = 16 \times 4$, $240 = 16 \times 15$ and $160 = 16 \times 10$, but 124 is not a multiple of 16. So the answer is (c). The other three do happen: 16 and 64, 48 and 80, and 16 and 160 all have HCF 16, and their LCMs are 64, 240 and 160.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
+        <p>For which of these is there a natural number $n$ that makes the number end with the digit 0?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>$4^n$</li><li>$12^n$</li><li>$15^n$</li><li>$20^n$</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        
+        <div class="work work--list">
+          <p>$4^n = 2^{2n}$, &nbsp; $12^n = 2^{2n} \times 3^n$, &nbsp; $15^n = 3^n \times 5^n$, &nbsp; $20^n = 2^{2n} \times 5^n$</p>
+          
+          
+        </div>
+        <p>A number ends with 0 only when both 2 and 5 are among its prime factors, and by uniqueness no other primes can appear. Only $20^n$ has both, so the answer is (d). Every power of 15 ends with 5.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>Which of these numbers is irrational?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\sqrt{3} \times \sqrt{27}$</li><li>$(2 - \sqrt{3})^2$</li><li>$\dfrac{\sqrt{12}}{\sqrt{3}}$</li><li>$\sqrt{2} \times \sqrt{18}$</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <div class="work work--list">
+          <p>(a) $\sqrt{81} = 9$ &nbsp; (c) $\sqrt{12 \div 3} = \sqrt{4} = 2$ &nbsp; (d) $\sqrt{36} = 6$</p>
+          <p>(b) $4 - 4\sqrt{3} + 3 = 7 - 4\sqrt{3}$</p>
+          
+          
+        </div>
+        <p>The answer is (b): $4\sqrt{3}$ is irrational, so $7 - 4\sqrt{3}$ is irrational too. The other three contain square roots, but each works out to an integer.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

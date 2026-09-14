@@ -1,0 +1,39 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Find the LCM and HCF of 6 and 20 by the prime factorisation method.</p>
+        </div>
+      </div>
+
+      <p>We have $6 = 2^1 \times 3^1$ and $20 = 2 \times 2 \times 5 = 2^2 \times 5^1$. As in earlier classes, $\text{HCF}(6, 20) = 2$ and $\text{LCM}(6, 20) = 2 \times 2 \times 3 \times 5 = 60$. Now look at the powers of the primes in these two answers: $\text{HCF}(6, 20) = 2^1$ and $\text{LCM}(6, 20) = 2^2 \times 3^1 \times 5^1$. The only prime factor that 6 and 20 share is 2. It occurs as $2^1$ in 6 and as $2^2$ in 20, and the HCF takes the smaller of these powers. The LCM takes every prime that occurs in either number, each with its larger power, so it has $2^2$, $3^1$ and $5^1$.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">HCF and LCM from prime factorisations</div>
+        <p>The HCF of two or more numbers is the product of the smallest power of each prime factor that is common to all the numbers.</p>
+        <p>The LCM is the product of the greatest power of each prime factor that occurs in any of the numbers.</p>
+      </div>
+
+      <p>From Example 2, you can see that $\text{HCF}(6, 20) \times \text{LCM}(6, 20) = 2 \times 60 = 120$, which is equal to $6 \times 20$. In fact, for any two positive integers $a$ and $b$,</p>
+
+      <div class="eq eq--anchor">$$\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b$$</div>
+
+      <p>So once we have found the HCF of two positive integers, we can use this result to find their LCM.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Find the HCF of 96 and 404 by the prime factorisation method. Then find their LCM.</p>
+        </div>
+      </div>
+
+      <p>The prime factorisations are $96 = 2^5 \times 3$ and $404 = 2^2 \times 101$. The only common prime factor is 2, and its smallest power is $2^2$. So the HCF of 96 and 404 is $2^2 = 4$. Then</p>
+
+      <div class="eq">$$\text{LCM}(96, 404) = \dfrac{96 \times 404}{\text{HCF}(96, 404)} = \dfrac{96 \times 404}{4} = 9696$$</div>
+
+    </div>
+  </div>
+</section>

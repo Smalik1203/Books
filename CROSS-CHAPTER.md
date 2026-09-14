@@ -1339,3 +1339,27 @@ settings the rest of the volume inherits rather than conflicts found.
 6. **System:** `css/components.css` gains `data-start` 19 and 20 on
    `.c-questions`, and `.table--top`, which starts table cells of unequal
    length together at the top.
+
+## Class 10 · Mathematics I · Chapter 1 — Real Numbers
+
+1. **Terms defined here:** *prime factorisation method*, *irrational* (recalled
+   from Class IX), *proof by contradiction*, *coprime* (used, as in Class IX).
+2. **Results stated:** the Fundamental Theorem of Arithmetic (Theorem 1.1);
+   HCF from the smallest powers of the common primes and LCM from the greatest
+   powers of all primes; HCF × LCM = a × b for two positive integers, and not
+   for three; if a prime p divides a squared then p divides a (Theorem 1.2);
+   the square root of 2 is irrational (Theorem 1.3), and of 3 (Example 5); a
+   rational plus or times (non-zero) an irrational is irrational, proved in
+   particular cases.
+3. **Notation:** HCF(a, b) and LCM(a, b) set with text inside maths; a
+   factorisation written with primes in ascending order and equal primes as
+   powers; a proof by contradiction as stepped working with a reason on each
+   line (`.work` rows with a `.chip`).
+4. **Not taught:** Euclid's division algorithm and decimal expansions (both
+   named in the source's introduction, neither in this edition's chapter).
+5. **Names:** Sonia and Ravi are the source's; Euclid, Gauss, Archimedes and
+   Newton are named. Beyond the Book adds Kiran and Lata.
+6. **Class 10 volume:** directories `pages/class-10/chNN-<slug>/`, subject
+   Mathematics I, Crown Quarto house design, one palette per chapter
+   (ch01 `cobalt`). The studio sorts classes numerically so Class 10 follows
+   Class 9.

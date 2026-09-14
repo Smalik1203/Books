@@ -1,0 +1,75 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Now suppose your collection holds every prime there is. There are infinitely many primes. So if we combine them in every possible way, we get an infinite collection of numbers: all the primes, and all their possible products. Here is the question. Does this collection contain every composite number? Or could there be a composite number that is not a product of powers of primes? Think about it before you read on.</p>
+
+      <p>To answer this, let us go the other way and break numbers into primes. Take a large number, say 32760, and factorise it with a factor tree, as in Fig. 1.1.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 265 226" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A factor tree for 32760. At each step the number splits into a prime, which is boxed, and the other factor: 32760 into 2 and 16380, 16380 into 2 and 8190, 8190 into 2 and 4095, 4095 into 3 and 1365, 1365 into 3 and 455, 455 into 5 and 91, and 91 into 7 and 13.">
+      <path class="dg-thin" d="M31 21 L16 32 M37 21 L61 32"/>
+      <text class="dg-label" x="34" y="18" text-anchor="middle">32760</text>
+      <rect class="dg-fill-a-soft" x="5" y="33" width="18" height="18"/>
+      <rect class="dg-thin" x="5" y="33" width="18" height="18"/>
+      <text class="dg-label" x="14" y="46" text-anchor="middle">2</text>
+      <path class="dg-thin" d="M61 49 L46 60 M67 49 L91 60"/>
+      <text class="dg-label" x="64" y="46" text-anchor="middle">16380</text>
+      <rect class="dg-fill-a-soft" x="35" y="61" width="18" height="18"/>
+      <rect class="dg-thin" x="35" y="61" width="18" height="18"/>
+      <text class="dg-label" x="44" y="74" text-anchor="middle">2</text>
+      <path class="dg-thin" d="M91 77 L76 88 M97 77 L121 88"/>
+      <text class="dg-label" x="94" y="74" text-anchor="middle">8190</text>
+      <rect class="dg-fill-a-soft" x="65" y="89" width="18" height="18"/>
+      <rect class="dg-thin" x="65" y="89" width="18" height="18"/>
+      <text class="dg-label" x="74" y="102" text-anchor="middle">2</text>
+      <path class="dg-thin" d="M121 105 L106 116 M127 105 L151 116"/>
+      <text class="dg-label" x="124" y="102" text-anchor="middle">4095</text>
+      <rect class="dg-fill-a-soft" x="95" y="117" width="18" height="18"/>
+      <rect class="dg-thin" x="95" y="117" width="18" height="18"/>
+      <text class="dg-label" x="104" y="130" text-anchor="middle">3</text>
+      <path class="dg-thin" d="M151 133 L136 144 M157 133 L181 144"/>
+      <text class="dg-label" x="154" y="130" text-anchor="middle">1365</text>
+      <rect class="dg-fill-a-soft" x="125" y="145" width="18" height="18"/>
+      <rect class="dg-thin" x="125" y="145" width="18" height="18"/>
+      <text class="dg-label" x="134" y="158" text-anchor="middle">3</text>
+      <path class="dg-thin" d="M181 161 L166 172 M187 161 L211 172"/>
+      <text class="dg-label" x="184" y="158" text-anchor="middle">455</text>
+      <rect class="dg-fill-a-soft" x="155" y="173" width="18" height="18"/>
+      <rect class="dg-thin" x="155" y="173" width="18" height="18"/>
+      <text class="dg-label" x="164" y="186" text-anchor="middle">5</text>
+      <path class="dg-thin" d="M211 189 L196 200 M217 189 L241 200"/>
+      <text class="dg-label" x="214" y="186" text-anchor="middle">91</text>
+      <rect class="dg-fill-a-soft" x="185" y="201" width="18" height="18"/>
+      <rect class="dg-thin" x="185" y="201" width="18" height="18"/>
+      <text class="dg-label" x="194" y="214" text-anchor="middle">7</text>
+      <rect class="dg-fill-a-soft" x="233" y="201" width="22" height="18"/>
+      <rect class="dg-thin" x="233" y="201" width="22" height="18"/>
+      <text class="dg-label" x="244" y="214" text-anchor="middle">13</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.1</span> A factor tree for 32760.</figcaption>
+        </figure>
+      </div>
+
+      <p>Reading the boxed primes gives the factorisation of 32760, first as a product of primes and then with powers.</p>
+
+      <div class="work work--list">
+        <p>$32760 = 2 \times 2 \times 2 \times 3 \times 3 \times 5 \times 7 \times 13$</p>
+        <p>$32760 = 2^3 \times 3^2 \times 5 \times 7 \times 13$</p>
+      </div>
+
+      <p>Now try another number, say 123456789. It can be written as $3^2 \times 3803 \times 3607$. Check for yourself that 3803 and 3607 are primes, and then try the same with a few natural numbers of your own.</p>
+
+      <p>Each step of a factor tree splits a number into a prime and the factor left over. The factors keep getting smaller, so the tree stops, and every branch ends in a prime.</p>
+
+      <p>It works every time. This leads us to a conjecture: every composite number can be written as a product of powers of primes. The conjecture is true. It is so basic to the study of integers that it is called the Fundamental Theorem of Arithmetic.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Theorem 1.1 · Fundamental Theorem of Arithmetic</div>
+        <p>Every composite number can be written as a product of primes, and this factorisation is unique, apart from the order in which the prime factors occur.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
