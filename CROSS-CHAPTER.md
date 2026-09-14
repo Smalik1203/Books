@@ -1214,3 +1214,20 @@ settings the rest of the volume inherits rather than conflicts found.
    only for corresponding angles.
 6. **Names:** Meera and Rabia are the source's; Beyond the Book adds Riya and
    Sameer.
+
+## Class 7 · Mathematics II · Chapter 2 — Operations with Integers
+
+1. **Terms defined here:** *magnitude*, *zero pair*, *additive inverse*
+   (written $-a$). *Multiplier*, *multiplicand*, *dividend*, *divisor* and
+   *quotient* are used as Mathematics I Chapter 8 defined them.
+2. **Notation:** negative numbers are always maths, $-5$, and a negative factor
+   is bracketed, $4 \times (-2)$; the source's $5 \times -3$ is not used.
+   Tokens are marked + and −, not coloured.
+3. **Results stated:** sign rules for products and quotients; $1 \times a = a$,
+   $(-1) \times a = -a$; multiplication of integers is commutative,
+   associative and distributive over addition. Division is shown not to be
+   commutative only in Beyond the Book.
+4. **Not taught:** division that does not come out exact, and powers of
+   negative numbers.
+5. **Names:** Rakesh, Mala, Anita and Anil are the source's; Beyond the Book
+   adds Priya, Arun, Meena and Kiran.
