@@ -1145,3 +1145,25 @@ settings the rest of the volume inherits rather than conflicts found.
    no diacritics, as in the rest of the book.
 5. **Names:** Kishor, Vidya, Martin, Maria, Lakpa, Dorjee, Liswini and Angaan
    are the source's; Beyond the Book adds none.
+
+## Class 7 · Mathematics I · Chapter 7 — A Tale of Three Intersecting Lines
+
+1. **Terms defined here:** *vertex* (*vertices*), *side*, *equilateral*,
+   *isosceles* and *scalene triangle*, *triangle inequality*, *included
+   angle*, *included side*, *angle sum property*, *exterior angle*,
+   *altitude*, *right-angled*, *obtuse-angled* and *acute-angled triangle*.
+   Later chapters should use them without defining them again.
+2. **Notation:** △ABC for a triangle; $\angle A$ as short for the angle of the
+   triangle at A; equal sides marked with matching ticks. Chapter 5's
+   arrowheads for parallel lines and square for a right angle are kept.
+3. **What is proved:** the angle sum property, by a line through a vertex
+   parallel to the opposite side and Chapter 5's alternate angles; and that
+   three lengths make a triangle exactly when they satisfy the triangle
+   inequality, by the three cases of two circles. The exterior angle equal to
+   the sum of the two opposite interior angles is only asked for in 7.3 and
+   noticed in Beyond the Book; it is not stated as a named property, so a
+   later chapter that needs it should state it.
+4. **Deferred:** sorting triangles by equal angles, and whether that matches
+   sorting by equal sides, is promised to "a later chapter". Congruence is
+   not mentioned.
+5. **Names:** none; the source has no named people in this chapter.

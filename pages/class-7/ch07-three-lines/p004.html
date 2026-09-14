@@ -1,0 +1,60 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>Can any three lengths make a triangle?</h3>
+
+      <p>Try to construct a triangle with sides 3 cm, 4 cm and 8 cm. What goes wrong? Try 2 cm, 3 cm and 6 cm too. Can you find more such sets, and a pattern in them?</p>
+
+      <p>We could test every set by trying to construct it, but that is slow. Is there a quicker test?</p>
+
+      <h3>The triangle inequality</h3>
+
+      <p>Can a triangle have sides of 10 cm, 15 cm and 30 cm? Think first about paths. A tent, a pole and a tree stand on a flat field (Fig. 7.7). To walk from the tent to the tree, you could go straight there, or go to the pole first and then on to the tree. The straight path is shorter. A straight path is the shortest path between two points, so going by way of a third point is always longer.</p>
+
+      <div class="c-figure c-figure--md">
+                    <figure>
+                      <svg viewBox="0 0 230 112" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A tent, a pole and a tree on flat ground. A straight path goes from the tent to the tree; a dashed path goes from the tent to the pole and then to the tree.">
+<path class="dg-line" d="M14 96 L44 96 L29 72 Z"/>
+<path class="dg-line" d="M125 96 L125 84"/>
+<path class="dg-line" d="M200 60 L200 42"/>
+<circle class="dg-fill-c-soft" cx="200" cy="32" r="11"/>
+<path class="dg-line" d="M44 90 L192 50"/>
+<path class="dg-hidden" d="M44 96 L125 96"/>
+<path class="dg-hidden" d="M125 96 L194 62"/>
+<text class="dg-note" x="29" y="108" text-anchor="middle">tent</text>
+<text class="dg-note" x="125" y="108" text-anchor="middle">pole</text>
+<text class="dg-note" x="212" y="66" text-anchor="start">tree</text>
+</svg>
+                      <figcaption><span class="fignum">Fig. 7.7</span> Straight to the tree, or by way of the pole?</figcaption>
+                    </figure>
+                  </div>
+
+      <p>Now suppose a triangle with sides 10 cm, 15 cm and 30 cm did exist. We are not sure that it does; we only suppose so, and draw a rough sketch (Fig. 7.8). Between any two vertices, the side joining them is the straight path, and it must be shorter than the path through the third vertex. Check each pair.</p>
+
+      <div class="c-figure c-figure--sm">
+                    <figure>
+                      <svg viewBox="0 0 190 118" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A rough sketch of a triangle ABC with AB marked 15 cm, AC marked 30 cm and BC marked 10 cm.">
+<path class="dg-line" d="M70 18 L20 100 L172 100 Z"/>
+<text class="dg-label" x="70" y="12" text-anchor="middle">A</text>
+<text class="dg-label" x="12" y="112" text-anchor="middle">B</text>
+<text class="dg-label" x="180" y="112" text-anchor="middle">C</text>
+<text class="dg-dim-label" x="27" y="59" text-anchor="middle">15 cm</text>
+<text class="dg-dim-label" x="139" y="55" text-anchor="middle">30 cm</text>
+<text class="dg-dim-label" x="96" y="113" text-anchor="middle">10 cm</text>
+</svg>
+                      <figcaption><span class="fignum">Fig. 7.8</span> A rough sketch, not to scale.</figcaption>
+                    </figure>
+                  </div>
+
+      <div class="work work--list">
+        <p>B to C: straight, 10 cm. By way of A, $15 + 30 = 45$ cm. The straight path is shorter.</p>
+        <p>A to B: straight, 15 cm. By way of C, $30 + 10 = 40$ cm. The straight path is shorter.</p>
+        <p>C to A: straight, 30 cm. By way of B, $10 + 15 = 25$ cm. The straight path is longer!</p>
+      </div>
+
+      <p>The last line is impossible, because no roundabout path is shorter than the straight one. So there is no triangle with sides 10 cm, 15 cm and 30 cm. We found this without any construction, by reasoning about paths, just as we reasoned about lines in Chapter 5.</p>
+
+    </div>
+  </div>
+</section>
