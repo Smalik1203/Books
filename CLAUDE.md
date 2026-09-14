@@ -353,7 +353,9 @@ repaints, through the token contract at the top of `css/cover.css`.
 **A direction owns the colour of a whole wrap, so no two volumes may share
 one.** They did: Class 8 Part 2 was written as `arc`, which is Class 9
 Mathematics, and the two came off the press the same book in different
-words. Six wraps, six directions now — Class 7 Part 1 `zoom`, Part 2 `mobile`,
+words. Seven wraps, seven directions now — Class 6 Mathematics `patchwork` (a
+contents page of ten chapter tiles, brick red, face Outfit, on the class6
+trim), Class 7 Part 1 `zoom`, Part 2 `mobile`,
 Class 8 Part 1 `comb`, Part 2 `tile`, Class 9 Mathematics `arc`, Class 9
 Science `lattice`. The two Class 7 parts deliberately share no arrangement
 or motif: each front draws something its volume teaches (a place-value

@@ -1806,3 +1806,261 @@ body.bleed .jacket {
 .jacket--mobile .spine__class .jk-label { color: var(--c7-b); }
 .jacket--zoom .spine__class-num,
 .jacket--mobile .spine__class-num { color: var(--c7-a); font-weight: 700; }
+
+/* ============================================================
+   DIRECTION — patchwork: Class 6 Mathematics
+
+   The book's contents, drawn. The front is ten tiles, one per
+   chapter, and each tile shows what its chapter does — a dot
+   triangle for patterns, an angle, 6174, a factor tree, three
+   quarters, a mirror line — so the cover is a map of the book
+   rather than an ornament. Nothing is taken from arc (no discs, no
+   curve) or from Class 7 (no number-line zoom, no hanging toy, no
+   grid of claims): the back carries a strip of tiles along its
+   edge and sets the claims down one column under square tiles.
+
+   Brick red with sky blue and peach, and the face Outfit; no other
+   wrap uses any of them. The edition is class6, so the wrap is two
+   196 × 276 trims — every rule below reads the trim tokens.
+   ============================================================ */
+.jacket--patchwork {
+  --jk-display: Outfit, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #b8432f;
+  --jk-navy-deep: #7e2b1d;
+  --jk-navy-soft: #f2b8a0;
+  --jk-terra:     #a7d8f2;
+  --jk-sage:      #f2b8a0;
+  --jk-gold:      #ffd2b3;
+  --jk-cream:     #fff6ee;
+
+  --jk-ground:        #fbece2;
+  --jk-ground-ink:    #6b2417;
+  --jk-ground-soft:   #8a5a4c;
+  --jk-ground-rule:   #efd6c6;
+  --jk-ground-accent: #b8432f;
+  --jk-ground-art:    none;
+
+  --jk-deep:      #b8432f;
+  --jk-deep-ink:  #fff6ee;
+  --jk-deep-soft: #ffd9c4;
+
+  --jk-front:        #b8432f;
+  --jk-front-ink:    #fff6ee;
+  --jk-front-soft:   #ffd9c4;
+  --jk-front-mark:   #a7d8f2;
+  --jk-front-accent: #a7d8f2;
+  --jk-front-label:  #ffd2b3;
+
+  --p6-deep:     #7e2b1d;
+  --p6-sky:      #a7d8f2;
+  --p6-peach:    #ffd2b3;
+  --p6-dark-ink: #5a1d12;
+}
+.jacket--patchwork { font-family: var(--jk-display); }
+
+/* ---- front type -------------------------------------------- */
+.p6-head {
+  position: absolute;
+  top: var(--jk-top);
+  left: var(--jk-in);
+  right: var(--jk-out);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.p6-head .wordmark { color: var(--jk-front-ink); font-weight: 700; letter-spacing: -0.015em; }
+.p6-badge {
+  width: 23mm; height: 23mm;
+  border-radius: 50%;
+  border: 0.7mm solid var(--p6-sky);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.p6-badge .jk-label { color: var(--p6-sky); letter-spacing: 0.16em; }
+.p6-badge__num {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-numeral) * 0.95);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--jk-front-ink);
+}
+.jacket--patchwork .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.13); }
+.jacket--patchwork .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.36);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  color: var(--jk-front-ink);
+}
+.p6-sub {
+  margin: 4.5mm 0 0;
+  font-family: var(--font-body);
+  font-size: calc(var(--size-concept) * 1.16);
+  color: var(--jk-front-ink);
+}
+.p6-sub span { color: var(--p6-sky); }
+.p6-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  margin: 0;
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: var(--jk-front-ink);
+}
+.p6-strap span { color: var(--p6-sky); }
+.p6-strap em { font-style: normal; color: var(--jk-front-soft); }
+
+/* ---- front artwork: the tiles ------------------------------ */
+.p6-tile--deep  { fill: var(--p6-deep); }
+.p6-tile--sky   { fill: var(--p6-sky); }
+.p6-tile--peach { fill: var(--p6-peach); }
+.p6-on-deep  { color: var(--jk-front-ink); }
+.p6-on-light { color: var(--p6-dark-ink); }
+.p6-ln {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.p6-ln--thin { stroke-width: 0.45; }
+.p6-ln--dash { stroke-width: 0.5; stroke-dasharray: 1.2 1; }
+.p6-fill { fill: currentColor; }
+.p6-soft { fill: currentColor; opacity: 0.45; }
+.p6-txt {
+  fill: currentColor;
+  font-family: var(--jk-display);
+  font-weight: 600;
+  font-size: calc(var(--dg-type) * 1.05 * var(--dg-v) / var(--dg-w) * 1px);
+}
+.p6-txt--big {
+  font-weight: 700;
+  font-size: calc(var(--dg-type) * 2.3 * var(--dg-v) / var(--dg-w) * 1px);
+}
+.p6-cap {
+  fill: currentColor;
+  font-family: var(--jk-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+  opacity: 0.85;
+}
+
+/* ---- back -------------------------------------------------- */
+.jacket--patchwork .jacket__back { display: block; padding: 0; background: var(--jk-ground); }
+.p6-edge { position: absolute; inset: 0; }
+.p6-edge svg { display: block; width: 100%; height: 100%; }
+.p6-edge__fill  { fill: var(--jk-deep); }
+.p6-edge__sky   { fill: var(--p6-sky); }
+.p6-edge__peach { fill: var(--p6-peach); }
+.p6-edge__deep  { fill: var(--p6-deep); }
+
+.p6-back__top {
+  position: absolute;
+  top: var(--jk-top); left: var(--jk-out); right: var(--jk-in);
+}
+.p6-back__top .wordmark { color: var(--jk-ground-ink); font-weight: 700; letter-spacing: -0.015em; }
+.p6-back__lede {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.32);
+  font-weight: 600;
+  line-height: 1.24;
+  color: var(--jk-ground-accent);
+  margin: 6mm 0 5mm;
+}
+.p6-back__blurb {
+  font-family: var(--font-body);
+  font-size: var(--size-note);
+  line-height: 1.55;
+  color: var(--jk-ground-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.58);
+}
+
+.p6-back__deep {
+  position: absolute;
+  left: var(--jk-out); right: var(--jk-in);
+  top: calc(var(--trim-h) * 0.5);
+  bottom: var(--jk-bottom);
+  display: flex;
+  flex-direction: column;
+}
+.p6-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5.5mm;
+}
+.p6-item { display: grid; grid-template-columns: 11mm 1fr; column-gap: 5mm; align-items: start; }
+.p6-item__mark {
+  width: 11mm; height: 11mm;
+  border-radius: 2.5mm;
+  background: var(--p6-sky);
+  display: grid; place-items: center;
+}
+.p6-item:nth-child(even) .p6-item__mark { background: var(--p6-peach); }
+.p6-item__mark svg { width: 6mm; height: 6mm; color: var(--p6-dark-ink); }
+.p6-item__term {
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--jk-deep-ink);
+  margin: 0.6mm 0 1mm;
+}
+.p6-item__def {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.45;
+  color: var(--jk-deep-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.66);
+}
+
+.p6-foot {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 6mm;
+  align-items: end;
+  padding-top: 5mm;
+  border-top: var(--jk-hair) solid var(--jk-deep-soft);
+}
+.p6-foot__qr { width: 19mm; height: 19mm; background: #ffffff; padding: 1mm; display: block; }
+.p6-foot__qr svg, .p6-foot__qr img { display: block; width: 100%; height: 100%; }
+.p6-foot__by {
+  align-self: center;
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: var(--jk-deep-soft);
+  margin: 0;
+}
+.p6-foot__by strong { font-family: var(--jk-display); font-weight: 700; color: var(--jk-deep-ink); }
+.p6-foot .barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
+.p6-foot .barcode__mark svg { display: block; width: 32mm; height: 16mm; }
+.p6-foot__isbn {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-caption) * 0.9);
+  color: var(--jk-deep-soft);
+  display: block;
+  text-align: center;
+  margin-top: 1.4mm;
+}
+
+/* ---- spine ------------------------------------------------ */
+.jacket--patchwork .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--patchwork .spine__mark,
+.jacket--patchwork .spine__title { color: var(--jk-front-ink); font-weight: 700; }
+.jacket--patchwork .spine__title { letter-spacing: 0.14em; }
+.jacket--patchwork .spine__tick { background: var(--p6-sky); width: 6mm; height: 0.5mm; }
+.jacket--patchwork .spine__class .jk-label { color: var(--p6-peach); }
+.jacket--patchwork .spine__class-num { color: var(--p6-sky); font-weight: 700; }
