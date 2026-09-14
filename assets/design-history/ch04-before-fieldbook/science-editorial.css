@@ -1,0 +1,138 @@
+/* Science editorial system: page coordinates scale with the declared trim.
+   Serif reading text; quiet sans-serif navigation; foreground illustrations. */
+.page--science-editorial {
+  /* Reserved activity identity: never overridden by a chapter palette. */
+  --science-activity: #965f4c;
+  --science-activity-wash: #f7efea;
+  --science-forest: #315f50;
+  --science-leaf: #507d68;
+  --science-sage: #dce8df;
+  --science-wash: #f0f5f0;
+  --science-rule: #c6d6cb;
+  --food-teal: var(--science-forest);
+  --food-blue: var(--science-wash);
+  --food-cream: var(--science-wash);
+}
+.science-editorial { --size-body: 23px; }
+.page--science-editorial[data-science-chapter="1"] {
+  --science-forest: #335770;
+  --science-leaf: #53768c;
+  --science-sage: #dce7ee;
+  --science-wash: #f0f5f8;
+  --science-rule: #c6d6e0;
+}
+.page--science-editorial[data-science-chapter="3"] {
+  --science-forest: #765b2d;
+  --science-leaf: #947443;
+  --science-sage: #ebe1cf;
+  --science-wash: #f8f4eb;
+  --science-rule: #ddcfb6;
+}
+.se-copy { font-family: var(--font-body); font-size: var(--size-body); font-weight: 500; fill: var(--food-ink); }
+.se-bold { font-weight: 700; }
+.se-italic { font-style: italic; }
+.se-title, .se-heading, .se-label, .se-caption, .se-running, .se-activity { font-family: Food Poppins, sans-serif; }
+.se-title { font-size: calc(var(--size-body) * 2.5); font-weight: 700; fill: var(--food-navy); }
+.se-heading { font-size: calc(var(--size-body) * 1.22); font-weight: 700; fill: var(--food-teal); }
+.se-label { font-size: calc(var(--size-body) * 0.7); font-weight: 700; letter-spacing: 0.08em; fill: var(--food-teal); }
+.se-running { font-size: calc(var(--size-body) * 0.68); font-weight: 400; fill: var(--ink-soft); }
+.se-caption { font-size: calc(var(--size-body) * 0.76); font-weight: 500; fill: var(--food-ink); }
+.se-activity { font-size: calc(var(--size-body) * 0.98); font-weight: 700; fill: var(--science-activity); }
+.se-takeaway { font-weight: 700; fill: var(--food-teal); }
+.se-rule { fill: none; stroke: var(--rule); stroke-width: 1; }
+.se-accent { fill: none; stroke: var(--food-teal); stroke-width: 2; }
+.se-activity-rule { fill: none; stroke: var(--science-activity); stroke-width: 2; }
+.se-activity-panel { fill: var(--science-activity-wash); stroke: none; }
+.se-activity-tab { fill: var(--science-activity); }
+.se-activity-tab-text { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * 0.85); font-weight: 700; fill: var(--paper); }
+.se-activity-step { font-family: Food Poppins, sans-serif; font-size: var(--size-body); font-weight: 700; fill: var(--science-activity); }
+.se-prompt { fill: var(--science-wash); stroke: var(--science-sage); stroke-width: 1; }
+.se-process { fill: var(--food-blue); stroke: var(--food-teal); stroke-width: 1; }
+.se-return { fill: none; stroke: var(--food-teal); stroke-width: 1.5; stroke-dasharray: 4 4; }
+
+/* Science furniture echoes the chapter badge; no full-width footer bars. */
+.page--science-editorial .pagefoot { display: none; }
+.se-header-title { font-weight: 400; fill: var(--food-navy); }
+.se-header-tag { font-size: calc(var(--size-body) * 0.6); letter-spacing: 0.08em; }
+.se-footer-rule { fill: none; stroke: var(--science-leaf); stroke-width: 1.4; }
+.se-footer-label { font-size: calc(var(--size-body) * 0.57); letter-spacing: 0.07em; }
+.se-folio { font-family: Food Poppins, sans-serif; font-size: var(--size-body); font-weight: 700; fill: var(--paper); }
+
+/* Observation tables are reading examples; pupils record in their notebooks. */
+.se-table-head { fill: var(--food-blue); }
+.se-table-copy { font-size: calc(var(--size-body) * 0.8); }
+.se-note { fill: var(--ink-soft); }
+.se-botanical-ribbon { fill: var(--science-leaf); }
+.se-botanical-shadow { fill: var(--science-sage); }
+.se-botanical-leaf { fill: var(--science-sage); opacity: 0.45; }
+.se-botanical-stem { fill: none; stroke: var(--science-sage); stroke-width: 1.5; opacity: 0.45; }
+.se-botanical-chapter { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * 0.8); font-weight: 700; letter-spacing: 0.12em; fill: var(--paper); }
+.se-table-band { fill: var(--science-sage); }
+.se-table-number { fill: var(--science-leaf); }
+.se-table-number-text { fill: var(--paper); font-weight: 700; }
+
+/* Paper-backed activity drawings sit naturally on the warm activity stock. */
+.se-activity-art { mix-blend-mode: multiply; }
+
+/* Short chapter titles can sit on one line beside the chapter badge. */
+.se-title--single { font-size: calc(var(--size-body) * 2.1); }
+
+/* Chapter 4: muted violet. Activity terracotta remains common to the volume. */
+.page--science-editorial[data-science-chapter="4"] {
+  --science-forest: #56516f;
+  --science-leaf: #78728e;
+  --science-sage: #e4e0ec;
+  --science-wash: #f5f3f8;
+  --science-rule: #d4cfdf;
+}
+/* Pole labels carry the meaning; tint also distinguishes the two halves. */
+.mg-north { fill: var(--science-sage); stroke: var(--science-forest); stroke-width: 1.5; }
+.mg-south { fill: var(--science-wash); stroke: var(--science-forest); stroke-width: 1.5; }
+.mg-body { fill: var(--science-sage); stroke: var(--science-forest); stroke-width: 2; }
+.mg-hole { fill: var(--paper); stroke: var(--science-forest); stroke-width: 1.5; }
+.mg-needle-n { fill: var(--science-forest); stroke: var(--science-forest); stroke-width: 1; }
+
+/* Class 6 fieldbook edition: warm paper, open experiments, purposeful marks.
+   Scoped opt-in; other chapters retain their approved page compositions. */
+.page--fieldbook {
+  --fb-paper: #fffdf8;
+  --fb-ink: #283544;
+  --fb-north: #edd0c4;
+  --fb-south: #d6e2e8;
+  --fb-gold: #b88b42;
+  --fb-rule: #d7d3c8;
+  --food-ink: var(--fb-ink);
+  --science-forest: #465b67;
+  --science-leaf: #687f8a;
+  --science-sage: #dce5e7;
+  --science-wash: #f1f5f3;
+  background: var(--fb-paper);
+}
+.page--fieldbook .food-sheet { background: var(--fb-paper); }
+.page--fieldbook .se-heading { fill: var(--science-forest); }
+.page--fieldbook .se-title { fill: var(--fb-ink); }
+.page--fieldbook .mg-north { fill: var(--fb-north); }
+.page--fieldbook .mg-south { fill: var(--fb-south); }
+.page--fieldbook .mg-hole { fill: var(--fb-paper); }
+.fb-art { mix-blend-mode: multiply; }
+.fb-icon { fill: none; stroke: var(--science-forest); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.fb-rule { stroke: var(--fb-rule); stroke-width: 1.2; fill: none; }
+.fb-writing { stroke: var(--science-rule); stroke-width: 1; fill: none; }
+.fb-activity-rule { stroke: var(--science-activity); stroke-width: 1.5; fill: none; }
+.fb-section-chip { fill: var(--science-forest); }
+.fb-section-number { font-family: Food Poppins, sans-serif; font-size: var(--size-body); fill: var(--fb-paper); font-weight: 700; }
+.fb-kicker { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * .65); letter-spacing: .1em; fill: var(--science-activity); font-weight: 700; }
+.fb-activity-title { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * 1.04); font-weight: 700; fill: var(--science-activity); }
+.fb-step-disc { fill: var(--science-activity-wash); }
+.fb-step-number { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * .82); font-weight: 700; fill: var(--science-activity); }
+.fb-art-wash { fill: var(--science-activity-wash); }
+.fb-table-head { fill: var(--science-sage); }
+.fb-running { fill: var(--science-forest); font-weight: 700; }
+.fb-folio-disc, .fb-badge { fill: var(--science-forest); }
+.fb-folio { font-family: Food Poppins, sans-serif; font-size: var(--size-body); font-weight: 700; fill: var(--fb-paper); }
+.fb-compass-ticks { fill: none; stroke: var(--fb-gold); stroke-width: 1.7; }
+.fb-badge-ring { fill: none; stroke: var(--fb-gold); stroke-width: 1.4; }
+.fb-badge-tag { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * .68); letter-spacing: .08em; font-weight: 700; fill: var(--fb-paper); }
+.fb-badge-number { font-family: Food Poppins, sans-serif; font-size: calc(var(--size-body) * 3.1); font-weight: 700; fill: var(--fb-paper); }
+.fb-diagram { overflow: visible; }
+.page--fieldbook [data-content-kind="activity"] .fb-icon { stroke: var(--science-activity); }

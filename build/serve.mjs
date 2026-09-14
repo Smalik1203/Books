@@ -17,6 +17,8 @@
 import { createServer } from 'node:http';
 import { readFile, stat, readdir } from 'node:fs/promises';
 import { existsSync, watch } from 'node:fs';
+import { randomUUID } from 'node:crypto';
+import { contentWatcher } from './watch-content.mjs';
 import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -692,18 +694,19 @@ function impositionHtml(chapter, s, sigSize) {
 }
 
 /* ---- Live reload ------------------------------------------ */
-/* Two things bring a tab back. A message, when a chapter or a cover
-   has been rebuilt — and a reconnect, when the server itself has
-   restarted under the watcher and is serving markup this page was
-   rendered before. EventSource retries on its own; all this has to
-   do is notice that the connection it just opened is not its
-   first. */
+/* Rebuild messages refresh the proof. A named handshake identifies actual
+   server restarts; a transient EventSource reconnect alone changes nothing. */
 const clients = new Set();
+const studioInstance = randomUUID();
 const RELOAD = `
 <script>(function () {
-  var es = new EventSource('/__reload'), opened = false;
+  var es = new EventSource('/__reload'), instance = null;
   es.onmessage = function () { location.reload(); };
-  es.onopen = function () { if (opened) location.reload(); opened = true; };
+  es.addEventListener('studio', function (event) {
+    if (instance !== null && instance !== event.data) location.reload();
+    instance = event.data;
+  });
+  window.addEventListener('pagehide', function () { es.close(); });
 }());</script>`;
 
 /* ---- Two pages to a spread, for the viewer only ------------ */
@@ -826,8 +829,18 @@ const onChange = (dir) => (_evt, file) => {
     }
   }, 140);
 };
-for (const dir of ['pages', 'css', 'covers', 'build/ui']) {
-  watch(path.join(ROOT, dir), { recursive: true }, onChange(dir));
+const watchedDirectories = ['pages', 'css', 'covers', 'build/ui'];
+const changedContent = await contentWatcher(ROOT, watchedDirectories);
+// Serialize checks so duplicate notifications cannot both observe the old
+// hash and queue the same edit twice.
+let checkingChanges = Promise.resolve();
+for (const dir of watchedDirectories) {
+  const changed = onChange(dir);
+  watch(path.join(ROOT, dir), { recursive: true }, (event, file) => {
+    checkingChanges = checkingChanges.then(async () => {
+      if (await changedContent(dir, file)) changed(event, file);
+    }).catch(error => console.error('  Watch check failed:', error.message));
+  });
 }
 
 /* ---- Server ----------------------------------------------- */
@@ -842,9 +855,10 @@ const server = createServer(async (req, res) => {
       'Cache-Control': 'no-cache',
       Connection: 'keep-alive',
     });
-    res.write('\n');
+    res.write('event: studio\ndata: ' + studioInstance + '\n\n');
+    const heartbeat = setInterval(() => res.write(': keep-alive\n\n'), 25000);
     clients.add(res);
-    req.on('close', () => clients.delete(res));
+    req.on('close', () => { clearInterval(heartbeat); clients.delete(res); });
     return;
   }
 

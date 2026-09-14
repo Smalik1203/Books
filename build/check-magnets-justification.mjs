@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {pathToFileURL} from 'node:url';
+const run=promisify(execFile),base='build/class-6/ch04-exploring-magnets.html',probe=base.replace('.html','-justify-check.html');
+const script=`<script>addEventListener('load',async()=>{await document.fonts.ready;const out={lines:0,errors:[],furnitureErrors:[]};for(const sheet of document.querySelectorAll('.food-sheet')){const page=sheet.closest('.page').dataset.folio;for(const line of sheet.querySelectorAll('[data-justified]')){out.lines++;const b=line.getBBox(),expected=+line.getAttribute('x') + +line.dataset.justified;if(Math.abs(b.x+b.width-expected)>1.5)out.errors.push({page,by:+(b.x+b.width-expected).toFixed(2),text:line.textContent.slice(0,70)});}if(sheet.querySelectorAll('.se-folio').length!==1||(+page>1&&sheet.querySelectorAll('.se-header-title').length!==1)||sheet.querySelector('.fb-folio-disc,.fb-badge,.fb-running'))out.furnitureErrors.push(page);}document.title='JUSTIFYCHECK'+JSON.stringify(out);});</script>`;
+await fs.writeFile(probe,(await fs.readFile(base,'utf8')).replace('</head>',script+'</head>'));
+const {stdout}=await run('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--disable-gpu','--virtual-time-budget=10000','--dump-dom',pathToFileURL(path.resolve(probe)).href],{maxBuffer:64e6});
+await fs.unlink(probe);const raw=stdout.match(/JUSTIFYCHECK(.*?)<\/title>/s)?.[1];if(!raw)throw Error('No justification result');const result=JSON.parse(raw.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>'));
+await fs.writeFile('assets/design-history/ch04-justification-check.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));if(result.errors.length||result.furnitureErrors.length)process.exitCode=1;

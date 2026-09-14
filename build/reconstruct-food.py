@@ -14,7 +14,7 @@ LAYOUT = runpy.run_path(str(Path(__file__).with_name('food-layout.py')))['LAYOUT
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'assets/food-reference'
-PAGES = ROOT / 'pages/reference/ch03-food-on-our-plate'
+PAGES = ROOT / 'pages/class-6/ch03-food-on-our-plate'
 ART = ROOT / 'figures/reference/food'
 PAGES.mkdir(parents=True, exist_ok=True)
 ART.mkdir(parents=True, exist_ok=True)
@@ -212,6 +212,6 @@ for page in range(1,29):
     fragment=f'<section class="page page--food" data-folio="{FOLIOS[page-1] or 47}" data-reference-page="{page}">\n<div class="page__body"><div class="page__main">\n{svg}\n</div></div>\n</section>\n'
     (PAGES/f'{name}.html').write_text(fragment,encoding='utf-8')
     report.append(dict(page=page,folio=FOLIOS[page-1],editableWords=count,illustrations=len(art)))
-(PAGES/'chapter.json').write_text(json.dumps(dict(number='3',title='Food on Our Plate',subject='Science',**{'class':'Reference'},edition='a4',design='food-reference',startFolio=28),indent=2))
+(PAGES/'chapter.json').write_text(json.dumps(dict(number='3',title='Food on Our Plate',subject='Science',**{'class':'6'},edition='a4',design='food-reference',startFolio=28),indent=2))
 (SRC/'reconstruction-report.json').write_text(json.dumps(report,indent=2))
 print(f'Created 28 editable page fragments, {sum(r["editableWords"] for r in report)} live words and {sum(r["illustrations"] for r in report)} illustration crops.')

@@ -1,0 +1,44 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>Which of these numbers is divisible by 8?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>7324</li><li>6136</li><li>5148</li><li>9420</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Only the last three digits matter. Check whether each number made by them is a multiple of 8.</p>
+        <div class="work work--list">
+          <p>$324 = 8 \times 40 + 4$</p>
+          <p>$136 = 8 \times 17$</p>
+          <p>$148 = 8 \times 18 + 4$</p>
+          <p>$420 = 8 \times 52 + 4$</p>
+        </div>
+        <p>The answer is 6136, option (b). All four numbers are divisible by 4, because 24, 36, 48 and 20 are multiples of 4. So the test for 4 cannot decide here. A number divisible by 4 need not be divisible by 8.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 5</span>
+        <p>How many numbers from 1 to 100 are multiples of both 4 and 6?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>8</li><li>16</li><li>41</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Find the first common multiple of 4 and 6. Every common multiple is a multiple of it.</p>
+        <div class="work work--list">
+          <p>multiples of 6: 6, 12, …, and 12 is a multiple of 4</p>
+          <p>common multiples: 12, 24, 36, 48, 60, 72, 84, 96</p>
+          <p>$96 = 12 \times 8$, and $12 \times 9 = 108$ is past 100</p>
+        </div>
+        <p>The answer is 8, option (b). Option (a) counts only the multiples of $4 \times 6 = 24$, which misses 12, 36, 60 and 84. Option (c) counts all 16 multiples of 6. Option (d) adds the 25 multiples of 4 to the 16 multiples of 6.</p>
+      </div>
+
+      <p>Compare this with 4 and 5. They are co-prime, so their first common multiple is their product, $4 \times 5 = 20$. From 1 to 100, the numbers that are multiples of both 4 and 5 are 20, 40, 60, 80 and 100, which is 5 numbers. But 4 and 6 share the factor 2, so their first common multiple, 12, is less than their product, 24. Counting the multiples of the product works only when the two numbers are co-prime. For 4 and 6 it gives 4 numbers, which is half of the right answer. The number to count in steps of is the first common multiple, not the product.</p>
+
+    </div>
+  </div>
+</section>

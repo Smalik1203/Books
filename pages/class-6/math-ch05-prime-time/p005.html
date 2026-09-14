@@ -1,0 +1,98 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">5.2</span><span class="name">Prime Numbers</span></h2>
+
+      <p>Guna and Anshu grow figs, or <em>anjeer</em>, on their farm, and they want to pack them in boxes. Guna wants to put 12 figs in each box. Anshu wants to put 7 figs in each box. In each box the figs must lie in a rectangle, in rows and columns.</p>
+
+      <p>Try it before you read on. In how many ways can Guna arrange 12 figs in a rectangle? In how many ways can Anshu arrange 7 figs?</p>
+
+      <div class="c-figure c-figure--full">
+        <figure>
+          <svg viewBox="0 0 635 104" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Twelve figs set out as 1 row of 12, 2 rows of 6 and 3 rows of 4, and seven figs set out as 1 row of 7">
+            <rect class="dg-line" x="10" y="47" width="208" height="21" rx="3"/>
+            <circle class="dg-fill-a" cx="20.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="37.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="54.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="71.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="88.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="105.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="122.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="139.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="156.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="173.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="190.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="207.5" cy="57.5" r="6.2"/>
+            <text class="dg-note" x="114" y="92" text-anchor="middle">1 row of 12</text>
+            <rect class="dg-line" x="253.33" y="30" width="106" height="38" rx="3"/>
+            <circle class="dg-fill-a" cx="263.83" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="280.83" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="297.83" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="314.83" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="331.83" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="348.83" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="263.83" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="280.83" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="297.83" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="314.83" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="331.83" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="348.83" cy="57.5" r="6.2"/>
+            <text class="dg-note" x="306.33" y="92" text-anchor="middle">2 rows of 6</text>
+            <rect class="dg-line" x="394.67" y="13" width="72" height="55" rx="3"/>
+            <circle class="dg-fill-a" cx="405.17" cy="23.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="422.17" cy="23.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="439.17" cy="23.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="456.17" cy="23.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="405.17" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="422.17" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="439.17" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="456.17" cy="40.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="405.17" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="422.17" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="439.17" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-a" cx="456.17" cy="57.5" r="6.2"/>
+            <text class="dg-note" x="430.67" y="92" text-anchor="middle">3 rows of 4</text>
+            <rect class="dg-line" x="502" y="47" width="123" height="21" rx="3"/>
+            <circle class="dg-fill-c" cx="512.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-c" cx="529.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-c" cx="546.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-c" cx="563.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-c" cx="580.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-c" cx="597.5" cy="57.5" r="6.2"/>
+            <circle class="dg-fill-c" cx="614.5" cy="57.5" r="6.2"/>
+            <text class="dg-note" x="563.5" y="92" text-anchor="middle">1 row of 7</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.5</span> Guna’s three rectangles of 12 figs, and Anshu’s only rectangle of 7 figs. Turning a rectangle on its side does not make a new one.</figcaption>
+        </figure>
+      </div>
+
+      <p>Guna finds three ways: 1 row of 12, 2 rows of 6, and 3 rows of 4. Look at the rows and columns in each one. The number of rows times the number of columns is always 12: $1 \times 12 = 12$, $2 \times 6 = 12$ and $3 \times 4 = 12$. So the numbers of rows and columns are all factors of 12.</p>
+
+      <p>Anshu finds only one way: 1 row of 7, which is $1 \times 7$. There is no other rectangle, because 7 has only two factors, 1 and 7. The number 12 has more than two factors, so it can be arranged in more than one way.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Prime and composite numbers</div>
+        <p>A number that has exactly two factors, 1 and the number itself, is a <span class="term">prime number</span>, or a prime. A number that has more than two factors is a <span class="term">composite number</span>.</p>
+        <p>The number 1 has only one factor, so it is neither prime nor composite.</p>
+      </div>
+
+      <p>The first few primes are 2, 3, 5, 7, 11, 13, 17 and 19. The first few composite numbers are 4, 6, 8, 9, 10, 12, 14, 15, 16, 18 and 20.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>How many prime numbers are there from 21 to 30?</li>
+            <li>How many composite numbers are there from 21 to 30?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

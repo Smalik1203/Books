@@ -27,6 +27,7 @@ import { cropHeight } from './png.mjs';
 import { windowPad } from './viewport.mjs';
 import { tokenReader, sheetMetrics, px } from './sheet.mjs';
 import { volumeName } from './volume.mjs';
+import { scienceContract } from './science-contract.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -360,7 +361,12 @@ const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = 
 <link rel="stylesheet" href="${cssHref}">${meta.edition ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "edition-" + meta.edition + ".css")}">` : ``}${meta.palette ? `
 <link rel="stylesheet" href="${cssHref.replace("book.css", "palette-" + meta.palette + ".css")}">` : ``}
-${meta.design === 'food-reference' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'food-reference.css')}">` : ''}
+${['food-reference', 'science-reference', 'science-editorial'].includes(meta.design) ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'reference-fonts.css')}">
+<link rel="stylesheet" href="${cssHref.replace('book.css', 'food-reference.css')}">` : ''}
+${meta.design === 'science-reference' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-reference.css')}">` : ''}
+${meta.design === 'science-editorial' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-reference.css')}"><link rel="stylesheet" href="${cssHref.replace('book.css', 'science-editorial.css')}">` : ''}
+${meta.design === 'maths-clear' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'maths-clear.css')}">` : ''}
+${meta.subject === 'Science' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-locked.css')}">` : ''}
 <style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
   : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}</style>
 </head>
@@ -491,6 +497,7 @@ async function buildChapter(rel) {
   let lint = 0;
   for (const f of files) {
     const frag = (await readFile(path.join(src, f), 'utf8')).trim();
+    if(meta.subject==='Science')scienceContract(f,frag);
     lint += lintPage(f, frag);
     parts.push(`<!-- ${f} -->\n` + frag);
   }
@@ -570,7 +577,10 @@ async function toPngs(htmlPath, meta, sheet) {
   const out = [];
   for (const [i, section] of pages.entries()) {
     const folio = section.match(/data-folio="(\d+)"/)?.[1] ?? String(i + 1);
-    const tmp = path.join(path.dirname(htmlPath), `_tmp-proof-${folio}.html`);
+    // Named for the chapter: every chapter of a class builds into one
+    // folder, and two chapters proofed at once overwrote each other's
+    // page N, so a proof could show another chapter's page.
+    const tmp = path.join(path.dirname(htmlPath), `_tmp-proof-${path.basename(htmlPath, '.html')}-${folio}.html`);
     await writeFile(tmp, shell(meta, section).replace('</head>', `${isolate}\n</head>`));
 
     const png = path.join(dir, `p${String(folio).padStart(3, '0')}.png`);

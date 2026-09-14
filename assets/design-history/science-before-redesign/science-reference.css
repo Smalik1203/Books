@@ -1,0 +1,37 @@
+/* Editable reference pages, fitted to the edition's trim.
+
+   Sizes derive from one base rather than the house scale, because
+   this profile follows a supplied appearance rather than the book's
+   own hierarchy. Everything else — colour, the panel treatments, the
+   font stack — comes from food-reference.css, which both reference
+   designs share. */
+.science-sheet { --size-body: 24px; }
+
+/* One body size for the whole chapter. It was two: the opening page
+   set its text at 0.92 and every later page at 0.86, so the type
+   shrank by 7% on the first turn. That reads as a mistake rather
+   than as a device, and a lead-in size that close to the body is
+   not worth having. */
+.science-copy { font-size: calc(var(--size-body) * 0.86); }
+
+/* The teal line that closes a section — a pull line, not body. It
+   used to borrow .science-copy, which is how one class came to mean
+   both "the opening page's body" and "the pull quote": change the
+   size for one and you moved the other. */
+.science-lead { font-size: calc(var(--size-body) * 0.92); }
+
+.science-illustration { overflow: hidden; }
+.science-title { font-size: calc(var(--size-body) * 2.65); font-weight: 700; }
+.science-subtitle { font-size: calc(var(--size-body) * 1.45); font-weight: 700; }
+.science-chapter-label { font-size: var(--size-body); font-weight: 700; }
+.science-chapter-number { font-size: calc(var(--size-body) * 5.4); font-weight: 700; }
+.science-folio { font-size: var(--size-body); font-weight: 700; }
+.science-running { font-size: calc(var(--size-body) * 0.75); }
+.science-section { font-size: calc(var(--size-body) * 1.5); font-weight: 700; }
+
+/* A real italic face is vendored now (reference-fonts.css). This was
+   drawn by shearing the upright, which on a geometric face turns every
+   round bowl into an ellipse — visible in print at any size. */
+.science-italic { font-style: italic; }
+/* Shared answer-writing rules for reference science activities. */
+.science-answer-rule { stroke: var(--food-teal); stroke-width: 0.7; opacity: 0.45; fill: none; }

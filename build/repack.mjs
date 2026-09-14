@@ -280,7 +280,31 @@ function opensWell(flat, i, room, lh, headMb, depth = 0) {
   return inner + after >= (spent ? Math.min(quota, whole) : quota);
 }
 
-function pack(pages) {
+/* An exercise set kept whole. A chapter that sets "keepExerciseSets"
+   in chapter.json wants every set to start on a page it can finish
+   on: a band with two questions at the foot and seven overleaf reads
+   as two sets. The set is the band and every continuation block after
+   it, with any figure that sits between two of its questions. If it
+   will not fit in the room left, it starts the next page, and the
+   white it leaves is closed by writing into the page it left. A set
+   taller than a whole page still starts at the top of one. */
+const isSetCont = (b) => (' ' + b.cls + ' ').indexOf(' c-practice--cont ') >= 0;
+const isFigure = (b) => (' ' + b.cls + ' ').indexOf(' c-figure ') >= 0;
+function setCost(flat, i, prevMb, onEmpty) {
+  let cost = (onEmpty ? 0 : Math.max(prevMb, flat[i].mt)) + flat[i].h;
+  let mb = flat[i].mb;
+  for (let k = i + 1; k < flat.length; k++) {
+    const b = flat[k];
+    if (isSetCont(b)) { cost += Math.max(mb, b.mt) + b.h; mb = b.mb; continue; }
+    if (isFigure(b) && flat[k + 1] && isSetCont(flat[k + 1])) {
+      cost += Math.max(mb, b.mt) + b.h; mb = b.mb; continue;
+    }
+    break;
+  }
+  return cost;
+}
+
+function pack(pages, keepSets = false) {
   const flat = [];
   for (const [p, page] of pages.entries()) {
     for (const [i, b] of page.blocks.entries()) flat.push({ ...b, from: p, at: i });
@@ -297,8 +321,10 @@ function pack(pages) {
   for (const [idx, b] of flat.entries()) {
     const join = Math.max(prevMb, b.mt);
     const cost = (page.blocks.length ? join : 0) + b.h;
-    const stranded = isOpener(b)
-      && !opensWell(flat, idx, page.avail - page.used - cost, lh, b.mb);
+    const stranded = (isOpener(b)
+      && !opensWell(flat, idx, page.avail - page.used - cost, lh, b.mb))
+      || (keepSets && b.opens === 'exercise'
+          && page.used + setCost(flat, idx, prevMb, !page.blocks.length) > page.avail);
     // margins collapse in ways this arithmetic only approximates, so
     // leave a little air rather than shipping a page that overflows
     if (page.blocks.length && (page.used + cost > page.avail || stranded)) {
@@ -388,7 +414,9 @@ for (const [i, m] of measured.entries()) {
   }
 }
 
-const packed = pack(measured);
+const meta = JSON.parse(await readFile(path.join(dir, 'chapter.json'), 'utf8').catch(() => '{}'));
+const packed = pack(measured, meta.keepExerciseSets === true);
+if (meta.keepExerciseSets === true) console.log('  keeping each exercise set whole');
 const before = measured.length, after = packed.length;
 console.log(`  ${before} pages in, ${after} out`);
 for (const [i, p] of packed.entries()) {

@@ -1,0 +1,44 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>Which pair of numbers is co-prime?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>21 and 35</li><li>39 and 91</li><li>25 and 36</li><li>51 and 85</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Find the prime factorisation of every number, and look for a prime that appears in both numbers of a pair.</p>
+        <div class="work work--list">
+          <p>$21 = 3 \times 7$, $\ 35 = 5 \times 7$: both have 7</p>
+          <p>$39 = 3 \times 13$, $\ 91 = 7 \times 13$: both have 13</p>
+          <p>$25 = 5 \times 5$, $\ 36 = 2 \times 2 \times 3 \times 3$: no common prime</p>
+          <p>$51 = 3 \times 17$, $\ 85 = 5 \times 17$: both have 17</p>
+        </div>
+        <p>The answer is option (c). 91 and 51 look like primes, but they are not, and each of them shares a prime with the other number in its pair. 25 and 36 are both composite, yet they are co-prime.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
+        <p>The prime factorisation of 360 is</p>
+        <ol class="c-parts c-parts--alpha"><li>$2 \times 2 \times 3 \times 3 \times 10$</li><li>$2 \times 3 \times 3 \times 4 \times 5$</li><li>$2 \times 2 \times 2 \times 3 \times 5$</li><li>$2 \times 2 \times 2 \times 3 \times 3 \times 5$</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Split 360 into two factors, and keep splitting until only primes are left.</p>
+        <div class="work work--list">
+          <p>$360 = 36 \times 10$</p>
+          <p>$36 = 2 \times 2 \times 3 \times 3$ and $10 = 2 \times 5$</p>
+          <p>$360 = 2 \times 2 \times 2 \times 3 \times 3 \times 5$</p>
+        </div>
+        <p>The answer is option (d). Options (a) and (b) both multiply to 360, but they are not prime factorisations: option (a) still contains 10, and option (b) contains 4. Option (c) has lost one 3, and multiplies to 120.</p>
+      </div>
+
+      <p>Whichever way you split 360, you reach the same primes. Start from $360 = 8 \times 45$ instead: $8 = 2 \times 2 \times 2$ and $45 = 3 \times 3 \times 5$. Or start from $360 = 12 \times 30$: $12 = 2 \times 2 \times 3$ and $30 = 2 \times 3 \times 5$. Both give three 2s, two 3s and one 5, exactly as option (d) says. Multiplying back is always a good last check, because a wrong factorisation, like option (c), gives a different number.</p>
+
+    </div>
+  </div>
+</section>

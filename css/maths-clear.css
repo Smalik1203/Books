@@ -1,0 +1,46 @@
+/* ============================================================
+   MATHS-CLEAR — Class 6 Mathematics, trial profile.
+
+   Three changes borrowed from the science volumes (see
+   DESIGN-SCIENCE.md) and tried on one maths book before anything
+   else moves. Loaded only by chapters that declare
+   "design": "maths-clear". Nothing else in the book changes.
+
+   1. The role colours stay the same in every chapter. A chapter
+      declares no palette, so structure, action and attention keep
+      the book's three colours throughout, and a student can learn
+      once what a worked example or a question looks like. What the
+      chapter owns is its furniture: the chapter numeral, the rule
+      under the opener, the running head and the folio bar, all in
+      its accent.
+   2. Running text is set ragged-right with no hyphenation. A
+      justified line full of maths cannot hyphenate, so its word
+      spaces open into holes; a second-language reader loses the
+      line there. Science sets its prose this way already.
+   3. The tip disc is an outline, not a filled badge — the same
+      rule the science icons follow: one stroke, no fill.
+
+   The bound-book shell does not load design sheets; a volume bound
+   with --book prints the standard look until it does.
+   ============================================================ */
+
+/* 1 — chapter identity on the furniture only */
+.chapterhead__num      { background: var(--ch-accent); }
+.chapterhead__rule     { background: var(--ch-accent); }
+.runhead__chapter      { color: var(--ch-accent); }
+.runhead__mark         { background: var(--ch-accent); }
+.pagefoot__bar--fill   { background: var(--ch-accent); }
+
+/* 2 — ragged-right, no hyphenation */
+.page__main {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+/* 3 — the tip mark as a line drawing on the paper */
+.c-tip__icon {
+  background: none;
+  border: 0.5mm solid var(--teal);
+}
+.c-tip__icon svg { stroke: var(--teal); }

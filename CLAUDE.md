@@ -3,7 +3,7 @@
 A print book, not a web app. Every decision below exists because getting it
 wrong wasted real time.
 
-**Read [DESIGN.md](DESIGN.md) before touching a page.** The design system is
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** The design system is
 enforced by the builder, not by discipline — a page that invents its own
 colour, type, stroke or spacing fails the build.
 
@@ -63,7 +63,7 @@ one numeral and the outline bar carries nothing, but both bleeding off the
 edge is deliberate (§ the bleed sheet), and the skew ties the foot to the
 chapter openers. Reopen it with the tool rather than from memory.
 
-## Four checks the builder does not do
+## Five checks the builder does not do
 
 The builder measures pages. These measure what is on them, and each was
 written after the thing it catches had already shipped.
@@ -73,6 +73,8 @@ node build/fit-options.mjs  <chapter> [--fix]   # options set in more columns th
 node build/check-labels.mjs <chapter>           # figure labels printing through each other
 node build/gaps.mjs         <chapter> [--min N] # what is holding each short page open
 node build/orphans.mjs      <class|chapter> [--all]  # openers stranded at the foot
+node build/check-reference-fit.mjs <chapter>    # the text inside a reference chapter's sheet
+node build/rewrap-reference.mjs <chapter> --right=R [--pages=..] [--dry]  # re-break to a new measure
 ```
 
 `fit-options` measures every option at its natural width. A set of
@@ -88,6 +90,32 @@ the same chapter.
 `gaps` does not fix anything. It names the block that would not fit, which
 is the difference between a fitting problem and a design decision: a gap
 held by a figure or a heading stays, and repack cannot help you.
+
+`check-reference-fit` is for the reference designs and is not optional there.
+**A reference chapter is one SVG per page, and an SVG sheet always fills its
+page**, so the builder's fill probe reports 100% and *all pages fit* whatever
+is happening inside it — a line can run off the sheet and the build stays
+green. This measures the rendered glyph boxes a line at a time and reports a
+line past the text block, a line overlapping an illustration, a block whose
+baseline intervals disagree, and a block with a ragged left edge. It refuses
+to run against a build older than the sources.
+
+Do not reach for `check-food-reference.mjs` instead. It takes a chapter
+argument and ignores it — the built path is hardcoded to the food chapter —
+so it answers any question with that chapter's 28 pages and 7,351 words. It
+also assumes every text element sits with its baseline at its own origin,
+which is true of the OCR reconstruction and false of any page written with
+`x`/`y` attributes.
+
+`rewrap-reference` is the only sane way to change a reference chapter's
+measure. SVG text does not wrap, so every line is a `<tspan>` somebody broke
+by hand — 128 of them in class-6 chapter 1. It measures the real type in the
+real face, re-breaks, and carries a bold or italic run across a break. Run
+`--dry` first and read the lines-per-page delta, because more lines is a
+taller page. Pass `--pages`: re-breaking a block re-breaks all of it, and a
+page set short of the measure on purpose will pack tighter and lose lines.
+It does not judge a break — it put an em dash at the head of a line once,
+and that was repaired by hand.
 
 `orphans` reports openers stranded at the foot of a page. An **opener** is
 anything that starts new matter — a section head, a subtopic head, a stage
@@ -178,7 +206,7 @@ them. Ten is the budget, not the boundary: four of the six run to eleven or
 twelve, because that is what the four stages came to. Holding a chapter at
 ten by letting its last page clip is not the alternative, and was what five
 of the six were doing. The stages, their contents and the components they added to the library
-are in [DESIGN.md §6a](DESIGN.md); **the rest of the section is built from the
+are in [DESIGN-MATHS.md §6a](DESIGN-MATHS.md); **the rest of the section is built from the
 components the chapter already uses**, which is the point.
 
 Every stage opens with a `.c-stage` head — number, name, and what the stage
@@ -190,7 +218,7 @@ to refit through it rather than repacking by hand.
 The section is four stages (questions tried and explained, worked problems,
 problem sets, answers) and a stage may start part-way down a page. It is
 written as a lesson, not a method: no named strategies, no coaching
-vocabulary — see DESIGN.md §6a before writing one. Two chapters were still
+vocabulary — see DESIGN-MATHS.md §6a before writing one. Two chapters were still
 carrying the ten-stage draft that §6a describes being thrown out, complete
 with The Trap Room and named moves to memorise; if a stage head is not one
 of the four, that is what you are looking at.
@@ -237,6 +265,44 @@ number and ISBN is worse than a volume with no title page, and the warning
 names the title and part it looked for. One consequence worth knowing: the
 `pages` count in a `cover.json`, which the spine is computed from, is one
 volume's, and the bind's summary now reports it that way.
+
+## The reference designs, and their face
+
+Two chapters under `pages/class-6/` are not house design. They follow a
+supplied appearance through `"design": "food-reference"` or
+`"science-reference"` in `chapter.json`, and the builder loads
+`reference-fonts.css` plus the matching stylesheet for either.
+
+**A page never reads the cover's font files.** Both reference chapters did:
+`food-reference.css` declared `Food Poppins` against
+`cover-poppins-400-latin.woff2`, which `fetch-cover-fonts.mjs` deletes on
+every run and whose own header says nothing under `pages/` may reach it. The
+day a jacket settles on Archivo, thirty-three printed pages fall back to
+Arial. There is a third fetcher now, and it is the only one these pages use:
+
+```bash
+node build/fetch-reference-fonts.mjs   # Poppins 400/700, upright and italic
+node build/type-swatch.mjs             # body-face candidates, at the chapter's own size
+```
+
+The cover fetcher asks for `wght` only, so **no italic file ever existed**
+and `.science-italic` was Chrome shearing the upright — which on a geometric
+face turns every round bowl into an ellipse. The reference fetcher asks for
+`ital,wght` and vendors four faces. If you change the family, change it in
+`FAMILY` there; the pages name it `Food Poppins` and that name is the only
+thing outside that file which would have to move.
+
+`type-swatch` is the tool for the question *should this be a different face*,
+and it follows `footer-swatch`: it sets five candidates in the chapter's own
+copy at its own size, leading and measure, and writes a sheet under
+`build/_type-swatch/`. It was run. **Poppins stayed** — the case against it
+is that its capital I, lowercase l and digit 1 are one bare stem, and
+chapter 1 has seventeen capital-I words out of 1,597, every one of them
+*It*, *In*, *If* or *Is*. Reopen it with the tool rather than from memory.
+
+Neither reference chapter declares a `palette`, and neither should: the
+house palettes reach a page through `--ch-accent` and the running head and
+footer, and `.page--food` hides both.
 
 ## Three trims, one standard
 

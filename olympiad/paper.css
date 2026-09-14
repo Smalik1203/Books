@@ -1,0 +1,304 @@
+/* Olympiad paper — A4, flowing.
+
+   Not a book page. The whole paper is one two-column flow and Chrome
+   breaks the pages; nothing in css/ applies here except the two faces
+   and KaTeX. The @page rule is written by build-paper.mjs. */
+
+:root {
+  --ink:        #1c211f;
+  --ink-soft:   #4a524e;
+  --ink-faint:  #7d837e;
+  --rule:       #cfd3cd;
+  --accent:     #2c4a7a;
+  --accent-tint:#edf1f7;
+  --paper:      #ffffff;
+
+  --font-body:    Spectral, Georgia, serif;
+  --font-display: Vollkorn, Spectral, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; background: var(--paper); color: var(--ink); }
+
+body {
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  line-height: 1.27;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-variant-numeric: lining-nums;
+}
+
+/* On screen the body is the sheet, padded by the page margins in
+   build-paper.mjs, so the columns are the width they print at — the
+   option layout is measured, and it has to be measured at the real
+   measure. */
+@media screen {
+  html { background: #e6e7e3; }
+  body { width: 210mm; margin: 10mm auto; padding: 9mm 11mm 11mm; }
+}
+
+.katex { font-size: 1.06em; }
+.nobr { white-space: nowrap; }
+b, strong { font-weight: 600; }
+
+/* ---- Header box, top of page 1 ------------------------------ */
+
+.mast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6mm;
+  margin: 0 0 6.5mm;
+  padding: 4.5mm 7mm;
+  border-radius: 2mm;
+  background: var(--accent);
+  color: #fff;
+}
+.mast p { margin: 0; }
+.mast-name {
+  font-family: var(--font-display);
+  font-size: 27pt;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+.mast-level {
+  flex: none;
+  padding: 1.2mm 6mm;
+  border-radius: 1mm;
+  background: #fff;
+  color: var(--accent);
+  font-size: 11.5pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ---- Questions ---------------------------------------------- */
+
+.cols { column-count: 2; column-gap: 7mm; column-rule: 0.4pt solid var(--rule); }
+
+.lead { break-inside: avoid; }
+.q + .lead { margin-top: 1.5mm; }
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 2.5mm;
+  padding: 1.1mm 2.5mm;
+  border-left: 2.5pt solid var(--accent);
+  background: var(--accent-tint);
+  font-family: var(--font-display);
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--accent);
+}
+.sec-head small {
+  font-family: var(--font-body);
+  font-size: 8pt;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.q {
+  display: grid;
+  grid-template-columns: 6mm minmax(0, 1fr);
+  align-items: first baseline;
+  margin: 0 0 2mm;
+  break-inside: avoid;
+}
+.qn { font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.qb { display: flow-root; }
+.stem { margin: 0 0 0.6mm; }
+
+.qfig { float: right; width: 36mm; margin: 0.5mm 0 1mm 3mm; }
+.qfig svg { display: block; width: 100%; }
+
+.opts {
+  display: grid;
+  gap: 0.4mm 3mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.o4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.o2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.o1 { grid-template-columns: minmax(0, 1fr); }
+.opts li { display: flex; gap: 1.2mm; min-width: 0; }
+.nowrap li { white-space: nowrap; }
+.ol { flex: none; color: var(--ink-soft); }
+
+.paper-end {
+  margin: 2mm 0 0;
+  text-align: center;
+  font-size: 7.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---- Pictures ---------------------------------------------- */
+
+/* style: junior in a paper's front matter — larger type for small
+   children, and more room between questions. */
+.junior { font-size: 11pt; line-height: 1.3; }
+.junior .cols { column-gap: 9mm; }
+.junior .q { margin: 0; padding: 2.6mm 0 3mm; border-bottom: 0.5pt solid #e4e6e2; }
+.junior .lead { padding-top: 1.5mm; }
+.junior .lead .sec-head { margin-bottom: 0.5mm; }
+.junior .stem { margin-bottom: 1mm; }
+
+.grp { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.6mm; vertical-align: middle; }
+.nowrap .grp { flex-wrap: nowrap; }
+.ic { display: block; height: 1.6em; width: auto; overflow: visible; }
+
+/* A question's pictures sit on a pale panel, centred. The panel is
+   sized by build-paper.mjs from how many pictures its busiest line
+   holds: one alone is drawn large, a long row small. */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8mm;
+  margin: 1mm 0 2.2mm;
+  padding: 2.6mm 3mm;
+  border-radius: 2mm;
+  background: #f4f6f2;
+}
+.panel .stem { margin: 0; }
+.pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6mm 1.8mm;
+  font-size: 15pt;
+  color: var(--ink-soft);
+}
+.panel .ic         { height: 7mm; }
+.panel--few .ic    { height: 10mm; }
+.panel--one .ic    { height: 13mm; }
+.panel--many .ic   { height: 5.5mm; }
+.panel .clock      { height: 17mm; }
+.panel--one .clock { height: 20mm; }
+.panel .blocks     { height: 15mm; }
+.panel .coin, .panel .note, .panel .dice { height: 10mm; }
+.gap { width: 4mm; }
+
+/* Picture options are cards: the letter over the picture, every card
+   in a row the same size. */
+.opts:has(.ic) { gap: 2mm 2.5mm; margin-top: 0.5mm; }
+.opts li:has(.ic) {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6mm;
+  padding: 1.2mm 1mm 1.6mm;
+  border: 0.5pt solid var(--rule);
+  border-radius: 1.5mm;
+}
+.opts li:has(.ic) .ol { font-size: 8.5pt; }
+.ot .ic     { height: 10mm; }
+.ot .n2 .ic { height: 6mm; }
+.ot .clock  { height: 14mm; }
+
+.ic *, .art * {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.1px;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ic text, .art text {
+  fill: var(--ink);
+  stroke: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.clock text { font-size: 6px; font-weight: 600; paint-order: stroke; stroke: #fff; stroke-width: 2px; }
+.coin text  { font-size: 10px; }
+.note text  { font-size: 12px; }
+.blank text { font-size: 20px; fill: var(--ink-faint); }
+.art text   { font-size: 11px; }
+.ic .tiny   { font-size: 4.5px; }
+.ic .hand-h { stroke-width: 2.6px; }
+.ic .hand-m { stroke-width: 1.6px; }
+.ic .dash   { stroke: var(--ink-faint); stroke-dasharray: 3 2; }
+
+.ic .r,   .art .r   { fill: #f19a90; }
+.ic .o,   .art .o   { fill: #f7b76d; }
+.ic .y,   .art .y   { fill: #ffd966; }
+.ic .g,   .art .g   { fill: #9fcf7f; }
+.ic .b,   .art .b   { fill: #a9cbe8; }
+.ic .br,  .art .br  { fill: #c9a27e; }
+.ic .dbr, .art .dbr { fill: #9a7250; }
+.ic .gr,  .art .gr  { fill: #d5d8d3; }
+.ic .p,   .art .p   { fill: #f6b8c6; }
+.ic .w,   .art .w   { fill: #ffffff; }
+.ic .k,   .art .k   { fill: var(--ink); }
+
+/* ---- Figures ----------------------------------------------- */
+
+.fg-grid  { fill: none; stroke: var(--rule); stroke-width: 0.8; }
+.fg-axis  { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.fg-arrow { fill: var(--ink); }
+.fg-pt    { fill: var(--accent); }
+.fg-lab   { font-family: var(--font-body); font-size: 12px; font-style: italic; fill: var(--ink); }
+.fg-tick  {
+  font-family: var(--font-body);
+  font-size: 9px;
+  fill: var(--ink-soft);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 2.5;
+}
+
+/* ---- Answer key -------------------------------------------- */
+
+.key { page: bare; }
+.key-head { padding-bottom: 3mm; margin-bottom: 7mm; border-bottom: 2.5pt solid var(--accent); }
+.key-head p { margin: 0; }
+.key-kicker {
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.key-head h1 { margin: 0.5mm 0 1mm; font-family: var(--font-display); font-size: 22pt; font-weight: 600; }
+.key-sub { color: var(--ink-soft); }
+
+.key h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 2.5mm;
+  font-family: var(--font-display);
+  font-size: 13pt;
+  font-weight: 600;
+}
+.key h2 small { font-family: var(--font-body); font-size: 8.5pt; font-weight: 400; color: var(--ink-soft); }
+
+.key-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin-bottom: 8mm;
+  border-top: 0.6pt solid var(--ink);
+  border-left: 0.4pt solid var(--rule);
+}
+.key-grid div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5mm 2mm;
+  border-right: 0.4pt solid var(--rule);
+  border-bottom: 0.4pt solid var(--rule);
+}
+.kq { font-size: 8pt; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.ka { font-size: 12pt; font-weight: 700; color: var(--accent); }
+
+.key-dist { margin: 0; font-size: 9pt; color: var(--ink-soft); }

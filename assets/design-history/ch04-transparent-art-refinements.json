@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen",
+  "selectedFresh": [
+    {
+      "key": "opener",
+      "brief": "A traditional wooden Kerala trading sailing ship with two tan lateen sails, complete masts and fine rigging, carrying sacks of spices. Three-quarter view, whole vessel, gently rough teal waves confined to a narrow patch around hull. NO sky, NO clouds, no broad sea backdrop.",
+      "prompt": "Create a foreground-focused TRANSPARENT PNG cutout, with a real alpha channel. A traditional wooden Kerala trading sailing ship with two tan lateen sails, complete masts and fine rigging, carrying sacks of spices. Three-quarter view, whole vessel, gently rough teal waves confined to a narrow patch around hull. NO sky, NO clouds, no broad sea backdrop. Carefully observed watercolor and pencil scientific-book illustration for 11–12-year-olds. Matte tactile materials, clean contours, natural proportions. No background, no checkerboard texture, no halo, no text or borders. Entire foreground subject with small transparent margins, landscape canvas."
+    },
+    {
+      "key": "floating-compass",
+      "brief": "A clear glass bowl of pale blue water with a small flat rectangular cork float at its centre. A straight horizontal steel sewing needle lies level on top of cork, secured at centre with one small strip of translucent tape. Sharp tip left, eye right, entire needle visible. The complete bowl with intact rim and base.",
+      "prompt": "Create a foreground-focused TRANSPARENT PNG cutout, with a real alpha channel. A clear glass bowl of pale blue water with a small flat rectangular cork float at its centre. A straight horizontal steel sewing needle lies level on top of cork, secured at centre with one small strip of translucent tape. Sharp tip left, eye right, entire needle visible. The complete bowl with intact rim and base. Carefully observed watercolor and pencil scientific-book illustration for 11–12-year-olds. Matte tactile materials, clean contours, natural proportions. No background, no checkerboard texture, no halo, no text or borders. Entire foreground subject with small transparent margins, landscape canvas."
+    },
+    {
+      "key": "fish",
+      "brief": "A shallow simple matte brass dish of pale golden oil. A small oval cork raft floats at centre, with a FLAT fish-shaped iron strip lying horizontally DIRECTLY on cork. No pole, vertical stand or upright fish. Foreground scientific model.",
+      "prompt": "Create a foreground-focused TRANSPARENT PNG cutout, with a real alpha channel. A shallow simple matte brass dish of pale golden oil. A small oval cork raft floats at centre, with a FLAT fish-shaped iron strip lying horizontally DIRECTLY on cork. No pole, vertical stand or upright fish. Foreground scientific model. Carefully observed watercolor and pencil scientific-book illustration for 11–12-year-olds. Matte tactile materials, clean contours, natural proportions. No background, no checkerboard texture, no halo, no text or borders. Entire foreground subject with small transparent margins, landscape canvas."
+    }
+  ],
+  "zigzag": "Use case: scientific-educational. Foreground focused transparent PNG illustration for a sophisticated Class 6 science textbook. Three realistic matte light grey rectangular bar magnets arranged END TO END in a gentle zigzag, with small gaps. First bar left horizontal, second slopes down-right 20 degrees, third slopes up-right 20 degrees. All three uniformly grey: do not show pole colours. On first bar mark left end \"1\" and right end \"2\". On second mark left end \"3\" and right end \"4\". On third mark left end \"5 N\" and right end \"6\". These are the only markings: exactly six numbered ends and N only beside 5. No other text, arrows or ornaments. Realistic watercolor and pencil material texture and soft shading, no vector diagram style, no glossy CGI. Wide landscape composition and genuinely transparent background with alpha channel, not a checkerboard or white background. Every magnet fully visible.",
+  "rejected": [
+    {
+      "prompt": "Correct this scientific illustration. The fish-shaped iron piece must lie FLAT horizontally directly ON TOP of the cork float. Remove the vertical stem completely: no upright fish, no weather vane, no pole. Keep the shallow brass dish and oil with cork floating at the surface. Maintain realistic watercolor and pencil texture but soften shiny metallic reflections. Foreground-only cutout with genuine alpha transparency outside the dish, no backdrop or halo. No labels or text.",
+      "reason": "The foreground correction was right, but the output lacked alpha transparency."
+    },
+    {
+      "prompt": "Remove the checkerboard background from this image. Return ONLY the foreground brass dish with oil, cork float and flat fish-shaped iron piece as a TRANSPARENT PNG CUTOUT with an actual alpha channel. Make every pixel outside the dish transparent. Do not render a checkerboard, colored backdrop, halo, shadow wash, border or preview surface. Keep foreground contents unchanged. This is background removal for placement on a printed book page.",
+      "reason": "The output again lacked true alpha transparency; replaced by a fresh generated PNG."
+    }
+  ],
+  "note": "The initial opener and floating-compass edits also lacked alpha and were replaced by the selected fresh images."
+}

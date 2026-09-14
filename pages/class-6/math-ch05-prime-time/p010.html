@@ -1,0 +1,61 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">5.4</span><span class="name">Prime Factorisation</span></h2>
+
+      <h3>Checking whether two numbers are co-prime</h3>
+
+      <p>The teacher asks the class, “Are 56 and 63 co-prime?” Anshu and Guna know that if the two numbers have a common factor other than 1, they are not co-prime. They start to check.</p>
+
+      <p><strong>Anshu:</strong> I can write $56 = 14 \times 4$ and $63 = 21 \times 3$. So 14 and 4 are factors of 56, and 21 and 3 are factors of 63. There are no common factors, so the numbers are co-prime.</p>
+
+      <p><strong>Guna:</strong> Wait. I can also write $56 = 7 \times 8$ and $63 = 9 \times 7$. So 7 is a factor of both numbers. They are not co-prime.</p>
+
+      <p>Guna is right, because 7 is a common factor. So where did Anshu go wrong? Writing $56 = 14 \times 4$ shows that 14 and 4 are factors of 56. It does not show <em>all</em> the factors of 56. The same is true for 63.</p>
+
+      <p>Try another pair: 80 and 63. Each of them can be split into two factors in many ways.</p>
+
+      <div class="work work--centred">
+        <p>$80 = 40 \times 2 = 20 \times 4 = 10 \times 8 = 16 \times 5 = \ ???$</p>
+        <p>$63 = 9 \times 7 = 3 \times 21 = \ ???$</p>
+      </div>
+
+      <p>The ??? says that there may be more ways. Take $80 = 16 \times 5$ and $63 = 9 \times 7$. These show no common factor. Can we say that 80 and 63 are co-prime? Anshu’s mistake shows that we cannot, because some other way of splitting might show a common factor. We need a method that checks every possibility.</p>
+
+      <h3>Prime factorisation</h3>
+
+      <p>Take the number 56. It is composite, because $56 = 4 \times 14$. So 4 and 14 are both factors of 56. Now take one of them, say 14. It is composite too: $14 = 2 \times 7$. So $56 = 4 \times 2 \times 7$. And 4 is composite: $4 = 2 \times 2$. So</p>
+
+      <div class="eq">$56 = 2 \times 2 \times 2 \times 7$</div>
+
+      <p>Every factor in this line is 2 or 7, and both are primes. A prime cannot be split into smaller factors, so we stop. Fig. 5.8 draws the same steps as a tree, with the primes at the ends circled.</p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 211 130" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A tree splitting 56 into 4 and 14, then 4 into 2 and 2, and 14 into 2 and 7. The primes at the ends are circled">
+            <line class="dg-thin" x1="65" y1="73" x2="45" y2="95"/>
+            <line class="dg-thin" x1="65" y1="73" x2="85" y2="95"/>
+            <line class="dg-thin" x1="145" y1="73" x2="125" y2="95"/>
+            <line class="dg-thin" x1="145" y1="73" x2="165" y2="95"/>
+            <line class="dg-thin" x1="105" y1="29" x2="65" y2="51"/>
+            <line class="dg-thin" x1="105" y1="29" x2="145" y2="51"/>
+            <circle class="dg-fill-a-soft" cx="45" cy="106" r="12"/>
+            <text class="dg-tick" x="45" y="110" text-anchor="middle">2</text>
+            <circle class="dg-fill-a-soft" cx="85" cy="106" r="12"/>
+            <text class="dg-tick" x="85" y="110" text-anchor="middle">2</text>
+            <text class="dg-tick" x="65" y="66" text-anchor="middle">4</text>
+            <circle class="dg-fill-a-soft" cx="125" cy="106" r="12"/>
+            <text class="dg-tick" x="125" y="110" text-anchor="middle">2</text>
+            <circle class="dg-fill-a-soft" cx="165" cy="106" r="12"/>
+            <text class="dg-tick" x="165" y="110" text-anchor="middle">7</text>
+            <text class="dg-tick" x="145" y="66" text-anchor="middle">14</text>
+            <text class="dg-tick" x="105" y="22" text-anchor="middle">56</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.8</span> Splitting 56 until only primes are left.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

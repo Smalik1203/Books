@@ -1,0 +1,35 @@
+/* ============================================================
+   CLASS 6 EDITION — the master page for Class 6 Mathematics.
+
+   Finished page 196 x 276 mm. Margins 22.5 mm top and bottom,
+   18 mm left and right. Bleed and slug are added by the builder;
+   they are not part of the finished size.
+
+   The side margins are the same on both sides, as specified, so
+   there is no gutter allowance to mirror: inside and outside are
+   both 18 mm, and the text block is 160 x 231 mm.
+
+   Only the size-dependent tokens move, as with every edition sheet.
+   Colour, type scale, components and diagrams are shared.
+
+   Figures are set against the height of the text block (see
+   tokens.css). Crown Quarto's block is 207 mm tall; this one is
+   231 mm, so every step is scaled by 231/207 and rounded.
+   ============================================================ */
+
+:root {
+  --trim-w: 196mm;
+  --trim-h: 276mm;
+
+  --margin-top:     22.5mm;
+  --margin-bottom:  22.5mm;
+  --margin-inside:  18mm;
+  --margin-outside: 18mm;
+  --measure:        160mm;
+
+  --fig-sm:   47mm;
+  --fig-md:   57mm;
+  --fig-lg:   66mm;
+  --fig-xl:   79mm;
+  --fig-full: 141mm;
+}
