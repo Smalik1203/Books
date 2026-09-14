@@ -1126,3 +1126,22 @@ settings the rest of the volume inherits rather than conflicts found.
    Angles are named $\angle a$, $\angle 1$ or $\angle ABC$.
 5. **Names:** none. The source's figure values for its exercises could not be
    read and were chosen here; see the chapter's EDIT-LOG.
+
+## Class 7 · Mathematics I · Chapter 6 — Number Play
+
+1. **Terms defined here:** *parity*, *magic square*, *magic sum*,
+   *Virahanka numbers* (also Virahanka–Fibonacci numbers), *cryptarithm*.
+   *Proof* is used as Chapter 5 defined it.
+2. **Parity rules stated:** a sum is odd exactly when it has an odd number of
+   odd numbers in it; a product is odd only when every number multiplied is
+   odd; the $n$th even number is $2n$ and the $n$th odd number is $2n - 1$.
+   Later chapters can cite them.
+3. **Letter-numbers** are used as Chapter 4 left them: $3n + 4$, $2n - 1$,
+   and the general magic square with centre $m$. Nothing is solved as an
+   equation; M4 $+$ 4M $= 121$ in Beyond the Book is settled by place value
+   and $11 \times$ M $= 77$, a multiplication fact, not by algebra.
+4. **Spelling:** *Virahanka*, *Pingala*, *Gopala*, *Hemachandra*, *Chautisa
+   Yantra*, *Parshvanath*, *Lo Shu*, *Kubera Yantra* — plain Latin letters,
+   no diacritics, as in the rest of the book.
+5. **Names:** Kishor, Vidya, Martin, Maria, Lakpa, Dorjee, Liswini and Angaan
+   are the source's; Beyond the Book adds none.
