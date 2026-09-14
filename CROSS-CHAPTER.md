@@ -1231,3 +1231,19 @@ settings the rest of the volume inherits rather than conflicts found.
    negative numbers.
 5. **Names:** Rakesh, Mala, Anita and Anil are the source's; Beyond the Book
    adds Priya, Arun, Meena and Kiran.
+
+## Class 7 · Mathematics II · Chapter 3 — Finding Common Ground
+
+1. **Terms defined here:** *highest common factor* (HCF, also GCD),
+   *lowest common multiple* (LCM), *prime factorisation*, *division method*,
+   *co-prime*, *conjecture*, *counterexample*, *general statement*,
+   *generalisation*. *Prime* is recalled from Class 6.
+2. **Notation:** prime factorisations are written in increasing order with
+   $\times$, no exponents; $\text{HCF}$ and $\text{LCM}$ are upright in maths.
+3. **Results stated:** HCF takes each common prime the fewest times, LCM each
+   prime the most times; $\text{HCF} \times \text{LCM}$ is the product of two
+   numbers; the HCF divides the LCM (Beyond the Book).
+4. **Used ahead of teaching:** Set 3.6 Q13 adds fractions with unlike
+   denominators; Mathematics I Chapter 8 multiplied and divided fractions only.
+5. **Names:** Sameeksha, Lekhana, Anshu, Guna and Kabamai are the source's;
+   Beyond the Book adds Riya and Sameer.
