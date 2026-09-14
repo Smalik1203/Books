@@ -262,7 +262,13 @@ function libraryHtml(classes, coverClasses) {
      in it. Most classes are one volume, and a Class 6 reader offered
      Mathematics II was offered a book that is not going to exist, where
      "nothing here yet" reads as a promise. The day a chapter lands in a
-     volume, the volume appears. Science keeps its place in every class. */
+     volume, the volume appears. Science keeps its place in every class.
+
+     The list orders the subjects it knows; it does not gate the rest. A
+     chapter whose subject is none of the three — Class 3's తెలుగు — gets a
+     section of its own after them, offered only where a chapter uses it.
+     Before this its card was dropped without a word, and Class 3 sat in
+     the class menu with only an empty Science under it. */
   const SUBJECTS = ['Mathematics I', 'Mathematics II', 'Science'];
   const VOLUMED = (sub) => sub.startsWith('Mathematics');
 
@@ -275,8 +281,11 @@ function libraryHtml(classes, coverClasses) {
     const covers = (coverClasses.find((c) => c.cls === cls) || { covers: [] }).covers;
     const shown = esc(cls.replace(/^class-/, ''));
 
-    const listed = SUBJECTS.filter((sub) =>
+    const known = SUBJECTS.filter((sub) =>
       !VOLUMED(sub) || chapters.some((c) => c.subject === sub));
+    const extra = [...new Set(chapters.map((c) => c.subject))]
+      .filter((sub) => sub && !SUBJECTS.includes(sub)).sort();
+    const listed = [...known, ...extra];
 
     const perSubject = listed.map((sub) => {
       const mine = chapters.filter((c) => c.subject === sub);

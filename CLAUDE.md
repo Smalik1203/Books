@@ -556,6 +556,12 @@ it means the reader is shown a book they did not ask for, under a heading
 that happens to read the same. Only arrival sets a subject on a class the
 reader did not just pick, and it sets it itself, after the rebuild.
 
+**The subject menu is not a whitelist.** `SUBJECTS` in `serve.mjs` orders the
+three it knows — Mathematics I, Mathematics II, Science — and any other subject
+a class's chapters declare is offered after them. Class 3's తెలుగు sample sat
+in the class menu with only an empty Science under it until that was true: a
+chapter whose subject was not on the list was dropped without a word.
+
 ```bash
 npm run check:studio     # 120 assertions: the chooser, the cards, the bar, the wrap, the build, the restart
 ```
