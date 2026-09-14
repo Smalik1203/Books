@@ -30,6 +30,7 @@ const FAMILIES = [
   { slug: 'grotesk', spec: 'Space+Grotesk:wght@400;500;600;700' },
   { slug: 'poppins', spec: 'Poppins:wght@400;500;600;700;800' },
   { slug: 'lexend', spec: 'Lexend:wght@400;500;600;700' },
+  { slug: 'outfit', spec: 'Outfit:wght@400;500;600;700' },
 ];
 
 await mkdir(`${ROOT}/fonts`, { recursive: true });
