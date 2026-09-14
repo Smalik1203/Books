@@ -9,15 +9,15 @@
   "edition_statement": "First edition, 2026.",
   "isbn": "978-93-00000-02-6",
   "url": "classbridge.in",
-  "_direction": "tile, its own direction. It was arc, which is Class 9 mathematics, so three of the four wraps in the repo came off the press the same colour — a direction owns the palette of the whole wrap, so sharing one is sharing an identity. tile mirrors comb’s arrangement and changes the hue, because two parts of one class should read as a pair rather than as two unrelated books. Two volumes of one class that share a direction share a palette, and a shelf with both on it would show the same book twice. The back is quoted from _shared/back-arc.html unchanged — the blurb names the class and not the part, so it is genuinely the series' and belongs in _shared. The front and the spine are not: the shared ones set Part 1 in the markup, and a part number is not something cover.json can push into a panel. No finish is declared: on a direction the finish is inert.",
+  "_direction": "tile, its own direction: comb’s type arrangement (a dark front, the spine going with it) in wine, amber and cream, so the two parts of Class 8 read as a pair. The artwork is this volume’s own proof that two squares make one: the same four right triangles in two equal squares, leaving a² and b² one way and c² the other, with a² + b² = c² beneath (Chapters 2, 4 and 7). It replaced a copy of arc’s discs and floating figures, which were Class 9’s and said nothing about this book. The back is this cover’s own (back.html): the series’ Class 8 words over a straight edge of right triangles, with square markers, instead of arc’s curve. None of its colours is on another subject’s wrap: the back’s lede, which was a burnt orange close to Science’s, is now a wine rose. No finish is declared: on a direction the finish is inert.",
   "_spine": "No spineWidth. pages is measured, not guessed: a --book run of class-8 gives this volume 184 numbered pages plus 3 of front matter, which is 187, rounded up to 188 for a multiple of four. At 0.106mm the block bulks to 10.0mm and the case takes it to 10.5, which is what the builder computes and prints — and which is under SLIM_SPINE, so the furniture turns head-to-foot as Part 1's does at 12.8mm. Class 9 overrides its own arithmetic with a printer-quoted 15mm on a stock the caliper here does not describe; get the quote before this goes to press. Re-derive pages from --book whenever a chapter changes length.",
   "pages": 188,
   "paperCaliper": 0.106,
   "caseAllowance": 0.5,
   "content": [
-    "../_shared/back-arc.html",
+    "back.html",
     "spine.html",
-    "front.html"
+    "front-dissection.html"
   ],
   "qr": "assets/qr-classbridge.svg",
   "direction": "tile"

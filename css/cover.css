@@ -1399,7 +1399,7 @@ body.bleed .jacket {
   --jk-ground-ink:    #5c1f33;
   --jk-ground-soft:   #8a6470;
   --jk-ground-rule:   #e6d6c6;
-  --jk-ground-accent: #c2683a;
+  --jk-ground-accent: #8e3a52;
   --jk-ground-art:    none;
 
   /* the back's deep half — the front's own wine, so the colour runs
@@ -1435,12 +1435,6 @@ body.bleed .jacket {
 .jacket--tile .classmark { border-left-width: 0.5mm; }
 .jacket--tile .classmark__num { font-weight: 700; }
 
-/* The two discs are the only part of arc's composition that carries
-   its own colour rather than a token — slate and ghost are bluish
-   greys, which on wine read as dirt. */
-.jacket--tile .arc-disc--slate { fill: #7c3049; opacity: 0.55; }
-.jacket--tile .arc-disc--ghost { fill: #e3a24b; opacity: 0.16; }
-
 /* ---- spine ------------------------------------------------
    The front is the dark panel, as comb's is, so the spine goes wine
    with it and the colour runs unbroken from the front round to the
@@ -1456,6 +1450,160 @@ body.bleed .jacket {
 .jacket--tile .spine__badge .jk-label,
 .jacket--tile .spine__class .jk-label { color: var(--jk-front-label); }
 .jacket--tile .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
+
+/* ---- tile: the artwork -------------------------------------
+   The front is the volume's proof that two squares make one: the
+   same four right triangles in two equal squares, leaving a² and b²
+   one way and c² the other. The triangles take the accent, the
+   squares they leave are a faint tint of the ink, and every line is
+   the ink. It replaced arc's discs, so the two arc-disc overrides
+   that used to sit above are gone. */
+.t8-tri  { fill: var(--jk-front-accent); }
+.t8-sq   { fill: var(--jk-front-ink); opacity: 0.14; }
+.t8-ln   { fill: none; stroke: var(--jk-front-ink); stroke-width: 0.55; stroke-linejoin: round; }
+.t8-lab {
+  font-family: var(--font-body);
+  font-style: italic;
+  fill: var(--jk-front-ink);
+  font-size: calc(var(--dg-type) * 1.9 * var(--dg-v) / var(--dg-w) * 1px);
+}
+.t8-lab--sm {
+  fill: var(--jk-front-soft);
+  font-size: calc(var(--dg-type) * 1.15 * var(--dg-v) / var(--dg-w) * 1px);
+}
+.t8-eq {
+  font-family: var(--jk-display);
+  font-weight: 700;
+  fill: var(--jk-front-accent);
+  font-size: calc(var(--dg-type) * 3.4 * var(--dg-v) / var(--dg-w) * 1px);
+}
+.t8-note {
+  font-family: var(--jk-display);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--jk-front-soft);
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+}
+.t8-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  margin: 0;
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: var(--jk-front-ink);
+}
+.t8-strap span { color: var(--jk-front-accent); }
+
+/* ---- tile: the back ----------------------------------------
+   Arc's curve and its column of discs were Class 9's. This back is a
+   straight edge carrying a row of the front's right triangles, with
+   each claim under a square amber marker. */
+.jacket--tile .jacket__back { display: block; padding: 0; background: var(--jk-ground); }
+.t8-edge { position: absolute; inset: 0; }
+.t8-edge svg { display: block; width: 100%; height: 100%; }
+.t8-edge__fill  { fill: var(--jk-deep); }
+.t8-edge__amber { fill: var(--jk-front-accent); }
+.t8-edge__wine  { fill: var(--jk-deep); }
+
+.t8-back__top {
+  position: absolute;
+  top: var(--jk-top); left: var(--jk-out); right: var(--jk-in);
+}
+.t8-back__top .wordmark { color: var(--jk-ground-ink); }
+.t8-back__lede {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-concept) * 1.32);
+  font-weight: 600;
+  line-height: 1.24;
+  color: var(--jk-ground-accent);
+  margin: 6mm 0 5mm;
+}
+.t8-back__blurb {
+  font-family: var(--font-body);
+  font-size: var(--size-note);
+  line-height: 1.55;
+  color: var(--jk-ground-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.58);
+}
+
+.t8-back__deep {
+  position: absolute;
+  left: var(--jk-out); right: var(--jk-in);
+  top: calc(var(--trim-h) * 0.525);
+  bottom: var(--jk-bottom);
+  display: flex;
+  flex-direction: column;
+}
+.t8-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5mm;
+}
+.t8-item { display: grid; grid-template-columns: 11mm 1fr; column-gap: 5mm; align-items: start; }
+.t8-item__mark {
+  width: 11mm; height: 11mm;
+  border-radius: 1.2mm;
+  background: var(--jk-front-accent);
+  display: grid; place-items: center;
+}
+.t8-item__mark svg { width: 6mm; height: 6mm; color: var(--jk-deep); }
+.t8-item__term {
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--jk-deep-ink);
+  margin: 0.6mm 0 1mm;
+}
+.t8-item__def {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.45;
+  color: var(--jk-deep-soft);
+  margin: 0;
+  max-width: calc(var(--trim-w) * 0.66);
+}
+
+.t8-foot {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 6mm;
+  align-items: end;
+  padding-top: 5mm;
+  border-top: var(--jk-hair) solid var(--jk-deep-soft);
+}
+.t8-foot__qr { width: 19mm; height: 19mm; background: #ffffff; padding: 1mm; display: block; }
+.t8-foot__qr svg, .t8-foot__qr img { display: block; width: 100%; height: 100%; }
+.t8-foot__by {
+  align-self: center;
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: var(--jk-deep-soft);
+  margin: 0;
+}
+.t8-foot__by strong { font-family: var(--jk-display); font-weight: 700; color: var(--jk-deep-ink); }
+.t8-foot .barcode__mark { background: #ffffff; padding: 1.5mm 2mm; display: block; }
+.t8-foot .barcode__mark svg { display: block; width: 32mm; height: 16mm; }
+.t8-foot__isbn {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-caption) * 0.9);
+  color: var(--jk-deep-soft);
+  display: block;
+  text-align: center;
+  margin-top: 1.4mm;
+}
 
 /* ============================================================
    DIRECTIONS — zoom and mobile: Class 7 Parts 1 and 2
