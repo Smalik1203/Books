@@ -459,14 +459,24 @@ a fixed percentage it returns to fit to page, so it is a way back as well as
 a toggle.
 
 **A chapter opens at 100%**, the page at the size the stylesheet says.
-**Fit to page is 71% on the trim and 66% on the press sheet**, and measures
-nothing: it used to measure the stage, which put it anywhere from 46% to
-116%, so the same book came up a different size on every screen and no two
-people describing a page were describing the same one. Two numbers because
-there are two sheets — 209 × 266 against 189 × 246 — and one number would
-make the page jump larger the moment Bleed went on, which is the one moment
-it should sit still. Fit to width still measures, because the width of the
-stage is the whole question there.
+**Both fits measure the screen they are on.** Fit to page is the largest
+level at which one whole sheet — a page, a spread's pair, a wrap, or the
+press sheet with its slug — fits the stage across and top to bottom; fit to
+width fills the stage across. The sheet is read from the boxes the book
+actually drew, not from `cfg`'s millimetres, which stand in only until the
+iframe has loaded. For a while fit to page was a fixed 71% (66% on the
+press sheet, 70% and 62% on a cover) so that every screen showed the same
+size, and that is what made it wrong on most of them: a page too tall to see
+on a laptop at 125% scaling or on a phone, and small on a big monitor. When
+the size itself has to be the same everywhere, type the percentage.
+
+**A fit follows the stage, not the window.** The stage changes size without
+a window resize — the bar wraps to two rows under 980px, a phone rotates, its
+address bar slides away — so `app.js` watches the stage with a
+`ResizeObserver` and the visual viewport as well, re-fits only on a real
+change of size (a scrollbar appearing must not loop), and keeps the reader's
+place in the book when it does. `.viewer` is `100dvh` so a fitted page's
+foot is not behind a phone's address bar.
 
 **The level is typed, not chosen.** Any percentage from 10 to 500 — a
 proof gets read at whatever makes one figure legible, and 137 was never
@@ -571,14 +581,12 @@ files, offered as **Print PDF** and **Print PNG**. A panel edited in
 `covers/<class>/_shared/` rebuilds every cover of that class, since that is
 who shares it.
 
-**A cover fits to page at 70% on the wrap and 62% on the press sheet**, and
-the subtitle says *Class 9 · cover* and nothing more. Both are departures
-from the book's own numbers and both are deliberate: a wrap is two trims
-and a spine, so the page's 71% puts a third of it past the edge of the
-stage, and the drop to 62% is steeper than the book's because a jacket
-bleeds 15mm where a page bleeds 3 — the press sheet grows by 44mm in each
-direction rather than 20. `cfg.kind` is the only thing that tells `app.js`
-which of the two it is showing. The direction and finish used to be in that
+**A cover fits to page on the jacket**, or on the press sheet on the stage
+round it that carries the slug and the marks, and the subtitle says *Class 9
+· cover* and nothing more. A wrap is two trims and a spine, so it fits
+lower than a page does on the same screen, and lower again on the press
+sheet, because a jacket bleeds 15mm where a page bleeds 3. `cfg.kind` is the
+only thing that tells `app.js` which of the two it is measuring. The direction and finish used to be in that
 subtitle — they are set in `cover.json`, which is where to read them.
 
 **A wrap is a sheet, and nothing may carry a sheet size of its own.**
