@@ -248,7 +248,8 @@ function libraryHtml(classes, coverClasses) {
     </a>`;
 
   const names = [...new Set([...classes.map((c) => c.cls),
-                             ...coverClasses.map((c) => c.cls)])].sort();
+                             ...coverClasses.map((c) => c.cls)])]
+    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));  // class-10 after class-9
 
   /* The subjects a class can hold, in the order the chooser lists them.
 
