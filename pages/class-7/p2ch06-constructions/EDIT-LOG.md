@@ -82,5 +82,5 @@ simulator before writing: in the chapter proper, additions to the eyes, the
 perpendicular bisector method, the rope construction, the flower design, the
 repeating unit and angle copying, parallel lines (two), the hexagon questions
 (three), the 60° angle, the tangram (three), tiling, the plane, and questions
-in Sets 6.1, 6.4, 6.5, 6.7 and 6.9; in Beyond the Book, one sentence in each
+in Sets 6.4, 6.5, 6.7 and 6.9; in Beyond the Book, one sentence in each
 of Problems 3 and 5. `fit-options` narrowed two option lists.
