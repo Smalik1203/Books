@@ -1292,3 +1292,25 @@ settings the rest of the volume inherits rather than conflicts found.
    Khushboo, Nafisa, Vishal, Sampat, Jithin, Yaangba, Poovizhi, Sita, Sanskruti,
    Rintu, Nikhil, Sunil, Preyashi and Aditi are the source's; Beyond the Book
    adds Asha, Riya and Arjun.
+
+## Class 7 · Mathematics II · Chapter 6 — Constructions and Tilings
+
+1. **Terms defined here:** *bisection*, *perpendicular bisector*, *bisect* (an
+   angle), *regular polygon* (recalled), *tiling*; *supporting line* is used
+   for the construction lines a figure is built on. The congruence conditions
+   SSS and SAS are taken from Chapter 1.
+2. **Results stated:** a point at equal distances from X and Y lies on the
+   perpendicular bisector of XY; the perpendicular bisector, a right angle at a
+   point, an angle bisector, a copied angle and a parallel line are constructed
+   with ruler and compass, each justified by congruent triangles; a 60° angle
+   comes from an equilateral triangle, and six make a regular hexagon; angles
+   placed round a point fill it exactly when they add up to 360°; a chessboard
+   colouring shows when 2 × 1 tiles cannot cover a region.
+3. **Notation:** constructions are numbered steps in a list; figures label
+   points with capital letters and lines with small italic letters (l, m, n);
+   grids are written rows × columns ($4 \times 6$ is 4 rows and 6 columns).
+4. **Not taught:** constructing a regular pentagon (deferred, as in the
+   source); which convex polygons tile the plane.
+5. **Names:** Sulba-sutras, Katyayana-sulbasutra and Vedangas are set without
+   diacritics, as the body face lacks the marked letters; M. C. Escher is named.
+   Beyond the Book adds Riya.
