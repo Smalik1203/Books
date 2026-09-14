@@ -484,6 +484,9 @@ async function checkViewerStructure() {
 /* The book the stub viewer shows: two pages at the real trim, so a
    percentage means the same thing here as on a chapter. */
 const STUB_TRIM = { w: 189, h: 246 };
+/* The press sheet is its own, larger book, so that a fit which measures
+   the sheet can be seen to land lower on it. */
+const STUB_MEDIA = { w: 209, h: 266 };
 
 async function checkViewerBehaviour() {
   if (!CHROME) { bad('chrome found', 'none', 'a chrome or chromium binary'); return; }
@@ -493,18 +496,32 @@ async function checkViewerBehaviour() {
   await mkdir(dir, { recursive: true });
 
   const mm = (v) => (v * 96 / 25.4) + 'px';
-  await writeFile(path.join(dir, 'book-stub.html'),
-    '<!doctype html><html><head><style>body{margin:0}'
-    + `.page{width:${mm(STUB_TRIM.w)};height:${mm(STUB_TRIM.h)};background:#fff;margin:0 auto 8px}`
+  const stubBook = (s) => '<!doctype html><html><head><style>body{margin:0}'
+    + `.page{width:${mm(s.w)};height:${mm(s.h)};background:#fff;margin:0 auto 8px}`
     + '</style></head><body>'
     + '<div class="page" data-folio="1"></div><div class="page" data-folio="2"></div>'
-    + '</body></html>');
+    + '</body></html>';
+  await writeFile(path.join(dir, 'book-stub.html'), stubBook(STUB_TRIM));
+  await writeFile(path.join(dir, 'book-stub-bleed.html'), stubBook(STUB_MEDIA));
+  /* A wrap in the shape cover.css gives it: two trims and a 15mm spine
+     in a stage padded 8mm, and on the press sheet 15mm of bleed in a 7mm
+     slug — 437 × 290 all told. */
+  await writeFile(path.join(dir, 'cover-stub.html'),
+    '<!doctype html><html><head><style>body{margin:0}'
+    + `.cover-stage{display:flex;justify-content:center;padding:${mm(8)}}`
+    + `.jacket{width:${mm(393)};height:${mm(246)};background:#fff}`
+    + '</style></head><body><div class="cover-stage"><div class="jacket"></div></div></body></html>');
+  await writeFile(path.join(dir, 'cover-stub-bleed.html'),
+    '<!doctype html><html><head><style>body{margin:0}'
+    + `.cover-stage{padding:${mm(7)};width:max-content;margin:0 auto}`
+    + `.jacket{width:${mm(423)};height:${mm(276)};background:#fff}`
+    + '</style></head><body class="bleed"><div class="cover-stage"><div class="jacket"></div></div></body></html>');
 
   const cfg = {
-    target: 'stub', trimUrl: 'book-stub.html', bleedUrl: 'book-stub.html',
+    target: 'stub', trimUrl: 'book-stub.html', bleedUrl: 'book-stub-bleed.html',
     imposeUrl: 'book-stub.html',
-    trimW: STUB_TRIM.w, mediaW: STUB_TRIM.w + 6,
-    trimH: STUB_TRIM.h, mediaH: STUB_TRIM.h + 6,
+    trimW: STUB_TRIM.w, mediaW: STUB_MEDIA.w,
+    trimH: STUB_TRIM.h, mediaH: STUB_MEDIA.h,
   };
 
   /* The toolbar, taken from serve.mjs rather than retyped, so this
@@ -563,20 +580,34 @@ async function checkViewerBehaviour() {
     R.fitPage = lvl();
     R.iconAtPage = fitIcon();
 
-    /* Fit to page is 71% and does not measure anything, so it is 71% on
-       a tall stage and on a short one alike — which is the point of it,
-       and the only way to tell it apart from a measurement that happens
-       to land near 71% on the fixture's stage. */
-    const stg = $('stage'), keptH = stg.style.height;
-    stg.style.height = '1400px'; toFitPage(); R.fitOnTall = lvl();
-    stg.style.height = '260px';  toFitPage(); R.fitOnShort = lvl();
-    stg.style.height = keptH;    toFitPage();
+    /* Fit to page measures the stage it is on, so what is checked is the
+       geometry rather than a number: the whole sheet is on the screen,
+       one side of it fills the stage, and a stage of another shape gets
+       another level. A fixed 71% passed the old version of this check on
+       every stage and was wrong on most real screens. */
+    const stg = $('stage'), keptH = stg.style.height, keptW = stg.style.width;
+    const shows = () => {
+      const k = Number($('inner').style.zoom);
+      const pg = $('frame').contentDocument.querySelector('.page').getBoundingClientRect();
+      const W = stg.clientWidth, H = stg.clientHeight;
+      const w = $('inner').offsetWidth * k, h = pg.height * k;
+      return w <= W + 1 && h <= H + 1 && Math.max(w / W, h / H) > 0.85;
+    };
+    R.fitShowsWhole = shows();
+    stg.style.height = '1400px'; toFitPage(); R.fitOnTall = lvl();   R.tallShows = shows();
+    stg.style.height = '260px';  toFitPage(); R.fitOnShort = lvl();  R.shortShows = shows();
+    stg.style.height = keptH;
+    stg.style.width = '420px';   toFitPage(); R.fitOnNarrow = lvl(); R.narrowShows = shows();
+    stg.style.width = keptW;     toFitPage();
 
-    /* The press sheet is larger than the trim, so it fits at a lower
-       level — 66% against 71%, which keeps the page itself the same
-       size on the screen as Bleed goes on and off. */
-    $('sheet-bleed').click(); toFitPage(); R.fitOnBleed = lvl();
-    $('sheet-bleed').click(); toFitPage(); R.fitBackOnTrim = lvl();
+    /* The press sheet is a different document, so the level is read once
+       it has arrived: the fit is taken from the sheet as drawn. */
+    const loaded = () => new Promise((r) => $('frame').addEventListener('load',
+      () => setTimeout(r, 50), { once: true }));
+    let arrived = loaded(); $('sheet-bleed').click(); await arrived;
+    toFitPage(); R.fitOnBleed = lvl();
+    arrived = loaded(); $('sheet-bleed').click(); await arrived;
+    toFitPage(); R.fitBackOnTrim = lvl();
 
     $('fit-toggle').click(); R.fitWidth = lvl();
     R.iconAtWidth = fitIcon();
@@ -706,6 +737,15 @@ async function checkViewerBehaviour() {
     R.turnsAtTheEdge = $('page-no').value !== edge;
     toFitPage();
 
+    /* And a fit follows the stage with nothing pressed — the bar wrapping,
+       a phone turning, its address bar sliding away. Only a window resize
+       used to re-fit, and the stage changes size without one. */
+    const fitted = lvl();
+    stg.style.width = '520px';
+    await new Promise((r) => setTimeout(r, 200));
+    R.followsTheStage = [fitted, lvl()];
+    stg.style.width = keptW;
+
     document.title = 'R' + JSON.stringify(R);`;
 
   /* The bar has three parts and the middle one is centred by the grid,
@@ -727,7 +767,9 @@ async function checkViewerBehaviour() {
     + '<button class="btn" id="sheet-bleed" aria-pressed="false">Bleed</button>'
     + '<a id="pdf-download" class="btn" href="trim.pdf" data-sheet-download data-trim-url="trim.pdf" data-bleed-url="bleed.pdf" data-trim-ready="true" data-bleed-ready="false" download>Print PDF</a><button class="btn btn--go">Build</button></div>'
     + '</div>'
-    + '<div class="stage" id="stage" style="width:900px;height:700px">'
+    /* flex:none, or .stage's own flex:1 decides its height and the
+       inline one — and every height a check sets later — is ignored. */
+    + '<div class="stage" id="stage" style="width:900px;height:700px;flex:none">'
     + '<div class="stage__inner" id="inner">'
     + '<iframe id="frame" scrolling="no"></iframe></div></div></div>'
     + '<button id="build"></button><span id="build-log" hidden></span>'
@@ -792,42 +834,54 @@ async function checkViewerBehaviour() {
     eq(kind + ' bleed off returns download to trim', D.finalTrim, trim);
   }
 
-  /* The same app.js against a cover's cfg. A wrap is two trims and a
-     spine — better than twice as wide as a page — so fit to page is
-     its own number there, and the only thing that tells app.js which
-     book it is showing is cfg.kind. Driven rather than read off the
-     source, because "the constant says 0.66" is not the same claim as
-     "the field reads 66% when the button is pressed". */
-  const C = await drive('cover', { ...cfg, kind: 'cover' }, `
+  /* The same app.js against a cover. A wrap is two trims and a spine —
+     better than twice as wide as a page — and the only thing that tells
+     app.js to measure the jacket rather than a page is cfg.kind. */
+  const coverCfg = {
+    ...cfg, kind: 'cover',
+    trimUrl: 'cover-stub.html', bleedUrl: 'cover-stub-bleed.html',
+    trimW: 393 + 16, mediaW: 437, trimH: 246, mediaH: 290,
+  };
+  const C = await drive('cover', coverCfg, `
     const $ = (id) => document.getElementById(id);
     const lvl = () => $('zoom-level').value;
     const R = {};
     R.opensAt = lvl();
     $('fit-toggle').click();          // a percentage returns to fit to page
     R.fitPage = lvl();
-    $('sheet-bleed').click(); R.fitOnBleed = lvl();
+    const k = Number($('inner').style.zoom), st = $('stage');
+    const j = $('frame').contentDocument.querySelector('.jacket').getBoundingClientRect();
+    R.wholeWrap = j.width * k <= st.clientWidth && j.height * k <= st.clientHeight;
+    const arrived = new Promise((r) => $('frame').addEventListener('load',
+      () => setTimeout(r, 50), { once: true }));
+    $('sheet-bleed').click(); await arrived;
+    R.fitOnBleed = lvl();
     document.title = 'R' + JSON.stringify(R);`);
 
   await rm(dir, { recursive: true, force: true });
   if (!R || !C) return;
 
   const pc = (s) => Number(String(s).replace('%', ''));
-  /* A chapter opens at the size the stylesheet says, and the fit button
-     gives 71% — a fixed size rather than whatever the window makes of
-     it, since the same book coming up at 46% on one screen and 116% on
-     another is not a proof of anything. */
+  /* A chapter opens at the size the stylesheet says. The fit button
+     measures: whatever the screen, it shows one whole sheet with one
+     side of it filling the stage. */
   eq('a chapter opens at 100%', R.opensAt, '100%');
-  eq('fit to page is 71%', R.fitPage, '71%');
-  eq('71% on a tall stage and a short one alike',
-    [R.fitOnTall, R.fitOnShort], ['71%', '71%']);
-  eq('and 66% on the press sheet, which is the larger one',
-    [R.fitOnBleed, R.fitBackOnTrim], ['66%', '71%']);
-  /* A cover opens at 100% like everything else, and fits at its own
-     number: 66%, on either sheet, because a wrap is wide enough that
-     the page's 71% would put half of it past the edge of the stage. */
+  eq('fit to page shows the whole sheet and fills the stage one way', R.fitShowsWhole, true);
+  eq('on a tall stage, a short one and a narrow one alike',
+    [R.tallShows, R.shortShows, R.narrowShows], [true, true, true]);
+  eq('so the level follows the shape of the stage',
+    pc(R.fitOnTall) > pc(R.fitPage) && pc(R.fitPage) > pc(R.fitOnShort)
+      && pc(R.fitOnNarrow) < pc(R.fitPage), true);
+  eq('the press sheet, being larger, fits lower than the trim',
+    pc(R.fitOnBleed) < pc(R.fitBackOnTrim), true);
+  eq('a fit re-fits when the stage changes, with nothing pressed',
+    pc(R.followsTheStage[1]) < pc(R.followsTheStage[0]), true);
+  /* A cover opens at 100% like everything else, and its fit is taken
+     from the jacket, not from a page. */
   eq('a cover opens at 100% too', C.opensAt, '100%');
-  eq('but fits to page at 70%, not the book’s 71%', C.fitPage, '70%');
-  eq('and drops to 62% on the press sheet', C.fitOnBleed, '62%');
+  eq('a cover fits the whole wrap on the stage', C.wholeWrap, true);
+  eq('lower than a single page does, the wrap being wider', pc(C.fitPage) < pc(R.fitPage), true);
+  eq('and lower again on the press sheet', pc(C.fitOnBleed) < pc(C.fitPage), true);
   eq('fit to width is wider than fit to page', pc(R.fitWidth) > pc(R.fitPage), true);
   eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
   eq('minus steps back', R.minus, R.plus1);

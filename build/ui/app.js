@@ -29,26 +29,18 @@
      so the ladder only says where a press of the button lands next. */
   const ZOOMS = [0.25, 0.33, 0.5, 0.67, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3];
   const MIN_Z = 0.1, MAX_Z = 5;
-  /* What the fit button gives — a number, not a measurement of the
-     stage. It used to measure, which put it anywhere from 46% to 116%:
-     the same book came up a different size every time it was opened and
-     on every screen it was opened on, so no two people describing a
-     page were describing the same thing. A window too short for it
-     scrolls, which is what a window does.
+  /* Both fits measure the screen they are on. Fit to page was once a
+     fixed 71% so that every screen showed the same size, and that is
+     exactly what made it wrong on most of them: too big to see a whole
+     page on a laptop running at 125% scaling or on a phone, too small on
+     a large monitor. A fit is a question about the window, so it is
+     answered by the window. Pick a percentage when the size itself has
+     to be the same; that is what the level field is for.
 
-     Two numbers, because there are two sheets. The press sheet is
-     209 × 266 where the trim is 189 × 246, so holding the level at 71%
-     would make the page itself jump larger the moment Bleed went on —
-     the one moment you want it to sit still, since what you are looking
-     for is what falls outside the trim.
-
-     A cover has its own pair, and needs them: its wrap is two trims
-     and a spine, better than twice as wide as a page, so a level
-     chosen for a single leaf shows it at a size nothing can be judged
-     at. cfg carries them, and a viewer that sends none gets the
-     book's. */
-  const FIT_BOOK = { trim: 0.71, bleed: 0.66 };
-  const FIT_COVER = { trim: 0.70, bleed: 0.62 };
+     GUTTER is the air kept clear round the sheet at a fit, in screen
+     pixels, so the edge of a page never sits against the edge of the
+     stage or under a scrollbar that appears a moment later. */
+  const GUTTER = 12;
   const state = {
     sheet: 'trim',
     view: 'pages',
@@ -91,21 +83,68 @@
   function sheetWidthMm() {
     return state.sheet === 'bleed' ? cfg.mediaW : cfg.trimW;
   }
-  /* cfg.trimH and cfg.mediaH are still sent and are no longer read:
-     fit to page is a number now, not a measurement of the stage
-     against the sheet. They are left in cfg because the next thing
-     that wants the sheet's height will want it there. */
+  function sheetHeightMm() {
+    return state.sheet === 'bleed' ? cfg.mediaH : cfg.trimH;
+  }
+
+  /* The sheet as the book actually drew it, in the book's own CSS
+     pixels. The zoom is on the iframe's parent, so nothing inside the
+     iframe is scaled and these are true sizes. Read from the document
+     rather than worked out from millimetres, because the millimetres
+     are the stylesheet's intention and the boxes are what is on the
+     screen: a spread's gap, a cover's slug and the bleed are all in the
+     boxes and none of them is in cfg.
+
+     A chapter's row is every page sharing the first page's top — one
+     page, or the two of a spread. A cover's sheet is the jacket, or on
+     the press sheet the stage round it that carries the slug and the
+     marks. Until the book has arrived, cfg's millimetres stand in. */
+  function sheetBox() {
+    const perRow = state.view === 'spread' ? 2 : 1;
+    const guess = {
+      w: sheetWidthMm() * CSS_PX_PER_MM * perRow,
+      h: sheetHeightMm() * CSS_PX_PER_MM,
+    };
+    const doc = frame.contentDocument;
+    if (!doc || !doc.body) return guess;
+    let els = [];
+    if (cfg.kind === 'cover') {
+      const el = (state.sheet === 'bleed' && doc.querySelector('.cover-stage'))
+        || doc.querySelector('.jacket');
+      if (el) els = [el];
+    } else {
+      const all = [...doc.querySelectorAll('.page')];
+      if (all.length) {
+        const top = all[0].getBoundingClientRect().top;
+        els = all.filter((el) => Math.abs(el.getBoundingClientRect().top - top) < 2);
+      }
+    }
+    if (!els.length) return guess;
+    const r = els.map((el) => el.getBoundingClientRect());
+    const w = Math.max(...r.map((b) => b.right)) - Math.min(...r.map((b) => b.left));
+    const h = Math.max(...r.map((b) => b.bottom)) - Math.min(...r.map((b) => b.top));
+    return w > 0 && h > 0 ? { w, h } : guess;
+  }
 
   /* What the level actually comes to, for each of the three kinds it
-     can be. Fit to width still measures — it has to, since the width of
-     the stage is the whole question. Fit to page does not: it is 71% on
-     a page and 70% on a wrap, and drops to 66% and 62% on the two press
-     sheets, which are the sizes each is read at. */
-  const FIT_Z = cfg.kind === 'cover' ? FIT_COVER : FIT_BOOK;
+     can be.
+
+     Fit to width fills the stage across. contentW is the whole width
+     the book is laid out in, its own margin included, so that is what
+     has to fit — fit the sheet alone and the margin overflows into a
+     sideways scrollbar.
+
+     Fit to page shows one whole sheet: the level at which it fits
+     across, or the level at which it fits top to bottom, whichever is
+     smaller. On a wide screen height decides it, on a phone width does,
+     and the press sheet — being the larger sheet — fits a little lower
+     than the trim, as it should. */
   function factor(contentW) {
-    if (state.zoom === 'fit') return FIT_Z[state.sheet] || FIT_Z.trim;
-    if (state.zoom === 'fitw') return (stage.clientWidth - 24) / contentW;
-    return Number(state.zoom);
+    if (state.zoom !== 'fit' && state.zoom !== 'fitw') return Number(state.zoom);
+    const across = (stage.clientWidth - 2 * GUTTER) / contentW;
+    if (state.zoom === 'fitw') return across;
+    const down = (stage.clientHeight - 2 * GUTTER) / sheetBox().h;
+    return Math.min(across, down);
   }
 
   // CSS zoom, not a transform: zoom reflows, so the scrollbars stay honest.
@@ -118,6 +157,7 @@
     const k = Math.max(MIN_Z, Math.min(MAX_Z, factor(contentW)));
     inner.style.zoom = String(k);
     state.k = k;
+    seen = { w: stage.clientWidth, h: stage.clientHeight };
 
     /* Not while it is being typed into: rewriting the field under the
        cursor would eat the second digit of every number entered. */
@@ -186,7 +226,34 @@
     // the book reloads itself on save; keep the frame height honest
     setTimeout(applyZoom, 400);
   });
-  window.addEventListener('resize', applyZoom);
+
+  /* A fit has to follow the stage, and the stage changes size far more
+     often than the window does: the bar wraps to two rows below 980px,
+     a phone turns on its side, its address bar slides away, the build
+     log appears beside Build. Listening to the window alone missed all
+     but the first of those, which is why a fit was right on one device
+     and wrong on the next. So the stage itself is watched, and the
+     visual viewport too, which is the only thing that hears a phone's
+     browser chrome come and go.
+
+     `seen` is the size the level was last worked out for. A change of
+     zoom can put a scrollbar on the stage, and a scrollbar changes its
+     size; without the guard that would be a loop. Only a real change
+     re-fits, and a re-fit keeps the reader where they were in the book
+     rather than dropping them at whatever the old scroll offset now
+     points to. */
+  let seen = { w: 0, h: 0 };
+  function onStageResize() {
+    if (Math.abs(stage.clientWidth - seen.w) < 2
+        && Math.abs(stage.clientHeight - seen.h) < 2) return;
+    if (state.zoom !== 'fit' && state.zoom !== 'fitw') { applyZoom(); return; }
+    const place = stage.scrollHeight ? stage.scrollTop / stage.scrollHeight : 0;
+    applyZoom();
+    stage.scrollTop = place * stage.scrollHeight;
+  }
+  if (window.ResizeObserver) new ResizeObserver(onStageResize).observe(stage);
+  window.addEventListener('resize', onStageResize);
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', onStageResize);
 
   /* ---- paging -------------------------------------------- */
   let pages = [];

@@ -96,7 +96,10 @@ a { color: inherit; text-decoration: none; }
 .empty { color: var(--text-2); padding: 40px 0; }
 
 /* ---- Viewer ----------------------------------------------- */
-.viewer { display: flex; flex-direction: column; height: 100%; }
+/* 100dvh where it is understood: on a phone, 100% is the viewport with
+   the browser's address bar put away, so the foot of the stage — and the
+   foot of a page fitted to it — sat behind the bar whenever it was out. */
+.viewer { display: flex; flex-direction: column; height: 100%; height: 100dvh; }
 
 /* Three parts: what the page is, the zoom cluster, and what you can
    do with it. A grid rather than a flex row with spacers, because
