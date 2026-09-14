@@ -1167,3 +1167,26 @@ settings the rest of the volume inherits rather than conflicts found.
    sorting by equal sides, is promised to "a later chapter". Congruence is
    not mentioned.
 5. **Names:** none; the source has no named people in this chapter.
+
+## Class 7 · Mathematics I · Chapter 8 — Working with Fractions
+
+1. **Terms defined here:** *multiplier*, *multiplicand*, *dividend*,
+   *divisor*, *quotient*, *reciprocal*, *cancelling* (a common factor).
+   Mathematics II and later chapters should use them without defining them
+   again.
+2. **Rules stated:** $\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b
+   \times d}$ and $\frac{a}{b} \div \frac{c}{d} = \frac{a \times d}{b \times
+   c}$, both credited to Brahmagupta (628 CE); the order of multiplication
+   does not matter; multiplying or dividing by a number between 0 and 1, or
+   greater than 1, makes the answer smaller or larger as the summary states.
+   A whole number is written over 1, and a mixed number is turned into a
+   single fraction before multiplying, dividing or taking a reciprocal.
+3. **Notation:** inline fractions are `\frac`, displayed working uses
+   `\dfrac`; mixed numbers are written $2\frac{1}{4}$. Figures label
+   fractions with a slash (1/4), never with the precomposed glyphs ¼ and ½,
+   which the diagram face may not carry.
+4. **Not taught:** decimals times fractions, and fractions of negative
+   numbers. Percentages are not mentioned.
+5. **Names:** Aaron, Tenzin, Manju, Safia, Somu, Krishna, Bora, Tsewang,
+   Leena, Maria, Mira, Amritpal and Mariam are the source's; Beyond the Book
+   adds none.
