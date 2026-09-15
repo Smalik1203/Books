@@ -1498,3 +1498,22 @@ settings the rest of the volume inherits rather than conflicts found.
    heights and distances (Chapter 9).
 5. **Names:** Aryabhata, Edmund Gunter, Sir Jonas Moore and J. F. Herbart are
    the source's. Beyond the Book adds Kiran and Lata.
+
+## Class 10 · Mathematics I · Chapter 9 — Some Applications of Trigonometry
+
+1. **Terms defined here:** *line of sight*, *angle of elevation*, *angle of
+   depression*. *The Sun's altitude* is the source's and is used without a
+   definition; the chapter reads it as the angle of elevation of the Sun.
+2. **Results used, not stated:** the values of Table 8.1 for 30°, 45° and
+   60° (Chapter 8); alternate angles between parallel lines, which make an
+   angle of depression equal to the angle of elevation seen from the object
+   (Example 6, and Example 7 now says so); the exterior angle of a triangle
+   and the isosceles triangle (Beyond the Book only).
+3. **Notation:** answers in surd form, ${15\sqrt{3}}$ m, with a decimal only
+   where the question gives $\sqrt{3} = 1.73$ or $1.732$; lengths with units
+   in running text kept on one line with `.nb` where KaTeX would break before
+   the unit.
+4. **Not taught:** angles other than 30°, 45° and 60° (no table of ratios),
+   the height of the eye as distinct from the observer's height (flagged),
+   bearings.
+5. **Names:** none in the source. Beyond the Book adds Meena and Arjun.
