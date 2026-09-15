@@ -1591,3 +1591,27 @@ settings the rest of the volume inherits rather than conflicts found.
    and a `tfoot` totals row (hairline above, rule below). A distribution too
    wide for the measure is split into two stacked tables, caption on the first.
 6. **Names:** none in the source. Beyond the Book adds Meera and Arjun.
+
+## Class 10 · Mathematics I · Chapter 14 — Probability
+
+1. **Terms defined here:** *fair* / *unbiased* coin, *equally likely*
+   outcomes, *theoretical* (*classical*) *probability*, *elementary event*,
+   *complement* and *complementary events*, *impossible event*, *sure* or
+   *certain event*, *face cards*. Experimental (empirical) probability is taken
+   from Class 9.
+2. **Results stated:** P(E) = favourable outcomes / all equally likely
+   outcomes; the probabilities of all elementary events add up to 1;
+   P(not E) = 1 − P(E); 0 ≤ P(E) ≤ 1; a sure event has probability 1 and an
+   impossible event 0. Examples 10 and 11 and Question 20 use length and area
+   as the measure, marked as not needed for the examination.
+3. **Notation:** "not E" is written with an overline (`\overline{E}`) and read
+   "not E"; ordered pairs (H, T) and (2, 6) for two coins or two dice, the
+   first coin or die first. The two-dice outcomes are **Table 14.1**, not a
+   figure.
+4. **Not taught:** addition of probabilities of overlapping events as a rule
+   (Beyond the Book counts overlaps directly), conditional probability.
+5. **System:** `.c-questions[data-start]` rules in `css/components.css` now go
+   to 30; before this, question 21 onward numbered from 1.
+6. **Names:** Kritika, Sangeeta, Reshma, Savita, Hamida, Harpreet, Jimmy,
+   Sujatha, Malini, Gopi, Nuri and Hanif are the source's. Beyond the Book adds
+   Ravi and Zoya.
