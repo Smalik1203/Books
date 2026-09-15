@@ -1459,3 +1459,22 @@ settings the rest of the volume inherits rather than conflicts found.
 4. **Not taught:** areas of similar triangles and the proof of the Pythagoras
    theorem (the source's introduction still promised the proof; not here).
 5. **Names:** Thales is named. Beyond the Book adds Kiran and Lata.
+
+## Class 10 · Mathematics I · Chapter 7 — Coordinate Geometry
+
+1. **Terms defined here:** *abscissa* and *ordinate* (from Class IX), the
+   *distance formula*, the *section formula*, dividing a segment *internally*
+   and *externally* (the second named only, in a tip), *points of trisection*,
+   and the *mid-point formula*.
+2. **Results stated:** the distance formula and the distance from the origin;
+   the section formula for the ratio ${m_1 : m_2}$ and its ${k : 1}$ form; the
+   mid-point formula. The section formula is derived with the AA similarity
+   criterion of Chapter 6.
+3. **Notation:** points as $P(x, y)$ in maths; lengths in running text set as
+   maths (${OA = 4}$ units); ratios as ${m_1 : m_2}$ with braces so they do not
+   break; working as `.work--list` rows.
+4. **Not taught:** external division (named in the tip only), the area of a
+   triangle from coordinates, and the centroid; the equation of a line is used
+   only as ${x - y = 2}$ in Example 4 and in one Beyond the Book question.
+5. **Names:** Ashima, Bharti, Camella, Champa, Chameli, Niharika, Preet and
+   Rashmi are the source's. Beyond the Book adds Kiran and Lata.
