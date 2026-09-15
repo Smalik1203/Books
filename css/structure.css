@@ -1,0 +1,298 @@
+/* ============================================================
+   THE CHAPTER STRUCTURE — DESIGN-MATHS §5
+
+   What a chapter carries so that a school can adopt it, a teacher
+   can set work from it, a student can revise from it and a parent
+   can check it. Each takes exactly one colour, by the roles in §1,
+   and none is a panel: the book has two, the example and the
+   reflect prompt, and these are neither.
+
+     .chapterhead__source  —      the NCERT chapter a chapter follows
+     .c-goals        teal   the opener's outcomes and recall questions
+     .c-check        gold   Check yourself: questions put to the reader
+     .c-fact         teal   Did you know?: one checked fact
+     .c-mistake      rust   a common mistake, beside its example
+     .c-mindmap      teal   the chapter as one drawing, after it
+     .c-vocab        teal   the chapter's terms and their meanings
+     .c-case         gold   a case-based question's situation
+     .c-practice__sub teal  a form inside the end-of-chapter exercises
+   ============================================================ */
+
+
+/* ---- The NCERT chapter -------------------------------------
+   One quiet line under the chapter title. The title is the book's
+   own and runs in the running head; this says which NCERT chapter
+   the pages follow, for the teacher matching the syllabus. */
+.chapterhead__source {
+  position: absolute;
+  left: 39mm;
+  right: var(--chapterhead-title-right, 50mm);
+  top: 28.5mm;
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+.page--verso .chapterhead__source { right: calc(var(--chapterhead-title-right, 50mm) + var(--gutter-allowance)); }
+
+
+/* ---- The opener's goals ------------------------------------
+   Two columns under the heavy rule a key idea uses: what the
+   chapter will do, and three questions on what it needs. The
+   recall answers sit at the foot, small, so a reader can check
+   before the chapter starts. */
+.c-goals {
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  column-gap: 6mm;
+  margin: 0 0 var(--space-rest);
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-band) solid var(--teal);
+  border-bottom: var(--stroke-rule) solid var(--teal);
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+  text-align: left;
+  hyphens: none;
+}
+.c-goals__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  margin-bottom: var(--space-hair);
+}
+.c-goals ul,
+.c-goals ol { margin: 0; padding-left: 5mm; }
+.c-goals li { margin-bottom: 0.8mm; }
+.c-goals ol li::marker { color: var(--teal); font-weight: var(--weight-bold); }
+.c-goals__answers {
+  margin-top: var(--space-hair);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+
+/* ---- Check yourself ----------------------------------------
+   Three questions straight after a topic's worked examples. A
+   question put to the reader is attention, so gold: the rule-and-
+   hairline of .c-try, but numbered, so the separate book of
+   detailed answers can answer each one by number. The student
+   book prints no answer key (DESIGN-MATHS §5). */
+.c-check {
+  break-inside: avoid;
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-rule) solid var(--gold);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+}
+.c-check__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--gold-deep);
+  margin-bottom: var(--space-hair);
+}
+.c-check > ol { list-style: none; counter-reset: check; padding-left: 7mm; margin: 0; }
+.c-check > ol > li { position: relative; margin-bottom: 1mm; }
+.c-check > ol > li::before {
+  counter-increment: check;
+  content: counter(check) ".";
+  position: absolute;
+  left: -7mm;
+  color: var(--gold-deep);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+}
+
+
+/* ---- Did you know? -----------------------------------------
+   One breath, like the tip, and teal like it. The disc is an
+   outline rather than the tip's solid one, so the two can be told
+   apart at a glance: a tip tells the reader how, a fact tells them
+   something true. Every fact's source is recorded in EDIT-LOG.md. */
+.c-fact {
+  break-inside: avoid;
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-hair) solid var(--rule);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+.c-fact__icon {
+  flex: none;
+  width: 11mm;
+  height: 11mm;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 0.5mm solid var(--teal);
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-fact__icon svg {
+  width: 6mm;
+  height: 6mm;
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: var(--stroke-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.c-fact__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  line-height: var(--lh-snug);
+}
+.c-fact__body {
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+  color: var(--teal-deep);
+}
+.c-fact__body p { margin: 0; }
+
+
+/* ---- A common mistake --------------------------------------
+   Set straight after the worked example it belongs to, in the
+   action colour, because it is about something being done: what
+   the wrong working does, and what it missed. */
+.c-mistake {
+  break-inside: avoid;
+  margin: var(--space-step) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-rule) solid var(--rust);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+  font-size: var(--size-note);
+  line-height: var(--lh-panel);
+}
+.c-mistake__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--rust-deep);
+  margin-bottom: var(--space-hair);
+}
+.c-mistake p { margin: 0; }
+.c-mistake p + p { margin-top: var(--space-hair); }
+
+
+/* ---- The mind map ------------------------------------------
+   After the chapter, not before it. The drawing is an ordinary
+   full-width figure in the §6 vocabulary; this block only gives
+   it the summary's rule and a title, so the close of a chapter
+   reads as one set: map, summary, words. */
+.c-mindmap {
+  break-inside: avoid;
+  margin: var(--space-rest) 0;
+  padding-top: var(--space-tight);
+  border-top: var(--stroke-rule) solid var(--teal);
+}
+.c-mindmap__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+}
+.c-mindmap .c-figure { margin: var(--space-tight) auto 0; }
+
+
+/* ---- Words to know -----------------------------------------
+   Every term the chapter teaches, in alphabetical order, in two
+   columns: the word, and one line on what it means. */
+.c-vocab {
+  break-inside: avoid;
+  margin: var(--space-rest) 0;
+  padding-top: var(--space-tight);
+  border-top: var(--stroke-rule) solid var(--teal);
+}
+.c-vocab__title {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  margin-bottom: var(--space-hair);
+}
+.c-vocab__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6mm;
+  row-gap: 1.4mm;
+  margin: 0;
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+  text-align: left;
+  hyphens: none;
+}
+.c-vocab__item { break-inside: avoid; }
+.c-vocab__item dt { font-weight: var(--weight-bold); color: var(--teal-deep); }
+.c-vocab__item dd { margin: 0; color: var(--ink); }
+
+
+/* ---- A case-based question ---------------------------------
+   The situation and its data, set off from the parts that ask
+   about it. Gold, because it is the book putting a question. */
+.c-case {
+  margin: var(--space-hair) 0;
+  padding: var(--space-tight) 0;
+  border-top: var(--stroke-rule) solid var(--gold);
+  border-bottom: var(--stroke-hair) solid var(--rule);
+}
+.c-case__label {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--gold-deep);
+  margin-bottom: var(--space-hair);
+}
+.c-case p { margin: 0 0 var(--space-hair); }
+.c-case table { margin: var(--space-hair) auto 0; }
+
+
+/* ---- A form inside the end-of-chapter exercises ------------
+   The exercises are one numbered run, grouped by the length of
+   answer they ask for — never by marks (§5). Each group opens
+   with a rubric on the paper, and an instruction that applies to
+   the whole group sits under it once. */
+.c-practice__sub {
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+  margin: var(--space-step) 0 var(--space-hair);
+}
+.c-practice__head + .c-practice__sub { margin-top: 0; }
+.c-practice__note {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-hair);
+}
+.c-questions > li > p { margin: 0; }

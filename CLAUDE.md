@@ -354,7 +354,7 @@ repaints, through the token contract at the top of `css/cover.css`.
 one.** They did: Class 8 Part 2 was written as `arc`, which is Class 9
 Mathematics, and the two came off the press the same book in different
 words. Eight wraps, eight directions now — Class 10 Mathematics `sight` (a tower and its angle of elevation from Chapter 9, dark olive and khaki-sand, face Archivo), Class 6 Mathematics `patchwork` (a
-contents page of ten chapter tiles, brick red, face Outfit, on the class6
+contents page of ten chapter tiles, brick red, face Outfit, on the 196x276
 trim), Class 7 Part 1 `zoom`, Part 2 `mobile`,
 Class 8 Part 1 `comb`, Part 2 `tile`, Class 9 Mathematics `arc`, Class 9
 Science `lattice`. The two Class 7 parts deliberately share no arrangement

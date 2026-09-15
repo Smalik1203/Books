@@ -20,15 +20,13 @@
                   that falls
      .c-results   the chapter's results as a row of marks, so a
                   reader can see what is about to be used
-     .tier        one question's difficulty, as a tag
      .c-answers   an answer key: sixty short answers that must
                   not set as sixty paragraphs
 
    Each takes exactly one colour. The opener, the stage head and
    the results strip are structure, and take teal — they say
-   where the reader is. The tier tag and the key are attention,
-   and take gold: both are the book speaking about a question
-   put to the reader. .c-shift is the relationship itself, so it
+   where the reader is. The key is attention, and takes gold: it
+   is the book speaking about a question put to the reader. .c-shift is the relationship itself, so it
    takes no colour at all — rules and space carry it.
 
    The stage number is the same teal in all ten stages and in
@@ -334,8 +332,8 @@
    questions of each kind. No marks and no clock — a book that
    is used in six different classrooms cannot know either, and
    inventing them would make the test look like an examination
-   it is not. Gold, because like the tier tag it is the book
-   addressing the reader about the questions, not asking one. */
+   it is not. Gold, because it is the book addressing the reader
+   about the questions, not asking one. */
 .c-terms {
   break-inside: avoid;
   margin-top: var(--space-step);
@@ -351,28 +349,6 @@
   color: var(--gold-deep);
 }
 
-/* ---- A question's difficulty -------------------------------
-   Three tiers, and the label is a tag: it sits on a coloured
-   ground, so it can never be misread as the first words of the
-   question. Gold, because saying how hard a question is is the
-   book addressing the reader about it. */
-.tier {
-  display: inline-block;
-  vertical-align: 0.06em;
-  background: var(--gold);
-  color: var(--paper);
-  font-family: var(--font-display);
-  font-size: var(--size-caption);
-  font-weight: var(--weight-bold);
-  font-style: normal;
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-  line-height: 1;
-  padding: 1mm 2.2mm 0.8mm;
-  border-radius: var(--radius);
-  margin-right: 2mm;
-}
-
 /* ---- The answer key ----------------------------------------
    A grid, not a list: the reader is looking one answer up, not
    reading down. Rows in fixed order so the eye can jump — the
@@ -383,6 +359,10 @@
   list-style: none;
   font-size: var(--size-note);
   line-height: var(--lh-snug);
+  /* A key row is a run of short answers, not prose: justified, a long
+     row of number names opens holes between the words. */
+  text-align: left;
+  hyphens: none;
 }
 .c-answers > li {
   display: flex;
