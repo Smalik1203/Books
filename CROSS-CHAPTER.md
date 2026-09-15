@@ -1537,3 +1537,18 @@ settings the rest of the volume inherits rather than conflicts found.
    angles in the alternate segment.
 5. **Names:** Thomas Fincke (the source spells it Fineke). Beyond the Book adds
    Rohit and Sana.
+
+## Class 10 · Mathematics I · Chapter 11 — Areas Related to Circles
+
+1. **Terms defined here:** *sector*, *segment*, *angle of the sector*, *minor*
+   and *major sector*, *minor* and *major segment*; *quadrant* is used without
+   a definition (Class 7/8 word).
+2. **Results stated:** area of a sector ${\frac{\theta}{360} \times \pi r^2}$
+   and length of an arc ${\frac{\theta}{360} \times 2\pi r}$ (unitary method),
+   segment = sector − triangle. Uses Chapter 8 (sin 60°, cos 60°) and RHS
+   congruence for the triangle in Example 2.
+3. **Notation:** θ in degrees; π as ${\frac{22}{7}}$ or 3.14 as each question
+   says; areas in `cm<sup>2</sup>` outside maths; ₹ outside maths.
+4. **Not taught:** areas of combinations of plane figures (NCERT's 11.3 is not
+   in this edition), radian measure, Heron's formula for the triangle.
+5. **Names:** none in the source. Beyond the Book adds Asha and Kabir.
