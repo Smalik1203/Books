@@ -1,7 +1,7 @@
 # LearnLab Design System — Mathematics
 
-The mathematics volumes: Class 8 Mathematics I and II, and Class 9
-Mathematics I.
+The mathematics volumes: Class 6, Class 9 and Class 10 Mathematics I, and
+Class 7 and Class 8 Mathematics I and II.
 
 Read [DESIGN.md](DESIGN.md) first. Page grammar, the two sheets, the cover,
 what the builder rejects and the rule that a panel is never divided apply to
@@ -174,6 +174,8 @@ Size alone is not a signature. Each level differs in *kind*.
 Three more — the division opener, the difficulty tag and the answer key — are
 added by §6a for Beyond the Book, and by nothing else. Four more are added by
 §4a of [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the science volumes, and by nothing else.
+The chapter structure in §5 adds eight more. They live in
+`css/structure.css`; §5 lists them.
 
 **Only two components are panels** — the example and the reflect prompt, both
 of which the mockups called for. Everything else sits on the page, held by
@@ -224,6 +226,166 @@ sits in running prose, is set inline size (`frac`). Display fractions
 overflow their line box, so any list of them takes `.c-parts--tall`, which
 lets the maths set the row height instead of the leading. Without it the rows
 collide, and the builder reports an overflow the page does not appear to have.
+
+## 5. Chapter structure — what comes, in what order
+
+Adopted 15 September 2026. **Class 7 Chapter 1 is the first chapter built
+to it**, and the components listed at the end of this section are in
+`css/structure.css`. Every other chapter keeps the shape it has until it is
+rebuilt. Judge the structure on Chapter 1's proofs before rolling it out.
+
+**Why it was written.** An audit of all 56 maths chapters found the book
+inconsistent with itself before it was behind anyone else:
+
+- no chapter prints answers to its own exercise sets — only the Beyond the
+  Book key exists;
+- 10 chapters of 56 have end-of-chapter exercises. Class 7 Mathematics I
+  stops after Chapter 4, and Class 9 after Chapter 6;
+- worked examples run from none (Class 6 Ch 8, Class 7 Ch 6 and 7, Class 7
+  II Ch 6, Class 9 Ch 1) to eighteen (Class 7 Ch 2);
+- a rule is used and never stated. Class 7 Chapter 1 rounds numbers for
+  four pages and never says when to round up.
+
+It was also read against Cengage's *NCERT Plus Foundation Mathematics*
+for Class 7, the book a school is most likely to set beside this one.
+
+Four people open the book, for four reasons. A school chooses it, a teacher
+sets homework from it, a student learns and revises from it, and a parent
+checks it. Every part below is there for at least one of them.
+
+### The chapter
+
+    Opener        one page    our title, with the NCERT chapter named in one
+                              line beneath it; a question set in an Indian situation;
+                              three or four outcomes in plain words; Before
+                              you start — three recall questions, answered at
+                              the foot of the page
+    Topic × n     2–4 pages   explore · explain · key idea · worked examples ·
+                  each        check yourself · exercise set
+    Close         5–7 pages   mind map · summary and vocabulary ·
+                              end-of-chapter exercises
+    Beyond the Book           §6a, unchanged
+
+### A topic, in this order
+
+1. **Explore.** A situation to guess at or try, half a page at most. A reader
+   who has guessed reads on to find out if they were right. Longer than half
+   a page, and a weak reader is lost before the idea has a name.
+2. **Explain.** Running text and a figure, written to §10. The term is used
+   here and glossed with `.term` where it first appears.
+3. **Key idea.** The rule or definition in its exact wording (§10, *two
+   registers*). This is what a student revises from the night before a
+   test. A chapter that only shows a rule working has not given them one.
+4. **Worked examples.** Two or three, rising: one direct, one applied, one
+   that needs a reason. What is given; then one step a line in `.work`, with
+   its reason where the class needs one; then the answer. A beginner learns
+   more from a solved example than from struggling alone, so a topic with no
+   example is a defect, not a style.
+5. **Check yourself.** Three short questions straight after the examples,
+   answered in the book of detailed answers. It catches a misreading before it
+   becomes homework, and a teacher can run it in five minutes of class.
+6. **Exercise set.** Numbered by chapter and set — *Exercise 1.2* — because
+   that is how an Indian school sets homework. Graded inside the set: fluency,
+   then application, then a question that needs thought.
+
+Used where they fit, not on a schedule: **Did you know?**, Think and
+Reflect, an activity that fits one class period, and a **common mistake**
+set beside the example it belongs to.
+
+### The close
+
+- **Mind map.** One page, after the chapter and not before it. A map of ideas
+  the reader has not met yet is a list of words; after the chapter it is the
+  revision sheet.
+- **Summary and vocabulary.** The summary as it is now (§4), then every term
+  the chapter teaches, each with a one-line meaning.
+- **End-of-chapter exercises, in every chapter,** in the forms school papers
+  use: multiple choice, assertion–reason, very short, short and long answer,
+  and two case-based questions. Grouped by the length of the answer and
+  **never by marks.** §6a's reason holds here too: a book used in many
+  schools cannot know how any one of them marks, and a printed mark makes the
+  page look like an examination it is not.
+- **No answer key.** The student book prints no answers to its checks,
+  exercise sets or end-of-chapter exercises. Every answer, with its working,
+  goes in the separate book of detailed answers. Class 7 Chapter 1 carried a
+  three-page key for a day; it was taken out on 15 September 2026 and kept
+  in the chapter's `ANSWERS.md` for that book. Two things stay: the Before
+  you start answers on the opener, and Beyond the Book's own key (§6a).
+
+### The book
+
+At the front, how to use the book — one line for each component, with its
+mark — and a syllabus table: chapter, NCERT chapter, suggested periods,
+outcomes. At the back, a glossary that is also the index, a formula sheet,
+and two model papers, half-yearly and annual.
+
+Two companions. The **Solutions book** gives full working for every question.
+It is written after a volume's exercises are settled, so it is not written
+twice. The **Teacher's handbook** holds period plans, activity notes and a
+question bank.
+
+### By class
+
+| classes | weight |
+|---|---|
+| 3–5 | picture and activity first; short exercise sets; no examination forms |
+| 6–8 | the full structure; end-of-chapter exercises mostly multiple choice and short answer |
+| 9–10 | the full structure with every form; proofs stepped one statement to a line; the model papers matter most |
+
+### What stays out
+
+- **Work above the syllabus, inside the chapter.** It goes in Beyond the Book,
+  which is marked as optional. A teacher who cannot tell what is examinable
+  teaches all of it or none of it. Cengage sets negative powers of ten in a
+  Class 7 chapter.
+- **A fact nobody has checked.** Every Did you know? records its source in
+  `EDIT-LOG.md`. Cengage prints the size of an atom twelve powers of ten too
+  small, and nothing on its page looks wrong.
+- **Mascots, tinted furniture, and a shortcut without its reason.** §4 says
+  why for the furniture. A shortcut without its reason is something to
+  memorise, which is §6a's objection to named moves.
+- **Answers kept in an app.** Answers go in a printed book of their own.
+
+### How this differs from the books beside it
+
+| | what it does well | what it lacks | what this structure does instead |
+|---|---|---|---|
+| NCERT | inquiry; it sets the syllabus | few worked examples, little practice, no examination forms | keeps the inquiry and adds examples, practice and the forms |
+| Cengage *NCERT Plus* | very large question banks | crowded pages, bare solutions, printed errors, solutions in an app | checked numbers, designed pages, a reason in every solution, a printed book of detailed answers |
+| R. D. Sharma, R. S. Aggarwal | depth of practice | the formula comes before the idea | the same depth, with the idea first |
+| question banks | the examination pattern | not a textbook | the pattern inside the textbook |
+
+### What it will cost
+
+More pages than first guessed. Class 7 Chapter 1 went from 18 body pages to
+26, on a page that also grew from Crown Quarto to 196 × 276 mm: fourteen
+worked examples in place of one, six checks, eight key ideas, the close and
+twenty new end-of-chapter questions. With an answer key it came to 28; the
+key is the one addition that went to its own book. Every rebuilt chapter is
+refitted, because a source file is a printed page (CLAUDE.md, *Fitting
+pages*). Every number a new example, check or question adds is
+re-derived, as §10 requires of any printed value.
+
+### The components it needs
+
+In `css/structure.css`, which `book.css` loads after `bridge.css`. Each
+takes one colour by the roles in §1, and none is a panel, because the book
+has two (§4).
+
+| component | colour | |
+|---|---|---|
+| `.chapterhead__source` | none | one quiet line under the chapter title naming the NCERT chapter. Our title stays the title: it is the book's, and it runs in the running head |
+| `.c-goals` | teal | the opener's outcomes and its Before you start questions, answered at its foot |
+| `.c-check` | gold | Check yourself: numbered questions put to the reader, answered in the book of detailed answers. A gold rule and a hairline, like `.c-try` |
+| `.c-fact` | teal | Did you know?: one breath between two rules, like `.c-tip`, with a mark from the chapter's subject |
+| `.c-mistake` | rust | a common mistake, set straight after the example it belongs to, because it is about something being done |
+| `.c-mindmap` | teal | a rule and a title over an ordinary `--full` figure, drawn with the §6 vocabulary and nothing else. Words on the map are `.dg-note`; branch names and the hub are `.dg-label--on-fill` on `.dg-fill-teal`. No arrows and no × in the drawing: neither face is sure to carry them, and a fallback glyph is a third typeface |
+| `.c-vocab` | teal | the chapter's terms, alphabetical, each with a one-line meaning |
+| `.c-case` | gold | a case-based question's situation or table, set off from its parts |
+| `.c-practice__sub`, `__note` | teal | a form inside the end-of-chapter exercises — *Choose the correct option*, *Assertion and reason* — and the one instruction that applies to the whole form |
+
+The end-of-chapter exercises run to 35 questions in one numbered list, so
+`components.css` now carries `data-start` counters to 40.
 
 ## 6. Diagrams — first-class components
 
@@ -406,14 +568,19 @@ What the library did not already have lives in `css/bridge.css`:
 | `.c-problem` | rust | one worked problem's question, in stage 2: a rule above in the action colour, a *Problem N* tag, the question and its options. The rule is what separates one problem from the next, so nothing closes it at the foot |
 | `.c-solution` | rust | the answer to the `.c-problem` above it, and the other half of the same item: the word *Solution*, the reasoning in prose, and the algebra stepped in `.work`, closed by a hairline. Not a panel and not the action colour's tint — the question and the answer share one open field, or they read as two components for the two halves of one problem. Both blocks are whole: a page ends on a finished item |
 | `.work--trace` | none | a modifier on `.work`: rows whose label sits on the first line rather than centred beside a block that runs to three. Used on the answer page, where each row is one question's *why the other options are wrong* |
-| `.tier` | gold | one question's difficulty (`Think` · `Apply` · `Challenge`), set as a tag so it cannot be misread as the first words of the question |
 | `.c-terms` | gold | what the test is made of — how many questions of each kind. **Never marks and never a time:** a book used in six classrooms cannot know either, and printing them would make the test look like an examination it is not. Three short spans, or it wraps; the four-stage design says the same thing in the stage head's own line instead |
 | `.c-answers` | gold | the answer key — a set label in a fixed 29mm column, then its answers on one line where they fit |
 
 The opener, the stage head and the results strip are **structure**: they say
-where the reader is, which is the section tab's job. The tier tag, the terms
-and the answer key are **attention**: all three are the book speaking to the
-reader about a question. `.c-shift` is the relationship itself, so it takes
+where the reader is, which is the section tab's job. The terms and the answer
+key are **attention**: both are the book speaking to the reader about a
+question.
+
+**No question carries a difficulty tag.** Set C's questions were once
+labelled *Think*, *Apply* or *Challenge*; the labels were removed from every
+chapter on 15 September 2026, and `.tier` went from `bridge.css` with them.
+The sets still rise in difficulty from A to C — the set head says so, and
+the order of the questions does the rest. `.c-shift` is the relationship itself, so it takes
 no colour — rules and space carry it.
 
 **One numeral colour, not four.** Every stage mark is the same teal, in every
@@ -473,7 +640,7 @@ contradicts it. **A fix that makes a sentence longer or harder is not a fix.**
 | L3 | a sentence a teacher would not say out loud at the board |
 | L4 | two ideas in one sentence — split it |
 | L5 | passive voice, or an instruction addressed to no one — address the student |
-| L6 | a sentence over about twenty words, or stacked clauses |
+| L6 | stacked clauses, or a sentence long for any reason other than the mathematics it carries — length alone is not the defect (see *Plain wording, required terms*) |
 | C1 | *certain*, *special*, *some*, *various* standing in for information the student needs |
 | C8 | the narrator ordering a reaction — *surprisingly*, *notice that*, *the result is always* |
 
@@ -508,6 +675,98 @@ the same way:
 - ***Class***, not *Grade*: the usage of Indian schools and of both Class 8
   volumes.
 
+### Plain wording, required terms
+
+Easy words and exact terms pull against each other only when they are
+asked of the same sentence. They are not: **the explanation is plain, and
+the term and the rule are exact.** A student should be able to read every
+sentence of an explanation aloud without stopping, and still meet every word
+a test will use.
+
+**Every chapter carries the terms of its topic.** The words a school paper,
+NCERT or a guide uses for the topic — *predecessor*, *expanded form*,
+*transversal*, *discriminant* — each appear in the body at least once. Each
+is glossed with `.term` where it first appears, and stated in a key idea
+where it names a rule. A check of all 56 maths chapters on 15 September 2026
+found 74 of 440 such terms missing, most of them in Classes 7 and 8. Class 7
+Chapter 1 used three of its ten: no *predecessor*, *successor*, *expanded
+form*, *ascending*, *descending*, *face value* or *round off*. A student who
+understands an idea but has never met its word cannot answer the question.
+
+**Where NCERT uses a word of its own, give the usual word beside it once.**
+*Ganita Prakash* says *letter-number*, not *variable*; school papers say
+*variable*. Keep NCERT's word, because the class is taught in it, and add the
+other where it first appears — *a letter-number, usually called a
+**variable*** — then carry on with NCERT's. The same goes for *order of
+operations*, which many schools still call BODMAS.
+
+A term the syllabus has dropped is not missing. Class 10 prints neither
+*terminating decimal expansion* nor the *division algorithm* for
+polynomials; both were removed from the Class 10 syllabus in 2023.
+
+**Two registers, on purpose.** The explanation is spoken English, by the
+rules above. The key idea is the rule in the words a paper will use — *if
+the next digit is 5 or more, round up; otherwise, round down.* A student
+understands from the first and revises from the second. A key idea in the
+explanation's loose words leaves nothing exact to learn. An explanation in
+the key idea's words is the textbook register this standard exists to
+remove.
+
+**Simpler words, not simpler mathematics.** Keep what the class needs: the
+conditions on a rule, every case a definition must include (C2), and the
+reason a step works (M3). A shorter sentence that drops a condition is a
+wrong sentence.
+
+**Sentence length, measured.** The running prose of every chapter body,
+measured on 15 September 2026:
+
+| class | words a sentence | sentences over 20 words | reading grade |
+|---|---|---|---|
+| 6 | 11.0 | 5% | 4.0 |
+| 7 | 12.3 | 11% | 4.7 |
+| 8 | 17.0 | 33% | 6.8 |
+| 9 | 15.9 | 28% | 6.6 |
+| 10 | 14.9 | 22% | 5.9 |
+
+The reading grade is Flesch–Kincaid, a formula built for native readers. Use
+it to compare chapters, not to set an age.
+
+Figures and headings are left out of the count; an early version of the
+measure read diagram labels as prose.
+
+Hard words are not the problem: words of three or more syllables are 5–8% of
+the text in every class. Long sentences are far more common in Class 8 than
+in Class 7 — a third of its sentences against one in ten — but **length shows
+where to look. It does not show what is wrong.**
+
+Fifty-six of Class 8's long sentences, spread across its fourteen chapters,
+were read one by one:
+
+| | of 56 | for example |
+|---|---|---|
+| long because the mathematics is | about 39 | *If a thing is built by making $a$ choices in turn, and each choice has $n$ options whatever the earlier ones were, then there are $n^a$ possibilities.* |
+| long because of commentary | about 17 | *the step is where the marks are lost*; *writing it in powers is the first time it says so out loud* |
+
+The second kind is hard for a reason a word count cannot see. It is the
+narrator's opinion (C8), an idiom a second-language reader cannot decode —
+*wearing different clothes*, *says so out loud* — or the coaching register
+that §6a keeps out of Beyond the Book, which a chapter should not use either.
+Split such a sentence in two and you have two sentences of commentary. The
+fix is to cut it, or to say the plain thing it stands for.
+
+**So there is no word limit.** A sentence is as long as what it carries. Ask
+three things of it:
+
+1. Does every part carry something the reader needs — a condition, a
+   reason, a step, a quantity?
+2. Does it say one thing, or several things that only make sense together,
+   joined by *if … then* or *because*? Several unconnected things are L4.
+3. Is every word literal? A figure of speech is a second hard word (L2), even
+   in a short sentence.
+
+A 35-word sentence that passes all three stays as it is. An 11-word sentence
+that fails the third is a defect.
+
 ### Flag, do not fix
 
 | code | the defect |
@@ -528,6 +787,10 @@ the same way:
 — flag it. Never delete a worked example, activity or question; never add new
 content; never make the mathematics harder or more general. If a fix is not
 obviously correct, flag it instead.
+
+These limits are for a language edit. Adding what §5 asks for — an example,
+a check, a missing term — is a separate authoring pass, done chapter by
+chapter, and every number it adds is re-derived like any other.
 
 ### What no build check catches yet
 
@@ -593,8 +856,10 @@ of topics and questions; no sentence is copied from the source.
 
 **Every Class 6 maths chapter is set on one master page:** finished size
 196 × 276 mm, margins 22.5 mm top and bottom and 18 mm left and right. It is
-`css/edition-class6.css`, and a chapter declares it with
-`"edition": "class6"`. The side margins are equal, so there is no gutter
+`css/edition-196x276.css`, and a chapter declares it with
+`"edition": "196x276"`. It was `class6` until Class 7 moved onto the same
+page; it is named for its size, like `a4` and `b5`, so that neither class
+reads the other's name in its `chapter.json`. The side margins are equal, so there is no gutter
 allowance: the text block is 160 × 231 mm, and the figure steps are scaled
 against that taller block as §6 requires. Class 6 Science keeps its own
 trim for now.

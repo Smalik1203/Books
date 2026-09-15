@@ -50,7 +50,10 @@
 .chapterhead__title {
   position: absolute;
   left: 39mm;
-  right: 50mm;
+  /* Clear of the sketch. An edition whose outer margin and trim put the
+     sketch further in sets its own clearance; the head is absolutely
+     placed, so this never moves the text block. */
+  right: var(--chapterhead-title-right, 50mm);
   top: 15mm;
   transform: translateY(-50%);
   font-family: var(--font-display);
@@ -113,7 +116,7 @@
    the left on both sides, which on a verso is the fore-edge. */
 .page--verso .chapterhead__sketch { right: var(--margin-inside); }
 .page--verso .chapterhead__rule { right: var(--margin-inside); }
-.page--verso .chapterhead__title { right: calc(50mm + var(--gutter-allowance)); }
+.page--verso .chapterhead__title { right: calc(var(--chapterhead-title-right, 50mm) + var(--gutter-allowance)); }
 
 
 /* ============================================================
@@ -673,6 +676,8 @@ table:has(tfoot) tbody tr:last-child td { border-bottom: 0; }
 .c-questions[data-start="18"] { counter-reset: q 17; }
 .c-questions[data-start="19"] { counter-reset: q 18; }
 .c-questions[data-start="20"] { counter-reset: q 19; }
+/* End-of-chapter exercises in every form (DESIGN-MATHS §5) run past
+   twenty questions. */
 .c-questions[data-start="21"] { counter-reset: q 20; }
 .c-questions[data-start="22"] { counter-reset: q 21; }
 .c-questions[data-start="23"] { counter-reset: q 22; }
@@ -683,6 +688,16 @@ table:has(tfoot) tbody tr:last-child td { border-bottom: 0; }
 .c-questions[data-start="28"] { counter-reset: q 27; }
 .c-questions[data-start="29"] { counter-reset: q 28; }
 .c-questions[data-start="30"] { counter-reset: q 29; }
+.c-questions[data-start="31"] { counter-reset: q 30; }
+.c-questions[data-start="32"] { counter-reset: q 31; }
+.c-questions[data-start="33"] { counter-reset: q 32; }
+.c-questions[data-start="34"] { counter-reset: q 33; }
+.c-questions[data-start="35"] { counter-reset: q 34; }
+.c-questions[data-start="36"] { counter-reset: q 35; }
+.c-questions[data-start="37"] { counter-reset: q 36; }
+.c-questions[data-start="38"] { counter-reset: q 37; }
+.c-questions[data-start="39"] { counter-reset: q 38; }
+.c-questions[data-start="40"] { counter-reset: q 39; }
 
 /* A question whose parts carry on in a block of their own, so that a
    long list of word problems can run over a page break the way a set

@@ -1,5 +1,7 @@
 /* ============================================================
-   CLASS 6 EDITION — the master page for Class 6 Mathematics.
+   THE 196 x 276 EDITION — the master page for Class 6 and Class 7
+   Mathematics. Named for its size, like a4 and b5, because two classes
+   use it; it was edition-class6 until Class 7 moved onto it.
 
    Finished page 196 x 276 mm. Margins 22.5 mm top and bottom,
    18 mm left and right. Bleed and slug are added by the builder;
@@ -33,3 +35,7 @@
   --fig-xl:   79mm;
   --fig-full: 141mm;
 }
+
+/* The sketch stands 42mm wide at the 18mm outer margin, so its left
+   edge is 60mm from the trim edge; the title stops 4mm short of it. */
+:root { --chapterhead-title-right: 64mm; }
