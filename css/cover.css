@@ -2383,3 +2383,32 @@ body.bleed .jacket {
   text-align: center;
   margin-top: 1.4mm;
 }
+
+/* ---- sight: the scene round the figure ----------------------
+   The front was a bare diagram — one rectangle, one line — under a
+   large empty field. It is the same idea drawn as a scene: a tower
+   with its gallery and lantern, two observation points at 30° and 45°,
+   and the ground it stands on. The ground band bleeds off both edges;
+   the hills and trees are tints of the ink, so they sit behind the
+   lines of sight and never compete with them. */
+.t10-ground { fill: var(--jk-navy-deep); }
+.t10-hill   { fill: var(--jk-front-ink); opacity: 0.07; }
+.t10-tree   { fill: var(--jk-front-ink); opacity: 0.16; }
+.t10-tower--roof { opacity: 0.24; }
+.t10-sight--b { opacity: 0.62; }
+.t10-dot--accent { fill: var(--jk-front-accent); }
+.t10-dim {
+  fill: none;
+  stroke: var(--jk-front-ink);
+  stroke-width: 0.35;
+  stroke-dasharray: 1.4 1.2;
+}
+.t10-lab--angle {
+  font-style: normal;
+  fill: var(--jk-front-accent);
+  font-size: calc(var(--dg-type) * 1.35 * var(--dg-v) / var(--dg-w) * 1px);
+}
+.t10-lab--point {
+  font-style: normal;
+  font-size: calc(var(--dg-type) * 1.35 * var(--dg-v) / var(--dg-w) * 1px);
+}
