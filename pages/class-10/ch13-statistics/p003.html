@@ -1,0 +1,43 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>So the mean mark of the students is 59.3.</p>
+
+      <p>In most real situations there is so much data that it has to be grouped before it can be studied. So you need a way to find the mean of grouped data.</p>
+
+      <p>Let us group the marks of Example 1 into class intervals of width 15. A mark equal to the upper limit of a class goes into the next class. For example, the 4 students with 40 marks are counted in the class 40&nbsp;–&nbsp;55, not in 25&nbsp;–&nbsp;40. This gives Table 13.2.</p>
+
+      <table class="table--data">
+        <caption>Table 13.2</caption>
+        <thead><tr><th>Class interval</th><th>10&nbsp;–&nbsp;25</th><th>25&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;55</th><th>55&nbsp;–&nbsp;70</th><th>70&nbsp;–&nbsp;85</th><th>85&nbsp;–&nbsp;100</th></tr></thead>
+        <tbody><tr><td>Number of students</td><td>2</td><td>3</td><td>7</td><td>6</td><td>6</td><td>6</td></tr></tbody>
+      </table>
+
+      <p>Each class now needs one value to stand for all the observations in it. We assume that the observations in a class are spread evenly around its middle. So the mid-point of the class, called its <span class="term">class mark</span>, can stand for them. The class mark is the average of the upper and lower limits of the class:</p>
+
+      <div class="eq">$$\text{class mark} = \dfrac{\text{upper class limit} + \text{lower class limit}}{2}$$</div>
+
+      <p>For the class 10&nbsp;–&nbsp;25 in Table 13.2, the class mark is ${\frac{10 + 25}{2} = 17.5}$. The class marks of the other classes are found in the same way, and they are the $x_i$ in Table 13.3. For the $i$th class, $f_i$ is its frequency and $x_i$ is its class mark. Now the mean is found exactly as in Example 1.</p>
+
+      <table class="table--data">
+        <caption>Table 13.3</caption>
+        <thead><tr><th>Class interval</th><th>Number of students ($f_i$)</th><th>Class mark ($x_i$)</th><th>$f_ix_i$</th></tr></thead>
+        <tbody>
+          <tr><td>10&nbsp;–&nbsp;25</td><td>2</td><td>17.5</td><td>35.0</td></tr>
+          <tr><td>25&nbsp;–&nbsp;40</td><td>3</td><td>32.5</td><td>97.5</td></tr>
+          <tr><td>40&nbsp;–&nbsp;55</td><td>7</td><td>47.5</td><td>332.5</td></tr>
+          <tr><td>55&nbsp;–&nbsp;70</td><td>6</td><td>62.5</td><td>375.0</td></tr>
+          <tr><td>70&nbsp;–&nbsp;85</td><td>6</td><td>77.5</td><td>465.0</td></tr>
+          <tr><td>85&nbsp;–&nbsp;100</td><td>6</td><td>92.5</td><td>555.0</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td>${\sum f_i = 30}$</td><td></td><td>${\sum f_ix_i = 1860.0}$</td></tr></tfoot>
+      </table>
+
+      <p>The last column adds up to $\sum f_ix_i$. So the mean of the data is</p>
+
+      <div class="eq">$$\bar{x} = \dfrac{\sum f_ix_i}{\sum f_i} = \dfrac{1860.0}{30} = 62$$</div>
+
+    </div>
+  </div>
+</section>

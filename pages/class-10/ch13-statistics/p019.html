@@ -1,0 +1,50 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <table class="table--data">
+        <thead><tr><th>Class interval</th><th>0&nbsp;–&nbsp;100</th><th>100&nbsp;–&nbsp;200</th><th>200&nbsp;–&nbsp;300</th><th>300&nbsp;–&nbsp;400</th><th>400&nbsp;–&nbsp;500</th></tr></thead>
+        <tbody>
+          <tr><td>Frequency</td><td>2</td><td>5</td><td>$x$</td><td>12</td><td>17</td></tr>
+          <tr><td>Cumulative frequency</td><td>2</td><td>7</td><td>$7 + x$</td><td>$19 + x$</td><td>$36 + x$</td></tr>
+        </tbody>
+      </table>
+
+      <table class="table--data">
+        <thead><tr><th>Class interval</th><th>500&nbsp;–&nbsp;600</th><th>600&nbsp;–&nbsp;700</th><th>700&nbsp;–&nbsp;800</th><th>800&nbsp;–&nbsp;900</th><th>900&nbsp;–&nbsp;1000</th></tr></thead>
+        <tbody>
+          <tr><td>Frequency</td><td>20</td><td>$y$</td><td>9</td><td>7</td><td>4</td></tr>
+          <tr><td>Cumulative frequency</td><td>$56 + x$</td><td>$56 + x + y$</td><td>$65 + x + y$</td><td>$72 + x + y$</td><td>$76 + x + y$</td></tr>
+        </tbody>
+      </table>
+
+      <p>You are given that ${n = 100}$. So</p>
+
+      <div class="work work--list">
+        <p>$76 + x + y = 100$, &nbsp; that is, &nbsp; $x + y = 24$ &nbsp; (1)</p>
+      </div>
+
+      <p>The median is 525, which lies in the class 500&nbsp;–&nbsp;600. So ${l = 500}$, ${f = 20}$, ${cf = 36 + x}$ and ${h = 100}$. Using the formula for the median,</p>
+
+      <div class="work work--list">
+        <p>$525 = 500 + \left(\dfrac{50 - 36 - x}{20}\right) \times 100$</p>
+        <p>$525 - 500 = (14 - x) \times 5$</p>
+        <p>$25 = 70 - 5x$</p>
+        <p>$5x = 70 - 25 = 45$, &nbsp; so &nbsp; $x = 9$</p>
+      </div>
+
+      <p>Then from (1), ${9 + y = 24}$, so ${y = 15}$.</p>
+
+      <p>You have now studied all three measures of central tendency. Which one suits a particular purpose best?</p>
+
+      <p>The mean is the measure used most often. It uses every observation, it lies between the largest and the smallest, and it lets you compare distributions: the mean results of different schools in one examination show which school did better.</p>
+
+      <p>But the mean is affected by extreme values. If one class has frequency 2 and five others have frequencies 20, 25, 20, 21 and 18, the mean does not show how the data behaves, and it is not a good representative of the data.</p>
+
+      <p>When single observations do not matter and you want a typical observation, the median is more suitable. Examples are the typical output of workers, or the average wage in a country. Such data may have extreme values, so the median is the better measure.</p>
+
+      <p>When you want the most frequent value or the most popular item, the mode is the best choice. Examples are the most-watched TV programme, the product in greatest demand, or the colour of vehicle that most people use.</p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The table gives the percentage of female teachers in the rural primary schools of different states and union territories (U.T.) of India. Find the mean percentage of female teachers by each of the three methods of this section. (The data are from the Seventh All India School Education Survey conducted by NCERT.)</p>
+          <table class="table--data">
+            <thead><tr><th>Female teachers (%)</th><th>15&nbsp;–&nbsp;25</th><th>25&nbsp;–&nbsp;35</th><th>35&nbsp;–&nbsp;45</th><th>45&nbsp;–&nbsp;55</th><th>55&nbsp;–&nbsp;65</th><th>65&nbsp;–&nbsp;75</th><th>75&nbsp;–&nbsp;85</th></tr></thead>
+            <tbody><tr><td>States/U.T.</td><td>6</td><td>11</td><td>7</td><td>4</td><td>4</td><td>2</td><td>1</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p>First find the class mark $x_i$ of each class, as in Table 13.6.</p>
+
+      <table class="table--data">
+        <caption>Table 13.6</caption>
+        <thead><tr><th>Female teachers (%)</th><th>15&nbsp;–&nbsp;25</th><th>25&nbsp;–&nbsp;35</th><th>35&nbsp;–&nbsp;45</th><th>45&nbsp;–&nbsp;55</th><th>55&nbsp;–&nbsp;65</th><th>65&nbsp;–&nbsp;75</th><th>75&nbsp;–&nbsp;85</th></tr></thead>
+        <tbody>
+          <tr><td>States/U.T. ($f_i$)</td><td>6</td><td>11</td><td>7</td><td>4</td><td>4</td><td>2</td><td>1</td></tr>
+          <tr><td>Class mark ($x_i$)</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td></tr>
+        </tbody>
+      </table>
+
+      <p>Take ${a = 50}$ and ${h = 10}$, so that ${d_i = x_i - 50}$ and ${u_i = \frac{x_i - 50}{10}}$. Now find each $d_i$ and $u_i$, and put them in Table 13.7.</p>
+
+      <table class="table--data">
+        <caption>Table 13.7</caption>
+        <thead><tr><th>Percentage of female teachers</th><th>$f_i$</th><th>$x_i$</th><th>$d_i$</th><th>$u_i$</th><th>$f_ix_i$</th><th>$f_id_i$</th><th>$f_iu_i$</th></tr></thead>
+        <tbody>
+          <tr><td>15&nbsp;–&nbsp;25</td><td>6</td><td>20</td><td>$-30$</td><td>$-3$</td><td>120</td><td>$-180$</td><td>$-18$</td></tr>
+          <tr><td>25&nbsp;–&nbsp;35</td><td>11</td><td>30</td><td>$-20$</td><td>$-2$</td><td>330</td><td>$-220$</td><td>$-22$</td></tr>
+          <tr><td>35&nbsp;–&nbsp;45</td><td>7</td><td>40</td><td>$-10$</td><td>$-1$</td><td>280</td><td>$-70$</td><td>$-7$</td></tr>
+          <tr><td>45&nbsp;–&nbsp;55</td><td>4</td><td>50</td><td>0</td><td>0</td><td>200</td><td>0</td><td>0</td></tr>
+          <tr><td>55&nbsp;–&nbsp;65</td><td>4</td><td>60</td><td>10</td><td>1</td><td>240</td><td>40</td><td>4</td></tr>
+          <tr><td>65&nbsp;–&nbsp;75</td><td>2</td><td>70</td><td>20</td><td>2</td><td>140</td><td>40</td><td>4</td></tr>
+          <tr><td>75&nbsp;–&nbsp;85</td><td>1</td><td>80</td><td>30</td><td>3</td><td>80</td><td>30</td><td>3</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td>35</td><td></td><td></td><td></td><td>1390</td><td>$-360$</td><td>$-36$</td></tr></tfoot>
+      </table>
+
+      <p>From the table, ${\sum f_i = 35}$, ${\sum f_ix_i = 1390}$, ${\sum f_id_i = -360}$ and ${\sum f_iu_i = -36}$.</p>
+
+    </div>
+  </div>
+</section>

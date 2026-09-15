@@ -1,0 +1,46 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>To find the median, you need the classes and their frequencies. The distribution is of the less than type, so 140, 145, 150, …, 165 are the upper limits of the classes. So the classes are below 140, 140&nbsp;–&nbsp;145, 145&nbsp;–&nbsp;150, …, 160&nbsp;–&nbsp;165. There are 4 girls with height less than 140&nbsp;cm, so the frequency of the class below 140 is 4. There are 11 girls with height less than 145&nbsp;cm, so ${11 - 4 = 7}$ girls have heights in the class 140&nbsp;–&nbsp;145. In the same way, the frequency of 145&nbsp;–&nbsp;150 is ${29 - 11 = 18}$, the frequency of 150&nbsp;–&nbsp;155 is ${40 - 29 = 11}$, and so on. This gives Table 13.16.</p>
+
+      <table class="table--data">
+        <caption>Table 13.16</caption>
+        <thead><tr><th>Class interval</th><th>Frequency</th><th>Cumulative frequency</th></tr></thead>
+        <tbody>
+          <tr><td>Below 140</td><td>4</td><td>4</td></tr>
+          <tr><td>140&nbsp;–&nbsp;145</td><td>7</td><td>11</td></tr>
+          <tr><td>145&nbsp;–&nbsp;150</td><td>18</td><td>29</td></tr>
+          <tr><td>150&nbsp;–&nbsp;155</td><td>11</td><td>40</td></tr>
+          <tr><td>155&nbsp;–&nbsp;160</td><td>6</td><td>46</td></tr>
+          <tr><td>160&nbsp;–&nbsp;165</td><td>5</td><td>51</td></tr>
+        </tbody>
+      </table>
+
+      <p>Now ${n = 51}$, so ${\frac{n}{2} = \frac{51}{2} = 25.5}$. This observation lies in the class 145&nbsp;–&nbsp;150. So</p>
+
+      <div class="work work--list">
+        <p>$l = 145$, &nbsp; $cf = 11$, &nbsp; $f = 18$, &nbsp; $h = 5$</p>
+        <p>$\text{Median} = l + \left(\dfrac{\frac{n}{2} - cf}{f}\right) \times h = 145 + \left(\dfrac{25.5 - 11}{18}\right) \times 5 = 145 + \dfrac{72.5}{18} = 149.03$</p>
+      </div>
+
+      <p>So the median height of the girls is 149.03&nbsp;cm. This means that about half the girls are shorter than 149.03&nbsp;cm, and about half are taller.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>The median of the data below is 525, and the total frequency is 100. Find the values of $x$ and $y$.</p>
+          <table class="table--data">
+            <thead><tr><th>Class interval</th><th>0&nbsp;–&nbsp;100</th><th>100&nbsp;–&nbsp;200</th><th>200&nbsp;–&nbsp;300</th><th>300&nbsp;–&nbsp;400</th><th>400&nbsp;–&nbsp;500</th></tr></thead>
+            <tbody><tr><td>Frequency</td><td>2</td><td>5</td><td>$x$</td><td>12</td><td>17</td></tr></tbody>
+          </table>
+          <table class="table--data">
+            <thead><tr><th>Class interval</th><th>500&nbsp;–&nbsp;600</th><th>600&nbsp;–&nbsp;700</th><th>700&nbsp;–&nbsp;800</th><th>800&nbsp;–&nbsp;900</th><th>900&nbsp;–&nbsp;1000</th></tr></thead>
+            <tbody><tr><td>Frequency</td><td>20</td><td>$y$</td><td>9</td><td>7</td><td>4</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
