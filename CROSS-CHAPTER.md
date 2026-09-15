@@ -1440,3 +1440,22 @@ settings the rest of the volume inherits rather than conflicts found.
    5.1 only as patterns that are not APs); sigma notation.
 5. **Names:** Reena, Shakila, Subba Rao and Ramkali are the source's; Gauss is
    named (Chapter 1). Beyond the Book adds Kiran and Lata.
+
+## Class 10 · Mathematics I · Chapter 6 — Triangles
+
+1. **Terms defined here:** *similar figures*, *scale factor* (representative
+   fraction), *equiangular* triangles, the *Basic Proportionality Theorem*
+   (Thales Theorem), the *converse* of a statement, and the *AAA*, *AA*,
+   *SSS*, *SAS* and *RHS* similarity criteria.
+2. **Results stated:** Theorem 6.1 (a line parallel to one side divides the
+   other two in the same ratio) and its converse, Theorem 6.2; Theorems 6.3
+   (AAA), 6.4 (SSS) and 6.5 (SAS), with the AA form of 6.3; the RHS criterion in
+   a tip, without proof. Theorems 6.2–6.5 are proved in outline with (Why?)
+   and (How?) steps left to the reader.
+3. **Notation:** △ABC ~ △DEF with the vertices in corresponding order; ≅ from
+   Class IX; ar(ADE) for the area of a triangle; A′ for the image of A; the
+   proofs and solutions as rows of working with the reason in brackets;
+   activities as paragraphs led by **Activity N.**
+4. **Not taught:** areas of similar triangles and the proof of the Pythagoras
+   theorem (the source's introduction still promised the proof; not here).
+5. **Names:** Thales is named. Beyond the Book adds Kiran and Lata.
