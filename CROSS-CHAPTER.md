@@ -1552,3 +1552,19 @@ settings the rest of the volume inherits rather than conflicts found.
 4. **Not taught:** areas of combinations of plane figures (NCERT's 11.3 is not
    in this edition), radian measure, Heron's formula for the triangle.
 5. **Names:** none in the source. Beyond the Book adds Asha and Kabir.
+
+## Class 10 · Mathematics I · Chapter 12 — Surface Areas and Volumes
+
+1. **Terms used here:** *total surface area* (TSA) and *curved surface area*
+   (CSA) are introduced as abbreviations; cuboid, cone, cylinder, sphere and
+   hemisphere, with their area and volume formulas, are taken from Class 9.
+2. **Results stated:** the surface area of a combined solid counts only the
+   surfaces that can be seen; the volume of a combined solid is the sum (or,
+   for a hollow, the difference) of the volumes.
+3. **Notation:** $r'$, $h'$ for the second solid's measurements (Example 3);
+   units `cm<sup>2</sup>`, `cm<sup>3</sup>` outside maths; ₹ outside maths.
+4. **Not taught:** conversion of one solid into another and frustums (NCERT's
+   12.4 and 12.5 are not in this edition); Beyond the Book stage 1 and Set C
+   use melting and recasting once each, from the volume rule alone.
+5. **Names:** Rasheed, Mayank, Shanta and Rachel are the source's. Beyond the
+   Book adds Nila and Omar.
