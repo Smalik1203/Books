@@ -1404,3 +1404,22 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Names:** Akhila, Champa, Aftab, Jacob, Nuri, Sonu, Meena, Saritha and
    Susy are the source's. Beyond the Book adds Riya, Kiran
    and Lata.
+
+## Class 10 · Mathematics I · Chapter 4 — Quadratic Equations
+
+1. **Terms defined here:** *quadratic equation*, *standard form*, *root* and
+   *solution* of a quadratic equation, *discriminant*.
+2. **Results stated:** a quadratic equation has at most two roots (from
+   Chapter 2); the roots of ax² + bx + c = 0 and the zeroes of ax² + bx + c
+   are the same; roots by factorisation (a product is zero only when a factor
+   is); the quadratic formula (stated, not derived, with a check that its roots
+   have sum −b/a and product c/a); two distinct, two equal or no real roots as
+   b² − 4ac is positive, zero or negative.
+3. **Notation:** α for a root (as in Chapter 2); comparison signs inside maths
+   as \gt and \lt; the angle in a semicircle and the Pythagoras theorem are
+   taken from Class IX in Example 8.
+4. **Not taught:** completing the square (named in the history paragraph
+   only); equations with no real roots are not given complex roots.
+5. **Names:** John, Jivanti and Rohan are the source's; Brahmagupta,
+   Sridharacharya, Bhaskara II, Al-Khwarizmi, Euclid and Abraham bar Hiyya
+   Ha-Nasi are named. Beyond the Book adds Kiran and Lata.
