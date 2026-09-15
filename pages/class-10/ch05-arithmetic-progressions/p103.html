@@ -1,0 +1,48 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 2</span>
+        <p>The $n$th term of an AP is $7 - 4n$. Its common difference is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>$-4$</li><li>3</li><li>7</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <p>Here $a_1 = 3$ and $a_2 = -1$, so $d = -4$. In fact $a_{n+1} - a_n = [7 - 4(n + 1)] - [7 - 4n] = -4$ for every $n$: (b). Option (a) subtracts the wrong way round, (c) is the first term, and (d) is the fixed number 7 in the formula.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 3</span>
+        <p>How many terms of the AP $54, 51, 48, \ldots$ must be taken so that their sum is 513?</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>18 only</li><li>19 only</li><li>18 or 19</li><li>17 or 19</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <div class="work work--list">
+          <p>$513 = \frac{n}{2}[108 + (n - 1)(-3)] = \frac{n}{2}(111 - 3n)$</p>
+          <p>$3n^2 - 111n + 1026 = 0$, so $n^2 - 37n + 342 = (n - 18)(n - 19) = 0$</p>
+        </div>
+        <p>The 19th term is $54 + 18 \times (-3) = 0$, so the sums of 18 and of 19 terms are equal, and both answers work: (c). Options (a) and (b) keep one root each, and (d) comes from a wrong factorisation.</p>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 4</span>
+        <p>The sum of all the odd two-digit numbers is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4"><li>2500</li><li>2475</li><li>4905</li><li>2420</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <div class="work work--list">
+          <p>the numbers are $11, 13, \ldots, 99$, and $99 = 11 + (n - 1) \times 2$ gives $n = 45$</p>
+          <p>$S = \frac{45}{2}(11 + 99) = 45 \times 55 = 2475$</p>
+        </div>
+        <p>The answer is (b). Option (a) also counts the odd one-digit numbers, (c) is the sum of all the two-digit numbers, and (d) takes 44 terms, forgetting to add 1.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
