@@ -1478,3 +1478,23 @@ settings the rest of the volume inherits rather than conflicts found.
    only as ${x - y = 2}$ in Example 4 and in one Beyond the Book question.
 5. **Names:** Ashima, Bharti, Camella, Champa, Chameli, Niharika, Preet and
    Rashmi are the source's. Beyond the Book adds Kiran and Lata.
+
+## Class 10 · Mathematics I · Chapter 8 — Introduction to Trigonometry
+
+1. **Terms defined here:** *trigonometry*, the *side opposite* and the *side
+   adjacent* to an angle, the six *trigonometric ratios* (sine, cosine,
+   tangent, cosecant, secant, cotangent), *identity* and *trigonometric
+   identity*.
+2. **Results stated:** the ratios depend only on the angle (from AA
+   similarity, Chapter 6); the values for 0°, 30°, 45°, 60° and 90° (Table
+   8.1); the identities sin²A + cos²A = 1, 1 + tan²A = sec²A and
+   1 + cot²A = cosec²A, each with its range of A.
+3. **Notation:** sin A, cos A, tan A, cosec A (set with `\operatorname{cosec}`),
+   sec A, cot A; sin²A for (sin A)²; θ for an angle; `\lt` and `\gt` inside
+   maths, never `&lt;`, which KaTeX prints raw; working as `.work--list`
+   rows, split into consecutive blocks where a page breaks.
+4. **Not taught:** trigonometric ratios of complementary angles (not in this
+   edition), inverse ratios (sin⁻¹A named only), angles outside 0° to 90°,
+   heights and distances (Chapter 9).
+5. **Names:** Aryabhata, Edmund Gunter, Sir Jonas Moore and J. F. Herbart are
+   the source's. Beyond the Book adds Kiran and Lata.

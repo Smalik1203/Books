@@ -1,0 +1,42 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-try">
+        <p>Can ${\tan A + \cot A}$ be less than 2 for an acute angle A?</p>
+      </div>
+
+      <p>For an acute angle, $\tan A$ and $\cot A$ are both positive, and ${\tan A \cot A = 1}$. So ${\left(\sqrt{\tan A} - \sqrt{\cot A}\right)^2 = \tan A - 2\sqrt{\tan A \cot A} + \cot A = \tan A + \cot A - 2}$. A square is never negative, so ${\tan A + \cot A \geq 2}$, and the answer is no. The sum is exactly 2 only when ${\tan A = \cot A}$, that is, when ${A = 45^\circ}$. For example, ${\tan 30^\circ + \cot 30^\circ = \frac{1}{\sqrt{3}} + \sqrt{3} = \frac{4}{\sqrt{3}}}$, which is more than 2. So of all acute angles, $45^\circ$ gives the smallest value of ${\tan A + \cot A}$, and that value is 2.</p>
+
+      <div class="c-try">
+        <p>If ${\sec\theta + \tan\theta = p}$, find ${\sec\theta - \tan\theta}$ and $\sec\theta$ in terms of $p$.</p>
+      </div>
+
+      <p>Multiply the two expressions: ${(\sec\theta + \tan\theta)(\sec\theta - \tan\theta) = \sec^2\theta - \tan^2\theta = 1}$, by the identity ${1 + \tan^2\theta = \sec^2\theta}$. So ${\sec\theta - \tan\theta = \frac{1}{p}}$. Adding the two equations gives ${2\sec\theta = p + \frac{1}{p}}$, so ${\sec\theta = \frac{p^2 + 1}{2p}}$. Here the identity was used as a difference of two squares. As a check, ${p = 2}$ gives ${\sec\theta = \frac{5}{4}}$ and ${\tan\theta = \frac{3}{4}}$, and ${\frac{25}{16} - \frac{9}{16} = 1}$.</p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Behind Each Answer</div>
+          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+        </div>
+      </div>
+
+      <div class="c-problem">
+        <span class="c-problem__tag">Problem 1</span>
+        <p>If ${\cos A = \frac{4}{5}}$ for an acute angle A, then $\tan A$ is</p>
+        <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{3}{5}$</li><li>$\dfrac{3}{4}$</li><li>$\dfrac{4}{3}$</li><li>$\dfrac{5}{3}$</li></ol>
+      </div>
+
+      <div class="c-solution">
+        <div class="c-solution__turn">Solution</div>
+        <div class="work work--list">
+          <p>take ${AB = 4k}$ and ${AC = 5k}$; then ${BC = \sqrt{25k^2 - 16k^2} = 3k}$</p>
+          <p>$\tan A = \dfrac{BC}{AB} = \dfrac{3k}{4k} = \dfrac{3}{4}$</p>
+        </div>
+        <p>The answer is (b). Option (a) is $\sin A$, (c) is $\cot A$, and (d) is $\operatorname{cosec} A$. All four come from the same triangle with sides 3, 4 and 5, so check which two sides each ratio uses.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
