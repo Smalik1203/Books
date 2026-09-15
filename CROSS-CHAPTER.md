@@ -1517,3 +1517,23 @@ settings the rest of the volume inherits rather than conflicts found.
    the height of the eye as distinct from the observer's height (flagged),
    bearings.
 5. **Names:** none in the source. Beyond the Book adds Meena and Arjun.
+
+## Class 10 · Mathematics I · Chapter 10 — Circles
+
+1. **Terms defined here:** *non-intersecting line*, *secant*, *tangent*,
+   *point of contact*, *touches*, *normal*, *length of the tangent*,
+   *circumscribe* (glossed in Exercise 10.2 Q8).
+2. **Results stated:** Theorem 10.1 (tangent ⊥ radius at the point of
+   contact), Theorem 10.2 (tangents from an external point are equal), the
+   three cases for tangents through a point, and Remark 2 (the centre lies on
+   the bisector of the angle between two tangents). Uses Class 9: the
+   perpendicular from the centre bisects a chord; RHS congruence; the bisector
+   of the apex angle of an isosceles triangle; AA similarity (Chapter 6).
+3. **Notation:** point subscripts as `<sub>` in prose and `dg-sub` in figures
+   (Q<sub>1</sub>, T<sub>1</sub>, C<sub>1</sub>); `\perp`, `\cong`; blanks as
+   `$\underline{\qquad\qquad}$`.
+4. **Not taught:** constructing tangents (NCERT's construction chapter is not
+   in this edition), Heron's formula as a tool here (flagged at Q12),
+   angles in the alternate segment.
+5. **Names:** Thomas Fincke (the source spells it Fineke). Beyond the Book adds
+   Rohit and Sana.
