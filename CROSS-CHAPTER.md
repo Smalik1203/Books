@@ -1423,3 +1423,20 @@ settings the rest of the volume inherits rather than conflicts found.
 5. **Names:** John, Jivanti and Rohan are the source's; Brahmagupta,
    Sridharacharya, Bhaskara II, Al-Khwarizmi, Euclid and Abraham bar Hiyya
    Ha-Nasi are named. Beyond the Book adds Kiran and Lata.
+
+## Class 10 · Mathematics I · Chapter 5 — Arithmetic Progressions
+
+1. **Terms defined here:** *term*, *arithmetic progression* (AP),
+   *common difference*, *general form*, *finite AP*, *infinite AP*,
+   *general term*, *arithmetic mean*.
+2. **Results stated:** d = a(k+1) − a(k); a(n) = a + (n − 1)d; the sum of the
+   first n terms S = n/2 [2a + (n − 1)d], also n/2 (a + l); a(n) = S(n) − S(n−1);
+   1 + 2 + … + n = n(n + 1)/2; if a, b, c are in AP then b = (a + c)/2.
+3. **Notation:** terms a1, a2, …, an with subscripts; a and d for the first
+   term and common difference; l for the last term; S and S(n) for sums.
+   Lists of money are "in rupees" with the numbers in maths; missing terms are
+   empty boxes. Running-text formulas are braced so they do not break.
+4. **Not taught:** geometric progressions and the Fibonacci numbers (shown in
+   5.1 only as patterns that are not APs); sigma notation.
+5. **Names:** Reena, Shakila, Subba Rao and Ramkali are the source's; Gauss is
+   named (Chapter 1). Beyond the Book adds Kiran and Lata.

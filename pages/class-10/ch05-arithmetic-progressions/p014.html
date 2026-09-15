@@ -1,0 +1,44 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Think of the problem that was given to Gauss, whom you read about in Chapter 1, when he was just 10 years old. He was asked to find the sum of the positive integers from 1 to 100, and at once he said that the sum is 5050. How do you think he did it? He wrote</p>
+
+      <div class="eq">$$S = 1 + 2 + 3 + \cdots + 99 + 100$$</div>
+
+      <p>and then wrote the same numbers in reverse order,</p>
+
+      <div class="eq">$$S = 100 + 99 + \cdots + 3 + 2 + 1$$</div>
+
+      <p>Adding these two, he got</p>
+
+      <div class="work work--list">
+        <p>$2S = (1 + 100) + (2 + 99) + \cdots + (99 + 2) + (100 + 1)$</p>
+        <p>$\phantom{2S} = 101 + 101 + \cdots + 101 + 101$ &nbsp; (100 times)</p>
+      </div>
+
+      <p>So $S = \frac{100 \times 101}{2} = 5050$, that is, the sum is 5050.</p>
+
+      <p>We will now use the same idea to find the sum of the first $n$ terms of the AP ${a, a + d, a + 2d, \ldots}$ The $n$th term of this AP is $a + (n - 1)d$. Let $S$ be the sum of its first $n$ terms. Then</p>
+
+      <div class="eq">$$S = a + (a + d) + (a + 2d) + \cdots + [a + (n - 1)d] \qquad (1)$$</div>
+
+      <p>Writing the terms in reverse order,</p>
+
+      <div class="eq">$$S = [a + (n - 1)d] + [a + (n - 2)d] + \cdots + (a + d) + a \qquad (2)$$</div>
+
+      <p>Now add (1) and (2) term by term. Each pair of terms adds up to $2a + (n - 1)d$, so</p>
+
+      <div class="eq">$$2S = \underbrace{[2a + (n - 1)d] + [2a + (n - 1)d] + \cdots + [2a + (n - 1)d]}_{n \text{ times}}$$</div>
+
+      <p>There are $n$ terms, so $2S = n[2a + (n - 1)d]$. Dividing both sides by 2 gives the sum.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The sum of the first <em>n</em> terms of an AP</div>
+        <p>The sum of the first $n$ terms of the AP with first term $a$ and common difference $d$ is given by</p>
+        <div class="eq">$$S = \dfrac{n}{2}[2a + (n - 1)d]$$</div>
+      </div>
+
+    </div>
+  </div>
+</section>
