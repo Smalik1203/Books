@@ -1,0 +1,44 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="work work--list">
+        <p>direct method: &nbsp; $\bar{x} = \dfrac{\sum f_ix_i}{\sum f_i} = \dfrac{1390}{35} = 39.71$</p>
+        <p>assumed mean method: &nbsp; $\bar{x} = a + \dfrac{\sum f_id_i}{\sum f_i} = 50 + \dfrac{-360}{35} = 39.71$</p>
+        <p>step-deviation method: &nbsp; $\bar{x} = a + h\left(\dfrac{\sum f_iu_i}{\sum f_i}\right) = 50 + 10 \times \dfrac{-36}{35} = 39.71$</p>
+      </div>
+
+      <p>So the mean percentage of female teachers in the rural primary schools is 39.71.</p>
+
+      <p><strong>Remark.</strong> All three methods give the same result, so choose a method by looking at the numbers. If the $x_i$ and $f_i$ are small, the direct method is a good choice. If they are large, use the assumed mean method or the step-deviation method. If the classes are of different sizes and the $x_i$ are large, you can still use the step-deviation method: take $h$ to be a number that divides every $d_i$.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>The table shows the number of wickets taken by bowlers in one-day cricket matches. Find the mean number of wickets using a suitable method. What does the mean tell you?</p>
+          <table class="table--data">
+            <thead><tr><th>Wickets</th><th>20&nbsp;–&nbsp;60</th><th>60&nbsp;–&nbsp;100</th><th>100&nbsp;–&nbsp;150</th><th>150&nbsp;–&nbsp;250</th><th>250&nbsp;–&nbsp;350</th><th>350&nbsp;–&nbsp;450</th></tr></thead>
+            <tbody><tr><td>Bowlers</td><td>7</td><td>5</td><td>16</td><td>12</td><td>2</td><td>3</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p>The classes are of different sizes, and the $x_i$ are large. Let us still use the step-deviation method, with ${a = 200}$ and ${h = 20}$. This gives Table 13.8.</p>
+
+      <table class="table--data">
+        <caption>Table 13.8</caption>
+        <thead><tr><th>Wickets</th><th>$f_i$</th><th>$x_i$</th><th>$d_i = x_i - 200$</th><th>$u_i = \frac{d_i}{20}$</th><th>$f_iu_i$</th></tr></thead>
+        <tbody>
+          <tr><td>20&nbsp;–&nbsp;60</td><td>7</td><td>40</td><td>$-160$</td><td>$-8$</td><td>$-56$</td></tr>
+          <tr><td>60&nbsp;–&nbsp;100</td><td>5</td><td>80</td><td>$-120$</td><td>$-6$</td><td>$-30$</td></tr>
+          <tr><td>100&nbsp;–&nbsp;150</td><td>16</td><td>125</td><td>$-75$</td><td>$-3.75$</td><td>$-60$</td></tr>
+          <tr><td>150&nbsp;–&nbsp;250</td><td>12</td><td>200</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>250&nbsp;–&nbsp;350</td><td>2</td><td>300</td><td>100</td><td>5</td><td>10</td></tr>
+          <tr><td>350&nbsp;–&nbsp;450</td><td>3</td><td>400</td><td>200</td><td>10</td><td>30</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td>45</td><td></td><td></td><td></td><td>$-106$</td></tr></tfoot>
+      </table>
+
+    </div>
+  </div>
+</section>

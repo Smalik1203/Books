@@ -612,6 +612,14 @@ td { padding: 1.5mm 3mm; }
 /* cells of unequal length that are read line by line, like columns of working, start together at the top */
 .table--top td { vertical-align: top; }
 tbody tr:last-child td { border-bottom: var(--stroke-rule) solid var(--teal); }
+/* a totals row closes a column of working: a hairline above it, the rule below */
+tfoot td { border-top: var(--stroke-hair) solid var(--teal); border-bottom: var(--stroke-rule) solid var(--teal); padding: 1.5mm 3mm; }
+table:has(tfoot) tbody tr:last-child td { border-bottom: 0; }
+/* a frequency distribution: many short numbers across the measure,
+   so tighter cells, centred, with the row names flush left */
+.table--data th, .table--data td, .table--data tfoot td { padding: 1.1mm 2mm; text-align: center; white-space: nowrap; }
+/* the row names wrap; a class interval never breaks at its dash */
+.table--data th:first-child, .table--data td:first-child { text-align: left; white-space: normal; }
 
 
 /* ============================================================

@@ -1568,3 +1568,26 @@ settings the rest of the volume inherits rather than conflicts found.
    use melting and recasting once each, from the volume rule alone.
 5. **Names:** Rasheed, Mayank, Shanta and Rachel are the source's. Beyond the
    Book adds Nila and Omar.
+
+## Class 10 · Mathematics I · Chapter 13 — Statistics
+
+1. **Terms defined here:** *measures of central tendency*, *class mark*,
+   *assumed mean*, *direct*, *assumed mean* and *step-deviation method*,
+   *multimodal*, *modal class*, *cumulative frequency*, *cumulative frequency
+   table*, cumulative frequency distribution *of the less than* and *more than
+   type*, *median class*, *empirical relationship*. Mean, median, mode, class
+   interval and frequency are taken from Class 9.
+2. **Results stated:** the mean of grouped data by three methods
+   (x̄ = Σfx/Σf, x̄ = a + Σfd/Σf, x̄ = a + h·Σfu/Σf, with the class mark as x);
+   mode = l + (f1 − f0)/(2f1 − f0 − f2) × h; median = l + (n/2 − cf)/f × h;
+   3 Median = Mode + 2 Mean, stated as rough.
+3. **Notation:** x̄, d̄, ū; f_i, x_i, d_i, u_i; l, h, f1, f0, f2 for the mode and
+   l, n, cf, f, h for the median. Class intervals are set "10 – 25" with
+   no-break spaces round an en dash; ₹ outside maths.
+4. **Not taught:** ogives (named in NCERT's introduction and note, not in this
+   edition); mode and median with classes of unequal size.
+5. **New in the system:** `table--data` in `css/components.css` — tight,
+   centred cells that never break a class interval, with row names that wrap —
+   and a `tfoot` totals row (hairline above, rule below). A distribution too
+   wide for the measure is split into two stacked tables, caption on the first.
+6. **Names:** none in the source. Beyond the Book adds Meera and Arjun.
