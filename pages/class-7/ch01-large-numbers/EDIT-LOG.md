@@ -1,5 +1,36 @@
 # Class 7 · Mathematics I · Chapter 1 — Living with Large Numbers
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's one worked example (Example 1, p002) was set as stepped
+maths to match Beyond the Book: *Solution.*, a step to a `.work__row`, the
+reason in a `.chip`, and an *Answer* row. None was left as a question-only
+panel. **Only the layout changed** — no number, no maths, no question wording
+and no order was touched, and the closing observation ("One lakh is 1,00,000,
+so he does not reach even half a lakh") was kept as prose after the working
+rather than folded into a step.
+
+Verified by a script kept with the session's working notes: it pulls every
+maths span and every printed number out of each `.c-example` in the HEAD
+version and in the working tree, keyed by the example's tab, and compares
+them — 1 maths span and 5 numbers, identical — and re-derives
+$365 \times 100 = 36{,}500$ against the printed answer.
+
+Body pages 15 → 16. The added rows pushed p002 10.8 mm into the bottom
+margin, so the body was refitted with `refit.mjs`; the repack also applies
+the orphan rule the hand-fit had not, which is where the extra page went.
+After the refit: all pages fit, 0 stranded openers (0 before), every option
+row fits, no labels collide, `data-close` on p016.
+
+**Short body pages, reported not padded** — 1 (82%), 2 (85%), 3 (78%),
+8 (84%), 10 (82%), 12 (85%). Five are held open by an exercise band or an
+example panel that cannot be divided; page 12 by an `h3` that may not be
+stranded at the foot.
+
+Fill after: 1:82 2:85 3:78 4:97 5:97 6:96 7:95 8:84 9:97 10:82 11:88 12:85
+13:99 14:88 15:91 16:70 · Beyond 17:98 18:78 19:82 20:80 21:76 22:82 23:86
+24:96 25:92 26:88 27:82 28:67.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 **The chapter body is NCERT's structure, unchanged.** A rebuild of the body to

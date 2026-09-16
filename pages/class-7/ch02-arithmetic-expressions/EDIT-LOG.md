@@ -1,5 +1,60 @@
 # Class 7 · Mathematics I · Chapter 2 — Terms and Brackets
 
+## Examples set as steps, 16 September 2026
+
+All **18 worked examples in the chapter body** (Examples 1–18) were reset as
+stepped maths, to match Beyond the Book and DESIGN-MATHS §5a: the question as
+written, then `<p><strong>Solution.</strong></p>`, then a step to a
+`.work__row`, ending on a row labelled *Answer*. The reason, where the example
+gives one, is two to four words in a `.chip`. Only `p0xx` was touched;
+`p101`–`p110` are untouched.
+
+**Only the layout changed.** No mathematics, no number, no question wording,
+no order, no NCERT structure. The prose the examples were written in was
+redistributed into rows, not rewritten: what came out was connective tissue
+only ("so", "we get", "works it out as" → "gets"). Explanation that is not a
+step stayed as a `<p>` — Example 2's *Think of a story.*, Example 10's *There
+are many ways. Here are two.*, Example 11's closing paragraph on the right-hand
+arrangement, Example 13's *Check that …* observation, Example 1's Saturday
+aside, Example 10's *Name the terms …* prompt.
+
+**Verified** by a script in the session scratchpad
+(`scratchpad/steps-ch02-arithmetic-expressions/`), which pulls every maths span
+and every digit run out of the `HEAD` version and the working tree — per
+example, and for the body as one flow, since the refit repaginates — and
+reports any difference. **18 examples, 0 differences**, maths spans and numbers
+alike, inside the examples and outside them. A second script re-derives every
+example's arithmetic independently: **32 checks, 0 failures**. A third compares
+word bags, which is how the connective-only losses above were confirmed.
+
+**Pages.** Body 16 → 18 (`p001`–`p018`); chapter 26 → 28 with Beyond the Book.
+Refit with `refit.mjs … body`, which repacked 16 in, 18 out. `data-close` is on
+`p018`. Fill:
+
+    1:81  2:75  3:71  4:98  5:71  6:98  7:82  8:91  9:65
+    10:75 11:94 12:93 13:100 14:73 15:92 16:72 17:74 18:35 (close)
+
+All pages fit — no `!` overflow, nothing into the bottom margin, no `--head` or
+`--tail`. `fit-options`: every option row fits its columns. `check-labels`: no
+labels collide. `orphans`: **one** stranded opener, page 1's `h3` at 4.4 lines
+from the foot — the same one, on the same page, as before this edit; no new
+one.
+
+**Flagged, not fixed.**
+
+- **Ten short pages** (1, 2, 3, 5, 7, 9, 10, 14, 16, 17), against seven before.
+  Stepping the examples makes each one a taller indivisible panel, so `gaps`
+  names an example as what will not fit after seven of the ten, a heading after
+  two and the summary box after one. A panel is never divided, so closing these
+  would mean editing the prose at the join — out of scope for a layout pass.
+  Page 9 at 65% is the worst; it is held open by the `h3` that opens the next
+  page.
+- **`.chip` does two jobs in this chapter.** The body shades each *term* with
+  `.chip` (§2.2 onward, deliberately, and it says so on the page), and the
+  stepped layout uses `.chip` for a step's reason. In Examples 7, 8, 9, 11 and
+  15 both now appear in the same `.work__row` and look identical. No new class
+  was invented for this pass; it is worth a decision.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Only `p101`–`p110` changed. The chapter body (`p001`–`p016`) was not

@@ -183,6 +183,20 @@
   font-variant-numeric: lining-nums;
 }
 
+/* Why a step is allowed — the third thing in a `.work__row`, after the
+   label and the maths. It is a remark about the working, not part of it,
+   so it is quiet: the display face, italic, soft ink, no tint. It was a
+   `.chip` until 16 September 2026, and in a chapter that also shades a
+   term with a chip the two were the same mark saying different things —
+   one pointing at a piece of the expression, one explaining the line. */
+.work__why {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+
 
 /* ============================================================
    1. KEY IDEA — teal. A definition, or a result worth keeping.

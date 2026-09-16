@@ -1,5 +1,76 @@
 # Class 7 · Mathematics II · Chapter 7 — Finding the Unknown
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's worked examples now read the way Beyond the Book's do
+(DESIGN-MATHS §5a, *examples are stepped*): *Solution.*, a step to a
+`.work__row`, the reason two to four words in a `.chip`, an *Answer* row last,
+and a *Check* row before it where the example already checked its result.
+**Only the layout changed.** No mathematics, no number, no question wording,
+no example order and no NCERT structure was touched.
+
+**Seven of the fourteen were set as steps: Examples 1–6 and 14.** These are
+the ones whose working is inside the panel. The other seven were left as they
+are, and why is worth recording:
+
+- **Examples 7–12** are question-only panels. The chapter poses the problem,
+  then works it in running text — with Fig. 7.8–7.11, Table 7.3 and, for
+  Examples 8 and 10, two or three different students' methods, Example 10's
+  running from `p011` to `p012`. Pulling that into the panel would move
+  matter from outside the panel, put a figure inside a box that may never be
+  divided over a page break, and recast NCERT's *pose, then discuss* shape.
+  Left alone deliberately.
+- **Example 13** ("think of a real-life situation the equation could
+  describe") has no working to step: its answer is a story about a plumber's
+  bill, which is explanation, not a row of maths.
+
+A reason that moved into a chip left the sentence it came from; nothing else
+was cut. A lead-in or a closing observation stayed as a `<p>` before or after
+the `.work` block — Example 1 keeps "This works because addition and
+subtraction are inverse operations", Example 3 keeps the note on the additive
+inverse.
+
+**Verification.** `scratchpad/steps-p2ch07-equations/verify.mjs` reads every
+`.c-example` from `git show HEAD:` and from disk, keyed by its tab so a refit
+moving examples between pages does not confuse it, strips the tab and the step
+labels as furniture, and compares the numbers and the `$…$` spans. Result: 14
+examples before, 14 after; **no number dropped and none invented in any
+example**; the only count shifts are the *Answer* and *Check* rows restating a
+result. Every printed solution was substituted back into its printed equation
+($11y + (-5) = 61$ at $y = 6$; $6y + 7 = 4y + 21$ at $y = 7$;
+$300 + 6x = 10x - 100$ at $x = 100$) and every arithmetic result re-derived —
+13 checks, all passing. A word-token diff of the whole body confirmed the only
+words lost are the parenthetical reasons that became chips.
+
+**Fitting.** `refit.mjs … body`, then a rebuild. **22 body pages → 23**
+(chapter 32 → 33; Beyond the Book, `p101`–`p110`, untouched). `data-close`
+moved with the last body page to `p023`.
+
+| check | before | after |
+|---|---|---|
+| overflow | `!` page 5 after the edit, before the refit | none |
+| bottom margin | page 2 ran **4.8 mm** in | deepest **1.3 mm** (pages 7 and 30) |
+| `orphans` | 0 stranded | 0 stranded |
+| `fit-options` | — | every option row fits its columns |
+| `check-labels` | — | no labels collide |
+| `--head`/`--tail` | none | none |
+
+Page 2's 4.8 mm overrun, which this chapter has carried, is cleared.
+
+**Short pages, reported and not padded.** 1 (79%), 3 (86%), 4 (62%),
+6 (63%), 15 (85%), 21 (79%), 31 (85%) — four before, seven now. `gaps.mjs`
+names what holds each: pages 1 and 21 a figure, pages 3, 4 and 15 a heading
+that may not be stranded at the foot, page 31 an exercise band, and **page 6
+the Example 3 panel**, 81 mm of panel against 85 mm of gap. That last one is
+the cost of the change: two examples now fill page 6 where three prose ones
+once did.
+
+**Flagged: `refit.mjs` is not idempotent on this chapter.** Refitting the
+settled 23 pages a second time puts page 2 back to 102% — 4.8 mm into the
+bottom margin — and adds short pages at 5 (77%) and 7 (74%). The pages as
+committed come from one refit of the pre-edit body. Do not refit again without
+reading the fill line afterwards.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Rebuilt to the shape in DESIGN-MATHS.md §6a, "The shape since 15 September

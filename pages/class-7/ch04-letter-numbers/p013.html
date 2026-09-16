@@ -2,113 +2,49 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Describing patterns</h3>
+      <h2><span class="badge">4.5</span><span class="name">Patterns and Relationships</span></h2>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 12</div>
-        <div class="c-example__body">
-          <p>Somjit notices that the border of a saree repeats three designs, A, B and C, as in Fig. 4.7. Where does each design appear for the $n$th time?</p>
-          <p>Design C first appears at position 3, then at position 6, then at 9. It appears at the multiples of 3, so its $n$th appearance is at position $3n$. Design B appears at 2, 5, 8, 11, 14, and so on, which is always one position before C. So B appears for the $n$th time at position $3n - 1$, and in the same way A appears at position $3n - 2$.</p>
-        </div>
-      </div>
+      <p>Now we look for more relationships and patterns, and even explain why a pattern happens. It helps to describe a relationship in plain words, or to draw it, before writing it as an expression. Once we have an expression, we check it with a few numbers. Then we can use it to predict, and to show that a pattern holds for every number, not only for the ones we tried.</p>
 
-      <div class="c-figure c-figure--xl">
-              <figure>
-                <svg viewBox="0 0 320 54" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A border made of three designs A, B and C repeating in that order, with positions 1 to 9 numbered below.">
-      <rect class="dg-fill-a-soft" x="12" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M12 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="26" y="24.5" text-anchor="middle">A</text>
-      <text class="dg-tick" x="26" y="48" text-anchor="middle">1</text>
-      <rect class="dg-fill-c-soft" x="43" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M43 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="57" y="24.5" text-anchor="middle">B</text>
-      <text class="dg-tick" x="57" y="48" text-anchor="middle">2</text>
-      <rect class="dg-fill-b-soft" x="74" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M74 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="88" y="24.5" text-anchor="middle">C</text>
-      <text class="dg-tick" x="88" y="48" text-anchor="middle">3</text>
-      <rect class="dg-fill-a-soft" x="105" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M105 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="119" y="24.5" text-anchor="middle">A</text>
-      <text class="dg-tick" x="119" y="48" text-anchor="middle">4</text>
-      <rect class="dg-fill-c-soft" x="136" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M136 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="150" y="24.5" text-anchor="middle">B</text>
-      <text class="dg-tick" x="150" y="48" text-anchor="middle">5</text>
-      <rect class="dg-fill-b-soft" x="167" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M167 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="181" y="24.5" text-anchor="middle">C</text>
-      <text class="dg-tick" x="181" y="48" text-anchor="middle">6</text>
-      <rect class="dg-fill-a-soft" x="198" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M198 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="212" y="24.5" text-anchor="middle">A</text>
-      <text class="dg-tick" x="212" y="48" text-anchor="middle">7</text>
-      <rect class="dg-fill-c-soft" x="229" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M229 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="243" y="24.5" text-anchor="middle">B</text>
-      <text class="dg-tick" x="243" y="48" text-anchor="middle">8</text>
-      <rect class="dg-fill-b-soft" x="260" y="6" width="28" height="28"/>
-      <path class="dg-line" d="M260 6 h28 v28 h-28 Z"/>
-      <text class="dg-label" x="274" y="24.5" text-anchor="middle">C</text>
-      <text class="dg-tick" x="274" y="48" text-anchor="middle">9</text>
-      <text class="dg-label" x="305" y="24.5" text-anchor="middle">…</text>
-      </svg>
-                <figcaption><span class="fignum">Fig. 4.7</span> The designs along a saree border.</figcaption>
-              </figure>
-            </div>
+      <h3>Formula detective</h3>
 
-      <p>Can we go the other way? Given a position, which design is there? If the position is a multiple of 3, it holds C. If it is 1 less than a multiple of 3, it holds B, and if it is 2 less, it holds A. The remainder on dividing the position by 3 tells us which case we are in. Use Table 4.11 to find the designs at positions 99, 122 and 148.</p>
+      <p>A number machine takes in two numbers, $a$ and $b$, and does the same operations on them every time. Table 4.9 shows one machine. Its rule is “two times the first number, minus the second number”, which is the expression $2a - b$. For the first pair, the machine works out $2 \times 5 - 2 = 8$. Check that the rule gives the output for every pair.</p>
 
       <table>
-        <caption>Table 4.11 Positions divided by 3</caption>
-        <thead><tr><th>Position</th><th>Quotient</th><th>Remainder</th></tr></thead>
+        <caption>Table 4.9 A number machine with rule 2a − b</caption>
+        <thead><tr><th>$a$</th><th>$b$</th><th>output</th><th>expression</th></tr></thead>
         <tbody>
-          <tr><td>99</td><td>33</td><td>0</td></tr>
-          <tr><td>122</td><td>40</td><td>2</td></tr>
-          <tr><td>148</td><td>49</td><td>1</td></tr>
+          <tr><td>5</td><td>2</td><td>8</td><td>$2 \times 5 - 2$</td></tr>
+          <tr><td>9</td><td>3</td><td>15</td><td><span class="blank"></span></td></tr>
+          <tr><td>6</td><td>5</td><td>7</td><td><span class="blank"></span></td></tr>
+          <tr><td>8</td><td>6</td><td>10</td><td><span class="blank"></span></td></tr>
         </tbody>
       </table>
 
-      <h3>Patterns in a calendar</h3>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.5</div>
+        <ol class="c-questions">
+          <li>Table 4.10 shows two more machines. Find the rule of each machine as an algebraic expression. Then write the expression for each pair of inputs, including $a$ and $b$ themselves.</li>
+        </ol>
+      </div>
 
-      <p>Look at a square of four dates in a calendar, such as the one in Fig. 4.8 (i). Add the numbers on each diagonal: $12 + 20 = 32$ and $13 + 19 = 32$. The two sums are equal. Try another square of four dates.</p>
+      <table>
+        <caption>Table 4.10 Two number machines</caption>
+        <thead><tr><th colspan="3">Machine A</th><th colspan="3">Machine B</th></tr><tr><th>$a$</th><th>$b$</th><th>output</th><th>$a$</th><th>$b$</th><th>output</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>2</td><td>5</td><td>3</td><td>5</td><td>16</td></tr>
+          <tr><td>4</td><td>5</td><td>7</td><td>0</td><td>3</td><td>1</td></tr>
+          <tr><td>11</td><td>9</td><td>18</td><td>2</td><td>3</td><td>7</td></tr>
+          <tr><td>10</td><td>10</td><td>18</td><td>3</td><td>10</td><td>31</td></tr>
+          <tr><td>$a$</td><td>$b$</td><td><span class="blank blank--sm"></span></td><td>$a$</td><td>$b$</td><td><span class="blank blank--sm"></span></td></tr>
+        </tbody>
+      </table>
 
-      <div class="c-figure c-figure--xl">
-              <figure>
-                <svg viewBox="0 0 320 98" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three groups of calendar dates. (i) A two by two square: 12, 13 above 19, 20. (ii) The same square in letters: a, a + 1 above a + 7, a + 8. (iii) A plus shape: 8 above 14, 15, 16, with 22 below.">
-      <path class="dg-line" d="M14 22 h34 v24 h-34 Z"/>
-      <text class="dg-tick" x="31" y="38.5" text-anchor="middle">12</text>
-      <path class="dg-line" d="M48 22 h34 v24 h-34 Z"/>
-      <text class="dg-tick" x="65" y="38.5" text-anchor="middle">13</text>
-      <path class="dg-line" d="M14 46 h34 v24 h-34 Z"/>
-      <text class="dg-tick" x="31" y="62.5" text-anchor="middle">19</text>
-      <path class="dg-line" d="M48 46 h34 v24 h-34 Z"/>
-      <text class="dg-tick" x="65" y="62.5" text-anchor="middle">20</text>
-      <path class="dg-line" d="M110 22 h44 v24 h-44 Z"/>
-      <text class="dg-label" x="132" y="38.5" text-anchor="middle">a</text>
-      <path class="dg-line" d="M154 22 h44 v24 h-44 Z"/>
-      <text class="dg-label" x="176" y="38.5" text-anchor="middle">a + 1</text>
-      <path class="dg-line" d="M110 46 h44 v24 h-44 Z"/>
-      <text class="dg-label" x="132" y="62.5" text-anchor="middle">a + 7</text>
-      <path class="dg-line" d="M154 46 h44 v24 h-44 Z"/>
-      <text class="dg-label" x="176" y="62.5" text-anchor="middle">a + 8</text>
-      <path class="dg-line" d="M252 11 h30 v22 h-30 Z"/>
-      <text class="dg-tick" x="267" y="26.5" text-anchor="middle">8</text>
-      <path class="dg-line" d="M222 33 h30 v22 h-30 Z"/>
-      <text class="dg-tick" x="237" y="48.5" text-anchor="middle">14</text>
-      <path class="dg-line" d="M252 33 h30 v22 h-30 Z"/>
-      <text class="dg-tick" x="267" y="48.5" text-anchor="middle">15</text>
-      <path class="dg-line" d="M282 33 h30 v22 h-30 Z"/>
-      <text class="dg-tick" x="297" y="48.5" text-anchor="middle">16</text>
-      <path class="dg-line" d="M252 55 h30 v22 h-30 Z"/>
-      <text class="dg-tick" x="267" y="70.5" text-anchor="middle">22</text>
-      <text class="dg-note" x="48" y="92" text-anchor="middle">(i)</text>
-      <text class="dg-note" x="154" y="92" text-anchor="middle">(ii)</text>
-      <text class="dg-note" x="267" y="92" text-anchor="middle">(iii)</text>
-      </svg>
-                <figcaption><span class="fignum">Fig. 4.8</span> (i) Four dates. (ii) The same square in letters. (iii) A plus shape.</figcaption>
-              </figure>
-            </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Make up a rule of your own. Write a few pairs of inputs with their outputs, and challenge a classmate to find the rule.</li>
+        </ol>
+      </div>
 
     </div>
   </div>

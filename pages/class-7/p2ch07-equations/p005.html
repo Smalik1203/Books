@@ -2,6 +2,25 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h2><span class="badge">7.2</span><span class="name">Solving Equations Systematically</span></h2>
+
+      <p>How did you solve the equations in Section 7.1? One way is to try different values for the letter-number until one of them makes the LHS equal to the RHS. This way of solving is called the <span class="term">trial and error method</span>. Table 7.1 tries it for $2n + 1 = 99$. Each row puts a value of $n$ into the LHS and compares the result with 99, and the next value to try depends on how far away the last one was.</p>
+
+      <table>
+        <caption>Table 7.1 Trying values of $n$ in $2n + 1 = 99$</caption>
+        <thead><tr><th>$n$</th><th>LHS, $2n + 1$</th><th>compared with 99</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>11</td><td>far too small</td></tr>
+          <tr><td>10</td><td>21</td><td>still too small</td></tr>
+          <tr><td>30</td><td>61</td><td>still too small</td></tr>
+          <tr><td>40</td><td>81</td><td>closer</td></tr>
+          <tr><td>50</td><td>101</td><td>a little too large</td></tr>
+          <tr><td>49</td><td>99</td><td>equal</td></tr>
+        </tbody>
+      </table>
+
+      <p>So $n = 49$ is the solution of $2n + 1 = 99$. Can this equation have any other solution? Trial and error can take a long time. Try solving $5x - 4 = 7$ this way.</p>
+
       <h3>The same operation on both sides</h3>
 
       <p>With the weighing scales, we did not use trial and error. Some weights we could see straight away. For others, we took equal weights off both pans, and the scale stayed balanced. Do equations behave in the same way?</p>
@@ -14,28 +33,6 @@
       </div>
 
       <p>On the scales, we took weights off both pans until the sacks were on one pan only, and that made the problem easy. We can use the same idea on an equation. First, let us try it on some arithmetic.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>We know that $14593 - 1459 + 145 - 14 + 88 = 13353$. What is the value of $14593 - 1459 + 145 - 14$?</p>
-          <p>Do we need to work the expression out, one term at a time? No. It is exactly the LHS without the term $+ 88$, and we already know the value of the LHS. Subtracting 88 from both sides removes that term from the LHS:</p>
-          <div class="work work--centred">
-            <p>$14593 - 1459 + 145 - 14 + 88 - 88 = 13353 - 88$</p>
-          </div>
-          <p>So $14593 - 1459 + 145 - 14 = 13265$. This works because addition and subtraction are inverse operations: one undoes the other. Working the expression out term by term would have taken four calculations, and this took one.</p>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>We know that $23 \times 41 \times 11 \times 8 \times 7 = 5{,}80{,}888$. What is the value of $23 \times 41 \times 11 \times 8$?</p>
-          <p>Multiplication and division are inverse operations: dividing by 7 undoes multiplying by 7. So we can simply divide $5{,}80{,}888$ by 7. This gives $23 \times 41 \times 11 \times 8 = 82{,}984$. We can check the answer: $82{,}984 \times 7 = 5{,}80{,}888$.</p>
-        </div>
-      </div>
-
-      <p>Is dividing $5{,}80{,}888$ by 7 the same as dividing both sides of the equation by 7, so that the factor 7 is removed from the LHS?</p>
 
     </div>
   </div>
