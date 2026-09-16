@@ -394,6 +394,16 @@ has two (§4).
 The end-of-chapter exercises run to 35 questions in one numbered list, so
 `components.css` now carries `data-start` counters to 40.
 
+**Which of them a page actually uses.** The Class 7 rebuild put the chapter
+body back to NCERT's structure, so of the components above only `.c-case`
+and `.c-practice__sub` / `__note` are in the book, in Beyond the Book's
+practice stage, beside `.c-practice__num` in `bridge.css`. The other six —
+`.chapterhead__source`, `.c-goals`, `.c-check`, `.c-fact`, `.c-mistake`,
+`.c-mindmap`, `.c-vocab` — are defined and used by nothing. They are what a
+body built to this section would need, and the reasons for each still hold;
+they are kept rather than deleted so that the next class to try it starts
+from a library, not from scratch. Do not add one to a Class 7 chapter body.
+
 ## 6. Diagrams — first-class components
 
 Every mathematical diagram is drawn with the vocabulary in `css/diagram.css`
@@ -503,7 +513,10 @@ measure and then carried by the components already in the library. It is
 **four stages, not ten** — the first design had a stage a page, and seven
 of the ten were question pages with no worked problem anywhere; a reader
 was tested on a kind of question the book had never shown being solved.
-The stages are
+
+**This is the older shape, which Classes 6 and 8–10 still carry.** Class 7
+was rebuilt to the shape at the top of this section on 15 September 2026;
+where the two disagree, that one is current. The stages here are
 
     1 Using What You Know five questions, each tried first and then
                           explained, through which the reader finds that

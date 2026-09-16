@@ -209,14 +209,25 @@ of the six were doing. The stages, their contents and the components they added 
 are in [DESIGN-MATHS.md §6a](DESIGN-MATHS.md); **the rest of the section is built from the
 components the chapter already uses**, which is the point.
 
-Every stage opens with a `.c-stage` head — number, name, and what the stage
-is for — and every Bridge page carries **`data-bridge`**, which puts
+Every stage opens with a `.c-stage` head — its number and its name — and
+every Bridge page carries **`data-bridge`**, which puts
 *· Beyond the Book* in the running head. `repack.mjs` drops that attribute
 when it rewrites a page; `refit.mjs` stamps it back on, which is the reason
 to refit through it rather than repacking by hand.
 
-The section is four stages (questions tried and explained, worked problems,
-problem sets, answers) and a stage may start part-way down a page. It is
+**Class 7 is four stages: Using What You Know · Solved Examples · Practice ·
+Answers**, the shape at the top of DESIGN-MATHS §6a. Three things are true
+only of it: the first stage is kept word for word wherever one already
+exists, because its tried-then-explained questions are how a reader sees a
+simple idea become a tricky one; the Practice stage has no head of its own,
+its band carrying the stage numeral instead; and no stage head has a line
+under its name. **Its chapter body is NCERT's own structure** — the worked
+examples and examination-form practice a Cengage-style book puts in the
+chapter go here instead (§5).
+
+Classes 6 and 8–10 still carry the older four stages (questions tried and
+explained, worked problems, problem sets, answers), and a stage may start
+part-way down a page. It is
 written as a lesson, not a method: no named strategies, no coaching
 vocabulary — see DESIGN-MATHS.md §6a before writing one. Two chapters were still
 carrying the ten-stage draft that §6a describes being thrown out, complete
