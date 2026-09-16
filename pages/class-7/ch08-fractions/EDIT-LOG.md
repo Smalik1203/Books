@@ -1,5 +1,42 @@
 # Class 7 · Mathematics I · Chapter 8 — Working with Fractions
 
+## Examples set as steps, 16 September 2026
+
+**All 5 worked examples in the chapter body are now stepped maths** —
+*Solution*, a step to a `.work__row`, the reason two to four words in a
+`.chip`, ending on an `Answer` row — so the chapter matches Beyond the Book,
+which the student meets second.
+
+**Only the layout changed.** No number, no question, no order, no NCERT
+structure. Sentences that are method rather than a step stayed as paragraphs
+before the `Solution`: Example 2's *divide the multiplicand, 8, by the
+denominator 4…* and Example 5's *count how many times each fountain fills the
+tank in one day.* Example 3 keeps Fig. 8.9 where it was, after the panel.
+
+**Verified** by a script that pulls every number and every maths span out of
+each `.c-example` at `HEAD` and after the change and compares them as
+multisets (step labels excluded, since they are new furniture): identical for
+all 5. The same script re-derives each example in exact fractions —
+$5 \times \frac{2}{3} = \frac{10}{3}$; $1\frac{1}{4} \times 8 = 10$;
+$\frac{1}{4} \div 5 = \frac{1}{20}$; $7\frac{1}{2} \div \frac{1}{25} =
+\frac{375}{2}$; $1 + 2 + 4 + 5 = 12$ fillings a day, so $\frac{1}{12}$ of a
+day — and checks each printed result is the one on the page. All pass.
+
+**Pages: 13 body pages before, 13 after.** Beyond the Book untouched (9
+pages); 22 in the chapter either way.
+
+Flagged:
+
+- **page 9 is 80% full** — 47 mm held open by Example 5, which is 74 mm and
+  cannot be divided. Not padded.
+- **page 2 is 86% full** — 31 mm held open by the `h3` that opens page 3.
+- **page 10 runs 1.1–1.6 mm into the bottom margin**, within the 3 mm the bar
+  allows; the proof shows no clipping.
+- Pages 14, 20 and 22 also run 1.1–1.3 mm into the bottom margin. Those are
+  Beyond the Book pages, untouched by this work; pre-existing.
+- Orphans unchanged at **0 stranded openers**, before and after.
+  `fit-options` and `check-labels` clear; `data-close` still on `p013`.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Only the Beyond pages changed. The chapter body (`p001`–`p013`) and

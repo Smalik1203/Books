@@ -2,12 +2,40 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h3>The LCM from prime factorisations</h3>
+
+      <p>Listing multiples is slow for larger numbers, as (c) and (d) show. Prime factorisation helps here too. Compare a number with one of its multiples, say 36 and $648 = 36 \times 18$.</p>
+
+      <div class="work work--list">
+        <p>$36 = 2 \times 2 \times 3 \times 3$</p>
+        <p>$648 = (2 \times 2 \times 3 \times 3) \times (2 \times 3 \times 3)$</p>
+      </div>
+
+      <p>The factorisation of the multiple contains the whole factorisation of the number, and some more primes. Does this happen for every multiple? How can it help us find the LCM?</p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 6</div>
         <div class="c-example__body">
           <p>Find the LCM of 14 and 35.</p>
-          <p>$14 = 2 \times 7$ and $35 = 5 \times 7$. A common multiple must contain $2 \times 7$ and $5 \times 7$ as parts. For example, $2 \times 7 \times 5 \times 7 \times 3$ and $2 \times 2 \times 5 \times 7 \times 7 \times 11$ are common multiples. Is $2 \times 3 \times 5 \times 7$ one?</p>
-          <p>The smallest is $2 \times 5 \times 7 = 70$. It contains both $2 \times 7$ and $5 \times 7$, and taking away any of its primes leaves a number that is not a multiple of both. So the LCM is 70.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$14 = 2 \times 7$</span>
+              <span class="work__why">prime factorisation</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$35 = 5 \times 7$</span>
+              <span class="work__why">prime factorisation</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>A common multiple must contain $2 \times 7$ and $5 \times 7$ as parts</span>
+              <span class="work__why">must contain both</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>The smallest is $2 \times 5 \times 7 = 70$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>It contains both $2 \times 7$ and $5 \times 7$, and taking away any of its primes leaves a number that is not a multiple of both</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The LCM is 70.</span></div>
+          </div>
+          <p>For example, $2 \times 7 \times 5 \times 7 \times 3$ and $2 \times 2 \times 5 \times 7 \times 7 \times 11$ are common multiples. Is $2 \times 3 \times 5 \times 7$ one?</p>
         </div>
       </div>
 
@@ -15,34 +43,30 @@
         <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
           <p>Find the LCM of 96 and 360.</p>
-          <div class="work work--list">
-            <p>$96 = 2 \times 2 \times 2 \times 2 \times 2 \times 3$</p>
-            <p>$360 = 2 \times 2 \times 2 \times 3 \times 3 \times 5$</p>
-          </div>
-          <p>The primes are 2, 3 and 5. How many 2s must the LCM contain? 96 has five 2s and 360 has three, so five 2s contain both; more than five would give a common multiple that is not the lowest. How many 3s? 96 has one and 360 has two, so two. How many 5s? 96 has none and 360 has one, so one.</p>
-          <div class="work work--centred">
-            <p>$\text{LCM} = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3 \times 5 = 1440$</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$96 = 2 \times 2 \times 2 \times 2 \times 2 \times 3$</span>
+              <span class="work__why">prime factorisation</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$360 = 2 \times 2 \times 2 \times 3 \times 3 \times 5$</span>
+              <span class="work__why">prime factorisation</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>The primes are 2, 3 and 5</span>
+              <span class="work__why">primes in either</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>96 has five 2s and 360 has three, so five 2s contain both; more than five would give a common multiple that is not the lowest</span>
+              <span class="work__why">how many 2s?</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>96 has one and 360 has two, so two</span>
+              <span class="work__why">how many 3s?</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>96 has none and 360 has one, so one</span>
+              <span class="work__why">how many 5s?</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\text{LCM} = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3 \times 5 = 1440$</span></div>
           </div>
         </div>
-      </div>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Finding the LCM</div>
-        <p>Write the prime factorisation of each number. Take every prime that appears in any of them, as many times as it appears in the factorisation where it appears the most times. The product of these primes is the LCM. This works for two or more numbers.</p>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.4</div>
-        <ol class="c-questions">
-          <li>Find the LCM.
-            <ol class="c-parts c-parts--alpha c-parts--4">
-              <li>30, 72</li>
-              <li>36, 54</li>
-              <li>105, 195, 65</li>
-              <li>222, 370</li>
-            </ol>
-          </li>
-        </ol>
       </div>
 
     </div>

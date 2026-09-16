@@ -2,31 +2,37 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Does this ever end?</h3>
-
-      <p>Find $10 \div 3$ by long division. 10 ones $\div$ 3 gives 3 ones, with 1 one left. That becomes 10 tenths, and 10 tenths $\div$ 3 gives 3 tenths, with 1 tenth left. That becomes 10 hundredths: 3 hundredths, with 1 hundredth left. Every step leaves a remainder of 1, so the division never ends. We write $10 \div 3 = 3.333\ldots$; it cannot be written as a decimal with a fixed number of digits. You will study such numbers in a later class.</p>
-
-      <p>Find $10 \div 9$ and $100 \div 11$. Now find $1 \div 7$. Does it end? Keep track of the remainders: 1, 3, 2, 6, 4, 5, and then 1 again, so they repeat in the same order for ever. Can you explain why the division can never end? Because the remainders repeat, the digits of the quotient repeat too: $1 \div 7 = 0.142857\,142857\ldots$</p>
-
-      <h3>A magic number: 142857</h3>
-
-      <p>Multiply 142857 by each of 1, 2, 3, 4, 5 and 6. What do you notice? Each product has the same six digits, in the same order round a circle, only starting at a different place. Now multiply 142857 by 7. What happens?</p>
-
-      <p>Are there other numbers like this? Yes: the repeating block of $1 \div 17$ is one. In 1927 Emil Artin conjectured that there are infinitely many such cyclic numbers, and no one has yet proved or disproved it.</p>
-
-      <h3>Dividend, divisor and quotient</h3>
-
-      <p>When we divide one counting number by another, larger than 1, the quotient is less than the dividend: $128 \div 4 = 32$. But $128 \div 0.4 = 320$ is greater than the dividend. Is the quotient always greater than the dividend when the divisor is a decimal? Try different divisors. Then describe how the dividend, the divisor and the quotient are related, in a table like Table 4.4.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Find $0.06 \div 5$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>0.06 is 0 ones, 0 tenths and 6 hundredths</span>
+              <span class="work__why">by place value</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>0 ones $\div$ 5 is 0 ones; moving to tenths, 0 tenths $\div$ 5 is 0 tenths</span>
+              <span class="work__why">put the decimal point</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>6 hundredths $\div$ 5 is 1 hundredth, with 1 hundredth left, which becomes 10 thousandths</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>10 thousandths $\div$ 5 is 2 thousandths</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$0.06 \div 5 = 0.012$</span></div>
+          </div>
+        </div>
+      </div>
 
       <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.3</div>
+        <div class="c-practice__head">Exercise Set 4.2</div>
         <ol class="c-questions">
-          <li>Write each fraction as a decimal.
+          <li>Find each quotient by making the denominator 10, 100 or 1000. Check your answer by long division.
             <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
-              <li>$\dfrac{2}{5}$</li>
-              <li>$\dfrac{13}{4}$</li>
-              <li>$\dfrac{4}{50}$</li>
-              <li>$\dfrac{5}{8}$</li>
+              <li>$\dfrac{18}{5}$</li>
+              <li>$\dfrac{415}{4}$</li>
+              <li>$\dfrac{1217}{2}$</li>
+              <li>$\dfrac{4827}{8}$</li>
             </ol>
           </li>
         </ol>
@@ -34,18 +40,32 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="2">
-          <li>Find the quotients: (a) $24.84 \div 1.2$, (b) $5.776 \div 1.52$.</li>
+          <li>Choose the correct answer. (a) $\frac{1526}{4}$ is (i) 38.15 (ii) 380.15 (iii) 381.5 (iv) 381.05. (b) $\frac{3567}{8}$ is (i) 4458.75 (ii) 44.5875 (iii) 445.875 (iv) 4.45875.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="3">
-          <li>$156 \times 12 = 1872$. Use this to find:
-            <ol class="c-parts c-parts--alpha">
-              <li>$15.6 \times 1.2$</li>
-              <li>$187.2 \div 1.2$</li>
-              <li>$18.72 \div 15.6$</li>
-              <li>$0.156 \times 0.12$</li>
+          <li>Find the quotients.
+            <ol class="c-parts c-parts--alpha c-parts--4">
+              <li>$132 \div 4$</li>
+              <li>$13.2 \div 4$</li>
+              <li>$1.32 \div 4$</li>
+              <li>$0.132 \div 4$</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Find the quotients.
+            <ol class="c-parts c-parts--alpha c-parts--3">
+              <li>$126 \div 8$</li>
+              <li>$12.6 \div 8$</li>
+              <li>$1.26 \div 8$</li>
+              <li>$0.126 \div 8$</li>
+              <li>$0.0126 \div 8$</li>
             </ol>
           </li>
         </ol>

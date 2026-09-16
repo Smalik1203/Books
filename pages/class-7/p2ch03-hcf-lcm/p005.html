@@ -2,15 +2,49 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.2</div>
+        <ol class="c-questions">
+          <li>Find the common factors and the HCF of each group of numbers, using prime factorisations. Check one of your answers by listing all the factors.
+            <ol class="c-parts c-parts--alpha c-parts--3">
+              <li>50, 60</li>
+              <li>140, 275</li>
+              <li>77, 725</li>
+              <li>370, 592</li>
+              <li>81, 243</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+
+      <p>Can we find the HCF without listing all the common factors? Looking at the prime factorisations once more shows how.</p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
           <p>Find the HCF of 30 and 72.</p>
-          <div class="work work--list">
-            <p>$30 = 2 \times 3 \times 5$</p>
-            <p>$72 = 2 \times 2 \times 2 \times 3 \times 3$</p>
+          <p>The HCF is the largest part common to both.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$30 = 2 \times 3 \times 5$</span>
+              <span class="work__why">prime factorisation</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$72 = 2 \times 2 \times 2 \times 3 \times 3$</span>
+              <span class="work__why">prime factorisation</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>It can contain only primes that appear in both factorisations, here 2 and 3</span>
+              <span class="work__why">primes in both</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>30 has only one 2, so the largest common part has one 2</span>
+              <span class="work__why">how many 2s?</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>30 has only one 3, so it has one 3</span>
+              <span class="work__why">how many 3s?</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The HCF is $2 \times 3 = 6$.</span></div>
           </div>
-          <p>The HCF is the largest part common to both. It can contain only primes that appear in both factorisations, here 2 and 3. How many 2s? 30 has only one 2, so the largest common part has one 2. How many 3s? 30 has only one 3, so it has one 3. The HCF is $2 \times 3 = 6$. Any larger common part would need a second 2 or a second 3, and 30 has neither.</p>
+          <p>Any larger common part would need a second 2 or a second 3, and 30 has neither.</p>
         </div>
       </div>
 
@@ -23,32 +57,18 @@
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Find the HCF of 225 and 750. Here $225 = 3 \times 3 \times 5 \times 5$ and $750 = 2 \times 3 \times 5 \times 5 \times 5$.</p>
-          <p>The fewest 3s is one, in 750, and the fewest 5s is two, in 225, so the HCF is $3 \times 5 \times 5 = 75$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>The fewest 3s is one, in 750, and the fewest 5s is two, in 225</span>
+              <span class="work__why">fewest of each</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The HCF is $3 \times 5 \times 5 = 75$.</span></div>
+          </div>
         </div>
       </div>
 
       <p>The same method finds the HCF of three or more numbers.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.3</div>
-        <ol class="c-questions">
-          <li>Find the HCF.
-            <ol class="c-parts c-parts--alpha c-parts--3">
-              <li>24, 180</li>
-              <li>42, 75, 24</li>
-              <li>240, 378</li>
-              <li>400, 2500</li>
-              <li>300, 800</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>From $72 = 6 \times 12$ and $144 = 8 \times 18$, can we say that 72 and 144 have no common factor but 1? Why not?</li>
-        </ol>
-      </div>
 
     </div>
   </div>

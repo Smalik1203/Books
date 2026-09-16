@@ -1,5 +1,44 @@
 # Class 7 · Mathematics II · Chapter 3 — Finding Common Ground
 
+## Examples set as steps, 16 September 2026
+
+**All 7 worked examples in the chapter body are now stepped maths** —
+*Solution*, a step to a `.work__row`, the reason two to four words in a
+`.chip`, ending on an `Answer` row — so the chapter matches Beyond the Book,
+which the student meets second.
+
+**Only the layout changed.** No number, no question, no order, no NCERT
+structure. Sentences that are explanation rather than a step stayed as
+paragraphs: Example 1's *every factor of 45 is a part of…* lead-in, Example
+3's *co-prime* closing line, Example 4's *the HCF is the largest part common
+to both* and its closing *any larger common part…*, Example 6's *for
+example… is $2 \times 3 \times 5 \times 7$ one?* Example 5 keeps its
+factorisations in the question line, where NCERT prints them.
+
+**Verified** by a script that pulls every number and every maths span out of
+each `.c-example` at `HEAD` and after the change and compares them as
+multisets (step labels excluded, since they are new furniture): identical for
+all 7. The same script re-derives every HCF and LCM by computation —
+HCF(45,75)=15, HCF(112,84)=28, HCF(96,275)=1, HCF(30,72)=6, HCF(225,750)=75,
+LCM(14,35)=70, LCM(96,360)=1440 — checks each printed factorisation multiplies
+back to its number, and checks Example 1's list of common factors against the
+divisors of the HCF. All pass.
+
+**Pages: 12 body pages before, 12 after.** Beyond the Book untouched (9
+pages); 21 in the chapter either way.
+
+Flagged:
+
+- **page 5 runs 1.3 mm into the bottom margin** (101% fill). Within the 3 mm
+  the bar allows, and the proof shows no clipping. Closing it would mean
+  moving Example 5 whole to page 6, which reopens a 53 mm gap on page 5.
+- **page 10 is 82% full** — 42 mm held open because the next page opens with
+  an exercise band. Not padded.
+- **page 2 is 84% full** — pre-existing, held by the `h3` that opens page 3.
+- Orphans improved: the chapter had **1 stranded opener** (page 7, an exercise
+  band 3.3 lines from the foot) before this work and has **0** after.
+  `fit-options` and `check-labels` clear.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 **The chapter body is NCERT's structure, unchanged.** A rebuild of the body to

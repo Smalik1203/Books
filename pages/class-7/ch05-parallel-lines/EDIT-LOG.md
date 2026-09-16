@@ -1,5 +1,55 @@
 # Class 7 · Mathematics I · Chapter 5 — Parallel and Crossing Lines
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's four worked examples were prose paragraphs with the working
+inside them. All four are now stepped the way Beyond the Book sets them —
+*Solution*, a step to a `.work__row`, an *Answer* row — so that a student meets
+the same shape in the chapter as in the division behind it. None was left as a
+question-only panel: every one had angle work to step.
+
+Examples 1 and 2 were on `p012`, Examples 3 and 4 on `p013`; only those two
+files were edited. The repack that followed moved blocks across `p012`–`p017`,
+so the examples now print on `p012`, `p013` and `p014` — no words changed with
+them, and each figure stayed with the example it belongs to.
+
+**The layout changed and nothing else.** No angle, no number, no question
+wording, no order, no NCERT structure. Each reason is the angle fact the example
+already cited, set as a `.chip`: *corresponding angles*, *vertically opposite*,
+*linear pair*, *linear pair with ∠a*, *in the same way*, *interior angles*, *BC
+as a transversal*. In Example 4 the sentence that turns to a second pair of
+parallel lines — *Now look at the parallel lines AD and BC, with DC as a
+transversal* — is explanation, not a step, so it stays as a `<p>` and the steps
+resume under it in a second `.work` block. The closing observation in Example 3
+(the alternate-angle route) likewise stays as a `<p>` after the block.
+
+**Verified by script** (`scratchpad/steps-ch05-parallel-lines/verify.mjs`): for
+each example, keyed by its tab, it pulls every number, every named angle and
+every maths span out of the `HEAD` version and the working copy and compares
+them. All four examples have the same set of values and the same set of angles
+before and after; the spans that differ are short spans joined into one step
+line (`$\angle 2$` and `$\angle 2 = 135^\circ$` becoming `$\angle 2 = \angle 6 =
+135^\circ$`, and so on). The script also re-derives the angle work against every
+printed answer — Example 1's eight angles summing to 720°, Example 2's 60° ≠
+70°, Example 3's 50° + 130° = 180°, Example 4's 55°, 60°, 120° with ABCD summing
+to 360° — and all seventeen checks pass.
+
+**Fit.** Stepped rows take more room than prose, so the body grew from 16 pages
+to 17 (chapter 26 → 27 with Beyond the Book). `refit … body` was run once; a
+second, dry, run came back 17 in, 17 out with an identical fill line, so the
+packing is settled. The builder reports **all pages fit** — no overflow and
+nothing running into the bottom margin at all. `data-close` moved with the
+body's last page to `p017`. No `--head`/`--tail`. `orphans`: 0 stranded openers,
+as before the edit. `fit-options`: every option row fits. `check-labels`: no
+collisions.
+
+**Short pages, reported not padded.** Four body pages are under 88%: `p004` 85%,
+`p009` 81%, `p015` 82%, `p016` 84% — the same count as before the edit. `gaps`
+names what holds each open: `p004` and `p015` by a figure that may not be cut in
+half, `p009` by a heading that may not be stranded at the foot, `p016` by the
+summary box, which is indivisible. `p017` at 40% is the chapter's closing page
+and carries `data-close`.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 **The chapter body is untouched.** A rebuild of the body to DESIGN-MATHS §5

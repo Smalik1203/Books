@@ -2,40 +2,99 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Can you write another expression for the same number? The Earth takes $100 \times 365.2422 = 36{,}524.22$ days to go round the Sun 100 times. So the calendar now has too many days: we have corrected too much.</p>
+      <h3>A magic number: 142857</h3>
 
-      <h3>Second adjustment: no extra day in the 100th year</h3>
+      <p>Multiply 142857 by each of 1, 2, 3, 4, 5 and 6. What do you notice? Each product has the same six digits, in the same order round a circle, only starting at a different place. Now multiply 142857 by 7. What happens?</p>
 
-      <p>So the calendar makers decided that a year divisible by 100 does not get the extra day. The rule became: if the year is divisible by 100, it has 365 days; if not, it has 366 days when it is divisible by 4, and 365 days otherwise. Can you write an expression for the days in 100 calendar years now?</p>
+      <p>Are there other numbers like this? Yes: the repeating block of $1 \div 17$ is one. In 1927 Emil Artin conjectured that there are infinitely many such cyclic numbers, and no one has yet proved or disproved it.</p>
 
-      <p>Of the 25 years divisible by 4, one is the 100th year, so only 24 years have 366 days, and the other 76 have 365.</p>
+      <h3>Dividend, divisor and quotient</h3>
 
-      <div class="work work--centred">
-        <p>$24 \times 366 + 76 \times 365 = 36{,}524$ days</p>
+      <p>When we divide one counting number by another, larger than 1, the quotient is less than the dividend: $128 \div 4 = 32$. But $128 \div 0.4 = 320$ is greater than the dividend. Is the quotient always greater than the dividend when the divisor is a decimal? Try different divisors. Then describe how the dividend, the divisor and the quotient are related, in a table like Table 4.4.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.3</div>
+        <ol class="c-questions">
+          <li>Write each fraction as a decimal.
+            <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
+              <li>$\dfrac{2}{5}$</li>
+              <li>$\dfrac{13}{4}$</li>
+              <li>$\dfrac{4}{50}$</li>
+              <li>$\dfrac{5}{8}$</li>
+            </ol>
+          </li>
+        </ol>
       </div>
 
-      <p>This is close to 36,524.22, but is it close enough? In 1000 years the calendar has $36{,}524 \times 10 = 3{,}65{,}240$ days, while the Earth takes $1000 \times 365.2422 = 3{,}65{,}242.2$ days. The calendar is now 2.2 days short.</p>
-
-      <h3>Third adjustment: an extra day every 400th year</h3>
-
-      <p>To close this gap, every year divisible by 400 was made a leap year after all. The full rule is set out below.</p>
-
-      <div class="work work--list">
-        <p>If the year is divisible by 400, it has 366 days.</p>
-        <p>If not, but it is divisible by 100, it has 365 days.</p>
-        <p>If neither, but it is divisible by 4, it has 366 days.</p>
-        <p>Otherwise it has 365 days.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Find the quotients: (a) $24.84 \div 1.2$, (b) $5.776 \div 1.52$.</li>
+        </ol>
       </div>
 
-      <p>Let us count the days in 1000 calendar years. Two years are divisible by 400, and they have 366 days. $10 - 2 = 8$ years are divisible by 100 but not by 400, and they have 365. $250 - 10 = 240$ years are divisible by 4 but not by 100, and they have 366. The other $1000 - (2 + 8 + 240) = 750$ years have 365. Check that the four groups add up to 1000 years.</p>
-
-      <div class="work work--centred">
-        <p>$750 \times 365 + 240 \times 366 + 8 \times 365 + 2 \times 366 = 3{,}65{,}242$ days</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>$156 \times 12 = 1872$. Use this to find:
+            <ol class="c-parts c-parts--alpha">
+              <li>$15.6 \times 1.2$</li>
+              <li>$187.2 \div 1.2$</li>
+              <li>$18.72 \div 15.6$</li>
+              <li>$0.156 \times 0.12$</li>
+            </ol>
+          </li>
+        </ol>
       </div>
 
-      <p>The Earth needs 3,65,242.2 days for 1000 trips, so in 1000 years the calendar is short by only 0.2 of a day. The calendar makers did not trouble themselves over so small a difference, and the rule has stayed as it is.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Fill in the blanks.
+            <ol class="c-parts c-parts--alpha">
+              <li>$25 \div $ <span class="blank blank--sm"></span>$= 0.025$</li>
+              <li>$25 \div $ <span class="blank blank--sm"></span>$= 250$</li>
+              <li>$25 \div $ <span class="blank blank--sm"></span>$= 2.5$</li>
+              <li>$25 \div 10 = 25 \times $ <span class="blank blank--sm"></span></li>
+              <li>$25 \div 0.1 = 25 \times $ <span class="blank blank--sm"></span></li>
+              <li>$25 \div 0.01 = 25 \times $ <span class="blank blank--sm"></span></li>
+            </ol>
+          </li>
+        </ol>
+      </div>
 
-      <p>With this final rule, how many calendar days are there in 10,000 years, and how many days does the Earth take for 10,000 trips? What is the difference? If it is large, can you suggest a way to fix it? Find out, too, how people measured the length of the year so accurately, and how traditional calendars in India kept their days in step with the Sun and the stars.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Find (a) $2.46 \div 1.5$, (b) $2.46 \div 0.15$, (c) $2.46 \div 0.015$. Is $24.6 \div 1.5$ the same as $2.46 \div 0.15$?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>A wooden block 4 m long is cut into 5 pieces of equal length. How long is each piece?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>A polygon with 12 equal sides has a perimeter of 208.8 cm. How long is each side?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="8">
+          <li>3 litres of watermelon juice are shared equally among 8 friends. How much does each get? Give the answer in millilitres.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>A car goes 234.36 km on 12.6 litres of petrol. How far does it go on one litre?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="10">
+          <li>13.5 kg of flour is shared equally among 15 students. How much does each get?</li>
+        </ol>
+      </div>
 
     </div>
   </div>

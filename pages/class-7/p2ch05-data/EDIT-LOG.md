@@ -1,5 +1,52 @@
 # Class 7 · Mathematics II · Chapter 5 — Connecting the Dots…
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's one worked example (Example 1, p004 — Vaishnavi's hibiscus
+flowers) was set as stepped maths to match Beyond the Book: *Solution.*, two
+`.work__row` steps and an *Answer* row. None was left as a question-only
+panel. **Only the layout changed** — no number, no maths, no question wording
+and no order was touched. The closing sentence ("That is the number that would
+bloom on each day if the same number bloomed every day") is an observation
+about what an average is, not a step, so it stays as prose after the working.
+
+Two things worth recording. The `\phantom{\text{average}}` that indented the
+second line of the old `.work` block was dropped: it set nothing, and existed
+only to align a continuation line under the word *average*, which a labelled
+row does for itself. And the example gives one reason its steps can borrow —
+the five days' counts — so Step 2 carries `the five counts` and Step 1, which
+only states the rule, carries no chip. Nothing was invented to fill one.
+
+Verified by a script kept with the session's working notes: it pulls every
+maths span and every printed number out of each `.c-example` in the HEAD
+version and in the working tree, keyed by the example's tab, and compares them
+— 2 maths spans and 7 numbers, identical, with `\phantom{…}` normalised away
+as the non-printing markup it is. It also re-derives the arithmetic:
+$2 + 7 + 9 + 4 + 3 = 25$ and $25 \div 5 = 5$, both as printed.
+
+Body pages 25 → 25. p004 went from 77% to 82% and nothing overflowed, so no
+refit was needed; `refit.mjs class-7/p2ch05-data body` was run anyway and
+returned the chapter unchanged, page for page.
+
+After: all pages fit, every option row fits, no labels collide, `data-close`
+on p025, no `--head`/`--tail`.
+
+**Stranded openers: 2, unchanged.** p011 (`h2`, 2.8 lines from the foot) and
+p018 (`h2`, 3.8 lines from the foot) were both stranded before this edit and
+are untouched by it. They are logged here as outstanding against § 5a's
+fitting bar.
+
+**Short body pages, reported not padded** — unchanged from before this edit
+apart from p004, which gained 5 points: 1 (77%), 4 (82%), 8 (85%), 11 (66%),
+12 (74%), 14 (84%), 15 (83%), 17 (78%), 18 (80%), 19 (56%), 20 (75%),
+23 (68%), 24 (85%). p025 at 60% is the chapter's closing page and carries
+`data-close`.
+
+Fill after: 1:77 2:92 3:98 4:82 5:99 6:98 7:98 8:85 9:93 10:97 11:66 12:74
+13:93 14:84 15:83 16:90 17:78 18:80 19:56 20:75 21:99 22:97 23:68 24:85
+25:60 · Beyond 26:95 27:92 28:86 29:95 30:89 31:78 32:94 33:94 34:99 35:100
+36:96 37:54 (Beyond unchanged).
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 The division was rebuilt to the shape in DESIGN-MATHS.md §6a, "The shape since

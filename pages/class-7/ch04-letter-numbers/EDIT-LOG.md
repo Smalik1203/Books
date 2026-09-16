@@ -1,5 +1,87 @@
 # Class 7 · Mathematics I · Chapter 4 — Letter-Numbers
 
+## Examples set as steps, 16 September 2026
+
+The chapter proper's **12 worked examples** — Examples 1–12, all of them —
+were reset as stepped maths, to the shape Beyond the Book already uses and
+§5a of DESIGN-MATHS asks for: the question as written, then *Solution.*, then
+a step to a `.work__row`, the reason two to four words in a `.chip`, and an
+*Answer* row. Only `p001`–`p019` were touched. `p101`–`p110` were not.
+
+**Nothing but the layout changed.** No number, no expression, no question
+wording, no order, no section structure. Every reason in a chip is lifted
+from the sentence the example already used; where that sentence carried
+maths, the clause went into the row's text rather than into a chip, so no
+expression was lost to a label. Sentences that explain rather than work —
+Example 2's *to use the expression, we replace $n$ by the number of Ls*,
+Example 7's *for 3 chairs and 2 tables, that is ₹232*, Example 8's account
+of what $p$ and $q$ mean, Example 11's *there are many ways to add them*,
+Example 10's *complete Table 4.5 and compare* — stayed as prose before or
+after the `.work` block.
+
+**Verification.** `verify.mjs` in the session scratchpad
+(`steps-ch04-letter-numbers/`) reads every body page of `HEAD` and of the
+working tree as one flow, pulls the twelve `.c-example` blocks out of each,
+and compares them example by example:
+
+- the same twelve examples in the same order, under the same tabs;
+- each question's first paragraph word for word;
+- the set of maths atoms — numbers, letter-numbers, operators — identical
+  in both directions. Nothing was dropped and nothing introduced. The only
+  differences are counts: a chain split across two rows, or a result
+  restated in the *Answer* row (Examples 4, 11, 12 restate; 5, 7, 9 state
+  once where the prose had said it twice);
+- the set of printed numbers identical in both directions;
+- 49 substitutions re-deriving every printed value — the ages, the three
+  matchstick counts, the laddu bill, the perimeter, $5c + 3c + 10c = 18c$
+  and $4v + 3v = 7v$ at several values, the chair-and-table bill at three
+  pairs and the ₹232 check, Charu's total at three pairs and her 25,
+  $4(x + y) - y = 4x + 3y$, that $5u$ and $5 + u$ disagree at $u = 2$, all
+  three ways of adding Fig. 4.5 against $2r + 2s + 24$ and the 30, and the
+  saree positions against the border ABCABCABC.
+
+All pass: *12 examples checked. no difference but the layout.*
+
+**Pages: the chapter proper 18 → 19; the chapter 28 → 29.** Beyond the Book
+is unchanged at 10. Refitted with `refit … body`; the stale
+`build/class-7/_refit-ch04-letter-numbers*` were deleted.
+
+Builder: **all pages fit**, no `!`, and **no page runs into the bottom
+margin at all** — page 8's 2.4 mm, flagged below under the old section, is
+gone. No `--head`/`--tail`; `p019` carries `data-close`; every `p1xx` still
+carries `data-bridge`. `orphans` **0 stranded openers** — the `h2` stranded
+4.8 lines from the foot of page 11 is gone and nothing replaced it.
+`fit-options` and `check-labels` clean.
+
+Fill `1:100% 2:86% 3:87% 4:79% 5:87% 6:99% 7:78% 8:88% 9:95% 10:88% 11:87%
+12:88% 13:96% 14:97% 15:100% 16:90% 17:97% 18:81% 19:76% 20:98% 21:98%
+22:97% 23:89% 24:98% 25:93% 26:96% 27:89% 28:97% 29:68%`.
+
+**Short pages, reported and not padded.** `gaps` names the block holding
+each one open; every one is a whole block too tall for the space left, so
+repack cannot move it and the only lever would be editing the prose at the
+join, which is outside this change.
+
+| page | fill | held by |
+|---|---|---|
+| 2 | 86% | the next page opens with a table, 31 mm |
+| 3 | 87% | a table, 55 mm |
+| 4 | 79% | an `h2`, which may not be stranded at the foot |
+| 5 | 87% | a `.c-keyidea` — a panel, never divided |
+| 7 | 78% | a `.c-example` — a panel, never divided |
+| 11 | 87% | an exercise band, 39 mm, already one block per question |
+| 18 | 81% | a table, 52 mm |
+
+Page 19 at 76% carries `data-close` and is exempt.
+
+**Flagged.**
+
+| where | what | needs |
+|---|---|---|
+| Example 10 | **No *Answer* row.** The example asks whether $5u$ and $5 + u$ are equal and deliberately does not say: it sets up the comparison and hands the reader Table 4.5, and the chapter states the result in the paragraph after the table. An *Answer* row here would print the answer above the table that asks for it | nothing, unless the chapter would rather state it and drop the table |
+| Example 2, Step 3 | the step is *if $n$ stands for the number of Ls*, which names a letter rather than working a line | nothing — the naming is the step the example makes |
+| pages 2, 3, 4, 5, 7, 11, 18 | under 88%, each held by a block that cannot move | a prose edit at the join, not a refit |
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Only `p101`–`p110` changed. The chapter proper (`p001`–`p018`) was not

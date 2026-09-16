@@ -1,5 +1,54 @@
 # Class 7 · Mathematics II · Chapter 1 — Geometric Twins
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's one worked example (Example 1, p009) was set as stepped
+maths to match Beyond the Book: *Solution.*, six `.work__row` steps with the
+reason in a `.chip`, and an *Answer* row. None was left as a question-only
+panel. **Only the layout changed** — no number, no maths, no question wording
+and no order was touched.
+
+**Worth knowing about this example's shape.** The panel carries no question:
+NCERT poses it in the running text above the figure ("In Fig. 1.17, O is the
+midpoint of both AD and BC. What can we say about the lengths AB and CD?"),
+and the panel is the discussion that follows. That pose-then-discuss shape was
+left alone — nothing was moved into the panel — so the panel opens straight on
+*Solution.* What the stepping did drop is the prose scaffolding the rows
+replace: the rhetorical asides "Are any angles equal? Yes:" and "Which
+vertices correspond? AO has to lie on DO, and BO on CO", whose content is now
+carried by the steps and their chips. Every mathematical statement survives.
+
+Verified by a script kept with the session's working notes: it pulls every
+maths span and every printed number out of each `.c-example` in the HEAD
+version and in the working tree, keyed by the example's tab, and compares them
+— 4 maths spans and 1 number, identical. The example has no arithmetic, so the
+script also checks the congruence chain still closes: two midpoints give two
+pairs of equal sides, vertically opposite angles give the included angle, SAS
+gives $\triangle AOB \cong \triangle DOC$, and AB/DC are the corresponding
+sides the printed answer AB = CD rests on.
+
+Body pages 15 → 15 — **the chapter was not refitted.** A first attempt set the
+solution in eight rows, which pushed p009 6.6 mm into the bottom margin and
+needed `refit.mjs`; the repack gave a 16-page body, dropped the fill on six
+pages and stranded the `h3` "Five conditions that are enough" at the foot of
+p012 (it had been followed there by § 1.3, which the repack moved on). A
+second refit reached the same fixed point, so that was not a packing that
+could be improved. The solution was set instead in six rows, which fits p009
+at 98% and leaves every other page exactly as it was hand-fitted.
+
+After: all pages fit, 0 stranded openers (0 before), every option row fits, no
+labels collide, `data-close` on p015, no `--head`/`--tail`. p012 still runs
+1.6 mm into the bottom margin, which is the pre-existing state and inside the
+3 mm allowance.
+
+**Short pages, reported not padded** — unchanged from before this edit: 1
+(86%), 3 (86%), 5 (77%), 6 (82%), 10 (77%). Each is held open by a figure, an
+exercise band or a heading that may not be stranded.
+
+Fill after: 1:86 2:93 3:86 4:95 5:77 6:82 7:93 8:90 9:98 10:77 11:97 12:101
+13:88 14:96 15:89 · Beyond 16:95 17:93 18:88 19:96 20:95 21:95 22:96 23:98
+24:95 25:34.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Rebuilt to DESIGN-MATHS.md §6a, *The shape since 15 September 2026*. The §5

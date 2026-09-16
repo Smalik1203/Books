@@ -1,5 +1,58 @@
 # Class 7 · Mathematics II · Chapter 4 — Another Peek Beyond the Point
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's **13 worked examples** — Examples 1–13, which were
+paragraphs with the working inside them — are now set the way DESIGN-MATHS §5a
+asks and the way Beyond the Book's own examples already were: *Solution*, a
+step to a `.work__row`, the reason in two to four words in a `.chip`, and an
+*Answer* row carrying the result the example already gave.
+
+**Only the layout changed.** No mathematics, no number, no question wording, no
+example order, nothing of NCERT's structure. Every reason in a chip is lifted
+from the sentence the example already used — "adding 9.5 five times", "multiply
+by its reciprocal", "distance divided by time" — and a step the example gave no
+reason for carries no chip. Sentences that are explanation rather than working
+stayed as prose: Example 1's check against ₹50, Example 2's estimate, Example
+5's "check this by writing both numbers as fractions", Example 6's hundred
+pieces, Example 12's closing note on long division. Nothing outside the
+`.c-example` blocks was touched.
+
+**Verification.** A script in the session scratchpad
+(`steps-p2ch04-decimals/verify.mjs`) reads the whole body at HEAD with `git
+show` and as it now stands — chapter-wide, since the refit moved examples
+between pages — walks the `div` nesting to take each `.c-example` exactly, and
+for all 13 compares every number and every maths atom (each `$…$` span split at
+its `=` signs) in both directions, plus the question's exact wording, plus the
+presence of a *Solution* line and an *Answer* row. Result: **13 examples
+compared, 0 differences beyond layout** — nothing lost, nothing added. The same
+script
+re-derives 30 printed values in exact `BigInt` rational arithmetic — every
+product, quotient and regrouping in Examples 1–13, each against the answer the
+page prints. **0 wrong.**
+
+**Fitting.** Refit through `refit.mjs … body`; the chapter body went from **13
+pages to 15** (24 with Beyond the Book, which was not touched). `p015` carries
+`data-close`. No overflow, no page more than 3 mm into the bottom margin (the
+deepest is p022 at 1.6 mm, as before), no `--head`/`--tail`, no builder
+violation. `orphans` reports **0 stranded openers**, as it did before the edit;
+`fit-options`, `check-labels` clear.
+
+Flagged, not fixed — six short pages, each held by a block that cannot move,
+per `gaps.mjs`:
+
+| page | fill | held by |
+|---|---|---|
+| 2 | 77% | next page opens with a `.c-example` at 61 mm — a panel, never divided |
+| 4 | 84% | next page opens with a `.c-practice` at 26 mm |
+| 6 | 66% | next page opens with a `.c-example` at 85 mm — a panel, never divided |
+| 8 | 75% | next page opens with a `.c-example` at 70 mm — a panel, never divided |
+| 9 | 71% | next page opens with an `h3` at 6 mm — a heading may not be stranded |
+| 14 | 79% | next page opens with the `.c-summary` at 68 mm — indivisible by design |
+
+The repair CLAUDE.md names for these is editing the prose at the join, which is
+outside this edit's scope; they are left as they are and logged here.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Rebuilt to the four-stage shape at the top of DESIGN-MATHS.md §6a. Only

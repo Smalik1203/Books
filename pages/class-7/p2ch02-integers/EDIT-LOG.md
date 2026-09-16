@@ -1,5 +1,47 @@
 # Class 7 · Mathematics II · Chapter 2 — Operations with Integers
 
+## Examples set as steps, 16 September 2026
+
+Both of the chapter body's worked examples — Example 1 (the marks in a
+50-question test) and Example 2 (the lift in the mine shaft) — were set as
+stepped maths to match Beyond the Book: *Solution.*, a step to a
+`.work__row`, the reason in a `.chip`, and an *Answer* row. None was left as a
+question-only panel. **Only the layout changed** — no number, no maths, no
+question wording and no order was touched.
+
+Example 2 sets two parts in one run of steps, with *(a)* and *(b)* opening the
+step they belong to, and its closing instruction ("Solve part (b) by the first
+way too") was kept as prose after the working rather than folded into a step.
+Part (a)'s two ways of getting the same answer both stayed: Step 2 subtracts
+from 0, Step 3 gives the movement its sign, and the *Answer* row carries the
+"either way" result the example already printed.
+
+Verified by a script kept with the session's working notes: it pulls every
+maths span and every printed number out of each `.c-example` in the HEAD
+version and in the working tree, keyed by the example's tab, and compares them
+— Example 1, 4 maths spans and 6 numbers; Example 2, 7 maths spans and 11
+numbers; all identical. It also re-derives all eight printed results
+($30 \times 5 = 150$, $20 \times (-2) = -40$, $150 + (-40) = 110$;
+$60 \times 3 = 180$, $0 - 180 = -180$, $60 \times (-3) = -180$,
+$45 \times (-3) = -135$, $15 + (-135) = -120$) against the printed answers.
+
+Body pages 13 → 13. The added rows pushed p007 14.6 mm past the text block —
+a real clipping — so the body was refitted with `refit.mjs`. The refit held
+the page count and packed better than the hand-fit it replaced: p012 went from
+75% to 93%. No second refit was needed.
+
+After the refit: all pages fit, 0 stranded openers (0 before), every option
+row fits, no labels collide, `data-close` on p013, no `--head`/`--tail`.
+
+**Short body pages, reported not padded** — 4 (78%), 5 (81%), 7 (81%),
+8 (81%). Page 4 is held open by a table, page 5 by an `h3` and pages 7 and 8
+by the `h2` that opens § 2.3 and § 2.4; none may be stranded at the foot.
+p013 at 61% is the chapter's closing page and carries `data-close`.
+
+Fill after: 1:89 2:88 3:91 4:78 5:81 6:92 7:81 8:81 9:99 10:89 11:94 12:93
+13:61 · Beyond 14:98 15:98 16:83 17:91 18:84 19:98 20:95 21:93 22:98 23:79
+(Beyond unchanged).
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 To DESIGN-MATHS.md §6a, *The shape since 15 September 2026*, on the model of

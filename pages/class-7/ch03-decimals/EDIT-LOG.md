@@ -1,5 +1,51 @@
 # Class 7 · Mathematics I · Chapter 3 — The Decimal Point
 
+## Examples set as steps, 16 September 2026
+
+The chapter body's four worked examples were prose paragraphs with the working
+inside them. All four are now stepped the way Beyond the Book sets them —
+*Solution*, a step to a `.work__row`, an *Answer* row — so that a student meets
+the same shape in the chapter as in the division behind it. None was left as a
+question-only panel: every one had working to step.
+
+Examples 1 and 2 are on `p003`, Examples 3 and 4 on `p005`. Only `p003.html`
+and `p005.html` were edited; the repack that followed moved blocks between
+`p003`–`p020` but changed no words.
+
+**The layout changed and nothing else.** No number, no expression, no question
+wording, no order, no NCERT structure. The prose that carried a step became the
+maths of that step, with the reason the example already gave set as a two- to
+four-word `.chip`: *units and tenths separately*, *1 unit, 3 tenths*, *11 units,
+14 tenths*, *each place apart*, *carry a tenth*, *carry a unit*, *split one
+tenth*. Lead-in and closing sentences that are explanation rather than steps —
+the second method in Example 1, the borrow-twice paragraph in Example 4 — stayed
+as `<p>` around the `.work` block.
+
+**Verified by script** (`scratchpad/steps-ch03-decimals/verify.mjs`): for each
+example, keyed by its tab, it pulls every number and every maths span out of the
+`HEAD` version and the working copy and compares them. No value was added and
+none lost in any of the four; the spans that differ are the long single lines
+split into steps, each one a piece of the line it came from. The script also
+re-derives the arithmetic in hundredths against every printed answer — 2.7 + 3.6
+= 6.3, 12.4 − 6.7 = 5.7, 15.34 + 2.68 = 18.02, 25.9 − 6.47 = 19.43, and the
+borrow-twice 15.34 − 2.68 = 12.66 — and all ten checks pass.
+
+**Fit.** Stepped rows take more room than prose, so the body grew from 19 pages
+to 20 (chapter 30 → 31 with Beyond the Book). `refit … body` was run once; a
+second, dry, run came back 20 in, 20 out with an identical fill line, so the
+packing is settled. No page overflows; the deepest run into the bottom margin is
+2.4 mm, on a Beyond page that already ran that deep. `data-close` moved with the
+body's last page to `p020`. No `--head`/`--tail`. `orphans`: 0 stranded openers,
+as before the edit. `fit-options`: every option row fits. `check-labels`: no
+collisions.
+
+**Short pages, reported not padded.** Eight body pages are under 88%:
+`p002` 83%, `p004` 82%, `p006` 80%, `p007` 82%, `p008` 78%, `p009` 83%,
+`p014` 85%, `p017` 83%. `gaps` names what holds each open — six are held by a
+heading that may not be stranded at the foot of the page, and two (`p004`,
+`p014`) by an exercise band. Nothing was padded and no prose was cut to close
+them.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Only `p101.html` up was touched. The chapter body (`p001`–`p019`) and

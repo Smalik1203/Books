@@ -2,96 +2,41 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.4</div>
-        <ol class="c-questions">
-          <li>A 210 g packet of peanut chikki costs ₹70.50, and a 110 g packet of potato chips costs ₹33.25. Which costs less for each gram?</li>
-        </ol>
-      </div>
-
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write the decimal number that each arrow in Fig. 4.2 points to.</li>
+        <ol class="c-questions" data-start="11">
+          <li>Look at these: $\frac{1}{2} = 0.5$, $\frac{1}{2 \times 2} = 0.25$, $\frac{1}{2 \times 2 \times 2} = 0.125$, $\frac{1}{2 \times 2 \times 2 \times 2} = 0.0625$, and $\frac{1}{5} = 0.2$, $\frac{1}{5 \times 5} = 0.04$, $\frac{1}{5 \times 5 \times 5} = 0.008$, $\frac{1}{5 \times 5 \times 5 \times 5} = 0.0016$. What are the next ones? What pattern do you see? Why are 2 and 5 linked in this way?</li>
         </ol>
       </div>
 
-      <div class="c-figure c-figure--full">
-              <figure>
-                <svg viewBox="0 0 570 136" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two number lines, each divided into 10 equal parts. (a) From 3.1 to 3.2, with an arrow at the sixth mark. (b) From 2.15 to 2.17, with an arrow at the sixth mark.">
-      <text class="dg-note" x="10" y="44" text-anchor="middle">(a)</text>
-      <path class="dg-line" d="M46 44 H524 M60 35 V53 M105 39 V49 M150 39 V49 M195 39 V49 M240 39 V49 M285 35 V53 M330 39 V49 M375 39 V49 M420 39 V49 M465 39 V49 M510 35 V53"/>
-      <text class="dg-tick" x="60" y="66" text-anchor="middle">3.1</text>
-      <text class="dg-tick" x="510" y="66" text-anchor="middle">3.2</text>
-      <path class="dg-move" d="M330 14 V32" marker-end="url(#dg-arrow)"/>
-      <text class="dg-note" x="10" y="108" text-anchor="middle">(b)</text>
-      <path class="dg-line" d="M46 108 H524 M60 99 V117 M105 103 V113 M150 103 V113 M195 103 V113 M240 103 V113 M285 99 V117 M330 103 V113 M375 103 V113 M420 103 V113 M465 103 V113 M510 99 V117"/>
-      <text class="dg-tick" x="60" y="130" text-anchor="middle">2.15</text>
-      <text class="dg-tick" x="510" y="130" text-anchor="middle">2.17</text>
-      <path class="dg-move" d="M330 78 V96" marker-end="url(#dg-arrow)"/>
-      </svg>
-                <figcaption><span class="fignum">Fig. 4.2</span> For Question 2.</figcaption>
-              </figure>
-            </div>
+      <h2><span class="badge">4.4</span><span class="name">Look Before You Leap</span></h2>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Shyamala bought 3 kg of bananas at ₹30 a kilogram. There were 35 bananas, and she sells each for ₹5. What profit does she make if she sells them all?</li>
-        </ol>
+      <p>The Earth takes about 365.2422 days to go round the Sun, not exactly 365. Our calendar, the Gregorian calendar, gives a year 365 days to keep things simple. So after one calendar year, the Earth still needs 0.2422 of a day to finish its trip. That is not much, but after 100 calendar years it adds up to $0.2422 \times 100 = 24.22$ days.</p>
+
+      <p>You know from science that the seasons come from the tilt of the Earth and its journey round the Sun. If the calendar drifts away from the Earth’s position, the seasons slowly stop matching the months. To fix this, a <span class="term">leap year</span> of 366 days is used: every fourth year gets one extra day. Which month gets it?</p>
+
+      <h3>First adjustment: an extra day every 4 years</h3>
+
+      <p>The rule is: if the year is divisible by 4, it has 366 days; otherwise it has 365. So four calendar years have $4 \times 365 + 1 = 1461$ days, while the Earth takes $4 \times 365.2422 = 1460.9688$ days to go round the Sun four times.</p>
+
+      <p>With this rule, how many days are there in 100 calendar years? Can you write an expression for it? Here is one way. Every year has 365 days, and each of the $100 \div 4 = 25$ years divisible by 4 has one more.</p>
+
+      <div class="work work--centred">
+        <p>$100 \times 365 + 25 \times 1 = 36{,}525$ days</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A teacher wants to put 80 textbooks, each 2.5 cm thick, on a shelf 160 cm long. How many books fit on the shelf? Is any space left? If so, how much?</li>
-        </ol>
+      <p>Can you write another expression for the same number? The Earth takes $100 \times 365.2422 = 36{,}524.22$ days to go round the Sun 100 times. So the calendar now has too many days: we have corrected too much.</p>
+
+      <h3>Second adjustment: no extra day in the 100th year</h3>
+
+      <p>So the calendar makers decided that a year divisible by 100 does not get the extra day. The rule became: if the year is divisible by 100, it has 365 days; if not, it has 366 days when it is divisible by 4, and 365 days otherwise. Can you write an expression for the days in 100 calendar years now?</p>
+
+      <p>Of the 25 years divisible by 4, one is the 100th year, so only 24 years have 366 days, and the other 76 have 365.</p>
+
+      <div class="work work--centred">
+        <p>$24 \times 366 + 76 \times 365 = 36{,}524$ days</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Use 1 cm = 10 mm, 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g, 1 g = 1000 mg and 1 L = 1000 mL to fill in the blanks.
-            <ol class="c-parts c-parts--alpha c-parts--3">
-              <li>5.5 km = <span class="blank blank--sm"></span> m</li>
-              <li>35 cm = <span class="blank blank--sm"></span> m</li>
-              <li>14.5 cm = <span class="blank blank--sm"></span> mm</li>
-              <li>68 g = <span class="blank blank--sm"></span> kg</li>
-              <li>9.02 m = <span class="blank blank--sm"></span> mm</li>
-              <li>125.5 mL = <span class="blank blank--sm"></span> L</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Sridharacharya set this problem in his <em>Patiganita</em>: “$6\frac{1}{4}$ is divided by $2\frac{1}{2}$, and $60\frac{1}{4}$ is divided by $3\frac{1}{2}$. Give the two quotients.” Solve it by writing the fractions as decimals. What happens in the second division?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>Fill the boxes with decimals in at least 2 different ways: (a) <span class="blank blank--sm"></span>$\times$ <span class="blank blank--sm"></span>$= 2.4$ (b) <span class="blank blank--sm"></span>$\times$ <span class="blank blank--sm"></span>$= 14.5$</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>$756 \div 36 = 21$. Use this to find:
-            <ol class="c-parts c-parts--alpha c-parts--3">
-              <li>$75.6 \div 3.6$</li>
-              <li>$7.56 \div 0.36$</li>
-              <li>$756 \div 0.36$</li>
-              <li>$75.6 \div 360$</li>
-              <li>$7560 \div 3.6$</li>
-              <li>$0.756 \div 36$</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>Each cell of Table 4.7 holds $a \div b$. Fill in the empty cells.</li>
-        </ol>
-      </div>
+      <p>This is close to 36,524.22, but is it close enough? In 1000 years the calendar has $36{,}524 \times 10 = 3{,}65{,}240$ days, while the Earth takes $1000 \times 365.2422 = 3{,}65{,}242.2$ days. The calendar is now 2.2 days short.</p>
 
     </div>
   </div>

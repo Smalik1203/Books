@@ -444,7 +444,7 @@ not crowded, and the examination work is a page turn away.
 | what | the bar |
 |---|---|
 | worked examples | every topic of the chapter is worked somewhere the reader can find it: a type in Beyond the Book's Solved Examples for each, and at least twelve examples a chapter. No topic is taught and never worked |
-| examples are stepped | *Solution*, then a step to a row in `.work__row`, then *Answer*. The maths carries the step; the reason is two to four words in a `.chip`. Never a paragraph with the working inside it |
+| examples are stepped | *Solution*, then a step to a row in `.work__row`, then *Answer*. The maths carries the step; the reason is two to four words in a `.work__why` — the display face, italic, soft ink, no tint, because it is a remark about the working and not part of it. A `.chip` in a row means the other thing: a piece of the expression the text is pointing at. Never a paragraph with the working inside it |
 | practice | every chapter's Beyond the Book runs one numbered list of at least 26 questions covering all six forms — multiple choice, assertion–reason, very short, short, long, case-based — with the multiple-choice answers spread across the four letters |
 | nothing repeats | no example or question in Beyond the Book repeats one the chapter already sets. Checked against the body, phrase by phrase, before it goes in |
 | answers | **every question in the volume is answered in the answers booklet** (§5, *The companions*), the chapter's own exercise sets included. The student book prints none, except Beyond the Book's own key. The chapter's answers are written as it is written, and kept in `ANSWERS.md` beside its pages: that file is the booklet's source, and a chapter is not finished without it. A question nothing answers is a defect, not a puzzle |
@@ -543,8 +543,8 @@ the two differ. Class 7 Chapter 1 is the built example.
                             Never recast as worked examples
     2 Solved Examples       worked examples grouped under h3 "Type N · …",
                             each as Solution, Step 1, Step 2 … Answer in
-                            .work__row, the reason in two to four words as a
-                            .chip. Stepped maths, not prose
+                            .work__row, the reason in two to four words in a
+                            .work__why. Stepped maths, not prose
     3 Practice              one numbered run in the forms school papers use —
                             multiple choice, assertion–reason, very short,
                             short, long, case-based — grouped by .c-practice__sub
