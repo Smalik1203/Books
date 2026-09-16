@@ -454,6 +454,8 @@ not crowded, and the examination work is a page turn away.
 | facts | a Did you know? prints only with its source recorded in `EDIT-LOG.md`. No source, no fact |
 | figures | a question that names a figure uses the values printed on that figure. If it needs other values it gets its own figure, numbered after the body's last |
 | fitting | no page overflows; nothing runs more than 3 mm into the bottom margin; no opener is stranded at the foot; a page under 88% is held by a whole block that cannot move, and is logged |
+| a question and its figure | a question that refers to a figure prints on the same page as that figure, or facing it. A reader who must turn the page to see what is being asked has to hold the question in their head while they do. Class 7 shipped two of these before anyone noticed — an exercise question whose figure was overleaf in Chapter 5, and another in Mathematics II Chapter 1 |
+| colour is never the only carrier | a diagram's fills, a tinted mark and a coloured rule all have to survive a greyscale print and a colour-blind reader. Check a chapter in greyscale and in a colour-vision simulation before it is called finished. Class 7 alone carries about 1,800 filled shapes in its diagrams and 65 tinted term chips, and a tint that is doing the work alone fails both readers. Pair the colour with a name, a label, a shape or a position |
 | language | §10 throughout: plain explanation, exact rule, no coaching register, sums set as maths |
 
 **Book furniture is deliberately outside this bar.** The contents page, how
