@@ -80,6 +80,15 @@ Cheapest first, so the method is proved before the expensive classes.
 
 This is the sequence that worked for Class 7. One agent per chapter.
 
+0. **Take the chapter whole.** Read every page of it before changing a line,
+   and hold the whole lesson while you work: what it teaches, in what order,
+   which example belongs to which topic, which figure a question depends on.
+   The page files are pagination, not chapters — `p007.html` is where the
+   chapter happened to break, and an edit judged from that one file is judged
+   without its context. One agent owns one whole chapter, body and Beyond the
+   Book, start to finish; never split a chapter across agents, and never work
+   through it a page at a time. Every check at the end is run on the chapter,
+   not on a page.
 1. **Read** `CLAUDE.md`, `DESIGN-MATHS.md` §5a and §6a, and the nearest
    finished Class 7 chapter of the same kind (geometry, data, algebra) as the
    pattern.
