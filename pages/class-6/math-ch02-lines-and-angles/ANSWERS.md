@@ -486,10 +486,10 @@ The two angles are drawn at 110° and 250°, and $110 + 250 = 360$.
 ### Stage 1 · Using What You Know
 
 The answers are worked in the book, in the text after each question:
-Ravi turns **225°**; the two angles are **70° and 110°**; four rays give
-**6** angles (and five give 10); Meena is **not right** ($2 \times 30 = 60$
-is acute); at 5 o'clock the hands make **150°** one way and **210°** the
-other.
+Ravi turns **225°**; the two angles are **65° and 115°**; five rays give
+**10** angles (and six give 15); Meena is **not right** ($2 \times 20 = 40$
+is acute); Kiran turns **315°** clockwise, and the short way back is
+**45°**, since $315 + 45 = 360$.
 
 ### Stage 2 · Solved Examples
 

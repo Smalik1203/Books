@@ -76,7 +76,7 @@ now sits on p018.
 
 | stage | before | after |
 |---|---|---|
-| 1 Using What You Know | 6 `.c-try` | **kept word for word** (text diffed against `HEAD`: identical); only `.c-stage__for` removed |
+| 1 Using What You Know | 6 `.c-try` | `.c-stage__for` removed; **kept word for word except where it answered the body** — four items replaced and one edited, by the user's decision (see *Stage 1 repaired*) |
 | 2 Behind Each Answer → **Solved Examples** | 6 multiple-choice problems in prose | **13 stepped examples**, Beyond Examples 1–13, under six `Type N ·` heads; the tabs restart at Example 1, as Class 7's do |
 | 3 Problem Sets → **Practice** | 3 sets, A/B/C, 21 questions | **one run of 31**, six forms, the band carrying the numeral |
 | 4 Answers & Takeaways → **Answers** | key and notes | letter key, every other answer in `work--trace`, *why the other options are wrong* for Q5, Q9, Q14, Q15; opens its own page (p113) |
@@ -129,12 +129,84 @@ pairs at 50% or more; I judged each one:
   finds the order from 5°.
 
 I also read every new example and question against the body's questions,
-and none of them states a body answer. The exceptions are all in Stage 1,
-which is kept word for word; see *Flagged*.
+and none of them states a body answer. Stage 1 did, and has been repaired;
+see the next section.
+
+### Stage 1 repaired, 16 September 2026
+
+At first I kept Stage 1 word for word, as the brief asked, and flagged that
+five of its items answered body questions. **The user decided that
+"nothing in Beyond answers a body question" wins over "Stage 1 word for
+word"**, with the smallest repair that works. So:
+
+- Where a sentence pointing back to the body was the whole problem, it was
+  deleted.
+- Where an item's reasoning was itself the answer, the item was replaced
+  with a new `.c-try` and explanation of the same kind and about the same
+  length. The new items answer no body question and repeat nothing in
+  Stage 2 or Practice (`check-no-repeats` lists no Stage 1 pair; I also
+  read them against the body).
+- The letters item and the opening paragraph are unchanged.
+- No new figure was needed.
+
+| item | the body question it answered | repair |
+|---|---|---|
+| 1 · the regular octagon: *How many lines of symmetry does a regular octagon have? What are its angles of symmetry?*, with two paragraphs giving 8 lines and the multiples of 45° | Ex. 9.4 Q8 and Q9 (regular polygons, including the octagon) | **replaced** (the reasoning was the answer): *A circle is drawn with one of its diameters. How many lines of symmetry does this figure have? What are its angles of symmetry?* The explanation: a fold must leave the drawn diameter in place, so only it and the diameter at right angles to it work, giving 2 lines; only a half turn leaves it in place, giving 180° and 360°. |
+| 3 · *The smallest angle of symmetry of a figure is 40°. How many angles of symmetry does it have? Is 100° one of them?*, answered from *The angles of symmetry are the multiples of the smallest one* | the Think and Reflect *Will the angles of symmetry of a figure always be the multiples of its smallest angle of symmetry?* (the whole working rests on it, so deleting the one sentence was not enough) | **replaced**: *A figure fits on itself after a turn of 90°. Must it fit after 180°, 270° and 45°?* The explanation: two and three quarter turns make 180° and 270°, so both must fit; a square fits after 90° but not after 45°, so 45° need not. |
+| 4 · equal radial arms: *…a whole number of degrees: 7, 8, 9, 11, 12?* … *But $360 \div 7 = 51\frac{3}{7}$ and $360 \div 11 = 32\frac{8}{11}$, so 7 and 11 arms do not.* | the 7-arm Think and Reflect (*…exactly 7 angles of symmetry… write it as a mixed fraction*) | **edited** (only the 7 gave it away): *…a whole number of degrees: 8, 9, 11, 12?* … *But $360 \div 11 = 32\frac{8}{11}$, so 11 arms do not.* The rest of the item is unchanged. |
+| 5 · *Look back at the game on a grid of 6 rows of 6 squares. How can the second player always win?*, with two paragraphs giving the half-turn strategy | the Think and Reflect after the grid game (*Can you find a way to play that always wins?*) | **replaced**: *The words TOOT, NUN, SOS and MOM are written in capital letters. Which of them look exactly the same after a half turn? Which look the same in a mirror held along an up-and-down line beside them?* The explanation: a half turn needs every letter to survive a half turn and the word to read the same backwards, so only SOS works; a mirror needs every letter to have an up-and-down line, so TOOT and MOM work. |
+| 6 · *Draw a four-sided figure that has exactly 2 lines of symmetry. Does it also have rotational symmetry?*, answered with a rectangle and a rhombus, each of order 2 | Ex. 9.4 Q2 (two figures, other than a circle and a square, with both kinds of symmetry) | **replaced**: *Two equal squares touch at one corner only, and a diagonal of each lies along the same straight line. How many lines of symmetry does this figure have? Does it have rotational symmetry?* The explanation: the line through the diagonals and the line through the shared corner at right angles to it, so 2 lines; a half turn about the corner, so order 2. Its last sentence, on H and X, is kept from the old item. |
+
+**Fitting, by hand, with no refit.** The new items ran p101 9.5 mm over.
+The trims, each logged:
+
+1. The circle item's closing remark was cut: *One straight line took away
+   all but 2 of the circle's lines, and all but 2 of its angles.*
+2. Its first two sentences were joined into *A circle on its own folds
+   along every diameter, but now a fold must also leave the drawn diameter
+   where it was.*
+3. The 90° question was set on one line, with no named speaker: *A figure
+   looks exactly the same after a turn of 90°. Priya says it must also look
+   the same after turns of 180° and 270°. Must it also look the same after
+   a turn of 45°?* became *A figure fits on itself after a turn of 90°. Must
+   it fit after 180°, 270° and 45°?*, and *Priya is right, and we did not
+   need to see the figure.* became *So both of these turns must fit, and we
+   did not need to see the figure.*
+
+The second sentence of the circle's turning paragraph was also shortened
+to *A half turn about the centre does, because it swaps the two ends. Any
+other turn short of a full turn moves it to where nothing is drawn.*
+
+p101 now fills to 100% with nothing in the margin, and p102 to 94% (it was
+82%, a short page, which no longer is). Pages p103–p114 are unchanged, and
+Answers still opens p113. p101 and p102 had mixed line endings, which
+broke an exact-text replacement; both are now plain LF.
+
+**Checked.** `check-numbers.mjs` re-derives every new value and reads each
+printed claim back off the two pages:
+
+- the circle with one diameter (2 lines; 180°, 360°);
+- a square fits after 90°, 180° and 270° but not 45°;
+- the arms offered (8, 9, 11, 12) and those that work (8, 9, 12);
+- every word drawn letter by letter (half turn: SOS; mirror: TOOT, MOM),
+  with each letter's own symmetries;
+- the two squares (2 lines, order 2);
+- a guard that Beyond no longer prints *octagon*, $51\frac{3}{7}$, *second
+  player*, *rhombus* or *multiples of the smallest one*;
+- Stage 1 still has six questions.
+
+**Tested by breaking it**, in the scratch copy; all four were caught:
+
+1. the circle's 2 lines → 3;
+2. the mirror words *TOOT and MOM* → *TOOT and NUN*;
+3. the arms *8, 9 and 12* → *8, 11 and 12*;
+4. the two squares' order 2 → 4.
+
+The flag this repair answers has been cleared.
 
 ### Verified
 
-**`check-numbers.mjs` exits 0: 397 checks passed, 71 arithmetic identities
+**`check-numbers.mjs` exits 0: 409 checks passed, 66 arithmetic identities
 evaluated, no spans skipped.** It imports `symmetry-geometry.mjs`, which
 sits beside it. That module reads each figure out of its SVG and **finds**
 its symmetries: it reflects the drawn points in every line through the
@@ -178,7 +250,7 @@ being carried onto a light one.
 - **D.** The `ANSWERS.md` values, and its key against the page's key.
 
 **Tested by breaking it**, one break at a time in a scratch copy of the
-chapter (with Chapter 1's p008 beside it). All 12 were caught (exit 1),
+chapter (with Chapter 1's p008 beside it). All 12 were caught (exit 1), and so were four more after the Stage 1 repair (below),
 and the real chapter was never touched:
 
 1. `ANSWERS.md` Fig. 9.28(d) order 3 → 6
@@ -246,7 +318,6 @@ and looked at the greyscale proofs of pages 8, 13 and 17:
 | 13 | 78% | Exercise Set 9.3, kept whole |
 | 15 | 75% | Exercise Set 9.4, kept whole |
 | 18 | 68% | `data-close`, the chapter's last page |
-| 20 (p102) | 82% | the Solved Examples stage head, which may not be stranded; Beyond Example 1 does not fit under it |
 | 23 (p105) | 75% | the Type 4 head and Beyond Example 7 with its figure, too tall for the gap |
 | 24 (p106) | 73% | Beyond Example 9, a panel (82 mm) |
 | 30 (p112) | 54% | the Answers stage, which always opens a page |
@@ -256,7 +327,6 @@ and looked at the greyscale proofs of pages 8, 13 and 17:
 
 | where | what | what it needs |
 |---|---|---|
-| **Beyond Stage 1 (kept word for word) gives away body answers** | the octagon (8 lines, 45°), which is Ex. 9.4 Q8/Q9 for n = 8; $360 \div 7 = 51\frac{3}{7}$, the 7-arm Think and Reflect; the half-turn strategy, the grid-game Think and Reflect's answer; the rectangle and rhombus with both symmetries, Ex. 9.4 Q2; *the angles are the multiples of the smallest one*, the first Think and Reflect after the three lists | a decision: the brief's two rules conflict here, and I kept Stage 1 word for word |
 | Ex. 9.1 Q1 (p002) | it names Fig. 9.1, on the opener p001, overleaf; this was so at `HEAD`, and the opener cannot hold the question | a decision for the opener |
 | Ex. 9.4 Q8–Q10 | they depend on Chapter 1's Figs 1.7 and 1.10, many pages away (NCERT's structure) | reprinting the figures would add body content; left |
 | Fig. 9.33 in greyscale | the tile halves are light grey on mid grey: readable, but weak | a stronger tile fill would be a stylesheet decision |

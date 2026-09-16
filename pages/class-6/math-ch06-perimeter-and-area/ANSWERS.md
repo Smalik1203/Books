@@ -200,8 +200,9 @@ $F$ and $G$ are 2 each; $A$ and $B$ are 4 each.
 
 ### Area on squared paper — Exercise Set 6.6
 
-1. Every sloping side in Fig. 6.8 cuts a square exactly in half, so the
-   rules give the exact area:
+1. Fig. 6.8 is printed again beside this set, so the shapes are the same
+   as in Exercise Set 6.3. Every sloping side cuts a square exactly in half,
+   so the rules give the exact area:
    (a) **4**
    (b) **9**
    (c) **10**
@@ -354,11 +355,14 @@ stays the same.
    and Sharan's only 12 ft, so **Charan's is bigger**: 225 sq ft against
    180 sq ft.
 
-2. The **kitchen** and the **small bedroom** are both 15 ft by 12 ft, with
-   area 180 sq ft. Because they have the same sides, they also have the same
-   perimeter, $2 \times (15 + 12) = 54$ ft. (The utility room and the
-   parking are also a matching pair, both 15 ft by 3 ft, area 45 sq ft and
-   perimeter 36 ft.)
+2. Two pairs of rooms have the same area, and each pair also has the same
+   perimeter, because the two rooms in a pair have the same sides:
+   - the **kitchen** and the **small bedroom**, both 15 ft by 12 ft: area
+     **180 sq ft** each, perimeter $2 \times (15 + 12) = 54$ ft each;
+   - the **utility room** and the **parking**, both 15 ft by 3 ft: area
+     **45 sq ft** each, perimeter $2 \times (15 + 3) = 36$ ft each. The
+     utility room's depth is not printed; it is $15 - 12 = 3$ ft, found in
+     Exercise Set 6.11.
 
 ### Exercise Set 6.11
 

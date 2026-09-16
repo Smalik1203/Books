@@ -235,6 +235,41 @@ const F = {};
   ok('Fig 6.8 areas', F.dots.map(x => x.area), [4, 9, 10, 11]);
 }
 
+/* Fig. 6.8, repeated beside Exercise Set 6.6 — the same drawing, and
+   within sight of the question that uses it */
+{
+  const copies = [];
+  for (const f of pages) {
+    const h = HTML[f];
+    for (const m of h.matchAll(/<span class="fignum">Fig\. 6\.8<\/span>/g)) {
+      const start = h.lastIndexOf('<svg', m.index);
+      copies.push({ f, svg: h.slice(start, h.indexOf('</svg>', start)), cap: h.slice(m.index, h.indexOf('</figcaption>', m.index)) });
+    }
+  }
+  ok('Fig 6.8 is printed twice', copies.length, 2);
+  const [orig, rep] = copies;
+  const body = (svg) => svg.replace(/^<svg[^>]*>/, '');
+  is('the repeat draws exactly the same shapes as Fig 6.8', body(orig.svg) === body(rep.svg));
+  ok('the repeat keeps the same viewBox', rep.svg.match(/viewBox="[^"]*"/)[0], orig.svg.match(/viewBox="[^"]*"/)[0]);
+  const aria = (svg) => svg.match(/aria-label="([^"]*)"/)[1];
+  ok('the repeat’s aria-label is the original’s, marked repeated', aria(rep.svg), `${aria(orig.svg)} (repeated)`);
+  is('the repeat is captioned as repeated from Section 6.1', /\(repeated from Section 6\.1, for Exercise Set 6\.6\)/.test(rep.cap));
+  const areas = polys(rep.svg, 'dg-plot').map(p => shoelace(p, 24));
+  ok('Ex 6.6 Q1 answers read from the repeat', areas, [4, 9, 10, 11]);
+  const pageOf = (re) => pages.find(f => re.test(HTML[f]));
+  const q1 = pageOf(/Exercise Set 6\.6<\/div>[\s\S]*?Find the area of each shape in Fig\. 6\.8/);
+  const pno = (f) => Number(f.slice(1, 4));
+  const a = pno(rep.f), b = pno(q1);
+  is(`Ex 6.6 Q1 (${q1}) is on the repeat's page or facing it (${rep.f})`,
+    a === b || (Math.min(a, b) % 2 === 0 && Math.abs(a - b) === 1));
+  const q1s63 = pageOf(/Exercise Set 6\.3<\/div>[\s\S]*?shape in Fig\. 6\.8/);
+  is(`Ex 6.3 Q1 (${q1s63}) is on the original's page (${orig.f})`, q1s63 === orig.f);
+}
+
+/* the Think and Reflect after Fig. 6.20 asks for every pair of equal rooms */
+is('T&R reads "Which rooms in Charan’s house have the same area?"',
+  /Which rooms in Charan&rsquo;s house have the same area\?/.test(BODY) && !/Which two rooms/.test(BODY));
+
 /* Fig. 6.9 */
 {
   const g = figure('6.9');
@@ -718,7 +753,7 @@ for (const m of ANSWERS.matchAll(/\$([^$]+)\$/g)) {
   ok('A Beyond Q15', [3 * 3, 6 * 6], [9, 36]);
 }
 function inAnswers(what, needle) {
-  if (ANSWERS.includes(String(needle))) pass++;
+  if (ANSWERS.replace(/\s+/g, ' ').includes(String(needle).replace(/\s+/g, ' '))) pass++;
   else fails.push(`${what} — ANSWERS.md does not contain "${needle}"`);
 }
 
@@ -792,7 +827,9 @@ inAnswers('A 6.10 Q1', '1. **12 units**');
 inAnswers('A 6.10 Q2', '2. **20 units**');
 inAnswers('A Fig 6.18', `**${F.f618[1]} units**`);
 // 6.11
-inAnswers('A 6.11 Charan hall', `**${F.charan.hall} sq ft**`);
+inAnswers('A T&R equal rooms: kitchen and small bedroom', `area **${15 * 12} sq ft** each, perimeter $2 \\times (15 + 12) = ${2 * (15 + 12)}$ ft each`);
+inAnswers('A T&R equal rooms: utility and parking', `area **${15 * 3} sq ft** each, perimeter $2 \\times (15 + 3) = ${2 * (15 + 3)}$ ft each`);
+inAnswers('A 6.11 Charan hall',`**${F.charan.hall} sq ft**`);
 inAnswers('A 6.11 Charan whole', `**${F.charan.whole} sq ft**`);
 inAnswers('A 6.11 Sharan length', `**${F.sharan.len} ft**`);
 inAnswers('A 6.11 Sharan hall', `${F.sharan.hall} sq ft`);

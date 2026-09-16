@@ -589,21 +589,54 @@ for (const [n, list] of [[2, [180, 360]], [3, [120, 240, 360]], [4, [90, 180, 27
   ok('Fig. 9.34 letters with rotational symmetry', turning, ['H', 'N', 'X', 'Z']);
   ok('Fig. 9.34 orders of H, N, X, Z', turning.map(n => s[names.indexOf(n)].order), [2, 2, 2, 2]);
   is('ANSWERS stage 1 letters', ANSWERS.includes(`**${withLine.join(', ')}**`) && ANSWERS.includes(`**${turning.join(', ').replace(', X, ', ', X,\n   ')}**`));
-  const oct = symOf(polyPrims([...Array(8)].map((_, k) => [Math.cos(k * Math.PI / 4), Math.sin(k * Math.PI / 4)].map(v => 50 * v))), [0, 0]);
-  ok('stage 1: a regular octagon', [oct.lines, 360 / oct.order], [8, 45]);
-  ok('stage 1: arms giving a whole number of degrees', [7, 8, 9, 11, 12].filter(n => 360 % n === 0), [8, 9, 12]);
-  is('stage 1: 100 is not a multiple of 40', 100 % 40 !== 0);
-  const rect = symOf(polyPrims([[0, 0], [30, 0], [30, 14], [0, 14]]));
-  const rhom = symOf(polyPrims([[0, -20], [9, 0], [0, 20], [-9, 0]]));
-  ok('stage 1: rectangle and rhombus', [rect.lines, rect.order, rhom.lines, rhom.order], [2, 2, 2, 2]);
-  // the game: the centre of a 6 by 6 grid is a corner, and no domino is its own half turn
-  let selfImage = 0;
-  for (let x = 0; x < 6; x++) for (let y = 0; y < 6; y++) for (const [dx, dy] of [[1, 0], [0, 1]]) {
-    if (x + dx > 5 || y + dy > 5) continue;
-    const mid = [x + 0.5 + dx / 2, y + 0.5 + dy / 2];
-    if (Math.abs(mid[0] - 3) < 1e-9 && Math.abs(mid[1] - 3) < 1e-9) selfImage++;
-  }
-  ok('stage 1 game: dominoes that are their own half turn', selfImage, 0);
+  // Stage 1 was repaired on 16 September 2026 so that nothing in it answers
+  // a body question. Its values are read back from the two pages.
+  const S1 = flat(read('p101.html') + ' ' + read('p102.html'));
+  const S1RAW = read('p101.html') + read('p102.html');
+  // 1. a circle with one diameter
+  const cd = symOf([{ c: [0, 0], r: 30, cls: 'dg-line' }, ...polyPrims([[-30, 0], [30, 0]], 'dg-line', false)], [0, 0]);
+  ok('stage 1: a circle with one diameter, lines', cd.lines, Number(S1.match(/So there are (\d+) lines of symmetry/)?.[1]));
+  ok('stage 1: a circle with one diameter, angles', [...Array(cd.order)].map((_, k) => 360 / cd.order * (k + 1)),
+    nums(S1RAW.match(/So the angles of symmetry are (\$[^.]*)\./)?.[1] || ''));
+  // 3. a figure that fits after 90 degrees
+  const sq = G.figure(polyPrims([[0, 0], [20, 0], [20, 20], [0, 20]]));
+  is('stage 1: a square fits after 90, 180 and 270 degrees', [90, 180, 270].every(t => G.fits(sq, G.turnBy([10, 10], t))));
+  is('stage 1: a square does not fit after 45 degrees', !G.fits(sq, G.turnBy([10, 10], 45)));
+  is('stage 1: two and three quarter turns are 180 and 270', 2 * 90 === 180 && 3 * 90 === 270 && S1.includes('three quarter turns make $270'));
+  // 4. equal arms, equally spaced
+  const offered = S1.match(/whole number of degrees: ([\d, ]+)\?/)?.[1].split(',').map(Number);
+  ok('stage 1: the arms offered', offered, [8, 9, 11, 12]);
+  ok('stage 1: arms giving a whole number of degrees', offered.filter(n => 360 % n === 0),
+    S1.match(/so ([\d, and]+) arms work/)?.[1].split(/, | and /).map(Number));
+  // 5. the words: each letter is drawn with straight lines and placed in turn
+  const glyph = {
+    T: [[[0, 0], [20, 0]], [[10, 0], [10, 40]]],
+    O: [[[0, 0], [20, 0], [20, 40], [0, 40], [0, 0]]],
+    N: [[[0, 40], [0, 0], [20, 40], [20, 0]]],
+    U: [[[0, 0], [0, 40], [20, 40], [20, 0]]],
+    S: [[[20, 0], [0, 0], [0, 20], [20, 20], [20, 40], [0, 40]]],
+    M: [[[0, 40], [0, 0], [10, 24], [20, 0], [20, 40]]],
+  };
+  const word = (w) => [...w].flatMap((c, i) => glyph[c].flatMap(p => polyPrims(p.map(([x, y]) => [x + 30 * i, y]), 'dg-line', false)));
+  const words = ['TOOT', 'NUN', 'SOS', 'MOM'];
+  const mid = (w) => [(30 * w.length - 10) / 2, 20];
+  const turned = words.filter(w => G.fits(G.figure(word(w)), G.turnBy(mid(w), 180)));
+  const mirrored = words.filter(w => G.fits(G.figure(word(w)), G.reflectIn(mid(w), 90)));
+  ok('stage 1: words that fit a half turn', turned, [S1.match(/so ([A-Z]+) works/)?.[1]]);
+  ok('stage 1: words that fit the mirror', mirrored, S1.match(/so ([A-Z]+) and ([A-Z]+) look the same in the mirror/)?.slice(1));
+  is('stage 1: N passes the half turn alone, S passes it, T, U and M do not',
+    symOf(word('N')).order === 2 && symOf(word('S')).order === 2 && ['T', 'U', 'M'].every(c => symOf(word(c)).order === 1));
+  is('stage 1: T, O and M have an up-and-down line; N and S do not',
+    ['T', 'O', 'M'].every(c => G.fits(G.figure(word(c)), G.reflectIn([10, 20], 90)))
+    && ['N', 'S'].every(c => !G.fits(G.figure(word(c)), G.reflectIn([10, 20], 90))));
+  // 6. two equal squares meeting at a corner
+  const bow = symOf([...polyPrims([[0, 0], [20, 0], [20, 20], [0, 20]]), ...polyPrims([[20, 20], [40, 20], [40, 40], [20, 40]])], [20, 20]);
+  ok('stage 1: two squares at a corner, lines and order', [bow.lines, bow.order],
+    [Number(S1.match(/the figure has (\d+) lines of symmetry/)?.[1]), Number(S1.match(/rotational symmetry of order (\d+)\. A quarter turn/)?.[1])]);
+  // nothing in Beyond may answer a body question: the repaired items stay out
+  for (const gone of ['octagon', '51\\frac{3}{7}', 'second player', 'rhombus', 'multiples of the smallest one'])
+    is('Beyond no longer prints "' + gone + '"', !BEYOND.includes(gone));
+  ok('stage 1 has six questions', (S1RAW.match(/class="c-try"/g) || []).length, 6);
 }
 
 // ---- Beyond: the worked examples, read back from their Answer rows
@@ -880,8 +913,12 @@ ok('the key covers 1 to 16', Object.keys(KEY).map(Number), [...Array(16)].map((_
   is('Ex 9.3 T&R: true and true', ANSWERS.includes('2. **True.**') && ANSWERS.includes('3. **True.**'));
   is('Ex 9.2 Q9: no triangle with exactly two lines', ANSWERS.includes('**No triangle has exactly two lines of symmetry.**'));
   // stage 1
-  inA('stage 1 octagon', 'A regular octagon has **8** lines');
-  ok('stage 1: 40 degrees', 360 / 40, Number(ANSWERS.match(/\*\*(\d+)\*\* angles of symmetry, since \$360 \\div 40/)[1]));
+  inA('stage 1 circle', 'A circle with one diameter drawn has **2** lines of symmetry');
+  inA('stage 1 circle angles', 'symmetry are **$180^\\circ$ and $360^\\circ$**');
+  inA('stage 1 turns', '**Not necessarily** for $45^\\circ$');
+  inA('stage 1 arms', '**8, 9 and 12** arms');
+  inA('stage 1 words', 'After a half turn: **SOS** only. In the mirror: **TOOT and MOM**.');
+  inA('stage 1 squares', '6. **2** lines of symmetry');
   // the key table in ANSWERS matches the page's key
   const akey = Object.fromEntries([...ANSWERS.matchAll(/\| (\d+) \(([a-d])\)/g)].map(m => [m[1], m[2]]));
   ok('ANSWERS key = printed key', akey, KEY);

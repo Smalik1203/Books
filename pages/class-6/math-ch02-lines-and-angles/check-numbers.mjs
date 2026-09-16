@@ -668,11 +668,42 @@ const F = {};
   // folding: a quarter turn, an eighth, a sixteenth
   F.blanks = [360 / 4, 360 / 8, 360 / 16];
   // Stage 1 of Beyond
-  ok('Beyond stage 1: north to south-west, clockwise', 90 + 90 + 45, 225);
-  ok('Beyond stage 1: two angles 40° apart on a line', [(180 - 40) / 2, (180 - 40) / 2 + 40], [70, 110]);
-  ok('Beyond stage 1: angles from 4 and 5 rays', [4 * 3 / 2, 5 * 4 / 2], [6, 10]);
-  ok('Beyond stage 1: doubling 30, 50, 45', [type(60), type(100), type(90)], ['acute', 'obtuse', 'right']);
-  ok('Beyond stage 1: 5 o\'clock', [5 * 30, 360 - 5 * 30], [150, 210]);
+  // Stage 1 of Beyond: each question's numbers are read off the page and its answer worked from them
+  const S1 = flat(BEYOND.slice(0, BEYOND.indexOf('c-stage__num">2')));
+  const compass = ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'];
+  const cw = (from, to) => ((compass.indexOf(to) - compass.indexOf(from)) * 45 + 360) % 360 || 360;
+  {
+    const m = S1.match(/Ravi faces ([a-z-]+)\. He turns clockwise until he faces ([a-z-]+)\./);
+    const t = cw(m[1], m[2]);
+    is(`Beyond stage 1: Ravi turns ${t}°, printed as the sum and called reflex`, S1.includes(`= ${t}^\\circ$`) && type(t) === 'reflex');
+  }
+  {
+    const d = +S1.match(/One of them is \$(\d+)\^\\circ\$ bigger than the other/)[1];
+    const small = (180 - d) / 2, big = small + d;
+    is(`Beyond stage 1: a straight angle split ${d}° apart is ${small}° and ${big}°`, S1.includes(`so each is $${small}^\\circ$`) && S1.includes(`= ${big}^\\circ$`));
+    is('Beyond stage 1: the split is not Exercise 2.9 Q6 (70° and 110°)', small !== 70 && big !== 110);
+  }
+  {
+    const words = { Three: 3, Four: 4, Five: 5, Six: 6 };
+    const n = words[S1.match(/(Three|Four|Five|Six) rays \$/)[1]];
+    const count = (k) => k * (k - 1) / 2;
+    is(`Beyond stage 1: ${n} rays make ${count(n)} angles, ${n + 1} rays make ${count(n + 1)}`, S1.includes(`= ${count(n)}$ angles`) && S1.includes(`you would get $${[...Array(n).keys()].map(i => n - i).join(' + ')} = ${count(n + 1)}$`));
+    is('Beyond stage 1: the ray count is not the 6 of Exercise 2.2 Q6', count(n) !== 6 && n !== 4);
+  }
+  {
+    const a = +S1.match(/Take \$(\d+)\^\\circ\$\. It is acute\. Double it and you get \$(\d+)\^\\circ\$/)[1];
+    const b = +S1.match(/Take \$\d+\^\\circ\$\. It is acute\. Double it and you get \$(\d+)\^\\circ\$/)[1];
+    ok('Beyond stage 1: Meena\'s counterexample', [type(a), b, type(b)], ['acute', 2 * a, 'acute']);
+    is('Beyond stage 1: the counterexample is not Exercise 2.9 Q4 (60° halved)', b !== 60);
+    ok('Beyond stage 1: doubling 50 and 45', [type(100), type(90)], ['obtuse', 'right']);
+  }
+  {
+    const m = S1.match(/Kiran faces ([a-z-]+)\. She turns clockwise until she faces ([a-z-]+)\./);
+    F.kiran = cw(m[1], m[2]);
+    is(`Beyond stage 1: Kiran turns ${F.kiran}°, the short way ${360 - F.kiran}°`, S1.includes(`Altogether Kiran turns $45^\\circ + 270^\\circ = ${F.kiran}^\\circ$`)
+      && S1.includes(`takes only $${360 - F.kiran}^\\circ$`) && type(F.kiran) === 'reflex');
+    is('Beyond stage 1: no clock question is left in it', !/o’clock/.test(S1));
+  }
 }
 
 /* ---- C. Answer rows and practice answers, read off the page ------- */
@@ -959,7 +990,10 @@ inAnswers('A 2.11 Q3', `$\\angle AOB$ 20°, $\\angle BOC$ 30° and $\\angle AOC$
 inAnswers('A 2.11 Q3', `$\\angle BOD$ 120° and\n   $\\angle AOD$ 140°`);
 // Beyond
 inAnswers('A Stage 1', `Ravi turns **${90 + 90 + 45}°**`);
-inAnswers('A Stage 1', `**${(180 - 40) / 2}° and ${(180 - 40) / 2 + 40}°**`);
+inAnswers('A Stage 1', `**${(180 - 50) / 2}° and ${(180 - 50) / 2 + 50}°**`);
+inAnswers('A Stage 1', `five rays give **${5 * 4 / 2}** angles (and six give ${6 * 5 / 2})`);
+inAnswers('A Stage 1', `$2 \\times 20 = ${2 * 20}$`);
+inAnswers('A Stage 1', `Kiran turns **${F.kiran}°** clockwise, and the short way back is **${360 - F.kiran}°**`);
 inAnswers('A Beyond Examples', `3 —\n$\\angle P$, by ${90 / 3 * 2 - 180 / 4}°`);
 inAnswers('A Beyond Examples', `5 — ${180 / 6}° and\n${5 * 180 / 6}°`);
 inAnswers('A Beyond Examples', `11 — ${F.cod}°;\n12 — ${360 - 225}° and ${360 - 100}°; 13 — ${120 - 30}°`);

@@ -46,7 +46,7 @@ No angle changed in any of them; `check-numbers.mjs` measures each.
 
 | stage | before | after |
 |---|---|---|
-| 1 Using What You Know | 5 `.c-try`, explained in running text | **kept word for word**; only `.c-stage__for` removed (checked by script against `HEAD`: identical, 3,255 characters) |
+| 1 Using What You Know | 5 `.c-try`, explained in running text | `.c-stage__for` removed; otherwise word for word **except four items that answered body questions**, changed by the user's decision below |
 | 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems in prose | **14 stepped examples, Beyond Examples 1–14** (numbered from 1, as Class 7 does — the coordinator's correction of the brief, 16 September), under nine `Type N ·` heads |
 | 3 Problem Sets → **Practice** | 3 sets, A/B/C, 23 questions | **one run of 29**, six forms, band carries the numeral |
 | 4 Answers & Takeaways → **Answers** | key and notes | on a fresh page: letter key, every other answer in `work--trace`, *why the other options are wrong* for Q10, Q11, Q12 |
@@ -85,10 +85,31 @@ question on a giant wheel, which on its own held a page at 22% in front of
 the Answers page and repeated Type 6; the *why* note for Q15. The practice
 run went 31 → 29 and Beyond 14 → 11 pages.
 
+**Stage 1, four items changed — the user's decision, 16 September 2026:**
+*nothing in Beyond answers a body question* wins over *Stage 1 word for
+word*, with the smallest edit that works. Stage 1 was reread whole against
+the body. Item 1 (Ravi, north to south-west) answers nothing and is
+unchanged, as are the opening paragraph, *Notice that you did not need a
+protractor*, and the closing paragraph.
+
+| item | before | after | why |
+|---|---|---|---|
+| 2, a straight angle split | *One of them is 40° bigger…* worked to **70° and 110°**, *Check: 70° + 110° = 180°* | the same sentences with **50°**: $180° - 50° = 130°$, each 65°, **65° and 115°**, *Check: 65° + 115° = 180°* | 70° and 110° adding to 180° is Exercise Set 2.9 Q6's answer (draw ∠BOC = 70°, measure ∠AOC, add) |
+| 3, counting angles | **Four** rays, *3 + 2 + 1 = 6* angles; *With 5 rays … 4 + 3 + 2 + 1 = 10* | **Five** rays $OA$–$OE$, *4 + 3 + 2 + 1 = 10* angles; *With 6 rays … 5 + 4 + 3 + 2 + 1 = 15*; the Chapter 1 sentence kept | counting the pairs among four things to get 6 is Exercise Set 2.2 Q6's count (four points, 6 lines) |
+| 4, Meena's claim | *Take 30°… Double it and you get 60°* | *Take 20°… Double it and you get 40°* | half of 60° is 30° is Exercise Set 2.9 Q4's answer. *Double 45° is 90°* stays: Exercise 2.9 Q7 prints 45° in the question |
+| 5, replaced | *What is the angle between the hands of a clock at 5 o'clock?* explained with *Each part is $360° \div 12 = 30°$*, 150° and 210° | *Kiran faces north-east. She turns clockwise until she faces north. Through how many degrees has she turned?* explained as 45° + 3 × 90° = **315°**, reflex, and the short way **45°**, $315° + 45° = 360°$ | *each part is 30°* is Exercise Set 2.8 Q1(a)'s answer, and the rest follows for 2, 4 and 6 o'clock |
+
+The new item is the same kind as the old — a turn broken into parts the
+reader knows, no protractor, one plain observation at the end — and
+duplicates nothing in Beyond: Ravi turns 225° from north, Beyond Example 4
+turns three right angles from east, MCQ 7 turns 270° anticlockwise from
+east, and Q29's robot turns from north or back to north from east. Fit:
+page 33 stays 98%, page 34 goes from 70% to 75%; nothing else moved, and no
+refit was run.
+
 **Nothing repeats the body, and nothing gives a body answer away.**
-`check-no-repeats.mjs` prints one pair (50%): Stage 1's *angle between the
-hands at 5 o'clock* against Exercise Set 2.8 Q1 (2, 4 and 6 o'clock) —
-see *Flagged*; Stage 1 is kept word for word by rule. Reading every Beyond
+`check-no-repeats.mjs` now finds no pair close to a body question (the one
+pair it printed before was the 5 o'clock item). Reading every Beyond
 item against the body found, and replaced, five that gave body answers
 away through an inverse fact:
 
@@ -111,9 +132,9 @@ body's part lists, letters where a figure labels its panels.
 
 ### Verified
 
-**`check-numbers.mjs` exits 0 with 494 checks passed.** Six parts:
+**`check-numbers.mjs` exits 0 with 503 checks passed.** Six parts:
 
-- **A. Arithmetic.** 60 identities off the pages and 73 off `ANSWERS.md`,
+- **A. Arithmetic.** 60 identities off the pages and 74 off `ANSWERS.md`,
   evaluated. 43 spans relate a named angle to a measure and have only one
   numeric side; `--show` lists them.
 - **B. The figures.** Every ray's direction is measured from the SVG
@@ -163,6 +184,8 @@ copy of the chapter; all nine were caught:
 8. AR 14's reason reworded;
 9. Beyond Example 7's Answer row 85° → 95°.
 
+After the Stage 1 change, five more, all caught: Kiran's total 315° → 305°; the question changed to *faces north-west* with the answer left alone; the short way 45° → 55°; `ANSWERS.md` 315° → 325°; the straight-angle split 115° → 125°.
+
 **Wrong numbers found: none in the printed body or the old Beyond key.**
 The old Beyond was replaced, and its questions kept in the new run are
 re-derived. Errors found and fixed were in my own work before it was done:
@@ -200,7 +223,7 @@ figure separates anything by hue alone.
 | 24 | 74% | Example 2, a panel (81 mm stepped), too tall for the 61 mm left |
 | 26 | 43% | Exercise Set 2.9, kept whole (`keepExerciseSets`, §11); the *Guessing well* section and its Think and Reflect stand alone before it |
 | 32 | 46% | the chapter's close (`data-close`) |
-| 34 (p102) | 70% | the *Type 2* head and Beyond Example 2 with Fig. 2.63 |
+| 34 (p102) | 75% | the *Type 2* head and Beyond Example 2 with Fig. 2.63 |
 | 35 (p103) | 86% | the *Type 4* head and Beyond Example 4 |
 | 37 (p105) | 83% | the *Type 7* head and Beyond Example 10 |
 | 38 (p106) | 85% | Beyond Example 12, a panel |
@@ -212,8 +235,7 @@ No short page stands before the Answers page: page 42 (Q27–29) is 93%.
 
 | where | code | what is wrong | what it needs |
 |---|---|---|---|
-| Stage 1, 5 o'clock (p102) | §6a | Same question as Exercise Set 2.8 Q1 with a new hour, and its explanation prints *each part is $360 \div 12 = 30°$*, which is Q1(a)'s answer. Stage 1 is kept word for word by rule, so it stays. | A decision on whether Stage 1's word-for-word rule yields to *nothing gives a body answer away*. |
-| Stage 1 (p101) | C8 | *Notice that you did not need a protractor.* — a narrator's instruction; kept word for word. | The same decision. |
+| Stage 1 (p101) | C8 | *Notice that you did not need a protractor.* — a narrator's instruction. The user has not asked for it to change. | A decision, if wanted. |
 | Fig. 2.15 caption | C3 | *Four angles. Two of them are close in size.* As drawn, two pairs are close: (a) 72° and (b) 78°, (c) 38° and (d) 42°. | Either the caption or one drawing. `ANSWERS.md` names both pairs. |
 | p015 → Fig. 2.33 | §5a | *Fig. 2.33 shows a half-circle protractor…* ends p015; the figure is overleaf. A description, not a question; Example 1 and Exercise 2.6 are with the figure on p016. | Nothing unless p015–p016 are refitted. |
 | p008 → Fig. 2.16 | — | A paragraph on p008 refers back to Fig. 2.16 on p007. Not a question. | Nothing. |
