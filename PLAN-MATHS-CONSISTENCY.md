@@ -142,11 +142,21 @@ chapter-runs, Class 8 about 14, Class 10 about 14, Class 9 about 8 plus six
 chapters of new writing, which is several times the cost of a conversion.
 The furniture and the booklets are separate again.
 
-## 9. Decisions to settle before phase 3
+## 9. Decisions
 
-- **The page for Classes 8, 9 and 10.** Consistency says move all three to
-  196 × 276; that re-breaks every page in 36 chapters. The alternative is to
-  accept two trims in one series, which is the inconsistency this plan exists
-  to remove.
+**Settled 16 September 2026: every class moves to 196 × 276.** Classes 8, 9
+and 10 come off Crown Quarto, so the series is one page from Class 6 to Class
+10 and nothing is in one book and missing from another. It re-breaks every
+page in 36 chapters, which is why the page move is folded into each chapter's
+own pass (§4.2) rather than run as a separate sweep: a chapter is moved,
+converted and refitted once, not twice. `css/edition-196x276.css` already
+exists and is what Classes 6 and 7 use; nothing new is needed in the
+stylesheets. Two consequences to expect, both seen in Class 7: the figure
+steps are scaled against the taller text block, so a chapter's figures pack
+differently, and every volume gains pages, so every cover is re-measured in
+phase 7.
+
+Still to settle:
+
 - **The answers booklet's form:** one booklet a volume, or one a class.
 - **Class 9's missing chapters:** which six, against which syllabus.
