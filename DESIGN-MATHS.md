@@ -326,10 +326,35 @@ mark — and a syllabus table: chapter, NCERT chapter, suggested periods,
 outcomes. At the back, a glossary that is also the index, a formula sheet,
 and two model papers, half-yearly and annual.
 
-Two companions. The **Solutions book** gives full working for every question.
-It is written after a volume's exercises are settled, so it is not written
-twice. The **Teacher's handbook** holds period plans, activity notes and a
-question bank.
+### The companions
+
+**The answers booklet** is its own printed booklet, one to a volume, and it
+is where every answer in the book lives. The student book prints none:
+a page of answers at the back is read before the question is tried, and a
+chapter that answers itself cannot be set as homework. Beyond the Book's own
+key is the single exception (§6a), because that division is written to be
+read straight through.
+
+What the booklet holds:
+
+- **every question in the volume** — each chapter's exercise sets, whatever
+  the chapter sets in its running text, and Beyond the Book's practice;
+- **the working, not just the result.** An answer is set the way §5a asks an
+  example to be set: *Solution*, a step to a row, *Answer*. A bare result is
+  enough only where the question asks for a name, a word or a reading;
+- **what a drawing must show,** for a construction, and any measurement it
+  should give;
+- **"answers will vary"** where that is the truth, with one worked instance
+  under it, so a teacher marking thirty different answers has a model.
+
+It is numbered by chapter and set — *Exercise 3.4, Q2* — so it is used
+beside the book without a contents page. It is written from each chapter's
+`ANSWERS.md`, which is kept beside the chapter's pages and updated whenever
+a question changes; a question renumbered in the book and not in that file
+is the way this goes wrong.
+
+**The Teacher's handbook** holds period plans, activity notes and a question
+bank.
 
 ### By class
 
@@ -422,7 +447,7 @@ not crowded, and the examination work is a page turn away.
 | examples are stepped | *Solution*, then a step to a row in `.work__row`, then *Answer*. The maths carries the step; the reason is two to four words in a `.chip`. Never a paragraph with the working inside it |
 | practice | every chapter's Beyond the Book runs one numbered list of at least 26 questions covering all six forms — multiple choice, assertion–reason, very short, short, long, case-based — with the multiple-choice answers spread across the four letters |
 | nothing repeats | no example or question in Beyond the Book repeats one the chapter already sets. Checked against the body, phrase by phrase, before it goes in |
-| answers | **every question in the volume has a written answer**, the chapter's own exercise sets included. Beyond the Book prints its key; the chapter's answers are kept in `ANSWERS.md` beside its pages, which is the copy the separate answers book is set from. A question printed with no answer anywhere is a defect, not a puzzle |
+| answers | **every question in the volume is answered in the answers booklet** (§5, *The companions*), the chapter's own exercise sets included. The student book prints none, except Beyond the Book's own key. The chapter's answers are written as it is written, and kept in `ANSWERS.md` beside its pages: that file is the booklet's source, and a chapter is not finished without it. A question nothing answers is a defect, not a puzzle |
 | rules stated | every rule the chapter uses is stated once in a `.c-keyidea`, in the words a paper will use (§10, *two registers*). A chapter that only shows a rule working has not given the student one to revise |
 | terms | every term the topic's papers use appears in the body, glossed with `.term` where it first appears (§10, *required terms*) |
 | numbers | every printed value — in the chapter, in Beyond the Book, in the answers — is re-derived by a script kept with the chapter's working notes. The script also checks that each multiple-choice question has exactly one right option and that it matches the printed key |
