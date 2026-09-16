@@ -404,6 +404,39 @@ body built to this section would need, and the reasons for each still hold;
 they are kept rather than deleted so that the next class to try it starts
 from a library, not from scratch. Do not add one to a Class 7 chapter body.
 
+## 5a. The bar a finished chapter clears
+
+Written 16 September 2026, after Class 7 was read as a whole and rated by
+part. Each line below is the level a chapter has to reach before it is
+called finished, and each is countable, so a chapter can be checked rather
+than admired. A chapter that misses one is not finished; the miss is logged
+in its `EDIT-LOG.md` with what it needs.
+
+**The chapter body keeps NCERT's structure (§5), so most of these are met in
+Beyond the Book.** That is the point of the division: the NCERT chapter is
+not crowded, and the examination work is a page turn away.
+
+| what | the bar |
+|---|---|
+| worked examples | every topic of the chapter is worked somewhere the reader can find it: a type in Beyond the Book's Solved Examples for each, and at least twelve examples a chapter. No topic is taught and never worked |
+| examples are stepped | *Solution*, then a step to a row in `.work__row`, then *Answer*. The maths carries the step; the reason is two to four words in a `.chip`. Never a paragraph with the working inside it |
+| practice | every chapter's Beyond the Book runs one numbered list of at least 26 questions covering all six forms — multiple choice, assertion–reason, very short, short, long, case-based — with the multiple-choice answers spread across the four letters |
+| nothing repeats | no example or question in Beyond the Book repeats one the chapter already sets. Checked against the body, phrase by phrase, before it goes in |
+| answers | **every question in the volume has a written answer**, the chapter's own exercise sets included. Beyond the Book prints its key; the chapter's answers are kept in `ANSWERS.md` beside its pages, which is the copy the separate answers book is set from. A question printed with no answer anywhere is a defect, not a puzzle |
+| rules stated | every rule the chapter uses is stated once in a `.c-keyidea`, in the words a paper will use (§10, *two registers*). A chapter that only shows a rule working has not given the student one to revise |
+| terms | every term the topic's papers use appears in the body, glossed with `.term` where it first appears (§10, *required terms*) |
+| numbers | every printed value — in the chapter, in Beyond the Book, in the answers — is re-derived by a script kept with the chapter's working notes. The script also checks that each multiple-choice question has exactly one right option and that it matches the printed key |
+| facts | a Did you know? prints only with its source recorded in `EDIT-LOG.md`. No source, no fact |
+| figures | a question that names a figure uses the values printed on that figure. If it needs other values it gets its own figure, numbered after the body's last |
+| fitting | no page overflows; nothing runs more than 3 mm into the bottom margin; no opener is stranded at the foot; a page under 88% is held by a whole block that cannot move, and is logged |
+| language | §10 throughout: plain explanation, exact rule, no coaching register, sums set as maths |
+
+**Book furniture is deliberately outside this bar.** The contents page, how
+to use the book, the syllabus table, the glossary and index, the formula
+sheet and the model papers (§5, *The book*) belong to the volume, not the
+chapter, and are written once a volume's chapters are settled. A chapter is
+finished without them; a volume is not.
+
 ## 6. Diagrams — first-class components
 
 Every mathematical diagram is drawn with the vocabulary in `css/diagram.css`
