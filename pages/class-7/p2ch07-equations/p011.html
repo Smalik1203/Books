@@ -2,51 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>To find out whether some Step $k$ uses 100 tiles, we can solve the equation $3k + 1 = 100$. Find the value of $k$.</p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__tab">Example 9</div>
         <div class="c-example__body">
-          <p>Madhubanti is planning a party. She will buy snacks from the <em>chaat</em> shop in town, where a plate of snacks costs ₹25. The shop also charges a fixed ₹50 to deliver the snacks to her house.</p>
-          <p>There are 5 people in her family, including her. Her parents say she can spend ₹500 on the party. Every person at the party, family or friend, will get one plate. How many friends can she invite?</p>
+          <p>Two friends are saving money. Jahnavi starts with ₹4000 and saves ₹650 more every month. Sunita starts with ₹5050 and saves ₹500 every month. After how many months will they have the same amount of money?</p>
         </div>
       </div>
 
-      <p>Fatima solved this with a rough diagram, shown in Fig. 7.10.</p>
-
-      <div class="c-figure c-figure--md">
-                          <figure>
-                  <svg viewBox="0 0 260 128" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fatima’s rough diagram: a long box containing 25 times an empty square, plus 50. A note above the left part says snack cost, and a note above the right part says delivery cost. A brace under the box is marked 500 rupees.">
-      <rect class="dg-fill-a-soft" x="36" y="48" width="134" height="30"/>
-      <rect class="dg-thin" x="36" y="48" width="134" height="30"/>
-      <text class="dg-label" x="68" y="68" text-anchor="middle">25 ×</text>
-      <rect class="dg-thin" x="90" y="55" width="16" height="16"/>
-      <text class="dg-label" x="134" y="68" text-anchor="middle">+ 50</text>
-      <text class="dg-note" x="64" y="18" text-anchor="middle">snack cost</text>
-      <path class="dg-thin" d="M66 24 L80 45"/>
-      <text class="dg-note" x="190" y="18" text-anchor="middle">delivery cost</text>
-      <path class="dg-thin" d="M186 24 L140 45"/>
-      <path class="dg-thin" d="M36 86 Q36 94 52 94 L91 94 Q103 94 103 102 Q103 94 115 94 L154 94 Q170 94 170 86"/>
-      <text class="dg-label" x="103" y="120" text-anchor="middle">₹500</text>
-      </svg>
-                            <figcaption><span class="fignum">Fig. 7.10</span> Fatima’s rough diagram.</figcaption>
-                          </figure>
-                        </div>
-
-      <p>If we take the fixed delivery charge out of ₹500, Madhubanti has ₹450 left. So the question becomes: how many plates at ₹25 each can be bought for ₹450? The answer is $450 \div 25 = 18$. Madhubanti’s family are 5 of these 18 people, so she can invite $18 - 5 = 13$ friends.</p>
-
-      <p>Mahesh used a letter-number $p$ for the number of people at the party, including Madhubanti and her family. The cost is then $25p + 50$, and it must be 500.</p>
+      <p>Let $m$ be the number of months after which their savings are equal. After $m$ months, Jahnavi has $4000 + 650m$ rupees and Sunita has $5050 + 500m$ rupees. These amounts are equal, so we get this equation.</p>
 
       <div class="work work--list">
-        <p>$25p + 50 = 500$</p>
-        <p>$25p = 500 - 50$ &nbsp; (subtracting 50 from both sides)</p>
-        <p>$25p = 450$</p>
-        <p>$p = 450 \div 25 = 18$ &nbsp; (dividing both sides by 25)</p>
+        <p>$4000 + 650m = 5050 + 500m$</p>
+        <p>$4000 + 650m - 500m = 5050$ &nbsp; (subtracting $500m$ from both sides)</p>
+        <p>$4000 + 150m = 5050$</p>
+        <p>$150m = 5050 - 4000$ &nbsp; (subtracting 4000 from both sides)</p>
+        <p>$150m = 1050$</p>
+        <p>$m = 1050 \div 150 = 7$ &nbsp; (dividing both sides by 150)</p>
       </div>
 
-      <p>So 18 people can be at the party, including the 5 in her family. That means 13 friends can be invited.</p>
+      <p>So after 7 months, they will both have the same amount of money. Check the answer by working out how much each of them has after 7 months.</p>
 
-      <p>Srikanth used a letter-number $f$ for the number of friends Madhubanti can invite. What is the cost now? There are $f + 5$ people, so the snacks cost $25(f + 5)$ rupees. Madhubanti has ₹450 for snacks, so</p>
+      <p>Let us solve a few more equations.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Solve $28(x + 4) + 300 = 1000$.</p>
+        </div>
+      </div>
+
+      <p>Here are three ways to solve this equation. In the first, we remove the term 300 before anything else.</p>
+
+      <div class="work work--list">
+        <p>$28(x + 4) = 1000 - 300 = 700$ &nbsp; (subtracting 300 from both sides)</p>
+        <p>$x + 4 = 700 \div 28 = 25$ &nbsp; (dividing both sides by 28)</p>
+        <p>$x = 25 - 4 = 21$</p>
+      </div>
+
+      <p>In the second way, we notice that 28, 300 and 1000 can all be divided by 4. Dividing both sides by 4 divides each term by 4, and gives a simpler equation.</p>
+
+      <div class="work work--list">
+        <p>$7(x + 4) + 75 = 250$</p>
+        <p>$7(x + 4) = 175$ &nbsp; (subtracting 75 from both sides)</p>
+        <p>$7x + 28 = 175$</p>
+        <p>$7x = 147$ &nbsp; (subtracting 28 from both sides)</p>
+        <p>$x = 147 \div 7 = 21$</p>
+      </div>
+
+      <p>In the third way, we open the bracket first.</p>
 
     </div>
   </div>

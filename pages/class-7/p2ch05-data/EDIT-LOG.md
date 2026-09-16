@@ -1,5 +1,120 @@
 # Class 7 · Mathematics II · Chapter 5 — Connecting the Dots…
 
+## Beyond the Book, rebuilt 15 September 2026
+
+The division was rebuilt to the shape in DESIGN-MATHS.md §6a, "The shape since
+15 September 2026", on the model of Class 7 Chapters 1 and 8. The chapter body
+(`p001`–`p025`) was not touched. The §5 body rebuild made earlier the same day
+was reverted at the user's request; its pages are kept as a backup in the
+session scratchpad (`scratchpad/rebuilt/pages/class-7/p2ch05-data/`), and only
+its worked examples, end-of-chapter questions and `ANSWERS.md` were used here,
+as source material.
+
+**Pages:** eight (`p101`–`p108`, the ten-stage-era *Behind Each Answer* and
+*Problem Sets* shape) → twelve (`p101`–`p112`), fitted with
+`refit.mjs … bridge`.
+
+### The four stages
+
+| stage | what | from |
+|---|---|---|
+| 1 Using What You Know | the four tried-and-explained questions, **word for word** | the existing stage; only its `.c-stage__for` line deleted (copied by script, not retyped) |
+| 2 Solved Examples | 15 examples in 6 types, stepped (Solution → Step → Answer, a reason as a `.chip`) | 11 from the reverted rebuild, 4 from the old *Behind Each Answer* |
+| 3 Practice | one band, 36 questions in six forms | 25 from the reverted rebuild's end-of-chapter questions, 11 from the old Sets A–C |
+| 4 Answers | letter key for 1–21, one `.work--trace` row for each of 22–36, and six rows of *Why the other options are wrong* | worked here |
+
+**Examples per type:** 1 Statistical questions and statements 2 (Ex 1–2) ·
+2 Finding and comparing means 3 (Ex 3–5) · 3 Finding the median and the range
+3 (Ex 6–8) · 4 Outliers: the mean or the median? 2 (Ex 9–10) · 5 Double bar
+graphs 3 (Ex 11–13) · 6 Reading a table of averages 2 (Ex 14–15).
+
+- From the rebuild: statistical question (Ex 1), statement (Ex 2), cycle shop
+  (Ex 3), library visitors (Ex 6), test marks median and range (Ex 8),
+  workshop earnings (Ex 10), library books graph, reading it, Tanvi (Ex 11–13),
+  Table 5.8 16-year-olds (Ex 14), Table 5.7 Rohit and Aman (Ex 15).
+- From *Behind Each Answer*: Problems 4, 5, 2, 3 as Ex 4, 5, 7, 9, keeping
+  their options; each Answer row gives the letter.
+- Ex 11 carries its graph inside the example as **Fig. 5.14** (the body ends at
+  Fig. 5.13), drawn to the example's data: 1 unit for 10 books, bars 45/30,
+  60/55, 35/40, 50/70.
+
+**Practice per form:** Choose the correct option 18 (Q1–18) · Assertion and
+reason 3 (Q19–21) · Very short answer 4 (Q22–25) · Short answer 6 (Q26–31) ·
+Long answer 3 (Q32–34) · Case-based 2 (Q35–36). Multiple-choice key 1–18:
+a 5, b 4, c 5, d 4. Assertion–reason: a, c, d.
+
+- From the rebuild (end-of-chapter numbering): 1–13, 15–22, 24–28 (as
+  Q1, 2, 4, 5, 8, 9, 11, 19–27, 29–36).
+- From the old sets: A5, A6, A7, A10, B4, B6, B7, C1, C2, C5, C7 (as Q6, 3, 10,
+  7, 15, 13, 12, 17, 16, 14, 18).
+- The fruit table of rebuild Q20 is set in the question's own words, not as a
+  numbered table. The two case tables carry no caption and no *Case study*
+  label.
+
+### Left out
+
+| item | why |
+|---|---|
+| rebuild Example 3, the hibiscus flowers (2, 7, 9, 4, 3) | **the body's Example 1** (p004) |
+| rebuild end Q23, the number-lock code | **the body's closing puzzle** (p025) |
+| old Set B5, months onions cost more in Wahapur | **the body** (Sampat, p005: "Wahapur in 5") |
+| old Set C3, median of Aditi's Week 2 Sudoku times | **the body's** Exercise Set 5.4 (p023) |
+| old Set C6, City 1's daylight in June, $564 \div 30$ | **the body** (p014) |
+| old Set B8, CASC rockets in three years | **the body's** statement (d) on Fig. 5.7 (p014); values also read by eye |
+| old Set B2, a family's heights with one short member | near-duplicate of **the body's** Poovizhi family (p006–p007) |
+| old Problem 1, the missing fifth value from a mean | near-duplicate of **Stage 1's** first question |
+| rebuild end Q14, frequency of 4; the "highest frequency" part of Q24 | frequency and mode are not taught in this chapter |
+| rebuild Example 4, Sunita's savings with a ₹0 week | near-duplicate of Ex 4 (a 0 score and a match not played) |
+| old A1, A2, A3, A4, A8, A9, B1, B3 | near-duplicates of questions kept (simple mean, odd and even median, statistical question, range, double bar graph, missing value, did-not-play) |
+| old C4, Team A's runs from Fig. 5.9 | the figure's data is flagged (see Flagged) |
+
+A search of `p001`–`p025` for each kept item's distinctive numbers and names
+found none of them in the body. Ex 14 uses the same table as the body's
+Table 5.8 statements, but asks a question they do not (the change for
+16-year-olds from 1989 to 2019).
+
+### Changed on the way in
+
+- Old Set C7 said only that $x$ "is between 5 and 9", which leaves 5 and 7
+  open to argument as medians; it now says "a number from 5 to 9", and the
+  options are 8, 5.5, 6, 7, so exactly one cannot be the median.
+- Old Set B6's option 16 had no mistake behind it; it is now 25, which is
+  $100 \div 4$, with 40 not taken away.
+- Letters were re-ordered in the reused multiple-choice questions to spread the
+  key; stems and option texts were tightened in Ex 13–15 and Q15 to
+  fit the pages.
+
+No reused answer was wrong. Data: every set of values in Stages 2 and 3 is
+made up, except Tables 5.7 and 5.8, whose values were read from the body's
+tables (p019, p020). No real-world source is needed.
+
+### Verification
+
+`scratchpad/beyond-p2ch05-data/verify.mjs` recomputes every number in the
+division from its data: all Stage 1 working, every example step, every
+distractor it names, every multiple-choice key (each checked to have exactly
+one correct option), all assertion–reason statements, every short, long and
+case answer, and the six *why wrong* rows. It reads Fig. 5.14 back from the
+SVG in the built pages — axis ticks, gridlines, the eight bar heights and bases,
+colours and key — against the data, and checks each printed letter against the
+computed key. **239 checks, 0 failures.**
+
+Stage 1 was copied from the old `p101`/`p102` by `assemble.mjs` with only the
+`.c-stage__for` line removed; the old pages are kept in `…/beyond-p2ch05-data/old/`.
+
+### Checks
+
+Builder (`build.mjs class-7/p2ch05-data`): 37 pages, all pages fit, no violations, nothing past the text block or into the bottom margin. Beyond the Book fill, pages 26–37: 26:95% 27:92% 28:86% 29:95% 30:89% 31:78% 32:94% 33:94% 34:99% 35:100% 36:96% 37:54% (the last page, exempt).
+
+`orphans`: no stranded opener in Beyond the Book (the two it reports are body
+pages 11 and 18). `fit-options`: every option row fits. `check-labels`: no
+labels collide. No `--head`/`--tail`, no `.c-stage__for`, no case label, no
+inline style; every `p1xx` carries `data-bridge`.
+
+`gaps`: two Beyond pages are under 88%, and a whole example holds each one open. **Page 28** (86%) has 33 mm free, and Example 7 needs 57 mm. **Page 31** (78%) has 52 mm free; Example 15 measures 50 mm but does not pack into that space with the gap between blocks. The stems of Examples 13–15 were each shortened to try to close page 31. Closing either page further would mean cutting steps.
+
+The answer line on Beyond the Book under *Every printed number re-derived* below describes the division before this rebuild. The key above replaces it.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 5, *Connecting
 the Dots…* (textbook pages 97–135). Original LearnLab text in NCERT's order of
 topics and questions; no sentence is carried over. Crown Quarto, house design,

@@ -1,5 +1,99 @@
 # Class 7 · Mathematics I · Chapter 7 — A Tale of Three Intersecting Lines
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Rebuilt to DESIGN-MATHS.md §6a, *The shape since 15 September 2026*, on the
+pattern of Class 7 Chapters 1 and 2. Only `p101`–`p110` were touched. The §5
+body rebuild of the same day was **reverted at the user's request**; its
+backup, and the pages it wrote, are in the session scratchpad
+(`scratchpad/rebuilt/pages/class-7/ch07-three-lines/`). The body here is the
+refitted NCERT-order body and was not edited. The Beyond pages as they stood
+before this rebuild are in `scratchpad/beyond-ch07-three-lines/before/`.
+
+**Pages:** 8 before (p101–p108), 10 after (p101–p110). Fill 96 94 95 97 96
+97 97 97 94, last page 56%.
+
+### The four stages
+
+| stage | contents | from |
+|---|---|---|
+| band | `.c-bridge`, unchanged | — |
+| 1 Using What You Know | four tried-and-explained questions, **word for word**; only the `.c-stage__for` line removed | this chapter |
+| 2 Solved Examples | 14 examples, Solution → Step → Answer with `.chip` reasons | see below |
+| 3 Practice | one band, 34 questions in six forms | see below |
+| 4 Answers | letter key 1–18, a `.work--trace` row for 19–34, *Why the other options are wrong* for 9, 11, 13, 14, 17 | written new against the script |
+
+**Solved Examples, by type.** Type 1 constructing from the sides: Ex 1, 2
+(reverted rebuild's Examples 1, 2). Type 2 can three lengths make a triangle:
+Ex 3 (old Problem 1), Ex 4, 5, 6 (rebuild's Examples 4, 5, 6). Type 3 sides and
+angles: Ex 7, 8 (rebuild's 7, 8). Type 4 angle sum and exterior angles: Ex 9,
+10 (rebuild's 9, 10, with its figure), Ex 11 (old Problem 2), Ex 12 (old
+Problem 4). Type 5 altitudes and types: Ex 13 (rebuild's 12, with its figure),
+Ex 14 (rebuild's 13). Figures are numbered **Fig. 7.26** and **7.27**, after
+the body's last, 7.25. The old solutions were recast from prose into steps; the
+multiple-choice ones keep their options and answer with the letter.
+
+**Practice, by form.** Choose the correct option 1–14 · Assertion and reason
+15–18 · Very short answer 19–21 · Short answer 22–28 · Long answer 29–32 ·
+Case-based 33–34. From the rebuild's end-of-chapter questions: 1, 2, 3, 4,
+5, 7, 10 (its 1, 4, 2, 3, 6, 8, 5), 15 (its 9), 19–20 (its 12, 15) and 22–34
+(its 17–29, reordered within each form). From the old Set B: 6, 11, 16, 17
+(its 7, 4, 3, 6). From Set C: 8, 9, 12, 13, 14 (its 5, 2, 3, 1, 7). **Written new:** 18 (exterior angle
+against the angle next to it) and 21 (can every angle be under $60^\circ$),
+because dropping duplicates left assertion–reason with three and very short
+answer with two. Options were reordered so the key spreads (a) 5, (b) 5,
+(c) 4, (d) 4.
+
+### Excluded as duplicates
+
+Of the chapter body: old Set A 7 ($50^\circ$, $60^\circ$, exterior $110^\circ$ —
+the worked case in *Exterior angles*); Set B 8 ($\angle A = 40^\circ$, limit
+$140^\circ$ — *When do the arms meet?*); Set B 2 ($\angle B = \angle C$, find
+them — Set 7.8 Q3); Set A 5 (each angle of an equilateral triangle — Set 7.8
+Q2); Set C 4 and the rebuild's Example 14 (a side of a right triangle is an
+altitude — 7.4 text); old Problem 3 ($72^\circ$, $72^\circ$, $36^\circ$ — Set 7.8
+Q1 is the same triangle); the rebuild's Example 3 (the other crossing point —
+7.2 text); its end question 7 (which pairs can be two angles — Set 7.7 Q2);
+its question 10 (every triangle has two acute angles — the Think and Reflect
+in 7.5).
+
+Of Stage 1: old Problem 5 (whole-number third sides of 5 and 8 — Stage 1's
+first question with other numbers); the rebuild's Example 11 (exterior
+$125^\circ$ with $55^\circ$ and $70^\circ$ — Stage 1's third question).
+
+Near-duplicates inside the run: Set A 1, 2, 3, 4, 6, 8, 9, 10; Set B 1, 5;
+Set C 6; the rebuild's end questions 13, 14, 16. The rebuild's *Check
+yourself* boxes and *Common mistake* notes were not used. Old Problem 1's
+option (d), 2 cm, 3 cm, 6 cm, is a set the body tests, so it became 2 cm, 4 cm,
+7 cm. The old stage 2 closing paragraph and the three takeaways are gone.
+
+### Verification
+
+`scratchpad/beyond-ch07-three-lines/verify.mjs` checks every angle and length
+in Stage 1, the 14 examples, the 34 questions and their answers. That covers
+triangle inequalities, whole-number ranges, angle sums, exterior angles,
+constructed lengths by the cosine rule (PR ≈ 5.4 cm, roof sides ≈ 3.5 cm,
+base angles ≈ $37^\circ$ and apex ≈ $106^\circ$, altitude 4.8 cm), both figures'
+geometry, and that each multiple-choice question has exactly one correct
+option matching the printed key. **319 checks, 0 failures.** No reused item
+was wrong.
+
+Fitting was done with wording, never padding. Ex 1 and 2 each lost a row, and
+Ex 3, 4, 7, 12 and 13 had steps merged. The questions of Ex 4, 8 and 13, and
+Practice 24, 27 and 33(d), were each cut to one line. Practice 12's options
+went to two columns. Stage 2's type 4 order became direct, slide,
+multiple-choice, exterior. The answers are one `.work--trace` block per row,
+as in Chapter 2, so they flow.
+
+Tools: builder — all Beyond pages fit, no overflow, no violations; `gaps` —
+no short Beyond page; `orphans` — no stranded opener in Beyond; `fit-options`
+— every option row fits; `check-labels` — no collisions. No `--head`/`--tail`;
+every `p1xx` carries `data-bridge`. Proofs of pages 17, 21 and 23 were viewed.
+
+**Flagged, in the body, not touched:** page 9 runs 3.2 mm into the bottom
+margin; `orphans` reports an `h3` 3.8 lines from the foot of page 3; pages 7,
+12 and 13 are under 88%.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part I, Chapter 7, *A Tale of
 Three Intersecting Lines* (textbook pages 146–172, answer key after them).
 Original LearnLab text in NCERT's order of topics and questions; no sentence

@@ -1,5 +1,89 @@
 # Class 7 · Mathematics II · Chapter 3 — Finding Common Ground
 
+## Beyond the Book, rebuilt 15 September 2026
+
+**The chapter body is NCERT's structure, unchanged.** A rebuild of the body to
+DESIGN-MATHS §5 (worked examples, checks, key ideas and end-of-chapter
+exercises inside the chapter) was reverted the same day at the user's request.
+The `p0xx` pages were not touched in this rebuild; a backup of the §5 version
+is in the session scratchpad (`rebuilt/pages/class-7/p2ch03-hcf-lcm/`).
+
+**Beyond the Book is four stages, 9 pages (was 7), in DESIGN-MATHS §6a's
+15 September shape.**
+
+1. **Using What You Know** — the existing stage, word for word: four
+   questions tried first and explained. Only its `.c-stage__for` line went.
+2. **Solved Examples** — 14 examples, each *Solution*, *Step 1* … *Answer*
+   with a short reason as a chip. Type 1 prime factorisation and factors 2;
+   Type 2 finding the HCF 3; Type 3 finding the LCM 3; Type 4 dividing both
+   numbers together, and doubling 2; Type 5 the HCF, the LCM and the product
+   2; Type 6 questions with remainders 2. Sources: the reverted rebuild's
+   Examples 1, 2, 10, 11, 12 and Exercise 3.4 Q4, Exercise 3.6 Q5 (all recast
+   as steps); the old stage 2's Problems 1–4 (options kept, letter in the
+   Answer row); old Set C Q1, Q2 and Q4, recast as examples.
+3. **Practice** — one band carrying the numeral, 33 questions: 16 multiple
+   choice, 4 assertion–reason, 5 very short, 3 short, 3 long, 2 case-based.
+   Sources: the reverted rebuild's end-of-chapter Q2–6, 8–13, 16, 24, 29–33,
+   Check yourself (25 and 36; 60 and 4, 5, 6), Exercise 3.6 Q1; old Sets A–C.
+   Question 20 (assertion–reason, answer (b)) is new, because the reused
+   ones gave no (b). Key letters spread 5 a, 5 b, 5 c, 5 d.
+4. **Answers** — the key for 1–20, every other answer as a `.work--trace`
+   row (21–33 in one block, under the stage head on the same page), and
+   *Why the other options are wrong* for 12, 13, 14, 16 and 18. The old
+   "three things worth keeping" paragraph and the "mark every answer" line
+   went with the old stage 4.
+
+### Left out as duplicates
+
+- **Of the body:** the reverted rebuild's Examples 3–9 (the body's Examples
+  1–7); end-of-chapter Q7 (306 and 36), Q14 (multiple of $5 \times 7 \times 7
+  \times 11 \times 2$), Q15 (LCM of 1–10), Q17–23 (stars, factorisations, HCF 1
+  LCM 66, cowherd, box, Fire in the Mountain, dog and rabbit), Q25 (the largest
+  prime's digits, asked on p012), Q26 (two primes), Q27 (remainder 10), Q28
+  (Mahaviracharya; fraction addition is also not taught); Q1 (72 is factorised
+  in body Example 4); old Set A Q4 and Set C Q6 (consecutive numbers, and
+  $n$, $n + 2$ odd: body Set 3.5); old Set A Q8 (4 and 6: the Idli-Vada pair).
+- **Of Stage 1:** old stage 2 Problem 5 (HCF 4, LCM 30); old Set A Q1 (HCF
+  of 18 and 24, worked in Stage 1); Exercise 3.4 Q2 (12 and 18 days, the bells).
+- **Near-duplicates inside the run:** old Set A Q5, Q7, Q9, Set B Q6, Q7
+  (ribbons 72 and 120, Example 9's numbers), Q8; Exercise 3.6 Q2 and Check
+  "HCF 4, product 240" (both Example 11 again).
+- **Not taught:** Exercise 3.6 Q3 and Check "HCF of 42 and 63" multiply by 3
+  (the chapter explains doubling only); Exercise 3.6 Q6 needs "a common factor
+  divides the difference".
+
+### Changed in reused items
+
+No reused number was wrong. These were changed so nothing repeats the body or
+Stage 1: tanks 45, 60, 75 → 32, 48, 80 (body Example 1 is 45 and 75 → 15);
+Practice Q6 option 28 → 35 (body shows 28 is a factor of 840); Q18 LCM of 8
+and 12 → 6 and 9; Q22 common factors of 18 and 30 → 20 and 28 (Stage 1's
+tiles); Q29 60, 90, 150 → 40, 60, 100 (body asks 90 and 150); Q30 18 and 24 →
+20 and 30 (Stage 1 Q1); case Q32 lost its part (a) "factorise 96 and 120"
+(96 is factorised in the body). Options were reordered to spread the key.
+
+### Verification
+
+`scratchpad/beyond-p2ch03-hcf-lcm/verify.mjs` recomputes every number in
+Stage 1, every example step, every option set (exactly one option correct,
+at the printed letter), every answer and every *why wrong* row: HCF and LCM
+by Euclid, factorisations by trial division, pair counts and remainder
+questions by search. 75 checks plus the Q31 ladder, all pass. (Its example
+labels are the draft's: draft Example 12, 35 and 56, was cut in fitting;
+final numbering is 252 · 42 and 8 · tanks · HCF of factorisations · beads ·
+LCM 24 · LCM 12, 15, 20 · drums · 72 and 120 · doubling · product 1080 ·
+pairs HCF 5 LCM 60 · 70 and 125 · remainder 1.)
+
+### Fitting
+
+`refit bridge`: Beyond fill 93 97 89 97 97 95 100 98 97, all fit, nothing into
+the margin. To close three short example pages, Examples 7 and 10 lost a
+check step, Example 9's two division steps became one, draft Example 12 was
+cut, and Types 2, 3 and 6 are not in easiest-first order (the tanks before
+the plain HCF, LCM 24 before LCM of 12, 15, 20). `orphans`, `gaps`,
+`fit-options`, `check-labels` report nothing in Beyond. Flagged, not touched:
+body pages 2, 4, 5, 7 under 88%, and an exercise opener stranded on page 7.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 3, *Finding
 Common Ground* (textbook pages 47–66). Original LearnLab text in NCERT's order
 of topics and questions; no sentence is carried over. Crown Quarto, house
@@ -41,7 +125,7 @@ has no such designs.
 | Product | 105, 95: LCM 1995, product $9975 = 1995 \times 5$ · (a) 15, 315 (b) 11, 8800 (c) 74, 1110; the multiplier is the HCF each time · fails for three numbers, e.g. 2, 4, 8 |
 | Set 3.6 | 1 the 16th star · 2 (a) no (b) no · 3 (a) HCF $3 \times 7$, LCM $2 \times 2 \times 3 \times 3 \times 5 \times 7 \times 7 \times 11$ (b) HCF $3 \times 3$, LCM $2 \times 2 \times 3 \times 3 \times 5$ · 4 1 and 66, 2 and 33, 3 and 22, 6 and 11 · 5 105 · 6 (b), (d), (e) · 7 (c) 18 · 8 2100 · 9 (a) and (e) · 10 (c) only · 11 75 jumps · 12 360 · 13 $\frac{672 + 63 + 245 + 220 + 60}{1260} = 1$ |
 
-Beyond the Book: Stage 1 — 24; no, 4 does not divide 30; 15 tiles; 9:36.
+The Beyond the Book before the rebuild above (superseded): Stage 1 — 24; no, 4 does not divide 30; 15 tiles; 9:36.
 Stage 2 — (a), (c), (b), (d), (c). Set A b c a b c a d b a b; Set B b c a d a
 a b a; Set C b a c c a d b.
 
@@ -65,7 +149,7 @@ a b a; Set C b a c c a d b.
 
 ## Checks
 
-Builder: 13 body pages and 7 Beyond the Book pages, every page at 88% or more
+Builder, before the Beyond rebuild above: 13 body pages and 7 Beyond the Book pages, every page at 88% or more
 except the closing pages. `gaps`, `orphans`, `check-labels`, `fit-options` and
 the width probe report nothing. Fitting took line-sized edits: sentences added
 on the division method, co-prime numbers, Example 4, Set 3.2 and in three

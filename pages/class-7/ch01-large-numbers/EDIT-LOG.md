@@ -1,72 +1,62 @@
 # Class 7 · Mathematics I · Chapter 1 — Living with Large Numbers
 
-## Redesign, 15 September 2026 — the 196 × 276 page and the §5 structure
+## Beyond the Book, rebuilt 15 September 2026
 
-The first chapter rebuilt to DESIGN-MATHS §5. The notes further down describe
-the first draft and are kept as its record.
+**The chapter body is NCERT's structure, unchanged.** A rebuild of the body to
+DESIGN-MATHS §5 (committed as c877580, with 14 worked examples, checks, key
+ideas and end-of-chapter exercises added inside the chapter) was reverted the
+same day at the user's request: the body keeps NCERT's structure, and the
+Cengage-style additions belong in Beyond the Book. The body pages are the
+pre-rebuild ones, refitted to the 196 × 276 page without a word changed. A
+backup of the §5 version was kept in the session scratchpad.
 
-**Page.** `"edition": "196x276"` — the Class 6 master page, 196 × 276 mm with
-margins 22.5 / 22.5 / 18 / 18 mm. The edition was `class6` and was renamed
-when Class 7 moved onto it. The palette stays `garnet`; the `maths-clear`
-look was offered again and declined. The Class 7 covers are still Crown
-Quarto and move when the rest of the volume does.
+**Beyond the Book is four stages, 12 pages.**
 
-**Added, in §5 order.**
+1. **Using What You Know** — the existing stage, word for word: five questions
+   tried first and explained in running text, to show how the chapter's
+   simple ideas become tricky questions. Kept as it is on purpose.
+2. **Solved Examples** — 15 examples under six types (reading and writing
+   large numbers 3; place value and button presses 2; comparing and ordering
+   1; rounding off and estimating 4; quick products and digits in a product
+   2; estimating with an assumption 3). Each is set as *Solution*, *Step 1*,
+   *Step 2* … *Answer*, with a short reason as a chip. Sources: the reverted
+   rebuild's worked examples (none of them in the body) and the old stage 2's
+   worked problems, recast as steps.
+3. **Practice** — one band carrying the stage numeral. 40 questions: 25
+   multiple choice, 6 assertion–reason, 3 very short, 2 short, 2 long, 2
+   case-based. Sources: the reverted rebuild's end-of-chapter questions that
+   the body does not already set, and the old problem sets A–C with
+   near-duplicates dropped. Questions 37–38 (long answer) are new.
+4. **Answers** — the letter key, every other answer, and why the wrong options
+   are wrong for questions 27, 30 and 31.
 
-- Opener: the NCERT chapter under the title; outcomes; three recall
-  questions with answers at the foot.
-- Terms the chapter never used: *successor*, *predecessor*, *face value*,
-  *place value*, *expanded form*, *ascending order*, *descending order*,
-  *rounding off*, each glossed where it first appears.
-- Key ideas that state rules the chapter only showed: successor and
-  predecessor; place value and expanded form; ten make one; comparing
-  numbers; **rounding off** (the chapter rounded for four pages and never
-  said when to round up); quick products; digits in a product; estimating
-  with an assumption. The old lakh–crore–arab key idea stays.
-- Worked examples 2–14, two or three a topic (there was one).
-- Six Check yourself sets; two common mistakes (the zero in a two-digit
-  group; rounding by the last digit); one Did you know, which is the
-  existing Nepal and Sanskrit paragraph moved into the component.
-- New questions: Exercise 1.3 Q3–5, 1.7 Q4, 1.8 Q3.
-- Close: mind map, a summary rewritten to eight points so that it states
-  only what the chapter now states, the tip, and 17 words to know.
-- End-of-chapter exercises in every form: 6 multiple choice, 3 assertion–
-  reason, 5 very short, 7 short, 12 long and 2 case-based. The eighteen
-  first-draft questions are all kept, regrouped by length of answer.
-- An answer key to every check, exercise set and end-of-chapter question —
-  **taken out the same day**: the student book prints no key, and the
-  answers go in a separate book of detailed answers. The key is kept in
-  `ANSWERS.md` beside these pages. The Before you start answers on the
-  opener and Beyond the Book's own key stay.
-- "Exercise Set 1.n" is "Exercise 1.n" throughout.
+**Excluded as duplicates of the body:** the reverted rebuild's end questions
+on lakhs in a billion, the +10,000/+100 buttons, coins, the albatross, the
+godwit, eagles and Everest, the 10-digit numbers, 41 letters, the 9-digit swap,
+crossing out digits, number names sharing no letter, the 1000th digit, the two
+sets of cards, the seven number cards and the four toothpick questions — all in
+the body's own End-of-Chapter Exercises. Its Example 1 (Estu's rice) is the
+body's Example 1. Five examples first made from stage 1's questions were
+removed when that stage was restored.
 
-**Every new number re-derived by script**, not by hand: Examples 3–14; all
-checks; the new exercise questions; every answer in the key that has one
-answer, including the 30-press range (993 and 102), the 1000th digit (3, in
-370), the millionth (in 1,85,185), the 5000th digit 5 (in 13,495), the two
-card arrangements, the seven-card targets, the stick counts, the 24-stick
-extremes (1,11,11,11,11,111 and 2008) and both case studies — 56 checks, all
-passing.
+**Verified by script:** every number in the new long-answer questions and the
+reused examples and questions (25 checks, all passing); the rest carry the
+answers already verified in the reverted rebuild and the old key.
 
-**One more error in the source's answer key.** End set Q6(c), the 5000th
-time the digit 5 is written: the key gives 13995. Through 12,999 the digit 5
-is written 4,900 times; 13,000–13,399 add 80; in 13,400–13,494 it is written
-19 more times, so the 5000th is in **13,495**.
+**Design changes made with this chapter, at the user's direction:** no line
+under a stage head (`.c-stage__for` removed from these pages); the practice
+stage named once, by its band with the numeral in `.c-practice__num`; no
+*Case study* label under each case question; a case that opens a question sits
+on the question's first line, its table flush left and its parts at body
+leading (`css/structure.css`); a stage head with no subtext centres on its
+mark (`css/bridge.css`).
 
-**Sources for new facts.** The case study populations (Uttar Pradesh
-19,98,12,341; Maharashtra 11,23,74,333; Kerala 3,34,06,061; Goa 14,58,545;
-Sikkim 6,10,577) are the Census of India 2011 state totals. The Did you know
-paragraph was carried from the first draft with no source recorded — see
-FLAGGED.
-
-### FLAGGED in the redesign
-
-| location | code | what's wrong | what it needs |
-|---|---|---|---|
-| Did you know, 1.3 | C6 | the list of countries using the Indian system has no source, and the Maldives and Afghanistan are not certain | a source, or a shorter list |
-| End Q26, number names with no shared letter | C4 | no answer is known, and the key says it is an open question | a hint, or drop it |
-| End Q33, the 24-stick extremes | C4 | the question does not say how many digits; the key assumes any number | say "a number with any number of digits", or fix the digits |
-| Fitting | — | 26 body pages and 8 Beyond pages after the key came out. 9 pages under 88%: body pages 11, 12, 14, 19, 20 and Beyond pages 28, 29, 30, 33 — each held by a whole block (a heading's opener, an example, the mind map, a table, a problem and its solution) that does not fit the space left | close each in prose at the join |
+**Fitting.** Question 38 was moved from the foot of page 25 to the head of page
+26 by hand: repack had left page 25 running 8.2 mm into the margin. All pages
+fit, no opener is stranded, every option row fits. Short pages remain in the
+solved examples (pages 17–21, 76–82%, each held by the next whole example,
+4–9 mm too tall for the space) and at page 26 (82%, held by the Answers stage
+head).
 
 Written new from NCERT *Ganita Prakash*, Grade 7 Part I, Chapter 1, *Large
 Numbers Around Us* (textbook pages 1–23, answer key 24–38). Original LearnLab

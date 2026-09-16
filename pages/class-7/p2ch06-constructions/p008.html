@@ -2,52 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 6.3</div>
-        <ol class="c-questions">
-          <li>Draw at least 4 different angles, and construct their bisectors.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Construct the flower of eight petals in Fig. 6.9.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>In step 2 of bisecting an angle, suppose the arcs of equal radius from A and B meet on the other side of O, as in Fig. 6.11. Does the line OC still bisect the angle? Explore this by constructing, and then justify your answer.</li>
-        </ol>
-      </div>
-
-      <div class="c-figure c-figure--md">
-                          <figure>
-                            <svg viewBox="0 0 270 152" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An angle XOY with A on OY and B on OX, at equal distances from O. Arcs of equal radius from A and from B cross at C, on the other side of O, and the line through C and O is drawn.">
-      <path class="dg-line" d="M80 124 L250 124"/>
-      <path class="dg-line" d="M80 124 L164.8 22.9"/>
-      <path class="dg-thin" d="M149.3 133.7 A70 70 0 0 0 117.1 64.6"/>
-      <path class="dg-thin" d="M60.1 120.6 A90 90 0 0 0 62.6 145.5"/>
-      <path class="dg-thin" d="M52.4 123.5 A90 90 0 0 0 69.8 141.5"/>
-      <path class="dg-line" d="M47.8 139 L197.8 69.1"/>
-      <circle class="dg-fill-b" cx="80" cy="124" r="2.2"/>
-      <text class="dg-label" x="88" y="142" text-anchor="middle">O</text>
-      <text class="dg-label" x="158" y="140" text-anchor="middle">A</text>
-      <text class="dg-label" x="111" y="70.4" text-anchor="middle">B</text>
-      <text class="dg-label" x="47.5" y="139.1" text-anchor="middle">C</text>
-      <text class="dg-label" x="259" y="128" text-anchor="middle">Y</text>
-      <text class="dg-label" x="170.8" y="18.9" text-anchor="middle">X</text>
-      </svg>
-                            <figcaption><span class="fignum">Fig. 6.11</span> Arcs from A and B meeting on the other side of O.</figcaption>
-                          </figure>
-                        </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Which other angles can you construct by bisecting angles? Can you construct an angle of $65.5^\circ$ this way?</li>
-        </ol>
-      </div>
-
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
           <li>Find a way to bisect an angle using a rope.</li>
@@ -76,6 +30,32 @@
       <h3>Repeating units and copying an angle</h3>
 
       <p>Look at the design in Fig. 6.13. One unit, a slice of a circle, is repeated in two positions: pointing up and pointing down. To construct the design, we must make exact copies of the unit. Each slice has two straight arms of the same length, and an arc of a circle joining their far ends, like a slice of a round cake. Some slices point up and some point down, and each slice shares a straight arm with the slice beside it.</p>
+
+      <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 260 116" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A row of five equal sectors of a circle, each with a 60 degree angle. They point up and down in turn, sharing their straight sides, and the three whose arcs are on top are shaded.">
+      <path class="dg-fill-a-soft" d="M70 92 L100 40 A60 60 0 0 0 40 40 Z"/>
+      <path class="dg-line" d="M70 92 L100 40 A60 60 0 0 0 40 40 Z"/>
+      <path class="dg-line" d="M100 40 L70 92 A60 60 0 0 0 130 92 Z"/>
+      <path class="dg-fill-a-soft" d="M130 92 L160 40 A60 60 0 0 0 100 40 Z"/>
+      <path class="dg-line" d="M130 92 L160 40 A60 60 0 0 0 100 40 Z"/>
+      <path class="dg-line" d="M160 40 L130 92 A60 60 0 0 0 190 92 Z"/>
+      <path class="dg-fill-a-soft" d="M190 92 L220 40 A60 60 0 0 0 160 40 Z"/>
+      <path class="dg-line" d="M190 92 L220 40 A60 60 0 0 0 160 40 Z"/>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.13</span> A design made of one repeating unit.</figcaption>
+                          </figure>
+                        </div>
+
+      <p>For the copies to be exact, every unit must have the same length of arms and the same angle between them. A compass gives equal lengths easily, but how do we make equal angles? Draw an angle, and try to make a copy of it using only a ruler and a compass. Here is one way to do it. The method uses only arcs and the congruence of triangles, just as bisecting an angle did.</p>
+
+      <ol>
+        <li>Let the given angle be at A. Draw a ray with its starting point X; the copy will be made on it.</li>
+        <li>Draw an arc from A that cuts the two arms at B and C. Now A, B and C are the corners of an isosceles triangle ABC.</li>
+        <li>With the same radius, draw an arc from X that cuts the ray at Z.</li>
+        <li>Open the compass to the length BC. With its point on Z, cut the arc through Z at Y, so that $YZ = BC$.</li>
+        <li>Draw the ray XY. Then $\triangle ABC \cong \triangle XYZ$ by the SSS condition, so $\angle X = \angle A$.</li>
+      </ol>
 
     </div>
   </div>

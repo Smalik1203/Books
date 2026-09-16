@@ -2,32 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--md">
-                          <figure>
-                            <svg viewBox="0 0 260 116" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A row of five equal sectors of a circle, each with a 60 degree angle. They point up and down in turn, sharing their straight sides, and the three whose arcs are on top are shaded.">
-      <path class="dg-fill-a-soft" d="M70 92 L100 40 A60 60 0 0 0 40 40 Z"/>
-      <path class="dg-line" d="M70 92 L100 40 A60 60 0 0 0 40 40 Z"/>
-      <path class="dg-line" d="M100 40 L70 92 A60 60 0 0 0 130 92 Z"/>
-      <path class="dg-fill-a-soft" d="M130 92 L160 40 A60 60 0 0 0 100 40 Z"/>
-      <path class="dg-line" d="M130 92 L160 40 A60 60 0 0 0 100 40 Z"/>
-      <path class="dg-line" d="M160 40 L130 92 A60 60 0 0 0 190 92 Z"/>
-      <path class="dg-fill-a-soft" d="M190 92 L220 40 A60 60 0 0 0 160 40 Z"/>
-      <path class="dg-line" d="M190 92 L220 40 A60 60 0 0 0 160 40 Z"/>
-      </svg>
-                            <figcaption><span class="fignum">Fig. 6.13</span> A design made of one repeating unit.</figcaption>
-                          </figure>
-                        </div>
-
-      <p>For the copies to be exact, every unit must have the same length of arms and the same angle between them. A compass gives equal lengths easily, but how do we make equal angles? Draw an angle, and try to make a copy of it using only a ruler and a compass. Here is one way to do it. The method uses only arcs and the congruence of triangles, just as bisecting an angle did.</p>
-
-      <ol>
-        <li>Let the given angle be at A. Draw a ray with its starting point X; the copy will be made on it.</li>
-        <li>Draw an arc from A that cuts the two arms at B and C. Now A, B and C are the corners of an isosceles triangle ABC.</li>
-        <li>With the same radius, draw an arc from X that cuts the ray at Z.</li>
-        <li>Open the compass to the length BC. With its point on Z, cut the arc through Z at Y, so that $YZ = BC$.</li>
-        <li>Draw the ray XY. Then $\triangle ABC \cong \triangle XYZ$ by the SSS condition, so $\angle X = \angle A$.</li>
-      </ol>
-
       <div class="c-figure c-figure--full">
                           <figure>
                             <svg viewBox="0 0 570 142" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Copying an angle. On the left, the given angle at A, with an arc centred at A cutting its arms at B and C. On the right, a ray from X with an arc of the same radius cutting it at Z; an arc from Z with radius BC cuts the first arc at Y, and XY is drawn.">
@@ -65,6 +39,43 @@
           <li>Construct the design in Fig. 6.13. Copy the angle of the first unit for all the others, and use your compass to keep every arm the same length.</li>
         </ol>
       </div>
+
+      <h3>A line parallel to a given line</h3>
+
+      <p>Copying an angle has an important use: it lets us construct parallel lines with only a ruler and a compass. Earlier, we used a ruler and a set square to make equal corresponding angles, and that gave parallel lines. Let us do the same with a compass. Remember the fact behind that method: when a transversal makes equal corresponding angles with two lines, the two lines are parallel. So all we need is a way to make a corresponding angle equal to a given one, and copying an angle gives exactly that.</p>
+
+      <p>Suppose we need a line parallel to a line m. Draw a line l that crosses m at A. Then l is a transversal of m and of the parallel line we are about to draw. Choose a point B on l for the new line to pass through. The new line must make the same corresponding angle with l as m does, and we can make it by copying the angle at A to B. The point B can be anywhere on l, and the arcs can have any radius, as long as the arc from B has the same radius as the arc from A. A larger radius makes the construction more accurate.</p>
+
+      <ol>
+        <li>Draw an arc from A that cuts m at C and l at D. With the same radius, draw an arc from B that cuts l at F.</li>
+        <li>Open the compass to the length CD. With its point on F, cut the arc through F at E.</li>
+        <li>Draw the line n through B and E. Then n is parallel to m.</li>
+      </ol>
+
+      <div class="c-figure c-figure--xl">
+                          <figure>
+                            <svg viewBox="0 0 390 176" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A line m and a line l crossing it at A. An arc centred at A cuts m at C and l at D. An arc of the same radius centred at B, on l, cuts l at F; an arc from F with radius CD fixes E, and the line n through B and E is parallel to m.">
+      <path class="dg-line" d="M20 152 L370 152"/>
+      <path class="dg-line" d="M164.4 162.6 L236.7 26.6"/>
+      <path class="dg-line" d="M20 70.8 L370 70.8"/>
+      <path class="dg-thin" d="M214.3 159.8 A45 45 0 0 0 180.9 108.3"/>
+      <path class="dg-thin" d="M257.5 78.6 A45 45 0 0 0 224.1 27.1"/>
+      <path class="dg-thin" d="M247.9 75.4 A46.4 46.4 0 0 0 267.1 63.8"/>
+      <circle class="dg-fill-b" cx="170" cy="152" r="2.2"/>
+      <circle class="dg-fill-b" cx="213.2" cy="70.8" r="2.2"/>
+      <text class="dg-label" x="150" y="167" text-anchor="middle">A</text>
+      <text class="dg-label" x="221" y="168" text-anchor="middle">C</text>
+      <text class="dg-label" x="179.1" y="110.3" text-anchor="middle">D</text>
+      <text class="dg-label" x="200.2" y="66.8" text-anchor="middle">B</text>
+      <text class="dg-label" x="265.2" y="86.8" text-anchor="middle">E</text>
+      <text class="dg-label" x="222.3" y="29" text-anchor="middle">F</text>
+      <text class="dg-label" x="362" y="145" text-anchor="middle">m</text>
+      <text class="dg-label" x="362" y="63.8" text-anchor="middle">n</text>
+      <text class="dg-label" x="245.7" y="30.6" text-anchor="middle">l</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.15</span> Constructing a line n through B parallel to m.</figcaption>
+                          </figure>
+                        </div>
 
     </div>
   </div>

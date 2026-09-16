@@ -2,25 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <table class="table--top">
-        <tbody>
-          <tr><td><strong>4</strong><br>$5z + 2 = 3z - 4$<br>$5z + 3z = -4 + 2$<br>$8z = -2$<br>$z = -\frac{2}{8}$</td><td><strong>5</strong><br>$15w - 4w = 26$<br>$15w = 26 + 4w$<br>$15w = 30$<br>$w = 2$</td><td><strong>6</strong><br>$3x + 1 = -12$<br>$x + 1 = -\frac{12}{3}$<br>$x + 1 = -4$<br>$x = -5$</td></tr>
-        </tbody>
-      </table>
+      <h3>Brahmagupta’s rule</h3>
 
-      <table class="table--top">
-        <tbody>
-          <tr><td><strong>7</strong><br>$4(4q + 2) = 50$<br>$4(4q) = 50 - 2$<br>$16q = 48$<br>$q = 3$</td><td><strong>8</strong><br>$-2(3 - 4x) = 14$<br>$-6 - 8x = 14$<br>$-8x = 14 + 6$<br>$-8x = 20$<br>$x = -\frac{20}{8}$</td><td><strong>9</strong><br>$3(7y + 4) = 9 + 5y$<br>$7y + 4 = \frac{9}{3} + 5y$<br>$7y + 4 = 3 + 5y$<br>$7y - 5y + 4 = 3$<br>$2y = 4 - 3$<br>$y = \frac{1}{2}$</td></tr>
-        </tbody>
-      </table>
+      <p>Problems like this were well understood in ancient India. A systematic way to solve problems with one unknown was first given by Aryabhata (499 CE), and Brahmagupta described it in his <em>Brahmasphutasiddhanta</em> (628 CE). Let us understand his method. Look at equations of this form:</p>
 
-      <h2><span class="badge">7.4</span><span class="name">A Pinch of History</span></h2>
+      <div class="work work--centred">
+        <p>$5x + 4 = 3x + 8$ &nbsp; or &nbsp; $3x - 6 = 2x + 4$</p>
+      </div>
 
-      <p>In ancient India, writing expressions with symbols and solving equations made from them was an important part of mathematics. This area was called <em>bijaganita</em>, and today we call it algebra. <em>Ganita</em> means calculation, so <em>bijaganita</em> is calculation with seeds. The word <em>bija</em> means seed. A whole tree is hidden inside a seed, and the answer to a problem is hidden inside an unknown number. Solving the problem is like helping the tree grow: step by step, we uncover what is hidden.</p>
+      <p>Can we find a formula to solve such equations? For the first equation, can you do some operations on 5, 4, 3 and 8 that give the solution straight away? In a similar way, can you solve the second equation using the numbers 3, $-6$, 2 and 4?</p>
 
-      <p>We have already met Brahmagupta’s work on integers and fractions. In Chapter 18 of his book <em>Brahmasphutasiddhanta</em> (628 CE), he also explained how to add, subtract and multiply unknown numbers written as letters, much as we use $x$ or $y$ today. This chapter is one of the earliest known works on algebra anywhere in the world. The mathematician David Mumford, a winner of the Fields Medal, has described Brahmagupta as the key person in creating algebra as we know it.</p>
+      <p>To find a formula, we write the four numbers as A, B, C and D, so that every equation of this form looks like</p>
 
-      <p>In the 8th century, Indian mathematical ideas were translated into Arabic. They influenced a well-known mathematician, Al-Khwarizmi, who lived in what is now Iraq. Around 825 CE he wrote a book called <em>Hisab al-jabr wal-muqabala</em>, which means “calculation by restoring and balancing”. Restoring meant removing a subtracted term from one side of an equation by adding it to both sides. Balancing meant taking away equal terms from both sides. These are the moves we used in Section 7.2.</p>
+      <div class="work work--centred">
+        <p>$Ax + B = Cx + D$</p>
+      </div>
+
+      <p>Brahmagupta gave the solution of such an equation by this formula:</p>
+
+      <div class="work work--centred">
+        <p>$x = \dfrac{D - B}{A - C}$</p>
+      </div>
+
+      <p>With this rule, we can solve the equation $650m + 4000 = 500m + 5050$ from Example 9 with just one calculation:</p>
+
+      <div class="work work--centred">
+        <p>$m = \dfrac{5050 - 4000}{650 - 500}$</p>
+      </div>
+
+      <p>Use the formula to solve the equation $2x + 3 = 4x + 5$.</p>
+
+      <p>Ancient Indian mathematicians were very good at turning hard mathematical ideas into simple methods, so that anyone could use them to solve problems.</p>
+
+      <p><em>Bijaganita</em>, or algebra, is the branch of mathematics that uses letters to solve mathematical problems. We have seen some examples in this chapter. By studying algebra, we learn to find general patterns in numbers, in shapes and in everyday situations. We write these patterns in the language of algebra, which is both exact and powerful.</p>
+
+      <p>Algebra also lets us show why a claim is true, such as the claim that the sum of two odd numbers is always even. And it helps us solve problems of many kinds. Ancient Indian mathematicians knew how powerful algebra is. We hope that you see this too, and enjoy using it!</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 7.3</div>
+        <ol class="c-questions">
+          <li>Fill in each blank with an integer.<ol class="c-parts c-parts--alpha"><li>$5 \times \underline{\qquad} - 8 = 37$</li><li>$37 - (33 - \underline{\qquad}) = 35$</li><li>$-3 \times (-11 + \underline{\qquad}) = 45$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Ranju is a daily wage worker who earns ₹750 a day. Her employer pays her in ₹50 and ₹100 notes. If she gets the same number of ₹50 notes as ₹100 notes, how many notes of each kind does she get?</li>
+        </ol>
+      </div>
 
     </div>
   </div>

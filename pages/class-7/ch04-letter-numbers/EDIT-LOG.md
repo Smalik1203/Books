@@ -1,5 +1,91 @@
 # Class 7 · Mathematics I · Chapter 4 — Letter-Numbers
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Only `p101`–`p110` changed. The chapter proper (`p001`–`p018`) was not
+touched. The §5 rebuild of the body made the same day was reverted at the
+user's request; its pages and `ANSWERS.md` are kept as a backup in the
+session scratchpad (`rebuilt/pages/class-7/ch04-letter-numbers/`), and were
+used here only as a source. The old section, eight pages, is in
+`beyond-ch04-letter-numbers/before/` beside it. The *Beyond the Book* and
+*Fitting* notes further down describe that old section and are superseded.
+
+**The four stages, 8 pages → 10.**
+
+1. **Using What You Know** — the chapter's existing stage, word for word
+   (checked by script against the old pages). Only its `.c-stage__for`
+   line was removed.
+2. **Solved Examples** — 13 examples in five types, in the chapter's order,
+   each a question, *Solution*, stepped working with a short reason, and an
+   *Answer* row (a letter for a multiple-choice example).
+   - Type 1 · Writing an expression from a situation (1): Ex 1, change from ₹100 — old Problem 2.
+   - Type 2 · Arithmetic expressions with brackets (3): Ex 2–4 — the reverted rebuild's Examples 5, 6, 7 ($45 - 3 \times (8 + 2)$; Sameer's ₹500; $50 - (20 - 6)$).
+   - Type 3 · Values of algebraic expressions (3): Ex 5–7 — rebuild Examples 8, 10, 9 ($6p - 7$; $3(a - b)$ at $b = -5$; the auto-rickshaw fare).
+   - Type 4 · Simplifying expressions (2): Ex 8–9 — old Problems 1 and 4.
+   - Type 5 · Patterns that always hold (4): Ex 10 the 3 × 3 calendar square (old Problem 5), Ex 11 hexagons (old Problem 3), Ex 12 no step uses 150 matchsticks (rebuild Example 20), Ex 13 tables in a row (rebuild Example 19).
+
+   The old problems' option-by-option paragraphs and the stage's two linking
+   paragraphs went with the prose format; the working is now the steps.
+3. **Practice** — one band, 36 questions in one run.
+   - Choose the correct option, Q1–21: old Set A 1, 4, 9, 7, 10, 8; old Set B 8, 7, 2, 4, 5; old Set C 1, 3, 4, 5, 6; rebuild End Q1, Q6, Q2, Q3, Q4. Easier first. In Q2 and Q6 the options were reordered so the key is not mostly (a) and (b).
+   - Assertion and reason, Q22–25: rebuild End Q9, Q10, Q11; old Set B 6 (recast from four printed options to the note's key).
+   - Very short answer, Q26–30: rebuild End Q13, Q12, Q15, Q16, Q14.
+   - Short answer, Q31–32: **new** (a rectangle's perimeter from $2x + 3$ and $x - 1$; a triangle's third side). Every short-answer question in the rebuild is already one of the body's End-of-Chapter questions.
+   - Long answer, Q33–34: **new** ($5(2p - q) - 3(p - 2q) + 4$ simplified, checked at a value, and a sign mistake found; Meena's family's ages). Same reason.
+   - Case-based, Q35–36: rebuild End Q31 (the trip) and Q32 (Kavya's tiles). The *Case study* label and the Table 4.15 caption were dropped, as in the approved Chapter 1, and each scene was cut by a line while fitting.
+4. **Answers** — the key for 1–11, 12–21 and 22–25; answers for 26–36 as
+   trace rows; *Why the other options are wrong* for Q14, 18, 21, 23 and 25.
+   The old stage's closing *three things to keep* paragraph is not in the
+   approved shape and went.
+
+**Excluded as duplicates of the chapter proper.** Rebuild Examples 1–4 and
+11–18 (the body's Examples 1–12). Rebuild End Q7–8 and Q17–30 (the body's
+End-of-Chapter Q1–16). Old Set A 6, the perimeter of a triangle with three
+equal sides (Exercise Set 4.1 Q1). Old Set C 2, row 20 column 3 of Table
+4.14 (End Q15). Old Set C 7, Charu and Krishita's scores (Example 8 and its
+follow-up). Rebuild End Q5, the $n$th term of 3, 6, 9, … (the 4.3 text on
+4, 8, 12, …).
+
+**Excluded as near-duplicates inside the run.** Old Set A 3 ($4 \times p
+\times q$; Q26 kept), A 5 ($6y - y$; Q29 kept), A 2 ($3k - 2$ at $k = 5$;
+Q30 kept); old Set B 1 ($2(n + 4) = 2n + 4$; Q24 kept) and B 3 ($3x + 2x$;
+Q22 kept).
+
+**Verification.** `verify.mjs` in the session scratchpad
+(`beyond-ch04-letter-numbers/`), 131 checks, all passing: the numbers in
+Stage 1; every step of every example; each multiple-choice question and
+example tested at 180 substitutions to have exactly one correct option,
+and that option the printed letter; the hexagon and table counts by
+simulation; the truth of each assertion and reason; every trace answer and
+every *why* row. A second script compared the printed key with the verified
+letters. No reused item was wrong.
+
+**Fitting.** `refit … bridge` four times, with block heights measured on the
+built page and a small packing search over example orders
+(`heights.mjs`, `plan.mjs`). What changed to close the white:
+
+- Examples 3 and 6 each merged two lines of working into one.
+- The fare example moved from Type 1 to the end of Type 3 (it finds a value as well as writing an expression), leaving Type 1 with one example. Type 5 follows the chapter: calendar, then the two matchstick patterns, then the tables.
+- Example 9 gained a *check with values* row at $a = b = 1$, like the checks in Examples 10–12. It was added while fitting and lifts page 22 from 86% to 89%.
+- The two case scenes were each cut by a line. Q34's parts became phrases under one instruction, set in two columns. Answer rows 33 and 36 and the five *why* rows were shortened.
+
+Builder: all pages fit. Beyond the Book fills `19:98% 20:98% 21:97% 22:89%
+23:98% 24:93% 25:96% 26:89% 27:97% 28:68%`, the last page exempt. Nothing
+on a Beyond page runs into the bottom margin; no stranded opener; no
+`--head`/`--tail`; `fit-options` and `check-labels` clean; every `p1xx`
+carries `data-bridge`.
+
+**Flagged.**
+
+| where | what | needs |
+|---|---|---|
+| body page 8 | runs 2.4 mm into the bottom margin | the body refit, not this section |
+| body page 11 | an `h2` 4.8 lines from the foot (`orphans`) | the same |
+| body pages 3, 5, 10, 11, 12, 17 | under 88% full | the same |
+| Example 9, Step 4 | added while fitting | nothing, unless it reads as one step too many |
+| Q16, Q20 | close in idea to Stage 1's three numbers in a row and its number trick | nothing — practice after the idea, in new numbers |
+| Q36 | the same expression, $2n + 2$, as Example 13, in a new setting | nothing |
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part I, Chapter 4,
 *Expressions Using Letter-Numbers* (textbook pages 81–105, answer key after
 them). Original LearnLab text in NCERT's order of topics and questions; no

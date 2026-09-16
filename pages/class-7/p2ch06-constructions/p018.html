@@ -2,118 +2,267 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--xl">
-                          <figure>
-                            <svg viewBox="0 0 360 128" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A grid of 4 rows and 6 columns of unit squares, tiled with 2 by 1 tiles: horizontal tiles in the first two and last two columns, and vertical tiles in the middle two columns. Beside it, a vertical tile and a horizontal tile.">
-      <rect class="dg-fill-a-soft" x="20" y="16" width="156" height="104"/>
-      <rect class="dg-line" x="20" y="16" width="52" height="26"/>
-      <rect class="dg-line" x="124" y="16" width="52" height="26"/>
-      <rect class="dg-line" x="20" y="42" width="52" height="26"/>
-      <rect class="dg-line" x="124" y="42" width="52" height="26"/>
-      <rect class="dg-line" x="20" y="68" width="52" height="26"/>
-      <rect class="dg-line" x="124" y="68" width="52" height="26"/>
-      <rect class="dg-line" x="20" y="94" width="52" height="26"/>
-      <rect class="dg-line" x="124" y="94" width="52" height="26"/>
-      <rect class="dg-line" x="72" y="16" width="26" height="52"/>
-      <rect class="dg-line" x="72" y="68" width="26" height="52"/>
-      <rect class="dg-line" x="98" y="16" width="26" height="52"/>
-      <rect class="dg-line" x="98" y="68" width="26" height="52"/>
-      <rect class="dg-fill-a-soft" x="230" y="30" width="26" height="26"/>
-      <rect class="dg-thin" x="230" y="30" width="26" height="26"/>
-      <rect class="dg-fill-a-soft" x="230" y="56" width="26" height="26"/>
-      <rect class="dg-thin" x="230" y="56" width="26" height="26"/>
-      <rect class="dg-line" x="230" y="30" width="26" height="52"/>
-      <text class="dg-note" x="243" y="100" text-anchor="middle">vertical</text>
-      <rect class="dg-fill-a-soft" x="290" y="43" width="26" height="26"/>
-      <rect class="dg-thin" x="290" y="43" width="26" height="26"/>
-      <rect class="dg-fill-a-soft" x="316" y="43" width="26" height="26"/>
-      <rect class="dg-thin" x="316" y="43" width="26" height="26"/>
-      <rect class="dg-line" x="290" y="43" width="52" height="26"/>
-      <text class="dg-note" x="316" y="100" text-anchor="middle">horizontal</text>
-      </svg>
-                            <figcaption><span class="fignum">Fig. 6.30</span> A $4 \times 6$ grid tiled with $2 \times 1$ tiles.</figcaption>
-                          </figure>
-                        </div>
-
-      <p>Can a $4 \times 7$ grid be tiled with $2 \times 1$ tiles? What about a $5 \times 7$ grid?</p>
-
-      <p>There is no way to tile a $5 \times 7$ grid with $2 \times 1$ tiles. To see why, notice that the grid has 35 unit squares, and each tile covers exactly 2 of them. Complete the explanation.</p>
-
-      <p>Can an $m \times n$ grid be tiled with $2 \times 1$ tiles if $m$ and $n$ are both even? If so, find a general method. One method is to fill every column with upright tiles, which works because the number of rows is even.</p>
-
-      <p>Can an $m \times n$ grid be tiled with $2 \times 1$ tiles if one of $m$ and $n$ is even and the other is odd? If so, find a general method. What if $m$ and $n$ are both odd? Give reasons.</p>
-
-      <p>Fig. 6.31(a) shows a $5 \times 3$ grid with one unit square removed. Now it has an even number of squares. Can it be tiled with $2 \times 1$ tiles? What about the region in Fig. 6.31(b)?</p>
-
       <div class="c-figure c-figure--lg">
                           <figure>
-                            <svg viewBox="0 0 280 158" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two grids of 5 rows and 3 columns, each with one unit square removed: (a) the top right square; (b) the middle square of the second row.">
-      <rect class="dg-fill-a-soft" x="30" y="12" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="12" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="12" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="12" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="36" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="36" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="36" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="36" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="36" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="36" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="60" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="60" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="60" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="60" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="60" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="60" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="84" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="84" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="84" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="84" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="84" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="84" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="108" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="108" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="108" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="108" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="108" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="108" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="170" y="12" width="24" height="24"/>
-      <rect class="dg-thin" x="170" y="12" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="194" y="12" width="24" height="24"/>
-      <rect class="dg-thin" x="194" y="12" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="218" y="12" width="24" height="24"/>
-      <rect class="dg-thin" x="218" y="12" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="170" y="36" width="24" height="24"/>
-      <rect class="dg-thin" x="170" y="36" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="218" y="36" width="24" height="24"/>
-      <rect class="dg-thin" x="218" y="36" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="170" y="60" width="24" height="24"/>
-      <rect class="dg-thin" x="170" y="60" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="194" y="60" width="24" height="24"/>
-      <rect class="dg-thin" x="194" y="60" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="218" y="60" width="24" height="24"/>
-      <rect class="dg-thin" x="218" y="60" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="170" y="84" width="24" height="24"/>
-      <rect class="dg-thin" x="170" y="84" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="194" y="84" width="24" height="24"/>
-      <rect class="dg-thin" x="194" y="84" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="218" y="84" width="24" height="24"/>
-      <rect class="dg-thin" x="218" y="84" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="170" y="108" width="24" height="24"/>
-      <rect class="dg-thin" x="170" y="108" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="194" y="108" width="24" height="24"/>
-      <rect class="dg-thin" x="194" y="108" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="218" y="108" width="24" height="24"/>
-      <rect class="dg-thin" x="218" y="108" width="24" height="24"/>
-      <text class="dg-note" x="66" y="150" text-anchor="middle">(a)</text>
-      <text class="dg-note" x="206" y="150" text-anchor="middle">(b)</text>
+                            <svg viewBox="0 0 290 200" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On the left, a grid of 5 rows and 3 columns with the middle square of the top row removed, and a plain 2 by 1 tile below it. On the right, the same region coloured like a chessboard, with 8 white and 6 dark squares, and a tile of one white and one dark square below it.">
+      <rect class="dg-fill-a-soft" x="30" y="26" width="24" height="24"/>
+      <rect class="dg-thin" x="30" y="26" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="78" y="26" width="24" height="24"/>
+      <rect class="dg-thin" x="78" y="26" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="30" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="30" y="50" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="54" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="54" y="50" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="78" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="78" y="50" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="30" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="30" y="74" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="54" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="54" y="74" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="78" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="78" y="74" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="30" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="30" y="98" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="54" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="54" y="98" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="78" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="78" y="98" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="30" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="30" y="122" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="54" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="54" y="122" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="78" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="78" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="26" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="26" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="26" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="26" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="180" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="204" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="204" y="50" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="228" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="50" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="74" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="204" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="204" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="74" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="74" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="180" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="204" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="204" y="98" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="228" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="98" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="180" y="122" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="204" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="204" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="122" width="24" height="24"/>
+      <rect class="dg-thin" x="228" y="122" width="24" height="24"/>
+      <text class="dg-note" x="66" y="16" text-anchor="middle">plain grid</text>
+      <text class="dg-note" x="216" y="16" text-anchor="middle">coloured grid</text>
+      <rect class="dg-fill-a-soft" x="42" y="168" width="24" height="24"/>
+      <rect class="dg-thin" x="42" y="168" width="24" height="24"/>
+      <rect class="dg-fill-a-soft" x="66" y="168" width="24" height="24"/>
+      <rect class="dg-thin" x="66" y="168" width="24" height="24"/>
+      <rect class="dg-line" x="42" y="168" width="48" height="24"/>
+      <rect class="dg-thin" x="192" y="168" width="24" height="24"/>
+      <rect class="dg-fill-teal" x="216" y="168" width="24" height="24"/>
+      <rect class="dg-line" x="192" y="168" width="48" height="24"/>
       </svg>
-                            <figcaption><span class="fignum">Fig. 6.31</span> Two $5 \times 3$ grids with one square removed.</figcaption>
+                            <figcaption><span class="fignum">Fig. 6.32</span> A region and a tile, plain and coloured.</figcaption>
                           </figure>
                         </div>
 
-      <p>Now try the region on the left of Fig. 6.32, a $5 \times 3$ grid with the middle square of the top row removed. Were you able to tile it? How can we be sure that it cannot be tiled? Can you find another square which, when removed from a $5 \times 3$ grid, leaves a region that cannot be tiled?</p>
+      <p>In the coloured problem, every tile must be placed with its dark square on a dark square of the grid and its white square on a white square. If the plain region can be tiled, can the coloured one? If the coloured region can be tiled, can the plain one? The answer to both questions is yes, because a $2 \times 1$ tile placed anywhere on a chessboard colouring always covers one dark square and one white square.</p>
 
-      <p>There is a clever way to look at such questions. Colour the unit squares dark and white, like a chessboard, so that every dark square has only white neighbours and every white square has only dark neighbours. Then use tiles with one dark square and one white square. The region of Fig. 6.32 becomes the coloured grid on the right.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Counting colours</div>
+        <p>A region tiled with $2 \times 1$ tiles, coloured like a chessboard, always has as many dark squares as white squares.</p>
+      </div>
+
+      <p>Is the coloured region in Fig. 6.32 tileable? It has 8 white squares and only 6 dark squares, so it can never be tiled! Use this idea to find another square which, when removed from a $5 \times 3$ grid, leaves a region that cannot be tiled.</p>
+
+      <p>Isn't it surprising that adding colours, which seems to make the problem more complicated, makes it easier to solve?</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 6.9</div>
+        <ol class="c-questions">
+          <li>Are the tilings in Fig. 6.33 possible? Region (1) is to be tiled with the L-shaped tile, and region (2) with the $2 \times 1$ tile. Give reasons. If a tiling is possible, draw one; if it is not, explain why no tiling can exist. For region (2), colour the full $8 \times 8$ grid like a chessboard, find the colours of the two squares that have been removed, and count how many squares of each colour are left.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--xl">
+                          <figure>
+                            <svg viewBox="0 0 440 172" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="(1) A region of 12 unit squares: a 2 by 2 block standing on the left end of a 2 by 4 block. The tile is an L shape of three squares. (2) A grid of 8 rows and 8 columns with the top right and bottom left squares removed. The tile is a 2 by 1 domino.">
+      <rect class="dg-fill-a-soft" x="20" y="26" width="22" height="22"/>
+      <rect class="dg-thin" x="20" y="26" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="42" y="26" width="22" height="22"/>
+      <rect class="dg-thin" x="42" y="26" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="20" y="48" width="22" height="22"/>
+      <rect class="dg-thin" x="20" y="48" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="42" y="48" width="22" height="22"/>
+      <rect class="dg-thin" x="42" y="48" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="20" y="70" width="22" height="22"/>
+      <rect class="dg-thin" x="20" y="70" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="42" y="70" width="22" height="22"/>
+      <rect class="dg-thin" x="42" y="70" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="64" y="70" width="22" height="22"/>
+      <rect class="dg-thin" x="64" y="70" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="86" y="70" width="22" height="22"/>
+      <rect class="dg-thin" x="86" y="70" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="20" y="92" width="22" height="22"/>
+      <rect class="dg-thin" x="20" y="92" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="42" y="92" width="22" height="22"/>
+      <rect class="dg-thin" x="42" y="92" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="64" y="92" width="22" height="22"/>
+      <rect class="dg-thin" x="64" y="92" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="86" y="92" width="22" height="22"/>
+      <rect class="dg-thin" x="86" y="92" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="140" y="70" width="22" height="22"/>
+      <rect class="dg-thin" x="140" y="70" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="140" y="92" width="22" height="22"/>
+      <rect class="dg-thin" x="140" y="92" width="22" height="22"/>
+      <rect class="dg-fill-a-soft" x="162" y="92" width="22" height="22"/>
+      <rect class="dg-thin" x="162" y="92" width="22" height="22"/>
+      <text class="dg-note" x="20" y="16" text-anchor="start">(1) region</text>
+      <text class="dg-note" x="162" y="60" text-anchor="middle">tile</text>
+      <rect class="dg-fill-a-soft" x="240" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="14" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="14" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="240" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="30" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="30" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="240" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="46" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="46" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="240" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="62" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="62" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="240" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="78" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="78" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="240" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="94" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="94" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="240" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="240" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="110" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="110" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="256" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="256" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="272" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="272" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="288" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="288" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="304" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="304" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="320" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="320" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="336" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="336" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="352" y="126" width="16" height="16"/>
+      <rect class="dg-thin" x="352" y="126" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="410" y="70" width="16" height="16"/>
+      <rect class="dg-thin" x="410" y="70" width="16" height="16"/>
+      <rect class="dg-fill-a-soft" x="410" y="86" width="16" height="16"/>
+      <rect class="dg-thin" x="410" y="86" width="16" height="16"/>
+      <text class="dg-note" x="240" y="166" text-anchor="start">(2) region</text>
+      <text class="dg-note" x="418" y="60" text-anchor="middle">tile</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.33</span> Two regions and their tiles.</figcaption>
+                          </figure>
+                        </div>
 
     </div>
   </div>

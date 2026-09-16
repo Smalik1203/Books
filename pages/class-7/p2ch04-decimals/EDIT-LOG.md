@@ -1,5 +1,82 @@
 # Class 7 · Mathematics II · Chapter 4 — Another Peek Beyond the Point
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Rebuilt to the four-stage shape at the top of DESIGN-MATHS.md §6a. Only
+`p101.html` up changed; the chapter body, `p001`–`p013`, was not touched. The
+§5 body rebuild of the same day (worked examples, checks and end-of-chapter
+exercises inside the chapter) was **reverted at the user's request**. Its pages
+are kept in the session scratchpad, under `rebuilt/pages/class-7/p2ch04-decimals/`,
+and some of its examples and questions were reused here.
+
+**1 · Using What You Know.** The existing stage, word for word: four questions
+tried in `.c-try` and explained in running text. Only its `.c-stage__for` line
+was removed.
+
+**2 · Solved Examples, 14.** Each is Solution, steps in `.work__row` with a
+`.chip` reason, Answer; a multiple-choice one keeps its options and answers with
+the letter.
+
+| type | examples | from |
+|---|---|---|
+| 1 · Dividing by 10, 100 and 1000 | 3 | rebuild Ex 1, 3, 2 |
+| 2 · Multiplying decimals | 4 | rebuild Ex 9 (0.047 changed to 0.058, since Stage 1 uses 0.047); old Problems 1 and 4; rebuild Ex 10 |
+| 3 · Checking a product | 2 | rebuild Ex 11; old Problem 5 |
+| 4 · Dividing decimals | 2 | old Problems 2 and 3 |
+| 5 · Leap years | 3 | rebuild Ex 21 (years changed from 2028, 2100, 2400 to 2032, 2200, 2800, which Practice does not use); rebuild Ex 22, 23 |
+
+**3 · Practice, 35 questions**, one run under one band.
+
+| form | count | from |
+|---|---|---|
+| Choose the correct option | 21 | rebuild end-of-chapter 1–8 (6 recast as *not* a leap year); old Set A 5, 7, 10; Set B 1, 2, 3, 7, 8; Set C 1, 3, 5, 6, 7 |
+| Assertion and reason | 4 | rebuild 9, 10; old Set B 6 with a new reason (true, but not the reason: key b); new, 2400 and every year divisible by 100 (key c) |
+| Very short answer | 4 | rebuild 12, 13, 14; new, 0.45 times what is 45 |
+| Short answer | 2 | rebuild 23, 24 |
+| Long answer | 2 | new: a 12.5 m by 8.4 m garden; a 562.5 L tank with a leak |
+| Case-based | 2 | rebuild 29 (Shalini's stall, its table set without caption or *Case study* label), 30 (the tailor) |
+
+Options were reordered so the multiple-choice key runs a 5, b 5, c 6, d 5, and
+the four assertion–reason keys are a, d, b, c.
+
+**4 · Answers.** The letter key for 1–25, a row for each of 26–35, and *Why the
+other options are wrong* for 7, 14, 16, 17 and 24. The old stage's closing
+paragraph of three things to keep went with its name, *Answers & Takeaways*.
+
+**Left out as already in the chapter body.** Rebuild Examples 4–8 and 12–19
+(body Examples 1–13); rebuild end-of-chapter 16–22 and 25–28 (Exercise Set 4.4);
+old Set A 1, $0.7 \times 0.6$ (Set 4.1 Q9); Set A 9, 0.05 kg in grams (the spices
+question in 4.1); Set B 4, $10 \div 3$ (worked in *Does this ever end?*); Set C 2,
+1461 against 1460.9688 (both worked in 4.4); Set C 4, digits into boxes (Set 4.4
+Q10).
+
+**Left out as near-duplicates.** Rebuild Ex 20, $2.4 \div 0.06$ (the move of
+Example 10); rebuild 11, the 2100 assertion, and 15, $25 \div 0.05$ (Q8's move); old
+Set A 2 ($3.45 \times 100$, like Q2), A 3 ($56.2 \div 10$, like Q3 and Q27), A 4
+($\frac{3}{8}$, like Q6 and Stage 1's $\frac{1}{8}$), A 6 ($9 \div 0.3$, like Q8),
+A 8 ($5 \div 4$, like Q6); Set B 5, ribbon pieces of 0.15 m (like Q31 and Stage
+1's glasses).
+
+**Numbers.** `scratchpad/beyond-p2ch04-decimals/verify.mjs` checks every example
+step, every option (exactly one correct, at the letter printed), each assertion
+and reason, and every short, long and case answer, in BigInt fractions: 148
+checks, none failed. No reused answer was wrong.
+
+**Fitting.** Seven old pages became nine, `p101`–`p109`, each carrying `data-bridge`. To close short pages, rows were
+folded in Examples 1–8, 13 and 14; the questions of Examples 8 and 14 and
+Practice 19 and 22 were cut to one line; Question 7's options went into two
+columns; the tailor's case text was cut so that "m." no longer stands alone
+on a line. Builder fill for Beyond, folios 14–22: 85, 100, 97, 95, 98, 96,
+101, 87, 87 (last). No `!` overflow; folio 20 (`p107`) runs 1.6 mm into the
+bottom margin. `orphans`: 0 stranded openers. `fit-options`: every option row
+fits. `check-labels`: no collisions. No `--head`/`--tail`, no inline style.
+
+**Flagged.** `p101` is 85%: Stage 1 fills it word for word, and Stage 2's head,
+Type 1 head and Example 1 need more than the 34 mm left. `p108` is 87%: the
+Answers head and key need about 40 mm against 31 mm left. The refit packer
+measures practice pages about 2 mm short, which is why `p107` sits in the
+margin.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 4, *Another
 Peek Beyond the Point* (textbook pages 67–96). Original LearnLab text in
 NCERT's order of topics and questions; no sentence is carried over. Crown

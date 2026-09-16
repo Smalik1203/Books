@@ -1,5 +1,80 @@
 # Class 7 · Mathematics II · Chapter 6 — Constructions and Tilings
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Rebuilt to DESIGN-MATHS §6a, *The shape since 15 September 2026*, on the model
+of Class 7 Chapter 1 and Chapter 7. Only `p101`+ changed; no `p0xx.html` was
+touched. The §5 body rebuild of the same day was **reverted at the user's
+request**; its pages are backed up in the session scratchpad
+(`backup-class7-s5-rebuild/`, and `rebuilt/pages/class-7/p2ch06-constructions/`,
+which this rebuild drew on). The eight Beyond pages it replaces are kept in
+`beyond-p2ch06-constructions/backup-p1xx/`. The paragraph near the foot of this
+log beginning *Beyond the Book: Stage 1* describes those old pages and is
+superseded by this section.
+
+Pages: 8 (p101–p108) → 10 (p101–p110). Builder fill, pages 21–30:
+92 · 93 · 93 · 98 · 97 · 98 · 95 · 95 · 101 · 39 (last page). Page 29 runs
+1.6 mm into the bottom margin; no `!` overflow.
+
+**Stage 1 · Using What You Know** — word for word; only its `.c-stage__for`
+line was deleted (checked paragraph by paragraph against the backup).
+
+**Stage 2 · Solved Examples** — 16 examples, stepped (Solution, Step N with a
+reason chip, Answer), in the chapter's order:
+
+| type | examples | from |
+|---|---|---|
+| 1 Perpendicular bisectors | 1–3 | rebuild Ex 1; old Problem 1 (keeps its options); rebuild Ex 2 |
+| 2 Right angles and squares | 4–5 | rebuild Ex 3, Ex 4 |
+| 3 Bisecting and copying angles | 6–8 | rebuild Ex 5, Ex 7, Ex 10 |
+| 4 Angles around a point | 9–10 | rebuild Ex 11, Ex 13 |
+| 5 Tiling a grid | 11–13 | rebuild Ex 15; **new** Ex 12 (4 × 5 grid, two dark squares removed); old Problem 4 |
+| 6 Tiling the plane | 14–16 | old Problem 3; rebuild Ex 17, Ex 18 |
+
+No example needed a figure, so no figure was added (the body's last is Fig. 6.34).
+
+**Stage 3 · Practice** — one band, 26 questions: choose the correct option 1–9
+(key c c b d a b d a b), assertion and reason 10–13 (a d b c), very short
+answer 14–17, short answer 18–22, long answer 23–24, case-based 25–26.
+From the rebuild's end-of-chapter questions: 2, 3, 4, 5, 6, 10, 14–19, 21–26.
+From the old sets: A6 → 1, C3 → 8, B4 → 7, C2 → 9. **New:** 11, 12, 13
+(assertion–reason, to cover (b), (c) and (d)) and 20 (a 165° angle).
+Case questions carry no *Case study* label.
+
+**Stage 4 · Answers** — the letter key, one `.work--trace` row for each of
+14–26, and *Why the other options are wrong* for 4, 7, 8, 9 and 13.
+
+**Excluded as duplicates of the body or of Stage 1.**
+- Old Problem 2 (90° bisected twice, 22.5°): the body says it.
+- Old Problem 5 (why the 60° construction is equilateral): the body asks it.
+- Rebuild Ex 6 (eight-petal rangoli, 45° lines): the body's flower of eight petals and Set 6.3 Q2.
+- Rebuild Ex 12 (30° at P): the body asks "How will you construct angles of 30° and 15°?"
+- Rebuild Ex 16 (3 × 3 grid, top middle square removed): near-duplicate of Fig. 6.32; replaced by Example 12.
+- Rebuild Ex 8 (copy 50°), Ex 9 (road parallel through V) and Ex 14 (3 × 10 grid): the body's own constructions and grid method, step for step.
+- Rebuild end Q4 (the angle beside 60°): Fig. 6.21. Q5 (the three regular tilings): §6.2.
+- Q10 (4 × 4 grid, opposite corners removed): Stage 1 and the body's 8 × 8.
+- Old sets A3, A4, A5, A7, A8, B3, C4, C5: stated or asked in the body.
+- B1, B2: Stage 1.
+
+**Excluded as near-duplicates within the run.**
+- Rebuild end Q3 (bisect 130°), Q11 (congruence in copying), Q15 (name the two tools) and Q21 (fourth angle at a point).
+- Old A1, A2, B5, B6, C1.
+- Q19 (135° at the end of a segment) repeated Example 7 and was replaced by the 165° question.
+
+**Verification.** `beyond-p2ch06-constructions/verify.mjs` in the session
+scratchpad: 109 checks, all passing. Every construction is simulated with
+coordinates (circle intersections, bisectors, 60° arcs), and every tiling claim
+is settled by a domino-tiling search (broken-profile count). Every explicit
+tiling printed in an answer is checked square by square: the 7 × 9 corner, the
+4 × 4 corner and neighbour, the 5 × 5 centre, and the 4 × 9 short side. Stage 1's numbers were re-checked too. No reused answer was
+found wrong.
+
+**Flagged.**
+- Question 24 joins AC, CE and EA in a regular hexagon, the triangle of the body's star-in-a-hexagon (Fig. 6.27). It is kept because it asks for the length and an SAS proof, which the body does not.
+- Questions 2 and 3 test definitions the body states, but not questions it sets.
+- To fit, several examples lost a row. Example 16's question dropped "with no gap and no overlap", which its answer now says. Question 7 no longer says the hexagon is made of triangles; its *why* row does.
+- The old stage 4's closing "three things worth keeping" paragraph is gone: the §6a Answers stage has none.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 6,
 *Constructions and Tilings* (textbook pages 137–164). Original LearnLab text in
 NCERT's order of topics and questions; no sentence is carried over. Crown

@@ -2,47 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Each angle of a regular hexagon is<ol class="c-parts c-parts--alpha c-parts--4"><li>$120^\circ$</li><li>$60^\circ$</li><li>$108^\circ$</li><li>$135^\circ$</li></ol></li>
-        </ol>
+      <h3>Type 5 · Tiling a grid</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>A verandah floor is marked out as a $5 \times 6$ grid of squares. A tulsi pot stands on one square and cannot be moved. Can the rest of the floor be covered with $2 \times 1$ stone slabs, without cutting a slab?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>squares in the grid $= 5 \times 6 = 30$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>squares to cover $= 30 - 1 = 29$</span>
+              <span class="chip">one square taken</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>slabs cover 2, 4, 6, … squares</span>
+              <span class="chip">always an even number</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>No. 29 is odd, wherever the pot stands.</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A $5 \times 5$ grid tiled with $2 \times 1$ tiles is<ol class="c-parts c-parts--alpha c-parts--1"><li>possible</li><li>impossible, because the grid has an odd number of squares</li><li>possible only with tiles lying across</li><li>possible only with upright tiles</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>From a $4 \times 5$ grid, the square in row 1, column 1 and the square in row 2, column 2 are removed. The 18 squares left are an even number. Can they be tiled with $2 \times 1$ tiles?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>full grid: 10 dark and 10 white squares</span>
+              <span class="chip">chessboard colouring</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1 + 1 = 2$ and $2 + 2 = 4$, both even</span>
+              <span class="chip">both removed squares dark</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>left: 8 dark and 10 white squares</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>each tile covers 1 dark and 1 white</span>
+              <span class="chip">colours must balance</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>No. $8 \ne 10$, so no tiling exists.</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Copying an angle with a ruler and a compass works because of the congruence condition<ol class="c-parts c-parts--alpha c-parts--4"><li>SAS</li><li>ASA</li><li>SSS</li><li>RHS</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>To construct a $15^\circ$ angle, we can<ol class="c-parts c-parts--alpha c-parts--1"><li>bisect a $60^\circ$ angle once</li><li>bisect a $60^\circ$ angle twice</li><li>bisect a $90^\circ$ angle twice</li><li>bisect a $45^\circ$ angle once</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>The number of pieces in a tangram is<ol class="c-parts c-parts--alpha c-parts--4"><li>5</li><li>6</li><li>8</li><li>7</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set B &middot; Two ideas together</div>
-        <ol class="c-questions">
-          <li>Which angle can be constructed with only a ruler and a compass?<ol class="c-parts c-parts--alpha c-parts--4"><li>$75^\circ$</li><li>$50^\circ$</li><li>$40^\circ$</li><li>$65.5^\circ$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Two different points P and Q are each at equal distances from X and Y. Then<ol class="c-parts c-parts--alpha c-parts--1"><li>PQ is parallel to XY</li><li>PQ is the perpendicular bisector of XY</li><li>PQ passes through X</li><li>$PQ = XY$</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>One unit square is removed from a $7 \times 9$ grid. Which square could be removed, so that the rest can possibly be tiled with $2 \times 1$ tiles?</p>
+          <ol class="c-parts c-parts--alpha"><li>the square in row 1, column 2</li><li>the square in row 2, column 3</li><li>a corner square</li><li>any square at all</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>63 squares: 32 of the corner colour, 31 other</span>
+              <span class="chip">chessboard colouring</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>remove a square of the corner colour</span>
+              <span class="chip">leaves 31 of each</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(a) $1 + 2 = 3$, (b) $2 + 3 = 5$: odd sums</span>
+              <span class="chip">not the corner colour</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>corner: 4 tiles in row 1, 27 in the $6 \times 9$ grid</span>
+              <span class="chip">a tiling exists</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

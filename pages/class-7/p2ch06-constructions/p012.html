@@ -2,48 +2,82 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--full">
+      <div class="c-figure c-figure--md">
                           <figure>
-                            <svg viewBox="0 0 570 180" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On the left, two equal line segments meeting at a top point, with their midpoints marked. On the right, a pointed arch drawn on them: on each segment, the lower half curves outwards and the upper half curves inwards, and the two sides meet in a point at the top.">
-      <path class="dg-line" d="M50 165 L140 30"/>
-      <path class="dg-line" d="M140 30 L230 165"/>
-      <circle class="dg-fill-b" cx="95" cy="97.5" r="2.2"/>
-      <circle class="dg-fill-b" cx="185" cy="97.5" r="2.2"/>
-      <path class="dg-ghost" d="M340 165 L430 30"/>
-      <path class="dg-ghost" d="M430 30 L520 165"/>
-      <circle class="dg-fill-b" cx="385" cy="97.5" r="2.2"/>
-      <circle class="dg-fill-b" cx="475" cy="97.5" r="2.2"/>
-      <path class="dg-line" d="M385 97.5 A46.6 46.6 0 0 0 340 165"/>
-      <path class="dg-line" d="M385 97.5 A64.9 64.9 0 0 0 430 30"/>
-      <path class="dg-line" d="M520 165 A46.6 46.6 0 0 0 475 97.5"/>
-      <path class="dg-line" d="M430 30 A64.9 64.9 0 0 0 475 97.5"/>
+                            <svg viewBox="0 0 230 204" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A regular hexagon ABCDEF with centre O, joined to all six vertices, making six triangles.">
+      <path class="dg-line" d="M115 20 L186 61 L186 143 L115 184 L44 143 L44 61 Z"/>
+      <path class="dg-line" d="M115 102 L115 20"/>
+      <path class="dg-line" d="M115 102 L186 61"/>
+      <path class="dg-line" d="M115 102 L186 143"/>
+      <path class="dg-line" d="M115 102 L115 184"/>
+      <path class="dg-line" d="M115 102 L44 143"/>
+      <path class="dg-line" d="M115 102 L44 61"/>
+      <text class="dg-label" x="115" y="12.5" text-anchor="middle">A</text>
+      <text class="dg-label" x="195.5" y="59" text-anchor="middle">B</text>
+      <text class="dg-label" x="195.5" y="152" text-anchor="middle">C</text>
+      <text class="dg-label" x="115" y="198.5" text-anchor="middle">D</text>
+      <text class="dg-label" x="34.5" y="152" text-anchor="middle">E</text>
+      <text class="dg-label" x="34.5" y="59" text-anchor="middle">F</text>
+      <text class="dg-label" x="126" y="117" text-anchor="middle">O</text>
       </svg>
-                            <figcaption><span class="fignum">Fig. 6.18</span> Support lines for a pointed arch, and the arch.</figcaption>
+                            <figcaption><span class="fignum">Fig. 6.19</span> A regular hexagon and six triangles.</figcaption>
                           </figure>
                         </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 6.6</div>
-        <ol class="c-questions">
-          <li>Use the support lines of Fig. 6.18 to construct a pointed arch. Make different arches by changing the radius of the arcs.</li>
-        </ol>
+      <p>To answer this, we turn the question around. Can six congruent equilateral triangles be placed together as in Fig. 6.19? If they can, is the result a regular hexagon?</p>
+
+      <p>If they can, the six outer sides are equal, and each angle of the hexagon is made of two $60^\circ$ angles, so it is $60^\circ + 60^\circ = 120^\circ$. So what we must check is whether six equilateral triangles fit around the centre without overlapping and without leaving a gap.</p>
+
+      <p>We measure angles by taking the complete turn around a point as $360^\circ$, so the angles around the centre must add up to $360^\circ$. Look at Fig. 6.20. Will the $70^\circ$ angle fit into the gap? What is the gap angle GOA?</p>
+
+      <div class="c-figure c-figure--xl">
+                          <figure>
+                            <svg viewBox="0 0 400 216" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six angles placed around a point O with no overlap: 40, 60, 50, 30, 40 and 90 degrees, between rays OA to OG. A gap is left between OG and OA, marked with a question mark. Beside the figure is a triangle with a 70 degree angle.">
+      <path class="dg-fill-a-soft" d="M150 115 L73.8 159 A88 88 0 0 0 119.9 197.7 Z"/>
+      <path class="dg-line" d="M150 115 L73.8 159 A88 88 0 0 0 119.9 197.7 Z"/>
+      <text class="dg-label" x="114.9" y="160.8" text-anchor="middle">40°</text>
+      <path class="dg-fill-b-soft" d="M150 115 L73.8 71 A88 88 0 0 0 73.8 159 Z"/>
+      <path class="dg-line" d="M150 115 L73.8 71 A88 88 0 0 0 73.8 159 Z"/>
+      <text class="dg-label" x="95.4" y="119" text-anchor="middle">60°</text>
+      <path class="dg-fill-c-soft" d="M150 115 L134.7 28.3 A88 88 0 0 0 73.8 71 Z"/>
+      <path class="dg-line" d="M150 115 L134.7 28.3 A88 88 0 0 0 73.8 71 Z"/>
+      <text class="dg-label" x="118.7" y="74.3" text-anchor="middle">50°</text>
+      <path class="dg-fill-a-soft" d="M150 115 L180.1 32.3 A88 88 0 0 0 134.7 28.3 Z"/>
+      <path class="dg-line" d="M150 115 L180.1 32.3 A88 88 0 0 0 134.7 28.3 Z"/>
+      <text class="dg-label" x="154.8" y="64.6" text-anchor="middle">30°</text>
+      <path class="dg-fill-b-soft" d="M150 115 L226.2 71 A88 88 0 0 0 180.1 32.3 Z"/>
+      <path class="dg-line" d="M150 115 L226.2 71 A88 88 0 0 0 180.1 32.3 Z"/>
+      <text class="dg-label" x="185.1" y="77.2" text-anchor="middle">40°</text>
+      <path class="dg-fill-c-soft" d="M150 115 L194 191.2 A88 88 0 0 0 226.2 71 Z"/>
+      <path class="dg-line" d="M150 115 L194 191.2 A88 88 0 0 0 226.2 71 Z"/>
+      <text class="dg-label" x="202.7" y="133.1" text-anchor="middle">90°</text>
+      <text class="dg-label" x="115.8" y="213" text-anchor="middle">A</text>
+      <text class="dg-label" x="63.4" y="169" text-anchor="middle">B</text>
+      <text class="dg-label" x="63.4" y="69" text-anchor="middle">C</text>
+      <text class="dg-label" x="132.6" y="20.5" text-anchor="middle">D</text>
+      <text class="dg-label" x="184.2" y="25" text-anchor="middle">E</text>
+      <text class="dg-label" x="236.6" y="69" text-anchor="middle">F</text>
+      <text class="dg-label" x="200" y="205.6" text-anchor="middle">G</text>
+      <text class="dg-label" x="154.2" y="167.2" text-anchor="middle">?</text>
+      <text class="dg-label" x="138" y="111" text-anchor="middle">O</text>
+      <path class="dg-fill-a-soft" d="M340 62 L294.1 127.5 L385.9 127.5 Z"/>
+      <path class="dg-line" d="M340 62 L294.1 127.5 L385.9 127.5 Z"/>
+      <path class="dg-thin" d="M329.7 76.7 A18 18 0 0 0 350.3 76.7"/>
+      <text class="dg-label" x="340" y="98" text-anchor="middle">70°</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.20</span> Angles around a point, and a gap.</figcaption>
+                          </figure>
+                        </div>
+
+      <div class="work work--centred">
+        <p>$40^\circ + 60^\circ + 50^\circ + 30^\circ + 40^\circ + 90^\circ + \text{gap angle} = 360^\circ$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Make arch designs of your own.</li>
-        </ol>
-      </div>
+      <p>Use this to decide whether the $70^\circ$ angle fits the gap.</p>
 
-      <h3>Regular hexagons</h3>
+      <p>So if some angles add up to $360^\circ$, their corners can be placed together at one point so that the angles do not overlap and they cover the whole region around the point. Each angle of an equilateral triangle is $60^\circ$, and six of them add up to $360^\circ$. So six congruent equilateral triangles can be arranged as in Fig. 6.19.</p>
 
-      <p>A regular polygon has all its sides equal and all its angles equal. A regular polygon with 3 sides is an equilateral triangle, and one with 4 sides is a square. We have constructed both of these before.</p>
-
-      <p>How do we construct a regular pentagon, with 5 sides, or a regular hexagon, with 6 sides? To begin with, try to draw a pentagon and a hexagon whose sides are all equal. Are their angles equal too?</p>
-
-      <p>To construct a regular pentagon, we first need to know more about triangles and pentagons, and we will learn this in later classes. But a regular hexagon is within our reach. Can we break a regular hexagon into smaller pieces that we know how to construct? Triangles are the pieces we know best, since we can already construct a triangle from its three sides.</p>
-
-      <p>What happens when we join the opposite corners of a regular hexagon? Since its sides and angles are all equal, can we expect a figure like Fig. 6.19? Will all six triangles in it be equilateral? Measure the sides and angles of the triangles in a regular hexagon you have drawn. Measuring can only suggest an answer, because a drawing is never perfectly exact, so we also need a reason that works for every regular hexagon, whatever its size.</p>
+      <p>In Fig. 6.19, can you explain why AOD, BOE and COF are straight lines? Now construct a regular hexagon with sides of 4 cm, using a ruler and a compass.</p>
 
     </div>
   </div>

@@ -2,34 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>A shop rents out chairs for ₹40 each and tables for ₹75 each for a day. When they are returned, the shopkeeper gives back ₹6 for each chair and ₹10 for each table. Write an expression for the amount paid in all, if $x$ chairs and $y$ tables are rented.</p>
-          <p>The amount paid at the start is $40x + 75y$ rupees, and the amount given back is $6x + 10y$ rupees. So the amount paid in all is $(40x + 75y) - (6x + 10y)$. To simplify it, remove the brackets, changing the sign of each term after the minus sign, and then group the like terms.</p>
-          <div class="work">
-            <p>$(40x + 75y) - (6x + 10y) = 40x + 75y - 6x - 10y$</p>
-            <p>$= 40x + (-6x) + 75y + (-10y) = (40 - 6)x + (75 - 10)y = 34x + 65y$</p>
-          </div>
-          <p>So the amount paid in all is $34x + 65y$ rupees. For 3 chairs and 2 tables, that is ₹232.</p>
-        </div>
-      </div>
-
-      <p>Could we also have written the amount as $(40x + 75y) + (-6x - 10y)$? Explain why. What does $-6x - 10y$ stand for in the shop?</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
-        <div class="c-example__body">
-          <p>Charu takes part in a quiz with three rounds. Her scores are $7p - 3q$, $8p - 4q$ and $6p - 2q$. Here $p$ is the score for a correct answer, and $q$ is the penalty for a wrong one. What is her total score?</p>
-          <p>In the first round she got 7 answers right and 3 wrong: each right answer adds $p$ to her score, and each wrong answer takes away $q$. If $p = 4$ and $q = 1$, her first-round score is $7 \times 4 - 3 \times 1 = 28 + (-3) = 25$. For the total, add the three scores. The terms can be added in any order, so the brackets can go.</p>
-          <div class="work">
-            <p>$(7p - 3q) + (8p - 4q) + (6p - 2q) = 7p + 8p + 6p + (-3q) + (-4q) + (-2q)$</p>
-            <p>$= (7 + 8 + 6)p + \big(-(3 + 4 + 2)\big)q = 21p - 9q$</p>
-          </div>
-        </div>
-      </div>
-
       <p>What were her scores in the second and third rounds, when $p = 4$ and $q = 1$? If there were no penalty, what would $q$ be? Her friend Krishita scored $23p - 7q$ in all. Give some scores Krishita might have had in the three rounds. Who scored more, and how much more? Find it by simplifying $23p - 7q - (21p - 9q)$. Then try a few values of $p$ and $q$, such as $p = 4$ and $q = 1$, to check your answer.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Simplify $4(x + y) - y$.</p>
+          <p>The 4 outside the bracket multiplies both terms inside it, $x$ and $y$. After that, $4y$ and $-y$ are like terms, so they can be joined into one term.</p>
+          <div class="work">
+            <p>$4(x + y) - y = 4x + 4y - y = 4x + 4y + (-y) = 4x + (4 - 1)y = 4x + 3y$</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Are the expressions $5u$ and $5 + u$ equal?</p>
+          <p>$5u$ means 5 times $u$, and $5 + u$ means 5 more than $u$. These are different operations, so we expect different values. If the two expressions were equal, they would have the same value for every value of $u$. Complete Table 4.5 and compare.</p>
+        </div>
+      </div>
+
+      <table>
+        <caption>Table 4.5 Values of 5u and 5 + u</caption>
+        <thead><tr><th>$u$</th><th>2</th><th>5</th><th>8</th><th>11</th></tr></thead>
+        <tbody>
+          <tr><td>$5u$</td><td>10</td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td></tr>
+          <tr><td>$5 + u$</td><td>7</td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td></tr>
+        </tbody>
+      </table>
+
+      <p>So the expressions are not equal. Now compare $10y - 3$, which is 3 less than 10 times $y$, with $10(y - 3)$, which is 10 times 3 less than $y$. Complete Table 4.6. Are they equal?</p>
+
+      <table>
+        <caption>Table 4.6 Values of 10y − 3 and 10(y − 3)</caption>
+        <thead><tr><th>$y$</th><th>2</th><th>0</th><th>7</th><th>10</th></tr></thead>
+        <tbody>
+          <tr><td>$10y - 3$</td><td>17</td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td></tr>
+          <tr><td>$10(y - 3)$</td><td>$-10$</td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 190 108" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four rows of boxes. The top and bottom rows each hold four 3s. The two middle rows each hold r and s in their two middle boxes.">
+            <path class="dg-line" d="M27 6 h34 v24 h-34 Z M61 6 h34 v24 h-34 Z M95 6 h34 v24 h-34 Z M129 6 h34 v24 h-34 Z M61 30 h34 v24 h-34 Z M95 30 h34 v24 h-34 Z M61 54 h34 v24 h-34 Z M95 54 h34 v24 h-34 Z M27 78 h34 v24 h-34 Z M61 78 h34 v24 h-34 Z M95 78 h34 v24 h-34 Z M129 78 h34 v24 h-34 Z"/>
+            <text class="dg-label" x="44" y="22.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="78" y="22.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="112" y="22.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="146" y="22.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="78" y="46.5" text-anchor="middle">r</text>
+            <text class="dg-label" x="112" y="46.5" text-anchor="middle">s</text>
+            <text class="dg-label" x="78" y="70.5" text-anchor="middle">r</text>
+            <text class="dg-label" x="112" y="70.5" text-anchor="middle">s</text>
+            <text class="dg-label" x="44" y="94.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="78" y="94.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="112" y="94.5" text-anchor="middle">3</text>
+            <text class="dg-label" x="146" y="94.5" text-anchor="middle">3</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.5</span> Numbers to add, for Example 11.</figcaption>
+        </figure>
+      </div>
 
     </div>
   </div>

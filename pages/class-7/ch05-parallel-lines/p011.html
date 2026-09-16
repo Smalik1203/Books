@@ -2,64 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.7</span><span class="name">Drawing Parallel Lines</span></h2>
+      <h3>Parallel lines by folding</h3>
 
-      <p>Can you draw two parallel lines with a ruler and a set square? Fig. 5.18 (i) shows one way. Draw a line $l$. Place one short side of the set square along $l$, and draw a line along the other short side. Then slide the set square along $l$ and draw another line in the same way.</p>
+      <p>We can do the same with paper folding. Suppose a crease $l$ and a point A are marked on a sheet. We already know how to fold a crease perpendicular to $l$. Fold one that passes through A, and call it $t$. Now fold a crease through A that is perpendicular to $t$, and call it $m$. Fig. 5.20 shows the steps. Lines $l$ and $m$ are parallel.</p>
+
+      <div class="c-figure c-figure--full">
+                          <figure>
+                            <svg viewBox="0 0 570 134" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three steps of folding. (i) A crease l and a point A. (ii) A crease t through A, at right angles to l. (iii) A crease m through A, at right angles to t; m and l are marked as parallel.">
+      <text class="dg-note" x="8" y="12" text-anchor="start">(i)</text>
+      <path class="dg-hidden" d="M8 18 h170 v112 h-170 Z"/>
+      <path class="dg-line" d="M16 118 L175.8 66.1"/>
+      <text class="dg-label" x="18" y="110" text-anchor="middle">l</text>
+      <circle class="dg-fill-b" cx="102" cy="48" r="2.4"/>
+      <text class="dg-label" x="110" y="42" text-anchor="middle">A</text>
+      <text class="dg-note" x="198" y="12" text-anchor="start">(ii)</text>
+      <path class="dg-hidden" d="M198 18 h170 v112 h-170 Z"/>
+      <path class="dg-line" d="M206 118 L365.8 66.1"/>
+      <text class="dg-label" x="208" y="110" text-anchor="middle">l</text>
+      <circle class="dg-fill-b" cx="292" cy="48" r="2.4"/>
+      <text class="dg-label" x="300" y="42" text-anchor="middle">A</text>
+      <path class="dg-line" d="M288.3 36.6 L308.1 97.5"/>
+      <path class="dg-thin" d="M311 83.9 L308.9 77.2 L302.2 79.4"/>
+      <text class="dg-label" x="315.3" y="101.3" text-anchor="middle">t</text>
+      <text class="dg-note" x="388" y="12" text-anchor="start">(iii)</text>
+      <path class="dg-hidden" d="M388 18 h170 v112 h-170 Z"/>
+      <path class="dg-line" d="M396 118 L555.8 66.1"/>
+      <text class="dg-label" x="398" y="110" text-anchor="middle">l</text>
+      <circle class="dg-fill-b" cx="482" cy="48" r="2.4"/>
+      <text class="dg-label" x="490" y="42" text-anchor="middle">A</text>
+      <path class="dg-line" d="M478.3 36.6 L498.1 97.5"/>
+      <path class="dg-thin" d="M501 83.9 L498.9 77.2 L492.2 79.4"/>
+      <text class="dg-label" x="505.3" y="101.3" text-anchor="middle">t</text>
+      <path class="dg-line" d="M405.9 72.7 L548.6 26.4"/>
+      <path class="dg-thin" d="M475.3 50.2 L477.5 56.8 L484.2 54.7"/>
+      <path class="dg-line" d="M520.1 39 L523.4 34.6 L518.1 32.9"/>
+      <path class="dg-line" d="M529.9 77.8 L533.2 73.4 L528 71.8"/>
+      <text class="dg-label" x="541" y="41.8" text-anchor="middle">m</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 5.20</span> Folding a line through A parallel to $l$.</figcaption>
+                          </figure>
+                        </div>
+
+      <p>Why are lines $l$ and $m$ parallel? Think of $t$ as a transversal of $l$ and $m$.</p>
+
+      <h2><span class="badge">5.8</span><span class="name">Alternate Angles</span></h2>
+
+      <p>In Fig. 5.21, the parallel lines $l$ and $m$ are crossed by the transversal $t$. The angles $\angle d$ and $\angle f$ lie between the two lines, on opposite sides of $t$. They are called <span class="term">alternate angles</span>. $\angle c$ and $\angle e$ are also alternate angles.</p>
 
       <div class="c-figure c-figure--lg">
-                    <figure>
-                      <svg viewBox="0 0 265 132" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="(i) Line l with two lines drawn upright from it, each against the short side of a set square slid along l. (ii) Two slanting parallel lines drawn along the long side of a set square slid along a ruler.">
-<text class="dg-note" x="4" y="12" text-anchor="start">(i)</text>
-<text class="dg-note" x="146" y="12" text-anchor="start">(ii)</text>
-<path class="dg-line" d="M8 110 L132 110"/>
-<text class="dg-label" x="12" y="124" text-anchor="middle">l</text>
-<path class="dg-line" d="M40 110 L40 22"/>
-<path class="dg-line" d="M92 110 L92 22"/>
-<path class="dg-thin" d="M47 110 L47 103 L40 103"/>
-<path class="dg-thin" d="M99 110 L99 103 L92 103"/>
-<path class="dg-ghost" d="M40 110 V44 L76 110 Z"/>
-<path class="dg-thin" d="M92 110 V44 L128 110 Z"/>
-<path class="dg-line" d="M43.2 95.4 L40 90.9 L36.8 95.4"/>
-<path class="dg-line" d="M95.2 95.4 L92 90.9 L88.8 95.4"/>
-<path class="dg-line" d="M150 110 L262 110"/>
-<path class="dg-line" d="M172 110 L220 26.9"/>
-<path class="dg-line" d="M214 110 L262 26.9"/>
-<path class="dg-line" d="M209.3 51.8 L208.8 46.3 L203.7 48.6"/>
-<path class="dg-line" d="M251.3 51.8 L250.8 46.3 L245.7 48.6"/>
-<path class="dg-ghost" d="M172 110 L207 49.4 L207 110 Z"/>
-<path class="dg-thin" d="M214 110 L249 49.4 L249 110 Z"/>
-</svg>
-                      <figcaption><span class="fignum">Fig. 5.18</span> Drawing parallel lines with a set square.</figcaption>
-                    </figure>
-                  </div>
+                          <figure>
+                            <svg viewBox="0 0 265 140" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel lines l and m crossed by t. At l the angles are a top left, b top right, c bottom right, d bottom left. At m they are e top left, f top right, g bottom right, h bottom left.">
+      <path class="dg-line" d="M14 42 L250 42"/>
+      <path class="dg-line" d="M14 108 L250 108"/>
+      <path class="dg-line" d="M223.4 45.2 L227.9 42 L223.4 38.8"/>
+      <path class="dg-line" d="M223.4 111.2 L227.9 108 L223.4 104.8"/>
+      <path class="dg-line" d="M149 26.4 L92.9 123.6"/>
+      <text class="dg-label" x="130.5" y="29" text-anchor="middle">a</text>
+      <text class="dg-label" x="156.5" y="36" text-anchor="middle">b</text>
+      <text class="dg-label" x="149.5" y="62" text-anchor="middle">c</text>
+      <text class="dg-label" x="123.5" y="55" text-anchor="middle">d</text>
+      <text class="dg-label" x="92.4" y="95" text-anchor="middle">e</text>
+      <text class="dg-label" x="118.3" y="102" text-anchor="middle">f</text>
+      <text class="dg-label" x="111.4" y="128" text-anchor="middle">g</text>
+      <text class="dg-label" x="85.4" y="121" text-anchor="middle">h</text>
+      <text class="dg-label" x="8" y="38" text-anchor="middle">l</text>
+      <text class="dg-label" x="8" y="104" text-anchor="middle">m</text>
+      <text class="dg-label" x="98.9" y="133.1" text-anchor="middle">t</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 5.21</span> $\angle d$ and $\angle f$ are alternate angles.</figcaption>
+                          </figure>
+                        </div>
 
-      <p>Are the two new lines parallel? How can we be sure? The set square makes each of them meet $l$ at $90^\circ$. The lines are in different places, but they make the same angle with $l$. So if we think of $l$ as a transversal, the two corresponding angles are both $90^\circ$. Equal corresponding angles tell us the lines are parallel.</p>
+      <p>To find the alternate angle of $\angle f$, first find its corresponding angle, $\angle b$. The angle vertically opposite $\angle b$ is $\angle d$, the alternate angle of $\angle f$.</p>
 
-      <p>Now draw two parallel lines along the long side of the set square, as in Fig. 5.18 (ii), sliding it along a ruler. How do you know these lines are parallel? Check that the corresponding angles are equal, by tracing and by measuring.</p>
+      <p>If $\angle f$ is $120^\circ$, what is $\angle d$? $\angle b$ corresponds to $\angle f$ and the lines are parallel, so $\angle b = 120^\circ$. And $\angle d$ is vertically opposite $\angle b$, so $\angle d = 120^\circ$ too. In fact, we did not need the $120^\circ$ at all:</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.3</div>
-        <ol class="c-questions">
-          <li>Copy Fig. 5.19. Draw a line through point A that is parallel to line $l$, using the tools in your geometry box. Describe how you did it.</li>
-        </ol>
-      </div>
-
-      <div class="c-figure c-figure--md">
-                    <figure>
-                      <svg viewBox="0 0 230 110" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A slanting line l and a point A above it.">
-<path class="dg-line" d="M14 96 L214 62"/>
-<text class="dg-label" x="20" y="86" text-anchor="middle">l</text>
-<circle class="dg-fill-b" cx="150" cy="30" r="2.4"/>
-<text class="dg-label" x="158" y="26" text-anchor="middle">A</text>
-</svg>
-                      <figcaption><span class="fignum">Fig. 5.19</span> A line $l$ and a point A.</figcaption>
-                    </figure>
-                  </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Draw a line $l$ and mark a point B that is not on it. Draw a line through B parallel to $l$ in a different way from Question 1. How do you know that the two lines are parallel?</li>
-        </ol>
+      <div class="work work--list">
+        <p>$\angle f = \angle b$, because they are corresponding angles and the lines are parallel.</p>
+        <p>$\angle b = \angle d$, because they are vertically opposite angles.</p>
+        <p>So $\angle f = \angle d$, whatever the size of $\angle f$.</p>
       </div>
 
     </div>

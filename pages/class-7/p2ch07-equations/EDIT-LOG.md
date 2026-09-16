@@ -1,5 +1,82 @@
 # Class 7 · Mathematics II · Chapter 7 — Finding the Unknown
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Rebuilt to the shape in DESIGN-MATHS.md §6a, "The shape since 15 September
+2026", on the pattern of Class 7 Chapters 1 and 4. The chapter body
+(`p001`–`p022`) was not touched. The §5 body rebuild made earlier the same
+day was **reverted at the user's request**; its backup is in the session
+scratchpad (`scratchpad/rebuilt/pages/class-7/p2ch07-equations/`), and it
+was used here only as a source of examples, questions and answers.
+
+Seven pages before (`p101`–`p107`, with a three-set multiple-choice Stage 3
+and "Answers & Takeaways") → ten pages after (`p101`–`p110`).
+
+| stage | contents | from |
+|---|---|---|
+| 1 Using What You Know | the five tried-and-explained questions, **word for word** (checked against the committed text); only the `.c-stage__for` line is gone | the existing stage |
+| 2 Solved Examples | 12 examples in five types, each Solution → Step … → Answer with a short reason chip; an equation ends with a check by substitution | see below |
+| 3 Practice | one band, one run of 35 questions | see below |
+| 4 Answers | letter key 1–25 in three rows; one `.work--trace` row each for 26–35; "Why the other options are wrong" for 12, 17, 20, 21, 25 | worked here |
+
+**Stage 2, by type.** Type 1 · Writing an equation and checking a solution: 3
+(Examples 1–3, from the reverted rebuild's Examples 1–3). Type 2 · Solving an
+equation step by step: 3 (Example 4, old Problem 1; Example 5, new; Example 6,
+the reverted rebuild's end-of-chapter Q15). Type 3 · Making an equation from a
+problem: 2 (old Problems 3 and 5). Type 4 · Finding and mending a mistake: 3
+(the reverted rebuild's Examples 17 and 18; old Problem 2). Type 5 ·
+Brahmagupta's rule: 1 (the reverted rebuild's Example 20). The old problems'
+prose solutions became steps; a multiple-choice problem keeps its options and
+its Answer row gives the letter. Options were re-ordered in old Problem 3 so
+the answer is (c). "Transposing" is not the body's word, so the chips say
+"move … across", after the body's key idea *Moving a term or a factor*.
+
+**Stage 3, by form.** Choose the correct option 21 (old Sets A, B, C: 18; the
+reverted rebuild's end-of-chapter 1, 3, 6: 3). Assertion and reason 4 (the
+reverted rebuild's 7–9; one new, Q23, so that the four answers are a, b, c, d).
+Very short answer 3, short answer 3, long answer 2 — all new, since every
+reverted-rebuild question in those forms except two is in the body's Exercise
+Set 7.3. Case-based 2 (the reverted rebuild's 32 and 33, without the *Case
+study* label; Q35's three weights are now a table). Letters 1–21: a 5, b 5,
+c 5, d 6.
+
+**Excluded as duplicates.**
+
+| item | why |
+|---|---|
+| reverted rebuild Examples 4–16 and 19 | in the body as Examples 1–14 (the arithmetic of inverse operations, $11y + (-5) = 61$, $6y + 7 = 4y + 21$, Ranjana's tiles, Madhubanti's party, the savings, $28(x + 4) + 300 = 1000$, Riyaz's trick, the marbles, $100x + 75 = 250$, the horses) |
+| reverted rebuild end-of-chapter 10–13 and 16–31 | the body's Exercise Set 7.3, word for word or nearly (blanks, $28p - 36 = 98$, $u = 6$, the number increased by 36, Ranju, blobs, machines, taxi, 76, grill, juice, Bakhshali, giraffe, donkeys, Table 7.7, triangles, stick patterns, the eight equations, the maze) |
+| reverted rebuild end-of-chapter 2 ($7 - x = 2$) | the same form as the body's $13 - z = 8$ |
+| reverted rebuild end-of-chapter 4 ($3m + 4 = m + 10$) | near-duplicate of old Set A Q8, $3z + 4 = z + 12$, which was kept |
+| reverted rebuild end-of-chapter 5 (a number plus 3 times it is 36) | near-duplicate of old Set B Q1 and of the body's "increased by 36" |
+| reverted rebuild end-of-chapter 14 (is $z = -3$ a solution of $2z + 9 = 3$) | near-duplicate of assertion–reason Q24 |
+| old Set A Q4 (adding 5 to both sides of $2x - 5 = 9$) | near-duplicate of Q6, moving 6 in $2x + 6 = 18$ |
+| old Problem 4 ($7y - 3 = 25$, find $\frac{7y}{2} + 1$) | the question Stage 1 opens with, and the body's Set 7.2 Q6 and Set 7.3's $28p - 36 = 98$ |
+| old closing paragraph "Three things from this section are worth keeping" | a takeaway list; the Answers stage has none in this shape |
+
+**Verification.** `scratchpad/beyond-p2ch07-equations/verify.mjs` checks every
+number in Stage 1, every example step and check, every question, every
+distractor explained in "Why the other options are wrong", and every answer,
+substituting each solution back into its equation: 162 checks, 0 failures.
+The printed letter key was compared with the script's key and matches. No
+reused item was found wrong.
+
+**Fit.** Written into `p101`, refitted with `refit.mjs … bridge`. To close
+short pages, four examples lost a row by merging two steps (Examples 3, 7, 9,
+11) and Example 3's question was shortened; no step lost its working or its
+check. Builder fill for the Beyond pages (folios 23–32): 93 97 90 99 94 98
+101 85 99 38; page 29 runs 1.3 mm into the bottom margin; no `!` overflow, no
+violations. orphans: 0 stranded; fit-options: every row fits; check-labels:
+no collisions. No `--head`/`--tail`; every `p1xx` carries `data-bridge`.
+
+**Flagged.**
+
+| location | what | note |
+|---|---|---|
+| Beyond page 8 (folio 30) | 85% full, 34 mm free | held by case Q34 (52 mm), one question that cannot be divided; page 10 is 38% full, so closing it would not save a page |
+| body page 2 (folio 2) | runs 4.8 mm into the bottom margin | in the body, which was not to be touched; reported by every build |
+| Q15, Q31 | use the angle sum of a triangle and the perimeter of a rectangle | both are used by the body's Exercise Set 7.3 and by earlier Class 7 chapters |
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 7,
 *Finding the Unknown* (textbook pages 165–190). Original LearnLab text in
 NCERT's order of topics and questions; no sentence is carried over. Crown

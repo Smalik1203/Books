@@ -2,52 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>For pairs of this kind, in which one number is the HCF: (a) if one number is $m$, what could the other be? (b) if one number is $7k$, what could the other be?</p>
+      <p>Now take two multiples of 14: $14 \times 6$ and $14 \times 9$. Clearly 14 is a common factor. Is it the highest? In prime factors, $14 \times 6 = (2 \times 7) \times 2 \times 3$ and $14 \times 9 = (2 \times 7) \times 3 \times 3$, so the HCF is $14 \times 3 = 42$.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.5</div>
-        <ol class="c-questions">
-          <li>Make a general statement about the HCF of each kind of pair. Try examples first, and then look for a reason why your statement holds.
-            <ol class="c-parts c-parts--alpha c-parts--1">
-              <li>two consecutive even numbers</li>
-              <li>two consecutive odd numbers</li>
-              <li>two even numbers</li>
-              <li>two consecutive numbers</li>
-              <li>two co-prime numbers</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
+      <p>Find the HCF of each pair of multiples: (a) $18 \times 10$ and $18 \times 15$, (b) $10 \times 38$ and $10 \times 21$, (c) $5 \times 13$ and $5 \times 20$, (d) $12 \times 16$ and $12 \times 20$. In which of them is the HCF equal to the common multiplier, as in (b), where it is 10? Try more examples to find out when this happens.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The LCM of 3 and 24 is 24, one of the two numbers. (a) Find more pairs whose LCM is one of the numbers. (b) Make a general statement about such pairs, and describe them with letter-numbers.</li>
-        </ol>
-      </div>
+      <h3>A quicker way to find the HCF and the LCM</h3>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Make a general statement about the LCM of each kind of pair, and look for a reason.
-            <ol class="c-parts c-parts--alpha c-parts--1">
-              <li>two multiples of 3</li>
-              <li>two consecutive even numbers</li>
-              <li>two consecutive numbers</li>
-              <li>two co-prime numbers</li>
-            </ol>
-          </li>
-        </ol>
-      </div>
+      <p>Fig. 3.5 shows a procedure for 84 and 180 together. Can you explain it? It is like the division method, but at each step both numbers are divided by a prime that is a factor of both, and the two quotients are written on the next line. We stop when the two numbers have no common prime factor. How can we use it to find the HCF of 84 and 180? (Hint: it shows that $84 = 2 \times 2 \times 3 \times 7$ and $180 = 2 \times 2 \times 3 \times 15$.)</p>
 
-      <h3>Doubling both numbers</h3>
+      <div class="c-figure c-figure--sm">
+              <figure>
+                <svg viewBox="0 0 190 84" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ladder for 84 and 180 together: divide both by 2 to get 42 and 90, by 2 again to get 21 and 45, and by 3 to get 7 and 15, which have no common factor.">
+      <text class="dg-tick" x="60" y="19" text-anchor="end">2</text>
+      <text class="dg-tick" x="70" y="19" text-anchor="start">84, 180</text>
+      <path class="dg-thin" d="M65 6 V24 H145"/>
+      <text class="dg-tick" x="60" y="37" text-anchor="end">2</text>
+      <text class="dg-tick" x="70" y="37" text-anchor="start">42, 90</text>
+      <path class="dg-thin" d="M65 24 V42 H145"/>
+      <text class="dg-tick" x="60" y="55" text-anchor="end">3</text>
+      <text class="dg-tick" x="70" y="55" text-anchor="start">21, 45</text>
+      <path class="dg-thin" d="M65 42 V60 H145"/>
+      <text class="dg-tick" x="70" y="73" text-anchor="start">7, 15</text>
+      </svg>
+                <figcaption><span class="fignum">Fig. 3.5</span> Dividing 84 and 180 together.</figcaption>
+              </figure>
+            </div>
 
-      <p>What happens to the HCF of two numbers if both are doubled? Try some pairs. Can you see why the HCF doubles too? Doubling gives each number one more 2 in its prime factorisation, and that 2 joins the largest common part. For example:</p>
+      <p>The divisors on the left make up the largest common part, so the HCF of 84 and 180 is $2 \times 2 \times 3 = 12$. Fig. 3.6 shows two more pairs.</p>
+
+      <div class="c-figure c-figure--xl">
+              <figure>
+                <svg viewBox="0 0 390 104" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two ladders. 300 and 150 are divided by 2, 5, 5 and 3 in turn, leaving 2 and 1. 630 and 770 are divided by 2, 5 and 7 in turn, leaving 9 and 11.">
+      <text class="dg-note" x="20" y="12" text-anchor="start">(i)</text>
+      <text class="dg-tick" x="70" y="21" text-anchor="end">2</text>
+      <text class="dg-tick" x="80" y="21" text-anchor="start">300, 150</text>
+      <path class="dg-thin" d="M75 8 V26 H165"/>
+      <text class="dg-tick" x="70" y="39" text-anchor="end">5</text>
+      <text class="dg-tick" x="80" y="39" text-anchor="start">150, 75</text>
+      <path class="dg-thin" d="M75 26 V44 H165"/>
+      <text class="dg-tick" x="70" y="57" text-anchor="end">5</text>
+      <text class="dg-tick" x="80" y="57" text-anchor="start">30, 15</text>
+      <path class="dg-thin" d="M75 44 V62 H165"/>
+      <text class="dg-tick" x="70" y="75" text-anchor="end">3</text>
+      <text class="dg-tick" x="80" y="75" text-anchor="start">6, 3</text>
+      <path class="dg-thin" d="M75 62 V80 H165"/>
+      <text class="dg-tick" x="80" y="93" text-anchor="start">2, 1</text>
+      <text class="dg-note" x="210" y="12" text-anchor="start">(ii)</text>
+      <text class="dg-tick" x="260" y="21" text-anchor="end">2</text>
+      <text class="dg-tick" x="270" y="21" text-anchor="start">630, 770</text>
+      <path class="dg-thin" d="M265 8 V26 H355"/>
+      <text class="dg-tick" x="260" y="39" text-anchor="end">5</text>
+      <text class="dg-tick" x="270" y="39" text-anchor="start">315, 385</text>
+      <path class="dg-thin" d="M265 26 V44 H355"/>
+      <text class="dg-tick" x="260" y="57" text-anchor="end">7</text>
+      <text class="dg-tick" x="270" y="57" text-anchor="start">63, 77</text>
+      <path class="dg-thin" d="M265 44 V62 H355"/>
+      <text class="dg-tick" x="270" y="75" text-anchor="start">9, 11</text>
+      </svg>
+                <figcaption><span class="fignum">Fig. 3.6</span> (i) 300 and 150. (ii) 630 and 770.</figcaption>
+              </figure>
+            </div>
 
       <div class="work work--list">
-        <p>$270 = 2 \times 3 \times 3 \times 3 \times 5$ and $50 = 2 \times 5 \times 5$, so the HCF is $2 \times 5 = 10$</p>
-        <p>$540 = 2 \times 2 \times 3 \times 3 \times 3 \times 5$ and $100 = 2 \times 2 \times 5 \times 5$, so the HCF is $2 \times 2 \times 5 = 20$</p>
+        <p>(i) HCF $= 2 \times 5 \times 5 \times 3 = 150$ &nbsp;&nbsp; LCM $= 2 \times 5 \times 5 \times 3 \times 2 \times 1 = 300$</p>
+        <p>(ii) HCF $= 2 \times 5 \times 7 = 70$ &nbsp;&nbsp; LCM $= 2 \times 5 \times 7 \times 9 \times 11 = 6930$</p>
       </div>
 
-      <p>Now take two multiples of 14: $14 \times 6$ and $14 \times 9$. Clearly 14 is a common factor. Is it the highest? In prime factors, $14 \times 6 = (2 \times 7) \times 2 \times 3$ and $14 \times 9 = (2 \times 7) \times 3 \times 3$, so the HCF is $14 \times 3 = 42$.</p>
+      <p>The same procedure gives the LCM as well: multiply all the divisors on the left by the two numbers left at the bottom. Why is this the LCM? (Hint: does this product contain the prime factorisations of both 300 and 150? Is it the smallest such number?)</p>
+
+      <p>Guna says, “I have a faster way. For 300 and 150, I first divide both by 50, then by 3. The HCF is $50 \times 3$ and the LCM is $50 \times 3 \times 2 \times 1$.” Anshu tries the same idea: “For 630 and 770, I divide by 10 and then by 7. The HCF is $10 \times 7 = 70$ and the LCM is $10 \times 7 \times 9 \times 11 = 6930$.” Can you see why this works? We do not have to divide by one prime at a time; we can divide both numbers by any common factor we notice (Fig. 3.7). Try it for (a) 90 and 150, (b) 84 and 132.</p>
 
     </div>
   </div>

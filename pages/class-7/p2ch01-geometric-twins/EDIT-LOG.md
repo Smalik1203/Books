@@ -1,5 +1,86 @@
 # Class 7 · Mathematics II · Chapter 1 — Geometric Twins
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Rebuilt to DESIGN-MATHS.md §6a, *The shape since 15 September 2026*. The §5
+body rebuild of the same day (worked examples, checks and end-of-chapter
+exercises inside the chapter) was reverted at the user's request; the body
+`p001`–`p015` is NCERT's structure and was not touched here. The reverted
+rebuild is kept in the session scratchpad (`rebuilt/`, and
+`backup-class7-s5-rebuild/`), and was used only as a source.
+
+Beyond the Book went from 8 pages (`p101`–`p108`) to 10 (`p101`–`p110`).
+
+| stage | contents | from |
+|---|---|---|
+| 1 Using What You Know | four questions tried and explained, word for word | this chapter's existing stage 1; only its `.c-stage__for` line was deleted |
+| 2 Solved Examples | 13 examples under five types, stepped as Solution, Step N, Answer | see below |
+| 3 Practice | one numbered run of 30 questions in six forms | see below |
+| 4 Answers | letter key 1–17; one `.work--trace` row each for 18–30; four rows of *why the other options are wrong* (9, 11, 12, 16) | worked here |
+
+**Solved Examples.** Type 1 · Congruent figures: Examples 1–3 (reverted
+rebuild's Examples 1–3). Type 2 · SSS and writing a congruence: Example 4
+(rebuild Ex 5), Example 5 (old stage 2 Problem 1), Example 6 (rebuild Ex 6).
+Type 3 · The SAS and ASA conditions: Example 7 (old Problem 2), Example 8
+(rebuild Ex 8). Type 4 · The AAS and RHS conditions: Example 9 (rebuild Ex
+10), Example 10 (rebuild Ex 12). Type 5 · Angles of isosceles triangles:
+Example 11 (old Problem 3), Example 12 (old Problem 5), Example 13 (rebuild
+Ex 15). Examples 12 and 13 were set in that order so the type packs whole;
+no example needs a figure.
+
+**Practice.** Choose the correct option 1–12 · Assertion and reason 13–17 ·
+Very short answer 18–20 · Short answer 21–26 · Long answer 27–28 ·
+Case-based 29–30. From the reverted rebuild's end-of-chapter questions:
+2–6, 8, 9, 13, 14, 17–19, 21–30 (its 1, 3, 2, 8, 7, 4, 6, 11, 9, 10, 15, 12,
+21, 22, 17, 18, 20, 19, 24, 26, 28, 27). From the old Set A: 1, 7; Set B: 16;
+Set C: 10, 11, 12. New, and verified: 15 (assertion true, reason false — the
+form had no (c)) and 20. The tile case is set before the roof case, so the
+case group packs. Multiple
+choice keys run a, b, c, d three times each; options were reordered for that.
+The case questions carry no *Case study* label, and the tile table no caption.
+
+**Left out as duplicates of the body or of stage 1.**
+
+- Old Problem 4 and old Set C 7 (a point that is the midpoint of two segments): body Example 1, Fig. 1.17.
+- Rebuild Example 9: the same, word for word.
+- Old Set B 4 (a rectangle and its diagonal): the body's Fig. 1.10.
+- Old Set C 4 (AB = AD, CB = CD): Exercise Set 1.2, Question 3.
+- Old Set B 7 and Set C 3 (a triangle congruent to itself in two ways): Exercise Set 1.4, Question 4.
+- Rebuild end-of-chapter 23 (the six-piece grid): the body's puzzle, Fig. 1.30.
+- Rebuild end-of-chapter 25 (construct SSA, two triangles): the body's SSA construction, Figs. 1.15–1.16.
+- Rebuild end-of-chapter 16 (what CPCT stands for): the body never uses the abbreviation.
+- Rebuild Example 13 and old Set A 6 (base angle given, find the rest): stage 1's third question; rebuild end-of-chapter 5 and 14 and old Set B 1 and 2 for the same reason.
+- Rebuild Example 11 (flagpole, RHS): the body's altitude argument (Fig. 1.24), and case question 30 applies it again.
+- Rebuild Example 14 (jhoola, apex given): the body's $\angle A = 80^\circ$ calculation.
+
+**Left out as near-duplicates inside the section.** Rebuild Example 4 (Example 4
+does more); rebuild Example 7 (Example 7); old Set A 2, 7 and 10 (Questions 4
+and 5); old Set A 3, Set B 8 (stage 1's second question, Question 17); old
+Set A 4, rebuild 13 (Question 6); old Set A 5, Set A 9 (Questions 14, 29);
+old Set B 3 (Example 6); old Set B 5 (Question 30); old Set C 6 (Example 10);
+old Set C 8 (Question 10).
+
+**Changed.** Example 3 used the body's own symbol, AB = 4 cm, BC = 8 cm and
+$80^\circ$; it is now 5 cm, 9 cm and $75^\circ$, so it does not read as the
+body's drawing exercise. Examples 8, 9 and 10 each lost a step row, merged
+into the row before, to fit the page. No reused answer was found wrong.
+
+**Verification.** `scratchpad/beyond-p2ch01-geometric-twins/verify.mjs`
+recomputes every angle and length in the examples, questions and answers
+from coordinates (102 checks, 0 failed), and reads the letter key and the
+keyed option of Questions 1–12 back off the pages.
+
+**Builder.** Beyond pages 95 · 93 · 88 · 96 · 95 · 95 · 96 · 98 · 95 · 34
+(last). No overflow, no violations; every `p1xx` carries `data-bridge`; no
+`--head`/`--tail`. `orphans`: 0 stranded. `fit-options`: every row fits.
+`gaps`: nothing in Beyond (its short pages are body pages 1, 3, 5, 6, 10,
+held by figures, headings and bands). `check-labels`: no collisions. Body
+page 12 runs 1.6 mm into the margin, as before.
+
+**Proofs viewed** (pages 17, 21, 24). **Flagged:** in the Answers, rows 21,
+22 and 28 let KaTeX break an expression at an operator across two lines;
+legible, left as set rather than re-break a fitted page.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 1, *Geometric
 Twins* (textbook pages 1–23). Original LearnLab text in NCERT's order of topics
 and questions; no sentence is carried over. Crown Quarto, house design, palette
@@ -47,7 +128,7 @@ pdf.js to read the figures.
 | Set 1.4 | 1 A↔F, I↔L, R↔Y; AI↔FL, IR↔LY, AR↔FY · 2 (a) SSS $\triangle ABC \cong \triangle DEF$ (b) SAS $\triangle ABC \cong \triangle EFD$ (c) RHS $\triangle ABC \cong \triangle FDE$ (d) AAS $\triangle ABC \cong \triangle DEF$ (e) SSA, not necessarily · 3 SAS gives $\angle OAB = \angle ODC$, alternate angles on AD · 4 SSS both ways; isosceles two ways, equilateral six · 5 $30^\circ$ each · 6 (i) $x = y = 70^\circ$ (ii) $a = 40^\circ$, $b = 90^\circ$ (iii) $p = 30^\circ$, $q = 75^\circ$ |
 | Puzzle | solvable with six L-shaped pieces of four squares (checked by search) |
 
-Beyond the Book: Stage 1 — yes (SSS); not necessarily (SSA); $70^\circ$;
+Beyond the Book (superseded by the rebuild at the top of this log): Stage 1 — yes (SSS); not necessarily (SSA); $70^\circ$;
 $\triangle ABD \cong \triangle CDB$ gives $\angle A = \angle C$. Stage 2 — (c);
 (d); (b) $40^\circ$; (c) AC = BD; (d). Set A c c c b d a b a c b; Set B b c a c
 b d b a; Set C a c b c d b d c.

@@ -2,95 +2,147 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--lg">
+      <h3>Tiling the whole plane</h3>
+
+      <p>So far we have tiled a given region. What about tiling the entire plane, going on for ever in every direction? Can you think of a shape whose copies can tile the whole plane? Squares clearly can.</p>
+
+      <p>Can any other regular polygon tile the plane? What about equilateral triangles? Copies of equilateral triangles do tile the plane, and so do regular hexagons. Look at the angles at a point where the tiles meet in Fig. 6.34. What do they add up to?</p>
+
+      <div class="c-figure c-figure--full">
                           <figure>
-                            <svg viewBox="0 0 290 200" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On the left, a grid of 5 rows and 3 columns with the middle square of the top row removed, and a plain 2 by 1 tile below it. On the right, the same region coloured like a chessboard, with 8 white and 6 dark squares, and a tile of one white and one dark square below it.">
-      <rect class="dg-fill-a-soft" x="30" y="26" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="26" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="26" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="26" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="50" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="50" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="50" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="74" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="74" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="74" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="98" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="98" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="98" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="30" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="30" y="122" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="54" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="54" y="122" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="78" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="78" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="26" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="26" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="26" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="26" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="180" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="204" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="204" y="50" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="228" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="50" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="74" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="204" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="204" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="74" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="74" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="180" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="204" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="204" y="98" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="228" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="98" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="180" y="122" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="204" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="204" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="122" width="24" height="24"/>
-      <rect class="dg-thin" x="228" y="122" width="24" height="24"/>
-      <text class="dg-note" x="66" y="16" text-anchor="middle">plain grid</text>
-      <text class="dg-note" x="216" y="16" text-anchor="middle">coloured grid</text>
-      <rect class="dg-fill-a-soft" x="42" y="168" width="24" height="24"/>
-      <rect class="dg-thin" x="42" y="168" width="24" height="24"/>
-      <rect class="dg-fill-a-soft" x="66" y="168" width="24" height="24"/>
-      <rect class="dg-thin" x="66" y="168" width="24" height="24"/>
-      <rect class="dg-line" x="42" y="168" width="48" height="24"/>
-      <rect class="dg-thin" x="192" y="168" width="24" height="24"/>
-      <rect class="dg-fill-teal" x="216" y="168" width="24" height="24"/>
-      <rect class="dg-line" x="192" y="168" width="48" height="24"/>
+                            <svg viewBox="0 0 570 142" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three patches of tiling: squares, equilateral triangles, and regular hexagons, each fitting together with no gaps or overlaps.">
+      <rect class="dg-fill-b-soft" x="20" y="12" width="26" height="26"/>
+      <rect class="dg-thin" x="20" y="12" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="46" y="12" width="26" height="26"/>
+      <rect class="dg-thin" x="46" y="12" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="72" y="12" width="26" height="26"/>
+      <rect class="dg-thin" x="72" y="12" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="98" y="12" width="26" height="26"/>
+      <rect class="dg-thin" x="98" y="12" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="124" y="12" width="26" height="26"/>
+      <rect class="dg-thin" x="124" y="12" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="20" y="38" width="26" height="26"/>
+      <rect class="dg-thin" x="20" y="38" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="46" y="38" width="26" height="26"/>
+      <rect class="dg-thin" x="46" y="38" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="72" y="38" width="26" height="26"/>
+      <rect class="dg-thin" x="72" y="38" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="98" y="38" width="26" height="26"/>
+      <rect class="dg-thin" x="98" y="38" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="124" y="38" width="26" height="26"/>
+      <rect class="dg-thin" x="124" y="38" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="20" y="64" width="26" height="26"/>
+      <rect class="dg-thin" x="20" y="64" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="46" y="64" width="26" height="26"/>
+      <rect class="dg-thin" x="46" y="64" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="72" y="64" width="26" height="26"/>
+      <rect class="dg-thin" x="72" y="64" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="98" y="64" width="26" height="26"/>
+      <rect class="dg-thin" x="98" y="64" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="124" y="64" width="26" height="26"/>
+      <rect class="dg-thin" x="124" y="64" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="20" y="90" width="26" height="26"/>
+      <rect class="dg-thin" x="20" y="90" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="46" y="90" width="26" height="26"/>
+      <rect class="dg-thin" x="46" y="90" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="72" y="90" width="26" height="26"/>
+      <rect class="dg-thin" x="72" y="90" width="26" height="26"/>
+      <rect class="dg-fill-b-soft" x="98" y="90" width="26" height="26"/>
+      <rect class="dg-thin" x="98" y="90" width="26" height="26"/>
+      <rect class="dg-fill-a-soft" x="124" y="90" width="26" height="26"/>
+      <rect class="dg-thin" x="124" y="90" width="26" height="26"/>
+      <path class="dg-fill-b-soft" d="M205 38 L235 38 L220 12 Z"/>
+      <path class="dg-thin" d="M205 38 L235 38 L220 12 Z"/>
+      <path class="dg-fill-a-soft" d="M220 12 L250 12 L235 38 Z"/>
+      <path class="dg-thin" d="M220 12 L250 12 L235 38 Z"/>
+      <path class="dg-fill-b-soft" d="M235 38 L265 38 L250 12 Z"/>
+      <path class="dg-thin" d="M235 38 L265 38 L250 12 Z"/>
+      <path class="dg-fill-a-soft" d="M250 12 L280 12 L265 38 Z"/>
+      <path class="dg-thin" d="M250 12 L280 12 L265 38 Z"/>
+      <path class="dg-fill-b-soft" d="M265 38 L295 38 L280 12 Z"/>
+      <path class="dg-thin" d="M265 38 L295 38 L280 12 Z"/>
+      <path class="dg-fill-a-soft" d="M280 12 L310 12 L295 38 Z"/>
+      <path class="dg-thin" d="M280 12 L310 12 L295 38 Z"/>
+      <path class="dg-fill-b-soft" d="M295 38 L325 38 L310 12 Z"/>
+      <path class="dg-thin" d="M295 38 L325 38 L310 12 Z"/>
+      <path class="dg-fill-a-soft" d="M205 64 L235 64 L220 38 Z"/>
+      <path class="dg-thin" d="M205 64 L235 64 L220 38 Z"/>
+      <path class="dg-fill-b-soft" d="M220 38 L250 38 L235 64 Z"/>
+      <path class="dg-thin" d="M220 38 L250 38 L235 64 Z"/>
+      <path class="dg-fill-a-soft" d="M235 64 L265 64 L250 38 Z"/>
+      <path class="dg-thin" d="M235 64 L265 64 L250 38 Z"/>
+      <path class="dg-fill-b-soft" d="M250 38 L280 38 L265 64 Z"/>
+      <path class="dg-thin" d="M250 38 L280 38 L265 64 Z"/>
+      <path class="dg-fill-a-soft" d="M265 64 L295 64 L280 38 Z"/>
+      <path class="dg-thin" d="M265 64 L295 64 L280 38 Z"/>
+      <path class="dg-fill-b-soft" d="M280 38 L310 38 L295 64 Z"/>
+      <path class="dg-thin" d="M280 38 L310 38 L295 64 Z"/>
+      <path class="dg-fill-a-soft" d="M295 64 L325 64 L310 38 Z"/>
+      <path class="dg-thin" d="M295 64 L325 64 L310 38 Z"/>
+      <path class="dg-fill-b-soft" d="M205 90 L235 90 L220 64 Z"/>
+      <path class="dg-thin" d="M205 90 L235 90 L220 64 Z"/>
+      <path class="dg-fill-a-soft" d="M220 64 L250 64 L235 90 Z"/>
+      <path class="dg-thin" d="M220 64 L250 64 L235 90 Z"/>
+      <path class="dg-fill-b-soft" d="M235 90 L265 90 L250 64 Z"/>
+      <path class="dg-thin" d="M235 90 L265 90 L250 64 Z"/>
+      <path class="dg-fill-a-soft" d="M250 64 L280 64 L265 90 Z"/>
+      <path class="dg-thin" d="M250 64 L280 64 L265 90 Z"/>
+      <path class="dg-fill-b-soft" d="M265 90 L295 90 L280 64 Z"/>
+      <path class="dg-thin" d="M265 90 L295 90 L280 64 Z"/>
+      <path class="dg-fill-a-soft" d="M280 64 L310 64 L295 90 Z"/>
+      <path class="dg-thin" d="M280 64 L310 64 L295 90 Z"/>
+      <path class="dg-fill-b-soft" d="M295 90 L325 90 L310 64 Z"/>
+      <path class="dg-thin" d="M295 90 L325 90 L310 64 Z"/>
+      <path class="dg-fill-a-soft" d="M205 116 L235 116 L220 90 Z"/>
+      <path class="dg-thin" d="M205 116 L235 116 L220 90 Z"/>
+      <path class="dg-fill-b-soft" d="M220 90 L250 90 L235 116 Z"/>
+      <path class="dg-thin" d="M220 90 L250 90 L235 116 Z"/>
+      <path class="dg-fill-a-soft" d="M235 116 L265 116 L250 90 Z"/>
+      <path class="dg-thin" d="M235 116 L265 116 L250 90 Z"/>
+      <path class="dg-fill-b-soft" d="M250 90 L280 90 L265 116 Z"/>
+      <path class="dg-thin" d="M250 90 L280 90 L265 116 Z"/>
+      <path class="dg-fill-a-soft" d="M265 116 L295 116 L280 90 Z"/>
+      <path class="dg-thin" d="M265 116 L295 116 L280 90 Z"/>
+      <path class="dg-fill-b-soft" d="M280 90 L310 90 L295 116 Z"/>
+      <path class="dg-thin" d="M280 90 L310 90 L295 116 Z"/>
+      <path class="dg-fill-a-soft" d="M295 116 L325 116 L310 90 Z"/>
+      <path class="dg-thin" d="M295 116 L325 116 L310 90 Z"/>
+      <path class="dg-fill-b-soft" d="M470 44 L452.7 54 L452.7 74 L470 84 L487.3 74 L487.3 54 Z"/>
+      <path class="dg-thin" d="M470 44 L452.7 54 L452.7 74 L470 84 L487.3 74 L487.3 54 Z"/>
+      <path class="dg-fill-a-soft" d="M504.6 44 L487.3 54 L487.3 74 L504.6 84 L522 74 L522 54 Z"/>
+      <path class="dg-thin" d="M504.6 44 L487.3 54 L487.3 74 L504.6 84 L522 74 L522 54 Z"/>
+      <path class="dg-fill-a-soft" d="M487.3 14 L470 24 L470 44 L487.3 54 L504.6 44 L504.6 24 Z"/>
+      <path class="dg-thin" d="M487.3 14 L470 24 L470 44 L487.3 54 L504.6 44 L504.6 24 Z"/>
+      <path class="dg-fill-a-soft" d="M452.7 14 L435.4 24 L435.4 44 L452.7 54 L470 44 L470 24 Z"/>
+      <path class="dg-thin" d="M452.7 14 L435.4 24 L435.4 44 L452.7 54 L470 44 L470 24 Z"/>
+      <path class="dg-fill-a-soft" d="M435.4 44 L418 54 L418 74 L435.4 84 L452.7 74 L452.7 54 Z"/>
+      <path class="dg-thin" d="M435.4 44 L418 54 L418 74 L435.4 84 L452.7 74 L452.7 54 Z"/>
+      <path class="dg-fill-a-soft" d="M452.7 74 L435.4 84 L435.4 104 L452.7 114 L470 104 L470 84 Z"/>
+      <path class="dg-thin" d="M452.7 74 L435.4 84 L435.4 104 L452.7 114 L470 104 L470 84 Z"/>
+      <path class="dg-fill-a-soft" d="M487.3 74 L470 84 L470 104 L487.3 114 L504.6 104 L504.6 84 Z"/>
+      <path class="dg-thin" d="M487.3 74 L470 84 L470 104 L487.3 114 L504.6 104 L504.6 84 Z"/>
+      <text class="dg-note" x="85" y="134" text-anchor="middle">squares</text>
+      <text class="dg-note" x="260" y="134" text-anchor="middle">equilateral triangles</text>
+      <text class="dg-note" x="470" y="134" text-anchor="middle">regular hexagons</text>
       </svg>
-                            <figcaption><span class="fignum">Fig. 6.32</span> A region and a tile, plain and coloured.</figcaption>
+                            <figcaption><span class="fignum">Fig. 6.34</span> Tiling with squares, equilateral triangles and regular hexagons.</figcaption>
                           </figure>
                         </div>
 
-      <p>In the coloured problem, every tile must be placed with its dark square on a dark square of the grid and its white square on a white square. If the plain region can be tiled, can the coloured one? If the coloured region can be tiled, can the plain one? The answer to both questions is yes, because a $2 \times 1$ tile placed anywhere on a chessboard colouring always covers one dark square and one white square.</p>
+      <p>The plane can also be tiled with more than one shape, and with polygons that are not regular. The Dutch artist M. C. Escher (1898–1972), whose work explored mathematical ideas such as tiling, found clever ways to tile the plane with shapes of birds, fish and lizards. Mathematicians are still finding new ways to tile the plane; a shape that tiles it without ever repeating its pattern was found as recently as 2023. Some of the tilings mathematicians have found use pentagons that are not regular. In India, the floors, walls and carved stone screens of many old buildings are decorated with tilings that repeat over and over.</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Counting colours</div>
-        <p>A region tiled with $2 \times 1$ tiles, coloured like a chessboard, always has as many dark squares as white squares.</p>
-      </div>
+      <p>Have you seen tilings in daily life? They are used in floors, walls and designs. Tilings are found in nature too. The front of a honeycomb, and of some wasp nests, is tiled with hexagonal cells. The insects keep their eggs and young safe in these cells and store food in them, and since the region is tiled, no space is wasted. Scientists still wonder how bees and wasps manage to build hexagonal cells. The next time you see a tiling, look at it closely!</p>
 
-      <p>Is the coloured region in Fig. 6.32 tileable? It has 8 white squares and only 6 dark squares, so it can never be tiled! Use this idea to find another square which, when removed from a $5 \times 3$ grid, leaves a region that cannot be tiled.</p>
-
-      <p>Isn't it surprising that adding colours, which seems to make the problem more complicated, makes it easier to solve?</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 6.9</div>
-        <ol class="c-questions">
-          <li>Are the tilings in Fig. 6.33 possible? Region (1) is to be tiled with the L-shaped tile, and region (2) with the $2 \times 1$ tile. Give reasons. If a tiling is possible, draw one; if it is not, explain why no tiling can exist. For region (2), colour the full $8 \times 8$ grid like a chessboard, find the colours of the two squares that have been removed, and count how many squares of each colour are left.</li>
+      <div class="c-summary">
+        <div class="c-summary__title">What this chapter showed</div>
+        <ol>
+          <li>Dividing a line segment, or any geometric figure, into two identical parts is called bisection.</li>
+          <li>Any point at the same distance from the two ends of a segment lies on its perpendicular bisector. This lets us construct the perpendicular bisector with a ruler and a compass.</li>
+          <li>The same method, changed slightly, constructs a $90^\circ$ angle at any point on a line.</li>
+          <li>An angle can be bisected, and copied, with a ruler and a compass. Both constructions work because of congruent triangles.</li>
+          <li>A $60^\circ$ angle is constructed by constructing an equilateral triangle, and six equilateral triangles make a regular hexagon.</li>
+          <li>Angles placed around a point without overlapping fill the space exactly when they add up to $360^\circ$.</li>
+          <li>Covering a region with shapes, with no gaps and no overlaps, is called tiling. Colouring a region like a chessboard shows when $2 \times 1$ tiles cannot cover it.</li>
         </ol>
       </div>
 
