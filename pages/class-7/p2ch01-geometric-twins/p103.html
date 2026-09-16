@@ -2,40 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>One angle of an isosceles triangle is $100^\circ$. The other two angles are</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>$80^\circ$ and $80^\circ$</li><li>$40^\circ$ and $40^\circ$</li><li>$45^\circ$ and $35^\circ$</li><li>$50^\circ$ and $50^\circ$</li></ol>
-      </div>
+      <h3>Type 2 · SSS and writing a congruence</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The two angles opposite the equal sides are equal. They cannot both be $100^\circ$, because two angles of $100^\circ$ already add up to more than $180^\circ$. So $100^\circ$ is the third angle, and the equal angles share what is left.</p>
-        <div class="work">
-          <p>$180^\circ - 100^\circ = 80^\circ$</p>
-          <p>$80^\circ \div 2 = 40^\circ$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>In $\triangle LMN$, LM = 4 cm, MN = 6 cm and NL = 5 cm. In $\triangle XYZ$, XY = 5 cm, YZ = 4 cm and ZX = 6 cm. Write the congruence of the two triangles.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$LM = YZ = 4$ cm, $MN = ZX = 6$ cm, $NL = XY = 5$ cm</span>
+              <span class="chip">SSS</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>M corresponds to Z</span>
+              <span class="chip">between 4 cm and 6 cm</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>L corresponds to Y</span>
+              <span class="chip">between 4 cm and 5 cm</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>N corresponds to X</span>
+              <span class="chip">between 6 cm and 5 cm</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\triangle LMN \cong \triangle YZX$</span></div>
+          </div>
         </div>
-        <p>The answer is (b). Option (a) gives each angle the whole $80^\circ$, the angles in (c) are not equal, and (d) adds up to $200^\circ$.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>The segments AB and CD cross at O, and O is the midpoint of both. Which of these must be true?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>AB = CD</li><li>OA = OC</li><li>AC = BD</li><li>AC = AB</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Draw a rough sketch and look at $\triangle AOC$ and $\triangle BOD$.</p>
-        <div class="work work--list">
-          <p>OA = OB, since O is the midpoint of AB</p>
-          <p>OC = OD, since O is the midpoint of CD</p>
-          <p>$\angle AOC = \angle BOD$, since they are vertically opposite angles</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>If $\triangle PQR \cong \triangle STU$, which of these must be true?</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>PQ = TU</li><li>$\angle Q = \angle U$</li><li>QR = TU</li><li>PR = ST</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>P corresponds to S, Q to T, and R to U</span>
+              <span class="chip">order of the letters</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$PQ = ST$, $QR = TU$, $PR = SU$</span>
+              <span class="chip">corresponding sides</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle Q = \angle T$</span>
+              <span class="chip">corresponding angles</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
         </div>
-        <p>By SAS, $\triangle AOC \cong \triangle BOD$, so AC = BD. The answer is (c). Nothing given makes the parts in (a), (b) or (d) equal.</p>
       </div>
 
-      <p>In Problem 4 the triangles to compare were not drawn for us. A rough sketch showed two triangles meeting at O, the midpoint gave two pairs of equal sides, and the vertically opposite angles gave the equal angle between them. Choosing the right pair of triangles was most of the work; once that was done, the condition followed from what was given. Problem 5 asks for the same kind of choice.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>$\triangle ABC \cong \triangle DEF$, $\angle A = 50^\circ$ and $\angle E = 60^\circ$. Find $\angle F$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\angle B = \angle E = 60^\circ$</span>
+              <span class="chip">B corresponds to E</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle C = 180^\circ - 50^\circ - 60^\circ = 70^\circ$</span>
+              <span class="chip">angles add to $180^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle F = \angle C = 70^\circ$</span>
+              <span class="chip">F corresponds to C</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle F = 70^\circ$</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

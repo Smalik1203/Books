@@ -229,10 +229,17 @@ collide, and the builder reports an overflow the page does not appear to have.
 
 ## 5. Chapter structure — what comes, in what order
 
-Adopted 15 September 2026. **Class 7 Chapter 1 is the first chapter built
-to it**, and the components listed at the end of this section are in
-`css/structure.css`. Every other chapter keeps the shape it has until it is
-rebuilt. Judge the structure on Chapter 1's proofs before rolling it out.
+Adopted 15 September 2026, and **revised the same day: the chapter body
+keeps NCERT's structure.** The additions below — worked examples, checks,
+practice in examination forms — were built into the body of all fifteen Class
+7 chapters and taken back out at the user's direction. A teacher teaches the
+NCERT chapter as NCERT wrote it, and a reader of a Class 7 page should meet
+NCERT's order, sections and inquiry. The Cengage-style material goes in
+**Beyond the Book** instead, in the shape set out at the top of §6a. Read the
+rest of this section as what a chapter must offer its reader somewhere, and
+as the reasons, not as the order of the chapter body. The components listed
+at the end of this section are in `css/structure.css`; the case-question rules
+there are used by Beyond the Book's practice stage.
 
 **Why it was written.** An audit of all 56 maths chapters found the book
 inconsistent with itself before it was behind anyone else:
@@ -456,6 +463,39 @@ declared in viewBox units, so a figure drawn at a different density prints
 a heavier or fainter line than its neighbour.
 
 ## 6a. Beyond the Book — a division, not a second book
+
+### The shape since 15 September 2026
+
+Class 7 is built to this, and it overrides the older description below where
+the two differ. Class 7 Chapter 1 is the built example.
+
+    1 Using What You Know   the existing stage, word for word: questions tried
+                            first and explained in running text, so a student
+                            sees how simple ideas become tricky questions.
+                            Never recast as worked examples
+    2 Solved Examples       worked examples grouped under h3 "Type N · …",
+                            each as Solution, Step 1, Step 2 … Answer in
+                            .work__row, the reason in two to four words as a
+                            .chip. Stepped maths, not prose
+    3 Practice              one numbered run in the forms school papers use —
+                            multiple choice, assertion–reason, very short,
+                            short, long, case-based — grouped by .c-practice__sub
+    4 Answers               the letter key, every other answer, and why the
+                            wrong options are wrong for a few questions
+
+- **Nothing in the division repeats the chapter body.** A question or example
+  the chapter already sets is left out, whatever its source.
+- **A stage head is its numeral and its name.** No line under the name:
+  `.c-stage__for` is not used, and a head without one centres on its mark.
+- **The practice stage is named once.** It has no `.c-stage` head; its band
+  carries the numeral: `<div class="c-practice__head"><span
+  class="c-practice__num">3</span>Practice</div>`.
+- **A case-based question carries no *Case study* label** — the group's sub
+  head says so once. The `.c-case` opens the question on its number's line,
+  its table flush left.
+- These replace, for this shape, "everything after stage 1 is multiple
+  choice", "one line saying what the stage is for" and "what the steps are
+  never carry is a name" below.
 
 Every chapter closes with ten or so pages of harder work on the same
 material: the **Beyond the Book**, announced once by a band across the

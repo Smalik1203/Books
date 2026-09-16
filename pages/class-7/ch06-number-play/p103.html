@@ -2,40 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The 4 even numbers leave nothing over. The 7 odd numbers leave 7 leftovers, which make 3 pairs and one single. So the sum is odd, whatever the numbers are.</p>
-        <p>The answer is (b). Option (a) counts 11 numbers in all and treats that as the parity of the sum. Options (c) and (d) forget that parity depends only on how many odd numbers there are.</p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>A $3 \times 3$ magic square uses each of the numbers 11 to 19 once. Its magic sum is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>15</li><li>30</li><li>45</li><li>135</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The nine numbers add up to $11 + 12 + \cdots + 19 = 135$. The three rows share that total equally. For any nine consecutive numbers, the magic sum is 3 times the middle number, here $3 \times 15$. The square of 11 to 19 is the square of 1 to 9 with 10 added to every number.</p>
-        <div class="work">
-          <p>magic sum $= 135 \div 3 = 45$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Ravi says that a line of 5 children called out 0, 1, 2, 3, 5. Show that he has made a mistake.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>The 5th child has 4 children in front</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>The 5th child can call at most 4</span>
+              <span class="chip">only those in front</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$5 \gt 4$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>No child in a line of 5 can call 5, so Ravi is wrong.</span></div>
+          </div>
         </div>
-        <p>The answer is (c). Option (a) is the magic sum for 1 to 9. Option (b) adds 15 to it once, as if only one number had grown. Option (d) is the total of all nine numbers, not of one row.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>How many rhythms of 7 beats can be made from short syllables (1 beat) and long syllables (2 beats)?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>21</li><li>13</li><li>14</li><li>34</li></ol>
-      </div>
+      <h3>Type 2 · Odd and even</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>A 7-beat rhythm begins with a short syllable, leaving 6 beats, or a long one, leaving 5 beats. So the count is the number of 6-beat rhythms plus the number of 5-beat rhythms.</p>
-        <div class="work">
-          <p>$13 + 8 = 21$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>The sum of 7 odd numbers and 4 even numbers is</p>
+          <ol class="c-parts c-parts--alpha c-parts--1"><li>always even</li><li>always odd</li><li>sometimes even and sometimes odd</li><li>impossible to decide without the numbers</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>4 even numbers: even</span>
+              <span class="chip">no leftovers</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>7 odd numbers: 7 leftovers $=$ 3 pairs and 1 single, so odd</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>even $+$ odd $=$ odd</span>
+              <span class="chip">whatever the numbers</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
         </div>
-        <p>The answer is (a). Option (b) is the count for 6 beats. Option (c) doubles 7, as if each beat had two choices of its own. Option (d) is the count for 8 beats, one place too far along the sequence.</p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Priya buys 7 pencils at ₹5 each and 4 erasers at ₹3 each. The shopkeeper asks for ₹48. Without working out the bill, show that this is wrong.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$7 \times 5$ is odd $\times$ odd, so odd</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$4 \times 3$ has an even number in it, so even</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>bill $=$ odd $+$ even $=$ odd</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>₹48 is even</span>
+              <span class="chip">cannot be the bill</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The shopkeeper is wrong. The bill is $35 + 12 = 47$ rupees.</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

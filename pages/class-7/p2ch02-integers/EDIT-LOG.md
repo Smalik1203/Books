@@ -1,5 +1,89 @@
 # Class 7 · Mathematics II · Chapter 2 — Operations with Integers
 
+## Beyond the Book, rebuilt 15 September 2026
+
+To DESIGN-MATHS.md §6a, *The shape since 15 September 2026*, on the model of
+Class 7 Chapter 1. Only `p101`–`p110` were touched. The §5 rebuild of the
+chapter body made the same day was **reverted at the user's request**; the
+body is NCERT's structure, as refitted, and was not edited here. The reverted
+rebuild is kept in the session scratchpad (`scratchpad/rebuilt/pages/class-7/p2ch02-integers/`).
+
+**The four stages.**
+
+1. **Using What You Know**: the existing stage, word for word; only its
+   `.c-stage__for` line was deleted. Checked against git: the text is identical.
+2. **Solved Examples**: 14 examples in five types, each Solution → Step → Answer
+   with a two-to-four-word reason chip. Type 1 Subtracting integers (3) · Type 2
+   The sign of a product (3) · Type 3 Products in everyday situations (3) ·
+   Type 4 Dividing integers (2) · Type 5 Many factors and the properties (3).
+3. **Practice**: one band, 33 questions. Choose the correct option 13 ·
+   Assertion and reason 4 · Very short answer 4 · Short answer 5 · Long answer 5 ·
+   Case-based 2. Letter key spread a 4, b 4, c 4, d 5 over the 17 lettered questions.
+4. **Answers**: letter key 1–17, a trace row for 18–33, and *Why the other
+   options are wrong* for 7, 8 and 17.
+
+**Where it came from.**
+
+| stage | from the reverted body rebuild | from the old Beyond the Book |
+|---|---|---|
+| Examples | its Examples 1–6, 10, 11, 14 → Examples 1, 2, 3, 4, 7, 5, 10, 11, 14 | Behind Each Answer Problems 1–5 → Examples 12, 13, 8, 9, 6 (options kept; Answer gives the letter) |
+| Practice | End-of-chapter 1–4, 6, 8, 9–14, 16, 18, 19, 21, 22, 24–26, 28, 30–33 | Set A 7 → Q5; Set B 2, 4, 8 → Q8, 9, 10; Set C 2, 4, 5 → Q11, 13, 12 |
+| new | | Q16, assertion–reason with answer (c), written so that the form has all four letters |
+
+Options were reordered in Q2, 3, 4, 7, 8, 9, 10, 11, 12 and 13 to spread the key.
+
+**Left out as duplicates of the chapter body.**
+
+- Examples: Mala's test (110) and the mine-shaft lift ($-180$, $-120$) are the
+  body's Examples 1 and 2. $(-1) \times a$ is always negative? repeats the
+  body's *Multiplying by 1 and by $-1$* box. $(-1) \times (-2) \times \cdots
+  \times (-10)$ repeats the body's ten and eleven factors of $-1$.
+- Practice: fifteen and six factors of $-1$ (End 5, 15) and twenty (Set B 6),
+  for the same reason. $\square \div (-7) = -6$ (End 7), $\square \times (-8) = 72$
+  (Set B 5), "which integer times $-9$ gives $-72$" (End 17) and "product $-42$,
+  one factor $-6$" (End 23) repeat Exercise Set 2.4 Q4, which has $\square \times (-8) = -56$.
+  Three consecutive integers with product $-60$ (Set C 1) repeats Set 2.5 Q9.
+  The machine $a - b \times c$ (Set C 7) is Set 2.5 Q7's rule. $1 - 2 + 3 - \cdots - 100$
+  (Set C 3) is the carrom sum $1, -2, 3, \ldots, -10$. Four negative factors
+  (Set B 1) repeats Set 2.5 Q2(c). The lift below ground rising 3 m a minute
+  (Set B 7) repeats the lift example. The multiplication pattern (End 27) is
+  the body's *Patterns in integer multiplication*, and the 3 × 3 grid (End 29)
+  is the body's magic grid.
+
+**Left out as near-duplicates inside the section.** Example 13 of the reverted
+rebuild, $(-5) \times 17 \times (-2) \times (-1)$, is Stage 1's first question
+with other numbers. Its Example 12 repeated Example 10's sign reasoning. From
+the practice: Set A 1–4 and 8 (drills already covered by End 1, 2, 11, 13), A5
+(End 12), A6 (the body's $(-1) \times a$ box), A9 (Example 13 with other
+numbers), A10 (End 8), B3 (Q17), C6 (Q24), End 20 (Q9).
+
+**Changed.** End 18(c) was $(-6) \times (-5) \times (-2) = -60$, the same
+product and pattern as Example 12; it is now $(-4) \times 7 \times (-3) = 84$
+(Q22(c)). The case questions lost their *Case study* label and table captions
+("Table 2.7" and "2.8" referred to tables that are not in the body), and now say
+"The table". The Leh example no longer says it answers the chapter's opening
+question, because the body does not open with it. Example 2's question and
+Example 3's answer were tightened to fit a page: no number changed.
+
+**Verification.** `scratchpad/beyond-p2ch02-integers/verify.mjs`, 116 checks,
+0 failed. It covers every number in Stage 1, every example step, every option
+(the letter is found by computing the value and locating it among the options),
+every answer and every *why* row, including reused ones. No reused answer
+turned out wrong.
+
+**Fitting.** Written into `p101`, old `p102`–`p107` deleted, `refit.mjs … bridge`,
+two tightenings, then `settle.mjs` moved answer row 20 from p109 to p110, which
+had run 2.1 mm into the margin. Seven Beyond pages before, ten after. Builder:
+all pages fit. Beyond fill `14:98% 15:98% 16:83% 17:91% 18:84% 19:98% 20:95%
+21:93% 22:98% 23:79%`, and 23 is the last page. `orphans`: 0 stranded.
+`fit-options`: every row fits. `check-labels`: no collisions. No `--head`/`--tail`;
+every `p1xx` carries `data-bridge`.
+
+**Flagged.** Pages 16 and 18 stay at 83% and 84%. Each is held by a whole
+example (Example 8, 58 mm; Example 14, 52 mm) that no line of wording would
+bring back. `gaps` also lists body pages 4, 5, 9, 12 and 13; the body was not
+touched.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part II, Chapter 2,
 *Operations with Integers* (textbook pages 24–46). Original LearnLab text in
 NCERT's order of topics and questions; no sentence is carried over. Crown

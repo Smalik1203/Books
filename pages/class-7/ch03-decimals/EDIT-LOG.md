@@ -1,5 +1,112 @@
 # Class 7 · Mathematics I · Chapter 3 — The Decimal Point
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Only `p101.html` up was touched. The chapter body (`p001`–`p019`) and
+`chapter.json` were not edited. The §5 body rebuild of the same day was
+reverted at the user's request; its backup is in the session scratchpad
+(`scratchpad/rebuilt/pages/class-7/ch03-decimals/`), and it was used here only as
+a source of examples and questions. The eight Beyond pages as they stood are
+backed up in `scratchpad/beyond-ch03-decimals/old-p1xx/`.
+
+Shape copied from Class 7 Chapter 1 `p101`–`p112`. The section went from
+8 pages (`p101`–`p108`) to 11 (`p101`–`p111`).
+
+**Stage 1 · Using What You Know** is unchanged, word for word: the five
+tried-and-explained questions (0.7 against 0.65; $3.48 + 2.67$; the 5 m rope;
+2.25 hours; a number between 2.3 and 2.31). Only its `.c-stage__for` line was
+deleted. A script compared its text with the old pages.
+
+**Stage 2 · Solved Examples** has 17 stepped examples (Solution, then Steps,
+then Answer, with a short reason chip):
+
+| type | examples | from |
+|---|---|---|
+| 1 · Tenths and hundredths | 1, 2 | rebuild Ex 1, 4 |
+| 2 · Place value and the decimal point | 3, 4, 5 | rebuild Ex 7, 8; old Problem 1 (MCQ) |
+| 3 · Changing units | 6, 7, 8, 9 | rebuild Ex 10, 11, 12; old Problem 4 (MCQ) |
+| 4 · Comparing and ordering | 10, 11 | rebuild Ex 15; old Problem 3 (MCQ) |
+| 5 · Adding and subtracting | 12, 13, 14, 15 | rebuild Ex 16, 18; old Problem 2 (MCQ); rebuild Ex 17 |
+| 6 · Hours and overs | 16, 17 | rebuild Ex 21; old Problem 5 (MCQ) |
+
+The five multiple-choice problems keep their options, and their Answer row gives
+the letter. Within Types 4 and 6 the shorter example comes first, so that no
+page is left short.
+
+**Stage 3 · Practice** is one run of 37 questions under the single Practice
+band:
+
+| form | questions | from |
+|---|---|---|
+| Choose the correct option | 1–21 | rebuild End 1, 3, 5, 6, 7; old Set A 1, 2, 4, 7, 8, 9; Set B 4, 5, 8; Set C 1–7 |
+| Assertion and reason | 22–27 | rebuild End 9, 10, 11; old Set B 3, 6; 22 new (answer (b)) |
+| Very short answer | 28–30 | new |
+| Short answer | 31–33 | new |
+| Long answer | 34–35 | new |
+| Case-based questions | 36–37 | 36 new (race times); 37 rebuild case (Ravi's bill, part (e) dropped) |
+
+**Stage 4 · Answers** gives the letter key in three rows (1–11, 12–21, 22–27)
+and a trace row for each of 28–37. "Why the other options are wrong" covers
+Questions 9, 17, 20, 21, 24 and 26. Each trace row is its own `.work--trace`
+block, as on this chapter's old answer page. That way the rows fill the foot of
+`p110` one at a time. As a single block, the Answers head was left alone on the
+last page.
+
+### Excluded as duplicates
+
+- **Already in the chapter body.**
+  - Rebuild Examples 2, 3, 5 and 6: the arm, the hand, $15\frac{3}{10}\frac{4}{100} + 2\frac{6}{10}\frac{8}{100}$ and $25\frac{9}{10} - 6\frac{4}{10}\frac{7}{100}$.
+  - Rebuild Example 9, 347 hundredths, the same as the body's 234 tenths and Set 3.7.
+  - Rebuild Example 19, 3.5 hours, the same as the body's 4.5 hours bus.
+  - Every rebuild End question from 12 onward except "7.08 read aloud" and the Ravi case; those are the body's End-of-Chapter Exercises 1–16.
+  - Old Set A 3 (425 g), the same as body Set 3.10.
+  - Old Set A 6 (48 mm), the same as body Set 3.8.
+  - Old Set A 10 (0.5 hour), the same as the body's 4.5 hours.
+  - Old Set B 1: its Reason is the body's End Q6 claim, and its Assertion repeats Stage 1's first question.
+- **Already in Stage 1.**
+  - Rebuild Example 13 (3.7 against 3.68), the same as 0.7 against 0.65.
+  - Old Set B 2 (the 3 m ribbon), the same as the rope.
+- **Near-duplicates within the section.**
+  - Rebuild Example 14 (ordering), covered by old Problem 3.
+  - Rebuild Example 20 (1.2 hours), covered by old Problem 5.
+  - Rebuild End 2 (12.358), kept as old Set A 9.
+  - Rebuild End 4 (greatest), kept as old Set A 7.
+  - Rebuild End 8 (1.5, 1.8, 2.1), covered by Set B 5 and Set C 4.
+  - Rebuild "How is 7.08 read aloud?", covered by old Set A 2.
+  - Old Set A 5 (equal to 0.6), kept as rebuild End 3.
+  - Old Set B 7 (shopkeeper), covered by Example 9.
+
+### Verification
+
+`scratchpad/beyond-ch03-decimals/verify.mjs` checks every number in every
+example step, question and answer. It holds decimals as BigInt millionths.
+Reused answers are checked too.
+- Each multiple-choice answer: exactly one option equals the worked value, and it is the letter printed.
+- Wrong options that are explained: the slip is re-derived.
+- Q16: every arrangement of 3, 0 and 7 is listed.
+- Q21: all 24 arrangements of 2, 5, 7 and 9 are listed.
+
+**122 checks, 0 failures.** No reused item was found to be wrong.
+
+### Build and tools
+
+- `refit class-7/ch03-decimals bridge`
+- `build`: all pages fit, no violations. Beyond pages fill `20:97% 21:99% 22:97% 23:97% 24:90% 25:99% 26:96% 27:96% 28:101% 29:97% 30:23%`. Page 30 is the chapter's last page, so it is exempt. Page 28 (`p109`) runs 2.4 mm into the bottom margin.
+- `orphans`: 0 stranded openers.
+- `fit-options`: every option row fits.
+- `gaps`: no Beyond page under 88%, apart from the last.
+- `check-labels`: no collisions.
+- No `--head`/`--tail`; `data-bridge` on all eleven pages.
+- `build/class-7/_refit-ch03-decimals.html` deleted.
+
+### Flagged
+
+- The short body pages 2, 7, 8, 13 and 16 (83–85%) predate this work and were left alone.
+- The fitting cuts made no content mistakes worth logging:
+  - Examples 4, 6, 7, 14 and 17 had steps merged.
+  - The two case tables are set across the measure.
+  - Ravi's case lost part (e), paise, which Q29 already asks.
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part I, Chapter 3,
 *A Peek Beyond the Point* (textbook pages 47–80, answer key after them).
 Original LearnLab text in NCERT's order of topics and questions; no sentence

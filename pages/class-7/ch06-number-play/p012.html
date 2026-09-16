@@ -2,32 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <table>
-        <caption>Table 6.3 All rhythms of 5 beats</caption>
-        <thead><tr><th>beginning with 1</th><th>beginning with 2</th></tr></thead>
-        <tbody>
-          <tr><td>$1 + 1 + 1 + 1 + 1$</td><td>$2 + 1 + 1 + 1$</td></tr>
-          <tr><td>$1 + 1 + 1 + 2$</td><td>$2 + 1 + 2$</td></tr>
-          <tr><td>$1 + 1 + 2 + 1$</td><td>$2 + 2 + 1$</td></tr>
-          <tr><td>$1 + 2 + 1 + 1$</td><td></td></tr>
-          <tr><td>$1 + 2 + 2$</td><td></td></tr>
-        </tbody>
-      </table>
+      <h2><span class="badge">6.5</span><span class="name">Letters for Digits</span></h2>
 
-      <p>So there are $5 + 3 = 8$ rhythms of 5 beats. In the same way, the number of rhythms of 6 beats is the number of 5-beat rhythms plus the number of 4-beat rhythms, $8 + 5 = 13$. Use the method to write out all 13. If you miss some, check that your list has 8 rhythms beginning with 1 and 5 beginning with 2.</p>
+      <p>In the sums below, each letter stands for one digit from 0 to 9, and different letters stand for different digits. Can you find the digits?</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The Virahanka numbers</div>
-        <p>In the sequence 1, 2, 3, 5, 8, 13, 21, 34, 55, …, each number is the sum of the two before it. The $n$th number is the number of rhythms of $n$ beats.</p>
+      <div class="work work--centred">
+        <p>$\begin{array}{r} \mathrm{A} \\ \mathrm{A} \\ +\,\mathrm{A} \\ \hline \mathrm{BA} \end{array}$</p>
       </div>
 
-      <p>The Prakrit scholar Virahanka gave this rule, in the form of a verse, around 700 CE. He built on the work of Pingala, who lived around 300 BCE, and the numbers were later written about by Gopala, around 1135 CE, and Hemachandra, around 1150 CE. In Europe they are named after Fibonacci, who described them in 1202 CE, about 500 years after Virahanka. They are called the <span class="term">Virahanka numbers</span>, or the Virahanka–Fibonacci numbers.</p>
+      <p>Three copies of the one-digit number A add up to a two-digit number that ends in A. Try A $= 2$: the sum 6 has only one digit. Try A $= 4$: the sum 12 does not end in 4. Only A $= 5$ works, since $5 + 5 + 5 = 15$. So B $= 1$.</p>
 
-      <p>So there are 34 rhythms of 8 beats, since 34 is the 8th number in the sequence. The number after 55 is $34 + 55 = 89$. Write the next three numbers after 89.</p>
+      <p>Now try P3 $+$ P3 $=$ RSS. Here P3 is a two-digit number with 3 in the ones place and P in the tens place.</p>
 
-      <p>Now look at the parity of each number: 1 is odd, 2 is even, 3 is odd, 5 is odd, 8 is even, and so on. Do you see a pattern? Can you tell whether the number after 89 is odd or even without adding?</p>
+      <div class="work work--centred">
+        <p>$\begin{array}{r} \mathrm{P}3 \\ +\,\mathrm{P}3 \\ \hline \mathrm{RSS} \end{array}$</p>
+      </div>
 
-      <p>The Virahanka numbers appear in drumming, in architecture and all through nature. A daisy, for example, usually has 13, 21 or 34 petals.</p>
+      <p>In the ones place, $3 + 3 = 6$, so S $= 6$. The tens digit of the sum is also 6, so P $+$ P ends in 6, and P is 3 or 8. With P $= 3$ the sum $33 + 33 = 66$ has only two digits, so P $= 8$. Then $83 + 83 = 166$, and R $= 1$.</p>
+
+      <p>Solve these, and explain how you thought about each one to a classmate. Puzzles like these are called <span class="term">cryptarithms</span>.</p>
+
+      <div class="work work--centred">
+        <p>$\begin{array}{r} \mathrm{MM} \\ +\,\mathrm{N} \\ \hline \mathrm{NQQ} \end{array} \qquad \begin{array}{r} \mathrm{A}4 \\ +\,5\mathrm{B} \\ \hline \mathrm{C}04 \end{array} \qquad \begin{array}{r} \mathrm{XY} \\ \mathrm{XY} \\ +\,\mathrm{XY} \\ \hline \mathrm{ZYY} \end{array} \qquad \begin{array}{r} \mathrm{D}1 \\ +\,\mathrm{D} \\ \hline 1\mathrm{EE} \end{array}$</p>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 6.5</div>
+        <ol class="c-questions">
+          <li>A light bulb is on. Dorjee presses its switch 63 times. Is the bulb on or off at the end? Why?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Some loose sheets fall out of Liswini’s old encyclopaedia: 25 sheets, each printed on both sides. Can all the page numbers on them add up to 5000? Why or why not?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Fill the grid in Fig. 6.17 with 3 odd numbers and 3 even numbers, so that the sum of each row and each column has the parity in its circle: e for even and o for odd.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 230 100" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An empty grid of 2 rows and 3 columns. The circle beside the first row says o and beside the second row says e. The circles below the columns say e, e and o.">
+      <rect class="dg-line" x="70" y="6" width="32" height="32"/>
+      <rect class="dg-line" x="102" y="6" width="32" height="32"/>
+      <rect class="dg-line" x="134" y="6" width="32" height="32"/>
+      <rect class="dg-line" x="70" y="38" width="32" height="32"/>
+      <rect class="dg-line" x="102" y="38" width="32" height="32"/>
+      <rect class="dg-line" x="134" y="38" width="32" height="32"/>
+      <circle class="dg-fill-c-soft" cx="180" cy="22" r="9"/>
+      <text class="dg-label" x="180" y="26" text-anchor="middle">o</text>
+      <circle class="dg-fill-c-soft" cx="180" cy="54" r="9"/>
+      <text class="dg-label" x="180" y="58" text-anchor="middle">e</text>
+      <circle class="dg-fill-c-soft" cx="86" cy="84" r="9"/>
+      <text class="dg-label" x="86" y="88" text-anchor="middle">e</text>
+      <circle class="dg-fill-c-soft" cx="118" cy="84" r="9"/>
+      <text class="dg-label" x="118" y="88" text-anchor="middle">e</text>
+      <circle class="dg-fill-c-soft" cx="150" cy="84" r="9"/>
+      <text class="dg-label" x="150" y="88" text-anchor="middle">o</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.17</span> For Question 3.</figcaption>
+                          </figure>
+                        </div>
 
     </div>
   </div>

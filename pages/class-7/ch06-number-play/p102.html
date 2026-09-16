@@ -2,25 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--sm">
-                          <figure>
-                            <svg viewBox="0 0 190 102" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A 3 by 3 grid with 8 in the top left corner and a question mark in the bottom right corner.">
-      <rect class="dg-line" x="50" y="6" width="30" height="30"/>
-      <text class="dg-label" x="65" y="25" text-anchor="middle">8</text>
-      <rect class="dg-line" x="80" y="6" width="30" height="30"/>
-      <rect class="dg-line" x="110" y="6" width="30" height="30"/>
-      <rect class="dg-line" x="50" y="36" width="30" height="30"/>
-      <rect class="dg-line" x="80" y="36" width="30" height="30"/>
-      <rect class="dg-line" x="110" y="36" width="30" height="30"/>
-      <rect class="dg-line" x="50" y="66" width="30" height="30"/>
-      <rect class="dg-line" x="80" y="66" width="30" height="30"/>
-      <rect class="dg-line" x="110" y="66" width="30" height="30"/>
-      <text class="dg-label" x="125" y="85" text-anchor="middle">?</text>
-      </svg>
-                            <figcaption><span class="fignum">Fig. 6.18</span> One number of a magic square.</figcaption>
-                          </figure>
-                        </div>
-
       <p>The two corners lie on a diagonal, and the centre of the diagonal is 5. The diagonal adds up to 15, so the missing corner is $15 - 8 - 5 = 2$. We did not need to build the rest of the square. In the same way, any two squares opposite each other across the centre add up to 10. In every such square the opposite pairs are 1 and 9, 2 and 8, 3 and 7, and 4 and 6. Check this in the square you made earlier, and use it to finish this one.</p>
 
       <div class="c-try">
@@ -32,15 +13,53 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The sum of 7 odd numbers and 4 even numbers is</p>
-        <ol class="c-parts c-parts--alpha c-parts--1"><li>always even</li><li>always odd</li><li>sometimes even and sometimes odd</li><li>impossible to decide without the numbers</li></ol>
+      <h3>Type 1 · Reading a line of heights</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Five children stand in a line. From the front, their heights are 142 cm, 150 cm, 135 cm, 148 cm and 130 cm. What number does each child call out?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>1st child: 0; 2nd child, 150 cm: 0</span>
+              <span class="chip">nobody taller in front</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>3rd child, 135 cm: 142 and 150 are taller, so 2</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>4th child, 148 cm: only 150 is taller, so 1</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>5th child, 130 cm: all 4 in front are taller, so 4</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>0, 0, 2, 1, 4</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Four children in a line call out 0, 1, 1, 3. List them from the tallest to the shortest.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>4th child calls 3 with 3 in front: the shortest</span>
+              <span class="chip">all in front taller</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>2nd child calls 1: the 1st is taller than the 2nd</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>If the 2nd were taller than the 3rd, so would the 1st be, and the 3rd would call 2</span>
+              <span class="chip">but it calls 1</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>Only the 1st is taller than the 3rd, so the 3rd is taller than the 2nd</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>1st, 3rd, 2nd, 4th</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

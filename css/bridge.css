@@ -114,6 +114,10 @@
 
 .c-stage__text { flex: 1; }
 
+/* A head with no line under its name is one line tall, so it sits
+   level with the middle of the mark rather than on its top edge. */
+.c-stage:not(:has(.c-stage__for)) { align-items: center; }
+
 .c-stage__title {
   font-family: var(--font-display);
   font-size: var(--size-concept);
@@ -153,6 +157,22 @@
 .c-stage__ask + .c-practice,
 .c-stage + .c-tip,
 .c-stage__ask + .c-tip { margin-top: 0; }
+
+/* A stage that is only questions is headed by its own band: the
+   numeral goes inside it, so the stage is named once rather than
+   by a stage head and a band saying the same thing under it. The
+   mark reverses the band, paper on the stage colour. */
+.c-practice__num {
+  display: inline-block;
+  min-width: 5.4mm;
+  margin-right: 3mm;
+  padding: 0 1mm;
+  background: var(--paper);
+  color: var(--teal-deep);
+  border-radius: calc(var(--radius) / 2);
+  font-variant-numeric: lining-nums;
+  text-align: center;
+}
 
 /* ---- A relationship, read both ways ------------------------
    Two lines that say the same law twice, in opposite

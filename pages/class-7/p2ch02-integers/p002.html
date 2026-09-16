@@ -2,12 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Play this game with a partner. One of you thinks of two integers and gives their sum and their difference, and the other finds the integers. Take turns. With some practice, you can surprise your family with it. Start with small numbers, and then try pairs in which one or both integers are negative.</li>
-        </ol>
-      </div>
-
       <h3>Carrom coin integers</h3>
 
       <p>A carrom coin starts at 0 on a line marked in units. A strike moves the coin to the right by some number of units, depending on how hard it is struck. If the first strike moves it 4 units and the second moves it 3 units, the coin ends up $4 + 3 = 7$ units from 0. In general, if the first strike moves the coin $a$ units to the right and the second moves it $b$ units to the right, its final position is $P = a + b$.</p>
@@ -60,6 +54,76 @@
       <p>So whatever the directions, if the two movements are $a$ and $b$, each positive for a strike to the right and negative for a strike to the left, the final position is again $P = a + b$. Use this to answer two questions. If the first movement is $-4$ and the final position is 5, what is the second movement? If the movements are $1, -2, 3, -4, \ldots, -10$, in that order, where does the coin end up?</p>
 
       <p>A movement written as an integer carries two facts: how far the coin goes, called the <span class="term">magnitude</span>, and in which direction. A movement of $-4$ has magnitude 4 and goes to the left.</p>
+
+      <p>In each part of Fig. 2.2, the coin starts at 0, moves by $a$ and then by $b$, and ends at P. What can you say about the directions of $a$ and $b$, and about which of them has the larger magnitude?</p>
+
+      <div class="c-figure c-figure--full">
+                    <figure>
+                      <svg viewBox="0 0 570 104" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three number lines, each with an arrow a starting at 0 and an arrow b starting where a ends. (1) a goes right, b goes further left, and P is left of 0. (2) a goes right, b goes a shorter distance left, and P is right of 0. (3) a goes left, b comes back the same distance, and P is at 0.">
+      <text class="dg-note" x="6" y="12" text-anchor="start">(1)</text>
+      <path class="dg-line" d="M10 70 L180 70"/>
+      <path class="dg-thin" d="M20 67 L20 73"/>
+      <path class="dg-thin" d="M35 67 L35 73"/>
+      <path class="dg-thin" d="M50 67 L50 73"/>
+      <path class="dg-thin" d="M65 67 L65 73"/>
+      <path class="dg-thin" d="M80 67 L80 73"/>
+      <path class="dg-thin" d="M95 67 L95 73"/>
+      <path class="dg-thin" d="M110 67 L110 73"/>
+      <path class="dg-thin" d="M125 67 L125 73"/>
+      <path class="dg-thin" d="M140 67 L140 73"/>
+      <path class="dg-thin" d="M155 67 L155 73"/>
+      <path class="dg-thin" d="M170 67 L170 73"/>
+      <text class="dg-label" x="95" y="85" text-anchor="middle">0</text>
+      <circle class="dg-fill-b" cx="65" cy="70" r="3"/>
+      <text class="dg-label" x="65" y="96" text-anchor="middle">P</text>
+      <path class="dg-move" d="M95 66 Q117.5 44 140 66" marker-end="url(#dg-arrow)"/>
+      <text class="dg-label" x="117.5" y="52" text-anchor="middle">a</text>
+      <path class="dg-move" d="M140 66 Q102.5 10 65 66" marker-end="url(#dg-arrow)"/>
+      <text class="dg-label" x="102.5" y="34" text-anchor="middle">b</text>
+      <text class="dg-note" x="196" y="12" text-anchor="start">(2)</text>
+      <path class="dg-line" d="M200 70 L370 70"/>
+      <path class="dg-thin" d="M210 67 L210 73"/>
+      <path class="dg-thin" d="M225 67 L225 73"/>
+      <path class="dg-thin" d="M240 67 L240 73"/>
+      <path class="dg-thin" d="M255 67 L255 73"/>
+      <path class="dg-thin" d="M270 67 L270 73"/>
+      <path class="dg-thin" d="M285 67 L285 73"/>
+      <path class="dg-thin" d="M300 67 L300 73"/>
+      <path class="dg-thin" d="M315 67 L315 73"/>
+      <path class="dg-thin" d="M330 67 L330 73"/>
+      <path class="dg-thin" d="M345 67 L345 73"/>
+      <path class="dg-thin" d="M360 67 L360 73"/>
+      <text class="dg-label" x="285" y="85" text-anchor="middle">0</text>
+      <circle class="dg-fill-b" cx="315" cy="70" r="3"/>
+      <text class="dg-label" x="315" y="96" text-anchor="middle">P</text>
+      <path class="dg-move" d="M285 66 Q322.5 44 360 66" marker-end="url(#dg-arrow)"/>
+      <text class="dg-label" x="322.5" y="52" text-anchor="middle">a</text>
+      <path class="dg-move" d="M360 66 Q337.5 10 315 66" marker-end="url(#dg-arrow)"/>
+      <text class="dg-label" x="337.5" y="34" text-anchor="middle">b</text>
+      <text class="dg-note" x="386" y="12" text-anchor="start">(3)</text>
+      <path class="dg-line" d="M390 70 L560 70"/>
+      <path class="dg-thin" d="M400 67 L400 73"/>
+      <path class="dg-thin" d="M415 67 L415 73"/>
+      <path class="dg-thin" d="M430 67 L430 73"/>
+      <path class="dg-thin" d="M445 67 L445 73"/>
+      <path class="dg-thin" d="M460 67 L460 73"/>
+      <path class="dg-thin" d="M475 67 L475 73"/>
+      <path class="dg-thin" d="M490 67 L490 73"/>
+      <path class="dg-thin" d="M505 67 L505 73"/>
+      <path class="dg-thin" d="M520 67 L520 73"/>
+      <path class="dg-thin" d="M535 67 L535 73"/>
+      <path class="dg-thin" d="M550 67 L550 73"/>
+      <text class="dg-label" x="475" y="85" text-anchor="middle">0</text>
+      <circle class="dg-fill-b" cx="475" cy="70" r="3"/>
+      <text class="dg-label" x="475" y="96" text-anchor="middle">P</text>
+      <path class="dg-move" d="M475 66 Q445 44 415 66" marker-end="url(#dg-arrow)"/>
+      <text class="dg-label" x="445" y="52" text-anchor="middle">a</text>
+      <path class="dg-move" d="M415 66 Q445 10 475 66" marker-end="url(#dg-arrow)"/>
+      <text class="dg-label" x="445" y="34" text-anchor="middle">b</text>
+      </svg>
+                      <figcaption><span class="fignum">Fig. 2.2</span> Two movements, $a$ and then $b$, starting at 0.</figcaption>
+                    </figure>
+                  </div>
 
     </div>
   </div>

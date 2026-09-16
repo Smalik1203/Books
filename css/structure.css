@@ -269,7 +269,23 @@
   margin-bottom: var(--space-hair);
 }
 .c-case p { margin: 0 0 var(--space-hair); }
-.c-case table { margin: var(--space-hair) auto 0; }
+.c-case table { margin: var(--space-hair) 0 0; }
+
+/* A case that opens a question sits on the question's first line:
+   no rule above it, so the number and the label share a baseline. */
+.c-questions > li > .c-case:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* The parts under a case are sentences, not fractions: body leading
+   and a ragged edge, not the open leading options need. */
+.c-case + .c-parts {
+  line-height: var(--lh-body);
+  text-align: left;
+  hyphens: none;
+}
 
 
 /* ---- A form inside the end-of-chapter exercises ------------

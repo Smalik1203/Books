@@ -2,73 +2,153 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Find the HCF of each pair of multiples: (a) $18 \times 10$ and $18 \times 15$, (b) $10 \times 38$ and $10 \times 21$, (c) $5 \times 13$ and $5 \times 20$, (d) $12 \times 16$ and $12 \times 20$. In which of them is the HCF equal to the common multiplier, as in (b), where it is 10? Try more examples to find out when this happens.</p>
-
-      <h3>A quicker way to find the HCF and the LCM</h3>
-
-      <p>Fig. 3.5 shows a procedure for 84 and 180 together. Can you explain it? It is like the division method, but at each step both numbers are divided by a prime that is a factor of both, and the two quotients are written on the next line. We stop when the two numbers have no common prime factor. How can we use it to find the HCF of 84 and 180? (Hint: it shows that $84 = 2 \times 2 \times 3 \times 7$ and $180 = 2 \times 2 \times 3 \times 15$.)</p>
-
-      <div class="c-figure c-figure--sm">
-              <figure>
-                <svg viewBox="0 0 190 84" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ladder for 84 and 180 together: divide both by 2 to get 42 and 90, by 2 again to get 21 and 45, and by 3 to get 7 and 15, which have no common factor.">
-      <text class="dg-tick" x="60" y="19" text-anchor="end">2</text>
-      <text class="dg-tick" x="70" y="19" text-anchor="start">84, 180</text>
-      <path class="dg-thin" d="M65 6 V24 H145"/>
-      <text class="dg-tick" x="60" y="37" text-anchor="end">2</text>
-      <text class="dg-tick" x="70" y="37" text-anchor="start">42, 90</text>
-      <path class="dg-thin" d="M65 24 V42 H145"/>
-      <text class="dg-tick" x="60" y="55" text-anchor="end">3</text>
-      <text class="dg-tick" x="70" y="55" text-anchor="start">21, 45</text>
-      <path class="dg-thin" d="M65 42 V60 H145"/>
-      <text class="dg-tick" x="70" y="73" text-anchor="start">7, 15</text>
-      </svg>
-                <figcaption><span class="fignum">Fig. 3.5</span> Dividing 84 and 180 together.</figcaption>
-              </figure>
-            </div>
-
-      <p>The divisors on the left make up the largest common part, so the HCF of 84 and 180 is $2 \times 2 \times 3 = 12$. Fig. 3.6 shows two more pairs.</p>
-
       <div class="c-figure c-figure--xl">
               <figure>
-                <svg viewBox="0 0 390 104" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two ladders. 300 and 150 are divided by 2, 5, 5 and 3 in turn, leaving 2 and 1. 630 and 770 are divided by 2, 5 and 7 in turn, leaving 9 and 11.">
-      <text class="dg-note" x="20" y="12" text-anchor="start">(i)</text>
-      <text class="dg-tick" x="70" y="21" text-anchor="end">2</text>
-      <text class="dg-tick" x="80" y="21" text-anchor="start">300, 150</text>
-      <path class="dg-thin" d="M75 8 V26 H165"/>
-      <text class="dg-tick" x="70" y="39" text-anchor="end">5</text>
-      <text class="dg-tick" x="80" y="39" text-anchor="start">150, 75</text>
-      <path class="dg-thin" d="M75 26 V44 H165"/>
-      <text class="dg-tick" x="70" y="57" text-anchor="end">5</text>
-      <text class="dg-tick" x="80" y="57" text-anchor="start">30, 15</text>
-      <path class="dg-thin" d="M75 44 V62 H165"/>
-      <text class="dg-tick" x="70" y="75" text-anchor="end">3</text>
-      <text class="dg-tick" x="80" y="75" text-anchor="start">6, 3</text>
-      <path class="dg-thin" d="M75 62 V80 H165"/>
-      <text class="dg-tick" x="80" y="93" text-anchor="start">2, 1</text>
-      <text class="dg-note" x="210" y="12" text-anchor="start">(ii)</text>
-      <text class="dg-tick" x="260" y="21" text-anchor="end">2</text>
-      <text class="dg-tick" x="270" y="21" text-anchor="start">630, 770</text>
-      <path class="dg-thin" d="M265 8 V26 H355"/>
-      <text class="dg-tick" x="260" y="39" text-anchor="end">5</text>
-      <text class="dg-tick" x="270" y="39" text-anchor="start">315, 385</text>
-      <path class="dg-thin" d="M265 26 V44 H355"/>
-      <text class="dg-tick" x="260" y="57" text-anchor="end">7</text>
-      <text class="dg-tick" x="270" y="57" text-anchor="start">63, 77</text>
-      <path class="dg-thin" d="M265 44 V62 H355"/>
-      <text class="dg-tick" x="270" y="75" text-anchor="start">9, 11</text>
+                <svg viewBox="0 0 390 84" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guna divides 300 and 150 by 50 to get 6 and 3, then by 3 to get 2 and 1. Anshu divides 630 and 770 by 10 to get 63 and 77, then by 7 to get 9 and 11.">
+      <text class="dg-note" x="20" y="12" text-anchor="start">Guna</text>
+      <text class="dg-tick" x="80" y="21" text-anchor="end">50</text>
+      <text class="dg-tick" x="90" y="21" text-anchor="start">300, 150</text>
+      <path class="dg-thin" d="M85 8 V26 H175"/>
+      <text class="dg-tick" x="80" y="39" text-anchor="end">3</text>
+      <text class="dg-tick" x="90" y="39" text-anchor="start">6, 3</text>
+      <path class="dg-thin" d="M85 26 V44 H175"/>
+      <text class="dg-tick" x="90" y="57" text-anchor="start">2, 1</text>
+      <text class="dg-note" x="210" y="12" text-anchor="start">Anshu</text>
+      <text class="dg-tick" x="280" y="21" text-anchor="end">10</text>
+      <text class="dg-tick" x="290" y="21" text-anchor="start">630, 770</text>
+      <path class="dg-thin" d="M285 8 V26 H375"/>
+      <text class="dg-tick" x="280" y="39" text-anchor="end">7</text>
+      <text class="dg-tick" x="290" y="39" text-anchor="start">63, 77</text>
+      <path class="dg-thin" d="M285 26 V44 H375"/>
+      <text class="dg-tick" x="290" y="57" text-anchor="start">9, 11</text>
       </svg>
-                <figcaption><span class="fignum">Fig. 3.6</span> (i) 300 and 150. (ii) 630 and 770.</figcaption>
+                <figcaption><span class="fignum">Fig. 3.7</span> Dividing by larger common factors.</figcaption>
               </figure>
             </div>
 
-      <div class="work work--list">
-        <p>(i) HCF $= 2 \times 5 \times 5 \times 3 = 150$ &nbsp;&nbsp; LCM $= 2 \times 5 \times 5 \times 3 \times 2 \times 1 = 300$</p>
-        <p>(ii) HCF $= 2 \times 5 \times 7 = 70$ &nbsp;&nbsp; LCM $= 2 \times 5 \times 7 \times 9 \times 11 = 6930$</p>
+      <h3>The HCF, the LCM and the product</h3>
+
+      <p>Which is greater, the LCM of two numbers or their product? Try examples, and then explain why the LCM is never greater than the product. (Hint: is the product a common multiple of the two numbers?)</p>
+
+      <p>There is a neat link between the product of two numbers and their HCF and LCM. Take 105 and 95. Since $105 = 3 \times 5 \times 7$ and $95 = 5 \times 19$, the LCM is $3 \times 5 \times 7 \times 19$. The product is $105 \times 95 = 3 \times 5 \times 5 \times 7 \times 19$. So the LCM is a factor of the product, and $105 \times 95 = \text{LCM} \times 5$.</p>
+
+      <p>Check whether the LCM is a factor of the product for (a) 45 and 105, (b) 275 and 352, (c) 222 and 370. When it is, find what the LCM must be multiplied by to give the product. Do you see a pattern? In each case the multiplier is the HCF.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">HCF, LCM and product</div>
+        <p>For any two numbers, $\text{HCF} \times \text{LCM}$ is equal to the product of the two numbers.</p>
       </div>
 
-      <p>The same procedure gives the LCM as well: multiply all the divisors on the left by the two numbers left at the bottom. Why is this the LCM? (Hint: does this product contain the prime factorisations of both 300 and 150? Is it the smallest such number?)</p>
+      <p>Why does this happen? (Hint: some primes are common to the two factorisations and the rest are in only one of them. See how the two kinds of primes are shared between the HCF and the LCM, and how they appear in the product.) Does the same property hold for three numbers?</p>
 
-      <p>Guna says, “I have a faster way. For 300 and 150, I first divide both by 50, then by 3. The HCF is $50 \times 3$ and the LCM is $50 \times 3 \times 2 \times 1$.” Anshu tries the same idea: “For 630 and 770, I divide by 10 and then by 7. The HCF is $10 \times 7 = 70$ and the LCM is $10 \times 7 \times 9 \times 11 = 6930$.” Can you see why this works? We do not have to divide by one prime at a time; we can divide both numbers by any common factor we notice (Fig. 3.7). Try it for (a) 90 and 150, (b) 84 and 132.</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.6</div>
+        <ol class="c-questions">
+          <li>In each row of Fig. 3.8 a group of stars repeats. The first dark stars in the two rows are one above the other. At which star do two dark stars next meet?</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--full">
+              <figure>
+                <svg viewBox="0 0 570 66" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two rows of stars. In row 1 a group of six stars repeats, and the fourth star of each group is the dark star. In row 2 a group of four stars repeats, and the fourth star of each group is the dark star. The first dark stars are one above the other.">
+      <path class="dg-fill-a-soft" d="M40 7 L37.1 14 L29.5 14.6 L35.3 19.5 L33.5 26.9 L40 23 L46.5 26.9 L44.7 19.5 L50.5 14.6 L42.9 14 Z"/>
+      <path class="dg-thin" d="M40 7 L37.1 14 L29.5 14.6 L35.3 19.5 L33.5 26.9 L40 23 L46.5 26.9 L44.7 19.5 L50.5 14.6 L42.9 14 Z"/>
+      <path class="dg-fill-c-soft" d="M40 39 L37.1 46 L29.5 46.6 L35.3 51.5 L33.5 58.9 L40 55 L46.5 58.9 L44.7 51.5 L50.5 46.6 L42.9 46 Z"/>
+      <path class="dg-thin" d="M40 39 L37.1 46 L29.5 46.6 L35.3 51.5 L33.5 58.9 L40 55 L46.5 58.9 L44.7 51.5 L50.5 46.6 L42.9 46 Z"/>
+      <path class="dg-fill-c-soft" d="M68 7 L65.1 14 L57.5 14.6 L63.3 19.5 L61.5 26.9 L68 23 L74.5 26.9 L72.7 19.5 L78.5 14.6 L70.9 14 Z"/>
+      <path class="dg-thin" d="M68 7 L65.1 14 L57.5 14.6 L63.3 19.5 L61.5 26.9 L68 23 L74.5 26.9 L72.7 19.5 L78.5 14.6 L70.9 14 Z"/>
+      <path class="dg-fill-b-soft" d="M68 39 L65.1 46 L57.5 46.6 L63.3 51.5 L61.5 58.9 L68 55 L74.5 58.9 L72.7 51.5 L78.5 46.6 L70.9 46 Z"/>
+      <path class="dg-thin" d="M68 39 L65.1 46 L57.5 46.6 L63.3 51.5 L61.5 58.9 L68 55 L74.5 58.9 L72.7 51.5 L78.5 46.6 L70.9 46 Z"/>
+      <path class="dg-fill-b-soft" d="M96 7 L93.1 14 L85.5 14.6 L91.3 19.5 L89.5 26.9 L96 23 L102.5 26.9 L100.7 19.5 L106.5 14.6 L98.9 14 Z"/>
+      <path class="dg-thin" d="M96 7 L93.1 14 L85.5 14.6 L91.3 19.5 L89.5 26.9 L96 23 L102.5 26.9 L100.7 19.5 L106.5 14.6 L98.9 14 Z"/>
+      <path class="dg-fill-a-soft" d="M96 39 L93.1 46 L85.5 46.6 L91.3 51.5 L89.5 58.9 L96 55 L102.5 58.9 L100.7 51.5 L106.5 46.6 L98.9 46 Z"/>
+      <path class="dg-thin" d="M96 39 L93.1 46 L85.5 46.6 L91.3 51.5 L89.5 58.9 L96 55 L102.5 58.9 L100.7 51.5 L106.5 46.6 L98.9 46 Z"/>
+      <path class="dg-fill-teal" d="M124 7 L121.1 14 L113.5 14.6 L119.3 19.5 L117.5 26.9 L124 23 L130.5 26.9 L128.7 19.5 L134.5 14.6 L126.9 14 Z"/>
+      <path class="dg-thin" d="M124 7 L121.1 14 L113.5 14.6 L119.3 19.5 L117.5 26.9 L124 23 L130.5 26.9 L128.7 19.5 L134.5 14.6 L126.9 14 Z"/>
+      <path class="dg-fill-teal" d="M124 39 L121.1 46 L113.5 46.6 L119.3 51.5 L117.5 58.9 L124 55 L130.5 58.9 L128.7 51.5 L134.5 46.6 L126.9 46 Z"/>
+      <path class="dg-thin" d="M124 39 L121.1 46 L113.5 46.6 L119.3 51.5 L117.5 58.9 L124 55 L130.5 58.9 L128.7 51.5 L134.5 46.6 L126.9 46 Z"/>
+      <path class="dg-fill-d" d="M152 7 L149.1 14 L141.5 14.6 L147.3 19.5 L145.5 26.9 L152 23 L158.5 26.9 L156.7 19.5 L162.5 14.6 L154.9 14 Z"/>
+      <path class="dg-thin" d="M152 7 L149.1 14 L141.5 14.6 L147.3 19.5 L145.5 26.9 L152 23 L158.5 26.9 L156.7 19.5 L162.5 14.6 L154.9 14 Z"/>
+      <path class="dg-fill-c-soft" d="M152 39 L149.1 46 L141.5 46.6 L147.3 51.5 L145.5 58.9 L152 55 L158.5 58.9 L156.7 51.5 L162.5 46.6 L154.9 46 Z"/>
+      <path class="dg-thin" d="M152 39 L149.1 46 L141.5 46.6 L147.3 51.5 L145.5 58.9 L152 55 L158.5 58.9 L156.7 51.5 L162.5 46.6 L154.9 46 Z"/>
+      <path class="dg-fill-a" d="M180 7 L177.1 14 L169.5 14.6 L175.3 19.5 L173.5 26.9 L180 23 L186.5 26.9 L184.7 19.5 L190.5 14.6 L182.9 14 Z"/>
+      <path class="dg-thin" d="M180 7 L177.1 14 L169.5 14.6 L175.3 19.5 L173.5 26.9 L180 23 L186.5 26.9 L184.7 19.5 L190.5 14.6 L182.9 14 Z"/>
+      <path class="dg-fill-b-soft" d="M180 39 L177.1 46 L169.5 46.6 L175.3 51.5 L173.5 58.9 L180 55 L186.5 58.9 L184.7 51.5 L190.5 46.6 L182.9 46 Z"/>
+      <path class="dg-thin" d="M180 39 L177.1 46 L169.5 46.6 L175.3 51.5 L173.5 58.9 L180 55 L186.5 58.9 L184.7 51.5 L190.5 46.6 L182.9 46 Z"/>
+      <path class="dg-fill-a-soft" d="M208 7 L205.1 14 L197.5 14.6 L203.3 19.5 L201.5 26.9 L208 23 L214.5 26.9 L212.7 19.5 L218.5 14.6 L210.9 14 Z"/>
+      <path class="dg-thin" d="M208 7 L205.1 14 L197.5 14.6 L203.3 19.5 L201.5 26.9 L208 23 L214.5 26.9 L212.7 19.5 L218.5 14.6 L210.9 14 Z"/>
+      <path class="dg-fill-a-soft" d="M208 39 L205.1 46 L197.5 46.6 L203.3 51.5 L201.5 58.9 L208 55 L214.5 58.9 L212.7 51.5 L218.5 46.6 L210.9 46 Z"/>
+      <path class="dg-thin" d="M208 39 L205.1 46 L197.5 46.6 L203.3 51.5 L201.5 58.9 L208 55 L214.5 58.9 L212.7 51.5 L218.5 46.6 L210.9 46 Z"/>
+      <path class="dg-fill-c-soft" d="M236 7 L233.1 14 L225.5 14.6 L231.3 19.5 L229.5 26.9 L236 23 L242.5 26.9 L240.7 19.5 L246.5 14.6 L238.9 14 Z"/>
+      <path class="dg-thin" d="M236 7 L233.1 14 L225.5 14.6 L231.3 19.5 L229.5 26.9 L236 23 L242.5 26.9 L240.7 19.5 L246.5 14.6 L238.9 14 Z"/>
+      <path class="dg-fill-teal" d="M236 39 L233.1 46 L225.5 46.6 L231.3 51.5 L229.5 58.9 L236 55 L242.5 58.9 L240.7 51.5 L246.5 46.6 L238.9 46 Z"/>
+      <path class="dg-thin" d="M236 39 L233.1 46 L225.5 46.6 L231.3 51.5 L229.5 58.9 L236 55 L242.5 58.9 L240.7 51.5 L246.5 46.6 L238.9 46 Z"/>
+      <path class="dg-fill-b-soft" d="M264 7 L261.1 14 L253.5 14.6 L259.3 19.5 L257.5 26.9 L264 23 L270.5 26.9 L268.7 19.5 L274.5 14.6 L266.9 14 Z"/>
+      <path class="dg-thin" d="M264 7 L261.1 14 L253.5 14.6 L259.3 19.5 L257.5 26.9 L264 23 L270.5 26.9 L268.7 19.5 L274.5 14.6 L266.9 14 Z"/>
+      <path class="dg-fill-c-soft" d="M264 39 L261.1 46 L253.5 46.6 L259.3 51.5 L257.5 58.9 L264 55 L270.5 58.9 L268.7 51.5 L274.5 46.6 L266.9 46 Z"/>
+      <path class="dg-thin" d="M264 39 L261.1 46 L253.5 46.6 L259.3 51.5 L257.5 58.9 L264 55 L270.5 58.9 L268.7 51.5 L274.5 46.6 L266.9 46 Z"/>
+      <path class="dg-fill-teal" d="M292 7 L289.1 14 L281.5 14.6 L287.3 19.5 L285.5 26.9 L292 23 L298.5 26.9 L296.7 19.5 L302.5 14.6 L294.9 14 Z"/>
+      <path class="dg-thin" d="M292 7 L289.1 14 L281.5 14.6 L287.3 19.5 L285.5 26.9 L292 23 L298.5 26.9 L296.7 19.5 L302.5 14.6 L294.9 14 Z"/>
+      <path class="dg-fill-b-soft" d="M292 39 L289.1 46 L281.5 46.6 L287.3 51.5 L285.5 58.9 L292 55 L298.5 58.9 L296.7 51.5 L302.5 46.6 L294.9 46 Z"/>
+      <path class="dg-thin" d="M292 39 L289.1 46 L281.5 46.6 L287.3 51.5 L285.5 58.9 L292 55 L298.5 58.9 L296.7 51.5 L302.5 46.6 L294.9 46 Z"/>
+      <path class="dg-fill-d" d="M320 7 L317.1 14 L309.5 14.6 L315.3 19.5 L313.5 26.9 L320 23 L326.5 26.9 L324.7 19.5 L330.5 14.6 L322.9 14 Z"/>
+      <path class="dg-thin" d="M320 7 L317.1 14 L309.5 14.6 L315.3 19.5 L313.5 26.9 L320 23 L326.5 26.9 L324.7 19.5 L330.5 14.6 L322.9 14 Z"/>
+      <path class="dg-fill-a-soft" d="M320 39 L317.1 46 L309.5 46.6 L315.3 51.5 L313.5 58.9 L320 55 L326.5 58.9 L324.7 51.5 L330.5 46.6 L322.9 46 Z"/>
+      <path class="dg-thin" d="M320 39 L317.1 46 L309.5 46.6 L315.3 51.5 L313.5 58.9 L320 55 L326.5 58.9 L324.7 51.5 L330.5 46.6 L322.9 46 Z"/>
+      <path class="dg-fill-a" d="M348 7 L345.1 14 L337.5 14.6 L343.3 19.5 L341.5 26.9 L348 23 L354.5 26.9 L352.7 19.5 L358.5 14.6 L350.9 14 Z"/>
+      <path class="dg-thin" d="M348 7 L345.1 14 L337.5 14.6 L343.3 19.5 L341.5 26.9 L348 23 L354.5 26.9 L352.7 19.5 L358.5 14.6 L350.9 14 Z"/>
+      <path class="dg-fill-teal" d="M348 39 L345.1 46 L337.5 46.6 L343.3 51.5 L341.5 58.9 L348 55 L354.5 58.9 L352.7 51.5 L358.5 46.6 L350.9 46 Z"/>
+      <path class="dg-thin" d="M348 39 L345.1 46 L337.5 46.6 L343.3 51.5 L341.5 58.9 L348 55 L354.5 58.9 L352.7 51.5 L358.5 46.6 L350.9 46 Z"/>
+      <path class="dg-fill-a-soft" d="M376 7 L373.1 14 L365.5 14.6 L371.3 19.5 L369.5 26.9 L376 23 L382.5 26.9 L380.7 19.5 L386.5 14.6 L378.9 14 Z"/>
+      <path class="dg-thin" d="M376 7 L373.1 14 L365.5 14.6 L371.3 19.5 L369.5 26.9 L376 23 L382.5 26.9 L380.7 19.5 L386.5 14.6 L378.9 14 Z"/>
+      <path class="dg-fill-c-soft" d="M376 39 L373.1 46 L365.5 46.6 L371.3 51.5 L369.5 58.9 L376 55 L382.5 58.9 L380.7 51.5 L386.5 46.6 L378.9 46 Z"/>
+      <path class="dg-thin" d="M376 39 L373.1 46 L365.5 46.6 L371.3 51.5 L369.5 58.9 L376 55 L382.5 58.9 L380.7 51.5 L386.5 46.6 L378.9 46 Z"/>
+      <path class="dg-fill-c-soft" d="M404 7 L401.1 14 L393.5 14.6 L399.3 19.5 L397.5 26.9 L404 23 L410.5 26.9 L408.7 19.5 L414.5 14.6 L406.9 14 Z"/>
+      <path class="dg-thin" d="M404 7 L401.1 14 L393.5 14.6 L399.3 19.5 L397.5 26.9 L404 23 L410.5 26.9 L408.7 19.5 L414.5 14.6 L406.9 14 Z"/>
+      <path class="dg-fill-b-soft" d="M404 39 L401.1 46 L393.5 46.6 L399.3 51.5 L397.5 58.9 L404 55 L410.5 58.9 L408.7 51.5 L414.5 46.6 L406.9 46 Z"/>
+      <path class="dg-thin" d="M404 39 L401.1 46 L393.5 46.6 L399.3 51.5 L397.5 58.9 L404 55 L410.5 58.9 L408.7 51.5 L414.5 46.6 L406.9 46 Z"/>
+      <path class="dg-fill-b-soft" d="M432 7 L429.1 14 L421.5 14.6 L427.3 19.5 L425.5 26.9 L432 23 L438.5 26.9 L436.7 19.5 L442.5 14.6 L434.9 14 Z"/>
+      <path class="dg-thin" d="M432 7 L429.1 14 L421.5 14.6 L427.3 19.5 L425.5 26.9 L432 23 L438.5 26.9 L436.7 19.5 L442.5 14.6 L434.9 14 Z"/>
+      <path class="dg-fill-a-soft" d="M432 39 L429.1 46 L421.5 46.6 L427.3 51.5 L425.5 58.9 L432 55 L438.5 58.9 L436.7 51.5 L442.5 46.6 L434.9 46 Z"/>
+      <path class="dg-thin" d="M432 39 L429.1 46 L421.5 46.6 L427.3 51.5 L425.5 58.9 L432 55 L438.5 58.9 L436.7 51.5 L442.5 46.6 L434.9 46 Z"/>
+      <path class="dg-fill-teal" d="M460 7 L457.1 14 L449.5 14.6 L455.3 19.5 L453.5 26.9 L460 23 L466.5 26.9 L464.7 19.5 L470.5 14.6 L462.9 14 Z"/>
+      <path class="dg-thin" d="M460 7 L457.1 14 L449.5 14.6 L455.3 19.5 L453.5 26.9 L460 23 L466.5 26.9 L464.7 19.5 L470.5 14.6 L462.9 14 Z"/>
+      <path class="dg-fill-teal" d="M460 39 L457.1 46 L449.5 46.6 L455.3 51.5 L453.5 58.9 L460 55 L466.5 58.9 L464.7 51.5 L470.5 46.6 L462.9 46 Z"/>
+      <path class="dg-thin" d="M460 39 L457.1 46 L449.5 46.6 L455.3 51.5 L453.5 58.9 L460 55 L466.5 58.9 L464.7 51.5 L470.5 46.6 L462.9 46 Z"/>
+      <path class="dg-fill-d" d="M488 7 L485.1 14 L477.5 14.6 L483.3 19.5 L481.5 26.9 L488 23 L494.5 26.9 L492.7 19.5 L498.5 14.6 L490.9 14 Z"/>
+      <path class="dg-thin" d="M488 7 L485.1 14 L477.5 14.6 L483.3 19.5 L481.5 26.9 L488 23 L494.5 26.9 L492.7 19.5 L498.5 14.6 L490.9 14 Z"/>
+      <path class="dg-fill-c-soft" d="M488 39 L485.1 46 L477.5 46.6 L483.3 51.5 L481.5 58.9 L488 55 L494.5 58.9 L492.7 51.5 L498.5 46.6 L490.9 46 Z"/>
+      <path class="dg-thin" d="M488 39 L485.1 46 L477.5 46.6 L483.3 51.5 L481.5 58.9 L488 55 L494.5 58.9 L492.7 51.5 L498.5 46.6 L490.9 46 Z"/>
+      <path class="dg-fill-a" d="M516 7 L513.1 14 L505.5 14.6 L511.3 19.5 L509.5 26.9 L516 23 L522.5 26.9 L520.7 19.5 L526.5 14.6 L518.9 14 Z"/>
+      <path class="dg-thin" d="M516 7 L513.1 14 L505.5 14.6 L511.3 19.5 L509.5 26.9 L516 23 L522.5 26.9 L520.7 19.5 L526.5 14.6 L518.9 14 Z"/>
+      <path class="dg-fill-b-soft" d="M516 39 L513.1 46 L505.5 46.6 L511.3 51.5 L509.5 58.9 L516 55 L522.5 58.9 L520.7 51.5 L526.5 46.6 L518.9 46 Z"/>
+      <path class="dg-thin" d="M516 39 L513.1 46 L505.5 46.6 L511.3 51.5 L509.5 58.9 L516 55 L522.5 58.9 L520.7 51.5 L526.5 46.6 L518.9 46 Z"/>
+      <text class="dg-note" x="548" y="22" text-anchor="middle">…</text>
+      <text class="dg-note" x="548" y="54" text-anchor="middle">…</text>
+      <text class="dg-note" x="26" y="22" text-anchor="end">1</text>
+      <text class="dg-note" x="26" y="54" text-anchor="end">2</text>
+      </svg>
+                <figcaption><span class="fignum">Fig. 3.8</span> For Question 1.</figcaption>
+              </figure>
+            </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>(a) Is $5 \times 7 \times 11 \times 11$ a multiple of $5 \times 7 \times 7 \times 11 \times 2$? (b) Is it a factor of $5 \times 7 \times 7 \times 11 \times 2$?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Find the HCF and the LCM, and give your answers as prime factorisations: (a) $3 \times 3 \times 5 \times 7 \times 7$ and $12 \times 7 \times 11$, (b) 45 and 36.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Find two numbers whose HCF is 1 and whose LCM is 66.</li>
+        </ol>
+      </div>
 
     </div>
   </div>

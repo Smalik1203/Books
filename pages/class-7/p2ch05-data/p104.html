@@ -2,55 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>Section A has 20 students with a mean mark of 60. Section B has 30 students with a mean mark of 70. The mean mark of all 50 students is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>65</li><li>64</li><li>66</li><li>130</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>total marks in Section A $= 20 \times 60 = 1200$</p>
-          <p>total marks in Section B $= 30 \times 70 = 2100$</p>
-          <p>mean of all 50 $= (1200 + 2100) \div 50 = 3300 \div 50 = 66$</p>
-        </div>
-        <p>The answer is (c). Option (a) takes the average of the two means, which would be right only if the sections were the same size; Section B is larger, so the mean is pulled towards 70. Option (b) gives each section the other’s size, and (d) adds the two means.</p>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets: one idea at a time, two ideas together, and the whole chapter.</div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>The median of 2, 3, 3, 5, 7, 10 is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>3</li><li>5</li><li>4</li><li>8</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>6 values in order; the middle two are the 3rd and 4th, 3 and 5</span>
+              <span class="chip">even number of values</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Median $= (3 + 5) \div 2 = 4$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="c-stage__ask">Choose the correct option.</div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One idea at a time</div>
-        <ol class="c-questions">
-          <li>The mean of 4, 8, 6, 10 and 7 is<ol class="c-parts c-parts--alpha c-parts--4"><li>6</li><li>8</li><li>7</li><li>35</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Eight students scored 34, 41, 28, 45, 37, 30, 49 and 36 marks out of 50 in a test. Find the median and the range of the marks.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>In order: 28, 30, 34, 36, 37, 41, 45, 49</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Median $= (36 + 37) \div 2 = 36.5$</span>
+              <span class="chip">4th and 5th values</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Range $= 49 - 28 = 21$</span>
+              <span class="chip">largest minus smallest</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>median 36.5 marks, range 21 marks</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The median of 9, 3, 7, 5 and 16 is<ol class="c-parts c-parts--alpha c-parts--4"><li>7</li><li>8</li><li>5</li><li>16</li></ol></li>
-        </ol>
-      </div>
+      <h3>Type 4 · Outliers: the mean or the median?</h3>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The median of 12, 4, 10 and 6 is<ol class="c-parts c-parts--alpha c-parts--4"><li>10</li><li>6</li><li>8</li><li>16</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Which of these is a statistical question?<ol class="c-parts c-parts--alpha c-parts--1"><li>How old is my sister?</li><li>What is $12 \times 15$?</li><li>What is the capital of India?</li><li>How many hours do the students in my class sleep each night?</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>The scores of six players are 12, 15, 14, 13, 16 and 60. Which statement is true?</p>
+          <ol class="c-parts c-parts--alpha c-parts--1"><li>The mean is less than the median.</li><li>The mean and the median are equal.</li><li>Leaving out 60 changes the median more than the mean.</li><li>The mean is greater than the median.</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Mean $= 130 \div 6 \approx 21.7$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>In order: 12, 13, 14, 15, 16, 60; median $= (14 + 15) \div 2 = 14.5$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$21.7 \gt 14.5$</span>
+              <span class="chip">60 pulls the mean up</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>Without 60: mean $= 70 \div 5 = 14$, median $= 14$</span>
+              <span class="chip">the mean moves more</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(d)</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

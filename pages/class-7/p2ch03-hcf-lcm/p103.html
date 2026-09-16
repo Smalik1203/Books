@@ -2,41 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>The product of two numbers is 1080 and their HCF is 6. Their LCM is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>6480</li><li>180</li><li>90</li><li>1074</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>$\text{HCF} \times \text{LCM}$ is the product, so the LCM is $1080 \div 6 = 180$. The answer is (b). Option (a) multiplies instead of dividing, and option (d) subtracts. Check with 30 and 36: their HCF is 6, their LCM is 180, and $30 \times 36 = 1080$.</p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>Three tanks hold 45 L, 60 L and 75 L. What is the largest jug that can measure each of them exactly, using whole jugfuls?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>5 L</li><li>3 L</li><li>900 L</li><li>15 L</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>$45 = 3 \times 3 \times 5$, $60 = 2 \times 2 \times 3 \times 5$, $75 = 3 \times 5 \times 5$</p>
-          <p>$\text{HCF} = 3 \times 5 = 15$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>The HCF of $2 \times 2 \times 3 \times 3 \times 3 \times 5$ and $2 \times 2 \times 2 \times 3 \times 7$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>12</li><li>7560</li><li>6</li><li>24</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Common primes: 2 and 3</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>2s: two and three, so take two</span>
+              <span class="chip">fewest times</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>3s: three and one, so take one</span>
+              <span class="chip">fewest times</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\text{HCF} = 2 \times 2 \times 3 = 12$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
         </div>
-        <p>A 15 L jug fills the tanks in 3, 4 and 5 jugfuls. The answer is (d). Options (a) and (b) are common factors but not the highest, and option (c) is the LCM, a jug larger than every tank.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>Which of these cannot be the HCF and the LCM of two numbers?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>6 and 36</li><li>5 and 40</li><li>4 and 30</li><li>1 and 35</li></ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Neha has 60 red beads and 84 blue beads. She makes as many strings of beads as she can, all exactly alike, using every bead. How many strings does she make, and how many beads of each colour are on each string?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$60 = 2 \times 2 \times 3 \times 5$, $84 = 2 \times 2 \times 3 \times 7$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\text{HCF} = 2 \times 2 \times 3 = 12$</span>
+              <span class="chip">most strings</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$60 \div 12 = 5$, $84 \div 12 = 7$</span>
+              <span class="chip">beads on a string</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>12 strings, each with 5 red beads and 7 blue beads</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The HCF must be a factor of the LCM. 6 divides 36, 5 divides 40 and 1 divides 35, but 4 does not divide 30. The answer is (c). The others are possible: for example 6 and 36, 5 and 40, and 5 and 7. So checking whether the HCF divides the LCM is enough.</p>
+      <h3>Type 3 · Finding the LCM</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>The LCM of two numbers is 24, and one of the numbers is 8. What could the other number be? Find every answer.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$24 = 2 \times 2 \times 2 \times 3$, $8 = 2 \times 2 \times 2$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24</span>
+              <span class="chip">24 is its multiple</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Keep those with a 3: 3, 6, 12, 24</span>
+              <span class="chip">8 has no 3</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>3, 6, 12 or 24</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

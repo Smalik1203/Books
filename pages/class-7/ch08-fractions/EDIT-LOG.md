@@ -1,5 +1,181 @@
 # Class 7 · Mathematics I · Chapter 8 — Working with Fractions
 
+## Beyond the Book, rebuilt 15 September 2026
+
+Only the Beyond pages changed. The chapter body (`p001`–`p013`) and
+`chapter.json` were not touched.
+
+The §5 body rebuild made earlier the same day was **reverted at the user's
+request**. Its pages, `ANSWERS.md` and log are kept as a backup in the session
+scratchpad (`scratchpad/rebuilt/pages/class-7/ch08-fractions/`), and were used
+below only as a source. The Beyond pages as they stood before this rebuild
+(`p101`–`p108`) are backed up in `scratchpad/beyond-ch08-fractions/old-beyond/`.
+
+**Pages.** 8 → 9 (`p101`–`p109`). Every page carries `data-bridge`, and none
+has `--head` or `--tail`. Fill: 88 · 93 · 100 · 93 · 93 · 89 · 94 · 93 · 89.
+The last page is 89%, so no Beyond page is under 88%.
+
+**The four stages**, in the shape of Chapter 1:
+
+1. **Using What You Know** — the chapter's existing tried-and-explained stage:
+   four `.c-try` questions, word for word. Only its `.c-stage__for` line was
+   deleted, which was checked by a whitespace-insensitive comparison with the
+   backup.
+2. **Solved Examples** — 12 examples, stepped (Solution → Step → Answer),
+   under six `h3` types in the chapter's order:
+   - Type 1 · Multiplying by a fraction (2)
+   - Type 2 · Cancelling, and mixed fractions (3)
+   - Type 3 · Is the product larger or smaller? (1)
+   - Type 4 · Dividing fractions (2)
+   - Type 5 · Is the quotient larger or smaller? (2)
+   - Type 6 · Multiply or divide? (2)
+3. **Practice** — one band, then one run of 36 questions:
+   - choose the correct option 15
+   - assertion and reason 5
+   - very short answer 5
+   - short answer 7
+   - long answer 2
+   - case-based 2
+4. **Answers** — the letter key in two rows (1–15, 16–20), one `.work--trace`
+   block per answer for 21–36, and five rows of *Why the other options are
+   wrong* (4, 6, 11, 14, 19).
+
+These are gone:
+- the old stage heads *Behind Each Answer*, *Problem Sets* and *Answers &
+  Takeaways*
+- the Set A/B/C bands
+- the paragraph after Problem 5
+- the closing takeaways paragraph
+
+### What came from where
+
+**Examples.**
+- From the reverted rebuild's worked examples:
+  - its Example 3 (Meena, $\frac34 \times 8$) → Ex 1
+  - 6 (Tara and Ravi) → Ex 2
+  - 7 ($\frac{9}{16} \times \frac{8}{15}$) → Ex 4
+  - 8 (the floor mat) → Ex 5
+  - 9 ($\frac78 \times \frac53$) → Ex 6
+  - 10 ($\frac49 \div \frac23$) → Ex 7
+  - 12 ($\frac25 \div 4$) → Ex 9
+- The old *Behind Each Answer* problems, kept with their options and turned
+  into steps:
+  - Problem 1 ($\frac35 \times \frac{10}{9}$) → Ex 3
+  - 2 ($\frac34 \div \frac18$) → Ex 8
+  - 4 (which is greatest) → Ex 10
+  - 3 (the ribbon) → Ex 11
+  - 5 (girls who play football) → Ex 12
+
+**Practice.**
+- Reverted rebuild's end-of-chapter questions:
+  - End 1 → Q1; 2 → Q2; 8 → Q3; 3 → Q4; 4 → Q5
+  - 7 → Q6 (options reordered, so the answer is (d))
+  - 9 → Q7; 6 → Q9
+  - 11 → Q17; 13 → Q18; 12 → Q19
+  - 14 → Q21; 15 → Q22; 18 → Q23; 17 → Q24; 19 → Q25
+  - 20 → Q26; 21 → Q27; 24 → Q28; 22 → Q29; 25 → Q30; 26 → Q31; 23 → Q32
+  - 27 → Q33; 28 → Q34
+  - 31 → Q35 (the *Case study* label and the *Table 8.2* caption were removed)
+  - 32 → Q36 (label removed)
+- Old Problem Sets:
+  - A10 → Q8 (options reordered, so the answer is (a))
+  - B7 → Q10 ("along the same road" cut from the stem)
+  - B2 → Q11; B5 → Q12
+  - C1 → Q13; C2 → Q14; C5 → Q15
+- New, so that the assertion–reason answers spread across the letters:
+  - Q16: $3 \times \frac25 = \frac65$, with a false reason (c)
+  - Q20: $\frac23 \div \frac16 = 4$ (a)
+
+### Excluded
+
+**As duplicates of the chapter body.**
+- Reverted rebuild's Example 1 (farmer), 2 (internet), 13 (Leena), 14 (bricks)
+  and 15 (fountains) are the body's Examples 1–5.
+- Reverted rebuild's Example 5 (vegetable bed, $\frac45 \times \frac23$)
+  repeats Exercise Set 8.2 Q2(a).
+- End 30 (queens) is the body's closing puzzle.
+- Old B8 ($\left(1 - \frac12\right)\left(1 - \frac13\right)\left(1 - \frac14\right)$)
+  repeats Exercise Set 8.4 Q12.
+- Old C3 (two taps filling a tank) is the method of body Example 5.
+- Old C7 (square tiles on a floor) is body Example 4.
+- Old A2 ($\frac13 \times \frac14$) repeats Exercise Set 8.2 Q1(b).
+- Old C6 ($p$ between 0 and 1, $q$ greater than 1) is the "one of each" row of
+  Table 8.1.
+
+**As near-duplicates of Stage 1.**
+- End 16 (what number times $\frac49$ gives 1), against the fourth question.
+- Old C4 ($\frac12$ of $\frac23$ of $\frac34$ of $\frac45$ of 100), against
+  the first.
+- Old A8 (a fraction times its reciprocal), which restates the body's key idea.
+
+**As near-duplicates inside the run, or off the chapter.**
+- Old A1, A3, A4, A5, A6, A7 and A9, which are Q1, Q4, Q28, Q2, Q7, Q3 and Q6
+  with other numbers.
+- Old B1 (same form as Q19), B3 (same form as Q18), B4 (same form as Q7) and
+  B6 (same pattern as Q18).
+- End 5 (which is improper) and End 10 ($\frac{18}{24}$ in lowest form):
+  Class 6 material.
+- End 29 (the product of $1 + \frac1n$ brackets): modelled directly on
+  Exercise Set 8.4 Q12.
+- Reverted rebuild's Example 11 (the tailor): the same question as the ribbon
+  in Ex 11.
+- Reverted rebuild's Example 4 ($\frac37 \times \frac25$): written in, then
+  dropped at fitting as a bare use of the rule the body already shows several
+  times.
+
+**Kept, noted.**
+- Ex 9 ($\frac25 \div 4$, greater or less?) has the form of Stage 1's second
+  question, but with a divisor greater than 1 where Stage 1's is less than 1.
+- Q35 (kheer) scales a recipe, as Stage 1's third question does, with its own
+  table and four different parts.
+
+### Verification
+
+Every number in Stage 1, the 12 examples, the 36 questions and the answers
+(options and distractors included) is checked in exact fraction arithmetic by
+`scratchpad/beyond-ch08-fractions/verify.mjs`: **141 checks, 0 failed**.
+- Each multiple-choice question is checked to have exactly one correct option.
+  Q2 is also checked for its "lowest form" condition, since option (a) $\frac{10}{40}$
+  equals the answer.
+- Q15 is checked for several numbers.
+- Q16's reason is checked to be false.
+- Letters for Q1–15: a 4, b 4, c 4, d 3. Assertion–reason: c a b d a.
+- No reused item was wrong. One slip was in the script, not the book: a helper
+  ignored its denominator, and was fixed before any answer was printed.
+
+### Fitting
+
+`refit.mjs … bridge` seven times. The block heights were measured with
+`scratchpad/beyond-ch08-fractions/measure.mjs`. Changes, none of them padding:
+- Example $\frac37 \times \frac25$ was dropped, and Types 1 and 2 were merged
+  as *Multiplying by a fraction*. This closed a 79% page.
+- Ex 6 lost its check row ("Then check." left the stem).
+- Ex 5 was set as one conversion row and "$= 3$".
+- Ex 4's first step became the reason (the common factors), with the whole
+  working in step 2.
+- One-line reason rows and Answer rows use `\frac`, not `\dfrac`. A `\dfrac`
+  row is about 2 mm taller.
+- Answer rows 33–36 were cut to their results, and the *Why* rows were
+  shortened. This took a last page of three rows (8%) back onto `p109`.
+
+Final build, and the other tools:
+- Build: all pages fit; no Beyond page is under 88%; the worst run into the
+  bottom margin is 1.3 mm.
+- `orphans`: 0 stranded openers.
+- `fit-options`: every option row fits.
+- `gaps`: its three short pages (folios 2, 10, 12) are body pages.
+- `check-labels`: no collisions.
+
+The stale `build/class-7/_refit-ch08-fractions.html` was deleted.
+
+### Flagged
+
+| location | what | needs |
+|---|---|---|
+| this log, *Every printed number re-derived* | the line "Beyond the Book: Stage 1 — … Set C b c a b c d c" gives the old Stage 2 and Set A/B/C key | superseded by this section; delete when the log is next tidied |
+| body, folios 2, 10, 12 | 80%, 80%, 78% full (`gaps`) | a body fix; the body was out of scope today |
+| Stage 4 | no *three things to keep* paragraph, following the approved Chapter 1 shape | nothing |
+
 Written new from NCERT *Ganita Prakash*, Grade 7 Part I, Chapter 8, *Working
 with Fractions* (textbook pages 173–199, answer key after them). Original
 LearnLab text in NCERT's order of topics and questions; no sentence is
