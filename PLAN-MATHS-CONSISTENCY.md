@@ -49,7 +49,19 @@ And every volume has its **front and back matter** (§5, *The book*).
 Cheapest first, so the method is proved before the expensive classes.
 
 - **Phase 1 — Class 6** (10 chapters). Already on the right page, so this is
-  conversion only. Proves the recipe on a second class.
+  conversion only. Proves the recipe on a second class. **It also carries the
+  colour change**: Class 6 is the one class whose chapters declare no
+  `palette`, so its `maths-clear` profile holds the three working colours the
+  same in every chapter and gives the chapter's own colour only to the
+  furniture — the numeral block, the rule under the opener, the running head
+  and the folio bar. Every other class moves its working colours per chapter,
+  and that is the way the series goes: **each Class 6 chapter declares a
+  `palette` of its own**, as Classes 7–10 do. Colour does not change how text
+  breaks, so this needs no refit — but it does need a proof, because a palette
+  that was never seen on these pages can put a pale accent behind small type.
+  The rest of `maths-clear` stays: ragged-right setting with no hyphenation,
+  and the outline tip disc. Pick the ten palettes as a set, so that no two
+  chapters of one volume sit next to each other in the same hue.
 - **Phase 2 — the answers booklets**, Classes 6 and 7 first: write each
   chapter's `ANSWERS.md`, then set the booklet per volume.
 - **Phase 3 — Class 8** (14 chapters, two volumes). First class to move page,
@@ -100,6 +112,11 @@ This is the sequence that worked for Class 7. One agent per chapter.
 - **Figures and tables.** A question naming a figure uses the values printed
   on that figure. Three questions in Class 7 failed this and were caught by
   reading, not by a tool.
+- **A question and its figure** print on the same page, or facing. Two got
+  past everyone in Class 7 and were found by reading, not by a tool.
+- **Colour is never the only carrier.** Check the chapter in greyscale and in
+  a colour-vision simulation: a diagram's fills, a tinted mark and a coloured
+  rule all have to survive both. Nothing in the pipeline checks this today.
 - **Facts.** A *Did you know?* prints only with its source in `EDIT-LOG.md`.
   Class 7 still has about eight to check before press.
 - **Language.** §10 throughout: plain explanation, exact rule, no coaching
