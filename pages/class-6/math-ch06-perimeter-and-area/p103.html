@@ -2,40 +2,92 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>A rectangle is split into four smaller rectangles by one line across and one line down. The two top rectangles have areas 12 sq cm and 18 sq cm. The bottom-left rectangle has area 20 sq cm. The area of the bottom-right rectangle is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>26 sq cm</li><li>30 sq cm</li><li>24 sq cm</li><li>36 sq cm</li></ol>
-      </div>
+      <h3>Type 2 &middot; Going round more than once</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The two top rectangles have the same height. So the right one is as many times wider as its area is bigger: $18 \div 12 = 1\frac{1}{2}$ times. The two bottom rectangles have the same widths as the two top ones, and they share a height too.</p>
-        <div class="work work--list">
-          <p>Right width $= 1\frac{1}{2} \times$ left width</p>
-          <p>Bottom-right area $= 1\frac{1}{2} \times 20 = 30$ sq cm</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Ravi walks round a park 90 m long and 60 m wide. How many full rounds make at least 2 km?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>one round $= 2 \times (90 + 60) = 300$ m</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>2 km $= 2 \times 1000 = 2000$ m</span>
+              <span class="work__why">same unit first</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$6 \times 300 = 1800$ m and $7 \times 300 = 2100$ m</span>
+              <span class="work__why">6 rounds are too few</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>7 rounds</span></div>
+          </div>
         </div>
-        <p>The answer is (b). Option (a) adds 6, as 12 grew to 18, but areas grow by multiplying. Option (c) doubles 12, and option (d) doubles 18; neither uses the bottom row.</p>
       </div>
 
-      <p>You can check the answer another way. Multiply the two areas on one diagonal, and then the two on the other: $12 \times 30 = 360$ and $18 \times 20 = 360$. In a rectangle cut by one line across and one line down, the two products always match, because each one is the same four side lengths multiplied together.</p>
+      <h3>Type 3 &middot; Straight units and diagonal units</h3>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>How many different rectangles with whole-number sides have an area of 36 square units? (A 4 by 9 rectangle and a 9 by 4 rectangle count as the same.)</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>5</li><li>9</li><li>10</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>List the pairs of whole numbers that multiply to 36, smaller number first.</p>
-        <div class="work work--list">
-          <p>$1 \times 36$, $2 \times 18$, $3 \times 12$, $4 \times 9$, $6 \times 6$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>The dots in Fig. 6.22 are 1 unit apart. Write the perimeter of the shape in straight units and diagonal units. Then find its area.</p>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="0 0 190 90" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A six-sided shape on dot paper. Its top side runs along 3 gaps, its right side along 2 gaps, its bottom side along 3 gaps and its left side along 2 gaps. Its top right corner and its bottom left corner are cut off, each by a side that crosses one square from corner to corner.">
+                <circle class="dg-fill-teal" cx="29" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="29" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="29" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="29" cy="78" r="1.3"/>
+                <circle class="dg-fill-teal" cx="51" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="51" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="51" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="51" cy="78" r="1.3"/>
+                <circle class="dg-fill-teal" cx="73" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="73" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="73" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="73" cy="78" r="1.3"/>
+                <circle class="dg-fill-teal" cx="95" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="95" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="95" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="95" cy="78" r="1.3"/>
+                <circle class="dg-fill-teal" cx="117" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="117" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="117" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="117" cy="78" r="1.3"/>
+                <circle class="dg-fill-teal" cx="139" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="139" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="139" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="139" cy="78" r="1.3"/>
+                <circle class="dg-fill-teal" cx="161" cy="12" r="1.3"/>
+                <circle class="dg-fill-teal" cx="161" cy="34" r="1.3"/>
+                <circle class="dg-fill-teal" cx="161" cy="56" r="1.3"/>
+                <circle class="dg-fill-teal" cx="161" cy="78" r="1.3"/>
+                <line class="dg-plot" x1="51" y1="12" x2="117" y2="12"/>
+                <line class="dg-plot dg-plot--b" x1="117" y1="12" x2="139" y2="34"/>
+                <line class="dg-plot" x1="139" y1="34" x2="139" y2="78"/>
+                <line class="dg-plot" x1="139" y1="78" x2="73" y2="78"/>
+                <line class="dg-plot dg-plot--b" x1="73" y1="78" x2="51" y2="56"/>
+                <line class="dg-plot" x1="51" y1="56" x2="51" y2="12"/>
+              </svg>
+              <figcaption><span class="fignum">Fig. 6.22</span> A shape on dot paper, for Example 4.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>straight sides: $3 + 2 + 3 + 2 = 10$ straight units</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>two sides cross one square each, corner to corner</span>
+              <span class="work__why">2 diagonal units</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the shape covers 10 full squares and 2 exactly half squares</span>
+              <span class="work__why">the rules for counting</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>area $= 10 + \frac{1}{2} + \frac{1}{2} = 11$ square units</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>perimeter $10s + 2d$ units; area 11 square units</span></div>
+          </div>
         </div>
-        <p>There are 5, option (b). A square is also a rectangle, so $6 \times 6$ counts. Option (a) leaves the square out. Option (c) counts each pair twice, once each way round, but $6 \times 6$ only once. Option (d) counts $6 \times 6$ twice as well.</p>
       </div>
-
-      <p>The number of rectangles depends on how many ways the area can be written as one whole number times another. An area that is a prime number, such as 13 square units, gives only one rectangle, 1 by 13. An area that is a square number, such as 36, always has a square among its rectangles.</p>
 
     </div>
   </div>

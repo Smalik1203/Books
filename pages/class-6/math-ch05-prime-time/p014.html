@@ -2,15 +2,47 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>So if two numbers have no common prime factor, they are co-prime.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Are 40 and 231 co-prime?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$40 = 2 \times 2 \times 2 \times 5$</span>
+              <span class="work__why">40 has 2 and 5</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$231 = 3 \times 7 \times 11$</span>
+              <span class="work__why">231 has 3, 7, 11</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>No prime divides both numbers</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>40 and 231 are co-prime</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>The numbers do not have to be small. The same check works just as quickly for larger numbers.</p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
           <p>Are 242 and 195 co-prime?</p>
-          <div class="work work--list">
-            <p>$242 = 2 \times 11 \times 11$</p>
-            <p>$195 = 3 \times 5 \times 13$</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$242 = 2 \times 11 \times 11$</span>
+              <span class="work__why">242 has 2 and 11</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$195 = 3 \times 5 \times 13$</span>
+              <span class="work__why">195 has 3, 5, 13</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>There is no common prime factor</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>242 and 195 are co-prime</span></div>
           </div>
-          <p>The prime factors of 242 are 2 and 11. The prime factors of 195 are 3, 5 and 13. There is no common prime factor, so 242 and 195 are co-prime.</p>
         </div>
       </div>
 
@@ -22,26 +54,22 @@
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Is 168 divisible by 12?</p>
-          <div class="work work--list">
-            <p>$168 = 2 \times 2 \times 2 \times 3 \times 7$</p>
-            <p>$12 = 2 \times 2 \times 3$</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$168 = 2 \times 2 \times 2 \times 3 \times 7$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$12 = 2 \times 2 \times 3$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$168 = (2 \times 2 \times 3) \times (2 \times 7) = 12 \times 14$</span>
+              <span class="work__why">group 168’s primes</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes, 168 is divisible by 12</span></div>
           </div>
-          <p>We can multiply in any order, so we can group the primes of 168 like this:</p>
-          <div class="work work--list">
-            <p>$168 = (2 \times 2 \times 3) \times (2 \times 7) = 12 \times 14$</p>
-          </div>
-          <p>So 168 is divisible by 12.</p>
         </div>
       </div>
 
       <p>Now try 75 and 21. Their prime factorisations are $75 = 3 \times 5 \times 5$ and $21 = 3 \times 7$. If 75 were a multiple of 21, every prime factor of 21 would also be a prime factor of 75. But 7 is a prime factor of 21, and it is not a prime factor of 75. So 75 is not divisible by 21. Dividing shows the same thing: $75 = 21 \times 3 + 12$.</p>
-
-      <p>Is 42 divisible by 12? The prime factorisations are $42 = 2 \times 3 \times 7$ and $12 = 2 \times 2 \times 3$. Every prime factor of 12 is also a prime factor of 42. But 2 appears twice in the factorisation of 12, and only once in the factorisation of 42. So the prime factorisation of 12 is not included in that of 42, and 42 is not divisible by 12. Dividing shows the same thing: $42 = 12 \times 3 + 6$, which leaves a remainder of 6.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Checking divisibility</div>
-        <p>If one number is divisible by another, then the prime factorisation of the second number is included in the prime factorisation of the first. Every prime of the second number appears in the first, at least as many times.</p>
-      </div>
 
     </div>
   </div>

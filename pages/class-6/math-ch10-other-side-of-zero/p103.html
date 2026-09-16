@@ -2,38 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>Three of these have the same value. Which one has a different value?</p>
-        <ol class="c-parts c-parts--alpha"><li>$(-6) - (-10)$</li><li>$(-6) + (+10)$</li><li>$(+10) - (+6)$</li><li>$(-10) - (-6)$</li></ol>
-      </div>
+      <h3>Type 2 &middot; Adding integers</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Change each subtraction into an addition by adding the inverse, and then work it out.</p>
-        <div class="work work--list">
-          <p>(a) $(-6) - (-10) = (-6) + (+10) = +4$</p>
-          <p>(b) $(-6) + (+10) = +4$</p>
-          <p>(c) $(+10) - (+6) = (+10) + (-6) = +4$</p>
-          <p>(d) $(-10) - (-6) = (-10) + (+6) = -4$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A diver is 18 m below sea level. She swims up 7 m, and then dives down 12 m. What is her height now?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>She starts at $-18$ m</span>
+              <span class="work__why">below sea level</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(-18) + (+7) = -11$</span>
+              <span class="work__why">up is positive</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$(-11) + (-12) = -23$</span>
+              <span class="work__why">down is negative</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$(+7) + (-12) = -5$ and $(-18) + (-5) = -23$</span>
+              <span class="work__why">check: total movement</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$-23$ m, that is, 23 m below sea level</span></div>
+          </div>
         </div>
-        <p>The odd one out is (d), whose value is $-4$. It looks like (a) with the two numbers swapped, and swapping the numbers in a subtraction gives the inverse of the answer. Options (a), (b) and (c) are three ways of writing the same movement, from $-6$ up to $+4$ or from $+6$ up to $+10$, and all come to $+4$.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>In a hollow grid, the top left corner is $5$, the top right corner is $-2$ and the bottom left corner is $-6$. The border sum is $+1$. The middle number of the top row and the middle number of the left column are</p>
-        <ol class="c-parts c-parts--alpha"><li>$-2$ and $+2$</li><li>$+2$ and $-2$</li><li>$-2$ and $-2$</li><li>$-6$ and $-10$</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The top row and the left column each have two numbers you know, and each must add up to the border sum.</p>
-        <div class="work work--list">
-          <p>top row: $5 + {?} + (-2) = +1$, and $5 + (-2) = 3$, so $? = 1 - 3 = -2$</p>
-          <p>left column: $5 + {?} + (-6) = +1$, and $5 + (-6) = -1$, so $? = 1 - (-1) = +2$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Find $(-36) + 19 + (-14) + 25$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$19 + 25 = 44$</span>
+              <span class="work__why">positives together</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(-36) + (-14) = -50$</span>
+              <span class="work__why">negatives together</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$44 + (-50) = -6$</span>
+              <span class="work__why">the larger is negative</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$(-36) + 19 + (-14) + 25 = -6$</span></div>
+          </div>
+          <p>Adding in any order gives the same total, so the positive numbers and the negative numbers can be added separately first.</p>
         </div>
-        <p>The answer is option (a). Option (b) has each sign the wrong way round. Option (c) gets the top row right, but in the left column it subtracts the wrong way round: $(-1) - 1 = -2$. Option (d) reads the corners without their signs, as $5$, $2$ and $6$.</p>
+      </div>
+
+      <h3>Type 3 &middot; Subtracting integers</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A submarine is 350 m below sea level. It rises until it is 120 m below sea level. What is its movement?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Starting height $-350$ m, target height $-120$ m</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Movement $= (-120) - (-350)$</span>
+              <span class="work__why">target minus start</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$(-120) - (-350) = (-120) + (+350) = +230$</span>
+              <span class="work__why">add the inverse</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$+230$ m, a rise of 230 m</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -41,12 +41,20 @@
         <div class="c-example__tab">Example 2</div>
         <div class="c-example__body">
           <p>Start with 6382. Follow the Kaprekar steps.</p>
-          <div class="work work--list">
-            <p>Round 1: $A = 8632$, $B = 2368$, $C = 8632 - 2368 = 6264$</p>
-            <p>Round 2: $A = 6642$, $B = 2466$, $C = 6642 - 2466 = 4176$</p>
-            <p>Round 3: $A = 7641$, $B = 1467$, $C = 7641 - 1467 = 6174$</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Round 1: $A = 8632$, $B = 2368$, $C = 8632 - 2368 = 6264$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Round 2: $A = 6642$, $B = 2466$, $C = 6642 - 2466 = 4176$</span>
+              <span class="work__why">digits of the last C</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Round 3: $A = 7641$, $B = 1467$, $C = 7641 - 1467 = 6174$</span>
+              <span class="work__why">digits of the last C</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>6382 reaches 6174 in 3 rounds.</span></div>
           </div>
-          <p>6382 reaches 6174 in 3 rounds. The digits of 6174 give $A = 7641$ and $B = 1467$ again, so every round after this gives 6174 once more.</p>
+          <p>The digits of 6174 give $A = 7641$ and $B = 1467$ again, so every round after this gives 6174 once more.</p>
         </div>
       </div>
 

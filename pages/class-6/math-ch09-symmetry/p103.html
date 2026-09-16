@@ -3,47 +3,82 @@
     <div class="page__main">
 
       <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Six questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
-        </div>
-      </div>
+              <div class="c-stage__num">2</div>
+              <div class="c-stage__text">
+                <div class="c-stage__title">Solved Examples</div>
+              </div>
+            </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The number of lines of symmetry of a regular hexagon is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>3</li><li>6</li><li>12</li><li>2</li></ol>
-      </div>
+      <h3>Type 1 &middot; Counting lines of symmetry</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>A regular hexagon has 6 corners and 6 sides. Fold through opposite corners, and through the middles of opposite sides.</p>
-        <div class="work work--list">
-          <p>through opposite corners: 3 pairs of corners, so 3 lines</p>
-          <p>through the middles of opposite sides: 3 pairs of sides, so 3 lines</p>
-          <p>$3 + 3 = 6$ lines</p>
-        </div>
-        <p>The answer is 6, option (b). Option (a) counts only one of the two kinds of line. Option (c) counts each line twice, once from each of its two ends. Option (d) counts only the up-and-down and across lines.</p>
-      </div>
+      <div class="c-example">
+              <div class="c-example__tab">Example 1</div>
+              <div class="c-example__body">
+                <p>How many lines of symmetry does each figure in Fig. 9.35 have?</p>
+                <div class="c-figure c-figure--sm">
+              <figure>
+                <svg viewBox="0 0 190 92" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two squares: (a) with one diagonal drawn, from bottom left to top right; (b) with a line from the middle of the top side down to the centre">
+                  <polygon class="dg-line" points="25,6 85,6 85,66 25,66"/>
+                  <line class="dg-line" x1="25" y1="66" x2="85" y2="6"/>
+                  <text class="dg-note" x="55" y="84" text-anchor="middle">(a)</text>
+                  <polygon class="dg-line" points="105,6 165,6 165,66 105,66"/>
+                  <line class="dg-line" x1="135" y1="6" x2="135" y2="36"/>
+                  <text class="dg-note" x="135" y="84" text-anchor="middle">(b)</text>
+                </svg>
+                <figcaption><span class="fignum">Fig. 9.35</span> Two squares, each with one line drawn inside it.</figcaption>
+              </figure>
+            </div>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>a square alone has 4 lines: 2 diagonals, and 2 through the middles of opposite sides</span>
+                    <span class="work__why">start here</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>(a) a fold along either diagonal keeps the drawn diagonal in place</span>
+                    <span class="work__why">both diagonals fit</span></div>
+                  <div class="work__row"><span class="work__label">Step 3</span>
+                    <span>(a) an up-and-down or across fold moves it onto the other diagonal</span>
+                    <span class="work__why">these two fail</span></div>
+                  <div class="work__row"><span class="work__label">Step 4</span>
+                    <span>(b) only the up-and-down fold leaves the drawn line where it was</span>
+                    <span class="work__why">the other three fail</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>(a) 2 lines of symmetry (b) 1 line of symmetry</span></div>
+                </div>
+                <p>A line drawn inside a figure can take away some of its lines of symmetry.</p>
+              </div>
+            </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>The smallest angle of symmetry of a figure is $72^\circ$. Its angles of symmetry are</p>
-        <ol class="c-parts c-parts--alpha c-parts--1"><li>$72^\circ$, $144^\circ$, $216^\circ$, $288^\circ$, $360^\circ$</li><li>$72^\circ$ and $360^\circ$ only</li><li>$72^\circ$, $144^\circ$, $288^\circ$, $360^\circ$</li><li>$72^\circ$, $180^\circ$, $360^\circ$</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The angles of symmetry are the multiples of the smallest one, up to $360^\circ$.</p>
-        <div class="work work--list">
-          <p>$72 \times 1 = 72$, $\;72 \times 2 = 144$, $\;72 \times 3 = 216$</p>
-          <p>$72 \times 4 = 288$, $\;72 \times 5 = 360$</p>
-        </div>
-        <p>The answer is option (a). Option (b) forgets that two turns of $72^\circ$ also fit. Option (c) skips 216, which is $72 \times 3$. Option (d) includes $180^\circ$, which is not a multiple of 72.</p>
-      </div>
-
-      <p>The five angles in option (a) are the angles of symmetry of a regular pentagon. A turn of $72^\circ$ carries each corner of the pentagon to the next corner, and five such turns make a full turn of $360^\circ$.</p>
+      <div class="c-example">
+              <div class="c-example__tab">Example 2</div>
+              <div class="c-example__body">
+                <p>Rani cuts the same small triangle off each corner of a square (Fig. 9.36). She says the new shape has 8 lines of symmetry, because it has 8 sides. Is she right?</p>
+                <div class="c-figure c-figure--sm">
+              <figure>
+                <svg viewBox="0 0 190 104" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="On squared paper, an eight-sided shape made from a square 6 squares wide by cutting a triangle, one square across, off each corner. Its long sides are 4 squares long and its short sides are slanting">
+                  <path class="dg-grid" d="M47 4 V100 M59 4 V100 M71 4 V100 M83 4 V100 M95 4 V100 M107 4 V100 M119 4 V100 M131 4 V100 M143 4 V100 M47 4 H143 M47 16 H143 M47 28 H143 M47 40 H143 M47 52 H143 M47 64 H143 M47 76 H143 M47 88 H143 M47 100 H143"/>
+                  <polygon class="dg-fill-a-soft" points="71,16 119,16 131,28 131,76 119,88 71,88 59,76 59,28"/>
+                  <polygon class="dg-line" points="71,16 119,16 131,28 131,76 119,88 71,88 59,76 59,28"/>
+                </svg>
+                <figcaption><span class="fignum">Fig. 9.36</span> A square with the same small triangle cut off each corner.</figcaption>
+              </figure>
+            </div>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>fold up and down, or across: each fold fits</span>
+                    <span class="work__why">2 lines</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>fold along either diagonal of the old square: each fits</span>
+                    <span class="work__why">2 more lines</span></div>
+                  <div class="work__row"><span class="work__label">Step 3</span>
+                    <span>fold through two opposite corners: a long side lands on a short side</span>
+                    <span class="work__why">no fit</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>No. The shape has 4 lines of symmetry, not 8</span></div>
+                </div>
+              </div>
+            </div>
 
     </div>
   </div>

@@ -2,40 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>On squared paper, $AB$ is 6 units long along a grid line. Point $C$ is 4 units above a point $F$ on $AB$, and $AF$ is 4 units. The area of triangle $ABC$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>24 square units</li><li>12 square units</li><li>8 square units</li><li>4 square units</li></ol>
-      </div>
+      <h3>Type 4 &middot; Area of rectangles and squares</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The line $CF$ splits the triangle into two triangles. Each is half of a rectangle 4 units tall.</p>
-        <div class="work work--list">
-          <p>Triangle $AFC$ $=$ half of $4 \times 4 = 8$</p>
-          <p>Triangle $FBC$ $=$ half of $2 \times 4 = 4$</p>
-          <p>Triangle $ABC$ $= 8 + 4 = 12$ square units</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A wall is 5 m long and 3 m high. It has a window 2 m by 1 m and a door 1 m by 2 m. Painting costs ₹30 for each sq m. What does it cost to paint the wall?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>wall $= 5 \times 3 = 15$ sq m</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>window $= 2 \times 1 = 2$ sq m, door $= 1 \times 2 = 2$ sq m</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>to be painted $= 15 - 2 - 2 = 11$ sq m</span>
+              <span class="work__why">whole take away parts</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>cost $= 11 \times 30 = 330$ rupees</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>₹330</span></div>
+          </div>
         </div>
-        <p>The answer is (b). It is also half of the 6 by 4 rectangle on $AB$. Option (a) is the whole rectangle, with the half left out. Options (c) and (d) are the two small triangles, each counted alone.</p>
       </div>
 
-      <p>Point $C$ could be anywhere along the line 4 units above $AB$, between $A$ and $B$. The two small triangles would change size, but together they would always make 12 square units.</p>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>Ten unit squares are joined in one row. The square at one end is taken away and placed on top of the second square from the other end. The perimeter of the figure</p>
-        <ol class="c-parts c-parts--alpha c-parts--1"><li>goes up by 2 units</li><li>goes down by 2 units</li><li>stays the same</li><li>goes up by 4 units</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Follow the change in two steps.</p>
-        <div class="work work--list">
-          <p>Row of 10: perimeter $= 10 + 10 + 1 + 1 = 22$ units</p>
-          <p>Take away the end square: $9 + 9 + 1 + 1 = 20$ units</p>
-          <p>Add a square on top: it shares 1 side, so $20 - 1 + 3 = 22$ units</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>How many square tiles of side 25 cm are needed to cover a floor 3 m long and 2 m wide?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>3 m $= 300$ cm and 2 m $= 200$ cm</span>
+              <span class="work__why">same unit first</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>along the length, $300 \div 25 = 12$ tiles</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>along the width, $200 \div 25 = 8$ tiles</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$12 \times 8 = 96$ tiles</span>
+              <span class="work__why">rows times columns</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>96 tiles</span></div>
+          </div>
         </div>
-        <p>The answer is (c). Taking the end square away removed 3 sides and uncovered 1, so the perimeter went down by 2. Placing it on top added 3 sides and covered 1, so it went up by 2. Option (a) sees only the second step, option (b) only the first, and option (d) forgets the side that is covered.</p>
+      </div>
+
+      <h3>Type 5 &middot; Areas made of pieces</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>An L-shaped room is a rectangle 6 m by 5 m with a rectangle 2 m by 3 m cut away from one corner. Find the area and the perimeter of the room.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>area $= 6 \times 5 - 2 \times 3 = 30 - 6 = 24$ sq m</span>
+              <span class="work__why">whole take away corner</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the cut takes 2 m and 3 m off two outer sides, and adds two new sides of 2 m and 3 m</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>perimeter $= 2 \times (6 + 5) = 22$ m</span>
+              <span class="work__why">same as the rectangle</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>area 24 sq m; perimeter 22 m</span></div>
+          </div>
+          <p>Cutting the corner away made the area smaller, but it did not change the perimeter.</p>
+        </div>
       </div>
 
     </div>

@@ -2,43 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>Which of these numbers is both a triangular number and a square number?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>16</li><li>21</li><li>36</li><li>45</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Write out both sequences, and look for a number that is in both. There is no need to go past 45, because 45 is the largest of the options.</p>
-        <div class="work work--list">
-          <p>Triangular numbers: 1, 3, 6, 10, 15, 21, 28, 36, 45</p>
-          <p>Square numbers: 1, 4, 9, 16, 25, 36</p>
-          <p>In both lists: 1 and 36</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Find the 12th Virahānka number.</p>
+          <p><strong>Solution.</strong> Each Virahānka number is the sum of the two numbers just before it.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the first seven are 1, 2, 3, 5, 8, 13, 21</span>
+              <span class="work__why">from Table 1.1</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$13 + 21 = 34$, $\ 21 + 34 = 55$, $\ 34 + 55 = 89$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$55 + 89 = 144$, $\ 89 + 144 = 233$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>233</span></div>
+          </div>
         </div>
-        <p>The answer is 36, option (c). The number 1 is in both lists as well, but it is not one of the options.</p>
-        <p>16 is a square number but not a triangular number. 21 and 45 are triangular numbers but not square numbers.</p>
       </div>
 
-      <p>Is there a number bigger than 36 that is both a triangular number and a square number? There is, but it is a long way off. The next one is 1225. It is the 49th triangular number, and it is also $35 \times 35$.</p>
+      <h3>Type 2 &middot; Numbers as pictures of dots</h3>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>In the stacked triangles, the shape with 5 rows is made of how many small triangles?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>10</li><li>15</li><li>25</li><li>16</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Count the small triangles row by row, from the top. Each row has 2 more triangles than the row above it.</p>
-        <div class="work work--list">
-          <p>Rows: $1,\ 3,\ 5,\ 7,\ 9$</p>
-          <p>$1 + 3 + 5 + 7 + 9 = 25$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A triangle of dots has 11 dots in its bottom row. How many dots does it have? How many more dots make the next triangle?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>its rows have 1, 2, 3, &hellip;, 11 dots</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>two copies make a rectangle: $11 \times 12 = 132$</span>
+              <span class="work__why">11 rows of 12</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>one triangle: $132 \div 2 = 66$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>the next triangle adds a row of 12: $66 + 12 = 78$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>66 dots; 12 more dots make the next triangle</span></div>
+          </div>
         </div>
-        <p>The answer is 25, option (c). The rows are the odd numbers, so the total is a square number. Look at how the triangles point. In each row, the triangles pointing up number 1, 2, 3, 4, 5, and add up to 15, option (b). The triangles pointing down number 0, 1, 2, 3, 4, and add up to 10, option (a). Each of those options counts only one kind, and together they make 25. Option (d) is the shape with 4 rows.</p>
       </div>
 
-      <p>Options (a) and (b) are not chance wrong answers. 10 and 15 are triangular numbers that sit next to each other, and $10 + 15 = 25$. This is the connection from Exercise Set 1.4, Question 5: two triangular numbers next to each other always add up to a square number. The up and down triangles in the stacked triangles are a picture of it.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A hexagon of dots is drawn like the hexagonal numbers 1, 7, 19, 37, &hellip;, with 6 dots along each side. How many dots does it have?</p>
+          <p><strong>Solution.</strong> Build the hexagon from the centre, one ring at a time.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the centre is 1 dot</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the first ring has 6 dots, and each ring has 6 more than the one inside it</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>rings with 2, 3, 4, 5, 6 dots on a side: 6, 12, 18, 24, 30</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$1 + 6 + 12 + 18 + 24 + 30 = 91$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>91 dots</span></div>
+          </div>
+          <p>Check with the sequence: $1 + 6 = 7$, $\ 7 + 12 = 19$, $\ 19 + 18 = 37$. The rings give the hexagonal numbers in order.</p>
+        </div>
+      </div>
 
     </div>
   </div>

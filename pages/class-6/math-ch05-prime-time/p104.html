@@ -2,42 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>Which of these numbers is divisible by 8?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>7324</li><li>6136</li><li>5148</li><li>9420</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Only the last three digits matter. Check whether each number made by them is a multiple of 8.</p>
-        <div class="work work--list">
-          <p>$324 = 8 \times 40 + 4$</p>
-          <p>$136 = 8 \times 17$</p>
-          <p>$148 = 8 \times 18 + 4$</p>
-          <p>$420 = 8 \times 52 + 4$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Write 36 as the sum of two primes, in as many ways as you can.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the primes below 36 are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>take each one and see whether what is left is also prime</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$36 - 3 = 33 = 3 \times 11$, $\ 36 - 11 = 25 = 5 \times 5$</span>
+              <span class="work__why">these two fail</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$5 + 31$, $\ 7 + 29$, $\ 13 + 23$, $\ 17 + 19$ &mdash; four ways</span></div>
+          </div>
         </div>
-        <p>The answer is 6136, option (b). All four numbers are divisible by 4, because 24, 36, 48 and 20 are multiples of 4. So the test for 4 cannot decide here. A number divisible by 4 need not be divisible by 8.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>How many numbers from 1 to 100 are multiples of both 4 and 6?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>8</li><li>16</li><li>41</li></ol>
-      </div>
+      <h3>Type 3 &middot; Prime factorisation</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Find the first common multiple of 4 and 6. Every common multiple is a multiple of it.</p>
-        <div class="work work--list">
-          <p>multiples of 6: 6, 12, …, and 12 is a multiple of 4</p>
-          <p>common multiples: 12, 24, 36, 48, 60, 72, 84, 96</p>
-          <p>$96 = 12 \times 8$, and $12 \times 9 = 108$ is past 100</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>Find the prime factorisation of 360.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$360 = 36 \times 10$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$36 = 2 \times 2 \times 3 \times 3$ and $10 = 2 \times 5$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$8 \times 9 = 72$, then $72 \times 5 = 360$</span>
+              <span class="work__why">multiply back</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$360 = 2 \times 2 \times 2 \times 3 \times 3 \times 5$</span></div>
+          </div>
+          <p>Starting from $360 = 8 \times 45$ gives $8 = 2 \times 2 \times 2$ and $45 = 3 \times 3 \times 5$, which is the same set of primes.</p>
         </div>
-        <p>The answer is 8, option (b). Option (a) counts only the multiples of $4 \times 6 = 24$, which misses 12, 36, 60 and 84. Option (c) counts all 16 multiples of 6. Option (d) adds the 25 multiples of 4 to the 16 multiples of 6.</p>
       </div>
 
-      <p>Compare this with 4 and 5. They are co-prime, so their first common multiple is their product, $4 \times 5 = 20$. From 1 to 100, the numbers that are multiples of both 4 and 5 are 20, 40, 60, 80 and 100, which is 5 numbers. But 4 and 6 share the factor 2, so their first common multiple, 12, is less than their product, 24. Counting the multiples of the product works only when the two numbers are co-prime. For 4 and 6 it gives 4 numbers, which is half of the right answer. The number to count in steps of is the first common multiple, not the product.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>A number has the prime factorisation $2 \times 2 \times 3 \times 5 \times 5$. What is the number? Is it divisible by 15?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$2 \times 2 = 4$, then $4 \times 3 = 12$, then $12 \times 5 \times 5 = 300$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$15 = 3 \times 5$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$300 = (3 \times 5) \times (2 \times 2 \times 5) = 15 \times 20$</span>
+              <span class="work__why">15 is inside 300</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>300, and yes it is divisible by 15</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

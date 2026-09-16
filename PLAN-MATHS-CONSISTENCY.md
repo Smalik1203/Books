@@ -3,7 +3,12 @@
 Written 16 September 2026, after Class 7 was finished. **Class 7 is the
 standard**; Classes 6, 8, 9 and 10 are to match it, so that nothing is in one
 book and missing from another. This file is the plan of work. Start it by
-saying which phase to begin; nothing here has been started yet.
+saying which phase to begin.
+
+**Phase 1 (Class 6) was done on 16 September 2026** — see *Phase 1, as it
+went* at the end. Class 6 now matches Class 7 and goes one step further:
+every chapter has its `ANSWERS.md` and a `check-numbers.mjs` beside it,
+which Class 7 does not yet have.
 
 The rules themselves are not repeated here — they are in `DESIGN-MATHS.md`
 §5a (the bar a finished chapter clears), §5 (*The companions*), §6a's opening
@@ -13,7 +18,7 @@ block (the Beyond the Book shape), and §10 (language). Read those first.
 
 | class | chapters | page | Beyond the Book | examples in the chapters | answers |
 |---|---|---|---|---|---|
-| 6 | 10 | 196 × 276 ✓ | old shape | 35, prose | none |
+| **6** | **10** | **196 × 276 ✓** | **current ✓** | **stepped ✓** | **ANSWERS.md ✓** |
 | **7** | **15** | **196 × 276 ✓** | **current ✓** | **82, stepped ✓** | **none** |
 | 8 | 14 | Crown Quarto | old shape | 96, prose | none |
 | 9 | 8 of ~14 | Crown Quarto | old shape | 85, prose | none |
@@ -159,6 +164,28 @@ This is the sequence that worked for Class 7. One agent per chapter.
 - **Stepped examples cost pages**: Class 7 gained about 30 pages a volume,
   and short pages went up. Expect the same elsewhere, and re-measure covers.
 - **A stale `.git/index.lock`** from an interrupted command will block git.
+- **`settle.mjs` on a chapter's last body page writes into `p101.html`,**
+  the Bridge opener, and reports success. Check what it wrote. On Beyond
+  pages it can fail outright; `unsettle.mjs` works there.
+- **`refit … body` can prefer a 3 mm overflow to an extra page,** and can
+  separate a question from its figure. Check both after it, and place pages
+  by hand when it breaks either.
+- **"overflow check did not report"** means the build measured nothing —
+  usually several chapters building at once. Rebuild before trusting it.
+- **Beyond's examples are numbered from 1.** The phase-1 brief said to
+  number on from the body, and four chapters had to be renumbered.
+- **Assertion–reason is the Class 7 form:** the choices once, in a
+  `<p class="c-practice__note">`, and two lines per question with no
+  (a)–(d) list. The phase-1 model got this wrong and three chapters copied it.
+- **The Answers stage opens a fresh page;** `repack.mjs` enforces it. Log the
+  short page before it.
+- **A Beyond item may not answer a body question**, not only repeat it. Read
+  for this; `build/check-no-repeats.mjs` only finds wording.
+- **A palette changes the colour words in the prose.** Class 6 Chapter 9
+  said *the teal line*, which under its own palette printed dark green and,
+  in greyscale, the same as every other line.
+- **Agents sharing a scratchpad overwrite each other's backups.** Give each
+  agent its own folder.
 
 ## 8. Rough size
 
@@ -186,3 +213,33 @@ Still to settle:
 
 - **The answers booklet's form:** one booklet a volume, or one a class.
 - **Class 9's missing chapters:** which six, against which syllabus.
+
+## Phase 1, as it went
+
+Done 16 September 2026. Chapters 5 and 8 by hand — 5 as the model, 8
+because it has no worked examples and its answers are drawings — and the
+other eight by Opus agents, four at a time, each checked by script and by
+reading before it was accepted (§4.8, plus the tools below).
+
+**Decided along the way:** each Class 6 chapter takes the palette whose
+structure colour is the accent it already had (1 ember … 10 amethyst), so
+the furniture and the headings are one colour; `ANSWERS.md` is written in
+the chapter's own pass, not in phase 2; the Answers stage always opens a
+fresh page.
+
+**Tools added** under `build/`: `check-example-stepping.mjs` (stepping lost
+no mathematics, robust to refitting), `check-no-repeats.mjs` (Beyond against
+the body, question by question), `check-colour.mjs` (greyscale and
+colour-vision proofs), `check-fills.mjs` (figures whose fills print as
+near-identical greys — it over-reports; triage by eye).
+
+**Every chapter's `check-numbers.mjs` was tested by breaking values on
+purpose.** Two faults the tests found in the checks themselves are worth
+carrying to the next class: an expected value typed by hand drifts from a
+corrected page, so read answers back off the page; and a whole-row check lets
+a wrong lettered part hide behind a right one, so check each part.
+
+**Left for the user,** listed in each chapter's `EDIT-LOG.md`: body questions
+not in NCERT (Chapter 10); a figure four pages from its exercise (Chapter 6);
+Stage 1, kept word for word, answering body questions (Chapters 2, 4, 9);
+missing key ideas and terms; facts without a source.

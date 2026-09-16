@@ -2,8 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>There is a second way to see it. Each of these numbers is double a triangular number: $2 = 2 \times 1$, $6 = 2 \times 3$, $12 = 2 \times 6$, and so on. Two copies of a triangle of dots fit together to make a rectangle.</p>
-
       <div class="c-try">
         <p>Squares in a row are made with matchsticks. 1 square needs 4 matchsticks, 2 squares need 7 and 3 squares need 10. How many matchsticks are needed for 10 squares in a row?</p>
       </div>
@@ -17,28 +15,49 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The sum of the first 15 odd numbers is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>30</li><li>29</li><li>225</li><li>256</li></ol>
-      </div>
+      <h3>Type 1 &middot; Finding the rule of a sequence</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The first 15 odd numbers, put together as L-shapes, make a square with 15 rows of 15 dots.</p>
-        <div class="work work--list">
-          <p>$1 + 3 + 5 + \cdots$ (15 odd numbers) is a 15 by 15 square</p>
-          <p>$15 \times 15 = 225$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Find the next two numbers of the sequence 2, 5, 10, 17, 26, &hellip;</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the gaps are 3, 5, 7, 9</span>
+              <span class="work__why">the odd numbers</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the next gaps are 11 and 13</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$26 + 11 = 37$, $\ 37 + 13 = 50$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>37 and 50</span></div>
+          </div>
+          <p>The rule can also be seen another way. Each number is 1 more than a square number: $2 = 1 + 1$, $5 = 4 + 1$, $10 = 9 + 1$. The next two are $36 + 1$ and $49 + 1$, which agrees.</p>
         </div>
-        <p>The answer is 225, option (c). Option (a) doubles 15 instead of making a square. Option (b) is 29, which is the 15th odd number itself, not the sum. Option (d) is $16 \times 16$, which counts one odd number too many.</p>
       </div>
 
-      <p>There is also a quick check you can do before any working. Adding odd numbers from 1 always gives a square number. Of the four options, only 225 and 256 are square numbers, so options (a) and (b) can be crossed out at once. To choose between the other two, remember that 15 odd numbers make a square with 15 rows, not 16.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>What comes next: 1, 4, 10, 20, 35, &hellip;?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the gaps are 3, 6, 10, 15</span>
+              <span class="work__why">triangular numbers</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the next gap is 21, so $35 + 21 = 56$</span>
+              <span class="work__why">the next triangular number</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>56</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

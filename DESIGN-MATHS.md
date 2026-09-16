@@ -544,7 +544,8 @@ the two differ. Class 7 Chapter 1 is the built example.
                             sees how simple ideas become tricky questions.
                             Never recast as worked examples
     2 Solved Examples       worked examples grouped under h3 "Type N · …",
-                            each as Solution, Step 1, Step 2 … Answer in
+                            numbered from Example 1 whatever the body
+                            reached, each as Solution, Step 1, Step 2 … Answer in
                             .work__row, the reason in two to four words in a
                             .work__why. Stepped maths, not prose
     3 Practice              one numbered run in the forms school papers use —
@@ -560,6 +561,14 @@ the two differ. Class 7 Chapter 1 is the built example.
 - **The practice stage is named once.** It has no `.c-stage` head; its band
   carries the numeral: `<div class="c-practice__head"><span
   class="c-practice__num">3</span>Practice</div>`.
+- **The Answers stage always starts on a fresh page.** Decided 16 September
+  2026. Set part-way down a page, straight under the last practice question,
+  it put the key to half the stage in view of a reader still working that
+  question. `build/repack.mjs` enforces it — a `.c-stage` whose title reads
+  *Answers* is always placed at the top of a page — so a refit keeps it. The
+  short page this leaves behind the last question is logged, not padded.
+  It is the one exception to *a stage starts where the previous one ends*
+  below.
 - **A case-based question carries no *Case study* label** — the group's sub
   head says so once. The `.c-case` opens the question on its number's line,
   its table flush left.
@@ -940,14 +949,30 @@ science volumes. A chapter opts in with `"design": "maths-clear"` in
 `chapter.json`, which loads `css/maths-clear.css` after the house sheets.
 Nothing in any other book changes.
 
-1. **The role colours stay the same in every chapter.** A Class 6 chapter
-   declares no palette, so structure, action and attention are the book's
-   three colours throughout, and a student learns once what a worked example
-   or a question looks like. The chapter's own colour — its entry in
-   `CHAPTER_ACCENTS` in `build/build.mjs` — inks only its furniture: the
-   numeral block, the rule under the opener, the running head and the folio
-   bar. For this book it settles the question §1 leaves open, whether a
-   palette moves one working colour or all three: neither moves.
+1. **The chapter's own colour inks its furniture** — its entry in
+   `CHAPTER_ACCENTS` in `build/build.mjs`: the numeral block, the rule under
+   the opener, the running head and the folio bar.
+
+   **This began as the opposite rule, and it was dropped on 16 September
+   2026.** A Class 6 chapter declared no palette, so structure, action and
+   attention were the book's three colours in every chapter, and a student
+   learnt once what a worked example or a question looked like — which
+   settled, for this book, the question §1 leaves open about whether a
+   palette moves one working colour or all three, by moving none. Phase 1 of
+   `PLAN-MATHS-CONSISTENCY.md` reversed it: every other class moves its
+   working colours per chapter, and one class doing otherwise is the
+   inconsistency the plan exists to remove.
+
+   **Each Class 6 chapter now declares the palette matching its own accent
+   slot** — 1 ember, 2 lagoon, 3 bronze, 4 cobalt, 5 olive, 6 indigo,
+   7 moss, 8 violet, 9 fern, 10 amethyst. That mapping is not a taste: each
+   palette's `--teal` is byte-identical to the accent that chapter already
+   had, so the furniture and the structure colour come out one colour rather
+   than two, no stylesheet changes, and the accent list's interleaving keeps
+   consecutive chapters about 140 degrees apart without any further thought.
+   Colour does not change how text breaks, so this needs no refit — but it
+   needs a proof, because a palette never seen on these pages can put a pale
+   accent behind small type.
 2. **Running text is ragged-right, with no hyphenation.** A justified line full
    of maths cannot hyphenate, so its word spaces open into holes, and a
    second-language reader loses the line there.
