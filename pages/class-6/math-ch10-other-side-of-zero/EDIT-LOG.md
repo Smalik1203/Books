@@ -32,15 +32,15 @@ number changed. `check-example-stepping.mjs`: 5 examples compared against
 |---|---|---|
 | 1 Using What You Know | 5 `.c-try`, explained in running text | **kept word for word** (12 paragraphs, diffed against `HEAD`); only `.c-stage__for` removed |
 | 2 Behind Each Answer → **Solved Examples** | 5 problems solved in prose | **17 stepped examples**, Beyond Examples 1–17, under seven `Type N ·` heads |
-| 3 Problem Sets → **Practice** | 3 multiple-choice sets, A/B/C, 24 questions | **one numbered run of 30** in six forms, the band carrying the numeral |
+| 3 Problem Sets → **Practice** | 3 multiple-choice sets, A/B/C, 24 questions | **one numbered run of 33** in six forms, the band carrying the numeral |
 | 4 Answers & Takeaways → **Answers** | key and notes | key, every other answer in `work--trace`, six *why the other options are wrong* notes; opens its own page |
 
 Types: 1 comparing and ordering · 2 adding · 3 subtracting · 4 tokens and
 zero pairs · 5 money, heights and temperature · 6 integer grids ·
 7 patterns with integers. **22 worked examples** in the chapter (5 + 17).
 
-Practice: multiple choice 1–12, assertion–reason 13–16, very short 17–21,
-short 22–25, long 26–28, case-based 29–30. Key: a 4, b 4, c 5, d 3.
+Practice: multiple choice 1–12, assertion–reason 13–16, very short 17–22,
+short 23–28, long 29–31, case-based 32–33. Key: a 4, b 4, c 5, d 3.
 The assertion–reason questions follow Class 7's form: the four choices are
 printed once in a `<p class="c-practice__note">` naming Questions 13 to 16,
 and each question is `<p>Assertion (A): …</p><p>Reason (R): …</p>` with no
@@ -59,7 +59,8 @@ problems became Beyond Examples 3, 6, 13 and 14.
 | Beyond Ex 9 / Q7, pocket of tokens · Ex. 10.9 Q4 | different question: finding the split, finding a value |
 | Beyond Ex 1, ordering · Ex. 10.7 Q2 | same type, new instance |
 | Beyond Ex 2, 5 steps from $-3$ · T&R, 4 steps from 0 | a different starting point, and a second question |
-| Q28, build an amazing grid · Ex. 10.16 Q3 | an extension of an open question, with a method given |
+| Q31, build an amazing grid · Ex. 10.16 Q3 | an extension of an open question, with a method given |
+| Q22, Q27, Q28 — the three questions moved out of the body (below) | read one by one against the body: Q22's sequence is not one of Ex. 10.18 Q2's; nothing in the body asks for a rise in temperature; Q28's six expressions are its own, so it neither repeats nor works Ex. 10.17 Q4. `check-no-repeats` lists none of them |
 
 **Removed as repeats:** Q15 as first written — A "the sum of two negative
 integers is always negative", R "a positive plus a negative is always
@@ -68,12 +69,15 @@ question; the coordinator's note calls it Q5), so read strictly it repeats
 the body. Replaced by A $-3 \gt -8$, R "$-3$ is further from 0 than $-8$
 is": the order of integers against their distance from 0, a mistake no body
 question asks about. Its key stays (c), and its *why* note was rewritten.
-Q24 as first written (tokens, "how many zero pairs",
+Q25 (then Q24) as first written (tokens, "how many zero pairs",
 the same as Ex. 10.11 Q1 with new numbers) — replaced by a pocket worth 0
 losing two negatives. Beyond Ex 15 as first written ("write the next three
-numbers", the same as Ex. 10.18 Q7) — recast to ask for the 10th number.
-Old stage 2's Leh temperature rise was not carried over (the same as
-Ex. 10.18 Q6, Dras), nor old Set C's dice question (Ex. 10.17 Q3).
+numbers", the same as what was then Ex. 10.18 Q7 and is now Practice Q22) —
+recast to ask for the 10th number. Old stage 2's Leh temperature rise was
+not carried over; the reason given then — that it repeated the body's Dras
+question — no longer holds, since Dras is now Practice Q27, but a Leh rise
+beside it would repeat it inside the practice run, so it stays out. Old Set
+C's dice question stays out too (the same as Ex. 10.17 Q3).
 
 **`ANSWERS.md` written** for every question: all 19 exercise sets, every
 Think and Reflect, and Beyond's stages 1 and 3.
@@ -91,7 +95,7 @@ script failed by name, exit 1; restored.
 
 ### Verified
 
-**`check-numbers.mjs` — 798 checks, exits 0.** 384 relations read off the
+**`check-numbers.mjs` — 814 checks, exits 0.** 384 relations read off the
 pages and `ANSWERS.md` and evaluated with a parser that takes `-`, `−` and
 `\text{–}` as the same sign and brackets round negatives as brackets.
 Named, not dropped: 20 spans that are a bare sign used as a word
@@ -121,7 +125,7 @@ its key letter (c → d) and its reason's numbers swapped (so R became true)
 **Wrong numbers.** None found in the printed body or in stage 1. The script
 itself had five mistakes, each caught by running it: an expected $-22$ typed
 as 22; Q9's temperatures read from the wrong position; "a 3 by 3 grid" read
-as two numbers of Q28; floors to mark (10.3 Q4) taken for sums; and a note's
+as two numbers of the grid question (now Q31); floors to mark (10.3 Q4) taken for sums; and a note's
 distractor sum the note-reader missed (now counted). Old stages 2–4 were
 replaced, not audited.
 
@@ -129,7 +133,7 @@ replaced, not audited.
 `refit … bridge` twice (the second after the Answers-on-a-new-page rule),
 then hand fixes: Beyond Ex 17 added to page 32 and the *why* block divided at
 a row. When the assertion–reason questions lost their option lists, page 34
-fell to 46%, so questions 12–30 were repacked by hand across pages 34–36,
+fell to 46%, so questions 12–30 (now 12–33) were repacked by hand across pages 34–36,
 each page taking as many as fit; the Answers stage still opens page 37, and
 page 36 holds only practice.
 **Do not re-run either refit without re-checking figures 10.11 and 10.17.**
@@ -157,13 +161,13 @@ the cross-section's points are lettered; nothing relies on hue alone.
 | 18 | 84% | Exercise Set 10.15, kept whole (§11) |
 | 19 | 41% | the amazing-grid section, moved whole to share page 20 with Exercise 10.16 |
 | 20 | 84% | Exercise Set 10.17, kept whole |
-| 21 | 38% | Exercise Set 10.18, a page on its own, kept whole |
+| 21 | 33% | Exercise Set 10.17 alone: Exercise Set 10.18, nearly a page, is kept whole and cannot join it |
+| 22 | 81% | the §10.5 heading, which needs about 48 mm with the lines under it; 44 mm are left |
 | 25 | 57% | `data-close` — the chapter's last page |
 | 30 | 85% | Beyond Ex 11, a panel |
 | 32 | 85% | the practice run, which starts a page because it is taller than one |
-| 35 | 78% | question 30, a case with a table (84 mm), which does not fit the 51 mm left |
-| 36 | 37% | held by the Answers stage, which always opens a page |
-| 38 | 19% | the last page |
+| 36 | 37% | question 33 alone, held by the Answers stage, which always opens a page |
+| 38 | 29% | the last page |
 
 **Resolved — Fig. 10.18.** NCERT's PDF text layer reads $-20, -7, -14,
 -11$ for the first grid's last row, where this book prints $-17$. The
@@ -172,6 +176,30 @@ falls by 9 down each column, and the game only works on grids built that
 way, so $-17$ is the value the grid requires and the text layer's "$-7$" is
 almost certainly a lost digit. `check-numbers.mjs` checks the printed grid
 has that structure. Nothing to change.
+
+**Three questions moved out of the body, 16 September 2026.** Exercise
+10.17 Q5 and Exercise 10.18 Q6 and Q7 were not NCERT's; an earlier pass had
+added them. By the user's decision the chapter body is NCERT's alone, so
+they now sit in Beyond's Practice:
+
+| was | now | form |
+|---|---|---|
+| Ex. 10.18 Q7, the sequence $5, 2, -1, -4, \ldots$ | **Q22** | very short answer |
+| Ex. 10.18 Q6, Dras, $-16$ °C to 7 °C | **Q27** | short answer |
+| Ex. 10.17 Q5, pairs of inverse values | **Q28** | short answer |
+
+Exercise 10.17 now ends at Q4 and Exercise 10.18 at Q5, NCERT's string of
+100 tokens. Q5 had said "In Question 4" and used that question's eight
+expressions; finding its pairs meant working Exercise 10.17 Q4, so in
+Practice it carries six expressions of its own ($7 - 11$ and so on) and
+stands alone. The run is 33 questions; 1–16 and the key are unchanged, and
+the answer rows, `data-start` numbers, `ANSWERS.md` and
+`check-numbers.mjs` were renumbered with it. Nothing else in the body or
+`ANSWERS.md` referred to the three by number. The body kept its 25 pages
+(`data-close` stays on page 25); Practice was packed by hand onto pages
+34–36, and the Answers page's *why* notes were divided after note 8 so the
+key page does not overrun. Tested: Q27's printed answer changed from 23 to
+25 — caught three ways, exit 1; restored.
 
 ### Flagged
 
@@ -182,7 +210,6 @@ has that structure. Nothing to change.
 | p015 → p016 | "Table 10.1 shows five days …" is overleaf from the table (the questions on it share its page) | acceptable; noted |
 | Ex. 10.13 Q4, Q5 | facts: Everest 8,848.86 m (the 2020 China–Nepal survey); Challenger Deep about 10,935 m; Dead Sea shore about 430 m below sea level. Written from general knowledge, not from a source opened in this session | a recorded source (§5a *facts*) |
 | Ex. 10.18 Q1 | the answer depends on the present year; `ANSWERS.md` works it for 2026 | the booklet's year |
-| Ex. 10.17 Q5; Ex. 10.18 Q6, Q7 | not in NCERT's *Figure it Out*; added by an earlier pass | none; noted |
 | terms (§10) | *ascending*, *descending*, *predecessor*, *successor* do not appear in the body; the body says "in order, from the smallest" | a terms pass on the body, outside this brief |
 
 ### Not changed

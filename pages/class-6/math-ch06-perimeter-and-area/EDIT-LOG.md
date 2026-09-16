@@ -119,6 +119,32 @@ was added):
 | p017 | *In an area maze, a figure is made of rectangles. Some areas and some side lengths are given. Use them to find the missing value. You will not need to find every length in the figure.* | *An area maze is a figure made of rectangles, with some areas and sides given. Find the missing one. You will not need every length in the figure.* The last sentence was first cut as a repeat of Example 5's closing line, and put back in review: the intro states the rule and Example 5's *we found the area without finding a single length* shows it working, so cutting it lost the rule. Page 17 now runs 2.6 mm into the margin, inside §5a's 3 mm. |
 | p017 | *In some puzzles a length is missing instead of an area. Then work the other way: divide an area by a side you know, to find the side you do not know.* | *If a length is missing instead, divide an area by the side you know.* |
 
+**Two decisions from review (the user's).**
+
+- **Fig. 6.8 is printed a second time, beside Exercise Set 6.6.**
+  - *Why:* Exercise 6.6 Q1 asks about the shapes in Fig. 6.8, which prints
+    on p007 with Exercise 6.3, four pages earlier. §5a requires a question
+    to be on its figure's page or facing it.
+  - *What:* the SVG was copied, not redrawn, to the foot of p010, which
+    faces Q1 on p011. Its caption reads *Fig. 6.8 (repeated from Section
+    6.1, for Exercise Set 6.6)*, so no later figure is renumbered, and its
+    aria-label is the original's with *(repeated)* added.
+  - *Effect on the pages:* the copy fit into p010's white (70% → 94%), so
+    no page was added and nothing else moved. No `refit … body` was run.
+  - *Checks:* `check-numbers.mjs` confirms the two copies draw identical
+    shapes, that Q1's areas (4, 9, 10, 11) read from the copy, and that the
+    copy is on Q1's page or facing it. Moving one corner of the copy made it
+    fail; the corner was restored.
+- **The Think and Reflect after Fig. 6.20 was reworded.** This is our own
+  wording, not NCERT's, and two pairs of rooms qualify.
+
+  | before | after |
+  |---|---|
+  | *Which two rooms in Charan's house have the same area? Do they also have the same perimeter?* | *Which rooms in Charan's house have the same area? Do they also have the same perimeter?* |
+
+  `ANSWERS.md` now answers it directly: kitchen and small bedroom (180 sq ft,
+  54 ft each), and utility room and parking (45 sq ft, 36 ft each).
+
 **Beyond renumbered to match Class 7.** Beyond the Book's Solved Examples
 now start again at Example 1, as every Class 7 chapter's do. So the body
 keeps Examples 1–6 and Beyond has Examples 1–13, where they were 7–19. The
@@ -129,7 +155,7 @@ lists Beyond's examples by their own numbers.
 
 ### Verified
 
-**`check-numbers.mjs` exits 0 with 612 checks passed.** It has four parts:
+**`check-numbers.mjs` exits 0 with 625 checks passed.** It has four parts:
 - **A. Arithmetic.** 119 identities read off the pages and 148 off
   `ANSWERS.md` are evaluated. Three spans have fewer than two numeric sides
   (`$CD = AB$`, `$DA = BC$`, and the equilateral-triangle line); the
@@ -199,12 +225,12 @@ at 62% and 54%. Instead I measured every block and searched for page breaks
 that keep each question on its figure's page or spread. I dealt p008–p019
 by hand.
 
-At `HEAD`, three questions printed overleaf from their figures. Two are now
-fixed:
+At `HEAD`, three questions printed overleaf from their figures. All three
+are now fixed:
 - **Exercise 6.5 and the tangram, Fig. 6.12:** now on the same page (p010).
 - **Exercise 6.11 and the house plans, Figs 6.19–6.20:** now facing
   (p016–p017).
-- **Exercise 6.6 Q1 and Fig. 6.8:** still apart — see *Flagged*.
+- **Exercise 6.6 Q1 and Fig. 6.8:** a copy of the figure faces Q1 (p010–p011); see above.
 
 Fitting the house plans cost one page of parity, which is where the short
 pages below come from. Three trims made page 17 fit: body Example 5's rows and
@@ -226,7 +252,6 @@ are named in the working (as Fig. 6.5's are in the text).
 | page | fill | held by |
 |---|---|---|
 | 9 | 70% | the tangram section (h3, paragraph, Fig. 6.12) must print with Exercise 6.5, and all four together do not fit here |
-| 10 | 70% | the *Area on squared paper* opener (h3, paragraph, key idea), too tall for the gap and not to be stranded |
 | 13 | 80% | the house-plan spread's parity; the next page opens with *So triangles BAD and ABE…*, and moving it up leaves page 14 at 77% |
 | 14 | 84% | the same parity; the next page opens with the lead-in to Exercise 6.10, which stays with its set |
 | 22 | 76% | the *Type 4* head and Beyond Example 5 (73 mm), a panel |
@@ -236,8 +261,6 @@ are named in the working (as Fig. 6.5's are in the text).
 
 | where | code | what is wrong | what it needs |
 |---|---|---|---|
-| Exercise 6.6 Q1 (p011) | §5a figures | It names Fig. 6.8, which prints four pages earlier on p007, beside Exercise 6.3. No pagination can put both exercises near one copy of the figure. | A decision: reprint the dot-paper shapes beside Exercise 6.6 as a new figure, or accept the flip back. |
-| Think and Reflect after Fig. 6.20, Q2 | C4 | *Which two rooms in Charan's house have the same area?* Two pairs qualify: kitchen and small bedroom (15 ft by 12 ft), and utility and parking (15 ft by 3 ft, with the utility's size found only by working). | Wording, if the booklet should not have to allow both; `ANSWERS.md` gives both. |
 | Exercise 6.12 Q1(d), Fig. 6.21 | M2 | The printed values make the right rectangle $18 \div 5$ cm high, a decimal the chapter has not taught. The answer (5 cm) can be reached without it. | `ANSWERS.md` uses an argument with no decimals; the puzzle's numbers are NCERT's and were left alone. |
 | House plans prose (p015) | — | *Fig. 6.19 is the plan of Charan's house* is the foot of p015, and the figure is overleaf on p016. This is a paragraph, not a question, and was the price of putting the plans beside Exercise 6.11. | Nothing unless the house-plan spread is re-fitted. |
 | `refit … body` | tool | It does not know the figure-facing rule. Re-running it on this chapter separates Fig. 6.21 from Exercise 6.12 and the house plans from Exercise 6.11. | Do not re-run it on this chapter without checking those two spreads. |
@@ -245,6 +268,6 @@ are named in the working (as Fig. 6.5's are in the text).
 ### Not changed
 
 NCERT's structure in the chapter body: no example, check or exercise was
-added, and the 13 exercise sets, the Think and Reflects and Figs 6.1–6.21
-are as they were. None of §5's unused components was introduced. No *Did
+added, and the 13 exercise sets, the Think and Reflects (one reworded, above) and Figs 6.1–6.21
+are as they were, with Fig. 6.8 printed a second time beside Exercise Set 6.6. None of §5's unused components was introduced. No *Did
 you know?* was added.

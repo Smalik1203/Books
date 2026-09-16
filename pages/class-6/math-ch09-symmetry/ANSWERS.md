@@ -392,16 +392,21 @@ the booklet is complete.
 
 ### Stage 1 · Using What You Know
 
-1. A regular octagon has **8** lines of symmetry; its angles of symmetry
-   are the multiples of $45^\circ$ up to $360^\circ$.
+1. A circle with one diameter drawn has **2** lines of symmetry (the drawn
+   diameter and the diameter at right angles to it), and its angles of
+   symmetry are **$180^\circ$ and $360^\circ$**. *(checked)*
 2. Lines of symmetry: **A, E, H, T, X**. Rotational symmetry: **H, N, X,
    Z** (order 2). *(checked on Fig. 9.34)*
-3. **9** angles of symmetry, since $360 \div 40 = 9$; $100^\circ$ is not
-   one of them.
-4. **8, 9 and 12** arms.
-5. The second player wins by copying each move with a half turn.
-6. A rectangle that is not a square, or a rhombus that is not a square;
-   **yes**, each has rotational symmetry of order 2.
+3. **Yes** for $180^\circ$ and $270^\circ$: two and three quarter turns.
+   **Not necessarily** for $45^\circ$: a square fits after $90^\circ$ but
+   not after $45^\circ$. *(checked)*
+4. **8, 9 and 12** arms; 11 arms give $32\frac{8}{11}$ degrees.
+   *(checked)*
+5. After a half turn: **SOS** only. In the mirror: **TOOT and MOM**.
+   *(checked)*
+6. **2** lines of symmetry (the line through both diagonals, and the line
+   through the shared corner at right angles to it); **yes**, rotational
+   symmetry of order 2. *(checked)*
 
 ### Stage 2 · Solved Examples
 

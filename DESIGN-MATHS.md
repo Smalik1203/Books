@@ -554,8 +554,15 @@ the two differ. Class 7 Chapter 1 is the built example.
     4 Answers               the letter key, every other answer, and why the
                             wrong options are wrong for a few questions
 
-- **Nothing in the division repeats the chapter body.** A question or example
-  the chapter already sets is left out, whatever its source.
+- **Nothing in the division repeats the chapter body, or answers it.** A
+  question or example the chapter already sets is left out, whatever its
+  source; so is one whose working prints the answer to a body question.
+- **Stage 1 is kept word for word, except where it answers a body question.**
+  Decided 16 September 2026: that rule wins. The repair is the smallest one
+  that works — delete the sentence that points back at the body question
+  when that is enough, and replace the item with one of the same kind when
+  the reasoning itself is the answer. Class 6 Chapters 2, 4 and 9 each had
+  such items.
 - **A stage head is its numeral and its name.** No line under the name:
   `.c-stage__for` is not used, and a head without one centres on its mark.
 - **The practice stage is named once.** It has no `.c-stage` head; its band

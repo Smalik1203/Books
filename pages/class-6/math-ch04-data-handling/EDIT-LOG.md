@@ -49,7 +49,7 @@ exercise set was not split.
 
 | stage | before | after |
 |---|---|---|
-| 1 Using What You Know | 7 `.c-try` | **word for word**, checked by script against `HEAD`; only `.c-stage__for` removed |
+| 1 Using What You Know | 7 `.c-try` | word for word, checked by script against `HEAD`, except for `.c-stage__for` and two sentences removed by the user's decision (see *Stage 1: two sentences removed*) |
 | 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems in prose | **12 stepped examples**, numbered **Beyond Example 1–12** as Class 7 numbers them, under six `Type N ·` heads |
 | 3 Problem Sets → **Practice** | 3 multiple-choice sets, 21 questions | **one run of 30**, six forms; the band carries the numeral |
 | 4 Answers & Takeaways → **Answers** | key and notes | on a fresh page: letter key 1–16, one `work--trace` per answer for 17–30, and *why the other options are wrong* for Q3, Q8, Q11 and Q15 |
@@ -124,8 +124,8 @@ closest pairs by reading. Each is *same type, different question*:
 - Q27 (draw and read a bar graph) against Exercise 4.6 Q9.
 - Q19 (ascending order, then the value seen most) against Exercise 4.3.
 
-No Beyond example or practice question states a body answer, apart from
-Stage 1, which is flagged below.
+No Beyond example or practice question states a body answer. Stage 1 did,
+twice, until the two sentences below were removed.
 
 **`ANSWERS.md`** answers every question the chapter sets:
 - all seven exercise sets;
@@ -265,14 +265,38 @@ No *Did you know?* was added.
 
 | where | code | what is wrong | what it needs |
 |---|---|---|---|
-| Stage 1, second try (p101) | C7 | *It is the same problem Jarina and Sangita met with 33 and 27 students* half-answers the body's Think and Reflect on 33 and 27 | A decision. Stage 1 is kept word for word by instruction |
-| Stage 1, goals try (p102) | C7 | *This is the question Mayank got wrong about Bumrah's wickets. Adding 0, 1, 2 and 3…* answers Exercise 4.6 Q5(v) and shows (vi) | As above |
 | Body Example 2 (p013) | §5a figures | Its Answer row, *Fig. 4.12 shows the result*, is on a recto, and Fig. 4.12 is overleaf on p014. The question does not name the figure; this was already so at `HEAD` | Accept, or re-fit p013–p014 |
 | Fig. 4.10 | facts | NCERT truncates the census figures. 1971 is 54.8 crores, printed 54; 1991 is 84.6, printed 84; 2001 is 102.9, printed 102 | A decision on rounding; the numbers are NCERT's, so they were left alone |
 | Table 4.13, Denali 6194 m | facts | The 2015 US Geological Survey measurement is 6190 m. 6194 m is the older figure. Everest is now 8848.86 m | A decision; the numbers are NCERT's, so they were left alone |
 | Exercise 4.6 Q8(i) | C4 | *What would be a useful key?* has two good answers, 6 and 12 | `ANSWERS.md` gives both |
 | `gaps.mjs` | tool | It does not know the figure-facing rule, and suggests splitting p020's Q10 back onto p019 | Do not follow it on this chapter |
 | `refit … bridge` | tool | Its result depends on the pages it is given. I always ran it on freshly generated pages, from `scratchpad/gen-beyond.mjs` | Re-check p103–p112 after any future refit |
+
+### Stage 1: two sentences removed, 16 September 2026
+
+**The user's decision.** I had flagged a conflict: the rule that nothing in
+Beyond answers a body question, against keeping Stage 1 word for word. The
+user ruled that the first rule wins, and asked for the smallest edit that
+works. Both flags above are cleared by this change.
+
+| page | before | after | why |
+|---|---|---|---|
+| p101, the try about 27 books | *…and no reader could measure that. It is the same problem Jarina and Sangita met with 33 and 27 students.* | *…and no reader could measure that.* | It pointed the reader at the body's Think and Reflect about 33 or 27 students, and said the answer was the one just given |
+| p102, the goals try | *So the total is $0 + 5 + 8 + 6 = 19$ goals. This is the question Mayank got wrong about Bumrah's wickets. Adding 0, 1, 2 and 3 gives only 6, because it forgets how many matches each number of goals happened in.* | *So the total is $0 + 5 + 8 + 6 = 19$ goals.* | The first sentence names Exercise 4.6 Q5. The second is Q5(v)'s answer with goals for wickets, so even without the names it still answers the question. It was deleted too |
+
+Everything else in Stage 1 is unchanged. I read the whole stage again and
+kept two passages:
+- **p101:** *Its row would need a piece of a symbol smaller than a half.*
+  It answers the try's own question about a key of 8, and names no body
+  question.
+- **p102:** the goals try works *count × frequency*. It is the try's own
+  question, a worked analogue of the method Exercise 4.6 Q5(vi) asks for,
+  on other data. Deleting it would remove the try. **Flagged** for the user,
+  in case the analogue alone counts as giving Q5(vi) away.
+
+`check-numbers.mjs` no longer computes $0 + 1 + 2 + 3$ for Stage 1. It now
+also checks that Stage 1 names none of Mayank, Bumrah, Jarina or Sangita.
+`ANSWERS.md` quoted neither sentence, so it did not change.
 
 ### Not changed
 

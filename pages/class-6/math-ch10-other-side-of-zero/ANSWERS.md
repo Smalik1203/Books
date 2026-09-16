@@ -306,9 +306,6 @@ $(+4) - (-6) = +10$.
 4. (a) $8 - 13 = -5$ (b) $(-8) - 13 = -21$ (c) $(-13) - (-8) = -5$
    (d) $(-13) + (-8) = -21$ (e) $8 + (-13) = -5$ (f) $(-8) - (-13) = 5$
    (g) $13 - 8 = 5$ (h) $13 - (-8) = 21$
-5. *Answers will vary.* $(-13) - (-8) = -5$ and $(-8) - (-13) = 5$;
-   $(-8) - 13 = -21$ and $13 - (-8) = 21$; also $8 + (-13) = -5$ with
-   $13 - 8 = 5$, and $(-13) + (-8) = -21$ with $13 - (-8) = 21$.
 
 ### Exercise 10.18
 
@@ -331,8 +328,6 @@ $(+4) - (-6) = +10$.
    (f) negative plus positive **can be positive, negative or zero**
 5. The pattern repeats every 5 tokens — 3 positive and 2 negative, worth
    $+1$. 100 tokens make 20 repeats, so the string is worth **$+20$**.
-6. $7 - (-16) = 23$. The temperature rose by **23 degrees**.
-7. $-7, -10, -13$. Each number is 3 less than the one before it.
 
 ## 10.5 A Pinch of History
 
@@ -403,6 +398,11 @@ Beyond the Book's own numbering; each answer is the one on its *Answer* row.
 | 1 (c) | 2 (b) | 3 (a) | 4 (d) | 5 (b) | 6 (a) | 7 (a) | 8 (d) |
 | 9 (c) | 10 (b) | 11 (c) | 12 (c) | 13 (a) | 14 (b) | 15 (c) | 16 (d) |
 
+Questions 22, 27 and 28 were in the chapter body until the body was made
+NCERT's alone: 22 was Exercise 10.18's last question, 27 the one before it,
+and 28 the last question of Exercise 10.17, which pointed at that set's
+fourth question and now carries its own six expressions.
+
 15. **(c).** A is true: $-3$ lies to the right of $-8$. R is false: $-3$ is 3
     steps from 0 and $-8$ is 8 steps, so $-8$ is the one further away.
 
@@ -411,24 +411,32 @@ Beyond the Book's own numbering; each answer is the one on its *Answer* row.
 19. $(-9) + (+4) + (+5) = 0$.
 20. **35 m.** $25 - (-10) = 35$.
 21. *Answers will vary.* For example, 2 and $-5$: $2 + (-5) = -3$.
-22. **₹115.** $40 - (-75) = 115$.
-23. $-18 \lt -4 \lt 12$. The bottom of the well is **30 m** below the roof:
+22. $-7$, $-10$, $-13$. Each number is 3 less than the one before it.
+23. **₹115.** $40 - (-75) = 115$.
+24. $-18 \lt -4 \lt 12$. The bottom of the well is **30 m** below the roof:
     $12 - (-18) = 30$.
-24. **$+2$.** The pocket was worth 0; 5 positive and 3 negative tokens are
+25. **$+2$.** The pocket was worth 0; 5 positive and 3 negative tokens are
     left. It shows $0 - (-2) = +2$.
-25. Top middle: $4 + (-6) = -2$ and $(-5) - (-2) = -3$. Right middle:
+26. Top middle: $4 + (-6) = -2$ and $(-5) - (-2) = -3$. Right middle:
     $(-6) + 1 = -5$ and $(-5) - (-5) = 0$. **$-3$ and 0.**
-26. (a) $-1$, $-7$, $-13$, $-19$ (b) **$-1$** (c) **Yes.** Counting on gives
+27. **23 degrees.** $7 - (-16) = 23$.
+28. *Answers will vary.* The six values are $7 - 11 = -4$, $(-7) - 11 = -18$,
+    $(-11) - (-7) = -4$, $11 - 7 = 4$, $11 - (-7) = 18$ and
+    $(-7) - (-11) = 4$. Two more pairs: $(-7) - 11$ with $11 - (-7)$, and
+    $(-11) - (-7)$ with $(-7) - (-11)$. ($7 - 11$ with $(-7) - (-11)$, and
+    $(-11) - (-7)$ with $11 - 7$, also work.) Swapping the two numbers in a
+    subtraction gives the inverse of the value.
+29. (a) $-1$, $-7$, $-13$, $-19$ (b) **$-1$** (c) **Yes.** Counting on gives
     $-25$, $-31$, $-37$, so $-37$ is the 11th number.
-27. (a) $+5$, $-3$, $-1$, $-7$, $-3$ (b) **$-7$**
+30. (a) $+5$, $-3$, $-1$, $-7$, $-3$ (b) **$-7$**
     (c) $(+5) + (-8) + (+2) + (-6) + (+4) = -3$ — **yes**, the last floor
     (d) $(+5) - (-3) = +8$: press **$+8$**.
-28. (a) rows **1, 3, 8** and **$-6$, $-4$, 1** and **$-3$, $-1$, 4**
+31. (a) rows **1, 3, 8** and **$-6$, $-4$, 1** and **$-3$, $-1$, 4**
     (b) *answers will vary*: $1 + (-4) + 4 = 1$ and $8 + (-6) + (-1) = 1$
     (c) a game uses each row number once and each column number once, so it
     always gives $(3 + (-4) + (-1)) + ((-2) + 0 + 5) = 1$.
-29. (a) **S** (b) **S, P, R, Q** (c) $3 - (-11) = 14$ degrees
+32. (a) **S** (b) **S, P, R, Q** (c) $3 - (-11) = 14$ degrees
     (d) $(-7) + 9 = 2$ °C.
-30. (a) $420 - (-65) = 485$ m (b) $(-65) - (-18) = -47$ m (c) **the village
+33. (a) $420 - (-65) = 485$ m (b) $(-65) - (-18) = -47$ m (c) **the village
     and the reef**: $35 - (-18) = 53$ (d) $35 + 30 = 65$, so $+65$ m, and
     $65 - (-65) = 130$ m above the sea bed.

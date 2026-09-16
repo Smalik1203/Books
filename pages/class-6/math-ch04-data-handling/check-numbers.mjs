@@ -554,7 +554,9 @@ is('Stage 1: 35 students are 3 and a half symbols of 10', 35 / 10 === 3.5 && sta
   ok('Stage 1: bars with 1 square for 20 pencils', pen.map(p => p / 20), [6, 13, 17, 4.5]);
   is('Stage 1 prints them', stage1.includes('the bars are 6, 13 and 17 squares tall, and the bar for Thursday is 4 and a half squares'));
   ok('Stage 1: kites above 50', [60 - 50, 70 - 50, (70 - 50) / (60 - 50), 70 - 60], [10, 20, 2, 10]);
-  ok('Stage 1: goals', [3 + 5 + 4 + 2, 0 * 3 + 1 * 5 + 2 * 4 + 3 * 2, 0 + 1 + 2 + 3], [14, 19, 6]);
+  ok('Stage 1: goals', [3 + 5 + 4 + 2, 0 * 3 + 1 * 5 + 2 * 4 + 3 * 2], [14, 19]);
+  // removed 16 Sep 2026 by the user's decision: nothing in Beyond may answer a body question
+  is('Stage 1 no longer names Mayank, Bumrah, Jarina or Sangita', !/Mayank|Bumrah|Jarina|Sangita/.test(stage1));
   is('Stage 1 prints 3 goals in 2 matches as 6', stage1.includes('3 goals in 2 matches') && 3 * 2 === 6);
 }
 

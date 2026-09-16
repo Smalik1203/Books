@@ -696,84 +696,117 @@ okRow('19 value', 19, [-9, 4, 5, val(firstMath(Q(19)))]);
   is('21 the printed instance works', p > 0 && n < 0 && p + n === s);
 }
 {
-  const [bal, target] = numbersIn(Q(22));
-  okRow('22 the credit', 22, [target - bal, target, bal, target - bal]);
+  // 22, once Exercise 10.18 Q7
+  const seq = numbersIn(firstMath(Q(22)).replace(/\\ldots/, ''));
+  const step = seq[1] - seq[0];
+  is('22 the sequence has one step', seq.every((v, k) => k === 0 || v - seq[k - 1] === step) && step === -3);
+  const next = [1, 2, 3].map(k => seq[seq.length - 1] + k * step);
+  okRow('22 next three, and the rule', 22, [...next, -step]);
 }
 {
-  const hs = numbersIn(Q(23)).sort((p, q) => p - q);
+  const [bal, target] = numbersIn(Q(23));
+  okRow('23 the credit', 23, [target - bal, target, bal, target - bal]);
+}
+{
+  const hs = numbersIn(Q(24)).sort((p, q) => p - q);
   const gap = hs[2] - hs[0];
-  okRow('23 order and distance', 23, [...hs, gap, hs[2], hs[0], gap]);
+  okRow('24 order and distance', 24, [...hs, gap, hs[2], hs[0], gap]);
 }
 {
-  const [p, n, taken] = numbersIn(Q(24));
+  const [p, n, taken] = numbersIn(Q(25));
   const left = [p, n - taken];
-  okRow('24 value, and the subtraction it shows', 24, [left[0] - left[1], 0, left[0], left[1], 0, -taken, left[0] - left[1]]);
+  okRow('25 value, and the subtraction it shows', 25, [left[0] - left[1], 0, left[0], left[1], 0, -taken, left[0] - left[1]]);
 }
 {
-  const [sum, tl, tr, br] = numbersIn(Q(25));
+  const [sum, tl, tr, br] = numbersIn(Q(26));
   const topMid = sum - (tl + tr), rightMid = sum - (tr + br);
-  okRow('25 middles', 25, [tl, tr, tl + tr, sum, tl + tr, topMid, tr, br, tr + br, sum, tr + br, rightMid]);
+  okRow('26 middles', 26, [tl, tr, tl + tr, sum, tl + tr, topMid, tr, br, tr + br, sum, tr + br, rightMid]);
 }
 {
-  const seq = numbersIn(firstMath(Q(26)).replace(/\\ldots/, ''));
+  // 27, once Exercise 10.18 Q6
+  const [night, day] = numbersIn(Q(27));
+  ok('27 the temperatures as printed', [night, day], [-16, 7]);
+  okRow('27 the rise', 27, [day - night, day, night, day - night]);
+}
+{
+  // 28, once Exercise 10.17 Q5: read the six expressions, and check that the
+  // two printed pairs are new pairs of these whose values are inverses
+  const exprs = [...Q(28).split('The values')[0].matchAll(/\$([^$]+)\$/g)].map(m => m[1].trim());
+  ok('28 six expressions', exprs.length, 6);
+  const given = [...Q(28).split('The values')[1].matchAll(/\$([^$]+)\$/g)].map(m => m[1].trim());
+  is('28 the given pair are inverses', given.length === 2 && val(given[0]) === -val(given[1]) && given.every(g => exprs.includes(g)));
+  const printed = [...row(28).matchAll(/\$([^$=]+)=\s*([^$]+)\$/g)].map(m => [m[1].trim(), val(m[2])]);
+  ok('28 two printed pairs', printed.length, 4);
+  const pairs = [[printed[0], printed[1]], [printed[2], printed[3]]];
+  is('28 each printed pair is two of the six, with inverse values, and not the given pair',
+    pairs.every(([p, q]) => exprs.includes(p[0]) && exprs.includes(q[0]) && p[1] === val(p[0]) && q[1] === val(q[0])
+      && p[1] === -q[1] && p[1] !== 0 && !(given.includes(p[0]) && given.includes(q[0]))));
+  is('28 the two printed pairs are different', new Set(printed.map(x => x[0])).size === 4);
+  // the fuller answer in ANSWERS.md names the same pairs
+  is('28 ANSWERS names the printed pairs',
+    ANSWERS.includes(`Two more pairs: $${printed[0][0]}$ with $${printed[1][0]}$, and\n    $${printed[2][0]}$ with $${printed[3][0]}$.`));
+  ok('28 ANSWERS lists the six values', exprs.map(e => ANSWERS.includes(`$${e} = ${val(e)}$`)), exprs.map(() => true));
+}
+{
+  const seq = numbersIn(firstMath(Q(29)).replace(/\\ldots/, ''));
   const step = seq[1] - seq[0];
   const more = []; let x = seq[seq.length - 1];
   while (more.length < 20) { x += step; more.push(x); }
-  okPart('26 next four', 26, 'a', more.slice(0, 4));
-  okPart('26 first negative', 26, 'b', [more.find(v => v < 0)]);
+  okPart('29 next four', 29, 'a', more.slice(0, 4));
+  okPart('29 first negative', 29, 'b', [more.find(v => v < 0)]);
   const idx = [...seq, ...more].indexOf(-37);
-  is('26(c) -37 is in the sequence', idx >= 0);
-  okPart('26 counting on', 26, 'c', [...more.slice(more.indexOf(-37) - 2, more.indexOf(-37) + 1), -37, idx + 1]);
+  is('29(c) -37 is in the sequence', idx >= 0);
+  okPart('29 counting on', 29, 'c', [...more.slice(more.indexOf(-37) - 2, more.indexOf(-37) + 1), -37, idx + 1]);
 }
 {
-  const moves = numbersIn(Q(27)).slice(1, 6);
-  ok('27 the moves as printed', moves, [5, -8, 2, -6, 4]);
+  const moves = numbersIn(Q(30)).slice(1, 6);
+  ok('30 the moves as printed', moves, [5, -8, 2, -6, 4]);
   const floors = []; moves.reduce((f, m) => (floors.push(f + m), f + m), 0);
-  okPart('27 floors', 27, 'a', floors);
-  okPart('27 lowest', 27, 'b', [Math.min(...floors)]);
-  okPart('27 total', 27, 'c', [...moves, moves.reduce((p, q) => p + q)]);
-  is('27(c) the total is the last floor', moves.reduce((p, q) => p + q) === floors[floors.length - 1]);
-  okPart('27 button', 27, 'd', [5, floors[4], 5 - floors[4]]);
+  okPart('30 floors', 30, 'a', floors);
+  okPart('30 lowest', 30, 'b', [Math.min(...floors)]);
+  okPart('30 total', 30, 'c', [...moves, moves.reduce((p, q) => p + q)]);
+  is('30(c) the total is the last floor', moves.reduce((p, q) => p + q) === floors[floors.length - 1]);
+  okPart('30 button', 30, 'd', [5, floors[4], 5 - floors[4]]);
 }
 {
-  const n = numbersIn(Q(28));
+  const n = numbersIn(Q(31));
   const rowsN = n.slice(2, 5), colsN = n.slice(5, 8);
-  ok('28 row and column numbers as printed', [rowsN, colsN], [[3, -4, -1], [-2, 0, 5]]);
+  ok('31 row and column numbers as printed', [rowsN, colsN], [[3, -4, -1], [-2, 0, 5]]);
   const g = rowsN.map(r => colsN.map(c => r + c));
-  okPart('28 the grid', 28, 'a', g.flat());
+  okPart('31 the grid', 31, 'a', g.flat());
   const sums = gameSums(g);
-  ok('28 every game agrees', sums.length, 1);
-  const bp = numbersIn(part(28, 'b') || '');
-  is('28(b) both printed games are games on this grid, and give the sum',
+  ok('31 every game agrees', sums.length, 1);
+  const bp = numbersIn(part(31, 'b') || '');
+  is('31(b) both printed games are games on this grid, and give the sum',
     bp.length === 8 && [[bp[0], bp[1], bp[2]], [bp[4], bp[5], bp[6]]].every(trio =>
       perms(3).some(p => p.every((c, r) => g[r][c] === trio[r]))) && bp[3] === sums[0] && bp[7] === sums[0]);
-  okPart('28 why', 28, 'c', [...rowsN, ...colsN, sums[0]]);
+  okPart('31 why', 31, 'c', [...rowsN, ...colsN, sums[0]]);
 }
 {
-  const cells = numbersIn(Q(29).match(/<tbody>[\s\S]*<\/tbody>/)[0]);
+  const cells = numbersIn(Q(32).match(/<tbody>[\s\S]*<\/tbody>/)[0]);
   const towns = ['P', 'Q', 'R', 'S'];
   const t = Object.fromEntries(towns.map((k, i) => [k, cells[i]]));
   const order = [...towns].sort((p, q) => t[p] - t[q]);
-  is('29(a) coldest', part(29, 'a').trim() === order[0]);
-  is('29(b) order', part(29, 'b').trim() === order.join(', '));
-  okPart('29 Q warmer than S', 29, 'c', [t.Q, t.S, t.Q - t.S]);
-  const rise = numbersIn(Q(29).split('By noon')[1])[0];
-  okPart('29 P at noon', 29, 'd', [t.P, rise, t.P + rise]);
+  is('32(a) coldest', part(32, 'a').trim() === order[0]);
+  is('32(b) order', part(32, 'b').trim() === order.join(', '));
+  okPart('32 Q warmer than S', 32, 'c', [t.Q, t.S, t.Q - t.S]);
+  const rise = numbersIn(Q(32).split('By noon')[1])[0];
+  okPart('32 P at noon', 32, 'd', [t.P, rise, t.P + rise]);
 }
 {
-  const cells = numbersIn(Q(30).match(/<tbody>[\s\S]*<\/tbody>/)[0]);
-  const names = [...Q(30).matchAll(/<tr><td>([A-Za-z ]+)<\/td>/g)].map(m => m[1]);
+  const cells = numbersIn(Q(33).match(/<tbody>[\s\S]*<\/tbody>/)[0]);
+  const names = [...Q(33).matchAll(/<tr><td>([A-Za-z ]+)<\/td>/g)].map(m => m[1]);
   const h = Object.fromEntries(names.map((k, i) => [k, cells[i]]));
-  ok('30 table as read', h, { 'Hill top': 420, Village: 35, Beach: 0, Reef: -18, 'Sea bed': -65 });
-  okPart('30 hill over sea bed', 30, 'a', [h['Hill top'], h['Sea bed'], h['Hill top'] - h['Sea bed']]);
-  okPart('30 reef to sea bed', 30, 'b', [h['Sea bed'], h.Reef, h['Sea bed'] - h.Reef]);
+  ok('33 table as read', h, { 'Hill top': 420, Village: 35, Beach: 0, Reef: -18, 'Sea bed': -65 });
+  okPart('33 hill over sea bed', 33, 'a', [h['Hill top'], h['Sea bed'], h['Hill top'] - h['Sea bed']]);
+  okPart('33 reef to sea bed', 33, 'b', [h['Sea bed'], h.Reef, h['Sea bed'] - h.Reef]);
   const apart = [];
   for (const a of names) for (const b of names) if (h[a] - h[b] === 53) apart.push([a, b]);
-  ok('30(c) exactly one pair is 53 m apart', apart, [['Village', 'Reef']]);
-  okPart('30 the pair', 30, 'c', [h.Village, h.Reef, 53]);
-  const up = numbersIn(Q(30).split('A bird flies')[1])[0];
+  ok('33(c) exactly one pair is 53 m apart', apart, [['Village', 'Reef']]);
+  okPart('33 the pair', 33, 'c', [h.Village, h.Reef, 53]);
+  const up = numbersIn(Q(33).split('A bird flies')[1])[0];
   const bird = h.Village + up;
-  okPart('30 bird', 30, 'd', [h.Village, up, bird, bird, bird, h['Sea bed'], bird - h['Sea bed']]);
+  okPart('33 bird', 33, 'd', [h.Village, up, bird, bird, bird, h['Sea bed'], bird - h['Sea bed']]);
 }
 
 // the "why the other options are wrong" notes name real options
@@ -970,7 +1003,7 @@ answered('10.9 Q4', '(+9) + (-7)', 2);
 answered('10.8 Q2', '(-40) + (+90)', 50);
 answered('T&R Basant', '(+4) + (-4)', 0);
 answered('T&R (-7) + (+5)', '(-7) + (+5)', -2);
-answered('10.18 Q6', '7 - (-16)', 23);
+answered('practice Q27, once Ex. 10.18 Q6', '7 - (-16)', 23);
 answered('10.18 Q3', '(-5) - (+18) - (+7)', -30);
 answered('10.18 Q3 smallest', '(-5) + (-2) + (-9) - (+1) - (+7) - (+18)', -42);
 answered('T&R number line', '(-8) + (-3)', -11);
@@ -1016,7 +1049,7 @@ is('T&R which is further from 0', Math.abs(-7) > Math.abs(5) && ANSWERS.includes
   ok('10.18 Q4 signs', [kind((x, y) => x - y, P, N), kind((x, y) => x + y, P, N), kind((x, y) => x + y, N, N),
     kind((x, y) => x - y, N, N), kind((x, y) => x - y, N, P), kind((x, y) => x + y, N, P)],
     ['1', '-1,0,1', '-1', '-1,0,1', '-1', '-1,0,1']);
-  is('10.18 Q7', ANSWERS.includes('7. $-7, -10, -13$') && [5, 2, -1, -4].every((v, k, s) => k === 0 || v - s[k - 1] === -3));
+  is('practice Q22, once Ex. 10.18 Q7', ANSWERS.includes('22. $-7$, $-10$, $-13$.') && [5, 2, -1, -4].every((v, k, s) => k === 0 || v - s[k - 1] === -3));
 }
 {
   // 10.13 Q4 and Q5 are facts, not arithmetic: recorded with their source in EDIT-LOG.md
@@ -1038,9 +1071,11 @@ is('T&R which is further from 0', Math.abs(-7) > Math.abs(5) && ANSWERS.includes
   for (const m of beyond.matchAll(/^(\d+)\. ([\s\S]*?)(?=^\d+\. |(?![\s\S]))/gm)) ansRows[m[1]] = m[2];
   // ANSWERS.md may close a row with its answer in bold; that summary is
   // named here and checked against the page's own values.
-  const SUMMARY = { 25: numbersIn(row(25)).filter((_, k) => k === 5 || k === 11), 27: [5 - (-3)] };
-  for (let n = 17; n <= 30; n++) {
-    if (n === 21) continue;   // answers will vary: the same instance is checked below
+  const SUMMARY = { 26: numbersIn(row(26)).filter((_, k) => k === 5 || k === 11), 30: [5 - (-3)] };
+  for (let n = 17; n <= 33; n++) {
+    // answers will vary: 21 is checked for the same instance below, and 28's
+    // fuller answer by the pair check on the page and part A's arithmetic
+    if (n === 21 || n === 28) continue;
     ok(`ANSWERS Q${n} agrees with the page`, numbersIn(ansRows[n] || ''), [...numbersIn(row(n)), ...(SUMMARY[n] || [])]);
   }
   is('ANSWERS Q21 same instance', numbersIn(ansRows[21]).join() === numbersIn(row(21)).join());

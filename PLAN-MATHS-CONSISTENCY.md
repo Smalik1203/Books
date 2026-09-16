@@ -239,7 +239,9 @@ carrying to the next class: an expected value typed by hand drifts from a
 corrected page, so read answers back off the page; and a whole-row check lets
 a wrong lettered part hide behind a right one, so check each part.
 
-**Left for the user,** listed in each chapter's `EDIT-LOG.md`: body questions
-not in NCERT (Chapter 10); a figure four pages from its exercise (Chapter 6);
-Stage 1, kept word for word, answering body questions (Chapters 2, 4, 9);
-missing key ideas and terms; facts without a source.
+**Decided by the user afterwards:** body questions not in NCERT move to
+Beyond's Practice (Chapter 10); a figure far from its question is reprinted
+beside it (Chapter 6); where Stage 1 answers a body question, the
+no-give-away rule wins, with the smallest edit (Chapters 2, 4, 9, and Class 7
+to be checked); a question with two right answers is reworded (Chapter 6).
+Still open: missing key ideas and terms; facts without a source.
