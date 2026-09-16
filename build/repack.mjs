@@ -155,6 +155,13 @@ window.addEventListener('load', function () {
           // band with no questions of its own under it
           leads: !!el.querySelector('.c-stage__title')
             || (!!el.querySelector('.c-practice__head') && !el.querySelector('.c-questions')),
+          // Beyond the Book's Answers stage always opens a page: set under
+          // the last practice question, it put the key to half the stage
+          // in view of a reader still working that question
+          fresh: (function () {
+            var t = el.querySelector('.c-stage__title');
+            return !!t && t.textContent.trim() === 'Answers';
+          })(),
           // what this block starts, and how much of its own height is
           // the title rather than the matter under it
           opens: o ? o.kind : null,
@@ -280,6 +287,13 @@ function opensWell(flat, i, room, lh, headMb, depth = 0) {
   return inner + after >= (spent ? Math.min(quota, whole) : quota);
 }
 
+/* A block that always starts a page. There is one: Beyond the Book's
+   Answers stage head (DESIGN-MATHS §6a). Stages otherwise run on
+   part-way down a page, but the key printed under the last practice
+   question is in view while that question is still being worked, so
+   the Answers stage takes a fresh page whatever that costs the page
+   before it. The white left behind is logged, not closed. */
+
 /* An exercise set kept whole. A chapter that sets "keepExerciseSets"
    in chapter.json wants every set to start on a page it can finish
    on: a band with two questions at the foot and seven overleaf reads
@@ -321,7 +335,8 @@ function pack(pages, keepSets = false) {
   for (const [idx, b] of flat.entries()) {
     const join = Math.max(prevMb, b.mt);
     const cost = (page.blocks.length ? join : 0) + b.h;
-    const stranded = (isOpener(b)
+    const stranded = b.fresh === true
+      || (isOpener(b)
       && !opensWell(flat, idx, page.avail - page.used - cost, lh, b.mb))
       || (keepSets && b.opens === 'exercise'
           && page.used + setCost(flat, idx, prevMb, !page.blocks.length) > page.avail);

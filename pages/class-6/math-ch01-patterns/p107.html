@@ -2,125 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set C &middot; The whole chapter</div>
-        <ol class="c-questions">
-          <li>
-            When you add up the All 1s sequence — $1$, then $1 + 1$, then $1 + 1 + 1$ — you get
-            <ol class="c-parts c-parts--alpha"><li>the odd numbers</li><li>the counting numbers</li><li>the square numbers</li><li>the All 1s again</li></ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-            $1 + 3 + 5 + \cdots + 39$ is equal to
-            <ol class="c-parts c-parts--alpha c-parts--4"><li>400</li><li>390</li><li>441</li><li>380</li></ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-            Multiply the 5th triangular number by 6 and add 1. The answer is
-            <ol class="c-parts c-parts--alpha c-parts--4"><li>61</li><li>90</li><li>91</li><li>96</li></ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-            The 8th shape in the stacked squares has how many small squares?
-            <ol class="c-parts c-parts--alpha c-parts--4"><li>16</li><li>64</li><li>36</li><li>81</li></ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>
-            $1 + 2 + 4 + 8 + \cdots + 256$ is equal to
-            <ol class="c-parts c-parts--alpha c-parts--4"><li>512</li><li>1023</li><li>511</li><li>510</li></ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>
-            A complete graph has 45 lines. The number of points it has is
-            <ol class="c-parts c-parts--alpha c-parts--4"><li>9</li><li>45</li><li>11</li><li>10</li></ol>
-          </li>
-        </ol>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">4</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Answers &amp; Takeaways</div>
-          <div class="c-stage__for">Check your answers, then read why the other options are wrong.</div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 15</div>
+        <div class="c-example__body">
+          <p>A shape in the stacked triangles is made of 64 small triangles. How many rows does it have? How many of its small triangles point up?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the rows hold 1, 3, 5, 7, &hellip; small triangles</span>
+              <span class="work__why">the odd numbers</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>so the total is a square: $64 = 8 \times 8$, which means 8 rows</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the rows hold 1, 2, 3, &hellip;, 8 triangles that point up</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$1 + 2 + \cdots + 8 = 36$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>8 rows; 36 triangles point up</span></div>
+          </div>
+          <p>The other $64 - 36 = 28$ triangles point down, and 28 is the triangular number just before 36.</p>
         </div>
       </div>
 
-      <ol class="c-answers">
-        <li>
-          <span class="c-answers__stage">Set A</span>
-          <span class="c-answers__list"><span class="n">1</span> (c) &nbsp;
-              <span class="n">2</span> (a) &nbsp;
-              <span class="n">3</span> (c) &nbsp;
-              <span class="n">4</span> (a) &nbsp;
-              <span class="n">5</span> (b) &nbsp;
-              <span class="n">6</span> (d) &nbsp;
-              <span class="n">7</span> (c) &nbsp;
-              <span class="n">8</span> (b) &nbsp;
-              <span class="n">9</span> (b) &nbsp;
-              <span class="n">10</span> (d) &nbsp;
-              <span class="n">11</span> (b)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set B</span>
-          <span class="c-answers__list"><span class="n">1</span> (a) &nbsp;
-              <span class="n">2</span> (b) &nbsp;
-              <span class="n">3</span> (d) &nbsp;
-              <span class="n">4</span> (b) &nbsp;
-              <span class="n">5</span> (a) &nbsp;
-              <span class="n">6</span> (d) &nbsp;
-              <span class="n">7</span> (a) &nbsp;
-              <span class="n">8</span> (c)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set C</span>
-          <span class="c-answers__list"><span class="n">1</span> (b) &nbsp;
-              <span class="n">2</span> (a) &nbsp;
-              <span class="n">3</span> (c) &nbsp;
-              <span class="n">4</span> (b) &nbsp;
-              <span class="n">5</span> (c) &nbsp;
-              <span class="n">6</span> (d)</span>
-        </li>
-      </ol>
-
-      <h3>Why the other options are wrong</h3>
-
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B1</span>
-          <span>The L-shapes in Fig. 1.5 build a square of 6 rows of 6 dots out of 1, 3, 5, 7, 9 and 11 dots. So R is exactly the reason that 36 dots make a square, which gives (a). Option (b) would fit only if R were true but had nothing to do with A.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">B3</span>
-          <span>A is false. 4 is a square number, but the triangular numbers go 1, 3, 6, 10, so 4 is not one of them. R is true. One number that is both kinds does not make every square number a triangular number, so the answer is (d).</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>The first shape of the Koch snowflake has 3 straight lines. At each step, every straight line becomes 4 straight lines. How many straight lines does the 5th shape have?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>1st shape: 3 lines</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$3 \times 4 = 12$, $\ 12 \times 4 = 48$</span>
+              <span class="work__why">2nd and 3rd shapes</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$48 \times 4 = 192$, $\ 192 \times 4 = 768$</span>
+              <span class="work__why">4th and 5th shapes</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>768</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B6</span>
-          <span>There are 4 sides with 10 dots each, which makes 40. But each corner dot sits on two sides, so it has been counted twice. Take away the 4 extra corner dots to get 36, option (d). Option (a) forgets about the corners, and option (b) counts every dot in the square, not just the edge.</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
+        <div class="c-example__body">
+          <p>Every corner of a regular hexagon is joined by a straight line to every other corner. How many lines are there? How many of them are not sides of the hexagon?</p>
+          <p><strong>Solution.</strong> The 6 corners and the lines joining them make a complete graph with 6 points.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>6 points have 15 lines</span>
+              <span class="work__why">the 5th triangular number</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>6 of these lines are the sides</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$15 - 6 = 9$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>15 lines, and 9 of them are not sides</span></div>
+          </div>
+          <p>Check the method on smaller shapes. A triangle has 3 corners and 3 lines, and all 3 lines are sides. A square has 4 corners and 6 lines: the 4 sides and the 2 lines that cross its middle. A pentagon has 5 corners and 10 lines, so 5 of its lines are not sides.</p>
         </div>
       </div>
+
 
     </div>
   </div>

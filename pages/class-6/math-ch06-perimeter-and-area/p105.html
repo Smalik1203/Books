@@ -2,36 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 6</span>
-        <p>The seven tangram pieces are fitted together into a square of side 8 cm. The area of the parallelogram, Shape $G$, is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>8 sq cm</li><li>16 sq cm</li><li>4 sq cm</li><li>12 sq cm</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>The whole square can be covered by 16 copies of the smallest triangle, and Shape $G$ is covered by 2 of them.</p>
-        <div class="work work--list">
-          <p>Area of the square $= 8 \times 8 = 64$ sq cm</p>
-          <p>One smallest triangle $= 64 \div 16 = 4$ sq cm</p>
-          <p>Shape $G$ $= 2 \times 4 = 8$ sq cm</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>A lawn is a rectangle 10 m long and 8 m wide. A square pond of side 2 m is dug in its middle, 4 m from each end and 3 m from each side. Find the area of grass that is left, in two ways.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>lawn $= 10 \times 8 = 80$ sq m, pond $= 2 \times 2 = 4$ sq m</span>
+              <span class="work__why">first way</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>grass $= 80 - 4 = 76$ sq m</span>
+              <span class="work__why">whole take away hole</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>strips above and below the pond $= 2 \times (10 \times 3) = 60$ sq m</span>
+              <span class="work__why">second way</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>pieces left and right of the pond $= 2 \times (4 \times 2) = 16$ sq m</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>grass $= 60 + 16 = 76$ sq m</span>
+              <span class="work__why">the two ways agree</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>76 sq m</span></div>
+          </div>
         </div>
-        <p>The answer is (a). Option (b) is the area of a large triangle, which is 4 smallest triangles. Option (c) is one smallest triangle. Option (d) counts Shape $G$ as 3 smallest triangles.</p>
       </div>
 
-      <p>Every tangram piece is a whole number of smallest triangles. So once you know the area of the whole square, you know the area of every piece, without measuring a single side of the pieces.</p>
+      <h3>Type 6 &middot; Same perimeter, different areas</h3>
 
-      <p>The perimeters are a different matter. The parallelogram has two sides of 4 cm, but its two slanting sides cross the small squares from corner to corner, and each is a little more than 2.8 cm. In this problem the area was easy to find, and the perimeter was not.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Of all the rectangles with whole-number sides and a perimeter of 20 cm, which one has the greatest area?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>length $+$ width $= 20 \div 2 = 10$ cm</span>
+              <span class="work__why">half the perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1 \times 9 = 9$, $\ 2 \times 8 = 16$, $\ 3 \times 7 = 21$, $\ 4 \times 6 = 24$, $\ 5 \times 5 = 25$</span>
+              <span class="work__why">every pair</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the area grows as the two sides get closer</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>the square of side 5 cm, with area 25 sq cm</span></div>
+          </div>
+        </div>
+      </div>
 
-      <p>Problem 4 can also be worked backwards. A triangle with a base of 6 units and an area of 15 square units must have its top corner 5 units above the base, because half of $6 \times 5$ is 15.</p>
+      <h3>Type 7 &middot; Area of a triangle in a rectangle</h3>
 
-      <p>Now try moving the square in Problem 5 to other places. Put it on top of any square of the row, below any square, or at either end. Each time it shares exactly one side with the row, so it adds 3 sides and covers 1. The perimeter is 22 units every time. It could change only if the new square touched two squares at once, and a straight row has no such place.</p>
-
-      <p>The wire in Problem 1 could also be bent into a rectangle 7 cm by 5 cm, with an area of 35 sq cm, or 10 cm by 2 cm, with an area of 20 sq cm. The perimeter is 24 cm every time, but the area changes. Of all the rectangles with whole-number sides, the square gives the biggest area.</p>
-
-      <p>In Problems 1 and 5 the shape changed but something stayed fixed, the wire&rsquo;s length or the number of squares. Finding what stays fixed is often the start of a solution.</p>
-
-      <p>Look back at the wrong options in all six problems. Each one came from a step that was left out or done twice: an area kept after the shape changed, a half forgotten, a pair counted both ways, or only one of two changes seen.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Rectangle $PQRS$ is 8 cm long and 6 cm wide, with $PQ$ and $SR$ its long sides. Point $T$ is on $SR$, 3 cm from $S$. Find the areas of triangles $PQT$, $PST$ and $QRT$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$PQT$ $= 8 \times 6 \div 2 = 24$ sq cm</span>
+              <span class="work__why">half the rectangle</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$PST$ is half of a 3 cm by 6 cm rectangle: $3 \times 6 \div 2 = 9$ sq cm</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$TR = 8 - 3 = 5$ cm, so $QRT$ $= 5 \times 6 \div 2 = 15$ sq cm</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$24 + 9 + 15 = 48 = 8 \times 6$</span>
+              <span class="work__why">the three fill the rectangle</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>24 sq cm, 9 sq cm and 15 sq cm</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

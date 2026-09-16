@@ -15,30 +15,54 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The smallest number that is a multiple of 4, of 6 and of 10 is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>240</li><li>120</li><li>60</li><li>30</li></ol>
-      </div>
+      <h3>Type 1 &middot; Common multiples and common factors</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Write each number as a product of primes. A multiple of all three must include every prime that each of them needs.</p>
-        <div class="work work--list">
-          <p>$4 = 2 \times 2$, $\ 6 = 2 \times 3$, $\ 10 = 2 \times 5$</p>
-          <p>it needs two 2s, one 3 and one 5</p>
-          <p>$2 \times 2 \times 3 \times 5 = 60$</p>
-          <p>$60 \div 4 = 15$, $\ 60 \div 6 = 10$, $\ 60 \div 10 = 6$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Find the smallest number that is a multiple of 4, of 6 and of 10.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4 = 2 \times 2$, $\ 6 = 2 \times 3$, $\ 10 = 2 \times 5$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>two 2s, one 3 and one 5 are needed</span>
+              <span class="work__why">most of each prime</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$2 \times 2 \times 3 \times 5 = 60$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$60 \div 4 = 15$, $\ 60 \div 6 = 10$, $\ 60 \div 10 = 6$</span>
+              <span class="work__why">check all three</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>60</span></div>
+          </div>
         </div>
-        <p>The answer is 60, option (c). Option (a) is $4 \times 6 \times 10$. It is a common multiple, but it uses the 2 three times when two are enough. Option (b) is $2 \times 60$, also a common multiple but not the smallest. Option (d) is not a multiple of 4.</p>
       </div>
 
-      <p>You can also check the answer by listing the multiples of the largest number, 10: 10, 20, 30, 40, 50, 60. Now test each one. 20 and 40 are multiples of 4, but not of 6. 30 is a multiple of 6, but not of 4. 60 is the first number in the list that is a multiple of both. Listing works well here because the numbers are small. For larger numbers, the prime factorisations are much quicker.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>How many numbers from 1 to 100 are multiples of both 4 and 6?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>multiples of 6: 6, 12, &hellip; and 12 is a multiple of 4</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the first common multiple is 12</span>
+              <span class="work__why">not $4 \times 6$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>12, 24, 36, 48, 60, 72, 84, 96</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$96 = 12 \times 8$, and $12 \times 9 = 108$ is past 100</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>8</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

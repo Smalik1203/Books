@@ -220,8 +220,9 @@ Answers**, the shape at the top of DESIGN-MATHS §6a. Three things are true
 only of it: the first stage is kept word for word wherever one already
 exists, because its tried-then-explained questions are how a reader sees a
 simple idea become a tricky one; the Practice stage has no head of its own,
-its band carrying the stage numeral instead; and no stage head has a line
-under its name. **Its chapter body is NCERT's own structure** — the worked
+its band carrying the stage numeral instead; no stage head has a line
+under its name; and **the Answers stage always opens a fresh page**, which
+`repack.mjs` enforces, so the key is never in view of the last question. **Its chapter body is NCERT's own structure** — the worked
 examples and examination-form practice a Cengage-style book puts in the
 chapter go here instead (§5).
 

@@ -5,46 +5,69 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>Starting from 1000, the number of Kaprekar rounds needed to reach 6174 is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>3</li><li>4</li><li>5</li><li>never</li></ol>
-      </div>
+      <h3>Type 1 &middot; Taller neighbours</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Remember to keep every number at 4 digits by writing zeros in front. Each line below is one round: A, then B, then C.</p>
-        <div class="work work--list">
-          <p>$1000 - 0001 = 0999$</p>
-          <p>$9990 - 0999 = 8991$</p>
-          <p>$9981 - 1899 = 8082$</p>
-          <p>$8820 - 0288 = 8532$</p>
-          <p>$8532 - 2358 = 6174$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Six children stand in a line. Their heights, from left to right, are 120&nbsp;cm, 135&nbsp;cm, 128&nbsp;cm, 140&nbsp;cm, 132&nbsp;cm and 125&nbsp;cm. What number does each child say?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>120 stands next to 135 only, and 125 next to 132 only, so both say 1</span>
+              <span class="work__why">one neighbour each</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>135 is taller than 120 and 128, and 140 is taller than 128 and 132, so both say 0</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>128 is shorter than 135 and 140, so it says 2</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>132 is shorter than 140 and taller than 125, so it says 1</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>1, 0, 2, 0, 1, 1</span></div>
+          </div>
         </div>
-        <p>The answer is 5 rounds, option (c). Option (d) comes from reading 0999 as the 3-digit number 999: then A and B are both 999, C is 0, and the steps stop. Options (a) and (b) stop counting too soon.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>The grid has rows 5, 9, 2 and 8, 1, 7 and 3, 6, 4. How many of its cells are supercells?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>1</li><li>2</li><li>4</li><li>5</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Check each cell against the cells just left, right, above and below it. A corner cell has 2 neighbours, an edge cell 3 and the centre cell 4.</p>
-        <div class="work work--list">
-          <p>9 beats 5, 2 and 1, so it is a supercell.</p>
-          <p>8 beats 5, 1 and 3, so it is a supercell.</p>
-          <p>7 beats 2, 1 and 4, so it is a supercell.</p>
-          <p>6 beats 1, 3 and 4, so it is a supercell.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Eight children of different heights stand in a line. Without knowing their heights, find the total of the numbers they say.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>in any two neighbours, the shorter one counts the taller one, and the taller one counts nothing</span>
+              <span class="work__why">one pair at a time</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>so each pair of neighbours adds exactly 1 to the total</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>8 children in a line make $8 - 1 = 7$ pairs of neighbours</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>7</span></div>
+          </div>
+          <p>Check the rule on the example above. Six children make 5 pairs, and $1 + 0 + 2 + 0 + 1 + 1 = 5$.</p>
         </div>
-        <p>No other cell beats all its neighbours, so the answer is 4, option (c). Option (a) counts the cells on the slant as neighbours too; then only 9 is a supercell. Option (d) forgets that 5 has a bigger neighbour, 9. The cells 5, 2, 1, 3 and 4 each have at least one bigger neighbour.</p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Five children stand in a line and say 0, 2, 0, 2, 0. Which of them could be the tallest? Which could be the shortest?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the tallest child has no taller neighbour, so says 0</span>
+              <span class="work__why">nobody is taller</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the shortest child says 2, or 1 at an end, and nobody says 1</span>
+              <span class="work__why">every neighbour is taller</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>the 1st, 3rd or 5th child could be the tallest, and the 2nd or 4th the shortest</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

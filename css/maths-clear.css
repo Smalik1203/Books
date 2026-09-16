@@ -6,13 +6,24 @@
    else moves. Loaded only by chapters that declare
    "design": "maths-clear". Nothing else in the book changes.
 
-   1. The role colours stay the same in every chapter. A chapter
-      declares no palette, so structure, action and attention keep
-      the book's three colours throughout, and a student can learn
-      once what a worked example or a question looks like. What the
-      chapter owns is its furniture: the chapter numeral, the rule
-      under the opener, the running head and the folio bar, all in
-      its accent.
+   1. Chapter identity on the furniture: the chapter numeral, the
+      rule under the opener, the running head and the folio bar, all
+      in its accent.
+
+      This began as the opposite rule — a Class 6 chapter declared
+      no palette, so structure, action and attention kept the book's
+      three colours in every chapter, and a student learnt once what
+      a worked example looked like. That was dropped on 16 September
+      2026 (PLAN-MATHS-CONSISTENCY phase 1): every other class moves
+      its working colours per chapter, and one class doing otherwise
+      is the inconsistency the plan exists to remove. Each Class 6
+      chapter now declares a palette, chosen to match its own accent
+      slot in CHAPTER_ACCENTS — chapter 5 takes olive, whose --teal
+      is byte-identical to the accent it already had. So the rules
+      below still ink the furniture, and they now ink it the same
+      colour the palette gives the headings rather than a second one.
+
+      Rules 2 and 3 are untouched, and are what is left of the trial.
    2. Running text is set ragged-right with no hyphenation. A
       justified line full of maths cannot hyphenate, so its word
       spaces open into holes; a second-language reader loses the
