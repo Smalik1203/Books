@@ -208,8 +208,8 @@ $16$ cm².
 
 Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) $1 : 2$; (2) diagonal 16 cm,
-side 17 cm, height about 14.1 cm; (3) reflect the tank in the river and walk
-straight at its image; (4) 240 m²; (5) the rectangle, by 2 cm;
+side 17 cm, height about 14.1 cm; (3) $PQ = 12$ cm and $PR = 20$ cm;
+(4) 240 m²; (5) the rectangle, by 2 cm;
 (6) about 18.5 cm; (7) nine times, ₹108; (8) shortest $6$ by $6$, longest
 $36$ by $1$, and no longest without whole sides.
 

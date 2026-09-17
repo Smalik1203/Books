@@ -1,5 +1,41 @@
 # Class 6 · Mathematics I · Chapter 1 — Looking for Patterns
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book syllabus audit made three findings about this chapter. All three were checked against the pages and fixed.
+The body and Stage 1 were not touched.
+
+**Pages: 21 before (10 body + 11 Beyond), 22 after (10 body + 12 Beyond).**
+
+| finding | what was done |
+|---|---|
+| borderline: Beyond Ex 2 (1, 4, 10, 20, 35) needs gaps that are triangular numbers and the tetrahedral numbers, which the body never meets | Replaced with a question of the same kind: *What comes next: 2, 8, 18, 32, 50, …?* Halving each number gives the square numbers, so the answer is $2 \times 36 = 72$. Stage 1 Q4 already uses double the triangular numbers, so the audit's suggested sequence was not used |
+| borderline: the n-th odd number is $2n - 1$, worked backwards as add 1 and halve (Ex 6–7, Practice Q3, Q7, Q20, Q22), is never stated | Stated once, from the picture, in a paragraph under the Type 3 head. The n-th L-shape of Fig. 1.5 has n dots on each arm and a shared corner, so it has $n + n - 1$ dots. To go back, add 1 and halve. The old note under Ex 6 that gave a second reason was removed |
+| gap: cube numbers, and counting a regular polygon's sides (§1.3, §1.6) | Two examples added. **New Ex 6** (Type 2): a cube built from 64 small cubes, finding its layers, the small cubes in each layer, and the small cubes with no paint. **New Ex 15** (Type 6, first): a 72 cm wire bent into a regular polygon with 8 cm sides is a nonagon, and the same wire bent into a hexagon has 12 cm sides. The polygon example counts sides only. It does not say why a polygon has as many corners as sides, because Exercise Set 1.6 Q1 asks that |
+
+**Renumbering.** Beyond now has **19 examples**, where it had 17. Old Examples 6–13 are now 7–14, and old Examples 14–17 are now 16–19. No running text refers to an example by number. `ANSWERS.md` stage 2 was renumbered and gained the two new answers. `check-numbers.mjs` B6 was rewritten for the new numbering, with checks on:
+
+- the new Ex 2's sequence, halves, next square and answer
+- the new Ex 6's cube number, each step and answer
+- the Type 3 paragraph's three claims
+- the new Ex 15's division, polygon name, prefix, hexagon side and answer
+
+Each new value was changed on purpose in a scratch copy. All 13 changes were caught. The script now passes 625 checks and reports all clear.
+
+**Refit.** `refit … bridge` was run once and gave 13 pages. Ex 2 and Ex 6 were then trimmed by one step each, and the refit was run a second time (checked with `--dry` first), which gave 12 pages.
+
+- Page 18 (p108) holds Ex 18–19 and is **57% full**. Practice is a whole set under `keepExerciseSets`, so it starts on p109. This white is logged here, not padded.
+- Pages 15 and 16 are 87% and 85% full. Each is held open by an example panel that will not fit in the space left.
+
+**Checks.**
+
+- The build fits all 22 pages.
+- orphans: 0.
+- fit-options: clean.
+- check-labels: clean.
+- check-no-repeats: nothing close.
+- `data-bridge` is on p101–p112, and the Answers stage opens p112.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 This is phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model in

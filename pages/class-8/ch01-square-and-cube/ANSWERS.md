@@ -253,7 +253,7 @@ show is that every number below 1729 gives at most one pair.
 Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) the fourth power of a prime —
 16 and 81; (2) 1875; (3) $n^2 < n^2 + n < (n+1)^2$; (4) $n = 72$;
-(5) $a^2 = 2b^2$ is impossible; (6) $(2k+1)^2 = 8m + 1$; (7) 3 or 4 digits;
+(5) 45 cm, since $44^2 = 1936$ and $45^2 = 2025$; ten sides, 45 to 54, since $54^2 = 2916$ and $55^2 = 3025$; (6) $(2k+1)^2 = 8m + 1$; (7) 3 or 4 digits;
 (8) 50.
 
 ### Stage 3 · Practice

@@ -121,16 +121,16 @@ every case could settle it — which is what Wiles gave in 1994.
 Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) 10 cm; (2) diagonal 61 cm, and
 the square on it 3721 cm²; (3) 96; (4) 4 m; (5) area 1024, side 32;
-(6) 13 m; (7) 28 and 45; (8) about 58.6 m, about 29% of the walk.
+(6) 13 m; (7) 24 m; (8) about 58.6 m, about 29% of the walk.
 
 ### Stage 2 · Solved Examples
 
 Worked on the page. The answers, for reference: (1) 6 cm and 3 cm;
 (2) 25, and 7; (3) $1.7 < \sqrt3 < 1.8$ and $1.73 < \sqrt3 < 1.74$;
-(4) between 4.24 cm and 4.25 cm; (5) 52 cm; (6) 1.3 m; (7) 63; (8) 8 m;
-(9) the triangle 33, 56, 65; (10) no, it should be 100 cm; (11) 7 cm;
-(12) 77; (13) a triple, not primitive; (14) (36, 105, 111); (15) (55, 48, 73);
-(16) $m = 7$, $n = 6$.
+(4) between 4.24 cm and 4.25 cm; (5) 52 cm; (6) 1.3 m; (7) 41 cm; (8) 63; (9) 8 m; (10) length 24 cm, diagonal 25 cm;
+(11) the triangle 33, 56, 65; (12) no, it should be 100 cm; (13) 7 cm;
+(14) 77; (15) a triple, not primitive; (16) (36, 105, 111); (17) (55, 48, 73);
+(18) $m = 7$, $n = 6$.
 
 ### Stage 3 · Practice
 

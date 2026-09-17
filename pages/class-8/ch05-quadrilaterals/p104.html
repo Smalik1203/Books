@@ -10,12 +10,16 @@
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">$360$</span>
-          <span>$= 2^3 \times 3^2 \times 5$</span>
+          <span class="work__label work__label--wide">in pairs</span>
+          <span>$1 \times 360,\ 2 \times 180,\ 3 \times 120,\ 4 \times 90,\ 5 \times 72,\ 6 \times 60$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$8 \times 45,\ 9 \times 40,\ 10 \times 36,\ 12 \times 30,\ 15 \times 24,\ 18 \times 20$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">divisors</span>
-          <span>$4 \times 3 \times 2 = 24$ of them</span>
+          <span>$12$ pairs, so $24$ of them</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">drop $n = 1, 2$</span>
@@ -24,15 +28,14 @@
       </div>
 
       <p>
-        The count of divisors comes from Chapter 2: each prime can appear from none of
-        it up to all of it, which is $3+1$ choices for the $2$s, $2+1$ for the $3$s and
-        $1+1$ for the $5$. Only $n = 1$ and $n = 2$ have to go, since no polygon has
-        fewer than three sides.
+        Numbers such as $7$ and $16$ are missing because they do not divide $360$. Only
+        $n = 1$ and $n = 2$ have to go, since no polygon has fewer than three sides.
       </p>
 
-      <p>Counting the divisors rather than listing them is the move worth keeping. A
-      question that asks how many, rather than which, almost never wants the list — and
-      the factorisation of the number is usually where the count is hiding.</p>
+      <p>Listing the divisors in pairs is the move worth keeping. Each small divisor
+      brings a large partner, and the list is finished when the two meet — after
+      $18 \times 20$ the next divisor is $20$, already there — so none is missed and
+      none is counted twice.</p>
 
       <p>
         The fourth and fifth questions are the two that catch people out, and for

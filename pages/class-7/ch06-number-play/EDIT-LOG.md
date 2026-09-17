@@ -1,5 +1,27 @@
 # Class 7 · Mathematics I · Chapter 6 — Number Play
 
+## Syllabus audit fixes, 17 September 2026
+
+Beyond the Book checked against what the chapter body teaches. The audit
+found one gap and nothing off-syllabus. The chapter has no `ANSWERS.md` or
+`check-numbers.mjs`, so the new values were verified by hand.
+
+- **Gap, §6.3 sums in grids.** New Example 8, under Type 3 (renamed *Sums in
+  grids and magic squares*): in a grid of 1 to 9, two row sums are 12 and
+  14, so the third is $45 - 26 = 19$; column sums 9, 18, 20 are impossible
+  because they make 47, not 45. The audit's suggestion (no row can sum to 5
+  or 26) is the body's own explanation of Fig. 6.10, so it was not used.
+- Examples 8–18 renumbered 9–19. Nothing refers to an example by number.
+  Nineteen examples now (eighteen before).
+
+Beyond refitted with `refit.mjs … bridge` (10 pages in, 11 out), then Q23
+settled from p109 to p110 (the repack left p109 2.1 mm into the margin).
+Pages 24 → 25. All pages fit, 0 stranded openers, option rows fit, no
+labels collide, `check-no-repeats` shows no new pair. Short Beyond pages,
+logged not padded: 19 (80%), 21 (77%), 24 (81%), 25 (76%, the last page).
+The body's closing page p014 still sets at 7%, as before; the body was not
+touched.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Rebuilt to the four-stage shape at the top of DESIGN-MATHS §6a, on the model

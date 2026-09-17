@@ -1,5 +1,27 @@
 # Class 8 · Mathematics II · Chapter 4 — Taking a Shape Apart
 
+## Syllabus audit fixes, 17 September 2026
+
+Two gap findings from the Beyond the Book syllabus audit, both confirmed and
+fixed. **Pages: 25 before (11 body + 14 Beyond), 26 after (11 + 15).**
+
+| finding | what was done |
+|---|---|
+| Gap (borderline): no Solved Example on nets beyond card area; body §4.7 and Practice Q22 need *which solid does a net make* | New Example 12 under Type 6, now headed *Nets: the card they use and the solid they make*: one pentagon with a triangle on each side folds into a pentagonal pyramid, 6 faces, 10 edges, 6 vertices, checked by $F + V - E = 2$. No figure needed. The cube-net half of the finding was not given an example: it needs a drawing, and a non-folding arrangement would answer Exercise Set 4.2 Q4 |
+| Gap (minor): no example counts carpet holes with $H_{n+1} = H_n + R_n$ | Example 1 now also asks how many holes have been cut: Step 4 $H_2 = 1 + 8 = 9$, and Step 5 checks the area by the holes, $18 \times 18 + 8 \times 6 \times 6 = 612$ cm² and $2916 - 612 = 2304$ cm² (this replaces the *eight ninths, twice* check). Step 2 and step 3 hole counts are printed in the body already; step 4 and 5 (Exercise Set 4.1 Q2) are not touched |
+
+Examples 12–16 became 13–17. **17 Solved Examples now (16 before).**
+`check-numbers.mjs`: Example 1's holes and hole area, Example 12's counts,
+and a new reader for every Beyond example's Answer row (17 of them);
+breaking the hole count, the hole area and Example 12's edges each fails.
+`ANSWERS.md` lists no Stage 2 answers, so nothing there changed.
+
+Fitting: `refit … bridge` left Q31 alone on a page before Answers; blocks
+were pulled back a page at a time, the Type 9 head moved off the foot of
+page 20, and Q30 was moved over to join Q31, so the two case questions
+share page 24. Short pages now: 19 (67%, Example 14 does not fit under
+Example 13), 23 (61%) and 24 (62%). Answers opens page 25.
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Class 8 Chapter 1

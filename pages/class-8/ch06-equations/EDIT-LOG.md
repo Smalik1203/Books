@@ -1,5 +1,26 @@
 # Class 8 · Mathematics I · Chapter 6 — The Same to Both Sides
 
+## Syllabus audit fixes, 17 September 2026
+
+From "Audit Class 8 Maths I Beyond". One finding, confirmed against the
+pages; only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Stage 1 Q5, a fraction whose numerator is four less than its denominator: solving $\frac{d-3}{d+1} = \frac12$, an unknown in a denominator, which §6.2.1 puts outside the chapter (borderline) | recast as the audit suggested: *one number is four less than another; adding one to each makes the smaller half the larger*. The same equation, $2(n - 3) = n + 1$, now arrives without a fraction; the numbers are 3 and 7. The follow-on paragraph keeps its point (without the bracket the line reads $2n - 3 = n + 1$ and gives 4) |
+
+`ANSWERS.md` and `check-numbers.mjs` (Stage 1 Q5 solved again and read back
+line by line) updated; each new value was broken on purpose and caught. 584
+claims hold.
+
+`refit … bridge` moved the three assertion–reason questions back a page and
+left Q31 alone before Answers (28%), with page 28 running 0.8 mm into the
+margin. Q30 was moved back to Q31's page by hand, which fixed both: pages 28
+and 29 are now 63% and 67% (Q30–Q31 together, then Answers on a fresh page).
+
+**Pages: 31 before → 31 after** (16 body + 15 Beyond). No Solved Example
+added (no gap was found).
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked by an agent against the

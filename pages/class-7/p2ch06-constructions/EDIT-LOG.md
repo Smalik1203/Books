@@ -1,5 +1,122 @@
 # Class 7 · Mathematics II · Chapter 6 — Constructions and Tilings
 
+## Syllabus audit fixes, 17 September 2026
+
+Two findings, both gaps, both fixed with a new Solved Example. The examples
+are set like the chapter's other construction examples: steps and a reason
+or a `.chip` equality, and no figure, because none of Examples 1–8 has one.
+
+1. **A line through a point parallel to a given line** (body p009,
+   Fig. 6.15). **Example 9** was added at the end of Type 3 (*Bisecting and
+   copying angles*), because the body builds the parallel by copying an
+   angle. P is a point not on m. The steps are:
+   - Draw any line l through P, crossing m at A. This is the transversal.
+   - Draw an arc from A, cutting m at C and AP at D.
+   - With the same radius, draw an arc from P, cutting l at F beyond P.
+   - With radius CD, draw an arc from F, cutting the first arc at E on C's
+     side of l.
+   - Draw the line PE. It makes the same corresponding angle as m does, so
+     it is parallel to m.
+
+   The body's own setting chooses B on a transversal first. This example
+   starts from a given point instead, so it does not repeat Exercise Set 6.5.
+2. **The regular hexagon** (body p011–p013). **Example 12** was added at the
+   end of Type 4 (*Angles around a point*). It constructs a regular hexagon
+   whose corners lie on a circle of radius 3 cm. The radius is stepped round
+   the circle, and each step makes an equilateral triangle with the centre,
+   so each gives $60^\circ$. Since $6 \times 60^\circ = 360^\circ$, the sixth
+   arc closes on A. Every side is 3 cm, and every angle is
+   $60^\circ + 60^\circ = 120^\circ$. The audit's suggestion ("side 4 cm")
+   was **not used**, because the body sets exactly that task on p012 (4 cm)
+   and p013 (5 cm). The circle construction uses only the body's two facts:
+   six equilateral triangles fill $360^\circ$, and each angle of the
+   hexagon is two $60^\circ$ angles.
+
+Examples 9–16 became **10–18**, renumbered in page order. The one reference
+by number ("as in Example 4", in Example 5) was unaffected. Class 7 has no
+`ANSWERS.md` or `check-numbers.mjs`, so the values were checked by hand:
+$6 \times 60 = 360$ and $60 + 60 = 120$. `check-no-repeats`: no division
+question is close to a body question.
+
+Pages 30 → 32 (body 20, Beyond 10 → 12). The two examples take most of a
+page. The fresh-page rule for Answers took the other. Before this edit,
+Answers sat under Q26 on p109, and `refit bridge` moved it to the top of
+p111. The refit left Q26 alone on p110, so Q25 (with its *Case-based
+questions* sub-head) was moved by hand from p109 to p110. p109 is now 71%
+full and p110 47%, and together they are the short run before Answers. The
+last three *why the other options are wrong* rows take p112 (20%, the last
+page). Beyond pages all fit. Body page 9 runs 1.3 mm into the margin; the
+body source is unchanged (identical to the backup and not modified in git).
+0 stranded openers, every option row fits, no labels collide, `data-bridge`
+on p101–p112.
+
+**Two give-aways fixed afterwards, at the coordinator's request.** Both were
+answering body questions, so each got the smallest fix.
+
+- **Example 11** used to construct $150^\circ$ by bisecting $60^\circ$, with
+  the chip $\angle BOY = 30^\circ$. That answered the body's "How will you
+  construct angles of $30^\circ$ and $15^\circ$?" (p014). It now builds
+  $105^\circ$ as $60^\circ$ and $45^\circ$ side by side: an equilateral
+  $\triangle OPA$ on OY, then the perpendicular to AO at O on X's side, then
+  its bisector OB. So $\angle BOY = 60^\circ + 45^\circ = 105^\circ$, and no
+  $30^\circ$ or $15^\circ$ angle is constructed or named. *(Changed again
+  below: Stage 1 now reaches $105^\circ$ this same way, so Example 11 became
+  $157.5^\circ$.)*
+- **Practice Q24** began with the body's own task, "construct a regular
+  hexagon with sides of 4 cm" (p012). The side is now **3.5 cm**. The answer
+  now reads AC, CE, EA "about 6.1 cm each" ($3.5 \times 1.732 = 6.06$,
+  where it had been 6.9 cm for 4 cm). The SAS reason now says 3.5 cm.
+
+Pages unchanged at 32. All pages fit (p105 is 84%), 0 stranded openers,
+every option row fits, no labels collide, and `check-no-repeats` is clean.
+
+**The other four $30^\circ$/$15^\circ$ give-aways, also fixed at the
+coordinator's request.** The standing rule is that Stage 1 is kept word for
+word unless it gives away a body answer. Nothing left in the division now
+constructs or names a $30^\circ$ or $15^\circ$ angle. The only $15^\circ$
+still printed is the uncovered gap in Example 10, which is subtraction, not
+a construction.
+
+- **Stage 1, the angles try (p101).** The try is unchanged (75°, 105°,
+  22.5°). Only its explanation changed, and its opening and closing
+  sentences stay word for word:
+  - It used to read "bisecting gives 30°, 15° and 45° … $75^\circ = 60^\circ + 15^\circ$
+    and $105^\circ = 90^\circ + 15^\circ$".
+  - It now reads "bisecting $90^\circ$ gives $45^\circ$ … $105^\circ = 60^\circ + 45^\circ$,
+    and the angle beside it on a straight line is $180^\circ - 105^\circ = 75^\circ$".
+- **Example 11, again.** Its 105° would now repeat Stage 1, so it builds
+  **157.5°** instead:
+  - the perpendicular OA ($\angle AOX = 90^\circ$);
+  - the bisector OC of $\angle AOX$ ($\angle COY = 135^\circ$);
+  - the bisector OB of $\angle COX$ ($\angle BOC = 22.5^\circ$);
+  - so $\angle BOY = 135^\circ + 22.5^\circ = 157.5^\circ$.
+- **Practice Q8 (MCQ).** The question is unchanged and the key stays (a)
+  112.5°. Option (b) was 105°, whose explanation needed 15°; it is now
+  157.5°. The *why the other options are wrong* row now reads "(b) adds both
+  $45^\circ$ and $22.5^\circ$ to $90^\circ$", replacing "(b) uses 15°,
+  which comes from bisecting 60° twice".
+- **Practice Q20 (short answer).** "Construct an angle of 165° …" became
+  **67.5°**. The answer now reads: construct $\angle AOY = 90^\circ$ and
+  bisect it ($\angle COY = 45^\circ$); bisect $\angle AOC$
+  ($\angle BOC = 22.5^\circ$); so $\angle BOY = 45^\circ + 22.5^\circ = 67.5^\circ$.
+- **Practice Q22 (short answer).** The rangoli had 12 petals on 6 lines
+  (30°); it now has **16 petals on 8 lines**. The answer is
+  $360^\circ \div 16 = 22.5^\circ$: construct $90^\circ$, bisect it, and
+  bisect one half. Eight petals were not used, because they would echo the
+  body's eight-pointed star (Fig. 6.16, $45^\circ$).
+
+Checked by hand:
+- $90 + 45 = 135$ and $135 + 22.5 = 157.5$;
+- $45 + 22.5 = 67.5$;
+- $360 \div 16 = 22.5$;
+- $180 - 105 = 75$;
+- $90 + 45 + 22.5 = 157.5$, which is the slip option (b) describes.
+
+Pages unchanged at 32. All pages fit (p101 unchanged; p112, the last page,
+is 18%). There are 0 stranded openers, every option row fits, no labels
+collide, and `check-no-repeats` is clean. I looked at the proofs of p101,
+p105 and p111.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Rebuilt to DESIGN-MATHS §6a, *The shape since 15 September 2026*, on the model

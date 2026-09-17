@@ -259,8 +259,8 @@ That is a good answer to *if you cannot, say why*.
 ## Beyond the Book
 
 Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets seventeen examples as steps,
-numbered from 1 as Beyond numbers them (Beyond Examples 1 to 17), and stage
+question in running text, stage 2 sets nineteen examples as steps,
+numbered from 1 as Beyond numbers them (Beyond Examples 1 to 19), and stage
 4 prints the key to stage 3. Repeated here so the booklet is complete.
 Beyond's example numbers are its own: *Beyond Example 1* is not the
 chapter's Example 1 in §1.4.
@@ -280,22 +280,24 @@ chapter's Example 1 in §1.4.
 The answers the book works, by Beyond's own example numbers.
 
 - Beyond Ex 1. **37 and 50.**
-- Beyond Ex 2. **56.**
+- Beyond Ex 2. **72.**
 - Beyond Ex 3. **233.**
 - Beyond Ex 4. **66 dots**; the next triangle adds **12**.
 - Beyond Ex 5. **91 dots.**
-- Beyond Ex 6. **625.**
-- Beyond Ex 7. **21.**
-- Beyond Ex 8. **200.**
-- Beyond Ex 9. The biggest number is **13**, and **25** numbers are added.
-- Beyond Ex 10. **72.**
-- Beyond Ex 11. **210.**
-- Beyond Ex 12. **36 and 45.**
-- Beyond Ex 13. **1023.**
-- Beyond Ex 14. **6 teams.**
-- Beyond Ex 15. **8 rows**; **36** triangles point up.
-- Beyond Ex 16. **768.**
-- Beyond Ex 17. **15 lines**, and **9** of them are not sides.
+- Beyond Ex 6. **4 layers** of **16** small cubes; **8** small cubes have no paint.
+- Beyond Ex 7. **625.**
+- Beyond Ex 8. **21.**
+- Beyond Ex 9. **200.**
+- Beyond Ex 10. The biggest number is **13**, and **25** numbers are added.
+- Beyond Ex 11. **72.**
+- Beyond Ex 12. **210.**
+- Beyond Ex 13. **36 and 45.**
+- Beyond Ex 14. **1023.**
+- Beyond Ex 15. A regular **nonagon**; each side of the hexagon is **12 cm**.
+- Beyond Ex 16. **6 teams.**
+- Beyond Ex 17. **8 rows**; **36** triangles point up.
+- Beyond Ex 18. **768.**
+- Beyond Ex 19. **15 lines**, and **9** of them are not sides.
 
 ### Stage 3 · Practice
 

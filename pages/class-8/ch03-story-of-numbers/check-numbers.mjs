@@ -85,7 +85,7 @@ const evalExpr = (e) => { try { return Function(`"use strict";return (${e})`)();
 let spans = 0; const skipped = [];
 // a line whose right-hand side is a numeral in another base, not a number:
 // 48 = 6 x 7 + 6, written 66 in base 7. Checked in B.
-const NOT_DECIMAL = ['= 6 \\times 7 + 6 = 66'];
+const NOT_DECIMAL = [];
 const sources = [...pages.map(f => [f, html[f]]), ['ANSWERS.md', answersMd]];
 for (const [f, src0] of sources) {
   // a division with a remainder: a = b x q + r, with r < b
@@ -141,13 +141,26 @@ ok('Stage 1 Q2: 2025 in base 2', [inBase(2025, 2), inBase(2025, 2).length], ['11
 ok('Stage 1 Q2: a million needs twenty binary digits', inBase(1e6, 2).length, 20);
 is('Stage 1 Q2: 64 binary digits reach past 10^19', 2 ** 64 > 1e19);
 ok('Stage 1 Q3: four readings', [2 * 60 + 3, 2 * 3600 + 3, 2 * 3600 + 3 * 60, 2 * 60 ** 3 + 3], [123, 7203, 7380, 432003]);
-ok('Stage 1 Q5: 48 in base 7', [inBase(48, 7), digitSum(48, 7), 48 % 6], ['66', 12, 0]);
-is('Stage 1 Q5: base-7 digit sum tests for 6', [...Array(3000)].every((_, n) => n % 6 === digitSum(n, 7) % 6));
-ok('Stage 1 Q6: exact in base 12', [2, 3, 4, 5].map(d => exactIn(d, 12)), [true, true, true, false]);
-ok('Stage 1 Q6: exact in base 10', [2, 5, 3, 7].map(d => exactIn(d, 10)), [true, true, false, false]);
+ok('Stage 1 Q5: 10 in bases 2, 5, 9', [2, 5, 9].map(b => fromBase('10', b)), [2, 5, 9]);
+ok('Stage 1 Q5: 11 in bases 2, 5, 9', [2, 5, 9].map(b => fromBase('11', b)), [3, 6, 10]);
+ok('Stage 1 Q5: 11 is seven in base', [...Array(35)].map((_, i) => i + 2).filter(b => fromBase('11', b) === 7), [6]);
+printed('beyond', '$10$ stands for $2$, $5$, $9$; $11$ for $3$, $6$, $10$');
+printed('beyond', '$n + 1 = 7$, so base $6$');
+{ const order = 3 * 144 + 5 * 12 + 7, before = 3 * 144 + 11 * 12 + 11;
+  ok('Stage 1 Q6: the order', [order, inBase(order, 12)], [499, '357']);
+  ok('Stage 1 Q6: one egg more', [before, before + 1, inBase(before + 1, 12), 4 * 144], [575, 576, '400', 576]);
+  ok('Stage 1 Q6: 3 gross 11 dozen 11 in base 12', inBase(before, 12), '3bb');
+  printed('beyond', '$3 \\times 144 + 5 \\times 12 + 7 = 432 + 60 + 7 = 499$');
+  printed('beyond', '$357$, since each count is less than $12$');
+  printed('beyond', '$400$, which is $4 \\times 144 = 576$');
+  printed('beyond', '$3 \\times 144 + 11 \\times 12 + 11 = 575$');
+  ok('Stage 1 Q6: twelve shares into 2, 3, 4, 6; ten into 2, 5', [factors(12).filter(d => d > 1 && d < 12), factors(10).filter(d => d > 1 && d < 10)], [[2, 3, 4, 6], [2, 5]]);
+  is('Stage 1: no digit-sum rule and no fractions in other bases left', !/digit-sum|digits add|tfrac\{?1\}?\{?2\}? *\$? *\$?= \\tfrac\{6\}\{12\}|exact in base/.test(beyond)); }
 ok('Stage 1 Q7: Egyptian symbols to a million, a billion, a trillion', [6, 9, 12].map(k => k + 1), [7, 10, 13]);
 { const q = []; const r = []; let n = 212; while (n) { r.push(n % 5); n = Math.floor(n / 5); q.push(n); }
-  ok('Stage 1 Q8: dividing 212 by 5', [q, r, inBase(212, 5)], [[42, 8, 1, 0], [2, 2, 3, 1], '1322']); }
+  ok('Stage 1 Q8: dividing 212 by 5', [q, r, inBase(212, 5)], [[42, 8, 1, 0], [2, 2, 3, 1], '1322']);
+  ok('Stage 1 Q8: landmark first', [Math.floor(212 / 125), Math.floor(212 % 125 / 25), Math.floor(212 % 25 / 5), 212 % 5], [1, 3, 2, 2]);
+  printed('beyond', '$212 = 1 \\times 125 + 3 \\times 25 + 2 \\times 5 + 2$, the same digits'); }
 printed('beyond', '1322');
 
 // Stage 2
@@ -169,6 +182,8 @@ ok('Ex 8: base-4 landmarks to 1000', [0, 1, 2, 3, 4, 5].map(k => 4 ** k).filter(
 ok('Ex 8: 300 in base 4', digitsIn(300, 4), [1, 0, 2, 3, 0]);
 ok('Ex 9: base, next landmark, largest digit', [81 / 9, 729 / 81, 729 * 9, 9 - 1], [9, 9, 6561, 8]);
 ok('Ex 10: 100 in base 3', inBase(100, 3), '10201');
+ok('Ex 10: landmark first', [Math.floor(100 / 81), 100 % 81, Math.floor(19 / 27), Math.floor(19 / 9), 19 % 9, Math.floor(1 / 3), 1], [1, 19, 0, 2, 1, 0, 1]);
+printed('beyond', 'one $81$ leaves $19$, no $27$, two $9$s leave $1$, no $3$, and one $1$');
 ok('Ex 11: 3042 in base 5', fromBase('3042', 5), 397);
 ok('Ex 12: 110101 in base 2', [fromBase('110101', 2), [...'110101'].map((d, i) => d === '1' ? 2 ** (5 - i) : 0).filter(Boolean)], [53, [32, 16, 4, 1]]);
 ok('Ex 13: 4000 in sixties, and its marks', [places60(4000), 1 + 6 + Math.floor(40 / 10) + 40 % 10], [[1, 6, 40], 11]);
@@ -195,10 +210,24 @@ const pageSays = (what, s) => is(`${what}: the page should print "${s}"`, raw.in
   pageSays('Ex 8', `two $16$s leave $${300 - 256} - ${c * 16} = ${300 - 256 - c * 16}$`);
   pageSays('Ex 8', `three $4$s leave $12 - 12 = 0$`);
   is('Ex 8: no 64s, three 4s', b === 0 && d === 3); }
-ok('Ex 16: 50 207 without its zeros', [digitsIn(50207, 10), Number(String(50207).replace(/0/g, ''))], [[5, 0, 2, 0, 7], 527]);
-ok('Ex 17', 7e5 + 3e2 + 9, 700309);
+{ // rod numerals: place p (0 = units) lies one way when p is even, the other when odd.
+  // Two rods at the units, three turned the other way at the tens, four lying like the tens
+  // after k empty places: the four sit at place 2 + k, which must lie like the tens (odd).
+  const read = (k) => ((2 + k) % 2 === 1 ? [4 * 10 ** (2 + k) + 3 * 10 + 2] : []);
+  ok('Ex 16: one empty place', read(1), [4032]);
+  ok('Ex 16: three empty places', read(3), [400032]);
+  ok('Ex 16: two empty places cannot lie that way', read(2), []);
+  printed('beyond', '$4 \\times 1000 + 0 \\times 100 + 3 \\times 10 + 2 = 4032$');
+  printed('beyond', 'could also be $400032$, with three empty places'); }
+ok('Ex 17: 50 207 without its zeros', [digitsIn(50207, 10), Number(String(50207).replace(/0/g, ''))], [[5, 0, 2, 0, 7], 527]);
+ok('Ex 18', 7e5 + 3e2 + 9, 700309);
 printed('beyond', '700309');
-ok('Ex 18: 2764 in three systems', [roman(2764), roman(2764).length, digitSum(2764), String(2764).length], ['MMDCCLXIV', 9, 19, 4]);
+{ const exs = [...beyond.matchAll(/c-example__tab">Example (\d+)</g)].map(m => Number(m[1]));
+  ok('Beyond has Examples 1-19 in order', exs, [...Array(19)].map((_, i) => i + 1));
+  const types = [...beyond.matchAll(/<h3>Type (\d+) &middot;/g)].map(m => Number(m[1]));
+  ok('Types 1-11 in order', types, [...Array(11)].map((_, i) => i + 1));
+  is('Type 9 is the rod numerals, holding Example 16', /Type 9 &middot; Chinese rod numerals[\s\S]*?Example 16</.test(beyond) && !/Type 9 &middot; Chinese rod numerals[\s\S]*?Example 15</.test(beyond)); }
+ok('Ex 19: 2764 in three systems', [roman(2764), roman(2764).length, digitSum(2764), String(2764).length], ['MMDCCLXIV', 9, 19, 4]);
 printed('beyond', 'Hindu 4, Roman 9, Egyptian 19');
 
 // the practice answers, read back out of the key rather than typed here
@@ -261,12 +290,12 @@ const solve = {
   5: o => o.map(num).map(v => v === unroman('CDXLIV')),
   6: o => o.map(s => bare(s) === inBase(255, 2)),
   7: o => o.map(num).map(v => v === inBase(1000, 3).length),
-  8: o => o.map(num).map(v => [...Array(6)].every((_, k) => (8 ** (k + 1)) % v === 1 % v) && v > 1),
+  8: o => o.map(num).map(v => v === fromBase('77', 8)),
   9: o => o.map(s => !exactIn(den(s), 10)),
   10: o => o.map(s => bare(s) === inBase(1000, 5)),
   11: o => o.map(num).map(v => v === fromBase('121', 5) - fromBase('121', 3)),
   12: o => o.map(num).map(v => v === [...Array(4 ** 3)].map((_, n) => n).filter(n => inBase(n, 4).length === 3).length),
-  13: o => o.map(num).map(v => { const all = [...Array(7 ** 3)].map((_, n) => n).filter(n => inBase(n, 7).length === 3 && digitSum(n, 7) === 12); return all.every(n => n % v === 0); }),
+  13: o => o.map(num).map(v => v === fromBase('606', 7)),
   14: o => o.map(s => { const [a, b] = bare(s).split('to').map(Number); const four = [...Array(8 ** 5)].map((_, n) => n).filter(n => inBase(n, 8).length === 4); return a === four[0] && b === four[four.length - 1]; }),
   15: o => o.map(num).map(v => v === 2 * 360 + 0 * 20 + 5),
 };
@@ -276,16 +305,22 @@ for (const [q, f] of Object.entries(solve)) {
   const right = f(o).map((t, i) => (t ? 'abcd'[i] : null)).filter(Boolean);
   ok(`Q${q}: the right option`, right, [key[q]]);
 }
-// the counter-examples the key prints for Q13
-ok('Q13: 606 and 156 in base 7', [fromBase('606', 7), fromBase('156', 7), digitSum(300, 7), digitSum(90, 7)], [300, 90, 12, 12]);
-is('Q13: 300 not divisible by 7 or 9, 90 not by 12', 300 % 7 && 300 % 9 && 90 % 12);
+// the wrong options the key explains
+ok('Q8: 77 in base 10, 7 x 8, 7 x 7', [7 * 8, 7 * 7], [56, 49]);
+ok('Q13: 606 read wrongly', [6 * 49, 6 * 7], [294, 42]);
+printed('beyond', '$606_{7} = 6 \\times 49 + 0 \\times 7 + 6 = 300$');
+// Q9's note works by division alone: 1 / 6 repeats remainder 4
+{ const rems = []; let r = 1; for (let i = 0; i < 6; i++) { r = (r * 10) % 6; rems.push(r); }
+  ok('Q9: 1 / 6 leaves remainder 4 after the first step', rems, [4, 4, 4, 4, 4, 4]);
+  ok('Q9: 1/8, 1/16, 1/20', [1 / 8, 1 / 16, 1 / 20], [0.125, 0.0625, 0.05]);
+  printed('beyond', 'the remainder is $4$ every time'); }
 
 // assertion-reason: [A true, R true, R explains A]
 const arLetter = ([a, r, x]) => (a && r ? (x ? 'a' : 'b') : a ? 'c' : r ? 'd' : 'e');
 const AR = {
   16: [[...Array(5000)].every((_, n) => !inBase(n, 9).includes('9')), [0, 1, 2, 3].every(k => 9 * 9 ** k === 9 ** (k + 1)), true],
   17: [fromBase('100', 6) === 36, new Set([...Array(1000)].flatMap((_, n) => [...inBase(n, 6)])).size === 6, false],
-  18: [exactIn(4, 6), primes(6).length === 1 && primes(6)[0] === 2, false],
+  18: [fromBase('33', 4) === 15, 4 ** 1 === 16, false],   // the second place is the fours place
   19: [fromBase('1000', 2) === 1000, fromBase('1000', 2) === 8, false],
 };
 for (const [q, v] of Object.entries(AR)) ok(`Q${q}: assertion-reason`, arLetter(v), key[q]);
@@ -342,8 +377,10 @@ printed('md', '**$2210000$**');
 ok('3.5 Q13: 10, 16, 100 in base 2', [10, 16, 100].map(n => inBase(n, 2)), ['1010', '10000', '1100100']);
 printed('md', '$10$ is **$1010$**, $16$ is **$10000$** and $100$ is **$1100100$**');
 // Stage 1 and practice as ANSWERS.md prints them
-for (const s of ['$1000 = 4344_{6}$', '$2025 = 11111101001_{2}$', '$48 = 66_{7}$', '$212 = 1322_{5}$', '$123$, $7203$, $7380$, $432003$']) printed('md', s);
-is('ANSWERS.md Stage 1 values hold', inBase(1000, 6) === '4344' && inBase(2025, 2) === '11111101001' && inBase(48, 7) === '66' && inBase(212, 5) === '1322');
+for (const s of ['$1000 = 4344_{6}$', '$2025 = 11111101001_{2}$', '$212 = 1322_{5}$', '$123$, $7203$, $7380$, $432003$',
+  '(5) $10$ stands for $2$, $5$, $9$ and $11$ for $3$, $6$, $10$; $11$ is seven in base 6', '(6) $499$ eggs, $357$ in base 12', 'is $400$ in base 12, which is $576$',
+  '$77_{8} = 7 \\times 8 + 7 = 63$', '$606_{7} = 6 \\times 49 + 0 \\times 7 + 6 = 300$', '$33_{4} = 3 \\times 4 + 3 = 15$']) printed('md', s);
+is('ANSWERS.md Stage 1 values hold', inBase(1000, 6) === '4344' && inBase(2025, 2) === '11111101001' && inBase(499, 12) === '357' && inBase(576, 12) === '400' && inBase(212, 5) === '1322');
 for (const [n, b, s] of [[27, 5, '102'], [255, 2, '11111111'], [1000, 5, '13000'], [45, 2, '101101'], [500, 4, '13310'], [20, 2, '10100']]) {
   ok(`ANSWERS.md: ${n} in base ${b}`, inBase(n, b), s); printed('md', s);
 }

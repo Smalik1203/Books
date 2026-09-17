@@ -1,5 +1,31 @@
 # Class 8 · Mathematics II · Chapter 7 — The Same Area, a Different Shape
 
+## Syllabus audit fixes, 17 September 2026
+
+Two findings from the Beyond the Book syllabus audit, both confirmed and
+fixed. **Pages: 29 before (15 body + 14 Beyond), 30 after (15 + 15).**
+
+| finding | what was done |
+|---|---|
+| Stage 1, *Gopal and the river* (borderline, off-topic): a shortest path by reflecting a point, which the chapter never teaches, with a wrong pointer (*section 7.4 answers it*; §7.4 is triangles on the same base between the same parallels) | Replaced by a try of the same kind that §7.4 really does answer: triangle $PQR$ with $QR = 16$ cm and area $96$ cm² has its apex slid along a parallel until the angle at $Q$ is right; the height stays $12$ cm, so $PQ = 12$ cm, and $PR = 20$ cm by Chapter 2's theorem. The pointer to §7.4 is now correct. The stage's opening (*Two of them are not about area at all until you notice that they are*) still holds: the new question asks for two lengths. Numbers chosen so as not to answer Exercise Set 7.1 Q2 (area 54 on base 12). The rest of Stage 1 is unchanged |
+| Gap: Type 8 converted only m² to cm² and a map scale; §7.10 teaches in², ft² and acres | Two new examples under Type 8. Example 16: a rug $72$ in by $48$ in is $3456$ in², $24$ ft² ($1$ ft² $= 144$ in²) and about $22\,297$ cm² ($\times 6.4516$). Example 17: a plot $330$ ft by $264$ ft is $87{,}120$ ft², two acres. Neither answers Exercise Set 7.3 (Q2, Q4, Q5, Q8 use other numbers and directions) |
+
+No renumbering: the new examples come last. **17 Solved Examples now (15
+before).** `ANSWERS.md` Stage 1 result (3) and `check-numbers.mjs` (Stage 1
+Q3 read back, the summary line, Examples 16 and 17, the example count)
+follow. Breaking $PR$, $PQ$, Example 16's ft², Example 17's acres and the
+`ANSWERS.md` result each fails.
+
+Fitting: one `refit … bridge`. The two case questions share page 28 (59%)
+before Answers, which opens page 29; 0 stranded openers.
+
+Coordinator, afterwards: Type 8 mixed its thousands, so every one in Beyond
+now takes the body's comma (§7.10 writes $10{,}000$). Example 14's
+$10\,000$ and $75\,000$, its answer's 75&thinsp;000, Example 16's
+22&thinsp;297 and answer 31(a)'s three areas are now $10{,}000$ … $40{,}000$,
+set as maths so `check-numbers.mjs` reads them (it strips `{,}` only
+there). The checker passes; breaking 31(a)'s $40{,}000$ fails. No page moved.
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked against Class 8 Chapter 1 as

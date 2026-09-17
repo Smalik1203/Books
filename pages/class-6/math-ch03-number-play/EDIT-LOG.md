@@ -1,5 +1,62 @@
 # Class 6 · Mathematics I · Chapter 3 — Number Play
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book syllabus audit made four findings about this chapter. All four were checked against the pages and fixed. The body and Stage 1 were not touched.
+
+**Pages: 29 before (18 body + 11 Beyond), 31 after (18 body + 13 Beyond).**
+
+| finding | what was done |
+|---|---|
+| borderline: Practice Q7 (the next year with 2026's calendar) needs leap years and the day shift, which the body never teaches | The finding was confirmed, and it was worse than reported. `ANSWERS.md` gives *the calendar of 2026 comes back in 2037* as the answer to the body's own Think and Reflect in §3.7, so the question also gave away a body answer. It was replaced by a multiple-choice question of the same form, with the key still **(c)**: *Written as day/month/year, which of these dates reads the same from both ends?* The options are 20/04/2040, 24/04/2040, **04/02/2040** and 02/04/2040. Every option is a future date, so none is one of §3.7's past dates. *Why the other options are wrong* for Q7 and the `ANSWERS.md` working were rewritten to match |
+| gap: numbering equally spaced marks on a number line (§3.3) | **New Ex 6**, under a new head *Type 3 · Numbers on a number line*. A line has ten equally spaced marks, with the 3rd at 7,080 and the 7th at 7,120. There are 4 gaps, each of 10, so the 1st mark is **7,060** and the 10th is **7,150**. It is not one of Fig. 3.9's lines, and it is not Practice Q9 |
+| gap: clock and calendar numbers (§3.7) | A new head, *Type 7 · Clock and calendar numbers*, with two examples. **Ex 12**: after 2:52, the next time that reads the same from both ends is 3:03, 11 minutes later. **Ex 13**: after 17/09/2026, the next such date is 03/02/2030, because 2026 to 2029 would need days 62, 72, 82 and 92. The date is in the future, and §3.7 asks only for past dates |
+| gap: how many digits a sum or difference can have (§3.8, Exercise Set 3.6) | **New Ex 15** (Type 8), worked like body Example 3: a 4-digit number plus a 3-digit number. The sum runs from 1100 to 10,998, so it has 4 or 5 digits. Exercise Set 3.6 asks about neither this pair nor its answer |
+
+**For the coordinator:** Ex 12 and Ex 13 each show one worked instance of the idea behind §3.7's open Think and Reflect ("find all the times / dates like …"). Neither lists the times or past dates that question asks for.
+
+**Renumbering.** Beyond now has **19 examples**, where it had 15, under **11 Type heads**, where it had 9.
+
+- Old Ex 6–10 are now 7–11.
+- Old Ex 11 is now 14.
+- Old Ex 12–15 are now 16–19.
+- Old Types 3–9 are now Types 4, 5, 6, 8, 9, 10 and 11.
+
+No running text refers to an example by number. `ANSWERS.md` stage 2 was renumbered and gained the four new answers.
+
+**`check-numbers.mjs`.**
+
+- The per-example checks were renumbered.
+- New checks re-derive each new example:
+  - Ex 6: the gap, every step and the answer
+  - Ex 12: the next palindromic time, found by walking the clock
+  - Ex 13: the next valid palindromic date, found by walking the years, with every step
+  - Ex 15: the smallest and largest sums, and the digit counts over all sums
+- The Type heads are checked to read 1–11 in order.
+- MCQ 7 is now graded as *exactly one option is a real date and a palindrome*. It is checked to be in the future, and no leap-year or calendar question is left in Beyond.
+- The why-note and the `ANSWERS.md` working for Q7 are checked value by value.
+
+The script passes 687 checks and reports all clear. 17 values were broken on purpose in a scratch copy, and all 17 were caught.
+
+**Fitting.**
+
+- Ex 12 and Ex 13 were each shortened by one step row before the fit.
+- `refit … bridge` was run once and gave 13 pages. Answers opens p113.
+- p109 (page 27) holds Ex 18–19 and is **59% full**. Practice is kept whole, so it starts on p110.
+- p106 (page 24) is 68% full, because the Type 7 head and Ex 12 do not fit under the Kaprekar example. p108 (page 26) is 80% full.
+- Both are logged here, not padded.
+
+**Checks.**
+
+- The build fits all 31 pages.
+- orphans: 0.
+- fit-options: clean.
+- check-labels: clean.
+- `data-bridge` is on p101–p113.
+- check-no-repeats reports two older pairs at 50%, neither of them new: Beyond Ex 11 (Kaprekar from 1000) against Exercise Set 3.5 Q4 (from 5683), and Practice Q27(b) against the §3.12 Think and Reflect. Both use different numbers or a different game, and were already there.
+
+**A fault in this log, found and not repaired.** At line 181 of this file, the older section breaks off mid-sentence at *body Example 2 `$A = …* and runs straight into a second copy of the whole log, from its title onwards. This is already in `HEAD`. It is the known `$`` replace trap (PLAN §7), which pasted in the text before the match. The words it overwrote cannot be recovered from the file, so the fault is left as it is for someone with the history to repair.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 This is phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model in

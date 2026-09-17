@@ -670,12 +670,23 @@ const F = {};
   // Stage 1 of Beyond
   // Stage 1 of Beyond: each question's numbers are read off the page and its answer worked from them
   const S1 = flat(BEYOND.slice(0, BEYOND.indexOf('c-stage__num">2')));
-  const compass = ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'];
-  const cw = (from, to) => ((compass.indexOf(to) - compass.indexOf(from)) * 45 + 360) % 360 || 360;
+  // a clock-face position, in degrees from 12 the way a clock's hands move: 12, 3, 6, 9, or halfway between two of them
+  const Q4 = ['12', '3', '6', '9'];
+  const posOf = (s) => {
+    const h = s.match(/^halfway between (\d+) and (\d+)$/);
+    if (h) { const a = Q4.indexOf(h[1]) * 90, b = Q4.indexOf(h[2]) * 90; if ((a + 90) % 360 !== b) throw new Error('not a quarter: ' + s); return a + 45; }
+    if (!Q4.includes(s)) throw new Error('not a clock position: ' + s);
+    return Q4.indexOf(s) * 90;
+  };
+  const posName = (d) => { d = ((d % 360) + 360) % 360; return d % 90 === 0 ? Q4[d / 90] : `halfway between ${Q4[(d - 45) / 90]} and ${Q4[((d + 45) / 90) % 4]}`; };
+  const cw = (from, to) => ((posOf(to) - posOf(from)) + 360) % 360 || 360;
+  F.posOf = posOf; F.posName = posName;
+  is('Beyond stage 1: no compass direction and no clockwise is left in it', !/north|south|east|west|clockwise/i.test(S1));
   {
-    const m = S1.match(/Ravi faces ([a-z-]+)\. He turns clockwise until he faces ([a-z-]+)\./);
-    const t = cw(m[1], m[2]);
-    is(`Beyond stage 1: Ravi turns ${t}°, printed as the sum and called reflex`, S1.includes(`= ${t}^\\circ$`) && type(t) === 'reflex');
+    const m = S1.match(/The hand of a clock points to (\d+)\. It moves on, the way a clock’s hands move, until it points (halfway between \d+ and \d+)\./);
+    is('Beyond stage 1 Q1 prints the clock turn this check reads', !!m);
+    const t = m ? cw(m[1], m[2]) : 0;
+    is(`Beyond stage 1: the hand turns ${t}°, printed as the sum and called reflex`, S1.includes(`$90^\\circ + 90^\\circ + 45^\\circ = ${t}^\\circ$`) && type(t) === 'reflex');
   }
   {
     const d = +S1.match(/One of them is \$(\d+)\^\\circ\$ bigger than the other/)[1];
@@ -698,9 +709,10 @@ const F = {};
     ok('Beyond stage 1: doubling 50 and 45', [type(100), type(90)], ['obtuse', 'right']);
   }
   {
-    const m = S1.match(/Kiran faces ([a-z-]+)\. She turns clockwise until she faces ([a-z-]+)\./);
-    F.kiran = cw(m[1], m[2]);
-    is(`Beyond stage 1: Kiran turns ${F.kiran}°, the short way ${360 - F.kiran}°`, S1.includes(`Altogether Kiran turns $45^\\circ + 270^\\circ = ${F.kiran}^\\circ$`)
+    const m = S1.match(/The hand of a clock points (halfway between \d+ and \d+)\. It moves on, the way a clock’s hands move, until it points to (\d+)\./);
+    is('Beyond stage 1 Q5 prints the clock turn this check reads', !!m);
+    F.kiran = m ? cw(m[1], m[2]) : 0;
+    is(`Beyond stage 1: the second hand turns ${F.kiran}°, the short way ${360 - F.kiran}°`, S1.includes(`Altogether the hand turns $45^\\circ + 270^\\circ = ${F.kiran}^\\circ$`)
       && S1.includes(`takes only $${360 - F.kiran}^\\circ$`) && type(F.kiran) === 'reflex');
     is('Beyond stage 1: no clock question is left in it', !/o’clock/.test(S1));
   }
@@ -714,6 +726,7 @@ function exampleAnswer(n) {
   const m = BEYOND.slice(at).match(/<span class="work__label">Answer<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/);
   return m ? flat(m[1]) : '';
 }
+const exampleBlock = (n) => { const at = BEYOND.indexOf(`<div class="c-example__tab">Example ${n}</div>`); const end = BEYOND.indexOf('<div class="c-example__tab">', at + 10); return at < 0 ? '' : BEYOND.slice(at, end < 0 ? undefined : end); };
 const exampleQ = (n) => { const at = BEYOND.indexOf(`<div class="c-example__tab">Example ${n}</div>`); return flat(BEYOND.slice(at).match(/<div class="c-example__body">\s*<p>([\s\S]*?)<\/p>/)[1]); };
 function okAnswer(n, want) {
   const got = nums(exampleAnswer(n));
@@ -736,26 +749,56 @@ function okAnswer(n, want) {
   is('Beyond Example 2: three rays at A give three angles; at D the straight angle is BDC', /BAD.*DAC.*BAC/.test(a2) && /straight angle \$\\angle BDC\$/.test(a2));
   { const P = 90 / 3 * 2, Q = 180 / 4; okAnswer(3, [Math.abs(P - Q)]); is('Beyond Example 3: ∠P is the bigger', P > Q && /\\angle P\$ is bigger/.test(exampleAnswer(3))); }
   {
-    const face = (from, turn) => { const c = ['north', 'east', 'south', 'west']; return c[(c.indexOf(from) + turn / 90 + 400) % 4]; };
-    okAnswer(4, [3 * 90]);
-    is('Beyond Example 4: faces north, three quarters of a turn', exampleAnswer(4).includes(`faces ${face('east', 270)}`) && (3 * 90) / 360 === 3 / 4);
-    F.face = face;
+    // Example 4: comparing by tracing. Outside means the tracing is bigger; along means equal.
+    const q = exampleQ(4), a = exampleAnswer(4);
+    const rel = { outside: '>', along: '=' };
+    const onY = /On \$\\angle Y\$, the free arm of the tracing lies outside \$\\angle Y\$/.test(q) ? rel.outside : null;
+    const onZ = /On \$\\angle Z\$, it lies exactly along the other arm of \$\\angle Z\$/.test(q) ? rel.along : null;
+    is('Beyond Example 4: the question prints both tracings', onY === '>' && onZ === '=' && /vertex on vertex, one arm along one arm, and the other arms on the same side/.test(q));
+    // X > Y and X = Z, so Y is the smallest and X, Z are equal
+    is('Beyond Example 4: Y smallest, X and Z equal and bigger', /\$\\angle Y\$ is the smallest; \$\\angle X\$ and \$\\angle Z\$ are equal, and bigger/.test(a));
+    ok('Beyond Example 4: the Answer row prints no number', nums(a), []);
   }
-  { const part = 180 / 6; okAnswer(5, [part, 5 * part]); }
-  okAnswer(6, [140]);
-  is('Beyond Example 6: outer reading on the outer scale, obtuse', /reads 140 on the outer scale and 40 on the inner scale/.test(exampleQ(6)) && 140 + 40 === 180 && exampleAnswer(6).includes(type(140)));
-  okAnswer(7, [110 - 25]);
-  okAnswer(8, [360 / 20, 90 / (360 / 20)]);
-  okAnswer(9, [360 / 10, 180 / 10]);
-  ok('Beyond Example 10: the types, in order', exampleAnswer(10), [1, 179, 181, 90, 270, 360].map(type).join(', '));
-  okAnswer(11, [F.cod]);
-  okAnswer(12, [360 - 100 - 125, 360 - 100]);
-  okAnswer(13, [120 - 120 / 2 / 2]);
-  okAnswer(14, [65]);
-  is('Beyond Example 14: 65 is 60 and 5 marks on the outer scale; the wrong scale gives 115', /outer scale to 60, then 5 more marks/.test(flat(BEYOND)) && 180 - 65 === 115);
+  {
+    // Example 5: a clock hand turned through three right angles
+    const q = exampleQ(5);
+    const start = q.match(/The hand of a clock points to (\d+)\. It moves on, the way a clock’s hands move, through three right angles\./);
+    is('Beyond Example 5: the question prints the start and three right angles', !!start);
+    const end = start ? F.posName(F.posOf(start[1]) + 3 * 90) : '';
+    okAnswer(5, [Number(end), 3 * 90]);
+    is(`Beyond Example 5: points to ${end}, three quarters of a turn`, exampleAnswer(5).includes(`It points to ${end}.`) && /three quarters of a full turn/.test(exampleAnswer(5)) && (3 * 90) / 360 === 3 / 4);
+    is('Beyond Example 5 does not start where stage 1 or MCQ 7 does', start && start[1] !== '12');
+    is('Beyond: no compass direction and no clockwise anywhere', !/north|south|east|west|clockwise/i.test(flat(BEYOND)));
+  }
+  { const part = 180 / 6; okAnswer(6, [part, 5 * part]); }
+  okAnswer(7, [140]);
+  is('Beyond Example 7: outer reading on the outer scale, obtuse', /reads 140 on the outer scale and 40 on the inner scale/.test(exampleQ(7)) && 140 + 40 === 180 && exampleAnswer(7).includes(type(140)));
+  okAnswer(8, [110 - 25]);
+  okAnswer(9, [360 / 20, 90 / (360 / 20)]);
+  okAnswer(10, [360 / 10, 180 / 10]);
+  {
+    // Example 11: the minute hand, a full turn in 60 minutes
+    const m = exampleQ(11).match(/between (\d+):(\d\d) and (\d+):(\d\d)/);
+    is('Beyond Example 11 prints two times in the same hour', !!m && m[1] === m[3]);
+    const mins = m ? +m[4] - +m[2] : 0, turn = mins * 360 / 60;
+    okAnswer(11, [turn]);
+    is(`Beyond Example 11: ${turn}° is ${type(turn)}`, exampleAnswer(11).includes(`a ${type(turn)} angle`));
+    const s = flat(exampleBlock(11));
+    is('Beyond Example 11 steps: 6° a minute, the minutes, the turn', s.includes(`$= 360^\\circ \\div 60 = ${360 / 60}^\\circ$`) && s.includes(`$${m[4]} - ${+m[2]} = ${mins}$ minutes`) && s.includes(`$${mins} \\times 6^\\circ = ${turn}^\\circ$`));
+    is('Beyond Example 11 check: 30 minutes is 180°, and the turn is past it', 30 * 6 === 180 && turn > 180 && /30 minutes is half a turn, \$180\^\\circ\$/.test(s));
+    is('Beyond Example 11 prints no 30° step between clock numbers (Exercise 2.8 Q1)', !/30\^\\circ/.test(s));
+    is('Beyond Example 11 is not practice Q21 (10 minutes)', mins !== 10);
+  }
+  ok('Beyond Example 12: the types, in order', exampleAnswer(12), [1, 179, 181, 90, 270, 360].map(type).join(', '));
+  okAnswer(13, [F.cod]);
+  okAnswer(14, [360 - 100 - 125, 360 - 100]);
+  okAnswer(15, [120 - 120 / 2 / 2]);
+  okAnswer(16, [65]);
+  is('Beyond Example 16: 65 is 60 and 5 marks on the outer scale; the wrong scale gives 115', /outer scale to 60, then 5 more marks/.test(flat(BEYOND)) && 180 - 65 === 115);
+  is('Fig. 2.64 is captioned for the example that uses it', /Fig\. 2\.64<\/span> For Example 13\./.test(BEYOND) && /In Fig\. 2\.64/.test(exampleQ(13)));
   // every question the examples print carries the numbers the working uses
-  is('Beyond Example questions print the numbers worked', /5 times/.test(exampleQ(5)) && /25 and at 110/.test(exampleQ(7)) && /20 equal parts/.test(exampleQ(8))
-    && /parts of \$10\^\\circ\$/.test(exampleQ(9)) && /\$100\^\\circ\$ and \$125\^\\circ\$/.test(exampleQ(12)) && /\$\\angle AOB = 120\^\\circ\$/.test(exampleQ(13)) && /\$\\angle LMN = 65\^\\circ\$/.test(exampleQ(14)));
+  is('Beyond Example questions print the numbers worked', /5 times/.test(exampleQ(6)) && /25 and at 110/.test(exampleQ(8)) && /20 equal parts/.test(exampleQ(9))
+    && /parts of \$10\^\\circ\$/.test(exampleQ(10)) && /\$100\^\\circ\$ and \$125\^\\circ\$/.test(exampleQ(14)) && /\$\\angle AOB = 120\^\\circ\$/.test(exampleQ(15)) && /\$\\angle LMN = 65\^\\circ\$/.test(exampleQ(16)));
 }
 
 const ROWS = {};
@@ -819,11 +862,16 @@ const qText = (n) => {
   }
   {
     const cmd = { R: 90, L: -90, H: 45 };
-    const names = { 0: 'north', 45: 'north-east', 90: 'east', 135: 'south-east', 180: 'south', 225: 'south-west', 270: 'west', 315: 'north-west' };
-    const run = (start, list) => names[(start + list.reduce((s, c) => s + cmd[c], 0) + 720) % 360];
-    ok('Q29 (a), (b), (c)', [partText(29, 'a').trim(), partText(29, 'b').trim(), partText(29, 'c').trim()], [run(0, ['R', 'R']), run(0, ['H', 'H', 'H']), run(0, ['L', 'H'])]);
+    const run = (start, list) => 'the ' + F.posName(start + list.reduce((s, c) => s + cmd[c], 0));
+    const q29 = flat(qText(29));
+    is('Q29 prints the clock-face robot and its three commands', /faces the 12, and it obeys three commands/.test(q29)
+      && /R turns \$90\^\\circ\$ the way a clock’s hands move L turns \$90\^\\circ\$ the opposite way H turns \$45\^\\circ\$ the way a clock’s hands move/.test(q29)
+      && /The robot faces the 3\. Write two different lists of commands that make it face the 12 again/.test(q29));
+    const ans = [partText(29, 'a').trim(), partText(29, 'b').trim(), partText(29, 'c').trim()];
+    ok('Q29 (a), (b), (c)', ans.map(x => x.startsWith('the ') ? x : 'the ' + x), [run(0, ['R', 'R']), run(0, ['H', 'H', 'H']), run(0, ['L', 'H'])]);
     const lists = partText(29, 'd').replace(/^.*?:/, '').split(';').map(s => s.replace(/or/, '').match(/[RLH]/g));
-    is('Q29(d) every list printed turns east to north', lists.length >= 2 && lists.every(l => run(90, l) === 'north'));
+    is('Q29(d) every list printed turns the robot from the 3 to the 12', lists.length >= 2 && lists.every(l => run(F.posOf('3'), l) === 'the 12'));
+    is('Beyond: no compass word in the practice either', !/north|south|east|west|clockwise/i.test(flat(BEYOND)));
   }
 }
 
@@ -844,7 +892,7 @@ const MCQ = {
   4: [/^An angle of \$135\^\\circ\$ is$/, (o) => o === type(135)],
   5: [/^An angle of \$200\^\\circ\$ is$/, (o) => o === type(200)],
   6: [/units that make a straight angle is$/, (o) => val(o) === 180 / 1],
-  7: [/faces east and turns anticlockwise through \$270\^\\circ\$/, (o) => o === F.face('east', -270)],
+  7: [/^The hand of a clock points to 12\. It turns through \$270\^\\circ\$ the opposite way to a clock’s hands\. It now points to$/, (o) => o === F.posName(F.posOf('12') - 270)],
   8: [/is a reflex angle\?$/, (o) => type(val(o)) === 'reflex'],
   9: [/straight angle, and .*bisects it/, (o) => val(o) === 180 / 2],
   10: [/is twice \$\\angle COB\$/, (o) => val(o) === 180 / 3],
@@ -989,14 +1037,17 @@ inAnswers('A 2.11 Q7 check', `$4 \\times ${F.puzzle[3]} = ${4 * F.puzzle[3]}$ an
 inAnswers('A 2.11 Q3', `$\\angle AOB$ 20°, $\\angle BOC$ 30° and $\\angle AOC$ 50°`);
 inAnswers('A 2.11 Q3', `$\\angle BOD$ 120° and\n   $\\angle AOD$ 140°`);
 // Beyond
-inAnswers('A Stage 1', `Ravi turns **${90 + 90 + 45}°**`);
+inAnswers('A Stage 1', `the first clock hand turns **${90 + 90 + 45}°**`);
 inAnswers('A Stage 1', `**${(180 - 50) / 2}° and ${(180 - 50) / 2 + 50}°**`);
 inAnswers('A Stage 1', `five rays give **${5 * 4 / 2}** angles (and six give ${6 * 5 / 2})`);
 inAnswers('A Stage 1', `$2 \\times 20 = ${2 * 20}$`);
-inAnswers('A Stage 1', `Kiran turns **${F.kiran}°** clockwise, and the short way back is **${360 - F.kiran}°**`);
+inAnswers('A Stage 1', `the second clock hand turns **${F.kiran}°**, and the short way back is **${360 - F.kiran}°**`);
 inAnswers('A Beyond Examples', `3 —\n$\\angle P$, by ${90 / 3 * 2 - 180 / 4}°`);
-inAnswers('A Beyond Examples', `5 — ${180 / 6}° and\n${5 * 180 / 6}°`);
-inAnswers('A Beyond Examples', `11 — ${F.cod}°;\n12 — ${360 - 225}° and ${360 - 100}°; 13 — ${120 - 30}°`);
+inAnswers('A Beyond Examples', `4 — $\\angle Y$ is the smallest, and $\\angle X$ and $\\angle Z$ are equal; 5 — it points to ${F.posName(F.posOf('6') + 270)}, three quarters of a turn`);
+inAnswers('A Beyond Examples', `6 — ${180 / 6}° and\n${5 * 180 / 6}°`);
+inAnswers('A Beyond Examples', `11 — ${35 * 6}°, ${type(35 * 6)}`);
+inAnswers('A Beyond Examples', 'Beyond Examples 1 to 16 are worked');
+inAnswers('A Beyond Examples', `13 — ${F.cod}°;\n14 — ${360 - 225}° and ${360 - 100}°; 15 — ${120 - 30}°`);
 inAnswers('A Beyond key heading', '**Key.** 1 (' + KEY[1] + ')');
 for (const [n, l] of Object.entries(KEY)) {
   const flatKey = ANSWERS.slice(ANSWERS.indexOf('**Key.**'), ANSWERS.indexOf('The working for')).replace(/\s+/g, ' ');
@@ -1017,7 +1068,9 @@ inAnswers('A Q27', `$\\angle AOQ = 30 + 45 = ${F.q27.AOQ}$, **${F.q27.AOQ}°**`)
 inAnswers('A Q27', `$\\angle POR = 45 + 60 = ${F.q27.POR}$, **${F.q27.POR}°**`);
 inAnswers('A Q27', `$\\angle AOR = 30 + 45 + 60 = ${F.q27.AOR}$, **${F.q27.AOR}°**, ${type(F.q27.AOR)}`);
 inAnswers('A Q28', `**18 parts of ${360 / 18}°** and **20 parts of ${360 / 20}°**`);
-inAnswers('A Q29', `(a) **south** (b) **south-east** (c) **north-west**`);
+inAnswers('A Q29', `(a) **the ${F.posName(180)}** (b) **${F.posName(135)}** (c) **${F.posName(-45)}**`);
+inAnswers('A MCQ 7', `7. From 12, the opposite way to a clock's hands: 9 (90°), 6 (180°), ${F.posName(-270)} (270°).`);
+is('ANSWERS.md Beyond: no compass word', !/north|south|east|west|clockwise/i.test(ANSW.slice(ANSW.indexOf('## Beyond the Book'))));
 
 /* ---- F. the page ------------------------------------------------ */
 {
@@ -1053,7 +1106,7 @@ inAnswers('A Q29', `(a) **south** (b) **south-east** (c) **north-west**`);
     ['Choose the correct option', 'Assertion and reason', 'Very short answer', 'Short answer', 'Long answer', 'Case-based questions']);
   const examples = [...BODY.matchAll(/c-example__tab">Example (\d+)</g)].map(m => +m[1]);
   const bex = [...BEYOND.matchAll(/c-example__tab">Example (\d+)</g)].map(m => +m[1]);
-  ok('body Examples 1..2, Beyond Examples 1..14', [examples, bex], [[1, 2], [...Array(14).keys()].map(i => i + 1)]);
+  ok('body Examples 1..2, Beyond Examples 1..16', [examples, bex], [[1, 2], [...Array(16).keys()].map(i => i + 1)]);
   const panels = [...(BODY + BEYOND).matchAll(/<div class="c-example">([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>\s*(?=\n\s*\n|\s*<h3|\s*<div class="c-(?!figure))/g)];
   is('every example is stepped: Solution, Step rows, an Answer row', (BODY + BEYOND).split('<div class="c-example">').slice(1).every(e => {
     const body = e.split(/<div class="c-example">/)[0];

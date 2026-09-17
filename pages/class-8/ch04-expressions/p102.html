@@ -66,32 +66,37 @@
       </p>
 
       <div class="c-try">
-        <p>For a number $x$, $x + \frac{1}{x} = 4$. Find $x^2 + \frac{1}{x^2}$,
-        again without finding $x$.</p>
+        <p>Two numbers $a$ and $b$ have $a^2 + b^2 = 20$ and $ab = 8$. Find
+        $a^4 + b^4$, again without finding $a$ or $b$.</p>
       </div>
 
       <p>
-        The expression asked for has squares in it and the one given has not, so
-        square what you are given. The middle term of $(a+b)^2$ is $2ab$, and here
-        $a \times b$ is $x \times \frac{1}{x}$, which is $1$.
+        The expression asked for has fourth powers in it and the one given has
+        squares, so square what you are given. Since $a^4 = (a^2)^2$, the identity
+        for $(a+b)^2$ applies with $a^2$ and $b^2$ in the places of $a$ and $b$, and its
+        middle term needs only the product.
       </p>
 
       <div class="work">
         <div class="work__row">
           <span class="work__label work__label--wide">square it</span>
-          <span>$\left(x + \dfrac{1}{x}\right)^2 = x^2 + 2 + \dfrac{1}{x^2} = 16$</span>
+          <span>$(a^2 + b^2)^2 = a^4 + 2a^2b^2 + b^4 = 400$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">middle term</span>
+          <span>$2a^2b^2 = 2(ab)^2 = 2 \times 64 = 128$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">so</span>
-          <span>$x^2 + \dfrac{1}{x^2} = 14$</span>
+          <span>$a^4 + b^4 = 400 - 128 = 272$</span>
         </div>
       </div>
 
       <p>
-        The middle term collapsing to a plain $2$ is what makes these questions work,
-        and it happens because $x$ and $\frac{1}{x}$ multiply to $1$ whatever $x$ is.
-        The same step run with the other square gives
-        $\left(x - \frac{1}{x}\right)^2 = 14 - 2 = 12$.
+        The middle term turning into a plain number is what makes these questions
+        work, and it happens because $a^2b^2$ is $(ab)^2$, and $ab$ was given. The
+        numbers are in fact $2$ and $4$, and $16 + 256 = 272$ agrees. The same step
+        run with the other square gives $(a^2 - b^2)^2 = 272 - 128 = 144$.
       </p>
 
     </div>

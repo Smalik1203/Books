@@ -1,5 +1,22 @@
 # Class 8 · Mathematics I · Chapter 2 — When Multiplying Takes Over
 
+## Syllabus audit fixes, 17 September 2026
+
+From "Audit Class 8 Maths I Beyond". One finding, confirmed against the
+pages; only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Stage 1 Q6, rice on a chessboard: the total $1 + 2 + \cdots + 2^{63} = 2^{64} - 1$, a geometric series the body never sums (borderline) | recast as the audit suggested: the try now asks for the grains on the sixty-fourth square alone. The explanation shows why it is $2^{63}$ (the power is one less than the square's number), estimates $(2^{10})^6 \times 2^3 \approx 8 \times 10^{18}$ (true value about $9.2 \times 10^{18}$), and the mass becomes $2.3 \times 10^{11}$ tonnes, nearly five hundred years of the world's rice. The sum and its *one short of the next power* paragraph are gone |
+
+`ANSWERS.md` Stage 1 line and `check-numbers.mjs` (Q6) updated; each new
+value was broken on purpose and caught. 497 claims hold. The refit changed no
+page break that matters: Answers still opens a page, Q30 and Q31 share the
+page before it (71%).
+
+**Pages: 36 before → 36 after** (19 body + 17 Beyond). No Solved Example
+added (no gap was found).
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Chapter 1 model. The

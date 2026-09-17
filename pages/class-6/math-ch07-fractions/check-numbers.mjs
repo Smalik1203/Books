@@ -806,23 +806,45 @@ function sumAnswers(set, n, title, from) {
 is('S1 5/6 is 1/6 short and 6/7 is 1/7 short', ONE.sub(q(5, 6)).eq(q(1, 6)) && ONE.sub(q(6, 7)).eq(q(1, 7)));
 is('S1 6/7 > 5/6', q(6, 7).cmp(q(5, 6)) === 1);
 is('S1 2/7 < 1/3, so Rohan is wrong', q(2, 7).cmp(q(1, 3)) === -1 && !q(1, 3).add(q(1, 4)).eq(q(2, 7)));
-is('S1 the ribbon: 3 1/2 m in quarters', q(7, 2).div(q(1, 4)).eq(q(14)));
+is('S1 3 1/2 is 14 quarters and 28 eighths', q(7, 2).eq(q(14, 4)) && q(7, 2).eq(q(28, 8)) && 14 * 2 === 28 && 3 * 4 + 2 === 14);
+is('S1 3 1/2 prints 14/4 and 28/8', /so \$3\\frac\{1\}\{2\} = \\frac\{14\}\{4\}\$/.test(ALL) && /and \$3\\frac\{1\}\{2\} = \\frac\{28\}\{8\}\$/.test(ALL));
+is('S1 no longer divides by a fraction (the ribbon is gone)', !/cut into pieces that are each/.test(ALL));
 is('S1 halfway between 1/3 and 1/2', q(1, 3).add(q(1, 2)).div(q(2)).eq(q(5, 12)));
 is('S1 in sixths 1/3 and 1/2 are next to each other', q(1, 3).mul(q(6)).eq(q(2)) && q(1, 2).mul(q(6)).eq(q(3)));
-is('S1 Sunil eats a third of what Priya left', ONE.sub(q(2, 5)).div(q(3)).eq(q(1, 5)));
-is('S1 what remains equals what Priya ate', ONE.sub(q(2, 5)).sub(q(1, 5)).eq(q(2, 5)));
+{
+  // Priya 2/5 and Sunil 1/4 of the whole cake: is more than half left?
+  const t = decode(ALL);
+  const m = /Priya eats \$\\frac\{(\d+)\}\{(\d+)\}\$ of a cake, and Sunil eats \$\\frac\{(\d+)\}\{(\d+)\}\$ of the same cake/.exec(t);
+  is('S1 Priya and Sunil are read off the page', !!m);
+  if (m) {
+    const priya = q(+m[1], +m[2]), sunil = q(+m[3], +m[4]);
+    const left = ONE.sub(priya).sub(sunil);
+    is('S1 twentieths are a common unit', (20 % priya.d === 0) && (20 % sunil.d === 0));
+    is('S1 Priya 8/20, Sunil 5/20, eaten 13/20', priya.eq(q(8, 20)) && sunil.eq(q(5, 20)) && priya.add(sunil).eq(q(13, 20)));
+    is('S1 7/20 left, less than half', left.eq(q(7, 20)) && left.cmp(q(1, 2)) < 0 && q(10, 20).eq(q(1, 2)));
+    const said = /Priya eats \$([^$]+)\$ and Sunil eats \$([^$]+)\$, so together they eat \$([^$]+)\$\. What is left is \$([^$]+)\$\. Half the cake is \$([^$]+)\$/.exec(t);
+    is('S1 the printed working: each share, the sum, what is left, and the half', !!said
+      && val(said[1]).eq(priya) && shape(said[1]).b === 20 && val(said[2]).eq(sunil) && shape(said[2]).b === 20
+      && val(said[3]).eq(priya.add(sunil)) && relations(said[4]).sides.every(s => val(s).eq(left) || val(s).eq(ONE) || val(s).eq(priya.add(sunil)))
+      && val(relations(said[4]).sides.pop()).eq(left) && val(said[5]).eq(q(1, 2)));
+    is('S1 the text says less than half is left', /so less than half is left/.test(t) === (left.cmp(q(1, 2)) < 0));
+    is('S1 no fraction of a fraction (one third of what is left is gone)', !/one third of what is left/.test(t));
+  }
+}
 {
   const s1 = section('Stage 1 · Using What You Know');
   is('A S1 1', item(s1, 1).startsWith('$\\frac{6}{7}$ is greater'));
-  is('A S1 3', item(s1, 3).startsWith('**14 pieces**'));
+  is('A S1 3', item(s1, 3).startsWith('**14 quarters**') && val(spans(item(s1, 3))[0].split('=')[1]).eq(q(14, 4))
+    && val(spans(item(s1, 3))[1].split('=')[1]).eq(q(28, 8)) && item(s1, 3).includes('28 eighths'));
   is('A S1 4', val(spans(item(s1, 4))[0]).eq(q(5, 12)));
-  is('A S1 5', val(spans(item(s1, 5))[0]).eq(q(1, 5)));
+  is('A S1 5', item(s1, 5).startsWith('**No.**') && lastVal(`$${spans(item(s1, 5))[0]}$`).eq(q(13, 20))
+    && val(spans(item(s1, 5))[1]).eq(q(7, 20)) && val(spans(item(s1, 5))[2]).eq(q(1, 2)));
 }
 
-// stage 2: Beyond Examples 1 to 17 (Beyond numbers its own, as Class 7 does), each Answer row recomputed from its question
+// stage 2: Beyond Examples 1 to 19 (Beyond numbers its own, as Class 7 does), each Answer row recomputed from its question
 {
   const tabs = BEYOND_EX.map(e => e.tab);
-  same('Beyond examples are numbered 1 to 17, on their own', tabs,
+  same('Beyond examples are numbered 1 to 19, on their own', tabs,
     Array.from({ length: BEYOND_EX.length }, (_, k) => `Example ${1 + k}`));
   // keyed by place; the tab check above requires place N to print "Example N",
   // so a wrong tab fails that check instead of crashing the ones below
@@ -837,111 +859,145 @@ is('S1 what remains equals what Priya ate', ONE.sub(q(2, 5)).sub(q(1, 5)).eq(q(2
     same('Beyond Ex 1 denominators largest first', (strip(ex[1].rows[2].html).match(/\d+/g) || []).map(Number),
       ex[1].qs.map(s => val(s).d).sort((a, b) => b - a));
   }
-  // Beyond Ex 2: 4 parts a unit, seventh mark
+  // Beyond Ex 2: a piece named as a part of the whole bar
   {
-    const parts = Number(/cut into (\d+) equal parts/.exec(strip(ex[2].q))[1]);
-    const mark = { fifth: 5, sixth: 6, seventh: 7, eighth: 8 }[/ends at the (\w+) mark/.exec(strip(ex[2].q))[1]];
+    const t = strip(ex[2].q);
+    const [total, rows, perRow] = /marked into (\d+) small squares, in (\d+) rows of (\d+) squares/.exec(t).slice(1).map(Number);
+    const [nRows, nSq] = /Of (\w+) rows\? Of (\d+) squares\?/.exec(t).slice(1);
+    const k = { two: 2, three: 3, four: 4 }[nRows];
+    is('Beyond Ex 2 the bar is rows x columns', rows * perRow === total);
+    const want = [q(1, rows), q(k, rows), q(Number(nSq), total)];
+    same('Beyond Ex 2 answers', A(2).map(s => String(val(s))), want.map(String));
+    is('Beyond Ex 2 answers printed in lowest terms', A(2).every(finished));
+    is('Beyond Ex 2 step 1 names 1/rows', strip(ex[2].rows[0].html).startsWith(`${rows} rows make the whole bar`) && val(spans(ex[2].rows[0].html)[0]).eq(q(1, rows)));
+    is('Beyond Ex 2 step 2 counts the units', val(spans(ex[2].rows[1].html)[1]).eq(q(k, rows)));
+    is('Beyond Ex 2 step 3: two pieces make the bar', 2 * Number(nSq) === total && relations(spans(ex[2].rows[2].html)[0]).sides.map(val).every(v => v.eq(q(total))));
+    const note = /three rows are \$([^$]+)\$ squares, and each fifth of the bar is \$([^$]+)\$ squares/.exec(decode(ex[2].all));
+    is('Beyond Ex 2 the square count agrees', !!note && relations(note[1]).sides.map(val).every(v => v.eq(q(k * perRow)))
+      && relations(note[2]).sides.map(val).every(v => v.eq(q(total / rows))) && q(k * perRow, total).eq(q(k, rows)));
+  }
+  // Beyond Ex 7: equal shares, 4 rotis among 5 and 8 among 10
+  {
+    const t = strip(ex[7].q);
+    const g = [...t.matchAll(/(\d+) rotis are shared equally by (\d+) children/g)].map(m => [Number(m[1]), Number(m[2])]);
+    is('Beyond Ex 7 two groups read', g.length === 2);
+    const [s1, s2] = g.map(([r, c]) => q(r, c));
+    is('Beyond Ex 7 the second group is the first doubled', g[1][0] === 2 * g[0][0] && g[1][1] === 2 * g[0][1]);
+    const ans = A(7).map(val);
+    is('Beyond Ex 7 answer: the two shares', ans[0].eq(s1) && ans[1].eq(s2) && shape(A(7)[0]).b === g[0][1] && shape(A(7)[1]).b === g[1][1]);
+    is('Beyond Ex 7 the shares are equal, and the page says so', s1.eq(s2) && /The shares are equal/.test(strip(ex[7].ans)));
+    const r2 = spans(ex[7].rows[1].html);
+    is('Beyond Ex 7 step 2 is rotis x one part, and a division', r2.length === 2 && relations(r2[0]).sides.map(val).every(v => v.eq(s1))
+      && relations(r2[1]).sides.map(val).every(v => v.eq(s1)) && /\\div/.test(r2[1]));
+    const r3 = spans(ex[7].rows[2].html);
+    is('Beyond Ex 7 step 3 in tenths', relations(r3[0]).sides.map(val).every(v => v.eq(s2)) && strip(ex[7].rows[2].html).includes(`cut into ${g[1][1]} parts`));
+    is('Beyond Ex 7 step 1 cuts into as many parts as children', strip(ex[7].rows[0].html).includes(`each of the ${g[0][0]} rotis into ${g[0][1]} equal parts`));
+  }
+  // Beyond Ex 3: 4 parts a unit, seventh mark
+  {
+    const parts = Number(/cut into (\d+) equal parts/.exec(strip(ex[3].q))[1]);
+    const mark = { fifth: 5, sixth: 6, seventh: 7, eighth: 8 }[/ends at the (\w+) mark/.exec(strip(ex[3].q))[1]];
     const len = q(mark, parts);
-    is(`Beyond Ex 2 the bar is ${len}`, val(A(2)[0]).eq(len) && /longer than 1 unit/.test(strip(ex[2].ans)) === (len.cmp(ONE) > 0));
+    is(`Beyond Ex 3 the bar is ${len}`, val(A(3)[0]).eq(len) && /longer than 1 unit/.test(strip(ex[3].ans)) === (len.cmp(ONE) > 0));
   }
-  // Beyond Ex 3: improper to mixed
-  {
-    const r = relations(A(3)[0]).sides;
-    is('Beyond Ex 3 proper mixed number', norm(r[0]) === norm(ex[3].qs[0]) && shape(r[1]).kind === 'mixed' && finished(r[1]) && val(r[1]).eq(Qv(3)[0]));
-  }
-  // Beyond Ex 4: mixed to improper
+  // Beyond Ex 4: improper to mixed
   {
     const r = relations(A(4)[0]).sides;
-    is('Beyond Ex 4 improper fraction', norm(r[0]) === norm(ex[4].qs[0]) && shape(r[1]).kind === 'frac' && val(r[1]).eq(Qv(4)[0]));
+    is('Beyond Ex 4 proper mixed number', norm(r[0]) === norm(ex[4].qs[0]) && shape(r[1]).kind === 'mixed' && finished(r[1]) && val(r[1]).eq(Qv(4)[0]));
   }
-  // Beyond Ex 5: the boxes
+  // Beyond Ex 5: mixed to improper
   {
-    const [lhs, box1, box2] = relations(ex[5].qs[0]).sides;
+    const r = relations(A(5)[0]).sides;
+    is('Beyond Ex 5 improper fraction', norm(r[0]) === norm(ex[5].qs[0]) && shape(r[1]).kind === 'frac' && val(r[1]).eq(Qv(5)[0]));
+  }
+  // Beyond Ex 6: the boxes
+  {
+    const [lhs, box1, box2] = relations(ex[6].qs[0]).sides;
     const f = val(lhs);
     const den1 = Number(/\{(\d+)\}\s*$/.exec(box1)[1]);
     const num2 = Number(/\\frac\{(\d+)\}/.exec(box2)[1]);
-    const got = strip(ex[5].ans).match(/\d+/g).map(Number);
-    same('Beyond Ex 5 the two boxes', got, [f.n * den1 / f.d, f.d * num2 / f.n]);
-    is('Beyond Ex 5 both are whole numbers', Number.isInteger(f.n * den1 / f.d) && Number.isInteger(f.d * num2 / f.n));
+    const got = strip(ex[6].ans).match(/\d+/g).map(Number);
+    same('Beyond Ex 6 the two boxes', got, [f.n * den1 / f.d, f.d * num2 / f.n]);
+    is('Beyond Ex 6 both are whole numbers', Number.isInteger(f.n * den1 / f.d) && Number.isInteger(f.d * num2 / f.n));
   }
-  // Beyond Ex 6: lowest terms, and the one-step divisor
+  // Beyond Ex 8: lowest terms, and the one-step divisor
   {
-    const sh = shape(ex[6].qs[0]);
-    const r = relations(A(6)[0]).sides;
-    is('Beyond Ex 6 lowest terms', finished(r[1]) && val(r[1]).eq(Qv(6)[0]));
-    is(`Beyond Ex 6 the largest common factor is ${gcd(sh.a, sh.b)}`, strip(ex[6].all).includes(`${gcd(sh.a, sh.b)} is the largest common factor of ${sh.a} and ${sh.b}`));
-    is('Beyond Ex 6 108 and 144 end in 08 and 44, both multiples of 4', 8 % 4 === 0 && 44 % 4 === 0);
+    const sh = shape(ex[8].qs[0]);
+    const r = relations(A(8)[0]).sides;
+    is('Beyond Ex 8 lowest terms', finished(r[1]) && val(r[1]).eq(Qv(8)[0]));
+    is(`Beyond Ex 8 the largest common factor is ${gcd(sh.a, sh.b)}`, strip(ex[8].all).includes(`${gcd(sh.a, sh.b)} is the largest common factor of ${sh.a} and ${sh.b}`));
+    is('Beyond Ex 8 108 and 144 end in 08 and 44, both multiples of 4', 8 % 4 === 0 && 44 % 4 === 0);
   }
-  // Beyond Ex 7: exactly one of the four is in lowest terms
+  // Beyond Ex 9: exactly one of the four is in lowest terms
   {
-    const low = ex[7].qs.filter(s => finished(s));
-    is('Beyond Ex 7 exactly one option is in lowest terms', low.length === 1 && norm(A(7)[0]) === norm(low[0]));
-    const shared = ex[7].qs.map(s => gcd(shape(s).a, shape(s).b));
-    same('Beyond Ex 7 the common factors named', shared.filter(g => g > 1), [7, 13, 17]);
+    const low = ex[9].qs.filter(s => finished(s));
+    is('Beyond Ex 9 exactly one option is in lowest terms', low.length === 1 && norm(A(9)[0]) === norm(low[0]));
+    const shared = ex[9].qs.map(s => gcd(shape(s).a, shape(s).b));
+    same('Beyond Ex 9 the common factors named', shared.filter(g => g > 1), [7, 13, 17]);
   }
-  // Beyond Ex 8 and 9: comparing
+  // Beyond Ex 10 and 11: comparing
   {
-    const [x, y] = ex[8].qs;
+    const [x, y] = ex[10].qs;
     const c = val(x).cmp(val(y));
-    same('Beyond Ex 8 comparison', norm(A(8)[0]), `${norm(x)}${c > 0 ? '>' : '<'}${norm(y)}`);
-    is('Beyond Ex 8 36 is a common multiple smaller than 12 x 9', 36 % 12 === 0 && 36 % 9 === 0 && 36 < 12 * 9);
-    const [f, h] = Qv(9);
+    same('Beyond Ex 10 comparison', norm(A(10)[0]), `${norm(x)}${c > 0 ? '>' : '<'}${norm(y)}`);
+    is('Beyond Ex 10 36 is a common multiple smaller than 12 x 9', 36 % 12 === 0 && 36 % 9 === 0 && 36 < 12 * 9);
+    const [f, h] = Qv(11);
     const c14 = f.cmp(h);
-    is('Beyond Ex 9 less or more', strip(ex[9].ans).includes(c14 < 0 ? 'is less than' : 'is more than'));
-    is('Beyond Ex 9 by how much', val(A(9)[2]).eq(c14 < 0 ? h.sub(f) : f.sub(h)));
-    is('Beyond Ex 9 7 is less than half of 15', 7 + 7 === 14 && 14 < 15);
+    is('Beyond Ex 11 less or more', strip(ex[11].ans).includes(c14 < 0 ? 'is less than' : 'is more than'));
+    is('Beyond Ex 11 by how much', val(A(11)[2]).eq(c14 < 0 ? h.sub(f) : f.sub(h)));
+    is('Beyond Ex 11 7 is less than half of 15', 7 + 7 === 14 && 14 < 15);
   }
-  // Beyond Ex 10: ascending order, and the second way
+  // Beyond Ex 12: ascending order, and the second way
   {
-    const want = [...ex[10].qs].sort((x, y) => val(x).cmp(val(y))).map(norm).join('<');
-    same('Beyond Ex 10 ascending order', norm(A(10)[0]), want);
-    const extra = spans(ex[10].all.split('</div>\n          <p>').pop() || '');
-    const t = /Each fraction is a little more than \$\\frac\{1\}\{2\}\$: ([\s\S]*?)\. Since/.exec(decode(ex[10].all));
+    const want = [...ex[12].qs].sort((x, y) => val(x).cmp(val(y))).map(norm).join('<');
+    same('Beyond Ex 12 ascending order', norm(A(12)[0]), want);
+    const extra = spans(ex[12].all.split('</div>\n          <p>').pop() || '');
+    const t = /Each fraction is a little more than \$\\frac\{1\}\{2\}\$: ([\s\S]*?)\. Since/.exec(decode(ex[12].all));
     const pairs = [...t[1].matchAll(/\$([^$]+)\$ by \$([^$]+)\$/g)];
-    is('Beyond Ex 10 each is more than a half by the amount printed',
+    is('Beyond Ex 12 each is more than a half by the amount printed',
       pairs.length === 3 && pairs.every(([, f, d]) => val(f).sub(q(1, 2)).eq(val(d))) && extra.length > 0);
-    is('Beyond Ex 10 120 = 5 x 8 x 3', 5 * 8 * 3 === 120);
+    is('Beyond Ex 12 120 = 5 x 8 x 3', 5 * 8 * 3 === 120);
   }
-  // Beyond Ex 11: Find E
-  is('Beyond Ex 11 answer', val(A(11)[0]).eq(Qv(11)[0]) && finished(A(11)[0]));
-  // Beyond Ex 12: two walks added
+  // Beyond Ex 13: Find E
+  is('Beyond Ex 13 answer', val(A(13)[0]).eq(Qv(13)[0]) && finished(A(13)[0]));
+  // Beyond Ex 14: two walks added
   {
-    const [a, b] = Qv(12);
-    is('Beyond Ex 12 total walk', val(A(12)[0]).eq(a.add(b)) && finished(A(12)[0]));
+    const [a, b] = Qv(14);
+    is('Beyond Ex 14 total walk', val(A(14)[0]).eq(a.add(b)) && finished(A(14)[0]));
   }
-  // Beyond Ex 13: the jug
+  // Beyond Ex 15: the jug
   {
-    const [c, p1, p2] = Qv(13);
-    is('Beyond Ex 13 milk left', val(A(13)[0]).eq(c.sub(p1).sub(p2)) && finished(A(13)[0]));
+    const [c, p1, p2] = Qv(15);
+    is('Beyond Ex 15 milk left', val(A(15)[0]).eq(c.sub(p1).sub(p2)) && finished(A(15)[0]));
   }
-  // Beyond Ex 14: what must be added
+  // Beyond Ex 16: what must be added
   {
-    const [x, target] = Qv(14);
-    is('Beyond Ex 14 the missing part', val(A(14)[0]).eq(target.sub(x)) && finished(A(14)[0]));
+    const [x, target] = Qv(16);
+    is('Beyond Ex 16 the missing part', val(A(16)[0]).eq(target.sub(x)) && finished(A(16)[0]));
   }
-  // Beyond Ex 15: Find E, and the claim about the fractional parts
-  is('Beyond Ex 15 answer', val(A(15)[0]).eq(Qv(15)[0]) && finished(A(15)[0]));
-  is('Beyond Ex 15 1/6 is less than 3/4', q(1, 6).cmp(q(3, 4)) < 0);
-  // Beyond Ex 16: two different units
+  // Beyond Ex 17: Find E, and the claim about the fractional parts
+  is('Beyond Ex 17 answer', val(A(17)[0]).eq(Qv(17)[0]) && finished(A(17)[0]));
+  is('Beyond Ex 17 1/6 is less than 3/4', q(1, 6).cmp(q(3, 4)) < 0);
+  // Beyond Ex 18: two different units
   {
-    const r = relations(A(16)[0]).sides;
+    const r = relations(A(18)[0]).sides;
     const units = r[1].split('+').map(val);
-    is('Beyond Ex 16 two different units', units.length === 2 && units.every(u => u.n === 1) && units[0].d !== units[1].d
-      && norm(r[0]) === norm(ex[16].qs[0]));
+    is('Beyond Ex 18 two different units', units.length === 2 && units.every(u => u.n === 1) && units[0].d !== units[1].d
+      && norm(r[0]) === norm(ex[18].qs[0]));
     const ways = [];
-    const x = Qv(16)[0];
+    const x = Qv(18)[0];
     for (let a = 2; a < 100; a++) {
       const rest = x.sub(q(1, a));
       if (rest.cmp(q(0)) > 0 && rest.n === 1 && rest.d > a) ways.push([a, rest.d]);
     }
-    same('Beyond Ex 16 there is only one such pair', ways, [units.map(u => u.d)]);
+    same('Beyond Ex 18 there is only one such pair', ways, [units.map(u => u.d)]);
   }
-  // Beyond Ex 17: third side of the triangle
+  // Beyond Ex 19: third side of the triangle
   {
-    const [p, s1, s2] = Qv(17);
+    const [p, s1, s2] = Qv(19);
     const side = p.sub(s1).sub(s2);
-    is('Beyond Ex 17 third side', val(A(17)[0]).eq(side) && finished(A(17)[0]));
-    is('Beyond Ex 17 the three sides make a triangle', s1.add(s2).cmp(side) > 0 && s1.add(side).cmp(s2) > 0 && s2.add(side).cmp(s1) > 0);
+    is('Beyond Ex 19 third side', val(A(19)[0]).eq(side) && finished(A(19)[0]));
+    is('Beyond Ex 19 the three sides make a triangle', s1.add(s2).cmp(side) > 0 && s1.add(side).cmp(s2) > 0 && s2.add(side).cmp(s1) > 0);
   }
 }
 
@@ -1015,7 +1071,17 @@ const pq = (n) => spans(PR[n] ? PR[n].html : '').map(val);
   const k25 = total / (base.n + base.d);
   const f25 = shape(spans(row(25))[0]);
   is('Q25 the fraction', Number.isInteger(k25) && f25.a === base.n * k25 && f25.b === base.d * k25);
-  is('Q25 the check printed adds up', val(spans(row(25))[1].split('=')[0]).eq(q(total)));
+  is('Q25 the check printed adds up', val(spans(row(25)).pop().split('=')[0]).eq(q(total)) && val(spans(row(25)).pop().split('=')[1]).eq(q(total)));
+  {
+    // the list worked in the answer: 3/5, 6/10, 9/15 are equivalent, and the sums go up by 8
+    const listed = spans(row(25)).slice(1, 4).map(s => shape(s));
+    is('Q25 the listed fractions are the first three equivalents', listed.every((s, i) => s.a === base.n * (i + 1) && s.b === base.d * (i + 1)));
+    same('Q25 the sums printed', (/the sums are ([\d, ]+),/.exec(strip(row(25))) || ['', ''])[1].split(',').map(x => Number(x.trim())).filter(Boolean),
+      [1, 2, 3].map(i => (base.n + base.d) * i));
+    is('Q25 64 = 8 x 8, the eighth fraction', val(spans(row(25))[4].split('=')[0]).eq(q(total)) && val(spans(row(25))[4].split('=')[1]).eq(q(total))
+      && k25 === 8 && /eighth fraction/.test(strip(row(25))));
+    is('Q25 asks for the listing method', /List fractions equivalent to/.test(strip(PR[25].html)));
+  }
   // 26: more or less than 1
   const s26 = pq(26)[0];
   is('Q26 less or more', strip(row(26)).startsWith(s26.cmp(ONE) < 0 ? 'Less' : 'More'));

@@ -273,7 +273,7 @@ answers:
 2. $49 \times 51 = 2499$ and $4.9 \times 5.1 = 24.99$.
 3. The side was $10$ m.
 4. $(2x + 3)^2 - (2x - 3)^2 = 24x$.
-5. $x^2 + \dfrac{1}{x^2} = 14$.
+5. $a^4 + b^4 = (a^2 + b^2)^2 - 2(ab)^2 = 400 - 128 = 272$.
 6. $x^2 - 6x + 10 = (x - 3)^2 + 1$, which is at least $1$.
 7. $(x + y)^2 - 4xy = (x - y)^2$, so $(x + y)^2 \geq 4xy$, with equality exactly
    when $x = y$.

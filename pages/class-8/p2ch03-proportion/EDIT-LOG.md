@@ -1,5 +1,25 @@
 # Class 8 · Mathematics II · Chapter 3 — What Stays the Same
 
+## Syllabus audit fixes, 17 September 2026
+
+Two findings from the Beyond the Book syllabus audit, both the same method
+(combining $a : b$ and $b : c$ through a common $b$, which the body never
+does), both confirmed and fixed. **Pages: 26 before (13 body + 13 Beyond),
+26 after.** 16 Solved Examples, unchanged in number.
+
+| finding | what was done |
+|---|---|
+| Example 6 (Type 3), *$a : b = 3 : 4$ and $b : c = 6 : 5$, find $a : b : c$* (borderline) | Replaced with a Type 3 example the body teaches (§3.3) and no example worked: are two concrete batches, $6 : 9 : 15$ and $4 : 6 : 10$, the same mix? Matching quotients all $1.5$, both reduce to $2 : 3 : 5$ |
+| Practice Q14, *$a : b = 2 : 3$, $b : c = 4 : 5$, find $a : c$* (borderline) | Replaced with an MCQ of the same form on the value of one part: $a : b : c = 2 : 3 : 5$ and $b = 12$, find $a + c$. Options $20$, $40$, $28$, $7$; the key stays (c). Its *why the other options are wrong* row rewritten |
+
+`ANSWERS.md` Q14 working and `check-numbers.mjs` (Example 6 quotients,
+simplest forms and rows; Q14 solver) follow. Breaking the Example 6 answer,
+its Step 1 quotient, and Q14's right option each fails the check.
+
+`refit … bridge` kept Beyond at 13 pages; 0 stranded openers. Page 11 (body, untouched)
+and page 25 still run 1.6 mm and 1.1 mm into the margin, as before. Answers
+opens page 25.
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against Chapter 1 of

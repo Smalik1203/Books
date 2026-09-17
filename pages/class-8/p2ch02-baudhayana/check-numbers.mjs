@@ -157,7 +157,7 @@ ok('Example 4: side of the rhombus', hyp(24 / 2, 70 / 2), 37);
 }
 // Stage 1's stated results, read off the page
 { const plain = text(beyond).replace(/\$/g, '');
-  for (const s of ['so a = 28', 'The sides are 28 and 45', '(28, 45, 53)', 'the tops are 13 m apart', 'so 7 m out', 'so 20 m up', 'The top has come down 4 m', 'd = 61 cm', 'd \\approx 141.4 m', 'about 29\\%'])
+  for (const s of ['so h = 24', 'The pole is 24 m tall and the rope 26 m long', '(10, 24, 26)', 'the tops are 13 m apart', 'so 7 m out', 'so 20 m up', 'The top has come down 4 m', 'd = 61 cm', 'd \\approx 141.4 m', 'about 29\\%'])
     is(`Stage 1 prints "${s}"`, plain.includes(s)); }
 ok('2.6.1: 13, 84, 85 and 9, 12, 16', [isTriple([13, 84, 85]), isTriple([9, 12, 16]), isTriple([9, 12, 15])], [true, false, true]);
 ok('2.6.2: the hall', Math.sqrt(4 ** 2 + 3 ** 2 + 12 ** 2), 13);
@@ -188,8 +188,9 @@ ok('S1 Q3', [isTriple([12, 16, 20]), 12 * 16 / 2, [12, 16, 20].map(x => x / 4)],
   ok('S1 Q4', [foot, foot + 8, h2, 24 - h2, (24 - h2) * 2], [7, 15, 20, 4, 8]); }
 ok('S1 Q5', [2 ** 10, Math.sqrt(2 ** 10)], [1024, 32]);
 ok('S1 Q6', [hyp(12, 12 - 7), hyp(12, 107 - 102)], [13, 13]);
-ok('S1 Q7: sides differing by 17 with hypotenuse 53', (() => { for (let a = 1; a < 53; a++) if (a * a + (a + 17) ** 2 === 53 * 53) return [a, a + 17]; })(), [28, 45]);
-ok('S1 Q7: from the machine', machine(7, 2), [45, 28, 53]);
+ok('S1 Q7: the pole, rope 2 m longer, 10 m out', (() => { for (let h = 1; h < 200; h++) if (h * h + 10 * 10 === (h + 2) ** 2) return [h, h + 2]; })(), [24, 26]);
+ok('S1 Q7: 100 = 4h + 4', (100 - 4) / 4, 24);
+ok('S1 Q7: (10, 24, 26) is (5, 12, 13) doubled', [isTriple([10, 24, 26]), [10, 24, 26].map(x => x / 2)], [true, [5, 12, 13]]);
 { const d = hyp(100, 100);
   ok('S1 Q8', [Math.sqrt(10000), r(d, 1), r(200 - r(d, 1), 1), Math.round(58.6 / 200 * 100)], [100, 141.4, 58.6, 29]);
   ok('S1 Q8: the share saved, for any square', Math.round((1 - Math.SQRT2 / 2) * 100), 29);
@@ -203,7 +204,7 @@ is('S1: the intro says most questions mention no right angle — only one of eig
 const exAnswer = {};
 for (const m of beyond.matchAll(/c-example__tab">Example (\d+)<\/div>([\s\S]*?)<span class="work__label">Answer<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) exAnswer[m[1]] = text(m[3]).replace(/\$/g, '');
 const exSays = (n, ...vals) => { for (const v of vals) is(`Example ${n} should say ${v}: "${exAnswer[n]}"`, new RegExp(`(^|[^\\d.])${String(v).replace('.', '\\.')}([^\\d]|$)`).test(exAnswer[n] || '')); };
-ok('Beyond has 16 examples', Object.keys(exAnswer).length, 16);
+ok('Beyond has 18 examples', Object.keys(exAnswer).length, 18);
 exSays(1, Math.sqrt(2 * 18), Math.sqrt(18 / 2));
 exSays(2, 5 * 5, Math.sqrt(49));
 { const trap = (n, d) => { const lo = Math.floor(Math.sqrt(n) * 10 ** d) / 10 ** d; return [lo, r(lo + 10 ** -d, d)]; };
@@ -211,24 +212,28 @@ exSays(2, 5 * 5, Math.sqrt(49));
   exSays(4, ...trap(2 * 9, 2)); }
 exSays(5, hyp(20, 48));
 exSays(6, r(hyp(1.2, 0.5)));
-exSays(7, leg(65, 16));
-exSays(8, r(leg(8.9, 3.9)));
-exSays(9, 33, 56, 65);
-ok('Example 9', [isTriple([33, 56, 65]), isTriple([6, 7, 9])], [true, false]);
-is('Example 9 says the other is not', /other is not/.test(exAnswer[9]));
-ok('Example 10', [isTriple([60, 80, 99]), hyp(60, 80)], [false, 100]);
-exSays(10, hyp(60, 80));
-exSays(11, Math.sqrt(2 ** 2 + 3 ** 2 + 6 ** 2));
-ok('Example 11: the base diagonal is not whole', isSquare(13), false);
-exSays(12, leg(51, 24) + leg(40, 24));
-ok('Example 12: BD and CD', [leg(51, 24), leg(40, 24)], [45, 32]);
-ok('Example 13', [isTriple([27, 36, 45]), primitive([27, 36, 45]), [27, 36, 45].reduce(gcd)], [true, false, 9]);
-exSays(13, 9);
-{ const k = 111 / 37; exSays(14, ...[12, 35, 37].map(x => k * x)); is('Example 14 is a triple', isTriple([36, 105, 111])); }
-exSays(15, ...machine(8, 3));
+exSays(7, hyp(18 / 2, 80 / 2));
+ok('Example 7: half-diagonals, side', [18 / 2, 80 / 2, 81 + 1600, hyp(9, 40)], [9, 40, 1681, 41]);
+exSays(8, leg(65, 16));
+exSays(9, r(leg(8.9, 3.9)));
+{ let x = 0; for (let k = 1; k < 200; k++) if (7 * 7 + k * k === (k + 1) ** 2) x = k;
+  ok('Example 10: length and diagonal', [x, x + 1, (49 - 1) / 2, 49 + 576, 25 * 25], [24, 25, 24, 625, 625]); exSays(10, x, x + 1); }
+exSays(11, 33, 56, 65);
+ok('Example 11', [isTriple([33, 56, 65]), isTriple([6, 7, 9])], [true, false]);
+is('Example 11 says the other is not', /other is not/.test(exAnswer[11]));
+ok('Example 12', [isTriple([60, 80, 99]), hyp(60, 80)], [false, 100]);
+exSays(12, hyp(60, 80));
+exSays(13, Math.sqrt(2 ** 2 + 3 ** 2 + 6 ** 2));
+ok('Example 13: the base diagonal is not whole', isSquare(13), false);
+exSays(14, leg(51, 24) + leg(40, 24));
+ok('Example 14: BD and CD', [leg(51, 24), leg(40, 24)], [45, 32]);
+ok('Example 15', [isTriple([27, 36, 45]), primitive([27, 36, 45]), [27, 36, 45].reduce(gcd)], [true, false, 9]);
+exSays(15, 9);
+{ const k = 111 / 37; exSays(16, ...[12, 35, 37].map(x => k * x)); is('Example 16 is a triple', isTriple([36, 105, 111])); }
+exSays(17, ...machine(8, 3));
 { const found = []; for (let m = 2; m < 20; m++) for (let n = 1; n < m; n++) { const t = machine(m, n); if (t[0] === 13 && t[1] === 84 && t[2] === 85) found.push([m, n]); }
-  ok('Example 16: the only m, n', found, [[7, 6]]); exSays(16, 7, 6);
-  ok('Example 16: pairs with product 42', [[42, 1], [21, 2], [14, 3], [7, 6]].map(([a, b]) => [a * b, a * a + b * b]), [[42, 1765], [42, 445], [42, 205], [42, 85]]); }
+  ok('Example 18: the only m, n', found, [[7, 6]]); exSays(18, 7, 6);
+  ok('Example 18: pairs with product 42', [[42, 1], [21, 2], [14, 3], [7, 6]].map(([a, b]) => [a * b, a * a + b * b]), [[42, 1765], [42, 445], [42, 205], [42, 85]]); }
 
 // the practice answers, read back out of the key rather than typed here
 const keyRows = {};
@@ -362,7 +367,7 @@ ok('Ex 2.2 Q4', [leg(13, 5), leg(13, 12)], [12, 5]);
 ok('Ex 2.3 Q3', [machine(5, 2), machine(5, 4)], [[21, 20, 29], [9, 40, 41]]);
 is('Ex 2.3 Q4: no triple of three odd numbers up to 200', triplesUpTo(200).every(t => t.some(x => x % 2 === 0)));
 ok('Ex 2.3 Q4: the worked instance', [9 + 25, isSquare(34)], [34, false]);
-is('ANSWERS.md S1 results match the page', /\(1\) 10 cm; \(2\) diagonal 61 cm, and\s+the square on it 3721 cm²; \(3\) 96; \(4\) 4 m; \(5\) area 1024, side 32;\s+\(6\) 13 m; \(7\) 28 and 45; \(8\) about 58\.6 m, about 29%/.test(answersMd));
+is('ANSWERS.md S1 results match the page', /\(1\) 10 cm; \(2\) diagonal 61 cm, and\s+the square on it 3721 cm²; \(3\) 96; \(4\) 4 m; \(5\) area 1024, side 32;\s+\(6\) 13 m; \(7\) 24 m; \(8\) about 58\.6 m, about 29%/.test(answersMd));
 { const md = answersMd.slice(answersMd.indexOf('### Stage 2'), answersMd.indexOf('### Stage 3'));
   for (const [n, a] of Object.entries(exAnswer)) {
     const m = md.match(new RegExp(`\\(${n}\\) ([^;]*?)(?=;|\\.\\n|$)`));

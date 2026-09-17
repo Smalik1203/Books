@@ -1,5 +1,42 @@
 # Class 7 · Mathematics II · Chapter 1 — Geometric Twins
 
+## Syllabus audit fixes, 17 September 2026
+
+One finding, a gap: no Solved Example worked the equilateral case of §1.3
+("every angle of an equilateral triangle is $60^\circ$").
+
+- **Added Example 14** under Type 5, whose head now reads *Angles of
+  isosceles and equilateral triangles*: ABC equilateral, an isosceles BCD
+  (DB = DC, $\angle BDC = 40^\circ$) on the other side of BC; find
+  $\angle ABD$. Steps: $60^\circ$ from the equilateral triangle, base angles
+  of BCD equal, $(180^\circ - 40^\circ) \div 2 = 70^\circ$, and
+  $60^\circ + 70^\circ = 130^\circ$. It is the last example, so nothing was
+  renumbered; nothing in the chapter refers to an example by number.
+- The audit's suggestion (an equilateral triangle on a side of a square) was
+  **not used**: body Fig. 1.29 (iii) is exactly that figure, and Practice
+  Q12 is its outer-square twin, so the example would have answered a body
+  question.
+- Class 7 has no `ANSWERS.md` or `check-numbers.mjs`; the new values were
+  checked by hand (angles of BCD: $40 + 70 + 70 = 180$; A and D lie on
+  opposite sides of BC, so $\angle ABD = \angle ABC + \angle CBD = 130^\circ$,
+  under $180^\circ$).
+- **Markup fix found on the way:** Example 11 Step 2 carried its reason in a
+  `.chip` (*angles add to 180°*), which set it as a bold tinted pill. It is
+  now a `.work__why` (*angle sum*), like every other reason in the division.
+- `refit bridge` moved the Answers stage to a fresh page (p110). Before it,
+  Answers sat under Practice Q30 on p109, against the rule. The refit left one
+  trace row (Q16's *why the other options are wrong*) alone on a p111 at 4%.
+  Answers rows 16, 21 and 22 were shortened to one line each, with nothing
+  removed from the maths, so row 16 went back onto p110 and p111 was deleted.
+  p109 (Q29–Q30) is now 75% full: this is the short page left before Answers,
+  and it is logged here rather than padded.
+- `check-no-repeats`: no division question is close to a body question.
+
+Pages 25 → 25 (body 15, Beyond 10). All pages fit apart from body p012,
+which already ran 1.6 mm into the margin and was not touched. Checks: 0
+stranded openers, every option row fits, no labels collide, `data-bridge` on
+p101–p110.
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's one worked example (Example 1, p009) was set as stepped

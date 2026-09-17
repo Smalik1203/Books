@@ -1,5 +1,33 @@
 # Class 8 · Mathematics II · Chapter 6 — Why the Trick Always Works
 
+## Syllabus audit fixes, 17 September 2026
+
+Four findings from the Beyond the Book syllabus audit, all confirmed. §6.7
+solves a pair of equations by substitution (*use one to say what $t$ is in
+terms of $c$, and put that into the other*); three Beyond items added or
+subtracted the equations instead. **Pages: 34 before (19 body + 15 Beyond),
+35 after (19 + 16).**
+
+| finding | what was done |
+|---|---|
+| Example 11 (Type 6), subtracting one row from the other (borderline) | Reworked to substitution: $t = 12 - s$ from the first row, put into the second, $s + 12 = 17$, $s = 5$, $t = 7$. The closing sentence now says what was done |
+| Example 13 (Type 8), *digits add to 12, reverse 18 less*, solved by adding (borderline) | Reworked to substitution: $a - b = 2$ and $b = 12 - a$, so $a - (12 - a) = 2$, $a = 7$, $b = 5$ |
+| Practice Q25, *digits add to 11, reverse 27 more* (borderline) | Kept; its key (p115 row 25) and `ANSWERS.md` now take the substitution route: $b = 11 - a$, $11 - 2a = 3$, $a = 4$ |
+| Gap (minor): writing a three-digit number twice multiplies it by $1001 = 7 \times 11 \times 13$ (body Example 6) | New Example 15 under Type 8: a number written twice, divided by $77$, gives $6019$; $1001 = 77 \times 13$, so the number is $6019 \div 13 = 463$. Exercise Set 6.4 Q7 (the $101$ case) is not touched |
+
+Examples 15–17 became 16–18. **18 Solved Examples now (17 before).**
+`check-numbers.mjs`: the substitution lines added to the conditions part A
+leaves to B; Example 15 searched and its $1001$ arithmetic checked; the
+substitution steps of Examples 11, 13 and key 25 read back off the page.
+Breaking $s + 12 = 17$, $2a - 12 = 2$, Example 15's answer and key 25's
+$a = 4$ each fails. `ANSWERS.md` lists no Stage 2 answers.
+
+Fitting: `refit … bridge` left Q31 alone before Answers. Pulling blocks
+back only stranded two Type heads, which were put back; Q30 was moved over
+to join Q31, so the two case questions share page 33 (61%) and page 32 is
+58%. Page 27 is 71% (Example 13 does not fit under Example 12). Answers
+opens page 34. Page 18 (body, untouched) is 46% as before.
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked against the Class 8

@@ -4,33 +4,35 @@
 
       <div class="c-try">
         <p>You have four rods, of lengths $3$, $4$, $5$ and $20$ centimetres. Show that
-        they cannot be pinned into a quadrilateral, and state the rule that four lengths
-        must obey before they can.</p>
+        they cannot be pinned into a quadrilateral, using nothing but the rule for three
+        rods: each side of a triangle is shorter than the other two together.</p>
       </div>
 
       <p>
-        Lay the three short rods end to end and they reach $3 + 4 + 5 = 12$ cm. The
-        fourth rod is $20$ cm long, so even fully stretched the three cannot bring its
-        far end back to its near end. The ring will not close.
+        Suppose they could. Call the quadrilateral $ABCD$, with the $20$ cm rod as $DA$,
+        and draw the diagonal $BD$. It cuts the figure into two triangles, and the
+        three-rod rule holds in each.
       </p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">three of them</span>
-          <span>$3 + 4 + 5 = 12$</span>
+          <span class="work__label work__label--wide">triangle $ABD$</span>
+          <span>$20 < AB + BD$</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">the fourth</span>
-          <span>$20 > 12$</span>
+          <span class="work__label work__label--wide">triangle $BCD$</span>
+          <span>$BD < BC + CD$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">together</span>
+          <span>$20 < AB + BC + CD = 3 + 4 + 5 = 12$</span>
         </div>
       </div>
 
       <p>
-        The rule, then, is that <em>each</em> length must be less than the sum of the
-        other three — and it is enough to check the longest, since if the longest
-        passes the test the others cannot fail it. It is the three-rod rule with
-        one more rod added, and the reason is the same: the short way between two points is
-        the straight one.
+        Twenty is not less than twelve, so no such quadrilateral exists, whichever way
+        round the three short rods go. The diagonal did the work again: it turned a
+        question about four rods into two questions about three.
       </p>
 
       <div class="c-try">

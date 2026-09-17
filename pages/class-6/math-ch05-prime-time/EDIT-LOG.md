@@ -1,5 +1,49 @@
 # Class 6 · Mathematics I · Chapter 5 — Prime Time
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book syllabus audit made five findings about this chapter. All five were checked against the pages and fixed. The body and Stage 1 were not touched.
+
+**Pages: 32 before (21 body + 11 Beyond), 33 after (21 body + 12 Beyond).**
+
+| finding | what was done |
+|---|---|
+| borderline: Beyond Ex 1 finds the smallest common multiple of 4, 6 and 10 by taking *the most of each prime*, which the body never teaches | Reworked to list the multiples of 10, the largest number: 10, 20, 30, 40, 50, 60. 10, 30 and 50 are not multiples of 4, and 20 and 40 are not multiples of 6, so the answer is **60**. It is the same question with the same answer |
+| borderline: Beyond Ex 14 step 1, Practice Q16 and its answer lean on *co-prime numbers have their product as first common multiple* | Confirmed, and it went further than the audit said. `ANSWERS.md` gives this fact as the answer to the body's Think and Reflect after Example 1, and the body leaves the question open. So the fact is **not** stated. Instead three items were changed. **Ex 14** now uses only the tests for 5 and 8: a multiple of 8 is even, so it must end in 0; $999 = 8 \times 124 + 7$, so 9992 is the largest 4-digit multiple of 8; counting down in 8s gives 9960. The answer is unchanged. **Q16** was replaced by another assertion–reason question with the same key **(a)**: *A: 221 is a composite number. R: $221 = 13 \times 17$.* Its *why* note was rewritten. **Q29(d)**, whose answer leaned on the same fact, now lists the multiples of 8 until one ends in 0 or 5 (8, 16, 24, 32, 40) and then counts on 80, 120 |
+| borderline: Practice Q31, the three bells, is a smallest-common-multiple word problem | Kept, but (a) now asks for the multiples of 12, the longest gap, to be listed up to 60. (b) now asks which of them are also multiples of 6 and of 8, which gives 24 minutes. Parts (c) and (d) and their answers are unchanged |
+| borderline: Practice Q30(c) asks for the largest row length, a largest-common-factor problem | (c) and (d) were replaced. (c) now asks, for rows of 14, how many rows of chairs and of stools there are: **6 and 9**. (d) asks whether the rows can hold 4 seats each: **no**, because 126 has only one 2 in its prime factorisation. (b), all possible row lengths, stays |
+| gap: the prime puzzles (§5.6) | **New Ex 15** under a new head, *Type 6 · Prime puzzles*, with a new **Fig. 5.14**. It is a 3 by 3 grid with row products 30, 28 and 99 and column products 42, 18 and 110. The solution is 2, 3, 5 / 7, 2, 2 / 3, 3, 11, and it is the only one. The figure copies the left half of Fig. 5.12 (`dg-thin`, `dg-fill-b-soft`, `dg-tick`) at the same scale, as a 211-unit viewBox in `c-figure--sm`. The grid is none of the body's puzzles A–D |
+
+**Renumbering.** No existing example moved, because Ex 15 comes last. Beyond now has **15 examples**, where it had 14, under 6 Type heads. The count in `ANSWERS.md` was updated, along with its answers to Q29(d), Q30(c), Q30(d), Q31(a) and Q31(b), and a note for AR 16.
+
+**`check-numbers.mjs`.**
+
+- Ex 1 is now read step by step from the page. There is a check that *most of each prime* is gone.
+- Ex 14 is re-derived from its steps: the largest 4-digit multiple of 8, and the count down to the first one ending in 0.
+- One check confirms that no Beyond item uses *co-prime, so … first common multiple*.
+- For Ex 15, Fig. 5.14 is read from its SVG, solved by search, and found to have exactly one solution. Each step is checked against it, and the puzzle is confirmed not to be one of the body's.
+- AR 16 is now graded on the new A and R, and its note is checked number by number.
+- Q29(d), Q30(c), Q30(d), Q31(a) and Q31(b) are checked one part at a time.
+- The new `ANSWERS.md` values are checked.
+
+The script passes 435 checks and reports all clear. 17 values were broken on purpose in a scratch copy, and all 17 were caught. The first break of Fig. 5.14 crashed the script instead of reporting, so it was fixed to report and run again.
+
+**Fitting.**
+
+- `refit … bridge` was run once and gave 12 pages. Answers opens p111.
+- p107 (page 28) holds only the Type 6 head and Ex 15, and is **60% full**. Practice is kept whole, so it starts on p108.
+- p112 is the chapter's last page, at 12%. It holds the AR 16 note and the closing paragraph, as the old p111 did.
+
+**Checks.**
+
+- The build fits all 33 pages.
+- orphans: 0.
+- fit-options: clean.
+- check-labels: clean.
+- check-colour on page 28: 2.1% ink-dark, 0.4% mid band.
+- `data-bridge` is on p101–p112.
+- check-no-repeats reports one older pair at 60%, which is not new: Beyond Ex 9 ($84 \times 50$) against Exercise Set 5.4 Q4. The wording is the same, but the numbers differ.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, worked by hand as the model for the

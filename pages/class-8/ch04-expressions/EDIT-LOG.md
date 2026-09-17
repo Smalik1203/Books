@@ -1,5 +1,22 @@
 # Class 8 · Mathematics I · Chapter 4 — A Rectangle, Cut in Two
 
+## Syllabus audit fixes, 17 September 2026
+
+From "Audit Class 8 Maths I Beyond". One finding, confirmed against the
+pages; only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Stage 1 Q5, $x + \frac1x = 4$, find $x^2 + \frac1{x^2}$: an identity used on an expression with $x$ in a denominator, which the body excludes (borderline) | replaced by a try of the same kind that keeps whole-number powers: $a^2 + b^2 = 20$ and $ab = 8$, find $a^4 + b^4$ without finding $a$ or $b$. Squaring what is given, with $a^2$ and $b^2$ in the places of $a$ and $b$, gives $400 - 2(ab)^2 = 272$; the numbers are 2 and 4; the other square gives $(a^2 - b^2)^2 = 144$. The audit's suggestion ($a + b = 4$, $ab = 1$, find $a^2 + b^2$) was **not** used: it is the body's own §4.7.2 example with other numbers, Exercise Set 4.6 Q5, and Stage 1 Q1 again |
+
+`ANSWERS.md` and `check-numbers.mjs` (the conditional spans, and Stage 1 Q5
+recomputed from the numbers and from the identity) updated; each new value
+was broken on purpose and caught. 654 claims hold. No page break that
+matters moved: Answers still opens a page.
+
+**Pages: 36 before → 36 after** (22 body + 14 Beyond). No Solved Example
+added (no gap was found).
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against Chapter 1 as the model.

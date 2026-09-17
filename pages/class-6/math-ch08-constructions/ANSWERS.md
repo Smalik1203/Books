@@ -296,14 +296,16 @@ The upper crossing point is **5 cm from $B$** and **5 cm from $C$**.
 
 ## Beyond the Book
 
-Stage 1 explains each of its questions in running text, stage 2 sets fifteen
+Stage 1 explains each of its questions in running text, stage 2 sets seventeen
 examples as steps, and stage 4 prints the key to stage 3. Repeated here so
 the booklet is complete.
 
 ### Stage 1 · Using What You Know
 
 1. **3 squares**, each with sides of 4 cm.
-2. **2 points** at 6 cm apart; 1 at 8 cm; none at 10 cm.
+2. **2 points** at 6 cm apart; 1 at 8 cm; none at 10 cm. Two arcs cross only when their radii add up to more than
+   the distance between their centres; when they add up to exactly that
+   distance, the arcs just touch.
 3. **2 cm** at each end.
 4. **15 cm wide and 15 cm tall.**
 5. With 3 cm lines the roof lies flat; **with 4 cm lines it has a point.**
@@ -312,19 +314,21 @@ the booklet is complete.
 
 1. $A$ inside, $B$ on the circle, $C$ outside.
 2. $OA = OB = AB = 4$ cm.
-3. $XYZW$ and $ZYXW$.
-4. No — $\angle A$ is not $90^\circ$.
-5. $SR$ measures 5 cm; $\angle R = \angle S = 90^\circ$.
-6. A square; $AD$, $BC$ and $DC$ measure 5 cm.
-7. 12 cm; 30 cm.
-8. 8 squares.
-9. 12 cm by 8 cm.
-10. The other part is $70^\circ$.
-11. No — the parts must add up to $90^\circ$.
-12. $BC$ measures 8 cm.
-13. No such rectangle — a diagonal is longer than a side.
-14. A triangle with $PR = 5$ cm and $QR = 4$ cm.
-15. $AM$ measures 4 cm.
+3. The moon is 2 cm wide, the same as the distance from $O$ to $P$.
+4. $XYZW$ and $ZYXW$.
+5. No — $\angle A$ is not $90^\circ$.
+6. On dots: $C$ is 1 dot left of $B$ and 3 up, and $D$ is 1 dot left of $A$ and 3 up.
+7. $SR$ measures 5 cm; $\angle R = \angle S = 90^\circ$.
+8. A square; $AD$, $BC$ and $DC$ measure 5 cm.
+9. 12 cm; 30 cm.
+10. 8 squares.
+11. 12 cm by 8 cm.
+12. The other part is $70^\circ$.
+13. No — the parts must add up to $90^\circ$.
+14. $BC$ measures 8 cm.
+15. No such rectangle — the circle of radius 7 cm about $D$ only touches $l$ at $C$, so a 5 cm arc never reaches $l$.
+16. $R$ with $PR = QR = 6$ cm; with 2 cm the arcs only touch, on $PQ$, so there is no such point above it.
+17. $AM$ measures 4 cm.
 
 ### Stage 3 · Practice
 
@@ -342,9 +346,9 @@ the booklet is complete.
 22. **What the drawing must show:** a 7 cm by 3 cm rectangle and both
     diagonals. **Each diagonal measures about 7 cm 6 mm**, so the two are
     equal.
-23. **What the drawing must show:** an arc of radius 4 cm about $A$ and one
-    of 3 cm about $B$, crossing once on each side of $AB$. **The two points
-    are about 4 cm 8 mm apart.**
+23. **What the drawing must show:** arcs of radius 3 cm about $A$ and about
+    $B$, crossing once on each side of $AB$, since $3 + 3 = 6$ is more than 4.
+    **The two points are about 4 cm 5 mm apart.**
 24. 12 cm by 8 cm; 6 squares.
 25. No: $30^\circ + 70^\circ = 100^\circ$, not $90^\circ$.
 26. 2 points at 7 cm; none at 9 cm.
@@ -352,8 +356,8 @@ the booklet is complete.
     marks $C$; perpendiculars at $A$ and $C$ meet at $D$. (b) **5 cm.**
     (c) **13 cm**, the same as $AC$.
 28. (a) **6 cm**, because $B$ and $D$ are each 6 cm from $A$. (b) **No.**
-    $C$ is farther than 6 cm from $A$ — a diagonal is longer than a side —
-    so the curve passes inside it. (c) **About 2 cm 5 mm.**
+    The drawing shows the curve crossing $AC$ before it reaches $C$, so $C$
+    is outside the circle, more than 6 cm from $A$. (c) **About 2 cm 5 mm.**
 29. (a) Arcs of radius 5 cm about $P$ and about $Q$. (b) **2**, since
     $5 + 5 = 10$ is more than 8; **they are 6 cm apart.**
 30. (a) **A has 3 plots**, B has **2**. (b) **3 m.** (c) **8 cm.**

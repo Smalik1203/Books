@@ -1,5 +1,58 @@
 # Class 7 · Mathematics II · Chapter 4 — Another Peek Beyond the Point
 
+## Syllabus audit fixes, 17 September 2026
+
+Four findings, all fixed.
+
+1. **Borderline, Example 12 (was 11), "which division never ends".** Step 3
+   used to say "$12 = 2 \times 2 \times 3$ · a factor 3". That leans on the
+   rule that a fraction ends only when its denominator has no prime factors
+   other than 2 and 5. The body never states that rule; it only asks why 2
+   and 5 are linked. Step 3 now does the long division the body's way:
+   $5 \div 12$ gives 50 tenths → 4, remainder 2, then 20 hundredths → 1,
+   remainder 8. Step 4 continues: 80 thousandths → 6, remainder 8, and
+   remainder 8 comes back at every step. The options, the question and the
+   key (c) are unchanged.
+2. **Borderline, Practice Q21, "which fraction gives a decimal that ends".**
+   The question was kept, and the step is now shown. A row was added under
+   *Why the other options are wrong*:
+   $\tfrac{7}{40} = \tfrac{175}{1000}$, and long division never ends for
+   the other three. $1 \div 6$, $2 \div 9$ and $4 \div 15$ leave remainders
+   4, 2 and 10 again and again. Option (d) was $\tfrac{5}{12}$ and is now
+   $\tfrac{4}{15}$, because Example 12 now works $5 \div 12$ in full and
+   would have answered it. Key (a) is unchanged.
+3. **Borderline, Practice Q33(b), the pump and the leaking pipe.** This
+   combined a filling rate and a leaking rate, which is the pipes-and-cisterns
+   type the body never teaches. (b) now gives the net rate: "because of a
+   leak, the tank fills at only 10 L a minute". (c) now reads "The pump still
+   gave 12.5 L a minute that day. How much water leaked away?", which is
+   plain multiplication and subtraction. Its answer now shows the working:
+   $12.5 \times 56.25 = 703.125$ L pumped, and
+   $703.125 - 562.5 = 140.625$ L leaked. The value is unchanged.
+4. **Gap: long division carried into tenths and hundredths.** **Example 10**
+   was added at the head of Type 4: a 6.3 m rope cut into 4 equal pieces,
+   worked place by place as in body Examples 9–11. 6 ones → 1, remainder 2;
+   23 tenths → 5, remainder 3; 30 hundredths → 7, remainder 2;
+   20 thousandths → 5. That gives 1.575 m, checked by
+   $1.575 \times 4 = 6.3$. The audit's suggestion, $9.5 \div 4$, was
+   **not used**, because it is body Example 10 itself. `check-no-repeats`
+   pairs the new example at 53% with Exercise Set 4.3 Q6 (a 4 m block cut
+   into 5 pieces). The two differ in numbers and in what is asked, so this
+   was judged not a repeat. Examples 10–14 became **11–15**. Nothing in the
+   chapter refers to an example by number.
+
+Class 7 has no `ANSWERS.md` or `check-numbers.mjs`; every value was checked
+by hand ($50 = 4 \times 12 + 2$, $20 = 1 \times 12 + 8$,
+$80 = 6 \times 12 + 8$; $10 = 1 \times 6 + 4$, $40 = 6 \times 6 + 4$;
+$20 = 2 \times 9 + 2$; $40 = 2 \times 15 + 10$, $100 = 6 \times 15 + 10$;
+$7 \times 25 = 175$; $4 \times 1.575 = 6.3$; $12.5 \times 56.25 = 703.125$).
+
+Pages 24 → 25 (body 15, Beyond 9 → 10). The new example pushed one Solved
+Example to a later page. Answers opens p110. p109 (the two case questions,
+Q34–Q35) is 52% full: this is the short page before Answers, logged and not
+padded. All pages fit, 0 stranded openers, every option row fits, no labels
+collide, `data-bridge` on p101–p110.
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's **13 worked examples** — Examples 1–13, which were

@@ -1,5 +1,31 @@
 # Class 8 · Mathematics I · Chapter 1 — The Shape of a Number
 
+## Syllabus audit fixes, 17 September 2026
+
+From "Audit Class 8 Maths I Beyond". Both findings confirmed against the
+pages; only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Stage 1 Q5, a 2 m² sheet whose side is "not a fraction either" — the proof that √2 is irrational (borderline) | replaced by a trapping try, as the audit suggested: the smallest whole-number side for an area of at least 2000 cm² (45, since $44^2 = 1936$, $45^2 = 2025$), and how many whole-number sides give 2000 to under 3000 cm² (ten, 45 to 54). A whole-number version of the pairing argument ($a^2 = 2b^2$ has no solution) was considered and rejected: it answers body Exercise Set 1.6 Q9 (a lawn of twice the area has no whole-number side) |
+| the prose that counted Q5 as an impossibility | p101 *three can be settled with no arithmetic* → *two*; p105 *the third and the fifth … Both* → *the third … It*, the fifth added to the list of ordinary ones, and *two by comparing sizes … one by counting the prime 2 on each side of an equation* → *three by comparing sizes*; p116 *$n^2 + n$ and $\sqrt{2}$ were both settled* → *$n^2 + n$ was settled*; the *irrational* paragraph deleted |
+| gap: no example on cubes as blocks of odd numbers (§1.4.2) | **Example 14** added under a new **Type 6 · Cubes as blocks of odd numbers**: $11^3$ as the eleven odd numbers 111 to 131, centred on 121, checked by pairing the ends; the eleventh block starts where body Example 10's tenth ends. It does not repeat Example 10 (which sums a given block). A first draft used $8^3$ and printed $512 = 8^3$, which answers Exercise Set 1.5 Q1 ($\sqrt[3]{512}$); `check-numbers.mjs` now guards against it |
+
+Examples 14–18 became 15–19 and Types 6–8 became 7–9; nothing else cites
+them. **Solved Examples: 19** (was 18); worked examples in the chapter 31.
+`ANSWERS.md` Stage 1 line and `check-numbers.mjs` (Stage 1 Q5, Example 14,
+the numbering) updated; every new value was broken on purpose and caught.
+543 claims hold. Short pages unchanged from the table below (Answers still
+opens page 38).
+
+**Pages: 40 before → 40 after** (24 body + 16 Beyond).
+
+The build now reports body page 3 running 1.3 mm into the bottom margin.
+The body was not touched in this pass; `css/components.css` has
+uncommitted changes from another session, which is the likely cause.
+Left for the coordinator.
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked by hand as the model for the

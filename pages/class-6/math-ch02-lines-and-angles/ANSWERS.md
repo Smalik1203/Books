@@ -486,20 +486,22 @@ The two angles are drawn at 110° and 250°, and $110 + 250 = 360$.
 ### Stage 1 · Using What You Know
 
 The answers are worked in the book, in the text after each question:
-Ravi turns **225°**; the two angles are **65° and 115°**; five rays give
+the first clock hand turns **225°**; the two angles are **65° and 115°**; five rays give
 **10** angles (and six give 15); Meena is **not right** ($2 \times 20 = 40$
-is acute); Kiran turns **315°** clockwise, and the short way back is
+is acute); the second clock hand turns **315°**, and the short way back is
 **45°**, since $315 + 45 = 360$.
 
 ### Stage 2 · Solved Examples
 
-Beyond Examples 1 to 14 are worked in the book. Their answers: 1 — three
+Beyond Examples 1 to 16 are worked in the book. Their answers: 1 — three
 segments, and the rays $\overrightarrow{PA}$ and $\overrightarrow{PB}$;
 2 — three angles at $A$, and at $D$ two angles and a straight angle; 3 —
-$\angle P$, by 15°; 4 — north, three quarters of a turn; 5 — 30° and
-150°; 6 — 140°, obtuse; 7 — 85°; 8 — 18°, 5 parts; 9 — 36 parts, 18 of
-them; 10 — acute, obtuse, reflex, right, reflex, full turn; 11 — 90°;
-12 — 135° and 260°; 13 — 90°; 14 — the drawing of 65° on the outer scale.
+$\angle P$, by 15°; 4 — $\angle Y$ is the smallest, and $\angle X$ and
+$\angle Z$ are equal; 5 — it points to 3, three quarters of a turn; 6 — 30° and
+150°; 7 — 140°, obtuse; 8 — 85°; 9 — 18°, 5 parts; 10 — 36 parts, 18 of
+them; 11 — 210°, reflex; 12 — acute, obtuse, reflex, right, reflex, full turn;
+13 — 90°;
+14 — 135° and 260°; 15 — 90°; 16 — the drawing of 65° on the outer scale.
 
 ### Stage 3 · Practice
 
@@ -514,7 +516,7 @@ The working for the multiple-choice questions:
 4. $135°$ is more than 90° and less than 180°: obtuse.
 5. $200°$ is more than 180° and less than 360°: reflex.
 6. A straight angle is 180°, so it holds 180 units of 1°.
-7. Anticlockwise from east: north (90°), west (180°), south (270°).
+7. From 12, the opposite way to a clock's hands: 9 (90°), 6 (180°), 3 (270°).
 8. Only 210° is between 180° and 360°. 170° is obtuse, 180° is straight and
    90° is right.
 9. The bisector halves the straight angle: $180 \div 2 = 90$.
@@ -563,6 +565,7 @@ The assertion–reason questions:
 28. (a) **No.** 360 is not a multiple of 7. (b) **No.** $360 \div 16$ is 22
     with 8 left over. (c) **18 parts of 20°** and **20 parts of 18°**;
     17 and 19 do not work.
-29. (a) **south** (b) **south-east** (c) **north-west** (d) Answers will
-    vary: L; or R, R, R; or H, H, H, H, H, H. Each list turns the robot
-    90° anticlockwise or 270° clockwise.
+29. (a) **the 6** (b) **halfway between 3 and 6** (c) **halfway between 9
+    and 12** (d) Answers will vary: L; or R, R, R; or H, H, H, H, H, H. Each
+    list turns the robot 90° the opposite way to a clock's hands, or 270°
+    the way they move.

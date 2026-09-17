@@ -1,5 +1,45 @@
 # Class 7 · Mathematics I · Chapter 4 — Letter-Numbers
 
+## Syllabus audit fixes, 17 September 2026
+
+Beyond the Book checked against what the chapter body teaches. The chapter
+has no `ANSWERS.md` or `check-numbers.mjs`, so every changed value was
+verified by hand, below.
+
+- **Practice Q2, "coefficient".** The body never uses the word. Now "In
+  $5x - 8y + 3$, the number that $y$ is multiplied by is"; options and key
+  (d) $-8$ unchanged (the body writes such terms as $+(-8y)$).
+- **Practice Q27, "constant term".** Now "Which term is only a number?", the
+  body's own wording; the answer line says the same. Answer still 2.
+- **Example 9, Step 2, negative times negative.** That product is taught in
+  Part 2 Chapter 2. The step is now $-2(a - 2b) = -(2a - 4b) = -2a + 4b$,
+  the body's sign-change rule, with a `.work__why` in place of the `.chip`
+  that carried the product. The check in Step 4 used $-2 \times (-1)$ as
+  well, so it now uses $a = 3$, $b = 1$: $3 \times 5 - 2 \times 1 = 13 =
+  4 \times 3 + 1$. Key (c) unchanged.
+- **Practice Q19 and answer 33(c), the same product.** Answer 33(c) now
+  reads $-3(p - 2q) = -(3p - 6q) = -3p + 6q$. Q19 kept as it is (it can be
+  done by the body's rule) and given a why-line with that working:
+  $8m - 4n - 3m + 6n + m = 6m + 2n$, key (a). Neha's $7p - 11q + 4$ and the
+  value 17 at $p = 2$, $q = -1$ re-worked; neither needs the product.
+- **Gap, "Formula detective".** New Example 14 under a new *Type 6 ·
+  Finding a rule, and finding a position*: a machine table (4, 2 → 10;
+  5, 7 → 8; 3, 0 → 9; 6, 6 → 12), rule $3a - b$, every pair re-checked.
+  Different from Table 4.9 ($2a - b$) and both machines of Set 4.5
+  ($a + b - 2$ and $ab + 1$).
+- **Gap, "Describing patterns".** New Example 15: a garland of four
+  flowers, positions $4n - 3$ to $4n$, and position 150 ($= 4 \times 38 -
+  2$) is a rose. Not 148 (Table 4.11) nor 90, 190, 343 (End-of-Chapter
+  Q13, also a pattern of four).
+- Both new examples sit after Example 13, so nothing was renumbered.
+  Fifteen examples now (thirteen before).
+
+Beyond refitted with `refit.mjs … bridge` (10 pages in, 11 out). Pages
+29 → 30. All pages fit, 0 stranded openers, option rows fit, no labels
+collide, `check-no-repeats` finds nothing. Short Beyond pages, logged not
+padded: 25 (78%, Example 15 would not fit under Example 14), 30 (76%, the
+last page).
+
 ## Examples set as steps, 16 September 2026
 
 The chapter proper's **12 worked examples** — Examples 1–12, all of them —

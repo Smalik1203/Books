@@ -46,8 +46,15 @@ const fromExterior = (e) => (Number.isInteger(360 / e) && 360 / e >= 3 ? 360 / e
 const fromInterior = (i) => fromExterior(180 - i);
 const hyp = (a, b) => Math.sqrt(a * a + b * b);
 const leg = (h, a) => Math.sqrt(h * h - a * a);
-// four rods close into a quadrilateral when the longest is less than the other three together
-const closes = (rods) => { const s = [...rods].sort((a, b) => a - b); return s[3] < s[0] + s[1] + s[2]; };
+// the three-rod rule only: each side of a triangle is shorter than the other two together
+const triangle = (a, b, c) => a < b + c && b < a + c && c < a + b;
+// a diagonal x of quadrilateral with sides a, b on one side of it and c, d on the other
+const diagonalFits = (a, b, c, d, x) => triangle(a, b, x) && triangle(c, d, x);
+// four rods, the longest as DA and the diagonal BD: 20 < AB + BD and BD < BC + CD together need longest < the other three
+const quadByTriangles = (rods) => { const s = [...rods].sort((a, b) => a - b);
+  // is there any diagonal length making both triangles (s0, s3, x) and (s1, s2, x) possible?
+  for (let x = 0.01; x < 200; x += 0.01) if (triangle(s[0], s[3], x) && triangle(s[1], s[2], x)) return true;
+  return false; };
 // solve a x + b = c x + d
 const lin = (a, b, c, d) => (d - b) / (a - c);
 
@@ -269,7 +276,10 @@ mentions('5.6 Q9', mdItem(S6, 9), 10);
 // Stage 1
 ok('Stage 1 Q1', [20 * 180, 20 * 180 - 360], [3600, angleSum(20)]);
 ok('Stage 1 Q2: the only n with equal sums', [...Array(300)].map((_, i) => i + 3).filter(n => angleSum(n) === 360), [4]);
-ok('Stage 1 Q3: 3, 4, 5, 20 will not close', closes([3, 4, 5, 20]), false);
+ok('Stage 1 Q3: 3, 4, 5, 20 will not close', quadByTriangles([3, 4, 5, 20]), false);
+ok('Stage 1 Q3: 20 < 3 + 4 + 5 fails', [3 + 4 + 5, 20 < 3 + 4 + 5], [12, false]);
+is('Stage 1 Q3 prints 20 < ... = 12', beyond.includes('$20 < AB + BC + CD = 3 + 4 + 5 = 12$'));
+is('Stage 1 no longer states the four-rod rule', !/other three/.test(beyond.slice(0, beyond.indexOf('Solved Examples'))));
 ok('Stage 1 Q4', [360 - 3 * 90, angleSum(5) - 4 * 90], [90, 180]);
 { // triangle, hexagon and two copies of what?
   const left = (360 - interior(3) - interior(6)) / 2;
@@ -277,33 +287,47 @@ ok('Stage 1 Q4', [360 - 3 * 90, angleSum(5) - 4 * 90], [90, 180]);
 }
 { const count = [...Array(360)].map((_, i) => i + 3).filter(n => Number.isInteger(interior(n))).length;
   ok('Stage 1 Q8: whole-number angles', count, 22);
-  ok('Stage 1 Q8: divisors of 360', [...Array(360)].map((_, i) => i + 1).filter(d => 360 % d === 0).length, (3 + 1) * (2 + 1) * (1 + 1)); }
+  const divs = [...Array(360)].map((_, i) => i + 1).filter(d => 360 % d === 0);
+  const pairs = divs.filter(d => d < 360 / d).map(d => `${d} \\times ${360 / d}`);
+  ok('Stage 1 Q8: 12 pairs, 24 divisors', [pairs.length, divs.length, divs.length - 2], [12, 24, count]);
+  const s1 = beyond.slice(0, beyond.indexOf('Solved Examples'));
+  is('Stage 1 Q8 prints every pair', pairs.every(p => s1.includes(p)));
+  is('Stage 1 Q8 prints the count', s1.includes('$12$ pairs, so $24$ of them') && s1.includes('$22$ values'));
+  is('Stage 1 Q8: 7 and 16 do not divide 360', 360 % 7 !== 0 && 360 % 16 !== 0);
+  is('Stage 1 Q8: after 18 x 20 the next divisor is 20', divs[divs.indexOf(18) + 1] === 20);
+  is('Stage 1 Q8 no longer counts from prime powers', !/2\^3 \\times 3\^2/.test(s1)); }
 
 // Solved Examples
 ok('Ex 1', fromDiagonals(44), 11);
 ok('Ex 2', [diagonals(9), diagonals(7), diagonals(9) - diagonals(7)], [27, 14, 13]);
 { const x = (angleSum(5) - 100) / 5; ok('Ex 3', [x, x + 10, x + 20, x + 30, x + 40], [88, 98, 108, 118, 128]); }
 ok('Ex 4', angleSum(6) - 5 * 112, 160);
-ok('Ex 5', [angleSum(16) / 16, interior(16)], [157.5, 157.5]);
-ok('Ex 6', fromInterior(168), 30);
-{ const x = 360 / 12; ok('Ex 7', [x, 2 * x, 3 * x].map(e => 180 - e), [150, 120, 90]); }
-{ const e = 180 / 12; ok('Ex 8', [e, 360 / e, 11 * e], [15, 24, 165]); }
-ok('Ex 9: opposite sides 5 and 8 differ', 5 !== 8, true);
-ok('Ex 10', [70 + 110, 110 + 70, 70 + 110 + 70 + 110], [180, 180, 360]);
-{ const x = lin(3, 10, 5, -30); ok('Ex 11', [x, 3 * x + 10, 5 * x - 30, 180 - (3 * x + 10)], [20, 70, 70, 110]); }
-{ const k = 60 / 10; ok('Ex 12', [2 * k, 3 * k], [12, 18]); }
-{ const x = lin(1, 3, 2, -1); ok('Ex 13', [x, 2 * (x + 3), 14 / 2], [4, 14, 7]); is('Ex 13: AC = BD, so a rectangle', 2 * (x + 3) === 14); }
-ok('Ex 14', 2 * leg(25, 14 / 2), 48);
-ok('Ex 15', [(180 - 110) / 2, 90 - (180 - 110) / 2], [35, 55]);
-ok('Ex 16', [(180 - 70) / 2, 180 - 90 - (180 - 70) / 2, 70 / 2], [55, 35, 35]);
-ok('Ex 17', [[2, 5, 6, 14], [4, 4, 4, 11], [3, 3, 3, 9]].map(closes), [false, true, false]);
-ok('Ex 18', [5 - 3, 5 - 2], [2, 3]);
+{ const fifth = angleSum(5) - (90 + 90 + 90 + 70); ok('Ex 5: the fifth angle', [90 + 90 + 90 + 70, fifth], [340, 200]); is('Ex 5: more than 180, so concave', fifth > 180); }
+ok('Ex 6', [angleSum(16) / 16, interior(16)], [157.5, 157.5]);
+ok('Ex 7', fromInterior(168), 30);
+{ const x = 360 / 12; ok('Ex 8', [x, 2 * x, 3 * x].map(e => 180 - e), [150, 120, 90]); }
+{ const e = 180 / 12; ok('Ex 9', [e, 360 / e, 11 * e], [15, 24, 165]); }
+ok('Ex 10: opposite sides 5 and 8 differ', 5 !== 8, true);
+ok('Ex 11', [70 + 110, 110 + 70, 70 + 110 + 70 + 110], [180, 180, 360]);
+{ const x = lin(3, 10, 5, -30); ok('Ex 12', [x, 3 * x + 10, 5 * x - 30, 180 - (3 * x + 10)], [20, 70, 70, 110]); }
+{ const k = 60 / 10; ok('Ex 13', [2 * k, 3 * k], [12, 18]); }
+{ const x = lin(1, 3, 2, -1); ok('Ex 14', [x, 2 * (x + 3), 14 / 2], [4, 14, 7]); is('Ex 14: AC = BD, so a rectangle', 2 * (x + 3) === 14); }
+{ const x = lin(2, 1, 1, 4); ok('Ex 15', [x, 2 * x + 1, x + 4, 2 * (2 * x + 1)], [3, 7, 7, 14]); }
+ok('Ex 16', [(180 - 110) / 2, 90 - (180 - 110) / 2], [35, 55]);
+ok('Ex 17', [(180 - 70) / 2, 180 - 90 - (180 - 70) / 2, 70 / 2], [55, 35, 35]);
+{ // brace BD: triangle ABD (5, 7) and triangle BCD (6, 4)
+  ok('Ex 18: 9, 11, 2', [9, 11, 2].map(x => diagonalFits(5, 7, 6, 4, x)), [true, false, false]);
+  ok('Ex 18: the bounds', [5 + 7, 7 - 5, 6 + 4, 6 - 4], [12, 2, 10, 2]);
+  is('Ex 18: 11 fails in BCD only', triangle(5, 7, 11) && !triangle(6, 4, 11));
+  is('Ex 18: 2 lays ABD flat', 5 + 2 === 7); }
+ok('Ex 19', [5 - 3, 5 - 2], [2, 3]);
 { // Beyond's examples read back: every Answer row must carry its value
   const exs = [...beyond.matchAll(/c-example__tab">Example (\d+)<\/div>([\s\S]*?)(?=c-example__tab|c-practice__head|$)/g)];
-  ok('Beyond has Examples 1-18 in order', exs.map(m => Number(m[1])), [...Array(18)].map((_, i) => i + 1));
+  ok('Beyond has Examples 1-19 in order', exs.map(m => Number(m[1])), [...Array(19)].map((_, i) => i + 1));
   const ans = Object.fromEntries(exs.map(m => [m[1], text((m[2].match(/work__label">Answer<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/) || [])[1] || '')]));
-  const want = { 1: [11], 2: [13], 3: [88, 98, 108, 118, 128], 4: [160], 5: [157.5], 6: [30], 7: [150, 120, 90], 8: [24, 165],
-    11: [70, 110], 12: [12, 18], 13: [4, 14, 7], 14: [48], 15: [35, 55], 16: [55, 35] };
+  const want = { 1: [11], 2: [13], 3: [88, 98, 108, 118, 128], 4: [160], 5: [200], 6: [157.5], 7: [30], 8: [150, 120, 90], 9: [24, 165],
+    12: [70, 110], 13: [12, 18], 14: [4, 14, 7], 15: [3, 14, 90], 16: [35, 55], 17: [55, 35], 18: [9, 11, 2] };
+  is('Example 5 Answer says concave', /concave/.test(ans[5] || ''));
   for (const [n, vals] of Object.entries(want)) mentions(`Example ${n} Answer row`, ans[n] || '', ...vals);
 }
 
@@ -326,8 +350,8 @@ says(24, fromInterior(171));
 { const x = (38 / 2 - 7) / 3; says(25, x, 2 * x + 3, x + 4); }
 { const y = lin(3, -2, 2, 5); says(26, y, 3 * y - 2, (3 * y - 2) / 2); }
 { const i = (180 + 160) / 2, e = 180 - i, n = fromExterior(e); says(27, i, e, n, angleSum(n)); }
-{ const s = hyp(30 / 2, 16 / 2); says(28, 15, 8, s, 4 * s); }
-says('29a', hyp(1.2, 0.9));
+says(28, 30 / 2, 16 / 2, 90, 180 - 90 - 28);
+says('29a', 90, 37, 180 - 90 - 37);
 says('29c', 6 - 3, 6 - 2);
 { const t = { A: 120, B: 95, C: 110, D: 105 }; const E = angleSum(5) - Object.values(t).reduce((a, b) => a + b);
   says('30a', E);
@@ -363,9 +387,9 @@ const solve = {
   7: o => o.map(s => /two pairs of adjacent sides equal/.test(s)),
   8: o => o.map(num).map(v => v === 58),
   9: o => o.map(s => s.match(/\d+/g).map(Number)).map(([a, b]) => a === 18 / 2 && b === 2 * 5),
-  10: o => o.map(num).map(v => near(v, 4 * hyp(18 / 2, 24 / 2))),
+  10: o => o.map(s => s.match(/\d+/g).map(Number)).map(([a, b]) => a === 18 / 2 && b === 90),
   11: o => o.map(num).map(v => v === (180 - 120) / 2),
-  12: o => o.map(s => s.replace(/\$/g, '').split(',').map(Number)).map(closes),
+  12: o => o.map(num).map(x => diagonalFits(3, 4, 6, 8, x)),   // AC: triangle ABC (3, 4) and ACD (6, 8)
   13: o => o.map(num).map(v => v === 2 * 360 / (2 + 3 + 3 + 4)),
   14: o => o.map(num).map(v => v === fromDiagonals(65)),
   15: o => o.map(num).map(v => v === fromSum(7 * 360)),
@@ -382,7 +406,7 @@ const AR = {
   16: [fromExterior(70) !== null, true, true],
   17: [true, false, false],           // opposite angles equal; adjacent angles are not equal in general (100 and 80)
   18: [angleSum(5) === 540, diagonals(5) === 5, false],
-  19: [!closes([2, 3, 4, 9]), true, true],
+  19: [!quadByTriangles([2, 3, 4, 9]), triangle(3, 4, 5) && !triangle(1, 2, 5), true],   // R: the diagonal and the three-rod rule, which is the argument for A
 };
 ok('Q17: adjacent angle of 100 is not 100', 180 - 100 === 100, false);
 for (const [q, v] of Object.entries(AR)) ok(`Q${q}: assertion-reason`, arLetter(v), key[q]);

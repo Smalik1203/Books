@@ -526,7 +526,7 @@ function examplesIn(html) {
 }
 const EXAMPLES = { body: examplesIn(BODY), Beyond: examplesIn(BEYOND) };
 ok('body example tabs read 1 to 5', EXAMPLES.body.map(e => e.tab), [1, 2, 3, 4, 5]);
-ok('Beyond example tabs read 1 to 17', EXAMPLES.Beyond.map(e => e.tab), Array.from({ length: 17 }, (_, k) => k + 1));
+ok('Beyond example tabs read 1 to 18', EXAMPLES.Beyond.map(e => e.tab), Array.from({ length: 18 }, (_, k) => k + 1));
 
 const firstMath = (s) => (s.match(/\$([^$]+)\$/) || [])[1] || '';
 const grab = (s, re) => { const m = s.match(re); if (!m) throw new Error(`nothing matches ${re}`); return m; };
@@ -603,8 +603,26 @@ example('Beyond', 11, (e, ans, say) => {
   ans([walk[walk.length - 1]]);
 });
 example('Beyond', 12, (e, ans) => ans([650 - (-80)]));
-example('Beyond', 13, (e, ans) => ans([1 - (5 + (-2)), 1 - (5 + (-6))]));
-example('Beyond', 14, (e, ans, say) => {
+example('Beyond', 13, (e, ans, say) => {
+  // years across BCE and CE: y BCE is -y and y CE is +y on the number
+  // line, but there is no year 0, so one is taken off the difference.
+  // Counted directly with astronomical numbering (1 BCE = 0, 45 BCE = -44).
+  const [b, c] = grab(e.q, /from (\d+) BCE to (\d+) CE/).slice(1).map(Number);
+  say('question years', [b, c], [45, 30]);
+  const astro = (y, era) => (era === 'CE' ? y : 1 - y);
+  const years = astro(c, 'CE') - astro(b, 'BCE');
+  const list = []; for (let y = -b; y <= c; y++) if (y !== 0) list.push(y); // every real year, in order
+  const counted = list.length - 1;            // the steps from one year to the next
+  say('counted year by year', counted, years);
+  say('step 1 writes the years as integers', numbersIn(grab(e.body, /<span>(write \d+ BCE[\s\S]*?)<\/span>/)[1]), [b, -b, c, c]);
+  say('step 2: the integer difference', numbersIn(grab(e.body, /<span>(\$30 - \(-45\)[^<]*)<\/span>/)[1]), [c, -b, c, b, c + b]);
+  say('step 3: less one for the missing year 0', numbersIn(grab(e.body, /<span>(the number line counts 0[^<]*)<\/span>/)[1]), [0, 0, c + b, -1, c + b - 1]);
+  say('the check in parts', numbersIn(grab(e.body, /<p>(Check by counting in parts[\s\S]*?)<\/p>/)[1]), [b, 1, b - 1, 1, c - 1, c, b - 1, 1, c - 1, years]);
+  say('no year 0 is named in the question', /there was no year 0/.test(e.q), true);
+  ans([years]);
+});
+example('Beyond', 14, (e, ans) => ans([1 - (5 + (-2)), 1 - (5 + (-6))]));
+example('Beyond', 15, (e, ans, say) => {
   const rows = grab(e.q, /rows are \$([^$]+)\$ and \$([^$]+)\$ and \$([^$]+)\$/).slice(1).map(r => r.split(',').map(val));
   say('every game gives one sum', gameSums(rows), [3]);
   ans(gameSums(rows));
@@ -613,7 +631,7 @@ example('Beyond', 14, (e, ans, say) => {
   say('the two games printed', [circled, other], [[2, -6, 7], [4, -3, 2]]);
   say('the row shifts', [rows[1].map((v, k) => v - rows[0][k]), rows[2].map((v, k) => v - rows[0][k])], [[-5, -5, -5], [3, 3, 3]]);
 });
-example('Beyond', 15, (e, ans, say) => {
+example('Beyond', 16, (e, ans, say) => {
   const seq = numbersIn(firstMath(e.q).replace(/\\ldots/, ''));
   const step = seq[1] - seq[0];
   say('constant step of 6', seq.every((v, k) => k === 0 || v - seq[k - 1] === step) && step === 6, true);
@@ -623,11 +641,11 @@ example('Beyond', 15, (e, ans, say) => {
     [-2, 6, nth(5), nth(5), 6, nth(6), nth(6), 6, nth(7)]);
   say('step 3', numbersIn(grab(e.body, /The 7th number[^<]*/)[0]), [7, nth(7), 8, 9, 10, nth(8), nth(9), nth(10)]);
 });
-example('Beyond', 16, (e, ans) => {
+example('Beyond', 17, (e, ans) => {
   let s = 0; for (let k = 1; k <= 20; k++) s += k % 2 ? k : -k;
   ans([s]);
 });
-example('Beyond', 17, (e, ans, say) => {
+example('Beyond', 18, (e, ans, say) => {
   const seq = [50]; while (seq[seq.length - 1] >= 0) seq.push(seq[seq.length - 1] - 7);
   say('the sequence to its first negative', seq, [50, 43, 36, 29, 22, 15, 8, 1, -6]);
   ans([seq[seq.length - 1], seq.length]);

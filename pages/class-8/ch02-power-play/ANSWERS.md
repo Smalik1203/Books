@@ -259,8 +259,9 @@ September 2026, it was about the end of **1994**.
 Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) $2^{60}$ is larger; $2^n$ passes
 $n^3$ for good from $n = 10$; (2) 1; (3) $2^{100}$ is larger;
-(4) $3^{500}$ is larger; (5) 13 hours; (6) $2^{64} - 1$, about
-$1.8 \times 10^{19}$ grains — not payable; (7) $0^n = 0$, and no value of
+(4) $3^{500}$ is larger; (5) 13 hours; (6) the sixty-fourth square alone holds
+$2^{63}$, about $9.2 \times 10^{18}$ grains (estimated as $8 \times 10^{18}$) —
+nearly five hundred years of the world's rice; (7) $0^n = 0$, and no value of
 $0^0$ keeps both patterns; (8) the fifth power ends in the digit it started
 with.
 

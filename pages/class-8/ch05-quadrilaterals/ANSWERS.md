@@ -323,12 +323,12 @@ drawing must show, and gives one worked instance under *answers will vary*.
 
 Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) $3240^\circ$; (2) the
-quadrilateral, $n = 4$; (3) $3 + 4 + 5 = 12 < 20$; each length must be less
-than the sum of the other three; (4) the fourth must be $90^\circ$, but a
+quadrilateral, $n = 4$; (3) with the diagonal $BD$, the two triangles would need
+$20 < 3 + 4 + 5 = 12$; (4) the fourth must be $90^\circ$, but a
 pentagon with four right angles cannot exist; (5) the other diagonal lies
 inside, so the sum is still $360^\circ$; (6) triangles $AOB$ and $COD$ are
 congruent, so $AB$ is parallel to $CD$, and likewise $BC$ to $AD$; (7) the
-square; (8) 22 values.
+square; (8) 22 values (the divisors of 360, listed in pairs, less 1 and 2).
 
 ### Stage 3 · Practice
 
@@ -347,16 +347,16 @@ The working for each:
 7. The kite's definition: two pairs of adjacent sides equal.
 8. Opposite angles are equal: $\angle C = 58^\circ$.
 9. $AO = 18 \div 2 = 9$ and $BD = 2 \times 5 = 10$.
-10. $9^2 + 12^2 = 81 + 144 = 225 = 15^2$; perimeter $4 \times 15 = 60$.
+10. $AO = 18 \div 2 = 9$ cm; a rhombus's diagonals cross at right angles, so $\angle AOB = 90^\circ$.
 11. $(180 - 120) \div 2 = 30$.
-12. $5 + 6 + 7 = 18$, more than 15. (The others: $1 + 2 + 3 = 6$, less than 7; $2 + 2 + 2 = 6$, not more than 6; $3 + 4 + 5 = 12$, not more than 12.)
+12. Triangle $ABC$ needs $AC < 3 + 4 = 7$ and $4 < 3 + AC$; triangle $ACD$ needs $AC < 6 + 8 = 14$ and $8 < 6 + AC$. So $AC$ is more than 2 cm and less than 7 cm: only 5 cm. (1 cm is too short, 7 cm lays triangle $ABC$ flat, 10 cm is too long.)
 13. $360 \div 12 = 30$, and $2 \times 30 = 60$.
 14. $n(n-3) = 130 = 13 \times 10$, so $n = 13$.
 15. $7 \times 360 = 2520$, $2520 \div 180 = 14$, so $n = 16$.
 16. (d) $360 \div 70$ is not a whole number, so A is false; R is true.
 17. (c) opposite angles are equal, so A is true; adjacent angles add to $180^\circ$, so R is false.
 18. (b) both true; the number of diagonals does not explain the angle sum.
-19. (a) $2 + 3 + 4 = 9$ is not more than 9, so A is true, and R is why.
+19. (a) With the 9 cm rod as $DA$ and the diagonal $BD$, the two triangles need $9 < AB + BD$ and $BD < BC + CD$, so $9 < 2 + 3 + 4 = 9$, which is false. So A is true, and R is why.
 20. $15 - 3 = 12$ diagonals and $15 - 2 = 13$ triangles.
 21. $(22 - 2) \times 180 = 3600$, so $3600^\circ$.
 22. $\angle B = 180 - 64 = 116$, so $116^\circ$; $\angle C = 64^\circ$.
@@ -365,7 +365,7 @@ The working for each:
 25. $6x + 14 = 38$, $x = 4$; $AB = 11$ cm, $BC = 8$ cm. Check: $2 \times (11 + 8) = 38$.
 26. $3y - 2 = 2y + 5$, $y = 7$; $PR = 19$ cm, so $OQ = 9.5$ cm.
 27. Interior $170^\circ$, exterior $10^\circ$; $360 \div 10 = 36$ sides; sum $(36 - 2) \times 180 = 6120$, so $6120^\circ$.
-28. $AO = 15$ cm, $BO = 8$ cm; $15^2 + 8^2 = 289 = 17^2$, side 17 cm, perimeter 68 cm. Each triangle has legs 15 cm and 8 cm with a right angle between them, so they are the same triangle.
-29. (a) $1.2^2 + 0.9^2 = 2.25 = 1.5^2$: 1.5 m (b) two triangles, each fixed by its sides (c) $6 - 3 = 3$ braces, $6 - 2 = 4$ triangles.
+28. $AO = 15$ cm, $BO = 8$ cm, $\angle AOB = 90^\circ$, $\angle ABO = 180 - 90 - 28 = 62$, so $62^\circ$. Each triangle has legs 15 cm and 8 cm with a right angle between them, so they are the same triangle.
+29. (a) each triangle has $90^\circ$, $37^\circ$ and $180 - 90 - 37 = 53$, so $53^\circ$ (in the top one the $37^\circ$ is an alternate angle) (b) two triangles, each fixed by its sides (c) $6 - 3 = 3$ braces, $6 - 2 = 4$ triangles.
 30. (a) $540 - 430 = 110$, so $110^\circ$ (b) $60^\circ$, $85^\circ$, $70^\circ$, $75^\circ$, $70^\circ$; $60 + 85 + 70 + 75 + 70 = 360$ (c) at $B$, $85^\circ$.
 31. (a) $CD = 40$ cm, $DA = 25$ cm, perimeter 130 cm (b) $\angle B = 115^\circ$, $\angle C = 65^\circ$, $\angle D = 115^\circ$ (c) a rectangle, every angle $90^\circ$, perimeter still 130 cm.

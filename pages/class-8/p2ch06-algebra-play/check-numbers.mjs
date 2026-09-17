@@ -86,6 +86,8 @@ const CONDITIONS = new Set([
   '10a+b=4(a+b)', 't=21-2c', '5d+6=3(d+6)', '2g-3=g+3', 'a=b', '10a+b=4a+4b', '6a=3b', 'b=2a', '12+c=a', 'c+8=b',
   '8x=7c', '4x=3c', 'c=8x/7', 'c=4x/3', 'c=\\dfrac{8x}{7}', 'c=\\dfrac{4x}{3}', '2^{n}x=(2^{n}-1)c',
   'x=17', 's=5',
+  // the substitution in Beyond Examples 11 and 13 and Practice Q25
+  't=12-s', 'b=12-a', 'b=11-a',
 ].map(s => s.replace(/\s+/g, '')));
 // assertions printed to be judged, and false on purpose: none in this chapter
 const FALSE_ON_PURPOSE = [];
@@ -345,13 +347,26 @@ ok('Ex 10 rows', [9 + 10 + 11, 16 + 17 + 18, 23 + 24 + 25], [30, 51, 72]); exSay
 { const r = []; for (let s = 0; s < 30; s++) for (let t = 0; t < 30; t++) if (s + t === 12 && 2 * s + t === 17) r.push([s, t]);
   ok('Ex 11', r, [[5, 7]]); exSays(11, 5, 7); }
 { const a = arr([2, 7, 8]).sort((x, y) => y[0] - x[0]); ok('Ex 12', [a[0], a[1]], [[576, '72x8'], [574, '82x7']]); exSays(12, 576, 2); }
+{ const t = plain(beyond);
+  for (const x of ['t = 12 - s', '2s + (12 - s) = 17', 's + 12 = 17', 'b = 12 - a', 'a - (12 - a) = 2', '2a - 12 = 2', 'b = 12 - 7 = 5'])
+    is(`Examples 11 and 13 print the substitution "${x}"`, t.replace(/\s+/g, ' ').includes(x));
+  is('Ex 11 by substitution', range(0, 20).filter(s2 => 2 * s2 + (12 - s2) === 17)[0] === 5 && 12 - 5 === 7);
+  is('Ex 13 by substitution', range(0, 9).filter(a => a - (12 - a) === 2)[0] === 7 && 2 * 7 - 12 === 2);
+  { const a = range(0, 9).filter(a => 11 - 2 * a === 3)[0];
+    ok('Q25 by substitution', [a, 11 - a], [4, 7]);
+    is(`key 25 prints the substitution and a = ${a}`, t.replace(/\s+/g, ' ').includes(`With b = 11 - a , 11 - 2a = 3 , giving a = ${a} and b = ${11 - a}`) || t.replace(/\s+/g, ' ').includes(`11 - 2a = 3, giving a = ${a} and b = ${11 - a}`)); } }
 ok('Ex 13', two.filter(n => dsum(n) === 12 && n - rev(n) === 18), [75]); exSays(13, 75);
 ok('Ex 14', [2220 / 111, cyc(488), dsum(488), cyc(596), cyc(875)], [20, 2220, 20, 2220, 2220]); exSays(14, 20, 488);
-ok('Ex 15', range(-50, 50).filter(x => 2 * (3 * x - 5) === 38), [8]); exSays(15, 8);
-ok('Ex 16', range(0, 100).filter(x => genie(x, 10, 2) === 22), [13]); exSays(16, 13);
-ok('Ex 16 chain', [26 - 10, 32 - 10], [16, 22]);
-ok('Ex 17', range(0, 20).filter(b => 2 * b + 3 * (20 - b) === 48).map(b => [b, 20 - b]), [[12, 8]]); exSays(17, 12, 8);
-ok('Beyond has 17 examples, numbered in order', [...beyond.matchAll(/c-example__tab">Example (\d+)/g)].map(m => +m[1]), range(1, 17));
+ok('Ex 16', range(-50, 50).filter(x => 2 * (3 * x - 5) === 38), [8]); exSays(16, 8);
+{ // Ex 15: written twice, divided by 77, gives 6019
+  const three = range(100, 999).filter(n => Number(`${n}${n}`) / 77 === 6019);
+  ok('Ex 15: the only three-digit number', three, [463]);
+  ok('Ex 15: 1001 = 77 x 13 = 7 x 11 x 13', [7 * 11 * 13, 77 * 13, 6019 / 13, 463 * 1001], [1001, 1001, 463, 463463]);
+  exSays(15, 463, 463463); }
+ok('Ex 17', range(0, 100).filter(x => genie(x, 10, 2) === 22), [13]); exSays(17, 13);
+ok('Ex 17 chain', [26 - 10, 32 - 10], [16, 22]);
+ok('Ex 18', range(0, 20).filter(b => 2 * b + 3 * (20 - b) === 48).map(b => [b, 20 - b]), [[12, 8]]); exSays(18, 12, 8);
+ok('Beyond has 18 examples, numbered in order', [...beyond.matchAll(/c-example__tab">Example (\d+)/g)].map(m => +m[1]), range(1, 18));
 ok('body examples numbered in order', [...body.matchAll(/c-example__tab">Example (\d+)/g)].map(m => +m[1]), range(1, 6));
 
 // the practice answers, read back out of the key rather than typed here

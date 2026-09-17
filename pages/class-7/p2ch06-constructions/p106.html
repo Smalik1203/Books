@@ -2,26 +2,47 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 6 · Tiling the plane</h3>
+      <h3>Type 5 · Tiling a grid</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>A verandah floor is marked out as a $5 \times 6$ grid of squares. A tulsi pot stands on one square and cannot be moved. Can the rest of the floor be covered with $2 \times 1$ stone slabs, without cutting a slab?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>squares in the grid $= 5 \times 6 = 30$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>squares to cover $= 30 - 1 = 29$</span>
+              <span class="work__why">one square taken</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>slabs cover 2, 4, 6, … squares</span>
+              <span class="work__why">always an even number</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>No. 29 is odd, wherever the pot stands.</span></div>
+          </div>
+        </div>
+      </div>
 
       <div class="c-example">
         <div class="c-example__tab">Example 14</div>
         <div class="c-example__body">
-          <p>Copies of which regular polygon can fit around a point with no gap and no overlap?</p>
-          <ol class="c-parts c-parts--alpha"><li>a regular pentagon, each angle $108^\circ$</li><li>a regular hexagon, each angle $120^\circ$</li><li>a regular octagon, each angle $135^\circ$</li><li>a regular decagon, each angle $144^\circ$</li></ol>
+          <p>From a $4 \times 5$ grid, the square in row 1, column 1 and the square in row 2, column 2 are removed. The 18 squares left are an even number. Can they be tiled with $2 \times 1$ tiles?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$3 \times 120^\circ = 360^\circ$</span>
-              <span class="work__why">a complete turn</span></div>
+              <span>full grid: 10 dark and 10 white squares</span>
+              <span class="work__why">chessboard colouring</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$3 \times 108^\circ = 324^\circ$, $2 \times 135^\circ = 270^\circ$, $2 \times 144^\circ = 288^\circ$</span>
-              <span class="work__why">gaps left</span></div>
+              <span>$1 + 1 = 2$ and $2 + 2 = 4$, both even</span>
+              <span class="work__why">both removed squares dark</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>one corner more: $432^\circ$, $405^\circ$, $432^\circ$</span>
-              <span class="work__why">too much</span></div>
+              <span>left: 8 dark and 10 white squares</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>each tile covers 1 dark and 1 white</span>
+              <span class="work__why">colours must balance</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>(b)</span></div>
+              <span>No. $8 \ne 10$, so no tiling exists.</span></div>
           </div>
         </div>
       </div>
@@ -29,45 +50,26 @@
       <div class="c-example">
         <div class="c-example__tab">Example 15</div>
         <div class="c-example__body">
-          <p>At a vertex of a tiling, two squares and one equilateral triangle meet. What angle is left to fill? Which regular polygons could fill it?</p>
+          <p>One unit square is removed from a $7 \times 9$ grid. Which square could be removed, so that the rest can possibly be tiled with $2 \times 1$ tiles?</p>
+          <ol class="c-parts c-parts--alpha"><li>the square in row 1, column 2</li><li>the square in row 2, column 3</li><li>a corner square</li><li>any square at all</li></ol>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>angle left $= 360^\circ - 90^\circ - 90^\circ - 60^\circ = 120^\circ$</span>
-              <span class="work__why">a complete turn</span></div>
+              <span>63 squares: 32 of the corner colour, 31 other</span>
+              <span class="work__why">chessboard colouring</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>remove a square of the corner colour</span>
+              <span class="work__why">leaves 31 of each</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(a) $1 + 2 = 3$, (b) $2 + 3 = 5$: odd sums</span>
+              <span class="work__why">not the corner colour</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>corner: 4 tiles in row 1, 27 in the $6 \times 9$ grid</span>
+              <span class="work__why">a tiling exists</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$120^\circ$: one regular hexagon, or two equilateral triangles ($60^\circ + 60^\circ$)</span></div>
+              <span>(c)</span></div>
           </div>
         </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>Can two regular octagons, each angle $135^\circ$, and a square meet at a vertex of a tiling?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$135^\circ + 135^\circ + 90^\circ = 360^\circ$</span>
-              <span class="work__why">the angles at the vertex</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Yes: exactly $360^\circ$, with no gap and no overlap</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
-        <div class="c-practice__sub">Choose the correct option</div>
-        <ol class="c-questions">
-          <li>Copying an angle with a ruler and a compass works because of the congruence condition<ol class="c-parts c-parts--alpha c-parts--4"><li>SAS</li><li>ASA</li><li>SSS</li><li>RHS</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The perpendicular bisector of a segment AB of 10 cm crosses it at M. The length of AM is<ol class="c-parts c-parts--alpha c-parts--4"><li>10 cm</li><li>20 cm</li><li>5 cm</li><li>2.5 cm</li></ol></li>
-        </ol>
       </div>
 
     </div>

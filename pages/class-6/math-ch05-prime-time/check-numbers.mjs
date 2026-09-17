@@ -126,6 +126,7 @@ const ANSWER_ROWS = (() => {
   return rows;
 })();
 
+const printedRowHtml = (q) => ANSWER_ROWS[String(q)] ?? '';
 function printedNumbers(q) {
   const row = ANSWER_ROWS[String(q)];
   if (row === undefined) { fails.push(`no printed answer row for question ${q}`); return null; }
@@ -224,10 +225,29 @@ is('84 and 275 are co-prime', coprime(84, 275));
   const tabs = (files) => files.flatMap(f => [...fs.readFileSync(path.join(DIR, f), 'utf8')
     .matchAll(/c-example__tab">Example (\d+)</g)].map(m => Number(m[1])));
   ok('body examples numbered 1 to 5', tabs(pages.filter(f => /^p0/.test(f))), [1, 2, 3, 4, 5]);
-  ok('Beyond examples numbered 1 to 14', tabs(pages.filter(f => /^p1/.test(f))),
-    Array.from({ length: 14 }, (_, k) => k + 1));
+  ok('Beyond examples numbered 1 to 15', tabs(pages.filter(f => /^p1/.test(f))),
+    Array.from({ length: 15 }, (_, k) => k + 1));
 }
+const BEYOND_HTML = pages.filter(f => /^p1/.test(f)).map(f => fs.readFileSync(path.join(DIR, f), 'utf8')).join('\n');
+const flatText = (h) => h.replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&hellip;/g, '…').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ');
+const beyondExample = (n) => {
+  const at = BEYOND_HTML.indexOf(`<div class="c-example__tab">Example ${n}</div>`);
+  const end = BEYOND_HTML.indexOf('<div class="c-example__tab">', at + 10);
+  return at < 0 ? '' : BEYOND_HTML.slice(at, end < 0 ? undefined : end);
+};
+const stepText = (n, s) => { const m = beyondExample(n).match(new RegExp(`work__label">${s}</span>\\s*<span>([\\s\\S]*?)</span>`)); return m ? flatText(m[1]) : ''; };
+const numsOf = (s) => [...s.replace(/\\[a-z]+/g, ' ').matchAll(/\d+/g)].map(m => Number(m[0]));
 ok('Beyond Ex1 smallest multiple of 4, 6 and 10', lcm(4, 6, 10), 60);
+{
+  // Ex1 is found by listing the multiples of the largest number, not from prime factorisations
+  const m10 = [1, 2, 3, 4, 5, 6].map(k => 10 * k);
+  ok('Beyond Ex1 step 1: the multiples of 10 listed', numsOf(stepText(1, 'Step 1')), [10, ...m10]);
+  ok('Beyond Ex1 step 2: the ones that are not multiples of 4', numsOf(stepText(1, 'Step 2')), [...m10.filter(x => x % 4 !== 0), 4]);
+  ok('Beyond Ex1 step 3: multiples of 4 but not of 6', numsOf(stepText(1, 'Step 3')), [...m10.filter(x => x % 4 === 0 && x % 6 !== 0), 4, 6]);
+  is('Beyond Ex1: 60 is the first multiple of 10 that passes both', m10.find(x => x % 4 === 0 && x % 6 === 0) === 60);
+  ok('Beyond Ex1 answer row', numsOf(stepText(1, 'Answer')), [lcm(4, 6, 10)]);
+  is('Beyond Ex1 no longer uses "most of each prime"', !/most of each prime/.test(beyondExample(1)));
+}
 ok('Beyond Ex2 count of multiples of both 4 and 6 in 1..100', countMultiples(lcm(4, 6), 1, 100), 8);
 ok('Beyond Ex2 first common multiple of 4 and 6', lcm(4, 6), 12);
 ok('Beyond Ex2 the eight of them',
@@ -266,8 +286,19 @@ ok('Beyond Ex12 the remainders of the last three digits',
 is('Beyond Ex12 all four are divisible by 4', [7324, 6136, 5148, 9420].every(n => n % 4 === 0));
 is('Beyond Ex13 3492 is divisible by 4 and not by 8', 3492 % 4 === 0 && 3492 % 8 !== 0);
 ok('Beyond Ex13 492 mod 8', 492 % 8, 4);
-ok('Beyond Ex14 largest 4-digit multiple of 40', Math.floor(9999 / 40) * 40, 9960);
-is('Beyond Ex14 5 and 8 are co-prime', coprime(5, 8));
+{
+  // Ex14 works from the tests for 5 and 8 alone, without the co-prime product fact
+  let largest = 0; for (let n = 9999; n >= 1000; n--) if (n % 5 === 0 && n % 8 === 0) { largest = n; break; }
+  ok('Beyond Ex14 largest 4-digit number divisible by 5 and 8', numsOf(stepText(14, 'Answer')), [largest]);
+  ok('Beyond Ex14 999 = 8 x 124 + 7, and 9992 is the largest 4-digit multiple of 8',
+    numsOf(stepText(14, 'Step 2')), [999, 8, Math.floor(999 / 8), 999 % 8, Math.floor(9999 / 8) * 8, 4, 8]);
+  const down = []; for (let n = Math.floor(9999 / 8) * 8; ; n -= 8) { down.push(n); if (n % 10 === 0) break; }
+  ok('Beyond Ex14 step 3: counting down in 8s to the first that ends in 0', numsOf(stepText(14, 'Step 3')), [8, ...down]);
+  is('Beyond Ex14: a multiple of 8 never ends in 5', [...Array(125)].every((_, k) => (8 * k) % 10 !== 5));
+  is('Beyond Ex14 does not lean on co-prime numbers', !/co-prime/.test(beyondExample(14)));
+}
+is('Beyond: no item uses "co-prime, so the first common multiple is the product" (the body leaves it open)',
+  !/co-prime, so (the number must be a multiple|their first common multiple|the first common multiple)/.test(flatText(BEYOND_HTML)));
 
 // Beyond, stage 3 — the answers to every question that is not an option
 ok('Q17 factors of 45', divisors(45), [1, 3, 5, 9, 15, 45]);
@@ -303,8 +334,10 @@ ok('Q29c the two of them',
 ok('Q30a prime factorisation of 84 and 126', [factorise(84), factorise(126)],
   [[2, 2, 3, 7], [2, 3, 3, 7]]);
 ok('Q30b common factors of 84 and 126', common(84, 126), [1, 2, 3, 6, 7, 14, 21, 42]);
-ok('Q30c largest common factor', gcd(84, 126), 42);
-ok('Q30d rows of chairs and stools', [84 / 42, 126 / 42], [2, 3]);
+is('Q30 no longer asks for the largest row length', !/largest row length/.test(flatText(BEYOND_HTML)));
+is('Q30 asks about rows of 14 and of 4', /With rows of 14 seats/.test(BEYOND_HTML) && /Can the rows hold 4 seats each\?/.test(BEYOND_HTML));
+is('Q30 14 is a common factor, 4 is not', common(84, 126).includes(14) && !common(84, 126).includes(4));
+is('Q30(d) 126 has one 2 and 84 has two', factorise(126).filter(p => p === 2).length === 1 && factorise(84).filter(p => p === 2).length === 2);
 okPrintedList('Q17 factors of 45', 17, divisors(45));
 okPrintedList('Q18 common multiples of 8 and 12', 18, [1, 2, 3].map(k => k * lcm(8, 12)));
 is('Q25 the second treasure: 12, 36, 60 and 84 all give exactly the factors of 12',
@@ -312,9 +345,8 @@ is('Q25 the second treasure: 12, 36, 60 and 84 all give exactly the factors of 1
 is('Q25 24 itself would not work', JSON.stringify(common(24, 24)) !== JSON.stringify(divisors(12)));
 okPrintedList('Q25 the numbers printed', 25, [12, 36, 60, 84]);
 okPrintedList('Q30 common factors of 84 and 126', 30, common(84, 126));
-ok('Q31a factorisations of 6, 8, 12', [factorise(6), factorise(8), factorise(12)],
-  [[2, 3], [2, 2, 2], [2, 2, 3]]);
 ok('Q31b when all three ring together again', lcm(6, 8, 12), 24);
+is('Q31 asks for the multiples of 12 to be listed', /List the multiples of 12, the longest gap, up to 60\./.test(BEYOND_HTML));
 ok('Q31d times in the hour after 9:00, not counting it',
   [...Array(60)].map((_, i) => i + 1).filter(n => n % 24 === 0), [24, 48]);
 
@@ -325,9 +357,20 @@ okPart('Q29(b) multiples of 8', 29, 'b', countMultiples(8, 1, 100));
 okPart('Q29(c) multiples of both', 29, 'c',
   [countMultiples(lcm(5, 8), 1, 100), 40, 80]);
 okPart('Q30(b) the possible row lengths', 30, 'b', common(84, 126));
-okPart('Q30(c) the largest row length', 30, 'c', gcd(84, 126));
-okPart('Q30(d) rows of chairs and of stools', 30, 'd', [84 / gcd(84, 126), 126 / gcd(84, 126)]);
-okPart('Q31(b) minutes until all three ring together', 31, 'b', lcm(6, 8, 12));
+okPart('Q30(c) rows of 14: chairs and stools', 30, 'c', [84, 14, 84 / 14, 126, 14, 126 / 14]);
+okPart('Q30(d) 4 is not a factor of 126', 30, 'd', [4, 2, 2, 126, 2, 4, 126]);
+{
+  const m12 = [1, 2, 3, 4, 5].map(k => 12 * k);
+  okPart('Q31(a) the multiples of 12 up to 60', 31, 'a', m12);
+  okPart('Q31(b) the common ones, the others, and the minutes', 31, 'b',
+    [...m12.filter(x => x % 6 === 0 && x % 8 === 0), ...m12.filter(x => x % 8 !== 0), 8, m12.find(x => x % 6 === 0 && x % 8 === 0)]);
+  is('Q31(b): every multiple of 12 is already a multiple of 6', m12.every(x => x % 6 === 0));
+}
+{
+  // Q29(d) lists the multiples of 8 until one ends in 0 or 5
+  const up = []; for (let n = 8; ; n += 8) { up.push(n); if (n % 5 === 0) break; }
+  okPart('Q29(d) the multiples of 8 listed, then the next common multiples', 29, 'd', [8, 0, 5, ...up, 40, 40, 80, 80, 40, 120, 100]);
+}
 okPart('Q31(c) the time', 31, 'c', [9, 24]);
 
 // the "why the other options are wrong" notes
@@ -339,7 +382,12 @@ is('note 10: 3 is not a factor of 91, and 9 is not prime', 91 % 3 !== 0 && !isPr
 is('note 13: 4 and 6 are composite and share 2', !isPrime(4) && !isPrime(6) && gcd(4, 6) === 2);
 ok('note 13: prime factorisation of 35 and 48', [factorise(35), factorise(48)],
   [[5, 7], [2, 2, 2, 2, 3]]);
-ok('note 16: 15 x 28', 15 * 28, 420);
+{
+  const note16 = flatText(printedRowHtml('16'));
+  ok('note 16: the numbers it prints', numsOf(note16), [221, 13, 17, 13, 17, 221, 1, 221]);
+  is('note 16: 221 = 13 x 17, both prime, so 221 has more than two factors', 13 * 17 === 221 && isPrime(13) && isPrime(17) && divisors(221).length === 4);
+  is('note 16 ends on (a)', /the answer is \(a\)/.test(note16));
+}
 
 /* ---- C. one right option, and the key says so ---------------- */
 
@@ -377,7 +425,7 @@ const AR = [
   { n: 13, A: () => coprime(35, 48), R: () => !isPrime(35) && !isPrime(48), explains: false, key: 'b' },
   { n: 14, A: () => 7248 % 8 === 0, R: () => 248 % 8 === 0, explains: true, key: 'a' },
   { n: 15, A: () => primesUpTo(50).every(p => p % 2 === 1), R: () => isPrime(2), explains: false, key: 'd' },
-  { n: 16, A: () => lcm(15, 28) === 420, R: () => coprime(15, 28), explains: true, key: 'a' },
+  { n: 16, A: () => !isPrime(221) && divisors(221).length > 2, R: () => 13 * 17 === 221, explains: true, key: 'a' },
 ];
 /* The truth values above are only worth checking against the question
    actually printed under that number, so each entry is tied to its text. */
@@ -385,7 +433,7 @@ const AR_TEXT = {
   13: ['35 and 48 are co-prime.', '35 and 48 are both composite numbers.'],
   14: ['7248 is divisible by 8.', '248 is divisible by 8.'],
   15: ['Every prime number is odd.', '2 is a prime number.'],
-  16: ['The first common multiple of 15 and 28 is 420.', '15 and 28 are co-prime.'],
+  16: ['221 is a composite number.', '$221 = 13 \\times 17$.'],
 };
 const printedAR = {};
 for (const f of pages) {
@@ -605,6 +653,43 @@ for (const [name, [rows, cols, want]] of Object.entries(PUZZLES)) {
   ok(`A puzzle ${name}`, s[0], want);
   is(`A puzzle ${name}: every entry is prime`, s[0].flat().every(isPrime));
 }
+
+/* Beyond Ex 15: the puzzle is read off Fig. 5.14, solved, and compared
+   with the Answer row and every step. */
+{
+  const ex = beyondExample(15);
+  const svg = (ex.match(/<svg[\s\S]*?<\/svg>/) || [''])[0];
+  const ticks = [...svg.matchAll(/<text class="dg-tick" x="([\d.]+)" y="([\d.]+)"[^>]*>(\d+)<\/text>/g)].map(m => ({ x: +m[1], y: +m[2], v: +m[3] }));
+  const rowsP = ticks.filter(t => t.x === Math.max(...ticks.map(u => u.x))).sort((a, b) => a.y - b.y).map(t => t.v);
+  const colsP = ticks.filter(t => t.y === Math.max(...ticks.map(u => u.y))).sort((a, b) => a.x - b.x).map(t => t.v);
+  ok('Beyond Ex15 Fig. 5.14 row and column products', [rowsP, colsP], [[30, 28, 99], [42, 18, 110]]);
+  ok('Beyond Ex15 Fig. 5.14 prints only the six products', ticks.length, 6);
+  const s = solvePuzzle(rowsP, colsP);
+  is(`Beyond Ex15 has exactly one solution (found ${s.length})`, s.length === 1);
+  if (!s.length) s.push([[0, 0, 0], [0, 0, 0], [0, 0, 0]]);   // report the rest rather than stop
+  const ans = numsOf(stepText(15, 'Answer'));
+  ok('Beyond Ex15 answer row', ans, s[0].flat());
+  is('Beyond Ex15 every entry is prime', s[0].flat().every(isPrime));
+  is('Beyond Ex15 is none of the body puzzles', Object.values(PUZZLES).every(([r, c]) => JSON.stringify([r, c]) !== JSON.stringify([rowsP, colsP])));
+  ok('Beyond Ex15 step 1 factorisations', numsOf(stepText(15, 'Step 1')), [rowsP[2], ...factorise(rowsP[2]), colsP[2], ...factorise(colsP[2]), 11]);
+  is('Beyond Ex15 step 1: 11 is only in the bottom row and the last column', [0, 1].every(r => rowsP[r] % 11 !== 0) && [0, 1].every(c => colsP[c] % 11 !== 0));
+  ok('Beyond Ex15 step 2: 28 has no 5, and the last column', numsOf(stepText(15, 'Step 2')), [rowsP[1], ...factorise(rowsP[1]), 5, ...s[0].map(r => r[2])]);
+  is('Beyond Ex15 step 2: 28 has no 5', rowsP[1] % 5 !== 0);
+  ok('Beyond Ex15 step 3: the bottom row and the middle column', numsOf(stepText(15, 'Step 3')), [...s[0][2], colsP[1], ...factorise(colsP[1]), 3, 2, rowsP[1], 3]);
+  ok('Beyond Ex15 step 3 leaves the top row a 3 in the middle', s[0][0][1], 3);
+  is('Beyond Ex15 step 3: 28 has no 3', rowsP[1] % 3 !== 0);
+  ok('Beyond Ex15 step 4: the first squares', numsOf(stepText(15, 'Step 4')), [rowsP[0], s[0][0][1], s[0][0][2], s[0][0][0], rowsP[1], s[0][1][1], s[0][1][2], s[0][1][0]]);
+  const check = flatText((ex.match(/<p>Check the first column:[\s\S]*?<\/p>/) || [''])[0]);
+  ok('Beyond Ex15 the check on the first column', numsOf(check), [s[0][0][0], s[0][1][0], s[0][2][0], colsP[0]]);
+  is('Fig. 5.14 is captioned for Example 15', /Fig\. 5\.14<\/span> For Example 15\./.test(ex));
+  is('Beyond has a Type 6 head for the prime puzzles', /<h3>Type 6 &middot; Prime puzzles<\/h3>/.test(BEYOND_HTML));
+}
+inAnswers('A Beyond: fifteen examples', 'stage 2 sets fifteen examples as steps, numbered 1 to 15 on their own');
+inAnswers('A Q29(d)', 'multiples of 8 until one ends in 0 or 5: 8, 16, 24, 32, 40');
+inAnswers('A Q30(c)', `**${84 / 14} rows of chairs and ${126 / 14} rows of stools**`);
+inAnswers('A Q31(b)', `again after **${lcm(6, 8, 12)} minutes**`);
+inAnswers('A AR 16', `$221 = ${13} \\times ${17}$, so 221 has more than\ntwo factors and is composite; R is the reason A is true, so **(a)**.`);
+is('ANSWERS.md Beyond: no "co-prime, so their first common multiple"', !/co-prime, so their first common multiple/.test(ANSWERS.slice(ANSWERS.indexOf('## Beyond the Book'))));
 
 /* ---- report -------------------------------------------------- */
 

@@ -2,25 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-          <p>Find the smallest number by which 3380 must be divided to leave a perfect square, and the square root of the result.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$3380 = 2^2 \times 5 \times 13^2$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>the 5 has no partner</span>
-              <span class="work__why">divide it out</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$3380 \div 5 = 676 = 2^2 \times 13^2 = (2 \times 13)^2$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Divide by 5. $676 = 26^2$, so the root is 26</span></div>
-          </div>
-        </div>
-      </div>
-
       <h3>Type 5 &middot; Trapping a square root</h3>
 
       <div class="c-example">
@@ -61,6 +42,33 @@
             <div class="work__row"><span class="work__label">Answer</span>
               <span>Between 22 m and 23 m, nearer 22 m</span></div>
           </div>
+        </div>
+      </div>
+
+      <h3>Type 6 &middot; Cubes as blocks of odd numbers</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 14</div>
+        <div class="c-example__body">
+          <p>Write $11^3$ as a sum of eleven consecutive odd numbers, and check the sum.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the eleventh block is centred on $11^2 = 121$</span>
+              <span class="work__why">a block of eleven</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131$</span>
+              <span class="work__why">five each side</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$111 + 131 = 113 + 129 = 242$, and so on: five pairs and $121$</span>
+              <span class="work__why">pair the ends</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$5 \times 242 + 121 = 1331 = 11^3$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$11^3 = 111 + 113 + \cdots + 131$, the eleven odd numbers from $111$ to $131$</span></div>
+          </div>
+          <p>Example 10 of the chapter showed the tenth block ending at $109$, so the eleventh begins at the next odd number, $111$, as it should.</p>
         </div>
       </div>
 

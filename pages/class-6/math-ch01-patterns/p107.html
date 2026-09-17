@@ -2,8 +2,49 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h3>Type 6 &middot; Counting in shape sequences</h3>
+
       <div class="c-example">
         <div class="c-example__tab">Example 15</div>
+        <div class="c-example__body">
+          <p>Meena bends a wire 72 cm long into a regular polygon. Every side is 8 cm long. Which polygon of Fig. 1.7 has she made? She then bends the same wire into a regular hexagon. How long is each side now?</p>
+          <p><strong>Solution.</strong> Every side of a regular polygon has the same length.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$72 \div 8 = 9$ sides</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>a regular polygon with 9 sides is a nonagon</span>
+              <span class="work__why">nona means 9</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>a hexagon has 6 sides: $72 \div 6 = 12$ cm</span>
+              <span class="work__why">hexa means 6</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>a regular nonagon; each side of the hexagon is 12 cm</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>In a kho-kho tournament, every team plays every other team once. 15 matches are played in all. How many teams are there?</p>
+          <p><strong>Solution.</strong> Draw each team as a point, and each match as a line joining two points. The picture is a complete graph.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>2, 3, 4, 5, 6 points have 1, 3, 6, 10, 15 lines</span>
+              <span class="work__why">triangular numbers</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>15 lines go with 6 points</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>6 teams</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>The same count answers any question in which every pair meets once: handshakes at a party, matches in a league, or lines joining points. Each new point is joined to every point already there, so the counts grow by 1, 2, 3, 4, 5, &hellip;, which is how the triangular numbers grow.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
         <div class="c-example__body">
           <p>A shape in the stacked triangles is made of 64 small triangles. How many rows does it have? How many of its small triangles point up?</p>
           <p><strong>Solution.</strong></p>
@@ -23,47 +64,6 @@
           <p>The other $64 - 36 = 28$ triangles point down, and 28 is the triangular number just before 36.</p>
         </div>
       </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>The first shape of the Koch snowflake has 3 straight lines. At each step, every straight line becomes 4 straight lines. How many straight lines does the 5th shape have?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>1st shape: 3 lines</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$3 \times 4 = 12$, $\ 12 \times 4 = 48$</span>
-              <span class="work__why">2nd and 3rd shapes</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$48 \times 4 = 192$, $\ 192 \times 4 = 768$</span>
-              <span class="work__why">4th and 5th shapes</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>768</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 17</div>
-        <div class="c-example__body">
-          <p>Every corner of a regular hexagon is joined by a straight line to every other corner. How many lines are there? How many of them are not sides of the hexagon?</p>
-          <p><strong>Solution.</strong> The 6 corners and the lines joining them make a complete graph with 6 points.</p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>6 points have 15 lines</span>
-              <span class="work__why">the 5th triangular number</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>6 of these lines are the sides</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$15 - 6 = 9$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>15 lines, and 9 of them are not sides</span></div>
-          </div>
-          <p>Check the method on smaller shapes. A triangle has 3 corners and 3 lines, and all 3 lines are sides. A square has 4 corners and 6 lines: the 4 sides and the 2 lines that cross its middle. A pentagon has 5 corners and 10 lines, so 5 of its lines are not sides.</p>
-        </div>
-      </div>
-
 
     </div>
   </div>

@@ -1,5 +1,30 @@
 # Class 7 · Mathematics II · Chapter 2 — Operations with Integers
 
+## Syllabus audit fixes, 17 September 2026
+
+One finding, a borderline gap: no Solved Example found two integers from
+their sum and their difference (§2.1, Rakesh's puzzle and Exercise Set 2.1).
+
+- **Added Example 4** under Type 1, whose head now reads *Sums and
+  differences of integers*, since it no longer holds subtraction alone: sum
+  $-3$, first minus second 11. It is worked the body's way, by trying pairs
+  with the right sum and checking the difference (0 and $-3$ give 3; 2 and
+  $-5$ give 7; 4 and $-7$ give 11). No formula is used, because the body
+  says none is needed.
+- The audit's suggested values (sum $-7$, difference $-13$) were **not
+  used**: they are Exercise Set 2.1 Q1(f), word for word.
+- Examples 4–14 became **5–15**. Nothing in the chapter refers to an example
+  by number, and the Answers pages do not list examples.
+- Class 7 has no `ANSWERS.md` or `check-numbers.mjs`; the values were checked
+  by hand: $4 + (-7) = -3$ and $4 - (-7) = 11$, and each trial row has sum
+  $-3$.
+- `check-no-repeats`: no division question is close to a body question.
+
+Pages 23 → 23 (body 13, Beyond 10). `refit bridge` put Examples 1–4 on
+p102 and moved the later breaks. Answers still opens p110. All pages fit, 0
+stranded openers, every option row fits, no labels collide, `data-bridge`
+on p101–p110.
+
 ## Examples set as steps, 16 September 2026
 
 Both of the chapter body's worked examples — Example 1 (the marks in a

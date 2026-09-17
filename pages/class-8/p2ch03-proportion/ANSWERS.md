@@ -205,7 +205,7 @@ The working for each:
 11. (c): speed times time is the fixed distance. The other three are direct.
 12. $\tfrac{1}{12} + \tfrac16 = \tfrac14$, so 4 hours.
 13. The numbers are $2x$ and $7x$, differing by $5x = 25$, so $x = 5$: 10 and 35.
-14. $a : b = 8 : 12$ and $b : c = 12 : 15$, so $a : c = 8 : 15$.
+14. $b$ is $3$ parts, so one part is $12 \div 3 = 4$: $a = 8$, $c = 20$ and $a + c = 28$.
 15. $xy$ stays $k$, so $y$ is halved.
 16. (a) $8 \times 9 = 72 = 4 \times 18$; R is why.
 17. (d) $2 \times 9 = 18$ but $3 \times 4 = 12$, so A is false; R is the true test.
