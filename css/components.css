@@ -521,15 +521,19 @@
 .c-figure svg image { mix-blend-mode: multiply; }
 
 /* A figure beside its key. The key is plain text with swatches —
-   not a second panel. */
-.c-figure--keyed {
+   not a second panel. --pair sets two figures side by side the same
+   way, where an example needs both in view (Class 10 Ch 11, Figs
+   11.6 and 11.7). */
+.c-figure--keyed,
+.c-figure--pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6mm;
   align-items: center;
   text-align: left;
 }
-.c-figure--keyed > figure { margin: 0; }
+.c-figure--keyed > figure,
+.c-figure--pair > figure { margin: 0; }
 
 .c-key { font-size: var(--size-note); line-height: var(--lh-panel); }
 .c-key ul { list-style: none; margin: 0; padding: 0; }

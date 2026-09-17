@@ -48,6 +48,10 @@
        says, before anything has been decided about the window. */
     zoom: '1',
   };
+  /* Where each page starts on the stage (see measurePages). Declared up
+     here because applyZoom clears it, and applyZoom runs before the
+     paging code further down has been reached. */
+  let at = [];
 
   /* ---- loading the book ---------------------------------- */
   function src() {
@@ -157,6 +161,8 @@
     const k = Math.max(MIN_Z, Math.min(MAX_Z, factor(contentW)));
     inner.style.zoom = String(k);
     state.k = k;
+    at = [];            // page tops were measured at the old zoom
+
     seen = { w: stage.clientWidth, h: stage.clientHeight };
 
     /* Not while it is being typed into: rewriting the field under the
@@ -272,8 +278,7 @@
      Cached, and remeasured when the zoom or the book changes. It is
      read on every scroll event, and reaching across into another
      document twenty-eight times a frame to learn what has not moved is
-     work for nothing. */
-  let at = [];
+     work for nothing. `at` itself is declared at the top. */
   function measurePages() {
     const k = Number(inner.style.zoom) || 1;
     at = pages.map((el) => el.getBoundingClientRect().top * k);
@@ -281,10 +286,16 @@
   const showPage = (i) =>
     set('page-no', 'value', (pages[i] && pages[i].dataset.folio) || String(i + 1));
 
+  /* The box shows a page's printed folio, so a typed number means that
+     folio. In a chapter the two agree; in a bound book the title page,
+     imprint and contents carry none, and "40" has to land on the page
+     printed 40, not on the fortieth sheet. A number no page carries
+     falls back to counting sheets. */
   function goto(n) {
     if (!pages.length) return;
     if (at.length !== pages.length) measurePages();
-    const i = Math.max(1, Math.min(pages.length, n)) - 1;
+    const byFolio = pages.findIndex((el) => el.dataset.folio === String(n));
+    const i = byFolio >= 0 ? byFolio : Math.max(1, Math.min(pages.length, n)) - 1;
     stage.scrollTop = at[i] - 10;
     showPage(i);
   }

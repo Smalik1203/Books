@@ -845,7 +845,7 @@ const blankVerso = (folio, marks = "") =>
    both volumes open at 1, so their chapters interleave 1, 1, 2, 2, and
    paletteScope writes [data-ch="1"] twice at equal specificity, which
    hands both chapter ones to whichever palette came last. */
-async function buildBooks(cls) {
+async function buildBooks(cls, only = null) {
   const root = p('pages', cls);
   const dirs = (await readdir(root, { withFileTypes: true }))
     .filter((e) => e.isDirectory()).map((e) => e.name);
@@ -872,7 +872,15 @@ async function buildBooks(cls) {
      plain string, a prefix being shorter than what extends it, so the
      volumes bind in the order they are shelved without parsing a numeral
      out of the subject. */
-  const subjects = [...volumes.keys()].sort();
+  /* --volume binds one book and leaves the others alone. The studio's
+     whole-book view asks for exactly the volume on screen, and binding
+     every volume of the class to print one PDF wrote a 38 MB science
+     book nobody had asked for. */
+  const subjects = [...volumes.keys()].sort().filter((s) => !only || s === only);
+  if (only && !subjects.length) {
+    console.error(`  ${cls}: no volume "${only}" — the class has ${[...volumes.keys()].sort().join(', ')}`);
+    return [];
+  }
   console.log(`  ${cls}: ${subjects.length} volume(s) — `
     + subjects.map((s) => `${s} (${volumes.get(s).length})`).join(', '));
 
@@ -1048,10 +1056,12 @@ const wantBook = args.includes('--book');
    default for print. --tight drops those blanks, for a copy that is
    going to be read on a screen and scrolled rather than turned. */
 const wantTight = args.includes('--tight');
+/* --volume="Mathematics II" limits --book to one volume. */
+const wantVolume = (args.find(a => a.startsWith('--volume=')) || '').slice('--volume='.length) || null;
 const target = args.find(a => !a.startsWith('--'));
 
 if (!target) {
-  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book] [--tight]');
+  console.error('usage: node build/build.mjs <class-9[/chapter-dir]> [--pdf] [--png] [--bleed] [--book [--volume="Mathematics I"]] [--tight]');
   process.exit(1);
 }
 
@@ -1064,6 +1074,9 @@ if (!existsSync(path.join(asDir, 'chapter.json'))) {
     process.exit(1);
   });
   chapters = entries.filter(e => e.isDirectory()).map(e => `${target}/${e.name}`);
+  /* Binding reads the page sources and renders them itself, so a bind of
+     one volume does not need every chapter of the class rebuilt first. */
+  if (wantBook && wantVolume) chapters = [];
 }
 
 const styleErrors = await lintStylesheets(ROOT);
@@ -1091,7 +1104,7 @@ if (wantBook) {
   const cls = target.split('/')[0];
   console.log(`
 Binding ${cls}:`);
-  for (const book of await buildBooks(cls)) {
+  for (const book of await buildBooks(cls, wantVolume)) {
     await checkOverflow(book.htmlPath, book.meta, book.sheet);
     if (wantPdf) await toPdf(book.htmlPath);
     if (book.bleedHtml) {
