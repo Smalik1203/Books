@@ -1,5 +1,5 @@
 // Fast regression checks, not a substitute for the academic or printed-page review.
-const allowed=new Set(['The setup','What you saw','Work it out in your head','What this rules out','The mechanism']);
+const allowed=new Set(['Investigate','What Did You Notice?','Think It Through','Imagine This','Follow the Evidence','How It Works']);
 export function scienceContract(file,html){
  const issues=[],plain=s=>s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
  for(const m of html.matchAll(/<(?:text|div)\b[^>]*class="(?:se-cue-title|se-activity-tab-text|science-feature__title)"[^>]*>([\s\S]*?)<\/(?:text|div)>/g))if(!allowed.has(plain(m[1])))issues.push('unlocked feature label: '+plain(m[1]));

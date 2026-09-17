@@ -367,6 +367,7 @@ ${meta.design === 'science-reference' ? `<link rel="stylesheet" href="${cssHref.
 ${meta.design === 'science-editorial' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-reference.css')}"><link rel="stylesheet" href="${cssHref.replace('book.css', 'science-editorial.css')}">` : ''}
 ${meta.design === 'maths-clear' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'maths-clear.css')}">` : ''}
 ${meta.subject === 'Science' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-locked.css')}">` : ''}
+${meta.profile === 'science-v2' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-v2-fonts.css')}"><link rel="stylesheet" href="${cssHref.replace('book.css', 'science-v2.css')}">` : ''}
 <style>:root { --ch-accent: ${theme.accent}; --ch-tab-top: ${theme.tabTop}; }${sheet ? `@page { size: ${sheet.mediaW}mm ${sheet.mediaH}mm; margin: 0; }`
   : trim ? `@page { size: ${trim.trimW}mm ${trim.trimH}mm; margin: 0; }` : ``}</style>
 </head>

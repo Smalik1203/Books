@@ -1,4 +1,9 @@
 /* Science contract, September 2026. Loaded after legacy chapter palettes. */
+.se-thinking-image { image-rendering: auto; }
+.se-editorial-divider { stroke: var(--chapter-rule); stroke-width: 1; fill: none; }
+.page .se-glossary-panel { fill: var(--chapter-wash); stroke: var(--chapter-rule); stroke-width: 1.6; }
+.page .se-table-frame { fill: none; stroke: var(--chapter-ink); stroke-opacity: .55; stroke-width: 1.6; pointer-events: none; }
+.page .se-table-row-rule, .page .se-table-column-rule { stroke: var(--chapter-ink); stroke-opacity: .24; stroke-width: 1; }
 .page {
  --s-do: #087e8b; --s-think: #a76608; --s-explain: #75452d;
  --s-do-tint: #edf7f7; --s-think-tint: #fff5df; --s-explain-tint: #f4ece6;
@@ -17,13 +22,14 @@
 .page .se-takeaway { font-weight: 500; }
 .page .se-copy .se-bold { fill: var(--ink); }
 .se-feature--setup { --feature-ink: var(--s-do); }
-.se-feature--observe, .se-feature--imagine { --feature-ink: var(--s-think); }
+.se-feature--observe, .se-feature--imagine, .se-feature--think { --feature-ink: var(--s-think); }
 .se-feature--reason, .se-feature--explain { --feature-ink: var(--s-explain); }
 .page .se-cue-title { fill: var(--feature-ink); }
 .se-feature-icon { fill: none; stroke: var(--feature-ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .se-section-opener { font-family: Food Poppins, sans-serif; font-size: var(--size-body); font-weight: 700; fill: var(--ink); }
 .page .se-activity-panel { fill: var(--s-do-tint); stroke: var(--s-do); stroke-width: 1; }
 .page .se-prompt, .page .se-spark-panel { fill: var(--s-think-tint); stroke: none; }
+.page[data-science-chapter] .se-prompt.se-thought-panel { fill: var(--s-think-tint); stroke: var(--s-think); stroke-width: 1; rx: 18px; ry: 18px; }
 .se-think-rule { stroke: var(--s-think); stroke-width: 1; fill: none; }
 .page .se-spark-tab { fill: none; }
 .page .se-spark-title { fill: var(--s-think); }

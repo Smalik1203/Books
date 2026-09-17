@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {scienceContract} from './science-contract.mjs';
 import fs from 'node:fs/promises';
 import {reviseFood} from './revise-science-food.mjs';
-for(const title of ['The setup','What you saw','Work it out in your head','What this rules out','The mechanism'])assert.doesNotThrow(()=>scienceContract('fixture',`<text class="se-cue-title">${title}</text>`));
+for(const title of ['Investigate','What Did You Notice?','Imagine This','Follow the Evidence','How It Works'])assert.doesNotThrow(()=>scienceContract('fixture',`<text class="se-cue-title">${title}</text>`));
 for(const bad of ['<text class="se-cue-title">Read the evidence</text>','<image class="se-cue-png" href="painted.png"/>','<p>If the pins cling to it, the needle has become a magnet.</p>','<p>water, which are essential but are not nutrients</p>','<line class="fb-writing"/>'])assert.throws(()=>scienceContract('fixture',bad));
 console.log('10 science contract regression cases passed');
 const food=await reviseFood(JSON.parse(await fs.readFile('assets/manuscripts/ch03-reading-groups.json','utf8')));

@@ -82,7 +82,11 @@ for (const name of await fs.readdir(srcDir)) {
   }
 }
 
-const probe = `<script>window.addEventListener('load',async()=>{
+const probe = `<script>
+const reportProbeError=event=>{document.title='FITCHECK'+JSON.stringify({error:String(event.reason?.stack||event.error?.stack||event.message||event.reason)});};
+window.addEventListener('error',reportProbeError);
+window.addEventListener('unhandledrejection',reportProbeError);
+window.addEventListener('load',async()=>{
 await document.fonts.ready;
 const BLOCK=${blockArg ? JSON.stringify(blockArg.split(',').map(Number)) : 'null'};
 const out={pages:0,lines:0,over:[],collide:[],leading:[],ragged:[],letterbox:[],vertical:[],blockUsed:null};
@@ -143,9 +147,19 @@ for(const svg of document.querySelectorAll('.food-sheet')){
 
   const attr=(el,n)=>+(el.getAttribute(n)||0);
   const ports=[...svg.querySelectorAll('.science-illustration')];
+  // Viewport attributes are in the parent's coordinate system. Refit pages
+  // may translate whole reading blocks, so transform all four frame corners
+  // into the sheet before comparing them with rendered glyph boxes.
+  const viewportBox=el=>{
+    const own=el.transform?.baseVal?.consolidate()?.matrix||svg.createSVGMatrix();
+    const matrix=toLocal.multiply(el.parentElement.getScreenCTM()).multiply(own);
+    const x=attr(el,'x'),y=attr(el,'y'),w=attr(el,'width'),h=attr(el,'height');
+    const points=[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(([a,b])=>new DOMPoint(a,b).matrixTransform(matrix));
+    return {x:Math.min(...points.map(p=>p.x)),y:Math.min(...points.map(p=>p.y)),
+      right:Math.max(...points.map(p=>p.x)),bottom:Math.max(...points.map(p=>p.y))};
+  };
   const art=ports.length
-    ? ports.map(el=>({x:attr(el,'x'),y:attr(el,'y'),
-        right:attr(el,'x')+attr(el,'width'),bottom:attr(el,'y')+attr(el,'height')}))
+    ? ports.map(viewportBox)
     : [...svg.querySelectorAll('image')].map(box);
 
   for(const text of svg.querySelectorAll('text')){
@@ -161,7 +175,7 @@ for(const svg of document.querySelectorAll('.food-sheet')){
     for(const run of runs){
       const b=box(run); if(!isFinite(b.x)||b.right-b.x<1)continue;
       out.lines++; seen.push(b);
-      if(svg.classList.contains('science-editorial') && !text.classList.contains('se-running') && +(text.getAttribute('y')||0)<1300 && (b.y<70 || b.bottom>(svg.viewBox.baseVal.height-99)))
+      if(svg.classList.contains('science-editorial') && !text.matches('.se-running,.se-folio') && (b.y<70 || b.bottom>(svg.viewBox.baseVal.height-99)))
         out.vertical.push({page:folio,top:+b.y.toFixed(1),bottom:+b.bottom.toFixed(1),text:run.textContent.slice(0,58)});
       const label=(run.textContent||'').replace(/\\s+/g,' ').trim().slice(0,58);
       if(R!=null&&b.right>R+1)
@@ -195,6 +209,7 @@ await unlink(temp);
 const raw = stdout.match(/FITCHECK(\{[\s\S]*?\})<\/title>/)?.[1];
 if (!raw) { console.error('    ! the probe did not report — nothing was measured'); process.exit(2); }
 const r = JSON.parse(raw);
+if(r.error)throw new Error('Reference-fit browser probe failed: '+r.error);
 
 if (asJson) { console.log(JSON.stringify(r, null, 2)); }
 else {
