@@ -2,115 +2,52 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li>The sum of the probabilities of all the outcomes of an
-            experiment is
-              <ol class="c-parts c-parts--alpha">
-                <li>$0$</li>
-                <li>$\tfrac12$</li>
-                <li>$1$</li>
-                <li>the number of outcomes</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Cards numbered 1 to 25 are shuffled, and one is drawn at random. The probability that its number is prime is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$\tfrac{8}{25}$</li><li>$\tfrac{9}{25}$</li><li>$\tfrac25$</li><li>$\tfrac{9}{24}$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the primes up to 25 are 2, 3, 5, 7, 11, 13, 17, 19 and 23</span>
+              <span class="work__why">list them</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>9 favourable cards out of 25</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$P(\text{prime}) = \dfrac{9}{25}$</span>
+              <span class="work__why">favourable over possible</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) leaves out 2, the one even prime. Option (c) is $\tfrac{10}{25}$, which counts 1 as a prime; it is not. Option (d) divides by 24, as if the card numbered 1 were not in the pack.</p>
+        </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set B &middot; Two ideas together</div>
-        <ol class="c-questions">
-          <li>
-              <strong>A.</strong> When a fair die is rolled,
-              $P(\text{a prime number}) = \tfrac12$. &nbsp;<strong>R.</strong>
-              The primes on a die are 2, 3 and 5.
-              <ol class="c-parts c-parts--alpha">
-                <li>both true, R explains A</li>
-                <li>both true, R does not explain A</li>
-                <li>A true, R false</li>
-                <li>A false, R true</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <h3>Type 4 &middot; Finding a count from a probability</h3>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              <strong>A.</strong> After five heads in a row on a fair coin, the
-              sixth toss is more likely to give a tail. &nbsp;<strong>R.</strong>
-              Over a great many tosses the proportion of heads settles near
-              $\tfrac12$.
-              <ol class="c-parts c-parts--alpha">
-                <li>both true, R explains A</li>
-                <li>both true, R does not explain A</li>
-                <li>A true, R false</li>
-                <li>A false, R true</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        
-        <ol class="c-questions" data-start="3">
-          <li>
-              A coin is tossed 1000 times and gives 530 heads. Which of these
-              must be true?
-              <ol class="c-parts c-parts--1">
-                <li>The coin is biased.</li>
-                <li>The experimental probability of a head is $0.53$.</li>
-                <li>If the coin is fair, the theoretical probability of a head
-                is $0.5$.</li>
-              </ol>
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>(i) only</li>
-                <li>(ii) only</li>
-                <li>(ii) and (iii)</li>
-                <li>all three</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Two dice are thrown together. $P(\text{the sum is } 7)$ is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\tfrac{1}{11}$</li>
-                <li>$\tfrac16$</li>
-                <li>$\tfrac{7}{36}$</li>
-                <li>$\tfrac16 \cdot \tfrac16$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A bag holds 4 red and 6 green balls. One is drawn and kept, and
-            it is red. The probability that the next is red is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\tfrac13$</li>
-                <li>$\tfrac25$</li>
-                <li>$\tfrac{4}{10}$</li>
-                <li>$\tfrac{3}{10}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A spinner is numbered 1 to 12. The probability of a multiple of
-            3 or of 4 is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\tfrac{7}{12}$</li>
-                <li>$\tfrac12$</li>
-                <li>$\tfrac13$</li>
-                <li>$\tfrac{1}{12}$</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>A jar holds 24 sweets, some red and the rest green. The probability of picking a red one is $\tfrac58$. How many green sweets must be added to make the probability of a red one $\tfrac12$?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\tfrac58 \times 24 = 15$ red sweets</span>
+              <span class="work__why">the formula read backwards</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$24 - 15 = 9$ green sweets</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>a probability of $\tfrac12$ needs as many green as red: 15 green</span>
+              <span class="work__why">an even chance</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$15 - 9 = 6$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>6 green sweets must be added</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>15 red of $24 + 6 = 30$ sweets, and $\dfrac{15}{30} = \dfrac12$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

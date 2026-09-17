@@ -2,22 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>What many trials do</h3>
-
-      <p>Return to the two answers for the die: $0.16$ from fifty rolls, $\tfrac16$ from
-      reasoning. They were close but not equal. Roll it five hundred times and the
-      measured figure will sit closer to $\tfrac16$; roll it five thousand and closer
-      still.</p>
-
-      <p>This is not a coincidence, and it is not a rule about dice. It holds for any
-      repeatable trial, and it has a name.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The Law of Large Numbers</div>
-        <p>As the number of trials grows, the experimental probability of an event
-        settles towards its theoretical probability.</p>
-      </div>
-
       <p>So the two routes of this section are not rivals after all. They are two ways
       to the same number, and the law says they meet. Where the theory is available, it
       tells you where the experiment is heading. Where it is not — the drawing pin, the
@@ -48,8 +32,42 @@
             <p>A die has just been rolled four times and gave a 4 every time. The law of
             large numbers says the fraction of 4s settles to $\tfrac16$ in the long run.</p>
             <p>Does that mean a 4 is now <em>less</em> likely on the fifth roll, so the
-            fraction can come back down? Think carefully before turning the page.</p>
+            fraction can come back down? Think carefully before reading on.</p>
           </div>
+        </div>
+      </div>
+
+      <h3>The gambler's fallacy</h3>
+
+      <p>The answer is no, and getting it wrong is so common that the mistake is named.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>You are playing Snakes and Ladders with a fair die and have just rolled
+          three 6s in a row. What is the probability that the next roll is a 6?</p>
+          <p>It is tempting to argue that four 6s in a row is a rare thing, so the
+          fourth must be unlikely. That argument is about a different question.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>1 favourable outcome (the face 6)</span>
+              <span class="work__why">favourable</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>6 possible outcomes</span>
+              <span class="work__why">possible</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\dfrac{1}{6}$, about 0.167</span>
+              <span class="work__why">probability</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The probability is $\tfrac16$, exactly as it was on the first roll and on
+              every roll before it</span></div>
+          </div>
+          <p>Both statements are true at once, and that is what makes this hard.
+          <em>Before</em> any rolling, four 6s in a row is indeed unlikely. But three of
+          them have now happened; they are facts, not possibilities. What remains is one
+          roll of a fair die, and the die has no way of knowing what it did before. It
+          has no memory, no record, and no obligation to even things up.</p>
         </div>
       </div>
 

@@ -2,67 +2,58 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>The point of the y-axis that is equidistant from $A (-5, 2)$ and
-          $B (3, 4)$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$(0, -1)$</li>
-          <li>$(0, 1)$</li>
-          <li>$(0, 3)$</li>
-          <li>$(-1, 0)$</li>
-        </ol>
-      </div>
+      <h3>Type 4 &middot; A distance with an unknown coordinate</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          A point of the y-axis is $(0, y)$. Equidistant means the two
-          distances are equal, and then their squares are equal too:
-        </p>
-        <div class="work">
-          <p>$(0 + 5)^2 + (y - 2)^2 = (0 - 3)^2 + (y - 4)^2$</p>
-          <p>$29 - 4y = 25 - 8y$</p>
-          <p>$4y = -4$, so $y = -1$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>The distance between $(a, 2)$ and $(7, 6)$ is $5$. Then $a$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$4$ only</li><li>$10$ only</li><li>$4$ or $10$</li><li>$3$ or $11$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(7 - a)^2 + (6 - 2)^2 = 5^2$</span>
+              <span class="work__why">distance formula, squared</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(7 - a)^2 = 25 - 16 = 9$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$7 - a = 3$ or $7 - a = -3$</span>
+              <span class="work__why">$9$ has two square roots</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$a = 4$ or $a = 10$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
+          <p>The two points are $(4, 2)$ and $(10, 2)$, one on each side of $(7, 2)$ and $3$ units from it. Options (a) and (b) each keep one sign of the square root and drop the other. Option (d) takes the shift in $x$ to be $4$: $7 - a = 4$ or $7 - a = -4$ gives $a = 3$ or $a = 11$. It is the shift in $y$ that is $4$.</p>
         </div>
-        <p>
-          The $y^2$ cancels, as it did in stage 1. The point is $(0, -1)$:
-          option (a), and its distance from each of $A$ and $B$ is
-          $\sqrt{34}$. Option (d) is $1$ unit along the wrong axis. Option
-          (c) is the height half way between $A$ and $B$, which would be
-          the answer only if the two were the same distance from the
-          y-axis. They are not: $A$ is $5$ away and $B$ is $3$.
-        </p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>The number of points with whole-number coordinates that are
-          exactly $5$ units from the origin is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$4$</li>
-          <li>$8$</li>
-          <li>$12$</li>
-          <li>$16$</li>
-        </ol>
-      </div>
+      <h3>Type 5 &middot; A point the same distance from two or three points</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          A point $(x, y)$ is $5$ from the origin when $x^2 + y^2 = 25$, so
-          the question is in how many ways $25$ is a sum of two squares.
-        </p>
-        <div class="work work--list">
-          <p>$25 = 25 + 0 \rightarrow (\pm 5, 0), (0, \pm 5)$ &mdash; $4$ points</p>
-          <p>$25 = 9 + 16 \rightarrow (\pm 3, \pm 4), (\pm 4, \pm 3)$ &mdash; $8$ points</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>The point of the y-axis that is equidistant from $A(-5, 2)$ and $B(3, 4)$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$(0, -1)$</li><li>$(0, 1)$</li><li>$(0, 3)$</li><li>$(-1, 0)$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the point is $(0, y)$, and equal distances have equal squares</span>
+              <span class="work__why">a point of the y-axis</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(0 + 5)^2 + (y - 2)^2 = (0 - 3)^2 + (y - 4)^2$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$29 - 4y = 25 - 8y$</span>
+              <span class="work__why">$y^2$ cancels</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$4y = -4$, so $y = -1$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$(0, -1)$ is $\sqrt{25 + 9} = \sqrt{34}$ from $A$ and $\sqrt{9 + 25} = \sqrt{34}$ from $B$</span></div>
+          </div>
+          <p>Option (d) is $1$ unit along the wrong axis. Option (c) is the height half way between $A$ and $B$, which would be the answer only if the two were the same distance from the y-axis. They are not: $A$ is $5$ away and $B$ is $3$. Option (b) is $\sqrt{25 + 1} = \sqrt{26}$ from $A$ but $\sqrt{9 + 9} = \sqrt{18}$ from $B$.</p>
         </div>
-        <p>
-          Twelve in all, option (c), shown in Fig. 1B.4. No other pair of
-          squares adds to $25$. Option (a) counts only the points on the
-          axes. Option (b) forgets those four. Option (d) would allow
-          $(\pm 5, \pm 5)$, which are $\sqrt{50}$ from the origin, not $5$.
-        </p>
       </div>
 
     </div>

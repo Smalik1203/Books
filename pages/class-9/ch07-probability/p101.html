@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">The chapter's ideas, in questions that do not say which one to use.</div>
         </div>
       </div>
 
@@ -34,6 +33,41 @@
         drawing a red one is $\tfrac13$. How many are blue?</p>
       </div>
 
+      <p>
+        Most probability questions hand you the counts and ask for the probability.
+        This one runs the other way, and the formula works just as well read
+        backwards.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">given</span>
+          <span>$P(\text{red}) = \dfrac{\text{red}}{12} = \dfrac13$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$\text{red} = \dfrac{12}{3} = 4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">blue</span>
+          <span>$12 - 4$</span>
+          <span class="chip">8</span>
+        </div>
+      </div>
+
+      <p>
+        Eight blue. Check it the other way round before trusting it: 4 red out of 12
+        is $\tfrac13$, as required.
+      </p>
+
+      <p>
+        What made this work is that the formula is an equation, not an instruction. It
+        relates three quantities — favourable, possible, and the probability — and any
+        two of them fix the third. Given the counts you find the probability. Given the
+        probability and the total you find the count. Given the probability and a count
+        you find the total. The same three lines of algebra serve all three questions.
+      </p>
+
       <div class="c-try">
         <p>A coin is tossed 8 times and comes up heads every time. A student says the
         coin is certainly biased. Another says it is certainly fair, because the
@@ -41,17 +75,16 @@
         actually say?</p>
       </div>
 
-      <div class="c-try">
-        <p>Two dice are rolled and the numbers added. A student writes the sample space
-        as $\{2, 3, 4, \ldots, 12\}$ and concludes that $P(\text{sum} = 2) =
-        \tfrac{1}{11}$. The list is complete and the arithmetic is right. The answer is
-        wrong. Why?</p>
-      </div>
+      <p>
+        Neither student is right, and the interesting part is why each is wrong in a
+        different direction.
+      </p>
 
-      <div class="c-try">
-        <p>A spinner has eight equal sectors numbered 1 to 8. What is the probability
-        that it stops on a number that is both even and greater than 5?</p>
-      </div>
+      <p>
+        The first treats evidence as proof. Eight heads from a fair coin is unlikely —
+        it happens about once in every 256 attempts — but unlikely is not impossible,
+        and once in 256 is not never. The run is evidence of bias, not proof of it.
+      </p>
 
     </div>
   </div>

@@ -5,72 +5,56 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>Two parallel chords of a circle, $24$ cm and $10$ cm long, lie
-          on the same side of the centre and $7$ cm apart (Fig. 5B.3). The
-          radius of the circle is</p>
-        <ol class="c-parts c-parts--alpha">
-          <li>$12$ cm</li>
-          <li>$13$ cm</li>
-          <li>$17$ cm</li>
-          <li>cannot be found</li>
-        </ol>
+      <h3>Type 1 &middot; Symmetry, and the circles through given points</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A circle is drawn together with one of its diameters, $AB$. The number of lines of symmetry of the whole figure is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$1$</li><li>$2$</li><li>$4$</li><li>infinitely many</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>a line of symmetry of the figure must carry the circle onto itself, so it passes through the centre</span>
+              <span class="work__why">Section 5.3</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>it must also carry $AB$ onto itself, so it is either the line $AB$ or the line through the centre at right angles to $AB$</span>
+              <span class="work__why">the diameter stays put</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>both lines work: a fold along either one lands the circle and $AB$ on themselves</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (d) is the circle's own count, before the diameter was drawn. Option (a) counts the line $AB$ and misses the fold that swaps $A$ and $B$. Option (c) is the count for a square.</p>
+        </div>
       </div>
 
-      <figure class="c-figure c-figure--sm">
-        <svg viewBox="0 0 230 185" role="img"
-             aria-label="A circle with centre O and two parallel chords above the centre, a long one near it and a short one far from it, with the perpendicular from O through both">
-          <circle class="dg-fill-d" cx="115" cy="100" r="78"/>
-          <circle class="dg-line" cx="115" cy="100" r="78"/>
-          <path class="dg-line" d="M43 70 L187 70"/>
-          <path class="dg-line" d="M85 28 L145 28"/>
-          <path class="dg-dim" d="M115 100 L115 28"/>
-          <path class="dg-thin" d="M109 70 L109 64 L115 64"/>
-          <path class="dg-thin" d="M109 28 L109 22 L115 22"/>
-          <circle class="dg-fill-teal" cx="115" cy="100" r="3.5"/>
-      
-          <text class="dg-label" x="109" y="110" text-anchor="end">O</text>
-          <text class="dg-dim-label" x="152" y="84" text-anchor="middle">24</text>
-          <text class="dg-dim-label" x="152" y="20" text-anchor="middle">10</text>
-          <text class="dg-dim-label" x="121" y="53">7</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 5B.3</span> &nbsp;Two chords, one
-          perpendicular from the centre. The longer chord is the nearer
-          one, so the $7$ cm is the difference of the two distances.
-        </figcaption>
-      </figure>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          Let the $24$ cm chord lie $d_1$ from the centre and the $10$ cm
-          chord $d_2$. Theorem 8 says the longer chord is the nearer, so
-          $d_2 - d_1 = 7$. The perpendicular from the centre bisects each
-          chord, and the same radius serves both:
-        </p>
-        <div class="work work--list">
-          <p>$r^2 = d_1^2 + 12^2 = d_2^2 + 5^2$</p>
-          <p>$d_2^2 - d_1^2 = 119$</p>
-          <p>$(d_2 - d_1)(d_2 + d_1) = 7(d_2 + d_1) = 119$</p>
-          <p>$d_2 + d_1 = 17$, and $d_2 - d_1 = 7$</p>
-          <p>$d_2 = 12$, &nbsp; $d_1 = 5$</p>
-          <p>$r^2 = 25 + 144 = 169$, so $r = 13$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Two points $A$ and $B$ are $16$ cm apart. How many circles of radius $17$ cm pass through both, and how far is each centre from the segment $AB$?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>a centre $O$ has $OA = OB$, so it lies on the perpendicular bisector of $AB$</span>
+              <span class="work__why">Section 5.4</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the bisector meets $AB$ at its midpoint $M$, so $AM = 8$ cm and $\angle OMA = 90^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$OM^2 = 17^2 - 8^2 = 289 - 64 = 225$, so $OM = 15$ cm</span>
+              <span class="work__why">Pythagoras in $\triangle OMA$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>there is one such point on each side of $AB$</span>
+              <span class="work__why">the bisector crosses $AB$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Two circles, each with its centre $15$ cm from $AB$</span></div>
+          </div>
+          <p>For a radius larger than the smallest possible one, the circles through two points always come in such a pair, one centre on each side of the segment.</p>
         </div>
-        <p>
-          The radius is $13$ cm, option (b); the other chord checks as
-          $144 + 25 = 169$. Option (d) is chosen by seeing two unknown
-          distances and stopping, but two unknowns need two equations and
-          the second is the chapter's own: one circle, one radius, for both
-          chords. Option (a) is $d_2$, and option (c) is $d_1 + d_2$, which
-          is not a length in the figure at all.
-        </p>
       </div>
 
     </div>

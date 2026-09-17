@@ -2,69 +2,47 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>The distance between $(a, 2)$ and $(7, 6)$ is $5$. Then $a$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$4$ only</li>
-          <li>$10$ only</li>
-          <li>$4$ or $10$</li>
-          <li>$3$ or $11$</li>
-        </ol>
-      </div>
+      <h3>Type 3 &middot; The distance between two points</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          The shift in $y$ is $6 - 2 = 4$, and the distance is $5$.
-        </p>
-        <div class="work work--list">
-          <p>$(7 - a)^2 + 4^2 = 25$</p>
-          <p>$(7 - a)^2 = 9$</p>
-          <p>$7 - a = 3$ &nbsp;or&nbsp; $7 - a = -3$</p>
-          <p>$a = 4$ &nbsp;or&nbsp; $a = 10$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Find the distance between $P(-3, 7)$ and $Q(5, -8)$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>shift in $x$: $5 - (-3) = 8$; shift in $y$: $-8 - 7 = -15$</span>
+              <span class="work__why">subtract coordinates</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\sqrt{8^2 + (-15)^2} = \sqrt{64 + 225} = \sqrt{289} = 17$</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$PQ = 17$ units</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>from $Q$ to $P$ the shifts are $-8$ and $15$, and their squares are the same $64$ and $225$</span></div>
+          </div>
         </div>
-        <p>
-          Option (c). The two points are $(4, 2)$ and $(10, 2)$, one on each
-          side of $(7, 2)$ and $3$ units from it. Options (a) and (b) each
-          keep one sign of the square root and drop the other. Option (d)
-          comes from $7 - a = \pm 4$, which would need the other shift to
-          be $3$. It is $4$.
-        </p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>Which of these points is farthest from the origin?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$(7, 1)$</li>
-          <li>$(5, 5)$</li>
-          <li>$(-6, 4)$</li>
-          <li>$(0, -7)$</li>
-        </ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          The distance of $(x, y)$ from the origin is $\sqrt{x^2 + y^2}$.
-          To compare four of them there is no need for a single square
-          root: the larger distance has the larger square.
-        </p>
-        <div class="work work--list">
-          <p>$7^2 + 1^2 = 50$</p>
-          <p>$5^2 + 5^2 = 50$</p>
-          <p>$(-6)^2 + 4^2 = 52$</p>
-          <p>$0^2 + (-7)^2 = 49$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Which of these points is farthest from the origin?</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$(7, 1)$</li><li>$(5, 5)$</li><li>$(-6, 4)$</li><li>$(0, -7)$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the larger distance has the larger square, so compare $x^2 + y^2$</span>
+              <span class="work__why">no root needed</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$7^2 + 1^2 = 50$ and $5^2 + 5^2 = 50$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$(-6)^2 + 4^2 = 52$ and $0^2 + (-7)^2 = 49$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
+          <p>Option (d) has the largest single coordinate, but its other coordinate is $0$ and adds nothing. Options (a) and (b) are equally far from $O$, which is easy to miss without the squares. The negative coordinate in (c) makes no difference to the distance, because it is squared.</p>
         </div>
-        <p>
-          The largest is $52$, so the farthest point is $(-6, 4)$: option
-          (c). Option (d) has the largest single coordinate, but its other
-          coordinate is $0$ and adds nothing. Options (a) and (b) are
-          equally far from $O$, which is easy to miss without the squares.
-          And the negative coordinate in (c) makes no difference to the
-          distance, because it is squared.
-        </p>
       </div>
 
     </div>

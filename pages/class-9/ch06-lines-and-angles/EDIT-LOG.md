@@ -1,5 +1,177 @@
 # Class 9 · Mathematics I · Chapter 6 — Lines and the Angles They Make
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked by hand as the model for the
+other seven Class 9 chapters. Page move, examples, Beyond the Book and
+answers were done in one pass, and every check was run on the chapter.
+
+**Pages: 30 before (20 body + 10 Beyond, Crown Quarto), 35 after (19 body +
+16 Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`, and the body was
+refitted once.
+
+**All ten body examples set as steps.** Class 9's examples are not
+question-only panels, as Class 10's were. The working is already inside
+the panel, but as prose and `.eq` lines; Examples 5 and 7, and the proofs
+outside the examples, use `.work` rows with the reason in a `.chip`.
+Each example is now *Solution*, Steps and *Answer*, with a *Check* row where
+the old text checked the answer. A remark that is not a step stays at the
+foot of the panel. Example 10 (a proof) is one statement to a row.
+- The coaching line in Example 5, *Take them one at a time, and name the
+  reason each time*, went: the reason column now does what it said.
+- Example 7's lead-in (*As it stands there is nothing to work with…*) stays,
+  as a paragraph before *Solution*.
+- The Think and Reflect after Example 7 said *the third line of the proof*;
+  it now says *its Step 5*.
+
+**Every reason chip in the body is now a `.work__why`**, including the
+theorem proofs outside examples (vertically opposite angles, alternate and
+co-interior angles, the angle sum, the exterior angle). Class 9 had 118
+chips doing a reason's job and no `.work__why` at all. The class and the
+words changed, nothing else. The proofs keep their bare row numbers.
+
+**Verified** by `build/check-body-maths.mjs`: 216 expressions and 40
+numbers, none lost and none added. The tool now treats a bare row number
+(`<span class="work__label">1</span>`) as a label, because Example 7's rows
+1–3 became Steps 1–3.
+
+**Fig. 6.7 redrawn.** As drawn, A, E and C lay almost in a straight line, so
+the figure showed $\angle AEC$ near $180^\circ$ and $\angle ECD$ near
+$146^\circ$, against the example's $75^\circ$ and $31^\circ$. $E$ now sits
+to the right of $A$ and $C$, and the drawn angles are $44^\circ$,
+$31^\circ$ and $75^\circ$ (checked from the coordinates by
+`check-numbers.mjs`). The text is unchanged.
+
+**Fig. 6.3 reprinted inside Example 1.** The example names *Fig. 6.3
+(right)*, which prints on page 3, a recto, with the example overleaf on
+page 4. The right-hand half is repeated in the panel, captioned *(repeated
+from Section 6.3, for Example 1)*, with no renumbering.
+
+**Summary item 10:** *an hard figure* → *a hard figure*.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | Q2 and the opening kept word for word; **Q1, Q3, Q4 and Q5 replaced** (below); `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **14 stepped examples** under eight `Type` heads; old Problem 3 is Example 11, Problem 1 is Example 5 and Problem 2 is Example 9, both with new numbers; Problems 4 and 5 were replaced |
+| 3 Problem Sets → **Practice** | 3 sets, 25 questions | **one run of 31** in six forms |
+| 4 Answers & Takeaways → **Answers** | key and why four options are wrong | key, every other answer, why the options are wrong for eight |
+
+**Stage 1 answered the body four times,** so the no-give-away rule won
+(DESIGN-MATHS §6a), and each item was replaced with one of the same kind:
+- Q1 was Example 10 with $\angle A = 50^\circ$ → the angle between the
+  bisector and the altitude from $A$, $\tfrac{1}{2}(\angle B - \angle C)$
+  (Fig. 6B.2, new);
+- Q3 was Exercise Set 6.2 Q6 and End-of-Chapter Q14 (bisectors of
+  co-interior angles) → the four bisectors at a crossing make two
+  perpendicular lines;
+- Q4 was End-of-Chapter Q12 word for word (co-interior angles adding to
+  $174^\circ$) → two parallel mirrors send a ray out parallel to itself
+  (Fig. 6B.4, new);
+- Q5 was End-of-Chapter Q11 (exterior bisectors) → one interior and one
+  exterior bisector meet at $\tfrac{1}{2}\angle A$.
+Q2's figure is renumbered Fig. 6B.3. The closing paragraph was rewritten to
+describe the new five.
+
+**Other give-aways fixed:** old Problem 2 was Exercise Set 6.3 Q2 (ratio
+$2 : 3 : 4$), now $3 : 5 : 7$; old Problem 1's option (d) printed $x = 38$
+and $91^\circ$, the answer to Exercise Set 6.1 Q3, now other numbers; old
+Problem 4 was Example 10 with a number; old Problem 5 (equal co-interior
+angles between parallels are $90^\circ$) half-answered Exercise Set 6.2
+Q3 (ii) and was replaced; Set C Q3 is now Example 14 and left Practice.
+`check-no-repeats` reports five pairs above 50%, each the same kind of
+question with different numbers or a different pair of angles.
+
+**Worked examples in the chapter: 24** (10 body + 14 Beyond). Every topic
+has a type: complements and supplements; linear pairs, vertically opposite
+angles and angles round a point; angles with parallel lines; proving lines
+parallel, including through a third line (the audit's one gap for this
+chapter); the angle sum; the exterior angle theorem; drawing a line that
+was not given (Fig. 6B.5, new, $E$ outside the parallels); proofs.
+
+**`ANSWERS.md` written** for Exercise Sets 6.1–6.3, the seventeen
+end-of-chapter questions, the three Think and Reflect boxes, Stage 1, and
+all 31 practice questions.
+
+### Verified
+
+`check-numbers.mjs` passes **320 claims**. It evaluates 88 printed
+identities, and checks every equation in one unknown against the value the
+same example, key row or `ANSWERS.md` item solves it to. It also:
+- re-derives each body and Beyond example's Answer row;
+- reads every exercise answer back off `ANSWERS.md`, including End Q13's
+  count of ten by search;
+- tests Example 10, End Q11 and Stage 1 Q1 and Q5 over hundreds of
+  triangles;
+- measures Figs 6.7, 6B.2, 6B.4 and 6B.5 from their coordinates against the
+  angles they are printed with;
+- checks every multiple-choice question has exactly one right option,
+  matching the key, and derives each assertion–reason letter;
+- checks that `ANSWERS.md`'s key and practice working agree with the page.
+
+**Break tests: 13 of 13 caught** (body answers, a Beyond step, key letters,
+key rows, a lettered part, an option, `ANSWERS.md` values and key, a figure
+coordinate). The first run missed two:
+- Example 12's $k$ was checked row by row, so the row that uses $k$ never
+  saw the row that solves it. An example is now one block, and a letter
+  solved twice in one block (Example 5's wrong-reading remark) is tried
+  with each value;
+- key row 26 still held "96" elsewhere after the break, so it is now
+  checked as a phrase.
+
+The check also found Example 2's remark set up a wrong reading without
+finishing it; it now ends *gives $x = 26$*, which is option (d).
+
+**Fitting:** nothing is clipped and nothing runs into the margin (page 32
+ran 3.7 mm until its last question was settled forward). `orphans` finds 0
+stranded openers, `check-labels` finds no collisions, and `fit-options`
+passes. Two Beyond labels were moved by hand after reading the proofs
+(Fig. 6B.2's 40°, Fig. 6B.5's 30° and ?). I read the proofs of pages 4, 12,
+16, 20, 22, 29 and 34.
+
+**Colour:** the figures are black line drawings with lettered points; no
+meaning rests on a tint. Pages 4, 12, 20, 22 and 29 were run through
+`check-colour`.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 5 | 87% | a Think and Reflect, a panel |
+| 6 | 80% | Example 3, a panel |
+| 7 | 83% | the § 6.5 head with its paragraph |
+| 13 | 82% | Fig. 6.8 |
+| 15 | 74% | Example 9, a panel |
+| 16 | 86% | a Think and Reflect, a panel |
+| 18 | 62% | the chapter summary, a panel |
+| 19 | 48% | the last body page (`data-close`) |
+| 23 | 68% | the Solved Examples stage head, which needs its first example under it |
+| 24–26, 28 | 69–75% | a `Type` head with its example, or an example panel |
+| 30, 33 | 80–83% | practice blocks too tall for the gap |
+| 34 | 70% | **the Answers stage, which always opens a page** |
+| 35 | 44% | the last page |
+
+### Flagged, not done
+
+- **End-of-Chapter Q4 is ambiguous.** With the usual lettering,
+  $\angle AGH$ and $\angle GHD$ are alternate angles and equal, so a ratio
+  of $5 : 4$ is impossible. `ANSWERS.md` answers it as co-interior
+  ($100^\circ$, $80^\circ$) and says so. It needs a figure or a letter
+  changed, which is a body edit.
+- **End-of-Chapter Q14 repeats Exercise Set 6.2 Q6** word for word, then
+  asks the reader to compare the two workings. A body question, left.
+- **End-of-Chapter Q7's answers are thirds of a degree**
+  ($63\tfrac{1}{3}^\circ$ and so on). Correct, but unusual for the form.
+- **The chapter's historical remark** (p015, non-Euclidean geometries in
+  the nineteenth century) has no source recorded.
+- Stage 1's mirror question states the law of reflection as a given; it is
+  not taught in this chapter.
+
 Language edit, 30 pages (p001–p020 chapter proper, p101–p110 Beyond the Book).
 Build after editing: 30 pages, all pages fit, 0 stranded openers, no label
 collisions, every option row fits. Every answer re-derived — Examples 1–10, all

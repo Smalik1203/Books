@@ -2,79 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>An auto-rickshaw charges &#8377;$25$ for the first $2$ km and
-          &#8377;$15$ for every kilometre after that. The fare for $n$ km is
-          $15n - 5$ rupees for $n \geq 2$. The fare for a $1$ km ride is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>&#8377;$10$</li>
-          <li>&#8377;$15$</li>
-          <li>&#8377;$25$</li>
-          <li>&#8377;$40$</li>
-        </ol>
+      <h3>Type 3 &middot; Word problems that become a linear equation</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A father is $24$ years older than his son. In $3$ years' time the father will be three times as old as the son. Find their present ages.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let the son be $x$ years old; the father is $x + 24$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>in $3$ years they will be $x + 3$ and $x + 27$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$x + 27 = 3(x + 3)$</span>
+              <span class="work__why">three times as old</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$x + 27 = 3x + 9$, so $2x = 18$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$x = 9$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>the son is $9$ years old and the father $33$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>in $3$ years they will be $12$ and $36$, and $36 = 3 \times 12$</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          Putting $n = 1$ into the rule does give an answer.
-        </p>
-        <div class="work">
-          <p>$15(1) - 5 = 10$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A purse holds only <span class="nb">&#8377;$5$</span> coins and <span class="nb">&#8377;$2$</span> coins, $25$ coins in all, worth <span class="nb">&#8377;$77$</span>. How many of each are there?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let there be $x$ five-rupee coins; then there are $25 - x$ two-rupee coins</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$5x + 2(25 - x) = 77$</span>
+              <span class="work__why">their value in rupees</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$5x + 50 - 2x = 77$, so $3x = 27$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$x = 9$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$9$ five-rupee coins and $16$ two-rupee coins</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$9 + 16 = 25$ coins, and $45 + 32 = 77$ rupees</span></div>
+          </div>
         </div>
-        <p>
-          But the rule was found in Example 8 from the rows for $2$ km
-          onwards, and it holds only there. The fare for $1$ km comes from
-          the words instead: the first $2$ km cost a flat &#8377;$25$, and a
-          $1$ km ride is inside that first $2$ km.
-        </p>
-        <div class="work">
-          <p>fare for $1$ km $=$ &#8377;$25$</p>
-        </div>
-        <p>
-          Option (c). Option (a) is the &#8377;$10$ above: the rule works
-          there as arithmetic, but not as a fare. Option (b) is the rate for
-          each extra kilometre. Option (d) is $15(3) - 5$, the fare for $3$
-          km. A rule fitted to part of a table holds only on that part.
-        </p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>A candle is $24$ cm tall two hours after it is lit and $15$ cm
-          tall five hours after. It burns at a steady rate. Its height when
-          it was lit was</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$18$ cm</li>
-          <li>$27$ cm</li>
-          <li>$30$ cm</li>
-          <li>$33$ cm</li>
-        </ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          A steady rate means the height is $h = at + b$. Three hours pass
-          between the readings.
-        </p>
-        <div class="work work--list">
-          <p>$3a = 15 - 24 = -9$</p>
-          <p>$a = -3$</p>
-        </div>
-        <p>
-          It was lit at $t = 0$, two hours before the first reading.
-        </p>
-        <div class="work work--list">
-          <p>$b = 24 - 2(-3) = 30$</p>
-        </div>
-        <p>
-          Option (c). The rule is $h = 30 - 3t$, and at $t = 5$ it gives
-          $15$. Option (b) adds only one hour's loss. Option (d) adds three
-          hours' loss, the whole gap between the readings. Option (a)
-          takes $6$ cm away, going forward in time instead of back.
-        </p>
       </div>
 
     </div>

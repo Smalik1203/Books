@@ -2,42 +2,83 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Why the other options are wrong</h3>
+      <h3>Type 8 &middot; Proofs</h3>
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B2</span>
-          <span>Both statements are true, so (c) and (d) are out. But
-            equal radii give only an isosceles triangle. The length
-            $r\sqrt{2}$ needs the right angle at the centre and the
-            Baudhāyana–Pythagoras theorem, and R mentions neither. So
-            (b).</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 15</div>
+        <div class="c-example__body">
+          <p>$ABCD$ is a cyclic quadrilateral with $AB \parallel DC$. Prove that $AD = BC$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\angle A + \angle D = 180^\circ$</span>
+              <span class="work__why">co-interior, $AB \parallel DC$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle B + \angle D = 180^\circ$</span>
+              <span class="work__why">Theorem 11</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle A = \angle B$</span>
+              <span class="work__why">Steps 1 and 2</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>drop the perpendiculars $DP$ and $CQ$ onto the line $AB$; then $DP = CQ$</span>
+              <span class="work__why">the gap between parallels</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$\triangle APD \cong \triangle BQC$</span>
+              <span class="work__why">AAS, from Steps 3 and 4</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$AD = BC$, as corresponding sides of congruent triangles</span></div>
+          </div>
+          <p>Example 13 went the other way, from equal sides to a circle. Together they say that a trapezium is cyclic exactly when its two non-parallel sides are equal.</p>
         </div>
-        <div class="work__row">
-          <span class="work__label">C2</span>
-          <span>Call the angles $x$, $2x$, $3x$ and $kx$. The first and
-            third are opposite, so $4x = 180^\circ$ and $x = 45^\circ$.
-            Then $2x + kx = 180^\circ$ gives $90 + 45k = 180$, so $k = 2$.
-            Option (b) comes from pairing the second angle with the third,
-            which are neighbours and not opposites.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C3</span>
-          <span>$A$ is on the major arc $BC$, so $\angle BOC = 2 \times
-            40^\circ = 80^\circ$. Equal chords $AB$ and $AC$ subtend equal
-            angles at the centre, and the three angles at $O$ add to
-            $360^\circ$, so $\angle AOB = \tfrac{1}{2}(360^\circ - 80^\circ)
-            = 140^\circ$. Option (a) is $\angle BOC$, and (d) is twice
-            it.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C5</span>
-          <span>A $30$ cm chord lies $\sqrt{17^2 - 15^2} = 8$ cm from the
-            centre. A line through $P$ is at most $OP = 8$ cm from $O$,
-            and exactly $8$ cm only when it is at right angles to $OP$. So
-            there is one such chord, option (b). Option (c) expects a
-            second one on the other side, but every other chord through
-            $P$ is nearer the centre and so longer.</span>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>Two circles cross at $A$ and $B$, as in Fig. 5B.6. $AC$ is a diameter of one circle and $AD$ is a diameter of the other. Prove that $C$, $B$ and $D$ lie on one straight line.</p>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="10 30 210 132" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="Two circles crossing at A and B. AC is a diameter of the left circle and AD a diameter of the right one. C, B and D lie on one line">
+                <circle class="dg-fill-d" cx="70" cy="95" r="50"/>
+                <circle class="dg-fill-d" cx="150" cy="95" r="60"/>
+                <circle class="dg-line" cx="70" cy="95" r="50"/>
+                <circle class="dg-line" cx="150" cy="95" r="60"/>
+                <path class="dg-line" d="M103.13 57.55 L36.87 132.45"/>
+                <path class="dg-line" d="M103.13 57.55 L196.87 132.45"/>
+                <path class="dg-thin" d="M103.13 57.55 L103.13 132.45"/>
+                <path class="dg-dim" d="M36.87 132.45 L196.87 132.45"/>
+                <path class="dg-thin" d="M97.13 132.45 L97.13 126.45 L109.13 126.45 L109.13 132.45"/>
+                <circle class="dg-fill-teal" cx="70" cy="95" r="2.6"/>
+                <circle class="dg-fill-teal" cx="150" cy="95" r="2.6"/>
+                <text class="dg-label" x="103.13" y="45" text-anchor="middle">A</text>
+                <text class="dg-label" x="103.13" y="148" text-anchor="middle">B</text>
+                <text class="dg-label" x="31" y="141" text-anchor="end">C</text>
+                <text class="dg-label" x="202" y="141">D</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 5B.6</span> Each diameter gives a
+              right angle at $B$. The line $CBD$ is what is to be proved
+              straight.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\angle ABC = 90^\circ$</span>
+              <span class="work__why">angle in a semicircle</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle ABD = 90^\circ$</span>
+              <span class="work__why">angle in a semicircle</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle ABC + \angle ABD = 180^\circ$</span>
+              <span class="work__why">adding</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$BC$ and $BD$ lie on opposite sides of $AB$, and the two angles make a straight angle</span>
+              <span class="work__why">a linear pair, read backwards</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$C$, $B$ and $D$ lie on one straight line</span></div>
+          </div>
+          <p>Neither centre was used. Each diameter was there only to give a right angle at $B$.</p>
         </div>
       </div>
 

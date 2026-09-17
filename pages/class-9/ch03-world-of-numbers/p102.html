@@ -3,54 +3,39 @@
     <div class="page__main">
 
       <p>
-        The fraction is in lowest terms, and $80 = 2^4 \times 5$. The only
-        prime factors are $2$ and $5$, so the decimal terminates. To see where
-        it stops, do what Example 8 did and turn the denominator into a power
-        of ten. There are four $2$s and one $5$, so three more $5$s are
-        needed.
-      </p>
-
-      <div class="eq">
-        $$\dfrac{7}{80} = \dfrac{7 \times 125}{2^4 \times 5^4} = \dfrac{875}{10000} = 0.0875$$
-      </div>
-
-      <p>
-        It stops after four places. Notice that the four came from $2^4$, the
-        larger of the two powers. The single $5$ was matched by the $2$s
-        without any help. A denominator of $2^3 \times 5$ would give three
-        places, and so would $5^3$ on its own. We knew the length of the
-        decimal before we knew any of its digits.
+        Now $50 = 2 \times 5^2$ has no prime factor but $2$ and $5$, so the
+        decimal terminates, and it stops after two places. The $3$ in $150$
+        was never part of the number. It belonged to one way of writing it,
+        and cancelling removed it. Cancel first, then read the denominator.
       </p>
 
       <div class="c-try">
-        <p>Given that $\sqrt{6}$ is irrational, show that
-          $\sqrt{2} + \sqrt{3}$ is irrational too.</p>
+        <p>A number $x$ has $x^2 = 1 + \sqrt{2}$. Given that $\sqrt{2}$ is
+          irrational, show that $x$ is irrational too.</p>
       </div>
 
       <p>
         The first question was settled by supposing the opposite, and the
-        same opening works here. Suppose $\sqrt{2} + \sqrt{3}$ were a rational
-        $r$. Squaring both sides of an equation keeps it true, and squaring a
-        sum of two roots is the one move that reduces the number of roots:
+        same opening works here, even though $x$ itself is never found.
+        Suppose $x$ were rational. The rationals are closed under
+        multiplication, so $x \times x = x^2$ would be rational as well, and
       </p>
 
       <div class="eq">
-        $$\left(\sqrt{2} + \sqrt{3}\right)^2 = 2 + 2\sqrt{6} + 3 = 5 + 2\sqrt{6}$$
+        $$\sqrt{2} = x^2 - 1$$
       </div>
 
       <p>
-        So $5 + 2\sqrt{6} = r^2$, and rearranging gives
-        $\sqrt{6} = \tfrac{1}{2}\left(r^2 - 5\right)$. The right side is built
-        from a rational by subtracting and halving, and the rationals are
-        closed under both. So $\sqrt{6}$ would be rational, and it is not.
-        The supposition fails.
+        The right side is a difference of two rationals, so $\sqrt{2}$ would
+        be rational, and it is not. The supposition fails, and $x$ is
+        irrational.
       </p>
 
       <p>
-        The identity that did the work is $(a + b)^2 = a^2 + 2ab + b^2$ from
-        Chapter 4, and what makes it useful here is that $a^2$ and $b^2$ come
-        out whole and only the middle term keeps a root. Squaring is worth
-        trying on any sum of two surds for exactly that reason.
+        What the argument used is worth stating on its own: the square of a
+        rational number is rational. So a number whose square is irrational
+        must be irrational itself. The statement does not turn round.
+        $\sqrt{2}$ is irrational, and its square is $2$.
       </p>
 
       <div class="c-try">
@@ -64,6 +49,35 @@
         multiplier pushes the part that does not repeat past the point. The
         second moves the repeating block on by exactly one cycle, so that the
         two tails match and cancel:
+      </p>
+
+      <div class="work">
+        <p>$10x = 4.272727\ldots$</p>
+        <p>$1000x = 427.272727\ldots$</p>
+        <p>$990x = 423$, &nbsp;so&nbsp;
+          $x = \dfrac{423}{990} = \dfrac{47}{110}$</p>
+      </div>
+
+      <p>
+        Look at the denominator before the cancelling: $990$ is two $9$s and
+        one $0$, one $9$ for each repeating digit and one $0$ for the digit
+        that does not. The denominator is a record of the decimal's shape.
+        And $110 = 2 \times 5 \times 11$, whose factor of $11$ is what keeps
+        the decimal from terminating &mdash; the same test as in the second
+        question, read in the other direction.
+      </p>
+
+      <div class="c-try">
+        <p>A student says there is no rational number between
+          $\dfrac{2}{7}$ and $\dfrac{3}{7}$, since no whole number lies
+          between the numerators $2$ and $3$. Is the student right?</p>
+      </div>
+
+      <p>
+        No, and one example settles it. The average of the two,
+        $\tfrac{1}{2}\left(\tfrac{2}{7} + \tfrac{3}{7}\right) = \tfrac{5}{14}$,
+        lies strictly between them, since $\tfrac{2}{7} = \tfrac{4}{14}$ and
+        $\tfrac{3}{7} = \tfrac{6}{14}$. So the claim was false.
       </p>
 
     </div>

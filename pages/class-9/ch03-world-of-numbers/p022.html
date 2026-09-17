@@ -3,76 +3,79 @@
     <div class="page__main">
 
       <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__tab">Example 11</div>
         <div class="c-example__body">
-          <p>Write $0.\overline{6}$ in the form $\dfrac{p}{q}$.</p>
+          <p>Write $0.\overline{45}$ in the form $\dfrac{p}{q}$.</p>
           <p>
-            Now the digits never stop, so there is nothing to read off. The
-            trick is to make two numbers whose infinite tails are
-            <em>identical</em>, and then subtract, so that the tails cancel and
-            leave something finite behind.
+            Same idea, but the repeating block is two digits long, so the shift
+            has to be two places to bring the tails into line.
           </p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label">Step 1</span>
-              <span>Let $x = 0.6666\ldots$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 2</span>
-              <span>One digit repeats, so multiply by $10^1$:
-              $\;10x = 6.6666\ldots$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 3</span>
-              <span>Subtract. Both tails are $.6666\ldots$, so they vanish:
-              $\;10x - x = 6.6666\ldots - 0.6666\ldots$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">Step 4</span>
-              <span>$9x = 6$, so $x = \dfrac{6}{9} = \dfrac{2}{3}$.</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Let $x = 0.454545\ldots$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\;100x = 45.454545\ldots$</span>
+              <span class="work__why">two digits repeat: multiply by $10^2$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\;100x - x = 45.4545\ldots - 0.4545\ldots$</span>
+              <span class="work__why">subtract</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$99x = 45$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = \dfrac{45}{99} = \dfrac{5}{11}$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>Example 7 divided 5 by 11 and got $0.\overline{45}$ in the first place</span></div>
           </div>
           <p>
-            Check: $2 \div 3 = 0.6666\ldots$ Notice why the multiplier was 10
-            and not 100 — one repeating digit needs a shift of exactly one
-            place, or the tails would not have lined up.
+            The two directions meet.
           </p>
         </div>
       </div>
 
       <p>
-        The multiplier there was chosen to match the cycle: one repeating digit,
-        one shift. That is not a rule to memorise but the reason the two tails
-        lined up, and a longer cycle will need a longer shift.
+        Two examples in, a pattern in the denominators is already showing. One
+        repeating digit left $9x = 6$; two repeating digits left $99x = 45$. The
+        subtraction always removes a power of ten and leaves one behind, so what
+        multiplies $x$ is $10^{n} - 1$ — a string of $n$ nines, and nothing else
+        is possible.
       </p>
 
       <p>
-        It is worth saying plainly what has just been done, because the same
-        move settles every repeating decimal there is. An infinite tail cannot
-        be subtracted away on its own — but two numbers carrying the
-        <em>identical</em> tail can be subtracted from each other, and the
-        tails go together. Choosing the multiplier is nothing more than
-        arranging for those two tails to match.
+        Read backwards that is a small gift. A cycle of $n$ digits, starting
+        immediately, is simply that block of digits over $n$ nines: so
+        $0.\overline{7} = \tfrac{7}{9}$, $0.\overline{45} = \tfrac{45}{99}$ and
+        $0.\overline{123} = \tfrac{123}{999}$, each waiting only to be reduced.
       </p>
 
       <p>
-        It is worth seeing the move fail once, because that is what shows which
-        part of it was doing the work. Suppose the same shift of one place were
-        tried on $0.\overline{45}$, whose cycle is two digits long.
+        Turn it round once more and it says something about the nines
+        themselves. $\tfrac{1}{9} = 0.\overline{1}$, $\tfrac{1}{99} =
+        0.\overline{01}$, $\tfrac{1}{999} = 0.\overline{001}$ — and the reason
+        $9$ and $99$ behave this way is the reason $10$ and $100$ do not: they
+        are the numbers a power of ten falls just short of.
       </p>
 
-      <div class="work work--centred">
-        <p>$10x = 4.545454\ldots$ &nbsp;and&nbsp; $x = 0.454545\ldots$</p>
-        <p>$9x = 4.090909\ldots$</p>
-      </div>
+      <p>
+        Reducing the fraction hides all this, of course. Once $\tfrac{45}{99}$
+        has become $\tfrac{5}{11}$ there is no $99$ left to see, and coming the
+        other way there is no obvious reason why $11$ should give a cycle of two
+        digits. But the $99$ has not gone anywhere: $11$ divides $99$, which is
+        $10^{2} - 1$, and two is the length of the cycle.
+      </p>
 
       <p>
-        Nothing is wrong with that line — it is perfectly true — but it has not
-        got us anywhere, because the right-hand side is still an infinite
-        decimal. The tails did not match, so they did not cancel, and we are
-        left with the same kind of object we began with. The multiplier has to
-        move the number by a whole cycle, and that is the only thing being asked
-        of it.
+        That works generally, and it can be checked on a case worth checking.
+        Seven divides $999999$, which is $10^{6} - 1$, and no shorter string of
+        nines. So $\tfrac{1}{7}$ should repeat with a cycle of exactly six
+        digits. Divide it out and it does.
+      </p>
+
+      <p>
+        In both of those the repetition began immediately after the decimal
+        point. Very often it does not — a digit or two occurs once and only
+        then does the cycle start, and a single shift can no longer bring the
+        tails into agreement.
       </p>
 
     </div>

@@ -2,83 +2,59 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          Theorem 12 is the test: a quadrilateral is cyclic exactly when two
-          <em>opposite</em> angles add to $180^\circ$.
-        </p>
-        <div class="work work--list">
-          <p>(b) rectangle: &nbsp; $90^\circ + 90^\circ = 180^\circ$</p>
-          <p>(a) rhombus: &nbsp; equal opposite angles, $180^\circ$ only if each is $90^\circ$</p>
-          <p>(c) parallelogram: &nbsp; $60^\circ + 60^\circ \ne 180^\circ$</p>
-          <p>(d) &nbsp; $100^\circ + 100^\circ = 200^\circ$</p>
+      <h3>Type 4 &middot; Comparing chords by their distance from the centre</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>Two parallel chords of a circle, $24$ cm and $18$ cm long, lie on the same side of the centre and $3$ cm apart (Fig. 5B.3). The radius of the circle is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$12$ cm</li><li>$15$ cm</li><li>$21$ cm</li><li>cannot be found</li></ol>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="0 14 230 172" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A circle with centre O and two parallel chords above the centre, a long one nearer the centre and a short one farther out, with the perpendicular from O through both">
+                <circle class="dg-fill-d" cx="115" cy="100" r="78"/>
+                <circle class="dg-line" cx="115" cy="100" r="78"/>
+                <path class="dg-line" d="M52.6 53.2 L177.4 53.2"/>
+                <path class="dg-line" d="M68.2 37.6 L161.8 37.6"/>
+                <path class="dg-dim" d="M115 100 L115 37.6"/>
+                <path class="dg-thin" d="M109 53.2 L109 47.2 L115 47.2"/>
+                <path class="dg-thin" d="M109 37.6 L109 31.6 L115 31.6"/>
+                <circle class="dg-fill-teal" cx="115" cy="100" r="3.5"/>
+                <text class="dg-label" x="109" y="112" text-anchor="end">O</text>
+                <text class="dg-dim-label" x="189" y="58">24</text>
+                <text class="dg-dim-label" x="172" y="32">18</text>
+                <text class="dg-dim-label" x="120" y="50">3</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 5B.3</span> Two chords, one
+              perpendicular from the centre. The longer chord is the nearer one,
+              so the $3$ cm is the difference of the two distances.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let the $24$ cm chord lie $d_1$ from the centre and the $18$ cm chord $d_2$; the longer chord is the nearer, so $d_2 - d_1 = 3$</span>
+              <span class="work__why">Theorem 8</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$r^2 = d_1^2 + 12^2 = d_2^2 + 9^2$</span>
+              <span class="work__why">one radius for both</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$d_2^2 - d_1^2 = 144 - 81 = 63$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$(d_2 - d_1)(d_2 + d_1) = 3(d_2 + d_1) = 63$, so $d_2 + d_1 = 21$</span>
+              <span class="work__why">difference of squares</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$d_2 = 12$ and $d_1 = 9$</span>
+              <span class="work__why">from Steps 1 and 4</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>$r^2 = 81 + 144 = 225$, so $r = 15$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>The other chord checks: $144 + 81 = 225$. Option (d) is chosen by seeing two unknown distances and stopping, but two unknowns need two equations, and the second is the chapter's own: one circle, one radius, for both chords. Option (a) is $d_2$, and option (c) is $d_1 + d_2$, which is not a length in the figure at all.</p>
         </div>
-        <p>
-          Only (b) must be cyclic. A rhombus with a right angle is a square,
-          so some rhombuses are cyclic but a rhombus need not be. In (d) it
-          is the neighbours $100^\circ + 80^\circ$ that add to $180^\circ$,
-          which is how it gets chosen. Exercise Set 5.7 had already shown
-          the rectangle is the only parallelogram a circle passes through.
-        </p>
       </div>
-
-      <p>
-        That question turned on one word. It asked which of the four
-        <em>must</em> lie on a circle, and (a) fails not because no rhombus is
-        cyclic but because not every one is — the squares among them are, and
-        the rest are not.
-      </p>
-      <p>
-        A question asking which <em>can</em> lie on a circle would have taken
-        (a) and (b) both, and left (c) and (d) out. It is worth reading that
-        word before the options rather than after, since the same four options
-        can serve either question.
-      </p>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>Two circles of radii $10$ cm and $17$ cm have centres $A$ and
-          $B$ that are $21$ cm apart. They cross at $P$ and $Q$
-          (Fig. 5B.4). The length of $PQ$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$8$ cm</li>
-          <li>$15$ cm</li>
-          <li>$16$ cm</li>
-          <li>$20$ cm</li>
-        </ol>
-      </div>
-
-      <figure class="c-figure c-figure--sm">
-        <svg viewBox="0 5 230 165" role="img"
-             aria-label="Two overlapping circles with centres A and B, crossing at P and Q. The line of centres AB cuts the common chord PQ at right angles at M">
-          <circle class="dg-fill-d" cx="60" cy="85" r="40"/>
-          <circle class="dg-fill-d" cx="144" cy="85" r="68"/>
-          <circle class="dg-line" cx="60" cy="85" r="40"/>
-          <circle class="dg-line" cx="144" cy="85" r="68"/>
-          <path class="dg-thin" d="M60 85 L144 85"/>
-          <path class="dg-thin" d="M60 85 L84 53 M144 85 L84 53"/>
-          <path class="dg-line" d="M84 53 L84 117"/>
-          <path class="dg-thin" d="M84 79 L90 79 L90 85"/>
-          <circle class="dg-fill-teal" cx="60" cy="85" r="3.5"/>
-          <circle class="dg-fill-teal" cx="144" cy="85" r="3.5"/>
-          <circle class="dg-fill-c" cx="84" cy="53" r="3"/>
-          <circle class="dg-fill-c" cx="84" cy="117" r="3"/>
-      
-          <text class="dg-label" x="54" y="81" text-anchor="end">A</text>
-          <text class="dg-label" x="150" y="81">B</text>
-          <text class="dg-label" x="89" y="50">P</text>
-          <text class="dg-label" x="89" y="128">Q</text>
-          <text class="dg-label" x="79" y="97" text-anchor="end">M</text>
-          <text class="dg-dim-label" x="65" y="66" text-anchor="end">10</text>
-          <text class="dg-dim-label" x="117" y="64">17</text>
-          <text class="dg-dim-label" x="116" y="99" text-anchor="middle">21</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 5B.4</span> &nbsp;$PQ$ is a chord of
-          both circles, so both centres lie on its perpendicular bisector.
-        </figcaption>
-      </figure>
 
     </div>
   </div>

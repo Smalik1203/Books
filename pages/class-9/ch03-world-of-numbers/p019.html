@@ -2,74 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Terminating and repeating</h3>
-
-      <p>
-        Divide the numerator of a rational number by its denominator and
-        exactly one of two things happens.
-      </p>
-
-      <p>
-        Either the division runs out — a remainder of 0 appears, there is
-        nothing further to bring down, and the decimal simply stops. Or it
-        never runs out, in which case the digits settle into a block that
-        repeats for ever. There is no third outcome, and the example below
-        shows both, so that the difference can be seen happening in the
-        arithmetic rather than taken on trust.
-      </p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__tab">Example 8</div>
         <div class="c-example__body">
-          <p>Expand $\dfrac{3}{8}$ and $\dfrac{5}{11}$ as decimals.</p>
           <p>
-            <strong>The first stops.</strong> Dividing 3 by 8 gives remainders
-            6, then 4, then 0 — and once the remainder is 0 there is nothing
-            left to bring down.
+            Will $\dfrac{3}{20}$ terminate? Decide without dividing, then
+            check.
           </p>
-          <div class="work work--centred">
-            <p>$\dfrac{3}{8} = 0.375$</p>
+          <p>
+            A terminating decimal is one that can be written over $10$, $100$,
+            $1000$ and so on. So the question is whether $20$ can be turned
+            into a power of ten by multiplying it by something.
+          </p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$20 = 2^2 \times 5$</span>
+              <span class="work__why">factorise 20</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$10^n = 2^n \times 5^n$</span>
+              <span class="work__why">a power of ten</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>one more 5, to match the two 2s, so multiply top and bottom by 5: $\times \dfrac{5}{5}$</span>
+              <span class="work__why">what is missing</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\dfrac{3}{20} = \dfrac{3 \times 5}{2^2 \times 5 \times 5}
+               = \dfrac{15}{100} = 0.15$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>It terminates, in two places</span></div>
           </div>
           <p>
-            <strong>The second never does.</strong> Dividing 5 by 11 gives
-            remainder 5, then 6, then 5 again — and the moment a remainder
-            comes back, every step after it must repeat what happened before.
-          </p>
-          <div class="work work--centred">
-            <p>$\dfrac{5}{11} = 0.454545\ldots = 0.\overline{45}$</p>
-          </div>
-          <p>
-            The bar marks the block that repeats for ever.
+            Had the denominator contained any
+            prime other than 2 or 5 — a 3, say, or an 11 — no multiplier could
+            ever have cleared it, because a power of ten contains no such
+            factor to cancel against.
           </p>
         </div>
       </div>
 
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Which decimals terminate</div>
+        <p>
+          Let $\dfrac{p}{q}$ be a rational number in lowest terms. Its decimal
+          expansion terminates exactly when the only prime factors of $q$ are
+          2 and 5. Otherwise it repeats.
+        </p>
+      </div>
+
       <p>
-        The second case is not bad luck; it is forced. Dividing by 11, the only
-        possible remainders are $1, 2, \ldots, 10$ — ten of them, and zero
-        would have ended the division. Keep going and a remainder
-        <em>must</em> eventually recur, because there are only finitely many to
-        choose from. Once one does, the whole cycle starts again.
+        The words <em>in lowest terms</em> are doing real work there. Written
+        as $\tfrac{6}{40}$ the same number looks no different, but $40$ has the
+        same prime factors as $20$, so the test survives cancelling. Try it on
+        a fraction that is not in lowest terms and you may get the wrong answer
+        for the right reason.
+      </p>
+
+      <h3>Going back: from a decimal to a fraction</h3>
+
+      <p>
+        Every terminating or repeating decimal is a rational number, so each
+        one must be $\tfrac{p}{q}$ for some integers. Finding them takes three
+        different techniques, according to where the repetition starts.
       </p>
 
       <p>
-        That argument does not care which number you divide by. It proves that
-        every rational number has a decimal that either terminates or repeats —
-        there is no third possibility.
-      </p>
-
-      <p>
-        The argument gives a little more than that. Dividing by $q$, there are
-        only $q - 1$ remainders that can keep the division going, so a repeat
-        must happen within $q - 1$ steps and the cycle can never be longer than
-        $q - 1$ digits.
-      </p>
-
-      <p>
-        That is a ceiling, not a forecast. Sevenths reach it exactly — six
-        digits, as we have just seen. Elevenths do not come near it: the ceiling
-        allows ten digits and the cycle is two. What decides where a particular
-        fraction falls between the two is a question worth holding on to.
+        A decimal that terminates needs no technique at all — it can simply be
+        read. One that repeats from the very first digit needs a short piece of
+        algebra. And one that settles into its cycle only after a few stray
+        digits needs the same algebra with one extra step. The three examples
+        that follow take them in that order.
       </p>
 
     </div>

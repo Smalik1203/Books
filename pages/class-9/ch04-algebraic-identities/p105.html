@@ -2,70 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>If $a + b = 7$ and $a^3 + b^3 = 133$, the number of real pairs
-          $(a, b)$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$0$</li>
-          <li>$1$</li>
-          <li>$2$</li>
-          <li>$4$</li>
-        </ol>
+      <h3>Type 4 &middot; Values without finding the letters</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>If $a - b = 4$ and $ab = 21$, find $a^2 + b^2$ and $a + b$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(a - b)^2 = a^2 - 2ab + b^2$</span>
+              <span class="work__why">an identity holding both facts</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$16 = a^2 + b^2 - 42$, so $a^2 + b^2 = 58$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$(a + b)^2 = a^2 + b^2 + 2ab = 58 + 42 = 100$</span>
+              <span class="work__why">$(a + b)^2$ identity</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$a^2 + b^2 = 58$, and $a + b$ is $10$ or $-10$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$7$ and $3$ fit, and so do $-3$ and $-7$</span></div>
+          </div>
+          <p>A square has two square roots, so $a + b$ is not fixed by the two facts, although $a^2 + b^2$ is.</p>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          A sum and a sum of cubes are given, and the identity
-          $a^3 + b^3 = (a + b)^3 - 3ab(a + b)$ connects them through the
-          product.
-        </p>
-        <div class="work work--list">
-          <p>$133 = 343 - 21ab$</p>
-          <p>$ab = 10$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>A rectangle has perimeter $34$ cm and diagonal $13$ cm (Fig. 4B.2). Its area, in cm$^2$, is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$30$</li><li>$60$</li><li>$120$</li><li>cannot be found</li></ol>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="0 0 230 130" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A rectangle with sides labelled x and y and a diagonal of length 13 centimetres drawn across it">
+                <rect class="dg-line dg-fill-a-soft" x="14" y="28" width="204" height="85"/>
+                <path class="dg-dim" d="M14 113 L218 28"/>
+                <text class="dg-label" x="116" y="20" text-anchor="middle">x</text>
+                <text class="dg-label" x="224" y="75">y</text>
+                <text class="dg-dim-label" x="102" y="62" text-anchor="end">13</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 4B.2</span> Two facts are given and
+              one is wanted. The one wanted is not a side.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$x + y = 17$</span>
+              <span class="work__why">half the perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x^2 + y^2 = 169$</span>
+              <span class="work__why">Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$2xy = (x + y)^2 - \left(x^2 + y^2\right) = 289 - 169 = 120$</span>
+              <span class="work__why">the square of the sum</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$xy = 60$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>No side was found, and none was needed. It could have been: $(x - y)^2 = 169 - 120 = 49$ makes the sides $12$ and $5$. Option (c) is $2xy$, not halved; option (a) halves it twice; option (d) assumes the sides must come first.</p>
         </div>
-        <div class="work work--list">
-          <p>$(a - b)^2 = (a + b)^2 - 4ab = 49 - 40 = 9$</p>
-          <p>$a - b = 3$ &nbsp;or&nbsp; $a - b = -3$</p>
-        </div>
-        <p>
-          The pairs are $(5, 2)$ and $(2, 5)$: two of them, option (c).
-          Option (b) comes of writing $a - b = 3$ and stopping there, but a
-          square root has two signs. Option (a) would be right only if
-          $(a - b)^2$ had come out negative &mdash; and it could have.
-        </p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>A rectangle has perimeter $34$ cm and diagonal $13$ cm
-          (Fig. 4B.4). Its area, in cm$^2$, is</p>
-        <ol class="c-parts c-parts--alpha">
-          <li>$30$</li>
-          <li>$60$</li>
-          <li>$120$</li>
-          <li>cannot be found</li>
-        </ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          Call the sides $x$ and $y$; the area is $xy$. The square of the
-          sum is what contains $2xy$.
-        </p>
-        <div class="work work--list">
-          <p>$x + y = 17$</p>
-          <p>$x^2 + y^2 = 169$ &nbsp;(Pythagoras)</p>
-          <p>$2xy = (x + y)^2 - \left(x^2 + y^2\right) = 289 - 169 = 120$</p>
-          <p>$xy = 60$</p>
-        </div>
-        <p>
-          The area is $60$ cm$^2$, option (b), and no side was ever found.
-          It could have been: $(x - y)^2 = 169 - 120 = 49$ makes the sides
-          $12$ and $5$. Option (c) is $2xy$ itself, not halved.
-        </p>
       </div>
 
     </div>

@@ -2,87 +2,56 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="eq eq--anchor">
-        $$a^2 + b^2 \geq 2ab$$
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
+        </div>
       </div>
 
-      <p>
-        The two sides are equal only when $a = b$ (Fig. 4B.3). Every
-        identity in the chapter was an equation. This one fact turns it
-        into an inequality.
-      </p>
+      <h3>Type 1 &middot; Squares of sums and differences</h3>
 
-      <figure class="c-figure c-figure--sm">
-        <svg viewBox="0 0 230 160" role="img"
-             aria-label="A square of side a plus b, cut into a square on a, a square on b, and two equal rectangles a by b">
-          <rect class="dg-fill-a-soft" x="20" y="14" width="82" height="82"/>
-          <rect class="dg-fill-b-soft" x="102" y="96" width="46" height="46"/>
-          <rect class="dg-fill-c-soft" x="102" y="14" width="46" height="82"/>
-          <rect class="dg-fill-c-soft" x="20" y="96" width="82" height="46"/>
-      
-          <rect class="dg-line" x="20" y="14" width="128" height="128"/>
-          <path class="dg-thin" d="M102 14 V142 M20 96 H148"/>
-      
-          <line class="dg-dim" x1="162" y1="14" x2="162" y2="96"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <line class="dg-dim" x1="162" y1="96" x2="162" y2="142"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-label" x="170" y="59">a</text>
-          <text class="dg-label" x="170" y="123">b</text>
-          <text class="dg-note" x="61" y="59" text-anchor="middle">a&#178;</text>
-          <text class="dg-note" x="125" y="123" text-anchor="middle">b&#178;</text>
-          <text class="dg-note" x="125" y="59" text-anchor="middle">ab</text>
-          <text class="dg-note" x="61" y="123" text-anchor="middle">ab</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 4B.3</span> &nbsp;The two corner squares
-          together are never smaller than the two rectangles together. They
-          are equal only when the cut is in the middle.
-        </figcaption>
-      </figure>
-
-      <p>
-        The same fact answers the second question. Let the sides be $x$
-        and $y$. Then $x + y = 17$. By Pythagoras, $x^2 + y^2 = 144$.
-        So $2xy = 289 - 144 = 145$. Then
-        $(x - y)^2 = x^2 + y^2 - 2xy = 144 - 145 = -1$. A square cannot be
-        $-1$. So there is no such rectangle. The algebra found this
-        without finding a side.
-      </p>
-
-      <p>
-        That last answer is worth looking at a second time, because the
-        inequality explains it. Among all rectangles with $x + y = 17$, which
-        has the shortest diagonal? Since $x^2 + y^2 = 289 - 2xy$, the diagonal
-        is shortest when $xy$ is largest, and $a^2 + b^2 \geq 2ab$ says that
-        happens when the two sides are equal.
-      </p>
-
-      <div class="eq">
-        $$x = y = 8.5 \quad \Rightarrow \quad x^2 + y^2 = 144.5$$
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Find $996^2$ using an identity.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$996^2 = (1000 - 4)^2$</span>
+              <span class="work__why">a round number less a small one</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$= 1000^2 - 2 \times 1000 \times 4 + 4^2$</span>
+              <span class="work__why">$(a - b)^2$ identity</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$= 1000000 - 8000 + 16$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$996^2 = 992016$</span></div>
+          </div>
+        </div>
       </div>
 
-      <p>
-        So no rectangle of perimeter $34$ has a diagonal shorter than
-        $\sqrt{144.5}$, a little over $12.02$. A diagonal of $12$ was never
-        available. The algebra found this by arriving at $(x - y)^2 = -1$. The
-        geometry finds it by noticing that the square is the extreme case and
-        that the question asked for something past it. The two arguments are
-        the same argument.
-      </p>
-
-      <p>
-        The inequality has a use of its own, too. Put $b = 1$ and divide
-        through: for any positive $a$, $a + \dfrac{1}{a} \geq 2$. A positive
-        number and its reciprocal can never average less than $1$, and they
-        average exactly $1$ only when the number is $1$ itself.
-      </p>
-
-      <p>
-        None of these questions used anything outside the chapter. Each
-        needed the same question: what can I use from what I already know?
-        Five more problems ask it next.
-      </p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Factorise $12a^2 - 60ab + 75b^2$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$12a^2 - 60ab + 75b^2 = 3\left(4a^2 - 20ab + 25b^2\right)$</span>
+              <span class="work__why">common factor first</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$4a^2 = (2a)^2$, $25b^2 = (5b)^2$, and twice $2a \times 5b$ is $20ab$</span>
+              <span class="work__why">a perfect square, minus sign</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$12a^2 - 60ab + 75b^2 = 3\left[(2a)^2 - 2(2a)(5b) + (5b)^2\right]$</span>
+              <span class="work__why">the square of a difference</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$12a^2 - 60ab + 75b^2 = 3(2a - 5b)^2$</span></div>
+          </div>
+          <p>Without the common factor, the first term is $12a^2$, which is the square of nothing you can write without a surd.</p>
+        </div>
+      </div>
 
     </div>
   </div>

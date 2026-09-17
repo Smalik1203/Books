@@ -2,41 +2,11 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work">
-        <p>$10x = 4.272727\ldots$</p>
-        <p>$1000x = 427.272727\ldots$</p>
-        <p>$990x = 423$, &nbsp;so&nbsp;
-          $x = \dfrac{423}{990} = \dfrac{47}{110}$</p>
-      </div>
-
-      <p>
-        Look at the denominator before the cancelling: $990$ is two $9$s and
-        one $0$, one $9$ for each repeating digit and one $0$ for the digit
-        that does not. The denominator is a record of the decimal's shape.
-        And $110 = 2 \times 5 \times 11$, whose factor of $11$ is what keeps
-        the decimal from terminating &mdash; the same test as in the second
-        question, read in the other direction.
-      </p>
-
-      <div class="c-try">
-        <p>A student says there are only two rationals between
-          $\dfrac{1}{3}$ and $\dfrac{1}{2}$, namely $\dfrac{2}{6}$ and
-          $\dfrac{3}{6}$, since over $6$ there is nothing in between. Is the
-          student right?</p>
-      </div>
-
-      <p>
-        No, and one example settles it. The average of the two,
-        $\tfrac{1}{2}\left(\tfrac{1}{3} + \tfrac{1}{2}\right) = \tfrac{5}{12}$,
-        lies strictly between them and is neither of the two named. So the
-        list was not complete.
-      </p>
-
       <p>
         What went wrong is worth naming. The student checked one denominator
-        and reported the answer for all of them. Over $6$ there is indeed
-        nothing between $\tfrac{2}{6}$ and $\tfrac{3}{6}$; over $12$ there is
-        $\tfrac{5}{12}$, and over $120$ there are nineteen. Averaging can be
+        and reported the answer for all of them. Over $7$ there is indeed
+        nothing between $\tfrac{2}{7}$ and $\tfrac{3}{7}$; over $14$ there is
+        $\tfrac{5}{14}$, and over $70$ there are nine. Averaging can be
         done again on the new pair, and again, without ever running out, which
         is what it means to say the rationals are dense. A check on one case
         never settles a claim about every case &mdash; and here the claim was
@@ -59,14 +29,47 @@
       </p>
 
       <p>
-        Look back at the five questions. Three were settled by supposing the
-        opposite and letting closure do the rest. One was settled by reading
-        the denominator instead of dividing. And one was brought down by a
-        single example. Not one of them needed a decimal place to be written
-        out. That is the shape of most questions about number: decide what
-        kind of number you are dealing with, and the arithmetic either becomes
-        easy or turns out to be unnecessary.
+        Look back at the five questions. Two were settled by supposing the
+        opposite and letting closure do the rest, and one of those never found
+        the number it was about. Two were settled by reading a denominator,
+        once to see whether a decimal stops and once to see why it does not.
+        And one was brought down by a single example. Not one of them needed a
+        long division to be done. That is the shape of most questions about
+        number: decide what kind of number you are dealing with, and the
+        arithmetic either becomes easy or turns out to be unnecessary.
       </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
+        </div>
+      </div>
+
+      <h3>Type 1 &middot; Integers and the laws of signs</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A submarine is at a depth of $120$ m, which is written $-120$ m. It rises $45$ m, and then dives three times as far as it rose. At what depth does it end?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>a rise is $+45$; the dive is $3 \times (-45) = -135$</span>
+              <span class="work__why">a fortune times a debt</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$-120 + 45 = -75$</span>
+              <span class="work__why">after the rise</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$-75 + (-135) = -210$</span>
+              <span class="work__why">a debt plus a debt</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>It ends at $-210$ m, a depth of $210$ m</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>as one sum, $-120 + 45 - 3 \times 45 = -210$</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

@@ -2,20 +2,12 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        As it stands, this is not a perfect square. It is not a difference
-        of squares either. But it has two of the three terms of a perfect
-        square: $\left(x^2 + 2y^2\right)^2 = x^4 + 4x^2y^2 + 4y^4$. Add the
-        missing middle term, and take it away again. The expression has not
-        changed. Now it becomes
-      </p>
-
       <div class="eq">
         $$x^4 + 4y^4 = \left(x^2 + 2y^2\right)^2 - (2xy)^2$$
       </div>
 
       <p>
-        This is a difference of squares (Fig. 4B.2). So
+        This is a difference of squares (Fig. 4B.1). So
         $x^4 + 4y^4 = \left(x^2 + 2y^2 - 2xy\right)\left(x^2 + 2y^2 + 2xy\right)$.
         Check at $x = y = 1$. The left side is $5$ and the right side is
         $1 \times 5$. When no identity fits an expression, ask what single
@@ -50,7 +42,7 @@
           <text class="dg-label" x="228" y="134" text-anchor="middle">x&#178; + 2y&#178; &minus; 2xy</text>
         </svg>
         <figcaption>
-          <span class="fignum">Fig. 4B.2</span> &nbsp;The big square we
+          <span class="fignum">Fig. 4B.1</span> &nbsp;The big square we
           made, minus the small square we added. A square minus a square is
           a rectangle, just as in Fig. 4.5.
         </figcaption>
@@ -58,15 +50,15 @@
 
       <div class="c-try">
         <p>Is $(a + b)^3 = a^3 + b^3$ an identity? Is
-          $x^2 + 5x + 6 = (x + 2)(x + 3)$ an identity?</p>
+          $x^2 + 7x + 10 = (x + 2)(x + 5)$ an identity?</p>
       </div>
 
       <p>
         Put $a = b = 1$ in the first. The left side is $8$ and the right
         side is $2$. One value where the two sides differ is enough. The
         first is not an identity. Now put $x = 1$ in the second. Both sides
-        are $12$. That proves nothing. An equation can hold at one value
-        without holding at all values. For example, $x^2 + 5x + 6 = 12$ is
+        are $18$. That proves nothing. An equation can hold at one value
+        without holding at all values. For example, $x^2 + 7x + 10 = 18$ is
         also true at $x = 1$. To show the second is an identity, we
         multiply out the right side. It is an identity. So a value can
         disprove, but it cannot prove. In a question with four options, one
@@ -75,14 +67,25 @@
       </p>
 
       <div class="c-try">
-        <p>Show that $a^2 + b^2 \geq 2ab$ for all numbers $a$ and $b$.
-          Then decide: is there a rectangle with perimeter $34$ cm and
-          diagonal $12$ cm?</p>
+        <p>Is there a rectangle with perimeter $34$ cm and diagonal
+          $12$ cm?</p>
       </div>
 
       <p>
-        A square is never negative, so $(a - b)^2 \geq 0$. Expand this:
-        $a^2 - 2ab + b^2 \geq 0$. That is
+        A drawing cannot settle this, because a rectangle that nearly works
+        looks just like one that does. Let the sides be $x$ and $y$. Then
+        $x + y = 17$. By Pythagoras, $x^2 + y^2 = 144$. So
+        $2xy = 289 - 144 = 145$. Then
+        $(x - y)^2 = x^2 + y^2 - 2xy = 144 - 145 = -1$. A square cannot be
+        $-1$. So there is no such rectangle. The algebra found this
+        without finding a side.
+      </p>
+
+      <p>
+        None of these questions used anything outside the chapter. Each
+        needed the same question: what can I use from what I already know?
+        The solved examples that follow ask it again, one kind of question
+        at a time.
       </p>
 
     </div>

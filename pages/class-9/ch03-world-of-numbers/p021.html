@@ -2,74 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        The words <em>in lowest terms</em> are doing real work there. Written
-        as $\tfrac{6}{40}$ the same number looks no different, but $40$ has the
-        same prime factors as $20$, so the test survives cancelling. Try it on
-        a fraction that is not in lowest terms and you may get the wrong answer
-        for the right reason.
-      </p>
-
-      <h3>Going back: from a decimal to a fraction</h3>
-
-      <p>
-        Every terminating or repeating decimal is a rational number, so each
-        one must be $\tfrac{p}{q}$ for some integers. Finding them takes three
-        different techniques, according to where the repetition starts.
-      </p>
-
-      <p>
-        A decimal that terminates needs no technique at all — it can simply be
-        read. One that repeats from the very first digit needs a short piece of
-        algebra. And one that settles into its cycle only after a few stray
-        digits needs the same algebra with one extra step. The three examples
-        that follow take them in that order.
-      </p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__tab">Example 10</div>
         <div class="c-example__body">
-          <p>Write $0.35$ in the form $\dfrac{p}{q}$.</p>
+          <p>Write $0.\overline{6}$ in the form $\dfrac{p}{q}$.</p>
           <p>
-            A terminating decimal needs no algebra. Read it as what it says:
-            35 hundredths.
+            Now the digits never stop, so there is nothing to read off. The
+            trick is to make two numbers whose infinite tails are
+            <em>identical</em>, and then subtract, so that the tails cancel and
+            leave something finite behind.
           </p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">two decimal places</span>
-              <span>so the denominator is $100$</span>
-              <span class="chip">$\dfrac{35}{100}$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">lowest terms</span>
-              <span>divide both by 5</span>
-              <span class="chip">$\dfrac{7}{20}$</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Let $x = 0.6666\ldots$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\;10x = 6.6666\ldots$</span>
+              <span class="work__why">one digit repeats: multiply by $10^1$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\;10x - x = 6.6666\ldots - 0.6666\ldots$; both tails are $.6666\ldots$</span>
+              <span class="work__why">subtract: the tails vanish</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$9x = 6$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = \dfrac{6}{9} = \dfrac{2}{3}$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$2 \div 3 = 0.6666\ldots$</span></div>
           </div>
-          <p>Check by dividing back: $7 \div 20 = 0.35$.</p>
+          <p>
+            Notice why the multiplier was 10
+            and not 100 — one repeating digit needs a shift of exactly one
+            place, or the tails would not have lined up.
+          </p>
         </div>
       </div>
 
       <p>
-        It is worth seeing why that reading is always available. Our notation is
-        built on powers of ten, so a decimal of two places <em>is</em> a number
-        of hundredths, one of three places a number of thousandths, and so on.
-        A terminating decimal is therefore already a fraction whose denominator
-        is a power of ten; nothing has to be done to it but write it down.
+        The multiplier there was chosen to match the cycle: one repeating digit,
+        one shift. That is not a rule to memorise but the reason the two tails
+        lined up, and a longer cycle will need a longer shift.
       </p>
 
       <p>
-        And that closes a loop opened a page ago. A power of ten is
-        $2^{n} \times 5^{n}$ and has no other prime factor at all — which is
-        exactly why a fraction in lowest terms terminates when its denominator
-        is built from $2$s and $5$s and never otherwise.
+        It is worth saying plainly what has just been done, because the same
+        move settles every repeating decimal there is. An infinite tail cannot
+        be subtracted away on its own — but two numbers carrying the
+        <em>identical</em> tail can be subtracted from each other, and the
+        tails go together. Choosing the multiplier is nothing more than
+        arranging for those two tails to match.
       </p>
 
       <p>
-        That was the easy direction, and it needed no algebra at all — only a
-        reading of what the decimal already said. The moment the digits stop
-        stopping, that reading is unavailable, and something else has to take
-        its place.
+        It is worth seeing the move fail once, because that is what shows which
+        part of it was doing the work. Suppose the same shift of one place were
+        tried on $0.\overline{45}$, whose cycle is two digits long.
+      </p>
+
+      <div class="work work--centred">
+        <p>$10x = 4.545454\ldots$ &nbsp;and&nbsp; $x = 0.454545\ldots$</p>
+        <p>$9x = 4.090909\ldots$</p>
+      </div>
+
+      <p>
+        Nothing is wrong with that line — it is perfectly true — but it has not
+        got us anywhere, because the right-hand side is still an infinite
+        decimal. The tails did not match, so they did not cancel, and we are
+        left with the same kind of object we began with. The multiplier has to
+        move the number by a whole cycle, and that is the only thing being asked
+        of it.
       </p>
 
     </div>

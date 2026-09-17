@@ -2,119 +2,53 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five questions, with the reasoning as well as the working. Try each one before reading its solution.</div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A point lies on the x-axis, $4$ units from the origin, on the negative side. Its coordinates are</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$(0, -4)$</li><li>$(-4, 0)$</li><li>$(4, 0)$</li><li>$(-4, -4)$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>a point of the x-axis has the form $(x, 0)$</span>
+              <span class="work__why">y-coordinate zero</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$4$ units on the negative side gives $x = -4$</span>
+              <span class="work__why">left of $O$ is negative</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) is on the y-axis, below $O$. Option (c) is on the positive side. Option (d) is in Quadrant III, and is $\sqrt{16 + 16} = \sqrt{32}$ units from $O$, not $4$.</p>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The points $A (2, 4)$, $B (5, 8)$, $C (9, 5)$ and $D (6, 1)$ are
-          joined in that order (Fig. 1B.3). $ABCD$ is</p>
-        <ol class="c-parts c-parts--alpha">
-          <li>a square</li>
-          <li>a rhombus that is not a square</li>
-          <li>a rectangle that is not a square</li>
-          <li>a parallelogram with no right angle</li>
-        </ol>
-      </div>
+      <h3>Type 2 &middot; Shapes with sides along the grid lines</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          A square has four equal sides and a right angle, and the squares
-          of the distances settle both.
-        </p>
-        <div class="work work--list">
-          <p>$AB^2 = 3^2 + 4^2 = 25$ &nbsp;&nbsp; $BC^2 = 4^2 + 3^2 = 25$</p>
-          <p>$CD^2 = 3^2 + 4^2 = 25$ &nbsp;&nbsp; $DA^2 = 4^2 + 3^2 = 25$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>$A(-3, -2)$, $B(5, -2)$ and $C(5, 4)$ are three corners of a rectangle $ABCD$. Find $D$, the length and breadth of the rectangle, its area, its perimeter and the length of its diagonal $AC$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$A$ and $B$ share the y-coordinate $-2$; $B$ and $C$ share the x-coordinate $5$</span>
+              <span class="work__why">$AB$ across, $BC$ up</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$D$ takes its x-coordinate from $A$ and its y-coordinate from $C$: $D(-3, 4)$</span>
+              <span class="work__why">the corner opposite $B$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>length $|5 - (-3)| = 8$, breadth $|4 - (-2)| = 6$</span>
+              <span class="work__why">sides parallel to the axes</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>area $8 \times 6 = 48$; perimeter $2 \times (8 + 6) = 28$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$AC$: $\sqrt{8^2 + 6^2} = \sqrt{100} = 10$</span>
+              <span class="work__why">Baudhāyana–Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$D(-3, 4)$; $8$ units by $6$ units; area $48$ square units, perimeter $28$ units, diagonal $10$ units</span></div>
+          </div>
         </div>
-        <p>
-          Four equal sides, so $ABCD$ is at least a rhombus — which is
-          where option (b) stops. For the angle at $B$, take the diagonal.
-        </p>
-        <div class="work work--list">
-          <p>$AC^2 = 7^2 + 1^2 = 50 = AB^2 + BC^2$</p>
-        </div>
-        <p>
-          So the angle at $B$ is a right angle, and a rhombus with a right
-          angle is a square: option (a). Option (c) checks the right angle
-          and not the sides, option (d) the opposite sides alone.
-        </p>
       </div>
-
-      <figure class="c-figure c-figure--lg">
-        <svg viewBox="0 0 325 264" role="img"
-             aria-label="A coordinate grid with the square A B C D, A at two four, B at five eight, C at nine five and D at six one, and the diagonal A C drawn">
-        <g class="dg-grid"><path d="M26 34 V254 M48 34 V254 M70 34 V254 M92 34 V254 M114 34 V254 M136 34 V254 M158 34 V254 M180 34 V254 M202 34 V254 M224 34 V254 M246 34 V254 M268 34 V254 M26 254 H268 M26 232 H268 M26 210 H268 M26 188 H268 M26 166 H268 M26 144 H268 M26 122 H268 M26 100 H268 M26 78 H268 M26 56 H268 M26 34 H268"/></g>
-        <line class="dg-axis" x1="26" y1="232" x2="268" y2="232"/>
-        <line class="dg-axis" x1="48" y1="34" x2="48" y2="254"/>
-        <line class="dg-thin" x1="26" y1="228" x2="26" y2="236"/>
-        <text class="dg-tick" x="26" y="249" text-anchor="middle">&minus;1</text>
-        <line class="dg-thin" x1="70" y1="228" x2="70" y2="236"/>
-        <text class="dg-tick" x="70" y="249" text-anchor="middle">1</text>
-        <line class="dg-thin" x1="92" y1="228" x2="92" y2="236"/>
-        <text class="dg-tick" x="92" y="249" text-anchor="middle">2</text>
-        <line class="dg-thin" x1="114" y1="228" x2="114" y2="236"/>
-        <text class="dg-tick" x="114" y="249" text-anchor="middle">3</text>
-        <line class="dg-thin" x1="136" y1="228" x2="136" y2="236"/>
-        <text class="dg-tick" x="136" y="249" text-anchor="middle">4</text>
-        <line class="dg-thin" x1="158" y1="228" x2="158" y2="236"/>
-        <text class="dg-tick" x="158" y="249" text-anchor="middle">5</text>
-        <line class="dg-thin" x1="180" y1="228" x2="180" y2="236"/>
-        <text class="dg-tick" x="180" y="249" text-anchor="middle">6</text>
-        <line class="dg-thin" x1="202" y1="228" x2="202" y2="236"/>
-        <text class="dg-tick" x="202" y="249" text-anchor="middle">7</text>
-        <line class="dg-thin" x1="224" y1="228" x2="224" y2="236"/>
-        <text class="dg-tick" x="224" y="249" text-anchor="middle">8</text>
-        <line class="dg-thin" x1="246" y1="228" x2="246" y2="236"/>
-        <text class="dg-tick" x="246" y="249" text-anchor="middle">9</text>
-        <line class="dg-thin" x1="268" y1="228" x2="268" y2="236"/>
-        <text class="dg-tick" x="268" y="249" text-anchor="middle">10</text>
-        <line class="dg-thin" x1="44" y1="254" x2="52" y2="254"/>
-        <text class="dg-tick" x="40" y="258" text-anchor="end">&minus;1</text>
-        <line class="dg-thin" x1="44" y1="210" x2="52" y2="210"/>
-        <text class="dg-tick" x="40" y="214" text-anchor="end">1</text>
-        <line class="dg-thin" x1="44" y1="188" x2="52" y2="188"/>
-        <text class="dg-tick" x="40" y="192" text-anchor="end">2</text>
-        <line class="dg-thin" x1="44" y1="166" x2="52" y2="166"/>
-        <text class="dg-tick" x="40" y="170" text-anchor="end">3</text>
-        <line class="dg-thin" x1="44" y1="144" x2="52" y2="144"/>
-        <text class="dg-tick" x="40" y="148" text-anchor="end">4</text>
-        <line class="dg-thin" x1="44" y1="122" x2="52" y2="122"/>
-        <text class="dg-tick" x="40" y="126" text-anchor="end">5</text>
-        <line class="dg-thin" x1="44" y1="100" x2="52" y2="100"/>
-        <text class="dg-tick" x="40" y="104" text-anchor="end">6</text>
-        <line class="dg-thin" x1="44" y1="78" x2="52" y2="78"/>
-        <text class="dg-tick" x="40" y="82" text-anchor="end">7</text>
-        <line class="dg-thin" x1="44" y1="56" x2="52" y2="56"/>
-        <text class="dg-tick" x="40" y="60" text-anchor="end">8</text>
-        <line class="dg-thin" x1="44" y1="34" x2="52" y2="34"/>
-        <text class="dg-tick" x="40" y="38" text-anchor="end">9</text>
-        <text class="dg-note" x="276" y="226">x-axis</text>
-        <text class="dg-note" x="56" y="26">y-axis</text>
-        <path class="dg-fill-a-soft" d="M92 144 L158 56 L246 122 L180 210 Z"/>
-        <path class="dg-line" d="M92 144 L158 56 L246 122 L180 210 Z"/>
-        <line class="dg-dim" x1="92" y1="144" x2="246" y2="122"/>
-        <circle class="dg-fill-teal" cx="92" cy="144" r="4"/>
-        <circle class="dg-fill-teal" cx="158" cy="56" r="4"/>
-        <circle class="dg-fill-teal" cx="246" cy="122" r="4"/>
-        <circle class="dg-fill-teal" cx="180" cy="210" r="4"/>
-        <text class="dg-label" x="98" y="164" text-anchor="end">A (2, 4)</text>
-        <text class="dg-label" x="158" y="46" text-anchor="middle">B (5, 8)</text>
-        <text class="dg-label" x="254" y="126" text-anchor="start">C (9, 5)</text>
-        <text class="dg-label" x="188" y="226" text-anchor="start">D (6, 1)</text>
-        <text class="dg-dim-label" x="169" y="125" text-anchor="middle">&radic;50</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 1B.3</span> &nbsp;Four sides of $5$ and a
-          diagonal of $\sqrt{50}$. Every side is a shift of $3$ and $4$,
-          turned a quarter turn each time.
-        </figcaption>
-      </figure>
 
     </div>
   </div>

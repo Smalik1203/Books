@@ -2,49 +2,46 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>
-        The longest chord of any circle is a diameter, and one diameter
-        passes through $P$. That is $20$ cm. The shortest needs Theorem 8
-        read the other way round: the shorter a chord, the farther it lies
-        from the centre. So we want the chord through $P$ that is as far
-        from $O$ as a chord through $P$ can be. The distance from $O$ to a
-        line through $P$ is measured along the perpendicular from $O$, and a
-        perpendicular is never longer than $OP$ itself. It is exactly $OP$
-        when the chord is at right angles to $OP$, as in Fig. 5B.2.
-      </p>
-
       <figure class="c-figure c-figure--sm">
-        <svg viewBox="0 0 230 176" role="img"
-             aria-label="A circle with centre O and a point P inside it. The diameter through P is drawn, and the chord through P at right angles to OP">
+        <svg viewBox="0 6 230 172" role="img"
+             aria-label="A circle with centre O and a chord AB below the centre. M is the midpoint of AB and OM is perpendicular to it. P is a point of AB between A and M, joined to O">
           <circle class="dg-fill-d" cx="115" cy="90" r="78"/>
           <circle class="dg-line" cx="115" cy="90" r="78"/>
-          <path class="dg-thin" d="M37 90 L193 90"/>
-          <path class="dg-line" d="M161.8 27.6 L161.8 152.4"/>
-          <path class="dg-dim" d="M115 90 L161.8 90"/>
-          <path class="dg-thin" d="M155.8 90 L155.8 84 L161.8 84"/>
+          <path class="dg-line" d="M52.6 136.8 L177.4 136.8"/>
+          <path class="dg-thin" d="M115 90 L52.6 136.8"/>
+          <path class="dg-dim" d="M115 90 L115 136.8"/>
+          <path class="dg-thin" d="M115 90 L79.9 136.8"/>
+          <path class="dg-thin" d="M121 136.8 L121 130.8 L115 130.8"/>
           <circle class="dg-fill-teal" cx="115" cy="90" r="3.5"/>
-          <circle class="dg-fill-c" cx="161.8" cy="90" r="3"/>
+          <circle class="dg-fill-c" cx="79.9" cy="136.8" r="3"/>
       
-          <text class="dg-label" x="110" y="84" text-anchor="end">O</text>
-          <text class="dg-label" x="166" y="102">P</text>
-          <text class="dg-label" x="166" y="24">A</text>
-          <text class="dg-label" x="166" y="162">B</text>
-          <text class="dg-label" x="32" y="94" text-anchor="end">C</text>
-          <text class="dg-label" x="198" y="94">D</text>
-          <text class="dg-dim-label" x="138" y="83" text-anchor="middle">6</text>
+          <text class="dg-label" x="121" y="86">O</text>
+          <text class="dg-label" x="46" y="146" text-anchor="end">A</text>
+          <text class="dg-label" x="184" y="146">B</text>
+          <text class="dg-label" x="115" y="152" text-anchor="middle">M</text>
+          <text class="dg-label" x="79.9" y="152" text-anchor="middle">P</text>
+          <text class="dg-dim-label" x="65" y="148" text-anchor="middle">7</text>
         </svg>
         <figcaption>
-          <span class="fignum">Fig. 5B.2</span> &nbsp;Through $P$ pass a
-          diameter $CD$ and the chord $AB$ at right angles to $OP$. Every
-          other chord through $P$ lies nearer the centre than $AB$.
+          <span class="fignum">Fig. 5B.2</span> &nbsp;The perpendicular
+          $OM$ is not given. It is drawn, and it makes two right-angled
+          triangles.
         </figcaption>
       </figure>
 
       <p>
-        So the shortest chord is the one at distance $d = 6$ cm, and its
-        length is $2\sqrt{10^2 - 6^2} = 2 \times 8 = 16$ cm. Notice that
-        there are infinitely many chords through $P$, and we did not look at
-        them one by one. Theorem 8 said which one to look at.
+        Now there are two right-angled triangles with their right angle at
+        $M$. In triangle $OMA$ the hypotenuse is the radius and
+        $AM = 16$ cm, so $OM^2 = 20^2 - 16^2 = 400 - 256 = 144$, and
+        $OM = 12$ cm. The point $P$ is $7$ cm from $A$, so
+        $PM = 16 - 7 = 9$ cm. In triangle $OMP$,
+        $OP^2 = 12^2 + 9^2 = 144 + 81 = 225$, and $OP = 15$ cm.
+      </p>
+
+      <p>
+        Notice that $M$ was not given, and neither was the right angle
+        there. We drew the one line that every result about a chord is built
+        on, and the question became two uses of Pythagoras.
       </p>
 
       <div class="c-try">
@@ -68,9 +65,10 @@
       </p>
 
       <p>
-        None of these questions used anything outside the chapter. What
-        each needed was a question: what can I use from what I already
-        know? The five problems that follow ask it again.
+        None of these questions needed anything beyond the chapter, except
+        Pythagoras and its converse from earlier classes. What each needed
+        was a question: what can I use from what I already know? The solved
+        examples that follow ask it again.
       </p>
 
     </div>

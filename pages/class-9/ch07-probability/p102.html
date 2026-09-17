@@ -2,58 +2,97 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <p>In a survey of 200 people, 150 said they owned a bicycle. In a second survey,
-        of 20 people at a cycle repair shop, 19 said they owned one. Both give a
-        probability. Which would you use to estimate the figure for the town, and
-        why?</p>
-      </div>
-
-      <div class="c-try">
-        <p>Three coins are tossed together. Which is more likely — exactly two heads, or
-        three heads? Answer by listing, not by feel.</p>
-      </div>
-
-      <div class="c-try">
-        <p>A box holds 5 pens: 3 blue and 2 black. One is drawn and <em>not</em> put
-        back, then a second is drawn. Explain why the probability that the second is
-        blue cannot be worked out until you know what the first one was.</p>
-      </div>
-
-      <div class="c-try">
-        <p>An event has probability $0.35$. What is the probability that it does not
-        happen? State the rule you used, and say why it must be true.</p>
-      </div>
-
-      <div class="c-try">
-        <p>A spinner is divided into three sectors marked 1, 2 and 3, but sector 1
-        covers half the disc and the other two a quarter each. A student says
-        $P(1) = \tfrac13$, since there are three outcomes. Correct that, and give all
-        three probabilities.</p>
-      </div>
-
       <p>
-        A word about the third and the seventh. Both look like questions about dice and
-        pens, and both are really questions about the sample space — whether the outcomes
-        being counted are equally likely, and whether the list has changed between one
-        draw and the next. Those two checks catch most of the mistakes made in this
-        subject, and they are worth running before any arithmetic.
+        The second has the gambler's fallacy inside out. It is true that a fair coin
+        gives $\tfrac12$ every toss, but that is a statement about a coin already known
+        to be fair. Here the fairness is exactly what is in question, so the argument
+        assumes what it is trying to show.
       </p>
 
       <p>
-        The ninth is the same pair of checks in a third disguise. It is set on a spinner
-        rather than a die, and the outcomes are printed on the disc where you can see
-        them. That is exactly what makes the wrong answer tempting: three numbers are
-        visible, so three seems to be the count that matters. It is not. What matters is
-        how much of the disc each number owns.
+        What you can say is this: the run is weak evidence that something is wrong with
+        the coin, and the way to strengthen or dismiss it is more tosses. That is the
+        law of large numbers used as an instrument rather than a slogan.
       </p>
 
       <p>
-        None of these nine yields to a remembered formula, which is deliberate. Each
-        turns on a decision made <em>before</em> the formula — what the outcomes are,
-        whether they are equally likely, and whether the evidence given is the evidence
-        the question needs. Settle those and the arithmetic is a line.
+        Say the coin is tossed 800 more times. If it is fair, the proportion of heads
+        will drift towards $\tfrac12$ and the eight will be lost in the crowd. If it is
+        weighted, the proportion will settle somewhere else and stay there. Either way
+        the answer arrives, and it arrives from the same evidence — more of it.
       </p>
+
+      <div class="c-try">
+        <p>Two dice are rolled and the numbers added. A student writes the sample space
+        as $\{2, 3, 4, \ldots, 12\}$ and concludes that $P(\text{sum} = 2) =
+        \tfrac{1}{11}$. The list is complete and the arithmetic is right. The answer is
+        wrong. Why?</p>
+      </div>
+
+      <p>
+        The list $\{2, 3, \ldots, 12\}$ really does contain every possible sum, and it
+        really does contain eleven of them. The fault is not in the list. It is in the
+        assumption underneath the formula.
+      </p>
+
+      <p>
+        Favourable over possible only works when the outcomes are
+        <em>equally likely</em>, and these are not. There is one way to make a sum of
+        2 — both dice show 1 — but six ways to make a 7:
+      </p>
+
+      <div class="work work--centred">
+        <p>$1{+}6$, &nbsp; $2{+}5$, &nbsp; $3{+}4$, &nbsp; $4{+}3$, &nbsp; $5{+}2$,
+        &nbsp; $6{+}1$</p>
+      </div>
+
+      <p>
+        The equally likely outcomes are not the sums but the pairs, and there are
+        $6 \times 6 = 36$ of them. Counted properly:
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$P(\text{sum} = 2)$</span>
+          <span>$\dfrac{1}{36}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$P(\text{sum} = 7)$</span>
+          <span>$\dfrac{6}{36} = \dfrac16$</span>
+        </div>
+      </div>
+
+      <p>
+        This is the most useful mistake in the chapter, because it is invisible. Every
+        step after the bad list is correct, and the answer still comes out wrong. When
+        a sample space is handed to you, ask not only whether it is complete but
+        whether its entries are the things that are equally likely.
+      </p>
+
+      <div class="c-try">
+        <p>A spinner has eight equal sectors numbered 1 to 8. What is the probability
+        that it stops on a number that is both even and greater than 5?</p>
+      </div>
+
+      <p>
+        Take the two conditions one at a time and then keep only what satisfies both.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">even</span>
+          <span>$\{2, 4, 6, 8\}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">greater than 5</span>
+          <span>$\{6, 7, 8\}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">both</span>
+          <span>$\{6, 8\}$</span>
+          <span class="chip">$\tfrac28 = \tfrac14$</span>
+        </div>
+      </div>
 
     </div>
   </div>

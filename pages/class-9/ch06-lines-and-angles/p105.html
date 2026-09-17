@@ -2,75 +2,53 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>The angles of a triangle are in the ratio $2 : 3 : 4$. The
-          largest of them is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$40^\circ$</li>
-          <li>$60^\circ$</li>
-          <li>$80^\circ$</li>
-          <li>$90^\circ$</li>
-        </ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          A ratio fixes the angles only once a total is supplied, and the
-          total is the angle sum. Write the angles as $2k$, $3k$ and $4k$:
-        </p>
-        <div class="work work--list">
-          <p>$2k + 3k + 4k = 180^\circ$</p>
-          <p>$9k = 180^\circ$, so $k = 20^\circ$</p>
-          <p>the angles are $40^\circ$, $60^\circ$, $80^\circ$</p>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>
-          The largest is $80^\circ$ &mdash; option (c). Options (a) and (b)
-          are the other two angles, there for a reader who does the work
-          correctly and then answers a question that was not asked.
-        </p>
-        <p>
-          Option (d) is worth a second look. A right-angled triangle needs
-          its largest angle to be half the total, so its ratio has to have
-          the form $a : b : (a + b)$. In $2 : 3 : 4$ the last term is less
-          than the first two added, so this triangle is acute-angled and
-          $90^\circ$ was never available.
-        </p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>An exterior angle of a triangle is $3x$, and the two interior
-          opposite angles are $x$ and $40^\circ$. The exterior angle is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$20^\circ$</li>
-          <li>$60^\circ$</li>
-          <li>$120^\circ$</li>
-          <li>$140^\circ$</li>
-        </ol>
-      </div>
+      <h3>Type 1 &middot; Complements and supplements</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          An exterior angle equals the two interior opposite angles added
-          together. That is one equation, and it is the only one the
-          question offers:
-        </p>
-        <div class="work work--list">
-          <p>$3x = x + 40$</p>
-          <p>$2x = 40$, so $x = 20$</p>
-          <p>$3x = 60$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>The supplement of an angle is five times its complement. Find the angle.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let the angle be $x$; its supplement is $180^\circ - x$ and its complement is $90^\circ - x$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$180^\circ - x = 5(90^\circ - x)$</span>
+              <span class="work__why">as the question says</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$180^\circ - x = 450^\circ - 5x$, so $4x = 270^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = 67.5^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>supplement $112.5^\circ$, complement $22.5^\circ$, and $5 \times 22.5 = 112.5$</span></div>
+          </div>
         </div>
-        <p>
-          The exterior angle is $60^\circ$ &mdash; option (b). Option (a) is
-          $x$ again, the same slip as in Problem 1; option (c) is $3x$ with
-          $x$ read as $40$. Option (d) is $180^\circ - 40^\circ$, from using
-          the linear pair instead of the exterior angle result. The check is
-          quick: the interior angles are $20^\circ$, $40^\circ$ and
-          $120^\circ$, and $120^\circ$ is the supplement of $60^\circ$.
-        </p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Two angles are supplementary, and the larger is $38^\circ$ more than the smaller. The smaller angle is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$71^\circ$</li><li>$109^\circ$</li><li>$142^\circ$</li><li>$26^\circ$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$x + (x + 38^\circ) = 180^\circ$</span>
+              <span class="work__why">supplementary</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$2x = 142^\circ$, so $x = 71^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) is the larger angle, and (c) is $2x$, where the working stops one line early. Option (d) comes from reading the pair as complementary: $2x + 38 = 90$ gives $x = 26$.</p>
+        </div>
       </div>
 
     </div>

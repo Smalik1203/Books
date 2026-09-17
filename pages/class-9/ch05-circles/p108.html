@@ -2,100 +2,45 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          $PQ$ is a chord of both circles. $A$ is the centre of one, so
-          $A$ lies on the perpendicular bisector of $PQ$ (Exercise Set
-          5.4). So does $B$. Two points fix a line, so $AB$ is that
-          perpendicular bisector, and it meets $PQ$ at its midpoint $M$.
-          Let $AM = x$, so that $MB = 21 - x$. The half-chord $PM$ is a
-          leg of two right-angled triangles:
-        </p>
-        <div class="work work--list">
-          <p>$PM^2 = 10^2 - x^2 = 17^2 - (21 - x)^2$</p>
-          <p>$100 - x^2 = 289 - 441 + 42x - x^2$</p>
-          <p>$42x = 252$, so $x = 6$</p>
-          <p>$PM^2 = 100 - 36 = 64$, so $PM = 8$</p>
-          <p>$PQ = 2\,PM = 16$</p>
-        </div>
-        <p>
-          $PQ = 16$ cm, option (c); from the other side $289 - 225 = 64$.
-          Option (a) is the half-chord, option (b) is $MB$, and option (d)
-          is the diameter of the smaller circle, which $PQ$ cannot reach
-          since it does not pass through $A$. The two circles were never
-          treated as two: one chord, two centres, and
-          $r^2 = d^2 + (\tfrac{1}{2}\,\text{chord})^2$ written twice.
-        </p>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Two chords of a circle are $40$ cm and $42$ cm long. The $40$ cm chord lies $21$ cm from the centre. How far from the centre is the $42$ cm chord?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$r^2 = 21^2 + 20^2 = 441 + 400 = 841$, so $r = 29$</span>
+              <span class="work__why">the $40$ cm chord</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$d^2 = 29^2 - 21^2 = 841 - 441 = 400$</span>
+              <span class="work__why">the $42$ cm chord</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$d = 20$, so the $42$ cm chord lies $20$ cm from the centre</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$20$ cm is less than $21$ cm: the longer chord is the nearer, as Theorem 8 says</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One result each</div>
-        <ol class="c-questions">
-          <li>
-              A chord $24$ cm long lies in a circle of radius $13$ cm. Its
-              distance from the centre is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$5$ cm</li>
-                <li>$6$ cm</li>
-                <li>$7$ cm</li>
-                <li>$12$ cm</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <h3>Type 5 &middot; Angles subtended by an arc</h3>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              A chord lies $6$ cm from the centre of a circle of radius
-              $10$ cm. Its length is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$8$ cm</li>
-                <li>$12$ cm</li>
-                <li>$16$ cm</li>
-                <li>$20$ cm</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              An arc subtends $80^\circ$ at the centre. At a point of the
-              circle outside the arc it subtends
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$40^\circ$</li>
-                <li>$80^\circ$</li>
-                <li>$100^\circ$</li>
-                <li>$160^\circ$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              In a cyclic quadrilateral $ABCD$, $\angle A = 105^\circ$. Then
-              $\angle C$ is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$75^\circ$</li>
-                <li>$85^\circ$</li>
-                <li>$105^\circ$</li>
-                <li>$255^\circ$</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>$A$, $B$ and $C$ are points of a circle with centre $O$, and $C$ lies on the major arc $AB$. If $\angle ACB = (3x)^\circ$ and $\angle AOB = (5x + 20)^\circ$, find $x$ and both angles.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$5x + 20 = 2 \times 3x$</span>
+              <span class="work__why">Theorem 9</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$5x + 20 = 6x$, so $x = 20$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = 20$, $\angle ACB = 60^\circ$ and $\angle AOB = 120^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$120 = 2 \times 60$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -1,5 +1,191 @@
 # Class 9 · Mathematics I · Chapter 5 — Exploring Circles
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Chapter 6 model.
+Page move, examples, Beyond the Book and answers were done in one pass, and
+every check was run on the chapter.
+
+**Pages: 47 before (34 body + 13 Beyond, Crown Quarto), 50 after (31 body +
+19 Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted, and then refitted a second time after Fig. 5.8 was reprinted
+beside Exercise Set 5.5 Q3 (the first fit left that page 31 mm over). Stale
+body pages p032–p034 are gone; `data-close` is on p031.
+
+**All thirteen body examples set as steps.** The working was inside each
+panel as prose, `.eq` lines and `.work` rows with the result in a `.chip`.
+Each is now *Solution*, Steps and *Answer*, with a *Check* row where the old
+text checked the answer (Examples 3, 7, 12). A lead-in that frames the
+problem stays as a paragraph before *Solution*; a remark that is not a step
+stays at the foot. Example 1 (Jamuna's folds) has no question: its two folds
+are Steps 1 and 2 and its last sentence is the *Answer*, words unchanged.
+In Example 6 the Baudhāyana–Pythagoras sentence and its note moved to the
+foot, as *Step 3 is the Baudhāyana–Pythagoras theorem…*.
+
+**Every chip in the body is gone** (24, all in examples, all carrying a
+result or a verdict — *on the circle*, *$8$ cm*). Verdicts became
+`.work__why`; results went into the step (*…, which is $8$ cm*). The theorem
+proofs outside the examples use `.work--list` statements with no chips and
+were left as they are; the `.pop` congruence tags stay.
+
+**Verified** by `build/check-body-maths.mjs`: 216 expressions and 106
+numbers, none lost and none added.
+
+**Language, fixed:** p005's five garbled `â` characters are em dashes again;
+p006's paragraph split mid-sentence (*…$AB$ is a* / *diameter.*) is one
+paragraph.
+
+**Fig. 5.8 reprinted beside Exercise Set 5.5 Q3.** The question names
+Fig. 5.8, which prints on page 17; the question is on page 20. The figure is
+repeated after the question, captioned *(repeated from Section 5.7, for
+Question 3)*, no renumbering. Exercise Set 5.2 Q2 and Fig. 5.5 face each
+other (pages 10–11) and needed nothing.
+
+**Figure labels moved**, in Fig. 5.8 and its reprint: *E* sat on the chord
+$AB$ and *C* on the dashed perpendicular $CH$. Geometry unchanged.
+
+**Every body figure checked against its text** from its coordinates
+(Figs 5.1–5.14): points on their circles, circumcentres of Figs 5.4 and 5.5
+where the text puts them (inside, outside, hypotenuse midpoint), equal
+chords equal, midpoints and right angles in Figs 5.7 and 5.8, the longer
+chord nearer in Fig. 5.9, $\angle ACB = 2\angle ADB$ in Fig. 5.11, equal
+angles in Fig. 5.12, $E$ on both the circle and $AD$ in Fig. 5.13. All were
+drawn right; none was redrawn.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | Q3 and Q5 kept word for word; **Q1, Q2 and Q4 replaced** (below); `.c-stage__for` removed; opening and closing paragraphs adjusted |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **16 stepped examples** under eight `Type` heads; old Problem 2 is Example 11 and Problem 5 is Example 14 unchanged; Problem 1 is Example 7 with new numbers; Problems 3 and 4 were replaced (Examples 4 and 13) |
+| 3 Problem Sets → **Practice** | 3 sets, 25 questions | **one run of 31** in six forms |
+| 4 Answers & Takeaways → **Answers** | key, four option notes, a closing paragraph | key, every other answer, why the options are wrong for seven |
+
+**Stage 1 answered the body three times,** so each was replaced with a
+question of the same kind:
+- Q1 (a $30^\circ$ angle on the major arc, radius $8$, so the chord is $8$)
+  answered Exercise Set 5.6 Q5 backwards → a $7$ cm chord seen at
+  $150^\circ$ from the minor arc; find the radius ($7$ cm, through the
+  reflex angle);
+- Q2 (the $6$–$8$–$10$ triangle, radius $5$) was Example 3's triangle →
+  sides $9$, $12$, $15$, radius $7.5$ cm;
+- Q4 (the shortest chord through a point is the one at right angles to
+  $OP$) was End-of-Chapter Q13's proof → a point $P$ on a $32$ cm chord of a
+  $20$ cm circle with $AP = 7$; find $OP$ ($15$ cm) by drawing the
+  perpendicular. **Fig. 5B.2 redrawn** for it, to scale.
+Q3 now says *Example 10 in Section 5.8*, since Beyond has an Example 10 of
+its own. The closing paragraph now introduces the solved examples.
+
+**Other give-aways fixed:** old Problem 1 was End-of-Chapter Q8 with the
+same numbers ($24$, $10$, $7$ apart, $r = 13$) → $24$ and $18$, $3$ apart,
+$r = 15$, Fig. 5B.3 redrawn to scale; old Problem 3 was Exercise Set 5.3 Q5
+and said so → Example 4 (equal chords, $\angle OCD$); old Problem 4's
+rectangle-and-parallelogram options were Exercise Set 5.7 Q4's answer → the
+isosceles trapezium; old Set A Q1 was End Q2, Q5 was End Q5, Q10 was
+Exercise Set 5.6 Q1, Set B Q1 was End Q4's proof and Set B Q8 was Exercise
+Set 5.7 Q5 — none of the old sets was kept. `check-no-repeats` reports five
+pairs at 50–56%, each the same kind of question with different numbers or
+run the other way.
+
+**Audit findings (Ch05 table):**
+- Stage 1's $6$–$8$–$10$ circumradius leaned on the converse of Pythagoras:
+  the replacement ($9$–$12$–$15$) keeps the idea and now states the converse
+  in one line as met in an earlier class, as the audit suggested.
+- Problem 5 (two circles, common chord): kept as Example 14, citing
+  Exercise Set 5.4 Q1 in its first step's reason, as the audit suggested.
+- Gaps — symmetry, circles through points and where the circumcentre lies,
+  Theorem 10: now Type 1 (Examples 1–3) and Example 12.
+- The five `â` characters on p005: fixed (above).
+
+**Worked examples in the chapter: 29** (13 body + 16 Beyond). Types:
+symmetry and circles through given points; equal chords and the angles at
+the centre; the perpendicular from the centre (an arch and a window); comparing chords by distance (Fig. 5B.3); angles subtended by an
+arc (Fig. 5B.4, new); concyclic points and cyclic quadrilaterals;
+two circles and their common chord (Fig. 5B.5); proofs (Fig. 5B.6, new).
+Old Fig. 5B.5 (Set C3) went with its question.
+
+**`ANSWERS.md` written** for Exercise Sets 5.1–5.7, the fourteen
+end-of-chapter questions, the five Think and Reflect boxes, Stage 1, and all
+31 practice questions.
+
+### Verified
+
+`check-numbers.mjs` passes **490 claims**. It evaluates 143 printed
+identities (powers and square roots included), and checks each equation in
+one unknown against the value the same block solves it to. It also:
+- re-derives every body and Beyond example's Answer row, and the $r = 13$
+  chord table on p021;
+- reads every exercise answer back off `ANSWERS.md`, End Q8's radius found
+  by search;
+- tests Theorems 8 and 9, Stage 1 Q5 and Beyond Example 15 over many
+  circles;
+- measures Figs 5.1–5.14 and 5B.1–5B.6 from their coordinates;
+- builds an isosceles trapezium, a kite and a right trapezium and tests
+  each for a circle (Example 13);
+- checks every multiple-choice question has exactly one right option,
+  matching the key, and derives each assertion–reason letter;
+- checks that `ANSWERS.md`'s key and practice working agree with the page.
+
+**Break tests: 24 of 24 caught** (body answers and identities, Beyond steps
+and answers, key letters, key rows a part at a time, options, `ANSWERS.md`
+values and key, figure coordinates, Stage 1 values). The first run missed
+three, each a wrong number added beside a right one (Beyond Example 8's
+answer, key row 23, Exercise Set 5.4 Q4), so those are now checked as
+phrases.
+
+**Fitting:** nothing is clipped and nothing runs into the margin. `orphans`
+finds 0 stranded openers, `check-labels` no collisions, and `fit-options`
+passes. The lone Q31 on page 48 was balanced by moving Q30 across. I read
+the proofs of pages 1, 20, 33, 34, 38, 40, 44 and 49 and moved labels in
+Figs 5B.2 (the *7* sat on $OA$), 5B.3 (*18* and *24* on the circle) and
+5B.6 (*A* on the arcs); Fig. 5B.6's caption said *dashed* of a line that
+prints solid, and now names it $CBD$.
+
+**Colour:** the figures are line drawings with lettered points; fills are
+background only. Pages 2, 8, 10, 12, 17, 20, 33, 34, 38, 40, 43 and 44 were
+run through `check-colour`.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 2, 9, 12, 24 | 82–87% | an example panel |
+| 3, 5, 25 | 78–80% | a section head with its paragraph |
+| 23 | 72% | Example 10, a panel |
+| 30 | 65% | the chapter summary, a panel |
+| 33 | 85% | Fig. 5B.2 |
+| 34 | 72% | the Solved Examples stage head, which needs its first example |
+| 36–38, 40, 42, 43 | 50–85% | a `Type` head with its example, or an example panel with its figure |
+| 39 | 58% | Example 10 with Fig. 5B.4 (148 mm) |
+| 47 | 51% | Q30, moved across so Q31 is not alone |
+| 48 | 68% | **the Answers stage, which always opens a page** |
+| 50 | 50% | the last page |
+
+### Flagged, not done
+
+- **Exercise Set 5.4 Q6 repeats Q3** word for word before asking more, and
+  **Q7 is Example 8** with the same numbers. **Exercise Set 5.5 Q7 is half of
+  Example 9**, **Exercise Set 5.6 Q6 is Example 10**, and **End-of-Chapter
+  Q1 is Exercise Set 5.5 Q1** and **Q6 is Exercise Set 5.7 Q1**, word for
+  word. Body questions, left; `ANSWERS.md` flags each.
+- Exercise Set 5.2 Q6 (*how many such triangles*) is answered as
+  *infinitely many, different in position*; it could be read otherwise.
+- Stage 1 Q1 still shows that a chord equal to the radius subtends
+  $60^\circ$ at the centre, which is the first half of Exercise Set 5.6 Q5;
+  Example 5 shows the same thing, so it was judged no give-away.
+- Stage 1 Q2 uses the converse of Pythagoras as known from an
+  earlier class; confirm the earlier book teaches it.
+- Examples 5 and 14 cite Exercise Set 5.4 Q1 (the perpendicular bisector of
+  a chord passes through the centre) as a result, as the audit suggested.
+- KaTeX breaks before a full stop after $100^\circ$ in Example 10's question
+  (class-wide stylesheet matter).
+- The chapter's historical remarks (Gudāhāndi rock paintings, Thales, the
+  Śulbasūtra) have no source recorded.
+
 Language edit, 47 pages (p001–p034 chapter proper, p101–p113 Beyond the Book) —
 the longest chapter in the book. Build after editing: 47 pages, all pages fit,
 0 stranded openers, no label collisions, every option row fits. Every worked
