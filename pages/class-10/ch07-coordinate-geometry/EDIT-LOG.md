@@ -1,5 +1,153 @@
 # Class 10 · Mathematics I · Chapter 7 — Coordinate Geometry
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked from the brief built on
+Chapter 1. Page move, examples, Beyond the Book and answers were done in one
+pass, and every check was run on the chapter.
+
+**Pages: 23 before (16 body + 7 Beyond, Crown Quarto), 27 after (15 body + 12
+Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once and then placed by hand (see *Fitting*).
+
+**All ten body examples set as steps.** Each was a question-only panel with
+its working in the running text after it. That working is now inside the
+panel as *Solution*, Steps and *Answer*, reusing the printed maths exactly.
+- **Examples 5 and 7** end on *Check* rows: the check the running text did
+  (AP and BP both $\sqrt{52}$; the $y$-coordinate giving 6).
+- **Example 7's** "Recall that if $(x, y) = (a, b)$…" is now the reason on
+  Step 3. Its chained check is split over two rows.
+- **Example 6's** $x$ and $y$ share one row, as they shared one line before.
+- **Fig. 7.6** is set just before Example 3, which names it. **Fig. 7.11** is
+  inside Example 8's panel, after the work rows.
+- **Left after their panels as remarks:** *Another way* (Examples 2 and 7,
+  Example 7's with its display and three lines of working), and the notes
+  and remark after Examples 1, 4, 5, 7 and 8. The sentence "One way to show
+  that ABCD is a square…" became "To show that ABCD is a square, we showed…"
+  after Example 2.
+
+**Verified.** `build/check-body-maths.mjs` compares 416 expressions and 57
+numbers: no mathematics lost or added. The only gains are the numbers 3 and
+4, from "from Step 3" and "so Step 4 holds too" in reasons.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | **kept word for word**; only `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **14 stepped examples** under seven `Type` heads; the old problems are Examples 2, 3, 9, 11 and 13, options kept, *Answer* gives the letter |
+| 3 Problem Sets → **Practice** | 3 sets, 19 questions | **one run of 31** in six forms |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 12, the closing paragraph |
+
+- **The types:** distance; an unknown coordinate from a distance; proving a
+  shape (collinear points, a rectangle); equidistant points (a point on an
+  axis, and the proof that $3x = 2y$); the section formula (including a map
+  word problem); the ratio a point or an axis divides in; mid-points
+  (including the mid-point theorem checked with coordinates).
+- **Worked examples in the chapter: 24** (10 body + 14 Beyond).
+- **Practice:** 15 multiple choice (reused from the old sets, options
+  reordered), 4 assertion–reason, 3 very short, 4 short, 3 long and 2
+  case-based. Letters: a 5, b 4, c 5, d 5.
+- **Old items dropped:** Set A5 (too easy), Set B5, Set C4 (a rhombus area,
+  the same exercise as Set 7.2 Q10), and Set C5. The two coaching
+  instructions ("Work out all three sides, and then choose"; "Draw a rough
+  figure…") were cut from the questions they led.
+- **Examples 5 and 6 were swapped** after the refit, so that the shorter
+  proof (collinear points) could follow its `Type` head on the page before.
+
+**Nothing repeats or answers the body.** `check-no-repeats` reports 5 pairs
+at 50%; each is the same type with other numbers. Reading every value
+Beyond prints against the body's exercise answers found no give-away. Two
+coincidences were left: Beyond Example 2's perimeter 24 is also Set 7.2
+Q10's area, and Example 12's $y = \frac{7}{2}$ is also a coordinate in the
+answer to Set 7.2 Q9. Neither says anything about the body question.
+Practice 14, 26 and 27 are the same kinds as Set 7.2 Q7, Q6 and Q2, with
+other numbers.
+
+**`ANSWERS.md` written** for Activity 1 (what the drawing must show), the
+questions in the running text of 7.2 and 7.3, Exercise Sets 7.1 and 7.2,
+Stage 1 (pointing to its explanations) and all 31 practice questions. Proofs
+are set one statement to a line.
+
+### Verified
+
+`check-numbers.mjs` passes **564 claims**:
+- **193 printed identities** are evaluated. It reads $\sqrt{}$, fractions,
+  surds written beside a number, tuples compared coordinate by coordinate,
+  and ratios. A distance name (AB, $PQ^2$) is read as the distance between
+  the points printed before it in the same example, question or answer. A
+  printed decimal is held to its own places.
+- **123 equations in $x$, $y$, $k$, $p$, $m_1$, $m_2$, $a$, $b$** are checked
+  at the block's own answer: each step of Example 4 at three points of
+  $x - y = 2$, each step of Example 5 at $y = 9$, and so on.
+- **Re-derived from the printed coordinates:** every body example and
+  exercise answer, including the Sports Day flags from the fractions and
+  line numbers in the question; Stage 1; all 14 Solved Examples; and the
+  practice answers, read back from the key rows a lettered part at a time.
+  A named point is checked as the phrase "Q(5, −1)", not as any pair nearby.
+- **Figures:** 21 plotted points are checked against their labels on the
+  grid their axes and tick numerals set (Figs. 7.2–7.4, 7.6–7.8). Also
+  checked: the line in Fig. 7.7 is $x - y = 2$, Fig. 7.9's P sits a third of
+  the way along AB, Fig. 7.11's P and Q sit at the thirds, and the aria
+  labels of Figs. 7.6 and 7.8 give the seats the text uses.
+- **Multiple choice and assertion–reason:** every question has exactly one
+  right option, and it matches the key. Every assertion–reason letter is
+  derived, and so is each lettered example.
+- **`ANSWERS.md`:** its key and working match the page.
+
+**Break tests: 19 of 19 caught**, run on a copy in the session scratchpad.
+They covered body decimals, an Answer row, an expanded algebra step and an
+exercise question; Beyond steps and Stage 1; a key letter; key rows and
+lettered parts; an option; an assertion; two plotted points; and
+`ANSWERS.md` values, working and key. The first run missed one:
+`ANSWERS.md` practice 27 with a wrong Q passed, because the same pair
+appears as "the mid-point of PB". Named points are now read as phrases.
+
+**Wrong numbers found:** none. The old key, Stage 1 and the old problems all
+re-derived correctly.
+
+**Fitting:** nothing is clipped. Pages 4 and 15 run 0.8 and 1.1 mm into the
+bottom margin. `orphans` finds 0 stranded openers, `check-labels` finds no
+collisions, and `fit-options --fix` narrowed practice Q2 and Q3 to two
+columns.
+- **The body was refitted once and then placed by hand.** The refit left
+  Exercise Set 7.2 Q3 on a recto with Fig. 7.12 overleaf. At 14 pages the
+  only arrangements either divided that pair or stranded the Set 7.2 band
+  under two lines. At 15 pages, Q3 and Fig. 7.12 share page 14.
+- **Hand fitting elsewhere:** two of Example 4's rows were merged so that it
+  fits on page 6. Beyond was hand-placed after its one refit, which came to
+  13 pages; it is now 12.
+
+I read the proofs of pages 5, 12, 13, 14, 17, 19, 25 and 26.
+
+**Colour:** pages 2–4, 6–9, 13 and 14 were checked in greyscale and in the
+colour-vision simulations. In Fig. 7.7 the line $x - y = 2$ carries its
+label, and the segment AB has labelled end dots, so neither depends on hue.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 1 | 73% | the chapter opener; 7.2 opens the next page |
+| 4 | 81% | Example 1, a panel (97 mm) |
+| 7 | 82% | Exercise Set 7.1, whose band may not start this low |
+| 11 | 61% | Example 7, a panel (108 mm). This is the extra page that keeps Set 7.2 Q3 with Fig. 7.12 |
+| 12 | 82% | Example 8, a panel with its figure (110 mm) |
+| 15 | 58% | the last body page (`data-close`) |
+| 20–22 | 68–72% | Solved Examples: a `Type` head and two tall panels a page |
+| 27 | 40% | the last page |
+
+### Flagged, not done
+
+- **Example 7's Note** speaks of "PA and PB", but the example never names
+  the point P. This is NCERT's wording and is kept.
+- **The HTML indentation** of hand-moved blocks is uneven. It does not
+  affect the page.
+
 Written new from NCERT *Mathematics, Textbook for Class X* (reprint 2026-27),
 Chapter 7, *Coordinate Geometry* (textbook pages 99–112). Original LearnLab
 text in NCERT's order of topics, examples and questions; no sentence is carried
@@ -13,6 +161,10 @@ source's "play" with plotted points is **Activity 1**; working is set as
 `.work--list` rows. The source's *7.4 Summary* is the chapter summary; its
 *A note to the reader* (external division) is a `c-tip` carrying the
 coordinates mark, placed straight after the section formula.
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted: `check-body-maths` reports no mathematics lost or added, `check-numbers.mjs` passes, 0 stranded openers, every option row fits, no label collisions.
 
 ## Figures
 

@@ -3,12 +3,6 @@
     <div class="page__main">
 
       <div class="c-try">
-        <p>The product of two consecutive odd integers is 143. Find the integers.</p>
-      </div>
-
-      <p>Let the integers be $x$ and $x + 2$. Then $x(x + 2) = 143$, that is, $x^2 + 2x - 143 = 0$, or $(x + 13)(x - 11) = 0$. So $x = 11$ or $x = -13$. Both roots answer this question: 11 and 13 work, and so do $-13$ and $-11$, whose product is also 143. If the question had said positive integers, only 11 and 13 would be allowed. Whether a negative root is kept depends on the question, not on the equation. Check both pairs: $11 \times 13 = 143$ and $(-13) \times (-11) = 143$.</p>
-
-      <div class="c-try">
         <p>Show that $x^2 + px - 1 = 0$ has two distinct real roots, whatever the real number $p$ is.</p>
       </div>
 
@@ -17,24 +11,48 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The roots of $2x^2 - 7x + 3 = 0$ are</p>
-        <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$3$ and $\dfrac{1}{2}$</li><li>$-3$ and $-\dfrac{1}{2}$</li><li>$\dfrac{3}{2}$ and $1$</li><li>$6$ and $1$</li></ol>
+      <h3>Type 1 &middot; Recognising and forming quadratic equations</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Check whether $(x + 1)^3 = x^3 + 2x - 5$ is a quadratic equation.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(x + 1)^3 = x^3 + 3x^2 + 3x + 1$</span>
+              <span class="work__why">expand the cube</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x^3 + 3x^2 + 3x + 1 = x^3 + 2x - 5$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$3x^2 + x + 6 = 0$</span>
+              <span class="work__why">the cubes cancel</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes. It is a quadratic equation, with $a = 3$, $b = 1$ and $c = 6$</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>$2x^2 - 7x + 3 = 2x^2 - 6x - x + 3 = 2x(x - 3) - 1(x - 3) = (2x - 1)(x - 3)$</p>
-          <p>$2x - 1 = 0$ gives $x = \dfrac{1}{2}$, and $x - 3 = 0$ gives $x = 3$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The length of a rectangular garden is 3 m more than its breadth, and its area is 180 m². Write the quadratic equation, in standard form, that the breadth satisfies.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>breadth $x$ m, so length $(x + 3)$ m</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x(x + 3) = 180$</span>
+              <span class="work__why">length times breadth</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x^2 + 3x - 180 = 0$</span></div>
+          </div>
+          <p>Its roots are 12 and $-15$, so the garden is 12 m wide and 15 m long.</p>
         </div>
-        <p>The answer is (a). Option (b) gets the signs wrong: the roots of $(2x + 1)(x + 3) = 0$. Option (c) comes from a wrong split of the middle term, and (d) are the roots of $x^2 - 7x + 6 = 0$, which forgets the coefficient 2.</p>
       </div>
 
     </div>

@@ -1,5 +1,131 @@
 # Class 10 · Mathematics I · Chapter 1 — Real Numbers
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked by hand as the model for the
+other thirteen Class 10 chapters. Page move, examples, Beyond the Book and
+answers were done in one pass, and every check was run on the chapter.
+
+**Pages: 16 before (9 body + 7 Beyond, Crown Quarto), 21 after (9 body + 12
+Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`, and the body was
+refitted once.
+
+**All seven body examples set as steps: a decision for Class 10.** Every
+example here, and 113 of the 117 in Class 10, was a question-only panel with
+its working in the running text after it. The Class 7 rule leaves such
+panels alone, which would have left Class 10's examples as prose. The user
+decided on 17 September 2026 to step them. Each example's working moves
+into its panel as *Solution*, Steps and *Answer*, and a remark that is not a
+step stays as a paragraph after the panel.
+- **Proofs** (Examples 1, 5, 6, 7) are set one statement to a row with the
+  reason beside it, as DESIGN-MATHS asks of Classes 9–10. Example 5's
+  conclusion, which had run onto the next page, is now its Step 7 and
+  Answer.
+- **Example 2's** remark on powers stays after the panel, since it leads to
+  the key idea.
+
+**Verified** by a new tool, `build/check-body-maths.mjs`. The old stepping
+check compares only what is inside each panel, so it would report every
+moved line as new. The new tool compares every maths span and every number
+in the whole body, before and after: 130 expressions and 106 numbers, with
+none lost and none added. The only gains are numbers restated in Answer
+rows.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | **kept word for word**; only `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems in `.c-problem` / `.c-solution` | **13 stepped examples** under seven `Type` heads; the 5 old problems are Examples 2, 3, 5, 11 and 13, options kept, *Answer* gives the letter |
+| 3 Problem Sets → **Practice** | 3 sets, 19 questions | **one run of 31** in six forms |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 12, the closing paragraph |
+
+**Unlike Class 8, Class 10's old Stage 2 is separate problems.** Its line
+reads *Five multiple-choice problems, each solved*, and Stage 1 already
+explains each of its own questions. So Stage 1 is untouched, and the old
+problems become Solved Examples, as in Classes 6 and 7.
+
+**Worked examples in the chapter: 20** (7 body + 13 Beyond). Every topic is
+worked under a type: prime factorisation, HCF and LCM, HCF × LCM, word
+problems, composite numbers, irrationality proofs, and sums and products
+with an irrational number.
+
+**Nothing repeats or answers the body.** `check-no-repeats` reports 18 pairs
+above 50%, each the same type with different numbers (for example √7 against
+the body's √3, and 11 × 13 × 17 + 17 against Exercise Set 1.1 Q6). Reading
+every value Beyond prints against the body's exercises found nothing that
+answers one. The old problem sets were reused with their options reordered
+to spread the key (a 4, b 5, c 5, d 5). Three were dropped as weak or
+duplicated, and the old assertion–reason and "who is right" items were
+recast in the Class 7 forms.
+
+**`ANSWERS.md` written** for Exercise Sets 1.1 and 1.2, the running-text
+question in § 1.2, the Note to the Reader's check, Stage 1, and all 31
+practice questions. Proofs are set one statement to a line.
+
+### Verified
+
+`check-numbers.mjs` passes **320 claims**, evaluating 205 printed identities.
+It reads `HCF(…)` and `LCM(…)` as functions, so identities printed with them
+are checked too; the 101 spans it skips are algebra. It also re-derives:
+- the primality of 3803 and 3607;
+- every exercise answer in `ANSWERS.md`, including checking that each
+  factorisation lists only primes;
+- Stage 1's numbers and every Solved Example;
+- the practice answers, read back from the key rows a lettered part at a
+  time;
+- every multiple-choice question (exactly one right option, matching the
+  key) and every assertion–reason letter;
+- the key and practice working in `ANSWERS.md`.
+
+**Break tests: 13 of 13 caught** (the body, a Beyond example, a key letter,
+key rows, an option, `ANSWERS.md` values and key). The first run missed
+three:
+- key 30 (d) "9 times" passed because 8 also appears in "432 × 8" in the
+  same part, so that answer is now checked as a phrase;
+- `ANSWERS.md`'s practice working was not checked at all; it is now, row by
+  row;
+- one test added a value instead of replacing it, which was not a fair test.
+
+**Faults in the check itself, fixed:**
+- a comma inside `HCF(6, 20)` split the span;
+- a `\sqrt` inside a `\dfrac` defeated the fraction parser;
+- $\sqrt{2} \times \sqrt{8}$ was compared with 4 exactly, in floating point.
+
+**Fitting:** nothing is clipped. Pages 16 and 20 run 1.3 mm into the bottom
+margin. `orphans` finds 0 stranded openers, `check-labels` finds no
+collisions, and `fit-options` narrowed practice Q7's options to two
+columns. I read the proofs of pages 7 and 17.
+
+**Colour:** pages 1 and 2 were read in greyscale. The factor tree marks its
+primes with boxes, not colour.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 6 | 87% | Example 5, a panel |
+| 7 | 74% | Example 7, a panel |
+| 8 | 84% | the Note to the Reader, a panel |
+| 9 | 28% | the last body page (`data-close`) |
+| 13–15 | 64–78% | Solved Examples: a `Type` head with its example, and example panels |
+| 16, 18 | 84% | practice blocks too tall for the gap |
+| 19 | 65% | **the Answers stage, which always opens a page** |
+| 21 | 55% | the last page |
+
+### Flagged, not done
+
+- **Unsourced history:** Euclid's Book IX Proposition 14, Gauss's proof, and
+  "counted with Archimedes and Newton" are stated without a source in this
+  log.
+- **Ex 1.1 Q7:** "drive once round the field" is NCERT's wording and is kept.
+
+
+
 Written new from NCERT *Mathematics, Textbook for Class X* (reprint 2026-27),
 Chapter 1, *Real Numbers* (textbook pages 1–9). Original LearnLab text in
 NCERT's order of topics, examples and questions; no sentence is carried over.
@@ -14,6 +140,10 @@ Sections: 1.1 Introduction · 1.2 The Fundamental Theorem of Arithmetic ·
 stepped working with a reason on every line. The source's *1.4 Summary* is
 the chapter summary (not a numbered section, as in every other chapter), and
 its *Note to the Reader* is a `c-reflect`.
+
+### Accepted, 17 September 2026
+
+Accepted as the model.
 
 ## The one figure
 

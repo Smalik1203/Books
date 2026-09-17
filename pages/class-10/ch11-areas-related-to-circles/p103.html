@@ -2,48 +2,71 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>A chord of a circle of radius 14&nbsp;cm subtends $60^\circ$ at the centre. The area of the minor segment is (Use ${\pi = \frac{22}{7}}$ and ${\sqrt{3} = 1.73}$.)</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>17.9&nbsp;cm<sup>2</sup></li><li>102.7&nbsp;cm<sup>2</sup></li><li>84.8&nbsp;cm<sup>2</sup></li><li>187.4&nbsp;cm<sup>2</sup></li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>sector <span class="nb">${= \frac{1}{6} \times 616 = 102.67}$&nbsp;cm<sup>2</sup></span>; the triangle is equilateral, of area <span class="nb">${\frac{\sqrt{3}}{4} \times 196 = 84.77}$&nbsp;cm<sup>2</sup></span></p>
-          <p>segment <span class="nb">${= 102.67 - 84.77 = 17.90}$&nbsp;cm<sup>2</sup></span></p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>The hour hand of a clock is 6&nbsp;cm long. The area it sweeps from 12 o'clock to 4 o'clock is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$4\pi$&nbsp;cm<sup>2</sup></li><li>$24\pi$&nbsp;cm<sup>2</sup></li><li>$12\pi$&nbsp;cm<sup>2</sup></li><li>$36\pi$&nbsp;cm<sup>2</sup></li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>in 4 hours the hand turns ${4 \times 30^\circ = 120^\circ}$</span>
+              <span class="work__why">$360^\circ$ in 12 hours</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area <span class="nb">${= \frac{120}{360} \times \pi \times 36 = 12\pi}$&nbsp;cm<sup>2</sup></span></span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
+          <p>Option (a) takes 4 hours as $40^\circ$, (b) uses $2\pi r^2$ in place of $\pi r^2$, and (d) is the whole circle.</p>
         </div>
-        <p>The answer is (a). Option (b) is the sector, (c) is the triangle, and (d) adds them.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>A sector of a circle of radius 21&nbsp;cm has an arc 22&nbsp;cm long. Its area is (Use ${\pi = \frac{22}{7}}$.)</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>462&nbsp;cm<sup>2</sup></li><li>231&nbsp;cm<sup>2</sup></li><li>1386&nbsp;cm<sup>2</sup></li><li>60&nbsp;cm<sup>2</sup></li></ol>
-      </div>
+      <h3>Type 2 &middot; Working back from an arc or an area</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>area of the sector = half the arc times the radius <span class="nb">${= \frac{1}{2} \times 22 \times 21 = 231}$&nbsp;cm<sup>2</sup></span></p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A sector of a circle of radius 35&nbsp;cm has an arc 22&nbsp;cm long. Its area is (Use ${\pi = \frac{22}{7}}$.)</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>770&nbsp;cm<sup>2</sup></li><li>385&nbsp;cm<sup>2</sup></li><li>3850&nbsp;cm<sup>2</sup></li><li>192.5&nbsp;cm<sup>2</sup></li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>area of a sector $=$ half the arc times the radius</span>
+              <span class="work__why">from Stage 1</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area <span class="nb">${= \frac{1}{2} \times 22 \times 35 = 385}$&nbsp;cm<sup>2</sup></span></span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the circumference is ${2 \times \frac{22}{7} \times 35 = 220}$, so the sector is $\frac{1}{10}$ of the circle, and ${\frac{1}{10} \times 3850 = 385}$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) leaves out the half, (c) is the whole circle, and (d) takes the half twice.</p>
         </div>
-        <p>The answer is (b). Option (a) forgets the half, (c) is the whole circle, and (d) is the angle, $60^\circ$, written as an area.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>A goat is tied with a rope 7&nbsp;m long to one corner of a rectangular field 20&nbsp;m by 15&nbsp;m. The area of the field that the goat cannot graze is (Use ${\pi = \frac{22}{7}}$.)</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>38.5&nbsp;m<sup>2</sup></li><li>261.5&nbsp;m<sup>2</sup></li><li>146&nbsp;m<sup>2</sup></li><li>154&nbsp;m<sup>2</sup></li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>the goat grazes a quadrant: <span class="nb">${\frac{1}{4} \times \frac{22}{7} \times 49 = 38.5}$&nbsp;m</span><sup>2</sup></p>
-          <p>the rest of the field <span class="nb">${= 20 \times 15 - 38.5 = 261.5}$&nbsp;m</span><sup>2</sup></p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>An arc 22&nbsp;cm long subtends an angle of $140^\circ$ at the centre of a circle. Find the radius of the circle and the area of the sector. (Use ${\pi = \frac{22}{7}}$.)</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{140}{360} \times 2 \times \dfrac{22}{7} \times r = 22$</span>
+              <span class="work__why">length of the arc</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\dfrac{22}{9} r = 22$, so <span class="nb">$r = 9$&nbsp;cm</span></span>
+              <span class="work__why">$\frac{7}{18} \times \frac{44}{7} = \frac{22}{9}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>area <span class="nb">$= \dfrac{1}{2} \times 22 \times 9 = 99$&nbsp;cm<sup>2</sup></span></span>
+              <span class="work__why">half the arc times the radius</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\dfrac{140}{360} \times \dfrac{22}{7} \times 9 \times 9 = 99$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>radius 9&nbsp;cm, area 99&nbsp;cm<sup>2</sup></span></div>
+          </div>
         </div>
-        <p>The answer is (b). Option (a) is the part it can graze, (d) is a whole circle, and (c) subtracts that whole circle.</p>
       </div>
 
     </div>

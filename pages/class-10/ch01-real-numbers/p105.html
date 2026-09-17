@@ -2,53 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>The number $5^n$ ends with the digit 0 for<ol class="c-parts c-parts--alpha"><li>$n = 2$ only</li><li>every even $n$</li><li>every $n$ greater than 1</li><li>no natural number $n$</li></ol></li>
-        </ol>
+      <h3>Type 5 &middot; Showing that a number is composite</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Explain why $11 \times 13 \times 17 + 17$ is a composite number.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$11 \times 13 \times 17 + 17 = 17 \times (11 \times 13 + 1)$</span>
+              <span class="work__why">17 is common</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$17 \times (11 \times 13 + 1) = 17 \times 144$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>It has the factor 17, which is neither 1 nor the number itself, so it is composite</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>The HCF of two consecutive natural numbers is<ol class="c-parts c-parts--alpha c-parts--4"><li>0</li><li>2</li><li>the smaller</li><li>1</li></ol></li>
-        </ol>
-      </div>
+      <h3>Type 6 &middot; Proving that a number is irrational</h3>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>A prime $p$ divides $a^2$, where $a$ is a positive integer. Then<ol class="c-parts c-parts--alpha c-parts--4"><li>$p^2$ divides $a$</li><li>$a$ is a prime</li><li>$p$ divides $a$</li><li>$a = p$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set B &middot; Two ideas together</div>
-        <ol class="c-questions">
-          <li>The largest number that divides 70 and 125, leaving remainders 5 and 8, is<ol class="c-parts c-parts--alpha c-parts--4"><li>65</li><li>5</li><li>585</li><li>13</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Three bells ring every 9, 12 and 15 minutes. They ring together at 8 a.m. They next ring together at<ol class="c-parts c-parts--alpha c-parts--4"><li>8:36 a.m.</li><li>9:00 a.m.</li><li>11:00 a.m.</li><li>8:45 a.m.</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The number $(\sqrt{2} + \sqrt{3})^2$ is equal to<ol class="c-parts c-parts--alpha c-parts--4"><li>5</li><li>$5 + \sqrt{6}$</li><li>$5 + 2\sqrt{6}$</li><li>25</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Let $a = 2^3 \times 3$, $b = 2 \times 3 \times 5$ and $c = 3^n \times 5$. If $\text{LCM}(a, b, c) = 2^3 \times 3^2 \times 5$, then $n$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>1</li><li>2</li><li>3</li><li>4</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Assertion: $5 \times 7 \times 11 + 7$ is a composite number. Reason: a natural number greater than 1 that has a factor other than 1 and itself is composite.<ol class="c-parts c-parts--alpha c-parts--1"><li>Both are true, and the reason explains the assertion.</li><li>Both are true, but the reason does not explain the assertion.</li><li>The assertion is true, but the reason is false.</li><li>The assertion is false, but the reason is true.</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Prove that $\sqrt{7}$ is irrational.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\sqrt{7} = \frac{a}{b}$, for coprime integers $a$ and $b$ with $b \neq 0$</span>
+              <span class="work__why">assume it is rational</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$b\sqrt{7} = a$, so $7b^2 = a^2$</span>
+              <span class="work__why">squaring both sides</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>7 divides $a^2$, so 7 divides $a$</span>
+              <span class="work__why">Theorem 1.2, 7 is prime</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$a = 7c$, so $7b^2 = 49c^2$, that is, $b^2 = 7c^2$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>7 divides $b^2$, so 7 divides $b$</span>
+              <span class="work__why">Theorem 1.2 again</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>7 is a common factor of $a$ and $b$</span>
+              <span class="work__why">contradicts Step 1</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The assumption is false, so $\sqrt{7}$ is irrational</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

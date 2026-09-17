@@ -2,52 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>A circle touches the sides BC, CA and AB of a triangle ABC at D, E and F. If <span class="nb">${AB = 10}$&nbsp;cm</span>, <span class="nb">${AC = 12}$&nbsp;cm</span> and <span class="nb">${BD = 4}$&nbsp;cm</span>, then BC is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>10&nbsp;cm</li><li>12&nbsp;cm</li><li>8&nbsp;cm</li><li>14&nbsp;cm</li></ol>
-      </div>
+      <h3>Type 2 &middot; Angles made by tangents</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>${BF = BD = 4}$, so ${AF = 10 - 4 = 6}$; &nbsp; ${AE = AF = 6}$, so ${CE = 12 - 6 = 6}$</p>
-          <p>${CD = CE = 6}$, so <span class="nb">${BC = BD + CD = 4 + 6 = 10}$&nbsp;cm</span></p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>TP and TQ are tangents from T to a circle with centre O, and ${\angle PTQ = 50^\circ}$. Then $\angle OPQ$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$50^\circ$</li><li>$65^\circ$</li><li>$25^\circ$</li><li>$130^\circ$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${TP = TQ}$, so ${\angle TPQ = \frac{1}{2}(180^\circ - 50^\circ) = 65^\circ}$</span>
+              <span class="work__why">equal tangents</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${\angle OPT = 90^\circ}$, so ${\angle OPQ = 90^\circ - 65^\circ = 25^\circ}$</span>
+              <span class="work__why">Theorem 10.1</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
+          <p>Option (b) is $\angle TPQ$, (a) is $\angle PTQ$, and (d) is ${180^\circ - 50^\circ}$.</p>
         </div>
-        <p>The answer is (a). Option (b) copies AC, (c) is ${AC - BD}$, and (d) is ${AB + BD}$. Follow the equal tangents round the triangle one vertex at a time.</p>
       </div>
 
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets of multiple-choice questions: one idea each, two ideas together, and the whole chapter.</div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>PQ is a chord of a circle with centre O, and PT is the tangent at P. If ${\angle QPT = 50^\circ}$, find $\angle POQ$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${\angle OPT = 90^\circ}$</span>
+              <span class="work__why">Theorem 10.1</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${\angle OPQ = 90^\circ - 50^\circ = 40^\circ}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${\angle OQP = \angle OPQ = 40^\circ}$</span>
+              <span class="work__why">${OP = OQ}$, radii</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${\angle POQ = 180^\circ - 40^\circ - 40^\circ = 100^\circ}$</span>
+              <span class="work__why">angle sum of triangle OPQ</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>${\angle POQ = 100^\circ}$</span></div>
+          </div>
+          <p>The angle at the centre is twice the angle between the tangent and the chord.</p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One idea each</div>
-        <ol class="c-questions">
-          <li>The number of tangents to a circle that can be drawn through a point inside it is<ol class="c-parts c-parts--alpha"><li>$0$</li><li>$1$</li><li>$2$</li><li>infinitely many</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The length of the tangent from a point 10&nbsp;cm from the centre of a circle of radius 6&nbsp;cm is<ol class="c-parts c-parts--alpha c-parts--4"><li>4&nbsp;cm</li><li>8&nbsp;cm</li><li>16&nbsp;cm</li><li><span class="nb">${2\sqrt{34}}$&nbsp;cm</span></li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The angle between a tangent to a circle and the radius at the point of contact is<ol class="c-parts c-parts--alpha c-parts--4"><li>$60^\circ$</li><li>$45^\circ$</li><li>$90^\circ$</li><li>$180^\circ$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>PA and PB are the tangents from a point P to a circle, with <span class="nb">${PA = (3x - 2)}$&nbsp;cm</span> and <span class="nb">${PB = (x + 6)}$&nbsp;cm</span>. The value of $x$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$8$</li><li>$10$</li><li>$4$</li><li>$2$</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>The tangents PA and PB from a point P to a circle with centre O and radius 3&nbsp;cm make an angle of $60^\circ$ with each other. Show that the triangle APB is equilateral, and find AB.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${PA = PB}$</span>
+              <span class="work__why">Theorem 10.2</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${\angle PAB = \angle PBA = \frac{1}{2}(180^\circ - 60^\circ) = 60^\circ}$, so APB is equilateral</span>
+              <span class="work__why">angles opposite equal sides</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${\angle APO = 30^\circ}$ and ${\angle OAP = 90^\circ}$</span>
+              <span class="work__why">OP bisects the angle; Theorem 10.1</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${\tan 30^\circ = \frac{OA}{PA}}$, that is, ${\frac{1}{\sqrt{3}} = \frac{3}{PA}}$, so <span class="nb">${PA = 3\sqrt{3}}$&nbsp;cm</span></span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The triangle is equilateral, and <span class="nb">${AB = PA = 3\sqrt{3}}$&nbsp;cm</span></span></div>
+          </div>
+        </div>
       </div>
 
     </div>

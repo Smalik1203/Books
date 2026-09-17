@@ -2,71 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--lg">
-                                                        <figure>
-                                                          <svg viewBox="0 0 264 140" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A smaller triangle ABC and a larger triangle DEF of the same shape. P is marked on DE and Q on DF so that DP equals AB and DQ equals AC, and PQ is drawn dashed.">
-      <path class="dg-line" d="M42 50 L16 108 L88 108 Z"/>
-      <path class="dg-line" d="M164.9 23.3 L118 128 L248 128 Z"/>
-      <path class="dg-hidden" d="M138.9 81.3 L210.9 81.3"/>
-      <text class="dg-label" x="40.1" y="42.7" text-anchor="middle">A</text>
-      <text class="dg-label" x="6.5" y="117.1" text-anchor="middle">B</text>
-      <text class="dg-label" x="97.9" y="116.4" text-anchor="middle">C</text>
-      <text class="dg-label" x="163.1" y="15.9" text-anchor="middle">D</text>
-      <text class="dg-label" x="108.5" y="137.1" text-anchor="middle">E</text>
-      <text class="dg-label" x="257.9" y="136.4" text-anchor="middle">F</text>
-      <text class="dg-label" x="129.8" y="80.7" text-anchor="middle">P</text>
-      <text class="dg-label" x="218.8" y="78.6" text-anchor="middle">Q</text>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Look at Fig.&nbsp;6.30 and find $\angle P$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>in $\triangle ABC$ and $\triangle PQR$, $\dfrac{AB}{RQ} = \dfrac{3.8}{7.6} = \dfrac{1}{2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\dfrac{BC}{QP} = \dfrac{6}{12} = \dfrac{1}{2}$ &nbsp; and &nbsp; $\dfrac{CA}{PR} = \dfrac{3\sqrt{3}}{6\sqrt{3}} = \dfrac{1}{2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\dfrac{AB}{RQ} = \dfrac{BC}{QP} = \dfrac{CA}{PR}$, so ${\triangle ABC \sim \triangle RQP}$</span>
+              <span class="work__why">SSS similarity</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\angle C = 180^\circ - \angle A - \angle B = 180^\circ - 80^\circ - 60^\circ = 40^\circ$</span>
+              <span class="work__why">angle sum property</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle P = \angle C = 40^\circ$, as corresponding angles of similar triangles</span></div>
+          </div>
+          <div class="c-figure c-figure--lg">
+            <figure>
+            <svg viewBox="0 0 280 140" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two triangles. In ABC, AB is 3.8, BC is 6 and CA is 3√3, with the angle A 80° and the angle B 60°. In PQR, PQ is 12, QR is 7.6 and PR is 6√3.">
+      <path class="dg-line" d="M39.5 75.3 L16 116 L88 116 Z"/>
+      <text class="dg-label" x="36.3" y="68.3" text-anchor="middle">A</text>
+      <text class="dg-label" x="5.9" y="123.8" text-anchor="middle">B</text>
+      <text class="dg-label" x="98.4" y="123" text-anchor="middle">C</text>
+      <text class="dg-dim-label" x="16.3" y="92" text-anchor="middle">3.8</text>
+      <text class="dg-dim-label" x="52" y="127" text-anchor="middle">6</text>
+      <text class="dg-dim-label" x="71.8" y="89.1" text-anchor="middle">3√3</text>
+      <path class="dg-thin" d="M36 81.4 A7 7 0 0 0 44.9 79.8"/>
+      <text class="dg-dim-label" x="42.4" y="95" text-anchor="middle">80°</text>
+      <path class="dg-thin" d="M23 116 A7 7 0 0 0 19.5 109.9"/>
+      <text class="dg-dim-label" x="30.7" y="110.5" text-anchor="middle">60°</text>
+      <path class="dg-line" d="M122 124 L266 124 L219 42.6 Z"/>
+      <text class="dg-label" x="111.6" y="131" text-anchor="middle">P</text>
+      <text class="dg-label" x="276.1" y="131.8" text-anchor="middle">Q</text>
+      <text class="dg-label" x="222.2" y="35.6" text-anchor="middle">R</text>
+      <text class="dg-dim-label" x="162.5" y="76.8" text-anchor="middle">6√3</text>
+      <text class="dg-dim-label" x="254" y="79.7" text-anchor="middle">7.6</text>
+      <text class="dg-dim-label" x="194" y="135" text-anchor="middle">12</text>
       </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.28</span> DP&nbsp;=&nbsp;AB and DQ&nbsp;=&nbsp;AC.</figcaption>
-                                                        </figure>
-                                                      </div>
-
-      <div class="work work--list">
-        <p>$PQ \parallel EF$ and ${\triangle ABC \cong \triangle DPQ}$ &nbsp; (How?)</p>
-        <p>so $\angle A = \angle D$, $\angle B = \angle P$ and $\angle C = \angle Q$</p>
-        <p>so ${\triangle ABC \sim \triangle DEF}$ &nbsp; (Why?)</p>
-      </div>
-
-      <p>There is one more criterion, for right triangles.</p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h7L3 12z"/><path d="M12 19h9L12 9z"/></svg></div>
-        <div class="c-tip__body">
-          <p>If the hypotenuse and one side of a right triangle are proportional to the hypotenuse and one side of another right triangle, then the two triangles are similar. This is called the <span class="term">RHS similarity criterion</span>.</p>
+            <figcaption><span class="fignum">Fig. 6.30</span> The triangles ABC and PQR.</figcaption>
+            </figure>
+            </div>
         </div>
       </div>
-
-      <p>Let us now look at some examples that use these criteria.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__tab">Example 6</div>
         <div class="c-example__body">
-          <p>In Fig.&nbsp;6.29, $PQ \parallel RS$. Prove that ${\triangle POQ \sim \triangle SOR}$.</p>
-        </div>
-      </div>
-
-      <div class="c-figure c-figure--md">
-                                                        <figure>
-                                                          <svg viewBox="0 0 230 128" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two segments PS and QR crossing at the point O, with P and Q on the left and R and S on the right. PQ and RS are drawn and are parallel.">
-      <path class="dg-line" d="M56 42 L38 100"/>
-      <path class="dg-line" d="M196 18 L165 114"/>
-      <path class="dg-line" d="M56 42 L165 114"/>
-      <path class="dg-line" d="M38 100 L196 18"/>
-      <text class="dg-label" x="52" y="38" text-anchor="end">P</text>
-      <text class="dg-label" x="34" y="106" text-anchor="end">Q</text>
-      <text class="dg-label" x="201" y="20" text-anchor="start">R</text>
-      <text class="dg-label" x="170" y="120" text-anchor="start">S</text>
-      <text class="dg-label" x="97.3" y="85.2" text-anchor="middle">O</text>
+          <p>In Fig.&nbsp;6.31, $OA \cdot OB = OC \cdot OD$. Show that $\angle A = \angle C$ and $\angle B = \angle D$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$OA \cdot OB = OC \cdot OD$, so $\dfrac{OA}{OC} = \dfrac{OD}{OB}$ &nbsp; (1)</span>
+              <span class="work__why">given</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle AOD = \angle COB$ &nbsp; (2); by (1) and (2), ${\triangle AOD \sim \triangle COB}$</span>
+              <span class="work__why">vertically opposite; SAS</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle A = \angle C$ and $\angle D = \angle B$, as corresponding angles of similar triangles</span></div>
+          </div>
+          <div class="c-figure c-figure--sm">
+            <figure>
+            <svg viewBox="0 0 190 130" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The segments AB and CD cross at the point O. A is joined to D, and C is joined to B, making two triangles AOD and COB.">
+      <path class="dg-line" d="M52 40 L168 118"/>
+      <path class="dg-line" d="M166 16 L58 98"/>
+      <path class="dg-line" d="M52 40 L58 98"/>
+      <path class="dg-line" d="M166 16 L168 118"/>
+      <text class="dg-label" x="48" y="38" text-anchor="end">A</text>
+      <text class="dg-label" x="172" y="124" text-anchor="start">B</text>
+      <text class="dg-label" x="170" y="16" text-anchor="start">C</text>
+      <text class="dg-label" x="54" y="106" text-anchor="end">D</text>
+      <text class="dg-label" x="98" y="61" text-anchor="middle">O</text>
       </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.29</span> PQ parallel to RS.</figcaption>
-                                                        </figure>
-                                                      </div>
-
-      <div class="work work--list">
-        <p>$PQ \parallel RS$ &nbsp; (given)</p>
-        <p>so $\angle P = \angle S$ and $\angle Q = \angle R$ &nbsp; (alternate angles)</p>
-        <p>also $\angle POQ = \angle SOR$ &nbsp; (vertically opposite angles)</p>
-        <p>so ${\triangle POQ \sim \triangle SOR}$ &nbsp; (AAA similarity criterion)</p>
+            <figcaption><span class="fignum">Fig. 6.31</span> AB and CD meet at O.</figcaption>
+            </figure>
+            </div>
+        </div>
       </div>
 
     </div>

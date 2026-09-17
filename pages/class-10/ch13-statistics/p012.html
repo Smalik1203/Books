@@ -3,49 +3,56 @@
     <div class="page__main">
 
       <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
-        <div class="c-example__body">
-          <p>A group of students surveyed 20 households in a locality and made this frequency table of the number of family members in each household. Find the mode of the data.</p>
-          <table class="table--data">
-            <thead><tr><th>Family size</th><th>1&nbsp;–&nbsp;3</th><th>3&nbsp;–&nbsp;5</th><th>5&nbsp;–&nbsp;7</th><th>7&nbsp;–&nbsp;9</th><th>9&nbsp;–&nbsp;11</th></tr></thead>
-            <tbody><tr><td>Number of families</td><td>7</td><td>8</td><td>2</td><td>2</td><td>1</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-
-      <p>The highest class frequency is 8, and the class with this frequency is 3&nbsp;–&nbsp;5. So the modal class is 3&nbsp;–&nbsp;5, and</p>
-
-      <div class="work work--list">
-        <p>$l = 3$, &nbsp; $h = 2$, &nbsp; $f_1 = 8$, &nbsp; $f_0 = 7$, &nbsp; $f_2 = 2$</p>
-      </div>
-
-      <p>Putting these values into the formula,</p>
-
-      <div class="work work--list">
-        <p>$\text{Mode} = l + \left(\dfrac{f_1 - f_0}{2f_1 - f_0 - f_2}\right) \times h = 3 + \left(\dfrac{8 - 7}{2 \times 8 - 7 - 2}\right) \times 2 = 3 + \dfrac{2}{7} = 3.286$</p>
-      </div>
-
-      <p>So the mode of the data is 3.286.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Table 13.3 gives the marks of 30 students in a mathematics examination. Find the mode of the data. Then compare the mode with the mean, and say what each of them tells you.</p>
-        </div>
-      </div>
-
-      <p>In Table 13.3 the largest number of students, 7, got marks in the class 40&nbsp;–&nbsp;55. So the modal class is 40&nbsp;–&nbsp;55, and</p>
-
-      <div class="work work--list">
-        <p>$l = 40$, &nbsp; $h = 15$, &nbsp; $f_1 = 7$, &nbsp; $f_0 = 3$, &nbsp; $f_2 = 6$</p>
-        <p>$\text{Mode} = 40 + \left(\dfrac{7 - 3}{14 - 3 - 6}\right) \times 15 = 40 + \dfrac{4}{5} \times 15 = 52$</p>
-      </div>
-
-      <p>So the mode is 52 marks. In Section 13.2 you found that the mean of the same marks is 62. So more students got about 52 marks than any other mark, while the average mark of a student is 62.</p>
+                                                  <div class="c-example__tab">Example 6</div>
+                                                  <div class="c-example__body">
+                                                    <p>Table 13.3 gives the marks of 30 students in a mathematics examination. Find the mode of the data. Then compare the mode with the mean, and say what each of them tells you.</p>
+                                                    <table class="table--data">
+                                                      <caption>Table 13.3 (repeated from Section 13.2, for Example 6)</caption>
+                                                      <thead><tr><th>Class interval</th><th>10&nbsp;–&nbsp;25</th><th>25&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;55</th><th>55&nbsp;–&nbsp;70</th><th>70&nbsp;–&nbsp;85</th><th>85&nbsp;–&nbsp;100</th><th>Total</th></tr></thead>
+                                                      <tbody>
+                                                        <tr><td>Number of students ($f_i$)</td><td>2</td><td>3</td><td>7</td><td>6</td><td>6</td><td>6</td><td>30</td></tr>
+                                                        <tr><td>Class mark ($x_i$)</td><td>17.5</td><td>32.5</td><td>47.5</td><td>62.5</td><td>77.5</td><td>92.5</td><td></td></tr>
+                                                        <tr><td>$f_ix_i$</td><td>35.0</td><td>97.5</td><td>332.5</td><td>375.0</td><td>465.0</td><td>555.0</td><td>1860.0</td></tr>
+                                                      </tbody>
+                                                    </table>
+                                                    <p><strong>Solution.</strong></p>
+                                                    <div class="work">
+                                                      <div class="work__row"><span class="work__label">Step 1</span>
+                                                        <span>in Table 13.3 the largest number of students, 7, got marks in the class 40&nbsp;–&nbsp;55, so the modal class is 40&nbsp;–&nbsp;55</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 2</span>
+                                                        <span>$l = 40$, &nbsp; $h = 15$, &nbsp; $f_1 = 7$, &nbsp; $f_0 = 3$, &nbsp; $f_2 = 6$</span>
+                                                        <span class="work__why">from the modal class</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 3</span>
+                                                        <span>$\text{Mode} = 40 + \left(\dfrac{7 - 3}{14 - 3 - 6}\right) \times 15 = 40 + \dfrac{4}{5} \times 15 = 52$</span>
+                                                        <span class="work__why">the formula</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 4</span>
+                                                        <span>the mean of the same marks is 62</span>
+                                                        <span class="work__why">found in Section 13.2</span></div>
+                                                      <div class="work__row"><span class="work__label">Answer</span>
+                                                        <span>The mode is 52 marks and the mean is 62. More students got about 52 marks than any other mark, while the average mark of a student is 62</span></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
 
       <p><strong>Remark 1.</strong> In Example 6 the mode is less than the mean. In other data the mode may be equal to the mean, or greater than it.</p>
 
       <p><strong>Remark 2.</strong> Which measure you need depends on the question being asked. If you want the average mark of the students, find the mean. If you want the mark that most students got, find the mode.</p>
+
+      <p><strong>Activity 3.</strong> Stay in the groups of Activity 2, with the same data. Each group finds the mode of its data, compares it with the mean, and explains what each of the two tells about the data.</p>
+
+      <p><strong>Remark 3.</strong> The mode of grouped data with classes of different sizes can also be found, but this book does not discuss it.</p>
+
+      <div class="c-practice">
+                                            <div class="c-practice__head">Exercise Set 13.2</div>
+                                            <ol class="c-questions">
+                                              <li>The ages of the patients admitted to a hospital during a year are given below. Find the mode and the mean of the data. Compare the two, and say what each of them tells you.
+                                                <table class="table--data">
+                                                  <thead><tr><th>Age (in years)</th><th>5&nbsp;–&nbsp;15</th><th>15&nbsp;–&nbsp;25</th><th>25&nbsp;–&nbsp;35</th><th>35&nbsp;–&nbsp;45</th><th>45&nbsp;–&nbsp;55</th><th>55&nbsp;–&nbsp;65</th></tr></thead>
+                                                  <tbody><tr><td>Number of patients</td><td>6</td><td>11</td><td>21</td><td>23</td><td>14</td><td>5</td></tr></tbody>
+                                                </table>
+                                              </li>
+                                            </ol>
+                                          </div>
 
     </div>
   </div>

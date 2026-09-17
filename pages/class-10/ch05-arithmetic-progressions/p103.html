@@ -2,45 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>The $n$th term of an AP is $7 - 4n$. Its common difference is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>$-4$</li><li>3</li><li>7</li></ol>
-      </div>
+      <h3>Type 2 &middot; Finding a term, and which term</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Here $a_1 = 3$ and $a_2 = -1$, so $d = -4$. In fact $a_{n+1} - a_n = [7 - 4(n + 1)] - [7 - 4n] = -4$ for every $n$: (b). Option (a) subtracts the wrong way round, (c) is the first term, and (d) is the fixed number 7 in the formula.</p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>How many terms of the AP $54, 51, 48, \ldots$ must be taken so that their sum is 513?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>18 only</li><li>19 only</li><li>18 or 19</li><li>17 or 19</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>$513 = \frac{n}{2}[108 + (n - 1)(-3)] = \frac{n}{2}(111 - 3n)$</p>
-          <p>$3n^2 - 111n + 1026 = 0$, so $n^2 - 37n + 342 = (n - 18)(n - 19) = 0$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>The 25th term of the AP $-5, -\frac{5}{2}, 0, \frac{5}{2}, \ldots$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>55</li><li>60</li><li>57.5</li><li>62.5</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a = -5$ and $d = -\frac{5}{2} - (-5) = \frac{5}{2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$a_{25} = -5 + (25 - 1) \times \frac{5}{2} = -5 + 60 = 55$</span>
+              <span class="work__why">the $n$th term formula</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) is $24 \times \frac{5}{2}$, leaving out the first term. Option (c) uses 25 in place of $n - 1 = 24$, and (d) is $25 \times \frac{5}{2}$, which makes both mistakes.</p>
         </div>
-        <p>The 19th term is $54 + 18 \times (-3) = 0$, so the sums of 18 and of 19 terms are equal, and both answers work: (c). Options (a) and (b) keep one root each, and (d) comes from a wrong factorisation.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>The sum of all the odd two-digit numbers is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>2500</li><li>2475</li><li>4905</li><li>2420</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>the numbers are $11, 13, \ldots, 99$, and $99 = 11 + (n - 1) \times 2$ gives $n = 45$</p>
-          <p>$S = \frac{45}{2}(11 + 99) = 45 \times 55 = 2475$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Which term of the AP $5, 13, 21, \ldots$ is 181? Is 250 a term of this AP?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a = 5$ and $d = 13 - 5 = 8$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$181 = 5 + (n - 1) \times 8$, so $n - 1 = 22$ and $n = 23$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$250 = 5 + (n - 1) \times 8$ gives $n - 1 = \frac{245}{8}$</span>
+              <span class="work__why">not a whole number</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>181 is the 23rd term; 250 is not a term of the AP</span></div>
+          </div>
         </div>
-        <p>The answer is (b). Option (a) also counts the odd one-digit numbers, (c) is the sum of all the two-digit numbers, and (d) takes 44 terms, forgetting to add 1.</p>
+      </div>
+
+      <h3>Type 3 &middot; Finding an AP from two conditions</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>The 7th term of an AP is 37 and its 13th term is 67. Find the AP.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a + 6d = 37$ and $a + 12d = 67$</span>
+              <span class="work__why">the $n$th term formula</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$6d = 30$, so $d = 5$</span>
+              <span class="work__why">subtracting</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$a = 37 - 6 \times 5 = 7$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The AP is $7, 12, 17, 22, \ldots$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -1,0 +1,61 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>Find the median of the distribution below.</p>
+          <table class="table--data">
+            <thead><tr><th>Class interval</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th><th>50&nbsp;–&nbsp;60</th><th>60&nbsp;–&nbsp;70</th></tr></thead>
+            <tbody><tr><td>Frequency</td><td>4</td><td>8</td><td>10</td><td>12</td><td>10</td><td>6</td></tr></tbody>
+          </table>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the cumulative frequencies are 4, 12, 22, 34, 44 and 50</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$n = 50$ and $\frac{n}{2} = 25$; the first cumulative frequency greater than 25 is 34, so the median class is 40&nbsp;–&nbsp;50</span>
+              <span class="work__why">the median class</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$l = 40$, $cf = 22$, $f = 12$, $h = 10$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\text{Median} = 40 + \left(\dfrac{25 - 22}{12}\right) \times 10 = 40 + 2.5 = 42.5$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>42.5</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 14</div>
+        <div class="c-example__body">
+          <p>The median of the distribution below is 32, and the total frequency is 50. Find $x$ and $y$.</p>
+          <table class="table--data">
+            <thead><tr><th>Class interval</th><th>0&nbsp;–&nbsp;10</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th><th>50&nbsp;–&nbsp;60</th></tr></thead>
+            <tbody><tr><td>Frequency</td><td>5</td><td>$x$</td><td>12</td><td>15</td><td>$y$</td><td>4</td></tr></tbody>
+          </table>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$5 + x + 12 + 15 + y + 4 = 50$, so $x + y = 14$</span>
+              <span class="work__why">the total</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>32 lies in 30&nbsp;–&nbsp;40, so $l = 30$, $f = 15$, $cf = 17 + x$, $h = 10$</span>
+              <span class="work__why">the median class</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$32 = 30 + \left(\dfrac{25 - 17 - x}{15}\right) \times 10$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$2 \times 15 = (8 - x) \times 10$, so $8 - x = 3$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$x = 5$ and $y = 14 - 5 = 9$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = 5$, $y = 9$</span></div>
+          </div>
+          <p>Check: the cumulative frequency up to 30 is 22, below 25, and up to 40 it is 37, above 25, so 30&nbsp;–&nbsp;40 is indeed the median class.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

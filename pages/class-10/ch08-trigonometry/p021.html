@@ -2,51 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-      <p>$\text{LHS} = \dfrac{\sin\theta - \cos\theta + 1}{\sin\theta + \cos\theta - 1} = \dfrac{\tan\theta - 1 + \sec\theta}{\tan\theta + 1 - \sec\theta}$</p>
-      <p>$= \dfrac{(\tan\theta + \sec\theta) - 1}{(\tan\theta - \sec\theta) + 1} = \dfrac{\{(\tan\theta + \sec\theta) - 1\}(\tan\theta - \sec\theta)}{\{(\tan\theta - \sec\theta) + 1\}(\tan\theta - \sec\theta)}$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Prove that ${\sec A\,(1 - \sin A)(\sec A + \tan A) = 1}$. Start from the left-hand side, and write every ratio in terms of $\sin A$ and $\cos A$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\text{LHS} = \sec A\,(1 - \sin A)(\sec A + \tan A)$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$= \left(\dfrac{1}{\cos A}\right)(1 - \sin A)\left(\dfrac{1}{\cos A} + \dfrac{\sin A}{\cos A}\right)$</span>
+              <span class="work__why">in sines and cosines</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$= \dfrac{(1 - \sin A)(1 + \sin A)}{\cos^2 A}$</span>
+              <span class="work__why">multiplying the fractions</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$= \dfrac{1 - \sin^2 A}{\cos^2 A}$</span>
+              <span class="work__why">difference of two squares</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$= \dfrac{\cos^2 A}{\cos^2 A} = 1 = \text{RHS}$</span>
+              <span class="work__why">since ${\cos^2 A + \sin^2 A = 1}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\text{LHS} = \text{RHS}$, so the identity is proved</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="work work--list">
-      <p>$= \dfrac{(\tan^2\theta - \sec^2\theta) - (\tan\theta - \sec\theta)}{\{\tan\theta - \sec\theta + 1\}(\tan\theta - \sec\theta)}$</p>
-      <p>$= \dfrac{-1 - \tan\theta + \sec\theta}{(\tan\theta - \sec\theta + 1)(\tan\theta - \sec\theta)}$ &nbsp; (since ${\tan^2\theta - \sec^2\theta = -1}$)</p>
-      </div>
-
-      <div class="work work--list">
-        <p>$= \dfrac{-1}{\tan\theta - \sec\theta} = \dfrac{1}{\sec\theta - \tan\theta}$</p>
-      </div>
-
-      <p>This is the RHS of the identity we were asked to prove.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 8.3</div>
-        <ol class="c-questions">
-          <li>Express the trigonometric ratios $\sin A$, $\sec A$ and $\tan A$ in terms of $\cot A$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write all the other trigonometric ratios of $\angle A$ in terms of $\sec A$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Choose the correct option, and justify your choice.<ol class="c-parts c-parts--1 c-parts--tall"><li>${9\sec^2 A - 9\tan^2 A =}$<ol class="c-parts c-parts--alpha c-parts--4"><li>$1$</li><li>$9$</li><li>$8$</li><li>$0$</li></ol></li><li>${(1 + \tan\theta + \sec\theta)(1 + \cot\theta - \operatorname{cosec}\theta) =}$<ol class="c-parts c-parts--alpha c-parts--4"><li>$0$</li><li>$1$</li><li>$2$</li><li>$-1$</li></ol></li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions">
-          <li class="cont"><ol class="c-parts c-parts--1 c-parts--tall" data-start="3"><li>${(\sec A + \tan A)(1 - \sin A) =}$<ol class="c-parts c-parts--alpha c-parts--4"><li>$\sec A$</li><li>$\sin A$</li><li>$\operatorname{cosec} A$</li><li>$\cos A$</li></ol></li><li>$\dfrac{1 + \tan^2 A}{1 + \cot^2 A} =$<ol class="c-parts c-parts--alpha c-parts--4"><li>$\sec^2 A$</li><li>$-1$</li><li>$\cot^2 A$</li><li>$\tan^2 A$</li></ol></li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Prove the following identities, where the angles involved are acute angles for which the expressions are defined.<ol class="c-parts c-parts--1 c-parts--tall"><li>${(\operatorname{cosec}\theta - \cot\theta)^2 = \dfrac{1 - \cos\theta}{1 + \cos\theta}}$</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Prove that ${\dfrac{\cot A - \cos A}{\cot A + \cos A} = \dfrac{\operatorname{cosec} A - 1}{\operatorname{cosec} A + 1}}$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\text{LHS} = \dfrac{\cot A - \cos A}{\cot A + \cos A} = \dfrac{\dfrac{\cos A}{\sin A} - \cos A}{\dfrac{\cos A}{\sin A} + \cos A}$</span>
+              <span class="work__why">since $\cot A = \dfrac{\cos A}{\sin A}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$= \dfrac{\cos A\left(\dfrac{1}{\sin A} - 1\right)}{\cos A\left(\dfrac{1}{\sin A} + 1\right)}$</span>
+              <span class="work__why">taking out $\cos A$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$= \dfrac{\dfrac{1}{\sin A} - 1}{\dfrac{1}{\sin A} + 1}$</span>
+              <span class="work__why">cancelling $\cos A$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$= \dfrac{\operatorname{cosec} A - 1}{\operatorname{cosec} A + 1} = \text{RHS}$</span>
+              <span class="work__why">since $\operatorname{cosec} A = \dfrac{1}{\sin A}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\text{LHS} = \text{RHS}$, so the identity is proved</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

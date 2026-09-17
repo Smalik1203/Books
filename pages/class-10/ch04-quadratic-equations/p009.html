@@ -1,53 +1,57 @@
-<section class="page">
+<section class="page" data-close>
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--md">
-              <figure>
-                <svg viewBox="0 0 210 158" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circle with centre O and diameter AB, marked 13 m. A point P lies on the circle above the diameter, closer to B. The segments AP and BP are drawn; BP is marked x and AP is marked x + 7, and the angle at P is marked as a right angle.">
-<circle class="dg-line" cx="105" cy="84" r="62"/>
-<path class="dg-line" d="M43 84 L167 84"/>
-<path class="dg-line" d="M43 84 L148.7 40"/>
-<path class="dg-line" d="M167 84 L148.7 40"/>
-<path class="dg-thin" d="M143.1 42.3 L145.4 47.8 L151 45.5"/>
-<circle class="dg-fill-b" cx="105" cy="84" r="2.2"/>
-<circle class="dg-fill-b" cx="43" cy="84" r="2.2"/>
-<circle class="dg-fill-b" cx="167" cy="84" r="2.2"/>
-<circle class="dg-fill-b" cx="148.7" cy="40" r="2.2"/>
-<text class="dg-label" x="38" y="88" text-anchor="end">A</text>
-<text class="dg-label" x="172" y="88" text-anchor="start">B</text>
-<text class="dg-label" x="151.7" y="34" text-anchor="start">P</text>
-<text class="dg-label" x="105" y="97" text-anchor="middle">O</text>
-<text class="dg-dim-label" x="90.8" y="52.9" text-anchor="middle">x + 7</text>
-<text class="dg-dim-label" x="165.3" y="61.9" text-anchor="middle">x</text>
-<text class="dg-dim-label" x="137" y="97" text-anchor="middle">13 m</text>
-</svg>
-                <figcaption><span class="fignum">Fig. 4.2</span> The pole $P$ on the boundary of the park.</figcaption>
-              </figure>
-            </div>
-
-      <p>Now $AB = 13$ m, and since $AB$ is a diameter, $\angle APB = 90^\circ$. (Why?) So, by the Pythagoras theorem,</p>
-
-      <div class="work work--list">
-        <p>$AP^2 + PB^2 = AB^2$</p>
-        <p>$(x + 7)^2 + x^2 = 13^2$, that is, $x^2 + 14x + 49 + x^2 = 169$</p>
-        <p>$2x^2 + 14x - 120 = 0$, that is, $x^2 + 7x - 60 = 0$</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.3</div>
+        <ol class="c-questions">
+          <li>Find the nature of the roots of each quadratic equation. If it has real roots, find them.<ol class="c-parts c-parts--3"><li>$2x^2 - 3x + 5 = 0$</li><li>$3x^2 - 4\sqrt{3}x + 4 = 0$</li><li>$2x^2 - 6x + 3 = 0$</li></ol></li>
+        </ol>
       </div>
 
-      <p>So the pole can be put up only if this equation has real roots. Its discriminant is $b^2 - 4ac = 7^2 - 4 \times 1 \times (-60) = 289$, which is greater than 0. So the equation has two real roots, and it is possible to put up the pole on the boundary of the park. Solving $x^2 + 7x - 60 = 0$ by the quadratic formula,</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>For each quadratic equation, find the values of $k$ for which it has two equal roots.<ol class="c-parts"><li>$2x^2 + kx + 3 = 0$</li><li>$kx(x - 2) + 6 = 0$</li></ol></li>
+        </ol>
+      </div>
 
-      <div class="eq">$$x = \dfrac{-7 \pm \sqrt{289}}{2} = \dfrac{-7 \pm 17}{2}, \quad \text{so} \quad x = 5 \ \text{or} \ x = -12$$</div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Is it possible to design a rectangular mango grove whose length is twice its breadth and whose area is 800 m²? If so, find its length and breadth.</li>
+        </ol>
+      </div>
 
-      <p>Since $x$ is the distance from the pole to gate $B$, it must be positive, so we ignore $x = -12$. So $x = 5$: the pole must be put up on the boundary of the park 5 m from gate $B$ and 12 m from gate $A$.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>The sum of the ages of two friends is 20 years. Four years ago, the product of their ages in years was 48. Is this situation possible? If so, find their ages now.</li>
+        </ol>
+      </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
-        <div class="c-example__body">
-          <p>Find the discriminant of the equation $3x^2 - 2x + \frac{1}{3} = 0$, and use it to find the nature of the roots. Find the roots if they are real.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Is it possible to design a rectangular park with a perimeter of 80 m and an area of 400 m²? If so, find its length and breadth.</li>
+        </ol>
+      </div>
+
+      <div class="c-summary">
+        <div class="c-summary__title">What this chapter showed</div>
+        <ol>
+          <li>A quadratic equation in the variable $x$ has the form $ax^2 + bx + c = 0$, where $a$, $b$, $c$ are real numbers and $a \neq 0$.</li>
+          <li>A real number $\alpha$ is a root of $ax^2 + bx + c = 0$ if $a\alpha^2 + b\alpha + c = 0$. The zeroes of the polynomial $ax^2 + bx + c$ and the roots of the equation $ax^2 + bx + c = 0$ are the same.</li>
+          <li>If $ax^2 + bx + c$ can be factorised into two linear factors, the roots of $ax^2 + bx + c = 0$ are found by setting each factor equal to zero.</li>
+          <li>The quadratic formula: the roots of $ax^2 + bx + c = 0$ are $\dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, provided ${b^2 - 4ac \geq 0}$.</li>
+          <li>The equation $ax^2 + bx + c = 0$ has two distinct real roots if $b^2 - 4ac \gt 0$, two equal real roots if $b^2 - 4ac = 0$, and no real roots if $b^2 - 4ac \lt 0$.</li>
+        </ol>
+      </div>
+
+      <p>A root that solves the equation does not always answer the question.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10"/><path d="M7 9h10"/><path d="M7 19h10"/></svg></div>
+        <div class="c-tip__body">
+          <p>When a quadratic equation comes from a problem, check each root against the problem. A length, a speed or a number of people cannot be negative, so a root like $-12$ is set aside, as in Example 8.</p>
         </div>
       </div>
-
-      <p>Here $a = 3$, $b = -2$ and $c = \frac{1}{3}$. So the discriminant is $b^2 - 4ac = (-2)^2 - 4 \times 3 \times \frac{1}{3} = 4 - 4 = 0$, and the equation has two equal real roots. The roots are $-\frac{b}{2a}$ and $-\frac{b}{2a}$, that is, $\frac{2}{6}$ and $\frac{2}{6}$, that is, $\frac{1}{3}$ and $\frac{1}{3}$.</p>
 
     </div>
   </div>

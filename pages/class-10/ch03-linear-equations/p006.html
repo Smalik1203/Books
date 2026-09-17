@@ -2,30 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Which of these pairs of linear equations are consistent, and which are inconsistent? If a pair is consistent, find the solution graphically.<ol class="c-parts"><li>$x + y = 5$; &nbsp; $2x + 2y = 10$</li><li>$x - y = 8$; &nbsp; $3x - 3y = 16$</li><li>$2x + y - 6 = 0$; &nbsp; $4x - 2y - 4 = 0$</li><li>$2x - 2y - 2 = 0$; &nbsp; $4x - 4y - 5 = 0$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Half the perimeter of a rectangular garden is 36 m, and its length is 4 m more than its width. Find the length and the width of the garden.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Take the linear equation $2x + 3y - 8 = 0$. Write another linear equation in two variables so that the graph of the pair you make is<ol class="c-parts c-parts--3"><li>intersecting lines</li><li>parallel lines</li><li>coincident lines</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>Draw the graphs of the equations $x - y + 1 = 0$ and $3x + 2y - 12 = 0$. Find the coordinates of the vertices of the triangle formed by these two lines and the $x$-axis, and shade the triangle.</li>
-        </ol>
-      </div>
-
       <h2><span class="badge">3.3</span><span class="name">Algebraic Methods of Solving a Pair of Linear Equations</span></h2>
 
       <p>In the last section we solved pairs of linear equations graphically. The graphical method is not convenient when the solution has coordinates that are not integers, such as $\left(\sqrt{3}, 2\sqrt{7}\right)$, $(-1.75, 3.3)$ or $\left(\frac{4}{13}, \frac{1}{19}\right)$. It is very easy to make a mistake when reading such coordinates off a graph. Is there another way to find the solution? There are several algebraic methods, and we now study two of them.</p>
@@ -38,10 +14,40 @@
         <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
           <p>Solve this pair of equations by the substitution method: $7x - 15y = 2$ and $x + 2y = 3$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$7x - 15y = 2$ &nbsp; (1) &nbsp; and &nbsp; $x + 2y = 3$ &nbsp; (2)</span>
+              <span class="work__why">name the equations</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x = 3 - 2y$ &nbsp; (3)</span>
+              <span class="work__why">$x$ in terms of $y$, from (2)</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$7(3 - 2y) - 15y = 2$, that is, $21 - 14y - 15y = 2$</span>
+              <span class="work__why">putting (3) in (1)</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$-29y = -19$, so $y = \dfrac{19}{29}$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$x = 3 - 2 \times \dfrac{19}{29} = \dfrac{49}{29}$</span>
+              <span class="work__why">putting $y$ in (3)</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = \frac{49}{29}$, $y = \frac{19}{29}$</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Call the equations (1) $7x - 15y = 2$ and (2) $x + 2y = 3$.</p>
+      <p>You can check that these values satisfy both (1) and (2).</p>
+
+      <p>Here are the steps of the substitution method once more, so that you can follow them for any pair.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The substitution method</div>
+        <p><strong>Step 1.</strong> From whichever equation is easier, write one variable, say $y$, in terms of the other, $x$.</p>
+        <p><strong>Step 2.</strong> Put this value of $y$ in the other equation. This gives an equation in $x$ alone, which can be solved. Sometimes, as in Examples 6 and 7 below, you get a statement with no variable in it. If the statement is true, the pair has infinitely many solutions. If it is false, the pair has no solution.</p>
+        <p><strong>Step 3.</strong> Put the value of $x$ from Step 2 into the equation from Step 1, to get the value of $y$.</p>
+      </div>
+
+      <p>The method is called the substitution method because we substitute, that is, put in, the value of one variable written in terms of the other.</p>
 
     </div>
   </div>

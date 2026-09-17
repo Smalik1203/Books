@@ -2,47 +2,40 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>In $\triangle ABC$, ${\tan A = \frac{BC}{AB} = 1}$ (Fig.&nbsp;8.11), that is, ${BC = AB}$. Let ${AB = BC = k}$, where $k$ is a positive number. Then</p>
-
-      <div class="work work--list">
-        <p>${AC = \sqrt{AB^2 + BC^2} = \sqrt{k^2 + k^2} = k\sqrt{2}}$</p>
-        <p>so $\sin A = \dfrac{BC}{AC} = \dfrac{1}{\sqrt{2}}$ &nbsp; and &nbsp; $\cos A = \dfrac{AB}{AC} = \dfrac{1}{\sqrt{2}}$</p>
-        <p>so $2 \sin A \cos A = 2\left(\dfrac{1}{\sqrt{2}}\right)\left(\dfrac{1}{\sqrt{2}}\right) = 1$, which is the required value</p>
-      </div>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
-          <p>In $\triangle OPQ$, right-angled at P, ${OP = 7}$&nbsp;cm and ${OQ - PQ = 1}$&nbsp;cm (Fig.&nbsp;8.12). Find the values of $\sin Q$ and $\cos Q$.</p>
-        </div>
-      </div>
-
-      <div class="c-figure c-figure--sm">
+          <p>In a right triangle ABC, right-angled at B, if ${\tan A = 1}$, verify that ${2 \sin A \cos A = 1}$.</p>
+          <div class="c-figure c-figure--sm">
                           <figure>
-                            <svg viewBox="0 0 150 150" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A right triangle OPQ with the right angle at P, Q above P and O to the right of P. PO is marked 7 cm.">
-      <path class="dg-line" d="M52 22 L52 134 L88 134 Z"/>
-      <path class="dg-thin" d="M58 134 L58 128 L52 128"/>
-      <text class="dg-label" x="50.4" y="15.6" text-anchor="middle">Q</text>
-      <text class="dg-label" x="48.9" y="147" text-anchor="middle">P</text>
-      <text class="dg-label" x="93.4" y="145.9" text-anchor="middle">O</text>
-      <text class="dg-dim-label" x="70" y="145" text-anchor="middle">7 cm</text>
+                            <svg viewBox="0 0 170 130" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A right triangle ABC with the right angle at B, A above B and C to the right of B.">
+      <path class="dg-line" d="M40 30 L40 116 L126 116 Z"/>
+      <path class="dg-thin" d="M46 116 L46 110 L40 110"/>
+      <text class="dg-label" x="35.5" y="24.6" text-anchor="middle">A</text>
+      <text class="dg-label" x="32.9" y="126.6" text-anchor="middle">B</text>
+      <text class="dg-label" x="134.9" y="124" text-anchor="middle">C</text>
       </svg>
-                            <figcaption><span class="fignum">Fig. 8.12</span> The right triangle OPQ.</figcaption>
+                            <figcaption><span class="fignum">Fig. 8.11</span> The right triangle ABC.</figcaption>
                           </figure>
                         </div>
-
-      <p>In $\triangle OPQ$, we have</p>
-
-      <div class="work work--list">
-      <p>${OQ^2 = OP^2 + PQ^2}$</p>
-      <p>${(1 + PQ)^2 = OP^2 + PQ^2}$ &nbsp; (Why?)</p>
-      <p>${1 + PQ^2 + 2PQ = OP^2 + PQ^2}$</p>
-      </div>
-
-      <div class="work work--list">
-        <p>${1 + 2PQ = 7^2}$ &nbsp; (Why?)</p>
-        <p>${PQ = 24}$&nbsp;cm and ${OQ = 1 + PQ = 25}$&nbsp;cm</p>
-        <p>so $\sin Q = \dfrac{7}{25}$ &nbsp; and &nbsp; $\cos Q = \dfrac{24}{25}$</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>In $\triangle ABC$, ${\tan A = \frac{BC}{AB} = 1}$ (Fig.&nbsp;8.11), so ${BC = AB}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${AB = BC = k}$</span>
+              <span class="work__why">$k$ is a positive number</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${AC = \sqrt{AB^2 + BC^2} = \sqrt{k^2 + k^2} = k\sqrt{2}}$</span>
+              <span class="work__why">the Pythagoras theorem</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\sin A = \dfrac{BC}{AC} = \dfrac{1}{\sqrt{2}}$ &nbsp; and &nbsp; $\cos A = \dfrac{AB}{AC} = \dfrac{1}{\sqrt{2}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$2 \sin A \cos A = 2\left(\dfrac{1}{\sqrt{2}}\right)\left(\dfrac{1}{\sqrt{2}}\right) = 1$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>${2 \sin A \cos A = 1}$, which is the required value</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -2,60 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>${-4m_1 - 4m_2 = 3m_1 - 6m_2}$</p>
-        <p>${7m_1 = 2m_2}$</p>
-        <p>${m_1 : m_2 = 2 : 7}$</p>
-      </div>
+      <div class="c-example">
+                                                  <div class="c-example__tab">Example 8</div>
+                                                  <div class="c-example__body">
+                                                    <p>Find the coordinates of the points of trisection of the line segment joining the points $A(2, -2)$ and $B(-7, 4)$. The points of trisection are the points that divide the segment into three equal parts.</p>
+                                                    <p><strong>Solution.</strong></p>
+                                                    <div class="work">
+                                                      <div class="work__row"><span class="work__label">Step 1</span>
+                                                        <span>let P and Q be the points of trisection of AB, so that ${AP = PQ = QB}$ (Fig.&nbsp;7.11)</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 2</span>
+                                                        <span>P divides AB internally in the ratio ${1 : 2}$</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 3</span>
+                                                        <span>P is $\left(\dfrac{1(-7) + 2(2)}{1 + 2},\ \dfrac{1(4) + 2(-2)}{1 + 2}\right), \text{ that is, } (-1, 0)$</span>
+                                                        <span class="work__why">section formula</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 4</span>
+                                                        <span>Q divides AB internally in the ratio ${2 : 1}$</span></div>
+                                                      <div class="work__row"><span class="work__label">Step 5</span>
+                                                        <span>Q is $\left(\dfrac{2(-7) + 1(2)}{2 + 1},\ \dfrac{2(4) + 1(-2)}{2 + 1}\right), \text{ that is, } (-4, 2)$</span></div>
+                                                      <div class="work__row"><span class="work__label">Answer</span>
+                                                        <span>The points of trisection are $(-1, 0)$ and $(-4, 2)$</span></div>
+                                                    </div>
+                                                    <div class="c-figure c-figure--md">
+                                                              <figure>
+                                                                <svg viewBox="0 0 232 44" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A line segment from A(2, −2) to B(−7, 4), with the points P and Q dividing it into three equal parts, in the order A, P, Q, B.">
+                                          <path class="dg-line" d="M34 22 L196 22"/>
+                                          <path class="dg-line" d="M34 18 L34 26"/>
+                                          <text class="dg-label" x="34" y="14" text-anchor="middle">A</text>
+                                          <path class="dg-line" d="M88 18 L88 26"/>
+                                          <text class="dg-label" x="88" y="14" text-anchor="middle">P</text>
+                                          <path class="dg-line" d="M142 18 L142 26"/>
+                                          <text class="dg-label" x="142" y="14" text-anchor="middle">Q</text>
+                                          <path class="dg-line" d="M196 18 L196 26"/>
+                                          <text class="dg-label" x="196" y="14" text-anchor="middle">B</text>
+                                          <text class="dg-label" x="34" y="39" text-anchor="middle">(2, −2)</text>
+                                          <text class="dg-label" x="196" y="39" text-anchor="middle">(−7, 4)</text>
+                                          </svg>
+                                                                <figcaption><span class="fignum">Fig. 7.11</span> P and Q divide AB into three equal parts.</figcaption>
+                                                              </figure>
+                                                            </div>
+                                                  </div>
+                                                </div>
 
-      <p>You should check that this ratio satisfies the $y$-coordinate too. Dividing the top and the bottom by $m_2$,</p>
-
-      <div class="work work--list">
-        <p>$\dfrac{-8m_1 + 10m_2}{m_1 + m_2} = \dfrac{-8 \cdot \frac{m_1}{m_2} + 10}{\frac{m_1}{m_2} + 1} = \dfrac{-8 \cdot \frac{2}{7} + 10}{\frac{2}{7} + 1} = \dfrac{54}{7} \div \dfrac{9}{7} = 6$</p>
-      </div>
-
-      <p>So the point $(-4, 6)$ divides the line segment joining the points $A(-6, 10)$ and $B(3, -8)$ in the ratio ${2 : 7}$.</p>
-
-      <p><strong>Another way.</strong> The ratio ${m_1 : m_2}$ can also be written as ${\frac{m_1}{m_2} : 1}$, or ${k : 1}$. Let $(-4, 6)$ divide AB internally in the ratio ${k : 1}$. Using the section formula, we get</p>
-
-      <div class="eq">$$(-4, 6) = \left(\dfrac{3k - 6}{k + 1},\ \dfrac{-8k + 10}{k + 1}\right) \qquad (2)$$</div>
-
-      <div class="work work--list">
-        <p>so $-4 = \dfrac{3k - 6}{k + 1}$</p>
-        <p>${-4k - 4 = 3k - 6}$</p>
-        <p>${7k = 2}$, that is, ${k : 1 = 2 : 7}$</p>
-      </div>
-
-      <p>You can check the $y$-coordinate as well. So the point $(-4, 6)$ divides the line segment joining $A(-6, 10)$ and $B(3, -8)$ in the ratio ${2 : 7}$.</p>
-
-      <p><strong>Note.</strong> You can also find this ratio by working out the distances PA and PB and taking their ratio, as long as you know that A, P and B are collinear.</p>
+      <p><strong>Note.</strong> We could also have found Q by seeing that it is the mid-point of PB, and using the mid-point formula.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
-        <div class="c-example__body">
-          <p>Find the coordinates of the points of trisection of the line segment joining the points $A(2, -2)$ and $B(-7, 4)$. The points of trisection are the points that divide the segment into three equal parts.</p>
-        </div>
-      </div>
-
-      <p>Let P and Q be the points of trisection of AB, so that ${AP = PQ = QB}$ (Fig.&nbsp;7.11).</p>
-
-      <div class="c-figure c-figure--md">
-                    <figure>
-                      <svg viewBox="0 0 232 44" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A line segment from A(2, −2) to B(−7, 4), with the points P and Q dividing it into three equal parts, in the order A, P, Q, B.">
-<path class="dg-line" d="M34 22 L196 22"/>
-<path class="dg-line" d="M34 18 L34 26"/>
-<text class="dg-label" x="34" y="14" text-anchor="middle">A</text>
-<path class="dg-line" d="M88 18 L88 26"/>
-<text class="dg-label" x="88" y="14" text-anchor="middle">P</text>
-<path class="dg-line" d="M142 18 L142 26"/>
-<text class="dg-label" x="142" y="14" text-anchor="middle">Q</text>
-<path class="dg-line" d="M196 18 L196 26"/>
-<text class="dg-label" x="196" y="14" text-anchor="middle">B</text>
-<text class="dg-label" x="34" y="39" text-anchor="middle">(2, −2)</text>
-<text class="dg-label" x="196" y="39" text-anchor="middle">(−7, 4)</text>
-</svg>
-                      <figcaption><span class="fignum">Fig. 7.11</span> P and Q divide AB into three equal parts.</figcaption>
-                    </figure>
+                    <div class="c-example__tab">Example 9</div>
+                    <div class="c-example__body">
+                      <p>Find the ratio in which the $y$-axis divides the line segment joining the points $(5, -6)$ and $(-1, -4)$. Also find the point of intersection.</p>
+                      <p><strong>Solution.</strong></p>
+                      <div class="work">
+                        <div class="work__row"><span class="work__label">Step 1</span>
+                          <span>call the points $A(5, -6)$ and $B(-1, -4)$, and let the ratio be ${k : 1}$</span></div>
+                        <div class="work__row"><span class="work__label">Step 2</span>
+                          <span>the point of division is $\left(\dfrac{-k + 5}{k + 1},\ \dfrac{-4k - 6}{k + 1}\right)$</span>
+                          <span class="work__why">section formula</span></div>
+                        <div class="work__row"><span class="work__label">Step 3</span>
+                          <span>$\dfrac{-k + 5}{k + 1} = 0$, so ${-k + 5 = 0}$</span>
+                          <span class="work__why">on the $y$-axis the abscissa is 0</span></div>
+                        <div class="work__row"><span class="work__label">Step 4</span>
+                          <span>${k = 5}$, so the ratio is ${5 : 1}$</span></div>
+                        <div class="work__row"><span class="work__label">Step 5</span>
+                          <span>the $y$-coordinate is ${\frac{-20 - 6}{6} = -\frac{13}{3}}$</span>
+                          <span class="work__why">putting ${k = 5}$</span></div>
+                        <div class="work__row"><span class="work__label">Answer</span>
+                          <span>The ratio is ${5 : 1}$, and the point of intersection is ${\left(0, -\frac{13}{3}\right)}$</span></div>
+                      </div>
+                    </div>
                   </div>
 
     </div>

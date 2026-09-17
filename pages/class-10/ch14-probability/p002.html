@@ -2,10 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Empirical probability can be found for any event of an experiment that can be repeated many times. But repeating an experiment has limits: in many situations it is very costly, or cannot be done at all. It worked well for tossing coins and throwing dice. But you cannot launch a satellite again and again to find the empirical probability that a launch fails, or wait for earthquakes to find the empirical probability that a tall building falls in one.</p>
-
-      <p>In experiments where we are ready to make some assumptions, we need not repeat the experiment: the assumptions let us work out the exact, or theoretical, probability directly. One such assumption is that the outcomes are equally likely, which holds in many experiments, such as tossing a coin or throwing a die. It leads to the following definition.</p>
-
       <div class="c-keyidea">
         <div class="c-keyidea__title">Theoretical probability</div>
         <p>The <span class="term">theoretical probability</span>, also called the classical probability, of an event E is written P(E) and defined as</p>
@@ -21,16 +17,45 @@
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
           <p>A coin is tossed once. Find the probability of getting a head, and the probability of getting a tail.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>there are two possible outcomes, head (H) and tail (T)</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>let E be the event <em>getting a head</em>; one outcome is favourable to E</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$P(E) = P(\text{head}) = \dfrac{\text{number of outcomes favourable to } E}{\text{number of all possible outcomes}} = \dfrac{1}{2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>if F is the event <em>getting a tail</em>, then ${P(F) = P(\text{tail}) = \frac{1}{2}}$</span>
+              <span class="work__why">one outcome of two</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$P(\text{head}) = \frac{1}{2}$ and $P(\text{tail}) = \frac{1}{2}$</span></div>
+          </div>
         </div>
       </div>
 
-      <p>When a coin is tossed once there are two possible outcomes, head (H) and tail (T). Let E be the event <em>getting a head</em>. One outcome is favourable to E. So</p>
-
-      <div class="work work--list">
-        <p>$P(E) = P(\text{head}) = \dfrac{\text{number of outcomes favourable to } E}{\text{number of all possible outcomes}} = \dfrac{1}{2}$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A bag contains a red, a blue and a yellow ball, all of the same size. Kritika takes out a ball without looking. What is the probability that it is (i) yellow? (ii) red? (iii) blue?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>each ball is equally likely to be taken out, so there are 3 possible outcomes</span>
+              <span class="work__why">Kritika does not look</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>let Y, B and R be the events <em>the ball is yellow</em>, <em>the ball is blue</em> and <em>the ball is red</em></span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(i) one outcome is favourable to Y, so $P(Y) = \dfrac{1}{3}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>(ii) in the same way, $P(R) = \dfrac{1}{3}$ &nbsp; and &nbsp; (iii) $P(B) = \dfrac{1}{3}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>each colour has probability $\dfrac{1}{3}$</span></div>
+          </div>
+        </div>
       </div>
 
-      <p>In the same way, if F is the event <em>getting a tail</em>, then ${P(F) = P(\text{tail}) = \frac{1}{2}}$. (Why?)</p>
+      <p><strong>Remark 1.</strong> An event that consists of only one outcome of an experiment is called an <span class="term">elementary event</span>. In Example 1 the events E and F are elementary events, and in Example 2 so are Y, B and R.</p>
 
     </div>
   </div>

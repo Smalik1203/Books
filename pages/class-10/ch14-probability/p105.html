@@ -2,53 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>The probabilities of all the elementary events of an experiment add up to<ol class="c-parts c-parts--alpha"><li>0</li><li>1</li><li>the number of elementary events</li><li>$\frac{1}{2}$</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Two dice are thrown. Find the probability that the product of the two numbers is at most 6.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>first die 1: all six numbers work, (1, 1) to (1, 6)</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>first die 2: (2, 1), (2, 2), (2, 3); first die 3: (3, 1), (3, 2)</span>
+              <span class="work__why">$2 \times 3 = 6$, $3 \times 2 = 6$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>first die 4, 5 or 6: only (4, 1), (5, 1), (6, 1)</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${6 + 3 + 2 + 3 = 14}$ favourable outcomes, so $P = \dfrac{14}{36} = \dfrac{7}{18}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\dfrac{7}{18}$</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>A letter is chosen at random from the letters of the word PROBABILITY. The probability that it is B is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{2}{9}$</li><li>$\dfrac{1}{11}$</li><li>$\dfrac{1}{9}$</li><li>$\dfrac{2}{11}$</li></ol></li>
-        </ol>
+      <h3>Type 5 &middot; Playing cards</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>One card is drawn from a well-shuffled deck of 52 cards. The probability that it is neither a king nor a heart is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{9}{13}$</li><li>$\dfrac{35}{52}$</li><li>$\dfrac{3}{4}$</li><li>$\dfrac{12}{13}$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>13 hearts and 3 other kings: ${13 + 3 = 16}$ cards are kings or hearts</span>
+              <span class="work__why">king of hearts once</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$P(\text{neither}) = \dfrac{52 - 16}{52} = \dfrac{36}{52} = \dfrac{9}{13}$</span>
+              <span class="work__why">complementary events</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) counts the king of hearts twice, (c) removes only the hearts, and (d) only the kings.</p>
+        </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set B &middot; Two ideas together</div>
-        <ol class="c-questions">
-          <li>A bag has 5 red balls, 7 green balls and $x$ blue balls. The probability of drawing a blue ball is $\frac{1}{3}$. The value of $x$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>6</li><li>12</li><li>3</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Two dice are thrown. The probability of getting the same number on both is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{1}{6}$</li><li>$\dfrac{1}{36}$</li><li>$\dfrac{1}{12}$</li><li>$\dfrac{1}{3}$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A number is chosen at random from 1 to 30. The probability that it is a prime number is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{1}{3}$</li><li>$\dfrac{11}{30}$</li><li>$\dfrac{3}{10}$</li><li>$\dfrac{2}{5}$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>One card is drawn from a well-shuffled deck of 52 cards. The probability that it is a red face card is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{3}{13}$</li><li>$\dfrac{8}{13}$</li><li>$\dfrac{1}{2}$</li><li>$\dfrac{3}{26}$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Three coins are tossed together. The probability of getting at least two heads is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{3}{8}$</li><li>$\dfrac{1}{2}$</li><li>$\dfrac{1}{4}$</li><li>$\dfrac{7}{8}$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Two dice are thrown. Ravi says that the probability of a sum of 7 is $\frac{1}{6}$, and Zoya says that it is $\frac{1}{11}$. Who is right?<ol class="c-parts c-parts--alpha c-parts--4"><li>Zoya</li><li>neither</li><li>Ravi</li><li>both</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>All the black face cards are removed from a deck of 52 cards. The rest are shuffled well and one card is drawn. Find the probability that it is (i) a red card (ii) a face card (iii) a king.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>6 black face cards go, leaving ${52 - 6 = 46}$ cards</span>
+              <span class="work__why">K, Q, J of two suits</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>(i) all 26 red cards remain: $P(\text{red}) = \dfrac{26}{46} = \dfrac{13}{23}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(ii) only the 6 red face cards remain: $P(\text{face card}) = \dfrac{6}{46} = \dfrac{3}{23}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>(iii) only the 2 red kings remain: $P(\text{king}) = \dfrac{2}{46} = \dfrac{1}{23}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(i) $\dfrac{13}{23}$ &nbsp; (ii) $\dfrac{3}{23}$ &nbsp; (iii) $\dfrac{1}{23}$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

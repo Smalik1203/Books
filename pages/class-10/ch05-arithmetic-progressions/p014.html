@@ -2,42 +2,63 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Think of the problem that was given to Gauss, whom you read about in Chapter 1, when he was just 10 years old. He was asked to find the sum of the positive integers from 1 to 100, and at once he said that the sum is 5050. How do you think he did it? He wrote</p>
+      <div class="eq">$$S = \dfrac{n}{2}(a + l) \qquad (4)$$</div>
 
-      <div class="eq">$$S = 1 + 2 + 3 + \cdots + 99 + 100$$</div>
+      <p>This form is useful when you know the first and the last terms of an AP, but not its common difference.</p>
 
-      <p>and then wrote the same numbers in reverse order,</p>
-
-      <div class="eq">$$S = 100 + 99 + \cdots + 3 + 2 + 1$$</div>
-
-      <p>Adding these two, he got</p>
+      <p>Now we can answer the question we started with. The amounts, in rupees, that Shakila put into the money box on her daughter’s 1st, 2nd, 3rd, 4th, … birthdays were $100, 150, 200, 250, \ldots$ This is an AP, and we need the sum of its first 21 terms. Here $a = 100$, $d = 50$ and $n = 21$. Using ${S = \frac{n}{2}[2a + (n - 1)d]}$,</p>
 
       <div class="work work--list">
-        <p>$2S = (1 + 100) + (2 + 99) + \cdots + (99 + 2) + (100 + 1)$</p>
-        <p>$\phantom{2S} = 101 + 101 + \cdots + 101 + 101$ &nbsp; (100 times)</p>
-      </div>
+              <p>$S = \dfrac{21}{2}[2 \times 100 + (21 - 1) \times 50] = \dfrac{21}{2}[200 + 1000]$</p>
+              <p>$\phantom{S} = \dfrac{21}{2} \times 1200 = 12600$</p>
+            </div>
 
-      <p>So $S = \frac{100 \times 101}{2} = 5050$, that is, the sum is 5050.</p>
+      <p>So by her 21st birthday the money box holds ₹12600. The formula made this much easier.</p>
 
-      <p>We will now use the same idea to find the sum of the first $n$ terms of the AP ${a, a + d, a + 2d, \ldots}$ The $n$th term of this AP is $a + (n - 1)d$. Let $S$ be the sum of its first $n$ terms. Then</p>
+      <p>We also write $S_n$ for the sum of the first $n$ terms of an AP. For example, $S_{20}$ is the sum of the first 20 terms. The formula connects four quantities, $S$, $a$, $d$ and $n$. If you know any three of them, you can find the fourth.</p>
 
-      <div class="eq">$$S = a + (a + d) + (a + 2d) + \cdots + [a + (n - 1)d] \qquad (1)$$</div>
+      <p>One more fact follows from what a sum is. The $n$th term of an AP is the sum of its first $n$ terms minus the sum of its first $n - 1$ terms, that is, $a_n = S_n - S_{n-1}$. Let us now look at some examples.</p>
 
-      <p>Writing the terms in reverse order,</p>
+      <div class="c-example">
+              <div class="c-example__tab">Example 11</div>
+              <div class="c-example__body">
+                <p>Find the sum of the first 22 terms of the AP $8, 3, -2, \ldots$</p>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>$a = 8$, $d = 3 - 8 = -5$ and $n = 22$</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>$S = \dfrac{22}{2}[16 + 21 \times (-5)] = 11(16 - 105)$</span>
+                    <span class="work__why">using ${S = \frac{n}{2}[2a + (n - 1)d]}$</span></div>
+                  <div class="work__row"><span class="work__label">Step 3</span>
+                    <span>$11(16 - 105) = 11 \times (-89) = -979$</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>The sum of the first 22 terms of the AP is $-979$</span></div>
+                </div>
+              </div>
+            </div>
 
-      <div class="eq">$$S = [a + (n - 1)d] + [a + (n - 2)d] + \cdots + (a + d) + a \qquad (2)$$</div>
-
-      <p>Now add (1) and (2) term by term. Each pair of terms adds up to $2a + (n - 1)d$, so</p>
-
-      <div class="eq">$$2S = \underbrace{[2a + (n - 1)d] + [2a + (n - 1)d] + \cdots + [2a + (n - 1)d]}_{n \text{ times}}$$</div>
-
-      <p>There are $n$ terms, so $2S = n[2a + (n - 1)d]$. Dividing both sides by 2 gives the sum.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The sum of the first <em>n</em> terms of an AP</div>
-        <p>The sum of the first $n$ terms of the AP with first term $a$ and common difference $d$ is given by</p>
-        <div class="eq">$$S = \dfrac{n}{2}[2a + (n - 1)d]$$</div>
-      </div>
+      <div class="c-example">
+              <div class="c-example__tab">Example 12</div>
+              <div class="c-example__body">
+                <p>The sum of the first 14 terms of an AP is 1050, and its first term is 10. Find its 20th term.</p>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>$S_{14} = 1050$, $n = 14$ and $a = 10$</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>$1050 = \dfrac{14}{2}[20 + 13d] = 140 + 91d$</span>
+                    <span class="work__why">using ${S_n = \frac{n}{2}[2a + (n - 1)d]}$</span></div>
+                  <div class="work__row"><span class="work__label">Step 3</span>
+                    <span>$910 = 91d$, so $d = 10$</span></div>
+                  <div class="work__row"><span class="work__label">Step 4</span>
+                    <span>$a_{20} = 10 + (20 - 1) \times 10 = 200$</span>
+                    <span class="work__why">the $n$th term</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>The 20th term of the AP is 200</span></div>
+                </div>
+              </div>
+            </div>
 
     </div>
   </div>

@@ -2,28 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>$P(F) = \dfrac{4}{6} = \dfrac{2}{3}$</p>
-      </div>
-
-      <p>Are E and F elementary events? No: E has 2 outcomes and F has 4.</p>
-
-      <p>Look again at Example 1, where E is <em>getting a head</em> and F is <em>getting a tail</em>, and at Example 3, where E is <em>getting a number greater than 4</em> and F is <em>getting a number less than or equal to 4</em>.</p>
-
-      <div class="work work--list">
-        <p>${P(E) + P(F) = \frac{1}{2} + \frac{1}{2} = 1}$ &nbsp; (1)</p>
-        <p>${P(E) + P(F) = \frac{1}{3} + \frac{2}{3} = 1}$ &nbsp; (2)</p>
-      </div>
-
-      <p>Getting a number that is not greater than 4 is the same as getting a number less than or equal to 4. So in both (1) and (2), F is the event <em>not E</em>. We write the event <em>not E</em> as $\overline{E}$. So ${P(E) + P(\overline{E}) = 1}$, which gives ${P(\overline{E}) = 1 - P(E)}$.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Complementary events</div>
-        <p>For any event E,</p>
-        <div class="eq">$$P(\overline{E}) = 1 - P(E)$$</div>
-        <p>The event $\overline{E}$, <em>not E</em>, is called the <span class="term">complement</span> of the event E, and E and $\overline{E}$ are called <span class="term">complementary events</span>.</p>
-      </div>
-
       <p>Before going further, try to answer these two questions.</p>
 
       <ol class="c-parts c-parts--1">
@@ -31,13 +9,48 @@
         <li>What is the probability of getting a number less than 7 in a single throw of a die?</li>
       </ol>
 
-      <p>For (i): a single throw of a die has only six possible outcomes, 1, 2, 3, 4, 5 and 6. No face of the die is marked 8, so no outcome is favourable to getting 8. Getting 8 is impossible, and ${P(\text{getting } 8) = \frac{0}{6} = 0}$.</p>
+      <p>For (i): a single throw of a die has only six possible outcomes, 1, 2, 3, 4, 5 and 6. No face of the die is marked 8, so no outcome is favourable to getting 8, and ${P(\text{getting } 8) = \frac{0}{6} = 0}$: getting 8 is impossible.</p>
 
       <p>So the probability of an event that cannot happen is 0. Such an event is called an <span class="term">impossible event</span>.</p>
 
       <p>For (ii): every face of a die is marked with a number less than 7, so a single throw is sure to give a number less than 7. The number of favourable outcomes is the number of all possible outcomes, 6. So ${P(\text{number less than } 7) = \frac{6}{6} = 1}$.</p>
 
       <p>So the probability of an event that is sure to happen is 1. Such an event is called a <span class="term">sure event</span> or a <span class="term">certain event</span>.</p>
+
+      <p><strong>Note.</strong> In the definition of P(E), the numerator, the number of outcomes favourable to E, is never more than the denominator, the number of all possible outcomes. So</p>
+
+      <div class="eq">$$0 \leq P(E) \leq 1$$</div>
+
+      <div class="c-tip">
+        <div class="c-tip__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/></svg></div>
+        <div class="c-tip__body">
+          <p>A probability is never negative and never more than 1. If you get an answer such as $\frac{7}{6}$ or $-0.2$, check how you counted the outcomes.</p>
+        </div>
+      </div>
+
+      <p>Now let us take an example with playing cards. A deck of playing cards has 52 cards in 4 suits of 13 cards each: spades (♠), hearts (♥), diamonds (♦) and clubs (♣). Clubs and spades are black, and hearts and diamonds are red. The cards of each suit are the ace, king, queen, jack, 10, 9, 8, 7, 6, 5, 4, 3 and 2. Kings, queens and jacks are called <span class="term">face cards</span>.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>One card is drawn from a well-shuffled deck of 52 cards. Find the probability that the card (i) is an ace, (ii) is not an ace.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the number of possible outcomes is 52</span>
+              <span class="work__why">shuffling makes them equally likely</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>(i) let E be <em>the card is an ace</em>; there are 4 aces in a deck, so 4 outcomes are favourable</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(ii) let F be <em>the card is not an ace</em>; ${52 - 4 = 48}$ of the 52 outcomes are favourable</span>
+              <span class="work__why">every card but the aces</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(i) ${P(E) = \frac{4}{52} = \frac{1}{13}}$ &nbsp; (ii) ${P(F) = \frac{48}{52} = \frac{12}{13}}$</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>Remark.</strong> F is the same event as $\overline{E}$. So P(F) can also be found as $P(F) = P(\overline{E}) = 1 - P(E) = 1 - \frac{1}{13} = \frac{12}{13}$.</p>
 
     </div>
   </div>

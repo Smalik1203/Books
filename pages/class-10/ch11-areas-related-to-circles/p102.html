@@ -2,41 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Let the radius be $r$. The sector is a quarter of the circle, ${\frac{1}{4}\pi r^2}$, and the triangle is a right triangle with two sides $r$, of area ${\frac{1}{2}r^2}$. So the segment is ${\frac{1}{4}\pi r^2 - \frac{1}{2}r^2}$. As a fraction of ${\pi r^2}$, this is ${\frac{1}{4} - \frac{1}{2\pi} = \frac{1}{4} - \frac{7}{44} = \frac{4}{44} = \frac{1}{11}}$. The radius cancelled, so the answer is the same for every circle.</p>
-
-      <div class="c-try">
-        <p>Two circles have the same centre and radii 7&nbsp;cm and 14&nbsp;cm. A sector of angle $60^\circ$ is cut from the ring between them. Find its area. (Use ${\pi = \frac{22}{7}}$.)</p>
-      </div>
-
       <p>The piece is the sector of the larger circle less the sector of the smaller one, and both have the same angle. So its area is ${\frac{60}{360} \times \pi \times 14^2 - \frac{60}{360} \times \pi \times 7^2 = \frac{1}{6} \times \frac{22}{7} \times (196 - 49)}$, which is <span class="nb">${\frac{1}{6} \times \frac{22}{7} \times 147 = 77}$&nbsp;cm<sup>2</sup></span>. Taking the common factor ${\frac{60}{360} \times \pi}$ out first leaves only ${196 - 49}$ to work out.</p>
 
       <div class="c-try">
-        <p>A square has side 14&nbsp;cm. With each corner as centre, a quadrant of radius 7&nbsp;cm is drawn inside the square. Find the area of the part of the square that is left. (Use ${\pi = \frac{22}{7}}$.)</p>
+        <p>Chords AB and CD of a circle subtend $60^\circ$ and $120^\circ$ at the centre. Is CD's minor segment twice AB's?</p>
       </div>
 
-      <p>Each quadrant has a right angle at its corner, so the four quadrants together have an angle of $360^\circ$ and radius 7&nbsp;cm. They make up exactly one whole circle, of area <span class="nb">${\frac{22}{7} \times 49 = 154}$&nbsp;cm<sup>2</sup></span>. The square has area 196&nbsp;cm<sup>2</sup>, so the part left is <span class="nb">${196 - 154 = 42}$&nbsp;cm<sup>2</sup></span>. Adding the angles of the pieces first saved working out four separate sectors.</p>
+      <p>The sector for CD is twice the sector for AB, but look at the triangles. If the radius is $r$, the triangle for AB is equilateral with side $r$, so its area is ${\frac{\sqrt{3}}{4}r^2}$. For CD, the perpendicular from the centre is $\frac{r}{2}$ and the chord is $r\sqrt{3}$, as in Example 2 of the chapter, so its triangle has the same area, ${\frac{1}{2} \times r\sqrt{3} \times \frac{r}{2} = \frac{\sqrt{3}}{4}r^2}$. So the segment for CD is ${\frac{1}{3}\pi r^2 - \frac{\sqrt{3}}{4}r^2}$, while twice the segment for AB is ${2 \times \left(\frac{1}{6}\pi r^2 - \frac{\sqrt{3}}{4}r^2\right) = \frac{1}{3}\pi r^2 - \frac{\sqrt{3}}{2}r^2}$. The answer is no: the segment for CD is more than twice as large, because only the sector doubled and the triangle did not.</p>
 
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The perimeter of a sector of a circle of radius 7&nbsp;cm and angle $90^\circ$ is (Use ${\pi = \frac{22}{7}}$.)</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>11&nbsp;cm</li><li>25&nbsp;cm</li><li>38.5&nbsp;cm</li><li>18&nbsp;cm</li></ol>
+      <h3>Type 1 &middot; Area of a sector and length of an arc</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Find the length of the arc and the area of a sector of angle $72^\circ$ in a circle of radius 20&nbsp;cm. (Use ${\pi = 3.14}$.)</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{72}{360} = \dfrac{1}{5}$</span>
+              <span class="work__why">the sector's share of the circle</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>arc <span class="nb">$= \dfrac{1}{5} \times 2 \times 3.14 \times 20 = 25.12$&nbsp;cm</span></span>
+              <span class="work__why">that share of $2\pi r$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>area <span class="nb">$= \dfrac{1}{5} \times 3.14 \times 20 \times 20 = 251.2$&nbsp;cm<sup>2</sup></span></span>
+              <span class="work__why">that share of $\pi r^2$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>arc 25.12&nbsp;cm, area 251.2&nbsp;cm<sup>2</sup></span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>arc <span class="nb">${= \frac{90}{360} \times 2 \times \frac{22}{7} \times 7 = 11}$&nbsp;cm</span></p>
-          <p>perimeter = arc + two radii <span class="nb">${= 11 + 7 + 7 = 25}$&nbsp;cm</span></p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The perimeter of a sector of a circle of radius 7&nbsp;cm and angle $90^\circ$ is (Use ${\pi = \frac{22}{7}}$.)</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>11&nbsp;cm</li><li>25&nbsp;cm</li><li>38.5&nbsp;cm</li><li>18&nbsp;cm</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>arc <span class="nb">${= \frac{90}{360} \times 2 \times \frac{22}{7} \times 7 = 11}$&nbsp;cm</span></span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>perimeter <span class="nb">${= 11 + 7 + 7 = 25}$&nbsp;cm</span></span>
+              <span class="work__why">the arc and two radii</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) is the arc alone, (c) is the area of the sector, and (d) counts only one radius.</p>
         </div>
-        <p>The answer is (b). Option (a) is the arc alone, (c) is the area of the sector, and (d) counts only one radius.</p>
       </div>
 
     </div>

@@ -2,74 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>Two tangents TP and TQ are drawn to a circle with centre O from an external point T. Prove that ${\angle PTQ = 2\angle OPQ}$.</p>
-        </div>
-      </div>
-
-      <p>We are given a circle with centre O, an external point T, and two tangents TP and TQ with points of contact P and Q (Fig.&nbsp;10.9). We need to prove that ${\angle PTQ = 2\angle OPQ}$.</p>
-
       <div class="c-figure c-figure--md">
-                          <figure>
-                            <svg viewBox="0 0 200 120" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circle with centre O and a point T outside it. The tangents TP and TQ touch the circle at P and Q. The chord PQ and the radius OP are drawn, with a right angle at P, and the angle PTQ is marked.">
-<circle class="dg-line" cx="140" cy="62" r="40"/>
-<circle class="dg-line" cx="140" cy="62" r="1.6"/>
-<path class="dg-line" d="M28 62 L125.7 24.6"/>
-<path class="dg-line" d="M28 62 L125.7 99.4"/>
-<path class="dg-line" d="M125.7 24.6 L125.7 99.4"/>
-<path class="dg-line" d="M140 62 L125.7 24.6"/>
-<path class="dg-thin" d="M121 26.4 L122.8 31.1 L127.5 29.3"/>
-<path class="dg-thin" d="M41.1 67 A14 14 0 0 0 41.1 57"/>
-<text class="dg-label" x="20" y="66" text-anchor="end">T</text>
-<text class="dg-label" x="147" y="66" text-anchor="start">O</text>
-<text class="dg-label" x="125.7" y="17.6" text-anchor="middle">P</text>
-<text class="dg-label" x="125.7" y="113.4" text-anchor="middle">Q</text>
-</svg>
-                            <figcaption><span class="fignum">Fig. 10.9</span> The tangents TP and TQ from T.</figcaption>
-                          </figure>
-                        </div>
-
-      <p>Let ${\angle PTQ = \theta}$. By Theorem 10.2, ${TP = TQ}$, so TPQ is an isosceles triangle.</p>
-
-      <div class="work work--list">
-        <p>$\angle TPQ = \angle TQP = \dfrac{1}{2}(180^\circ - \theta) = 90^\circ - \dfrac{1}{2}\theta$ &nbsp; (angles opposite equal sides)</p>
-        <p>${\angle OPT = 90^\circ}$ &nbsp; (Theorem 10.1)</p>
-        <p>$\angle OPQ = \angle OPT - \angle TPQ = 90^\circ - \left(90^\circ - \dfrac{1}{2}\theta\right) = \dfrac{1}{2}\theta = \dfrac{1}{2}\angle PTQ$</p>
-      </div>
-
-      <p>So ${\angle PTQ = 2\angle OPQ}$.</p>
+                                <figure>
+                                  <svg viewBox="0 0 210 128" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circle with centre O and a chord PQ marked 8 cm. The radius OP is marked 5 cm. The tangents at P and Q meet at T outside the circle. The dashed line TO cuts PQ at R, with a right angle at R.">
+      <circle class="dg-line" cx="150" cy="70" r="45"/>
+      <circle class="dg-line" cx="150" cy="70" r="1.6"/>
+      <path class="dg-line" d="M75 70 L135.8 24.4"/>
+      <path class="dg-line" d="M75 70 L135.8 115.6"/>
+      <path class="dg-line" d="M123 34 L123 106"/>
+      <path class="dg-line" d="M150 70 L123 34"/>
+      <path class="dg-hidden" d="M75 70 L150 70"/>
+      <path class="dg-thin" d="M123 75 L128 75 L128 70"/>
+      <text class="dg-label" x="67" y="74" text-anchor="end">T</text>
+      <text class="dg-label" x="156" y="74" text-anchor="start">O</text>
+      <text class="dg-label" x="118" y="28" text-anchor="end">P</text>
+      <text class="dg-label" x="118" y="120" text-anchor="end">Q</text>
+      <text class="dg-label" x="129" y="82" text-anchor="start">R</text>
+      <text class="dg-dim-label" x="144" y="46" text-anchor="start">5 cm</text>
+      <text class="dg-dim-label" x="129" y="100" text-anchor="start">8 cm</text>
+      </svg>
+                                  <figcaption><span class="fignum">Fig. 10.10</span> The tangents at P and Q meeting at T.</figcaption>
+                                </figure>
+                              </div>
 
       <div class="c-example">
         <div class="c-example__tab">Example 3</div>
         <div class="c-example__body">
           <p>PQ is a chord of length 8&nbsp;cm of a circle of radius 5&nbsp;cm. The tangents at P and Q meet at a point T (Fig.&nbsp;10.10). Find the length TP.</p>
+          <p><strong>Solution.</strong> Join OT, and let it meet PQ at the point R.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>The triangle TPQ is isosceles, since <span class="nb">${TP = TQ}$,</span> and TO bisects $\angle PTQ$</span>
+              <span class="work__why">Theorem 10.2, Remark 2</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${OT \perp PQ}$, and <span class="nb">${PR = RQ = 4}$&nbsp;cm</span></span>
+              <span class="work__why">the bisector in an isosceles triangle</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span><span class="nb">${OR = \sqrt{OP^2 - PR^2} = \sqrt{5^2 - 4^2} = 3}$&nbsp;cm</span></span>
+              <span class="work__why">right triangle PRO</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${\angle TPR + \angle RPO = 90^\circ}$</span>
+              <span class="work__why">Theorem 10.1</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>${\angle TPR + \angle PTR = 90^\circ}$</span>
+              <span class="work__why">acute angles of triangle TRP</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>${\angle RPO = \angle PTR}$</span>
+              <span class="work__why">from Steps 4 and 5</span></div>
+            <div class="work__row"><span class="work__label">Step 7</span>
+              <span>the right triangle TRP is similar to the right triangle PRO</span>
+              <span class="work__why">AA, right angles at R</span></div>
+            <div class="work__row"><span class="work__label">Step 8</span>
+              <span>$\dfrac{TP}{PO} = \dfrac{RP}{RO}$, &nbsp; that is, &nbsp; $\dfrac{TP}{5} = \dfrac{4}{3}$</span>
+              <span class="work__why">corresponding sides</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span><span class="nb">$TP = \dfrac{20}{3}$&nbsp;cm</span></span></div>
+          </div>
         </div>
       </div>
 
-      <div class="c-figure c-figure--md">
-                          <figure>
-                            <svg viewBox="0 0 210 128" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circle with centre O and a chord PQ marked 8 cm. The radius OP is marked 5 cm. The tangents at P and Q meet at T outside the circle. The dashed line TO cuts PQ at R, with a right angle at R.">
-<circle class="dg-line" cx="150" cy="70" r="45"/>
-<circle class="dg-line" cx="150" cy="70" r="1.6"/>
-<path class="dg-line" d="M75 70 L135.8 24.4"/>
-<path class="dg-line" d="M75 70 L135.8 115.6"/>
-<path class="dg-line" d="M123 34 L123 106"/>
-<path class="dg-line" d="M150 70 L123 34"/>
-<path class="dg-hidden" d="M75 70 L150 70"/>
-<path class="dg-thin" d="M123 75 L128 75 L128 70"/>
-<text class="dg-label" x="67" y="74" text-anchor="end">T</text>
-<text class="dg-label" x="156" y="74" text-anchor="start">O</text>
-<text class="dg-label" x="118" y="28" text-anchor="end">P</text>
-<text class="dg-label" x="118" y="120" text-anchor="end">Q</text>
-<text class="dg-label" x="129" y="82" text-anchor="start">R</text>
-<text class="dg-dim-label" x="144" y="46" text-anchor="start">5 cm</text>
-<text class="dg-dim-label" x="129" y="100" text-anchor="start">8 cm</text>
-</svg>
-                            <figcaption><span class="fignum">Fig. 10.10</span> The tangents at P and Q meeting at T.</figcaption>
-                          </figure>
-                        </div>
+      <p>The fact used in Step 2 is this: in an isosceles triangle, the bisector of the angle between the equal sides is perpendicular to the base and bisects it. You proved this fact in Class 9, using congruent triangles.</p>
+
+      <p><strong>Note.</strong> TP can also be found with the Pythagoras theorem. This takes longer, but needs no similar triangles. Let ${TP = x}$ and ${TR = y}$. Then</p>
+
+      <div class="work work--list">
+        <p>${x^2 = y^2 + 16}$ &nbsp; (right triangle PRT) &nbsp; (1)</p>
+        <p>${x^2 + 5^2 = (y + 3)^2}$ &nbsp; (right triangle OPT) &nbsp; (2)</p>
+        <p>subtracting (1) from (2): &nbsp; ${25 = 6y - 7}$, &nbsp; so &nbsp; $y = \dfrac{32}{6} = \dfrac{16}{3}$</p>
+        <p>$x^2 = \left(\dfrac{16}{3}\right)^2 + 16 = \dfrac{16(16 + 9)}{9} = \dfrac{16 \times 25}{9}$ &nbsp; [from (1)], &nbsp; so &nbsp; $x = \dfrac{20}{3}$</p>
+      </div>
 
     </div>
   </div>
