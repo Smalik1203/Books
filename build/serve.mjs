@@ -142,6 +142,46 @@ async function library() {
   return classes;
 }
 
+/* ---- The bound volumes --------------------------------------
+   A volume is every chapter of a class that carries one subject,
+   bound by build.mjs --book into build/<class>/<class>-<slug>-book.
+   The name is composed exactly as the binder composes it, so the
+   studio and the binder cannot disagree about where a book lives. */
+const bookSlug = (subject) => subject.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const bookBase = (cls, subject) => cls + '/' + cls + '-' + bookSlug(subject) + '-book';
+
+function volumesOf(cls, chapters) {
+  const bySubject = new Map();
+  for (const c of chapters) {
+    if (!bySubject.has(c.subject)) bySubject.set(c.subject, []);
+    bySubject.get(c.subject).push(c);
+  }
+  return [...bySubject].map(([subject, list]) => {
+    const base = bookBase(cls, subject);
+    return {
+      cls, subject, slug: bookSlug(subject), base,
+      target: cls + '/' + bookSlug(subject),
+      chapters: list.length,
+      pages: list.reduce((n, c) => n + c.pages, 0),
+      edition: list[0].edition,
+      // the binder refuses a volume printed at two sizes, so it is not offered
+      bindable: new Set(list.map((c) => c.edition)).size === 1,
+      built: existsSync(path.join(ROOT, 'build', base + '.html')),
+      pdf: existsSync(path.join(ROOT, 'build', base + '.pdf')),
+      bleed: existsSync(path.join(ROOT, 'build', base + '-bleed.pdf')),
+    };
+  });
+}
+
+async function findVolume(target) {
+  const [cls, slug] = target.split('/');
+  const lib = (await library()).find((c) => c.cls === cls);
+  if (!lib) return null;
+  const meta = lib.chapters[0].meta;
+  const vol = volumesOf(cls, lib.chapters).find((v) => v.slug === slug && v.bindable) || null;
+  return vol && { ...vol, meta: { class: meta.class, edition: lib.chapters.find((c) => c.subject === vol.subject).meta.edition } };
+}
+
 /* ---- What is in covers/ -----------------------------------
    A cover is not a page. It never goes through build.mjs, it has
    no folio and no chapter, and its sheet is the whole wrap: two
@@ -247,6 +287,22 @@ function libraryHtml(classes, coverClasses) {
       </div>
     </a>`;
 
+  /* The whole volume, first in its list: the chapters are the parts, and
+     the book they bind into is the thing that goes to press. */
+  const bookCard = (v) => `
+    <a class="card card--book" href="/book/${esc(v.target)}">
+      <div class="card__num">Whole book &middot; ${esc(v.edition)}</div>
+      <div class="card__title">${esc(v.subject)}</div>
+      <div class="card__meta">
+        <span>${v.chapters} chapter${v.chapters === 1 ? '' : 's'} &middot; ${v.pages} chapter pages</span>
+      </div>
+      <div class="card__flags">
+        ${v.built ? '<span class="flag flag--on">bound</span>'
+                  : '<span class="flag flag--warn">not bound</span>'}
+        ${flag(v.pdf, 'pdf')}
+      </div>
+    </a>`;
+
   const names = [...new Set([...classes.map((c) => c.cls),
                              ...coverClasses.map((c) => c.cls)])]
     .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));  // class-10 after class-9
@@ -289,12 +345,14 @@ function libraryHtml(classes, coverClasses) {
       .filter((sub) => sub && !SUBJECTS.includes(sub)).sort();
     const listed = [...known, ...extra];
 
+    const volumes = volumesOf(cls, chapters);
     const perSubject = listed.map((sub) => {
       const mine = chapters.filter((c) => c.subject === sub);
+      const vol = volumes.find((v) => v.subject === sub);
       return `<section class="lib-set" hidden data-class="${esc(cls)}" data-subject="${esc(sub)}"`
         + ` data-count="${mine.length}">`
         + `<div class="class-head">Class ${shown} &middot; ${esc(sub)}</div>`
-        + (mine.length ? `<div class="grid">${mine.map(card).join('')}</div>` : '')
+        + (mine.length ? `<div class="grid">${vol && vol.bindable ? bookCard(vol) : ''}${mine.map(card).join('')}</div>` : '')
         + `</section>`;
     }).join('');
 
@@ -486,18 +544,35 @@ const zoomBar = (pager = true, switches = '') => `
         </div>`;
 
 /* ---- Viewer page ------------------------------------------ */
+/* A whole volume is read in the same viewer as a chapter: it is a run
+   of pages on the same sheet, and a second viewer would only drift from
+   the first. What differs is where its files live, what Build runs, and
+   what the label and the back arrow say — so a volume is dressed as a
+   chapter here and nowhere else. */
+const asViewerItem = (vol) => ({
+  kind: 'book',
+  target: vol.target,
+  base: vol.base,
+  subject: vol.subject,
+  meta: { class: vol.meta.class, title: vol.subject },
+  where: 'Class ' + esc(vol.meta.class) + ' &middot; whole book',
+  backHref: '/?class=' + encodeURIComponent(vol.cls) + '&amp;subject=' + encodeURIComponent(vol.subject),
+});
+
 function viewerHtml(chapter, s) {
+  const base = chapter.base || chapter.target;
   const cfg = {
+    ...(chapter.kind ? { kind: chapter.kind } : {}),
     target: chapter.target,
-    trimUrl: '/build/' + chapter.target + '.html',
-    bleedUrl: '/build/' + chapter.target + '-bleed.html',
+    trimUrl: '/build/' + base + '.html',
+    bleedUrl: '/build/' + base + '-bleed.html',
     imposeUrl: '/impose/' + chapter.target,
     trimW: s.trimW, mediaW: s.mediaW,
     trimH: s.trimH, mediaH: s.mediaH,
   };
-  const noBleed = !existsSync(path.join(ROOT, 'build', chapter.target + '-bleed.html'));
+  const noBleed = !existsSync(path.join(ROOT, 'build', base + '-bleed.html'));
 
-  const dl = (suffix, label) => downloadBtn(chapter.target, suffix, label);
+  const dl = (suffix, label) => downloadBtn(base, suffix, label);
 
   return page(chapter.meta.title + ' — LearnLab Studio', `
     <div class="viewer">
@@ -516,9 +591,9 @@ function viewerHtml(chapter, s) {
              one and the Bleed tooltip the other. -->
         <div class="bar__side">
 ${navPair(
-  '/?class=' + encodeURIComponent(chapter.target.split('/')[0])
-    + '&amp;subject=' + encodeURIComponent(chapter.subject),
-  'Class ' + esc(chapter.meta.class) + ' &middot; CH ' + esc(chapter.meta.number),
+  chapter.backHref || ('/?class=' + encodeURIComponent(chapter.target.split('/')[0])
+    + '&amp;subject=' + encodeURIComponent(chapter.subject)),
+  chapter.where || ('Class ' + esc(chapter.meta.class) + ' &middot; CH ' + esc(chapter.meta.number)),
   chapter.meta.title)}
         </div>
 
@@ -748,8 +823,13 @@ function build(target, flags = [], kind = 'chapter') {
     const key = kind + ':' + target + flags.join();
     if (building.has(key)) { resolve({ ok: true, summary: 'already building' }); return; }
     building.add(key);
+    /* A book is bound from its class: target is <class>/<slug>, and the
+       volume to bind rides in the flags as --volume=<subject>. */
+    const args = kind === 'book'
+      ? [target.split('/')[0], '--book', ...flags]
+      : [target, ...flags];
     execFile(process.execPath,
-      [path.join(ROOT, 'build', kind === 'cover' ? 'cover.mjs' : 'build.mjs'), target, ...flags],
+      [path.join(ROOT, 'build', kind === 'cover' ? 'cover.mjs' : 'build.mjs'), ...args],
       { cwd: ROOT, maxBuffer: 1 << 24 },
       (err, stdout, stderr) => {
         building.delete(key);
@@ -824,8 +904,13 @@ const onChange = (dir) => (_evt, file) => {
      restarting, the tab only needs telling. It was not watched at all,
      which is why an edit to app.js looked like it had not applied. */
   if (dir === 'build/ui') { for (const res of clients) res.write('data: reload\n\n'); return; }
-  if (dir === 'pages' && parts.length >= 2) pending.add('chapter:' + parts[0] + '/' + parts[1]);
-  else if (dir === 'covers' && parts.length >= 1) {
+  if (dir === 'pages' && parts.length >= 2) {
+    pending.add('chapter:' + parts[0] + '/' + parts[1]);
+    // a book open on screen is rebound when one of its class's pages changes
+    if (focus && focus.kind === 'book' && focus.target.split('/')[0] === parts[0]) {
+      pending.add('book:' + focus.target);
+    }
+  } else if (dir === 'covers' && parts.length >= 1) {
     // a panel in _shared is shared by every cover of that class, so rebuild them all
     const t = (parts.length < 3 || parts[1] === '_shared') ? parts[0] : parts[0] + '/' + parts[1];
     pending.add('cover:' + t);
@@ -839,6 +924,9 @@ const onChange = (dir) => (_evt, file) => {
       const kind = t.slice(0, cut), target = t.slice(cut + 1);
       if (kind === 'cover') {
         if (existsSync(path.join(ROOT, 'covers', target))) await build(target, [], 'cover');
+      } else if (kind === 'book') {
+        const vol = await findVolume(target);
+        if (vol) await build(vol.target, ['--volume=' + vol.subject], 'book');
       } else if (existsSync(path.join(ROOT, 'pages', target, 'chapter.json'))) {
         await build(target);
       }
@@ -882,6 +970,20 @@ const server = createServer(async (req, res) => {
     let raw = '';
     for await (const chunk of req) raw += chunk;
     const { target, pdf, bleed, kind } = JSON.parse(raw || '{}');
+    if (kind === 'book') {
+      const vol = await findVolume(String(target));
+      if (!vol) {
+        res.writeHead(400, { 'Content-Type': 'application/json' })
+          .end(JSON.stringify({ ok: false, summary: 'no such book' }));
+        return;
+      }
+      const flags = ['--volume=' + vol.subject];
+      if (pdf) flags.push('--pdf');
+      if (bleed) flags.push('--bleed');
+      const out = await build(vol.target, flags, 'book');
+      res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(out));
+      return;
+    }
     const isCover = kind === 'cover';
     const known = isCover
       ? existsSync(path.join(ROOT, 'covers', String(target), 'cover.json'))
@@ -928,6 +1030,17 @@ const server = createServer(async (req, res) => {
     if (!cover.built) await build(target, [], 'cover');
     res.writeHead(200, { 'Content-Type': MIME['.html'], 'Cache-Control': 'no-store' });
     res.end(coverViewerHtml(cover));
+    return;
+  }
+
+  if (url.startsWith('/book/')) {
+    const target = url.slice('/book/'.length).replace(/\/$/, '');
+    const vol = await findVolume(target);
+    if (!vol) { res.writeHead(404, { 'Content-Type': 'text/plain' }).end('No such book'); return; }
+    focus = { target: vol.target, kind: 'book', subject: vol.subject };
+    if (!vol.built) await build(vol.target, ['--volume=' + vol.subject], 'book');
+    res.writeHead(200, { 'Content-Type': MIME['.html'], 'Cache-Control': 'no-store' });
+    res.end(viewerHtml(asViewerItem(vol), await sheet(vol.meta.edition)));
     return;
   }
 

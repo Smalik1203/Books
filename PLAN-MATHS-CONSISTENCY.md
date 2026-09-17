@@ -21,7 +21,7 @@ block (the Beyond the Book shape), and §10 (language). Read those first.
 | **6** | **10** | **196 × 276 ✓** | **current ✓** | **stepped ✓** | **ANSWERS.md ✓** |
 | **7** | **15** | **196 × 276 ✓** | **current ✓** | **82, stepped ✓** | **none** |
 | **8** | **14** | **196 × 276 ✓** | **current ✓** | **103, stepped ✓** | **ANSWERS.md ✓** |
-| 9 | 8 of ~14 | Crown Quarto | old shape | 85, prose | none |
+| **9** | **8 (NCERT Part 1)** | **196 × 276, 7 of 8** | **current, 7 of 8** | **stepped, 7 of 8** | **ANSWERS.md, 7 of 8** |
 | 10 | 14 | Crown Quarto | old shape | 117, prose | none |
 
 61 chapters in all; 46 to bring up, and about six to write from nothing.
@@ -34,9 +34,13 @@ Every maths chapter, in every class:
 2. keeps **NCERT's own structure** in the chapter body — no examples, checks
    or exercises added inside it;
 3. sets **every worked example as steps** — *Solution*, a step to a
-   `.work__row`, *Answer*, the reason in a `.work__why` — except a
-   question-only panel whose working is in the running text, which is left
-   alone;
+   `.work__row`, *Answer*, the reason in a `.work__why`. Classes 6–8 left
+   a question-only panel whose working is in the running text alone.
+   **Decided 17 September 2026 for Class 10, where 113 of 117 examples are
+   of that kind: they are stepped too.** The working moves into the panel,
+   a remark that is not a step stays after it, and a proof is set one
+   statement to a row. `build/check-body-maths.mjs` proves nothing was
+   lost, where `check-example-stepping` cannot;
 4. ends with **Beyond the Book in the four stages**: Using What You Know
    (kept word for word where one exists), Solved Examples by type, Practice
    (one numbered run, all six examination forms, band carrying the numeral),
@@ -71,11 +75,11 @@ Cheapest first, so the method is proved before the expensive classes.
   chapter's `ANSWERS.md`, then set the booklet per volume.
 - **Phase 3 — Class 8** (14 chapters, two volumes). First class to move page,
   so the page move and the conversion happen in one pass per chapter.
-- **Phase 4 — Class 10** (14 chapters). Same as Class 8. Examined class, so
+- **Phase 4 — Class 10** (14 chapters; split into two volumes on 17
+  September 2026, Chapters 1–7 and 8–14, NCERT numbering kept). Same as Class 8. Examined class, so
   the model papers in phase 6 matter most here.
-- **Phase 5 — Class 9**: convert the 8 chapters that exist, then **write the
-  missing ~6** to §5a. This is authoring, not conversion, and is the one
-  phase where the work is new mathematics.
+- **Phase 5 — Class 9**: convert the 8 chapters that exist. (The "missing ~6"
+  are NCERT's unreleased Part 2 and are not written; see §9.)
 - **Phase 6 — volume furniture** for all six volumes: contents, how to use the
   book, syllabus table, glossary and index, formula sheet, two model papers.
 - **Phase 7 — bind, covers, cross-chapter notes**: re-measure every volume,
@@ -226,7 +230,55 @@ phase 7.
 Still to settle:
 
 - **The answers booklet's form:** one booklet a volume, or one a class.
-- **Class 9's missing chapters:** which six, against which syllabus.
+- ~~**Class 9's missing chapters:** which six, against which syllabus.~~
+  **Settled 17 September 2026: none are written.** Class 9's eight chapters
+  are the new NCERT book's Part 1, and NCERT has not released Part 2. Phase
+  5 is the conversion of the eight and nothing more, until Part 2 exists.
+
+## Phase 5, as it went
+
+Started 17 September 2026. **Chapter 6 (Lines and Angles) was worked by
+hand as the model**, and Chapters 1–5 and 7 by Opus agents against a brief
+built from it, each checked by script (§4.8) and by reading proofs before it
+was accepted. **Chapter 8 is not done**: its agent was stopped part-way at
+the user's word, and its half-stepped pages are left uncommitted in the
+working tree. Until it is finished, Class 9 has two trims and will not bind.
+
+**What Class 9 needed that Class 10 did not:** its examples already carried
+their working inside the panel, as prose, so stepping was a recast rather
+than a move; and it set every step's reason in a `.chip` (118 of them) and
+never in a `.work__why`. Reason chips became `.work__why`; chips marking a
+result or a piece of an expression stayed. `check-body-maths.mjs` now reads
+a bare numeric row label as a label.
+
+**Stage 1 answered the body far more often than in other classes** — four
+of five questions in Chapters 3, 4, 6 and 7 — and each such item was
+replaced with one of the same kind. The syllabus audit's Class 9 findings
+were fixed in the same pass (Chapter 3's 123/990, the surd and rationalising
+items, Chapter 4's numbers with no real solution, Chapter 5's garbled
+dashes).
+
+**Figures drawn wrong and redrawn:** Fig. 6.7 (three points in a line
+against a printed 75°), Fig. 7.3 (a deck at the wrong place on the scale,
+and "purple" cards printing rose), Fig. 2B.1, 4B.3, 5B.2 and 5B.3 to new
+values. Fig. 4.9, named in the text, had been lost in an earlier commit and
+was restored. Every chapter's `check-numbers.mjs` measures its figures from
+their coordinates.
+
+**Wrong numbers found:** 235/99 printed as 2.(35) (Ch 3); a union of five
+numbers called six (Ch 7). **Body repairs:** a duplicated summary panel
+(Ch 4), filler Exercise 1.2 Q3 from commit bb264e3 (Ch 1), "Grade" for
+"Class" (Ch 1), and 43 bare rupee amounts wrapped in `.nb` (Ch 2).
+
+**Decided by the user:** no new Class 9 chapters until NCERT releases Part 2
+(§9).
+
+**Still open, for the user** (each in its chapter's log): Ch 4 has no
+Example 8 and describes numbers that cannot exist in Example 15 and End
+Q11; Ch 6 End Q4 is ambiguous as lettered and End Q14 repeats Ex 6.2 Q6;
+Ch 1 End Q17 is non-NCERT filler; the converse of Pythagoras is cited as
+Class 8 knowledge (Ch 1, Ch 5) unchecked; a square root in an italic
+caption prints without its sign (a stylesheet fix); facts without sources.
 
 ## Phase 3, as it went
 

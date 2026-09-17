@@ -152,6 +152,28 @@ async function checkStructure() {
       // a cover belongs to a class and to no subject
       eq('the cover back link carries the class', /href="\/\?class=[^"&]+"/.test(cov), true);
     }
+
+    /* The whole volume, read like a chapter. A class could be bound from
+       the terminal and never looked at as a book, which is where the
+       blank versos, the front matter and the running folios are wrong if
+       they are wrong anywhere. */
+    const grids = html.match(/<div class="grid">[\s\S]*?<\/section>/g) || [];
+    const withChapters = grids.filter((g) => g.includes('href="/read/'));
+    eq('every subject with chapters leads with its whole book, where it can be bound',
+      withChapters.every((g) => /^<div class="grid">\s*<a class="card card--book" href="\/book\//.test(g)
+        || !g.includes('card--book')), true);
+    const bookLink = (html.match(/href="\/book\/([^"]+)"/) || [])[1];
+    if (!bookLink) { bad('a whole-book card', 'none', 'a /book/ link in the library'); }
+    else {
+      const bv = await fetch('http://localhost:' + port + '/book/' + bookLink)
+        .then((r) => r.text()).catch(() => '');
+      eq('the book opens in the chapter viewer', /id="frame"/.test(bv) && /id="page-no"/.test(bv), true);
+      eq('and says it is the whole book', /class="bar__sub">Class \d+ &middot; whole book/.test(bv), true);
+      eq('its back link carries class and subject', /href="\/\?class=[^"]+&amp;subject=[^"]+"/.test(bv), true);
+      eq('its Build binds the volume', /"kind":"book"/.test(bv), true);
+      const miss = await fetch('http://localhost:' + port + '/book/' + bookLink + '-nope').then((r) => r.status);
+      eq('an unknown book is a 404', miss, 404);
+    }
   } finally {
     child.kill();
   }

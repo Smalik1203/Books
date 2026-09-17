@@ -75,6 +75,9 @@ a { color: inherit; text-decoration: none; }
   transition: border-color .12s, background .12s;
 }
 .card:hover { border-color: var(--accent); background: var(--bg-3); }
+/* The bound volume leads its list: the same card, set apart by its
+   rule, since it is the thing the chapters beside it add up to. */
+.card--book { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
 .card__num { color: var(--text-2); font-family: var(--mono); font-size: 12px; }
 .card__title {
   font-size: 15px; font-weight: 600; margin: 2px 0 8px;

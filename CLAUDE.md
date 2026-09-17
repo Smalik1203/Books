@@ -264,6 +264,13 @@ builder too — and each group binds on its own, into
 even where a class has one, so the path does not change shape on the day a
 second one lands.
 
+**Class 10 is two volumes too, split on 17 September 2026** — Mathematics I
+is Chapters 1–7 and Mathematics II is Chapters 8–14 — but it keeps NCERT's
+chapter numbers, because NCERT prints Class 10 as one book and every
+exercise, figure and answer is numbered from it. So Part 2 opens at Chapter
+8, only the folios restart, and the directories keep their `ch08-` names: a
+volume is its `subject`, nothing else.
+
 Both volumes live under `pages/class-8/`, and both restart at Chapter 1, so
 the directory carries the volume: `p2ch01-percentages` beside
 `ch01-square-and-cube`. Nothing parses a directory name for a number — the
@@ -365,7 +372,7 @@ repaints, through the token contract at the top of `css/cover.css`.
 **A direction owns the colour of a whole wrap, so no two volumes may share
 one.** They did: Class 8 Part 2 was written as `arc`, which is Class 9
 Mathematics, and the two came off the press the same book in different
-words. Eight wraps, eight directions now — Class 10 Mathematics `sight` (a tower and its angle of elevation from Chapter 9, dark olive and khaki-sand, face Archivo), Class 6 Mathematics `patchwork` (a
+words. Nine wraps, nine directions now — Class 10 Part 2 `sight` (a tower and its angle of elevation from Chapter 9, dark olive and khaki-sand, face Archivo), Class 10 Part 1 `lamp` (its pair, as `tile` is `comb`'s: the lamp-post and shadow of Chapter 6 drawn to scale, walnut with the same khaki line and face), Class 6 Mathematics `patchwork` (a
 contents page of ten chapter tiles, brick red, face Outfit, on the 196x276
 trim), Class 7 Part 1 `zoom`, Part 2 `mobile`,
 Class 8 Part 1 `comb`, Part 2 `tile`, Class 9 Mathematics `arc`, Class 9
@@ -591,6 +598,18 @@ posts to `/api/build` and asserts the reply is a phrase and not a fill map.
 
 The book renders in an iframe so the studio's stylesheet and the book's can
 never reach each other.
+
+**A whole volume opens like a chapter.** Every class-and-subject list leads
+with a **Whole book** card, and `/book/<class>/<slug>` (the subject in the
+binder's own slug, `mathematics-ii`) shows the bound volume in the same
+viewer: pager, zoom, spreads, bleed, Print PDF. Its Build runs
+`build.mjs <class> --book --volume="<subject>"`, which binds that one
+volume straight from the page sources without rebuilding every chapter,
+and a save under that class rebinds it while it is on screen. The page box
+takes a **printed** page number, so "40" lands on the page printed 40
+rather than the fortieth sheet — the title page, imprint and contents carry
+no folio. A volume whose chapters use two trims cannot be bound, so it gets
+no card.
 
 Covers appear in the library **under the volume they wrap**, in a group of
 their own, and open at `/cover/<class>/<name>`. They were filed by class,

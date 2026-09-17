@@ -2384,6 +2384,89 @@ body.bleed .jacket {
   margin-top: 1.4mm;
 }
 
+/* ============================================================
+   DIRECTION — lamp: Class 10 Mathematics, Part 1
+
+   Part 2 is sight; this is its pair, as tile is comb's. The same
+   arrangement — type at the top, one outdoor figure below, the strap at
+   the foot — the same face and the same khaki-sand line, with only the
+   ground's hue changed: walnut for olive. The figure is Part 1's own,
+   the lamp-post problem of Chapter 6 (Triangles): a lamp 3.6 m up, a
+   girl 0.9 m tall who has walked 4.8 m from its foot, and the shadow
+   the similar triangles give her, 1.6 m.
+
+   Walnut is on no other wrap; the khaki is shared with sight on
+   purpose, so the two parts read as one set on the shelf.
+   ============================================================ */
+.jacket--lamp {
+  --jk-display: Archivo, 'Helvetica Neue', Arial, sans-serif;
+
+  --jk-navy:      #3b2a20;
+  --jk-navy-deep: #2a1d16;
+  --jk-navy-soft: #bca993;
+  --jk-terra:     #dcc27e;
+  --jk-sage:      #bca993;
+  --jk-gold:      #dcc27e;
+  --jk-cream:     #f5efe6;
+
+  --jk-ground:        #f3ede5;
+  --jk-ground-ink:    #3b2a20;
+  --jk-ground-soft:   #75604f;
+  --jk-ground-rule:   #e0d5c7;
+  --jk-ground-accent: #6e5f24;
+  --jk-ground-art:    none;
+
+  --jk-deep:      #3b2a20;
+  --jk-deep-ink:  #f5efe6;
+  --jk-deep-soft: #d2c4b3;
+
+  --jk-front:        #3b2a20;
+  --jk-front-ink:    #f5efe6;
+  --jk-front-soft:   #d2c4b3;
+  --jk-front-mark:   #dcc27e;
+  --jk-front-accent: #dcc27e;
+  --jk-front-label:  #dcc27e;
+}
+.jacket--lamp { font-family: var(--jk-display); }
+.jacket--lamp .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.125); }
+.jacket--lamp .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.38);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.jacket--lamp .front__subtitle {
+  font-family: var(--font-body);
+  font-weight: var(--weight-text);
+  margin: 5mm 0 0;
+}
+.jacket--lamp .wordmark,
+.jacket--lamp .learnlab { font-weight: 700; letter-spacing: -0.02em; }
+.jacket--lamp .classmark { border-left-width: 0.5mm; }
+.jacket--lamp .classmark__num { font-weight: 700; }
+.jacket--lamp .jacket__spine { background: var(--jk-front); color: var(--jk-front-ink); }
+.jacket--lamp .spine__mark,
+.jacket--lamp .spine__title,
+.jacket--lamp .spine__badge-num { color: var(--jk-front-ink); }
+.jacket--lamp .spine__mark { font-weight: 700; }
+.jacket--lamp .spine__title { font-weight: 700; letter-spacing: 0.14em; }
+.jacket--lamp .spine__tick { background: var(--jk-front-accent); width: 6mm; height: 0.5mm; }
+.jacket--lamp .spine__badge { border-color: var(--jk-front-label); }
+.jacket--lamp .spine__badge .jk-label,
+.jacket--lamp .spine__class .jk-label { color: var(--jk-front-label); }
+.jacket--lamp .spine__class-num { color: var(--jk-front-accent); font-weight: 700; }
+.jacket--lamp .jacket__back { display: block; padding: 0; background: var(--jk-ground); }
+
+/* the lamp's light: a faint cone to the ground and a glow at the lantern */
+.t10-glow        { fill: var(--jk-front-accent); opacity: 0.22; }
+.t10-glow--cone  { opacity: 0.07; }
+.t10-figure      { fill: var(--jk-front-ink); opacity: 0.2; }
+.t10-star        { fill: var(--jk-front-ink); opacity: 0.35; }
+.t10-sight--shadow { stroke-width: 1.6; }
+/* a crescent: a disc, and a second disc of the ground's own colour over it */
+.t10-moon     { fill: var(--jk-front-ink); opacity: 0.55; }
+.t10-moon-cut { fill: var(--jk-front); }
+
 /* ---- sight: the scene round the figure ----------------------
    The front was a bare diagram — one rectangle, one line — under a
    large empty field. It is the same idea drawn as a scene: a tower
