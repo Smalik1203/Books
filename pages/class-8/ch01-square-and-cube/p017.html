@@ -2,60 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <table>
-        <thead>
-          <tr><th>$n$</th><th>$n^3$</th><th>$n$</th><th>$n^3$</th><th>$n$</th><th>$n^3$</th><th>$n$</th><th>$n^3$</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>1</td><td>6</td><td>216</td><td>11</td><td>1331</td><td>16</td><td>4096</td></tr>
-          <tr><td>2</td><td>8</td><td>7</td><td>343</td><td>12</td><td>1728</td><td>17</td><td>4913</td></tr>
-          <tr><td>3</td><td>27</td><td>8</td><td>512</td><td>13</td><td>2197</td><td>18</td><td>5832</td></tr>
-          <tr><td>4</td><td>64</td><td>9</td><td>729</td><td>14</td><td>2744</td><td>19</td><td>6859</td></tr>
-          <tr><td>5</td><td>125</td><td>10</td><td>1000</td><td>15</td><td>3375</td><td>20</td><td>8000</td></tr>
-        </tbody>
-      </table>
+      <p>What is worth taking from the story is not the number but the habit. Ramanujan
+      knew $1729$ the way a musician knows a tune — not by calculating on the spot, but
+      because he had spent years turning numbers over. His colleague J. E. Littlewood
+      said afterwards that every positive integer was one of Ramanujan's personal
+      friends. The table of cubes on the previous page is a small start on the same kind
+      of friendship.</p>
 
-      <p>Cubes are scarce. There are only three of them below $30$ and only nine below
-      $1000$, where there are thirty-one squares — which is worth remembering, because
-      it means a number picked at random is very unlikely to be one.</p>
+      <p>The word doing the work in his answer is <em>smallest</em>. Saying that $1729$
+      can be written as a sum of two cubes in two ways takes two lines to check. Saying
+      it is the <em>first</em> number that can is a claim about all $1728$ numbers below
+      it, and that is a much larger thing to know. Ramanujan was not searching when he
+      said it. He already knew.</p>
 
-      <p>Read the last digits down the table of cubes and something happens that did not
-      happen with squares:</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$n$ ends in</span>
-          <span>$0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9$</span>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
         </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$n^3$ ends in</span>
-          <span>$0 \quad 1 \quad 8 \quad 7 \quad 4 \quad 5 \quad 6 \quad 3 \quad 2 \quad 9$</span>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>The next two taxicab numbers after $1729$ are $4104$ and $13\,832$. Find
+            the two ways of writing each as a sum of two cubes.</p>
+            <p>There is less searching to do than you might expect: start from the
+            largest cube that will fit and work down. For $4104$ the table on the
+            previous page is enough; for $13\,832$ you will have to carry it on a few
+            more lines.</p>
+          </div>
         </div>
       </div>
 
-      <p>All ten digits appear, and each appears exactly once. So the last-digit test is
-      useless for ruling a cube out — every ending is possible — but it is far more
-      powerful in the other direction. <strong>The last digit of a cube tells you the
-      last digit of its root, with no ambiguity at all.</strong> A cube ending in $7$
-      came from a number ending in $3$; a cube ending in $2$ came from a number ending in
-      $8$. Only $0, 1, 4, 5, 6$ and $9$ end their cubes in themselves.</p>
+      <p>The claim Ramanujan made is stronger than it sounds, because it is about
+      <em>every</em> number below $1729$ as well as about $1729$ itself. You could check
+      it yourself. For each number, run through the cubes that will fit inside it
+      and see whether what is left is a cube too. Most numbers give no such pair at
+      all, a few give exactly one, and until $1729$ none gives two. What Ramanujan had
+      was not a faster search but a memory in which the answer was already sitting.</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Squares hide their roots; cubes do not</div>
-        <p>A square ending in $6$ might come from a number ending in $4$ or in $6$. A
-        cube ending in $6$ can only have come from a number ending in $6$. That single
-        difference makes cube roots of large numbers easier to guess than square
-        roots.</p>
+      <h3>1.4.2 Cubes are sums of odd numbers too</h3>
+
+      <p>Squares turned out to be the running totals of the odd numbers. Cubes are made
+      of the odd numbers as well, but cut into blocks rather than added one at a time.</p>
+
+      <p>Write the odd numbers out in one long row and then chop the row into blocks —
+      one number, then two, then three, then four, and so on. Add up each block.</p>
+
+      <div class="work work--centred">
+        <p>$1 = 1 = 1^3$</p>
+        <p>$3 + 5 = 8 = 2^3$</p>
+        <p>$7 + 9 + 11 = 27 = 3^3$</p>
+        <p>$13 + 15 + 17 + 19 = 64 = 4^3$</p>
+        <p>$21 + 23 + 25 + 27 + 29 = 125 = 5^3$</p>
       </div>
 
-      <p>Two smaller habits follow the same way as they did for squares. Cubing a number
-      that ends in a zero triples the zeros: $10^3 = 1000$, $20^3 = 8000$,
-      $200^3 = 8\,000\,000$. So <strong>a perfect cube has a number of trailing zeros
-      that is a multiple of three</strong>, and a number ending in exactly two zeros —
-      $500$, or $1200$ — cannot be a cube. And cubing keeps a number odd or even, as squaring did: odd
-      cubed is odd, even cubed is even.</p>
-
-      <p>Cubing is not limited to whole numbers either.</p>
+      <p>Every odd number is used, none is used twice, and the blocks come out as the
+      cubes in order. It is not hard to see why once you look at the middle of each
+      block. The third block is $7, 9, 11$ and its middle number is $9 = 3^2$. The fourth
+      averages $16 = 4^2$. The fifth has middle $25 = 5^2$. A block of $n$ numbers spread
+      evenly around $n^2$ adds up to $n \times n^2$, which is $n^3$.</p>
 
     </div>
   </div>

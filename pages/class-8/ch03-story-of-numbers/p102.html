@@ -2,59 +2,90 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>
+        For a number near a million, do not convert — estimate. Chapter 2 gave us
+        $2^{10} \approx 10^3$, so $2^{20} \approx 10^6$: a million needs about twenty
+        binary digits. The true answer is exactly twenty, and we got it without
+        dividing anything.
+      </p>
+
+      <p>
+        Those twenty binary digits are worth a moment. A computer stores a number as a
+        row of switches, each on or off, and twenty switches is what it takes to count
+        to a million. Sixty-four of them — the size of a modern machine's word — reach
+        past $10^{19}$, which is the chessboard of grain from the last chapter. That is
+        the whole reason base two is the base of computing: it is the only base whose
+        digits a piece of wire can hold.
+      </p>
+
       <div class="c-try">
-        <p>Some fractions come out exactly as decimals and some do not: $\tfrac12$ and
-        $\tfrac15$ do, $\tfrac13$ does not. Which fractions would come out exactly in
-        base $12$, and what does the answer have to do with the factors of the base?</p>
+        <p>A Mesopotamian numeral shows two wedges, then a gap of uncertain width, then
+        three wedges. Give four different numbers it could be.</p>
       </div>
 
-      <div class="c-try">
-        <p>An Egyptian scribe needs a new symbol for every new power of ten. How many
-        symbols would be needed to write every number up to a million? How many does the
-        Hindu system need for the same job?</p>
+      <p>
+        Two wedges, a gap, three wedges. The wedges are counts; the gap is supposed to
+        say how many places separate them, and it cannot be measured.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">adjacent places</span>
+          <span>$2 \times 60 + 3$</span><span class="chip">$123$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">one place skipped</span>
+          <span>$2 \times 3600 + 0 \times 60 + 3$</span><span class="chip">$7203$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">or the three in the 60s</span>
+          <span>$2 \times 3600 + 3 \times 60$</span><span class="chip">$7380$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">two places skipped</span>
+          <span>$2 \times 60^3 + 3$</span><span class="chip">$432\,003$</span>
+        </div>
       </div>
 
+      <p>
+        Four readings, and no reason to prefer any of them — nothing in
+        the numeral settles it. In practice a scribe's reader used context: a tablet
+        about a month's grain is unlikely to be recording four hundred thousand of
+        anything.
+      </p>
+
+      <p>
+        That is why a placeholder is not a small extra. Without it, a place value system
+        does not represent numbers at all; it represents families of numbers, and
+        leaves the reader to choose.
+      </p>
+
       <div class="c-try">
-        <p>Convert $143$ from base $10$ to base $5$ by repeatedly dividing by $5$ and
-        keeping the remainders. Why does that procedure always stop, and why do the
-        remainders come out in the right order?</p>
+        <p>Explain why a place value system cannot have a base of $1$.</p>
       </div>
 
       <p>
-        A word about the third and the fourth, because they are a different kind of
-        question. Both ask you to show that something is <em>impossible</em> or
-        <em>unclear</em>, and neither can be settled by working an example. What
-        settles them is an argument that covers every case, and in both the argument is
-        two or three lines long once found.
+        Put $n = 1$ into everything the chapter established and watch it collapse.
       </p>
 
       <p>
-        The others are conversions and rules, and each rewards the same habit: write the
-        number in expanded form, with the powers showing, and look at what the base is
-        doing. Almost every question about bases becomes easy the moment
-        you rewrite $2626_{\,7}$ as $2 \times 7^3 + 6 \times 7^2 + 2 \times 7 + 6$.
+        The landmarks are meant to be $n^0, n^1, n^2, \ldots$ — but every power of one
+        is one. So the landmarks are $1, 1, 1, 1, \ldots$, and the second place is
+        worth exactly what the first place is worth. Position has stopped meaning
+        anything.
       </p>
 
       <p>
-        If you cannot get started, do it in base $10$ first, where you already know the
-        answer, and then ask which step used the fact that the base was ten. That step
-        is where the general rule lives.
+        And the symbol count fails too. A base-$n$ system needs $n$ symbols, $0$ up to
+        $n-1$; a base-$1$ system would need one symbol, which would have to be $0$.
+        Every numeral would then be a row of zeros, worth nothing at all.
       </p>
 
       <p>
-        That last piece of advice is worth more than it looks, and it is a general
-        method rather than a hint about bases. A problem may be stated with a letter in
-        it: a base $n$, an exponent $a$, a side of length $x$. The way in is almost
-        always to replace the letter with a number you know your way around, solve the
-        easy version completely, and then reread your own solution asking which lines
-        actually used the number. Those lines are the ones that need rewriting. The rest
-        was general all along.
-      </p>
-
-      <p>
-        Work through all eight before turning over, and keep whatever you wrote. Several
-        of the solutions overleaf take a different route from the obvious one, and the
-        comparison is the point.
+        The smallest base that works is $2$, and it is the
+        one every computer uses. What is left if you insist on base one is the tally
+        system of § 3.2 — which is a perfectly good way of recording a number, and is
+        not a place value system, and never was.
       </p>
 
     </div>

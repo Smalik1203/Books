@@ -2,95 +2,71 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Find the smallest perfect square that is divisible by $14$, $20$ and
-              $35$.</li>
-        </ol>
+      <p>All ten digits appear, and each appears exactly once. So the last-digit test is
+      useless for ruling a cube out — every ending is possible — but it is far more
+      powerful in the other direction. <strong>The last digit of a cube tells you the
+      last digit of its root, with no ambiguity at all.</strong> A cube ending in $7$
+      came from a number ending in $3$; a cube ending in $2$ came from a number ending in
+      $8$. Only $0, 1, 4, 5, 6$ and $9$ end their cubes in themselves.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Squares hide their roots; cubes do not</div>
+        <p>A square ending in $6$ might come from a number ending in $4$ or in $6$. A
+        cube ending in $6$ can only have come from a number ending in $6$. That single
+        difference makes cube roots of large numbers easier to guess than square
+        roots.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Estimate each root to the nearest whole number, and say which two squares
-              you trapped it between.
-              <ol class="c-parts c-parts--3">
-                <li>$\sqrt{80}$</li>
-                <li>$\sqrt{300}$</li>
-                <li>$\sqrt{1000}$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>Two smaller habits follow the same way as they did for squares. Cubing a number
+      that ends in a zero triples the zeros: $10^3 = 1000$, $20^3 = 8000$,
+      $200^3 = 8\,000\,000$. So <strong>a perfect cube has a number of trailing zeros
+      that is a multiple of three</strong>, and a number ending in exactly two zeros —
+      $500$, or $1200$ — cannot be a cube. And cubing keeps a number odd or even, as squaring did: odd
+      cubed is odd, even cubed is even.</p>
+
+      <p>Cubing is not limited to whole numbers either.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$\left(\tfrac46\right)^3$</span>
+          <span>$= \tfrac46 \times \tfrac46 \times \tfrac46 = \tfrac{64}{216}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$(-6)^3$</span>
+          <span>$= -6 \times -6 \times -6 = -216$</span>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>$\sqrt{4489}$ is a whole number. Find it using only the two facts that
-              $60^2 = 3600$, $70^2 = 4900$, and the last-digit rule.</li>
-        </ol>
-      </div>
+      <p>That second line is a real difference between squares and cubes and is worth
+      pausing on. A square is never negative, because the two minus signs cancel. A cube
+      keeps a third minus sign that has nothing to cancel with, so <strong>the cube of a
+      negative number is negative</strong>. So cubes run both ways, far into the negative numbers and far into the positive, where
+      squares only ever go one way.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>A square hall has an area of $1444$ m² and is to be edged with a skirting
-              board. How many metres are needed?</li>
-        </ol>
-      </div>
+      <h3>1.4.1 The number on the taxi</h3>
 
-      <h2><span class="badge">1.4</span><span class="name">Cubic Numbers</span></h2>
+      <p>Srinivasa Ramanujan grew up in Kumbakonam, taught himself mathematics from a
+      borrowed book of formulas, and in 1913 sent a letter full of unproved results to
+      G. H. Hardy in Cambridge. Hardy, who got plenty of letters that led nowhere,
+      read this one twice and brought him to England.</p>
 
-      <p>Everything so far has been flat. A square number counts the unit squares in a
-      square; now stack that square into the third dimension and count the unit cubes in
-      a cube.</p>
+      <p>Some years later Ramanujan was ill in hospital and Hardy went to visit. Short
+      of something to say, Hardy said that he had come in taxicab number
+      $1729$, and that it seemed a rather dull number. He hoped it was not a bad
+      sign.</p>
 
-      <p>A cube of edge $2$ is built from $8$ unit cubes — two layers of $2 \times 2$.
-      A cube of edge $3$ takes $27$ — three layers of $3 \times 3$. A cube of edge $4$
-      takes four layers of $16$, which is $64$.</p>
-
-      <div class="c-figure c-figure--md">
-        <figure>
-          <svg viewBox="0 0 150 92" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A cube of edge three separated into three layers, each a three by three square of nine unit cubes">
-      
-            <g class="dg-fill-a-soft">
-              <path d="M60 9.2 L78 20 L60 30.8 L42 20 Z"/>
-            </g>
-            <g class="dg-fill-d">
-              <path d="M60 35.2 L78 46 L60 56.8 L42 46 Z"/>
-              <path d="M60 61.2 L78 72 L60 82.8 L42 72 Z"/>
-            </g>
-            <g class="dg-thin">
-              <path d="M48 16.4 L66 27.2 M54 12.8 L72 23.6 M48 23.6 L66 12.8 M54 27.2 L72 16.4"/>
-              <path d="M48 42.4 L66 53.2 M54 38.8 L72 49.6 M48 49.6 L66 38.8 M54 53.2 L72 42.4"/>
-              <path d="M48 68.4 L66 79.2 M54 64.8 L72 75.6 M48 75.6 L66 64.8 M54 79.2 L72 68.4"/>
-            </g>
-            <g class="dg-line">
-              <path d="M60 9.2 L78 20 L60 30.8 L42 20 Z"/>
-              <path d="M60 35.2 L78 46 L60 56.8 L42 46 Z"/>
-              <path d="M60 61.2 L78 72 L60 82.8 L42 72 Z"/>
-            </g>
-      
-            <text class="dg-note" x="86" y="22">9</text>
-            <text class="dg-note" x="86" y="48">9</text>
-            <text class="dg-note" x="86" y="74">9</text>
-            <text class="dg-label" x="104" y="48">27 in all</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 1.6</span> A cube of edge $3$, taken
-          apart. Each layer is a $3 \times 3$ square of $9$ unit cubes, and there are
-          three layers.</figcaption>
-        </figure>
-      </div>
-
-      <p>Nine to a layer and three layers is $3 \times 3 \times 3$, and that is the
-      pattern for every edge: a cube of edge $n$ has $n$ layers of $n \times n$, which is
-      $n \times n \times n$ unit cubes. As with squares, we shorten the writing, and
-      the raised number again counts how many copies are multiplied:</p>
+      <p>Ramanujan answered at once that it was not dull in the least: it is the
+      smallest number that can be written as a sum of two cubes in two different ways.</p>
 
       <div class="work work--centred">
-        <p>$n \times n \times n = n^3$</p>
+        <p>$1729 = 1^3 + 12^3 = 1 + 1728$</p>
+        <p>$1729 = 9^3 + 10^3 = 729 + 1000$</p>
       </div>
 
-      <p>It is read <em>$n$ cubed</em>. The cubes of the natural numbers —
-      $1, 8, 27, 64, \ldots$ — are the <span class="term">perfect cubes</span>.</p>
+      <p>Check both lines. Neither is a trick; they are two genuinely different pairs of
+      cubes adding to the same total, and no number below $1729$ has such a pair. It has
+      been called the Hardy–Ramanujan number ever since, and numbers with this property
+      are called <span class="term">taxicab numbers</span>.</p>
 
     </div>
   </div>

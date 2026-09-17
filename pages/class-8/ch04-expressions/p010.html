@@ -2,65 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>One case of this is worth a mention of its own, because it answers a question that
-      sounds harder than it is: by how much does a product grow when one of its two
-      numbers goes up by one? Writing it out settles it in a line.</p>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">one number up by 1</span>
-          <span>$a(b + 1) = ab + a$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">both up by 1</span>
-          <span>$(a+1)(b+1) = ab + a + b + 1$</span>
-        </div>
-      </div>
-
-      <p>A product grows by the <em>other</em> number. So $23 \times 28$ is
-      $23 \times 27$ with another $23$ added, and $24 \times 28$ is $23 \times 27$ plus
-      $23$ plus $27$ plus $1$ — which is worth checking on the two products themselves,
-      since $621 + 23 + 27 + 1$ is $672$.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.3</div>
-        <ol class="c-questions">
-          <li>Find each product.
-              <ol class="c-parts c-parts--4">
-                <li>$3a \times 7b$</li>
-                <li>$5x^2 \times 2x^3$</li>
-                <li>$-4m \times 6mn$</li>
-                <li>$\tfrac13 pq \times 9p$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Expand.
-              <ol class="c-parts c-parts--4">
-                <li>$2(x + 5)$</li>
-                <li>$a(a - b)$</li>
-                <li>$3y(2y + 7)$</li>
-                <li>$-p(p - 4)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Expand.
-              <ol class="c-parts c-parts--1">
-                <li>$5x(x^2 - 2x + 3)$</li>
-                <li>$-2ab(3a - b + 4)$</li>
-                <li>$m^2(m + 1) + m(m^2 - 1)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="4">
           <li>Simplify.
@@ -92,6 +33,63 @@
               </ol>
             </li>
         </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>Draw a rectangle to show that $5(x + 3) = 5x + 15$. Label both cuts and
+              say which length in your drawing is $x$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="8">
+          <li>Anjali expands $-3(2x - 5)$ as $-6x - 15$. Say which term she got wrong
+              and why, and give the right answer.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>In Fig. 4.1 the letters $b$ and $c$ are lengths, so both are positive.
+              Show by expanding that $a(b - c) = ab - ac$ holds anyway, and
+              explain what part of the picture you would have to imagine differently for
+              it to show a subtraction.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 190 88" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rectangle of height a and width b plus c, divided by a vertical line into a rectangle of area a b and a rectangle of area a c (repeated)">
+
+            <rect class="dg-fill-a" x="34" y="22" width="90" height="46"/>
+            <rect class="dg-fill-c" x="124" y="22" width="42" height="46"/>
+            <rect class="dg-line"   x="34" y="22" width="132" height="46"/>
+            <line class="dg-thin" x1="124" y1="22" x2="124" y2="68"/>
+
+            <text class="dg-label" x="79" y="49" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="145" y="49" text-anchor="middle">ac</text>
+
+            <line class="dg-dim" x1="34" y1="14" x2="124" y2="14"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="124" y1="14" x2="166" y2="14"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="79" y="9" text-anchor="middle">b</text>
+            <text class="dg-label" x="145" y="9" text-anchor="middle">c</text>
+
+            <line class="dg-dim" x1="24" y1="22" x2="24" y2="68"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="16" y="48" text-anchor="middle">a</text>
+
+            <line class="dg-dim" x1="34" y1="80" x2="166" y2="80"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="100" y="88" text-anchor="middle">width <tspan font-style="italic">b</tspan> + <tspan font-style="italic">c</tspan></text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.1</span> (repeated from Section 4.4,
+          for Exercise Set 4.3) The area is $a(b+c)$ if you measure the whole thing, and
+          $ab + ac$ if you measure the pieces.</figcaption>
+        </figure>
       </div>
 
     </div>

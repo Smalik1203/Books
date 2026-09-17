@@ -2,64 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A frequency table read backwards</div>
-        <p>There are fifteen values in all, so the sum must be $7 \times 15$. Writing the
-        sum the frequency-table way puts the unknown in it.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the sum</span>
-            <span>$(4 \times 6) + (x \times 9) = 24 + 9x$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">and it must be</span>
-            <span>$7 \times 15 = 105$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$9x = 81$, giving $x = 9$</span>
-          </div>
+      <p>That last comparison is the thread through all eight. An average is a total in
+      disguise, and most of these questions were answered by taking the disguise off
+      — multiplying the mean by the count, doing whatever the question described to the
+      total, and dividing back.</p>
+
+      <p>The other half of them had a second, shorter road: ask what the change does to
+      the balance and how many values have to absorb it. Where the numbers are ugly that
+      road is much the better one, and it is the one the chapter's picture of a fulcrum
+      was for.</p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>Nine values of $9$ and six of $4$ — and the mean of $7$ sits nearer the nine
-        than the four, as it should, because there are more of them. A mean is pulled by
-        how many as well as by how far.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two more heights, honestly measured</div>
-        <p>The correction has to be applied before the new students are let in, because
-        their heights have no shoes in them and the recorded average did.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the true sum</span>
-            <span>$24 \times 149.2 = 3580.8$ cm</span>
+      <h3>Type 1 &middot; The mean as a balance point</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Without adding the values, decide whether $14$ is the mean of $9$, $12$, $13$, $15$ and $21$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>below 14: $5 + 2 + 1 = 8$</span>
+              <span class="work__why">distances of 9, 12, 13</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>above 14: $1 + 7 = 8$</span>
+              <span class="work__why">distances of 15, 21</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The two totals balance, so $14$ is the mean</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">with the newcomers</span>
-            <span>$3580.8 + 149 + 152 = 3881.8$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the new mean</span>
-            <span>$3881.8 \div 26 = 149.3$ cm</span>
-          </div>
+          <p>A check by adding agrees: $70 \div 5 = 14$.</p>
         </div>
-        <p>One newcomer is below the old mean and one above, and between them they lift
-        it by a tenth of a centimetre. Their own mean is $150.5$, which is above $149.2$,
-        so the rise was to be expected — and the rule from section 5.3 would have
-        predicted its direction without any of this arithmetic.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The same graph, a taller-looking climb</div>
-        <p>Nothing about the data changes and nothing about the readings changes: every
-        month still sits against its correct label, and a reader who looks at the numbers
-        gets the same twelve either way. What changes is the <em>look</em> of the rises
-        and falls. The second graph gives the same vertical space to a range of $300$ mm
-        that the first gave to $400$, so every slope on it is a third steeper than it
-        was.</p>
-        <p>And any month with under $100$ mm of rain falls off the bottom of the second
-        graph altogether — which is the sharper problem, because a missing point is
-        easier to overlook than an exaggerated slope.</p>
+      <h3>Type 2 &middot; Including and removing values</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Nine values have a mean of $40$. A tenth value, $60$, is included. Find the new mean.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$9 \times 40 = 360$</span>
+              <span class="work__why">the old sum</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$360 + 60 = 420$</span>
+              <span class="work__why">the new sum</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$420 \div 10 = 42$</span>
+              <span class="work__why">ten values now</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The new mean is $42$</span></div>
+          </div>
+          <p>By balance: $60$ is $20$ above the old mean, and $20 \div 10 = 2$ is the rise.</p>
+        </div>
       </div>
 
     </div>

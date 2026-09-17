@@ -1,5 +1,182 @@
 # Class 8 · Mathematics II · Chapter 7 — The Same Area, a Different Shape
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked against Class 8 Chapter 1 as
+the model. The chapter was read whole before anything changed; every check
+below was run on the chapter.
+
+**Pages: 28 before (17 body + 11 Beyond, Crown Quarto), 29 after (15 body +
+14 Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once, after the examples were stepped (17 → 15 pages). Page 15
+carries `data-close`; `refit` removed the stale p016–p017.
+
+**All five body examples set as steps** — *Solution*, Step rows, an *Answer*
+row, the reason in a `.work__why`. The old wide labels (*on the 24 cm side*,
+*on base SR*, *as a parallelogram*, *one way*) became the reasons. Example
+4's third row (*keep the base and take twice the height*) became its Answer,
+with *infinitely many* added to it, since the question asks how many; the
+remark after it now reads *There are infinitely many because …*.
+`build/check-example-stepping.mjs`: 5 examples, 0 lost mathematics (run with
+empty placeholders for p016–p017, because the tool lists only files that
+exist now and would otherwise not read HEAD's Example 5).
+
+The derivation `.work` blocks in the running text (the obtuse triangle, the
+two base-and-height pairs, the rhombus as two triangles) are not examples and
+were left as they were.
+
+**One wrong number fixed (body, Example 5's remark).** *Get the division the
+wrong way round and the answer comes out as 1,040*: $161.29 \times 6.4516 =
+1040.59$, which is 1041 to the nearest whole number. Now *comes out at more
+than 1,040* (same maths span, so the stepping check still holds).
+
+**Beyond the Book rebuilt to the four current stages** (§6a):
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 8 `.c-try` questions, answered in the next stage | **the same eight, each followed by its own explanation**, word for word; `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | the worked answers to stage 1 (*The same eight questions, worked*) | **15 stepped examples**, Examples 1–15, under eight `Type N ·` heads |
+| 3 Problem Sets → **Practice** | 3 multiple-choice sets, 36 questions | **one numbered run of 31**, all six forms, band carrying the numeral |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong for 8 | key, every other answer (4 `.work--trace` blocks), why the options are wrong for 10; the *carry forward* paragraphs kept without their head |
+
+The old Stage 2 explanations were moved under their own questions, dropping
+only the `.c-solution` wrapper and its title. One sentence changed: *Try each
+before turning the page* → *Try each before reading what follows it*. The old
+Stage 2 intro (*The eight are answered below in the order they were asked …*)
+was dropped with its head, because it introduced a separate answers stage.
+
+Types: 1 rectangles, area against perimeter (unit conversion inside a tiling);
+2 a triangle's area and a height from it (incl. the obtuse case by
+subtraction); 3 figures between the same parallels; 4 the parallelogram;
+5 the rhombus and the kite; 6 the trapezium; 7 a polygon in pieces;
+8 changing the unit of area (incl. a map scale). **Worked examples in the
+chapter: 20** (5 body + 15 Beyond).
+
+Practice: 15 multiple choice (key a 4 / b 5 / c 5 / d 5 including the four
+assertion–reason), 4 assertion–reason, 3 very short, 4 short, 3 long, 2
+case-based. `fit-options` flagged Q3 and Q11 as four options that do not fit
+four columns; the options were shortened (*equal sides / equal angles /
+nothing equal*; *doubled / four times / the same / halved*) rather than set
+in one column.
+
+**Old Problem Sets items dropped, not reworded**, because each repeated a
+body exercise or Stage 1: B1 (Ex 7.1 Q1a), B2 (Ex 7.1 Q2), B3 (Ex 7.2 Q1a),
+B4 (Example 3 / Ex 7.2 Q4a), B5 (the §7.3 table), B6 (Ex 7.2 Q6), B7–B8
+(Ex 7.1 Q7), B9 (Fig. 7.10's caption), B10 (Ex 7.3 Q2a), C1–C7 (Stage 1's
+own questions). Of the concept questions, A1, A4–A10, A12, B11, C9 and C11
+were kept in the new run (some reworded to fit four columns); A2, A3, A11,
+C8, C10 and C12 were dropped to make room for the new forms, their ideas
+being asked elsewhere in the run.
+
+**Give-aways, found by reading every number Beyond prints against the
+body's exercise list** (`check-no-repeats` cannot see these):
+
+| where | printed | answered | now |
+|---|---|---|---|
+| Solved Example 13 (draft) | a triangle of base 12, height 5: $\tfrac12 \times 12 \times 5 = 30$ | Ex 7.1 Q1 (i) | rectangle 14 by 9, triangle base 14, height 6 |
+| Solved Example 8 (draft) | a parallelogram of area 96 with sides 12 and 16 (heights 8, 6) | Ex 7.2 Q9 (rhombus of area 96, diagonal 16: other diagonal 12, half-diagonals 8 and 6) | area 84, sides 7 and 14 |
+| Practice case 31 (draft) | square feet in square metres | Ex 7.3 Q6 (1 m² against 10 ft²) | fields in m² and hectares only |
+
+`check-no-repeats`: 1 pair above 50% — Practice Q24 (rhombus, diagonals 18
+and 24) against Ex 7.2 Q5 (diagonals 24 and 10): same type, different
+numbers and answers. Stage 1 Q1 (triangle is half the parallelogram) sits
+near Ex 7.2 Q8 (a rectangle twice a triangle), but the body's own Fig. 7.4
+already says the triangle is half its enclosing rectangle, so Beyond gives
+away nothing the body does not.
+
+**`ANSWERS.md` written** for every question: the three exercise sets, the
+three in-text questions, the Think and Reflect (with a worked triangle-to-
+square dissection), Stage 1 (pointing to its explanations), and the 31
+practice questions with working and what Q29's drawing must show.
+
+### Verified
+
+`check-numbers.mjs` is kept beside the pages and passes **481 claims**: 182
+printed identities on the pages and in `ANSWERS.md` (display maths read
+before inline; `\approx` checked to the places printed), 10 one-letter
+equations checked against the solution printed after them, the figures'
+labels against their drawn geometry (Fig. 7.1's sides and unit-square
+notes; Fig. 7.2 against the §7.3 table; Fig. 7.6's 5, 3 and 4 and the
+derived $BY = 3.75$; Fig. 7.8 and 7.9's midpoints), running-text values,
+every example's Answer row (body and Beyond), the practice key rows 20–31
+read back and checked a lettered part at a time, the same values in
+`ANSWERS.md`'s working, every body exercise answer in `ANSWERS.md` part by
+part, every multiple-choice question solved (exactly one right option,
+matching the key), every assertion–reason letter derived, the key's letter
+spread, `ANSWERS.md`'s key against the page, and question numbering 1, 2, 3 …
+in every set and in the practice run.
+
+**Tested by breaking values on purpose, on a scratch copy — 11 of 11
+caught:** Example 1's $h = 7$ printed 6; key 3 (a) → (b); `ANSWERS.md`
+$120 \div 13 \approx 9.32$; key 30 (a) *store 16 m²*; Fig. 7.1's *4 cm*
+label → *5 cm*; Q9's option 144 → 169; Solved Example 12's answer 7 m → 8 m;
+`ANSWERS.md` key 10 (a) → (c); Stage 1's *climbs to 80 cm* → 84;
+`ANSWERS.md` 7.3 Q1 (ii) 18.796 → 18.769; `ANSWERS.md` practice 31 (b)
+*3 ha* → *2 ha*.
+
+**Fitting.** Nothing clipped. Page 26 runs 2.1 mm into the bottom margin,
+inside the 3 mm limit. `orphans`: 0 stranded openers in 29 pages.
+`check-labels`: no collisions. `fit-options`: every option row fits. Proofs
+of pages 6, 14, 20, 26, 28, 29 were read; two key rows that left a comma or a
+unit alone at a line start were rewritten (row 10's areas in one span, row
+27's *216 m²* kept together). The division is 14 pages, past the budget of
+ten, because Stage 1 now carries its explanations and the practice runs to 31.
+
+**Colour.** Pages 1, 2, 3, 4, 5, 7, 9, 11 and 13 were read in greyscale and
+under simulated colour vision (`build/check-colour.mjs`). The moved piece in
+Figs. 7.7 and 7.9 and the pentagon's three triangles in Fig. 7.10 are each
+bounded by drawn lines, so nothing depends on hue alone.
+
+**Exercise questions and figures.** No body exercise question names a
+figure, so no reprint was needed.
+
+### Short pages, logged
+
+Each is held by a block `gaps` names, which the packer cannot move.
+
+| page | fill | held by |
+|---|---|---|
+| 8 | 80% | the § 7.7 head with Fig. 7.8 under it |
+| 11 | 82% | Example 4, a panel |
+| 12 | 85% | the § 7.9 head with Fig. 7.10 under it |
+| 15 | 83% | the body's last page (`data-close`) |
+| 20 | 71% | the `Type 3` head and Example 5 under it |
+| 27 | 84% | **the Answers stage, which always opens a page** |
+| 29 | 76% | the last page |
+
+### Flagged, not done
+
+- **Two running-text references to a figure a page turn away** (prose, not
+  questions): *Fig. 7.3 is the reason for insisting* on page 4 (the figure is
+  on page 3, a recto), and *The half-turn of Fig. 7.9* / *look back at
+  Fig. 7.9* on page 12 (the figure is on page 11, a recto). Both were a turn
+  away before the move as well.
+- **Stage 1, the Gopal question:** *This is not an area question, and section
+  7.4 answers it anyway.* The explanation uses a reflection, not § 7.4's
+  same-base-same-height result. Kept word for word; C3, it needs a decision.
+  The intro's *Two of them are not about area at all* also counts two where
+  only this one is.
+- **Ex 7.2 Q2 is Example 2 over again** (12 cm, 6 cm, 7.6 cm), and Ex 7.2 Q4
+  (i) is Example 3's rhombus (20 cm and 15 cm). Both are the body's own, so
+  they were left; a reader who has read the example has the answer.
+- KaTeX lets a full stop or comma fall to the start of a line after a maths
+  span in two body paragraphs (page 6, *diagonal $AC$ ,*; page 14, Example
+  5's remark, *161.29 .*). Not fixed here: it wants a non-breaking rule in the
+  system, not an inline style.
+- The closing paragraph says the chapter *ended with a formula for a rhombus*;
+  the body now ends with units of area. Kept as written.
+- Facts without a source in this log: the acre as *the area a pair of oxen
+  could plough in a day*, the Śulbasūtras' altar problems, and the regional
+  land units (*bigha, gaj, katha, dhur, cent, ankanam*). §5a asks for sources
+  before press. `ANSWERS.md` Ex 7.3 Q7 takes the *gaj* as a square yard.
+- Stage 1 keeps its coaching sentences (*The trick was …*, *That is the
+  habit worth taking out of the division*) because it is kept word for word.
+
+
 Language edit, 28 pages (p001–p017 chapter proper, p101–p111 Beyond the Book).
 Build after editing: 28 pages, 0 stranded openers, no label collisions, every
 option row fits. Every worked result re-derived, including the obtuse-triangle
@@ -43,6 +220,10 @@ Four things worth recording:
   land, so a bigha differs between states, "which is exactly why a standard
   unit was agreed on; it is also why the local names have survived every
   attempt to retire them."
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted. The agent's stand-in files for the stepping check were verified the same way: 5 examples, 0 lost.
 
 ## FIXED
 

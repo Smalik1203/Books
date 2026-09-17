@@ -2,80 +2,76 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Counting the symbols each system needs</div>
-        <p>
-          To write every number up to a million, Egypt needs a picture for each power of
-          ten it can reach:
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">Egypt</span>
-            <span>$1, 10, 100, 1000, 10^4, 10^5, 10^6$</span>
-            <span class="chip">7 symbols</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the Hindu system</span>
-            <span>$0, 1, 2, 3, 4, 5, 6, 7, 8, 9$</span>
-            <span class="chip">10 symbols</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>What number is MMCDXCVI?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>MM is $2000$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>CD is $500 - 100 = 400$</span>
+              <span class="work__why">C before D subtracts</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>XC is $100 - 10 = 90$</span>
+              <span class="work__why">X before C subtracts</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>VI is $5 + 1 = 6$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$2000 + 400 + 90 + 6 = 2496$</span></div>
           </div>
         </div>
-        <p>
-          Seven against ten, and Egypt appears to win. It does not, and the reason is
-          what happens next. Ask for numbers up to a billion and Egypt needs three more
-          symbols; ask for a trillion and it needs another three. The Hindu system needs
-          ten, for ever.
-        </p>
-        <p>
-          That is the whole argument of the chapter in one comparison. Egypt's symbol
-          count grows with the size of the numbers you want to write; ours does not.
-          A fixed alphabet against a growing one is not a small advantage — it is the
-          difference between a system that runs out and a system that does not.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Dividing repeatedly, and why it stops</div>
-        <p>
-          To convert $143$ to base $5$, divide by $5$ and keep the remainder. Then
-          divide the quotient by $5$ and keep that remainder. Go on like that until the
-          quotient is zero.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$143 \div 5$</span>
-            <span>$= 28$ remainder $3$</span>
+      <h3>Type 3 &middot; Calculating with landmarks</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Add CLXVI and CCLXXVII without converting either to our numerals.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Cs: C and CC make three; Ls: L and L make two</span>
+              <span class="work__why">gather like symbols</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Xs: X and XX make three; Vs: V and V make two; Is: I and II make three</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>two Ls make a C, so four Cs</span>
+              <span class="work__why">trade upward</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>two Vs make an X, so four Xs</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>CCCCXXXXIII is written CDXLIII</span>
+              <span class="work__why">subtractive rule</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>CDXLIII</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$28 \div 5$</span>
-            <span>$= 5$ remainder $3$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$5 \div 5$</span>
-            <span>$= 1$ remainder $0$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$1 \div 5$</span>
-            <span>$= 0$ remainder $1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">reading upwards</span>
-            <span>$1033$</span>
-            <span class="chip">$143 = 1033_{\,5}$</span>
-          </div>
+          <p>As a check, $166 + 277 = 443$, and CDXLIII is $400 + 40 + 3$.</p>
         </div>
-        <p>
-          <em>Why it stops:</em> each division makes the number at least five times
-          smaller, and a whole number cannot shrink for ever. It must reach zero, and it
-          reaches it quickly — the number of steps is the number of digits.
-        </p>
-        <p>
-          <em>Why the remainders come out backwards:</em> the first division asks how
-          many are left over after taking out all the fives, which is precisely the units
-          digit. The second asks the same of the fives, which is the next digit up. Each
-          step peels off the lowest place, so the digits emerge in the reverse of the
-          order they are written.
-        </p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Is $\text{V} \times \text{C}$ a Roman landmark? Is $\text{L} \times \text{C}$? Then say whether $10 \times 1000$ is an Egyptian landmark.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$5 \times 100 = 500$, which is D</span>
+              <span class="work__why">a landmark</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$50 \times 100 = 5000$</span>
+              <span class="work__why">the list stops at M</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$10 \times 1000 = 10^1 \times 10^3 = 10^4$</span>
+              <span class="work__why">exponents add</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes; no; yes, $10^4$ is the finger</span></div>
+          </div>
+          <p>The Roman answer depended on the numbers chosen. The Egyptian one could not have come out any other way.</p>
+        </div>
       </div>
 
     </div>

@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">The chapter's ideas, in questions that do not say which one to use.</div>
         </div>
       </div>
 
@@ -25,7 +24,13 @@
       <p>
         What is different here is that several of the questions ask whether something is
         <em>possible</em> rather than what its value is, and a question of that kind is
-        never answered by a measurement. Try each one before turning the page.
+        never answered by a measurement. Try each one before reading what follows it.
+      </p>
+
+      <p>
+        The last question has a short answer and a long way of reaching it. If you find
+        yourself testing values of $n$ one at a time, stop and write down what has to
+        divide what.
       </p>
 
       <div class="c-try">
@@ -34,27 +39,54 @@
         $(n-2) \times 180^\circ$ formula.</p>
       </div>
 
+      <p>
+        At every vertex the two angles add to $180^\circ$, so a $20$-gon's forty
+        angles come to $20 \times 180^\circ$ altogether.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">all the angles</span>
+          <span>$20 \times 180^\circ = 3600^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">less the outside</span>
+          <span>$3600^\circ - 360^\circ = 3240^\circ$</span>
+        </div>
+      </div>
+
+      <p>
+        With $n$ for $20$ that reads $180n - 360 = (n-2) \times 180$ — the chapter's
+        formula again, proved without a single diagonal.
+      </p>
+
       <div class="c-try">
         <p>Is there a polygon whose interior angles add to exactly the same total as its
         exterior angles? If so, which one; if not, say why not.</p>
       </div>
 
-      <div class="c-try">
-        <p>You have four rods, of lengths $3$, $4$, $5$ and $20$ centimetres. Show that
-        they cannot be pinned into a quadrilateral, and state the rule that four lengths
-        must obey before they can.</p>
+      <p>
+        The exterior sum is $360^\circ$ and never changes, so the question is which $n$
+        makes the interior sum $360^\circ$ as well.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">set equal</span>
+          <span>$(n-2) \times 180 = 360$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">divide</span>
+          <span>$n - 2 = 2$, &nbsp; $n = 4$</span>
+        </div>
       </div>
 
-      <div class="c-try">
-        <p>A quadrilateral has three right angles. Must the fourth be one too? A pentagon
-        has four right angles. Must the fifth be one?</p>
-      </div>
-
-      <div class="c-try">
-        <p>The angle-sum proof used a diagonal that lay inside the figure. In a concave
-        quadrilateral one diagonal falls outside. Show that the sum is still
-        $360^\circ$.</p>
-      </div>
+      <p>
+        The quadrilateral, and only the quadrilateral. Below it the interior sum is
+        smaller and above it larger, because the interior sum climbs by $180^\circ$ a
+        side while the exterior sum stands still. So the two totals meet once, and
+        they meet at four.
+      </p>
 
     </div>
   </div>

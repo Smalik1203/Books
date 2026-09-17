@@ -2,88 +2,87 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 1.5</div>
-        <ol class="c-questions">
-          <li>Find the profit or loss per cent.
-              <ol class="c-parts c-parts--1">
-                <li>bought for ₹$400$, sold for ₹$460$</li>
-                <li>bought for ₹$250$, sold for ₹$225$</li>
-                <li>bought for ₹$1{,}800$, sold for ₹$2{,}250$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>The same rate, the same principal, the same three years, and <span class="nb">₹$186$</span> more. That
+      difference is called <span class="term">compounding</span>, and it is what happens
+      whenever a percentage is taken of an amount that the percentage itself has already
+      changed.</p>
+
+      <p>Written with letters, the two are short. Let $p$ be the principal, $r$ the rate
+      as a decimal — $10\%$ is ${r = 0.1}$ — and $t$ the number of years.</p>
+
+      <div class="eq eq--anchor">$$\text{without compounding} \quad p(1 + rt)
+      \qquad\qquad \text{with compounding} \quad p(1 + r)^{\,t}$$</div>
+
+      <p>The first adds the same interest $t$ times. The second multiplies by $(1+r)$ $t$
+      times, and the exponent is doing exactly what the repeated multiplication did in
+      the year-by-year working.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 74" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two rows of bars over three years: the upper row grows by equal steps, the lower row by steps that get larger each year">
+      
+            <text class="dg-label dg-label--sm" x="10" y="20">no compounding</text>
+            <path class="dg-fill-d" d="M10 24 H70 V34 H10 Z"/>
+            <path class="dg-fill-a" d="M70 24 H88 V34 H70 Z"/>
+            <path class="dg-fill-a" d="M88 24 H106 V34 H88 Z"/>
+            <path class="dg-fill-a" d="M106 24 H124 V34 H106 Z"/>
+            <path class="dg-line"   d="M10 24 H124 V34 H10 Z"/>
+            <path class="dg-thin"   d="M70 24 V34 M88 24 V34 M106 24 V34"/>
+            <text class="dg-label dg-label--sm" x="130" y="32">₹7,800</text>
+      
+            <text class="dg-label dg-label--sm" x="10" y="52">with compounding</text>
+            <path class="dg-fill-d" d="M10 56 H70 V66 H10 Z"/>
+            <path class="dg-fill-b" d="M70 56 H88 V66 H70 Z"/>
+            <path class="dg-fill-b" d="M88 56 H108 V66 H88 Z"/>
+            <path class="dg-fill-b" d="M108 56 H130 V66 H108 Z"/>
+            <path class="dg-line"   d="M10 56 H130 V66 H10 Z"/>
+            <path class="dg-thin"   d="M70 56 V66 M88 56 V66 M108 56 V66"/>
+            <text class="dg-label dg-label--sm" x="136" y="64">₹7,986</text>
+      
+            <text class="dg-note" x="40" y="73" text-anchor="middle">the principal, unchanged</text>
+            <path class="dg-hidden" d="M70 6 V68"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.5</span> Three years at $10\%$ on
+          <span class="nb">₹$6{,}000$</span>. The steps are equal when the interest is taken away each year and
+          grow when it is left in, because each year's $10\%$ is taken of a longer
+          bar.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A cycle marked at ₹$4{,}000$ is sold at a discount of $15\%$. What does the
-          buyer pay? If the shop had bought it for ₹$3{,}000$, what is the shop's profit
-          per cent?</li>
-        </ol>
-      </div>
+      <p>Compounding is not only about money, and not only about growth. A quantity
+      that falls by the same percentage over and over is compounding downwards, with a
+      multiplier smaller than one.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A trader sells a fan for ₹$1{,}080$ at a profit of $20\%$. What did the fan
-          cost him?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A bill lists goods worth ₹$2{,}400$ and GST at $18\%$. What is the total?
-          If the total were ₹$2{,}640$ instead, what rate of tax had been charged?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Two shops sell the same table. One marks it at ₹$5{,}000$ with $20\%$ off;
-          the other marks it at ₹$4{,}400$ with $10\%$ off. Which is cheaper, and by how
-          much?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">1.7</span><span class="name">The Same Rise, Again</span></h2>
-
-      <p>A bank offers $10\%$ per annum on a fixed deposit. <em>Per annum</em> means for
-      every year, so ₹$6{,}000$ left with the bank for a year earns
-      $10\%$ of $6{,}000 = $ ₹$600$. The ₹$6{,}000$ is the
-      <span class="term">principal</span>, the $10\%$ is the <span class="term">rate</span>,
-      and the ₹$600$ is the <span class="term">interest</span>.</p>
-
-      <p>Leave the money for three years and the answer depends on something the rate
-      does not mention: what happens to each year's interest.</p>
-
-      <p><strong>If the interest is paid out every year</strong>, the principal stays
-      ₹$6{,}000$ and earns ₹$600$ again and again.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">three years</span>
-          <span>$6{,}000 + 3 \times 600 = $ ₹$7{,}800$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>A television bought for <span class="nb">₹$21{,}000$</span> loses $5\%$ of its value every year.
+          What is it worth after one year, and after three?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$21{,}000 \times 0.95 = $ <span class="nb">₹$19{,}950$</span></span>
+              <span class="work__why">after 1 year</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$21{,}000 \times 0.95^3 = 18{,}004.875$</span>
+              <span class="work__why">after 3 years</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span><span class="nb">₹$19{,}950$</span> after one year; <span class="nb">₹$18{,}005$</span> after three, to the nearest rupee</span></div>
+          </div>
+          <p>This loss of value with age and use is called
+          <span class="term">depreciation</span>. Note that three years did not take away
+          $15\%$: each year's $5\%$ was of a smaller television than the year
+          before.</p>
         </div>
       </div>
 
-      <p><strong>If the interest is left in the account</strong>, it becomes part of the
-      principal, and next year's $10\%$ is taken of a larger amount. Each year is a
-      multiplication by $1.1$.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">after year 1</span>
-          <span>$6{,}000 \times 1.1 = $ ₹$6{,}600$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">after year 2</span>
-          <span>$6{,}600 \times 1.1 = $ ₹$7{,}260$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">after year 3</span>
-          <span>$7{,}260 \times 1.1 = $ ₹$7{,}986$</span>
-        </div>
-      </div>
+      <p>So one formula covers both directions, and the sign of the change is carried by
+      the multiplier rather than by a separate rule. Growth at $r$ and decline at $r$ are
+      $(1+r)^t$ and $(1-r)^t$, and a quantity falling by a fixed percentage never reaches
+      zero — it only ever loses a share of what is left. That is why an old television is
+      still worth something, and why the population of a village that keeps losing a
+      tenth of itself takes a very long time to empty.</p>
 
     </div>
   </div>

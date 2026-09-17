@@ -2,27 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li>Is there a regular polygon whose angles are $145^\circ$? Show that there is
-              not, and say what the nearest possible values above and below it are.</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">5.4</span><span class="name">Turning the Corners</span></h2>
-
-      <p>Extend one side of a polygon past a vertex. The angle between that extension and
-      the next side is an <span class="term">exterior angle</span> at that vertex. It is
-      what is left of a straight angle after the interior angle has taken its share, so
-      the two always add to $180^\circ$.</p>
-
-      <div class="eq">$$\text{interior} + \text{exterior} = 180^\circ \text{ at every vertex}$$</div>
-
-      <p>Now the surprise. Walk round the outside of the polygon, keeping to the sides.
-      At each corner you turn, and the amount you turn by is exactly the exterior angle
-      there. When you arrive back where you started you are facing the way you first
-      faced, so the turns must add up to one whole revolution.</p>
-
       <div class="c-figure c-figure--xl">
         <figure>
           <svg viewBox="0 0 200 100" data-size="xl" xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +50,38 @@
       revolution.</p>
 
       <div class="eq">$$\text{each exterior angle of a regular } n\text{-gon} = \frac{360^\circ}{n}$$</div>
+
+      <p>That is a friendlier formula than the interior one, and most questions about
+      regular polygons are quicker through it. A regular hexagon turns $60^\circ$ at each
+      corner, so its interior angles are $180^\circ - 60^\circ = 120^\circ$ — the same
+      answer as before, reached by dividing $360$ rather than by dividing $720$.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Each exterior angle of a regular polygon is $24^\circ$. How many sides has
+          it, and what is each interior angle?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$24n = 360$</span>
+              <span class="work__why">the turns make a revolution</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$n = 15$</span>
+              <span class="work__why">divide by 24</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$180^\circ - 24^\circ = 156^\circ$</span>
+              <span class="work__why">interior plus exterior</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$15$ sides; each interior angle is $156^\circ$</span></div>
+          </div>
+          <p>Checking the long way: $(15-2) \times 180 = 2340$, and $2340 \div 15 = 156$.
+          The same answer, three times the work.</p>
+        </div>
+      </div>
+
+      <p>The formula also settles which polygons cannot exist, and it settles them
+      quickly, because $n$ has to be a whole number.</p>
 
     </div>
   </div>

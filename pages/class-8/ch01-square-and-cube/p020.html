@@ -2,57 +2,88 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h3>1.5.1 Reading a cube root off the digits</h3>
+
+      <p>For a cube of up to six digits there is a method that needs no factorising at
+      all, and it uses the two facts we have. It works because a two-digit root has a
+      cube of at most six digits, so you can find the two digits one at a
+      time — the units digit from the end of the number, the tens digit from the front.</p>
+
       <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__tab">Example 12</div>
         <div class="c-example__body">
-          <p>Without adding, find the value of</p>
-          <div class="work work--centred">
-            <p>$91 + 93 + 95 + 97 + 99 + 101 + 103 + 105 + 107 + 109$</p>
-          </div>
-          <p>Count them: there are ten numbers, consecutive odd, so this is a block of
-          ten. If it is the tenth block of the pattern above, the sum is $10^3 = 1000$.</p>
-          <p>Check that it really is the tenth block rather than ten odd numbers picked
-          from somewhere else. A block of ten is centred on $10^2 = 100$, and these ten
-          run from $91$ to $109$ — five below $100$ and five above. It is.</p>
+          <p>Given that $4913$ is a perfect cube, find $\sqrt[3]{4913}$ without
+          factorising.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">sum</span>
-              <span>$= 10 \times 100$</span>
-              <span class="chip">$1000$</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4913$ ends in $3$, so the root ends in $7$</span>
+              <span class="work__why">the units digit</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>strike out the last three digits: $4$ remains</span>
+              <span class="work__why">the tens digit</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$1^3 = 1$ fits and $2^3 = 8$ does not, so the tens digit is $1$</span>
+              <span class="work__why">largest cube inside</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$17^3 = 4913$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\sqrt[3]{4913} = 17$</span></div>
           </div>
+          <p>A cube ends in $3$ only when its root ends in $7$, which is what Step 1
+          uses.</p>
+          <p>Striking out three digits is not a trick. It divides by $1000$, and
+          $1000 = 10^3$, so it is really asking which cube the <em>tens</em> part of the
+          root must be — exactly the same question one size down.</p>
         </div>
       </div>
 
-      <p>Put the two facts about odd numbers side by side, because together they say
-      something neither says alone. The odd numbers added one at a time give the
-      squares; the same odd numbers taken in blocks of $1, 2, 3, \ldots$ give the cubes.
-      One list, read two ways, produces both of the families this chapter is about — and
-      a coincidence like that usually turns out not to be a coincidence at all. The reason
-      is visible in the block: a block of $n$ odd numbers centred on $n^2$ has total
-      $n \times n^2$, and $n \times n^2$ is what a cube is.</p>
+      <p>Run it on the rest and it is quick. $12\,167$ ends in $7$, so the root ends in
+      $3$. Strike three digits to leave $12$, and $2^3 = 8$ fits where $3^3 = 27$ does
+      not, so the root is $23$. And $32\,768$ ends in $8$, so the root ends in $2$. Here
+      $32$ leaves $3^3 = 27$ as the largest cube that fits, so the root is $32$.</p>
 
-      <h2><span class="badge">1.5</span><span class="name">Cube Roots</span></h2>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>The method assumes it has been given a perfect cube. Given $4900$ it would
+          answer $10$ and be wrong, since $4900$ is not a cube at all. It finds a root;
+          it does not test for one.</p>
+        </div>
+      </div>
 
-      <p>If $y = x^3$ then $x$ is the <span class="term">cube root</span> of $y$, written
-      $\sqrt[3]{y}$. Since $2^3 = 8$ we have $\sqrt[3]{8} = 2$, and since $10^3 = 1000$,
-      $\sqrt[3]{1000} = 10$.</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 1.5</div>
+        <ol class="c-questions">
+          <li>Find each cube root by prime factorisation.
+              <ol class="c-parts c-parts--4">
+                <li>$\sqrt[3]{512}$</li>
+                <li>$\sqrt[3]{729}$</li>
+                <li>$\sqrt[3]{27000}$</li>
+                <li>$\sqrt[3]{10648}$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
 
-      <p>There is no $\pm$ to worry about this time. A number has exactly one cube root,
-      because a positive number has a positive cube and a negative number has a negative
-      one — so $\sqrt[3]{-27} = -3$, and there is no second candidate.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>What is the smallest number by which $1323$ must be multiplied to give a
+              perfect cube? Give the cube root of the result.</li>
+        </ol>
+      </div>
 
-      <p>The test for a cube is the test for a square with one word changed. Cubing a
-      number uses each of its primes three times, so <strong>the prime factorisation of
-      a perfect cube has every prime a multiple of three times</strong>, and the primes
-      can be dealt into three identical piles instead of two.</p>
-
-      <p>Both statements are the same statement with a different number in it, and it
-      is worth pausing on why the number is the one it is. Squaring uses each prime
-      twice, so the count of each prime doubles and every count comes out even. Cubing uses each
-      prime three times, so the count triples and every count comes out a multiple of
-      three. The test is that same arithmetic read backwards, which is why you do not have to
-      remember it once you have seen it.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>What is the smallest number by which $8640$ must be divided to leave a
+              perfect cube?</li>
+        </ol>
+      </div>
 
     </div>
   </div>

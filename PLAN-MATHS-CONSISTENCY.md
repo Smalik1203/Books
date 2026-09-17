@@ -20,7 +20,7 @@ block (the Beyond the Book shape), and §10 (language). Read those first.
 |---|---|---|---|---|---|
 | **6** | **10** | **196 × 276 ✓** | **current ✓** | **stepped ✓** | **ANSWERS.md ✓** |
 | **7** | **15** | **196 × 276 ✓** | **current ✓** | **82, stepped ✓** | **none** |
-| 8 | 14 | Crown Quarto | old shape | 96, prose | none |
+| **8** | **14** | **196 × 276 ✓** | **current ✓** | **103, stepped ✓** | **ANSWERS.md ✓** |
 | 9 | 8 of ~14 | Crown Quarto | old shape | 85, prose | none |
 | 10 | 14 | Crown Quarto | old shape | 117, prose | none |
 
@@ -186,6 +186,20 @@ This is the sequence that worked for Class 7. One agent per chapter.
   in greyscale, the same as every other line.
 - **Agents sharing a scratchpad overwrite each other's backups.** Give each
   agent its own folder.
+- **In Classes 8–10, the old Stage 2 is Stage 1's answers.** Every Class 8
+  chapter's *Behind Each Answer* says *The same questions, worked*. Its
+  explanations move under their own Stage 1 questions as running text, word
+  for word, dropping only the *Solution* titles. They are not recast as
+  Solved Examples. Solved Examples are then written new. Sentences that
+  pointed *overleaf* are corrected. (Class 8 Chapter 1.)
+- **A give-away can be a number, not a question.** Beyond printing
+  $1000 = 10^3$ or $8^3 = 512$ answers a body exercise that asks whether
+  1000 is a cube or for $\sqrt[3]{512}$. `check-no-repeats` cannot see
+  this, because the wording differs. Read every value Beyond prints
+  against the body's exercise list. Class 8 Chapter 1 had four.
+- **Never pass a replacement string containing `$` through `node -e`.**
+  `` $` `` in `String.replace` pastes the whole text before the match, and
+  it silently duplicated a whole file once. Use the Edit tool.
 
 ## 8. Rough size
 
@@ -213,6 +227,48 @@ Still to settle:
 
 - **The answers booklet's form:** one booklet a volume, or one a class.
 - **Class 9's missing chapters:** which six, against which syllabus.
+
+## Phase 3, as it went
+
+Done 17 September 2026. **Chapter 1 (The Shape of a Number) was worked by
+hand as the model**: page moved, 12 body examples stepped, Beyond rebuilt
+(11 → 16 pages: Stage 1 with its explanations, 18 examples, 31 practice
+questions, answers), `ANSWERS.md` and `check-numbers.mjs` written. The other
+thirteen chapters were done by Opus agents, four at a time, against a
+written brief built from it, and each was checked by script (§4.8) before it
+was accepted. Four agents were stopped by a usage limit part-way and resumed
+from where they stood; none left a chapter half-changed.
+
+**The class, after:** 14 chapters on 196 × 276; 103 body examples stepped;
+238 Beyond examples; 431 practice questions; every chapter with
+`ANSWERS.md` and a `check-numbers.mjs` — 7,113 claims in all, each script
+break-tested. Mathematics I binds at 240 numbered pages, Mathematics II at
+202, nothing more than 2.1 mm into a margin; the covers declare the edition
+and 244 and 208 pages.
+
+**Found and fixed along the way:** the deferred ₹18,015 (now ₹18,005); paper
+*a tenth of a millimetre* against 0.001 cm (Ch 2); *taller than any
+building* at 671 m (Ch 2); a model car's weight ratio (Ch 7); *three hundred
+and twenty minutes* for 120 (II Ch 3); Manoj's day against Fig. 5.6 (II
+Ch 5); *12% of the water on Earth is fresh* (II Ch 1, now *about 3%*,
+unsourced); duplicated question numbers in Exercise Sets 2.2 and 3.5; about
+thirty give-aways where Beyond printed a body answer.
+
+**Tools and rules added:** every `₹$…$` is wrapped in `.nb`, so the sign
+stays with its number — a chapter's `check-numbers.mjs` has to unwrap that
+span before it reads text. A page holding one lone practice question before
+the Answers stage is balanced by moving the question before it across.
+`check-example-stepping` compares only page files that still exist, so when
+a chapter loses body pages, re-run it with empty stand-ins for the deleted
+files.
+
+**Still open, class-wide** (each in its chapter's log): facts and history
+without a source in every chapter; Pythagoras used in Mathematics I (Ch 5,
+Ch 7) before Mathematics II teaches it; a rule promised and never stated
+(Ch 2, $m^a/n^a$); KaTeX breaking before punctuation or inside $2n - 1$ (a
+stylesheet fix, not an inline one); Stage 1's kept coaching sentences.
+
+## Phase 1, as it went
 
 ## Phase 1, as it went
 

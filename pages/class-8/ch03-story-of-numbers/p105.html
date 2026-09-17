@@ -2,75 +2,87 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The digit-sum rule, in any base</div>
-        <p>
-          First, why the base-$10$ rule works at all. Every landmark is one more than a
-          multiple of nine: $10 = 9 + 1$, $100 = 99 + 1$, $1000 = 999 + 1$. So when a
-          number is split into landmarks, each landmark contributes its digit plus a
-          multiple of nine — and the multiples of nine can all be thrown away.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$473$</span>
-            <span>$= 4(99+1) + 7(9+1) + 3 = (4 + 7 + 3) + \text{a multiple of } 9$</span>
-          </div>
+      <p>
+        The others are conversions and rules, and each rewards the same habit: write the
+        number in expanded form, with the powers showing, and look at what the base is
+        doing. Almost every question about bases becomes easy the moment
+        you rewrite $4344_{\,6}$ as $4 \times 6^3 + 3 \times 6^2 + 4 \times 6 + 4$.
+      </p>
+
+      <p>
+        If you cannot get started, do it in base $10$ first, where you already know the
+        answer, and then ask which step used the fact that the base was ten. That step
+        is where the general rule lives.
+      </p>
+
+      <p>
+        That last piece of advice is worth more than it looks, and it is a general
+        method rather than a hint about bases. A problem may be stated with a letter in
+        it: a base $n$, an exponent $a$, a side of length $x$. The way in is almost
+        always to replace the letter with a number you know your way around, solve the
+        easy version completely, and then reread your own solution asking which lines
+        actually used the number. Those lines are the ones that need rewriting. The rest
+        was general all along.
+      </p>
+
+      <p>
+        Keep whatever you wrote for each of the eight. Several of the explanations
+        above take a different route from the obvious one, and the comparison is the
+        point.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>
-          Nothing there was about ten in particular. It was about $9$ being one less
-          than the base. So in base $7$ the same argument works for $6$:
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">in base 7</span>
-            <span>a number is divisible by $6$ exactly when its digits add to a multiple of $6$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">check: $48$</span>
-            <span>$= 6 \times 7 + 6 = 66$ in base $7$, digits sum to $12$</span>
-            <span class="chip">$48 = 6 \times 8$</span>
-          </div>
-        </div>
-        <p>
-          In general, in base $n$ the digit-sum rule tests for divisibility by $n - 1$.
-          Which explains a fact you may have wondered about: the base-$10$ rule works for
-          $9$ and also for $3$, because $3$ is a factor of $9$.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Which fractions come out exactly</div>
-        <p>
-          A fraction terminates in base $10$ when it can be written with a denominator
-          that is a power of ten — $\tfrac12 = \tfrac{5}{10}$, $\tfrac15 =
-          \tfrac{2}{10}$ — and a power of ten has only the primes $2$ and $5$ in it. So
-          the fractions that terminate are exactly those whose denominators are built
-          from $2$s and $5$s, which is why $\tfrac13$ and $\tfrac17$ go on for ever.
-        </p>
-        <p>
-          Base $12$ has the primes $2$ and $3$, so thirds now work exactly and fifths no longer do
-          it.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label">$\tfrac12$</span><span>$= \tfrac{6}{12}$, exact</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$\tfrac13$</span><span>$= \tfrac{4}{12}$, exact — where base $10$ fails</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$\tfrac14$</span><span>$= \tfrac{3}{12}$, exact</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$\tfrac15$</span><span>never exact in base $12$</span>
+      <h3>Type 1 &middot; Tallies and groups</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A shepherd's tally has 83 marks, gathered into five-bar gates. How many gates are there, and how many loose marks? How would the marks read if they were gathered in tens instead?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$83 \div 5 = 16$ remainder $3$</span>
+              <span class="work__why">a gate is five marks</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$83 = 16 \times 5 + 3$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$83 = 8 \times 10 + 3$</span>
+              <span class="work__why">groups of ten</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>16 gates and 3 loose marks; in tens, 8 groups and 3 over</span></div>
           </div>
         </div>
-        <p>
-          Which is a genuine argument for base $12$, and it has been made seriously more
-          than once. Thirds turn up far more often in daily life than fifths — the
-          twelve inches of a foot and the twelve hours of a clock face are what is left
-          of people acting on that thought.
-        </p>
+      </div>
+
+      <h3>Type 2 &middot; Writing and reading Roman numerals</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Write 1649 in Roman numerals, using the subtractive rule where it shortens the numeral.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$1649 = 1000 + 600 + 40 + 9$</span>
+              <span class="work__why">split by landmark</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1000$ is M, and $600 = 500 + 100$ is DC</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$40 = 50 - 10$ is XL</span>
+              <span class="work__why">one step down</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$9 = 10 - 1$ is IX</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>MDCXLIX</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

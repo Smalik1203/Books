@@ -1,5 +1,178 @@
 # Class 8 · Mathematics I · Chapter 1 — The Shape of a Number
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked by hand as the model for the
+other thirteen Class 8 chapters. Class 8 is the first class to move page, so
+the page move and the conversion were done in one pass. The chapter was read
+whole before anything was changed, and every check below was run on the
+chapter, not on a page.
+
+**Pages: 38 before (27 body + 11 Beyond, Crown Quarto), 40 after (24 body +
+16 Beyond, 196 × 276).** The taller page took three pages off the body. Beyond
+grew by five: its first stage now carries its own explanations, and the
+practice stage runs to 31 questions in six forms.
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once, after the examples were stepped, so it was moved and
+converted in a single refit.
+
+**All twelve body examples set as steps.** *Solution*, a step to a
+`.work__row`, an *Answer* row, the reason in a `.work__why`. The old wide
+labels (`$324$`, `from 25`, `LCM`) and the `.chip` answers became Step rows
+and Answer rows. Where a sentence was a remark and not a step, it stays as a
+paragraph after the working: Example 2's *it says five*, Example 6's *nothing
+smaller will do*, Example 9's *answered by squaring*, Example 12's
+*striking out three digits*. Example 8's Fig. 1.5 now follows the working
+instead of splitting it. Verified by `build/check-example-stepping.mjs`:
+12 examples, no mathematics lost.
+
+**Page 24, the summary.** After the refit the summary missed the foot of
+page 24 by 2 mm and left that page 33% full. Three of its items were
+tightened by one line each (items 9, 10 and 13; no fact changed), and it was
+moved onto page 24 by hand rather than by a second refit. Page 24 now closes
+the body at 99% and carries `data-close`.
+
+**Beyond the Book rebuilt to the four current stages** (§6a):
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 8 `.c-try` questions, answered in the next stage | **the same questions, each followed by its own explanation**, word for word except as below; `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | the worked answers to stage 1 | **18 stepped examples**, Examples 1–18, under eight `Type N ·` heads |
+| 3 Problem Sets → **Practice** | 3 multiple-choice sets, 27 questions | **one numbered run of 31**, all six forms, band carrying the numeral |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 12 questions; the *carry forward* paragraph kept without its head |
+
+**Class 8's Stage 2 was not a second set of problems.** Every Class 8
+chapter's *Behind Each Answer* carries the line *The same questions, worked*:
+it holds the explanations of Stage 1's own questions. Classes 6 and 7 put the
+explanation straight after each question, which is the shape §6a describes.
+So the explanations were moved under their questions rather than turned into
+stepped examples, which the user has ruled out for Stage 1. Only their
+*Solution* titles were dropped. Four sentences that pointed *overleaf* or
+*turn the page* now point *below* or *read on*, and the note on which
+questions share an idea was corrected for the replacements.
+
+**Three Stage 1 items replaced**, because each answered a body question
+(the decision of 16 September: the no-give-away rule beats word for word):
+
+| was | answered | now |
+|---|---|---|
+| exactly three factors: the four smallest | Exercise Set 1.1 Q4 | exactly **five** factors: fourth powers of primes, 16 and 81 |
+| square and cube below 1000; the next one | Exercise Set 1.6 Q15 | smallest $n$ with $2n$ a square and $3n$ a cube: 72 |
+| digits in the cube of a two-digit number | Exercise Set 1.5 Q4 (c), (d) | digits in the **square** of a two-digit number: 3 or 4 |
+
+The *carry forward* paragraph's third habit was rewritten to match
+(*square-and-cube meant sixth power* became *read one prime at a time*).
+
+**One printed claim corrected in Stage 1.** The sum-of-two-squares search
+said *most numbers give no pair at all; 25, 34 and 45 each give exactly one*,
+which reads as though those were the only three below 50. Thirteen others
+give one (2, 5, 8, 10, 13, 17, 18, 20, 26, 29, 32, 37, 40, 41). Now *some,
+such as 25, 34 and 45, give exactly one*.
+
+**Nothing repeats or answers the body.** `build/check-no-repeats.mjs`
+reports 12 pairs above 50%, every one *same type, different numbers*. The
+check was also done by reading, number by number, and four more
+give-aways were found and changed. The tool cannot see these, because the
+wording differs:
+
+| where | printed | answered | now |
+|---|---|---|---|
+| Example 15 | $3000 \div 3 = 1000 = 10^3$ | Ex 1.6 Q1 (is 1000 a cube) | 4375, divide by 35, $125 = 5^3$ |
+| Example 1 | $64 = 8 \times 8$ is a square | Ex 1.6 Q1 (64) | locker 100 |
+| key to Q2 | 1024 is $32^2$ | Ex 1.6 Q6 | option 1024 became 1296 |
+| Q30 (c) | $8^3 = 512$ fits | Ex 1.5 Q1 ($\sqrt[3]{512}$) | 250 blocks, edge 6, 34 over |
+
+The old multiple-choice questions that repeated the body were dropped, not
+reworded: $\sqrt[3]{512}$, $\sqrt[3]{3375}$ and $\sqrt{1156}$ (asked or
+worked in the body), $1024 = 2^{10}$ (Ex 1.6 Q6), $101 + \cdots + 199$
+(its working prints Ex 1.6 Q4), the first number both square and cube
+(Ex 1.6 Q15), and the squares below 10 000 (Ex 1.6 Q8). Fifteen
+multiple-choice questions remain, with the answers spread over the letters
+3, 4, 4, 4.
+
+**Worked examples in the chapter: 30** (12 body + 18 Beyond), against §5a's
+twelve. Every topic is worked under a type: factors and squares, last digits
+and zeros, odd numbers and the gaps between squares (with the triangular
+numbers), square roots by factorisation, trapping a root, cubes and cube
+roots by factorisation (with negatives and decimals), cube roots from the
+digits, and taking differences.
+
+**`ANSWERS.md` written** for every question the chapter sets: the six
+exercise sets, the three Think and Reflects, Stage 1 (pointing to its own
+explanations), and the 31 practice questions with their working.
+
+### Verified
+
+`check-numbers.mjs` is kept beside the pages. It passes **513 claims**,
+evaluating 372 printed identities on the pages and in `ANSWERS.md`,
+including arithmetic runs such as $1 + 2 + \cdots + 19 = 190$. It also
+re-derives by search or factorisation what arithmetic alone cannot check:
+the open lockers, the numbers with five factors, the smallest $n$ in Stage 1
+Q4, 1729 and 50 as the first numbers with two pairs, every
+smallest-multiplier and smallest-divisor, and every body exercise answer in
+`ANSWERS.md`. Every multiple-choice question is solved and must have exactly
+one right option matching the key; every assertion–reason letter is
+derived; and `ANSWERS.md`'s key must match the page's. The 30 spans it skips
+are algebra, and `--skipped` lists them.
+
+**Tested by breaking values on purpose.** Each of these was caught:
+$\sqrt{1764}$ printed 44; key 14 changed to (b); Q30's leftover changed to 36;
+$4104 = 729 + 3376$ in `ANSWERS.md`; 25 removed from Example 1's factor list
+of 100; Q28's 54 changed to 56; a Q14 option changed to 46;
+$1089 = 31^2$ in the body; Example 15's 125 changed to 135. Q31 (c)'s
+*nearer 17* changed to *nearer 18* was **missed** at first, because 17 also
+appears in part (a). Rows 30 and 31 are now checked one lettered part at a
+time, and the change is caught.
+
+**Two faults in the check itself**, fixed: the answer key was read past the
+end of its list, picking up *30 (a)* from a working row; and Q19's
+assertion $(-4)^2 = -16$, which is printed to be judged false, was reported
+as a wrong identity. It is now listed as false on purpose.
+
+**Fitting.** Nothing is clipped. Page 3 runs 1.3 mm into the bottom margin,
+inside §5a's 3 mm. `orphans`: 0 stranded openers in 40 pages.
+`check-labels`: no collisions. `fit-options`: every option row fits. The
+answer lists were split into smaller `.work--trace` blocks so that
+*Why the other options are wrong* can start under its head. That took page
+39 from 64% to 91%. Proofs of pages 7, 12, 24, 25, 29, 36 and 39 were read. Example 3's closing remark left its full stop alone on a line; the sentence was turned round (same maths spans) to close it.
+
+**Colour.** Pages 1, 2, 7, 9, 29 and 36 were read in greyscale and under simulated deuteranopia, protanopia and tritanopia (`build/check-colour.mjs`). Nothing depends on hue alone: the locker figure marks open lockers by shape as well as fill, the example tab and key-idea rules carry their words, and the stage marks carry numerals.
+
+### Short pages, logged
+
+Each is held by a block `gaps` names, which the packer cannot move.
+
+| page | fill | held by |
+|---|---|---|
+| 1, 2 | 86% | a figure; an exercise band whose first question does not fit |
+| 4 | 83% | Example 1, a panel |
+| 10 | 80% | Example 4, a panel |
+| 12 | 74% | an `h3`, which may not be stranded, and Example 8 under it |
+| 13 | 74% | Example 9, a panel |
+| 20 | 86% | Exercise Set 1.5's band |
+| 29–34 | 74–84% | Solved Examples: each page is held by the next example panel or a `Type` head with its example |
+| 37 | 86% | the case-based questions |
+| 38 | 65% | **the Answers stage, which always opens a page** |
+| 40 | 60% | the last page |
+
+### Flagged, not done
+
+- Stage 1 keeps the old coaching sentences (*the general move is worth
+  keeping*, *worth recognising as a move*), because it is kept word for word.
+  §6a would not write them today.
+- The key idea on page 7 breaks $2n - 1$ across a line (KaTeX breaks at the minus). Not fixed: it needs a non-breaking maths span in the system, not an inline style.
+- Stage 1 runs to four full pages. That is the cost of keeping each
+  explanation whole under its question.
+- The body's *Where the Words Came From* (§ 1.6) states historical facts:
+  Babylonian tables around 1700 BCE, Āryabhaṭa in 499 CE, Brahmagupta in
+  628 CE, *jidhr* and *radix*. So does the taxicab story. Neither carries a
+  source in this log. §5a asks for one before press.
+
+
+
 Language edit, 38 pages (p001–p027 chapter proper, p101–p111 Beyond the Book).
 Build after editing: 38 pages, all pages fit, 0 stranded openers, no label
 collisions, every option row fits.
@@ -10,6 +183,10 @@ stretches are written in adult essay English — *manoeuvre*, *consolation
 prize*, *earn its keep*, *what this buys you*, *casting about* — and three
 terms (*parity*, *exponent*, *differencing*) are used as though taught when the
 chapter never teaches them. *Exponent* belongs to Chapter 2.
+
+### Accepted, 17 September 2026
+
+Accepted as the model. No further change.
 
 ## FIXED
 

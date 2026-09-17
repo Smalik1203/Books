@@ -2,71 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Doubling ten times</div>
-        <p>Each step doubles the area, so after ten steps the area has been multiplied by
-        $2$ ten times over.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">area</span>
-            <span>$2^{10} = 1024$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">side</span>
-            <span>$\sqrt{1024} = 32$</span>
-          </div>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>The side came out a whole number because $1024$ happens to be a perfect
-        square. Every second square in the run has a whole-number side — $1$, $2$, $4$,
-        $8$, $16$, $32$ — and the ones in between have sides $\sqrt2$ times as long, so
-        they never will.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two poles and the gap between them</div>
-        <p>Nothing in the question is a right-angled triangle until you draw one. Run a
-        horizontal line from the top of the shorter pole across to the taller one: the
-        line between the tops is now a hypotenuse.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">across</span>
-            <span>$12$ m, the distance between the poles</span>
+      <h3>Type 1 &middot; Doubling and halving a square</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A square has an area of $18$ cm². Find the side of the square built on its diagonal, and the side of the square made by joining the midpoints of its sides.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>square on the diagonal: $2 \times 18 = 36$ cm²</span>
+              <span class="work__why">twice the area</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>its side is $\sqrt{36} = 6$ cm</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>midpoint square: $18 \div 2 = 9$ cm²</span>
+              <span class="work__why">half the area</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>its side is $\sqrt{9} = 3$ cm</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$6$ cm and $3$ cm</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">up</span>
-            <span>$12 - 7 = 5$ m, the difference in height</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$144 + 25 = 169$, and the tops are $13$ m apart</span>
-          </div>
+          <p>The first square's own side, $\sqrt{18}$, was never needed.</p>
         </div>
-        <p>The heights themselves never mattered, only the difference between them. Two
-        poles of $107$ m and $102$ m would give the same answer.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two sides that differ by one</div>
-        <p>Call the shorter side $a$; the other is $a + 1$, and the theorem gives an
-        equation.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the theorem</span>
-            <span>$a^2 + (a+1)^2 = 29^2 = 841$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">expand</span>
-            <span>$2a^2 + 2a + 1 = 841$, so $a^2 + a = 420$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">try</span>
-            <span>$20 \times 21 = 420$, so $a = 20$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The side of a square is multiplied by $5$. By what is its area multiplied? And by what must the side be multiplied to make the area $49$ times as large?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>side $5s$ gives area $5s \times 5s = 25s^2$</span>
+              <span class="work__why">both sides grow</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area $49s^2 = 7s \times 7s$</span>
+              <span class="work__why">undo the squaring</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The area is multiplied by $25$; the side must be multiplied by $7$</span></div>
           </div>
         </div>
-        <p>The sides are $20$ and $21$, and $(20, 21, 29)$ is a Baudhāyana triple — the
-        machine makes it from $m=5$, $n=2$. This is the one question here where the
-        equation could not be finished by rearranging; it was finished by recognising a
-        product.</p>
+      </div>
+
+      <h3>Type 2 &middot; Trapping a square root</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Trap $\sqrt{3}$ between two numbers with one decimal place, and then between two with two decimal places.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$1.7^2 = 2.89$ and $1.8^2 = 3.24$</span>
+              <span class="work__why">$3$ lies between</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1.73^2 = 2.9929$ and $1.74^2 = 3.0276$</span>
+              <span class="work__why">$3$ lies between</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$1.7 < \sqrt{3} < 1.8$ and $1.73 < \sqrt{3} < 1.74$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

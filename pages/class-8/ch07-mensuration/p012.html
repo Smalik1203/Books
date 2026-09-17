@@ -2,103 +2,103 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 7.4</div>
-        <ol class="c-questions">
-          <li>Find the volume of each cuboid. Lengths are in centimetres.
-              <ol class="c-parts c-parts--1">
-                <li>$8$ by $5$ by $3$</li>
-                <li>$12$ by $10$ by $4$</li>
-                <li>$7$ by $7$ by $2$</li>
-              </ol>
-            </li>
-        </ol>
+      <h2><span class="badge">7.8</span><span class="name">Why the Two Do Not Grow Together</span></h2>
+
+      <p>Take a cube and double every edge. What happens to its skin, and what happens to
+      the space inside it? The two answers are different, and the difference explains
+      more about the world than anything else in this chapter.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A unit cube beside a cube of twice the edge, the larger one divided into eight cubes the size of the first">
+      
+            <path class="dg-face-top"   d="M16 50 L24 42 L42 42 L34 50 Z"/>
+            <path class="dg-face-side"  d="M34 50 L42 42 L42 60 L34 68 Z"/>
+            <path class="dg-face-front" d="M16 50 H34 V68 H16 Z"/>
+            <g class="dg-line">
+              <path d="M16 50 H34 V68 H16 Z"/>
+              <path d="M16 50 L24 42 L42 42 L34 50"/>
+              <path d="M42 42 V60 L34 68"/>
+            </g>
+            <text class="dg-note" x="30" y="84" text-anchor="middle">side 1</text>
+      
+            <path class="dg-face-top"   d="M90 32 L106 16 L142 16 L126 32 Z"/>
+            <path class="dg-face-side"  d="M126 32 L142 16 L142 52 L126 68 Z"/>
+            <path class="dg-face-front" d="M90 32 H126 V68 H90 Z"/>
+            <g class="dg-line">
+              <path d="M90 32 H126 V68 H90 Z"/>
+              <path d="M90 32 L106 16 L142 16 L126 32"/>
+              <path d="M142 16 V52 L126 68"/>
+            </g>
+            <g class="dg-thin">
+              <path d="M108 32 V68 M90 50 H126"/>
+              <path d="M108 32 L124 16 M98 24 H134"/>
+              <path d="M126 50 L142 34 M134 24 V60"/>
+            </g>
+            <text class="dg-note" x="116" y="84" text-anchor="middle">side 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.6</span> Doubling the edge takes four
+          of the small cube's faces to cover one of the big one's, and eight small cubes
+          to fill it.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Find the volume of a cube of side
-              <ol class="c-parts c-parts--4">
-                <li>$4$ cm</li>
-                <li>$6$ cm</li>
-                <li>$10$ cm</li>
-                <li>$0.5$ m</li>
-              </ol>
-            </li>
-        </ol>
+      <p>Each face was $1 \times 1$ and is now $2 \times 2$, so every face is four times
+      as large and so is the whole surface. The inside took one cube and now takes eight.
+      The lengths went up by a factor of $2$, the areas by $2^2$, the volumes by $2^3$.
+      Those exponents are Chapter 2's, and they are not a coincidence: an area is two
+      lengths multiplied and a volume is three.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">lengths</span>
+          <span>$\times k$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">areas</span>
+          <span>$\times k^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">volumes</span>
+          <span>$\times k^3$</span>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A cube has volume $343$ cm<sup>3</sup>. Find its side, and then its surface
-              area.</li>
-        </ol>
+      <p>Because volume outruns area, a thing that gets bigger gets <em>bulkier relative
+      to its skin</em>, and a good deal follows from that.</p>
+
+      <p>A large cake takes far longer to bake than a small one, and not merely a little
+      longer: the heat comes in through the surface and has to reach a volume that has
+      grown faster. Crushed ice cools a drink faster than one block of the same weight,
+      because breaking it up changes nothing about the volume and multiplies the surface.
+      A mouse must eat several times its own weight in a week and an elephant need not,
+      because a mouse loses heat through a skin that is enormous for the body behind it.
+      And an elephant's legs are not a mouse's legs scaled up. Its weight went up with
+      the cube of its size, while the strength of a leg goes up with the area of its
+      cross-section, which is only the square.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="8" width="17" height="12"/>
+            <path d="M3.5 8 8 3.5h12L20.5 8"/>
+            <path d="M20.5 8v12"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>A model made to a scale of $1 : 50$ has lengths fifty times smaller, areas
+          $50^2 = 2500$ times smaller, and volumes $50^3 = 125\,000$ times smaller. A
+          model car that is a hand's width long weighs less than a hundred-thousandth of the real
+          thing, which is why it can be lifted with one finger.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Find the volume of a cylinder of radius $7$ cm and height $15$ cm, taking
-              $\pi = \tfrac{22}{7}$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Convert.
-              <ol class="c-parts c-parts--1">
-                <li>$5$ m<sup>3</sup> into litres</li>
-                <li>$2500$ cm<sup>3</sup> into litres</li>
-                <li>$4.5$ litres into cm<sup>3</sup></li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A water tank $3$ m by $2$ m by $2$ m is full. How many litres does it hold,
-              and how long will it take to empty at $50$ litres a minute?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>A cuboid of volume $360$ cm<sup>3</sup> has a base $12$ cm by $5$ cm. Find
-              its height.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>Two cylinders have the same height. One has twice the radius of the other.
-              How many times the volume does it hold? Answer before calculating, then
-              check with $r = 3$, $r = 6$ and $h = 10$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>A rectangular sheet $22$ cm by $10$ cm is rolled into a cylinder with the
-              $22$ cm edge going round. Find the radius, and then the volume. Take
-              $\pi = \tfrac{22}{7}$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li>The same sheet is rolled the other way, with the $10$ cm edge going round.
-              Does it hold the same amount? Work it out, and then say which way to roll a
-              sheet to hold the most.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="11">
-          <li>A cuboid is $12$ cm by $8$ cm by $5$ cm. Find its total surface area, and
-          then find the surface area of a cube of the same volume. Which of the two takes
-          less material?</li>
-        </ol>
-      </div>
+      <p>None of this needs a new formula. It is $\text{area} = k^2$ and
+      $\text{volume} = k^3$, which came from the fact that area is two lengths multiplied
+      and volume is three. That same fact gave Chapter 1 its two words,
+      <em>squared</em> and <em>cubed</em>, and it has been sitting under this whole
+      chapter since its first page.</p>
 
     </div>
   </div>

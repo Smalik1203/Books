@@ -2,75 +2,62 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">work it out</span>
-          <span>$(ka)^2 + (kb)^2 = k^2a^2 + k^2b^2 = k^2(a^2 + b^2)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">and $a^2+b^2 = c^2$</span>
-          <span>$= k^2c^2 = (kc)^2$</span>
-        </div>
-      </div>
+      <h2><span class="badge">2.8</span><span class="name">One Question, Three Hundred Years</span></h2>
 
-      <p>So $(3,4,5)$ alone gives $(6,8,10)$, $(9,12,15)$, $(30,40,50)$ and as many more
-      as you like: there is no last Baudhāyana triple. A triple that is not a
-      magnification of a smaller one — one whose three numbers share no common factor —
-      is called <span class="term">primitive</span>. Five of Baudhāyana's six are
-      primitive, and the sixth is $(5,12,13)$ in disguise.</p>
+      <p>There are endlessly many whole numbers whose squares add to a square. In the
+                                                                                                            1630s the French lawyer and mathematician Pierre de Fermat, reading a book about
+                                                                                                            exactly these triples, asked the next question along: could it be done with cubes?
+                                                                                                            Are there whole numbers with $x^3 + y^3 = z^3$? With fourth powers? With
+                                                                                                            hundredth?</p>
 
-      <p>Where do the primitive ones come from? Take any two whole numbers $m$ and $n$
-      with $m$ the larger, and build three numbers from them.</p>
+      <p>He decided the answer was no — that</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A machine for making triples</div>
-        <p>$m^2 - n^2$, $\ 2mn$, $\ m^2 + n^2$ is a Baudhāyana triple for
-        <em>every</em> choice of $m > n$. With $m=2, n=1$ it makes $(3, 4, 5)$; with
-        $m=3, n=2$, $\ (5, 12, 13)$; with $m=4, n=1$, $\ (15, 8, 17)$; with
-        $m=4, n=3$, $\ (7, 24, 25)$; and with $m=6, n=1$, $\ (35, 12, 37)$.</p>
-      </div>
+      <div class="eq eq--anchor">$$x^n + y^n = z^n$$</div>
 
-      <p>That is every primitive triple on Baudhāyana's list, out of one rule. And the
-      rule can be checked in three lines with the identities from Part I:</p>
+      <p>has no solution in whole numbers at all once $n$ is bigger than $2$. In the
+                                                                                                            margin of his book he wrote that he had found a truly marvellous proof of it, and
+                                                                                                            that the margin was too narrow to hold it.</p>
 
-      <div class="eq">$$(m^2-n^2)^2 + (2mn)^2 = m^4 - 2m^2n^2 + n^4 + 4m^2n^2
-      = m^4 + 2m^2n^2 + n^4 = (m^2+n^2)^2.$$</div>
+      <p>Nobody ever found that proof. Mathematicians tried for three hundred years and
+                                                                                                            failed, and the claim came to be called Fermat's Last Theorem. For most of
+                                                                                                            that time it was not a theorem at all. It was a guess that nobody could settle
+                                                                                                            either way.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.3</div>
-        <ol class="c-questions">
-          <li>Which of these are Baudhāyana triples? Show the arithmetic.
-              <ol class="c-parts c-parts--4">
-                <li>$(9, 12, 15)$</li>
-                <li>$(4, 5, 6)$</li>
-                <li>$(20, 21, 29)$</li>
-                <li>$(10, 24, 26)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>In 1963 a ten-year-old in England named Andrew Wiles read about it in a library
+                                                book, and decided he would be the one to prove it. He proved it in 1994, at
+                                                forty-one, using mathematics that had not existed when he was ten.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>List every Baudhāyana triple whose numbers are all $20$ or less. Which of
-          them are primitive?</li>
-        </ol>
-      </div>
+      <div class="c-reflect">
+                                                  <div class="c-reflect__icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                      <path d="M9.2 17.2h5.6M10 20.4h4"/>
+                                                      <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+                                                    </svg>
+                                                  </div>
+                                                  <div class="c-reflect__box">
+                                                    <div class="c-reflect__mark">?</div>
+                                                    <div class="c-reflect__title">Think and Reflect</div>
+                                                    <div class="c-reflect__body">
+                                                      <p>Squares can be split into two squares in endlessly many ways, and cubes —
+                                                      it turns out — cannot be split into two cubes at all.</p>
+                                                      <p>A single example of $x^3 + y^3 = z^3$ would have settled Fermat's question
+                                                      for ever. Why did three hundred years of not finding one settle nothing?</p>
+                                                    </div>
+                                                  </div>
+                                                </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Use the machine on $m=5, n=2$ and on $m=5, n=4$. Check that both answers
-          make $a^2 + b^2 = c^2$ true.</li>
-        </ol>
-      </div>
+      <p>Wiles's proof runs to more than a hundred pages and rests on mathematics
+                                                invented in the twentieth century, which is why hardly anyone now believes Fermat
+                                                had a proof of his own. He was a careful mathematician and was rarely wrong, but
+                                                the note was written in a margin for nobody but himself, and an argument that
+                                                convinces its author late at night is not always an argument.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Every triple in this section has an even number in it. Try to find one that
-          does not, and then try to say why you cannot. (Think about what happens when
-          you square an odd number.)</li>
-        </ol>
-      </div>
+      <p>There is a lesson in the two ends of this chapter. Baudhāyana's rule was proved
+                                                in a paragraph by cutting a square into four triangles, and it has stood for
+                                                twenty-eight centuries. Fermat's looked like the same kind of question and took
+                                                three hundred years. Which questions are easy is not something you can tell by
+                                                looking at them. The difference here is a picture: two squares can be cut up
+                                                and laid over a third, and there is no such picture for cubes.</p>
 
     </div>
   </div>

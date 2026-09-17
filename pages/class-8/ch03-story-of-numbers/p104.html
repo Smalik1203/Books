@@ -2,74 +2,100 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Four readings of one clay tablet</div>
-        <p>
-          Two wedges, a gap, three wedges. The wedges are counts; the gap is supposed to
-          say how many places separate them, and it cannot be measured.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">adjacent places</span>
-            <span>$2 \times 60 + 3$</span><span class="chip">$123$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">one place skipped</span>
-            <span>$2 \times 3600 + 0 \times 60 + 3$</span><span class="chip">$7203$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">or the three in the 60s</span>
-            <span>$2 \times 3600 + 3 \times 60$</span><span class="chip">$7380$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">two places skipped</span>
-            <span>$2 \times 60^3 + 3$</span><span class="chip">$432\,003$</span>
-          </div>
-        </div>
-        <p>
-          Four readings, and no reason to prefer any of them — nothing in
-          the numeral settles it. In practice a scribe's reader used context: a tablet
-          about a month's grain is unlikely to be recording four hundred thousand of
-          anything.
-        </p>
-        <p>
-          That is why a placeholder is not a small extra. Without it, a place value system
-          does not represent numbers at all; it represents families of numbers, and
-          leaves the reader to choose.
-        </p>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Why base one is not a base</div>
-        <p>
-          Put $n = 1$ into everything the chapter established and watch it collapse.
-        </p>
-        <p>
-          The landmarks are meant to be $n^0, n^1, n^2, \ldots$ — but every power of one
-          is one. So the landmarks are $1, 1, 1, 1, \ldots$, and the second place is
-          worth exactly what the first place is worth. Position has stopped meaning
-          anything.
-        </p>
-        <p>
-          And the symbol count fails too. A base-$n$ system needs $n$ symbols, $0$ up to
-          $n-1$; a base-$1$ system would need one symbol, which would have to be $0$.
-          Every numeral would then be a row of zeros, worth nothing at all.
-        </p>
-        <p>
-          The smallest base that works is $2$, with symbols $0$ and $1$, and it is the
-          one every computer uses. What is left if you insist on base one is the tally
-          system of § 3.2 — which is a perfectly good way of recording a number, and is
-          not a place value system, and never was.
-        </p>
+      <div class="c-try">
+        <p>An Egyptian scribe needs a new symbol for every new power of ten. How many
+        symbols would be needed to write every number up to a million? How many does the
+        Hindu system need for the same job?</p>
       </div>
 
       <p>
-        Both of those solutions were of the same kind, and neither could have been
-        reached by calculating. The first showed that a numeral <em>fails</em> to name a
-        single number; the second that a proposed system <em>cannot exist</em>. In each
-        case the work was done by taking the definition seriously and following it until
-        it broke — which is a move you will use far more often than any of the
-        arithmetic in this chapter.
+        To write every number up to a million, Egypt needs a picture for each power of
+        ten it can reach:
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">Egypt</span>
+          <span>$1, 10, 100, 1000, 10^4, 10^5, 10^6$</span>
+          <span class="chip">7 symbols</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the Hindu system</span>
+          <span>$0, 1, 2, 3, 4, 5, 6, 7, 8, 9$</span>
+          <span class="chip">10 symbols</span>
+        </div>
+      </div>
+
+      <p>
+        Seven against ten, and Egypt appears to win. It does not, and the reason is
+        what happens next. Ask for numbers up to a billion and Egypt needs three more
+        symbols; ask for a trillion and it needs another three. The Hindu system needs
+        ten, for ever.
+      </p>
+
+      <p>
+        That is the whole argument of the chapter in one comparison. Egypt's symbol
+        count grows with the size of the numbers you want to write; ours does not.
+        A fixed alphabet against a growing one is not a small advantage — it is the
+        difference between a system that runs out and a system that does not.
+      </p>
+
+      <div class="c-try">
+        <p>Convert $212$ from base $10$ to base $5$ by repeatedly dividing by $5$ and
+        keeping the remainders. Why does that procedure always stop, and why do the
+        remainders come out in the right order?</p>
+      </div>
+
+      <p>
+        To convert $212$ to base $5$, divide by $5$ and keep the remainder. Then
+        divide the quotient by $5$ and keep that remainder. Go on like that until the
+        quotient is zero.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$212 \div 5$</span>
+          <span>$= 42$ remainder $2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$42 \div 5$</span>
+          <span>$= 8$ remainder $2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$8 \div 5$</span>
+          <span>$= 1$ remainder $3$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1 \div 5$</span>
+          <span>$= 0$ remainder $1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">reading upwards</span>
+          <span>$1322$</span>
+          <span class="chip">$212 = 1322_{\,5}$</span>
+        </div>
+      </div>
+
+      <p>
+        <em>Why it stops:</em> each division makes the number at least five times
+        smaller, and a whole number cannot shrink for ever. It must reach zero, and it
+        reaches it quickly — the number of steps is the number of digits.
+      </p>
+
+      <p>
+        <em>Why the remainders come out backwards:</em> the first division asks how
+        many are left over after taking out all the fives, which is precisely the units
+        digit. The second asks the same of the fives, which is the next digit up. Each
+        step peels off the lowest place, so the digits emerge in the reverse of the
+        order they are written.
+      </p>
+
+      <p>
+        A word about the third and the fourth, because they are a different kind of
+        question. Both ask you to show that something is <em>impossible</em> or
+        <em>unclear</em>, and neither can be settled by working an example. What
+        settles them is an argument that covers every case, and in both the argument is
+        two or three lines long once found.
       </p>
 
     </div>

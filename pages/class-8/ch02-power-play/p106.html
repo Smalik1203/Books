@@ -2,78 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Why $0^0$ is left alone</div>
-        <p>
-          Two rules are pulling in opposite directions, and there is no way to satisfy
-          both.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$n^0 = 1$</span>
-            <span>for every $n$ we have allowed — so this wants $0^0 = 1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$0^n = 0$</span>
-            <span>since $0^1 = 0$, $0^2 = 0$, $0^3 = 0$ — so this wants $0^0 = 0$</span>
+      <h3>Type 2 &middot; Negative bases and brackets</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Find $(-2)^4 - 2^4$, then $(-1)^{25} + (-1)^{26}$, then $-3^2 \times (-3)^2$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(-2)^4 = 16$ and $2^4 = 16$</span>
+              <span class="work__why">even power, positive</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(-1)^{25} = -1$ and $(-1)^{26} = 1$</span>
+              <span class="work__why">odd, then even</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$-3^2 = -9$ and $(-3)^2 = 9$</span>
+              <span class="work__why">brackets decide the sign</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$16 - 16 = 0$, &nbsp;$-1 + 1 = 0$, &nbsp;$-9 \times 9 = -81$</span></div>
           </div>
         </div>
-        <p>
-          Approach the corner along one road and the answer looks like $1$; approach it
-          along the other and it looks like $0$. Since no single value keeps both
-          patterns intact, mathematicians do not choose either, and $0^0$ is left
-          undefined.
-        </p>
-        <p>
-          This is worth understanding rather than memorising, because it is how
-          mathematics generally deals with a gap. Recall § 2.4: $n^0$ and $n^{-a}$ were
-          not discovered, they were <em>defined</em> — and defined in the only way that
-          let the laws we already had keep working. When there is such a way, the definition
-          is made and nobody thinks of it as a choice. When there is no such way, as
-          here, the case is left open. Leaving a thing undefined is not a failure; it is
-          a refusal to write down something that would be wrong half the time.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The fifth power keeps the last digit</div>
-        <p>
-          Try six of them and the pattern is clear.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label">$2^5 = 32$</span><span>ends in $2$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$3^5 = 243$</span><span>ends in $3$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$4^5 = 1024$</span><span>ends in $4$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$7^5 = 16807$</span><span>ends in $7$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$8^5 = 32768$</span><span>ends in $8$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$9^5 = 59049$</span><span>ends in $9$</span>
+      <h3>Type 3 &middot; Multiplying powers, and a power of a power</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Simplify $(a^2)^3 \times a^4 \times a$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(a^2)^3 = a^{2 \times 3} = a^6$</span>
+              <span class="work__why">multiply the exponents</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$a^6 \times a^4 \times a^1 = a^{6+4+1}$</span>
+              <span class="work__why">a lone $a$ is $a^1$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$a^{11}$</span></div>
           </div>
         </div>
-        <p>
-          Every time, the fifth power ends in the digit it started with. The reason is
-          the cycle of last digits, met two solutions ago. Every digit's last-digit cycle
-          has length $1$, $2$ or $4$ — check them and see — and $5 - 1 = 4$ is a
-          multiple of all three. So raising to the fifth power always lands exactly one
-          step past a whole number of cycles, which is where it started.
-        </p>
-        <p>
-          Two things follow for free. The same is true of the ninth power, and the
-          thirteenth, and every power of the form $4k + 1$. And the last digit of any
-          power can be found by dividing the exponent by the length of its cycle and
-          keeping the remainder, which is how the $7^{100}$ question was answered without a single
-          multiplication of large numbers.
-        </p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Find $n$ if $(2^3)^n \times 2^2 = 2^{14}$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(2^3)^n \times 2^2 = 2^{3n} \times 2^2 = 2^{3n+2}$</span>
+              <span class="work__why">both laws</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$3n + 2 = 14$</span>
+              <span class="work__why">same base, so equal exponents</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$3n = 12$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$n = 4$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

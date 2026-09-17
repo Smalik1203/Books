@@ -2,68 +2,81 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.6</span><span class="name">What a Parallelogram Guarantees</span></h2>
+      <p><strong>Adjacent angles add to $180^\circ$.</strong> $AD$ and $BC$ are parallel
+      and $AB$ crosses them, so $\angle A$ and $\angle B$ are interior angles on the same side and add to a
+      straight angle. It follows from the other results as well: if opposite angles are
+      equal then the four angles are $x, y, x, y$, and since they add to $360^\circ$,
+      $x + y$ must be $180^\circ$.</p>
 
-      <p>A parallelogram is defined by one thing only: both pairs of opposite sides are
-      parallel. Nothing is said about lengths, nothing about angles. And yet three other
-      properties follow, and they follow from the same diagonal that gave the angle
-      sum.</p>
-
-      <p>Draw parallelogram $ABCD$ with the diagonal $AC$. Because $AB$ is parallel to
-      $DC$, the diagonal crosses two parallel lines and the alternate angles it makes are
-      equal; the same is true again because $AD$ is parallel to $BC$.</p>
+      <p><strong>The diagonals bisect each other.</strong> Draw both diagonals and let
+      them meet at $O$. In triangles $AOB$ and $COD$ the sides $AB$ and $CD$ are equal —
+      that is the first result — and the alternate angles at $A$ and $C$, and at $B$ and
+      $D$, are equal because $AB$ is parallel to $CD$. So those two triangles are
+      congruent, which makes $AO = OC$ and $BO = OD$.</p>
 
       <div class="c-figure c-figure--md">
         <figure>
-          <svg viewBox="0 0 160 96" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Parallelogram A B C D with diagonal A C, showing the two pairs of equal alternate angles it creates">
+          <svg viewBox="0 0 160 90" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Parallelogram A B C D with both diagonals drawn, meeting at the point O, each cut into two equal parts">
       
-            <path class="dg-line" d="M18 74 H108 L142 22 H52 Z"/>
-            <path class="dg-thin" d="M18 74 L142 22"/>
+            <path class="dg-line" d="M18 70 H108 L142 22 H52 Z"/>
+            <path class="dg-thin" d="M18 70 L142 22 M52 22 L108 70"/>
+            <circle class="dg-fill-teal" cx="80" cy="46" r="2.4"/>
+            <text class="dg-label" x="82" y="42">O</text>
       
-            <circle class="dg-fill-teal" cx="18"  cy="74" r="2.4"/>
-            <circle class="dg-fill-teal" cx="108" cy="74" r="2.4"/>
-            <circle class="dg-fill-teal" cx="142" cy="22" r="2.4"/>
-            <circle class="dg-fill-teal" cx="52"  cy="22" r="2.4"/>
-      
-            <text class="dg-label" x="10"  y="86">A</text>
-            <text class="dg-label" x="108" y="88">B</text>
+            <text class="dg-label" x="10"  y="82">A</text>
+            <text class="dg-label" x="108" y="84">B</text>
             <text class="dg-label" x="146" y="17">C</text>
             <text class="dg-label" x="46"  y="17">D</text>
       
-            <g class="dg-thin">
-              <path d="M31 74 A13 13 0 0 0 30.6 68.6"/>
-              <path d="M129 22 A13 13 0 0 0 129.4 27.4"/>
-              <path d="M25.6 63.7 A22 22 0 0 0 39.5 66.7"/>
-              <path d="M134.4 32.3 A22 22 0 0 0 120.5 29.3"/>
+            <g class="dg-dim">
+              <path d="M47.6 54.3 L50.4 61.7 M109.6 30.3 L112.4 37.7"/>
+              <path d="M62.2 36.0 L67.4 29.9 M64.6 38.0 L69.8 31.9"/>
+              <path d="M90.2 60.0 L95.4 53.9 M92.6 62.0 L97.8 55.9"/>
             </g>
           </svg>
-          <figcaption><span class="fignum">Fig. 5.7</span> Two pairs of alternate angles.
-          The single arcs are equal to each other and the double arcs are equal to each
-          other, and $AC$ is a side of both triangles.</figcaption>
+          <figcaption><span class="fignum">Fig. 5.8</span> The point $O$ is the midpoint
+          of both diagonals at once. It is not generally the same distance from all four
+          vertices — that happens only in a rectangle.</figcaption>
         </figure>
       </div>
 
-      <p>So triangles $ABC$ and $CDA$ have two pairs of equal angles and the side $AC$
-      between them in common. That makes them congruent — the same triangle, drawn twice
-      the other way up — and everything in one matches something in the other.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">In every parallelogram</div>
-        <p>Opposite sides are equal. Opposite angles are equal. Any two angles next to
-        each other add to $180^\circ$. And the diagonals cut each other in half.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>In parallelogram $PQRS$, $\angle P = 65^\circ$. Find the other three
+          angles.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\angle R = \angle P = 65^\circ$</span>
+              <span class="work__why">opposite angles</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle Q = 180^\circ - 65^\circ = 115^\circ$</span>
+              <span class="work__why">adjacent angles</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle S = \angle Q = 115^\circ$</span>
+              <span class="work__why">opposite again</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$65 + 115 + 65 + 115 = 360$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle R = 65^\circ$, $\angle Q = 115^\circ$, $\angle S = 115^\circ$</span></div>
+          </div>
+          <p>One angle of a parallelogram fixes all
+          four, which is worth remembering — it is why a parallelogram question rarely
+          gives you more than one.</p>
+        </div>
       </div>
 
-      <p>Take the four results one at a time, because each is worth a sentence of its
-      own.</p>
+      <p>Questions about sides work the same way, and the algebra of the last chapter
+      does the rest.</p>
 
-      <p><strong>Opposite sides are equal.</strong> In the congruent triangles, $AB$
-      matches $CD$ and $BC$ matches $DA$. Notice how much this gets for nothing: the
-      definition said only <em>parallel</em>, and equal lengths came out of it.</p>
-
-      <p><strong>Opposite angles are equal.</strong> $\angle B$ and $\angle D$ are whole
-      angles of the two triangles and match directly. $\angle A$ and $\angle C$ are each
-      in two pieces, and the pieces match in pairs, so the wholes are equal too.</p>
+      <p>It is worth naming the pattern, because every one of these questions has the
+      same shape. A property of the figure gives an equation; the equation gives the
+      unknown; and the check at the end is another property of the same figure, used a
+      second time. Where a question gives you two properties, use one to solve and keep
+      the other to check.</p>
 
     </div>
   </div>

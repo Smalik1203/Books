@@ -2,40 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>None of these is a fractal in the strict sense, because none of them goes on for
-      ever — the stone runs out, and so does the thread and the ink. They are the first
-      few steps, which is all anybody can ever draw of a fractal anyway.</p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Every fractal here was made by writing down one rule and obeying it over
-            and over. Remove the middle ninth. Remove the middle quarter. Bump out the
-            middle third.</p>
-            <p>Each rule is a sentence long, and no rule mentions the shape it produces.
-            Where, then, does all that detail come from?</p>
-          </div>
-        </div>
-      </div>
-
-      <h2><span class="badge">4.6</span><span class="name">Solids, and Their Flat Parts</span></h2>
-
-      <p>A solid bounded by flat surfaces is described by three words. Its
-      <span class="term">faces</span> are those flat surfaces; its
-      <span class="term">edges</span> are the line segments where two faces meet; its
-      <span class="term">vertices</span> are the points where edges meet. A cube has six
-      faces, twelve edges and eight vertices, and so has any cuboid.</p>
-
-      <p>Two families of solid are worth naming, because their counts follow a rule.</p>
-
       <div class="c-figure c-figure--xl">
         <figure>
           <svg viewBox="0 0 180 72" data-size="xl" xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +37,46 @@
       once. There are two end faces and $n$ side faces. The $n$ vertices of each end
       make $2n$ in all. And the edges are the $n$ round each end plus the $n$ joining
       them.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$n$-sided prism</span>
+          <span>$n + 2$ faces, &nbsp; $3n$ edges, &nbsp; $2n$ vertices</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$n$-sided pyramid</span>
+          <span>$n + 1$ faces, &nbsp; $2n$ edges, &nbsp; $n + 1$ vertices</span>
+        </div>
+      </div>
+
+      <p>A ten-sided prism therefore has $12$ faces, $30$ edges and $20$ vertices without
+      anyone having to draw it. Try adding the faces and vertices in each row and taking
+      the edges away: $12 + 20 - 30 = 2$, and $11 + 11 - 20 = 2$ as well. That is not a
+      coincidence, and it holds for every solid of this kind.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A prism has $21$ edges. What are its ends, and how many faces and vertices
+          has it?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$3n = 21$, so $n = 7$</span>
+              <span class="work__why">a prism has $3n$ edges</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$9$ faces</span>
+              <span class="work__why">7 sides and 2 ends</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$14$ vertices</span>
+              <span class="work__why">7 at each end</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Seven-sided ends, 9 faces and 14 vertices</span></div>
+          </div>
+          <p>And $9 + 14 - 21 = 2$, as it must be. A count that fails that test is a
+          count with a mistake in it.</p>
+        </div>
+      </div>
 
     </div>
   </div>

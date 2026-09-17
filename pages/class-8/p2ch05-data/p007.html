@@ -2,56 +2,92 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The median counts values; the mean weighs them</div>
-        <p>Both move up when a large value is added and down when a small one is. The
-        difference is by how much. The mean asks each value how far away it is; the
-        median asks only which side it is on. A value a long way out therefore drags the
-        mean and barely touches the median.</p>
-      </div>
-
-      <p>Section 5.2 had exactly such a set. The values $10$, $10$, $11$, $17$ have a
-      mean of $12$ and a median of $10.5$, the average of the two middle values. Drag the
-      $17$ out to $37$ and the mean climbs all the way to $17$ — but the sorted order is
-      unchanged, the two middle values are still $10$ and $11$, and the median stays at
-      $10.5$ exactly.</p>
-
-      <p>Neither is the right answer and neither is wrong. They are answers to two
-      questions, and which one a reader wants depends on whether the far-out value is the
-      point of the data or a distraction from it.</p>
-
-      <h2><span class="badge">5.6</span><span class="name">An Average with a Piece Missing</span></h2>
-
-      <p>Everything so far has run forwards: here is the data, find the average. Run it
-      backwards and the average becomes a piece of given information like any other, with
-      an unknown sitting inside it — which makes it an equation.</p>
+      <p>The next one is harder in an interesting way, because the individual values are
+      never given at all.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
-          <p>Coach Balwan wrote down the weights, in kilograms, of his ten kushti
-          players: $42$, $40$, $39$, $33$, $48$, $38$, $42$, $35$, $32$ and one more that
-          has since been smudged. He also wrote that the mean was $39.2$ kg. What was the
-          missing weight?</p>
+          <p>Venkayya records the coconut harvest from each of his $15$ trees and works
+          out an average of $25.6$ per tree. His son checks the counts and finds that one
+          tree's figure was written down as $3$ more than it should have been. What is
+          the correct average?</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">call it w</span>
-              <span>$\dfrac{42 + 40 + 39 + 33 + 48 + 38 + 42 + 35 + 32 + w}{10} = 39.2$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">the nine add to</span>
-              <span>$349$, so $349 + w = 392$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">giving</span>
-              <span>$w = 392 - 349 = 43$ kg</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$25.6 \times 15 = 384$ coconuts</span>
+              <span class="work__why">the recorded total</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$384 - 3 = 381$</span>
+              <span class="work__why">the true total</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$381 \div 15 = 25.4$</span>
+              <span class="work__why">share it out again</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The correct average is $25.4$ coconuts per tree</span></div>
           </div>
-          <p>The mean was used in reverse: instead of dividing a known total by ten, the
-          known mean was multiplied by ten to recover the total. A mean and a count
-          between them carry the sum, and the sum is what the missing value is hiding
-          in.</p>
+          <p>Fifteen numbers were never needed. The error was in the total by exactly
+          $3$, and $3$ shared among $15$ trees is $0.2$ — which is precisely how much the
+          average came down. Compare Example 3, where the error was in every value. Here
+          it was in one, so the effect on the mean is smaller by a factor of the number
+          of values.</p>
         </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.1</div>
+        <ol class="c-questions">
+          <li>Find the mean of each, and say what you notice about the third answer
+            beside the first.
+                <ol class="c-parts c-parts--1">
+                  <li>the first $50$ natural numbers</li>
+                  <li>the first $50$ odd numbers</li>
+                  <li>the first $50$ multiples of $4$</li>
+                </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Check by balancing, without adding and dividing, that the mean of $5$, $6$,
+            $9$ and $12$ is $8$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>The mean of $8$, $13$, $10$, $4$, $5$, $20$, $y$ and $10$ is $10.375$. Find
+            $y$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>A set of $15$ values has a mean of $134$. Find the sum of the values.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>The mean of a collection is $20$. Two more values, $12$ and $28$, are added
+            to it. What is the new mean? Explain how you know without being told anything
+            else about the collection.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>Find the median of $8$, $10$, $19$, $23$, $26$, $34$, $40$, $41$, $41$,
+            $48$, $51$, $55$, $70$, $84$, $91$, $92$.
+                <ol class="c-parts c-parts--1">
+                  <li>Which single values could be added without changing the median?</li>
+                  <li>Which single values could be removed without changing it?</li>
+                  <li>Explain what it is about this particular collection that makes your
+                  two answers so generous.</li>
+                </ol>
+            </li>
+        </ol>
       </div>
 
     </div>

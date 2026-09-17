@@ -2,93 +2,83 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Five numbers, and only the middle one matters</div>
-        <p>
-          Name the middle number rather than the smallest, and the five become
-          $n-2$, $n-1$, $n$, $n+1$, $n+2$. Their total is $5n$, because the twos and the
-          ones cancel in pairs.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">average</span>
-            <span>$\dfrac{5n}{5} = n = 23$</span>
-          </div>
-        </div>
-        <p>
-          So the numbers are $21, 22, 23, 24, 25$. The average of a run of consecutive
-          numbers is just its middle number, because everything on one side of the middle
-          is cancelled by something the same distance on the other.
-        </p>
+      <p>
+        The fraction is $\frac{3}{7}$, and adding one to each part gives $\frac48$,
+        which is $\frac12$. The brackets in the third line are the fraction bars doing
+        their work; without them the line reads $2d - 3 = d + 1$ and the answer comes
+        out as $4$.
+      </p>
+
+      <div class="c-try">
+        <p>Ravi solves $7x = 4x$ by dividing both sides by $x$. He gets $7 = 4$, which is
+        false, and says the equation has no solution. Show that he is wrong, and name the
+        rule he broke.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Thirty coins, one letter</div>
-        <p>
-          Two kinds of coin, and the temptation is two letters. The thirty is a total, so
-          once the five-rupee coins are named the others are counted for you.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">let</span>
-            <span>$x$ = the number of five-rupee coins</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">then</span>
-            <span>$30 - x$ two-rupee coins</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">value</span>
-            <span>$5x + 2(30 - x) = 99$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">expand</span>
-            <span>$5x + 60 - 2x = 99$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">solve</span>
-            <span>$3x = 39$, &nbsp; $x = 13$</span>
-          </div>
+      <p>
+        Try $x = 0$ in $7x = 4x$: the left side is $0$ and so is the right. It is a
+        solution, so the equation certainly has one, and Ravi's conclusion is false.
+      </p>
+
+      <p>
+        The step that failed is the division. Both sides may be divided by the same
+        number <em>provided it is not zero</em> — and dividing by $x$ is dividing by a
+        number nobody has checked. If $x$ happens to be zero, the step is not allowed;
+        and it is precisely that value which then goes missing from the answer.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">instead</span>
+          <span>$7x - 4x = 0$</span>
         </div>
-        <p>
-          Thirteen fives and seventeen twos: $65 + 34 = 99$, and thirty coins in all.
-          Both given facts were used, a count and a value, each in a different place.
-        </p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$3x = 0$, &nbsp; $x = 0$</span>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A number and its reversal</div>
-        <p>
-          A two-digit number is not its digits written side by side but ten times the
-          tens digit plus the units digit. Getting that line right is the whole question.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">let</span>
-            <span>$t$ = tens digit, so units digit $= 9 - t$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the number</span>
-            <span>$10t + (9 - t) = 9t + 9$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">reversed</span>
-            <span>$10(9 - t) + t = 90 - 9t$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the sentence</span>
-            <span>$90 - 9t = 9t + 9 + 27$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">solve</span>
-            <span>$54 = 18t$, &nbsp; $t = 3$</span>
-          </div>
-        </div>
-        <p>
-          The number is $36$; reversed it is $63$, which is $27$ more. The digit sum let
-          one letter do the work of two, as the count of coins did before.
-        </p>
+      <p>
+        Subtracting $4x$ carries no condition and keeps the solution. This is the one
+        place where the small print on a rule decides the answer: never divide by
+        something that contains the unknown.
+      </p>
+
+      <p>The rule is not arbitrary. Dividing both sides by a quantity is legitimate only
+      when that quantity cannot be zero, and a quantity containing the unknown is exactly
+      one whose value you do not yet know. Divide by it and you have quietly assumed the
+      answer is not the value that would make it zero — which is very often the value the
+      question was about.</p>
+
+      <p>Subtracting carries no such small print, which is why it is the move to reach
+      for first whenever both sides carry the unknown.</p>
+
+      <div class="c-try">
+        <p>A claim: <em>every linear equation whose coefficients are whole numbers has a
+        whole-number solution.</em> Disprove it.</p>
       </div>
+
+      <p>
+        A claim about <em>every</em> equation is disproved by one that fails, and the
+        smallest one will do.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">take</span>
+          <span>$2x = 5$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">solution</span>
+          <span>$x = \dfrac{5}{2}$, which is not a whole number</span>
+        </div>
+      </div>
+
+      <p>
+        The coefficients are whole and the solution is not, so the claim is false. That
+        is the whole answer: disproving a general statement takes one case, while
+        proving one takes an argument covering all of them.
+      </p>
 
     </div>
   </div>

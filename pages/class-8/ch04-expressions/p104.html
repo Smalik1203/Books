@@ -2,82 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A number and its reciprocal</div>
-        <p>
-          The expression asked for has squares in it and the one given has not, so
-          square what you are given. The middle term of $(a+b)^2$ is $2ab$, and here
-          $a \times b$ is $x \times \frac{1}{x}$, which is $1$.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">square it</span>
-            <span>$\left(x + \dfrac{1}{x}\right)^2 = x^2 + 2 + \dfrac{1}{x^2} = 16$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$x^2 + \dfrac{1}{x^2} = 14$</span>
-          </div>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the square</span>
+          <span>$(n^2 + 3n + 1)^2$</span>
         </div>
-        <p>
-          The middle term collapsing to a plain $2$ is what makes these questions work,
-          and it happens because $x$ and $\frac{1}{x}$ multiply to $1$ whatever $x$ is.
-          The same step run with the other square gives
-          $\left(x - \frac{1}{x}\right)^2 = 14 - 2 = 12$.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">An expression that is never zero</div>
-        <p>
-          Trying values will not settle this: there are infinitely many to try. What
-          settles it is finding a square, because a square is never negative.
-        </p>
-        <p>
-          The first two terms, $x^2 - 6x$, are the beginning of $(x-3)^2 = x^2 - 6x + 9$.
-          So write the $10$ as $9 + 1$.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">rewrite</span>
-            <span>$x^2 - 6x + 10 = (x^2 - 6x + 9) + 1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">as a square</span>
-            <span>$= (x-3)^2 + 1$</span>
-          </div>
+      <p>
+        Check it at $n = 3$: $9 + 9 + 1 = 19$, and $19^2 = 361$. The pairing was the
+        whole idea — pair them the other way and the two brackets differ by $3$, and
+        nothing tidy happens.
+      </p>
+
+      <p>
+        Two of those — the sixth and the seventh — are a different kind of question from
+        the rest. They ask you to show that something holds for <em>every</em> value, and
+        no amount of trying numbers will settle that. What settles it is finding a square
+        somewhere in the expression, because a square is never negative, and that single
+        fact carries more of this section than any other.
+      </p>
+
+      <p>
+        The rest reward one habit: before calculating anything, look at what you have
+        been given and ask which identity has those pieces in it. A question that hands
+        you $a+b$ and $ab$ is handing you the two halves of $(a+b)^2$, and is almost
+        certainly not asking you to find $a$ and $b$ at all.
+      </p>
+
+      <p>
+        The last question looks like arithmetic and is not. Multiplying $3 \times 4
+        \times 5 \times 6$ tells you about one case; what makes it a proof is choosing
+        which two of the four to multiply together first.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>
-          Whatever $x$ is, $(x-3)^2$ is zero or more, so the whole thing is $1$ or more,
-          and it is never zero. It is smallest when $x = 3$, which the original form does
-          not show at all. Making a square appear where none was visible is the single
-          most useful thing the identities do.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Nearly right, and where it fails</div>
-        <p>
-          Move everything to one side and the claim becomes a statement about
-          $x^2 - 2xy + y^2$, which is a square.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">difference</span>
-            <span>$x^2 + y^2 - 2xy = (x-y)^2$</span>
+      <h3>Type 1 &middot; Terms, coefficients and degree</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>For $4x^3y - x^2y^2 + 7xy - 2$, write down the terms and the coefficient of each. What is the degree of the expression?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>terms: $4x^3y$, &nbsp; $-x^2y^2$, &nbsp; $7xy$, &nbsp; $-2$</span>
+              <span class="work__why">break at each sign</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>coefficients: $4$, &nbsp; $-1$, &nbsp; $7$, &nbsp; $-2$</span>
+              <span class="work__why">the sign goes too</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>degrees: $3 + 1 = 4$, &nbsp; $2 + 2 = 4$, &nbsp; $1 + 1 = 2$, &nbsp; $0$</span>
+              <span class="work__why">add the powers</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Four terms, with coefficients $4$, $-1$, $7$, $-2$; the degree is $4$</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$x^2 + y^2 \geq 2xy$ always</span>
-          </div>
+          <p>Two terms share the largest degree. That does not matter: the degree of the expression is the largest degree, however many terms reach it.</p>
         </div>
-        <p>
-          A square is never negative, so $x^2 + y^2$ is never less than $2xy$. But a
-          square can be zero, and $(x-y)^2$ is zero exactly when $x = y$: at
-          $x = y = 3$ both sides come to $18$. So the claim should read <em>at least</em>
-          rather than <em>bigger than</em> — and notice that disproving it took one
-          value, while proving the corrected version took an argument.
-        </p>
       </div>
 
     </div>

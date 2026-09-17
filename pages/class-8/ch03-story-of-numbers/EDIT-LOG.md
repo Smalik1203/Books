@@ -1,5 +1,214 @@
 # Class 8 · Mathematics I · Chapter 3 — Ten Symbols, Every Number
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked against Chapter 1 as the
+model. The page move and the conversion were done in one pass. The chapter
+was read whole before anything was changed, and every check below was run on
+the chapter, not on a page.
+
+**Pages: 32 before (19 body + 13 Beyond, Crown Quarto), 32 after (16 body +
+16 Beyond, 196 × 276).** The taller page took three pages off the body.
+Beyond grew by three: its first stage now carries its own explanations, it
+has 18 solved examples where it had none, and the practice stage runs to 31
+questions in six forms.
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once, after the examples were stepped.
+
+**All four body examples set as steps.** *Solution*, a step to a
+`.work__row`, an *Answer* row, the reason in a `.work__why`. The old wide
+labels (`$2367$`, `Cs`, `largest that fits`, `three coils`) became Step
+rows, and Example 2's `.chip` answer became its Answer row. Remarks that are
+not steps stay as paragraphs after the working (Example 2's *notice the
+trading*, Example 3's *in Egyptian style* and *no landmark is ever needed
+five or more times*, Example 4's *every symbol simply moves one place up*).
+Example 1's check line became its Step 3. Verified by
+`build/check-example-stepping.mjs`: 4 examples, no mathematics lost.
+
+**Exercise Set 3.5 was numbered 1, 2, 3, 4, 3, 4, … 12.** It shipped that
+way in the first commit: the second page of the set restarted at 3, so
+Questions 3 and 4 were printed twice. The ten questions after the first four
+are now numbered 5 to 14. No question was added, moved or reworded. It may be
+that a head (*Exercise Set 3.6*) and two questions were lost when the
+chapter was first fitted; nothing in the repository says so, so the smallest
+repair was made. **Flagged below.**
+
+**Fig. 3.6 and the question that names it.** After the refit, Fig. 3.6 printed
+on page 15 (a recto) and Set 3.5 Q10, *Of the five ideas in Fig. 3.6*, on
+page 16 (the verso behind it). Fixed by hand, not by a second refit: two
+sentences on page 14 were each shortened by a rendered line
+(*put it in a way that nobody has improved on* → *put it well*; *So the older
+and more accurate name is the one Europe did not use, and modern textbooks
+increasingly say* → *The older name is the more accurate one, and textbooks
+now say*; no fact changed), which let the figure move back onto page 14.
+Q5's six one-word parts were set in three columns (`c-parts--3`) instead of
+one, and Q5–Q10 moved onto page 15. Figure and question now face. The
+summary then fitted under Q11–Q14 on page 16, which closes the body at 94%
+and carries `data-close`; the old page 17 was deleted.
+
+**Beyond the Book rebuilt to the four current stages** (§6a):
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 8 `.c-try` questions, answered in the next stage | **the same questions, each followed by its own explanation**, word for word except as below; `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | the explanations of stage 1's questions | **18 stepped examples**, Examples 1–18, under ten `Type N ·` heads |
+| 3 Problem Sets → **Practice** | 3 multiple-choice sets, 30 questions | **one numbered run of 31**, all six forms, band carrying the numeral |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 13 questions; the *carry forward* paragraphs kept without their head |
+
+**Stage 2 was Stage 1's answers**, as in every Class 8 chapter (*The same
+questions, worked*). The eight explanations were moved under their own
+questions, word for word, dropping only the `.c-solution` wrapper and its
+title. Pointing sentences corrected: *Try each before turning the page* →
+*before reading what follows it*; *Both of those solutions* → *explanations*;
+*Work through all eight before turning over … the solutions overleaf* →
+*Keep whatever you wrote for each of the eight. Several of the explanations
+above …*; and in the carry-forward paragraph *Twice in the solutions above* →
+*Twice in the first stage*. The old stage 2 markup was irregular (solutions
+opened at the wrong indentation and ran across page closes), so the stage was
+rewritten by hand from the old text rather than by script.
+
+**Three Stage 1 items changed**, because each answered a body question (the
+no-give-away rule beats word for word):
+
+| was | answered | now |
+|---|---|---|
+| digits of 1000 in **base 7**, with *the powers of seven are 1, 7, 49, 343, 2401* | Exercise Set 3.3 Q3 (the first six base-7 landmarks) | base **6**: $1000 = 4344_6$, powers of six, six symbols; the closing paragraph's $2626_7$ became $4344_6$ to match |
+| convert **143** to base 5 by division | Example 3 (143 in base 5, worked in the body) | convert **212**: $212 = 1322_5$ |
+| *the smallest base that works is 2, with symbols 0 and 1* | Exercise Set 3.5 Q7 (how many symbols base 2 needs) | *with symbols 0 and 1* deleted |
+
+**Nothing else in Beyond repeats or answers the body.**
+`build/check-no-repeats.mjs` reports two pairs at 50%, both *same type,
+different numbers* (Example 6, Egyptian symbols for 40 506, against Set 3.3
+Q1; Example 13, 4000 in sixties, against Set 3.4 Q1). Every value Beyond
+prints was also read against the body's exercise list. One more give-away was
+found that way and changed while writing: Example 18 first compared the
+systems on **1888** and remarked that *eights are expensive*, which all but
+answers Set 3.2 Q6 (3888, and the number below 4000 needing the most
+symbols). It now uses **2764**. Of the old 30 problem-set questions, 14 were
+kept. Two were dropped as recall of the body's own sentences (the
+Mesopotamian base, where the first zero appears), and the rest for repeating
+or answering the body or stage 1: base-5
+landmarks, base-8 symbol count, which system is not place value, when a
+placeholder is needed, the Mayan base, Egypt's seven symbols, base one, the
+two-wedge readings, base-12 thirds, why division stops, the chief advantage,
+*Arabic numerals*, the last idea of Fig. 3.6, and tally/Roman/Hindu for 3000.
+One kept question was changed because it had three right answers: *digits add
+to 18 in base 7* forces $666_7 = 342$, which is divisible by 6, 9 and 18. It
+now reads *add to 12*, whose only sure divisor among the options is 6. The
+old four-place question in base 6 moved to base 8, since Stage 1 Q1 is now
+about four-place numerals in base 6.
+
+**Worked examples in the chapter: 22** (4 body + 18 Beyond), against §5a's
+twelve. Every topic is worked under a type: tallies and groups; writing and
+reading Roman numerals; calculating with landmarks; Egyptian numerals; the
+landmarks of a base; changing base; counting in sixties; the Mayan landmarks;
+zero and expanded form; comparing the systems.
+
+**Practice: 31 questions** — 15 multiple choice (key letters a 4, b 4, c 4,
+d 3), 4 assertion–reason, 3 very short, 4 short, 3 long, 2 case-based.
+
+**`ANSWERS.md` written** for every question the chapter sets: the five
+exercise sets, both Think and Reflects, Stage 1 (pointing to its own
+explanations), and the 31 practice questions with their working. Questions
+that invite a choice or an invention carry a worked instance.
+
+### Verified
+
+`check-numbers.mjs` is kept beside the pages. It passes **407 claims**,
+evaluating 179 printed identities on the pages and in `ANSWERS.md` (numerals
+written in another base, such as $1322_{\,5}$, are read in that base, and a
+division with a remainder is checked as $a = bq + r$). It also re-derives
+what arithmetic alone cannot: every Roman numeral by rule, in both
+directions, including every one `ANSWERS.md` prints; every base conversion;
+places of sixty and Mayan places; the place counts in Examples 8, 13, 14 and
+15, read back off the page; the Egyptian symbol counts; the number below 4000
+with the longest Roman numeral; factor lists; and every practice answer, read
+back out of the key one lettered part at a time. Every multiple-choice
+question is solved (Q12–Q14 by enumeration) and must have exactly one right
+option matching the key; every assertion–reason letter is derived; and
+`ANSWERS.md`'s key must match the page's. The 7 spans it skips are words
+inside maths (`\text{L}`, `n = 1`).
+
+**Tested by breaking values on purpose, 14 breaks, all caught** after one
+fix: a remainder in Example 1; the key letter for Q5; *MCCXXII* in
+`ANSWERS.md`; row 30 (c)'s *59 s*; Example 1's body check line; Q12's right
+option; `ANSWERS.md`'s key for Q13; $1322_5$ in `ANSWERS.md`; Example 18's
+Roman count; row 31 (c)'s lamp count; 25 in base 8 in `ANSWERS.md`; row 24's
+$340\,170$; the assertion–reason letter for Q18. **Missed at first:**
+Example 15 changed to $280 = 13 \times 20 + 20$, which is still a true
+identity. The Mayan, sixties and base-4 working rows are now read back off the
+page against the computed place counts, and the change is caught.
+
+**Two false alarms in the check, fixed:** divisions printed with a remainder
+($83 \div 5 = 16$ remainder $3$) were read as equalities, and the binary
+carries in `ANSWERS.md` ($1 + 1 = 10$) as decimal sums. The first is now
+checked as a division; the second is written in words.
+
+**Two wrong explanations found by reading the proofs and fixed:** the reason
+row for Q5 said options (a) and (c) *read CD as more than five hundred* (544
+reads it as 500), and Q15's option *2005* was not the digit-by-digit reading
+of $2 \mid 0 \mid 5$; it is now *205*.
+
+**Fitting.** Nothing is clipped, and nothing runs into the bottom margin.
+`orphans`: 0 stranded openers in 32 pages. `check-labels`: no collisions.
+`fit-options`: every option row fits. Beyond was refitted once; the Solved
+Examples were then placed by hand (the two Type 5 examples were swapped and
+renumbered so that the head and its shorter example fit the foot of page 23,
+which had been 61%). Proofs of pages 4, 5, 8, 14–16, 21, 23, 24, 27 and 29–32
+were read.
+
+**Colour.** Pages 1, 2, 7, 10, 12 and 14 were read in greyscale and under
+simulated deuteranopia, protanopia and tritanopia (`build/check-colour.mjs`).
+The figures are single-colour line work with their values printed as labels,
+so nothing depends on hue.
+
+### Short pages, logged
+
+Each is held by a block `gaps` names, which cannot move.
+
+| page | fill | held by |
+|---|---|---|
+| 8 | 76% | Example 4, a panel |
+| 25 | 79% | Type 8's head, which may not be stranded, and Example 15 under it |
+| 26 | 78% | Type 10's head and Example 18 |
+| 29 | 67% | the case-based questions, which open page 30 under their sub head |
+| 30 | 60% | **the Answers stage, which always opens a page** |
+| 32 | 78% | the last page |
+
+### Flagged, not done
+
+- **Exercise Set 3.5's numbering** (above): renumbered 5–14 as the smallest
+  repair. Whether a separate *Exercise Set 3.6* was intended should be
+  checked against the manuscript, if there is one.
+- **Fig. 3.5 (Chinese rods)** sets the units and hundreds as horizontal bars
+  and the tens and thousands as uprights. The usual account has it the other
+  way round (units upright). It also writes 6 as six bars, where the rod
+  system uses a crossing rod for five. Set 3.4 Q5 reads correctly either way.
+  Needs a source before press.
+- **Fig. 3.1's lower label** (*the same twenty-nine, gathered into fives*)
+  sits very close under the gate strokes and reads crowded in the proof.
+  `check-labels` does not report it.
+- **Stage 1, Q3**, the four readings of a two-wedge numeral, prints pairs of
+  numbers that look alike, which is the kind of answer Set 3.4 Q2 asks for.
+  Kept, because the body's own text already gives such a pair (3605, 65,
+  216 005) and the pairs differ; it is a judgement call. Its third reading,
+  $7380$, puts the empty place at the end rather than in the gap.
+- Stage 1 keeps its coaching sentences (*worth more than it looks*, *a move
+  you will use far more often*), because it is kept word for word. §6a would
+  not write them today.
+- **Facts without a source in this log:** the Lebombo bone (29 notches, about
+  40 000 years); the Gumulgal, Bakairi and San counting; the Roman system from
+  a Greek one around the eighth century BCE; Egyptian numerals around
+  3000 BCE; Mayan dates and the shell; Chinese rods from the third century CE;
+  the Yajurveda, the Bakhshali manuscript, Āryabhaṭa (499 CE) and Brahmagupta
+  (628 CE); al-Khwārizmī (c. 825) and al-Kindī (c. 830); Fibonacci; cities
+  banning the numerals in ledgers; and the Laplace remark. The language edit
+  below says the Indian material is sourced, but no sources are recorded
+  here. §5a asks for them before press.
+
 Language edit, 32 pages (p001–p019 chapter proper, p101–p113 Beyond the Book).
 Build after editing: 32 pages, all pages fit, 0 stranded openers, no label
 collisions, every option row fits. All 30 answers in Stage 4 checked against the
@@ -17,6 +226,10 @@ One word mattered more than the rest: **p013's "Their bases are odd"**, about
 the Mayan landmarks. In a maths book *odd* means not even, and a reader who
 takes it that way gets a false statement about 1, 20, 360 and 7200. Now "Their
 landmarks are strange."
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted. The renumbering of Exercise Set 3.5 is right: at the last commit the continuation page restarted at 3 after questions 1–4.
 
 ## FIXED
 

@@ -2,75 +2,82 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Notice what made the count a power rather than a plain product: every slot
-      offered the same ten options, so the same number was multiplied in each time. That
-      is worth checking before reaching for an exponent. A four-digit PIN gives $10^4$,
-      but a number plate of two letters followed by four digits gives
-      $26^2 \times 10^4$ — a product of two powers, and not a single power at all.</p>
+      <h2><span class="badge">2.8</span><span class="name">A Note on Thought Experiments</span></h2>
+
+      <p>Several questions in this chapter could not be answered exactly by anybody: how
+      thick a sheet folded forty-six times would be, how many bees there are, how much
+      clothing the world owns. They were answered anyway, and the method deserves a
+      name.</p>
+
+      <p>The method is: write down what the answer depends on, make an honest guess at
+      each piece, and multiply. Nobody knows how many bees there are, but the number of
+      colonies is roughly known and the size of a colony is roughly known, and their
+      product is a great deal better than nothing. An answer got this way is called an
+      <span class="term">estimate</span>, and the point of standard form is that it lets
+      you say how much of it you believe.</p>
+
+      <p>Two rules keep such an estimate honest.</p>
+
+      <p><strong>Write the assumptions down.</strong> If you assumed a colony holds
+      fifty thousand bees, say so. Then a reader who thinks it is twenty thousand can
+      correct your answer without redoing it, and you can see for yourself which
+      assumption the answer really rests on.</p>
+
+      <p><strong>Do not keep digits you have not earned.</strong> If the inputs are
+      known to one figure, the answer is known to one figure. Multiplying
+      $1 \times 10^8$ by $5 \times 10^4$ gives $5 \times 10^{12}$, and writing
+      $5\,000\,000\,000\,000$ instead would suggest a precision that nothing in the
+      calculation supports.</p>
+
+      <p>An estimate made this way is not a lesser kind of answer. It is often the only
+      kind available, and it is usually enough. A town planner deciding whether a bridge
+      will carry the traffic needs to know whether the answer is thousands or tens of
+      thousands, not the exact figure to the last vehicle. The habit worth taking from
+      this section is to ask <em>how big, roughly?</em> before asking <em>exactly how
+      much?</em> — because the first question can nearly always be answered, and the
+      second often cannot.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>What date was one billion seconds ago? Estimate it before you calculate
+            it — a year, a decade, a century?</p>
+            <p>Then work it out: a year is about $3.15 \times 10^7$ seconds. Most people
+            are badly wrong on this one, and the reason is the same reason they were
+            wrong about the folded sheet.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>The reason, in both cases, is that we have no feel for repeated multiplication.
+      Our instincts were built for adding. A number that doubles forty-six times, or a
+      billion seconds laid end to end, is outside anything we have
+      ever seen. The only reliable way through is to stop guessing and let the notation
+      do the work.</p>
 
       <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.5</div>
+        <div class="c-practice__head">Exercise Set 2.7</div>
         <ol class="c-questions">
-          <li>How many codes are possible for each lock?
-              <ol class="c-parts c-parts--1">
-                <li>Four slots, each a digit $0$–$9$.</li>
-                <li>Five slots, each a digit or a capital letter.</li>
-                <li>Three dice rolled in a row, each showing one of six faces.</li>
-              </ol>
-            </li>
+          <li>Estimate the number of times your heart has beaten since you were born.
+              State your assumptions, give the answer in standard form, and say how many
+              of its digits you would defend.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="2">
-          <li>A dairy needs a unique code for each of $8.5$ billion milk packets a year,
-              using digits only. How many digits must the code have? Show why one fewer
-              will not do.</li>
+          <li>A grain of rice takes up about $0.02$ cm³. Estimate how many grains fill a
+              one-litre jar. (A litre is $1000$ cm³.)</li>
         </ol>
       </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A canteen offers $3$ breads, $4$ fillings and $2$ sauces. How many
-              different rolls are possible? Is this a power? Say why or why not.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A password is four characters long and each character is a lower-case
-              letter. How many are there? If the rule changes to allow digits as well,
-              by what factor does the number grow?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Estu says a six-slot lock with $10$ options per slot has $10 \times 6$
-              codes. What has he done wrong, and what is the right answer?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A pincode in India has six digits and does not begin with $0$. How many
-              are possible?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">2.7</span><span class="name">Back to the Folded Sheet</span></h2>
-
-      <p>With the notation in hand, the opening question can be answered properly rather
-      than by reading a table. After $n$ folds the thickness is</p>
-
-      <div class="work work--centred">
-        <p>$0.001 \times 2^{n}$ cm</p>
-      </div>
-
-      <p>and the only work left is arithmetic on powers. After $46$ folds it is
-      $0.001 \times 2^{46}$ cm. We do not need to work out $2^{46}$ exactly to see what is
-      happening — the laws will do it approximately in two lines. Since $2^{10} = 1024$,
-      which is a little over $10^3$,</p>
 
     </div>
   </div>

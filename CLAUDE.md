@@ -226,7 +226,7 @@ under its name; and **the Answers stage always opens a fresh page**, which
 examples and examination-form practice a Cengage-style book puts in the
 chapter go here instead (§5).
 
-Classes 6 and 8–10 still carry the older four stages (questions tried and
+Classes 9 and 10 still carry the older four stages (questions tried and
 explained, worked problems, problem sets, answers), and a stage may start
 part-way down a page. It is
 written as a lesson, not a method: no named strategies, no coaching

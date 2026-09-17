@@ -2,42 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 100" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A dot plot of ten, ten, eleven and seventeen on a number line, with a fulcrum under twelve showing that the row balances there">
-      
-            <text class="dg-note" x="50" y="18" text-anchor="middle">five below</text>
-            <text class="dg-note" x="118" y="18" text-anchor="middle">five above</text>
-      
-            <circle class="dg-fill-teal" cx="38" cy="56" r="3"/>
-            <circle class="dg-fill-teal" cx="38" cy="48" r="3"/>
-            <circle class="dg-fill-teal" cx="56" cy="56" r="3"/>
-            <circle class="dg-fill-teal" cx="162" cy="56" r="3"/>
-      
-            <path class="dg-axis" d="M14 60 H186"/>
-            <path class="dg-thin" d="M20 60 V64 M38 60 V64 M56 60 V64 M73 60 V64 M91 60 V64
-                                     M109 60 V64 M127 60 V64 M144 60 V64 M162 60 V64 M180 60 V64"/>
-      
-            <text class="dg-tick" x="20" y="72" text-anchor="middle">9</text>
-            <text class="dg-tick" x="38" y="72" text-anchor="middle">10</text>
-            <text class="dg-tick" x="56" y="72" text-anchor="middle">11</text>
-            <text class="dg-tick" x="73" y="72" text-anchor="middle">12</text>
-            <text class="dg-tick" x="91" y="72" text-anchor="middle">13</text>
-            <text class="dg-tick" x="109" y="72" text-anchor="middle">14</text>
-            <text class="dg-tick" x="127" y="72" text-anchor="middle">15</text>
-            <text class="dg-tick" x="144" y="72" text-anchor="middle">16</text>
-            <text class="dg-tick" x="162" y="72" text-anchor="middle">17</text>
-            <text class="dg-tick" x="180" y="72" text-anchor="middle">18</text>
-      
-            <path class="dg-fill-c" d="M73 76 L67 88 L79 88 Z"/>
-            <text class="dg-note" x="73" y="96" text-anchor="middle">mean</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.1</span> The four values as dots, with
-          a fulcrum at $12$. Put the fulcrum anywhere else and the row tips.</figcaption>
-        </figure>
-      </div>
-
       <p>Measure how far each dot stands from $12$. The two tens are $2$ away each and
       the eleven is $1$ away, so the dots on the left are $2 + 2 + 1 = 5$ away in total.
       The seventeen, alone on the right, is $5$ away. The two totals match — and that is
@@ -68,6 +32,33 @@
       all. Since there are $n$ values, that total is $(x_1 + \cdots + x_n) - nm$, so it
       is zero exactly when $nm$ is the sum, which is exactly when $m$ is the sum divided
       by $n$.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Check by balancing that the mean of $4$, $7$, $8$, $8$ and $18$ is $9$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>below 9: $5 + 2 + 1 + 1 = 9$</span>
+              <span class="work__why">four values fall short</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>above 9: $18$ overshoots by $9$</span>
+              <span class="work__why">one value above</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The two totals agree, so the mean is $9$</span></div>
+          </div>
+          <p>No adding up of the five values and dividing by five was needed. The check
+          works as a check because balance and mean are the same condition written two
+          ways.</p>
+        </div>
+      </div>
+
+      <p>One thing the picture makes plain that the arithmetic hides: a single distant
+      value can hold up a great many near ones. In Fig. 5.1 three dots huddled near $11$
+      are balanced by one dot at $17$, and if that one were dragged out to $37$ the mean
+      would have to move five places to keep up. A mean is not a promise that most
+      of the data is near it.</p>
 
     </div>
   </div>

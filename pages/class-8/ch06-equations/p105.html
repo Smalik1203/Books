@@ -2,80 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">One equation is enough to disprove it</div>
-        <p>
-          A claim about <em>every</em> equation is disproved by one that fails, and the
-          smallest one will do.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">take</span>
-            <span>$2x = 5$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">solution</span>
-            <span>$x = \dfrac{5}{2}$, which is not a whole number</span>
-          </div>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>
-          The coefficients are whole and the solution is not, so the claim is false. That
-          is the whole answer: disproving a general statement takes one case, while
-          proving one takes an argument covering all of them.
-        </p>
-        <p>
-          Something weaker <em>is</em> true. If $ax = b$ with $a$ and $b$ whole and $a$
-          not zero, the solution is $\frac{b}{a}$ — always a rational number, however
-          awkward the coefficients.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The trick that is not a trick</div>
-        <p>
-          With $7$: double to $14$, add ten to $24$, halve to $12$, take away $7$, and
-          the answer is $5$. With $100$: $200$, $210$, $105$, take away $100$, and the
-          answer is $5$ again. Two cases are a suspicion, not a reason.
-        </p>
-        <p>
-          Do the whole thing to a letter and the reason appears.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">start</span>
-            <span>$n$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">double</span>
-            <span>$2n$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">add ten</span>
-            <span>$2n + 10$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">halve</span>
-            <span>$n + 5$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">subtract $n$</span>
-            <span>$5$</span>
+      <h3>Type 1 &middot; Checking a solution</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Is $x = -3$ a solution of $4x + 7 = x - 2$?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>left side: $4(-3) + 7 = -12 + 7 = -5$</span>
+              <span class="work__why">put in $x = -3$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>right side: $-3 - 2 = -5$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes. Both sides come to $-5$</span></div>
           </div>
         </div>
-        <p>
-          The $n$ cancels at the last step, and once it has gone there is nothing left
-          for the starting number to affect. This is Section 6.7 in a party trick: an
-          identity, not an equation with a solution. The halving is what makes it work,
-          turning $2n$ back into one $n$ ready to be taken away.
-        </p>
       </div>
 
-      <p>Every trick of this shape yields to the same treatment: carry it out on a letter
-      instead of a number. What survives to the last line is what the audience will be
-      told, and the letter is what has to disappear on the way.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Which of $x = 2$ and $x = 5$ is a solution of $3(x - 1) = 2x + 2$?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$x = 2$: &nbsp; $3(2 - 1) = 3$, &nbsp; $2(2) + 2 = 6$</span>
+              <span class="work__why">the sides differ</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x = 5$: &nbsp; $3(5 - 1) = 12$, &nbsp; $2(5) + 2 = 12$</span>
+              <span class="work__why">the sides agree</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = 5$ is the solution; $x = 2$ is not</span></div>
+          </div>
+        </div>
+      </div>
 
-      <p>Inventing one is the same work backwards. Decide what is to survive, then build
-      steps that remove the letter and leave it.</p>
+      <h3>Type 2 &middot; The letter on one side</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Solve $6 - 5x = 21$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$-5x = 15$</span>
+              <span class="work__why">take 6 from both</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x = -3$</span>
+              <span class="work__why">$\div (-5)$ both sides</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$6 - 5(-3) = 6 + 15 = 21$</span>
+              <span class="work__why">true</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = -3$</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

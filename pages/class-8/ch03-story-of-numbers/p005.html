@@ -2,57 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <table>
-        <thead>
-          <tr><th>I</th><th>V</th><th>X</th><th>L</th><th>C</th><th>D</th><th>M</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td><td>500</td><td>1000</td></tr>
-        </tbody>
-      </table>
-
-      <p>Call these the <span class="term">landmark numbers</span> of the system. To
-      write any number, take as many of the largest landmark as will fit, then as many of
-      the next, and so on down.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>Write $2367$ in Roman numerals.</p>
-          <p>Work down the landmarks, taking as many of each as will fit.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$2367$</span>
-              <span>$= 1000 + 1000 + 100 + 100 + 100 + 50 + 10 + 5 + 1 + 1$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so</span>
-              <span>MMCCCLXVII</span>
-            </div>
-          </div>
-          <p>Check by adding the symbols back up: $1000 + 1000 + 100 \times 3 + 50 + 10
-          + 5 + 1 + 1 = 2367$.</p>
-        </div>
-      </div>
-
-      <p>One extra rule is worth knowing. Rather than write $4$ as IIII, the Romans often
-      put the smaller symbol <em>before</em> the larger to mean subtraction: IV is $5-1$,
-      IX is $10-1$, XL is $50-10$, CM is $1000-100$. They were not consistent about it —
-      IIII appears on plenty of monuments and clock faces — but the rule shortens
-      the awkward cases.</p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>The subtractive rule only ever borrows one step down: IV and IX are
-          allowed, IL and IC are not. So $49$ is XLIX — forty then nine — and not IL.</p>
-        </div>
-      </div>
-
       <p>This is a real advance on grouping by a single size, and the reason is the
       <em>sequence</em> of landmarks. Where a tally system offers you one group size, the
       Roman system offers seven, so a large number can be built from a handful of symbols
@@ -69,6 +18,62 @@
       Is make a V but two Vs make an X — and there is no rule that generates the next
       landmark from the last. The list $1, 5, 10, 50, 100, 500, 1000$ has to be
       memorised, because nothing about it can be worked out.</p>
+
+      <p>That is the crack in the system, and the next section is entirely about
+      widening it.</p>
+
+      <h3>3.4.1 Where the Roman system runs out</h3>
+
+      <p>Adding in Roman numerals is not bad. Put the two numbers side by side, gather
+      the symbols of each kind, and trade upward whenever you have enough.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Add CCXXXII and CCCCXIII without converting to our numerals.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Cs: CC and CCCC make six</span>
+              <span class="work__why">gather like symbols</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Xs: XXX and X make four</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Is: II and III make five</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>five Is make a V</span>
+              <span class="work__why">trade upward</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>five Cs make a D, leaving one C over</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>DCXLV, which is $645$</span></div>
+          </div>
+          <p>Notice the trading: five Is became a V, but it takes <em>two</em> Vs to
+          make an X, and five Xs to make an L. The rate changes as you go up, and you
+          have to remember which is which.</p>
+        </div>
+      </div>
+
+      <p>Multiplying is where it stops working. What is $\text{VII} \times \text{IX}$?
+      There is no rule to reach for. You cannot say what a C times an X is without
+      knowing what number the answer wants to be called, and no symbol pattern
+      produces it. The landmarks $1, 5, 10, 50, 100, 500, 1000$ multiply into each
+      other in no orderly way at all.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$\text{V} \times \text{X}$</span>
+          <span>$= 50 = \text{L}$</span><span>— a landmark, by luck</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$\text{V} \times \text{V}$</span>
+          <span>$= 25 = \text{XXV}$</span><span>— not a landmark at all</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$\text{L} \times \text{L}$</span>
+          <span>$= 2500 = \text{MMD}$</span><span>— nor this</span>
+        </div>
+      </div>
 
     </div>
   </div>

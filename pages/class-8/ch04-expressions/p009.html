@@ -2,74 +2,87 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>So to multiply an expression by a single term, multiply every term of it by
-      that term. The picture only shows two pieces, but nothing stops you cutting the
-      rectangle three times or ten, and the argument does not change.</p>
-
-      <div class="eq">$$a(b + c + d + \cdots) = ab + ac + ad + \cdots$$</div>
-
-      <p>Doing this is called <span class="term">expanding</span>, and the brackets are
-      said to have been removed. It is worth being clear that they have not been ignored:
-      every term inside has been used, and nothing inside has been left out.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>Expand $4x(2x^2 - 3x + 5)$.</p>
-          <p>Three terms inside, so three multiplications.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$4x \times 2x^2$</span>
-              <span>$= 8x^3$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$4x \times (-3x)$</span>
-              <span>$= -12x^2$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$4x \times 5$</span>
-              <span>$= 20x$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">answer</span>
-              <span>$8x^3 - 12x^2 + 20x$</span>
-            </div>
-          </div>
-          <p>Every term of the answer has degree one more than the term it came from,
-          because $4x$ has degree $1$.</p>
-        </div>
-      </div>
-
-      <p>When the term outside is negative, every sign inside is reversed — which is the
-      rule about subtracting a bracket, arrived at a second time and from a different
-      direction.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Simplify $2a(a - 3b) - 5b(2a - b)$.</p>
           <p>Expand each bracket first, then gather.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">first</span>
+            <div class="work__row"><span class="work__label">Step 1</span>
               <span>$2a(a - 3b) = 2a^2 - 6ab$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">second</span>
+              <span class="work__why">the first bracket</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
               <span>$-5b(2a - b) = -10ab + 5b^2$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">gather</span>
+              <span class="work__why">every sign reversed</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
               <span>$2a^2 - 6ab - 10ab + 5b^2$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">answer</span>
-              <span>$2a^2 - 16ab + 5b^2$</span>
-            </div>
+              <span class="work__why">put them together</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$2a^2 - 16ab + 5b^2$</span></div>
           </div>
           <p>The $-5b$ turned the $-b$ inside into $+5b^2$. Two negatives multiplied
           give a positive here for the same reason they do in arithmetic.</p>
         </div>
+      </div>
+
+      <p>One case of this is worth a mention of its own, because it answers a question that
+      sounds harder than it is: by how much does a product grow when one of its two
+      numbers goes up by one? Writing it out settles it in a line.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">one number up by 1</span>
+          <span>$a(b + 1) = ab + a$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">both up by 1</span>
+          <span>$(a+1)(b+1) = ab + a + b + 1$</span>
+        </div>
+      </div>
+
+      <p>A product grows by the <em>other</em> number. So $23 \times 28$ is
+      $23 \times 27$ with another $23$ added, and $24 \times 28$ is $23 \times 27$ plus
+      $23$ plus $27$ plus $1$ — which is worth checking on the two products themselves,
+      since $621 + 23 + 27 + 1$ is $672$.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.3</div>
+        <ol class="c-questions">
+          <li>Find each product.
+              <ol class="c-parts c-parts--4">
+                <li>$3a \times 7b$</li>
+                <li>$5x^2 \times 2x^3$</li>
+                <li>$-4m \times 6mn$</li>
+                <li>$\tfrac13 pq \times 9p$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Expand.
+              <ol class="c-parts c-parts--4">
+                <li>$2(x + 5)$</li>
+                <li>$a(a - b)$</li>
+                <li>$3y(2y + 7)$</li>
+                <li>$-p(p - 4)$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Expand.
+              <ol class="c-parts c-parts--1">
+                <li>$5x(x^2 - 2x + 3)$</li>
+                <li>$-2ab(3a - b + 4)$</li>
+                <li>$m^2(m + 1) + m(m^2 - 1)$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
     </div>

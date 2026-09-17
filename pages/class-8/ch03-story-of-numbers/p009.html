@@ -2,65 +2,80 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A base</div>
-        <p>A number system whose first landmark is $1$ and whose every later landmark is
-        $n$ times the one before is a <span class="term">base-$n$</span> system. Its
-        landmarks are exactly the powers of $n$. Base $10$ is also called
-        <span class="term">decimal</span>.</p>
-      </div>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
-          <p>Write $143$ in a base-$5$ system.</p>
-          <p>Take as many of the largest landmark that fits, then work down.</p>
+          <p>Multiply $324$ by $10$ in Egyptian symbols, without converting anything.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">largest that fits</span>
-              <span>$125$, and one of them leaves $18$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">then</span>
-              <span>$18 = 5 + 5 + 5 + 1 + 1 + 1$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so</span>
-              <span>$143 = 125 + 5 + 5 + 5 + 1 + 1 + 1$</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$324$ is three coils, two arches and four strokes</span>
+              <span class="work__why">read the symbols</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>three coils become three lotuses: $300 \to 3000$</span>
+              <span class="work__why">each moves up one landmark</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>two arches become two coils: $20 \to 200$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>four strokes become four arches: $4 \to 40$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>three lotuses, two coils and four arches</span></div>
           </div>
-          <p>One hundred-and-twenty-five, three fives and three ones. In Egyptian style
-          that would be one symbol of the third landmark, three of the second and three
-          of the first — seven symbols in all, where base ten would have needed eight.</p>
-          <p>Notice that no landmark is ever needed five or more times. If it were, five
-          of them would combine into one of the next landmark up, and the grouping was
-          not finished.</p>
+          <p>Every symbol simply moves one place up the ladder, and the answer is
+          $3240$ without a single calculation. That is what a base gives you, and it is why
+          you were taught to multiply by ten by adding a zero: the zero is the symbol
+          moving up.</p>
         </div>
       </div>
 
-      <p>That last point is true for every base. In a base-$n$ system no landmark is ever
-      needed $n$ times or more, because $n$ of them make the next one. It is the
-      single most useful fact about bases, because it says exactly how many of each
-      symbol a numeral can carry.</p>
+      <p>Multiplying by anything else works the same way, using the distributive law:
+      $324 \times 30$ is $324 \times 10$ promoted once more and then taken three times.
+      No such shortcut exists for the Romans, which is why they needed the abacus.</p>
 
-      <h3>3.5.1 Why a base makes arithmetic easy</h3>
+      <p>Notice how much of Chapter 2 has just been used. The landmarks are powers of
+      ten. Multiplying them adds the exponents. So the product is another
+      landmark. Every one of those steps was proved there, about numbers, with no
+      thought of Egypt — and it turns out to be the reason a four-thousand-year-old
+      notation works. That is a common pattern in mathematics, and worth expecting: a
+      result established for one purpose explains something quite unrelated.</p>
 
-      <p>Adding in a base system is the trading of Example 2 with one improvement: the
-      rate never changes. Ten of anything makes the next thing up, all the way. In the
-      Roman system you had to remember that five Is make a V but two Vs make an X. Here
-      there is one rule, and it is the same at every level.</p>
+      <p>It also settles a question the Egyptians could not have asked. <em>Any</em> base
+      gives the shortcut, so there is nothing mathematically special about base ten. It won because
+      we have ten fingers, and for no better reason than that.</p>
 
-      <p>The real gain is in multiplication, and it comes from a single fact.</p>
+      <p>That does not mean the choice makes no difference. A base with many
+      factors divides tidily: base $60$ splits into halves, thirds, quarters, fifths,
+      sixths, tenths, twelfths, fifteenths, twentieths and thirtieths without ever
+      leaving a fraction, which is why we still keep time in sixties. Base $10$ manages
+      only halves and fifths, which is why a third of an hour is twenty minutes but a
+      third of a metre is a decimal that never ends. And base $2$, with no factors at
+      all beyond itself, is the worst for dividing and the best for machines, because a
+      wire is either on or off.</p>
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$10 \times 100$</span>
-          <span>$= 10^1 \times 10^2 = 10^3 = 1000$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$100 \times 1000$</span>
-          <span>$= 10^2 \times 10^3 = 10^5$</span>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.3</div>
+        <ol class="c-questions">
+          <li>How many of each Egyptian symbol are needed to write these numbers?
+              <ol class="c-parts c-parts--3">
+                <li>$1023$</li>
+                <li>$2660$</li>
+                <li>$70\,707$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write each number as a sum of landmarks of a base-$5$ system, and say how
+              many of each landmark it needs.
+              <ol class="c-parts c-parts--3">
+                <li>$15$</li>
+                <li>$137$</li>
+                <li>$293$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
     </div>

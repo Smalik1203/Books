@@ -2,50 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>So the shortest route belongs to the most balanced pair, which is what you get
-      by setting the longest dimension against the other two added together. That is
-      worth keeping: the winner can usually be named before any arithmetic is done.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Straight on the net, shortest on the box</div>
-        <p>A net makes the surface flat, and on a flat surface the straight line is
-        shortest. So every candidate is a straight line on <em>some</em> net, and an
-        impossible search among endless paths becomes a short list to compare.</p>
-        <p>Here the list has three entries and $\sqrt{193}$ wins: the most balanced
-        triangle, made by setting the longest dimension against the other two added
-        together.</p>
-      </div>
-
-      <p>It is worth seeing why the answer is not $12 + 4$, or $12 + 3$, or any of the
-      routes along the edges. Walking along edges is allowed but never wise: the ant is
-      free to cut across a face, and cutting the corner is exactly what the straight line
-      on the net does.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>A box is $10$ cm by $5$ cm by $2$ cm. An ant crosses from one corner to the
-          opposite one. Which unfolding gives the shortest route?</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$10$ and $5+2$</span>
-              <span>$\sqrt{100 + 49} = \sqrt{149} \approx 12.2$ cm</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$10+2$ and $5$</span>
-              <span>$\sqrt{144 + 25} = \sqrt{169} = 13$ cm</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$10+5$ and $2$</span>
-              <span>$\sqrt{225 + 4} = \sqrt{229} \approx 15.1$ cm</span>
-            </div>
-          </div>
-          <p>The first, at about $12.2$ cm — and the rule named it in advance. The two
-          short sides always add to $17$ here; $10$ and $7$ is the most balanced way of
-          splitting that, so it gives the shortest hypotenuse.</p>
-        </div>
-      </div>
-
       <div class="c-practice">
         <div class="c-practice__head">Exercise Set 4.2</div>
         <ol class="c-questions">
@@ -57,6 +13,100 @@
               </ol>
             </li>
         </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Check that faces $+$ vertices $-$ edges comes to $2$ for a cube, a
+          triangular prism and a square pyramid.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A solid has $8$ faces and $12$ vertices. How many edges has it?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Draw two different nets of a cube on squared paper and cut them out to
+          check that both fold up. Then draw an arrangement of six squares that does
+          <em>not</em> fold into a cube, and say what goes wrong.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Sketch a net for a triangular prism and one for a square pyramid. How many
+          triangles does each contain?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>An ant is at one corner of a box $8$ cm by $6$ cm by $4$ cm and wants the
+          opposite corner. Work out all three unfoldings and say which is shortest.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>A room is $6$ m by $4$ m by $3$ m. A spider at a bottom corner walks to the
+          opposite top corner across the walls, floor and ceiling. What is its shortest
+          route, and how much shorter is it than going along three edges?</li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">4.9</span><span class="name">Three Views</span></h2>
+
+      <p>A solid casts a shadow on a wall, and the shadow is flat. Mathematically the
+      same thing is called a <span class="term">projection</span>: what you would see
+      looking at the solid from straight on, with all the depth thrown away.</p>
+
+      <p>One projection is never enough, because a great many different solids cast the
+      same shadow — a sphere and a disc both give a circle. So an object is usually drawn
+      from three directions at once: the <span class="term">front view</span>, the
+      <span class="term">top view</span> looking straight down, and the
+      <span class="term">side view</span> from one end.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 190 76" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A solid made of three cubes, with its front view an L-shape, its top view a two by one rectangle and its side view a one by two rectangle">
+      
+            <path class="dg-face-front" d="M20 42 H38 V58 H20 Z"/>
+            <path class="dg-face-front" d="M38 42 H56 V58 H38 Z"/>
+            <path class="dg-face-top"   d="M38 42 L47 36 H65 L56 42 Z"/>
+            <path class="dg-face-side"  d="M56 42 L65 36 V52 L56 58 Z"/>
+            <path class="dg-face-front" d="M20 26 H38 V42 H20 Z"/>
+            <path class="dg-face-top"   d="M20 26 L29 20 H47 L38 26 Z"/>
+            <path class="dg-face-side"  d="M38 26 L47 20 V36 L38 42 Z"/>
+            <path class="dg-line" d="M20 26 H38 V58 H20 Z M20 42 H38
+                                     M20 26 L29 20 H47 L38 26 M47 20 V36 L38 42
+                                     M38 42 H56 V58 M56 42 V58
+                                     M38 42 L47 36 H65 L56 42 M65 36 V52 L56 58"/>
+            <text class="dg-note" x="42" y="70" text-anchor="middle">the solid</text>
+      
+            <path class="dg-fill-a" d="M88 46 h24 v12 h-24 Z M88 34 h12 v12 h-12 Z"/>
+            <path class="dg-thin" d="M100 46 V58 M88 46 H112"/>
+            <path class="dg-line" d="M88 34 h12 v12 h12 v12 h-24 Z"/>
+            <text class="dg-note" x="100" y="70" text-anchor="middle">front</text>
+      
+            <path class="dg-fill-a" d="M124 46 h24 v12 h-24 Z"/>
+            <path class="dg-thin" d="M136 46 V58"/>
+            <path class="dg-line" d="M124 46 h24 v12 h-24 Z"/>
+            <text class="dg-note" x="136" y="70" text-anchor="middle">top</text>
+      
+            <path class="dg-fill-a" d="M160 34 h12 v24 h-12 Z"/>
+            <path class="dg-thin" d="M160 46 H172"/>
+            <path class="dg-line" d="M160 34 h12 v24 h-12 Z"/>
+            <text class="dg-note" x="166" y="70" text-anchor="middle">side</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.7</span> Three cubes, and what they
+          look like from the front, from above and from the end. No one view tells you
+          the solid; the three together do.</figcaption>
+        </figure>
       </div>
 
     </div>

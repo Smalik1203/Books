@@ -2,88 +2,56 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A rhombus has diagonals of $24$ cm and $10$ cm. Find its area, then its
-            side length, and then its perpendicular height.</li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Give a method for turning a rectangle $12$ cm by $5$ cm into a triangle of
+          the same area, and say how many such triangles there are.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$12 \times 5 = 60$ cm<sup>2</sup></span>
+              <span class="work__why">the area to keep</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\tfrac12 \times 12 \times h = 60$, so $h = 10$ cm</span>
+              <span class="work__why">a triangle on the same base</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Keep the base $12$ cm and take twice the height. There are infinitely many such triangles</span></div>
+          </div>
+          <p>There are infinitely many because section 7.4 lets the apex slide
+          anywhere along a line $10$ cm above the base. Even the base is free: a triangle
+          with base $5$ cm and height $24$ cm has the same $60$ cm<sup>2</sup>. Going from
+          a rectangle to a triangle throws away information; going the other way does
+          not.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A kite has diagonals of $16$ cm and $9$ cm crossing at right angles. Find
-            its area, and say which step of section 7.7 still applies to it and which does
-            not.</li>
-        </ol>
-      </div>
+      <p>One thing separates what the Śulbasūtras wanted from what a formula gives. A
+      formula says how large the new shape must be. A builder needs to <em>draw</em> it —
+      with a cord and pegs, on the ground, exactly. That is why these texts give cutting
+      instructions rather than equations, and why the pictures in this chapter are the
+      mathematics rather than an illustration of it.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>A parallelogram and a rectangle stand on the same base and between the same
-            pair of parallel lines. What can you say about their areas? What can you say
-            about their perimeters?</li>
-        </ol>
-      </div>
+      <h3>The trapezium, in one cut</h3>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>Give a method for drawing a rectangle whose area is exactly twice that of a
-            given triangle. Give a second method that is different in kind from the
-            first.</li>
-        </ol>
-      </div>
+      <p>The first book found the area of a trapezium by taking two copies, turning one
+      of them over, and fitting the pair together into a parallelogram. That works, and
+      it needs a second trapezium. The half-turn of Fig. 7.9 does the same job with one.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li class="hard">A rhombus of area $96$ cm<sup>2</sup> has one diagonal of
-            $16$ cm. Find the other diagonal, the side, and the height. Then investigate:
-            among all rhombuses of area $96$ cm<sup>2</sup>, which one has the shortest
-            side? Try several pairs of diagonals and say what you find.</li>
-        </ol>
-      </div>
+      <p>Let the parallel sides be $a$ at the top and $b$ at the bottom, with height $h$
+      between them. Join the midpoints of the two slanting sides and cut along that line.
+      Now turn the upper piece half a circle about one end of the cut, exactly as the
+      triangle's top was turned about $N$. The side of length $a$ swings round and comes
+      to rest in line with the side of length $b$, so what is left is a parallelogram —
+      of base $a + b$, and of height $\tfrac{h}{2}$, since the cut was halfway up.</p>
 
-      <h2><span class="badge">7.8</span><span class="name">Shapes Exchanged for Shapes</span></h2>
+      <div class="eq eq--anchor">$$\text{area of a trapezium} = \tfrac12 \, h \, (a + b).$$</div>
 
-      <p>The <span class="term">Śulbasūtras</span> are ancient Indian texts on the
-      building of altars — the same texts Chapter 2 took the theorem of the diagonal
-      from. An altar had to be built to a prescribed shape <em>and</em> a prescribed
-      area, and the two requirements do not always arrive together, so the Śulbasūtras
-      are full of problems of one kind: given this shape, construct that one, with the
-      area unchanged.</p>
-
-      <p>Section 7.6 has already solved one of them — a parallelogram exchanged for a
-      rectangle. Here is a second, and it is the one that makes the rest easy: turn a
-      triangle into a parallelogram.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 118" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangle cut along the line joining the midpoints of two sides, and the top piece turned half a circle so that the triangle becomes a parallelogram of the same base and half the height">
-      
-            <path class="dg-fill-a" d="M73 38 L48 62 L148 62 L123 38 Z"/>
-            <path class="dg-fill-c" d="M98 14 L73 38 L123 38 Z"/>
-            <path class="dg-line"   d="M48 62 L148 62 L98 14 Z"/>
-            <path class="dg-thin"   d="M73 38 H123"/>
-      
-            <text class="dg-label" x="95" y="10">A</text>
-            <text class="dg-label" x="42" y="70">B</text>
-            <text class="dg-label" x="150" y="70">C</text>
-            <text class="dg-label" x="64" y="36">M</text>
-            <text class="dg-label" x="126" y="36">N</text>
-      
-            <text class="dg-note" x="98" y="78" text-anchor="middle">turned about N</text>
-      
-            <path class="dg-fill-a" d="M73 86 L48 110 L148 110 L123 86 Z"/>
-            <path class="dg-fill-c" d="M123 86 L148 110 L173 86 Z"/>
-            <path class="dg-line"   d="M73 86 L48 110 L148 110 L173 86 Z"/>
-            <path class="dg-thin"   d="M123 86 L148 110"/>
-          </svg>
-          <figcaption><span class="fignum">Fig. 7.9</span> $M$ and $N$ are the midpoints
-          of $AB$ and $AC$. Cut along $MN$ and turn the top piece half a circle about
-          $N$: $A$ lands on $C$, and what is left is a parallelogram on the same base
-          $BC$, half as tall.</figcaption>
-        </figure>
-      </div>
+      <p>And now look back at Fig. 7.9 with that in mind. A triangle is a trapezium whose
+      top side has shrunk to nothing — the case $a = 0$ — and the formula duly reads
+      $\tfrac12 h(0 + b)$, which is $\tfrac12 bh$. The two arguments were never different
+      arguments. The triangle was the trapezium all along, cut at the same halfway line
+      and turned about the same kind of point.</p>
 
     </div>
   </div>

@@ -2,64 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>A quadrilateral has a diagonal of $18$ cm, and the perpendiculars onto it
-          from the other two vertices are $6$ cm and $9$ cm. Find its area.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">rule</span>
-              <span>$\tfrac12 \times 18 \times (6 + 9)$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">answer</span>
-              <span>$9 \times 15 = 135$ cm<sup>2</sup></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p>Where a shape is not one of these at all, go back to the only method there is:
-      cut it into pieces you know. A field shaped like a house — a rectangle with a
-      triangle on top — is a rectangle plus a triangle, and there is nothing more to
-      it.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 7.2</div>
-        <ol class="c-questions">
-          <li>A quadrilateral has a diagonal of $20$ cm and perpendiculars of $7$ cm and
-              $5$ cm onto it. Find its area.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Find the area of each rhombus, given its diagonals in centimetres.
-              <ol class="c-parts c-parts--4">
-                <li>$8$ and $6$</li>
-                <li>$10$ and $24$</li>
-                <li>$16$ and $9$</li>
-                <li>$7$ and $4$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A rhombus of area $96$ cm<sup>2</sup> has one diagonal of $16$ cm. Find the
-              other.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A square has a diagonal of $10$ cm. Find its area without first finding its
-              side.</li>
-        </ol>
-      </div>
-
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
           <li>A quadrilateral field has a diagonal of $50$ m. The perpendiculars onto it
@@ -97,6 +39,61 @@
               long.</li>
         </ol>
       </div>
+
+      <h2><span class="badge">7.5</span><span class="name">Solids, and What They Unfold Into</span></h2>
+
+      <p>Three solids are enough for this chapter, and all three are made the same way:
+      take a flat shape and drag it straight up. Drag a rectangle and you get a
+      <span class="term">cuboid</span>. Drag a square as far as its own side
+      and you get a <span class="term">cube</span>. Drag a circle and you get a
+      <span class="term">cylinder</span>.</p>
+
+      <p>Cut such a solid open along its edges and lay it flat, and what you have is its
+      <span class="term">net</span>. The net is the surface area made visible: it is
+      exactly the material the solid is built from, spread out where it can be
+      measured.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="The net of a cuboid, four faces in a strip with two flaps at the sides, and the net of a cylinder, a rectangle with a circle at each end">
+      
+            <g class="dg-fill-d">
+              <rect x="24" y="16" width="24" height="14"/>
+              <rect x="24" y="30" width="24" height="16"/>
+              <rect x="24" y="46" width="24" height="14"/>
+              <rect x="24" y="60" width="24" height="16"/>
+              <rect x="8"  y="30" width="16" height="16"/>
+              <rect x="48" y="30" width="16" height="16"/>
+            </g>
+            <g class="dg-line">
+              <rect x="24" y="16" width="24" height="60"/>
+              <rect x="8"  y="30" width="56" height="16"/>
+            </g>
+            <g class="dg-thin">
+              <path d="M24 30 H48 M24 46 H48 M24 60 H48"/>
+            </g>
+            <text class="dg-note" x="36" y="88" text-anchor="middle">a box, unfolded</text>
+      
+            <circle class="dg-fill-d" cx="140" cy="14" r="10"/>
+            <rect   class="dg-fill-d" x="110" y="24" width="60" height="30"/>
+            <circle class="dg-fill-d" cx="140" cy="64" r="10"/>
+            <g class="dg-line">
+              <circle cx="140" cy="14" r="10"/>
+              <rect x="110" y="24" width="60" height="30"/>
+              <circle cx="140" cy="64" r="10"/>
+            </g>
+            <text class="dg-note" x="140" y="88" text-anchor="middle">a tin, unfolded</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.4</span> Six rectangles make a box; two
+          circles and one rectangle make a tin. Add up what is in the net and you have
+          the surface area, with no formula needed.</figcaption>
+        </figure>
+      </div>
+
+      <p>That last point is worth taking seriously. Every surface-area formula in the next
+      section is only the net's pieces added up and tidied, and a reader who forgets a
+      formula in an examination can draw the net and add the faces instead.</p>
 
     </div>
   </div>

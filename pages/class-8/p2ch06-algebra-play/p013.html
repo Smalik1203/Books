@@ -2,29 +2,24 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Largest digit multiplies, the rest go in order</div>
-        <p>To make $\square\,\square \times \square$ as large as possible from three
-        digits, use the biggest digit as the multiplier and put the other two in
-        decreasing order to make the two-digit number: $qp \times r$ when
-        $p < q < r$. Six cases were checked in the first instance and none in the
-        second, because the letters covered them all.</p>
-      </div>
-
       <div class="c-example">
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Arrange $3$, $5$ and $9$ to make the largest product, and check the rule
           against the runner-up.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">by the rule</span>
-              <span>$r = 9$, and $q = 5$, $p = 3$, giving $53 \times 9 = 477$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">runner-up</span>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$r = 9$, and $q = 5$, $p = 3$</span>
+              <span class="work__why">by the rule</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$53 \times 9 = 477$</span>
+              <span class="work__why">largest digit multiplies</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
               <span>$93 \times 5 = 465$</span>
-            </div>
+              <span class="work__why">the runner-up</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$53 \times 9 = 477$ is the largest</span></div>
           </div>
           <p>Both use $10 \times 5 \times 9 = 450$ for the tens part, and the $12$ that
           separates them is $3 \times 9$ against $3 \times 5$. The gap between first and
@@ -55,6 +50,21 @@
 
       <p>With the number written as $10a + b$, its reverse is $10b + a$, and the
       subtraction is three lines of collecting.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the difference</span>
+          <span>$(10b + a) - (10a + b)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">collecting</span>
+          <span>$10b - b - 10a + a = 9b - 9a$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">factorising</span>
+          <span>$9(b - a)$</span>
+        </div>
+      </div>
 
     </div>
   </div>

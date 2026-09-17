@@ -2,9 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="eq eq--anchor">$$R_{n+1} = 8 R_n, \qquad\text{and since } R_0 = 1,
-      \qquad R_n = 8^{\,n}.$$</div>
-
       <p>Holes are easier to miscount. Every remaining square makes exactly one new hole
       at the next step, and every hole already there stays. So $H_{n+1} = H_n + R_n$, and
       the holes pile up as a sum rather than a single power.</p>
@@ -47,19 +44,19 @@
         <div class="c-example__body">
           <p>A Sierpiński carpet is begun from a square of side $27$ cm. At step $3$, how
           big is each remaining square, how many are there, and what area is left?</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">side</span>
-              <span>divided by $3$ each step: $27 \to 9 \to 3 \to 1$ cm</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">how many</span>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>side: $27 \to 9 \to 3 \to 1$ cm</span>
+              <span class="work__why">a third each step</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
               <span>$R_3 = 8^3 = 512$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">area left</span>
+              <span class="work__why">eight for each square</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
               <span>$512 \times 1 = 512$ cm<sup>2</sup></span>
-            </div>
+              <span class="work__why">each square is 1 cm²</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>512 squares, each of side 1 cm, leaving 512 cm²</span></div>
           </div>
           <p>The formula agrees: $729 \times \left(\tfrac89\right)^3 = 729 \times
           \tfrac{512}{729} = 512$. Counting the little squares and taking eight ninths

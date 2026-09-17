@@ -2,72 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>Three digits? Every one of those hundred can be followed by any of ten, so
+      $100 \times 10 = 1000$. The pattern is now visible, and it is a power.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$2$ digits</span>
+          <span>$10 \times 10 = 10^2 = 100$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$3$ digits</span>
+          <span>$10 \times 10 \times 10 = 10^3 = 1000$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$5$ digits</span>
+          <span>$10^5$</span>
+          <span class="chip">$1\,00\,000$</span>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Independent choices multiply</div>
+        <p>If a thing is built by making $a$ choices in turn, and each choice has $n$
+        options whatever the earlier ones were, then there are $n^a$ possibilities. Each
+        new slot multiplies the count rather than adding to it — which is why the total
+        grows the way § 2.1 described.</p>
+      </div>
+
+      <p>The two words to watch are <em>independent</em> and <em>whatever the earlier
+      ones were</em>. If the options change as you go, the count is a product but not a
+      power. Roxie has $7$ dresses, $2$ hats and $3$ pairs of shoes, so she has
+      $7 \times 2 \times 3 = 42$ ways to dress — a product of three different numbers,
+      because the three choices offer different amounts.</p>
+
       <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
-          <p>Write $59\,853$ and $0.00042$ in standard form.</p>
-          <p>For the first, put the point after the leading digit and count how many
-          places it moved.</p>
+          <p>A lock has six slots and each slot takes any capital letter, A to Z. How
+          many codes are there? How does that compare with a five-digit numeric lock?</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$59853$</span>
-              <span>$= 5.9853 \times 10^4$</span>
-              <span>— the point moved $4$ places left</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>letters: $26^6 = 308\,915\,776$ $\approx 3.1 \times 10^8$</span>
+              <span class="work__why">26 options, 6 slots</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>digits: $10^5 = 1\,00\,000$ $= 1 \times 10^5$</span>
+              <span class="work__why">10 options, 5 slots</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the exponents are $8$ and $5$</span>
+              <span class="work__why">compare the exponents</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$308\,915\,776$ codes, roughly three thousand times as many</span></div>
           </div>
-          <p>For the second the point moves the other way, so the exponent is
-          negative.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$0.00042$</span>
-              <span>$= 4.2 \times 10^{-4}$</span>
-              <span>— the point moved $4$ places right</span>
-            </div>
-          </div>
-          <p>A check worth doing every time: a number bigger than $10$ has a positive
-          exponent and a number smaller than $1$ has a negative one. If your sign
-          disagrees with the size of the number, the sign is wrong.</p>
+          <p>It is worth asking which of the two changes did more work, and the answer
+          says something about powers generally. Adding a seventh slot would multiply
+          the count by $26$. Adding a twenty-seventh letter to the alphabet would
+          multiply it by only $(27/26)^6$, which is about $1.25$. The exponent is by far
+          the stronger lever, and that is true of every power: a small change to what is
+          being repeated is nothing beside a change to how often.</p>
         </div>
       </div>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>A town's population is reported as $1\,42\,395$. Written as
-            $1.42395 \times 10^5$ that claims to be right down to the last person, which
-            no census ever is.</p>
-            <p>What does writing it as $1.42 \times 10^5$ claim instead? And
-            $1.4 \times 10^5$? What is the coefficient's length telling you?</p>
-          </div>
-        </div>
-      </div>
+      <p>The same arithmetic explains why a password of eight characters is so much
+      safer than one of six, and why adding a couple of characters helps far more than
+      choosing cleverer ones. It is the folded sheet again in another form: the
+      count is multiplied at every step, and steps are the thing to spend on.</p>
 
-      <p>The answer is that the coefficient's length is a statement about how well the
-      number is known. A census that is sure to the nearest thousand should be written
-      $1.42 \times 10^5$; one sure only to the nearest ten thousand should be written
-      $1.4 \times 10^5$. Writing more digits than you are sure of is not extra
-      precision, it is a false claim — and standard form makes the claim visible, which
-      the ordinary notation does not.</p>
-
-      <p>The same care applies at the small end. Physicists write the mass of an
-      electron as $9.11 \times 10^{-31}$ kg, and the three digits of that coefficient
-      are a claim that the value is known to about one part in a thousand. Writing
-      $9 \times 10^{-31}$ would have claimed less and been equally true. What you must never
-      do is add digits that were never measured.</p>
-
-      <p>People often get one thing wrong here. Converting units does not improve a
-      measurement. A distance given as $4$ km is known to the nearest kilometre. Writing
-      it as $4000$ m does not suddenly make it known to the nearest metre, though the
-      three zeros give that impression. In standard form the difficulty disappears,
-      because $4 \times 10^3$ m carries exactly the one digit it started with.</p>
+      <p>Notice what made the count a power rather than a plain product: every slot
+      offered the same ten options, so the same number was multiplied in each time. That
+      is worth checking before reaching for an exponent. A four-digit PIN gives $10^4$,
+      but a number plate of two letters followed by four digits gives
+      $26^2 \times 10^4$ — a product of two powers, and not a single power at all.</p>
 
     </div>
   </div>

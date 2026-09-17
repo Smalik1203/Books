@@ -2,70 +2,64 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Three quarters, five times</div>
-        <p>Every step keeps three quarters of the area, so five steps keep
-        $\left(\tfrac34\right)^5$ of it — not five times a quarter off, which is the slip
-        this question is watching for.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">area</span>
-            <span>$\left(\tfrac34\right)^5 = \dfrac{243}{1024}$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">as a decimal</span>
-            <span>about $0.24$</span>
-          </div>
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>So about a quarter of the triangle is left — comfortably more than a tenth.
-        Compounding downwards is slower than it feels: five steps of losing a quarter
-        leave far more than nothing.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The cubes you cannot see</div>
-        <p>There are $3^3 = 27$ small cubes. A cube is hidden only if it touches no face
-        of the block, so peel one layer off every side: what is left is a
-        $1 \times 1 \times 1$ block in the middle.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">altogether</span>
-            <span>$3 \times 3 \times 3 = 27$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">hidden</span>
-            <span>$1 \times 1 \times 1 = 1$</span>
+      <h3>Type 1 &middot; Counting a carpet</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A Sierpiński carpet is begun from a square of side $54$ cm. At step $2$, find the side of each remaining square, how many there are, and the area left.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$54 \div 3 \div 3 = 6$ cm</span>
+              <span class="work__why">a third each step</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$R_2 = 8^2 = 64$</span>
+              <span class="work__why">eight for each square</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$64 \times 6 \times 6 = 2304$ cm²</span>
+              <span class="work__why">count times one square</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$54 \times 54 \times \tfrac{64}{81} = 2304$ cm²</span>
+              <span class="work__why">check: eight ninths, twice</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>64 squares of side 6 cm, and 2304 cm² left</span></div>
           </div>
         </div>
-        <p>Just one. For a $4 \times 4 \times 4$ block the same argument gives $2^3 = 8$
-        hidden, and for $n \times n \times n$ it gives $(n-2)^3$ — a formula that came
-        from peeling rather than from counting.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Six faces in three pairs</div>
-        <p>A cuboid's net is six rectangles, and they come in matching pairs — the two
-        ends, the two sides, the top and the bottom. So the surface area is twice the sum
-        of three different rectangles, and the net is really only three shapes drawn
-        twice.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the three</span>
-            <span>$2 \times 3$, $\ 3 \times 4$, $\ 4 \times 2$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A square is cut into nine equal squares, and the four corner squares are thrown away, leaving a plus sign of five. The same is done to each square kept, step after step. Starting from an area of $1$, find the number of squares kept at step $3$ and the area left. Is it less than a fifth?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$5 \times 5 \times 5 = 125$ squares</span>
+              <span class="work__why">five for each square</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>each has side $\tfrac{1}{27}$ and area $\tfrac{1}{729}$</span>
+              <span class="work__why">a third each step</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$125 \times \tfrac{1}{729} = \tfrac{125}{729}$</span>
+              <span class="work__why">count times one square</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\left(\tfrac59\right)^3 = \tfrac{125}{729}$</span>
+              <span class="work__why">check: five ninths kept</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$\tfrac{125}{729} \approx 0.17$, and a fifth is $0.2$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>125 squares and an area of $\tfrac{125}{729}$, which is less than a fifth</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$2(6 + 12 + 8) = 52$ cm<sup>2</sup></span>
-          </div>
+          <p>The rule is new, but the counting is the carpet's with five in place of eight.</p>
         </div>
-        <p>That is Part I's formula $2(lb + bh + hl)$, and drawing the net is where it
-        comes from. Anyone who has laid the six rectangles out flat never has to remember
-        the formula again.</p>
-        <p>The net also answers a question the formula cannot: how big a sheet of card is
-        needed to make the box. That is not $52$ cm<sup>2</sup>, because the six
-        rectangles have to be cut from one piece and the corners of the sheet go to
-        waste. How much waste depends on which of the nets you choose, which is a good
-        reason for a packaging designer to know all of them.</p>
       </div>
 
     </div>

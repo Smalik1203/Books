@@ -3,61 +3,97 @@
     <div class="page__main">
 
       <div class="c-try">
-        <p>Square five odd numbers of your choosing and divide each answer by $8$. The
-        remainder is always $1$. Explain why it must be.</p>
+        <p>Find $51 + 53 + 55 + \cdots + 99$ without adding more than two numbers
+        together.</p>
       </div>
+
+      <p>
+        The sum runs over odd numbers, so reach for $1 + 3 + \cdots + (2n-1) = n^2$.
+        It does not start at $1$, but that is easily arranged: add the missing front
+        and take it away again.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1 + 3 + \cdots + 99$</span>
+          <span>$= 50^2 = 2500$</span>
+          <span>since $99 = 2 \times 50 - 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1 + 3 + \cdots + 49$</span>
+          <span>$= 25^2 = 625$</span>
+          <span>since $49 = 2 \times 25 - 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the difference</span>
+          <span>$= 2500 - 625$</span>
+          <span class="chip">$1875$</span>
+        </div>
+      </div>
+
+      <p>
+        Twenty-five numbers added by subtracting two you already knew. The general
+        move is worth keeping: a run that starts in the wrong place becomes two runs
+        that both start in the right one.
+      </p>
+
+      <p>
+        Notice that the second solution never added a single one of the twenty-five
+        numbers it was asked about. It found a formula that covered a longer run,
+        another that covered the unwanted front of it, and subtracted. That move —
+        solve a bigger problem you can handle, then remove the part you did not want —
+        turns up everywhere in mathematics, and it is worth recognising as a move rather
+        than meeting it fresh each time.
+      </p>
 
       <div class="c-try">
-        <p>How many digits can the cube of a two-digit number have? Give an example of
-        each length that is possible.</p>
+        <p>Show that $n^2 + n$ is never a perfect square, for any natural number $n$.</p>
       </div>
+
+      <p>
+        No calculation will settle this, because there are infinitely many cases. What
+        settles it is showing that $n^2 + n$ always falls in a place where no square
+        can be.
+      </p>
+
+      <p>
+        Take any natural number $n$ and put $n^2 + n$ between the two squares nearest
+        it. Since $n \ge 1$, it is certainly bigger than $n^2$. And it is smaller than
+        the next square up:
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$(n+1)^2$</span>
+          <span>$= n^2 + 2n + 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$n^2 \;\lt\; n^2 + n \;\lt\; n^2 + 2n + 1$</span>
+        </div>
+      </div>
+
+      <p>
+        So $n^2 + n$ sits strictly between two consecutive squares — and § 1.2.2
+        established that there is nothing but ordinary numbers in that gap. A square
+        would have to be one of the two ends, and it is neither.
+      </p>
+
+      <p>
+        Try it once: $n = 12$ gives $156$, which lies between $144$ and $169$. The
+        argument says that will happen every time, without a further case checked.
+      </p>
 
       <div class="c-try">
-        <p>$1729$ is the smallest number that is a sum of two cubes in two different
-        ways. What is the smallest number that is a sum of two <em>squares</em> in two
-        different ways? You can search by hand if you organise it.</p>
+        <p>Find the smallest natural number $n$ for which $2n$ is a perfect square
+        <em>and</em> $3n$ is a perfect cube.</p>
       </div>
 
       <p>
-        A word about the third and the fifth, because they are a different kind of
-        question from the rest. Both ask you to show that something is
-        <em>impossible</em>, and you cannot do that by checking cases — there are
-        infinitely many and you would never finish. What settles an impossibility is an
-        argument that covers every case at once, and in both of these the argument is
-        short. Finding it is the work; writing it down takes three lines.
-      </p>
-
-      <p>
-        The others are more ordinary, but each has one idea that does the work. The first turns on
-        counting factors rather than listing them. The second is a subtraction of two
-        squares in disguise. The fourth and the seventh both ask what a number must look
-        like in its factorised form, which is the chapter's main move used twice
-        over. And the last is a search, so the question is not whether you can do it but
-        whether you can organise it so that it ends.
-      </p>
-
-      <p>
-        If you cannot get started on a question, write out the first ten cases by hand. A pattern that is
-        invisible in the statement is often obvious in a list, and the list costs a
-        minute. Every solution overleaf begins that way, even the ones that end in
-        algebra.
-      </p>
-
-      <p>
-        One more remark, since it applies to half the list. Several of these
-        questions are about what a number looks like once it has been taken apart into
-        primes, and none of them can be answered by staring at the digits. If you find
-        yourself squinting at a number hoping for inspiration, stop and factorise it
-        instead. That is not a last resort; it is the first move.
-      </p>
-
-      <p>
-        A last piece of advice on how to use this section. Do not read the solutions
-        one after another like a chapter. Take a question, work at it until you either
-        finish it or run out of ideas, and only then turn over — and when you do, read
-        only the one you were working on. The value of a worked solution is almost
-        entirely in the gap between what you tried and what it did. If you have not tried,
-        there is no gap to look at.
+        Ask what $n$ looks like in its prime factorisation. Any prime other than $2$
+        and $3$ would have to appear in $n$ an even number of times and also a multiple
+        of three times, so the smallest $n$ leaves such primes out: $n = 2^a \times 3^b$.
+        Now count each prime on its own.
       </p>
 
     </div>

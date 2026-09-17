@@ -2,83 +2,96 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+      <p>
+        The general recipe is worth keeping. To compare $a^m$ with $b^n$, take the
+        highest common factor of $m$ and $n$, write both with that as the exponent,
+        and compare the new bases. It converts an impossible arithmetic problem into
+        one you can do in your head.
+      </p>
+
+      <p>
+        Those two explanations used the same idea from opposite ends. The first forced a
+        shared <em>base</em> — powers of ten — so that the exponents could be compared.
+        The second forced a shared <em>exponent</em> so that the bases could be. Which
+        of the two is available depends on the numbers, and finding out costs a moment:
+        look at whether the bases are powers of a common number, and look at whether the
+        exponents have a common factor. One of the two nearly always works.
+      </p>
+
+      <div class="c-try">
+        <p>A rumour starts with one person. Every hour, everybody who knows it tells
+        two people who do not. How many hours before a city of a million knows?</p>
+      </div>
+
+      <p>
+        Read the situation carefully before writing anything, because the obvious
+        answer is the wrong one. If everybody who knows tells two people who do not,
+        then after an hour there are the original knowers <em>and</em> twice as
+        many new ones — so the number knowing is multiplied by $3$, not by $2$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">start</span>
+          <span>$1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after 1 hour</span>
+          <span>$1 + 2 = 3$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after 2 hours</span>
+          <span>$3 + 6 = 9 = 3^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after $n$ hours</span>
+          <span>$3^n$</span>
         </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">When the exponent overtakes the base</div>
-        <p>
-          $100^2 = 10\,000$, which is five digits. $2^{100}$ is a great deal more: since
-          $2^{10} = 1024$ is a little over $10^3$, raising both sides to the tenth power
-          gives $2^{100}$ a little over $10^{30}$. So $2^{100}$ wins, and not
-          narrowly — it is about $10^{26}$ times larger.
-        </p>
-        <p>
-          The second half is more interesting, because for small $n$ the answer goes the
-          other way. Make a table:
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$n$</span>
-            <span>$1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$2^n$</span>
-            <span>$2 \quad 4 \quad 8 \quad 16 \quad 32 \quad 64$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$n^2$</span>
-            <span>$1 \quad 4 \quad 9 \quad 16 \quad 25 \quad 36$</span>
-          </div>
+      <p>
+        We need $3^n \ge 10^6$. Since $3^6 = 729$, we get $3^{12} = 729^2 = 531\,441$,
+        which is not enough. One hour more triples it: $3^{13} = 1\,594\,323$, which
+        is more than a million.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">answer</span>
+          <span>$13$ hours</span>
+          <span class="chip">a city of a million</span>
         </div>
-        <p>
-          They tie at $n = 2$ and $n = 4$, and $n^2$ is ahead at $n = 3$. From $n = 5$
-          onward $2^n$ leads and never gives the lead back — each step doubles the first
-          while the second grows by only $2n + 1$, and doubling wins the moment the
-          total exceeds $2n+1$, which it has by then.
-        </p>
-        <p>
-          That is the shape of every such race. A power with the variable in the
-          exponent starts slowly, loses for a while, and then wins by a distance nothing
-          can close.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The last digit of a very large power</div>
-        <p>
-          You cannot compute $7^{100}$, and you do not need to: last digits depend only
-          on last digits, so work with those alone.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label">$7^1$</span><span>ends in $7$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$7^2 = 49$</span><span>ends in $9$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$7^3 = 343$</span><span>ends in $3$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$7^4 = 2401$</span><span>ends in $1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$7^5$</span><span>ends in $7$ — and the cycle starts again</span>
-          </div>
-        </div>
-        <p>
-          The cycle has length $4$ and it must repeat for ever, because once the last
-          digit returns to $7$ everything that follows is a repeat of what followed the
-          first $7$. So the answer depends only on where $100$ falls in the cycle:
-          $100 = 4 \times 25$, exactly at the end of a cycle, so $7^{100}$ ends in $1$.
-        </p>
+      <p>
+        Thirteen hours, from one person, using nothing but conversation. The result is not
+        really about rumours — it is the same arithmetic that governs how an epidemic
+        spreads, how a chain letter travels, and how a video goes around the world
+        overnight. In each case what looks like an explosion is only a modest number
+        multiplied a modest number of times.
+      </p>
+
+      <div class="c-try">
+        <p>A king agrees to pay a debt in rice: one grain on the first square of a
+        chessboard, two on the second, four on the third, and so on to the
+        sixty-fourth. Roughly how many grains is that, and is it a debt anyone could
+        pay?</p>
       </div>
+
+      <p>
+        The squares hold $1, 2, 4, 8, \ldots$ so the sixty-fourth holds $2^{63}$ and
+        the total is
+      </p>
+
+      <div class="work work--centred">
+        <p>$1 + 2 + 4 + \cdots + 2^{63} = 2^{64} - 1$</p>
+      </div>
+
+      <p>
+        The sum is one short of the next power, which you can see by noticing that
+        $1 + 2 = 3$, $1 + 2 + 4 = 7$, $1+2+4+8 = 15$ — always one less than the
+        doubling that comes next.
+      </p>
 
     </div>
   </div>

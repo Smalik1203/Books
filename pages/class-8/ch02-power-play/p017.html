@@ -2,71 +2,112 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Three digits? Every one of those hundred can be followed by any of ten, so
-      $100 \times 10 = 1000$. The pattern is now visible, and it is a power.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$2$ digits</span>
-          <span>$10 \times 10 = 10^2 = 100$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$3$ digits</span>
-          <span>$10 \times 10 \times 10 = 10^3 = 1000$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$5$ digits</span>
-          <span>$10^5$</span>
-          <span class="chip">$1\,00\,000$</span>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 2.6</div>
+        <ol class="c-questions">
+          <li>Find the units digit of $2^{24} \times 4^{32}$ without evaluating either.
+              <em>Hint: $4 = 2^2$.</em></li>
+        </ol>
       </div>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Independent choices multiply</div>
-        <p>If a thing is built by making $a$ choices in turn, and each choice has $n$
-        options whatever the earlier ones were, then there are $n^a$ possibilities. Each
-        new slot multiplies the count rather than adding to it — which is why the total
-        grows the way § 2.1 described.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write each number as a product of two or more powers, in three different
+              ways. The exponents may be any integers.
+              <ol class="c-parts c-parts--3">
+                <li>$64^3$</li>
+                <li>$192^8$</li>
+                <li>$32^{-5}$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
-      <p>The two words to watch are <em>independent</em> and <em>whatever the earlier
-      ones were</em>. If the options change as you go, the count is a product but not a
-      power. Roxie has $7$ dresses, $2$ hats and $3$ pairs of shoes, so she has
-      $7 \times 2 \times 3 = 42$ ways to dress — a product of three different numbers,
-      because the three choices offer different amounts.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>A lock has six slots and each slot takes any capital letter, A to Z. How
-          many codes are there? How does that compare with a five-digit numeric lock?</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">letters</span>
-              <span>$26^6 = 308\,915\,776$</span>
-              <span>$\approx 3.1 \times 10^8$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">digits</span>
-              <span>$10^5 = 1\,00\,000$</span>
-              <span>$= 1 \times 10^5$</span>
-            </div>
-          </div>
-          <p>The exponents are $8$ and $5$, so the letter lock has roughly three
-          thousand times as many codes.</p>
-          <p>It is worth asking which of the two changes did more work, and the answer
-          says something about powers generally. Adding a seventh slot would multiply
-          the count by $26$. Adding a twenty-seventh letter to the alphabet would
-          multiply it by only $(27/26)^6$, which is about $1.25$. The exponent is by far
-          the stronger lever, and that is true of every power: a small change to what is
-          being repeated is nothing beside a change to how often.</p>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Always true, sometimes true, or never true? Give a reason for each.
+              <ol class="c-parts c-parts--1">
+                <li>A cube number is also a square number.</li>
+                <li>A fourth power is also a square number.</li>
+                <li>The fifth power of a number is divisible by its cube.</li>
+                <li>The product of two cube numbers is a cube number.</li>
+                <li>$q^{46}$ is both a fourth power and a sixth power, for $q$ prime.</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
-      <p>The same arithmetic explains why a password of eight characters is so much
-      safer than one of six, and why adding a couple of characters helps far more than
-      choosing cleverer ones. It is the folded sheet again in another form: the
-      count is multiplied at every step, and steps are the thing to spend on.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Given that $12^2 = 144$, write down each of these without multiplying.
+              <ol class="c-parts c-parts--4">
+                <li>$(1.2)^2$</li>
+                <li>$(0.12)^2$</li>
+                <li>$(0.012)^2$</li>
+                <li>$120^2$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Three of these five are equal. Which three, and what is their common
+              value as a power of $6$?
+              $\;2^6 \times 3^6, \quad 6^4 \times 6^2, \quad 36^3, \quad 6^{12},
+              \quad 2^4 \times 3^6$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>Which is greater in each pair?
+              <ol class="c-parts c-parts--3">
+                <li>$4^3$ or $3^4$</li>
+                <li>$2^8$ or $8^2$</li>
+                <li>$100^2$ or $2^{100}$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>The world has about $10^9$ sheep and about $10^9$ goats. What is the total?
+              It is <em>not</em> $10^{18}$ — explain the error and give the right answer in
+              standard form.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        
+        <ol class="c-questions" data-start="8">
+          <li>There are about $10^8$ bee colonies in the world and about $5 \times 10^4$
+                bees in a colony. Give the number of bees in standard form.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>The world has about $8 \times 10^9$ people. If each owns $30$ pieces of
+                clothing, how many pieces are there altogether? Give the answer in
+                standard form, and say how many of its digits you would defend.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="10">
+          <li>Show that $2^{30}$ is a little more than $10^9$ without evaluating either
+                in full. <em>Hint: $2^{10}$ is a little more than $10^3$.</em></li>
+        </ol>
+      </div>
+
+      <p>The two lines of that estimate are worth reading again for what they did not
+      need. No calculator, no long multiplication, and no exact value of $2^{46}$ — only
+      the fact that $2^{10}$ is a little over $10^3$, which is the single most useful
+      thing to know about powers of two. Anyone who remembers it can move between powers
+      of two and powers of ten in their head, and that is most of what estimating large
+      numbers ever asks of you.</p>
 
     </div>
   </div>

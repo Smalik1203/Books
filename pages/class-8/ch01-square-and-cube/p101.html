@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">The chapter's ideas, in questions that do not say which one to use.</div>
         </div>
       </div>
 
@@ -25,37 +24,47 @@
         that cannot be found exactly can nearly always be trapped between two you know.
       </p>
 
+      <p> Every question below can be answered from that list. None of them says which item to reach for, and three can be settled with no arithmetic at all if you see what is being asked. Try each before reading what follows it. </p>
+
+      <p> If you cannot get started on a question, write out the first ten cases by hand. A pattern that is invisible in the statement is often obvious in a list, and the list costs a minute. Every explanation below begins that way, even the ones that end in algebra. </p>
+
+      <p> A last piece of advice on how to use this section. Do not read the explanations one after another like a chapter. Take a question, work at it until you either finish it or run out of ideas, and only then read on — and when you do, read only the explanation of the one you were working on. The value of a worked solution is almost entirely in the gap between what you tried and what it did. If you have not tried, there is no gap to look at. </p>
+
+      <div class="c-try">
+        <p>A number has exactly five factors. What must such a number look like? Give
+        the two smallest.</p>
+      </div>
+
       <p>
-        Every question below can be answered from that list. None of them says which
-        item to reach for, and three can be settled with no arithmetic at all if you see
-        what is being asked. Try each before turning the page.
+        Five is an odd number of factors, so by the chapter's first result the number
+        must be a square. That alone cuts the field to $1, 4, 9, 16, 25, \ldots$
       </p>
 
-      <div class="c-try">
-        <p>A number has exactly three factors. What must such a number look like? Give
-        the four smallest.</p>
+      <p>
+        Now ask what can be inside it. If two different primes $p$ and $q$ divide a
+        square, each appears at least twice, so $1$, $p$, $q$, $p^2$, $q^2$ and $pq$ are
+        all factors — six already, which is too many. So only one prime is inside it, and
+        the number is a power of that prime. A power $p^k$ has the factors
+        $1, p, p^2, \ldots, p^k$, which is $k + 1$ of them, so five factors means $k = 4$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$16 = 2^4$</span>
+          <span>$1, 2, 4, 8, 16$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$81 = 3^4$</span>
+          <span>$1, 3, 9, 27, 81$</span>
+          <span class="chip">the two smallest</span>
+        </div>
       </div>
 
-      <div class="c-try">
-        <p>Find $51 + 53 + 55 + \cdots + 99$ without adding more than two numbers
-        together.</p>
-      </div>
-
-      <div class="c-try">
-        <p>Show that $n^2 + n$ is never a perfect square, for any natural number $n$.</p>
-      </div>
-
-      <div class="c-try">
-        <p>Which numbers below $1000$ are a perfect square <em>and</em> a perfect cube?
-        Say what such a number must look like on the inside, and then write down the
-        next one after the last of them.</p>
-      </div>
-
-      <div class="c-try">
-        <p>A square sheet of cardboard has an area of exactly $2$ m². Show that its side
-        is not a whole number of metres. Then show that it is not a fraction of a metre
-        either.</p>
-      </div>
+      <p>
+        Check a square of the other kind: $100 = 2^2 \times 5^2$ has nine factors,
+        because two primes are inside it. So the answer is <em>the fourth power of a
+        prime</em>, and nothing else.
+      </p>
 
     </div>
   </div>

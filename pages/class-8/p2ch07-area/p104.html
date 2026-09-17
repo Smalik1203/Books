@@ -2,70 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Equal areas, unequal edges</div>
-        <p>Both hold $144$ cm<sup>2</sup>, and the perimeters are worked out
-        separately.</p>
-        <div class="work work--list">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the square</span>
-            <span>$4 \times 12 = 48$ cm</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the rectangle</span>
-            <span>$2(16 + 9) = 50$ cm</span>
-          </div>
+      <p>So the square wins with $24$ cm and the long thin $36$ by $1$ loses with
+      $74$ cm. The second half of the question is the interesting half. Drop the
+      whole-number condition and the sides may be $360$ by $0.1$, with a perimeter of
+      $720.2$ cm, or $3600$ by $0.01$, with a perimeter over $7{,}200$ cm. There is no
+      longest, because the rectangle can always be made thinner — and it holds its
+      $36$ cm<sup>2</sup> the whole way, which is the strongest form of the warning in
+      section 7.3.</p>
+
+      <p>Eight questions, and only two of them were answered by putting numbers into a
+      formula. The rest were answered by choosing what to call the base, by noticing that
+      two things had to be equal, or by replacing the thing asked about with something
+      easier that is always the same size.</p>
+
+      <p>That is the habit worth taking out of the division. A formula is the last step,
+      and by the time you reach it the thinking is over.</p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>The rectangle needs $2$ cm more edge to hold the same amount, which is section
-        7.3 again from the other side: of all rectangles with a given area, the square has
-        the shortest way round. Stretch the shape further — $36$ by $4$, still
-        $144$ cm<sup>2</sup> — and the perimeter climbs to $80$ cm.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The height a lean leaves behind</div>
-        <p>Section 7.6 said either side may be the base, so long as the height used is
-        the one belonging to it. Take the $20$ cm side first, where both numbers are
-        given.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the area</span>
-            <span>$20 \times 12 = 240$ cm<sup>2</sup></span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the other way</span>
-            <span>$13 \times h = 240$, so $h = \tfrac{240}{13} \approx 18.5$ cm</span>
+      <h3>Type 1 &middot; Rectangles: area against perimeter</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A rectangular garden is $15$ m by $6$ m. A square garden has the same perimeter. Which garden has the larger area, and by how much?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$2(15 + 6) = 42$ m</span>
+              <span class="work__why">the shared perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$42 \div 4 = 10.5$ m</span>
+              <span class="work__why">side of the square</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$10.5 \times 10.5 = 110.25$ m<sup>2</sup> and $15 \times 6 = 90$ m<sup>2</sup></span>
+              <span class="work__why">the two areas</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$110.25 - 90 = 20.25$ m<sup>2</sup></span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The square garden, by 20.25 m<sup>2</sup></span></div>
           </div>
         </div>
-        <p>And it had to be under $20$ cm. The height on the $13$ cm side is the distance
-        between the two $13$ cm sides, and the $20$ cm sides run from one of those to the
-        other — so the $20$ cm side is at least as long as that distance, and longer
-        unless the parallelogram happens to be a rectangle. A height can exceed the side
-        it stands on, as this one does, but never the side it is measured along.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Three times as long, nine times as much</div>
-        <p>The enlargement is $18$ cm by $12$ cm, so the comparison can be done twice
-        over — by counting, or by noticing that each of the two dimensions was tripled
-        and so the product was tripled twice.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">before and after</span>
-            <span>$6 \times 4 = 24$ and $18 \times 12 = 216$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A floor $4.5$ m by $3.6$ m is to be covered with square tiles of side $30$ cm. How many tiles are needed?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4.5$ m is $450$ cm and $3.6$ m is $360$ cm</span>
+              <span class="work__why">one unit throughout</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$450 \div 30 = 15$ and $360 \div 30 = 12$</span>
+              <span class="work__why">tiles along each side</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$15 \times 12 = 180$</span>
+              <span class="work__why">rows times columns</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$4.5 \times 3.6 = 16.2$ m<sup>2</sup>, and $16.2 \div 0.09 = 180$</span>
+              <span class="work__why">check by area</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>180 tiles</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the ratio</span>
-            <span>$216 \div 24 = 9$, which is $3^2$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the cost</span>
-            <span>$9 \times 12 = 108$, so <span class="nb">₹$108$</span></span>
-          </div>
+          <p>The check divides the floor's area by one tile's area, $0.3 \times 0.3 = 0.09$ m<sup>2</sup>. Both ways need the lengths in the same unit first.</p>
         </div>
-        <p>This is the same arithmetic as the square inch of section 7.10 and catches the
-        same people. Anybody expecting to pay three times as much has multiplied the
-        price by the scale factor rather than by its square.</p>
       </div>
 
     </div>
