@@ -1,5 +1,48 @@
 # Class 6 · Mathematics I · Chapter 6 — Perimeter and Area
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book audit made two findings here, and both were gaps: topics the
+body teaches that no Solved Example worked. I read the body and all of
+Beyond, and confirmed both. The chapter proper was not touched.
+
+| finding | what I did |
+|---|---|
+| gap: comparing tangram areas (§6.5) | **New Example 9** under Type 5. A 4 cm square card is cut into four pieces (new **Fig. 6.23**). The pieces are compared by covering: C covers D, C and D cover B, and B, C and D cover A. That gives A = 4C and B = 2C. The card is 8C = 16 sq cm, so C = 2 sq cm. The dissection is new on purpose, because working the body's own tangram (Fig. 6.12) answers Exercise 6.5. That is why the earlier tangram example was removed (see below). |
+| gap: figures of unit squares, and how adding or moving one changes the perimeter (Exercise Set 6.10) | **New Example 11** under Type 6. An L of 6 unit squares (new **Fig. 6.24**) with two dashed places. The new square at P covers 2 sides and adds 2, so the perimeter stays 14. At Q it covers 1 and adds 3, so the perimeter is 16. No general rule is stated, and nothing about 9 squares, so Exercise 6.10 and the Think and Reflect after Fig. 6.18 stay unanswered. |
+
+**Renumbering.** Beyond's old Examples 9–13 are now Examples 10, 12, 13, 14 and 15. I updated `ANSWERS.md`'s example table (now 1–15) and `check-numbers.mjs` to match. No running text or Answers row cited those numbers.
+
+**Fitting.** The two examples first took Beyond from 11 to 13 pages, and Example 15 sat alone on a page at 24%. Practice cannot start under it, because
+`keepExerciseSets` keeps the three-page run whole. Three trims closed the gap:
+- Example 11's question now fits on one line, and its closing remark became Step 2's reason (*same perimeter*).
+- Fig. 6.24 was set on a wider grid, so it prints shorter at the same width.
+- Beyond Example 10's Step 3 (*the area grows as the two sides get closer*)
+was folded into its Answer row. No mathematics was lost.
+
+After these trims, Type 7 and Example 12 fit on p106, and Example 15 joins p107.
+Short pages left: p103 76% and p105 84%, both held by a whole example panel.
+
+**Pages: 30 before (19 body + 11 Beyond), 31 after (19 + 12).** Solved
+Examples: 15 in Beyond (was 13).
+
+**Checks.**
+- `check-numbers.mjs`: 653 checks pass. It now reads Fig. 6.23: piece areas, each covering claimed, the areas in units of C, and that C and D have equal sides. It also reads Fig. 6.24: cell perimeters, the sides shared at P and Q, the step arithmetic and the outline. Both Answer rows and both captions are checked.
+- Seven deliberate breaks, made in a scratch copy, were all caught:
+  - B 4 → 5;
+  - a corner of D moved;
+  - a square of Fig. 6.24 moved;
+  - Q 16 → 18;
+  - Step 1 14 → 12;
+  - `ANSWERS.md` 16 → 15;
+  - Example 11's tab renumbered.
+- `build.mjs --png`: all pages fit.
+- `orphans`: 0.
+- `fit-options`: clean.
+- `check-labels`: clean.
+- `check-colour`: run on p024 and p025.
+- `check-no-repeats`: the new examples raise no pair.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model chapter

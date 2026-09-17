@@ -481,16 +481,20 @@ prints the working; these are the answers, as its Answer rows give them.
 3. The 1st, 3rd or 5th child could be the tallest, and the 2nd or 4th the shortest
 4. 9, 8, 7 and 6
 5. 43, 44, 45, and so on up to 56: fourteen numbers
-6. 6789
-7. $9 + 180 + 3 = 192$ digits
-8. 4 steps, ending at 4884
-9. 6336, and $6 + 3 + 3 + 6 = 18$
-10. 5 rounds
-11. $26{,}900 = 10{,}000 + 10{,}000 + 2{,}500 + 2{,}500 + 2{,}500 - 600$
-12. $750 + 50 = 800$
-13. 10 steps from 24, and 11 steps from 48
-14. About 1400 people
-15. The first player, by saying 4, 10, 16, 22, 28, 34 and 40
+6. 7,060 at the 1st mark and 7,150 at the 10th
+7. 6789
+8. $9 + 180 + 3 = 192$ digits
+9. 4 steps, ending at 4884
+10. 6336, and $6 + 3 + 3 + 6 = 18$
+11. 5 rounds
+12. 3:03, which is 11 minutes later
+13. 03/02/2030
+14. $26{,}900 = 10{,}000 + 10{,}000 + 2{,}500 + 2{,}500 + 2{,}500 - 600$
+15. The sum has either 4 digits or 5 digits, and never 3 or 6.
+16. $750 + 50 = 800$
+17. 10 steps from 24, and 11 steps from 48
+18. About 1400 people
+19. The first player, by saying 4, 10, 16, 22, 28, 34 and 40
 
 ### Stage 3 · Practice
 
@@ -507,7 +511,9 @@ prints the working; these are the answers, as its Answer rows give them.
    have the wrong middle digit, and 336 is not a palindrome.
 6. 2332 is a palindrome and $2 + 3 + 3 + 2 = 10$. 4224 is a palindrome with
    digit sum 12. 5050 and 1234 are not palindromes.
-7. 2037. 2032 also starts on a Thursday, but it is a leap year.
+7. 04/02/2040. Its day and month, 0402, are 2040 written backwards, so
+   04022040 reads the same from both ends. The other three, read from the
+   right, are 04024002, 04024042 and 04024020.
 8. 5. No two supercells stand side by side, and the four corners and the
    centre are the most cells with no two side by side. The grid 9, 1, 8 and
    2, 7, 3 and 6, 4, 5 has 5 supercells.

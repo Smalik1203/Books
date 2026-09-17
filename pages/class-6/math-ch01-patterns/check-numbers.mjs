@@ -71,7 +71,7 @@ const SEQ = {
   'dashed joining lines': [0, ...gen(n => 2 ** (n - 1), 10)],
   'rectangle numbers n(n+1)': gen(n => n * (n + 1)),
   'square numbers plus 1': gen(n => n * n + 1),
-  'sums of triangular numbers': gen(n => n * (n + 1) * (n + 2) / 6),
+  'double square numbers': gen(n => 2 * n * n),
   'doubling from 3': gen(n => 3 * 2 ** (n - 1), 20),
   'matchstick squares 3n+1': gen(n => 3 * n + 1),
   'sums of powers of 2': gen(n => 2 ** n - 1, 20),
@@ -555,6 +555,7 @@ const beyondQSum = (n) => {     // the sum printed in the example's question, ex
   return span.includes(B + 'cdots') ? expandDots(span) : span.split('+').map(Number);
 };
 
+const beyondStepNums = (n, s) => { const m = beyondEx(n).match(new RegExp(`Step ${s}</span>\\s*<span>([\\s\\S]*?)</span>`)); return m ? numsIn(m[1]) : []; };
 // Type 1
 {
   const printed = numsIn(beyondEx(1).match(/<p>([^<]*)<\/p>/)[1]);
@@ -562,16 +563,16 @@ const beyondQSum = (n) => {     // the sum printed in the example's question, ex
   beyondExAns(1, SEQ['square numbers plus 1'].slice(5, 7));
   ok('Beyond Ex 1 the note: 36 + 1 and 49 + 1', [36 + 1, 49 + 1], SEQ['square numbers plus 1'].slice(5, 7));
   const pBx2 = numsIn(beyondEx(2).match(/<p>([^<]*)<\/p>/)[1]);
-  ok('Beyond Ex 2 the sequence adds up the triangular numbers', pBx2, SEQ['sums of triangular numbers'].slice(0, 5));
-  beyondExAns(2, SEQ['sums of triangular numbers'].slice(5, 6));
+  ok('Beyond Ex 2 the sequence is double the square numbers', pBx2, SEQ['double square numbers'].slice(0, 5));
+  beyondExAns(2, SEQ['double square numbers'].slice(5, 6));
   const gaps = (xs) => xs.slice(1).map((x, i) => x - xs[i]);
-  const beyondStepNums = (n, s) => numsIn(beyondEx(n).match(new RegExp(`Step ${s}</span>\\s*<span>([^<]*)</span>`))[1]);
   ok('Beyond Ex 1 the printed gaps', beyondStepNums(1, 1), gaps(printed));
   ok('Beyond Ex 1 the next gaps', beyondStepNums(1, 2), gaps(SEQ['square numbers plus 1'].slice(4, 7)));
-  ok('Beyond Ex 2 the printed gaps', beyondStepNums(2, 1), gaps(pBx2));
-  ok('Beyond Ex 6 note: 49 is 1 less than 50, the 25th even number', [49 + 1, SEQ['even numbers'][24]], [50, 50]);
-  ok('Beyond Ex 13: with the 1 added, the total before 512 is 512', 1 + sum(SEQ['powers of 2'].slice(0, 9)), 512);
-  ok('Beyond Ex 2 the next gap is the next triangular number', T(6), 21);
+  ok('Beyond Ex 2 the printed halves', beyondStepNums(2, 1), pBx2.map(x => x / 2));
+  ok('Beyond Ex 2 the halves are the square numbers', pBx2.map(x => x / 2), SEQ['square numbers'].slice(0, 5));
+  is('Beyond Ex 2 every term is even', pBx2.every(x => x % 2 === 0));
+  ok('Beyond Ex 2 step 2 the next square, doubled', beyondStepNums(2, 2), [6, 6, 36, 2, 36, 72]);
+  ok('Beyond Ex 14: with the 1 added, the total before 512 is 512', 1 + sum(SEQ['powers of 2'].slice(0, 9)), 512);
   beyondExAns(3, [vira[11]]);
   is('Beyond Ex 3 asks for the 12th', /12th Virah/.test(beyondEx(3)));
 }
@@ -583,66 +584,94 @@ const beyondQSum = (n) => {     // the sum printed in the example's question, ex
   is('Beyond Ex 5 six dots a side', /with 6 dots along each side/.test(beyondEx(5)));
   beyondExAns(5, [hex(6)]);
   ok('Beyond Ex 5 the rings', range(1, 5).map(k => hex(k + 1) - hex(k)), [6, 12, 18, 24, 30]);
+  const cBx6 = Number(beyondEx(6).match(/built from (\d+) small cubes/)[1]);
+  is('Beyond Ex 6 is a cube number', isCube(cBx6) && SEQ['cube numbers'].includes(cBx6));
+  const rBx6 = Math.round(Math.cbrt(cBx6));
+  beyondExAns(6, [rBx6, rBx6 * rBx6, (rBx6 - 2) ** 3], 'layers, cubes a layer, unpainted');
+  ok('Beyond Ex 6 step 1', beyondStepNums(6, 1), [rBx6, rBx6, rBx6, cBx6, rBx6]);
+  ok('Beyond Ex 6 step 3 edge left', beyondStepNums(6, 3), [rBx6, 2, rBx6 - 2]);
 }
 // Type 3
 {
-  const qBx6 = beyondQSum(6);
-  ok('Beyond Ex 6 is the odd numbers to 49', qBx6, oddsTo(49));
-  ok('Beyond Ex 6 49 is the 25th odd number', qBx6.length, 25);
-  beyondExAns(6, [sum(qBx6)]);
-  is('Beyond Ex 7 total 121', /total is 121/.test(beyondEx(7)));
-  const kBx7 = range(1, 50).find(k => sum(range(1, k).map(nthOdd)) === 121);
-  beyondExAns(7, [nthOdd(kBx7)]);
-  const qBx8 = beyondQSum(8);
-  ok('Beyond Ex 8 is the odd numbers 11 to 29', qBx8, oddsTo(29).filter(x => x >= 11));
-  ok('Beyond Ex 8 29 is the 15th and 9 the 5th odd number', [oddsTo(29).length, oddsTo(9).length], [15, 5]);
-  beyondExAns(8, [sum(qBx8)]);
+  const intro = BEYOND.match(/<p>The L-shapes of Fig\. 1\.5 also tell you[\s\S]*?<\/p>/);
+  is('Type 3 opens by placing each odd number from its L-shape', !!intro);
+  if (intro) {
+    const t = stripTags(intro[0]);
+    const m5 = t.match(/(\d+) \+ (\d+) - 1 = (\d+)\$ dots, and (\d+) is the (\d+)th odd number/);
+    is('Type 3 intro: the 5th L-shape', !!m5 && Number(m5[1]) === 5 && Number(m5[2]) === 5 && Number(m5[3]) === nthOdd(5) && Number(m5[4]) === nthOdd(5) && Number(m5[5]) === 5);
+    const m25 = t.match(/the (\d+)th odd number is \$(\d+) \+ (\d+) - 1 = (\d+)\$/);
+    is('Type 3 intro: the 25th odd number', !!m25 && Number(m25[1]) === 25 && Number(m25[2]) === 25 && Number(m25[4]) === nthOdd(25));
+    const mb = t.match(/\$(\d+) \+ 1 = (\d+)\$ counts the corner twice, and half of (\d+) is (\d+)/);
+    is('Type 3 intro: back from 49', !!mb && Number(mb[1]) === nthOdd(25) && Number(mb[2]) === nthOdd(25) + 1 && Number(mb[3]) === nthOdd(25) + 1 && Number(mb[4]) === 25);
+  }
+  const qBx7 = beyondQSum(7);
+  ok('Beyond Ex 7 is the odd numbers to 49', qBx7, oddsTo(49));
+  ok('Beyond Ex 7 49 is the 25th odd number', qBx7.length, 25);
+  beyondExAns(7, [sum(qBx7)]);
+  is('Beyond Ex 8 total 121', /total is 121/.test(beyondEx(8)));
+  const kBx8 = range(1, 50).find(k => sum(range(1, k).map(nthOdd)) === 121);
+  beyondExAns(8, [nthOdd(kBx8)]);
+  const qBx9 = beyondQSum(9);
+  ok('Beyond Ex 9 is the odd numbers 11 to 29', qBx9, oddsTo(29).filter(x => x >= 11));
+  ok('Beyond Ex 9 29 is the 15th and 9 the 5th odd number', [oddsTo(29).length, oddsTo(9).length], [15, 5]);
+  beyondExAns(9, [sum(qBx9)]);
 }
 // Type 4
 {
-  is('Beyond Ex 9 total 169', /total is 169/.test(beyondEx(9)));
-  const nBx9 = range(1, 50).find(n => sum(upDown(n)) === 169);
-  beyondExAns(9, [nBx9, upDown(nBx9).length]);
-  ok('Beyond Ex 9 up is 13 numbers, down is 12', [range(1, nBx9).length, range(1, nBx9 - 1).length], [13, 12]);
-  const qBx10 = beyondQSum(10);
-  ok('Beyond Ex 10 is up to 8 and down, with 8 twice', qBx10, [...range(1, 8), ...range(1, 8).reverse()]);
-  beyondExAns(10, [sum(qBx10)]);
-  ok('Beyond Ex 10 two triangles make 8 rows of 9', 2 * T(8), 8 * 9);
+  is('Beyond Ex 10 total 169', /total is 169/.test(beyondEx(10)));
+  const nBx10 = range(1, 50).find(n => sum(upDown(n)) === 169);
+  beyondExAns(10, [nBx10, upDown(nBx10).length]);
+  ok('Beyond Ex 10 up is 13 numbers, down is 12', [range(1, nBx10).length, range(1, nBx10 - 1).length], [13, 12]);
+  const qBx11 = beyondQSum(11);
+  ok('Beyond Ex 11 is up to 8 and down, with 8 twice', qBx11, [...range(1, 8), ...range(1, 8).reverse()]);
+  beyondExAns(11, [sum(qBx11)]);
+  ok('Beyond Ex 11 two triangles make 8 rows of 9', 2 * T(8), 8 * 9);
 }
 // Type 5
 {
-  const qBx11 = beyondQSum(11);
-  ok('Beyond Ex 11 is 1 to 20', qBx11, range(1, 20));
-  beyondExAns(11, [sum(qBx11), 20]);
-  ok('Beyond Ex 11 up-and-down to 20', sum(upDown(20)), 400);
+  const qBx12 = beyondQSum(12);
+  ok('Beyond Ex 12 is 1 to 20', qBx12, range(1, 20));
+  beyondExAns(12, [sum(qBx12), 20]);
+  ok('Beyond Ex 12 up-and-down to 20', sum(upDown(20)), 400);
   const pair = range(1, 30).find(k => T(k) + T(k + 1) === 81);
-  beyondExAns(12, [T(pair), T(pair + 1)]);
-  const qBx13 = beyondQSum(13);
-  ok('Beyond Ex 13 is the powers of 2 to 512', qBx13, SEQ['powers of 2'].slice(0, 10));
-  beyondExAns(13, [sum(qBx13)]);
+  beyondExAns(13, [T(pair), T(pair + 1)]);
+  const qBx14 = beyondQSum(14);
+  ok('Beyond Ex 14 is the powers of 2 to 512', qBx14, SEQ['powers of 2'].slice(0, 10));
+  beyondExAns(14, [sum(qBx14)]);
 }
 // Type 6
 {
-  is('Beyond Ex 14 fifteen matches', /15 matches are played/.test(beyondEx(14)));
-  beyondExAns(14, [range(2, 50).find(p => lines(p) === 15)]);
-  const rowBx14 = beyondEx(14).match(/Step 1<\/span>\s*<span>([^<]*)<\/span>/)[1];
-  const [pp, ll] = rowBx14.split('have').map(numsIn);
-  ok('Beyond Ex 14 points and their lines', ll, pp.map(lines));
-  is('Beyond Ex 15 sixty-four triangles', /made of 64 small triangles/.test(beyondEx(15)));
-  const nBx15 = range(1, 30).find(n => n * n === 64);
-  beyondExAns(15, [nBx15, T(nBx15)]);
-  ok('Beyond Ex 15 the ones pointing down', 64 - T(nBx15), T(nBx15 - 1));
-  beyondExAns(16, [koch(5)]);
-  is('Beyond Ex 16 starts at 3 and multiplies by 4', /has 3 straight lines/.test(beyondEx(16)) && /becomes 4 straight lines/.test(beyondEx(16)));
-  beyondExAns(17, [lines(6), lines(6) - 6]);
-  is('Beyond Ex 17: 15 is the 5th triangular number', /the 5th triangular number/.test(beyondEx(17)) && T(5) === lines(6));
-  ok('Beyond Ex 17 triangle, square, pentagon', [3, 4, 5].map(p => [lines(p), lines(p) - p]), [[3, 0], [6, 2], [10, 5]]);
-  const note = beyondEx(17).match(/Check the method[^<]*/)[0];
-  ok('Beyond Ex 17 note numbers', numsIn(note), [3, 3, 3, 4, lines(4), 4, lines(4) - 4, 5, lines(5), lines(5) - 5]);
+  const mBx15 = beyondEx(15).match(/a wire (\d+) cm long into a regular polygon\. Every side is (\d+) cm long/);
+  is('Beyond Ex 15 states the wire and the side', !!mBx15);
+  const [wire, side] = mBx15 ? [Number(mBx15[1]), Number(mBx15[2])] : [0, 1];
+  const NAMES = { 3: 'triangle', 4: 'quadrilateral', 5: 'pentagon', 6: 'hexagon', 7: 'heptagon', 8: 'octagon', 9: 'nonagon', 10: 'decagon' };
+  const k = wire / side;
+  is('Beyond Ex 15 the wire divides exactly', wire % side === 0 && wire % 6 === 0);
+  ok('Beyond Ex 15 step 1 sides', beyondStepNums(15, 1), [wire, side, k]);
+  is(`Beyond Ex 15 names the ${k}-sided polygon (${NAMES[k]})`, new RegExp(`with ${k} sides is an? ${NAMES[k]}`).test(beyondEx(15)) && beyondAnswerRow(15).includes(NAMES[k]));
+  is(`Beyond Ex 15 the why names ${NAMES[k]}'s prefix`, beyondEx(15).includes(`${NAMES[k].slice(0, 4)} means ${k}`));
+  ok('Beyond Ex 15 step 3 hexagon side', beyondStepNums(15, 3), [6, wire, 6, wire / 6]);
+  beyondExAns(15, [wire / 6]);
+  is('Beyond Ex 16 fifteen matches', /15 matches are played/.test(beyondEx(16)));
+  beyondExAns(16, [range(2, 50).find(p => lines(p) === 15)]);
+  const rowBx16 = beyondEx(16).match(/Step 1<\/span>\s*<span>([^<]*)<\/span>/)[1];
+  const [pp, ll] = rowBx16.split('have').map(numsIn);
+  ok('Beyond Ex 16 points and their lines', ll, pp.map(lines));
+  is('Beyond Ex 17 sixty-four triangles', /made of 64 small triangles/.test(beyondEx(17)));
+  const nBx17 = range(1, 30).find(n => n * n === 64);
+  beyondExAns(17, [nBx17, T(nBx17)]);
+  ok('Beyond Ex 17 the ones pointing down', 64 - T(nBx17), T(nBx17 - 1));
+  beyondExAns(18, [koch(5)]);
+  is('Beyond Ex 18 starts at 3 and multiplies by 4', /has 3 straight lines/.test(beyondEx(18)) && /becomes 4 straight lines/.test(beyondEx(18)));
+  beyondExAns(19, [lines(6), lines(6) - 6]);
+  is('Beyond Ex 19: 15 is the 5th triangular number', /the 5th triangular number/.test(beyondEx(19)) && T(5) === lines(6));
+  ok('Beyond Ex 19 triangle, square, pentagon', [3, 4, 5].map(p => [lines(p), lines(p) - p]), [[3, 0], [6, 2], [10, 5]]);
+  const note = beyondEx(19).match(/Check the method[^<]*/)[0];
+  ok('Beyond Ex 19 note numbers', numsIn(note), [3, 3, 3, 4, lines(4), 4, lines(4) - 4, 5, lines(5), lines(5) - 5]);
 }
 const tabs = (html) => [...html.matchAll(/c-example__tab">Example (\d+)/g)].map(m => Number(m[1]));
 ok('the body\'s example tabs', range(1, 1), tabs(BODY));
-ok('Beyond\'s example tabs, numbered from 1 as Class 7 does', range(1, 17), tabs(BEYOND));
+ok('Beyond\'s example tabs, numbered from 1 as Class 7 does', range(1, 19), tabs(BEYOND));
 ok('six Type heads in order', [...BEYOND.matchAll(/<h3>Type (\d+) &middot;/g)].map(m => Number(m[1])), range(1, 6));
 
 /* ---- B7. the practice answers, part by part ---------------------- */
@@ -880,7 +909,7 @@ inAns('A Beyond intro', `numbered from 1 as Beyond numbers them (Beyond Examples
   // stage 2 in the booklet, by Beyond's own numbers, against each example's Answer row
   const stage2 = ANSWERS.slice(ANSWERS.indexOf('### Stage 2 · Solved Examples'), ANSWERS.indexOf('### Stage 3'));
   const items = [...stage2.matchAll(/^- Beyond Ex (\d+)\. (.*)$/gm)];
-  ok('ANSWERS.md stage 2 lists Beyond Ex 1 to 17', tabs(BEYOND), items.map(m => Number(m[1])));
+  ok('ANSWERS.md stage 2 lists Beyond Ex 1 to 19', tabs(BEYOND), items.map(m => Number(m[1])));
   for (const [, n, text] of items) {
     const a = numsIn(text.replace(/\*\*/g, '')), p = numsIn(beyondAnswerRow(Number(n)));
     is(`ANSWERS.md Beyond Ex ${n} (${a.join(', ')}) matches the page (${p.join(', ')})`,

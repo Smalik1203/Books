@@ -211,7 +211,7 @@ const answerRow = (ex) => { const m = ex.match(/work__label">Answer<\/span>\s*<s
 }
 {
   const E = exampleBodies(beyond);
-  ok('Beyond examples numbered from 1', Object.keys(E), [...Array(15)].map((_, i) => String(i + 1)));
+  ok('Beyond examples numbered from 1', Object.keys(E), [...Array(17)].map((_, i) => String(i + 1)));
   const sq = (2 * (15 + 6) / 4) ** 2;
   says('Ex 1', answerRow(E[1]), fmt(sq - 15 * 6));
   is('Ex 1: the square is larger', /square/.test(answerRow(E[1])) && sq > 90);
@@ -234,6 +234,10 @@ const answerRow = (ex) => { const m = ex.match(/work__label">Answer<\/span>\s*<s
   says('Ex 15', answerRow(E[15]), 6 * 2 * 2);
   ok('Ex 15: the length factor alone', 6 * 2, after(T(E[15]), /alone gives \$(\d+)\$/));
   ok('Ex 14: in centimetres from the start', 300 * 250, 3 * 2.5 * 10000);
+  { const in2 = 72 * 48, ft2 = in2 / (12 * 12), cm2 = in2 * 2.54 ** 2;
+    ok('Ex 16: in2, ft2, cm2', [in2, ft2, (72 / 12) * (48 / 12), fmt(cm2, 4)], [3456, 24, 24, '22296.7296']);
+    says('Ex 16', answerRow(E[16]), in2, ft2, Math.round(cm2)); }
+  { const ft2 = 330 * 264; ok('Ex 17: two acres', [ft2, ft2 / 43560], [87120, 2]); says('Ex 17', answerRow(E[17]), ft2 / 43560); }
   ok('Ex 2: one tile', fmt(0.3 * 0.3), '0.09');
 }
 
@@ -241,6 +245,12 @@ const answerRow = (ex) => { const m = ex.match(/work__label">Answer<\/span>\s*<s
 {
   const t = T(beyond);
   is('Q2: 17 is the rhombus side, 16 the diagonal', Math.hypot(15, 16 / 2) === 17 && 2 * 240 / 30 === 16);
+  { // Q3: the apex slid along the parallel; the height becomes the side PQ
+    const h = 2 * 96 / 16, pr = Math.hypot(16, h);
+    ok('Q3: height, PQ and PR', [h, pr], [12, 20]);
+    says('Q3 prints the height', t.match(/\\tfrac12 \\times 16 \\times h = 96\$, so \$h = (\d+)\$/)?.[0] || '', h);
+    says('Q3 prints PQ', t.match(/PQ = h = (\d+)\$/)?.[0] || '', h);
+    says('Q3 prints PR', t.match(/\\sqrt\{16\^2 \+ 12\^2\} = \\sqrt\{400\} = (\d+)\$/)?.[0] || '', pr); }
   ok('Q5: both hold 144', [12 * 12, 16 * 9], [after(t, /Both hold \$(\d+)\$/), 144]);
   ok('Q5: 2 cm more', 2 * (16 + 9) - 4 * 12, after(t, /needs \$(\d+)\$ cm more edge/));
   ok('Q5: 36 by 4', [36 * 4, 2 * (36 + 4)], [144, after(t, /climbs to \$(\d+)\$ cm/)]);
@@ -420,7 +430,7 @@ says('7.3 Q7', mdItem(S3, 7), fmt(0.9144 ** 2, 8));
 { const t = T(md.slice(md.indexOf('### Think and Reflect'), md.indexOf('## 7.10')));
   says('Think and Reflect instance', t, 0.5 * 8 * 4, 8 / 2 * 4 / 4, Math.sqrt(16)); }
 { const t = T(md.slice(md.indexOf('### Stage 1'), md.indexOf('### Stage 2')));
-  says('Stage 1 summary', t, 2 * 240 / 30, Math.hypot(15, 8), fmt(240 / 17, 1), 0.5 * 24 * 20, 2 * (16 + 9) - 48, fmt(240 / 13, 1), 9 * 12); }
+  says('Stage 1 summary', t, 2 * 240 / 30, Math.hypot(15, 8), fmt(240 / 17, 1), 2 * 96 / 16, Math.hypot(16, 2 * 96 / 16), 0.5 * 24 * 20, 2 * (16 + 9) - 48, fmt(240 / 13, 1), 9 * 12); }
 let solved = 0;
 // an equation in one letter, then "so $h = N$": N must satisfy it
 for (const [f, src] of [...pages.map(f => [f, html[f]]), ['ANSWERS.md', md]]) {

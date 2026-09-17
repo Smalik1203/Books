@@ -356,8 +356,8 @@ $(-27) + 15 = -12$, $(-8) + (-14) = -22$ and $12 - (-8) = 20$.
 ## Beyond the Book
 
 Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets seventeen examples as steps
-(numbered 1 to 17 afresh, as Class 7 does — they are not the body's
+question in running text, stage 2 sets eighteen examples as steps
+(numbered 1 to 18 afresh, as Class 7 does — they are not the body's
 Examples 1 to 5), and stage 4 prints the key to stage 3. Repeated here so
 the booklet is complete.
 
@@ -385,11 +385,12 @@ Beyond the Book's own numbering; each answer is the one on its *Answer* row.
 10. ₹75 at the end; below zero after each of the two debits.
 11. 9 °C
 12. 730 m
-13. Top middle $-2$, left middle 2.
-14. 3
-15. The 10th number is 34.
-16. $-10$
-17. $-6$, the 9th number.
+13. 74 years
+14. Top middle $-2$, left middle 2.
+15. 3
+16. The 10th number is 34.
+17. $-10$
+18. $-6$, the 9th number.
 
 ### Stage 3 · Practice
 

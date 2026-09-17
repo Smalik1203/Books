@@ -282,7 +282,8 @@ Key, as the key prints it: 1 (c) 2 (b) 3 (c) 4 (a) 5 (a) 6 (d) 7 (a) 8 (b) 9 (c)
 23. $\dfrac{6x + 18}{3} - 2x = 2x + 6 - 2x = 6$. Add $30$ in place of $18$:
     $\dfrac{6x + 30}{3} - 2x = 10$.
 24. $6x + 6 = 48$, $x = 7$: bottom $7, 14, 13$; middle $21, 27$; top $48$.
-25. $b - a = 3$ and $a + b = 11$: the number is $47$, and $74 - 47 = 27$.
+25. $9(b - a) = 27$, so $b - a = 3$; putting in $b = 11 - a$ gives
+    $11 - 2a = 3$, so $a = 4$, $b = 7$: the number is $47$, and $74 - 47 = 27$.
 26. Backwards from ₹$6$: $6 + 10 = 16$, doubled $32$; $32 + 10 = 42$,
     doubled $84$. She started with ₹$84$.
 27. Centre $117 \div 9 = 13$; dates $5, 6, 7$; $12, 13, 14$; $19, 20, 21$,

@@ -371,7 +371,7 @@ $\frac{1}{3}$.
 ## Beyond the Book
 
 Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets Examples 1 to 17 as steps, and
+question in running text, stage 2 sets Examples 1 to 19 as steps, and
 stage 4 prints the key to stage 3. Repeated here so the booklet is
 complete.
 
@@ -383,9 +383,9 @@ complete.
 2. A sum is more than either part, so it must be more than $\frac{1}{3}$,
    but $\frac{6}{21} < \frac{7}{21}$ shows that $\frac{2}{7}$ is less.
    The sum is $\frac{3}{12} + \frac{4}{12} = \frac{7}{12}$.
-3. **14 pieces**, since $3\frac{1}{2} = \frac{14}{4}$.
+3. **14 quarters**, since $3\frac{1}{2} = \frac{14}{4}$, or 28 eighths, since $3\frac{1}{2} = \frac{28}{8}$.
 4. $\frac{5}{12}$, since $\frac{1}{3} = \frac{4}{12}$ and $\frac{1}{2} = \frac{6}{12}$.
-5. Sunil eats $\frac{1}{5}$ of the cake, and $\frac{3}{5} - \frac{1}{5} = \frac{2}{5}$ is left.
+5. **No.** They eat $\frac{8}{20} + \frac{5}{20} = \frac{13}{20}$, so $\frac{7}{20}$ is left, which is less than a half, $\frac{10}{20}$.
 
 ### Stage 2 · Solved Examples
 
@@ -394,22 +394,24 @@ does; the body's are Examples 1 to 8. The answers below are Beyond's
 own, worked in full on its pages.
 
 1. $\frac{1}{10} < \frac{1}{7} < \frac{1}{5} < \frac{1}{3}$
-2. The bar is $\frac{7}{4}$ units long, which is longer than 1 unit.
-3. $\frac{23}{6} = 3\frac{5}{6}$
-4. $5\frac{2}{7} = \frac{37}{7}$
-5. The boxes hold 12 and 35.
-6. $\frac{108}{144} = \frac{3}{4}$
-7. $\frac{27}{64}$ is the one in lowest terms.
-8. $\frac{5}{12} < \frac{4}{9}$
-9. $\frac{7}{15}$ is less than $\frac{1}{2}$, by $\frac{1}{30}$.
-10. $\frac{3}{5} < \frac{5}{8} < \frac{2}{3}$
-11. $\frac{7}{12}$
-12. $4\frac{1}{6}$ km
-13. $\frac{5}{6}$ litre
-14. $\frac{5}{8}$
-15. $1\frac{5}{12}$
-16. $\frac{5}{6} = \frac{1}{2} + \frac{1}{3}$
-17. $1\frac{7}{12}$ cm
+2. One row is $\frac{1}{5}$, three rows are $\frac{3}{5}$, and 15 squares are $\frac{1}{2}$ of the bar.
+3. The bar is $\frac{7}{4}$ units long, which is longer than 1 unit.
+4. $\frac{23}{6} = 3\frac{5}{6}$
+5. $5\frac{2}{7} = \frac{37}{7}$
+6. The boxes hold 12 and 35.
+7. Each child gets $\frac{4}{5}$ roti in one group and $\frac{8}{10}$ roti in the other. The shares are equal, so $\frac{4}{5} = \frac{8}{10}$.
+8. $\frac{108}{144} = \frac{3}{4}$
+9. $\frac{27}{64}$ is the one in lowest terms.
+10. $\frac{5}{12} < \frac{4}{9}$
+11. $\frac{7}{15}$ is less than $\frac{1}{2}$, by $\frac{1}{30}$.
+12. $\frac{3}{5} < \frac{5}{8} < \frac{2}{3}$
+13. $\frac{7}{12}$
+14. $4\frac{1}{6}$ km
+15. $\frac{5}{6}$ litre
+16. $\frac{5}{8}$
+17. $1\frac{5}{12}$
+18. $\frac{5}{6} = \frac{1}{2} + \frac{1}{3}$
+19. $1\frac{7}{12}$ cm
 
 ### Stage 3 · Practice
 
@@ -429,8 +431,10 @@ own, worked in full on its pages.
     $\frac{5}{6} - \frac{7}{12} = \frac{3}{12} = \frac{1}{4}$.
 24. Read $\frac{1}{3} + \frac{2}{5} = \frac{11}{15}$. Still to be read
     $1 - \frac{11}{15} = \frac{4}{15}$.
-25. $\frac{24}{40}$. It is $\frac{3}{5}$ with both numbers multiplied by
-    the same number, and $3 + 5 = 8$ parts make 64, so that number is 8.
+25. $\frac{24}{40}$. In the list $\frac{3}{5}$, $\frac{6}{10}$, $\frac{9}{15}$, ...
+    the numerator and denominator add up to 8, 16, 24, ..., going up by 8
+    each time. $64 = 8 \times 8$, so it is the eighth fraction in the list:
+    both numbers of $\frac{3}{5}$ multiplied by the same number, and that number is 8.
 26. **Less, by $\frac{1}{5}$.** $\frac{1}{2} + \frac{1}{5} + \frac{1}{10} = \frac{4}{5}$.
 27. (a) $\frac{3}{4} - \frac{1}{3} = \frac{5}{12}$ (b) $\frac{5}{12} + \frac{5}{12} = \frac{5}{6}$ (c) $1 - \frac{5}{6} = \frac{1}{6}$
 28. (a) $\frac{1}{4} < \frac{1}{3}$: she is right for this pair. (b) $\frac{3}{4} > \frac{1}{2}$: she is wrong, since the bigger denominator belongs to the bigger fraction. (c) She is always right when the two fractions have the same numerator.

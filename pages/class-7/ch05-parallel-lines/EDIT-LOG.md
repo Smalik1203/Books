@@ -1,5 +1,34 @@
 # Class 7 · Mathematics I · Chapter 5 — Parallel and Crossing Lines
 
+## Syllabus audit fixes, 17 September 2026
+
+Beyond the Book checked against what the chapter body teaches. The chapter
+has no `ANSWERS.md` or `check-numbers.mjs`; nothing in this pass changes a
+value, and the new example's angles were checked by hand.
+
+- **Stage 1, second try (where non-parallel lines meet).** The body only
+  says interior angles of parallel lines add up to $180^\circ$; it never
+  says on which side lines that are not parallel meet. The explanation now
+  ends at "So the lines are not parallel." The two sentences after it are
+  gone; the rest of Stage 1 is word for word.
+- **Gap, §5.7 drawing parallel lines.** New Example 10, under Type 3, with
+  a new Fig. 5.35: draw $m$ parallel to $l$ with a ruler and set square, so
+  that the perpendicular $t$ at X meets $m$ 3 cm from X, and say why $m$ is
+  parallel (both corresponding angles on $t$ are $90^\circ$ — the right-angle
+  marks are drawn in the same corner at X and at Y). Not the audit's
+  "through a point" version, which is body Exercise Set 5.3 Q1 word for
+  word in substance. The figure copies the chapter's existing line, arrow,
+  point and label classes.
+- Examples 10–13 renumbered 11–14. The old Fig. 5.35 is now Fig. 5.36, and
+  its caption and question now read *Example 14* and *Fig. 5.36*. Fourteen
+  examples now (thirteen before).
+
+Beyond refitted with `refit.mjs … bridge` (10 pages in, 11 out). Pages
+27 → 28. All pages fit, 0 stranded openers, option rows fit, no labels
+collide, `check-no-repeats` finds nothing, `check-colour` on page 22 reads
+normally. Short Beyond pages, logged not padded: 22 (74%, Example 12 would
+not fit), 23 (68%, Example 14 and its figure would not fit).
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's four worked examples were prose paragraphs with the working

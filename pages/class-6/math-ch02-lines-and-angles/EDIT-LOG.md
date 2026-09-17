@@ -1,5 +1,65 @@
 # Class 6 · Mathematics I · Chapter 2 — Lines and Angles
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book syllabus audit made three findings about this chapter. All three were checked against the pages and fixed. The body was not touched.
+
+**Pages: 43 before (32 body + 11 Beyond), 44 after (32 body + 12 Beyond).**
+
+**Finding 1 (borderline).** The body never teaches compass directions (N, NE, SW …) or the words *clockwise* and *anticlockwise*. The audit was right: the body turns book covers, doors and clock hands, and uses neither.
+
+Five items leaned on them. Each was recast as a turn of a clock hand. The direction is said as *the way a clock's hands move* or *the opposite way*, and the positions are 12, 3, 6, 9 or *halfway between* two of them. No position needs *each number is 30°*, which is Exercise Set 2.8 Q1's answer and was the reason the 5 o'clock item left Stage 1 on 16 September.
+
+| item | before | after |
+|---|---|---|
+| Stage 1 Q1 | Ravi faces north and turns clockwise to south-west: 225° | a clock hand turns from 12 to halfway between 6 and 9: $90 + 90 + 45 = 225$° |
+| Stage 1 Q5 | Kiran turns clockwise from north-east to north: 315°, or 45° the short way | a clock hand turns from halfway between 12 and 3 to 12: $45 + 270 = 315$°, or 45° the short way |
+| Beyond Ex 4 (now Ex 5) | Asha turns clockwise from east through three right angles and faces north | a clock hand turns from 6 through three right angles and points to 3 |
+| Practice Q7 | turn from east, anticlockwise, 270°; options north, west, east, south; key (d) south | turn from 12, the opposite way, 270°; options 9, 6, 12, 3; key (d) 3 |
+| Practice Q29 | a robot facing north, with R and L as 90° clockwise and anticlockwise and H as 45° clockwise | a robot at the centre of a clock face painted on the floor. It faces the 12, with the same three commands in clock words. New answers: (a) the 6, (b) halfway between 3 and 6, (c) halfway between 9 and 12, (d) L; R, R, R; or six Hs |
+
+Stage 1 is otherwise word for word. Only these two tries and their explanations changed.
+
+**Finding 2 (gap).** Type 3 compared angles only by their measures, and never by tracing one angle and laying it on the other (§2.6). **New Ex 4** fills this. Ria traces ∠X and lays it on ∠Y and on ∠Z. On ∠Y the free arm falls outside, and on ∠Z it lies along the other arm. So ∠Y is the smallest, and ∠X and ∠Z are equal. Nothing is measured. The example does not repeat the body's own Fig. 2.16 or 2.17 case.
+
+**Finding 3 (gap).** No example worked clock angles (Exercise Set 2.8).
+
+- **New Ex 11** (Type 6, *Equal parts of a turn*) fills this. The minute hand turns between 4:05 and 4:40: one minute is $360 \div 60 = 6$°, and 35 minutes is 210°, a reflex angle.
+- It is a turn of the minute hand, not the angle between the hands at an hour. Any worked example of the hands at an hour would print or imply *30° from one number to the next*, which gives away Exercise Set 2.8 Q1 and Q2 (the reason the earlier session took the 5 o'clock item out).
+- The first draft's check line said *5 minutes more add 30°*. That line was removed for the same reason.
+- **Coordinator:** if the user wants the hands at an hour worked in Beyond anyway, that decision overrides the rule that Beyond gives away no body answer.
+
+**Renumbering.** Beyond now has **16 examples**, where it had 14. Old Ex 4–9 are now 5–10, and old Ex 10–14 are now 12–16. Fig. 2.64's caption now reads *For Example 13*. `ANSWERS.md` was updated in these places:
+
+- Stage 1
+- the Stage 2 list
+- the MCQ 7 working
+- Q29
+
+In `check-numbers.mjs`:
+
+- The compass model was replaced by a clock-face model (`posOf`/`posName`). It covers Stage 1, Ex 5, MCQ 7 and Q29, whose command lists are simulated.
+- There are new checks on Ex 4's logic and Ex 11's minutes, steps and type.
+- Three checks confirm that no compass word or *clockwise* is left in Beyond or in its part of `ANSWERS.md`.
+- One check confirms that Ex 11 prints no 30°.
+
+The script passes 530 checks and reports all clear. 20 values were broken on purpose in a scratch copy, and all 20 were caught. The three that were first aimed at p111 were rerun on p112 after the refit.
+
+**Refit.** `refit … bridge` was run once and gave 12 pages. Answers opens p112.
+
+- p108 (page 40) holds Ex 15–16 and is 63% full. Practice is kept whole, so it starts on p109.
+- p102 (page 34) is 75% full, and p107 (page 39) is 78%. Each is held open by a following example panel, and on p102 the next panel carries a figure.
+
+**Checks.**
+
+- The build fits all 44 pages.
+- orphans: 0.
+- fit-options: clean.
+- check-labels: clean.
+- check-no-repeats: nothing close.
+- `data-bridge` is on p101–p112.
+- No new figures.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model chapter
@@ -62,7 +122,7 @@ with the classes the body's figures use (`dg-line`, `dg-thin`, `dg-dim`,
 arrowhead path), generated from exact angles:
 
 - **Fig. 2.63** — triangle $ABC$ with $D$ on $BC$ and $AD$ joined; inside Beyond Example 2's panel.
-- **Fig. 2.64** — line $AB$ through $O$, rays $OC$, $OD$, printed 35° and 55°; inside Beyond Example 11's panel.
+- **Fig. 2.64** — line $AB$ through $O$, rays $OC$, $OD$, printed 35° and 55°; inside Beyond Example 11’s panel (Example 13 since 17 September).
 - **Fig. 2.65** — line $AB$ through $O$, rays $OP$, $OQ$, $OR$, printed 30°, 45°, 60°; placed straight after practice Q27, same page.
 
 **Practice forms:**

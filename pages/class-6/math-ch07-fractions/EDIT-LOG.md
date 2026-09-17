@@ -1,5 +1,47 @@
 # Class 6 · Mathematics I · Chapter 7 — Fractions
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book audit made five findings here. I confirmed all five against the pages and fixed all five. The chapter body was not touched.
+
+| finding | what I did |
+|---|---|
+| Stage 1 Q3 (borderline): cutting 3½ m into ¼ m pieces is division by a fraction | Replaced it with a try of the same kind: *Write 3½ as a number of quarters, then as a number of eighths.* The explanation counts wholes as 4 quarters (14/4), then each quarter as 2 eighths (28/8). The amount stays the same; only the unit changes. The body shows ½ = 2/4 = 4/8 on the strips, but it never writes 3½ in quarters or eighths (Exercise 7.7 uses other numbers). |
+| Stage 1 Q5 (borderline): "one third of what is left" takes a fraction of a fraction | Replaced it, as the audit suggested, with fractions of the whole cake. Priya eats 2/5 and Sunil eats 1/4: is more than half left? In twentieths they eat 8 + 5 = 13, so 7/20 is left, which is less than 10/20. The closing paragraph's list of units now reads *quarters and eighths, twelfths or twentieths*. The other three tries are unchanged, word for word. |
+| Practice Q25 (borderline): numerator + denominator = 64 was solved by ratio ("3 parts and 5 parts") | Reworked to the body's own method (Exercise 7.8, *write as many fractions as you can equivalent to…*). The question now says *List fractions equivalent to 3/5 to find it*. The answer lists 3/5, 6/10, 9/15, … whose sums are 8, 16, 24, …; since 64 = 8 × 8, it is the eighth fraction, 24/40. |
+| gap: naming a piece as a part of the whole (§7.2) | **New Example 2** under Type 1, now headed *Fractional units, parts of a whole and the number line*. A 30-square chocolate bar has 5 rows of 6 squares. One row is 1/5, three rows are 3/5 and 15 squares are 1/2, each found by asking how many pieces of that size make the whole. A square count checks the result. It uses a different whole from Fig. 7.4, so Exercise 7.2 stays unanswered. |
+| gap: a fraction as an equal share (§7.6) | **New Example 7** under Type 3. 4 rotis are shared by 5 children and 8 rotis by 10. Each share is 4 × 1/5 = 4/5 (so 4 ÷ 5 = 4/5) or 8 × 1/10 = 8/10. The second group is two copies of the first, so 4/5 = 8/10. The numbers avoid Exercise 7.9 (3 among 4, 2 among 4, 2 among 5) and the Think and Reflect after Fig. 7.13 (2 among 3, 4 among 6, 6 among 9). |
+
+**Renumbering.** Old Example 1 keeps its number. Old Examples 2–5 are now 3–6, and old Examples 6–17 are now 8–19. `ANSWERS.md` (the Stage 1 items, the Stage 2 list, *Examples 1 to 19*) and `check-numbers.mjs` were updated to match. No page text cited a Beyond example number.
+
+**Fitting.** The refit first gave 14 pages. Q31 stood alone before Answers, as it already had on the old p111, and Answers ran over two pages because Q25's answer row had grown. Four trims fixed this:
+- Q29's parts are now in three columns (*Write each as a fraction / Find their sum / Find their difference*), and *as a mixed number* moved into the stem.
+- Q28's pairs now sit in three columns, and (c) became *When must it work?* Its key is unchanged: pairs with the same numerator.
+- The answer rows for Q20, Q25 and Q28 each lost a line. Q20 now reads *…but 15 and 27 share 3*.
+
+After these trims, Q27–Q31 share p111, and Answers is back on one page.
+- p108 (Examples 18–19) is 59% full. The page is held open because `keepExerciseSets` starts Practice on a fresh page, so I logged it and did not pad it.
+- p112 runs 1.3 mm into the margin, which is within §5a's 3 mm.
+
+**Pages: 32 before (20 body + 12 Beyond), 32 after (20 + 12).** Solved
+Examples: 19 in Beyond (was 17).
+
+**Checks.**
+- `check-numbers.mjs` passes.
+- New checks cover:
+  - both new tries, including the printed working of the cake try;
+  - Example 2: rows × columns, each answer, each step, and the square count;
+  - Example 7: both groups, the doubling, each step, and the equal-share answer;
+  - Q25's list, sums and multiplier, and that the question asks for the listing method;
+  - `ANSWERS.md` for each of these.
+- 17 deliberate breaks in a scratch copy were all caught. They are in `cases07.py` in the scratch folder.
+- `build.mjs --png`: all pages fit.
+- `orphans`: 0.
+- `fit-options`: clean, with or without `--fix`.
+- `check-labels`: clean.
+- `check-no-repeats`: only the three existing *lowest terms* wording pairs remain.
+- `data-bridge` is on every p1xx.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, on the model of Chapter 5

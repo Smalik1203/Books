@@ -853,16 +853,17 @@ function examples(html) {
 const EXB = examples(BODY);
 const EX = examples(BEYOND);
 ok('body example tabs read 1 to 4', Object.keys(EXB).map(Number), range(1, 4));
-ok('Beyond example tabs read 1 to 15, starting again as Class 7 does', Object.keys(EX).map(Number), range(1, 15));
+ok('Beyond example tabs read 1 to 19, starting again as Class 7 does', Object.keys(EX).map(Number), range(1, 19));
 ok('body tabs, in page order', [...BODY.matchAll(/c-example__tab">Example (\d+)</g)].map(m => +m[1]), range(1, 4));
-ok('Beyond tabs, in page order', [...BEYOND.matchAll(/c-example__tab">Example (\d+)</g)].map(m => +m[1]), range(1, 15));
+ok('Beyond tabs, in page order', [...BEYOND.matchAll(/c-example__tab">Example (\d+)</g)].map(m => +m[1]), range(1, 19));
 /* every check below reads an example by its number, so a wrong tab would
    send them to the wrong example: stop here and say so */
-if (!same(Object.keys(EXB).map(Number), range(1, 4)) || !same(Object.keys(EX).map(Number), range(1, 15))) {
+if (!same(Object.keys(EXB).map(Number), range(1, 4)) || !same(Object.keys(EX).map(Number), range(1, 19))) {
   console.log(`\n  STOPPED: the example tabs are misnumbered, so the per-example checks cannot run.`);
   for (const f of fails) console.log(`    ! ${f}`);
   process.exit(1);
 }
+ok('Beyond: eleven Type heads, in order', [...BEYOND.matchAll(/<h3>Type (\d+) &middot;/g)].map(m => +m[1]), range(1, 11));
 is('every body and Beyond example has an Answer row', [...Object.values(EXB), ...Object.values(EX)].every(e => e.answer !== null));
 {
   // 5: the heights
@@ -903,45 +904,117 @@ is('every body and Beyond example has an Answer row', [...Object.values(EXB), ..
   is('Beyond Ex 5: fourteen of them', works.length === 14 && /fourteen/.test(EX[5].answer));
   // 10: four different digits adding up to 30
   const d30 = range(1000, 9999).filter(n => new Set(String(n)).size === 4 && dsum(n) === 30);
-  ok('Beyond Ex 6: the smallest', d30[0], nums(EX[6].answer)[0]);
-  is('Beyond Ex 6: every such number uses 6, 7, 8 and 9', d30.every(n => [...String(n)].sort().join('') === '6789'));
+  ok('Beyond Ex 7: the smallest', d30[0], nums(EX[7].answer)[0]);
+  is('Beyond Ex 7: every such number uses 6, 7, 8 and 9', d30.every(n => [...String(n)].sort().join('') === '6789'));
   // 11: digits from 1 to 100
-  ok('Beyond Ex 7: digits written from 1 to 100', range(1, 100).map(String).join('').length, nums(EX[7].answer).at(-1));
-  ok('Beyond Ex 7: 10 to 99 is how many numbers', range(10, 99).length, 90);
+  ok('Beyond Ex 8: digits written from 1 to 100', range(1, 100).map(String).join('').length, nums(EX[8].answer).at(-1));
+  ok('Beyond Ex 8: 10 to 99 is how many numbers', range(10, 99).length, 90);
   // 12: reverse and add from 87
   const r87 = reverseAdd(87);
-  ok('Beyond Ex 8: the rows', EX[8].rows.filter(r => r[0].startsWith('Step')).map(r => nums(r[1])), r87.chain);
-  ok('Beyond Ex 8: steps and the palindrome', nums(EX[8].answer), [r87.steps, Number(r87.end)]);
+  ok('Beyond Ex 9: the rows', EX[9].rows.filter(r => r[0].startsWith('Step')).map(r => nums(r[1])), r87.chain);
+  ok('Beyond Ex 9: steps and the palindrome', nums(EX[9].answer), [r87.steps, Number(r87.end)]);
   // 13: the 4-digit palindrome
   const p13 = range(1000, 9999).filter(n => isPal(n) && dsum(n) === 18 && Math.floor(n / 1000) === 2 * Math.floor(n / 100 % 10));
-  ok('Beyond Ex 9: the only number', p13, [nums(EX[9].answer)[0]]);
+  ok('Beyond Ex 10: the only number', p13, [nums(EX[10].answer)[0]]);
   // 14: Kaprekar from 1000
   const k1000 = kapChain(1000);
-  ok('Beyond Ex 10: the rounds', EX[10].rows.filter(r => r[0].startsWith('Step')).map(r => nums(r[1])), k1000.rows);
-  ok('Beyond Ex 10: how many', nums(EX[10].answer)[0], k1000.rounds);
-  ok('Beyond Ex 10: 999 read as a 3-digit number', kapStep(999, 3)[2], 0);
+  ok('Beyond Ex 11: the rounds', EX[11].rows.filter(r => r[0].startsWith('Step')).map(r => nums(r[1])), k1000.rows);
+  ok('Beyond Ex 11: how many', nums(EX[11].answer)[0], k1000.rounds);
+  ok('Beyond Ex 11: 999 read as a 3-digit number', kapStep(999, 3)[2], 0);
   // 15: 26,900 from 10,000, 2,500 and 600
-  const allowed15 = nums(EX[11].q.match(/Use ([\d, and]+), as many/)[1]);
-  const ans15 = EX[11].answer.match(/\$([^$]+)\$/)[1].split('{,}').join('');
+  const allowed15 = nums(EX[14].q.match(/Use ([\d, and]+), as many/)[1]);
+  const ans15 = EX[14].answer.match(/\$([^$]+)\$/)[1].split('{,}').join('');
   const [lhs15, rhs15] = ans15.split('=');
-  is('Beyond Ex 11: only the three numbers are used', rhs15.match(/\d+/g).map(Number).every(v => allowed15.includes(v)));
-  ok('Beyond Ex 11: it makes the number asked for', toN(lhs15), nums(EX[11].q.match(/to make ([\d,]+)\./)[1])[0]);
+  is('Beyond Ex 14: only the three numbers are used', rhs15.match(/\d+/g).map(Number).every(v => allowed15.includes(v)));
+  ok('Beyond Ex 14: it makes the number asked for', toN(lhs15), nums(EX[14].q.match(/to make ([\d,]+)\./)[1])[0]);
   // 16: the square pattern
   const sq = Array.from({ length: 5 }, (_, r) => Array.from({ length: 5 }, (_, c) => (r === 2 && c === 2 ? 80 : 30)));
-  ok('Beyond Ex 12: the total', sq.flat().reduce((a, b) => a + b), nums(EX[12].answer).at(-1));
+  ok('Beyond Ex 16: the total', sq.flat().reduce((a, b) => a + b), nums(EX[16].answer).at(-1));
   // 17: Collatz from 24 and 48
-  ok('Beyond Ex 13: sequence (a) takes', steps(12), nums(EX[13].rows[1][1].match(/takes (\d+) steps/)[1])[0]);
-  ok('Beyond Ex 13: steps from 24 and from 48', [steps(24), 24, steps(48), 48], nums(EX[13].answer));
+  ok('Beyond Ex 17: sequence (a) takes', steps(12), nums(EX[17].rows[1][1].match(/takes (\d+) steps/)[1])[0]);
+  ok('Beyond Ex 17: steps from 24 and from 48', [steps(24), 24, steps(48), 48], nums(EX[17].answer));
   ok('p014: sequence (a) starts at 12', nums(BODY.match(/<p>\(a\) \$([^$]+)\$/)[1].split(B + ' ').join(' '))[0], 12);
   // 18: the train
-  is('Beyond Ex 14: the estimate is above the exact number, because 18 was taken as 20', 20 * 70 > 18 * 72 && 20 > 18 && 70 < 72);
-  ok('Beyond Ex 14: 18 is close to 20 and 72 to 70', [Math.round(18 / 10) * 10, Math.round(72 / 10) * 10], [20, 70]);
+  is('Beyond Ex 18: the estimate is above the exact number, because 18 was taken as 20', 20 * 70 > 18 * 72 && 20 > 18 && 70 < 72);
+  ok('Beyond Ex 18: 18 is close to 20 and 72 to 70', [Math.round(18 / 10) * 10, Math.round(72 / 10) * 10], [20, 70]);
   // 19: the game to 40
-  const q19 = nums(EX[15].q);
+  const q19 = nums(EX[19].q);
   const [maxAdd, target] = [Math.max(...q19.slice(1, 6)), q19.at(-1)];
-  ok('Beyond Ex 15: the winning numbers', winning(target, maxAdd), nums(EX[15].answer));
-  ok('Beyond Ex 15: counting back in 6s', nums(text(EX[15].rows[1][1])).slice(2), winning(target, maxAdd).slice(0, -1).reverse());
-  is('Beyond Ex 15: the first player can say the first of them', winning(target, maxAdd)[0] <= maxAdd && /first player/.test(EX[15].answer));
+  ok('Beyond Ex 19: the winning numbers', winning(target, maxAdd), nums(EX[19].answer));
+  ok('Beyond Ex 19: counting back in 6s', nums(text(EX[19].rows[1][1])).slice(2), winning(target, maxAdd).slice(0, -1).reverse());
+  is('Beyond Ex 19: the first player can say the first of them', winning(target, maxAdd)[0] <= maxAdd && /first player/.test(EX[19].answer));
+  // Beyond Ex 6: ten equally spaced marks, two of them labelled
+  {
+    const m = EX[6].q.match(/has (\w+) marks, spaced equally\. The (\d+)(?:st|nd|rd|th) mark is labelled ([\d,]+) and the (\d+)(?:st|nd|rd|th) mark is labelled ([\d,]+)\. What numbers go at the (\d+)(?:st|nd|rd|th) mark and at the (\d+)(?:st|nd|rd|th) mark/);
+    is('Beyond Ex 6: the question reads as expected', !!m && m[1] === 'ten');
+    if (m) {
+      const [i, a, j, b, p, q] = [+m[2], toN(m[3]), +m[4], toN(m[5]), +m[6], +m[7]];
+      const gap = (b - a) / (j - i);
+      is('Beyond Ex 6: the gap is a whole number', Number.isInteger(gap));
+      const at = (k) => a + (k - i) * gap;
+      ok('Beyond Ex 6: step 1, the gaps', nums(text(EX[6].rows[0][1])), [i, j, j, i, j - i]);
+      ok('Beyond Ex 6: step 2, the gap', nums(text(EX[6].rows[1][1])), [b, a, b - a, b - a, j - i, gap]);
+      ok('Beyond Ex 6: step 3, the first mark', nums(text(EX[6].rows[2][1])), [p, i, a, gap, gap, at(p)]);
+      ok('Beyond Ex 6: step 4, the last mark', nums(text(EX[6].rows[3][1])), [q, j, b, gap, gap, gap, at(q)]);
+      is('Beyond Ex 6: the gaps before and after', i - p === 2 && q - j === 3);
+      ok('Beyond Ex 6: the answer', nums(EX[6].answer), [at(p), p, at(q), q]);
+      is('Beyond Ex 6: the marks asked for are on the line', p >= 1 && q <= 10);
+      is('Beyond Ex 6 is not a Fig. 3.9 line or practice Q9', ![2010, 2020, 9996, 9997, 15077, 15078, 15083, 86705, 87705].includes(a) && a !== 3400);
+    }
+  }
+  // Beyond Ex 12: the next palindromic time after 2:52
+  {
+    const m = EX[12].q.match(/A clock shows (\d+):(\d\d), a time that reads the same from both ends/);
+    is('Beyond Ex 12: the question reads as expected', !!m);
+    if (m) {
+      const start = clockTimes.findIndex(([h, mm]) => h === +m[1] && mm === +m[2]);
+      is('Beyond Ex 12: the start is itself palindromic', isPal(clockDigits(clockTimes[start])));
+      let k = 1; while (!isPal(clockDigits(clockTimes[(start + k) % 720]))) k++;
+      const next = fmtTime(clockTimes[(start + k) % 720]);
+      ok('Beyond Ex 12: the answer', EX[12].answer, `${next}, which is ${k} minutes later`);
+      ok('Beyond Ex 12: step 3, minutes to the hour and then past it', nums(text(EX[12].rows[2][1])).slice(-3), [60 - +m[2], k - (60 - +m[2]), k]);
+      is('Beyond Ex 12: step 2 names the same time', text(EX[12].rows[1][1]).endsWith(next));
+      ok('Beyond Ex 12: step 1, the last digit and the time that is not one', nums(text(EX[12].rows[0][1])), [3, 0, +m[1], +m[1], +m[2], +m[1], +m[2] + 10]);
+      is('Beyond Ex 12: 2:62 is not a time, so nothing else is left before 3:00', +m[2] + 10 > 59 && +m[2] % 10 === +m[1]);
+      is('Beyond Ex 12 is not Exercise Set 3.5 Q3 (10:01)', !(+m[1] === 10 && +m[2] === 1));
+    }
+  }
+  // Beyond Ex 13: the next palindromic date after 17/09/2026
+  {
+    const m = EX[13].q.match(/Today is (\d\d)\/(\d\d)\/(\d{4})\./);
+    is('Beyond Ex 13: the question reads as expected', !!m);
+    if (m) {
+      const [d0, m0, y0] = [+m[1], +m[2], +m[3]];
+      const palIn = (y) => { const s = [...String(y)].reverse().join(''); return validDate(y, +s.slice(2), +s.slice(0, 2)) ? [+s.slice(0, 2), +s.slice(2)] : null; };
+      let found = null;
+      for (let y = y0; y < y0 + 100 && !found; y++) {
+        const p = palIn(y);
+        if (p && (y > y0 || p[1] > m0 || (p[1] === m0 && p[0] > d0))) found = [p[0], p[1], y];
+      }
+      const f = `${String(found[0]).padStart(2, '0')}/${String(found[1]).padStart(2, '0')}/${found[2]}`;
+      ok('Beyond Ex 13: the answer', EX[13].answer, f);
+      ok('Beyond Ex 13: the years with no such date on the way', range(y0, found[2] - 1).filter(y => palIn(y)), []);
+      ok('Beyond Ex 13: step 1, the days the years on the way would need', nums(text(EX[13].rows[0][1])),
+        [...range(y0, found[2] - 1), ...range(y0, found[2] - 1).map(y => +[...String(y)].reverse().join('').slice(0, 2))]);
+      ok('Beyond Ex 13: step 2, the year backwards', nums(text(EX[13].rows[1][1])), [found[2], +[...String(found[2])].reverse().join(''), found[0], found[1]]);
+      ok('Beyond Ex 13: step 3 reads the same both ways', nums(text(EX[13].rows[2][1])), [+f.split('/').join(''), +[...f.split('/').join('')].reverse().join('')]);
+      is('Beyond Ex 13: the answer reads the same from both ends', isPal(f.split('/').join('')));
+      is('Beyond Ex 13 is a future date, so not Section 3.7\'s dates from the past', found[2] > 2026);
+      is('Beyond Ex 13 is not practice Q7\'s date', !BEYOND.includes(`<li>${f}</li>`));
+    }
+  }
+  // Beyond Ex 15: the digits of a 4-digit plus a 3-digit sum
+  {
+    const lo = 1000 + 100, hi = 9999 + 999;
+    const digitsOf = (n) => String(n).length;
+    const sums = new Set(); for (let a = 1000; a <= 9999; a += 1) { sums.add(digitsOf(a + 100)); sums.add(digitsOf(a + 999)); }
+    ok('Beyond Ex 15: step 1', nums(text(EX[15].rows[0][1])), [1000, 100, lo, digitsOf(lo)]);
+    ok('Beyond Ex 15: step 2', nums(text(EX[15].rows[1][1])), [9999, 999, hi, digitsOf(hi)]);
+    ok('Beyond Ex 15: every sum has', [...sums].sort(), [4, 5]);
+    has('Beyond Ex 15 answer', EX[15].answer, 'either 4 digits or 5 digits, and never 3 or 6');
+    is('Beyond Ex 15 step 3 lies between', 4000 + 500 > lo && 4000 + 500 < hi);
+    is('Beyond Ex 15 is not a case of Exercise Set 3.6 (4-digit plus 2-digit, 5-digit plus 3-digit)', /4-digit number and a 3-digit number/.test(EX[15].q));
+  }
 }
 
 /* ================================================================
@@ -975,7 +1048,7 @@ const MCQ = {
   4: [/starts at (\d+), the number that comes after (\d+)/, (o, [s, a]) => N(o) === collatz(s)[collatz(s).indexOf(a) + 1]],
   5: [/digit sum of (\d+), and its middle digit is (\d+)/, (o) => pal3.length === 1 && N(o) === pal3[0]],
   6: [/digit sum of (\d+)/, (o, [s]) => isPal(N(o)) && dsum(N(o)) === s],
-  7: [/The year (\d+) starts on a Thursday and is not a leap year/, (o, [y]) => DAY[jan1(y)] === 'Thu' && !leap(y) && N(o) === range(y + 1, y + 100).find(z => sameCalendar(y, z))],
+  7: [/(Written as day\/month\/year), which of these dates reads the same from both ends\?/, (o) => { const m = o.match(/^(\d\d)\/(\d\d)\/(\d{4})$/); return !!m && validDate(+m[3], +m[2], +m[1]) && isPal(m[1] + m[2] + m[3]); }],
   8: [/(\d+) rows and (\d+) columns/, (o) => N(o) === max33],
   9: [/marks at ([\d,]+) and ([\d,]+), and three more marks/, (o, [a, b]) => N(o) === a + (b - a) / 4],
   10: [/(\w+) children of different heights/, (o) => /depends/.test(o) ? tot7.size > 1 : tot7.size === 1 && tot7.has(N(o))],
@@ -993,7 +1066,8 @@ for (const [n, [re, right]] of Object.entries(MCQ)) {
   else if (rightOnes[0] !== KEY[n]) fails.push(`Q${n}: the right option is (${rightOnes[0]}), the key prints (${KEY[n]})`);
   else pass++;
 }
-ok('Q7: the stem is right that 2026 starts on a Thursday and is not a leap year', [DAY[jan1(2026)], leap(2026)], ['Thu', false]);
+is('Q7: every option is a real date in the future, so not one of Section 3.7\'s dates from the past', Q[7].opts.every(o => { const m = o.match(/^(\d\d)\/(\d\d)\/(\d{4})$/); return m && validDate(+m[3], +m[2], +m[1]) && +m[3] > 2026; }));
+is('Q7: no leap year or calendar question is left in Beyond', !/leap year|same calendar/.test(BEYONDTEXT));
 ok('Q10: seven children', Q[10].stem.startsWith('Seven children'), true);
 
 /* assertion-reason: A and R computed from the numbers in the stem; whether
@@ -1106,10 +1180,14 @@ ok('answers are printed for 17 to 30', range(17, 30).every(n => ROWS[n] !== unde
   ok('why-notes are given for', Object.keys(w).map(Number), [4, 7, 10, 14]);
   is('why 4: (a) is the number before 5 in the sequence from 20', collatz20[collatz20.indexOf(5) - 1] === N(Q[4].opts[0]));
   is('why 4: (b) is 3 times 5 without the 1', N(Q[4].opts[1]) === 3 * 5);
-  const days = w[7].match(/start ([^.]+)\./)[1].split(', ').map(s => s.replace(/ \(\d+\)/, ''));
-  ok('why 7: the first days from 2027', days, range(2027, 2037).map(y => DAY[jan1(y)]));
-  ok('why 7: the years it names', nums(w[7]).filter(v => v > 2000), [2026, 2032, 2037, 2032]);
-  is('why 7: 2032 starts on a Thursday and is a leap year', DAY[jan1(2032)] === 'Thu' && leap(2032));
+  const flat7 = Q[7].opts.map(o => o.split('/').join(''));
+  const back = (x) => [...x].reverse().join('');
+  ok('why 7: the right option without slashes', nums(w[7]).slice(0, 4), [4, 2, 2040, +flat7[2]]);
+  is('why 7: it reads the same from the right', back(flat7[2]) === flat7[2] && /which reads the same from the right/.test(w[7]));
+  ok('why 7: (a), (b) and (d) read from the right', nums(w[7]).slice(4, 7), [0, 1, 3].map(i => +back(flat7[i])));
+  is('why 7: none of (a), (b) and (d) reads the same', [0, 1, 3].every(i => back(flat7[i]) !== flat7[i]));
+  ok('why 7: ends by naming 0402', nums(w[7]).slice(7), [402]);
+  is('why 7: 0402 is 2040 written backwards', back('2040') === '0402' && /0402, the year written backwards/.test(w[7]));
   ok('why 10: seven children make', nums(w[10].match(/make (\d+) pairs/)[1])[0], 7 - 1);
   ok('why 14: 6174 read from the right', [...'6174'].reverse().join(''), String(nums(w[14])[1]));
 }
@@ -1140,6 +1218,7 @@ ok('answers are printed for 17 to 30', range(17, 30).every(n => ROWS[n] !== unde
   ok('ANSWERS working 9: the gaps, the gap and the first mark', nums(wi(9)),
     [3 + 1, lo9, hi9, hi9 - lo9, 3 + 1, gap9, lo9 + gap9]);
   ok('ANSWERS working 10: 7 children make 6 pairs', nums(wi(10)), [...tot7, 1, 7, 7 - 1]);
+  ok('ANSWERS working 7: the date and the three read backwards', nums(wi(7)), [4, 2, 2040, 402, 2040, 4022040, ...[0, 1, 3].map(i => +[...Q[7].opts[i].split('/').join('')].reverse().join(''))]);
   ok('ANSWERS working 12: the three that can be made', [6100, 1900, 5600].every(t => makeable(t, [5000, 800, 300])), true);
   ok('ANSWERS working 16: 5 children make 4 pairs', [...tot5], [nums(wi(16))[0] - 1]);
   // one line per identity in the other answers is enough: Part A has evaluated them all
@@ -1149,8 +1228,8 @@ ok('answers are printed for 17 to 30', range(17, 30).every(n => ROWS[n] !== unde
 {
   const sec = ANSWERS.slice(ANSWERS.indexOf('### Stage 2 · Solved Examples'), ANSWERS.indexOf('### Stage 3 · Practice'));
   const items = Object.fromEntries([...sec.matchAll(/\n(\d+)\. ([^\n]+)/g)].map(m => [m[1], m[2]]));
-  ok('ANSWERS stage 2: Beyond Examples 1 to 15', Object.keys(items).map(Number), range(1, 15));
-  for (const n of range(1, 15)) ok(`ANSWERS stage 2: Beyond Ex ${n} answer`, nums(items[n]), nums(EX[n].answer));
+  ok('ANSWERS stage 2: Beyond Examples 1 to 19', Object.keys(items).map(Number), range(1, 19));
+  for (const n of range(1, 19)) ok(`ANSWERS stage 2: Beyond Ex ${n} answer`, nums(items[n]), nums(EX[n].answer));
 }
 
 /* ================================================================

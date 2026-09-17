@@ -256,10 +256,13 @@ const CONDITIONAL = {
   // Beyond, stage 1
   '=(a+b)^2-2ab=100-42=58': { a: 7, b: 3 }, '=a^2+b^2-2ab=58-42=16': { a: 7, b: 3 },
   '=(2x+3)+(2x-3)=4x': 'identity', '=(2x+3)-(2x-3)=6': 'identity',
-  '\\left(x+\\dfrac{1}{x}\\right)^2=x^2+2+\\dfrac{1}{x^2}=16': { x: 2 + Math.sqrt(3) },
-  'x^2+\\dfrac{1}{x^2}=14': { x: 2 + Math.sqrt(3) }, 'x+\\frac{1}{x}=4': { x: 2 + Math.sqrt(3) },
-  'x^2+\\frac{1}{x^2}=14': { x: 2 + Math.sqrt(3) },
-  '\\left(x-\\frac{1}{x}\\right)^2=14-2=12': { x: 2 + Math.sqrt(3) },
+  // Stage 1 Q5: a^2 + b^2 = 20 and ab = 8 hold for a = 2, b = 4
+  'a^2+b^2=20': { a: 2, b: 4 }, 'ab=8': { a: 2, b: 4 },
+  '(a^2+b^2)^2=a^4+2a^2b^2+b^4=400': { a: 2, b: 4 },
+  '2a^2b^2=2(ab)^2=2\\times64=128': { a: 2, b: 4 },
+  'a^4+b^4=400-128=272': { a: 2, b: 4 }, 'a^4+b^4=272': { a: 2, b: 4 },
+  'a^4+b^4=(a^2+b^2)^2-2(ab)^2=400-128=272': { a: 2, b: 4 },
+  '(a^2-b^2)^2=272-128=144': { a: 2, b: 4 },
   '6a=60': { a: 10 },
   // Beyond, examples and practice
   '64=34+2xy': { x: 5, y: 3 }, '2xy=30': { x: 5, y: 3 }, 'x+y=8': { x: 5, y: 3 }, 'x^2+y^2=34': { x: 5, y: 3 },
@@ -500,7 +503,12 @@ ok('Stage 1 Q1: the two numbers', [7 + 3, 7 * 3, 49 + 9, (7 - 3) ** 2], [10, 21,
 ok('Stage 1 Q2', [49 * 51, Math.round(4.9 * 5.1 * 100) / 100], [2499, 24.99]);
 ok('Stage 1 Q3', [...Array(50)].map((_, a) => a).filter(a => (a + 3) ** 2 - a * a === 69), [10]);
 is('Stage 1 Q4', eq('(2x + 3)^2 - (2x - 3)^2', '24x'));
-{ const x = 2 + Math.sqrt(3); ok('Stage 1 Q5', [Math.round((x + 1 / x) * 1e9) / 1e9, Math.round((x * x + 1 / (x * x)) * 1e9) / 1e9, Math.round((x - 1 / x) ** 2 * 1e9) / 1e9], [4, 14, 12]); }
+{ // the only whole numbers with a^2 + b^2 = 20 and ab = 8, and what the identity gives without them
+  const pairs = []; for (let a = 1; a < 5; a++) for (let b = a; b < 5; b++) if (a * a + b * b === 20 && a * b === 8) pairs.push([a, b]);
+  ok('Stage 1 Q5: the numbers', pairs, [[2, 4]]);
+  ok('Stage 1 Q5: from the identity', [20 ** 2, 2 * 8 ** 2, 20 ** 2 - 2 * 8 ** 2, 20 ** 2 - 2 * 8 ** 2 - 2 * 8 ** 2], [400, 128, 272, 144]);
+  ok('Stage 1 Q5: from the numbers', [2 ** 4 + 4 ** 4, (2 ** 2 - 4 ** 2) ** 2], [272, 144]);
+  is('Stage 1 Q5: no unknown in a denominator left in Beyond', !/frac\{1\}\{x/.test(beyond)); }
 is('Stage 1 Q6', eq('x^2 - 6x + 10', '(x - 3)^2 + 1'));
 is('Stage 1 Q7', eq('(x + y)^2 - 4xy', '(x - y)^2'));
 ok('Stage 1 Q7: at x = y = 5', [(5 + 5) ** 2, 4 * 5 * 5], [100, 100]);

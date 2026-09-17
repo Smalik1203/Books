@@ -300,12 +300,26 @@ ok('S1 square in a 10 by 6 rectangle', (10 - 6) / 2, 2);
 ok('S1 falling 7, 5, 3', 7 + 5 + 3, 15);
 ok('S1 falling three 4s', 3 * 4, 12);
 ok('S1 roof lines of 3 and 4 on a 6 cm gap', [circlesMeet(6, 3, 3), circlesMeet(6, 4, 4)], [1, 2]);
+{
+  // the arc test, stated once in Stage 1 and checked here against the
+  // geometry for every case the section uses: equal and unequal radii
+  const rule = (d, r1, r2) => (r1 + r2 > d ? 2 : r1 + r2 === d ? 1 : 0);
+  const cases = [[6, 4, 4], [8, 4, 4], [10, 4, 4], [6, 3, 3], [6, 4, 4], [4, 6, 6], [4, 2, 2], [6, 5, 5],
+    [7, 3, 3], [7, 4, 4], [9, 4, 4], [4, 3, 3], [8, 5, 5]];
+  ok('S1 the arc test agrees with the circles in every case used', cases.map(c => rule(...c)), cases.map(c => circlesMeet(...c)));
+  is('S1 states the arc test once, in bold', (ALL.match(/<strong>Two arcs cross only when their radii add up to more than the distance between their centres\.<\/strong>/g) || []).length === 1);
+  is('S1 derives it: the reaches add to 8, more than 6; no way is shorter than the straight 10 cm',
+    /each circle reaches 4 cm towards the other centre, and \$4 \+ 4 = 8\$ cm is more than the 6 cm gap/.test(ALL)
+    && /no way from \$P\$ to \$Q\$ is shorter than the straight 10 cm/.test(ALL));
+  is('S1 roof question cites the 8 cm case', /as with \$P\$ and \$Q\$ at 8 cm apart, the two arcs only touch/.test(ALL));
+  is('ANSWERS S1 states the arc test', ANSWERS.includes('Two arcs cross only when their radii add up to more than\n   the distance between their centres'));
+}
 
 // stage 2 — each example's answer recomputed
 const exAns = {};
 for (const m of ALL.matchAll(/c-example__tab">Example (\d+)<[\s\S]*?work__label">Answer<\/span>\s*<span>([\s\S]*?)<\/span>/g))
   exAns[m[1]] = m[2];
-ok('fifteen examples, numbered 1 to 15', Object.keys(exAns).map(Number), Array.from({ length: 15 }, (_, i) => i + 1));
+ok('seventeen examples, numbered 1 to 17', Object.keys(exAns).map(Number), Array.from({ length: 17 }, (_, i) => i + 1));
 const inAns = (n, s) => is(`Example ${n} answer says "${s}"`, (exAns[n] || '').includes(s));
 
 ok('Ex 1 inside, on, outside', [2, 3, 5].map(d => d < 3 ? 'in' : d === 3 ? 'on' : 'out'), ['in', 'on', 'out']);
@@ -322,8 +336,8 @@ inAns(1, '$A$ is inside, $B$ is on the circle, and $C$ is outside');
     const idx = [...s].map(c => order.indexOf(c));
     return new Set(idx).size === 4 && idx.every((v, i) => { const d = Math.abs(v - idx[(i + 1) % 4]); return d === 1 || d === 3; });
   };
-  ok('Ex 3 which are names', ['XYZW', 'WYXZ', 'ZYXW', 'YZXW'].filter(isName), ['XYZW', 'ZYXW']);
-  inAns(3, '$XYZW$ and $ZYXW$');
+  ok('Ex 4 which are names', ['XYZW', 'WYXZ', 'ZYXW', 'YZXW'].filter(isName), ['XYZW', 'ZYXW']);
+  inAns(4, '$XYZW$ and $ZYXW$');
   // practice 18: every name of EFGH other than itself
   const all = [];
   const e = ['E', 'F', 'G', 'H'];
@@ -332,38 +346,104 @@ inAns(1, '$A$ is inside, $B$ is on the circle, and $C$ is outside');
   const printed = [...(ALL.match(/work__label">18<\/span>\s*<span>([^<]*)/) || [, ''])[1].matchAll(/\$([A-H]{4})\$/g)].map(m => m[1]).sort();
   ok('Q18 the seven other names', printed, others);
 }
-inAns(4, 'No');
-ok('Ex 5 SR', 5, 5);
-inAns(5, '$SR$ measures 5 cm');
-inAns(6, 'all measure 5 cm');
-ok('Ex 7 long side and round', [4 * 3, 12 + 3 + 12 + 3], [12, 30]);
-inAns(7, '12 cm; 30 cm');
-ok('Ex 8 squares', (12 / 3) * (6 / 3), 8);
-inAns(8, '8 squares');
-ok('Ex 9 rectangle', [8 + 4, 4 + 4], [12, 8]);
-inAns(9, '12 cm and 8 cm');
-ok('Ex 10 other part', 90 - 20, 70);
-is('Ex 11 50 + 50 is not 90', 50 + 50 !== 90);
-inAns(11, 'No');
-ok('Ex 12 BC', ruler(otherSide(6, 10)), '8 cm');
-inAns(12, '$BC$ measures 8 cm');
-is('Ex 13 no rectangle: arc shorter than the side', 5 < 7 && crossings([0, 0], 5, [0, 0], 5).length >= 0);
+inAns(5, 'No');
+ok('Ex 7 SR', 5, 5);
+inAns(7, '$SR$ measures 5 cm');
+inAns(8, 'all measure 5 cm');
+ok('Ex 9 long side and round', [4 * 3, 12 + 3 + 12 + 3], [12, 30]);
+inAns(9, '12 cm; 30 cm');
+ok('Ex 10 squares', (12 / 3) * (6 / 3), 8);
+inAns(10, '8 squares');
+ok('Ex 11 rectangle', [8 + 4, 4 + 4], [12, 8]);
+inAns(11, '12 cm and 8 cm');
+ok('Ex 12 other part', 90 - 20, 70);
+is('Ex 13 50 + 50 is not 90', 50 + 50 !== 90);
+inAns(13, 'No');
+ok('Ex 14 BC', ruler(otherSide(6, 10)), '8 cm');
+inAns(14, '$BC$ measures 8 cm');
 {
-  // the perpendicular l through C: every point of it is at least 7 cm from D
+  // Ex 15: D at the origin, C 7 cm along, l the perpendicular through C.
+  // The 7 cm circle about D meets l only at C (it touches there); every
+  // other point of l is outside it; a 5 cm circle never reaches l.
+  // points of l are (7, t); one is r from D where t * t = r * r - 49
+  const hits = (r) => (r * r - 49 > 0 ? 2 : r * r - 49 === 0 ? 1 : 0);
+  ok('Ex 15 the 7 cm circle meets l once, at C', hits(7), 1);
   let nearest = Infinity;
   for (let t = -20; t <= 20; t += 0.01) nearest = Math.min(nearest, Math.hypot(7, t));
-  ok('Ex 13 nearest point of l to D', +nearest.toFixed(9), 7);
+  ok('Ex 15 nearest point of l to D is C, 7 cm', +nearest.toFixed(9), 7);
+  ok('Ex 15 a 5 cm arc never reaches l', hits(5), 0);
+  const ex15 = (ALL.match(/Example 15<\/div>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/) || [''])[0];
+  is('Ex 15 prints side 7, diagonal 5, and the 7 cm circle touching l at C',
+    /a side of 7 cm and a diagonal of 5 cm/.test(ex15) && /circle of radius 7 cm about \$D\$: it passes through \$C\$ and only touches \$l\$ there/.test(ex15)
+    && /stays inside the 7 cm circle, since \$5 \\lt 7\$/.test(ex15) && !/at least as far from/.test(ex15));
 }
-inAns(13, 'No such rectangle exists');
+inAns(15, 'No such rectangle exists');
 {
-  const R = crossings([0, 0], 5, [6, 0], 4);
-  ok('Ex 14 two places for R', R.length, 2);
-  is('Ex 14 R is 5 from P and 4 from Q', R.every(p => Math.abs(dist(p, [0, 0]) - 5) < 1e-9 && Math.abs(dist(p, [6, 0]) - 4) < 1e-9));
+  // Ex 16: PQ = 4, arcs of 6 cross (two points, one each side); arcs of 2 only touch, at the middle
+  const R = crossings([0, 0], 6, [4, 0], 6);
+  ok('Ex 16 arcs of 6 on a 4 cm gap cross twice', R.length, 2);
+  is('Ex 16 R is 6 from P and from Q', R.every(p => Math.abs(dist(p, [0, 0]) - 6) < 1e-9 && Math.abs(dist(p, [4, 0]) - 6) < 1e-9));
+  const T = crossings([0, 0], 2, [4, 0], 2);
+  ok('Ex 16 arcs of 2 only touch, at the middle of PQ', [T.length, T[0] && +T[0][0].toFixed(9), T[0] && +T[0][1].toFixed(9)], [1, 2, 0]);
+  const ex16 = (ALL.match(/Example 16<\/div>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/) || [''])[0];
+  is('Ex 16 prints PQ 4, both distances 6, and 2 + 2 = 4', /Draw \$PQ = 4\$ cm\. Find a point \$R\$ above \$PQ\$ that is 6 cm from \$P\$ and 6 cm from \$Q\$/.test(ex16)
+    && /\$6 \+ 6\$ is more than 4/.test(ex16) && /\$2 \+ 2 = 4\$: the arcs only touch/.test(ex16));
+  is('Ex 16 no longer builds a triangle from three different sides', !/5 cm from \$P\$ and 4 cm from \$Q\$/.test(ALL));
+  inAns(16, '$PR = QR = 6$ cm');
+}
+/* Ex 3: the moon, read off Fig. 8.35. Two circles of equal radius; the
+   centres 2 cm apart; the moon's width along the line of centres. */
+{
+  const at = ALL.indexOf('<span class="fignum">Fig. 8.35</span>');
+  const svg = ALL.slice(ALL.lastIndexOf('<svg', at), at);
+  const cs = [...svg.matchAll(/<circle class="dg-thin" cx="([\d.]+)" cy="([\d.]+)" r="([\d.]+)"\/>/g)].map(m => m.slice(1).map(Number));
+  ok('Fig 8.35 two big circles of equal radius', [cs.length, cs[0] && cs[0][2] === cs[1][2]], [2, true]);
+  const u = cs[0][2] / 3; // units to the cm, from the printed radius
+  const OP = dist(cs[0], cs[1]) / u;
+  ok('Fig 8.35 the centres are 2 cm apart', +OP.toFixed(9), 2);
+  const width = 3 - (3 - OP);
+  ok('Ex 3 the moon is 2 cm wide', +width.toFixed(9), 2);
+  // the shaded path's ends are the crossing points of the two circles
+  const X = crossings(cs[0], cs[0][2], cs[1], cs[1][2]);
+  const d = (svg.match(/<path class="dg-line" d="M([\d.]+) ([\d.]+) A[^"]* ([\d.]+) ([\d.]+) A/) || []).slice(1).map(Number);
+  is('Fig 8.35 the moon runs between the two crossing points',
+    X.length === 2 && d.length === 4 && X.some(p => Math.abs(p[0] - d[0]) < 0.01 && Math.abs(p[1] - d[1]) < 0.01)
+    && X.some(p => Math.abs(p[0] - d[2]) < 0.01 && Math.abs(p[1] - d[3]) < 0.01));
+  const ex3 = (ALL.match(/Example 3<\/div>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/) || [''])[0];
+  is('Ex 3 prints radius 3, 2 cm apart, and 3 - 2 = 1 and 3 - 1 = 2', /two circles of radius 3 cm/.test(ex3) && /centre \$P\$, 2 cm from \$O\$/.test(ex3)
+    && /\$3 - 2 = 1\$ cm past \$O\$/.test(ex3) && /\$3 - 1 = 2\$ cm/.test(ex3));
+  inAns(3, '2 cm, the same as the distance from $O$ to $P$');
+}
+/* Ex 6: the turned square, read off Fig. 8.36 in dot steps */
+{
+  const at = ALL.indexOf('<span class="fignum">Fig. 8.36</span>');
+  const svg = ALL.slice(ALL.lastIndexOf('<svg', at), at);
+  const dots = [...svg.matchAll(/<circle class="dg-line" cx="([\d.]+)" cy="([\d.]+)"/g)].map(m => [+m[1], +m[2]]);
+  const xs = [...new Set(dots.map(p => p[0]))].sort((a, b) => a - b);
+  const step = xs[1] - xs[0];
+  const [A, B, C, D] = svg.match(/<polygon class="dg-line" points="([^"]*)"/)[1].trim().split(/\s+/).map(p => p.split(',').map(Number));
+  const onDot = (p) => dots.some(q => q[0] === p[0] && q[1] === p[1]);
+  is('Fig 8.36 every corner is on a dot', [A, B, C, D].every(onDot));
+  const mv = (p, q) => [(q[0] - p[0]) / step, (p[1] - q[1]) / step]; // right, up
+  ok('Fig 8.36 AB is 3 right, 1 up (as printed)', mv(A, B), [3, 1]);
+  ok('Fig 8.36 BC is 1 left, 3 up', mv(B, C), [-1, 3]);
+  ok('Fig 8.36 AD is 1 left, 3 up', mv(A, D), [-1, 3]);
+  ok('Fig 8.36 DC is 3 right, 1 up, like AB', mv(D, C), [3, 1]);
+  const s = [dist(A, B), dist(B, C), dist(C, D), dist(D, A)].map(x => +(x / step).toFixed(9));
+  is('Fig 8.36 all four sides equal (S1)', s.every(x => x === s[0]));
+  is('Fig 8.36 all four angles 90 (S2)', [[A, B, D], [B, C, A], [C, D, B], [D, A, C]].every(([v, p, q]) => Math.abs(angleAt(v, p, q) - 90) < 1e-9));
+  is('Fig 8.36 labels sit by their corners', ['A', 'B', 'C', 'D'].every((l, i) => {
+    const m = svg.match(new RegExp(`<text class="dg-label" x="([\\d.]+)" y="([\\d.]+)"[^>]*>${l}<`));
+    return m && dist([+m[1], +m[2]], [A, B, C, D][i]) < 14;
+  }));
+  const ex6 = (ALL.match(/Example 6<\/div>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/) || [''])[0];
+  is('Ex 6 prints 3 to the right and 1 up', /Dot \$B\$ is 3 dots right of dot \$A\$ and 1 up/.test(ex6) && /join \$D\$ to \$C\$: it goes 3 dots right and 1 dot up, just as \$AB\$ does/.test(ex6));
+  inAns(6, 'On dots: $C$ is 1 dot left of $B$ and 3 up, and $D$ is 1 dot left of $A$ and 3 up');
 }
 {
   const A = crossings([0, 0], 5, [6, 0], 5).find(p => p[1] > 0);
-  ok('Ex 15 AM', ruler(dist(A, [3, 0])), '4 cm');
-  inAns(15, '$AM$ measures 4 cm');
+  ok('Ex 17 AM', ruler(dist(A, [3, 0])), '4 cm');
+  inAns(17, '$AM$ measures 4 cm');
 }
 
 // stage 3 — the answer rows, read back off the page, part by part
@@ -381,9 +461,11 @@ ok('Q19 right angles in a rectangle', 4, 4); says('Q19', row(19), '4');
 ok('Q20 width', 15 / 3, 5); says('Q20', row(20), '5 cm');
 ok('Q22 each diagonal', ruler(Math.hypot(7, 3)), '7 cm 6 mm'); says('Q22', row(22), '7 cm 6 mm');
 {
-  const P = crossings([0, 0], 4, [5, 0], 3);
+  const P = crossings([0, 0], 3, [4, 0], 3);
   ok('Q23 two points', P.length, 2);
-  ok('Q23 how far apart', ruler(dist(P[0], P[1])), '4 cm 8 mm'); says('Q23', row(23), '4 cm 8 mm');
+  ok('Q23 how far apart', ruler(dist(P[0], P[1])), '4 cm 5 mm'); says('Q23', row(23), '4 cm 5 mm');
+  says('Q23 the arc test', row(23), '$3 + 3 = 6$ is more than 4');
+  is('Q23 prints 4 cm apart and 3 cm from both', /Two points \$A\$ and \$B\$ are 4 cm apart\. Construct the two points that are 3 cm from both \$A\$ and \$B\$/.test(ALL));
 }
 ok('Q24 sides and count', [3 * 4, 2 * 4, 2 * 3], [12, 8, 6]); says('Q24', row(24), '12 cm by 8 cm');
 is('Q25 30 + 70 is not 90', 30 + 70 !== 90); says('Q25', row(25), 'No');
@@ -476,9 +558,9 @@ is('the choices are stated once', (ALL.match(/<p class="c-practice__note">In Que
 for (const [n, l] of Object.entries(KEY)) is(`ANSWERS key ${n}`, ANSWERS.includes(`${n} (${l})`));
 for (const s of ['29. (a) Arcs of radius 5 cm about $P$ and about $Q$. (b) **2**', '**they are 6 cm apart.**',
   '(c) **3 cm.** (d) **26 cm.**', '(c) **About 2 cm 5 mm.**', '**Each diagonal measures about 7 cm 6 mm**',
-  '**The two points\n    are about 4 cm 8 mm apart.**', '(b) **5 cm.**', '**13 cm**', '17. 4 cm 5 mm.'])
+  '**The two points are about 4 cm 5 mm apart.**', '(b) **5 cm.**', '**13 cm**', '17. 4 cm 5 mm.'])
   is(`ANSWERS has "${s.replace(/\n\s*/g, ' ')}"`, ANSWERS.includes(s));
-for (const [n, s] of [[7, '12 cm; 30 cm.'], [8, '8 squares.'], [9, '12 cm by 8 cm.'], [12, '$BC$ measures 8 cm.'], [15, '$AM$ measures 4 cm.']])
+for (const [n, s] of [[9, '12 cm; 30 cm.'], [10, '8 squares.'], [11, '12 cm by 8 cm.'], [14, '$BC$ measures 8 cm.'], [17, '$AM$ measures 4 cm.']])
   is(`ANSWERS stage 2 Example ${n}`, ANSWERS.includes(`${n}. ${s}`));
 
 /* ---- report --------------------------------------------------- */

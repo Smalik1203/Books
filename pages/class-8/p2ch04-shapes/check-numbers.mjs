@@ -167,6 +167,7 @@ ok('Stage 1 Q8: surface of 2 x 3 x 4 counted face by face', 2 * (2 * 3) + 2 * (3
 
 // Stage 2
 ok('Ex 1: carpet from 54, step 2', [54 / 9, fractal(8, 2)[2][0], 64 * 36, 54 * 54], [6, 64, 2304, 2916]);
+ok('Ex 1: holes at step 2, and their area', [fractal(8, 2)[2][1], 18 * 18, (54 / 3) ** 2 + fractal(8, 1)[1][0] * (54 / 9) ** 2, 54 * 54 - 612], [9, (54 / 3) ** 2, 612, 64 * 36]);
 ok('Ex 2: plus-sign rule, step 3', [fractal(5, 3)[3][0], 27, 729], [125, 3 ** 3, 27 * 27]);
 is('Ex 2: less than a fifth', (5 / 9) ** 3 < 0.2);
 ok('Ex 3: triangle from 16, step 2', [16 / 4, tri[2][0], 4 ** 2], [4, 9, 16]);
@@ -181,21 +182,31 @@ ok('Ex 7: pyramid with 10 vertices', pyramid(firstStep(n => pyramid(n).V === 10,
 ok('Ex 9: icosahedron vertices', 2 - 20 + 30, 12);
 is('Ex 9: 7, 10, 16 fails', 7 + 10 - 16 !== 2);
 ok('Ex 10: open box 10 x 6 x 4', 10 * 6 + 2 * 10 * 4 + 2 * 6 * 4, 188);
+{ const n = 5, P = pyramid(n); ok('Ex 12: pentagon and five triangles', [P, P.F + P.V - P.E], [{ F: 6, E: 10, V: 6 }, 2]); }
 ok('Ex 11: cube net of 150', [Math.sqrt(150 / 6), Math.sqrt(150 / 6) ** 3], [5, 125]);
-ok('Ex 12: unfoldings of 15 x 6 x 3', unfoldings(15, 6, 3), [306, 360, 450]);
-ok('Ex 12: shortest', shortest(15, 6, 3), 306);
-ok('Ex 13: tank 20 x 12 x 9', [shortest(20, 12, 9), Math.sqrt(shortest(20, 12, 9)), 20 + 12 + 9], [841, 29, 41]);
-ok('Ex 13: the other two', unfoldings(20, 12, 9).filter(v => v !== 841).sort((a, b) => a - b), [985, 1105]);
-ok('Ex 14: row of three with one on the middle', views([[0, 0, 0], [1, 0, 0], [2, 0, 0], [1, 0, 1]]), { front: 4, top: 3, side: 2 });
-{ // Ex 16: edges of a box seen from the corner (+x, +y, +z): an edge is hidden
+ok('Ex 13: unfoldings of 15 x 6 x 3', unfoldings(15, 6, 3), [306, 360, 450]);
+ok('Ex 13: shortest', shortest(15, 6, 3), 306);
+ok('Ex 14: tank 20 x 12 x 9', [shortest(20, 12, 9), Math.sqrt(shortest(20, 12, 9)), 20 + 12 + 9], [841, 29, 41]);
+ok('Ex 14: the other two', unfoldings(20, 12, 9).filter(v => v !== 841).sort((a, b) => a - b), [985, 1105]);
+ok('Ex 15: row of three with one on the middle', views([[0, 0, 0], [1, 0, 0], [2, 0, 0], [1, 0, 1]]), { front: 4, top: 3, side: 2 });
+{ // Ex 17: edges of a box seen from the corner (+x, +y, +z): an edge is hidden
   // exactly when it meets the one corner (0, 0, 0) turned away from the viewer
   const a = 3, b = 2, c = 1, edges = [];
   for (const y of [0, b]) for (const z of [0, c]) edges.push({ len: a, at: y === 0 && z === 0 });
   for (const x of [0, a]) for (const z of [0, c]) edges.push({ len: b, at: x === 0 && z === 0 });
   for (const x of [0, a]) for (const y of [0, b]) edges.push({ len: c, at: x === 0 && y === 0 });
   const seen = edges.filter(e => !e.at);
-  ok('Ex 16: edges drawn and their length', [edges.length, seen.length, sum(seen.map(e => e.len))], [12, 9, 18]);
+  ok('Ex 17: edges drawn and their length', [edges.length, seen.length, sum(seen.map(e => e.len))], [12, 9, 18]);
 }
+
+// the Solved Examples' Answer rows, read off the page
+{ const ans = {};
+  for (const m of beyond.matchAll(/c-example__tab">Example (\d+)<\/div>([\s\S]*?)<span class="work__label">Answer<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) ans[m[1]] = text(m[3]);
+  ok('Beyond has 17 examples', Object.keys(ans).length, 17);
+  const has = (n, ...v) => { for (const x of v) is(`Example ${n} answer should say ${x}: "${ans[n]}"`, new RegExp(`(^|[^\\d.])${x}([^\\d]|$)`).test(ans[n] || '')); };
+  has(1, 54 / 9, fractal(8, 2)[2][0], fractal(8, 2)[2][1], 54 * 54 * 64 / 81);
+  has(12, pyramid(5).F, pyramid(5).E, pyramid(5).V);
+  is('Example 12 answer names a pentagonal pyramid', /pentagonal pyramid/.test(ans[12] || '')); }
 
 // the practice answers, read back out of the key rather than typed here
 const keyRows = {};

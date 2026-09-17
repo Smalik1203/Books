@@ -1,5 +1,40 @@
 # Class 6 · Mathematics I · Chapter 10 — The Other Side of Zero
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book audit made one finding here. I confirmed it and fixed it. The chapter body was not touched.
+
+| finding | what I did |
+|---|---|
+| gap (minor): counting years across BCE, where there is no year 0. Exercise Set 10.18 Q1 asks this, but no example works it. | **New Example 13** under Type 5 (*Money, heights and temperature*): *How many years passed from 45 BCE to 30 CE?* <br>• Write 45 BCE as −45 and 30 CE as +30. <br>• 30 − (−45) = 75 (add the inverse). <br>• The number line counts 0, but no year was 0, so 75 − 1 = 74. <br>• A check counts in parts: 44 + 1 + 29 = 74. <br>It uses the chapter's own subtraction. It answers none of Q1's three parts (150 and 2200 years before this year, 320 years after 680 BCE). |
+
+**Renumbering.** Old Examples 13–17 are now 14–18. `ANSWERS.md` (*eighteen examples, numbered 1 to 18*; the Stage 2 list) and `check-numbers.mjs` were updated to match.
+
+**Fitting.** With the new example, the first refit gave 14 pages, and Example 18 sat alone on a page at 28%. Three trims to existing examples brought it back to 13:
+- **Example 12:** its two steps became one (*Difference: 650 − (−80) = 650 + 80 = 730*), its question fits on one line, and its closing sentence (*the two distances add*) was cut.
+- **Example 9:** the check row *(+4) + (−8) = −4* was cut. The Answer row still gives the result.
+- **Example 11:** its question fits on one line (*At 4 a.m. it was −6 °C, and it grew 3 degrees warmer every hour…*).
+
+Each trimmed example still passes its checks.
+
+**A lone practice question before Answers was already there:** Q33 stood alone on p111 at 37%, before these fixes as well. `settle.mjs` moved Q32, with its *Case-based questions* sub-head, onto that page. Both case questions now share p111 (65%), and p110 is 63%. p109 runs 2.1 mm into the margin (within 3 mm; it did before). p113 is the tail of the Answers stage, on the last page.
+
+**Pages: 38 before (25 body + 13 Beyond), 38 after (25 + 13).** Solved
+Examples: 18 in Beyond (was 17).
+
+**Checks.**
+- `check-numbers.mjs` passes 825 checks. The new Example 13 is checked by:
+  - reading the years off the question;
+  - counting every real year from 45 BCE to 30 CE, skipping 0;
+  - checking Step 1's integers, Step 2's difference, Step 3's *less one*, the check-in-parts sum, and the Answer row;
+  - checking that `ANSWERS.md` agrees.
+- 8 deliberate breaks were all caught, including a changed year, 75 left uncorrected, a wrong check sum, a misnumbered tab, and Example 12's merged step.
+- `build.mjs --png`: all pages fit.
+- `orphans`: 0.
+- `fit-options`: clean.
+- `check-labels`: clean.
+- `check-no-repeats`: the new example raises no pair.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model chapter

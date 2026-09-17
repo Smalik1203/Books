@@ -1,5 +1,52 @@
 # Class 6 · Mathematics I · Chapter 8 — Playing with Constructions
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book audit made four findings here. I confirmed the first three against the pages and fixed them. The fourth (a gap row) named three topics: two now have examples, and the third is left, for the reason given below. The chapter body was not touched.
+
+| finding | what I did |
+|---|---|
+| **The arc-crossing test** (borderline, and it recurs). Stage 1 Q2 and Q5, the roof examples, and Practice Q14, Q26, Q29(b) and Q31(b) all rely on "two arcs cross only if the radii add to more than the gap". The body only says that circles which cross do so at two points. | The fact is now **stated once, where Beyond first needs it**: in the explanation of Stage 1 Q2, in bold. It is derived from what the chapter shows about circles, in two parts: <br>• **when they cross:** along $PQ$ each circle reaches 4 cm towards the other centre, and 4 + 4 = 8 is more than the 6 cm gap, so the circles overlap. Circles that cross do so at two points (§8.6). <br>• **when they don't:** at 10 cm, a point on both circles would give a way from $P$ to $Q$ of 8 cm, and no way is shorter than the straight 10 cm. <br>At 8 cm the reaches just meet, so the circles touch at one point. <br>Stage 1 Q5 now cites that case (*as with P and Q at 8 cm apart*). The later items rely on the stated fact. Their notes cite it (note 14: *As Stage 1 showed…*; Example 16: *as in Stage 1*). The Stage 1 intro, Q1, Q3 and Q4 are unchanged, word for word. |
+| **Example 14 → now 16** (borderline): a triangle from three sides (6, 5, 4) is a Class 7 construction | Recast to **two equal lines, as in the house**: $PQ = 4$ cm, and $R$ is 6 cm from both. Step 2 cites *6 + 6 is more than 4*. The example then asks the construct-and-see question: *could R be 2 cm from both?* Since 2 + 2 = 4, the arcs only touch, on $PQ$. **Practice Q23 had the same flaw** (4 cm from $A$, 3 cm from $B$), although the audit did not list it. It now asks for points 3 cm from both $A$ and $B$, 4 cm apart. The answer changed from 4 cm 8 mm to 4 cm 5 mm. |
+| **"A diagonal is longer than a side"** (borderline), used in Example 13 (now 15), Practice Q15 and Q28(b) | Example 15 now shows the fact by drawing instead of assuming it. Its steps: <br>• Draw the 7 cm circle about $D$. It passes through $C$ and only touches $l$ there. <br>• So every other point of $l$ is outside that circle, more than 7 cm from $D$ (Example 1's inside and outside). <br>• A 5 cm arc stays inside it. <br>Q28(b) now says *Look at your drawing*, and its answer is what the drawing shows. Note 15 cites Example 15. |
+| gap: arcs used for artwork (§8.1) | **New Example 3** under Type 1 (**Fig. 8.35**). A moon is drawn from two 3 cm circles with centres 2 cm apart. Along the line of centres, the first circle ends 3 cm from $O$ and the second ends 1 cm past $O$, so the moon is 2 cm wide. Nothing like it is in Fig. 8.1, and it answers no body question. |
+| gap: turned squares on a dot grid (§8.2) | **New Example 6** under Type 2 (**Fig. 8.36**). $B$ is 3 dots right of $A$ and 1 up. The square is constructed with §8.3's instruments (perpendiculars and a carried length), and the example observes that $C$ and $D$ land on dots. The step differs from Exercise 8.2 Q5's (2 right, 1 down). The dot-counting rule that Exercise 8.2 Q3 asks the reader to find is not stated. |
+| gap: the XY exploration inside a rectangle (§8.4) | **Not added.** §8.4 is an open exploration, and its findings are the answers to its own Think and Reflect questions: $XY = AB$ when the distances match, $ABYX$ is a rectangle, and the greatest $XY$ is a diagonal. Any worked example on it prints those answers, which §6a forbids. Left for the coordinator. |
+
+**Renumbering.** Old Examples 1–2 keep their numbers. Old Examples 3–4 are now 4–5, and old Examples 5–15 are now 7–17. `ANSWERS.md` (the Stage 1 item 2, all seventeen Stage 2 items, *seventeen examples*, Q23, Q28) and `check-numbers.mjs` were updated to match. The only text that cites an example number is note 15, which cites the new Example 15.
+
+**Fitting.** The first refit gave 14 pages, with Stage 1 running over and Answers split across two pages. These trims brought it to 13:
+- The Stage 1 derivation was cut to its shortest form, so Q3's explanation fits on p101 again.
+- Notes 14 and 15 and the Q23 row were shortened, so Answers fits on one page (99%).
+- Fig. 8.36 was cropped to the dots it uses and drawn on a wider viewBox. Its dots are dark points, because the grid class printed too faint to read where C and D land.
+- Example 6's closing remark became Step 3.
+
+Short pages left, each held by a whole example panel:
+- p104: 64%.
+- p108: 61%.
+- p109: 67%, the page before Practice, which `keepExerciseSets` starts on a fresh page.
+
+p112 runs 1.3 mm into the margin (within 3 mm).
+
+**Pages: 29 before (18 body + 11 Beyond), 31 after (18 + 13).** Solved
+Examples: 17 in Beyond (was 15).
+
+**Checks.**
+- `check-numbers.mjs` passes 255 checks. New checks cover:
+  - **the arc test**: checked against the circle geometry for every case the section uses, printed once in bold, and derived as printed; the roof citation; its line in `ANSWERS.md`.
+  - **Fig. 8.35**: two equal circles, centres 2 cm apart, the moon's ends at the crossing points, and the printed widths.
+  - **Fig. 8.36**: every corner on a dot, the dot steps of all four sides, equal sides and right angles, and each label beside its own corner.
+  - **Example 15**: the tangent circle, the nearest point, and that the 5 cm arc misses.
+  - **Example 16**: arcs of 6 cross twice, arcs of 2 touch at the middle, and the old three-sides wording is gone.
+  - **Q23**: re-derived.
+- 17 deliberate breaks in a scratch copy were all caught.
+- `build.mjs --png`: all pages fit.
+- `orphans`: 0.
+- `fit-options`: clean.
+- `check-labels`: clean.
+- `check-colour`: run on p021 and p023.
+- `check-no-repeats`: one existing pair only (Example 13's 50° and 50° against Exercise 8.5 Q1's 50° and 40°).
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, done by hand rather than by an agent,

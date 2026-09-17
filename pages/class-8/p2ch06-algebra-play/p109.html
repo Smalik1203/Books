@@ -2,72 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-                                      <div class="c-example__tab">Example 14</div>
-                                      <div class="c-example__body">
-                                        <p>A three-digit number and the two numbers made by cycling its digits add to $2220$. What do its digits add to? Give one number that works.</p>
-                                        <p><strong>Solution.</strong></p>
-                                        <div class="work">
-                                          <div class="work__row"><span class="work__label">Step 1</span>
-                                            <span>the total is $111(a + b + c)$</span>
-                                            <span class="work__why">each digit in each place</span></div>
-                                          <div class="work__row"><span class="work__label">Step 2</span>
-                                            <span>$a + b + c = 2220 \div 111 = 20$</span></div>
-                                          <div class="work__row"><span class="work__label">Step 3</span>
-                                            <span>try $488$: $488 + 884 + 848 = 2220$</span>
-                                            <span class="work__why">$4 + 8 + 8 = 20$</span></div>
-                                          <div class="work__row"><span class="work__label">Answer</span>
-                                            <span>The digits add to $20$; $488$ is one such number</span></div>
-                                        </div>
-                                        <p>Answers will vary: any three digits adding to $20$ will do, such as $596$ or $875$.</p>
-                                      </div>
-                                    </div>
-
-      <h3>Type 9 &middot; Undoing a chain of steps</h3>
+      <h3>Type 8 &middot; Reversing and cycling digits</h3>
 
       <div class="c-example">
-                                      <div class="c-example__tab">Example 15</div>
-                                      <div class="c-example__body">
-                                        <p>Veena thinks of a number, multiplies it by $3$, subtracts $5$ and doubles the result. She gets $38$. What was her number?</p>
-                                        <p><strong>Solution.</strong></p>
-                                        <div class="work">
-                                          <div class="work__row"><span class="work__label">Step 1</span>
-                                            <span>undo the doubling: $38 \div 2 = 19$</span>
-                                            <span class="work__why">last step first</span></div>
-                                          <div class="work__row"><span class="work__label">Step 2</span>
-                                            <span>undo the subtraction: $19 + 5 = 24$</span></div>
-                                          <div class="work__row"><span class="work__label">Step 3</span>
-                                            <span>undo the multiplying: $24 \div 3 = 8$</span></div>
-                                          <div class="work__row"><span class="work__label">Step 4</span>
-                                            <span>$2(3 \times 8 - 5) = 38$</span>
-                                            <span class="work__why">check forwards</span></div>
-                                          <div class="work__row"><span class="work__label">Answer</span>
-                                            <span>Her number was $8$</span></div>
-                                        </div>
-                                      </div>
-                                    </div>
+                                                        <div class="c-example__tab">Example 13</div>
+                                                        <div class="c-example__body">
+                                                          <p>The digits of a two-digit number add to $12$. Reversing the digits gives a number $18$ less. Find the number.</p>
+                                                          <p><strong>Solution.</strong></p>
+                                                          <div class="work">
+                                                            <div class="work__row"><span class="work__label">Step 1</span>
+                                                              <span>$(10a + b) - (10b + a) = 9(a - b) = 18$</span>
+                                                              <span class="work__why">the reverse is smaller</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 2</span>
+                                                              <span>$a - b = 2$, and $b = 12 - a$</span>
+                                                              <span class="work__why">the digits add to 12</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 3</span>
+                                                              <span>$a - (12 - a) = 2$, so $2a - 12 = 2$</span>
+                                                              <span class="work__why">put in $b$</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 4</span>
+                                                              <span>$2a = 14$, so $a = 7$ and $b = 12 - 7 = 5$</span></div>
+                                                            <div class="work__row"><span class="work__label">Answer</span>
+                                                              <span>$75$, and indeed $75 - 57 = 18$</span></div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
 
       <div class="c-example">
-                          <div class="c-example__tab">Example 16</div>
-                          <div class="c-example__body">
-                            <p>A genie doubles a traveller's coins at each round and then takes $10$. After two rounds the traveller has $22$ coins. How many did he start with?</p>
-                            <p><strong>Solution.</strong></p>
-                            <div class="work">
-                              <div class="work__row"><span class="work__label">Step 1</span>
-                                <span>$2^{\,2}(x - 10) + 10 = 22$</span>
-                                <span class="work__why">$n = 2$, $c = 10$</span></div>
-                              <div class="work__row"><span class="work__label">Step 2</span>
-                                <span>$4(x - 10) = 12$, so $x - 10 = 3$</span></div>
-                              <div class="work__row"><span class="work__label">Step 3</span>
-                                <span>$x = 13$</span></div>
-                              <div class="work__row"><span class="work__label">Step 4</span>
-                                <span>$13 \to 26 - 10 = 16 \to 32 - 10 = 22$</span>
-                                <span class="work__why">check</span></div>
-                              <div class="work__row"><span class="work__label">Answer</span>
-                                <span>He started with $13$ coins</span></div>
-                            </div>
-                          </div>
-                        </div>
+                                                        <div class="c-example__tab">Example 14</div>
+                                                        <div class="c-example__body">
+                                                          <p>A three-digit number and the two numbers made by cycling its digits add to $2220$. What do its digits add to? Give one number that works.</p>
+                                                          <p><strong>Solution.</strong></p>
+                                                          <div class="work">
+                                                            <div class="work__row"><span class="work__label">Step 1</span>
+                                                              <span>the total is $111(a + b + c)$</span>
+                                                              <span class="work__why">each digit in each place</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 2</span>
+                                                              <span>$a + b + c = 2220 \div 111 = 20$</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 3</span>
+                                                              <span>try $488$: $488 + 884 + 848 = 2220$</span>
+                                                              <span class="work__why">$4 + 8 + 8 = 20$</span></div>
+                                                            <div class="work__row"><span class="work__label">Answer</span>
+                                                              <span>The digits add to $20$; $488$ is one such number</span></div>
+                                                          </div>
+                                                          <p>Answers will vary: any three digits adding to $20$ will do, such as $596$ or $875$.</p>
+                                                        </div>
+                                                      </div>
+
+      <div class="c-example">
+                                                        <div class="c-example__tab">Example 15</div>
+                                                        <div class="c-example__body">
+                                                          <p>A six-digit number is made by writing a three-digit number twice over. Divided by $77$, it gives $6019$. What number was written twice?</p>
+                                                          <p><strong>Solution.</strong></p>
+                                                          <div class="work">
+                                                            <div class="work__row"><span class="work__label">Step 1</span>
+                                                              <span>the six-digit number is the three-digit number $\times 1001$</span>
+                                                              <span class="work__why">what repeating does</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 2</span>
+                                                              <span>$1001 = 7 \times 11 \times 13 = 77 \times 13$</span>
+                                                              <span class="work__why">three small primes</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 3</span>
+                                                              <span>so dividing by $77$ leaves the number $\times 13$, which is $6019$</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 4</span>
+                                                              <span>$6019 \div 13 = 463$</span>
+                                                              <span class="work__why">undo the 13</span></div>
+                                                            <div class="work__row"><span class="work__label">Step 5</span>
+                                                              <span>$463 \times 1001 = 463463$, and $463463 \div 77 = 6019$</span>
+                                                              <span class="work__why">check</span></div>
+                                                            <div class="work__row"><span class="work__label">Answer</span>
+                                                              <span>$463$, written twice as $463463$</span></div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
 
     </div>
   </div>

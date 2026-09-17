@@ -1,5 +1,35 @@
 # Class 6 · Mathematics I · Chapter 9 — Symmetry
 
+## Syllabus audit fixes, 17 September 2026
+
+The Beyond the Book audit made two findings here, both borderline. I confirmed both against the pages, with the one exception noted in the first row. The chapter body was not touched. No example was added: neither finding was a gap.
+
+| finding | what I did |
+|---|---|
+| Stage 1 Q2 and Q5, and Example 13, rely on "two lines of symmetry at right angles bring a half turn with them". The body never teaches combining two reflections. | **Dropped the general claim, and kept the half-turn check itself.** <br>• **Q2** ended *Reflecting a figure in one of these lines and then in the other has the same effect as a half turn*. It now reads *H and X pass both tests, but each test had to be tried on its own*. The half turn is still found by turning each letter, as the paragraph already does. <br>• **Q5** ended *two lines of symmetry at right angles bring a half turn with them*. It now reads *As with the letters, the half turn was found by turning the figure, not by folding it*. <br>• **Example 13: finding rejected.** Its Step 3 checks the half turn directly (*top bar onto bottom bar, upper right onto lower left*) and makes no general claim, so it is unchanged. |
+| Example 9 and Practice Q24 combine two turns (90° and 120° give 30°). The body leaves *are the angles always multiples of the smallest?* open. | As the coordinator directed, **the working now derives the result**, and neither item is labelled. <br>• Two facts come from within the book: Stage 1 Q3 shows that a turn which fits can be repeated from the new position, and the body states that *a full turn of 360° brings every figure back* (§9.2). <br>• **Example 9's steps:** 120° fits, so the picture is the start again. From there a quarter turn fits, and so do three of them, 270° (*as in Stage 1*). 120 + 270 = 390 = 360 + 30, and the full turn brings every figure back (*from the chapter*). The closing line now says the 12 angles come from repeating 30°, as in Stage 1. <br>• **Q24:** the answer row and `ANSWERS.md` give the same derivation: each 80° turn returns the start picture, so five fit (Stage 1, question 3); 400 = 360 + 40, and the full turn brings it back. |
+
+**Solved Examples:** 13, unchanged. **Pages: 32 before (18 body + 14 Beyond), 32 after (18 + 14).**
+
+**Fitting.** One refit, and the layout is the same as before. Short pages, all as before:
+- p105: 75%.
+- p106: 73%.
+- p112: 54%, Q30–Q31 before the Answers page.
+
+**Checks.**
+- `check-numbers.mjs` passes 424 checks. New checks confirm that:
+  - the general claim is gone in three wordings;
+  - the new Stage 1 sentences are printed;
+  - H and X each have 2 lines and order 2, found separately;
+  - every printed step of Example 9 holds (120, 270 = 3 × 90, 390, 30, the Stage 1 citation, the body's full-turn sentence, 12 angles);
+  - Q24's row and `ANSWERS.md` carry the derivation.
+- 10 deliberate breaks were all caught. The scratch copy needs `math-ch01-patterns` beside it, because the checker reads Chapter 1's regular polygons.
+- `build.mjs --png`: all pages fit.
+- `orphans`: 0.
+- `fit-options`: clean.
+- `check-labels`: clean.
+- `check-no-repeats`: only the three pairs it already reported, all different questions.
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model chapter

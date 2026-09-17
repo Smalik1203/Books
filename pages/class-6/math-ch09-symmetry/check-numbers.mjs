@@ -637,6 +637,17 @@ for (const [n, list] of [[2, [180, 360]], [3, [120, 240, 360]], [4, [90, 180, 27
   for (const gone of ['octagon', '51\\frac{3}{7}', 'second player', 'rhombus', 'multiples of the smallest one'])
     is('Beyond no longer prints "' + gone + '"', !BEYOND.includes(gone));
   ok('stage 1 has six questions', (S1RAW.match(/class="c-try"/g) || []).length, 6);
+  // syllabus audit, 17 Sep 2026: the general claim that two lines of
+  // symmetry at right angles bring a half turn is not taught, so it is
+  // not printed; the half turn is checked by turning, and the checks
+  // above confirm it for H, X and the two squares
+  for (const gone of ['Reflecting a figure in one of these lines and then in the other', 'bring a half turn with them', 'has the same effect as a half turn'])
+    is('Beyond no longer claims "' + gone + '"', !BEYOND.includes(gone));
+  is('stage 1: H and X checked by each test on its own', S1.includes('H and X pass both tests, but each test had to be tried on its own'));
+  is('stage 1: the two squares\' half turn found by turning', S1.includes('the half turn was found by turning the figure, not by folding it'));
+  const hx = ['H', 'X'].map(c => ({ H: [[[0, 0], [0, 40]], [[20, 0], [20, 40]], [[0, 20], [20, 20]]], X: [[[0, 0], [20, 40]], [[0, 40], [20, 0]]] })[c]);
+  is('stage 1: H and X each have 2 lines and order 2, found separately',
+    hx.every(g => { const s = symOf(g.flatMap(p => polyPrims(p, 'dg-line', false)), [10, 20]); return s.lines === 2 && s.order === 2; }));
 }
 
 // ---- Beyond: the worked examples, read back from their Answer rows
@@ -718,6 +729,22 @@ const ans = (n) => EXAMPLES[n]?.Answer || '';
   ok('Beyond Example 8', [360 / 20, 126 % 18 === 0, 100 % 18 === 0], [n8[0], ans(8).includes('126°') || /\$126\^\\circ\$ is an angle/.test(EXAMPLES_RAW[8]), !/\$100\^\\circ\$ is not/.test(EXAMPLES_RAW[8])]);
   // Example 9: 120 + 270 = 390 = 360 + 30; the angles are then multiples of 30
   ok('Beyond Example 9', [(120 + 3 * 90) - 360, 360 / 30], [nums(ans(9))[0], 12]);
+  {
+    // the working derives the result: 120 fits; from there 3 quarter turns
+    // (270) fit, as Stage 1 showed; 390 = 360 + 30 and the full turn
+    // brings every figure back. Each printed step is checked.
+    const E9 = EXAMPLES[9];
+    is('Beyond Example 9 step 1: 120 fits, the start picture again', E9['Step 1'].includes('turn it by $120^\\circ$: it looks exactly as it did at the start'));
+    is('Beyond Example 9 step 2: three quarter turns from there, 270, cites Stage 1',
+      E9['Step 2'].includes('three of them, $270^\\circ$') && /as in Stage 1/.test(E9['Step 2']) && 3 * 90 === 270);
+    ok('Beyond Example 9 step 3: 120 + 270 = 390', nums(E9['Step 3']).slice(0, 3), [120, 270, 120 + 270]);
+    ok('Beyond Example 9 step 4: 390 = 360 + 30', nums(E9['Step 4']).slice(0, 3), [390, 360, 390 - 360]);
+    is('Beyond Example 9 step 4 uses the full turn from the chapter', /the full turn brings every figure back/.test(E9['Step 4'])
+      && flat(ALL).includes('A full turn of $360^\\circ$ brings every figure back to where it started'));
+    is('Beyond Example 9: at least 12 angles, from repeating 30', /every multiple of \$30\^\\circ\$ up to \$360\^\\circ\$\. So this figure has at least 12 angles/.test(BEYOND) && 360 / 30 === 12);
+    // Stage 1 question 3 is where "a turn that fits can be repeated" is shown
+    is('Stage 1 shows that a turn that fits can be repeated', BEYOND.includes('a second quarter turn gives the same picture again'));
+  }
   // Example 10, 11, 12
   ok('Beyond Example 10', [360 / 15, 48, 72, 15], nums(ans(10)).slice(0, 5).filter((_, k) => k !== 1));
   ok('Beyond Example 11', [360 / 10, 90 % 10 === 0, 45 % 10 === 0], [nums(ans(11))[0], true, false]);
@@ -764,6 +791,9 @@ const squares = (cells) => cells.flatMap(([i, j]) => polyPrims([[i * 10, j * 10]
   ok('Q23', [360 / 3, 240, 360], nums(ROW[23]).slice(-3));
   is('Q23: 90 is not among them', ![120, 240, 360].includes(90) && ROW[23].startsWith('No'));
   is('Q24: 80 x 5 = 400 = 360 + 40 is printed', [80 * 5, 360, 40].every(v => nums(ROW[24]).includes(v)) && 80 * 5 === 360 + 40);
+  is('Q24: the row repeats the turn (Stage 1) and uses the full turn', /five such turns still fit, as in Stage 1/.test(ROW[24]) && /the full turn brings it back/.test(ROW[24])
+    && ROW[24].includes('$80^\\circ \\times 5 = 400^\\circ = 360^\\circ + 40^\\circ$'));
+  is('ANSWERS 24 cites Stage 1 and the full turn', ANSWERS.includes('(Stage 1, question 3)') && ANSWERS.includes('full turn brings every figure back. So a turn of $40^\\circ$ fits.'));
   const A25 = reflectPt([0, 3], [0, 0], [1, -1]);
   ok('Q25: 3 squares directly below B reflects to 3 squares left of B', A25.map(v => Math.round(v * 1e9) / 1e9), [-nums(ROW[25])[0], 0]);
   is('Q25 says left', ROW[25].includes('to the left of B'));

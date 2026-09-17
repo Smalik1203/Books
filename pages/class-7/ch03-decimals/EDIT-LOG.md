@@ -1,5 +1,38 @@
 # Class 7 · Mathematics I · Chapter 3 — The Decimal Point
 
+## Syllabus audit fixes, 17 September 2026
+
+Beyond the Book checked against what the chapter body teaches. The audit
+found two gaps and nothing off-syllabus. The chapter has no `ANSWERS.md` or
+`check-numbers.mjs`, so every new value was verified by hand.
+
+- **Gap, §3.6 number lines not marked in tenths.** New Example 11, under
+  Type 4 (renamed *Locating, comparing and ordering*, after §3.6's own
+  title): Fig. 3.8, a line from 2 to 4 in 10 equal parts, p at the third
+  mark and q at the eighth. 20 tenths in 10 parts is 2 tenths a part; p =
+  2.6, q = 3.6. The figure is Fig. 3.6's markup, one line, ticks at 26-unit
+  spacing (118 and 248 are marks 3 and 8). The audit's suggested line, 4.3
+  to 4.8, is Fig. 3.6 (iii) in the body, so using it would answer a body
+  question.
+- **Gap, §3.7 decimal sequences.** New Example 17, under Type 5: 7.8,
+  7.35, 6.9, … changes by 0.45 each time; next terms 6.45, 6, 5.55 (each
+  subtraction redone). The audit's suggestion, 12.45, 11.95, 11.45, is item
+  (g) of body Exercise Set 3.15, so it was not used.
+- Examples renumbered: old 11–15 are 12–16, old 16–17 are 18–19. Nineteen
+  examples now (seventeen before). Nothing refers to an example by number.
+
+Beyond refitted with `refit.mjs … bridge`. Answers now opens a fresh page,
+which it did not before (it followed Q37 on p110), so the division grew:
+Beyond 11 → 12 pages, chapter 31 → 32. The refit left Q37 alone on p111
+and p110 2.4 mm into the margin, so Q36 was settled onto p111 with its
+*Case-based questions* head. Short Beyond pages, logged not padded: 25
+(72%, Example 13 and its Type head would not fit), 26 (77%), 30 (77%), 31
+(47%, the last questions before Answers). 0 stranded openers, option rows
+fit, no labels collide, `check-no-repeats` finds nothing, `check-colour` on
+page 25 reads normally. Body pages 2, 10 and 13 now build 1.3, 1.6 and
+0.8 mm into the bottom margin; their sources are byte-identical to before
+this pass, so that comes from outside this chapter and was left.
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's four worked examples were prose paragraphs with the working

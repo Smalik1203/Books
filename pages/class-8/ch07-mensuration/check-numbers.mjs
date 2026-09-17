@@ -258,11 +258,19 @@ has('7.5 Q8', s5[8], 10 ** 3, 10 ** 2, 10 ** 3 / 10 ** 2);
 const s1t = text(beyond.slice(0, beyond.indexOf('Solved Examples')));
 ok('S1 Q1: volume = curved surface at r = 2', [volCyl(2, 7), csa(2, 7)], [88, 88]);
 is('S1 Q1: pi r^2 h = 2 pi r h only at r = 2', [1, 2, 3, 4, 5].filter(r => near(volCyl(r, 7), csa(r, 7))).join() === '2');
-ok('S1 Q2: wax cubes', 12 * 6 * 4 / 2 ** 3, 36);
-ok('S1 Q2: skins', [tsaCuboid(12, 6, 4), 36 * 6 * 4], [288, 864]);
-ok('S1 Q3: well depth', volCyl(7 / 2, 10) / (22 * 14), 1.25);
-ok('S1 Q3: radius 7 by mistake', [volCyl(7, 10) / volCyl(3.5, 10), volCyl(7, 10) / (22 * 14)], [4, 5]);
-ok('S1 Q4: stone', 50 * 40 * 2, 4000);
+{ const fit = (l, b, h, a) => Math.floor(l / a) * Math.floor(b / a) * Math.floor(h / a);
+  ok('S1 Q2: packed along the edges', [12 / 2, 6 / 2, 4 / 2, fit(12, 6, 4, 2)], [6, 3, 2, 36]);
+  ok('S1 Q2: by volume', [12 * 6 * 4, 2 ** 3, 12 * 6 * 4 / 2 ** 3], [288, 8, 36]);
+  ok('S1 Q2: 13 cm box, volume promises', [13 * 6 * 4, 13 * 6 * 4 / 8], [312, 39]);
+  ok('S1 Q2: 13 cm box, still fits', [Math.floor(13 / 2), fit(13, 6, 4, 2)], [6, 36]);
+  ['Thirty-six cubes', 'only six cubes fit', 'holds $36$'].forEach(w => is('S1 Q2 wording: ' + w, s1t.includes(w))); }
+{ const v = 385000 / M3_TO_L, base = PI * 3.5 ** 2;
+  ok('S1 Q3: tank', [v, base, v / base], [385, 38.5, 10]);
+  ok('S1 Q3: radius 7 by mistake', [PI * 7 ** 2 / base, v / (PI * 7 ** 2)], [4, 2.5]);
+  [`four times the base and a depth of $${v / (PI * 7 ** 2)}$ m`, `holds $${385000}$ litres`].forEach(w => is('S1 Q3 wording: ' + w, s1t.includes(w))); }
+ok('S1 Q4: water poured in', [4 * L_TO_CM3, 50 * 40, 4 * L_TO_CM3 / (50 * 40)], [4000, 2000, 2]);
+['Another $4$ litres', 'how deep the water was already'].forEach(w => is('S1 Q4 wording: ' + w, s1t.includes(w)));
+is('S1: no melting, digging or displacing left', !/melt|wax|well \$7|stone/i.test(s1t));
 { const r = 4 * 22 / (2 * PI); ok('S1 Q5', [r, PI * r * r, PI * r * r - 22 ** 2], [14, 616, 132]); is('S1 Q5: over a quarter', 132 / 484 > 0.25); }
 ok('S1 Q6: tank', [tsaCyl(1.4, 3), round(tsaCyl(1.4, 3) * 120, 2)], [38.72, 4646.4]);
 is('S1 Q6: cost printed 4646.40', /₹\$4646\.40\$/.test(beyond));

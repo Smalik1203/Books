@@ -492,7 +492,7 @@ Multiplying along every row and every column is the check.
 ## Beyond the Book
 
 Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets fourteen examples as steps, numbered 1 to 14 on their own, and stage
+question in running text, stage 2 sets fifteen examples as steps, numbered 1 to 15 on their own, and stage
 4 prints the key to stage 3. Repeated here so the booklet is complete.
 
 ### Stage 1 · Using What You Know
@@ -539,12 +539,18 @@ question in running text, stage 2 sets fourteen examples as steps, numbered 1 to
     by all three. (b) **No.** (c) $4 = 2 \times 2$ and $6 = 2 \times 3$
     share a 2, so between them they call for only two 2s and one 3 — which
     is 12, not 24.
-29. (a) **20.** (b) **12.** (c) **2** — namely 40 and 80. (d) 5 and 8 are
-    co-prime, so their first common multiple is $5 \times 8 = 40$; the
-    multiples of 40 up to 100 are 40 and 80.
+29. (a) **20.** (b) **12.** (c) **2** — namely 40 and 80. (d) List the
+    multiples of 8 until one ends in 0 or 5: 8, 16, 24, 32, 40. The next
+    common multiple is $40 + 40 = 80$, and $80 + 40 = 120$ is past 100.
 30. (a) $84 = 2 \times 2 \times 3 \times 7$ and
     $126 = 2 \times 3 \times 3 \times 7$. (b) 1, 2, 3, 6, 7, 14, 21 and 42.
-    (c) **42.** (d) **2 rows of chairs and 3 rows of stools.**
-31. (a) $6 = 2 \times 3$, $8 = 2 \times 2 \times 2$,
-    $12 = 2 \times 2 \times 3$. (b) **24 minutes** — three 2s and one 3.
-    (c) **9:24 am.** (d) **Twice**, at 9:24 am and 9:48 am.
+    (c) **6 rows of chairs and 9 rows of stools**: $84 \div 14 = 6$ and
+    $126 \div 14 = 9$. (d) **No.** $4 = 2 \times 2$, but 126 has only one 2
+    in its prime factorisation, so 4 is not a factor of 126.
+31. (a) 12, 24, 36, 48, 60. (b) 24 and 48 are also multiples of 6 and of
+    8; 12, 36 and 60 are not multiples of 8. So the bells ring together
+    again after **24 minutes**. (c) **9:24 am.** (d) **Twice**, at 9:24 am
+    and 9:48 am.
+
+The note on assertion–reason 16: $221 = 13 \times 17$, so 221 has more than
+two factors and is composite; R is the reason A is true, so **(a)**.

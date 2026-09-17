@@ -128,6 +128,15 @@ ok('Stage 1 Q1: 100 has nine factors', divisors(100).length, 9);
 ok('Stage 1 Q2', [...Array(25)].map((_, i) => 51 + 2 * i).reduce((a, b) => a + b), 1875);
 is('Stage 1 Q3: n^2+n never a square to 10^5', [...Array(100000)].every((_, i) => !isSquare((i + 1) ** 2 + i + 1)));
 ok('Stage 1 Q4: smallest n with 2n square, 3n cube', (() => { for (let n = 1; ; n++) if (isSquare(2 * n) && isCube(3 * n)) return n; })(), 72);
+{ // Stage 1 Q5: at least 2000, less than 3000
+  const least = [...Array(100)].map((_, i) => i).find(n => n * n >= 2000);
+  const sides = [...Array(100)].map((_, i) => i).filter(n => n * n >= 2000 && n * n < 3000);
+  ok('Stage 1 Q5: smallest side', [least, (least - 1) ** 2, least ** 2], [45, 1936, 2025]);
+  ok('Stage 1 Q5: the sides', [sides[0], sides[sides.length - 1], sides.length, 54 ** 2, 55 ** 2], [45, 54, 10, 2916, 3025]);
+  ok('Stage 1 Q5: 2000 and 3000 end in an odd run of zeros', [trailingZeros(2000), trailingZeros(3000), isSquare(2000), isSquare(3000)], [3, 3, false, false]);
+  for (const w of ['$44^2 = 1936$ is too small; $45^2 = 2025$ is enough', '$54^2 = 2916$ is below it; $55^2 = 3025$ is not', '$54 - 45 + 1 = 10$ of them', 'The smallest side is $45$ cm'])
+    is('Stage 1 Q5 prints: ' + w, text(beyond).includes(w));
+  is('Stage 1 no longer proves a root irrational', !/irrational|tfrac\{a\}\{b\}/.test(beyond)); }
 is('Stage 1 Q6: odd squares leave 1 mod 8', [...Array(500)].every((_, i) => ((2 * i + 1) ** 2) % 8 === 1));
 ok('Stage 1 Q6: 2019 mod 8', 2019 % 8, 3);
 ok('Stage 1 Q7: digit counts of two-digit squares', [...new Set([...Array(90)].map((_, i) => String((i + 10) ** 2).length))], [3, 4]);
@@ -149,10 +158,24 @@ ok('Ex 8: triangular numbers adding to 144', [tri(11), tri(12)], [66, 78]);
 ok('Ex 10: 1800', [mulTo(1800, 2), Math.sqrt(1800 * 2)], [2, 60]);
 ok('Ex 11: 3380', [divTo(3380, 2), Math.sqrt(3380 / 5)], [5, 26]);
 ok('Ex 13: garden of 500', nearestRoot(500), 22);
-ok('Ex 14: 2560', [mulTo(2560, 3), Math.round(Math.cbrt(2560 * 25))], [25, 40]);
-ok('Ex 15: 4375', [divTo(4375, 3), Math.round(Math.cbrt(4375 / 35))], [35, 5]);
-ok('Ex 18: list flattens like squares', roundsToFlat([5, 8, 13, 20, 29, 40]), [2, 2]);
-ok('Ex 18: n^2 + 4', [1, 2, 3, 4, 5, 6].map(n => n * n + 4), [5, 8, 13, 20, 29, 40]);
+{ // Ex 14: the eleventh block of odd numbers
+  const odds = [...Array(200)].map((_, i) => 2 * i + 1);
+  const start = [...Array(10)].map((_, i) => i + 1).reduce((a, b) => a + b, 0);   // 55 odd numbers come before it
+  const block = odds.slice(start, start + 11);
+  ok('Ex 14: the eleventh block', block, [111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131]);
+  ok('Ex 14: its sum and middle', [block.reduce((a, b) => a + b, 0), block[5]], [11 ** 3, 11 ** 2]);
+  ok('Ex 14: five pairs and the middle', [[0, 1, 2, 3, 4].map(i => block[i] + block[10 - i]), 5 * 242 + 121], [[242, 242, 242, 242, 242], 1331]);
+  ok('Ex 14: the tenth block ends at 109', odds[start - 1], 109);
+  is('Ex 14 prints the whole block', text(beyond).includes('$' + block.join(', ') + '$'));
+  is('Ex 14 prints no 512 = 8^3, which Exercise Set 1.5 Q1 asks for', !/512 = 8\^3/.test(beyond)); }
+ok('Ex 15: 2560', [mulTo(2560, 3), Math.round(Math.cbrt(2560 * 25))], [25, 40]);
+ok('Ex 16: 4375', [divTo(4375, 3), Math.round(Math.cbrt(4375 / 35))], [35, 5]);
+ok('Ex 19: list flattens like squares', roundsToFlat([5, 8, 13, 20, 29, 40]), [2, 2]);
+ok('Ex 19: n^2 + 4', [1, 2, 3, 4, 5, 6].map(n => n * n + 4), [5, 8, 13, 20, 29, 40]);
+{ const exs = [...beyond.matchAll(/c-example__tab">Example (\d+)</g)].map(m => Number(m[1]));
+  ok('Beyond has Examples 1-19 in order', exs, [...Array(19)].map((_, i) => i + 1));
+  ok('Types 1-9 in order', [...beyond.matchAll(/<h3>Type (\d+) &middot;/g)].map(m => Number(m[1])), [...Array(9)].map((_, i) => i + 1));
+  is('Type 6 holds Example 14', /Type 6 &middot; Cubes as blocks of odd numbers<\/h3>\s*<div class="c-example">\s*<div class="c-example__tab">Example 14</.test(beyond)); }
 
 // the practice answers, read back out of the key rather than typed here
 const keyRows = {};

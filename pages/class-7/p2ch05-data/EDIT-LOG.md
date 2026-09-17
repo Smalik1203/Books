@@ -1,5 +1,60 @@
 # Class 7 · Mathematics II · Chapter 5 — Connecting the Dots…
 
+## Syllabus audit fixes, 17 September 2026
+
+Three findings, all fixed.
+
+1. **Borderline: the word "range"** in the Type 3 head and Example 8. The
+   body never uses the word. It says "the difference between the highest
+   and lowest", and Vaishnavi (p002) says "the gap between his highest and
+   lowest scores". Every use now says it in those words. The Type 3 head
+   reads *The median, and the gap between highest and lowest*. Example 8
+   asks for "the gap between the highest and lowest marks": its step is
+   "Gap $= 49 - 28 = 21$", with the reason *highest minus lowest*, and its
+   answer is "gap 21 marks".
+2. **Borderline: "range" in Practice** Q5, Q24, Q27, Q31, Q32(b) and
+   Q35(c). Each was reworded the same way. For example, Q5 now reads "The
+   gap between the highest and lowest of 48, 36, 52, 41 and 39 is", and
+   Q31 "Write five observations whose highest and lowest values have a gap
+   of 0". The answers now say "gap" and show the subtraction:
+   Q27 $20 - 9 = 11$, Q32 $6 - 0 = 6$, Q35(c) $70 - 51 = 19$ and
+   $75 - 54 = 21$. No value or key letter changed; Q5 is still (c) 16.
+   No "range" is left anywhere in the division.
+3. **Gap: dot plots** (§5.2, Figs 5.1–5.5). A new **Type 5 · Dot plots**
+   holds **Example 11**: ten walking times (12, 8, 15, 10, 12, 21, 9, 12,
+   10, 11), shown as a dot plot from 5 to 25 with the mean and median
+   marked. The steps put the values in order, stack equal values, and work
+   out the mean $120 \div 10 = 12$ and the median
+   $(11 + 12) \div 2 = 11.5$. The answer notes that the 21-minute walk
+   pulls the mean above the median. The new **Fig. 5.14** is drawn in the
+   body's dot-plot style: `dg-axis` ticks, `dg-fill-teal` dots stacked
+   9.5 units apart, a `dg-line` for the mean, a `dg-hidden` for the median,
+   and the same key, copied from Fig. 5.3. The data answers no body
+   exercise. Renumbering that followed:
+   - Examples 11–15 became **12–16**.
+   - Double bar graphs became **Type 6**, and the table of averages
+     became **Type 7**.
+   - The library bar graph became **Fig. 5.15**, with its three
+     references (Example 12's answer, and Examples 13 and 14).
+
+Class 7 has no `ANSWERS.md` or `check-numbers.mjs`, so the values were
+checked by hand. The walking times add up to 120; in order they are 8, 9,
+10, 10, 11, 12, 12, 12, 15, 21, and the 5th and 6th values are 11 and 12.
+The dots in the figure are placed at $x = 90 + 19(v - 5)$. The other
+subtractions are $52 - 36 = 16$, $17 - 6 = 11$, $20 - 9 = 11$ and
+$6 - 0 = 6$. `check-no-repeats`: no division question is close to a body
+question.
+
+Pages 37 → 38 (body 25, Beyond 12 → 13). Before this edit, Answers sat
+under Practice Q36 on p111, which is against the fresh-page rule.
+`refit bridge` moved it to the top of p112, and the key and short answers
+fill that page. *Why the other options are wrong* now takes p113 (36%),
+which is the last page and exempt. All pages fit and every option row
+fits. No labels collide, and `check-colour` on the new figure's page
+(proof 30) is clean. `data-bridge` is on p101–p113. `orphans` still
+reports the two body openers logged below (p011 and p018, both unchanged),
+and none in Beyond.
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's one worked example (Example 1, p004 — Vaishnavi's hibiscus

@@ -1,5 +1,29 @@
 # Class 8 · Mathematics II · Chapter 2 — Two Squares Make One
 
+## Syllabus audit fixes, 17 September 2026
+
+Three findings from the Beyond the Book syllabus audit, all confirmed on the
+pages and all fixed. **Pages: 27 before (13 body + 14 Beyond), 27 after.**
+
+| finding | what was done |
+|---|---|
+| Stage 1, *hypotenuse 53, sides differ by 17* (borderline): finished by spotting $28 \times 45 = 1260$ in $a^2 + 17a = 1260$, a real quadratic the body never solves | Replaced by a try of the same kind that the body's lotus method finishes: a rope 2 m longer than a flagpole, pulled tight to 10 m out; $h^2 + 100 = (h+2)^2$, the squares cancel, $h = 24$. Its explanation points back to Section 2.6. The rest of Stage 1 is unchanged. Practice Q13 (sides 28 and 45 against 53) is only a check of a sum and was kept |
+| Gap: no Solved Example with the unknown in a side and the hypotenuse (body Example 3; Practice Q29, Q30) | New **Type 5 · The unknown in a side and the hypotenuse**, Example 10: a rectangle 7 cm wide whose diagonal is 1 cm longer than its length (24 cm, 25 cm). Not the bamboo, so Q29 is not answered |
+| Gap (minor): side of a rhombus from its diagonals (body Example 4; Practice Q5) | New Example 7 under Type 3: diagonals 18 cm and 80 cm, side 41 cm (Q5's 32 and 60 are untouched) |
+
+Examples 7–16 became 8–18; Types 5–8 became 6–9. **18 Solved Examples now
+(16 before).** `ANSWERS.md` (Stage 1 result 7, Stage 2 list) and
+`check-numbers.mjs` (Stage 1 strings and Q7 search, Examples 7 and 10 new,
+the rest renumbered) follow; each new value was broken on purpose and caught.
+
+Fitting: `refit … bridge` left Q33 alone on a page before Answers. To avoid
+that, Example 7's perimeter step and closing sentence were cut, and
+Example 6 lost its closing sentence (*The theorem works the same way with
+decimals…*), which let Example 7 join page 18; later blocks were then pulled
+back a page at a time, the Type 9 head moved off the foot of page 21, and
+the page left empty was removed. Answers still opens a fresh page (p113).
+Short pages now: 20 (84%), 21 (82%), 25 (87%, before Answers).
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Class 8 Chapter 1

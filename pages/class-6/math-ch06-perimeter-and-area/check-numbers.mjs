@@ -515,6 +515,55 @@ is('T&R reads "Which rooms in Charan’s house have the same area?"',
     .test(flat(ALL)));
 }
 
+/* Fig. 6.23 — Beyond Ex 9, a square card cut into four pieces and
+   compared by covering. Areas are read off the drawing in units of C,
+   and every covering the steps claim is checked as an equal area. */
+{
+  const g = figure('6.23'); const p = polys(g.svg, 'dg-line');
+  ok('Fig 6.23 labels in drawing order', texts(g.svg), ['A', 'B', 'C', 'D']);
+  const [A, B, C, D] = p.map(q => shoelace(q, 30)); // 30 units to the cm
+  F.card = { A, B, C, D };
+  show('Fig 6.23 pieces in sq cm', JSON.stringify(F.card));
+  ok('Fig 6.23 the pieces make the 4 cm square', A + B + C + D, 4 * 4);
+  ok('Fig 6.23 C covers D', C, D);
+  ok('Fig 6.23 C and D cover B', C + D, B);
+  ok('Fig 6.23 B, C and D cover A', B + C + D, A);
+  ok('Fig 6.23 in units of C', [A / C, B / C, 1, D / C], [4, 2, 1, 1]);
+  ok('Fig 6.23 the whole card in Cs', (A + B + C + D) / C, 8);
+  // C and D are the same triangle: right-angled with two equal short sides
+  const sides = (q) => polyEdges(q).map(([x1, y1, x2, y2]) => r2(Math.hypot(x2 - x1, y2 - y1))).sort((a, b) => a - b);
+  ok('Fig 6.23 C and D have the same sides', sides(p[2]), sides(p[3]));
+  is('Fig 6.23 is captioned for Example 9, and Example 9 names it',
+    /Fig\. 6\.23<\/span> A square card cut into four pieces, for Example 9\./.test(BEYOND)
+    && /Example 9<\/div>[\s\S]{0,300}Fig\. 6\.23/.test(BEYOND));
+}
+
+/* Fig. 6.24 — Beyond Ex 11, six unit squares and two places for a
+   seventh. Perimeters are counted from the cells drawn. */
+{
+  const g = figure('6.24');
+  const cell = (r) => [(r.x - 55) / 16, (r.y - 21) / 16];
+  const cells = rects(g.svg, 'dg-fill-b-soft').map(cell);
+  const [P, Q] = rects(g.svg, 'dg-ghost').map(cell);
+  ok('Fig 6.24 six squares', cells.length, 6);
+  ok('Fig 6.24 labels', texts(g.svg), ['P', 'Q']);
+  const shared = (c) => cells.filter(([x, y]) => Math.abs(x - c[0]) + Math.abs(y - c[1]) === 1).length;
+  F.f624 = [cellPerimeter(cells), cellPerimeter([...cells, P]), cellPerimeter([...cells, Q])];
+  show('Fig 6.24 perimeters', F.f624);
+  ok('Fig 6.24 P shares 2 sides, Q shares 1', [shared(P), shared(Q)], [2, 1]);
+  ok('Fig 6.24 the counts in the steps', [F.f624[0] - 2 + 2, F.f624[0] - 1 + 3], [F.f624[1], F.f624[2]]);
+  ok('Fig 6.24 step 1 prints the perimeter', nums((flat(BEYOND).match(/going round the figure, its perimeter is (\d+) units/) || ['', ''])[1]), [F.f624[0]]);
+  // the outline polygon is the boundary of the six cells
+  const [outline] = polys(g.svg, 'dg-line');
+  ok('Fig 6.24 outline encloses the six squares', shoelace(outline, 16), 6);
+  const perim = polyEdges(outline).reduce((s, [x1, y1, x2, y2]) => s + Math.hypot(x2 - x1, y2 - y1), 0) / 16;
+  ok('Fig 6.24 outline length', perim, F.f624[0]);
+  is('Fig 6.24 is captioned for Example 11, and Example 11 names it',
+    /Fig\. 6\.24<\/span> Six unit squares, and two places for a seventh, for Example 11\./.test(BEYOND)
+    && /Example 11<\/div>[\s\S]{0,300}Fig\. 6\.24/.test(BEYOND));
+  is("Beyond Ex 11: P gives 7 squares and the same perimeter", /2 sides are covered and 2 added: 14 - 2 \+ 2 = 14 units same perimeter/.test(flat(BEYOND).replace(/\$/g, "")) && cells.length + 1 === 7 && F.f624[1] === F.f624[0]);
+}
+
 /* ---- B2. the answers the Beyond examples print ---------------- */
 
 /* The body numbers its examples 1-6 and Beyond starts again at 1, as
@@ -536,7 +585,7 @@ function okAnswer(part, n, want) {
 {
   const tabs = (t) => [...t.matchAll(/<div class="c-example__tab">Example (\d+)<\/div>/g)].map(m => +m[1]);
   ok('body example tabs read 1-6', tabs(BODY), [1, 2, 3, 4, 5, 6]);
-  ok('Beyond example tabs read 1-13', tabs(BEYOND), [...Array(13).keys()].map(i => i + 1));
+  ok('Beyond example tabs read 1-15', tabs(BEYOND), [...Array(15).keys()].map(i => i + 1));
   is('Fig 6.22 is captioned for Beyond Example 4, and Beyond Ex 4 names Fig 6.22',
     /Fig\. 6\.22<\/span> A shape on dot paper, for Example 4\./.test(BEYOND)
     && /Example 4<\/div>[\s\S]{0,200}Fig\. 6\.22/.test(BEYOND));
@@ -548,7 +597,7 @@ okAnswer('body', 3, [5 * 4 - 3 * 3]);
 okAnswer('body', 4, [12 * 10 - 4 * 4 * 4]);
 okAnswer('body', 5, [14 * 12 / 8]);
 okAnswer('body', 6, [20 / (24 / 6)]);
-// Beyond, Examples 1-13
+// Beyond, Examples 1-15
 okAnswer('Beyond', 1, [6 * 6 / 4]);
 okAnswer('Beyond', 2, [2 * (25 + 15) + 15]);
 {
@@ -563,22 +612,24 @@ okAnswer('Beyond', 5, [(5 * 3 - 2 * 1 - 1 * 2) * 30]);
 okAnswer('Beyond', 6, [(300 / 25) * (200 / 25)]);
 okAnswer('Beyond', 7, [6 * 5 - 2 * 3, 2 * (6 + 5)]);
 okAnswer('Beyond', 8, [F.lawn]);
+okAnswer('Beyond', 9, [F.card.A, F.card.B, F.card.C]);
 {
   let best = null;
   for (let l = 1; l < 10; l++) { const w = 10 - l; if (!best || l * w > best[2]) best = [l, w, l * w]; }
-  okAnswer('Beyond', 9, [best[0], best[2]]);
+  okAnswer('Beyond', 10, [best[0], best[2]]);
 }
-okAnswer('Beyond', 10, [8 * 6 / 2, 3 * 6 / 2, (8 - 3) * 6 / 2]);
+okAnswer('Beyond', 11, [F.f624[1], F.f624[2]]);
+okAnswer('Beyond', 12, [8 * 6 / 2, 3 * 6 / 2, (8 - 3) * 6 / 2]);
 {
-  // Beyond Ex 11: A(0,0), B(6,0), F(4,0), C(4,4), cut along CF
+  // Beyond Ex 13: A(0,0), B(6,0), F(4,0), C(4,4), cut along CF
   const tri = [[0, 0], [6, 0], [4, 4]];
-  ok("Beyond Ex 11: the two halves", [4 * 4 / 2, (6 - 4) * 4 / 2], [shoelace([[0, 0], [4, 0], [4, 4]], 1), shoelace([[4, 0], [6, 0], [4, 4]], 1)]);
-  is("Beyond Ex 11 prints its lengths", /base AB 6 cm long. Its top corner C is 4 cm straight above the point F on AB, and AF is 4 cm/.test(flat(ALL).replace(/\$/g, "")));
-  okAnswer('Beyond', 11, [shoelace(tri, 1)]);
+  ok("Beyond Ex 13: the two halves", [4 * 4 / 2, (6 - 4) * 4 / 2], [shoelace([[0, 0], [4, 0], [4, 4]], 1), shoelace([[4, 0], [6, 0], [4, 4]], 1)]);
+  is("Beyond Ex 13 prints its lengths", /base AB 6 cm long. Its top corner C is 4 cm straight above the point F on AB, and AF is 4 cm/.test(flat(ALL).replace(/\$/g, "")));
+  okAnswer('Beyond', 13, [shoelace(tri, 1)]);
 }
-okAnswer('Beyond', 12, [120 / 12, 40 * 30 - 15 * 12 - 120]);
-okAnswer('Beyond', 13, [3 + 20 / (12 / 3) + 28 / (12 / 3)]);
-is('Beyond Ex 10: the three triangles fill the rectangle', 24 + 9 + 15 === 8 * 6);
+okAnswer('Beyond', 14, [120 / 12, 40 * 30 - 15 * 12 - 120]);
+okAnswer('Beyond', 15, [3 + 20 / (12 / 3) + 28 / (12 / 3)]);
+is('Beyond Ex 12: the three triangles fill the rectangle', 24 + 9 + 15 === 8 * 6);
 is('Beyond Ex 7: the cut corner leaves the perimeter alone', 2 + 3 + (6 - 2) + (5 - 3) + 6 + 5 === 22);
 
 /* ---- B3. the practice answers, read off the page -------------- */
@@ -865,7 +916,7 @@ ok('A 6.13 Q7 instance', [12 * 8 / 2, 8 * 6, 8 < 12 && 6 < 8], [48, 48, true]);
 // with each example's printed Answer row
 {
   const rows = [...ANSWERS.matchAll(/^\| (\d+) \| [^|]+ \| ([^|]+) \|$/gm)];
-  ok('ANSWERS.md lists Beyond examples 1-13', rows.map(r => +r[1]), [...Array(13).keys()].map(i => i + 1));
+  ok('ANSWERS.md lists Beyond examples 1-15', rows.map(r => +r[1]), [...Array(15).keys()].map(i => i + 1));
   for (const [, n, ans] of rows)
     ok(`ANSWERS.md Beyond Ex ${n} matches the page`, nums(ans), nums(exampleAnswer('Beyond', n) || ''));
   is('ANSWERS.md no longer says "Examples 7 to 19"', !/Examples 7 to 19/.test(ANSWERS));

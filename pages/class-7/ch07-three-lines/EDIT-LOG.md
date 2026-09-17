@@ -1,5 +1,21 @@
 # Class 7 · Mathematics I · Chapter 7 — A Tale of Three Intersecting Lines
 
+## Syllabus audit fixes, 17 September 2026
+
+Beyond the Book checked against what the chapter body teaches. The audit
+found one borderline item and marked it *keep*, and it was kept.
+
+- **Stage 1 Q3; Practice Q26, Q31, Q32; case question 34(c) — the exterior
+  angle property and exterior angles summing to $360^\circ$.** The body
+  asks "What must be true?" and never states the property, but every one of
+  these items reaches it from the linear pair and the angle sum, both of
+  which the body teaches (Stage 1 Q3 works it through: $180^\circ -
+  125^\circ = 55^\circ$, then the angle sum; answer 32 does the same with
+  $3 \times 180^\circ - 180^\circ$). Nothing was changed.
+
+Pages 25 → 25; no file in the chapter other than this log was edited, so
+nothing was refitted or rebuilt.
+
 ## Beyond the Book, rebuilt 15 September 2026
 
 Rebuilt to DESIGN-MATHS.md §6a, *The shape since 15 September 2026*, on the

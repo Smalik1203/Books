@@ -1,5 +1,42 @@
 # Class 7 · Mathematics II · Chapter 7 — Finding the Unknown
 
+## Syllabus audit fixes, 17 September 2026
+
+One finding, a borderline gap. No Solved Example worked making equations from
+a given solution (body p014–p015), or finding a real-life situation for an
+equation (body Example 13). Two examples were added at the end of Type 1
+(*Writing an equation and checking a solution*), one per topic:
+
+- **Example 4.** Write two equations whose solution is $m = -4$. Start from
+  $m = -4$ and do the same operation on both sides, as in the body's
+  Table 7.4. Multiplying by 2 and adding 5 gives $2m + 5 = -3$. Changing
+  both signs and adding 6 gives $6 - m = 10$. Both are then checked with
+  $m = -4$. The audit's value ($x = -2$) was **not used**, because it is
+  Exercise Set 7.2 Q1. `check-no-repeats` pairs this example at 60% with
+  that question and with the body's "four equations whose solution is
+  $u = 6$". Both are the same kind of task with a different value, and the
+  example answers neither.
+- **Example 5.** A real-life situation for $3x - 20 = 70$. The terms are
+  read the way body Example 13 reads them: a term that changes with $x$, and
+  a fixed amount, here taken away. One situation is 3 notebooks at ₹$x$ each
+  with ₹20 off, and a bill of ₹70. Solving gives $x = 30$. The equation
+  differs from Example 13's and from the case question Q34 (a bus and
+  museum tickets).
+
+Examples 4–12 became **6–14**. Nothing refers to an example by number. Class
+7 has no `ANSWERS.md` or `check-numbers.mjs`, so the values were checked by
+hand: $2 \times (-4) + 5 = -3$, $6 - (-4) = 10$, and
+$3 \times 30 - 20 = 70$.
+
+Pages 33 → 34 (body 23, Beyond 10 → 11). Before this edit, Answers sat under
+Q35 on p109, which is against the fresh-page rule. `refit bridge` moved it
+to the top of p111, but left Q35 alone on p110. So Q34, with its
+*Case-based questions* sub-head, was moved by hand from p109 to p110. p109
+(59%) and p110 (50%) are the short run before Answers, logged here and not
+padded. Beyond pages all fit. Body page 7 runs 1.3 mm into the margin, but
+the body source was not touched. 0 stranded openers, every option row fits,
+no labels collide, `data-bridge` on p101–p111.
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's worked examples now read the way Beyond the Book's do

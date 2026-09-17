@@ -288,10 +288,11 @@ Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) $1000 = 4344_{\,6}$, four
 digits; six symbols, $0$ to $5$; (2) $2025 = 11111101001_{\,2}$, and about
 twenty binary digits for a million; (3) $123$, $7203$, $7380$, $432\,003$;
-(4) every landmark would be $1$, so position means nothing; (5) in base 7
-the digit sum tests for $6$, and $48 = 66_{\,7}$; (6) fractions whose
-denominators are built from 2s and 3s; (7) seven symbols against ten; (8)
-$212 = 1322_{\,5}$.
+(4) every landmark would be $1$, so position means nothing; (5) $10$ stands for $2$, $5$, $9$
+and $11$ for $3$, $6$, $10$; $11$ is seven in base 6; (6) $499$ eggs, $357$ in
+base 12; one egg more than $3$ gross, $11$ dozen and $11$ is $400$ in base 12,
+which is $576$; (7) seven symbols against ten; (8)
+$212 = 1322_{\,5}$, the same digits largest landmark first.
 
 ### Stage 3 · Practice
 
@@ -308,23 +309,20 @@ The working for each:
 5. CDXLIV $= 400 + 40 + 4 = 444$.
 6. $255 = 256 - 1$, and $256 = 2^8$, so eight ones: $11111111$.
 7. $3^6 = 729$ fits in 1000 and $3^7 = 2187$ does not: 7 digits.
-8. In base 8 every landmark is one more than a multiple of $7$: the rule
-   tests for $7$.
-9. $6 = 2 \times 3$ has a factor 3, so $\tfrac16$ does not come out exactly.
+8. $77_{\,8} = 7 \times 8 + 7 = 63$.
+9. By division, $\tfrac18 = 0.125$, $\tfrac1{16} = 0.0625$, $\tfrac1{20} = 0.05$; $1 \div 6 = 0.1666\ldots$ leaves remainder 4 at every step and never ends.
 10. $1000 = 1 \times 625 + 3 \times 125$, so $13000$.
 11. $121_{\,3} = 16$ and $121_{\,5} = 36$; they differ by $20$.
 12. $3 \times 4 \times 4 = 48$.
-13. The number and its digit sum leave the same remainder on division by
-    $6$, and $12$ is a multiple of $6$. ($606_{\,7} = 300$ is not divisible
-    by 7 or 9; $156_{\,7} = 90$ is not divisible by 12.)
+13. $606_{\,7} = 6 \times 49 + 0 \times 7 + 6 = 300$.
 14. From $1000_{\,8} = 512$ to $7777_{\,8} = 4095$.
 15. $2 \times 360 + 0 \times 20 + 5 = 725$.
 16. (a) Both true, and nine of a landmark making the next is why no digit
     reaches 9.
 17. (b) $100_{\,6} = 36$ is true and six symbols is true, but the symbol count
     does not explain the value of the third place.
-18. (c) $\tfrac14 = \tfrac{9}{36}$ is exact in base 6; R is false, since
-    $6 = 2 \times 3$.
+18. (c) $33_{\,4} = 3 \times 4 + 3 = 15$, so A is true; the second place
+    is the fours place, not the sixteens, so R is false.
 19. (d) $1000_{\,2} = 8$, so A is false; R is true.
 20. $45 = 32 + 8 + 4 + 1$: $101101$.
 21. $2 \times 3600 + 30 \times 60 + 15 = 9015$.
@@ -335,10 +333,8 @@ The working for each:
     $15$ symbols; ten times as large is three tadpoles, four fingers, one coil
     and seven arches, $340\,170$.
 25. $2 \times 7 + 1 = 15$, so base 7; in base 9, $2 \times 9 + 1 = 19$.
-26. $1101 + 111$, from the right: one and one make two, which is written 10,
-    so write 0 and carry 1; then 0, 1 and the carry make two, write 0 carry 1;
-    then 1, 1 and the carry make three, which is 11, write 1 carry 1; then 1
-    and the carry make two, written 10. Answer $10100$. Check: $13 + 7 = 20$ and $16 + 4 = 20$.
+26. $1101_{\,2} = 13$ and $111_{\,2} = 7$; $13 + 7 = 20 = 16 + 4$, so the
+    sum is $10100$ in base 2. Check: $1 \times 16 + 1 \times 4 = 20$.
 27. $2000 = 1 \times 1728 + 272$, $272 = 1 \times 144 + 128$,
     $128 = 10 \times 12 + 8$: 1 crate, 1 carton, 10 boxes, 8 eggs loose.
     Base 12.

@@ -1,5 +1,37 @@
 # Class 8 · Mathematics I · Chapter 7 — Covering and Filling
 
+## Syllabus audit fixes, 17 September 2026
+
+The audit ("Audit Class 8 Maths I Beyond") found three Stage 1 tries that
+move a volume from one shape to another — melting and recasting, digging and
+spreading, displacement — which the body never teaches (the Class 10 Ch 12
+pattern), and one borderline Solved Example. Each was confirmed against the
+pages. Only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Stage 1 Q2, wax block melted and cast into 2 cm cubes (off-syllabus) | replaced by a try of the same kind: how many 2 cm cubes pack into a box 12 × 6 × 4, counted along the edges and by volume (36 both ways), and whether dividing volumes still counts them in a box 13 cm long (it promises 39; only 36 fit) |
+| Stage 1 Q3, well dug and the earth spread over a field (off-syllabus) | replaced by a cylindrical tank 7 m across holding 385 000 litres: how deep? (10 m). The explanation keeps its point, the diameter given for the radius (radius 7 gives four times the base and 2.5 m) |
+| Stage 1 Q4, a stone's volume by the water it displaces (off-syllabus) | replaced by 4 litres poured into a tank 50 cm by 40 cm: how far does the level rise? (2 cm) |
+| the two paragraphs after Q4 (*the volume does not change when the shape does*; the stone) | replaced by one: the three questions run the volume formula backwards |
+| Solved Example 16, the metal in a pipe (borderline) | kept, as the audit allows, as cut-and-subtract; Step 1 now shows the step, $\pi \times 4^2 - \pi \times 3^2 = \pi(4^2 - 3^2)$, instead of starting from $4^2 - 3^2$ |
+| Answers closing paragraph | *water, earth, wax and juice* → *water, bricks, cartons and juice*, since earth and wax are no longer in the division |
+
+`ANSWERS.md` Stage 1 line and `check-numbers.mjs` (S1 Q2–Q4, and a check
+that no melting, wax or stone is left) updated; each new value was broken
+on purpose and caught. 602 claims hold.
+
+`refit … bridge` put Q31 alone before Answers again; Q30 was moved to its
+page by hand, as before (48% / 65%). One try was shortened by a line so
+p102 no longer runs 1.3 mm into the margin.
+
+**Not changed, for the coordinator:** the body leans on Pythagoras at
+Exercise Set 7.2 (p006: a rhombus's side "using a result from Chapter 5",
+and a square's diagonal $s\sqrt{2}$).
+
+**Pages: 29 before → 29 after** (14 body + 15 Beyond). No Solved Example
+added (the audit found no gap); count stays 18 in Beyond.
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Chapter 1 model.

@@ -108,7 +108,7 @@ for (const [f, src] of [...pages.map(f => [f, html[f]]), ['ANSWERS.md', answersM
 }
 // and every false statement really is false
 for (const s of FALSE_ON_PURPOSE) if (!/[a-z]/.test(s)) is(`${s} is printed as false`, holds(s, {}) === false);
-is('2d-3=d+1 is the wrong line: it gives 4', solve('2d - 3 = d + 1') === 4);
+is('2n-3=n+1 is the wrong line: it gives 4', solve('2n - 3 = n + 1') === 4);
 is('10x-1=3x+4 gives a different answer from 17/7', !near(solve('10x - 1 = 3x + 4'), 17 / 7));
 
 /* ---- B. the worked examples ----------------------------------- */
@@ -193,7 +193,13 @@ is('Stage 1 Q1 check: 4x + 6 = 7x - 9 gives 5', solve('4x + 6 = 7x - 9') === 5);
 { const x = [...Array(31)].findIndex((_, x) => 5 * x + 2 * (30 - x) === 99); ok('Stage 1 Q3: coins', [x, 30 - x, 5 * x, 2 * (30 - x)], [13, 17, 65, 34]); }
 { const found = [...Array(90)].map((_, i) => i + 10).filter(n => Math.floor(n / 10) + n % 10 === 9 && (n % 10) * 10 + Math.floor(n / 10) === n + 27);
   ok('Stage 1 Q4: the number', found, [36]); }
-{ const found = [...Array(50)].map((_, d) => d).filter(d => d > 4 && 2 * (d - 3) === d + 1); ok('Stage 1 Q5: denominator', found, [7]); }
+{ const found = [...Array(50)].map((_, n) => n).filter(n => n > 4 && 2 * ((n - 4) + 1) === n + 1); ok('Stage 1 Q5: the larger number', found, [7]);
+  ok('Stage 1 Q5: after adding one', [7 - 4 + 1, 7 + 1, (7 + 1) / (7 - 4 + 1)], [4, 8, 2]);
+  is('Stage 1 Q5 prints 3 and 7', squash(s1).includes('$3$and$7$'));
+  ok('Stage 1 Q5: the equation and its expansion', [solve('2(n - 3) = n + 1'), solve('2n - 6 = n + 1')], [7, 7]);
+  for (const w of ['$2(n-3)=n+1$', '$2n-6=n+1$,&nbsp;$n=7$', 'Thenumbersare$3$and$7$', 'addingonetoeachgives$4$and$8$', '$2n-3=n+1$andtheanswercomesoutas$' + solve('2n - 3 = n + 1') + '$'])
+    is('Stage 1 Q5 prints: ' + w, squash(s1).includes(w));
+  is('Stage 1: no unknown in a denominator left', !/dfrac\{d/.test(beyond)); }
 is('Stage 1 Q6: x = 0 solves 7x = 4x, and it is the only one', solve('7x = 4x') === 0);
 ok('Stage 1 Q7: 2x = 5', solve('2x = 5'), 2.5);
 { const trick = (n) => (2 * n + 10) / 2 - n; ok('Stage 1 Q8: the trick', [trick(7), trick(100), (2 * 7 + 10) / 2, 2 * 100 + 10, (2 * 100 + 10) / 2], [5, 5, 12, 210, 105]); }

@@ -168,9 +168,12 @@ ok('Ex 3', 315 / 9 * 14, 490);
 is('Ex 3: answer ₹490', /Answer ₹490/.test(beyondText));
 ok('Ex 4', 1350 / 25 * 40, 2160);
 ok('Ex 5', [1.2 / 3 * 4, 1.2 / 3 * 1, 1.2 / 3 * 8].map(v => Math.round(v * 1e9) / 1e9), [1.6, 0.4, 3.2]);
-{ // Ex 6: the smallest common b
-  const b = [...Array(24)].map((_, i) => i + 1).find(n => n % 4 === 0 && n % 6 === 0);
-  ok('Ex 6', [3 * b / 4, b, 5 * b / 6], [9, 12, 10]); }
+{ // Ex 6: the two batches, by matching quotients, and their simplest form
+  const q = [[6, 4], [9, 6], [15, 10]].map(([x, y]) => x / y);
+  ok('Ex 6: quotients', q, [1.5, 1.5, 1.5]);
+  const g = (x, y) => (y ? g(y, x % y) : x);
+  const g3 = (a, b, c) => { const k = g(g(a, b), c); return [a / k, b / k, c / k]; };
+  ok('Ex 6: simplest forms, dividing by 3 and by 2', [g3(6, 9, 15), g3(4, 6, 10), g(g(6, 9), 15), g(g(4, 6), 10)], [[2, 3, 5], [2, 3, 5], 3, 2]); }
 ok('Ex 7', share(3000, 3, 5, 7), [600, 1000, 1400]);
 is('Ex 7: answer', /₹600, ₹1,000 and ₹1,400/.test(beyondText));
 { const [l, b] = share(84 / 2, 4, 3); ok('Ex 8', [l, b, l * b], [24, 18, 432]); }
@@ -257,8 +260,9 @@ rowIs('Beyond', beyondEx, 3, 'Answer', [315 / 9 * 14]);
 rowIs('Beyond', beyondEx, 4, 'Answer', [1350 / 25 * 40]);
 rowIs('Beyond', beyondEx, 5, 'Step 1', [3, 1.2, 0.4]);
 rowIs('Beyond', beyondEx, 5, 'Answer', [1.6, 0.4, 3.2]);
-rowIs('Beyond', beyondEx, 6, 'Step 1', [4, 6]);
-rowIs('Beyond', beyondEx, 6, 'Answer', [9, 12, 10]);
+rowIs('Beyond', beyondEx, 6, 'Step 1', [6, 4, 1.5, 9, 6, 1.5, 15, 10, 1.5]);
+rowIs('Beyond', beyondEx, 6, 'Step 3', [6, 9, 15, 2, 3, 5, 4, 6, 10, 2, 3, 5]);
+rowIs('Beyond', beyondEx, 6, 'Answer', [2, 3, 5]);
 rowIs('Beyond', beyondEx, 7, 'Answer', share(3000, 3, 5, 7));
 rowIs('Beyond', beyondEx, 8, 'Step 3', [4, 6, 24, 3, 6, 18]);
 rowIs('Beyond', beyondEx, 8, 'Answer', [24 * 18]);
@@ -311,7 +315,7 @@ const solve = {
   11: o => o.map(s => /speed of a train/.test(s)),
   12: o => o.map(num).map(v => near(v, 1 / (1 / 12 + 1 / 6))),
   13: o => o.map(pair).map(([x, y]) => y - x === 25 && proportional(x, y, 2, 7)),
-  14: o => o.map(s => s.replace(/\$/g, '').split(':').map(Number)).map(([p, q]) => proportional(p, q, 2 * 4, 3 * 5)),
+  14: o => o.map(num).map(v => { const part = 12 / 3; return near(v, 2 * part + 5 * part); }),
   15: o => o.map(s => s === 'halved'),
 };
 for (const [q, f] of Object.entries(solve)) {

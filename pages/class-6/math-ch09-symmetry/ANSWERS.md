@@ -442,8 +442,10 @@ and order 2. *(all checked)*
 23. **No.** Exactly 3 angles means the smallest is
     $360^\circ \div 3 = 120^\circ$, so the angles are $120^\circ$,
     $240^\circ$ and $360^\circ$.
-24. Five turns of $80^\circ$ fit, and $80^\circ \times 5 = 400^\circ$,
-    which is $360^\circ + 40^\circ$. So a turn of $40^\circ$ fits.
+24. After each turn of $80^\circ$ the figure looks as it did at the start,
+    so five turns of $80^\circ$ fit (Stage 1, question 3). In all
+    $80^\circ \times 5 = 400^\circ$, which is $360^\circ + 40^\circ$, and the
+    full turn brings every figure back. So a turn of $40^\circ$ fits.
 25. **3 squares to the left of B.** *(checked)*
 26. *Answers will vary.* Two lines from the top side to the bottom side,
     one third and two thirds of the way across. The drawing then has

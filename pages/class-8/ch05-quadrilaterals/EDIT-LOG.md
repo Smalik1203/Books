@@ -1,5 +1,37 @@
 # Class 8 · Mathematics I · Chapter 5 — Four Sides, One Sum
 
+## Syllabus audit fixes, 17 September 2026
+
+From "Audit Class 8 Maths I Beyond". Every finding was confirmed against the
+pages; only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Example 14, rhombus side 25 and diagonal 14 (Pythagoras) | replaced by a square: $OA = 2x + 1$, $OB = x + 4$; find $x$ (3), each diagonal (14 cm) and $\angle AOB$ (90°). Now Example 15. The audit's suggestion (a rectangle, $OB$ and angles) was not used: Examples 14 and 16 already work the rectangle |
+| Practice Q10, rhombus perimeter from diagonals 18 and 24 (Pythagoras) | same numbers, now asks for $AO$ and $\angle AOB$ (9 cm and 90°); key stays (d); its *why the options are wrong* and `ANSWERS.md` rewritten. The audit's suggestion (a 60° rhombus's shorter diagonal) was **rejected**: it is body Exercise Set 5.6 Q10 |
+| Practice Q28, rhombus side from diagonals 30 and 16 (Pythagoras) | now gives $\angle OAB = 28^\circ$ and asks for $AO$, $BO$, $\angle AOB$ and $\angle ABO$ (15, 8, 90°, 62°); the *four triangles the same* part kept |
+| Practice Q29(a), length of a gate's diagonal brace (Pythagoras) | replaced, not dropped: the brace makes 37° with the bottom edge; find the angles of each triangle (90°, 37°, 53°, the top one through alternate angles). (b) and (c) unchanged |
+| Stage 1 Q8, counting divisors of 360 from its prime powers (not taught) | the try is unchanged; the explanation now lists the divisors of 360 in pairs (12 pairs, 24 divisors, less 1 and 2 = 22), and the closing paragraph says why pairing misses none |
+| four rods close only if the longest is less than the other three (Stage 1 Q3, Example 17, Practice Q12, Q19) | recast to use only the three-rod rule, as instructed, without touching the body. Q3: the diagonal $BD$ gives $20 < AB + BD$ and $BD < BC + CD$, so $20 < 12$. Example 17 (now 18): which braces $BD$ fit a frame 5, 6, 4, 7 (only 9 cm). Q12: which length could the diagonal $AC$ of a quadrilateral 3, 4, 6, 8 be (5 cm; key stays (d)). Q19: R now reads *a diagonal cuts a quadrilateral into two triangles, and in a triangle each side is shorter than the other two together* (key stays (a)) |
+| gap: no example on convex and concave (§5.2.1) | **Example 5** added under Type 2: four angles of a pentagon 90°, 90°, 90°, 70°; the fifth is 200°, so the pentagon is concave. It does not answer Exercise Set 5.1 Q6–Q7 |
+
+Examples 5–18 became 6–19; nothing else cites an example number. **Solved
+Examples: 19** (was 18); worked examples in the chapter 26.
+`check-numbers.mjs` updated (Stage 1 Q3 and Q8, Examples 5, 15, 18, key 28
+and 29a, MCQ 10 and 12, AR 19; the four-rod `closes` rule replaced by the
+triangle rule); every new value was broken on purpose and caught. 529
+claims hold.
+
+`refit … bridge` left Q31 alone before Answers; Q30 was moved to its page by
+hand. Short pages in Beyond: page 31 (50%, the page before the case-based
+pair) and page 32 (70%, the two case-based questions, before Answers, which
+opens a fresh page).
+
+**Not changed, for the coordinator:** the body uses Pythagoras at p016
+Example 7 and Exercise Set 5.6 Q2–Q4.
+
+**Pages: 33 before → 34 after** (18 body + 16 Beyond).
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Chapter 1 model. The

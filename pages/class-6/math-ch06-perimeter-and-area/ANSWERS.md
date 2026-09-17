@@ -487,7 +487,7 @@ the perimeter; a 9 cm by 4 cm rectangle shows Riya is wrong; the border is
 ### 2 Solved Examples
 
 Beyond the Book numbers its examples again from 1, as Class 7 does; the
-chapter body's own examples are Examples 1 to 6. Beyond's Examples 1 to 13
+chapter body's own examples are Examples 1 to 6. Beyond's Examples 1 to 15
 are worked in full on the page, and their answers are:
 
 | Beyond example | type | answer |
@@ -500,11 +500,13 @@ are worked in full on the page, and their answers are:
 | 6 | area of rectangles and squares | 96 tiles |
 | 7 | areas made of pieces | area 24 sq m; perimeter 22 m |
 | 8 | areas made of pieces | 76 sq m of grass |
-| 9 | same perimeter, different areas | the square of side 5 cm, 25 sq cm |
-| 10 | area of a triangle in a rectangle | 24 sq cm, 9 sq cm and 15 sq cm |
-| 11 | area of a triangle in a rectangle | 12 sq cm |
-| 12 | plans and area mazes | 10 ft; the hall is 900 sq ft |
-| 13 | plans and area mazes | 15 cm |
+| 9 | areas made of pieces, compared by covering (Fig. 6.23) | A 8 sq cm, B 4 sq cm, C and D 2 sq cm each |
+| 10 | same perimeter, different areas | the square of side 5 cm, 25 sq cm |
+| 11 | adding a unit square (Fig. 6.24) | at P, 14 units; at Q, 16 units |
+| 12 | area of a triangle in a rectangle | 24 sq cm, 9 sq cm and 15 sq cm |
+| 13 | area of a triangle in a rectangle | 12 sq cm |
+| 14 | plans and area mazes | 10 ft; the hall is 900 sq ft |
+| 15 | plans and area mazes | 15 cm |
 
 ### 3 Practice — the key
 

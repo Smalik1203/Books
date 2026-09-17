@@ -56,34 +56,36 @@
       </p>
 
       <div class="c-try">
-        <p>A block of wax $12$ cm by $6$ cm by $4$ cm is melted down and cast into small
-        cubes of side $2$ cm. How many cubes are made?</p>
+        <p>A box is $12$ cm long, $6$ cm broad and $4$ cm deep inside. How many cubes of
+        side $2$ cm can be packed into it with no gaps? Would dividing the volumes still
+        give the count if the box were $13$ cm long?</p>
       </div>
 
       <p>
-        Melting does not create or destroy wax. So the volume of the block equals the
-        volume of all the cubes together, and the count follows by dividing.
+        Count along the edges: the cubes go $6$ along the $12$ cm, $3$ across the
+        $6$ cm and $2$ up the $4$ cm. Then count the other way, by volume.
       </p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">block</span>
-          <span>$12 \times 6 \times 4 = 288$ cm<sup>3</sup></span>
+          <span class="work__label work__label--wide">along the edges</span>
+          <span>$6 \times 3 \times 2 = 36$</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">one cube</span>
-          <span>$2^3 = 8$ cm<sup>3</sup></span>
+          <span class="work__label work__label--wide">by volume</span>
+          <span>$(12 \times 6 \times 4) \div 2^3 = 288 \div 8 = 36$</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">count</span>
-          <span>$288 \div 8 = 36$</span>
+          <span class="work__label work__label--wide">13 cm long</span>
+          <span>$(13 \times 6 \times 4) \div 8 = 312 \div 8 = 39$</span>
         </div>
       </div>
 
       <p>
-        Thirty-six cubes. What did <em>not</em> survive is the surface area: the block
-        had $288$ cm<sup>2</sup> of skin and the cubes have $864$ between them. Cutting
-        up leaves the volume alone and multiplies the surface.
+        Thirty-six cubes, both ways. At $13$ cm the volumes promise $39$, but still only
+        six cubes fit along the length, so the box holds $36$ and the last centimetre
+        stays empty. Dividing the volumes gives the count only when every edge is a
+        whole number of cubes.
       </p>
 
     </div>

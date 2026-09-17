@@ -249,7 +249,7 @@ $k$, $(k - 3)x = 0$, so the one solution is **$x = 0$**.
 
 Each of the eight questions is answered in the running text that follows it
 on the page. The results, for reference: (1) $k = 6$; (2) 21, 22, 23, 24, 25;
-(3) 13 five-rupee coins and 17 two-rupee coins; (4) 36; (5) $\dfrac{3}{7}$;
+(3) 13 five-rupee coins and 17 two-rupee coins; (4) 36; (5) 3 and 7;
 (6) $x = 0$ is a solution, and Ravi divided by something that may be zero;
 (7) $2x = 5$ gives $x = \dfrac{5}{2}$; (8) the answer is always 5.
 

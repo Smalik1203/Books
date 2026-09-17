@@ -236,8 +236,9 @@ worked instance under *answers will vary*.
 ### Stage 1 · Using What You Know
 
 Each question is explained in the running text directly below it on the
-page: the cylinder of radius 2 (88 and 88), the wax cubes (36), the well
-(1.25 m), the stone (4000 cm³), the wire (the circle, by 132 cm²), the
+page: the cylinder of radius 2 (88 and 88), the cubes packed into a box
+(36 both ways; 39 promised but still 36 in a box 13 cm long), the tank 7 m
+across (10 m deep), the 4 litres poured in (a rise of 2 cm), the wire (the circle, by 132 cm²), the
 painted tank (₹4646.40), the photograph (5, and 125), and the three tins
 (radius 3.5 cm, 429 cm²).
 

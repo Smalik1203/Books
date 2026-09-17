@@ -74,23 +74,24 @@
       <div class="c-try">
         <p>A king agrees to pay a debt in rice: one grain on the first square of a
         chessboard, two on the second, four on the third, and so on to the
-        sixty-fourth. Roughly how many grains is that, and is it a debt anyone could
-        pay?</p>
+        sixty-fourth. Roughly how many grains go on the sixty-fourth square alone, and
+        could anyone pay even that?</p>
       </div>
 
       <p>
-        The squares hold $1, 2, 4, 8, \ldots$ so the sixty-fourth holds $2^{63}$ and
-        the total is
+        The squares hold $1, 2, 4, 8, \ldots$, which is $2^0, 2^1, 2^2, 2^3, \ldots$: the
+        power is always one less than the number of the square. So the sixty-fourth
+        square holds
       </p>
 
       <div class="work work--centred">
-        <p>$1 + 2 + 4 + \cdots + 2^{63} = 2^{64} - 1$</p>
+        <p>$2^{63} = (2^{10})^6 \times 2^3$</p>
       </div>
 
       <p>
-        The sum is one short of the next power, which you can see by noticing that
-        $1 + 2 = 3$, $1 + 2 + 4 = 7$, $1+2+4+8 = 15$ — always one less than the
-        doubling that comes next.
+        Estimate it with the same trick as before: $(2^{10})^6 \times 2^3 \approx
+        (10^3)^6 \times 8 = 8 \times 10^{18}$, and the true value is about
+        $9.2 \times 10^{18}$.
       </p>
 
     </div>

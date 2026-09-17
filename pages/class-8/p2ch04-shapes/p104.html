@@ -14,7 +14,7 @@
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
-          <p>A Sierpiński carpet is begun from a square of side $54$ cm. At step $2$, find the side of each remaining square, how many there are, and the area left.</p>
+          <p>A Sierpiński carpet is begun from a square of side $54$ cm. At step $2$, find the side of each remaining square, how many there are, how many holes have been cut, and the area left.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
@@ -27,10 +27,13 @@
               <span>$64 \times 6 \times 6 = 2304$ cm²</span>
               <span class="work__why">count times one square</span></div>
             <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$54 \times 54 \times \tfrac{64}{81} = 2304$ cm²</span>
-              <span class="work__why">check: eight ninths, twice</span></div>
+              <span>$H_2 = H_1 + R_1 = 1 + 8 = 9$ holes</span>
+              <span class="work__why">one new hole per square</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>holes: $18 \times 18 + 8 \times 6 \times 6 = 612$ cm², and $54 \times 54 - 612 = 2304$ cm²</span>
+              <span class="work__why">check</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>64 squares of side 6 cm, and 2304 cm² left</span></div>
+              <span>64 squares of side 6 cm, 9 holes, and 2304 cm² left</span></div>
           </div>
         </div>
       </div>

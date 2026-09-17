@@ -1,5 +1,35 @@
 # Class 8 · Mathematics I · Chapter 3 — Ten Symbols, Every Number
 
+## Syllabus audit fixes, 17 September 2026
+
+From "Audit Class 8 Maths I Beyond". Every finding was confirmed against the
+pages; only Beyond was changed.
+
+| finding | what was done |
+|---|---|
+| Stage 1 Q6, which fractions come out exactly in base 12 (off-syllabus) | replaced by a base-12 try on whole numbers: 3 gross, 5 dozen and 7 eggs is 499, written $357$ in base 12; one egg more than 3 gross, 11 dozen and 11 is $400$ in base 12 (576). The closing remark on why twelve has been argued for now rests on sharing, not fractions. The audit's suggestion (2000 eggs in dozens, grosses and great gross) was not used: it is Practice Q27 |
+| Practice Q18, A&R *¼ is exact in base 6* (off-syllabus) | A: *the base-4 numeral 33 stands for 15*; R: *the second place from the right is the sixteens place*; key stays (c). The audit's suggestion (*100 in base 6 is 36*) was not used: it is Q17's assertion |
+| Practice Q9, which fraction does not end as a decimal (borderline) | question kept; the answer note and `ANSWERS.md` now work by division alone (1 ÷ 6 leaves remainder 4 at every step) |
+| Stage 1 Q5 and Practice Q8, Q13, the digit-sum rule in base 7 and 8 (borderline) | Stage 1 Q5 is now an expanded-form try: what $10$ and $11$ stand for in bases 2, 5 and 9, and in which base $11$ is seven (6). Q8: the base-8 numeral $77$ (63; key stays (c)). Q13: the base-7 numeral $606$ (300; key stays (a)). The Answers closing paragraph's fourth *line* (the digit-sum rule) became *the numeral 10 is the base itself*. The audit's suggestion (121 in base 3 and base 5) was not used: it is Q11 |
+| Practice Q26, binary addition with carrying (borderline) | now: write both in base 10, add, write the sum in base 2 ($13 + 7 = 20 = 10100_2$); key and `ANSWERS.md` rewritten |
+| Stage 1 Q8 and Example 10, repeated division (borderline) | kept, with landmark-first shown alongside: a row $212 = 1 \times 125 + 3 \times 25 + 2 \times 5 + 2$ under Q8, and a sentence after Example 10 giving 100's digits largest landmark first |
+| gap: no example on Chinese rod numerals (§3.6.2) | **Example 16** added under a new **Type 9 · Chinese rod numerals**: a numeral with one empty place read as 4032, with a note that three empty places (400 032) would lie the same way. It is described in words, as body Exercise Set 3.4 Q5 is, so no figure was drawn |
+
+Examples 16–18 became 17–19 and Types 9–10 became 10–11; nothing else cites
+them. **Solved Examples: 19** (was 18); worked examples in the chapter 23.
+`check-numbers.mjs` updated (Stage 1 Q5, Q6, Q8; Examples 10, 16 and the
+numbering; MCQ 8, 13 and Q9's note; AR 18; key 26; `ANSWERS.md` lines);
+every new value was broken on purpose and caught. 438 claims hold.
+
+**For the coordinator (body, not changed):** Fig. 3.5 (p012) is described
+as vertical rods in the thousands and tens and horizontal in the hundreds
+and units, while Exercise Set 3.4 Q5 reads *three uprights, then two bars,
+then one upright* — uprights in the units, which is the historical
+arrangement and the opposite of the figure. Example 16 was written so as
+not to depend on which way the units lie.
+
+**Pages: 32 before → 32 after** (16 body + 16 Beyond).
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked against Chapter 1 as the

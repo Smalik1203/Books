@@ -1,5 +1,45 @@
 # Class 7 · Mathematics I · Chapter 1 — Living with Large Numbers
 
+## Syllabus audit fixes, 17 September 2026
+
+Beyond the Book checked against what the chapter body teaches. The chapter
+has no `ANSWERS.md` or `check-numbers.mjs`, so every changed value was
+verified by hand, below.
+
+- **Example 4 (face value, "expanded form").** The body never names face
+  value or expanded form. Face value and the difference are gone; the item
+  now asks for the place value of 8 in 4,86,215 and for the number "as the
+  sum of the place values of its digits" (the body's own phrase in Set 1.6
+  Q4). $8 \times 10{,}000 = 80{,}000$; $4{,}00{,}000 + 80{,}000 + 6{,}000 +
+  200 + 10 + 5 = 4{,}86{,}215$, checked.
+- **Practice Q6 (place value of one digit).** Kept: the body uses "the place
+  value of every digit" (Set 1.6 Q4), and the audit offered keep.
+- **Practice Q7 ("expanded form").** Reworded as the audit suggested: Sippy's
+  fewest-press expression for 4,07,050. Options (a) 4,07,050 in 16 presses,
+  (b) 4,70,050, (c) 47,050, (d) 4,07,050 in 61 presses. Key stays (a).
+- **Practice Q36** used "expanded form" too; now "as the sum of the place
+  values of its digits". Answer unchanged.
+- **Example 8 (was 7), rounding rule.** Each step now reasons from the
+  neighbours on each side, as Table 1.4 does: 328 v 672, 1,328 v 8,672,
+  48,672 v 51,328 (all re-subtracted). Answers unchanged.
+- **Practice Q27 (the exactly-halfway case).** Now A: 6,48,000 to the
+  nearest lakh is 7,00,000; R: 6,48,000 is nearer to 6,00,000 than to
+  7,00,000. A false, R true, key stays (d); the why-wrong line reasons 48,000
+  v 52,000. **Q34** (6389 to the nearest hundred) needs no halfway case and
+  no rule, only neighbours 6300 and 6400; left as it is.
+- **Gap, "The fewest presses".** New Example 6 under Type 2: Sippy's fewest
+  presses for 2,60,408 (20 presses; expression re-added to 2,60,408). Not
+  3,04,050, which the audit suggested, because Practice Q20 asks exactly
+  that; not any number from body Sets 1.5/1.6. Examples 6–15 renumbered
+  7–16; nothing in the division refers to an example by number.
+
+Beyond refitted with `refit.mjs … bridge`, then Q38 settled from p110 to
+p111 (the repack left p110 8.2 mm into the margin). Pages 28 → 28 (Beyond
+12 → 12). All pages fit, 0 stranded openers, option rows fit, no labels
+collide, `check-no-repeats` shows no new pair. Short Beyond pages, logged
+not padded: 18 (77%), 20 (81%), 21 (76%), 22 (81%), 23 (86%), 27 (82%,
+before Answers).
+
 ## Examples set as steps, 16 September 2026
 
 The chapter body's one worked example (Example 1, p002) was set as stepped

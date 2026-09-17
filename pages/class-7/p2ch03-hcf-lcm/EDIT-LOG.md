@@ -1,5 +1,52 @@
 # Class 7 · Mathematics II · Chapter 3 — Finding Common Ground
 
+## Syllabus audit fixes, 17 September 2026
+
+Two findings.
+
+1. **Borderline: "Questions with remainders" (now Type 7, Examples 15–16).**
+   Example 15's working used to begin "take away the remainders", which is a
+   rule the body never states. **The Type was kept**, because the body does
+   set this kind of question (Exercise Set 3.6 Q8). Its working now derives
+   the step in the body's own terms. 70 is a multiple of the number plus 5,
+   so the number divides $70 - 5 = 65$ exactly, and in the same way it
+   divides 117. So it is a common factor of the two, and the largest one is
+   the HCF, 13. A check row was added:
+   $70 = 13 \times 5 + 5$, $125 = 13 \times 9 + 8$. Example 16 (remainder 1
+   on dividing by 2 to 6) likewise now says why it is an LCM question.
+   Taking 1 away leaves a number that each divisor divides exactly, so that
+   number is a common multiple, and the smallest one is wanted.
+2. **Gap: conjectures, counterexamples and general statements** (§3.1,
+   §3.3). A new **Type 6 · Conjectures and general statements** holds two
+   examples, one for each idea:
+   - Example 13, a counterexample. Kiran's conjecture is that if $a$, $b$
+     are co-prime and $b$, $c$ are co-prime, then $a$, $c$ are co-prime.
+     4, 9 and 10 disprove it: the HCF of 4 and 10 is 2.
+   - Example 14, a general statement with its reason. The HCF of two
+     numbers is a factor of their sum: $h \times p + h \times q = h \times (p + q)$.
+   The audit's suggestion (the HCF of two consecutive numbers is 1) was **not
+   used**, because it is Exercise Set 3.5 Q1(d) and the example would have
+   answered it. The two examples above answer no body question.
+   The new Type sits **before** the remainders, which follows the body's
+   order (§3.3 comes before Exercise Set 3.6), and also packed a page
+   shorter than putting it last. So the remainders Type became Type 7, and
+   its Examples 13–14 became **15–16**. Nothing in the chapter refers to an
+   example by number.
+
+Class 7 has no `ANSWERS.md` or `check-numbers.mjs`, so every value was
+checked by hand: $65 = 5 \times 13$, $117 = 9 \times 13$, $13 \times 5 + 5 = 70$,
+$13 \times 9 + 8 = 125$, and 13 is larger than both remainders. The HCFs of
+4 and 9, 9 and 10, and 4 and 10 are 1, 1 and 2. $12 + 18 = 30 = 6 \times 5$.
+`check-no-repeats` reports one pair at 50%, and it was already there
+("Two numbers whose HCF is 1 are called" against Exercise Set 3.6 Q4). The
+two are different questions.
+
+Pages 21 → 22 (body 12, Beyond 9 → 10). `refit bridge` was run after the
+reorder. Answers opens p110. p109 (Q29–Q33) is 70% full, which is the short
+page before Answers and is logged, not padded. All pages fit, 0 stranded
+openers, every option row fits, no labels collide, `data-bridge` on
+p101–p110.
+
 ## Examples set as steps, 16 September 2026
 
 **All 7 worked examples in the chapter body are now stepped maths** —

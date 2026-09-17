@@ -144,11 +144,13 @@ is('Q3: 2^100 > 10^30', big(2, 100) > big(10, 30));
 is('Q4: 3^500 > 5^300', big(3, 500) > big(5, 300));
 ok('Q4: margin around 10^29', Math.round(100 * Math.log10(243 / 125)), 29);
 ok('Q5: smallest n with 3^n >= 10^6', [...Array(30)].findIndex((_, n) => 3 ** n >= 1e6), 13);
-ok('Q6: 2^64 to two figures', [sig(2 ** 64 / 1e19, 2), 16e18 / 1e19], [1.8, 1.6]);
-ok('Q6: rice mass', [sig(2 ** 64 * 0.025 / 1000 / 1e14, 2), sig(2 ** 64 * 0.025 / 1e6 / 1e11, 2)], [4.6, 4.6]);
-ok('Q6: roughly a thousand years', Math.round(4.6e11 / 5e8 / 1000) * 1000, 1000);
-ok('Q6: 1 + 2 + ... + 2^63 = 2^64 - 1', [...Array(64)].reduce((s, _, i) => s + big(2, i), 0n) === big(2, 64) - 1n, true);
-ok('Q6: sums one short of the next power', [1 + 2, 1 + 2 + 4, 1 + 2 + 4 + 8], [2 ** 2 - 1, 2 ** 3 - 1, 2 ** 4 - 1]);
+ok('Q6: square 64 holds 2^63 = (2^10)^6 x 2^3', big(2, 63) === big(2, 10) ** 6n * 8n, true);
+ok('Q6: 2^63 to two figures, and the estimate', [sig(2 ** 63 / 1e18, 2), 1e18 * 8 / 1e18], [9.2, 8]);
+ok('Q6: rice mass of square 64', [sig(2 ** 63 * 0.025 / 1000 / 1e14, 2), sig(2 ** 63 * 0.025 / 1e6 / 1e11, 2)], [2.3, 2.3]);
+{ const years = 2 ** 63 * 0.025 / 1e6 / 5e8; is(`Q6: nearly five hundred years (${Math.round(years)})`, years > 400 && years < 500); }
+is('Q6: no geometric series left in Stage 1', !/2\^\{64\} - 1|1 \+ 2 \+ 4 \+ \\cdots/.test(beyond));
+for (const w of ['nearly five hundred years', '$9.2 \\times 10^{18}$', '(10^3)^6 \\times 8 = 8 \\times 10^{18}$', '$2.3 \\times 10^{14}$ kg, or $2.3 \\times 10^{11}$ tonnes'])
+  is('Q6 prints: ' + w, beyond.replace(/\s+/g, ' ').includes(w));
 ok('Q8: fifth powers keep the last digit', [...Array(10)].map((_, d) => lastDigit(d, 5)), [...Array(10)].map((_, d) => d));
 ok('Q8: every cycle has length 1, 2 or 4', [...new Set([...Array(10)].map((_, d) => { const c = [lastDigit(d, 1)]; for (let e = 2; lastDigit(d, e) !== c[0]; e++) c.push(lastDigit(d, e)); return c.length; }))].sort(), [1, 2, 4]);
 ok('Q8: ninth and thirteenth powers too', [...Array(10)].every((_, d) => lastDigit(d, 9) === d && lastDigit(d, 13) === d), true);
