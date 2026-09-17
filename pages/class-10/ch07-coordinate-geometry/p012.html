@@ -2,49 +2,52 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The mid-point of a line segment divides it in the ratio ${1 : 1}$. So its coordinates come from the section formula with ${m_1 = m_2 = 1}$.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The mid-point formula</div>
-        <p>The coordinates of the mid-point P of the line segment joining the points $A(x_1, y_1)$ and $B(x_2, y_2)$ are</p>
-        <div class="eq">$$\left(\dfrac{1 \cdot x_1 + 1 \cdot x_2}{1 + 1},\ \dfrac{1 \cdot y_1 + 1 \cdot y_2}{1 + 1}\right) = \left(\dfrac{x_1 + x_2}{2},\ \dfrac{y_1 + y_2}{2}\right)$$</div>
-      </div>
-
-      <p>Let us solve a few examples that use the section formula.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Find the coordinates of the point which divides the line segment joining the points $(4, -3)$ and $(8, 5)$ internally in the ratio ${3 : 1}$.</p>
-        </div>
-      </div>
-
-      <p>Let $P(x, y)$ be the point we want. Using the section formula, we get</p>
-
-      <div class="work work--list">
-        <p>$x = \dfrac{3(8) + 1(4)}{3 + 1} = \dfrac{28}{4} = 7$ &nbsp; and &nbsp; $y = \dfrac{3(5) + 1(-3)}{3 + 1} = \dfrac{12}{4} = 3$</p>
-      </div>
-
-      <p>So $(7, 3)$ is the point we want.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
           <p>In what ratio does the point $(-4, 6)$ divide the line segment joining the points $A(-6, 10)$ and $B(3, -8)$?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let $(-4, 6)$ divide AB internally in the ratio ${m_1 : m_2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(-4, 6) = \left(\dfrac{3m_1 - 6m_2}{m_1 + m_2},\ \dfrac{-8m_1 + 10m_2}{m_1 + m_2}\right) \qquad (1)$</span>
+              <span class="work__why">section formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$-4 = \dfrac{3m_1 - 6m_2}{m_1 + m_2}$</span>
+              <span class="work__why">if ${(x, y) = (a, b)}$, then ${x = a}$ and ${y = b}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$6 = \dfrac{-8m_1 + 10m_2}{m_1 + m_2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>${-4m_1 - 4m_2 = 3m_1 - 6m_2}$</span>
+              <span class="work__why">from Step 3</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>${7m_1 = 2m_2}$, so ${m_1 : m_2 = 2 : 7}$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$\dfrac{-8m_1 + 10m_2}{m_1 + m_2} = \dfrac{-8 \cdot \frac{m_1}{m_2} + 10}{\frac{m_1}{m_2} + 1}$</span>
+              <span class="work__why">top and bottom divided by $m_2$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$= \dfrac{-8 \cdot \frac{2}{7} + 10}{\frac{2}{7} + 1} = \dfrac{54}{7} \div \dfrac{9}{7} = 6$</span>
+              <span class="work__why">so Step 4 holds too</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$(-4, 6)$ divides AB in the ratio ${2 : 7}$</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Let $(-4, 6)$ divide AB internally in the ratio ${m_1 : m_2}$. Using the section formula, we get</p>
+      <p><strong>Another way.</strong> The ratio ${m_1 : m_2}$ can also be written as ${\frac{m_1}{m_2} : 1}$, or ${k : 1}$. Let $(-4, 6)$ divide AB internally in the ratio ${k : 1}$. Using the section formula, we get</p>
 
-      <div class="eq">$$(-4, 6) = \left(\dfrac{3m_1 - 6m_2}{m_1 + m_2},\ \dfrac{-8m_1 + 10m_2}{m_1 + m_2}\right) \qquad (1)$$</div>
-
-      <p>Recall that if ${(x, y) = (a, b)}$, then ${x = a}$ and ${y = b}$. So</p>
+      <div class="eq">$$(-4, 6) = \left(\dfrac{3k - 6}{k + 1},\ \dfrac{-8k + 10}{k + 1}\right) \qquad (2)$$</div>
 
       <div class="work work--list">
-        <p>$-4 = \dfrac{3m_1 - 6m_2}{m_1 + m_2}$ &nbsp; and &nbsp; $6 = \dfrac{-8m_1 + 10m_2}{m_1 + m_2}$</p>
+        <p>so $-4 = \dfrac{3k - 6}{k + 1}$</p>
+        <p>${-4k - 4 = 3k - 6}$</p>
+        <p>${7k = 2}$, that is, ${k : 1 = 2 : 7}$</p>
       </div>
 
-      <p>The first of these gives</p>
+      <p>You can check the $y$-coordinate as well, and it gives the same ratio ${2 : 7}$.</p>
+
+      <p><strong>Note.</strong> You can also find this ratio by working out the distances PA and PB and taking their ratio, as long as you know that A, P and B are collinear.</p>
 
     </div>
   </div>

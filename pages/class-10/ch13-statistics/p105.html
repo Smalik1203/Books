@@ -2,52 +2,51 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The classes 0&nbsp;–&nbsp;5, 5&nbsp;–&nbsp;10, 10&nbsp;–&nbsp;15 and 15&nbsp;–&nbsp;20 have frequencies 3, 7, 12 and 8. The modal class is<ol class="c-parts c-parts--alpha c-parts--4"><li>5&nbsp;–&nbsp;10</li><li>15&nbsp;–&nbsp;20</li><li>0&nbsp;–&nbsp;5</li><li>10&nbsp;–&nbsp;15</li></ol></li>
-        </ol>
+      <h3>Type 3 &middot; The step-deviation method</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>In the step-deviation method, ${a = 45}$, ${h = 10}$, ${\sum f_i = 40}$ and ${\sum f_iu_i = -8}$. The mean is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>43</li><li>47</li><li>44.8</li><li>37</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\bar{u} = \dfrac{\sum f_iu_i}{\sum f_i} = \dfrac{-8}{40} = -0.2$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\bar{x} = a + h\bar{u} = 45 + 10 \times (-0.2) = 45 - 2 = 43$</span>
+              <span class="work__why">undo the shift and scale</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) adds the 2, (c) forgets $h$, and (d) forgets both $h$ and $\sum f_i$.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>The cumulative frequency of a class is<ol class="c-parts c-parts--alpha"><li>its own frequency</li><li>the frequency of the class before it</li><li>its frequency plus all earlier ones</li><li>the sum of all the frequencies</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>The values 1, 2, 3, 4 and 5 have frequencies 2, 1, 1, 1 and 5. Their mean is<ol class="c-parts c-parts--alpha c-parts--4"><li>3.6</li><li>3</li><li>2</li><li>7.2</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>For a distribution with ${n = 60}$, the median class is the class whose cumulative frequency is<ol class="c-parts c-parts--alpha"><li>nearest to 30, but less than it</li><li>the first one greater than 30</li><li>the first one greater than 60</li><li>the largest</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>The empirical relationship between the three measures of central tendency can be written as<ol class="c-parts c-parts--alpha"><li>Mode = 3 Median − 2 Mean</li><li>Mode = 2 Median − 3 Mean</li><li>Mean = 3 Median − 2 Mode</li><li>Median = 3 Mode − 2 Mean</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>Every observation in a set of data is increased by 5. The mean<ol class="c-parts c-parts--alpha"><li>does not change</li><li>is multiplied by 5</li><li>increases by 25</li><li>increases by 5</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set B &middot; Two ideas together</div>
-        <ol class="c-questions">
-          <li>The mean of the distribution below is 25. The value of $k$ is
-            <table class="table--data">
-              <thead><tr><th>Class interval</th><th>0&nbsp;–&nbsp;10</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th></tr></thead>
-              <tbody><tr><td>Frequency</td><td>5</td><td>$k$</td><td>10</td><td>6</td><td>3</td></tr></tbody>
-            </table>
-            <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>3</li><li>2</li><li>1</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>The daily wages of 50 workers are given below. Find the mean daily wage by the step-deviation method.</p>
+          <table class="table--data">
+            <thead><tr><th>Daily wage (in ₹)</th><th>200&nbsp;–&nbsp;240</th><th>240&nbsp;–&nbsp;280</th><th>280&nbsp;–&nbsp;320</th><th>320&nbsp;–&nbsp;360</th><th>360&nbsp;–&nbsp;400</th></tr></thead>
+            <tbody><tr><td>Number of workers</td><td>8</td><td>12</td><td>15</td><td>10</td><td>5</td></tr></tbody>
+          </table>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the class marks are 220, 260, 300, 340 and 380; take $a = 300$ and $h = 40$</span>
+              <span class="work__why">the class size</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$u_i = \dfrac{x_i - 300}{40}$ is $-2$, $-1$, 0, 1 and 2</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\sum f_iu_i = -16 - 12 + 0 + 10 + 10 = -8$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\bar{x} = 300 + 40 \times \dfrac{-8}{50} = 300 - 6.4 = 293.6$</span>
+              <span class="work__why">$\bar{x} = a + h\bar{u}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The mean daily wage is <span class="nb">₹$293.60$</span></span></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -1,0 +1,73 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>Type 8 &middot; The three measures together</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 15</div>
+        <div class="c-example__body">
+          <p>For a distribution, the median is 45 and the mode is 42. Estimate the mean.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$3 \times 45 = 42 + 2\,\text{Mean}$</span>
+              <span class="work__why">the empirical relationship</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$2\,\text{Mean} = 135 - 42 = 93$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The mean is about 46.5</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>A shopkeeper counted the customers in his shop each day for 50 days. Find the mean, the median and the mode of the counts, and check them against the empirical relationship.</p>
+          <table class="table--data">
+            <thead><tr><th>Customers</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th><th>50&nbsp;–&nbsp;60</th></tr></thead>
+            <tbody><tr><td>Number of days</td><td>6</td><td>10</td><td>16</td><td>12</td><td>6</td></tr></tbody>
+          </table>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a = 35$, $h = 10$: &nbsp; $\sum f_iu_i = -12 - 10 + 0 + 12 + 12 = 2$</span>
+              <span class="work__why">$u_i$ from $-2$ to 2</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\bar{x} = 35 + 10 \times \dfrac{2}{50} = 35.4$</span>
+              <span class="work__why">the mean</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>cumulative frequencies 6, 16, 32, 44, 50; $\frac{n}{2} = 25$, so the median class is 30&nbsp;–&nbsp;40</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\text{Median} = 30 + \left(\dfrac{25 - 16}{16}\right) \times 10 = 35.63$</span>
+              <span class="work__why">the median</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$\text{Mode} = 30 + \left(\dfrac{16 - 10}{32 - 10 - 12}\right) \times 10 = 36$</span>
+              <span class="work__why">the mode</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>$3 \times 35.63 = 106.89$ and $36 + 2 \times 35.4 = 106.8$</span>
+              <span class="work__why">nearly equal</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Mean 35.4, median 35.63 and mode 36 customers; the relationship holds roughly</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
+        <div class="c-practice__sub">Choose the correct option</div>
+        <ol class="c-questions">
+          <li>The class mark of the class 35&nbsp;–&nbsp;50 is<ol class="c-parts c-parts--alpha c-parts--4"><li>15</li><li>42.5</li><li>85</li><li>40</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>In the step-deviation method, $u_i$ is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$x_i - a$</li><li>$h(x_i - a)$</li><li>$\dfrac{x_i - a}{h}$</li><li>$\dfrac{x_i + a}{h}$</li></ol></li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

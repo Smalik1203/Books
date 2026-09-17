@@ -1,34 +1,41 @@
-<section class="page">
+<section class="page" data-close>
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
-        <div class="c-example__body">
-          <p>Use the elimination method to find all the solutions of the pair of linear equations $2x + 3y = 8$ and $4x + 6y = 7$.</p>
-        </div>
-      </div>
-
-      <p>Call the equations (1) and (2). Multiplying (1) by 2 and (2) by 1 makes the coefficients of $x$ equal: $4x + 6y = 16$ (3) and $4x + 6y = 7$ (4). Subtracting (4) from (3) gives $(4x - 4x) + (6y - 6y) = 16 - 7$, that is, $0 = 9$. This is a false statement, so the pair of equations has no solution.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-          <p>The sum of a two-digit number and the number made by reversing its digits is 66. The digits of the number differ by 2. Find the number. How many such numbers are there?</p>
-        </div>
-      </div>
-
-      <p>Let the tens digit of the first number be $x$ and its units digit be $y$. Then the number is $10x + y$; for example, $56 = 10(5) + 6$. When the digits are reversed, $x$ becomes the units digit and $y$ the tens digit, so the new number is $10y + x$. The sum of the two numbers is 66, so</p>
-
-      <div class="eq">$$(10x + y) + (10y + x) = 66, \quad \text{that is,} \quad 11(x + y) = 66, \quad \text{that is,} \quad x + y = 6 \quad (1)$$</div>
-
-      <p>The digits differ by 2, so either $x - y = 2$ (2) or $y - x = 2$ (3). If $x - y = 2$, solving (1) and (2) by elimination gives $x = 4$ and $y = 2$, and the number is 42. If $y - x = 2$, solving (1) and (3) gives $x = 2$ and $y = 4$, and the number is 24. So there are two such numbers, 42 and 24. Check: $42 + 24 = 66$ and $4 - 2 = 2$.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.3</div>
-        <ol class="c-questions">
-          <li>Solve each pair of linear equations by the elimination method and by the substitution method.<ol class="c-parts c-parts--tall"><li>$x + y = 5$; &nbsp; $2x - 3y = 4$</li><li>$3x + 4y = 10$; &nbsp; $2x - 2y = 2$</li><li>$3x - 5y - 4 = 0$; &nbsp; $9x = 2y + 7$</li><li>$\dfrac{x}{2} + \dfrac{2y}{3} = -1$; &nbsp; $x - \dfrac{y}{3} = 3$</li></ol></li>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Form a pair of linear equations for each problem, and find the solution, if there is one, by the elimination method.<ol class="c-parts c-parts--1"><li>If we add 1 to the numerator of a fraction and subtract 1 from its denominator, it becomes 1. If we only add 1 to the denominator, it becomes $\frac{1}{2}$. What is the fraction?</li><li>Five years ago, Nuri was three times as old as Sonu. Ten years from now, Nuri will be twice as old as Sonu. How old are Nuri and Sonu?</li></ol></li>
         </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions">
+          <li class="cont"><ol class="c-parts c-parts--1" data-start="3"><li>The sum of the digits of a two-digit number is 9. Nine times the number is twice the number made by reversing its digits. Find the number.</li><li>Meena went to a bank to withdraw ₹2000. She asked the cashier for ₹50 and ₹100 notes only, and she got 25 notes in all. How many ₹50 notes and how many ₹100 notes did she get?</li></ol></li>
+        </ol>
+      </div>
+
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions">
+          <li class="cont"><ol class="c-parts c-parts--1" data-start="5"><li>A lending library has a fixed charge for the first three days and an extra charge for each day after that. Saritha paid ₹27 for a book she kept for seven days, and Susy paid ₹21 for a book she kept for five days. Find the fixed charge and the charge for each extra day.</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-summary">
+        <div class="c-summary__title">What this chapter showed</div>
+        <ol>
+          <li>A pair of linear equations in two variables can be solved by the graphical method or by an algebraic method.</li>
+          <li>The graph of a pair of linear equations is two lines. If the lines intersect, their point of intersection gives the unique solution, and the pair is consistent. If the lines coincide, every point on the line is a solution, and the pair is dependent (and consistent). If the lines are parallel, there is no solution, and the pair is inconsistent.</li>
+          <li>The two algebraic methods are the substitution method and the elimination method.</li>
+          <li>For the pair $a_1x + b_1y + c_1 = 0$ and $a_2x + b_2y + c_2 = 0$: if $\frac{a_1}{a_2} \neq \frac{b_1}{b_2}$, it has a unique solution; if $\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq \frac{c_1}{c_2}$, it is inconsistent; if $\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}$, it is dependent and consistent.</li>
+        </ol>
+      </div>
+
+      <div class="c-tip">
+        <div class="c-tip__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19L20 5"/><path d="M4 7l16 11"/><path d="M12 11.5v.5"/></svg></div>
+        <div class="c-tip__body">
+          <p>Compare $\frac{a_1}{a_2}$ and $\frac{b_1}{b_2}$ first. If they are equal, the pair has either no solution or infinitely many, and no amount of working will give you a single answer.</p>
+        </div>
       </div>
 
     </div>

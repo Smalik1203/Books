@@ -2,35 +2,78 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Since $b^2 - 4ac$ decides whether the quadratic equation $ax^2 + bx + c = 0$ has real roots or not, it is called the <span class="term">discriminant</span> of the equation. It tells us what kind of roots the equation has before we try to find them.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The discriminant and the nature of the roots</div>
-        <p>A quadratic equation $ax^2 + bx + c = 0$ has</p>
-        <p>(i) two distinct real roots, if $b^2 - 4ac \gt 0$;</p>
-        <p>(ii) two equal real roots, if $b^2 - 4ac = 0$;</p>
-        <p>(iii) no real roots, if $b^2 - 4ac \lt 0$.</p>
-      </div>
-
-      <p>Let us look at some examples. In each one we work out the discriminant first, and only then decide whether to look for the roots.</p>
+      <div class="c-example">
+              <div class="c-example__tab">Example 8</div>
+              <div class="c-example__body">
+                <p>A circular park has a diameter of 13 metres, and $A$ and $B$ are two gates at the two ends of a diameter, on the boundary. A pole is to be put up at a point on the boundary so that the difference of its distances from the two gates is 7 metres. Is this possible? If so, how far from each gate should the pole be?</p>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>in Fig. 4.2, $BP = x$ and $AP = (x + 7)$ m</span>
+                    <span class="work__why">the difference is 7 m</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>$AB = 13$ m, and since $AB$ is a diameter, $\angle APB = 90^\circ$. (Why?)</span></div>
+                  <div class="work__row"><span class="work__label">Step 3</span>
+                    <span>$AP^2 + PB^2 = AB^2$, so $(x + 7)^2 + x^2 = 13^2$</span>
+                    <span class="work__why">the Pythagoras theorem</span></div>
+                  <div class="work__row"><span class="work__label">Step 4</span>
+                    <span>$x^2 + 14x + 49 + x^2 = 169$, so $2x^2 + 14x - 120 = 0$</span></div>
+                  <div class="work__row"><span class="work__label">Step 5</span>
+                    <span>$x^2 + 7x - 60 = 0$</span>
+                    <span class="work__why">dividing by 2</span></div>
+                  <div class="work__row"><span class="work__label">Step 6</span>
+                    <span>$b^2 - 4ac = 7^2 - 4 \times 1 \times (-60) = 289$, greater than 0, so real roots</span></div>
+                  <div class="work__row"><span class="work__label">Step 7</span>
+                    <span>$x = \dfrac{-7 \pm \sqrt{289}}{2} = \dfrac{-7 \pm 17}{2}, \quad \text{so} \quad x = 5 \ \text{or} \ x = -12$</span>
+                    <span class="work__why">the quadratic formula</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>Yes. A distance is positive, so we ignore $x = -12$. With $x = 5$, the pole goes on the boundary 5 m from gate $B$ and 12 m from gate $A$</span></div>
+                </div>
+                <div class="c-figure c-figure--sm">
+                    <figure>
+                      <svg viewBox="0 0 210 158" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circle with centre O and diameter AB, marked 13 m. A point P lies on the circle above the diameter, closer to B. The segments AP and BP are drawn; BP is marked x and AP is marked x + 7, and the angle at P is marked as a right angle.">
+      <circle class="dg-line" cx="105" cy="84" r="62"/>
+      <path class="dg-line" d="M43 84 L167 84"/>
+      <path class="dg-line" d="M43 84 L148.7 40"/>
+      <path class="dg-line" d="M167 84 L148.7 40"/>
+      <path class="dg-thin" d="M143.1 42.3 L145.4 47.8 L151 45.5"/>
+      <circle class="dg-fill-b" cx="105" cy="84" r="2.2"/>
+      <circle class="dg-fill-b" cx="43" cy="84" r="2.2"/>
+      <circle class="dg-fill-b" cx="167" cy="84" r="2.2"/>
+      <circle class="dg-fill-b" cx="148.7" cy="40" r="2.2"/>
+      <text class="dg-label" x="38" y="88" text-anchor="end">A</text>
+      <text class="dg-label" x="172" y="88" text-anchor="start">B</text>
+      <text class="dg-label" x="151.7" y="34" text-anchor="start">P</text>
+      <text class="dg-label" x="105" y="97" text-anchor="middle">O</text>
+      <text class="dg-dim-label" x="90.8" y="52.9" text-anchor="middle">x + 7</text>
+      <text class="dg-dim-label" x="165.3" y="61.9" text-anchor="middle">x</text>
+      <text class="dg-dim-label" x="137" y="97" text-anchor="middle">13 m</text>
+      </svg>
+                      <figcaption><span class="fignum">Fig. 4.2</span> The pole $P$ on the boundary of the park.</figcaption>
+                    </figure>
+                </div>
+              </div>
+            </div>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__tab">Example 9</div>
         <div class="c-example__body">
-          <p>Find the discriminant of the quadratic equation $2x^2 - 4x + 3 = 0$, and use it to find the nature of the roots.</p>
+          <p>Find the discriminant of the equation $3x^2 - 2x + \frac{1}{3} = 0$, and use it to find the nature of the roots. Find the roots if they are real.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a = 3$, $b = -2$ and $c = \frac{1}{3}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$b^2 - 4ac = (-2)^2 - 4 \times 3 \times \frac{1}{3} = 4 - 4 = 0$</span>
+              <span class="work__why">so two equal real roots</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the roots are $-\frac{b}{2a}$ and $-\frac{b}{2a}$, that is, $\frac{2}{6}$ and $\frac{2}{6}$</span>
+              <span class="work__why">both are $-\frac{b}{2a}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>the discriminant is 0; the equation has two equal real roots, $\frac{1}{3}$ and $\frac{1}{3}$</span></div>
+          </div>
         </div>
       </div>
-
-      <p>The equation has the form $ax^2 + bx + c = 0$ with $a = 2$, $b = -4$ and $c = 3$. So the discriminant is $b^2 - 4ac = (-4)^2 - 4 \times 2 \times 3 = 16 - 24 = -8$. This is less than 0, so the equation has no real roots.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
-        <div class="c-example__body">
-          <p>A circular park has a diameter of 13 metres, and $A$ and $B$ are two gates at the two ends of a diameter, on the boundary. A pole is to be put up at a point on the boundary so that the difference of its distances from the two gates is 7 metres. Is this possible? If so, how far from each gate should the pole be?</p>
-        </div>
-      </div>
-
-      <p>Let us first draw a diagram, Fig. 4.2. Let $P$ be the place for the pole, and let its distance from gate $B$ be $x$ m, so $BP = x$. The difference of its distances from the two gates is 7 m, so $AP = (x + 7)$ m.</p>
 
     </div>
   </div>

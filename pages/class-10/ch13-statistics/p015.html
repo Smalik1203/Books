@@ -3,49 +3,52 @@
     <div class="page__main">
 
       <table class="table--data">
-        <caption>Table 13.10</caption>
-        <thead><tr><th>Marks obtained</th><th>20</th><th>up to 25</th><th>up to 28</th><th>up to 29</th></tr></thead>
-        <tbody><tr><td>Number of students</td><td>6</td><td>${6 + 20 = 26}$</td><td>${26 + 24 = 50}$</td><td>${50 + 28 = 78}$</td></tr></tbody>
-      </table>
-
-      <table class="table--data">
-        <thead><tr><th>Marks obtained</th><th>up to 33</th><th>up to 38</th><th>up to 42</th><th>up to 43</th></tr></thead>
-        <tbody><tr><td>Number of students</td><td>${78 + 15 = 93}$</td><td>${93 + 4 = 97}$</td><td>${97 + 2 = 99}$</td><td>${99 + 1 = 100}$</td></tr></tbody>
-      </table>
-
-      <p>Now add these running totals to the frequency table as a new row. It is called the <span class="term">cumulative frequency</span> row (Table 13.11).</p>
-
-      <table class="table--data">
-        <caption>Table 13.11</caption>
-        <thead><tr><th>Marks obtained</th><th>20</th><th>25</th><th>28</th><th>29</th><th>33</th><th>38</th><th>42</th><th>43</th></tr></thead>
-        <tbody>
-          <tr><td>Number of students</td><td>6</td><td>20</td><td>24</td><td>28</td><td>15</td><td>4</td><td>2</td><td>1</td></tr>
-          <tr><td>Cumulative frequency</td><td>6</td><td>26</td><td>50</td><td>78</td><td>93</td><td>97</td><td>99</td><td>100</td></tr>
-        </tbody>
-      </table>
-
-      <p>From Table 13.11, the 50th observation is 28 and the 51st observation is 29. (Why?) So</p>
-
-      <div class="eq">$$\text{Median} = \dfrac{28 + 29}{2} = 28.5$$</div>
-
-      <p><strong>Remark.</strong> Rows 1 and 3 of Table 13.11 together make a <span class="term">cumulative frequency table</span>. The median mark 28.5 tells you that about half the students got less than 28.5 marks, and the other half got more.</p>
-
-      <p>Now let us see how to find the median of grouped data. Take this grouped frequency distribution of the marks, out of 100, of 53 students in an examination.</p>
-
-      <table class="table--data">
-        <caption>Table 13.12</caption>
-        <thead><tr><th>Marks</th><th>0&nbsp;–&nbsp;10</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th></tr></thead>
-        <tbody><tr><td>Number of students</td><td>5</td><td>3</td><td>4</td><td>3</td><td>3</td></tr></tbody>
-      </table>
-
-      <table class="table--data">
-        <thead><tr><th>Marks</th><th>50&nbsp;–&nbsp;60</th><th>60&nbsp;–&nbsp;70</th><th>70&nbsp;–&nbsp;80</th><th>80&nbsp;–&nbsp;90</th><th>90&nbsp;–&nbsp;100</th></tr></thead>
-        <tbody><tr><td>Number of students</td><td>4</td><td>7</td><td>9</td><td>7</td><td>8</td></tr></tbody>
-      </table>
+                                                  <thead><tr><th>Marks</th><th>50&nbsp;–&nbsp;60</th><th>60&nbsp;–&nbsp;70</th><th>70&nbsp;–&nbsp;80</th><th>80&nbsp;–&nbsp;90</th><th>90&nbsp;–&nbsp;100</th></tr></thead>
+                                                  <tbody><tr><td>Number of students</td><td>4</td><td>7</td><td>9</td><td>7</td><td>8</td></tr></tbody>
+                                                </table>
 
       <p>Use the table to answer these questions. How many students got less than 10 marks? Clearly, 5.</p>
 
       <p>How many students got less than 20 marks? They are the students with marks in the class 0&nbsp;–&nbsp;10 together with those in the class 10&nbsp;–&nbsp;20. So ${5 + 3 = 8}$ students got less than 20 marks. We say that the cumulative frequency of the class 10&nbsp;–&nbsp;20 is 8.</p>
+
+      <p>In the same way you can find the cumulative frequencies of the other classes, that is, the number of students with marks less than 30, less than 40, …, less than 100. They are given in Table 13.13.</p>
+
+      <table class="table--data">
+                                                  <caption>Table 13.13</caption>
+                                                  <thead><tr><th>Marks less than</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th><th>90</th><th>100</th></tr></thead>
+                                                  <tbody><tr><td>Number of students (cumulative frequency)</td><td>5</td><td>8</td><td>12</td><td>15</td><td>18</td><td>22</td><td>29</td><td>38</td><td>45</td><td>53</td></tr></tbody>
+                                                </table>
+
+      <p>This is called a <span class="term">cumulative frequency distribution of the less than type</span>. The numbers 10, 20, 30, …, 100 are the upper limits of the classes.</p>
+
+      <p>You can make a similar table of the number of students with marks greater than or equal to 0, greater than or equal to 10, greater than or equal to 20, and so on. From Table 13.12, all 53 students got 0 or more marks. There are 5 students in the class 0&nbsp;–&nbsp;10, so ${53 - 5 = 48}$ students got 10 or more marks. In the same way, ${48 - 3 = 45}$ students got 20 or more, ${45 - 4 = 41}$ got 30 or more, and so on (Table 13.14).</p>
+
+      <table class="table--data">
+                                                  <caption>Table 13.14</caption>
+                                                  <thead><tr><th>Marks more than or equal to</th><th>0</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th><th>90</th></tr></thead>
+                                                  <tbody><tr><td>Number of students (cumulative frequency)</td><td>53</td><td>48</td><td>45</td><td>41</td><td>38</td><td>35</td><td>31</td><td>24</td><td>15</td><td>8</td></tr></tbody>
+                                                </table>
+
+      <p>This is called a <span class="term">cumulative frequency distribution of the more than type</span>. The numbers 0, 10, 20, …, 90 are the lower limits of the classes.</p>
+
+      <p>Either kind of cumulative frequency distribution can be used to find the median of grouped data. Let us put Tables 13.12 and 13.13 together as Table 13.15.</p>
+
+      <table class="table--data">
+                                <caption>Table 13.15</caption>
+                                <thead><tr><th>Marks</th><th>0&nbsp;–&nbsp;10</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th></tr></thead>
+                                <tbody>
+                                  <tr><td>Number of students ($f$)</td><td>5</td><td>3</td><td>4</td><td>3</td><td>3</td></tr>
+                                  <tr><td>Cumulative frequency ($cf$)</td><td>5</td><td>8</td><td>12</td><td>15</td><td>18</td></tr>
+                                </tbody>
+                              </table>
+
+      <table class="table--data">
+                    <thead><tr><th>Marks</th><th>50&nbsp;–&nbsp;60</th><th>60&nbsp;–&nbsp;70</th><th>70&nbsp;–&nbsp;80</th><th>80&nbsp;–&nbsp;90</th><th>90&nbsp;–&nbsp;100</th></tr></thead>
+                    <tbody>
+                      <tr><td>Number of students ($f$)</td><td>4</td><td>7</td><td>9</td><td>7</td><td>8</td></tr>
+                      <tr><td>Cumulative frequency ($cf$)</td><td>22</td><td>29</td><td>38</td><td>45</td><td>53</td></tr>
+                    </tbody>
+                  </table>
 
     </div>
   </div>

@@ -2,37 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">13.3</span><span class="name">Mode of Grouped Data</span></h2>
-
-      <p>Recall from Class 9 that the mode is the value that occurs most often among the observations, that is, the observation with the highest frequency. In Class 9 you found the mode of ungrouped data, and now you will find the mode of grouped data. Two or more values may share the highest frequency, and such data is called <span class="term">multimodal</span>. Grouped data can be multimodal too, but every problem in this chapter has only one mode.</p>
-
-      <p>First, recall how the mode of ungrouped data is found.</p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>A bowler took these numbers of wickets in 10 cricket matches: 2, 6, 4, 5, 0, 2, 1, 3, 2, 3. Find the mode of the data.</p>
-        </div>
-      </div>
-
-      <p>Make a frequency distribution table of the data:</p>
-
-      <table class="table--data">
-        <thead><tr><th>Number of wickets</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
-        <tbody><tr><td>Number of matches</td><td>1</td><td>1</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td></tr></tbody>
-      </table>
-
-      <p>The bowler took 2 wickets in the largest number of matches, 3. So the mode of the data is 2.</p>
+              <div class="c-example__tab">Example 4</div>
+              <div class="c-example__body">
+                <p>A bowler took these numbers of wickets in 10 cricket matches: 2, 6, 4, 5, 0, 2, 1, 3, 2, 3. Find the mode of the data.</p>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>make a frequency distribution table of the data, as below</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>the bowler took 2 wickets in the largest number of matches, 3</span>
+                    <span class="work__why">the highest frequency</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>The mode of the data is 2</span></div>
+                </div>
+                <table class="table--data">
+                  <thead><tr><th>Number of wickets</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+                  <tbody><tr><td>Number of matches</td><td>1</td><td>1</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td></tr></tbody>
+                </table>
+              </div>
+            </div>
 
       <p>In a grouped frequency distribution you cannot find the mode by looking at the frequencies. You can only find the class with the highest frequency, which is called the <span class="term">modal class</span>. The mode is a value inside the modal class, and it is given by the formula below.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Mode of grouped data</div>
-        <div class="eq">$$\text{Mode} = l + \left(\dfrac{f_1 - f_0}{2f_1 - f_0 - f_2}\right) \times h$$</div>
-        <p>Here $l$ is the lower limit of the modal class and $h$ is the size of a class interval, all the classes being of the same size. $f_1$ is the frequency of the modal class, $f_0$ is the frequency of the class before it, and $f_2$ is the frequency of the class after it.</p>
-      </div>
+              <div class="c-keyidea__title">Mode of grouped data</div>
+              <div class="eq">$$\text{Mode} = l + \left(\dfrac{f_1 - f_0}{2f_1 - f_0 - f_2}\right) \times h$$</div>
+              <p>Here $l$ is the lower limit of the modal class and $h$ is the size of a class interval, all the classes being of the same size. $f_1$ is the frequency of the modal class, $f_0$ is the frequency of the class before it, and $f_2$ is the frequency of the class after it.</p>
+            </div>
 
-      <p>Let us use this formula in some examples.</p>
+      <div class="c-example">
+              <div class="c-example__tab">Example 5</div>
+              <div class="c-example__body">
+                <p>A group of students surveyed 20 households in a locality and made this frequency table of the number of family members in each household. Find the mode of the data.</p>
+                <table class="table--data">
+                  <thead><tr><th>Family size</th><th>1&nbsp;–&nbsp;3</th><th>3&nbsp;–&nbsp;5</th><th>5&nbsp;–&nbsp;7</th><th>7&nbsp;–&nbsp;9</th><th>9&nbsp;–&nbsp;11</th></tr></thead>
+                  <tbody><tr><td>Number of families</td><td>7</td><td>8</td><td>2</td><td>2</td><td>1</td></tr></tbody>
+                </table>
+                <p><strong>Solution.</strong></p>
+                <div class="work">
+                  <div class="work__row"><span class="work__label">Step 1</span>
+                    <span>the highest frequency, 8, is in the class 3&nbsp;–&nbsp;5, so the modal class is 3&nbsp;–&nbsp;5</span></div>
+                  <div class="work__row"><span class="work__label">Step 2</span>
+                    <span>$l = 3$, &nbsp; $h = 2$, &nbsp; $f_1 = 8$, &nbsp; $f_0 = 7$, &nbsp; $f_2 = 2$</span>
+                    <span class="work__why">from the modal class</span></div>
+                  <div class="work__row"><span class="work__label">Step 3</span>
+                    <span>$\text{Mode} = l + \left(\dfrac{f_1 - f_0}{2f_1 - f_0 - f_2}\right) \times h$</span>
+                    <span class="work__why">the formula</span></div>
+                  <div class="work__row"><span class="work__label">Step 4</span>
+                    <span>$\text{Mode} = 3 + \left(\dfrac{8 - 7}{2 \times 8 - 7 - 2}\right) \times 2 = 3 + \dfrac{2}{7} = 3.286$</span>
+                    <span class="work__why">putting in the values</span></div>
+                  <div class="work__row"><span class="work__label">Answer</span>
+                    <span>The mode of the data is 3.286</span></div>
+                </div>
+              </div>
+            </div>
 
     </div>
   </div>

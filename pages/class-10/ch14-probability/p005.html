@@ -2,46 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p><strong>Note.</strong> In the definition of P(E), the numerator, the number of outcomes favourable to E, is never more than the denominator, the number of all possible outcomes. So</p>
-
-      <div class="eq">$$0 \leq P(E) \leq 1$$</div>
-
-      <div class="c-tip">
-        <div class="c-tip__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/></svg></div>
-        <div class="c-tip__body">
-          <p>A probability is never negative and never more than 1. If you get an answer such as $\frac{7}{6}$ or $-0.2$, check how you counted the outcomes.</p>
-        </div>
-      </div>
-
-      <p>Now let us take an example with playing cards. A deck of playing cards has 52 cards in 4 suits of 13 cards each: spades (♠), hearts (♥), diamonds (♦) and clubs (♣). Clubs and spades are black, and hearts and diamonds are red. The cards of each suit are the ace, king, queen, jack, 10, 9, 8, 7, 6, 5, 4, 3 and 2. Kings, queens and jacks are called <span class="term">face cards</span>.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>One card is drawn from a well-shuffled deck of 52 cards. Find the probability that the card (i) is an ace, (ii) is not an ace.</p>
-        </div>
-      </div>
-
-      <p>Shuffling the deck well makes the outcomes equally likely.</p>
-
-      <p>(i) There are 4 aces in a deck. Let E be the event <em>the card is an ace</em>. The number of outcomes favourable to E is 4, and the number of possible outcomes is 52. (Why?) So ${P(E) = \frac{4}{52} = \frac{1}{13}}$.</p>
-
-      <p>(ii) Let F be the event <em>the card is not an ace</em>. The number of outcomes favourable to F is ${52 - 4 = 48}$ (Why?), and the number of possible outcomes is 52. So ${P(F) = \frac{48}{52} = \frac{12}{13}}$.</p>
-
-      <p><strong>Remark.</strong> F is the same event as $\overline{E}$. So P(F) can also be found as $P(F) = P(\overline{E}) = 1 - P(E) = 1 - \frac{1}{13} = \frac{12}{13}$.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Sangeeta and Reshma play a tennis match. The probability that Sangeeta wins the match is 0.62. What is the probability that Reshma wins the match?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let S and R be the events <em>Sangeeta wins the match</em> and <em>Reshma wins the match</em></span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$P(S) = 0.62$</span>
+              <span class="work__why">given</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$P(R) = 1 - P(S) = 1 - 0.62 = 0.38$</span>
+              <span class="work__why">R and S are complementary</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>the probability that Reshma wins is 0.38</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Let S and R be the events <em>Sangeeta wins the match</em> and <em>Reshma wins the match</em>.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Savita and Hamida are friends. Ignoring leap years, what is the probability that they have (i) different birthdays? (ii) the same birthday?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Savita's birthday can be any day; Hamida's can be any of the 365 days of the year</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>these 365 outcomes are equally likely</span>
+              <span class="work__why">an assumption</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(i) if Hamida's birthday is not Savita's, there are ${365 - 1 = 364}$ favourable outcomes</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$P(\text{different birthdays}) = \dfrac{364}{365}$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>(ii) $P(\text{same birthday}) = 1 - P(\text{different birthdays}) = 1 - \dfrac{364}{365} = \dfrac{1}{365}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(i) $\dfrac{364}{365}$ &nbsp; (ii) $\dfrac{1}{365}$</span></div>
+          </div>
+        </div>
+      </div>
 
-      <div class="work work--list">
-        <p>$P(S) = 0.62$ &nbsp; (given)</p>
-        <p>$P(R) = 1 - P(S) = 1 - 0.62 = 0.38$ &nbsp; (R and S are complementary events)</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>Class 10 of a school has 40 students: 25 girls and 15 boys. The class teacher has to choose one student as class representative. She writes the name of each student on a separate card, all the cards being alike, puts the cards in a bag and mixes them well. Then she draws one card. What is the probability that the name on the card is (i) a girl's? (ii) a boy's?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>there are 40 students and one card is drawn: 40 possible outcomes</span>
+              <span class="work__why">one card a student</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>(i) 25 outcomes are favourable to a girl's name, so $P(\text{girl}) = \dfrac{25}{40} = \dfrac{5}{8}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(ii) 15 outcomes are favourable to a boy's name, so $P(\text{boy}) = \dfrac{15}{40} = \dfrac{3}{8}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(i) $\dfrac{5}{8}$ &nbsp; (ii) $\dfrac{3}{8}$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

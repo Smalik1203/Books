@@ -2,66 +2,93 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>${AB = \sqrt{(1 - 4)^2 + (7 - 2)^2} = \sqrt{9 + 25} = \sqrt{34}}$</p>
-        <p>${BC = \sqrt{(4 + 1)^2 + (2 + 1)^2} = \sqrt{25 + 9} = \sqrt{34}}$</p>
-        <p>${CD = \sqrt{(-1 + 4)^2 + (-1 - 4)^2} = \sqrt{9 + 25} = \sqrt{34}}$</p>
-        <p>${DA = \sqrt{(1 + 4)^2 + (7 - 4)^2} = \sqrt{25 + 9} = \sqrt{34}}$</p>
-        <p>${AC = \sqrt{(1 + 1)^2 + (7 + 1)^2} = \sqrt{4 + 64} = \sqrt{68}}$</p>
-        <p>${BD = \sqrt{(4 + 4)^2 + (2 - 4)^2} = \sqrt{64 + 4} = \sqrt{68}}$</p>
-      </div>
-
-      <p>So ${AB = BC = CD = DA}$ and ${AC = BD}$. All four sides of the quadrilateral ABCD are equal, and its diagonals AC and BD are also equal. So ABCD is a square. Four equal sides alone would not be enough: a rhombus has them too.</p>
-
       <p><strong>Another way.</strong> Find the four sides and one diagonal, say AC, as above. Here ${AD^2 + DC^2 = 34 + 34 = 68 = AC^2}$. So by the converse of the Pythagoras theorem, ${\angle D = 90^\circ}$. A quadrilateral with all four sides equal and one angle of $90^\circ$ is a square. So ABCD is a square.</p>
+
+      <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 232 204" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A classroom drawn as a grid of 10 columns and 10 rows. Ashima sits at A in column 3, row 1; Bharti at B in column 6, row 4; and Camella at C in column 8, row 6.">
+      <path class="dg-grid" d="M50 10V170M50 170H210M66 10V170M50 154H210M82 10V170M50 138H210M98 10V170M50 122H210M114 10V170M50 106H210M130 10V170M50 90H210M146 10V170M50 74H210M162 10V170M50 58H210M178 10V170M50 42H210M194 10V170M50 26H210M210 10V170M50 10H210"/>
+      <path class="dg-axis" d="M50 170H210 M50 170V10"/>
+      <text class="dg-tick" x="66" y="180" text-anchor="middle">1</text>
+      <text class="dg-tick" x="46" y="157" text-anchor="end">1</text>
+      <text class="dg-tick" x="82" y="180" text-anchor="middle">2</text>
+      <text class="dg-tick" x="46" y="141" text-anchor="end">2</text>
+      <text class="dg-tick" x="98" y="180" text-anchor="middle">3</text>
+      <text class="dg-tick" x="46" y="125" text-anchor="end">3</text>
+      <text class="dg-tick" x="114" y="180" text-anchor="middle">4</text>
+      <text class="dg-tick" x="46" y="109" text-anchor="end">4</text>
+      <text class="dg-tick" x="130" y="180" text-anchor="middle">5</text>
+      <text class="dg-tick" x="46" y="93" text-anchor="end">5</text>
+      <text class="dg-tick" x="146" y="180" text-anchor="middle">6</text>
+      <text class="dg-tick" x="46" y="77" text-anchor="end">6</text>
+      <text class="dg-tick" x="162" y="180" text-anchor="middle">7</text>
+      <text class="dg-tick" x="46" y="61" text-anchor="end">7</text>
+      <text class="dg-tick" x="178" y="180" text-anchor="middle">8</text>
+      <text class="dg-tick" x="46" y="45" text-anchor="end">8</text>
+      <text class="dg-tick" x="194" y="180" text-anchor="middle">9</text>
+      <text class="dg-tick" x="46" y="29" text-anchor="end">9</text>
+      <text class="dg-tick" x="210" y="180" text-anchor="middle">10</text>
+      <text class="dg-tick" x="46" y="13" text-anchor="end">10</text>
+      <text class="dg-tick" x="46" y="180" text-anchor="end">0</text>
+      <text class="dg-note" x="130" y="193" text-anchor="middle">Columns</text>
+      <text class="dg-note" x="32" y="93" text-anchor="end">Rows</text>
+      <circle class="dg-fill-teal" cx="98" cy="154" r="2.4"/>
+      <text class="dg-label" x="94" y="150" text-anchor="end">A</text>
+      <circle class="dg-fill-teal" cx="146" cy="106" r="2.4"/>
+      <text class="dg-label" x="142" y="102" text-anchor="end">B</text>
+      <circle class="dg-fill-teal" cx="178" cy="74" r="2.4"/>
+      <text class="dg-label" x="174" y="70" text-anchor="end">C</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 7.6</span> The desks in a classroom.</figcaption>
+                          </figure>
+                        </div>
 
       <div class="c-example">
         <div class="c-example__tab">Example 3</div>
         <div class="c-example__body">
           <p>Fig.&nbsp;7.6 shows how the desks in a classroom are arranged. Ashima, Bharti and Camella are seated at $A(3, 1)$, $B(6, 4)$ and $C(8, 6)$. Do you think they are seated in a line? Give reasons for your answer.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${AB = \sqrt{(6 - 3)^2 + (4 - 1)^2} = \sqrt{9 + 9} = \sqrt{18} = 3\sqrt{2}}$</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${BC = \sqrt{(8 - 6)^2 + (6 - 4)^2} = \sqrt{4 + 4} = \sqrt{8} = 2\sqrt{2}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${AC = \sqrt{(8 - 3)^2 + (6 - 1)^2} = \sqrt{25 + 25} = \sqrt{50} = 5\sqrt{2}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${AB + BC = 3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2} = AC}$, so the points A, B and C are collinear</span>
+              <span class="work__why">the two parts make the whole</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes. The three girls are seated in a line</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Find a relation between $x$ and $y$ such that the point $(x, y)$ is equidistant from the points $(7, 1)$ and $(3, 5)$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$P(x, y)$ is equidistant from $A(7, 1)$ and $B(3, 5)$: ${AP = BP}$, so ${AP^2 = BP^2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${(x - 7)^2 + (y - 1)^2 = (x - 3)^2 + (y - 5)^2}$</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${x^2 - 14x + 49 + y^2 - 2y + 1 = x^2 - 6x + 9 + y^2 - 10y + 25}$</span>
+              <span class="work__why">expanding</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${-14x - 2y + 50 = -6x - 10y + 34}$</span>
+              <span class="work__why">taking away $x^2 + y^2$ from both sides</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>${8y - 8x = -16}$, that is, ${x - y = 2}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>${x - y = 2}$</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="c-figure c-figure--md">
-                    <figure>
-                      <svg viewBox="0 0 232 204" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A classroom drawn as a grid of 10 columns and 10 rows. Ashima sits at A in column 3, row 1; Bharti at B in column 6, row 4; and Camella at C in column 8, row 6.">
-<path class="dg-grid" d="M50 10V170M50 170H210M66 10V170M50 154H210M82 10V170M50 138H210M98 10V170M50 122H210M114 10V170M50 106H210M130 10V170M50 90H210M146 10V170M50 74H210M162 10V170M50 58H210M178 10V170M50 42H210M194 10V170M50 26H210M210 10V170M50 10H210"/>
-<path class="dg-axis" d="M50 170H210 M50 170V10"/>
-<text class="dg-tick" x="66" y="180" text-anchor="middle">1</text>
-<text class="dg-tick" x="46" y="157" text-anchor="end">1</text>
-<text class="dg-tick" x="82" y="180" text-anchor="middle">2</text>
-<text class="dg-tick" x="46" y="141" text-anchor="end">2</text>
-<text class="dg-tick" x="98" y="180" text-anchor="middle">3</text>
-<text class="dg-tick" x="46" y="125" text-anchor="end">3</text>
-<text class="dg-tick" x="114" y="180" text-anchor="middle">4</text>
-<text class="dg-tick" x="46" y="109" text-anchor="end">4</text>
-<text class="dg-tick" x="130" y="180" text-anchor="middle">5</text>
-<text class="dg-tick" x="46" y="93" text-anchor="end">5</text>
-<text class="dg-tick" x="146" y="180" text-anchor="middle">6</text>
-<text class="dg-tick" x="46" y="77" text-anchor="end">6</text>
-<text class="dg-tick" x="162" y="180" text-anchor="middle">7</text>
-<text class="dg-tick" x="46" y="61" text-anchor="end">7</text>
-<text class="dg-tick" x="178" y="180" text-anchor="middle">8</text>
-<text class="dg-tick" x="46" y="45" text-anchor="end">8</text>
-<text class="dg-tick" x="194" y="180" text-anchor="middle">9</text>
-<text class="dg-tick" x="46" y="29" text-anchor="end">9</text>
-<text class="dg-tick" x="210" y="180" text-anchor="middle">10</text>
-<text class="dg-tick" x="46" y="13" text-anchor="end">10</text>
-<text class="dg-tick" x="46" y="180" text-anchor="end">0</text>
-<text class="dg-note" x="130" y="193" text-anchor="middle">Columns</text>
-<text class="dg-note" x="32" y="93" text-anchor="end">Rows</text>
-<circle class="dg-fill-teal" cx="98" cy="154" r="2.4"/>
-<text class="dg-label" x="94" y="150" text-anchor="end">A</text>
-<circle class="dg-fill-teal" cx="146" cy="106" r="2.4"/>
-<text class="dg-label" x="142" y="102" text-anchor="end">B</text>
-<circle class="dg-fill-teal" cx="178" cy="74" r="2.4"/>
-<text class="dg-label" x="174" y="70" text-anchor="end">C</text>
-</svg>
-                      <figcaption><span class="fignum">Fig. 7.6</span> The desks in a classroom.</figcaption>
-                    </figure>
-                  </div>
-
-      <p>Using the distance formula, we have</p>
 
     </div>
   </div>

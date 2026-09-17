@@ -1,5 +1,196 @@
 # Class 10 · Mathematics I · Chapter 5 — Arithmetic Progressions
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked by an agent from the Class 10
+brief, with Chapter 1 as the model. Page move, examples, Beyond the Book and
+answers were done in one pass, and every check was run on the chapter.
+
+**Pages: 29 before (22 body + 7 Beyond, Crown Quarto), 32 after (20 body +
+12 Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once, and then placed by hand (below).
+
+**All sixteen body examples set as steps.** Each was a question-only panel
+with its working in the running text after it. The working now sits in the
+panel as *Solution*, Steps and *Answer*, with the reason in `.work__why`.
+- Examples 2, 14 and 16 have lettered parts; each step names its part.
+- Examples 8, 10 and 16 ran onto the next page file; all their working is
+  now inside the panel.
+- The "(Why?)" questions in Examples 6, 8 and 10 are kept in their steps.
+- Remarks that are not steps stay as paragraphs after the panel: Example 1's
+  "any two consecutive terms give us $d$", Example 8's *Another way*, and
+  Example 13's "Two answers make sense here".
+- Example 3's "check by writing out the first ten terms" is a *Check* row.
+- Example 9's "Simple interest is given by the formula" display is Step 1.
+
+**Verified** by `build/check-body-maths.mjs`: 414 expressions and 365
+numbers compared, none lost and none added. The only gains are numbers
+restated in Answer rows (28, 34, 80, 160, 240).
+
+**Hand fitting, after the one refit:**
+- p014 (page 14): "Using the formula made the problem much easier to solve."
+  became "The formula made this much easier." This drops one rendered line,
+  so Example 12 now fits under Example 11.
+- Example 16's Answer row was shortened to one line ("(i) 550 sets (ii) 775
+  sets in the 10th year (iii) 4375 sets in the first 7 years"). This lets
+  Exercise Set 5.3's head and its first two questions sit on page 16 without
+  being stranded.
+- Blocks were then pulled back page by page. Set 5.4 Q3 now prints on the
+  same page as Fig. 5.7; after the refit, the figure had been overleaf and
+  not facing. The body lost a page, and the summary and the arithmetic-mean
+  tip close page 20.
+- **Every question that names a figure now prints on its figure's page or
+  facing it:** Q18 with Fig. 5.4 (page 18); Q19 with Fig. 5.5 (page 18);
+  Q20 (page 18) facing Fig. 5.6 (page 19); Set 5.4 Q3 with Fig. 5.7
+  (page 19); Q5 with Fig. 5.8 (page 20).
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | kept word for word except one item (below); `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **15 stepped examples** under eight `Type` heads; the old problems are Examples 1, 3, 9, 10 and 11, with their options kept and *Answer* giving the letter |
+| 3 Problem Sets → **Practice** | 3 sets, 19 questions | **one run of 30** in six forms |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 13 questions, the closing paragraph |
+
+As in Chapter 1, the old Stage 2 was separate problems, not Stage 1's
+answers, so Stage 1 stays as it was.
+
+**Solved Examples by type:**
+1. recognising an AP (includes a proof that $(a-b)^2$, $a^2+b^2$, $(a+b)^2$
+   are in AP);
+2. finding a term, and which term;
+3. an AP from two conditions;
+4. terms from the end, and counting;
+5. sums;
+6. terms from a formula for the sum;
+7. three numbers in AP;
+8. word problems.
+
+With the body, the chapter has **31 worked examples**.
+
+**Practice:**
+
+| form | questions | letters |
+|---|---|---|
+| multiple choice | 13, from the old Sets A to C | a 3, b 3, c 3, d 4 |
+| assertion–reason | 4: old B4 recast, and three new | a, b, c, d |
+| very short answer | 4 | |
+| short answer | 4 | |
+| long answer | 3 | |
+| case-based | 2 | |
+
+Old items A6 and C4 were dropped: A6 (sum of odd numbers is $n^2$) sits too
+near body Set 5.3 Q9, and C4 repeats Stage 1's question type. C5 became
+very short answer Q19, and C2 became short answer Q22.
+
+**Give-aways found and fixed:**
+- **Stage 1, the odd-numbers item** ("Can $1 + 3 + 5 + \cdots$ ever be
+  200?"). Its explanation printed "the sum of the first $n$ of them is
+  $n^2$", which is exactly the answer to body Set 5.3 Q9 (that AP has
+  $a = 1$, $d = 2$), and the method of Q14. It was replaced with an item of
+  the same kind: "Can $2 + 4 + 6 + \cdots$ ever be 200?" (the sum is
+  $n(n + 1)$; 182 and 210 lie either side).
+- **New Example 15**, while it was being written. Its first numbers gave
+  "the 11th year", the same $n$ as body Set 5.2 Q19. It now reaches
+  ₹24900, in the 12th year.
+- **New Example 5**, while it was being written. Its first numbers printed
+  the AP 2, 7, 12, which is body Example 3's. It now uses 7, 12, 17.
+
+`check-no-repeats` reports 5 pairs at or above 50%. Each is the same type
+with different numbers, for example 54, 51, 48 summing to 513 against the
+body's 24, 21, 18 summing to 78. I also read every value Beyond prints
+against the body's exercise answers, and none answers one.
+
+**`ANSWERS.md` written** for:
+- Exercise Sets 5.1 to 5.4;
+- the running-text questions (why lists (a)–(e) are APs; Reena's 6th, 15th
+  and 25th years; the "(Why?)"s in Examples 6, 8 and 10);
+- Stage 1;
+- all 30 practice questions, with proofs set one statement to a line.
+
+Three items the old log flagged are now answered in full:
+- Set 5.1 Q4 (xi) says "not an AP unless $a = 0$ or 1";
+- Set 5.3 Q19 gives the reason 25 rows is rejected;
+- Set 5.4 Q2 gives both sums, 76 and 20.
+
+### Verified
+
+`check-numbers.mjs` passes **640 claims**.
+- It evaluates 190 printed identities.
+- It checks 26 chains written in letters as expressions (at two sets of
+  values, under the condition a chain is written under).
+- It recomputes every term, count and sum from $a$, $d$ and $n$, or finds
+  it by search. That covers:
+  - every body example's Answer row, a lettered part at a time;
+  - every exercise answer in `ANSWERS.md`, part by part, including which
+    lists in Set 5.1 Q4 are APs;
+  - Stage 1 and all 15 Solved Examples, with their options;
+  - every practice answer read back off the key rows.
+- Every MCQ has exactly one right option, and it matches the key; every
+  AR letter is derived.
+- The `ANSWERS.md` key and practice working agree with the page.
+
+**Break tests: 21 of 21 caught.** They cover:
+- the body: an identity, an Answer row, a lettered part and a phrase;
+- two Beyond answers and a Beyond letter;
+- a key letter, a key identity, a key lettered part and a key phrase;
+- two options;
+- in `ANSWERS.md`: a value, a phrase, the key, a practice lettered part, a
+  practice phrase and an AP verdict;
+- a letters chain.
+
+The first run missed one: key 22's "20 weeks" passed with 21 because
+"(n − 20)" is in the same row. It is now checked as a phrase.
+
+**Faults in the check itself, fixed:**
+- a roman-numeral alternation without a group cut parts at "next" and
+  "gives";
+- the check first read option (d) of Beyond Example 10 as 44 terms of the
+  AP, when the remark means 44 terms from 11 to 99. The remark was right.
+
+**Fitting:**
+- Nothing is clipped, and nothing runs into the bottom margin.
+- `orphans` finds 0, `check-labels` finds no collisions, and `fit-options`
+  finds every option row fits.
+- I read the proofs of pages 9, 14, 18, 25, 27, 29 and 31.
+- In Beyond, `settle.mjs` fails outright, so blocks were moved by hand and
+  checked by building.
+
+**Colour:** I read pages 2 and 18 in greyscale and deuteranopia; pages 1,
+19 and 20 were also rendered. The figures are single-ink line drawings, and
+the logs' fill is not doing any work.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 2 | 85% | the heading of 5.2 must open page 3 with its lists |
+| 3 | 81% | the list (a)–(e), a block of working |
+| 5 | 72% | Example 2, a panel |
+| 15 | 71% | Example 15, a panel |
+| 20 | 69% | the last body page (`data-close`) |
+| 26 | 67% | Example 14 with its `Type` head |
+| 29 | 71% | case-based Q29 and its table |
+| 30 | 62% | **the Answers stage, which always opens a page** |
+| 32 | 53% | the last page |
+
+### Flagged, not done
+
+- **KaTeX breaks before punctuation.** Body Set 5.3 Q18 prints "$B$" and its
+  comma across a line break. This is the stylesheet issue logged
+  class-wide.
+- **Gauss "in Chapter 1"** is kept, as the earlier log checked.
+- **The `.work__why` of body Example 6, Step 3** ("suppose 301 is the $n$th
+  term") is five words, one over the two-to-four guide. It carries the
+  source's assumption and is kept.
+
+---
+
 Written new from NCERT *Mathematics, Textbook for Class X* (reprint 2026-27),
 Chapter 5, *Arithmetic Progressions* (textbook pages 49–72). Original LearnLab
 text in NCERT's order of topics, examples and questions; no sentence is
@@ -13,6 +204,10 @@ into a sentence before it. The definition of an AP, the *n*th term and the sum
 formula are `c-keyidea` blocks. The source's *5.5 Summary* is the chapter
 summary, and its *A note to the reader* (the arithmetic mean) is the closing
 `c-tip`. 22 chapter pages, 7 Beyond the Book pages.
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted: `check-body-maths` reports no mathematics lost or added, `check-numbers.mjs` passes, 0 stranded openers, every option row fits, no label collisions.
 
 ## Figures
 

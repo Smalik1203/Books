@@ -2,56 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B2</span>
-          <span>$\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = 49 - 20 = 29$: (b). Option (a) adds $2\alpha\beta$ instead of taking it away, and (c) forgets it.</span>
-        </div>
-      </div>
+      <h3>Type 7 &middot; Cubic polynomials</h3>
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B3</span>
-          <span>$\frac{1}{\alpha} + \frac{1}{\beta} = \frac{\alpha + \beta}{\alpha\beta} = \frac{-5}{6}$: (d). Option (a) loses the sign of the sum, and (b) divides the product by the sum.</span>
-        </div>
-      </div>
+      <div class="c-example">
+                    <div class="c-example__tab">Example 11</div>
+                    <div class="c-example__body">
+                      <p>If $\alpha$, $\beta$ and $\gamma$ are the zeroes of $x^3 - 6x^2 + 11x - 6$, then $\alpha\beta + \beta\gamma + \gamma\alpha$ is</p>
+                      <ol class="c-parts c-parts--alpha c-parts--4"><li>$-11$</li><li>$6$</li><li>$11$</li><li>$-6$</li></ol>
+                      <p><strong>Solution.</strong></p>
+                      <div class="work">
+                        <div class="work__row"><span class="work__label">Step 1</span>
+                          <span>$a = 1$, $b = -6$, $c = 11$ and $d = -6$</span></div>
+                        <div class="work__row"><span class="work__label">Step 2</span>
+                          <span>$\alpha\beta + \beta\gamma + \gamma\alpha = \dfrac{c}{a} = 11$</span>
+                          <span class="work__why">the cubic relation</span></div>
+                        <div class="work__row"><span class="work__label">Answer</span>
+                          <span>(c)</span></div>
+                      </div>
+                      <p>The zeroes are 1, 2 and 3. Option (a) is $-\frac{c}{a}$, (b) is the sum and (d) is the constant term.</p>
+                    </div>
+                  </div>
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B4</span>
-          <span>The product of the zeroes is $\frac{c}{a} = 1$, so $c = a$: (c). Options (a), (b) and (d) do not follow from the product being 1.</span>
-        </div>
-      </div>
+      <div class="c-example">
+                    <div class="c-example__tab">Example 12</div>
+                    <div class="c-example__body">
+                      <p>Find a cubic polynomial whose zeroes are 2, $-1$ and 3.</p>
+                      <p><strong>Solution.</strong></p>
+                      <div class="work">
+                        <div class="work__row"><span class="work__label">Step 1</span>
+                          <span>sum $= 2 + (-1) + 3 = 4$</span></div>
+                        <div class="work__row"><span class="work__label">Step 2</span>
+                          <span>$2 \times (-1) + (-1) \times 3 + 3 \times 2 = -2 - 3 + 6 = 1$</span>
+                          <span class="work__why">products two at a time</span></div>
+                        <div class="work__row"><span class="work__label">Step 3</span>
+                          <span>product $= 2 \times (-1) \times 3 = -6$</span></div>
+                        <div class="work__row"><span class="work__label">Step 4</span>
+                          <span>take $a = 1$: then $b = -4$, $c = 1$ and $d = 6$</span>
+                          <span class="work__why">from the three relations</span></div>
+                        <div class="work__row"><span class="work__label">Answer</span>
+                          <span>$x^3 - 4x^2 + x + 6$</span></div>
+                      </div>
+                      <p>Check: $2^3 - 4 \times 2^2 + 2 + 6 = 8 - 16 + 2 + 6 = 0$.</p>
+                    </div>
+                  </div>
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">C1</span>
-          <span>The sum is 6 and the product is $9 - 2 = 7$, so the polynomial is $x^2 - 6x + 7$: (b). Option (a) has the sign of the sum wrong, (c) the sign of the product, and (d) adds where it should subtract.</span>
-        </div>
-      </div>
+      <h3>Type 8 &middot; Proving a property of every quadratic polynomial</h3>
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">C2</span>
-          <span>$\alpha\beta\gamma = -\frac{d}{a} = -\frac{6}{2} = -3$: (c). The zeroes are 2, $-3$ and $\frac{1}{2}$. Option (a) forgets the minus sign, and (b) is $\frac{c}{a}$.</span>
-        </div>
-      </div>
-
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">C3</span>
-          <span>$p(x) = 0$ only when $x = 1$ or $x = -2$, so there are two zeroes: (b). The factor $x - 1$ appears twice but gives the same zero, and the graph only touches the axis there.</span>
-        </div>
-      </div>
-
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">C4</span>
-          <span>The sum is $-\frac{2}{k}$ and the product is $\frac{3k}{k} = 3$, so $-\frac{2}{k} = 3$ and $k = -\frac{2}{3}$: (d). Option (a) loses the minus sign of the sum.</span>
-        </div>
-      </div>
-
-      <p>Three things from this section are worth keeping. An expression in the zeroes, such as $\alpha^2 + \beta^2$ or $\frac{1}{\alpha} + \frac{1}{\beta}$, can often be written using only $\alpha + \beta$ and $\alpha\beta$, so the zeroes themselves are not needed. The minus sign belongs to the sum of the zeroes and not to their product. And the degree of a polynomial limits how many times its graph can meet the $x$-axis.</p>
+      <div class="c-example">
+                    <div class="c-example__tab">Example 13</div>
+                    <div class="c-example__body">
+                      <p>The two zeroes of $ax^2 + bx + c$, $a \neq 0$, are equal in size and opposite in sign. Prove that $b = 0$.</p>
+                      <p><strong>Solution.</strong></p>
+                      <div class="work">
+                        <div class="work__row"><span class="work__label">Step 1</span>
+                          <span>let the zeroes be $\alpha$ and $-\alpha$</span>
+                          <span class="work__why">given</span></div>
+                        <div class="work__row"><span class="work__label">Step 2</span>
+                          <span>$\alpha + (-\alpha) = -\dfrac{b}{a}$</span>
+                          <span class="work__why">sum of the zeroes</span></div>
+                        <div class="work__row"><span class="work__label">Step 3</span>
+                          <span>$0 = -\dfrac{b}{a}$</span>
+                          <span class="work__why">since $\alpha - \alpha = 0$</span></div>
+                        <div class="work__row"><span class="work__label">Step 4</span>
+                          <span>$b = 0$</span>
+                          <span class="work__why">multiply both sides by $-a$</span></div>
+                        <div class="work__row"><span class="work__label">Answer</span>
+                          <span>So $b = 0$, as was to be proved</span></div>
+                      </div>
+                    </div>
+                  </div>
 
     </div>
   </div>

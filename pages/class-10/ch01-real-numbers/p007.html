@@ -2,53 +2,62 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>We are now ready to prove that $\sqrt{2}$ is irrational. The proof uses a method called <span class="term">proof by contradiction</span>. We assume the opposite of what we want to prove, and show that this assumption leads to something impossible.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 1.3</div>
-        <p>$\sqrt{2}$ is irrational.</p>
-      </div>
-
-      <p><strong>Proof.</strong> Let us assume the opposite, that $\sqrt{2}$ is rational. Then we can find integers $r$ and $s$ such that $\sqrt{2} = \frac{r}{s}$ and $s \neq 0$. If $r$ and $s$ have a common factor other than 1, we divide both of them by it. This gives $\sqrt{2} = \frac{a}{b}$, where $a$ and $b$ are coprime. Now follow the steps.</p>
-
-      <div class="work">
-        <div class="work__row"><span class="work__label">1</span>
-          <span>$b\sqrt{2} = a$</span>
-          <span class="chip">multiplying both sides by $b$</span></div>
-        <div class="work__row"><span class="work__label">2</span>
-          <span>$2b^2 = a^2$</span>
-          <span class="chip">squaring both sides</span></div>
-        <div class="work__row"><span class="work__label">3</span>
-          <span>2 divides $a^2$, so 2 divides $a$</span>
-          <span class="chip">Theorem 1.2 with $p = 2$</span></div>
-        <div class="work__row"><span class="work__label">4</span>
-          <span>$a = 2c$ for some integer $c$</span>
-          <span class="chip">from step 3</span></div>
-        <div class="work__row"><span class="work__label">5</span>
-          <span>$2b^2 = 4c^2$, that is, $b^2 = 2c^2$</span>
-          <span class="chip">putting $2c$ for $a$ in step 2</span></div>
-        <div class="work__row"><span class="work__label">6</span>
-          <span>2 divides $b^2$, so 2 divides $b$</span>
-          <span class="chip">Theorem 1.2 again</span></div>
-      </div>
-
-      <p>So $a$ and $b$ have 2 as a common factor. But this contradicts the fact that $a$ and $b$ have no common factor other than 1. The contradiction arose from our assumption that $\sqrt{2}$ is rational, so that assumption is false. So $\sqrt{2}$ is irrational.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Prove that $\sqrt{3}$ is irrational.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\sqrt{3} = \frac{a}{b}$, for integers $a$ and $b$ with $b \neq 0$</span>
+              <span class="work__why">assume $\sqrt{3}$ is rational</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$a$ and $b$ are coprime</span>
+              <span class="work__why">divide out any common factor other than 1</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$b\sqrt{3} = a$, so $3b^2 = a^2$</span>
+              <span class="work__why">squaring both sides</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>3 divides $a^2$, so 3 divides $a$</span>
+              <span class="work__why">Theorem 1.2</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$a = 3c$ for some integer $c$, so $3b^2 = 9c^2$, that is, $b^2 = 3c^2$</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>3 divides $b^2$, so 3 divides $b$</span>
+              <span class="work__why">Theorem 1.2 with $p = 3$</span></div>
+            <div class="work__row"><span class="work__label">Step 7</span>
+              <span>3 is a common factor of $a$ and $b$</span>
+              <span class="work__why">this contradicts Step 2</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The assumption is false, so $\sqrt{3}$ is irrational</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Let us assume the opposite, that $\sqrt{3}$ is rational. Then we can find integers $a$ and $b$, with $b \neq 0$, such that $\sqrt{3} = \frac{a}{b}$. If $a$ and $b$ have a common factor other than 1, we can divide both by it, so we may take $a$ and $b$ to be coprime. Then $b\sqrt{3} = a$.</p>
+      <p>In Class IX we stated two facts about irrational numbers. The sum or difference of a rational number and an irrational number is irrational. The product or quotient of a non-zero rational number and an irrational number is irrational. We now prove some particular cases of these facts.</p>
 
-      <div class="work work--list">
-        <p>$3b^2 = a^2$ &nbsp; (squaring both sides and rearranging)</p>
-        <p>So $a^2$ is divisible by 3, and by Theorem 1.2, $a$ is divisible by 3.</p>
-        
-        <p>$a = 3c$ for some integer $c$, so $3b^2 = 9c^2$, that is, $b^2 = 3c^2$</p>
-        <p>So $b^2$ is divisible by 3, and by Theorem 1.2 with $p = 3$, $b$ is divisible by 3.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Show that $5 - \sqrt{3}$ is irrational.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$5 - \sqrt{3} = \frac{a}{b}$, for coprime integers $a$ and $b$ with $b \neq 0$</span>
+              <span class="work__why">assume it is rational</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\sqrt{3} = 5 - \dfrac{a}{b} = \dfrac{5b - a}{b}$</span>
+              <span class="work__why">rearranging</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\frac{5b - a}{b}$ is rational, so $\sqrt{3}$ is rational</span>
+              <span class="work__why">$a$ and $b$ are integers</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>but $\sqrt{3}$ is irrational</span>
+              <span class="work__why">proved in Example 5</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The assumption is false, so $5 - \sqrt{3}$ is irrational</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

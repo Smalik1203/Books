@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">Similar triangles in questions that do not say which triangles to compare.</div>
         </div>
       </div>
 
@@ -24,16 +23,20 @@
       <p>Since $DE \parallel BC$, Theorem 6.1 gives $\frac{AD}{DB} = \frac{AE}{EC}$, so $\frac{x}{x - 2} = \frac{x + 2}{x - 1}$. Cross-multiplying, $x(x - 1) = (x + 2)(x - 2)$, that is, $x^2 - x = x^2 - 4$. The $x^2$ terms cancel, so $x = 4$. Then AD&nbsp;=&nbsp;4, DB&nbsp;=&nbsp;2, AE&nbsp;=&nbsp;6 and EC&nbsp;=&nbsp;3, and both ratios are 2. The equation looked quadratic, but it was linear.</p>
 
       <div class="c-try">
-        <p>ABC is a right triangle with the right angle at B, and BD is perpendicular to AC, with D on AC. Show that $BD^2 = AD \cdot DC$.</p>
+        <p>ABCD is a parallelogram. A line through A meets the diagonal BD at P, the side DC at Q, and BC produced at R. Show that $AP^2 = PQ \cdot PR$.</p>
       </div>
 
-      <p>There are no lengths to work with, so look for two similar triangles that both contain BD. In $\triangle ADB$ and $\triangle BDC$, the angles at D are both $90^\circ$. Also $\angle A = 90^\circ - \angle ABD$, from $\triangle ADB$, and $\angle DBC = 90^\circ - \angle ABD$, because $\angle ABD + \angle DBC = 90^\circ$. So $\angle A = \angle DBC$, and by the AA criterion ${\triangle ADB \sim \triangle BDC}$. This gives ${\frac{AD}{BD} = \frac{BD}{DC}}$, and cross-multiplying gives the result.</p>
+      <p>There are no lengths to work with, and AP, PQ and PR all lie on one line, so no single pair of triangles contains all three. Look instead for two pairs that give the same ratio. Since $AD \parallel BR$, $\angle PAD = \angle PRB$ (alternate angles) and $\angle APD = \angle RPB$ (vertically opposite), so ${\triangle APD \sim \triangle RPB}$ by the AA criterion, and ${\frac{AP}{PR} = \frac{DP}{PB}}$. Since $DQ \parallel AB$, in the same way ${\triangle QPD \sim \triangle APB}$, and ${\frac{PQ}{AP} = \frac{DP}{PB}}$. Both ratios equal $\frac{DP}{PB}$, so ${\frac{AP}{PR} = \frac{PQ}{AP}}$, and cross-multiplying gives the result.</p>
 
       <div class="c-try">
         <p>In $\triangle PQR$, S is on PQ and T is on PR, with PS&nbsp;=&nbsp;4&nbsp;cm, SQ&nbsp;=&nbsp;6&nbsp;cm, PT&nbsp;=&nbsp;5&nbsp;cm and TR&nbsp;=&nbsp;7.5&nbsp;cm. Is ST parallel to QR? If QR&nbsp;=&nbsp;15&nbsp;cm, find ST.</p>
       </div>
 
       <p>Here $\frac{PS}{SQ} = \frac{4}{6} = \frac{2}{3}$ and $\frac{PT}{TR} = \frac{5}{7.5} = \frac{2}{3}$, so $ST \parallel QR$ by Theorem 6.2. Then $\angle PST = \angle PQR$ (corresponding angles), and $\angle P$ is common, so ${\triangle PST \sim \triangle PQR}$ by the AA criterion. The ratio of their sides is $\frac{PS}{PQ} = \frac{4}{10}$, not $\frac{PS}{SQ}$, so ST = $\frac{4}{10} \times 15$ = 6&nbsp;cm.</p>
+
+      <div class="c-try">
+        <p>Are any two right-angled isosceles triangles similar?</p>
+      </div>
 
     </div>
   </div>

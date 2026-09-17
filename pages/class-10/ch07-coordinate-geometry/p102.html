@@ -2,12 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Let the ratio be ${k : 1}$. The point of division is ${\left(\frac{2k + 1}{k + 1}, \frac{7k + 3}{k + 1}\right)}$, and it lies on the line, so its coordinates satisfy the equation: ${3(2k + 1) + (7k + 3) = 9(k + 1)}$. This gives ${13k + 6 = 9k + 9}$, so ${k = \frac{3}{4}}$ and the ratio is ${3 : 4}$. Writing the ratio as ${k : 1}$ left only one unknown to find.</p>
-
-      <div class="c-try">
-        <p>Three vertices of a parallelogram ABCD are $A(1, 2)$, $B(3, 5)$ and $C(6, 6)$. Find the fourth vertex D.</p>
-      </div>
-
       <p>The diagonals AC and BD bisect each other, so they have the same mid-point. The mid-point of AC is ${\left(\frac{7}{2}, 4\right)}$. If D is $(x, y)$, the mid-point of BD is ${\left(\frac{3 + x}{2}, \frac{5 + y}{2}\right)}$. So ${3 + x = 7}$ and ${5 + y = 8}$, which give ${D = (4, 3)}$. As a check, ${AB = \sqrt{4 + 9} = \sqrt{13}}$ and ${DC = \sqrt{4 + 9} = \sqrt{13}}$, so the opposite sides AB and DC are equal, as they should be.</p>
 
       <div class="c-try">
@@ -19,24 +13,49 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The distance between the points $(4, p)$ and $(1, 0)$ is 5 units. Then $p$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>4 only</li><li>$-4$ only</li><li>4 or $-4$</li><li>0</li></ol>
+      <h3>Type 1 &middot; The distance between two points</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Find the distance between the points $(-3, 2)$ and $(5, -4)$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$x_2 - x_1 = 5 - (-3) = 8$ and $y_2 - y_1 = -4 - 2 = -6$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\sqrt{8^2 + (-6)^2} = \sqrt{64 + 36} = \sqrt{100} = 10$</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>10 units</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>${(4 - 1)^2 + (p - 0)^2 = 5^2}$, so ${9 + p^2 = 25}$</p>
-          <p>${p^2 = 16}$, so ${p = 4}$ or ${p = -4}$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The perimeter of the triangle with vertices $O(0, 0)$, $A(0, 6)$ and $B(8, 0)$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>14</li><li>24</li><li>20</li><li>48</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${OA = 6}$ and ${OB = 8}$</span>
+              <span class="work__why">both lie along an axis</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${AB = \sqrt{8^2 + 6^2} = \sqrt{100} = 10}$</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>perimeter ${= 6 + 8 + 10 = 24}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) leaves out the side AB, and (c) is twice AB. Option (d) is twice the perimeter.</p>
         </div>
-        <p>The answer is (c). Options (a) and (b) each keep only one of the two square roots of 16; both points $(4, 4)$ and $(4, -4)$ are 5 units from $(1, 0)$. Option (d) gives a distance of 3.</p>
       </div>
 
     </div>

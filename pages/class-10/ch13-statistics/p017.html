@@ -2,24 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>In grouped data you usually cannot find the middle observation by looking at the cumulative frequencies, because the middle observation is some value inside a class. So you need the value inside a class that divides the whole distribution into two halves. But which class is it?</p>
-
-      <p>To find this class, work out the cumulative frequencies of all the classes, and $\frac{n}{2}$. Then find the class whose cumulative frequency is greater than, and nearest to, $\frac{n}{2}$. This class is called the <span class="term">median class</span>. In the distribution above, ${n = 53}$, so ${\frac{n}{2} = 26.5}$. The class 60&nbsp;–&nbsp;70 has cumulative frequency 29, which is greater than and nearest to 26.5. So 60&nbsp;–&nbsp;70 is the median class.</p>
-
-      <p>Once you have the median class, the median is given by the formula below.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Median of grouped data</div>
-        <div class="eq">$$\text{Median} = l + \left(\dfrac{\frac{n}{2} - cf}{f}\right) \times h$$</div>
-        <p>Here $l$ is the lower limit of the median class, $n$ is the number of observations, $cf$ is the cumulative frequency of the class before the median class, $f$ is the frequency of the median class, and $h$ is the class size, all the classes being of the same size.</p>
-      </div>
-
-      <p>Here ${\frac{n}{2} = 26.5}$, ${l = 60}$, ${cf = 22}$, ${f = 7}$ and ${h = 10}$. So</p>
-
-      <div class="eq">$$\text{Median} = 60 + \left(\dfrac{26.5 - 22}{7}\right) \times 10 = 60 + \dfrac{45}{7} = 66.4$$</div>
-
-      <p>So about half the students got less than 66.4 marks, and the other half got more than 66.4 marks.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
@@ -27,6 +9,35 @@
           <table class="table--data">
             <thead><tr><th>Height less than (in cm)</th><th>140</th><th>145</th><th>150</th><th>155</th><th>160</th><th>165</th></tr></thead>
             <tbody><tr><td>Number of girls</td><td>4</td><td>11</td><td>29</td><td>40</td><td>46</td><td>51</td></tr></tbody>
+          </table>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>140, 145, 150, …, 165 are the upper limits of the classes, so the classes are below 140, 140&nbsp;–&nbsp;145, 145&nbsp;–&nbsp;150, …, 160&nbsp;–&nbsp;165</span>
+              <span class="work__why">a less than type distribution</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>4 girls are shorter than 140&nbsp;cm, so the class below 140 has frequency 4; 11 are shorter than 145&nbsp;cm, so ${11 - 4 = 7}$ girls are in 140&nbsp;–&nbsp;145</span>
+              <span class="work__why">subtract the counts</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the frequency of 145&nbsp;–&nbsp;150 is ${29 - 11 = 18}$, the frequency of 150&nbsp;–&nbsp;155 is ${40 - 29 = 11}$, and so on, as in Table 13.16</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${n = 51}$, so ${\frac{n}{2} = \frac{51}{2} = 25.5}$, which lies in the class 145&nbsp;–&nbsp;150</span>
+              <span class="work__why">the median class</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$l = 145$, &nbsp; $cf = 11$, &nbsp; $f = 18$, &nbsp; $h = 5$</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>$\text{Median} = l + \left(\dfrac{\frac{n}{2} - cf}{f}\right) \times h = 145 + \left(\dfrac{25.5 - 11}{18}\right) \times 5 = 145 + \dfrac{72.5}{18} = 149.03$</span>
+              <span class="work__why">the formula</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The median height of the girls is 149.03&nbsp;cm: about half the girls are shorter than 149.03&nbsp;cm, and about half are taller</span></div>
+          </div>
+          <table class="table--data">
+            <caption>Table 13.16</caption>
+            <thead><tr><th>Class interval</th><th>Below 140</th><th>140&nbsp;–&nbsp;145</th><th>145&nbsp;–&nbsp;150</th><th>150&nbsp;–&nbsp;155</th><th>155&nbsp;–&nbsp;160</th><th>160&nbsp;–&nbsp;165</th></tr></thead>
+            <tbody>
+              <tr><td>Frequency</td><td>4</td><td>7</td><td>18</td><td>11</td><td>6</td><td>5</td></tr>
+              <tr><td>Cumulative frequency</td><td>4</td><td>11</td><td>29</td><td>40</td><td>46</td><td>51</td></tr>
+            </tbody>
           </table>
         </div>
       </div>

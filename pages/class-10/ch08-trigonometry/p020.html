@@ -2,46 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-          <p>Prove that ${\sec A\,(1 - \sin A)(\sec A + \tan A) = 1}$. Start from the left-hand side, and write every ratio in terms of $\sin A$ and $\cos A$.</p>
+      <p>Let us see what we get by dividing (1) by $BC^2$. We get</p>
+
+      <div class="work work--list">
+      <p>$\dfrac{AB^2}{BC^2} + \dfrac{BC^2}{BC^2} = \dfrac{AC^2}{BC^2}$</p>
+      <p>that is, $\left(\dfrac{AB}{BC}\right)^2 + \left(\dfrac{BC}{BC}\right)^2 = \left(\dfrac{AC}{BC}\right)^2$</p>
+      </div>
+
+      <div class="work work--list">
+        <p>that is, ${\cot^2 A + 1 = \operatorname{cosec}^2 A}$ &nbsp; (4)</p>
+      </div>
+
+      <p>Note that $\operatorname{cosec} A$ and $\cot A$ are not defined for ${A = 0^\circ}$. So (4) is true for all A such that ${0^\circ \lt  A \leq 90^\circ}$.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Three trigonometric identities</div>
+        <div class="work work--list">
+          <p>${\sin^2 A + \cos^2 A = 1}$ &nbsp; for ${0^\circ \leq A \leq 90^\circ}$</p>
+          <p>${1 + \tan^2 A = \sec^2 A}$ &nbsp; for ${0^\circ \leq A \lt  90^\circ}$</p>
+          <p>${1 + \cot^2 A = \operatorname{cosec}^2 A}$ &nbsp; for ${0^\circ \lt  A \leq 90^\circ}$</p>
         </div>
       </div>
 
-      <div class="work work--list">
-      <p>$\text{LHS} = \sec A\,(1 - \sin A)(\sec A + \tan A) = \left(\dfrac{1}{\cos A}\right)(1 - \sin A)\left(\dfrac{1}{\cos A} + \dfrac{\sin A}{\cos A}\right)$</p>
-      </div>
+      <p>Using these identities, we can write each trigonometric ratio in terms of the other trigonometric ratios. That is, if any one of the ratios is known, we can also find the values of the other ratios.</p>
+
+      <p>Let us see how we can do this with the identities. Suppose we know that ${\tan A = \frac{1}{\sqrt{3}}}$. Then ${\cot A = \sqrt{3}}$, and</p>
 
       <div class="work work--list">
-        <p>$= \dfrac{(1 - \sin A)(1 + \sin A)}{\cos^2 A} = \dfrac{1 - \sin^2 A}{\cos^2 A}$</p>
-        <p>$= \dfrac{\cos^2 A}{\cos^2 A} = 1 = \text{RHS}$</p>
+        <p>${\sec^2 A = 1 + \tan^2 A = 1 + \frac{1}{3} = \frac{4}{3}}$, so ${\sec A = \frac{2}{\sqrt{3}}}$ and ${\cos A = \frac{\sqrt{3}}{2}}$</p>
+        <p>${\sin A = \sqrt{1 - \cos^2 A} = \sqrt{1 - \frac{3}{4}} = \frac{1}{2}}$, so ${\operatorname{cosec} A = 2}$</p>
       </div>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__tab">Example 9</div>
         <div class="c-example__body">
-          <p>Prove that ${\dfrac{\cot A - \cos A}{\cot A + \cos A} = \dfrac{\operatorname{cosec} A - 1}{\operatorname{cosec} A + 1}}$.</p>
+          <p>Express the ratios $\cos A$, $\tan A$ and $\sec A$ in terms of $\sin A$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${\cos^2 A = 1 - \sin^2 A}$</span>
+              <span class="work__why">since ${\cos^2 A + \sin^2 A = 1}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${\cos A = \pm\sqrt{1 - \sin^2 A}}$</span>
+              <span class="work__why">taking square roots</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${\cos A = \sqrt{1 - \sin^2 A}}$</span>
+              <span class="work__why">Why?</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\tan A = \dfrac{\sin A}{\cos A} = \dfrac{\sin A}{\sqrt{1 - \sin^2 A}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$\sec A = \dfrac{1}{\cos A} = \dfrac{1}{\sqrt{1 - \sin^2 A}}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>${\cos A = \sqrt{1 - \sin^2 A}}$, &nbsp; $\tan A = \dfrac{\sin A}{\sqrt{1 - \sin^2 A}}$, &nbsp; $\sec A = \dfrac{1}{\sqrt{1 - \sin^2 A}}$</span></div>
+          </div>
         </div>
       </div>
-
-      <div class="work work--list">
-      <p>$\text{LHS} = \dfrac{\cot A - \cos A}{\cot A + \cos A} = \dfrac{\dfrac{\cos A}{\sin A} - \cos A}{\dfrac{\cos A}{\sin A} + \cos A}$</p>
-      </div>
-
-      <div class="work work--list">
-        <p>$= \dfrac{\cos A\left(\dfrac{1}{\sin A} - 1\right)}{\cos A\left(\dfrac{1}{\sin A} + 1\right)} = \dfrac{\dfrac{1}{\sin A} - 1}{\dfrac{1}{\sin A} + 1} = \dfrac{\operatorname{cosec} A - 1}{\operatorname{cosec} A + 1} = \text{RHS}$</p>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 12</div>
-        <div class="c-example__body">
-          <p>Using the identity ${\sec^2\theta = 1 + \tan^2\theta}$, prove that</p>
-          <div class="eq">$$\dfrac{\sin\theta - \cos\theta + 1}{\sin\theta + \cos\theta - 1} = \dfrac{1}{\sec\theta - \tan\theta}$$</div>
-        </div>
-      </div>
-
-      <p>We are to use the identity involving $\sec\theta$ and $\tan\theta$, so let us first write the LHS of the identity to be proved in terms of $\sec\theta$ and $\tan\theta$. To do this, divide the numerator and the denominator by $\cos\theta$.</p>
 
     </div>
   </div>

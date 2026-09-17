@@ -2,44 +2,33 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Join AC, and let it meet EF at G (Fig.&nbsp;6.15).</p>
-
-      <div class="c-figure c-figure--sm">
-                                                        <figure>
-                                                          <svg viewBox="0 0 190 118" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The trapezium ABCD with EF parallel to AB. The diagonal AC is drawn dashed and meets EF at G.">
-      <path class="dg-line" d="M58 16 L134 16 L176 104 L14 104 Z"/>
-      <path class="dg-line" d="M40.4 51.2 L150.8 51.2"/>
-      <text class="dg-label" x="52.2" y="12.7" text-anchor="middle">A</text>
-      <text class="dg-label" x="139.9" y="12.7" text-anchor="middle">B</text>
-      <text class="dg-label" x="183.9" y="111.8" text-anchor="middle">C</text>
-      <text class="dg-label" x="6.1" y="111.8" text-anchor="middle">D</text>
-      <text class="dg-label" x="31.5" y="50.2" text-anchor="middle">E</text>
-      <text class="dg-label" x="159.8" y="50.4" text-anchor="middle">F</text>
-      <path class="dg-hidden" d="M58 16 L176 104"/>
-      <text class="dg-label" x="107.2" y="65.2" text-anchor="middle">G</text>
-      </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.15</span> The diagonal AC meets EF at G.</figcaption>
-                                                        </figure>
-                                                      </div>
-
-      <div class="work work--list">
-        <p>$AB \parallel DC$ and $EF \parallel AB$ (given), so $EF \parallel DC$ &nbsp; (lines parallel to the same line are parallel to each other)</p>
-        <p>in $\triangle ADC$, $EG \parallel DC$, so $\dfrac{AE}{ED} = \dfrac{AG}{GC}$ &nbsp; (Theorem 6.1) &nbsp; (1)</p>
-        <p>in $\triangle CAB$, $GF \parallel AB$, so $\dfrac{CG}{GA} = \dfrac{CF}{FB}$, that is, $\dfrac{AG}{GC} = \dfrac{BF}{FC}$ &nbsp; (2)</p>
-      </div>
-
-      <p>From (1) and (2), the ratios $\frac{AE}{ED}$ and $\frac{BF}{FC}$ are both equal to $\frac{AG}{GC}$, so they are equal, which is what we had to show.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 3</div>
         <div class="c-example__body">
           <p>In Fig.&nbsp;6.16, ${\frac{PS}{SQ} = \frac{PT}{TR}}$ and $\angle PST = \angle PRQ$. Prove that PQR is an isosceles triangle.</p>
-        </div>
-      </div>
-
-      <div class="c-figure c-figure--sm">
-                                                        <figure>
-                                                          <svg viewBox="0 0 190 140" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A triangle PQR with S on PQ and T on PR, joined by ST. The angle PST at S and the angle PRQ at R are marked as equal.">
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{PS}{SQ} = \dfrac{PT}{TR}$, so $ST \parallel QR$</span>
+              <span class="work__why">given; Theorem 6.2</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle PST = \angle PQR$ &nbsp; (1)</span>
+              <span class="work__why">corresponding angles</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle PST = \angle PRQ$ &nbsp; (2)</span>
+              <span class="work__why">given</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\angle PRQ = \angle PQR$</span>
+              <span class="work__why">from (1) and (2)</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$PQ = PR$</span>
+              <span class="work__why">sides opposite equal angles</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>PQR is an isosceles triangle</span></div>
+          </div>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="0 0 190 140" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A triangle PQR with S on PQ and T on PR, joined by ST. The angle PST at S and the angle PRQ at R are marked as equal.">
       <path class="dg-line" d="M96 14 L20 128 L172 128 Z"/>
       <path class="dg-line" d="M54.2 76.7 L137.8 76.7"/>
       <path class="dg-thin" d="M62.2 76.7 A8 8 0 0 0 58.6 70"/>
@@ -50,17 +39,48 @@
       <text class="dg-label" x="45" y="74.1" text-anchor="middle">S</text>
       <text class="dg-label" x="147" y="74.1" text-anchor="middle">T</text>
       </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.16</span> The triangle PQR and the line ST.</figcaption>
+              <figcaption><span class="fignum">Fig. 6.16</span> The triangle PQR and the line ST.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 6.2</div>
+        <ol class="c-questions">
+          <li>In Fig.&nbsp;6.17 (i) and (ii), $DE \parallel BC$. Find EC in (i) and AD in (ii). In each case, write the ratio you use before you work it out.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--lg">
+                                                        <figure>
+                                                          <svg viewBox="0 0 310 182" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two triangles ABC, each with D on AB, E on AC and DE parallel to BC. In (i), AD is 1.5 cm, DB is 3 cm and AE is 1 cm. In (ii), DB is 7.2 cm, AE is 1.8 cm and EC is 5.4 cm.">
+      <path class="dg-line" d="M100 14 L12 124 L100 124 Z"/>
+      <path class="dg-line" d="M70.7 50.7 L100 50.7"/>
+      <text class="dg-label" x="104.1" y="7.3" text-anchor="middle">A</text>
+      <text class="dg-label" x="2.7" y="133.3" text-anchor="middle">B</text>
+      <text class="dg-label" x="106.9" y="136.1" text-anchor="middle">C</text>
+      <text class="dg-label" x="62.1" y="47.3" text-anchor="middle">D</text>
+      <text class="dg-label" x="105" y="63.7" text-anchor="start">E</text>
+      <text class="dg-dim-label" x="70" y="23.1" text-anchor="middle">1.5 cm</text>
+      <text class="dg-dim-label" x="29.4" y="80.8" text-anchor="middle">3 cm</text>
+      <text class="dg-dim-label" x="105" y="35.3" text-anchor="start">1 cm</text>
+      <text class="dg-note" x="56" y="146" text-anchor="middle">(i)</text>
+      <path class="dg-line" d="M262 18 L146 92 L236 160 Z"/>
+      <path class="dg-line" d="M233 36.5 L255.5 53.5"/>
+      <text class="dg-label" x="268" y="12.3" text-anchor="middle">A</text>
+      <text class="dg-label" x="135" y="95.8" text-anchor="middle">B</text>
+      <text class="dg-label" x="239.2" y="174" text-anchor="middle">C</text>
+      <text class="dg-label" x="227.1" y="30.7" text-anchor="middle">D</text>
+      <text class="dg-label" x="246.5" y="57.5" text-anchor="end">E</text>
+      <text class="dg-dim-label" x="180.7" y="53.4" text-anchor="middle">7.2 cm</text>
+      <text class="dg-dim-label" x="279.6" y="42.6" text-anchor="middle">1.8 cm</text>
+      <text class="dg-dim-label" x="266.6" y="113.6" text-anchor="middle">5.4 cm</text>
+      <text class="dg-note" x="196" y="176" text-anchor="middle">(ii)</text>
+      </svg>
+                                                          <figcaption><span class="fignum">Fig. 6.17</span> Two triangles with DE parallel to BC.</figcaption>
                                                         </figure>
                                                       </div>
-
-      <div class="work work--list">
-        <p>$\dfrac{PS}{SQ} = \dfrac{PT}{TR}$ (given), so $ST \parallel QR$ &nbsp; (Theorem 6.2)</p>
-        <p>so $\angle PST = \angle PQR$ &nbsp; (corresponding angles) &nbsp; (1)</p>
-        <p>also $\angle PST = \angle PRQ$ &nbsp; (given) &nbsp; (2)</p>
-        <p>so $\angle PRQ = \angle PQR$ &nbsp; [from (1) and (2)]</p>
-        <p>so $PQ = PR$ &nbsp; (sides opposite equal angles)</p>
-      </div>
 
     </div>
   </div>

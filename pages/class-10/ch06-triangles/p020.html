@@ -2,51 +2,78 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <p>$OA \cdot OB = OC \cdot OD$ (given), so $\dfrac{OA}{OC} = \dfrac{OD}{OB}$ &nbsp; (1)</p>
-        <p>also $\angle AOD = \angle COB$ &nbsp; (vertically opposite angles) &nbsp; (2)</p>
-        <p>so ${\triangle AOD \sim \triangle COB}$ &nbsp; [SAS similarity criterion, from (1) and (2)]</p>
-        <p>so $\angle A = \angle C$ and $\angle D = \angle B$ &nbsp; (corresponding angles of similar triangles)</p>
-      </div>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__tab">Example 8</div>
         <div class="c-example__body">
-          <p>A girl 90&nbsp;cm tall is walking away from the base of a lamp-post at a speed of 1.2&nbsp;m/s. The lamp is 3.6&nbsp;m above the ground. Take the ground to be level and the lamp-post to be upright, and assume that she walks in a straight line directly away from the foot of the lamp-post. Find the length of her shadow after 4 seconds, in metres, and show each step of your working.</p>
+          <p>In Fig.&nbsp;6.33, CM and RN are the medians of $\triangle ABC$ and $\triangle PQR$, so M is the mid-point of AB and N is the mid-point of PQ. If ${\triangle ABC \sim \triangle PQR}$, prove that</p>
+          <p>(i) ${\triangle AMC \sim \triangle PNR}$ &nbsp; (ii) ${\frac{CM}{RN} = \frac{AB}{PQ}}$ &nbsp; (iii) ${\triangle CMB \sim \triangle RNQ}$</p>
+          <p><strong>Solution.</strong> (i) Since ${\triangle ABC \sim \triangle PQR}$,</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{AB}{PQ} = \dfrac{BC}{QR} = \dfrac{CA}{RP}$ &nbsp; (1)</span>
+              <span class="work__why">sides in the same ratio</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle A = \angle P$, $\angle B = \angle Q$ and $\angle C = \angle R$ &nbsp; (2)</span>
+              <span class="work__why">corresponding angles</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>AB&nbsp;=&nbsp;2AM and PQ&nbsp;=&nbsp;2PN</span>
+              <span class="work__why">CM and RN are medians</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\dfrac{2AM}{2PN} = \dfrac{CA}{RP}$, that is, $\dfrac{AM}{PN} = \dfrac{CA}{RP}$ &nbsp; (3)</span>
+              <span class="work__why">so from (1)</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$\angle MAC = \angle NPR$ &nbsp; (4)</span>
+              <span class="work__why">from (2)</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>${\triangle AMC \sim \triangle PNR}$ &nbsp; (5)</span>
+              <span class="work__why">SAS similarity, from (3) and (4)</span></div>
+          </div>
+          <p>(ii) From (5) and (1),</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 7</span>
+              <span>$\dfrac{CM}{RN} = \dfrac{CA}{RP}$ &nbsp; (6)</span>
+              <span class="work__why">from (5)</span></div>
+            <div class="work__row"><span class="work__label">Step 8</span>
+              <span>$\dfrac{CA}{RP} = \dfrac{AB}{PQ}$ &nbsp; (7)</span>
+              <span class="work__why">from (1)</span></div>
+            <div class="work__row"><span class="work__label">Step 9</span>
+              <span>$\dfrac{CM}{RN} = \dfrac{AB}{PQ}$ &nbsp; (8)</span>
+              <span class="work__why">from (6) and (7)</span></div>
+          </div>
+          <p>(iii) Again using (1) and (8),</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 10</span>
+              <span>$\dfrac{AB}{PQ} = \dfrac{BC}{QR}$, so $\dfrac{CM}{RN} = \dfrac{BC}{QR}$ &nbsp; (9)</span></div>
+            <div class="work__row"><span class="work__label">Step 11</span>
+              <span>$\dfrac{CM}{RN} = \dfrac{AB}{PQ} = \dfrac{2BM}{2QN} = \dfrac{BM}{QN}$ &nbsp; (10)</span>
+              <span class="work__why">M and N are mid-points</span></div>
+            <div class="work__row"><span class="work__label">Step 12</span>
+              <span>$\dfrac{CM}{RN} = \dfrac{BC}{QR} = \dfrac{BM}{QN}$</span>
+              <span class="work__why">from (9) and (10)</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(i) and (ii) are Steps 6 and 9; (iii) ${\triangle CMB \sim \triangle RNQ}$, by SSS similarity</span></div>
+          </div>
+          <div class="c-figure c-figure--lg">
+            <figure>
+            <svg viewBox="0 0 274 140" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two similar triangles ABC and PQR. CM is the median from C to the mid-point M of AB, and RN is the median from R to the mid-point N of PQ.">
+      <path class="dg-line" d="M14 110 L112 110 L70 30 Z"/>
+      <path class="dg-line" d="M70 30 L63 110"/>
+      <path class="dg-line" d="M134 124 L261.4 124 L206.8 20 Z"/>
+      <path class="dg-line" d="M206.8 20 L197.7 124"/>
+      <text class="dg-label" x="4.2" y="118.6" text-anchor="middle">A</text>
+      <text class="dg-label" x="121.6" y="119" text-anchor="middle">B</text>
+      <text class="dg-label" x="71" y="22.5" text-anchor="middle">C</text>
+      <text class="dg-label" x="124.2" y="132.6" text-anchor="middle">P</text>
+      <text class="dg-label" x="271" y="133" text-anchor="middle">Q</text>
+      <text class="dg-label" x="207.8" y="12.5" text-anchor="middle">R</text>
+      <text class="dg-label" x="63" y="125" text-anchor="middle">M</text>
+      <text class="dg-label" x="197.7" y="139" text-anchor="middle">N</text>
+      </svg>
+            <figcaption><span class="fignum">Fig. 6.33</span> The medians CM and RN.</figcaption>
+            </figure>
+            </div>
         </div>
       </div>
-
-      <div class="c-figure c-figure--md">
-                                                        <figure>
-                                                          <svg viewBox="0 0 230 142" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A lamp-post AB standing upright on level ground with the lamp at A, and a girl CD standing upright further along. The line from A through C meets the ground at E, so that DE is her shadow.">
-      <path class="dg-line" d="M10 122 L212.2 122"/>
-      <path class="dg-line" d="M30 24 L30 122"/>
-      <path class="dg-line" d="M160 98 L160 122"/>
-      <path class="dg-thin" d="M30 24 L202.2 122"/>
-      <circle class="dg-line" cx="30" cy="24" r="5"/>
-      <path class="dg-thin" d="M35 122 L35 117 L30 117"/>
-      <path class="dg-thin" d="M165 122 L165 117 L160 117"/>
-      <text class="dg-label" x="39" y="20" text-anchor="start">A</text>
-      <text class="dg-label" x="30" y="137" text-anchor="middle">B</text>
-      <text class="dg-label" x="155" y="98" text-anchor="end">C</text>
-      <text class="dg-label" x="160" y="137" text-anchor="middle">D</text>
-      <text class="dg-label" x="202.2" y="137" text-anchor="middle">E</text>
-      </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.32</span> The lamp-post AB, the girl CD and her shadow DE.</figcaption>
-                                                        </figure>
-                                                      </div>
-
-      <p>Let AB be the lamp-post and CD the girl after she has walked away from it for 4 seconds (Fig.&nbsp;6.32). You can see from the figure that DE is the girl’s shadow. Let DE be $x$ metres. In 4 seconds she walks 1.2&nbsp;m × 4 = 4.8&nbsp;m, so BD&nbsp;=&nbsp;4.8&nbsp;m. In $\triangle ABE$ and $\triangle CDE$,</p>
-
-      <div class="work work--list">
-        <p>$\angle B = \angle D$ &nbsp; (each is $90^\circ$, because the lamp-post and the girl both stand upright)</p>
-        <p>$\angle E = \angle E$ &nbsp; (the same angle)</p>
-        <p>so ${\triangle ABE \sim \triangle CDE}$ &nbsp; (AA similarity criterion)</p>
-        <p>so $\dfrac{BE}{DE} = \dfrac{AB}{CD}$, that is, $\dfrac{4.8 + x}{x} = \dfrac{3.6}{0.9}$ &nbsp; (90&nbsp;cm = 0.9&nbsp;m)</p>
-        <p>$4.8 + x = 4x$, so $3x = 4.8$ and $x = 1.6$</p>
-      </div>
-
-      <p>So after walking for 4 seconds, the girl’s shadow is 1.6&nbsp;m long.</p>
 
     </div>
   </div>

@@ -2,12 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>This way of finding the mean is called the <span class="term">direct method</span>.</p>
-
-      <p>Tables 13.1 and 13.3 use the same data and the same formula, but the two means are different. Why, and which one is more accurate? The difference comes from assuming that each class is centred at its mid-point. The mean 59.3 is exact, and 62 is an approximate mean.</p>
-
-      <p>When the values of $x_i$ and $f_i$ are large, multiplying them takes a long time. So let us find a way to make the numbers smaller.</p>
-
       <p>The $f_i$ cannot be changed, but each $x_i$ can be replaced by a smaller number. One way is to subtract the same number from every $x_i$.</p>
 
       <p>First, choose one of the $x_i$ as the <span class="term">assumed mean</span>, and call it $a$. The work is least if $a$ is an $x_i$ near the middle of $x_1, x_2, \ldots, x_n$. Here you could choose ${a = 47.5}$ or ${a = 62.5}$. Let us choose ${a = 47.5}$.</p>
@@ -39,6 +33,18 @@
       </div>
 
       <p>So</p>
+
+      <div class="eq">$$\bar{x} = a + \bar{d} = a + \dfrac{\sum f_id_i}{\sum f_i}$$</div>
+
+      <p>Putting in the values of $a$, $\sum f_id_i$ and $\sum f_i$ from Table 13.4,</p>
+
+      <div class="eq">$$\bar{x} = 47.5 + \dfrac{435}{30} = 47.5 + 14.5 = 62$$</div>
+
+      <p>So the mean mark of the students is 62. This way of finding the mean is called the <span class="term">assumed mean method</span>.</p>
+
+      <p><strong>Activity 1.</strong> Find the mean of the data in Table 13.4 again, taking each class mark in turn (17.5, 32.5, and so on) as $a$. What do you notice? Every choice gives the same mean, 62. Can you explain why?</p>
+
+      <p>So the mean does not depend on which value you choose for $a$.</p>
 
     </div>
   </div>

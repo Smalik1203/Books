@@ -2,59 +2,55 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Let ${AB = h}$&nbsp;m and ${BC = x}$&nbsp;m. The shadow DB is 40&nbsp;m longer than BC, so ${DB = (40 + x)}$&nbsp;m. There are two right triangles, ABC and ABD. In each of them, AB is the side opposite to the angle on the ground, and BC or BD is the side adjacent to it, so use the tangent.</p>
-
-      <div class="work work--list">
-        <p>in $\triangle ABC$, &nbsp; $\tan 60^\circ = \dfrac{AB}{BC}$, &nbsp; so &nbsp; $\sqrt{3} = \dfrac{h}{x}$ &nbsp; (1)</p>
-        <p>in $\triangle ABD$, &nbsp; $\tan 30^\circ = \dfrac{AB}{BD}$, &nbsp; so &nbsp; $\dfrac{1}{\sqrt{3}} = \dfrac{h}{x + 40}$ &nbsp; (2)</p>
-      </div>
-
-      <p>From (1), ${h = x\sqrt{3}}$. Put this value of $h$ in (2).</p>
-
-      <div class="work work--list">
-        <p>${x\sqrt{3} \times \sqrt{3} = x + 40}$, &nbsp; so &nbsp; ${3x = x + 40}$ &nbsp; and &nbsp; ${x = 20}$</p>
-        <p>${h = 20\sqrt{3}}$ &nbsp; [from (1)]</p>
-      </div>
-
-      <p>So the height of the tower is ${20\sqrt{3}}$&nbsp;m.</p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
-          <p>From the top of a multi-storeyed building, the angles of depression of the top and the bottom of a building 8&nbsp;m tall are $30^\circ$ and $45^\circ$. Find the height of the multi-storeyed building and the distance between the two buildings.</p>
+          <p>The shadow of a tower standing on level ground is 40&nbsp;m longer when the Sun's altitude is $30^\circ$ than when it is $60^\circ$. Find the height of the tower.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>in Fig.&nbsp;9.8, AB is the tower, BC is its shadow when the Sun's altitude is $60^\circ$, and DB is its shadow when the altitude is $30^\circ$</span>
+              <span class="work__why">altitude: the elevation from the shadow's tip</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>let ${AB = h}$&nbsp;m and ${BC = x}$&nbsp;m; DB is 40&nbsp;m longer, so <span class="nb">${DB = (40 + x)}$&nbsp;m</span></span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>in $\triangle ABC$, &nbsp; $\tan 60^\circ = \dfrac{AB}{BC}$, &nbsp; so &nbsp; $\sqrt{3} = \dfrac{h}{x}$ &nbsp; (1)</span>
+              <span class="work__why">AB is opposite, BC adjacent</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>in $\triangle ABD$, &nbsp; $\tan 30^\circ = \dfrac{AB}{BD}$, &nbsp; so &nbsp; $\dfrac{1}{\sqrt{3}} = \dfrac{h}{x + 40}$ &nbsp; (2)</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>from (1), ${h = x\sqrt{3}}$; putting this value of $h$ in (2), ${x\sqrt{3} \times \sqrt{3} = x + 40}$</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>${3x = x + 40}$ &nbsp; and &nbsp; ${x = 20}$</span></div>
+            <div class="work__row"><span class="work__label">Step 7</span>
+              <span>${h = 20\sqrt{3}}$</span>
+              <span class="work__why">from (1)</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The height of the tower is ${20\sqrt{3}}$&nbsp;m</span></div>
+          </div>
+          <div class="c-figure c-figure--md">
+                    <figure>
+                      <svg viewBox="0 0 190 136" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A tower AB stands on level ground with its foot at B. The points D and C are on the ground on a line with B, with C nearer to B, and DC is marked 40 m. The line DA makes an angle of 30° with the ground and the line CA makes an angle of 60°. There is a right angle at B.">
+      <path class="dg-line" d="M20 116 L164 116"/>
+      <path class="dg-line" d="M20 116 L164 32.9"/>
+      <path class="dg-line" d="M116 116 L164 32.9"/>
+      <path class="dg-line" d="M164 32.9 L164 116"/>
+      <path class="dg-thin" d="M164 110 L158 110 L158 116"/>
+      <path class="dg-thin" d="M38 116 A18 18 0 0 0 35.6 107"/>
+      <text class="dg-dim-label" x="54.8" y="109.7" text-anchor="middle">30°</text>
+      <path class="dg-thin" d="M128 116 A12 12 0 0 0 122 105.6"/>
+      <text class="dg-dim-label" x="137.7" y="106.5" text-anchor="middle">60°</text>
+      <text class="dg-label" x="12" y="120" text-anchor="end">D</text>
+      <text class="dg-label" x="116" y="130" text-anchor="middle">C</text>
+      <text class="dg-label" x="170" y="124" text-anchor="start">B</text>
+      <text class="dg-label" x="170" y="34.9" text-anchor="start">A</text>
+      <text class="dg-dim-label" x="68" y="130" text-anchor="middle">40 m</text>
+      </svg>
+                      <figcaption><span class="fignum">Fig. 9.8</span> The shadows BC and DB of the tower AB.</figcaption>
+                    </figure>
+          </div>
         </div>
       </div>
-
-      <p>In Fig.&nbsp;9.9, PC is the multi-storeyed building and AB is the building 8&nbsp;m tall. We need the height PC and the distance AC between the two buildings.</p>
-
-      <div class="c-figure c-figure--md">
-                    <figure>
-                      <svg viewBox="0 0 196 146" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A tall building PC and a shorter building AB stand on the ground, with A and C their feet. A dashed horizontal line PQ runs from P, the top of the tall building. BD is a horizontal line from B to the point D on PC. Lines run from P to B and from P to A. The angle QPB is marked 30° and the angle QPA is marked 45°. There are right angles at C and at D.">
-      <path class="dg-hidden" d="M30 30 L170 30"/>
-      <path class="dg-line" d="M170 30 L170 136"/>
-      <path class="dg-line" d="M64 136 L170 136"/>
-      <path class="dg-line" d="M64 136 L64 91.2"/>
-      <path class="dg-line" d="M64 91.2 L170 91.2"/>
-      <path class="dg-line" d="M170 30 L64 91.2"/>
-      <path class="dg-line" d="M170 30 L64 136"/>
-      <path class="dg-thin" d="M170 130 L164 130 L164 136"/>
-      <path class="dg-thin" d="M170 85.2 L164 85.2 L164 91.2"/>
-      <path class="dg-thin" d="M136 30 A34 34 0 0 0 140.6 47"/>
-      <text class="dg-dim-label" x="124" y="46" text-anchor="middle">30°</text>
-      <path class="dg-thin" d="M154 30 A16 16 0 0 0 158.7 41.3"/>
-      <text class="dg-dim-label" x="153" y="74" text-anchor="middle">45°</text>
-      <text class="dg-label" x="22" y="34" text-anchor="end">Q</text>
-      <text class="dg-label" x="176" y="30" text-anchor="start">P</text>
-      <text class="dg-label" x="58" y="93.2" text-anchor="end">B</text>
-      <text class="dg-label" x="176" y="95.2" text-anchor="start">D</text>
-      <text class="dg-label" x="58" y="140" text-anchor="end">A</text>
-      <text class="dg-label" x="176" y="140" text-anchor="start">C</text>
-      </svg>
-                      <figcaption><span class="fignum">Fig. 9.9</span> Looking down from P at the building AB.</figcaption>
-                    </figure>
-                  </div>
-
-      <p>Look at the figure carefully. PQ and BD are both horizontal, so they are parallel, and PB is a transversal to them. So $\angle QPB$ and $\angle PBD$ are alternate angles, and they are equal: ${\angle PBD = 30^\circ}$. In the same way, ${\angle PAC = 45^\circ}$.</p>
 
     </div>
   </div>

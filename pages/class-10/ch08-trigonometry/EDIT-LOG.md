@@ -1,5 +1,188 @@
 # Class 10 · Mathematics I · Chapter 8 — Introduction to Trigonometry
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked by one agent from the Class 10
+brief, with Chapter 1 as the model. Page move, examples, Beyond the Book and
+answers were done in one pass, and every check was run on the chapter.
+
+**Pages: 29 before (22 body + 7 Beyond, Crown Quarto), 37 after (24 body + 13
+Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`, and the body was
+refitted once.
+
+**All twelve body examples set as steps**, as decided for Class 10. Each
+example's working moved out of the running text and into its panel as
+*Solution*, Steps and *Answer*.
+- **Proofs** (Example 2, and the identities in Examples 10, 11 and 12) are set
+  one statement to a row with the reason beside it. Example 12's working,
+  which had run onto the next page, is now whole in its panel.
+- **Figures** that a question names (Figs. 8.8–8.12, 8.19, 8.20) now sit
+  inside their example's panel, between the question and the Solution, as
+  Class 8 does. Fig. 8.20 had been printed after Example 6, a page from
+  Example 7, which names it.
+- **NCERT's *Why?* prompts** in the working are kept, in the reason column
+  (*Why?*, and *Why this ratio?* in Example 6). They are answered in
+  `ANSWERS.md`.
+- **Remarks kept as paragraphs after the panel:** Example 2's SSS reminder and
+  its point that a sine fixes an acute angle; Example 6's Pythagoras
+  alternative, with one line added in front of it saying how to choose the
+  ratio; Example 7's "one side and one other part"; Example 12's plan (divide
+  by $\cos\theta$), which sits at the foot of its panel.
+
+**Verified** by `build/check-body-maths.mjs`: 460 expressions and 106 numbers
+compared, none lost and none added. The only gains are numbers restated in
+Answer rows and "Table 8.1" in two reasons.
+
+**Hand-fitting in the body after the refit:** the 30°/60° heading, its first
+paragraph and the congruence working moved back to page 12, with Fig. 8.15
+now heading page 13, facing them. The 0°/90° heading, its paragraph and
+Fig. 8.16 moved back to page 13 (100%). The two 90° paragraphs moved back to
+page 14, beside Fig. 8.18, which they describe. Fig. 8.13 moved back to
+page 10, beside Ex 8.1 Q2, which names it (1.3 mm into the margin). No text
+was changed for any of this.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | **kept word for word**; `.c-stage__for` removed; one check changed (below) |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **15 stepped examples** under seven `Type` heads; the old problems are Examples 2, 4, 6 and 8 (Problem 1 with new numbers), options kept, *Answer* gives the letter |
+| 3 Problem Sets → **Practice** | 3 sets, 19 questions | **one run of 31** in six forms: 15 multiple choice, 4 assertion–reason, 4 very short, 4 short, 2 long, 2 case-based |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 13, the closing paragraph |
+
+The seven types are the ratios from the sides of a right triangle; an
+expression from one ratio; the values at the standard angles; finding an angle
+from its ratio; one ratio in terms of another; proving an identity; and using
+a given condition (eliminating $\theta$). With the body's 12, the chapter has
+**27 worked examples**. Two examples I wrote were dropped again to save a
+page, because they repeated the pattern of the examples beside them.
+
+**Give-aways found and fixed** (every value Beyond printed was read against
+the body's exercises):
+- **Stage 1**, the check after the $\sec\theta + \tan\theta = p$ question: with
+  $p = 2$ it printed $\tan\theta = \frac{3}{4}$, the value Ex 8.1 Q8 asks the
+  reader to find first. Now $p = 7$: $\sec\theta = \frac{25}{7}$,
+  $\tan\theta = \frac{24}{7}$.
+- **Old Problem 1** ($\cos A = \frac{4}{5}$) and **Set A Q2**, **Set B Q2** and
+  **Set B Q5** all printed the 3–4–5 values that answer Ex 8.1 Q8. They now use
+  9–40–41, 33–56–65, $\tan A = \frac{1}{2}$ and 20–21–29.
+- **Set C Q3** (a 6–8–10 triangle, the same values) was dropped.
+- **Set A Q6** ($\sin R$ in a triangle PQR right-angled at Q) repeated
+  Example 7's first step, so it now asks for $\cos Z$ in triangle XYZ.
+- **Set A Q8** offered $\frac{4}{3}$, the value Ex 8.1 Q11 (v) asks about; now
+  $\frac{5}{4}$.
+- **Set B Q1** ($\sin\theta = \cos\theta$ gives $45^\circ$) answered Ex 8.2 Q4
+  (iv), and was dropped.
+- **Set B Q4** ($\sin 60^\circ = 2\sin 30^\circ$) ruled out an option of
+  Ex 8.2 Q2 (iii). It is now the same question asked about $\cos 60^\circ$ and
+  $1 - 2\sin^2 30^\circ$.
+- `check-no-repeats` reports one pair above 50%: Beyond Example 9 (cos and sin
+  in terms of tan) against body Example 9 (in terms of sin). This is the same
+  kind of question about a different ratio, and neither Ex 8.3 Q1 nor Q2 asks
+  for it, so it stays.
+
+**`ANSWERS.md` written** for Exercise Sets 8.1–8.3 (every proof one statement
+to a line, with the ten identities of 8.3 Q4 in full), the questions in the
+running text (the ratios of C, the $\triangle QAN$ check, the $\sin A = \frac{1}{3}$
+ratios, the ratios of $90^\circ$), every *Why?* in the text and the examples,
+Stage 1, and all 31 practice questions with their working.
+
+### Verified
+
+`check-numbers.mjs` passes **918 claims**. It parses the LaTeX itself (sin,
+cos, tan, cosec, sec, cot, roots, fractions, powers, degrees and implicit
+products), so no value is looked up.
+- **171 identities** hold at five random angles. **49 of them are proof
+  rows:** a row that opens with "=" or says LHS or RHS is read against the
+  identity being proved, so every step of every proof, in the book and in
+  `ANSWERS.md`, is checked.
+- **431 statements** hold under the data of the block they sit in. Each
+  example, question and key row has its givens worked out in the script
+  (Example 5: $OP = 7$ and $OQ - PQ = 1$ give $PQ$), so a value that is true
+  somewhere else in the chapter does not pass.
+- **95 arithmetic statements** hold at the standard angles.
+- **5 statements the book prints as false** are checked to be false.
+- 9 spans are skipped: the six worded definitions, and three "not defined"
+  values.
+
+B covers:
+- Table 8.1, all 30 cells;
+- every labelled figure, twice: its labels give the printed answer (Fig. 8.10
+  gives Example 3; Fig. 8.13 gives Ex 8.1 Q2), and its drawn angle is within
+  2° of the angle the text makes it;
+- the answers that sit beside other numbers, a lettered part at a time, in
+  both the key rows and `ANSWERS.md`;
+- the true/false answers to Ex 8.1 Q11 and Ex 8.2 Q4.
+
+C checks all 15 practice MCQs, the 4 Beyond example MCQs and the 8 option
+questions in Exercise Sets 8.2 and 8.3. Each has exactly one right option,
+matching the key or `ANSWERS.md`, and every assertion–reason letter is
+derived. D checks that the two keys match.
+
+**Break tests: 21 of 21 caught**, run on a copy in the scratch folder. They
+changed a body step, a body Answer row with no equals sign, a Table 8.1 cell,
+a proof row, a figure label, a Beyond answer, the Stage 1 check, two key
+letters (one assertion–reason), a key row, a bare number in a lettered part,
+an option, an example's answer letter, and in `ANSWERS.md` a value, an option
+letter, a proof step, the key, a practice value, an area and a true/false.
+The first run missed nothing, but one test's pattern did not match the
+refitted markup, and it was rewritten.
+
+**Faults in the check itself, fixed while writing it:**
+- a stored false statement had its spaces stripped, which joined `\sin` to
+  its angle;
+- `ANSWERS.md`'s part markers carried past the end of Ex 8.3 Q4 into the
+  practice working;
+- Example 2's proof target ($\angle B = \angle Q$) is not an identity, so
+  only identities are now taken as targets.
+
+**Wrong printed numbers:** none were found in the body. The source's values
+are all correct, as the earlier log below says.
+
+**Fitting:** nothing is clipped. Page 16 runs 1.6 mm, page 10 runs 1.3 mm and
+page 34 runs 0.8 mm into the bottom margin. `orphans` finds 0 stranded openers, `fit-options`
+finds every option row fits, and `check-labels` finds no collisions. I read
+the proofs of pages 7, 12, 14, 22, 26, 30, 35 and 36.
+
+**Colour:** pages 1–14, 16, 17 and 19 were run through `check-colour`, and
+pages 10 and 13 were read in greyscale and deuteranopia. Every figure is line
+work with no fills, and angles are marked with arcs and labels, so nothing is
+carried by colour.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 1, 3, 4, 12 | 85–89% | a figure or key idea too tall for the gap |
+| 6, 8, 9 | 54–65% | Examples 2, 4 and 5: each a panel with its figure (126–165 mm) |
+| 7 | 82% | Example 3, a panel |
+| 11 | 61% | the 8.3 opener: pulling it back strands the heading or puts Fig. 8.14 overleaf from its text |
+| 14 | 81% | Table 8.1 with its lead-in sentence |
+| 15, 16 | 44–64% | Examples 6 and 7, panels with figures (114–126 mm) |
+| 17, 22 | 78–85% | practice blocks with nested options, too tall for the gap |
+| 18, 21, 23 | 77–86% | a heading, an example panel, and the summary |
+| 24 | 28% | the last body page (`data-close`) |
+| 26–29 | 65–75% | Solved Examples: a `Type` head with its example, and example panels. Pulling Example 2 onto page 26 by hand put that page 2.9 mm into the margin and left page 27 at 29%, so the refit's layout was kept |
+| 30, 34, 36 | 81–83% | an example, a case question, and a block of answer rows |
+| 35 | 57% | **the Answers stage, which always opens a page** |
+| 37 | 49% | the last page |
+
+### Flagged, not done
+
+- **Fig. 8.15:** the $30^\circ$ label sits against the altitude AD. It is
+  readable, and `check-labels` passes it. The label predates this pass.
+- **Stage 1** keeps its old closing sentences ("The value of $\theta$ was
+  never needed"). They are word for word, as the brief requires.
+- **The older sections below** ("Every answer worked", the Beyond key line,
+  and the Problem Sets fitting notes) describe the old Beyond shape. They are
+  superseded by `ANSWERS.md` and the sections above.
+- The earlier flags below still stand: the Herbart date, the *sinus* gloss,
+  and the range in Ex 8.2 Q4 (ii), which `ANSWERS.md` now states.
+
 Written new from NCERT *Mathematics, Textbook for Class X* (reprint 2026-27),
 Chapter 8, *Introduction to Trigonometry* (textbook pages 113–132). Original
 LearnLab text in NCERT's order of topics, examples and questions; no sentence
@@ -12,6 +195,10 @@ Ratios of Some Specific Angles · 8.4 Trigonometric Identities. *Exercise
 ratios depend only on the angle, and the three identities are `c-keyidea`
 blocks; Table 8.1 is a book table; working is set as `.work--list` rows. The
 source's *8.5 Summary* is the chapter summary.
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted: `check-body-maths` reports no mathematics lost or added, `check-numbers.mjs` passes, 0 stranded openers, every option row fits, no label collisions. Body pages 6, 8, 9, 15 and 16 run 44–65%, each held by an example panel carrying its figure. The body went from 22 pages to 24. Listed for the user.
 
 ## Figures
 

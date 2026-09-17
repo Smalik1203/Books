@@ -2,13 +2,7 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The $n$th term is the sum of the first $n$ terms minus the sum of the first $n - 1$ terms. Since $3(n - 1)^2 + 5(n - 1) = 3n^2 - n - 2$, this gives ${a_n = (3n^2 + 5n) - (3n^2 - n - 2) = 6n + 2}$. Then $a_{n+1} - a_n = 6$ for every $n$, so the list is an AP with first term 8 and common difference 6. As a check, $S_1 = 3 + 5 = 8$ and $S_2 = 12 + 10 = 22$, which is ${8 + 14}$.</p>
-
-      <div class="c-try">
-        <p>Can the sum of the first few odd numbers, $1 + 3 + 5 + \cdots$, ever be 200?</p>
-      </div>
-
-      <p>The odd numbers form an AP with $a = 1$ and $d = 2$, so the sum of the first $n$ of them is $\frac{n}{2}[2 + (n - 1) \times 2] = n^2$. The sum is always a perfect square: 1, 4, 9, 16, and so on. Since $14^2 = 196$ and $15^2 = 225$, no whole number $n$ gives $n^2 = 200$. So the answer is no, and we did not need to add up a single list.</p>
+      <p>The even numbers form an AP with $a = 2$ and $d = 2$, so the sum of the first $n$ of them is $\frac{n}{2}[4 + (n - 1) \times 2] = n(n + 1)$. The sum is always the product of two consecutive whole numbers: 2, 6, 12, 20, and so on. Since $13 \times 14 = 182$ and $14 \times 15 = 210$, no whole number $n$ gives $n(n + 1) = 200$. So the answer is no, and we did not need to add up a single list.</p>
 
       <div class="c-try">
         <p>The three angles of a triangle are in AP. Show that one of them must be $60^\circ$.</p>
@@ -19,24 +13,50 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The 25th term of the AP $-5, -\frac{5}{2}, 0, \frac{5}{2}, \ldots$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>55</li><li>60</li><li>57.5</li><li>62.5</li></ol>
+      <h3>Type 1 &middot; Recognising an AP and its common difference</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>The $n$th term of an AP is $7 - 4n$. Its common difference is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>4</li><li>$-4$</li><li>3</li><li>7</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a_1 = 7 - 4 = 3$ and $a_2 = 7 - 8 = -1$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$a_{n+1} - a_n = [7 - 4(n + 1)] - [7 - 4n] = -4$</span>
+              <span class="work__why">the same for every $n$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) subtracts the wrong way round, (c) is the first term, and (d) is the fixed number 7 in the formula.</p>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>$a = -5$ and $d = -\frac{5}{2} - (-5) = \frac{5}{2}$</p>
-          <p>$a_{25} = -5 + (25 - 1) \times \frac{5}{2} = -5 + 60 = 55$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Show that $(a - b)^2$, $a^2 + b^2$ and $(a + b)^2$ are in AP.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(a^2 + b^2) - (a - b)^2 = a^2 + b^2 - a^2 + 2ab - b^2 = 2ab$</span>
+              <span class="work__why">second minus first</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(a + b)^2 - (a^2 + b^2) = a^2 + 2ab + b^2 - a^2 - b^2 = 2ab$</span>
+              <span class="work__why">third minus second</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the two differences are equal</span>
+              <span class="work__why">the meaning of an AP</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The three expressions are in AP, with common difference $2ab$</span></div>
+          </div>
         </div>
-        <p>The answer is (a). Option (b) is $24 \times \frac{5}{2}$, leaving out the first term. Option (c) uses 25 in place of $n - 1 = 24$, and (d) is $25 \times \frac{5}{2}$, which makes both mistakes.</p>
       </div>
 
     </div>

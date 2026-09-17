@@ -2,34 +2,47 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>The Sun's altitude falls from $45^\circ$ to $30^\circ$, and the shadow of a vertical pole becomes 5&nbsp;m longer. The height of the pole is</p>
-        <ol class="c-parts c-parts--alpha c-parts--tall"><li>${5(\sqrt{3} + 1)}$&nbsp;m</li><li>${\dfrac{5}{2}(\sqrt{3} + 1)}$&nbsp;m</li><li>${5\sqrt{3}}$&nbsp;m</li><li>${\dfrac{5}{2}(\sqrt{3} - 1)}$&nbsp;m</li></ol>
-      </div>
+      <h3>Type 3 &middot; Angles of depression</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>at $45^\circ$ the shadow is $h$; at $30^\circ$ it is ${h\sqrt{3}}$</p>
-          <p>${h\sqrt{3} - h = 5}$, &nbsp; so &nbsp; $h = \dfrac{5}{\sqrt{3} - 1} = \dfrac{5(\sqrt{3} + 1)}{(\sqrt{3} + 1)(\sqrt{3} - 1)} = \dfrac{5}{2}(\sqrt{3} + 1)$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>From the top of a cliff 60&nbsp;m high, the angles of depression of the top and the bottom of a tower are $30^\circ$ and $60^\circ$. The height of the tower is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>40&nbsp;m</li><li>20&nbsp;m</li><li>${20\sqrt{3}}$&nbsp;m</li><li>30&nbsp;m</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${\tan 60^\circ = \frac{60}{d}}$, so the distance between them is ${d = \frac{60}{\sqrt{3}} = 20\sqrt{3}}$</span>
+              <span class="work__why">from the bottom of the tower</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the cliff is higher than the tower by ${d \tan 30^\circ = 20\sqrt{3} \times \frac{1}{\sqrt{3}} = 20}$</span>
+              <span class="work__why">from the top of the tower</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>height of the tower ${= 60 - 20 = 40}$&nbsp;m</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) is how much higher the cliff is than the tower, (c) is the distance between them, and (d) is half the height of the cliff. Both angles are angles of depression, so the tower must be shorter than the cliff.</p>
         </div>
-        <p>The answer is (b), about 6.83&nbsp;m. Option (a) forgets to divide by ${(\sqrt{3})^2 - 1 = 2}$ when removing the root from the denominator. Option (d) multiplies by ${\sqrt{3} - 1}$ instead of ${\sqrt{3} + 1}$, and (c) is the shadow at $30^\circ$ of a pole 5&nbsp;m tall. As a check, a pole 6.83&nbsp;m tall has shadows of 6.83&nbsp;m and 11.83&nbsp;m, which differ by 5&nbsp;m.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>Two ships are on opposite sides of a lighthouse 100&nbsp;m high, in a line with its foot. From the top of the lighthouse, their angles of depression are $30^\circ$ and $45^\circ$. The distance between the ships is</p>
-        <ol class="c-parts c-parts--alpha"><li>${100\sqrt{3}}$&nbsp;m</li><li>${100(\sqrt{3} - 1)}$&nbsp;m</li><li>${100(\sqrt{3} + 1)}$&nbsp;m</li><li>200&nbsp;m</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>the ship at $45^\circ$ is 100&nbsp;m from the foot, and the ship at $30^\circ$ is ${100\sqrt{3}}$&nbsp;m from it</p>
-          <p>on opposite sides the distances add: ${100\sqrt{3} + 100 = 100(\sqrt{3} + 1)}$&nbsp;m</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>From a window 18&nbsp;m above the ground, the angle of depression of a car parked on the road is $60^\circ$. How far is the car from the foot of the building? (Take ${\sqrt{3} = 1.732}$.)</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the angle of elevation of the window from the car is also $60^\circ$</span>
+              <span class="work__why">alternate angles</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${\tan 60^\circ = \frac{18}{d}}$, so ${d = \frac{18}{\sqrt{3}} = 6\sqrt{3}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${6\sqrt{3} \approx 6 \times 1.732 = 10.392}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>About 10.39&nbsp;m</span></div>
+          </div>
         </div>
-        <p>The answer is (c), about 273.2&nbsp;m. Option (b) subtracts, which is the answer when both ships are on the same side, as in Question 13 of Exercise Set 9.1. Option (a) is the distance of one ship only. A rough figure shows at once whether to add or to subtract. Here the figure has the lighthouse between the two ships.</p>
       </div>
 
     </div>

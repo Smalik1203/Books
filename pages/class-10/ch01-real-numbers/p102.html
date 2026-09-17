@@ -2,12 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Take 5 away from such a number. What is left is divisible by 12, 18 and 30, so it is a common multiple of the three numbers, and so a multiple of their LCM. Since ${12 = 2^2 \times 3}$, $18 = 2 \times 3^2$ and $30 = 2 \times 3 \times 5$, the LCM is $2^2 \times 3^2 \times 5 = 180$. The number we want is 5 more than a multiple of 180. Now $900 + 5 = 905$ has only three digits, and the next multiple of 180 is 1080. So the answer is $1080 + 5 = 1085$.</p>
-
-      <div class="c-try">
-        <p>Is the product of two irrational numbers always irrational?</p>
-      </div>
-
       <p>Try some numbers. Both $\sqrt{2}$ and $\sqrt{8} = 2\sqrt{2}$ are irrational, but $\sqrt{2} \times \sqrt{8} = \sqrt{16} = 4$, which is rational. One example like this is enough to show that the claim is false. The product can also be irrational: $\sqrt{2} \times (1 + \sqrt{2}) = \sqrt{2} + 2$, which is the sum of a rational and an irrational number. So each product has to be worked out; no rule decides it in advance.</p>
 
       <div class="c-try">
@@ -19,24 +13,52 @@
       <div class="c-stage">
         <div class="c-stage__num">2</div>
         <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">Five multiple-choice problems, each solved, with the reason for every option.</div>
+          <div class="c-stage__title">Solved Examples</div>
         </div>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 1</span>
-        <p>The HCF and the LCM of $2^3 \times 3^2 \times 5$ and $2^2 \times 3^3 \times 7$ are, in that order,</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>216, 1260</li><li>36, 7560</li><li>36, 1260</li><li>6, 7560</li></ol>
+      <h3>Type 1 &middot; Prime factorisation</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Write 4620 as a product of its prime factors.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4620 = 2 \times 2310$ and $2310 = 2 \times 1155$</span>
+              <span class="work__why">even, so divide by 2</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1155 = 3 \times 385$</span>
+              <span class="work__why">digit sum 12</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$385 = 5 \times 77$ and $77 = 7 \times 11$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$4620 = 2^2 \times 3 \times 5 \times 7 \times 11$</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>common primes 2 and 3, smallest powers: $\text{HCF} = 2^2 \times 3^2 = 36$</p>
-          <p>primes 2, 3, 5 and 7, greatest powers: $\text{LCM} = 2^3 \times 3^3 \times 5 \times 7 = 7560$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>For which of these is there a natural number $n$ that makes the number end with the digit 0?</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$4^n$</li><li>$12^n$</li><li>$15^n$</li><li>$20^n$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4^n = 2^{2n}$, $\ 12^n = 2^{2n} \times 3^n$, $\ 15^n = 3^n \times 5^n$, $\ 20^n = 2^{2n} \times 5^n$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>a number ending with 0 has both 2 and 5 among its prime factors</span>
+              <span class="work__why">it is divisible by 10</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>only $20^n$ has both</span>
+              <span class="work__why">uniqueness: no other primes</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(d)</span></div>
+          </div>
+          <p>Every power of 15 ends with 5, and $4^n$ and $12^n$ have no 5 at all.</p>
         </div>
-        <p>The answer is (b). Option (a) swaps the rules for the HCF and the LCM, (c) uses the smallest powers for the LCM too, and (d) takes every power as 1.</p>
       </div>
 
     </div>

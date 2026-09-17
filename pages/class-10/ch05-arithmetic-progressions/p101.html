@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">Arithmetic progressions in questions that do not ask straight away for a term or a sum.</div>
         </div>
       </div>
 
@@ -31,6 +30,12 @@
 
       <div class="c-try">
         <p>For every $n$, the sum of the first $n$ terms of a list of numbers is $3n^2 + 5n$. Is the list an AP?</p>
+      </div>
+
+      <p>The $n$th term is the sum of the first $n$ terms minus the sum of the first $n - 1$ terms. Since $3(n - 1)^2 + 5(n - 1) = 3n^2 - n - 2$, this gives ${a_n = (3n^2 + 5n) - (3n^2 - n - 2) = 6n + 2}$. Then $a_{n+1} - a_n = 6$ for every $n$, so the list is an AP with first term 8 and common difference 6. As a check, $S_1 = 3 + 5 = 8$ and $S_2 = 12 + 10 = 22$, which is ${8 + 14}$.</p>
+
+      <div class="c-try">
+        <p>Can the sum of the first few even numbers, $2 + 4 + 6 + \cdots$, ever be 200?</p>
       </div>
 
     </div>

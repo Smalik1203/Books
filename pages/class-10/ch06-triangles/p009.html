@@ -2,49 +2,32 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Let us look at some examples that use these theorems.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>A line meets the sides AB and AC of $\triangle ABC$ at D and E and is parallel to BC (Fig.&nbsp;6.13). Prove that ${\frac{AD}{AB} = \frac{AE}{AC}}$.</p>
-        </div>
-      </div>
-
-      <div class="c-figure c-figure--sm">
-                                                        <figure>
-                                                          <svg viewBox="0 0 190 140" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A triangle ABC with D on AB and E on AC. The line DE is parallel to BC.">
-      <path class="dg-line" d="M92 14 L18 124 L172 128 Z"/>
-      <path class="dg-line" d="M58.7 63.5 L141.9 65.7"/>
-      <text class="dg-label" x="91.7" y="6.5" text-anchor="middle">A</text>
-      <text class="dg-label" x="8" y="132.1" text-anchor="middle">B</text>
-      <text class="dg-label" x="181.8" y="136.5" text-anchor="middle">C</text>
-      <text class="dg-label" x="49.6" y="60.9" text-anchor="middle">D</text>
-      <text class="dg-label" x="137" y="62.5" text-anchor="middle">E</text>
-      </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.13</span> DE parallel to BC.</figcaption>
-                                                        </figure>
-                                                      </div>
-
-      <div class="work work--list">
-        <p>$DE \parallel BC$ &nbsp; (given)</p>
-        <p>so $\dfrac{AD}{DB} = \dfrac{AE}{EC}$ &nbsp; (Theorem 6.1)</p>
-        <p>or $\dfrac{DB}{AD} = \dfrac{EC}{AE}$ &nbsp; (turning both fractions upside down)</p>
-        <p>or $\dfrac{DB}{AD} + 1 = \dfrac{EC}{AE} + 1$</p>
-        <p>or $\dfrac{AB}{AD} = \dfrac{AC}{AE}$ &nbsp; (since $DB + AD = AB$ and $EC + AE = AC$)</p>
-        <p>so $\dfrac{AD}{AB} = \dfrac{AE}{AC}$</p>
-      </div>
-
       <div class="c-example">
         <div class="c-example__tab">Example 2</div>
         <div class="c-example__body">
           <p>ABCD is a trapezium with $AB \parallel DC$. E and F are points on the non-parallel sides AD and BC such that EF is parallel to AB (Fig.&nbsp;6.14). Show that ${\frac{AE}{ED} = \frac{BF}{FC}}$.</p>
-        </div>
-      </div>
-
-      <div class="c-figure c-figure--sm">
-                                                        <figure>
-                                                          <svg viewBox="0 0 190 118" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A trapezium ABCD with AB parallel to DC. E is on AD and F is on BC, and EF is parallel to AB.">
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>join AC, and let it meet EF at G (Fig.&nbsp;6.15)</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$AB \parallel DC$ and $EF \parallel AB$, so $EF \parallel DC$</span>
+              <span class="work__why">given; both parallel to AB</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>in $\triangle ADC$, $EG \parallel DC$, so $\dfrac{AE}{ED} = \dfrac{AG}{GC}$ &nbsp; (1)</span>
+              <span class="work__why">Theorem 6.1</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>in $\triangle CAB$, $GF \parallel AB$, so $\dfrac{CG}{GA} = \dfrac{CF}{FB}$</span>
+              <span class="work__why">Theorem 6.1</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>that is, $\dfrac{AG}{GC} = \dfrac{BF}{FC}$ &nbsp; (2)</span>
+              <span class="work__why">both fractions upside down</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>from (1) and (2), $\frac{AE}{ED}$ and $\frac{BF}{FC}$ are both equal to $\frac{AG}{GC}$, so ${\frac{AE}{ED} = \frac{BF}{FC}}$</span></div>
+          </div>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="0 0 190 118" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A trapezium ABCD with AB parallel to DC. E is on AD and F is on BC, and EF is parallel to AB.">
       <path class="dg-line" d="M58 16 L134 16 L176 104 L14 104 Z"/>
       <path class="dg-line" d="M40.4 51.2 L150.8 51.2"/>
       <text class="dg-label" x="52.2" y="12.7" text-anchor="middle">A</text>
@@ -54,9 +37,28 @@
       <text class="dg-label" x="31.5" y="50.2" text-anchor="middle">E</text>
       <text class="dg-label" x="159.8" y="50.4" text-anchor="middle">F</text>
       </svg>
-                                                          <figcaption><span class="fignum">Fig. 6.14</span> The trapezium ABCD with EF parallel to AB.</figcaption>
-                                                        </figure>
-                                                      </div>
+              <figcaption><span class="fignum">Fig. 6.14</span> The trapezium ABCD with EF parallel to AB.</figcaption>
+            </figure>
+          </div>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="0 0 190 118" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The trapezium ABCD with EF parallel to AB. The diagonal AC is drawn dashed and meets EF at G.">
+      <path class="dg-line" d="M58 16 L134 16 L176 104 L14 104 Z"/>
+      <path class="dg-line" d="M40.4 51.2 L150.8 51.2"/>
+      <text class="dg-label" x="52.2" y="12.7" text-anchor="middle">A</text>
+      <text class="dg-label" x="139.9" y="12.7" text-anchor="middle">B</text>
+      <text class="dg-label" x="183.9" y="111.8" text-anchor="middle">C</text>
+      <text class="dg-label" x="6.1" y="111.8" text-anchor="middle">D</text>
+      <text class="dg-label" x="31.5" y="50.2" text-anchor="middle">E</text>
+      <text class="dg-label" x="159.8" y="50.4" text-anchor="middle">F</text>
+      <path class="dg-hidden" d="M58 16 L176 104"/>
+      <text class="dg-label" x="107.2" y="65.2" text-anchor="middle">G</text>
+      </svg>
+              <figcaption><span class="fignum">Fig. 6.15</span> The diagonal AC meets EF at G.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

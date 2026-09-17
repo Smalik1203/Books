@@ -2,10 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>A form of this theorem was probably first written down as Proposition 14 of Book IX of Euclid’s <em>Elements</em>, long before it got its present name. The first correct proof was given by Carl Friedrich Gauss (1777–1855) in his book <em>Disquisitiones Arithmeticae</em>. Gauss is often called the Prince of Mathematicians. He is counted with Archimedes and Newton among the three greatest mathematicians of all time, and he made basic contributions to both mathematics and science.</p>
-
-      <p>The theorem says more than that a composite number can be factorised into primes. It says that the factorisation is <em>unique</em>. Apart from the order of the primes, there is one and only one way to write the number as a product of primes. So we take $2 \times 3 \times 5 \times 7$ and $3 \times 5 \times 7 \times 2$ to be the same factorisation, and the same goes for any other order of these four primes. We can also say it like this: the prime factorisation of a natural number is unique, except for the order of its factors.</p>
-
       <p>In general, we write a composite number $x$ as $x = p_1 p_2 \ldots p_n$, where $p_1, p_2, \ldots, p_n$ are primes written in ascending order, that is, $p_1 \leq p_2 \leq \ldots \leq p_n$. When we put equal primes together, we get powers of primes. For example,</p>
 
       <div class="eq">$$32760 = 2 \times 2 \times 2 \times 3 \times 3 \times 5 \times 7 \times 13 = 2^3 \times 3^2 \times 5 \times 7 \times 13$$</div>
@@ -16,12 +12,47 @@
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
           <p>Take the numbers $4^n$, where $n$ is a natural number. Is there any value of $n$ for which $4^n$ ends with the digit zero?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>suppose $4^n$ ends with the digit zero for some $n$</span>
+              <span class="work__why">assume the opposite</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>then it is divisible by 10, and so by 5</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$4^n = (2^2)^n = 2^{2n}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>the only prime in its factorisation is 2, so the prime 5 cannot appear</span>
+              <span class="work__why">uniqueness of the factorisation</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>No. There is no natural number $n$ for which $4^n$ ends with the digit zero</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Suppose that $4^n$ ended with the digit zero for some $n$. Then it would be divisible by 10, and so by 5. That means the prime 5 would appear in the prime factorisation of $4^n$. But $4^n = (2^2)^n = 2^{2n}$, so the only prime in its factorisation is 2. By the uniqueness part of the Fundamental Theorem of Arithmetic, no other prime can appear. So there is no natural number $n$ for which $4^n$ ends with the digit zero.</p>
-
       <p>In earlier classes you found the HCF and LCM of two positive integers from their prime factorisations. You were using the Fundamental Theorem of Arithmetic without knowing it! This way of finding the HCF and LCM is called the <span class="term">prime factorisation method</span>. Let us recall it with an example.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Find the LCM and HCF of 6 and 20 by the prime factorisation method.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$6 = 2^1 \times 3^1$ and $20 = 2 \times 2 \times 5 = 2^2 \times 5^1$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\text{HCF}(6, 20) = 2^1 = 2$</span>
+              <span class="work__why">the common prime, smaller power</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\text{LCM}(6, 20) = 2^2 \times 3^1 \times 5^1 = 2 \times 2 \times 3 \times 5 = 60$</span>
+              <span class="work__why">every prime, larger power</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>HCF 2, LCM 60</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Look at the powers of the primes in these two answers. The only prime factor that 6 and 20 share is 2. It occurs as $2^1$ in 6 and as $2^2$ in 20, and the HCF takes the smaller of these powers. The LCM takes every prime that occurs in either number, each with its larger power, so it has $2^2$, $3^1$ and $5^1$.</p>
 
     </div>
   </div>

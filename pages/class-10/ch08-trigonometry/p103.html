@@ -2,48 +2,47 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>If ${\sin(A - B) = \frac{\sqrt{3}}{2}}$ and ${\cos(A + B) = 0}$, where ${0^\circ \lt  A + B \leq 90^\circ}$ and ${A \gt  B}$, then</p>
-        <ol class="c-parts c-parts--alpha"><li>${A = 75^\circ}$, ${B = 15^\circ}$</li><li>${A = 60^\circ}$, ${B = 30^\circ}$</li><li>${A = 45^\circ}$, ${B = 45^\circ}$</li><li>${A = 90^\circ}$, ${B = 0^\circ}$</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>${\sin(A - B) = \frac{\sqrt{3}}{2}}$, so ${A - B = 60^\circ}$; ${\cos(A + B) = 0}$, so ${A + B = 90^\circ}$</p>
-          <p>adding, ${2A = 150^\circ}$, so ${A = 75^\circ}$ and ${B = 15^\circ}$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>If ${\cos A = \frac{9}{41}}$ for an acute angle A, then $\tan A$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$\dfrac{40}{41}$</li><li>$\dfrac{40}{9}$</li><li>$\dfrac{9}{40}$</li><li>$\dfrac{41}{40}$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>take ${AB = 9k}$ and ${AC = 41k}$ in a triangle right-angled at B</span>
+              <span class="work__why">$\cos A = \dfrac{AB}{AC}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${BC = \sqrt{1681k^2 - 81k^2} = \sqrt{1600k^2} = 40k}$</span>
+              <span class="work__why">the Pythagoras theorem</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\tan A = \dfrac{BC}{AB} = \dfrac{40k}{9k} = \dfrac{40}{9}$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (a) is $\sin A$, (c) is $\cot A$, and (d) is $\operatorname{cosec} A$. All four come from the triangle with sides 9, 40 and 41.</p>
         </div>
-        <p>The answer is (a). Option (b) has ${A - B = 30^\circ}$, whose sine is $\frac{1}{2}$, and (c) has ${A - B = 0^\circ}$. Option (d) has ${A + B = 90^\circ}$, but ${\sin 90^\circ = 1}$.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>For an acute angle $\theta$, the value of ${(1 - \sin^2\theta)\sec^2\theta}$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>$0$</li><li>$1$</li><li>$\tan^2\theta$</li><li>$\cos^2\theta$</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>${(1 - \sin^2\theta)\sec^2\theta = \cos^2\theta \times \frac{1}{\cos^2\theta} = 1}$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>In $\triangle ABC$, right-angled at B, ${BC = 35}$&nbsp;cm and ${AC - AB = 25}$&nbsp;cm. Find $\sin A$, $\cos A$ and $\tan A$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>${AC^2 - AB^2 = BC^2 = 35^2 = 1225}$</span>
+              <span class="work__why">the Pythagoras theorem</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${(AC - AB)(AC + AB) = 1225}$, so ${AC + AB = 1225 \div 25 = 49}$</span>
+              <span class="work__why">difference of two squares</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${AC = (49 + 25) \div 2 = 37}$ and ${AB = (49 - 25) \div 2 = 12}$</span>
+              <span class="work__why">adding, then subtracting</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\sin A = \dfrac{35}{37}$, &nbsp; $\cos A = \dfrac{12}{37}$, &nbsp; $\tan A = \dfrac{35}{12}$</span></div>
+          </div>
         </div>
-        <p>The answer is (b). Option (d) stops after the first step and forgets $\sec^2\theta$, and (c) mixes up ${\sec^2\theta - 1}$ with the product.</p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>In $\triangle ABC$, right-angled at B, ${AB = 12}$&nbsp;cm and ${\angle A = 60^\circ}$. Then AC is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>24&nbsp;cm</li><li>${12\sqrt{3}}$&nbsp;cm</li><li>6&nbsp;cm</li><li>${8\sqrt{3}}$&nbsp;cm</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>AB is adjacent to angle A and AC is the hypotenuse, so ${\cos 60^\circ = \frac{AB}{AC}}$</p>
-          <p>${\frac{1}{2} = \frac{12}{AC}}$, so ${AC = 24}$&nbsp;cm</p>
-        </div>
-        <p>The answer is (a). Option (b) is BC, from $\tan 60^\circ$; (c) multiplies 12 by $\cos 60^\circ$ instead of dividing; and (d) divides 12 by $\sin 60^\circ$, treating AB as the opposite side.</p>
       </div>
 
     </div>

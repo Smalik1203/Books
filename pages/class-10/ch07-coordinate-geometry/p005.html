@@ -2,40 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The distance formula</div>
-        <p>The distance between the points $P(x_1, y_1)$ and $Q(x_2, y_2)$ is</p>
-        <div class="eq">$$PQ = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</div>
-        <p>This is called the <span class="term">distance formula</span>.</p>
-      </div>
-
-      <p><strong>Remarks.</strong> 1. In particular, the distance of a point $P(x, y)$ from the origin $O(0, 0)$ is ${OP = \sqrt{x^2 + y^2}}$. &nbsp;2. We can also write ${PQ = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}}$. (Why?)</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
           <p>Do the points $(3, 2)$, $(-2, -3)$ and $(2, 3)$ form a triangle? If they do, name the type of triangle they form.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>call the given points $P(3, 2)$, $Q(-2, -3)$ and $R(2, 3)$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${PQ = \sqrt{(3 + 2)^2 + (2 + 3)^2} = \sqrt{5^2 + 5^2} = \sqrt{50} = 7.07}$ (approx.)</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${QR = \sqrt{(-2 - 2)^2 + (-3 - 3)^2} = \sqrt{(-4)^2 + (-6)^2} = \sqrt{52} = 7.21}$ (approx.)</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${PR = \sqrt{(3 - 2)^2 + (2 - 3)^2} = \sqrt{1^2 + (-1)^2} = \sqrt{2} = 1.41}$ (approx.)</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>the sum of any two of these distances is greater than the third, so P, Q and R form a triangle</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>${PQ^2 + PR^2 = 50 + 2 = 52 = QR^2}$, so ${\angle P = 90^\circ}$</span>
+              <span class="work__why">converse of Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes. PQR is a right triangle</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Call the given points $P(3, 2)$, $Q(-2, -3)$ and $R(2, 3)$. Let us use the distance formula to find PQ, QR and PR.</p>
-
-      <div class="work work--list">
-        <p>${PQ = \sqrt{(3 + 2)^2 + (2 + 3)^2} = \sqrt{5^2 + 5^2} = \sqrt{50} = 7.07}$ (approx.)</p>
-        <p>${QR = \sqrt{(-2 - 2)^2 + (-3 - 3)^2} = \sqrt{(-4)^2 + (-6)^2} = \sqrt{52} = 7.21}$ (approx.)</p>
-        <p>${PR = \sqrt{(3 - 2)^2 + (2 - 3)^2} = \sqrt{1^2 + (-1)^2} = \sqrt{2} = 1.41}$ (approx.)</p>
-      </div>
-
-      <p>The sum of any two of these distances is greater than the third distance, so the points P, Q and R form a triangle. Also ${PQ^2 + PR^2 = 50 + 2 = 52 = QR^2}$, so by the converse of the Pythagoras theorem, ${\angle P = 90^\circ}$. So PQR is a right triangle. If one distance had been equal to the sum of the other two, the three points would have been on one line.</p>
+      <p>If one distance had been equal to the sum of the other two, the three points would have been on one line.</p>
 
       <div class="c-example">
         <div class="c-example__tab">Example 2</div>
         <div class="c-example__body">
           <p>Show that the points $(1, 7)$, $(4, 2)$, $(-1, -1)$ and $(-4, 4)$ are the vertices of a square.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let $A(1, 7)$, $B(4, 2)$, $C(-1, -1)$ and $D(-4, 4)$ be the given points</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>${AB = \sqrt{(1 - 4)^2 + (7 - 2)^2} = \sqrt{9 + 25} = \sqrt{34}}$</span>
+              <span class="work__why">distance formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>${BC = \sqrt{(4 + 1)^2 + (2 + 1)^2} = \sqrt{25 + 9} = \sqrt{34}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>${CD = \sqrt{(-1 + 4)^2 + (-1 - 4)^2} = \sqrt{9 + 25} = \sqrt{34}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>${DA = \sqrt{(1 + 4)^2 + (7 - 4)^2} = \sqrt{25 + 9} = \sqrt{34}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>${AC = \sqrt{(1 + 1)^2 + (7 + 1)^2} = \sqrt{4 + 64} = \sqrt{68}}$</span>
+              <span class="work__why">the diagonals</span></div>
+            <div class="work__row"><span class="work__label">Step 7</span>
+              <span>${BD = \sqrt{(4 + 4)^2 + (2 - 4)^2} = \sqrt{64 + 4} = \sqrt{68}}$</span></div>
+            <div class="work__row"><span class="work__label">Step 8</span>
+              <span>${AB = BC = CD = DA}$ and ${AC = BD}$</span>
+              <span class="work__why">four equal sides, equal diagonals</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>ABCD is a square</span></div>
+          </div>
         </div>
       </div>
 
-      <p>Let $A(1, 7)$, $B(4, 2)$, $C(-1, -1)$ and $D(-4, 4)$ be the given points. One way to show that ABCD is a square is to show that all its sides are equal and both its diagonals are equal. Now,</p>
+      <p>To show that ABCD is a square, we showed that all its sides are equal and both its diagonals are equal. Four equal sides alone would not be enough: a rhombus has them too.</p>
 
     </div>
   </div>

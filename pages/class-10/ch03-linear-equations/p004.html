@@ -2,41 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The point $B(6, 0)$ lies on both lines $AB$ and $PQ$. So the solution of the pair of linear equations is $x = 6$ and $y = 0$, and the pair is consistent. You can check this: $6 + 3 \times 0 = 6$ and $2 \times 6 - 3 \times 0 = 12$.</p>
+      <p>Plot a few points on graph paper and check this yourself.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>Find out graphically whether this pair of equations has no solution, a unique solution or infinitely many solutions.</p>
-          <div class="eq">$$5x - 8y + 1 = 0 \qquad 3x - \frac{24}{5}y + \frac{3}{5} = 0$$</div>
+          <div class="c-example__tab">Example 3</div>
+          <div class="c-example__body">
+            <p>Champa went to a sale to buy some pants and skirts. When her friends asked how many of each she had bought, she said, “The number of skirts is two less than twice the number of pants. Also, the number of skirts is four less than four times the number of pants.” Help her friends find how many pants and skirts Champa bought.</p>
+            <p><strong>Solution.</strong></p>
+            <div class="work">
+              <div class="work__row"><span class="work__label">Step 1</span>
+                <span>let the number of pants be $x$ and the number of skirts be $y$</span></div>
+              <div class="work__row"><span class="work__label">Step 2</span>
+                <span>$y = 2x - 2$ &nbsp; (1) &nbsp; and &nbsp; $y = 4x - 4$ &nbsp; (2)</span>
+                <span class="work__why">her two statements</span></div>
+              <div class="work__row"><span class="work__label">Step 3</span>
+                <span>find two solutions of each equation, as in Table 3.3, then plot the points and draw the lines through them, as in Fig. 3.2</span></div>
+              <div class="work__row"><span class="work__label">Step 4</span>
+                <span>the two lines intersect at the point $(1, 0)$</span>
+                <span class="work__why">the common point</span></div>
+              <div class="work__row"><span class="work__label">Answer</span>
+                <span>$x = 1$, $y = 0$: Champa bought 1 pair of pants and no skirts</span></div>
+            </div>
+            <table>
+              <caption>Table 3.3 Two solutions of each equation</caption>
+              <thead><tr><th>$x$</th><th>$2$</th><th>$0$</th><th></th><th>$x$</th><th>$0$</th><th>$1$</th></tr></thead>
+              <tbody><tr><td>$y = 2x - 2$</td><td>$2$</td><td>$-2$</td><td></td><td>$y = 4x - 4$</td><td>$-4$</td><td>$0$</td></tr></tbody>
+            </table>
+            <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 210 218" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two straight lines on a grid from −3 to 4 across and −6 to 3 up. The line y = 2x − 2 passes through B(0, −2) and A(2, 2). The line y = 4x − 4 passes through P(0, −4) and Q(1, 0). The two lines meet at Q(1, 0) on the x-axis.">
+      <path class="dg-grid" d="M22 10V208M44 10V208M66 10V208M88 10V208M110 10V208M132 10V208M154 10V208M176 10V208M22 208H176M22 186H176M22 164H176M22 142H176M22 120H176M22 98H176M22 76H176M22 54H176M22 32H176M22 10H176"/>
+      <path class="dg-axis" d="M22 76H176 M88 10V208"/>
+      <text class="dg-tick" x="22" y="85" text-anchor="middle">−3</text>
+      <text class="dg-tick" x="44" y="85" text-anchor="middle">−2</text>
+      <text class="dg-tick" x="66" y="85" text-anchor="middle">−1</text>
+      <text class="dg-tick" x="132" y="85" text-anchor="middle">2</text>
+      <text class="dg-tick" x="154" y="85" text-anchor="middle">3</text>
+      <text class="dg-tick" x="176" y="85" text-anchor="middle">4</text>
+      <text class="dg-tick" x="85" y="57" text-anchor="end">1</text>
+      <text class="dg-tick" x="85" y="35" text-anchor="end">2</text>
+      <text class="dg-tick" x="85" y="13" text-anchor="end">3</text>
+      <text class="dg-tick" x="85" y="85" text-anchor="end">O</text>
+      <text class="dg-label" x="174" y="73" text-anchor="end">x</text>
+      <text class="dg-label" x="92" y="18" text-anchor="start">y</text>
+      <path class="dg-plot" d="M44 208 L143 10"/>
+      <path class="dg-plot dg-plot--b" d="M77 208 L126.5 10"/>
+      <circle class="dg-fill-teal" cx="132" cy="32" r="2.4"/>
+      <text class="dg-label dg-label--sm" x="138" y="36" text-anchor="start">A(2, 2)</text>
+      <circle class="dg-fill-teal" cx="88" cy="120" r="2.4"/>
+      <text class="dg-label dg-label--sm" x="82" y="116" text-anchor="end">B(0, −2)</text>
+      <circle class="dg-fill-teal" cx="88" cy="164" r="2.4"/>
+      <text class="dg-label dg-label--sm" x="94" y="168" text-anchor="start">P(0, −4)</text>
+      <circle class="dg-fill-teal" cx="110" cy="76" r="2.4"/>
+      <text class="dg-label dg-label--sm" x="115" y="97" text-anchor="start">Q(1, 0)</text>
+      <text class="dg-plot-label" x="129.8" y="56.2" text-anchor="start">y = 2x − 2</text>
+      <text class="dg-plot-label" x="105.6" y="128.8" text-anchor="start">y = 4x − 4</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 3.2</span> The lines $y = 2x - 2$ and $y = 4x - 4$.</figcaption>
+                          </figure>
+                        </div>
+          </div>
         </div>
-      </div>
-
-      <p>Multiplying the second equation by $\frac{5}{3}$, we get $5x - 8y + 1 = 0$. This is the same as the first equation. So the lines of the two equations coincide, and the pair has infinitely many solutions. Plot a few points on graph paper and check this yourself.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>Champa went to a sale to buy some pants and skirts. When her friends asked how many of each she had bought, she said, “The number of skirts is two less than twice the number of pants. Also, the number of skirts is four less than four times the number of pants.” Help her friends find how many pants and skirts Champa bought.</p>
-        </div>
-      </div>
-
-      <p>Let the number of pants be $x$ and the number of skirts be $y$. Then the two statements give these equations.</p>
-
-      <div class="work work--list">
-        <p>$y = 2x - 2$ &nbsp; (1)</p>
-        <p>$y = 4x - 4$ &nbsp; (2)</p>
-      </div>
-
-      <p>To draw their graphs, we find two solutions of each equation, as in Table 3.3.</p>
-
-      <table>
-        <caption>Table 3.3 Two solutions of each equation</caption>
-        <thead><tr><th>$x$</th><th>$2$</th><th>$0$</th><th></th><th>$x$</th><th>$0$</th><th>$1$</th></tr></thead>
-        <tbody><tr><td>$y = 2x - 2$</td><td>$2$</td><td>$-2$</td><td></td><td>$y = 4x - 4$</td><td>$-4$</td><td>$0$</td></tr></tbody>
-      </table>
-
-      <p>Plot the points and draw the lines through them, as in Fig. 3.2.</p>
 
     </div>
   </div>

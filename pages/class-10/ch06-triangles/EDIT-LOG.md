@@ -1,5 +1,239 @@
 # Class 10 · Mathematics I · Chapter 6 — Triangles
 
+## Syllabus audit fixes, 17 September 2026
+
+Findings from the Beyond the Book syllabus audit, each confirmed on the pages.
+**Pages: 37 before (24 body + 13 Beyond), 37 after (24 + 13).** The body was
+not touched.
+
+- **Stage 1, second try: $BD^2 = AD \cdot DC$ (dropped).** This is old
+  Theorem 6.7, from the Pythagoras section removed in 2023. Replaced by a try
+  of the same kind, a proof with no lengths: in parallelogram ABCD, a line
+  through A meets BD at P, DC at Q and BC produced at R; show
+  $AP^2 = PQ \cdot PR$. The explanation uses two AA pairs (△APD ~ △RPB,
+  △QPD ~ △APB) that both give $\frac{DP}{PB}$. It does not repeat Exercise
+  Set 6.3 Q8 or practice Q26, which use different figures and claims.
+- **Stage 1, fifth try: the mirror on the ground (borderline, needs the law
+  of reflection).** Replaced by a shadow-stick AA try: a 1.2 m stick casts
+  1.6 m, and a flagpole's shadow is 10 m longer than the pole, so the pole is
+  30 m tall with a 40 m shadow. It is set as an equation so that it does not
+  repeat Exercise Set 6.3 Q15, Example 13 or case Q29.
+- **Practice Q11: BD from AD = 4, DC = 9 (dropped result).** Replaced by an
+  MCQ on DE ∥ BC: AD 3, DB 7, BC 20, so DE = 6 cm. Options: 8.6 (AD : DB),
+  14 (DB : AB), 10 (half of BC), 6. The key stays (d), so the letter spread
+  is unchanged. The why-wrong row and `ANSWERS.md` were rewritten.
+- **Gap: RHS was never worked.** New **Example 12** under Type 6, renamed
+  *The SSS, SAS and RHS criteria*: right triangles with hypotenuse and side
+  10, 6 and 15, 9, so they are similar by RHS and QR = 12 cm. Old Examples
+  12–14 become **13–15**. No text cited them by number. **Solved Examples:
+  15** (was 14).
+- `check-numbers.mjs`: Stage 1 Q2 is now checked on coordinates, with three
+  lines through A on a slanted parallelogram. Q5 now checks the flagpole and
+  its shadow. Ex 12 checks its RHS ratios, QR, and that both triangles are
+  right-angled. Q11 checks the key and every distractor. The example numbers
+  were updated. Each new value was broken on purpose and caught (flagpole
+  height, shadow and difference; the Q2 claim; Ex 12's QR and PQ; Q11's BC,
+  a distractor, the key letter and `ANSWERS.md`; the numbering). It passes
+  with 277 claims.
+- `check-no-repeats`: the same four pairs as before, all judged already.
+- **Fitting.** `refit … bridge` left p110 and p111 running 1.9 mm and
+  3.7 mm into the margin. Q24 was reworded (*Prove that two similar
+  triangles have perimeters in the ratio of their corresponding sides.*) and
+  Q28 lost *with D on BC and M on QR* (now *with altitudes AD and PM*); each
+  saved a line. Example 13's Step 1 was shortened so that Example 14 fits on
+  p107 (`unsettle` 108). Practice questions were then pulled back a page at a
+  time (`unsettle` 109 ×3, 110 ×2, 111 ×2). p111 (72%) is the short page
+  before Answers, which opens a fresh page. p102 (69%) and p103 (74%) are
+  held open by the next example's panel. Page 21 of the body runs 1.3 mm into
+  the margin, but the body is untouched by this pass. Orphans 0, options fit,
+  labels clear.
+
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked from the brief built on
+Chapter 1. The page move, the examples, Beyond the Book and the answers were
+done in one pass, and every check was run on the chapter.
+
+**Pages: 33 before (26 body + 7 Beyond, Crown Quarto), 37 after (24 body + 13
+Beyond, 196 × 276).**
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once and then placed by hand (below).
+
+**All eight body examples set as steps**, the Class 10 decision. Each
+example's working moved from the `.work--list` block after its panel into
+the panel as *Solution*, Steps and *Answer*, a statement to a row with its
+reason in `.work__why` (Theorem 6.1, AA similarity, alternate angles …).
+- Every example is a proof or leans on its figure, so **each figure moved
+  inside its panel, after the work rows**, as in Chapter 3. Example 2 carries
+  both Fig. 6.14 and Fig. 6.15.
+- Equation tags (1)–(10) are kept in the rows, and the reasons cite them
+  (*from (1) and (2)*), so the proofs read as NCERT's do.
+- **Example 8** (three parts) is one panel: a short line for each part —
+  *(i) Since …*, *(ii) From (5) and (1),*, *(iii) Again using (1) and (8),* —
+  then Steps 1–12 across three `.work` blocks, and one *Answer*. Its closing
+  remark (part (iii) by SAS) stays after the panel.
+- The theorem proofs (6.1–6.5) and their (Why?)/(How?) lists are running
+  text and are untouched.
+
+**Verified** by `build/check-body-maths.mjs`: 275 expressions and 229
+numbers, none lost and none added. The gains are 1, 6, 9 and 6.1, restated in
+reasons and Answer rows.
+
+**Hand-fitting in the body, logged:**
+- The refit gave 25 pages with Examples 4–7 alone on four short pages.
+  Examples 5 and 6 missed sharing a page by about 7 mm, so each lost one
+  row: Example 5's *∠C = ∠P* row became its Answer (*∠P = ∠C = 40°, as
+  corresponding angles …*); Example 6's Steps 2 and 3 became one row
+  (*∠AOD = ∠COB (2); by (1) and (2), △AOD ~ △COB*). **Example 6's
+  question lost the words "Here the segments AB and CD meet at O"**; the
+  figure's caption, *AB and CD meet at O*, still says it. Example 6 now
+  shares page 18 with Example 5, and the later body pages were renumbered
+  (p020–p025 became p019–p024).
+- **A question and its figure.** The refit put Exercise Set 6.2 Q6 on page 11
+  and Fig. 6.21 overleaf. Q6 moved to the head of page 12, and three prose
+  blocks moved on a page each (pages 12→13→14) to make room. After the
+  renumbering, Set 6.3 Q4 and Q12 were also a page turn from Figs 6.36 and
+  6.41; Q4 moved to page 22, Q8 to page 23 and Q12 to page 24. Every
+  question that names a figure is now on the figure's page.
+- **Four figures drew a line past the side it ends on.** DE in Fig. 6.13,
+  DE and DE′ in Fig. 6.12, and DE in both parts of Fig. 6.17 ran 11–18 units
+  beyond AC, though E is *on* AC. Their end points were moved onto AC,
+  computed as the intersection. Found with a scratch overshoot check; the
+  rays in Figs 6.9, 6.11 and 6.23 and the ground in Fig. 6.32 run on by
+  design and were left.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, explained in running text | **kept word for word** except `.c-stage__for`, and one give-away (below) |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **14 stepped examples** under eight `Type` heads; old Problems 1–4 are Examples 3, 7, 9 and 12, old Problem 5 is recast as Example 14 |
+| 3 Problem Sets → **Practice** | 3 sets, 19 questions | **one run of 30** in six forms |
+| 4 Answers & Takeaways → **Answers** | key and why the options are wrong | key, every other answer, why the options are wrong for 13, the closing paragraph |
+
+**Class 10's old Stage 2 is separate problems** (*Five multiple-choice
+problems, each solved*), so Stage 1 stays as it is and the problems become
+Solved Examples.
+
+**Worked examples in the chapter: 22** (8 body + 14 Beyond). Types: similar
+polygons; the BPT; its converse; reading a similarity statement; AA; SSS and
+SAS (with a proof from $AP \cdot AB = AQ \cdot AC$); heights and distances
+(with a lamp-post word problem); two lines crossing between parallels.
+
+**Practice: 30 questions** — 13 multiple choice, 4 assertion–reason, 4 very
+short, 4 short (including the perimeter-ratio proof), 3 long (the
+parallelogram EL = 2BL proof, a DE ∥ BC calculation and the altitude ratio
+proof), 2 case-based (shadows; a ramp on posts). Key letters: a 3, b 5, c 5,
+d 4. Old set items were reused where they answer no body question.
+`fit-options --fix` narrowed Example 2's options and practice Q13's; the
+second made p109 overrun by 9.5 mm, so Q17 moved to p110 and Q28 to p111.
+
+**Give-aways found and fixed:**
+- **Stage 1, question 4** asked *Are any two isosceles triangles similar?*,
+  and its explanation showed they are not. That rules out *isosceles* in
+  Exercise Set 6.1 Q1 (iii) and leaves *equilateral*. The first half of the
+  question and its two sentences were deleted; the right-angled isosceles
+  half stays word for word.
+- **Old Problem 5 and old Set B Q4** proved △AOB ~ △COD in a trapezium from
+  alternate angles, which is Exercise Set 6.3 Q3. Problem 5 became Example
+  14, the same numbers in two segments crossing between parallels, citing
+  Example 4 of the chapter rather than re-proving it; Set B Q4 was dropped.
+- **Old Set C Q1** worked △ADC ~ △BAC to get $CA^2 = CB \cdot CD$, which is
+  Exercise Set 6.3 Q13. Dropped.
+- **Old Set C Q3** stated △ABE ~ △CFB, the claim of Exercise Set 6.3 Q8.
+  Dropped.
+- **Old Set A Q8's** answer proved DE ∥ BC by Theorem 6.2, which is
+  Exercise Set 6.2 Q8. Kept as practice Q6, answered by the mid-point
+  theorem from Class IX instead.
+- **Old Set A Q1** had *two squares* as its answer and **old Set C Q5** had
+  *All equilateral triangles are similar* as a true option: both answer
+  Exercise Set 6.1 Q1. Replaced by Example 2 (regular hexagons) and practice
+  Q13 (regular pentagons).
+- **New Example 4 printed AD = 2.4 cm** in a DE ∥ BC triangle, which is the
+  answer to Exercise Set 6.2 Q1 (ii). Its numbers were changed (AD 3, AE 2.5,
+  EC 4; AB 7.8 cm).
+- `check-no-repeats` then reports 4 pairs at 50% or more, each judged: the
+  Q2-style ratio test (practice Q7) with other numbers, the Stage 1 item
+  above (now fixed), and practice Q13's *All congruent triangles are
+  similar* against the body's circles and squares, which the body already
+  states on page 1.
+
+**`ANSWERS.md` written** for Exercise Sets 6.1–6.3, the questions in the
+running text (including every (Why?)/(How?) in the proofs of Theorems
+6.2–6.5 and what each activity should show), Stage 1 and all 30 practice
+questions. Proofs are one statement to a line; constructions say what the
+figure must show; Set 6.1 Q2 gives a worked instance.
+
+### Verified
+
+`check-numbers.mjs` passes **259 claims**, evaluating 67 printed identities
+(fractions, surds, degrees, and proportions with one unknown solved against
+the value printed after them). It reads **figure labels back by geometry** —
+each measure to the nearest side, each angle to the vertex of its arc — and
+re-derives from them:
+- Fig. 6.5's four ratios and angles, Figs 6.6–6.8, 6.25, 6.27, 6.30;
+- Exercise Set 6.2 Q1 from Fig. 6.17 (and that D divides AB in the printed
+  ratio), Q2 from the question's own values;
+- **every verdict in Set 6.3 Q1 from Fig. 6.34**, including that the 80° in
+  (v) is not between the marked sides, and the correspondence *ABC ~ QRP*;
+- Set 6.3 Q2 from Fig. 6.35, Q15, Examples 5 and 7, Activities 2–6 (the
+  Activity 4 lengths by the sine rule);
+- Stage 1, every Solved Example, the practice answers a lettered part at a
+  time, every multiple-choice question in both stages (exactly one right
+  option, matching the key, and the distractors each example explains), and
+  every assertion–reason letter;
+- `ANSWERS.md`'s key and working.
+
+**Break tests: 18 of 18 caught**, run on a scratch copy (body answers,
+figure labels, a question's given value, Beyond examples, Stage 1, a key
+letter, key rows, a lettered part set without maths, an option, a
+distractor, `ANSWERS.md` values and key). Two tests were themselves wrong at
+first — one aimed at the wrong page file, one added text without changing a
+value — and were rewritten.
+
+**A number found wrong and fixed while writing `ANSWERS.md`:** my own
+Activity 4 lengths (AB ≈ 2.05, CA ≈ 2.76) did not match the sine rule; the
+check caught it and they are 1.96, 2.64, 3.26 and 4.40 cm.
+
+**Fitting:** nothing is clipped; page 21 runs 1.3 mm into the bottom margin.
+`orphans` finds 0 stranded openers, `check-labels` no collisions,
+`fit-options` every row fits. I read the proofs of pages 8, 10, 18, 19, 26,
+30, 35 and 36.
+
+**Colour:** pages 3, 21 and 36 read in greyscale and deuteranopia. Fig. 6.4's
+one fill is a pale shadow named in the caption; nothing depends on colour.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 7 | 83% | Example 1 overleaf, a panel with its figure (138 mm) |
+| 8 | 60% | Example 1 alone; Example 2 overleaf (169 mm, two figures) |
+| 9 | 73% | Example 2 alone; Example 3 overleaf (124 mm) |
+| 17 | 58% | Example 4 alone; Examples 5 and 6 fill page 18 |
+| 19 | 67% | Example 7 alone; Example 8 overleaf (222 mm) |
+| 23 | 82% | Set 6.3 Q12, moved to face Fig. 6.41 on page 24 (`data-close`) |
+| 26, 27 | 71%, 74% | Solved Examples panels |
+| 29, 31 | 74%, 67% | a `Type` head with its example |
+| 34, 35 | 83%, 75% | practice blocks moved after `fit-options`; page 35 ends before **the Answers stage, which always opens a page** |
+| 36, 37 | 75%, 74% | the answers; the last page |
+
+### Flagged, not done
+
+- **Fig. 6.34 (iv):** the 70° label sits nearer N than M, though its arc is
+  at M. A reader could take it as ∠N. Left, since moving a label is a
+  drawing change beyond this pass.
+- **Unsourced history:** Thales' dates (below, already flagged).
+- **Body examples are tall:** stepped with their figures, Examples 1–8 hold
+  five pages open. Setting a figure beside its rows would need a component.
+- The *Every answer worked* table below predates this pass; for the current
+  Beyond key, see `ANSWERS.md`.
+
+---
+
 Written new from NCERT *Mathematics, Textbook for Class X* (reprint 2026-27),
 Chapter 6, *Triangles* (textbook pages 73–98). Original LearnLab text in
 NCERT's order of topics, activities, examples and questions; no sentence is
@@ -14,6 +248,10 @@ activities are paragraphs led by **Activity N.**; proofs and solutions are
 `.work--list` rows with the reason in brackets. The source's *6.5 Summary* is
 the chapter summary; its *A note to the reader* (the RHS criterion) is a
 `c-tip`.
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted: `check-body-maths` reports no mathematics lost or added, `check-numbers.mjs` passes, 0 stranded openers, every option row fits, no label collisions. One coordinator edit: in Fig. 6.34 (iv) the 70° label sat at (227.8, 159.5), nearer N than M, and read as the angle at N. It is now at (228.5, 155), inside the angle at M just past its arc. `check-labels` is clean, and the proof was read.
 
 ## Figures
 

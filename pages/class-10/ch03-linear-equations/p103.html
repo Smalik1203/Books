@@ -2,36 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 2</span>
-        <p>The solution of $2x + 3y = 12$ and $3x - 2y = 5$ is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4"><li>$x = 2$, $y = 3$</li><li>$x = 3$, $y = -2$</li><li>$x = 3$, $y = 2$</li><li>$x = -3$, $y = 2$</li></ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <div class="work work--list">
-          <p>$4x + 6y = 24$ and $9x - 6y = 15$ &nbsp; (multiplying by 2 and by 3)</p>
-          <p>$13x = 39$, so $x = 3$ &nbsp; (adding), and then $6 + 3y = 12$ gives $y = 2$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>The lines $2x + y = 10$ and $x - y = 2$ form a triangle with the $y$-axis. Its vertices are</p>
+          <ol class="c-parts c-parts--alpha c-parts--1"><li>$(5, 0)$, $(2, 0)$ and $(4, 2)$</li><li>$(0, 10)$, $(0, 2)$ and $(4, 2)$</li><li>$(0, 10)$, $(0, -2)$ and $(4, 2)$</li><li>$(10, 0)$, $(-2, 0)$ and $(4, 2)$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>adding the equations, $3x = 12$, so $x = 4$ and $y = 2$</span>
+              <span class="work__why">where the lines meet</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>on the $y$-axis $x = 0$, so the first line meets it at $(0, 10)$ and the second at $(0, -2)$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c)</span></div>
+          </div>
+          <p>Option (a) uses the points where the lines meet the $x$-axis, (b) gets a sign wrong, and (d) swaps the coordinates.</p>
         </div>
-        <p>The answer is (c). Option (a) swaps $x$ and $y$, which fits the first equation but not the second. Options (b) and (d) change a sign, and fit neither.</p>
       </div>
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 3</span>
-        <p>2 kg of apples and 1 kg of grapes cost ₹160. 4 kg of apples and 2 kg of grapes cost ₹300. Then</p>
-        <ol class="c-parts c-parts--alpha c-parts--1"><li>apples cost ₹70 a kg and grapes ₹20 a kg</li><li>apples cost ₹75 a kg and grapes ₹10 a kg</li><li>many different prices fit both statements</li><li>no prices fit both statements</li></ol>
-      </div>
+      <h3>Type 2 &middot; Reading a pair from its ratios</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>Let apples cost ₹$x$ a kg and grapes ₹$y$ a kg. Then $2x + y = 160$ and $4x + 2y = 300$. Here $\frac{2}{4} = \frac{1}{2}$ but $\frac{160}{300} \neq \frac{1}{2}$, so the lines are parallel and no prices fit: (d). Doubling the first statement says 4 kg and 2 kg cost ₹320, not ₹300. Options (a) and (b) fit the first statement only, and (c) would need the costs to be ₹320.</p>
-      </div>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>The lines $3x + y = 9$ and $x - y = -1$ form a triangle with the $y$-axis. Its vertices are</p>
-        <ol class="c-parts c-parts--alpha c-parts--1"><li>$(3, 0)$, $(-1, 0)$ and $(2, 3)$</li><li>$(0, 9)$, $(0, 1)$ and $(2, 3)$</li><li>$(0, 9)$, $(0, -1)$ and $(2, 3)$</li><li>$(9, 0)$, $(1, 0)$ and $(2, 3)$</li></ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>The pair $kx + 3y = k - 3$ and $12x + ky = k$ has no solution when $k$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$6$</li><li>$-6$</li><li>$6$ or $-6$</li><li>$12$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{k}{12} = \dfrac{3}{k}$, so $k^2 = 36$</span>
+              <span class="work__why">no solution needs this</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$k = 6$ or $k = -6$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$k = 6$: &nbsp; $\dfrac{c_1}{c_2} = \dfrac{-3}{-6} = \dfrac{1}{2} = \dfrac{3}{6}$, so the lines coincide</span>
+              <span class="work__why">infinitely many</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$k = -6$: &nbsp; $\dfrac{c_1}{c_2} = \dfrac{9}{6} = \dfrac{3}{2} \neq \dfrac{3}{-6}$, so the lines are parallel</span>
+              <span class="work__why">no solution</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>Option (c) stops at $k^2 = 36$ and forgets to check $\frac{c_1}{c_2}$; (a) is the value that gives infinitely many solutions; (d) makes $\frac{a_1}{a_2} = 1$ but not $\frac{b_1}{b_2}$.</p>
+        </div>
       </div>
 
     </div>
