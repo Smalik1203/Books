@@ -2,81 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A change is a multiplier</div>
-        <p>Going up by $r\%$ is multiplying by $\left(1 + \dfrac{r}{100}\right)$; coming
-        down by $r\%$ is multiplying by $\left(1 - \dfrac{r}{100}\right)$. A rise of
-        $8\%$ is $\times 1.08$, a discount of $20\%$ is $\times 0.8$, a fall of $37.5\%$
-        is $\times 0.625$. Getting into the habit of the multiplier will make the rest of
-        this chapter much shorter than it would otherwise be.</p>
-      </div>
+            <h2><span class="badge">1.6</span><span class="name">Bought, Marked, Sold</span></h2>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>A salary of ₹$25{,}000$ a month is raised by $8\%$. What is the new salary?
-          A year later it is cut by $8\%$. What is it then?</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">after the rise</span>
-              <span>$25{,}000 \times 1.08 = 27{,}000$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">after the cut</span>
-              <span>$27{,}000 \times 0.92 = 24{,}840$</span>
-            </div>
-          </div>
-          <p>Not back to ₹$25{,}000$, but ₹$160$ short of it. The rise was $8\%$ of
-          $25{,}000$ and the cut was $8\%$ of $27{,}000$, and those are different sums of
-          money. Section 1.8 is about how far that can be taken.</p>
+      <p>A shopkeeper's sweater has three prices attached to it, and telling them apart is
+      most of the work in any question about a shop.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">cost price</span>
+          <span>what the seller paid for it</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">marked price</span>
+          <span>what the tag says — the price before any bargaining</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">selling price</span>
+          <span>what the customer actually pays</span>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 1.4</div>
-        <ol class="c-questions">
-          <li>Find the percentage increase or decrease.
-              <ol class="c-parts c-parts--1">
-                <li>a price rising from ₹$80$ to ₹$92$</li>
-                <li>a crowd falling from $2500$ to $2000$</li>
-                <li>a length growing from $45$ cm to $54$ cm</li>
-              </ol>
-            </li>
-        </ol>
+      <p>Kishanlal buys sweaters from a wholesaler at <span class="nb">₹$300$</span> each, marks them at <span class="nb">₹$480$</span>,
+      and after some bargaining sells one for <span class="nb">₹$430$</span>. Two things happened at once, and
+      they are measured against two different prices.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 74" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A price line with the cost price at 300, the selling price at 430 and the marked price at 480, showing profit measured from the cost price and discount measured back from the marked price">
+      
+            <path class="dg-line" d="M16 48 H190"/>
+            <path class="dg-thin" d="M30 44 V52 M150 44 V52 M180 44 V52"/>
+      
+            <text class="dg-label dg-label--sm" x="30" y="60" text-anchor="middle">₹300</text>
+            <text class="dg-label dg-label--sm" x="150" y="60" text-anchor="middle">₹430</text>
+            <text class="dg-label dg-label--sm" x="180" y="60" text-anchor="middle">₹480</text>
+      
+            <text class="dg-note" x="30" y="69" text-anchor="middle">cost</text>
+            <text class="dg-note" x="150" y="69" text-anchor="middle">sold</text>
+            <text class="dg-note" x="180" y="69" text-anchor="middle">marked</text>
+      
+            <line class="dg-dim" x1="30" y1="32" x2="150" y2="32"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="90" y="28" text-anchor="middle">profit ₹130</text>
+      
+            <line class="dg-dim" x1="150" y1="16" x2="180" y2="16"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="165" y="12" text-anchor="middle">discount ₹50</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.4</span> One sweater, three prices. The
+          profit is measured from the cost price and the discount from the marked price,
+          so the two percentages have different numbers underneath them.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write each change as a multiplier.
-              <ol class="c-parts c-parts--4">
-                <li>up $15\%$</li>
-                <li>down $15\%$</li>
-                <li>up $250\%$</li>
-                <li>down $2\%$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>The profit is $430 - 300 = $ <span class="nb">₹$130$</span>, and the discount is $480 - 430 = $ <span class="nb">₹$50$</span>.
+      Had the selling price come out below the cost price, the difference would have been
+      a <span class="term">loss</span> instead.</p>
+
+      <p>Both amounts can be turned into percentages, and each has its own base. There is
+      a reason for that, and it is not an accident.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two percentages, two bases</div>
+        <p><strong>Profit and loss are percentages of the cost price</strong>, because
+        what the seller wants to know is how well the money they put in came back.
+        <strong>A discount is a percentage of the marked price</strong>, because what the
+        buyer is being offered is a cut in the price they were shown. Take either
+        percentage of the wrong price and the answer is simply about something else.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The population of a city in 2025 is $250\%$ of what it was in 2000. If it
-          was $50$ lakh in 2000, what is it now? By what percentage has it grown?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A shirt's price is raised by $20\%$ and then lowered by $20\%$. Without
-          calculating, say whether the final price is more than, less than or equal to
-          the first. Then check with a starting price of ₹$500$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>After a rise of $25\%$, a bus fare is ₹$15$. What was it before?</li>
-        </ol>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">profit per cent</span>
+          <span>$\dfrac{130}{300} \times 100 = 43.3\%$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">discount per cent</span>
+          <span>$\dfrac{50}{480} \times 100 = 10.4\%$</span>
+        </div>
       </div>
 
     </div>

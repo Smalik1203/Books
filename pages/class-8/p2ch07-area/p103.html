@@ -2,63 +2,81 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Three questions off one rhombus</div>
-        <p>Each part uses a different fact, and they have to be taken in order because
-        each answer feeds the next.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the other diagonal</span>
-            <span>$\tfrac12 \times 30 \times d = 240$, so $d = 16$ cm</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the side</span>
-            <span>$\sqrt{15^2 + 8^2} = \sqrt{289} = 17$ cm</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the height</span>
-            <span>$17 \times h = 240$, so $h = \tfrac{240}{17} \approx 14.1$ cm</span>
-          </div>
-        </div>
-        <p>The middle line is Chapter 2's theorem, used on the quarter of the rhombus cut
-        off by the two half-diagonals — $15$ and $8$, because the diagonals bisect each
-        other. The last line is the rhombus read as a parallelogram instead. One shape,
-        three formulas, and the area passed between them.</p>
+      <div class="c-try">
+        <p>A parallelogram has sides of $13$ cm and $20$ cm, and the perpendicular height
+        on the $20$ cm side is $12$ cm. Find the height on the $13$ cm side. Then say why
+        your answer had to come out at less than $20$ cm.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A walk made straight by a mirror</div>
-        <p>This is not an area question, and section 7.4 answers it anyway. Reflect the
-        tank across the river to a point $T'$ on the far side. For any point $P$ on the
-        bank, the stretch $PT$ and the stretch $PT'$ have exactly the same length,
-        because reflecting a point does not change its distance from anything on the
-        mirror line.</p>
-        <p>So the walk house $\to P \to$ tank is always the same length as house
-        $\to P \to T'$ — and that second walk is shortest when it is straight. Draw the
-        straight line from the house to $T'$; where it crosses the bank is where Gopal
-        should fill his pot.</p>
-        <p>The trick was to replace a quantity by another that is always equal to it and
-        easier to think about, which is what the whole chapter did with areas. Here it is
-        done with a length.</p>
+      <p>Section 7.6 said either side may be the base, so long as the height used is
+      the one belonging to it. Take the $20$ cm side first, where both numbers are
+      given.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the area</span>
+          <span>$20 \times 12 = 240$ cm<sup>2</sup></span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the other way</span>
+          <span>$13 \times h = 240$, so $h = \tfrac{240}{13} \approx 18.5$ cm</span>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A field cut in two by its own diagonal</div>
-        <p>The diagonal splits the quadrilateral into two triangles, and both stand on
-        it, so both use it as their base.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the two triangles</span>
-            <span>$\tfrac12 \times 24 \times 13 \;+\; \tfrac12 \times 24 \times 7$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">common factor</span>
-            <span>$\tfrac12 \times 24 \times (13 + 7) = 240$ m<sup>2</sup></span>
-          </div>
+      <p>And it had to be under $20$ cm. The height on the $13$ cm side is the distance
+      between the two $13$ cm sides, and the $20$ cm sides run from one of those to the
+      other — so the $20$ cm side is at least as long as that distance, and longer
+      unless the parallelogram happens to be a rectangle. A height can exceed the side
+      it stands on, as this one does, but never the side it is measured along.</p>
+
+      <div class="c-try">
+        <p>A photograph $6$ cm by $4$ cm is enlarged so that each of its sides is three
+        times as long. How many times as much paper does the enlargement need? If the
+        original print cost <span class="nb">₹$12$</span> and printing is charged by area, what does the
+        enlargement cost?</p>
+      </div>
+
+      <p>The enlargement is $18$ cm by $12$ cm, so the comparison can be done twice
+      over — by counting, or by noticing that each of the two dimensions was tripled
+      and so the product was tripled twice.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">before and after</span>
+          <span>$6 \times 4 = 24$ and $18 \times 12 = 216$</span>
         </div>
-        <p>The two perpendiculars were added before anything was multiplied, which is the
-        only labour-saving in the question and the reason for taking the common factor
-        out. Notice also what was not needed: none of the four sides, and no angle.</p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the ratio</span>
+          <span>$216 \div 24 = 9$, which is $3^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the cost</span>
+          <span>$9 \times 12 = 108$, so <span class="nb">₹$108$</span></span>
+        </div>
+      </div>
+
+      <p>This is the same arithmetic as the square inch of section 7.10 and catches the
+      same people. Anybody expecting to pay three times as much has multiplied the
+      price by the scale factor rather than by its square.</p>
+
+      <div class="c-try">
+        <p>Of all rectangles with an area of $36$ cm<sup>2</sup> and whole-centimetre
+        sides, which has the shortest perimeter and which the longest? Is there a longest
+        at all if the sides need not be whole numbers?</p>
+      </div>
+
+      <p>Whole-number sides of area $36$ mean factor pairs, and there are five of
+      them.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the pairs</span>
+          <span>$36 \times 1$, $18 \times 2$, $12 \times 3$, $9 \times 4$, $6 \times 6$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">their perimeters</span>
+          <span>$74$, $40$, $30$, $26$, $24$</span>
+        </div>
       </div>
 
     </div>

@@ -2,49 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>Shreyas measures the heights of all $24$ students in his class and reports
-          an average of $150.2$ cm. His teacher then notices that everyone was wearing
-          the school shoes, which add $1$ cm. Must all $24$ be measured again?</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">what happened</span>
-              <span>every height was recorded $1$ cm too large</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so the mean</span>
-              <span>is $1$ cm too large as well</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">the true average</span>
-              <span>$150.2 - 1 = 149.2$ cm</span>
-            </div>
-          </div>
-          <p>Nobody need be measured again, and the twenty-four individual heights need
-          not even be known. A fixed error in every reading becomes the same fixed error
-          in the mean, and can be taken off at the end.</p>
-        </div>
-      </div>
-
-      <p>The warning inside that is worth stating. It works because the error was the
-      <em>same</em> for everybody. Had some students been in shoes and some barefoot,
-      nothing could be recovered from the average alone, and the measuring would have to
-      be done again.</p>
-
-      <h2><span class="badge">5.5</span><span class="name">The Middle Value</span></h2>
-
-      <p>The <span class="term">median</span> answers a different question about the same
-      pile of numbers. Sort them, and the median is the one in the middle — the value
-      with as many below it as above. An even count has no single middle, so the median
-      is taken as the average of the two that share the position.</p>
-
-      <p>Take $3$, $6$, $8$, $9$, $14$. There are five values, the third is $8$, and two
-      lie on either side of it, so the median is $8$. Now include $11$. Sorted, the
-      collection reads $3$, $6$, $8$, $9$, $11$, $14$, the two middle values are $8$ and
-      $9$, and the median is $8.5$.</p>
-
       <p>The direction of that change was forced. A value greater than the median arrives
       on the upper side and unbalances the count — there are now more values above the
       old median than below — so the middle must shift upwards to even the numbers again.
@@ -54,6 +11,55 @@
       with an even count the median is the average of two neighbours and lands between
       them unless they happen to be equal. A median need not be a member of the
       collection, and the mean need not be either.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The median counts values; the mean weighs them</div>
+        <p>Both move up when a large value is added and down when a small one is. The
+        difference is by how much. The mean asks each value how far away it is; the
+        median asks only which side it is on. A value a long way out therefore drags the
+        mean and barely touches the median.</p>
+      </div>
+
+      <p>Section 5.2 had exactly such a set. The values $10$, $10$, $11$, $17$ have a
+      mean of $12$ and a median of $10.5$, the average of the two middle values. Drag the
+      $17$ out to $37$ and the mean climbs all the way to $17$ — but the sorted order is
+      unchanged, the two middle values are still $10$ and $11$, and the median stays at
+      $10.5$ exactly.</p>
+
+      <p>Neither is the right answer and neither is wrong. They are answers to two
+      questions, and which one a reader wants depends on whether the far-out value is the
+      point of the data or a distraction from it.</p>
+
+      <h2><span class="badge">5.6</span><span class="name">An Average with a Piece Missing</span></h2>
+
+      <p>Everything so far has run forwards: here is the data, find the average. Run it
+      backwards and the average becomes given information, with an unknown inside it — an
+      equation.</p>
+
+      <div class="c-example">
+                      <div class="c-example__tab">Example 4</div>
+                      <div class="c-example__body">
+                        <p>Coach Balwan wrote down the weights, in kilograms, of his ten kushti
+                        players: $42$, $40$, $39$, $33$, $48$, $38$, $42$, $35$, $32$ and one more that
+                        has since been smudged. He also wrote that the mean was $39.2$ kg. What was the
+                        missing weight?</p>
+                        <p><strong>Solution.</strong></p>
+                        <div class="work">
+                          <div class="work__row"><span class="work__label">Step 1</span>
+                            <span>$\dfrac{42 + 40 + 39 + 33 + 48 + 38 + 42 + 35 + 32 + w}{10} = 39.2$</span>
+                            <span class="work__why">$w$ is missing</span></div>
+                          <div class="work__row"><span class="work__label">Step 2</span>
+                            <span>the nine add to $349$, so $349 + w = 392$</span>
+                            <span class="work__why">multiply both sides by 10</span></div>
+                          <div class="work__row"><span class="work__label">Step 3</span>
+                            <span>$w = 392 - 349 = 43$ kg</span></div>
+                          <div class="work__row"><span class="work__label">Answer</span>
+                            <span>The missing weight was $43$ kg</span></div>
+                        </div>
+                        <p>The mean was used in reverse: the known mean was multiplied by ten to recover
+      the total, and the total is what the missing value was hiding in.</p>
+                      </div>
+                    </div>
 
     </div>
   </div>

@@ -1,40 +1,20 @@
-<section class="page">
+<section class="page" data-close>
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>A graph of monthly rainfall is drawn for six Indian cities, three on the
-            west coast and three on the east. The west-coast lines peak between June and
-            August; the east-coast ones peak between October and December.</p>
-            <p>The graph shows that. It does not explain it. What questions would you
-            want to ask next, and which of them could be answered with more data of the
-            same kind — and which could not?</p>
-          </div>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>Using Fig. 5.6, say when Manoj's school broke for lunch and for how long,
+            and how long his journey to school took. Then describe how a Sunday strip of
+            your own would differ from a school-day one.</li>
+        </ol>
       </div>
-
-      <h2><span class="badge">5.10</span><span class="name">Pictures Without Axes</span></h2>
-
-      <p>Manoj keeps a record of what he does all day. He rules a strip of paper into
-      forty-eight boxes, one for each half hour from midnight to midnight, and colours
-      each box by what he was doing then. There is no axis on it and not a number
-      anywhere, and it is data all the same.</p>
 
       <div class="c-figure c-figure--full">
         <figure>
           <svg viewBox="0 0 196 50" data-size="full" xmlns="http://www.w3.org/2000/svg"
                role="img" aria-label="A strip of forty-eight coloured boxes recording one day in half-hour steps, with a long sleeping block at each end, travel and school through the middle, and a short eating block inside the school stretch">
-      
+
             <path class="dg-fill-a" d="M8 6 H16 V12 H8 Z"/>
             <path class="dg-line"   d="M8 6 H16 V12 H8 Z"/>
             <text class="dg-note" x="19" y="11.5">sleep</text>
@@ -50,7 +30,7 @@
             <path class="dg-fill-d" d="M152 6 H160 V12 H152 Z"/>
             <path class="dg-line"        d="M152 6 H160 V12 H152 Z"/>
             <text class="dg-note" x="163" y="11.5">other</text>
-      
+
             <path class="dg-fill-a" d="M8 20 H53 V34 H8 Z M173 20 H188 V34 H173 Z"/>
             <path class="dg-fill-d" d="M53 20 H60.5 V34 H53 Z M131.75 20 H150.5 V34 H131.75 Z
                                             M158 20 H173 V34 H158 Z"/>
@@ -58,34 +38,74 @@
                                        M150.5 20 H158 V34 H150.5 Z"/>
             <path class="dg-fill-teal" d="M64.25 20 H71.75 V34 H64.25 Z M124.25 20 H131.75 V34 H124.25 Z"/>
             <path class="dg-fill-c" d="M71.75 20 H98 V34 H71.75 Z M105.5 20 H124.25 V34 H105.5 Z"/>
-      
+
+            <path class="dg-thin" d="M44 12 L48 6 M48 12 L52 6 M60.5 34 L64.25 20 M98 34 L101.75 20 M101.75 34 L105.5 20 M150.5 34 L154.25 20 M154.25 34 L158 20"/>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="118" y="10.6" text-anchor="middle">&bull;</text>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="66.1" y="28.6" text-anchor="middle">&bull;</text>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="69.9" y="28.6" text-anchor="middle">&bull;</text>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="126.1" y="28.6" text-anchor="middle">&bull;</text>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="129.9" y="28.6" text-anchor="middle">&bull;</text>
             <path class="dg-thin" d="M23 20 V34 M38 20 V34 M53 20 V34 M68 20 V34 M83 20 V34 M98 20 V34
                                      M113 20 V34 M128 20 V34 M143 20 V34 M158 20 V34 M173 20 V34"/>
             <path class="dg-line" d="M8 20 H188 V34 H8 Z"/>
-      
+
             <text class="dg-tick" x="4" y="44">midnight</text>
             <text class="dg-tick" x="53" y="44" text-anchor="middle">6 am</text>
             <text class="dg-tick" x="98" y="44" text-anchor="middle">noon</text>
             <text class="dg-tick" x="143" y="44" text-anchor="middle">6 pm</text>
             <text class="dg-tick" x="192" y="44" text-anchor="end">midnight</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 5.6</span> One day, in forty-eight
-          half-hour boxes. The faint lines divide it into two-hour blocks, which is a
-          convenience for the eye and not part of the record.</figcaption>
+          <figcaption><span class="fignum">Fig. 5.6</span> (repeated from Section 5.10, for Exercise Set 5.3, Question 6)</figcaption>
         </figure>
       </div>
 
-      <p>It reads easily once you know the rule. He slept from midnight until half past
-      five, and again from ten at night. He travelled twice, half an hour each way, with
-      a long block of school between. Inside that block is a short stretch of eating, the
-      lunch break, at noon. None of that was written down in words anywhere.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li class="hard">A quantity starts at $1$ and doubles every year for six years.
+            Plot it as a line graph, and explain why joining the points with straight
+            segments overstates the quantity at every moment in between.</li>
+        </ol>
+      </div>
 
-      <p>What makes the strip readable is its key: one box is half an hour, and one
-      colour is one activity. Without the key it is a band of colours. A line graph's
-      rule is written along its axes, a shaded map's rule is its colour scale, and a
-      strip's rule is a list of five colours. In every case the reader's first job
-      is to find the rule, which is step one of the last section wearing different
-      clothes.</p>
+      <div class="c-summary">
+        <div class="c-summary__title">What this chapter established</div>
+        <ol>
+          <li>The <span class="term">mean</span> is a fair share, and it is also a
+          balance point: the distances from it to the values below add up to the
+          distances to the values above. There is exactly one such point.</li>
+          <li>Including a value above the mean raises the mean, one below lowers it, and
+          one equal to it changes nothing. Removing a value does the opposite in each
+          case.</li>
+          <li>A set of new values leaves the mean untouched exactly when the new values
+          have that same mean themselves.</li>
+          <li>Add $c$ to every value and the mean rises by $c$; multiply every value by
+          $k$ and the mean is multiplied by $k$. So an error repeated in every reading
+          becomes the same error in the mean, and can be taken off at the end.</li>
+          <li>The <span class="term">median</span> is the middle value of the sorted
+          data, or the average of the two middle ones. It moves in the same direction as
+          the mean and by less, because it asks which side a value is on and not how far
+          away it is.</li>
+          <li>A mean and a count between them carry the sum, which is what lets a missing
+          value, or a correction to one, be recovered without knowing the rest.</li>
+          <li>In a <span class="term">frequency table</span>, multiply each value by its
+          frequency before adding, and divide by the total of the frequencies. A running
+          total of frequencies gives the median without sorting anything.</li>
+          <li>Where readings come in time order, plot them and join them: a
+          <span class="term">line graph</span>. Its steepness shows a rate, and a value
+          read between two dots is an estimate, not a measurement.</li>
+          <li>Read a graph in two steps — first what is given, then what follows. A bar's
+          length must be proportional to its value, so a bar graph's axis starts at
+          zero.</li>
+          <li>A picture is data when a stated rule links what is drawn to what is meant.
+          Axes, a colour scale, a key of five colours: find the rule before reading the
+          picture.</li>
+        </ol>
+      </div>
+
+      <p>Both halves of the chapter were about the same discipline. A mean, a median and
+      a line graph are all summaries, and each of them is worth having because it throws
+      something away. Knowing what a summary has thrown away is the difference between
+      reading it and being told what to think by it.</p>
 
     </div>
   </div>

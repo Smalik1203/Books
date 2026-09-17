@@ -2,61 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">One wrong entry, and how much it cost</div>
-        <p>Only one figure was wrong, so only the total needs mending — and the total is
-        what the average was hiding.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the recorded total</span>
-            <span>$7 \times 4{,}000 = 28{,}000$ rupees</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Ten values have a mean of $25$. Two of them, $19$ and $35$, are removed. Does the mean go up or down, and to what?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the two removed have a mean of $27$, above $25$</span>
+              <span class="work__why">so the mean falls</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$10 \times 25 = 250$ and $250 - 19 - 35 = 196$</span>
+              <span class="work__why">the sum that is left</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$196 \div 8 = 24.5$</span>
+              <span class="work__why">eight values remain</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The mean goes down, to $24.5$</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the shortfall</span>
-            <span>$4{,}500 - 2{,}400 = 2{,}100$ rupees</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the true average</span>
-            <span>$30{,}100 \div 7 = 4{,}300$ rupees</span>
-          </div>
-        </div>
-        <p>Compare it with Example 3, where the error was in every reading and came off
-        the mean whole. Here the error was in one reading out of seven, so it arrives at
-        the mean divided by seven: <span class="nb">₹$2{,}100$</span> shared out is
-        <span class="nb">₹$300$</span>, which is exactly the distance from
-        <span class="nb">₹$4{,}000$</span> to <span class="nb">₹$4{,}300$</span>.</p>
-      </div>
-
-      <p>That last comparison is the thread through all eight. An average is a total in
-      disguise, and every one of these questions was answered by taking the disguise off
-      — multiplying the mean by the count, doing whatever the question described to the
-      total, and dividing back.</p>
-
-      <p>The other half of them had a second, shorter road: ask what the change does to
-      the balance and how many values have to absorb it. Where the numbers are ugly that
-      road is much the better one, and it is the one the chapter's picture of a fulcrum
-      was for.</p>
-
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One idea each</div>
-        <ol class="c-questions">
-          <li>The mean is the point at which
-                <ol class="c-parts c-parts--alpha c-parts--1">
-                  <li>half the values lie below it</li>
-                  <li>most of the values are</li>
-                  <li>the distances to the values below and above it balance</li>
-                  <li>the largest and the smallest average out</li>
-                </ol>
-            </li>
-        </ol>
+      <h3>Type 3 &middot; Changing every value</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A class's marks in a test out of $20$ have a mean of $13.5$. The teacher turns every mark into a mark out of $100$ by multiplying it by $5$, and then adds $2$ bonus marks to every student. What is the new mean?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$13.5 \times 5 = 67.5$</span>
+              <span class="work__why">every value times 5</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$67.5 + 2 = 69.5$</span>
+              <span class="work__why">every value plus 2</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The new mean is $69.5$</span></div>
+          </div>
+          <p>No single mark was needed. Each change to every value makes the same change to the mean, in the same order.</p>
+        </div>
+      </div>
+
+      <h3>Type 4 &middot; Finding and moving the median</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Find the median of $14$, $9$, $21$, $9$, $17$, $30$, $12$, $25$. What is the median after $40$ is included?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>sorted: $9, 9, 12, 14, 17, 21, 25, 30$</span>
+              <span class="work__why">always sort first</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(14 + 17) \div 2 = 15.5$</span>
+              <span class="work__why">eight values: 4th and 5th</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>with $40$, nine values: the 5th is $17$</span>
+              <span class="work__why">$40$ goes on the end</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The median is $15.5$, and then $17$</span></div>
+          </div>
+          <p>The median moved up to the next value in the list. It would have moved to $17$ whether the new value was $40$ or $400$.</p>
+        </div>
       </div>
 
     </div>

@@ -2,45 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Three rectangles standing on one line: a long thin eight by one, a five by four, and a three by three square">
-      
-            <path class="dg-fill-a" d="M10 51 H82 V60 H10 Z M98 24 H143 V60 H98 Z M159 33 H186 V60 H159 Z"/>
-            <path class="dg-thin"   d="M19 51 V60 M28 51 V60 M37 51 V60 M46 51 V60 M55 51 V60 M64 51 V60 M73 51 V60
-                                       M107 24 V60 M116 24 V60 M125 24 V60 M134 24 V60
-                                       M98 33 H143 M98 42 H143 M98 51 H143
-                                       M168 33 V60 M177 33 V60 M159 42 H186 M159 51 H186"/>
-            <path class="dg-line"   d="M10 51 H82 V60 H10 Z M98 24 H143 V60 H98 Z M159 33 H186 V60 H159 Z"/>
-      
-            <text class="dg-dim-label" x="46" y="70" text-anchor="middle">8 by 1</text>
-            <text class="dg-dim-label" x="120.5" y="70" text-anchor="middle">5 by 4</text>
-            <text class="dg-dim-label" x="172.5" y="70" text-anchor="middle">3 by 3</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 7.2</span> Drawn to one scale, and
-          standing on one line. The first is by far the longest way round and holds the
-          fewest squares.</figcaption>
-        </figure>
-      </div>
-
-      <table>
-        <thead>
-          <tr><th>Rectangle</th><th>Perimeter (cm)</th><th>Area (cm<sup>2</sup>)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>$8$ by $1$</td><td>$18$</td><td>$8$</td></tr>
-          <tr><td>$5$ by $4$</td><td>$18$</td><td>$20$</td></tr>
-          <tr><td>$3$ by $3$</td><td>$12$</td><td>$9$</td></tr>
-        </tbody>
-      </table>
-
-      <p>The first two settle the first question: equal perimeters, and one holds two and
-      a half times as much as the other. The first and third settle a stronger one. The
-      $8$ by $1$ rectangle has the <em>longer</em> boundary of the two — $18$ cm against
-      $12$ — and the <em>smaller</em> area. So a longer edge does not even guarantee more
-      inside it.</p>
-
       <p>Perimeter and area measure different things, and neither can stand in for the
       other. A fence and the grass it encloses are bought separately for exactly this
       reason: a field can be given more fence and less grass by making it long and thin,
@@ -62,6 +23,47 @@
       out to be the symmetric one, and it is worth watching for. A shape that is as
       regular as its constraints allow is very often the largest, or the smallest, or the
       cheapest of its family.</p>
+
+      <h2><span class="badge">7.4</span><span class="name">Same Base, Same Height</span></h2>
+
+      <p>Draw a line, mark a segment $DC$ on it, and draw a second line parallel to the
+      first. Now pick any point on that second line and join it to $D$ and to $C$. The
+      three triangles below were all made that way, and they have the same area.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 84" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three triangles on one base D C, with their apexes at different points on a line parallel to the base">
+      
+            <path class="dg-thin" d="M10 26 H186 M10 70 H186"/>
+            <path class="dg-line" d="M30 70 L110 70 L40 26 Z M30 70 L110 70 L86 26 Z M30 70 L110 70 L150 26 Z"/>
+            <path class="dg-dim"  d="M170 26 V70"/>
+      
+            <text class="dg-label" x="26" y="78">D</text>
+            <text class="dg-label" x="110" y="78">C</text>
+            <text class="dg-label" x="38" y="22">X</text>
+            <text class="dg-label" x="84" y="22">Y</text>
+            <text class="dg-label" x="148" y="22">Z</text>
+            <text class="dg-dim-label" x="174" y="51">h</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.3</span> $XDC$, $YDC$ and $ZDC$ all
+          stand on $DC$, and every apex is the same distance $h$ from it, because the two
+          lines are parallel. The leaning of $ZDC$ costs it nothing.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two parallels fix the height</div>
+        <p>Triangles on the same base, with their apexes on one line parallel to that
+        base, all have the same area. The apex may be slid anywhere along the line —
+        even past the end of the base — and nothing changes, because the distance
+        between two parallel lines is the same everywhere.</p>
+      </div>
+
+      <p>That is worth having on its own, but it also settles what the area actually
+      <em>is</em>. Slide the apex until it sits directly above one end of the base, and
+      the triangle becomes half of a rectangle — which section 7.2 has already
+      counted.</p>
 
     </div>
   </div>

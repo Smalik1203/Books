@@ -2,10 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Three equations look like more than one unknown's worth of work, and they are
-      not: the last two say what $a$ and $b$ are in terms of $c$, so putting them into
-      the first leaves an equation in $c$ alone.</p>
-
       <div class="work">
         <div class="work__row">
           <span class="work__label work__label--wide">substituting</span>
@@ -32,23 +28,21 @@
         <div class="c-example__body">
           <p>A three-row pyramid has $44$ at the top and $7$ and $9$ at the two ends of
           its bottom row. Complete it.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">call the middle</span>
-              <span>$c$, so the second row is $7 + c$ and $c + 9$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">the top</span>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>call the middle $c$, so the second row is $7 + c$ and $c + 9$</span>
+              <span class="work__why">the rule, twice</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
               <span>$(7 + c) + (c + 9) = 44$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so</span>
-              <span>$2c + 16 = 44$, giving $c = 14$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">and the row above</span>
-              <span>$21$ and $23$, which do add to $44$</span>
-            </div>
+              <span class="work__why">the top</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$2c + 16 = 44$, giving $c = 14$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>the row above is $21$ and $23$, which do add to $44$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>bottom row $7$, $14$, $9$; second row $21$, $23$; top $44$</span></div>
           </div>
           <p>The last line is the check, and it is free — the two numbers were built from
           $c$, so if they fail to add to $44$ the arithmetic went wrong somewhere

@@ -2,56 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">C2</span>
-          <span>$3675 = 3 \times 5^2 \times 7^2$. Only the $3$ is unpaired, so dividing
-          by $3$ leaves $1225 = 35^2$. Dividing by (b) or (c) breaks a pair that was
-          fine, and (d) removes the $3$ and a $7$ — more than was needed.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C3</span>
-          <span>Only $7^3 = 343$ ends in $3$, so the root's last digit is forced. (d) is
-          the square habit carried over by mistake: for squares two roots share an
-          ending, but for cubes the ten endings are all different.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C5</span>
-          <span>(a) $36$ is a square and not a cube; (c) $216$ is a cube and not a
-          square; (d) $729$ genuinely is both — it is $27^2$ and $9^3$ — but $64$ comes
-          first. Both are sixth powers, $2^6$ and $3^6$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C7</span>
-          <span>$2^6 \times 3^3$: the $6$ is a multiple of both $2$ and $3$, but the $3$
-          is a multiple only of $3$. So it is a cube and not a square. To be both, every prime
-          would have to appear a multiple of $6$ times.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C8</span>
-          <span>Every odd square is $8m + 1$, so a number leaving $5$ is not one. (d) is
-          false: $125$ leaves $5$ and is $5^3$. Cubes, unlike odd squares, can leave any
-          remainder at all.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C10</span>
-          <span>$99^2 = 9801$ is below $10\,000$ and $100^2$ is exactly $10\,000$, so
-          the squares run $1^2$ to $99^2$. (c) and (d) count $10\,000$ itself, which the
-          word <em>below</em> excludes.</span>
+      <h3>Type 7 &middot; A cube root from its digits</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
+        <div class="c-example__body">
+          <p>Given that 238&thinsp;328 is a perfect cube, find its cube root without factorising.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>it ends in 8, so the root ends in 2</span>
+              <span class="work__why">$2^3 = 8$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>strike out the last three digits: 238 remains</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$6^3 = 216$ fits and $7^3 = 343$ does not</span>
+              <span class="work__why">the tens digit is 6</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$62^3 = 238\,328$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>62</span></div>
+          </div>
         </div>
       </div>
 
-      <h3>What to carry forward</h3>
+      <h3>Type 8 &middot; Taking differences</h3>
 
-      <p>
-        Three habits from this section will last longer than the questions that carried them. The
-        first is to look inside a number rather than at it: the factorisation answered
-        nearly every hard question here, and the digits answered almost none. The second
-        is that an impossibility needs an argument and not a search — $n^2 + n$ and
-        $\sqrt{2}$ were both settled in three lines, and no amount of checking would
-        have settled either. The third is that two conditions imposed at once are often
-        one condition in disguise, as square-and-cube turned out to mean sixth power.
-      </p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 18</div>
+        <div class="c-example__body">
+          <p>Take differences of the list 5, 8, 13, 20, 29, 40 until they go flat. How was the list built?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>first differences: 3, 5, 7, 9, 11</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>second differences: 2, 2, 2, 2</span>
+              <span class="work__why">flat after two rounds</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>two rounds, settling on 2, is how the squares behave</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$5 - 1 = 4$, $\ 8 - 4 = 4$, $\ 13 - 9 = 4$, and so on</span>
+              <span class="work__why">compare with the squares</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Each entry is a square plus 4: $n^2 + 4$</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
+        <div class="c-practice__sub">Choose the correct option</div>
+        <ol class="c-questions">
+          <li>$17^2$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$34$</li><li>$187$</li><li>$4913$</li><li>$289$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Which of these cannot be a perfect square?<ol class="c-parts c-parts--alpha c-parts--4"><li>$3087$</li><li>$1296$</li><li>$2116$</li><li>$5476$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>$1 + 3 + 5 + \cdots + 29$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$196$</li><li>$225$</li><li>$256$</li><li>$435$</li></ol></li>
+        </ol>
+      </div>
 
     </div>
   </div>

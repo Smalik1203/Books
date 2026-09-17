@@ -5,76 +5,85 @@
       <h2><span class="badge">6.8</span><span class="name">The Largest Product</span></h2>
 
       <p>Fill the digits $2$, $3$ and $5$ into the boxes of
-      $\square\,\square \times \square$, using each digit once. Which arrangement gives
-      the largest product?</p>
+                              $\square\,\square \times \square$, using each digit once. Which arrangement gives
+                              the largest product?</p>
 
       <p>There are six arrangements, since any of the three digits can go in the first
-      box and the remaining two can then be placed in two ways.</p>
+                              box and the remaining two can then be placed in two ways.</p>
 
       <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">multiplier 2</span>
-          <span>$35 \times 2 = 70$ and $53 \times 2 = 106$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">multiplier 3</span>
-          <span>$25 \times 3 = 75$ and $52 \times 3 = 156$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">multiplier 5</span>
-          <span>$23 \times 5 = 115$ and $32 \times 5 = 160$</span>
-        </div>
-      </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">multiplier 2</span>
+                                  <span>$35 \times 2 = 70$ and $53 \times 2 = 106$</span>
+                                </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">multiplier 3</span>
+                                  <span>$25 \times 3 = 75$ and $52 \times 3 = 156$</span>
+                                </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">multiplier 5</span>
+                                  <span>$23 \times 5 = 115$ and $32 \times 5 = 160$</span>
+                                </div>
+                              </div>
 
       <p>The winner is $32 \times 5 = 160$, and it is worth seeing why rather than
-      reading it off the list. The six arrangements have been grouped in pairs that share
-      a multiplier, and inside each pair the one with the larger two-digit number
-      obviously wins, so three of the six can be dropped at once. That leaves
-      $53 \times 2$, $52 \times 3$ and $32 \times 5$.</p>
+                              reading it off the list. The six arrangements have been grouped in pairs that share
+                              a multiplier, and inside each pair the one with the larger two-digit number
+                              obviously wins, so three of the six can be dropped at once. That leaves
+                              $53 \times 2$, $52 \times 3$ and $32 \times 5$.</p>
 
       <p>Comparing what is left is where the algebra earns its place. Split each product
-      into its tens part and its units part.</p>
+                              into its tens part and its units part.</p>
 
       <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$32 \times 5$</span>
-          <span>$(30 \times 5) + (2 \times 5) = 150 + 10$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$52 \times 3$</span>
-          <span>$(50 \times 3) + (2 \times 3) = 150 + 6$</span>
-        </div>
-      </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">$32 \times 5$</span>
+                                  <span>$(30 \times 5) + (2 \times 5) = 150 + 10$</span>
+                                </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">$52 \times 3$</span>
+                                  <span>$(50 \times 3) + (2 \times 3) = 150 + 6$</span>
+                                </div>
+                              </div>
 
       <p>The first parts are equal, and not by accident: in both, the tens digit and the
-      multiplier are the two <em>largest</em> digits, so both come to $10 \times 3 \times
-      5$. The whole comparison therefore falls on the second parts, where the smallest
-      digit $2$ is multiplied by whichever of $3$ and $5$ is doing the multiplying. It
-      should be multiplied by the larger.</p>
+                              multiplier are the two <em>largest</em> digits, so both come to $10 \times 3 \times
+                              5$. The whole comparison therefore falls on the second parts, where the smallest
+                              digit $2$ is multiplied by whichever of $3$ and $5$ is doing the multiplying. It
+                              should be multiplied by the larger.</p>
 
       <p>That argument used nothing about the digits $2$, $3$ and $5$ except their order,
-      so it will run again for any three. Let the digits be $p$, $q$ and $r$ with
-      $p < q < r$. Dropping the loser of each pair leaves $rq \times p$, $rp \times q$
-      and $qp \times r$, and writing each out settles them.</p>
+                              so it will run again for any three. Let the digits be $p$, $q$ and $r$ with
+                              $p < q < r$. Dropping the loser of each pair leaves $rq \times p$, $rp \times q$
+                              and $qp \times r$, and writing each out settles them.</p>
 
       <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$rq \times p$</span>
-          <span>$10rp + qp$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$rp \times q$</span>
-          <span>$10rq + pq$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$qp \times r$</span>
-          <span>$10qr + pr$</span>
-        </div>
-      </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">$rq \times p$</span>
+                                  <span>$10rp + qp$</span>
+                                </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">$rp \times q$</span>
+                                  <span>$10rq + pq$</span>
+                                </div>
+                                <div class="work__row">
+                                  <span class="work__label work__label--wide">$qp \times r$</span>
+                                  <span>$10qr + pr$</span>
+                                </div>
+                              </div>
 
       <p>The first two share the term $pq$, so the comparison is $10rp$ against $10rq$,
-      and $q > p$ settles it for the second. The second and third share $10qr$, so the
-      comparison is $pq$ against $pr$, and $r > q$ settles it for the third.</p>
+                              and $q > p$ settles it for the second. The second and third share $10qr$, so the
+                              comparison is $pq$ against $pr$, and $r > q$ settles it for the third.</p>
+
+      <div class="c-keyidea">
+                                <div class="c-keyidea__title">Largest digit multiplies, the rest go in order</div>
+                                <p>To make $\square\,\square \times \square$ as large as possible from three
+                                digits, use the biggest digit as the multiplier and put the other two in
+                                decreasing order to make the two-digit number: $qp \times r$ when
+                                $p < q < r$. Six cases were checked in the first instance and none in the
+                                second, because the letters covered them all.</p>
+                              </div>
 
     </div>
   </div>

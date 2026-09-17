@@ -1,5 +1,172 @@
 # Class 8 · Mathematics II · Chapter 4 — Taking a Shape Apart
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Class 8 Chapter 1
+model. The chapter was read whole before anything was changed; a backup of
+the old pages is in the agent's scratch folder, not in the repo.
+
+**Pages: 22 before (12 body + 10 Beyond, Crown Quarto), 25 after (11 body +
+14 Beyond, 196 × 276).** The taller page took one page off the body. Beyond
+grew by four: Stage 1 now carries its own explanations, Stage 2 is sixteen
+new stepped examples, and the practice runs to 31 questions.
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once (`refit … body`), after the examples were stepped. `p012.html`
+is gone; `p011.html` closes the body and carries `data-close`.
+
+**All four body examples set as steps.** *Solution*, Step rows, an *Answer*
+row, the reason in a `.work__why`. The old wide labels (*side*, *how many*,
+*edges*, *so*, and Example 4's pairings `$10$ and $5+2$`) became Step rows;
+Example 4's pairings moved into the `.work__why` so no maths span was lost.
+Each example's closing remark stays as a paragraph after the working.
+Verified by `build/check-example-stepping.mjs`: 4 examples, 0 lost
+mathematics. The non-example working blocks in §§ 4.2, 4.6 and 4.8 are
+running text and were left as they were.
+
+**No body question names a figure**, so no figure had to be reprinted.
+Exercise numbering runs 1, 2, 3 … in all three sets (checked by script).
+
+**Beyond the Book rebuilt to the four current stages** (§6a):
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 8 `.c-try` questions, answered in the next stage | **the same eight, each followed by its own explanation**, word for word except as below; `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | the worked answers to stage 1 (*The same eight questions, worked*) | **16 stepped examples**, Examples 1–16, under nine `Type N ·` heads |
+| 3 Problem Sets → **Practice** | 3 multiple-choice sets, 36 questions | **one numbered run of 31**, all six forms, band carrying the numeral |
+| 4 Answers & Takeaways → **Answers** | key, why the options are wrong, *What to carry forward* | key, every other answer in `.work--trace` blocks, why the options are wrong for 8 questions; the closing paragraph of *carry forward* kept without its head |
+
+Stage 2's explanations were moved under their own questions, dropping only
+the `.c-solution` wrapper and its title. Two sentences that pointed forward
+were corrected: *Try each before turning the page* → *before reading what
+follows it*, and *The eight are answered below in the order they were asked.
+Notice how few pictures are needed* → *Look back over the eight and notice
+how few pictures were needed* (moved to the end of the stage).
+
+**Give-aways found and fixed** (the no-give-away rule beats word for word):
+
+| where | printed | answered | now |
+|---|---|---|---|
+| Stage 1 Q1 | side 81, step 4: $8^4 = 4096$ | Ex 4.1 Q2 ($R_4$) | side 243, step 5: $8^5 = 32768$, *a little over half* |
+| Stage 1 Q4 | cube of side 6: $\sqrt{180} \approx 13.4$ | Ex 4.2 Q6 (one of the three unfoldings of 8 × 6 × 4 is $\sqrt{180}$) | cube of side 5: $\sqrt{125} \approx 11.2$, 15 cm of edges, $\sqrt{75} \approx 8.7$ through the middle, *about two and a half centimetres* |
+| Stage 1 Q5 | square top view and triangular front view: a square pyramid and a triangular prism share two views | Ex 4.3 Q6 (two different solids with the same front and top views) | **replaced** with an item of the same kind: the three views of a 3 × 2 × 1 cuboid and their sizes |
+| Stage 1 Q7 | *for a 4 × 4 × 4 block … $2^3 = 8$ hidden* | Ex 4.3 Q4 (a 2 × 2 × 2 cube has 8 small cubes) | 5 × 5 × 5 block, $3^3 = 27$ hidden |
+
+Dropped from the old Problem Sets because they repeated or answered the
+body: cylinder's top view (Ex 4.3 Q1), cone's front view (Ex 4.3 Q2), three
+cubes in a row (Ex 4.3 Q3), same front and side view (Ex 4.3 Q6), a cube's
+faces + vertices − edges (Ex 4.2 Q2), a triangular prism's vertices
+(Ex 4.2 Q2), 4096 squares (Ex 4.1 Q2), the rule applied to its own output
+(the Think and Reflect), the triangle's area first below a half (its key
+prints $\left(\tfrac34\right)^3$, Ex 4.1 Q4), the cube of side 6 (as above),
+and the *single point* top-view item. The old key's option (b) of Set B Q3,
+$\tfrac68$, had the same value as option (a); the rewritten question has
+four different values. Practice Q21 was moved from step 3 to step 5 because
+its answer, $\tfrac{1}{27}$, is printed by body Example 1. New examples and
+questions were written so that none of their working prints a body answer
+(for instance, triangle-area questions avoid step 3 and step 4, the carpet
+avoids step 4, and no Beyond item names the solid of Ex 4.2 Q3 or the nets
+of Ex 4.2 Q5).
+
+`build/check-no-repeats.mjs` reports 16 pairs above 50%; every one was read
+and is *same type, different numbers* (e.g. Practice Q23, carpet from 135 cm
+at step 3, against body Example 1, carpet from 27 cm at step 3).
+
+**Worked examples in the chapter: 20** (4 body + 16 Beyond), against §5a's
+twelve. Every topic has a type: counting a carpet (with a plus-sign rule of
+the same kind), the Sierpiński triangle and its area, the Koch snowflake,
+prism and pyramid counts, faces + vertices − edges, nets and card, the
+shortest route across a box, three views, isometric drawing.
+
+**Practice: 31 questions** — 15 multiple choice (key letters a 4, b 4, c 4,
+d 3), 4 assertion–reason (a, d, b, c), 3 very short, 4 short, 3 long,
+2 case-based. The last practice page holds both case-based questions, so no
+question stands alone before the Answers stage.
+
+**`ANSWERS.md` written** for every question the chapter sets: the three
+exercise sets (with what each drawing must show and worked instances where
+answers vary), the Think and Reflect, Stage 1 (pointing to its explanations),
+and the 31 practice questions with their working.
+
+### Verified
+
+`check-numbers.mjs` is kept beside the pages. It passes **385 claims**,
+evaluating 217 printed equalities and approximations on the pages and in
+`ANSWERS.md` (display maths taken out before inline maths; each `≈` checked
+to its printed decimal places). It also re-derives what arithmetic cannot:
+fractal counts built step by step, the holes drawn in Figs 4.1 and 4.2 and
+the corners of Fig. 4.3's star (12 and 48), Fig. 4.6's labels against the
+12 × 4 × 3 box, every unfolding of every box, views computed from sets of
+cubes (Fig. 4.7, Stage 1 Q5, Example 14, Practice Q29, Ex 4.3 Q3), hidden
+cubes, visible edges of an isometric cuboid, the first step past a
+threshold (Ex 4.1 Q6: step 9, since $\left(\tfrac43\right)^8 \approx 9.99$),
+every practice answer read back out of the key one lettered part at a time,
+every multiple-choice question solved (exactly one right option, matching the
+key), the assertion–reason letters, the key's spread, the numbering of every
+exercise set and of the practice run, and `ANSWERS.md`'s key against the
+page's. The 37 spans it skips are algebra (`--skipped` lists them).
+
+**Tested by breaking values on purpose — 11 of 11 caught:** $8^5$ printed
+32767 in Stage 1; key 26 changed to 16 cm; $H_4 = 586$ in `ANSWERS.md`; key
+30 (a) side 4 cm (a lettered part in words); key letter 9 changed to (a);
+`ANSWERS.md` key 7 changed to (c); Fig. 4.6's 12 label changed to 13; Q2's
+right option changed to 1.5 cm; practice `data-start` 25 changed to 24; key
+29's side view changed to 2 squares; Example 13's edge walk printed 42.
+
+**Three faults in the check itself**, found on its first run and fixed: an
+expected order typed by hand for the § 4.8 unfoldings; the Q29 view counts
+read from the first number in a sentence rather than the last; and key
+31 (c) could not be read part by part because its working opened a bracket,
+so the row was reworded ($96 + 12 + 72 = 180$, and $2 \times 180 = 360$).
+
+**Wrong numbers found:** none in the old pages. The old log's C5 flag says
+Ex 4.2 Q3's solid (8 faces, 12 vertices) is *neither a prism nor a pyramid*;
+that is not so — a hexagonal prism has those counts (now in `ANSWERS.md`).
+
+**Fitting.** Nothing is clipped; the build reports all pages fit.
+`orphans`: 0 stranded openers in 25 pages. `check-labels`: no collisions.
+`fit-options`: every option row fits. Three key rows that split an equation
+across a line were held together with `.nb`. Proofs of pages 2, 7, 8, 9, 15,
+22 and 24 were read.
+
+**Colour.** Pages 1, 3, 4, 6, 7, 9 and 10 were checked in greyscale and under
+simulated deuteranopia, protanopia and tritanopia (`build/check-colour.mjs`).
+The fractal figures are one fill against white, the solids use the three
+face tints with outlines, and every view in Fig. 4.7 and every side of
+Fig. 4.6 is named in text; nothing depends on hue alone.
+
+### Short pages, logged
+
+Each is held by a block `gaps` names, which the packer cannot move.
+
+| page | fill | held by |
+|---|---|---|
+| 2 | 76% | § 4.3's `h2`, whose paragraph (four lines) is too short to go under it before Fig. 4.2 |
+| 6 | 82% | § 4.7's `h2`, the same way before Fig. 4.5 |
+| 11 | 58% | the last body page (`data-close`) |
+| 14 | 80% | the Solved Examples stage head, which needs an example under it |
+| 15 | 78% | the *Type 2* `h3` and Example 3 under it |
+| 23 | 62% | **the Answers stage, which always opens a page**; the page holds the two case-based questions |
+| 25 | 34% | the last page |
+
+### Flagged, not done
+
+- Stage 1 keeps old coaching sentences such as *the slip this question is
+  watching for*, because it is kept word for word. §6a would not write them
+  today.
+- § 4.5 states historical facts (Kandariya Mahadev c. 1025 CE, Sierpiński
+  1916, von Koch 1904, Fulani blankets, Escher's *Smaller and Smaller*) with
+  no source in this log. §5a asks for one before press.
+- The body's claim that there are exactly eleven cube nets, and Example 9's
+  *icosahedron*, are stated, not derived; both are standard.
+- The C5 and M1 flags below still stand (which solids *faces + vertices −
+  edges = 2* covers; $\left(\tfrac89\right)^n$ with a letter exponent).
+- Example 2 of Stage 2 introduces a plus-sign fractal the body does not
+  draw. It is described in words only; a small figure would help.
+
+
 Language edit, 22 pages (p001–p012 chapter proper, p101–p110 Beyond the Book).
 Build after editing: 22 pages, 0 stranded openers, no label collisions, every
 option row fits. All 36 answers in Stage 4 checked against the questions — all
@@ -32,6 +199,10 @@ The Indian material is placed as fact, not decoration: Khajuraho's Kandariya
 Mahadev (c. 1025 CE) with its towers repeated at three or four scales, and
 Madurai, Hampi, Rameswaram and Varanasi named alongside. The laddu at the far
 corner of the ant's box is the right kind of small touch.
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted.
 
 ## FIXED
 

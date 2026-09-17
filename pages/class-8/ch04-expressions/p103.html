@@ -2,85 +2,101 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two products either side of a round number</div>
-        <p>
-          $49$ and $51$ are each one away from $50$, so their product is a difference of
-          two squares with $a = 50$ and $b = 1$.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$49 \times 51$</span>
-            <span>$= (50-1)(50+1) = 2500 - 1 = 2499$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$4.9 \times 5.1$</span>
-            <span>$= (5 - 0.1)(5 + 0.1) = 25 - 0.01 = 24.99$</span>
-          </div>
-        </div>
-        <p>
-          What changed is only the place of the decimal point. Each factor was divided by
-          ten, so the product was divided by a hundred, and $2499$ became $24.99$. What
-          did not change is the shape of the calculation: the identity does not care
-          whether $a$ and $b$ are whole numbers.
-        </p>
+      <div class="c-try">
+        <p>Show that $x^2 - 6x + 10$ is greater than zero for every value of $x$,
+        including the negative ones and the fractions.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A field that grows by sixty-nine</div>
-        <p>
-          Call the original side $a$. The new field has side $a + 3$, and the extra area
-          is one square less the other.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">extra area</span>
-            <span>$(a+3)^2 - a^2 = 69$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">expand</span>
-            <span>$a^2 + 6a + 9 - a^2 = 69$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$6a = 60$, &nbsp; $a = 10$</span>
-          </div>
+      <p>
+        Trying values will not settle this: there are infinitely many to try. What
+        settles it is finding a square, because a square is never negative.
+      </p>
+
+      <p>
+        The first two terms, $x^2 - 6x$, are the beginning of $(x-3)^2 = x^2 - 6x + 9$.
+        So write the $10$ as $9 + 1$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">rewrite</span>
+          <span>$x^2 - 6x + 10 = (x^2 - 6x + 9) + 1$</span>
         </div>
-        <p>
-          The difference of two squares gives the same answer with less writing:
-          $(a+3)^2 - a^2 = \big((a+3)+a\big)\big((a+3)-a\big) = 3(2a+3)$, so $2a + 3 =
-          23$. Either route works. What both rely on is that the $a^2$ terms go, which is
-          why the equation is an easy one rather than a squared one.
-        </p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">as a square</span>
+          <span>$= (x-3)^2 + 1$</span>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A difference of squares in disguise</div>
-        <p>
-          The instruction not to expand is a hint about which identity to use. Two
-          squares are being subtracted, so take $a = 2x + 3$ and $b = 2x - 3$ and use
-          $a^2 - b^2 = (a+b)(a-b)$.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$a + b$</span>
-            <span>$= (2x+3) + (2x-3) = 4x$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$a - b$</span>
-            <span>$= (2x+3) - (2x-3) = 6$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">product</span>
-            <span>$= 4x \times 6 = 24x$</span>
-          </div>
-        </div>
-        <p>
-          Expanding both squares gives $4x^2 + 12x + 9 - (4x^2 - 12x + 9)$, which comes
-          to $24x$ as well, after six terms have been written and four of them cancelled.
-          The identity did the cancelling in advance.
-        </p>
+      <p>
+        Whatever $x$ is, $(x-3)^2$ is zero or more, so the whole thing is $1$ or more,
+        and it is never zero. It is smallest when $x = 3$, which the original form does
+        not show at all. Making a square appear where none was visible is the single
+        most useful thing the identities do.
+      </p>
+
+      <div class="c-try">
+        <p>A student writes: <em>$(x + y)^2$ is always bigger than $4xy$.</em> The
+        statement is nearly right. Find what is wrong with it, and say exactly when the
+        two are equal.</p>
       </div>
+
+      <p>
+        Move everything to one side and the claim becomes a statement about
+        $x^2 - 2xy + y^2$, which is a square.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">difference</span>
+          <span>$(x + y)^2 - 4xy = x^2 - 2xy + y^2 = (x-y)^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$(x + y)^2 \geq 4xy$ always</span>
+        </div>
+      </div>
+
+      <p>
+        A square is never negative, so $(x + y)^2$ is never less than $4xy$. But a
+        square can be zero, and $(x-y)^2$ is zero exactly when $x = y$: at
+        $x = y = 5$ both sides come to $100$. So the claim should read <em>at least</em>
+        rather than <em>bigger than</em> — and notice that disproving it took one
+        value, while proving the corrected version took an argument.
+      </p>
+
+      <div class="c-try">
+        <p>Multiply four consecutive whole numbers and add $1$. Try it with
+        $3, 4, 5, 6$ and then with $7, 8, 9, 10$. Then show that the answer is always a
+        perfect square.</p>
+      </div>
+
+      <p>
+        The arithmetic first: $3 \times 4 \times 5 \times 6 = 360$, and $361 = 19^2$.
+        Then $7 \times 8 \times 9 \times 10 = 5040$, and $5041 = 71^2$. Twice is not a
+        proof, and the proof is in the choice of which pair to multiply first.
+      </p>
+
+      <p>
+        Call the numbers $n$, $n+1$, $n+2$, $n+3$. Pair the outer two and the inner
+        two.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">outer pair</span>
+          <span>$n(n+3) = n^2 + 3n$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">inner pair</span>
+          <span>$(n+1)(n+2) = n^2 + 3n + 2$</span>
+        </div>
+      </div>
+
+      <p>
+        The two differ by exactly $2$. Writing $m$ for $n^2 + 3n$, the product is
+        $m(m+2)$, and adding one gives $m^2 + 2m + 1$, which is $(m+1)^2$.
+      </p>
 
     </div>
   </div>

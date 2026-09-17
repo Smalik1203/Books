@@ -2,44 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">6.5</span><span class="name">Brackets and Fractions</span></h2>
-
-      <p>Two things can stand between an equation and the methods of the last two
-      sections, and both are cleared before solving rather than during it. Brackets are
-      removed first; fractions are removed first. After that the equation is an ordinary
-      one and nothing new is needed.</p>
-
-      <h3>6.5.1 Brackets</h3>
-
-      <p>Expand them, using the distributive law of Chapter 4 — and remembering that a
-      minus in front of a bracket reverses the sign of everything inside, which is where
-      the marks are lost.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Solve $3(x + 4) = 2(x + 9)$.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">expand both</span>
-              <span>$3x + 12 = 2x + 18$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$-2x$</span>
-              <span>$x + 12 = 18$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$-12$</span>
-              <span>$x = 6$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">check</span>
-              <span>$3(10) = 2(15) = 30$ &nbsp;<span class="chip">true</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <p>The check here is worth reading twice. It went back to the bracketed form, which
       is the form that was given, and so it tested the expansion as well as the
       answer.</p>
@@ -50,27 +12,64 @@
           <p>Solve $5(2x - 1) - 3(x - 4) = 24$.</p>
           <p>The second bracket has a minus in front of it, so all of it changes
           sign.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">first bracket</span>
+            <div class="work__row"><span class="work__label">Step 1</span>
               <span>$5(2x-1) = 10x - 5$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">second</span>
+              <span class="work__why">first bracket</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
               <span>$-3(x-4) = -3x + 12$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">gather</span>
+              <span class="work__why">second bracket</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
               <span>$7x + 7 = 24$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">solve</span>
-              <span>$7x = 17$, &nbsp; $x = \dfrac{17}{7}$</span>
-            </div>
+              <span class="work__why">gather</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$7x = 17$</span>
+              <span class="work__why">take 7 from both</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = \dfrac{17}{7}$</span></div>
           </div>
           <p>The $-4$ inside became $+12$ and not $-12$. Had it gone the other way the
           answer would have come out as $\tfrac{41}{7}$, and the check against the
           original would have caught it.</p>
+        </div>
+      </div>
+
+      <h3>6.5.2 Fractions</h3>
+
+      <p>Fractions in an equation are cleared in one stroke: multiply <em>every term on
+      both sides</em> by a number that all the denominators divide into — their lowest
+      common multiple is the tidiest choice. Every fraction then cancels and the equation
+      has whole numbers in it.</p>
+
+      <p>The words <em>every term</em> are the ones that get skipped. Multiplying both
+      sides means multiplying all of both sides, including any term that had no fraction
+      in it to begin with.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Solve $\dfrac{x}{2} + \dfrac{x}{3} = 10$.</p>
+          <p>The denominators are $2$ and $3$, so multiply everything by $6$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$3x + 2x = 60$</span>
+              <span class="work__why">$\times 6$ every term</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$5x = 60$</span>
+              <span class="work__why">gather</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$x = 12$</span>
+              <span class="work__why">$\div 5$ both sides</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$6 + 4 = 10$</span>
+              <span class="work__why">true</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$x = 12$</span></div>
+          </div>
+          <p>The $10$ became $60$. A reader who multiplies only the two fractions gets
+          $5x = 10$ and an answer of $2$, which fails the check at once.</p>
         </div>
       </div>
 

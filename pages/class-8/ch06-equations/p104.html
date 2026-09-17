@@ -2,75 +2,78 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A fraction, both parts changed</div>
-        <p>
-          Name the denominator, because the numerator is described in terms of it and not
-          the other way round.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">let</span>
-            <span>$d$ = the denominator, numerator $= d - 4$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">after adding one</span>
-            <span>$\dfrac{d - 3}{d + 1} = \dfrac{1}{2}$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$\times 2(d+1)$</span>
-            <span>$2(d - 3) = d + 1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">solve</span>
-            <span>$2d - 6 = d + 1$, &nbsp; $d = 7$</span>
-          </div>
-        </div>
-        <p>
-          The fraction is $\frac{3}{7}$, and adding one to each part gives $\frac48$,
-          which is $\frac12$. The brackets in the third line are the fraction bars doing
-          their work; without them the line reads $2d - 3 = d + 1$ and the answer comes
-          out as $4$.
-        </p>
+      <div class="c-try">
+        <p>Think of a number. Double it, add ten, halve the result, then take away the
+        number you first thought of. Try it with $7$ and with $100$. Then show that the
+        answer is always the same, whatever you started with.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Where Ravi's division went wrong</div>
-        <p>
-          Try $x = 0$ in $7x = 4x$: the left side is $0$ and so is the right. It is a
-          solution, so the equation certainly has one, and Ravi's conclusion is false.
-        </p>
-        <p>
-          The step that failed is the division. Both sides may be divided by the same
-          number <em>provided it is not zero</em> — and dividing by $x$ is dividing by a
-          number nobody has checked. If $x$ happens to be zero, the step is not allowed;
-          and it is precisely that value which then goes missing from the answer.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">instead</span>
-            <span>$7x - 4x = 0$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$3x = 0$, &nbsp; $x = 0$</span>
-          </div>
+      <p>
+        With $7$: double to $14$, add ten to $24$, halve to $12$, take away $7$, and
+        the answer is $5$. With $100$: $200$, $210$, $105$, take away $100$, and the
+        answer is $5$ again. Two cases are a suspicion, not a reason.
+      </p>
+
+      <p>
+        Do the whole thing to a letter and the reason appears.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">start</span>
+          <span>$n$</span>
         </div>
-        <p>
-          Subtracting $4x$ carries no condition and keeps the solution. This is the one
-          place where the small print on a rule decides the answer: never divide by
-          something that contains the unknown.
-        </p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">double</span>
+          <span>$2n$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">add ten</span>
+          <span>$2n + 10$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">halve</span>
+          <span>$n + 5$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">subtract $n$</span>
+          <span>$5$</span>
+        </div>
       </div>
 
-      <p>The rule is not arbitrary. Dividing both sides by a quantity is legitimate only
-      when that quantity cannot be zero, and a quantity containing the unknown is exactly
-      one whose value you do not yet know. Divide by it and you have quietly assumed the
-      answer is not the value that would make it zero — which is very often the value the
-      question was about.</p>
+      <p>
+        The $n$ cancels at the last step, and once it has gone there is nothing left
+        for the starting number to affect. This is Section 6.7 in a party trick: an
+        identity, not an equation with a solution. The halving is what makes it work,
+        turning $2n$ back into one $n$ ready to be taken away.
+      </p>
 
-      <p>Subtracting carries no such small print, which is why it is the move to reach
-      for first whenever both sides carry the unknown.</p>
+      <p>Every trick of this shape yields to the same treatment: carry it out on a letter
+      instead of a number. What survives to the last line is what the audience will be
+      told, and the letter is what has to disappear on the way.</p>
+
+      <p>Inventing one is the same work backwards. Decide what is to survive, then build
+      steps that remove the letter and leave it.</p>
+
+      <p>
+        The sixth question is the one worth slowing down for. Ravi has done nothing that
+        looks illegal — dividing both sides by the same thing is one of the four
+        operations — and yet his conclusion is wrong. The rule he broke has a condition
+        attached to it, and it is the only one of the four that has.
+      </p>
+
+      <p>
+        For the questions that arrive as sentences, write down what your letter stands
+        for before anything else, and give it units. In the purse question there are two
+        kinds of coin and only one letter is needed: if $x$ of them are five-rupee coins
+        then the rest are not some second letter, they are $30 - x$.
+      </p>
+
+      <p>
+        The last question is not arithmetic and cannot be settled by trying numbers,
+        however many you try. What settles it is doing the whole thing to a letter
+        instead of to a number, and then looking at what is left.
+      </p>
 
     </div>
   </div>

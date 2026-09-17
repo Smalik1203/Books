@@ -3,69 +3,96 @@
     <div class="page__main">
 
       <div class="c-try">
-        <p>A student writes: <em>$x^2 + y^2$ is always bigger than $2xy$.</em> The
-        statement is nearly right. Find what is wrong with it, and say exactly when the
-        two are equal.</p>
+        <p>A square field has its side lengthened by $3$ metres, and its area goes up by
+        $69$ square metres. How long was the side to begin with?</p>
       </div>
+
+      <p>
+        Call the original side $a$. The new field has side $a + 3$, and the extra area
+        is one square less the other.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">extra area</span>
+          <span>$(a+3)^2 - a^2 = 69$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">expand</span>
+          <span>$a^2 + 6a + 9 - a^2 = 69$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$6a = 60$, &nbsp; $a = 10$</span>
+        </div>
+      </div>
+
+      <p>
+        The difference of two squares gives the same answer with less writing:
+        $(a+3)^2 - a^2 = \big((a+3)+a\big)\big((a+3)-a\big) = 3(2a+3)$, so $2a + 3 =
+        23$. Either route works. What both rely on is that the $a^2$ terms go, which is
+        why the equation is an easy one rather than a squared one.
+      </p>
 
       <div class="c-try">
-        <p>Multiply four consecutive whole numbers and add $1$. Try it with
-        $3, 4, 5, 6$ and then with $7, 8, 9, 10$. Then show that the answer is always a
-        perfect square.</p>
+        <p>Simplify $(2x + 3)^2 - (2x - 3)^2$ without expanding either square.</p>
       </div>
 
       <p>
-        Two of those — the sixth and the seventh — are a different kind of question from
-        the rest. They ask you to show that something holds for <em>every</em> value, and
-        no amount of trying numbers will settle that. What settles it is finding a square
-        somewhere in the expression, because a square is never negative, and that single
-        fact carries more of this section than any other.
+        The instruction not to expand is a hint about which identity to use. Two
+        squares are being subtracted, so take $a = 2x + 3$ and $b = 2x - 3$ and use
+        $a^2 - b^2 = (a+b)(a-b)$.
       </p>
 
-      <p>
-        The rest reward one habit: before calculating anything, look at what you have
-        been given and ask which identity has those pieces in it. A question that hands
-        you $a+b$ and $ab$ is handing you the two halves of $(a+b)^2$, and is almost
-        certainly not asking you to find $a$ and $b$ at all.
-      </p>
-
-      <p>
-        The last question looks like arithmetic and is not. Multiplying $3 \times 4
-        \times 5 \times 6$ tells you about one case; what makes it a proof is choosing
-        which two of the four to multiply together first.
-      </p>
-
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$a + b$</span>
+          <span>$= (2x+3) + (2x-3) = 4x$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$a - b$</span>
+          <span>$= (2x+3) - (2x-3) = 6$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">product</span>
+          <span>$= 4x \times 6 = 24x$</span>
         </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two numbers you are never told</div>
-        <p>
-          You are given the sum and the product, and the square of a sum contains both
-          of them: $(a+b)^2 = a^2 + 2ab + b^2$. Rearranged, it says that $a^2 + b^2$ is
-          the square of the sum less twice the product.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$a^2 + b^2$</span>
-            <span>$= (a+b)^2 - 2ab = 100 - 42 = 58$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">$(a-b)^2$</span>
-            <span>$= a^2 + b^2 - 2ab = 58 - 42 = 16$</span>
-          </div>
-        </div>
-        <p>
-          So $a - b$ is $4$ or $-4$, and with a sum of $10$ the numbers are $7$ and $3$.
-          Notice that finding them was the last thing that happened, and was not asked
-          for. The two answers came out of the two given numbers directly.
-        </p>
+      <p>
+        Expanding both squares gives $4x^2 + 12x + 9 - (4x^2 - 12x + 9)$, which comes
+        to $24x$ as well, after six terms have been written and four of them cancelled.
+        The identity did the cancelling in advance.
+      </p>
+
+      <div class="c-try">
+        <p>For a number $x$, $x + \frac{1}{x} = 4$. Find $x^2 + \frac{1}{x^2}$,
+        again without finding $x$.</p>
       </div>
+
+      <p>
+        The expression asked for has squares in it and the one given has not, so
+        square what you are given. The middle term of $(a+b)^2$ is $2ab$, and here
+        $a \times b$ is $x \times \frac{1}{x}$, which is $1$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">square it</span>
+          <span>$\left(x + \dfrac{1}{x}\right)^2 = x^2 + 2 + \dfrac{1}{x^2} = 16$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$x^2 + \dfrac{1}{x^2} = 14$</span>
+        </div>
+      </div>
+
+      <p>
+        The middle term collapsing to a plain $2$ is what makes these questions work,
+        and it happens because $x$ and $\frac{1}{x}$ multiply to $1$ whatever $x$ is.
+        The same step run with the other square gives
+        $\left(x - \frac{1}{x}\right)^2 = 14 - 2 = 12$.
+      </p>
 
     </div>
   </div>

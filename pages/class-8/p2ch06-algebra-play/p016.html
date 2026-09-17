@@ -2,25 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">at the end</span>
-          <span>$8$ coins, just after the third doubling</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">before that doubling</span>
-          <span>$8 \div 2 = 4$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">before the second payment</span>
-          <span>$4 + 8 = 12$, so before that doubling $6$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">before the first payment</span>
-          <span>$6 + 8 = 14$, so before that doubling $7$</span>
-        </div>
-      </div>
-
       <p>Karim began with seven coins. Every step of that was an undoing: a doubling was
       undone by halving, a payment by adding back, and the steps were taken in reverse
       order because the last thing done is the first thing to unpick.</p>
@@ -72,6 +53,27 @@
       how far behind he is. The genie did not need luck. Knowing that Karim had seven
       coins, it had only to name a charge above seven, and eight was the smallest whole
       number that would do.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>The genie wanted Karim cleaned out on the third round exactly — not the
+            second, and not the fourth.</p>
+            <p>Using $2^{\,n}(x - c) + c$, work out what charge would take everything
+            from a traveller with $x$ coins in exactly three rounds. Check your answer
+            against $x = 7$ and $c = 8$. What charge would do it in two rounds
+            instead, and why is the greedier genie the one that waits?</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

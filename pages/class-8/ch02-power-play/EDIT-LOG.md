@@ -1,5 +1,246 @@
 # Class 8 · Mathematics I · Chapter 2 — When Multiplying Takes Over
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Chapter 1 model. The
+page move and the conversion were done in one pass. I read the whole chapter
+before changing anything, and every check below was run on the whole chapter.
+
+**Pages: 34 before (22 body + 12 Beyond, Crown Quarto), 36 after (19 body +
+17 Beyond, 196 × 276).** The taller page took three pages off the body.
+Beyond grew by five, because Stage 1 now carries its own explanations, and
+the chapter gained 21 solved examples and 31 practice questions.
+
+### What changed
+
+**The page.** `chapter.json` gains `"edition": "196x276"`. The body was
+refitted once (`refit … body`), after the examples were stepped. It came out
+at 87–100% on every page, so no hand-fitting was needed.
+
+**All seven body examples set as steps.** Each now has *Solution*, one
+`.work__row` per step, an *Answer* row, and the reason in a `.work__why`. The old wide labels (`$32400$`,
+`top`, `then`, `letters`, `digits`) and the `.chip` answers became Step and
+Answer rows. Two changes went beyond the rows themselves:
+- Example 5's question listed nothing; its four expressions were in the
+  labels. The question now names them, using the same maths spans.
+- In Example 4, the remark *writing out a hundred twos…* moved after the
+  working. In Example 6, the sentence *For the second the point moves the
+  other way* moved before the Solution.
+
+Remarks that are not steps stay as paragraphs after the working.
+`build/check-example-stepping.mjs` reports 7 examples and no mathematics
+lost.
+
+**Exercise Set 2.2 renumbered after its first question 5.** The set was printed
+1, 2, 3, 4, 5, 5, 6, 7 (flagged below since the language edit). The second
+5, and the 6 and 7 after it, are now 6, 7 and 8. No sentence refers to them
+by number.
+
+**Opener table, 26 folds.** *taller than any building on earth* became
+*taller than almost every building on earth*. The Burj Khalifa (828 m) and
+Merdeka 118 (679 m) are both taller than 671 m. The number is unchanged.
+
+**Beyond the Book rebuilt to the four current stages** (§6a):
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 8 `.c-try` questions, answered in the next stage; `.c-stage__for` | **the same questions, each followed by its own explanation**, word for word except as below; no `__for` |
+| 2 Behind Each Answer → **Solved Examples** | the worked answers to stage 1 | **21 stepped examples**, Examples 1–21, under eleven `Type N ·` heads |
+| 3 Problem Sets → **Practice** | 3 multiple-choice sets, 27 questions | **one numbered run of 31**, all six forms, band carrying the numeral |
+| 4 Answers & Takeaways → **Answers** | key, why the options are wrong, closing essay | key, every other answer in `.work--trace` blocks, why the options are wrong for 14 questions, and two closing paragraphs |
+
+**Stage 2 held Stage 1's explanations, as in every Class 8 chapter.** Each
+explanation moved under its own question, and only the `.c-solution` wrapper
+and its title were dropped. Sentences that pointed elsewhere were corrected:
+- *Try each before turning the page* → *before reading what follows it*
+- *Every solution overleaf* → *Every explanation above*
+- *met two solutions ago* → *met in the question on $7^{100}$*
+- *Those two solutions* → *Those two explanations*
+
+The remarks that followed the questions now come after the last
+explanation, as in the model. They named the questions *the first three and
+the fifth* and *the other three*, which did not match the questions even
+before this pass. They now name the questions by content, as the questions on
+$2^{60}$, $2^{100}$, $3^{500}$ and the rumour, and the questions on
+$7^{100}$ and the fifth power. §10 warns against ordinal references to
+`.c-try` bands.
+
+**Two Stage 1 items changed, because each answered a body question** (the
+no-give-away rule beats word for word):
+
+| was | answered | now |
+|---|---|---|
+| $2^{100}$ or $100^2$; the $n$ from which $2^n > n^2$ (table $n = 1$–$6$) | Ex 2.6 Q6 (c) outright; the reasoning answers Q6 (b) ($2^8$ or $8^2$); the table prints $2^6$ and $6^2$ (Ex 2.1 Q4 (c)) | $2^{60}$ or $60^3$; the $n$ from which $2^n > n^3$ stays true ($n = 10$, table $n = 1$–$10$) |
+| rumour: each tells **three**, so $\times 4$; $4^{10} = 2^{20} = 1\,048\,576$ is past a million | Ex 2.2 Q8 ($2^{20}$ or $10^6$) | each tells **two**, so $\times 3$; $3^{12} = 531\,441$, $3^{13} = 1\,594\,323$: **13 hours** |
+
+The new $n^3$ explanation also replaces the old reason, *which it has by
+then*, which the language edit flagged as M3. The new reason is that
+$11^3 = 1331$ is not even one and a half times 1000, and that the ratio only
+falls.
+
+**Other Beyond give-aways checked by reading.** I checked every value Beyond
+prints against the body's exercise list. Old practice items that repeated or
+answered the body were dropped, not reworded:
+- $3^4$ (Ex 2.1 Q4 (a))
+- $2^{-3}$ (the body's own tip)
+- $10^0$
+- $2^{10}$ as a power of 4 (Ex 2.2 Q5 asks $2^{12}$)
+- 26-letter five-character passwords (Ex 2.5 Q4)
+- $2^{20}$ closest to $10^6$ (Ex 2.2 Q8)
+- $n^0 = 1$ holds for (the key idea, restated)
+- the $\times 4$ rumour
+
+New items were chosen to avoid body values:
+- The quiz example uses $3^6$ rather than $2^8$, which is Ex 2.6 Q6 (b).
+- The estimate example uses $2^{45}$, not $2^{20}$ or $2^{30}$, which are
+  Ex 2.2 Q8 and Ex 2.6 Q10.
+- The storage case asks for 1 TB rather than 1 GB.
+
+`build/check-no-repeats.mjs` reports no question close to a body question.
+
+**Worked examples in the chapter: 28** (7 body + 21 Beyond), against §5a's
+twelve. Every topic has a type:
+- powers of primes
+- negative bases
+- multiplying and a power of a power
+- same exponent with different bases
+- dividing
+- zero and negative exponents
+- expanded form with powers of ten
+- standard form (writing, ordering, multiplying)
+- counting the possibilities
+- estimating
+- the last digit of a power
+
+**Practice: 31 questions** in all six forms: 15 multiple choice (key
+letters a ×3, b ×4, c ×4, d ×4), 4 assertion–reason (one of each letter),
+3 very short, 4 short, 3 long and 2 case-based. Eleven of the multiple-choice
+questions are kept from the old sets, with their options re-lettered to spread
+the key.
+
+**`ANSWERS.md` written** for every question the chapter sets:
+- Exercise Sets 2.1–2.7, with a worked instance for each *answers will vary*
+- the three Think and Reflects
+- Stage 1 (pointing to its own explanations)
+- the 31 practice questions, with their working
+
+### Verified
+
+`check-numbers.mjs` is kept beside the pages. It passes **496 claims**:
+- **Printed identities.** It evaluates 323 printed identities on the pages
+  and in `ANSWERS.md`. A chain broken by $\approx$ is checked one exact run at
+  a time.
+- **Values the identities do not cover.** Every row of the opener table is
+  re-derived from $0.001 \times 2^n$ cm, and so is the four-fifths claim. It
+  checks the digit counts of $2^{100}$ and $3^{500}$ and the last digits of
+  $7^{100}$, $3^{2024}$, $2^{88}$ and $3^{25} + 7^{25}$, using BigInt.
+- **Searches.** It re-derives the Stage 1 $n^3$ table and the $n = 10$ search
+  (checked to 200), the 13-hour rumour, and the rice figures.
+- **Examples and answers.** It checks every Beyond example, every practice
+  answer (read back out of the key, one lettered part at a time), and the
+  body answers in `ANSWERS.md`. These include the day 29/28 pond, the
+  10-digit dairy code, the $n = 24$ fold, and one billion seconds as
+  31 years 9 months.
+- **Multiple choice and keys.** Every multiple-choice question is solved and
+  must have exactly one right option matching the key. The assertion–reason
+  letters are derived. `ANSWERS.md`'s key must match the page's.
+
+The 57 spans it skips are algebra; `--skipped` lists them.
+
+**Tested by breaking values on purpose.** Ten values were changed one at a
+time and each change was caught:
+- Example 8's $5^3 = 125$ changed to 135
+- key 7 changed to (c)
+- `ANSWERS.md` key 12 changed to (d)
+- the opener's 671 m changed to 681 m
+- `ANSWERS.md`'s $n = 24$ changed to 23
+- the Stage 1 table's 729 changed to 719
+- key row 26's 4096 changed to 4086
+- option 9 (d) changed from 5 to 7
+- key 31 (b)'s 4096 songs changed to 4000
+- Q30 (c)'s *11 hours* changed to 12
+
+The last change was **missed** at first, because 11 also appears inside
+$2^{11}$ in the same part. The hour count is now read on its own, and the
+change is caught.
+
+**Fixes in the checks themselves.** Exercise Set 2.2's four wrong statements,
+printed to be explained, are listed as false on purpose, as are the two
+$0^0$ lines. A leading minus is read as applying to the whole power
+($-4^2 = -16$).
+
+**A wrong number I wrote, caught while writing `ANSWERS.md`.** The billion
+seconds first read *31 years and 8 months* and *early 1995*. $10^9 \div
+(3.15 \times 10^7) = 31.75$, which is nearly 31 years 9 months: the end of
+1994, counting back from September 2026. It was corrected before the file was
+checked.
+
+**Fitting.** Nothing is clipped, and nothing runs into the bottom margin.
+- `orphans`: 0 stranded openers in 36 pages.
+- `check-labels`: no collisions.
+- `fit-options`: one list (Q10, whose options include *it cannot be
+  decided*) was narrowed to two columns with `--fix`; every row now fits.
+- Refitting the division once left the Answers stage's first page at 86%. I
+  moved the *why* rows for 7 and 8 back onto it as their own `.work--trace`
+  block, which took page 35 to 97%.
+
+I read the proofs of pages 3, 5, 10 and 15 (the stepped examples) and of
+every Beyond page (20–36).
+
+**Colour.** Pages 1, 5 and 10 were read in greyscale and under simulated
+deuteranopia (`build/check-colour.mjs`). Nothing depends on hue alone:
+Fig. 2.1's levels carry their own labels and positions, and Fig. 2.2's
+marked point is labelled $2^0$ and 1.
+
+### Short pages, logged
+
+Each is held by a block `gaps` names, which the packer cannot move.
+
+| page | fill | held by |
+|---|---|---|
+| 5 | 87% | the `h3` 2.3.1, which may not be stranded |
+| 25 | 80% | Example 5, a panel |
+| 26 | 77% | the Type 5 head with Example 8 |
+| 28 | 77% | the Type 8 head with Example 14 |
+| 29 | 79% | the Type 9 head with Example 17 |
+| 30 | 86% | Example 20, a panel |
+| 34 | 71% | **the Answers stage, which always opens a page** |
+| 36 | 62% | the last page |
+
+### Flagged, not done
+
+- **The paper thickness is still unresolved** (first row of FLAGGED below).
+  The chapter's arithmetic uses $0.001$ cm, and the check re-derives every
+  printed value from that. The sentence *a tenth of a millimetre* still
+  contradicts it. The old closing paragraph that repeated *a tenth of a
+  millimetre* was not carried into the new Answers stage.
+- **Facts without a source in this log:**
+  - the Moon at 384 400 km
+  - the Burj Khalifa and Merdeka 118 heights (used for the table fix)
+  - the stars in the galaxy, and the Sun–Earth and Sun–Saturn distances
+  - the masses of the Earth, Moon, electron and proton
+  - Avogadro's number, and the $9.5 \times 10^{15}$ m light-year
+  - Mumbai's two crore
+  - a rice grain at 0.025 g and the world rice harvest at
+    $5 \times 10^8$ tonnes (Stage 1)
+
+  §5a asks for a source for each before press.
+- **Fig. 2.1 draws overlapping key circles.** Branches from neighbouring
+  baskets meet at $x = 79/81$ and $x = 121/119$, so two pairs of the 27 keys
+  print as clumps. Also, the circles for the 9 baskets are very pale in
+  greyscale. The figure art was not changed in this pass.
+- The storage case (Q31) takes 1 KB to be $2^{10}$ bytes and says so in the
+  question. Some schools teach $10^3$.
+- Stage 1 keeps the old coaching sentences (*the general recipe is worth
+  keeping*, *the manoeuvre is different*), because it is kept word for word.
+  §6a would not write them today.
+- p008's *which we will state properly in a moment* introduces
+  $\dfrac{m^a}{n^a} = \left(\dfrac{m}{n}\right)^a$, but no key idea ever
+  states it (M3/C6). Stating it would add a key idea to the body, so it is
+  left for an authoring pass.
+
+---
+
 Language edit, 34 pages (p001–p022 chapter proper, p101–p112 Beyond the Book).
 Build after editing: 34 pages, all pages fit, 0 stranded openers, no label
 collisions, every option row fits. All 27 answers in Stage 4 checked against the
@@ -15,6 +256,12 @@ The serious problem in this chapter is not language. **The opening hook states a
 paper thickness that contradicts every calculation in the chapter** — see the
 first row of FLAGGED. Nothing downstream of it can be trusted until an author
 decides which number is right.
+
+**Coordinator, same day:** the paper thickness is settled. NCERT uses 0.001 cm and every calculation and the table here use it; the opener's *a tenth of a millimetre, which is ordinary printing paper* was the error (0.001 cm is a hundredth of a millimetre). p001 now reads *Its thickness is $0.001$ cm, a hundredth of a millimetre, and every fold doubles it.* Rebuilt; same fill, check-numbers passes.
+
+### Accepted, 17 September 2026
+
+Checked by script (PLAN §4.8) and accepted; the paper-thickness fix is recorded above.
 
 ## FIXED
 

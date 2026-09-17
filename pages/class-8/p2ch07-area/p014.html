@@ -2,61 +2,97 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>The trapezium, in one cut</h3>
+      <p>The reason is the unit square itself. Change the unit of length and the unit
+      square changes in both directions at once, which is one change too many for
+      anybody's intuition. A room described as twice as large as another is a room whose
+      floor holds twice as many tiles. A room described as twice as long is a room with
+      four times the floor, if it grew in both directions, and only twice if it grew in
+      one. Ask which was meant before believing either.</p>
 
-      <p>The first book found the area of a trapezium by taking two copies, turning one
-      of them over, and fitting the pair together into a parallelogram. That works, and
-      it needs a second trapezium. The half-turn of Fig. 7.9 does the same job with one.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Convert $10$ in<sup>2</sup> to cm<sup>2</sup>, and $161.29$ cm<sup>2</sup>
+          to in<sup>2</sup>.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$10 \times 6.4516 = 64.516$ cm<sup>2</sup></span>
+              <span class="work__why">in<sup>2</sup> to cm<sup>2</sup>: multiply</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$161.29 \div 6.4516 = 25$ in<sup>2</sup></span>
+              <span class="work__why">cm<sup>2</sup> to in<sup>2</sup>: divide</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>64.516 cm<sup>2</sup>, and 25 in<sup>2</sup></span></div>
+          </div>
+          <p>The check that stops a mistake is to ask which number should be bigger. A
+          square inch is larger than a square centimetre, so a count in square inches is
+          always the smaller of the two — $25$ against $161.29$. Get the division the
+          wrong way round and the answer comes out at more than $1{,}040$, which fails that test at
+          a glance.</p>
+        </div>
+      </div>
 
-      <p>Let the parallel sides be $a$ at the top and $b$ at the bottom, with height $h$
-      between them. Join the midpoints of the two slanting sides and cut along that line.
-      Now turn the upper piece half a circle about one end of the cut, exactly as the
-      triangle's top was turned about $N$. The side of length $a$ swings round and comes
-      to rest in line with the side of length $b$, so what is left is a parallelogram —
-      of base $a + b$, and of height $\tfrac{h}{2}$, since the cut was halfway up.</p>
+      <p>Larger areas leave the metric scale behind altogether. A floor is given in square
+      feet, and $1$ ft<sup>2</sup> is $144$ in<sup>2</sup> — twelve squared, not twelve.
+      Land is sold by the acre, which is $43{,}560$ ft<sup>2</sup>, a number with no
+      roundness in it because an acre began as the area a pair of oxen could plough in a
+      day. A district is measured in square kilometres, and a square kilometre is
+      $10^6$ square metres.</p>
 
-      <div class="eq eq--anchor">$$\text{area of a trapezium} = \tfrac12 \, h \, (a + b).$$</div>
+      <p>Different parts of India measure land in units of their own — the
+      <em>bigha</em>, the <em>gaj</em>, the <em>katha</em>, the <em>dhur</em>, the
+      <em>cent</em>, the <em>ankanam</em>. Most of them began as a working quantity of
+      land rather than a defined one, so a bigha is not the same size in two states, and
+      sometimes not in two districts. That is exactly why a standard unit was agreed on;
+      it is also why the local names have survived every attempt to retire them.</p>
 
-      <p>And now look back at Fig. 7.9 with that in mind. A triangle is a trapezium whose
-      top side has shrunk to nothing — the case $a = 0$ — and the formula duly reads
-      $\tfrac12 h(0 + b)$, which is $\tfrac12 bh$. The two arguments were never different
-      arguments. The triangle was the trapezium all along, cut at the same halfway line
-      and turned about the same kind of point.</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 7.3</div>
+        <ol class="c-questions">
+          <li>Convert these lengths, taking $1$ in $= 2.54$ cm.
+                <ol class="c-parts c-parts--4">
+                  <li>$5$ in</li>
+                  <li>$7.4$ in</li>
+                  <li>$5.08$ cm</li>
+                  <li>$11.43$ cm</li>
+                </ol>
+            </li>
+        </ol>
+      </div>
 
-      <h2><span class="badge">7.9</span><span class="name">Every Polygon Is Triangles</span></h2>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Convert these areas.
+                <ol class="c-parts c-parts--3">
+                  <li>$4$ in<sup>2</sup> to cm<sup>2</sup></li>
+                  <li>$96.774$ cm<sup>2</sup> to in<sup>2</sup></li>
+                  <li>$2$ ft<sup>2</sup> to in<sup>2</sup></li>
+                </ol>
+            </li>
+        </ol>
+      </div>
 
-      <p>A field is rarely a rectangle and almost never a rhombus. It is some shape with
-      five or six corners and no name at all, and there is no formula waiting for it —
-      but there does not need to be one.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A tabletop is $90$ cm by $60$ cm. Find its area in cm<sup>2</sup> and then
+            in m<sup>2</sup>. How many A4 sheets would cover it, and why is your answer not
+            a whole number?</li>
+        </ol>
+      </div>
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 92" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A quadrilateral divided by one diagonal into two triangles, and a pentagon divided from one vertex into three triangles">
-      
-            <path class="dg-fill-a" d="M20 25 L80 18 L14 68 Z"/>
-            <path class="dg-fill-d" d="M80 18 L88 72 L14 68 Z"/>
-            <path class="dg-thin"   d="M80 18 L14 68"/>
-            <path class="dg-line"   d="M20 25 L80 18 L88 72 L14 68 Z"/>
-      
-            <path class="dg-fill-a" d="M112 44 L140 18 L178 32 Z"/>
-            <path class="dg-fill-d" d="M112 44 L178 32 L180 70 Z"/>
-            <path class="dg-fill-c" d="M112 44 L180 70 L126 80 Z"/>
-            <path class="dg-thin"   d="M112 44 L178 32 M112 44 L180 70"/>
-            <path class="dg-line"   d="M112 44 L140 18 L178 32 L180 70 L126 80 Z"/>
-      
-            <text class="dg-label" x="16" y="21">A</text>
-            <text class="dg-label" x="82" y="14">B</text>
-            <text class="dg-label" x="90" y="80">C</text>
-            <text class="dg-label" x="8" y="76">D</text>
-      
-            <text class="dg-note" x="49" y="90" text-anchor="middle">two triangles</text>
-            <text class="dg-note" x="146" y="90" text-anchor="middle">three triangles</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 7.10</span> One diagonal cuts a
-          quadrilateral into two triangles; two diagonals from one corner cut a pentagon
-          into three. A polygon of $n$ sides gives $n - 2$ triangles this way.</figcaption>
-        </figure>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>A room measures $12$ ft by $10$ ft. Give its floor area in ft<sup>2</sup>
+            and in in<sup>2</sup>.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>A plot of land is a quarter of an acre. How many square feet is that? If
+            the plot is square, how long is each side, to the nearest foot?</li>
+        </ol>
       </div>
 
     </div>

@@ -2,69 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The diagonal that still works</div>
-        <p>
-          A concave quadrilateral has one vertex whose angle is more than $180^\circ$.
-          The diagonal joining the other two vertices falls outside the figure, and the
-          proof cannot use it. But a quadrilateral has two diagonals, and the other one —
-          the one from the reflex vertex to the vertex opposite — lies inside.
-        </p>
-        <p>
-          Use that one. It cuts the figure into two triangles exactly as before, the
-          reflex angle is divided into two pieces by it, and the angles of the two
-          triangles are once again precisely the four angles of the quadrilateral.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">two triangles</span>
-            <span>$180^\circ + 180^\circ = 360^\circ$</span>
-          </div>
+      <p>
+        Each interior angle is $180^\circ - \dfrac{360^\circ}{n}$. The $180$ is already
+        whole, so the whole question is when $\dfrac{360}{n}$ is — that is, when $n$
+        divides $360$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$360$</span>
+          <span>$= 2^3 \times 3^2 \times 5$</span>
         </div>
-        <p>
-          Nothing else changes. What the concave case shows is that the proof needed
-          <em>a</em> diagonal inside the figure, not any particular one — and every
-          quadrilateral, concave or not, has at least one.
-        </p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">divisors</span>
+          <span>$4 \times 3 \times 2 = 24$ of them</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">drop $n = 1, 2$</span>
+          <span>$22$ values</span>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Bisecting diagonals, read backwards</div>
-        <p>
-          Let the diagonals of $ABCD$ meet at $O$ with $AO = OC$ and $BO = OD$. Compare
-          triangles $AOB$ and $COD$.
-        </p>
-        <div class="work work--list">
-          <div class="work__row">
-            <span class="work__label work__label--wide">sides</span>
-            <span>$AO = OC$ and $BO = OD$, given</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">angle between</span>
-            <span>$\angle AOB = \angle COD$, vertically opposite</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>the triangles are congruent</span>
-          </div>
+      <p>
+        The count of divisors comes from Chapter 2: each prime can appear from none of
+        it up to all of it, which is $3+1$ choices for the $2$s, $2+1$ for the $3$s and
+        $1+1$ for the $5$. Only $n = 1$ and $n = 2$ have to go, since no polygon has
+        fewer than three sides.
+      </p>
+
+      <p>Counting the divisors rather than listing them is the move worth keeping. A
+      question that asks how many, rather than which, almost never wants the list — and
+      the factorisation of the number is usually where the count is hiding.</p>
+
+      <p>
+        The fourth and fifth questions are the two that catch people out, and for
+        opposite reasons. The fourth looks as though both halves must have the same
+        answer, and they do not. The fifth looks as though the proof has broken, and it
+        has not — one diagonal fails, and a quadrilateral has two.
+      </p>
+
+      <p>
+        For the rest, the habit worth forming is to ask which of the two angle sums makes
+        the question easier. The interior sum grows with $n$ and is the one to use when
+        you are told a total. The exterior sum is fixed at $360^\circ$, so it is the one
+        to use when you are told about a single angle of a regular figure, or when you
+        need to know whether a figure can exist at all.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>
-          That gives $\angle OAB = \angle OCD$ — alternate angles equal, so $AB$ is
-          parallel to $CD$. The same argument on triangles $BOC$ and $DOA$ makes $BC$
-          parallel to $AD$, and the figure is a parallelogram.
-        </p>
       </div>
 
-      <p>Notice how little the argument used. Not one length was measured and not one
-      angle was named a number; the whole of it ran on <em>alternate angles are equal</em>
-      applied twice. A converse proved this way is worth more than the same fact checked
-      on twenty drawings, because it covers the parallelograms nobody has drawn.</p>
+      <h3>Type 1 &middot; Polygons and their diagonals</h3>
 
-      <p>It is worth noticing which way round the statement runs. The chapter proved that
-      a parallelogram's diagonals bisect each other; this proves the reverse, that a
-      quadrilateral whose diagonals bisect each other must be a parallelogram. Neither
-      follows from the other, and a great many wrong answers in geometry come from using
-      one where the other was needed.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A polygon has $44$ diagonals. How many sides has it?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{n(n-3)}{2} = 44$</span>
+              <span class="work__why">the diagonal count</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$n(n-3) = 88$</span>
+              <span class="work__why">double both sides</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$88 = 11 \times 8$</span>
+              <span class="work__why">two numbers three apart</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\dfrac{11 \times 8}{2} = 44$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$n = 11$: the polygon has 11 sides</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

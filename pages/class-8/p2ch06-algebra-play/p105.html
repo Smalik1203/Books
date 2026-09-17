@@ -2,68 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The same trick, one row taller</div>
-        <p>Four consecutive numbers are $a$, $a+1$, $a+2$, $a+3$, and the top of a
-        four-row pyramid is $a + 3b + 3c + d$ with those put in for $b$, $c$ and
-        $d$.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the top</span>
-            <span>$a + 3(a+1) + 3(a+2) + (a+3)$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">collecting</span>
-            <span>$8a + 12$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$8a + 12 = 204$, giving $a = 24$</span>
-          </div>
-        </div>
-        <p>The row is $24$, $25$, $26$, $27$. Compare it with the three-row answer, which
-        was $4a + 4$: both tops are $2^{\,n-1}$ times the smallest number, plus a
-        constant. The doubling comes from the number of rows and nothing else, which is
-        why the same bottom number can appear under two quite different tops.</p>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">A charge set to empty a pocket</div>
-        <p>The chapter's expression for the coins after $n$ rounds does this one without
-        any further thought. Put $x = 15$, $n = 4$, and set the whole thing to
-        nothing.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the expression</span>
-            <span>$2^{\,4}(15 - c) + c = 0$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">expanding</span>
-            <span>$240 - 16c + c = 0$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$15c = 240$, giving $c = 16$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A trick runs: think of a number, multiply by $4$, add $k$, divide by $2$, subtract twice the number you thought of. It always ends at $9$. Find $k$, and check with the number $5$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4x + k$, then $\dfrac{4x + k}{2} = 2x + \dfrac{k}{2}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$2x + \dfrac{k}{2} - 2x = \dfrac{k}{2}$</span>
+              <span class="work__why">the unknown cancels</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\dfrac{k}{2} = 9$, so $k = 18$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>with $5$: $20 \to 38 \to 19 \to 19 - 10 = 9$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$k = 18$</span></div>
           </div>
         </div>
-        <p>Sixteen, against a purse of fifteen — the same shape as Karim's eight against
-        seven, and the same one-coin margin. That is not a coincidence: emptying a
-        traveller in $n$ rounds needs a charge of $2^{\,n}x \div (2^{\,n} - 1)$, and for
-        a start that is one less than a power of two, that division comes out at a whole
-        number exactly one bigger. A genie who wants round figures picks travellers with
-        $7$, $15$ or $31$ coins.</p>
       </div>
 
-      <p>Eight questions, and not one of them needed an idea the chapter had not already
-      given. What they needed was the willingness to write the situation down before
-      looking for the answer: three consecutive numbers as $a$, $a+1$, $a+2$, a
-      two-digit number as $10a + b$, a whole bargain as $2^{\,n}(x - c) + c$. In every
-      one of the eight, the line that did the work was the first line.</p>
+      <h3>Type 2 &middot; Two numbers packed into one</h3>
 
-      <p>Two of them also needed something the algebra could not supply. The digits had
-      to stop at $9$, and the coins had to be whole. An expression will happily hand back
-      $a = 4.5$ or a charge of two-thirds of a coin, and knowing which answers the
-      situation can actually accept is the reader's job and not the equation's.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Take your age, double it, add $5$, multiply by $50$, and add your house number, which is below $100$. A friend's answer is $1537$. Find the age and the house number.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(2A + 5) \times 50 + h = 100A + 250 + h$</span>
+              <span class="work__why">age $A$, house $h$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1537 - 250 = 1287$</span>
+              <span class="work__why">take off the constant</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$1287 = 100 \times 12 + 87$</span>
+              <span class="work__why">$h$ is below $100$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Age $12$, house number $87$</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A different date trick: multiply the month by $4$, add $3$, multiply by $25$, and add the day. What must be subtracted from the answer, and what date gives $1004$?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(4m + 3) \times 25 + d = 100m + 75 + d$</span>
+              <span class="work__why">$4 \times 25 = 100$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>subtract $75$: $1004 - 75 = 929$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$929 = 100 \times 9 + 29$</span>
+              <span class="work__why">split at the hundreds</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Subtract $75$; the date is the twenty-ninth of September</span></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

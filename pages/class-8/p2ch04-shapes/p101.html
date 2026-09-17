@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">The chapter's ideas, in questions that do not say which one to use.</div>
         </div>
       </div>
 
@@ -22,36 +21,59 @@
 
       <p>Several of the questions below run a rule backwards: they give you the count and
       ask for the step, or give you the edges and ask for the shape. Try each before
-      turning the page.</p>
+      reading what follows it.</p>
 
       <div class="c-try">
-        <p>A Sierpiński carpet is begun from a square of side $81$ cm. At step $4$, how
+        <p>A Sierpiński carpet is begun from a square of side $243$ cm. At step $5$, how
         long is the side of each remaining square, and how many are there?</p>
       </div>
+
+      <p>Each step cuts every square into nine, so the side is divided by $3$ and the
+      count is multiplied by $8$. Five steps of each.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">side</span>
+          <span>$243 \div 3^5 = 243 \div 243 = 1$ cm</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">how many</span>
+          <span>$8^5 = 32768$</span>
+        </div>
+      </div>
+
+      <p>So the area left is $32768$ cm<sup>2</sup> out of the $59049$ the square began
+      with — a little over half, after five steps of throwing away a ninth.</p>
 
       <div class="c-try">
         <p>A Koch snowflake has $192$ sides. Which step is it at?</p>
       </div>
+
+      <p>The formula $S_n = 3 \times 4^{\,n}$ is usually read forwards. Here it is read
+      backwards, which needs nothing new — divide by $3$ and ask which power of $4$ is
+      left.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$3 \times 4^{\,n} = 192$, giving $4^{\,n} = 64$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">and</span>
+          <span>$4^3 = 64$, so $n = 3$</span>
+        </div>
+      </div>
+
+      <p>Part I's chapter on powers is what makes that last line quick: recognising
+      $64$ as $4^3$ is the same skill as recognising it as $8^2$ or $2^6$.</p>
 
       <div class="c-try">
         <p>A prism has $30$ edges and a pyramid also has $30$ edges. How many faces has
         each?</p>
       </div>
 
-      <div class="c-try">
-        <p>An ant walks across the surface of a cube of side $6$ cm, from one corner to
-        the opposite one. How far does it go?</p>
-      </div>
-
-      <div class="c-try">
-        <p>A solid has a square top view and a triangular front view. Name one such
-        solid, and then a different one.</p>
-      </div>
-
-      <div class="c-try">
-        <p>Starting from a triangle of area $1$, what is the area of the Sierpiński
-        triangle at step $5$? Is it more or less than a tenth?</p>
-      </div>
+      <p>A prism has $3n$ edges and a pyramid $2n$, so the same edge count means
+      different polygons.</p>
 
     </div>
   </div>

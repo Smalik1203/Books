@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">The chapter's ideas, in questions that do not say which one to use.</div>
         </div>
       </div>
 
@@ -26,33 +25,56 @@
       <p>
         Every question below can be done with that. Four of them look like they need a
         calculator and none of them does — in each case there is a way of rewriting that
-        makes the answer visible. Try each before turning the page.
+        makes the answer visible. Try each before reading what follows it.
       </p>
 
       <div class="c-try">
-        <p>Which is larger, $2^{100}$ or $100^2$? Then find the smallest whole number
-        $n$ for which $2^n$ is larger than $n^2$, and check that $2^n$ stays larger
-        after that.</p>
+        <p>Which is larger, $2^{60}$ or $60^3$? Then find the whole number $n$ from
+        which $2^n$ is larger than $n^3$ and stays larger.</p>
       </div>
+
+      <p>
+        $60^3 = 216\,000$, which is six digits. $2^{60}$ is a great deal more: since
+        $2^{10} = 1024$ is a little over $10^3$, raising both sides to the sixth power
+        gives $2^{60}$ a little over $10^{18}$. So $2^{60}$ wins, and not
+        narrowly — it is about $5 \times 10^{12}$ times larger.
+      </p>
+
+      <p>
+        The second half is more interesting, because for small $n$ the answer goes the
+        other way. Make a table:
+      </p>
+
+      <table>
+        <tbody>
+          <tr><th>$n$</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+          <tr><th>$2^n$</th><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td><td>128</td><td>256</td><td>512</td><td>1024</td></tr>
+          <tr><th>$n^3$</th><td>1</td><td>8</td><td>27</td><td>64</td><td>125</td><td>216</td><td>343</td><td>512</td><td>729</td><td>1000</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        $2^n$ is ahead only at $n = 1$; from $n = 2$ to $n = 9$, $n^3$ leads. At
+        $n = 10$ the power takes the lead, $1024$ against $1000$, and never gives it
+        back. Each step doubles $2^n$, but from here on it multiplies $n^3$ by much
+        less than $2$: $11^3 = 1331$ is not even one and a half times $1000$, and the
+        step only gets smaller as $n$ grows.
+      </p>
+
+      <p>
+        That is the shape of every such race. A power with the variable in the
+        exponent starts slowly, loses for a while, and then wins by a distance nothing
+        can close.
+      </p>
 
       <div class="c-try">
         <p>What is the last digit of $7^{100}$?</p>
       </div>
 
-      <div class="c-try">
-        <p>Show that $2^{10}$ is larger than $10^3$. Use it to decide which of $2^{100}$
-        and $10^{30}$ is larger, without evaluating either.</p>
-      </div>
-
-      <div class="c-try">
-        <p>Which is larger, $3^{500}$ or $5^{300}$? Neither can be written out, and
-        neither needs to be.</p>
-      </div>
-
-      <div class="c-try">
-        <p>A rumour starts with one person. Every hour, everybody who knows it tells
-        three people who do not. How many hours before a city of a million knows?</p>
-      </div>
+      <p>
+        You cannot compute $7^{100}$, and you do not need to: last digits depend only
+        on last digits, so work with those alone.
+      </p>
 
     </div>
   </div>

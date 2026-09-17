@@ -2,26 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Now be careful about what this test can do, because it works only one way. It says
-      that a number ending in $2, 3, 7$ or $8$ is <em>certainly not</em> a square: $1027$
-      is out at a glance, and so is $2048$. It does <strong>not</strong> say that a
-      number ending in $0, 1, 4, 5, 6$ or $9$ <em>is</em> one. Both $16$ and $26$ end in
-      $6$; only the first is a square.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A test that only says no</div>
-        <p>If a number ends in $2$, $3$, $7$ or $8$, it is not a perfect square. If it
-        ends in anything else, the test has told you nothing and you must look
-        further.</p>
-      </div>
-
-      <p>Notice too that the second row is a mirror: $1, 4, 9, 6, 5$ and then $6, 9, 4,
-      1$ back again. That is because $n$ and $10 - n$ end their squares the same way —
-      $4^2 = 16$ and $6^2 = 36$ both end in $6$, and $1^2$ and $9^2$ both end in $1$. So
-      a square ending in $6$ came from a number ending in $4$ or $6$, and a square
-      ending in $1$ came from a number ending in $1$ or $9$. That will be useful when we
-      start hunting for square roots.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
@@ -29,23 +9,22 @@
           squares?</p>
           <p>Read the last digit of each and check it against the six that are
           possible.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$2032$</span>
-              <span>ends in $2$ — impossible</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$2048$</span>
-              <span>ends in $8$ — impossible</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$1027$</span>
-              <span>ends in $7$ — impossible</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$1089$</span>
-              <span>ends in $9$ — possible, so look further</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$2032$ ends in $2$</span>
+              <span class="work__why">impossible</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$2048$ ends in $8$</span>
+              <span class="work__why">impossible</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$1027$ ends in $7$</span>
+              <span class="work__why">impossible</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$1089$ ends in $9$</span>
+              <span class="work__why">possible, so look further</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$2032$, $2048$ and $1027$</span></div>
           </div>
           <p>Three are settled without a calculation. The fourth is not settled at all;
           as it happens $1089 = 33^2$, but the last digit could never have told us
@@ -69,6 +48,47 @@
         <div class="work__row">
           <span class="work__label">$900^2$</span><span>$= 810\,000$</span>
         </div>
+      </div>
+
+      <p>Each trailing zero of $n$ is a factor of $10$, and squaring uses it twice — so
+      the square has exactly twice as many. A number with three zeros at the end has a
+      square with six. Read backwards: <strong>a perfect square can only end in an even
+      number of zeros</strong>, so $2000$ is not a square and neither is any number
+      ending in an odd run of them.</p>
+
+      <p><strong>Squaring keeps a number odd or even.</strong> An even number is $2k$, and
+      $(2k)^2 = 4k^2$, which is even. An odd number is $2k+1$, and its square is
+      $4k^2 + 4k + 1$, which is odd. So a square is even exactly when the number it came
+      from is even — $6^2 = 36$, $7^2 = 49$ — and there are no
+      exceptions.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 1.2</div>
+        <ol class="c-questions">
+          <li>Say which of these cannot be perfect squares, and give the reason in each
+              case.
+              <ol class="c-parts c-parts--4">
+                <li>$4093$</li>
+                <li>$6250$</li>
+                <li>$1444$</li>
+                <li>$8877$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write five numbers, each of at least four digits, that you can rule out as
+              squares by looking at the last digit alone.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A perfect square ends in $6$. What are the possible last digits of the
+              number it is the square of?</li>
+        </ol>
       </div>
 
     </div>

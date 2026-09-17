@@ -2,90 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.3</div>
-        <ol class="c-questions">
-          <li>How many of each Egyptian symbol are needed to write these numbers?
-              <ol class="c-parts c-parts--3">
-                <li>$1023$</li>
-                <li>$2660$</li>
-                <li>$70\,707$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>Read what has happened. The number $7530$ is written with eight marks and two
+      symbol shapes, and nowhere in it is there a picture meaning <em>three thousand six
+      hundred</em>. The leftmost group is in the $3600$ place, and that is all it needs
+      to be. Sixty times bigger again, and you move one group further left — no new
+      symbol required, ever.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A place value system</div>
+        <p>In a <span class="term">positional</span> or <span class="term">place
+        value</span> system, a symbol's landmark is decided by <em>where</em> it is
+        written rather than by <em>what</em> it is. A finite set of symbols then writes
+        every number there is.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write each number as a sum of landmarks of a base-$5$ system, and say how
-              many of each landmark it needs.
-              <ol class="c-parts c-parts--3">
-                <li>$15$</li>
-                <li>$137$</li>
-                <li>$293$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>That is the fourth idea, and it is the one that solves the original problem
+      completely. But the Mesopotamians did not quite get it right, and the reason is
+      worth as much as the idea.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>List the first six landmark numbers of a base-$7$ system. In general, what
-              are the landmarks of a base-$n$ system?</li>
-        </ol>
-      </div>
+      <p>Consider $3605$, which is $1 \times 3600 + 0 \times 60 + 5$. The middle place
+      holds nothing. What do you write there?</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Is there any whole number that cannot be written in the base-$5$ system?
-              Explain why, or give one.</li>
-        </ol>
-      </div>
+      <p>They left a gap. And a gap is not a symbol. It is wider in one scribe's hand
+      than in another's, it can be lost when clay dries or a tablet is copied, and two
+      gaps in a row look exactly like one. A numeral meaning $3605$ could be
+      read as $65$, or as $216\,005$, depending on how generously you measured the empty
+      space.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Can an Egyptian numeral ever need the same symbol ten or more times? Say
-              why not, in one sentence.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Give a simple rule for multiplying a number by $5$ in a base-$5$ system,
-              and check it on the number $18$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>In base $10$, the number $324$ needs $3 + 2 + 4 = 9$ symbols written
-              Egyptian-style. How many does it need in base $5$? Which base writes $324$
-              with fewer symbols, and is that true for every number?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">3.6</span><span class="name">Letting Position Do the Work</span></h2>
-
-      <p>A base fixes the arithmetic, but one problem remains, and it is the problem
-      this chapter opened with. Egypt needed a new picture for every new power of ten: a
-      stroke, an arch, a coil, a lotus, a finger, a tadpole, a kneeling figure — and
-      after a million, nothing. Push far enough and the system runs out of symbols, just
-      as the alphabet did.</p>
-
-      <p>The way out is surprising once you see it, and it was found more than once. Look
-      again at how a number is written:</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$324$ in Egypt</span>
-          <span>coil coil coil, arch arch, stroke stroke stroke stroke</span>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Later Mesopotamian scribes did invent a mark to fill an empty place, and it
+          worked. But they used it only <em>between</em> other symbols, never at the end
+          — so $1$ and $60$ and $3600$ still looked alike, and the reader had to judge
+          from context which was meant.</p>
         </div>
       </div>
 
-      <p>Every symbol in that line is doing two jobs at once. It says <em>how many</em>
-      by being repeated, and it says <em>of what</em> by being the shape it is. Separate
-      the two jobs, and the second one can be done without a symbol at all — by
-      <strong>position</strong>.</p>
+      <h3>3.6.2 The Maya, and the Chinese rods</h3>
+
+      <p>The same idea was found independently in Central America. Between the third and
+      tenth centuries CE the Maya wrote numbers with a dot for $1$ and a bar for $5$,
+      making every number up to $19$. They then stacked the groups vertically: units at
+      the bottom, the next place above, and so on. They had a placeholder too, drawn as a
+      shell.</p>
+
+      <p>Their landmarks are strange. The first is $20$, as you would expect from a people
+      counting on fingers and toes; but the next landmark is $360$ rather than $400$,
+      which breaks the rule that every landmark is the base times the last. It is
+      generally thought that their calendar got in the way: $360$ is close to a year. Whatever
+      the reason, it costs them the multiplication shortcut of § 3.5.1, since the product
+      of two landmarks is no longer a landmark.</p>
+
+      <p>In China, from at least the third century CE, calculation was done with small
+      rods laid out on a board. The rod numerals are a base-ten place value system, and
+      they have an extra trick of their own: the digits in alternate places were laid out
+      vertically and horizontally in turn.</p>
 
     </div>
   </div>

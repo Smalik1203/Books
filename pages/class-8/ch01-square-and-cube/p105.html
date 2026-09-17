@@ -2,69 +2,57 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A side that is neither a whole number nor a fraction</div>
-        <p>
-          The side is $\sqrt{2}$, and the first half is quick. If the side were a whole
-          number $n$ then $n^2 = 2$, and $1^2 = 1$ is too small while $2^2 = 4$ is too
-          big. There is no whole number between $1$ and $2$, so there is no such $n$.
-        </p>
-        <p>
-          The second half is the interesting one, and it is the pairing argument used
-          once more. Suppose the side were a fraction $\tfrac{a}{b}$, written in lowest
-          terms. Squaring gives
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$\left(\tfrac{a}{b}\right)^2 = 2$</span>
-            <span>so $a^2 = 2b^2$</span>
-          </div>
+      <p>
+        A word about the third and the fifth, because they are a different kind of
+        question from the rest. Both ask you to show that something is
+        <em>impossible</em>, and you cannot do that by checking cases — there are
+        infinitely many and you would never finish. What settles an impossibility is an
+        argument that covers every case at once, and in both of these the argument is
+        short. Finding it is the work; writing it down takes three lines.
+      </p>
+
+      <p> The others are more ordinary, but each has one idea that does the work. The first turns on counting factors rather than listing them. The second is a subtraction of two squares in disguise. The fourth asks what a number must look like in its factorised form, which is the chapter's main move, and the seventh compares the two ends of a range. And the last is a search, so the question is not whether you can do it but whether you can organise it so that it ends. </p>
+
+      <p>
+        One more remark, since it applies to half the list. Several of these
+        questions are about what a number looks like once it has been taken apart into
+        primes, and none of them can be answered by staring at the digits. If you find
+        yourself squinting at a number hoping for inspiration, stop and factorise it
+        instead. That is not a last resort; it is the first move.
+      </p>
+
+      <p> That is the end of the eight questions. Read back over the eight and notice how few of them needed a calculation of any size. Two were settled by comparing sizes, two by counting primes, one by counting the prime 2 on each side of an equation, and one by choosing where to stop searching. The arithmetic in this chapter is easy. Deciding which of the chapter's few facts a question is really about is the part worth practising, and the examples and practice that follow are arranged to give you that practice rather than more sums. </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
         </div>
-        <p>
-          Now count how many $2$s each side contains. On the left, $a^2$ is a square, so
-          the prime $2$ appears in it an even number of times — that is exactly what
-          being a square means. On the right, $b^2$ likewise has an even number of $2$s,
-          and then one more $2$ is added on, making the count odd.
-        </p>
-        <p>
-          One number cannot contain the prime $2$ an even number of times and an odd
-          number of times at the same time. So no such fraction exists, and the side
-          of that sheet of cardboard cannot be written as a fraction at all.
-        </p>
-        <p>
-          This is worth more than the question that produced it. Numbers of this kind
-          are called <em>irrational</em>, and finding the first of them was a genuine
-          shock — a length you can draw with a ruler, and cannot write down. You will
-          meet them properly in a chapter of their own; the argument above is the whole
-          proof, and you have just followed it.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Odd squares and the number eight</div>
-        <p>
-          Check first, then explain. $1, 9, 25, 49, 81$ divided by $8$ leave $1, 1, 1,
-          1, 1$. It is not a coincidence and the reason is one line of algebra.
-        </p>
-        <p>
-          Every odd number can be written $2k + 1$. Square it:
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$(2k+1)^2$</span>
-            <span>$= 4k^2 + 4k + 1 = 4k(k+1) + 1$</span>
+      <h3>Type 1 &middot; Factors and square numbers</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>In the corridor of lockers, which of the lockers numbered 81, 45, 100 and 72 end open?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>a locker ends open when its number has an odd count of factors</span>
+              <span class="work__why">only squares do</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$81 = 9 \times 9$ and $100 = 10 \times 10$ are squares</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>81: 1, 3, 9, 27, 81 &nbsp; 100: 1, 2, 4, 5, 10, 20, 25, 50, 100</span>
+              <span class="work__why">5 and 9, both odd</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>45: 1, 3, 5, 9, 15, 45 &nbsp; 72: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72</span>
+              <span class="work__why">6 and 12, both even</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Lockers 81 and 100 end open; 45 and 72 end shut</span></div>
           </div>
         </div>
-        <p>
-          Now $k$ and $k+1$ are consecutive, so one of them is even, so $k(k+1)$ is
-          even. Write it as $2m$. Then the square is $8m + 1$ — a multiple of $8$, plus
-          one.
-        </p>
-        <p>
-          The useful part is the test it gives you. A number that leaves any remainder
-          but $1$ on division by $8$ cannot be an odd square: $2019$ leaves $3$, so it
-          is out, and no factorisation was needed to say so.
-        </p>
       </div>
 
     </div>

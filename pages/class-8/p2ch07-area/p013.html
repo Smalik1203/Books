@@ -2,57 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The turn about $N$ carries $A$ to $C$, because $N$ is the midpoint of $AC$ and a
-      half-turn about a midpoint swaps the two ends. Nothing is lost and nothing overlaps,
-      so the parallelogram has the triangle's area — and it stands on the same base with
-      half the height, which is $\tfrac12 \times b \times h$ over again.</p>
+      <h2><span class="badge">7.9</span><span class="name">Every Polygon Is Triangles</span></h2>
 
-      <p>With those two exchanges in hand, a chain becomes possible. A triangle turns
-      into a parallelogram, and a parallelogram turns into a rectangle, so a triangle
-      turns into a rectangle in two moves. A rhombus splits into two triangles and
-      follows the same road. So does a trapezium, which the first book turned into a
-      parallelogram by doubling it.</p>
+      <p>A field is rarely a rectangle and almost never a rhombus. It is some shape with
+      five or six corners and no name at all, and there is no formula waiting for it —
+      but there does not need to be one.</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Everything ends up a rectangle</div>
-        <p>A rectangle is where these chains stop, because a rectangle is the one shape
-        whose area can be read straight off a count of unit squares. Every formula in
-        this chapter is an instruction for reaching a rectangle, and the formula's
-        ingredients are the rectangle's two sides in disguise.</p>
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 92" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A quadrilateral divided by one diagonal into two triangles, and a pentagon divided from one vertex into three triangles">
+      
+            <path class="dg-fill-a" d="M20 25 L80 18 L14 68 Z"/>
+            <path class="dg-fill-d" d="M80 18 L88 72 L14 68 Z"/>
+            <path class="dg-thin"   d="M80 18 L14 68"/>
+            <path class="dg-line"   d="M20 25 L80 18 L88 72 L14 68 Z"/>
+      
+            <path class="dg-fill-a" d="M112 44 L140 18 L178 32 Z"/>
+            <path class="dg-fill-d" d="M112 44 L178 32 L180 70 Z"/>
+            <path class="dg-fill-c" d="M112 44 L180 70 L126 80 Z"/>
+            <path class="dg-thin"   d="M112 44 L178 32 M112 44 L180 70"/>
+            <path class="dg-line"   d="M112 44 L140 18 L178 32 L180 70 L126 80 Z"/>
+      
+            <text class="dg-label" x="16" y="21">A</text>
+            <text class="dg-label" x="82" y="14">B</text>
+            <text class="dg-label" x="90" y="80">C</text>
+            <text class="dg-label" x="8" y="76">D</text>
+      
+            <text class="dg-note" x="49" y="90" text-anchor="middle">two triangles</text>
+            <text class="dg-note" x="146" y="90" text-anchor="middle">three triangles</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.10</span> One diagonal cuts a
+          quadrilateral into two triangles; two diagonals from one corner cut a pentagon
+          into three. A polygon of $n$ sides gives $n - 2$ triangles this way.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>Give a method for turning a rectangle $12$ cm by $5$ cm into a triangle of
-          the same area, and say how many such triangles there are.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">the area</span>
-              <span>$12 \times 5 = 60$ cm<sup>2</sup></span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">a triangle on the same base</span>
-              <span>$\tfrac12 \times 12 \times h = 60$, so $h = 10$ cm</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so</span>
-              <span>keep the base $12$ cm and take twice the height</span>
-            </div>
+      <p>Every triangle has an area that section 7.5 can find, so every polygon has an
+      area that a sum of them can find. That is the whole method, and it is the reason
+      the triangle got so much of this chapter: it is the piece all the others are made
+      of.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>This chapter has cut a parallelogram into a rectangle, a triangle into a
+            parallelogram, and a rhombus into two triangles. Each time, one shape was
+            taken apart and the pieces made another of the same area.</p>
+            <p>Suppose you are handed any two polygons at all that happen to have the
+            same area — a long thin triangle, say, and a regular hexagon. Do you think
+            the first can always be cut into pieces that rebuild the second? Argue for
+            your answer, then try it on a triangle and a square of equal area.</p>
           </div>
-          <p>And there are infinitely many, because section 7.4 lets the apex slide
-          anywhere along a line $10$ cm above the base. Even the base is free: a triangle
-          with base $5$ cm and height $24$ cm has the same $60$ cm<sup>2</sup>. Going from
-          a rectangle to a triangle throws away information; going the other way does
-          not.</p>
         </div>
       </div>
 
-      <p>One thing separates what the Śulbasūtras wanted from what a formula gives. A
-      formula says how large the new shape must be. A builder needs to <em>draw</em> it —
-      with a cord and pegs, on the ground, exactly. That is why these texts give cutting
-      instructions rather than equations, and why the pictures in this chapter are the
-      mathematics rather than an illustration of it.</p>
+      <h2><span class="badge">7.10</span><span class="name">Areas in Real Life</span></h2>
+
+      <p>An A4 sheet is $21$ cm by $29.7$ cm, so it holds $623.7$ cm<sup>2</sup>. A
+      school desk is perhaps eight or nine of those laid out; a classroom floor is a few
+      hundred. Once the numbers get that large the unit changes, and changing an area
+      unit is not the same as changing a length unit.</p>
+
+      <p>Furniture in India is often measured in inches and feet, and an inch is
+      $2.54$ cm. A square inch is a square of side $2.54$ cm, so it holds</p>
+
+      <div class="eq">$$2.54 \times 2.54 = 6.4516 \text{ cm}^2.$$</div>
+
+      <p>That is the whole of the difficulty, and it catches people every time: doubling
+      a length multiplies an area by four, and multiplying a length by $2.54$ multiplies
+      an area by $6.45$. A conversion factor for lengths has to be <em>squared</em>
+      before it can be used on areas.</p>
 
     </div>
   </div>

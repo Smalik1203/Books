@@ -2,58 +2,95 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <p>Two poles, $12$ m and $7$ m tall, stand upright $12$ m apart on level ground.
-        How far apart are their tops?</p>
-      </div>
-
-      <div class="c-try">
-        <p>A right-angled triangle has a hypotenuse of $29$ and two short sides that
-        differ by $1$. Find them.</p>
-      </div>
-
-      <div class="c-try">
-        <p>A square field has an area of one hectare — $10{,}000$ m<sup>2</sup>. Walking
-        along the diagonal instead of round two sides saves how many metres, and what
-        percentage of the walk is that?</p>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">The same eight questions, worked — and the reasoning that finds them.</div>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">diagonal</span>
+          <span>$d^2 = 11^2 + 60^2 = 121 + 3600 = 3721$, so $d = 61$ cm</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">square on it</span>
+          <span>$61^2 = 3721$ cm<sup>2</sup></span>
         </div>
       </div>
 
-      <p>The eight are answered below in the order they were asked. In most of them the
-      first move is to find the right-angled triangle that the question has not drawn.
-      Once it is on the page the arithmetic is short, and where it is not on the page
-      there is nothing to do.</p>
+      <p>The second answer was already written down in the first line, because $d^2$
+      <em>is</em> the area of the square on $d$. That is the theorem's real shape:
+      it is about areas, and the lengths are what we take out of it afterwards.</p>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A half-area square, found without its side</div>
-        <p>Joining the midpoints of a square's sides halves the area, which Section 2.3
-        settled with the four folded corners. So there is no need to find the first
-        square's side at all.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">inner area</span>
-            <span>half of $200 = 100$ cm<sup>2</sup></span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">inner side</span>
-            <span>$\sqrt{100} = 10$ cm</span>
-          </div>
-        </div>
-        <p>Going the other way round — finding the outer side as $\sqrt{200}$ and then
-        working with it — gives the same answer through a number that does not come out
-        exactly. The tidy route was to halve the area first.</p>
-        <p>That is worth generalising. Areas in this chapter behave themselves and
-        lengths often do not, so a question about lengths is frequently easier answered
-        by working in areas for as long as possible and taking the square root once, at
-        the end.</p>
+      <div class="c-try">
+        <p>A triangle has sides $12$, $16$ and $20$. Find its area.</p>
       </div>
+
+      <p>An area needs a base and a perpendicular height, and this triangle offers
+      neither — unless it happens to be right-angled. Test it.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">test</span>
+          <span>$12^2 + 16^2 = 144 + 256 = 400 = 20^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>area $= \tfrac12 \times 12 \times 16 = 96$</span>
+        </div>
+      </div>
+
+      <p>It is $(3,4,5)$ multiplied by $4$, which is worth spotting: the two short
+      sides are the base and the height of each other, so no extra line has to be
+      drawn.</p>
+
+      <div class="c-try">
+        <p>A ladder $25$ m long leans against a wall and reaches $24$ m up it. Its foot
+        slips out a further $8$ m. How far down the wall has the top come?</p>
+      </div>
+
+      <p>The ladder does not change length, so both positions are right-angled
+      triangles with the same hypotenuse. Find where the foot started.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">foot at first</span>
+          <span>$25^2 - 24^2 = 625 - 576 = 49$, so $7$ m out</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">foot after</span>
+          <span>$7 + 8 = 15$ m out</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">new height</span>
+          <span>$625 - 225 = 400$, so $20$ m up</span>
+        </div>
+      </div>
+
+      <p>The top has come down $4$ m. Notice that the foot moved $8$ m and the top
+      moved half that: a ladder that is nearly upright loses very little height when
+      its foot slips, and one that is nearly flat loses a great deal. The two
+      movements are not equal and never are, because the theorem ties the
+      <em>squares</em> of the two distances together and not the distances
+      themselves.</p>
+
+      <div class="c-try">
+        <p>Start with a square of area $1$ and build on its diagonal, then on the new
+        square's diagonal, and so on, ten times over. What is the area of the last
+        square, and how long is its side?</p>
+      </div>
+
+      <p>Each step doubles the area, so after ten steps the area has been multiplied by
+      $2$ ten times over.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">area</span>
+          <span>$2^{10} = 1024$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">side</span>
+          <span>$\sqrt{1024} = 32$</span>
+        </div>
+      </div>
+
+      <p>The side came out a whole number because $1024$ happens to be a perfect
+      square.</p>
 
     </div>
   </div>

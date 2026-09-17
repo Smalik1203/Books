@@ -2,23 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <table>
-        <thead>
-          <tr><th>$n$</th><th>$n^2$</th><th>$n$</th><th>$n^2$</th><th>$n$</th><th>$n^2$</th><th>$n$</th><th>$n^2$</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>1</td><td>6</td><td>36</td><td>11</td><td>121</td><td>16</td><td>256</td></tr>
-          <tr><td>2</td><td>4</td><td>7</td><td>49</td><td>12</td><td>144</td><td>17</td><td>289</td></tr>
-          <tr><td>3</td><td>9</td><td>8</td><td>64</td><td>13</td><td>169</td><td>18</td><td>324</td></tr>
-          <tr><td>4</td><td>16</td><td>9</td><td>81</td><td>14</td><td>196</td><td>19</td><td>361</td></tr>
-          <tr><td>5</td><td>25</td><td>10</td><td>100</td><td>15</td><td>225</td><td>20</td><td>400</td></tr>
-        </tbody>
-      </table>
-
-      <p>Nothing in the definition says that $n$ has to be a whole number. A square of side
-      $2.5$ cm has an area of $6.25$ cm², and a square of side $\tfrac53$ has an area of
-      $\tfrac{25}{9}$:</p>
-
       <div class="work work--centred">
         <p>$(2.5)^2 = 2.5 \times 2.5 = 6.25 \qquad
            \left(\tfrac53\right)^2 = \tfrac53 \times \tfrac53 = \tfrac{25}{9}$</p>
@@ -70,6 +53,26 @@
 
       <p>That is the whole proof. Ten cases, all checked, and the four missing digits
       can never appear however large the number.</p>
+
+      <p>Now be careful about what this test can do, because it works only one way. It says
+      that a number ending in $2, 3, 7$ or $8$ is <em>certainly not</em> a square: $1027$
+      is out at a glance, and so is $2048$. It does <strong>not</strong> say that a
+      number ending in $0, 1, 4, 5, 6$ or $9$ <em>is</em> one. Both $16$ and $26$ end in
+      $6$; only the first is a square.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A test that only says no</div>
+        <p>If a number ends in $2$, $3$, $7$ or $8$, it is not a perfect square. If it
+        ends in anything else, the test has told you nothing and you must look
+        further.</p>
+      </div>
+
+      <p>Notice too that the second row is a mirror: $1, 4, 9, 6, 5$ and then $6, 9, 4,
+      1$ back again. That is because $n$ and $10 - n$ end their squares the same way —
+      $4^2 = 16$ and $6^2 = 36$ both end in $6$, and $1^2$ and $9^2$ both end in $1$. So
+      a square ending in $6$ came from a number ending in $4$ or $6$, and a square
+      ending in $1$ came from a number ending in $1$ or $9$. That will be useful when we
+      start hunting for square roots.</p>
 
     </div>
   </div>

@@ -2,92 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">the two triangles</span>
-          <span>$\tfrac12 \times BD \times AO \;+\; \tfrac12 \times BD \times CO$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">common factor</span>
-          <span>$\tfrac12 \times BD \times (AO + CO)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">and</span>
-          <span>$AO + CO = AC$, giving $\tfrac12 \times BD \times AC$</span>
-        </div>
+      <h2><span class="badge">7.8</span><span class="name">Shapes Exchanged for Shapes</span></h2>
+
+      <p>The <span class="term">Śulbasūtras</span> are ancient Indian texts on the
+      building of altars — the same texts Chapter 2 took the theorem of the diagonal
+      from. An altar had to be built to a prescribed shape <em>and</em> a prescribed
+      area, and the two requirements do not always arrive together, so the Śulbasūtras
+      are full of problems of one kind: given this shape, construct that one, with the
+      area unchanged.</p>
+
+      <p>Section 7.6 has already solved one of them — a parallelogram exchanged for a
+      rectangle. Here is a second, and it is the one that makes the rest easy: turn a
+      triangle into a parallelogram.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 118" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle cut along the line joining the midpoints of two sides, and the top piece turned half a circle so that the triangle becomes a parallelogram of the same base and half the height">
+      
+            <path class="dg-fill-a" d="M73 38 L48 62 L148 62 L123 38 Z"/>
+            <path class="dg-fill-c" d="M98 14 L73 38 L123 38 Z"/>
+            <path class="dg-line"   d="M48 62 L148 62 L98 14 Z"/>
+            <path class="dg-thin"   d="M73 38 H123"/>
+      
+            <text class="dg-label" x="95" y="10">A</text>
+            <text class="dg-label" x="42" y="70">B</text>
+            <text class="dg-label" x="150" y="70">C</text>
+            <text class="dg-label" x="64" y="36">M</text>
+            <text class="dg-label" x="126" y="36">N</text>
+      
+            <text class="dg-note" x="98" y="78" text-anchor="middle">turned about N</text>
+      
+            <path class="dg-fill-a" d="M73 86 L48 110 L148 110 L123 86 Z"/>
+            <path class="dg-fill-c" d="M123 86 L148 110 L173 86 Z"/>
+            <path class="dg-line"   d="M73 86 L48 110 L148 110 L173 86 Z"/>
+            <path class="dg-thin"   d="M123 86 L148 110"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.9</span> $M$ and $N$ are the midpoints
+          of $AB$ and $AC$. Cut along $MN$ and turn the top piece half a circle about
+          $N$: $A$ lands on $C$, and what is left is a parallelogram on the same base
+          $BC$, half as tall.</figcaption>
+        </figure>
       </div>
 
-      <p>Notice that the halving of the diagonals was never needed — only that $AO$ and
-      $CO$ add up to $AC$. What <em>was</em> needed is the right angle at $O$, because
-      without it $AO$ would not be the height of anything. The formula therefore holds
-      for any quadrilateral whose diagonals cross at right angles: a kite, or a square,
-      as well as a rhombus.</p>
+      <p>The turn about $N$ carries $A$ to $C$, because $N$ is the midpoint of $AC$ and a
+      half-turn about a midpoint swaps the two ends. Nothing is lost and nothing overlaps,
+      so the parallelogram has the triangle's area — and it stands on the same base with
+      half the height, which is $\tfrac12 \times b \times h$ over again.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>A rhombus has diagonals $20$ cm and $15$ cm. Find its area, and then find
-          its height if its side is $12.5$ cm.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">area</span>
-              <span>$\tfrac12 \times 20 \times 15 = 150$ cm<sup>2</sup></span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">as a parallelogram</span>
-              <span>$12.5 \times h = 150$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so</span>
-              <span>$h = 12$ cm</span>
-            </div>
-          </div>
-          <p>Two formulas for one shape, and the second question needed both: the
-          diagonals gave the area, and the area then gave a height that nothing in the
-          question had measured. The $12.5$ cm side is no accident either — a rhombus
-          with diagonals $20$ and $15$ has half-diagonals $10$ and $7.5$, and Chapter 2's
-          theorem makes the side $\sqrt{100 + 56.25} = 12.5$.</p>
-        </div>
-      </div>
+      <p>With those two exchanges in hand, a chain becomes possible. A triangle turns
+      into a parallelogram, and a parallelogram turns into a rectangle, so a triangle
+      turns into a rectangle in two moves. A rhombus splits into two triangles and
+      follows the same road. So does a trapezium, which the first book turned into a
+      parallelogram by doubling it.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 7.2</div>
-        <ol class="c-questions">
-          <li>Find the area of each parallelogram. Lengths are in centimetres.
-                <ol class="c-parts c-parts--3">
-                  <li>base $7$, height $4$</li>
-                  <li>base $5$, height $3$</li>
-                  <li>base $4.8$, height $5$</li>
-                </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A parallelogram has a side of $12$ cm with a perpendicular height of $6$ cm
-            on it. Its adjacent side is $7.6$ cm. Find the perpendicular height on that
-            side, to two decimal places.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A rectangle and a parallelogram both have sides of $5$ cm and $4$ cm. Which
-            has the greater area, and why? Can the two ever be equal?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Find the area of a rhombus whose diagonals are
-                <ol class="c-parts c-parts--3">
-                  <li>$20$ cm and $15$ cm</li>
-                  <li>$24$ cm and $10$ cm</li>
-                  <li>$9$ cm and $6.4$ cm</li>
-                </ol>
-            </li>
-        </ol>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Everything ends up a rectangle</div>
+        <p>A rectangle is where these chains stop, because a rectangle is the one shape
+        whose area can be read straight off a count of unit squares. Every formula in
+        this chapter is an instruction for reaching a rectangle, and the formula's
+        ingredients are the rectangle's two sides in disguise.</p>
       </div>
 
     </div>

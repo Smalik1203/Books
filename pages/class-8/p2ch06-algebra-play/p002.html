@@ -2,11 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The middle column checks one case. The right-hand column settles every case at
-      once, and it also shows exactly where the answer comes from: dividing $2x + 4$ by
-      two leaves $x + 2$, and the last step takes the $x$ away again. What survives is
-      the $4$, halved.</p>
-
       <div class="c-keyidea">
         <div class="c-keyidea__title">A letter carries every number at once</div>
         <p>Trying a trick on six numbers shows that it worked six times. Carrying it out
@@ -25,27 +20,23 @@
         <div class="c-example__body">
           <p>Build a think-of-a-number trick that always ends at $7$, using a different
           shape from Mukta's.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">think of</span>
-              <span>$x$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">add 3</span>
-              <span>$x + 3$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">triple it</span>
-              <span>$3x + 9$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">subtract 3 times the original</span>
-              <span>$3x + 9 - 3x = 9$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">divide by 3, add 4</span>
-              <span>$3 + 4 = 7$</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>think of $x$</span>
+              <span class="work__why">the unknown</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>add 3: $x + 3$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>triple it: $3x + 9$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>subtract 3 times the original: $3x + 9 - 3x = 9$</span>
+              <span class="work__why">the unknown cancels</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>divide by 3, add 4: $3 + 4 = 7$</span>
+              <span class="work__why">sets the answer</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Add 3, triple, subtract three times the number, divide by 3, add 4: it always ends at $7$</span></div>
           </div>
           <p>The design is done backwards. First decide how the $x$ will be removed —
           here by tripling and then subtracting three times the original — and only then

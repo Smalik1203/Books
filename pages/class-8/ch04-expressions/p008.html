@@ -2,45 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>Two expressions add to $7a - 3b$, and one of them is $4a + b$. Find the
-              other. Then find what must be subtracted from $4a + b$ to leave
-              $7a - 3b$. Your two answers differ only in sign — say why they must.</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">4.4</span><span class="name">Multiplying</span></h2>
-
-      <p>Adding expressions asked whether two terms were alike. Multiplying never asks:
-      any term can be multiplied by any other, and the answer is always a single term.
-      That is why multiplication turns out to be the easier of the two operations, and
-      also why it produces so much more.</p>
-
-      <h3>4.4.1 One term by one term</h3>
-
-      <p>Multiply the coefficients, and multiply the letters — which, since a repeated
-      letter is a power, means adding the exponents. That last step is the index law
-      $x^m \times x^n = x^{m+n}$ from Chapter 2, doing its work here for the first time.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$3x \times 5x$</span>
-          <span>$= (3 \times 5)(x \times x) = 15x^2$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$2a^2b \times 4ab^3$</span>
-          <span>$= (2 \times 4)(a^2 \times a)(b \times b^3) = 8a^3b^4$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$-6p \times \tfrac12 pq$</span>
-          <span>$= -3p^2q$</span>
-        </div>
-      </div>
-
-      <p>The degrees add too, and that is a check worth having: a term of degree $3$
-      times a term of degree $4$ must give degree $7$, whatever the letters are.</p>
-
       <h3>4.4.2 One term by a whole expression</h3>
 
       <p>Here is the rectangle from the first page, drawn properly. A rectangle $a$ tall
@@ -80,6 +41,43 @@
           rectangle, so the two are equal.</figcaption>
         </figure>
       </div>
+
+      <p>So to multiply an expression by a single term, multiply every term of it by
+      that term. The picture only shows two pieces, but nothing stops you cutting the
+      rectangle three times or ten, and the argument does not change.</p>
+
+      <div class="eq">$$a(b + c + d + \cdots) = ab + ac + ad + \cdots$$</div>
+
+      <p>Doing this is called <span class="term">expanding</span>, and the brackets are
+      said to have been removed. It is worth being clear that they have not been ignored:
+      every term inside has been used, and nothing inside has been left out.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Expand $4x(2x^2 - 3x + 5)$.</p>
+          <p>Three terms inside, so three multiplications.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$4x \times 2x^2 = 8x^3$</span>
+              <span class="work__why">the powers add</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$4x \times (-3x) = -12x^2$</span>
+              <span class="work__why">the sign comes too</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$4x \times 5 = 20x$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$8x^3 - 12x^2 + 20x$</span></div>
+          </div>
+          <p>Every term of the answer has degree one more than the term it came from,
+          because $4x$ has degree $1$.</p>
+        </div>
+      </div>
+
+      <p>When the term outside is negative, every sign inside is reversed — which is the
+      rule about subtracting a bracket, arrived at a second time and from a different
+      direction.</p>
 
     </div>
   </div>

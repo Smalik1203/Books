@@ -11,7 +11,6 @@
         <div class="c-stage__num">1</div>
         <div class="c-stage__text">
           <div class="c-stage__title">Using What You Know</div>
-          <div class="c-stage__for">The chapter's ideas, in questions that do not say which one to use.</div>
         </div>
       </div>
 
@@ -22,7 +21,11 @@
 
       <p>Every one of them yields to the same first move. Write the situation down in
       letters, exactly as it stands, and see what the writing leaves you with. Try each
-      before turning the page.</p>
+      before reading what follows it.</p>
+
+      <p>Each question is explained straight after it. Watch how little of the work is
+      arithmetic. In nearly every one, the hard part is over as soon as the situation has
+      been written down properly, and what follows is a line or two of tidying.</p>
 
       <div class="c-try">
         <p>A trick runs: think of a number, add $k$, double it, subtract $8$, halve it,
@@ -30,25 +33,51 @@
         $k$?</p>
       </div>
 
+      <p>Follow the five steps on $x$, keeping $k$ as it stands. The doubling and the
+      halving between them leave $x$ untouched, so the subtraction at the end removes
+      it entirely and only the constants survive.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">after doubling</span>
+          <span>$2(x + k) - 8 = 2x + 2k - 8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">halving</span>
+          <span>$x + k - 4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">subtracting $x$</span>
+          <span>$k - 4$, which is to be $6$, so $k = 10$</span>
+        </div>
+      </div>
+
+      <p>The $8$ was halved to $4$ on its way through and the $k$ was not, because $k$
+      was added before the doubling and $8$ after it. Where a constant is inserted
+      decides how much of it survives, and that is the whole of the designer's
+      control.</p>
+
+      <p>Notice the shape of the question, because six of the remaining seven share it.
+      You are given what the trick does and asked for one of the numbers inside it, which
+      is the reverse of the way the chapter presented every one of them.</p>
+
       <div class="c-try">
         <p>A friend works the date trick and tells you their answer is $1390$. What date
         did they think of?</p>
       </div>
 
-      <div class="c-try">
-        <p>A three-row pyramid has $100$ at the top, and its bottom row is three
-        consecutive whole numbers. Find them.</p>
-      </div>
+      <p>The trick's output is $100m + 165 + d$, so the whole of the work is to take
+      the $165$ away and split what is left at the hundreds.</p>
 
-      <div class="c-try">
-        <p>Two $2 \times 2$ squares are drawn on the same calendar page. One totals $40$
-        and the other $68$. How far apart are their top-left dates, and where does that
-        put one square in relation to the other?</p>
-      </div>
-
-      <div class="c-try">
-        <p>A two-digit number is exactly four times the sum of its digits. Find every
-        number for which this is true.</p>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">subtract</span>
+          <span>$1390 - 165 = 1225$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">split it</span>
+          <span>$1225 = 100 \times 12 + 25$</span>
+        </div>
       </div>
 
     </div>

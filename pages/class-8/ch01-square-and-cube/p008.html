@@ -2,67 +2,88 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>That single fact does two jobs. The first is a test. If every square is
-      $1 + 3 + 5 + \cdots$, then subtracting the odd numbers in order from a square must
-      land exactly on zero — and from anything else it must overshoot.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>Is $25$ a perfect square? Is $38$?</p>
-          <p>Subtract $1$, then $3$, then $5$, and keep going.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">from 25</span>
-              <span>$24,\ 21,\ 16,\ 9,\ 0$</span>
-              <span class="chip">$5$ steps</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">from 38</span>
-              <span>$37,\ 34,\ 29,\ 22,\ 13,\ 2,\ -11$</span>
-              <span class="chip">overshot</span>
-            </div>
-          </div>
-          <p>Twenty-five reaches zero after five subtractions, so $25 = 1+3+5+7+9$ and
-          $25 = 5^2$. The count of steps is the root, which is a useful extra: the
-          method does not only say <em>yes</em>, it says <em>five</em>.</p>
-          <p>Thirty-eight steps over zero, from $2$ to $-11$, so it is not a square.
-          Between $6^2 = 36$ and $7^2 = 49$ there is no square, and $38$ is stuck
-          between them.</p>
-        </div>
-      </div>
-
-      <p>The second job is arithmetic. If you already know one square, the next one is a
-      single addition away.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>Given that $35^2 = 1225$, find $36^2$ without multiplying.</p>
-          <p>$1225$ is the sum of the first $35$ odd numbers. To reach the sum of the
-          first $36$, add the $36$th odd number.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">36th odd number</span>
-              <span>$2 \times 36 - 1 = 71$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$36^2$</span>
-              <span>$1225 + 71$</span>
-              <span class="chip">$1296$</span>
-            </div>
-          </div>
-          <p>The same step run the other way is just as useful: $34^2 = 1225 - 69$,
-          since the $35$th odd number is $69$.</p>
-        </div>
-      </div>
-
       <p>The gap between neighbouring squares also settles a question that looks harder
       than it is: how many numbers lie strictly between two consecutive squares? The gap
       from $n^2$ to $(n+1)^2$ is $2n+1$, and the two ends are not counted, so there are
       $2n$ numbers in between. Between $16^2$ and $17^2$ there are $32$. Between $99^2$
       and $100^2$ there are $198$. The count grows steadily, which is why large
       squares are thinly scattered.</p>
+
+      <p>Look back at the corridor of lockers in Fig. 1.2 with that in mind. The open
+      ones were $1, 4, 9, 16, 25$, and the gaps between them were $3, 5, 7, 9$ — the odd
+      numbers again, which is exactly the same fact seen from the side. Squares are not
+      spread evenly along the number line and they never were. They start close together
+      and get further and further apart. That is why the last-digit test matters so much for large
+      numbers. By the time you reach five figures, a number picked at random has almost
+      no chance of being a square, and a test that rules four endings out in a glance is
+      worth having.</p>
+
+      <h3>1.2.3 Two triangles make a square</h3>
+
+      <p>You have met the <span class="term">triangular numbers</span> before:
+      $1, 3, 6, 10, 15, \ldots$, the counts of dots in a growing triangle, each got from
+      the one before by adding a row. They have nothing obvious to do with squares. Add
+      two neighbours together and see what happens.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$1 + 3$</span><span>$= 4 = 2^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$3 + 6$</span><span>$= 9 = 3^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$6 + 10$</span><span>$= 16 = 4^2$</span>
+        </div>
+      </div>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 170 86" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Square arrays of dots split along the diagonal into two triangular numbers: three and six making nine, six and ten making sixteen">
+      
+            <g class="dg-fill-b">
+              <circle cx="20" cy="38" r="3.6"/>
+              <circle cx="20" cy="52" r="3.6"/><circle cx="34" cy="52" r="3.6"/>
+              <circle cx="20" cy="66" r="3.6"/><circle cx="34" cy="66" r="3.6"/><circle cx="48" cy="66" r="3.6"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="34" cy="38" r="3.6"/><circle cx="48" cy="38" r="3.6"/>
+              <circle cx="48" cy="52" r="3.6"/>
+            </g>
+            <text class="dg-note" x="34" y="82" text-anchor="middle">6 + 3 = 9</text>
+      
+            <g class="dg-fill-b">
+              <circle cx="100" cy="24" r="3.6"/>
+              <circle cx="100" cy="38" r="3.6"/><circle cx="114" cy="38" r="3.6"/>
+              <circle cx="100" cy="52" r="3.6"/><circle cx="114" cy="52" r="3.6"/><circle cx="128" cy="52" r="3.6"/>
+              <circle cx="100" cy="66" r="3.6"/><circle cx="114" cy="66" r="3.6"/>
+              <circle cx="128" cy="66" r="3.6"/><circle cx="142" cy="66" r="3.6"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="114" cy="24" r="3.6"/><circle cx="128" cy="24" r="3.6"/><circle cx="142" cy="24" r="3.6"/>
+              <circle cx="128" cy="38" r="3.6"/><circle cx="142" cy="38" r="3.6"/>
+              <circle cx="142" cy="52" r="3.6"/>
+            </g>
+            <text class="dg-note" x="121" y="82" text-anchor="middle">10 + 6 = 16</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.4</span> A square array cut along its
+          diagonal falls into two triangles — one with the diagonal, one without — and
+          those are consecutive triangular numbers.</figcaption>
+        </figure>
+      </div>
+
+      <p>Cut a square array of dots along its diagonal. The half that keeps the diagonal
+      is a triangle of $1 + 2 + \cdots + n$ dots; the half that loses it is a triangle
+      one row shorter. Between them they account for every dot, so two consecutive
+      triangular numbers always add to a square.</p>
+
+      <p>Both facts in this section came from the same move, which is worth naming
+      because you will want it again. A number was counted twice — once as a total and
+      once as a shape — and the two counts were set equal. Nothing was calculated and
+      nothing was checked case by case; the argument was finished the moment the picture
+      was drawn correctly. Mathematicians call this counting two ways, and it settles a
+      surprising number of questions that look as though they need algebra.</p>
 
     </div>
   </div>

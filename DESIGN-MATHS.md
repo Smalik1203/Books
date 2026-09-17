@@ -590,7 +590,7 @@ measure and then carried by the components already in the library. It is
 of the ten were question pages with no worked problem anywhere; a reader
 was tested on a kind of question the book had never shown being solved.
 
-**This is the older shape, which Classes 6 and 8–10 still carry.** Class 7
+**This is the older shape, which Classes 9 and 10 still carry.** Class 7
 was rebuilt to the shape at the top of this section on 15 September 2026;
 where the two disagree, that one is current. The stages here are
 

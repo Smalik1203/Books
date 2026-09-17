@@ -2,77 +2,101 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Why $n^2 + n$ is always trapped</div>
-        <p>
-          No calculation will settle this, because there are infinitely many cases. What
-          settles it is showing that $n^2 + n$ always falls in a place where no square
-          can be.
-        </p>
-        <p>
-          Take any natural number $n$ and put $n^2 + n$ between the two squares nearest
-          it. Since $n \ge 1$, it is certainly bigger than $n^2$. And it is smaller than
-          the next square up:
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">$(n+1)^2$</span>
-            <span>$= n^2 + 2n + 1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$n^2 \;\lt\; n^2 + n \;\lt\; n^2 + 2n + 1$</span>
-          </div>
-        </div>
-        <p>
-          So $n^2 + n$ sits strictly between two consecutive squares — and § 1.2.2
-          established that there is nothing but ordinary numbers in that gap. A square
-          would have to be one of the two ends, and it is neither.
-        </p>
-        <p>
-          Try it once: $n = 12$ gives $156$, which lies between $144$ and $169$. The
-          argument says that will happen every time, without a further case checked.
-        </p>
-      </div>
+      <p>
+        Every odd number can be written $2k + 1$. Square it:
+      </p>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Numbers that are a square and a cube at once</div>
-        <p>
-          Ask what such a number looks like in its prime factorisation. To be a square,
-          every prime must appear an even number of times. To be a cube, a multiple
-          of three times. To be both, a multiple of $6$ times — and a number
-          where every prime appears a multiple of six times is a sixth power.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label">$1^6$</span><span>$= 1$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$2^6$</span><span>$= 64 = 8^2 = 4^3$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$3^6$</span><span>$= 729 = 27^2 = 9^3$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">$4^6$</span><span>$= 4096$</span>
-            <span class="chip">the next one</span>
-          </div>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$(2k+1)^2$</span>
+          <span>$= 4k^2 + 4k + 1 = 4k(k+1) + 1$</span>
         </div>
-        <p>
-          Three of them below $1000$, then a long wait. Notice how the answer came: not
-          by testing numbers one at a time, but by asking what the two conditions
-          together demanded, and finding they demanded a single thing. Two conditions
-          that combine into one are always worth looking for.
-        </p>
       </div>
 
       <p>
-        Both of these last two solutions did their real work before any arithmetic
-        started. One turned a question about squares into a question about where a
-        number sits between two others. The other turned a question about two
-        properties into a question about how often each prime appears. In each case the arithmetic that
-        followed was easy, which is usually a sign that the new way of looking at it was the right
+        Now $k$ and $k+1$ are consecutive, so one of them is even, so $k(k+1)$ is
+        even. Write it as $2m$. Then the square is $8m + 1$ — a multiple of $8$, plus
         one.
+      </p>
+
+      <p>
+        The useful part is the test it gives you. A number that leaves any remainder
+        but $1$ on division by $8$ cannot be an odd square: $2019$ leaves $3$, so it
+        is out, and no factorisation was needed to say so.
+      </p>
+
+      <div class="c-try">
+        <p>How many digits can the square of a two-digit number have? Give an example of
+        each length that is possible.</p>
+      </div>
+
+      <p>
+        The two-digit numbers run from $10$ to $99$, and squaring keeps the order — a
+        bigger number has a bigger square — so the shortest and longest answers come
+        from the two ends.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">smallest</span>
+          <span>$10^2 = 100$</span>
+          <span>3 digits</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">largest</span>
+          <span>$99^2 = 9801$</span>
+          <span>4 digits</span>
+        </div>
+      </div>
+
+      <p>
+        So every answer has $3$ or $4$ digits, and both lengths occur: $10^2 = 100$ has
+        three, $99^2 = 9801$ has four. The change comes at $32^2$, since $31^2 = 961$
+        still has three.
+      </p>
+
+      <p>
+        There is a pattern hiding here that is worth noticing. Squaring a number
+        roughly doubles its count of digits, so the digits of a square, marked off in
+        pairs from the right, tell you how many digits its root has: $98\,|\,01$ is two
+        pairs, and $99$ has two digits.
+      </p>
+
+      <div class="c-try">
+        <p>$1729$ is the smallest number that is a sum of two cubes in two different
+        ways. What is the smallest number that is a sum of two <em>squares</em> in two
+        different ways? You can search by hand if you organise it.</p>
+      </div>
+
+      <p>
+        The answer is $50$, and the way to find it is to organise the search so that
+        it finishes rather than wanders.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$50$</span>
+          <span>$= 1^2 + 7^2 = 1 + 49$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$= 5^2 + 5^2 = 25 + 25$</span>
+        </div>
+      </div>
+
+      <p>
+        To be sure nothing smaller works, go up through the numbers in order. For each
+        one, run the smaller square from $1^2$ upwards, stopping when it passes half
+        the number — beyond that point you would only be finding the same pair the
+        other way round. Ask whether what remains is a square. Most numbers give no
+        pair at all; some, such as $25$, $34$ and $45$, give exactly one; $50$ is the
+        first to give two.
+      </p>
+
+      <p>
+        That stopping rule is the whole art of it. Without it the search never ends;
+        with it, testing all fifty numbers takes a few minutes on paper. A search you
+        can prove has finished is worth far more than one you just got tired of.
       </p>
 
     </div>

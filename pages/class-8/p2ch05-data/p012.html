@@ -2,74 +2,98 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.8</span><span class="name">Lines for Things That Change</span></h2>
-
-      <p>Every collection so far has been a heap. The thirty household sizes could have
-      been collected in any order and the mean and the median would be the same, which is
-      exactly why a frequency table was allowed to throw the order away.</p>
-
-      <p>Some data is not like that. Think of a temperature taken every three hours, a
-      price recorded every year, a patient's pulse through a night. Here the readings come
-      in an order that is part of the information. The thing being measured also has a
-      value at every moment in between, not only at the moments somebody wrote it down.
-      That is what allows the dots to be joined.</p>
+      <p>Here is why the order matters. A shop's sales over four years were $96$, $98$,
+      $101$ and $104$ lakh rupees, and the two graphs below are both of those four
+      numbers. Every bar in each is drawn to its own axis correctly, and no figure has
+      been altered.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="0 0 196 124" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A line graph of temperature through one day, rising from twenty-two degrees at six in the morning to thirty-four at three in the afternoon and falling to twenty-five by nine at night">
-      
-            <text class="dg-note" x="6" y="9">&deg;C</text>
-      
-            <path class="dg-grid" d="M26 100 H182 M26 80 H182 M26 60 H182 M26 40 H182 M26 20 H182
-                                     M26 20 V100 M57 20 V100 M88 20 V100 M120 20 V100 M151 20 V100 M182 20 V100"/>
-            <path class="dg-axis" d="M26 100 H182 M26 100 V20"/>
-      
-            <path class="dg-plot" d="M26 90 L57 70 L88 45 L120 30 L151 50 L182 75"/>
-            <circle class="dg-fill-teal" cx="26" cy="90" r="2.4"/>
-            <circle class="dg-fill-teal" cx="57" cy="70" r="2.4"/>
-            <circle class="dg-fill-teal" cx="88" cy="45" r="2.4"/>
-            <circle class="dg-fill-teal" cx="120" cy="30" r="2.4"/>
-            <circle class="dg-fill-teal" cx="151" cy="50" r="2.4"/>
-            <circle class="dg-fill-teal" cx="182" cy="75" r="2.4"/>
-      
-            <text class="dg-tick" x="23" y="103" text-anchor="end">20</text>
-            <text class="dg-tick" x="23" y="83" text-anchor="end">24</text>
-            <text class="dg-tick" x="23" y="63" text-anchor="end">28</text>
-            <text class="dg-tick" x="23" y="43" text-anchor="end">32</text>
-            <text class="dg-tick" x="23" y="23" text-anchor="end">36</text>
-      
-            <text class="dg-tick" x="26" y="108" text-anchor="middle">6 am</text>
-            <text class="dg-tick" x="57" y="108" text-anchor="middle">9 am</text>
-            <text class="dg-tick" x="88" y="108" text-anchor="middle">12</text>
-            <text class="dg-tick" x="120" y="108" text-anchor="middle">3 pm</text>
-            <text class="dg-tick" x="151" y="108" text-anchor="middle">6 pm</text>
-            <text class="dg-tick" x="182" y="108" text-anchor="middle">9 pm</text>
-      
-            <text class="dg-note" x="104" y="120" text-anchor="middle">time of day</text>
+          <svg viewBox="0 0 196 118" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="The same four sales figures drawn twice: on an axis starting at zero the bars look almost equal, and on an axis starting at ninety-four they look wildly different">
+
+            <path class="dg-grid" d="M16 60.4 H88 M16 26.7 H88 M108 69.3 H180 M108 44.7 H180"/>
+            <path class="dg-axis" d="M16 94 H88 M16 94 V20 M108 94 H180 M108 94 V20"/>
+
+            <path class="dg-fill-a" d="M20 29.4 H31 V94 H20 Z M38 28.1 H49 V94 H38 Z
+                                       M56 26 H67 V94 H56 Z M74 24 H85 V94 H74 Z
+                                       M112 81.7 H123 V94 H112 Z M130 69.3 H141 V94 H130 Z
+                                       M148 50.8 H159 V94 H148 Z M166 32.3 H177 V94 H166 Z"/>
+            <path class="dg-line"   d="M20 29.4 H31 V94 H20 Z M38 28.1 H49 V94 H38 Z
+                                       M56 26 H67 V94 H56 Z M74 24 H85 V94 H74 Z
+                                       M112 81.7 H123 V94 H112 Z M130 69.3 H141 V94 H130 Z
+                                       M148 50.8 H159 V94 H148 Z M166 32.3 H177 V94 H166 Z"/>
+
+            <text class="dg-tick" x="13" y="97" text-anchor="end">0</text>
+            <text class="dg-tick" x="13" y="63.4" text-anchor="end">50</text>
+            <text class="dg-tick" x="13" y="29.7" text-anchor="end">100</text>
+
+            <text class="dg-tick" x="105" y="97" text-anchor="end">94</text>
+            <text class="dg-tick" x="105" y="72.3" text-anchor="end">98</text>
+            <text class="dg-tick" x="105" y="47.7" text-anchor="end">102</text>
+            <text class="dg-tick" x="105" y="23" text-anchor="end">106</text>
+
+            <text class="dg-tick" x="25.5" y="101" text-anchor="middle">&rsquo;21</text>
+            <text class="dg-tick" x="43.5" y="101" text-anchor="middle">&rsquo;22</text>
+            <text class="dg-tick" x="61.5" y="101" text-anchor="middle">&rsquo;23</text>
+            <text class="dg-tick" x="79.5" y="101" text-anchor="middle">&rsquo;24</text>
+
+            <text class="dg-tick" x="117.5" y="101" text-anchor="middle">&rsquo;21</text>
+            <text class="dg-tick" x="135.5" y="101" text-anchor="middle">&rsquo;22</text>
+            <text class="dg-tick" x="153.5" y="101" text-anchor="middle">&rsquo;23</text>
+            <text class="dg-tick" x="171.5" y="101" text-anchor="middle">&rsquo;24</text>
+
+            <text class="dg-note" x="52" y="113" text-anchor="middle">from zero</text>
+            <text class="dg-note" x="144" y="113" text-anchor="middle">from ninety-four</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 5.4</span> Six readings, three hours
-          apart, joined. This is a <span class="term">line graph</span>, and it is what
-          to draw when the horizontal axis is time.</figcaption>
+          <figcaption><span class="fignum">Fig. 5.5</span> One set of sales figures, two
+          bar graphs. The only difference between them is where the vertical axis
+          begins.</figcaption>
         </figure>
       </div>
 
-      <p>Bars would be wrong here, and it is worth seeing why. Six bars would say that
-      the temperature stood at $22^\circ$ for three hours, then at $26^\circ$ for three
-      hours, then jumped again — six flat stretches and five leaps, which is not what a
-      morning does. Every reading would be carried correctly and the picture would
-      describe a day nobody has lived through.</p>
+      <p>The left graph says the shop is steady. The right graph says the last bar is
+      five times the first, and a reader who skipped step one will believe it — because
+      that is what bars are for, comparing lengths without thinking. What has gone wrong
+      is that a bar means what it means only when its length is proportional to its
+      value, and an axis beginning at $94$ chops the same $94$ off every bar. The first
+      keeps $2$ of its $96$ and the last keeps $10$ of its $104$: five times, from a rise
+      of about eight per cent.</p>
 
-      <p>Because the line is unbroken it can be read at places where nothing was
-      measured. At half past ten it stands a little over $28^\circ$, and that is a
-      reasonable estimate of the temperature then. It is an estimate and not a
-      measurement: the real temperature wandered about between the readings, and a
-      straight segment from one dot to the next is the simplest guess, not the truth.</p>
+      <p>A cut axis is not always dishonest. A graph of body temperature through a fever
+      would be a flat line drawn from zero, and the interesting range is two degrees
+      wide. The rule is about bars in particular, because a bar carries the promise that
+      its length is the quantity. Cut the axis of a line graph when you must, and say so;
+      never cut the axis of a bar graph.</p>
 
-      <p>The same graph also settles what could not be settled from a table. The steepest
-      climb is between $9$ am and noon, and steepness is the whole point of the picture —
-      the eye reads a rate off a slope without being asked to subtract anything. A table
-      of the same six numbers holds that information and hides it.</p>
+      <p>Step two has its own discipline. Given a graph, some statements follow from it,
+      some are contradicted by it, and some — the awkward ones — are simply not settled
+      either way. Look again at Fig. 5.4 and consider three claims.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the day warmed until 3 pm</span>
+          <span>not settled — nothing was measured between the readings</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">it was warmer at noon than at 6 pm</span>
+          <span>true, and read straight off the graph</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the day never passed 34°</span>
+          <span>not settled — no reading did, which is a different claim</span>
+        </div>
+      </div>
+
+      <p>The middle one is the only inference here, and the other two are guesses dressed
+      as inferences. Both are probably right, and probably right is not what a graph
+      offers: it offers what was measured, joined by a line that says nothing except that
+      the quantity got from one reading to the next somehow.</p>
+
+      <p><em>Not settled</em> is a legitimate answer and the most common correct one. It is
+      also the answer a reader is least willing to give, because a graph looks so
+      complete. The way to give it is to have done step one, where the six readings
+      were noticed to be six.</p>
 
     </div>
   </div>

@@ -2,82 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>1.5.1 Reading a cube root off the digits</h3>
+      <h2><span class="badge">1.6</span><span class="name">Where the Words Came From</span></h2>
 
-      <p>For a cube of up to six digits there is a method that needs no factorising at
-      all, and it uses the two facts we have. It works because a two-digit root has a
-      cube of at most six digits, so you can find the two digits one at a
-      time — the units digit from the end of the number, the tens digit from the front.</p>
+      <p>The oldest lists of squares and cubes we have are Babylonian, pressed into clay
+      around 1700 BCE. They were not made for fun. A scribe who had to work out how much
+      earth a canal would move, or lay out a field of a given area, wanted the answer
+      quickly, and a table on the desk was quicker than a calculation. Tables of squares
+      and cubes are among the earliest mathematical objects anybody made, and they were
+      made because somebody needed them.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 12</div>
-        <div class="c-example__body">
-          <p>Given that $4913$ is a perfect cube, find $\sqrt[3]{4913}$ without
-          factorising.</p>
-          <p><em>The units digit, from the last digit.</em> $4913$ ends in $3$, and a
-          cube ends in $3$ only when its root ends in $7$. So the root ends in $7$.</p>
-          <p><em>The tens digit, from what is left.</em> Strike out the last three
-          digits and $4$ remains. Find the largest cube that fits inside it: $1^3 = 1$ fits
-          and $2^3 = 8$ does not, so the tens digit is $1$.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$\sqrt[3]{4913}$</span>
-              <span></span>
-              <span class="chip">$17$</span>
-            </div>
-          </div>
-          <p>Check: $17^3 = 4913$.</p>
-          <p>Striking out three digits is not a trick. It divides by $1000$, and
-          $1000 = 10^3$, so it is really asking which cube the <em>tens</em> part of the
-          root must be — exactly the same question one size down.</p>
-        </div>
+      <p>The words we use are older than the notation, and they are worth taking apart,
+      because each one is a picture.</p>
+
+      <p>In Sanskrit mathematical writing — in use from at least the third century BCE —
+      the word <em>varga</em> meant a square figure, and the area of that figure, and the
+      operation of multiplying a number by itself. All three, with no attempt to keep
+      them apart. Āryabhaṭa, writing in 499 CE, defines it in both senses at once:
+      a four-sided figure with equal sides is a varga, and so is the product of two
+      equal numbers. The fourth power was <em>varga-varga</em>, the square of the
+      square.</p>
+
+      <p>For solids the word was <em>ghana</em>, meaning thick or solid or compact —
+      again both the cube you could hold and the number you got by multiplying something
+      by itself three times.</p>
+
+      <p>So the title of this chapter is not a metaphor anyone invented for it. For a
+      very long time a squared number and a square figure were the same word, because
+      they were felt to be the same thing.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">One word, one picture</div>
+        <p><em>Varga</em>: a square, its area, and the second power. <em>Ghana</em>: a
+        solid, and the third power. The arithmetic and the geometry were never separated
+        because nobody thought they were separate.</p>
       </div>
 
-      <p>Run it on the rest and it is quick. $12\,167$ ends in $7$, so the root ends in
-      $3$. Strike three digits to leave $12$, and $2^3 = 8$ fits where $3^3 = 27$ does
-      not, so the root is $23$. And $32\,768$ ends in $8$, so the root ends in $2$. Here
-      $32$ leaves $3^3 = 27$ as the largest cube that fits, so the root is $32$.</p>
+      <p>Undoing the operation got a picture of its own, and a stranger one. The Sanskrit
+      word <em>mūla</em> means the root of a plant, and from there the base, cause or
+      origin. A square root was the <em>varga-mūla</em> — the origin of the square — and
+      a cube root the <em>ghana-mūla</em>. The word is used this way from at least the first
+      century BCE. Another word used the same way was <em>pada</em>, a foot or a base.
+      Brahmagupta, writing in 628 CE, explains that the pada of a square is the thing it
+      is the square of.</p>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>The method assumes it has been given a perfect cube. Given $4900$ it would
-          answer $10$ and be wrong, since $4900$ is not a cube at all. It finds a root;
-          it does not test for one.</p>
-        </div>
-      </div>
+      <p>That plant picture then travelled. Sanskrit mathematics reached the Arabic
+      world in the eighth and ninth centuries, and the translators did not invent a new
+      word: they used <em>jidhr</em>, which also means the root of a plant. When Arabic
+      mathematics reached Latin Europe some centuries later, the translators did the same
+      again with <em>radix</em>. From <em>radix</em> come the English words
+      <em>root</em> and <em>radical</em>, and the modern sign $\sqrt{\phantom{n}}$ is
+      often explained as a curled letter r standing for it.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 1.5</div>
-        <ol class="c-questions">
-          <li>Find each cube root by prime factorisation.
-              <ol class="c-parts c-parts--4">
-                <li>$\sqrt[3]{512}$</li>
-                <li>$\sqrt[3]{729}$</li>
-                <li>$\sqrt[3]{27000}$</li>
-                <li>$\sqrt[3]{10648}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>What is the smallest number by which $1323$ must be multiplied to give a
-              perfect cube? Give the cube root of the result.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>What is the smallest number by which $8640$ must be divided to leave a
-              perfect cube?</li>
-        </ol>
-      </div>
+      <p>Three languages and something like fifteen hundred years, and each set of
+      translators looked at the operation and chose the same picture — the thing
+      underground that the visible thing grew out of. When you write $\sqrt{49} = 7$ you
+      are saying that $7$ is what $49$ grew from.</p>
 
     </div>
   </div>

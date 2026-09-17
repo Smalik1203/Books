@@ -2,62 +2,98 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <p>A king agrees to pay a debt in rice: one grain on the first square of a
-        chessboard, two on the second, four on the third, and so on to the
-        sixty-fourth. Roughly how many grains is that, and is it a debt anyone could
-        pay?</p>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$7^1$</span><span>ends in $7$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$7^2 = 49$</span><span>ends in $9$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$7^3 = 343$</span><span>ends in $3$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$7^4 = 2401$</span><span>ends in $1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$7^5$</span><span>ends in $7$ — and the cycle starts again</span>
+        </div>
       </div>
 
+      <p>
+        The cycle has length $4$ and it must repeat for ever, because once the last
+        digit returns to $7$ everything that follows is a repeat of what followed the
+        first $7$. So the answer depends only on where $100$ falls in the cycle:
+        $100 = 4 \times 25$, exactly at the end of a cycle, so $7^{100}$ ends in $1$.
+      </p>
+
       <div class="c-try">
-        <p>The chapter said $n^0 = 1$ for every $n$ except $0$. Work out what
-        $0^n$ is for $n = 1, 2, 3$, and then say why $0^0$ is left undefined rather
-        than given a value.</p>
+        <p>Show that $2^{10}$ is larger than $10^3$. Use it to decide which of $2^{100}$
+        and $10^{30}$ is larger, without evaluating either.</p>
       </div>
 
-      <div class="c-try">
-        <p>Take any whole number, raise it to the fifth power, and compare the last
-        digit of the answer with the last digit you started with. Try it on six
-        different numbers, say what you find, and then explain it.</p>
+      <p>
+        $2^{10} = 1024$ and $10^3 = 1000$, so $2^{10}$ is larger — by $2.4\%$, which
+        is small enough to ignore and large enough to matter later.
+      </p>
+
+      <p>
+        Now raise both to the tenth power. Raising the larger of two positive numbers
+        to a power keeps it the larger, so
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$2^{100}$</span>
+          <span>$= (2^{10})^{10} = 1024^{10}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$10^{30}$</span>
+          <span>$= (10^3)^{10} = 1000^{10}$</span>
+        </div>
       </div>
 
       <p>
-        Two remarks before you start. The first three questions and the fifth are all
-        the same move in different clothes: two quantities cannot be compared as
-        written, so rewrite one of them until it shares something with the other. Get
-        into the habit of asking <em>what could these two have in common?</em> rather
-        than reaching for a calculator that cannot hold the answer anyway.
+        So $2^{100}$ is larger. And the margin can be estimated too: each of the ten
+        factors is $2.4\%$ bigger, and $1.024^{10}$ is about $1.27$, so $2^{100}$ is
+        roughly $1.27 \times 10^{30}$. That is the true value to three figures.
       </p>
 
       <p>
-        The other three are about patterns in last digits, and there the manoeuvre is
-        different: compute the first four or five cases, look for the cycle, and then
-        find the reason the cycle must repeat. A pattern you have spotted is only a
-        guess; a pattern you have explained is a result. Both questions ask for the
-        second.
+        <strong>$2^{10} \approx 10^3$ is the single most useful approximation in this
+        chapter.</strong> It says that ten doublings are about a thousandfold, which
+        is why computer memories come in sizes like $1024$ and why the folded sheet
+        reached the Moon: forty-six doublings are about four and a half thousandfolds
+        stacked up.
       </p>
 
-      <p>
-        If you cannot get started, make the question smaller. Ask about $7^{10}$ before $7^{100}$, or
-        about eight squares of the chessboard before sixty-four. Every solution overleaf
-        was found that way, and the small version is usually enough to see the shape of
-        the large one.
-      </p>
+      <div class="c-try">
+        <p>Which is larger, $3^{500}$ or $5^{300}$? Neither can be written out, and
+        neither needs to be.</p>
+      </div>
 
       <p>
-        One more thing to notice as you work. Not one of these questions can be
-        finished on a calculator, and several would break it — $2^{100}$ has thirty-one
-        digits and $3^{500}$ has two hundred and thirty-nine. That is not an accident of
-        how they were chosen. It is what happens as soon as exponents grow at all, and
-        it is why the laws of § 2.3 are worth having: they are the only way to reason
-        about numbers that cannot be written down.
+        $3^{500}$ and $5^{300}$ share neither base nor exponent, so neither law
+        applies as written. The move is to force a shared exponent, and $500$ and
+        $300$ have $100$ as a common factor.
       </p>
 
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$3^{500}$</span>
+          <span>$= (3^5)^{100} = 243^{100}$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$5^{300}$</span>
+          <span>$= (5^3)^{100} = 125^{100}$</span>
+        </div>
+      </div>
+
       <p>
-        The chapter proper showed the laws being used to simplify. Here they are being
-        used to <em>compare</em>, to <em>estimate</em>, and to <em>rule things out</em>,
-        which is where they do the most work. A law you can only apply when the question
-        is already in the right shape is half a law.
+        Now they are comparable at a glance: same exponent, and $243 \gt 125$, so
+        $3^{500}$ is the larger. It is larger by a factor of $(243/125)^{100}$, which
+        works out at around $10^{29}$ — an enormous margin, from what had looked like
+        a close contest.
       </p>
 
     </div>

@@ -2,65 +2,82 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">A value that has two jobs to do</div>
-        <p>Both sums are available, and their difference is the answer.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">before</span>
-            <span>$5 \times 12 = 60$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">after</span>
-            <span>$6 \times 13 = 78$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the new value</span>
-            <span>$78 - 60 = 18$</span>
-          </div>
-        </div>
-        <p>Why $18$ and not $13$? Because the newcomer has two jobs. It must bring its
-        own share of $13$, and it must also bring enough to lift the five that were
-        already there by one apiece — another $5$. A newcomer that brought only $13$
-        would have left the mean at $12$, which is the rule from section 5.3 about adding
-        a value equal to the mean.</p>
+      <div class="c-try">
+        <p>The twenty-four students of Example 3 (section 5.4) had a true mean height of $149.2$ cm.
+        Two more join the class and are measured barefoot at $149$ cm and $152$ cm. What
+        is the new mean height?</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Finding a dot by balancing</div>
-        <p>The sum of five values with a mean of $8$ is $40$, and the four visible dots
-        come to $29$, so the missing one is at $11$. The balance argument reaches it
-        without any adding at all.</p>
-        <div class="work work--list">
-          <div class="work__row">
-            <span class="work__label work__label--wide">below 8</span>
-            <span>$6$ is $2$ below, and each $7$ is $1$ below — $4$ in all</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">above 8</span>
-            <span>$9$ is $1$ above, so $3$ more is needed</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so the dot</span>
-            <span>sits $3$ above $8$, at $11$</span>
-          </div>
+      <p>The correction has to be applied before the new students are let in, because
+      their heights have no shoes in them and the recorded average did.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the true sum</span>
+          <span>$24 \times 149.2 = 3580.8$ cm</span>
         </div>
-        <p>The second method is the one to reach for when the numbers are awkward. It
-        never asks you to add up the whole collection, only to look at how
-        far each dot is from a point you already have.</p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">with the newcomers</span>
+          <span>$3580.8 + 149 + 152 = 3881.8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the new mean</span>
+          <span>$3881.8 \div 26 = 149.3$ cm</span>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">What four large values do to a middle</div>
-        <p>Eleven values put the median in the sixth position. Fifteen values put it in
-        the eighth. The four new values are all above $20$, so in the sorted list they
-        take the last four places and disturb nothing below them — which means the new
-        eighth value is simply the eighth of the original eleven.</p>
-        <p>That value is at or above the sixth, which was $20$. So the median rises or
-        stays where it is, and it certainly does not fall. What cannot be said is by how
-        much: the eighth of the original eleven might be $20$ again, or $200$, and the
-        question never said.</p>
+      <p>One newcomer is below the old mean and one above, and between them they lift
+      it by a tenth of a centimetre. Their own mean is $150.5$, which is above $149.2$,
+      so the rise was to be expected — and the rule from section 5.3 would have
+      predicted its direction without any of this arithmetic.</p>
+
+      <div class="c-try">
+        <p>The same monthly rainfall is drawn twice as a line graph: once with the
+        vertical axis running from $0$ to $400$ mm, and once from $100$ to $400$ mm. What
+        is the same in the two pictures and what is different? Which of the twelve months
+        cannot be shown at all on the second?</p>
       </div>
+
+      <p>Nothing about the data changes and nothing about the readings changes: every
+      month still sits against its correct label, and a reader who looks at the numbers
+      gets the same twelve either way. What changes is the <em>look</em> of the rises
+      and falls. The second graph gives the same vertical space to a range of $300$ mm
+      that the first gave to $400$, so every slope on it is a third steeper than it
+      was.</p>
+
+      <p>And any month with under $100$ mm of rain falls off the bottom of the second
+      graph altogether — which is the sharper problem, because a missing point is
+      easier to overlook than an exaggerated slope.</p>
+
+      <div class="c-try">
+        <p>A shopkeeper's takings over seven days average <span class="nb">₹$4{,}000$</span>. He then finds that
+        Wednesday's figure was entered as <span class="nb">₹$2{,}400$</span> when it should have been
+        <span class="nb">₹$4{,}500$</span>. What is the corrected average?</p>
+      </div>
+
+      <p>Only one figure was wrong, so only the total needs mending — and the total is
+      what the average was hiding.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the recorded total</span>
+          <span>$7 \times 4{,}000 = 28{,}000$ rupees</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the shortfall</span>
+          <span>$4{,}500 - 2{,}400 = 2{,}100$ rupees</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the true average</span>
+          <span>$30{,}100 \div 7 = 4{,}300$ rupees</span>
+        </div>
+      </div>
+
+      <p>Compare it with Example 3 in section 5.4, where the error was in every reading and came off
+      the mean whole. Here the error was in one reading out of seven, so it arrives at
+      the mean divided by seven: <span class="nb">₹$2{,}100$</span> shared out is
+      <span class="nb">₹$300$</span>, which is exactly the distance from
+      <span class="nb">₹$4{,}000$</span> to <span class="nb">₹$4{,}300$</span>.</p>
 
     </div>
   </div>

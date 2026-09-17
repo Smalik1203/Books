@@ -3,71 +3,96 @@
     <div class="page__main">
 
       <div class="c-try">
-        <p>A quadrilateral's diagonals bisect each other. Prove that it must be a
-        parallelogram — the chapter proved this the other way round.</p>
-      </div>
-
-      <div class="c-try">
-        <p>Copies of one regular polygon are laid round a point with no gaps and no
-        overlaps. Only three polygons can do it. Find them, and then find a pair of
-        <em>different</em> regular polygons that can do it together.</p>
-      </div>
-
-      <div class="c-try">
-        <p>For how many values of $n$ is each interior angle of a regular $n$-gon a whole
-        number of degrees?</p>
+        <p>You have four rods, of lengths $3$, $4$, $5$ and $20$ centimetres. Show that
+        they cannot be pinned into a quadrilateral, and state the rule that four lengths
+        must obey before they can.</p>
       </div>
 
       <p>
-        The fourth and fifth questions are the two that catch people out, and for
-        opposite reasons. The fourth looks as though both halves must have the same
-        answer, and they do not. The fifth looks as though the proof has broken, and it
-        has not — one diagonal fails, and a quadrilateral has two.
+        Lay the three short rods end to end and they reach $3 + 4 + 5 = 12$ cm. The
+        fourth rod is $20$ cm long, so even fully stretched the three cannot bring its
+        far end back to its near end. The ring will not close.
       </p>
 
-      <p>
-        For the rest, the habit worth forming is to ask which of the two angle sums makes
-        the question easier. The interior sum grows with $n$ and is the one to use when
-        you are told a total. The exterior sum is fixed at $360^\circ$, so it is the one
-        to use when you are told about a single angle of a regular figure, or when you
-        need to know whether a figure can exist at all.
-      </p>
-
-      <p>
-        The last question has a short answer and a long way of reaching it. If you find
-        yourself testing values of $n$ one at a time, stop and write down what has to
-        divide what.
-      </p>
-
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">three of them</span>
+          <span>$3 + 4 + 5 = 12$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the fourth</span>
+          <span>$20 > 12$</span>
         </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The interior sum, without the interior formula</div>
-        <p>
-          At every vertex the two angles add to $180^\circ$, so a $20$-gon's forty
-          angles come to $20 \times 180^\circ$ altogether.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">all the angles</span>
-            <span>$20 \times 180^\circ = 3600^\circ$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">less the outside</span>
-            <span>$3600^\circ - 360^\circ = 3240^\circ$</span>
-          </div>
-        </div>
-        <p>
-          With $n$ for $20$ that reads $180n - 360 = (n-2) \times 180$ — the chapter's
-          formula again, proved without a single diagonal.
-        </p>
+      <p>
+        The rule, then, is that <em>each</em> length must be less than the sum of the
+        other three — and it is enough to check the longest, since if the longest
+        passes the test the others cannot fail it. It is the three-rod rule with
+        one more rod added, and the reason is the same: the short way between two points is
+        the straight one.
+      </p>
+
+      <div class="c-try">
+        <p>A quadrilateral has three right angles. Must the fourth be one too? A pentagon
+        has four right angles. Must the fifth be one?</p>
       </div>
+
+      <p>
+        The two halves look alike and are not, and the angle sum is what tells them
+        apart.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">quadrilateral</span>
+          <span>$360 - 3 \times 90 = 90$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">pentagon</span>
+          <span>$540 - 4 \times 90 = 180$</span>
+        </div>
+      </div>
+
+      <p>
+        So a quadrilateral with three right angles has no choice: the fourth is
+        $90^\circ$ and the figure is a rectangle. A pentagon with four right angles
+        needs its fifth angle to be $180^\circ$ — which is not an angle of a polygon at
+        all, but a point sitting in the middle of a straight side. No such pentagon
+        exists, and what you would draw if you tried is a rectangle with an extra dot
+        marked on one edge.
+      </p>
+
+      <div class="c-try">
+        <p>The angle-sum proof used a diagonal that lay inside the figure. In a concave
+        quadrilateral one diagonal falls outside. Show that the sum is still
+        $360^\circ$.</p>
+      </div>
+
+      <p>
+        A concave quadrilateral has one vertex whose angle is more than $180^\circ$.
+        One of its diagonals falls outside the figure, and the proof cannot use it.
+        But a quadrilateral has two diagonals, and the other one lies inside.
+      </p>
+
+      <p>
+        Use that one. It cuts the figure into two triangles exactly as before, the
+        angles at its two ends are each divided into two pieces by it, and the angles of
+        the two triangles are once again precisely the four angles of the quadrilateral.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">two triangles</span>
+          <span>$180^\circ + 180^\circ = 360^\circ$</span>
+        </div>
+      </div>
+
+      <p>
+        Nothing else changes. What the concave case shows is that the proof needed
+        <em>a</em> diagonal inside the figure, not any particular one — and every
+        quadrilateral, concave or not, has at least one.
+      </p>
 
     </div>
   </div>

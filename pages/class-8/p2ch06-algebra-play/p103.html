@@ -2,68 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Reading a date out of one number</div>
-        <p>The trick's output is $100m + 165 + d$, so the whole of the work is to take
-        the $165$ away and split what is left at the hundreds.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">subtract</span>
-            <span>$1390 - 165 = 1225$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">split it</span>
-            <span>$1225 = 100 \times 12 + 25$</span>
-          </div>
-        </div>
-        <p>The twenty-fifth of December. The split is unambiguous only because $25$ is
-        under $100$ — which every day of every month is, and which is the reason the
-        multipliers were arranged to come to a hundred in the first place.</p>
+      <p>One equation in two unknowns does not give a number, and it was never going to
+      — it gives a <em>relationship</em>: the units digit is twice the tens digit. What
+      turns that into a finite list is something the algebra does not know, namely that
+      a digit runs from $0$ to $9$. So $a$ can be $1$, $2$, $3$ or $4$ and no more,
+      giving $12$, $24$, $36$ and $48$. Check one: $4 + 8 = 12$, and $4 \times 12 =
+      48$.</p>
+
+      <div class="c-try">
+        <p>Of all the ways of filling $\square\,\square \times \square$ with three
+        different digits, none of them zero, which gives the largest product of all?</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Three numbers that are really one</div>
-        <p>Three consecutive whole numbers are not three unknowns. Name the smallest $a$
-        and the other two are $a + 1$ and $a + 2$, so the pyramid has one unknown in it
-        and the formula for the top does the rest.</p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">the top</span>
-            <span>$a + 2(a+1) + (a+2) = 4a + 4$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$4a + 4 = 100$, giving $a = 24$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">the row</span>
-            <span>$24$, $25$, $26$ — and $49 + 51 = 100$</span>
-          </div>
+      <p>Two questions are hiding here, and the chapter answered only one of them. Its
+      rule says how to arrange three <em>given</em> digits: largest as the multiplier,
+      the other two in decreasing order, giving $qp \times r$. Which three digits to
+      choose is a separate matter, and for the largest product the answer is
+      unsurprising — take $7$, $8$ and $9$.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">largest</span>
+          <span>$87 \times 9 = 783$</span>
         </div>
-        <p>Notice that $4a + 4$ is a multiple of $4$, so a top of $101$ or $102$ would
-        have had no answer at all. A formula tells you which questions are worth asking
-        as well as answering the ones that are.</p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the near miss</span>
+          <span>$97 \times 8 = 776$</span>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two totals, two positions</div>
-        <p>Each total is $4a + 16$ for its own top-left date, so each gives up that date
-        at once.</p>
-        <div class="work work--list">
-          <div class="work__row">
-            <span class="work__label work__label--wide">first square</span>
-            <span>$4a + 16 = 40$, so $a = 6$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">second square</span>
-            <span>$4a + 16 = 68$, so $a = 13$</span>
-          </div>
-        </div>
-        <p>The dates differ by $7$, and on a calendar a difference of $7$ is a difference
-        of exactly one row. So the second square sits directly beneath the first, sharing
-        its lower two dates as its own upper two — which is a fact about the page that
-        arrived from the arithmetic without anyone looking at a calendar.</p>
+      <p>Those two questions are worth keeping apart, because they are answered by
+      different kinds of argument and it is easy to slide from one to the other. A rule
+      for arranging the digits you have been given is a piece of algebra: it was proved
+      once, for every $p < q < r$, and it never has to be checked again. Choosing which
+      digits to be given is a search, and it was settled by noticing that larger digits
+      make larger products and then letting the rule arrange the largest three.</p>
+
+      <p>The same division runs through the chapter. The pyramid formula says what the
+      top is once a bottom row is chosen; which bottom row to choose is a separate
+      question. Knowing which of the two you are being asked is most of knowing where to
+      start.</p>
+
+      <div class="c-try">
+        <p>A four-row pyramid has $204$ at the top, and its bottom row is four
+        consecutive whole numbers. Find them.</p>
       </div>
+
+      <p>Four consecutive numbers are $a$, $a+1$, $a+2$, $a+3$, and the top of a
+      four-row pyramid is $a + 3b + 3c + d$ with those put in for $b$, $c$ and
+      $d$.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the top</span>
+          <span>$a + 3(a+1) + 3(a+2) + (a+3)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">collecting</span>
+          <span>$8a + 12$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$8a + 12 = 204$, giving $a = 24$</span>
+        </div>
+      </div>
+
+      <p>The row is $24$, $25$, $26$, $27$. Compare it with the three-row answer, which
+      was $4a + 4$: both tops are $2^{\,n-1}$ times the smallest number, plus a
+      constant. The doubling comes from the number of rows and nothing else, which is
+      why the same bottom number can appear under two quite different tops.</p>
 
     </div>
   </div>

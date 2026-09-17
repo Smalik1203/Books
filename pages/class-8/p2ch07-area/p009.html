@@ -2,57 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>That the piece fits is not something to be taken on the eye's word, and three
-      lines settle it. $BY$ equals $AX$, because $ABYX$ is a rectangle and those are its
-      two ends. Both triangles have a right angle at $X$ and at $Y$. And $BC$ equals
-      $AD$, because they are opposite sides of a parallelogram. A right angle, the
-      hypotenuse and one other side — that is the RHS test, so $\triangle AXD$ and
-      $\triangle BYC$ are congruent, and the one lies exactly over the other.</p>
+      <h2><span class="badge">7.7</span><span class="name">The Rhombus and Its Diagonals</span></h2>
 
-      <p>Cutting a figure into pieces and rearranging them into a different figure of the
-      same area is called <span class="term">dissection</span>, and it is the method the
-      rest of this chapter runs on.</p>
+      <p>A rhombus is a parallelogram, so its area is base times height and there is
+      nothing more to prove. There is something more to want, though. All four of its
+      sides are the same length, and its height has to be constructed before it can be
+      measured — whereas its two diagonals are already drawn across it and can be
+      measured with a ruler.</p>
 
-      <p>Now read the rectangle's own measurements off the parallelogram. Its height is
-      $AX$, which is the perpendicular height of the parallelogram. Its width is $XY$,
-      and $XY$ is the same length as $DC$ — because $DX$ and $CY$ are the two congruent
-      triangles' short sides and are therefore equal, so adding the stretch $XC$ to each
-      of them gives $DC$ on one side and $XY$ on the other.</p>
+      <p>Two facts from the first book's chapter on quadrilaterals do the work: the
+      diagonals of a rhombus cut each other exactly in half, and they cross at right
+      angles. Draw the rectangle that just contains the rhombus and the consequence is
+      visible at once.</p>
 
-      <div class="eq eq--anchor">$$\text{area of a parallelogram} = \text{base} \times \text{height}.$$</div>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 163 96" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rhombus inside the rectangle formed by its diagonals, with the four corner triangles outside the rhombus matching the four inside it">
+      
+            <path class="dg-fill-d" d="M32 20 L82 20 L32 50 Z M82 20 L132 20 L132 50 Z
+                                       M132 50 L132 80 L82 80 Z M32 50 L32 80 L82 80 Z"/>
+            <path class="dg-fill-a" d="M82 20 L132 50 L82 80 L32 50 Z"/>
+            <path class="dg-thin"   d="M32 20 H132 V80 H32 Z M82 20 V80 M32 50 H132"/>
+            <path class="dg-line"   d="M82 20 L132 50 L82 80 L32 50 Z"/>
+      
+            <text class="dg-label" x="79" y="16">A</text>
+            <text class="dg-label" x="135" y="52">B</text>
+            <text class="dg-label" x="79" y="90">C</text>
+            <text class="dg-label" x="24" y="52">D</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.8</span> The rectangle is as wide as
+          $BD$ and as tall as $AC$. The four pale triangles outside the rhombus match the
+          four inside it, so the rhombus is exactly half the rectangle.</figcaption>
+        </figure>
+      </div>
 
-      <p>Nothing in the argument singled out $DC$. Take $AD$ as the base instead, drop
-      the perpendicular onto it from $C$, and the same cut-and-carry turns the
-      parallelogram into a different rectangle — taller and narrower, and of the same
-      area. Either side will do, so long as the height used is the one measured square to
-      the side chosen.</p>
+      <p>Each quarter of the rhombus is a right-angled triangle, and the small rectangle
+      it sits in is cut in two by its hypotenuse — so each quarter fills half of its own
+      corner. Four halves make half, and the rectangle measures $AC$ by $BD$.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>A parallelogram $PQRS$ has $SR = 12$ cm and $PQ = 12$ cm, and the
-          perpendicular from $P$ onto $SR$ is $6$ cm. Find its area, and then find the
-          perpendicular from $Q$ onto $PS$ if $PS = 7.6$ cm.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">on base SR</span>
-              <span>$12 \times 6 = 72$ cm<sup>2</sup></span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">on base PS</span>
-              <span>$7.6 \times h = 72$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">so</span>
-              <span>$h = 72 \div 7.6 \approx 9.47$ cm</span>
-            </div>
-          </div>
-          <p>The same trade as in Example 1: the shorter side takes the longer height,
-          because the two must multiply to the same area. A parallelogram leaning far
-          over has a long side and very little height on it, and that is why a lean
-          costs area even though it costs no perimeter at all.</p>
+      <div class="eq eq--anchor">$$\text{area of a rhombus} = \tfrac12 \times \text{product of the diagonals}.$$</div>
+
+      <p>The same answer comes out of the triangle formula, and it is worth doing both
+      ways because the second is the one that survives when the picture is harder to
+      draw. Cut the rhombus along $BD$ into triangles $ABD$ and $CBD$. Both stand on
+      $BD$; the height of the first is $AO$ and of the second $CO$, where $O$ is the
+      crossing point.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the two triangles</span>
+          <span>$\tfrac12 \times BD \times AO \;+\; \tfrac12 \times BD \times CO$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">common factor</span>
+          <span>$\tfrac12 \times BD \times (AO + CO)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">and</span>
+          <span>$AO + CO = AC$, giving $\tfrac12 \times BD \times AC$</span>
         </div>
       </div>
+
+      <p>Notice that the halving of the diagonals was never needed — only that $AO$ and
+      $CO$ add up to $AC$. What <em>was</em> needed is the right angle at $O$, because
+      without it $AO$ would not be the height of anything. The formula therefore holds
+      for any quadrilateral whose diagonals cross at right angles: a kite, or a square,
+      as well as a rhombus.</p>
 
     </div>
   </div>

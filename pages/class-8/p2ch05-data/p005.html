@@ -2,82 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.4</span><span class="name">Shifting Every Value</span></h2>
-
-      <p>Now change every value at once. The five numbers $3$, $5$, $7$, $9$, $11$ have
-      a mean of $7$. Add ten to each of them and they become $13$, $15$, $17$, $19$,
-      $21$. Their mean is $17$ — and adding up the new five to find that out is doing
-      more work than the question deserves.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 110" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Two dot plots with identical patterns, the first running from two to twelve with its balance point at seven, the second from twelve to twenty-two with its balance point at seventeen">
-      
-            <circle class="dg-fill-teal" cx="36" cy="29" r="3"/>
-            <circle class="dg-fill-teal" cx="68" cy="29" r="3"/>
-            <circle class="dg-fill-teal" cx="100" cy="29" r="3"/>
-            <circle class="dg-fill-teal" cx="132" cy="29" r="3"/>
-            <circle class="dg-fill-teal" cx="164" cy="29" r="3"/>
-      
-            <path class="dg-axis" d="M14 34 H186"/>
-            <path class="dg-thin" d="M20 34 V37 M36 34 V37 M52 34 V37 M68 34 V37 M84 34 V37 M100 34 V37
-                                     M116 34 V37 M132 34 V37 M148 34 V37 M164 34 V37 M180 34 V37"/>
-      
-            <text class="dg-tick" x="20" y="45" text-anchor="middle">2</text>
-            <text class="dg-tick" x="36" y="45" text-anchor="middle">3</text>
-            <text class="dg-tick" x="52" y="45" text-anchor="middle">4</text>
-            <text class="dg-tick" x="68" y="45" text-anchor="middle">5</text>
-            <text class="dg-tick" x="84" y="45" text-anchor="middle">6</text>
-            <text class="dg-tick" x="100" y="45" text-anchor="middle">7</text>
-            <text class="dg-tick" x="116" y="45" text-anchor="middle">8</text>
-            <text class="dg-tick" x="132" y="45" text-anchor="middle">9</text>
-            <text class="dg-tick" x="148" y="45" text-anchor="middle">10</text>
-            <text class="dg-tick" x="164" y="45" text-anchor="middle">11</text>
-            <text class="dg-tick" x="180" y="45" text-anchor="middle">12</text>
-      
-            <path class="dg-fill-c" d="M100 49 L94 59 L106 59 Z"/>
-            <text class="dg-note" x="98" y="68" text-anchor="middle">every value up by 10</text>
-      
-            <circle class="dg-fill-teal" cx="36" cy="75" r="3"/>
-            <circle class="dg-fill-teal" cx="68" cy="75" r="3"/>
-            <circle class="dg-fill-teal" cx="100" cy="75" r="3"/>
-            <circle class="dg-fill-teal" cx="132" cy="75" r="3"/>
-            <circle class="dg-fill-teal" cx="164" cy="75" r="3"/>
-      
-            <path class="dg-axis" d="M14 80 H186"/>
-            <path class="dg-thin" d="M20 80 V83 M36 80 V83 M52 80 V83 M68 80 V83 M84 80 V83 M100 80 V83
-                                     M116 80 V83 M132 80 V83 M148 80 V83 M164 80 V83 M180 80 V83"/>
-      
-            <text class="dg-tick" x="20" y="91" text-anchor="middle">12</text>
-            <text class="dg-tick" x="36" y="91" text-anchor="middle">13</text>
-            <text class="dg-tick" x="52" y="91" text-anchor="middle">14</text>
-            <text class="dg-tick" x="68" y="91" text-anchor="middle">15</text>
-            <text class="dg-tick" x="84" y="91" text-anchor="middle">16</text>
-            <text class="dg-tick" x="100" y="91" text-anchor="middle">17</text>
-            <text class="dg-tick" x="116" y="91" text-anchor="middle">18</text>
-            <text class="dg-tick" x="132" y="91" text-anchor="middle">19</text>
-            <text class="dg-tick" x="148" y="91" text-anchor="middle">20</text>
-            <text class="dg-tick" x="164" y="91" text-anchor="middle">21</text>
-            <text class="dg-tick" x="180" y="91" text-anchor="middle">22</text>
-      
-            <path class="dg-fill-c" d="M100 95 L94 105 L106 105 Z"/>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.2</span> The two dot plots are the same
-          picture. Only the numbering under them has changed, and the fulcrum has stayed
-          where it was relative to the dots.</figcaption>
-        </figure>
-      </div>
-
-      <p>Nothing about the arrangement was disturbed. Every dot moved ten places to the
-      right, so every distance from every dot to every other dot is what it was, and the
-      point that balanced them still balances them — ten places along.</p>
-
-      <p>The picture is convincing and algebra makes it certain. Let the values be
-      $x_1, x_2, \ldots, x_n$, with mean $a$, so that</p>
-
-      <div class="eq">$$\frac{x_1 + x_2 + \cdots + x_n}{n} = a.$$</div>
-
       <p>Add a fixed number $c$ to every one of them and work out the new mean.</p>
 
       <div class="work">
@@ -102,6 +26,48 @@
 
       <div class="eq eq--anchor">$$\text{add } c \text{ to every value} \to \text{mean } a + c;
       \qquad \text{multiply every value by } k \to \text{mean } ka.$$</div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Shreyas measures the heights of all $24$ students in his class and reports
+          an average of $150.2$ cm. His teacher then notices that everyone was wearing
+          the school shoes, which add $1$ cm. Must all $24$ be measured again?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>every height was recorded $1$ cm too large</span>
+              <span class="work__why">the same error for all</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>so the mean is $1$ cm too large as well</span>
+              <span class="work__why">a shift moves the mean</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$150.2 - 1 = 149.2$ cm</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>No. The true average is $149.2$ cm</span></div>
+          </div>
+          <p>Nobody need be measured again, and the twenty-four individual heights need
+          not even be known. A fixed error in every reading becomes the same fixed error
+          in the mean, and can be taken off at the end.</p>
+        </div>
+      </div>
+
+      <p>The warning inside that is worth stating. It works because the error was the
+      <em>same</em> for everybody. Had some students been in shoes and some barefoot,
+      nothing could be recovered from the average alone, and the measuring would have to
+      be done again.</p>
+
+      <h2><span class="badge">5.5</span><span class="name">The Middle Value</span></h2>
+
+      <p>The <span class="term">median</span> answers a different question about the same
+      pile of numbers. Sort them, and the median is the one in the middle — the value
+      with as many below it as above. An even count has no single middle, so the median
+      is taken as the average of the two that share the position.</p>
+
+      <p>Take $3$, $6$, $8$, $9$, $14$. There are five values, the third is $8$, and two
+      lie on either side of it, so the median is $8$. Now include $11$. Sorted, the
+      collection reads $3$, $6$, $8$, $9$, $11$, $14$, the two middle values are $8$ and
+      $9$, and the median is $8.5$.</p>
 
     </div>
   </div>

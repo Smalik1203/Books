@@ -2,100 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>CDXLIV stands for
-                <ol class="c-parts c-parts--alpha c-parts--4">
-                  <li>$444$</li>
-                  <li>$644$</li>
-                  <li>$456$</li>
-                  <li>$544$</li>
-                </ol>
-              </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>List the landmarks of a base-4 system up to 1000. Then write 300 as a sum of them, using as few as possible.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$1, \ 4, \ 16, \ 64, \ 256$</span>
+              <span class="work__why">next is $1024$, too big</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>one $256$ leaves $300 - 256 = 44$</span>
+              <span class="work__why">largest first</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>no $64$ fits in $44$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>two $16$s leave $44 - 32 = 12$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>three $4$s leave $12 - 12 = 0$, so no ones</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$300 = 256 + 16 + 16 + 4 + 4 + 4$</span></div>
+          </div>
+          <p>No landmark is used four or more times, as the base requires.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>The Mesopotamian base was
-                <ol class="c-parts c-parts--alpha c-parts--4">
-                  <li>$10$</li>
-                  <li>$20$</li>
-                  <li>$12$</li>
-                  <li>$60$</li>
-                </ol>
-              </li>
-        </ol>
+      <h3>Type 6 &middot; Changing base</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Write 100 in base 3.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$100 \div 3 = 33$ remainder $1$</span>
+              <span class="work__why">the units digit</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$33 \div 3 = 11$ remainder $0$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$11 \div 3 = 3$ remainder $2$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$3 \div 3 = 1$ remainder $0$, and $1 \div 3 = 0$ remainder $1$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$1 \times 81 + 0 \times 27 + 2 \times 9 + 0 \times 3 + 1 = 100$</span>
+              <span class="work__why">check</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$100 = 10201_{\,3}$, the remainders read upwards</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li>The earliest known written zero in the Indian system appears in
-                <ol class="c-parts c-parts--alpha c-parts--1">
-                  <li>Brahmagupta's <em>Brāhmasphuṭasiddhānta</em></li>
-                  <li>the Bakhshali manuscript</li>
-                  <li>the Yajurveda Saṃhitā</li>
-                  <li>al-Khwārizmī's book on Hindu numerals</li>
-                </ol>
-              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set B &middot; Two steps, or one idea used twice</div>
-        <ol class="c-questions">
-          <li>$255$ in base $2$ is
-                <ol class="c-parts c-parts--alpha c-parts--4">
-                  <li>$11111111$</li>
-                  <li>$10000000$</li>
-                  <li>$11111110$</li>
-                  <li>$100000000$</li>
-                </ol>
-              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>How many digits does $1000$ need in base $3$?
-                <ol class="c-parts c-parts--alpha c-parts--4">
-                  <li>$5$</li>
-                  <li>$6$</li>
-                  <li>$7$</li>
-                  <li>$8$</li>
-                </ol>
-              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>In base $8$, the digit-sum rule tests for divisibility by
-                <ol class="c-parts c-parts--alpha c-parts--4">
-                  <li>$2$</li>
-                  <li>$7$</li>
-                  <li>$8$</li>
-                  <li>$9$</li>
-                </ol>
-              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        
-        <ol class="c-questions" data-start="4">
-          <li>Of all the systems in this chapter, only some had any use at all for a
-              symbol meaning <em>nothing in this place</em>, and the rest managed
-              perfectly well without one. A number system needs a placeholder symbol
-              only if it
-                <ol class="c-parts c-parts--alpha c-parts--1">
-                  <li>has a base</li>
-                  <li>uses position to fix the landmarks</li>
-                  <li>groups numbers at all</li>
-                  <li>writes large numbers</li>
-                </ol>
-              </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>What number does the base-5 numeral $3042_{\,5}$ stand for?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the places are $125$, $25$, $5$ and $1$</span>
+              <span class="work__why">powers of five</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$3 \times 125 + 0 \times 25 + 4 \times 5 + 2 \times 1$</span>
+              <span class="work__why">expanded form</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$375 + 0 + 20 + 2 = 397$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$397$</span></div>
+          </div>
+        </div>
       </div>
 
     </div>
