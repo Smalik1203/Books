@@ -32,7 +32,7 @@ for(let gi=0;gi<groups.length;gi++){
   const head=g.kind==='heading',panel=g.kind==='prompt',cue=panel?'observe':g.feature,offset=cue?56:0,ls=wrap(g.text,panel?826:874,head?'h':'b'),lead=head?38:31,size=head?28.06:23,h=ls.length*lead+offset+(panel?44:head?18:g.source===1?18:14);
   add(h,y=>(panel?`<rect class="se-prompt" x="89" y="${y}" width="874" height="${h-14}"/><line class="se-think-rule" x1="89" x2="963" y1="${y}" y2="${y}"/>`:'')+(cue?learningCue(cue,'',panel?113:89,y+8,E):'')+txt(ls,panel?113:89,y+offset+(panel?15:0),head?'se-heading':'se-copy',lead,size,head?null:panel?826:874),g);
  }else if(g.kind==='activity'){
-  const title=g.title.replace(/\s*—\s*/g,' · '),titles=['The setup'];
+  const title=g.title.replace(/\s*—\s*/g,' · '),titles=['Investigate'];
   const figure=g.figure,side=figure?.layout==='side',measure=side?516:818;
   let off=16+titles.length*28+20;
   const textTop=off;

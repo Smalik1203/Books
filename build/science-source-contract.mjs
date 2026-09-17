@@ -1,6 +1,21 @@
 import {featureIcon} from './science-learning-cues.mjs';
 // Geometry-preserving cleanup for all fixed Class 6 pages. Called by their compositors.
 export function scienceSourceContract(html){
+ // Chapter 2 table pilot: preserve every measured cell and page break.
+ if(/data-science-chapter="2"/.test(html)){
+  html=html.replace(/<!-- table-frame -->[\s\S]*?<!-- \/table-frame -->/g,'');
+  html=html.replace(/<rect class="se-table-head"[^\n]+/g,table=>{
+   const head=table.match(/^<rect[^>]*>/)[0],value=(s,a)=>Number(s.match(new RegExp('\\b'+a+'="([^"]+)"'))[1]);
+   const x=value(head,'x'),y=value(head,'y'),w=value(head,'width');
+   const rules=[...table.matchAll(/<line class="(?:se-rule|se-table-row-rule)"[^>]*\/>/g)];
+   if(!rules.length)return table;
+   const bottom=Math.max(...rules.map(m=>value(m[0],'y1')));
+   const xs=[...table.matchAll(/<text class="se-copy se-table-copy se-bold"[^>]*>/g)].map(m=>value(m[0],'x'));
+   const inset=xs[0]-x;
+   const columns=xs.slice(1).map(cx=>`<line class="se-table-column-rule" x1="${cx-inset}" x2="${cx-inset}" y1="${y}" y2="${bottom}"/>`).join('');
+   return table.replaceAll('class="se-rule"','class="se-table-row-rule"')+`<!-- table-frame -->${columns}<rect class="se-table-frame" x="${x}" y="${y}" width="${w}" height="${bottom-y}"/><!-- /table-frame -->`;
+  });
+ }
  const insetSetup=/data-science-chapter="[1-4]"/.test(html);
  html=html.replace(/<path class="se-activity-tab" d="M109 ([\d.]+)[^"]*"\/>/g,(_,y)=>`<rect class="se-activity-tab" x="89" y="${y}" width="874" height="43"/>`);
  html=html.replace(/<svg class="se-feature-icon se-feature--setup"[^>]*>[\s\S]*?<\/svg>/g,'');

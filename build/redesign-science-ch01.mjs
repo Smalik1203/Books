@@ -33,7 +33,7 @@ function rule(yy,cls='se-rule',x=89,r=963){out+=`<line class="${cls}" x1="${x}" 
 function prompt(s){if(s.startsWith('Science is not a pile')){para(s);return;}const kind=s.includes('hypothesis')?'imagine':'observe';const lines=wrap(s,826);const h=lines.length*31+96;out+=`<rect class="se-prompt" x="89" y="${y}" width="874" height="${h}"/><line class="se-think-rule" x1="89" x2="963" y1="${y}" y2="${y}"/>`+learningCue(kind,'',113,y+8,E);y+=74;para(s,{x:113,w:826,gap:0});y+=42;}
 function activity(title,items){
   if(title.includes('Think and Write')){prompt(items.map(s=>s.replace(/^• /,'')).join(' '));return;}
-  title='The setup';
+  title='Investigate';
   const hasIntro=!items[0].startsWith('• ');
   const steps=hasIntro?items.slice(1):items;
   const tabWidth=874;

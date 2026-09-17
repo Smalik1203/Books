@@ -1,0 +1,2 @@
+# Explanatory art revision
+Generated transparent PNG illustrations: tree-relationships.png and leaf-sorting.png, via image generation, September 2026. Tree shows shade plants, branch-supported nest, and bird feeding on fallen fruit. Leaf plate uses unnamed example forms: A broad smooth, B broad toothed, C narrow smooth, D narrow toothed. Labels and comparison remain live type. No species identification or common scale is claimed. Replaces two decorative feature strips in V2 only.

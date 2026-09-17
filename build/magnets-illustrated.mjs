@@ -18,17 +18,17 @@ export async function compose({md,context,wrap,textWidth,word,E,dir,fs}) {
  const icon=(kind,x,y,size=38)=>{const paths={magnet:'M6 4v15q0 11 10 11t10 -11V4h-7v15q0 4 -3 4t-3 -4V4ZM6 12h7M19 12h7',compass:'M16 2a14 14 0 1 0 0 28a14 14 0 1 0 0 -28M21 8l-3 10 -7 6 3 -10Z',eye:'M2 16q14 -19 28 0q-14 19 -28 0ZM16 11a5 5 0 1 0 0 10a5 5 0 1 0 0 -10',pencil:'M7 25l2 -9L23 2l7 7L16 23ZM9 16l7 7M21 4l7 7',compare:'M3 9h23m-6 -6 6 6 -6 6M29 23H6m6 -6 -6 6 6 6',clip:'M10 23V9q0 -8 8 -8t8 8v14q0 7 -6 7t-6 -7V9q0 -3 3 -3t3 3v14',question:'M8 9q0 -8 9 -8t9 8q0 5 -9 10v4M17 28v2'};return `<svg class="fb-icon" x="${x}" y="${y}" width="${size}" height="${size}" viewBox="0 0 32 32"><path d="${paths[kind]||paths.magnet}"/></svg>`;};
  const rule=(y,x=L,w=W,c='fb-rule')=>`<line class="${c}" x1="${x}" x2="${x+w}" y1="${y}" y2="${y}"/>`;
  const cues=[
-  ['Some pencil boxes shut','connect','Everyday connection'],
-  ['The filings help you locate','reason','What this rules out'],
-  ['The pattern suggests','explain','The mechanism'],
+  ['Some pencil boxes shut','connect','Hidden in Familiar Objects'],
+  ['The filings help you locate','reason','Follow the Evidence'],
+  ['The pattern suggests','explain','How It Works'],
   ['Now here is a question. Suppose you break','imagine','A thought experiment'],
-  ['Earth has a magnetic field','explain','The mechanism'],
-  ['The stroking magnet does not','explain','The mechanism'],
-  ['The round pencils reduce','explain','The mechanism'],
-  ['An initially unmagnetised iron bar','explain','The mechanism'],
-  ['A magnet attracts a plain piece','reason','What this rules out'],
-  ['The needle turns in response','explain','The mechanism'],
-  ['A compass responds to the local','connect','Everyday connection']
+  ['Earth has a magnetic field','explain','How It Works'],
+  ['The stroking magnet does not','explain','How It Works'],
+  ['The round pencils reduce','explain','How It Works'],
+  ['An initially unmagnetised iron bar','explain','How It Works'],
+  ['A magnet attracts a plain piece','reason','Follow the Evidence'],
+  ['The needle turns in response','explain','How It Works'],
+  ['A compass responds to the local','connect','When a Compass Is Misled']
  ];
  function para(s,opt={}){const {x=L,w=W,gap=14,c='se-copy'}=opt,ls=wrap(s,w),cue=cues.find(([prefix])=>s.startsWith(prefix)),offset=cue?64:0;return add(ls.length*LEAD+gap+offset,y=>(cue?learningCue(cue[1],cue[2],x+3,y,E):'')+lines(ls,x,y+offset,c,LEAD,23,w),'body',s);}
  function heading(s){const ls=wrap(s,W,'h'),h=ls.length*40+22;return add(h,y=>lines(ls,L,y,'se-heading',40,28),'heading',s);}
@@ -67,7 +67,7 @@ export async function compose({md,context,wrap,textWidth,word,E,dir,fs}) {
   }
   const h=yy+16;if(h>CAP)throw Error('Activity needs refitting: '+title+' '+h);
   const tabW=W;
-  add(h+22,y=>`<rect class="se-activity-panel" x="${L}" y="${y}" width="${W}" height="${h}"/><rect class="se-activity-tab" x="${L}" y="${y}" width="${tabW}" height="43"/>`+label('The setup',L+24,y+29,'se-activity-tab-text')+inner.map(r=>(r.n?label(r.n+'.',L+25,y+r.y+23,'se-activity-step'):'')+lines(r.ls,r.x,y+r.y,'se-copy',LEAD,23,r.w)).join('')+pictures.map(a=>artwork(a.key,sideX,y+a.y,sideW,a.h,a.bounds)+a.caption.map((t,i)=>label(t,sideX+sideW/2,y+a.y+a.h+27+i*23,'se-caption','middle')).join('')).join(''),'activity',title+'\n'+blocks.join('\n'),{activity:num});
+  add(h+22,y=>`<rect class="se-activity-panel" x="${L}" y="${y}" width="${W}" height="${h}"/><rect class="se-activity-tab" x="${L}" y="${y}" width="${tabW}" height="43"/>`+label('Investigate',L+24,y+29,'se-activity-tab-text')+inner.map(r=>(r.n?label(r.n+'.',L+25,y+r.y+23,'se-activity-step'):'')+lines(r.ls,r.x,y+r.y,'se-copy',LEAD,23,r.w)).join('')+pictures.map(a=>artwork(a.key,sideX,y+a.y,sideW,a.h,a.bounds)+a.caption.map((t,i)=>label(t,sideX+sideW/2,y+a.y+a.h+27+i*23,'se-caption','middle')).join('')).join(''),'activity',title+'\n'+blocks.join('\n'),{activity:num});
   if(reflections.length)prompt(reflections.map(s=>s.replace(/^\*\*(Think:|Observe:|Predict:)\*\*\s*/,'')).join(' '));
  }
 
