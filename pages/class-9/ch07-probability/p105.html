@@ -2,74 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Two surveys, one of them useless</div>
-        <p>
-          Both give a probability, and the arithmetic of each is sound: $\tfrac{150}{200}
-          = 0.75$ and $\tfrac{19}{20} = 0.95$. The question is which estimates the
-          town.
-        </p>
-        <p>
-          The second sample was taken at a cycle repair shop. Everyone there has already
-          been sorted by the very thing being measured — you do not queue at a repair
-          shop without a bicycle. The sample cannot represent the town, and no increase
-          in its size would help: a thousand people at that shop would give an answer
-          closer to 1, not closer to the truth.
-        </p>
-        <p>
-          So use the first, and notice what settled it. Not the sample size, though 200
-          beats 20. It was <em>how the sample was chosen</em>. A biased sample does not
-          give a vague answer; it gives a precise answer to a different question.
-        </p>
-        <p>
-          And the different question here is a real one, worth asking on its own terms:
-          what proportion of people at a cycle repair shop own a bicycle? The answer,
-          near enough, is all of them, and the survey establishes it. Nothing about the
-          20 responses is false. They simply describe a queue, not a town.
-        </p>
-        <p>
-          This is the flaw that made the first survey worth taking, and it is the flaw to
-          look for whenever a figure is quoted at you. Ask who was asked, and where. A
-          survey of shoppers taken in a market at eleven on a Tuesday morning will find
-          the town oddly free of people who work in offices.
-        </p>
+      <p>
+        Counting the numbers printed on the die gives three, and dividing by three
+        gives $\tfrac13$ — but only if the three are equally likely, and here they are
+        plainly not. Half the faces are marked 1.
+      </p>
+
+      <p>
+        What the die actually lands on is a face, and the six faces are equally likely,
+        so faces are what carry the probability: $P(1) = \tfrac36 = \tfrac12$,
+        $P(2) = \tfrac26 = \tfrac13$ and $P(3) = \tfrac16$. They add to 1, as they
+        must.
+      </p>
+
+      <p>
+        A word about the third and the seventh. Both look like questions about dice and
+        pens, and both are really questions about the sample space — whether the outcomes
+        being counted are equally likely, and whether the list has changed between one
+        draw and the next. Those two checks catch most of the mistakes made in this
+        subject, and they are worth running before any arithmetic.
+      </p>
+
+      <p>
+        The ninth is the same pair of checks in a third disguise. It is set on a die,
+        like the third, and the numbers are printed on the faces where you can see
+        them. That is exactly what makes the wrong answer tempting: three numbers are
+        visible, so three seems to be the count that matters. It is not. What matters
+        is how many of the six faces each number owns.
+      </p>
+
+      <p>
+        None of these nine yields to a remembered formula, which is deliberate. Each
+        turns on a decision made <em>before</em> the formula — what the outcomes are,
+        whether they are equally likely, and whether the evidence given is the evidence
+        the question needs. Settle those and the arithmetic is a line.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
+        </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Three coins, listed</div>
-        <p>
-          Eight outcomes, from two choices made three times over — $2 \times 2 \times 2$.
-          Listing them costs a line and settles the question:
-        </p>
-        <div class="work work--centred">
-          <p>HHH &nbsp; HHT &nbsp; HTH &nbsp; HTT &nbsp; THH &nbsp; THT &nbsp; TTH
-          &nbsp; TTT</p>
-        </div>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">exactly two heads</span>
-            <span>HHT, HTH, THH</span>
-            <span class="chip">$\tfrac38$</span>
+      <h3>Type 1 &middot; The probability scale and its three forms</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>Write $0.45$ as a fraction in its lowest terms and as a percentage. Is an event with this probability more likely or less likely to happen than not?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$0.45 = \dfrac{45}{100}$</span>
+              <span class="work__why">hundredths</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\dfrac{45}{100} = \dfrac{9}{20}$</span>
+              <span class="work__why">divide both by 5</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$0.45 \times 100 = 45$, so it is $45\%$</span>
+              <span class="work__why">per cent is per hundred</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$0.45$ is less than $0.5$</span>
+              <span class="work__why">compare with even chance</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\tfrac{9}{20}$ and $45\%$; the event is less likely to happen than not</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$9 \div 20 = 0.45$</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">three heads</span>
-            <span>HHH</span>
-            <span class="chip">$\tfrac18$</span>
-          </div>
         </div>
-        <p>
-          Exactly two heads is three times as likely. The reason is that "three heads"
-          names one outcome while "exactly two heads" names three — the two heads can
-          arrive in three different orders, and order is what the sample space is made
-          of.
-        </p>
-        <p>
-          Feel says otherwise, and it is worth knowing why. Two heads and three heads
-          sound like neighbouring results, so they sound about equally likely. But
-          "three heads" is a description that fits one outcome only, while "exactly two"
-          fits a small family of them, and the probability follows the size of the
-          family rather than the sound of the description.
-        </p>
       </div>
 
     </div>

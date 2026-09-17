@@ -2,79 +2,51 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Telling which, without dividing</h3>
-
-      <p>
-        You can predict which of the two will happen by looking at the
-        denominator alone — no long division needed. The reason is that a
-        decimal <em>is</em> a fraction whose denominator is a power of ten.
-      </p>
-
-      <p>
-        Write out what that means. $0.375$ is $\dfrac{375}{1000}$, and
-        $0.15$ is $\dfrac{15}{100}$. So a decimal that terminates is exactly
-        a number that can be written over some $10^n$ — and
-        $10^n = 2^n \times 5^n$ carries no prime factor except 2 and 5.
-      </p>
-
-      <p>
-        Now run that backwards. Suppose $\dfrac{p}{q}$ is in lowest terms
-        and can be rewritten over a power of ten. Then $q$ can only have
-        been built out of 2s and 5s in the first place: a factor of 3, or 7,
-        or 11 sitting in $q$ would still be sitting there afterwards, and
-        $10^n$ has no matching factor to cancel it against. The test on the
-        next page is that one observation, stated once and used ever after.
-      </p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__tab">Example 9</div>
         <div class="c-example__body">
+          <p>Write $0.35$ in the form $\dfrac{p}{q}$.</p>
           <p>
-            Will $\dfrac{3}{20}$ terminate? Decide without dividing, then
-            check.
+            A terminating decimal needs no algebra. Read it as what it says:
+            35 hundredths.
           </p>
-          <p>
-            A terminating decimal is one that can be written over $10$, $100$,
-            $1000$ and so on. So the question is whether $20$ can be turned
-            into a power of ten by multiplying it by something.
-          </p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">factorise 20</span>
-              <span>$20 = 2^2 \times 5$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">a power of ten is</span>
-              <span>$10^n = 2^n \times 5^n$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">what is missing</span>
-              <span>one more 5, to match the two 2s</span>
-              <span class="chip">$\times \dfrac{5}{5}$</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the denominator is $100$, giving $\dfrac{35}{100}$</span>
+              <span class="work__why">two decimal places</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>divide both by 5, giving $\dfrac{7}{20}$</span>
+              <span class="work__why">lowest terms</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$0.35 = \dfrac{7}{20}$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>dividing back, $7 \div 20 = 0.35$</span></div>
           </div>
-          <p>So multiply top and bottom by 5, which changes nothing:</p>
-          <div class="work work--centred">
-            <p>$\dfrac{3}{20} = \dfrac{3 \times 5}{2^2 \times 5 \times 5}
-               = \dfrac{15}{100} = 0.15$</p>
-          </div>
-          <p>
-            It terminates, in two places. Had the denominator contained any
-            prime other than 2 or 5 — a 3, say, or an 11 — no multiplier could
-            ever have cleared it, because a power of ten contains no such
-            factor to cancel against.
-          </p>
         </div>
       </div>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Which decimals terminate</div>
-        <p>
-          Let $\dfrac{p}{q}$ be a rational number in lowest terms. Its decimal
-          expansion terminates exactly when the only prime factors of $q$ are
-          2 and 5. Otherwise it repeats.
-        </p>
-      </div>
+      <p>
+        It is worth seeing why that reading is always available. Our notation is
+        built on powers of ten, so a decimal of two places <em>is</em> a number
+        of hundredths, one of three places a number of thousandths, and so on.
+        A terminating decimal is therefore already a fraction whose denominator
+        is a power of ten; nothing has to be done to it but write it down.
+      </p>
+
+      <p>
+        And that closes a loop opened a page ago. A power of ten is
+        $2^{n} \times 5^{n}$ and has no other prime factor at all — which is
+        exactly why a fraction in lowest terms terminates when its denominator
+        is built from $2$s and $5$s and never otherwise.
+      </p>
+
+      <p>
+        That was the easy direction, and it needed no algebra at all — only a
+        reading of what the decimal already said. The moment the digits stop
+        stopping, that reading is unavailable, and something else has to take
+        its place.
+      </p>
 
     </div>
   </div>

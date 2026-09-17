@@ -1,0 +1,85 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>Type 8 &middot; Two stages: lists and tree diagrams</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>A coin is tossed and a spinner with three equal sectors, coloured red, blue and green, is spun. Write the sample space, and find the probability of a head together with a colour that is not red.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$S = \{\text{H-red}, \text{H-blue}, \text{H-green}, \text{T-red}, \text{T-blue}, \text{T-green}\}$</span>
+              <span class="work__why">every pairing</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$n(S) = 2 \times 3 = 6$</span>
+              <span class="work__why">two stages multiply</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>favourable: H-blue and H-green, 2 outcomes</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\tfrac26 = \tfrac13$</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>Spinner A has two equal sectors marked 1 and 2. Spinner B has three equal sectors marked 1, 2 and 3. Both are spun and the two numbers added. Draw a tree diagram, and find the probability that the sum is 3, and the probability that the sum is even.</p>
+          <div class="c-figure c-figure--md">
+            <figure>
+              <svg viewBox="0 0 220 132" data-size="md" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A tree diagram: two branches for spinner A, each splitting into three for spinner B, with the six sums at the tips">
+                <g class="dg-line">
+                  <path d="M16 62 L64 30 M16 62 L64 94"/>
+                  <path d="M64 30 L118 12 M64 30 L118 30 M64 30 L118 48"/>
+                  <path d="M64 94 L118 76 M64 94 L118 94 M64 94 L118 112"/>
+                </g>
+                <circle class="dg-fill-teal" cx="16" cy="62" r="3"/>
+                <g class="dg-fill-c">
+                  <circle cx="64" cy="30" r="2.6"/><circle cx="64" cy="94" r="2.6"/>
+                </g>
+                <text class="dg-label" x="58" y="22" text-anchor="middle">1</text>
+                <text class="dg-label" x="56" y="110" text-anchor="middle">2</text>
+                <text class="dg-label" x="124" y="16">1</text>
+                <text class="dg-label" x="124" y="34">2</text>
+                <text class="dg-label" x="124" y="52">3</text>
+                <text class="dg-label" x="124" y="80">1</text>
+                <text class="dg-label" x="124" y="98">2</text>
+                <text class="dg-label" x="124" y="116">3</text>
+                <text class="dg-note" x="146" y="16">1 + 1 = 2</text>
+                <text class="dg-note" x="146" y="34">1 + 2 = 3</text>
+                <text class="dg-note" x="146" y="52">1 + 3 = 4</text>
+                <text class="dg-note" x="146" y="80">2 + 1 = 3</text>
+                <text class="dg-note" x="146" y="98">2 + 2 = 4</text>
+                <text class="dg-note" x="146" y="116">2 + 3 = 5</text>
+                <text class="dg-note" x="28" y="128" text-anchor="middle">spinner A</text>
+                <text class="dg-note" x="96" y="128" text-anchor="middle">spinner B</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 7B.1</span> Two branches, then three from each: six paths, each with its sum.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$2 \times 3 = 6$ equally likely paths</span>
+              <span class="work__why">Fig. 7B.1</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the sums along the paths are 2, 3, 4, 3, 4 and 5</span>
+              <span class="work__why">read each path</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>a sum of 3 on two paths, so $\tfrac26 = \tfrac13$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>an even sum (2, 4, 4) on three paths, so $\tfrac36 = \tfrac12$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$P(\text{sum is } 3) = \tfrac13$ and $P(\text{sum is even}) = \tfrac12$</span></div>
+          </div>
+          <p>The four possible sums 2, 3, 4 and 5 are not equally likely, since 3 and 4 each come two ways. Dividing by 4 would repeat the mistake of the two dice in Stage 1.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

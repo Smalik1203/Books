@@ -2,57 +2,79 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.6</span><span class="name">Chords, Midpoints and Perpendiculars</span></h2>
+      <p>Three things have been in play: that the segment runs from the centre, that it
+      meets the chord at a right angle, and that it hits the midpoint. Theorem 4 takes the
+      first and third and delivers the second; Theorem 5 takes the first and second and
+      delivers the third. Any two of the three force the remaining one — and the last
+      pairing is the first question below.</p>
 
-      <p>Section 5.5 took the triangle made by a chord and the two radii to its ends, and
-      got two theorems out of it. That triangle has more to give. It is isosceles — which
-      is what Exercise Set 5.3 asked you to show — and an isosceles triangle is symmetric
-      about the line through its apex and the midpoint of its base.</p>
+      <p>A word about RHS, which has now done the work twice and will do it again. It
+      says that two right-angled triangles are congruent if they agree in the right
+      angle, in the hypotenuse, and in one other side.</p>
 
-      <p>Here the apex is the centre. So draw a circle with centre $C$, take any chord
-      $AB$, and let $M$ be the midpoint of $AB$. What can be said about the
-      segment $CM$?</p>
+      <p>That is worth pausing on, because it is not SAS. In SAS the known angle sits
+      between the two known sides, and here it does not: the right angle at $M$ is not
+      between $CM$ and the hypotenuse $CA$. Two sides and an angle that is not between
+      them will usually not fix a triangle at all — swing the third side about and
+      there are commonly two different triangles fitting the same three measurements.</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 4</div>
-        <p>The segment joining the centre of a circle to the midpoint of a chord is
-        perpendicular to that chord.</p>
+      <p>What removes the second possibility is the right angle itself. Once the angle
+      is $90^\circ$ the hypotenuse is fixed as the longest side, and the remaining side
+      is not free to be chosen: Pythagoras gives it as
+      $\sqrt{CA^{2} - CM^{2}}$, one value and no other. There is nothing left to swing.
+      RHS is really Pythagoras wearing the clothes of a congruence
+      test, which is why it is available for right-angled triangles and for no
+      others.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+      <p>A chord of length $16$ cm is drawn in a circle of radius $10$ cm. How
+          far is the chord from the centre?</p>
+      <p>Distance from the centre means the perpendicular distance, and Theorem 5 says
+          that perpendicular lands on the midpoint of the chord. That is what makes the
+          calculation possible: it produces a right-angled triangle with a radius as its
+          hypotenuse and half the chord as one leg.</p>
+      <p><strong>Solution.</strong></p>
+      <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>half the chord: $\tfrac{1}{2}\times 16$, which is $8$ cm</span>
+              <span class="work__why">Theorem 5</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>hypotenuse: a radius of the circle, $10$ cm</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$d^{2} = 10^{2} - 8^{2} = 100 - 64 = 36, \qquad d = 6$</span>
+              <span class="work__why">the remaining side</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The chord lies $6$ cm from the centre.</span></div>
+          </div>
+      <p>Step 3 is the Baudhāyana–Pythagoras theorem <span class="pip">set out in the
+          Śulbasūtra, centuries before Pythagoras</span>. The distance is less than the
+          radius, as it must be: a line $10$ cm out would only touch the circle.</p>
+        </div>
       </div>
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="22 22 156 156" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A chord with its midpoint joined to the centre, meeting at a right angle">
-            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-b-soft" d="M100 100 L36.56 70.42 L88.36 56.54 Z"/>
-            <path class="dg-fill-b-soft" d="M100 100 L88.36 56.54 L140.15 42.66 Z"/>
-            <circle class="dg-line" cx="100" cy="100" r="70"/>
-            <path class="dg-line" d="M36.56 70.42 L140.15 42.66"/>
-            <path class="dg-thin" d="M100 100 L36.56 70.42"/>
-            <path class="dg-thin" d="M100 100 L140.15 42.66"/>
-            <path class="dg-dim" d="M100 100 L88.36 56.54"/>
-            <path class="dg-thin" d="M97.05 54.21 L99.38 62.9 L90.69 65.23"/>
-            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
-            <circle class="dg-fill-c" cx="88.36" cy="56.54" r="2.4"/>
-      
-            <text class="dg-label" x="30"  y="70"  text-anchor="end">A</text>
-            <text class="dg-label" x="145" y="39">B</text>
-            <text class="dg-label" x="83"  y="51"  text-anchor="end">M</text>
-            <text class="dg-label" x="104" y="111">C</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.7</span> $M$ is the midpoint of the
-          chord $AB$. The segment $CM$ meets the chord at a right angle.</figcaption>
-        </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.4</div>
+        <ol class="c-questions">
+          <li>Explain why the perpendicular bisector of a chord must pass through the
+            centre of the circle. (This is the third of the three pairings.)</li>
+        </ol>
       </div>
 
-      <p>Why is this true? Compare the two triangles that $CM$ cuts the big one
-      into.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>An isosceles triangle $ABC$ with $AB = AC$ is inscribed in a
+            circle. Show that the altitude from $A$ to $BC$ passes through the
+            centre.</li>
+        </ol>
+      </div>
 
-      <div class="work work--list">
-      <p>$CA = CB$, both being radii.</p>
-      <p>$AM = BM$, because $M$ is the midpoint.</p>
-      <p>$CM$ is common to both.</p>
-      <p>So $\triangle CMA \cong \triangle CMB$, by <span class="pop">SSS</span>.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A chord of length $24$ cm lies $5$ cm from the centre of a circle.
+            Find the radius.</li>
+        </ol>
       </div>
 
     </div>

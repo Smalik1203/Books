@@ -2,10 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>A probability outside that range is not unlikely — it is meaningless, in the
-      way a length of $-3$ metres is meaningless. If a calculation ever hands you one,
-      the calculation is wrong, and it is worth stopping to find out where.</p>
-
       <h3>Reading the scale</h3>
 
       <p>It is worth walking along the line once with real events on it, because the
@@ -40,8 +36,8 @@
       positions on the line, and the words hide the difference.</p>
 
       <p>Here is a way to watch a probability move. Take a deck of cards in which some
-      are purple and the rest are green, and ask for the probability of drawing a purple
-      one. With no purple cards at all the answer is 0. Add purple cards one at a time
+      are red and the rest are green, and ask for the probability of drawing a red
+      one. With no red cards at all the answer is 0. Add red cards one at a time
       and the answer slides steadily to the right, through less likely, through the even
       chance where the two colours are matched, and on towards certain. It
       reaches certain only when the last green card has gone.</p>
@@ -49,56 +45,64 @@
       <div class="c-figure c-figure--xl">
         <figure>
           <svg viewBox="0 0 240 74" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Four decks with increasing numbers of purple cards, placed along the probability scale">
+               role="img" aria-label="Three decks of four cards with none, two and four red cards, placed along the probability scale">
       
             <g class="dg-line">
-              <rect x="14"  y="12" width="14" height="20" rx="2"/>
-              <rect x="30"  y="12" width="14" height="20" rx="2"/>
-              <rect x="46"  y="12" width="14" height="20" rx="2"/>
+              <rect x="14" y="12" width="10" height="20" rx="2"/>
+              <rect x="25.5" y="12" width="10" height="20" rx="2"/>
+              <rect x="37" y="12" width="10" height="20" rx="2"/>
+              <rect x="48.5" y="12" width="10" height="20" rx="2"/>
             </g>
             <g class="dg-fill-b-soft">
-              <rect x="15"  y="13" width="12" height="18" rx="1.6"/>
-              <rect x="31"  y="13" width="12" height="18" rx="1.6"/>
-              <rect x="47"  y="13" width="12" height="18" rx="1.6"/>
+              <rect x="15" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="26.5" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="38" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="49.5" y="13" width="8" height="18" rx="1.6"/>
             </g>
       
             <g class="dg-line">
-              <rect x="98"  y="12" width="14" height="20" rx="2"/>
-              <rect x="114" y="12" width="14" height="20" rx="2"/>
-              <rect x="130" y="12" width="14" height="20" rx="2"/>
+              <rect x="97.75" y="12" width="10" height="20" rx="2"/>
+              <rect x="109.25" y="12" width="10" height="20" rx="2"/>
+              <rect x="120.75" y="12" width="10" height="20" rx="2"/>
+              <rect x="132.25" y="12" width="10" height="20" rx="2"/>
             </g>
             <g class="dg-fill-b-soft">
-              <rect x="99"  y="13" width="12" height="18" rx="1.6"/>
-              <rect x="115" y="13" width="12" height="18" rx="1.6"/>
+              <rect x="98.75" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="110.25" y="13" width="8" height="18" rx="1.6"/>
             </g>
-            <rect class="dg-fill-c-soft" x="131" y="13" width="12" height="18" rx="1.6"/>
+            <g class="dg-fill-c">
+              <rect x="121.75" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="133.25" y="13" width="8" height="18" rx="1.6"/>
+            </g>
       
             <g class="dg-line">
-              <rect x="184" y="12" width="14" height="20" rx="2"/>
-              <rect x="200" y="12" width="14" height="20" rx="2"/>
-              <rect x="216" y="12" width="14" height="20" rx="2"/>
+              <rect x="181.5" y="12" width="10" height="20" rx="2"/>
+              <rect x="193" y="12" width="10" height="20" rx="2"/>
+              <rect x="204.5" y="12" width="10" height="20" rx="2"/>
+              <rect x="216" y="12" width="10" height="20" rx="2"/>
             </g>
-            <g class="dg-fill-c-soft">
-              <rect x="185" y="13" width="12" height="18" rx="1.6"/>
-              <rect x="201" y="13" width="12" height="18" rx="1.6"/>
-              <rect x="217" y="13" width="12" height="18" rx="1.6"/>
+            <g class="dg-fill-c">
+              <rect x="182.5" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="194" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="205.5" y="13" width="8" height="18" rx="1.6"/>
+              <rect x="217" y="13" width="8" height="18" rx="1.6"/>
             </g>
       
             <rect class="dg-fill-d" x="14" y="44" width="212" height="10" rx="2"/>
             <rect class="dg-line"   x="14" y="44" width="212" height="10" rx="2"/>
-            <g class="dg-thin"><path d="M37 44 V38 M120 44 V38 M223 44 V38"/></g>
+            <g class="dg-thin"><path d="M36.25 34 L14 44 M120 34 V44 M203.75 34 L226 44"/></g>
       
             <text class="dg-note" x="14"  y="68">0 · impossible</text>
             <text class="dg-note" x="120" y="68" text-anchor="middle">even chance</text>
             <text class="dg-note" x="226" y="68" text-anchor="end">1 · certain</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 7.3</span> As purple replaces green, the
-          probability of drawing purple slides along the scale.</figcaption>
+          <figcaption><span class="fignum">Fig. 7.3</span> As red replaces green, the
+          probability of drawing red slides along the scale.</figcaption>
         </figure>
       </div>
 
       <p>Notice that the scale has no gaps. Any number between 0 and 1 can be a
-      probability, and adding purple cards one at a time lands us as near any
+      probability, and adding red cards one at a time lands us as near any
       point of that bar as we like. Probability is not five
       verdicts with nothing in between; those are names for stretches of the scale,
       useful in talk and too coarse for anything else.</p>

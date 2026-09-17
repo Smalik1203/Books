@@ -2,50 +2,104 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p><strong>Suppose $D$ lies outside.</strong> Then the segment $AD$ crosses
-      the circle at some point $E$. Now $C$ and $E$ are both on the circle
-      and on the same side of $AB$, so $\angle ACB = \angle AEB$. But
-      $\angle AEB$ is an exterior angle of $\triangle BED$, and an exterior angle
-      is larger than either interior angle opposite it, so $\angle AEB > \angle ADB$.
-      Putting the two together, $\angle ACB > \angle ADB$ — and we were given that
-      those two angles are equal. So $\angle ACB$ would be greater than itself.</p>
-
-      <p><strong>Suppose instead $D$ lies inside.</strong> Extend $AD$ until it
-      meets the circle at $E$. This time $\angle ADB$ is the exterior angle of
-      $\triangle BED$, so $\angle ADB > \angle AEB = \angle ACB$, and the same
-      impossibility arrives from the other direction.</p>
-
-      <p>Both positions are ruled out, so $D$ lies on the circle through $A$,
-      $B$ and $C$. The four points are concyclic.</p>
-
-      <p>A quadrilateral whose four vertices are concyclic is called a
-      <span class="term">cyclic quadrilateral</span>. Theorem 10 tells us when four points
-      form one; the next result tells us what we get in return.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 11</div>
-        <p>The two opposite angles of a cyclic quadrilateral add up to
-        $180^\circ$.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 13</div>
+        <div class="c-example__body">
+          <p>A quadrilateral has angles $85^\circ$, $100^\circ$, $95^\circ$
+          and $80^\circ$, taken in order round the shape. Can a circle be drawn through
+          all four vertices?</p>
+          <p>Theorem 12 is the test, and it is a test on opposite pairs — so the angles have
+          to be paired first and second with third and fourth, not as they are listed.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>first and third: $85^\circ + 95^\circ$, which is $180^\circ$</span>
+              <span class="work__why">an opposite pair</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>second and fourth: $100^\circ + 80^\circ$, which is $180^\circ$</span>
+              <span class="work__why">the other pair</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes. Both pairs come to $180^\circ$, so the four vertices are
+              concyclic and the circle can be drawn.</span>
+              <span class="work__why">Theorem 12</span></div>
+          </div>
+          <p>In fact only one pair ever needs checking:
+          all four angles total $360^\circ$, so if one opposite pair makes
+          $180^\circ$ the other pair has no choice but to do the same.</p>
+        </div>
       </div>
 
-      <p>Let $ABCD$ be cyclic, with centre $O$, and look at the two opposite
-      angles at $A$ and at $C$. Each is an angle subtended by an arc at a point
-      of the circle outside it, so Theorem 9 applies to both — and the trick is to be
-      careful about <em>which</em> arc.</p>
+      <p>It is worth being clear about which theorem did the work. Theorem 12 is not
+      the one that says a cyclic quadrilateral has supplementary opposite angles; it
+      is the converse, running the other way, from the angles to the circle. Both are
+      true here, but only one of them answers a question about four points that are
+      not yet known to lie on a circle.</p>
 
-      <div class="work work--list">
-        <p>$\angle BAD$ is subtended at $A$ by the arc from $B$ to $D$
-        that passes through $C$. So it is half the angle that arc sweeps at $O$.</p>
-        <p>$\angle BCD$ is subtended at $C$ by the arc from $B$ to $D$
-        that passes through $A$. So it is half the angle <em>that</em> arc sweeps at
-        $O$.</p>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 5.7</div>
+        <ol class="c-questions">
+          <li>A cyclic quadrilateral has $\angle A = 75^\circ$ and
+            $\angle B = 110^\circ$. Find $\angle C$ and $\angle D$.</li>
+        </ol>
       </div>
 
-      <p>Between them the two arcs make up the whole circle, so the two angles they sweep
-      at $O$ add to a complete turn of $360^\circ$. Halving,</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>A quadrilateral has angles $80^\circ$, $110^\circ$,
+            $100^\circ$ and $70^\circ$, in that order round the shape. Can it be
+            cyclic? Can it be drawn at all?</li>
+        </ol>
+      </div>
 
-      <div class="eq eq--anchor">
-        $$\angle BAD + \angle BCD = \tfrac{1}{2}\times 360^\circ = 180^\circ$$
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>$PQRS$ is cyclic with $\angle P = (2x + 10)^\circ$ and
+            $\angle R = (3x - 20)^\circ$. Find $x$, and then both angles.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li class="hard">Show that a rectangle is the only parallelogram that can be
+            inscribed in a circle.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li class="hard">Let $ABCD$ be cyclic and let $E$ lie on $CD$
+            extended. Explain why the exterior angle $\angle BCE$ equals the interior
+            opposite angle $\angle BAD$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">End-of-Chapter Exercises</div>
+        <ol class="c-questions">
+          <li>A chord of a circle lies $5$ cm from the centre, and the radius is
+            $13$ cm. How long is the chord?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>A circle has diameter $26$ cm, and a chord of length $24$ cm is
+            drawn in it. How far is that chord from the centre?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A chord of length $16$ cm lies $6$ cm from the centre. Find the
+            radius.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Prove that the perpendicular bisector of a chord passes through the centre of
+            the circle.</li>
+        </ol>
       </div>
 
     </div>

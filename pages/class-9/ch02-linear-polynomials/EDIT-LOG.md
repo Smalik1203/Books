@@ -1,5 +1,192 @@
 # Class 9 · Mathematics I · Chapter 2 — Introduction to Linear Polynomials
 
+## Brought to the Class 7 standard, 17 September 2026
+
+Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Class 9 brief with
+Chapter 6 as the model. Page move, examples, Beyond the Book and answers were
+done in one pass, and every check was run on the chapter.
+
+**Pages: 41 before (29 body + 12 Beyond, Crown Quarto), 45 after (28 body +
+17 Beyond, 196 × 276).**
+
+### What changed
+
+**Rupee amounts held together** (added by the coordinator at acceptance): all 43 `₹$…$` amounts in the body were bare; each is now wrapped in `<span class="nb">`, as in Classes 8 and 10, so the sign never ends a line. No page re-broke.
+
+**The page.** `chapter.json` gains `"edition": "196x276"`, and the body was
+refitted once. A second refit (after three trims) packed worse — 29 pages and
+more short ones — so it was thrown away and the first fit kept; the page
+breaks round pages 10–19 were then placed by hand with `settle`/`unsettle`,
+keeping every figure on the same sheet parity so nothing that faced its
+question stopped facing it.
+
+**All sixteen body examples set as steps** — *Solution*, Steps, *Answer*.
+Class 9's working was already in the panels as prose, `.eq` lines and bare
+`.work` lines; it is now one step to a row with the reason in a
+`.work__why`. Remarks that are not steps stay at the foot of the panel.
+- Examples 12–16 (the graphs) had their working and their figure *after*
+  the panel. Both moved in: the working as steps, Figs 2.6–2.10 inside their
+  own panel after the steps. Example 14's Fig. 2.8 came across from the next
+  page.
+- Example 4 was a statement, not a question (*A square has side $x$. Its
+  perimeter is $4x$…*). It now asks *What is its perimeter?* and answers it.
+- Examples 5, 7 and 8 set their table between Step 1 and the later steps;
+  Examples 9 and 10 (which only ask for a table) have a one-row *Answer*,
+  "the table below".
+- Example 11's lead-in (*Each observation is a pair of values…*) stays as a
+  paragraph before *Solution*.
+- Every `₹$…$` written in a step is wrapped in `.nb`.
+- There were no reason chips in this chapter's body, so nothing to change
+  from `.chip`.
+
+**Verified** by `build/check-body-maths.mjs`: 261 expressions and 104
+numbers, none lost and none added (numbers gained: only figure numbers
+restated in *Answer* rows).
+
+**Graphs.** The seven graphs of § 2.6 had `aria-label="2.5"` … `"2.11"`,
+the figure number and nothing else (flagged below in the language edit).
+Each now describes its lines and points. Labels printing on a line were
+moved after reading the proofs: Fig. 2.8's *y = ½x*, Fig. 2.9's *y = −⅓x*,
+Fig. 2.10's *y = 2x + 1*, and Fig. 2.11's three line labels and its A and B.
+No geometry changed: every body graph was measured from its coordinates by
+`check-numbers.mjs` and every line and point is drawn to the equation printed
+with it.
+
+**Beyond the Book rebuilt to the four stages:**
+
+| stage | before | after |
+|---|---|---|
+| 1 Using What You Know | 5 `.c-try`, each explained in running text | Q2, Q3 and Q5 and the opening kept word for word; **Q1's numbers and Q4 replaced** (below); closing sentence now points at *the examples*; `.c-stage__for` removed |
+| 2 Behind Each Answer → **Solved Examples** | 5 multiple-choice problems | **17 stepped examples** under nine `Type` heads; old Problem 1 is Example 10, Problem 3 is Example 8, Problem 4 is Example 12, Problem 5 is Example 14 (with Fig. 2B.2); Problem 2 replaced by Example 7 |
+| 3 Problem Sets → **Practice** | 3 sets, 25 questions, all multiple choice | **one run of 32** in six forms: 16 multiple choice, 4 assertion–reason, 3 very short, 4 short, 3 long, 2 case-based |
+| 4 Answers & Takeaways → **Answers** | key, why four options are wrong, three takeaways | key, every other answer, why the options are wrong for eight |
+
+**Stage 1 answered the body twice,** so the no-give-away rule won:
+- Q4 used $(1, 5)$ and $(3, 11)$ — End-of-Chapter Q10's two points — and
+  worked out their line, $y = 3x + 2$, which is End Q10 (i)'s answer. It is
+  now $(2, 1)$, $(4, 7)$ and $(7, 19)$, the same question with the same
+  structure (line $y = 3x - 5$, third point three units above it, second
+  step 4 against 3). **Fig. 2B.1 redrawn** to the new points.
+- Q1's table printed the rule $y = 3x + 2$ (End Q10's answer again). Its
+  $y$ row is now $13, 19, 25, 31$ and the rule $y = 3x + 4$; the words are
+  unchanged.
+- Q5's remark about *the tank of Example 10* points at the method for that
+  example's Think and Reflect but prints no answer; kept.
+
+**Other give-aways fixed:**
+- old Problem 2 was Example 8's own auto-rickshaw, whose table already shows
+  the 1 km fare; replaced by a courier with the same trap (Example 7);
+- old Set A Q9 (a $3$ m tank losing $0.5$ m a month is empty after $6$
+  months) answered the Think and Reflect after Example 10; dropped;
+- old Set A Q10 (the stage with $47$ tiles of $2n - 1$) is the Think and
+  Reflect after the tile pattern word for word; now $3n + 2$ tiles (Q7);
+- old Set A Q7 and Set B Q6 printed $y = 3x + 2$ (End Q10); now
+  $y = 4x + 1$ with $y = 4x - 6$, and a table fitting $y = 3x + 3$;
+- old Set B Q4 was End Q7 (a)'s line, $y = -3x + 4$, with its slope and
+  intercept; now $y = -3x + 5$ (Q12), with a false third statement;
+- old Set C Q6 was End Q13 with the numbers unchanged; dropped;
+- two new values were changed after reading Beyond's numbers against the
+  body's answers: Example 4's father was $35$ (End Q4's answer), now $33$;
+  Example 6's $12$th row had $51$ seats (the tile count at Stage 26), now
+  the $13$th row with $54$.
+`check-no-repeats` finds no question in Beyond close to one in the body.
+
+**Audit fixes** (the Class 9 Beyond audit, Ch02 table):
+- *Set C Q5, $p(p(x)) = 4x + 9$* (borderline: composing a function) —
+  dropped; its place is taken by the audit's suggestion, *find $p(x)$ from
+  two conditions* (Practice Q25).
+- *Gap: degree and coefficients (§ 2.1)* — Type 1, Examples 1 and 2.
+- *Gap: word problems turned into a linear equation (§ 2.2)* — Type 3, an
+  age problem and a coin problem (Examples 4 and 5).
+
+**Wrong remarks found and fixed:** old Problem 1 said option (d), $10$,
+*goes forward three steps instead of back two*; $7 + 3 \times 3 = 16$. It
+is two steps back from $p(5)$ (Example 10). Old Problem 4 said option (a),
+$15$, *adds $4$, the difference in $x$* and option (b), $16$, *adds the
+slope only once*; neither matched its value. The options are now $14$,
+$18$, $17$, $13$, each with a remark that produces it (Example 12).
+
+**Worked examples in the chapter: 33** (16 body + 17 Beyond). Every topic has
+a type: writing an expression and naming its parts; the value of a
+polynomial; word problems to a linear equation; the $n$th term and which
+term; a rule that holds on part of a table; growth and decay; $a$ and $b$
+from two facts; points on a line; slope, intercept and crossings,
+including a rearranged form; and two proofs (the constant difference is $a$;
+equal slopes, different intercepts never meet).
+
+**`ANSWERS.md` written** for Exercise Sets 2.1–2.6, the fourteen
+end-of-chapter questions, all fifteen Think and Reflect boxes, Stage 1, and
+all 32 practice questions.
+
+### Verified
+
+`check-numbers.mjs` passes **639 claims**. It evaluates 246 printed
+identities (powers, fractions and function values included), checks every
+equation in one unknown against the value the same block solves it to, and
+tests any chain with letters left over as an identity at random values. It
+also:
+- re-derives each body example's Answer row and every table in the
+  examples from the rule the example states;
+- reads every exercise and Think and Reflect answer back off `ANSWERS.md`,
+  including End Q6's two numbers by search;
+- measures Figs 2.5–2.11, 2B.1, 2B.2 and 2B.4 from their coordinates: the
+  tick labels sit at their values, every line is drawn on its printed
+  equation, every labelled point sits where its label says and on its line
+  (Fig. 2B.1's off-line point three units above it), and each plot label
+  names its own line;
+- counts the tiles of Figs 2.4 and 2B.3 and the hexagons of Fig. 2.12;
+- re-derives each Beyond example's answer, and each option remark's value;
+- checks every multiple-choice question has exactly one right option,
+  matching the key, and derives each assertion–reason letter;
+- reads the practice answers back out of the key rows a lettered part at a
+  time, and checks that `ANSWERS.md`'s key and working agree with the page.
+
+**Break tests: 23 of 23 caught** on the first run (body answers and table
+cells, a figure's line end and a point label, Beyond steps and answers, an
+option, key letters including an assertion–reason one, key rows and
+lettered parts, Stage 1 values, a Fig. 2B.1 point, a tile removed from
+Fig. 2B.3, and `ANSWERS.md` values, key and Think and Reflect).
+
+**Fitting:** nothing is clipped; page 10 runs 1.3 mm and page 20 1.6 mm into
+the bottom margin. `orphans` finds 0 stranded openers, `check-labels` finds
+no collisions, and `fit-options` passes. Every question that names a figure
+prints on the figure's page or facing it (the Think and Reflect on Fig. 2.8
+is on page 21, facing the figure on page 20). I read the proofs of pages 1,
+20, 22, 23, 24, 30, 38 and 41, and `check-colour` was run on pages 8,
+17–20, 22–24, 30, 38 and 41: every line in a multi-line graph carries its
+own label, so no line is told apart by colour alone.
+
+### Short pages, logged
+
+| page | fill | held by |
+|---|---|---|
+| 11 | 75% | the § 2.4 head, which needs its paragraphs under it |
+| 15 | 79% | the Exercise Set 2.5 band with its first question |
+| 16 | 59% | Fig. 2.5 |
+| 17 | 85% | Example 12, a panel with its figure |
+| 19 | 66% | Example 14, a panel with its figure |
+| 21 | 60% | Example 15, a panel with its figure |
+| 28 | 60% | the last body page (`data-close`) |
+| 32–37 | 63–76% | a `Type` head with its example, or an example panel |
+| 43 | 64% | **the Answers stage, which always opens a page** |
+| 44 | 77% | the *Why the other options are wrong* head with its rows |
+| 45 | 52% | the last page |
+
+### Flagged, not done
+
+- **Exercise Set 2.3 Q1** asks for the amount *at the end of each month
+  from the second onwards*; the phrase is unclear. `ANSWERS.md` gives
+  $500 + 150n$ for every month and says so.
+- **The language edit's flags below still stand** (function notation never
+  introduced; *the chapter on linear equations* does not exist in this book;
+  *Sequences and Progressions* is called *What Comes Next*; the Class 8
+  definitions of *degree*), except the graphs' alt text, now done.
+- Practice Q16 (the candles) and Q28 (phone plans) set two linear
+  expressions equal; the body does this only with one expression and a
+  number (Example 6). Kept: it is one linear equation in one unknown.
+- Stage 1 still carries the section's *Notice that …* sentences, which §10
+  counts as coaching; kept word for word, as the brief requires.
+
 Language edit, 41 pages (p001–p029 chapter proper, p101–p112 Beyond the Book) —
 the longest chapter in the book so far. Build after editing: 41 pages, all pages
 fit, 0 stranded openers, no label collisions, every option row fits. Every

@@ -2,51 +2,77 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Congruent triangles give $\angle CMA = \angle CMB$. But those two angles sit
-      side by side on the straight line $AB$, so they add to $180^\circ$. Two
-      equal angles adding to $180^\circ$ are $90^\circ$ each. So $CM$ is
-      perpendicular to $AB$.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Two parallel chords, of lengths $6$ cm and $8$ cm, lie on opposite
+            sides of the centre of a circle of radius $5$ cm. Find the distance between
+            their midpoints.</li>
+        </ol>
+      </div>
 
-      <p>Now the converse. Drop a perpendicular from the centre onto a chord instead, and
-      ask where it lands.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li class="hard">In the previous question, what would the distance be if the two
+            chords lay on the <em>same</em> side of the centre?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>A chord of length $24$ cm lies $5$ cm from the centre of a circle. Find
+          the radius. Then find the length of a chord of the same circle lying $12$ cm
+          from the centre.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li class="hard">Two chords of a circle of radius $10$ cm have lengths $16$
+          cm and $12$ cm. Find the distance between them when they lie on opposite
+          sides of the centre, and when they lie on the same side.</li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">5.7</span><span class="name">How Far a Chord Lies from the Centre</span></h2>
+
+      <p>The distance from a point to a line means the perpendicular distance — the
+      shortest way across. So the distance from the centre to a chord is measured along the
+      perpendicular from the centre, and Theorem 5 has already told us where that
+      perpendicular lands: on the midpoint of the chord.</p>
+
+      <p>Take a paper circle and fold a piece of the boundary inwards; the crease is a
+      chord. Fold again so that the two ends of that crease meet, and open both folds. The
+      second crease crosses the first at its midpoint, square on. Theorems 4 and 5, in
+      paper.</p>
+
+      <p>Now make a second chord of the same length somewhere else on the circle, and
+      measure how far it lies from the centre. The two distances come out equal. Try
+      another pair and they come out equal again.</p>
+
+      <p>Is that convincing? It is the same trap as Jamuna's folded disc on the first page
+      of this chapter. A statement can hold in every case you have patience to try and
+      still be false. And even when it is true, a stack of measurements never says
+      <em>why</em>. So here is why.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 5</div>
-        <p>The perpendicular from the centre of a circle to a chord bisects the chord.</p>
+        <div class="c-keyidea__title">Theorem 6</div>
+        <p>Chords of a circle that have the same length lie at the same distance from the
+        centre.</p>
       </div>
+
+      <p>Let $AB$ and $FG$ be chords of a circle with centre $C$ and radius
+      $r$, with $AB = FG$. Let $E$ and $H$ be their midpoints, so that
+      by Theorem 4 the segments $CE$ and $CH$ are perpendicular to the chords —
+      and are therefore the two distances we are comparing.</p>
 
       <div class="work work--list">
-      <p>$CA = CB$, both radii — and in the right-angled triangles $CMA$ and
-        $CMB$ these are the hypotenuses.</p>
-      <p>$CM$ is common, and $\angle CMA = \angle CMB = 90^\circ$ is now what
-        is given.</p>
-      <p>So $\triangle CMA \cong \triangle CMB$, by <span class="pop">RHS</span>,
-        and therefore $AM = BM$.</p>
+        <p>$AE = \tfrac{1}{2}AB = \tfrac{1}{2}FG = FH$, since $E$ and $H$
+        are the midpoints.</p>
+        <p>$CA = CF = r$, and these are the hypotenuses.</p>
+        <p>$\angle CEA = \angle CHF = 90^\circ$.</p>
+        <p>So $\triangle CEA \cong \triangle CHF$, by <span class="pop">RHS</span>,
+        and therefore $CE = CH$.</p>
       </div>
-
-      <p>Three things have been in play: that the segment runs from the centre, that it
-      meets the chord at a right angle, and that it hits the midpoint. Theorem 4 takes the
-      first and third and delivers the second; Theorem 5 takes the first and second and
-      delivers the third. Any two of the three force the remaining one — and the last
-      pairing is the first question below.</p>
-
-      <p>A word about RHS, which has now done the work twice and will do it again. It
-      says that two right-angled triangles are congruent if they agree in the right
-      angle, in the hypotenuse, and in one other side.</p>
-
-      <p>That is worth pausing on, because it is not SAS. In SAS the known angle sits
-      between the two known sides, and here it does not: the right angle at $M$ is not
-      between $CM$ and the hypotenuse $CA$. Two sides and an angle that is not between
-      them will usually not fix a triangle at all — swing the third side about and
-      there are commonly two different triangles fitting the same three measurements.</p>
-
-      <p>What removes the second possibility is the right angle itself. Once the angle
-      is $90^\circ$ the hypotenuse is fixed as the longest side, and the remaining side
-      is not free to be chosen: Pythagoras gives it as
-      $\sqrt{CA^{2} - CM^{2}}$, one value and no other. There is nothing left to swing.
-      RHS is really Pythagoras wearing the clothes of a congruence
-      test, which is why it is available for right-angled triangles and for no
-      others.</p>
 
     </div>
   </div>

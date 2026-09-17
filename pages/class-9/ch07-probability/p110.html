@@ -2,101 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">4</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Answers &amp; Takeaways</div>
-          <div class="c-stage__for">Check your answers, then read why the other options are wrong.</div>
+      <h3>Type 6 &middot; What many trials do</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Asha rolls a fair die 30 times and gets 9 sixes. Ravi rolls the same die 600 times and gets 104 sixes. Find each experimental probability of a six, and say which you would expect to be nearer $\tfrac16$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Asha: $\dfrac{9}{30} = 0.3$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Ravi: $\dfrac{104}{600} \approx 0.173$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\tfrac16 \approx 0.167$, so Asha is about $0.13$ away and Ravi about $0.007$ away</span>
+              <span class="work__why">the theoretical value</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$0.3$ and about $0.173$; Ravi's, from twenty times as many rolls, is nearer $\tfrac16$</span></div>
+          </div>
+          <p>That is what the law of large numbers leads you to expect. Asha's result is not a sign that the die is unfair: thirty rolls are too few for the settling to have happened.</p>
         </div>
       </div>
 
-      <ol class="c-answers">
-        <li>
-          <span class="c-answers__stage">Set A</span>
-          <span class="c-answers__list"><span class="n">1</span> (a) &nbsp;
-            <span class="n">2</span> (c) &nbsp; <span class="n">3</span> (b) &nbsp;
-            <span class="n">4</span> (c) &nbsp; <span class="n">5</span> (c) &nbsp;
-            <span class="n">6</span> (a) &nbsp; <span class="n">7</span> (b) &nbsp;
-            <span class="n">8</span> (b) &nbsp; <span class="n">9</span> (c) &nbsp;
-            <span class="n">10</span> (c)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set B</span>
-          <span class="c-answers__list"><span class="n">1</span> (a) &nbsp;
-            <span class="n">2</span> (d) &nbsp; <span class="n">3</span> (c) &nbsp;
-            <span class="n">4</span> (b) &nbsp; <span class="n">5</span> (a) &nbsp;
-            <span class="n">6</span> (b) &nbsp; <span class="n">7</span> (c)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set C</span>
-          <span class="c-answers__list"><span class="n">1</span> (c) &nbsp;
-            <span class="n">2</span> (c) &nbsp; <span class="n">3</span> (a) &nbsp;
-            <span class="n">4</span> (b) &nbsp; <span class="n">5</span> (a) &nbsp;
-            <span class="n">6</span> (c) &nbsp; <span class="n">7</span> (b) &nbsp;
-            <span class="n">8</span> (b)</span>
-        </li>
-      </ol>
+      <h3>Type 7 &middot; Events as sets</h3>
 
-      <h3>Why the other options are wrong</h3>
-
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B2</span>
-          <span>R is the law of large numbers, correctly stated, and it is
-            true. A is the gambler's fallacy, and it is false: the coin
-            carries no record of the five heads. The proportion settles not
-            because tails are owed but because the five are diluted by the
-            thousands of tosses that follow. A true reason attached to a
-            false claim still leaves the claim false.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">B3</span>
-          <span>Statement (i) reads a run as proof. From a fair coin, 530
-            heads in 1000 is an ordinary result, so the trials do not
-            establish bias. (ii) is just the definition of experimental
-            probability, and (iii) is what a fair coin would give — which
-            leaves (c).</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">B5</span>
-          <span>The red ball is gone, so 3 of the 9 that remain are red and
-            the answer is $\tfrac13$. Options (b) and (c) are both
-            $\tfrac25$, the probability <em>before</em> the draw — the trap
-            is to keep using a sample space the first draw has already
-            changed.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C1</span>
-          <span>Counting "at least one 6" directly means adding three
-            overlapping cases. Counting its opposite means one: 5 choices on
-            each die, so $25$ of the $36$ pairs have no 6, and
-            $1 - \tfrac{25}{36} = \tfrac{11}{36}$. Option (b) comes from
-            adding $\tfrac16 + \tfrac16$, which counts the double six
-            twice.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C4</span>
-          <span>Ten multiples of 3 and six of 5 make sixteen, but 15 and 30
-            are in both lists and have been counted twice. Take them off
-            once: $14$ of $30$, or $\tfrac{7}{15}$. Option (c) is the
-            uncorrected count.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C6</span>
-          <span>Three things happen at once, with 2, 2 and 6 outcomes, so the sample
-            space has $2 \times 2 \times 6 = 24$ entries — HH1, HH2, and so on to TT6.
-            Option (a) adds the three counts instead of multiplying them; (b) forgets
-            one of the coins; (d) is $6 \times 6$, the answer for two dice, and dice
-            are not what was rolled.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C7</span>
-          <span>A pin is not a coin. Its two positions are not equally
-            likely, so nothing entitles you to $0.5$, and the 500 drops are
-            exactly the evidence the question asks you to use:
-            $\tfrac{310}{500} = 0.62$. Option (c) is the gambler's fallacy
-            again, and (d) mistakes a hard theoretical probability for no
-            probability at all.</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>A spinner has ten equal sectors numbered 1 to 10. Let $A$ be the event "a multiple of 3" and $B$ the event "a number greater than 6". Write each event as a set, and find the probabilities of $A$, of $B$, of "$A$ and $B$", and of "$A$ or $B$".</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$A = \{3, 6, 9\}$, so $P(A) = \tfrac{3}{10}$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$B = \{7, 8, 9, 10\}$, so $P(B) = \tfrac{4}{10} = \tfrac25$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>in both lists: $\{9\}$, so $P(A \text{ and } B) = \tfrac{1}{10}$</span>
+              <span class="work__why">and: in both</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>in either list: $\{3, 6, 7, 8, 9, 10\}$, so $P(A \text{ or } B) = \tfrac{6}{10} = \tfrac35$</span>
+              <span class="work__why">or: in at least one</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\tfrac{3}{10}$, $\tfrac25$, $\tfrac{1}{10}$ and $\tfrac35$</span></div>
+          </div>
+          <p>Adding the two counts gives $3 + 4 = 7$, and $\tfrac{7}{10}$ is wrong: 9 is in both lists and has been counted twice. Writing the sets out is what shows it.</p>
         </div>
       </div>
 

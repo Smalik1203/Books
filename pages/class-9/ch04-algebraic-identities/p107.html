@@ -2,103 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>The number of whole numbers $n$ for which $n^4 + 4$ is a prime
-          number is</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$0$</li>
-          <li>$1$</li>
-          <li>$2$</li>
-          <li>infinitely many</li>
-        </ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          $n^4 + 4$ is $x^4 + 4y^4$ with $x = n$ and $y = 1$. Stage 1
-          factorised that:
-        </p>
-        <div class="work">
-          <p>$n^4 + 4 = \left(n^2 - 2n + 2\right)\left(n^2 + 2n + 2\right)$</p>
-        </div>
-        <p>
-          A product of two factors is prime only if one factor is $1$.
-        </p>
-        <div class="work work--list">
-          <p>$n^2 - 2n + 2 = (n - 1)^2 + 1 = 1$ &nbsp;only when&nbsp; $n = 1$</p>
-          <p>at $n = 1$: &nbsp; $n^4 + 4 = 5$, prime</p>
-        </div>
-        <p>
-          For every other whole number both factors are at least $2$, so the
-          product is not prime. Exactly one such $n$, option (b).
-        </p>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Factorise $6x^2 + 5x - 6$ by splitting the middle term.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$6 \times (-6) = -36$</span>
+              <span class="work__why">the two end coefficients multiplied</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$9 \times (-4) = -36$ and $9 + (-4) = 5$</span>
+              <span class="work__why">the pair whose sum is the middle coefficient</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$6x^2 + 5x - 6 = 6x^2 + 9x - 4x - 6$</span>
+              <span class="work__why">split $5x$ as $9x - 4x$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$= 3x(2x + 3) - 2(2x + 3)$</span>
+              <span class="work__why">group in pairs</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$6x^2 + 5x - 6 = (2x + 3)(3x - 2)$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$(2x + 3)(3x - 2) = 6x^2 - 4x + 9x - 6 = 6x^2 + 5x - 6$</span></div>
+          </div>
+          <p>When the coefficient of $x^2$ is not $1$, the pair comes from the product of the two end coefficients, here $-36$, and not from the constant alone. That is the rule behind $(px + a)(qx + b)$ in Section 4.5.</p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One identity each</div>
-        <ol class="c-questions">
-          <li>
-              The value of $103 \times 97$ is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$9891$</li>
-                <li>$9991$</li>
-                <li>$9999$</li>
-                <li>$10009$</li>
-              </ol>
-            </li>
-        </ol>
+      <h3>Type 6 &middot; Cubes of sums and differences</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>Find $998^3$ using an identity.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$998^3 = (1000 - 2)^3$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$= 1000^3 - 3 \times 1000^2 \times 2 + 3 \times 1000 \times 2^2 - 2^3$</span>
+              <span class="work__why">$(a - b)^3$ identity</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$= 1000000000 - 6000000 + 12000 - 8$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$998^3 = 994011992$</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              If $x + \dfrac{1}{x} = 5$, then $x^2 + \dfrac{1}{x^2}$ equals
-              <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
-                <li>$21$</li>
-                <li>$23$</li>
-                <li>$25$</li>
-                <li>$27$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              $(a + b + c)^2 - \left(a^2 + b^2 + c^2\right)$ is equal to
-              <ol class="c-parts c-parts--alpha">
-                <li>$0$</li>
-                <li>$abc$</li>
-                <li>$ab + bc + ca$</li>
-                <li>$2(ab + bc + ca)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              $27a^3 + 8b^3$ factorises as
-              <ol class="c-parts c-parts--alpha">
-                <li>$(3a + 2b)\left(9a^2 - 6ab + 4b^2\right)$</li>
-                <li>$(3a + 2b)\left(9a^2 + 6ab + 4b^2\right)$</li>
-                <li>$(3a - 2b)\left(9a^2 + 6ab + 4b^2\right)$</li>
-                <li>$(3a + 2b)\left(3a^2 - 6ab + 2b^2\right)$</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>Show that $27x^3 - 54x^2y + 36xy^2 - 8y^3$ is a perfect cube, and find what it is the cube of.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$27x^3 = (3x)^3$ and $8y^3 = (2y)^3$</span>
+              <span class="work__why">the cubes at the ends; the signs alternate</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$3(3x)^2(2y) = 54x^2y$</span>
+              <span class="work__why">the second term agrees</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$3(3x)(2y)^2 = 36xy^2$</span>
+              <span class="work__why">the third term agrees</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$27x^3 - 54x^2y + 36xy^2 - 8y^3 = (3x - 2y)^3$</span></div>
+          </div>
+          <p>Both middle terms have to be checked. With $30xy^2$ in place of $36xy^2$ the two ends would still match, and the expression would not be a cube.</p>
+        </div>
       </div>
 
     </div>

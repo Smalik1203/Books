@@ -2,140 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <figure class="c-figure c-figure--sm">
-        <svg viewBox="0 -10 230 175" role="img"
-             aria-label="A square field of side a with a smaller square pond of side b cut from its top right corner">
-          <path class="dg-line dg-fill-a-soft" d="M30 18 H106 V62 H150 V138 H30 Z"/>
-          <rect class="dg-fill-c-soft" x="106" y="18" width="44" height="44"/>
-          <path class="dg-thin" d="M106 18 H150 V62"/>
-          <text class="dg-note" x="128" y="44" text-anchor="middle">pond</text>
-      
-          <line class="dg-dim" x1="18" y1="18" x2="18" y2="138"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-label" x="10" y="82" text-anchor="end">a</text>
-          <line class="dg-dim" x1="30" y1="152" x2="150" y2="152"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-label" x="90" y="163" text-anchor="middle">a</text>
-          <line class="dg-dim" x1="106" y1="8" x2="150" y2="8"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-label" x="128" y="4" text-anchor="middle">b</text>
-          <line class="dg-dim" x1="162" y1="18" x2="162" y2="62"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-label" x="170" y="44">b</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 4B.6</span> &nbsp;The part left is
-          $a^2 - b^2$. The owner knows $a + b$ and $a - b$. He has
-          measured the answer without measuring either side.
-        </figcaption>
-      </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 18</div>
+        <div class="c-example__body">
+          <p>The number of whole numbers $n$ for which $n^4 + 4$ is a prime number is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$0$</li><li>$1$</li><li>$2$</li><li>infinitely many</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$n^4 + 4 = \left(n^2 - 2n + 2\right)\left(n^2 + 2n + 2\right)$</span>
+              <span class="work__why">$x^4 + 4y^4$ from Stage 1, with $y = 1$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>a product of two whole numbers is prime only if one of them is $1$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$n^2 - 2n + 2 = (n - 1)^2 + 1$, which is $1$ only when $n = 1$</span>
+              <span class="work__why">the other factor is at least $2$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>at $n = 1$, $n^4 + 4 = 5$, which is prime</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
+          </div>
+          <p>For every other whole number both factors are at least $2$, so $n^4 + 4$ is not prime. Option (a) misses $n = 1$. Option (c) also counts $n = 0$, but $0^4 + 4 = 4$ is not prime.</p>
+        </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
+        <div class="c-practice__sub">Choose the correct option</div>
+        <ol class="c-questions">
+          <li>The value of $103 \times 97$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$9891$</li><li>$9991$</li><li>$9999$</li><li>$10009$</li></ol></li>
+        </ol>
+      </div>
 
       <div class="c-practice c-practice--cont">
-        
+        <ol class="c-questions" data-start="2">
+          <li>If $x + \dfrac{1}{x} = 5$, then $x^2 + \dfrac{1}{x^2}$ is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$25$</li><li>$27$</li><li>$23$</li><li>$21$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>$27a^3 + 8b^3$ factorises as<ol class="c-parts c-parts--alpha"><li>$(3a + 2b)\left(9a^2 - 6ab + 4b^2\right)$</li><li>$(3a + 2b)\left(9a^2 + 6ab + 4b^2\right)$</li><li>$(3a - 2b)\left(9a^2 + 6ab + 4b^2\right)$</li><li>$(3a + 2b)\left(3a^2 - 6ab + 2b^2\right)$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="4">
-          <li>
-              
-              The number of pairs of positive whole numbers $(x, y)$ with
-              $x^2 - y^2 = 45$ is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$2$</li>
-                <li>$3$</li>
-                <li>$4$</li>
-                <li>$6$</li>
-              </ol>
-            </li>
+          <li>$x^2 + kx + 36$ is a perfect square for<ol class="c-parts c-parts--alpha"><li>$k = 6$ only</li><li>$k = 12$ only</li><li>$k = 6$ and $k = -6$</li><li>$k = 12$ and $k = -12$</li></ol></li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
-          <li>
-              
-              The largest number that must divide $n^5 - n$ for every whole
-              number $n$ is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$6$</li>
-                <li>$10$</li>
-                <li>$30$</li>
-                <li>$60$</li>
-              </ol>
-              <p class="hint">$n^5 - n = (n - 1)\,n\,(n + 1)\left(n^2 + 1\right)$.
-                Also, $n^2 + 1 = (n - 2)(n + 2) + 5$. Problem 4 does the rest.</p>
-            </li>
+          <li>If $x - \dfrac{1}{x} = 3$, then $x^3 - \dfrac{1}{x^3}$ is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$27$</li><li>$30$</li><li>$36$</li><li>$45$</li></ol></li>
         </ol>
       </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>
-              
-              If $a + b + c = 0$ and $abc \neq 0$, then $(a + b)(b + c)(c + a)$
-              equals
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$abc$</li>
-                <li>$-abc$</li>
-                <li>$0$</li>
-                <li>$3abc$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">4</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Answers &amp; Takeaways</div>
-          <div class="c-stage__for">Check your answers, then read why the other options are wrong.</div>
-        </div>
-      </div>
-
-      <ol class="c-answers">
-        <li>
-          <span class="c-answers__stage">Set A</span>
-          <span class="c-answers__list"><span class="n">1</span> (b) &nbsp;
-            <span class="n">2</span> (b) &nbsp; <span class="n">3</span> (d) &nbsp;
-            <span class="n">4</span> (a) &nbsp; <span class="n">5</span> (d) &nbsp;
-            <span class="n">6</span> (d) &nbsp; <span class="n">7</span> (c) &nbsp;
-            <span class="n">8</span> (c) &nbsp; <span class="n">9</span> (c) &nbsp;
-            <span class="n">10</span> (b)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set B</span>
-          <span class="c-answers__list"><span class="n">1</span> (a) &nbsp;
-            <span class="n">2</span> (d) &nbsp; <span class="n">3</span> (b) &nbsp;
-            <span class="n">4</span> (d) &nbsp; <span class="n">5</span> (b) &nbsp;
-            <span class="n">6</span> (c) &nbsp; <span class="n">7</span> (a) &nbsp;
-            <span class="n">8</span> (c) &nbsp; <span class="n">9</span> (c)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set C</span>
-          <span class="c-answers__list"><span class="n">1</span> (b) &nbsp;
-            <span class="n">2</span> (b) &nbsp; <span class="n">3</span> (a) &nbsp;
-            <span class="n">4</span> (b) &nbsp; <span class="n">5</span> (c) &nbsp;
-            <span class="n">6</span> (b)</span>
-        </li>
-      </ol>
-
-      <p>
-        Three things ran under all three sets. The first is that every identity
-        here was a single statement read in two directions. Expanding and
-        factorising are not two skills but one fact used forwards and backwards,
-        and the question decides which way you read it.
-      </p>
-
-      <p>
-        The second is that an expression which survives having its letters
-        swapped cannot depend on which letter is which. That is why Set A 5 and
-        Set C 6 gave answers although the letters themselves were never
-        available.
-      </p>
-
-      <p>
-        The third is that a product of consecutive whole numbers carries
-        factors you can count on before you know any of the numbers. Three in a
-        row always hide a $2$ and a $3$; Set C 5 asks what a fourth and fifth
-        add to that.
-      </p>
 
     </div>
   </div>

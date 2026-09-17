@@ -2,106 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <figure class="c-figure c-figure--sm">
-        <svg viewBox="0 0 230 130" role="img"
-             aria-label="A rectangle with sides labelled x and y and a diagonal of length 13 centimetres drawn across it">
-          <rect class="dg-line dg-fill-a-soft" x="14" y="28" width="204" height="85"/>
-          <path class="dg-dim" d="M14 113 L218 28"/>
-          <text class="dg-label" x="116" y="20" text-anchor="middle">x</text>
-          <text class="dg-label" x="224" y="75">y</text>
-          <text class="dg-dim-label" x="102" y="62" text-anchor="end">13</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 4B.4</span> &nbsp;Two facts are given and
-          one is wanted. The one wanted is not a side.
-        </figcaption>
-      </figure>
-
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 4</span>
-        <p>For every whole number $n$, the number $n^3 - n$ is a multiple of</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$4$</li>
-          <li>$6$</li>
-          <li>$12$</li>
-          <li>$24$</li>
-        </ol>
-      </div>
-
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          The question says <em>for every</em> $n$, so trying values can
-          rule options out but cannot rule one in.
-        </p>
-        <div class="work work--list">
-          <p>at $n = 2$: &nbsp; $n^3 - n = 6$</p>
-          <p>$6$ is not a multiple of $4$, $12$ or $24$</p>
-          <p>$n^3 - n = n\left(n^2 - 1\right) = (n - 1)\,n\,(n + 1)$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>If $a + b = 7$ and $a^3 + b^3 = 133$, the number of real pairs $(a, b)$ is</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$0$</li><li>$1$</li><li>$2$</li><li>$4$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$a^3 + b^3 = (a + b)^3 - 3ab(a + b)$</span>
+              <span class="work__why">links the sum, the cubes and the product</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$133 = 343 - 21ab$, so $ab = 10$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$(a - b)^2 = (a + b)^2 - 4ab = 49 - 40 = 9$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$a - b$ is $3$ or $-3$</span>
+              <span class="work__why">a square has two square roots</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(c): the pairs are $(5, 2)$ and $(2, 5)$</span></div>
+          </div>
+          <p>Option (b) comes of taking $a - b = 3$ and stopping there. Option (a) would be right if $(a - b)^2$ had come out negative, and it can: with $a^3 + b^3 = 70$ instead, $343 - 21ab = 70$ gives $ab = 13$, and $49 - 52 = -3$. Option (d) gives $a + b$ two signs as well, but $a + b$ was given as $7$.</p>
         </div>
-        <p>
-          Three whole numbers in a row (Fig. 4B.5): of any two in a row one
-          is even, and of any three one is a multiple of $3$, so the product
-          always carries a factor $2$ and a factor $3$. Option (b). Trying
-          $n = 3, 4, 5$ gives multiples of $12$, which is how (c) is chosen.
-        </p>
       </div>
 
-      <figure class="c-figure c-figure--xl">
-        <svg viewBox="0 0 390 80" role="img"
-             aria-label="A number line from 0 to 10 with the even numbers filled and the multiples of three ringed, and the three consecutive numbers 4, 5, 6 bracketed">
-          <line class="dg-axis" x1="12" y1="50" x2="380" y2="50"/>
-          <path class="dg-thin" d="M26 46 V54 M60 46 V54 M94 46 V54 M128 46 V54 M162 46 V54 M196 46 V54 M230 46 V54 M264 46 V54 M298 46 V54 M332 46 V54 M366 46 V54"/>
-          <text class="dg-tick" x="26" y="69" text-anchor="middle">0</text>
-          <text class="dg-tick" x="60" y="69" text-anchor="middle">1</text>
-          <text class="dg-tick" x="94" y="69" text-anchor="middle">2</text>
-          <text class="dg-tick" x="128" y="69" text-anchor="middle">3</text>
-          <text class="dg-tick" x="162" y="69" text-anchor="middle">4</text>
-          <text class="dg-tick" x="196" y="69" text-anchor="middle">5</text>
-          <text class="dg-tick" x="230" y="69" text-anchor="middle">6</text>
-          <text class="dg-tick" x="264" y="69" text-anchor="middle">7</text>
-          <text class="dg-tick" x="298" y="69" text-anchor="middle">8</text>
-          <text class="dg-tick" x="332" y="69" text-anchor="middle">9</text>
-          <text class="dg-tick" x="366" y="69" text-anchor="middle">10</text>
-      
-          <circle class="dg-fill-a" cx="26" cy="50" r="3.6"/>
-          <circle class="dg-fill-a" cx="94" cy="50" r="3.6"/>
-          <circle class="dg-fill-a" cx="162" cy="50" r="3.6"/>
-          <circle class="dg-fill-a" cx="230" cy="50" r="3.6"/>
-          <circle class="dg-fill-a" cx="298" cy="50" r="3.6"/>
-          <circle class="dg-fill-a" cx="366" cy="50" r="3.6"/>
-          <circle class="dg-line" cx="26" cy="50" r="7.5"/>
-          <circle class="dg-line" cx="128" cy="50" r="7.5"/>
-          <circle class="dg-line" cx="230" cy="50" r="7.5"/>
-          <circle class="dg-line" cx="332" cy="50" r="7.5"/>
-      
-          <line class="dg-dim" x1="162" y1="26" x2="230" y2="26"
-                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-          <text class="dg-label" x="196" y="17" text-anchor="middle">n &minus; 1, n, n + 1</text>
-        </svg>
-        <figcaption>
-          <span class="fignum">Fig. 4B.5</span> &nbsp;A dot marks every even
-          number. A ring marks every multiple of three. Slide the bracket
-          anywhere. It always covers at least one of each.
-        </figcaption>
-      </figure>
+      <h3>Type 5 &middot; Factorising by sum and product</h3>
 
-      <p>
-        The argument did not really depend on there being three of them. Among
-        any four consecutive whole numbers, one is a multiple of $4$ and another
-        is even, which together give a factor of $8$. One of the four is also a
-        multiple of $3$. So the product of any four in a row is divisible by
-        $24$. Among any five, a multiple of $5$ joins them, and the product is
-        divisible by $120$.
-      </p>
-
-      <p>
-        Both are cases of one fact: the product of $k$ consecutive whole numbers
-        is always divisible by $1 \times 2 \times \cdots \times k$. Counting the
-        guaranteed factors, as we have just done, settles any particular case,
-        though it is not the neatest proof of the general one. Set C question 5
-        puts the same counting to work on a fifth power.
-      </p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>$x^2 - 2x - 35$ is equal to</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$(x - 7)(x + 5)$</li><li>$(x + 7)(x - 5)$</li><li>$(x - 7)(x - 5)$</li><li>$(x + 7)(x + 5)$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>two numbers with sum $-2$ and product $-35$</span>
+              <span class="work__why">compare with $x^2 + (a + b)x + ab$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the numbers have opposite signs</span>
+              <span class="work__why">the product is negative</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$(-7) \times 5 = -35$ and $-7 + 5 = -2$</span>
+              <span class="work__why">from the pairs $1, 35$ and $5, 7$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) has the right product, but its numbers add to $2$, not $-2$. Options (c) and (d) have product $35$, not $-35$.</p>
+        </div>
+      </div>
 
     </div>
   </div>

@@ -2,28 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Write the sample space before the probability. The counting is the hard
-          part, and it is the part a formula cannot do for you.</p>
-        </div>
-      </div>
-
-      <h3>The tree diagram</h3>
-
-      <p>When an experiment happens in stages — toss a coin, then toss it again — the
-      outcomes multiply, and a list written by hand starts to miss things. A
-      <span class="term">tree diagram</span> makes missing them difficult.</p>
-
-      <p>Draw a branch for every outcome of the first stage. From the end of each of
-      those, draw a branch for every outcome of the second. Every path from the root to
-      a tip is then one complete outcome, and the tips are the sample space.</p>
-
       <div class="c-example">
         <div class="c-example__tab">Example 7</div>
         <div class="c-example__body">
@@ -69,23 +47,22 @@
             </figure>
           </div>
       
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">sample space</span>
+            <div class="work__row"><span class="work__label">Step 1</span>
               <span>$S = \{\,\text{HH},\ \text{HT},\ \text{TH},\ \text{TT}\,\}$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$n(S)$</span>
-              <span>4</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">two heads</span>
-              <span>$\{\,\text{HH}\,\}$</span>
-              <span class="chip">$\tfrac14$</span>
-            </div>
+              <span class="work__why">the tips of the tree</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$n(S)$ is 4</span>
+              <span class="work__why">count the tips</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>two heads is the event $\{\,\text{HH}\,\}$, one outcome, so $\tfrac14$</span>
+              <span class="work__why">favourable over possible</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$P(\text{HH}) = \tfrac14$</span></div>
           </div>
       
-          <p>So $P(\text{HH}) = \tfrac14$. Notice that HT and TH are two different
+          <p>Notice that HT and TH are two different
           outcomes, not one: heads-then-tails is a different history from
           tails-then-heads, even though both leave you with one of each.</p>
         </div>
@@ -95,6 +72,31 @@
       tips, exactly two of them — HT and TH — have one head and one tail, so that event
       has probability $\tfrac24 = \tfrac12$. Three of the four tips show at least one head, so $\tfrac34$ is the
       probability of that.</p>
+
+      <p>A tree also grows in an orderly way. Toss the coin a third time and every tip
+      sprouts two more, giving eight outcomes; a fourth toss gives sixteen. Two stages of
+      two choices make $2 \times 2$, and three make $2 \times 2 \times 2$. The tree is
+      showing you a multiplication.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 7.3</div>
+        <ol class="c-questions">
+          <li>A single six-sided die is rolled. Write the sample space and give
+            $n(S)$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write the sample space for each of these.
+              <ol class="c-parts c-parts--1">
+                <li>Rolling a die and tossing a coin together.</li>
+                <li>Drawing one ball from a bag holding 1 red, 1 green and 1 blue ball.</li>
+                <li>The result of a cricket match for one team.</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
 
     </div>
   </div>

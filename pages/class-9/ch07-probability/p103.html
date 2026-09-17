@@ -2,77 +2,90 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
-        </div>
+      <p>
+        Writing the two sets out is worth the few seconds. Read quickly, "even and
+        greater than 5" invites you to add the counts — four and three — and answer
+        $\tfrac78$, which is larger than either condition alone. An <em>and</em> can
+        only ever make an event smaller.
+      </p>
+
+      <p>
+        It is worth reading the two sets once more. "Even" holds four of the eight
+        numbers and "greater than 5" holds three, but only two numbers are in both, and
+        those two are the whole event. An <em>or</em> would have given five — the union
+        $\{2, 4, 6, 7, 8\}$, with 6 and 8 counted once each rather than twice.
+      </p>
+
+      <div class="c-try">
+        <p>In a survey of 200 people, 150 said they owned a bicycle. In a second survey,
+        of 20 people at a cycle repair shop, 19 said they owned one. Both give a
+        probability. Which would you use to estimate the figure for the town, and
+        why?</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Marbles, from the probability back</div>
-        <p>
-          Most probability questions hand you the counts and ask for the probability.
-          This one runs the other way, and the formula works just as well read
-          backwards.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">given</span>
-            <span>$P(\text{red}) = \dfrac{\text{red}}{12} = \dfrac13$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">so</span>
-            <span>$\text{red} = \dfrac{12}{3} = 4$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">blue</span>
-            <span>$12 - 4$</span>
-            <span class="chip">8</span>
-          </div>
-        </div>
-        <p>
-          Eight blue. Check it the other way round before trusting it: 4 red out of 12
-          is $\tfrac13$, as required.
-        </p>
-        <p>
-          What made this work is that the formula is an equation, not an instruction. It
-          relates three quantities — favourable, possible, and the probability — and any
-          two of them fix the third. Given the counts you find the probability. Given the
-          probability and the total you find the count. Given the probability and a count
-          you find the total. The same three lines of algebra serve all three questions.
-        </p>
+      <p>
+        Both give a probability, and the arithmetic of each is sound: $\tfrac{150}{200}
+        = 0.75$ and $\tfrac{19}{20} = 0.95$. The question is which estimates the
+        town.
+      </p>
+
+      <p>
+        The second sample was taken at a cycle repair shop. Everyone there has already
+        been sorted by the very thing being measured — you do not queue at a repair
+        shop without a bicycle. The sample cannot represent the town, and no increase
+        in its size would help: a thousand people at that shop would give an answer
+        closer to 1, not closer to the truth.
+      </p>
+
+      <p>
+        So use the first, and notice what settled it. Not the sample size, though 200
+        beats 20. It was <em>how the sample was chosen</em>. A biased sample does not
+        give a vague answer; it gives a precise answer to a different question.
+      </p>
+
+      <p>
+        And the different question here is a real one, worth asking on its own terms:
+        what proportion of people at a cycle repair shop own a bicycle? The answer,
+        near enough, is all of them, and the survey establishes it. Nothing about the
+        20 responses is false. They simply describe a queue, not a town.
+      </p>
+
+      <p>
+        This is the flaw that made the first survey worth taking, and it is the flaw to
+        look for whenever a figure is quoted at you. Ask who was asked, and where. A
+        survey of shoppers taken in a market at eleven on a Tuesday morning will find
+        the town oddly free of people who work in offices.
+      </p>
+
+      <div class="c-try">
+        <p>Four coins are tossed together. Which is more likely — exactly three heads,
+        or four heads? Answer by listing, not by feel.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Eight heads, and what they prove</div>
-        <p>
-          Neither student is right, and the interesting part is why each is wrong in a
-          different direction.
-        </p>
-        <p>
-          The first treats evidence as proof. Eight heads from a fair coin is unlikely —
-          it happens about once in every 256 attempts — but unlikely is not impossible,
-          and once in 256 is not never. The run is evidence of bias, not proof of it.
-        </p>
-        <p>
-          The second has the gambler's fallacy inside out. It is true that a fair coin
-          gives $\tfrac12$ every toss, but that is a statement about a coin already known
-          to be fair. Here the fairness is exactly what is in question, so the argument
-          assumes what it is trying to show.
-        </p>
-        <p>
-          What you can say is this: the run is weak evidence that something is wrong with
-          the coin, and the way to strengthen or dismiss it is more tosses. That is the
-          law of large numbers used as an instrument rather than a slogan.
-        </p>
-        <p>
-          Say the coin is tossed 800 more times. If it is fair, the proportion of heads
-          will drift towards $\tfrac12$ and the eight will be lost in the crowd. If it is
-          weighted, the proportion will settle somewhere else and stay there. Either way
-          the answer arrives, and it arrives from the same evidence — more of it.
-        </p>
+      <p>
+        Sixteen outcomes, from two choices made four times over —
+        $2 \times 2 \times 2 \times 2$. Listing them costs two lines and settles the
+        question:
+      </p>
+
+      <div class="work work--centred">
+        <p>HHHH &nbsp; HHHT &nbsp; HHTH &nbsp; HHTT &nbsp; HTHH &nbsp; HTHT &nbsp; HTTH
+        &nbsp; HTTT</p>
+        <p>THHH &nbsp; THHT &nbsp; THTH &nbsp; THTT &nbsp; TTHH &nbsp; TTHT &nbsp; TTTH
+        &nbsp; TTTT</p>
+      </div>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">exactly three heads</span>
+          <span>HHHT, HHTH, HTHH, THHH</span>
+          <span class="chip">$\tfrac{4}{16} = \tfrac14$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">four heads</span>
+          <span>HHHH</span>
+          <span class="chip">$\tfrac{1}{16}$</span>
+        </div>
       </div>
 
     </div>

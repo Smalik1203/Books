@@ -2,78 +2,64 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.9</span><span class="name">Points on One Circle</span></h2>
-
-      <p>Section 5.4 counted the circles through two points — infinitely many — and through
-      three, where there is exactly one so long as they are not in a row. Four points are a
-      different matter altogether. Any three of them already fix a circle, so the fourth
-      has no freedom left: either it happens to land on that circle or it does not. Points
-      that all lie on one circle are called <span class="term">concyclic</span>.</p>
-
-      <p>So when does the fourth point land? Theorem 9 supplies the clue. If $A$, $B$, $C$ and $D$ are concyclic, with $C$ and $D$ on the same side of $AB$, then $C$ and $D$ are on the
-      same arc, and angles in the same segment are equal: $\angle ACB = \angle ADB$. That much is forced. The question is whether it works in reverse.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>A cyclic quadrilateral $ABCD$ has $\angle A = 95^\circ$ and
+          $\angle B = 70^\circ$. Find its other two angles.</p>
+          <p>Theorem 11 pairs each angle with the one <em>opposite</em> it, never with a
+          neighbour. So $A$ goes with $C$, and $B$ with $D$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$A$ with $C$: $\angle C = 180^\circ - 95^\circ$, which is $85^\circ$</span>
+              <span class="work__why">opposite angles</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$B$ with $D$: $\angle D = 180^\circ - 70^\circ$, which is $110^\circ$</span>
+              <span class="work__why">opposite angles</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle C = 85^\circ$ and $\angle D = 110^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$95 + 70 + 85 + 110 = 360$</span>
+              <span class="work__why">any quadrilateral</span></div>
+          </div>
+          <p>That check is worth doing every time, because it
+          catches the most common slip here — pairing angles that sit next to each other
+          instead of across from each other.</p>
+        </div>
+      </div>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 10</div>
-        <p>If a segment $AB$ subtends equal angles at two points $C$ and $D$
-        lying on the same side of it, then $A$, $B$, $C$ and $D$ are
-        concyclic.</p>
+        <div class="c-keyidea__title">Theorem 12</div>
+        <p>If two opposite angles of a quadrilateral add up to $180^\circ$, then its
+        four vertices are concyclic.</p>
       </div>
 
-      <p>The proof takes a shape not used anywhere else in this chapter: rather than
-      building the circle, we show that $D$ has nowhere else to be.</p>
+      <p>The proof runs like Theorem 10's — by showing the fourth vertex has nowhere else
+      to go. Suppose $\angle BAD + \angle BCD = 180^\circ$. Since $A$, $B$,
+      $D$ are not collinear there is a circle through them; suppose $C$ lay
+      outside it, and let $E$ be where $DC$ meets the circle. Then $ABED$ is
+      cyclic, so Theorem 11 gives $\angle BAD + \angle BED = 180^\circ$. Comparing
+      with what we were given, $\angle BED = \angle BCD$. But $\angle BED$ is an
+      exterior angle of $\triangle BEC$ and so exceeds $\angle BCE$, which is
+      $\angle BCD$. Once again a quantity is greater than itself. The case with
+      $C$ inside is the same argument with the roles exchanged, and is worth writing
+      out.</p>
 
-      <p>The points $A$, $B$, $C$ are not collinear — if they were,
-      $\angle ACB$ would be a straight angle or nothing at all — so by Theorem 1 there
-      is exactly one circle through them. Draw it. Now $D$ is either outside that
-      circle, or inside it, or on it. Rule out the first two and only the third is
-      left.</p>
+      <h3>Closing an old debt</h3>
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="26 19 328 161" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The two impossible cases: D outside the circle, and D inside it">
-            <circle class="dg-fill-d" cx="100" cy="100" r="60"/>
-            <circle class="dg-fill-d" cx="280" cy="100" r="60"/>
-            <circle class="dg-line" cx="100" cy="100" r="60"/>
-            <path class="dg-thin" d="M43.62 120.52 L156.38 120.52"/>
-            <path class="dg-thin" d="M100 40 L43.62 120.52"/>
-            <path class="dg-thin" d="M100 40 L156.38 120.52"/>
-            <path class="dg-dim" d="M43.62 120.52 L159.46 39.41"/>
-            <path class="dg-dim" d="M159.46 39.41 L156.38 120.52"/>
-            <path class="dg-thin" d="M138.57 54.04 L156.38 120.52"/>
-            <circle class="dg-fill-c" cx="159.46" cy="39.41" r="2.6"/>
-            <text class="dg-label" x="37"  y="131" text-anchor="end">A</text>
-            <text class="dg-label" x="162" y="131">B</text>
-            <text class="dg-label" x="100" y="34"  text-anchor="middle">C</text>
-            <text class="dg-label" x="130" y="50"  text-anchor="end">E</text>
-            <text class="dg-label" x="165" y="36">D</text>
-            <text class="dg-note"  x="100" y="174" text-anchor="middle">D outside</text>
-      
-            <circle class="dg-line" cx="280" cy="100" r="60"/>
-            <path class="dg-thin" d="M223.62 120.52 L336.38 120.52"/>
-            <path class="dg-thin" d="M280 40 L223.62 120.52"/>
-            <path class="dg-thin" d="M280 40 L336.38 120.52"/>
-            <path class="dg-dim" d="M223.62 120.52 L318.57 54.04"/>
-            <path class="dg-dim" d="M275.84 83.96 L336.38 120.52"/>
-            <path class="dg-thin" d="M318.57 54.04 L336.38 120.52"/>
-            <circle class="dg-fill-c" cx="275.84" cy="83.96" r="2.6"/>
-            <text class="dg-label" x="217" y="131" text-anchor="end">A</text>
-            <text class="dg-label" x="342" y="131">B</text>
-            <text class="dg-label" x="280" y="34"  text-anchor="middle">C</text>
-            <text class="dg-label" x="324" y="50">E</text>
-            <text class="dg-label" x="271" y="80"  text-anchor="end">D</text>
-            <text class="dg-note"  x="280" y="174" text-anchor="middle">D inside</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.13</span> Neither case can happen. Each
-          forces $\angle ACB$ to be bigger, or smaller, than itself.</figcaption>
-        </figure>
-      </div>
+      <p>Twice now this chapter has promised that the circumcentre of a right-angled
+      triangle sits at the midpoint of the hypotenuse. Theorem 10 pays up.</p>
 
-      <p>That is a shape of argument worth naming. There were three places $D$ could
-      be — outside the circle, inside it, or on it — and two of them have just been
-      shown to be impossible. Nothing was proved about the third directly; it survives
-      because it is the only one left.</p>
+      <p>Let $\triangle ABD$ have its right angle at $D$, and let $M$ be the
+      midpoint of the hypotenuse $AB$. Draw the circle with centre $M$ and radius
+      $MA$, so that $AB$ is a diameter of it, and mark any point $D'$ of
+      that circle on the same side of $AB$ as $D$. By the corollary in Section
+      5.8, $\angle AD'B = 90^\circ$ — which is also $\angle ADB$. Two points,
+      equal angles, same side: by Theorem 10 the four points $A$, $B$, $D'$
+      and $D$ are concyclic, so $D$ is on that circle too. Its centre $M$ is
+      therefore equidistant from $A$, $B$ and $D$ — which is exactly what it
+      means to be the circumcentre.</p>
 
     </div>
   </div>

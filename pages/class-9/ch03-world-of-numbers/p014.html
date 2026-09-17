@@ -2,68 +2,110 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">3.5</span><span class="name">Numbers That Are Not Ratios</span></h2>
+      <h3>Why $\sqrt{2}$ is irrational</h3>
 
       <p>
-        The rationals are dense. Between any two of them lies another, and
-        between those, another again. It is very hard to look at that and not
-        conclude that they must fill the line completely, leaving no gap
-        anywhere. For a long time that is exactly what was believed.
+        Suppose it were rational. Then it could be written as a fraction in
+        lowest terms — and everything that follows is squeezed out of those
+        two words, <em>lowest terms</em>.
       </p>
 
-      <p>
-        It is false, and the counter-example is embarrassingly easy to draw.
-      </p>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">Step 1</span>
+          <span>Assume $\sqrt{2} = \dfrac{p}{q}$, with $p$, $q$ integers,
+          $q \neq 0$, and $p$, $q$ co-prime.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 2</span>
+          <span>Square both sides: $2 = \dfrac{p^2}{q^2}$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 3</span>
+          <span>Multiply by $q^2$: $\;2q^2 = p^2$.</span>
+        </div>
+      </div>
 
-      <p>
-        When Baudhāyana composed his <em>Śulbasūtra</em> around 800 BCE — a
-        manual for laying out fire altars — he met lengths that no ratio would
-        name. The Greeks ran into the same wall a few centuries later. The
-        offending shape is a square of side 1.
-      </p>
-
-      <div class="c-figure c-figure--md">
-        <figure>
-          <svg viewBox="4 4 112 96" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A unit square filled and divided by its diagonal into two right triangles, the diagonal marked d">
-            <rect class="dg-fill-a-soft" x="24" y="20" width="60" height="60"/>
-            <path class="dg-fill-c-soft" d="M24 80 H84 V20 Z"/>
-      
-            <path class="dg-line" d="M24 20 H84 V80 H24 Z"/>
-            <path class="dg-dim"  d="M24 80 L84 20"/>
-            <path class="dg-thin" d="M74 80 V70 H84"/>
-      
-            <text class="dg-label" x="54" y="90" text-anchor="middle">1</text>
-            <text class="dg-label" x="89" y="54">1</text>
-            <text class="dg-dim-label" x="48" y="46" text-anchor="middle">d</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3.5</span> A square of side 1.
-          What number is the length of its diagonal?</figcaption>
-        </figure>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">Step 4</span>
+          <span>$p^2$ is twice an integer, so $p^2$ is even; and if a square is
+          even the number itself must be. So $p$ is even — write $p = 2k$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 5</span>
+          <span>Substitute: $2q^2 = (2k)^2 = 4k^2$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 6</span>
+          <span>Divide by 2: $\;q^2 = 2k^2$.</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">Step 7</span>
+          <span>By the same reasoning as Step 4, $q^2$ is even, so $q$ is
+          even.</span>
+        </div>
       </div>
 
       <p>
-        By the Baudhāyana–Pythagoras theorem the diagonal $d$ satisfies
-        $1^2 + 1^2 = d^2$, so $d^2 = 2$ and $d = \sqrt{2}$. The length is
-        perfectly definite — you can draw it with a ruler, and it is shorter
-        than $1.5$ and longer than $1.4$. The question is whether any ratio of
-        whole numbers names it.
+        And there is the collapse. Step 4 makes $p$ even, Step 7 makes $q$
+        even — so both are divisible by 2, and share a common factor. But Step
+        1 said they share none. Both cannot be true.
       </p>
 
       <p>
-        It does not, and the argument that shows so is one of the oldest and
-        cleanest in mathematics. It is credited to Hippasus of the Pythagorean
-        school, around 400 BCE, and it works by
-        <span class="term">contradiction</span>: assume the opposite of what
-        you want, and follow it until it collapses.
+        Every step from 2 to 7 is forced; none of them can be the mistake. So
+        the mistake is the only thing not forced — the assumption itself.
+        $\sqrt{2}$ is not a ratio of integers.
       </p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Irrational number</div>
-        <p>
-          A number on the number line that cannot be written as a ratio of two
-          integers is called an <span class="term">irrational number</span>.
-        </p>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>
+            Notice what the proof never does: it never works out a single
+            decimal place of $\sqrt{2}$. No amount of computing could have
+            settled the question anyway.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Knowing that $\sqrt{2}$ cannot be written as a fraction did not stop
+        anyone needing a number to build with. The Baudhāyana Śulbasūtra, some
+        centuries before this proof was written down in Greece, gives
+        $\sqrt{2}$ as $\tfrac{577}{408}$ — which is $1.414215\ldots$ against a
+        true value of $1.414213\ldots$, right to five decimal places and quite
+        good enough to lay out an altar. An exact answer and a usable one are
+        different requirements, and this chapter has now met both.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>
+              Run the same argument for $\sqrt{3}$. Then try it on $\sqrt{5}$
+              and $\sqrt{7}$.
+            </p>
+            <p>
+              Now try it on $\sqrt{9}$ — where it must fail, since
+              $\sqrt{9} = 3$. Find the exact step that breaks, and you will have
+              found what the argument was really using about 2, 3, 5 and 7.
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>

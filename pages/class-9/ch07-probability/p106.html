@@ -2,74 +2,49 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The pens, and a sample space that moves</div>
-        <p>
-          Every sample space so far has stayed still. This one does not, and that is the
-          whole point of the question.
-        </p>
-        <p>
-          Before any draw there are 5 pens, 3 of them blue. After one is drawn and kept,
-          there are 4 — and which 4 depends on what came out.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">first was blue</span>
-            <span>2 blue of 4 left</span>
-            <span class="chip">$\tfrac24 = \tfrac12$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Four events have probabilities $\tfrac25$, $0.55$, $48\%$ and $\tfrac37$. The event most likely to happen is the one with probability</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$\tfrac25$</li><li>$0.55$</li><li>$48\%$</li><li>$\tfrac37$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\tfrac25 = 0.4$</span>
+              <span class="work__why">one form for all four</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$48\% = 0.48$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\tfrac37 \approx 0.43$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$0.55$ is the largest of $0.4$, $0.55$, $0.48$ and $0.43$</span>
+              <span class="work__why">larger is likelier</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(b)</span></div>
           </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">first was black</span>
-            <span>3 blue of 4 left</span>
-            <span class="chip">$\tfrac34$</span>
-          </div>
+          <p>Option (c) looks largest because 48 is the biggest number printed, but as a probability it is $0.48$. Option (d) has the largest denominator, which says nothing about its size: $\tfrac37$ is about $0.43$.</p>
         </div>
-        <p>
-          Two different answers, so the question as asked has no single one. The draws
-          are not independent: the first result changes the situation the second happens
-          in. Put the pen back and this vanishes — the box is restored, the sample space
-          is what it was, and $\tfrac35$ holds for both draws.
-        </p>
-        <p>
-          Notice how unlike the gambler's fallacy this is. There, the past did
-          <em>not</em> affect the future and people thought it did. Here it genuinely
-          does, because something physical changed. Telling those two apart is the skill;
-          the test is whether the trial altered what is available next time.
-        </p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The complement</div>
-        <p>
-          If an event has probability $0.35$, the probability that it does not happen is
-          $1 - 0.35 = 0.65$.
-        </p>
-        <p>
-          The rule is that $P(\text{not } E) = 1 - P(E)$, and it is true because the
-          event and its opposite between them cover every outcome exactly once. Their
-          probabilities are two shares of the same whole, so they must add to 1 — the
-          same fact the fruit bar showed, where the four widths filled the bar.
-        </p>
-        <p>
-          It is worth having, because "not" is often far easier to count than the thing
-          itself. Asked for the probability of at least one head in three tosses, you can
-          find seven favourable outcomes — or notice that the only failure is TTT, and
-          write $1 - \tfrac18 = \tfrac78$.
-        </p>
-      </div>
+      <h3>Type 2 &middot; Experimental probability</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">The spinner, and what "outcome" counts</div>
-        <p>
-          Counting the numbers printed on the disc gives three, and dividing by three
-          gives $\tfrac13$ — but only if the three are equally likely, and here they are
-          plainly not. Half the disc is marked 1.
-        </p>
-        <p>
-          What the pointer actually meets is area, so area is what carries the
-          probability: $P(1) = \tfrac12$, and $P(2) = P(3) = \tfrac14$. They add to 1, as
-          they must.
-        </p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A basketball player takes 80 shots in practice and scores with 52 of them. Find the experimental probability that a shot scores. In a match she takes 20 shots. About how many would you expect her to score?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{52}{80} = 0.65$</span>
+              <span class="work__why">scores over shots</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$0.65 \times 20 = 13$</span>
+              <span class="work__why">rate times shots</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$P(\text{score}) = 0.65$; about 13 of the 20 shots</span></div>
+          </div>
+          <p>About 13, not exactly 13: the $0.65$ was measured on 80 shots, and a match is not a practice session.</p>
+        </div>
       </div>
 
     </div>

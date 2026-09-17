@@ -2,80 +2,51 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              <strong>A.</strong> A chord subtending $90^\circ$ at the centre
-              of a circle of radius $r$ has length $r\sqrt{2}$.
-              &nbsp;<strong>R.</strong> The two radii to its ends are equal,
-              so the triangle they make with the chord is isosceles.
-              <ol class="c-parts c-parts--alpha">
-                <li>both true, R explains A</li>
-                <li>both true, R does not explain A</li>
-                <li>A true, R false</li>
-                <li>A false, R true</li>
-              </ol>
-              <p class="hint">R is certainly true. Ask whether it is enough on its own to
-              produce the length claimed in A, or whether something else is doing that
-              work.</p>
-            </li>
-        </ol>
+      <h3>Type 6 &middot; Concyclic points and cyclic quadrilaterals</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 11</div>
+        <div class="c-example__body">
+          <p>$ABCD$ is a cyclic quadrilateral in which $AB$ is a diameter and $\angle ADC = 130^\circ$. Then $\angle CAB$ equals</p>
+          <ol class="c-parts c-parts--alpha c-parts--4"><li>$40^\circ$</li><li>$50^\circ$</li><li>$65^\circ$</li><li>$80^\circ$</li></ol>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\angle ABC = 180^\circ - 130^\circ = 50^\circ$</span>
+              <span class="work__why">Theorem 11</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle ACB = 90^\circ$</span>
+              <span class="work__why">angle in a semicircle</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle CAB = 180^\circ - 90^\circ - 50^\circ = 40^\circ$</span>
+              <span class="work__why">angle sum of $\triangle ABC$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(a)</span></div>
+          </div>
+          <p>Option (b) stops at $\angle ABC$. Option (c) halves $130^\circ$ as if it were an angle at the centre, but $D$ is a point of the circle. Option (d) is $130^\circ - 50^\circ$, a difference of two angles that share no triangle. A given that names a diameter is nearly always a given that names a right angle somewhere.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              A circle has radius $10$ cm. Which of these must be true?
-              <ol class="c-parts c-parts--1">
-                <li>Some chord of it is $20$ cm long.</li>
-                <li>A chord $6$ cm from the centre is $16$ cm long.</li>
-                <li>No chord of it is longer than $20$ cm.</li>
-              </ol>
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>(i) only</li><li>(i) and (iii)</li>
-                <li>(ii) and (iii)</li><li>all three</li>
-              </ol>
-              <p class="hint">Two of the three follow from the diameter being the longest
-              chord there is. The third wants the chord-length formula.</p>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>
-              $ABCD$ is cyclic with $\angle A = 70^\circ$. Which of these
-              must be true?
-              <ol class="c-parts c-parts--1">
-                <li>$\angle C = 110^\circ$</li>
-                <li>$\angle B = 110^\circ$</li>
-                <li>$\angle B + \angle D = 180^\circ$</li>
-              </ol>
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>(i) only</li><li>(i) and (iii)</li>
-                <li>(ii) and (iii)</li><li>all three</li>
-              </ol>
-              <p class="hint">Opposite angles are what the theorem pairs. Work out which of
-              the three statements is about a pair that is not opposite.</p>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        
-        <ol class="c-questions" data-start="5">
-          <li>
-              Two parallel chords, $16$ cm and $12$ cm long, lie in a circle
-              of radius $10$ cm. Asha says they are $2$ cm apart. Bala says
-              $14$ cm. Then
-              <ol class="c-parts c-parts--alpha c-parts--1">
-                <li>only Asha is right</li>
-                <li>only Bala is right</li>
-                <li>either can be right, depending on the figure</li>
-                <li>neither is right</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 12</div>
+        <div class="c-example__body">
+          <p>In a quadrilateral $ABCD$, the vertices $A$ and $D$ lie on the same side of $BC$, $\angle BAC = \angle BDC = 35^\circ$ and $\angle ABD = 50^\circ$. Find $\angle ACD$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the segment $BC$ subtends equal angles, $35^\circ$ each, at $A$ and $D$, which lie on the same side of it</span>
+              <span class="work__why">given</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>so $A$, $B$, $C$ and $D$ are concyclic</span>
+              <span class="work__why">Theorem 10</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle ACD = \angle ABD$</span>
+              <span class="work__why">same segment, chord $AD$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle ACD = 50^\circ$</span></div>
+          </div>
+          <p>Nothing in the question mentions a circle. Theorem 10 put one there, and after that the angles in the same segment did the rest.</p>
+        </div>
       </div>
 
     </div>

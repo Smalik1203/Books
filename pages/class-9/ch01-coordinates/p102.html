@@ -2,11 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-try">
-        <p>The point $P (a, b)$ lies in Quadrant II. In which quadrants do
-          $(b, a)$, $(-a, b)$ and $(a, -b)$ lie?</p>
-      </div>
-
       <p>
         In Quadrant II the x-coordinate is negative and the y-coordinate is
         positive, so $a < 0$ and $b > 0$. Then $(b, a)$ has a positive first
@@ -36,8 +31,9 @@
 
       <p>
         Now $AB^2 + BC^2 = 50 = CA^2$. The Baudhāyana–Pythagoras Theorem
-        says that a right-angled triangle has this relation, and the
-        theorem also holds the other way round: if the squares on two sides
+        says that a right-angled triangle has this relation, and, as you
+        learnt with the theorem in Class 8, it also holds the other way
+        round: if the squares on two sides
         add to the square on the third, the angle between those two sides is
         a right angle. So the angle at $B$ is a right angle (Fig. 1B.2). And
         since $AB = BC$, the triangle is isosceles as well. Notice that we
@@ -94,7 +90,7 @@
         <circle class="dg-fill-teal" cx="80" cy="170" r="4"/>
         <circle class="dg-fill-teal" cx="158" cy="66" r="4"/>
         <circle class="dg-fill-teal" cx="262" cy="144" r="4"/>
-        <text class="dg-label" x="88" y="192" text-anchor="start">A (1, 1)</text>
+        <text class="dg-label" x="88" y="188" text-anchor="start">A (1, 1)</text>
         <text class="dg-label" x="158" y="56" text-anchor="middle">B (4, 5)</text>
         <text class="dg-label" x="270" y="158" text-anchor="start">C (8, 2)</text>
         <text class="dg-dim-label" x="111" y="118" text-anchor="end">5</text>
@@ -102,11 +98,29 @@
         <text class="dg-dim-label" x="171" y="173" text-anchor="middle">&radic;50</text>
         </svg>
         <figcaption>
-          <span class="fignum">Fig. 1B.2</span> &nbsp;Two sides of $5$ and
-          one of $\sqrt{50}$. Since $25 + 25 = 50$, the angle at $B$ is a
+          <span class="fignum">Fig. 1B.2</span> &nbsp;Two sides of $5$, and
+          a third whose square is $50$. Since $25 + 25 = 50$, the angle at $B$ is a
           right angle.
         </figcaption>
       </figure>
+
+      <div class="c-try">
+        <p>Is there a point that is $3$ units from the origin and $5$ units
+          from $(10, 0)$?</p>
+      </div>
+
+      <p>
+        Suppose there is one, and call it $(x, y)$. Being $3$ units from the
+        origin means $x^2 + y^2 = 9$. A square is never negative, so $x^2$
+        is at most $9$, and $x$ lies somewhere from $-3$ to $3$. Then
+        $10 - x$ is at least $7$, and the distance from $(x, y)$ to
+        $(10, 0)$ is at least $7$ as well, since adding $y^2$ under the root
+        can only make it larger. A distance that is at least $7$ is never
+        $5$, so there is no such point. Notice that we solved nothing. One
+        fact, that a square cannot be negative, fenced $x$ in, and the fence
+        was enough. Notice also that a question can have no answer at all,
+        and that saying so, with the reason, is the answer.
+      </p>
 
     </div>
   </div>

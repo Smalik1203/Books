@@ -2,60 +2,64 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+      <p>An arc $AXB$ subtends $110^\circ$ at the centre of a circle. What
+          angle does it subtend at a point of the major arc? And what angle does the
+          <em>other</em> arc subtend at a point of the minor arc?</p>
+      <p>The first is Theorem 9 read straight off. The second asks about a different
+          arc, so the angle to halve is the one that arc sweeps at the centre — the reflex
+          one.</p>
+      <p><strong>Solution.</strong></p>
+      <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>arc $AXB$: $110^\circ$ at the centre, halved, is $55^\circ$</span>
+              <span class="work__why">Theorem 9</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the other arc: $360^\circ - 110^\circ = 250^\circ$, halved, is
+              $125^\circ$</span>
+              <span class="work__why">the reflex angle</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>A point on the major arc sees the chord at $55^\circ$; a point on the
+              minor arc sees it at $125^\circ$.</span></div>
+          </div>
+      <p>Notice that the two add to
+          $180^\circ$. That is not a coincidence of these numbers — the two central
+          angles always make a full turn, so their halves always make a straight angle.
+          Section 5.9 turns the observation into a theorem.</p>
+        </div>
+      </div>
+
+      <p>One case of Theorem 9 is used so often that it has a name of its own. A
+      <span class="term">corollary</span> is a fact that drops out of a result already
+      proved, with no fresh argument needed.</p>
+
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Theorem 9</div>
-        <p>The angle an arc subtends at the centre of a circle is twice the angle it
-        subtends at any point of the circle outside the arc.</p>
+        <div class="c-keyidea__title">Corollary</div>
+        <p>The angle subtended by a diameter at any point of the circle is a right
+        angle.</p>
       </div>
 
-      <p>Let the arc be $AFB$ with centre $C$, and let $D$ be a point of the
-      circle outside it. Join $D$ to $C$ and carry the line on until it meets the
-      circle again, at $E$. Two isosceles triangles now do all the work, because
-      $CA$, $CB$ and $CD$ are all radii.</p>
+      <p>Let $AB$ be a diameter and $D$ any other point of the circle. The arc
+      from $A$ to $B$ that avoids $D$ is a semicircle, and the angle it
+      sweeps at the centre is a straight angle, $180^\circ$. By Theorem 9 the angle at
+      $D$ is half of that: $\angle ADB = 90^\circ$, wherever on the circle
+      $D$ happens to be.</p>
 
-      <div class="work work--list">
-        <p>In $\triangle BCD$: $CB = CD$, so $\angle CBD = \angle CDB$.</p>
-        <p>$\angle BCE$ is the exterior angle of $\triangle BCD$ at $C$, so
-        $\angle BCE = \angle CBD + \angle CDB = 2\,\angle BDC$.</p>
-        <p>In $\triangle ACD$: $CA = CD$, so $\angle CAD = \angle CDA$, and
-        in the same way $\angle ACE = 2\,\angle ADC$.</p>
-      </div>
+      <p>Section 5.4 left a debt here. It claimed that the circumcentre of a right-angled
+      triangle lands on the midpoint of the hypotenuse, and gave no reason. The corollary
+      is half of the reason. The other half is that a point seeing $AB$ under a right
+      angle has no choice but to lie on the circle with $AB$ as diameter. That is exactly
+      the sort of statement Section 5.9 is about, and you will be able to finish the
+      argument there.</p>
 
-      <p>Adding the two results, $\angle BCA = \angle BCE + \angle ECA = 2\,\angle BDC +
-      2\,\angle ADC = 2\,\angle BDA$, which is the theorem.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="22 17 156 164" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Arc AFB, the angle it makes at the centre, and the angle it makes at a point D">
-            <circle class="dg-fill-d" cx="100" cy="100" r="70"/>
-            <path class="dg-fill-b-soft" d="M100 100 L34.22 76.06 A70 70 0 0 1 165.78 76.06 Z"/>
-            <path class="dg-fill-c-soft" d="M76.06 165.78 L66.76 145.84 A22 22 0 0 1 91.62 150.22 Z"/>
-            <circle class="dg-line" cx="100" cy="100" r="70"/>
-            <path class="dg-line" d="M76.06 165.78 L34.22 76.06"/>
-            <path class="dg-line" d="M76.06 165.78 L165.78 76.06"/>
-            <path class="dg-thin" d="M100 100 L34.22 76.06"/>
-            <path class="dg-thin" d="M100 100 L165.78 76.06"/>
-            <path class="dg-dim" d="M76.06 165.78 L123.94 34.22"/>
-            <circle class="dg-fill-teal" cx="100" cy="100" r="2.6"/>
-      
-            <text class="dg-label" x="28"  y="73"  text-anchor="end">A</text>
-            <text class="dg-label" x="172" y="73">B</text>
-            <text class="dg-label" x="100" y="26"  text-anchor="middle">F</text>
-            <text class="dg-label" x="70"  y="176" text-anchor="end">D</text>
-            <text class="dg-label" x="129" y="31">E</text>
-            <text class="dg-label" x="105" y="112">C</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.11</span> The arc $AFB$ subtends
-          $\angle ACB$ at the centre and $\angle ADB$ at $D$. The first is
-          twice the second.</figcaption>
-        </figure>
-      </div>
-
-      <p>One step there was taken without comment: that the line $DC$, carried on,
-      lands on the arc $AFB$ — which is what put $E$ between $A$ and
-      $B$ and let the two angles at $C$ be added. For some positions of $D$
-      it lands outside the arc instead, and the figure looks different.</p>
+      <p>The corollary is old enough to carry a name: the angle in a semicircle is a
+      right angle, and it is usually credited to Thales, who is said to have proved it
+      some two and a half thousand years ago. It is useful, too. To find the
+      centre of a circular disc, slide a set square about until both of its short
+      edges touch the rim. The corner is then on the circle, and the two touching
+      points are the ends of a diameter. Two such diameters cross at the centre.</p>
 
     </div>
   </div>

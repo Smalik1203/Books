@@ -2,46 +2,51 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Once a relationship is in this form, a great deal follows without further
-      thought. The sign of $a$ says whether it is growth or decay. Its size is the
-      constant difference of the pattern. And $b$ can be read off by asking a single
-      question: what happens at $x = 0$?</p>
+      <div class="c-practice">
+                                                  <div class="c-practice__head">Exercise Set 2.5</div>
+                                                  <ol class="c-questions">
+                                                    <li>A learning platform charges a fixed monthly fee plus a cost for every
+                                                      module accessed. Ten modules came to <span class="nb">₹$400$</span>; fourteen came to <span class="nb">₹$500$</span>. Taking
+                                                      the bill to be $y = ax + b$ for $x$ modules, find $a$ and $b$.</li>
+                                                  </ol>
+                                                </div>
 
-      <p>Reading $a$ and $b$ off a rule you already have is easy. The useful skill is
-      the reverse one — given a few measurements, find the rule they came from. Two
-      measurements turn out to be enough, and the reason is worth holding on to: there
-      are exactly two unknowns, so two independent facts pin them both down.</p>
+      <div class="c-practice c-practice--cont">
+                                                  <ol class="c-questions" data-start="2">
+                                                    <li>A gym charges a fixed monthly fee plus an hourly rate for the badminton
+                                                      court. Ten hours came to <span class="nb">₹$800$</span>; fifteen hours came to <span class="nb">₹$1100$</span>. Taking the
+                                                      bill to be $y = ax + b$ for $x$ hours, find $a$ and $b$.</li>
+                                                  </ol>
+                                                </div>
 
-      <p><em>Independent</em> is the word to watch. Two readings taken at the same value
-      of $x$ say the same thing twice and settle nothing, however carefully they were
-      measured. The pair has to differ in $x$ — and the further apart they are, the
-      less a small error in either one disturbs the answer.</p>
+      <div class="c-practice c-practice--cont">
+                                                  <ol class="c-questions" data-start="3">
+                                                    <li>Temperature in degrees Celsius and in degrees Fahrenheit are related by
+                                                      $C = aF + b$. Ice melts at $0$ °C and $32$ °F; water boils at $100$ °C and
+                                                      $212$ °F. Find $a$ and $b$.
+                                                        <p class="hint">Each of the two facts gives one equation in $a$ and $b$,
+                                                        exactly as the two bills did in Example 11.</p>
+                                                      </li>
+                                                  </ol>
+                                                </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-          <p>A telecom company charges a fixed monthly fee plus a cost per GB of data.
-          A student who used $10$ GB was billed ₹$350$; when she used $20$ GB the bill
-          was ₹$550$. Taking the bill to be $y = ax + b$ for $x$ GB used, find $a$
-          and $b$.</p>
-          <p>Each observation is a pair of values that must satisfy the relation, so
-          each gives an equation.</p>
-          <div class="work work--list">
-            <p>$x = 10$, $y = 350$ gives $350 = 10a + b$</p>
-            <p>$x = 20$, $y = 550$ gives $550 = 20a + b$</p>
-          </div>
-          <p>From the first, $b = 350 - 10a$. Substituting that into the second:</p>
-          <div class="work">
-            <p>$550 = 20a + (350 - 10a)$</p>
-            <p>$550 = 10a + 350$</p>
-            <p>$10a = 200$</p>
-            <p>$a = 20$</p>
-          </div>
-          <p>and then $b = 350 - 10 \times 20 = 150$. So the bill is</p>
-          <div class="eq">$$y = 20x + 150$$</div>
-          <p>Two bills were enough to recover a rule that predicts all the others.</p>
-        </div>
-      </div>
+      <h2><span class="badge">2.6</span><span class="name">Visualising Linear Relationships</span></h2>
+
+      <p>Everything so far has been done with tables and algebra. There is a third
+                              way of holding a linear relationship in mind, and for most purposes it is the
+                              best: draw it. A relation $y = ax + b$ drawn on the coordinate plane is always a
+                              straight line, and — this is what makes it worth doing — the two numbers $a$ and
+                              $b$ turn out to be things you can <em>see</em>.</p>
+
+      <p>A straight line is settled by two of its points, so drawing $y = ax + b$
+                              needs only two — pick any two values of $x$, work out the matching $y$, plot
+                              them, and lay a ruler along them.</p>
+
+      <p>Take $y = 2x + 1$. Putting $x = 0$ gives $y = 1$, so $A\,(0, 1)$ is on the
+                              line; putting $x = 3$ gives $y = 7$, so $B\,(3, 7)$ is too. In the pair
+                              $(0, 1)$, the first number is the <span class="term">x-coordinate</span> and the
+                              second the <span class="term">y-coordinate</span>. Plot $A$ and $B$, join them,
+                              and continue the line past both ends.</p>
 
     </div>
   </div>

@@ -2,79 +2,59 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-problem">
-        <span class="c-problem__tag">Problem 5</span>
-        <p>How many numbers of the form $\dfrac{k}{24}$, with $k$ a whole
-          number, lie strictly between $\dfrac{1}{4}$ and $\dfrac{1}{3}$?</p>
-        <ol class="c-parts c-parts--alpha c-parts--4">
-          <li>$0$</li>
-          <li>$1$</li>
-          <li>$2$</li>
-          <li>infinitely many</li>
-        </ol>
-      </div>
+      <h3>Type 5 &middot; Square roots on the number line</h3>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Solution</div>
-        <p>
-          Put the two ends over $24$ as well, and the counting is done for
-          you.
-        </p>
-        <div class="work work--list">
-          <p>$\dfrac{1}{4} = \dfrac{6}{24}$</p>
-          <p>$\dfrac{1}{3} = \dfrac{8}{24}$</p>
-          <p>$6 \lt k \lt 8$, so $k = 7$</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>Locate $\sqrt{13}$ on the number line, and say between which two whole numbers it lies.</p>
+          <div class="c-figure c-figure--md">
+            <figure>
+              <svg viewBox="4 20 150 80" data-size="md" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A right triangle with legs of 3 units along the number line and 2 units upright, and an arc carrying its hypotenuse down to the line">
+                <path class="dg-fill-c-soft" d="M15 80 H90 V30 Z"/>
+                <rect class="dg-fill-a-soft" x="6" y="80" width="144" height="18" rx="1.6"/>
+                <rect class="dg-line" x="6" y="80" width="144" height="18" rx="1.6"/>
+                <g class="dg-line">
+                  <path d="M15 80 V87 M40 80 V87 M65 80 V87 M90 80 V87 M115 80 V87 M140 80 V87"/>
+                </g>
+                <path class="dg-thin" d="M90 80 V30"/>
+                <path class="dg-line" d="M15 80 L90 30"/>
+                <path class="dg-ghost" d="M90 30 A90.139 90.139 0 0 1 105.14 80"/>
+                <path class="dg-thin" d="M82 80 V72 H90"/>
+                <circle class="dg-fill-c" cx="105.14" cy="80" r="3"/>
+                <text class="dg-label" x="13" y="77" text-anchor="end">O</text>
+                <text class="dg-label" x="90" y="95" text-anchor="middle">A</text>
+                <text class="dg-label" x="94" y="31">B</text>
+                <text class="dg-label" x="109" y="76">P</text>
+                <text class="dg-label dg-label--sm" x="40" y="95" text-anchor="middle">1</text>
+                <text class="dg-label dg-label--sm" x="65" y="95" text-anchor="middle">2</text>
+                <text class="dg-label dg-label--sm" x="115" y="95" text-anchor="middle">4</text>
+                <text class="dg-label dg-label--sm" x="140" y="95" text-anchor="middle">5</text>
+                <text class="dg-dim-label" x="45" y="52" text-anchor="end">√13</text>
+                <text class="dg-dim-label" x="86" y="58" text-anchor="end">2</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 3B.1</span> $OA = 3$ and $AB = 2$, so the arc puts the square root of 13 at $P$.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$13 = 9 + 4 = 3^2 + 2^2$</span>
+              <span class="work__why">two squares that make 13</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>mark $OA = 3$ units on the line, and $AB = 2$ units at right angles to it at $A$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$OB^2 = 3^2 + 2^2 = 13$, so $OB = \sqrt{13}$</span>
+              <span class="work__why">Baudhāyana–Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>an arc with centre $O$ and radius $OB$ cuts the line at $P$</span>
+              <span class="work__why">$OP = OB$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$OP = \sqrt{13}$, and since $9 \lt 13 \lt 16$, $P$ lies between $3$ and $4$</span></div>
+          </div>
+          <p>The legs need not be $1$: any two squares that add to $13$ will do, and here that saves building $\sqrt{12}$ first.</p>
         </div>
-        <p>
-          The answer is (b). Option (c) counts $6$ and $8$ themselves, which
-          the word <em>strictly</em> rules out.
-        </p>
-        <p>
-          Option (d) is the one to think about. Infinitely many rationals do
-          lie between $\dfrac{1}{4}$ and $\dfrac{1}{3}$ &mdash; that is
-          what density says, and the previous question used it. But this
-          question fixes the denominator at $24$, and a fixed denominator
-          leaves only whole numbers to choose. Density is a statement about
-          all denominators at once; take that freedom away and the count
-          becomes finite, and usually small.
-        </p>
-      </div>
-
-      <div class="c-stage">
-        <div class="c-stage__num">3</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Problem Sets</div>
-          <div class="c-stage__for">Three sets of multiple-choice questions, each a little harder than the last.</div>
-        </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Set A &middot; One result each</div>
-        <ol class="c-questions">
-          <li>
-              Which of these is irrational?
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$\sqrt{49}$</li>
-                <li>$\sqrt{50}$</li>
-                <li>$0.\overline{6}$</li>
-                <li>$\dfrac{9}{4}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              The decimal expansion of $\dfrac{7}{40}$
-              <ol class="c-parts c-parts--alpha c-parts--1">
-                <li>terminates after two places</li>
-                <li>terminates after three places</li>
-                <li>repeats with a one-digit cycle</li>
-                <li>repeats with a three-digit cycle</li>
-              </ol>
-            </li>
-        </ol>
       </div>
 
     </div>

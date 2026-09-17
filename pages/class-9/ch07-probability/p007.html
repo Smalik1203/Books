@@ -2,17 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>7.2.2 Theoretical probability</h3>
-
-      <p>The other route never touches a die at all. If every outcome is equally likely
-      — if there is no reason for the world to prefer one over another — then the
-      probability of an event is simply the share of the outcomes that count as
-      favourable.</p>
-
-      <div class="eq eq--anchor">
-        $$P(\text{event}) = \frac{\text{number of favourable outcomes}}{\text{number of possible outcomes}}$$
-      </div>
-
       <p>The condition in front of that formula is not decoration. <em>Equally likely</em>
       is an assumption, and the whole calculation rests on it. For a well-made die it is
       a good assumption: the faces are alike, the cube is balanced, and nothing
@@ -24,25 +13,21 @@
         <div class="c-example__body">
           <p>Roll a fair six-sided die. What is the theoretical probability of
           getting a 4?</p>
-          <p>Count the two numbers the formula asks for. The possible outcomes are 1, 2,
-          3, 4, 5 and 6 — six of them. The favourable ones are those that count as
-          success: just the single face 4.</p>
+          <p>Count the two numbers the formula asks for.</p>
+          <p><strong>Solution.</strong></p>
           <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">favourable</span>
-              <span>1 &nbsp; (the face 4)</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">possible</span>
-              <span>6 &nbsp; (the faces 1 to 6)</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">probability</span>
-              <span>$\dfrac{1}{6}$</span>
-              <span class="chip">0.167</span>
-            </div>
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the possible outcomes are 1, 2, 3, 4, 5 and 6 — six of them</span>
+              <span class="work__why">possible</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the favourable ones count as success: just the single face 4</span>
+              <span class="work__why">favourable</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>favourable 1 (the face 4) over possible 6 (the faces 1 to 6) is $\dfrac{1}{6}$, about 0.167</span>
+              <span class="work__why">probability</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$P(4) = \tfrac16 \approx 0.167$, or about $16.7\%$</span></div>
           </div>
-          <p>So $P(4) = \tfrac16 \approx 0.167$, or about $16.7\%$.</p>
           <p>Compare that with the $0.16$ measured in Example 1. The two are close, and
           they are answering different questions: one reports what 50 rolls did, the
           other what a fair die must do in the long run. That they nearly agree is the

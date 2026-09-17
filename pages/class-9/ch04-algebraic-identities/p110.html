@@ -2,93 +2,61 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>
-              If $x = 2 + \sqrt{3}$, then $x^2 + \dfrac{1}{x^2}$ equals
-              <ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall">
-                <li>$4$</li>
-                <li>$7$</li>
-                <li>$14$</li>
-                <li>$16$</li>
-              </ol>
-              <p class="hint">Multiply $\left(2 + \sqrt{3}\right)\left(2 - \sqrt{3}\right)$
-                first. Then you never need to square a surd.</p>
-            </li>
-        </ol>
+      <h3>Type 10 &middot; Solving by factorising</h3>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 16</div>
+        <div class="c-example__body">
+          <p>The product of two consecutive positive odd numbers is $143$. Find the numbers.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>let the numbers be $x$ and $x + 2$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$x(x + 2) = 143$, so $x^2 + 2x - 143 = 0$</span>
+              <span class="work__why">$0$ on one side first</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$13 \times (-11) = -143$ and $13 + (-11) = 2$</span>
+              <span class="work__why">sum $2$, product $-143$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$(x + 13)(x - 11) = 0$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$x = -13$ or $x = 11$</span>
+              <span class="work__why">a product is zero only if a factor is</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>the numbers are positive, so $x = 11$: they are $11$ and $13$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$11 \times 13 = 143$</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>
-              $(a + b)^3 = a^3 + b^3$ holds
-              <ol class="c-parts c-parts--alpha c-parts--1">
-                <li>never</li>
-                <li>only when $a = b = 0$</li>
-                <li>exactly when $a = 0$, $b = 0$ or $a = -b$</li>
-                <li>only when $ab = 0$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <h3>Type 11 &middot; Proofs with identities</h3>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Set C &middot; The whole chapter</div>
-        <ol class="c-questions">
-          <li>
-              
-              If $x$, $y$ and $z$ are all positive, then
-              $x^3 + y^3 + z^3 - 3xyz$ is
-              <ol class="c-parts c-parts--alpha c-parts--1">
-                <li>always positive</li>
-                <li>never negative, and zero only when $x = y = z$</li>
-                <li>always negative</li>
-                <li>always zero</li>
-              </ol>
-              <p class="hint">Write the second factor of the identity as
-                $\tfrac{1}{2}\left[(x-y)^2 + (y-z)^2 + (z-x)^2\right]$.
-                Remember that a square is never negative.</p>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>
-              
-              Three numbers satisfy $a + b + c = 6$, $a^2 + b^2 + c^2 = 14$ and
-              $abc = 6$. Then $a^3 + b^3 + c^3$ equals
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$18$</li>
-                <li>$36$</li>
-                <li>$54$</li>
-                <li>$216$</li>
-              </ol>
-            <p class="hint">The sum of the three pairwise products is not given, but
-            $(a + b + c)^2$ hands it to you.</p>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>
-              
-              A square field of side $a$ metres has a square pond of side $b$
-              metres cut out of one corner (Fig. 4B.6). The owner does not
-              measure either side. He measures their sum as $84$ m and their
-              difference as $12$ m. The area of the field that is left, in
-              m$^2$, is
-              <ol class="c-parts c-parts--alpha c-parts--4">
-                <li>$1008$</li>
-                <li>$2016$</li>
-                <li>$3600$</li>
-                <li>$7056$</li>
-              </ol>
-            <p class="hint">The area left over is $a^2 - b^2$, and that is a product
-            of exactly the two numbers he did measure.</p>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 17</div>
+        <div class="c-example__body">
+          <p>Prove that the product of four consecutive whole numbers, with $1$ added, is a perfect square.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>take the numbers $n$, $n + 1$, $n + 2$, $n + 3$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$n(n + 3) = n^2 + 3n$ and $(n + 1)(n + 2) = n^2 + 3n + 2$</span>
+              <span class="work__why">pair the outer two and the inner two</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>write $m$ for $n^2 + 3n$; the product with $1$ added is $m(m + 2) + 1$</span>
+              <span class="work__why">one quantity, as in Section 4.4</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$m(m + 2) + 1 = m^2 + 2m + 1 = (m + 1)^2$</span>
+              <span class="work__why">$(a + b)^2$ read backwards</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$n(n + 1)(n + 2)(n + 3) + 1 = \left(n^2 + 3n + 1\right)^2$, a perfect square</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$1 \times 2 \times 3 \times 4 + 1 = 25 = 5^2$, and $1 + 3 + 1 = 5$</span></div>
+          </div>
+          <p>Pairing the first number with the last is what makes the two products differ only in their constant.</p>
+        </div>
       </div>
 
     </div>

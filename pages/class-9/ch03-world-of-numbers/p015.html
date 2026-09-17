@@ -2,87 +2,66 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Why $\sqrt{2}$ is irrational</h3>
+      <h3>Putting $\sqrt{2}$ on the line</h3>
 
       <p>
-        Suppose it were rational. Then it could be written as a fraction in
-        lowest terms — and everything that follows is squeezed out of those
-        two words, <em>lowest terms</em>.
+        We have a number that is not a ratio. Does it still have a place on the
+        number line? It does, and a ruler and compass will find it exactly —
+        not approximately, and without a single decimal.
       </p>
 
       <div class="work">
         <div class="work__row">
           <span class="work__label">Step 1</span>
-          <span>Assume $\sqrt{2} = \dfrac{p}{q}$, with $p$, $q$ integers,
-          $q \neq 0$, and $p$, $q$ co-prime.</span>
+          <span>Mark $OA = 1$ unit on the line, and raise a perpendicular at
+          $A$.</span>
         </div>
         <div class="work__row">
           <span class="work__label">Step 2</span>
-          <span>Square both sides: $2 = \dfrac{p^2}{q^2}$.</span>
+          <span>On it mark $B$ with $AB = 1$ unit, and join $OB$. Then
+          $OB = \sqrt{2}$, by the theorem again.</span>
         </div>
         <div class="work__row">
           <span class="work__label">Step 3</span>
-          <span>Multiply by $q^2$: $\;2q^2 = p^2$.</span>
+          <span>With centre $O$ and radius $OB$, swing an arc down to the line.
+          It cuts it at $P$, and $OP = \sqrt{2}$.</span>
         </div>
       </div>
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">Step 4</span>
-          <span>$p^2$ is twice an integer, so $p^2$ is even; and if a square is
-          even the number itself must be. So $p$ is even — write $p = 2k$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 5</span>
-          <span>Substitute: $2q^2 = (2k)^2 = 4k^2$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 6</span>
-          <span>Divide by 2: $\;q^2 = 2k^2$.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">Step 7</span>
-          <span>By the same reasoning as Step 4, $q^2$ is even, so $q$ is
-          even.</span>
-        </div>
-      </div>
-
-      <p>
-        And there is the collapse. Step 4 makes $p$ even, Step 7 makes $q$
-        even — so both are divisible by 2, and share a common factor. But Step
-        1 said they share none. Both cannot be true.
-      </p>
-
-      <p>
-        Every step from 2 to 7 is forced; none of them can be the mistake. So
-        the mistake is the only thing not forced — the assumption itself.
-        $\sqrt{2}$ is not a ratio of integers.
-      </p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="6 8 140 84" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Constructing a length of root two on the number line with a right triangle and an arc">
+            <path class="dg-fill-c-soft" d="M20 70 H70 V20 Z"/>
+      
+            <rect class="dg-fill-a-soft" x="10" y="70" width="134" height="18" rx="1.6"/>
+            <rect class="dg-line"        x="10" y="70" width="134" height="18" rx="1.6"/>
+            <g class="dg-thin">
+              <path d="M45 70 V74 M95 70 V74"/>
+            </g>
+            <g class="dg-line">
+              <path d="M20 70 V77 M70 70 V77 M120 70 V77"/>
+            </g>
+      
+            <path class="dg-thin" d="M70 70 V20"/>
+            <path class="dg-line" d="M20 70 L70 20"/>
+            <path class="dg-ghost" d="M70 20 A 70.71 70.71 0 0 1 90.71 70"/>
+            <path class="dg-thin" d="M62 70 V62 H70"/>
+      
+            <circle class="dg-fill-c" cx="90.71" cy="70" r="3"/>
+      
+            <text class="dg-label" x="18"  y="85" text-anchor="end">O</text>
+            <text class="dg-label" x="70"  y="85" text-anchor="middle">A</text>
+            <text class="dg-label" x="74"  y="20">B</text>
+            <text class="dg-label" x="95"  y="85">P</text>
+            <text class="dg-dim-label" x="36" y="40">√2</text>
+            <text class="dg-label dg-label--sm" x="120" y="85" text-anchor="middle">2</text>
           </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>
-            Notice what the proof never does: it never works out a single
-            decimal place of $\sqrt{2}$. No amount of computing could have
-            settled the question anyway.
-          </p>
-        </div>
+          <figcaption><span class="fignum">Fig. 3.6</span> The arc carries the
+          diagonal down onto the line. $P$ marks the square root of 2
+          exactly.</figcaption>
+        </figure>
       </div>
-
-      <p>
-        Knowing that $\sqrt{2}$ cannot be written as a fraction did not stop
-        anyone needing a number to build with. The Baudhāyana Śulbasūtra, some
-        centuries before this proof was written down in Greece, gives
-        $\sqrt{2}$ as $\tfrac{577}{408}$ — which is $1.414215\ldots$ against a
-        true value of $1.414213\ldots$, right to five decimal places and quite
-        good enough to lay out an altar. An exact answer and a usable one are
-        different requirements, and this chapter has now met both.
-      </p>
 
       <div class="c-reflect">
         <div class="c-reflect__icon">
@@ -96,17 +75,41 @@
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__body">
             <p>
-              Run the same argument for $\sqrt{3}$. Then try it on $\sqrt{5}$
-              and $\sqrt{7}$.
+              Extend the method to $\sqrt{3}$: what should the two legs of the
+              right triangle be? Then $\sqrt{5}$.
             </p>
             <p>
-              Now try it on $\sqrt{9}$ — where it must fail, since
-              $\sqrt{9} = 3$. Find the exact step that breaks, and you will have
-              found what the argument was really using about 2, 3, 5 and 7.
+              Now generalise. Given a segment of length $\sqrt{n}$ already
+              built, how would you get $\sqrt{n+1}$ from it — and what does
+              repeating that for ever draw on the page?
             </p>
           </div>
         </div>
       </div>
+
+      <p>
+        The answer to that last question is worth drawing. Build the triangle
+        for $\sqrt{2}$. Then stand a new unit perpendicular on its hypotenuse
+        and join back to the origin, which gives $\sqrt{3}$. Then do it again.
+        Each new hypotenuse is $\sqrt{n+1}$, because its legs are $\sqrt{n}$
+        and 1, and the theorem does the rest.
+      </p>
+
+      <p>
+        Two things about that are worth noticing. The construction never
+        approximates: at no point is $\sqrt{2}$ replaced by $1.414$. The arc
+        puts the length down exactly, and the compass is entirely untroubled
+        by the fact that the number has no finite decimal. And it never
+        runs out — every whole number, however large, has its square root
+        placed on the line by a finite number of steps.
+      </p>
+
+      <p>
+        The figure this produces is an old one. It is credited to Theodorus
+        of Cyrene, a teacher of Plato's, who is said to have carried it as
+        far as $\sqrt{17}$ and then stopped. Nobody is certain why he
+        stopped there, because the method plainly does not.
+      </p>
 
     </div>
   </div>

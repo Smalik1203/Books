@@ -2,63 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">3.4</span><span class="name">Filling the Spaces</span></h2>
-
-      <p>
-        Counting was never the only thing numbers had to do. As soon as land
-        was divided or grain was shared, measuring mattered as much — and
-        measuring does not stay on the integers. If a farmer divides a field
-        among three children, how much does each get? If a recipe asks for half
-        a cup of ghee, what number is that?
-      </p>
-
-      <p>
-        Numbers that name parts of a whole are <span class="term">fractions</span>.
-        Every positive fraction has an additive inverse just as every natural
-        number does — $\tfrac{3}{4}$ has $-\tfrac{3}{4}$ — and the minus sign
-        may be written against the fraction, its numerator or its denominator
-        without changing what it means:
-      </p>
-
-      <div class="eq">
-        $$-\frac{1}{5} \;=\; \frac{-1}{5} \;=\; \frac{1}{-5}$$
-      </div>
-
-      <p>
-        Put all the integers together with all the fractions, positive and
-        negative, and you have the <span class="term">rational numbers</span>,
-        written $\mathbb{Q}$ — for <em>quotient</em>.
-      </p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Rational number</div>
-        <p>
-          A <span class="term">rational number</span> is any number that can be
-          written as $\dfrac{p}{q}$, where $p$ and $q$ are integers and
-          $q \neq 0$.
-        </p>
-      </div>
-
-      <p>
-        Three things follow from that definition, and each is worth stating
-        before we use it.
-      </p>
-
-      <p>
-        <strong>Every integer is already rational.</strong> Write $5$ as
-        $\tfrac{5}{1}$ and $-10$ as $\tfrac{-10}{1}$. So the rationals contain
-        the naturals, the whole numbers and the integers — nothing has been
-  left behind by the extension.
-      </p>
-
-      <p>
-        <strong>The writing is not unique.</strong> The same rational number has
-        endlessly many forms: $-\tfrac{1}{3} = -\tfrac{2}{6} = -\tfrac{3}{9} =
-        -\tfrac{10}{30}$, and so on. These are equivalent fractions, and it is
-        this freedom that lets us cancel a common factor from top and bottom
-        whenever it helps.
-      </p>
-
       <p>
         <strong>So we agree on one form.</strong> When we say <em>the</em>
         rational number $\tfrac{p}{q}$ we take
@@ -66,6 +9,81 @@
         <span class="term">co-prime</span>. Among all the fractions equal to a
         half we choose $\tfrac{1}{2}$ to stand for them, and that choice is a
         convention rather than a fact about the number.
+      </p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>
+              Why must the definition insist that $q \neq 0$? Try to say what
+              would go wrong, rather than only that it is not allowed.
+            </p>
+            <div class="c-reflect__hint">
+              A quotient $\tfrac{p}{q}$ is meant to be the number which, times
+              $q$, gives back $p$. Ask whether any number does that when
+              $q = 0$ — first when $p$ is not zero, then when it is. The two
+              cases fail differently, and both failures matter.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>How rationals are combined</h3>
+
+      <p>
+        Brahmagupta gave rules for adding, subtracting, multiplying and
+        dividing fractions too, and noticed that they hold for the negative
+        ones exactly as they do for the positive. Four laws cover everything.
+      </p>
+
+      <div class="work work--list">
+        <p>
+          <strong>Equality.</strong> $\dfrac{a}{b} = \dfrac{c}{d}$ exactly when
+          $ad = bc$.
+        </p>
+        <p>
+          <strong>Addition.</strong> Put both over the same denominator, then
+          $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a+c}{b}$, and likewise for
+          subtraction.
+        </p>
+        <p>
+          <strong>Multiplication and division.</strong>
+          $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{ac}{bd}$, and
+          $\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \times \dfrac{d}{c}
+          = \dfrac{ad}{bc}$, provided no denominator is zero.
+        </p>
+        <p>
+          <strong>Order and grouping.</strong> Addition and multiplication are
+          commutative, and multiplication distributes over addition:
+          $p(q + r) = pq + pr$.
+        </p>
+      </div>
+
+      <p>
+        The first of those rules repays a second look. Testing whether
+        $\dfrac{6}{8}$ and $\dfrac{9}{12}$ are the same fraction does not need
+        either of them reduced: $6 \times 12 = 72$ and $8 \times 9 = 72$, so they
+        are equal, and the test used nothing but multiplication. That matters
+        because dividing is the one operation that can go wrong, and the rule
+        avoids it entirely.
+      </p>
+
+      <p>
+        The second rule is the odd one out, and it is worth asking why. Addition
+        insists on a common denominator; multiplication does not care. The reason
+        is what the two operations mean. Adding fractions counts pieces, and
+        pieces can only be counted together when they are the same size —
+        three-eighths and two-fifths are quantities of different things until
+        they are rewritten over $40$. Multiplying takes a part of a part, and a
+        third of a quarter is a twelfth whatever the sizes were to begin with.
       </p>
 
     </div>
