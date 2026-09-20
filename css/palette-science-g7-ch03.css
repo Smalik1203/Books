@@ -1,0 +1,20 @@
+/* Chapter identity only; shared Science print settings and learning roles stay intact. */
+.page--science-v2.page--g7-ch03 {
+ --v2-ink:#382b27; --v2-forest:#934a36; --v2-leaf:#bd7855;
+ --v2-wash:#f8eee8; --v2-rule:#cda994;
+}
+.page--g7-ch03 image {image-rendering:auto;stroke:none;filter:none;}
+.page--science-v2.page--g7-ch03 .chapter-opener__title {font-size:calc(var(--size-body)*2.25);letter-spacing:-.7px;}
+.page--g7-ch03 .chapter-opener__number {font-size:calc(var(--size-body)*7.5);}
+.page--g7-ch03 .v2-electric-motif {fill:none;stroke:var(--v2-rule);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.7;}
+.page--g7-ch03 .v2-equation {font-size:calc(var(--size-body)*1.25);font-weight:600;fill:var(--v2-forest);}
+.page--science-v2.page--g7-ch03 .v2-panel-heading--setup {--v2-cue-ink:white;}
+.page--science-v2.page--g7-ch03 .v2-panel-icon {stroke-width:1.6;}
+.page--g7-ch03 .v2-activity-header {fill:var(--v2-teal);}
+.page--g7-ch03 .v2-illustrated-note {isolation:auto;}
+
+.page--g7-ch03 .v2-circuit-wire {fill:none;stroke:var(--v2-ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.page--g7-ch03 .v2-circuit-contact {fill:white;stroke:var(--v2-ink);stroke-width:2.6;}
+.page--g7-ch03 .v2-circuit-label {font-family:"Source Sans 3",sans-serif;font-size:var(--size-body);fill:var(--v2-ink);}
+.page--g7-ch03 .v2-circuit {isolation:auto;}
+.page--g7-ch03 .v2-circuit-heading text {font-weight:600;}
