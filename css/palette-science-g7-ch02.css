@@ -1,0 +1,14 @@
+/* Chapter identity only; shared Science print settings and learning roles stay intact. */
+.page--science-v2.page--g7-ch02 {
+ --v2-ink:#263830; --v2-forest:#226244; --v2-leaf:#60a36d;
+ --v2-wash:#edf5ec; --v2-rule:#a0bca5;
+}
+.page--g7-ch02 image {image-rendering:auto;stroke:none;filter:none;}
+.page--science-v2.page--g7-ch02 .chapter-opener__title {font-size:calc(var(--size-body)*2.25);letter-spacing:-.7px;}
+.page--g7-ch02 .chapter-opener__number {font-size:calc(var(--size-body)*7.5);}
+.page--g7-ch02 .v2-drop-motif {fill:none;stroke:var(--v2-rule);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.7;}
+.page--g7-ch02 .v2-equation {font-size:calc(var(--size-body)*1.25);font-weight:600;fill:var(--v2-forest);}
+.page--science-v2.page--g7-ch02 .v2-panel-heading--setup {--v2-cue-ink:white;}
+.page--science-v2.page--g7-ch02 .v2-panel-icon {stroke-width:1.6;}
+.page--g7-ch02 .v2-activity-header {fill:var(--v2-teal);}
+.page--g7-ch02 .v2-illustrated-note {isolation:auto;}
