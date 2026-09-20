@@ -1,0 +1,13 @@
+/* Chapter 1 identity; V2 reading typography and learning-role colours are shared. */
+.page--science-v2.page--v2-ch01 {
+ --v2-ink:#24333d; --v2-forest:#244e70; --v2-leaf:#498fa7;
+ --v2-wash:#edf4f7; --v2-rule:#a2bac9;
+}
+.page--v2-ch01 .v2-observe-motif {fill:none;stroke:var(--v2-rule);stroke-width:2;stroke-linecap:round;opacity:.6;}
+.page--v2-ch01 .v2-diagram-stroke {fill:none;stroke:var(--v2-forest);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.page--v2-ch01 .v2-diagram-light {fill:var(--v2-wash);stroke:var(--v2-rule);stroke-width:1.2;}
+.page--v2-ch01 .v2-diagram-detail {fill:var(--v2-rule);stroke:none;}
+.page--v2-ch01 .v2-diagram-ink {fill:var(--v2-forest);stroke:none;}
+.page--v2-ch01 .v2-diagram-return {fill:none;stroke:var(--v2-forest);stroke-width:1.6;stroke-dasharray:6 5;}
+.page--v2-ch01 .v2-small-head {font-size:calc(var(--size-body)*.92);font-weight:600;fill:var(--v2-forest);}
+.page--v2-ch01 .v2-reference-term {font-family:'Source Serif 4',serif;font-size:var(--size-body);font-weight:700;}

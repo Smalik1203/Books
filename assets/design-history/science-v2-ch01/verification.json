@@ -1,0 +1,43 @@
+{
+  "ch01-wonderful-world-of-science-v2.pdf": {
+    "pages": 10,
+    "mediaBoxMM": [
+      189.0606596111111,
+      271.9493333333333
+    ],
+    "sha256": "7466e93b1d089bb91a0b722544708ef2274a85a4404bf83df5d5579327239e6e"
+  },
+  "ch01-wonderful-world-of-science-v2-bleed.pdf": {
+    "pages": 10,
+    "mediaBoxMM": [
+      208.8726737222222,
+      292.09999999999997
+    ],
+    "sha256": "5ce9ebca16b137dfce0bee8c2801cace80bbf6f030e671f7dfe5946a843574bb"
+  },
+  "meanLessonOccupancy": 91.4,
+  "shortLessonPages": [
+    4,
+    7
+  ],
+  "fonts": [
+    "/AAAAAA+SourceSans3-Semibold",
+    "/BAAAAA+SourceSerif4-Regular",
+    "/CAAAAA+SourceSerif4-Bold",
+    "/DAAAAA+SourceSerif4-It",
+    "/EAAAAA+SourceSans3-Bold",
+    "/FAAAAA+SourceSans3-Regular"
+  ],
+  "sourceUnchanged": true,
+  "visualReview": "All 10 reading pages, 4 facing spreads, opener and all 10 bleed proofs inspected. Corrected pen callouts; no clipping or split panels.",
+  "proofDirectory": "build/_ch01-v2-review",
+  "checks": [
+    "builder",
+    "check-reference-fit",
+    "audit-science-v2 with Chapter 1 paths",
+    "check-science-ch01-v2",
+    "check-science-v2 (Chapter 2 unchanged)",
+    "check-science-v2-pagination",
+    "check-science-regressions"
+  ]
+}

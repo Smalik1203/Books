@@ -7,8 +7,9 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import assert from 'node:assert/strict';
 import {sheetMetrics} from './sheet.mjs';
-const run=promisify(execFile),chapter='class-6/ch02-diversity-in-the-living-world-v2';
-const built=path.resolve('build',chapter+'.html'),mapFile='assets/design-history/science-v2/page-map.json';
+const run=promisify(execFile),chapter=process.argv[2]||'class-6/ch02-diversity-in-the-living-world-v2';
+const history=process.argv[3]||'assets/design-history/science-v2';
+const built=path.resolve('build',chapter+'.html'),mapFile=history+'/page-map.json';
 const map=JSON.parse(await fs.readFile(mapFile,'utf8'));
 const config=JSON.parse(await fs.readFile('pages/'+chapter+'/chapter.json','utf8'));
 const metrics=await sheetMetrics(process.cwd(),config.edition);
@@ -52,7 +53,10 @@ onload=async()=>{
    const garden=box(svg.querySelector('image.science-illustration'));
    opener.headerImageGap=garden.top-Math.max(box(band).bottom,box(svg.querySelector('.chapter-opener__motif')).bottom);
    opener.imageIntroGap=box(svg.querySelector('.v2-intro')).top-garden.bottom;
-   opener.sharedReadingGrid=Math.abs(garden.left-89)<.1&&Math.abs(garden.right-963)<.1&&Math.abs(box(svg.querySelector('.v2-intro')).left-garden.left)<.1;
+   // Alignment belongs to the text origin; a serif glyph may overhang it.
+   const intro=svg.querySelector('.v2-intro'),start=intro.getStartPositionOfChar(0);
+   const introX=new DOMPoint(start.x,start.y).matrixTransform(inverse.multiply(intro.getScreenCTM())).x;
+   opener.sharedReadingGrid=Math.abs(garden.left-89)<.1&&Math.abs(garden.right-963)<.1&&Math.abs(introX-garden.left)<.1;
   }
   report.push({page:+svg.closest('.page').dataset.folio,viewBoxHeight:svg.viewBox.baseVal.height,contentBounds:union(content),blocks,collisions,escapedPanels,folioBounds:box(svg.querySelector('.v2-folio')),opener});
  }
@@ -84,7 +88,7 @@ for(const p of report){
   p.shortPageException={remainingMM:round(remaining*mm),protectedGroup:barrier.map(b=>({id:b.id,type:b.type,title:b.text?.slice(0,100)||b.artKey||'Labelled illustration',height:round(b.bottom-b.top)})),requiredMM:round(total*mm),reason:'The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged.'};
  }
 }
-await fs.writeFile('assets/design-history/science-v2/render-audit.json',JSON.stringify({trim:metrics,pages:report},null,2));
+await fs.writeFile(history+'/render-audit.json',JSON.stringify({trim:metrics,pages:report},null,2));
 const failures=report.flatMap(p=>[...p.collisions.map(c=>`p${p.page} text collision: ${c.join(' / ')}`),...p.escapedPanels.map(s=>`p${p.page} panel overflow: ${s}`),...(p.contentBounds.bottom>1415?[`p${p.page} content past foot`]:[]),...(p.footerClearanceMM<3?[`p${p.page} folio too close to trim (${p.footerClearanceMM}mm)`]:[])]);
 const opener=report[0].opener;
 assert.ok(opener?.bleedCovered,'Opener band must cover top and side bleed');

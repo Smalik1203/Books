@@ -1,0 +1,54 @@
+/* Private opener treatment for duplicate 6. Loaded only by its metadata.
+   All rules are scoped to the duplicate's own components. */
+.duplicate6-header {
+  --duplicate6-colour: var(--chapter-ink);
+  --duplicate6-white: var(--paper);
+  --duplicate6-rule: var(--chapter-rule);
+  font-family: Food Poppins, sans-serif;
+}
+.duplicate6-header__band { fill: var(--duplicate6-colour); }
+.duplicate6-header__rule {
+  fill: none;
+  stroke: var(--duplicate6-rule);
+  stroke-width: 3;
+}
+.duplicate6-header__disc { fill: var(--duplicate6-white); }
+.duplicate6-header__label {
+  fill: var(--duplicate6-white);
+  font-size: calc(var(--size-body) * 0.7);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.duplicate6-header__number {
+  fill: var(--duplicate6-colour);
+  font-size: calc(var(--size-body) * 3.35);
+  font-weight: 400;
+}
+.duplicate6-header__title {
+  fill: var(--duplicate6-white);
+  font-size: calc(var(--size-body) * 2.5);
+  font-weight: 400;
+}
+.duplicate6-opener .duplicate6-copy {
+  font-family: var(--font-body);
+  font-size: calc(var(--size-body) * 1.1);
+  font-weight: 500;
+  fill: var(--ink);
+}
+.duplicate6-opener .duplicate6-invitation {
+  font-family: var(--font-body);
+  font-size: calc(var(--size-body) * 1.3);
+  font-weight: 700;
+  fill: var(--chapter-ink);
+}
+.duplicate6-detail__frame {
+  fill: var(--paper);
+  stroke: var(--chapter-rule);
+  stroke-width: 2;
+}
+.duplicate6-detail__label {
+  font-family: Food Poppins, sans-serif;
+  font-size: calc(var(--size-body) * 0.8);
+  font-weight: 400;
+  fill: var(--chapter-ink);
+}

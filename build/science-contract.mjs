@@ -1,8 +1,13 @@
 // Fast regression checks, not a substitute for the academic or printed-page review.
 const allowed=new Set(['Investigate','What Did You Notice?','Think It Through','Imagine This','Follow the Evidence','How It Works']);
-export function scienceContract(file,html){
+// Explicitly retained working copies may keep their original feature wording.
+// Production chapters still use the current vocabulary by default.
+const originalLabels=new Set(['The setup','What you saw','Work it out in your head','What this rules out','The mechanism']);
+export function scienceContract(file,html,vocabulary='current'){
+ if(!['current','september-2026-original'].includes(vocabulary))throw Error('Unknown science vocabulary: '+vocabulary);
+ const labels=vocabulary==='september-2026-original'?originalLabels:allowed;
  const issues=[],plain=s=>s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
- for(const m of html.matchAll(/<(?:text|div)\b[^>]*class="(?:se-cue-title|se-activity-tab-text|science-feature__title)"[^>]*>([\s\S]*?)<\/(?:text|div)>/g))if(!allowed.has(plain(m[1])))issues.push('unlocked feature label: '+plain(m[1]));
+ for(const m of html.matchAll(/<(?:text|div)\b[^>]*class="(?:se-cue-title|se-activity-tab-text|science-feature__title)"[^>]*>([\s\S]*?)<\/(?:text|div)>/g))if(!labels.has(plain(m[1])))issues.push('unlocked feature label: '+plain(m[1]));
  if(/class="se-cue-png"|science\/cues\/.*\.png/.test(html))issues.push('painted feature icon; use the locked 24-grid strokes');
  if(/se-cue--(?:evidence|comparison|connection|explanation|question|practical)/.test(html))issues.push('retired per-feature colour role');
  if(/THINK SPARK|The story begins|Threads of Curiosity|Pause and Ponder|Ready to Go Beyond/.test(plain(html)))issues.push('retired science feature alias');

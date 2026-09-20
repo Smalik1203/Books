@@ -498,7 +498,7 @@ async function buildChapter(rel) {
   let lint = 0;
   for (const f of files) {
     const frag = (await readFile(path.join(src, f), 'utf8')).trim();
-    if(meta.subject==='Science')scienceContract(f,frag);
+    if(meta.subject==='Science')scienceContract(f,frag,meta.scienceVocabulary);
     lint += lintPage(f, frag);
     parts.push(`<!-- ${f} -->\n` + frag);
   }

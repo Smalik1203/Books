@@ -1,0 +1,11 @@
+# Opener illustration
+
+Generated with the built-in `image_gen` tool for this Class 7 chapter. The native 1536 × 1024 PNG is vendored as `opener.png`, without resampling. At its 157.02 mm printed width it provides approximately 248 pixels per inch. It is a contextual illustration, not evidence of an experimental outcome. Header lettering, instructional labels, motifs and diagrams are live text or vector artwork.
+
+## Generation prompt
+
+Use case: scientific-educational illustration. Create a high-resolution landscape textbook illustration, 3:2 aspect ratio, ideally at least 2048 pixels wide, for Indian Grade 7 students (ages 12–13). A clear spacious school hall with a pale floor, soft daylight, blue accents and a quiet uncluttered background. Three Indian students in everyday school clothes observe a SINGLE plain white folded paper aeroplane in flight through the empty right-hand half of the scene. One student on the left has just gently launched it from behind a small blue floor tape marker, at chest height into a clear space away from every person; the other two stand beside and slightly behind the launcher, one with a notebook, both looking at the plane. Everyone stays behind the launch line. Their poses and hands are natural, focused and age appropriate. Show the simple paper plane clearly, no stylised fighter jet, no propulsion. The scene invites observation, not competition. No winners, no result numbers, no measured trajectories or arrows, no labels or words anywhere, no text or watermark. Polished realistic hand-painted educational illustration with crisp edges, subtle shading and believable proportions, not a cartoon or a photograph. Full landscape composition: students left-of-centre, plane mid-right, clear floor extending right. Do not put text into the artwork. This is a foreground-focused chapter-opening scene for a white printed page.
+
+## Review
+
+The native output is 1536 pixels wide rather than the requested ideal 2048. It remains suitable at the chosen print width and was inspected in the page proof. The student positions, clear flight area, single plane and absence of lettering were checked. No synthetic labels, trajectory or outcome are used to teach the investigation.

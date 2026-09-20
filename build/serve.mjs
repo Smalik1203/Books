@@ -349,10 +349,12 @@ function libraryHtml(classes, coverClasses) {
     const perSubject = listed.map((sub) => {
       const mine = chapters.filter((c) => c.subject === sub);
       const vol = volumes.find((v) => v.subject === sub);
+      // Class 6/7 Science libraries present individual chapters only.
+      const chapterOnly = ['class-6', 'class-7'].includes(cls) && /^Science(?:\s|$)/i.test(sub);
       return `<section class="lib-set" hidden data-class="${esc(cls)}" data-subject="${esc(sub)}"`
         + ` data-count="${mine.length}">`
         + `<div class="class-head">Class ${shown} &middot; ${esc(sub)}</div>`
-        + (mine.length ? `<div class="grid">${vol && vol.bindable ? bookCard(vol) : ''}${mine.map(card).join('')}</div>` : '')
+        + (mine.length ? `<div class="grid">${vol && vol.bindable && !chapterOnly ? bookCard(vol) : ''}${mine.map(card).join('')}</div>` : '')
         + `</section>`;
     }).join('');
 
