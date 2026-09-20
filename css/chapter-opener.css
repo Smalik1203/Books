@@ -1,0 +1,15 @@
+/* Opt-in editorial opener. The edition supplies these palette/font roles. */
+.chapter-opener .chapter-opener__title {font-family:var(--opener-sans);font-size:calc(var(--size-body)*3.18);font-weight:600;letter-spacing:-1.5px;fill:white;}
+.chapter-opener .chapter-opener__number {font-family:var(--opener-serif);font-size:calc(var(--size-body)*7.5);font-weight:400;fill:white;}
+.chapter-opener .chapter-opener__number--double {font-size:calc(var(--size-body)*4.75);}
+.chapter-opener .chapter-opener__label {font-family:var(--opener-sans);font-size:calc(var(--size-body)*.85);font-weight:600;letter-spacing:2px;fill:white;}
+.chapter-opener .chapter-opener__band {stroke:none;}
+.chapter-opener .chapter-opener__gradient-start {stop-color:var(--opener-deep);}
+.chapter-opener .chapter-opener__gradient-end {stop-color:color-mix(in srgb,var(--opener-deep) 80%,var(--opener-accent));}
+.chapter-opener .chapter-opener__edge {fill:var(--opener-accent);opacity:.45;}
+.chapter-opener .chapter-opener__divider {stroke:white;stroke-width:1.2;opacity:.25;}
+.chapter-opener .chapter-opener__motif {opacity:.3;}
+.chapter-opener .chapter-opener__stem {fill:none;stroke:var(--opener-detail);stroke-width:1.8;stroke-linecap:round;}
+.chapter-opener .chapter-opener__leaves {fill:var(--opener-detail);}
+.chapter-opener .chapter-opener__veins {fill:none;stroke:var(--opener-deep);stroke-width:1.2;stroke-linecap:round;opacity:.7;}
+.chapter-opener .chapter-opener__image {image-rendering:auto;}

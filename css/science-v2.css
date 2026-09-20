@@ -1,3 +1,4 @@
+@import url('./chapter-opener.css');
 /* Isolated V2 science book. All type and ink roles live here. */
 .page--science-v2 {
  --v2-ink:#202d29; --v2-forest:#175c3b; --v2-leaf:#329b50; --v2-wash:#eff6e9;
@@ -5,30 +6,32 @@
  --v2-amber-wash:#fff4dd; --v2-clay:#a24b32; --v2-rule:#9eb8aa;
  --font-body:'Source Serif 4',serif; --size-body:24px; --food-ink:var(--v2-ink);
  --food-teal:var(--v2-forest); --food-navy:var(--v2-forest); --ink:var(--v2-ink);
+ --opener-deep:var(--v2-forest); --opener-accent:var(--v2-leaf); --opener-detail:var(--v2-rule);
+ --opener-sans:'Source Sans 3',sans-serif; --opener-serif:'Source Serif 4',serif;
 }
 .page--science-v2 .science-sheet {--size-body:24px;}
 .page--science-v2 text {font-family:'Source Sans 3',sans-serif;fill:var(--v2-ink);}
 .page--science-v2 .se-copy {font-family:'Source Serif 4',serif;font-size:var(--size-body);font-weight:400;fill:var(--v2-ink);}
 .page--science-v2 .se-copy .se-bold {font-weight:700;fill:var(--v2-ink);}
+.page--science-v2 .se-copy.v2-intro {font-size:calc(var(--size-body)*1.083333);font-weight:700;fill:var(--v2-forest);}
 .page--science-v2 .se-heading {font-family:'Source Sans 3',sans-serif;font-size:calc(var(--size-body)*1.25);font-weight:700;fill:var(--v2-forest);}
-.page--science-v2 .v2-title {font-size:calc(var(--size-body)*1.75);font-weight:700;fill:var(--v2-forest);}
-.page--science-v2 .v2-cover-title {font-size:calc(var(--size-body)*2.65);font-weight:700;fill:var(--v2-forest);letter-spacing:-1.5px;}
-.page--science-v2 .v2-display-number {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*7);font-weight:400;fill:var(--v2-forest);}
-.page--science-v2 .v2-chapter-label {font-size:calc(var(--size-body)*.8);font-weight:600;letter-spacing:1.6px;fill:var(--v2-forest);}
+.page--science-v2 .v2-title {font-size:calc(var(--size-body)*1.583333);font-weight:700;fill:var(--v2-forest);}
 .page--science-v2 .v2-running {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*.85);font-style:italic;font-weight:400;fill:var(--v2-forest);}
 .page--science-v2 .v2-book-running {font-size:calc(var(--size-body)*.78);font-weight:600;letter-spacing:1.3px;fill:var(--v2-forest);}
-.page--science-v2 .v2-folio {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*1.17);font-weight:700;fill:white;}
+.page--science-v2 .v2-folio {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*1.17);font-weight:400;fill:white;}
 .page--science-v2 .v2-foot-label {font-family:'Source Sans 3',sans-serif;font-size:calc(var(--size-body)*.78);font-weight:600;letter-spacing:1.1px;fill:var(--v2-forest);}
 .page--science-v2 .v2-ribbon {fill:var(--v2-forest);}
 .page--science-v2 .v2-ribbon-underlay {fill:var(--v2-wash);}
-.page--science-v2 .v2-ribbon-leaf {fill:var(--v2-rule);}
-.page--science-v2 .v2-ribbon-stem {fill:none;stroke:var(--v2-rule);stroke-width:1.5;}
-.page--science-v2 .v2-ribbon-label {font-size:calc(var(--size-body)*.8);font-weight:700;letter-spacing:2px;fill:white;}
+.page--science-v2 .v2-ribbon__motif {opacity:.7;}
+.page--science-v2 .v2-ribbon__leaves {fill:var(--v2-rule);}
+.page--science-v2 .v2-ribbon__stem {fill:none;stroke:var(--v2-rule);stroke-width:3.5;stroke-linecap:round;}
+.page--science-v2 .v2-ribbon__veins {fill:none;stroke:var(--v2-forest);stroke-width:2.5;stroke-linecap:round;opacity:.7;}
+.page--science-v2 .v2-ribbon-label {font-size:calc(var(--size-body)*.8);font-weight:600;letter-spacing:2px;fill:white;}
 .page--science-v2 .v2-reading-block {isolation:auto;}
 .page--science-v2 .v2-header,.page--science-v2 .v2-footer {isolation:auto;}
 .page--science-v2 .v2-furniture-rule {stroke:var(--v2-forest);stroke-width:.8;fill:none;}
 .page--science-v2 .se-caption {font-family:'Source Sans 3',sans-serif;font-size:calc(var(--size-body)*.87);font-weight:400;fill:var(--v2-ink);}
-.page--science-v2 .se-table-copy {font-size:calc(var(--size-body)*.88);}
+.page--science-v2 .se-table-copy {font-size:calc(var(--size-body)*.92);}
 .page--science-v2 .se-rule,.page--science-v2 .v2-rule {stroke:var(--v2-rule);stroke-width:1.2;fill:none;}
 .page--science-v2 .v2-leaf {fill:var(--v2-leaf);stroke:none;}
 .page--science-v2 .v2-ground {fill:var(--v2-wash);stroke:none;}
@@ -43,12 +46,20 @@
 .page--science-v2 .se-prompt {fill:var(--v2-amber-wash);stroke:var(--v2-amber);stroke-width:1.5;rx:18px;}
 .page--science-v2 .se-cue-title {font-family:'Source Sans 3',sans-serif;font-size:var(--size-body);font-weight:700;fill:var(--v2-amber-ink);}
 .page--science-v2 .se-feature-icon {stroke:var(--v2-clay);stroke-width:1.6;fill:none;}
-.page--science-v2 .se-thinking-image {image-rendering:auto;}
 .page--science-v2 .se-accent {fill:none;stroke:var(--v2-forest);stroke-width:2;}
 .page--science-v2 .se-process {fill:var(--v2-wash);stroke:var(--v2-forest);stroke-width:1.4;}
 .page--science-v2 .v2-white {fill:white;}
 .page--science-v2 .v2-note-title {font-size:var(--size-body);font-weight:700;fill:var(--v2-clay);}
 .page--science-v2 .v2-think-title {font-size:var(--size-body);font-weight:700;fill:var(--v2-amber-ink);}
 
-.page--science-v2 .v2-investigate-icon {stroke:var(--v2-teal);stroke-width:2.4;fill:none;stroke-linecap:round;}
+.page--science-v2 .v2-panel-heading {color:var(--v2-cue-ink);}
+.page--science-v2 .v2-panel-heading--setup {--v2-cue-ink:var(--v2-teal);}
+.page--science-v2 .v2-panel-heading--think {--v2-cue-ink:var(--v2-amber-ink);}
+.page--science-v2 .v2-panel-icon {stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.page--science-v2 .v2-panel-title {font-size:var(--size-body);font-weight:700;fill:currentColor;}
 .page--science-v2 .v2-figure-leader {fill:none;stroke:var(--v2-forest);stroke-width:1.2;}
+.page--science-v2 .v2-comparison-title {font-size:calc(var(--size-body)*1.25);font-weight:700;fill:var(--v2-forest);}
+.page--science-v2 .v2-table-heading {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*.92);font-weight:700;}
+.page--science-v2 .v2-table-caption {font-size:calc(var(--size-body)*.9);font-weight:700;fill:var(--v2-forest);}
+.page--science-v2 .v2-table-note {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*.87);font-weight:400;}
+.page--science-v2 .v2-table-rule {stroke:var(--v2-rule);stroke-width:.8;fill:none;}

@@ -1,0 +1,260 @@
+{
+  "outputs": [
+    {
+      "kind": "reading",
+      "file": "build/class-6/ch02-diversity-in-the-living-world-v2.pdf",
+      "pages": 29,
+      "declaredSheetMM": [
+        189,
+        272
+      ],
+      "actualSheetMM": [
+        189.061,
+        271.949
+      ],
+      "sha256": "6feb19444b1daed54c27cd45db1f878cf62e7832668039233d699bdaa66c6890"
+    },
+    {
+      "kind": "bleed",
+      "file": "build/class-6/ch02-diversity-in-the-living-world-v2-bleed.pdf",
+      "pages": 29,
+      "declaredSheetMM": [
+        209,
+        292
+      ],
+      "actualSheetMM": [
+        208.873,
+        292.1
+      ],
+      "sha256": "6b3938b2d08a2a46711b82e256a280895dae86700d22fc7595d7c334c5c487b7"
+    }
+  ],
+  "checks": [
+    "V2 original content retention and editorial ledger",
+    "V2 pagination relationships",
+    "SVG internal bounds and artwork collisions",
+    "Rendered glyph collisions and whole-panel bounds",
+    "Science regressions",
+    "Every reading PDF page and facing spread visually inspected",
+    "All bleed PDF pages rendered and inspected for crop placement",
+    "All folios at least 3 mm inside trim",
+    "All 14 revised panel headers visually inspected in final PDF proofs: 9 Investigate and 5 Think It Through",
+    "Botanical opener: safe live text, centred chapter label, aligned numeral/title and clear leaf spacing",
+    "Top and side header bleed coverage measured and sampled in the final PDF",
+    "Subtle green gradient and white separation verified in final PDF raster proof",
+    "Reusable opener: one-, two- and three-line title variants, two-digit chapter numbers, unique gradient IDs and optional subject motif checked with actual fonts",
+    "Straight header edge, 36-unit gutters and image/text alignment verified in final reading and bleed proofs",
+    "Teaching additions retained at their source anchors; original content retained; opener, glossary and summary text unchanged"
+  ],
+  "proofDirectory": "build/_enrichment-review/",
+  "knownLimitations": [
+    "Target fill has documented whole-unit exceptions in render-audit.json.",
+    "Existing opener artwork is approximately 248 ppi at reading-column width; these are RGB review PDFs, not certified press masters."
+  ],
+  "pageBalance": {
+    "pagesBefore": 28,
+    "pagesAfter": 29,
+    "lessonPagesBefore": 22,
+    "lessonPagesAfter": 23,
+    "under88Before": 14,
+    "under88After": 4,
+    "meanOccupancyBefore": 86.9,
+    "meanOccupancyAfter": 91.1,
+    "largestLessonGapBeforeMM": 47.9,
+    "largestLessonGapAfterMM": 33.2,
+    "remainingShortLessonPages": [
+      {
+        "page": 3,
+        "occupiedPercent": 87.8,
+        "bottomGapMM": 28.5,
+        "shortPageException": {
+          "remainingMM": 25.5,
+          "protectedGroup": [
+            {
+              "id": "reading-12",
+              "type": "body",
+              "title": "Separate what you saw from what you infer. The crow was seen on a wall and in a tree; that does not ",
+              "height": 112
+            },
+            {
+              "id": "reading-13",
+              "type": "body",
+              "title": "The variety of living things found in one region is called its **biodiversity**.",
+              "height": 48
+            },
+            {
+              "id": "reading-14",
+              "type": "body",
+              "title": "Suppose you record eighteen ants of one kind, two crows and one squirrel. That is twenty-one animals",
+              "height": 64
+            },
+            {
+              "id": "reading-15",
+              "type": "body",
+              "title": "Suppose you record eighteen ants of one kind, two crows and one squirrel. That is twenty-one animals",
+              "height": 80
+            },
+            {
+              "id": "reading-16",
+              "type": "body",
+              "title": "Your school ground has its own biodiversity. So does a pond. So does a forest, a seashore, and even ",
+              "height": 80
+            },
+            {
+              "id": "source-4-5",
+              "type": "panel",
+              "title": "Your search lasted one period. Name two kinds of living things that your method might have missed. P",
+              "height": 206
+            }
+          ],
+          "requiredMM": 106,
+          "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        }
+      },
+      {
+        "page": 8,
+        "occupiedPercent": 87.4,
+        "bottomGapMM": 29.5,
+        "shortPageException": {
+          "remainingMM": 25.9,
+          "protectedGroup": [
+            {
+              "id": "reading-54",
+              "type": "heading",
+              "title": "Plants That Cannot Stand Up",
+              "height": 48
+            },
+            {
+              "id": "reading-55",
+              "type": "body",
+              "title": "Not every plant can hold itself up.",
+              "height": 48
+            },
+            {
+              "id": "reading-56",
+              "type": "figure",
+              "title": "climbers",
+              "height": 399
+            },
+            {
+              "id": "reading-57",
+              "type": "comparison",
+              "title": "Labelled illustration",
+              "height": 254
+            }
+          ],
+          "requiredMM": 134.6,
+          "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        }
+      },
+      {
+        "page": 15,
+        "occupiedPercent": 85.8,
+        "bottomGapMM": 33.2,
+        "shortPageException": {
+          "remainingMM": 30.2,
+          "protectedGroup": [
+            {
+              "id": "reading-112",
+              "type": "body",
+              "title": "The maize picture is a lengthwise section: it shows parts hidden inside the grain. Follow each label",
+              "height": 112
+            },
+            {
+              "id": "reading-113",
+              "type": "comparison",
+              "title": "Labelled illustration",
+              "height": 318
+            }
+          ],
+          "requiredMM": 77.3,
+          "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        }
+      },
+      {
+        "page": 18,
+        "occupiedPercent": 87.8,
+        "bottomGapMM": 28.5,
+        "shortPageException": {
+          "remainingMM": 25.5,
+          "protectedGroup": [
+            {
+              "id": "reading-133",
+              "type": "body",
+              "title": "Different animals may move alike using similar body parts: a housefly and a pigeon both fly with win",
+              "height": 112
+            },
+            {
+              "id": "reading-134",
+              "type": "body",
+              "title": "A record can belong in both \u201cuses legs\u201d and \u201cuses wings\u201d. If a class observed four animals, the two ",
+              "height": 64
+            },
+            {
+              "id": "reading-135",
+              "type": "body",
+              "title": "A record can belong in both \u201cuses legs\u201d and \u201cuses wings\u201d. If a class observed four animals, the two ",
+              "height": 80
+            },
+            {
+              "id": "reading-136",
+              "type": "body",
+              "title": "An animal\u2019s body features are connected with *where* it lives.",
+              "height": 48
+            },
+            {
+              "id": "reading-137",
+              "type": "body",
+              "title": "You can also group animals by food, habitat or body covering\u2014scales, feathers, fur or exposed skin. ",
+              "height": 80
+            },
+            {
+              "id": "source-19-5",
+              "type": "heading",
+              "title": "Know a scientist",
+              "height": 48
+            },
+            {
+              "id": "reading-139",
+              "type": "body",
+              "title": "**Janaki Ammal (1897\u20131984)** was one of the first Indian women to work as a professional botanist. S",
+              "height": 64
+            },
+            {
+              "id": "reading-140",
+              "type": "body",
+              "title": "**Janaki Ammal (1897\u20131984)** was one of the first Indian women to work as a professional botanist. S",
+              "height": 64
+            },
+            {
+              "id": "reading-141",
+              "type": "body",
+              "title": "**Janaki Ammal (1897\u20131984)** was one of the first Indian women to work as a professional botanist. S",
+              "height": 112
+            },
+            {
+              "id": "reading-142",
+              "type": "heading",
+              "title": "2.3 Living Things and Their Surroundings",
+              "height": 58
+            },
+            {
+              "id": "reading-143",
+              "type": "body",
+              "title": "Compare your local records with records from another place. You may find both shared and different k",
+              "height": 112
+            },
+            {
+              "id": "source-20-2",
+              "type": "activity",
+              "title": "Investigate\n**What to do:**\n1. Copy Table 2.6 onto the blackboard for a shared class record.\n2. Add ",
+              "height": 243
+            }
+          ],
+          "requiredMM": 199.2,
+          "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        }
+      }
+    ]
+  }
+}

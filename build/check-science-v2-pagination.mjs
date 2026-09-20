@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {refitV2Lesson} from './refit-science-v2-blocks.mjs';
+const block=(id,type,h,extra={})=>({atomId:id,type,h,top:112,html:`<text>${id}</text>`,source:[1],...extra});
+const fit=blocks=>refitV2Lesson([{blocks}]);
+const pageFor=(pages,id)=>pages.findIndex(p=>p.blocks.some(b=>b.id===id));
+let pages=fit([block('prose','body',1100),block('heading','heading',52),block('short-intro','body',96),block('whole-panel','activity',950)]);
+assert.notEqual(pageFor(pages,'prose'),pageFor(pages,'heading'),'A heading with only three following lines moves');
+assert.equal(pageFor(pages,'heading'),pageFor(pages,'whole-panel'),'The explanatory unit follows its heading');
+assert.equal(pages[1].blockAudit[0].top,112,'Page-opening heading has no artificial top padding');
+pages=fit([block('earlier','body',1000),block('direction','body',90,{keepNext:true}),block('table','table',230),block('after','body',300)]);
+assert.equal(pageFor(pages,'direction'),pageFor(pages,'table'),'Explicit recording direction stays with table');
+assert.equal(pages.flatMap(p=>p.blocks).filter(b=>b.id==='table').length,1,'Protected table is never divided');
+pages=fit([block('earlier','body',1120),block('independent-prose','body',80),block('figure','figure',1240)]);
+assert.equal(pageFor(pages,'earlier'),pageFor(pages,'independent-prose'),'Ordinary prose is not broadly tied to the next figure');
+assert.notEqual(pageFor(pages,'independent-prose'),pageFor(pages,'figure'));
+assert.throws(()=>fit([block('oversized','panel',1400)]),/Invalid V2 reading block/);
+console.log('V2 pagination checks passed: heading support, explicit groups, whole panels and ordinary prose flow.');

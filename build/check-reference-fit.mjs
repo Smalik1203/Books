@@ -90,6 +90,7 @@ window.addEventListener('load',async()=>{
 await document.fonts.ready;
 const BLOCK=${blockArg ? JSON.stringify(blockArg.split(',').map(Number)) : 'null'};
 const out={pages:0,lines:0,over:[],collide:[],leading:[],ragged:[],letterbox:[],vertical:[],blockUsed:null};
+const inkMeasure=document.createElement('canvas').getContext('2d');
 for(const svg of document.querySelectorAll('.food-sheet')){
   out.pages++;
   const page=svg.closest('.page');
@@ -180,9 +181,22 @@ for(const svg of document.querySelectorAll('.food-sheet')){
       const label=(run.textContent||'').replace(/\\s+/g,' ').trim().slice(0,58);
       if(R!=null&&b.right>R+1)
         out.over.push({page:folio,by:+(b.right-R).toFixed(1),text:label});
+      // V2's large live chapter numeral has an unused descender allowance.
+      // Measure visible ink for artwork collisions, as its rendered audit does;
+      // an em box below the baseline is not lettering printed on the garden.
+      let collisionBox=b;
+      if(page.classList.contains('page--science-v2')){
+        const style=getComputedStyle(run);
+        inkMeasure.font=style.fontStyle+' '+style.fontWeight+' '+style.fontSize+' '+style.fontFamily;
+        const ink=inkMeasure.measureText(run.textContent),start=run.getStartPositionOfChar(0);
+        const matrix=toLocal.multiply(run.getScreenCTM());
+        const top=new DOMPoint(start.x,start.y-ink.actualBoundingBoxAscent).matrixTransform(matrix);
+        const bottom=new DOMPoint(start.x,start.y+ink.actualBoundingBoxDescent).matrixTransform(matrix);
+        collisionBox={...b,y:top.y,bottom:bottom.y};
+      }
       for(const a of art){
-        const w=Math.min(a.right,b.right)-Math.max(a.x,b.x);
-        const h=Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y);
+        const w=Math.min(a.right,collisionBox.right)-Math.max(a.x,collisionBox.x);
+        const h=Math.min(a.bottom,collisionBox.bottom)-Math.max(a.y,collisionBox.y);
         if(w>2&&h>2)out.collide.push({page:folio,over:Math.round(w)+'x'+Math.round(h),text:label});
       }
     }

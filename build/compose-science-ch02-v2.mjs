@@ -6,7 +6,11 @@ import path from 'node:path';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {pathToFileURL} from 'node:url';
-import {learningCue,featureIcon} from './science-learning-cues.mjs';
+import {learningCue} from './science-learning-cues.mjs';
+import {v2PanelHeading} from './science-v2-cues.mjs';
+import {findComparison,comparisonWords,plantThinking,seedThinking,conservationThinking} from './science-v2-comparisons.mjs';
+import {proseEdits,activityEdits,editedWords,reviseV2} from './science-v2-prose.mjs';
+import {enrichmentWords} from './science-v2-enrichment.mjs';
 const run=promisify(execFile), dir='pages/class-6/ch02-diversity-in-the-living-world-v2';
 let md=await fs.readFile('assets/manuscripts/LearnLab_G6_Ch02_Diversity_in_the_Living_World.md','utf8');
 const changes=[];
@@ -55,27 +59,44 @@ function tokens(s){let b=false,i=false;return s.split(/\s+/).filter(Boolean).map
 const art={1:['opener','',600],3:['plants','Grass                         Tulsi                         Hibiscus',290],9:['forms','Mango · tree                 Rose · shrub                 Tomato · herb',310],10:['climbers','Climber · grape vine                       Creeper · pumpkin',300],12:['veins','Hibiscus · reticulate             Banana · parallel             Grass · parallel',325],14:['roots','Chana · taproot                              Wheat · fibrous roots',325],17:['seeds','Chana · two cotyledons                         Maize · one cotyledon',320],21:['desert','Cactus · hot desert                         Deodar · cold mountain',300],22:['camels','Dromedary · one hump                         Bactrian · two humps',310],23:['feet','Duck · webbed foot                            Pigeon · no webbing',260],25:['grove','A sacred grove — a surviving patch of forest',300],27:['grains','(a) Wheat grains                              (b) Kidney beans',185],28:['goats','(a) Mountain goat                              (b) Goat of the plains',245]};
 const extra=['Observe the illustration. How many kinds of living things can you find? Which might you miss if you were walking quickly?','Stay with your group. Do not touch any animal. Do not put your fingers into holes or under stones.','Copy the headings into your notebook and add your own observations. The rows below are examples, not a complete record.','Use scissors carefully, with your teacher’s guidance.','Use your notebook for the activities and questions in this chapter.','Some ways of grouping','Flowers','Stem','Food','Habitat','Reticulate venation?','Yes','No','A','B','C','Water','Land','A plant','Know a scientist',...Object.values(art).map(a=>a[1])];
 extra.push('Compare these four leaves. You can sort the same set by its outline or by its edge.','Leaf C belongs with D when you compare outlines, but with A when you compare edges. The leaves have not changed; the grouping rule has.');
+extra.push('Soft, thin Hard, woody Single thin leaves Paired, opposite leaves Broad, toothed leaves Thick patch Strong smell when rubbed',comparisonWords,editedWords,enrichmentWords,plantThinking,seedThinking,conservationThinking,'Think It Through','— means not recorded; it does not mean absent.','A flower not seen today may appear in another season.','Sample record · compare observations, not predictions.');
 const terms=new Set([' ']);for(const w of tokens(md+' '+extra.join(' ')+' '+glossaryEntries.flat().join(' ')))for(const p of w)terms.add(p.s);
 const probe=path.resolve('build/_ch02-v2-type-measure.html');
-await fs.writeFile(probe,`<html><head><link rel="stylesheet" href="../css/fonts.css"><link rel="stylesheet" href="../css/science-v2-fonts.css"></head><body><script>onload=async()=>{await Promise.all(['400 24px "Source Serif 4"','700 24px "Source Serif 4"','italic 400 24px "Source Serif 4"','700 19.55px "Source Sans 3"','700 28.06px "Source Sans 3"'].map(f=>document.fonts.load(f)));const c=document.createElement('canvas').getContext('2d'),m={};for(const [k,f] of [['n','400 24px "Source Serif 4"'],['b','700 24px "Source Serif 4"'],['i','italic 400 24px "Source Serif 4"'],['t','700 19.55px "Source Sans 3"'],['h','700 28.06px "Source Sans 3"']]){c.font=f;m[k]={};for(const w of ${JSON.stringify([...terms])})m[k][w]=c.measureText(w).width;}document.title='METRICS'+JSON.stringify(m);};</script></body></html>`);
+await fs.writeFile(probe,`<html><head><link rel="stylesheet" href="../css/fonts.css"><link rel="stylesheet" href="../css/science-v2-fonts.css"></head><body><script>onload=async()=>{await Promise.all(['400 24px "Source Serif 4"','700 24px "Source Serif 4"','italic 400 24px "Source Serif 4"','700 24px "Source Sans 3"','700 30px "Source Sans 3"'].map(f=>document.fonts.load(f)));const c=document.createElement('canvas').getContext('2d'),m={};for(const [k,f] of [['n','400 24px "Source Serif 4"'],['b','700 24px "Source Serif 4"'],['i','italic 400 24px "Source Serif 4"'],['t','700 24px "Source Sans 3"'],['h','700 30px "Source Sans 3"']]){c.font=f;m[k]={};for(const w of ${JSON.stringify([...terms])})m[k][w]=c.measureText(w).width;}document.title='METRICS'+JSON.stringify(m);};</script></body></html>`);
 const {stdout}=await run('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--disable-gpu','--virtual-time-budget=8000','--dump-dom',pathToFileURL(probe).href],{maxBuffer:20e6});
 await fs.unlink(probe);
 const widths=JSON.parse(stdout.match(/METRICS(.*?)<\/title>/s)[1].replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>'));
 function textWidth(s,k='n'){return tokens(s).reduce((v,w,ix)=>v+(ix?widths[k][' ']:0)+w.reduce((a,p)=>a+(widths[k==='n'?p.k:k][p.s]??p.s.length*12),0),0);}
 function wrap(s,w,k='n',scale=1){const lines=[];let row=[],len=0;for(const t of tokens(s)){const tw=t.reduce((a,p)=>a+(widths[k==='n'?p.k:k][p.s]??p.s.length*12)*scale,0);if(row.length&&len+widths[k][' ']*scale+tw>w){lines.push(row);row=[];len=0;}if(row.length)len+=widths[k][' ']*scale;row.push(t);len+=tw;}if(row.length)lines.push(row);return lines;}
 const word=t=>scienceWord(t,E);
-function linesSVG(lines,x,y,cls='se-copy',lead=32,size=24,measure=null){return `<text class="${cls}"${measure?` data-measure="${measure}"`:""} x="${x}" y="${y+size}">${lines.map((l,i)=>`<tspan x="${x}"${i?` dy="${lead}"`:''}>${l.map(word).join(' ')}</tspan>`).join('')}</text>`;}
+function linesSVG(lines,x,y,cls='se-copy',lead=32,size=24,measure=null){return `<text class="${cls}" x="${x}" y="${y+size}">${lines.map((l,i)=>`<tspan x="${x}"${i?` dy="${lead}"`:''}>${l.map(word).join(' ')}</tspan>`).join('')}</text>`;}
 function label(s,x,y,cls='se-caption',anchor='start'){return `<text class="${cls}" x="${x}" y="${y}" text-anchor="${anchor}">${E(s)}</text>`;}
 let atoms=[],sourcePage=0;
-function add(h,render,type='body',text=''){atoms.push({h,render,type,text,sourcePage});}
-function para(s,options={}){const {x=89,w=874,gap=14,cls='se-copy'}=options,l=wrap(s,w),kind=s.startsWith('Inherited features')?'explain':s.startsWith('Also separate an observation')?'reason':null,offset=kind?56:0;add(l.length*32+gap+offset,y=>(kind?learningCue(kind,'',x,y,E):'')+linesSVG(l,x,y+offset,cls,31,23,w),'body',s);}
+function add(h,render,type='body',text=''){atoms.push({id:`source-${sourcePage}-${atoms.filter(a=>a.sourcePage===sourcePage).length}`,h,render,type,text,sourcePage});}
+function para(s,options={}){const {x=89,w=874,gap=16,cls='se-copy'}=options,l=wrap(s,w),kind=s.startsWith('Inherited features')?'explain':s.startsWith('Also separate an observation')?'reason':null,offset=kind?56:0;add(l.length*32+gap+offset,y=>(kind?learningCue(kind,'',x,y,E):'')+linesSVG(l,x,y+offset,cls,32,24),'body',s);}
 function heading(s){const l=wrap(s,874,'h');add(l.length*42+20,y=>linesSVG(l,89,y,'se-heading',42,30),'heading',s);}
 function prompt(s){s=s.replace(/^\*\*(Think:|Observe:|Predict:|What do you notice\?|What do you predict\?|Can you explain why\?)\*\*\s*/,'');
  const pause=/^Your search lasted|^A pigeon walks|^Could drawings alone/.test(s);
  if(!pause){para(s);return;}
  const l=wrap(s,826),h=l.length*32+92;
- add(h+18,y=>`<rect class="se-prompt se-thought-panel" x="89" y="${y}" width="874" height="${h}"/>`+learningCue('think','',113,y+17,E)+linesSVG(l,113,y+72),'panel',s);
+ add(h+18,y=>`<rect class="se-prompt se-thought-panel" x="89" y="${y}" width="874" height="${h}"/>`+v2PanelHeading('think',113,y+43)+linesSVG(l,113,y+72),'panel',s);
 }
+const refinementLedger=[];
+const tableCaptions={
+ 'Table 2.3: Grouping plants by height and stem':'Table 2.3: Example grouping by height and stem',
+ 'Table 2.4: Leaf venation and root type':'Table 2.4: Sample leaf and root record (— = not recorded)',
+ 'Table 2.5: How animals move':'Table 2.5: Example movements (— = not recorded)',
+ 'Table 2.6: Living things in different surroundings':'Table 2.6: Examples from different surroundings',
+};
+function comparison(s,x=89,w=874){
+ const match=findComparison(s);if(!match)return null;
+ const [,title,items]=match,head=wrap(title,w,'h'),rows=[];let y=head.length*36+12;
+ for(const item of items){const lines=wrap(item,w-23);rows.push({y,lines});y+=lines.length*32+8;}
+ const replacement=[title,...items];
+ if(!refinementLedger.some(r=>r.before===s))refinementLedger.push({before:s,after:replacement,reason:'Parallel comparison bullets; examples and qualifications retained.'});
+ return {h:y+10,title,items,render:top=>linesSVG(head,x,top,'v2-comparison-title',36,30)+rows.map(r=>label('•',x,top+r.y+24,'se-copy')+linesSVG(r.lines,x+23,top+r.y)).join('')};
+}
+function think(s){const l=wrap(s,826),h=l.length*32+88;return {h:h+20,render:y=>`<rect class="se-prompt se-thought-panel" x="89" y="${y}" width="874" height="${h}"/>`+v2PanelHeading('think',113,y+43)+linesSVG(l,113,y+68)};}
 function illustration(spec){const [key,caption,h]=spec;
 if(key==='seeds'){
  add(582,y=>label('Two cotyledons',350,y+23,'se-caption','middle')+label('One cotyledon',760,y+23,'se-caption','middle')+
@@ -98,22 +119,45 @@ function glossary(){
  if(h>1240)throw Error('Glossary exceeds one page');
  add(h,y=>'<rect class="se-glossary-panel" x="89" y="'+y+'" width="874" height="'+h+'" rx="20"/>'+rows.map((col,i)=>col.map(r=>linesSVG(r.lines,113+i*428,y+25+r.top)).join('')).join(''),'glossary',glossaryEntries.map(e=>e.join(': ')).join('\n'));
 }
-function activity(title,blocks){if(/^Activity 2\.2 /.test(title)){prompt(blocks.filter(b=>b!=='**What to do:**').map(b=>b.replace(/^\d+\.\s*/, '').replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/, '')).join(' '));return;}const questions=[];blocks=blocks.map(b=>b.replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/,''));title='Investigate';const rootSetup=sourcePage===13;const inner=[];let yy=65;for(const b of blocks){if(b==='**What to do:**')continue;const match=b.match(/^(\d+)\.\s+([\s\S]+)/),s=match?match[2]:b,x=match?146:113,w=rootSetup&&inner.length===0?500:match?793:826,l=wrap(s,w);inner.push({l,x,y:yy,n:match?.[1]});yy+=l.length*32+12;if(rootSetup&&inner.length===1)yy=Math.max(yy,245);}
+function activity(title,blocks){if(/^Activity 2\.2 /.test(title)){prompt(blocks.filter(b=>b!=='**What to do:**').map(b=>b.replace(/^\d+\.\s*/, '').replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/, '')).join(' '));return;}const discussionStarts=['Compare your records with a partner.','Compare both your sortings','Did any two groups','Did height and stem features','Group the prints by their vein patterns.','Could drawings alone','Which seed comes apart'];const questions=blocks.filter(b=>discussionStarts.some(start=>b.replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/,'').startsWith(start)));blocks=blocks.filter(b=>!questions.includes(b));blocks=blocks.map(b=>b.replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/,''));const teachingPoints=[...blocks,...questions].filter(b=>b!=='**What to do:**').map(b=>b.replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/,''));blocks=blocks.map(b=>reviseV2(b,activityEdits,refinementLedger));title='Investigate';const rootSetup=sourcePage===13;const inner=[];let yy=65;for(const b of blocks){if(b==='**What to do:**')continue;const match=b.match(/^(\d+)\.\s+([\s\S]+)/),s=match?match[2]:b,x=match?146:113,w=rootSetup&&inner.length===0?500:match?793:826,l=wrap(s,w);inner.push({l,x,y:yy,n:match?.[1]});yy+=l.length*32+12;if(rootSetup&&inner.length===1)yy=Math.max(yy,245);}
 const h=yy+12,tab=Math.min(874,Math.ceil(textWidth(title,'t'))+32);if(h+20>1174)throw Error('Activity too tall: '+title+' '+h);
 let breathing=0;
-add(h+34,y=>`<rect class="se-activity-panel" x="89" y="${y}" width="874" height="${h+breathing*inner.length}" rx="18"/><g class="v2-investigate-icon"><circle cx="128" cy="${y+30}" r="12"/><path d="M137 ${y+39}l10 10"/></g>`+label(title,160,y+39,'se-activity-tab-text')+(rootSetup?`<image class="science-illustration" href="../../figures/class-6/science/ch02-v2/root-setup-v2.png" x="648" y="${y+57}" width="285" height="190" preserveAspectRatio="xMidYMid meet"/>`:'')+inner.map((r,i)=>(r.n?label(r.n+'.',128,y+r.y+i*breathing+23,'se-activity-step','end'):'')+linesSVG(r.l,r.x,y+r.y+i*breathing)).join(''),'activity',title+'\n'+blocks.join('\n'));
-atoms.at(-1).breathe=amount=>{breathing=amount/inner.length;};atoms.at(-1).breathingLimit=inner.length*8;
-if(questions.length)prompt(questions.map(s=>s.replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/,'')).join(' '));
+add(h+34,y=>`<rect class="se-activity-panel" x="89" y="${y}" width="874" height="${h+breathing*inner.length}" rx="18"/>`+v2PanelHeading('setup',113,y+43)+(rootSetup?`<image class="science-illustration" href="../../figures/class-6/science/ch02-v2/root-setup-v2.png" x="648" y="${y+57}" width="285" height="190" preserveAspectRatio="xMidYMid meet"/>`:'')+inner.map((r,i)=>(r.n?label(r.n+'.',128,y+r.y+i*breathing+23,'se-activity-step','end'):'')+linesSVG(r.l,r.x,y+r.y+i*breathing)).join(''),'activity',title+'\n'+blocks.join('\n'));
+atoms.at(-1).teachingPoints=teachingPoints;atoms.at(-1).breathe=amount=>{breathing=amount/inner.length;};atoms.at(-1).breathingLimit=inner.length*8;
+for(const question of questions)para(question.replace(/^\*\*(Observe:|Think:|Predict:)\*\*\s*/,''));
 }
 function table(raw,title){let rows=raw.split('\n').filter(s=>s.trim().startsWith('|')).map(s=>s.trim().slice(1,-1).split('|').map(v=>v.trim())).filter(r=>!r.every(v=>/^:?-+:?$/.test(v)));
+if(tableCaptions[title]){refinementLedger.push({before:title,after:[tableCaptions[title]],reason:'Identify example records and attach their missing-data legend.'});title=tableCaptions[title];}
 rows=rows.filter((r,i)=>i===0||r.slice(1).some(v=>v));
+if(!rows[0][0])rows[0][0]='Feature';
 if(rows[0][0]==='S. no.')rows=rows.map(r=>r.slice(1));
 // Shorter column captions retain the same observation fields at readable size.
 const names={'Name (or your description)':'Name / description','Stem — soft or hard, thin or thick':'Stem','Leaves — shape and how they sit':'Leaves','Flowers — colour and shape':'Flowers','Shorter / same / taller than you':'Height compared with you','Stem green or brown':'Stem colour','Stem soft or hard':'Stem texture','Branches low or high':'Branching','Venation (reticulate / parallel)':'Venation','What it was doing or eating':'Doing / eating','Any other region':'Other region'};
-rows[0]=rows[0].map(s=>names[s]??s);const count=rows[0].length,cell=874/count,pad=12;
-let yy=title?42:12;const entries=rows.map((r,i)=>{const ls=r.map(s=>wrap(s||'—',cell-pad*2,'n',.88)),h=Math.max(...ls.map(l=>l.length))*27+22;const row={ls,yy,h,i};yy+=h;return row;});
-const h=yy+14;add(h,y=>(title?label(title,89,y+23,'se-caption se-bold'):'')+`<rect class="v2-table-frame" x="89" y="${y+entries[0].yy}" width="874" height="${yy-entries[0].yy}"/>`+Array.from({length:count-1},(_,i)=>`<line class="v2-rule" x1="${89+(i+1)*cell}" x2="${89+(i+1)*cell}" y1="${y+entries[0].yy}" y2="${y+yy}"/>`).join('')+entries.map(r=>`${r.i===0?`<rect class="se-table-head" x="89" y="${y+r.yy}" width="874" height="${r.h}"/>`:''}<line class="se-rule" x1="89" x2="963" y1="${y+r.yy+r.h}" y2="${y+r.yy+r.h}"/>`+r.ls.map((l,i)=>linesSVG(l,89+i*cell+pad,y+r.yy+9,`se-copy se-table-copy${r.i===0?' se-bold':''}`,27,21.12)).join('')).join(''),'table',title+'\n'+rows.map(r=>r.join(' | ')).join('\n'));
+rows[0]=rows[0].map(s=>names[s]??s);
+if(title.startsWith('Table 2.1:')){
+ refinementLedger.push({before:rows[0][0],after:['Plant'],reason:'The plant-name column accepts descriptions; the observation task explicitly explains how to record unknown names.'});
+ rows[0][0]='Plant';
 }
+const cellEdits={'Soft and thin':'Soft, thin','Hard and thin':'Hard, thin','Hard and woody':'Hard, woody','Leaves in pairs, facing each other':'Paired, opposite leaves','Broad leaves with toothed edges':'Broad, toothed leaves','Grows in a thick patch':'Thick patch','Smells strong when rubbed':'Strong smell when rubbed'};
+rows=rows.map((row,i)=>row.map(cell=>{const changed=i?cellEdits[cell]:null;if(changed)refinementLedger.push({before:cell,after:[changed],reason:'Concise sample-table record, with the same observed feature.'});return changed||cell;}));
+const count=rows[0].length,pad=14;
+const weights=title.startsWith('Table 2.1:')?[155,135,220,185,179]:count===5?[1.05,.95,1.15,.95,1.1]:count===4?[1,1,1.3,1.3]:Array(count).fill(1);
+const widths=weights.map(v=>874*v/weights.reduce((a,b)=>a+b,0)),xs=[89];
+widths.forEach(w=>xs.push(xs.at(-1)+w));
+const caption=wrap(title,874,'h',.72);let yy=caption.length*28+14;
+const entries=rows.map((r,i)=>{const ls=r.map((s,j)=>wrap(s||'—',widths[j]-pad*2,i?'n':'b',.92)),h=Math.max(...ls.map(l=>l.length))*28+18;const row={ls,yy,h,i};yy+=h;return row;});
+const note=/Table 2\.[12]:/.test(title)?'— means not recorded; it does not mean absent.'+(/Table 2\.1:/.test(title)?' A flower not seen today may appear in another season.':''):null;
+const notes=note?wrap(note,874,'n',.87):[];
+const h=yy+notes.length*26+(note?22:16);
+add(h,y=>linesSVG(caption,89,y,'v2-table-caption',28,21.6)
+ +entries.map(r=>(r.i===0?`<rect class="se-table-head" x="89" y="${y+r.yy}" width="874" height="${r.h}"/>`:'')
+ +r.ls.map((l,i)=>linesSVG(l,xs[i]+pad,y+r.yy+11,r.i===0?'v2-table-heading':'se-copy se-table-copy',28,22.08)).join('')
+ +`<line class="v2-table-rule" x1="89" x2="963" y1="${y+r.yy+r.h}" y2="${y+r.yy+r.h}"/>`).join('')
+ +xs.slice(1,-1).map(x=>`<line class="v2-table-rule" x1="${x}" x2="${x}" y1="${y+entries[0].yy}" y2="${y+yy}"/>`).join('')
+ +`<rect class="v2-table-frame" x="89" y="${y+entries[0].yy}" width="874" height="${yy-entries[0].yy}"/>`
+ +(note?linesSVG(notes,89,y+yy+12,'v2-table-note',26,20.88):''),'table',title+'\n'+rows.map(r=>r.join(' | ')).join('\n'));
+}
+
 function diagram(kind){if(kind==='grouping'){add(120,y=>['Flowers','Stem','Food','Habitat'].map((s,i)=>label(s,198+i*217,y+44,'se-heading','middle')).join('')+`<line class="se-accent" x1="89" x2="963" y1="${y+64}" y2="${y+64}"/>`+label('Some ways of grouping',526,y+98,'se-caption','middle'),'figure','Some ways of grouping');}
 if(kind==='venn'){add(220,y=>`<ellipse class="se-accent" cx="436" cy="${y+100}" rx="150" ry="84"/><ellipse class="se-accent" cx="616" cy="${y+100}" rx="150" ry="84"/>`+label('A',374,y+106,'se-heading','middle')+label('C',526,y+106,'se-heading','middle')+label('B',677,y+106,'se-heading','middle')+label('Water',365,y+207,'se-caption','middle')+label('Land',686,y+207,'se-caption','middle'),'figure','Habitat diagram A water, B land, C both');}
 if(kind==='flow'){add(205,y=>`<rect class="se-process" x="319" y="${y+8}" width="414" height="55" rx="10"/>`+label('Reticulate venation?',526,y+42,'se-caption','middle')+`<path class="se-accent" d="M430 ${y+63}v49H350v40m-5 -6 5 6 5 -6M622 ${y+63}v49h80v40m-5 -6 5 6 5 -6"/>`+label('Yes',400,y+97,'se-caption')+label('No',647,y+97,'se-caption')+label('A',350,y+182,'se-heading','middle')+label('B',702,y+182,'se-heading','middle'),'figure','Reticulate venation? Yes A, No B');}}
@@ -134,5 +178,16 @@ if(b.startsWith('- ')){for(const item of b.split(/\r?\n(?=- )/))para('• '+item
 para(b);
 }}
 
-await fs.writeFile('assets/design-history/science-v2/atoms.json',JSON.stringify(atoms.map(({h,type,text,sourcePage,artKey})=>({h,type,text,sourcePage,artKey})),null,2));
-await (await import('./layout-science-ch02-v2.mjs')).composeV2(atoms,{wrap,linesSVG,label,dir,E});
+for(const a of atoms){
+ const c=a.type==='body'?comparison(a.text):null;
+ if(c){a.render=c.render;a.h=c.h;a.comparisonTitle=c.title;}
+ if(a.text.startsWith('Suppose a leaf pattern is clear')){
+  refinementLedger.push({before:a.text,after:[seedThinking],reason:'Prediction versus observation thinking pause.'});
+  Object.assign(a,think(seedThinking),{type:'panel',revisedText:seedThinking});
+ }
+ // Keep the recording direction with its own table, not any preceding paragraph.
+ if(a.type==='body'&&/^Before the visit, copy/.test(a.text))a.keepNext=true;
+}
+await fs.writeFile('assets/design-history/science-v2/atoms.json',JSON.stringify(atoms.map(({id,h,type,text,sourcePage,artKey,comparisonTitle,revisedText,teachingPoints})=>({id,h,type,text,sourcePage,artKey,comparisonTitle,revisedText,teachingPoints})),null,2));
+await (await import('./layout-science-ch02-v2.mjs')).composeV2(atoms,{wrap,linesSVG,label,dir,E,comparison,think,plantThinking,conservationThinking,refinementLedger,reviseProse:s=>reviseV2(s,proseEdits,refinementLedger)});
+await fs.writeFile('assets/design-history/science-v2/refinement-ledger.json',JSON.stringify(refinementLedger,null,2));
