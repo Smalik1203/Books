@@ -1,0 +1,285 @@
+{
+  "scope": "Class 7 Science Chapters 6 and 7 only",
+  "validation": "assets/design-history/science-g7-figure-upgrade/ch06-07-validation.json",
+  "scopedVerifier": "build/verify-science-g7-ch06-07-figures.py",
+  "review": {
+    "chapter6StandardPages": [3, 13],
+    "chapter7StandardPages": [2, 5, 6, 7, 9, 12, 13, 17, 18, 19],
+    "finalCandleCorrection": "Strip flame is just below the free end on p2 and midway between II/III on p17; proportional candle height 124, top 66, numerals above bar at 43; diagram heights unchanged. Cup flame remains well below paper.",
+    "pdfRenders": ["build/_class7-ch06-review/figure-upgrade", "build/_class7-ch07-review/figure-upgrade"],
+    "preservation": "All page text multiplicities and page-map geometry unchanged. Label-only DOM reorderings on Ch7 p13/p17 accepted by parent. All 19 task-protected files unchanged.",
+    "remaining": "Parent whole-eight-chapter preservation/PDF verification. Legacy global hash-baseline verifiers were not run."
+  },
+  "method": "Built-in image_gen; native RGBA PNG copied without resampling; live SVG text and analytical arrows",
+  "styleReference": "assets/design-history/science-g7-people-style/style-reference.png",
+  "assets": [
+    {
+      "key": "neck",
+      "chapter": 6,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. An anatomically plausible simplified FRONT VIEW educational cutaway of the larynx, thyroid gland and upper trachea, centred vertically. Show pale blue-grey shield-shaped thyroid cartilage of the larynx at top, narrowing into cricoid cartilage then a continuous ringed pale trachea below; two muted terracotta thyroid lobes lie on either side of the UPPER trachea, joined by their small isthmus in front of the trachea below the larynx. Distinct larynx and thyroid gland, no floating detached parts. Small softly painted cutaway neck/shoulder outline framing organs, simplified warm tan skin sides, no head or face, no photorealistic human, no gore. Thyroid is normal size. Frontal symmetric diagram, easy label access left/right. No extra organs, no text.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-94891e35-994a-40fa-acd5-fd490343a3ba.png",
+      "file": "figures/class-7/science/ch06/apparatus-neck.png",
+      "pixels": [
+        1312,
+        1199
+      ],
+      "sha256": "6448e3638471b059d18fc665217a9ac746e4632bac4f282e68612213d88872b0",
+      "transparentPercent": 46.23,
+      "alphaBounds": [
+        34,
+        53,
+        1280,
+        1156
+      ]
+    },
+    {
+      "key": "airway",
+      "chapter": 6,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Two isolated simplified anatomically plausible airway cross-sections side by side, SAME outside diameter and scale, both circular front cross-sections of small bronchial tubes. LEFT: thin softly pink epithelial lining and a wide empty central lumen. RIGHT: thicker swollen pink inner wall and a clearly narrower central lumen. Recognizable soft living tissue in warm painted 2D educational style, restrained layered walls, pale pink/muted terracotta, absolutely no gore or photo realism. Lumens empty pale interior or true transparent opening, no arrows, no smoke, no blackened lungs. Minimal simplified model, do not add alveoli or elaborate microscopic anatomy. Both rings centred at same height, ample gap, no labels.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-efc31571-2389-46e2-ad80-f62bc6ddbf2e.png",
+      "file": "figures/class-7/science/ch06/apparatus-airway.png",
+      "pixels": [
+        1774,
+        887
+      ],
+      "sha256": "18b420a050f4fd23c294e03a6036e897460959a89df98a18d15025bc39867d09",
+      "transparentPercent": 51.77,
+      "alphaBounds": [
+        65,
+        54,
+        1728,
+        831
+      ]
+    },
+    {
+      "key": "strip",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. A recognizable horizontal silver METAL STRIP clamped at its RIGHT end to a laboratory retort stand with a real clamp and boss head, upright rod and sturdy flat base. Exactly FOUR small identical steel pins hang vertically from four similar pea-size beads of pale wax on the underside of the strip, evenly spaced from left to right. All pins still attached. The strip is long, thin, level, free at LEFT. Orthographic near-front view, subtle painted metal highlights, minimal perspective, fully visible. DO NOT draw any candle or flame or tray: these are composited separately at controlled positions. NO Roman numerals or labels. Stand occupies right side, horizontal strip extends to left. Landscape composition.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-02d84256-d602-4e2a-a737-99a0a14f6b61.png",
+      "file": "figures/class-7/science/ch07/apparatus-strip.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "e82ea865f9c1aab6842dc807f2a4cf1709e69b045e907aec5b55d67bdd9f8551",
+      "transparentPercent": 82.7,
+      "alphaBounds": [
+        36,
+        19,
+        1504,
+        1001
+      ]
+    },
+    {
+      "key": "cups",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. A balanced warm-air experiment apparatus alone. One horizontal wooden ruler-like stick WITHOUT markings is suspended from a fine central vertical thread at its exact midpoint. From equal-length threads at both ends hang TWO identical INVERTED PAPER CUPS, both at exactly the same level, CLOSED narrow bases at top attached to threads, OPEN wide mouths visibly facing DOWN. Pale ivory paper with painted rims. Starting arrangement, stick perfectly level, no movement, no arrows, no heating shown, NO CANDLE. Entire suspension fits in a wide landscape composition, cups separated by a generous gap. Simple slight front perspective makes the open undersides recognizable. No setting or background.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-0d1e00f7-cf8c-4c6c-bd13-5a8e8ea3ce96.png",
+      "file": "figures/class-7/science/ch07/apparatus-cups.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "81d5b898c8df959ff445290be667910ceeb000ca02493188fd7c8c1f6cce1659",
+      "transparentPercent": 80.94,
+      "alphaBounds": [
+        42,
+        0,
+        1494,
+        874
+      ]
+    },
+    {
+      "key": "beaker",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Heat-convection apparatus before heating. A recognizable clear heat-resistant laboratory BEAKER, with a pouring spout and rim, half-filled with still colourless water, stands securely on square wire gauze over a THREE-legged tripod. A slender hollow drinking straw guide enters near top left of beaker, slopes slightly down right and ends at the centre of the inner base. A single tiny dark purple potassium permanganate crystal lies exactly at that base centre. Clear water with NO purple streak or cloud, NO flow arrows, NO bubbles, not boiling. Beneath the centre of the gauze is one small ivory candle on a heatproof saucer, WICK UNLIT, absolutely NO flame. Slight front view with clear transparent glass wall so water level and grain visible. Educational painted 2D, recognizable real gauze grid and tripod legs. No marks or text on beaker.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-79fa3128-121c-46f9-903d-13ac386f4331.png",
+      "file": "figures/class-7/science/ch07/apparatus-beaker.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "52aa0af6b408103da64c4cb53407119d96891b0ec25fd449174d1062e4831b57",
+      "transparentPercent": 77.87,
+      "alphaBounds": [
+        415,
+        12,
+        1118,
+        987
+      ]
+    },
+    {
+      "key": "bowls",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Side-by-side matched soil and water heating comparison. TWO identical shallow laboratory bowls seen in slight front perspective. LEFT bowl half-filled with textured dry brown soil. RIGHT bowl half-filled to the same depth with clear pale-blue water. Each bowl has its OWN upright laboratory thermometer supported by a real clamp and separate small retort stand. Thermometers have red non-mercury liquid columns, small line scale ticks but NO NUMBERS OR LETTERS. Each bulb is immersed at the same relative depth, suspended CLEAR OF THE BASE AND SIDES. Use a discreet sectional front cutaway in each bowl so each bulb and clearance can be seen, soil does not completely hide left bulb. Starting readings visually equal, NO sunlight or outcomes. Whole two setups same size, same baseline, generous gap. No labels, no background.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-cea9f200-a9c8-4432-9994-20147d8db92f.png",
+      "file": "figures/class-7/science/ch07/apparatus-bowls.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "dc509ace8a956f4a17b6878cc98c58f2d7971fc544f39e7b6de78feeeb81b138",
+      "transparentPercent": 66.16,
+      "alphaBounds": [
+        66,
+        54,
+        1471,
+        914
+      ]
+    },
+    {
+      "key": "seepage",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Three soil infiltration setups in one evenly spaced horizontal row, initial arrangement before pouring. THREE identical cut-off transparent plastic bottle TOP HALVES, inverted with screw necks pointing down, recognizable curved bottle shoulders, cut wide openings at top and screw CAPS at bottom, each cap with the same single tiny outlet hole. Each bottle half supported securely by a simple real stand over its own empty graduated clear collecting beaker (scale ticks allowed, NO letters/numbers). Equal depths of material: LEFT smooth fine clay, MIDDLE fine sand, RIGHT coarse rounded gravel. All collecting beakers EMPTY; no drops, water streams, puddles, arrows or result levels. No water yet poured. Safe covered cut edges. No labels or 200 mL text (added live). Painted 2D material textures, transparent background.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-2de9b14a-3f83-4a6a-b4b5-a3a48dc32dbf.png",
+      "file": "figures/class-7/science/ch07/apparatus-seepage.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "8efbfdfd985e5006913565fc4d8855bdb9aee33a8367090f43b68ec9cf55bcda",
+      "transparentPercent": 44.18,
+      "alphaBounds": [
+        66,
+        102,
+        1473,
+        921
+      ]
+    },
+    {
+      "key": "candle",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. One short ivory candle with a visible black wick and a small upright orange flame, sitting in a low shallow terracotta heatproof saucer. Simple hand-painted 2D object, front view. Whole candle and dish visible. Hard clean transparent cutout silhouette, absolutely no shadow or glow outside the flame, no haze or soft coloured backdrop. Small flame, ordinary wax cylinder. Portrait object on transparent canvas.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-69cf3911-9e77-459f-8ea6-5f8c8bc56afc.png",
+      "file": "figures/class-7/science/ch07/apparatus-candle.png",
+      "pixels": [
+        1145,
+        1374
+      ],
+      "sha256": "610427d84baa71f2b82cf175d59a7c361f0af8544acfe38c8b63d05c3c64ed8a",
+      "transparentPercent": 68.2,
+      "alphaBounds": [
+        83,
+        186,
+        1062,
+        1217
+      ]
+    },
+    {
+      "key": "pan",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. One small recognizable empty silver metal saucepan with a single long brown wooden insulating handle extending diagonally UP LEFT. Side/front three-quarter view, open elliptical rim, rounded metal base, credible visible junction between pan and wooden handle. Simple warm hand-painted 2D educational illustration, clean silhouette with NO shadow or glow outside object. No food, stove, lid, steam, flame, marks or labels. Horizontal composition.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-09d94284-ae1e-4291-927a-81d24a12e3ee.png",
+      "file": "figures/class-7/science/ch07/apparatus-pan.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "72df203aba90e9360c8015a0218a6d41b9d76803bf64dd71d9527dac5740033b",
+      "transparentPercent": 64.67,
+      "alphaBounds": [
+        33,
+        84,
+        1501,
+        940
+      ]
+    },
+    {
+      "key": "beaker-flow",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. A single clear laboratory beaker with spout and rim, half full of clear still water. Wide side view for a heat convection diagram. No tripod, straw, crystal, candle, flame, bubbles or motion streaks. The water volume must be clearly visible with ample blank interior for live arrows to be added later. Quiet pale blue translucent liquid, recognizable painted glass edge reflections. Gentle hand-painted 2D not photoreal. Hard clean cutout silhouette, NO glow or shadow outside object. Transparent background.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-309a0dc0-8477-4b90-a28f-c38f7d7da14b.png",
+      "file": "figures/class-7/science/ch07/apparatus-beaker-flow.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "e5100976022b1b726af3207be143ce009cb498df8e3ab498647fbcd437af8530",
+      "transparentPercent": 50.8,
+      "alphaBounds": [
+        257,
+        64,
+        1246,
+        962
+      ]
+    },
+    {
+      "key": "test-tubes",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Two matched large clear test tubes, side by side, both tilted 40 degrees from vertical with OPEN mouth at UPPER RIGHT and round closed bottom at LOWER LEFT. Same scale, SAME half-full water volume, perfectly HORIZONTAL water surface across each slanted tube. LEFT tube: slim non-mercury laboratory thermometer enters through open mouth along tube axis; red bulb just under water surface, well ABOVE rounded bottom. RIGHT tube: longer matching thermometer enters through mouth along axis; red bulb deep in water near round bottom but clearly NOT touching glass. Thermometers have tiny scale ticks but NO numbers/letters. Both red columns short/equal initial indication, no results. NO candles, flame or supports (these added live separately), no arrows. Hand-painted 2D educational glass cutaways. Crisp transparent cutout, NO shadow/glow outside silhouettes. Generous separation between tubes.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-9bf8cc6f-8b3c-421f-b0a4-3b2c9756d228.png",
+      "file": "figures/class-7/science/ch07/apparatus-test-tubes.png",
+      "revisionPrompt": "Precise local edit of attached 1536x1024 transparent two-test-tube illustration. On RIGHT thermometer ONLY: erase the UPPER disconnected RED segment from approximately pixel (1170,492) to (1204,452), replacing it with the pale empty thermometer capillary. Preserve the LOWER red bulb centered at approximately (980,824) and its attached short red column ending near (1040,726), absolutely keep that bulb LOW near the bottom of the right tube. Do not move the lower bulb upwards. Keep the long continuous transparent thermometer shaft running all the way from open mouth to the bottom bulb. Left thermometer unchanged. Preserve all other pixels/objects, equal horizontal water levels, no added labels or arrows, genuine alpha background. The two bulb heights MUST remain different: left about y550; right about y824.",
+      "originalSource": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-3d2f8d11-d88b-4685-a73c-d4b66805d189.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "e76b19b453bd8c1cd496682615a40cd03072776d9c4c410e7e6855204cf8228a",
+      "transparentPercent": 78.63,
+      "alphaBounds": [
+        141,
+        80,
+        1445,
+        940
+      ]
+    },
+    {
+      "key": "spiral",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. A paper spiral craft in two stages side-by-side. LEFT: flat round pale ochre paper disc with a dark thin spiral cut guideline winding smoothly from centre to edge, top view. RIGHT: the same paper cut into a broad continuous ribbon spiral and suspended by a thin vertical thread from its CENTRE, naturally hanging down as a widening gently curled paper helix, clear finite ribbon WIDTH and painted paper texture, not a single wavy wire. Upright static craft, no wind, no rotation arrows, no candle or heat source, no hands or scissors. Genuine transparent background, crisp cutout, no shadow/glow. Painted 2D.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-a501aabf-5ee1-49b5-9277-45adbb79ff32.png",
+      "file": "figures/class-7/science/ch07/apparatus-spiral.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "4d738648290d7ad5407b81c9f2a2a0de28cbbfa46e5034eba51c4722448f50ee",
+      "transparentPercent": 56.24,
+      "alphaBounds": [
+        66,
+        0,
+        1492,
+        930
+      ]
+    },
+    {
+      "key": "coast",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Very wide low isolated coastal landscape strip for a textbook diagram, view looking along a section across a coast. Calm recognizable blue sea on LEFT half, sandy shoreline at centre, gently rising green-brown LAND on RIGHT half with one tiny shrub. No mountains, people, boats, sun, moon, clouds, sky, arrows, text, or heat waves. Only the ground and sea form a shallow horizontal painted strip; fully transparent above and below. Both day and night diagrams will reuse this same asset with live arrows. Warm painted 2D. Make sea-land boundary precisely near centre.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-fb19b239-6c21-46bb-be0e-ee01377ef6af.png",
+      "file": "figures/class-7/science/ch07/apparatus-coast.png",
+      "pixels": [
+        2172,
+        724
+      ],
+      "sha256": "4166b1e77ac944bc01c0754752f696d4805b3f753b8e9a00d588cb294515db36",
+      "transparentPercent": 67.79,
+      "alphaBounds": [
+        24,
+        225,
+        2152,
+        647
+      ]
+    },
+    {
+      "key": "aquifer",
+      "chapter": 7,
+      "prompt": "Use case: scientific-educational. Create a warm painted 2D textbook illustration matching the gentle hand-painted gouache rendering and clear natural material textures of the attached STYLE REFERENCE ONLY. NOT a photograph, NOT a 3D render, NOT monochrome schematic line art. Foreground objects isolated on a genuinely transparent RGBA background, alpha zero outside all objects and through empty gaps. No white rectangle, no checkerboard baked in, no cast backdrop. Absolutely NO text, letters, numerals, labels, arrows, leader lines, logos or watermark. Live SVG labels and analytical arrows will be added separately. Keep all objects fully inside the canvas with a small transparent margin. Native resolution at least 1536x1024. Simplified educational earth CUTAWAY block, wide landscape, flat front face. Thin green grass on the slightly uneven top surface. Upper half: tan unsaturated soil and permeable sediment with small grains and connected pore openings. Lower half: SAME porous sediment texture and small stones, subtly blue tinted water occupying the interconnected pores, clearly NOT a solid blue underground lake or hollow cavern. Horizontal boundary midway marks top of saturation, will be labelled live. Thin dark less-permeable rock layer across bottom. On RIGHT of centre a slender vertical grey well casing enters from ground surface, reaches below the saturation boundary but stays above the dark bottom layer; small practical hand-pump head above ground. No arrows, no words, no labels, no cavern or open water pool. All analytical arrows and labels added later. Warm painted 2D cutaway, true transparent background outside block.",
+      "source": "C:\\Users\\ragha\\.codex\\generated_images\\01a0c9d8-05b0-7df0-94f8-5a7005a2564f\\exec-edaddd18-e888-41fe-b88d-37b362fc1c0c.png",
+      "file": "figures/class-7/science/ch07/apparatus-aquifer.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "940da96743a06be86159c2ea3f8b78c0e8c5060fed586b9a2da47b2f64676ac0",
+      "transparentPercent": 25.25,
+      "alphaBounds": [
+        24,
+        22,
+        1513,
+        988
+      ]
+    }
+  ]
+}

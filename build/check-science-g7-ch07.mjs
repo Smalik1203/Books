@@ -38,7 +38,8 @@ for(const p of [...coverage.points,...(coverage.additions||[]),...coverage.corre
 const map=JSON.parse(await fs.readFile(history+'/page-map.json','utf8'));
 for(const p of map){assert.ok(p.end<=1415,'No footer clipping');for(const b of (p.blocks||[]).filter(b=>b.type==='heading'))assert.ok(p.end-b.bottom>=160,'Heading has five lines: '+b.id);}
 assert.ok(!/____|textLength=|lengthAdjust=|--head|--tail|style=/.test(all),'No writing lines, stretched type, split panels or inline style');
-const assets=JSON.parse(await fs.readFile(history+'/artwork.json','utf8'));assert.equal(assets.length,5);
+const assets=JSON.parse(await fs.readFile(history+'/artwork.json','utf8'));assert.equal(assets.length,17);
+assert.deepEqual(assets.filter(a=>a.key.startsWith('apparatus-')).map(a=>a.key).sort(),['aquifer','beaker','beaker-flow','bowls','candle','coast','cups','pan','seepage','spiral','strip','test-tubes'].map(k=>'apparatus-'+k).sort());
 for(const a of assets){assert.equal(createHash('sha256').update(await fs.readFile(a.file)).digest('hex'),a.sha256);assert.ok(all.includes(a.file));}
 for(const m of all.matchAll(/<image\b[^>]*href="([^"]+)"/g)){assert.ok(m[1].endsWith('.png')&&m[1].includes('/class-7/science/ch07/'));await fs.access(path.resolve('build/class-7',m[1]));}
 const audit=JSON.parse(await fs.readFile(history+'/render-audit.json','utf8'));
@@ -47,4 +48,4 @@ for(const p of lessonPages)if(p.occupiedPercent<88)assert.ok(p.shortPageExceptio
 const mean=lessonPages.reduce((a,p)=>a+p.occupiedPercent,0)/lessonPages.length;
 assert.ok(mean>=88,'Mean occupied lesson height');
 await fs.writeFile(history+'/occupancy-summary.json',JSON.stringify({meanLessonOccupancy:mean,shortPages:lessonPages.filter(p=>p.occupiedPercent<88).map(p=>({page:p.page,occupiedPercent:p.occupiedPercent,...(map[p.page-1].protectedNext===null?{reason:'Lesson ends before the dedicated glossary and summary; do not merge the reference sequence into the lesson.'}:p.shortPageException)}))},null,2));
-console.log(`Chapter 7 checks passed: ${files.length} pages, all 5 source activities, 10 questions, 3 projects, 5 transparent assets. Mean lesson occupancy ${mean.toFixed(1)}%.`);
+console.log(`Chapter 7 checks passed: ${files.length} pages, all 5 source activities, 10 questions, 3 projects, ${assets.length} transparent assets. Mean lesson occupancy ${mean.toFixed(1)}%.`);

@@ -1,0 +1,423 @@
+{
+  "status": "complete",
+  "scope": [
+    "class-7/ch04-metals-non-metals",
+    "class-7/ch05-physical-chemical-changes"
+  ],
+  "tool": "built-in image_gen",
+  "styleReference": "assets/design-history/science-g7-people-style/style-reference.png",
+  "policy": {
+    "newAssetsOnly": true,
+    "noHumans": true,
+    "noBakedLabels": true,
+    "keepFigureHeights": true,
+    "keepCaptions": true,
+    "noSharedCSSChanges": true
+  },
+  "assets": [
+    {
+      "key": "apparatus-tester",
+      "chapter": 4,
+      "prompt": "Use case: scientific-educational. Make a new warm painted 2D textbook apparatus illustration, using the provided image ONLY as a painting-style reference. No humans, hands, photos, photorealism, 3D render, labels, words, numbers, symbols, logos, arrows or background. Real transparent PNG with alpha. A wide low-voltage classroom conductivity tester, seen slightly from above but with an easily traced single circuit. Upper left: one cylindrical dry cell lying horizontally in a simple single-cell holder, positive raised terminal on its left end. Upper right: a small clear incandescent torch bulb in a socket with TWO separate visible screw terminals. Lower centre: a short plain grey rectangular solid test sample bridging TWO separate crocodile clips, one firmly gripping each end. Exactly THREE insulated wires: cell positive terminal to LEFT sample clip; RIGHT sample clip to one lamp-holder terminal; other lamp-holder terminal to cell negative terminal. These form ONE SERIES LOOP through cell, lamp and sample. No parallel route, no wire joining the two cell terminals directly, no touching clip jaws across the gap. No switch, no additional components. Lamp filament visible but NOT glowing; sample unchanged; no pre-shown test result. Hardware warm ochre/red-brown, copper and steel, softly painted edges, clear recognizable objects. Spread components apart in a broad horizontal composition with battery in upper-left third, bulb upper-right third, sample and clips below middle. Entire apparatus visible, transparent outside artwork, minimal margins, image at least 1536 by 1024.",
+      "generated": "exec-d711f19f-92d2-4a35-b42e-f04dfd0b1cbf.png",
+      "diagrams": [
+        "tester"
+      ],
+      "invariants": [
+        "One 1.5 V cell, correctly rated incandescent lamp, sample and three wires in one series loop",
+        "Separate lamp terminals; clips contact opposite sample ends",
+        "No direct wire across cell; no pre-shown glow"
+      ],
+      "generatedPath": "C:/Users/ragha/.codex/generated_images/01a0c9d8-0468-7362-a39c-5628b3c27a62/exec-d711f19f-92d2-4a35-b42e-f04dfd0b1cbf.png",
+      "file": "figures/class-7/science/ch04/apparatus-tester.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "192804d6e842f13a832f8dd275745850f1b465612507121fcb86df8e24a6b1f3",
+      "transparentPercent": 77.7,
+      "changedPages": [
+        9
+      ],
+      "pageIndicesZeroBased": [
+        8
+      ]
+    },
+    {
+      "key": "apparatus-rust",
+      "chapter": 4,
+      "prompt": "Use case: scientific-educational. Create NEW authentic warm painted 2D equipment artwork matching the provided reference's children's textbook painting style ONLY. No people or hands. No photograph, no photorealistic rendering. Transparent PNG alpha background. Three identical clear wide-mouthed glass jars in one horizontal row, front elevation, well separated. Each jar contains exactly ONE identical straight bright clean steel iron nail suspended vertically from a fine thread. Left jar: closed tight lid; a shallow layer of small dry silica-gel granules at bottom; the nail hangs well ABOVE the granules in clear air; NO liquid. Centre jar: closed tight lid; clear colourless water fills most of jar; a THIN continuous pale golden oil layer floating on top of water, distinct from water; the entire metal nail INCLUDING its head is completely BELOW water and oil, suspended by thread from lid. Right jar: OPEN top, no lid; clear water fills lower third; one clean nail suspended from an unobtrusive wooden crosspiece spanning mouth, upper part in air and lower half in water. All nails are clean silver before experiment, no rust or brown spots. Same jar size, same nail size, realistic visibility through painted transparent glass. No bubbles, steam, glowing effects, no arrows, text, letters, labels, numbers, captions or markings anywhere. Preserve transparent background, no table or scene. Tall jar proportions, generous separation for live labels added outside later. At least 1536x1024.\nCRITICAL COMPOSITION REVISION: use SHORT SQUAT wide jars whose total height INCLUDING lid is about equal to their width, not tall jars. Short clean nails fitting comfortably inside. Very wide panoramic canvas approximately 3:1. Place jars with centres at one-sixth, one-half and five-sixths of image width. All scientific details unchanged. Keep bottoms on same baseline. This must fit a wide, shallow printed figure with captions underneath. Transparent output.",
+      "generated": "exec-2dc20807-9b4f-45a8-916e-c6634762ebdf.png",
+      "diagrams": [
+        "rust"
+      ],
+      "invariants": [
+        "A capped with silica gel and dry suspended nail",
+        "B capped, entire nail submerged in boiled cooled water below continuous oil layer",
+        "C open, nail partly immersed",
+        "All nails initially clean; limited oxygen does not mean oxygen absent"
+      ],
+      "discarded": [
+        {
+          "generated": "exec-ec2589a6-53c3-454e-afc2-7f89843066e2.png",
+          "prompt": "Use case: scientific-educational. Create NEW authentic warm painted 2D equipment artwork matching the provided reference's children's textbook painting style ONLY. No people or hands. No photograph, no photorealistic rendering. Transparent PNG alpha background. Three identical clear wide-mouthed glass jars in one horizontal row, front elevation, well separated. Each jar contains exactly ONE identical straight bright clean steel iron nail suspended vertically from a fine thread. Left jar: closed tight lid; a shallow layer of small dry silica-gel granules at bottom; the nail hangs well ABOVE the granules in clear air; NO liquid. Centre jar: closed tight lid; clear colourless water fills most of jar; a THIN continuous pale golden oil layer floating on top of water, distinct from water; the entire metal nail INCLUDING its head is completely BELOW water and oil, suspended by thread from lid. Right jar: OPEN top, no lid; clear water fills lower third; one clean nail suspended from an unobtrusive wooden crosspiece spanning mouth, upper part in air and lower half in water. All nails are clean silver before experiment, no rust or brown spots. Same jar size, same nail size, realistic visibility through painted transparent glass. No bubbles, steam, glowing effects, no arrows, text, letters, labels, numbers, captions or markings anywhere. Preserve transparent background, no table or scene. Tall jar proportions, generous separation for live labels added outside later. At least 1536x1024.",
+          "reason": "Tall proportions unsuitable for fixed figure height"
+        }
+      ],
+      "generatedPath": "C:/Users/ragha/.codex/generated_images/01a0c9d8-0468-7362-a39c-5628b3c27a62/exec-2dc20807-9b4f-45a8-916e-c6634762ebdf.png",
+      "file": "figures/class-7/science/ch04/apparatus-rust.png",
+      "pixels": [
+        2172,
+        724
+      ],
+      "sha256": "8c7545b8da58e24b001b14e7a926ff4d92992985139b61595929534550b22c7a",
+      "transparentPercent": 47.2,
+      "changedPages": [
+        11
+      ],
+      "pageIndicesZeroBased": [
+        10
+      ]
+    },
+    {
+      "key": "apparatus-gas-pair",
+      "chapter": 5,
+      "prompt": "Use case: scientific-educational. Create new warm painted 2D school-science apparatus illustration in reference painting style ONLY; no humans/hands/photos, no photorealism or 3D. True transparent PNG alpha background. Wide FRONT VIEW of a gas-generation setup before testing: LEFT a small clear conical glass flask containing a shallow amount of colourless clear liquid, fitted with a snug single-hole rubber stopper. RIGHT an OPEN clear glass receiver beaker containing a shallow amount of colourless clear liquid. A SINGLE continuous gently bent glass delivery tube exits through the left stopper. Its LEFT end terminates in the AIR SPACE above the flask liquid (must NOT dip in left liquid). Tube rises above stopper, extends across an ample horizontal gap, then turns down through the OPEN right beaker mouth. Its RIGHT end clearly dips below right liquid surface but stops above the beaker bottom. Receiver mouth is open around tube, never sealed. Exactly two vessels and one delivery tube; no other opening, extra tube, wire, bubbles, reaction foam, milkiness, precipitate, powder, gas arrows, results or flames. Neither vessel contains a visible pre-shown reaction. Clear liquid supports reuse for several comparison mixtures with live labels supplied later. Slight warm glass-edge shading, simple wooden small foot if needed but no bench/background. Recognizable scientific equipment, not line-art icons. No baked text, numbers, letters, labels, watermarks or measurement ticks. Composition about twice as wide as tall, flask and receiver same overall visual height excluding tube, complete apparatus visible. At least 1536x1024.",
+      "generated": "exec-643e21fa-a80e-43c6-bdc0-4d22f72bdb3d.png",
+      "diagrams": [
+        "gas-test",
+        "four-tests"
+      ],
+      "invariants": [
+        "Generator sealed around one delivery tube; inlet above generator liquid",
+        "Receiver open; outlet beneath clear receiver liquid",
+        "No bubbles or milkiness; all four mixtures distinguished by original live text"
+      ],
+      "generatedPath": "C:/Users/ragha/.codex/generated_images/01a0c9d8-0468-7362-a39c-5628b3c27a62/exec-643e21fa-a80e-43c6-bdc0-4d22f72bdb3d.png",
+      "file": "figures/class-7/science/ch05/apparatus-gas-pair.png",
+      "pixels": [
+        1774,
+        887
+      ],
+      "sha256": "223b4c9f1c1d0a4e54ffff42146947bb3f223e8c94e9f058ae05663ce761a432",
+      "transparentPercent": 75.2,
+      "changedPages": [
+        5,
+        18
+      ],
+      "pageIndicesZeroBased": [
+        4,
+        17
+      ]
+    },
+    {
+      "key": "apparatus-exhaled",
+      "chapter": 5,
+      "prompt": "Use case: scientific-educational. New warm painted 2D science apparatus cutout using supplied image ONLY for painted storybook style; absolutely NO humans, hands, photo texture or photorealism. Actual transparent PNG alpha, no page/background. Side view: at upper left a large transparent NEEDLE-FREE plastic syringe held horizontally, plunger extended toward left, smooth short blunt outlet to right, contains air only, NO needle and NO liquid inside. One continuous flexible transparent tube attaches firmly to the syringe outlet, curves down into an OPEN clear glass beaker on right. The beaker contains a small amount of clear COLOURLESS liquid in its lower third. Tube end dips beneath liquid surface and stops above bottom, clearly visible. Beaker is open around tube, no lid or stopper. Exactly one syringe, one flexible tube, one open beaker. No bubbles, cloudiness, steam, reaction result, mouthpiece, lips or body parts. This is apparatus before introducing collected exhaled air; image used twice for tap-water control and fresh lime-water test. Painted warm colours and softly shaded glass, recognizable plunger/thumb flange/barrel and uncluttered connection. No labels, lettering, numbers, ticks, logos, arrows or captions. Compact wide composition, all apparatus visible, at least 1536x1024.",
+      "editPrompt": "Edit the provided painted apparatus image only. Correct the needle-free syringe so it visibly contains collected AIR: move the black rubber piston from the far-right nozzle end to just inside the left barrel entrance next to its finger flange, with the plunger pulled well out toward the left. The clear barrel to the RIGHT of the piston must be empty air all the way to the nozzle, with NO long solid plunger rod in that air chamber. Keep the same attached flexible tube and open beaker with clear liquid, tube ending beneath surface, no bubbles, no needle, no people, no labels. Keep painting style, warm colours and all other geometry. Remove background/halo completely through actual alpha; outside object silhouettes fully transparent. Do not bake any lettering. At least 1536x1024 PNG.",
+      "generated": "exec-b74a3121-33af-4e5a-9f51-9b025e4b14b1.png",
+      "diagrams": [
+        "exhaled"
+      ],
+      "invariants": [
+        "Needle-free syringe contains air with plunger withdrawn",
+        "Separate equipment repeated for control and lime-water test",
+        "Open receiver, tube beneath clear liquid, no result"
+      ],
+      "discarded": [
+        {
+          "generated": "exec-8ba5ad60-2ce8-46a9-9f9b-fd919672d7ee.png",
+          "reason": "Piston at nozzle did not show an air-filled syringe"
+        }
+      ],
+      "generatedPath": "C:/Users/ragha/.codex/generated_images/01a0c9d8-0468-7362-a39c-5628b3c27a62/exec-b74a3121-33af-4e5a-9f51-9b025e4b14b1.png",
+      "file": "figures/class-7/science/ch05/apparatus-exhaled.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "9b11e70dd4c89876c5cccfdefae5cdf2e30a307569e880782a1d336c8977e426",
+      "transparentPercent": 79.9,
+      "changedPages": [
+        4
+      ],
+      "pageIndicesZeroBased": [
+        3
+      ]
+    },
+    {
+      "key": "apparatus-focused-light",
+      "chapter": 5,
+      "prompt": "Use case: scientific-educational. Create a NEW authentic painted 2D school-science apparatus cutout matching the supplied reference's warm detailed illustration medium ONLY. Transparent PNG alpha, no scene or background, no humans, hands, photography, photorealistic surfaces or 3D style. A large handheld convex magnifying glass held HORIZONTALLY ABOVE a small clean rectangular piece of off-white paper lying flat at the centre of a shallow dark-grey heatproof metal tray. SIDE-OBLIQUE view makes the circular lens appear as a broad horizontal ellipse, thin metal rim and clear glass with subtle pale-blue edge; its wooden handle extends to the RIGHT, horizontal, completely visible. Glass centre lies directly above paper centre. Large empty transparent air gap between lens and tray, about one lens diameter. Tray at bottom, wide enough to clearly support the small paper. No stand, no hand. Clean paper, no charring, smoke, flame, glowing spot or result. Do not draw light beams; precise teaching rays will be added as live SVG over artwork. No sunlight icon, text, numbers, labels, logos, or arrows. Entire lens, handle, paper and tray visible. Balanced centered arrangement with lens in upper third and tray lower third, minimal outside margins, at least 1536x1024. Outside the actual object edges every pixel must be fully transparent: NO soft glow, haze, backdrop, shadow wash or halo.",
+      "generated": "exec-95ef79c9-d5c8-4454-b684-d9c15a3bf671.png",
+      "diagrams": [
+        "focused-light"
+      ],
+      "invariants": [
+        "Convex lens over small clean paper piece on heatproof tray",
+        "Live parallel rays converge on paper",
+        "No people, flames, smoke or charring; teacher-only caption preserved"
+      ],
+      "generatedPath": "C:/Users/ragha/.codex/generated_images/01a0c9d8-0468-7362-a39c-5628b3c27a62/exec-95ef79c9-d5c8-4454-b684-d9c15a3bf671.png",
+      "file": "figures/class-7/science/ch05/apparatus-focused-light.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "sha256": "7b2a917d4a8aae9235a60803eb9eb9d640003add181ebdf424d595b210c6452c",
+      "transparentPercent": 51.4,
+      "changedPages": [
+        9
+      ],
+      "pageIndicesZeroBased": [
+        8
+      ]
+    }
+  ],
+  "retained": {
+    "chapter4": [
+      "oxide-question"
+    ],
+    "chapter5": [
+      "fire-triangle",
+      "wax-path",
+      "landscape"
+    ]
+  },
+  "review": {
+    "changedPages": {
+      "ch04-metals-non-metals": [
+        "p009.html",
+        "p011.html"
+      ],
+      "ch05-physical-chemical-changes": [
+        "p004.html",
+        "p005.html",
+        "p009.html",
+        "p018.html"
+      ]
+    },
+    "tests": [
+      {
+        "command": "node build/compose-science-g7-ch04.mjs",
+        "status": "passed",
+        "pages": 23
+      },
+      {
+        "command": "node build/compose-science-g7-ch05.mjs",
+        "status": "passed",
+        "pages": 20
+      },
+      {
+        "command": "node build/build.mjs class-7/ch04-metals-non-metals --pdf --bleed",
+        "status": "passed; all pages fit"
+      },
+      {
+        "command": "node build/build.mjs class-7/ch05-physical-chemical-changes --pdf --bleed",
+        "status": "passed; all pages fit"
+      },
+      {
+        "command": "node build/check-science-g7-ch04.mjs",
+        "status": "passed; all content and safety assertions retained; 9 native assets"
+      },
+      {
+        "command": "node build/check-science-g7-ch05.mjs",
+        "status": "passed; all content and safety assertions retained; 10 native assets"
+      },
+      {
+        "command": "node build/audit-science-v2.mjs class-7/ch04-metals-non-metals assets/design-history/science-g7-ch04",
+        "status": "passed"
+      },
+      {
+        "command": "node build/audit-science-v2.mjs class-7/ch05-physical-chemical-changes assets/design-history/science-g7-ch05",
+        "status": "passed"
+      },
+      {
+        "command": "node build/check-reference-fit.mjs class-7/ch04-metals-non-metals --block=89,963",
+        "status": "passed"
+      },
+      {
+        "command": "node build/check-reference-fit.mjs class-7/ch05-physical-chemical-changes --block=89,963",
+        "status": "passed"
+      },
+      {
+        "command": "Current-task baseline comparison and diagram-factory comparison",
+        "status": "passed; complete per-page live text/order identical; all heights and labels identical; all conceptual diagram HTML byte-identical; only six source pages changed"
+      },
+      {
+        "command": "Scoped pypdf/Pillow verification",
+        "status": "passed; four PDFs, 23/20 pages, reading 189x272mm and bleed 209x292mm within 0.2mm tolerance, embedded non-Type3 SourceSerif4/SourceSans3, live text, native raster dimensions and soft alpha masks"
+      },
+      {
+        "command": "Legacy verify-science-g7-ch04.py and verify-science-g7-ch05.py",
+        "status": "asset and PDF assertions passed; stopped at historical cross-chapter preservation baselines",
+        "reason": "Baselines include prior and parent-owned Chapter 1/2/3/shared changes and the intentional Chapter 4 changes. No historical preservation assertion was removed. Scoped current-task baseline passes."
+      },
+      {
+        "command": "node build/build.mjs class-7/ch04-metals-non-metals --png",
+        "status": "passed; all pages fit; 23 standard full-sheet proofs regenerated"
+      },
+      {
+        "command": "node build/build.mjs class-7/ch05-physical-chemical-changes --png",
+        "status": "passed; all pages fit; 20 standard full-sheet proofs regenerated"
+      }
+    ],
+    "pdfVerification": [
+      {
+        "file": "build/class-7/ch04-metals-non-metals.pdf",
+        "pages": 23,
+        "mediaMM": [
+          189.0606596111111,
+          271.9493333333333
+        ],
+        "nativeTransparentPageResources": 9,
+        "fonts": [
+          "/AAAAAA+SourceSans3-Semibold",
+          "/BAAAAA+SourceSerif4-Regular",
+          "/CAAAAA+SourceSerif4-Bold",
+          "/DAAAAA+SourceSerif4-It",
+          "/EAAAAA+SourceSans3-Bold",
+          "/FAAAAA+SourceSans3-Regular"
+        ],
+        "sha256": "7f7119ca79b7235a2d57a0ad45fc2b8d3f404a713dba6a6113f89d855dba31c3",
+        "liveTextCharacters": 35856
+      },
+      {
+        "file": "build/class-7/ch04-metals-non-metals-bleed.pdf",
+        "pages": 23,
+        "mediaMM": [
+          208.8726737222222,
+          292.09999999999997
+        ],
+        "nativeTransparentPageResources": 9,
+        "fonts": [
+          "/AAAAAA+SourceSans3-Semibold",
+          "/BAAAAA+SourceSerif4-Regular",
+          "/CAAAAA+SourceSerif4-Bold",
+          "/DAAAAA+SourceSerif4-It",
+          "/EAAAAA+SourceSans3-Bold",
+          "/FAAAAA+SourceSans3-Regular"
+        ],
+        "sha256": "3619ff56277430760a72dd804af7c3192927cf1f6d42313950a92b09ec083eea",
+        "liveTextCharacters": 35856
+      },
+      {
+        "file": "build/class-7/ch05-physical-chemical-changes.pdf",
+        "pages": 20,
+        "mediaMM": [
+          189.0606596111111,
+          271.9493333333333
+        ],
+        "nativeTransparentPageResources": 11,
+        "fonts": [
+          "/AAAAAA+SourceSans3-Semibold",
+          "/BAAAAA+SourceSerif4-Regular",
+          "/CAAAAA+SourceSerif4-Bold",
+          "/DAAAAA+SourceSerif4-It",
+          "/EAAAAA+SourceSans3-Bold",
+          "/FAAAAA+SourceSans3-Regular"
+        ],
+        "sha256": "d66c6e53434fb21d43257207f7d5d4d987187db56b20abc6893bfb831cb47fa9",
+        "liveTextCharacters": 29090
+      },
+      {
+        "file": "build/class-7/ch05-physical-chemical-changes-bleed.pdf",
+        "pages": 20,
+        "mediaMM": [
+          208.8726737222222,
+          292.09999999999997
+        ],
+        "nativeTransparentPageResources": 11,
+        "fonts": [
+          "/AAAAAA+SourceSans3-Semibold",
+          "/BAAAAA+SourceSerif4-Regular",
+          "/CAAAAA+SourceSerif4-Bold",
+          "/DAAAAA+SourceSerif4-It",
+          "/EAAAAA+SourceSans3-Bold",
+          "/FAAAAA+SourceSans3-Regular"
+        ],
+        "sha256": "c8e741b1428def8ac0cc569770c93f64b946224808ecb5ffcf9a4e80f552599a",
+        "liveTextCharacters": 29090
+      }
+    ],
+    "preservation": {
+      "baseline": "ch04-05-before.json",
+      "allLiveTextIdentical": true,
+      "allDiagramHeightsIdentical": true,
+      "conceptualDiagramsByteIdentical": true,
+      "unchangedSourceFiles": 39,
+      "changedSourcePages": [
+        "pages/class-7/ch04-metals-non-metals/p009.html",
+        "pages/class-7/ch04-metals-non-metals/p011.html",
+        "pages/class-7/ch05-physical-chemical-changes/p004.html",
+        "pages/class-7/ch05-physical-chemical-changes/p005.html",
+        "pages/class-7/ch05-physical-chemical-changes/p009.html",
+        "pages/class-7/ch05-physical-chemical-changes/p018.html"
+      ]
+    },
+    "figureHeights": {
+      "chapter4": {
+        "tester": 368,
+        "rust": 456
+      },
+      "chapter5": {
+        "gas-test": 220,
+        "exhaled": 345,
+        "focused-light": 302,
+        "four-tests": 443
+      }
+    },
+    "visualReview": {
+      "renderer": "Poppler pdftoppm at 150 dpi",
+      "directory": "build/_class7-ch04-05-figure-upgrade",
+      "readingPages": [
+        "ch04-p009.png",
+        "ch04-p011.png",
+        "ch05-p004.png",
+        "ch05-p005.png",
+        "ch05-p009.png",
+        "ch05-p018.png"
+      ],
+      "result": "All six complete reading pages inspected; apparatus recognizable, transparent backgrounds, no baked labels, legible live labels/captions, initial states intact. Final tester polarity labels rechecked beside physical terminals. Bleed samples inspected.",
+      "bleedPages": [
+        "ch04-bleed-p009.png",
+        "ch04-bleed-p011.png",
+        "ch05-bleed-p004.png",
+        "ch05-bleed-p005.png",
+        "ch05-bleed-p009.png",
+        "ch05-bleed-p018.png"
+      ],
+      "parentReview": "Parent independently inspected all six updated PDF page renders, confirmed apparatus/labels and scientific arrangements, and requested no visual fixes."
+    },
+    "implementationNotes": [
+      "Native PNG files copied unchanged from built-in image_gen output; alpha retained. Apparent black/coloured tool-preview halos are transparent RGB pixels, confirmed with alpha inspection and PDF rendering.",
+      "Nested SVG viewports crop unused native-image margins without bitmap edits. Native label overlay belongs to the tester illustration viewport. No global CSS or shared-code changes.",
+      "Gas pair reused across all four tests with clear liquid and original individual mixture labels; no predicted gas or cloudy receiver.",
+      "Legacy verifier inventory assertions updated to exact manifest-native dimensions and current image resource counts; content and safety assertions unchanged.",
+      "Removed stale generated Chapter 4 proof files p024.png and p025.png left from an older 25-page extent; proof directories now exactly match the current 23/20 source pages."
+    ],
+    "standardProofs": [
+      {
+        "chapter": 4,
+        "directory": "build/class-7/ch04-metals-non-metals-proofs",
+        "count": 23,
+        "pixels": [
+          1428,
+          2056
+        ],
+        "allFresh": true
+      },
+      {
+        "chapter": 5,
+        "directory": "build/class-7/ch05-physical-chemical-changes-proofs",
+        "count": 20,
+        "pixels": [
+          1428,
+          2056
+        ],
+        "allFresh": true
+      }
+    ]
+  },
+  "unresolvedIssues": []
+}

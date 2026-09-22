@@ -20,7 +20,21 @@ onload=async()=>{
  const report=[];
  for(const svg of document.querySelectorAll('.science-sheet')){
   const inverse=svg.getScreenCTM().inverse();
-  const box=el=>{const r=el.getBoundingClientRect(),a=new DOMPoint(r.left,r.top).matrixTransform(inverse),b=new DOMPoint(r.right,r.bottom).matrixTransform(inverse);return {left:a.x,top:a.y,right:b.x,bottom:b.y};};
+  const box=el=>{
+   const r=el.getBoundingClientRect(),a=new DOMPoint(r.left,r.top).matrixTransform(inverse),b=new DOMPoint(r.right,r.bottom).matrixTransform(inverse);
+   const result={left:a.x,top:a.y,right:b.x,bottom:b.y};
+   // A painted source can be placed through a cropped SVG viewport. Measure
+   // its visible placement, not the unused pixels beyond the clipping frame.
+   if(el.tagName==='image')for(let port=el.parentElement;port&&port!==svg;port=port.parentElement){
+    if(port.tagName!=='svg'||getComputedStyle(port).overflow==='visible')continue;
+    const matrix=inverse.multiply(port.parentElement.getScreenCTM()).multiply(port.transform.baseVal.consolidate()?.matrix||svg.createSVGMatrix());
+    const x=port.x.baseVal.value,y=port.y.baseVal.value,w=port.width.baseVal.value,h=port.height.baseVal.value;
+    const points=[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(([px,py])=>new DOMPoint(px,py).matrixTransform(matrix));
+    result.left=Math.max(result.left,Math.min(...points.map(p=>p.x)));result.right=Math.min(result.right,Math.max(...points.map(p=>p.x)));
+    result.top=Math.max(result.top,Math.min(...points.map(p=>p.y)));result.bottom=Math.min(result.bottom,Math.max(...points.map(p=>p.y)));
+   }
+   return result;
+  };
   const union=els=>{const b=els.map(box);return {left:Math.min(...b.map(b=>b.left)),top:Math.min(...b.map(b=>b.top)),right:Math.max(...b.map(b=>b.right)),bottom:Math.max(...b.map(b=>b.bottom))};};
   const content=[...svg.querySelectorAll('text,image,rect,line,path,ellipse')].filter(e=>!e.closest('.v2-header,.v2-footer'));
   const blocks=[...svg.querySelectorAll('.v2-reading-block')].map(e=>({id:e.dataset.block,...union([...e.querySelectorAll('text,image,rect,line,path,ellipse')])}));

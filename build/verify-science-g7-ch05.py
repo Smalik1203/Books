@@ -14,7 +14,8 @@ report={'chapter':chapter,'assets':[],'exports':[]}
 for a in assets:
     im=Image.open(root/a['file']);assert im.format=='PNG' and im.mode=='RGBA'
     alpha=im.getchannel('A').histogram()[0]/(im.width*im.height)
-    assert alpha>.1 and min(im.size)>=1024
+    assert alpha>.1 and list(im.size)==a['pixels']
+    if not a['key'].startswith('apparatus-'): assert min(im.size)>=1024
     report['assets'].append({'key':a['key'],'transparentPercent':round(alpha*100,1),'pixels':list(im.size)})
 for suffix in ['', '-bleed']:
     file=root/'build'/f'{chapter}{suffix}.pdf';pdf=PdfReader(file)
@@ -35,9 +36,9 @@ for suffix in ['', '-bleed']:
             o=ref.get_object()
             if o.get('/Subtype')=='/Image':
                 assert '/SMask' in o,'Every image must retain real transparency'
-                assert o['/Width']>=1024 and o['/Height']>=1024
+                assert [o['/Width'],o['/Height']] in [a['pixels'] for a in assets], 'Native manifest image dimensions'
                 masks+=1;native+=1
-    assert masks==7,(suffix,masks)
+    assert masks==11,(suffix,masks)  # gas pair appears on two pages; syringe is reused within one.
     assert any('SourceSerif4' in f for f in fonts) and any('SourceSans3' in f for f in fonts)
     report['exports'].append({'file':str(file.relative_to(root)),'pages':20,'mediaMM':[round(n,2) for n in size],'transparentImages':masks,'fonts':sorted(fonts),'sha256':sha(file)})
 before=json.loads((review/'before.json').read_text())
@@ -64,4 +65,4 @@ for left in range(2,len(files),2):
         im=Image.open(files[folio-1]);im.thumbnail((635,930));sheet.paste(im,(j*650+(650-im.width)//2,30));d.text((j*650+18,10),f'Page {folio}',fill='black')
     sheet.save(review/f'facing-{left:02}.png')
 (history/'verification.json').write_text(json.dumps(report,indent=2))
-print(f'PDFs verified: 20 pages each; 7 native transparent image placements; {len(before)} existing files unchanged; Science studio registration confirmed.')
+print(f'PDFs verified: 20 pages each; 11 native transparent image placements; {len(before)} existing files unchanged; Science studio registration confirmed.')

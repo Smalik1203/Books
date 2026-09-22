@@ -1,0 +1,175 @@
+// Independent Chapter 8 manuscript. Source arrays identify PDF pages, not folios.
+export const title='Measurement of Time and Motion';
+export const shortTitle=title;
+const h=(id,text,source,level=1)=>({id,type:'heading',text,source,level});
+const p=(id,text,source,extra={})=>({id,type:'body',text,source,...extra});
+const panel=(id,kind,paragraphs,source,extra={})=>({id,type:'panel',kind,paragraphs,source,...extra});
+const fig=(id,figure,caption,source)=>({id,type:'figure',figure,caption,source});
+const diagram=(id,key,caption,source)=>({id,type:'diagram',diagram:key,caption,source});
+const bullets=(id,items,source)=>({id,type:'bullets',items,source});
+export const opener=[
+ 'A close finish can be decided in a fraction of a second. How do we measure such a short interval?',
+ 'Prerna has won her district’s 100 m race and is training for the state meet. She hopes to represent India one day. Watching Olympic races with her younger sister, she notices how closely the runners finish.',
+ 'Her teacher uses a stopwatch. Her mother has a wristwatch; her sister checks a phone. Her uncle uses a tactile watch and a talking clock. These devices make time accessible in different ways. But how did people keep time before clocks—and what can time measurements tell us about motion?'
+];
+export const lesson=[
+ h('time','8.1 Measurement of Time',[2]),
+ p('natural-cycles','Sunrise and sunset, the Moon’s changing phases and the returning seasons gave people repeating patterns with which to organise days, months and years. A school lesson or a race needs a much smaller interval. A useful clock connects an observable change with a known duration.',[2]),
+ fig('old-clocks','timekeepers','From left: a sundial, an outflow water clock, an hourglass and a marked candle clock. Their changing shadows, levels or lengths help indicate elapsed time.',[2]),
+ bullets('clock-principles',[
+  '**Sundial:** the shadow moves across a marked surface as the Sun’s apparent position changes. It needs sunlight and correct alignment.',
+  '**Water clock:** water drains from a marked vessel, or enters a floating bowl through a small hole until the bowl sinks. The device must be reset.',
+  '**Hourglass:** sand passes through a narrow opening between two bulbs. A particular amount of sand marks an interval.',
+  '**Candle clock:** a burning candle becomes shorter. Marks can indicate intervals, but draughts and uneven burning affect the result. Observe only an adult’s demonstration.'
+ ],[2]),
+ h('make-clock','Calibrating a water clock',[3],2),
+ p('water-intro','To **calibrate** a device, compare its readings with a reference. Here a watch supplies the reference intervals; water levels become the scale. Predict whether successive minute marks will be equally far apart. Decide exactly when timing starts and how you will recognise each water level. A useful test also asks whether resetting the same device gives similar readings on another run.',[3],{keepWhole:true}),
+ panel('water-task','setup',[
+  '1. Ask an adult to cut a clean transparent plastic bottle of at least 0.5 L into two parts, pierce a tiny hole in its cap and cover sharp cut edges. Fit the capped upper part upside down inside the lower part, as shown.',
+  '2. Stand it securely in a tray. Fill the upper part to a chosen starting level with water; a little food colouring may help. Start timing as water begins to enter the empty lower part.',
+  '3. Use a watch to mark the collected water level after each minute until the upper part empties. Number these marks in your notebook and on the bottle.',
+  '4. Return the collected water to the upper part, using the same starting level and an empty lower part. Compare the marks with the watch during a second run.',
+  'Keep water away from electrical devices. Adults handle all cutting and piercing; do not use heated tools. Wipe up spills.'
+ ],[3],{sourceActivity:'8.1',diagram:'water-clock',diagramCaption:'Initial assembly: the lower vessel collects water. Add time marks from your own first run.'}),
+ p('water-evidence','Compare the two runs before judging the clock. Did a given mark correspond to nearly the same time? If not, check the starting level, cap hole, leaks and the position of the upper bottle. Keep your actual readings; an inconsistent clock is still useful evidence about its design.',[3,4]),
+ p('water-flow','As the water level above the hole falls, the outflow generally slows. Equal time intervals therefore need not produce equal rises in the collecting vessel; its shape matters too. Marks calibrated for this bottle and hole cannot simply be copied onto another device.',[4]),
+ panel('water-pause','think',[
+  'Two learners mark their bottles differently. One copies equally spaced lines from a ruler; the other marks the water level every minute using a watch. Which procedure establishes a time scale? Explain.',
+  'A new cap has a larger hole. Can the old time marks still be trusted? Describe a comparison that would test your answer.'
+ ],[3,4],{addition:'Reason about calibration, changing flow and the limits of transferring a scale.'}),
+ h('history','Clocks in history',[3,4],2),
+ p('indian-timekeeping','Indian accounts of timekeeping include shadow measurements and outflow water clocks in the Arthashastra, and water-clock descriptions in the Shardulakarnavadana. The astronomer Varahamihira discussed finding time from a stick’s shadow. A sinking-bowl clock, often called a ghatika-yantra, also appears in Indian astronomical traditions associated with Aryabhata.',[4]),
+ p('ghatika','Such devices served monasteries, palaces and towns; drums, conches or gongs could announce an interval. In a traditional division of the day, one ghati was 24 minutes and 60 ghatis made 24 hours. Historical devices and regional practices varied; a named unit does not make every clock equally accurate.',[4,7]),
+ p('jantar','At Jaipur’s Jantar Mantar, an early eighteenth-century observatory and UNESCO World Heritage Site, the roughly 27 m high Samrat Yantra is a monumental sundial. Its shadow moves over finely marked scales. A fine graduation is different from a guarantee that every reading is accurate to that interval.',[3]),
+ p('solar-time','A sundial indicates local solar time. Comparing it with Indian Standard Time requires corrections for location and the date. Clouds, alignment and reading the shadow’s edge also matter. The instrument invites careful observation as well as admiration.',[3]),
+ fig('clock-history-art','pendulum-clock','A pendulum clock counts repeated swings; many modern watches count oscillations of a quartz crystal. These are illustrative examples, not historical reconstructions.',[4,7]),
+ p('mechanical-clocks','Mechanical clocks using weights, gears and later springs developed over centuries. Galileo studied swinging pendulums; the familiar story of his timing a church lamp with his pulse is a historical tradition, not a securely documented experiment. Christiaan Huygens developed a pendulum clock in 1656, followed by its patent in 1657.',[4]),
+ h('pendulum','8.1.1 The Simple Pendulum',[5]),
+ p('pendulum-definition','A **simple pendulum** models a small, heavy bob suspended by a light thread from a fixed support. Its length is measured from the point of suspension—the pivot—to the centre of the bob. At rest, the bob hangs at its **mean position**. When displaced and released, it swings to and fro.',[5]),
+ diagram('pendulum-positions','pendulum','O is the mean position; A and B are the extreme positions. The three bobs show successive positions of one bob, not three separate pendulums.',[5]),
+ p('oscillation','One complete **oscillation** returns the bob to the same position moving in the same direction. Starting at A, one oscillation is A → O → B → O → A. Starting at O towards A, it is O → A → O → B → O. Simply crossing the centre once is not a whole oscillation.',[5]),
+ p('period','The **time period** is the time taken for one complete oscillation. You may have explored a hanging eraser in Class 6. Now measure repeated swings and ask how consistently they divide time.',[5]),
+ panel('pendulum-task','setup',[
+  '1. With a teacher, use about 150 cm of strong thread and a small secure bob to make a pendulum about 100 cm long, measured from pivot to bob centre. Clamp the support firmly; clear the space around and below the bob.',
+  '2. Move the bob a little to one side and release it gently without a push. Keep the thread taut. Choose a fixed reference position and a direction for counting complete oscillations.',
+  '3. Time 10 oscillations with a stopwatch. Repeat three or four times using the same length and small release angle. One learner can count while another times.',
+  '4. In your notebook, record the measured length, trial number, time for 10 oscillations and that time divided by 10. Include seconds in both time columns.',
+  'Use a compact bob that cannot detach. Keep faces and hands out of its path, and stop the bob before adjusting the apparatus.'
+ ],[5,6],{sourceActivity:'8.2',diagram:'pendulum-setup',diagramCaption:'Secure support and a small initial displacement. Measure to the bob’s centre, not just the end of the thread.'}),
+ p('pendulum-evidence','Compare your calculated periods. They will usually be close rather than identical. Starting late, miscounting a swing, changing the release angle or reading the length differently can affect the result. Record these possibilities alongside the measurements instead of replacing them with identical numbers.',[6]),
+ {id:'period-example',type:'equation',source:[6],text:'Time period = time for 10 oscillations ÷ 10',caption:'Illustrative calculation: 20.4 s ÷ 10 = 2.04 s. This is a sample, not a result you must obtain.'},
+ {id:'period-record',type:'table',source:[6],caption:'Reading repeated trials · illustrative measurements',widths:[.18,.38,.44],rows:[['Trial','Time for 10 swings','Period: time ÷ 10'],['1','20.4 s','2.04 s'],['2','20.1 s','2.01 s'],['3','20.3 s','2.03 s']],note:'Same pendulum length, 100 cm, in all three sample trials. Read across to check a calculation; compare down to see variation. Your own readings may differ.',addition:'An explicit example of source Table 8.1, placed after the learner collects data; teaches how to distinguish repeat variation from changed conditions.'},
+ panel('timing-pause','think',[
+  'Why might timing 10 oscillations and dividing by 10 be more useful than timing one? Think about a small delay in pressing the stopwatch button.',
+  'Does repeating the trial remove every error? Consider a ruler that is consistently read to the bottom of the bob instead of its centre.'
+ ],[6],{addition:'Distinguish random timing variation from a repeated measurement bias.'}),
+ h('pendulum-variables','Change one variable',[6],2),
+ p('length-extension','Keep the same bob and try two or three different lengths. At each length, release from the same small angle, time 10 oscillations and repeat. Record the length and periods together. Compare the trend only after collecting the readings.',[6],{keepWhole:true}),
+ p('mass-extension','Next keep the pivot-to-centre length fixed and use secure bobs of different masses but similar size and shape. Keep the location and small release angle unchanged. Predict, test and compare. Do not change length and mass together if you want to distinguish their effects.',[6],{keepWhole:true}),
+ p('pendulum-conclusion','For a simple pendulum making small swings at a given place, a longer length gives a longer period. Changing the bob’s mass has little effect under these conditions. Large swings, friction, air resistance and changes in local gravity limit this simple description; the period is not universally constant for every pendulum.',[6,7]),
+ h('modern','From swinging bobs to atomic clocks',[7],2),
+ p('modern-mechanisms','Clocks count repeating processes. In a pendulum clock, a mechanism maintains and counts swings. In a quartz clock, an electrical circuit counts regular vibrations of a quartz crystal. Atomic clocks use the stable frequencies associated with transitions in atoms; they do not count atoms swinging like tiny pendulum bobs.',[7]),
+ fig('accessible-clocks','modern-clocks','A wristwatch, stopwatch, tactile watch and talking clock offer different ways to read or hear time. Choose a device suited to the task and the user.',[1,7]),
+ p('clock-accuracy','Timekeeping has improved greatly from early mechanical clocks to modern atomic standards. Yet a device displaying many digits is not automatically accurate. **Resolution** is the smallest interval its display or scale distinguishes; accuracy concerns how close a reading is to the actual interval.',[7,8]),
+ h('units','8.1.2 Units of Time',[7]),
+ p('second','The SI unit of time is the **second**, symbol **s**. Its present definition uses a specified frequency associated with caesium-133 atoms. You do not need an atomic clock for a classroom investigation, but standard units let people compare measurements made in different places.',[7]),
+ {id:'time-units',type:'table',source:[7],caption:'Time units and conversions',widths:[.28,.2,.52],rows:[['Unit','Symbol','Equivalent interval'],['second','s','Base unit of time'],['minute','min','1 min = 60 s'],['hour','h','1 h = 60 min = 3600 s']],note:'Read across for a unit’s symbol and equivalent. Convert all times to compatible units before calculating.'},
+ p('unit-writing','Write unit names in lower case, except at the start of a sentence. Leave a space between a number and its unit symbol: 12 s, 5 min, 2 h. Symbols do not become plural: write 12 s, not 12 secs. A full stop belongs to the sentence, not to the symbol.',[7]),
+ panel('clock-task','setup',[
+  '1. Look closely at the clock face. Identify the hour, minute and second hands using the key. Count the small intervals around the dial.',
+  '2. If the second hand completes one turn in one minute, what interval does one small division represent? Explain your calculation in your notebook.',
+  '3. Examine an available classroom clock or watch. What is the smallest interval you can read? Explain whether it would suit timing a short race or a lesson.'
+ ],[8],{sourceActivity:'8.3',diagram:'clock-face',diagramCaption:'Use the dial divisions to determine the interval; do not assume every clock has the same scale.'}),
+ p('clock-evidence','The pictured dial has 60 equal small intervals. Since one revolution of the second hand takes 60 s, one interval represents 1 s. A stopwatch may display hundredths of a second, but the operator’s reaction delay can still be much larger than its last displayed digit.',[8]),
+ bullets('time-applications',[
+  '**Sport:** closely timed finishes require equipment that can distinguish very short intervals.',
+  '**Medicine:** an electrocardiogram records the timing of electrical activity associated with heartbeats.',
+  '**Sound and computing:** digital sound is sampled many thousands of times a second; electronic operations can occur on microsecond or shorter time scales.',
+  '**Space science:** precise timing helps coordinate signals, measurements and navigation.'
+ ],[8]),
+ h('slow-fast','8.2 Slow or Fast?',[8,9]),
+ p('race-comparison','When runners start together and cover the same 100 m, the one who finishes in less time has the greater average speed over the race. At an earlier instant, a runner farther from the common start has covered more distance in that elapsed time. That does not prove the runner is moving fastest at that particular instant.',[8,9]),
+ {id:'speed-comparison',type:'comparison',source:[9],columns:[{title:'Same distance',items:['Compare the times taken.','Less time means greater average speed.']},{title:'Same elapsed time',items:['Compare the distances travelled.','More distance means greater average speed.']}]},
+ p('different-distances','If both distance and time differ, neither number alone settles the comparison. A cyclist travelling farther may also have taken much longer. We need the distance covered per unit time.',[9]),
+ h('speed','8.3 Measuring Speed',[9]),
+ p('average-definition','**Average speed** is the total distance travelled divided by the total time taken. It describes a whole chosen interval, including stops within it. The SI unit is metre per second, written m/s. Kilometre per hour, written km/h, is also common.',[9,11]),
+ {id:'speed-rule',type:'equation',source:[9,11],text:'Average speed = total distance ÷ total time',caption:'Use the same journey interval for both measurements. State the unit with the answer.'},
+ fig('cycling-art','cyclist','Swati’s journey provides a distance and an elapsed time. Her speed need not stay the same at every moment.',[10]),
+ h('example-one','Example 8.1 · Swati’s bicycle ride',[10],2),
+ p('swati-work','Swati cycles 3.6 km in 15 min. Convert: 3.6 × 1000 = 3600 m; 15 × 60 = 900 s. Her average speed is 3600 m ÷ 900 s = 4 m/s.',[10],{keepWhole:true}),
+ p('speed-units','To change m/s into km/h, multiply by 3.6: there are 3600 seconds in an hour and 1000 metres in a kilometre. Thus 4 m/s = 14.4 km/h. To change km/h into m/s, divide by 3.6. Converting both measurements before dividing is another reliable route.',[9,10],{addition:'Explicit conversion needed by source assessment; numerical equivalence derived from unit definitions.'}),
+ h('railways','Comparing train journeys',[10],2),
+ panel('train-task','setup',[
+  '1. With an adult, consult an official railway timetable. Choose a nearby station, a next stop and four or five trains, including passenger, express or superfast services where available.',
+  '2. Record each train, next stop, departure, arrival and segment distance. For cumulative distances, subtract the two station readings.',
+  '3. Calculate elapsed time, including the date for a journey crossing midnight. Convert minutes to hours before finding km/h.',
+  '4. Divide each segment distance by its elapsed time. Compare the scheduled average speeds for these segments; note the timetable source and date.',
+  'This is a timetable investigation. Do not go near tracks or moving trains to take measurements. Scheduled times are not observations of actual running times.'
+ ],[10],{sourceActivity:'8.4'}),
+ {id:'train-record',type:'table',source:[10],caption:'A timetable record · illustrative data only',widths:[.2,.27,.25,.28],rows:[['Train / next stop','Segment distance','Elapsed time','Scheduled average'],['Example A / B','84 − 24 = 60 km','14:00 to 15:00 = 1 h','60 km ÷ 1 h = 60 km/h']],note:'Use these column meanings for your own records. Keep departure and arrival times in your notes. These invented values are not a railway schedule.'},
+ p('train-evidence','Which train has the greatest average speed for your segment? Service names alone cannot answer this: stops, route conditions and the interval matter. Compare matching station pairs where possible. A short-segment result does not describe every journey.',[10]),
+ h('relationships','8.3.1 Distance, Speed and Time',[11]),
+ p('relationships-intro','The speed relationship can be rearranged. Use a speed that applies to the whole interval: either a constant speed, or the average speed for that interval. Keep distance, time and speed units compatible.',[11]),
+ {id:'distance-rule',type:'equation',source:[11],text:'Distance = speed × time',caption:'Example 8.2: a bus maintains 50 km/h for 2 h. Distance = 50 × 2 = 100 km.'},
+ {id:'time-rule',type:'equation',source:[11],text:'Time = distance ÷ speed',caption:'Example 8.3: a train averages 90 km/h over 360 km. Time = 360 ÷ 90 = 4 h.'},
+ p('interval-check','Multiplying km/h by hours gives kilometres; dividing kilometres by km/h gives hours. This unit check can catch an error caused by using minutes with a speed given per hour.',[11]),
+ h('motion','8.4 Uniform and Non-uniform Motion',[12]),
+ p('linear','Motion along a straight line is **linear motion**. Imagine a train leaving station A, gathering speed towards B, travelling steadily from B to C and slowing to stop at D. Its speed can change even though its track remains straight.',[12]),
+ diagram('train-stages','train-stages','A straight journey can contain different kinds of motion. The arrows indicate travel direction, not equal times or a distance scale.',[12]),
+ {id:'motion-comparison',type:'comparison',source:[12,13],columns:[{title:'Uniform linear motion',items:['Follows a straight line at constant speed.','Covers equal distances in equal time intervals.','An ideal model of a steady part of a journey.']},{title:'Non-uniform linear motion',items:['Follows a straight line with changing speed.','Can cover unequal distances in equal time intervals.','Occurs while speeding up or slowing down.']}]},
+ p('instruments','A **speedometer** indicates speed at the time of the reading. An **odometer** records accumulated distance travelled. Subtract two odometer readings to find the distance between them; use the elapsed time to find average speed. Neither a single speedometer reading nor an odometer reading alone gives the average for a journey.',[12]),
+ diagram('instrument-art','instruments','Two instruments, two quantities: the dial indicates current speed; the odometer records accumulated kilometres.',[12]),
+ h('read-motion','Reading motion from a table',[13],2),
+ {id:'motion-table',type:'table',source:[13],caption:'Distances from a common start · trains X and Y',widths:[.2,.2,.2,.2,.2],rows:[['Time','X: total km','X: interval km','Y: total km','Y: interval km'],['10:00','0','—','0','—'],['10:10','20','20','20','20'],['10:20','40','20','35','15'],['10:30','60','20','50','15'],['10:40','80','20','75','25'],['10:50','100','20','95','20'],['11:00','120','20','120','25']],note:'Read across to compare the trains at one time; compare down to find changes. Each interval is 10 min. — means no preceding interval is recorded.'},
+ p('motion-table-reading','X covers 20 km in each recorded interval; Y’s distances vary: 20, 15, 15, 25, 20 and 25 km. Y’s motion is therefore non-uniform. X’s record is consistent with uniform motion at this sampling interval, but cannot reveal changes between readings.',[13]),
+ panel('motion-pause','think',[
+  'Both trains cover 120 km between 10:00 and 11:00. Calculate each average speed. Can two journeys have the same average speed but different patterns of motion?',
+  'Could train X stop briefly and then speed up between two readings? Explain why equal 10 min distances do not prove that its speed was constant at every instant. What extra evidence would help?'
+ ],[13],{addition:'Separate equal journey averages, sampled interval averages and genuinely constant instantaneous speed.'}),
+ p('everyday-motion','Non-uniform motion is common: a bus stops, a cyclist accelerates and a runner slows. Uniform motion is a useful idealisation for analysing a steady interval. When speed changes, average speed still describes the whole interval, but does not tell us the speed at each instant.',[13]),
+ p('time-questions','Clocks help us state when something happens and how long it lasts, from a fraction of a second to centuries. Questions about time also reach into cosmology and philosophy. Our measurements here concern observable intervals; whether time itself had a beginning is not settled by a classroom clock.',[16])
+];
+export const glossary=[
+ ['Calibration','Comparing a device with a reference to establish or check its scale.'],
+ ['Second (s)','The SI unit of time.'],
+ ['Simple pendulum','A model with a small heavy bob on a light thread suspended from a fixed point.'],
+ ['Oscillation','A complete repeating motion that returns to the same position and direction.'],
+ ['Time period','Time taken for one complete oscillation.'],
+ ['Resolution','The smallest interval a scale or display distinguishes.'],
+ ['Average speed','Total distance travelled divided by total elapsed time.'],
+ ['Uniform linear motion','Motion along a straight line at constant speed.'],
+ ['Non-uniform linear motion','Motion along a straight line with changing speed.'],
+ ['Odometer','An instrument that records accumulated distance travelled.']
+];
+export const summary=[
+ 'People have used natural cycles, shadows, flowing water, sand and burning candles to mark time. A clock must be compared with a reliable reference.',
+ 'For a pendulum, measure length from pivot to bob centre. One oscillation is a complete to-and-fro motion; its duration is the time period.',
+ 'For small swings at the same place, a longer simple pendulum has a longer period. Its bob’s mass has little effect if other conditions stay comparable.',
+ 'Timing several oscillations and repeating trials helps reveal variation. It does not remove every source of error.',
+ 'The SI time unit is the second (s): 1 min = 60 s and 1 h = 3600 s. Write unit symbols without plural endings.',
+ 'Average speed = total distance ÷ total time. Use the same journey interval and compatible units; common units are m/s and km/h.',
+ 'Distance = speed × time; time = distance ÷ speed. The speed must describe the selected interval.',
+ 'Uniform linear motion has constant speed along a straight line. Non-uniform linear motion has changing speed.',
+ 'A speedometer indicates current speed; an odometer records accumulated distance. Equal journey averages can hide very different motion.',
+ 'Measurements support claims only to their resolution and sampling interval. Keep unexpected readings and consider what the evidence cannot show.'
+];
+export const exercises=[
+ {id:'q1',source:[14],text:'A car travels 150 m in 10 s. Calculate its average speed and express the answer in km/h.'},
+ {id:'q2',source:[14],text:'One runner completes 400 m in 50 s and another in 45 s. Who has the greater average speed, and by how much? Give the difference in m/s.'},
+ {id:'q3',source:[14],text:'A train averages 25 m/s over 360 km. How much time does it take? Express the answer in seconds and hours.'},
+ {id:'q4',source:[14],text:'A train travels 180 km in 3 h. Find its average speed in (i) km/h and (ii) m/s. (iii) How far would it travel in 4 h if it maintained that speed throughout?'},
+ {id:'q5',source:[14],text:'In this example, a galloping horse moves at 18 m/s and a train at 72 km/h. Which is faster, and by how much in m/s? Do not treat the horse’s given speed as a record for all horses.'},
+ {id:'q6',source:[14],text:'Compare a car maintaining a steady speed on a straight highway with one changing speed on a straight section of a busy city road. Which motion is uniform? Does an empty road alone prove uniform motion?'},
+ {id:'q7',source:[14],text:'An object moves uniformly along a straight line. Reproduce this table in your notebook and complete the missing entries. Explain the pattern you used.',diagram:'question-seven',caption:'Question marks identify missing entries. Both time and distance are measured from the start.'},
+ {id:'q8',source:[15],text:'A car travels 60 km in its first hour, 70 km in its second and 50 km in its third. Is its motion uniform? Justify your answer and calculate its average speed over all three hours.'},
+ {id:'q9',source:[15],text:'Which is more common in daily life: uniform or non-uniform motion? Give three examples from your experience. Specify the interval and path you are describing.'},
+ {id:'q10',source:[15],text:'Use the recorded distances below to decide whether the motion is uniform or non-uniform. Find the average speed over the entire 100 s. Explain why the average alone cannot describe every interval.',diagram:'question-ten',caption:'The distance column gives distance from the start, not the distance in each separate interval.'},
+ {id:'q11',source:[15],text:'A vehicle travels 2 km along a straight line. It covers the first 500 m at 10 m/s and the next 500 m at 5 m/s. What constant speed is needed over the remaining distance to finish the whole journey in 200 s? What is its average speed for the journey?'}
+];
+export const projects=[
+ {id:'project-bowl',source:[15],title:'Build a sinking-bowl clock',text:'With an adult, float a small bowl with a tiny hole in a larger water vessel and time how long it takes to sink. Adults make all holes and smooth sharp edges. Dry and empty the bowl before each trial; use a stable tray. Try different bowl sizes or hole sizes, changing one variable at a time. Can repeated trials approach an interval of 24 min? Record the actual times and limits of the design.',diagram:'bowl-clock',caption:'Water enters the small hole while the bowl floats. Measure the interval until sinking; reset for each trial.'},
+ {id:'project-pulse',source:[15],title:'Could your pulse be a clock?',text:'With teacher guidance, willing friends can count their own resting pulse for one minute using a clock. Place the index and middle fingertips gently on the inside of the wrist below the thumb. Keep results private; nobody needs to participate or share a number. This is a timing exercise, not a health test. Repeat and discuss why the count may vary. Invent a story about using pulse beats to estimate time, and identify what would make the estimate uncertain.'},
+ {id:'project-repeat',source:[15],title:'Improve a pendulum measurement',text:'Revisit your repeated periods from the pendulum activity. Choose a likely source of variation—counting, reaction delay, length reading or release angle—and improve the procedure. Repeat without changing the other conditions. Compare the spread of the old and new readings. A smaller spread is useful, but does it prove the measured length and timing are correct?'},
+ {id:'project-swing',source:[15],title:'Observe a playground swing',text:'With an adult’s permission, time 10 small oscillations of a safe playground swing. Repeat with different willing riders, without weighing them or sharing body measurements. Keep the posture and small release angle similar; do not pump or stand. Stay outside the swing’s path. Compare approved swings with different suspension lengths; never alter playground equipment. Calculate periods and discuss why a moving rider and seat are only an approximate pendulum.',figure:'swing',caption:'Observe from outside the swing’s path. An adult supervises; the rider stays seated and holds both chains.'},
+ {id:'project-olympics',source:[16],title:'Compare Olympic race records',text:'Use official results for the two most recent completed Summer Olympic Games. Record the years, source links and winning times for the men’s and women’s 100 m, 200 m and 400 m races. Calculate distance divided by time for all twelve results. Compare average speeds across distances and editions. These averages do not reveal the fastest instant in a race or explain why a particular athlete won.'}
+];

@@ -6,7 +6,7 @@ export const planeMotif=(small=false)=>small
 export const artWords='A · flat tips B · tips folded up Fold both tips equally Same paper and basic folds Before launching Sunlight Evaporation Condensation Rain Water vapour Cloud droplets Liquid water Surface water Water enters the air Cooling forms droplets Some water soaks into the ground';
 
 export function setupDiagram(y,label){
- const plane=(x,folded)=>`<g transform="translate(${x} ${y+12})" class="v2-diagram-stroke"><path class="v2-diagram-light" d="M0 0L-105 118L0 86L105 118Z"/><path d="M0 0V86M-105 118L0 50L105 118"/>${folded?'<path class="v2-diagram-fold" d="M-105 118L-76 77L-88 100L-105 106ZM105 118L76 77L88 100L105 106Z"/><path class="v2-diagram-dashed" d="M-76 77L-88 100M76 77L88 100"/>':''}</g>`;
+ const plane=(x,folded)=>`<svg class="science-illustration" x="${x-82}" y="${y+2}" width="164" height="140" viewBox="${folded?'300 20 940 960':'0 0 1312 1199'}" preserveAspectRatio="xMidYMid meet"><image href="../../figures/class-7/science/ch01-v2/apparatus-plane-${folded?'folded':'flat'}.png" width="${folded?1536:1312}" height="${folded?1024:1199}"/></svg>`;
  return {html:plane(310,false)+plane(738,true)+label('A · flat tips',310,y+164,'se-caption','middle')+label('B · tips folded up',738,y+164,'se-caption','middle')+label('Same paper and basic folds',524,y+202,'se-caption','middle'),h:224};
 }
 
