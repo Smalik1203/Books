@@ -1,0 +1,174 @@
+// Chapter 7 only. Source page numbers refer to the supplied 16-page PDF.
+export const title='Heat Transfer in Nature';
+export const shortTitle=title;
+const h=(id,text,source,level=1)=>({id,type:'heading',text,source,level});
+const p=(id,text,source,extra={})=>({id,type:'body',text,source,...extra});
+const panel=(id,kind,paragraphs,source,extra={})=>({id,type:'panel',kind,paragraphs,source,...extra});
+const fig=(id,figure,caption,source)=>({id,type:'figure',figure,caption,source});
+const diagram=(id,key,caption,source)=>({id,type:'diagram',diagram:key,caption,source});
+const bullets=(id,items,source)=>({id,type:'bullets',items,source});
+export const opener=[
+ 'Why does a metal pan get hot while a woollen blanket helps us stay warm?',
+ 'On a winter evening in Gangtok, Pema and Palden watch their grandmother cook thukpa. Palden remembers a warmer, more humid holiday in Kerala. Kerala is nearer the equator and the sea; Gangtok is much higher above sea level. Their grandfather explains that these features influence the local climate.',
+ 'The Sun is Earth’s main source of heat. But how does heat travel through a pan, the air and even empty space? Follow those paths, then explore how the Sun helps water move through our world.'
+];
+export const lesson=[
+ h('conduction','7.1 Conduction of Heat',[2]),
+ p('pan-question','Metal cooking utensils transfer heat readily. To find out how heating spreads along a solid, watch a teacher demonstrate the metal-strip investigation. Predict first; use the observations to revise your explanation.',[1,2]),
+ panel('strip-task','setup',[
+  '1. A teacher secures a metal strip about 15 cm long to a stand. Four pins are attached with similar small amounts of wax, about 2 cm apart, and labelled I to IV from the free end.',
+  '2. Predict which pin will fall first and the order of the others. The teacher heats the free end with a candle, away from the stand.',
+  '3. Watch from a safe distance. Record the order, approximate times and anything unexpected in your notebook. Separate your prediction, observation and possible reason.',
+  'Teacher demonstration only: use a heatproof tray to catch sharp pins and wax. Keep hair and clothing away from the flame. Do not touch the strip, stand or fallen pins until the teacher confirms they are cool.'
+ ],[2],{sourceActivity:'7.1',diagram:'strip',diagramCaption:'Initial setup: all four pins remain attached. Similar wax amounts make the comparison fairer.'}),
+ p('strip-evidence','Compare your record with another observer’s. Did the pins fall in a clear sequence? Usually the wax nearest the heated end melts first, releasing pin I, then pins farther away. Unequal wax amounts, pin spacing or draughts can alter the order. An unexpected result is evidence to examine, not a result to erase.',[3]),
+ p('conduction-mechanism','**Conduction** transfers energy from a hotter region to a colder region through a material, or between materials in contact. In a solid, particles vibrate about fixed positions and transfer energy to neighbours; the solid does not flow along with the heat. Metals also have mobile electrons that help carry energy.',[3]),
+ {id:'conductors',type:'comparison',source:[3],columns:[
+  {title:'Good conductors',items:['Transfer heat readily through the material.','Examples: aluminium, iron and steel.','Useful for the heated body of a cooking pan.']},
+  {title:'Poor conductors',items:['Transfer heat more slowly under similar conditions.','Examples: dry wood, glass, clay and porcelain.','Useful where we want to slow heat transfer.']}
+ ]},
+ p('conductor-limits','Poor conductors are also called **insulators**. They slow heat transfer; they do not stop it completely. A ceramic cup can still become hot. Do not repeat the flame test with wood or ordinary glass: wood can burn and glass may crack.',[3]),
+ {id:'materials-table',type:'table',caption:'Table 7.1 · Classifying familiar materials',widths:[.23,.33,.44],rows:[['Material','Classification','Reason or evidence'],['Steel','Good conductor','Heat travels readily along a steel utensil.'],['Dry wood','Poor conductor','A wooden handle slows heat transfer.'],['Other examples','Classify in your notebook','Use experience or a reliable source; do not test by touching hot objects.']],note:'These are sample records. Read across to connect a material, its classification and the evidence. Add glass, clay, porcelain and still air.',source:[3]},
+ h('insulation','Trapping air to slow heat loss',[3,4],2),
+ p('clothing','Still air is a poor conductor. Woollen fibres trap small pockets of air, slowing heat loss from our warmer bodies. Layers can do the same. Two thin blankets may insulate well if they trap air between them, but the result depends on their material, thickness and how tightly they are pressed together. Small air pockets also restrict circulation. An open gap that lets air flow through is different from a layer of trapped, still air.',[4]),
+ fig('insulation-art','insulation','Woollen fibres and hollow bricks can trap air. Ceramic cups slow conduction compared with similar metal cups.',[3,4]),
+ p('houses','Hollow bricks trap air and help slow heat entering a house in hot weather or leaving it in cold weather. Traditional houses in the Mori area of Uttarkashi use wooden wall layers with mud and cow-dung filling. Such construction combines local materials to reduce heat loss; its performance also depends on gaps, moisture and the whole building.',[4]),
+ panel('blanket-pause','think',[
+  'A blanket does not generate heat. Explain why it can help a person stay warm and also slow the melting of ice wrapped inside it. In each case, name the warmer region, the colder region and the direction of heat transfer.'
+ ],[4],{addition:'Apply the same insulation mechanism to opposite everyday situations; distinguish heat generation from slower transfer.'}),
+ h('convection','7.2 Convection',[4]),
+ p('rising-air','Pema notices smoke rising above a fire. Does heated air behave differently from the surrounding air? A carefully balanced pair of cups can make a small movement visible.',[4]),
+ panel('cups-task','setup',[
+  '1. A teacher hangs identical inverted paper cups from equal threads at either end of a wooden stick. Suspend it centrally and balance it horizontally.',
+  '2. Predict the effect of heating below one cup. The teacher places a candle well below it, clear of paper and thread.',
+  '3. Record any movement and a possible reason. Remove the candle and watch again, keeping draughts away.',
+  'Teacher demonstration only: use a heatproof surface and fire-safe clearance. Stop if paper warms excessively or browns. Do not repeat at home.'
+ ],[4,5],{sourceActivity:'7.2',diagram:'cups',diagramCaption:'Start with the stick balanced. The drawing shows the starting arrangement, not the result.'}),
+ p('cups-evidence','The cup above the heat source may rise. Air near the flame warms, expands and becomes less dense than surrounding cooler air. Rising air pushes on the inverted cup. A small imbalance or a draught can also move it, so check the unheated setup before attributing movement to heating.',[5]),
+ p('air-expansion','A partially inflated, tied balloon may grow larger when gently warmed by sunlight: the air inside expands. It has not lost mass. Do not put balloons near flames. Smoke contains gases and tiny particles; an upward flow of warm air can carry them with it. Never breathe smoke deliberately.',[5]),
+ h('water-convection','Tracking movement in water',[5,6],2),
+ panel('water-task','setup',[
+  '1. A teacher half-fills a heat-resistant 500 mL beaker. Using a straw guide, they place a tiny potassium permanganate grain at the base’s centre without stirring.',
+  '2. Predict the colour’s path. The teacher secures the beaker on a tripod and gauze, then heats gently below the grain.',
+  '3. Sketch the streak’s movement, including near the surface and sides, before reading the explanation.',
+  'Teacher demonstration only: use eye protection and laboratory precautions for the chemical, flame and hot glass. Never taste the water or suck through the straw. Avoid splashes; the teacher disposes of cooled waste safely.'
+ ],[5,6],{sourceActivity:'7.3',diagram:'beaker-setup',diagramCaption:'Before heating: the colour source is at the base. Labels identify apparatus without predicting the streak’s path.'}),
+ p('water-evidence','A coloured streak usually rises above the heat source, spreads and moves down nearer the cooler sides. Water warmed at the base expands and becomes less dense. It rises while cooler, denser water moves in to replace it. Continued heating maintains this circulation.',[6]),
+ diagram('water-flow','beaker-flow','An explanatory model after observation: arrows show bulk movement of water, not the paths of individual particles.',[6]),
+ p('convection-definition','**Convection** is heat transfer by the bulk movement of a liquid or gas. Energy travels with the moving fluid. Conduction also occurs within fluids and across the beaker wall, but circulation helps spread energy through the water. Ordinary solids cannot circulate in this way.',[6]),
+ h('breezes','7.2.1 Land and Sea Breezes',[6]),
+ p('coast-question','Palden remembers that beach sand felt hotter than sea water in daytime and cooler later at night. Touch is not a reliable thermometer. Compare measured changes in soil and water under the same conditions.',[6]),
+ panel('bowls-task','setup',[
+  '1. With a teacher, half-fill identical bowls with dry soil and water. Clamp a laboratory thermometer in each, its bulb immersed but clear of the base and sides.',
+  '2. On a clear day, place them side by side in sunlight. Read both at 0, 5, 10, 15 and 20 minutes, at eye level without removing the thermometers.',
+  '3. The teacher moves both into the same shaded indoor place. Record cooling for another 20 minutes at the same intervals. Compare changes from each starting value.',
+  'Use suitable non-mercury thermometers. The teacher handles hot equipment and breakage. Match bowl size, fill depth, timing and exposure; handle glass carefully.'
+ ],[6,7],{sourceActivity:'7.4',diagram:'bowls',diagramCaption:'Clamp the bulbs at comparable depths. Equal fill depths do not mean equal masses.'}),
+ {id:'temperature-table',type:'table',caption:'Table 7.2 · A record for heating and cooling',widths:[.24,.25,.25,.26],rows:[['Stage','Time (min)','Soil (°C)','Water (°C)'],['In sunlight','0, 5, 10, 15, 20','Your readings','Your readings'],['Cooling indoors','0, 5, 10, 15, 20','Your readings','Your readings']],note:'This is a notebook recording guide, not measured data. Use one row per time. Read across to compare the pair; compare down to find each temperature change.',source:[7]},
+ p('bowls-evidence','Often soil warms and cools more quickly in this setup. Check whether your data support that pattern: subtract the starting temperature from the final temperature for each heating run, then compare cooling drops. Moist soil, unequal sunlight or different bulb depths may change the result. Repeat before making a broad claim.',[7]),
+ panel('breeze-pause','think',[
+  'Suppose the soil starts at 25°C and reaches 35°C, while water starts at 28°C and reaches 34°C. Which has the larger temperature rise? Why would comparing only the final readings be misleading? These are example numbers, not results you must obtain.'
+ ],[7],{addition:'Distinguish final temperature from change, using explicitly labelled illustrative measurements.'}),
+ {id:'breeze-comparison',type:'comparison',source:[7,8],columns:[
+  {title:'Sea breeze · daytime',items:['Land often warms faster than the nearby sea.','Warmer air over land rises.','Cooler near-surface air moves from sea to land.']},
+  {title:'Land breeze · night',items:['Land often cools faster than the nearby sea.','Warmer air over the sea rises.','Cooler near-surface air moves from land to sea.']}
+ ]},
+ diagram('breeze-model','breezes','Typical local circulation near a coast. Arrows show air movement; stronger regional winds may alter this pattern.',[7,8]),
+ p('coastal-life','A sea breeze can make a hot coastal afternoon more comfortable, and sea-facing windows may admit it. Large water bodies warm and cool relatively slowly, moderating nearby temperatures. A breeze need not reverse every day: clouds, seasons and larger weather systems also matter.',[7,8]),
+ h('radiation','7.3 Radiation',[8]),
+ p('radiation-intro','Pema and Palden feel warmth from the stove without touching it. Heat reaches them partly through **radiation**: energy carried by electromagnetic waves. Radiation needs no material medium, so energy from the Sun can cross the near-vacuum of space to Earth. Conduction and convection require matter.',[8]),
+ p('radiation-exchange','All everyday objects emit and absorb thermal radiation. A hot pan loses energy to cooler surroundings through radiation, as well as through convection to air and conduction where it touches other materials. Cooling is not usually the work of only one process.',[8,9]),
+ {id:'clothes-comparison',type:'comparison',source:[8],columns:[
+  {title:'Light-coloured surfaces',items:['Often reflect more incoming sunlight.','May absorb less solar energy than similar dark surfaces.']},
+  {title:'Dark-coloured surfaces',items:['Often absorb more incoming sunlight.','May become warmer under the same sunlight.']}
+ ]},
+ p('clothing-limits','Colour alone does not decide comfort. Fabric thickness, trapped air, ventilation and wetness matter too. A dark shirt does not create heat, and colour’s effect in sunlight is not a complete rule for insulation or infrared emission.',[8]),
+ h('processes-together','Three processes in one kitchen',[9],2),
+ fig('bukhari-art','bukhari','A bukhari combines an enclosed iron stove, a cooking surface and a chimney that carries combustion gases outside.',[9]),
+ bullets('pan-processes',[
+  '**Into the pan:** hot gases transfer energy to its base, and the flame radiates energy towards it.',
+  '**Through the metal:** conduction carries energy across the pan’s base and along its sides.',
+  '**Through the water:** convection circulates warmed water; conduction occurs where water touches metal.',
+  '**Into the room:** radiation from hot surfaces and convection of air both contribute to warmth.'
+ ],[9]),
+ p('stove-safety','A traditional bukhari can warm a room and support a cooking pot. An adult must ensure proper ventilation and a working chimney. Never burn charcoal or use an unvented stove in an enclosed room: dangerous gases may be invisible and odourless.',[9]),
+ {id:'mechanisms-table',type:'table',caption:'Table 7.3 · Compare the transfer mechanisms',widths:[.22,.43,.35],rows:[['Process','How energy travels','A useful example'],['Conduction','Through interactions within matter; no bulk flow is needed.','Along a metal pan.'],['Convection','With bulk movement of a liquid or gas.','Circulating warm water.'],['Radiation','By electromagnetic waves; no medium is required.','From the Sun to Earth.']],note:'Read across for the mechanism and example. Compare down to distinguish energy transfer from the movement of the material itself.',source:[9]},
+ h('water-cycle','7.4 Water Cycle',[10]),
+ p('sun-water','Clothes often dry faster on a warm sunny day because water evaporates more quickly; wind and humidity matter too. Solar energy also supports evaporation from seas, lakes and wet ground. This connects heat transfer with water’s journey through the environment.',[10]),
+ p('water-states','Water occurs as liquid in rivers and oceans, as solid ice and snow, and as invisible water vapour in the atmosphere. Snowmelt feeds some rivers. Winter snowfall can replenish snow and ice, but not necessarily as fast as they melt. The water cycle is not a promise that every glacier or reservoir will recover.',[10]),
+ fig('cycle-landscape','water-cycle','Land, living plants, atmosphere and sea exchange water. The processes below explain the connections in this landscape.',[10]),
+ bullets('cycle-stages',[
+  '**Evaporation:** liquid water changes to vapour at its surface. Solar energy supplies much of the energy for this change.',
+  '**Transpiration:** plants take up water and release water vapour, mainly through their leaves.',
+  '**Condensation:** cooling moist air can form tiny liquid droplets. Clouds contain droplets, ice crystals or both; they are not simply invisible vapour.',
+  '**Precipitation:** rain, snow or hail falls from clouds. Some water flows over land as runoff; some enters the ground.',
+  '**Return and storage:** streams, rivers, groundwater, snow and ice store or move water. Different portions follow different routes and take different lengths of time.'
+ ],[10]),
+ p('cycle-conservation','The **water cycle** continually redistributes water among air, land and water bodies. Over ordinary human timescales, Earth’s total water is approximately conserved, but usable freshwater can still be scarce, polluted or stored far from where it is needed.',[10]),
+ h('infiltration','7.4.1 Water Beneath the Ground',[11]),
+ p('ground-question','Wells and handpumps draw water stored underground. Compare how water enters clay, sand and gravel. Predict before pouring.',[11]),
+ panel('seepage-task','setup',[
+  '1. An adult halves three used 1 L bottles, makes equal cap holes and covers sharp edges. Support the inverted tops above identical measuring containers.',
+  '2. Add equal depths of clay, sand and gravel, with similar initial moisture. Note packing and predict flow order.',
+  '3. Pour 200 mL into each simultaneously. After 10 minutes, measure collected volumes. Note overflow or blocked holes.',
+  'Only adults cut or pierce bottles. Wash hands afterwards. Never drink the collected water: clear-looking filtered water may still be unsafe.'
+ ],[11],{sourceActivity:'7.5',diagram:'seepage',diagramCaption:'Starting setup: three empty collecting containers. Use equal cap openings so the bottle itself does not decide the result.'}),
+ {id:'seepage-table',type:'table',caption:'Table 7.4 · Predict, measure, then interpret',widths:[.2,.4,.4],rows:[['Material','Predicted flow','Volume after 10 min'],['Clay','Record your prediction','Record volume in mL'],['Sand','Record your prediction','Record volume in mL'],['Gravel','Record your prediction','Record volume in mL']],note:'Notebook guide; no results are supplied. Read across to compare prediction and measurement. Use very slow, slow or fast to describe the relative flow, supported by your volumes.',source:[11]},
+ p('seepage-evidence','Water often passes fastest through loosely packed gravel, more slowly through sand and slowest through clay. The size and connection of pore spaces help explain the difference. Packing, cracks, moisture and blocked outlets can change the pattern. Keep your actual measurements even if the expected order does not appear.',[12]),
+ p('infiltration-definition','**Infiltration** is the entry of surface water into soil. Water can then move deeper through connected pores and fractures in soil and rock. Clay can hold water in many tiny pores yet transmit it slowly: having spaces and having well-connected pathways are not the same thing.',[12]),
+ h('aquifers','Storing and replenishing groundwater',[12],2),
+ p('aquifer-definition','Below the water table, connected pore spaces and rock openings are saturated with **groundwater**. An **aquifer** is a layer of sediment or rock that can store and transmit useful amounts of this water. It is not usually an underground lake. Wells tap these saturated layers, sometimes a few metres down and sometimes hundreds of metres deep.',[12]),
+ diagram('aquifer-model','aquifer','A simplified section below ground. Blue dots represent water in pore spaces, not a large hollow cavern; a well reaches below the water table.',[12]),
+ p('recharge','Not all infiltrating water reaches an aquifer; plants use some and some returns to the air. Recharge depends on local geology and can be slow. When pumping exceeds recharge over time, groundwater storage falls. More paving and loss of vegetation can reduce infiltration and increase runoff.',[12]),
+ p('harvesting','Rainwater harvesting stores water or directs suitable water towards recharge areas. Well-designed pits can help water enter the ground, but they need local expertise, maintenance and protection from polluted runoff. The water cycle replenishes groundwater only at a limited rate; careful use is still essential.',[12]),
+ panel('recharge-pause','think',[
+  'A town pumps more groundwater each year than rainfall replaces. Someone says, “The water cycle will refill it, so there is no problem.” What is missing from that argument? Explain which measurements would help compare water taken out with water going back in.'
+ ],[12],{addition:'Apply the distinction between a renewable flow and a finite store; request evidence for the water budget.'}),
+ h('history','Observing rain across time',[11],2),
+ p('varahamihira','The sixth-century astronomer and mathematician Varahamihira worked in Ujjaini, now Ujjain. His Brihatsamhita discussed seasonal rainfall using observations such as clouds and winds, alongside celestial signs. This is part of the history of enquiry. Historical prediction methods must still be tested against evidence; they are not all accepted causes or reliable forecasting tools.',[11]),
+ h('ice-storage','Saving winter water for spring',[13],2),
+ p('ice-stupa','In parts of Ladakh, spring water shortages can arrive before enough mountain snow melts for irrigation. An ice stupa stores winter stream water as ice. Water carried through pipes is sprayed into freezing air and builds a cone, layer by layer. As temperatures rise, it melts and releases water when farmers need it.',[13]),
+ fig('stupa-art','ice-stupa','An ice stupa shifts part of the water supply from winter towards the growing season. Its yield and lifetime depend on weather, size and water supply.',[13]),
+ p('stupa-limits','This approach uses changes of state and seasonal temperature differences; it does not make new water. No one structure guarantees water throughout summer. Heat transfer, local knowledge and measured water needs all matter when designing a solution.',[13])
+];
+export const glossary=[
+ ['Conduction','Energy transfer through matter without bulk flow of the material.'],
+ ['Convection','Heat transfer with the bulk movement of a liquid or gas.'],
+ ['Radiation','Energy transfer by electromagnetic waves; no material medium is needed.'],
+ ['Insulator','A material that slows heat transfer under stated conditions.'],
+ ['Density','Mass per unit volume; warmed air usually expands and becomes less dense.'],
+ ['Water cycle','The continuing movement and storage of water on, above and below Earth’s surface.'],
+ ['Transpiration','Release of water vapour from plants, mainly through leaves.'],
+ ['Infiltration','Entry of water from the ground surface into soil.'],
+ ['Groundwater','Water in saturated pores and openings below the water table.'],
+ ['Aquifer','A permeable layer of sediment or rock that stores and transmits groundwater.']
+];
+export const summary=[
+ 'Heat transfers from hotter regions to colder regions. Conduction, convection and radiation can act together.',
+ 'Conduction does not require bulk movement. In solids, particles vibrate about fixed positions; metals conduct heat readily.',
+ 'Poor conductors slow heat transfer. Trapped still air helps insulate clothing and buildings.',
+ 'Convection carries energy with moving liquids and gases. Heating can make a fluid expand and become less dense.',
+ 'Daytime sea breezes usually move from sea to land; nighttime land breezes usually move from land to sea. Local weather can alter the pattern.',
+ 'Radiation needs no medium. It carries solar energy across space. All everyday objects emit and absorb thermal radiation.',
+ 'Light and dark surfaces can absorb sunlight differently, but material, thickness and ventilation also affect comfort.',
+ 'Solar energy supports evaporation. Transpiration, condensation, precipitation, runoff and groundwater movement connect water’s many routes.',
+ 'Infiltration depends on pathways through soil and rock. Aquifers store and transmit groundwater in connected pores and openings.',
+ 'Pumping can exceed recharge. Careful water use, suitable rainwater harvesting and seasonal ice storage help communities manage limited supplies.'
+];
+export const exercises=[
+ {id:'q1',source:[14,15],text:'Choose the correct option in each case and explain it. (i) A saucepan has body A and handle B. Which pairing is most useful? (a) Both good conductors; (b) both poor conductors; (c) A a good conductor and B a poor conductor; (d) A a poor conductor and B a good conductor. (ii) In the pin setup below, the flame is halfway between pins II and III. Which is expected? (a) All fall together; (b) I and II fall before III and IV; (c) I and II fall after III and IV; (d) II and III fall at about the same time. (iii) Where is a smoke alarm usually best placed: (a) near the floor, (b) midway up a wall, (c) on the ceiling, or (d) anywhere? Actual fitting must follow the manufacturer’s and local fire-safety guidance.',diagram:'assessment-objects',caption:'A and B identify parts of the pan. Equal pin spacing and similar wax amounts are assumed; the candle is centred between II and III.'},
+ {id:'q2',source:[15],text:'A leaking tumbler of cold lassi is placed inside another tumbler. Could this keep it cold for longer? Explain how a trapped air gap might help, and how leaked liquid filling that gap could change your answer.'},
+ {id:'q3',source:[15],text:'State whether each statement is true or false, with reasons. (i) Heat is transferred through an ordinary solid by convection. (ii) Convection involves bulk movement of particles. (iii) Water usually seeps faster through clay than through sand in otherwise comparable conditions. (iv) Cooler near-surface air moving from land to sea is called a land breeze.'},
+ {id:'q4',source:[15],text:'Ice cubes in a dish melt after a while. Where do they gain energy from? Name possible paths by which energy reaches them.'},
+ {id:'q5',source:[15],text:'Imagine a burning incense stick fixed with its tip pointing downward. In which direction would the warm smoky air initially move in still surroundings? Draw and explain the movement. This is a thought question; do not burn incense to test it.'},
+ {id:'q6',source:[15],text:'The two diagrams show equal amounts of water starting at the same temperature. In (a), the flame heats the lower end and the thermometer bulb is higher in the water. In (b), the flame heats near the upper water region and the bulb is lower down. After equal gentle heating for a short time, which thermometer is likely to show a greater rise? Explain using convection and conduction. These are diagrams to reason about, not instructions for a home experiment.',diagram:'test-tubes',caption:'Positions of the heat source and thermometer bulb differ. Neither thermometer touches the glass. Supports are omitted for clarity.'},
+ {id:'q7',source:[16],text:'Why can hollow bricks help insulate outer walls in hot regions? Explain the role of trapped air and the direction of heat transfer during a hot afternoon.'},
+ {id:'q8',source:[16],text:'Explain how a large nearby water body can moderate temperature extremes. Connect your answer with the measured heating and cooling of soil and water.'},
+ {id:'q9',source:[16],text:'Explain how some water enters the ground and reaches groundwater stores. Include pore spaces, connected pathways and aquifers. Why does not all rain become groundwater?'},
+ {id:'q10',source:[16],text:'The water cycle redistributes and replenishes water on Earth. Justify this statement, then explain why it does not guarantee an unlimited local supply of clean water.'}
+];
+export const projects=[
+ {id:'project-harvesting',source:[16],title:'A local water-harvesting system',text:'With teacher permission and an adult, visit a rainwater-harvesting site or recharge pit. Stay outside pits and wells. Ask how water is collected, where it goes, how dirty runoff is excluded and who maintains the system. Prepare an illustrated report distinguishing what you observed from what you were told. If a visit is not possible, interview a local engineer or use an approved site plan.'},
+ {id:'project-paper',source:[16],title:'Paper around a metal rod',text:'Can a metal rod delay the charring of paper wrapped tightly around it? Ask your teacher to demonstrate after a school fire-safety assessment. The teacher uses a securely supported rod, suitable tools, a heatproof tray and a controlled flame, turning the rod with the tools while learners observe from a safe distance. Never hold the rod by hand. Predict whether close metal contact could carry heat away fast enough to delay charring. Compare prediction with observation; paper can still burn, so “metal makes paper fireproof” is not a valid conclusion. If a safe demonstration is unavailable, discuss a teacher-selected recording.'},
+ {id:'project-spiral',source:[16],title:'A spiral moved by warm air',text:'Draw a spiral on paper, cut it carefully with scissors and suspend it freely from its centre. Let a teacher show how rising warm air can turn it. Keep paper and thread far from any heat source; use a teacher-controlled warm-air source instead of a candle. Never place paper in a flame or over exposed heating elements. Compare movement with and without heating, keeping draughts as similar as possible. Record whether it turns and explain how moving air transfers energy. A still spiral is also a result to investigate.',diagram:'spiral',caption:'Cut along a spiral line, then suspend its centre. Ask the teacher to arrange safe heating and compare with an unheated trial.'}
+];
