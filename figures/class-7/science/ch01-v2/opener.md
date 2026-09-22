@@ -9,3 +9,7 @@ Use case: scientific-educational illustration. Create a high-resolution landscap
 ## Review
 
 The native output is 1536 pixels wide rather than the requested ideal 2048. It remains suitable at the chosen print width and was inspected in the page proof. The student positions, clear flight area, single plane and absence of lettering were checked. No synthetic labels, trajectory or outcome are used to teach the investigation.
+
+## September 2026 people-style revision
+
+The current opener is redrawn in the user-supplied warm painted 2D storybook style. See `assets/design-history/science-g7-people-style/replacements.json` for the exact current prompt, references and native asset hash. The earlier prompt above is retained as design history. The scene, safety arrangement, 1536 x 1024 canvas and printed size are preserved.

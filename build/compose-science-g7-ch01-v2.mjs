@@ -44,7 +44,8 @@ function render(meta){
  if(meta.type==='panel'){
   let y=68,html='';for(const [index,s] of meta.paragraphs.entries()){const match=s.match(/^(\d+)\. (.*)$/),p=paragraph(match?match[2]:s,{x:match?146:113,w:match?793:826,y,gap:12});if(match)html+=label(match[1]+'.',132,y+24,'se-activity-step','end');html+=p.html;y+=p.h;if(index===0&&meta.figure==='plane-setup'){const art=setupDiagram(y,label);html+=art.html;y+=art.h;}}
   const h=y+10,kind=meta.kind==='setup'?'se-activity-panel':'se-prompt se-thought-panel';
-  return add({...meta,type:meta.kind==='setup'?'activity':'panel'},`<rect class="${kind}" x="89" y="0" width="874" height="${h}" rx="18"/>`+v2PanelHeading(meta.kind,113,43)+html,h+22,{conceptId:meta.id});
+  const header=meta.kind==='setup'?`<path class="v2-activity-header" d="M107 0H945Q963 0 963 18V58H89V18Q89 0 107 0Z"/>`:'';
+  return add({...meta,type:meta.kind==='setup'?'activity':'panel'},`<rect class="${kind}" x="89" y="0" width="874" height="${h}" rx="18"/>`+header+v2PanelHeading(meta.kind,113,meta.kind==='setup'?39:43)+html,h+22,{conceptId:meta.id});
  }
  if(meta.type==='bullets'){const p=bulletList(meta.items,89,874);return add({...meta,type:'comparison'},p.html,p.h+6,{comparisonItems:meta.items.map((text,i)=>({id:meta.id+'-'+i,text}))});}
  if(meta.type==='comparison'){

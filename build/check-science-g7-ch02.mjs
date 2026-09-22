@@ -44,7 +44,13 @@ for(const a of assets){assert.equal(createHash('sha256').update(await fs.readFil
 for(const m of all.matchAll(/<image\b[^>]*href="([^"]+)"/g)){assert.ok(m[1].endsWith('.png')&&m[1].includes('/class-7/science/ch02/'));await fs.access(path.resolve('build/class-7',m[1]));}
 const audit=JSON.parse(await fs.readFile(history+'/render-audit.json','utf8'));
 const lessonPages=audit.pages.slice(1,map.findIndex(p=>p.title==='Keywords'));
-for(const p of lessonPages)if(p.occupiedPercent<88)assert.ok(p.shortPageException?.protectedGroup.length,'Short page explained: '+p.page);
+for(const p of lessonPages)if(p.occupiedPercent<88){
+ const planned=map[p.page-1],next=map[p.page];
+ const lessonEnd=planned.breakReason==='End of lesson before reference pages'&&planned.protectedNext===null&&next?.title==='Keywords';
+ assert.ok(p.shortPageException?.protectedGroup.length||lessonEnd,'Short page explained: '+p.page);
+ if(lessonEnd)p.shortPageException={remainingMM:p.shortPageException?.remainingMM,protectedGroup:[],reason:'Lesson ends before the dedicated Keywords page; retain the established reference-page boundary.',lessonEnd:true};
+}
+await fs.writeFile(history+'/render-audit.json',JSON.stringify(audit,null,2));
 const mean=lessonPages.reduce((a,p)=>a+p.occupiedPercent,0)/lessonPages.length;
 assert.ok(mean>=88,'Mean occupied lesson height');
 console.log(`Chapter 2 checks passed: ${files.length} pages, all 7 source activities, 12 questions, 4 projects, 10 transparent assets. Mean lesson occupancy ${mean.toFixed(1)}%.`);

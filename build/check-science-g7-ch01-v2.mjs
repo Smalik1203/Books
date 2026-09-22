@@ -57,20 +57,20 @@ for(const p of map){assert.ok(p.end<=1415,'Footer clearance');const bs=p.blocks|
 assert.ok(!/____|textLength=|lengthAdjust=|--head|--tail|style=/.test(all),'No writing spaces, justified SVG text, divided panels or inline styles');
 for(const m of all.matchAll(/<image\b[^>]*href="([^"]+)"/g)){assert.ok(m[1].includes('/class-7/science/ch01-v2/'),'Independent Class 7 asset');assert.ok(m[1].endsWith('.png'),'Every placed image is PNG');await fs.access(path.resolve('build/class-7',m[1]));}
 const artworks=JSON.parse(await fs.readFile(history+'/artwork.json','utf8'));
-for(const artwork of artworks)assert.equal(createHash('sha256').update(await fs.readFile(artwork.file)).digest('hex'),artwork.sha256,'Native opener unchanged');
+for(const artwork of artworks)assert.equal(createHash('sha256').update(await fs.readFile(artwork.file)).digest('hex'),artwork.sha256,'Reviewed native artwork integrity');
 const photos=JSON.parse(await fs.readFile(history+'/photographs.json','utf8'));
-assert.equal(photos.length,14,'Fourteen real photographs replace the eleven flat topic groups');
+assert.equal(photos.length,14,'Fourteen supporting images cover the eleven topic groups');
 const usedPhotos=[...all.matchAll(/<image\b[^>]*data-photo="([^"]+)"[^>]*>/g)];
-assert.equal(usedPhotos.length,photos.length,'Every credited photograph is printed exactly once');
+assert.equal(usedPhotos.length,photos.length,'Every supporting image is printed exactly once');
 for(const p of photos){
- assert.equal(createHash('sha256').update(await fs.readFile(p.file)).digest('hex'),p.sha256,'Vendored photograph integrity: '+p.key);
+ assert.equal(createHash('sha256').update(await fs.readFile(p.file)).digest('hex'),p.sha256,'Vendored supporting-image integrity: '+p.key);
  const matches=usedPhotos.filter(m=>m[1]===p.key);assert.equal(matches.length,1,p.key);
  const attr=name=>Number(matches[0][0].match(new RegExp(`\\b${name}="([^"]+)"`))[1]);
  const ppi=25.4*1052/189/Math.min(attr('width')/p.pixels[0],attr('height')/p.pixels[1]);
- assert.ok(ppi>=300,'Photograph below 300 ppi: '+p.key+' '+ppi);
+ assert.ok(ppi>=300,'Supporting image below 300 ppi: '+p.key+' '+ppi);
  assert.ok(p.sourceURL.startsWith('https://commons.wikimedia.org/wiki/File:')&&p.license,'Traceable photographic source and licence');
 }
-assert.ok(!/v2-art-|ch01-v2\/runners\.png/.test(all),'Flat topic drawings and painted runners are no longer printed');
+assert.ok(!/v2-art-|ch01-v2\/runners\.png/.test(all),'Retired flat topic drawings and old runner assets are not printed');
 assert.ok(!text.includes('Photograph credits'),'No printed photograph credits section');
 const config=JSON.parse(await fs.readFile(dir+'/chapter.json','utf8'));
 assert.equal(config.subject,'Science');assert.equal(config.title,'The Ever-Evolving World of Science');assert.equal(config.class,'7');assert.equal(config.edition,'science-tall');

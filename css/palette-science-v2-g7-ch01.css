@@ -1,4 +1,4 @@
-/* Chapter 1 identity; V2 reading typography and learning-role colours are shared. */
+/* Chapter 1 identity; reading typography is shared, Investigate colours are scoped. */
 .page--v2-g7-ch01 image.science-illustration,
 .page--v2-g7-ch01 .v2-topic-photo,
 .page--v2-g7-ch01 .chapter-opener image {
@@ -7,6 +7,22 @@
 .page--science-v2.page--v2-g7-ch01 {
  --v2-ink:#24333d; --v2-forest:#244e70; --v2-leaf:#498fa7;
  --v2-wash:#edf4f7; --v2-rule:#a2bac9;
+ --v2-investigate-wash:rgb(0 107 115 / 7%);
+ --v2-investigate-bar:rgb(0 107 115 / 20%);
+ --v2-investigate-rule:rgb(0 107 115 / 35%);
+}
+/* Chapter 1 pilot: translucent teal surfaces; text and icons stay fully opaque. */
+.page--science-v2.page--v2-g7-ch01 .se-activity-panel {
+ fill:var(--v2-investigate-wash); stroke:var(--v2-investigate-rule);
+}
+.page--science-v2.page--v2-g7-ch01 .v2-activity-header {
+ fill:var(--v2-investigate-bar); stroke:none;
+}
+.page--science-v2.page--v2-g7-ch01 .v2-panel-heading--setup {
+ --v2-cue-ink:var(--v2-teal);
+}
+.page--science-v2.page--v2-g7-ch01 .se-activity-step {
+ fill:var(--v2-teal);
 }
 .page--v2-g7-ch01 .v2-observe-motif {fill:none;stroke:var(--v2-rule);stroke-width:2;stroke-linecap:round;opacity:.6;}
 .page--v2-g7-ch01 .v2-diagram-stroke {fill:none;stroke:var(--v2-forest);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
