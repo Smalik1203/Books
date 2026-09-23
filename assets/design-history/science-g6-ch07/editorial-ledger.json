@@ -1,0 +1,952 @@
+{
+  "opener": {
+    "source": [
+      1
+    ],
+    "paragraphs": [
+      "A forehead feels warm. A thermometer gives a number. What can each observation tell us?",
+      "After school in Shillong, Lambok feels tired and thinks he may have a fever. His sister Phiban touches his forehead. Their family checks with a clinical thermometer: the reading is near the usual reference for body temperature.",
+      "Touch begins their question, but it cannot settle it. A useful measurement needs the right instrument, a careful method and a unit.",
+      "In this chapter, compare sensations, read liquid columns and digital displays, and investigate how temperature measurements help us describe bodies, water and the air around us."
+    ]
+  },
+  "lesson": [
+    {
+      "id": "touch-heading",
+      "type": "heading",
+      "text": "7.1 Can We Trust Our Sense of Touch?",
+      "source": [
+        1,
+        2
+      ],
+      "level": 1
+    },
+    {
+      "id": "touch-start",
+      "type": "body",
+      "text": "Water from a refrigerator, an earthen pot and a tap can feel different. We often use words such as hot, warm and cold without measuring anything. But will two hands always agree about the same water?",
+      "source": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "bowls-art",
+      "type": "figure",
+      "figure": "bowls",
+      "caption": "Fig. 7.1 · Three bowls for comparing sensations. Use comfortably warm and cool water; remove ice before the hand test.",
+      "source": [
+        2
+      ]
+    },
+    {
+      "id": "touch-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.1",
+      "paragraphs": [
+        "1. Ask an adult to prepare three bowls: A with comfortably warm water, B with room-temperature water and C with cool water. Avoid very hot or painfully cold water. Remove any ice from C.",
+        "2. Predict what each hand will feel when both are placed in B. Record your prediction before trying.",
+        "3. Briefly place one hand in A and the other in C. Then place both hands together in B. Stop immediately if either hand feels uncomfortable.",
+        "4. Describe each hand’s sensation in your notebook. Did your hands agree? Compare your account with another learner’s without changing your own observation."
+      ],
+      "source": [
+        2
+      ]
+    },
+    {
+      "id": "touch-evidence",
+      "type": "body",
+      "text": "Both hands meet the same water in B, yet they may report different sensations after their different starting conditions. If this happens, it is evidence that touch depends on what the skin experienced just before. The water has not acquired two different temperatures merely because the hands disagree.",
+      "source": [
+        2
+      ]
+    },
+    {
+      "id": "touch-limit",
+      "type": "body",
+      "text": "Touch is useful for noticing a possible change, but it is not a reliable numerical measurement. Never test an unknown hot object by touching it. A thermometer gives a temperature reading without asking us to judge hotness by sensation alone.",
+      "source": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "temperature-heading",
+      "type": "heading",
+      "text": "7.2 Temperature and Its Units",
+      "source": [
+        3
+      ],
+      "level": 1
+    },
+    {
+      "id": "temperature-definition",
+      "type": "body",
+      "text": "**Temperature** describes how hot or cold a body is. A **thermometer** measures temperature. A useful record includes both a number and a unit: “28” alone does not tell us which temperature scale was used.",
+      "source": [
+        3
+      ]
+    },
+    {
+      "id": "celsius",
+      "type": "body",
+      "text": "The Celsius scale is common in school and everyday life. Its unit is the **degree Celsius**, written °C. Read 28 °C as “twenty-eight degrees Celsius”. A larger Celsius reading means a higher temperature when comparing measurements on this same scale.",
+      "source": [
+        3,
+        7
+      ]
+    },
+    {
+      "id": "units-table",
+      "type": "table",
+      "comparisonTable": true,
+      "caption": "Table 7.1 · Three temperature scales",
+      "rows": [
+        [
+          "Scale",
+          "Unit and symbol",
+          "One equivalent temperature"
+        ],
+        [
+          "Celsius",
+          "degree Celsius (°C)",
+          "37 °C"
+        ],
+        [
+          "Fahrenheit",
+          "degree Fahrenheit (°F)",
+          "98.6 °F"
+        ],
+        [
+          "Kelvin",
+          "kelvin (K)",
+          "310.15 K"
+        ]
+      ],
+      "widths": [
+        0.25,
+        0.4,
+        0.35
+      ],
+      "source": [
+        6,
+        7
+      ],
+      "note": "These are three ways to express the same temperature, not three different body temperatures."
+    },
+    {
+      "id": "kelvin",
+      "type": "body",
+      "text": "The kelvin is the SI unit of temperature. Write K, without a degree sign. A change of 1 °C is the same temperature interval as a change of 1 K, but the scales have different zero points. To convert a Celsius value to a kelvin value, add 273.15.",
+      "source": [
+        7
+      ]
+    },
+    {
+      "id": "kelvin-equation",
+      "type": "equation",
+      "text": "25 °C corresponds to (25 + 273.15) K = 298.15 K",
+      "caption": "Add 273.15 to the numerical Celsius value; write the result with K.",
+      "source": [
+        7
+      ]
+    },
+    {
+      "id": "unit-think",
+      "type": "panel",
+      "kind": "think",
+      "paragraphs": [
+        "One report says 37 °C and another says 98.6 °F. Has the temperature necessarily risen? Explain why comparing the numbers without their scales would mislead us."
+      ],
+      "source": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "clinical-heading",
+      "type": "heading",
+      "text": "7.3 Measuring Body Temperature",
+      "source": [
+        3,
+        4
+      ],
+      "level": 1
+    },
+    {
+      "id": "clinical-intro",
+      "type": "body",
+      "text": "A **clinical thermometer** is designed for measuring body temperature. A digital model has a sensing tip, an electronic circuit and a display. The sensor responds to temperature, and the instrument shows a reading. A battery supplies the electrical energy it needs.",
+      "source": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "clinical-art",
+      "type": "figure",
+      "figure": "clinical",
+      "caption": "Fig. 7.2 · A contact digital clinical thermometer and a non-contact infrared thermometer. Displays are left blank here.",
+      "source": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "clinical-types",
+      "type": "body",
+      "text": "The sensing tip of a contact model must be used at a body site approved in its instructions. A non-contact infrared clinical thermometer detects infrared radiation from the intended site, commonly the forehead. Its distance and positioning instructions matter; it is not used like a contact probe.",
+      "source": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "clinical-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.2",
+      "paragraphs": [
+        "1. With a teacher or responsible adult, examine a digital clinical thermometer and its instructions. Identify the sensing tip, display, power button, unit and permitted measuring site.",
+        "2. Watch the adult demonstrate correct use and cleaning. A personal measurement is optional and requires permission and adult supervision. Never share an oral thermometer between pupils.",
+        "3. For comparison, use ten anonymous, teacher-provided readings taken with the same method, or voluntarily supplied records with permission. Record reading, unit, time and measuring site; do not write names.",
+        "4. Compare the values with 37 °C. Are they all identical? Note any missing information that prevents a fair comparison. Do not diagnose anyone from this classroom record."
+      ],
+      "source": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "clinical-method",
+      "type": "body",
+      "text": "Follow the device’s instructions for the person’s age and the measuring site. Hold a contact model by its body rather than its sensing tip, and wait for its completion signal as instructed. Clean it using the recommended method. Do not immerse its electronic parts unless the manufacturer permits this.",
+      "source": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "clinical-reference",
+      "type": "body",
+      "text": "The often-quoted 37 °C, or 98.6 °F, is a conventional reference for body temperature, not an exact value every healthy person must show. Readings vary with the person, time of day, activity, measuring site and method. A single number is not enough to decide whether someone is well.",
+      "source": [
+        6
+      ]
+    },
+    {
+      "id": "site-qualification",
+      "type": "body",
+      "text": "A reading from the armpit may differ from one taken at another site. Record the actual site and value; do not add a fixed correction to make it “normal”. If someone feels unwell, tell a responsible adult and follow appropriate health advice. Measuring in class is not a substitute for care.",
+      "source": [
+        6
+      ]
+    },
+    {
+      "id": "mercury",
+      "type": "body",
+      "text": "Older clinical thermometers used mercury. Mercury is toxic, and broken glass can injure. Use a suitable digital device instead. If an old thermometer breaks, keep away and tell an adult; never touch the liquid or try to clean it up yourself.",
+      "source": [
+        4
+      ]
+    },
+    {
+      "id": "pulse-think",
+      "type": "panel",
+      "kind": "think",
+      "paragraphs": [
+        "A person’s pulse becomes faster after running. Could a faster pulse by itself prove that the person has a fever? Explain which measurement is missing and why the activity just before the observation matters."
+      ],
+      "source": [
+        6
+      ]
+    },
+    {
+      "id": "lab-heading",
+      "type": "heading",
+      "text": "7.4 Using a Laboratory Thermometer",
+      "source": [
+        8,
+        9
+      ],
+      "level": 1
+    },
+    {
+      "id": "lab-intro",
+      "type": "body",
+      "text": "A **laboratory thermometer** is used to measure temperatures in investigations. One familiar model has a glass stem, a bulb holding liquid, a narrow tube and a marked scale. A coloured alcohol liquid makes the column easy to see. Use a teacher-approved mercury-free instrument.",
+      "source": [
+        8
+      ]
+    },
+    {
+      "id": "lab-structure",
+      "type": "diagram",
+      "diagram": "structure",
+      "caption": "Fig. 7.3 · Parts of a liquid-in-glass laboratory thermometer. An enlarged portion of the Celsius scale is shown.",
+      "source": [
+        8
+      ]
+    },
+    {
+      "id": "lab-mechanism",
+      "type": "body",
+      "text": "When the bulb warms, its liquid expands and rises in the narrow tube. When it cools, the liquid contracts and the column falls. The instrument therefore responds to its own temperature as it exchanges energy with what it is measuring. Allow time for its reading to settle.",
+      "source": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "range-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.3",
+      "paragraphs": [
+        "1. Examine a laboratory thermometer under your teacher’s supervision. Keep it away from the edge of the table and handle it gently.",
+        "2. Find the unit and the lowest and highest marked values. Record both endpoints; together they describe the instrument’s marked range.",
+        "3. Compare the marked range with another thermometer if one is available. Would either be suitable for the temperature you intend to measure? Explain your choice."
+      ],
+      "source": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "range-evidence",
+      "type": "body",
+      "text": "A common school laboratory model is marked from −10 °C to 110 °C. This is an example, not a rule for every instrument. Read the scale and the instructions of the model actually being used. Negative Celsius temperatures lie below 0 °C; they are not “less than no temperature”.",
+      "source": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "instrument-table",
+      "type": "table",
+      "comparisonTable": true,
+      "caption": "Table 7.2 · Choose the instrument for the job",
+      "rows": [
+        [
+          "Criterion",
+          "Clinical thermometer",
+          "Laboratory thermometer"
+        ],
+        [
+          "Intended use",
+          "Body temperature at an approved site",
+          "Temperatures of materials in investigations"
+        ],
+        [
+          "Range",
+          "Check the device’s stated body-temperature range",
+          "Check the actual marked or stated range"
+        ],
+        [
+          "Reading",
+          "Follow its method and completion signal",
+          "For liquid-in-glass models, read while the bulb remains in the material"
+        ],
+        [
+          "Important limit",
+          "Do not use it for boiling water or ice experiments",
+          "Never put a glass laboratory thermometer in the mouth"
+        ]
+      ],
+      "widths": [
+        0.2,
+        0.4,
+        0.4
+      ],
+      "source": [
+        6,
+        8,
+        10
+      ],
+      "note": "An instrument suitable for one task is not automatically suitable for another."
+    },
+    {
+      "id": "division-heading",
+      "type": "heading",
+      "text": "Reading Between Numbered Marks",
+      "source": [
+        9
+      ],
+      "level": 2
+    },
+    {
+      "id": "division-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.4",
+      "paragraphs": [
+        "1. Choose two neighbouring numbered marks on the thermometer. Subtract the lower value from the higher value.",
+        "2. Count the equal intervals between the marks. Count the spaces, not both endpoint lines as extra intervals.",
+        "3. Divide the temperature difference by the number of intervals. Record the value of one smallest division with its unit.",
+        "4. Compare your calculation with a partner’s. If the answers differ, check the endpoints and interval count before reading a liquid level."
+      ],
+      "source": [
+        9
+      ]
+    },
+    {
+      "id": "division-figure",
+      "type": "diagram",
+      "diagram": "division",
+      "caption": "Fig. 7.4 · Ten equal intervals run from 20 °C to 30 °C on this scale.",
+      "source": [
+        9
+      ]
+    },
+    {
+      "id": "division-equation",
+      "type": "equation",
+      "text": "Value of one division = (30 − 20) °C ÷ 10 = 1 °C",
+      "caption": "There are eleven tick marks from 20 to 30 inclusive, but only ten intervals.",
+      "source": [
+        9
+      ]
+    },
+    {
+      "id": "resolution",
+      "type": "body",
+      "text": "Another thermometer may have divisions of 0.5 °C or 2 °C. Do not assume that every small line means 1 °C. Small divisions let us distinguish closer readings; they do not, by themselves, prove that an instrument is accurate.",
+      "source": [
+        9
+      ]
+    },
+    {
+      "id": "water-heading",
+      "type": "heading",
+      "text": "Measuring Water Carefully",
+      "source": [
+        10,
+        11
+      ],
+      "level": 2
+    },
+    {
+      "id": "water-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.5",
+      "paragraphs": [
+        "1. Ask the teacher for a beaker of comfortably warm water and a suitable mercury-free laboratory thermometer. No pupil heating is needed.",
+        "2. Support the thermometer upright. Immerse its bulb fully in the water, clear of the beaker’s sides and bottom.",
+        "3. Wait for the liquid column to stop changing. Bring your eyes to the level of the top of the column, keeping your face safely away from the apparatus.",
+        "4. Read and record the temperature with its unit while the bulb remains in the water. Repeat carefully. Compare readings and explain any differences in the method."
+      ],
+      "source": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "water-apparatus",
+      "type": "diagram",
+      "diagram": "water",
+      "caption": "Fig. 7.5 · Keep the bulb immersed and clear of the glass. View the liquid level straight across.",
+      "source": [
+        10
+      ]
+    },
+    {
+      "id": "water-evidence",
+      "type": "body",
+      "text": "Looking from above or below can make a liquid level appear to line up with the wrong mark. This viewing error is called **parallax**. Eye-level reading reduces it. Touching the container can also make the thermometer respond to the container rather than only to the water.",
+      "source": [
+        10
+      ]
+    },
+    {
+      "id": "removal",
+      "type": "body",
+      "text": "A liquid-in-glass laboratory thermometer does not usually retain its highest reading. Lift it out of warm water into cooler air and the column begins to fall. A reading taken afterwards no longer describes the water at the moment of measurement. Keep the bulb immersed while reading.",
+      "source": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "fixed-points",
+      "type": "heading",
+      "text": "Melting Ice and Boiling Water",
+      "source": [
+        11
+      ],
+      "level": 2
+    },
+    {
+      "id": "teacher-demo",
+      "type": "body",
+      "text": "In a teacher-led demonstration, observe a suitable thermometer in a well-mixed mixture of melting ice and water, and then an appropriate instrument measuring boiling water. Watch from a safe distance. Do not handle the hot vessel, steam, heater or thermometer.",
+      "source": [
+        11
+      ]
+    },
+    {
+      "id": "phase-change",
+      "type": "body",
+      "text": "For pure water near standard atmospheric pressure, melting ice and water together are near 0 °C, while boiling water is near 100 °C. During each change, the temperature can remain nearly steady while both forms are present. Heating does not always mean that the temperature keeps rising.",
+      "source": [
+        11
+      ]
+    },
+    {
+      "id": "pressure",
+      "type": "body",
+      "text": "The boiling temperature also depends on pressure. At a higher place, the air pressure is usually lower, and water boils at a lower temperature. Dissolved substances and measurement conditions can matter too. A boiling reading below 100 °C does not automatically mean that the thermometer is broken.",
+      "source": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "boiling-data-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.6",
+      "paragraphs": [
+        "1. Study the supplied readings from a boiling-water demonstration in Shillong in Table 7.3. This is a data investigation; do not boil water yourself.",
+        "2. Find the highest and lowest readings and calculate their difference. Which value occurs more than once?",
+        "3. Suggest measurement details that could account for the small spread. Explain why you need the place and conditions before comparing every result with 100 °C."
+      ],
+      "source": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "boiling-table",
+      "type": "table",
+      "comparisonTable": true,
+      "caption": "Table 7.3 · Supplied boiling-water readings in Shillong",
+      "rows": [
+        [
+          "Observer",
+          "Temperature"
+        ],
+        [
+          "Phiban",
+          "97.8 °C"
+        ],
+        [
+          "Shemphang",
+          "98.0 °C"
+        ],
+        [
+          "Onestar",
+          "97.9 °C"
+        ],
+        [
+          "Kloi",
+          "98.0 °C"
+        ],
+        [
+          "Bandarisha",
+          "98.1 °C"
+        ]
+      ],
+      "widths": [
+        0.55,
+        0.45
+      ],
+      "source": [
+        11,
+        12
+      ],
+      "note": "These readings are provided for analysis; they are not a result you are required to reproduce."
+    },
+    {
+      "id": "boiling-evidence",
+      "type": "body",
+      "text": "The readings span 0.3 °C. Differences in eye position, timing, instruments or conditions could contribute. Check those details before choosing a cause. Shillong’s elevation also helps explain why readings cluster below the sea-level reference of 100 °C.",
+      "source": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "air-heading",
+      "type": "heading",
+      "text": "7.5 Temperature of the Air",
+      "source": [
+        12,
+        13
+      ],
+      "level": 1
+    },
+    {
+      "id": "air-start",
+      "type": "body",
+      "text": "A room thermometer responds to the air and surroundings where it is placed. A sunny windowsill and a shaded part of the same room may give different readings. Keep the position and time consistent when investigating change, and record those details.",
+      "source": [
+        12
+      ]
+    },
+    {
+      "id": "weather-art",
+      "type": "figure",
+      "figure": "weather",
+      "caption": "Fig. 7.6 · A ventilated weather-instrument shelter protects temperature instruments from direct sunshine. The instruments beside it measure wind.",
+      "source": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "weather-reading",
+      "type": "body",
+      "text": "Weather observations need comparable measuring conditions. Outdoor air-temperature instruments are protected from direct sunshine while air can move around them. A thermometer warmed directly by the Sun can give a misleading value for the surrounding shaded air.",
+      "source": [
+        12
+      ]
+    },
+    {
+      "id": "max-min",
+      "type": "body",
+      "text": "Weather reports commonly give the day’s **maximum** and **minimum** air temperatures: its highest and lowest recorded values for the reporting period. A single reading at noon cannot establish both. Special instruments or repeated automatic records are used to capture the extremes.",
+      "source": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "weather-task",
+      "type": "panel",
+      "kind": "setup",
+      "sourceActivity": "7.7",
+      "paragraphs": [
+        "1. Choose one place and a reliable weather report. Collect its reported maximum and minimum temperatures for ten successive days.",
+        "2. In your notebook, record date, place, source, unit, maximum and minimum. Use the same reporting period and source throughout.",
+        "3. Calculate each day’s temperature range by subtracting its minimum from its maximum. Identify the greatest maximum and the smallest minimum in your record.",
+        "4. Describe the changes you actually find. Compare with classmates using the same place and dates, and investigate any disagreements."
+      ],
+      "source": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "weather-evidence",
+      "type": "body",
+      "text": "Daily temperatures need not change steadily in one direction. Clouds, wind and other weather conditions matter. Ten days can show a short-term pattern, but this small record is not enough to describe a place’s climate. Keep the conclusion within what the observations support.",
+      "source": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "anna-mani",
+      "type": "body",
+      "text": "Anna Mani (1918–2001) was an Indian meteorologist who helped develop and standardise weather instruments in India. Her work also supported measurements of sunshine and wind. Reliable instruments turn observations into records that others can check and compare.",
+      "source": [
+        13
+      ]
+    },
+    {
+      "id": "air-think",
+      "type": "panel",
+      "kind": "think",
+      "paragraphs": [
+        "Two pupils report different afternoon air temperatures. One measured beside a sunny wall; the other used a shaded, ventilated position. What would you change before deciding that either thermometer was faulty?"
+      ],
+      "source": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "temperature-close",
+      "type": "body",
+      "text": "A temperature measurement is more than a number. State the unit, choose an instrument suited to the task, use a consistent method and describe the conditions. These details let another person understand what was measured and whether a comparison is fair.",
+      "source": [
+        14
+      ]
+    }
+  ],
+  "glossary": {
+    "purpose": "Reference definitions for terms taught in the chapter",
+    "entries": [
+      [
+        "Temperature",
+        "A measure of how hot or cold a body is."
+      ],
+      [
+        "Thermometer",
+        "An instrument for measuring temperature."
+      ],
+      [
+        "Clinical thermometer",
+        "An instrument designed to measure body temperature."
+      ],
+      [
+        "Laboratory thermometer",
+        "An instrument for temperature measurements in investigations."
+      ],
+      [
+        "Degree Celsius",
+        "A temperature unit written °C."
+      ],
+      [
+        "Degree Fahrenheit",
+        "A temperature unit written °F."
+      ],
+      [
+        "Kelvin",
+        "The SI unit of temperature, written K."
+      ],
+      [
+        "Sensing tip",
+        "The temperature-sensitive end of a contact digital thermometer."
+      ],
+      [
+        "Bulb",
+        "The reservoir of liquid in a liquid-in-glass thermometer."
+      ],
+      [
+        "Liquid column",
+        "The visible liquid in the narrow tube above the bulb."
+      ],
+      [
+        "Scale",
+        "Marks and numbers used to read a measurement."
+      ],
+      [
+        "Marked range",
+        "The interval between an instrument’s lowest and highest marked values."
+      ],
+      [
+        "Smallest division",
+        "The value of one smallest interval on a scale."
+      ],
+      [
+        "Parallax",
+        "Apparent shift caused by viewing a scale from an angle."
+      ],
+      [
+        "Maximum temperature",
+        "The highest temperature recorded in a stated period."
+      ],
+      [
+        "Minimum temperature",
+        "The lowest temperature recorded in a stated period."
+      ]
+    ]
+  },
+  "summary": [
+    "Touch depends on previous sensations. Use a suitable thermometer for a numerical temperature measurement.",
+    "Record the number and unit together. Celsius uses °C, Fahrenheit uses °F and kelvin uses K.",
+    "37 °C and 98.6 °F are equivalent reference values. Body temperature varies with the person, time, site and method.",
+    "Use clinical thermometers only as directed, with permission, hygiene and adult guidance. Never use a glass laboratory thermometer in the mouth.",
+    "In a liquid-in-glass thermometer, warming expands the liquid and cooling contracts it. Read its range and smallest division before use.",
+    "For water measurements, keep the bulb immersed and clear of the vessel. Wait for a steady column and read at eye level.",
+    "Pure melting ice and water are near 0 °C; pure water boils near 100 °C at standard atmospheric pressure. Boiling temperature changes with pressure.",
+    "Air-temperature records need a stated place, time and suitable measuring conditions. Daily maximum and minimum values are the extremes for a reporting period."
+  ],
+  "assessment": {
+    "purpose": "All fourteen source questions retained with safety and evidence qualifications",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Which is the commonly quoted reference value for normal human body temperature on the Celsius scale? Choose one: (a) 98.6 °C; (b) 37.0 °C; (c) 32 °C; (d) 27 °C.",
+        "source": [
+          15
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Which Fahrenheit value is equivalent to 37 °C? Choose one: (a) 97.4 °F; (b) 97.6 °F; (c) 98.4 °F; (d) 98.6 °F.",
+        "source": [
+          15
+        ]
+      },
+      {
+        "id": "q3",
+        "text": "Complete these statements in your notebook. (a) A measure of hotness or coldness is called … . (b) A … thermometer intended for body temperature must not be used for ice-water experiments. (c) The unit on the Celsius scale is the … .",
+        "source": [
+          15
+        ]
+      },
+      {
+        "id": "q4",
+        "text": "Which marked range is common for a school liquid-in-glass laboratory thermometer? (a) 10 °C to 100 °C; (b) −10 °C to 110 °C; (c) 32 °C to 45 °C; (d) 35 °C to 42 °C. Why must you still check the instrument in front of you?",
+        "source": [
+          15
+        ]
+      },
+      {
+        "id": "q5",
+        "text": "Four students position laboratory thermometers as shown. Which position is suitable for reading the water temperature? Explain the problem in each of the other three positions.",
+        "diagram": "positions",
+        "caption": "Each beaker contains water; the thermometer bulb is the rounded lower end.",
+        "source": [
+          16
+        ]
+      },
+      {
+        "id": "q6",
+        "text": "Copy these Celsius scales into your notebook. Draw the liquid level at (a) 14 °C, (b) 17 °C and (c) 7.5 °C. Count the intervals before drawing.",
+        "diagram": "blank-scales",
+        "caption": "Scales (a) and (b) have 1 °C divisions; scale (c) has 0.5 °C divisions.",
+        "source": [
+          16
+        ]
+      },
+      {
+        "id": "q7",
+        "text": "This is part of a liquid-in-glass thermometer scale used in a laboratory. What temperature does the column show? What is the value of its smallest division?",
+        "diagram": "read28",
+        "caption": "Scale values are in degrees Celsius.",
+        "source": [
+          16
+        ]
+      },
+      {
+        "id": "q8",
+        "text": "Why should a glass laboratory thermometer not be used to measure a person’s body temperature? Explain how the intended use and safe handling of a clinical thermometer differ.",
+        "source": [
+          16
+        ]
+      },
+      {
+        "id": "q9",
+        "text": "Use this supplied classroom record of Vaishnavi’s temperature. (a) Find the highest reading. (b) State its day and time. (c) On which day and at what time does the record first reach 37.0 °C? Explain why the table alone cannot establish that she has recovered.",
+        "table": {
+          "caption": "Supplied temperature readings (°C)",
+          "rows": [
+            [
+              "Day",
+              "7 am",
+              "10 am",
+              "1 pm",
+              "4 pm",
+              "7 pm",
+              "10 pm"
+            ],
+            [
+              "1",
+              "38.0",
+              "37.8",
+              "38.0",
+              "38.0",
+              "40.0",
+              "39.0"
+            ],
+            [
+              "2",
+              "38.6",
+              "38.8",
+              "39.0",
+              "39.0",
+              "39.0",
+              "38.0"
+            ],
+            [
+              "3",
+              "37.6",
+              "37.4",
+              "37.2",
+              "37.0",
+              "36.8",
+              "36.6"
+            ]
+          ],
+          "widths": [
+            0.1,
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15
+          ],
+          "note": "This supplied exercise record is not guidance for treating an illness."
+        },
+        "source": [
+          17
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "Which scale has a marked division exactly at 22.5 °C? Explain your choice by stating the smallest division of each scale.",
+        "diagram": "scale-choice",
+        "caption": "All three scales show part of the Celsius scale.",
+        "source": [
+          17
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "Read the liquid level on this enlarged scale. Choose (a) 28.0 °C, (b) 27.5 °C, (c) 26.5 °C or (d) 25.3 °C. Explain how you counted from a numbered mark.",
+        "diagram": "read275",
+        "caption": "The small marks divide each degree into two equal intervals.",
+        "source": [
+          18
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "A thermometer has 50 equal intervals between 0 °C and 100 °C. What temperature interval does one division represent? Show your calculation.",
+        "source": [
+          18
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "Draw a scale from 10 °C to 20 °C with a division every 0.5 °C. How many intervals and how many tick marks, including both endpoints, will you draw?",
+        "source": [
+          18
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "Komal tells her friend, “My temperature is 101 degrees.” Which scale is she likely using? What details should you ask for before interpreting the reading? Explain why anyone who feels unwell should tell a responsible adult.",
+        "source": [
+          18
+        ]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "project-animals",
+      "title": "1. Temperature in other animals",
+      "text": "With an adult, ask a veterinarian or consult a reliable veterinary reference about typical body temperatures of two animals. Record species, unit, measuring method and source. Compare the information without measuring or handling animals yourself. Explain why a human reference value should not simply be applied to another species.",
+      "source": [
+        18
+      ]
+    },
+    {
+      "id": "project-india",
+      "title": "2. Hot and cold places in India",
+      "text": "Find reported temperatures for two Indian places using an official weather source. Record the date, unit and whether each value is a daily observation, a forecast or a historical record. Compare like with like. What additional information would you need to claim that one place is generally hotter than the other?",
+      "figure": "weather",
+      "caption": "Consistent instruments and records make comparisons more useful.",
+      "source": [
+        18
+      ]
+    },
+    {
+      "id": "project-planets",
+      "title": "3. Temperature beyond Earth",
+      "text": "Use a reliable space-agency source to compare reported temperatures of planets and their distances from the Sun. Check whether each temperature describes a surface, atmosphere or average. Does distance alone explain the order? Investigate one exception. The kelvin scale begins at absolute zero, 0 K, equal to −273.15 °C; this is very different from the freezing point of water.",
+      "source": [
+        18,
+        19
+      ]
+    },
+    {
+      "id": "project-room-water",
+      "title": "4. A room and a beaker of water",
+      "text": "With teacher approval, compare room air and a beaker of water at the same three times each day for two weeks. Use suitable thermometers in a fixed shaded position. Keep the water thermometer’s bulb immersed and clear of the vessel. Record date, time, both values and units. Keep the water out of direct sunlight and do not heat it. Do the temperatures always agree? Discuss why the water and the air may respond to changes at different rates.",
+      "diagram": "room-water",
+      "caption": "Measure the air and the water separately; retain the same positions and method.",
+      "source": [
+        19
+      ]
+    }
+  ]
+}
