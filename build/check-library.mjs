@@ -27,6 +27,7 @@ import { spawn, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { chapterNeighbours } from './chapter-navigation.mjs';
 
 // Chrome refuses to start its sandbox as root, which is how a CI
 // container usually runs. Only then is the flag added — the same
@@ -54,6 +55,29 @@ const bad = (name, got, want) => {
 };
 const eq = (name, got, want) =>
   (JSON.stringify(got) === JSON.stringify(want) ? ok(name) : bad(name, got, want));
+
+function checkChapterNavigation() {
+  const item = (cls, subject, number, dir = `ch${number}`) => ({
+    target: `${cls}/${dir}`, subject, meta: { number, title: `Chapter ${number}` },
+  });
+  const first = item('class-7', 'Science', 1);
+  const middle = item('class-7', 'Science', 2);
+  const last = item('class-7', 'Science', 10);
+  const otherClass = item('class-6', 'Science', 3);
+  const otherSubject = item('class-7', 'Mathematics', 3, 'maths3');
+  const chapters = [last, otherClass, middle, otherSubject, first];
+  const links = (chapter) => {
+    const { previous, next } = chapterNeighbours(chapter, chapters);
+    return [previous?.target || null, next?.target || null];
+  };
+  eq('chapter neighbours use numeric order and the same class and subject',
+    links(middle), [first.target, last.target]);
+  eq('first chapter has no previous link', links(first), [null, middle.target]);
+  eq('last chapter has no next link', links(last), [middle.target, null]);
+  eq('only chapter in a class has no neighbours', links(otherClass), [null, null]);
+  eq('only chapter in a subject has no neighbours', links(otherSubject), [null, null]);
+  eq('unknown chapter has no neighbours', links(item('class-7', 'Science', 99)), [null, null]);
+}
 
 /* ---- 1. Structure ----------------------------------------- */
 const freePort = () => 5300 + Math.floor(Math.random() * 400);
@@ -139,6 +163,11 @@ async function checkStructure() {
     eq('a home button beside it, and it is bare',
       /href="\/"[^>]*title="The library"/.test(view), true);
     eq('both are icons', (view.match(/class="btn btn--icon"/g) || []).length >= 2, true);
+    eq('chapter navigation sits immediately after Spreads in the centre cluster',
+      />Spreads<\/button>\s*<(?:a|button)[^>]*id="chapter-previous"[\s\S]*?id="chapter-next"[\s\S]*?<\/svg><\/(?:a|button)>\s*<\/div>/.test(view), true);
+    eq('chapter navigation has accessible destination names',
+      /id="chapter-previous" aria-label="[^"]+"/.test(view)
+      && /id="chapter-next" aria-label="[^"]+"/.test(view), true);
     /* Where you are, then what you are looking at — the class and the
        chapter above the title, not run together beside it. */
     eq('the label is stacked, class and chapter first',
@@ -151,6 +180,7 @@ async function checkStructure() {
         .then((r) => r.text()).catch(() => '');
       // a cover belongs to a class and to no subject
       eq('the cover back link carries the class', /href="\/\?class=[^"&]+"/.test(cov), true);
+      eq('cover has no chapter navigation', /id="chapter-(previous|next)"/.test(cov), false);
     }
 
     /* The whole volume, read like a chapter. A class could be bound from
@@ -171,6 +201,7 @@ async function checkStructure() {
       eq('and says it is the whole book', /class="bar__sub">Class \d+ &middot; whole book/.test(bv), true);
       eq('its back link carries class and subject', /href="\/\?class=[^"]+&amp;subject=[^"]+"/.test(bv), true);
       eq('its Build binds the volume', /"kind":"book"/.test(bv), true);
+      eq('whole book has no chapter navigation', /id="chapter-(previous|next)"/.test(bv), false);
       const miss = await fetch('http://localhost:' + port + '/book/' + bookLink + '-nope').then((r) => r.status);
       eq('an unknown book is a 404', miss, 404);
     }
@@ -1209,6 +1240,8 @@ async function checkSelfRestart() {
   }
 }
 
+console.log('Chapter navigation — class, subject, order and boundaries:');
+checkChapterNavigation();
 console.log('Structure — the markup carries what the script needs:');
 await checkStructure();
 console.log('\nBehaviour — two classes, uneven subjects:');

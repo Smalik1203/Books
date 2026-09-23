@@ -26,6 +26,7 @@ import { impositionPlan, verify, fitsOn } from './impose.mjs';
 import { spineWidth } from './spine.mjs';
 import { coverMetrics } from './sheet.mjs';
 import { volumeName } from './volume.mjs';
+import { chapterNeighbours } from './chapter-navigation.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const openAt = process.argv[2] || null;
@@ -561,7 +562,20 @@ const asViewerItem = (vol) => ({
   backHref: '/?class=' + encodeURIComponent(vol.cls) + '&amp;subject=' + encodeURIComponent(vol.subject),
 });
 
-function viewerHtml(chapter, s) {
+function chapterNavButton(direction, neighbour) {
+  const label = direction === 'previous' ? 'Previous chapter' : 'Next chapter';
+  const title = neighbour
+    ? `${label}: ${neighbour.meta.number} · ${neighbour.meta.title}`
+    : `No ${label.toLowerCase()} in this class and subject`;
+  const attrs = `class="btn btn--icon" id="chapter-${direction}" aria-label="${esc(title)}" title="${esc(title)}"`;
+  const icon = `<svg viewBox="0 0 20 20" aria-hidden="true"><path d="${direction === 'previous'
+    ? 'M5 4v12M14 5l-5 5 5 5' : 'M15 4v12M6 5l5 5-5 5'}" /></svg>`;
+  return neighbour
+    ? `<a ${attrs} href="/read/${esc(neighbour.target.split('/').map(encodeURIComponent).join('/'))}">${icon}</a>`
+    : `<button ${attrs} disabled>${icon}</button>`;
+}
+
+function viewerHtml(chapter, s, neighbours = {}) {
   const base = chapter.base || chapter.target;
   const cfg = {
     ...(chapter.kind ? { kind: chapter.kind } : {}),
@@ -620,7 +634,8 @@ ${navPair(
              it is reached by typing the address. -->
 ${zoomBar(true, `
           <button class="btn" id="view-spread" aria-pressed="false"
-            title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>`)}
+            title="Verso and recto side by side — the only way to check the mirroring">Spreads</button>
+          ${chapter.kind ? '' : chapterNavButton('previous', neighbours.previous) + chapterNavButton('next', neighbours.next)}`)}
 
         <div class="bar__side bar__side--end">
           <span class="bar__log" id="build-log" hidden></span>
@@ -1057,7 +1072,7 @@ const server = createServer(async (req, res) => {
     focus = { target, kind: 'chapter' };
     if (!chapter.built) await build(target);
     res.writeHead(200, { 'Content-Type': MIME['.html'], 'Cache-Control': 'no-store' });
-    res.end(viewerHtml(chapter, await sheet(chapter.meta.edition)));
+    res.end(viewerHtml(chapter, await sheet(chapter.meta.edition), chapterNeighbours(chapter, all)));
     return;
   }
 
