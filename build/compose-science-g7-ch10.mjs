@@ -9,6 +9,7 @@ import {pathToFileURL} from 'node:url';
 import {title,shortTitle,opener,lesson,glossary,summary,exercises,projects} from './science-g7-ch10-content.mjs';
 import {plantDiagram} from './science-g7-ch10-diagrams.mjs';
 import {chapterOpener} from './chapter-opener.mjs';
+import {scienceHeaderArt} from './science-header-art.mjs';
 import {v2PanelHeading} from './science-v2-cues.mjs';
 import {refitV2Lesson} from './refit-science-v2-blocks.mjs';
 import {scienceContract} from './science-contract.mjs';
@@ -121,7 +122,7 @@ for(const meta of lesson)render(['dastur','sohonie','vrikshayurveda','net-exchan
 const lessonBlockCount=blocks.length;
 const fitted=refitV2Lesson([{blocks}]);
 const band=chapterOpener({id:'science-g7-ch10',number,titleLines:['Life Processes','in Plants'],bleed:Math.ceil(metrics.bleed*1052/metrics.trimW),image:{href:`../../figures/class-${grade}/science/ch10/opener.png`,aspect:1.5,alt:'Children observing the growth of plants in a school garden'}});
-const motif=motifs();
+const motif=scienceHeaderArt(grade,number);
 let openerHtml=band.html.replace(/(class="chapter-opener__number[^>]* y=")222"/,'$1242"').replace('<line class="chapter-opener__divider"',motif+'<line class="chapter-opener__divider"'),y=band.bodyTop;
 opener.forEach((s,i)=>{const p=paragraph(s,{y,cls:i?'se-copy':'se-copy v2-intro',scale:i?1:26/24,k:i?'n':'b',lead:i?32:34,gap:i?16:20});openerHtml+=p.html;y+=p.h;});
 if(y>1415)throw Error('Opener overfull: '+y);

@@ -29,6 +29,18 @@ const shapes={
  crystal:()=>p('M20 33L52 7L84 34L69 87H35Z',soft)+p('M20 33H84M52 7L40 33L50 87L64 33L52 7M35 87L40 33M69 87L64 33'),
  meltingIce:()=>p('M11 80C1 92 30 97 52 92C72 98 98 88 88 80',soft)+p('M19 26L52 12L81 30L73 66L44 80L17 61Z',soft)+p('M19 26L47 43L81 30M47 43L44 80M28 30L40 37M57 24L68 30M26 43L25 54M60 52L57 64')+p('M87 49Q76 64 87 68Q98 64 87 49Z',solid),
  dialogue:()=>p('M8 17H65Q74 17 74 26V51Q74 60 65 60H32L16 72V60H8Q2 60 2 51V26Q2 17 8 17Z',soft)+p('M80 37H89Q98 37 98 46V72Q98 81 89 81H84V93L68 81H47Q38 81 38 72V67')+p('M17 32H58M17 44H46M51 71H82'),
+ thermometer:()=>p('M40 64V17Q40 4 53 4Q66 4 66 17V64A21 21 0 1 1 40 64Z',soft)+p('M53 29V74M72 20H85M72 35H80M72 50H85')+circle(53,80,9,solid),
+ sun:()=>circle(50,50,24,soft)+p('M50 6V16M50 84V94M6 50H16M84 50H94M19 19L27 27M73 73L81 81M19 81L27 73M73 27L81 19'),
+ breeze:()=>p('M6 31H70C93 31 91 5 76 9Q65 12 70 20M6 48H85M18 65H60C82 65 80 93 64 88Q54 84 61 77M31 82H43'),
+ pendulum:()=>p('M18 9H85M52 9L24 67M52 9V76M14 90Q53 105 88 75')+circle(20,75,10,solid)+circle(52,86,10,soft),
+ clock:()=>circle(50,53,38,soft)+p('M39 5H61M50 5V15M50 23V29M50 78V84M19 53H25M75 53H81M50 53V35L51 53L68 62')+circle(50,53,3,solid),
+ ruler:()=>p('M13 15H86V79H13Z',soft)+p('M22 15V32M34 15V26M46 15V32M58 15V26M70 15V32M13 65H86M23 65V79M37 70V79M51 65V79M65 70V79M79 65V79'),
+ lungs:()=>p('M45 7V36L30 48M55 7V36L70 48M45 19H55M45 27H55')+p('M36 33C24 22 7 49 8 73Q9 91 28 89L40 81V48ZM64 33C76 22 93 49 92 73Q91 91 72 89L60 81V48Z',soft)+p('M30 48L24 68M24 60L15 65M70 48L76 68M76 60L85 65'),
+ heart:()=>p('M50 89C37 76 10 60 9 37C7 10 37 5 50 28C64 5 94 10 92 37C91 60 65 78 50 89Z',soft)+p('M19 48H35L42 35L52 64L61 45H80'),
+ drop:()=>p('M50 5C43 24 15 45 15 65A35 30 0 0 0 85 65C85 45 57 24 50 5Z',soft)+p('M29 61Q23 77 41 82'),
+ mirror:()=>p('M25 10H77V71H25Z',soft)+p('M31 16H71V65H31M51 71V85M31 91Q51 79 71 91M38 32L53 22M40 46L62 31'),
+ prism:()=>p('M20 70L51 14L79 72L52 90Z',soft)+p('M51 14L52 90M20 70L79 72M4 39L37 39M64 38L95 25M65 46L96 46M71 57L96 69'),
+ globe:()=>circle(50,46,33,soft)+p('M24 21Q56 7 72 38T58 77M18 43Q48 63 80 40M28 19L70 73M17 4L86 85M6 55A46 46 0 0 0 65 90M44 92V97M23 97H69'),
 };
 const item=(name,x,y,size,angle=0)=>`<g data-art-element="${name}" transform="translate(${x} ${y}) scale(${size/100}) rotate(${angle} 50 50)">${shapes[name]()}</g>`;
 const themes={
@@ -37,6 +49,9 @@ const themes={
  '7-1':['plane','notebook','magnifier'], '7-2':['lemon','dropper','tubes','sprig'],
  '7-3':['bulb','cell','switch'], '7-4':['anvil','coil','crystal'],
  '7-5':['meltingIce','flask','produce'], '7-6':['sprig','notebook','dialogue'],
+ '7-7':['thermometer','sun','breeze'], '7-8':['pendulum','clock','ruler'],
+ '7-9':['lungs','heart','plate'], '7-10':['sprig','sun','drop'],
+ '7-11':['mirror','bulb','prism'], '7-12':['globe','sun','moon'],
 };
 export function scienceHeaderArt(grade,chapter){
  const key=`${grade}-${chapter}`,names=themes[key];if(!names)throw Error('No header art for '+key);
