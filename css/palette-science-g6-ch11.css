@@ -1,0 +1,33 @@
+/* Chapter 11 only; existing Science type, geometry and learning roles remain shared. */
+.page--science-v2.page--g6-ch11 {
+ --v2-ink:#303447; --v2-forest:#386853; --v2-leaf:#a7c3ae;
+ --v2-wash:#f4f8f2; --v2-rule:#dbe5d9;
+ --v2-investigate-wash:rgb(0 107 115 / 7%);
+ --v2-investigate-bar:rgb(0 107 115 / 20%);
+ --v2-investigate-rule:rgb(0 107 115 / 35%);
+}
+.page--g6-ch11 image {image-rendering:auto;stroke:none;filter:none;}
+.page--science-v2.page--g6-ch11 .chapter-opener__title {font-size:calc(var(--size-body)*2.25);letter-spacing:-.7px;}
+.page--g6-ch11 .v2-light-motif {fill:none;stroke:var(--v2-rule);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.7;}
+.page--g6-ch11 .v2-equation {font-size:calc(var(--size-body)*1.25);font-weight:600;fill:var(--v2-forest);}
+.page--science-v2.page--g6-ch11 .se-activity-panel {fill:var(--v2-investigate-wash);stroke:var(--v2-investigate-rule);}
+.page--science-v2.page--g6-ch11 .v2-panel-heading--setup {--v2-cue-ink:var(--v2-teal);}
+.page--science-v2.page--g6-ch11 .v2-panel-icon {stroke-width:1.6;}
+.page--g6-ch11 .v2-activity-header {fill:var(--v2-investigate-bar);stroke:none;}
+.page--g6-ch11 .v2-light-label {font-family:"Source Sans 3",sans-serif;font-size:var(--size-body);fill:var(--v2-ink);}
+.page--g6-ch11 .v2-light-line {fill:none;stroke:var(--v2-ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch11 .v2-light-arrow {fill:none;stroke:var(--v2-forest);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch11 .v2-light-diagram {isolation:auto;}
+
+.page--g6-ch11 .v2-light-dashed {stroke-dasharray:7 6;}
+.page--g6-ch11 .v2-light-solid {fill:var(--v2-forest);stroke:none;}
+.page--g6-ch11 .v2-light-screen {fill:var(--v2-wash);stroke:var(--v2-leaf);stroke-width:2.4;}
+.page--g6-ch11 .v2-light-shadow {fill:var(--v2-ink);opacity:.65;stroke:none;}
+.page--g6-ch11 .v2-light-housing {fill:var(--v2-wash);stroke:var(--v2-forest);stroke-width:2.4;}
+.page--g6-ch11 .v2-light-mirror {fill:none;stroke:var(--v2-leaf);stroke-width:8;stroke-linecap:round;}
+.page--g6-ch11 .v2-light-word {font-family:"Source Sans 3",sans-serif;font-size:calc(var(--size-body)*1.5);font-weight:600;fill:var(--v2-forest);}
+
+.page--g6-ch11 .ch11-air {stroke:none;}
+.page--g6-ch11 .ch11-air--nitrogen {fill:var(--v2-forest);}
+.page--g6-ch11 .ch11-air--oxygen {fill:var(--v2-leaf);}
+.page--g6-ch11 .ch11-air--other {fill:var(--v2-ink);}
