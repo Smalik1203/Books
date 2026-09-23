@@ -1,6 +1,6 @@
 # LearnLab Design System — Science
 
-The science volumes: Class 6 Science and Class 9 Science.
+The science volumes: Class 6 Science, Class 7 Science and Class 9 Science.
 
 Read [DESIGN.md](DESIGN.md) first. Page grammar, the two sheets, the cover,
 what the builder rejects and the rule that a panel is never divided apply to
@@ -19,6 +19,7 @@ each one stands in for. Section numbers match the single file this was split
 from.
 
 ## Science override
+Class 6 and Class 7 share the current Source Serif 4 / Source Sans 3 edition described at the top of SCIENCE-TEMPLATE.md. Its left alignment, soft Investigate panels and 189 × 272 mm trim override earlier Class 6 typography and furniture instructions.
 For every Science volume, SCIENCE-TEMPLATE.md and SCIENCE-EDITORIAL-CHECKLIST.md override the mathematical colour and feature conventions in [DESIGN-MATHS.md](DESIGN-MATHS.md), and anything below that conflicts with them. The September 2026 lock is teal/do, amber/think, brown/explain. Do not restore older chapter palettes or feature aliases.
 
 ---

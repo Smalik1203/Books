@@ -13,6 +13,12 @@ const cues = {
  },
 };
 
+export function v2PanelIconPath(kind) {
+ const cue = cues[kind];
+ if (!cue) throw new Error(`Unknown V2 panel heading: ${kind}`);
+ return cue.paths;
+}
+
 export function v2PanelHeading(kind, left, baseline) {
  const cue = cues[kind];
  if (!cue) throw new Error(`Unknown V2 panel heading: ${kind}`);

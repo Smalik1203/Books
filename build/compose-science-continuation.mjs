@@ -1,7 +1,9 @@
 // Initial composition helper only. Rerunning replaces pages 6–8, including
 // subsequent proof corrections. Final page files are the source of truth.
 import fs from 'node:fs';
+import {requireLegacyScience} from './science-g6-legacy-guard.mjs';
 const dir='pages/class-6/ch01-wonderful-world-of-science';
+await requireLegacyScience(dir);
 const manuscript=fs.readFileSync('assets/manuscripts/LearnLab_G6_Ch01_Wonderful_World_of_Science.md','utf8');
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 function runs(s){return s.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/).flatMap(t=>{const cls=t.startsWith('**')?'food-bold':t.startsWith('*')?'science-italic':'';return t.replace(/^\*+|\*+$/g,'').split(/\s+/).filter(Boolean).map(w=>({w,cls}));});}

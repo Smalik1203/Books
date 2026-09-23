@@ -1,5 +1,7 @@
 // Set recovered Chapter 3 copy in the shared science type scale.
 import fs from 'node:fs/promises';
+import {requireLegacyScience} from './science-g6-legacy-guard.mjs';
+await requireLegacyScience('pages/class-6/ch03-food-on-our-plate');
 import path from 'node:path';
 import sharp from 'sharp';
 import {execFile} from 'node:child_process';

@@ -1,4 +1,6 @@
 import {scienceWord} from './science-defined-terms.mjs';
+import {requireLegacyScience} from './science-g6-legacy-guard.mjs';
+await requireLegacyScience('pages/class-6/ch02-diversity-in-the-living-world');
 // Authoring compositor. The emitted HTML fragments, one per printed page,
 // remain the printing sources. Do not rerun over manual page edits.
 import fs from 'node:fs/promises';

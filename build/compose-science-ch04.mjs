@@ -1,4 +1,6 @@
 import {scienceWord} from './science-defined-terms.mjs';
+import {requireLegacyScience} from './science-g6-legacy-guard.mjs';
+await requireLegacyScience('pages/class-6/ch04-exploring-magnets');
 // Chapter 4 authoring compositor; printing sources are the emitted fixed pages.
 import fs from 'node:fs/promises';
 import path from 'node:path';

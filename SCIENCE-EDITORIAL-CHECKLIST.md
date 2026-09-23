@@ -30,3 +30,6 @@ Before release, read the complete lesson across page turns. Count repeated instr
 Headings belong to the teaching outline, not to page breaks. Do not manufacture a heading for continued prose, results or exercise questions. Use a smaller level for genuine subtopics, including those beginning within a page. Put the heading at the start of the learning sequence; do not defer it to an explanation page after the investigation. Remove automatic continuation-title fallbacks from compositors.
 
 Chapter 2 release guard: run `node build/check-science-diversity.mjs` after composition and justification. It checks the final source pages, not only the manuscript.
+# Class 6 migration checks
+
+For the shared Class 6/Class 7 edition, also run the source-retention and rendered audits listed in SCIENCE-TEMPLATE.md. Compare against the preserved edited pages, not an older manuscript. Keep every safety instruction, scientific qualification, table label, assessment item and illustration; record any feature-title aliases. Verify actual content bounds rather than treating full-sheet furniture as 100% occupancy. Keep summaries whole and preserve Chapter 10's Beyond the Book sequence.

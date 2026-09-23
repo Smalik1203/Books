@@ -5,7 +5,8 @@ export const shortTitle="The World of Metals and Non-metals";
 export const opener=[
   "A sheet of foil bends around food. A wire carries electricity. What makes a material right for its job?",
   "Yashwant and Anandi visit an ironsmith in Rajasthan with their grandfather. Sudarshan makes tawas, buckets, tongs and farming tools. He chooses iron for some parts and wood for handles. Each choice has a reason.",
-  "Follow their questions into the classroom. Compare how materials change shape, carry heat and electricity, and react with air and water. Use several pieces of evidence before deciding what a material can do."
+  "Follow their questions into the classroom. Compare how materials change shape, carry heat and electricity, and react with air and water. Use several pieces of evidence before deciding what a material can do.",
+  "Look closely at the tools in the picture. Choose one and name the job of each part. Would you choose the same material for every part? Record one choice and a reason in your notebook, then return to it after the investigations to see whether your evidence supports it."
 ];
 export const lesson=[
   {

@@ -10,6 +10,7 @@ import {title,opener,lesson,glossary,summary,exercises,topicRelationships} from 
 import {planeMotif,setupDiagram,waterDiagram,artWords} from './science-g7-ch01-v2-art.mjs';
 import {topicArt,wideTopicArt,lightPair,topicArtWords} from './science-g7-ch01-v2-topic-art.mjs';
 import {chapterOpener} from './chapter-opener.mjs';
+import {scienceHeaderArt} from './science-header-art.mjs';
 import {v2PanelHeading} from './science-v2-cues.mjs';
 import {refitV2Lesson} from './refit-science-v2-blocks.mjs';
 import {scienceContract} from './science-contract.mjs';
@@ -107,7 +108,7 @@ const attachedIds=new Set(Object.values(topicRelationships).flatMap(r=>[r.galler
 for(const meta of lesson)if(!attachedIds.has(meta.id))render(meta);
 const fitted=refitV2Lesson([{blocks}]);
 const band=chapterOpener({id:'science-v2-g7-ch01',number,titleLines:['The Ever-Evolving','World of Science'],bleed:Math.ceil(metrics.bleed*1052/metrics.trimW),image:{href:`../../figures/class-${grade}/science/ch01-v2/opener.png`,aspect:1.5,alt:'Students observing a paper-plane flight in a clear school hall'}});
-const motif=planeMotif();
+const motif=scienceHeaderArt(7,1);
 let openerHtml=band.html.replace('<line class="chapter-opener__divider"',motif+'<line class="chapter-opener__divider"'),y=band.bodyTop;
 opener.forEach((s,i)=>{const p=paragraph(s,{y,cls:i?'se-copy':'se-copy v2-intro',scale:i?1:26/24,k:i?'n':'b',lead:i?32:34,gap:i?16:20});openerHtml+=p.html;y+=p.h;});
 if(y>1415)throw Error('Opener overfull: '+y);

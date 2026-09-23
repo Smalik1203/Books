@@ -17,7 +17,7 @@ export function refitV2Lesson(plans){
    if(last.keepNext)return false;
    if(/^The pictures show the three plants/.test(next.text||'')&&next.paragraphPart===0)return false;
   }
-  for(let i=start;i<end;i++)if(blocks[i].type==='heading'&&prefix[end]-prefix[i+1]<160)return false;
+  for(let i=start;i<end;i++)if(blocks[i].type==='heading'&&prefix[end]-prefix[i+1]<(blocks[i].completeUnitHeight??160))return false;
   return true;
  }
  // Fewest pages first; then balance lower margins without distributing spare

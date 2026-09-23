@@ -5,7 +5,8 @@ export const shortTitle='Electricity: Circuits and their Components';
 export const opener=[
  'A torch lights a dark corner. What must happen inside it before its lamp can glow?',
  'Nihal and his classmates are preparing for a visit to the Bhakra Nangal hydroelectric project. Falling water drives turbines connected to generators. Their assignment begins closer to home: find out how people use electricity.',
- 'In this chapter, use small cells, lamps and wires to investigate a complete path. Predict before connecting, record what happens, and use the evidence to explain a torch, a switch and a simple circuit.'
+ 'In this chapter, use small cells, lamps and wires to investigate a complete path. Predict before connecting, record what happens, and use the evidence to explain a torch, a switch and a simple circuit.',
+ 'Look at the equipment in the picture. Which parts could connect the cell to the lamp? Sketch your first idea in your notebook and mark any connections you are unsure about. Keep this sketch: later, compare it with a working circuit and explain what you changed.'
 ];
 export const lesson=[
  {id:'uses-head',type:'heading',text:'Electricity around us',source:[1,2]},

@@ -621,6 +621,19 @@ async function checkOverflow(htmlPath, meta, sheet) {
       document.querySelectorAll('.page').forEach(function (pg) {
         var body = pg.querySelector('.page__body');
         if (!body) return;
+        // Native Class 6 science body: exclude full-sheet vector furniture.
+        // Its actual content, not its absolute-positioned wrapper, defines fill.
+        var modern = pg.querySelector('.g6-content');
+        if (modern) {
+          var unit = pg.querySelector('.g6-furniture').getBoundingClientRect().width / 1052;
+          var modernTop = modern.getBoundingClientRect().top;
+          var modernLimit = pg.querySelector('.g6-furniture').getBoundingClientRect().top + 1415 * unit;
+          var modernBottom = modernTop;
+          modern.querySelectorAll(':scope > .g6-block').forEach(function(el) { modernBottom = Math.max(modernBottom, el.getBoundingClientRect().bottom); });
+          out.push({folio:pg.dataset.folio,over:Math.round(Math.max(0,modernBottom-modernLimit)),
+            fill:Math.round((modernBottom-modernTop)/(modernLimit-modernTop)*100),avail:Math.round(modernLimit-modernTop),close:pg.hasAttribute('data-close')});
+          return;
+        }
         var over = 0;
         // How far past the bottom of the text area does anything reach?
         body.querySelectorAll('.page__main, .page__side, .page__full').forEach(function (col) {
