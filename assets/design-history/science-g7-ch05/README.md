@@ -1,5 +1,10 @@
 # Class 7 Science Chapter 5
 
+## Current comparison-table revision · 23 September 2026
+
+Current extent: **20 pages**. 4 explicit comparisons now use whole tables. The [cross-chapter review](../science-g7-comparison-tables/README.md) records current pagination, the before/after editorial ledger, preservation checks and PDF verification. Earlier initial-build counts and isolated preservation reports below are historical. For current PDFs, run `python build/verify-science-g7-comparison-tables.py 5`; the old per-chapter PDF verifier belongs to its original creation baseline.
+
+
 **Changes Around Us: Physical and Chemical** is registered under Class 7 → Science.
 The twenty-page chapter uses the established 189 × 272 mm Science profile,
 Source Serif 4 reading text, Source Sans 3 headings, left alignment and live SVG

@@ -10,7 +10,7 @@ const htmls=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8'))),all=h
 const norm=s=>s.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/\*/g,'').replace(/\s+/g,' ').trim();
 const extract=s=>norm([...s.replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' '));
 const pages=htmls.map(extract),text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing teaching content: '+s);
-assert.equal(files.length,23,'Reviewed chapter extent');
+assert.equal(files.length,24,'Reviewed extent with whole concept-comparison tables');
 htmls.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));});
 opener.forEach(s=>assert.ok(pages[0].includes(norm(s))));
 for(const b of lesson){

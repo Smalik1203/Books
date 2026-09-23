@@ -200,12 +200,37 @@
     },
     {
       "id": "puberty",
-      "type": "body",
-      "text": "**Puberty** is the process of physical changes through which the body becomes capable of reproduction. It includes internal changes as well as visible ones. Adolescence is broader: it also includes emotional and social development. Reproductive maturity does not mean that a young person is ready for marriage or parenthood.",
+      "type": "table",
       "source": [
         5
       ],
-      "addition": "Distinguish biological capability from adult readiness, connecting the source child-marriage project."
+      "caption": "Puberty and adolescence",
+      "rows": [
+        [
+          "Puberty",
+          "Adolescence"
+        ],
+        [
+          "**Puberty** is the process of physical changes through which the body becomes capable of reproduction. It includes internal changes as well as visible ones.",
+          "Adolescence is broader: it also includes emotional and social development."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Reproductive maturity does not mean that a young person is ready for marriage or parenthood.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "puberty",
+        "type": "body",
+        "text": "**Puberty** is the process of physical changes through which the body becomes capable of reproduction. It includes internal changes as well as visible ones. Adolescence is broader: it also includes emotional and social development. Reproductive maturity does not mean that a young person is ready for marriage or parenthood.",
+        "source": [
+          5
+        ],
+        "addition": "Distinguish biological capability from adult readiness, connecting the source child-marriage project."
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "secondary",
@@ -565,26 +590,59 @@
     },
     {
       "id": "pad-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         8
       ],
-      "columns": [
-        {
-          "title": "Disposable pads",
-          "items": [
-            "Use a clean pad and change it regularly, sooner if wet or soiled. Follow product guidance.",
-            "Wrap a used pad in paper or its wrapper. Put it in the designated bin; never flush it."
-          ]
-        },
-        {
-          "title": "Reusable cloth pads",
-          "items": [
-            "Use a clean, dry pad made for this purpose. Change it regularly.",
-            "Wash with soap and clean water, dry completely, and store clean and dry. Follow the maker’s care instructions."
-          ]
-        }
-      ]
+      "caption": "Using and caring for menstrual pads",
+      "rows": [
+        [
+          "Aspect",
+          "Disposable pads",
+          "Reusable cloth pads"
+        ],
+        [
+          "Use and changing",
+          "Use a clean pad and change it regularly, sooner if wet or soiled. Follow product guidance.",
+          "Use a clean, dry pad made for this purpose. Change it regularly."
+        ],
+        [
+          "After use",
+          "Wrap a used pad in paper or its wrapper. Put it in the designated bin; never flush it.",
+          "Wash with soap and clean water, dry completely, and store clean and dry. Follow the maker’s care instructions."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "pad-comparison",
+        "type": "comparison",
+        "source": [
+          8
+        ],
+        "columns": [
+          {
+            "title": "Disposable pads",
+            "items": [
+              "Use a clean pad and change it regularly, sooner if wet or soiled. Follow product guidance.",
+              "Wrap a used pad in paper or its wrapper. Put it in the designated bin; never flush it."
+            ]
+          },
+          {
+            "title": "Reusable cloth pads",
+            "items": [
+              "Use a clean, dry pad made for this purpose. Change it regularly.",
+              "Wash with soap and clean water, dry completely, and store clean and dry. Follow the maker’s care instructions."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "hygiene-access",

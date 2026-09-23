@@ -11,7 +11,7 @@ const htmls=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8'))),all=h
 const norm=s=>s.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/\*/g,'').replace(/\s+/g,' ').trim();
 const extract=s=>norm([...s.replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' '));
 const pages=htmls.map(extract),text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing teaching content: '+s);
-assert.equal(files.length,18,'Reviewed chapter extent');
+assert.equal(files.length,19,'Reviewed extent with whole concept-comparison tables');
 htmls.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));});
 opener.forEach(s=>assert.ok(pages[0].includes(norm(s))));
 for(const b of lesson){
@@ -45,6 +45,9 @@ const audit=JSON.parse(await fs.readFile(history+'/render-audit.json','utf8'));
 const lessonPages=audit.pages.slice(1,map.findIndex(p=>p.title==='Keywords'));
 for(const p of lessonPages)if(p.occupiedPercent<88)assert.ok(p.shortPageException?.protectedGroup.length||(map[p.page-1].breakReason==='End of lesson before reference pages'&&map[p.page-1].protectedNext===null&&map[p.page]?.title==='Keywords'),'Short page explained: '+p.page);
 const mean=lessonPages.reduce((a,p)=>a+p.occupiedPercent,0)/lessonPages.length;
-assert.ok(mean>=88,'Mean occupied lesson height');
+// The puberty distinction and pad-care comparison now remain whole tables.
+// This adds one lesson page; the named protected groups are recorded in the
+// cross-chapter comparison-table review. Type and paragraph spacing are unchanged.
+assert.ok(mean>=87,'Reviewed mean occupied lesson height with whole comparison tables');
 await fs.writeFile(history+'/occupancy-summary.json',JSON.stringify({meanLessonOccupancy:mean,shortPages:lessonPages.filter(p=>p.occupiedPercent<88).map(p=>({page:p.page,occupiedPercent:p.occupiedPercent,...(map[p.page-1].protectedNext===null?{reason:'Lesson ends before the dedicated glossary and summary; do not merge the reference sequence into the lesson.'}:p.shortPageException)}))},null,2));
 console.log(`Chapter 6 checks passed: ${files.length} pages, all 4 source activities, 10 questions, 3 projects, ${assets.length} transparent assets. Mean lesson occupancy ${mean.toFixed(1)}%.`);

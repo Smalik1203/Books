@@ -39,16 +39,53 @@
     },
     {
       "id": "feeding-methods",
-      "type": "bullets",
-      "items": [
-        "**Bees and sunbirds:** take nectar from flowers using specialised mouthparts or a long tongue and beak.",
-        "**Young mammals:** obtain milk from their mothers. Humans, cows and many other mammals begin life this way.",
-        "**Pythons:** swallow prey whole, then digest it internally; swallowing whole does not mean skipping digestion.",
-        "**Filter-feeding aquatic animals:** collect small food particles carried in water. They do not obtain all their food by taking bites."
-      ],
+      "type": "table",
       "source": [
         2
-      ]
+      ],
+      "caption": "Different ways of obtaining food",
+      "rows": [
+        [
+          "Animals",
+          "How food is obtained"
+        ],
+        [
+          "Bees and sunbirds",
+          "take nectar from flowers using specialised mouthparts or a long tongue and beak."
+        ],
+        [
+          "Young mammals",
+          "obtain milk from their mothers. Humans, cows and many other mammals begin life this way."
+        ],
+        [
+          "Pythons",
+          "swallow prey whole, then digest it internally; swallowing whole does not mean skipping digestion."
+        ],
+        [
+          "Filter-feeding aquatic animals",
+          "collect small food particles carried in water. They do not obtain all their food by taking bites."
+        ]
+      ],
+      "widths": [
+        0.24,
+        0.76
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "feeding-methods",
+        "type": "bullets",
+        "items": [
+          "**Bees and sunbirds:** take nectar from flowers using specialised mouthparts or a long tongue and beak.",
+          "**Young mammals:** obtain milk from their mothers. Humans, cows and many other mammals begin life this way.",
+          "**Pythons:** swallow prey whole, then digest it internally; swallowing whole does not mean skipping digestion.",
+          "**Filter-feeding aquatic animals:** collect small food particles carried in water. They do not obtain all their food by taking bites."
+        ],
+        "source": [
+          2
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "nutrient-intro",
@@ -267,16 +304,50 @@
     },
     {
       "id": "stomach-components",
-      "type": "bullets",
-      "items": [
-        "**Digestive enzymes:** begin the chemical breakdown of proteins into smaller components.",
-        "**Acid:** provides conditions in which stomach enzymes work and kills many swallowed microorganisms. It does not sterilise every meal.",
-        "**Mucus and other protective factors:** help protect the living stomach lining from its own digestive contents."
-      ],
+      "type": "table",
       "source": [
         4,
         5
-      ]
+      ],
+      "caption": "Different roles in stomach secretions",
+      "rows": [
+        [
+          "Component",
+          "Role"
+        ],
+        [
+          "Digestive enzymes",
+          "begin the chemical breakdown of proteins into smaller components."
+        ],
+        [
+          "Acid",
+          "provides conditions in which stomach enzymes work and kills many swallowed microorganisms. It does not sterilise every meal."
+        ],
+        [
+          "Mucus and other protective factors",
+          "help protect the living stomach lining from its own digestive contents."
+        ]
+      ],
+      "widths": [
+        0.24,
+        0.76
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "stomach-components",
+        "type": "bullets",
+        "items": [
+          "**Digestive enzymes:** begin the chemical breakdown of proteins into smaller components.",
+          "**Acid:** provides conditions in which stomach enzymes work and kills many swallowed microorganisms. It does not sterilise every meal.",
+          "**Mucus and other protective factors:** help protect the living stomach lining from its own digestive contents."
+        ],
+        "source": [
+          4,
+          5
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "stomach-exit",
@@ -315,16 +386,50 @@
     },
     {
       "id": "secretions",
-      "type": "bullets",
-      "items": [
-        "**Liver:** makes bile, stored in the gallbladder. Bile disperses large fat globules into smaller droplets, giving enzymes more surface to work on. This physical dispersal is not the chemical digestion of fat.",
-        "**Pancreas:** supplies enzymes that act on carbohydrates, proteins and fats. Its bicarbonate-rich fluid helps neutralise the acidic mixture arriving from the stomach.",
-        "**Small-intestine lining:** supplies enzymes that help complete digestion, producing substances small enough to be absorbed."
-      ],
+      "type": "table",
       "source": [
         5,
         6
-      ]
+      ],
+      "caption": "Contributions to digestion in the small intestine",
+      "rows": [
+        [
+          "Source",
+          "Contribution"
+        ],
+        [
+          "Liver",
+          "makes bile, stored in the gallbladder. Bile disperses large fat globules into smaller droplets, giving enzymes more surface to work on. This physical dispersal is not the chemical digestion of fat."
+        ],
+        [
+          "Pancreas",
+          "supplies enzymes that act on carbohydrates, proteins and fats. Its bicarbonate-rich fluid helps neutralise the acidic mixture arriving from the stomach."
+        ],
+        [
+          "Small-intestine lining",
+          "supplies enzymes that help complete digestion, producing substances small enough to be absorbed."
+        ]
+      ],
+      "widths": [
+        0.24,
+        0.76
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "secretions",
+        "type": "bullets",
+        "items": [
+          "**Liver:** makes bile, stored in the gallbladder. Bile disperses large fat globules into smaller droplets, giving enzymes more surface to work on. This physical dispersal is not the chemical digestion of fat.",
+          "**Pancreas:** supplies enzymes that act on carbohydrates, proteins and fats. Its bicarbonate-rich fluid helps neutralise the acidic mixture arriving from the stomach.",
+          "**Small-intestine lining:** supplies enzymes that help complete digestion, producing substances small enough to be absorbed."
+        ],
+        "source": [
+          5,
+          6
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "neutralisation",
@@ -381,11 +486,36 @@
     },
     {
       "id": "colon",
-      "type": "body",
-      "text": "Material not absorbed in the small intestine moves into the large intestine, where more water and some salts are absorbed. Much water has already been absorbed in the small intestine. The remaining material forms stool, which is stored in the rectum and eventually passes out through the anus. **Egestion** removes undigested remains; **excretion** removes wastes produced by the body’s chemical processes.",
+      "type": "table",
       "source": [
         7
-      ]
+      ],
+      "caption": "Egestion and excretion",
+      "rows": [
+        [
+          "Egestion",
+          "Excretion"
+        ],
+        [
+          "**Egestion** removes undigested remains.",
+          "**Excretion** removes wastes produced by the body’s chemical processes."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Material not absorbed in the small intestine moves into the large intestine, where more water and some salts are absorbed. Much water has already been absorbed in the small intestine. The remaining material forms stool, which is stored in the rectum and eventually passes out through the anus.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "colon",
+        "type": "body",
+        "text": "Material not absorbed in the small intestine moves into the large intestine, where more water and some salts are absorbed. Much water has already been absorbed in the small intestine. The remaining material forms stool, which is stored in the rectum and eventually passes out through the anus. **Egestion** removes undigested remains; **excretion** removes wastes produced by the body’s chemical processes.",
+        "source": [
+          7
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "microbes",
@@ -469,26 +599,59 @@
     },
     {
       "id": "digestion-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         8
       ],
-      "columns": [
-        {
-          "title": "Ruminant",
-          "items": [
-            "Mechanical action: chewing, returning cud and chewing again.",
-            "Distinctive part: a rumen with microbes that help process plant material."
-          ]
-        },
-        {
-          "title": "Bird",
-          "items": [
-            "Mechanical action: grinding by a muscular gizzard.",
-            "Distinctive part: a strong gizzard; grit helps in many species."
-          ]
-        }
-      ]
+      "caption": "Food processing in ruminants and birds",
+      "rows": [
+        [
+          "Aspect",
+          "Ruminant",
+          "Bird"
+        ],
+        [
+          "Mechanical action",
+          "chewing, returning cud and chewing again.",
+          "grinding by a muscular gizzard."
+        ],
+        [
+          "Distinctive part",
+          "a rumen with microbes that help process plant material.",
+          "a strong gizzard; grit helps in many species."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "digestion-comparison",
+        "type": "comparison",
+        "source": [
+          8
+        ],
+        "columns": [
+          {
+            "title": "Ruminant",
+            "items": [
+              "Mechanical action: chewing, returning cud and chewing again.",
+              "Distinctive part: a rumen with microbes that help process plant material."
+            ]
+          },
+          {
+            "title": "Bird",
+            "items": [
+              "Mechanical action: grinding by a muscular gizzard.",
+              "Distinctive part: a strong gizzard; grit helps in many species."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "nutrition-respiration-link",
@@ -610,28 +773,66 @@
     },
     {
       "id": "breathing-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         10
       ],
-      "columns": [
-        {
-          "title": "Inhalation",
-          "items": [
-            "Diaphragm contracts and moves down; ribs move up and out.",
-            "Chest volume increases; pressure inside the lungs falls below outside pressure.",
-            "Air enters and lungs expand."
-          ]
-        },
-        {
-          "title": "Quiet exhalation",
-          "items": [
-            "Diaphragm and rib muscles relax; ribs return and diaphragm rises.",
-            "Elastic recoil reduces chest and lung volume.",
-            "Air leaves as pressure inside rises above outside pressure."
-          ]
-        }
-      ]
+      "caption": "Inhalation and quiet exhalation",
+      "rows": [
+        [
+          "Aspect",
+          "Inhalation",
+          "Quiet exhalation"
+        ],
+        [
+          "Muscle movement",
+          "Diaphragm contracts and moves down; ribs move up and out.",
+          "Diaphragm and rib muscles relax; ribs return and diaphragm rises."
+        ],
+        [
+          "Volume and pressure",
+          "Chest volume increases; pressure inside the lungs falls below outside pressure.",
+          "Elastic recoil reduces chest and lung volume."
+        ],
+        [
+          "Air movement",
+          "Air enters and lungs expand.",
+          "Air leaves as pressure inside rises above outside pressure."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "breathing-comparison",
+        "type": "comparison",
+        "source": [
+          10
+        ],
+        "columns": [
+          {
+            "title": "Inhalation",
+            "items": [
+              "Diaphragm contracts and moves down; ribs move up and out.",
+              "Chest volume increases; pressure inside the lungs falls below outside pressure.",
+              "Air enters and lungs expand."
+            ]
+          },
+          {
+            "title": "Quiet exhalation",
+            "items": [
+              "Diaphragm and rib muscles relax; ribs return and diaphragm rises.",
+              "Elastic recoil reduces chest and lung volume.",
+              "Air leaves as pressure inside rises above outside pressure."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "model-limits",
@@ -804,28 +1005,66 @@
     },
     {
       "id": "breathing-respiration",
-      "type": "comparison",
+      "type": "table",
       "source": [
         12
       ],
-      "columns": [
-        {
-          "title": "Breathing",
-          "items": [
-            "What happens: air moves into and out of the lungs.",
-            "Where: the respiratory air passages and lungs.",
-            "Role: renews air at gas-exchange surfaces."
-          ]
-        },
-        {
-          "title": "Cellular respiration",
-          "items": [
-            "What happens: chemical reactions release usable energy from food.",
-            "Where: living cells throughout the body.",
-            "Role: powers cell functions; aerobic respiration uses oxygen."
-          ]
-        }
-      ]
+      "caption": "Breathing and cellular respiration",
+      "rows": [
+        [
+          "Aspect",
+          "Breathing",
+          "Cellular respiration"
+        ],
+        [
+          "What happens",
+          "air moves into and out of the lungs.",
+          "chemical reactions release usable energy from food."
+        ],
+        [
+          "Where",
+          "the respiratory air passages and lungs.",
+          "living cells throughout the body."
+        ],
+        [
+          "Role",
+          "renews air at gas-exchange surfaces.",
+          "powers cell functions; aerobic respiration uses oxygen."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "breathing-respiration",
+        "type": "comparison",
+        "source": [
+          12
+        ],
+        "columns": [
+          {
+            "title": "Breathing",
+            "items": [
+              "What happens: air moves into and out of the lungs.",
+              "Where: the respiratory air passages and lungs.",
+              "Role: renews air at gas-exchange surfaces."
+            ]
+          },
+          {
+            "title": "Cellular respiration",
+            "items": [
+              "What happens: chemical reactions release usable energy from food.",
+              "Where: living cells throughout the body.",
+              "Role: powers cell functions; aerobic respiration uses oxygen."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "circulation",
@@ -913,15 +1152,48 @@
     },
     {
       "id": "animal-comparison",
-      "type": "bullets",
-      "items": [
-        "**Fish:** water passes over thin gill surfaces supplied with blood vessels. Oxygen dissolved in water enters the blood; carbon dioxide leaves. Fish do not split water molecules to obtain oxygen.",
-        "**Frogs:** tadpoles usually exchange gases through gills and skin. Adults use lungs and their moist skin; skin gas exchange can occur both in water and on land.",
-        "**Earthworms:** gases cross moist skin into and out of blood. Drying damages this exchange surface, so observe worms in place without handling or exposing them to dry air."
-      ],
+      "type": "table",
       "source": [
         13
-      ]
+      ],
+      "caption": "Gas exchange in different animals",
+      "rows": [
+        [
+          "Animal",
+          "Exchange surface and conditions"
+        ],
+        [
+          "Fish",
+          "water passes over thin gill surfaces supplied with blood vessels. Oxygen dissolved in water enters the blood; carbon dioxide leaves. Fish do not split water molecules to obtain oxygen."
+        ],
+        [
+          "Frogs",
+          "tadpoles usually exchange gases through gills and skin. Adults use lungs and their moist skin; skin gas exchange can occur both in water and on land."
+        ],
+        [
+          "Earthworms",
+          "gases cross moist skin into and out of blood. Drying damages this exchange surface, so observe worms in place without handling or exposing them to dry air."
+        ]
+      ],
+      "widths": [
+        0.24,
+        0.76
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "animal-comparison",
+        "type": "bullets",
+        "items": [
+          "**Fish:** water passes over thin gill surfaces supplied with blood vessels. Oxygen dissolved in water enters the blood; carbon dioxide leaves. Fish do not split water molecules to obtain oxygen.",
+          "**Frogs:** tadpoles usually exchange gases through gills and skin. Adults use lungs and their moist skin; skin gas exchange can occur both in water and on land.",
+          "**Earthworms:** gases cross moist skin into and out of blood. Drying damages this exchange surface, so observe worms in place without handling or exposing them to dry air."
+        ],
+        "source": [
+          13
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "adaptation",

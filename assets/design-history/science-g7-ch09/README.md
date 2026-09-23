@@ -1,5 +1,10 @@
 # Class 7 Science - Chapter 9: Life Processes in Animals
 
+## Current comparison-table revision · 23 September 2026
+
+Current extent: **24 pages**. 8 explicit comparisons now use whole tables. The [cross-chapter review](../science-g7-comparison-tables/README.md) records current pagination, the before/after editorial ledger, preservation checks and PDF verification. Earlier initial-build counts and isolated preservation reports below are historical. For current PDFs, run `python build/verify-science-g7-comparison-tables.py 9`; the old per-chapter PDF verifier belongs to its original creation baseline.
+
+
 Built from the supplied 16-page Chapter 9 PDF (printed pages 121-136).
 The independent edition contains 23 pages at 189 x 272 mm, with the established
 Science typography, live labels, a scoped plum palette and soft teal Investigate

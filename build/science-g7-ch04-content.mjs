@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Independent Chapter 4 content; source numbers refer to the supplied PDF.
 export const title="The World of Metals and Non-metals";
 export const shortTitle="The World of Metals and Non-metals";
@@ -1189,3 +1190,5 @@ export const projects=[
     "text": "Debate whether metal use for comfort and luxury should increase or decrease. Separate essential services from optional uses. Prepare evidence about durability, mining, energy, repair and recycling, then consider the strongest argument against your initial view. Agree on two practical ways your school could use materials more responsibly, and explain what evidence would show whether they worked."
   }
 ];
+
+applyClass7ComparisonTables(lesson,4);

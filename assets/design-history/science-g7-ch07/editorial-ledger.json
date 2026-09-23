@@ -63,28 +63,66 @@
     },
     {
       "id": "conductors",
-      "type": "comparison",
+      "type": "table",
       "source": [
         3
       ],
-      "columns": [
-        {
-          "title": "Good conductors",
-          "items": [
-            "Transfer heat readily through the material.",
-            "Examples: aluminium, iron and steel.",
-            "Useful for the heated body of a cooking pan."
-          ]
-        },
-        {
-          "title": "Poor conductors",
-          "items": [
-            "Transfer heat more slowly under similar conditions.",
-            "Examples: dry wood, glass, clay and porcelain.",
-            "Useful where we want to slow heat transfer."
-          ]
-        }
-      ]
+      "caption": "Good and poor heat conductors",
+      "rows": [
+        [
+          "Aspect",
+          "Good conductors",
+          "Poor conductors"
+        ],
+        [
+          "Heat transfer",
+          "Transfer heat readily through the material.",
+          "Transfer heat more slowly under similar conditions."
+        ],
+        [
+          "Examples",
+          "aluminium, iron and steel.",
+          "dry wood, glass, clay and porcelain."
+        ],
+        [
+          "Use",
+          "Useful for the heated body of a cooking pan.",
+          "Useful where we want to slow heat transfer."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "conductors",
+        "type": "comparison",
+        "source": [
+          3
+        ],
+        "columns": [
+          {
+            "title": "Good conductors",
+            "items": [
+              "Transfer heat readily through the material.",
+              "Examples: aluminium, iron and steel.",
+              "Useful for the heated body of a cooking pan."
+            ]
+          },
+          {
+            "title": "Poor conductors",
+            "items": [
+              "Transfer heat more slowly under similar conditions.",
+              "Examples: dry wood, glass, clay and porcelain.",
+              "Useful where we want to slow heat transfer."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "conductor-limits",
@@ -374,29 +412,68 @@
     },
     {
       "id": "breeze-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         7,
         8
       ],
-      "columns": [
-        {
-          "title": "Sea breeze · daytime",
-          "items": [
-            "Land often warms faster than the nearby sea.",
-            "Warmer air over land rises.",
-            "Cooler near-surface air moves from sea to land."
-          ]
-        },
-        {
-          "title": "Land breeze · night",
-          "items": [
-            "Land often cools faster than the nearby sea.",
-            "Warmer air over the sea rises.",
-            "Cooler near-surface air moves from land to sea."
-          ]
-        }
-      ]
+      "caption": "Sea and land breezes",
+      "rows": [
+        [
+          "Aspect",
+          "Sea breeze · daytime",
+          "Land breeze · night"
+        ],
+        [
+          "Land and sea",
+          "Land often warms faster than the nearby sea.",
+          "Land often cools faster than the nearby sea."
+        ],
+        [
+          "Rising air",
+          "Warmer air over land rises.",
+          "Warmer air over the sea rises."
+        ],
+        [
+          "Surface airflow",
+          "Cooler near-surface air moves from sea to land.",
+          "Cooler near-surface air moves from land to sea."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "breeze-comparison",
+        "type": "comparison",
+        "source": [
+          7,
+          8
+        ],
+        "columns": [
+          {
+            "title": "Sea breeze · daytime",
+            "items": [
+              "Land often warms faster than the nearby sea.",
+              "Warmer air over land rises.",
+              "Cooler near-surface air moves from sea to land."
+            ]
+          },
+          {
+            "title": "Land breeze · night",
+            "items": [
+              "Land often cools faster than the nearby sea.",
+              "Warmer air over the sea rises.",
+              "Cooler near-surface air moves from land to sea."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "breeze-model",
@@ -445,26 +522,55 @@
     },
     {
       "id": "clothes-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         8
       ],
-      "columns": [
-        {
-          "title": "Light-coloured surfaces",
-          "items": [
-            "Often reflect more incoming sunlight.",
-            "May absorb less solar energy than similar dark surfaces."
-          ]
-        },
-        {
-          "title": "Dark-coloured surfaces",
-          "items": [
-            "Often absorb more incoming sunlight.",
-            "May become warmer under the same sunlight."
-          ]
-        }
-      ]
+      "caption": "Light and dark surfaces in sunlight",
+      "rows": [
+        [
+          "Aspect",
+          "Light-coloured surfaces",
+          "Dark-coloured surfaces"
+        ],
+        [
+          "Typical response",
+          "Often reflect more incoming sunlight. May absorb less solar energy than similar dark surfaces.",
+          "Often absorb more incoming sunlight. May become warmer under the same sunlight."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "clothes-comparison",
+        "type": "comparison",
+        "source": [
+          8
+        ],
+        "columns": [
+          {
+            "title": "Light-coloured surfaces",
+            "items": [
+              "Often reflect more incoming sunlight.",
+              "May absorb less solar energy than similar dark surfaces."
+            ]
+          },
+          {
+            "title": "Dark-coloured surfaces",
+            "items": [
+              "Often absorb more incoming sunlight.",
+              "May become warmer under the same sunlight."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables",
+      "paragraphCells": true
     },
     {
       "id": "clothing-limits",

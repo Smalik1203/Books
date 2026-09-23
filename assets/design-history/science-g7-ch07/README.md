@@ -1,5 +1,10 @@
 # Class 7 Science · Chapter 7
 
+## Current comparison-table revision · 23 September 2026
+
+Current extent: **19 pages**. 3 explicit comparisons now use whole tables. The [cross-chapter review](../science-g7-comparison-tables/README.md) records current pagination, the before/after editorial ledger, preservation checks and PDF verification. Earlier initial-build counts and isolated preservation reports below are historical. For current PDFs, run `python build/verify-science-g7-comparison-tables.py 7`; the old per-chapter PDF verifier belongs to its original creation baseline.
+
+
 **Heat Transfer in Nature** is an independent chapter under
 `pages/class-7/ch07-heat-transfer-in-nature`. It uses the established 189 × 272 mm
 Science edition, Source Serif 4 / Source Sans 3, a copper chapter identity and

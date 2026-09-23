@@ -149,7 +149,7 @@
         "left": 87.5,
         "top": 111.5,
         "right": 963,
-        "bottom": 1297.4
+        "bottom": 1147.4
       },
       "blocks": [
         {
@@ -176,58 +176,37 @@
         {
           "id": "sorting",
           "left": 89,
-          "top": 625,
-          "right": 709.8,
-          "bottom": 741.4
+          "top": 625.5,
+          "right": 963,
+          "bottom": 828
         },
         {
           "id": "sort-record-0",
           "left": 89,
-          "top": 757,
+          "top": 843,
           "right": 922.7,
-          "bottom": 853.4
+          "bottom": 939.4
         },
         {
           "id": "record-disagreement-0",
           "left": 89,
-          "top": 869,
+          "top": 955,
           "right": 903.8,
-          "bottom": 933.4
+          "bottom": 1019.4
         },
         {
           "id": "record-disagreement-1",
           "left": 89,
-          "top": 933,
+          "top": 1019,
           "right": 934.1,
-          "bottom": 997.4
+          "bottom": 1083.4
         },
         {
           "id": "record-disagreement-2",
           "left": 89,
-          "top": 997,
+          "top": 1083,
           "right": 893.9,
-          "bottom": 1061.4
-        },
-        {
-          "id": "names-head",
-          "left": 89,
-          "top": 1090.5,
-          "right": 463.1,
-          "bottom": 1130.3
-        },
-        {
-          "id": "litmus-meaning-0",
-          "left": 87.5,
-          "top": 1137,
-          "right": 936.9,
-          "bottom": 1201.4
-        },
-        {
-          "id": "litmus-meaning-1",
-          "left": 87.5,
-          "top": 1201,
-          "right": 928,
-          "bottom": 1297.4
+          "bottom": 1147.4
         }
       ],
       "collisions": [],
@@ -238,9 +217,40 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 21.1,
-      "occupiedPercent": 91,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 48.1,
+      "occupiedPercent": 79.5,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 45.1,
+        "protectedGroup": [
+          {
+            "id": "names-head",
+            "type": "heading",
+            "title": "From observations to names",
+            "height": 48
+          },
+          {
+            "id": "litmus-meaning-0",
+            "type": "body",
+            "title": "An **acid-base indicator** changes colour in response to the acidic or basic nature of a solution. L",
+            "height": 64
+          },
+          {
+            "id": "litmus-meaning-1",
+            "type": "body",
+            "title": "An **acid-base indicator** changes colour in response to the acidic or basic nature of a solution. L",
+            "height": 112
+          },
+          {
+            "id": "three-natures",
+            "type": "table",
+            "title": "Recognising acidic, basic and neutral samples",
+            "height": 414
+          }
+        ],
+        "requiredMM": 114.6,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 4,
@@ -249,50 +259,71 @@
         "left": 87.5,
         "top": 112.5,
         "right": 963,
-        "bottom": 1173.2
+        "bottom": 1363.2
       },
       "blocks": [
         {
-          "id": "three-natures",
-          "left": 87.5,
+          "id": "names-head",
+          "left": 89,
           "top": 112.5,
-          "right": 953.9,
-          "bottom": 533.4
+          "right": 463.1,
+          "bottom": 152.3
+        },
+        {
+          "id": "litmus-meaning-0",
+          "left": 87.5,
+          "top": 159,
+          "right": 936.9,
+          "bottom": 223.4
+        },
+        {
+          "id": "litmus-meaning-1",
+          "left": 87.5,
+          "top": 223,
+          "right": 928,
+          "bottom": 319.4
+        },
+        {
+          "id": "three-natures",
+          "left": 89,
+          "top": 335.5,
+          "right": 963,
+          "bottom": 734
         },
         {
           "id": "neutral-limit-0",
           "left": 89,
-          "top": 559,
+          "top": 749,
           "right": 920.7,
-          "bottom": 623.4
+          "bottom": 813.4
         },
         {
           "id": "neutral-limit-1",
           "left": 87.5,
-          "top": 623,
+          "top": 813,
           "right": 914.2,
-          "bottom": 687.4
+          "bottom": 877.4
         },
         {
           "id": "two-paper-example-0",
           "left": 89,
-          "top": 703,
+          "top": 893,
           "right": 921,
-          "bottom": 767.4
+          "bottom": 957.4
         },
         {
           "id": "two-paper-example-1",
           "left": 89,
-          "top": 767,
+          "top": 957,
           "right": 915.7,
-          "bottom": 863.4
+          "bottom": 1053.4
         },
         {
           "id": "lichen",
           "left": 87.5,
-          "top": 880.5,
+          "top": 1070.5,
           "right": 963,
-          "bottom": 1173.2
+          "bottom": 1363.2
         }
       ],
       "collisions": [],
@@ -303,28 +334,9 @@
         "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 43.4,
-      "occupiedPercent": 81.4,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 39.7,
-        "protectedGroup": [
-          {
-            "id": "food-head",
-            "type": "heading",
-            "title": "Familiar foods, careful comparisons",
-            "height": 48
-          },
-          {
-            "id": "food-memory",
-            "type": "panel",
-            "title": "Recall the taste of lemon, curd or tamarind that you have eaten as food. What do these familiar food",
-            "height": 424
-          }
-        ],
-        "requiredMM": 84.8,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 9.3,
+      "occupiedPercent": 96,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 5,
@@ -1113,8 +1125,8 @@
       "contentBounds": {
         "left": 87.5,
         "top": 111.7,
-        "right": 955.2,
-        "bottom": 1255.4
+        "right": 963,
+        "bottom": 1237.4
       },
       "blocks": [
         {
@@ -1148,16 +1160,16 @@
         {
           "id": "soil-comparison",
           "left": 89,
-          "top": 676.5,
-          "right": 951.9,
-          "bottom": 1165.4
+          "top": 675.5,
+          "right": 963,
+          "bottom": 1158
         },
         {
           "id": "ant-0",
           "left": 87.5,
-          "top": 1191,
+          "top": 1173,
           "right": 955.2,
-          "bottom": 1255.4
+          "bottom": 1237.4
         }
       ],
       "collisions": [],
@@ -1168,11 +1180,11 @@
         "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 28.7,
-      "occupiedPercent": 87.8,
+      "bottomGapMM": 31.9,
+      "occupiedPercent": 86.4,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 28.6,
+        "remainingMM": 31.8,
         "protectedGroup": [
           {
             "id": "ant-1",

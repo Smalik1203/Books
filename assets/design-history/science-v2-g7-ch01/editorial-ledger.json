@@ -239,12 +239,37 @@
     },
     {
       "id": "water-explanation",
-      "type": "body",
-      "text": "Liquid water enters the air as water vapour during **evaporation**. When water vapour cools sufficiently, **condensation** forms tiny liquid droplets; clouds may contain droplets, ice crystals or both. Water can later fall as rain, flow over land or soak into the ground. Sunlight supplies energy for much of this cycling; water vapour itself is invisible.",
+      "type": "table",
       "source": [
         3
       ],
-      "correction": "Make condensation explicit between evaporation and rain; do not represent visible cloud as vapour."
+      "caption": "Evaporation and condensation",
+      "rows": [
+        [
+          "Evaporation",
+          "Condensation"
+        ],
+        [
+          "Liquid water enters the air as water vapour during **evaporation**.",
+          "When water vapour cools sufficiently, **condensation** forms tiny liquid droplets; clouds may contain droplets, ice crystals or both."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Water can later fall as rain, flow over land or soak into the ground. Sunlight supplies energy for much of this cycling; water vapour itself is invisible.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "water-explanation",
+        "type": "body",
+        "text": "Liquid water enters the air as water vapour during **evaporation**. When water vapour cools sufficiently, **condensation** forms tiny liquid droplets; clouds may contain droplets, ice crystals or both. Water can later fall as rain, flow over land or soak into the ground. Sunlight supplies energy for much of this cycling; water vapour itself is invisible.",
+        "source": [
+          3
+        ],
+        "correction": "Make condensation explicit between evaporation and rain; do not represent visible cloud as vapour."
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "topics-8-9",

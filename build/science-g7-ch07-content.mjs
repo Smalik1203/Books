@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Chapter 7 only. Source page numbers refer to the supplied 16-page PDF.
 export const title='Heat Transfer in Nature';
 export const shortTitle=title;
@@ -172,3 +173,5 @@ export const projects=[
  {id:'project-paper',source:[16],title:'Paper around a metal rod',text:'Can a metal rod delay the charring of paper wrapped tightly around it? Ask your teacher to demonstrate after a school fire-safety assessment. The teacher uses a securely supported rod, suitable tools, a heatproof tray and a controlled flame, turning the rod with the tools while learners observe from a safe distance. Never hold the rod by hand. Predict whether close metal contact could carry heat away fast enough to delay charring. Compare prediction with observation; paper can still burn, so “metal makes paper fireproof” is not a valid conclusion. If a safe demonstration is unavailable, discuss a teacher-selected recording.'},
  {id:'project-spiral',source:[16],title:'A spiral moved by warm air',text:'Draw a spiral on paper, cut it carefully with scissors and suspend it freely from its centre. Let a teacher show how rising warm air can turn it. Keep paper and thread far from any heat source; use a teacher-controlled warm-air source instead of a candle. Never place paper in a flame or over exposed heating elements. Compare movement with and without heating, keeping draughts as similar as possible. Record whether it turns and explain how moving air transfers energy. A still spiral is also a result to investigate.',diagram:'spiral',caption:'Cut along a spiral line, then suspend its centre. Ask the teacher to arrange safe heating and compare with an unheated trial.'}
 ];
+
+applyClass7ComparisonTables(lesson,7);

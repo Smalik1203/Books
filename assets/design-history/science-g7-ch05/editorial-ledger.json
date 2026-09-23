@@ -519,26 +519,55 @@
     },
     {
       "id": "wax-comparison",
-      "type": "comparison",
-      "columns": [
-        {
-          "title": "Physical changes",
-          "items": [
-            "Wax melts, travels up the wick and vaporises.",
-            "Wax that cools can solidify again."
-          ]
-        },
-        {
-          "title": "Chemical change",
-          "items": [
-            "Wax vapour reacts with oxygen, forming carbon dioxide and water.",
-            "Released heat melts and vaporises more wax."
-          ]
-        }
-      ],
+      "type": "table",
       "source": [
         9
-      ]
+      ],
+      "caption": "Two kinds of change in a candle",
+      "rows": [
+        [
+          "Aspect",
+          "Physical changes",
+          "Chemical change"
+        ],
+        [
+          "What happens",
+          "Wax melts, travels up the wick and vaporises. Wax that cools can solidify again.",
+          "Wax vapour reacts with oxygen, forming carbon dioxide and water. Released heat melts and vaporises more wax."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "wax-comparison",
+        "type": "comparison",
+        "columns": [
+          {
+            "title": "Physical changes",
+            "items": [
+              "Wax melts, travels up the wick and vaporises.",
+              "Wax that cools can solidify again."
+            ]
+          },
+          {
+            "title": "Chemical change",
+            "items": [
+              "Wax vapour reacts with oxygen, forming carbon dioxide and water.",
+              "Released heat melts and vaporises more wax."
+            ]
+          }
+        ],
+        "source": [
+          9
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables",
+      "paragraphCells": true
     },
     {
       "id": "wax-explanation",
@@ -649,12 +678,38 @@
     },
     {
       "id": "reverse-meaning",
-      "type": "body",
-      "text": "A **reversible change** can be undone under suitable conditions; an **irreversible change** cannot be undone by ordinary methods. Tearing paper and crushing chalk are physical changes that do not easily restore the objects. Many chemical changes are difficult to reverse too. Reversibility and new-substance formation are separate questions.",
+      "type": "table",
       "source": [
         3,
         10
-      ]
+      ],
+      "caption": "Reversible and irreversible changes",
+      "rows": [
+        [
+          "Reversible change",
+          "Irreversible change"
+        ],
+        [
+          "A **reversible change** can be undone under suitable conditions.",
+          "An **irreversible change** cannot be undone by ordinary methods."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Tearing paper and crushing chalk are physical changes that do not easily restore the objects. Many chemical changes are difficult to reverse too. Reversibility and new-substance formation are separate questions.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "reverse-meaning",
+        "type": "body",
+        "text": "A **reversible change** can be undone under suitable conditions; an **irreversible change** cannot be undone by ordinary methods. Tearing paper and crushing chalk are physical changes that do not easily restore the objects. Many chemical changes are difficult to reverse too. Reversibility and new-substance formation are separate questions.",
+        "source": [
+          3,
+          10
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "desirable-head",
@@ -668,29 +723,59 @@
     },
     {
       "id": "desirable-comparison",
-      "type": "comparison",
-      "columns": [
-        {
-          "title": "A useful change",
-          "items": [
-            "Milk becoming curd when we want curd.",
-            "Fruit ripening before it is eaten.",
-            "Vegetable scraps decomposing in a compost heap."
-          ]
-        },
-        {
-          "title": "An unwanted change",
-          "items": [
-            "Milk spoiling during storage.",
-            "Food decaying before it is eaten.",
-            "Iron rusting in a cycle or a bridge."
-          ]
-        }
-      ],
+      "type": "table",
       "source": [
         10,
         11
-      ]
+      ],
+      "caption": "Useful and unwanted changes",
+      "rows": [
+        [
+          "Aspect",
+          "A useful change",
+          "An unwanted change"
+        ],
+        [
+          "Examples",
+          "Milk becoming curd when we want curd. Fruit ripening before it is eaten. Vegetable scraps decomposing in a compost heap.",
+          "Milk spoiling during storage. Food decaying before it is eaten. Iron rusting in a cycle or a bridge."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "desirable-comparison",
+        "type": "comparison",
+        "columns": [
+          {
+            "title": "A useful change",
+            "items": [
+              "Milk becoming curd when we want curd.",
+              "Fruit ripening before it is eaten.",
+              "Vegetable scraps decomposing in a compost heap."
+            ]
+          },
+          {
+            "title": "An unwanted change",
+            "items": [
+              "Milk spoiling during storage.",
+              "Food decaying before it is eaten.",
+              "Iron rusting in a cycle or a bridge."
+            ]
+          }
+        ],
+        "source": [
+          10,
+          11
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables",
+      "paragraphCells": true
     },
     {
       "id": "context",
@@ -756,28 +841,57 @@
     },
     {
       "id": "weathering-comparison",
-      "type": "comparison",
-      "columns": [
-        {
-          "title": "Physical weathering",
-          "items": [
-            "Growing roots widen cracks.",
-            "Repeated temperature changes can stress rock.",
-            "Water freezing in cracks can prise pieces apart."
-          ]
-        },
-        {
-          "title": "Chemical weathering",
-          "items": [
-            "Water and dissolved substances react with minerals.",
-            "Mineral composition changes as new substances form.",
-            "Iron-bearing minerals may produce red-brown iron oxides."
-          ]
-        }
-      ],
+      "type": "table",
       "source": [
         11
-      ]
+      ],
+      "caption": "Physical and chemical weathering",
+      "rows": [
+        [
+          "Aspect",
+          "Physical weathering",
+          "Chemical weathering"
+        ],
+        [
+          "How it happens",
+          "Growing roots widen cracks. Repeated temperature changes can stress rock. Water freezing in cracks can prise pieces apart.",
+          "Water and dissolved substances react with minerals. Mineral composition changes as new substances form. Iron-bearing minerals may produce red-brown iron oxides."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "weathering-comparison",
+        "type": "comparison",
+        "columns": [
+          {
+            "title": "Physical weathering",
+            "items": [
+              "Growing roots widen cracks.",
+              "Repeated temperature changes can stress rock.",
+              "Water freezing in cracks can prise pieces apart."
+            ]
+          },
+          {
+            "title": "Chemical weathering",
+            "items": [
+              "Water and dissolved substances react with minerals.",
+              "Mineral composition changes as new substances form.",
+              "Iron-bearing minerals may produce red-brown iron oxides."
+            ]
+          }
+        ],
+        "source": [
+          11
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables",
+      "paragraphCells": true
     },
     {
       "id": "basalt",

@@ -1,5 +1,10 @@
 # Class 7 Science Chapter 4
 
+## Current comparison-table revision · 23 September 2026
+
+Current extent: **23 pages**. 4 explicit comparisons now use whole tables. The [cross-chapter review](../science-g7-comparison-tables/README.md) records current pagination, the before/after editorial ledger, preservation checks and PDF verification. Earlier initial-build counts and isolated preservation reports below are historical. For current PDFs, run `python build/verify-science-g7-comparison-tables.py 4`; the old per-chapter PDF verifier belongs to its original creation baseline.
+
+
 The World of Metals and Non-metals was independently composed from the supplied 16-page source PDF (printed pages 41–56). The public subject is Science. The chapter has 23 pages at 189 × 272 mm trim: opener, 17 lesson pages, dedicated keywords and summary pages, two assessment pages and one project page.
 
 ## Rebuild

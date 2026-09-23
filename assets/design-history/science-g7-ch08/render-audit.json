@@ -83,8 +83,8 @@
       "contentBounds": {
         "left": 87.5,
         "top": 111.7,
-        "right": 954.8,
-        "bottom": 1229.4
+        "right": 963,
+        "bottom": 1349.4
       },
       "blocks": [
         {
@@ -116,46 +116,25 @@
           "bottom": 649.2
         },
         {
-          "id": "clock-principles-0",
+          "id": "clock-principles",
           "left": 89,
-          "top": 675,
-          "right": 899,
-          "bottom": 739.4
-        },
-        {
-          "id": "clock-principles-1",
-          "left": 89,
-          "top": 749,
-          "right": 895,
-          "bottom": 813.4
-        },
-        {
-          "id": "clock-principles-2",
-          "left": 89,
-          "top": 823,
-          "right": 882.5,
-          "bottom": 887.4
-        },
-        {
-          "id": "clock-principles-3",
-          "left": 89,
-          "top": 897,
-          "right": 951.1,
-          "bottom": 993.4
+          "top": 675.5,
+          "right": 963,
+          "bottom": 1114
         },
         {
           "id": "make-clock",
           "left": 89,
-          "top": 1022.5,
+          "top": 1142.5,
           "right": 417,
-          "bottom": 1062.3
+          "bottom": 1182.3
         },
         {
           "id": "water-intro",
           "left": 87.5,
-          "top": 1069,
+          "top": 1189,
           "right": 938.9,
-          "bottom": 1229.4
+          "bottom": 1349.4
         }
       ],
       "collisions": [],
@@ -166,22 +145,9 @@
         "right": 114.70875759294636,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 33.3,
-      "occupiedPercent": 85.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 30.4,
-        "protectedGroup": [
-          {
-            "id": "water-task",
-            "type": "activity",
-            "title": "1. Ask an adult to cut a clean transparent plastic bottle of at least 0.5 L into two parts, pierce a",
-            "height": 970
-          }
-        ],
-        "requiredMM": 174.3,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 11.8,
+      "occupiedPercent": 95,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 3,
@@ -458,7 +424,7 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1340.4
+        "bottom": 1255
       },
       "blocks": [
         {
@@ -481,13 +447,6 @@
           "top": 304,
           "right": 963,
           "bottom": 1255
-        },
-        {
-          "id": "pendulum-evidence-0",
-          "left": 89,
-          "top": 1276,
-          "right": 884.8,
-          "bottom": 1340.4
         }
       ],
       "collisions": [],
@@ -498,82 +457,85 @@
         "right": 114.0184210880979,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 13.4,
-      "occupiedPercent": 94.3,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 28.7,
+      "occupiedPercent": 87.7,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 24.8,
+        "protectedGroup": [
+          {
+            "id": "pendulum-evidence-0",
+            "type": "body",
+            "title": "Compare your calculated periods. They will usually be close rather than identical. Starting late, mi",
+            "height": 64
+          },
+          {
+            "id": "pendulum-evidence-1",
+            "type": "body",
+            "title": "Compare your calculated periods. They will usually be close rather than identical. Starting late, mi",
+            "height": 80
+          },
+          {
+            "id": "period-example",
+            "type": "equation",
+            "title": "Time period = time for 10 oscillations ÷ 10",
+            "height": 97
+          },
+          {
+            "id": "period-record",
+            "type": "table",
+            "title": "Reading repeated trials · illustrative measurements",
+            "height": 334
+          }
+        ],
+        "requiredMM": 103.3,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
+        "left": 89,
         "top": 111,
         "right": 963,
-        "bottom": 1350.4
+        "bottom": 917
       },
       "blocks": [
         {
-          "id": "pendulum-evidence-1",
+          "id": "pendulum-evidence-0",
           "left": 89,
           "top": 111,
-          "right": 935.8,
+          "right": 884.8,
           "bottom": 175.4
+        },
+        {
+          "id": "pendulum-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 935.8,
+          "bottom": 239.4
         },
         {
           "id": "period-example",
           "left": 89,
-          "top": 192.5,
+          "top": 256.5,
           "right": 852,
-          "bottom": 270.2
+          "bottom": 334.2
         },
         {
           "id": "period-record",
           "left": 89,
-          "top": 288.5,
+          "top": 352.5,
           "right": 963,
-          "bottom": 605.2
+          "bottom": 669.2
         },
         {
           "id": "timing-pause",
           "left": 89,
-          "top": 623,
+          "top": 687,
           "right": 963,
-          "bottom": 853
-        },
-        {
-          "id": "pendulum-variables",
-          "left": 89,
-          "top": 887.5,
-          "right": 357.8,
-          "bottom": 927.3
-        },
-        {
-          "id": "length-extension",
-          "left": 89,
-          "top": 934,
-          "right": 945.5,
-          "bottom": 1030.4
-        },
-        {
-          "id": "mass-extension",
-          "left": 87.5,
-          "top": 1046,
-          "right": 960.1,
-          "bottom": 1174.4
-        },
-        {
-          "id": "pendulum-conclusion-0",
-          "left": 89,
-          "top": 1190,
-          "right": 909.4,
-          "bottom": 1254.4
-        },
-        {
-          "id": "pendulum-conclusion-1",
-          "left": 89,
-          "top": 1254,
-          "right": 905.9,
-          "bottom": 1350.4
+          "bottom": 917
         }
       ],
       "collisions": [],
@@ -584,9 +546,70 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 11.6,
-      "occupiedPercent": 95,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 89.5,
+      "occupiedPercent": 61.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 85.5,
+        "protectedGroup": [
+          {
+            "id": "pendulum-variables",
+            "type": "heading",
+            "title": "Change one variable",
+            "height": 48
+          },
+          {
+            "id": "length-extension",
+            "type": "body",
+            "title": "Keep the same bob and try two or three different lengths. At each length, release from the same smal",
+            "height": 112
+          },
+          {
+            "id": "mass-extension",
+            "type": "body",
+            "title": "Next keep the pivot-to-centre length fixed and use secure bobs of different masses but similar size ",
+            "height": 144
+          },
+          {
+            "id": "pendulum-conclusion-0",
+            "type": "body",
+            "title": "For a simple pendulum making small swings at a given place, a longer length gives a longer period. C",
+            "height": 64
+          },
+          {
+            "id": "pendulum-conclusion-1",
+            "type": "body",
+            "title": "For a simple pendulum making small swings at a given place, a longer length gives a longer period. C",
+            "height": 112
+          },
+          {
+            "id": "modern",
+            "type": "heading",
+            "title": "From swinging bobs to atomic clocks",
+            "height": 48
+          },
+          {
+            "id": "modern-mechanisms-0",
+            "type": "body",
+            "title": "Clocks count repeating processes. In a pendulum clock, a mechanism maintains and counts swings. In a",
+            "height": 64
+          },
+          {
+            "id": "modern-mechanisms-1",
+            "type": "body",
+            "title": "Clocks count repeating processes. In a pendulum clock, a mechanism maintains and counts swings. In a",
+            "height": 112
+          },
+          {
+            "id": "accessible-clocks",
+            "type": "figure",
+            "title": "A wristwatch, stopwatch, tactile watch and talking clock offer different ways to read or hear time. ",
+            "height": 362
+          }
+        ],
+        "requiredMM": 193.7,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 8,
@@ -594,79 +617,72 @@
       "contentBounds": {
         "left": 87.5,
         "top": 112.5,
-        "right": 963,
-        "bottom": 1372.2
+        "right": 960.1,
+        "bottom": 1163.2
       },
       "blocks": [
         {
-          "id": "modern",
+          "id": "pendulum-variables",
           "left": 89,
           "top": 112.5,
-          "right": 573.2,
+          "right": 357.8,
           "bottom": 152.3
+        },
+        {
+          "id": "length-extension",
+          "left": 89,
+          "top": 159,
+          "right": 945.5,
+          "bottom": 255.4
+        },
+        {
+          "id": "mass-extension",
+          "left": 87.5,
+          "top": 271,
+          "right": 960.1,
+          "bottom": 399.4
+        },
+        {
+          "id": "pendulum-conclusion-0",
+          "left": 89,
+          "top": 415,
+          "right": 909.4,
+          "bottom": 479.4
+        },
+        {
+          "id": "pendulum-conclusion-1",
+          "left": 89,
+          "top": 479,
+          "right": 905.9,
+          "bottom": 575.4
+        },
+        {
+          "id": "modern",
+          "left": 89,
+          "top": 604.5,
+          "right": 573.2,
+          "bottom": 644.3
         },
         {
           "id": "modern-mechanisms-0",
           "left": 89,
-          "top": 159,
+          "top": 651,
           "right": 944.2,
-          "bottom": 223.4
+          "bottom": 715.4
         },
         {
           "id": "modern-mechanisms-1",
           "left": 87.5,
-          "top": 223,
+          "top": 715,
           "right": 956.3,
-          "bottom": 319.4
+          "bottom": 811.4
         },
         {
           "id": "accessible-clocks",
           "left": 87.5,
-          "top": 336,
+          "top": 828,
           "right": 877.3,
-          "bottom": 671.2
-        },
-        {
-          "id": "clock-accuracy-0",
-          "left": 89,
-          "top": 697,
-          "right": 896.9,
-          "bottom": 761.4
-        },
-        {
-          "id": "clock-accuracy-1",
-          "left": 89,
-          "top": 761,
-          "right": 914,
-          "bottom": 825.4
-        },
-        {
-          "id": "units",
-          "left": 89,
-          "top": 853.7,
-          "right": 401,
-          "bottom": 903.8
-        },
-        {
-          "id": "second-0",
-          "left": 89,
-          "top": 911,
-          "right": 951,
-          "bottom": 975.4
-        },
-        {
-          "id": "second-1",
-          "left": 89,
-          "top": 975,
-          "right": 813.3,
-          "bottom": 1039.4
-        },
-        {
-          "id": "time-units",
-          "left": 89,
-          "top": 1055.5,
-          "right": 963,
-          "bottom": 1372.2
+          "bottom": 1163.2
         }
       ],
       "collisions": [],
@@ -677,75 +693,81 @@
         "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 7.7,
-      "occupiedPercent": 96.7,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 45.2,
+      "occupiedPercent": 80.7,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 40.4,
+        "protectedGroup": [
+          {
+            "id": "clock-accuracy",
+            "type": "table",
+            "title": "Resolution and accuracy",
+            "height": 230
+          }
+        ],
+        "requiredMM": 41.3,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 111.5,
         "right": 963,
-        "bottom": 1391.4
+        "bottom": 1017.4
       },
       "blocks": [
         {
+          "id": "clock-accuracy",
+          "left": 89,
+          "top": 111.5,
+          "right": 963,
+          "bottom": 328.2
+        },
+        {
+          "id": "units",
+          "left": 89,
+          "top": 353.7,
+          "right": 401,
+          "bottom": 403.8
+        },
+        {
+          "id": "second-0",
+          "left": 89,
+          "top": 411,
+          "right": 951,
+          "bottom": 475.4
+        },
+        {
+          "id": "second-1",
+          "left": 89,
+          "top": 475,
+          "right": 813.3,
+          "bottom": 539.4
+        },
+        {
+          "id": "time-units",
+          "left": 89,
+          "top": 555.5,
+          "right": 963,
+          "bottom": 872.2
+        },
+        {
           "id": "unit-writing-0",
           "left": 87.5,
-          "top": 111,
+          "top": 889,
           "right": 936.5,
-          "bottom": 175.4
+          "bottom": 953.4
         },
         {
           "id": "unit-writing-1",
           "left": 89,
-          "top": 175,
+          "top": 953,
           "right": 886.6,
-          "bottom": 239.4
-        },
-        {
-          "id": "clock-task",
-          "left": 89,
-          "top": 256,
-          "right": 963,
-          "bottom": 982
-        },
-        {
-          "id": "clock-evidence-0",
-          "left": 89,
-          "top": 1003,
-          "right": 952.8,
-          "bottom": 1067.4
-        },
-        {
-          "id": "clock-evidence-1",
-          "left": 89,
-          "top": 1067,
-          "right": 952.3,
-          "bottom": 1131.4
-        },
-        {
-          "id": "time-applications-0",
-          "left": 89,
-          "top": 1147,
-          "right": 953.8,
-          "bottom": 1211.4
-        },
-        {
-          "id": "time-applications-1",
-          "left": 89,
-          "top": 1221,
-          "right": 876.3,
-          "bottom": 1285.4
-        },
-        {
-          "id": "time-applications-2",
-          "left": 89,
-          "top": 1295,
-          "right": 917.9,
-          "bottom": 1391.4
+          "bottom": 1017.4
         }
       ],
       "collisions": [],
@@ -756,89 +778,81 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 4.2,
-      "occupiedPercent": 98.2,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 71.4,
+      "occupiedPercent": 69.5,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 68.4,
+        "protectedGroup": [
+          {
+            "id": "clock-task",
+            "type": "activity",
+            "title": "1. Look closely at the clock face. Identify the hour, minute and second hands using the key. Count t",
+            "height": 748
+          }
+        ],
+        "requiredMM": 134.4,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 10,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 953.5,
-        "bottom": 1314.2
+        "left": 89,
+        "top": 112,
+        "right": 963,
+        "bottom": 1321.4
       },
       "blocks": [
         {
+          "id": "clock-task",
+          "left": 89,
+          "top": 112,
+          "right": 963,
+          "bottom": 838
+        },
+        {
+          "id": "clock-evidence-0",
+          "left": 89,
+          "top": 859,
+          "right": 952.8,
+          "bottom": 923.4
+        },
+        {
+          "id": "clock-evidence-1",
+          "left": 89,
+          "top": 923,
+          "right": 952.3,
+          "bottom": 987.4
+        },
+        {
+          "id": "time-applications-0",
+          "left": 89,
+          "top": 1003,
+          "right": 953.8,
+          "bottom": 1067.4
+        },
+        {
+          "id": "time-applications-1",
+          "left": 89,
+          "top": 1077,
+          "right": 876.3,
+          "bottom": 1141.4
+        },
+        {
+          "id": "time-applications-2",
+          "left": 89,
+          "top": 1151,
+          "right": 917.9,
+          "bottom": 1247.4
+        },
+        {
           "id": "time-applications-3",
           "left": 89,
-          "top": 111,
+          "top": 1257,
           "right": 913.8,
-          "bottom": 175.4
-        },
-        {
-          "id": "slow-fast",
-          "left": 89,
-          "top": 203.7,
-          "right": 367.2,
-          "bottom": 253.8
-        },
-        {
-          "id": "race-comparison-0",
-          "left": 87.5,
-          "top": 261,
-          "right": 935.9,
-          "bottom": 325.4
-        },
-        {
-          "id": "race-comparison-1",
-          "left": 87.5,
-          "top": 325,
-          "right": 953.5,
-          "bottom": 389.4
-        },
-        {
-          "id": "speed-comparison",
-          "left": 89,
-          "top": 406.5,
-          "right": 898.3,
-          "bottom": 561.4
-        },
-        {
-          "id": "different-distances-0",
-          "left": 89,
-          "top": 587,
-          "right": 944.1,
-          "bottom": 683.4
-        },
-        {
-          "id": "speed",
-          "left": 89,
-          "top": 711.7,
-          "right": 434.1,
-          "bottom": 761.8
-        },
-        {
-          "id": "average-definition-0",
-          "left": 87.5,
-          "top": 769,
-          "right": 941.7,
-          "bottom": 865.4
-        },
-        {
-          "id": "speed-rule",
-          "left": 87.5,
-          "top": 882.5,
-          "right": 828,
-          "bottom": 960.2
-        },
-        {
-          "id": "cycling-art",
-          "left": 89,
-          "top": 979,
-          "right": 897.3,
-          "bottom": 1314.2
+          "bottom": 1321.4
         }
       ],
       "collisions": [],
@@ -849,12 +863,98 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 18.1,
-      "occupiedPercent": 92.3,
+      "bottomGapMM": 16.8,
+      "occupiedPercent": 92.8,
       "footerClearanceMM": 3.3
     },
     {
       "page": 11,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1274.2
+      },
+      "blocks": [
+        {
+          "id": "slow-fast",
+          "left": 89,
+          "top": 111.7,
+          "right": 367.2,
+          "bottom": 161.8
+        },
+        {
+          "id": "race-comparison-0",
+          "left": 87.5,
+          "top": 169,
+          "right": 935.9,
+          "bottom": 233.4
+        },
+        {
+          "id": "race-comparison-1",
+          "left": 87.5,
+          "top": 233,
+          "right": 953.5,
+          "bottom": 297.4
+        },
+        {
+          "id": "speed-comparison",
+          "left": 89,
+          "top": 313.5,
+          "right": 963,
+          "bottom": 532
+        },
+        {
+          "id": "different-distances-0",
+          "left": 89,
+          "top": 547,
+          "right": 944.1,
+          "bottom": 643.4
+        },
+        {
+          "id": "speed",
+          "left": 89,
+          "top": 671.7,
+          "right": 434.1,
+          "bottom": 721.8
+        },
+        {
+          "id": "average-definition-0",
+          "left": 87.5,
+          "top": 729,
+          "right": 941.7,
+          "bottom": 825.4
+        },
+        {
+          "id": "speed-rule",
+          "left": 87.5,
+          "top": 842.5,
+          "right": 828,
+          "bottom": 920.2
+        },
+        {
+          "id": "cycling-art",
+          "left": 89,
+          "top": 939,
+          "right": 897.3,
+          "bottom": 1274.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139131,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161749
+      },
+      "bottomGapMM": 25.3,
+      "occupiedPercent": 89.2,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 12,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -923,23 +1023,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139131,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161749
+        "left": 92.96315769021966,
+        "top": 1457.544855913915,
+        "right": 121.72533603047485,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 13.9,
       "occupiedPercent": 94,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 12,
+      "page": 13,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111,
-        "right": 950.4,
-        "bottom": 1368.4
+        "right": 963,
+        "bottom": 1393
       },
       "blocks": [
         {
@@ -1008,67 +1108,9 @@
         {
           "id": "motion-comparison",
           "left": 89,
-          "top": 1107.5,
-          "right": 881.3,
-          "bottom": 1368.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 8.4,
-      "occupiedPercent": 96.4,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 13,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1223.2
-      },
-      "blocks": [
-        {
-          "id": "instruments-0",
-          "left": 87.5,
-          "top": 111,
-          "right": 943.5,
-          "bottom": 175.4
-        },
-        {
-          "id": "instruments-1",
-          "left": 89,
-          "top": 175,
-          "right": 947.9,
-          "bottom": 271.4
-        },
-        {
-          "id": "instrument-art",
-          "left": 89,
-          "top": 288,
-          "right": 880.4,
-          "bottom": 590.2
-        },
-        {
-          "id": "read-motion",
-          "left": 89,
-          "top": 623.5,
-          "right": 464.6,
-          "bottom": 663.3
-        },
-        {
-          "id": "motion-table",
-          "left": 89,
-          "top": 670.5,
+          "top": 1106.5,
           "right": 963,
-          "bottom": 1223.2
+          "bottom": 1393
         }
       ],
       "collisions": [],
@@ -1079,31 +1121,63 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 34.5,
-      "occupiedPercent": 85.3,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 31.3,
-        "protectedGroup": [
-          {
-            "id": "motion-table-reading-0",
-            "type": "body",
-            "title": "X covers 20 km in each recorded interval; Y’s distances vary: 20, 15, 15, 25, 20 and 25 km. Y’s moti",
-            "height": 112
-          },
-          {
-            "id": "motion-pause",
-            "type": "panel",
-            "title": "Both trains cover 120 km between 10:00 and 11:00. Calculate each average speed. Can two journeys hav",
-            "height": 316
-          }
-        ],
-        "requiredMM": 76.9,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 4,
+      "occupiedPercent": 98.3,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 14,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.5,
+        "right": 963,
+        "bottom": 1303.2
+      },
+      "blocks": [
+        {
+          "id": "instruments",
+          "left": 89,
+          "top": 111.5,
+          "right": 963,
+          "bottom": 354.2
+        },
+        {
+          "id": "instrument-art",
+          "left": 89,
+          "top": 368,
+          "right": 880.4,
+          "bottom": 670.2
+        },
+        {
+          "id": "read-motion",
+          "left": 89,
+          "top": 703.5,
+          "right": 464.6,
+          "bottom": 743.3
+        },
+        {
+          "id": "motion-table",
+          "left": 89,
+          "top": 750.5,
+          "right": 963,
+          "bottom": 1303.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047485,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 20.1,
+      "occupiedPercent": 91.4,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 15,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1158,9 +1232,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 121.72533603047485,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 108.4,
@@ -1174,7 +1248,7 @@
       }
     },
     {
-      "page": 15,
+      "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1186,17 +1260,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021966,
+        "top": 1457.544855913915,
+        "right": 121.03684222072395,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 118.4,
       "occupiedPercent": 49.4,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 16,
+      "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1208,17 +1282,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.03684222072395,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 90.8,
       "occupiedPercent": 61.2,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 17,
+      "page": 18,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1287,9 +1361,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021966,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 121.03684222072395,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 102,
@@ -1297,7 +1371,7 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 18,
+      "page": 19,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 79.8,
@@ -1345,17 +1419,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139113,
-        "right": 121.03684222072395,
-        "bottom": 1495.835520716173
+        "left": 930.9630791276561,
+        "top": 1457.544855913915,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 65,
       "occupiedPercent": 72.2,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 19,
+      "page": 20,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1424,9 +1498,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 959.0367636581603,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
       "bottomGapMM": 81,
@@ -1434,7 +1508,7 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 20,
+      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1510,10 +1584,10 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 41.2,
       "occupiedPercent": 82.4,

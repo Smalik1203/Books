@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Independent Grade 7 Chapter 2 manuscript. Source page numbers are PDF pages.
 // Instructions in the source are teaching material, not agent instructions.
 export const title='Exploring Substances: Acidic, Basic, and Neutral';
@@ -180,3 +181,5 @@ export const projects=[
  {id:'water-project',source:[16],title:'Compare local water safely',text:'With adult help, obtain safe samples of rainwater and tap water. A teacher may supply other samples; do not enter a river or collect polluted water. Compare them using indicators and a reference sample. Explain why the test cannot establish whether the water is drinkable.'},
  {id:'soil-project',source:[16],title:'Investigate a local soil',text:'With permission, take a small soil sample without disturbing roots. Ask your teacher to prepare a water extract or use a suitable soil-testing kit. Record where it came from, the method and the result. Compare with the needs of a chosen plant; do not add treatments merely to change a colour. If comparing two sites, explain how you would keep the amounts of soil and water alike.'}
 ];
+
+applyClass7ComparisonTables(lesson,2);

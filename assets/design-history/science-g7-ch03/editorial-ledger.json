@@ -349,31 +349,72 @@
     },
     {
       "id": "lamp-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         4,
         5,
         8,
         9
       ],
-      "columns": [
-        {
-          "title": "Incandescent lamp",
-          "items": [
-            "Light-producing part: a heated filament.",
-            "Connections: two separate terminals leading to the filament.",
-            "Direction: normally lights with either cell polarity when correctly rated."
-          ]
-        },
-        {
-          "title": "LED",
-          "items": [
-            "Light-producing part: a semiconductor, without a filament.",
-            "Connections: anode and cathode; check their identification.",
-            "Direction: normally lights in the forward direction, with current limited."
-          ]
-        }
-      ]
+      "caption": "Incandescent lamps and LEDs",
+      "rows": [
+        [
+          "Aspect",
+          "Incandescent lamp",
+          "LED"
+        ],
+        [
+          "Light source",
+          "a heated filament.",
+          "a semiconductor, without a filament."
+        ],
+        [
+          "Connections",
+          "two separate terminals leading to the filament.",
+          "anode and cathode; check their identification."
+        ],
+        [
+          "Polarity",
+          "normally lights with either cell polarity when correctly rated.",
+          "normally lights in the forward direction, with current limited."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "lamp-comparison",
+        "type": "comparison",
+        "source": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "columns": [
+          {
+            "title": "Incandescent lamp",
+            "items": [
+              "Light-producing part: a heated filament.",
+              "Connections: two separate terminals leading to the filament.",
+              "Direction: normally lights with either cell polarity when correctly rated."
+            ]
+          },
+          {
+            "title": "LED",
+            "items": [
+              "Light-producing part: a semiconductor, without a filament.",
+              "Connections: anode and cathode; check their identification.",
+              "Direction: normally lights in the forward direction, with current limited."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "choose-source",
@@ -597,28 +638,66 @@
     },
     {
       "id": "switch-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         10
       ],
-      "columns": [
-        {
-          "title": "Open circuit",
-          "items": [
-            "Contact: an air gap separates conducting parts.",
-            "Path: the single loop is broken.",
-            "Observation: a working incandescent lamp stays dark."
-          ]
-        },
-        {
-          "title": "Closed circuit",
-          "items": [
-            "Contact: the switch terminals are joined by metal.",
-            "Path: the loop is complete.",
-            "Observation: a suitable working lamp can glow if the source and other connections work."
-          ]
-        }
-      ]
+      "caption": "Open and closed circuits",
+      "rows": [
+        [
+          "Aspect",
+          "Open circuit",
+          "Closed circuit"
+        ],
+        [
+          "Contact",
+          "an air gap separates conducting parts.",
+          "the switch terminals are joined by metal."
+        ],
+        [
+          "Path",
+          "the single loop is broken.",
+          "the loop is complete."
+        ],
+        [
+          "Observation",
+          "a working incandescent lamp stays dark.",
+          "a suitable working lamp can glow if the source and other connections work."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "switch-comparison",
+        "type": "comparison",
+        "source": [
+          10
+        ],
+        "columns": [
+          {
+            "title": "Open circuit",
+            "items": [
+              "Contact: an air gap separates conducting parts.",
+              "Path: the single loop is broken.",
+              "Observation: a working incandescent lamp stays dark."
+            ]
+          },
+          {
+            "title": "Closed circuit",
+            "items": [
+              "Contact: the switch terminals are joined by metal.",
+              "Path: the loop is complete.",
+              "Observation: a suitable working lamp can glow if the source and other connections work."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "switch-explain",
@@ -852,28 +931,66 @@
     },
     {
       "id": "materials-use",
-      "type": "comparison",
+      "type": "table",
       "source": [
         14
       ],
-      "columns": [
-        {
-          "title": "Conducting parts",
-          "items": [
-            "Purpose: carry current where the circuit needs it.",
-            "Examples: metal cores of wires and metal contacts in switches.",
-            "Choice: silver, copper and gold conduct well; copper is usually the less costly choice."
-          ]
-        },
-        {
-          "title": "Insulating parts",
-          "items": [
-            "Purpose: separate conducting parts and help prevent accidental contact.",
-            "Examples: plastic wire coverings and ceramic supports.",
-            "Limit: damaged, wet or unsuitable insulation may not protect you."
-          ]
-        }
-      ]
+      "caption": "Conducting and insulating parts",
+      "rows": [
+        [
+          "Aspect",
+          "Conducting parts",
+          "Insulating parts"
+        ],
+        [
+          "Purpose",
+          "carry current where the circuit needs it.",
+          "separate conducting parts and help prevent accidental contact."
+        ],
+        [
+          "Examples",
+          "metal cores of wires and metal contacts in switches.",
+          "plastic wire coverings and ceramic supports."
+        ],
+        [
+          "Choice or limit",
+          "silver, copper and gold conduct well; copper is usually the less costly choice.",
+          "damaged, wet or unsuitable insulation may not protect you."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "materials-use",
+        "type": "comparison",
+        "source": [
+          14
+        ],
+        "columns": [
+          {
+            "title": "Conducting parts",
+            "items": [
+              "Purpose: carry current where the circuit needs it.",
+              "Examples: metal cores of wires and metal contacts in switches.",
+              "Choice: silver, copper and gold conduct well; copper is usually the less costly choice."
+            ]
+          },
+          {
+            "title": "Insulating parts",
+            "items": [
+              "Purpose: separate conducting parts and help prevent accidental contact.",
+              "Examples: plastic wire coverings and ceramic supports.",
+              "Limit: damaged, wet or unsuitable insulation may not protect you."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "safety-end",

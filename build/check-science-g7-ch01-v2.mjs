@@ -21,6 +21,7 @@ for(const b of lesson){
  for(const p of b.paragraphs||[])contains(p,b.id);
  for(const col of b.columns||[]){contains(col.title);col.items.forEach(s=>contains(s));if(col.figureCaption)contains(col.figureCaption);}
  if(b.caption)contains(b.caption,b.id+' caption');
+ if(b.comparisonTable)assert.ok(pageTexts.some(s=>[b.caption,b.note,...b.rows.flat()].filter(Boolean).every(t=>s.includes(norm(t)))),'Whole comparison table and qualifications: '+b.id);
  if(b.type==='panel')assert.ok(pageTexts.some(s=>b.paragraphs.every(p=>s.includes(norm(p)))),'Whole bordered panel: '+b.id);
  if(b.type==='comparison')for(const c of b.columns)assert.ok(pageTexts.some(s=>[c.title,c.figureCaption,...c.items].filter(Boolean).every(p=>s.includes(norm(p)))),'Whole named topic, artwork caption and bullets: '+c.title);
 }

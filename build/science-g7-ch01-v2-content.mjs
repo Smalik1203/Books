@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // The supplied Grade 7 Chapter 1 is the source, not the Grade 6 adaptation.
 // Stable IDs link source coverage, page groups, additions and retention checks.
 export const title='The Ever-Evolving World of Science';
@@ -104,3 +105,5 @@ export const exercises=[
  'A learner reports only the longest of three flights. What information has been lost? Explain why three flights cannot establish that a design always travels farther.',
  'Someone suggests paving a school’s muddy patch. What evidence about water movement and the uses of the space would help judge the proposal? Name one safety precaution when gathering it.'
 ];
+
+applyClass7ComparisonTables(lesson,1);

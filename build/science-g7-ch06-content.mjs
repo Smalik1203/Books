@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Source references are PDF page numbers (printed pages 73–88).
 export const title='Adolescence: A Stage of Growth and Change';
 export const shortTitle='Adolescence: Growth and Change';
@@ -197,3 +198,5 @@ export const projects=[
  {id:'project-roleplay',source:[16],title:'A Role Play About Childhood and Choice',text:'Create a fictional role play about how child marriage can harm health, education, safety and opportunities, particularly for girls. Show a young person receiving support from trusted adults. Explain why puberty is not readiness for marriage or parenthood. Avoid using real classmates’ experiences or making anyone disclose private information. Discuss what a supportive community could do.'},
  {id:'project-yoga',source:[16],title:'Plan an Inclusive Yoga Session',text:'International Yoga Day is observed on 21 June. With a trained teacher, plan a small session of suitable asanas and gentle movement. Provide comfortable alternatives, including seated participation, and make participation voluntary. Never force a stretch or hold the breath. Stop if there is pain or dizziness and tell the teacher. Reflect on how clear guidance and inclusion helped the session.'}
 ];
+
+applyClass7ComparisonTables(lesson,6);

@@ -1,3 +1,4 @@
+import {comparisonTableBlock} from './science-g7-comparison-tables.mjs';
 // Independent Grade 7 Chapter 6 authoring entry point. Shared Science typography,
 // opener, feature headings and protected-block pagination; no writes to older chapters.
 import fs from 'node:fs/promises';
@@ -40,6 +41,7 @@ function add(meta,html,h,extra={}){blocks.push({atomId:meta.id,type:meta.type,to
 function body(meta){const rows=wrap(meta.text),chunks=[];if(meta.keepWhole)return add(meta,lines(rows,89,0),rows.length*32+16,{keepNext:!!meta.keepNext});for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length,keepNext:!!meta.keepNext&&i===chunks.length-1}));}
 function bulletList(items,x,w,y=0){let html='';for(const s of items){const p=paragraph(s,{x:x+23,w:w-23,y,gap:10});html+=label('•',x,y+24,'se-copy')+p.html;y+=p.h;}return {html,h:y};}
 function render(meta){
+ if(meta.comparisonTable){const t=comparisonTableBlock(meta,{wrap,lines});return add(meta,t.html,t.h,{conceptId:meta.id});}
 
  if(meta.type==='diagram'){
   const d=adolescenceDiagram(meta.diagram),c=caption(meta.caption,d.h+10);

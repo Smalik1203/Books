@@ -91,12 +91,11 @@
     "titleRole": "continuation",
     "sourcePages": [
       3,
-      2,
-      4
+      2
     ],
-    "end": 1314,
-    "fill": 92,
-    "breakReason": "Next comparison: illustrated comparison",
+    "end": 1164,
+    "fill": 81,
+    "breakReason": "Next heading: From observations to names",
     "blocks": [
       {
         "id": "litmus-record",
@@ -127,33 +126,20 @@
       },
       {
         "id": "sorting",
-        "type": "comparison",
-        "text": "",
+        "type": "table",
+        "text": "Group samples by both litmus observations",
         "top": 626,
-        "bottom": 758,
+        "bottom": 844,
         "before": 0,
         "keepNext": false,
-        "comparisonItems": [
-          {
-            "id": "sorting-0",
-            "text": "Group A: blue paper turns red; red paper remains red."
-          },
-          {
-            "id": "sorting-1",
-            "text": "Group B: red paper turns blue; blue paper remains blue."
-          },
-          {
-            "id": "sorting-2",
-            "text": "Group C: neither paper shows a clear change."
-          }
-        ]
+        "conceptId": "sorting"
       },
       {
         "id": "sort-record-0",
         "type": "body",
         "text": "Make three lists headed A, B and C in your notebook, using the three observed patterns. Put each sample in the list supported by both tests. Keep doubtful results separate for retesting rather than forcing them into a group.",
-        "top": 758,
-        "bottom": 870,
+        "top": 844,
+        "bottom": 956,
         "before": 0,
         "keepNext": false
       },
@@ -161,8 +147,8 @@
         "id": "record-disagreement-0",
         "type": "body",
         "text": "Suppose two groups test the same soap solution and report different colours. Check whether the papers began with the same colour, whether a dropper carried over another sample and whether the paper was wet already. Test fresh pieces using the same solution. Keep the first observations in the record as well as the repeat; crossing out an inconvenient result would hide the reason for checking it.",
-        "top": 870,
-        "bottom": 934,
+        "top": 956,
+        "bottom": 1020,
         "before": 0,
         "keepNext": false
       },
@@ -170,8 +156,8 @@
         "id": "record-disagreement-1",
         "type": "body",
         "text": "Suppose two groups test the same soap solution and report different colours. Check whether the papers began with the same colour, whether a dropper carried over another sample and whether the paper was wet already. Test fresh pieces using the same solution. Keep the first observations in the record as well as the repeat; crossing out an inconvenient result would hide the reason for checking it.",
-        "top": 934,
-        "bottom": 998,
+        "top": 1020,
+        "bottom": 1084,
         "before": 0,
         "keepNext": false
       },
@@ -179,26 +165,45 @@
         "id": "record-disagreement-2",
         "type": "body",
         "text": "Suppose two groups test the same soap solution and report different colours. Check whether the papers began with the same colour, whether a dropper carried over another sample and whether the paper was wet already. Test fresh pieces using the same solution. Keep the first observations in the record as well as the repeat; crossing out an inconvenient result would hide the reason for checking it.",
-        "top": 998,
-        "bottom": 1078,
+        "top": 1084,
+        "bottom": 1164,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "names-head",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 4,
+    "title": "From observations to names",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      4
+    ],
+    "end": 1384,
+    "fill": 98,
+    "breakReason": "Next heading: Familiar foods, careful comparisons",
+    "blocks": [
       {
         "id": "names-head",
         "type": "heading",
         "text": "From observations to names",
-        "top": 1090,
-        "bottom": 1138,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "litmus-meaning-0",
         "type": "body",
         "text": "An **acid-base indicator** changes colour in response to the acidic or basic nature of a solution. Litmus is made from dyes obtained from certain lichens and is supplied as a solution or as paper strips. Some other indicators come from plants; synthetic indicators are manufactured. The indicator supplies evidence through its response; the original colour of the sample alone is not the test.",
-        "top": 1138,
-        "bottom": 1202,
+        "top": 160,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -206,92 +211,27 @@
         "id": "litmus-meaning-1",
         "type": "body",
         "text": "An **acid-base indicator** changes colour in response to the acidic or basic nature of a solution. Litmus is made from dyes obtained from certain lichens and is supplied as a solution or as paper strips. Some other indicators come from plants; synthetic indicators are manufactured. The indicator supplies evidence through its response; the original colour of the sample alone is not the test.",
-        "top": 1202,
-        "bottom": 1314,
+        "top": 224,
+        "bottom": 336,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "three-natures",
-      "type": "comparison",
-      "height": 448,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 4,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      4
-    ],
-    "end": 1194,
-    "fill": 83,
-    "breakReason": "Next heading: Familiar foods, careful comparisons",
-    "blocks": [
+      },
       {
         "id": "three-natures",
-        "type": "comparison",
-        "text": "",
-        "top": 112,
-        "bottom": 560,
+        "type": "table",
+        "text": "Recognising acidic, basic and neutral samples",
+        "top": 336,
+        "bottom": 750,
         "before": 0,
         "keepNext": false,
-        "comparisonItems": [
-          {
-            "id": "three-natures-0-0",
-            "alternative": "Acidic",
-            "text": "Evidence: blue litmus turns red."
-          },
-          {
-            "id": "three-natures-0-1",
-            "alternative": "Acidic",
-            "text": "Typical samples: lemon juice, amla juice, tamarind water and vinegar."
-          },
-          {
-            "id": "three-natures-0-2",
-            "alternative": "Acidic",
-            "text": "Classroom group: A."
-          },
-          {
-            "id": "three-natures-1-0",
-            "alternative": "Basic",
-            "text": "Evidence: red litmus turns blue."
-          },
-          {
-            "id": "three-natures-1-1",
-            "alternative": "Basic",
-            "text": "Typical samples: soap, baking soda, lime water and washing powder solutions."
-          },
-          {
-            "id": "three-natures-1-2",
-            "alternative": "Basic",
-            "text": "Classroom group: B."
-          },
-          {
-            "id": "three-natures-2-0",
-            "alternative": "Neutral",
-            "text": "Meaning: neither acidic nor basic."
-          },
-          {
-            "id": "three-natures-2-1",
-            "alternative": "Neutral",
-            "text": "Typical reference samples: pure water and suitable sugar or common salt solutions in pure water."
-          },
-          {
-            "id": "three-natures-2-2",
-            "alternative": "Neutral",
-            "text": "Classroom group: C, if neither paper changes; this is a limited test."
-          }
-        ]
+        "conceptId": "three-natures"
       },
       {
         "id": "neutral-limit-0",
         "type": "body",
         "text": "Litmus does not measure an exact value of acidity. A very weak change can be hard to see, and a coloured sample can mask it. Tap water varies from place to place. “No clear change in either paper” is your observation; it does not prove that every water sample is exactly neutral or safe to drink.",
-        "top": 560,
-        "bottom": 624,
+        "top": 750,
+        "bottom": 814,
         "before": 0,
         "keepNext": false
       },
@@ -299,8 +239,8 @@
         "id": "neutral-limit-1",
         "type": "body",
         "text": "Litmus does not measure an exact value of acidity. A very weak change can be hard to see, and a coloured sample can mask it. Tap water varies from place to place. “No clear change in either paper” is your observation; it does not prove that every water sample is exactly neutral or safe to drink.",
-        "top": 624,
-        "bottom": 704,
+        "top": 814,
+        "bottom": 894,
         "before": 0,
         "keepNext": false
       },
@@ -308,8 +248,8 @@
         "id": "two-paper-example-0",
         "type": "body",
         "text": "Consider two samples that leave blue litmus blue. One could be basic; another could be neutral. Blue paper alone has not separated them. Red paper adds a second comparison: a basic sample can turn it blue, while a neutral reference leaves it red. This is why a test that produces no visible change can still be informative when it is combined with another observation.",
-        "top": 704,
-        "bottom": 768,
+        "top": 894,
+        "bottom": 958,
         "before": 0,
         "keepNext": false
       },
@@ -317,8 +257,8 @@
         "id": "two-paper-example-1",
         "type": "body",
         "text": "Consider two samples that leave blue litmus blue. One could be basic; another could be neutral. Blue paper alone has not separated them. Red paper adds a second comparison: a basic sample can turn it blue, while a neutral reference leaves it red. This is why a test that produces no visible change can still be informative when it is combined with another observation.",
-        "top": 768,
-        "bottom": 880,
+        "top": 958,
+        "bottom": 1070,
         "before": 0,
         "keepNext": false
       },
@@ -326,8 +266,8 @@
         "id": "lichen",
         "type": "illustrated-note",
         "text": "A lichen is a close association involving a fungus and a photosynthetic partner, usually an alga or a cyanobacterium. Look for lichens on bark or rocks without removing them. Different lichens tolerate different conditions, so finding one is not a complete test of air quality.",
-        "top": 880,
-        "bottom": 1194,
+        "top": 1070,
+        "bottom": 1384,
         "before": 0,
         "keepNext": false
       }
@@ -1130,8 +1070,8 @@
       12,
       13
     ],
-    "end": 1256,
-    "fill": 88,
+    "end": 1238,
+    "fill": 86,
     "breakReason": "Next body: An ant bite is sometimes described as an acid-base problem. Some ",
     "blocks": [
       {
@@ -1173,66 +1113,20 @@
       },
       {
         "id": "soil-comparison",
-        "type": "comparison",
-        "text": "",
+        "type": "table",
+        "text": "Soil conditions and appropriate responses",
         "top": 676,
-        "bottom": 1192,
+        "bottom": 1174,
         "before": 0,
         "keepNext": false,
-        "comparisonItems": [
-          {
-            "id": "soil-comparison-0-0",
-            "alternative": "Soil too acidic for the crop",
-            "text": "Evidence: a suitable soil test shows excessive acidity for that crop."
-          },
-          {
-            "id": "soil-comparison-0-1",
-            "alternative": "Soil too acidic for the crop",
-            "text": "Response: an expert may recommend a measured amount of agricultural lime."
-          },
-          {
-            "id": "soil-comparison-0-2",
-            "alternative": "Soil too acidic for the crop",
-            "text": "Check: retest later; adding too much can create another problem."
-          },
-          {
-            "id": "soil-comparison-1-0",
-            "alternative": "Soil too basic for the crop",
-            "text": "Evidence: a soil test and crop needs identify the problem."
-          },
-          {
-            "id": "soil-comparison-1-1",
-            "alternative": "Soil too basic for the crop",
-            "text": "Response: seek local agricultural advice; suitable organic matter may help soil condition."
-          },
-          {
-            "id": "soil-comparison-1-2",
-            "alternative": "Soil too basic for the crop",
-            "text": "Check: compost is not a guaranteed or rapid cure for alkaline soil."
-          },
-          {
-            "id": "soil-comparison-2-0",
-            "alternative": "Soil near the required range",
-            "text": "Evidence: acidity alone does not explain the poor growth."
-          },
-          {
-            "id": "soil-comparison-2-1",
-            "alternative": "Soil near the required range",
-            "text": "Response: investigate nutrients, drainage, watering, pests and other conditions."
-          },
-          {
-            "id": "soil-comparison-2-2",
-            "alternative": "Soil near the required range",
-            "text": "Check: choose a treatment for the cause supported by evidence."
-          }
-        ]
+        "conceptId": "soil-comparison"
       },
       {
         "id": "ant-0",
         "type": "body",
         "text": "An ant bite is sometimes described as an acid-base problem. Some ants use formic acid in defence, but bites and stings differ between species. Skin reactions are not simply a beaker experiment. Tell an adult after a bite; wash the area with soap and water and use a wrapped cold compress. Do not apply test chemicals or baking-soda remedies. Seek urgent help for breathing difficulty or swelling of the mouth or throat.",
-        "top": 1192,
-        "bottom": 1256,
+        "top": 1174,
+        "bottom": 1238,
         "before": 0,
         "keepNext": false
       }

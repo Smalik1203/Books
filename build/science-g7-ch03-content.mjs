@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Source page numbers refer to the supplied 18-page Chapter 3 PDF.
 export const title='Electricity: Circuits and their Components';
 export const shortTitle='Electricity: Circuits and their Components';
@@ -125,3 +126,5 @@ const bridges=[
  ['standards','drawing-check',[12],'A diagram can be neat and still describe the wrong circuit. Check connections before judging appearance. Every component shown should have its intended terminals connected, and the supply must not have a wire-only route between its terminals. If two lines merely cross, do not assume a junction unless the drawing makes that connection clear. In our diagrams, separate routes are kept apart wherever possible.']
 ];
 for(const [after,id,source,text] of bridges){const at=lesson.findIndex(b=>b.id===after);if(at<0)throw Error('Missing bridge '+after);lesson.splice(at+1,0,{id,type:'body',source,text,addition:'Focused explanation supporting '+after});}
+
+applyClass7ComparisonTables(lesson,3);

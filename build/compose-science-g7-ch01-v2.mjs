@@ -1,3 +1,4 @@
+import {comparisonTableBlock} from './science-g7-comparison-tables.mjs';
 // Independent Chapter 1 authoring entry point. Shared V2 typography, opener,
 // feature headings and protected-block pagination; no writes to Chapter 2/V1.
 import fs from 'node:fs/promises';
@@ -39,6 +40,7 @@ function add(meta,html,h,extra={}){blocks.push({atomId:meta.id,type:meta.type,to
 function body(meta){const rows=wrap(meta.text),chunks=[];for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length}));}
 function bulletList(items,x,w,y=0){let html='';for(const s of items){const p=paragraph(s,{x:x+23,w:w-23,y,gap:10});html+=label('•',x,y+24,'se-copy')+p.html;y+=p.h;}return {html,h:y};}
 function render(meta){
+ if(meta.comparisonTable){const t=comparisonTableBlock(meta,{wrap,lines});return add(meta,t.html,t.h,{conceptId:meta.id});}
  if(meta.type==='body')return body(meta);
  if(meta.type==='heading'){const major=meta.level!==2,rows=wrap(meta.text,874,'h',major?38/30:1);return add(meta,lines(rows,89,0,major?'v2-title':'se-heading',major?46:36,major?38:30),rows.length*(major?46:36)+12,{role:major?'section':'subtopic'});}
  if(meta.type==='panel'){
@@ -79,7 +81,7 @@ function render(meta){
     const p=bulletList(col.items,89,874,y);html+=p.html;y=p.h+12;
    }
    for(const relatedId of relationship.explanations||[]){
-    const explanation=lesson.find(b=>b.id===relatedId),p=paragraph(explanation.text,{y});
+    const explanation=lesson.find(b=>b.id===relatedId),t=explanation.comparisonTable?comparisonTableBlock(explanation,{wrap,lines}):null,p=t?{html:`<g transform="translate(0 ${y})">${t.html}</g>`,h:t.h}:paragraph(explanation.text,{y});
     html+=`<g data-related-block="${relatedId}">${p.html}</g>`;y+=p.h;
    }
    html=`<g data-topic="${id}" data-related="${relatedIds.join(' ')}">${html}</g>`;

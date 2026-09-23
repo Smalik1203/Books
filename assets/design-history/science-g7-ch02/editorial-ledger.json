@@ -108,15 +108,48 @@
     },
     {
       "id": "sorting",
-      "type": "bullets",
+      "type": "table",
       "source": [
         3
       ],
-      "items": [
-        "Group A: blue paper turns red; red paper remains red.",
-        "Group B: red paper turns blue; blue paper remains blue.",
-        "Group C: neither paper shows a clear change."
-      ]
+      "caption": "Group samples by both litmus observations",
+      "rows": [
+        [
+          "Group",
+          "Observed pattern"
+        ],
+        [
+          "Group A",
+          "blue paper turns red; red paper remains red."
+        ],
+        [
+          "Group B",
+          "red paper turns blue; blue paper remains blue."
+        ],
+        [
+          "Group C",
+          "neither paper shows a clear change."
+        ]
+      ],
+      "widths": [
+        0.24,
+        0.76
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "sorting",
+        "type": "bullets",
+        "source": [
+          3
+        ],
+        "items": [
+          "Group A: blue paper turns red; red paper remains red.",
+          "Group B: red paper turns blue; blue paper remains blue.",
+          "Group C: neither paper shows a clear change."
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "sort-record",
@@ -155,36 +188,79 @@
     },
     {
       "id": "three-natures",
-      "type": "comparison",
+      "type": "table",
       "source": [
         4
       ],
-      "columns": [
-        {
-          "title": "Acidic",
-          "items": [
-            "Evidence: blue litmus turns red.",
-            "Typical samples: lemon juice, amla juice, tamarind water and vinegar.",
-            "Classroom group: A."
-          ]
-        },
-        {
-          "title": "Basic",
-          "items": [
-            "Evidence: red litmus turns blue.",
-            "Typical samples: soap, baking soda, lime water and washing powder solutions.",
-            "Classroom group: B."
-          ]
-        },
-        {
-          "title": "Neutral",
-          "items": [
-            "Meaning: neither acidic nor basic.",
-            "Typical reference samples: pure water and suitable sugar or common salt solutions in pure water.",
-            "Classroom group: C, if neither paper changes; this is a limited test."
-          ]
-        }
-      ]
+      "caption": "Recognising acidic, basic and neutral samples",
+      "rows": [
+        [
+          "Aspect",
+          "Acidic",
+          "Basic",
+          "Neutral"
+        ],
+        [
+          "Test or meaning",
+          "blue litmus turns red.",
+          "red litmus turns blue.",
+          "neither acidic nor basic."
+        ],
+        [
+          "Typical samples",
+          "lemon juice, amla juice, tamarind water and vinegar.",
+          "soap, baking soda, lime water and washing powder solutions.",
+          "pure water and suitable sugar or common salt solutions in pure water."
+        ],
+        [
+          "Classroom group",
+          "A.",
+          "B.",
+          "C, if neither paper changes; this is a limited test."
+        ]
+      ],
+      "widths": [
+        0.17,
+        0.27666666666666667,
+        0.27666666666666667,
+        0.27666666666666667
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "three-natures",
+        "type": "comparison",
+        "source": [
+          4
+        ],
+        "columns": [
+          {
+            "title": "Acidic",
+            "items": [
+              "Evidence: blue litmus turns red.",
+              "Typical samples: lemon juice, amla juice, tamarind water and vinegar.",
+              "Classroom group: A."
+            ]
+          },
+          {
+            "title": "Basic",
+            "items": [
+              "Evidence: red litmus turns blue.",
+              "Typical samples: soap, baking soda, lime water and washing powder solutions.",
+              "Classroom group: B."
+            ]
+          },
+          {
+            "title": "Neutral",
+            "items": [
+              "Meaning: neither acidic nor basic.",
+              "Typical reference samples: pure water and suitable sugar or common salt solutions in pure water.",
+              "Classroom group: C, if neither paper changes; this is a limited test."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "neutral-limit",
@@ -729,37 +805,81 @@
     },
     {
       "id": "soil-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         12,
         13
       ],
-      "columns": [
-        {
-          "title": "Soil too acidic for the crop",
-          "items": [
-            "Evidence: a suitable soil test shows excessive acidity for that crop.",
-            "Response: an expert may recommend a measured amount of agricultural lime.",
-            "Check: retest later; adding too much can create another problem."
-          ]
-        },
-        {
-          "title": "Soil too basic for the crop",
-          "items": [
-            "Evidence: a soil test and crop needs identify the problem.",
-            "Response: seek local agricultural advice; suitable organic matter may help soil condition.",
-            "Check: compost is not a guaranteed or rapid cure for alkaline soil."
-          ]
-        },
-        {
-          "title": "Soil near the required range",
-          "items": [
-            "Evidence: acidity alone does not explain the poor growth.",
-            "Response: investigate nutrients, drainage, watering, pests and other conditions.",
-            "Check: choose a treatment for the cause supported by evidence."
-          ]
-        }
-      ]
+      "caption": "Soil conditions and appropriate responses",
+      "rows": [
+        [
+          "Aspect",
+          "Soil too acidic for the crop",
+          "Soil too basic for the crop",
+          "Soil near the required range"
+        ],
+        [
+          "Evidence",
+          "a suitable soil test shows excessive acidity for that crop.",
+          "a soil test and crop needs identify the problem.",
+          "acidity alone does not explain the poor growth."
+        ],
+        [
+          "Response",
+          "an expert may recommend a measured amount of agricultural lime.",
+          "seek local agricultural advice; suitable organic matter may help soil condition.",
+          "investigate nutrients, drainage, watering, pests and other conditions."
+        ],
+        [
+          "Follow-up",
+          "retest later; adding too much can create another problem.",
+          "compost is not a guaranteed or rapid cure for alkaline soil.",
+          "choose a treatment for the cause supported by evidence."
+        ]
+      ],
+      "widths": [
+        0.17,
+        0.27666666666666667,
+        0.27666666666666667,
+        0.27666666666666667
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "soil-comparison",
+        "type": "comparison",
+        "source": [
+          12,
+          13
+        ],
+        "columns": [
+          {
+            "title": "Soil too acidic for the crop",
+            "items": [
+              "Evidence: a suitable soil test shows excessive acidity for that crop.",
+              "Response: an expert may recommend a measured amount of agricultural lime.",
+              "Check: retest later; adding too much can create another problem."
+            ]
+          },
+          {
+            "title": "Soil too basic for the crop",
+            "items": [
+              "Evidence: a soil test and crop needs identify the problem.",
+              "Response: seek local agricultural advice; suitable organic matter may help soil condition.",
+              "Check: compost is not a guaranteed or rapid cure for alkaline soil."
+            ]
+          },
+          {
+            "title": "Soil near the required range",
+            "items": [
+              "Evidence: acidity alone does not explain the poor growth.",
+              "Response: investigate nutrients, drainage, watering, pests and other conditions.",
+              "Check: choose a treatment for the cause supported by evidence."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "ant",

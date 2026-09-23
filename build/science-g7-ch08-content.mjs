@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Independent Chapter 8 manuscript. Source arrays identify PDF pages, not folios.
 export const title='Measurement of Time and Motion';
 export const shortTitle=title;
@@ -173,3 +174,5 @@ export const projects=[
  {id:'project-swing',source:[15],title:'Observe a playground swing',text:'With an adult’s permission, time 10 small oscillations of a safe playground swing. Repeat with different willing riders, without weighing them or sharing body measurements. Keep the posture and small release angle similar; do not pump or stand. Stay outside the swing’s path. Compare approved swings with different suspension lengths; never alter playground equipment. Calculate periods and discuss why a moving rider and seat are only an approximate pendulum.',figure:'swing',caption:'Observe from outside the swing’s path. An adult supervises; the rider stays seated and holds both chains.'},
  {id:'project-olympics',source:[16],title:'Compare Olympic race records',text:'Use official results for the two most recent completed Summer Olympic Games. Record the years, source links and winning times for the men’s and women’s 100 m, 200 m and 400 m races. Calculate distance divided by time for all twelve results. Compare average speeds across distances and editions. These averages do not reveal the fastest instant in a race or explain why a particular athlete won.'}
 ];
+
+applyClass7ComparisonTables(lesson,8);

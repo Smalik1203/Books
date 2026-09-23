@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Source-page references use the supplied sixteen-page Chapter 5 PDF.
 // Procedures precede outcomes; source activities retain stable editorial IDs.
 export const title='Changes Around Us: Physical and Chemical';
@@ -196,3 +197,5 @@ export const projects=[
  {id:'project-yeast',source:[16],title:'What makes bread dough rise?',text:'With your teacher, dissolve two teaspoons of sugar in a little lukewarm water in a small bottle. Add a spoonful of fresh yeast and fit a balloon. Compare with a matching bottle without yeast after about an hour. Do not use hot water or rigid caps. Record balloon expansion. The teacher tests collected gas with fresh lime water using tubing; do not shake or suck lime water. Explain each observation and any uncertainty. Identify physical and chemical changes, then connect gas production with bubbles in bread dough.',figure:'yeast',caption:'Equipment before mixing. A comparison without yeast helps test what causes any change.'},
  {id:'project-chameleon',source:[16],title:'A reversible colour change?',text:'Research chameleon colour changes using your school library or a reliable scientific source. Colour can relate to communication, temperature and camouflage, not deliberate matching to every background. Can the change reverse? Why does colour alone not prove a new substance formed? Identify the species and evidence. Use images or video; never stress an animal.',figure:'chameleon',caption:'A chameleon’s colour has several functions. Research the mechanism rather than classifying it from appearance alone.'}
 ];
+
+applyClass7ComparisonTables(lesson,5);

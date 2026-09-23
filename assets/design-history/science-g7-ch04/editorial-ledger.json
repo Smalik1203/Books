@@ -125,10 +125,33 @@
     },
     {
       "id": "properties-apart",
-      "type": "body",
+      "type": "table",
       "source": [],
-      "addition": "Focused evidence-reading and application guidance at a protected page join.",
-      "text": "Hardness and malleability answer different questions. Hardness concerns resistance to local indentation or scratching; malleability concerns a change into a sheet without fracture. A material can resist a small dent yet still be shaped with suitable tools. Keep the two descriptions separate in your notes."
+      "caption": "Hardness and malleability",
+      "rows": [
+        [
+          "Hardness",
+          "Malleability"
+        ],
+        [
+          "Hardness concerns resistance to local indentation or scratching.",
+          "Malleability concerns a change into a sheet without fracture."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Hardness and malleability answer different questions. A material can resist a small dent yet still be shaped with suitable tools. Keep the two descriptions separate in your notes.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "properties-apart",
+        "type": "body",
+        "source": [],
+        "addition": "Focused evidence-reading and application guidance at a protected page join.",
+        "text": "Hardness and malleability answer different questions. Hardness concerns resistance to local indentation or scratching; malleability concerns a change into a sheet without fracture. A material can resist a small dent yet still be shaped with suitable tools. Keep the two descriptions separate in your notes."
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "malleability-head",
@@ -151,29 +174,68 @@
     },
     {
       "id": "shape-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         3,
         4
       ],
-      "columns": [
-        {
-          "title": "Malleable behaviour",
-          "items": [
-            "Under a suitable force, the sample changes shape without breaking apart.",
-            "A metal sheet can be thinner than the starting piece.",
-            "Aluminium foil and silver leaf are useful examples."
-          ]
-        },
-        {
-          "title": "Brittle behaviour",
-          "items": [
-            "Under a suitable force, the sample fractures into smaller pieces.",
-            "Breaking is different from spreading into a continuous sheet.",
-            "Sulfur and coal commonly show this behaviour."
-          ]
-        }
-      ]
+      "caption": "Malleable and brittle behaviour",
+      "rows": [
+        [
+          "Aspect",
+          "Malleable behaviour",
+          "Brittle behaviour"
+        ],
+        [
+          "Under force",
+          "Under a suitable force, the sample changes shape without breaking apart.",
+          "Under a suitable force, the sample fractures into smaller pieces."
+        ],
+        [
+          "Resulting form",
+          "A metal sheet can be thinner than the starting piece.",
+          "Breaking is different from spreading into a continuous sheet."
+        ],
+        [
+          "Examples",
+          "Aluminium foil and silver leaf are useful examples.",
+          "Sulfur and coal commonly show this behaviour."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "shape-comparison",
+        "type": "comparison",
+        "source": [
+          3,
+          4
+        ],
+        "columns": [
+          {
+            "title": "Malleable behaviour",
+            "items": [
+              "Under a suitable force, the sample changes shape without breaking apart.",
+              "A metal sheet can be thinner than the starting piece.",
+              "Aluminium foil and silver leaf are useful examples."
+            ]
+          },
+          {
+            "title": "Brittle behaviour",
+            "items": [
+              "Under a suitable force, the sample fractures into smaller pieces.",
+              "Breaking is different from spreading into a continuous sheet.",
+              "Sulfur and coal commonly show this behaviour."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "exceptions",
@@ -620,28 +682,57 @@
     },
     {
       "id": "protect",
-      "type": "comparison",
+      "type": "table",
       "source": [
         10
       ],
-      "columns": [
-        {
-          "title": "Keep the surface covered",
-          "items": [
-            "Paint forms a barrier between iron and its surroundings.",
-            "Oil or grease can help keep water and air away.",
-            "A damaged or incomplete coating may leave iron exposed."
-          ]
-        },
-        {
-          "title": "Choose a protective coating",
-          "items": [
-            "Galvanisation coats iron or steel with zinc.",
-            "Zinc can protect iron as well as forming a surface layer.",
-            "Check and maintain the coating instead of assuming protection lasts forever."
-          ]
-        }
-      ]
+      "caption": "Protecting iron from corrosion",
+      "rows": [
+        [
+          "Aspect",
+          "Keep the surface covered",
+          "Choose a protective coating"
+        ],
+        [
+          "Protection and care",
+          "Paint forms a barrier between iron and its surroundings. Oil or grease can help keep water and air away. A damaged or incomplete coating may leave iron exposed.",
+          "Galvanisation coats iron or steel with zinc. Zinc can protect iron as well as forming a surface layer. Check and maintain the coating instead of assuming protection lasts forever."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "protect",
+        "type": "comparison",
+        "source": [
+          10
+        ],
+        "columns": [
+          {
+            "title": "Keep the surface covered",
+            "items": [
+              "Paint forms a barrier between iron and its surroundings.",
+              "Oil or grease can help keep water and air away.",
+              "A damaged or incomplete coating may leave iron exposed."
+            ]
+          },
+          {
+            "title": "Choose a protective coating",
+            "items": [
+              "Galvanisation coats iron or steel with zinc.",
+              "Zinc can protect iron as well as forming a surface layer.",
+              "Check and maintain the coating instead of assuming protection lasts forever."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables",
+      "paragraphCells": true
     },
     {
       "id": "corrosion-photo",
@@ -792,29 +883,68 @@
     },
     {
       "id": "oxide-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         11,
         13
       ],
-      "columns": [
-        {
-          "title": "Magnesium product",
-          "items": [
-            "Starting element: a metal.",
-            "Product in air: mainly solid magnesium oxide.",
-            "With water: a basic mixture; red litmus turns blue."
-          ]
-        },
-        {
-          "title": "Sulfur product",
-          "items": [
-            "Starting element: a non-metal.",
-            "Product in air: sulfur dioxide gas.",
-            "With water: an acidic solution; blue litmus turns red."
-          ]
-        }
-      ]
+      "caption": "Products of magnesium and sulfur in air",
+      "rows": [
+        [
+          "Aspect",
+          "Magnesium product",
+          "Sulfur product"
+        ],
+        [
+          "Element",
+          "a metal.",
+          "a non-metal."
+        ],
+        [
+          "Product",
+          "mainly solid magnesium oxide.",
+          "sulfur dioxide gas."
+        ],
+        [
+          "With water",
+          "a basic mixture; red litmus turns blue.",
+          "an acidic solution; blue litmus turns red."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "oxide-comparison",
+        "type": "comparison",
+        "source": [
+          11,
+          13
+        ],
+        "columns": [
+          {
+            "title": "Magnesium product",
+            "items": [
+              "Starting element: a metal.",
+              "Product in air: mainly solid magnesium oxide.",
+              "With water: a basic mixture; red litmus turns blue."
+            ]
+          },
+          {
+            "title": "Sulfur product",
+            "items": [
+              "Starting element: a non-metal.",
+              "Product in air: sulfur dioxide gas.",
+              "With water: an acidic solution; blue litmus turns red."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "sulfur-water-intro",

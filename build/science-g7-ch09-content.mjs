@@ -1,3 +1,4 @@
+import {applyClass7ComparisonTables} from './science-g7-comparison-tables.mjs';
 // Independently written lesson; source references are supplied PDF page numbers.
 export const title='Life Processes in Animals';
 export const shortTitle=title;
@@ -202,3 +203,5 @@ export const projects=[
  {id:'project-breathing',source:[16],title:'Evaluate a breathing-practice claim',text:'Research box breathing: inhalation, pause, exhalation, pause. Evaluate evidence for relaxation claims and identify uncertainties. This is reading, not a breath-holding exercise or treatment. Avoid forced breathing and discuss health questions with a qualified adult.'},
  {id:'project-birds',source:[16],title:'How do high-flying birds obtain oxygen?',text:'Compare bird and mammal respiratory diagrams. Research air sacs and one-way lung airflow. Explain why high altitude means lower oxygen pressure, not usually a lower oxygen percentage. Air sacs move air; lung tissue exchanges gases. Name your sources.'}
 ];
+
+applyClass7ComparisonTables(lesson,9);

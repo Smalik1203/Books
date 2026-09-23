@@ -38,16 +38,53 @@
     },
     {
       "id": "clock-principles",
-      "type": "bullets",
-      "items": [
-        "**Sundial:** the shadow moves across a marked surface as the Sun’s apparent position changes. It needs sunlight and correct alignment.",
-        "**Water clock:** water drains from a marked vessel, or enters a floating bowl through a small hole until the bowl sinks. The device must be reset.",
-        "**Hourglass:** sand passes through a narrow opening between two bulbs. A particular amount of sand marks an interval.",
-        "**Candle clock:** a burning candle becomes shorter. Marks can indicate intervals, but draughts and uneven burning affect the result. Observe only an adult’s demonstration."
-      ],
+      "type": "table",
       "source": [
         2
-      ]
+      ],
+      "caption": "How early clocks mark time",
+      "rows": [
+        [
+          "Device",
+          "Working principle and conditions"
+        ],
+        [
+          "Sundial",
+          "the shadow moves across a marked surface as the Sun’s apparent position changes. It needs sunlight and correct alignment."
+        ],
+        [
+          "Water clock",
+          "water drains from a marked vessel, or enters a floating bowl through a small hole until the bowl sinks. The device must be reset."
+        ],
+        [
+          "Hourglass",
+          "sand passes through a narrow opening between two bulbs. A particular amount of sand marks an interval."
+        ],
+        [
+          "Candle clock",
+          "a burning candle becomes shorter. Marks can indicate intervals, but draughts and uneven burning affect the result. Observe only an adult’s demonstration."
+        ]
+      ],
+      "widths": [
+        0.24,
+        0.76
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "clock-principles",
+        "type": "bullets",
+        "items": [
+          "**Sundial:** the shadow moves across a marked surface as the Sun’s apparent position changes. It needs sunlight and correct alignment.",
+          "**Water clock:** water drains from a marked vessel, or enters a floating bowl through a small hole until the bowl sinks. The device must be reset.",
+          "**Hourglass:** sand passes through a narrow opening between two bulbs. A particular amount of sand marks an interval.",
+          "**Candle clock:** a burning candle becomes shorter. Marks can indicate intervals, but draughts and uneven burning affect the result. Observe only an adult’s demonstration."
+        ],
+        "source": [
+          2
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "make-clock",
@@ -370,12 +407,38 @@
     },
     {
       "id": "clock-accuracy",
-      "type": "body",
-      "text": "Timekeeping has improved greatly from early mechanical clocks to modern atomic standards. Yet a device displaying many digits is not automatically accurate. **Resolution** is the smallest interval its display or scale distinguishes; accuracy concerns how close a reading is to the actual interval.",
+      "type": "table",
       "source": [
         7,
         8
-      ]
+      ],
+      "caption": "Resolution and accuracy",
+      "rows": [
+        [
+          "Resolution",
+          "Accuracy"
+        ],
+        [
+          "**Resolution** is the smallest interval its display or scale distinguishes.",
+          "Accuracy concerns how close a reading is to the actual interval."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Timekeeping has improved greatly from early mechanical clocks to modern atomic standards. Yet a device displaying many digits is not automatically accurate.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "clock-accuracy",
+        "type": "body",
+        "text": "Timekeeping has improved greatly from early mechanical clocks to modern atomic standards. Yet a device displaying many digits is not automatically accurate. **Resolution** is the smallest interval its display or scale distinguishes; accuracy concerns how close a reading is to the actual interval.",
+        "source": [
+          7,
+          8
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "units",
@@ -496,26 +559,59 @@
     },
     {
       "id": "speed-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         9
       ],
-      "columns": [
-        {
-          "title": "Same distance",
-          "items": [
-            "Compare the times taken.",
-            "Less time means greater average speed."
-          ]
-        },
-        {
-          "title": "Same elapsed time",
-          "items": [
-            "Compare the distances travelled.",
-            "More distance means greater average speed."
-          ]
-        }
-      ]
+      "caption": "Comparing average speeds",
+      "rows": [
+        [
+          "Aspect",
+          "Same distance",
+          "Same elapsed time"
+        ],
+        [
+          "What to compare",
+          "Compare the times taken.",
+          "Compare the distances travelled."
+        ],
+        [
+          "Greater speed",
+          "Less time means greater average speed.",
+          "More distance means greater average speed."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "speed-comparison",
+        "type": "comparison",
+        "source": [
+          9
+        ],
+        "columns": [
+          {
+            "title": "Same distance",
+            "items": [
+              "Compare the times taken.",
+              "Less time means greater average speed."
+            ]
+          },
+          {
+            "title": "Same elapsed time",
+            "items": [
+              "Compare the distances travelled.",
+              "More distance means greater average speed."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "different-distances",
@@ -723,37 +819,101 @@
     },
     {
       "id": "motion-comparison",
-      "type": "comparison",
+      "type": "table",
       "source": [
         12,
         13
       ],
-      "columns": [
-        {
-          "title": "Uniform linear motion",
-          "items": [
-            "Follows a straight line at constant speed.",
-            "Covers equal distances in equal time intervals.",
-            "An ideal model of a steady part of a journey."
-          ]
-        },
-        {
-          "title": "Non-uniform linear motion",
-          "items": [
-            "Follows a straight line with changing speed.",
-            "Can cover unequal distances in equal time intervals.",
-            "Occurs while speeding up or slowing down."
-          ]
-        }
-      ]
+      "caption": "Uniform and non-uniform linear motion",
+      "rows": [
+        [
+          "Aspect",
+          "Uniform linear motion",
+          "Non-uniform linear motion"
+        ],
+        [
+          "Path and speed",
+          "Follows a straight line at constant speed.",
+          "Follows a straight line with changing speed."
+        ],
+        [
+          "Equal intervals",
+          "Covers equal distances in equal time intervals.",
+          "Can cover unequal distances in equal time intervals."
+        ],
+        [
+          "Example",
+          "An ideal model of a steady part of a journey.",
+          "Occurs while speeding up or slowing down."
+        ]
+      ],
+      "widths": [
+        0.18,
+        0.41000000000000003,
+        0.41000000000000003
+      ],
+      "note": "",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "motion-comparison",
+        "type": "comparison",
+        "source": [
+          12,
+          13
+        ],
+        "columns": [
+          {
+            "title": "Uniform linear motion",
+            "items": [
+              "Follows a straight line at constant speed.",
+              "Covers equal distances in equal time intervals.",
+              "An ideal model of a steady part of a journey."
+            ]
+          },
+          {
+            "title": "Non-uniform linear motion",
+            "items": [
+              "Follows a straight line with changing speed.",
+              "Can cover unequal distances in equal time intervals.",
+              "Occurs while speeding up or slowing down."
+            ]
+          }
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "instruments",
-      "type": "body",
-      "text": "A **speedometer** indicates speed at the time of the reading. An **odometer** records accumulated distance travelled. Subtract two odometer readings to find the distance between them; use the elapsed time to find average speed. Neither a single speedometer reading nor an odometer reading alone gives the average for a journey.",
+      "type": "table",
       "source": [
         12
-      ]
+      ],
+      "caption": "Speedometer and odometer",
+      "rows": [
+        [
+          "Speedometer",
+          "Odometer"
+        ],
+        [
+          "A **speedometer** indicates speed at the time of the reading.",
+          "An **odometer** records accumulated distance travelled."
+        ]
+      ],
+      "widths": [
+        0.5,
+        0.5
+      ],
+      "note": "Subtract two odometer readings to find the distance between them; use the elapsed time to find average speed. Neither a single speedometer reading nor an odometer reading alone gives the average for a journey.",
+      "comparisonTable": true,
+      "comparisonOriginal": {
+        "id": "instruments",
+        "type": "body",
+        "text": "A **speedometer** indicates speed at the time of the reading. An **odometer** records accumulated distance travelled. Subtract two odometer readings to find the distance between them; use the elapsed time to find average speed. Neither a single speedometer reading nor an odometer reading alone gives the average for a journey.",
+        "source": [
+          12
+        ]
+      },
+      "editorialRevision": "2026-09: concept distinctions presented as aligned comparison tables"
     },
     {
       "id": "instrument-art",
