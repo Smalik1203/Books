@@ -1,6 +1,7 @@
 // Explicit, reviewable changes on top of the immutable page transcription.
 // Every replacement carries its original IDs into the editorial ledger.
 import {fatSourceFigure} from './science-g6-food-fat-figure.mjs';
+import {readFileSync} from 'node:fs';
 export function editClass6(ch) {
  const ledger=[];
  const replace=(ids,items,reason)=>{
@@ -13,6 +14,78 @@ export function editClass6(ch) {
   ledger.push({sourceIds:ids,resultIds:items.map(b=>b.id),reason});
  };
  const n=ch.config.number;
+ if(n==='10'){
+  const opener=ch.blocks.find(b=>b.id==='g6-10-001');
+  opener.art[0]={kind:'image',src:'../../figures/class-6/living-world/opener-illustration.png',alt:'Painted garden with a bean plant, seedling, snail, butterfly, stone, soil and a puddle',w:874,h:490};
+  ledger.push({sourceIds:[opener.id],resultIds:[opener.id],reason:'Use a foreground painted PNG with genuine transparency in the same opener treatment as the completed chapters; retain the full opening observation and caption.'});
+  const original=JSON.parse(readFileSync('assets/design-history/science-g6-modern/source-pages.json','utf8')).find(c=>c.config.number==='10');
+  for(const [source,start,titleId] of [['p106.html',326,325],['p107.html',334,333],['p108.html',344,343]]){
+   const html=original.pages.find(p=>p.file===source).html;
+   const title=html.match(/<div class="c-practice__head">[\s\S]*?<\/svg>(.*?)<\/div>/)[1];
+   replace([`g6-10-${titleId}`],[{type:'heading',level:3,html:title}],
+    'Restore the original exercise-set title as a heading, rather than scaling its decorative icon into a figure.');
+   const questions=[...html.matchAll(/<ol class="c-questions"[^>]*>\s*<li><p>([\s\S]*?)<\/p><ol[^>]*>([\s\S]*?)<\/ol><\/li>/g)];
+   if(questions.length!==6)throw Error('Expected six original questions in '+source);
+   questions.forEach((q,i)=>replace([`g6-10-${start+i}`],[{type:'question',number:i+1,html:q[1],options:[...q[2].matchAll(/<li>([\s\S]*?)<\/li>/g)].map(x=>x[1])}],
+    'Recover the original question and four distinct A–D options, continuing numbering within each set; keep the complete question on one page.'));
+  }
+  for(const start of [271,281,290,300,310]){
+   const ids=Array.from({length:4},(_,i)=>`g6-10-${start+i}`);
+   replace(ids,[{type:'options',items:ids.map(id=>ch.blocks.find(b=>b.id===id).html.replace(/^\d+\.\s*/,''))}],
+    'Restore lettered options to match the explained answer key, preserving each option verbatim.');
+   const question=ch.blocks.find(b=>b.id===`g6-10-${start-1}`);question.keepNext=true;
+  }
+  for(const [first,last] of [[269,277],[279,287],[288,296],[298,306],[308,316]]){
+   const ids=ch.blocks.filter(b=>{const match=b.id.match(/^g6-10-(\d+)/);return match&&+match[1]>=first&&+match[1]<=last;}).map(b=>b.id);
+   replace(ids,[{type:'lesson-group',blocks:ch.blocks.filter(b=>ids.includes(b.id))}],
+    'Keep each worked multiple-choice question, options and complete explanation together as one open teaching unit.');
+  }
+  for(const b of ch.blocks){
+   if(b.type==='figure'&&b.caption)b.caption=b.caption.replace(/<\/strong>(?=\S)/g,'</strong> ');
+  }
+  const decoration=ch.blocks.find(b=>b.id==='g6-10-245');
+  decoration.art[0].w=150;decoration.art[0].h=150;
+  ledger.push({sourceIds:[decoration.id],resultIds:[decoration.id],reason:'Restore the closing leaf as a small line-art accent using its original class, rather than an enlarged black silhouette.'});
+  const observation=ch.blocks.find(b=>b.id==='g6-10-114');
+  observation.caption='Copy these headings into your notebook; enter your own daily observations.';
+  observation.rows=observation.rows.slice(0,1);
+  ledger.push({sourceIds:[observation.id],resultIds:[observation.id],reason:'Keep all six recording headings; remove placeholder writing lines that overflowed the table. Recording belongs in the notebook.'});
+  const portrait=structuredClone(ch.blocks.find(b=>b.id==='g6-10-133'));
+  portrait.art[0]={kind:'image',src:'../../figures/class-6/living-world/bose-illustration.png',alt:'Painted portrait of Jagadish Chandra Bose',w:226,h:300};
+  portrait.caption+=' · illustrated portrait';
+  replace(['g6-10-133','g6-10-134','g6-10-135'],[{type:'media',figure:portrait,blocks:ch.blocks.filter(b=>['g6-10-134','g6-10-135'].includes(b.id))}],
+   'Set the painted transparent portrait beside the complete scientist explanation. Retain the historical source attribution in the credits.');
+  const credit=ch.blocks.find(b=>b.id==='g6-10-399');credit.html+=' Reference for the painted portrait, generated with OpenAI image generation on 23 September 2026.';
+  // The source transcription joined captions without their original line break.
+  for(const b of ch.blocks)if(b.type==='figure'&&b.caption)b.caption=b.caption.replace(/(<\/strong>)\s*/g,'$1 ');
+  // A stage opener must introduce an actual task on its page, not just a direction.
+  for(const id of ['g6-10-268','g6-10-324','g6-10-352'])ch.blocks.find(b=>b.id===id).keepNext=true;
+  const ratios=JSON.parse(readFileSync('assets/design-history/science-g6-modern/ch10-living-world/image-metrics.json','utf8'));
+  for(const ids of [['g6-10-087','g6-10-088'],['g6-10-136','g6-10-137']]){
+   const figures=ids.map(id=>structuredClone(ch.blocks.find(b=>b.id===id)));
+   for(const f of figures)for(const a of f.art){const r=ratios[a.src];if(r){a.w=300*r.width/r.height;a.h=300;}}
+   replace(ids,[{type:'figure-pair',figures}],
+    'Keep the related specimen photographs side by side with separate captions and original image proportions. Remove empty image-canvas width; do not crop or enlarge specimens.');
+  }
+  const sample=structuredClone(ch.blocks.find(b=>b.id==='g6-10-204'));
+  const cut=sample.blocks[1].html.indexOf('. ')+1;
+  const introduction=sample.blocks[1].html.slice(0,cut);
+  sample.blocks[1].html=sample.blocks[1].html.slice(cut).trim();
+  replace(['g6-10-204'],[{type:'paragraph',html:introduction,keepNext:true},sample],
+   'Place the invented observation record between the investigation and reasoning panels, retaining every sentence and keeping the reasoning panel whole.');
+  function notebookTables(b){
+   if(b.type==='table'){
+    const old=b.rows.length;b.rows=b.rows.filter((r,i)=>i===0||!r.every(c=>/^[\s_]*$/.test(c.html)));
+    if(old!==b.rows.length){b.caption=b.caption||'Record these observations in your notebook.';ledger.push({sourceIds:[b.id||'nested observation table'],reason:'Remove empty writing lines; preserve the observation headings and use the learner’s notebook.'});}
+   }
+   for(const x of b.blocks||[])notebookTables(x);
+  }
+  ch.blocks.forEach(notebookTables);
+  for(const id of ['g6-10-379','g6-10-411']){
+   const b=ch.blocks.find(b=>b.id===id);b.html='Earlier artwork record: '+b.html;
+  }
+  ch.blocks.find(b=>b.id==='g6-10-411').html+=' The current garden opener is a painted transparent illustration generated on 23 September 2026, replacing the earlier photorealistic scene.';
+ }
  const compare=(ids,labels,caption)=>replace(ids,[{type:'table',caption,
   rows:[labels.map(html=>({html})),ids.map(id=>({html:ch.blocks.find(b=>b.id===id).html}))]}],
   'Present the existing differentiated descriptions in parallel table columns; preserve all wording and adjacent shared qualifications.');

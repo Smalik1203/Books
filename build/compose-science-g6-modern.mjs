@@ -25,29 +25,33 @@ const unit=189/1052*96/25.4;
 const titles={1:['The Wonderful','World of Science'],2:['Diversity in the','Living World'],3:['Food on','Our Plate'],4:['Exploring','Magnets'],10:['The Living','World']};
 let currentChapter;
 const icon=kind=>{
- const shared=kind==='think'&&['1','2','3','4'].includes(currentChapter);
- const d=shared?v2PanelIconPath('think'):kind==='setup'?'M16 16l6 6M18 10A8 8 0 1 1 2 10A8 8 0 1 1 18 10':'M8 8a4 4 0 1 1 6 3.5c-2 1-2 2-2 3.5M12 19h.01';
+ const shared=kind==='think'&&['1','2','3','4','10'].includes(currentChapter);
+ const d=shared?v2PanelIconPath('think'):currentChapter==='10'?v2PanelIconPath(kind):kind==='setup'?'M16 16l6 6M18 10A8 8 0 1 1 2 10A8 8 0 1 1 18 10':'M8 8a4 4 0 1 1 6 3.5c-2 1-2 2-2 3.5M12 19h.01';
  return `<svg class="g6-panel__icon${shared?' g6-panel__icon--shared-think':''}" viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`;
 };
 const motif=(n,running=false)=>{
- if(!running&&['1','2','3','4'].includes(String(n)))return scienceHeaderArt(6,n);
+ if(!running&&['1','2','3','4','10'].includes(String(n)))return scienceHeaderArt(6,n);
  const shapes=n==='4'?'<path d="M18 12v35a26 26 0 0 0 52 0V12H56v35a12 12 0 0 1-24 0V12ZM18 30h14M56 30h14"/>':n==='3'?'<circle cx="44" cy="44" r="33"/><circle cx="44" cy="44" r="23"/>':n==='2'||n==='10'?'<path d="M45 85Q28 46 60 6M43 66Q14 67 9 45Q35 42 43 66ZM44 45Q48 16 77 16Q75 43 44 45ZM48 30Q19 32 16 8Q41 8 48 30Z"/>':'<circle cx="38" cy="35" r="25"/><path d="M57 54l25 26M26 35h24M38 23v24"/>';
  return `<g class="g6-motif" transform="${running?'translate(22 8) scale(.48)':'translate(942 88) scale(.9)'}">${shapes}</g>`;
 };
 function art(a,opener=false){
- const labelled=/<text\b/.test(a.svg||''),limit=opener?390:labelled?900:400;
+ const labelled=/<text\b/.test(a.svg||''),limit=opener?(currentChapter==='10'?520:390):labelled?900:400;
  const scale=Math.min(874/a.w,limit/a.h,1),dimensions=`width="${a.w*scale*unit}" height="${a.h*scale*unit}"`;
  if(a.kind==='image')return `<svg class="g6-art-image${opener?' g6-art-opener':''}" ${dimensions} viewBox="0 0 ${a.w} ${a.h}" xmlns="http://www.w3.org/2000/svg"><image href="${E(a.src)}" x="0" y="0" width="${a.w}" height="${a.h}" preserveAspectRatio="xMidYMid meet"><title>${E(a.alt)}</title></image></svg>`;
- return a.svg.replace(/ data-original-bounds="[^"]*"/g,'').replace(/ data-justified="[^"]*"/g,'').replace(/\bdx="[^"]*"/g,'').replace(/<svg\b([^>]*)>/,(_,attrs)=>'<svg '+attrs.replace(/\s(?:width|height|x|y)="[^"]*"/g,'').replace(/class="[^"]*"/,'')+` ${dimensions} class="g6-source-art${labelled?' g6-art-labelled':''}${opener?' g6-art-opener':''}">`);
+ return a.svg.replace(/ data-original-bounds="[^"]*"/g,'').replace(/ data-justified="[^"]*"/g,'').replace(/\bdx="[^"]*"/g,'').replace(/<svg\b([^>]*)>/,(_,attrs)=>'<svg '+attrs.replace(/\s(?:width|height|x|y)="[^"]*"/g,'').replace(/class="[^"]*"/,'')+` ${dimensions} class="${currentChapter==='10'?(attrs.match(/class="([^"]*)"/)?.[1]||'')+' ':''}g6-source-art${labelled?' g6-art-labelled':''}${opener?' g6-art-opener':''}">`);
 }
 function render(b,inside=false){
  let html='';
  if(b.type==='heading')html=`<h${b.level||3}>${b.html}</h${b.level||3}>`;
+ else if(b.type==='question')html=`<ol class="g6-questions" start="${b.number}"><li><p>${b.html}</p><ol class="g6-options">${b.options.map(x=>`<li>${x}</li>`).join('')}</ol></li></ol>`;
+ else if(b.type==='options')html=`<ol class="g6-options">${b.items.map(x=>`<li>${x}</li>`).join('')}</ol>`;
+ else if(b.type==='lesson-group')html=b.blocks.map(x=>render(x,true)).join('');
  else if(b.type==='paragraph'){
   const match=b.html.match(/^•\s*(.*)/s);html=match?`<p class="g6-bullet">${match[1]}</p>`:`<p>${b.html}</p>`;
  }else if(b.type==='caption'||b.type==='table-caption')html=`<p class="g6-caption">${b.html}</p>`;
  else if(b.type==='feature')html=`<div class="g6-feature-label">${b.html}</div>`;
  else if(b.type==='figure')html=`<figure class="g6-figure"><div class="g6-art">${b.art.map(a=>art(a,b.opener)).join('')}</div>${b.caption?`<figcaption>${b.caption}</figcaption>`:''}</figure>`;
+ else if(b.type==='figure-pair')html=`<div class="g6-photo-pair">${b.figures.map(x=>render(x,true)).join('')}</div>`;
  else if(b.type==='table')html=`<div class="g6-table-wrap"><table>${b.caption?`<caption>${b.caption}</caption>`:''}<thead><tr>${b.rows[0].map(c=>`<th scope="col">${c.html}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map(r=>'<tr>'+r.map(c=>`<td>${c.html}${(c.images||[]).map(a=>`<img class="g6-table-image" src="${E(a.src)}" alt="${E(a.alt||'')}"/>`).join('')}</td>`).join('')+'</tr>').join('')}</tbody></table></div>`;
  else if(b.type==='panel'){
   let step=0;

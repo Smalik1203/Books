@@ -94,3 +94,21 @@
 .g6-summary > .g6-block:first-child {padding-top:0;}
 .g6-summary > .g6-block:last-child {padding-bottom:0;}
 .page--g6-modern .g6-figure figcaption,.page--g6-modern table caption {font-style:normal;}
+
+/* Chapter 10's restored lists and original vector figures use the same reading
+   scale as Chapters 1–6; no changes to the already approved chapters. */
+.page--g6-modern[data-science-chapter="10"] .g6-options,
+.page--g6-modern[data-science-chapter="10"] .g6-questions {
+ margin:0;padding:0 0 0 calc(var(--g6-u) * 32);font:inherit;color:inherit;
+}
+.page--g6-modern[data-science-chapter="10"] .g6-options {list-style-type:upper-alpha;}
+.page--g6-modern[data-science-chapter="10"] .g6-questions {list-style-type:decimal;}
+.page--g6-modern[data-science-chapter="10"] .g6-options li {padding-left:calc(var(--g6-u) * 6);margin-top:calc(var(--g6-u) * 6);}
+.page--g6-modern[data-science-chapter="10"] li::marker {font-weight:600;color:var(--v2-forest);}
+.page--g6-modern[data-science-chapter="10"] .g6-figure figcaption {font-family:'Source Sans 3',sans-serif;font-style:normal;}
+.page--g6-modern[data-science-chapter="10"] .g6-art .life-art {fill:none;stroke:var(--v2-forest);stroke-width:1.6;}
+.page--g6-modern[data-science-chapter="10"] .g6-art .life-art__wash {fill:var(--v2-wash);stroke:none;}
+.page--g6-modern[data-science-chapter="10"] .g6-art .lw-label {font-size:calc(var(--size-body) * .6);}
+.page--g6-modern[data-science-chapter="10"] .g6-art > svg.g6-art-opener {max-height:calc(var(--g6-u) * 520);}
+.page--g6-modern[data-science-chapter="10"] .g6-photo-pair {display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--g6-u) * 28);align-items:start;}
+.page--g6-modern[data-science-chapter="10"] .g6-photo-pair .g6-block {padding-bottom:0;}
