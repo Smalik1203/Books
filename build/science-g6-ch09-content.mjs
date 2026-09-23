@@ -1,0 +1,173 @@
+export const title='Methods of Separation in Everyday Life';
+export const shortTitle='Methods of Separation in Everyday Life';
+export const opener=[
+ 'A pebble in rice, leaves in tea, salt in water: can the same method separate them all?',
+ 'Malli and Valli visit relatives across India during their holidays. At their grandmother’s home in Haryana, they help examine a tray of grain. Small stones and pieces of husk are mixed with the grains. Each material is still there, but which one should they keep?',
+ 'Their journey takes them from fields to kitchens and workshops. At each stop, they ask what property could help separate a mixture: particle size, response to moving air, solubility or attraction to a magnet.',
+ 'Follow their investigations. Choose a method, predict what it can remove, and use observations to decide how well it worked. Sometimes one method is enough; sometimes a sequence is needed.'
+];
+const h=(id,text,source)=>({id,type:'heading',text,source});
+const b=(id,text,source)=>({id,type:'body',text,source});
+const task=(id,sourceActivity,paragraphs,source,extra={})=>({id,type:'panel',kind:'setup',sourceActivity,paragraphs,source,...extra});
+const table=(id,caption,rows,widths,source,note='')=>({id,type:'table',caption,rows,widths,source,note});
+const side=(id,figure,figureHeight,paragraphs,caption,source)=>({id,type:'illustrated-prose',figure,figureHeight,paragraphs,caption,source});
+export const lesson=[
+ h('mixture-heading','9.1 Why Separate a Mixture?',[1,2]),
+ b('mixture','A **mixture** contains two or more substances together. Grains and stones form one mixture; salt dissolved in water forms another. In a mixture, the components may be easy to see separately, or they may not. Dissolving does not mean that a substance has disappeared.',[1,2,5]),
+ b('purpose','We may separate a mixture to remove an unwanted component, to obtain a useful one, or to recover several useful components. “Unwanted” depends on the purpose. Husk is unwanted in grain prepared for cooking, but it may be useful elsewhere. Separation does not always mean throwing something away.',[1,13,14]),
+ h('hand-heading','9.2 Picking, Threshing and Winnowing',[2,3,4]),
+ b('handpicking','Look closely at a small mixture of clean rice and a few large dry pulses. Can you recognise and pick out each pulse? Sorting visible pieces by hand is **handpicking**. Differences in size, shape or colour help. Keep your eyes open; never handle sharp, unknown or dirty fragments.',[2]),
+ b('hand-limits','Handpicking is convenient when the pieces are large enough to recognise and there are relatively few to remove. It becomes slow for a large heap or many tiny pieces. Malli’s removal of a whole peppercorn from cooked rice uses the same idea, although a spoon is more suitable for food.',[2]),
+ b('threshing','In the field, grains are still attached to harvested stalks. Beating or mechanically working suitably dried stalks loosens the grains. This is **threshing**. It releases attached grains; it is not the method for separating an already loose mixture of two kinds of grain.',[2]),
+ b('machines','Farmers may use threshers with mechanisms that also clean the released grain using air and screens. The beating or rubbing, air separation and screening do different jobs, even when one machine performs them. Watch from a safe distance; do not approach moving machinery or handle its feed.',[4]),
+ task('air-task','9.1',[
+  '1. Your teacher may provide roasted peanuts only if they are safe for everyone present. Otherwise use clean dry grain mixed with a few pieces of light dry husk. Do not taste investigation materials.',
+  '2. For peanuts, rub a few gently between your palms over a tray to loosen the skins. Examine how the pieces differ. Predict whether moving air will separate them from the kernels.',
+  '3. Place the mixture on a large tray. Gently fan it with a piece of card, away from faces. Do not blow by mouth or raise dust. Observe which pieces move and where they collect.',
+  '4. Record your observations. Try a second gentle airflow and compare. If the separation is incomplete, describe what remained mixed.'
+ ],[3]),
+ side('winnowing','winnowing',335,[
+  '**Winnowing** uses moving air to separate components that are carried differently by it. Light husk with a broad surface is often carried farther than compact grains. Both mass and shape affect the response; air does not sort every material simply into “light” and “heavy”.',
+  'A farmer lets a mixture fall from a soop, or bamboo tray, across a breeze. The grains and husk tend to land in different places. This follows threshing when husk is mixed with the released grain.'
+ ],'Fig. 9.1 · A breeze carries the husk farther sideways than the falling grains.',[3,4]),
+ {id:'air-think',type:'panel',kind:'think',paragraphs:['Valli tries winnowing in a still room and finds little separation. What condition is missing? How could she supply it safely? Would a mixture of puffed rice and chana dal respond in the same way? Explain what you would test before choosing this method.'],source:[3,4]},
+ h('sieve-heading','9.3 Separating by Particle Size',[4,5]),
+ b('sieve-start','Before preparing food, the family examines a sieve. Its mesh has many small openings. Compare an empty sieve with rice mixed with smaller semolina grains. Choose openings that let the smaller pieces through while holding back most of the rice. What would happen if the holes were larger than both?', [4,5]),
+ side('sieve-art','sieve',270,['With the teacher’s permission, gently move the dry mixture in the sieve over a plate. Compare the material above and below the mesh. Avoid flour dust. Try a second mesh if available, keeping the mixture the same. Record what passes through instead of assuming a perfect separation.'],'Fig. 9.2 · An empty sieve and collecting plate, ready for a particle-size comparison.',[5]),
+ b('sieving','**Sieving** separates solid particles by size relative to the openings. Fine flour can pass through a suitable sieve while coarse bran remains; builders use screens to separate stones from sand. Bran is part of the grain and can supply dietary fibre. Removing it is a choice for a particular use, not proof that it is harmful.',[5]),
+ table('dry-table','Table 9.1 · Different jobs in a dry mixture',[
+  ['Method','Useful difference or condition','Example and limit'],
+  ['Handpicking','Recognisable, manageable pieces','A few stones in grain; slow for very small pieces'],
+  ['Threshing','Grains attached to stalks','Loosens grains; husk may remain mixed with them'],
+  ['Winnowing','Different responses to moving air','Husk and grain; needs suitable airflow'],
+  ['Sieving','Particle size relative to mesh','Sand and pebbles; both may pass if openings are too large']
+ ],[.2,.36,.44],[2,3,4,5],'Choose the method from the mixture’s properties and the component you need.'),
+ h('salt-heading','9.4 Recovering a Dissolved Solid',[5,6,7]),
+ b('salt-start','In Ahmedabad, Malli and Valli learn about the Salt March that began at Sabarmati Ashram in 1930. Their question turns to the material itself: where does salt come from? Seawater contains dissolved salts. Salty inland waters, such as Sambhar Lake in Rajasthan, are another source.',[5,6]),
+ b('salt-pans','In salt works, water evaporates from shallow ponds exposed to air and sunlight. Dissolved salts become more concentrated and solids can form. Further processing is needed to obtain common salt of suitable purity. Seawater is not a solution of just one pure salt.',[5,6]),
+ task('salt-art-task','9.2',[
+  '1. Stir a small spoonful of common salt into water until it dissolves. If some remains, add a little more water and stir. Keep a separate sample of plain water.',
+  '2. Mark two areas on dark, thick paper. Put a few drops of salt solution in one and plain water in the other. You may make a small pattern, using only a little solution.',
+  '3. Leave both areas undisturbed to dry. Record what each looks like before and after drying. Do not taste the paper or use touch alone to identify a residue.',
+  '4. Compare the areas. What evidence would help you connect a remaining deposit with the material you added?'
+ ],[6]),
+ b('salt-art-evidence','A deposit in the salt-solution area, compared with the plain-water area, supports the idea that dissolved material was left behind as water evaporated. The water entered the air as invisible vapour. White patches on clothes can similarly remain after salty sweat dries, although a patch’s appearance alone does not identify its contents.',[6]),
+ task('heat-task','9.3',[
+  '1. Watch your teacher place a small amount of salt solution in a heat-safe evaporating dish on approved heating equipment. Predict what may remain when most of the water has left.',
+  '2. Observe from a safe distance while the teacher heats gently. The teacher controls the heat to prevent vigorous spitting and switches it off before the dish is heated dry.',
+  '3. Let the remaining water evaporate and the apparatus cool completely. The teacher decides when the dish may be examined. Do not touch hot glass, the heater or the residue, and do not taste anything.',
+  '4. Describe the changes in the liquid and the material left behind. Compare this result with the paper investigation.'
+ ],[7],{figure:'salt',figureCaption:'Fig. 9.3 · Evaporating dish and electric heater before the teacher begins.'}),
+ b('heat-evidence','Heating can speed up water loss. Salt remains because it does not leave with water vapour under these conditions. Evaporation can occur without boiling; boiling is rapid vaporisation throughout a liquid. The open-dish procedure recovers salt but does not collect the water.',[7]),
+ b('both','To recover water too, its vapour must be led to a cooler surface and collected as liquid. Evaporation followed by condensation is the basis of **distillation**. This needs suitable apparatus and teacher supervision. It is different from placing a lid over an open hot dish and touching the condensed water.',[7]),
+ b('drying-plants','Drying plant material also removes water. Some herbs are shade-dried to limit changes caused by strong sunlight or heat. Drying alone does not establish that a plant is safe, effective as a medicine or free of harmful substances. Do not collect or taste unknown plants.',[7]),
+ h('settling-heading','9.5 Settling and Pouring Off',[8]),
+ b('settling','In Puducherry, the family compares ways of removing tea leaves from tea. Some leaves may settle when the liquid is left still; others can float or remain suspended. Use a cool mixture for classroom comparisons. Do not handle hot tea or water.',[8]),
+ b('sediment','When suspended insoluble particles settle under gravity, the process is **sedimentation**. It works well for some particles, such as coarse sand in water, but very fine particles may remain suspended for a long time. A substance dissolved in water does not simply settle out like sand.',[8]),
+ b('decant','Carefully pouring off the liquid without greatly disturbing a settled solid is **decantation**. Some liquid is usually left with the solid, and fine particles may pour out too. The method can still be useful; incomplete separation does not make it an invalid method.',[8]),
+ {id:'settle-task',type:'panel',kind:'setup',paragraphs:['1. Stir clean sand into water in a clear container. Leave it still and record what changes. Keep an identical, freshly stirred sample for comparison.','2. Once particles have settled, slowly pour some upper liquid into another container. Stop before the sediment reaches the lip. Compare the poured liquid, the residue and the stirred sample.','3. Record which material you recovered and what remains mixed. Do not drink any of the samples.'],source:[8]},
+ b('oil-water','Oil and water can form separate liquid layers when left still. One layer can be carefully poured away from the other, although pouring by hand often leaves some mixing near the boundary. A separating funnel gives better control. The useful property here is that the liquids do not mix into one uniform liquid, not that either is a solid.',[8]),
+ h('filter-heading','9.6 Choosing a Filter',[8,9,10]),
+ b('filter-start','A tea strainer lets liquid through its openings while retaining larger leaves. Compare it with woven cloth: the spaces between threads may be smaller than the strainer’s mesh. **Filtration** separates suspended insoluble solids from a fluid using a material that retains some particles while allowing the fluid through.',[8,9]),
+ b('filter-compare','Use a teacher-prepared mixture of clean sand and a little soil in water, not pond or drain water. Compare equal samples through a strainer and a piece of cloth. Use clean collecting vessels and similar volumes. Record the clarity and how long each takes. More cloth layers may improve retention but slow the flow.',[8,9]),
+ task('filter-task','9.4',[
+  '1. Fold circular filter paper in half, then in half again. Open one side so the cone has one layer on one side and three on the other. Fit it into a funnel and moisten it lightly with clean water.',
+  '2. Support the funnel securely above a collecting flask. Stir the teacher-prepared muddy-water sample and pour a small amount slowly into the paper. Keep the liquid level below the paper’s top edge.',
+  '3. Observe what stays on the paper and what passes through. Compare the collected liquid with the starting sample. If it is still cloudy, check the paper, gaps and pouring level.',
+  '4. Record the result without tasting. Wash your hands afterwards. Clear-looking water from this activity is not drinking water.'
+ ],[9,10],{figure:'filtration',figureCaption:'Fig. 9.4 · Filter-paper cone inside a supported funnel, with an empty flask below; the sample has not yet been poured.'}),
+ b('filter-results','The retained solid is the **residue**. The liquid that passes through is the **filtrate**. Filter paper can retain particles that pass through a coarse strainer, but very fine particles may still pass. Torn paper or liquid going over the rim can also spoil the separation.',[9,10]),
+ b('dissolved-limit','Ordinary filter paper does not remove dissolved common salt from water. The dissolved material passes through with the water. A filter’s performance depends on its material and structure as well as the particles involved. Clear filtrate is evidence about visible particles, not proof that germs or dissolved chemicals are absent.',[9,10]),
+ table('wet-table','Table 9.2 · Three ways to separate a sandy mixture',[
+  ['Method','What happens','What it may leave behind'],
+  ['Sedimentation','Suitable particles settle while the vessel stands still','Fine suspended particles and dissolved substances'],
+  ['Decantation','The upper liquid is poured off gently','Some liquid with the sediment; some fine particles in the poured liquid'],
+  ['Filtration','Liquid passes through a filter that retains some solids','Particles smaller than the filter can retain; dissolved salt']
+ ],[.22,.38,.4],[8,9,10],'Often settling, decanting and filtering are used in sequence, rather than as competing answers.'),
+ task('design-task','9.5',[
+  '1. Design a small model filter using teacher-approved materials such as cloth, washed sand and washed gravel. Sketch a stable arrangement in your notebook before building it. Any container cutting is an adult’s job.',
+  '2. Test with a prepared sand-and-soil water sample, not collected pond water. Measure equal sample volumes. Keep a little unfiltered mixture for comparison.',
+  '3. Collect the output and record its appearance, volume and the time taken. Change one feature, such as the cloth layers, and repeat with a fresh comparable sample.',
+  '4. Explain what improved and what your test cannot establish. Do not drink the output, even if it looks clear. Keep it away from food and wash hands and equipment afterwards.'
+ ],[10,11]),
+ b('design-evidence','Washed sand, cloth and other media can retain some particles. Activated carbon in suitable commercial filters can also hold some dissolved substances on its surfaces; that is not the same mechanism as simple sieving. A homemade filter has no tested claim to remove every germ or chemical. A drinking-water system needs treatment appropriate to its source.',[10]),
+ b('tea-net','A tea bag retains leaves while water and dissolved flavouring substances pass through it. A fishing net also separates by size, but its much larger openings retain fish or large debris. These examples show a shared idea; they do not make a net a fine water filter.',[10]),
+ b('pollution','Malli notices plastic litter caught in a fishing net. Removing litter can help, but preventing it from entering water is better. Write a short original poem about this problem. Give one action people can take and check that the poem does not imply that a net removes dissolved pollution.',[10,11]),
+ h('churn-heading','9.7 Churning and Magnetic Separation',[11,12,13]),
+ side('churn-art','churning',305,[
+  'In Madhya Pradesh, the children see a mathni used to churn full-fat curd. **Churning** agitates the mixture so that small fat droplets join into larger butter grains or clumps. These can be collected, leaving a more watery liquid called buttermilk.',
+  'The butter may gather near the top, but churning does more than let a lighter substance float: it helps the fat join together. Churning cream or suitable curd produces butter. It is not the usual method for separating cream from milk.'
+ ],'Fig. 9.5 · A mathni and pot, with collected butter beside them.',[11,12]),
+ b('milk','An adult can demonstrate curdling fresh pasteurised milk with a suitable food acid, then straining the curds from the liquid. Curdling creates the clumps; straining separates them. Milk that has spoiled accidentally is different: do not taste it or assume cooking will make it safe. An adult should discard suspect milk.',[11]),
+ b('appliance','A hand churner or an appropriate electric churner can supply agitation. Name an appliance used for this job at home, if there is one, and explain its role. Observe only while an adult operates it; do not insert fingers or utensils into a moving appliance.',[12]),
+ side('magnet-art','magnet',290,[
+  'In Shillong, a carpenter spills iron nails into wood shavings. A magnet can attract the iron while leaving most of the wood behind. This is **magnetic separation**: it uses a difference in magnetic response.',
+  'Use large steel paper clips mixed with paper pieces for a classroom model. Test one clip first with the magnet, then try the mixture. Do not use iron powder, sharp nails or dusty sawdust. Keep magnets away from electronic devices.'
+ ],'Fig. 9.6 · Iron nails contact the magnet; most wood shavings remain in the tray.',[12,13]),
+ b('magnet-limit','Not every metal is strongly attracted to a classroom magnet. Iron and many steels are; aluminium and copper are not. A magnet also cannot separate two components if both respond similarly. Some non-magnetic pieces may be carried along when caught between attracted objects, so inspect the recovered material.',[12,13]),
+ b('recycling','Recyclers use large magnets to lift iron and steel from mixed scrap. The recovered metal can be sorted and processed for reuse. Other materials need other methods. A magnetic crane is an industrial machine; watch only from a permitted safe area, never from beneath its load.',[13]),
+ h('sequence-heading','9.8 Choosing a Sequence',[13,14]),
+ b('sequence','Ask three questions before choosing: What components are present? Which properties differ? What must be recovered? To recover salt from sand and salt, for example, dissolve the salt in water, filter off the sand, then evaporate water from the filtrate. Filtering first without adding water would not use the solubility difference.',[13,14,19]),
+ task('purpose-task','9.6',[
+  '1. Make slips for the ten situations listed below. Provide two baskets labelled “Remove an unwanted component” and “Recover useful components”.',
+  '2. Take turns placing a slip and explaining the intended use, the method and a property it uses. A team may put the same situation in either basket if it clearly states a different purpose.',
+  '3. Discuss cases that need more information. Award credit for a justified choice, not only for matching another group’s basket.'
+ ],[13,14]),
+ table('purpose-cards','Situations for your separation slips',[
+  ['Slip','Situation'],['1','Small stones mixed with pulses'],['2','Butter to be recovered from curd'],['3','Whole green chillies in cooked dalia or poha'],['4','Seeds in watermelon'],['5','Iron nails mixed with sawdust'],['6','Marigold flowers in a mixed heap of flowers'],['7','Pebbles mixed with sand'],['8','Coconut pieces mixed with rice flour'],['9','Oil and water in separate layers'],['10','Salt dissolved in water']
+ ],[.1,.9],[13,14],'Make and sort paper slips only. You do not need to handle every real mixture.'),
+ b('sequence-close','A method is useful when it exploits a difference that is actually present. Check what was recovered, what remained mixed and what may have been lost. Two sensible sequences may exist, but a claim of complete separation needs evidence, not just a list of method names.',[13,14,19])
+];
+export const glossary=[
+ ['Mixture','Two or more substances present together.'],['Component','One of the substances making up a mixture.'],['Handpicking','Sorting recognisable solid pieces by hand.'],['Threshing','Loosening grains from harvested stalks.'],['Winnowing','Separating components carried differently by moving air.'],['Sieving','Separating solid particles using openings of a suitable size.'],['Evaporation','Change from liquid into vapour at its surface.'],['Sedimentation','Settling of suspended particles under gravity.'],
+ ['Decantation','Carefully pouring off a liquid from a settled solid or another liquid layer.'],['Filtration','Passing a fluid through material that retains some suspended solids.'],['Residue','Material left on a filter, or after a liquid has been removed.'],['Filtrate','The liquid that passes through a filter.'],['Churning','Agitation that helps fat droplets join into butter clumps.'],['Magnetic separation','Using different magnetic responses to separate components.'],['Solubility','The ability of a substance to dissolve in a given liquid under stated conditions.'],['Distillation','Vaporising a liquid and collecting it again by condensation.']
+];
+export const summary=[
+ 'Choose a separation method from the components’ properties and the purpose. More than one component may be useful.',
+ 'Handpicking suits recognisable pieces. Threshing releases grains attached to stalks.',
+ 'Winnowing uses different responses to moving air. Sieving uses particle size relative to mesh openings.',
+ 'Evaporation can recover a dissolved solid such as salt. Recovering the water too requires collecting and condensing its vapour.',
+ 'Sedimentation lets suitable suspended particles settle. Decantation pours off liquid without greatly disturbing the settled solid or another liquid layer.',
+ 'Filtration retains some insoluble particles. The retained solid is residue; the liquid that passes through is filtrate.',
+ 'Ordinary filter paper does not remove dissolved salt. Clear-looking water is not necessarily safe drinking water.',
+ 'Churning helps fat droplets join into butter clumps. Magnetic separation uses different magnetic responses; not every metal is strongly attracted.',
+ 'Mixtures with several components may require several methods in sequence. Consider solubility before filtering.',
+ 'Predict, observe and compare. Report incomplete separation and limits rather than assuming that a method always works perfectly.'
+];
+export const games=[
+ {id:'wise-fish',title:'Wise Fish: match a method to an idea',text:'Write method names on red paper fish and descriptions on blue cards, using the table below. Attach a large steel clip to each. An adult should secure a large magnet to a short string on a cardboard rod. Fish out a method and its matching description, then explain the match. Keep magnets and clips away from mouths and younger children; do not swing the rod.',source:[15,16]},
+ {id:'fish-cards',type:'table',caption:'Make two separate sets of cards',rows:[
+  ['Method cards','Description cards, mixed order'],
+  ['Filtration','A. Grains loosen from stalks.'],
+  ['Decantation','B. Vapour changes to liquid.'],
+  ['Condensation','C. Recognisable pieces are picked out.'],
+  ['Handpicking','D. Water leaves as vapour, leaving dissolved salt.'],
+  ['Churning','E. Magnetic response differs.'],
+  ['Evaporation','F. Butter clumps form through agitation.'],
+  ['Winnowing','G. Solid particles pass or remain according to mesh size.'],
+  ['Sedimentation','H. Insoluble particles are retained by a filter.'],
+  ['Sieving','I. Suspended particles settle under gravity.'],
+  ['Threshing','J. Moving air carries some components farther.'],
+  ['Magnetic separation','K. One separated liquid layer is poured from another.']
+ ],widths:[.33,.67],note:'Items across a row are not matching pairs. Match by the mechanism, not the position.',source:[16]}
+];
+export const exercises=[
+ {id:'q1',text:'Handpicking is used for: (a) filtration, (b) sorting, (c) evaporation or (d) decantation. Explain your choice.',source:[16]},
+ {id:'q2',text:'Churning commonly separates: (a) oil from water, (b) sand from water, (c) butter from cream or suitable curd, or (d) oxygen from air. Explain your choice.',source:[16]},
+ {id:'q3',text:'Which matters especially in filtration: (a) apparatus size, (b) air alone, (c) pore structure relative to particles, or (d) vessel colour? Give a reason.',source:[17]},
+ {id:'q4',text:'Judge each claim and correct it if needed. Give reasons.',table:{caption:'Claims to examine',rows:[['Claim'],['A. Salt can be recovered from salt solution by leaving it in sunlight.'],['B. Handpicking can only be used when one component is present in a small quantity.'],['C. Puffed rice and loose rice grains are separated by threshing.'],['D. Mustard oil and lemon water can be separated by decantation after distinct layers form.'],['E. A dry sieve is the appropriate method for separating rice flour mixed into water.']],widths:[1],note:'Distinguish a convenient method from a rule that says no other situation is possible.'},source:[17]},
+ {id:'q5',text:'Match mixtures with suitable methods. Explain the property used in two matches; options are out of order.',table:{caption:'Mixtures and method options',rows:[['Mixture','Method option'],['1. Gram flour and whole black gram','A. Handpicking'],['2. Chalk powder suspended in water','B. Magnetic separation'],['3. Loose corn kernels and whole potatoes','C. Decantation'],['4. Iron powder and sawdust','D. Sieving'],['5. Oil and water in separate layers','E. Filtration']],widths:[.6,.4],note:'This is a reasoning question. Do not handle iron powder or dusty mixtures.'},source:[17]},
+ {id:'q6',text:'When might you use decantation instead of filtration for a solid–liquid mixture? Explain what you would need to observe first, and describe a limitation of the recovered liquid.',source:[17]},
+ {id:'q7',text:'How are nasal hairs loosely similar to a filter? Explain why this comparison does not mean that they stop every airborne particle or make polluted air safe.',source:[17]},
+ {id:'q8',text:'Cloth masks may use woven fabrics; medical masks commonly use layers of non-woven material. How does filtering breathed-out or breathed-in particles help reduce the spread of respiratory infections? Why do material, fit and gaps matter? Do not test a mask with smoke or powders.',source:[17]},
+ {id:'q9',text:'You have a dry mixture of whole potatoes, common salt and sawdust. Plan how to recover all three, explaining each step and where each component goes. You may add water. Which component would not be retained by ordinary filter paper after dissolving? Keep this as a written plan; an adult would handle any heating.',source:[18]},
+ {id:'q10',text:'Read the story and supply the choices that describe what happened. Then challenge the final claim. Give the story a suitable title.',table:{caption:'Leela’s water story',rows:[['Part of the story','Choose words'],['Before her father became ___, Leela collected ___ from a pond.','thirsty / hungry; water / grain'],['It looked muddy, so she judged it ___ for drinking without suitable treatment.','fit / unfit'],['She let particles settle, poured off the upper liquid, then ___ it through ___.','filtered / churned; clean cloth / a solid metal sheet'],['An adult ___ the water and then let it ___ in a clean covered vessel.','boiled / froze; cool / boil']],widths:[.68,.32],note:'Leela says, “It looks clear now, so it must be safe.” Is this enough evidence? Explain why boiling cannot remove every harmful chemical. This is a story to evaluate, not an instruction to collect or drink pond water.'},source:[18]}
+];
+export const projects=[
+ {id:'project-kitchen',title:'1. Follow a kitchen separation',text:'With an adult, observe a food or familiar herbal drink being prepared. Record dissolving, straining and evaporation. Only the adult handles hot equipment. Do not prepare remedies for illness or assume that “herbal” means safe.',source:[18]},
+ {id:'project-play',title:'2. Put the journey on stage',text:'Act out Malli and Valli’s five stops. Show each mixture, method and useful property. Include an unsuccessful attempt and a revision. Use drawings and clean props, without heat, sharp tools or powders.',source:[18]},
+ {id:'project-week',title:'3. Keep a separation diary',text:'For a week, record the mixture, desired component, method and evidence of separation in everyday examples. Compare with classmates. Which method appears most often? Could your observation times have affected that result?',source:[18]},
+ {id:'project-community',title:'4. Learn from a recycling worker',text:'Ask a teacher to arrange a respectful interview with an adult waste-sorting worker about their methods. Do not enter waste piles, handle discarded objects or photograph without permission. Report accurately and discuss how the community can support children’s schooling.',source:[18]},
+ {id:'project-reporter',title:'5. Report on methods around you',text:'Collect dated reports about separation in farming or construction. A teacher may arrange a farmer interview about machinery and human decisions. Also research the Salt March for a poster, or collect a harvest song with permission and describe its setting.',source:[2,5,6,19]},
+ {id:'project-mixture',title:'6. Plan a six-component separation',text:'Plan to recover iron nails, sand, whole black pepper, stones, salt and water from a mixture. State the particle sizes and other information needed. Has the salt dissolved? Trace each component through your steps. Compare two sequences and possible losses. How would you recover the water too? Keep this a written plan unless your teacher directs a safe demonstration.',source:[19]}
+];
