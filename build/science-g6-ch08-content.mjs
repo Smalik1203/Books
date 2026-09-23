@@ -1,0 +1,182 @@
+// Source sequence: supplied Class 6 Chapter 8; qualifications in source-coverage.json.
+export const title='A Journey through States of Water';
+export const shortTitle='A Journey through States of Water';
+export const opener=[
+ 'An ice cube disappears in a glass of lemonade. Has the water disappeared too?',
+ 'On a warm afternoon, Aavi and Thirav watch the ice in their drinks. Ice is hard and holds its shape; the drink flows when poured. Thirav wonders whether such different-looking things can be the same substance.',
+ 'Aavi suggests a test: let an ice cube warm in a cup, then ask an adult to freeze the water again. Would anything need to be added to turn one form into the other?',
+ 'Follow water from ice to liquid to invisible vapour, and back again. Investigate drying, droplets and cooling, then use your evidence to explain part of the journey from Earth’s surface to clouds and rain.'
+];
+const h=(id,text,source,level=1)=>({id,type:'heading',text,source,level});
+const b=(id,text,source)=>({id,type:'body',text,source});
+const task=(id,sourceActivity,paragraphs,source,kind='setup')=>({id,type:'panel',kind,sourceActivity,paragraphs,source});
+const fig=(id,figure,caption,source)=>({id,type:'figure',figure,caption,source});
+const d=(id,diagram,caption,source)=>({id,type:'diagram',diagram,caption,source});
+const table=(id,caption,rows,widths,source,note='')=>({id,type:'table',comparisonTable:true,caption,rows,widths,source,note});
+export const lesson=[
+ h('same-water-heading','8.1 Ice and Water: One Substance',[1,2]),
+ b('ice-intro','Ice and liquid water behave differently. That difference does not by itself prove that they are different substances. We can follow one sample through a change and look for evidence of what happens.',[1,2]),
+ task('ice-task','8.1',[
+ '1. Put an ice cube in a clean, dry cup on a stable table. Predict what you will see after it has been left in the room for a while.',
+ '2. Observe at regular intervals. Sketch the ice and any liquid you notice, adding the time beside each sketch. Do not add more water.',
+ '3. Describe the change. With an adult’s help, place the resulting water in a suitable freezer-safe container. Compare it after freezing. Never use a sealed glass container in a freezer.'
+ ],[1,2]),
+ b('ice-evidence','An ice cube left in a warm room usually becomes liquid water. Cooling that water sufficiently turns it back into ice. No extra substance needs to be added for either change. Ice and liquid water are different **states** of the same substance.',[2]),
+ b('ice-change','The ice takes in energy from its warmer surroundings as it melts. In a freezer, energy is removed from the water as it freezes. The changes are linked to heating and cooling, even when there is no flame or heater next to the cup.',[2,10]),
+ h('disappearing-heading','8.2 Where Does the Water Go?',[2,3]),
+ b('puddle','Aavi and Thirav see puddles on the playground in the morning and smaller puddles later. Some water may have soaked into the ground. But washed steel utensils and a mopped floor also dry. Can soaking into soil explain every case?', [2,3]),
+ b('test-route','Test one possible route at a time. A plate lets you inspect the surface underneath the water as well as the wet patch itself. Choose a sound plate and prevent spills, so those other routes do not confuse the investigation.',[2,3]),
+ task('plate-task','8.2',[
+ '1. Put a spoonful of water on a clean, dry, uncracked steel plate. Predict whether the underside will become wet.',
+ '2. Keep the plate level in a place where it will not be knocked or splashed. Check the water and the underside at regular intervals.',
+ '3. Record the time and what changes. If the water becomes difficult to see, explain how you would check whether any remains without tipping it away.',
+ '4. Compare the evidence with your prediction. Which explanation does a dry underside make less likely? Which possible route for the water still needs explaining?'
+ ],[2,3]),
+ b('evaporation','Liquid water can change into **water vapour**, its gaseous state, at an exposed surface. This process is **evaporation**. It occurs at room temperature as well as in warmer conditions. The water is still present as a substance, although it may have mixed with the air and moved away.',[3]),
+ b('plate-evidence','If the top becomes dry while the underside stays dry, evaporation is a reasonable explanation for this plate. Check for spills, cracks or someone moving the water before drawing a conclusion. A puddle may lose water both by evaporation and by soaking into the ground.',[3]),
+ b('invisible-vapour','Water vapour is invisible. The white mist above hot water is made of tiny liquid droplets formed when vapour cools; it is not a picture of the gas itself. Observe hot pans or boiling water only from a safe distance in an adult-led demonstration.',[3]),
+ table('drying-table','Table 8.1 · Following water as something dries',[
+ ['Observation','Possible movement of water','What to check'],
+ ['A puddle gets smaller','Evaporation and soaking into the ground','Ground material, weather and any runoff'],
+ ['A steel plate becomes dry','Evaporation from its upper surface','No spills or leaks; check the underside'],
+ ['Wet clothes dry','Water evaporates into the surrounding air','Air movement, weather and exposed cloth']
+ ],[.3,.35,.35],[2,3],'A disappearing patch of liquid is an observation. Its cause needs evidence.'),
+ b('other-liquids','Liquids other than water can evaporate too. Alcohol in some hand sanitisers evaporates readily. Do not use sanitiser, perfume, petrol or other volatile liquids for these investigations: some are flammable or harmful. Use water for classroom comparisons.',[3,11]),
+ h('droplets-heading','8.3 Droplets Outside a Cold Glass',[4,5]),
+ b('cold-intro','While preparing lemonade, the children notice a change on the outside of a cold tumbler. The water is inside the glass, so an outside change raises a new question. Begin by observing before choosing an explanation.',[4]),
+ task('cold-task','8.3',[
+ '1. Put cold water and a few ice cubes in a sound glass tumbler. Carefully dry its outside and stand it on a dry tray. Wipe up any filling splashes.',
+ '2. Leave it undisturbed for about five minutes. Record what you see on the outside under two notebook headings: “I observe” and “I wonder”.',
+ '3. Suggest more than one explanation for any droplets. Compare with a similar, externally dry tumbler holding room-temperature water. Keep the place and observation time the same.',
+ '4. Discuss what this comparison can show and what it cannot. If droplets do not appear, record that result too.'
+ ],[4,5]),
+ b('cold-evidence','Droplets may appear on the cold glass even though no water was poured onto its outside. Compare your observations with the illustration. An unchanged water level alone is weak evidence against leakage: a small change may be too small to notice.',[4,5]),
+ {id:'condensation-art',type:'illustrated-prose',figure:'condensation',figureHeight:330,caption:'Fig. 8.1 · Droplets outside a cold glass can come from the surrounding air.',paragraphs:['Air commonly contains invisible water vapour. At a sufficiently cold surface, some vapour changes into liquid droplets. This change is **condensation**. The water has changed state; the glass has not made new water. The surface must be cold enough for the conditions, so not every glass becomes wet.'],source:[4,5,6]},
+ b('dew','Dew can form when a leaf or another surface cools sufficiently, often overnight. On a covered hot-water vessel, vapour may condense on the cooler underside of the lid. These are liquid droplets, while the vapour before condensation is invisible. Do not lift a hot lid yourself.',[6]),
+ h('mass-heading','Testing an Explanation with Measurements',[6,7],2),
+ task('mass-task','8.4',[
+ '1. With your teacher, place a half-filled cold-water tumbler with ice on a dry tray. Cover it with a small plate. Dry all external surfaces and record the mass of the entire assembly: tumbler, contents, cover and tray.',
+ '2. Predict whether this total mass will change. Place the assembly on a suitable digital balance, protecting its electronics from water. Keep any drips on the weighed tray.',
+ '3. Record time and total mass at 0, 5, 10, 15, 20, 25 and 30 minutes. Do not add, remove or wipe anything between readings. Record the unit and the smallest change the balance displays.',
+ '4. Compare your readings with the prediction. Repeat with a covered room-temperature sample as a comparison. Note any handling, spills or unstable readings.'
+ ],[6,7]),
+ {id:'mass-evidence',type:'illustrated-prose',figure:'balance',figureHeight:385,caption:'Fig. 8.2 · Weigh the complete assembly, including the drip tray. The display here does not show a result.',paragraphs:['A measurable gain in the total assembly’s mass is consistent with water arriving from the air. Water merely leaking from inside to the outside, while remaining on the weighed tray, would not add mass to the assembly. A gain supports condensation, but by itself does not rule out a leak happening at the same time.'],source:[6,7,8]},
+ b('mass-limits','Melting ice and changing temperature can alter the level inside, so a marked level is not a decisive test on its own. Use a sound vessel, prevent spills and compare the room-temperature sample. A small change may be below the balance’s resolution. If the data are unclear, explain the limits rather than forcing a conclusion.',[5,7,8]),
+ b('humidity','**Humidity** describes water vapour in the air. Weather reports often give relative humidity as a percentage; its meaning depends on temperature. If you collect humidity records, note the place, time and kind of humidity reported. A cold surface tends to collect more condensate when enough vapour is available.',[7]),
+ {id:'awg',type:'panel',kind:'think',paragraphs:['Some water-harvesting machines cool moist air and collect condensed water. How is this similar to droplets on a glass? Why would collecting water alone not prove that it is safe to drink? Explain the need for clean equipment and suitable treatment.'],source:[10]},
+ h('states-heading','8.4 Comparing the Three States',[8,9]),
+ task('states-task','8.5',[
+ '1. Move an ice cube between two containers of different shapes. Work quickly enough to distinguish a change caused by moving it from a change caused by melting.',
+ '2. Transfer a measured amount of water between the same containers without spilling. Compare its shape and the space it occupies.',
+ '3. Spread a little water on a clean, level tray. Observe its shape. Explain why spreading out is not the same as producing more water.',
+ '4. In your notebook, compare shape, volume and flow for ice and liquid water. Use the evaporation evidence to discuss gaseous water; do not claim that you directly saw the vapour.'
+ ],[8,9]),
+ table('states-table','Table 8.2 · The three states of water',[
+ ['Property','Ice: solid','Water: liquid','Water vapour: gas'],
+ ['Shape','Keeps its own shape until it deforms or melts','Takes the shape of the part of a container it occupies','Spreads through the available space'],
+ ['Volume of a fixed sample','Approximately fixed under the same conditions','Approximately fixed under the same conditions','Changes with the space and conditions'],
+ ['Flow','Does not pour like a liquid in this test','Flows and can be poured','Flows and mixes with air'],
+ ['Visibility','Usually visible','Visible in a container or drops','Invisible; mist is liquid droplets']
+ ],[.16,.27,.28,.29],[8,9],'The volume comparison concerns a sample staying in one state under similar conditions. Water changes volume when it freezes or melts.'),
+ b('other-states','Stones, wood and glass are everyday solids. Milk and cooking oil are liquids. Oxygen and carbon dioxide are gases. Smells can spread because some substances enter the air and move with it; smell is not a way to identify water vapour. Never sniff an unknown substance to test its state.',[9]),
+ h('changing-heading','8.5 Changing from One State to Another',[9,10,11]),
+ b('changes','**Melting** changes a solid into a liquid. **Freezing** changes a liquid into a solid. Ice melts when it gains enough energy from its surroundings; water freezes when enough energy is removed. Evaporation and condensation connect the liquid and gaseous states.',[10,11]),
+ b('wax-oil','Other substances can change state too. Candle wax can melt on warming and solidify on cooling. Coconut oil may partly solidify in cool weather. These examples do not mean that every substance changes state at the same temperature. Leave demonstrations with flames or hot wax to the teacher.',[9,10,11]),
+ task('state-map-task','8.6',[
+ 'The diagram shows three states joined by opposite changes. Copy it in your notebook. Use each word once to replace A, B and 1–3: liquid, gas, freezing, evaporation, condensation. “Solid” and “melting” are already given.',
+ 'For each arrow, state whether water gains energy or releases energy to its surroundings. Explain why you can trace a return route without adding a new substance.'
+ ],[10,11],'think'),
+ d('state-map','state-map','Fig. 8.3 · Follow the direction of each arrow; opposite arrows represent different changes.',[10,11]),
+ b('state-map-explain','Melting leads from solid to liquid; freezing leads back. Evaporation leads from liquid to gas; condensation leads back. In each case the substance is still water. Changing its state does not destroy it, although it may move somewhere that is hard to observe.',[10,11]),
+ h('speed-heading','8.6 What Changes the Rate of Evaporation?',[11,12,13]),
+ b('speed-start','Clothes dry differently on different days. To investigate a reason, change one condition at a time as far as possible. Record what you change, what you keep the same and what you measure. An unexpected result is useful if you can describe the conditions carefully.',[11,12]),
+ fig('evaporation-art','evaporation','Fig. 8.4 · A bottle cap and a shallow plate before water is added. Compare equal starting amounts of water.',[11]),
+ task('area-task','8.7',[
+ '1. Measure equal small amounts of water into a bottle cap and a shallow plate. Keep them next to each other in the same place, away from spills and direct disturbance.',
+ '2. Predict which will dry first. Note which sample has more water surface exposed to air. Keep the starting water temperature as similar as possible.',
+ '3. Start together and check at equal intervals. Record the time each first appears dry. If neither dries during the lesson, continue observations later; do not invent an end time.',
+ '4. Repeat if possible. Compare results and identify differences besides exposed area, such as the containers’ materials or temperatures.'
+ ],[11,12]),
+ b('area-evidence','For equal amounts under otherwise similar conditions, spreading water over a larger exposed area usually makes it evaporate faster. More liquid surface is in contact with the air. The cap-and-plate comparison is useful, but different containers may also affect temperature; acknowledge that limit.',[12]),
+ b('milk','If milk replaces water, water can evaporate while other milk components remain. A residue does not mean that no water evaporated. Use the same liquid when testing evaporation conditions; changing the liquid too makes interpretation harder.',[12]),
+ task('sun-task','8.8',[
+ '1. Put equal amounts of water in two identical caps. Place one in sunlight and the other in shade. Begin together and prevent rain, splashing or people moving the samples.',
+ '2. Check every 15 minutes and record the first time each appears dry. Compare the conditions: besides sunshine, was the air movement similar?',
+ '3. Repeat on another day if possible. Record cloud cover, temperature and wind each time.',
+ '4. Plan a separate test of moving air using equal wet cloth pieces in otherwise similar positions. Ask your teacher before using a guarded fan; keep water away from electrical equipment.'
+ ],[12,13]),
+ table('rate-table','Table 8.3 · Conditions that can affect evaporation',[
+ ['Condition changed','Usual effect, other conditions similar','Reason'],
+ ['Larger exposed surface','Faster evaporation','More liquid surface is exposed'],
+ ['Higher water temperature','Faster evaporation','More energy is available for water to leave the liquid'],
+ ['More air movement','Faster evaporation','Moist air near the surface is replaced'],
+ ['Higher relative humidity at the same temperature','Slower net evaporation','The surrounding air already contains more water vapour']
+ ],[.3,.32,.38],[12,13,14],'Real weather changes several conditions together. One sunny-day comparison does not isolate all of them.'),
+ b('rainy-day','Clothes often dry slowly on a humid rainy day. They may dry faster when spread out where air can move around them. Shelter them from new rain and keep wet fabric away from heaters and electrical parts. A fan moves air; it does not have to make the cloth hotter to help it dry.',[13,14]),
+ h('cooling-heading','8.7 Why Does Evaporation Cool?',[14,15]),
+ b('cooling','Evaporation requires energy. Water that evaporates from a wet surface takes energy from the remaining water and its surroundings. If this energy is not replaced as quickly, the surface cools. A fan can help sweat evaporate from skin by replacing nearby moist air.',[14]),
+ {id:'earthen-pot',type:'illustrated-prose',figure:'cooler',figureHeight:385,caption:'Fig. 8.5 · A cooler cutaway: moist sand surrounds the inner pot, within the porous outer pot.',paragraphs:['An unglazed earthen pot has tiny connected pores. A little water seeps to its outer surface and evaporates, taking energy from the pot and its contents. A steel pot does not have the same porous wall. A surahi uses this same evaporative-cooling principle; shape alone does not produce the cooling.'],source:[14,15]},
+ task('cooler-task','8.9',[
+ '1. With an adult, choose two sound unglazed earthen pots that fit one inside the other with a gap. Put clean sand under the smaller pot and in the gap between the walls.',
+ '2. Moisten the sand with water. Cover the inner pot with a lid or damp clean jute cloth. Keep the cooler in a shaded, ventilated place on a stable tray.',
+ '3. Measure its inner temperature and nearby air temperature using suitable thermometers at the start and regularly over four to five hours. Keep the sand moist, but do not let water reach electronic equipment.',
+ '4. Compare the readings. If observing vegetables daily for a week, compare similar samples kept in the same shade outside the cooler. Do not taste the test food; ask an adult to discard any spoiled material.'
+ ],[14,15]),
+ b('cooler-evidence','The wet outer surface must lose water by evaporation for this cooling to work well. Dry moving air can help; very humid air can limit the effect. A pot-in-pot cooler is not a refrigerator and does not guarantee that food remains safe for any fixed number of days.',[14,15]),
+ {id:'cooler-think',type:'panel',kind:'think',paragraphs:['A group finds almost no cooling in its pot-in-pot model. Before rejecting the idea, what would you check about the outer pot, moisture, airflow, weather and thermometer placement? If you replace sand with another material, how will you make the comparison fair?'],source:[15]},
+ h('clouds-heading','8.8 Clouds, Rain and the Water Cycle',[15,16,17]),
+ b('clouds','Water vapour travels with moving air. When moist air rises, it often expands as the pressure falls and cools. If it cools sufficiently, vapour condenses onto tiny particles to form droplets. Clouds can contain liquid droplets, ice crystals or both. Their visible part is not water vapour.',[15,16]),
+ b('rising-air','Air may be lifted by warming near the ground, by winds meeting, or by being pushed over hills. Do not picture water vapour rising on its own like a separate balloon. It is mixed with the air, and cloud formation depends on cooling and moisture, not just on being high above the ground.',[15]),
+ b('rain','Cloud droplets and ice particles can grow. When precipitation particles become large enough to fall through the surrounding air, they may reach the ground as rain or, in suitable conditions, snow or hail. Snow and hail are solid water; they are not simply larger liquid drops.',[15,16]),
+ task('cloud-task','8.10',[
+ '1. Watch a teacher-led cloud-chamber demonstration, or a teacher-selected recording showing a clear view before and after a pressure change. The teacher operates approved apparatus; pupils do not burn paper or handle smoke, sprays or pressurised containers.',
+ '2. Predict what you might see when the moist air expands and cools. Record what actually changes and when it changes.',
+ '3. Compare a demonstration with few added particles and one with added condensation nuclei, if the teacher can provide comparable observations. Note which other conditions were kept the same.',
+ '4. Explain what the observations support. If no mist appears, discuss the apparatus and conditions rather than reporting an expected result.'
+ ],[16,17]),
+ b('cloud-evidence','Expansion and cooling can make liquid droplets form in moist air. Tiny particles can provide surfaces on which droplets form. A cloudy appearance alone does not identify its cause: dust or smoke may also be visible. The timing of the change and a comparison help distinguish evidence from a guess.',[16,17]),
+ fig('cycle-art','cycle','Fig. 8.6 · Water is stored and moves in many places. Follow the lake and river towards the ocean, and locate the water below ground.',[17]),
+ task('cycle-task','8.11',[
+ 'In your notebook, sketch the landscape in Fig. 8.6 and label cloud, lake, ocean, river, groundwater and snow. Add arrows for evaporation, condensation and rain. Use the water already shown; vapour should not be drawn as a white cloud.',
+ 'Trace two possible journeys: one returning through a river and another soaking into the ground. Explain each state change. Then check your map with a partner and identify one part you still need to understand.'
+ ],[17],'think'),
+ b('water-cycle','The **water cycle** is water’s continuing movement between Earth’s surface, below-ground stores and the atmosphere. Water evaporates from oceans, lakes and wet ground; plants also release water vapour. It can condense into droplets and return as precipitation. Some water flows over land and some soaks into it.',[17]),
+ b('groundwater','**Groundwater** occupies spaces in soil and rock below ground. It is not always an underground river or a large cavern of water. Water can remain in snow, ice, lakes or underground for different lengths of time. There is no single fixed route or starting point for every drop.',[17]),
+ b('water-care','Most of Earth’s water is salty ocean water. Much of the fresh water is frozen or stored below ground, and accessible water may be polluted. Cycling water is not the same as providing unlimited clean water wherever people need it. Repair leaks, avoid waste and keep pollutants out of water bodies.',[17]),
+ {id:'poem',type:'body',text:'Write a short poem in your notebook from the viewpoint of water changing state. Include one invisible stage and one return to liquid or solid. Check that the science remains correct even when you give the water a voice.',source:[16]}
+];
+export const glossary=[
+ ['State','A physical form of matter, such as solid, liquid or gas.'],['Solid','Matter with its own shape and approximately fixed volume under the same conditions.'],['Liquid','Matter that flows, with no fixed shape but approximately fixed volume.'],['Gas','Matter that spreads through available space and has no fixed shape or volume.'],['Water vapour','Water in its invisible gaseous state.'],['Evaporation','Change from liquid to gas at an exposed surface.'],['Condensation','Change from a gas into a liquid.'],['Melting','Change from a solid into a liquid.'],
+ ['Freezing','Change from a liquid into a solid.'],['Humidity','A description of water vapour in the air.'],['Dew','Liquid water that condenses on a sufficiently cooled surface.'],['Precipitation','Water falling from clouds as rain, snow or hail.'],['Groundwater','Water in spaces within soil and rock below ground.'],['Water cycle','The movement of water through surface, underground and atmospheric stores.'],['Exposed surface','The part of a material directly in contact with its surroundings.'],['Evaporative cooling','Cooling when evaporation takes energy from water and its surroundings.']
+];
+export const summary=[
+ 'Ice, liquid water and water vapour are different states of the same substance. Water vapour is invisible.',
+ 'Melting changes solid to liquid; freezing changes liquid to solid. Heating and cooling can cause changes of state.',
+ 'Evaporation changes surface liquid into gas and can happen at room temperature. Water is not destroyed when it dries from a surface.',
+ 'Condensation changes vapour into liquid. Outside droplets on a cold glass can come from the air.',
+ 'A solid retains its shape, a liquid takes the shape of its container, and a gas spreads through available space. Compare volumes under stated conditions.',
+ 'Larger exposed area, higher temperature and moving air usually speed evaporation. Higher humidity at the same temperature usually slows net evaporation.',
+ 'Evaporation requires energy and can cause cooling. Earthen pots and pot-in-pot coolers use this effect.',
+ 'Clouds contain droplets, ice crystals or both. Cooling moist air and particle growth help explain cloud formation and precipitation.',
+ 'Water moves between the surface, the ground and the atmosphere. Clean accessible water is limited, so use it carefully.',
+ 'Separate observations from explanations. Predict, record actual results, compare fairly and state the limits of the evidence.'
+];
+export const games=[];
+export const exercises=[
+ {id:'q1',text:'Which best defines condensation? (a) Water soaking into soil. (b) Liquid water changing into gas. (c) Ice changing into liquid water. (d) Water vapour changing into liquid water.',layout:'side',figure:'condensation',figureHeight:300,caption:'Use the droplets on the outside of this cold glass to explain your choice.',source:[19]},
+ {id:'q2',text:'For each task in the table, discuss which materials depend on evaporation as they dry. Explain your choices. Why would you need to know the ink formulation before claiming that every pen dries in exactly the same way?',table:{caption:'Materials to compare',rows:[['Task','Materials'],['Colouring','Crayons; watercolours; water-based acrylic paint; coloured pencils'],['Writing','Pencil; water-based ink pen; ballpoint pen']],widths:[.2,.8],note:'Consider the liquid part of a paint or ink, as well as the colour left behind.'},source:[19]},
+ {id:'q3',text:'An area around natural grass often feels cooler than a similar area covered in plastic grass. Explain how water loss from plants and soil could contribute. What other conditions should be compared before concluding that evaporation alone caused the difference?',source:[19]},
+ {id:'q4',text:'Name two liquids other than water that can evaporate, using familiar examples or a reliable source. Explain why you should not test unknown or flammable liquids in this chapter’s activities.',source:[19]},
+ {id:'q5',text:'A fan can help dry wet clothes and also make sweaty skin feel cooler. Explain how moving air can produce both effects, even though the fan does not need to warm the clothes.',source:[19]},
+ {id:'q6',text:'Dewatering and drying can reduce the mass of wet drain sludge that must be transported. Explain why. Does leaving sludge in a heap for a few days guarantee that it is safe to handle or use on food-growing soil? Give a reason. Do not touch or collect drain sludge.',source:[19,20]},
+ {id:'q7',text:'Observe ordinary household activities for a day from a safe distance. Identify three involving evaporation. For each, explain how changing one condition could make drying faster or slower, and whether that change would be useful.',source:[20]},
+ {id:'q8',text:'Give examples of water in its solid state in nature. Distinguish these from visible clouds or mist, which may contain liquid droplets.',source:[20]},
+ {id:'q9',text:'Discuss the statement “Water is our responsibility before it is our right.” Suggest two practical ways to reduce waste or pollution, while recognising everyone’s need for safe water.',source:[20]},
+ {id:'q10',text:'A two-wheeler’s seat becomes very hot in the Sun. With an adult moving the vehicle into shade, how might you cool the seat before use? Explain the role of a damp cloth and evaporation. Keep water away from electrical parts and allow the seat to dry; do not test a very hot surface with bare skin.',source:[20]}
+];
+export const projects=[
+ {id:'project-hands',title:'1. Compare cooling at your hands',text:'Wet one hand with clean water and leave the other dry. Gently blow air across each, or fan them in the same way. Record how they feel and explain a possible reason. Swap the wet hand and repeat. Which conditions should stay the same, and why is a sensation not an exact temperature measurement?',source:[20]},
+ {id:'project-game',title:'2. Design a water-journey game',text:'Make a board or card game with stores such as a lake, cloud, ocean, ice and groundwater. Let players move only when they explain a possible movement or state change. Include cards about evaporation, condensation, freezing and water conservation. Allow more than one route, and test the rules with another group.',diagram:'game',caption:'A card can name a starting store and ask the player to explain a possible next step.',source:[20]},
+ {id:'project-roleplay',title:'3. Act out a water cycle',text:'With your teacher, assign roles for water stores, energy from sunlight, air movement and gravity. Act out two different routes rather than one compulsory circle. Explain where water changes state and where it only moves. Include a pause underground or as snow, and make clear that the actors representing vapour are a model of something invisible.',source:[20]},
+ {id:'project-humidity',title:'4. Read a humidity record',text:'Collect monthly humidity data for one place from a reliable weather source. Record the type of humidity, time of observation and the accompanying temperature where available. Look for a pattern and explain the limits of the comparison. What would you still need to predict how quickly a particular wet cloth will dry?',source:[7]}
+];
