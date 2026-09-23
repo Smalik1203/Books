@@ -1,0 +1,63 @@
+#
+#   VizieR Astronomical Server vizier.cds.unistra.fr
+#    Date: 2026-09-23T18:42:33 [V7.6]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-09-23T18:42:33	  Query execution date
+#INFO	request=https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=V/50/catalog&-out=HR,Name,RAJ2000,DEJ2000,Vmag&HR=424,4301,4295,4554,4660,4905,5054,5191,5563,5735,6116,6322,5903,6789,2061,1713,1790,1903,1852,1948,2004,2491,1457,1910,1879,1543,1165,1791&-out.max=40	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_5050
+#Name: V/50
+#Title: Bright Star Catalogue, 5th Revised Ed. (Hoffleit+, 1991)
+#INFO	ivoid=ivo://cds.vizier/v/50	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/v/50	    IVOID of underlying data collection
+#INFO	creator=Hoffleit D.	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/V/50	    Dataset landing page
+#INFO	publication_date=1997-12-09	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	V_50_catalog:
+#Name: V/50/catalog
+#Title: The main part of the Catalogue
+#Column	HR	(I4)	[1/9110]+ Harvard Revised Number = Bright Star Number	[ucd=meta.id;meta.main]
+#Column	Name	(a10)	Name, generally Bayer and/or Flamsteed name	[ucd=meta.id]
+#Column	RAJ2000	(A10)	?Hours RA, equinox J2000, epoch 2000.0 (1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	?Sign Dec, equinox J2000, epoch 2000.0 (1)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F5.2)	?Visual magnitude (1)	[ucd=phot.mag;em.opt.V]
+HR	Name	RAJ2000	DEJ2000	Vmag
+		"h:m:s"	"d:m:s"	mag
+----	----------	----------	---------	-----
+ 424	  1Alp UMi	02 31 48.7	+89 15 51	 2.02
+1165	 25Eta Tau	03 47 29.1	+24 06 18	 2.87
+1457	 87Alp Tau	04 35 55.2	+16 30 33	 0.85
+1543	  1Pi 3Ori	04 49 50.4	+06 57 41	 3.19
+1713	 19Bet Ori	05 14 32.3	-08 12 06	 0.12
+1790	 24Gam Ori	05 25 07.9	+06 20 59	 1.64
+1791	112Bet Tau	05 26 17.5	+28 36 27	 1.65
+1852	 34Del Ori	05 32 00.4	-00 17 57	 2.23
+1879	 39Lam Ori	05 35 08.3	+09 56 03	 3.54
+1903	 46Eps Ori	05 36 12.8	-01 12 07	 1.70
+1910	123Zet Tau	05 37 38.7	+21 08 33	 3.00
+1948	 50Zet Ori	05 40 45.5	-01 56 34	 2.05
+2004	 53Kap Ori	05 47 45.4	-09 40 11	 2.06
+2061	 58Alp Ori	05 55 10.3	+07 24 25	 0.50
+2491	  9Alp CMa	06 45 08.9	-16 42 58	-1.46
+4295	 48Bet UMa	11 01 50.5	+56 22 57	 2.37
+4301	 50Alp UMa	11 03 43.7	+61 45 03	 1.79
+4554	 64Gam UMa	11 53 49.8	+53 41 41	 2.44
+4660	 69Del UMa	12 15 25.6	+57 01 57	 3.31
+4905	 77Eps UMa	12 54 01.7	+55 57 35	 1.77
+5054	 79Zet UMa	13 23 55.5	+54 55 31	 2.27
+5191	 85Eta UMa	13 47 32.4	+49 18 48	 1.86
+5563	  7Bet UMi	14 50 42.3	+74 09 20	 2.08
+5735	 13Gam UMi	15 20 43.7	+71 50 02	 3.05
+5903	 16Zet UMi	15 44 03.5	+77 47 40	 4.32
+6116	 21Eta UMi	16 17 30.3	+75 45 19	 4.95
+6322	 22Eps UMi	16 45 58.1	+82 02 14	 4.23
+6789	 23Del UMi	17 32 12.9	+86 35 11	 4.36
