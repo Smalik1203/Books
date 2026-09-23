@@ -43,9 +43,13 @@ const shapes={
  globe:()=>circle(50,46,33,soft)+p('M24 21Q56 7 72 38T58 77M18 43Q48 63 80 40M28 19L70 73M17 4L86 85M6 55A46 46 0 0 0 65 90M44 92V97M23 97H69'),
 };
 const item=(name,x,y,size,angle=0)=>`<g data-art-element="${name}" transform="translate(${x} ${y}) scale(${size/100}) rotate(${angle} 50 50)">${shapes[name]()}</g>`;
+shapes.jar=()=>p('M30 9H71V19L65 23V34C98 46 98 82 74 91H26C2 82 2 46 35 34V23L30 19Z',soft)+p('M34 28H66M13 63H87M20 78H80');
+shapes.cube=()=>p('M13 27L50 8L88 27V73L50 94L13 73Z',soft)+p('M13 27L50 47L88 27M50 47V94');
+shapes.tumbler=()=>p('M18 16H83L75 88Q50 99 25 88Z',soft)+p('M19 19Q50 34 82 19M30 77Q50 85 70 77');
 const themes={
  '6-1':['magnifier','flask','moon'], '6-2':['sprig','butterfly','mushroom'],
  '6-3':['plate','grain','produce'], '6-4':['magnet','compass','clips'], '6-5':['ruler','pendulum','clock'],
+ '6-6':['jar','cube','tumbler'],
  '7-1':['plane','notebook','magnifier'], '7-2':['lemon','dropper','tubes','sprig'],
  '7-3':['bulb','cell','switch'], '7-4':['anvil','coil','crystal'],
  '7-5':['meltingIce','flask','produce'], '7-6':['sprig','notebook','dialogue'],
