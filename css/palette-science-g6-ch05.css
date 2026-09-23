@@ -1,0 +1,44 @@
+/* Chapter 5 only; existing Science type, geometry and learning roles remain shared. */
+.page--science-v2.page--g6-ch05 {
+ --v2-ink:#303447; --v2-forest:#3d6674; --v2-leaf:#9fbcc4;
+ --v2-wash:#f1f6f7; --v2-rule:#cbdce0;
+ --v2-investigate-wash:rgb(0 107 115 / 7%);
+ --v2-investigate-bar:rgb(0 107 115 / 20%);
+ --v2-investigate-rule:rgb(0 107 115 / 35%);
+}
+.page--g6-ch05 image {image-rendering:auto;stroke:none;filter:none;}
+.page--science-v2.page--g6-ch05 .chapter-opener__title {font-size:calc(var(--size-body)*2.25);letter-spacing:-.7px;}
+.page--g6-ch05 .v2-light-motif {fill:none;stroke:var(--v2-rule);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.7;}
+.page--g6-ch05 .v2-equation {font-size:calc(var(--size-body)*1.25);font-weight:600;fill:var(--v2-forest);}
+.page--science-v2.page--g6-ch05 .se-activity-panel {fill:var(--v2-investigate-wash);stroke:var(--v2-investigate-rule);}
+.page--science-v2.page--g6-ch05 .v2-panel-heading--setup {--v2-cue-ink:var(--v2-teal);}
+.page--science-v2.page--g6-ch05 .v2-panel-icon {stroke-width:1.6;}
+.page--g6-ch05 .v2-activity-header {fill:var(--v2-investigate-bar);stroke:none;}
+.page--g6-ch05 .v2-light-label {font-family:"Source Sans 3",sans-serif;font-size:var(--size-body);fill:var(--v2-ink);}
+.page--g6-ch05 .v2-light-line {fill:none;stroke:var(--v2-ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch05 .v2-light-arrow {fill:none;stroke:var(--v2-forest);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch05 .v2-light-diagram {isolation:auto;}
+
+.page--g6-ch05 .v2-light-dashed {stroke-dasharray:7 6;}
+.page--g6-ch05 .v2-light-solid {fill:var(--v2-forest);stroke:none;}
+.page--g6-ch05 .v2-light-screen {fill:var(--v2-wash);stroke:var(--v2-leaf);stroke-width:2.4;}
+.page--g6-ch05 .v2-light-shadow {fill:var(--v2-ink);opacity:.65;stroke:none;}
+.page--g6-ch05 .v2-light-housing {fill:var(--v2-wash);stroke:var(--v2-forest);stroke-width:2.4;}
+.page--g6-ch05 .v2-light-mirror {fill:none;stroke:var(--v2-leaf);stroke-width:8;stroke-linecap:round;}
+.page--g6-ch05 .v2-light-word {font-family:"Source Sans 3",sans-serif;font-size:calc(var(--size-body)*1.5);font-weight:600;fill:var(--v2-forest);}
+
+.page--g6-ch05 .v2-measure-diagram {isolation:auto;}
+.page--g6-ch05 .v2-measure-label {font-family:"Source Sans 3",sans-serif;font-size:var(--size-body);fill:var(--v2-ink);}
+.page--g6-ch05 .v2-measure-line,.page--g6-ch05 .v2-measure-arrow {fill:none;stroke:var(--v2-ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch05 .v2-measure-arrow {stroke:var(--v2-forest);stroke-width:2.4;}
+.page--g6-ch05 .v2-measure-object,.page--g6-ch05 .v2-measure-ruler,.page--g6-ch05 .v2-measure-court,.page--g6-ch05 .v2-measure-glass,.page--g6-ch05 .v2-measure-paper {fill:var(--v2-wash);stroke:var(--v2-leaf);stroke-width:2.4;}
+.page--g6-ch05 .v2-measure-dot,.page--g6-ch05 .v2-measure-ball {fill:var(--v2-forest);stroke:var(--v2-ink);stroke-width:1.6;}
+.page--g6-ch05 .v2-measure-dashed {stroke-dasharray:7 6;}
+.page--g6-ch05 .v2-measure-thread {fill:none;stroke:var(--v2-forest);stroke-width:3.2;stroke-linecap:round;}
+.page--g6-ch05 .v2-measure-road {stroke:var(--v2-leaf);stroke-width:12;}
+.page--g6-ch05 .v2-measure-orbit,.page--g6-ch05 .v2-measure-rim {fill:none;stroke:var(--v2-leaf);stroke-width:2.4;}
+.page--g6-ch05 .v2-measure-track {fill:none;stroke:var(--v2-forest);stroke-width:14;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch05 .v2-measure-rail {fill:none;stroke:var(--v2-leaf);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;}
+.page--g6-ch05 .v2-measure-sheetline {stroke:var(--v2-leaf);stroke-width:1.6;}
+.page--g6-ch05 .v2-measure-tyre {fill:none;stroke:var(--v2-ink);stroke-width:12;}
+.page--g6-ch05 .v2-measure-chalk {fill:var(--v2-wash);stroke:none;}

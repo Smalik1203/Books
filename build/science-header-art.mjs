@@ -45,7 +45,7 @@ const shapes={
 const item=(name,x,y,size,angle=0)=>`<g data-art-element="${name}" transform="translate(${x} ${y}) scale(${size/100}) rotate(${angle} 50 50)">${shapes[name]()}</g>`;
 const themes={
  '6-1':['magnifier','flask','moon'], '6-2':['sprig','butterfly','mushroom'],
- '6-3':['plate','grain','produce'], '6-4':['magnet','compass','clips'],
+ '6-3':['plate','grain','produce'], '6-4':['magnet','compass','clips'], '6-5':['ruler','pendulum','clock'],
  '7-1':['plane','notebook','magnifier'], '7-2':['lemon','dropper','tubes','sprig'],
  '7-3':['bulb','cell','switch'], '7-4':['anvil','coil','crystal'],
  '7-5':['meltingIce','flask','produce'], '7-6':['sprig','notebook','dialogue'],
