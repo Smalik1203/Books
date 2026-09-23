@@ -42,7 +42,7 @@ Do not distribute unused page height into paragraph gaps. Preserve the reading r
 Chapter 2 Think It Through uses the user-requested generated transparent PNG head-and-question-mark icon, replacing the rejected cloud outline. This is an approved exception to the code-native feature-icon rule. Keep it inside the header and verify recognition at print size.
 
 ## Editorial hierarchy and illustration sizing
-Class 7 Science Chapters 1–10: use tables for explicit distinctions between
+Class 7 Science: use tables for explicit distinctions between
 concepts, materials, processes or roles. Put alternatives under clear headers
 and align comparable criteria in rows; retain scientific limits and exceptions.
 Keep each framed table and its guidance whole. Ordinary procedure steps, topic
