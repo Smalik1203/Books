@@ -1,0 +1,204 @@
+// Independently written lesson; source references are supplied PDF page numbers.
+export const title='Life Processes in Animals';
+export const shortTitle=title;
+const h=(id,text,source,level=1)=>({id,type:'heading',text,source,level});
+const p=(id,text,source,extra={})=>({id,type:'body',text,source,...extra});
+const panel=(id,kind,paragraphs,source,extra={})=>({id,type:'panel',kind,paragraphs,source,...extra});
+const diagram=(id,key,caption,source)=>({id,type:'diagram',diagram:key,caption,source});
+const bullets=(id,items,source)=>({id,type:'bullets',items,source});
+export const opener=[
+ 'A bite of food and a breath of air take different routes through your body. Where do their journeys connect?',
+ 'At lunch, you may be sitting still, yet your stomach is mixing food, your lungs are exchanging gases and your heart is pumping blood. Your body keeps working between meals and while you sleep.',
+ 'In Class 6, you explored the characteristics of living things. Now follow nutrition and respiration inside animals: how food becomes usable nutrients, how oxygen reaches cells, and how different organs work together to sustain life.'
+];
+export const lesson=[
+ h('nutrition','9.1 Nutrition in Animals',[1,2]),
+ p('life-processes','**Life processes** are the activities that maintain living organisms. Nutrition supplies materials and energy sources; respiration releases usable energy; circulation transports substances; excretion removes metabolic wastes. Reproduction continues a kind of organism across generations, although an individual can survive without reproducing.',[1,14]),
+ p('feeding-intro','Observe familiar animals without disturbing or feeding them. They obtain food in different ways. What body parts help each animal reach, take in or break up its food? Separate something you actually observe from an explanation you infer.',[2]),
+ bullets('feeding-methods',[
+  '**Bees and sunbirds:** take nectar from flowers using specialised mouthparts or a long tongue and beak.',
+  '**Young mammals:** obtain milk from their mothers. Humans, cows and many other mammals begin life this way.',
+  '**Pythons:** swallow prey whole, then digest it internally; swallowing whole does not mean skipping digestion.',
+  '**Filter-feeding aquatic animals:** collect small food particles carried in water. They do not obtain all their food by taking bites.'
+ ],[2]),
+ p('nutrient-intro','Food contains carbohydrates, proteins, fats and other nutrients. Many large food molecules cannot be absorbed as they are. **Digestion** breaks them into smaller substances that the body can absorb and use. Mechanical actions break food into pieces; digestive enzymes carry out chemical changes.',[2,4]),
+ p('digestion-stages','Taking food into the body is **ingestion**. After digestion, small nutrient molecules cross the intestinal wall during **absorption**. Cells then use absorbed materials for energy, growth and repair, called **assimilation**. Undigested remains eventually leave through the anus by **egestion**. These terms name different steps, not five names for digestion.',[2,6,7]),
+ h('human-digestion','9.1.1 Digestion in Human Beings',[2]),
+ p('canal','The **alimentary canal** is the continuous passage from the mouth to the anus. Food travels along it; secretions enter from its lining and from associated organs. The liver and pancreas contribute digestive secretions, but food does not pass through these organs. Each region has a different job. We will follow the connected route and ask what changes as food moves onwards.',[2],{keepWhole:true}),
+ diagram('digestive-map','digestive','The human digestive system, simplified. Follow the food path; the liver and pancreas send secretions into the small intestine.',[2,5]),
+ h('mouth','The mouth: chewing and saliva',[2,3],2),
+ p('mouth-work','Teeth cut, crush and grind food into smaller pieces. The tongue mixes it with saliva and helps form a soft mouthful for swallowing. Saliva moistens food and contains the enzyme **amylase**, which starts breaking starch into smaller sugars. Remembering a favourite food can stimulate saliva even before the first bite.',[2,3]),
+ p('chewing-observation','If a teacher permits and the food is suitable for you, slowly chew a small bite of plain chapati or boiled rice for about 30–60 seconds. Use only your own food; do not share it or hold food in your mouth while speaking. Some people notice increasing sweetness. Record your own experience; no clear taste change is also a valid observation. Anyone who cannot take part can analyse the evidence instead.',[3]),
+ p('saliva-question','Taste alone is a subjective clue. How could we test for the starch that is present before and after an enzyme acts? Iodine solution becomes blue-black in the presence of starch. It tests for starch, not directly for sugar. The following teacher-led comparison uses prepared amylase instead of collecting saliva or chewed food.',[3,4],{keepWhole:true}),
+ panel('starch-task','setup',[
+  '1. A teacher labels two clean tubes A and B. Put equal portions of the same mashed boiled rice and equal measured amounts of water, about 3–4 mL, in each. Record the starting appearance.',
+  '2. The teacher adds a measured amount of school-approved amylase solution to B and the same volume of water to A. Use separate droppers. Keep the mixtures at the same teacher-approved temperature for the same time.',
+  '3. Add the same number of drops of dilute iodine, about 3–4, to each tube. Mix separately and compare colours under the same light. Record observations before explaining them.',
+  '4. Use the recording guide to organise your notebook. Repeat with fresh samples if the comparison is unclear.',
+  'Teacher demonstration only: wear eye protection, avoid skin and eye contact with iodine, and never taste treated food. Do not collect or share saliva. The teacher prepares and disposes of the solutions.'
+ ],[3,4],{sourceActivity:'9.1',diagram:'iodine-setup',diagramCaption:'Initial materials: both rice mixtures look alike. No test result is shown in the setup.'}),
+ {id:'starch-record',type:'table',caption:'Recording the starch comparison in your notebook',source:[3],widths:[.20,.27,.26,.27],rows:[['Sample','Initial colour','After iodine','Interpretation'],['A: rice + water','Observe before testing','Record actual colour','Evidence for starch?'],['B: rice + amylase','Observe before testing','Record actual colour','Compare with A']],note:'Read across to connect each sample with its evidence. Compare down to look for a difference; these are recording instructions, not sample results.'},
+ p('starch-evidence','If A becomes blue-black, the starting rice contained detectable starch. If B gives a weaker or absent blue-black colour under comparable conditions, this supports the idea that amylase has broken down some starch. It does not prove that every starch molecule has disappeared or that the iodine test detected sugar.',[4]),
+ p('starch-uncertainty','If both mixtures remain dark, check the enzyme preparation, waiting time, temperature, quantities and mixing. If A does not respond, first check the starch and iodine using known samples. Record unexpected results honestly. Comparing unchewed and chewed rice changes particle size as well as adding saliva. The prepared-enzyme comparison controls that difference better.',[3,4]),
+ panel('starch-pause','think',[
+  'A learner says, “Tube B is not blue-black, so I have proved that sugar formed.” What does the iodine test actually show? What further test would be needed for the second claim?',
+  'Two samples have different iodine colours, but one received twice as much water. Explain why the comparison is difficult to interpret. Which conditions should match in a repeat?'
+ ],[3,4],{addition:'Separates evidence for starch from a claim about sugar and identifies dilution as a confounder.'}),
+ h('food-pipe','The food pipe: a moving wall',[4],2),
+ p('peristalsis','Swallowed food enters the **oesophagus**, or food pipe. Muscles in its wall contract behind the food and relax farther ahead. This travelling wave, called **peristalsis**, pushes the mouthful towards the stomach. Similar muscular movements move and mix contents along the digestive tract. Food does not simply drop through a passive pipe.',[4],{keepWhole:true}),
+ diagram('peristalsis-art','peristalsis','Two successive positions of one mouthful. Contraction behind it and relaxation ahead help move it towards the stomach.',[4]),
+ h('stomach','The stomach: mixing and chemical digestion',[4,5],2),
+ p('stomach-actions','The stomach is a muscular pouch. Its walls churn food and mix it with gastric secretions. Different components of these secretions have different jobs; they should not all be called acid.',[4,5]),
+ bullets('stomach-components',[
+  '**Digestive enzymes:** begin the chemical breakdown of proteins into smaller components.',
+  '**Acid:** provides conditions in which stomach enzymes work and kills many swallowed microorganisms. It does not sterilise every meal.',
+  '**Mucus and other protective factors:** help protect the living stomach lining from its own digestive contents.'
+ ],[4,5]),
+ p('stomach-exit','Churning and chemical changes produce a partly digested, semi-liquid mixture. It leaves the stomach gradually and enters the small intestine. Digestion is not completed in the stomach, and most nutrient absorption happens farther along.',[5]),
+ p('beaumont','In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomach. Physician William Beaumont used it to study gastric secretions and the digestion of different foods. These observations helped connect stomach movements and chemical action with digestion. This historical case also raises questions about consent and the treatment of research participants; it is not an experiment to imitate.',[5]),
+ h('small-intestine','The small intestine: digesting and absorbing',[5,6],2),
+ p('lengths','The small intestine is narrow but long and tightly coiled. An adult’s may be around 6 m long, while the wider large intestine is about 1.5 m long; actual lengths vary with age and measurement method. The words small and large refer mainly to width, not length. Coiling lets a long digestive surface fit inside the abdomen.',[5,6]),
+ bullets('secretions',[
+  '**Liver:** makes bile, stored in the gallbladder. Bile disperses large fat globules into smaller droplets, giving enzymes more surface to work on. This physical dispersal is not the chemical digestion of fat.',
+  '**Pancreas:** supplies enzymes that act on carbohydrates, proteins and fats. Its bicarbonate-rich fluid helps neutralise the acidic mixture arriving from the stomach.',
+  '**Small-intestine lining:** supplies enzymes that help complete digestion, producing substances small enough to be absorbed.'
+ ],[5,6]),
+ p('neutralisation','This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes are not suitable for every intestinal enzyme. Secretions change the chemical conditions as food moves onwards. Food enters the intestine; secretions reach it through small ducts.',[5,6]),
+ p('villi-intro','The inner surface has many small finger-like projections called **villi**. Their thin covering and large combined surface bring digested nutrients close to transport vessels. Villi project into the space carrying digested food; they are not little teeth that chew it.',[6],{keepWhole:true}),
+ diagram('villi-art','villi','An enlarged patch of intestinal lining. Villi increase the surface available for absorption; the colours distinguish tissues and vessels.',[6]),
+ p('absorption','Many absorbed nutrients, including simple sugars and amino acids, enter small blood vessels. Most absorbed fats first enter lymph vessels before reaching the blood. Transport carries nutrients away, helping maintain absorption. Cells use these materials to release energy or to build and repair body tissues.',[6]),
+ p('celiac','In **coeliac (celiac) disease**, gluten triggers an immune reaction that damages the small-intestine lining and can reduce nutrient absorption. Wheat, barley and rye contain gluten. A clinician diagnoses the condition and guides a gluten-free diet; do not diagnose it or remove foods on your own. Jowar, bajra and ragi are naturally gluten-free, but preparation and contamination also matter.',[6]),
+ h('large-intestine','The large intestine: water and egestion',[6,7],2),
+ p('colon','Material not absorbed in the small intestine moves into the large intestine, where more water and some salts are absorbed. Much water has already been absorbed in the small intestine. The remaining material forms stool, which is stored in the rectum and eventually passes out through the anus. **Egestion** removes undigested remains; **excretion** removes wastes produced by the body’s chemical processes.',[7]),
+ p('microbes','Microorganisms in the large intestine use some material that our own enzymes cannot digest, including some dietary fibre. Their products can nourish intestinal cells and contribute certain vitamins. The gut contains a community of organisms; “all bacteria are harmful” is therefore a poor explanation of digestion.',[7]),
+ p('digestive-health','A varied diet containing vegetables, fruits and whole grains supplies fibre. Water and regular activity also support normal bowel function. Fermented foods such as curd, buttermilk, kanji, gundruk or poita bhat differ in preparation and microbial content. Food hygiene, storage, salt and sugar matter; being fermented does not make every food a cure or suitable for everyone.',[7]),
+ p('oral-care','Care begins before food reaches the stomach: brush twice daily with fluoride toothpaste, clean between teeth as advised, and visit a dentist for routine care. Discuss elders’ oral-hygiene practices respectfully, then compare them with reliable dental guidance. Rinsing after meals does not replace brushing.',[3]),
+ p('historical-diet','The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latter discusses foods and spices such as ginger, pepper and cumin. Historical advice is part of cultural history, not a guarantee that a food or meal schedule prevents illness. Claims about treatment need appropriate evidence. Eat without rushing and seek qualified help for persistent problems.',[1,7]),
+ h('other-digestion','9.1.2 Different Animals, Different Digestive Systems',[7,8]),
+ p('rumination','A cow may chew while resting after grazing. Cows, buffaloes, goats and other **ruminants** swallow partly chewed food into a specialised stomach. Microbes in its large rumen help break down plant material. Some contents return to the mouth as cud for more chewing, then are swallowed again. This repeated chewing is **rumination**.',[7,8],{keepWhole:true}),
+ diagram('ruminant-art','ruminant','A simplified cow cutaway. The large rumen supports microbial digestion; cud returns through the oesophagus for further chewing.',[8]),
+ p('bird-digestion','A bird has no teeth. In many birds, a muscular **gizzard** grinds swallowed food; small swallowed stones or grit may help. A glandular part of the stomach supplies digestive secretions. The form and strength of these parts vary with diet. Do not offer birds grit or unusual food as an experiment.',[8],{keepWhole:true}),
+ diagram('bird-art','bird','A hen’s connected digestive passage: the crop stores food, the glandular stomach supplies secretions, and the gizzard grinds it.',[8]),
+ {id:'digestion-comparison',type:'comparison',source:[8],columns:[
+  {title:'Ruminant',items:['Mechanical action: chewing, returning cud and chewing again.','Distinctive part: a rumen with microbes that help process plant material.']},
+  {title:'Bird',items:['Mechanical action: grinding by a muscular gizzard.','Distinctive part: a strong gizzard; grit helps in many species.']}
+ ]},
+ p('nutrition-respiration-link','These structures reflect inherited differences that developed over generations; animals did not choose to redesign their organs. Digestion supplies small nutrients, but cells must still release usable energy from them. That brings us to respiration.',[8]),
+ h('respiration','9.2 Respiration in Animals',[8,9]),
+ p('respiration-intro','**Respiration** is the set of chemical processes in cells that releases usable energy from food molecules. In the aerobic respiration explored here, cells use oxygen. **Breathing** moves air into and out of lungs; **gas exchange** transfers oxygen and carbon dioxide across a surface. These are connected processes, but they happen in different places.',[8,9,12]),
+ h('human-respiration','9.2.1 Respiration in Humans',[9]),
+ p('air-route','Air normally enters through the nostrils and nasal passages. Hairs and mucus trap some particles; the passages also warm and moisten the air. It passes through the throat into the windpipe, or trachea, which divides into two main branches, one to each lung. Smaller branches end at tiny air sacs called **alveoli**.',[9],{keepWhole:true}),
+ diagram('respiratory-art','respiratory','The human respiratory system, simplified. The ribs protect the lungs; the diaphragm forms a muscular floor beneath them.',[9]),
+ p('nose-limits','Filtering is useful but incomplete: fine particles and infectious agents can still enter. SARS-CoV-2, the virus responsible for COVID-19, can affect the respiratory system. Sneezing can help expel an irritant from the nose. Never inhale dust deliberately to test this response. The nose conditions air, but mouth breathing can also occur, for example during vigorous activity.',[9,13]),
+ h('breathing-model','Modelling how breathing works',[10],2),
+ p('model-question','Lungs have no muscles that pull air into themselves. What changes the space around them? Build a model that lets you change an enclosed volume and watch what happens to two balloons. Predict what an air leak might change before you begin.',[10],{keepWhole:true}),
+ panel('lung-task','setup',[
+  '1. An adult cuts the base from a wide clear plastic bottle, covers the cut edge and makes a hole in its cap. Use a teacher-prepared Y-shaped hollow tube; attach one small balloon tightly to each branch.',
+  '2. Pass the straight tube through the cap. Seal around it with modelling clay, leaving the tube’s upper end open to air. Close the cap tightly so air cannot leak around the tube.',
+  '3. Stretch a thin rubber sheet over the open bottle base and secure its edge with a large band. Leave a small central tab to hold. Check all seals.',
+  '4. Gently pull the sheet down, then release it. Observe each balloon and record both changes. Repeat with the same gentle movement. Do not describe a result until you have observed it.',
+  'Adult cutting only. Check latex allergies and use a suitable alternative if necessary. Keep balloons away from mouths and discard broken pieces; do not blow through the model or share mouthpieces.'
+ ],[10],{sourceActivity:'9.2',diagram:'lung-model',diagramCaption:'Initial model at rest. The open tube connects the balloons to outside air; the bottle space around them must be sealed.'}),
+ p('model-evidence','With good seals, pulling the sheet down increases the space around the balloons and lowers the air pressure there. Outside air enters through the tube and the balloons expand. Releasing the sheet reduces that space; the balloons recoil and air leaves. If one or both do not respond, inspect the seals and tube connections before rejecting the explanation.',[10,11]),
+ diagram('breathing-states-art','breathing-states','The diaphragm changes shape as the chest volume changes.',[10]),
+ {id:'breathing-comparison',type:'comparison',source:[10],columns:[
+  {title:'Inhalation',items:['Diaphragm contracts and moves down; ribs move up and out.','Chest volume increases; pressure inside the lungs falls below outside pressure.','Air enters and lungs expand.']},
+  {title:'Quiet exhalation',items:['Diaphragm and rib muscles relax; ribs return and diaphragm rises.','Elastic recoil reduces chest and lung volume.','Air leaves as pressure inside rises above outside pressure.']}
+ ]},
+ p('model-limits','Balloons represent lungs; the sheet represents the diaphragm. The rigid bottle cannot show rib movement. A real diaphragm is a dome-shaped muscle, not a sheet pulled by a hand, and lungs contain many tiny air spaces. A model explains a relationship without copying every feature.',[10,11]),
+ panel('model-pause','think',[
+  'A model’s balloons inflate when the bottom sheet is pulled. Does this show that the lungs contain muscles that suck in air? Use the route taken by air and the changing space around the balloons to explain.',
+  'Would a rigid bottle show the movement of the ribs? Name one thing this model explains and one thing it cannot represent.'
+ ],[10,11],{addition:'Makes the pressure mechanism and limitations of a lung model explicit.'}),
+ h('exhaled-air','What changes in exhaled air?',[11],2),
+ p('lime-question','Lime water becomes cloudy when carbon dioxide forms fine particles of calcium carbonate in it. Both room air and exhaled air contain carbon dioxide. A fair comparison needs equal liquid amounts and comparable volumes of each gas; unlimited pumping into one tube would not be a fair test.',[11],{keepWhole:true}),
+ panel('lime-task','setup',[
+  '1. Teacher demonstration: put equal measured volumes of fresh clear lime water in two matching tubes A and B, supported securely in a rack.',
+  '2. Use two separate equal-volume needle-free syringes. Fill one with room air. Fill the other from a clean collection bag containing a teacher’s exhaled air; use a fresh individual collection arrangement.',
+  '3. Through separate tubes, gently pass the same measured gas volume into each lime-water sample at a similar rate. Compare after each equal volume. Record cloudiness, volume passed and elapsed time.',
+  '4. Repeat with fresh lime water and new gas samples to check whether the pattern is consistent. Record what happened, even when a difference is unclear.',
+  'Wear eye protection. Lime water is alkaline: never suck or blow directly through a tube in it, and never mouth-pipette. Students handle no breath samples. Keep apparatus away from faces; the teacher disposes of it.'
+ ],[11,16],{sourceActivity:'9.3',diagram:'lime-setup',diagramCaption:'The teacher transfers matched gas volumes with separate needle-free syringes. Both liquid samples are initially clear.'}),
+ p('lime-evidence','Earlier cloudiness with the same volume of exhaled air supports a higher carbon-dioxide concentration in that sample. Room air can also turn lime water cloudy if enough is passed through. No visible change after a small volume does not establish that carbon dioxide is absent. Prolonged bubbling can change the result again, so compare initial clouding using fresh samples.',[11]),
+ h('gas-exchange','Alveoli: where gases cross',[12],2),
+ p('alveoli-mechanism','Alveoli have thin walls and a large combined surface closely surrounded by blood capillaries. Oxygen passes from alveolar air into the blood by diffusion. Carbon dioxide passes from the blood into the air sacs and is breathed out. Neither gas needs a hole large enough for blood to leak into the lungs.',[12],{keepWhole:true}),
+ diagram('alveoli-art','alveoli','An enlarged air sac beside a blood capillary. Arrows show opposite gas movements across thin walls; the air and blood remain in separate spaces.',[12]),
+ p('gas-transport','Blood arriving from body tissues carries more carbon dioxide and less oxygen than blood leaving the lungs. It still contains some oxygen. Oxygen-rich blood travels back to the heart and is pumped to the body. The colours in the diagram distinguish blood with different oxygen levels; real human blood is never blue.',[12,13]),
+ {id:'air-comparison',type:'table',caption:'Typical proportions in inhaled and exhaled air',source:[12],widths:[.34,.33,.33],rows:[['Gas','Inhaled room air','Exhaled air'],['Oxygen','About 21%','About 16–17%'],['Carbon dioxide','About 0.04%','About 4–5%']],note:'These are approximate teaching values, not measurements from the lime-water test. Other gases make up most of the remainder; exhaled air also contains water vapour. Values vary with conditions.'},
+ p('air-reading','Read across the oxygen row: exhaled air still contains substantial oxygen. Read across the carbon-dioxide row: its proportion is higher after passage through the body. We inhale a mixture called air, not pure oxygen, and we do not exhale pure carbon dioxide.',[12]),
+ h('cell-energy','Respiration happens in cells',[12],2),
+ p('cell-chemistry','Glucose absorbed after digestion can react with oxygen through many controlled chemical steps in cells. Energy stored in food becomes available for movement, growth, repair and other cell activities; some is released as heat. The process is not a tiny flame inside the body.',[12]),
+ {id:'respiration-equation',type:'equation',source:[12],text:'Glucose + oxygen → carbon dioxide + water',caption:'Aerobic respiration releases usable energy. The word equation summarises many reactions; energy is released, not a material made from nothing.'},
+ {id:'breathing-respiration',type:'comparison',source:[12],columns:[
+  {title:'Breathing',items:['What happens: air moves into and out of the lungs.','Where: the respiratory air passages and lungs.','Role: renews air at gas-exchange surfaces.']},
+  {title:'Cellular respiration',items:['What happens: chemical reactions release usable energy from food.','Where: living cells throughout the body.','Role: powers cell functions; aerobic respiration uses oxygen.']}
+ ]},
+ p('circulation','The **circulatory system** contains the heart, blood and blood vessels. The heart pumps; blood transports oxygen and absorbed nutrients towards tissues and carries carbon dioxide and other wastes away. The lungs remove carbon dioxide; other organs handle other wastes. A blood vessel is a transport route, not a second food pipe.',[13]),
+ panel('connections-pause','think',[
+  'Trace one glucose molecule from digested food and one oxygen molecule from inhaled air until they reach a body cell. Which surfaces must each cross, and which system carries them onwards?',
+  'A person breathes faster after running. Does this mean digestion is happening in the lungs? Explain how digestion, circulation and cellular respiration are connected without confusing their jobs.'
+ ],[12,13],{addition:'Integrates nutrient and gas transport without conflating organs or mechanisms.'}),
+ h('respiratory-health','Air, activity and respiratory health',[11,13],2),
+ p('activity-breathing','During activity, working cells usually require more energy and produce more carbon dioxide. Breathing and circulation adjust to these demands. A breathing rate also depends on recent effort, recovery time, emotion and health. One measurement cannot rank classmates’ fitness or diagnose illness. Do not hold your breath or exercise to exhaustion for this lesson.',[12,15]),
+ p('smoke','Tobacco smoke damages the respiratory system and increases the risk of serious disease, including lung cancer. **Second-hand smoke** is smoke breathed by people who are not smoking; it also harms health and can worsen breathing problems. Clean shared air matters, especially for children and people with respiratory conditions.',[13]),
+ p('breathing-traditions','Breathing practices appear in yoga, chanting and other traditions. Some slow, comfortable breathing practices may help relaxation, but they are not substitutes for medical care. Claims that a particular practice cures disease or makes cold exposure safe need evidence. Learn about practices such as pranayama or Tummo through reading; do not attempt breath-holding, rapid-breathing or cold-exposure challenges.',[11]),
+ h('animal-respiration','9.2.2 Gas Exchange in Other Animals',[13,14]),
+ p('animal-intro','Animals share the need to exchange gases, but the exchange surface differs. Mammals, birds and many reptiles have lungs. Bird lungs differ from mammal lungs, so a shared organ name does not imply identical internal structure or airflow. Living in water does not mean that every animal has gills.',[13]),
+ diagram('animal-exchange-art','animal-gas-exchange','Different exchange surfaces: fish gills, an adult frog’s lungs and moist skin, and an earthworm’s moist skin. Drawings are not to the same scale.',[13]),
+ bullets('animal-comparison',[
+  '**Fish:** water passes over thin gill surfaces supplied with blood vessels. Oxygen dissolved in water enters the blood; carbon dioxide leaves. Fish do not split water molecules to obtain oxygen.',
+  '**Frogs:** tadpoles usually exchange gases through gills and skin. Adults use lungs and their moist skin; skin gas exchange can occur both in water and on land.',
+  '**Earthworms:** gases cross moist skin into and out of blood. Drying damages this exchange surface, so observe worms in place without handling or exposing them to dry air.'
+ ],[13]),
+ p('adaptation','These structures evolved over many generations in different environments. An individual frog developing from a tadpole is undergoing growth and development, not deciding to evolve a new breathing system. Digestion, gas exchange, circulation and other processes work together in living bodies; none operates entirely on its own.',[13,14])
+];
+export const glossary=[
+ ['Alimentary canal','The connected digestive passage from mouth to anus.'],
+ ['Digestion','Breakdown of food into smaller substances that can be absorbed.'],
+ ['Amylase','An enzyme that helps break starch into smaller sugars.'],
+ ['Peristalsis','Travelling muscular contractions that move contents along the digestive tract.'],
+ ['Absorption','Movement of digested nutrients across the intestinal lining into transport vessels.'],
+ ['Villi','Small projections that increase the small intestine’s absorbing surface.'],
+ ['Egestion','Removal of undigested remains through the anus.'],
+ ['Rumination','Returning partly digested food to the mouth for further chewing.'],
+ ['Gizzard','A muscular part of a bird’s digestive tract that grinds food.'],
+ ['Breathing','Movement of air into and out of lungs.'],
+ ['Diaphragm','A dome-shaped muscle below the lungs that helps change chest volume.'],
+ ['Alveoli','Tiny lung air sacs across whose walls gases pass to or from blood.'],
+ ['Respiration','Cellular chemical processes that release usable energy from food.'],
+ ['Circulation','Movement of blood that transports substances around the body.']
+];
+export const summary=[
+ 'Life processes maintain organisms. Reproduction continues populations across generations.',
+ 'Food follows the mouth, oesophagus, stomach, small intestine, large intestine, rectum and anus. Liver and pancreas supply secretions.',
+ 'Chewing is mechanical breakdown; enzymes chemically digest food. Salivary amylase begins starch digestion.',
+ 'Most nutrient absorption occurs in the small intestine. Villi provide a large, thin exchange surface; nutrients support energy release, growth and repair.',
+ 'The large intestine absorbs more water and salts. Rectum stores stool; egestion removes it through the anus.',
+ 'Ruminants return cud for chewing; many birds grind food in a gizzard. Digestive structures vary with feeding habits.',
+ 'Inhalation and exhalation renew air in the lungs. Changes in chest volume and pressure move air.',
+ 'Oxygen and carbon dioxide cross between alveolar air and blood through thin walls. Exhaled air still contains oxygen.',
+ 'Aerobic respiration uses glucose and oxygen and forms carbon dioxide and water while releasing usable energy.',
+ 'Breathing moves air; respiration is chemical change in cells. The heart and blood vessels connect gas exchange, absorbed nutrients and body tissues.',
+ 'Other animals use lungs, gills or moist skin. These exchange surfaces have structures suited to their environments.',
+ 'A useful investigation compares matched conditions, records actual evidence and recognises what a test or model cannot establish.'
+];
+export const exercises=[
+ {id:'q1',source:[15],text:'In your notebook, complete this route of food: mouth → [part 1] → stomach → [part 2] → [part 3] → rectum → anus. Which two associated organs add secretions without food passing through them?'},
+ {id:'q2',source:[15],text:'Sahil puts chapati pieces in tube A, Neha puts chewed chapati in B, and Santushti puts boiled mashed potato in C. They add iodine to each. Predict the possible observations and give reasons. Why might B still become blue-black? Treat this as a written question; do not collect or share chewed food.'},
+ {id:'q3',source:[15],text:'Which role belongs to the diaphragm? Choose and explain: (i) filtering air; (ii) producing sound; (iii) helping inhalation and exhalation; (iv) absorbing oxygen directly.'},
+ {id:'q4',source:[15],text:'Match each part to its function. Parts: (i) nostrils; (ii) nasal passages; (iii) windpipe; (iv) alveoli; (v) rib cage. Functions: (a) openings through which air enters; (b) main lung gas-exchange surface; (c) protects lungs; (d) conditions air and helps trap particles with mucus and hairs; (e) conducts air towards the lungs. Write matched pairs in your notebook.'},
+ {id:'q5',source:[15],text:'Anil says respiration and breathing are the same process. Propose two questions Sanvi could ask him, then explain how the answers distinguish the processes.'},
+ {id:'q6',source:[15],text:'Anu says, “We inhale air.” Shanu says, “We inhale oxygen.” Tanu says, “We inhale air rich in oxygen.” Evaluate each statement. Explain why air is a mixture, what “rich” must be compared with, and why exhaled air is not pure carbon dioxide.'},
+ {id:'q7',source:[15],text:'Why might someone sneeze after inhaling dusty air? Explain the protective response and why it does not make dust harmless. Do not test this by deliberately inhaling dust.'},
+ {id:'q8',source:[15],text:'After a morning run, Anusha counts more breaths per minute than Paridhi. Give at least two possible explanations. What details would make the comparison fairer? Explain why one reading cannot establish who is fitter or who has a medical condition.'},
+ {id:'q9',source:[16],text:'Yadu mixes equal pinches of rice flour with water in A and B, adds a few drops of saliva only to B, and waits 35–45 minutes before adding iodine. The pictured results are dark blue-black in A and amber in B. What idea is he testing? Identify the comparison, explain the evidence and propose a safer prepared-enzyme version with matched volumes.',diagram:'iodine-results',caption:'Given observations for Question 9, not a result that every experiment must produce. A is on the left; B is on the right.'},
+ {id:'q10',source:[16],text:'Rakshita wants to compare carbon dioxide in room air and exhaled air using lime water. What is her question, and what should match between samples? Explain how repeating the comparison with fresh lime water could support her conclusion. Explain why the teacher uses syringes and a collection bag instead of mouth-operated tubes; never suck through lime water.',diagram:'lime-setup',caption:'Safer apparatus for Question 10. Label A for room air and B for collected exhaled air in your notebook; do not mouth-pipette.'}
+];
+export const projects=[
+ {id:'project-oral',source:[16],title:'Compare oral-health advice',text:'Compare an elder’s oral-hygiene advice with a reliable dental source. Report on brushing, cleaning between teeth and eating habits. Distinguish cultural practice, personal experience and evidence; do not recommend treatment for a classmate.'},
+ {id:'project-food',source:[16],title:'Plan a varied, hygienic menu',text:'Research habits supporting digestive health. Propose varied foods, including fibre-rich choices, safe water and hygienic preparation. Explain your choices and account for allergies or individual dietary needs. Do not prescribe restrictive diets or call a food a cure.'},
+ {id:'project-model',source:[16],title:'Build a connected digestive model',text:'Model the alimentary canal and associated organs in coloured clay with paper labels. Check continuity from mouth to anus and where secretions enter. Explain a limitation, including scale. Keep modelling materials away from food.'},
+ {id:'project-aqi',source:[16],title:'Investigate air-quality information',text:'Use an official source to explain air quality and AQI. Record location, date, pollutants and guidance. Compare possible exposures for farmers, factory workers and street vendors, and ways workplaces could reduce them. Do not visit polluted places or collect health details.'},
+ {id:'project-breathing',source:[16],title:'Evaluate a breathing-practice claim',text:'Research box breathing: inhalation, pause, exhalation, pause. Evaluate evidence for relaxation claims and identify uncertainties. This is reading, not a breath-holding exercise or treatment. Avoid forced breathing and discuss health questions with a qualified adult.'},
+ {id:'project-birds',source:[16],title:'How do high-flying birds obtain oxygen?',text:'Compare bird and mammal respiratory diagrams. Research air sacs and one-way lung airflow. Explain why high altitude means lower oxygen pressure, not usually a lower oxygen percentage. Air sacs move air; lung tissue exchanges gases. Name your sources.'}
+];
