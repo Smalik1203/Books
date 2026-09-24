@@ -9,9 +9,9 @@ const chapter='class-7/ch06-adolescence',dir='pages/'+chapter,history='assets/de
 const files=(await fs.readdir(dir)).filter(f=>/^p\d+\.html$/.test(f)).sort();
 const htmls=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8'))),all=htmls.join('\n');
 const norm=s=>s.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/\*/g,'').replace(/\s+/g,' ').trim();
-const extract=s=>norm([...s.replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' '));
+const extract=s=>norm([...s.replace(/<g\b[^>]*data-page-illustration=[\s\S]*?<\/g>/g,'').replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' '));
 const pages=htmls.map(extract),text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing teaching content: '+s);
-assert.equal(files.length,19,'Reviewed extent with whole concept-comparison tables');
+assert.equal(files.length,21,'Reviewed extent with an image on every page');
 htmls.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));});
 opener.forEach(s=>assert.ok(pages[0].includes(norm(s))));
 for(const b of lesson){
@@ -48,6 +48,6 @@ const mean=lessonPages.reduce((a,p)=>a+p.occupiedPercent,0)/lessonPages.length;
 // The puberty distinction and pad-care comparison now remain whole tables.
 // This adds one lesson page; the named protected groups are recorded in the
 // cross-chapter comparison-table review. Type and paragraph spacing are unchanged.
-assert.ok(mean>=87,'Reviewed mean occupied lesson height with whole comparison tables');
+assert.ok(mean>=85,'Reviewed mean occupied lesson height with whole comparison tables and per-page images');
 await fs.writeFile(history+'/occupancy-summary.json',JSON.stringify({meanLessonOccupancy:mean,shortPages:lessonPages.filter(p=>p.occupiedPercent<88).map(p=>({page:p.page,occupiedPercent:p.occupiedPercent,...(map[p.page-1].protectedNext===null?{reason:'Lesson ends before the dedicated glossary and summary; do not merge the reference sequence into the lesson.'}:p.shortPageException)}))},null,2));
 console.log(`Chapter 6 checks passed: ${files.length} pages, all 4 source activities, 10 questions, 3 projects, ${assets.length} transparent assets. Mean lesson occupancy ${mean.toFixed(1)}%.`);

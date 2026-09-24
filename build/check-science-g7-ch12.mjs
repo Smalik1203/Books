@@ -7,9 +7,9 @@ const dir='pages/class-7/ch12-earth-moon-sun',history='assets/design-history/sci
 const files=(await fs.readdir(dir)).filter(f=>/^p\d+\.html$/.test(f)).sort();
 const html=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8')));
 const norm=s=>s.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>').replaceAll('&quot;','"').replaceAll('*','').replace(/\s+/g,' ').trim();
-const pages=html.map(s=>norm([...s.replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' ')));
+const pages=html.map(s=>norm([...s.replace(/<g\b[^>]*data-page-illustration=[\s\S]*?<\/g>/g,'').replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' ')));
 const text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing content: '+s);
-assert.equal(files.length,20);
+assert.equal(files.length,20,'Reviewed extent with an image on every page');
 html.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));assert.ok(/<image\b/.test(s),'Every page needs a raster image: '+files[i]);});
 opener.forEach(has);glossary.flat().forEach(has);summary.forEach(has);
 for(const b of lesson){

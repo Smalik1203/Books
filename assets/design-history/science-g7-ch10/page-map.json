@@ -75,9 +75,13 @@
       3,
       2
     ],
-    "end": 1222,
-    "fill": 85,
-    "breakReason": "Next body: The historical text Vrikshayurveda records observations about pla",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/growth-setup.png",
+      "caption": "Seedlings for a growth investigation."
+    },
+    "end": 1126,
+    "fill": 78,
+    "breakReason": "Next panel: The dark-grown plant is tallest, but has a thin stem and pale lea",
     "blocks": [
       {
         "id": "growth-record",
@@ -134,20 +138,18 @@
         "keepNext": false
       },
       {
-        "id": "growth-pause",
-        "type": "panel",
-        "text": "The dark-grown plant is tallest, but has a thin stem and pale leaves. Is height alone a sound measure of healthy growth? Use at least two other observations in your answer. A class compares only a watered plant in sunlight with an unwatered plant in darkness. Explain why it cannot tell which difference caused the result. Design a clearer comparison.",
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Seedlings for a growth investigation.",
+        "artKey": "figures/class-7/science/ch10/growth-setup.png",
         "top": 906,
-        "bottom": 1222,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "growth-pause"
+        "bottom": 1126
       }
     ],
     "protectedNext": {
-      "id": "vrikshayurveda",
-      "type": "body",
-      "height": 176,
+      "id": "growth-pause",
+      "type": "panel",
+      "height": 316,
       "keepNext": false
     }
   },
@@ -156,21 +158,36 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
+      2,
+      3,
       4,
       1,
-      8,
-      5
+      8
     ],
-    "end": 1154,
-    "fill": 80,
-    "breakReason": "Next activity: 1. Teacher demonstration: soften a suitable leaf briefly in hot w",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/growth-setup.png",
+      "caption": "Seedlings for a growth investigation."
+    },
+    "end": 1070,
+    "fill": 74,
+    "breakReason": "Next heading: 10.2.1 Leaves and the Starch Test",
     "blocks": [
+      {
+        "id": "growth-pause",
+        "type": "panel",
+        "text": "The dark-grown plant is tallest, but has a thin stem and pale leaves. Is height alone a sound measure of healthy growth? Use at least two other observations in your answer. A class compares only a watered plant in sunlight with an unwatered plant in darkness. Explain why it cannot tell which difference caused the result. Design a clearer comparison.",
+        "top": 112,
+        "bottom": 428,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "growth-pause"
+      },
       {
         "id": "vrikshayurveda",
         "type": "body",
         "text": "The historical text Vrikshayurveda records observations about plants, soil, crop care and manure preparation, including mixtures involving water, barley and pulse seeds. It recognises that planting alone does not ensure flowers and fruit. Such records are part of agricultural history; a particular treatment still needs a fair comparison before we assume that it works in every soil or climate.",
-        "top": 112,
-        "bottom": 288,
+        "top": 428,
+        "bottom": 604,
         "before": 0,
         "keepNext": false
       },
@@ -178,8 +195,8 @@
         "id": "food",
         "type": "heading",
         "text": "10.2 How Do Plants Obtain Food?",
-        "top": 300,
-        "bottom": 358,
+        "top": 616,
+        "bottom": 674,
         "before": 12,
         "keepNext": false
       },
@@ -187,8 +204,8 @@
         "id": "food-origin-0",
         "type": "body",
         "text": "Most green plants make carbohydrates from carbon dioxide and water using light energy. Roots supply water and mineral nutrients, but minerals are not the plant’s ready-made carbohydrate food. Much of the carbon in new plant material comes from carbon dioxide in air. Animals depend on photosynthetic producers directly or through food chains.",
-        "top": 358,
-        "bottom": 422,
+        "top": 674,
+        "bottom": 738,
         "before": 0,
         "keepNext": false
       },
@@ -196,26 +213,58 @@
         "id": "food-origin-1",
         "type": "body",
         "text": "Most green plants make carbohydrates from carbon dioxide and water using light energy. Roots supply water and mineral nutrients, but minerals are not the plant’s ready-made carbohydrate food. Much of the carbon in new plant material comes from carbon dioxide in air. Animals depend on photosynthetic producers directly or through food chains.",
-        "top": 422,
-        "bottom": 534,
+        "top": 738,
+        "bottom": 850,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Seedlings for a growth investigation.",
+        "artKey": "figures/class-7/science/ch10/growth-setup.png",
+        "top": 850,
+        "bottom": 1070
+      }
+    ],
+    "protectedNext": {
+      "id": "leaves",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 5,
+    "title": "10.2.1 Leaves and the Starch Test",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      4,
+      5
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/variegated-leaf.png",
+      "caption": "A variegated leaf."
+    },
+    "end": 940,
+    "fill": 64,
+    "breakReason": "Next activity: 1. Teacher demonstration: soften a suitable leaf briefly in hot w",
+    "blocks": [
+      {
         "id": "leaves",
         "type": "heading",
         "text": "10.2.1 Leaves and the Starch Test",
-        "top": 546,
-        "bottom": 594,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "leaf-structure-0",
         "type": "body",
         "text": "Many leaves are broad and thin, exposing a large surface to light while keeping internal cells near air spaces and veins. Green tissues contain **chlorophyll**, a pigment that absorbs light used in making food. Leaf shapes vary with habitat; broad leaves are not the only workable design. Some sugars made by a plant are converted into **starch** for storage.",
-        "top": 594,
-        "bottom": 658,
+        "top": 160,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -223,8 +272,8 @@
         "id": "leaf-structure-1",
         "type": "body",
         "text": "Many leaves are broad and thin, exposing a large surface to light while keeping internal cells near air spaces and veins. Green tissues contain **chlorophyll**, a pigment that absorbs light used in making food. Leaf shapes vary with habitat; broad leaves are not the only workable design. Some sugars made by a plant are converted into **starch** for storage.",
-        "top": 658,
-        "bottom": 770,
+        "top": 224,
+        "bottom": 336,
         "before": 0,
         "keepNext": false
       },
@@ -232,8 +281,8 @@
         "id": "starch-question-0",
         "type": "body",
         "text": "Recall the iodine test from the animal-nutrition chapter. A blue-black colour provides evidence of detectable starch. To see the reaction in a leaf, a teacher first removes much of its green pigment. Testing one leaf for starch does not by itself reveal when, where or under which conditions that starch formed.",
-        "top": 770,
-        "bottom": 834,
+        "top": 336,
+        "bottom": 400,
         "before": 0,
         "keepNext": false
       },
@@ -241,8 +290,8 @@
         "id": "starch-question-1",
         "type": "body",
         "text": "Recall the iodine test from the animal-nutrition chapter. A blue-black colour provides evidence of detectable starch. To see the reaction in a leaf, a teacher first removes much of its green pigment. Testing one leaf for starch does not by itself reveal when, where or under which conditions that starch formed.",
-        "top": 834,
-        "bottom": 914,
+        "top": 400,
+        "bottom": 480,
         "before": 0,
         "keepNext": false
       },
@@ -250,8 +299,8 @@
         "id": "leaf-sampling-0",
         "type": "body",
         "text": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons therefore use similar leaves of the same age, from matching plants. Label samples before treatment so they cannot be confused. When comparing patches, use a sketch to preserve their positions. Choose leaves large enough to handle safely, but do not assume that the largest leaf contains the most starch. A photograph or drawing records appearance; iodine supplies a different kind of evidence.",
-        "top": 914,
-        "bottom": 978,
+        "top": 480,
+        "bottom": 544,
         "before": 0,
         "keepNext": false
       },
@@ -259,8 +308,8 @@
         "id": "leaf-sampling-1",
         "type": "body",
         "text": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons therefore use similar leaves of the same age, from matching plants. Label samples before treatment so they cannot be confused. When comparing patches, use a sketch to preserve their positions. Choose leaves large enough to handle safely, but do not assume that the largest leaf contains the most starch. A photograph or drawing records appearance; iodine supplies a different kind of evidence.",
-        "top": 978,
-        "bottom": 1042,
+        "top": 544,
+        "bottom": 608,
         "before": 0,
         "keepNext": false
       },
@@ -268,10 +317,18 @@
         "id": "leaf-sampling-2",
         "type": "body",
         "text": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons therefore use similar leaves of the same age, from matching plants. Label samples before treatment so they cannot be confused. When comparing patches, use a sketch to preserve their positions. Choose leaves large enough to handle safely, but do not assume that the largest leaf contains the most starch. A photograph or drawing records appearance; iodine supplies a different kind of evidence.",
-        "top": 1042,
-        "bottom": 1154,
+        "top": 608,
+        "bottom": 720,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A variegated leaf.",
+        "artKey": "figures/class-7/science/ch10/variegated-leaf.png",
+        "top": 720,
+        "bottom": 940
       }
     ],
     "protectedNext": {
@@ -282,7 +339,7 @@
     }
   },
   {
-    "page": 5,
+    "page": 6,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -312,7 +369,7 @@
     }
   },
   {
-    "page": 6,
+    "page": 7,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -370,15 +427,19 @@
     }
   },
   {
-    "page": 7,
+    "page": 8,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       6,
       7
     ],
-    "end": 1066,
-    "fill": 73,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/variegated-leaf.png",
+      "caption": "A variegated leaf."
+    },
+    "end": 1286,
+    "fill": 90,
     "breakReason": "Next heading: 10.2.2 What Does Air Contribute?",
     "blocks": [
       {
@@ -452,6 +513,14 @@
         "bottom": 1066,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A variegated leaf.",
+        "artKey": "figures/class-7/science/ch10/variegated-leaf.png",
+        "top": 1066,
+        "bottom": 1286
       }
     ],
     "protectedNext": {
@@ -462,7 +531,7 @@
     }
   },
   {
-    "page": 8,
+    "page": 9,
     "title": "10.2.2 What Does Air Contribute?",
     "titleRole": "subtopic",
     "sourcePages": [
@@ -519,15 +588,19 @@
     }
   },
   {
-    "page": 9,
+    "page": 10,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       8,
       7
     ],
-    "end": 1066,
-    "fill": 73,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/co2-setup.png",
+      "caption": "Comparing carbon dioxide availability."
+    },
+    "end": 1286,
+    "fill": 90,
     "breakReason": "Next heading: Does a Lit Plant Release a Gas?",
     "blocks": [
       {
@@ -601,6 +674,14 @@
         "bottom": 1066,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Comparing carbon dioxide availability.",
+        "artKey": "figures/class-7/science/ch10/co2-setup.png",
+        "top": 1066,
+        "bottom": 1286
       }
     ],
     "protectedNext": {
@@ -611,15 +692,15 @@
     }
   },
   {
-    "page": 10,
+    "page": 11,
     "title": "Does a Lit Plant Release a Gas?",
     "titleRole": "subtopic",
     "sourcePages": [
       8,
       9
     ],
-    "end": 1246,
-    "fill": 87,
+    "end": 1310,
+    "fill": 92,
     "breakReason": "Next body: A glowing splint relighting in the collected gas supports the pre",
     "blocks": [
       {
@@ -649,17 +730,26 @@
         "before": 0,
         "keepNext": false,
         "conceptId": "oxygen-task"
+      },
+      {
+        "id": "oxygen-evidence-0",
+        "type": "body",
+        "text": "A glowing splint relighting in the collected gas supports the presence of oxygen-rich gas. Bubbles alone would not establish this. A lit plant may collect more gas than a dark one because photosynthesis produces oxygen, while respiration continues in both. Some oxygen remains dissolved in water or is used by the plant, so collected volume is not its entire production.",
+        "top": 1246,
+        "bottom": 1310,
+        "before": 0,
+        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "oxygen-evidence-0",
+      "id": "oxygen-evidence-1",
       "type": "body",
-      "height": 64,
+      "height": 112,
       "keepNext": false
     }
   },
   {
-    "page": 11,
+    "page": 12,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -667,25 +757,20 @@
       8,
       10
     ],
-    "end": 1172,
-    "fill": 81,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/whole-plant.png",
+      "caption": "A plant and its parts."
+    },
+    "end": 1328,
+    "fill": 93,
     "breakReason": "Next figure: Carbon dioxide enters green tissues; roots supply water. Light en",
     "blocks": [
-      {
-        "id": "oxygen-evidence-0",
-        "type": "body",
-        "text": "A glowing splint relighting in the collected gas supports the presence of oxygen-rich gas. Bubbles alone would not establish this. A lit plant may collect more gas than a dark one because photosynthesis produces oxygen, while respiration continues in both. Some oxygen remains dissolved in water or is used by the plant, so collected volume is not its entire production.",
-        "top": 112,
-        "bottom": 176,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "oxygen-evidence-1",
         "type": "body",
         "text": "A glowing splint relighting in the collected gas supports the presence of oxygen-rich gas. Bubbles alone would not establish this. A lit plant may collect more gas than a dark one because photosynthesis produces oxygen, while respiration continues in both. Some oxygen remains dissolved in water or is used by the plant, so collected volume is not its entire production.",
-        "top": 176,
-        "bottom": 288,
+        "top": 112,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -693,8 +778,8 @@
         "id": "evidence-pause",
         "type": "panel",
         "text": "A learner sees no bubbles and concludes, “This plant cannot photosynthesise.” Give two reasons the apparatus might show no collected gas even when some photosynthesis occurs. Another learner calls every bubble oxygen. Which extra observation strengthens that claim? Explain why a positive gas test still does not establish that the sample is pure oxygen.",
-        "top": 288,
-        "bottom": 604,
+        "top": 224,
+        "bottom": 540,
         "before": 0,
         "keepNext": false,
         "conceptId": "evidence-pause"
@@ -703,8 +788,8 @@
         "id": "photosynthesis",
         "type": "heading",
         "text": "10.2.3 Photosynthesis: Connecting the Evidence",
-        "top": 616,
-        "bottom": 664,
+        "top": 552,
+        "bottom": 600,
         "before": 12,
         "keepNext": false
       },
@@ -712,8 +797,8 @@
         "id": "photosynthesis-definition-0",
         "type": "body",
         "text": "**Photosynthesis** is the process by which green plants use light energy to make carbohydrates from carbon dioxide and water, releasing oxygen. Chlorophyll helps capture the light. Leaves are major sites, but other green parts such as young stems can also photosynthesise. The investigations test parts of this account; no single one demonstrates the whole process.",
-        "top": 664,
-        "bottom": 728,
+        "top": 600,
+        "bottom": 664,
         "before": 0,
         "keepNext": false
       },
@@ -721,8 +806,8 @@
         "id": "photosynthesis-definition-1",
         "type": "body",
         "text": "**Photosynthesis** is the process by which green plants use light energy to make carbohydrates from carbon dioxide and water, releasing oxygen. Chlorophyll helps capture the light. Leaves are major sites, but other green parts such as young stems can also photosynthesise. The investigations test parts of this account; no single one demonstrates the whole process.",
-        "top": 728,
-        "bottom": 840,
+        "top": 664,
+        "bottom": 776,
         "before": 0,
         "keepNext": false
       },
@@ -730,13 +815,22 @@
         "id": "photosynthesis-equation",
         "type": "equation",
         "text": "Carbon dioxide + water → glucose + oxygen",
-        "top": 840,
-        "bottom": 964,
+        "top": 776,
+        "bottom": 900,
         "before": 0,
         "keepNext": false
       },
       {
         "id": "photosynthesis-materials-0",
+        "type": "body",
+        "text": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are rearranged into new substances. Light supplies energy for this process; it is not a substance that roots absorb or a material stored unchanged inside a potato. Some captured energy becomes stored in chemical form. Later, respiration makes part of that energy available for cell activities. The arrow summarises many reactions inside cells, not a single visible mixing step.",
+        "top": 900,
+        "bottom": 964,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "photosynthesis-materials-1",
         "type": "body",
         "text": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are rearranged into new substances. Light supplies energy for this process; it is not a substance that roots absorb or a material stored unchanged inside a potato. Some captured energy becomes stored in chemical form. Later, respiration makes part of that energy available for cell activities. The arrow summarises many reactions inside cells, not a single visible mixing step.",
         "top": 964,
@@ -745,22 +839,21 @@
         "keepNext": false
       },
       {
-        "id": "photosynthesis-materials-1",
+        "id": "photosynthesis-materials-2",
         "type": "body",
         "text": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are rearranged into new substances. Light supplies energy for this process; it is not a substance that roots absorb or a material stored unchanged inside a potato. Some captured energy becomes stored in chemical form. Later, respiration makes part of that energy available for cell activities. The arrow summarises many reactions inside cells, not a single visible mixing step.",
         "top": 1028,
-        "bottom": 1092,
+        "bottom": 1108,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "photosynthesis-materials-2",
-        "type": "body",
-        "text": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are rearranged into new substances. Light supplies energy for this process; it is not a substance that roots absorb or a material stored unchanged inside a potato. Some captured energy becomes stored in chemical form. Later, respiration makes part of that energy available for cell activities. The arrow summarises many reactions inside cells, not a single visible mixing step.",
-        "top": 1092,
-        "bottom": 1172,
-        "before": 0,
-        "keepNext": false
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A plant and its parts.",
+        "artKey": "figures/class-7/science/ch10/whole-plant.png",
+        "top": 1108,
+        "bottom": 1328
       }
     ],
     "protectedNext": {
@@ -771,7 +864,7 @@
     }
   },
   {
-    "page": 12,
+    "page": 13,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -780,9 +873,9 @@
       12,
       13
     ],
-    "end": 1102,
-    "fill": 76,
-    "breakReason": "Next body: Rustom Hormusji Dastur (1896–1961) was an Indian plant scientist ",
+    "end": 1278,
+    "fill": 89,
+    "breakReason": "Next heading: 10.2.4 How Do Leaves Exchange Gases?",
     "blocks": [
       {
         "id": "plant-map",
@@ -838,51 +931,55 @@
         "bottom": 1102,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "dastur",
-      "type": "body",
-      "height": 176,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 13,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      10,
-      11
-    ],
-    "end": 1168,
-    "fill": 81,
-    "breakReason": "Next figure: An enlarged interpretive drawing of leaf epidermis. A stoma is a ",
-    "blocks": [
+      },
       {
         "id": "dastur",
         "type": "body",
         "text": "Rustom Hormusji Dastur (1896–1961) was an Indian plant scientist who investigated photosynthesis, including the influence of water, temperature and light. He led botany at the Royal Institute of Science in Bombay during 1921–1935. His work illustrates why a plant’s response must be studied under stated conditions rather than explained by light alone.",
-        "top": 112,
-        "bottom": 288,
+        "top": 1102,
+        "bottom": 1278,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "stomata",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 14,
+    "title": "10.2.4 How Do Leaves Exchange Gases?",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      10,
+      11
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/stomata.png",
+      "caption": "Stomata on a leaf surface."
+    },
+    "end": 1200,
+    "fill": 83,
+    "breakReason": "Next figure: An enlarged interpretive drawing of leaf epidermis. A stoma is a ",
+    "blocks": [
       {
         "id": "stomata",
         "type": "heading",
         "text": "10.2.4 How Do Leaves Exchange Gases?",
-        "top": 300,
-        "bottom": 348,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "stomata-question-0",
         "type": "body",
         "text": "A leaf looks continuous to the unaided eye. A microscope reveals structures too small to see directly. Examine its surface before explaining how gases enter and leave. Use a teacher-selected leaf that gives a thin, clear peel; not every species is equally suitable.",
-        "top": 348,
-        "bottom": 412,
+        "top": 160,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -890,8 +987,8 @@
         "id": "stomata-question-1",
         "type": "body",
         "text": "A leaf looks continuous to the unaided eye. A microscope reveals structures too small to see directly. Examine its surface before explaining how gases enter and leave. Use a teacher-selected leaf that gives a thin, clear peel; not every species is equally suitable.",
-        "top": 412,
-        "bottom": 492,
+        "top": 224,
+        "bottom": 304,
         "before": 0,
         "keepNext": false
       },
@@ -899,8 +996,8 @@
         "id": "microscope-evidence-0",
         "type": "body",
         "text": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describing what is common. Thick or folded tissue may hide pores, while a tear can resemble an opening. A good drawing selects clearly observed structures and records magnification; it does not copy every detail of an ideal diagram. If the preparation is unclear, improve it or examine a prepared slide before concluding that the leaf has no stomata.",
-        "top": 492,
-        "bottom": 556,
+        "top": 304,
+        "bottom": 368,
         "before": 0,
         "keepNext": false
       },
@@ -908,8 +1005,8 @@
         "id": "microscope-evidence-1",
         "type": "body",
         "text": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describing what is common. Thick or folded tissue may hide pores, while a tear can resemble an opening. A good drawing selects clearly observed structures and records magnification; it does not copy every detail of an ideal diagram. If the preparation is unclear, improve it or examine a prepared slide before concluding that the leaf has no stomata.",
-        "top": 556,
-        "bottom": 620,
+        "top": 368,
+        "bottom": 432,
         "before": 0,
         "keepNext": false
       },
@@ -917,8 +1014,8 @@
         "id": "microscope-evidence-2",
         "type": "body",
         "text": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describing what is common. Thick or folded tissue may hide pores, while a tear can resemble an opening. A good drawing selects clearly observed structures and records magnification; it does not copy every detail of an ideal diagram. If the preparation is unclear, improve it or examine a prepared slide before concluding that the leaf has no stomata.",
-        "top": 620,
-        "bottom": 700,
+        "top": 432,
+        "bottom": 512,
         "before": 0,
         "keepNext": false
       },
@@ -926,11 +1023,19 @@
         "id": "peel-task",
         "type": "activity",
         "text": "1. Teacher demonstration: use forceps to peel a thin piece from the lower surface of a fresh Tradescantia (rhoeo) leaf. Keep it in a watch glass of water. 2. Lay a flat piece in water on a clean slide. Add school-approved stain if needed; lower a coverslip at an angle to reduce trapped air. 3. Start at low microscope power, increasing as directed. Sketch cells and pores; record magnification. Distinguish repeated structures from tears or air bubbles. Handle glass carefully. No learner handles a blade; use prepared slides if necessary. Keep stains away from skin and eyes; wash hands afterwards.",
-        "top": 700,
-        "bottom": 1168,
+        "top": 512,
+        "bottom": 980,
         "before": 0,
         "keepNext": false,
         "conceptId": "peel-task"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Stomata on a leaf surface.",
+        "artKey": "figures/class-7/science/ch10/stomata.png",
+        "top": 980,
+        "bottom": 1200
       }
     ],
     "protectedNext": {
@@ -941,7 +1046,7 @@
     }
   },
   {
-    "page": 14,
+    "page": 15,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1053,16 +1158,16 @@
     }
   },
   {
-    "page": 15,
+    "page": 16,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       11,
       12
     ],
-    "end": 1161,
-    "fill": 81,
-    "breakReason": "Next figure: Illustrative stem tissue after a dye test and an enlarged vascula",
+    "end": 1017,
+    "fill": 69,
+    "breakReason": "Next body: Coloured regions above the liquid level support upward movement o",
     "blocks": [
       {
         "id": "dye-task",
@@ -1073,13 +1178,32 @@
         "before": 0,
         "keepNext": false,
         "conceptId": "dye-task"
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "dye-evidence-0",
+      "type": "body",
+      "height": 64,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 17,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      12
+    ],
+    "end": 930,
+    "fill": 63,
+    "breakReason": "Next heading: 10.3.2 Food Transport",
+    "blocks": [
       {
         "id": "dye-evidence-0",
         "type": "body",
         "text": "Coloured regions above the liquid level support upward movement of water containing the dye. Colour may be easier to see in pale petals or a cut stem than in green leaves. No obvious petal colour does not prove that water failed to move: species, dye, exposure time and the cut ends affect the result.",
-        "top": 1017,
-        "bottom": 1081,
+        "top": 112,
+        "bottom": 176,
         "before": 0,
         "keepNext": false
       },
@@ -1087,37 +1211,18 @@
         "id": "dye-evidence-1",
         "type": "body",
         "text": "Coloured regions above the liquid level support upward movement of water containing the dye. Colour may be easier to see in pale petals or a cut stem than in green leaves. No obvious petal colour does not prove that water failed to move: species, dye, exposure time and the cut ends affect the result.",
-        "top": 1081,
-        "bottom": 1161,
+        "top": 176,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "transport-detail",
-      "type": "figure",
-      "height": 498,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 16,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      12
-    ],
-    "end": 1324,
-    "fill": 93,
-    "breakReason": "Next heading: 10.4 Do Plants Respire?",
-    "blocks": [
+      },
       {
         "id": "transport-detail",
         "type": "figure",
         "text": "Illustrative stem tissue after a dye test and an enlarged vascular bundle. Stained water-conducting regions are distinct from the food-conducting tissue; positions vary with plant type.",
         "artKey": "stem-detail",
-        "top": 112,
-        "bottom": 610,
+        "top": 256,
+        "bottom": 754,
         "before": 0,
         "keepNext": false
       },
@@ -1125,8 +1230,8 @@
         "id": "xylem-0",
         "type": "body",
         "text": "**Xylem** contains conducting tubes that carry water and dissolved minerals, mainly from roots towards shoots. Evaporation from moist leaf surfaces and loss of water vapour through stomata, called **transpiration**, help draw water upwards through connected columns. Roots supply water to replace what is lost. Plants do not have a hidden pump equivalent to a heart.",
-        "top": 610,
-        "bottom": 674,
+        "top": 754,
+        "bottom": 818,
         "before": 0,
         "keepNext": false
       },
@@ -1134,26 +1239,50 @@
         "id": "xylem-1",
         "type": "body",
         "text": "**Xylem** contains conducting tubes that carry water and dissolved minerals, mainly from roots towards shoots. Evaporation from moist leaf surfaces and loss of water vapour through stomata, called **transpiration**, help draw water upwards through connected columns. Roots supply water to replace what is lost. Plants do not have a hidden pump equivalent to a heart.",
-        "top": 674,
-        "bottom": 786,
+        "top": 818,
+        "bottom": 930,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "food-transport",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 18,
+    "title": "10.3.2 Food Transport",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      12,
+      13
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/dye-setup.png",
+      "caption": "Equipment for tracing water movement."
+    },
+    "end": 1104,
+    "fill": 76,
+    "breakReason": "Next activity: 1. Teacher demonstration: germinate overnight-soaked moong beans ",
+    "blocks": [
       {
         "id": "food-transport",
         "type": "heading",
         "text": "10.3.2 Food Transport",
-        "top": 798,
-        "bottom": 846,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "phloem-0",
         "type": "body",
         "text": "**Phloem** carries dissolved sugars from regions supplying them to regions using or storing them. A mature leaf may supply a growing root, fruit or shoot tip. Flow can therefore be upwards or downwards in different conducting paths; it is not always a one-way journey down from leaves. Starch is converted into soluble substances before stored carbohydrate is transported.",
-        "top": 846,
-        "bottom": 910,
+        "top": 160,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -1161,8 +1290,8 @@
         "id": "phloem-1",
         "type": "body",
         "text": "**Phloem** carries dissolved sugars from regions supplying them to regions using or storing them. A mature leaf may supply a growing root, fruit or shoot tip. Flow can therefore be upwards or downwards in different conducting paths; it is not always a one-way journey down from leaves. Starch is converted into soluble substances before stored carbohydrate is transported.",
-        "top": 910,
-        "bottom": 1022,
+        "top": 224,
+        "bottom": 336,
         "before": 0,
         "keepNext": false
       },
@@ -1170,46 +1299,27 @@
         "id": "transport-comparison",
         "type": "table",
         "text": "Xylem and phloem",
-        "top": 1022,
-        "bottom": 1324,
+        "top": 336,
+        "bottom": 638,
         "before": 0,
         "keepNext": false,
         "conceptId": "transport-comparison"
-      }
-    ],
-    "protectedNext": {
-      "id": "respiration",
-      "type": "heading",
-      "height": 70,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 17,
-    "title": "10.4 Do Plants Respire?",
-    "titleRole": "section",
-    "sourcePages": [
-      13
-    ],
-    "end": 1298,
-    "fill": 91,
-    "breakReason": "Next body: If the seed flask gives earlier clouding for the same gas volume,",
-    "blocks": [
+      },
       {
         "id": "respiration",
         "type": "heading",
         "text": "10.4 Do Plants Respire?",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 650,
+        "bottom": 708,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "respiration-question-0",
         "type": "body",
         "text": "A germinating seed can grow before it has green leaves. Its living cells use stored food, releasing usable energy through **respiration**. To look for a product of this process, compare air around germinating seeds with air in a matched control. Darkness prevents photosynthesis from removing carbon dioxide during the comparison.",
-        "top": 170,
-        "bottom": 234,
+        "top": 708,
+        "bottom": 772,
         "before": 0,
         "keepNext": false
       },
@@ -1217,47 +1327,54 @@
         "id": "respiration-question-1",
         "type": "body",
         "text": "A germinating seed can grow before it has green leaves. Its living cells use stored food, releasing usable energy through **respiration**. To look for a product of this process, compare air around germinating seeds with air in a matched control. Darkness prevents photosynthesis from removing carbon dioxide during the comparison.",
-        "top": 234,
-        "bottom": 346,
+        "top": 772,
+        "bottom": 884,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "seed-task",
-        "type": "activity",
-        "text": "1. Teacher demonstration: germinate overnight-soaked moong beans on moist cotton. Put a small measured sample on damp cotton in flask A. In matching B, use the same cotton and an equal volume of clean glass beads. 2. Keep both dark for a short teacher-selected interval, with plenty of air space. Do not flood the cotton or use mouldy seeds. 3. Fit two-hole stoppers. With separate needle-free syringes, gently draw equal small volumes of headspace air. Briefly open each second tube to admit replacement air; do not draw liquid. 4. Pass equal gas volumes into equal fresh lime-water samples in separate open tubes. Compare initial and final cloudiness; repeat. Record contents, time, volume and observation. Teacher handles glass and alkaline lime water with eye protection. Never suck or blow through reagents or taste seeds. Vent flasks afterwards; avoid prolonged airtight storage.",
-        "top": 346,
-        "bottom": 1298,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "seed-task"
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Equipment for tracing water movement.",
+        "artKey": "figures/class-7/science/ch10/dye-setup.png",
+        "top": 884,
+        "bottom": 1104
       }
     ],
     "protectedNext": {
-      "id": "seed-evidence-0",
-      "type": "body",
-      "height": 64,
+      "id": "seed-task",
+      "type": "activity",
+      "height": 952,
       "keepNext": false
     }
   },
   {
-    "page": 18,
+    "page": 19,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      13,
-      14
+      13
     ],
-    "end": 1274,
-    "fill": 89,
-    "breakReason": "Next panel: In bright light, a plant may take in more carbon dioxide than it ",
+    "end": 1304,
+    "fill": 91,
+    "breakReason": "Next body: Merely connecting a seed flask to lime water does not ensure that",
     "blocks": [
+      {
+        "id": "seed-task",
+        "type": "activity",
+        "text": "1. Teacher demonstration: germinate overnight-soaked moong beans on moist cotton. Put a small measured sample on damp cotton in flask A. In matching B, use the same cotton and an equal volume of clean glass beads. 2. Keep both dark for a short teacher-selected interval, with plenty of air space. Do not flood the cotton or use mouldy seeds. 3. Fit two-hole stoppers. With separate needle-free syringes, gently draw equal small volumes of headspace air. Briefly open each second tube to admit replacement air; do not draw liquid. 4. Pass equal gas volumes into equal fresh lime-water samples in separate open tubes. Compare initial and final cloudiness; repeat. Record contents, time, volume and observation. Teacher handles glass and alkaline lime water with eye protection. Never suck or blow through reagents or taste seeds. Vent flasks afterwards; avoid prolonged airtight storage.",
+        "top": 112,
+        "bottom": 1064,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "seed-task"
+      },
       {
         "id": "seed-evidence-0",
         "type": "body",
         "text": "If the seed flask gives earlier clouding for the same gas volume, the comparison supports additional carbon-dioxide production associated with the germinating seeds. Room air already contains some carbon dioxide, so the control is essential. Microorganisms can also respire; clean, fresh samples reduce that competing explanation. A CO₂ sensor can provide an alternative measurement.",
-        "top": 112,
-        "bottom": 176,
+        "top": 1064,
+        "bottom": 1128,
         "before": 0,
         "keepNext": false
       },
@@ -1265,8 +1382,8 @@
         "id": "seed-evidence-1",
         "type": "body",
         "text": "If the seed flask gives earlier clouding for the same gas volume, the comparison supports additional carbon-dioxide production associated with the germinating seeds. Room air already contains some carbon dioxide, so the control is essential. Microorganisms can also respire; clean, fresh samples reduce that competing explanation. A CO₂ sensor can provide an alternative measurement.",
-        "top": 176,
-        "bottom": 288,
+        "top": 1128,
+        "bottom": 1240,
         "before": 0,
         "keepNext": false
       },
@@ -1274,17 +1391,41 @@
         "id": "seed-method-limit-0",
         "type": "body",
         "text": "Merely connecting a seed flask to lime water does not ensure that enough gas passes through it to show a change. A test needs a defined gas-transfer step and an open outlet; never pressurise a sealed reagent tube. The comparison detects a product of respiration, not every step of the cellular process.",
-        "top": 288,
-        "bottom": 352,
+        "top": 1240,
+        "bottom": 1304,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "seed-method-limit-1",
+      "type": "body",
+      "height": 80,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 20,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      13,
+      14
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/growth-setup.png",
+      "caption": "Seedlings for a growth investigation."
+    },
+    "end": 1254,
+    "fill": 88,
+    "breakReason": "Next panel: In bright light, a plant may take in more carbon dioxide than it ",
+    "blocks": [
       {
         "id": "seed-method-limit-1",
         "type": "body",
         "text": "Merely connecting a seed flask to lime water does not ensure that enough gas passes through it to show a change. A test needs a defined gas-transfer step and an open outlet; never pressurise a sealed reagent tube. The comparison detects a product of respiration, not every step of the cellular process.",
-        "top": 352,
-        "bottom": 432,
+        "top": 112,
+        "bottom": 192,
         "before": 0,
         "keepNext": false
       },
@@ -1292,8 +1433,8 @@
         "id": "respiration-equation",
         "type": "equation",
         "text": "Glucose + oxygen → carbon dioxide + water",
-        "top": 432,
-        "bottom": 556,
+        "top": 192,
+        "bottom": 316,
         "before": 0,
         "keepNext": false
       },
@@ -1301,8 +1442,8 @@
         "id": "living-cells-0",
         "type": "body",
         "text": "Living cells in roots, stems, leaves, flowers and germinating seeds respire in light and darkness. Green cells can photosynthesise when conditions permit, and respire at the same time. Saying “plants photosynthesise by day and respire only at night” confuses two processes. Some mature conducting cells are no longer living, so not every cell in a plant respires.",
-        "top": 556,
-        "bottom": 620,
+        "top": 316,
+        "bottom": 380,
         "before": 0,
         "keepNext": false
       },
@@ -1310,8 +1451,8 @@
         "id": "living-cells-1",
         "type": "body",
         "text": "Living cells in roots, stems, leaves, flowers and germinating seeds respire in light and darkness. Green cells can photosynthesise when conditions permit, and respire at the same time. Saying “plants photosynthesise by day and respire only at night” confuses two processes. Some mature conducting cells are no longer living, so not every cell in a plant respires.",
-        "top": 620,
-        "bottom": 732,
+        "top": 380,
+        "bottom": 492,
         "before": 0,
         "keepNext": false
       },
@@ -1319,8 +1460,8 @@
         "id": "process-comparison",
         "type": "table",
         "text": "Photosynthesis and aerobic respiration",
-        "top": 732,
-        "bottom": 1034,
+        "top": 492,
+        "bottom": 794,
         "before": 0,
         "keepNext": false,
         "conceptId": "process-comparison"
@@ -1329,10 +1470,18 @@
         "id": "net-exchange-example",
         "type": "body",
         "text": "Imagine a short interval in which photosynthesis removes six equal units of carbon dioxide from a leaf’s surroundings and respiration adds two. The surroundings show a net loss of four units, although both processes occurred. These invented numbers illustrate the accounting; they are not measured rates or a fixed ratio. In darkness, photosynthesis stops while respiration continues, so the direction of net carbon-dioxide exchange can change. A measurement of the net effect alone cannot reveal each separate rate.",
-        "top": 1034,
-        "bottom": 1274,
+        "top": 794,
+        "bottom": 1034,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Seedlings for a growth investigation.",
+        "artKey": "figures/class-7/science/ch10/growth-setup.png",
+        "top": 1034,
+        "bottom": 1254
       }
     ],
     "protectedNext": {
@@ -1343,7 +1492,7 @@
     }
   },
   {
-    "page": 19,
+    "page": 21,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1351,8 +1500,12 @@
       14,
       16
     ],
-    "end": 1052,
-    "fill": 72,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/growth-setup.png",
+      "caption": "Seedlings for a growth investigation."
+    },
+    "end": 1272,
+    "fill": 89,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
       {
@@ -1418,12 +1571,20 @@
         "bottom": 1052,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Seedlings for a growth investigation.",
+        "artKey": "figures/class-7/science/ch10/growth-setup.png",
+        "top": 1052,
+        "bottom": 1272
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 20,
+    "page": 22,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
@@ -1436,29 +1597,41 @@
       12,
       13
     ],
-    "end": 988,
-    "fill": 67
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/variegated-leaf.png",
+      "caption": "A variegated leaf."
+    },
+    "end": 1208,
+    "fill": 84
   },
   {
-    "page": 21,
+    "page": 23,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
       14
     ],
-    "end": 952,
-    "fill": 64
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/whole-plant.png",
+      "caption": "A plant and its parts."
+    },
+    "end": 1172,
+    "fill": 81
   },
   {
-    "page": 22,
+    "page": 24,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
       14,
       15
     ],
-    "end": 944,
-    "fill": 64,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch10/whole-plant.png",
+      "caption": "A plant and its parts."
+    },
+    "end": 1164,
+    "fill": 81,
     "breakReason": "Next question: Krishna grows comparable watered plants in light and darkness. Th",
     "blocks": [
       {
@@ -1523,6 +1696,14 @@
         "bottom": 944,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A plant and its parts.",
+        "artKey": "figures/class-7/science/ch10/whole-plant.png",
+        "top": 944,
+        "bottom": 1164
       }
     ],
     "protectedNext": {
@@ -1533,7 +1714,7 @@
     }
   },
   {
-    "page": 23,
+    "page": 25,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
@@ -1570,7 +1751,7 @@
     }
   },
   {
-    "page": 24,
+    "page": 26,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
@@ -1612,7 +1793,7 @@
     "protectedNext": null
   },
   {
-    "page": 25,
+    "page": 27,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [

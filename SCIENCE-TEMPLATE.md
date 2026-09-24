@@ -45,7 +45,18 @@ Chapter 2 table pilot: visible chapter-colour outer rules, lighter internal row 
 Chapter 2 continuous-lesson revision: use Think It Through only for substantial reasoning pauses. Brief questions stay with the relevant prose; immediate observation and comparison questions belong within Investigate. Do not assign a panel to every question. Do not insert stock notebook directions before each table or add notes according to spare page space. Place guidance by teaching sequence, then fit pages. Other chapters retain their current labels until separately revised.
 
 ## Glossary and summary pages
-Keywords have short meanings in a dedicated softly tinted reference box, at most one page. Start the glossary and summary on new pages; keep the summary together. Combine them only when both are genuinely short enough for a comfortable single page. A shorter glossary page is acceptable. This chapter-end reference box is distinct from the do/think/explain features. Chapter 2 implements separate pages.
+
+Current user direction (24 September 2026): every printed Class 6 and Class 7
+Science page must contain a content image. Furniture and feature icons do not
+count. The shared page-illustration catalogue supplies transparent, relevant
+identification pictures where a page otherwise has only text or vector work.
+Reserve their space during pagination; do not shrink type or cover existing
+content. Keep original instructional figures and explanations. A long glossary
+may use two complete reference panels on separate pages when needed to satisfy
+this image requirement at the existing reading size. The complete summary
+remains together. `check-science-page-images.py` verifies every page and retains
+all pre-change text and image references against the preserved source snapshot.
+Keywords have short meanings in a dedicated softly tinted reference box, normally on one page; the image requirement above permits two complete panels for a long glossary. Start the glossary and summary on new pages; keep the summary together. Combine them only when both are genuinely short enough for a comfortable single page. A shorter glossary page is acceptable. This chapter-end reference box is distinct from the do/think/explain features. Chapter 2 implements separate pages.
 
 Glossary definitions use the main body-text size and leading. Fit the reference page through column widths and entry spacing, not table-sized text.
 

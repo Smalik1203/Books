@@ -28,7 +28,7 @@
       },
       "opener": {
         "bandBounds": {
-          "left": -16.999999504623926,
+          "left": -16.999999504623922,
           "top": -16.99999991465431,
           "right": 1068.9999966956375,
           "bottom": 300.0000062599209
@@ -51,15 +51,15 @@
           {
             "text": "The Ever-Evolving",
             "left": 283.99999890163804,
-            "top": 101,
-            "right": 846.0348575846108,
-            "bottom": 173
+            "top": 118,
+            "right": 687.2407423822367,
+            "bottom": 167
           },
           {
             "text": "World of Science",
             "left": 283.99999890163804,
-            "top": 186,
-            "right": 801.8673437345636,
+            "top": 203,
+            "right": 656.1373749767266,
             "bottom": 243
           }
         ],
@@ -68,7 +68,7 @@
         "alignedBaseline": true,
         "centredLabel": true,
         "numberTitleGap": 87.9900841665843,
-        "decorationGap": 67.96517946284041,
+        "decorationGap": 206.601199060942,
         "headerImageGap": 35.99998412199085,
         "imageIntroGap": 35.82441966117733,
         "sharedReadingGrid": true
@@ -126,9 +126,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.545575014439,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.8362398167003
       },
       "bottomGapMM": 17.5,
@@ -263,9 +263,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5455750144392,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.836239816701
       },
       "bottomGapMM": 29.8,
@@ -282,7 +282,7 @@
           }
         ],
         "requiredMM": 36.3,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
@@ -364,9 +364,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5455750144392,
-        "right": 114.0184210880979,
+        "right": 114.01842108809788,
         "bottom": 1495.836239816701
       },
       "bottomGapMM": 25.1,
@@ -380,7 +380,7 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1255.4
+        "bottom": 1191.4
       },
       "blocks": [
         {
@@ -452,13 +452,6 @@
           "top": 1127,
           "right": 931.8,
           "bottom": 1191.4
-        },
-        {
-          "id": "environment-records-1",
-          "left": 87.5,
-          "top": 1191,
-          "right": 924.4,
-          "bottom": 1255.4
         }
       ],
       "collisions": [],
@@ -469,12 +462,18 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 28.7,
-      "occupiedPercent": 87.8,
+      "bottomGapMM": 40.2,
+      "occupiedPercent": 82.8,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 25.7,
+        "remainingMM": 40.1,
         "protectedGroup": [
+          {
+            "id": "environment-records-1",
+            "type": "body",
+            "title": "Compare records after different showers from a safe, dry place; consider slope, surface and drainage",
+            "height": 80
+          },
           {
             "id": "collaboration-0",
             "type": "body",
@@ -506,8 +505,8 @@
             "height": 492
           }
         ],
-        "requiredMM": 147,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 161.3,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
@@ -517,102 +516,153 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1313.4
+        "bottom": 1210
       },
       "blocks": [
         {
+          "id": "environment-records-1",
+          "left": 87.5,
+          "top": 111,
+          "right": 924.4,
+          "bottom": 175.4
+        },
+        {
           "id": "collaboration-0",
           "left": 89,
-          "top": 111,
+          "top": 191,
           "right": 916.3,
-          "bottom": 207.4
+          "bottom": 287.4
         },
         {
           "id": "question-answer-heading",
           "left": 89,
-          "top": 235.7,
+          "top": 315.7,
           "right": 495.8,
-          "bottom": 285.8
+          "bottom": 365.8
         },
         {
           "id": "question-answer-intro-0",
           "left": 87.5,
-          "top": 293,
+          "top": 373,
           "right": 944.5,
-          "bottom": 357.4
+          "bottom": 437.4
         },
         {
           "id": "question-answer-intro-1",
           "left": 89,
-          "top": 357,
+          "top": 437,
           "right": 943.4,
-          "bottom": 421.4
+          "bottom": 501.4
         },
         {
           "id": "question-answer-panel",
           "left": 89,
-          "top": 438,
+          "top": 518,
           "right": 963,
-          "bottom": 908
-        },
-        {
-          "id": "creative-vs-evidence-0",
-          "left": 89,
-          "top": 929,
-          "right": 956.8,
-          "bottom": 993.4
-        },
-        {
-          "id": "creative-vs-evidence-1",
-          "left": 89,
-          "top": 993,
-          "right": 936.5,
-          "bottom": 1057.4
-        },
-        {
-          "id": "questions-and-observations-0",
-          "left": 87.5,
-          "top": 1073,
-          "right": 911.8,
-          "bottom": 1169.4
-        },
-        {
-          "id": "close-0",
-          "left": 89,
-          "top": 1185,
-          "right": 921.2,
-          "bottom": 1249.4
-        },
-        {
-          "id": "close-1",
-          "left": 89,
-          "top": 1249,
-          "right": 909.1,
-          "bottom": 1313.4
+          "bottom": 988
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5448559139131,
-        "right": 114.0184210880979,
+        "right": 114.01842108809788,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 18.3,
-      "occupiedPercent": 92.2,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 36.8,
+      "occupiedPercent": 84.3,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 33.2,
+        "protectedGroup": [
+          {
+            "id": "creative-vs-evidence-0",
+            "type": "body",
+            "title": "This is an exercise in creative question-making. An imagined situation is not scientific evidence, a",
+            "height": 64
+          },
+          {
+            "id": "creative-vs-evidence-1",
+            "type": "body",
+            "title": "This is an exercise in creative question-making. An imagined situation is not scientific evidence, a",
+            "height": 80
+          },
+          {
+            "id": "questions-and-observations-0",
+            "type": "body",
+            "title": "A question about a story may invite imaginative answers. A question about a material needs observati",
+            "height": 112
+          },
+          {
+            "id": "close-0",
+            "type": "body",
+            "title": "Keep room for questions that you cannot answer yet. New knowledge, a better measurement or a differe",
+            "height": 64
+          },
+          {
+            "id": "close-1",
+            "type": "body",
+            "title": "Keep room for questions that you cannot answer yet. New knowledge, a better measurement or a differe",
+            "height": 80
+          },
+          {
+            "id": "page-illustration",
+            "type": "figure",
+            "title": "A folded paper plane.",
+            "height": 220
+          }
+        ],
+        "requiredMM": null,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1031.4
+        "left": 87.5,
+        "top": 111,
+        "right": 956.8,
+        "bottom": 712
       },
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "creative-vs-evidence-0",
+          "left": 89,
+          "top": 111,
+          "right": 956.8,
+          "bottom": 175.4
+        },
+        {
+          "id": "creative-vs-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 936.5,
+          "bottom": 239.4
+        },
+        {
+          "id": "questions-and-observations-0",
+          "left": 87.5,
+          "top": 255,
+          "right": 911.8,
+          "bottom": 351.4
+        },
+        {
+          "id": "close-0",
+          "left": 89,
+          "top": 367,
+          "right": 921.2,
+          "bottom": 431.4
+        },
+        {
+          "id": "close-1",
+          "left": 89,
+          "top": 431,
+          "right": 909.1,
+          "bottom": 495.4
+        }
+      ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
@@ -621,9 +671,22 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 68.9,
-      "occupiedPercent": 70.6,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 126.3,
+      "occupiedPercent": 46,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 122.7,
+        "protectedGroup": [
+          {
+            "id": "next-reference-page",
+            "type": "reference",
+            "title": "Keywords",
+            "height": 1150
+          }
+        ],
+        "requiredMM": 206.6,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 10,
@@ -631,20 +694,42 @@
       "contentBounds": {
         "left": 89,
         "top": 111.7,
-        "right": 938.3,
-        "bottom": 656.4
+        "right": 963,
+        "bottom": 1242
       },
       "blocks": [],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.5448559139131,
-        "right": 121.72533603047485,
+        "right": 121.72533603047486,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 136.3,
-      "occupiedPercent": 41.8,
+      "bottomGapMM": 31.1,
+      "occupiedPercent": 86.7,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 11,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 938.3,
+        "bottom": 880
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139131,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161749
+      },
+      "bottomGapMM": 96.1,
+      "occupiedPercent": 58.9,
       "footerClearanceMM": 3.3
     }
   ]

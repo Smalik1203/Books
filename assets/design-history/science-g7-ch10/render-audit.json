@@ -28,7 +28,7 @@
       },
       "opener": {
         "bandBounds": {
-          "left": -16.999999504623926,
+          "left": -16.999999504623922,
           "top": -16.99999991465431,
           "right": 1068.9999966956375,
           "bottom": 300.0000062599209
@@ -59,7 +59,7 @@
             "text": "in Plants",
             "left": 283.99999890163804,
             "top": 204,
-            "right": 479.2501961615041,
+            "right": 479.25019616150405,
             "bottom": 243
           }
         ],
@@ -68,7 +68,7 @@
         "alignedBaseline": true,
         "centredLabel": true,
         "numberTitleGap": 76.00121772715784,
-        "decorationGap": 351.9022692988723,
+        "decorationGap": 300.34168294221365,
         "headerImageGap": 35.99998412199085,
         "imageIntroGap": 35.82441966117733,
         "sharedReadingGrid": true
@@ -119,9 +119,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.545575014439,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.8362398167003
       },
       "bottomGapMM": 21.7,
@@ -135,7 +135,7 @@
         "left": 87.5,
         "top": 111.5,
         "right": 963,
-        "bottom": 1200
+        "bottom": 1106
       },
       "blocks": [
         {
@@ -179,13 +179,6 @@
           "top": 825,
           "right": 947.9,
           "bottom": 889.4
-        },
-        {
-          "id": "growth-pause",
-          "left": 89,
-          "top": 906,
-          "right": 963,
-          "bottom": 1200
         }
       ],
       "collisions": [],
@@ -196,36 +189,83 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 38.6,
-      "occupiedPercent": 83.5,
+      "bottomGapMM": 55.5,
+      "occupiedPercent": 76.3,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 34.7,
+        "remainingMM": 51.9,
         "protectedGroup": [
           {
-            "id": "vrikshayurveda",
-            "type": "body",
-            "title": "The historical text Vrikshayurveda records observations about plants, soil, crop care and manure pre",
-            "height": 176
-          },
-          {
-            "id": "food",
-            "type": "heading",
-            "title": "10.2 How Do Plants Obtain Food?",
-            "height": 58
-          },
-          {
-            "id": "food-origin-0",
-            "type": "body",
-            "title": "Most green plants make carbohydrates from carbon dioxide and water using light energy. Roots supply ",
-            "height": 64
-          },
-          {
-            "id": "food-origin-1",
-            "type": "body",
-            "title": "Most green plants make carbohydrates from carbon dioxide and water using light energy. Roots supply ",
-            "height": 112
-          },
+            "id": "growth-pause",
+            "type": "panel",
+            "title": "The dark-grown plant is tallest, but has a thin stem and pale leaves. Is height alone a sound measur",
+            "height": 316
+          }
+        ],
+        "requiredMM": 56.8,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 4,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 112,
+        "right": 963,
+        "bottom": 1050
+      },
+      "blocks": [
+        {
+          "id": "growth-pause",
+          "left": 89,
+          "top": 112,
+          "right": 963,
+          "bottom": 406
+        },
+        {
+          "id": "vrikshayurveda",
+          "left": 89,
+          "top": 427,
+          "right": 937.8,
+          "bottom": 587.4
+        },
+        {
+          "id": "food",
+          "left": 89,
+          "top": 615.7,
+          "right": 639.6,
+          "bottom": 665.8
+        },
+        {
+          "id": "food-origin-0",
+          "left": 89,
+          "top": 673,
+          "right": 956.7,
+          "bottom": 737.4
+        },
+        {
+          "id": "food-origin-1",
+          "left": 89,
+          "top": 737,
+          "right": 947.7,
+          "bottom": 833.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 99.98157882284575,
+        "top": 1457.5455750144392,
+        "right": 114.70875759294637,
+        "bottom": 1495.836239816701
+      },
+      "bottomGapMM": 65.6,
+      "occupiedPercent": 72,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 62,
+        "protectedGroup": [
           {
             "id": "leaves",
             "type": "heading",
@@ -273,120 +313,98 @@
             "type": "body",
             "title": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons t",
             "height": 112
+          },
+          {
+            "id": "page-illustration",
+            "type": "figure",
+            "title": "A variegated leaf.",
+            "height": 220
           }
         ],
-        "requiredMM": 187.2,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": null,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 4,
+      "page": 5,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
-        "right": 956.7,
-        "bottom": 1137.4
+        "top": 112.5,
+        "right": 951.5,
+        "bottom": 920
       },
       "blocks": [
         {
-          "id": "vrikshayurveda",
-          "left": 89,
-          "top": 111,
-          "right": 937.8,
-          "bottom": 271.4
-        },
-        {
-          "id": "food",
-          "left": 89,
-          "top": 299.7,
-          "right": 639.6,
-          "bottom": 349.8
-        },
-        {
-          "id": "food-origin-0",
-          "left": 89,
-          "top": 357,
-          "right": 956.7,
-          "bottom": 421.4
-        },
-        {
-          "id": "food-origin-1",
-          "left": 89,
-          "top": 421,
-          "right": 947.7,
-          "bottom": 517.4
-        },
-        {
           "id": "leaves",
           "left": 89,
-          "top": 546.5,
+          "top": 112.5,
           "right": 524.8,
-          "bottom": 586.3
+          "bottom": 152.3
         },
         {
           "id": "leaf-structure-0",
           "left": 89,
-          "top": 593,
+          "top": 159,
           "right": 929.4,
-          "bottom": 657.4
+          "bottom": 223.4
         },
         {
           "id": "leaf-structure-1",
           "left": 89,
-          "top": 657,
+          "top": 223,
           "right": 937.6,
-          "bottom": 753.4
+          "bottom": 319.4
         },
         {
           "id": "starch-question-0",
           "left": 89,
-          "top": 769,
+          "top": 335,
           "right": 913,
-          "bottom": 833.4
+          "bottom": 399.4
         },
         {
           "id": "starch-question-1",
           "left": 89,
-          "top": 833,
+          "top": 399,
           "right": 933.2,
-          "bottom": 897.4
+          "bottom": 463.4
         },
         {
           "id": "leaf-sampling-0",
           "left": 87.5,
-          "top": 913,
+          "top": 479,
           "right": 951.5,
-          "bottom": 977.4
+          "bottom": 543.4
         },
         {
           "id": "leaf-sampling-1",
           "left": 89,
-          "top": 977,
+          "top": 543,
           "right": 931.3,
-          "bottom": 1041.4
+          "bottom": 607.4
         },
         {
           "id": "leaf-sampling-2",
           "left": 89,
-          "top": 1041,
+          "top": 607,
           "right": 942.9,
-          "bottom": 1137.4
+          "bottom": 703.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
-        "top": 1457.5455750144392,
-        "right": 114.70875759294636,
-        "bottom": 1495.836239816701
+        "left": 937.9815002602821,
+        "top": 1457.5455750144383,
+        "right": 952.0183425255343,
+        "bottom": 1495.8362398167
       },
-      "bottomGapMM": 49.9,
-      "occupiedPercent": 78.7,
+      "bottomGapMM": 88.9,
+      "occupiedPercent": 62,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 46.9,
+        "remainingMM": 85.3,
         "protectedGroup": [
           {
             "id": "starch-task",
@@ -396,11 +414,11 @@
           }
         ],
         "requiredMM": 182.9,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 5,
+      "page": 6,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -420,10 +438,10 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 937.9815002602821,
-        "top": 1457.5455750144383,
-        "right": 952.0183425255343,
-        "bottom": 1495.8362398167
+        "left": 99.98157882284575,
+        "top": 1457.5455750144392,
+        "right": 114.01842108809788,
+        "bottom": 1495.836239816701
       },
       "bottomGapMM": 55.2,
       "occupiedPercent": 76.4,
@@ -451,11 +469,11 @@
           }
         ],
         "requiredMM": 88,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 6,
+      "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -496,10 +514,10 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 937.9815002602821,
         "top": 1457.5455750144392,
-        "right": 114.0184210880979,
-        "bottom": 1495.836239816701
+        "right": 952.7086790303828,
+        "bottom": 1495.8362398166992
       },
       "bottomGapMM": 65.9,
       "occupiedPercent": 71.8,
@@ -515,17 +533,17 @@
           }
         ],
         "requiredMM": 65,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 7,
+      "page": 8,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111.5,
         "right": 963,
-        "bottom": 1049.4
+        "bottom": 1266
       },
       "blocks": [
         {
@@ -588,48 +606,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 937.9815002602821,
-        "top": 1457.5455750144392,
-        "right": 952.7086790303828,
-        "bottom": 1495.8362398166992
+        "left": 99.98157882284575,
+        "top": 1457.5448559139131,
+        "right": 114.01842108809788,
+        "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 65.7,
-      "occupiedPercent": 71.9,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 62.7,
-        "protectedGroup": [
-          {
-            "id": "air",
-            "type": "heading",
-            "title": "10.2.2 What Does Air Contribute?",
-            "height": 48
-          },
-          {
-            "id": "co2-question-0",
-            "type": "body",
-            "title": "Carbon dioxide is a small part of air. To investigate its role, compare leaves that receive similar ",
-            "height": 64
-          },
-          {
-            "id": "co2-question-1",
-            "type": "body",
-            "title": "Carbon dioxide is a small part of air. To investigate its role, compare leaves that receive similar ",
-            "height": 80
-          },
-          {
-            "id": "co2-task",
-            "type": "activity",
-            "title": "1. Teacher demonstration: prepare two comparable watered plants with starch reduced below detection.",
-            "height": 930
-          }
-        ],
-        "requiredMM": 201.6,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 26.8,
+      "occupiedPercent": 88.6,
+      "footerClearanceMM": 3.3
     },
     {
-      "page": 8,
+      "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -670,9 +657,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 937.9815002602821,
         "top": 1457.5448559139131,
-        "right": 114.0184210880979,
+        "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
       "bottomGapMM": 36.5,
@@ -689,17 +676,17 @@
           }
         ],
         "requiredMM": 65,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 9,
+      "page": 10,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111.5,
         "right": 963,
-        "bottom": 1049.4
+        "bottom": 1266
       },
       "blocks": [
         {
@@ -762,48 +749,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 937.9815002602821,
+        "left": 92.96315769021967,
         "top": 1457.5448559139131,
-        "right": 952.0183425255343,
+        "right": 121.72533603047486,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 65.7,
-      "occupiedPercent": 71.9,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 62.7,
-        "protectedGroup": [
-          {
-            "id": "oxygen",
-            "type": "heading",
-            "title": "Does a Lit Plant Release a Gas?",
-            "height": 48
-          },
-          {
-            "id": "oxygen-question-0",
-            "type": "body",
-            "title": "Leaves use materials from their surroundings, but they also release substances. An aquatic plant let",
-            "height": 112
-          },
-          {
-            "id": "oxygen-task",
-            "type": "activity",
-            "title": "1. Place equal amounts of suitable pondweed under inverted funnels in two beakers. Use equal volumes",
-            "height": 974
-          }
-        ],
-        "requiredMM": 203.7,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 26.8,
+      "occupiedPercent": 88.6,
+      "footerClearanceMM": 3.3
     },
     {
-      "page": 10,
+      "page": 11,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 112.5,
         "right": 963,
-        "bottom": 1224
+        "bottom": 1309.4
       },
       "blocks": [
         {
@@ -826,124 +788,13 @@
           "top": 272,
           "right": 963,
           "bottom": 1224
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139131,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161749
-      },
-      "bottomGapMM": 34.3,
-      "occupiedPercent": 85.3,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 30.4,
-        "protectedGroup": [
-          {
-            "id": "oxygen-evidence-0",
-            "type": "body",
-            "title": "A glowing splint relighting in the collected gas supports the presence of oxygen-rich gas. Bubbles a",
-            "height": 64
-          },
-          {
-            "id": "oxygen-evidence-1",
-            "type": "body",
-            "title": "A glowing splint relighting in the collected gas supports the presence of oxygen-rich gas. Bubbles a",
-            "height": 112
-          },
-          {
-            "id": "evidence-pause",
-            "type": "panel",
-            "title": "A learner sees no bubbles and concludes, “This plant cannot photosynthesise.” Give two reasons the a",
-            "height": 316
-          }
-        ],
-        "requiredMM": 88.4,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
-    },
-    {
-      "page": 11,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1155.4
-      },
-      "blocks": [
+        },
         {
           "id": "oxygen-evidence-0",
           "left": 87.5,
-          "top": 111,
+          "top": 1245,
           "right": 922,
-          "bottom": 175.4
-        },
-        {
-          "id": "oxygen-evidence-1",
-          "left": 89,
-          "top": 175,
-          "right": 953.8,
-          "bottom": 271.4
-        },
-        {
-          "id": "evidence-pause",
-          "left": 89,
-          "top": 288,
-          "right": 963,
-          "bottom": 582
-        },
-        {
-          "id": "photosynthesis",
-          "left": 89,
-          "top": 616.5,
-          "right": 720.9,
-          "bottom": 656.3
-        },
-        {
-          "id": "photosynthesis-definition-0",
-          "left": 89,
-          "top": 663,
-          "right": 914.7,
-          "bottom": 727.4
-        },
-        {
-          "id": "photosynthesis-definition-1",
-          "left": 87.5,
-          "top": 727,
-          "right": 897.3,
-          "bottom": 823.4
-        },
-        {
-          "id": "photosynthesis-equation",
-          "left": 89,
-          "top": 840.5,
-          "right": 851.9,
-          "bottom": 945.2
-        },
-        {
-          "id": "photosynthesis-materials-0",
-          "left": 89,
-          "top": 963,
-          "right": 952.7,
-          "bottom": 1027.4
-        },
-        {
-          "id": "photosynthesis-materials-1",
-          "left": 87.5,
-          "top": 1027,
-          "right": 925.9,
-          "bottom": 1091.4
-        },
-        {
-          "id": "photosynthesis-materials-2",
-          "left": 89,
-          "top": 1091,
-          "right": 954.7,
-          "bottom": 1155.4
+          "bottom": 1309.4
         }
       ],
       "collisions": [],
@@ -954,31 +805,104 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 46.6,
-      "occupiedPercent": 80.1,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 43.7,
-        "protectedGroup": [
-          {
-            "id": "plant-map",
-            "type": "figure",
-            "title": "Carbon dioxide enters green tissues; roots supply water. Light energy supports food production. The ",
-            "height": 606
-          }
-        ],
-        "requiredMM": 108.9,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 19,
+      "occupiedPercent": 91.9,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 12,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1308
+      },
+      "blocks": [
+        {
+          "id": "oxygen-evidence-1",
+          "left": 89,
+          "top": 111,
+          "right": 953.8,
+          "bottom": 207.4
+        },
+        {
+          "id": "evidence-pause",
+          "left": 89,
+          "top": 224,
+          "right": 963,
+          "bottom": 518
+        },
+        {
+          "id": "photosynthesis",
+          "left": 89,
+          "top": 552.5,
+          "right": 720.9,
+          "bottom": 592.3
+        },
+        {
+          "id": "photosynthesis-definition-0",
+          "left": 89,
+          "top": 599,
+          "right": 914.7,
+          "bottom": 663.4
+        },
+        {
+          "id": "photosynthesis-definition-1",
+          "left": 87.5,
+          "top": 663,
+          "right": 897.3,
+          "bottom": 759.4
+        },
+        {
+          "id": "photosynthesis-equation",
+          "left": 89,
+          "top": 776.5,
+          "right": 851.9,
+          "bottom": 881.2
+        },
+        {
+          "id": "photosynthesis-materials-0",
+          "left": 89,
+          "top": 899,
+          "right": 952.7,
+          "bottom": 963.4
+        },
+        {
+          "id": "photosynthesis-materials-1",
+          "left": 87.5,
+          "top": 963,
+          "right": 925.9,
+          "bottom": 1027.4
+        },
+        {
+          "id": "photosynthesis-materials-2",
+          "left": 89,
+          "top": 1027,
+          "right": 954.7,
+          "bottom": 1091.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 19.2,
+      "occupiedPercent": 91.8,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 13,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
         "top": 132,
         "right": 955.1,
-        "bottom": 1085.4
+        "bottom": 1261.4
       },
       "blocks": [
         {
@@ -1022,140 +946,13 @@
           "top": 1021,
           "right": 938.2,
           "bottom": 1085.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 59.2,
-      "occupiedPercent": 74.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 56.2,
-        "protectedGroup": [
-          {
-            "id": "dastur",
-            "type": "body",
-            "title": "Rustom Hormusji Dastur (1896–1961) was an Indian plant scientist who investigated photosynthesis, in",
-            "height": 176
-          },
-          {
-            "id": "stomata",
-            "type": "heading",
-            "title": "10.2.4 How Do Leaves Exchange Gases?",
-            "height": 48
-          },
-          {
-            "id": "stomata-question-0",
-            "type": "body",
-            "title": "A leaf looks continuous to the unaided eye. A microscope reveals structures too small to see directl",
-            "height": 64
-          },
-          {
-            "id": "stomata-question-1",
-            "type": "body",
-            "title": "A leaf looks continuous to the unaided eye. A microscope reveals structures too small to see directl",
-            "height": 80
-          },
-          {
-            "id": "microscope-evidence-0",
-            "type": "body",
-            "title": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describ",
-            "height": 64
-          },
-          {
-            "id": "microscope-evidence-1",
-            "type": "body",
-            "title": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describ",
-            "height": 64
-          },
-          {
-            "id": "microscope-evidence-2",
-            "type": "body",
-            "title": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describ",
-            "height": 80
-          },
-          {
-            "id": "peel-task",
-            "type": "activity",
-            "title": "1. Teacher demonstration: use forceps to peel a thin piece from the lower surface of a fresh Tradesc",
-            "height": 468
-          }
-        ],
-        "requiredMM": 189.7,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
-    },
-    {
-      "page": 13,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1146
-      },
-      "blocks": [
+        },
         {
           "id": "dastur",
           "left": 89,
-          "top": 111,
+          "top": 1101,
           "right": 928.5,
-          "bottom": 271.4
-        },
-        {
-          "id": "stomata",
-          "left": 89,
-          "top": 300.5,
-          "right": 601.5,
-          "bottom": 340.3
-        },
-        {
-          "id": "stomata-question-0",
-          "left": 87.5,
-          "top": 347,
-          "right": 939.7,
-          "bottom": 411.4
-        },
-        {
-          "id": "stomata-question-1",
-          "left": 89,
-          "top": 411,
-          "right": 947.8,
-          "bottom": 475.4
-        },
-        {
-          "id": "microscope-evidence-0",
-          "left": 87.5,
-          "top": 491,
-          "right": 941.7,
-          "bottom": 555.4
-        },
-        {
-          "id": "microscope-evidence-1",
-          "left": 87.5,
-          "top": 555,
-          "right": 926.1,
-          "bottom": 619.4
-        },
-        {
-          "id": "microscope-evidence-2",
-          "left": 89,
-          "top": 619,
-          "right": 914,
-          "bottom": 683.4
-        },
-        {
-          "id": "peel-task",
-          "left": 89,
-          "top": 700,
-          "right": 963,
-          "bottom": 1146
+          "bottom": 1261.4
         }
       ],
       "collisions": [],
@@ -1166,11 +963,83 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 48.3,
-      "occupiedPercent": 79.4,
+      "bottomGapMM": 27.6,
+      "occupiedPercent": 88.2,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 14,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 112.5,
+        "right": 963,
+        "bottom": 1180
+      },
+      "blocks": [
+        {
+          "id": "stomata",
+          "left": 89,
+          "top": 112.5,
+          "right": 601.5,
+          "bottom": 152.3
+        },
+        {
+          "id": "stomata-question-0",
+          "left": 87.5,
+          "top": 159,
+          "right": 939.7,
+          "bottom": 223.4
+        },
+        {
+          "id": "stomata-question-1",
+          "left": 89,
+          "top": 223,
+          "right": 947.8,
+          "bottom": 287.4
+        },
+        {
+          "id": "microscope-evidence-0",
+          "left": 87.5,
+          "top": 303,
+          "right": 941.7,
+          "bottom": 367.4
+        },
+        {
+          "id": "microscope-evidence-1",
+          "left": 87.5,
+          "top": 367,
+          "right": 926.1,
+          "bottom": 431.4
+        },
+        {
+          "id": "microscope-evidence-2",
+          "left": 89,
+          "top": 431,
+          "right": 914,
+          "bottom": 495.4
+        },
+        {
+          "id": "peel-task",
+          "left": 89,
+          "top": 512,
+          "right": 963,
+          "bottom": 958
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047486,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 42.2,
+      "occupiedPercent": 82,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 44.4,
+        "remainingMM": 38.6,
         "protectedGroup": [
           {
             "id": "stomata-art",
@@ -1180,11 +1049,11 @@
           }
         ],
         "requiredMM": 90.9,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 14,
+      "page": 15,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1267,9 +1136,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 121.72533603047485,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 19.3,
@@ -1277,13 +1146,13 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 15,
+      "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
         "top": 112,
         "right": 963,
-        "bottom": 1144.4
+        "bottom": 995
       },
       "blocks": [
         {
@@ -1292,36 +1161,34 @@
           "top": 112,
           "right": 963,
           "bottom": 995
-        },
-        {
-          "id": "dye-evidence-0",
-          "left": 89,
-          "top": 1016,
-          "right": 937.5,
-          "bottom": 1080.4
-        },
-        {
-          "id": "dye-evidence-1",
-          "left": 89,
-          "top": 1080,
-          "right": 954.1,
-          "bottom": 1144.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.03684222072397,
+        "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 48.6,
-      "occupiedPercent": 79.2,
+      "bottomGapMM": 75.5,
+      "occupiedPercent": 67.8,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 45.6,
+        "remainingMM": 71.5,
         "protectedGroup": [
+          {
+            "id": "dye-evidence-0",
+            "type": "body",
+            "title": "Coloured regions above the liquid level support upward movement of water containing the dye. Colour ",
+            "height": 64
+          },
+          {
+            "id": "dye-evidence-1",
+            "type": "body",
+            "title": "Coloured regions above the liquid level support upward movement of water containing the dye. Colour ",
+            "height": 80
+          },
           {
             "id": "transport-detail",
             "type": "figure",
@@ -1329,119 +1196,54 @@
             "height": 498
           }
         ],
-        "requiredMM": 89.5,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 115.3,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
-    },
-    {
-      "page": 16,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 137,
-        "right": 963,
-        "bottom": 1308
-      },
-      "blocks": [
-        {
-          "id": "transport-detail",
-          "left": 89,
-          "top": 137,
-          "right": 917.5,
-          "bottom": 589.2
-        },
-        {
-          "id": "xylem-0",
-          "left": 87.5,
-          "top": 609,
-          "right": 946.7,
-          "bottom": 673.4
-        },
-        {
-          "id": "xylem-1",
-          "left": 87.5,
-          "top": 673,
-          "right": 950.6,
-          "bottom": 769.4
-        },
-        {
-          "id": "food-transport",
-          "left": 89,
-          "top": 798.5,
-          "right": 378.4,
-          "bottom": 838.3
-        },
-        {
-          "id": "phloem-0",
-          "left": 89,
-          "top": 845,
-          "right": 955,
-          "bottom": 909.4
-        },
-        {
-          "id": "phloem-1",
-          "left": 89,
-          "top": 909,
-          "right": 927.6,
-          "bottom": 1005.4
-        },
-        {
-          "id": "transport-comparison",
-          "left": 87.5,
-          "top": 1021.5,
-          "right": 963,
-          "bottom": 1308
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.03684222072395,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 19.2,
-      "occupiedPercent": 91.8,
-      "footerClearanceMM": 3.3
     },
     {
       "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1276
+        "top": 111,
+        "right": 954.1,
+        "bottom": 913.4
       },
       "blocks": [
         {
-          "id": "respiration",
+          "id": "dye-evidence-0",
           "left": 89,
-          "top": 111.7,
-          "right": 478,
-          "bottom": 161.8
+          "top": 111,
+          "right": 937.5,
+          "bottom": 175.4
         },
         {
-          "id": "respiration-question-0",
+          "id": "dye-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 954.1,
+          "bottom": 239.4
+        },
+        {
+          "id": "transport-detail",
+          "left": 89,
+          "top": 281,
+          "right": 917.5,
+          "bottom": 733.2
+        },
+        {
+          "id": "xylem-0",
           "left": 87.5,
-          "top": 169,
-          "right": 950.7,
-          "bottom": 233.4
+          "top": 753,
+          "right": 946.7,
+          "bottom": 817.4
         },
         {
-          "id": "respiration-question-1",
-          "left": 89,
-          "top": 233,
-          "right": 919.6,
-          "bottom": 329.4
-        },
-        {
-          "id": "seed-task",
-          "left": 89,
-          "top": 346,
-          "right": 963,
-          "bottom": 1276
+          "id": "xylem-1",
+          "left": 87.5,
+          "top": 817,
+          "right": 950.6,
+          "bottom": 913.4
         }
       ],
       "collisions": [],
@@ -1452,97 +1254,243 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 25,
-      "occupiedPercent": 89.3,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 90.1,
+      "occupiedPercent": 61.5,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 87.1,
+        "protectedGroup": [
+          {
+            "id": "food-transport",
+            "type": "heading",
+            "title": "10.3.2 Food Transport",
+            "height": 48
+          },
+          {
+            "id": "phloem-0",
+            "type": "body",
+            "title": "**Phloem** carries dissolved sugars from regions supplying them to regions using or storing them. A ",
+            "height": 64
+          },
+          {
+            "id": "phloem-1",
+            "type": "body",
+            "title": "**Phloem** carries dissolved sugars from regions supplying them to regions using or storing them. A ",
+            "height": 112
+          },
+          {
+            "id": "transport-comparison",
+            "type": "table",
+            "title": "Xylem and phloem",
+            "height": 302
+          }
+        ],
+        "requiredMM": 94.5,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 18,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1257.4
+        "bottom": 1084
       },
       "blocks": [
         {
-          "id": "seed-evidence-0",
+          "id": "food-transport",
           "left": 89,
-          "top": 111,
-          "right": 937,
-          "bottom": 175.4
+          "top": 112.5,
+          "right": 378.4,
+          "bottom": 152.3
         },
         {
-          "id": "seed-evidence-1",
+          "id": "phloem-0",
           "left": 89,
-          "top": 175,
-          "right": 957.4,
-          "bottom": 271.4
+          "top": 159,
+          "right": 955,
+          "bottom": 223.4
         },
         {
-          "id": "seed-method-limit-0",
+          "id": "phloem-1",
           "left": 89,
-          "top": 287,
-          "right": 932.9,
-          "bottom": 351.4
+          "top": 223,
+          "right": 927.6,
+          "bottom": 319.4
         },
         {
-          "id": "seed-method-limit-1",
-          "left": 89,
-          "top": 351,
-          "right": 949.2,
-          "bottom": 415.4
-        },
-        {
-          "id": "respiration-equation",
+          "id": "transport-comparison",
           "left": 87.5,
-          "top": 432.5,
-          "right": 831.2,
-          "bottom": 537.2
-        },
-        {
-          "id": "living-cells-0",
-          "left": 89,
-          "top": 555,
-          "right": 951.8,
-          "bottom": 619.4
-        },
-        {
-          "id": "living-cells-1",
-          "left": 89,
-          "top": 619,
-          "right": 944.5,
-          "bottom": 715.4
-        },
-        {
-          "id": "process-comparison",
-          "left": 89,
-          "top": 731.5,
+          "top": 335.5,
           "right": 963,
-          "bottom": 1018
+          "bottom": 622
         },
         {
-          "id": "net-exchange-example",
+          "id": "respiration",
+          "left": 89,
+          "top": 649.7,
+          "right": 478,
+          "bottom": 699.8
+        },
+        {
+          "id": "respiration-question-0",
           "left": 87.5,
-          "top": 1033,
-          "right": 959.1,
-          "bottom": 1257.4
+          "top": 707,
+          "right": 950.7,
+          "bottom": 771.4
+        },
+        {
+          "id": "respiration-question-1",
+          "left": 89,
+          "top": 771,
+          "right": 919.6,
+          "bottom": 867.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.5448559139113,
-        "right": 121.03684222072395,
+        "right": 121.03684222072397,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 28.3,
-      "occupiedPercent": 87.9,
+      "bottomGapMM": 59.5,
+      "occupiedPercent": 74.6,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 25.3,
+        "remainingMM": 55.9,
+        "protectedGroup": [
+          {
+            "id": "seed-task",
+            "type": "activity",
+            "title": "1. Teacher demonstration: germinate overnight-soaked moong beans on moist cotton. Put a small measur",
+            "height": 952
+          }
+        ],
+        "requiredMM": 171,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 19,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 112,
+        "right": 963,
+        "bottom": 1303.4
+      },
+      "blocks": [
+        {
+          "id": "seed-task",
+          "left": 89,
+          "top": 112,
+          "right": 963,
+          "bottom": 1042
+        },
+        {
+          "id": "seed-evidence-0",
+          "left": 89,
+          "top": 1063,
+          "right": 937,
+          "bottom": 1127.4
+        },
+        {
+          "id": "seed-evidence-1",
+          "left": 89,
+          "top": 1127,
+          "right": 957.4,
+          "bottom": 1223.4
+        },
+        {
+          "id": "seed-method-limit-0",
+          "left": 89,
+          "top": 1239,
+          "right": 932.9,
+          "bottom": 1303.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.544855913915,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 20,
+      "occupiedPercent": 91.4,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 20,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1234
+      },
+      "blocks": [
+        {
+          "id": "seed-method-limit-1",
+          "left": 89,
+          "top": 111,
+          "right": 949.2,
+          "bottom": 175.4
+        },
+        {
+          "id": "respiration-equation",
+          "left": 87.5,
+          "top": 192.5,
+          "right": 831.2,
+          "bottom": 297.2
+        },
+        {
+          "id": "living-cells-0",
+          "left": 89,
+          "top": 315,
+          "right": 951.8,
+          "bottom": 379.4
+        },
+        {
+          "id": "living-cells-1",
+          "left": 89,
+          "top": 379,
+          "right": 944.5,
+          "bottom": 475.4
+        },
+        {
+          "id": "process-comparison",
+          "left": 89,
+          "top": 491.5,
+          "right": 963,
+          "bottom": 778
+        },
+        {
+          "id": "net-exchange-example",
+          "left": 87.5,
+          "top": 793,
+          "right": 959.1,
+          "bottom": 1017.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 32.5,
+      "occupiedPercent": 86.1,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 28.9,
         "protectedGroup": [
           {
             "id": "day-night-pause",
@@ -1552,17 +1500,17 @@
           }
         ],
         "requiredMM": 56.8,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 19,
+      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 112,
         "right": 963,
-        "bottom": 1035.4
+        "bottom": 1252
       },
       "blocks": [
         {
@@ -1619,63 +1567,26 @@
       "escapedPanels": [],
       "folioBounds": {
         "left": 930.9630791276561,
-        "top": 1457.544855913915,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 68.2,
-      "occupiedPercent": 70.9,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 65.2,
-        "protectedGroup": [],
-        "requiredMM": 0,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
-    },
-    {
-      "page": 20,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 89,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 988
-      },
-      "blocks": [],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 76.7,
-      "occupiedPercent": 67.2,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 21,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 89,
-        "top": 111.7,
-        "right": 952,
-        "bottom": 941.4
-      },
-      "blocks": [],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
         "top": 1457.5448559139113,
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 85.1,
-      "occupiedPercent": 63.7,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 29.3,
+      "occupiedPercent": 87.5,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 25.7,
+        "protectedGroup": [
+          {
+            "id": "next-reference-page",
+            "type": "reference",
+            "title": "Keywords",
+            "height": 1096
+          }
+        ],
+        "requiredMM": 196.9,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 22,
@@ -1683,8 +1594,52 @@
       "contentBounds": {
         "left": 89,
         "top": 111.7,
+        "right": 963,
+        "bottom": 1188
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139186,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161803
+      },
+      "bottomGapMM": 40.8,
+      "occupiedPercent": 82.6,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 23,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 952,
+        "bottom": 1152
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 47.2,
+      "occupiedPercent": 79.8,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 24,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
         "right": 954.1,
-        "bottom": 913.4
+        "bottom": 1144
       },
       "blocks": [
         {
@@ -1740,17 +1695,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139186,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161803
+        "left": 92.96315769021967,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047486,
+        "bottom": 1495.835520716173
       },
-      "bottomGapMM": 90.1,
-      "occupiedPercent": 61.5,
+      "bottomGapMM": 48.7,
+      "occupiedPercent": 79.2,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 23,
+      "page": 25,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1779,7 +1734,7 @@
       "folioBounds": {
         "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 34.3,
@@ -1787,7 +1742,7 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 24,
+      "page": 26,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 79.8,
@@ -1821,9 +1776,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.5448559139113,
-        "right": 121.72533603047485,
+        "right": 121.03684222072397,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 64.2,
@@ -1831,7 +1786,7 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 25,
+      "page": 27,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1873,9 +1828,9 @@
       "escapedPanels": [],
       "folioBounds": {
         "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
+        "top": 1457.5448559139186,
+        "right": 959.7252125241284,
+        "bottom": 1495.8355207161803
       },
       "bottomGapMM": 31.9,
       "occupiedPercent": 86.4,

@@ -22,8 +22,12 @@
       3,
       4
     ],
-    "end": 1104,
-    "fill": 76,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/winnowing.png",
+      "caption": "Winnowing grain."
+    },
+    "end": 1324,
+    "fill": 93,
     "breakReason": "Next activity: 1. Your teacher may provide roasted peanuts only if they are safe",
     "blocks": [
       {
@@ -151,6 +155,14 @@
         "bottom": 1104,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Winnowing grain.",
+        "artKey": "figures/class-6/science/ch09/winnowing.png",
+        "top": 1104,
+        "bottom": 1324
       }
     ],
     "protectedNext": {
@@ -305,8 +317,12 @@
       6,
       7
     ],
-    "end": 1134,
-    "fill": 78,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/salt.png",
+      "caption": "Separating salt from water."
+    },
+    "end": 1354,
+    "fill": 95,
     "breakReason": "Next activity: 1. Watch your teacher place a small amount of salt solution in a ",
     "blocks": [
       {
@@ -381,6 +397,14 @@
         "bottom": 1134,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Separating salt from water.",
+        "artKey": "figures/class-6/science/ch09/salt.png",
+        "top": 1134,
+        "bottom": 1354
       }
     ],
     "protectedNext": {
@@ -397,9 +421,9 @@
     "sourcePages": [
       7
     ],
-    "end": 1248,
-    "fill": 87,
-    "breakReason": "Next body: Drying plant material also removes water. Some herbs are shade-dr",
+    "end": 1328,
+    "fill": 93,
+    "breakReason": "Next heading: 9.5 Settling and Pouring Off",
     "blocks": [
       {
         "id": "heat-task",
@@ -455,51 +479,54 @@
         "bottom": 1248,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "drying-plants-1",
+        "type": "body",
+        "text": "Drying plant material also removes water. Some herbs are shade-dried to limit changes caused by strong sunlight or heat. Drying alone does not establish that a plant is safe, effective as a medicine or free of harmful substances. Do not collect or taste unknown plants.",
+        "top": 1248,
+        "bottom": 1328,
+        "before": 0,
+        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "drying-plants-1",
-      "type": "body",
-      "height": 80,
+      "id": "settling-heading",
+      "type": "heading",
+      "height": 70,
       "keepNext": false
     }
   },
   {
     "page": 7,
-    "title": "",
-    "titleRole": "continuation",
+    "title": "9.5 Settling and Pouring Off",
+    "titleRole": "section",
     "sourcePages": [
-      7,
       8
     ],
-    "end": 1230,
-    "fill": 86,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1358,
+    "fill": 96,
     "breakReason": "Next heading: 9.6 Choosing a Filter",
     "blocks": [
-      {
-        "id": "drying-plants-1",
-        "type": "body",
-        "text": "Drying plant material also removes water. Some herbs are shade-dried to limit changes caused by strong sunlight or heat. Drying alone does not establish that a plant is safe, effective as a medicine or free of harmful substances. Do not collect or taste unknown plants.",
-        "top": 112,
-        "bottom": 192,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "settling-heading",
         "type": "heading",
         "text": "9.5 Settling and Pouring Off",
-        "top": 204,
-        "bottom": 262,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "settling-0",
         "type": "body",
         "text": "In Puducherry, the family compares ways of removing tea leaves from tea. Some leaves may settle when the liquid is left still; others can float or remain suspended. Use a cool mixture for classroom comparisons. Do not handle hot tea or water.",
-        "top": 262,
-        "bottom": 326,
+        "top": 170,
+        "bottom": 234,
         "before": 0,
         "keepNext": false
       },
@@ -507,8 +534,8 @@
         "id": "settling-1",
         "type": "body",
         "text": "In Puducherry, the family compares ways of removing tea leaves from tea. Some leaves may settle when the liquid is left still; others can float or remain suspended. Use a cool mixture for classroom comparisons. Do not handle hot tea or water.",
-        "top": 326,
-        "bottom": 406,
+        "top": 234,
+        "bottom": 314,
         "before": 0,
         "keepNext": false
       },
@@ -516,8 +543,8 @@
         "id": "sediment-0",
         "type": "body",
         "text": "When suspended insoluble particles settle under gravity, the process is **sedimentation**. It works well for some particles, such as coarse sand in water, but very fine particles may remain suspended for a long time. A substance dissolved in water does not simply settle out like sand.",
-        "top": 406,
-        "bottom": 470,
+        "top": 314,
+        "bottom": 378,
         "before": 0,
         "keepNext": false
       },
@@ -525,8 +552,8 @@
         "id": "sediment-1",
         "type": "body",
         "text": "When suspended insoluble particles settle under gravity, the process is **sedimentation**. It works well for some particles, such as coarse sand in water, but very fine particles may remain suspended for a long time. A substance dissolved in water does not simply settle out like sand.",
-        "top": 470,
-        "bottom": 550,
+        "top": 378,
+        "bottom": 458,
         "before": 0,
         "keepNext": false
       },
@@ -534,8 +561,8 @@
         "id": "decant-0",
         "type": "body",
         "text": "Carefully pouring off the liquid without greatly disturbing a settled solid is **decantation**. Some liquid is usually left with the solid, and fine particles may pour out too. The method can still be useful; incomplete separation does not make it an invalid method.",
-        "top": 550,
-        "bottom": 614,
+        "top": 458,
+        "bottom": 522,
         "before": 0,
         "keepNext": false
       },
@@ -543,8 +570,8 @@
         "id": "decant-1",
         "type": "body",
         "text": "Carefully pouring off the liquid without greatly disturbing a settled solid is **decantation**. Some liquid is usually left with the solid, and fine particles may pour out too. The method can still be useful; incomplete separation does not make it an invalid method.",
-        "top": 614,
-        "bottom": 694,
+        "top": 522,
+        "bottom": 602,
         "before": 0,
         "keepNext": false
       },
@@ -552,8 +579,8 @@
         "id": "settle-task",
         "type": "activity",
         "text": "1. Stir clean sand into water in a clear container. Leave it still and record what changes. Keep an identical, freshly stirred sample for comparison. 2. Once particles have settled, slowly pour some upper liquid into another container. Stop before the sediment reaches the lip. Compare the poured liquid, the residue and the stirred sample. 3. Record which material you recovered and what remains mixed. Do not drink any of the samples.",
-        "top": 694,
-        "bottom": 1054,
+        "top": 602,
+        "bottom": 962,
         "before": 0,
         "keepNext": false,
         "conceptId": "settle-task"
@@ -562,8 +589,8 @@
         "id": "oil-water-0",
         "type": "body",
         "text": "Oil and water can form separate liquid layers when left still. One layer can be carefully poured away from the other, although pouring by hand often leaves some mixing near the boundary. A separating funnel gives better control. The useful property here is that the liquids do not mix into one uniform liquid, not that either is a solid.",
-        "top": 1054,
-        "bottom": 1118,
+        "top": 962,
+        "bottom": 1026,
         "before": 0,
         "keepNext": false
       },
@@ -571,10 +598,18 @@
         "id": "oil-water-1",
         "type": "body",
         "text": "Oil and water can form separate liquid layers when left still. One layer can be carefully poured away from the other, although pouring by hand often leaves some mixing near the boundary. A separating funnel gives better control. The useful property here is that the liquids do not mix into one uniform liquid, not that either is a solid.",
-        "top": 1118,
-        "bottom": 1230,
+        "top": 1026,
+        "bottom": 1138,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
+        "top": 1138,
+        "bottom": 1358
       }
     ],
     "protectedNext": {
@@ -667,12 +702,15 @@
     "sourcePages": [
       9,
       10,
-      8,
-      11
+      8
     ],
-    "end": 1410,
-    "fill": 100,
-    "breakReason": "Next body: Washed sand, cloth and other media can retain some particles. Act",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1098,
+    "fill": 76,
+    "breakReason": "Next activity: 1. Design a small model filter using teacher-approved materials s",
     "blocks": [
       {
         "id": "filter-results-0",
@@ -720,20 +758,18 @@
         "keepNext": false
       },
       {
-        "id": "design-task",
-        "type": "activity",
-        "text": "1. Design a small model filter using teacher-approved materials such as cloth, washed sand and washed gravel. Sketch a stable arrangement in your notebook before building it. Any container cutting is an adult’s job. 2. Test with a prepared sand-and-soil water sample, not collected pond water. Measure equal sample volumes. Keep a little unfiltered mixture for comparison. 3. Collect the output and record its appearance, volume and the time taken. Change one feature, such as the cloth layers, and repeat with a fresh comparable sample. 4. Explain what improved and what your test cannot establish. Do not drink the output, even if it looks clear. Keep it away from food and wash hands and equipment afterwards.",
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
         "top": 878,
-        "bottom": 1410,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "design-task"
+        "bottom": 1098
       }
     ],
     "protectedNext": {
-      "id": "design-evidence-0",
-      "type": "body",
-      "height": 64,
+      "id": "design-task",
+      "type": "activity",
+      "height": 532,
       "keepNext": false
     }
   },
@@ -743,20 +779,32 @@
     "titleRole": "continuation",
     "sourcePages": [
       10,
-      11,
-      12,
-      13
+      11
     ],
-    "end": 1267,
-    "fill": 89,
-    "breakReason": "Next body: A hand churner or an appropriate electric churner can supply agit",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1328,
+    "fill": 93,
+    "breakReason": "Next heading: 9.7 Churning and Magnetic Separation",
     "blocks": [
+      {
+        "id": "design-task",
+        "type": "activity",
+        "text": "1. Design a small model filter using teacher-approved materials such as cloth, washed sand and washed gravel. Sketch a stable arrangement in your notebook before building it. Any container cutting is an adult’s job. 2. Test with a prepared sand-and-soil water sample, not collected pond water. Measure equal sample volumes. Keep a little unfiltered mixture for comparison. 3. Collect the output and record its appearance, volume and the time taken. Change one feature, such as the cloth layers, and repeat with a fresh comparable sample. 4. Explain what improved and what your test cannot establish. Do not drink the output, even if it looks clear. Keep it away from food and wash hands and equipment afterwards.",
+        "top": 112,
+        "bottom": 644,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "design-task"
+      },
       {
         "id": "design-evidence-0",
         "type": "body",
         "text": "Washed sand, cloth and other media can retain some particles. Activated carbon in suitable commercial filters can also hold some dissolved substances on its surfaces; that is not the same mechanism as simple sieving. A homemade filter has no tested claim to remove every germ or chemical. A drinking-water system needs treatment appropriate to its source.",
-        "top": 112,
-        "bottom": 176,
+        "top": 644,
+        "bottom": 708,
         "before": 0,
         "keepNext": false
       },
@@ -764,8 +812,8 @@
         "id": "design-evidence-1",
         "type": "body",
         "text": "Washed sand, cloth and other media can retain some particles. Activated carbon in suitable commercial filters can also hold some dissolved substances on its surfaces; that is not the same mechanism as simple sieving. A homemade filter has no tested claim to remove every germ or chemical. A drinking-water system needs treatment appropriate to its source.",
-        "top": 176,
-        "bottom": 288,
+        "top": 708,
+        "bottom": 820,
         "before": 0,
         "keepNext": false
       },
@@ -773,8 +821,8 @@
         "id": "tea-net-0",
         "type": "body",
         "text": "A tea bag retains leaves while water and dissolved flavouring substances pass through it. A fishing net also separates by size, but its much larger openings retain fish or large debris. These examples show a shared idea; they do not make a net a fine water filter.",
-        "top": 288,
-        "bottom": 352,
+        "top": 820,
+        "bottom": 884,
         "before": 0,
         "keepNext": false
       },
@@ -782,8 +830,8 @@
         "id": "tea-net-1",
         "type": "body",
         "text": "A tea bag retains leaves while water and dissolved flavouring substances pass through it. A fishing net also separates by size, but its much larger openings retain fish or large debris. These examples show a shared idea; they do not make a net a fine water filter.",
-        "top": 352,
-        "bottom": 432,
+        "top": 884,
+        "bottom": 964,
         "before": 0,
         "keepNext": false
       },
@@ -791,8 +839,8 @@
         "id": "pollution-0",
         "type": "body",
         "text": "Malli notices plastic litter caught in a fishing net. Removing litter can help, but preventing it from entering water is better. Write a short original poem about this problem. Give one action people can take and check that the poem does not imply that a net removes dissolved pollution.",
-        "top": 432,
-        "bottom": 496,
+        "top": 964,
+        "bottom": 1028,
         "before": 0,
         "keepNext": false
       },
@@ -800,18 +848,47 @@
         "id": "pollution-1",
         "type": "body",
         "text": "Malli notices plastic litter caught in a fishing net. Removing litter can help, but preventing it from entering water is better. Write a short original poem about this problem. Give one action people can take and check that the poem does not imply that a net removes dissolved pollution.",
-        "top": 496,
-        "bottom": 576,
+        "top": 1028,
+        "bottom": 1108,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
+        "top": 1108,
+        "bottom": 1328
+      }
+    ],
+    "protectedNext": {
+      "id": "churn-heading",
+      "type": "heading",
+      "height": 70,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 11,
+    "title": "9.7 Churning and Magnetic Separation",
+    "titleRole": "section",
+    "sourcePages": [
+      11,
+      12,
+      13
+    ],
+    "end": 1380,
+    "fill": 97,
+    "breakReason": "Next body: Not every metal is strongly attracted to a classroom magnet. Iron",
+    "blocks": [
+      {
         "id": "churn-heading",
         "type": "heading",
         "text": "9.7 Churning and Magnetic Separation",
-        "top": 588,
-        "bottom": 646,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
@@ -819,8 +896,8 @@
         "type": "illustrated-prose",
         "text": "Fig. 9.5 · A mathni and pot, with collected butter beside them.",
         "artKey": "churning",
-        "top": 646,
-        "bottom": 1123,
+        "top": 170,
+        "bottom": 647,
         "before": 0,
         "keepNext": false
       },
@@ -828,8 +905,8 @@
         "id": "milk-0",
         "type": "body",
         "text": "An adult can demonstrate curdling fresh pasteurised milk with a suitable food acid, then straining the curds from the liquid. Curdling creates the clumps; straining separates them. Milk that has spoiled accidentally is different: do not taste it or assume cooking will make it safe. An adult should discard suspect milk.",
-        "top": 1123,
-        "bottom": 1187,
+        "top": 647,
+        "bottom": 711,
         "before": 0,
         "keepNext": false
       },
@@ -837,39 +914,17 @@
         "id": "milk-1",
         "type": "body",
         "text": "An adult can demonstrate curdling fresh pasteurised milk with a suitable food acid, then straining the curds from the liquid. Curdling creates the clumps; straining separates them. Milk that has spoiled accidentally is different: do not taste it or assume cooking will make it safe. An adult should discard suspect milk.",
-        "top": 1187,
-        "bottom": 1267,
+        "top": 711,
+        "bottom": 791,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "appliance-0",
-      "type": "body",
-      "height": 64,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 11,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      12,
-      13,
-      14,
-      19
-    ],
-    "end": 1235,
-    "fill": 86,
-    "breakReason": "Next activity: 1. Make slips for the ten situations listed below. Provide two ba",
-    "blocks": [
+      },
       {
         "id": "appliance-0",
         "type": "body",
         "text": "A hand churner or an appropriate electric churner can supply agitation. Name an appliance used for this job at home, if there is one, and explain its role. Observe only while an adult operates it; do not insert fingers or utensils into a moving appliance.",
-        "top": 112,
-        "bottom": 176,
+        "top": 791,
+        "bottom": 855,
         "before": 0,
         "keepNext": false
       },
@@ -877,8 +932,8 @@
         "id": "appliance-1",
         "type": "body",
         "text": "A hand churner or an appropriate electric churner can supply agitation. Name an appliance used for this job at home, if there is one, and explain its role. Observe only while an adult operates it; do not insert fingers or utensils into a moving appliance.",
-        "top": 176,
-        "bottom": 256,
+        "top": 855,
+        "bottom": 935,
         "before": 0,
         "keepNext": false
       },
@@ -887,79 +942,16 @@
         "type": "illustrated-prose",
         "text": "Fig. 9.6 · Iron nails contact the magnet; most wood shavings remain in the tray.",
         "artKey": "magnet",
-        "top": 256,
-        "bottom": 701,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "magnet-limit-0",
-        "type": "body",
-        "text": "Not every metal is strongly attracted to a classroom magnet. Iron and many steels are; aluminium and copper are not. A magnet also cannot separate two components if both respond similarly. Some non-magnetic pieces may be carried along when caught between attracted objects, so inspect the recovered material.",
-        "top": 701,
-        "bottom": 765,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "magnet-limit-1",
-        "type": "body",
-        "text": "Not every metal is strongly attracted to a classroom magnet. Iron and many steels are; aluminium and copper are not. A magnet also cannot separate two components if both respond similarly. Some non-magnetic pieces may be carried along when caught between attracted objects, so inspect the recovered material.",
-        "top": 765,
-        "bottom": 845,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "recycling-0",
-        "type": "body",
-        "text": "Recyclers use large magnets to lift iron and steel from mixed scrap. The recovered metal can be sorted and processed for reuse. Other materials need other methods. A magnetic crane is an industrial machine; watch only from a permitted safe area, never from beneath its load.",
-        "top": 845,
-        "bottom": 909,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "recycling-1",
-        "type": "body",
-        "text": "Recyclers use large magnets to lift iron and steel from mixed scrap. The recovered metal can be sorted and processed for reuse. Other materials need other methods. A magnetic crane is an industrial machine; watch only from a permitted safe area, never from beneath its load.",
-        "top": 909,
-        "bottom": 989,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "sequence-heading",
-        "type": "heading",
-        "text": "9.8 Choosing a Sequence",
-        "top": 1001,
-        "bottom": 1059,
-        "before": 12,
-        "keepNext": false
-      },
-      {
-        "id": "sequence-0",
-        "type": "body",
-        "text": "Ask three questions before choosing: What components are present? Which properties differ? What must be recovered? To recover salt from sand and salt, for example, dissolve the salt in water, filter off the sand, then evaporate water from the filtrate. Filtering first without adding water would not use the solubility difference.",
-        "top": 1059,
-        "bottom": 1123,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "sequence-1",
-        "type": "body",
-        "text": "Ask three questions before choosing: What components are present? Which properties differ? What must be recovered? To recover salt from sand and salt, for example, dissolve the salt in water, filter off the sand, then evaporate water from the filtrate. Filtering first without adding water would not use the solubility difference.",
-        "top": 1123,
-        "bottom": 1235,
+        "top": 935,
+        "bottom": 1380,
         "before": 0,
         "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "purpose-task",
-      "type": "activity",
-      "height": 360,
+      "id": "magnet-limit-0",
+      "type": "body",
+      "height": 64,
       "keepNext": false
     }
   },
@@ -968,30 +960,131 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
+      12,
       13,
       14,
       19
     ],
-    "end": 1288,
-    "fill": 90,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/magnet.png",
+      "caption": "Magnetic separation equipment."
+    },
+    "end": 1226,
+    "fill": 85,
+    "breakReason": "Next table: Situations for your separation slips",
     "blocks": [
+      {
+        "id": "magnet-limit-0",
+        "type": "body",
+        "text": "Not every metal is strongly attracted to a classroom magnet. Iron and many steels are; aluminium and copper are not. A magnet also cannot separate two components if both respond similarly. Some non-magnetic pieces may be carried along when caught between attracted objects, so inspect the recovered material.",
+        "top": 112,
+        "bottom": 176,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "magnet-limit-1",
+        "type": "body",
+        "text": "Not every metal is strongly attracted to a classroom magnet. Iron and many steels are; aluminium and copper are not. A magnet also cannot separate two components if both respond similarly. Some non-magnetic pieces may be carried along when caught between attracted objects, so inspect the recovered material.",
+        "top": 176,
+        "bottom": 256,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "recycling-0",
+        "type": "body",
+        "text": "Recyclers use large magnets to lift iron and steel from mixed scrap. The recovered metal can be sorted and processed for reuse. Other materials need other methods. A magnetic crane is an industrial machine; watch only from a permitted safe area, never from beneath its load.",
+        "top": 256,
+        "bottom": 320,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "recycling-1",
+        "type": "body",
+        "text": "Recyclers use large magnets to lift iron and steel from mixed scrap. The recovered metal can be sorted and processed for reuse. Other materials need other methods. A magnetic crane is an industrial machine; watch only from a permitted safe area, never from beneath its load.",
+        "top": 320,
+        "bottom": 400,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "sequence-heading",
+        "type": "heading",
+        "text": "9.8 Choosing a Sequence",
+        "top": 412,
+        "bottom": 470,
+        "before": 12,
+        "keepNext": false
+      },
+      {
+        "id": "sequence-0",
+        "type": "body",
+        "text": "Ask three questions before choosing: What components are present? Which properties differ? What must be recovered? To recover salt from sand and salt, for example, dissolve the salt in water, filter off the sand, then evaporate water from the filtrate. Filtering first without adding water would not use the solubility difference.",
+        "top": 470,
+        "bottom": 534,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "sequence-1",
+        "type": "body",
+        "text": "Ask three questions before choosing: What components are present? Which properties differ? What must be recovered? To recover salt from sand and salt, for example, dissolve the salt in water, filter off the sand, then evaporate water from the filtrate. Filtering first without adding water would not use the solubility difference.",
+        "top": 534,
+        "bottom": 646,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "purpose-task",
         "type": "activity",
         "text": "1. Make slips for the ten situations listed below. Provide two baskets labelled “Remove an unwanted component” and “Recover useful components”. 2. Take turns placing a slip and explaining the intended use, the method and a property it uses. A team may put the same situation in either basket if it clearly states a different purpose. 3. Discuss cases that need more information. Award credit for a justified choice, not only for matching another group’s basket.",
-        "top": 112,
-        "bottom": 472,
+        "top": 646,
+        "bottom": 1006,
         "before": 0,
         "keepNext": false,
         "conceptId": "purpose-task"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Magnetic separation equipment.",
+        "artKey": "figures/class-6/science/ch09/magnet.png",
+        "top": 1006,
+        "bottom": 1226
+      }
+    ],
+    "protectedNext": {
+      "id": "purpose-cards",
+      "type": "table",
+      "height": 672,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 13,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      13,
+      14,
+      19
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1148,
+    "fill": 80,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "purpose-cards",
         "type": "table",
         "text": "Situations for your separation slips",
-        "top": 472,
-        "bottom": 1144,
+        "top": 112,
+        "bottom": 784,
         "before": 0,
         "keepNext": false
       },
@@ -999,8 +1092,8 @@
         "id": "sequence-close-0",
         "type": "body",
         "text": "A method is useful when it exploits a difference that is actually present. Check what was recovered, what remained mixed and what may have been lost. Two sensible sequences may exist, but a claim of complete separation needs evidence, not just a list of method names.",
-        "top": 1144,
-        "bottom": 1208,
+        "top": 784,
+        "bottom": 848,
         "before": 0,
         "keepNext": false
       },
@@ -1008,26 +1101,38 @@
         "id": "sequence-close-1",
         "type": "body",
         "text": "A method is useful when it exploits a difference that is actually present. Check what was recovered, what remained mixed and what may have been lost. Two sensible sequences may exist, but a claim of complete separation needs evidence, not just a list of method names.",
-        "top": 1208,
-        "bottom": 1288,
+        "top": 848,
+        "bottom": 928,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
+        "top": 928,
+        "bottom": 1148
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 13,
+    "page": 14,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
       14
     ],
-    "end": 1040,
-    "fill": 71
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1260,
+    "fill": 88
   },
   {
-    "page": 14,
+    "page": 15,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
@@ -1037,15 +1142,19 @@
     "fill": 83
   },
   {
-    "page": 15,
+    "page": 16,
     "title": "Let Us Play",
     "titleRole": "assessment",
     "sourcePages": [
       15,
       16
     ],
-    "end": 1158,
-    "fill": 80,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/magnet.png",
+      "caption": "Magnetic separation equipment."
+    },
+    "end": 1378,
+    "fill": 97,
     "breakReason": "Next heading: Let Us Enhance Our Learning",
     "blocks": [
       {
@@ -1075,6 +1184,14 @@
         "bottom": 1158,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Magnetic separation equipment.",
+        "artKey": "figures/class-6/science/ch09/magnet.png",
+        "top": 1158,
+        "bottom": 1378
       }
     ],
     "protectedNext": {
@@ -1085,7 +1202,7 @@
     }
   },
   {
-    "page": 16,
+    "page": 17,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
@@ -1093,9 +1210,13 @@
       17,
       18
     ],
-    "end": 1388,
-    "fill": 98,
-    "breakReason": "Next question: When might you use decantation instead of filtration for a solid–",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/churning.png",
+      "caption": "Equipment for churning."
+    },
+    "end": 1178,
+    "fill": 82,
+    "breakReason": "Next question: Match mixtures with suitable methods. Explain the property used i",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -1152,40 +1273,51 @@
         "keepNext": false
       },
       {
-        "id": "q5",
-        "type": "question",
-        "text": "Match mixtures with suitable methods. Explain the property used in two matches; options are out of order.",
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Equipment for churning.",
+        "artKey": "figures/class-6/science/ch09/churning.png",
         "top": 958,
-        "bottom": 1388,
-        "before": 0,
-        "keepNext": false
+        "bottom": 1178
       }
     ],
     "protectedNext": {
-      "id": "q6",
+      "id": "q5",
       "type": "question",
-      "height": 126,
+      "height": 430,
       "keepNext": false
     }
   },
   {
-    "page": 17,
+    "page": 18,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
-      17,
-      18
+      17
     ],
-    "end": 1294,
-    "fill": 91,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1172,
+    "fill": 81,
+    "breakReason": "Next question: You have a dry mixture of whole potatoes, common salt and sawdust",
     "blocks": [
+      {
+        "id": "q5",
+        "type": "question",
+        "text": "Match mixtures with suitable methods. Explain the property used in two matches; options are out of order.",
+        "top": 112,
+        "bottom": 542,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "q6",
         "type": "question",
         "text": "When might you use decantation instead of filtration for a solid–liquid mixture? Explain what you would need to observe first, and describe a limitation of the recovered liquid.",
-        "top": 112,
-        "bottom": 238,
+        "top": 542,
+        "bottom": 668,
         "before": 0,
         "keepNext": false
       },
@@ -1193,8 +1325,8 @@
         "id": "q7",
         "type": "question",
         "text": "How are nasal hairs loosely similar to a filter? Explain why this comparison does not mean that they stop every airborne particle or make polluted air safe.",
-        "top": 238,
-        "bottom": 364,
+        "top": 668,
+        "bottom": 794,
         "before": 0,
         "keepNext": false
       },
@@ -1202,17 +1334,48 @@
         "id": "q8",
         "type": "question",
         "text": "Cloth masks may use woven fabrics; medical masks commonly use layers of non-woven material. How does filtering breathed-out or breathed-in particles help reduce the spread of respiratory infections? Why do material, fit and gaps matter? Do not test a mask with smoke or powders.",
-        "top": 364,
-        "bottom": 522,
+        "top": 794,
+        "bottom": 952,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
+        "top": 952,
+        "bottom": 1172
+      }
+    ],
+    "protectedNext": {
+      "id": "q9",
+      "type": "question",
+      "height": 190,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 19,
+    "title": "",
+    "titleRole": "assessment",
+    "sourcePages": [
+      18
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 1104,
+    "fill": 76,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "q9",
         "type": "question",
         "text": "You have a dry mixture of whole potatoes, common salt and sawdust. Plan how to recover all three, explaining each step and where each component goes. You may add water. Which component would not be retained by ordinary filter paper after dissolving? Keep this as a written plan; an adult would handle any heating.",
-        "top": 522,
-        "bottom": 712,
+        "top": 112,
+        "bottom": 302,
         "before": 0,
         "keepNext": false
       },
@@ -1220,28 +1383,37 @@
         "id": "q10",
         "type": "question",
         "text": "Read the story and supply the choices that describe what happened. Then challenge the final claim. Give the story a suitable title.",
-        "top": 712,
-        "bottom": 1294,
+        "top": 302,
+        "bottom": 884,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
+        "top": 884,
+        "bottom": 1104
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 18,
+    "page": 20,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [
       18,
-      19,
-      2,
-      5,
-      6
+      19
     ],
-    "end": 1330,
-    "fill": 93,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/salt.png",
+      "caption": "Separating salt from water."
+    },
+    "end": 906,
+    "fill": 61,
+    "breakReason": "Next project: Ask a teacher to arrange a respectful interview with an adult was",
     "blocks": [
       {
         "id": "project-heading",
@@ -1283,11 +1455,46 @@
         "conceptId": "project-week"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Separating salt from water.",
+        "artKey": "figures/class-6/science/ch09/salt.png",
+        "top": 686,
+        "bottom": 906
+      }
+    ],
+    "protectedNext": {
+      "id": "project-community",
+      "type": "project",
+      "height": 204,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 21,
+    "title": "",
+    "titleRole": "projects",
+    "sourcePages": [
+      18,
+      2,
+      5,
+      6,
+      19
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch09/filtration.png",
+      "caption": "A filtration setup."
+    },
+    "end": 976,
+    "fill": 66,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "project-community",
         "type": "project",
         "text": "Ask a teacher to arrange a respectful interview with an adult waste-sorting worker about their methods. Do not enter waste piles, handle discarded objects or photograph without permission. Report accurately and discuss how the community can support children’s schooling.",
-        "top": 686,
-        "bottom": 890,
+        "top": 112,
+        "bottom": 316,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-community"
@@ -1296,8 +1503,8 @@
         "id": "project-reporter",
         "type": "project",
         "text": "Collect dated reports about separation in farming or construction. A teacher may arrange a farmer interview about machinery and human decisions. Also research the Salt March for a poster, or collect a harvest song with permission and describe its setting.",
-        "top": 890,
-        "bottom": 1094,
+        "top": 316,
+        "bottom": 520,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-reporter"
@@ -1306,11 +1513,19 @@
         "id": "project-mixture",
         "type": "project",
         "text": "Plan to recover iron nails, sand, whole black pepper, stones, salt and water from a mixture. State the particle sizes and other information needed. Has the salt dissolved? Trace each component through your steps. Compare two sequences and possible losses. How would you recover the water too? Keep this a written plan unless your teacher directs a safe demonstration.",
-        "top": 1094,
-        "bottom": 1330,
+        "top": 520,
+        "bottom": 756,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-mixture"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A filtration setup.",
+        "artKey": "figures/class-6/science/ch09/filtration.png",
+        "top": 756,
+        "bottom": 976
       }
     ],
     "protectedNext": null

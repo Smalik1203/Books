@@ -1,3 +1,4 @@
+import {completeIllustratedPage,pageImageReserve} from './science-page-illustrations.mjs';
 import {comparisonTableBlock} from './science-g7-comparison-tables.mjs';
 // Independent Grade 7 Chapter 7 authoring entry point. Shared Science typography,
 // opener, feature headings and protected-block pagination; no writes to older chapters.
@@ -103,7 +104,7 @@ function render(meta){
 }
 for(const meta of lesson)render(meta);
 const lessonBlockCount=blocks.length;
-const fitted=refitV2Lesson([{blocks}]);
+const fitted=refitV2Lesson([{blocks}],{imageReserve:pageImageReserve});
 const band=chapterOpener({id:'science-g7-ch07',number,titleLines:['Heat Transfer','in Nature'],bleed:Math.ceil(metrics.bleed*1052/metrics.trimW),image:{href:`../../figures/class-${grade}/science/ch07/opener.png`,aspect:1.5,alt:'A Sikkim family watching thukpa being cooked on an enclosed stove'}});
 const motif=scienceHeaderArt(grade,number);
 let openerHtml=band.html.replace('<line class="chapter-opener__divider"',motif+'<line class="chapter-opener__divider"'),y=band.bodyTop;
@@ -123,19 +124,19 @@ blocks.length=0;
 render({id:'assessment-heading',type:'heading',text:'Let Us Enhance Our Learning',source:[13,14]});
 render({id:'assessment-intro',type:'body',text:'Use your notebook. Support each answer with evidence and explain any uncertainty.',source:[]});
 exercises.forEach((q,i)=>render({...q,type:'question',number:i+1}));
-pages.push(...refitV2Lesson([{blocks}]).map(p=>({...p,titleRole:'assessment'})));
+pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve}).map(p=>({...p,titleRole:'assessment'})));
 blocks.length=0;
 render({id:'project-heading',type:'heading',text:'Explore Further',source:[16]});
 for(const p of projects){render({id:p.id+'-head',type:'heading',level:2,text:p.title,source:p.source});render({id:p.id,type:'body',text:p.text,source:p.source,keepNext:!!(p.figure||p.diagram),keepWhole:!!(p.figure||p.diagram)});if(p.figure)render({id:p.id+'-figure',type:'figure',figure:p.figure,caption:p.caption,source:p.source});if(p.diagram)render({id:p.id+'-diagram',type:'diagram',diagram:p.diagram,caption:p.caption,source:p.source});}
-pages.push(...refitV2Lesson([{blocks}]).map(p=>({...p,titleRole:'projects'})));
+pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve}).map(p=>({...p,titleRole:'projects'})));
 const map=[];
 for(let i=0;i<pages.length;i++){
- const p=pages[i],n=i+1,verso=n%2===0;
+ const p=completeIllustratedPage(pages[i],grade,number),n=i+1,verso=n%2===0;
  const running=i===0?'':'<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>'+motifs(true)+''+label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')+label(shortTitle,960,40,'v2-running se-running','end')+'<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>';
  const foot='<g class="v2-footer">'+`<line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>`+label('LEARNLAB · SCIENCE '+grade,verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')+`<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>`+label(n,verso?107:945,1487,'v2-folio se-running','middle')+'</g>';
  const html=`<section class="page page--food page--science-editorial page--science-v2 page--g7-ch07${i===0?' page--opener':''}" data-folio="${n}"${i===pages.length-1?' data-close':''}><div class="page__body"><div class="page__main"><svg class="food-sheet science-sheet science-editorial" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 1514" aria-label="${title}, page ${n}">${running}${p.parts}${foot}</svg></div></div></section>`;
  scienceContract('Chapter 7 '+n,html);await fs.writeFile(`${dir}/p${String(n).padStart(3,'0')}.html`,html);
- map.push({page:n,title:p.title,titleRole:p.titleRole,sourcePages:p.source,end:p.end,fill:Math.round((p.end-112)/1303*100),breakReason:p.breakReason,blocks:p.blockAudit,protectedNext:p.protectedNext});
+ map.push({page:n,title:p.title,titleRole:p.titleRole,sourcePages:p.source,pageIllustration:p.pageIllustration?{file:p.pageIllustration.file,caption:p.pageIllustration.caption}:undefined,end:p.end,fill:Math.round((p.end-112)/1303*100),breakReason:p.breakReason,blocks:p.blockAudit,protectedNext:p.protectedNext});
 }
 for(const file of await fs.readdir(dir))if(/^p\d+\.html$/.test(file)&&+file.slice(1,-5)>pages.length)await fs.unlink(path.join(dir,file));
 await fs.mkdir(history,{recursive:true});

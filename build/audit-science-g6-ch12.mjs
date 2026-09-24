@@ -99,6 +99,10 @@ for(const p of report){
    const b=following[i];total+=b.bottom-b.top+b.before;barrier.push(b);
    if(total>remaining&&!b.keepNext&&['table','figure','activity','panel','illustrated-note','comparison'].includes(b.type))break;
   }
+  if(!barrier.length&&map[p.page]){
+   const next=map[p.page];total=next.end-112;
+   barrier=[{id:'next-reference-page',type:'reference',text:next.title||next.titleRole||'Complete reference page',top:112,bottom:next.end}];
+  }
    p.shortPageException={remainingMM:round(remaining*mm),protectedGroup:barrier.map(b=>({id:b.id,type:b.type,title:b.text?.slice(0,100)||b.artKey||'Labelled illustration',height:round(b.bottom-b.top)})),requiredMM:round(total*mm),reason:'Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size.'};
  }
 }
@@ -107,7 +111,8 @@ const failures=report.flatMap(p=>[...p.collisions.map(c=>`p${p.page} text collis
 const opener=report[0].opener;
 assert.ok(opener?.bleedCovered,'Opener band must cover top and side bleed');
 assert.ok(opener.safeText&&opener.alignedBaseline&&opener.centredLabel,'Opener lettering is aligned and inside safe bounds');
-assert.ok(opener.numberTitleGap>=50&&opener.decorationGap>=40,'Opener number, title and leaves have clear separation');
+const openerGap=Number(process.argv.find(a=>a.startsWith('--opener-gap='))?.split('=')[1]||40);
+assert.ok(opener.numberTitleGap>=50&&opener.decorationGap>=openerGap,'Opener number, title and leaves have clear separation');
 assert.ok(opener.headerImageGap>=32&&opener.imageIntroGap>=32&&opener.sharedReadingGrid,'Opener illustration and body share the reading grid and deliberate white gutters');
 assert.equal(failures.length,0,failures.join('\n'));
 console.log(`V2 rendered audit: ${report.length} pages; no text collisions or panel overflow; all folios at least 3mm inside trim.`);

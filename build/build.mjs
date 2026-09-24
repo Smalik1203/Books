@@ -28,6 +28,7 @@ import { windowPad } from './viewport.mjs';
 import { tokenReader, sheetMetrics, px } from './sheet.mjs';
 import { volumeName } from './volume.mjs';
 import { scienceContract } from './science-contract.mjs';
+import {hasContentImage} from './science-page-illustrations.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -499,6 +500,7 @@ async function buildChapter(rel) {
   for (const f of files) {
     const frag = (await readFile(path.join(src, f), 'utf8')).trim();
     if(meta.subject==='Science')scienceContract(f,frag,meta.scienceVocabulary);
+    if(meta.subject==='Science'&&/^class-[67]\//.test(rel.replaceAll('\\','/'))&&!hasContentImage(frag))throw Error(`${rel}/${f}: every science page needs a content image; feature icons do not count`);
     lint += lintPage(f, frag);
     parts.push(`<!-- ${f} -->\n` + frag);
   }

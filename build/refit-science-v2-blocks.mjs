@@ -1,12 +1,14 @@
 // Refit the lesson's authored blocks, retaining exact type and artwork sizes.
 // The opener and dedicated reference pages are excluded by the caller.
-export function refitV2Lesson(plans){
+import {hasContentImage} from './science-page-illustrations.mjs';
+export function refitV2Lesson(plans,{imageReserve=0}={}){
  const top=112,bottom=1415,capacity=bottom-top;
  const blocks=plans.flatMap(p=>p.blocks).map((b,i)=>({...b,id:b.atomId||`reading-${i}`,before:b.type==='heading'?12:0,h:b.h+(b.type==='heading'?12:0)}));
- const n=blocks.length,prefix=[0];
+ const n=blocks.length,prefix=[0],images=[0];
  for(const b of blocks){
   if(b.h<=0||b.h>capacity)throw Error('Invalid V2 reading block: '+b.type+' '+b.h);
   prefix.push(prefix.at(-1)+b.h);
+  images.push(images.at(-1)+(hasContentImage(b.html)?1:0));
  }
  function legal(start,end){
   if(blocks[start].type==='rule')return false;
@@ -26,7 +28,10 @@ export function refitV2Lesson(plans){
  for(let start=n-1;start>=0;start--){
   for(let end=start+1;end<=n&&prefix[end]-prefix[start]-blocks[start].before<=capacity;end++){
    if(!best[end]||!legal(start,end))continue;
-   const used=prefix[end]-prefix[start]-blocks[start].before,gap=capacity-used;
+   const used=prefix[end]-prefix[start]-blocks[start].before;
+   const reserve=images[end]===images[start]?imageReserve:0;
+   if(used+reserve>capacity)continue;
+   const gap=capacity-used-reserve;
    const proposal={pages:best[end].pages+1,cost:best[end].cost+gap*gap,end};
    if(!best[start]||proposal.pages<best[start].pages||(proposal.pages===best[start].pages&&proposal.cost<best[start].cost))best[start]=proposal;
   }

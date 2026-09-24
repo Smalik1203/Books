@@ -9,9 +9,9 @@ const chapter='class-7/ch07-heat-transfer-in-nature',dir='pages/'+chapter,histor
 const files=(await fs.readdir(dir)).filter(f=>/^p\d+\.html$/.test(f)).sort();
 const htmls=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8'))),all=htmls.join('\n');
 const norm=s=>s.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/\*/g,'').replace(/\s+/g,' ').trim();
-const extract=s=>norm([...s.replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' '));
+const extract=s=>norm([...s.replace(/<g\b[^>]*data-page-illustration=[\s\S]*?<\/g>/g,'').replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' '));
 const pages=htmls.map(extract),text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing teaching content: '+s);
-assert.equal(files.length,19,'Reviewed chapter extent');
+assert.equal(files.length,19,'Reviewed extent with an image on every page');
 htmls.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));});
 opener.forEach(s=>assert.ok(pages[0].includes(norm(s))));
 for(const b of lesson){
@@ -41,7 +41,8 @@ assert.ok(!/____|textLength=|lengthAdjust=|--head|--tail|style=/.test(all),'No w
 const assets=JSON.parse(await fs.readFile(history+'/artwork.json','utf8'));assert.equal(assets.length,17);
 assert.deepEqual(assets.filter(a=>a.key.startsWith('apparatus-')).map(a=>a.key).sort(),['aquifer','beaker','beaker-flow','bowls','candle','coast','cups','pan','seepage','spiral','strip','test-tubes'].map(k=>'apparatus-'+k).sort());
 for(const a of assets){assert.equal(createHash('sha256').update(await fs.readFile(a.file)).digest('hex'),a.sha256);assert.ok(all.includes(a.file));}
-for(const m of all.matchAll(/<image\b[^>]*href="([^"]+)"/g)){assert.ok(m[1].endsWith('.png')&&m[1].includes('/class-7/science/ch07/'));await fs.access(path.resolve('build/class-7',m[1]));}
+const referenceAssets=JSON.parse(await fs.readFile('assets/design-history/science-page-images/catalog.json','utf8'))['7-7'].map(a=>'../../'+a.file);
+for(const m of all.matchAll(/<image\b[^>]*href="([^"]+)"/g)){assert.ok(m[1].endsWith('.png')&&(m[1].includes('/class-7/science/ch07/')||referenceAssets.includes(m[1])));await fs.access(path.resolve('build/class-7',m[1]));}
 const audit=JSON.parse(await fs.readFile(history+'/render-audit.json','utf8'));
 const lessonPages=audit.pages.slice(1,map.findIndex(p=>p.title==='Keywords'));
 for(const p of lessonPages)if(p.occupiedPercent<88)assert.ok(p.shortPageException?.protectedGroup.length||(map[p.page-1].breakReason==='End of lesson before reference pages'&&map[p.page-1].protectedNext===null&&map[p.page]?.title==='Keywords'),'Short page explained: '+p.page);

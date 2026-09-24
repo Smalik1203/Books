@@ -28,7 +28,7 @@
       },
       "opener": {
         "bandBounds": {
-          "left": -16.999999504623926,
+          "left": -16.999999504623922,
           "top": -16.99999991465431,
           "right": 1068.9999966956375,
           "bottom": 300.0000062599209
@@ -52,7 +52,7 @@
             "text": "Materials",
             "left": 283.99999890163804,
             "top": 118,
-            "right": 490.96290552709974,
+            "right": 490.9629055270998,
             "bottom": 157
           },
           {
@@ -84,7 +84,7 @@
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1192.2
+        "bottom": 1082
       },
       "blocks": [
         {
@@ -128,56 +128,31 @@
           "top": 801,
           "right": 936,
           "bottom": 865.4
-        },
-        {
-          "id": "object-material-table",
-          "left": 89,
-          "top": 881.5,
-          "right": 963,
-          "bottom": 1192.2
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.545575014439,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 40,
-      "occupiedPercent": 82.9,
+      "bottomGapMM": 59.8,
+      "occupiedPercent": 74.4,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 37.5,
+        "remainingMM": 56.2,
         "protectedGroup": [
           {
-            "id": "clay-head",
-            "type": "heading",
-            "title": "From Clay to a Useful Vessel",
-            "height": 48
-          },
-          {
-            "id": "clay-story-0",
-            "type": "body",
-            "title": "People have chosen and worked materials for a very long time. Clay can be cleaned, mixed with water,",
-            "height": 64
-          },
-          {
-            "id": "clay-story-1",
-            "type": "body",
-            "title": "People have chosen and worked materials for a very long time. Clay can be cleaned, mixed with water,",
-            "height": 112
-          },
-          {
-            "id": "pottery-picture",
-            "type": "figure",
-            "title": "A clay jar and bowl illustrate different forms made from one material. This is a craft illustration,",
-            "height": 392
+            "id": "object-material-table",
+            "type": "table",
+            "title": "Keep object, material and property distinct",
+            "height": 324
           }
         ],
-        "requiredMM": 110.7,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 58.2,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
@@ -185,66 +160,45 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112.5,
+        "top": 111.5,
         "right": 963,
-        "bottom": 1312
+        "bottom": 1037.2
       },
       "blocks": [
         {
+          "id": "object-material-table",
+          "left": 89,
+          "top": 111.5,
+          "right": 963,
+          "bottom": 422.2
+        },
+        {
           "id": "clay-head",
           "left": 89,
-          "top": 112.5,
+          "top": 448.5,
           "right": 455.8,
-          "bottom": 152.3
+          "bottom": 488.3
         },
         {
           "id": "clay-story-0",
           "left": 89,
-          "top": 159,
+          "top": 495,
           "right": 884.1,
-          "bottom": 223.4
+          "bottom": 559.4
         },
         {
           "id": "clay-story-1",
           "left": 87.5,
-          "top": 223,
+          "top": 559,
           "right": 929.6,
-          "bottom": 319.4
+          "bottom": 655.4
         },
         {
           "id": "pottery-picture",
           "left": 87.5,
-          "top": 336,
+          "top": 672,
           "right": 802.8,
-          "bottom": 701.2
-        },
-        {
-          "id": "clay-evidence-0",
-          "left": 89,
-          "top": 727,
-          "right": 949.7,
-          "bottom": 791.4
-        },
-        {
-          "id": "clay-evidence-1",
-          "left": 89,
-          "top": 791,
-          "right": 954.6,
-          "bottom": 887.4
-        },
-        {
-          "id": "group-head",
-          "left": 89,
-          "top": 915.7,
-          "right": 534.2,
-          "bottom": 965.8
-        },
-        {
-          "id": "group-task",
-          "left": 89,
-          "top": 974,
-          "right": 963,
-          "bottom": 1312
+          "bottom": 1037.2
         }
       ],
       "collisions": [],
@@ -255,93 +209,117 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 18.5,
-      "occupiedPercent": 92.1,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 67.9,
+      "occupiedPercent": 71,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 63.1,
+        "protectedGroup": [
+          {
+            "id": "clay-evidence-0",
+            "type": "body",
+            "title": "Shape is only one part of the choice. A storage jar must hold its contents; a vessel used for heatin",
+            "height": 64
+          },
+          {
+            "id": "clay-evidence-1",
+            "type": "body",
+            "title": "Shape is only one part of the choice. A storage jar must hold its contents; a vessel used for heatin",
+            "height": 112
+          },
+          {
+            "id": "group-head",
+            "type": "heading",
+            "title": "6.2 Grouping for a Purpose",
+            "height": 58
+          },
+          {
+            "id": "group-task",
+            "type": "activity",
+            "title": "1. Collect safe objects such as a notebook, spoon, eraser, wooden block, plastic lid and piece of cl",
+            "height": 360
+          }
+        ],
+        "requiredMM": 108.9,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 4,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
+        "left": 89,
         "top": 111,
         "right": 963,
-        "bottom": 1241.4
+        "bottom": 1062
       },
       "blocks": [
         {
-          "id": "group-evidence-0",
+          "id": "clay-evidence-0",
           "left": 89,
           "top": 111,
-          "right": 950.6,
+          "right": 949.7,
           "bottom": 175.4
+        },
+        {
+          "id": "clay-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 954.6,
+          "bottom": 271.4
+        },
+        {
+          "id": "group-head",
+          "left": 89,
+          "top": 299.7,
+          "right": 534.2,
+          "bottom": 349.8
+        },
+        {
+          "id": "group-task",
+          "left": 89,
+          "top": 358,
+          "right": 963,
+          "bottom": 696
+        },
+        {
+          "id": "group-evidence-0",
+          "left": 89,
+          "top": 717,
+          "right": 950.6,
+          "bottom": 781.4
         },
         {
           "id": "group-evidence-1",
           "left": 89,
-          "top": 175,
+          "top": 781,
           "right": 935.1,
-          "bottom": 239.4
-        },
-        {
-          "id": "tumbler-think",
-          "left": 89,
-          "top": 256,
-          "right": 963,
-          "bottom": 582
-        },
-        {
-          "id": "purpose-evidence-0",
-          "left": 87.5,
-          "top": 603,
-          "right": 940.7,
-          "bottom": 667.4
-        },
-        {
-          "id": "purpose-evidence-1",
-          "left": 89,
-          "top": 667,
-          "right": 926.7,
-          "bottom": 731.4
-        },
-        {
-          "id": "tumbler-table",
-          "left": 89,
-          "top": 747.5,
-          "right": 963,
-          "bottom": 1130
-        },
-        {
-          "id": "sports-story-0",
-          "left": 87.5,
-          "top": 1145,
-          "right": 950.5,
-          "bottom": 1241.4
+          "bottom": 845.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5455750144392,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 31.2,
-      "occupiedPercent": 86.7,
+      "bottomGapMM": 63.4,
+      "occupiedPercent": 72.9,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 28.2,
+        "remainingMM": 59.8,
         "protectedGroup": [
           {
-            "id": "balls-picture",
-            "type": "figure",
-            "title": "A tennis ball, a cricket ball and a hand-exercise ball have different constructions. Compare the act",
-            "height": 389
+            "id": "tumbler-think",
+            "type": "panel",
+            "title": "Suggest materials for a drinking tumbler. For each suggestion, explain how it could hold water, keep",
+            "height": 348
           }
         ],
-        "requiredMM": 69.9,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 62.5,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
@@ -351,36 +329,36 @@
         "left": 87.5,
         "top": 112,
         "right": 963,
-        "bottom": 1192.4
+        "bottom": 1202
       },
       "blocks": [
         {
-          "id": "balls-picture",
-          "left": 87.5,
+          "id": "tumbler-think",
+          "left": 89,
           "top": 112,
-          "right": 908.5,
-          "bottom": 474.2
-        },
-        {
-          "id": "bounce-task",
-          "left": 89,
-          "top": 501,
           "right": 963,
-          "bottom": 1043
+          "bottom": 438
         },
         {
-          "id": "bounce-evidence-0",
+          "id": "purpose-evidence-0",
           "left": 87.5,
-          "top": 1064,
-          "right": 936.5,
-          "bottom": 1128.4
+          "top": 459,
+          "right": 940.7,
+          "bottom": 523.4
         },
         {
-          "id": "bounce-evidence-1",
+          "id": "purpose-evidence-1",
           "left": 89,
-          "top": 1128,
-          "right": 920.3,
-          "bottom": 1192.4
+          "top": 523,
+          "right": 926.7,
+          "bottom": 587.4
+        },
+        {
+          "id": "tumbler-table",
+          "left": 89,
+          "top": 603.5,
+          "right": 963,
+          "bottom": 986
         }
       ],
       "collisions": [],
@@ -391,12 +369,87 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 40,
-      "occupiedPercent": 82.9,
+      "bottomGapMM": 38.3,
+      "occupiedPercent": 83.7,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 37,
+        "remainingMM": 34.7,
         "protectedGroup": [
+          {
+            "id": "sports-story-0",
+            "type": "body",
+            "title": "Would a cricket ball be a good substitute for a tennis ball? Think about its surface, mass and behav",
+            "height": 112
+          },
+          {
+            "id": "balls-picture",
+            "type": "figure",
+            "title": "A tennis ball, a cricket ball and a hand-exercise ball have different constructions. Compare the act",
+            "height": 389
+          }
+        ],
+        "requiredMM": 90,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 6,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1155
+      },
+      "blocks": [
+        {
+          "id": "sports-story-0",
+          "left": 87.5,
+          "top": 111,
+          "right": 950.5,
+          "bottom": 207.4
+        },
+        {
+          "id": "balls-picture",
+          "left": 87.5,
+          "top": 224,
+          "right": 908.5,
+          "bottom": 586.2
+        },
+        {
+          "id": "bounce-task",
+          "left": 89,
+          "top": 613,
+          "right": 963,
+          "bottom": 1155
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 99.98157882284575,
+        "top": 1457.5455750144392,
+        "right": 114.01842108809788,
+        "bottom": 1495.836239816701
+      },
+      "bottomGapMM": 46.7,
+      "occupiedPercent": 80,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 42.8,
+        "protectedGroup": [
+          {
+            "id": "bounce-evidence-0",
+            "type": "body",
+            "title": "A bounce depends on the material and the ball’s construction, as well as the surface and release con",
+            "height": 64
+          },
+          {
+            "id": "bounce-evidence-1",
+            "type": "body",
+            "title": "A bounce depends on the material and the ball’s construction, as well as the surface and release con",
+            "height": 80
+          },
           {
             "id": "appearance-head",
             "type": "heading",
@@ -422,98 +475,110 @@
             "height": 369
           }
         ],
-        "requiredMM": 102.6,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 130.6,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 6,
+      "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111.7,
+        "top": 111,
         "right": 963,
-        "bottom": 1162.4
+        "bottom": 1169
       },
       "blocks": [
         {
+          "id": "bounce-evidence-0",
+          "left": 87.5,
+          "top": 111,
+          "right": 936.5,
+          "bottom": 175.4
+        },
+        {
+          "id": "bounce-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 920.3,
+          "bottom": 239.4
+        },
+        {
           "id": "appearance-head",
           "left": 89,
-          "top": 111.7,
+          "top": 267.7,
           "right": 550.1,
-          "bottom": 161.8
+          "bottom": 317.8
         },
         {
           "id": "appearance-task-0",
           "left": 89,
-          "top": 169,
+          "top": 325,
           "right": 952.5,
-          "bottom": 233.4
+          "bottom": 389.4
         },
         {
           "id": "appearance-task-1",
           "left": 89,
-          "top": 233,
+          "top": 389,
           "right": 896.5,
-          "bottom": 297.4
+          "bottom": 453.4
         },
         {
           "id": "samples-picture",
           "left": 89,
-          "top": 314,
+          "top": 470,
           "right": 878.5,
-          "bottom": 656.2
+          "bottom": 812.2
         },
         {
           "id": "lustre-0",
           "left": 87.5,
-          "top": 682,
+          "top": 838,
           "right": 913.8,
-          "bottom": 746.4
+          "bottom": 902.4
         },
         {
           "id": "lustre-1",
           "left": 89,
-          "top": 746,
+          "top": 902,
           "right": 876.5,
-          "bottom": 810.4
+          "bottom": 966.4
         },
         {
           "id": "shine-think",
           "left": 89,
-          "top": 827,
+          "top": 983,
           "right": 963,
-          "bottom": 1013
-        },
-        {
-          "id": "shine-evidence-0",
-          "left": 87.5,
-          "top": 1034,
-          "right": 937.2,
-          "bottom": 1098.4
-        },
-        {
-          "id": "shine-evidence-1",
-          "left": 89,
-          "top": 1098,
-          "right": 942.1,
-          "bottom": 1162.4
+          "bottom": 1169
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 937.9815002602821,
         "top": 1457.5455750144392,
-        "right": 114.0184210880979,
-        "bottom": 1495.836239816701
+        "right": 952.7086790303828,
+        "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 45.4,
-      "occupiedPercent": 80.6,
+      "bottomGapMM": 44.2,
+      "occupiedPercent": 81.1,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 42.4,
+        "remainingMM": 40.2,
         "protectedGroup": [
+          {
+            "id": "shine-evidence-0",
+            "type": "body",
+            "title": "A shiny surface is evidence about how that surface reflects light, not a complete identification of ",
+            "height": 64
+          },
+          {
+            "id": "shine-evidence-1",
+            "type": "body",
+            "title": "A shiny surface is evidence about how that surface reflects light, not a complete identification of ",
+            "height": 80
+          },
           {
             "id": "hardness-head",
             "type": "heading",
@@ -527,83 +592,176 @@
             "height": 532
           }
         ],
-        "requiredMM": 106,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 134,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
-    },
-    {
-      "page": 7,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1367.4
-      },
-      "blocks": [
-        {
-          "id": "hardness-head",
-          "left": 89,
-          "top": 111.7,
-          "right": 600.3,
-          "bottom": 161.8
-        },
-        {
-          "id": "hardness-task",
-          "left": 89,
-          "top": 170,
-          "right": 963,
-          "bottom": 680
-        },
-        {
-          "id": "hardness-evidence-0",
-          "left": 89,
-          "top": 701,
-          "right": 935.1,
-          "bottom": 765.4
-        },
-        {
-          "id": "hardness-evidence-1",
-          "left": 89,
-          "top": 765,
-          "right": 884.4,
-          "bottom": 829.4
-        },
-        {
-          "id": "mechanical-table",
-          "left": 89,
-          "top": 845.5,
-          "right": 963,
-          "bottom": 1256
-        },
-        {
-          "id": "relative-0",
-          "left": 87.5,
-          "top": 1271,
-          "right": 927.7,
-          "bottom": 1367.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 937.9815002602821,
-        "top": 1457.5455750144392,
-        "right": 952.7086790303828,
-        "bottom": 1495.8362398166992
-      },
-      "bottomGapMM": 8.6,
-      "occupiedPercent": 96.3,
-      "footerClearanceMM": 3.3
     },
     {
       "page": 8,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1058
+      },
+      "blocks": [
+        {
+          "id": "shine-evidence-0",
+          "left": 87.5,
+          "top": 111,
+          "right": 937.2,
+          "bottom": 175.4
+        },
+        {
+          "id": "shine-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 942.1,
+          "bottom": 239.4
+        },
+        {
+          "id": "hardness-head",
+          "left": 89,
+          "top": 267.7,
+          "right": 600.3,
+          "bottom": 317.8
+        },
+        {
+          "id": "hardness-task",
+          "left": 89,
+          "top": 326,
+          "right": 963,
+          "bottom": 836
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 99.98157882284575,
+        "top": 1457.5448559139131,
+        "right": 114.01842108809788,
+        "bottom": 1495.8355207161749
+      },
+      "bottomGapMM": 64.1,
+      "occupiedPercent": 72.6,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 60.5,
+        "protectedGroup": [
+          {
+            "id": "hardness-evidence-0",
+            "type": "body",
+            "title": "In everyday speech, hard and soft describe several feelings. In a scratch comparison, **hardness** m",
+            "height": 64
+          },
+          {
+            "id": "hardness-evidence-1",
+            "type": "body",
+            "title": "In everyday speech, hard and soft describe several feelings. In a scratch comparison, **hardness** m",
+            "height": 80
+          },
+          {
+            "id": "mechanical-table",
+            "type": "table",
+            "title": "Different tests answer different questions",
+            "height": 426
+          }
+        ],
+        "requiredMM": 102.4,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 9,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 994
+      },
+      "blocks": [
+        {
+          "id": "hardness-evidence-0",
+          "left": 89,
+          "top": 111,
+          "right": 935.1,
+          "bottom": 175.4
+        },
+        {
+          "id": "hardness-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 884.4,
+          "bottom": 239.4
+        },
+        {
+          "id": "mechanical-table",
+          "left": 89,
+          "top": 255.5,
+          "right": 963,
+          "bottom": 666
+        },
+        {
+          "id": "relative-0",
+          "left": 87.5,
+          "top": 681,
+          "right": 927.7,
+          "bottom": 777.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 937.9815002602821,
+        "top": 1457.5448559139131,
+        "right": 952.0183425255343,
+        "bottom": 1495.8355207161749
+      },
+      "bottomGapMM": 75.6,
+      "occupiedPercent": 67.7,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 72,
+        "protectedGroup": [
+          {
+            "id": "light-head",
+            "type": "heading",
+            "title": "6.5 Seeing Through Materials",
+            "height": 58
+          },
+          {
+            "id": "hide-story-0",
+            "type": "body",
+            "title": "Ghulan hides behind a wall, Sheeta behind a tree and Sara behind a frosted-glass door. Sheeta’s brot",
+            "height": 64
+          },
+          {
+            "id": "hide-story-1",
+            "type": "body",
+            "title": "Ghulan hides behind a wall, Sheeta behind a tree and Sara behind a frosted-glass door. Sheeta’s brot",
+            "height": 80
+          },
+          {
+            "id": "light-task",
+            "type": "activity",
+            "title": "1. Gather safe examples of a clear tumbler, butter paper, eraser, wooden board and clear or frosted ",
+            "height": 500
+          }
+        ],
+        "requiredMM": 126.1,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 10,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1365.2
+        "bottom": 1158
       },
       "blocks": [
         {
@@ -647,222 +805,70 @@
           "top": 877,
           "right": 852.6,
           "bottom": 941.4
-        },
-        {
-          "id": "panes-picture",
-          "left": 89,
-          "top": 962.3,
-          "right": 963,
-          "bottom": 1365.2
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 92.96315769021967,
         "top": 1457.5448559139131,
-        "right": 114.0184210880979,
+        "right": 121.72533603047486,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 8.9,
-      "occupiedPercent": 96.2,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 9,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111.5,
-        "right": 963,
-        "bottom": 1288.2
-      },
-      "blocks": [
-        {
-          "id": "light-table",
-          "left": 89,
-          "top": 111.5,
-          "right": 963,
-          "bottom": 492.2
-        },
-        {
-          "id": "hide-explain-0",
-          "left": 89,
-          "top": 505,
-          "right": 935.1,
-          "bottom": 569.4
-        },
-        {
-          "id": "hide-explain-1",
-          "left": 87.5,
-          "top": 569,
-          "right": 942.1,
-          "bottom": 665.4
-        },
-        {
-          "id": "dissolve-head",
-          "left": 89,
-          "top": 693.7,
-          "right": 613.3,
-          "bottom": 743.8
-        },
-        {
-          "id": "lemonade-story-0",
-          "left": 87.5,
-          "top": 751,
-          "right": 939.1,
-          "bottom": 815.4
-        },
-        {
-          "id": "lemonade-story-1",
-          "left": 89,
-          "top": 815,
-          "right": 887.8,
-          "bottom": 879.4
-        },
-        {
-          "id": "mixing-picture",
-          "left": 89,
-          "top": 896,
-          "right": 953.5,
-          "bottom": 1288.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 937.9815002602821,
-        "top": 1457.5448559139131,
-        "right": 952.0183425255343,
-        "bottom": 1495.8355207161749
-      },
-      "bottomGapMM": 22.8,
-      "occupiedPercent": 90.3,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 10,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 112,
-        "right": 963,
-        "bottom": 1264.2
-      },
-      "blocks": [
-        {
-          "id": "dissolve-task",
-          "left": 89,
-          "top": 112,
-          "right": 963,
-          "bottom": 622
-        },
-        {
-          "id": "dissolve-evidence-0",
-          "left": 87.5,
-          "top": 643,
-          "right": 940.8,
-          "bottom": 707.4
-        },
-        {
-          "id": "dissolve-evidence-1",
-          "left": 89,
-          "top": 707,
-          "right": 943.8,
-          "bottom": 771.4
-        },
-        {
-          "id": "solubility-table",
-          "left": 89,
-          "top": 787.5,
-          "right": 963,
-          "bottom": 1264.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139131,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161749
-      },
-      "bottomGapMM": 27.1,
-      "occupiedPercent": 88.4,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 46.2,
+      "occupiedPercent": 80.3,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 42.6,
+        "protectedGroup": [
+          {
+            "id": "panes-picture",
+            "type": "figure",
+            "title": "Clear glass gives a clear view; frosted glass gives a diffuse view; wood blocks the view. Compare eq",
+            "height": 434
+          }
+        ],
+        "requiredMM": 78,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 11,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
-        "right": 954.7,
-        "bottom": 1282.4
+        "top": 116.3,
+        "right": 963,
+        "bottom": 1099.4
       },
       "blocks": [
         {
-          "id": "limits-0",
+          "id": "panes-picture",
           "left": 89,
-          "top": 111,
-          "right": 949.1,
-          "bottom": 175.4
+          "top": 116.3,
+          "right": 963,
+          "bottom": 519.2
         },
         {
-          "id": "limits-1",
+          "id": "light-table",
           "left": 89,
-          "top": 175,
-          "right": 942,
-          "bottom": 239.4
+          "top": 545.5,
+          "right": 963,
+          "bottom": 926.2
         },
         {
-          "id": "liquids-0",
+          "id": "hide-explain-0",
           "left": 89,
-          "top": 255,
-          "right": 896.3,
-          "bottom": 319.4
+          "top": 939,
+          "right": 935.1,
+          "bottom": 1003.4
         },
         {
-          "id": "liquids-1",
+          "id": "hide-explain-1",
           "left": 87.5,
-          "top": 319,
-          "right": 939.7,
-          "bottom": 415.4
-        },
-        {
-          "id": "oil-picture",
-          "left": 89,
-          "top": 455,
-          "right": 877.6,
-          "bottom": 802.2
-        },
-        {
-          "id": "gases-0",
-          "left": 89,
-          "top": 822,
-          "right": 954.7,
-          "bottom": 886.4
-        },
-        {
-          "id": "gases-1",
-          "left": 89,
-          "top": 886,
-          "right": 874.2,
-          "bottom": 950.4
-        },
-        {
-          "id": "ors-head",
-          "left": 89,
-          "top": 979.5,
-          "right": 484,
-          "bottom": 1019.3
-        },
-        {
-          "id": "ors",
-          "left": 87.5,
-          "top": 1026,
-          "right": 947.6,
-          "bottom": 1282.4
+          "top": 1003,
+          "right": 942.1,
+          "bottom": 1099.4
         }
       ],
       "collisions": [],
@@ -873,9 +879,40 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 23.8,
-      "occupiedPercent": 89.8,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 56.7,
+      "occupiedPercent": 75.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 53.7,
+        "protectedGroup": [
+          {
+            "id": "dissolve-head",
+            "type": "heading",
+            "title": "6.6 Mixing Materials with Water",
+            "height": 58
+          },
+          {
+            "id": "lemonade-story-0",
+            "type": "body",
+            "title": "After playing, Ghulan watches his mother stir salt and sugar into water for shikanji. The crystals b",
+            "height": 64
+          },
+          {
+            "id": "lemonade-story-1",
+            "type": "body",
+            "title": "After playing, Ghulan watches his mother stir salt and sugar into water for shikanji. The crystals b",
+            "height": 80
+          },
+          {
+            "id": "mixing-picture",
+            "type": "figure",
+            "title": "Prepare separate samples and equal amounts of water before mixing. The tumblers shown here contain o",
+            "height": 419
+          }
+        ],
+        "requiredMM": 111.6,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 12,
@@ -884,7 +921,239 @@
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1269.4
+        "bottom": 1243
+      },
+      "blocks": [
+        {
+          "id": "dissolve-head",
+          "left": 89,
+          "top": 111.7,
+          "right": 613.3,
+          "bottom": 161.8
+        },
+        {
+          "id": "lemonade-story-0",
+          "left": 87.5,
+          "top": 169,
+          "right": 939.1,
+          "bottom": 233.4
+        },
+        {
+          "id": "lemonade-story-1",
+          "left": 89,
+          "top": 233,
+          "right": 887.8,
+          "bottom": 297.4
+        },
+        {
+          "id": "mixing-picture",
+          "left": 89,
+          "top": 314,
+          "right": 953.5,
+          "bottom": 706.2
+        },
+        {
+          "id": "dissolve-task",
+          "left": 89,
+          "top": 733,
+          "right": 963,
+          "bottom": 1243
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 30.9,
+      "occupiedPercent": 86.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 26.9,
+        "protectedGroup": [
+          {
+            "id": "dissolve-evidence-0",
+            "type": "body",
+            "title": "When salt or sugar **dissolves**, it spreads through the water at a scale too small to see as separa",
+            "height": 64
+          },
+          {
+            "id": "dissolve-evidence-1",
+            "type": "body",
+            "title": "When salt or sugar **dissolves**, it spreads through the water at a scale too small to see as separa",
+            "height": 80
+          },
+          {
+            "id": "solubility-table",
+            "type": "table",
+            "title": "Dissolving is different from floating or settling",
+            "height": 490
+          }
+        ],
+        "requiredMM": 113.9,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 13,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1266
+      },
+      "blocks": [
+        {
+          "id": "dissolve-evidence-0",
+          "left": 87.5,
+          "top": 111,
+          "right": 940.8,
+          "bottom": 175.4
+        },
+        {
+          "id": "dissolve-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 943.8,
+          "bottom": 239.4
+        },
+        {
+          "id": "solubility-table",
+          "left": 89,
+          "top": 255.5,
+          "right": 963,
+          "bottom": 732.2
+        },
+        {
+          "id": "limits-0",
+          "left": 89,
+          "top": 745,
+          "right": 949.1,
+          "bottom": 809.4
+        },
+        {
+          "id": "limits-1",
+          "left": 89,
+          "top": 809,
+          "right": 942,
+          "bottom": 873.4
+        },
+        {
+          "id": "liquids-0",
+          "left": 89,
+          "top": 889,
+          "right": 896.3,
+          "bottom": 953.4
+        },
+        {
+          "id": "liquids-1",
+          "left": 87.5,
+          "top": 953,
+          "right": 939.7,
+          "bottom": 1049.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 26.8,
+      "occupiedPercent": 88.6,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 14,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 135,
+        "right": 954.7,
+        "bottom": 1179
+      },
+      "blocks": [
+        {
+          "id": "oil-picture",
+          "left": 89,
+          "top": 135,
+          "right": 877.6,
+          "bottom": 482.2
+        },
+        {
+          "id": "gases-0",
+          "left": 89,
+          "top": 502,
+          "right": 954.7,
+          "bottom": 566.4
+        },
+        {
+          "id": "gases-1",
+          "left": 89,
+          "top": 566,
+          "right": 874.2,
+          "bottom": 630.4
+        },
+        {
+          "id": "ors-head",
+          "left": 89,
+          "top": 659.5,
+          "right": 484,
+          "bottom": 699.3
+        },
+        {
+          "id": "ors",
+          "left": 87.5,
+          "top": 706,
+          "right": 947.6,
+          "bottom": 962.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047486,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 42.4,
+      "occupiedPercent": 81.9,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 38.8,
+        "protectedGroup": [
+          {
+            "id": "mass-head",
+            "type": "heading",
+            "title": "6.7 Comparing Mass",
+            "height": 58
+          },
+          {
+            "id": "mass-task",
+            "type": "activity",
+            "title": "1. Take three identical cups and mark each at the same halfway height. Label them A, B and C. Fill A",
+            "height": 828
+          }
+        ],
+        "requiredMM": 159.2,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 15,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1125.4
       },
       "blocks": [
         {
@@ -914,277 +1183,6 @@
           "top": 1061,
           "right": 897.7,
           "bottom": 1125.4
-        },
-        {
-          "id": "mass-weight-0",
-          "left": 89,
-          "top": 1141,
-          "right": 956.8,
-          "bottom": 1205.4
-        },
-        {
-          "id": "mass-weight-1",
-          "left": 87.5,
-          "top": 1205,
-          "right": 946.4,
-          "bottom": 1269.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 26.2,
-      "occupiedPercent": 88.8,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 13,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1223.4
-      },
-      "blocks": [
-        {
-          "id": "volume-head",
-          "left": 89,
-          "top": 111.7,
-          "right": 617.8,
-          "bottom": 161.8
-        },
-        {
-          "id": "bags-story-0",
-          "left": 89,
-          "top": 169,
-          "right": 937,
-          "bottom": 233.4
-        },
-        {
-          "id": "bags-story-1",
-          "left": 87.5,
-          "top": 233,
-          "right": 957.4,
-          "bottom": 297.4
-        },
-        {
-          "id": "volume-picture",
-          "left": 89,
-          "top": 332,
-          "right": 832.6,
-          "bottom": 657.2
-        },
-        {
-          "id": "volume-evidence-0",
-          "left": 87.5,
-          "top": 677,
-          "right": 905,
-          "bottom": 741.4
-        },
-        {
-          "id": "volume-evidence-1",
-          "left": 89,
-          "top": 741,
-          "right": 862.6,
-          "bottom": 805.4
-        },
-        {
-          "id": "mass-volume-table",
-          "left": 89,
-          "top": 821.5,
-          "right": 963,
-          "bottom": 1080
-        },
-        {
-          "id": "labels-0",
-          "left": 87.5,
-          "top": 1095,
-          "right": 950.1,
-          "bottom": 1159.4
-        },
-        {
-          "id": "labels-1",
-          "left": 89,
-          "top": 1159,
-          "right": 926.5,
-          "bottom": 1223.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.7252125241284,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 34.4,
-      "occupiedPercent": 85.3,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 31.4,
-        "protectedGroup": [
-          {
-            "id": "labels-picture",
-            "type": "figure",
-            "title": "Both labels state 500 mL of contents. Equal volume does not by itself establish equal mass.",
-            "height": 379
-          }
-        ],
-        "requiredMM": 68.1,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
-    },
-    {
-      "page": 14,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 123,
-        "right": 952.4,
-        "bottom": 1365.4
-      },
-      "blocks": [
-        {
-          "id": "labels-picture",
-          "left": 89,
-          "top": 123,
-          "right": 871.9,
-          "bottom": 470.2
-        },
-        {
-          "id": "units-0",
-          "left": 89,
-          "top": 490,
-          "right": 952.4,
-          "bottom": 554.4
-        },
-        {
-          "id": "units-1",
-          "left": 89,
-          "top": 554,
-          "right": 932.3,
-          "bottom": 650.4
-        },
-        {
-          "id": "matter-head",
-          "left": 89,
-          "top": 678.7,
-          "right": 406.5,
-          "bottom": 728.8
-        },
-        {
-          "id": "matter-0",
-          "left": 87.5,
-          "top": 736,
-          "right": 930.2,
-          "bottom": 800.4
-        },
-        {
-          "id": "matter-1",
-          "left": 89,
-          "top": 800,
-          "right": 946.2,
-          "bottom": 864.4
-        },
-        {
-          "id": "air-picture",
-          "left": 87.5,
-          "top": 895.4,
-          "right": 880.6,
-          "bottom": 1281.2
-        },
-        {
-          "id": "air-evidence-0",
-          "left": 87.5,
-          "top": 1301,
-          "right": 950.9,
-          "bottom": 1365.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139113,
-        "right": 121.72533603047485,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 8.9,
-      "occupiedPercent": 96.2,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 15,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1392.2
-      },
-      "blocks": [
-        {
-          "id": "air-evidence-1",
-          "left": 87.5,
-          "top": 111,
-          "right": 933.4,
-          "bottom": 207.4
-        },
-        {
-          "id": "plastic-think",
-          "left": 89,
-          "top": 224,
-          "right": 963,
-          "bottom": 442
-        },
-        {
-          "id": "classification-close-0",
-          "left": 87.5,
-          "top": 463,
-          "right": 927.7,
-          "bottom": 527.4
-        },
-        {
-          "id": "classification-close-1",
-          "left": 89,
-          "top": 527,
-          "right": 945.6,
-          "bottom": 591.4
-        },
-        {
-          "id": "historical-head",
-          "left": 89,
-          "top": 620.5,
-          "right": 482.7,
-          "bottom": 660.3
-        },
-        {
-          "id": "historical-0",
-          "left": 87.5,
-          "top": 667,
-          "right": 954.2,
-          "bottom": 731.4
-        },
-        {
-          "id": "historical-1",
-          "left": 87.5,
-          "top": 731,
-          "right": 939,
-          "bottom": 827.4
-        },
-        {
-          "id": "historical-table",
-          "left": 89,
-          "top": 843.5,
-          "right": 963,
-          "bottom": 1392.2
         }
       ],
       "collisions": [],
@@ -1195,34 +1193,377 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 4.1,
-      "occupiedPercent": 98.3,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 52,
+      "occupiedPercent": 77.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 49,
+        "protectedGroup": [
+          {
+            "id": "mass-weight-0",
+            "type": "body",
+            "title": "People often use “weight” for a reading in kilograms. In science, mass and weight are different quan",
+            "height": 64
+          },
+          {
+            "id": "mass-weight-1",
+            "type": "body",
+            "title": "People often use “weight” for a reading in kilograms. In science, mass and weight are different quan",
+            "height": 80
+          },
+          {
+            "id": "volume-head",
+            "type": "heading",
+            "title": "6.8 Space, Volume and Capacity",
+            "height": 58
+          },
+          {
+            "id": "bags-story-0",
+            "type": "body",
+            "title": "Madam Vidya asks the class to put school bags on their seats. There is no longer room to sit: the ba",
+            "height": 64
+          },
+          {
+            "id": "bags-story-1",
+            "type": "body",
+            "title": "Madam Vidya asks the class to put school bags on their seats. There is no longer room to sit: the ba",
+            "height": 80
+          },
+          {
+            "id": "volume-picture",
+            "type": "figure",
+            "title": "The containers have the same capacity, but the water occupies different volumes.",
+            "height": 364
+          }
+        ],
+        "requiredMM": 129.7,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 957.4,
+        "bottom": 1178
+      },
+      "blocks": [
+        {
+          "id": "mass-weight-0",
+          "left": 89,
+          "top": 111,
+          "right": 956.8,
+          "bottom": 175.4
+        },
+        {
+          "id": "mass-weight-1",
+          "left": 87.5,
+          "top": 175,
+          "right": 946.4,
+          "bottom": 239.4
+        },
+        {
+          "id": "volume-head",
+          "left": 89,
+          "top": 267.7,
+          "right": 617.8,
+          "bottom": 317.8
+        },
+        {
+          "id": "bags-story-0",
+          "left": 89,
+          "top": 325,
+          "right": 937,
+          "bottom": 389.4
+        },
+        {
+          "id": "bags-story-1",
+          "left": 87.5,
+          "top": 389,
+          "right": 957.4,
+          "bottom": 453.4
+        },
+        {
+          "id": "volume-picture",
+          "left": 89,
+          "top": 488,
+          "right": 832.6,
+          "bottom": 813.2
+        },
+        {
+          "id": "volume-evidence-0",
+          "left": 87.5,
+          "top": 833,
+          "right": 905,
+          "bottom": 897.4
+        },
+        {
+          "id": "volume-evidence-1",
+          "left": 89,
+          "top": 897,
+          "right": 862.6,
+          "bottom": 961.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.03684222072397,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 42.6,
+      "occupiedPercent": 81.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 39,
+        "protectedGroup": [
+          {
+            "id": "mass-volume-table",
+            "type": "table",
+            "title": "Do not confuse the quantities",
+            "height": 274
+          }
+        ],
+        "requiredMM": 49.2,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 17,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111.5,
+        "right": 963,
+        "bottom": 1285
+      },
+      "blocks": [
+        {
+          "id": "mass-volume-table",
+          "left": 89,
+          "top": 111.5,
+          "right": 963,
+          "bottom": 370
+        },
+        {
+          "id": "labels-0",
+          "left": 87.5,
+          "top": 385,
+          "right": 950.1,
+          "bottom": 449.4
+        },
+        {
+          "id": "labels-1",
+          "left": 89,
+          "top": 449,
+          "right": 926.5,
+          "bottom": 513.4
+        },
+        {
+          "id": "labels-picture",
+          "left": 89,
+          "top": 541,
+          "right": 871.9,
+          "bottom": 888.2
+        },
+        {
+          "id": "units-0",
+          "left": 89,
+          "top": 908,
+          "right": 952.4,
+          "bottom": 972.4
+        },
+        {
+          "id": "units-1",
+          "left": 89,
+          "top": 972,
+          "right": 932.3,
+          "bottom": 1068.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 23.4,
+      "occupiedPercent": 90,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 18,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1351
+      },
+      "blocks": [
+        {
+          "id": "matter-head",
+          "left": 89,
+          "top": 111.7,
+          "right": 406.5,
+          "bottom": 161.8
+        },
+        {
+          "id": "matter-0",
+          "left": 87.5,
+          "top": 169,
+          "right": 930.2,
+          "bottom": 233.4
+        },
+        {
+          "id": "matter-1",
+          "left": 89,
+          "top": 233,
+          "right": 946.2,
+          "bottom": 297.4
+        },
+        {
+          "id": "air-picture",
+          "left": 87.5,
+          "top": 328.4,
+          "right": 880.6,
+          "bottom": 714.2
+        },
+        {
+          "id": "air-evidence-0",
+          "left": 87.5,
+          "top": 734,
+          "right": 950.9,
+          "bottom": 798.4
+        },
+        {
+          "id": "air-evidence-1",
+          "left": 87.5,
+          "top": 798,
+          "right": 933.4,
+          "bottom": 894.4
+        },
+        {
+          "id": "plastic-think",
+          "left": 89,
+          "top": 911,
+          "right": 963,
+          "bottom": 1129
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139113,
+        "right": 121.03684222072397,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 11.5,
+      "occupiedPercent": 95.1,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 19,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1254
+      },
+      "blocks": [
+        {
+          "id": "classification-close-0",
+          "left": 87.5,
+          "top": 111,
+          "right": 927.7,
+          "bottom": 175.4
+        },
+        {
+          "id": "classification-close-1",
+          "left": 89,
+          "top": 175,
+          "right": 945.6,
+          "bottom": 239.4
+        },
+        {
+          "id": "historical-head",
+          "left": 89,
+          "top": 268.5,
+          "right": 482.7,
+          "bottom": 308.3
+        },
+        {
+          "id": "historical-0",
+          "left": 87.5,
+          "top": 315,
+          "right": 954.2,
+          "bottom": 379.4
+        },
+        {
+          "id": "historical-1",
+          "left": 87.5,
+          "top": 379,
+          "right": 939,
+          "bottom": 475.4
+        },
+        {
+          "id": "historical-table",
+          "left": 89,
+          "top": 491.5,
+          "right": 963,
+          "bottom": 1040.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.544855913915,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 28.9,
+      "occupiedPercent": 87.6,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 25.3,
+        "protectedGroup": [],
+        "requiredMM": 0,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 20,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 944
+        "bottom": 1144
       },
       "blocks": [],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.544855913915,
-        "right": 121.03684222072395,
+        "right": 121.72533603047486,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 84.6,
-      "occupiedPercent": 63.9,
+      "bottomGapMM": 48.7,
+      "occupiedPercent": 79.2,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 17,
+      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1236,7 +1577,7 @@
       "folioBounds": {
         "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 69.7,
@@ -1244,13 +1585,13 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 18,
+      "page": 22,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111.7,
-        "right": 963,
-        "bottom": 1371.4
+        "right": 955.6,
+        "bottom": 1118
       },
       "blocks": [
         {
@@ -1294,108 +1635,131 @@
           "top": 791,
           "right": 955.6,
           "bottom": 887.4
-        },
-        {
-          "id": "q2",
-          "left": 87.5,
-          "top": 917,
-          "right": 963,
-          "bottom": 1280.2
-        },
-        {
-          "id": "q3",
-          "left": 91.8,
-          "top": 1307,
-          "right": 933,
-          "bottom": 1371.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139113,
-        "right": 121.03684222072395,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021967,
+        "top": 1457.5448559139186,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161803
       },
-      "bottomGapMM": 7.8,
-      "occupiedPercent": 96.7,
+      "bottomGapMM": 53.4,
+      "occupiedPercent": 77.2,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 19,
+      "page": 23,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 79.8,
+        "left": 87.5,
         "top": 111,
-        "right": 956.6,
-        "bottom": 1379.4
+        "right": 963,
+        "bottom": 1208
       },
       "blocks": [
         {
+          "id": "q2",
+          "left": 87.5,
+          "top": 111,
+          "right": 963,
+          "bottom": 474.2
+        },
+        {
+          "id": "q3",
+          "left": 91.8,
+          "top": 501,
+          "right": 933,
+          "bottom": 565.4
+        },
+        {
           "id": "q4",
           "left": 91.8,
-          "top": 111,
+          "top": 595,
           "right": 928.2,
-          "bottom": 303.4
+          "bottom": 787.4
         },
         {
           "id": "q5",
           "left": 91.8,
-          "top": 333,
+          "top": 817,
           "right": 956.6,
-          "bottom": 493.4
-        },
-        {
-          "id": "q6",
-          "left": 91.8,
-          "top": 523,
-          "right": 954.3,
-          "bottom": 651.4
-        },
-        {
-          "id": "q7",
-          "left": 91.8,
-          "top": 681,
-          "right": 955.1,
-          "bottom": 809.4
-        },
-        {
-          "id": "q8",
-          "left": 91.8,
-          "top": 839,
-          "right": 934.6,
-          "bottom": 999.4
-        },
-        {
-          "id": "q9",
-          "left": 91.8,
-          "top": 1029,
-          "right": 930.5,
-          "bottom": 1189.4
-        },
-        {
-          "id": "q10",
-          "left": 79.8,
-          "top": 1219,
-          "right": 947.1,
-          "bottom": 1379.4
+          "bottom": 977.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
         "left": 930.9630791276561,
-        "top": 1457.544855913915,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161767
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
       },
-      "bottomGapMM": 6.4,
-      "occupiedPercent": 97.3,
+      "bottomGapMM": 37.2,
+      "occupiedPercent": 84.1,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 20,
+      "page": 24,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 79.8,
+        "top": 111,
+        "right": 955.1,
+        "bottom": 1198
+      },
+      "blocks": [
+        {
+          "id": "q6",
+          "left": 91.8,
+          "top": 111,
+          "right": 954.3,
+          "bottom": 239.4
+        },
+        {
+          "id": "q7",
+          "left": 91.8,
+          "top": 269,
+          "right": 955.1,
+          "bottom": 397.4
+        },
+        {
+          "id": "q8",
+          "left": 91.8,
+          "top": 427,
+          "right": 934.6,
+          "bottom": 587.4
+        },
+        {
+          "id": "q9",
+          "left": 91.8,
+          "top": 617,
+          "right": 930.5,
+          "bottom": 777.4
+        },
+        {
+          "id": "q10",
+          "left": 79.8,
+          "top": 807,
+          "right": 947.1,
+          "bottom": 967.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047486,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 39,
+      "occupiedPercent": 83.3,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 25,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1429,17 +1793,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 19.9,
       "occupiedPercent": 91.5,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 21,
+      "page": 26,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1466,9 +1830,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021967,
         "top": 1457.5448559139113,
-        "right": 959.0367636581603,
+        "right": 121.03684222072397,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 35.2,

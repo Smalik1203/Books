@@ -1,3 +1,4 @@
+import {pageIllustration,hasContentImage,pageImageReserve} from './science-page-illustrations.mjs';
 // Class 6's current edited content, using Class 7's typography and protected pagination.
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -62,7 +63,14 @@ function render(b,inside=false){
   html=`<div class="g6-panel g6-panel--${b.kind}">${b.kind==='glossary'?'':`<div class="g6-panel__title">${icon(b.kind)}${b.kind==='setup'?'Investigate':'Think It Through'}</div>`}<div class="g6-panel__body">${children}</div></div>`;
  }else if(b.type==='reference-group')html=`<div class="g6-reference-columns">${b.blocks.map(x=>render(x,true)).join('')}</div>`;
  else if(b.type==='media')html=`<div class="g6-media"><div>${b.blocks.map(x=>render(x,true)).join('')}</div>${render(b.figure,true)}</div>`;
- else if(b.type==='summary-group')html=`<div class="g6-summary">${b.blocks.map(x=>render(x,true)).join('')}</div>`;
+ else if(b.type==='summary-group'){
+  const items=[...b.blocks];let lead='';
+  if(currentChapter==='3'){
+   const first=items.splice(0,2),asset=pageIllustration('',6,3);
+   lead=render(first[0],true)+`<div class="g6-summary-illustrated-lead"><div>${render(first[1],true)}</div><svg width="${190*unit}" height="${140*unit}" viewBox="0 0 190 140" xmlns="http://www.w3.org/2000/svg"><image href="../../${asset.file}" width="190" height="140" preserveAspectRatio="xMidYMid meet"><title>${E(asset.caption)}</title></image></svg></div>`;
+  }
+  html=`<div class="g6-summary">${lead}${items.map(x=>render(x,true)).join('')}</div>`;
+ }
  else throw Error('Unknown content type '+b.type);
  return `<div class="g6-block${b.type==='heading'?' g6-block--heading':''}${b.intro?' g6-intro':''}"${b.id?` data-block="${b.id}"`:''}>${html}</div>`;
 }
@@ -99,6 +107,12 @@ for(const raw of chapters){
  for(let i=0;i<groups.length-1;i++)while(groups[i].blocks.at(-1)?.type==='heading')groups[i+1].blocks.unshift(groups[i].blocks.pop());
  // Keep reference pages together, including summaries previously divided over leaves.
  for(const g of groups)if(g.role==='glossary'){
+  // A long keyword list needs two complete reference panels to leave room for
+  // a useful illustration at the unchanged reading size. Never split a box.
+  g.blocks=g.blocks.flatMap(b=>b.type==='panel'&&b.kind==='glossary'&&b.blocks.length>20?
+   [{...b,id:b.id+'-a',blocks:b.blocks.slice(0,12)},
+    {id:b.id+'-continued',type:'heading',level:2,html:'Keywords',source:b.source},
+    {...b,id:b.id+'-b',blocks:b.blocks.slice(12)}]:[b]);
   const rest=g.blocks.slice(1);
   if(!rest.some(b=>b.type==='panel'))g.blocks=[g.blocks[0],{id:`g6-${number}-glossary`,type:'reference-group',blocks:rest,source:rest.map(b=>b.source).join(',')}];
  }
@@ -135,25 +149,27 @@ for(const raw of chapters){
  first.push(...groups[0].blocks.splice(0,take));
  pages.push({role:'opener',blocks:first,end:348+first.reduce((s,b)=>s+heights.get(b.id),0)});
  for(const g of groups){
-  const units=g.blocks.map((b,i)=>({atomId:b.id,type:b.type,top:0,h:heights.get(b.id)-(b.type==='heading'?12:0),html:'',text:text(b.html||b.caption||''),source:[b.source],keepNext:!!b.keepNext||b.type==='feature'||b.type==='paragraph'&&g.blocks[i+1]?.type==='figure'&&/^\d+\./.test(text(b.html)),model:b}));
+  const units=g.blocks.map((b,i)=>({atomId:b.id,type:b.type,top:0,h:heights.get(b.id)-(b.type==='heading'?12:0),html:render(b),text:text(b.html||b.caption||''),source:[b.source],keepNext:!!b.keepNext||b.type==='feature'||b.type==='paragraph'&&g.blocks[i+1]?.type==='figure'&&/^\d+\./.test(text(b.html)),model:b}));
   for(let i=0;i<units.length;i++)if(units[i].type==='heading'){
    let height=0;for(let j=i+1;j<units.length&&units[j].type!=='heading';j++)height+=units[j].h;
    units[i].completeUnitHeight=Math.min(160,height);
   }
-  let packed;try{packed=refitV2Lesson([{blocks:units}]);}catch(e){throw Error(`Chapter ${number} / ${g.role}: ${e.message}`);}
+  let packed;try{packed=refitV2Lesson([{blocks:units}],{imageReserve:pageImageReserve});}catch(e){throw Error(`Chapter ${number} / ${g.role}: ${e.message}`);}
   for(const p of packed)pages.push({...p,role:g.role,bridge:g.bridge,blocks:p.blocks.map(b=>b.model)});
  }
  const band=chapterOpener({number,titleLines:titles[number],id:'g6-'+number,height:310,motif:'none',bleed:3*1052/189,image:{href:'opener-rendered-in-flow',aspect:2}}).html.replace(/<image\b[\s\S]*?<\/image>/,'').replace(/<image\b[^>]*\/?>/,'')+motif(number);
  const label=(s,x,y,c,anchor='start')=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${anchor}">${E(s)}</text>`;
  const map=[];let bridgeIndex=100,bodyIndex=0;
  for(const [i,p] of pages.entries()){
+  let pageContent=p.blocks.map(b=>render(b)).join('\n');
+  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number);if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));pageContent+=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
   const n=i+1,verso=n%2===0;const filename='p'+String(p.bridge?++bridgeIndex:++bodyIndex).padStart(3,'0')+'.html';
   const running=i===0?band:`<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>${motif(number,true)}${label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')}${label(ch.config.title+(p.bridge?' · Beyond the Book':''),960,40,'v2-running se-running','end')}<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>`;
   const footer=`<g class="v2-footer"><line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>${label('LEARNLAB · SCIENCE 6',verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')}<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>${label(n,verso?107:945,1487,'v2-folio se-running','middle')}</g>`;
   const close=i===pages.length-1||!p.bridge&&pages[i+1]?.bridge;
-  const html=`<section class="page page--food page--science-editorial page--science-v2 page--g6-modern${i===0?' page--opener':''}" data-science-chapter="${number}" data-folio="${n}"${p.bridge?' data-bridge':''}${close?' data-close':''}><div class="page__body"><div class="page__main"><svg class="g6-furniture" viewBox="0 0 1052 1514" xmlns="http://www.w3.org/2000/svg">${running}${footer}</svg><div class="g6-content${i===0?' g6-content--opener':''}">${p.blocks.map(b=>render(b)).join('\n')}</div></div></div></section>`;
+  const html=`<section class="page page--food page--science-editorial page--science-v2 page--g6-modern${i===0?' page--opener':''}" data-science-chapter="${number}" data-folio="${n}"${p.bridge?' data-bridge':''}${close?' data-close':''}><div class="page__body"><div class="page__main"><svg class="g6-furniture" viewBox="0 0 1052 1514" xmlns="http://www.w3.org/2000/svg">${running}${footer}</svg><div class="g6-content${i===0?' g6-content--opener':''}">${pageContent}</div></div></div></section>`;
   scienceContract(ch.dir+'/'+filename,html);await writeSource(dir+'/'+filename,html);
-  map.push({page:n,file:filename,role:p.role,end:p.end,blocks:p.blocks.map(b=>({id:b.id,type:b.type,source:b.source})),protectedNext:p.protectedNext,breakReason:p.breakReason});
+  map.push({page:n,file:filename,role:p.role,pageIllustration:p.pageIllustration,end:p.end,blocks:p.blocks.map(b=>({id:b.id,type:b.type,source:b.source})),protectedNext:p.protectedNext,breakReason:p.breakReason});
  }
  for(const file of await fs.readdir(dir))if(/^p\d+\.html$/.test(file)&&!map.some(p=>p.file===file))await fs.unlink(dir+'/'+file);
  await writeSource(dir+'/chapter.json',JSON.stringify({...ch.config,edition:'science-tall',design:'science-editorial',profile:'science-v2',palette:'science-g6-modern'},null,2)+'\n');

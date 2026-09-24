@@ -21,9 +21,13 @@
       6,
       7
     ],
-    "end": 1394,
-    "fill": 98,
-    "breakReason": "Next figure: The human digestive system, simplified. Follow the food path; the",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 1368,
+    "fill": 96,
+    "breakReason": "Next heading: 9.1.1 Digestion in Human Beings",
     "blocks": [
       {
         "id": "nutrition",
@@ -108,51 +112,59 @@
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The digestive system.",
+        "artKey": "figures/class-7/science/ch09/digestive.png",
+        "top": 1148,
+        "bottom": 1368
+      }
+    ],
+    "protectedNext": {
+      "id": "human-digestion",
+      "type": "heading",
+      "height": 70,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 3,
+    "title": "9.1.1 Digestion in Human Beings",
+    "titleRole": "section",
+    "sourcePages": [
+      2,
+      5,
+      3
+    ],
+    "end": 1340,
+    "fill": 94,
+    "breakReason": "Next body: If a teacher permits and the food is suitable for you, slowly che",
+    "blocks": [
+      {
         "id": "human-digestion",
         "type": "heading",
         "text": "9.1.1 Digestion in Human Beings",
-        "top": 1160,
-        "bottom": 1218,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "canal",
         "type": "body",
         "text": "The **alimentary canal** is the continuous passage from the mouth to the anus. Food travels along it; secretions enter from its lining and from associated organs. The liver and pancreas contribute digestive secretions, but food does not pass through these organs. Each region has a different job. We will follow the connected route and ask what changes as food moves onwards.",
-        "top": 1218,
-        "bottom": 1394,
+        "top": 170,
+        "bottom": 346,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "digestive-map",
-      "type": "figure",
-      "height": 726,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 3,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      2,
-      5,
-      3
-    ],
-    "end": 1250,
-    "fill": 87,
-    "breakReason": "Next body: Taste alone is a subjective clue. How could we test for the starc",
-    "blocks": [
+      },
       {
         "id": "digestive-map",
         "type": "figure",
         "text": "The human digestive system, simplified. Follow the food path; the liver and pancreas send secretions into the small intestine.",
         "artKey": "digestive",
-        "top": 112,
-        "bottom": 838,
+        "top": 346,
+        "bottom": 1072,
         "before": 0,
         "keepNext": false
       },
@@ -160,8 +172,8 @@
         "id": "mouth",
         "type": "heading",
         "text": "The mouth: chewing and saliva",
-        "top": 850,
-        "bottom": 898,
+        "top": 1084,
+        "bottom": 1132,
         "before": 12,
         "keepNext": false
       },
@@ -169,8 +181,8 @@
         "id": "mouth-work-0",
         "type": "body",
         "text": "Teeth cut, crush and grind food into smaller pieces. The tongue mixes it with saliva and helps form a soft mouthful for swallowing. Saliva moistens food and contains the enzyme **amylase**, which starts breaking starch into smaller sugars. Remembering a favourite food can stimulate saliva even before the first bite.",
-        "top": 898,
-        "bottom": 962,
+        "top": 1132,
+        "bottom": 1196,
         "before": 0,
         "keepNext": false
       },
@@ -178,8 +190,8 @@
         "id": "mouth-work-1",
         "type": "body",
         "text": "Teeth cut, crush and grind food into smaller pieces. The tongue mixes it with saliva and helps form a soft mouthful for swallowing. Saliva moistens food and contains the enzyme **amylase**, which starts breaking starch into smaller sugars. Remembering a favourite food can stimulate saliva even before the first bite.",
-        "top": 962,
-        "bottom": 1042,
+        "top": 1196,
+        "bottom": 1276,
         "before": 0,
         "keepNext": false
       },
@@ -187,34 +199,16 @@
         "id": "chewing-observation-0",
         "type": "body",
         "text": "If a teacher permits and the food is suitable for you, slowly chew a small bite of plain chapati or boiled rice for about 30–60 seconds. Use only your own food; do not share it or hold food in your mouth while speaking. Some people notice increasing sweetness. Record your own experience; no clear taste change is also a valid observation. Anyone who cannot take part can analyse the evidence instead.",
-        "top": 1042,
-        "bottom": 1106,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "chewing-observation-1",
-        "type": "body",
-        "text": "If a teacher permits and the food is suitable for you, slowly chew a small bite of plain chapati or boiled rice for about 30–60 seconds. Use only your own food; do not share it or hold food in your mouth while speaking. Some people notice increasing sweetness. Record your own experience; no clear taste change is also a valid observation. Anyone who cannot take part can analyse the evidence instead.",
-        "top": 1106,
-        "bottom": 1170,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "chewing-observation-2",
-        "type": "body",
-        "text": "If a teacher permits and the food is suitable for you, slowly chew a small bite of plain chapati or boiled rice for about 30–60 seconds. Use only your own food; do not share it or hold food in your mouth while speaking. Some people notice increasing sweetness. Record your own experience; no clear taste change is also a valid observation. Anyone who cannot take part can analyse the evidence instead.",
-        "top": 1170,
-        "bottom": 1250,
+        "top": 1276,
+        "bottom": 1340,
         "before": 0,
         "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "saliva-question",
+      "id": "chewing-observation-1",
       "type": "body",
-      "height": 176,
+      "height": 64,
       "keepNext": false
     }
   },
@@ -226,16 +220,34 @@
       3,
       4
     ],
-    "end": 1249,
-    "fill": 87,
+    "end": 1393,
+    "fill": 98,
     "breakReason": "Next table: Recording the starch comparison in your notebook",
     "blocks": [
+      {
+        "id": "chewing-observation-1",
+        "type": "body",
+        "text": "If a teacher permits and the food is suitable for you, slowly chew a small bite of plain chapati or boiled rice for about 30–60 seconds. Use only your own food; do not share it or hold food in your mouth while speaking. Some people notice increasing sweetness. Record your own experience; no clear taste change is also a valid observation. Anyone who cannot take part can analyse the evidence instead.",
+        "top": 112,
+        "bottom": 176,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "chewing-observation-2",
+        "type": "body",
+        "text": "If a teacher permits and the food is suitable for you, slowly chew a small bite of plain chapati or boiled rice for about 30–60 seconds. Use only your own food; do not share it or hold food in your mouth while speaking. Some people notice increasing sweetness. Record your own experience; no clear taste change is also a valid observation. Anyone who cannot take part can analyse the evidence instead.",
+        "top": 176,
+        "bottom": 256,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "saliva-question",
         "type": "body",
         "text": "Taste alone is a subjective clue. How could we test for the starch that is present before and after an enzyme acts? Iodine solution becomes blue-black in the presence of starch. It tests for starch, not directly for sugar. The following teacher-led comparison uses prepared amylase instead of collecting saliva or chewed food.",
-        "top": 112,
-        "bottom": 288,
+        "top": 256,
+        "bottom": 432,
         "before": 0,
         "keepNext": false
       },
@@ -243,8 +255,8 @@
         "id": "starch-task",
         "type": "activity",
         "text": "1. A teacher labels two clean tubes A and B. Put equal portions of the same mashed boiled rice and equal measured amounts of water, about 3–4 mL, in each. Record the starting appearance. 2. The teacher adds a measured amount of school-approved amylase solution to B and the same volume of water to A. Use separate droppers. Keep the mixtures at the same teacher-approved temperature for the same time. 3. Add the same number of drops of dilute iodine, about 3–4, to each tube. Mix separately and compare colours under the same light. Record observations before explaining them. 4. Use the recording guide to organise your notebook. Repeat with fresh samples if the comparison is unclear. Teacher demonstration only: wear eye protection, avoid skin and eye contact with iodine, and never taste treated food. Do not collect or share saliva. The teacher prepares and disposes of the solutions.",
-        "top": 288,
-        "bottom": 1249,
+        "top": 432,
+        "bottom": 1393,
         "before": 0,
         "keepNext": false,
         "conceptId": "starch-task"
@@ -265,9 +277,13 @@
       3,
       4
     ],
-    "end": 1322,
-    "fill": 93,
-    "breakReason": "Next figure: Two successive positions of one mouthful. Contraction behind it a",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/iodine-setup.png",
+      "caption": "A starch comparison setup."
+    },
+    "end": 1306,
+    "fill": 92,
+    "breakReason": "Next heading: The food pipe: a moving wall",
     "blocks": [
       {
         "id": "starch-record",
@@ -325,50 +341,58 @@
         "conceptId": "starch-pause"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A starch comparison setup.",
+        "artKey": "figures/class-7/science/ch09/iodine-setup.png",
+        "top": 1086,
+        "bottom": 1306
+      }
+    ],
+    "protectedNext": {
+      "id": "food-pipe",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 6,
+    "title": "The food pipe: a moving wall",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      4,
+      5
+    ],
+    "end": 1294,
+    "fill": 91,
+    "breakReason": "Next body: Churning and chemical changes produce a partly digested, semi-liq",
+    "blocks": [
+      {
         "id": "food-pipe",
         "type": "heading",
         "text": "The food pipe: a moving wall",
-        "top": 1098,
-        "bottom": 1146,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "peristalsis",
         "type": "body",
         "text": "Swallowed food enters the **oesophagus**, or food pipe. Muscles in its wall contract behind the food and relax farther ahead. This travelling wave, called **peristalsis**, pushes the mouthful towards the stomach. Similar muscular movements move and mix contents along the digestive tract. Food does not simply drop through a passive pipe.",
-        "top": 1146,
-        "bottom": 1322,
+        "top": 160,
+        "bottom": 336,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "peristalsis-art",
-      "type": "figure",
-      "height": 456,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 6,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      4,
-      5
-    ],
-    "end": 1182,
-    "fill": 82,
-    "breakReason": "Next body: In 1822, Alexis St. Martin survived an accidental gunshot wound t",
-    "blocks": [
+      },
       {
         "id": "peristalsis-art",
         "type": "figure",
         "text": "Two successive positions of one mouthful. Contraction behind it and relaxation ahead help move it towards the stomach.",
         "artKey": "peristalsis",
-        "top": 112,
-        "bottom": 568,
+        "top": 336,
+        "bottom": 792,
         "before": 0,
         "keepNext": false
       },
@@ -376,8 +400,8 @@
         "id": "stomach",
         "type": "heading",
         "text": "The stomach: mixing and chemical digestion",
-        "top": 580,
-        "bottom": 628,
+        "top": 804,
+        "bottom": 852,
         "before": 12,
         "keepNext": false
       },
@@ -385,8 +409,8 @@
         "id": "stomach-actions-0",
         "type": "body",
         "text": "The stomach is a muscular pouch. Its walls churn food and mix it with gastric secretions. Different components of these secretions have different jobs; they should not all be called acid.",
-        "top": 628,
-        "bottom": 740,
+        "top": 852,
+        "bottom": 964,
         "before": 0,
         "keepNext": false
       },
@@ -394,26 +418,17 @@
         "id": "stomach-components",
         "type": "table",
         "text": "Different roles in stomach secretions",
-        "top": 740,
-        "bottom": 1070,
+        "top": 964,
+        "bottom": 1294,
         "before": 0,
         "keepNext": false,
         "conceptId": "stomach-components"
-      },
-      {
-        "id": "stomach-exit-0",
-        "type": "body",
-        "text": "Churning and chemical changes produce a partly digested, semi-liquid mixture. It leaves the stomach gradually and enters the small intestine. Digestion is not completed in the stomach, and most nutrient absorption happens farther along.",
-        "top": 1070,
-        "bottom": 1182,
-        "before": 0,
-        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "beaumont-0",
+      "id": "stomach-exit-0",
       "type": "body",
-      "height": 64,
+      "height": 112,
       "keepNext": false
     }
   },
@@ -425,16 +440,29 @@
       5,
       6
     ],
-    "end": 1230,
-    "fill": 86,
-    "breakReason": "Next figure: An enlarged patch of intestinal lining. Villi increase the surfac",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 1274,
+    "fill": 89,
+    "breakReason": "Next body: This is a connection with your chapter on acids and bases. Condit",
     "blocks": [
+      {
+        "id": "stomach-exit-0",
+        "type": "body",
+        "text": "Churning and chemical changes produce a partly digested, semi-liquid mixture. It leaves the stomach gradually and enters the small intestine. Digestion is not completed in the stomach, and most nutrient absorption happens farther along.",
+        "top": 112,
+        "bottom": 224,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "beaumont-0",
         "type": "body",
         "text": "In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomach. Physician William Beaumont used it to study gastric secretions and the digestion of different foods. These observations helped connect stomach movements and chemical action with digestion. This historical case also raises questions about consent and the treatment of research participants; it is not an experiment to imitate.",
-        "top": 112,
-        "bottom": 176,
+        "top": 224,
+        "bottom": 288,
         "before": 0,
         "keepNext": false
       },
@@ -442,8 +470,8 @@
         "id": "beaumont-1",
         "type": "body",
         "text": "In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomach. Physician William Beaumont used it to study gastric secretions and the digestion of different foods. These observations helped connect stomach movements and chemical action with digestion. This historical case also raises questions about consent and the treatment of research participants; it is not an experiment to imitate.",
-        "top": 176,
-        "bottom": 240,
+        "top": 288,
+        "bottom": 352,
         "before": 0,
         "keepNext": false
       },
@@ -451,8 +479,8 @@
         "id": "beaumont-2",
         "type": "body",
         "text": "In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomach. Physician William Beaumont used it to study gastric secretions and the digestion of different foods. These observations helped connect stomach movements and chemical action with digestion. This historical case also raises questions about consent and the treatment of research participants; it is not an experiment to imitate.",
-        "top": 240,
-        "bottom": 320,
+        "top": 352,
+        "bottom": 432,
         "before": 0,
         "keepNext": false
       },
@@ -460,8 +488,8 @@
         "id": "small-intestine",
         "type": "heading",
         "text": "The small intestine: digesting and absorbing",
-        "top": 332,
-        "bottom": 380,
+        "top": 444,
+        "bottom": 492,
         "before": 12,
         "keepNext": false
       },
@@ -469,8 +497,8 @@
         "id": "lengths-0",
         "type": "body",
         "text": "The small intestine is narrow but long and tightly coiled. An adult’s may be around 6 m long, while the wider large intestine is about 1.5 m long; actual lengths vary with age and measurement method. The words small and large refer mainly to width, not length. Coiling lets a long digestive surface fit inside the abdomen.",
-        "top": 380,
-        "bottom": 444,
+        "top": 492,
+        "bottom": 556,
         "before": 0,
         "keepNext": false
       },
@@ -478,8 +506,8 @@
         "id": "lengths-1",
         "type": "body",
         "text": "The small intestine is narrow but long and tightly coiled. An adult’s may be around 6 m long, while the wider large intestine is about 1.5 m long; actual lengths vary with age and measurement method. The words small and large refer mainly to width, not length. Coiling lets a long digestive surface fit inside the abdomen.",
-        "top": 444,
-        "bottom": 556,
+        "top": 556,
+        "bottom": 668,
         "before": 0,
         "keepNext": false
       },
@@ -487,44 +515,25 @@
         "id": "secretions",
         "type": "table",
         "text": "Contributions to digestion in the small intestine",
-        "top": 556,
-        "bottom": 942,
+        "top": 668,
+        "bottom": 1054,
         "before": 0,
         "keepNext": false,
         "conceptId": "secretions"
       },
       {
-        "id": "neutralisation-0",
-        "type": "body",
-        "text": "This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes are not suitable for every intestinal enzyme. Secretions change the chemical conditions as food moves onwards. Food enters the intestine; secretions reach it through small ducts.",
-        "top": 942,
-        "bottom": 1006,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "neutralisation-1",
-        "type": "body",
-        "text": "This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes are not suitable for every intestinal enzyme. Secretions change the chemical conditions as food moves onwards. Food enters the intestine; secretions reach it through small ducts.",
-        "top": 1006,
-        "bottom": 1086,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "villi-intro",
-        "type": "body",
-        "text": "The inner surface has many small finger-like projections called **villi**. Their thin covering and large combined surface bring digested nutrients close to transport vessels. Villi project into the space carrying digested food; they are not little teeth that chew it.",
-        "top": 1086,
-        "bottom": 1230,
-        "before": 0,
-        "keepNext": false
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The digestive system.",
+        "artKey": "figures/class-7/science/ch09/digestive.png",
+        "top": 1054,
+        "bottom": 1274
       }
     ],
     "protectedNext": {
-      "id": "villi-art",
-      "type": "figure",
-      "height": 491,
+      "id": "neutralisation-0",
+      "type": "body",
+      "height": 64,
       "keepNext": false
     }
   },
@@ -533,20 +542,47 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      6,
-      7
+      5,
+      6
     ],
-    "end": 1409,
-    "fill": 100,
-    "breakReason": "Next body: A varied diet containing vegetables, fruits and whole grains supp",
+    "end": 1211,
+    "fill": 84,
+    "breakReason": "Next heading: The large intestine: water and egestion",
     "blocks": [
+      {
+        "id": "neutralisation-0",
+        "type": "body",
+        "text": "This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes are not suitable for every intestinal enzyme. Secretions change the chemical conditions as food moves onwards. Food enters the intestine; secretions reach it through small ducts.",
+        "top": 112,
+        "bottom": 176,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "neutralisation-1",
+        "type": "body",
+        "text": "This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes are not suitable for every intestinal enzyme. Secretions change the chemical conditions as food moves onwards. Food enters the intestine; secretions reach it through small ducts.",
+        "top": 176,
+        "bottom": 256,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "villi-intro",
+        "type": "body",
+        "text": "The inner surface has many small finger-like projections called **villi**. Their thin covering and large combined surface bring digested nutrients close to transport vessels. Villi project into the space carrying digested food; they are not little teeth that chew it.",
+        "top": 256,
+        "bottom": 400,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "villi-art",
         "type": "figure",
         "text": "An enlarged patch of intestinal lining. Villi increase the surface available for absorption; the colours distinguish tissues and vessels.",
         "artKey": "villi",
-        "top": 112,
-        "bottom": 603,
+        "top": 400,
+        "bottom": 891,
         "before": 0,
         "keepNext": false
       },
@@ -554,8 +590,8 @@
         "id": "absorption-0",
         "type": "body",
         "text": "Many absorbed nutrients, including simple sugars and amino acids, enter small blood vessels. Most absorbed fats first enter lymph vessels before reaching the blood. Transport carries nutrients away, helping maintain absorption. Cells use these materials to release energy or to build and repair body tissues.",
-        "top": 603,
-        "bottom": 667,
+        "top": 891,
+        "bottom": 955,
         "before": 0,
         "keepNext": false
       },
@@ -563,8 +599,8 @@
         "id": "absorption-1",
         "type": "body",
         "text": "Many absorbed nutrients, including simple sugars and amino acids, enter small blood vessels. Most absorbed fats first enter lymph vessels before reaching the blood. Transport carries nutrients away, helping maintain absorption. Cells use these materials to release energy or to build and repair body tissues.",
-        "top": 667,
-        "bottom": 747,
+        "top": 955,
+        "bottom": 1035,
         "before": 0,
         "keepNext": false
       },
@@ -572,8 +608,8 @@
         "id": "celiac-0",
         "type": "body",
         "text": "In **coeliac (celiac) disease**, gluten triggers an immune reaction that damages the small-intestine lining and can reduce nutrient absorption. Wheat, barley and rye contain gluten. A clinician diagnoses the condition and guides a gluten-free diet; do not diagnose it or remove foods on your own. Jowar, bajra and ragi are naturally gluten-free, but preparation and contamination also matter.",
-        "top": 747,
-        "bottom": 811,
+        "top": 1035,
+        "bottom": 1099,
         "before": 0,
         "keepNext": false
       },
@@ -581,26 +617,51 @@
         "id": "celiac-1",
         "type": "body",
         "text": "In **coeliac (celiac) disease**, gluten triggers an immune reaction that damages the small-intestine lining and can reduce nutrient absorption. Wheat, barley and rye contain gluten. A clinician diagnoses the condition and guides a gluten-free diet; do not diagnose it or remove foods on your own. Jowar, bajra and ragi are naturally gluten-free, but preparation and contamination also matter.",
-        "top": 811,
-        "bottom": 923,
+        "top": 1099,
+        "bottom": 1211,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "large-intestine",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 9,
+    "title": "The large intestine: water and egestion",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      6,
+      7,
+      3
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 1126,
+    "fill": 78,
+    "breakReason": "Next body: The Thirukkural and Charaka Samhita show a long-standing interest",
+    "blocks": [
       {
         "id": "large-intestine",
         "type": "heading",
         "text": "The large intestine: water and egestion",
-        "top": 935,
-        "bottom": 983,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "colon",
         "type": "table",
         "text": "Egestion and excretion",
-        "top": 983,
-        "bottom": 1265,
+        "top": 160,
+        "bottom": 442,
         "before": 0,
         "keepNext": false,
         "conceptId": "colon"
@@ -609,8 +670,8 @@
         "id": "microbes-0",
         "type": "body",
         "text": "Microorganisms in the large intestine use some material that our own enzymes cannot digest, including some dietary fibre. Their products can nourish intestinal cells and contribute certain vitamins. The gut contains a community of organisms; “all bacteria are harmful” is therefore a poor explanation of digestion.",
-        "top": 1265,
-        "bottom": 1329,
+        "top": 442,
+        "bottom": 506,
         "before": 0,
         "keepNext": false
       },
@@ -618,39 +679,17 @@
         "id": "microbes-1",
         "type": "body",
         "text": "Microorganisms in the large intestine use some material that our own enzymes cannot digest, including some dietary fibre. Their products can nourish intestinal cells and contribute certain vitamins. The gut contains a community of organisms; “all bacteria are harmful” is therefore a poor explanation of digestion.",
-        "top": 1329,
-        "bottom": 1409,
+        "top": 506,
+        "bottom": 586,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "digestive-health-0",
-      "type": "body",
-      "height": 64,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 9,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      7,
-      3,
-      1,
-      8
-    ],
-    "end": 1338,
-    "fill": 94,
-    "breakReason": "Next body: A bird has no teeth. In many birds, a muscular **gizzard** grinds",
-    "blocks": [
+      },
       {
         "id": "digestive-health-0",
         "type": "body",
         "text": "A varied diet containing vegetables, fruits and whole grains supplies fibre. Water and regular activity also support normal bowel function. Fermented foods such as curd, buttermilk, kanji, gundruk or poita bhat differ in preparation and microbial content. Food hygiene, storage, salt and sugar matter; being fermented does not make every food a cure or suitable for everyone.",
-        "top": 112,
-        "bottom": 176,
+        "top": 586,
+        "bottom": 650,
         "before": 0,
         "keepNext": false
       },
@@ -658,8 +697,8 @@
         "id": "digestive-health-1",
         "type": "body",
         "text": "A varied diet containing vegetables, fruits and whole grains supplies fibre. Water and regular activity also support normal bowel function. Fermented foods such as curd, buttermilk, kanji, gundruk or poita bhat differ in preparation and microbial content. Food hygiene, storage, salt and sugar matter; being fermented does not make every food a cure or suitable for everyone.",
-        "top": 176,
-        "bottom": 288,
+        "top": 650,
+        "bottom": 762,
         "before": 0,
         "keepNext": false
       },
@@ -667,8 +706,8 @@
         "id": "oral-care-0",
         "type": "body",
         "text": "Care begins before food reaches the stomach: brush twice daily with fluoride toothpaste, clean between teeth as advised, and visit a dentist for routine care. Discuss elders’ oral-hygiene practices respectfully, then compare them with reliable dental guidance. Rinsing after meals does not replace brushing.",
-        "top": 288,
-        "bottom": 352,
+        "top": 762,
+        "bottom": 826,
         "before": 0,
         "keepNext": false
       },
@@ -676,62 +715,24 @@
         "id": "oral-care-1",
         "type": "body",
         "text": "Care begins before food reaches the stomach: brush twice daily with fluoride toothpaste, clean between teeth as advised, and visit a dentist for routine care. Discuss elders’ oral-hygiene practices respectfully, then compare them with reliable dental guidance. Rinsing after meals does not replace brushing.",
-        "top": 352,
-        "bottom": 432,
+        "top": 826,
+        "bottom": 906,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "historical-diet-0",
-        "type": "body",
-        "text": "The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latter discusses foods and spices such as ginger, pepper and cumin. Historical advice is part of cultural history, not a guarantee that a food or meal schedule prevents illness. Claims about treatment need appropriate evidence. Eat without rushing and seek qualified help for persistent problems.",
-        "top": 432,
-        "bottom": 496,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "historical-diet-1",
-        "type": "body",
-        "text": "The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latter discusses foods and spices such as ginger, pepper and cumin. Historical advice is part of cultural history, not a guarantee that a food or meal schedule prevents illness. Claims about treatment need appropriate evidence. Eat without rushing and seek qualified help for persistent problems.",
-        "top": 496,
-        "bottom": 608,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "other-digestion",
-        "type": "heading",
-        "text": "9.1.2 Different Animals, Different Digestive Systems",
-        "top": 620,
-        "bottom": 678,
-        "before": 12,
-        "keepNext": false
-      },
-      {
-        "id": "rumination",
-        "type": "body",
-        "text": "A cow may chew while resting after grazing. Cows, buffaloes, goats and other **ruminants** swallow partly chewed food into a specialised stomach. Microbes in its large rumen help break down plant material. Some contents return to the mouth as cud for more chewing, then are swallowed again. This repeated chewing is **rumination**.",
-        "top": 678,
-        "bottom": 854,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "ruminant-art",
+        "id": "page-illustration",
         "type": "figure",
-        "text": "A simplified cow cutaway. The large rumen supports microbial digestion; cud returns through the oesophagus for further chewing.",
-        "artKey": "ruminant",
-        "top": 854,
-        "bottom": 1338,
-        "before": 0,
-        "keepNext": false
+        "text": "The digestive system.",
+        "artKey": "figures/class-7/science/ch09/digestive.png",
+        "top": 906,
+        "bottom": 1126
       }
     ],
     "protectedNext": {
-      "id": "bird-digestion",
+      "id": "historical-diet-0",
       "type": "body",
-      "height": 144,
+      "height": 64,
       "keepNext": false
     }
   },
@@ -740,30 +741,97 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      8,
-      9,
-      12
+      1,
+      7,
+      8
     ],
-    "end": 1341,
-    "fill": 94,
-    "breakReason": "Next heading: 9.2.1 Respiration in Humans",
+    "end": 1162,
+    "fill": 81,
+    "breakReason": "Next figure: A hen’s connected digestive passage: the crop stores food, the gl",
     "blocks": [
+      {
+        "id": "historical-diet-0",
+        "type": "body",
+        "text": "The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latter discusses foods and spices such as ginger, pepper and cumin. Historical advice is part of cultural history, not a guarantee that a food or meal schedule prevents illness. Claims about treatment need appropriate evidence. Eat without rushing and seek qualified help for persistent problems.",
+        "top": 112,
+        "bottom": 176,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "historical-diet-1",
+        "type": "body",
+        "text": "The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latter discusses foods and spices such as ginger, pepper and cumin. Historical advice is part of cultural history, not a guarantee that a food or meal schedule prevents illness. Claims about treatment need appropriate evidence. Eat without rushing and seek qualified help for persistent problems.",
+        "top": 176,
+        "bottom": 288,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "other-digestion",
+        "type": "heading",
+        "text": "9.1.2 Different Animals, Different Digestive Systems",
+        "top": 300,
+        "bottom": 358,
+        "before": 12,
+        "keepNext": false
+      },
+      {
+        "id": "rumination",
+        "type": "body",
+        "text": "A cow may chew while resting after grazing. Cows, buffaloes, goats and other **ruminants** swallow partly chewed food into a specialised stomach. Microbes in its large rumen help break down plant material. Some contents return to the mouth as cud for more chewing, then are swallowed again. This repeated chewing is **rumination**.",
+        "top": 358,
+        "bottom": 534,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "ruminant-art",
+        "type": "figure",
+        "text": "A simplified cow cutaway. The large rumen supports microbial digestion; cud returns through the oesophagus for further chewing.",
+        "artKey": "ruminant",
+        "top": 534,
+        "bottom": 1018,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "bird-digestion",
         "type": "body",
         "text": "A bird has no teeth. In many birds, a muscular **gizzard** grinds swallowed food; small swallowed stones or grit may help. A glandular part of the stomach supplies digestive secretions. The form and strength of these parts vary with diet. Do not offer birds grit or unusual food as an experiment.",
-        "top": 112,
-        "bottom": 256,
+        "top": 1018,
+        "bottom": 1162,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "bird-art",
+      "type": "figure",
+      "height": 461,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 11,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      8,
+      9,
+      12
+    ],
+    "end": 1197,
+    "fill": 83,
+    "breakReason": "Next heading: 9.2.1 Respiration in Humans",
+    "blocks": [
       {
         "id": "bird-art",
         "type": "figure",
         "text": "A hen’s connected digestive passage: the crop stores food, the glandular stomach supplies secretions, and the gizzard grinds it.",
         "artKey": "bird",
-        "top": 256,
-        "bottom": 717,
+        "top": 112,
+        "bottom": 573,
         "before": 0,
         "keepNext": false
       },
@@ -771,8 +839,8 @@
         "id": "digestion-comparison",
         "type": "table",
         "text": "Food processing in ruminants and birds",
-        "top": 717,
-        "bottom": 951,
+        "top": 573,
+        "bottom": 807,
         "before": 0,
         "keepNext": false,
         "conceptId": "digestion-comparison"
@@ -781,8 +849,8 @@
         "id": "nutrition-respiration-link-0",
         "type": "body",
         "text": "These structures reflect inherited differences that developed over generations; animals did not choose to redesign their organs. Digestion supplies small nutrients, but cells must still release usable energy from them. That brings us to respiration.",
-        "top": 951,
-        "bottom": 1015,
+        "top": 807,
+        "bottom": 871,
         "before": 0,
         "keepNext": false
       },
@@ -790,8 +858,8 @@
         "id": "nutrition-respiration-link-1",
         "type": "body",
         "text": "These structures reflect inherited differences that developed over generations; animals did not choose to redesign their organs. Digestion supplies small nutrients, but cells must still release usable energy from them. That brings us to respiration.",
-        "top": 1015,
-        "bottom": 1095,
+        "top": 871,
+        "bottom": 951,
         "before": 0,
         "keepNext": false
       },
@@ -799,8 +867,8 @@
         "id": "respiration",
         "type": "heading",
         "text": "9.2 Respiration in Animals",
-        "top": 1107,
-        "bottom": 1165,
+        "top": 963,
+        "bottom": 1021,
         "before": 12,
         "keepNext": false
       },
@@ -808,8 +876,8 @@
         "id": "respiration-intro-0",
         "type": "body",
         "text": "**Respiration** is the set of chemical processes in cells that releases usable energy from food molecules. In the aerobic respiration explored here, cells use oxygen. **Breathing** moves air into and out of lungs; **gas exchange** transfers oxygen and carbon dioxide across a surface. These are connected processes, but they happen in different places.",
-        "top": 1165,
-        "bottom": 1229,
+        "top": 1021,
+        "bottom": 1085,
         "before": 0,
         "keepNext": false
       },
@@ -817,8 +885,8 @@
         "id": "respiration-intro-1",
         "type": "body",
         "text": "**Respiration** is the set of chemical processes in cells that releases usable energy from food molecules. In the aerobic respiration explored here, cells use oxygen. **Breathing** moves air into and out of lungs; **gas exchange** transfers oxygen and carbon dioxide across a surface. These are connected processes, but they happen in different places.",
-        "top": 1229,
-        "bottom": 1341,
+        "top": 1085,
+        "bottom": 1197,
         "before": 0,
         "keepNext": false
       }
@@ -831,7 +899,7 @@
     }
   },
   {
-    "page": 11,
+    "page": 12,
     "title": "9.2.1 Respiration in Humans",
     "titleRole": "section",
     "sourcePages": [
@@ -897,7 +965,7 @@
     }
   },
   {
-    "page": 12,
+    "page": 13,
     "title": "Modelling how breathing works",
     "titleRole": "subtopic",
     "sourcePages": [
@@ -944,16 +1012,16 @@
     }
   },
   {
-    "page": 13,
+    "page": 14,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       10,
       11
     ],
-    "end": 667,
-    "fill": 43,
-    "breakReason": "Next table: Inhalation and quiet exhalation",
+    "end": 1025,
+    "fill": 70,
+    "breakReason": "Next body: Balloons represent lungs; the sheet represents the diaphragm. The",
     "blocks": [
       {
         "id": "model-evidence-0",
@@ -982,43 +1050,47 @@
         "bottom": 667,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "breathing-comparison",
+        "type": "table",
+        "text": "Inhalation and quiet exhalation",
+        "top": 667,
+        "bottom": 1025,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "breathing-comparison"
       }
     ],
     "protectedNext": {
-      "id": "breathing-comparison",
-      "type": "table",
-      "height": 358,
+      "id": "model-limits-0",
+      "type": "body",
+      "height": 64,
       "keepNext": false
     }
   },
   {
-    "page": 14,
+    "page": 15,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       10,
       11
     ],
-    "end": 898,
-    "fill": 60,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/lung-model.png",
+      "caption": "A model used to study breathing."
+    },
+    "end": 760,
+    "fill": 50,
     "breakReason": "Next heading: What changes in exhaled air?",
     "blocks": [
-      {
-        "id": "breathing-comparison",
-        "type": "table",
-        "text": "Inhalation and quiet exhalation",
-        "top": 112,
-        "bottom": 470,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "breathing-comparison"
-      },
       {
         "id": "model-limits-0",
         "type": "body",
         "text": "Balloons represent lungs; the sheet represents the diaphragm. The rigid bottle cannot show rib movement. A real diaphragm is a dome-shaped muscle, not a sheet pulled by a hand, and lungs contain many tiny air spaces. A model explains a relationship without copying every feature.",
-        "top": 470,
-        "bottom": 534,
+        "top": 112,
+        "bottom": 176,
         "before": 0,
         "keepNext": false
       },
@@ -1026,8 +1098,8 @@
         "id": "model-limits-1",
         "type": "body",
         "text": "Balloons represent lungs; the sheet represents the diaphragm. The rigid bottle cannot show rib movement. A real diaphragm is a dome-shaped muscle, not a sheet pulled by a hand, and lungs contain many tiny air spaces. A model explains a relationship without copying every feature.",
-        "top": 534,
-        "bottom": 614,
+        "top": 176,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -1035,11 +1107,19 @@
         "id": "model-pause",
         "type": "panel",
         "text": "A model’s balloons inflate when the bottom sheet is pulled. Does this show that the lungs contain muscles that suck in air? Use the route taken by air and the changing space around the balloons to explain. Would a rigid bottle show the movement of the ribs? Name one thing this model explains and one thing it cannot represent.",
-        "top": 614,
-        "bottom": 898,
+        "top": 256,
+        "bottom": 540,
         "before": 0,
         "keepNext": false,
         "conceptId": "model-pause"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A model used to study breathing.",
+        "artKey": "figures/class-7/science/ch09/lung-model.png",
+        "top": 540,
+        "bottom": 760
       }
     ],
     "protectedNext": {
@@ -1050,7 +1130,7 @@
     }
   },
   {
-    "page": 15,
+    "page": 16,
     "title": "What changes in exhaled air?",
     "titleRole": "subtopic",
     "sourcePages": [
@@ -1098,7 +1178,7 @@
     }
   },
   {
-    "page": 16,
+    "page": 17,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1183,14 +1263,18 @@
     }
   },
   {
-    "page": 17,
+    "page": 18,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       12
     ],
-    "end": 1194,
-    "fill": 83,
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/respiratory.png",
+      "caption": "The respiratory system."
+    },
+    "end": 1414,
+    "fill": 100,
     "breakReason": "Next body: The **circulatory system** contains the heart, blood and blood ve",
     "blocks": [
       {
@@ -1265,6 +1349,14 @@
         "before": 0,
         "keepNext": false,
         "conceptId": "breathing-respiration"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The respiratory system.",
+        "artKey": "figures/class-7/science/ch09/respiratory.png",
+        "top": 1194,
+        "bottom": 1414
       }
     ],
     "protectedNext": {
@@ -1275,7 +1367,7 @@
     }
   },
   {
-    "page": 18,
+    "page": 19,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1284,9 +1376,13 @@
       11,
       15
     ],
-    "end": 1224,
-    "fill": 85,
-    "breakReason": "Next heading: 9.2.2 Gas Exchange in Other Animals",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/respiratory.png",
+      "caption": "The respiratory system."
+    },
+    "end": 1364,
+    "fill": 96,
+    "breakReason": "Next body: Breathing practices appear in yoga, chanting and other traditions",
     "blocks": [
       {
         "id": "circulation-0",
@@ -1380,49 +1476,58 @@
         "keepNext": false
       },
       {
-        "id": "breathing-traditions-2",
-        "type": "body",
-        "text": "Breathing practices appear in yoga, chanting and other traditions. Some slow, comfortable breathing practices may help relaxation, but they are not substitutes for medical care. Claims that a particular practice cures disease or makes cold exposure safe need evidence. Learn about practices such as pranayama or Tummo through reading; do not attempt breath-holding, rapid-breathing or cold-exposure challenges.",
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The respiratory system.",
+        "artKey": "figures/class-7/science/ch09/respiratory.png",
         "top": 1144,
-        "bottom": 1224,
-        "before": 0,
-        "keepNext": false
+        "bottom": 1364
       }
     ],
     "protectedNext": {
-      "id": "animal-respiration",
-      "type": "heading",
-      "height": 70,
+      "id": "breathing-traditions-2",
+      "type": "body",
+      "height": 80,
       "keepNext": false
     }
   },
   {
-    "page": 19,
-    "title": "9.2.2 Gas Exchange in Other Animals",
-    "titleRole": "section",
+    "page": 20,
+    "title": "",
+    "titleRole": "continuation",
     "sourcePages": [
+      11,
       13,
       14
     ],
-    "end": 1276,
-    "fill": 89,
+    "end": 1368,
+    "fill": 96,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
+      {
+        "id": "breathing-traditions-2",
+        "type": "body",
+        "text": "Breathing practices appear in yoga, chanting and other traditions. Some slow, comfortable breathing practices may help relaxation, but they are not substitutes for medical care. Claims that a particular practice cures disease or makes cold exposure safe need evidence. Learn about practices such as pranayama or Tummo through reading; do not attempt breath-holding, rapid-breathing or cold-exposure challenges.",
+        "top": 112,
+        "bottom": 192,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "animal-respiration",
         "type": "heading",
         "text": "9.2.2 Gas Exchange in Other Animals",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 204,
+        "bottom": 262,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "animal-intro-0",
         "type": "body",
         "text": "Animals share the need to exchange gases, but the exchange surface differs. Mammals, birds and many reptiles have lungs. Bird lungs differ from mammal lungs, so a shared organ name does not imply identical internal structure or airflow. Living in water does not mean that every animal has gills.",
-        "top": 170,
-        "bottom": 234,
+        "top": 262,
+        "bottom": 326,
         "before": 0,
         "keepNext": false
       },
@@ -1430,8 +1535,8 @@
         "id": "animal-intro-1",
         "type": "body",
         "text": "Animals share the need to exchange gases, but the exchange surface differs. Mammals, birds and many reptiles have lungs. Bird lungs differ from mammal lungs, so a shared organ name does not imply identical internal structure or airflow. Living in water does not mean that every animal has gills.",
-        "top": 234,
-        "bottom": 314,
+        "top": 326,
+        "bottom": 406,
         "before": 0,
         "keepNext": false
       },
@@ -1440,8 +1545,8 @@
         "type": "figure",
         "text": "Different exchange surfaces: fish gills, an adult frog’s lungs and moist skin, and an earthworm’s moist skin. Drawings are not to the same scale.",
         "artKey": "animal-gas-exchange",
-        "top": 314,
-        "bottom": 714,
+        "top": 406,
+        "bottom": 806,
         "before": 0,
         "keepNext": false
       },
@@ -1449,8 +1554,8 @@
         "id": "animal-comparison",
         "type": "table",
         "text": "Gas exchange in different animals",
-        "top": 714,
-        "bottom": 1100,
+        "top": 806,
+        "bottom": 1192,
         "before": 0,
         "keepNext": false,
         "conceptId": "animal-comparison"
@@ -1459,8 +1564,8 @@
         "id": "adaptation-0",
         "type": "body",
         "text": "These structures evolved over many generations in different environments. An individual frog developing from a tadpole is undergoing growth and development, not deciding to evolve a new breathing system. Digestion, gas exchange, circulation and other processes work together in living bodies; none operates entirely on its own.",
-        "top": 1100,
-        "bottom": 1164,
+        "top": 1192,
+        "bottom": 1256,
         "before": 0,
         "keepNext": false
       },
@@ -1468,8 +1573,8 @@
         "id": "adaptation-1",
         "type": "body",
         "text": "These structures evolved over many generations in different environments. An individual frog developing from a tadpole is undergoing growth and development, not deciding to evolve a new breathing system. Digestion, gas exchange, circulation and other processes work together in living bodies; none operates entirely on its own.",
-        "top": 1164,
-        "bottom": 1276,
+        "top": 1256,
+        "bottom": 1368,
         "before": 0,
         "keepNext": false
       }
@@ -1477,7 +1582,7 @@
     "protectedNext": null
   },
   {
-    "page": 20,
+    "page": 21,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
@@ -1490,30 +1595,42 @@
       12,
       13
     ],
-    "end": 988,
-    "fill": 67
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 1208,
+    "fill": 84
   },
   {
-    "page": 21,
+    "page": 22,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
       14
     ],
-    "end": 1068,
-    "fill": 73
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 1288,
+    "fill": 90
   },
   {
-    "page": 22,
+    "page": 23,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
       14,
       15
     ],
-    "end": 1292,
-    "fill": 91,
-    "breakReason": "Next question: After a morning run, Anusha counts more breaths per minute than P",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 912,
+    "fill": 61,
+    "breakReason": "Next question: Match each part to its function. Parts: (i) nostrils; (ii) nasal ",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -1561,11 +1678,42 @@
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The digestive system.",
+        "artKey": "figures/class-7/science/ch09/digestive.png",
+        "top": 692,
+        "bottom": 912
+      }
+    ],
+    "protectedNext": {
+      "id": "q4",
+      "type": "question",
+      "height": 190,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 24,
+    "title": "",
+    "titleRole": "assessment",
+    "sourcePages": [
+      15
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/respiratory.png",
+      "caption": "The respiratory system."
+    },
+    "end": 1090,
+    "fill": 75,
+    "breakReason": "Next question: Yadu mixes equal pinches of rice flour with water in A and B, add",
+    "blocks": [
+      {
         "id": "q4",
         "type": "question",
         "text": "Match each part to its function. Parts: (i) nostrils; (ii) nasal passages; (iii) windpipe; (iv) alveoli; (v) rib cage. Functions: (a) openings through which air enters; (b) main lung gas-exchange surface; (c) protects lungs; (d) conditions air and helps trap particles with mucus and hairs; (e) conducts air towards the lungs. Write matched pairs in your notebook.",
-        "top": 692,
-        "bottom": 882,
+        "top": 112,
+        "bottom": 302,
         "before": 0,
         "keepNext": false
       },
@@ -1573,8 +1721,8 @@
         "id": "q5",
         "type": "question",
         "text": "Anil says respiration and breathing are the same process. Propose two questions Sanvi could ask him, then explain how the answers distinguish the processes.",
-        "top": 882,
-        "bottom": 1008,
+        "top": 302,
+        "bottom": 428,
         "before": 0,
         "keepNext": false
       },
@@ -1582,8 +1730,8 @@
         "id": "q6",
         "type": "question",
         "text": "Anu says, “We inhale air.” Shanu says, “We inhale oxygen.” Tanu says, “We inhale air rich in oxygen.” Evaluate each statement. Explain why air is a mixture, what “rich” must be compared with, and why exhaled air is not pure carbon dioxide.",
-        "top": 1008,
-        "bottom": 1166,
+        "top": 428,
+        "bottom": 586,
         "before": 0,
         "keepNext": false
       },
@@ -1591,46 +1739,53 @@
         "id": "q7",
         "type": "question",
         "text": "Why might someone sneeze after inhaling dusty air? Explain the protective response and why it does not make dust harmless. Do not test this by deliberately inhaling dust.",
-        "top": 1166,
-        "bottom": 1292,
-        "before": 0,
-        "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "q8",
-      "type": "question",
-      "height": 158,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 23,
-    "title": "",
-    "titleRole": "assessment",
-    "sourcePages": [
-      15,
-      16
-    ],
-    "end": 1410,
-    "fill": 100,
-    "breakReason": "End of lesson before reference pages",
-    "blocks": [
-      {
-        "id": "q8",
-        "type": "question",
-        "text": "After a morning run, Anusha counts more breaths per minute than Paridhi. Give at least two possible explanations. What details would make the comparison fairer? Explain why one reading cannot establish who is fitter or who has a medical condition.",
-        "top": 112,
-        "bottom": 270,
+        "top": 586,
+        "bottom": 712,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "q8",
+        "type": "question",
+        "text": "After a morning run, Anusha counts more breaths per minute than Paridhi. Give at least two possible explanations. What details would make the comparison fairer? Explain why one reading cannot establish who is fitter or who has a medical condition.",
+        "top": 712,
+        "bottom": 870,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The respiratory system.",
+        "artKey": "figures/class-7/science/ch09/respiratory.png",
+        "top": 870,
+        "bottom": 1090
+      }
+    ],
+    "protectedNext": {
+      "id": "q9",
+      "type": "question",
+      "height": 536,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 25,
+    "title": "",
+    "titleRole": "assessment",
+    "sourcePages": [
+      16
+    ],
+    "end": 1252,
+    "fill": 87,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "q9",
         "type": "question",
         "text": "Yadu mixes equal pinches of rice flour with water in A and B, adds a few drops of saliva only to B, and waits 35–45 minutes before adding iodine. The pictured results are dark blue-black in A and amber in B. What idea is he testing? Identify the comparison, explain the evidence and propose a safer prepared-enzyme version with matched volumes.",
-        "top": 270,
-        "bottom": 806,
+        "top": 112,
+        "bottom": 648,
         "before": 0,
         "keepNext": false
       },
@@ -1638,8 +1793,8 @@
         "id": "q10",
         "type": "question",
         "text": "Rakshita wants to compare carbon dioxide in room air and exhaled air using lime water. What is her question, and what should match between samples? Explain how repeating the comparison with fresh lime water could support her conclusion. Explain why the teacher uses syringes and a collection bag instead of mouth-operated tubes; never suck through lime water.",
-        "top": 806,
-        "bottom": 1410,
+        "top": 648,
+        "bottom": 1252,
         "before": 0,
         "keepNext": false
       }
@@ -1647,16 +1802,20 @@
     "protectedNext": null
   },
   {
-    "page": 24,
+    "page": 26,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [
       15,
       16
     ],
-    "end": 1362,
-    "fill": 96,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/digestive.png",
+      "caption": "The digestive system."
+    },
+    "end": 970,
+    "fill": 66,
+    "breakReason": "Next project: Use an official source to explain air quality and AQI. Record loc",
     "blocks": [
       {
         "id": "project-heading",
@@ -1698,11 +1857,42 @@
         "conceptId": "project-model"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The digestive system.",
+        "artKey": "figures/class-7/science/ch09/digestive.png",
+        "top": 750,
+        "bottom": 970
+      }
+    ],
+    "protectedNext": {
+      "id": "project-aqi",
+      "type": "project",
+      "height": 204,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 27,
+    "title": "",
+    "titleRole": "projects",
+    "sourcePages": [
+      16
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch09/respiratory.png",
+      "caption": "The respiratory system."
+    },
+    "end": 944,
+    "fill": 64,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "project-aqi",
         "type": "project",
         "text": "Use an official source to explain air quality and AQI. Record location, date, pollutants and guidance. Compare possible exposures for farmers, factory workers and street vendors, and ways workplaces could reduce them. Do not visit polluted places or collect health details.",
-        "top": 750,
-        "bottom": 954,
+        "top": 112,
+        "bottom": 316,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-aqi"
@@ -1711,8 +1901,8 @@
         "id": "project-breathing",
         "type": "project",
         "text": "Research box breathing: inhalation, pause, exhalation, pause. Evaluate evidence for relaxation claims and identify uncertainties. This is reading, not a breath-holding exercise or treatment. Avoid forced breathing and discuss health questions with a qualified adult.",
-        "top": 954,
-        "bottom": 1158,
+        "top": 316,
+        "bottom": 520,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-breathing"
@@ -1721,11 +1911,19 @@
         "id": "project-birds",
         "type": "project",
         "text": "Compare bird and mammal respiratory diagrams. Research air sacs and one-way lung airflow. Explain why high altitude means lower oxygen pressure, not usually a lower oxygen percentage. Air sacs move air; lung tissue exchanges gases. Name your sources.",
-        "top": 1158,
-        "bottom": 1362,
+        "top": 520,
+        "bottom": 724,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-birds"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "The respiratory system.",
+        "artKey": "figures/class-7/science/ch09/respiratory.png",
+        "top": 724,
+        "bottom": 944
       }
     ],
     "protectedNext": null

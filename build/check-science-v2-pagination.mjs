@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {refitV2Lesson} from './refit-science-v2-blocks.mjs';
+import {hasContentImage} from './science-page-illustrations.mjs';
 const block=(id,type,h,extra={})=>({atomId:id,type,h,top:112,html:`<text>${id}</text>`,source:[1],...extra});
 const fit=blocks=>refitV2Lesson([{blocks}]);
 const pageFor=(pages,id)=>pages.findIndex(p=>p.blocks.some(b=>b.id===id));
@@ -14,4 +15,12 @@ pages=fit([block('earlier','body',1120),block('independent-prose','body',80),blo
 assert.equal(pageFor(pages,'earlier'),pageFor(pages,'independent-prose'),'Ordinary prose is not broadly tied to the next figure');
 assert.notEqual(pageFor(pages,'independent-prose'),pageFor(pages,'figure'));
 assert.throws(()=>fit([block('oversized','panel',1400)]),/Invalid V2 reading block/);
+const reserve=blocks=>refitV2Lesson([{blocks}],{imageReserve:220});
+pages=reserve([block('first','body',900),block('second','body',300)]);
+assert.equal(pages.length,2,'Text-only pages reserve illustration space before choosing page breaks');
+assert.ok(pages.every(p=>p.end+220<=1415));
+pages=reserve([block('first','body',900,{html:'<image href="specimen.png"/>'}),block('second','body',300)]);
+assert.equal(pages.length,1,'An existing instructional image avoids a redundant image reserve');
+assert.equal(hasContentImage('<image href="science/cues/think-it-through.svg"/>'),false,'Feature icons cannot satisfy the content-image requirement');
+assert.equal(hasContentImage('<img src="specimen.png">'),true);
 console.log('V2 pagination checks passed: heading support, explicit groups, whole panels and ordinary prose flow.');

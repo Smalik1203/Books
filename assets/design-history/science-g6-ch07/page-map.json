@@ -17,8 +17,8 @@
       1,
       2
     ],
-    "end": 1154,
-    "fill": 80,
+    "end": 1218,
+    "fill": 85,
     "breakReason": "Next body: Both hands meet the same water in B, yet they may report differen",
     "blocks": [
       {
@@ -58,12 +58,21 @@
         "before": 0,
         "keepNext": false,
         "conceptId": "touch-task"
+      },
+      {
+        "id": "touch-evidence-0",
+        "type": "body",
+        "text": "Both hands meet the same water in B, yet they may report different sensations after their different starting conditions. If this happens, it is evidence that touch depends on what the skin experienced just before. The water has not acquired two different temperatures merely because the hands disagree.",
+        "top": 1154,
+        "bottom": 1218,
+        "before": 0,
+        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "touch-evidence-0",
+      "id": "touch-evidence-1",
       "type": "body",
-      "height": 64,
+      "height": 80,
       "keepNext": false
     }
   },
@@ -77,25 +86,20 @@
       7,
       6
     ],
-    "end": 1148,
-    "fill": 80,
-    "breakReason": "Next equation: 25 °C corresponds to (25 + 273.15) K = 298.15 K",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch07/bowls.png",
+      "caption": "Bowls for comparing warmth."
+    },
+    "end": 1192,
+    "fill": 83,
+    "breakReason": "Next body: The kelvin is the SI unit of temperature. Write K, without a degr",
     "blocks": [
-      {
-        "id": "touch-evidence-0",
-        "type": "body",
-        "text": "Both hands meet the same water in B, yet they may report different sensations after their different starting conditions. If this happens, it is evidence that touch depends on what the skin experienced just before. The water has not acquired two different temperatures merely because the hands disagree.",
-        "top": 112,
-        "bottom": 176,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "touch-evidence-1",
         "type": "body",
         "text": "Both hands meet the same water in B, yet they may report different sensations after their different starting conditions. If this happens, it is evidence that touch depends on what the skin experienced just before. The water has not acquired two different temperatures merely because the hands disagree.",
-        "top": 176,
-        "bottom": 256,
+        "top": 112,
+        "bottom": 192,
         "before": 0,
         "keepNext": false
       },
@@ -103,8 +107,8 @@
         "id": "touch-limit-0",
         "type": "body",
         "text": "Touch is useful for noticing a possible change, but it is not a reliable numerical measurement. Never test an unknown hot object by touching it. A thermometer gives a temperature reading without asking us to judge hotness by sensation alone.",
-        "top": 256,
-        "bottom": 320,
+        "top": 192,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -112,8 +116,8 @@
         "id": "touch-limit-1",
         "type": "body",
         "text": "Touch is useful for noticing a possible change, but it is not a reliable numerical measurement. Never test an unknown hot object by touching it. A thermometer gives a temperature reading without asking us to judge hotness by sensation alone.",
-        "top": 320,
-        "bottom": 400,
+        "top": 256,
+        "bottom": 336,
         "before": 0,
         "keepNext": false
       },
@@ -121,8 +125,8 @@
         "id": "temperature-heading",
         "type": "heading",
         "text": "7.2 Temperature and Its Units",
-        "top": 412,
-        "bottom": 470,
+        "top": 348,
+        "bottom": 406,
         "before": 12,
         "keepNext": false
       },
@@ -130,8 +134,8 @@
         "id": "temperature-definition-0",
         "type": "body",
         "text": "**Temperature** describes how hot or cold a body is. A **thermometer** measures temperature. A useful record includes both a number and a unit: “28” alone does not tell us which temperature scale was used.",
-        "top": 470,
-        "bottom": 582,
+        "top": 406,
+        "bottom": 518,
         "before": 0,
         "keepNext": false
       },
@@ -139,8 +143,8 @@
         "id": "celsius-0",
         "type": "body",
         "text": "The Celsius scale is common in school and everyday life. Its unit is the **degree Celsius**, written °C. Read 28 °C as “twenty-eight degrees Celsius”. A larger Celsius reading means a higher temperature when comparing measurements on this same scale.",
-        "top": 582,
-        "bottom": 646,
+        "top": 518,
+        "bottom": 582,
         "before": 0,
         "keepNext": false
       },
@@ -148,8 +152,8 @@
         "id": "celsius-1",
         "type": "body",
         "text": "The Celsius scale is common in school and everyday life. Its unit is the **degree Celsius**, written °C. Read 28 °C as “twenty-eight degrees Celsius”. A larger Celsius reading means a higher temperature when comparing measurements on this same scale.",
-        "top": 646,
-        "bottom": 726,
+        "top": 582,
+        "bottom": 662,
         "before": 0,
         "keepNext": false
       },
@@ -157,26 +161,25 @@
         "id": "units-table",
         "type": "table",
         "text": "Table 7.1 · Three temperature scales",
-        "top": 726,
-        "bottom": 1036,
+        "top": 662,
+        "bottom": 972,
         "before": 0,
         "keepNext": false,
         "conceptId": "units-table"
       },
       {
-        "id": "kelvin-0",
-        "type": "body",
-        "text": "The kelvin is the SI unit of temperature. Write K, without a degree sign. A change of 1 °C is the same temperature interval as a change of 1 K, but the scales have different zero points. To convert a Celsius value to a kelvin value, add 273.15.",
-        "top": 1036,
-        "bottom": 1148,
-        "before": 0,
-        "keepNext": false
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Bowls for comparing warmth.",
+        "artKey": "figures/class-6/science/ch07/bowls.png",
+        "top": 972,
+        "bottom": 1192
       }
     ],
     "protectedNext": {
-      "id": "kelvin-equation",
-      "type": "equation",
-      "height": 97,
+      "id": "kelvin-0",
+      "type": "body",
+      "height": 112,
       "keepNext": false
     }
   },
@@ -190,16 +193,25 @@
       3,
       4
     ],
-    "end": 1167,
-    "fill": 81,
+    "end": 1279,
+    "fill": 90,
     "breakReason": "Next activity: 1. With a teacher or responsible adult, examine a digital clinica",
     "blocks": [
+      {
+        "id": "kelvin-0",
+        "type": "body",
+        "text": "The kelvin is the SI unit of temperature. Write K, without a degree sign. A change of 1 °C is the same temperature interval as a change of 1 K, but the scales have different zero points. To convert a Celsius value to a kelvin value, add 273.15.",
+        "top": 112,
+        "bottom": 224,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "kelvin-equation",
         "type": "equation",
         "text": "25 °C corresponds to (25 + 273.15) K = 298.15 K",
-        "top": 112,
-        "bottom": 209,
+        "top": 224,
+        "bottom": 321,
         "before": 0,
         "keepNext": false
       },
@@ -207,8 +219,8 @@
         "id": "unit-think",
         "type": "panel",
         "text": "One report says 37 °C and another says 98.6 °F. Has the temperature necessarily risen? Explain why comparing the numbers without their scales would mislead us.",
-        "top": 209,
-        "bottom": 417,
+        "top": 321,
+        "bottom": 529,
         "before": 0,
         "keepNext": false,
         "conceptId": "unit-think"
@@ -217,8 +229,8 @@
         "id": "clinical-heading",
         "type": "heading",
         "text": "7.3 Measuring Body Temperature",
-        "top": 429,
-        "bottom": 487,
+        "top": 541,
+        "bottom": 599,
         "before": 12,
         "keepNext": false
       },
@@ -226,8 +238,8 @@
         "id": "clinical-intro-0",
         "type": "body",
         "text": "A **clinical thermometer** is designed for measuring body temperature. A digital model has a sensing tip, an electronic circuit and a display. The sensor responds to temperature, and the instrument shows a reading. A battery supplies the electrical energy it needs.",
-        "top": 487,
-        "bottom": 551,
+        "top": 599,
+        "bottom": 663,
         "before": 0,
         "keepNext": false
       },
@@ -235,8 +247,8 @@
         "id": "clinical-intro-1",
         "type": "body",
         "text": "A **clinical thermometer** is designed for measuring body temperature. A digital model has a sensing tip, an electronic circuit and a display. The sensor responds to temperature, and the instrument shows a reading. A battery supplies the electrical energy it needs.",
-        "top": 551,
-        "bottom": 631,
+        "top": 663,
+        "bottom": 743,
         "before": 0,
         "keepNext": false
       },
@@ -245,8 +257,8 @@
         "type": "figure",
         "text": "Fig. 7.2 · A contact digital clinical thermometer and a non-contact infrared thermometer. Displays are left blank here.",
         "artKey": "figure",
-        "top": 631,
-        "bottom": 1023,
+        "top": 743,
+        "bottom": 1135,
         "before": 0,
         "keepNext": false
       },
@@ -254,8 +266,8 @@
         "id": "clinical-types-0",
         "type": "body",
         "text": "The sensing tip of a contact model must be used at a body site approved in its instructions. A non-contact infrared clinical thermometer detects infrared radiation from the intended site, commonly the forehead. Its distance and positioning instructions matter; it is not used like a contact probe.",
-        "top": 1023,
-        "bottom": 1087,
+        "top": 1135,
+        "bottom": 1199,
         "before": 0,
         "keepNext": false
       },
@@ -263,8 +275,8 @@
         "id": "clinical-types-1",
         "type": "body",
         "text": "The sensing tip of a contact model must be used at a body site approved in its instructions. A non-contact infrared clinical thermometer detects infrared radiation from the intended site, commonly the forehead. Its distance and positioning instructions matter; it is not used like a contact probe.",
-        "top": 1087,
-        "bottom": 1167,
+        "top": 1199,
+        "bottom": 1279,
         "before": 0,
         "keepNext": false
       }
@@ -285,9 +297,13 @@
       6,
       4
     ],
-    "end": 1396,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch07/clinical.png",
+      "caption": "Digital clinical thermometers."
+    },
+    "end": 1408,
     "fill": 99,
-    "breakReason": "Next heading: 7.4 Using a Laboratory Thermometer",
+    "breakReason": "Next panel: A person’s pulse becomes faster after running. Could a faster pul",
     "blocks": [
       {
         "id": "clinical-task",
@@ -363,51 +379,64 @@
         "keepNext": false
       },
       {
-        "id": "pulse-think",
-        "type": "panel",
-        "text": "A person’s pulse becomes faster after running. Could a faster pulse by itself prove that the person has a fever? Explain which measurement is missing and why the activity just before the observation matters.",
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Digital clinical thermometers.",
+        "artKey": "figures/class-6/science/ch07/clinical.png",
         "top": 1188,
-        "bottom": 1396,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "pulse-think"
+        "bottom": 1408
       }
     ],
     "protectedNext": {
-      "id": "lab-heading",
-      "type": "heading",
-      "height": 70,
+      "id": "pulse-think",
+      "type": "panel",
+      "height": 208,
       "keepNext": false
     }
   },
   {
     "page": 6,
-    "title": "7.4 Using a Laboratory Thermometer",
-    "titleRole": "section",
+    "title": "",
+    "titleRole": "continuation",
     "sourcePages": [
+      6,
       8,
       9,
       10
     ],
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
     "end": 1339,
     "fill": 94,
-    "breakReason": "Next body: A common school laboratory model is marked from −10 °C to 110 °C.",
+    "breakReason": "Next body: When the bulb warms, its liquid expands and rises in the narrow t",
     "blocks": [
+      {
+        "id": "pulse-think",
+        "type": "panel",
+        "text": "A person’s pulse becomes faster after running. Could a faster pulse by itself prove that the person has a fever? Explain which measurement is missing and why the activity just before the observation matters.",
+        "top": 112,
+        "bottom": 320,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "pulse-think"
+      },
       {
         "id": "lab-heading",
         "type": "heading",
         "text": "7.4 Using a Laboratory Thermometer",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 332,
+        "bottom": 390,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "lab-intro-0",
         "type": "body",
         "text": "A **laboratory thermometer** is used to measure temperatures in investigations. One familiar model has a glass stem, a bulb holding liquid, a narrow tube and a marked scale. A coloured alcohol liquid makes the column easy to see. Use a teacher-approved mercury-free instrument.",
-        "top": 170,
-        "bottom": 234,
+        "top": 390,
+        "bottom": 454,
         "before": 0,
         "keepNext": false
       },
@@ -415,8 +444,8 @@
         "id": "lab-intro-1",
         "type": "body",
         "text": "A **laboratory thermometer** is used to measure temperatures in investigations. One familiar model has a glass stem, a bulb holding liquid, a narrow tube and a marked scale. A coloured alcohol liquid makes the column easy to see. Use a teacher-approved mercury-free instrument.",
-        "top": 234,
-        "bottom": 314,
+        "top": 454,
+        "bottom": 534,
         "before": 0,
         "keepNext": false
       },
@@ -425,8 +454,8 @@
         "type": "figure",
         "text": "Fig. 7.3 · Parts of a liquid-in-glass laboratory thermometer. An enlarged portion of the Celsius scale is shown.",
         "artKey": "structure",
-        "top": 314,
-        "bottom": 835,
+        "top": 534,
+        "bottom": 1055,
         "before": 0,
         "keepNext": false
       },
@@ -434,35 +463,24 @@
         "id": "lab-mechanism-0",
         "type": "body",
         "text": "When the bulb warms, its liquid expands and rises in the narrow tube. When it cools, the liquid contracts and the column falls. The instrument therefore responds to its own temperature as it exchanges energy with what it is measuring. Allow time for its reading to settle.",
-        "top": 835,
-        "bottom": 899,
+        "top": 1055,
+        "bottom": 1119,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "lab-mechanism-1",
-        "type": "body",
-        "text": "When the bulb warms, its liquid expands and rises in the narrow tube. When it cools, the liquid contracts and the column falls. The instrument therefore responds to its own temperature as it exchanges energy with what it is measuring. Allow time for its reading to settle.",
-        "top": 899,
-        "bottom": 979,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "range-task",
-        "type": "activity",
-        "text": "1. Examine a laboratory thermometer under your teacher’s supervision. Keep it away from the edge of the table and handle it gently. 2. Find the unit and the lowest and highest marked values. Record both endpoints; together they describe the instrument’s marked range. 3. Compare the marked range with another thermometer if one is available. Would either be suitable for the temperature you intend to measure? Explain your choice.",
-        "top": 979,
-        "bottom": 1339,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "range-task"
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 1119,
+        "bottom": 1339
       }
     ],
     "protectedNext": {
-      "id": "range-evidence-0",
+      "id": "lab-mechanism-1",
       "type": "body",
-      "height": 64,
+      "height": 80,
       "keepNext": false
     }
   },
@@ -472,20 +490,43 @@
     "titleRole": "continuation",
     "sourcePages": [
       8,
+      10,
       9,
-      6,
-      10
+      6
     ],
-    "end": 1380,
-    "fill": 97,
-    "breakReason": "Next equation: Value of one division = (30 − 20) °C ÷ 10 = 1 °C",
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1352,
+    "fill": 95,
+    "breakReason": "Next heading: Reading Between Numbered Marks",
     "blocks": [
+      {
+        "id": "lab-mechanism-1",
+        "type": "body",
+        "text": "When the bulb warms, its liquid expands and rises in the narrow tube. When it cools, the liquid contracts and the column falls. The instrument therefore responds to its own temperature as it exchanges energy with what it is measuring. Allow time for its reading to settle.",
+        "top": 112,
+        "bottom": 192,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "range-task",
+        "type": "activity",
+        "text": "1. Examine a laboratory thermometer under your teacher’s supervision. Keep it away from the edge of the table and handle it gently. 2. Find the unit and the lowest and highest marked values. Record both endpoints; together they describe the instrument’s marked range. 3. Compare the marked range with another thermometer if one is available. Would either be suitable for the temperature you intend to measure? Explain your choice.",
+        "top": 192,
+        "bottom": 552,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "range-task"
+      },
       {
         "id": "range-evidence-0",
         "type": "body",
         "text": "A common school laboratory model is marked from −10 °C to 110 °C. This is an example, not a rule for every instrument. Read the scale and the instructions of the model actually being used. Negative Celsius temperatures lie below 0 °C; they are not “less than no temperature”.",
-        "top": 112,
-        "bottom": 176,
+        "top": 552,
+        "bottom": 616,
         "before": 0,
         "keepNext": false
       },
@@ -493,8 +534,8 @@
         "id": "range-evidence-1",
         "type": "body",
         "text": "A common school laboratory model is marked from −10 °C to 110 °C. This is an example, not a rule for every instrument. Read the scale and the instructions of the model actually being used. Negative Celsius temperatures lie below 0 °C; they are not “less than no temperature”.",
-        "top": 176,
-        "bottom": 256,
+        "top": 616,
+        "bottom": 696,
         "before": 0,
         "keepNext": false
       },
@@ -502,27 +543,58 @@
         "id": "instrument-table",
         "type": "table",
         "text": "Table 7.2 · Choose the instrument for the job",
-        "top": 256,
-        "bottom": 692,
+        "top": 696,
+        "bottom": 1132,
         "before": 0,
         "keepNext": false,
         "conceptId": "instrument-table"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 1132,
+        "bottom": 1352
+      }
+    ],
+    "protectedNext": {
+      "id": "division-heading",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 8,
+    "title": "Reading Between Numbered Marks",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      9
+    ],
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1217,
+    "fill": 85,
+    "breakReason": "Next heading: Measuring Water Carefully",
+    "blocks": [
+      {
         "id": "division-heading",
         "type": "heading",
         "text": "Reading Between Numbered Marks",
-        "top": 704,
-        "bottom": 752,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "division-task",
         "type": "activity",
         "text": "1. Choose two neighbouring numbered marks on the thermometer. Subtract the lower value from the higher value. 2. Count the equal intervals between the marks. Count the spaces, not both endpoint lines as extra intervals. 3. Divide the temperature difference by the number of intervals. Record the value of one smallest division with its unit. 4. Compare your calculation with a partner’s. If the answers differ, check the endpoints and interval count before reading a liquid level.",
-        "top": 752,
-        "bottom": 1156,
+        "top": 160,
+        "bottom": 564,
         "before": 0,
         "keepNext": false,
         "conceptId": "division-task"
@@ -532,38 +604,17 @@
         "type": "figure",
         "text": "Fig. 7.4 · Ten equal intervals run from 20 °C to 30 °C on this scale.",
         "artKey": "division",
-        "top": 1156,
-        "bottom": 1380,
+        "top": 564,
+        "bottom": 788,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "division-equation",
-      "type": "equation",
-      "height": 97,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 8,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      9,
-      10,
-      11
-    ],
-    "end": 1293,
-    "fill": 91,
-    "breakReason": "Next body: Looking from above or below can make a liquid level appear to lin",
-    "blocks": [
+      },
       {
         "id": "division-equation",
         "type": "equation",
         "text": "Value of one division = (30 − 20) °C ÷ 10 = 1 °C",
-        "top": 112,
-        "bottom": 209,
+        "top": 788,
+        "bottom": 885,
         "before": 0,
         "keepNext": false
       },
@@ -571,26 +622,58 @@
         "id": "resolution-0",
         "type": "body",
         "text": "Another thermometer may have divisions of 0.5 °C or 2 °C. Do not assume that every small line means 1 °C. Small divisions let us distinguish closer readings; they do not, by themselves, prove that an instrument is accurate.",
-        "top": 209,
-        "bottom": 321,
+        "top": 885,
+        "bottom": 997,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 997,
+        "bottom": 1217
+      }
+    ],
+    "protectedNext": {
+      "id": "water-heading",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 9,
+    "title": "Measuring Water Carefully",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      10,
+      11
+    ],
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1292,
+    "fill": 91,
+    "breakReason": "Next body: Looking from above or below can make a liquid level appear to lin",
+    "blocks": [
+      {
         "id": "water-heading",
         "type": "heading",
         "text": "Measuring Water Carefully",
-        "top": 333,
-        "bottom": 381,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "water-task",
         "type": "activity",
         "text": "1. Ask the teacher for a beaker of comfortably warm water and a suitable mercury-free laboratory thermometer. No pupil heating is needed. 2. Support the thermometer upright. Immerse its bulb fully in the water, clear of the beaker’s sides and bottom. 3. Wait for the liquid column to stop changing. Bring your eyes to the level of the top of the column, keeping your face safely away from the apparatus. 4. Read and record the temperature with its unit while the bulb remains in the water. Repeat carefully. Compare readings and explain any differences in the method.",
-        "top": 381,
-        "bottom": 849,
+        "top": 160,
+        "bottom": 628,
         "before": 0,
         "keepNext": false,
         "conceptId": "water-task"
@@ -600,10 +683,18 @@
         "type": "figure",
         "text": "Fig. 7.5 · Keep the bulb immersed and clear of the glass. View the liquid level straight across.",
         "artKey": "water",
-        "top": 849,
-        "bottom": 1293,
+        "top": 628,
+        "bottom": 1072,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 1072,
+        "bottom": 1292
       }
     ],
     "protectedNext": {
@@ -614,7 +705,7 @@
     }
   },
   {
-    "page": 9,
+    "page": 10,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -622,9 +713,13 @@
       11,
       12
     ],
-    "end": 1284,
-    "fill": 90,
-    "breakReason": "Next table: Table 7.3 · Supplied boiling-water readings in Shillong",
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1112,
+    "fill": 77,
+    "breakReason": "Next activity: 1. Study the supplied readings from a boiling-water demonstration",
     "blocks": [
       {
         "id": "water-evidence-0",
@@ -726,124 +821,18 @@
         "keepNext": false
       },
       {
-        "id": "boiling-data-task",
-        "type": "activity",
-        "text": "1. Study the supplied readings from a boiling-water demonstration in Shillong in Table 7.3. This is a data investigation; do not boil water yourself. 2. Find the highest and lowest readings and calculate their difference. Which value occurs more than once? 3. Suggest measurement details that could account for the small spread. Explain why you need the place and conditions before comparing every result with 100 °C.",
-        "top": 892,
-        "bottom": 1284,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "boiling-data-task"
-      }
-    ],
-    "protectedNext": {
-      "id": "boiling-table",
-      "type": "table",
-      "height": 336,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 10,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      11,
-      12,
-      13
-    ],
-    "end": 1387,
-    "fill": 98,
-    "breakReason": "Next body: Weather reports commonly give the day’s **maximum** and **minimum",
-    "blocks": [
-      {
-        "id": "boiling-table",
-        "type": "table",
-        "text": "Table 7.3 · Supplied boiling-water readings in Shillong",
-        "top": 112,
-        "bottom": 448,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "boiling-table"
-      },
-      {
-        "id": "boiling-evidence-0",
-        "type": "body",
-        "text": "The readings span 0.3 °C. Differences in eye position, timing, instruments or conditions could contribute. Check those details before choosing a cause. Shillong’s elevation also helps explain why readings cluster below the sea-level reference of 100 °C.",
-        "top": 448,
-        "bottom": 512,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "boiling-evidence-1",
-        "type": "body",
-        "text": "The readings span 0.3 °C. Differences in eye position, timing, instruments or conditions could contribute. Check those details before choosing a cause. Shillong’s elevation also helps explain why readings cluster below the sea-level reference of 100 °C.",
-        "top": 512,
-        "bottom": 592,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "air-heading",
-        "type": "heading",
-        "text": "7.5 Temperature of the Air",
-        "top": 604,
-        "bottom": 662,
-        "before": 12,
-        "keepNext": false
-      },
-      {
-        "id": "air-start-0",
-        "type": "body",
-        "text": "A room thermometer responds to the air and surroundings where it is placed. A sunny windowsill and a shaded part of the same room may give different readings. Keep the position and time consistent when investigating change, and record those details.",
-        "top": 662,
-        "bottom": 726,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "air-start-1",
-        "type": "body",
-        "text": "A room thermometer responds to the air and surroundings where it is placed. A sunny windowsill and a shaded part of the same room may give different readings. Keep the position and time consistent when investigating change, and record those details.",
-        "top": 726,
-        "bottom": 806,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "weather-art",
+        "id": "page-illustration",
         "type": "figure",
-        "text": "Fig. 7.6 · A ventilated weather-instrument shelter protects temperature instruments from direct sunshine. The instruments beside it measure wind.",
-        "artKey": "figure",
-        "top": 806,
-        "bottom": 1243,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "weather-reading-0",
-        "type": "body",
-        "text": "Weather observations need comparable measuring conditions. Outdoor air-temperature instruments are protected from direct sunshine while air can move around them. A thermometer warmed directly by the Sun can give a misleading value for the surrounding shaded air.",
-        "top": 1243,
-        "bottom": 1307,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "weather-reading-1",
-        "type": "body",
-        "text": "Weather observations need comparable measuring conditions. Outdoor air-temperature instruments are protected from direct sunshine while air can move around them. A thermometer warmed directly by the Sun can give a misleading value for the surrounding shaded air.",
-        "top": 1307,
-        "bottom": 1387,
-        "before": 0,
-        "keepNext": false
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 892,
+        "bottom": 1112
       }
     ],
     "protectedNext": {
-      "id": "max-min-0",
-      "type": "body",
-      "height": 64,
+      "id": "boiling-data-task",
+      "type": "activity",
+      "height": 392,
       "keepNext": false
     }
   },
@@ -852,20 +841,145 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      12,
-      13,
-      14
+      11,
+      12
     ],
-    "end": 1332,
-    "fill": 94,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1124,
+    "fill": 78,
+    "breakReason": "Next body: The readings span 0.3 °C. Differences in eye position, timing, in",
     "blocks": [
+      {
+        "id": "boiling-data-task",
+        "type": "activity",
+        "text": "1. Study the supplied readings from a boiling-water demonstration in Shillong in Table 7.3. This is a data investigation; do not boil water yourself. 2. Find the highest and lowest readings and calculate their difference. Which value occurs more than once? 3. Suggest measurement details that could account for the small spread. Explain why you need the place and conditions before comparing every result with 100 °C.",
+        "top": 112,
+        "bottom": 504,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "boiling-data-task"
+      },
+      {
+        "id": "boiling-table",
+        "type": "table",
+        "text": "Table 7.3 · Supplied boiling-water readings in Shillong",
+        "top": 504,
+        "bottom": 840,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "boiling-table"
+      },
+      {
+        "id": "boiling-evidence-0",
+        "type": "body",
+        "text": "The readings span 0.3 °C. Differences in eye position, timing, instruments or conditions could contribute. Check those details before choosing a cause. Shillong’s elevation also helps explain why readings cluster below the sea-level reference of 100 °C.",
+        "top": 840,
+        "bottom": 904,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 904,
+        "bottom": 1124
+      }
+    ],
+    "protectedNext": {
+      "id": "boiling-evidence-1",
+      "type": "body",
+      "height": 80,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 12,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      11,
+      12,
+      13
+    ],
+    "end": 1131,
+    "fill": 78,
+    "breakReason": "Next activity: 1. Choose one place and a reliable weather report. Collect its re",
+    "blocks": [
+      {
+        "id": "boiling-evidence-1",
+        "type": "body",
+        "text": "The readings span 0.3 °C. Differences in eye position, timing, instruments or conditions could contribute. Check those details before choosing a cause. Shillong’s elevation also helps explain why readings cluster below the sea-level reference of 100 °C.",
+        "top": 112,
+        "bottom": 192,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "air-heading",
+        "type": "heading",
+        "text": "7.5 Temperature of the Air",
+        "top": 204,
+        "bottom": 262,
+        "before": 12,
+        "keepNext": false
+      },
+      {
+        "id": "air-start-0",
+        "type": "body",
+        "text": "A room thermometer responds to the air and surroundings where it is placed. A sunny windowsill and a shaded part of the same room may give different readings. Keep the position and time consistent when investigating change, and record those details.",
+        "top": 262,
+        "bottom": 326,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "air-start-1",
+        "type": "body",
+        "text": "A room thermometer responds to the air and surroundings where it is placed. A sunny windowsill and a shaded part of the same room may give different readings. Keep the position and time consistent when investigating change, and record those details.",
+        "top": 326,
+        "bottom": 406,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "weather-art",
+        "type": "figure",
+        "text": "Fig. 7.6 · A ventilated weather-instrument shelter protects temperature instruments from direct sunshine. The instruments beside it measure wind.",
+        "artKey": "figure",
+        "top": 406,
+        "bottom": 843,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "weather-reading-0",
+        "type": "body",
+        "text": "Weather observations need comparable measuring conditions. Outdoor air-temperature instruments are protected from direct sunshine while air can move around them. A thermometer warmed directly by the Sun can give a misleading value for the surrounding shaded air.",
+        "top": 843,
+        "bottom": 907,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "weather-reading-1",
+        "type": "body",
+        "text": "Weather observations need comparable measuring conditions. Outdoor air-temperature instruments are protected from direct sunshine while air can move around them. A thermometer warmed directly by the Sun can give a misleading value for the surrounding shaded air.",
+        "top": 907,
+        "bottom": 987,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "max-min-0",
         "type": "body",
         "text": "Weather reports commonly give the day’s **maximum** and **minimum** air temperatures: its highest and lowest recorded values for the reporting period. A single reading at noon cannot establish both. Special instruments or repeated automatic records are used to capture the extremes.",
-        "top": 112,
-        "bottom": 176,
+        "top": 987,
+        "bottom": 1051,
         "before": 0,
         "keepNext": false
       },
@@ -873,17 +987,42 @@
         "id": "max-min-1",
         "type": "body",
         "text": "Weather reports commonly give the day’s **maximum** and **minimum** air temperatures: its highest and lowest recorded values for the reporting period. A single reading at noon cannot establish both. Special instruments or repeated automatic records are used to capture the extremes.",
-        "top": 176,
-        "bottom": 256,
+        "top": 1051,
+        "bottom": 1131,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "weather-task",
+      "type": "activity",
+      "height": 436,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 13,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      12,
+      13,
+      14
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch07/weather.png",
+      "caption": "Weather measurements."
+    },
+    "end": 1408,
+    "fill": 99,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
       {
         "id": "weather-task",
         "type": "activity",
         "text": "1. Choose one place and a reliable weather report. Collect its reported maximum and minimum temperatures for ten successive days. 2. In your notebook, record date, place, source, unit, maximum and minimum. Use the same reporting period and source throughout. 3. Calculate each day’s temperature range by subtracting its minimum from its maximum. Identify the greatest maximum and the smallest minimum in your record. 4. Describe the changes you actually find. Compare with classmates using the same place and dates, and investigate any disagreements.",
-        "top": 256,
-        "bottom": 692,
+        "top": 112,
+        "bottom": 548,
         "before": 0,
         "keepNext": false,
         "conceptId": "weather-task"
@@ -892,8 +1031,8 @@
         "id": "weather-evidence-0",
         "type": "body",
         "text": "Daily temperatures need not change steadily in one direction. Clouds, wind and other weather conditions matter. Ten days can show a short-term pattern, but this small record is not enough to describe a place’s climate. Keep the conclusion within what the observations support.",
-        "top": 692,
-        "bottom": 756,
+        "top": 548,
+        "bottom": 612,
         "before": 0,
         "keepNext": false
       },
@@ -901,8 +1040,8 @@
         "id": "weather-evidence-1",
         "type": "body",
         "text": "Daily temperatures need not change steadily in one direction. Clouds, wind and other weather conditions matter. Ten days can show a short-term pattern, but this small record is not enough to describe a place’s climate. Keep the conclusion within what the observations support.",
-        "top": 756,
-        "bottom": 836,
+        "top": 612,
+        "bottom": 692,
         "before": 0,
         "keepNext": false
       },
@@ -910,8 +1049,8 @@
         "id": "anna-mani-0",
         "type": "body",
         "text": "Anna Mani (1918–2001) was an Indian meteorologist who helped develop and standardise weather instruments in India. Her work also supported measurements of sunshine and wind. Reliable instruments turn observations into records that others can check and compare.",
-        "top": 836,
-        "bottom": 900,
+        "top": 692,
+        "bottom": 756,
         "before": 0,
         "keepNext": false
       },
@@ -919,8 +1058,8 @@
         "id": "anna-mani-1",
         "type": "body",
         "text": "Anna Mani (1918–2001) was an Indian meteorologist who helped develop and standardise weather instruments in India. Her work also supported measurements of sunshine and wind. Reliable instruments turn observations into records that others can check and compare.",
-        "top": 900,
-        "bottom": 980,
+        "top": 756,
+        "bottom": 836,
         "before": 0,
         "keepNext": false
       },
@@ -928,8 +1067,8 @@
         "id": "air-think",
         "type": "panel",
         "text": "Two pupils report different afternoon air temperatures. One measured beside a sunny wall; the other used a shaded, ventilated position. What would you change before deciding that either thermometer was faulty?",
-        "top": 980,
-        "bottom": 1188,
+        "top": 836,
+        "bottom": 1044,
         "before": 0,
         "keepNext": false,
         "conceptId": "air-think"
@@ -938,8 +1077,8 @@
         "id": "temperature-close-0",
         "type": "body",
         "text": "A temperature measurement is more than a number. State the unit, choose an instrument suited to the task, use a consistent method and describe the conditions. These details let another person understand what was measured and whether a comparison is fair.",
-        "top": 1188,
-        "bottom": 1252,
+        "top": 1044,
+        "bottom": 1108,
         "before": 0,
         "keepNext": false
       },
@@ -947,26 +1086,38 @@
         "id": "temperature-close-1",
         "type": "body",
         "text": "A temperature measurement is more than a number. State the unit, choose an instrument suited to the task, use a consistent method and describe the conditions. These details let another person understand what was measured and whether a comparison is fair.",
-        "top": 1252,
-        "bottom": 1332,
+        "top": 1108,
+        "bottom": 1188,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Weather measurements.",
+        "artKey": "figures/class-6/science/ch07/weather.png",
+        "top": 1188,
+        "bottom": 1408
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 12,
+    "page": 14,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
       14
     ],
-    "end": 976,
-    "fill": 66
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch07/bowls.png",
+      "caption": "Bowls for comparing warmth."
+    },
+    "end": 1196,
+    "fill": 83
   },
   {
-    "page": 13,
+    "page": 15,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
@@ -976,7 +1127,7 @@
     "fill": 74
   },
   {
-    "page": 14,
+    "page": 16,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
@@ -985,9 +1136,13 @@
       17,
       18
     ],
-    "end": 1267,
-    "fill": 89,
-    "breakReason": "Next question: Copy these Celsius scales into your notebook. Draw the liquid lev",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch07/bowls.png",
+      "caption": "Bowls for comparing warmth."
+    },
+    "end": 974,
+    "fill": 66,
+    "breakReason": "Next question: Four students position laboratory thermometers as shown. Which po",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -1044,49 +1199,92 @@
         "keepNext": false
       },
       {
-        "id": "q5",
-        "type": "question",
-        "text": "Four students position laboratory thermometers as shown. Which position is suitable for reading the water temperature? Explain the problem in each of the other three positions.",
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Bowls for comparing warmth.",
+        "artKey": "figures/class-6/science/ch07/bowls.png",
         "top": 754,
-        "bottom": 1267,
-        "before": 0,
-        "keepNext": false
+        "bottom": 974
       }
     ],
     "protectedNext": {
-      "id": "q6",
+      "id": "q5",
       "type": "question",
-      "height": 443,
+      "height": 513,
       "keepNext": false
     }
   },
   {
-    "page": 15,
+    "page": 17,
+    "title": "",
+    "titleRole": "assessment",
+    "sourcePages": [
+      16
+    ],
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1288,
+    "fill": 90,
+    "breakReason": "Next question: This is part of a liquid-in-glass thermometer scale used in a lab",
+    "blocks": [
+      {
+        "id": "q5",
+        "type": "question",
+        "text": "Four students position laboratory thermometers as shown. Which position is suitable for reading the water temperature? Explain the problem in each of the other three positions.",
+        "top": 112,
+        "bottom": 625,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q6",
+        "type": "question",
+        "text": "Copy these Celsius scales into your notebook. Draw the liquid level at (a) 14 °C, (b) 17 °C and (c) 7.5 °C. Count the intervals before drawing.",
+        "top": 625,
+        "bottom": 1068,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 1068,
+        "bottom": 1288
+      }
+    ],
+    "protectedNext": {
+      "id": "q7",
+      "type": "question",
+      "height": 313,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 18,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
       16,
       17
     ],
-    "end": 1408,
-    "fill": 99,
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1185,
+    "fill": 82,
     "breakReason": "Next question: Which scale has a marked division exactly at 22.5 °C? Explain you",
     "blocks": [
-      {
-        "id": "q6",
-        "type": "question",
-        "text": "Copy these Celsius scales into your notebook. Draw the liquid level at (a) 14 °C, (b) 17 °C and (c) 7.5 °C. Count the intervals before drawing.",
-        "top": 112,
-        "bottom": 555,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "q7",
         "type": "question",
         "text": "This is part of a liquid-in-glass thermometer scale used in a laboratory. What temperature does the column show? What is the value of its smallest division?",
-        "top": 555,
-        "bottom": 868,
+        "top": 112,
+        "bottom": 425,
         "before": 0,
         "keepNext": false
       },
@@ -1094,8 +1292,8 @@
         "id": "q8",
         "type": "question",
         "text": "Why should a glass laboratory thermometer not be used to measure a person’s body temperature? Explain how the intended use and safe handling of a clinical thermometer differ.",
-        "top": 868,
-        "bottom": 994,
+        "top": 425,
+        "bottom": 551,
         "before": 0,
         "keepNext": false
       },
@@ -1103,10 +1301,18 @@
         "id": "q9",
         "type": "question",
         "text": "Use this supplied classroom record of Vaishnavi’s temperature. (a) Find the highest reading. (b) State its day and time. (c) On which day and at what time does the record first reach 37.0 °C? Explain why the table alone cannot establish that she has recovered.",
-        "top": 994,
-        "bottom": 1408,
+        "top": 551,
+        "bottom": 965,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 965,
+        "bottom": 1185
       }
     ],
     "protectedNext": {
@@ -1117,16 +1323,19 @@
     }
   },
   {
-    "page": 16,
+    "page": 19,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
-      17,
-      18
+      17
     ],
-    "end": 1255,
-    "fill": 88,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 880,
+    "fill": 59,
+    "breakReason": "Next question: Read the liquid level on this enlarged scale. Choose (a) 28.0 °C,",
     "blocks": [
       {
         "id": "q10",
@@ -1138,11 +1347,42 @@
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 660,
+        "bottom": 880
+      }
+    ],
+    "protectedNext": {
+      "id": "q11",
+      "type": "question",
+      "height": 281,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 20,
+    "title": "",
+    "titleRole": "assessment",
+    "sourcePages": [
+      18
+    ],
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 927,
+    "fill": 63,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "q11",
         "type": "question",
         "text": "Read the liquid level on this enlarged scale. Choose (a) 28.0 °C, (b) 27.5 °C, (c) 26.5 °C or (d) 25.3 °C. Explain how you counted from a numbered mark.",
-        "top": 660,
-        "bottom": 941,
+        "top": 112,
+        "bottom": 393,
         "before": 0,
         "keepNext": false
       },
@@ -1150,8 +1390,8 @@
         "id": "q12",
         "type": "question",
         "text": "A thermometer has 50 equal intervals between 0 °C and 100 °C. What temperature interval does one division represent? Show your calculation.",
-        "top": 941,
-        "bottom": 1035,
+        "top": 393,
+        "bottom": 487,
         "before": 0,
         "keepNext": false
       },
@@ -1159,8 +1399,8 @@
         "id": "q13",
         "type": "question",
         "text": "Draw a scale from 10 °C to 20 °C with a division every 0.5 °C. How many intervals and how many tick marks, including both endpoints, will you draw?",
-        "top": 1035,
-        "bottom": 1129,
+        "top": 487,
+        "bottom": 581,
         "before": 0,
         "keepNext": false
       },
@@ -1168,25 +1408,33 @@
         "id": "q14",
         "type": "question",
         "text": "Komal tells her friend, “My temperature is 101 degrees.” Which scale is she likely using? What details should you ask for before interpreting the reading? Explain why anyone who feels unwell should tell a responsible adult.",
-        "top": 1129,
-        "bottom": 1255,
+        "top": 581,
+        "bottom": 707,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 707,
+        "bottom": 927
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 17,
+    "page": 21,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [
       18,
       19
     ],
-    "end": 971,
-    "fill": 66,
-    "breakReason": "Next project: Use a reliable space-agency source to compare reported temperatur",
+    "end": 1207,
+    "fill": 84,
+    "breakReason": "Next project: With teacher approval, compare room air and a beaker of water at ",
     "blocks": [
       {
         "id": "project-heading",
@@ -1216,46 +1464,57 @@
         "before": 0,
         "keepNext": false,
         "conceptId": "project-india"
-      }
-    ],
-    "protectedNext": {
-      "id": "project-planets",
-      "type": "project",
-      "height": 236,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 18,
-    "title": "",
-    "titleRole": "projects",
-    "sourcePages": [
-      18,
-      19
-    ],
-    "end": 1030,
-    "fill": 70,
-    "breakReason": "End of lesson before reference pages",
-    "blocks": [
+      },
       {
         "id": "project-planets",
         "type": "project",
         "text": "Use a reliable space-agency source to compare reported temperatures of planets and their distances from the Sun. Check whether each temperature describes a surface, atmosphere or average. Does distance alone explain the order? Investigate one exception. The kelvin scale begins at absolute zero, 0 K, equal to −273.15 °C; this is very different from the freezing point of water.",
-        "top": 112,
-        "bottom": 348,
+        "top": 971,
+        "bottom": 1207,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-planets"
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "project-room-water",
+      "type": "project",
+      "height": 682,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 22,
+    "title": "",
+    "titleRole": "projects",
+    "sourcePages": [
+      19
+    ],
+    "pageIllustration": {
+      "file": "figures/science/page-references/laboratory.png",
+      "caption": "A laboratory thermometer immersed in water."
+    },
+    "end": 1014,
+    "fill": 69,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
       {
         "id": "project-room-water",
         "type": "project",
         "text": "With teacher approval, compare room air and a beaker of water at the same three times each day for two weeks. Use suitable thermometers in a fixed shaded position. Keep the water thermometer’s bulb immersed and clear of the vessel. Record date, time, both values and units. Keep the water out of direct sunlight and do not heat it. Do the temperatures always agree? Discuss why the water and the air may respond to changes at different rates.",
-        "top": 348,
-        "bottom": 1030,
+        "top": 112,
+        "bottom": 794,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-room-water"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A laboratory thermometer immersed in water.",
+        "artKey": "figures/science/page-references/laboratory.png",
+        "top": 794,
+        "bottom": 1014
       }
     ],
     "protectedNext": null

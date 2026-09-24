@@ -93,6 +93,8 @@
 .g6-media .g6-block {padding-bottom:0;}
 .g6-summary > .g6-block:first-child {padding-top:0;}
 .g6-summary > .g6-block:last-child {padding-bottom:0;}
+.g6-summary-illustrated-lead {display:grid;grid-template-columns:1fr calc(var(--g6-u) * 190);gap:calc(var(--g6-u) * 24);align-items:center;}
+.g6-page-image {--size-body:24px;display:block;}
 .page--g6-modern .g6-figure figcaption,.page--g6-modern table caption {font-style:normal;}
 
 /* Chapter 10's restored lists and original vector figures use the same reading

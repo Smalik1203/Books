@@ -3,7 +3,7 @@
     88,
     96
   ],
-  "meanLessonOccupancy": 87.87647058823529,
+  "meanLessonOccupancy": 85.42105263157895,
   "targetMetOnEveryPage": false,
   "shortPages": [
     {
@@ -31,13 +31,19 @@
         }
       ],
       "requiredMM": 157.4,
-      "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
     },
     {
       "page": 6,
-      "occupiedPercent": 71.8,
-      "remainingMM": 63.1,
+      "occupiedPercent": 82.3,
+      "remainingMM": 37.9,
       "protectedGroup": [
+        {
+          "id": "material-limits-1",
+          "type": "body",
+          "title": "A dim patch behind thick cloth could be light through gaps in the weave, rather than through its fib",
+          "height": 80
+        },
         {
           "id": "shadows",
           "type": "heading",
@@ -57,13 +63,13 @@
           "height": 872
         }
       ],
-      "requiredMM": 187.2,
-      "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      "requiredMM": 203.7,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
     },
     {
       "page": 7,
-      "occupiedPercent": 78.3,
-      "remainingMM": 46.9,
+      "occupiedPercent": 85.3,
+      "remainingMM": 30.4,
       "protectedGroup": [
         {
           "id": "shadow-record",
@@ -73,129 +79,163 @@
         }
       ],
       "requiredMM": 79.4,
-      "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+    },
+    {
+      "page": 8,
+      "occupiedPercent": 73.8,
+      "remainingMM": 57.7,
+      "protectedGroup": [
+        {
+          "id": "shadow-rays",
+          "type": "figure",
+          "title": "A side-view model with a small source. Boundary rays show why a nearby object can block a wider part",
+          "height": 416
+        }
+      ],
+      "requiredMM": 74.7,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
     },
     {
       "page": 10,
-      "occupiedPercent": 81.5,
-      "remainingMM": 40.2,
+      "occupiedPercent": 75.4,
+      "remainingMM": 54.1,
       "protectedGroup": [
         {
-          "id": "reflection-rays",
-          "type": "figure",
-          "title": "A top-view model: incoming and reflected rays meet at the mirror. The dashed normal is perpendicular",
-          "height": 361
+          "id": "slit-task",
+          "type": "activity",
+          "title": "1. Cover the gaps of a comb with black paper except for one narrow slit. Stand the comb on a white s",
+          "height": 759
         }
       ],
-      "requiredMM": 64.9,
-      "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      "requiredMM": 136.4,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+    },
+    {
+      "page": 12,
+      "occupiedPercent": 78.7,
+      "remainingMM": 46.2,
+      "protectedGroup": [
+        {
+          "id": "virtual-image-1",
+          "type": "body",
+          "title": "A plane mirror forms an upright image of the same size as the object. The image appears as far behin",
+          "height": 112
+        },
+        {
+          "id": "pen-image",
+          "type": "figure",
+          "title": "The pen is an object; its appearance in the mirror is an image. Perceived size in a perspective view",
+          "height": 431
+        }
+      ],
+      "requiredMM": 97.6,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+    },
+    {
+      "page": 13,
+      "occupiedPercent": 87,
+      "remainingMM": 26.6,
+      "protectedGroup": [
+        {
+          "id": "lateral-0",
+          "type": "body",
+          "title": "The familiar apparent left–right reversal is called **lateral inversion**. More precisely, a plane m",
+          "height": 64
+        },
+        {
+          "id": "lateral-1",
+          "type": "body",
+          "title": "The familiar apparent left–right reversal is called **lateral inversion**. More precisely, a plane m",
+          "height": 112
+        },
+        {
+          "id": "mirror-word",
+          "type": "figure",
+          "title": "A word facing a mirror and its reversed image. The shape of each letter helps you track the change.",
+          "height": 221
+        }
+      ],
+      "requiredMM": 71.3,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+    },
+    {
+      "page": 14,
+      "occupiedPercent": 67.9,
+      "remainingMM": 71.5,
+      "protectedGroup": [
+        {
+          "id": "pinhole",
+          "type": "heading",
+          "title": "11.7 A Pinhole Camera",
+          "height": 58
+        },
+        {
+          "id": "pinhole-question-0",
+          "type": "body",
+          "title": "Can light form an image on a screen without a mirror? A tiny opening admits narrow bundles of light ",
+          "height": 112
+        },
+        {
+          "id": "pinhole-task",
+          "type": "activity",
+          "title": "1. An adult makes a small clean pinhole in an opaque card. Place the card between a bright battery L",
+          "height": 532
+        }
+      ],
+      "requiredMM": 126.1,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+    },
+    {
+      "page": 15,
+      "occupiedPercent": 82.7,
+      "remainingMM": 36.8,
+      "protectedGroup": [
+        {
+          "id": "camera-task",
+          "type": "activity",
+          "title": "1. Find two cardboard boxes that slide snugly into each other. Open one end of each. An adult makes ",
+          "height": 931
+        }
+      ],
+      "requiredMM": 167.3,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
     },
     {
       "page": 16,
-      "occupiedPercent": 84.2,
-      "remainingMM": 33.2,
+      "occupiedPercent": 83.7,
+      "remainingMM": 35.2,
       "protectedGroup": [
         {
-          "id": "periscope-use-0",
-          "type": "body",
-          "title": "Light from an object enters the upper opening, reflects down the tube, then reflects towards the eye",
-          "height": 64
-        },
-        {
-          "id": "periscope-use-1",
-          "type": "body",
-          "title": "Light from an object enters the upper opening, reflects down the tube, then reflects towards the eye",
-          "height": 112
-        },
-        {
-          "id": "periscope-world-0",
-          "type": "body",
-          "title": "Periscopes and related viewing systems let observers see from protected positions, including in subm",
-          "height": 64
-        },
-        {
-          "id": "periscope-world-1",
-          "type": "body",
-          "title": "Periscopes and related viewing systems let observers see from protected positions, including in subm",
-          "height": 112
-        },
-        {
-          "id": "kaleidoscope-heading",
-          "type": "heading",
-          "title": "11.8.2 A Kaleidoscope",
-          "height": 48
-        },
-        {
-          "id": "kaleidoscope-build-0",
-          "type": "body",
-          "title": "Join three equal-width reflective strips into a triangular tube with the reflective faces inward. Fi",
-          "height": 64
-        },
-        {
-          "id": "kaleidoscope-build-1",
-          "type": "body",
-          "title": "Join three equal-width reflective strips into a triangular tube with the reflective faces inward. Fi",
-          "height": 64
-        },
-        {
-          "id": "kaleidoscope-build-2",
-          "type": "body",
-          "title": "Join three equal-width reflective strips into a triangular tube with the reflective faces inward. Fi",
-          "height": 80
-        },
-        {
-          "id": "kaleidoscope-parts",
+          "id": "pinhole-rays",
           "type": "figure",
-          "title": "Parts for a safe kaleidoscope. Use smooth plastic pieces, seal the end chamber and keep small parts ",
-          "height": 446
+          "title": "Two representative paths explain the inverted image. The object and screen are on opposite sides of ",
+          "height": 451
         }
       ],
-      "requiredMM": 191.5,
-      "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      "requiredMM": 81,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
     },
     {
       "page": 17,
-      "occupiedPercent": 86.7,
-      "remainingMM": 31.1,
+      "occupiedPercent": 86.8,
+      "remainingMM": 28.4,
       "protectedGroup": [
         {
-          "id": "kaleidoscope-explain-1",
-          "type": "body",
-          "title": "Look through the eyehole towards a softly lit window, never towards the Sun. Gently turn the tube an",
-          "height": 112
-        },
-        {
-          "id": "kaleidoscope-open-0",
-          "type": "body",
-          "title": "An open-ended triangular mirror tube can also repeat parts of an outside scene, such as leaves. Comp",
-          "height": 64
-        },
-        {
-          "id": "kaleidoscope-open-1",
-          "type": "body",
-          "title": "An open-ended triangular mirror tube can also repeat parts of an outside scene, such as leaves. Comp",
-          "height": 112
-        },
-        {
-          "id": "device-comparison",
-          "type": "table",
-          "title": "Two devices using more than one reflection",
-          "height": 366
+          "id": "image-pause",
+          "type": "panel",
+          "title": "A leaf-shaped dark patch appears on paper. One learner calls it a shadow; another calls it a pinhole",
+          "height": 316
         }
       ],
-      "requiredMM": 117.5,
-      "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-    },
-    {
-      "page": 18,
-      "occupiedPercent": 86.3,
-      "reason": "Lesson ends before dedicated glossary and summary; reference pages remain separate."
+      "requiredMM": 56.8,
+      "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
     }
   ],
   "aboveTarget": [
     {
-      "page": 11,
-      "occupiedPercent": 98.4,
+      "page": 9,
+      "occupiedPercent": 96.1,
       "reason": "Complete teaching units remain within the measured text block with unchanged type and footer clearance."
     }
   ]

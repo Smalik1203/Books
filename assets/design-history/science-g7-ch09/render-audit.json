@@ -28,7 +28,7 @@
       },
       "opener": {
         "bandBounds": {
-          "left": -16.999999504623926,
+          "left": -16.999999504623922,
           "top": -16.99999991465431,
           "right": 1068.9999966956375,
           "bottom": 300.0000062599209
@@ -68,7 +68,7 @@
         "alignedBaseline": true,
         "centredLabel": true,
         "numberTitleGap": 87.9900841665843,
-        "decorationGap": 348.7803842533134,
+        "decorationGap": 298.0669882037116,
         "headerImageGap": 35.99998412199085,
         "imageIntroGap": 35.82441966117733,
         "sharedReadingGrid": true
@@ -81,10 +81,10 @@
       "page": 2,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
+        "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1377.4
+        "bottom": 1348
       },
       "blocks": [
         {
@@ -149,92 +149,78 @@
           "top": 1035,
           "right": 927.1,
           "bottom": 1131.4
-        },
-        {
-          "id": "human-digestion",
-          "left": 89,
-          "top": 1159.7,
-          "right": 626,
-          "bottom": 1209.8
-        },
-        {
-          "id": "canal",
-          "left": 87.5,
-          "top": 1217,
-          "right": 952.2,
-          "bottom": 1377.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.545575014439,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 6.8,
-      "occupiedPercent": 97.1,
+      "bottomGapMM": 12,
+      "occupiedPercent": 94.9,
       "footerClearanceMM": 3.3
     },
     {
       "page": 3,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 127,
-        "right": 942.6,
-        "bottom": 1233.4
+        "left": 87.5,
+        "top": 111.7,
+        "right": 952.2,
+        "bottom": 1339.4
       },
       "blocks": [
         {
+          "id": "human-digestion",
+          "left": 89,
+          "top": 111.7,
+          "right": 626,
+          "bottom": 161.8
+        },
+        {
+          "id": "canal",
+          "left": 87.5,
+          "top": 169,
+          "right": 952.2,
+          "bottom": 329.4
+        },
+        {
           "id": "digestive-map",
           "left": 89,
-          "top": 127,
+          "top": 361,
           "right": 902.6,
-          "bottom": 817.2
+          "bottom": 1051.2
         },
         {
           "id": "mouth",
           "left": 89,
-          "top": 850.5,
+          "top": 1084.5,
           "right": 497.6,
-          "bottom": 890.3
+          "bottom": 1124.3
         },
         {
           "id": "mouth-work-0",
           "left": 89,
-          "top": 897,
+          "top": 1131,
           "right": 927,
-          "bottom": 961.4
+          "bottom": 1195.4
         },
         {
           "id": "mouth-work-1",
           "left": 89,
-          "top": 961,
+          "top": 1195,
           "right": 935.9,
-          "bottom": 1025.4
+          "bottom": 1259.4
         },
         {
           "id": "chewing-observation-0",
           "left": 89,
-          "top": 1041,
+          "top": 1275,
           "right": 940.6,
-          "bottom": 1105.4
-        },
-        {
-          "id": "chewing-observation-1",
-          "left": 89,
-          "top": 1105,
-          "right": 942.6,
-          "bottom": 1169.4
-        },
-        {
-          "id": "chewing-observation-2",
-          "left": 89,
-          "top": 1169,
-          "right": 886.9,
-          "bottom": 1233.4
+          "bottom": 1339.4
         }
       ],
       "collisions": [],
@@ -245,28 +231,9 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 32.6,
-      "occupiedPercent": 86.1,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 29.6,
-        "protectedGroup": [
-          {
-            "id": "saliva-question",
-            "type": "body",
-            "title": "Taste alone is a subjective clue. How could we test for the starch that is present before and after ",
-            "height": 176
-          },
-          {
-            "id": "starch-task",
-            "type": "activity",
-            "title": "1. A teacher labels two clean tubes A and B. Put equal portions of the same mashed boiled rice and e",
-            "height": 961
-          }
-        ],
-        "requiredMM": 204.3,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 13.6,
+      "occupiedPercent": 94.2,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 4,
@@ -275,48 +242,49 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1227
+        "bottom": 1371
       },
       "blocks": [
         {
+          "id": "chewing-observation-1",
+          "left": 89,
+          "top": 111,
+          "right": 942.6,
+          "bottom": 175.4
+        },
+        {
+          "id": "chewing-observation-2",
+          "left": 89,
+          "top": 175,
+          "right": 886.9,
+          "bottom": 239.4
+        },
+        {
           "id": "saliva-question",
           "left": 87.5,
-          "top": 111,
+          "top": 255,
           "right": 927.8,
-          "bottom": 271.4
+          "bottom": 415.4
         },
         {
           "id": "starch-task",
           "left": 89,
-          "top": 288,
+          "top": 432,
           "right": 963,
-          "bottom": 1227
+          "bottom": 1371
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5455750144392,
-        "right": 114.70875759294636,
+        "right": 114.70875759294637,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 33.8,
-      "occupiedPercent": 85.6,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 29.8,
-        "protectedGroup": [
-          {
-            "id": "starch-record",
-            "type": "table",
-            "title": "Recording the starch comparison in your notebook",
-            "height": 338
-          }
-        ],
-        "requiredMM": 60.7,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 7.9,
+      "occupiedPercent": 96.6,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 5,
@@ -325,7 +293,7 @@
         "left": 87.5,
         "top": 111.5,
         "right": 963,
-        "bottom": 1305.4
+        "bottom": 1286
       },
       "blocks": [
         {
@@ -369,20 +337,6 @@
           "top": 770,
           "right": 963,
           "bottom": 1064
-        },
-        {
-          "id": "food-pipe",
-          "left": 89,
-          "top": 1098.5,
-          "right": 467.2,
-          "bottom": 1138.3
-        },
-        {
-          "id": "peristalsis",
-          "left": 89,
-          "top": 1145,
-          "right": 950.1,
-          "bottom": 1305.4
         }
       ],
       "collisions": [],
@@ -393,8 +347,8 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 19.7,
-      "occupiedPercent": 91.6,
+      "bottomGapMM": 23.2,
+      "occupiedPercent": 90.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -402,187 +356,131 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
-        "top": 122,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1165.4
+        "bottom": 1278
       },
       "blocks": [
         {
+          "id": "food-pipe",
+          "left": 89,
+          "top": 112.5,
+          "right": 467.2,
+          "bottom": 152.3
+        },
+        {
+          "id": "peristalsis",
+          "left": 89,
+          "top": 159,
+          "right": 950.1,
+          "bottom": 319.4
+        },
+        {
           "id": "peristalsis-art",
           "left": 89,
-          "top": 122,
+          "top": 346,
           "right": 874.8,
-          "bottom": 547.2
+          "bottom": 771.2
         },
         {
           "id": "stomach",
           "left": 89,
-          "top": 580.5,
+          "top": 804.5,
           "right": 672.9,
-          "bottom": 620.3
+          "bottom": 844.3
         },
         {
           "id": "stomach-actions-0",
           "left": 89,
-          "top": 627,
+          "top": 851,
           "right": 914.1,
-          "bottom": 723.4
+          "bottom": 947.4
         },
         {
           "id": "stomach-components",
           "left": 89,
-          "top": 739.5,
+          "top": 963.5,
           "right": 963,
-          "bottom": 1054
-        },
-        {
-          "id": "stomach-exit-0",
-          "left": 89,
-          "top": 1069,
-          "right": 943.1,
-          "bottom": 1165.4
+          "bottom": 1278
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5455750144392,
-        "right": 114.0184210880979,
+        "right": 114.01842108809788,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 44.8,
-      "occupiedPercent": 80.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 41.9,
-        "protectedGroup": [
-          {
-            "id": "beaumont-0",
-            "type": "body",
-            "title": "In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomac",
-            "height": 64
-          },
-          {
-            "id": "beaumont-1",
-            "type": "body",
-            "title": "In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomac",
-            "height": 64
-          },
-          {
-            "id": "beaumont-2",
-            "type": "body",
-            "title": "In 1822, Alexis St. Martin survived an accidental gunshot wound that left an opening into his stomac",
-            "height": 80
-          },
-          {
-            "id": "small-intestine",
-            "type": "heading",
-            "title": "The small intestine: digesting and absorbing",
-            "height": 48
-          },
-          {
-            "id": "lengths-0",
-            "type": "body",
-            "title": "The small intestine is narrow but long and tightly coiled. An adult’s may be around 6 m long, while ",
-            "height": 64
-          },
-          {
-            "id": "lengths-1",
-            "type": "body",
-            "title": "The small intestine is narrow but long and tightly coiled. An adult’s may be around 6 m long, while ",
-            "height": 112
-          },
-          {
-            "id": "secretions",
-            "type": "table",
-            "title": "Contributions to digestion in the small intestine",
-            "height": 386
-          }
-        ],
-        "requiredMM": 149.1,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 24.6,
+      "occupiedPercent": 89.5,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
+        "left": 89,
         "top": 111,
         "right": 963,
-        "bottom": 1213.4
+        "bottom": 1254
       },
       "blocks": [
         {
-          "id": "beaumont-0",
+          "id": "stomach-exit-0",
           "left": 89,
           "top": 111,
+          "right": 943.1,
+          "bottom": 207.4
+        },
+        {
+          "id": "beaumont-0",
+          "left": 89,
+          "top": 223,
           "right": 923.6,
-          "bottom": 175.4
+          "bottom": 287.4
         },
         {
           "id": "beaumont-1",
           "left": 89,
-          "top": 175,
+          "top": 287,
           "right": 946.6,
-          "bottom": 239.4
+          "bottom": 351.4
         },
         {
           "id": "beaumont-2",
           "left": 89,
-          "top": 239,
+          "top": 351,
           "right": 839.4,
-          "bottom": 303.4
+          "bottom": 415.4
         },
         {
           "id": "small-intestine",
           "left": 89,
-          "top": 332.5,
+          "top": 444.5,
           "right": 672.2,
-          "bottom": 372.3
+          "bottom": 484.3
         },
         {
           "id": "lengths-0",
           "left": 89,
-          "top": 379,
+          "top": 491,
           "right": 885.6,
-          "bottom": 443.4
+          "bottom": 555.4
         },
         {
           "id": "lengths-1",
           "left": 89,
-          "top": 443,
+          "top": 555,
           "right": 956.1,
-          "bottom": 539.4
+          "bottom": 651.4
         },
         {
           "id": "secretions",
           "left": 89,
-          "top": 555.5,
+          "top": 667.5,
           "right": 963,
-          "bottom": 926
-        },
-        {
-          "id": "neutralisation-0",
-          "left": 89,
-          "top": 941,
-          "right": 921,
-          "bottom": 1005.4
-        },
-        {
-          "id": "neutralisation-1",
-          "left": 89,
-          "top": 1005,
-          "right": 859.2,
-          "bottom": 1069.4
-        },
-        {
-          "id": "villi-intro",
-          "left": 87.5,
-          "top": 1085,
-          "right": 954.2,
-          "bottom": 1213.4
+          "bottom": 1038
         }
       ],
       "collisions": [],
@@ -593,12 +491,30 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 36.2,
-      "occupiedPercent": 84.5,
+      "bottomGapMM": 28.9,
+      "occupiedPercent": 87.6,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 33.2,
+        "remainingMM": 25.3,
         "protectedGroup": [
+          {
+            "id": "neutralisation-0",
+            "type": "body",
+            "title": "This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes a",
+            "height": 64
+          },
+          {
+            "id": "neutralisation-1",
+            "type": "body",
+            "title": "This is a connection with your chapter on acids and bases. Conditions suitable for stomach enzymes a",
+            "height": 80
+          },
+          {
+            "id": "villi-intro",
+            "type": "body",
+            "title": "The inner surface has many small finger-like projections called **villi**. Their thin covering and l",
+            "height": 144
+          },
           {
             "id": "villi-art",
             "type": "figure",
@@ -606,8 +522,8 @@
             "height": 491
           }
         ],
-        "requiredMM": 88.2,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 140,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
@@ -615,159 +531,164 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 124.4,
-        "right": 963,
-        "bottom": 1392.4
+        "top": 111,
+        "right": 954.2,
+        "bottom": 1194.4
       },
       "blocks": [
         {
+          "id": "neutralisation-0",
+          "left": 89,
+          "top": 111,
+          "right": 921,
+          "bottom": 175.4
+        },
+        {
+          "id": "neutralisation-1",
+          "left": 89,
+          "top": 175,
+          "right": 859.2,
+          "bottom": 239.4
+        },
+        {
+          "id": "villi-intro",
+          "left": 87.5,
+          "top": 255,
+          "right": 954.2,
+          "bottom": 383.4
+        },
+        {
           "id": "villi-art",
           "left": 87.5,
-          "top": 124.4,
+          "top": 412.4,
           "right": 918.8,
-          "bottom": 582.2
+          "bottom": 870.2
         },
         {
           "id": "absorption-0",
           "left": 89,
-          "top": 602,
+          "top": 890,
           "right": 936.7,
-          "bottom": 666.4
+          "bottom": 954.4
         },
         {
           "id": "absorption-1",
           "left": 87.5,
-          "top": 666,
+          "top": 954,
           "right": 934.1,
-          "bottom": 730.4
+          "bottom": 1018.4
         },
         {
           "id": "celiac-0",
           "left": 89,
-          "top": 746,
+          "top": 1034,
           "right": 948.6,
-          "bottom": 810.4
+          "bottom": 1098.4
         },
         {
           "id": "celiac-1",
           "left": 89,
-          "top": 810,
+          "top": 1098,
           "right": 946.4,
-          "bottom": 906.4
-        },
-        {
-          "id": "large-intestine",
-          "left": 89,
-          "top": 935.5,
-          "right": 600.9,
-          "bottom": 975.3
-        },
-        {
-          "id": "colon",
-          "left": 87.5,
-          "top": 982.5,
-          "right": 963,
-          "bottom": 1251.2
-        },
-        {
-          "id": "microbes-0",
-          "left": 89,
-          "top": 1264,
-          "right": 955.6,
-          "bottom": 1328.4
-        },
-        {
-          "id": "microbes-1",
-          "left": 89,
-          "top": 1328,
-          "right": 956.8,
-          "bottom": 1392.4
+          "bottom": 1194.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284573,
+        "left": 99.98157882284575,
         "top": 1457.5448559139131,
-        "right": 114.0184210880979,
+        "right": 114.01842108809788,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 4.1,
-      "occupiedPercent": 98.3,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 39.6,
+      "occupiedPercent": 83.1,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 36.6,
+        "protectedGroup": [
+          {
+            "id": "large-intestine",
+            "type": "heading",
+            "title": "The large intestine: water and egestion",
+            "height": 48
+          },
+          {
+            "id": "colon",
+            "type": "table",
+            "title": "Egestion and excretion",
+            "height": 282
+          }
+        ],
+        "requiredMM": 59.3,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
-        "right": 954.2,
-        "bottom": 1317.2
+        "top": 112.5,
+        "right": 963,
+        "bottom": 1106
       },
       "blocks": [
         {
+          "id": "large-intestine",
+          "left": 89,
+          "top": 112.5,
+          "right": 600.9,
+          "bottom": 152.3
+        },
+        {
+          "id": "colon",
+          "left": 87.5,
+          "top": 159.5,
+          "right": 963,
+          "bottom": 428.2
+        },
+        {
+          "id": "microbes-0",
+          "left": 89,
+          "top": 441,
+          "right": 955.6,
+          "bottom": 505.4
+        },
+        {
+          "id": "microbes-1",
+          "left": 89,
+          "top": 505,
+          "right": 956.8,
+          "bottom": 569.4
+        },
+        {
           "id": "digestive-health-0",
           "left": 87.5,
-          "top": 111,
+          "top": 585,
           "right": 947.7,
-          "bottom": 175.4
+          "bottom": 649.4
         },
         {
           "id": "digestive-health-1",
           "left": 89,
-          "top": 175,
+          "top": 649,
           "right": 954.2,
-          "bottom": 271.4
+          "bottom": 745.4
         },
         {
           "id": "oral-care-0",
           "left": 87.5,
-          "top": 287,
+          "top": 761,
           "right": 921.9,
-          "bottom": 351.4
+          "bottom": 825.4
         },
         {
           "id": "oral-care-1",
           "left": 89,
-          "top": 351,
+          "top": 825,
           "right": 895.3,
-          "bottom": 415.4
-        },
-        {
-          "id": "historical-diet-0",
-          "left": 89,
-          "top": 431,
-          "right": 922,
-          "bottom": 495.4
-        },
-        {
-          "id": "historical-diet-1",
-          "left": 89,
-          "top": 495,
-          "right": 948.3,
-          "bottom": 591.4
-        },
-        {
-          "id": "other-digestion",
-          "left": 89,
-          "top": 619.7,
-          "right": 949,
-          "bottom": 669.8
-        },
-        {
-          "id": "rumination",
-          "left": 87.5,
-          "top": 677,
-          "right": 934,
-          "bottom": 837.4
-        },
-        {
-          "id": "ruminant-art",
-          "left": 87.5,
-          "top": 854.4,
-          "right": 876.7,
-          "bottom": 1317.2
+          "bottom": 889.4
         }
       ],
       "collisions": [],
@@ -778,9 +699,46 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 17.6,
-      "occupiedPercent": 92.5,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 55.5,
+      "occupiedPercent": 76.3,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 51.9,
+        "protectedGroup": [
+          {
+            "id": "historical-diet-0",
+            "type": "body",
+            "title": "The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latte",
+            "height": 64
+          },
+          {
+            "id": "historical-diet-1",
+            "type": "body",
+            "title": "The Thirukkural and Charaka Samhita show a long-standing interest in eating and digestion; the latte",
+            "height": 112
+          },
+          {
+            "id": "other-digestion",
+            "type": "heading",
+            "title": "9.1.2 Different Animals, Different Digestive Systems",
+            "height": 58
+          },
+          {
+            "id": "rumination",
+            "type": "body",
+            "title": "A cow may chew while resting after grazing. Cows, buffaloes, goats and other **ruminants** swallow p",
+            "height": 176
+          },
+          {
+            "id": "ruminant-art",
+            "type": "figure",
+            "title": "A simplified cow cutaway. The large rumen supports microbial digestion; cud returns through the oeso",
+            "height": 484
+          }
+        ],
+        "requiredMM": 162.8,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 10,
@@ -788,81 +746,177 @@
       "contentBounds": {
         "left": 87.5,
         "top": 111,
-        "right": 963,
-        "bottom": 1324.4
+        "right": 954.3,
+        "bottom": 1145.4
       },
       "blocks": [
         {
+          "id": "historical-diet-0",
+          "left": 89,
+          "top": 111,
+          "right": 922,
+          "bottom": 175.4
+        },
+        {
+          "id": "historical-diet-1",
+          "left": 89,
+          "top": 175,
+          "right": 948.3,
+          "bottom": 271.4
+        },
+        {
+          "id": "other-digestion",
+          "left": 89,
+          "top": 299.7,
+          "right": 949,
+          "bottom": 349.8
+        },
+        {
+          "id": "rumination",
+          "left": 87.5,
+          "top": 357,
+          "right": 934,
+          "bottom": 517.4
+        },
+        {
+          "id": "ruminant-art",
+          "left": 87.5,
+          "top": 534.4,
+          "right": 876.7,
+          "bottom": 997.2
+        },
+        {
           "id": "bird-digestion",
           "left": 87.5,
-          "top": 111,
+          "top": 1017,
           "right": 954.3,
-          "bottom": 239.4
-        },
-        {
-          "id": "bird-art",
-          "left": 87.5,
-          "top": 282,
-          "right": 874.7,
-          "bottom": 696.2
-        },
-        {
-          "id": "digestion-comparison",
-          "left": 89,
-          "top": 716.5,
-          "right": 963,
-          "bottom": 935
-        },
-        {
-          "id": "nutrition-respiration-link-0",
-          "left": 89,
-          "top": 950,
-          "right": 924.8,
-          "bottom": 1014.4
-        },
-        {
-          "id": "nutrition-respiration-link-1",
-          "left": 89,
-          "top": 1014,
-          "right": 942.1,
-          "bottom": 1078.4
-        },
-        {
-          "id": "respiration",
-          "left": 89,
-          "top": 1106.7,
-          "right": 522.8,
-          "bottom": 1156.8
-        },
-        {
-          "id": "respiration-intro-0",
-          "left": 89,
-          "top": 1164,
-          "right": 942,
-          "bottom": 1228.4
-        },
-        {
-          "id": "respiration-intro-1",
-          "left": 89,
-          "top": 1228,
-          "right": 953.7,
-          "bottom": 1324.4
+          "bottom": 1145.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.5448559139131,
-        "right": 121.72533603047485,
+        "right": 121.72533603047486,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 16.3,
-      "occupiedPercent": 93,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 48.4,
+      "occupiedPercent": 79.3,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 45.5,
+        "protectedGroup": [
+          {
+            "id": "bird-art",
+            "type": "figure",
+            "title": "A hen’s connected digestive passage: the crop stores food, the glandular stomach supplies secretions",
+            "height": 461
+          }
+        ],
+        "requiredMM": 82.8,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
     },
     {
       "page": 11,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 138,
+        "right": 963,
+        "bottom": 1180.4
+      },
+      "blocks": [
+        {
+          "id": "bird-art",
+          "left": 87.5,
+          "top": 138,
+          "right": 874.7,
+          "bottom": 552.2
+        },
+        {
+          "id": "digestion-comparison",
+          "left": 89,
+          "top": 572.5,
+          "right": 963,
+          "bottom": 791
+        },
+        {
+          "id": "nutrition-respiration-link-0",
+          "left": 89,
+          "top": 806,
+          "right": 924.8,
+          "bottom": 870.4
+        },
+        {
+          "id": "nutrition-respiration-link-1",
+          "left": 89,
+          "top": 870,
+          "right": 942.1,
+          "bottom": 934.4
+        },
+        {
+          "id": "respiration",
+          "left": 89,
+          "top": 962.7,
+          "right": 522.8,
+          "bottom": 1012.8
+        },
+        {
+          "id": "respiration-intro-0",
+          "left": 89,
+          "top": 1020,
+          "right": 942,
+          "bottom": 1084.4
+        },
+        {
+          "id": "respiration-intro-1",
+          "left": 89,
+          "top": 1084,
+          "right": 953.7,
+          "bottom": 1180.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139131,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161749
+      },
+      "bottomGapMM": 42.1,
+      "occupiedPercent": 82,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 39.2,
+        "protectedGroup": [
+          {
+            "id": "human-respiration",
+            "type": "heading",
+            "title": "9.2.1 Respiration in Humans",
+            "height": 58
+          },
+          {
+            "id": "air-route",
+            "type": "body",
+            "title": "Air normally enters through the nostrils and nasal passages. Hairs and mucus trap some particles; th",
+            "height": 144
+          },
+          {
+            "id": "respiratory-art",
+            "type": "figure",
+            "title": "The human respiratory system, simplified. The ribs protect the lungs; the diaphragm forms a muscular",
+            "height": 688
+          }
+        ],
+        "requiredMM": 159.9,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 12,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -910,10 +964,10 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139131,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161749
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 45.6,
       "occupiedPercent": 80.5,
@@ -941,11 +995,11 @@
           }
         ],
         "requiredMM": 223.5,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 12,
+      "page": 13,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -979,23 +1033,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 14.6,
       "occupiedPercent": 93.8,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 13,
+      "page": 14,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111,
-        "right": 944.6,
-        "bottom": 646.2
+        "right": 963,
+        "bottom": 1009
       },
       "blocks": [
         {
@@ -1018,28 +1072,29 @@
           "top": 290.4,
           "right": 721,
           "bottom": 646.2
+        },
+        {
+          "id": "breathing-comparison",
+          "left": 89,
+          "top": 666.5,
+          "right": 963,
+          "bottom": 1009
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021967,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 121.72533603047486,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 138.1,
-      "occupiedPercent": 41,
+      "bottomGapMM": 72.9,
+      "occupiedPercent": 68.8,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 134.4,
+        "remainingMM": 70.1,
         "protectedGroup": [
-          {
-            "id": "breathing-comparison",
-            "type": "table",
-            "title": "Inhalation and quiet exhalation",
-            "height": 358
-          },
           {
             "id": "model-limits-0",
             "type": "body",
@@ -1059,62 +1114,55 @@
             "height": 284
           }
         ],
-        "requiredMM": 141.2,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "requiredMM": 76.9,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 14,
+      "page": 15,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
-        "top": 111.5,
+        "top": 111,
         "right": 963,
-        "bottom": 876
+        "bottom": 740
       },
       "blocks": [
         {
-          "id": "breathing-comparison",
-          "left": 89,
-          "top": 111.5,
-          "right": 963,
-          "bottom": 454
-        },
-        {
           "id": "model-limits-0",
           "left": 89,
-          "top": 469,
+          "top": 111,
           "right": 922.1,
-          "bottom": 533.4
+          "bottom": 175.4
         },
         {
           "id": "model-limits-1",
           "left": 89,
-          "top": 533,
+          "top": 175,
           "right": 952.1,
-          "bottom": 597.4
+          "bottom": 239.4
         },
         {
           "id": "model-pause",
           "left": 89,
-          "top": 614,
+          "top": 256,
           "right": 963,
-          "bottom": 876
+          "bottom": 518
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 121.72533603047485,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 96.8,
-      "occupiedPercent": 58.6,
+      "bottomGapMM": 121.3,
+      "occupiedPercent": 48.2,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 92.9,
+        "remainingMM": 117.7,
         "protectedGroup": [
           {
             "id": "exhaled-air",
@@ -1136,11 +1184,11 @@
           }
         ],
         "requiredMM": 218.5,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 15,
+      "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1174,17 +1222,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021967,
+        "top": 1457.544855913915,
+        "right": 121.03684222072397,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 19.6,
       "occupiedPercent": 91.6,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 16,
+      "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1246,10 +1294,10 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.03684222072395,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 43.9,
       "occupiedPercent": 81.2,
@@ -1265,17 +1313,17 @@
           }
         ],
         "requiredMM": 55.3,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 17,
+      "page": 18,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111.5,
         "right": 963,
-        "bottom": 1178
+        "bottom": 1394
       },
       "blocks": [
         {
@@ -1338,48 +1386,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021967,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 121.03684222072397,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 42.6,
-      "occupiedPercent": 81.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 39.7,
-        "protectedGroup": [
-          {
-            "id": "circulation-0",
-            "type": "body",
-            "title": "The **circulatory system** contains the heart, blood and blood vessels. The heart pumps; blood trans",
-            "height": 64
-          },
-          {
-            "id": "circulation-1",
-            "type": "body",
-            "title": "The **circulatory system** contains the heart, blood and blood vessels. The heart pumps; blood trans",
-            "height": 112
-          },
-          {
-            "id": "connections-pause",
-            "type": "panel",
-            "title": "Trace one glucose molecule from digested food and one oxygen molecule from inhaled air until they re",
-            "height": 316
-          }
-        ],
-        "requiredMM": 88.4,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
+      "bottomGapMM": 3.8,
+      "occupiedPercent": 98.4,
+      "footerClearanceMM": 3.3
     },
     {
-      "page": 18,
+      "page": 19,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1207.4
+        "bottom": 1344
       },
       "blocks": [
         {
@@ -1451,116 +1474,6 @@
           "top": 1079,
           "right": 922.1,
           "bottom": 1143.4
-        },
-        {
-          "id": "breathing-traditions-2",
-          "left": 89,
-          "top": 1143,
-          "right": 897.8,
-          "bottom": 1207.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139113,
-        "right": 121.03684222072395,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 37.3,
-      "occupiedPercent": 84.1,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 34.3,
-        "protectedGroup": [
-          {
-            "id": "animal-respiration",
-            "type": "heading",
-            "title": "9.2.2 Gas Exchange in Other Animals",
-            "height": 58
-          },
-          {
-            "id": "animal-intro-0",
-            "type": "body",
-            "title": "Animals share the need to exchange gases, but the exchange surface differs. Mammals, birds and many ",
-            "height": 64
-          },
-          {
-            "id": "animal-intro-1",
-            "type": "body",
-            "title": "Animals share the need to exchange gases, but the exchange surface differs. Mammals, birds and many ",
-            "height": 80
-          },
-          {
-            "id": "animal-exchange-art",
-            "type": "figure",
-            "title": "Different exchange surfaces: fish gills, an adult frog’s lungs and moist skin, and an earthworm’s mo",
-            "height": 400
-          }
-        ],
-        "requiredMM": 108.2,
-        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
-      }
-    },
-    {
-      "page": 19,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1259.4
-      },
-      "blocks": [
-        {
-          "id": "animal-respiration",
-          "left": 89,
-          "top": 111.7,
-          "right": 692.8,
-          "bottom": 161.8
-        },
-        {
-          "id": "animal-intro-0",
-          "left": 87.5,
-          "top": 169,
-          "right": 926.1,
-          "bottom": 233.4
-        },
-        {
-          "id": "animal-intro-1",
-          "left": 89,
-          "top": 233,
-          "right": 899.2,
-          "bottom": 297.4
-        },
-        {
-          "id": "animal-exchange-art",
-          "left": 89,
-          "top": 316.4,
-          "right": 794.1,
-          "bottom": 693.2
-        },
-        {
-          "id": "animal-comparison",
-          "left": 89,
-          "top": 713.5,
-          "right": 963,
-          "bottom": 1084
-        },
-        {
-          "id": "adaptation-0",
-          "left": 89,
-          "top": 1099,
-          "right": 926.8,
-          "bottom": 1163.4
-        },
-        {
-          "id": "adaptation-1",
-          "left": 89,
-          "top": 1163,
-          "right": 929.3,
-          "bottom": 1259.4
         }
       ],
       "collisions": [],
@@ -1571,30 +1484,87 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 28,
-      "occupiedPercent": 88.1,
+      "bottomGapMM": 12.8,
+      "occupiedPercent": 94.6,
       "footerClearanceMM": 3.3
     },
     {
       "page": 20,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111.7,
+        "left": 87.5,
+        "top": 111,
         "right": 963,
-        "bottom": 988
+        "bottom": 1351.4
       },
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "breathing-traditions-2",
+          "left": 89,
+          "top": 111,
+          "right": 897.8,
+          "bottom": 175.4
+        },
+        {
+          "id": "animal-respiration",
+          "left": 89,
+          "top": 203.7,
+          "right": 692.8,
+          "bottom": 253.8
+        },
+        {
+          "id": "animal-intro-0",
+          "left": 87.5,
+          "top": 261,
+          "right": 926.1,
+          "bottom": 325.4
+        },
+        {
+          "id": "animal-intro-1",
+          "left": 89,
+          "top": 325,
+          "right": 899.2,
+          "bottom": 389.4
+        },
+        {
+          "id": "animal-exchange-art",
+          "left": 89,
+          "top": 408.4,
+          "right": 794.1,
+          "bottom": 785.2
+        },
+        {
+          "id": "animal-comparison",
+          "left": 89,
+          "top": 805.5,
+          "right": 963,
+          "bottom": 1176
+        },
+        {
+          "id": "adaptation-0",
+          "left": 89,
+          "top": 1191,
+          "right": 926.8,
+          "bottom": 1255.4
+        },
+        {
+          "id": "adaptation-1",
+          "left": 89,
+          "top": 1255,
+          "right": 929.3,
+          "bottom": 1351.4
+        }
+      ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.544855913915,
-        "right": 121.72533603047485,
+        "right": 121.72533603047486,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 76.7,
-      "occupiedPercent": 67.2,
+      "bottomGapMM": 11.4,
+      "occupiedPercent": 95.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1603,8 +1573,8 @@
       "contentBounds": {
         "left": 89,
         "top": 111.7,
-        "right": 952.9,
-        "bottom": 1057.4
+        "right": 963,
+        "bottom": 1188
       },
       "blocks": [],
       "collisions": [],
@@ -1615,8 +1585,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 64.2,
-      "occupiedPercent": 72.6,
+      "bottomGapMM": 40.8,
+      "occupiedPercent": 82.6,
       "footerClearanceMM": 3.3
     },
     {
@@ -1625,8 +1595,30 @@
       "contentBounds": {
         "left": 89,
         "top": 111.7,
-        "right": 954.5,
-        "bottom": 1261.4
+        "right": 952.9,
+        "bottom": 1268
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139186,
+        "right": 121.72533603047486,
+        "bottom": 1495.8355207161803
+      },
+      "bottomGapMM": 26.4,
+      "occupiedPercent": 88.7,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 23,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 944.5,
+        "bottom": 892
       },
       "blocks": [
         {
@@ -1663,78 +1655,6 @@
           "top": 565,
           "right": 927.8,
           "bottom": 661.4
-        },
-        {
-          "id": "q4",
-          "left": 91.8,
-          "top": 691,
-          "right": 948.1,
-          "bottom": 851.4
-        },
-        {
-          "id": "q5",
-          "left": 91.8,
-          "top": 881,
-          "right": 948,
-          "bottom": 977.4
-        },
-        {
-          "id": "q6",
-          "left": 91.8,
-          "top": 1007,
-          "right": 954.5,
-          "bottom": 1135.4
-        },
-        {
-          "id": "q7",
-          "left": 91.8,
-          "top": 1165,
-          "right": 929.6,
-          "bottom": 1261.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139186,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161803
-      },
-      "bottomGapMM": 27.6,
-      "occupiedPercent": 88.2,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 23,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 79.8,
-        "top": 111,
-        "right": 947.5,
-        "bottom": 1385.2
-      },
-      "blocks": [
-        {
-          "id": "q8",
-          "left": 91.8,
-          "top": 111,
-          "right": 947.5,
-          "bottom": 239.4
-        },
-        {
-          "id": "q9",
-          "left": 89,
-          "top": 269,
-          "right": 938.8,
-          "bottom": 781.2
-        },
-        {
-          "id": "q10",
-          "left": 79.8,
-          "top": 805,
-          "right": 946.4,
-          "bottom": 1385.2
         }
       ],
       "collisions": [],
@@ -1745,18 +1665,113 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 5.4,
-      "occupiedPercent": 97.7,
+      "bottomGapMM": 94,
+      "occupiedPercent": 59.9,
       "footerClearanceMM": 3.3
     },
     {
       "page": 24,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
+        "left": 91.8,
+        "top": 111,
+        "right": 954.5,
+        "bottom": 1070
+      },
+      "blocks": [
+        {
+          "id": "q4",
+          "left": 91.8,
+          "top": 111,
+          "right": 948.1,
+          "bottom": 271.4
+        },
+        {
+          "id": "q5",
+          "left": 91.8,
+          "top": 301,
+          "right": 948,
+          "bottom": 397.4
+        },
+        {
+          "id": "q6",
+          "left": 91.8,
+          "top": 427,
+          "right": 954.5,
+          "bottom": 555.4
+        },
+        {
+          "id": "q7",
+          "left": 91.8,
+          "top": 585,
+          "right": 929.6,
+          "bottom": 681.4
+        },
+        {
+          "id": "q8",
+          "left": 91.8,
+          "top": 711,
+          "right": 947.5,
+          "bottom": 839.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021967,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047486,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 62,
+      "occupiedPercent": 73.5,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 25,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 79.8,
+        "top": 111,
+        "right": 946.4,
+        "bottom": 1227.2
+      },
+      "blocks": [
+        {
+          "id": "q9",
+          "left": 89,
+          "top": 111,
+          "right": 938.8,
+          "bottom": 623.2
+        },
+        {
+          "id": "q10",
+          "left": 79.8,
+          "top": 647,
+          "right": 946.4,
+          "bottom": 1227.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 33.7,
+      "occupiedPercent": 85.6,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 26,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
         "top": 111.7,
-        "right": 955.6,
-        "bottom": 1333.4
+        "right": 953.7,
+        "bottom": 950
       },
       "blocks": [
         {
@@ -1786,39 +1801,62 @@
           "top": 578.5,
           "right": 951.4,
           "bottom": 721.4
-        },
-        {
-          "id": "project-aqi",
-          "left": 87.5,
-          "top": 750.5,
-          "right": 955.6,
-          "bottom": 925.4
-        },
-        {
-          "id": "project-breathing",
-          "left": 89,
-          "top": 954.5,
-          "right": 945.7,
-          "bottom": 1129.4
-        },
-        {
-          "id": "project-birds",
-          "left": 87.5,
-          "top": 1158.5,
-          "right": 954.2,
-          "bottom": 1333.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
+        "left": 92.96315769021967,
         "top": 1457.5448559139113,
-        "right": 121.72533603047485,
+        "right": 121.03684222072397,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 14.7,
-      "occupiedPercent": 93.7,
+      "bottomGapMM": 83.5,
+      "occupiedPercent": 64.3,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 27,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 112.5,
+        "right": 955.6,
+        "bottom": 924
+      },
+      "blocks": [
+        {
+          "id": "project-aqi",
+          "left": 87.5,
+          "top": 112.5,
+          "right": 955.6,
+          "bottom": 287.4
+        },
+        {
+          "id": "project-breathing",
+          "left": 89,
+          "top": 316.5,
+          "right": 945.7,
+          "bottom": 491.4
+        },
+        {
+          "id": "project-birds",
+          "left": 87.5,
+          "top": 520.5,
+          "right": 954.2,
+          "bottom": 695.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139186,
+        "right": 959.7252125241284,
+        "bottom": 1495.8355207161803
+      },
+      "bottomGapMM": 88.2,
+      "occupiedPercent": 62.3,
       "footerClearanceMM": 3.3
     }
   ]

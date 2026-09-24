@@ -16,12 +16,15 @@
     "sourcePages": [
       1,
       2,
-      10,
-      3
+      10
     ],
-    "end": 1160,
-    "fill": 80,
-    "breakReason": "Next activity: 1. Put a spoonful of water on a clean, dry, uncracked steel plate",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/balance.png",
+      "caption": "Comparing quantities of water."
+    },
+    "end": 1086,
+    "fill": 75,
+    "breakReason": "Next heading: 8.2 Where Does the Water Go?",
     "blocks": [
       {
         "id": "same-water-heading",
@@ -70,20 +73,52 @@
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Comparing quantities of water.",
+        "artKey": "figures/class-6/science/ch08/balance.png",
+        "top": 866,
+        "bottom": 1086
+      }
+    ],
+    "protectedNext": {
+      "id": "disappearing-heading",
+      "type": "heading",
+      "height": 70,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 3,
+    "title": "8.2 Where Does the Water Go?",
+    "titleRole": "section",
+    "sourcePages": [
+      2,
+      3
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/evaporation.png",
+      "caption": "Observing water in a container."
+    },
+    "end": 1146,
+    "fill": 79,
+    "breakReason": "Next body: Liquid water can change into **water vapour**, its gaseous state,",
+    "blocks": [
+      {
         "id": "disappearing-heading",
         "type": "heading",
         "text": "8.2 Where Does the Water Go?",
-        "top": 878,
-        "bottom": 936,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "puddle-0",
         "type": "body",
         "text": "Aavi and Thirav see puddles on the playground in the morning and smaller puddles later. Some water may have soaked into the ground. But washed steel utensils and a mopped floor also dry. Can soaking into soil explain every case?",
-        "top": 936,
-        "bottom": 1048,
+        "top": 170,
+        "bottom": 282,
         "before": 0,
         "keepNext": false
       },
@@ -91,37 +126,17 @@
         "id": "test-route-0",
         "type": "body",
         "text": "Test one possible route at a time. A plate lets you inspect the surface underneath the water as well as the wet patch itself. Choose a sound plate and prevent spills, so those other routes do not confuse the investigation.",
-        "top": 1048,
-        "bottom": 1160,
+        "top": 282,
+        "bottom": 394,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "plate-task",
-      "type": "activity",
-      "height": 468,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 3,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      2,
-      3
-    ],
-    "end": 1012,
-    "fill": 69,
-    "breakReason": "Next table: Table 8.1 · Following water as something dries",
-    "blocks": [
+      },
       {
         "id": "plate-task",
         "type": "activity",
         "text": "1. Put a spoonful of water on a clean, dry, uncracked steel plate. Predict whether the underside will become wet. 2. Keep the plate level in a place where it will not be knocked or splashed. Check the water and the underside at regular intervals. 3. Record the time and what changes. If the water becomes difficult to see, explain how you would check whether any remains without tipping it away. 4. Compare the evidence with your prediction. Which explanation does a dry underside make less likely? Which possible route for the water still needs explaining?",
-        "top": 112,
-        "bottom": 580,
+        "top": 394,
+        "bottom": 862,
         "before": 0,
         "keepNext": false,
         "conceptId": "plate-task"
@@ -130,61 +145,24 @@
         "id": "evaporation-0",
         "type": "body",
         "text": "Liquid water can change into **water vapour**, its gaseous state, at an exposed surface. This process is **evaporation**. It occurs at room temperature as well as in warmer conditions. The water is still present as a substance, although it may have mixed with the air and moved away.",
-        "top": 580,
-        "bottom": 644,
+        "top": 862,
+        "bottom": 926,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "evaporation-1",
-        "type": "body",
-        "text": "Liquid water can change into **water vapour**, its gaseous state, at an exposed surface. This process is **evaporation**. It occurs at room temperature as well as in warmer conditions. The water is still present as a substance, although it may have mixed with the air and moved away.",
-        "top": 644,
-        "bottom": 724,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "plate-evidence-0",
-        "type": "body",
-        "text": "If the top becomes dry while the underside stays dry, evaporation is a reasonable explanation for this plate. Check for spills, cracks or someone moving the water before drawing a conclusion. A puddle may lose water both by evaporation and by soaking into the ground.",
-        "top": 724,
-        "bottom": 788,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "plate-evidence-1",
-        "type": "body",
-        "text": "If the top becomes dry while the underside stays dry, evaporation is a reasonable explanation for this plate. Check for spills, cracks or someone moving the water before drawing a conclusion. A puddle may lose water both by evaporation and by soaking into the ground.",
-        "top": 788,
-        "bottom": 868,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "invisible-vapour-0",
-        "type": "body",
-        "text": "Water vapour is invisible. The white mist above hot water is made of tiny liquid droplets formed when vapour cools; it is not a picture of the gas itself. Observe hot pans or boiling water only from a safe distance in an adult-led demonstration.",
-        "top": 868,
-        "bottom": 932,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "invisible-vapour-1",
-        "type": "body",
-        "text": "Water vapour is invisible. The white mist above hot water is made of tiny liquid droplets formed when vapour cools; it is not a picture of the gas itself. Observe hot pans or boiling water only from a safe distance in an adult-led demonstration.",
-        "top": 932,
-        "bottom": 1012,
-        "before": 0,
-        "keepNext": false
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Observing water in a container.",
+        "artKey": "figures/class-6/science/ch08/evaporation.png",
+        "top": 926,
+        "bottom": 1146
       }
     ],
     "protectedNext": {
-      "id": "drying-table",
-      "type": "table",
-      "height": 368,
+      "id": "evaporation-1",
+      "type": "body",
+      "height": 80,
       "keepNext": false
     }
   },
@@ -193,22 +171,69 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      2,
       3,
-      11,
-      4,
-      5
+      2,
+      11
     ],
-    "end": 1306,
-    "fill": 92,
-    "breakReason": "Next body: Droplets may appear on the cold glass even though no water was po",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/evaporation.png",
+      "caption": "Observing water in a container."
+    },
+    "end": 1212,
+    "fill": 84,
+    "breakReason": "Next heading: 8.3 Droplets Outside a Cold Glass",
     "blocks": [
+      {
+        "id": "evaporation-1",
+        "type": "body",
+        "text": "Liquid water can change into **water vapour**, its gaseous state, at an exposed surface. This process is **evaporation**. It occurs at room temperature as well as in warmer conditions. The water is still present as a substance, although it may have mixed with the air and moved away.",
+        "top": 112,
+        "bottom": 192,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "plate-evidence-0",
+        "type": "body",
+        "text": "If the top becomes dry while the underside stays dry, evaporation is a reasonable explanation for this plate. Check for spills, cracks or someone moving the water before drawing a conclusion. A puddle may lose water both by evaporation and by soaking into the ground.",
+        "top": 192,
+        "bottom": 256,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "plate-evidence-1",
+        "type": "body",
+        "text": "If the top becomes dry while the underside stays dry, evaporation is a reasonable explanation for this plate. Check for spills, cracks or someone moving the water before drawing a conclusion. A puddle may lose water both by evaporation and by soaking into the ground.",
+        "top": 256,
+        "bottom": 336,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "invisible-vapour-0",
+        "type": "body",
+        "text": "Water vapour is invisible. The white mist above hot water is made of tiny liquid droplets formed when vapour cools; it is not a picture of the gas itself. Observe hot pans or boiling water only from a safe distance in an adult-led demonstration.",
+        "top": 336,
+        "bottom": 400,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "invisible-vapour-1",
+        "type": "body",
+        "text": "Water vapour is invisible. The white mist above hot water is made of tiny liquid droplets formed when vapour cools; it is not a picture of the gas itself. Observe hot pans or boiling water only from a safe distance in an adult-led demonstration.",
+        "top": 400,
+        "bottom": 480,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "drying-table",
         "type": "table",
         "text": "Table 8.1 · Following water as something dries",
-        "top": 112,
-        "bottom": 480,
+        "top": 480,
+        "bottom": 848,
         "before": 0,
         "keepNext": false,
         "conceptId": "drying-table"
@@ -217,8 +242,8 @@
         "id": "other-liquids-0",
         "type": "body",
         "text": "Liquids other than water can evaporate too. Alcohol in some hand sanitisers evaporates readily. Do not use sanitiser, perfume, petrol or other volatile liquids for these investigations: some are flammable or harmful. Use water for classroom comparisons.",
-        "top": 480,
-        "bottom": 544,
+        "top": 848,
+        "bottom": 912,
         "before": 0,
         "keepNext": false
       },
@@ -226,26 +251,55 @@
         "id": "other-liquids-1",
         "type": "body",
         "text": "Liquids other than water can evaporate too. Alcohol in some hand sanitisers evaporates readily. Do not use sanitiser, perfume, petrol or other volatile liquids for these investigations: some are flammable or harmful. Use water for classroom comparisons.",
-        "top": 544,
-        "bottom": 624,
+        "top": 912,
+        "bottom": 992,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Observing water in a container.",
+        "artKey": "figures/class-6/science/ch08/evaporation.png",
+        "top": 992,
+        "bottom": 1212
+      }
+    ],
+    "protectedNext": {
+      "id": "droplets-heading",
+      "type": "heading",
+      "height": 70,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 5,
+    "title": "8.3 Droplets Outside a Cold Glass",
+    "titleRole": "section",
+    "sourcePages": [
+      4,
+      5,
+      6
+    ],
+    "end": 1317,
+    "fill": 92,
+    "breakReason": "Next body: Dew can form when a leaf or another surface cools sufficiently, o",
+    "blocks": [
+      {
         "id": "droplets-heading",
         "type": "heading",
         "text": "8.3 Droplets Outside a Cold Glass",
-        "top": 636,
-        "bottom": 694,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "cold-intro-0",
         "type": "body",
         "text": "While preparing lemonade, the children notice a change on the outside of a cold tumbler. The water is inside the glass, so an outside change raises a new question. Begin by observing before choosing an explanation.",
-        "top": 694,
-        "bottom": 806,
+        "top": 170,
+        "bottom": 282,
         "before": 0,
         "keepNext": false
       },
@@ -253,8 +307,8 @@
         "id": "cold-task",
         "type": "activity",
         "text": "1. Put cold water and a few ice cubes in a sound glass tumbler. Carefully dry its outside and stand it on a dry tray. Wipe up any filling splashes. 2. Leave it undisturbed for about five minutes. Record what you see on the outside under two notebook headings: “I observe” and “I wonder”. 3. Suggest more than one explanation for any droplets. Compare with a similar, externally dry tumbler holding room-temperature water. Keep the place and observation time the same. 4. Discuss what this comparison can show and what it cannot. If droplets do not appear, record that result too.",
-        "top": 806,
-        "bottom": 1242,
+        "top": 282,
+        "bottom": 718,
         "before": 0,
         "keepNext": false,
         "conceptId": "cold-task"
@@ -263,39 +317,17 @@
         "id": "cold-evidence-0",
         "type": "body",
         "text": "Droplets may appear on the cold glass even though no water was poured onto its outside. Compare your observations with the illustration. An unchanged water level alone is weak evidence against leakage: a small change may be too small to notice.",
-        "top": 1242,
-        "bottom": 1306,
+        "top": 718,
+        "bottom": 782,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "cold-evidence-1",
-      "type": "body",
-      "height": 80,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 5,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      4,
-      5,
-      6,
-      7
-    ],
-    "end": 1319,
-    "fill": 93,
-    "breakReason": "Next illustrated-prose: Fig. 8.2 · Weigh the complete assembly, including the drip tray. ",
-    "blocks": [
+      },
       {
         "id": "cold-evidence-1",
         "type": "body",
         "text": "Droplets may appear on the cold glass even though no water was poured onto its outside. Compare your observations with the illustration. An unchanged water level alone is weak evidence against leakage: a small change may be too small to notice.",
-        "top": 112,
-        "bottom": 192,
+        "top": 782,
+        "bottom": 862,
         "before": 0,
         "keepNext": false
       },
@@ -304,8 +336,8 @@
         "type": "illustrated-prose",
         "text": "Fig. 8.1 · Droplets outside a cold glass can come from the surrounding air.",
         "artKey": "condensation",
-        "top": 192,
-        "bottom": 583,
+        "top": 862,
+        "bottom": 1253,
         "before": 0,
         "keepNext": false
       },
@@ -313,44 +345,16 @@
         "id": "dew-0",
         "type": "body",
         "text": "Dew can form when a leaf or another surface cools sufficiently, often overnight. On a covered hot-water vessel, vapour may condense on the cooler underside of the lid. These are liquid droplets, while the vapour before condensation is invisible. Do not lift a hot lid yourself.",
-        "top": 583,
-        "bottom": 647,
+        "top": 1253,
+        "bottom": 1317,
         "before": 0,
         "keepNext": false
-      },
-      {
-        "id": "dew-1",
-        "type": "body",
-        "text": "Dew can form when a leaf or another surface cools sufficiently, often overnight. On a covered hot-water vessel, vapour may condense on the cooler underside of the lid. These are liquid droplets, while the vapour before condensation is invisible. Do not lift a hot lid yourself.",
-        "top": 647,
-        "bottom": 727,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "mass-heading",
-        "type": "heading",
-        "text": "Testing an Explanation with Measurements",
-        "top": 739,
-        "bottom": 787,
-        "before": 12,
-        "keepNext": false
-      },
-      {
-        "id": "mass-task",
-        "type": "activity",
-        "text": "1. With your teacher, place a half-filled cold-water tumbler with ice on a dry tray. Cover it with a small plate. Dry all external surfaces and record the mass of the entire assembly: tumbler, contents, cover and tray. 2. Predict whether this total mass will change. Place the assembly on a suitable digital balance, protecting its electronics from water. Keep any drips on the weighed tray. 3. Record time and total mass at 0, 5, 10, 15, 20, 25 and 30 minutes. Do not add, remove or wipe anything between readings. Record the unit and the smallest change the balance displays. 4. Compare your readings with the prediction. Repeat with a covered room-temperature sample as a comparison. Note any handling, spills or unstable readings.",
-        "top": 787,
-        "bottom": 1319,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "mass-task"
       }
     ],
     "protectedNext": {
-      "id": "mass-evidence",
-      "type": "illustrated-prose",
-      "height": 473,
+      "id": "dew-1",
+      "type": "body",
+      "height": 80,
       "keepNext": false
     }
   },
@@ -362,20 +366,47 @@
       6,
       7,
       8,
-      5,
-      10
+      5
     ],
-    "end": 1145,
-    "fill": 79,
-    "breakReason": "Next heading: 8.4 Comparing the Three States",
+    "end": 1321,
+    "fill": 93,
+    "breakReason": "Next body: Melting ice and changing temperature can alter the level inside, ",
     "blocks": [
+      {
+        "id": "dew-1",
+        "type": "body",
+        "text": "Dew can form when a leaf or another surface cools sufficiently, often overnight. On a covered hot-water vessel, vapour may condense on the cooler underside of the lid. These are liquid droplets, while the vapour before condensation is invisible. Do not lift a hot lid yourself.",
+        "top": 112,
+        "bottom": 192,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "mass-heading",
+        "type": "heading",
+        "text": "Testing an Explanation with Measurements",
+        "top": 204,
+        "bottom": 252,
+        "before": 12,
+        "keepNext": false
+      },
+      {
+        "id": "mass-task",
+        "type": "activity",
+        "text": "1. With your teacher, place a half-filled cold-water tumbler with ice on a dry tray. Cover it with a small plate. Dry all external surfaces and record the mass of the entire assembly: tumbler, contents, cover and tray. 2. Predict whether this total mass will change. Place the assembly on a suitable digital balance, protecting its electronics from water. Keep any drips on the weighed tray. 3. Record time and total mass at 0, 5, 10, 15, 20, 25 and 30 minutes. Do not add, remove or wipe anything between readings. Record the unit and the smallest change the balance displays. 4. Compare your readings with the prediction. Repeat with a covered room-temperature sample as a comparison. Note any handling, spills or unstable readings.",
+        "top": 252,
+        "bottom": 784,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "mass-task"
+      },
       {
         "id": "mass-evidence",
         "type": "illustrated-prose",
         "text": "Fig. 8.2 · Weigh the complete assembly, including the drip tray. The display here does not show a result.",
         "artKey": "balance",
-        "top": 112,
-        "bottom": 585,
+        "top": 784,
+        "bottom": 1257,
         "before": 0,
         "keepNext": false
       },
@@ -383,17 +414,44 @@
         "id": "mass-limits-0",
         "type": "body",
         "text": "Melting ice and changing temperature can alter the level inside, so a marked level is not a decisive test on its own. Use a sound vessel, prevent spills and compare the room-temperature sample. A small change may be below the balance’s resolution. If the data are unclear, explain the limits rather than forcing a conclusion.",
-        "top": 585,
-        "bottom": 649,
+        "top": 1257,
+        "bottom": 1321,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "mass-limits-1",
+      "type": "body",
+      "height": 112,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 7,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      5,
+      7,
+      8,
+      10,
+      9
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/condensation.png",
+      "caption": "A cool surface and droplets."
+    },
+    "end": 1366,
+    "fill": 96,
+    "breakReason": "Next table: Table 8.2 · The three states of water",
+    "blocks": [
       {
         "id": "mass-limits-1",
         "type": "body",
         "text": "Melting ice and changing temperature can alter the level inside, so a marked level is not a decisive test on its own. Use a sound vessel, prevent spills and compare the room-temperature sample. A small change may be below the balance’s resolution. If the data are unclear, explain the limits rather than forcing a conclusion.",
-        "top": 649,
-        "bottom": 761,
+        "top": 112,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -401,8 +459,8 @@
         "id": "humidity-0",
         "type": "body",
         "text": "**Humidity** describes water vapour in the air. Weather reports often give relative humidity as a percentage; its meaning depends on temperature. If you collect humidity records, note the place, time and kind of humidity reported. A cold surface tends to collect more condensate when enough vapour is available.",
-        "top": 761,
-        "bottom": 825,
+        "top": 224,
+        "bottom": 288,
         "before": 0,
         "keepNext": false
       },
@@ -410,8 +468,8 @@
         "id": "humidity-1",
         "type": "body",
         "text": "**Humidity** describes water vapour in the air. Weather reports often give relative humidity as a percentage; its meaning depends on temperature. If you collect humidity records, note the place, time and kind of humidity reported. A cold surface tends to collect more condensate when enough vapour is available.",
-        "top": 825,
-        "bottom": 905,
+        "top": 288,
+        "bottom": 368,
         "before": 0,
         "keepNext": false
       },
@@ -419,57 +477,71 @@
         "id": "awg",
         "type": "panel",
         "text": "Some water-harvesting machines cool moist air and collect condensed water. How is this similar to droplets on a glass? Why would collecting water alone not prove that it is safe to drink? Explain the need for clean equipment and suitable treatment.",
-        "top": 905,
-        "bottom": 1145,
+        "top": 368,
+        "bottom": 608,
         "before": 0,
         "keepNext": false,
         "conceptId": "awg"
-      }
-    ],
-    "protectedNext": {
-      "id": "states-heading",
-      "type": "heading",
-      "height": 70,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 7,
-    "title": "8.4 Comparing the Three States",
-    "titleRole": "section",
-    "sourcePages": [
-      8,
-      9
-    ],
-    "end": 1272,
-    "fill": 89,
-    "breakReason": "Next heading: 8.5 Changing from One State to Another",
-    "blocks": [
+      },
       {
         "id": "states-heading",
         "type": "heading",
         "text": "8.4 Comparing the Three States",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 620,
+        "bottom": 678,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "states-task",
         "type": "activity",
         "text": "1. Move an ice cube between two containers of different shapes. Work quickly enough to distinguish a change caused by moving it from a change caused by melting. 2. Transfer a measured amount of water between the same containers without spilling. Compare its shape and the space it occupies. 3. Spread a little water on a clean, level tray. Observe its shape. Explain why spreading out is not the same as producing more water. 4. In your notebook, compare shape, volume and flow for ice and liquid water. Use the evaporation evidence to discuss gaseous water; do not claim that you directly saw the vapour.",
-        "top": 170,
-        "bottom": 638,
+        "top": 678,
+        "bottom": 1146,
         "before": 0,
         "keepNext": false,
         "conceptId": "states-task"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A cool surface and droplets.",
+        "artKey": "figures/class-6/science/ch08/condensation.png",
+        "top": 1146,
+        "bottom": 1366
+      }
+    ],
+    "protectedNext": {
+      "id": "states-table",
+      "type": "table",
+      "height": 490,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 8,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/balance.png",
+      "caption": "Comparing quantities of water."
+    },
+    "end": 1244,
+    "fill": 87,
+    "breakReason": "Next body: Other substances can change state too. Candle wax can melt on war",
+    "blocks": [
+      {
         "id": "states-table",
         "type": "table",
         "text": "Table 8.2 · The three states of water",
-        "top": 638,
-        "bottom": 1128,
+        "top": 112,
+        "bottom": 602,
         "before": 0,
         "keepNext": false,
         "conceptId": "states-table"
@@ -478,8 +550,8 @@
         "id": "other-states-0",
         "type": "body",
         "text": "Stones, wood and glass are everyday solids. Milk and cooking oil are liquids. Oxygen and carbon dioxide are gases. Smells can spread because some substances enter the air and move with it; smell is not a way to identify water vapour. Never sniff an unknown substance to test its state.",
-        "top": 1128,
-        "bottom": 1192,
+        "top": 602,
+        "bottom": 666,
         "before": 0,
         "keepNext": false
       },
@@ -487,47 +559,26 @@
         "id": "other-states-1",
         "type": "body",
         "text": "Stones, wood and glass are everyday solids. Milk and cooking oil are liquids. Oxygen and carbon dioxide are gases. Smells can spread because some substances enter the air and move with it; smell is not a way to identify water vapour. Never sniff an unknown substance to test its state.",
-        "top": 1192,
-        "bottom": 1272,
+        "top": 666,
+        "bottom": 746,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "changing-heading",
-      "type": "heading",
-      "height": 70,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 8,
-    "title": "8.5 Changing from One State to Another",
-    "titleRole": "section",
-    "sourcePages": [
-      9,
-      10,
-      11
-    ],
-    "end": 1229,
-    "fill": 86,
-    "breakReason": "Next heading: 8.6 What Changes the Rate of Evaporation?",
-    "blocks": [
+      },
       {
         "id": "changing-heading",
         "type": "heading",
         "text": "8.5 Changing from One State to Another",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 758,
+        "bottom": 816,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "changes-0",
         "type": "body",
         "text": "**Melting** changes a solid into a liquid. **Freezing** changes a liquid into a solid. Ice melts when it gains enough energy from its surroundings; water freezes when enough energy is removed. Evaporation and condensation connect the liquid and gaseous states.",
-        "top": 170,
-        "bottom": 234,
+        "top": 816,
+        "bottom": 880,
         "before": 0,
         "keepNext": false
       },
@@ -535,8 +586,8 @@
         "id": "changes-1",
         "type": "body",
         "text": "**Melting** changes a solid into a liquid. **Freezing** changes a liquid into a solid. Ice melts when it gains enough energy from its surroundings; water freezes when enough energy is removed. Evaporation and condensation connect the liquid and gaseous states.",
-        "top": 234,
-        "bottom": 314,
+        "top": 880,
+        "bottom": 960,
         "before": 0,
         "keepNext": false
       },
@@ -544,17 +595,50 @@
         "id": "wax-oil-0",
         "type": "body",
         "text": "Other substances can change state too. Candle wax can melt on warming and solidify on cooling. Coconut oil may partly solidify in cool weather. These examples do not mean that every substance changes state at the same temperature. Leave demonstrations with flames or hot wax to the teacher.",
-        "top": 314,
-        "bottom": 378,
+        "top": 960,
+        "bottom": 1024,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Comparing quantities of water.",
+        "artKey": "figures/class-6/science/ch08/balance.png",
+        "top": 1024,
+        "bottom": 1244
+      }
+    ],
+    "protectedNext": {
+      "id": "wax-oil-1",
+      "type": "body",
+      "height": 80,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 9,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      9,
+      10,
+      11
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/balance.png",
+      "caption": "Comparing quantities of water."
+    },
+    "end": 1183,
+    "fill": 82,
+    "breakReason": "Next heading: 8.6 What Changes the Rate of Evaporation?",
+    "blocks": [
+      {
         "id": "wax-oil-1",
         "type": "body",
         "text": "Other substances can change state too. Candle wax can melt on warming and solidify on cooling. Coconut oil may partly solidify in cool weather. These examples do not mean that every substance changes state at the same temperature. Leave demonstrations with flames or hot wax to the teacher.",
-        "top": 378,
-        "bottom": 458,
+        "top": 112,
+        "bottom": 192,
         "before": 0,
         "keepNext": false
       },
@@ -562,8 +646,8 @@
         "id": "state-map-task",
         "type": "panel",
         "text": "The diagram shows three states joined by opposite changes. Copy it in your notebook. Use each word once to replace A, B and 1–3: liquid, gas, freezing, evaporation, condensation. “Solid” and “melting” are already given. For each arrow, state whether water gains energy or releases energy to its surroundings. Explain why you can trace a return route without adding a new substance.",
-        "top": 458,
-        "bottom": 774,
+        "top": 192,
+        "bottom": 508,
         "before": 0,
         "keepNext": false,
         "conceptId": "state-map-task"
@@ -573,8 +657,8 @@
         "type": "figure",
         "text": "Fig. 8.3 · Follow the direction of each arrow; opposite arrows represent different changes.",
         "artKey": "state-map",
-        "top": 774,
-        "bottom": 1085,
+        "top": 508,
+        "bottom": 819,
         "before": 0,
         "keepNext": false
       },
@@ -582,8 +666,8 @@
         "id": "state-map-explain-0",
         "type": "body",
         "text": "Melting leads from solid to liquid; freezing leads back. Evaporation leads from liquid to gas; condensation leads back. In each case the substance is still water. Changing its state does not destroy it, although it may move somewhere that is hard to observe.",
-        "top": 1085,
-        "bottom": 1149,
+        "top": 819,
+        "bottom": 883,
         "before": 0,
         "keepNext": false
       },
@@ -591,10 +675,18 @@
         "id": "state-map-explain-1",
         "type": "body",
         "text": "Melting leads from solid to liquid; freezing leads back. Evaporation leads from liquid to gas; condensation leads back. In each case the substance is still water. Changing its state does not destroy it, although it may move somewhere that is hard to observe.",
-        "top": 1149,
-        "bottom": 1229,
+        "top": 883,
+        "bottom": 963,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Comparing quantities of water.",
+        "artKey": "figures/class-6/science/ch08/balance.png",
+        "top": 963,
+        "bottom": 1183
       }
     ],
     "protectedNext": {
@@ -605,7 +697,7 @@
     }
   },
   {
-    "page": 9,
+    "page": 10,
     "title": "8.6 What Changes the Rate of Evaporation?",
     "titleRole": "section",
     "sourcePages": [
@@ -613,9 +705,9 @@
       12,
       13
     ],
-    "end": 1263,
-    "fill": 88,
-    "breakReason": "Next body: If milk replaces water, water can evaporate while other milk comp",
+    "end": 1407,
+    "fill": 99,
+    "breakReason": "Next activity: 1. Put equal amounts of water in two identical caps. Place one in",
     "blocks": [
       {
         "id": "speed-heading",
@@ -681,34 +773,13 @@
         "bottom": 1263,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "milk-0",
-      "type": "body",
-      "height": 64,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 10,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      12,
-      13,
-      14
-    ],
-    "end": 1310,
-    "fill": 92,
-    "breakReason": "Next body: Clothes often dry slowly on a humid rainy day. They may dry faste",
-    "blocks": [
+      },
       {
         "id": "milk-0",
         "type": "body",
         "text": "If milk replaces water, water can evaporate while other milk components remain. A residue does not mean that no water evaporated. Use the same liquid when testing evaporation conditions; changing the liquid too makes interpretation harder.",
-        "top": 112,
-        "bottom": 176,
+        "top": 1263,
+        "bottom": 1327,
         "before": 0,
         "keepNext": false
       },
@@ -716,17 +787,42 @@
         "id": "milk-1",
         "type": "body",
         "text": "If milk replaces water, water can evaporate while other milk components remain. A residue does not mean that no water evaporated. Use the same liquid when testing evaporation conditions; changing the liquid too makes interpretation harder.",
-        "top": 176,
-        "bottom": 256,
+        "top": 1327,
+        "bottom": 1407,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "sun-task",
+      "type": "activity",
+      "height": 500,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 11,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      12,
+      13,
+      14
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/cycle.png",
+      "caption": "Water moving through nature."
+    },
+    "end": 1386,
+    "fill": 98,
+    "breakReason": "Next body: Clothes often dry slowly on a humid rainy day. They may dry faste",
+    "blocks": [
       {
         "id": "sun-task",
         "type": "activity",
         "text": "1. Put equal amounts of water in two identical caps. Place one in sunlight and the other in shade. Begin together and prevent rain, splashing or people moving the samples. 2. Check every 15 minutes and record the first time each appears dry. Compare the conditions: besides sunshine, was the air movement similar? 3. Repeat on another day if possible. Record cloud cover, temperature and wind each time. 4. Plan a separate test of moving air using equal wet cloth pieces in otherwise similar positions. Ask your teacher before using a guarded fan; keep water away from electrical equipment.",
-        "top": 256,
-        "bottom": 756,
+        "top": 112,
+        "bottom": 612,
         "before": 0,
         "keepNext": false,
         "conceptId": "sun-task"
@@ -735,8 +831,8 @@
         "id": "rate-table",
         "type": "table",
         "text": "Table 8.3 · Conditions that can affect evaporation",
-        "top": 756,
-        "bottom": 1246,
+        "top": 612,
+        "bottom": 1102,
         "before": 0,
         "keepNext": false,
         "conceptId": "rate-table"
@@ -745,10 +841,18 @@
         "id": "rainy-day-0",
         "type": "body",
         "text": "Clothes often dry slowly on a humid rainy day. They may dry faster when spread out where air can move around them. Shelter them from new rain and keep wet fabric away from heaters and electrical parts. A fan moves air; it does not have to make the cloth hotter to help it dry.",
-        "top": 1246,
-        "bottom": 1310,
+        "top": 1102,
+        "bottom": 1166,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Water moving through nature.",
+        "artKey": "figures/class-6/science/ch08/cycle.png",
+        "top": 1166,
+        "bottom": 1386
       }
     ],
     "protectedNext": {
@@ -759,7 +863,7 @@
     }
   },
   {
-    "page": 11,
+    "page": 12,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -836,7 +940,7 @@
     }
   },
   {
-    "page": 12,
+    "page": 13,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -845,8 +949,12 @@
       16,
       17
     ],
-    "end": 998,
-    "fill": 68,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/cooler.png",
+      "caption": "An evaporative cooler."
+    },
+    "end": 1218,
+    "fill": 85,
     "breakReason": "Next activity: 1. Watch a teacher-led cloud-chamber demonstration, or a teacher-",
     "blocks": [
       {
@@ -939,6 +1047,14 @@
         "bottom": 998,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "An evaporative cooler.",
+        "artKey": "figures/class-6/science/ch08/cooler.png",
+        "top": 998,
+        "bottom": 1218
       }
     ],
     "protectedNext": {
@@ -949,7 +1065,7 @@
     }
   },
   {
-    "page": 13,
+    "page": 14,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1007,15 +1123,19 @@
     }
   },
   {
-    "page": 14,
+    "page": 15,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       17,
       16
     ],
-    "end": 1004,
-    "fill": 68,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/cycle.png",
+      "caption": "Water moving through nature."
+    },
+    "end": 1224,
+    "fill": 85,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
       {
@@ -1090,22 +1210,34 @@
         "bottom": 1004,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Water moving through nature.",
+        "artKey": "figures/class-6/science/ch08/cycle.png",
+        "top": 1004,
+        "bottom": 1224
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 15,
+    "page": 16,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
       18
     ],
-    "end": 976,
-    "fill": 66
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/balance.png",
+      "caption": "Comparing quantities of water."
+    },
+    "end": 1196,
+    "fill": 83
   },
   {
-    "page": 16,
+    "page": 17,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
@@ -1116,16 +1248,16 @@
     "fill": 86
   },
   {
-    "page": 17,
+    "page": 18,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
       19,
       20
     ],
-    "end": 1115,
-    "fill": 77,
-    "breakReason": "Next question: Name two liquids other than water that can evaporate, using famil",
+    "end": 1241,
+    "fill": 87,
+    "breakReason": "Next question: A fan can help dry wet clothes and also make sweaty skin feel coo",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -1171,42 +1303,46 @@
         "bottom": 1115,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "q4",
+        "type": "question",
+        "text": "Name two liquids other than water that can evaporate, using familiar examples or a reliable source. Explain why you should not test unknown or flammable liquids in this chapter’s activities.",
+        "top": 1115,
+        "bottom": 1241,
+        "before": 0,
+        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "q4",
+      "id": "q5",
       "type": "question",
       "height": 126,
       "keepNext": false
     }
   },
   {
-    "page": 18,
+    "page": 19,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
       19,
       20
     ],
-    "end": 1058,
-    "fill": 73,
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/cooler.png",
+      "caption": "An evaporative cooler."
+    },
+    "end": 1152,
+    "fill": 80,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
-      {
-        "id": "q4",
-        "type": "question",
-        "text": "Name two liquids other than water that can evaporate, using familiar examples or a reliable source. Explain why you should not test unknown or flammable liquids in this chapter’s activities.",
-        "top": 112,
-        "bottom": 238,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "q5",
         "type": "question",
         "text": "A fan can help dry wet clothes and also make sweaty skin feel cooler. Explain how moving air can produce both effects, even though the fan does not need to warm the clothes.",
-        "top": 238,
-        "bottom": 364,
+        "top": 112,
+        "bottom": 238,
         "before": 0,
         "keepNext": false
       },
@@ -1214,8 +1350,8 @@
         "id": "q6",
         "type": "question",
         "text": "Dewatering and drying can reduce the mass of wet drain sludge that must be transported. Explain why. Does leaving sludge in a heap for a few days guarantee that it is safe to handle or use on food-growing soil? Give a reason. Do not touch or collect drain sludge.",
-        "top": 364,
-        "bottom": 522,
+        "top": 238,
+        "bottom": 396,
         "before": 0,
         "keepNext": false
       },
@@ -1223,8 +1359,8 @@
         "id": "q7",
         "type": "question",
         "text": "Observe ordinary household activities for a day from a safe distance. Identify three involving evaporation. For each, explain how changing one condition could make drying faster or slower, and whether that change would be useful.",
-        "top": 522,
-        "bottom": 680,
+        "top": 396,
+        "bottom": 554,
         "before": 0,
         "keepNext": false
       },
@@ -1232,8 +1368,8 @@
         "id": "q8",
         "type": "question",
         "text": "Give examples of water in its solid state in nature. Distinguish these from visible clouds or mist, which may contain liquid droplets.",
-        "top": 680,
-        "bottom": 774,
+        "top": 554,
+        "bottom": 648,
         "before": 0,
         "keepNext": false
       },
@@ -1241,8 +1377,8 @@
         "id": "q9",
         "type": "question",
         "text": "Discuss the statement “Water is our responsibility before it is our right.” Suggest two practical ways to reduce waste or pollution, while recognising everyone’s need for safe water.",
-        "top": 774,
-        "bottom": 900,
+        "top": 648,
+        "bottom": 774,
         "before": 0,
         "keepNext": false
       },
@@ -1250,25 +1386,36 @@
         "id": "q10",
         "type": "question",
         "text": "A two-wheeler’s seat becomes very hot in the Sun. With an adult moving the vehicle into shade, how might you cool the seat before use? Explain the role of a damp cloth and evaporation. Keep water away from electrical parts and allow the seat to dry; do not test a very hot surface with bare skin.",
-        "top": 900,
-        "bottom": 1058,
+        "top": 774,
+        "bottom": 932,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "An evaporative cooler.",
+        "artKey": "figures/class-6/science/ch08/cooler.png",
+        "top": 932,
+        "bottom": 1152
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 19,
+    "page": 20,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [
-      20,
-      7
+      20
     ],
-    "end": 1319,
-    "fill": 93,
-    "breakReason": "End of lesson before reference pages",
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/cycle.png",
+      "caption": "Water moving through nature."
+    },
+    "end": 1067,
+    "fill": 73,
+    "breakReason": "Next project: With your teacher, assign roles for water stores, energy from sun",
     "blocks": [
       {
         "id": "project-heading",
@@ -1300,11 +1447,43 @@
         "conceptId": "project-game"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Water moving through nature.",
+        "artKey": "figures/class-6/science/ch08/cycle.png",
+        "top": 847,
+        "bottom": 1067
+      }
+    ],
+    "protectedNext": {
+      "id": "project-roleplay",
+      "type": "project",
+      "height": 236,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 21,
+    "title": "",
+    "titleRole": "projects",
+    "sourcePages": [
+      20,
+      7
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/ch08/cycle.png",
+      "caption": "Water moving through nature."
+    },
+    "end": 804,
+    "fill": 53,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "project-roleplay",
         "type": "project",
         "text": "With your teacher, assign roles for water stores, energy from sunlight, air movement and gravity. Act out two different routes rather than one compulsory circle. Explain where water changes state and where it only moves. Include a pause underground or as snow, and make clear that the actors representing vapour are a model of something invisible.",
-        "top": 847,
-        "bottom": 1083,
+        "top": 112,
+        "bottom": 348,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-roleplay"
@@ -1313,11 +1492,19 @@
         "id": "project-humidity",
         "type": "project",
         "text": "Collect monthly humidity data for one place from a reliable weather source. Record the type of humidity, time of observation and the accompanying temperature where available. Look for a pattern and explain the limits of the comparison. What would you still need to predict how quickly a particular wet cloth will dry?",
-        "top": 1083,
-        "bottom": 1319,
+        "top": 348,
+        "bottom": 584,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-humidity"
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Water moving through nature.",
+        "artKey": "figures/class-6/science/ch08/cycle.png",
+        "top": 584,
+        "bottom": 804
       }
     ],
     "protectedNext": null
