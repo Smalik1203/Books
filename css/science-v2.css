@@ -63,3 +63,18 @@
 .page--science-v2 .v2-table-caption {font-size:calc(var(--size-body)*.9);font-weight:700;fill:var(--v2-forest);}
 .page--science-v2 .v2-table-note {font-family:'Source Serif 4',serif;font-size:calc(var(--size-body)*.87);font-weight:400;}
 .page--science-v2 .v2-table-rule {stroke:var(--v2-rule);stroke-width:.8;fill:none;}
+
+/* Class 7 Chapters 2–12: the approved Chapter 1 table treatment. */
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) {
+ --v2-table-wash:#eeeaf4; --v2-table-ink:#514762;
+ --v2-table-border:#b9afc9; --v2-table-divider:#d4cddd; --v2-table-radius:8px;
+}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .se-table-head {
+ fill:var(--v2-table-wash);
+ clip-path:inset(0 round var(--v2-table-radius) var(--v2-table-radius) 0 0);
+}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-heading,
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-caption {fill:var(--v2-table-ink);}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-frame {stroke:var(--v2-table-border);rx:var(--v2-table-radius);ry:var(--v2-table-radius);}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-rule {stroke:var(--v2-table-divider);}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-rule:has(+ .v2-table-frame) {display:none;}

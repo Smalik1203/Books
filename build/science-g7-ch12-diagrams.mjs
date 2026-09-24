@@ -66,12 +66,11 @@ export function spaceDiagram(key){let html='',h=0;
  return {html:`<g class="v2-space-diagram" data-diagram="${key}">${html}</g>`,h};
 }
 
-// A small explanatory image beside a specific recall prompt on text-heavy pages.
-// The fitter reserves this space, rather than shrinking text or covering content.
-export function pageVisual(source=[]){
- const max=Math.max(0,...source);let key='earth',prompt=['Track a place on Earth.','What changes as Earth turns?'];
- if(max>=12){key='moon';prompt=['Trace the path of sunlight.','Which body could block it?'];}
- else if(max>=9){key='earth';prompt=['Follow the same tilted axis.','Which hemisphere faces the Sun?'];}
- else if(max>=7){key='sun';prompt=['Distinguish turning from orbiting.','Which motion explains the pattern?'];}
- return {h:192,html:`<g class="v2-page-visual">${pic(key,828,84,75)}${text(prompt[0],113,72)}${text(prompt[1],113,110)}</g>`};
+// Dedicated reference art; never rotate stock planets onto text-heavy pages.
+export function pageVisual(source=[],title=''){
+ const choice=title==='Keywords'?['shadow-model','figures/class-7/science/ch11/shadow-setup.png','Use a light source and an opaque object to model a shadow.']:
+  title==='Summary'?['observatory','figures/class-6/science/ch12/observatory.png','Observations help us test models of the sky.']:null;
+ if(!choice)throw Error('Author a dedicated Chapter 12 illustration for this page; do not repeat stock planet art.');
+ const [key,file,caption]=choice;
+ return {h:340,html:`<g class="v2-page-visual"><image class="science-illustration" data-art="${key}" href="../../${file}" x="166" y="10" width="720" height="280" preserveAspectRatio="xMidYMid meet"/><text class="se-caption" x="526" y="318" text-anchor="middle">${caption}</text></g>`};
 }

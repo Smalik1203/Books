@@ -163,7 +163,7 @@ export const summary=[
 ];
 export const exercises=[
  {id:'q1',source:[14],text:'A solution turns red litmus blue. Which addition, in sufficient excess, could make the mixture acidic again? Choose lime water, baking soda solution, vinegar or common salt solution. Explain your choice.'},
- {id:'q2',source:[14],text:'Solution A turns red litmus blue; B turns turmeric reddish-brown; C turns a suitable red rose extract green. Which sequence describes A, B and C: acidic/acidic/acidic; neutral/basic/basic; basic/basic/acidic; or basic/basic/basic? Give the evidence for each.'},
+ {id:'q2',source:[14],text:'Solution A turns red litmus blue; B turns turmeric reddish-brown; C turns a suitable red rose extract green. Which sequence describes A, B and C: acidic, acidic, acidic; neutral, basic, basic; basic, basic, acidic; or basic, basic, basic? Give the evidence for each.'},
  {id:'q3',source:[14],text:'Three containers tested with the same red rose extract give these colours: A green, B unchanged purple, C red-pink. Suggest the nature of each. For which container would another indicator be especially useful, and why?',figure:'rose-results',caption:'A: green     B: unchanged purple     C: red-pink'},
  {id:'q4',source:[14],text:'A sample leaves red litmus unchanged, turns blue litmus red and leaves turmeric yellow. Identify the nature supported by this evidence. Which observation is most useful, and why?'},
  {id:'q5',source:[15],text:'Manya cannot use a visual colour change in a teacher-led demonstration. Which kind of indicator might provide a smell-based comparison using approved samples? Explain its limits and precautions. Do not blindfold anyone or test unknown chemicals.'},

@@ -45,7 +45,7 @@ function bulletList(items,x,w,y=0){let html='';for(const s of items){const p=par
 function render(meta){
  if(meta.type==='diagram'){
   const d=chapterDiagram(meta.diagram),c=caption(meta.caption,d.h+12);
-  return add({...meta,type:'figure'},d.html+c.html,d.h+c.h+34,{artKey:meta.diagram});
+  return add({...meta,type:'figure'},`<g data-instructional-figure="${meta.diagram}">${d.html}</g>`+c.html,d.h+c.h+34,{artKey:meta.diagram});
  }
  if(meta.type==='illustrated-prose'){
   let y=0,html='';
@@ -104,7 +104,7 @@ function render(meta){
    return add(meta,html+c.html,y+c.h+26);
   }
   let y=0,html=label(meta.number+'.',111,24,'se-copy','end');const p=paragraph(meta.text,{x:132,w:831,y:0,gap:16});html+=p.html;y=p.h;
-  if(meta.diagram){const d=chapterDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})">${d.html}</g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
+  if(meta.diagram){const d=chapterDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   if(meta.table){const t=comparisonTableBlock({...meta.table,id:meta.id+'-matching'},{wrap,lines});html+=`<g transform="translate(0 ${y})">${t.html}</g>`;y+=t.h;}
   if(meta.figure){const height=meta.figureHeight||215;html+=photo(meta.figure,186,y,680,height);y+=height+5;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   return add(meta,html,y+14);

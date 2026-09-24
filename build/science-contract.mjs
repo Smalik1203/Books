@@ -6,8 +6,10 @@ const originalLabels=new Set(['The setup','What you saw','Work it out in your he
 export function scienceContract(file,html,vocabulary='current'){
  if(!['current','september-2026-original'].includes(vocabulary))throw Error('Unknown science vocabulary: '+vocabulary);
  const labels=vocabulary==='september-2026-original'?originalLabels:allowed;
+ const chapter=html.match(/\bpage--(?:v2-)?g7-ch(0[1-9]|1[0-2])\b/)?.[1];
+ const numberedActivity=label=>vocabulary==='current'&&chapter&&new RegExp(`^Activity ${+chapter}\\.[1-9]\\d*$`).test(label);
  const issues=[],plain=s=>s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
- for(const m of html.matchAll(/<(?:text|div)\b[^>]*class="(?:se-cue-title|se-activity-tab-text|science-feature__title)"[^>]*>([\s\S]*?)<\/(?:text|div)>/g))if(!labels.has(plain(m[1])))issues.push('unlocked feature label: '+plain(m[1]));
+ for(const m of html.matchAll(/<(?:text|div)\b[^>]*class="[^"]*\b(?:se-cue-title|se-activity-tab-text|science-feature__title)\b[^"]*"[^>]*>([\s\S]*?)<\/(?:text|div)>/g))if(!labels.has(plain(m[1]))&&!numberedActivity(plain(m[1])))issues.push('unlocked feature label: '+plain(m[1]));
  if(/class="se-cue-png"|science\/cues\/.*\.png/.test(html))issues.push('painted feature icon; use the locked 24-grid strokes');
  if(/se-cue--(?:evidence|comparison|connection|explanation|question|practical)/.test(html))issues.push('retired per-feature colour role');
  if(/THINK SPARK|The story begins|Threads of Curiosity|Pause and Ponder|Ready to Go Beyond/.test(plain(html)))issues.push('retired science feature alias');

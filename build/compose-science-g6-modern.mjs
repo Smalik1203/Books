@@ -1,4 +1,4 @@
-import {pageIllustration,hasContentImage,pageImageReserve} from './science-page-illustrations.mjs';
+import {pageIllustration,hasContentImage,pageImageReserve,resetPageIllustrations} from './science-page-illustrations.mjs';
 // Class 6's current edited content, using Class 7's typography and protected pagination.
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -79,7 +79,7 @@ const heading=s=>({type:'heading',level:2,html:s});
 for(const raw of chapters){
  const {ch,ledger}=editClass6(structuredClone(raw));
  const number=ch.config.number;if(process.argv[2]&&process.argv[2]!==number)continue;
- currentChapter=String(number);
+ currentChapter=String(number);resetPageIllustrations(6,number);
  const blocks=structuredClone(ch.blocks),dir='pages/class-6/'+ch.dir,record=history+'/'+ch.dir;
  await fs.mkdir(record,{recursive:true});
  await fs.writeFile(record+'/editorial-ledger.json',JSON.stringify(ledger,null,2));
@@ -162,7 +162,7 @@ for(const raw of chapters){
  const map=[];let bridgeIndex=100,bodyIndex=0;
  for(const [i,p] of pages.entries()){
   let pageContent=p.blocks.map(b=>render(b)).join('\n');
-  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number);if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));pageContent+=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
+  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number,{commit:true});if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));pageContent+=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
   const n=i+1,verso=n%2===0;const filename='p'+String(p.bridge?++bridgeIndex:++bodyIndex).padStart(3,'0')+'.html';
   const running=i===0?band:`<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>${motif(number,true)}${label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')}${label(ch.config.title+(p.bridge?' · Beyond the Book':''),960,40,'v2-running se-running','end')}<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>`;
   const footer=`<g class="v2-footer"><line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>${label('LEARNLAB · SCIENCE 6',verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')}<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>${label(n,verso?107:945,1487,'v2-folio se-running','middle')}</g>`;

@@ -28,7 +28,7 @@
       },
       "opener": {
         "bandBounds": {
-          "left": -16.999999504623922,
+          "left": -16.999999504623926,
           "top": -16.99999991465431,
           "right": 1068.9999966956375,
           "bottom": 300.0000062599209
@@ -52,7 +52,7 @@
             "text": "Electricity: Circuits",
             "left": 283.99999890163804,
             "top": 118,
-            "right": 705.6575360630814,
+            "right": 705.6575360630815,
             "bottom": 167
           },
           {
@@ -83,8 +83,8 @@
       "contentBounds": {
         "left": 87.5,
         "top": 111.7,
-        "right": 958.4,
-        "bottom": 1252
+        "right": 963,
+        "bottom": 1057.4
       },
       "blocks": [
         {
@@ -98,73 +98,69 @@
           "id": "uses-intro-0",
           "left": 89,
           "top": 169,
-          "right": 931.9,
+          "right": 963,
           "bottom": 233.4
         },
         {
           "id": "uses-intro-1",
           "left": 87.5,
           "top": 233,
-          "right": 914.1,
+          "right": 963,
           "bottom": 297.4
         },
         {
           "id": "uses",
           "left": 89,
           "top": 313,
-          "right": 958.4,
+          "right": 963,
           "bottom": 651.4
         },
         {
           "id": "supply-0",
           "left": 89,
           "top": 667,
-          "right": 917.6,
+          "right": 963,
           "bottom": 731.4
-        },
-        {
-          "id": "supply-1",
-          "left": 87.5,
-          "top": 731,
-          "right": 914.6,
-          "bottom": 795.4
-        },
-        {
-          "id": "energy-uses-0",
-          "left": 87.5,
-          "top": 811,
-          "right": 920.6,
-          "bottom": 875.4
-        },
-        {
-          "id": "energy-uses-1",
-          "left": 89,
-          "top": 875,
-          "right": 955,
-          "bottom": 971.4
-        },
-        {
-          "id": "safe-0",
-          "left": 89,
-          "top": 987,
-          "right": 945.3,
-          "bottom": 1051.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.545575014439,
-        "right": 114.70875759294637,
+        "right": 114.70875759294636,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 29.3,
-      "occupiedPercent": 87.5,
+      "bottomGapMM": 64.2,
+      "occupiedPercent": 72.6,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 25.7,
+        "remainingMM": 58,
         "protectedGroup": [
+          {
+            "id": "supply-1",
+            "type": "body",
+            "title": "Electrical energy can be supplied using moving water, wind, sunlight, or fuels such as coal and natu",
+            "height": 80
+          },
+          {
+            "id": "energy-uses-0",
+            "type": "body",
+            "title": "A kettle transfers electrical energy mainly into heating water. A fan transfers some into motion of ",
+            "height": 64
+          },
+          {
+            "id": "energy-uses-1",
+            "type": "body",
+            "title": "A kettle transfers electrical energy mainly into heating water. A fan transfers some into motion of ",
+            "height": 112
+          },
+          {
+            "id": "safe-0",
+            "type": "body",
+            "title": "Use only teacher-approved 1.5 V cells and holders for these activities. Never experiment with wall s",
+            "height": 64
+          },
           {
             "id": "safe-1",
             "type": "body",
@@ -188,7 +184,93 @@
             "type": "body",
             "title": "The small cell in a torch lets us study connections without approaching the power network. Even then",
             "height": 112
-          },
+          }
+        ],
+        "requiredMM": 115,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 3,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 111,
+        "right": 963,
+        "bottom": 1077.4
+      },
+      "blocks": [
+        {
+          "id": "supply-1",
+          "left": 87.5,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "energy-uses-0",
+          "left": 87.5,
+          "top": 191,
+          "right": 963,
+          "bottom": 255.4
+        },
+        {
+          "id": "energy-uses-1",
+          "left": 89,
+          "top": 255,
+          "right": 963,
+          "bottom": 351.4
+        },
+        {
+          "id": "safe-0",
+          "left": 89,
+          "top": 367,
+          "right": 963,
+          "bottom": 431.4
+        },
+        {
+          "id": "safe-1",
+          "left": 89,
+          "top": 431,
+          "right": 963,
+          "bottom": 495.4
+        },
+        {
+          "id": "safe-2",
+          "left": 87.5,
+          "top": 495,
+          "right": 963,
+          "bottom": 559.4
+        },
+        {
+          "id": "safe-comparison-0",
+          "left": 89,
+          "top": 575,
+          "right": 963,
+          "bottom": 639.4
+        },
+        {
+          "id": "safe-comparison-1",
+          "left": 89,
+          "top": 639,
+          "right": 963,
+          "bottom": 735.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 937.9815002602821,
+        "top": 1457.5455750144392,
+        "right": 952.7086790303828,
+        "bottom": 1495.836239816701
+      },
+      "bottomGapMM": 60.7,
+      "occupiedPercent": 74.1,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 54.4,
+        "protectedGroup": [
           {
             "id": "torch-head",
             "type": "heading",
@@ -202,133 +284,7 @@
             "height": 759
           }
         ],
-        "requiredMM": 206.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 3,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1239
-      },
-      "blocks": [
-        {
-          "id": "safe-1",
-          "left": 89,
-          "top": 111,
-          "right": 927.3,
-          "bottom": 175.4
-        },
-        {
-          "id": "safe-2",
-          "left": 87.5,
-          "top": 175,
-          "right": 957.9,
-          "bottom": 239.4
-        },
-        {
-          "id": "safe-comparison-0",
-          "left": 89,
-          "top": 255,
-          "right": 939.5,
-          "bottom": 319.4
-        },
-        {
-          "id": "safe-comparison-1",
-          "left": 89,
-          "top": 319,
-          "right": 946.8,
-          "bottom": 415.4
-        },
-        {
-          "id": "torch-head",
-          "left": 89,
-          "top": 443.7,
-          "right": 378.8,
-          "bottom": 493.8
-        },
-        {
-          "id": "torch-task",
-          "left": 89,
-          "top": 502,
-          "right": 963,
-          "bottom": 1239
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 937.9815002602821,
-        "top": 1457.5455750144392,
-        "right": 952.7086790303828,
-        "bottom": 1495.836239816701
-      },
-      "bottomGapMM": 31.6,
-      "occupiedPercent": 86.5,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 27.7,
-        "protectedGroup": [
-          {
-            "id": "torch-explain-0",
-            "type": "body",
-            "title": "A working torch commonly lights in one switch position and stays dark in the other. Inside are a sou",
-            "height": 64
-          },
-          {
-            "id": "torch-explain-1",
-            "type": "body",
-            "title": "A working torch commonly lights in one switch position and stays dark in the other. Inside are a sou",
-            "height": 80
-          },
-          {
-            "id": "torch-evidence-0",
-            "type": "body",
-            "title": "A sketch is a record of what you can see, not a reason to invent hidden parts. Mark any connection y",
-            "height": 64
-          },
-          {
-            "id": "torch-evidence-1",
-            "type": "body",
-            "title": "A sketch is a record of what you can see, not a reason to invent hidden parts. Mark any connection y",
-            "height": 112
-          },
-          {
-            "id": "torch-path-question-0",
-            "type": "body",
-            "title": "The switch can move while the lamp stays dark. This suggests two different questions: did the switch",
-            "height": 64
-          },
-          {
-            "id": "torch-path-question-1",
-            "type": "body",
-            "title": "The switch can move while the lamp stays dark. This suggests two different questions: did the switch",
-            "height": 112
-          },
-          {
-            "id": "parts-head",
-            "type": "heading",
-            "title": "3.2  A Simple Electrical Circuit",
-            "height": 58
-          },
-          {
-            "id": "cell-head",
-            "type": "heading",
-            "title": "Cells and their terminals",
-            "height": 48
-          },
-          {
-            "id": "cell-task",
-            "type": "activity",
-            "title": "1. Inspect an undamaged cylindrical 1.5 V cell supplied by your teacher. Find its + and − markings. ",
-            "height": 360
-          }
-        ],
-        "requiredMM": 177.1,
+        "requiredMM": 146.8,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
@@ -337,85 +293,71 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 111.7,
         "right": 963,
-        "bottom": 1298
+        "bottom": 1312.4
       },
       "blocks": [
         {
+          "id": "torch-head",
+          "left": 89,
+          "top": 111.7,
+          "right": 378.8,
+          "bottom": 161.8
+        },
+        {
+          "id": "torch-task",
+          "left": 89,
+          "top": 170,
+          "right": 963,
+          "bottom": 907
+        },
+        {
           "id": "torch-explain-0",
           "left": 87.5,
-          "top": 111,
-          "right": 912.5,
-          "bottom": 175.4
+          "top": 928,
+          "right": 963,
+          "bottom": 992.4
         },
         {
           "id": "torch-explain-1",
           "left": 89,
-          "top": 175,
-          "right": 953.5,
-          "bottom": 239.4
+          "top": 992,
+          "right": 963,
+          "bottom": 1056.4
         },
         {
           "id": "torch-evidence-0",
           "left": 87.5,
-          "top": 255,
-          "right": 914.4,
-          "bottom": 319.4
+          "top": 1072,
+          "right": 963,
+          "bottom": 1136.4
         },
         {
           "id": "torch-evidence-1",
           "left": 87.5,
-          "top": 319,
-          "right": 946.4,
-          "bottom": 415.4
+          "top": 1136,
+          "right": 963,
+          "bottom": 1232.4
         },
         {
           "id": "torch-path-question-0",
           "left": 89,
-          "top": 431,
-          "right": 887.8,
-          "bottom": 495.4
-        },
-        {
-          "id": "torch-path-question-1",
-          "left": 87.5,
-          "top": 495,
-          "right": 954.4,
-          "bottom": 591.4
-        },
-        {
-          "id": "parts-head",
-          "left": 89,
-          "top": 619.7,
-          "right": 578.2,
-          "bottom": 669.8
-        },
-        {
-          "id": "cell-head",
-          "left": 89,
-          "top": 690.5,
-          "right": 412.3,
-          "bottom": 730.3
-        },
-        {
-          "id": "cell-task",
-          "left": 89,
-          "top": 738,
+          "top": 1248,
           "right": 963,
-          "bottom": 1076
+          "bottom": 1312.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.5455750144392,
-        "right": 114.70875759294637,
+        "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 21,
-      "occupiedPercent": 91,
+      "bottomGapMM": 18.4,
+      "occupiedPercent": 92.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -425,57 +367,57 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1300
+        "bottom": 1279.4
       },
       "blocks": [
         {
-          "id": "cell-meaning-0",
+          "id": "torch-path-question-1",
           "left": 87.5,
           "top": 111,
-          "right": 922.7,
-          "bottom": 175.4
+          "right": 963,
+          "bottom": 207.4
+        },
+        {
+          "id": "parts-head",
+          "left": 89,
+          "top": 235.7,
+          "right": 578.2,
+          "bottom": 285.8
+        },
+        {
+          "id": "cell-head",
+          "left": 89,
+          "top": 306.5,
+          "right": 412.3,
+          "bottom": 346.3
+        },
+        {
+          "id": "cell-task",
+          "left": 89,
+          "top": 354,
+          "right": 963,
+          "bottom": 692
+        },
+        {
+          "id": "cell-meaning-0",
+          "left": 87.5,
+          "top": 713,
+          "right": 963,
+          "bottom": 777.4
         },
         {
           "id": "cell-meaning-1",
           "left": 89,
-          "top": 175,
-          "right": 950.4,
-          "bottom": 271.4
+          "top": 777,
+          "right": 963,
+          "bottom": 873.4
         },
         {
           "id": "voltage-0",
           "left": 89,
-          "top": 287,
-          "right": 908,
-          "bottom": 351.4
-        },
-        {
-          "id": "voltage-1",
-          "left": 89,
-          "top": 351,
-          "right": 958.7,
-          "bottom": 447.4
-        },
-        {
-          "id": "holder-figure",
-          "left": 87.5,
-          "top": 464,
-          "right": 868.1,
-          "bottom": 799.2
-        },
-        {
-          "id": "battery-head",
-          "left": 89,
-          "top": 838.5,
-          "right": 426.5,
-          "bottom": 878.3
-        },
-        {
-          "id": "battery-task",
-          "left": 89,
-          "top": 886,
+          "top": 889,
           "right": 963,
-          "bottom": 1300
+          "bottom": 953.4
         }
       ],
       "collisions": [],
@@ -486,8 +428,8 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 20.7,
-      "occupiedPercent": 91.2,
+      "bottomGapMM": 24.4,
+      "occupiedPercent": 89.6,
       "footerClearanceMM": 3.3
     },
     {
@@ -496,103 +438,71 @@
       "contentBounds": {
         "left": 87.5,
         "top": 111,
-        "right": 957,
-        "bottom": 1188
+        "right": 963,
+        "bottom": 1321.4
       },
       "blocks": [
         {
+          "id": "voltage-1",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 207.4
+        },
+        {
+          "id": "holder-figure",
+          "left": 87.5,
+          "top": 224,
+          "right": 868.1,
+          "bottom": 559.2
+        },
+        {
+          "id": "battery-head",
+          "left": 89,
+          "top": 598.5,
+          "right": 426.5,
+          "bottom": 638.3
+        },
+        {
+          "id": "battery-task",
+          "left": 89,
+          "top": 646,
+          "right": 963,
+          "bottom": 1060
+        },
+        {
           "id": "battery-explain-0",
           "left": 87.5,
-          "top": 111,
-          "right": 913.4,
-          "bottom": 175.4
+          "top": 1081,
+          "right": 963,
+          "bottom": 1145.4
         },
         {
           "id": "battery-explain-1",
           "left": 87.5,
-          "top": 175,
-          "right": 946,
-          "bottom": 271.4
+          "top": 1145,
+          "right": 963,
+          "bottom": 1241.4
         },
         {
           "id": "series-predict-0",
           "left": 87.5,
-          "top": 287,
-          "right": 911.6,
-          "bottom": 351.4
-        },
-        {
-          "id": "series-predict-1",
-          "left": 89,
-          "top": 351,
-          "right": 943.9,
-          "bottom": 447.4
-        },
-        {
-          "id": "series-figure",
-          "left": 89,
-          "top": 498.4,
-          "right": 811.4,
-          "bottom": 759.2
-        },
-        {
-          "id": "battery-limit-0",
-          "left": 89,
-          "top": 779,
-          "right": 957,
-          "bottom": 843.4
-        },
-        {
-          "id": "battery-limit-1",
-          "left": 89,
-          "top": 843,
-          "right": 921,
-          "bottom": 907.4
-        },
-        {
-          "id": "holder-trace-0",
-          "left": 87.5,
-          "top": 923,
-          "right": 933.6,
-          "bottom": 987.4
+          "top": 1257,
+          "right": 963,
+          "bottom": 1321.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.5455750144392,
-        "right": 114.01842108809788,
+        "right": 114.0184210880979,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 40.8,
-      "occupiedPercent": 82.6,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 37.2,
-        "protectedGroup": [
-          {
-            "id": "holder-trace-1",
-            "type": "body",
-            "title": "A holder is more than a box that keeps cells tidy. Its springs and metal strips make electrical conn",
-            "height": 112
-          },
-          {
-            "id": "lamp-head",
-            "type": "heading",
-            "title": "Two ways to produce light",
-            "height": 48
-          },
-          {
-            "id": "lamp-task",
-            "type": "activity",
-            "title": "1. Your teacher supplies a small incandescent torch lamp with an intact glass bulb. Observe its insi",
-            "height": 392
-          }
-        ],
-        "requiredMM": 101.3,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 16.8,
+      "occupiedPercent": 92.8,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 7,
@@ -601,57 +511,64 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1196
+        "bottom": 1290
       },
       "blocks": [
         {
-          "id": "holder-trace-1",
+          "id": "series-predict-1",
           "left": 89,
           "top": 111,
-          "right": 938.2,
+          "right": 963,
           "bottom": 207.4
+        },
+        {
+          "id": "series-figure",
+          "left": 89,
+          "top": 258.4,
+          "right": 811.4,
+          "bottom": 519.2
+        },
+        {
+          "id": "battery-limit-0",
+          "left": 89,
+          "top": 539,
+          "right": 963,
+          "bottom": 603.4
+        },
+        {
+          "id": "battery-limit-1",
+          "left": 89,
+          "top": 603,
+          "right": 963,
+          "bottom": 667.4
+        },
+        {
+          "id": "holder-trace-0",
+          "left": 87.5,
+          "top": 683,
+          "right": 963,
+          "bottom": 747.4
+        },
+        {
+          "id": "holder-trace-1",
+          "left": 89,
+          "top": 747,
+          "right": 963,
+          "bottom": 843.4
         },
         {
           "id": "lamp-head",
           "left": 89,
-          "top": 236.5,
+          "top": 872.5,
           "right": 434.2,
-          "bottom": 276.3
+          "bottom": 912.3
         },
         {
           "id": "lamp-task",
           "left": 89,
-          "top": 284,
+          "top": 920,
           "right": 963,
-          "bottom": 654
-        },
-        {
-          "id": "lamp-meaning-0",
-          "left": 89,
-          "top": 675,
-          "right": 914.3,
-          "bottom": 739.4
-        },
-        {
-          "id": "lamp-meaning-1",
-          "left": 89,
-          "top": 739,
-          "right": 943.6,
-          "bottom": 803.4
-        },
-        {
-          "id": "filament-path-0",
-          "left": 89,
-          "top": 819,
-          "right": 921.8,
-          "bottom": 883.4
-        },
-        {
-          "id": "filament-path-1",
-          "left": 87.5,
-          "top": 883,
-          "right": 924,
-          "bottom": 979.4
+          "bottom": 1290
         }
       ],
       "collisions": [],
@@ -662,105 +579,116 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 39.3,
-      "occupiedPercent": 83.2,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 35.8,
-        "protectedGroup": [
-          {
-            "id": "led-task",
-            "type": "activity",
-            "title": "1. Observe an unconnected, new two-lead LED. Compare it with the incandescent lamp. Can you see a fi",
-            "height": 392
-          }
-        ],
-        "requiredMM": 70.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 22.5,
+      "occupiedPercent": 90.4,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 8,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112,
+        "top": 111,
         "right": 963,
-        "bottom": 1233.4
+        "bottom": 1249.4
       },
       "blocks": [
         {
+          "id": "lamp-meaning-0",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "lamp-meaning-1",
+          "left": 89,
+          "top": 175,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
+          "id": "filament-path-0",
+          "left": 89,
+          "top": 255,
+          "right": 963,
+          "bottom": 319.4
+        },
+        {
+          "id": "filament-path-1",
+          "left": 87.5,
+          "top": 319,
+          "right": 963,
+          "bottom": 415.4
+        },
+        {
           "id": "led-task",
           "left": 89,
-          "top": 112,
+          "top": 432,
           "right": 963,
-          "bottom": 482
+          "bottom": 802
         },
         {
           "id": "components-figure",
           "left": 89,
-          "top": 504,
+          "top": 824,
           "right": 863.8,
-          "bottom": 839.2
+          "bottom": 1159.2
         },
         {
           "id": "led-meaning-0",
           "left": 87.5,
-          "top": 865,
-          "right": 948.2,
-          "bottom": 929.4
-        },
-        {
-          "id": "led-meaning-1",
-          "left": 89,
-          "top": 929,
-          "right": 932.7,
-          "bottom": 1025.4
-        },
-        {
-          "id": "led-identity-0",
-          "left": 87.5,
-          "top": 1041,
-          "right": 898,
-          "bottom": 1105.4
-        },
-        {
-          "id": "led-identity-1",
-          "left": 89,
-          "top": 1105,
-          "right": 842.1,
-          "bottom": 1169.4
-        },
-        {
-          "id": "led-identity-2",
-          "left": 89,
-          "top": 1169,
-          "right": 885.7,
-          "bottom": 1233.4
+          "top": 1185,
+          "right": 963,
+          "bottom": 1249.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.5448559139131,
-        "right": 114.01842108809788,
+        "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 32.6,
-      "occupiedPercent": 86.1,
+      "bottomGapMM": 29.8,
+      "occupiedPercent": 87.3,
       "footerClearanceMM": 3.3,
       "shortPageException": {
         "remainingMM": 29.6,
         "protectedGroup": [
           {
+            "id": "led-meaning-1",
+            "type": "body",
+            "title": "An **LED**, or light-emitting diode, produces light without a heated filament. On many new two-lead ",
+            "height": 112
+          },
+          {
+            "id": "led-identity-0",
+            "type": "body",
+            "title": "Look closely at the two devices before connecting them. The metal supports visible inside an LED pac",
+            "height": 64
+          },
+          {
+            "id": "led-identity-1",
+            "type": "body",
+            "title": "Look closely at the two devices before connecting them. The metal supports visible inside an LED pac",
+            "height": 64
+          },
+          {
+            "id": "led-identity-2",
+            "type": "body",
+            "title": "Look closely at the two devices before connecting them. The metal supports visible inside an LED pac",
+            "height": 80
+          },
+          {
             "id": "lamp-comparison",
             "type": "table",
             "title": "Incandescent lamps and LEDs",
-            "height": 302
+            "height": 358
           }
         ],
-        "requiredMM": 54.3,
+        "requiredMM": 121.8,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
@@ -768,67 +696,67 @@
       "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111.5,
+        "left": -18.2,
+        "top": -12462.6,
         "right": 963,
-        "bottom": 1174
+        "bottom": 1355.4
       },
       "blocks": [
         {
-          "id": "lamp-comparison",
+          "id": "led-meaning-1",
           "left": 89,
-          "top": 111.5,
+          "top": 111,
           "right": 963,
-          "bottom": 398
+          "bottom": 207.4
+        },
+        {
+          "id": "led-identity-0",
+          "left": 87.5,
+          "top": 223,
+          "right": 963,
+          "bottom": 287.4
+        },
+        {
+          "id": "led-identity-1",
+          "left": 89,
+          "top": 287,
+          "right": 963,
+          "bottom": 351.4
+        },
+        {
+          "id": "led-identity-2",
+          "left": 89,
+          "top": 351,
+          "right": 963,
+          "bottom": 415.4
+        },
+        {
+          "id": "lamp-comparison",
+          "left": -18.2,
+          "top": -12462.6,
+          "right": 963,
+          "bottom": 762
         },
         {
           "id": "choose-source-0",
           "left": 87.5,
-          "top": 413,
-          "right": 949,
-          "bottom": 477.4
+          "top": 789,
+          "right": 963,
+          "bottom": 853.4
         },
         {
           "id": "choose-source-1",
           "left": 89,
-          "top": 477,
-          "right": 954.8,
-          "bottom": 573.4
+          "top": 853,
+          "right": 963,
+          "bottom": 949.4
         },
         {
           "id": "light-energy-0",
           "left": 89,
-          "top": 589,
-          "right": 904.7,
-          "bottom": 653.4
-        },
-        {
-          "id": "light-energy-1",
-          "left": 87.5,
-          "top": 653,
-          "right": 924.9,
-          "bottom": 717.4
-        },
-        {
-          "id": "light-energy-2",
-          "left": 89,
-          "top": 717,
-          "right": 875.5,
-          "bottom": 781.4
-        },
-        {
-          "id": "component-choice-0",
-          "left": 89,
-          "top": 797,
-          "right": 921,
-          "bottom": 861.4
-        },
-        {
-          "id": "component-choice-1",
-          "left": 87.5,
-          "top": 861,
-          "right": 946.9,
-          "bottom": 957.4
+          "top": 965,
+          "right": 963,
+          "bottom": 1029.4
         }
       ],
       "collisions": [],
@@ -839,129 +767,126 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 43.3,
-      "occupiedPercent": 81.5,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 39.7,
-        "protectedGroup": [
-          {
-            "id": "path-head",
-            "type": "heading",
-            "title": "Predict, connect and observe",
-            "height": 48
-          },
-          {
-            "id": "lamp-build",
-            "type": "activity",
-            "title": "Use one 1.5 V cell and an incandescent torch lamp rated for that supply. Ask your teacher to prepare",
-            "height": 840
-          }
-        ],
-        "requiredMM": 159.5,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 10.7,
+      "occupiedPercent": 95.4,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 10,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112.5,
+        "top": 111,
         "right": 963,
-        "bottom": 1239.4
+        "bottom": 1310
       },
       "blocks": [
         {
+          "id": "light-energy-1",
+          "left": 87.5,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "light-energy-2",
+          "left": 89,
+          "top": 175,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
+          "id": "component-choice-0",
+          "left": 89,
+          "top": 255,
+          "right": 963,
+          "bottom": 319.4
+        },
+        {
+          "id": "component-choice-1",
+          "left": 87.5,
+          "top": 319,
+          "right": 963,
+          "bottom": 415.4
+        },
+        {
           "id": "path-head",
           "left": 89,
-          "top": 112.5,
+          "top": 444.5,
           "right": 472.7,
-          "bottom": 152.3
+          "bottom": 484.3
         },
         {
           "id": "lamp-build",
           "left": 89,
-          "top": 160,
+          "top": 492,
           "right": 963,
-          "bottom": 978
-        },
-        {
-          "id": "arrangement-intro-0",
-          "left": 89,
-          "top": 999,
-          "right": 939.1,
-          "bottom": 1063.4
-        },
-        {
-          "id": "arrangement-intro-1",
-          "left": 87.5,
-          "top": 1063,
-          "right": 922.3,
-          "bottom": 1159.4
-        },
-        {
-          "id": "record-prediction-0",
-          "left": 89,
-          "top": 1175,
-          "right": 917.6,
-          "bottom": 1239.4
+          "bottom": 1310
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.5448559139131,
-        "right": 121.72533603047486,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 31.5,
-      "occupiedPercent": 86.5,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 31.4,
-        "protectedGroup": [
-          {
-            "id": "record-prediction-1",
-            "type": "body",
-            "title": "Keep your prediction even if the test disagrees with it. Beside the observation, sketch the actual c",
-            "height": 112
-          },
-          {
-            "id": "arrangements",
-            "type": "figure",
-            "title": "Six arrangements for prediction and observation. Record your results in a notebook; no glow is pre-f",
-            "height": 766
-          }
-        ],
-        "requiredMM": 157.7,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 18.9,
+      "occupiedPercent": 91.9,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 11,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
+        "left": 87.5,
         "top": 111,
-        "right": 928.4,
-        "bottom": 1190
+        "right": 963,
+        "bottom": 1293.4
       },
       "blocks": [
         {
-          "id": "record-prediction-1",
+          "id": "arrangement-intro-0",
           "left": 89,
           "top": 111,
-          "right": 928.4,
-          "bottom": 207.4
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "arrangement-intro-1",
+          "left": 87.5,
+          "top": 175,
+          "right": 963,
+          "bottom": 271.4
+        },
+        {
+          "id": "record-prediction-0",
+          "left": 89,
+          "top": 287,
+          "right": 963,
+          "bottom": 351.4
+        },
+        {
+          "id": "record-prediction-1",
+          "left": 89,
+          "top": 351,
+          "right": 963,
+          "bottom": 447.4
         },
         {
           "id": "arrangements",
           "left": 89,
-          "top": 225.4,
+          "top": 465.4,
           "right": 889.2,
-          "bottom": 969.2
+          "bottom": 1209.2
+        },
+        {
+          "id": "path-explain-0",
+          "left": 87.5,
+          "top": 1229,
+          "right": 963,
+          "bottom": 1293.4
         }
       ],
       "collisions": [],
@@ -972,52 +897,9 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 40.4,
-      "occupiedPercent": 82.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 36.8,
-        "protectedGroup": [
-          {
-            "id": "path-explain-0",
-            "type": "body",
-            "title": "An **electrical circuit** includes a path through which current can flow. In arrangements 1 and 6, t",
-            "height": 64
-          },
-          {
-            "id": "path-explain-1",
-            "type": "body",
-            "title": "An **electrical circuit** includes a path through which current can flow. In arrangements 1 and 6, t",
-            "height": 64
-          },
-          {
-            "id": "path-explain-2",
-            "type": "body",
-            "title": "An **electrical circuit** includes a path through which current can flow. In arrangements 1 and 6, t",
-            "height": 80
-          },
-          {
-            "id": "current-0",
-            "type": "body",
-            "title": "**Electric current** is the flow of electric charge. By convention, its direction in the external ci",
-            "height": 64
-          },
-          {
-            "id": "current-1",
-            "type": "body",
-            "title": "**Electric current** is the flow of electric charge. By convention, its direction in the external ci",
-            "height": 112
-          },
-          {
-            "id": "fault-think",
-            "type": "panel",
-            "title": "A lamp stays dark. One group concludes, “The cell is used up.” Another says, “The wire touches the p",
-            "height": 316
-          }
-        ],
-        "requiredMM": 125.8,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 21.8,
+      "occupiedPercent": 90.7,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 12,
@@ -1026,79 +908,73 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1076
+        "bottom": 1217.4
       },
       "blocks": [
         {
-          "id": "path-explain-0",
-          "left": 87.5,
-          "top": 111,
-          "right": 954.2,
-          "bottom": 175.4
-        },
-        {
           "id": "path-explain-1",
           "left": 89,
-          "top": 175,
-          "right": 947.8,
-          "bottom": 239.4
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
         },
         {
           "id": "path-explain-2",
           "left": 87.5,
-          "top": 239,
-          "right": 873,
-          "bottom": 303.4
+          "top": 175,
+          "right": 963,
+          "bottom": 239.4
         },
         {
           "id": "current-0",
           "left": 89,
-          "top": 319,
-          "right": 943.8,
-          "bottom": 383.4
+          "top": 255,
+          "right": 963,
+          "bottom": 319.4
         },
         {
           "id": "current-1",
           "left": 87.5,
-          "top": 383,
-          "right": 957.3,
-          "bottom": 479.4
+          "top": 319,
+          "right": 963,
+          "bottom": 415.4
         },
         {
           "id": "fault-think",
           "left": 89,
-          "top": 496,
+          "top": 432,
           "right": 963,
-          "bottom": 790
+          "bottom": 726
         },
         {
           "id": "fused-0",
           "left": 87.5,
+          "top": 747,
+          "right": 963,
+          "bottom": 811.4
+        },
+        {
+          "id": "fused-1",
+          "left": 87.5,
           "top": 811,
-          "right": 954.1,
+          "right": 963,
           "bottom": 875.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 121.72533603047486,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 60.9,
-      "occupiedPercent": 74,
+      "bottomGapMM": 35.5,
+      "occupiedPercent": 84.8,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 57.3,
+        "remainingMM": 29.3,
         "protectedGroup": [
-          {
-            "id": "fused-1",
-            "type": "body",
-            "title": "A lamp with a broken filament is often called fused. Its internal path is open even when the outside",
-            "height": 80
-          },
           {
             "id": "led-head",
             "type": "heading",
@@ -1112,7 +988,7 @@
             "height": 608
           }
         ],
-        "requiredMM": 134.4,
+        "requiredMM": 117.9,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
@@ -1121,31 +997,45 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1060
+        "bottom": 1278.4
       },
       "blocks": [
         {
-          "id": "fused-1",
-          "left": 87.5,
-          "top": 111,
-          "right": 949.2,
-          "bottom": 175.4
-        },
-        {
           "id": "led-head",
           "left": 89,
-          "top": 204.5,
+          "top": 112.5,
           "right": 349.4,
-          "bottom": 244.3
+          "bottom": 152.3
         },
         {
           "id": "led-build",
           "left": 89,
-          "top": 252,
+          "top": 160,
           "right": 963,
-          "bottom": 838
+          "bottom": 746
+        },
+        {
+          "id": "led-circuit",
+          "left": 89,
+          "top": 778.4,
+          "right": 884.5,
+          "bottom": 1098.2
+        },
+        {
+          "id": "led-explain-0",
+          "left": 87.5,
+          "top": 1118,
+          "right": 963,
+          "bottom": 1182.4
+        },
+        {
+          "id": "led-explain-1",
+          "left": 87.5,
+          "top": 1182,
+          "right": 963,
+          "bottom": 1278.4
         }
       ],
       "collisions": [],
@@ -1156,111 +1046,133 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 63.8,
-      "occupiedPercent": 72.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 60.2,
-        "protectedGroup": [
-          {
-            "id": "led-circuit",
-            "type": "figure",
-            "title": "Forward connection: the resistor is in the same loop as the LED. Disconnect before changing any comp",
-            "height": 351
-          }
-        ],
-        "requiredMM": 63.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 24.5,
+      "occupiedPercent": 89.5,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 14,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 122.4,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1301
+        "bottom": 1342
       },
       "blocks": [
         {
-          "id": "led-circuit",
-          "left": 89,
-          "top": 122.4,
-          "right": 884.5,
-          "bottom": 442.2
-        },
-        {
-          "id": "led-explain-0",
-          "left": 87.5,
-          "top": 462,
-          "right": 937.2,
-          "bottom": 526.4
-        },
-        {
-          "id": "led-explain-1",
-          "left": 87.5,
-          "top": 526,
-          "right": 935.4,
-          "bottom": 622.4
-        },
-        {
           "id": "switch-head",
           "left": 87.5,
-          "top": 651.5,
+          "top": 112.5,
           "right": 430.7,
-          "bottom": 691.3
+          "bottom": 152.3
         },
         {
           "id": "switch-build",
           "left": 89,
-          "top": 699,
+          "top": 160,
           "right": 963,
-          "bottom": 1301
+          "bottom": 762
+        },
+        {
+          "id": "switch-before-0",
+          "left": 89,
+          "top": 783,
+          "right": 963,
+          "bottom": 879.4
+        },
+        {
+          "id": "switch-test",
+          "left": 89,
+          "top": 896,
+          "right": 963,
+          "bottom": 1342
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.5448559139113,
-        "right": 121.72533603047486,
+        "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 20.5,
-      "occupiedPercent": 91.3,
+      "bottomGapMM": 13.1,
+      "occupiedPercent": 94.4,
       "footerClearanceMM": 3.3
     },
     {
       "page": 15,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111,
+        "left": -18.2,
+        "top": -21780.4,
         "right": 963,
-        "bottom": 1194
+        "bottom": 1404.4
       },
       "blocks": [
         {
-          "id": "switch-before-0",
-          "left": 89,
-          "top": 111,
-          "right": 957.6,
-          "bottom": 207.4
-        },
-        {
-          "id": "switch-test",
-          "left": 89,
-          "top": 224,
-          "right": 963,
-          "bottom": 670
-        },
-        {
           "id": "switch-comparison",
-          "left": 89,
-          "top": 691.5,
+          "left": -18.2,
+          "top": -21780.4,
           "right": 963,
-          "bottom": 978
+          "bottom": 442
+        },
+        {
+          "id": "switch-explain-0",
+          "left": 87.5,
+          "top": 469,
+          "right": 963,
+          "bottom": 533.4
+        },
+        {
+          "id": "switch-explain-1",
+          "left": 89,
+          "top": 533,
+          "right": 963,
+          "bottom": 629.4
+        },
+        {
+          "id": "switch-local-0",
+          "left": 87.5,
+          "top": 640,
+          "right": 963,
+          "bottom": 704.4
+        },
+        {
+          "id": "switch-local-1",
+          "left": 89,
+          "top": 704,
+          "right": 963,
+          "bottom": 800.4
+        },
+        {
+          "id": "diagram-head",
+          "left": 89,
+          "top": 820.7,
+          "right": 569.9,
+          "bottom": 870.8
+        },
+        {
+          "id": "diagram-intro-0",
+          "left": 87.5,
+          "top": 878,
+          "right": 963,
+          "bottom": 942.4
+        },
+        {
+          "id": "diagram-intro-1",
+          "left": 87.5,
+          "top": 942,
+          "right": 963,
+          "bottom": 1006.4
+        },
+        {
+          "id": "trace-method-0",
+          "left": 89,
+          "top": 1014,
+          "right": 963,
+          "bottom": 1078.4
         }
       ],
       "collisions": [],
@@ -1271,199 +1183,126 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 39.7,
-      "occupiedPercent": 83,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 36.1,
-        "protectedGroup": [
-          {
-            "id": "switch-explain-0",
-            "type": "body",
-            "title": "A **switch** completes or breaks a conducting path; it is not the source of energy. In the single-lo",
-            "height": 64
-          },
-          {
-            "id": "switch-explain-1",
-            "type": "body",
-            "title": "A **switch** completes or breaks a conducting path; it is not the source of energy. In the single-lo",
-            "height": 112
-          },
-          {
-            "id": "switch-local-0",
-            "type": "body",
-            "title": "When the switch opens, the wires and lamp have not vanished. Their material is still conducting, but",
-            "height": 64
-          },
-          {
-            "id": "switch-local-1",
-            "type": "body",
-            "title": "When the switch opens, the wires and lamp have not vanished. Their material is still conducting, but",
-            "height": 112
-          },
-          {
-            "id": "diagram-head",
-            "type": "heading",
-            "title": "3.3  Reading Circuit Diagrams",
-            "height": 58
-          },
-          {
-            "id": "diagram-intro-0",
-            "type": "body",
-            "title": "A photograph shows what equipment looks like. A **circuit diagram** uses symbols to show how it is c",
-            "height": 64
-          },
-          {
-            "id": "diagram-intro-1",
-            "type": "body",
-            "title": "A photograph shows what equipment looks like. A **circuit diagram** uses symbols to show how it is c",
-            "height": 80
-          },
-          {
-            "id": "trace-method-0",
-            "type": "body",
-            "title": "Start at a marked supply terminal and follow each line to the next component. Continue through that ",
-            "height": 64
-          },
-          {
-            "id": "trace-method-1",
-            "type": "body",
-            "title": "Start at a marked supply terminal and follow each line to the next component. Continue through that ",
-            "height": 112
-          },
-          {
-            "id": "page-illustration",
-            "type": "figure",
-            "title": "A switch.",
-            "height": 220
-          }
-        ],
-        "requiredMM": null,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 1.9,
+      "occupiedPercent": 99.2,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 954.8,
-        "bottom": 1054
+        "left": -18.2,
+        "top": -23333.3,
+        "right": 963,
+        "bottom": 1383.4
       },
       "blocks": [
         {
-          "id": "switch-explain-0",
-          "left": 87.5,
-          "top": 111,
-          "right": 950.9,
-          "bottom": 175.4
-        },
-        {
-          "id": "switch-explain-1",
-          "left": 89,
-          "top": 175,
-          "right": 914.7,
-          "bottom": 271.4
-        },
-        {
-          "id": "switch-local-0",
-          "left": 87.5,
-          "top": 287,
-          "right": 942.2,
-          "bottom": 351.4
-        },
-        {
-          "id": "switch-local-1",
-          "left": 89,
-          "top": 351,
-          "right": 872.1,
-          "bottom": 447.4
-        },
-        {
-          "id": "diagram-head",
-          "left": 89,
-          "top": 475.7,
-          "right": 569.9,
-          "bottom": 525.8
-        },
-        {
-          "id": "diagram-intro-0",
-          "left": 87.5,
-          "top": 533,
-          "right": 945.9,
-          "bottom": 597.4
-        },
-        {
-          "id": "diagram-intro-1",
-          "left": 87.5,
-          "top": 597,
-          "right": 950.8,
-          "bottom": 661.4
-        },
-        {
-          "id": "trace-method-0",
-          "left": 89,
-          "top": 677,
-          "right": 935.6,
-          "bottom": 741.4
-        },
-        {
           "id": "trace-method-1",
           "left": 89,
-          "top": 741,
-          "right": 954.8,
-          "bottom": 837.4
+          "top": 111,
+          "right": 963,
+          "bottom": 207.4
+        },
+        {
+          "id": "symbols",
+          "left": -18.2,
+          "top": -23333.3,
+          "right": 963,
+          "bottom": 979.2
+        },
+        {
+          "id": "symbol-explain-0",
+          "left": 89,
+          "top": 999,
+          "right": 963,
+          "bottom": 1063.4
+        },
+        {
+          "id": "symbol-explain-1",
+          "left": 89,
+          "top": 1063,
+          "right": 963,
+          "bottom": 1159.4
+        },
+        {
+          "id": "standards-0",
+          "left": 89,
+          "top": 1175,
+          "right": 963,
+          "bottom": 1239.4
+        },
+        {
+          "id": "standards-1",
+          "left": 89,
+          "top": 1239,
+          "right": 963,
+          "bottom": 1303.4
+        },
+        {
+          "id": "drawing-check-0",
+          "left": 87.5,
+          "top": 1319,
+          "right": 963,
+          "bottom": 1383.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 121.03684222072397,
+        "right": 121.03684222072395,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 64.9,
-      "occupiedPercent": 72.3,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 61.3,
-        "protectedGroup": [
-          {
-            "id": "symbols",
-            "type": "figure",
-            "title": "Read across from component name to symbol. The added resistor symbol supports our current-limited LE",
-            "height": 776
-          }
-        ],
-        "requiredMM": 139.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 5.7,
+      "occupiedPercent": 97.6,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 112,
+        "left": 87.5,
+        "top": 111,
         "right": 963,
-        "bottom": 1152
+        "bottom": 1367
       },
       "blocks": [
         {
-          "id": "symbols",
-          "left": 89,
-          "top": 112,
+          "id": "drawing-check-1",
+          "left": 87.5,
+          "top": 111,
           "right": 963,
-          "bottom": 867.2
+          "bottom": 175.4
         },
         {
-          "id": "symbol-explain-0",
+          "id": "drawing-check-2",
+          "left": 87.5,
+          "top": 175,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
+          "id": "draw-task",
           "left": 89,
-          "top": 887,
-          "right": 925.5,
-          "bottom": 951.4
+          "top": 256,
+          "right": 963,
+          "bottom": 702
+        },
+        {
+          "id": "example-diagrams",
+          "left": 87.5,
+          "top": 754,
+          "right": 890,
+          "bottom": 1052.2
+        },
+        {
+          "id": "trace-think",
+          "left": 89,
+          "top": 1073,
+          "right": 963,
+          "bottom": 1367
         }
       ],
       "collisions": [],
@@ -1474,220 +1313,18 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 47.2,
-      "occupiedPercent": 79.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 43.7,
-        "protectedGroup": [
-          {
-            "id": "symbol-explain-1",
-            "type": "body",
-            "title": "In the cell symbol, the longer line is positive and the shorter line negative. Repeated pairs repres",
-            "height": 112
-          },
-          {
-            "id": "standards-0",
-            "type": "body",
-            "title": "Shared symbol conventions help people communicate. Organisations including IEC, ANSI and IEEE publis",
-            "height": 64
-          },
-          {
-            "id": "standards-1",
-            "type": "body",
-            "title": "Shared symbol conventions help people communicate. Organisations including IEC, ANSI and IEEE publis",
-            "height": 80
-          },
-          {
-            "id": "drawing-check-0",
-            "type": "body",
-            "title": "A diagram can be neat and still describe the wrong circuit. Check connections before judging appeara",
-            "height": 64
-          },
-          {
-            "id": "drawing-check-1",
-            "type": "body",
-            "title": "A diagram can be neat and still describe the wrong circuit. Check connections before judging appeara",
-            "height": 64
-          },
-          {
-            "id": "drawing-check-2",
-            "type": "body",
-            "title": "A diagram can be neat and still describe the wrong circuit. Check connections before judging appeara",
-            "height": 80
-          },
-          {
-            "id": "draw-task",
-            "type": "activity",
-            "title": "1. Draw the circuit for your lamp, one cell and an open switch using the symbol key. Show a complete",
-            "height": 468
-          }
-        ],
-        "requiredMM": 167.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 8.6,
+      "occupiedPercent": 96.3,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 18,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1244
-      },
-      "blocks": [
-        {
-          "id": "symbol-explain-1",
-          "left": 89,
-          "top": 111,
-          "right": 941.3,
-          "bottom": 207.4
-        },
-        {
-          "id": "standards-0",
-          "left": 89,
-          "top": 223,
-          "right": 935,
-          "bottom": 287.4
-        },
-        {
-          "id": "standards-1",
-          "left": 89,
-          "top": 287,
-          "right": 955.7,
-          "bottom": 351.4
-        },
-        {
-          "id": "drawing-check-0",
-          "left": 87.5,
-          "top": 367,
-          "right": 919.7,
-          "bottom": 431.4
-        },
-        {
-          "id": "drawing-check-1",
-          "left": 87.5,
-          "top": 431,
-          "right": 952.7,
-          "bottom": 495.4
-        },
-        {
-          "id": "drawing-check-2",
-          "left": 87.5,
-          "top": 495,
-          "right": 902.1,
-          "bottom": 559.4
-        },
-        {
-          "id": "draw-task",
-          "left": 89,
-          "top": 576,
-          "right": 963,
-          "bottom": 1022
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021967,
-        "top": 1457.5448559139113,
-        "right": 121.03684222072397,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 30.7,
-      "occupiedPercent": 86.9,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 27.1,
-        "protectedGroup": [
-          {
-            "id": "example-diagrams",
-            "type": "figure",
-            "title": "A lamp loop with an open switch, and a forward LED loop with current limiting. Neither diagram is a ",
-            "height": 349
-          }
-        ],
-        "requiredMM": 62.7,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 19,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 142,
-        "right": 963,
-        "bottom": 977
-      },
-      "blocks": [
-        {
-          "id": "example-diagrams",
-          "left": 87.5,
-          "top": 142,
-          "right": 890,
-          "bottom": 440.2
-        },
-        {
-          "id": "trace-think",
-          "left": 89,
-          "top": 461,
-          "right": 963,
-          "bottom": 755
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.544855913915,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 78.7,
-      "occupiedPercent": 66.4,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 75.1,
-        "protectedGroup": [
-          {
-            "id": "conduct-head",
-            "type": "heading",
-            "title": "3.4  Conductors and Insulators",
-            "height": 58
-          },
-          {
-            "id": "conduct-intro-0",
-            "type": "body",
-            "title": "Why do connecting wires have a metal core and a plastic covering? Use a working low-voltage circuit ",
-            "height": 64
-          },
-          {
-            "id": "conduct-intro-1",
-            "type": "body",
-            "title": "Why do connecting wires have a metal core and a plastic covering? Use a working low-voltage circuit ",
-            "height": 80
-          },
-          {
-            "id": "conduct-task",
-            "type": "activity",
-            "title": "1. Make a loop with one cell and a matching incandescent lamp, leaving two free wire ends as a test ",
-            "height": 640
-          }
-        ],
-        "requiredMM": 151.3,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 20,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1154
+        "bottom": 1279.4
       },
       "blocks": [
         {
@@ -1701,14 +1338,14 @@
           "id": "conduct-intro-0",
           "left": 87.5,
           "top": 169,
-          "right": 956.9,
+          "right": 963,
           "bottom": 233.4
         },
         {
           "id": "conduct-intro-1",
           "left": 87.5,
           "top": 233,
-          "right": 936,
+          "right": 963,
           "bottom": 297.4
         },
         {
@@ -1722,36 +1359,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
-        "top": 1457.544855913915,
-        "right": 121.72533603047486,
-        "bottom": 1495.8355207161767
+        "left": 92.96315769021966,
+        "top": 1457.5448559139113,
+        "right": 121.03684222072395,
+        "bottom": 1495.835520716173
       },
-      "bottomGapMM": 46.9,
-      "occupiedPercent": 80,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 43.3,
-        "protectedGroup": [
-          {
-            "id": "materials",
-            "type": "figure",
-            "title": "Choose objects with clearly identified materials. Test only safe, dry samples approved by the teache",
-            "height": 362
-          }
-        ],
-        "requiredMM": 65,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 24.4,
+      "occupiedPercent": 89.6,
+      "footerClearanceMM": 3.3
     },
     {
-      "page": 21,
+      "page": 19,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 112,
+        "left": -18.2,
+        "top": -27992.2,
         "right": 963,
-        "bottom": 1079.4
+        "bottom": 1187.4
       },
       "blocks": [
         {
@@ -1763,46 +1387,47 @@
         },
         {
           "id": "record",
-          "left": 89,
-          "top": 473.5,
+          "left": -18.2,
+          "top": -27992.2,
           "right": 963,
-          "bottom": 902.2
+          "bottom": 922.2
         },
         {
           "id": "conduct-explain-0",
           "left": 87.5,
-          "top": 919,
-          "right": 940.7,
-          "bottom": 983.4
+          "top": 947,
+          "right": 963,
+          "bottom": 1011.4
         },
         {
           "id": "conduct-explain-1",
           "left": 89,
-          "top": 983,
-          "right": 868.2,
-          "bottom": 1079.4
+          "top": 1011,
+          "right": 963,
+          "bottom": 1107.4
+        },
+        {
+          "id": "conduct-limit-0",
+          "left": 89,
+          "top": 1123,
+          "right": 963,
+          "bottom": 1187.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
         "left": 930.9630791276561,
-        "top": 1457.5448559139113,
+        "top": 1457.544855913915,
         "right": 959.0367636581603,
-        "bottom": 1495.835520716173
+        "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 60.3,
-      "occupiedPercent": 74.2,
+      "bottomGapMM": 40.9,
+      "occupiedPercent": 82.5,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 57.3,
+        "remainingMM": 40.8,
         "protectedGroup": [
-          {
-            "id": "conduct-limit-0",
-            "type": "body",
-            "title": "No visible glow does not prove that absolutely no current passes. A material may pass too little cur",
-            "height": 64
-          },
           {
             "id": "conduct-limit-1",
             "type": "body",
@@ -1816,62 +1441,55 @@
             "height": 316
           }
         ],
-        "requiredMM": 88.4,
+        "requiredMM": 76.9,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 22,
+      "page": 20,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111,
+        "left": -18.2,
+        "top": -29545.2,
         "right": 963,
-        "bottom": 1134
+        "bottom": 1251.4
       },
       "blocks": [
         {
-          "id": "conduct-limit-0",
-          "left": 89,
-          "top": 111,
-          "right": 947.5,
-          "bottom": 175.4
-        },
-        {
           "id": "conduct-limit-1",
           "left": 89,
-          "top": 175,
-          "right": 954.2,
-          "bottom": 271.4
+          "top": 111,
+          "right": 963,
+          "bottom": 207.4
         },
         {
           "id": "conduct-think",
           "left": 89,
-          "top": 288,
+          "top": 224,
           "right": 963,
-          "bottom": 582
+          "bottom": 518
         },
         {
           "id": "materials-use",
-          "left": 89,
-          "top": 603.5,
+          "left": -18.2,
+          "top": -29545.2,
           "right": 963,
-          "bottom": 918
+          "bottom": 898
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
-        "top": 1457.5448559139186,
-        "right": 121.72533603047486,
-        "bottom": 1495.8355207161803
+        "left": 92.96315769021966,
+        "top": 1457.544855913915,
+        "right": 121.72533603047485,
+        "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 50.5,
-      "occupiedPercent": 78.4,
+      "bottomGapMM": 29.4,
+      "occupiedPercent": 87.4,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 46.9,
+        "remainingMM": 23.2,
         "protectedGroup": [
           {
             "id": "safety-end-0",
@@ -1920,54 +1538,48 @@
             "type": "body",
             "title": "Cylindrical cells power many torches, clocks, remotes and toys. Button cells are used in some watche",
             "height": 80
-          },
-          {
-            "id": "page-illustration",
-            "type": "figure",
-            "title": "A switch.",
-            "height": 220
           }
         ],
-        "requiredMM": null,
+        "requiredMM": 111.4,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 23,
+      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111,
-        "right": 951.1,
-        "bottom": 932
+        "right": 963,
+        "bottom": 1057.4
       },
       "blocks": [
         {
           "id": "safety-end-0",
           "left": 89,
           "top": 111,
-          "right": 908.4,
+          "right": 963,
           "bottom": 175.4
         },
         {
           "id": "safety-end-1",
           "left": 87.5,
           "top": 175,
-          "right": 940.1,
+          "right": 963,
           "bottom": 271.4
         },
         {
           "id": "dc-ac-0",
           "left": 87.5,
           "top": 287,
-          "right": 951.1,
+          "right": 963,
           "bottom": 351.4
         },
         {
           "id": "dc-ac-1",
           "left": 89,
           "top": 351,
-          "right": 921.7,
+          "right": 963,
           "bottom": 447.4
         },
         {
@@ -1981,21 +1593,21 @@
           "id": "society-0",
           "left": 89,
           "top": 523,
-          "right": 935.2,
+          "right": 963,
           "bottom": 587.4
         },
         {
           "id": "society-1",
           "left": 89,
           "top": 587,
-          "right": 854.7,
+          "right": 963,
           "bottom": 651.4
         },
         {
           "id": "society-2",
           "left": 89,
           "top": 651,
-          "right": 933.7,
+          "right": 963,
           "bottom": 715.4
         }
       ],
@@ -2004,56 +1616,56 @@
       "folioBounds": {
         "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 86.8,
-      "occupiedPercent": 62.9,
+      "bottomGapMM": 64.2,
+      "occupiedPercent": 72.6,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 83.2,
+        "remainingMM": 58,
         "protectedGroup": [
           {
             "id": "next-reference-page",
             "type": "reference",
             "title": "Keywords",
-            "height": 832
+            "height": 972
           }
         ],
-        "requiredMM": 149.5,
+        "requiredMM": 174.6,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 24,
+      "page": 22,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 924
+        "bottom": 1049.4
       },
       "blocks": [],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
-        "top": 1457.5448559139113,
-        "right": 121.72533603047486,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021966,
+        "top": 1457.5448559139186,
+        "right": 121.72533603047485,
+        "bottom": 1495.8355207161803
       },
-      "bottomGapMM": 88.2,
-      "occupiedPercent": 62.3,
+      "bottomGapMM": 65.7,
+      "occupiedPercent": 71.9,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 25,
+      "page": 23,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
         "top": 111.7,
-        "right": 955.6,
-        "bottom": 1120
+        "right": 963,
+        "bottom": 1245.4
       },
       "blocks": [],
       "collisions": [],
@@ -2061,21 +1673,21 @@
       "folioBounds": {
         "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 959.0367636581603,
+        "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 53,
-      "occupiedPercent": 77.4,
+      "bottomGapMM": 30.5,
+      "occupiedPercent": 87,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 26,
+      "page": 24,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
+        "left": 87.5,
         "top": 111.7,
-        "right": 950.9,
-        "bottom": 991
+        "right": 963,
+        "bottom": 1333.4
       },
       "blocks": [
         {
@@ -2089,34 +1701,143 @@
           "id": "assessment-intro-0",
           "left": 89,
           "top": 169,
-          "right": 854.5,
+          "right": 963,
           "bottom": 233.4
         },
         {
           "id": "q1",
           "left": 91.8,
           "top": 249,
-          "right": 937.1,
+          "right": 963,
           "bottom": 377.4
         },
         {
           "id": "q2",
           "left": 89,
           "top": 407,
-          "right": 950.9,
+          "right": 963,
           "bottom": 766.2
+        },
+        {
+          "id": "q3",
+          "left": 87.5,
+          "top": 790,
+          "right": 963,
+          "bottom": 1119.2
+        },
+        {
+          "id": "q4",
+          "left": 91.8,
+          "top": 1143,
+          "right": 963,
+          "bottom": 1239.4
+        },
+        {
+          "id": "q5",
+          "left": 91.8,
+          "top": 1269,
+          "right": 963,
+          "bottom": 1333.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.5448559139113,
-        "right": 121.03684222072397,
+        "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 76.2,
-      "occupiedPercent": 67.5,
+      "bottomGapMM": 14.7,
+      "occupiedPercent": 93.7,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 25,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111,
+        "right": 963,
+        "bottom": 1371.2
+      },
+      "blocks": [
+        {
+          "id": "q6",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 496.2
+        },
+        {
+          "id": "q7",
+          "left": 91.8,
+          "top": 520,
+          "right": 963,
+          "bottom": 648.4
+        },
+        {
+          "id": "q8",
+          "left": 89,
+          "top": 678,
+          "right": 963,
+          "bottom": 1371.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 7.9,
+      "occupiedPercent": 96.6,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 26,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 79.8,
+        "top": 111,
+        "right": 963,
+        "bottom": 915.2
+      },
+      "blocks": [
+        {
+          "id": "q9",
+          "left": 91.8,
+          "top": 111,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
+          "id": "q10",
+          "left": 79.8,
+          "top": 269,
+          "right": 963,
+          "bottom": 397.4
+        },
+        {
+          "id": "q11",
+          "left": 79.8,
+          "top": 427,
+          "right": 963,
+          "bottom": 915.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.5448559139113,
+        "right": 121.03684222072395,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 89.8,
+      "occupiedPercent": 61.6,
       "footerClearanceMM": 3.3
     },
     {
@@ -2124,140 +1845,8 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
-        "right": 946.5,
-        "bottom": 1294
-      },
-      "blocks": [
-        {
-          "id": "q3",
-          "left": 87.5,
-          "top": 111,
-          "right": 930.7,
-          "bottom": 440.2
-        },
-        {
-          "id": "q4",
-          "left": 91.8,
-          "top": 464,
-          "right": 946.5,
-          "bottom": 560.4
-        },
-        {
-          "id": "q5",
-          "left": 91.8,
-          "top": 590,
-          "right": 927.2,
-          "bottom": 654.4
-        },
-        {
-          "id": "q6",
-          "left": 89,
-          "top": 684,
-          "right": 941.3,
-          "bottom": 1069.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139186,
-        "right": 959.7252125241284,
-        "bottom": 1495.8355207161803
-      },
-      "bottomGapMM": 21.7,
-      "occupiedPercent": 90.7,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 28,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 89,
-        "top": 111,
-        "right": 952.2,
-        "bottom": 1187
-      },
-      "blocks": [
-        {
-          "id": "q7",
-          "left": 91.8,
-          "top": 111,
-          "right": 952.2,
-          "bottom": 239.4
-        },
-        {
-          "id": "q8",
-          "left": 89,
-          "top": 269,
-          "right": 951.1,
-          "bottom": 962.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021967,
-        "top": 1457.5448559139186,
-        "right": 121.03684222072397,
-        "bottom": 1495.8355207161803
-      },
-      "bottomGapMM": 41,
-      "occupiedPercent": 82.5,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 29,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 79.8,
-        "top": 111,
-        "right": 952.6,
-        "bottom": 1140
-      },
-      "blocks": [
-        {
-          "id": "q9",
-          "left": 91.8,
-          "top": 111,
-          "right": 952.6,
-          "bottom": 239.4
-        },
-        {
-          "id": "q10",
-          "left": 79.8,
-          "top": 269,
-          "right": 946.4,
-          "bottom": 397.4
-        },
-        {
-          "id": "q11",
-          "left": 79.8,
-          "top": 427,
-          "right": 904.8,
-          "bottom": 915.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139186,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161803
-      },
-      "bottomGapMM": 49.4,
-      "occupiedPercent": 78.9,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 30,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
         "top": 111.7,
-        "right": 955,
+        "right": 963,
         "bottom": 1368.4
       },
       "blocks": [
@@ -2279,7 +1868,7 @@
           "id": "power-cut-0",
           "left": 89,
           "top": 229,
-          "right": 951.8,
+          "right": 963,
           "bottom": 325.4
         },
         {
@@ -2293,14 +1882,14 @@
           "id": "solar-0",
           "left": 87.5,
           "top": 401,
-          "right": 955,
+          "right": 963,
           "bottom": 465.4
         },
         {
           "id": "solar-1",
           "left": 89,
           "top": 465,
-          "right": 907.4,
+          "right": 963,
           "bottom": 561.4
         },
         {
@@ -2321,14 +1910,14 @@
           "id": "shop-0",
           "left": 87.5,
           "top": 972,
-          "right": 946.9,
+          "right": 963,
           "bottom": 1036.4
         },
         {
           "id": "shop-1",
           "left": 89,
           "top": 1036,
-          "right": 928.4,
+          "right": 963,
           "bottom": 1100.4
         },
         {
@@ -2342,30 +1931,30 @@
           "id": "home-materials-0",
           "left": 89,
           "top": 1176,
-          "right": 924.6,
+          "right": 963,
           "bottom": 1240.4
         },
         {
           "id": "home-materials-1",
           "left": 89,
           "top": 1240,
-          "right": 948.7,
+          "right": 963,
           "bottom": 1304.4
         },
         {
           "id": "home-materials-2",
           "left": 89,
           "top": 1304,
-          "right": 942.9,
+          "right": 963,
           "bottom": 1368.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 930.9630791276561,
         "top": 1457.5448559139186,
-        "right": 121.72533603047486,
+        "right": 959.7252125241284,
         "bottom": 1495.8355207161803
       },
       "bottomGapMM": 8.4,

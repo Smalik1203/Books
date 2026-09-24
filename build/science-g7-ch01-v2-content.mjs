@@ -37,8 +37,8 @@ export const lesson=[
  {id:'connections-heading',type:'heading',text:'1.2  Ideas Connect Across Science',source:[2,3,4,5]},
  {id:'connections-intro',type:'body',text:'This book brings together physics, chemistry, biology and earth science. Their questions overlap. A paper plane involves the properties of paper, forces, motion and measurement. Understanding rain brings together water, heat, air and the ground beneath our feet. The chapters ahead develop these connections.',source:[2,3]},
  {id:'topics-2-3',type:'comparison',source:[2,3],columns:[
-  {title:'Substances around us',art:'substances',figureCaption:'Everyday materials can start a question.',items:['Compare acidic, basic and neutral substances.','Investigate questions about sour fruits and a haldi stain.','Use safe tests; never taste an unknown substance.']},
-  {title:'Electric circuits',art:'circuit',figureCaption:'Wires connect circuit components.',items:['Explore batteries, lamps, wires and other components.','Test which materials let a lamp glow in a circuit.','Work only with teacher-approved low-voltage equipment, never mains sockets.']}
+  {title:'Substances around us',art:'substances',figureCaption:'Everyday materials can start a question.',items:['Compare substances that are acidic, basic or neutral.','Investigate questions about sour fruits and a haldi stain.','Use safe tests; never taste an unknown substance.']},
+  {title:'Electric circuits',art:'circuit',figureCaption:'Wires connect circuit components.',items:['Explore batteries, lamps, wires and other components.','Test which materials let a lamp glow in a circuit.','Use only low-voltage equipment that your teacher has approved. Never experiment with mains sockets.']}
  ],chapters:[2,3]},
  {id:'topics-4-5',type:'comparison',source:[3],columns:[
   {title:'Metals and non-metals',art:'materials',figureCaption:'Similar uses, different materials.',items:['Compare properties of materials.','Use several properties when grouping them.','Connect a material’s properties with its uses.']},
@@ -50,19 +50,19 @@ export const lesson=[
   {title:'Growing and changing',items:['Explore adolescence as a stage of growth and change.','Recognise that people develop at different rates.','Discuss questions respectfully, without comparing classmates’ bodies.']},
   {title:'Heat in nature',items:['Investigate how heat moves between places.','Connect heating and cooling with changes in water.','Follow links among sunlight, evaporation and rain.']}
  ],chapters:[6,7]},
- {id:'water-sequence',type:'topic-figure',art:'heat-water',source:[3],caption:'From a candle to sunlight: heating connects everyday changes with water in nature. Observe flames only in a teacher-led demonstration.',addition:'Use real candle and lake photographs with the complete evaporation/condensation explanation adjacent.'},
+ {id:'water-sequence',type:'topic-figure',art:'heat-water',source:[3],caption:'Observe flames only in a teacher-led demonstration.',addition:'Keep the candle and lake labels; retain fire safety as regular prose without a redundant bridging caption.'},
  {id:'water-explanation',type:'body',text:'Liquid water enters the air as water vapour during **evaporation**. When water vapour cools sufficiently, **condensation** forms tiny liquid droplets; clouds may contain droplets, ice crystals or both. Water can later fall as rain, flow over land or soak into the ground. Sunlight supplies energy for much of this cycling; water vapour itself is invisible.',source:[3],correction:'Make condensation explicit between evaporation and rain; do not represent visible cloud as vapour.'},
  {id:'topics-8-9',type:'comparison',source:[4],columns:[
-  {title:'Time and motion',art:'time',figureCaption:'A sundial uses shadows to track time.',items:['Investigate ways to measure time.','Relate a moving object’s distance to the time taken.','Compare measurements, rather than impressions such as “fast”.']},
-  {title:'Life processes in animals',art:'runners',figureCaption:'Moving bodies depend on life processes.',items:['Explore how animals obtain and use food.','Study breathing and how blood carries nutrients.','Connect these processes with growth and survival.']}
+  {title:'Time and motion',art:'time',figureCaption:'Shadows mark time on a sundial.',items:['Investigate ways to measure time.','Relate distance travelled to the time taken.','Compare actual measurements instead of relying on impressions such as “fast”.']},
+  {title:'Life processes in animals',art:'runners',figureCaption:'Moving bodies depend on life processes.',items:['Explore how animals obtain and use food.','Explore breathing and the way blood carries nutrients.','Connect these processes with growth and survival.']}
  ],chapters:[8,9]},
  {id:'topics-10-11',type:'comparison',source:[4,5],columns:[
-  {title:'Life processes in plants',art:'plant',figureCaption:'Plant structures support life processes.',items:['Investigate how plants make food and exchange gases.','Explore how plants obtain water and other substances.','Compare plant and animal processes without assuming they work identically.']},
+  {title:'Life processes in plants',art:'plant',figureCaption:'Plant structures support life processes.',items:['Explore how food is made in plants and how they exchange gases.','Explore how plants obtain water and other substances.','Compare processes in plants and animals; do not assume they work alike.']},
   {title:'Light and shadows',art:'mirrors',figureCaption:'Dice reflected in a shiny surface.',items:['Explore how light helps us see.','Investigate shadows and reflections.','Connect changing shadows with ways of tracking time.']}
  ],chapters:[10,11]},
  {id:'light-water-art',type:'topic-figure',art:'light-water',source:[5],caption:'A pencil seen through water and glass. Keep light beams away from eyes.',addition:'Use a real pencil-in-water photograph to preview the source light-and-water connection; retain eye safety.'},
  {id:'earth-moon-sun',type:'body',text:'The final chapter turns to Earth, the Moon and the Sun. Earth rotates about its axis and travels around the Sun; the Moon travels around Earth. These movements help explain day and night and the changing positions we observe. Earth and the Moon can also cast shadows that produce eclipses. Never look directly at the Sun to investigate these ideas.',source:[5],chapters:[12]},
- {id:'earth-light-art',type:'topic-figure',art:'earth-light',source:[5],caption:'Sunlight illuminates one half of Earth. During a solar eclipse, the Moon lies between the Sun and Earth and its shadow falls on part of Earth. These photographs show separate views.',addition:'Use real Galileo and National Park Service photographs as separate observations, not an alignment diagram.'},
+ {id:'earth-light-art',type:'topic-figure',art:'earth-light',source:[5],caption:'Sunlight illuminates half of Earth. During a solar eclipse, the Moon lies between the Sun and Earth, casting a shadow on part of Earth.',addition:'Keep the two distinct image labels; set the mechanism as regular prose, not a second bold caption. The photographs are separate observations, not an alignment diagram.'},
  {id:'living-processes',type:'body',text:'Plant and animal life processes developed through evolution over many generations. Organisms did not plan these changes. Compare their shared needs and different structures without assuming they work identically.',source:[4],correction:'Replace purposeful “life figured out how” wording with a non-teleological explanation.'},
  {id:'responsibility-heading',type:'heading',text:'1.3  Explore with Care',source:[2]},
  {id:'environment',type:'body',text:'Investigating the world also brings responsibility. Human activities affect water, soil, air and living things. Scientific evidence can help people understand environmental problems and judge proposed solutions. A useful suggestion needs a reason for expecting it to help, and a way to check what happens.',source:[2]},
@@ -79,17 +79,25 @@ export const lesson=[
   '• 42',
   'Try different contexts, rather than an obvious arithmetic question for 42. Which facts would need to be true for each answer to fit? Identify an assumption in one of your situations.'
  ]},
+ {id:'answer-context-example',type:'body',text:'Before accepting an answer, name the object and the purpose. Halving a cake changes the amount of food; folding a sheet changes its shape so it can fit an envelope.',source:[6],addition:'Explain the two objects in the illustration and why the same answer depends on context.'},
  {id:'creative-vs-evidence',type:'body',text:'This is an exercise in creative question-making. An imagined situation is not scientific evidence, and an answer can contain an assumption that turns out to be mistaken. Choose one of your questions and discuss whether observation could help answer it. If not, explain what kind of question it is.',source:[6],correction:'Retain the creative task without treating every premise as true or every question as scientifically testable.'},
  {id:'questions-and-observations',type:'body',text:'A question about a story may invite imaginative answers. A question about a material needs observations that other people can check. State which kind of question you are asking, and which information your answer depends on.',source:[5,6],addition:'Link the restored experiment-preview pictures with the limits of creative question-making.'},
+ {id:'question-evidence-comparison',type:'table',comparisonTable:true,caption:'Different questions need different responses',widths:[.2,.36,.44],rows:[
+  ['Question','Example','Response'],
+  ['Imaginative','What might a talking tree say?','Invent a story. An imaginary tree’s words cannot be checked by observation.'],
+  ['Observable','Which veins can you see on this leaf?','Use a magnifying glass to examine the leaf. Record the pattern of its veins.'],
+  ['Comparative','Are these two leaves equally long?','Measure from the base of each leaf blade to its tip with the same ruler. Compare the readings.']
+ ],source:[5,6],addition:'Develop the distinction already taught with a concrete leaf-observation example; compare in an aligned table.'},
+ {id:'observation-record-example',type:'body',text:'A drawing is a record, not the leaf itself. It may leave out small details. Say which features you observed and which ideas you inferred. Another observer can compare your drawing with the same leaf and suggest corrections.',source:[5,6],addition:'Connect the leaf and notebook illustration to checkable records and revision of evidence.'},
  {id:'close',type:'body',text:'Keep room for questions that you cannot answer yet. New knowledge, a better measurement or a different comparison may let you return to them. The next chapters offer places to begin: look closely, test carefully and let the evidence help you rethink.',source:[5,6]}
 ];
 export const glossary=[
- ['Prediction','An expected observation under stated conditions.'],
- ['Evidence','Information used to judge an idea or answer a question.'],
- ['Fair comparison','A comparison that keeps other relevant conditions alike while testing a particular difference.'],
- ['Assumption','Something accepted for the moment without having checked it.'],
- ['Evaporation','The change of liquid water into water vapour at its surface.'],
- ['Condensation','The change of water vapour into liquid water.']
+ ['Prediction','What you expect to observe under stated conditions.'],
+ ['Evidence','Information for judging an idea or answering a question.'],
+ ['Fair comparison','A comparison in which one difference is tested while other relevant conditions stay the same.'],
+ ['Assumption','Something taken to be true for now, although it has not been checked.'],
+ ['Evaporation','The change from liquid water to water vapour at the surface.'],
+ ['Condensation','The formation of liquid water from water vapour.']
 ];
 export const summary=[
  'Science develops through questions, observations, tests and explanations that can change with evidence.',

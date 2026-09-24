@@ -48,13 +48,13 @@ function render(meta){
   const rows=wrap(meta.title,874,'h');let y=rows.length*36+12;
   const p=paragraph(meta.text,{y});let html=lines(rows,89,0,'se-heading',36,30)+p.html;y+=p.h;
   if(meta.figure){html+=photo(meta.figure,276,y,500,280);y+=290;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
-  if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})">${d.html}</g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
+  if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   return add(meta,html,y+12,{conceptId:meta.id});
  }
 
  if(meta.type==='diagram'){
   const d=measureDiagram(meta.diagram),c=caption(meta.caption,d.h+10);
-  return add({...meta,type:'figure'},d.html+c.html,d.h+10+c.h+22,{artKey:meta.diagram});
+  return add({...meta,type:'figure'},`<g data-instructional-figure="${meta.diagram}">${d.html}</g>`+c.html,d.h+10+c.h+22,{artKey:meta.diagram});
  }
  if(meta.type==='body')return body(meta);
  if(meta.type==='heading'){const major=meta.level!==2,rows=wrap(meta.text,874,'h',major?38/30:1);return add(meta,lines(rows,89,0,major?'v2-title':'se-heading',major?46:36,major?38:30),rows.length*(major?46:36)+12,{role:major?'section':'subtopic'});}
@@ -62,7 +62,7 @@ function render(meta){
   const paragraphs=meta.paragraphs;
   let y=68,html='';for(const [index,s] of paragraphs.entries()){const match=s.match(/^(\d+)\. (.*)$/),p=paragraph(match?match[2]:s,{x:match?146:113,w:match?793:826,y,gap:12});if(match)html+=label(match[1]+'.',132,y+24,'se-activity-step','end');html+=p.html;y+=p.h;}
   if(meta.figure){html+=photo(meta.figure,176,y,700,215);y+=225;const rows=wrap(meta.figureCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
-  if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})">${d.html}</g>`;y+=d.h+12;const rows=wrap(meta.diagramCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
+  if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+12;const rows=wrap(meta.diagramCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
   const h=y+10,kind=meta.kind==='setup'?'se-activity-panel':'se-prompt se-thought-panel';
   return add({...meta,type:meta.kind==='setup'?'activity':'panel'},`<rect class="${kind}" x="89" y="0" width="874" height="${h}" rx="18"/>`+(meta.kind==='setup'?`<path class="v2-activity-header" d="M107 0H945Q963 0 963 18V58H89V18Q89 0 107 0Z"/>`:'')+v2PanelHeading(meta.kind,113,39)+html,h+22,{conceptId:meta.id});
  }
@@ -100,7 +100,7 @@ function render(meta){
   }
   let y=0,html=label(meta.number+'.',111,24,'se-copy','end');const p=paragraph(meta.text,{x:132,w:831,y:0,gap:16});html+=p.html;y=p.h;
   if(meta.table){const t=comparisonTableBlock({...meta.table,id:meta.id+'-matching'},{wrap,lines});html+=`<g transform="translate(0 ${y})">${t.html}</g>`;y+=t.h;}
-  if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})">${d.html}</g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
+  if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   if(meta.figure){const height=meta.figureHeight||215;html+=photo(meta.figure,186,y,680,height);y+=height+5;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   return add(meta,html,y+14);
  }

@@ -1,5 +1,6 @@
+import {justifiedProseLines,applyExistingProse,measureProseJustification} from './science-prose-justification.mjs';
 import {completeIllustratedPage,pageImageReserve} from './science-page-illustrations.mjs';
-import {comparisonTableBlock} from './science-g7-comparison-tables.mjs';
+import {roomyComparisonTableBlock as comparisonTableBlock} from './science-g7-comparison-tables.mjs';
 // Independent Grade 7 Chapter 10 authoring entry point. Shared Science typography,
 // opener, feature headings and protected-block pagination; no writes to older chapters.
 import fs from 'node:fs/promises';
@@ -32,13 +33,15 @@ const probe=path.resolve('build/_g7-ch10-type-measure.html');
 const faces={n:'400 24px "Source Serif 4"',b:'700 24px "Source Serif 4"',i:'italic 400 24px "Source Serif 4"',h:'700 30px "Source Sans 3"',s:'600 24px "Source Sans 3"'};
 await fs.writeFile(probe,`<html><head><meta charset="utf-8"><link rel="stylesheet" href="../css/science-v2-fonts.css"></head><body><script>onload=async()=>{const faces=${JSON.stringify(faces)};await Promise.all(Object.values(faces).map(f=>document.fonts.load(f)));const c=document.createElement('canvas').getContext('2d'),out={};for(const [k,f] of Object.entries(faces)){c.font=f;out[k]={};for(const s of ${JSON.stringify([...terms])})out[k][s]=c.measureText(s).width;}document.title='METRICS'+JSON.stringify(out);};</script></body></html>`);
 let widths;try{const {stdout}=await promisify(execFile)(process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--disable-gpu','--virtual-time-budget=8000','--dump-dom',pathToFileURL(probe).href],{maxBuffer:24e6});widths=JSON.parse(stdout.match(/METRICS(.*?)<\/title>/s)[1].replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>'));}finally{await fs.unlink(probe);}
-function wrap(s,w=874,k='n',scale=1){const rows=[];let row=[],used=0;for(const token of tokens(s)){const size=token.reduce((a,p)=>{const value=widths[k==='n'?p.k:k][p.s];if(value===undefined)throw Error('Unmeasured word: '+p.s);return a+value*scale;},0);if(row.length&&used+widths[k][' ']*scale+size>w-5){rows.push(row);row=[];used=0;}if(row.length)used+=widths[k][' ']*scale;row.push(token);used+=size;}if(row.length)rows.push(row);return rows;}
+function wrap(s,w=874,k='n',scale=1){const rows=[];let row=[],used=0;for(const token of tokens(s)){const size=token.reduce((a,p)=>{const value=widths[k==='n'?p.k:k][p.s];if(value===undefined)throw Error('Unmeasured word: '+p.s);return a+value*scale;},0);if(row.length&&used+widths[k][' ']*scale+size>w-5){rows.push(row);row=[];used=0;}if(row.length)used+=widths[k][' ']*scale;row.push(token);used+=size;}if(row.length)rows.push(row);return rows.map((r,i)=>Object.assign(r,{measure:w,face:k,scale,paragraphEnd:i===rows.length-1}));}
 const word=parts=>parts.map(p=>p.k==='n'?E(p.s):`<tspan class="${p.k==='b'?'se-bold':'se-italic'}">${E(p.s)}</tspan>`).join('');
-function lines(rows,x,y,cls='se-copy',lead=32,size=24){return `<text class="${cls}" x="${x}" y="${y+size}">${rows.map((r,i)=>`<tspan x="${x}"${i?` dy="${lead}"`:''}>${r.map(word).join(' ')}</tspan>`).join('')}</text>`;}
+const typographyReplacements=new Map();
+function lines(rows,x,y,cls='se-copy',lead=32,size=24){return justifiedProseLines(rows,x,y,cls,lead,size,{word,widths,replacements:typographyReplacements});}
 const label=(s,x,y,cls='se-caption',anchor='start')=>`<text class="${cls}" x="${x}" y="${y}" text-anchor="${anchor}">${E(s)}</text>`;
 const caption=(s,y)=>{const rows=wrap(s,874,'n',.87);return {html:lines(rows,89,y,'se-caption',27,20.88),h:rows.length*27};};
 function paragraph(s,{x=89,w=874,y=0,gap=16,cls='se-copy',scale=1,k='n',lead=32}={}){const rows=wrap(s,w,k,scale);return {html:lines(rows,x,y,cls,lead,24*scale),h:rows.length*lead+gap};}
 const blocks=[];
+let activitySequence=0;
 function add(meta,html,h,extra={}){blocks.push({atomId:meta.id,type:meta.type,top:0,h,html,source:meta.source||[],text:meta.text||meta.caption||meta.paragraphs?.join(' ')||'',...extra});}
 function body(meta){const rows=wrap(meta.text),chunks=[];if(meta.keepWhole)return add(meta,lines(rows,89,0),rows.length*32+16,{keepNext:!!meta.keepNext});for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length,keepNext:!!meta.keepNext&&i===chunks.length-1}));}
 function bulletList(items,x,w,y=0){let html='';for(const s of items){const p=paragraph(s,{x:x+23,w:w-23,y,gap:10});html+=label('•',x,y+24,'se-copy')+p.html;y+=p.h;}return {html,h:y};}
@@ -53,7 +56,7 @@ function render(meta){
 
  if(meta.type==='diagram'){
   const d=plantDiagram(meta.diagram),c=caption(meta.caption,d.h+10);
-  return add({...meta,type:'figure'},d.html+c.html,d.h+10+c.h+22,{artKey:meta.diagram});
+  return add({...meta,type:'figure'},`<g data-instructional-figure="${meta.diagram}">${d.html}</g>`+c.html,d.h+10+c.h+22,{artKey:meta.diagram});
  }
  if(meta.type==='body')return body(meta);
  if(meta.type==='heading'){const major=meta.level!==2,rows=wrap(meta.text,874,'h',major?38/30:1);return add(meta,lines(rows,89,0,major?'v2-title':'se-heading',major?46:36,major?38:30),rows.length*(major?46:36)+12,{role:major?'section':'subtopic'});}
@@ -71,9 +74,9 @@ function render(meta){
    const sx=x+w+28,p=paragraph(meta.paragraphs.at(-1),{x:sx,w:939-sx,y:y+12,gap:0});
    html+=p.html;y+=Math.max(h+42,p.h+12)+12;
    const rows=wrap(meta.diagramCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;
-  }else if(meta.diagram){const d=plantDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})">${d.html}</g>`;y+=d.h+12;const rows=wrap(meta.diagramCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
+  }else if(meta.diagram){const d=plantDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+12;const rows=wrap(meta.diagramCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
   const h=y+10,kind=meta.kind==='setup'?'se-activity-panel':'se-prompt se-thought-panel';
-  return add({...meta,type:meta.kind==='setup'?'activity':'panel'},`<rect class="${kind}" x="89" y="0" width="874" height="${h}" rx="18"/>`+(meta.kind==='setup'?`<path class="v2-activity-header" d="M107 0H945Q963 0 963 18V58H89V18Q89 0 107 0Z"/>`:'')+v2PanelHeading(meta.kind,113,39)+html,h+22,{conceptId:meta.id});
+  return add({...meta,type:meta.kind==='setup'?'activity':'panel'},`<rect class="${kind}" x="89" y="0" width="874" height="${h}" rx="18"/>`+(meta.kind==='setup'?`<path class="v2-activity-header" d="M107 0H945Q963 0 963 18V58H89V18Q89 0 107 0Z"/>`:'')+v2PanelHeading(meta.kind,113,39,meta.kind==='setup'?{activityNumber:`${number}.${++activitySequence}`}:{})+html,h+22,{conceptId:meta.id});
  }
  if(meta.type==='bullets'){
   // These lists contain separate growth traits or services, not a comparison
@@ -102,17 +105,11 @@ function render(meta){
  }
  if(meta.type==='question'){
   let y=0,html=label(meta.number+'.',111,24,'se-copy','end');const p=paragraph(meta.text,{x:132,w:831,y:0,gap:16});html+=p.html;y=p.h;
-  if(meta.diagram){const d=plantDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})">${d.html}</g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
+  if(meta.diagram){const d=plantDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+10;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   if(meta.figure){const height=meta.figureHeight||215;html+=photo(meta.figure,186,y,680,height);y+=height+5;const c=caption(meta.caption,y);html+=c.html;y+=c.h+12;}
   return add(meta,html,y+14);
  }
- if(meta.type==='table'){
-  const head=wrap(meta.caption,874,'h',.72);let y=head.length*28+14;
-  const top=y,ws=meta.widths.map(v=>v*874),xs=ws.map((_,i)=>89+ws.slice(0,i).reduce((a,v)=>a+v,0));let html=lines(head,89,0,'v2-table-caption',28,21.6);
-  meta.rows.forEach((row,i)=>{const rows=row.map((s,j)=>wrap(s,ws[j]-28,i?'n':'b',.92)),h=Math.max(...rows.map(r=>r.length))*28+24;if(!i)html+=`<rect class="se-table-head" x="89" y="${y}" width="874" height="${h}"/>`;html+=rows.map((r,j)=>lines(r,xs[j]+14,y+12,i?'se-copy se-table-copy':'v2-table-heading',28,22.08)).join('');y+=h;html+=`<line class="v2-table-rule" x1="89" x2="963" y1="${y}" y2="${y}"/>`;});
-  html+=`<rect class="v2-table-frame" x="89" y="${top}" width="874" height="${y-top}"/>`+xs.slice(1).map(x=>`<line class="v2-table-rule" x1="${x}" x2="${x}" y1="${top}" y2="${y}"/>`).join('');
-  const note=wrap(meta.note,874,'n',.87);html+=lines(note,89,y+12,'v2-table-note',26,20.88);return add(meta,html,y+12+note.length*26+20);
- }
+ if(meta.type==='table'){const t=comparisonTableBlock(meta,{wrap,lines});return add(meta,t.html,t.h,{conceptId:meta.id});}
  let html='',y=0;
  if(meta.figure){html=photo(meta.figure,176,0,700,270);y=280;}
  if(meta.caption){const c=caption(meta.caption,y);html+=c.html;y+=c.h+10;}
@@ -146,6 +143,7 @@ blocks.length=0;
 render({id:'project-heading',type:'heading',text:'Explore Further',source:[15,16]});
 for(const p of projects)render({...p,type:'project'});
 pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve}).map(p=>({...p,titleRole:'projects'})));
+if(process.argv.includes('--justify-existing')){await applyExistingProse(dir,typographyReplacements);process.exit(0);}
 const map=[];
 for(let i=0;i<pages.length;i++){
  const p=completeIllustratedPage(pages[i],grade,number),n=i+1,verso=n%2===0;
@@ -160,3 +158,5 @@ await fs.mkdir(history,{recursive:true});
 await fs.writeFile(history+'/page-map.json',JSON.stringify(map,null,2));
 await fs.writeFile(history+'/editorial-ledger.json',JSON.stringify({opener:{source:[1],paragraphs:opener},lesson,glossary:{purpose:'Reference definitions for terms taught in the chapter',entries:glossary},summary,assessment:{purpose:'All ten source questions retained with safety and evidence qualifications',questions:exercises},projects},null,2));
 console.log(`Chapter 10: ${pages.length} pages; ${fitted.length} lesson pages; ${lessonBlockCount} protected/prose blocks.\n`+map.map(p=>`p${p.page}: ${p.fill}% ${p.title||'continued lesson'}`).join('\n'));
+
+await measureProseJustification(dir);

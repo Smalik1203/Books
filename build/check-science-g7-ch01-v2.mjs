@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {opener,lesson,glossary,summary,exercises,topicRelationships} from './science-g7-ch01-v2-content.mjs';
 import {scienceContract} from './science-contract.mjs';
+import {chapter1PageArt} from './science-g7-ch01-page-art.mjs';
 
 const chapter='class-7/ch01-ever-evolving-world-of-science-v2';
 const dir='pages/'+chapter,history='assets/design-history/science-v2-g7-ch01';
@@ -14,6 +15,14 @@ const extract=s=>norm([...s.replace(/<g\b[^>]*data-page-illustration=[\s\S]*?<\/
 const pageTexts=htmls.map(extract),text=pageTexts.join(' '),all=htmls.join('\n');
 const contains=(s,why)=>assert.ok(text.includes(norm(s)),why||'Missing printed content: '+s);
 assert.equal(files.length,11,'Reviewed extent with an image on every page');
+const closingImages=htmls.slice(-4).map(s=>s.match(/data-page-illustration="([^"]+)"/)?.[1]);
+assert.deepEqual(closingImages,Object.keys(chapter1PageArt).map(key=>`figures/class-7/science/ch01-v2/${key}.png`),'Four distinct, lesson-specific closing illustrations');
+assert.ok(!all.includes('A folded paper plane.'),'No generic fallback-plane captions');
+for(const source of htmls)assert.ok(/<image\b/.test(source),'Every page retains a content image');
+for(const source of htmls.slice(-4)){
+ const figure=source.match(/<g data-page-illustration="[^"]+">([\s\S]*?)<\/g>/)?.[1];
+ assert.ok(figure&&!figure.includes('<text'),'No generic caption on contextual closing artwork');
+}
 htmls.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`),'Continuous folios');});
 opener.forEach(s=>assert.ok(pageTexts[0].includes(norm(s)),'Complete opener introduction'));
 for(const b of lesson){
@@ -38,6 +47,8 @@ assert.equal(glossary.length,6);assert.equal(summary.length,6);assert.equal(exer
 assert.ok(pageTexts.at(-2).includes('Keywords')&&pageTexts.at(-2).includes('Summary'),'Combined reference page');
 assert.ok(exercises.every(s=>pageTexts.at(-1).includes(norm(s))),'Four complete closing questions');
 assert.equal((all.match(/data-feature="setup"/g)||[]).length,1,'One investigation');
+assert.equal((all.match(/>Activity 1\.1<\/text>/g)||[]).length,1,'Chapter-based activity numbering');
+assert.ok(!all.includes('aria-label="Investigate"'),'Activity replaces the feature label');
 assert.equal((all.match(/data-feature="think"/g)||[]).length,2,'Two thinking panels');
 assert.deepEqual(lesson.filter(b=>b.sourceActivity).map(b=>b.sourceActivity),['1.1'],'Source activity retained');
 assert.deepEqual(lesson.flatMap(b=>b.chapters||[]),[2,3,4,5,6,7,8,9,10,11,12],'Index order');
@@ -55,7 +66,7 @@ const ids=new Set(['opener','glossary','summary','assessment',...lesson.map(b=>b
 for(const p of [...coverage.points,...coverage.additions]){assert.ok(p.targets.length);for(const id of p.targets)assert.ok(ids.has(id),'Coverage anchor: '+id);}
 const map=JSON.parse(await fs.readFile(history+'/page-map.json','utf8'));
 for(const p of map){assert.ok(p.end<=1415,'Footer clearance');const bs=p.blocks||[];for(const b of bs.filter(b=>b.type==='heading'))assert.ok(p.end-b.bottom>=160,'Heading has five lines or complete unit');}
-assert.ok(!/____|textLength=|lengthAdjust=|--head|--tail|style=/.test(all),'No writing spaces, justified SVG text, divided panels or inline styles');
+assert.ok(!/____|textLength=|lengthAdjust=|--head|--tail|style=/.test(all),'No writing spaces, glyph stretching, divided panels or inline styles');
 for(const m of all.matchAll(/<image\b[^>]*href="([^"]+)"/g)){assert.ok(m[1].includes('/class-7/science/ch01-v2/'),'Independent Class 7 asset');assert.ok(m[1].endsWith('.png'),'Every placed image is PNG');await fs.access(path.resolve('build/class-7',m[1]));}
 const artworks=JSON.parse(await fs.readFile(history+'/artwork.json','utf8'));
 for(const artwork of artworks)assert.equal(createHash('sha256').update(await fs.readFile(artwork.file)).digest('hex'),artwork.sha256,'Reviewed native artwork integrity');
@@ -82,6 +93,7 @@ assert.ok(mean>=84,'Reviewed mean occupancy with content illustrations on every 
 for(const p of body.filter(p=>p.occupiedPercent<88))assert.ok(p.shortPageException?.protectedGroup.length,'Documented complete topic/panel behind short page');
 assert.ok(body.every(p=>p.occupiedPercent<=97),'Lesson pages retain footer breathing room');
 assert.ok(audit.pages.every(p=>!p.collisions.length&&!p.escapedPanels.length),'Live text and panel bounds pass');
+for(const n of [8,9])assert.ok(audit.pages[n-1].contentBounds.bottom>=1300,'Closing lesson reaches a balanced lower margin on page '+n);
 const visualKeys=lesson.flatMap(b=>[...(b.columns||[]).map(c=>c.art).filter(Boolean),...(b.type==='topic-figure'?[b.art]:[])]);
 assert.deepEqual(visualKeys,['substances','circuit','materials','changes','heat-water','time','runners','plant','mirrors','light-water','earth-light'],'All restored visual references in teaching order');
 for(const key of visualKeys)assert.ok(JSON.parse(await fs.readFile(history+'/illustration-coverage.json','utf8')).figures.some(f=>f.key===key),'Visual source ledger: '+key);

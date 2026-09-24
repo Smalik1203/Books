@@ -1,5 +1,6 @@
 /* Chapter 1 identity; reading typography is shared, Investigate colours are scoped. */
 .page--science-v2.page--v2-g7-ch01 .chapter-opener__title {font-size:calc(var(--size-body)*2.25);letter-spacing:-.7px;}
+.page--science-v2.page--v2-g7-ch01 .se-caption {font-weight:600;}
 .page--v2-g7-ch01 image.science-illustration,
 .page--v2-g7-ch01 .v2-topic-photo,
 .page--v2-g7-ch01 .chapter-opener image {
@@ -11,7 +12,25 @@
  --v2-investigate-wash:rgb(0 107 115 / 7%);
  --v2-investigate-bar:rgb(0 107 115 / 20%);
  --v2-investigate-rule:rgb(0 107 115 / 35%);
+ --v2-table-wash:#eeeaf4;
+ --v2-table-ink:#514762;
+ --v2-table-border:#b9afc9;
+ --v2-table-divider:#d4cddd;
+ --v2-table-radius:8px;
 }
+/* Comparison tables are distinct from the teal first-hand activity panels. */
+.page--science-v2.page--v2-g7-ch01 .se-table-head {
+ fill:var(--v2-table-wash);
+ clip-path:inset(0 round var(--v2-table-radius) var(--v2-table-radius) 0 0);
+}
+.page--science-v2.page--v2-g7-ch01 .v2-table-heading,
+.page--science-v2.page--v2-g7-ch01 .v2-table-caption {fill:var(--v2-table-ink);}
+.page--science-v2.page--v2-g7-ch01 .v2-table-frame {
+ stroke:var(--v2-table-border);rx:var(--v2-table-radius);ry:var(--v2-table-radius);
+}
+.page--science-v2.page--v2-g7-ch01 .v2-table-rule {stroke:var(--v2-table-divider);}
+/* The frame supplies the bottom rule, including its rounded corners. */
+.page--science-v2.page--v2-g7-ch01 .v2-table-rule:has(+ .v2-table-frame) {display:none;}
 /* Chapter 1 pilot: translucent teal surfaces; text and icons stay fully opaque. */
 .page--science-v2.page--v2-g7-ch01 .se-activity-panel {
  fill:var(--v2-investigate-wash); stroke:var(--v2-investigate-rule);

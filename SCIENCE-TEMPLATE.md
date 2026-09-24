@@ -4,6 +4,55 @@ This is the current contract for all science chapters. It supersedes earlier pal
 
 ## Class 6 and Class 7 shared edition — 23 September 2026
 
+Class 7 Chapter 1 pilot update (24 September): comparison tables use a pale
+lavender-grey header, muted plum heading and rules, and white body cells, distinct
+from teal activity panels. Rename the first-hand feature to **Activity 1.1**;
+number subsequent activities by chapter and sequence (1.2, 1.3, etc.). This
+user-requested treatment now applies throughout Class 7 Science, Chapters 1–12,
+and supersedes the unnumbered Investigate label below for that volume. Restart
+the sequence in each chapter: Activity 2.1, Activity 2.2, etc. Preserve procedure
+step numbers and the existing activity icon. Class 6 labels are unchanged.
+
+Chapter 1 tables now use an 8-unit corner radius, 10-unit vertical cell padding,
+12 units before the table title, 28 units after the complete table block and
+20 units between the grid and an explanatory note. The approved table palette,
+corners and spacing now apply to Class 7 Chapters 2–12 as well. Record tables and
+multi-sentence cells retain their existing 12-unit padding. A table at the foot
+does not need the full inter-block gap after it. Keep type and artwork sizes
+unchanged when refitting; retain whole tables and their explanatory notes.
+
+Chapter 1 illustration review: use explicit, distinct contextual art for the four
+closing pages via `science-g7-ch01-page-art.mjs`; never reuse a stock plane to
+satisfy image coverage. Short image labels remain semibold, while full-width
+explanations and safety instructions use regular body prose. Do not add generic
+captions to self-explanatory closing illustrations. After this editorial revision,
+regenerate Chapter 1 normally; `--justify-existing` intentionally refuses the
+obsolete pre-review page structure.
+
+Class 7 Chapters 2–12 image review: supplementary art is selected by the authored
+page/block plan in `assets/design-history/science-g7-image-repetition/page-art.json`.
+Never rotate a small stock pool to fill pages. Reserve a 720 × 280 figure area
+and place its concise caption below; do not shrink it into a small side-caption
+row. Reuse of an actual scientific diagram component is allowed when it supports
+a distinct model or a question requiring that diagram. Repeated supplementary
+images are rejected by content hash, even under a different filename. Run
+`node build/check-science-g7-page-art.mjs` after changing the volume.
+
+Chapter 1 pilot (Class 7 only, 24 September 2026): justify complete prose lines
+to their text-column edges using additional space between whole words. Keep
+the true final line of each paragraph natural, including paragraphs continued
+across page fragments. No hyphenation, glyph scaling or letter stretching.
+Headings, captions, diagram labels and tables retain their existing setting.
+The user approved extending this alignment to Class 7 Chapters 2–12. Their
+compositors use `science-prose-justification.mjs`: the authored column width and
+true paragraph endings survive prose fragments, and Chrome measures the final
+word spacing. Narrow glossary columns and figure-side notes below 500 SVG units
+retain natural setting to avoid large gaps between technical terms. Table cells,
+headings and captions remain naturally aligned. `--justify-existing` updates
+fitted prose without repaginating or resizing art. The Chapter 1
+compositor supports `--justify-existing` to apply this pilot without changing
+the current page breaks or illustrations.
+
 The user's current direction supersedes the older Class 6 typography and justification instructions below. All existing Class 6 Science chapters (1, 2, 3, 4 and 10) now follow Class 7: 189 × 272 mm trim, Source Serif 4 body text, Source Sans 3 headings, natural right edges, regular serif chapter numerals and semibold full-width chapter titles. The physical reading scale is 24/32 units on the 1052-unit page grid; section headings are 38/46, subheadings 30/36. Neither prose nor figure labels may be shrunk to recover a page.
 
 Investigate uses the approved soft teal title bar and lighter translucent body tint, with a matching live vector icon. Think It Through is a compact amber reasoning panel. Explanations remain open. Compare alternatives in framed tables, with aligned criteria and scientific qualifications retained nearby. Body illustrations retain their existing artwork and proportional size; small pictures may sit beside the paragraph they explain.

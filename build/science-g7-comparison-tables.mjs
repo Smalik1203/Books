@@ -71,20 +71,30 @@ export function applyClass7ComparisonTables(lesson,chapter){
 
 // Every conversion uses the existing table tokens and measured type. Complete
 // rows, borders and guidance are one indivisible pagination block.
-export function comparisonTableBlock(meta,{wrap,lines}){
- const head=wrap(meta.caption,874,'h',.72);let y=head.length*28+14;
+export function comparisonTableBlock(meta,{wrap,lines,spacing={}}){
+ const {before=0,after=16,cellPadding=meta.paragraphCells?12:6,noteGap=12}=spacing;
+ const head=wrap(meta.caption,874,'h',.72);let y=before+head.length*28+14;
  const top=y,ws=meta.widths.map(v=>v*874),xs=ws.map((_,i)=>89+ws.slice(0,i).reduce((a,v)=>a+v,0));
- let html=lines(head,89,0,'v2-table-caption',28,21.6);
+ let html=lines(head,89,before,'v2-table-caption',28,21.6);
  meta.rows.forEach((row,i)=>{
   if(row.length!==ws.length)throw Error('Unequal table row '+meta.id);
   // Multi-sentence summary cells need more air than short criterion rows.
-  const padding=meta.paragraphCells?12:6;
+  const padding=cellPadding;
   const rows=row.map((s,j)=>wrap(s,ws[j]-28,i?'n':'b',.92)),h=Math.max(...rows.map(r=>r.length))*28+padding*2;
   if(!i)html+=`<rect class="se-table-head" x="89" y="${y}" width="874" height="${h}"/>`;
   html+=`<g data-comparison-row="${i}">`+rows.map((r,j)=>`<g data-comparison-cell="${j}">`+lines(r,xs[j]+14,y+padding,i?'se-copy se-table-copy':'v2-table-heading',28,22.08)+'</g>').join('')+'</g>';
   y+=h;html+=`<line class="v2-table-rule" x1="89" x2="963" y1="${y}" y2="${y}"/>`;
  });
  html+=`<rect class="v2-table-frame" x="89" y="${top}" width="874" height="${y-top}"/>`+xs.slice(1).map(x=>`<line class="v2-table-rule" x1="${x}" x2="${x}" y1="${top}" y2="${y}"/>`).join('');
- if(meta.note){const note=wrap(meta.note,874,'n',.87);html+=lines(note,89,y+12,'v2-table-note',26,20.88);y+=12+note.length*26;}
- return {html:`<g data-comparison-table="${meta.id}">${html}</g>`,h:y+16};
+ if(meta.note){const note=wrap(meta.note,874,'n',.87);html+=lines(note,89,y+noteGap,'v2-table-note',26,20.88);y+=noteGap+note.length*26;}
+ return {html:`<g data-comparison-table="${meta.id}">${html}</g>`,h:y+after};
+}
+
+// Approved Class 7 table treatment. Keep already generous paragraph/record
+// cells at twelve units; shorter comparison cells have a ten-unit minimum.
+export function roomyComparisonTableBlock(meta,options){
+ const table=comparisonTableBlock(meta,{...options,spacing:{before:12,after:28,
+  cellPadding:meta.comparisonTable&&!meta.paragraphCells?10:12,noteGap:20,...options.spacing}});
+ table.html=table.html.replace('data-comparison-table=', 'data-table-spacing="airy" data-comparison-table=');
+ return table;
 }

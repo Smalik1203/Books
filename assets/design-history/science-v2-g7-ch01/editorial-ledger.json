@@ -125,7 +125,7 @@
           "art": "substances",
           "figureCaption": "Everyday materials can start a question.",
           "items": [
-            "Compare acidic, basic and neutral substances.",
+            "Compare substances that are acidic, basic or neutral.",
             "Investigate questions about sour fruits and a haldi stain.",
             "Use safe tests; never taste an unknown substance."
           ]
@@ -137,7 +137,7 @@
           "items": [
             "Explore batteries, lamps, wires and other components.",
             "Test which materials let a lamp glow in a circuit.",
-            "Work only with teacher-approved low-voltage equipment, never mains sockets."
+            "Use only low-voltage equipment that your teacher has approved. Never experiment with mains sockets."
           ]
         }
       ],
@@ -234,8 +234,8 @@
       "source": [
         3
       ],
-      "caption": "From a candle to sunlight: heating connects everyday changes with water in nature. Observe flames only in a teacher-led demonstration.",
-      "addition": "Use real candle and lake photographs with the complete evaporation/condensation explanation adjacent."
+      "caption": "Observe flames only in a teacher-led demonstration.",
+      "addition": "Keep the candle and lake labels; retain fire safety as regular prose without a redundant bridging caption."
     },
     {
       "id": "water-explanation",
@@ -281,11 +281,11 @@
         {
           "title": "Time and motion",
           "art": "time",
-          "figureCaption": "A sundial uses shadows to track time.",
+          "figureCaption": "Shadows mark time on a sundial.",
           "items": [
             "Investigate ways to measure time.",
-            "Relate a moving object’s distance to the time taken.",
-            "Compare measurements, rather than impressions such as “fast”."
+            "Relate distance travelled to the time taken.",
+            "Compare actual measurements instead of relying on impressions such as “fast”."
           ]
         },
         {
@@ -294,7 +294,7 @@
           "figureCaption": "Moving bodies depend on life processes.",
           "items": [
             "Explore how animals obtain and use food.",
-            "Study breathing and how blood carries nutrients.",
+            "Explore breathing and the way blood carries nutrients.",
             "Connect these processes with growth and survival."
           ]
         }
@@ -317,9 +317,9 @@
           "art": "plant",
           "figureCaption": "Plant structures support life processes.",
           "items": [
-            "Investigate how plants make food and exchange gases.",
+            "Explore how food is made in plants and how they exchange gases.",
             "Explore how plants obtain water and other substances.",
-            "Compare plant and animal processes without assuming they work identically."
+            "Compare processes in plants and animals; do not assume they work alike."
           ]
         },
         {
@@ -366,8 +366,8 @@
       "source": [
         5
       ],
-      "caption": "Sunlight illuminates one half of Earth. During a solar eclipse, the Moon lies between the Sun and Earth and its shadow falls on part of Earth. These photographs show separate views.",
-      "addition": "Use real Galileo and National Park Service photographs as separate observations, not an alignment diagram."
+      "caption": "Sunlight illuminates half of Earth. During a solar eclipse, the Moon lies between the Sun and Earth, casting a shadow on part of Earth.",
+      "addition": "Keep the two distinct image labels; set the mechanism as regular prose, not a second bold caption. The photographs are separate observations, not an alignment diagram."
     },
     {
       "id": "living-processes",
@@ -458,6 +458,15 @@
       ]
     },
     {
+      "id": "answer-context-example",
+      "type": "body",
+      "text": "Before accepting an answer, name the object and the purpose. Halving a cake changes the amount of food; folding a sheet changes its shape so it can fit an envelope.",
+      "source": [
+        6
+      ],
+      "addition": "Explain the two objects in the illustration and why the same answer depends on context."
+    },
+    {
       "id": "creative-vs-evidence",
       "type": "body",
       "text": "This is an exercise in creative question-making. An imagined situation is not scientific evidence, and an answer can contain an assumption that turns out to be mistaken. Choose one of your questions and discuss whether observation could help answer it. If not, explain what kind of question it is.",
@@ -475,6 +484,54 @@
         6
       ],
       "addition": "Link the restored experiment-preview pictures with the limits of creative question-making."
+    },
+    {
+      "id": "question-evidence-comparison",
+      "type": "table",
+      "comparisonTable": true,
+      "caption": "Different questions need different responses",
+      "widths": [
+        0.2,
+        0.36,
+        0.44
+      ],
+      "rows": [
+        [
+          "Question",
+          "Example",
+          "Response"
+        ],
+        [
+          "Imaginative",
+          "What might a talking tree say?",
+          "Invent a story. An imaginary tree’s words cannot be checked by observation."
+        ],
+        [
+          "Observable",
+          "Which veins can you see on this leaf?",
+          "Use a magnifying glass to examine the leaf. Record the pattern of its veins."
+        ],
+        [
+          "Comparative",
+          "Are these two leaves equally long?",
+          "Measure from the base of each leaf blade to its tip with the same ruler. Compare the readings."
+        ]
+      ],
+      "source": [
+        5,
+        6
+      ],
+      "addition": "Develop the distinction already taught with a concrete leaf-observation example; compare in an aligned table."
+    },
+    {
+      "id": "observation-record-example",
+      "type": "body",
+      "text": "A drawing is a record, not the leaf itself. It may leave out small details. Say which features you observed and which ideas you inferred. Another observer can compare your drawing with the same leaf and suggest corrections.",
+      "source": [
+        5,
+        6
+      ],
+      "addition": "Connect the leaf and notebook illustration to checkable records and revision of evidence."
     },
     {
       "id": "close",
@@ -512,27 +569,27 @@
     "entries": [
       [
         "Prediction",
-        "An expected observation under stated conditions."
+        "What you expect to observe under stated conditions."
       ],
       [
         "Evidence",
-        "Information used to judge an idea or answer a question."
+        "Information for judging an idea or answering a question."
       ],
       [
         "Fair comparison",
-        "A comparison that keeps other relevant conditions alike while testing a particular difference."
+        "A comparison in which one difference is tested while other relevant conditions stay the same."
       ],
       [
         "Assumption",
-        "Something accepted for the moment without having checked it."
+        "Something taken to be true for now, although it has not been checked."
       ],
       [
         "Evaporation",
-        "The change of liquid water into water vapour at its surface."
+        "The change from liquid water to water vapour at the surface."
       ],
       [
         "Condensation",
-        "The change of water vapour into liquid water."
+        "The formation of liquid water from water vapour."
       ]
     ]
   },

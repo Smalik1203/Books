@@ -204,7 +204,10 @@ for(const svg of document.querySelectorAll('.food-sheet')){
       const steps=seen.slice(1).map((b,i)=>+(b.y-seen[i].y).toFixed(1));
       const uniq=[...new Set(steps.map(Math.round))];
       if(uniq.length>1)out.leading.push({page:folio,steps:uniq,text:(text.textContent||'').trim().slice(0,44)});
-      const xs=seen.map(b=>b.x);
+      // Centred/right-aligned captions deliberately have different left edges.
+      // Check the declared alignment axis, while retaining all bounds checks.
+      const anchor=getComputedStyle(text).textAnchor;
+      const xs=seen.map(b=>anchor==='middle'?(b.x+b.right)/2:anchor==='end'?b.right:b.x);
       if(Math.max(...xs)-Math.min(...xs)>3)
         out.ragged.push({page:folio,xs:[...new Set(xs.map(Math.round))],text:(text.textContent||'').trim().slice(0,44)});
     }
