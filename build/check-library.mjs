@@ -622,7 +622,7 @@ async function checkViewerBehaviour() {
         .find((s) => getComputedStyle(s).display !== 'none');
       if (!shown) return { icon: 'none', title: btn.title };
       const r = shown.querySelector('rect').getBoundingClientRect();
-      return { icon: r.width > r.height ? 'landscape' : 'portrait', title: btn.title };
+      return { icon: r.width > r.height ? 'landscape' : 'portrait', title: btn.title, label: btn.getAttribute('aria-label') };
     };
     /* The level is a field now, so this is how a mode is reached from
        whatever the last check left behind: type a percentage, and the
@@ -635,6 +635,7 @@ async function checkViewerBehaviour() {
       return box.value;
     };
     const toFitPage = () => { typeLevel(150); $('fit-toggle').click(); };
+    typeLevel(137); R.iconAtManual = fitIcon();
 
     toFitPage();
     R.fitPage = lvl();
@@ -907,7 +908,6 @@ async function checkViewerBehaviour() {
     const lvl = () => $('zoom-level').value;
     const R = {};
     R.opensAt = lvl();
-    $('fit-toggle').click();          // a percentage returns to fit to page
     R.fitPage = lvl();
     const k = Number($('inner').style.zoom), st = $('stage');
     const j = $('frame').contentDocument.querySelector('.jacket').getBoundingClientRect();
@@ -922,10 +922,9 @@ async function checkViewerBehaviour() {
   if (!R || !C) return;
 
   const pc = (s) => Number(String(s).replace('%', ''));
-  /* A chapter opens at the size the stylesheet says. The fit button
-     measures: whatever the screen, it shows one whole sheet with one
-     side of it filling the stage. */
-  eq('a chapter opens at 100%', R.opensAt, '100%');
+  /* Opening and explicitly selecting Fit to Page must produce the same
+     measured level, showing the whole sheet on this screen. */
+  eq('a chapter opens at fit to page', R.opensAt, R.fitPage);
   eq('fit to page shows the whole sheet and fills the stage one way', R.fitShowsWhole, true);
   eq('on a tall stage, a short one and a narrow one alike',
     [R.tallShows, R.shortShows, R.narrowShows], [true, true, true]);
@@ -936,9 +935,8 @@ async function checkViewerBehaviour() {
     pc(R.fitOnBleed) < pc(R.fitBackOnTrim), true);
   eq('a fit re-fits when the stage changes, with nothing pressed',
     pc(R.followsTheStage[1]) < pc(R.followsTheStage[0]), true);
-  /* A cover opens at 100% like everything else, and its fit is taken
-     from the jacket, not from a page. */
-  eq('a cover opens at 100% too', C.opensAt, '100%');
+  /* A cover also opens fitted, measuring the jacket rather than a page. */
+  eq('a cover opens at fit to page too', C.opensAt, C.fitPage);
   eq('a cover fits the whole wrap on the stage', C.wholeWrap, true);
   eq('lower than a single page does, the wrap being wider', pc(C.fitPage) < pc(R.fitPage), true);
   eq('and lower again on the press sheet', pc(C.fitOnBleed) < pc(C.fitPage), true);
@@ -946,12 +944,13 @@ async function checkViewerBehaviour() {
   eq('plus steps up the ladder', pc(R.plus2) > pc(R.plus1) && pc(R.plus1) > pc(R.fitPage), true);
   eq('minus steps back', R.minus, R.plus1);
   eq('the fit toggle returns', R.backToPage, R.fitPage);
-  /* The button shows the mode it is in, and the tooltip says the same
-     thing the picture does. */
-  eq('fit to page shows an upright sheet',
-    R.iconAtPage, { icon: 'portrait', title: 'Fit to page — click for fit to width' });
-  eq('fit to width shows a wide one',
-    R.iconAtWidth, { icon: 'landscape', title: 'Fit to width — click for fit to page' });
+  /* The icon, tooltip and accessible name all describe the next action. */
+  eq('fit to page offers fit to width',
+    R.iconAtPage, { icon: 'landscape', title: 'Fit to width', label: 'Fit to width' });
+  eq('fit to width offers fit to page',
+    R.iconAtWidth, { icon: 'portrait', title: 'Fit to page', label: 'Fit to page' });
+  eq('a manual percentage offers fit to page',
+    R.iconAtManual, { icon: 'portrait', title: 'Fit to page', label: 'Fit to page' });
   eq('and the icon comes back with the mode', R.iconBack, R.iconAtPage);
   /* Any number, not a choice from a list. 137 is the point of the
      whole change: it was never going to be on a menu. */

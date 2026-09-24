@@ -376,7 +376,7 @@ minus, the level, plus, a rule, the fit toggle — **centred**, on a
 `1fr auto 1fr` grid rather than a flex row with spacers, since spacers
 centre the middle only when the two sides happen to be the same width.
 `ctrl` with `+` and `-` walks the ladder, and **`ctrl+0` resets to 100%** —
-what the browser's own does, and what a chapter opens at.
+what the browser's own does. Newly opened documents use Fit to Page.
 The arrows read the book: **up and down scroll, left and right turn the
 page** — sideways instead while there is anywhere sideways to go, and at
 the far edge they turn the page rather than dead-ending. Space and
@@ -391,22 +391,14 @@ moves focus into the iframe, and for a while every key after that went to
 a document listening for nothing. The book's document is replaced on every
 load, so they are wired again there.
 
-The **fit button shows the mode it is in**, not the mode it would give: an
-upright sheet with the arrows running down it for fit to page, a wide one
-with them running across for fit to width, and a tooltip saying what the
-icon says. A control that names its own opposite has to be read twice. From
-a fixed percentage it returns to fit to page, so it is a way back as well as
-a toggle.
+The **fit button shows its next action**: Fit to Width while Fit to Page is
+active, and Fit to Page while Fit to Width or a manual percentage is active.
+The visible icon, tooltip and accessible label all name that action.
 
-**A chapter opens at 100%**, the page at the size the stylesheet says.
-**Fit to page is 71% on the trim and 66% on the press sheet**, and measures
-nothing: it used to measure the stage, which put it anywhere from 46% to
-116%, so the same book came up a different size on every screen and no two
-people describing a page were describing the same one. Two numbers because
-there are two sheets — 209 × 266 against 189 × 246 — and one number would
-make the page jump larger the moment Bleed went on, which is the one moment
-it should sit still. Fit to width still measures, because the width of the
-stage is the whole question there.
+**Every document opens at Fit to Page**, including chapters, bound books
+and covers. The viewer measures the available stage and the rendered sheet
+so the complete page or wrap is visible. Fit follows window resizing and
+sheet changes; manual percentages and Ctrl+0 remain available.
 
 **The level is typed, not chosen.** Any percentage from 10 to 500 — a
 proof gets read at whatever makes one figure legible, and 137 was never

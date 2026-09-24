@@ -521,23 +521,21 @@ const zoomBar = (pager = true, switches = '') => `
                the list. Type it. -->
           <input class="zoom__level" id="zoom-level" type="text"
                  inputmode="numeric" autocomplete="off" spellcheck="false"
-                 aria-label="Zoom" title="Zoom — type any percentage" value="100%">
+                 aria-label="Zoom" title="Zoom — type any percentage" value="" placeholder="Fit">
           <button class="zoom__step" id="zoom-in" title="Zoom in">+</button>
           <span class="zoom__rule"></span>
           <!-- One button, two icons: a portrait sheet with the arrows
                running down it, and a landscape one with them running
-               across. The button shows the mode it is in rather than
-               the mode it would give, so the icon and the tooltip say
-               the same thing — a control that names its own opposite
-               has to be read twice. app.js hides one of the two. -->
+               across. The icon names the next action; documents open
+               fitted to the page, so Fit to Width is offered first. -->
           <button class="zoom__step" id="fit-toggle"
-                  title="Fit to page — click for fit to width">
-            <svg data-fit="fit" viewBox="0 0 20 20" aria-hidden="true">
+                  title="Fit to width" aria-label="Fit to width">
+            <svg data-fit="fit" viewBox="0 0 20 20" aria-hidden="true" hidden>
               <rect x="5.2" y="2.4" width="9.6" height="15.2" rx="1.7" />
               <path class="solid" d="M10 5.1 12 7.6H8z" />
               <path class="solid" d="M10 14.9 8 12.4h4z" />
             </svg>
-            <svg data-fit="fitw" viewBox="0 0 20 20" aria-hidden="true" hidden>
+            <svg data-fit="fitw" viewBox="0 0 20 20" aria-hidden="true">
               <rect x="2.4" y="5.2" width="15.2" height="9.6" rx="1.7" />
               <path class="solid" d="M5.1 10 7.6 8v4z" />
               <path class="solid" d="M14.9 10 12.4 12V8z" />

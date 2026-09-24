@@ -44,9 +44,8 @@
   const state = {
     sheet: 'trim',
     view: 'pages',
-    /* A chapter opens at 100% — the page at the size the stylesheet
-       says, before anything has been decided about the window. */
-    zoom: '1',
+    // Every newly opened document starts with its whole sheet visible.
+    zoom: 'fit',
   };
   /* Where each page starts on the stage (see measurePages). Declared up
      here because applyZoom clears it, and applyZoom runs before the
@@ -176,17 +175,10 @@
     syncPage();
   }
 
-  /* The fit button shows the mode it is in, not the mode it would give:
-     a sheet with the arrows running down it for fit to page, across it
-     for fit to width, and the tooltip saying the same thing the picture
-     does. A control that names its own opposite has to be read twice.
-
-     At a fixed percentage neither fit is in force, so it shows the page
-     icon unpressed — which is also what clicking will give, since the
-     toggle returns to fit to page from anywhere that is not fit to
-     width. */
+  // The icon and accessible label describe the action the next click takes.
+  const nextFit = () => state.zoom === 'fit' ? 'fitw' : 'fit';
   function fitIcon() {
-    const wide = state.zoom === 'fitw';
+    const target = nextFit();
     for (const svg of document.querySelectorAll('#fit-toggle svg')) {
       /* toggleAttribute, not .hidden. `hidden` is an IDL property of
          HTMLElement and an SVG element is not one, so `svg.hidden = true`
@@ -194,15 +186,15 @@
          the CSS that keys off it — untouched. The two icons came out
          exactly inverted, and a check that read `.hidden` back agreed
          with itself and passed. */
-      svg.toggleAttribute('hidden', (svg.dataset.fit === 'fitw') !== wide);
+      svg.toggleAttribute('hidden', svg.dataset.fit !== target);
     }
     /* No pressed state. The icon and the tooltip already say which fit
        this is, and lighting the button as well says it a third time —
        and says it in the accent, which on this bar means a switch that
        is on. Bleed and Spreads are on or off; a fit is neither. */
-    set('fit-toggle', 'title', wide
-      ? 'Fit to width — click for fit to page'
-      : 'Fit to page — click for fit to width');
+    const label = target === 'fitw' ? 'Fit to width' : 'Fit to page';
+    set('fit-toggle', 'title', label);
+    $('fit-toggle')?.setAttribute('aria-label', label);
   }
 
   // The book keeps growing after load — webfonts arrive, KaTeX lays out,
@@ -359,7 +351,7 @@
   /* Fit to width from fit to page, and fit to page from anywhere else —
      so the button is a way back from a percentage as well as a toggle
      between the two fits. */
-  on('fit-toggle', 'onclick', () => setZoom(state.zoom === 'fit' ? 'fitw' : 'fit'));
+  on('fit-toggle', 'onclick', () => setZoom(nextFit()));
 
   /* The level is typed. Any number between MIN and MAX, in or out of
      the ladder — a proof is read at whatever percentage makes one
