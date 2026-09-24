@@ -65,16 +65,19 @@
 .page--science-v2 .v2-table-rule {stroke:var(--v2-rule);stroke-width:.8;fill:none;}
 
 /* Class 7 Chapters 2–12: the approved Chapter 1 table treatment. */
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) {
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) {
  --v2-table-wash:#eeeaf4; --v2-table-ink:#514762;
  --v2-table-border:#b9afc9; --v2-table-divider:#d4cddd; --v2-table-radius:8px;
 }
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .se-table-head {
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .se-table-head {
  fill:var(--v2-table-wash);
  clip-path:inset(0 round var(--v2-table-radius) var(--v2-table-radius) 0 0);
 }
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-heading,
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-caption {fill:var(--v2-table-ink);}
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-frame {stroke:var(--v2-table-border);rx:var(--v2-table-radius);ry:var(--v2-table-radius);}
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-rule {stroke:var(--v2-table-divider);}
-.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12) .v2-table-rule:has(+ .v2-table-frame) {display:none;}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .v2-table-heading,
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .v2-table-caption {fill:var(--v2-table-ink);}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .v2-table-frame {stroke:var(--v2-table-border);rx:var(--v2-table-radius);ry:var(--v2-table-radius);}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .v2-table-rule {stroke:var(--v2-table-divider);}
+.page--science-v2:is(.page--g7-ch02,.page--g7-ch03,.page--g7-ch04,.page--g7-ch05,.page--g7-ch06,.page--g7-ch07,.page--g7-ch08,.page--g7-ch09,.page--g7-ch10,.page--g7-ch11,.page--g7-ch12,.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .v2-table-rule:has(+ .v2-table-frame) {display:none;}
+
+/* Class 6: short figure labels receive the approved subtle emphasis. */
+.page--science-v2:is(.page--g6-modern,.page--g6-ch05,.page--g6-ch06,.page--g6-ch07,.page--g6-ch08,.page--g6-ch09,.page--g6-ch11,.page--g6-ch12) .se-caption {font-weight:600;}

@@ -11,7 +11,15 @@ number subsequent activities by chapter and sequence (1.2, 1.3, etc.). This
 user-requested treatment now applies throughout Class 7 Science, Chapters 1–12,
 and supersedes the unnumbered Investigate label below for that volume. Restart
 the sequence in each chapter: Activity 2.1, Activity 2.2, etc. Preserve procedure
-step numbers and the existing activity icon. Class 6 labels are unchanged.
+step numbers and the existing activity icon. The same treatment now applies to
+Class 6 Science, Chapters 1–12: chapter-sequence Activity labels, justified wide
+prose with natural last lines and no split words, semibold short captions, and
+the same rounded lavender-grey tables. Narrow reference columns retain natural
+spacing. Reserve generous space inside and between tables, Activities and Think
+It Through panels; move whole components instead of reducing type or artwork.
+Class 6 supplementary illustrations follow the explicit page/block plan in
+`assets/design-history/science-g6-format-rollout/page-art.json`; never rotate
+stock art to meet image coverage. Their figure area remains 720 × 280 units.
 
 Chapter 1 tables now use an 8-unit corner radius, 10-unit vertical cell padding,
 12 units before the table title, 28 units after the complete table block and

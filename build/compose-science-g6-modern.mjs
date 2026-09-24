@@ -25,6 +25,7 @@ const text=s=>s.replace(/<[^>]*>/g,' ').replaceAll('&#x27;',"'").replaceAll('&am
 const unit=189/1052*96/25.4;
 const titles={1:['The Wonderful','World of Science'],2:['Diversity in the','Living World'],3:['Food on','Our Plate'],4:['Exploring','Magnets'],10:['The Living','World']};
 let currentChapter;
+let activityNumbers=new Map();
 const icon=kind=>{
  const shared=kind==='think'&&['1','2','3','4','10'].includes(currentChapter);
  const d=shared?v2PanelIconPath('think'):currentChapter==='10'?v2PanelIconPath(kind):kind==='setup'?'M16 16l6 6M18 10A8 8 0 1 1 2 10A8 8 0 1 1 18 10':'M8 8a4 4 0 1 1 6 3.5c-2 1-2 2-2 3.5M12 19h.01';
@@ -39,7 +40,7 @@ function art(a,opener=false){
  const labelled=/<text\b/.test(a.svg||''),limit=opener?(currentChapter==='10'?520:390):labelled?900:400;
  const scale=Math.min(874/a.w,limit/a.h,1),dimensions=`width="${a.w*scale*unit}" height="${a.h*scale*unit}"`;
  if(a.kind==='image')return `<svg class="g6-art-image${opener?' g6-art-opener':''}" ${dimensions} viewBox="0 0 ${a.w} ${a.h}" xmlns="http://www.w3.org/2000/svg"><image href="${E(a.src)}" x="0" y="0" width="${a.w}" height="${a.h}" preserveAspectRatio="xMidYMid meet"><title>${E(a.alt)}</title></image></svg>`;
- return a.svg.replace(/ data-original-bounds="[^"]*"/g,'').replace(/ data-justified="[^"]*"/g,'').replace(/\bdx="[^"]*"/g,'').replace(/<svg\b([^>]*)>/,(_,attrs)=>'<svg '+attrs.replace(/\s(?:width|height|x|y)="[^"]*"/g,'').replace(/class="[^"]*"/,'')+` ${dimensions} class="${currentChapter==='10'?(attrs.match(/class="([^"]*)"/)?.[1]||'')+' ':''}g6-source-art${labelled?' g6-art-labelled':''}${opener?' g6-art-opener':''}">`);
+ return a.svg.replace('<svg','<svg data-instructional-figure="original"').replace(/ data-original-bounds="[^"]*"/g,'').replace(/ data-justified="[^"]*"/g,'').replace(/\bdx="[^"]*"/g,'').replace(/<svg\b([^>]*)>/,(_,attrs)=>'<svg '+attrs.replace(/\s(?:width|height|x|y)="[^"]*"/g,'').replace(/class="[^"]*"/,'')+` ${dimensions} class="${currentChapter==='10'?(attrs.match(/class="([^"]*)"/)?.[1]||'')+' ':''}g6-source-art${labelled?' g6-art-labelled':''}${opener?' g6-art-opener':''}">`);
 }
 function render(b,inside=false){
  let html='';
@@ -60,19 +61,14 @@ function render(b,inside=false){
    if(b.kind==='setup'&&x.step){step++;return `<div class="g6-block"><div class="g6-step"><span class="g6-step__number">${step}.</span><p>${x.html}</p></div></div>`;}
    return render(x,true);
   }).join('');
-  html=`<div class="g6-panel g6-panel--${b.kind}">${b.kind==='glossary'?'':`<div class="g6-panel__title">${icon(b.kind)}${b.kind==='setup'?'Investigate':'Think It Through'}</div>`}<div class="g6-panel__body">${children}</div></div>`;
+  html=`<div class="g6-panel g6-panel--${b.kind}">${b.kind==='glossary'?'':`<div class="g6-panel__title">${icon(b.kind)}${b.kind==='setup'?`Activity ${currentChapter}.${activityNumbers.get(b.id)}`:'Think It Through'}</div>`}<div class="g6-panel__body">${children}</div></div>`;
  }else if(b.type==='reference-group')html=`<div class="g6-reference-columns">${b.blocks.map(x=>render(x,true)).join('')}</div>`;
  else if(b.type==='media')html=`<div class="g6-media"><div>${b.blocks.map(x=>render(x,true)).join('')}</div>${render(b.figure,true)}</div>`;
  else if(b.type==='summary-group'){
-  const items=[...b.blocks];let lead='';
-  if(currentChapter==='3'){
-   const first=items.splice(0,2),asset=pageIllustration('',6,3);
-   lead=render(first[0],true)+`<div class="g6-summary-illustrated-lead"><div>${render(first[1],true)}</div><svg width="${190*unit}" height="${140*unit}" viewBox="0 0 190 140" xmlns="http://www.w3.org/2000/svg"><image href="../../${asset.file}" width="190" height="140" preserveAspectRatio="xMidYMid meet"><title>${E(asset.caption)}</title></image></svg></div>`;
-  }
-  html=`<div class="g6-summary">${lead}${items.map(x=>render(x,true)).join('')}</div>`;
+  html=`<div class="g6-summary">${b.blocks.map(x=>render(x,true)).join('')}</div>`;
  }
  else throw Error('Unknown content type '+b.type);
- return `<div class="g6-block${b.type==='heading'?' g6-block--heading':''}${b.intro?' g6-intro':''}"${b.id?` data-block="${b.id}"`:''}>${html}</div>`;
+ return `<div class="g6-block${b.type==='panel'?' g6-block--panel':b.type==='table'?' g6-block--table':''}${b.type==='heading'?' g6-block--heading':''}${b.intro?' g6-intro':''}"${b.id?` data-block="${b.id}"`:''}>${html}</div>`;
 }
 const styles=`<link rel="stylesheet" href="../../css/book.css"><link rel="stylesheet" href="../../css/reference-fonts.css"><link rel="stylesheet" href="../../css/food-reference.css"><link rel="stylesheet" href="../../css/science-editorial.css"><link rel="stylesheet" href="../../css/science-locked.css"><link rel="stylesheet" href="../../css/edition-science-tall.css"><link rel="stylesheet" href="../../css/science-v2-fonts.css"><link rel="stylesheet" href="../../css/science-v2.css"><link rel="stylesheet" href="../../css/palette-science-g6-modern.css">`;
 const heading=s=>({type:'heading',level:2,html:s});
@@ -82,7 +78,7 @@ for(const raw of chapters){
  currentChapter=String(number);resetPageIllustrations(6,number);
  const blocks=structuredClone(ch.blocks),dir='pages/class-6/'+ch.dir,record=history+'/'+ch.dir;
  await fs.mkdir(record,{recursive:true});
- await fs.writeFile(record+'/editorial-ledger.json',JSON.stringify(ledger,null,2));
+ await writeSource(record+'/editorial-ledger.json',JSON.stringify(ledger,null,2));
  // The content model is deliberately independent of the old compositor.
  const openerArtIndex=blocks.findIndex(b=>b.type==='figure');
  const openerArt=blocks.splice(openerArtIndex,1)[0];openerArt.opener=true;
@@ -125,12 +121,15 @@ for(const raw of chapters){
   groups[i].role='reference';groups[i].blocks.push(...groups[i+1].blocks);groups.splice(i+1,1);
  }
  const all=[openerArt,...opening,...groups.flatMap(g=>g.blocks)];
+ activityNumbers=new Map();
+ const numberActivities=b=>{if(b.type==='panel'&&b.kind==='setup')activityNumbers.set(b.id,activityNumbers.size+1);for(const child of b.blocks||[])numberActivities(child);};
+ all.forEach(numberActivities);
  const probe=`build/class-6/${ch.dir}-modern-measure.html`;
  await fs.writeFile(probe,`<!doctype html><html><meta charset="utf-8">${styles}<body><section class="page page--food page--science-editorial page--science-v2 page--g6-modern" data-science-chapter="${number}"><div class="g6-measure">${all.map(b=>render(b)).join('')}</div></section><script>onload=async()=>{await document.fonts.ready;const out=[...document.querySelector('.g6-measure').children].map(e=>({id:e.dataset.block,h:e.getBoundingClientRect().height}));document.body.textContent=JSON.stringify(out);};</script></body></html>`);
  const {stdout}=await promisify(execFile)('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--disable-gpu','--virtual-time-budget=15000','--dump-dom',pathToFileURL(path.resolve(probe)).href],{maxBuffer:8e6});
  const measured=JSON.parse(stdout.match(/<body>([\s\S]*?)<\/body>/)[1]);await fs.unlink(probe);
  const heights=new Map(measured.map(x=>[x.id,x.h/unit]));
- await fs.writeFile(record+'/measured-blocks.json',JSON.stringify(all.map(b=>({id:b.id,type:b.type,height:heights.get(b.id)})),null,2));
+ await writeSource(record+'/measured-blocks.json',JSON.stringify(all.map(b=>({id:b.id,type:b.type,height:heights.get(b.id)})),null,2));
  const pages=[];let openerHeight=0;const first=[openerArt];
  for(const b of opening){if(openerHeight+heights.get(b.id)+heights.get(openerArt.id)>1067)break;first.push(b);openerHeight+=heights.get(b.id);}
  const left=opening.slice(first.length-1);if(left.length)groups[0].blocks.unshift(...left);
@@ -173,6 +172,6 @@ for(const raw of chapters){
  }
  for(const file of await fs.readdir(dir))if(/^p\d+\.html$/.test(file)&&!map.some(p=>p.file===file))await fs.unlink(dir+'/'+file);
  await writeSource(dir+'/chapter.json',JSON.stringify({...ch.config,edition:'science-tall',design:'science-editorial',profile:'science-v2',palette:'science-g6-modern'},null,2)+'\n');
- await fs.writeFile(record+'/page-map.json',JSON.stringify(map,null,2));
+ await writeSource(record+'/page-map.json',JSON.stringify(map,null,2));
  console.log(`Chapter ${number}: ${pages.length} pages; ${groups.map(g=>g.role+':'+g.blocks.length).join(', ')}`);
 }

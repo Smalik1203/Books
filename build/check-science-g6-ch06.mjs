@@ -10,7 +10,7 @@ const norm=s=>s.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;'
 const pages=html.map(s=>norm([...s.replace(/<g\b[^>]*data-page-illustration=[\s\S]*?<\/g>/g,'').replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' ')));
 const text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing content: '+s);
 const together=(id,strings)=>assert.ok(pages.some(p=>strings.every(s=>p.includes(norm(s)))),'Content split: '+id);
-assert.equal(files.length,26,'Reviewed extent with an image on every page');
+assert.equal(files.length,28,'Reviewed extent with an image on every page');
 html.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));});
 opener.forEach(has);glossary.flat().forEach(has);summary.forEach(has);
 together('summary',summary);together('glossary',glossary.flat());
@@ -43,4 +43,4 @@ const ids=new Set(['opener',...lesson.map(b=>b.id),...games.map(g=>g.id),...exer
 for(const p of [...coverage.points,...coverage.corrections])for(const id of p.targets)assert.ok(ids.has(id));
 assert.ok(!/textLength=|lengthAdjust=|--head|--tail|style=/.test(html.join('')));
 const cfg=JSON.parse(await fs.readFile(dir+'/chapter.json','utf8'));assert.equal(cfg.subject,'Science');assert.equal(cfg.edition,'science-tall');
-console.log('Chapter 6 passed: 21 pages, all 8 numbered activities, 2 games, 10 questions and 4 projects; complete definitions, summary, tables and panels.');
+console.log('Chapter 6 passed: 28 pages, all 8 numbered activities, 2 games, 10 questions and 4 projects; complete definitions, summary, tables and panels.');

@@ -6,7 +6,7 @@ const originalLabels=new Set(['The setup','What you saw','Work it out in your he
 export function scienceContract(file,html,vocabulary='current'){
  if(!['current','september-2026-original'].includes(vocabulary))throw Error('Unknown science vocabulary: '+vocabulary);
  const labels=vocabulary==='september-2026-original'?originalLabels:allowed;
- const chapter=html.match(/\bpage--(?:v2-)?g7-ch(0[1-9]|1[0-2])\b/)?.[1];
+ const chapter=html.match(/\bpage--(?:v2-)?g[67]-ch(0[1-9]|1[0-2])\b/)?.[1] || (/page--g6-modern/.test(html)?html.match(/data-science-chapter="(\d+)"/)?.[1]:null);
  const numberedActivity=label=>vocabulary==='current'&&chapter&&new RegExp(`^Activity ${+chapter}\\.[1-9]\\d*$`).test(label);
  const issues=[],plain=s=>s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
  for(const m of html.matchAll(/<(?:text|div)\b[^>]*class="[^"]*\b(?:se-cue-title|se-activity-tab-text|science-feature__title)\b[^"]*"[^>]*>([\s\S]*?)<\/(?:text|div)>/g))if(!labels.has(plain(m[1]))&&!numberedActivity(plain(m[1])))issues.push('unlocked feature label: '+plain(m[1]));

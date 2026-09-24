@@ -28,7 +28,7 @@
       },
       "opener": {
         "bandBounds": {
-          "left": -16.999999504623922,
+          "left": -16.999999504623926,
           "top": -16.99999991465431,
           "right": 1068.9999966956375,
           "bottom": 300.0000062599209
@@ -59,7 +59,7 @@
             "text": "Treasures",
             "left": 283.99999890163804,
             "top": 207,
-            "right": 502.5145363748975,
+            "right": 502.51453637489743,
             "bottom": 243
           }
         ],
@@ -68,7 +68,7 @@
         "alignedBaseline": true,
         "centredLabel": true,
         "numberTitleGap": 76.00121772715784,
-        "decorationGap": 396.89674875368576,
+        "decorationGap": 396.8967487536858,
         "headerImageGap": 35.99998412199085,
         "imageIntroGap": 35.935520692426394,
         "sharedReadingGrid": true
@@ -84,7 +84,7 @@
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1386
+        "bottom": 1333.4
       },
       "blocks": [
         {
@@ -98,7 +98,7 @@
           "id": "resources",
           "left": 87.5,
           "top": 169,
-          "right": 955.9,
+          "right": 963,
           "bottom": 297.4
         },
         {
@@ -106,33 +106,40 @@
           "left": 89,
           "top": 314,
           "right": 963,
-          "bottom": 684
+          "bottom": 694
         },
         {
           "id": "air-mixture",
           "left": 87.5,
-          "top": 705,
-          "right": 952.7,
-          "bottom": 833.4
+          "top": 725,
+          "right": 963,
+          "bottom": 853.4
         },
         {
           "id": "air-grid",
           "left": 89,
-          "top": 850,
-          "right": 724.5,
-          "bottom": 1165.2
+          "top": 870,
+          "right": 744.5,
+          "bottom": 1185.2
+        },
+        {
+          "id": "air-percent",
+          "left": 87.5,
+          "top": 1205,
+          "right": 963,
+          "bottom": 1333.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.545575014439,
-        "right": 114.70875759294637,
+        "right": 114.70875759294636,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 5.2,
-      "occupiedPercent": 97.8,
+      "bottomGapMM": 14.7,
+      "occupiedPercent": 93.7,
       "footerClearanceMM": 3.3
     },
     {
@@ -140,45 +147,45 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1329.4
+        "bottom": 1337.4
       },
       "blocks": [
         {
-          "id": "air-percent",
-          "left": 87.5,
-          "top": 111,
-          "right": 938.1,
-          "bottom": 239.4
-        },
-        {
           "id": "wind-heading",
           "left": 89,
-          "top": 268.5,
+          "top": 112.5,
           "right": 403.6,
-          "bottom": 308.3
+          "bottom": 152.3
         },
         {
           "id": "wind",
           "left": 89,
-          "top": 315,
-          "right": 951.5,
-          "bottom": 411.4
+          "top": 159,
+          "right": 963,
+          "bottom": 255.4
         },
         {
           "id": "pinwheel-task",
           "left": 89,
-          "top": 428,
+          "top": 272,
           "right": 963,
-          "bottom": 1180
+          "bottom": 1034
         },
         {
           "id": "wind-energy",
           "left": 87.5,
-          "top": 1201,
-          "right": 948.8,
-          "bottom": 1329.4
+          "top": 1065,
+          "right": 963,
+          "bottom": 1193.4
+        },
+        {
+          "id": "wind-farms",
+          "left": 87.5,
+          "top": 1209,
+          "right": 963,
+          "bottom": 1337.4
         }
       ],
       "collisions": [],
@@ -189,8 +196,8 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 15.4,
-      "occupiedPercent": 93.4,
+      "bottomGapMM": 13.9,
+      "occupiedPercent": 94,
       "footerClearanceMM": 3.3
     },
     {
@@ -198,89 +205,75 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 111.7,
         "right": 963,
-        "bottom": 1314
+        "bottom": 1303.4
       },
       "blocks": [
         {
-          "id": "wind-farms",
-          "left": 87.5,
-          "top": 111,
-          "right": 954.9,
-          "bottom": 239.4
-        },
-        {
           "id": "water-heading",
           "left": 89,
-          "top": 267.7,
+          "top": 111.7,
           "right": 632.8,
-          "bottom": 317.8
+          "bottom": 161.8
         },
         {
           "id": "water-uses",
           "left": 89,
-          "top": 325,
-          "right": 952,
-          "bottom": 453.4
+          "top": 169,
+          "right": 963,
+          "bottom": 297.4
         },
         {
           "id": "freshwater",
           "left": 87.5,
-          "top": 469,
-          "right": 942.3,
-          "bottom": 597.4
+          "top": 313,
+          "right": 963,
+          "bottom": 441.4
         },
         {
           "id": "water-task",
           "left": 89,
-          "top": 614,
+          "top": 458,
           "right": 963,
-          "bottom": 1092
+          "bottom": 946
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.5455750144392,
-        "right": 114.70875759294637,
+        "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 18.1,
-      "occupiedPercent": 92.2,
+      "bottomGapMM": 20,
+      "occupiedPercent": 91.4,
       "footerClearanceMM": 3.3
     },
     {
       "page": 5,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111.5,
+        "left": -18.2,
+        "top": -6250.8,
         "right": 963,
-        "bottom": 1312
+        "bottom": 1321.4
       },
       "blocks": [
         {
           "id": "water-checklist",
-          "left": 89,
-          "top": 111.5,
+          "left": -18.2,
+          "top": -6250.8,
           "right": 963,
-          "bottom": 806.2
+          "bottom": 826.2
         },
         {
           "id": "water-results",
           "left": 87.5,
-          "top": 823,
-          "right": 954.6,
-          "bottom": 951.4
-        },
-        {
-          "id": "pollution",
-          "left": 87.5,
-          "top": 967,
-          "right": 954,
-          "bottom": 1095.4
+          "top": 851,
+          "right": 963,
+          "bottom": 979.4
         }
       ],
       "collisions": [],
@@ -291,8 +284,8 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 18.5,
-      "occupiedPercent": 92.1,
+      "bottomGapMM": 16.8,
+      "occupiedPercent": 92.8,
       "footerClearanceMM": 3.3
     },
     {
@@ -300,116 +293,110 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112,
-        "right": 953.1,
-        "bottom": 1237.4
+        "top": 111,
+        "right": 963,
+        "bottom": 1381.4
       },
       "blocks": [
         {
+          "id": "pollution",
+          "left": 87.5,
+          "top": 111,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
           "id": "harvest-art",
           "left": 89,
-          "top": 112,
-          "right": 875.7,
-          "bottom": 517.2
+          "top": 256,
+          "right": 901.7,
+          "bottom": 661.2
         },
         {
           "id": "harvesting",
           "left": 89,
-          "top": 543,
-          "right": 933.4,
-          "bottom": 703.4
+          "top": 687,
+          "right": 963,
+          "bottom": 847.4
         },
         {
           "id": "traditional",
           "left": 89,
-          "top": 719,
-          "right": 941.5,
-          "bottom": 879.4
+          "top": 863,
+          "right": 963,
+          "bottom": 1023.4
         },
         {
           "id": "sun-heading",
           "left": 89,
-          "top": 907.7,
+          "top": 1051.7,
           "right": 509.9,
-          "bottom": 957.8
+          "bottom": 1101.8
         },
         {
           "id": "sun-start",
           "left": 87.5,
-          "top": 965,
-          "right": 938.1,
-          "bottom": 1093.4
+          "top": 1109,
+          "right": 963,
+          "bottom": 1237.4
         },
         {
           "id": "sun-food",
           "left": 87.5,
-          "top": 1109,
-          "right": 953.1,
-          "bottom": 1237.4
+          "top": 1253,
+          "right": 963,
+          "bottom": 1381.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.5455750144392,
-        "right": 114.01842108809788,
+        "right": 114.0184210880979,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 31.9,
-      "occupiedPercent": 86.4,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 28.9,
-        "protectedGroup": [
-          {
-            "id": "solar-art",
-            "type": "figure",
-            "title": "Fig. 11.4 · A photovoltaic panel (left) and a solar water heater (right) use sunlight differently.",
-            "height": 340
-          }
-        ],
-        "requiredMM": 61.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 6,
+      "occupiedPercent": 97.4,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 112,
+        "left": -18.2,
+        "top": -9356.7,
         "right": 963,
-        "bottom": 1174
+        "bottom": 1212
       },
       "blocks": [
         {
           "id": "solar-art",
           "left": 89,
           "top": 112,
-          "right": 877.3,
+          "right": 905.3,
           "bottom": 425.2
         },
         {
           "id": "solar-table",
-          "left": 87.5,
-          "top": 451.5,
+          "left": -18.2,
+          "top": -9356.7,
           "right": 963,
-          "bottom": 826.2
+          "bottom": 846.2
         },
         {
           "id": "clouds",
           "left": 89,
-          "top": 843,
-          "right": 955.2,
-          "bottom": 971.4
+          "top": 871,
+          "right": 963,
+          "bottom": 999.4
         },
         {
           "id": "sun-think",
           "left": 89,
-          "top": 988,
+          "top": 1016,
           "right": 963,
-          "bottom": 1174
+          "bottom": 1212
         }
       ],
       "collisions": [],
@@ -420,11 +407,11 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 43.3,
-      "occupiedPercent": 81.5,
+      "bottomGapMM": 36.5,
+      "occupiedPercent": 84.4,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 39.3,
+        "remainingMM": 30.7,
         "protectedGroup": [
           {
             "id": "forest-heading",
@@ -488,7 +475,7 @@
           "id": "forest-start",
           "left": 89,
           "top": 169,
-          "right": 943.7,
+          "right": 963,
           "bottom": 297.4
         },
         {
@@ -502,30 +489,30 @@
           "id": "forest-loss",
           "left": 89,
           "top": 790,
-          "right": 946.3,
+          "right": 963,
           "bottom": 918.4
         },
         {
           "id": "forest-care",
           "left": 89,
           "top": 934,
-          "right": 950.4,
+          "right": 963,
           "bottom": 1094.4
         },
         {
           "id": "forest-action",
           "left": 87.5,
           "top": 1110,
-          "right": 940.3,
+          "right": 963,
           "bottom": 1270.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 99.98157882284575,
+        "left": 99.98157882284573,
         "top": 1457.5448559139131,
-        "right": 114.01842108809788,
+        "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
       "bottomGapMM": 26,
@@ -539,7 +526,7 @@
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1217.4
+        "bottom": 1237.4
       },
       "blocks": [
         {
@@ -553,7 +540,7 @@
           "id": "soil-start",
           "left": 87.5,
           "top": 169,
-          "right": 943.3,
+          "right": 963,
           "bottom": 297.4
         },
         {
@@ -561,14 +548,14 @@
           "left": 89,
           "top": 314,
           "right": 963,
-          "bottom": 1068
+          "bottom": 1078
         },
         {
           "id": "soil-evidence",
           "left": 87.5,
-          "top": 1089,
-          "right": 946.4,
-          "bottom": 1217.4
+          "top": 1109,
+          "right": 963,
+          "bottom": 1237.4
         }
       ],
       "collisions": [],
@@ -579,11 +566,11 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 35.5,
-      "occupiedPercent": 84.8,
+      "bottomGapMM": 31.9,
+      "occupiedPercent": 86.4,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 32.5,
+        "remainingMM": 28.9,
         "protectedGroup": [
           {
             "id": "soil-formation",
@@ -606,17 +593,17 @@
       "page": 10,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
+        "left": -18.2,
+        "top": -14015.6,
         "right": 963,
-        "bottom": 1265.4
+        "bottom": 1293.4
       },
       "blocks": [
         {
           "id": "soil-formation",
           "left": 87.5,
           "top": 111,
-          "right": 924.7,
+          "right": 963,
           "bottom": 271.4
         },
         {
@@ -628,29 +615,29 @@
         },
         {
           "id": "rocks-table",
-          "left": 89,
-          "top": 557.5,
+          "left": -18.2,
+          "top": -14015.6,
           "right": 963,
-          "bottom": 1088.2
+          "bottom": 1108.2
         },
         {
           "id": "minerals",
           "left": 89,
-          "top": 1105,
-          "right": 951.3,
-          "bottom": 1265.4
+          "top": 1133,
+          "right": 963,
+          "bottom": 1293.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.5448559139131,
-        "right": 121.72533603047486,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 26.9,
-      "occupiedPercent": 88.5,
+      "bottomGapMM": 21.8,
+      "occupiedPercent": 90.7,
       "footerClearanceMM": 3.3
     },
     {
@@ -660,14 +647,14 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1234
+        "bottom": 1203.4
       },
       "blocks": [
         {
           "id": "rock-time",
           "left": 87.5,
           "top": 111,
-          "right": 946.6,
+          "right": 963,
           "bottom": 271.4
         },
         {
@@ -682,14 +669,7 @@
           "left": 89,
           "top": 358,
           "right": 963,
-          "bottom": 836
-        },
-        {
-          "id": "fossil-origin",
-          "left": 89,
-          "top": 857,
-          "right": 914.5,
-          "bottom": 1017.4
+          "bottom": 846
         }
       ],
       "collisions": [],
@@ -700,12 +680,18 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 32.5,
-      "occupiedPercent": 86.1,
+      "bottomGapMM": 38,
+      "occupiedPercent": 83.8,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 28.9,
+        "remainingMM": 31.8,
         "protectedGroup": [
+          {
+            "id": "fossil-origin",
+            "type": "body",
+            "title": "Petrol and diesel are made by refining **petroleum**, also called crude oil. Coal, petroleum and nat",
+            "height": 176
+          },
           {
             "id": "fossil-time",
             "type": "body",
@@ -716,10 +702,10 @@
             "id": "fuel-table",
             "type": "table",
             "title": "Table 11.4 · Fossil fuels and some uses",
-            "height": 552
+            "height": 580
           }
         ],
-        "requiredMM": 125,
+        "requiredMM": 161.7,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
@@ -727,51 +713,44 @@
       "page": 12,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
+        "left": -18.2,
+        "top": -17121.5,
         "right": 963,
-        "bottom": 1296
+        "bottom": 1337.4
       },
       "blocks": [
         {
+          "id": "fossil-origin",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 271.4
+        },
+        {
           "id": "fossil-time",
           "left": 87.5,
-          "top": 111,
-          "right": 924.9,
-          "bottom": 239.4
+          "top": 287,
+          "right": 963,
+          "bottom": 415.4
         },
         {
           "id": "fuel-table",
-          "left": 89,
-          "top": 255.5,
+          "left": -18.2,
+          "top": -17121.5,
           "right": 963,
-          "bottom": 790.2
-        },
-        {
-          "id": "fuel-effects",
-          "left": 89,
-          "top": 807,
-          "right": 955.2,
-          "bottom": 935.4
-        },
-        {
-          "id": "cooking-effects",
-          "left": 89,
-          "top": 951,
-          "right": 921,
-          "bottom": 1079.4
+          "bottom": 986.2
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 121.72533603047486,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 21.4,
-      "occupiedPercent": 90.9,
+      "bottomGapMM": 13.9,
+      "occupiedPercent": 94,
       "footerClearanceMM": 3.3
     },
     {
@@ -781,29 +760,29 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1184
+        "bottom": 869.4
       },
       "blocks": [
         {
-          "id": "transport-care",
-          "left": 87.5,
+          "id": "fuel-effects",
+          "left": 89,
           "top": 111,
-          "right": 949,
+          "right": 963,
           "bottom": 239.4
         },
         {
-          "id": "renew-heading",
+          "id": "cooking-effects",
           "left": 89,
-          "top": 267.7,
-          "right": 744,
-          "bottom": 317.8
+          "top": 255,
+          "right": 963,
+          "bottom": 383.4
         },
         {
-          "id": "renew-table",
-          "left": 89,
-          "top": 325.5,
+          "id": "transport-care",
+          "left": 87.5,
+          "top": 399,
           "right": 963,
-          "bottom": 966.2
+          "bottom": 527.4
         }
       ],
       "collisions": [],
@@ -814,11 +793,67 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 41.5,
-      "occupiedPercent": 82.3,
+      "bottomGapMM": 98,
+      "occupiedPercent": 58.1,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 37.9,
+        "remainingMM": 91.8,
+        "protectedGroup": [
+          {
+            "id": "renew-heading",
+            "type": "heading",
+            "title": "11.7 Renewable Does Not Mean Endless",
+            "height": 58
+          },
+          {
+            "id": "renew-table",
+            "type": "table",
+            "title": "Table 11.5 · How quickly is a resource replaced?",
+            "height": 686
+          }
+        ],
+        "requiredMM": 133.7,
+        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+      }
+    },
+    {
+      "page": 14,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": -18.2,
+        "top": -20227.4,
+        "right": 963,
+        "bottom": 1181.4
+      },
+      "blocks": [
+        {
+          "id": "renew-heading",
+          "left": 89,
+          "top": 111.7,
+          "right": 744,
+          "bottom": 161.8
+        },
+        {
+          "id": "renew-table",
+          "left": -18.2,
+          "top": -20227.4,
+          "right": 963,
+          "bottom": 830.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047485,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 42,
+      "occupiedPercent": 82.1,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 35.8,
         "protectedGroup": [
           {
             "id": "renew-explain",
@@ -830,28 +865,28 @@
             "id": "renew-think",
             "type": "panel",
             "title": "A town pumps underground water faster than local rain can replace it. Someone says, “Water is renewa",
-            "height": 240
+            "height": 260
           }
         ],
-        "requiredMM": 74.7,
+        "requiredMM": 78.3,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 14,
+      "page": 15,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 728
+        "bottom": 873.4
       },
       "blocks": [
         {
           "id": "renew-explain",
           "left": 87.5,
           "top": 111,
-          "right": 931.9,
+          "right": 963,
           "bottom": 271.4
         },
         {
@@ -859,22 +894,22 @@
           "left": 89,
           "top": 288,
           "right": 963,
-          "bottom": 506
+          "bottom": 516
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 121.72533603047486,
+        "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 123.4,
-      "occupiedPercent": 47.3,
+      "bottomGapMM": 97.3,
+      "occupiedPercent": 58.4,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 119.8,
+        "remainingMM": 91.1,
         "protectedGroup": [
           {
             "id": "daily-heading",
@@ -886,39 +921,21 @@
             "id": "daily-task",
             "type": "activity",
             "title": "1. List these activities in your notebook: washing clothes, making clay toys, collecting firewood, f",
-            "height": 500
-          },
-          {
-            "id": "daily-evidence",
-            "type": "body",
-            "title": "A useful plan links an action to a result that can be checked. “Save nature” is too broad to measure",
-            "height": 144
-          },
-          {
-            "id": "shared",
-            "type": "body",
-            "title": "Ajji’s treasures connect. Trees depend on soil, water and air; people depend on those resources too.",
-            "height": 176
-          },
-          {
-            "id": "page-illustration",
-            "type": "figure",
-            "title": "A pinwheel.",
-            "height": 220
+            "height": 520
           }
         ],
-        "requiredMM": null,
+        "requiredMM": 103.8,
         "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
       }
     },
     {
-      "page": 15,
+      "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1190
+        "bottom": 1335.4
       },
       "blocks": [
         {
@@ -933,61 +950,33 @@
           "left": 89,
           "top": 170,
           "right": 963,
-          "bottom": 648
+          "bottom": 658
         },
         {
           "id": "daily-evidence",
           "left": 87.5,
-          "top": 669,
-          "right": 939.3,
-          "bottom": 797.4
+          "top": 689,
+          "right": 963,
+          "bottom": 817.4
         },
         {
           "id": "shared",
           "left": 87.5,
-          "top": 813,
-          "right": 947.3,
-          "bottom": 973.4
+          "top": 833,
+          "right": 963,
+          "bottom": 993.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 40.4,
-      "occupiedPercent": 82.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 36.8,
-        "protectedGroup": [],
-        "requiredMM": 0,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 16,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 89,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1240
-      },
-      "blocks": [],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 121.03684222072397,
+        "right": 121.03684222072395,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 31.4,
-      "occupiedPercent": 86.6,
+      "bottomGapMM": 14.3,
+      "occupiedPercent": 93.9,
       "footerClearanceMM": 3.3
     },
     {
@@ -996,8 +985,8 @@
       "contentBounds": {
         "left": 89,
         "top": 111.7,
-        "right": 955.4,
-        "bottom": 1165
+        "right": 963,
+        "bottom": 1365.4
       },
       "blocks": [],
       "collisions": [],
@@ -1008,18 +997,40 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 44.9,
-      "occupiedPercent": 80.8,
+      "bottomGapMM": 8.9,
+      "occupiedPercent": 96.2,
       "footerClearanceMM": 3.3
     },
     {
       "page": 18,
       "viewBoxHeight": 1514,
       "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1235
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.5448559139113,
+        "right": 121.03684222072395,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 32.3,
+      "occupiedPercent": 86.2,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 19,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
         "left": 87.5,
         "top": 111.7,
-        "right": 958.6,
-        "bottom": 1206
+        "right": 963,
+        "bottom": 1111.4
       },
       "blocks": [
         {
@@ -1040,115 +1051,29 @@
           "id": "q1",
           "left": 91.8,
           "top": 217,
-          "right": 951.7,
+          "right": 963,
           "bottom": 313.4
         },
         {
           "id": "q2",
           "left": 91.8,
           "top": 343,
-          "right": 932.4,
+          "right": 963,
           "bottom": 471.4
         },
         {
           "id": "q3",
           "left": 91.8,
           "top": 501,
-          "right": 932.8,
+          "right": 963,
           "bottom": 629.4
         },
         {
           "id": "q4",
           "left": 91.8,
           "top": 659,
-          "right": 949.8,
+          "right": 963,
           "bottom": 755.4
-        },
-        {
-          "id": "q5",
-          "left": 91.8,
-          "top": 785,
-          "right": 958.6,
-          "bottom": 881.4
-        },
-        {
-          "id": "q6",
-          "left": 91.8,
-          "top": 911,
-          "right": 957.5,
-          "bottom": 975.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021967,
-        "top": 1457.5448559139113,
-        "right": 121.03684222072397,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 37.5,
-      "occupiedPercent": 84,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 19,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 79.8,
-        "top": 111,
-        "right": 954.6,
-        "bottom": 1150.4
-      },
-      "blocks": [
-        {
-          "id": "q7",
-          "left": 91.8,
-          "top": 111,
-          "right": 874,
-          "bottom": 207.4
-        },
-        {
-          "id": "q8",
-          "left": 91.8,
-          "top": 237,
-          "right": 939.2,
-          "bottom": 301.4
-        },
-        {
-          "id": "q9",
-          "left": 91.8,
-          "top": 331,
-          "right": 954.6,
-          "bottom": 427.4
-        },
-        {
-          "id": "q10",
-          "left": 79.8,
-          "top": 457,
-          "right": 931.8,
-          "bottom": 778.2
-        },
-        {
-          "id": "q11",
-          "left": 79.8,
-          "top": 802,
-          "right": 941.1,
-          "bottom": 866.4
-        },
-        {
-          "id": "q12",
-          "left": 79.8,
-          "top": 896,
-          "right": 951.5,
-          "bottom": 992.4
-        },
-        {
-          "id": "q13",
-          "left": 79.8,
-          "top": 1022,
-          "right": 954.6,
-          "bottom": 1150.4
         }
       ],
       "collisions": [],
@@ -1159,8 +1084,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 47.5,
-      "occupiedPercent": 79.7,
+      "bottomGapMM": 54.5,
+      "occupiedPercent": 76.7,
       "footerClearanceMM": 3.3
     },
     {
@@ -1169,52 +1094,138 @@
       "contentBounds": {
         "left": 79.8,
         "top": 111,
-        "right": 953,
-        "bottom": 1223
+        "right": 963,
+        "bottom": 1212.4
       },
       "blocks": [
         {
-          "id": "q14",
-          "left": 79.8,
+          "id": "q5",
+          "left": 91.8,
           "top": 111,
-          "right": 939.5,
-          "bottom": 682.2
+          "right": 963,
+          "bottom": 207.4
         },
         {
-          "id": "q15",
-          "left": 79.8,
-          "top": 706,
-          "right": 953,
-          "bottom": 834.4
+          "id": "q6",
+          "left": 91.8,
+          "top": 237,
+          "right": 963,
+          "bottom": 301.4
         },
         {
-          "id": "q16",
+          "id": "q7",
+          "left": 91.8,
+          "top": 331,
+          "right": 963,
+          "bottom": 427.4
+        },
+        {
+          "id": "q8",
+          "left": 91.8,
+          "top": 457,
+          "right": 963,
+          "bottom": 521.4
+        },
+        {
+          "id": "q9",
+          "left": 91.8,
+          "top": 551,
+          "right": 963,
+          "bottom": 647.4
+        },
+        {
+          "id": "q10",
           "left": 79.8,
-          "top": 864,
-          "right": 938.7,
-          "bottom": 992.4
+          "top": 677,
+          "right": 931.8,
+          "bottom": 998.2
+        },
+        {
+          "id": "q11",
+          "left": 79.8,
+          "top": 1022,
+          "right": 963,
+          "bottom": 1086.4
+        },
+        {
+          "id": "q12",
+          "left": 79.8,
+          "top": 1116,
+          "right": 963,
+          "bottom": 1212.4
         }
       ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021967,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 121.72533603047486,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 34.5,
-      "occupiedPercent": 85.3,
+      "bottomGapMM": 36.4,
+      "occupiedPercent": 84.5,
       "footerClearanceMM": 3.3
     },
     {
       "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
+        "left": 79.8,
+        "top": 111,
+        "right": 963,
+        "bottom": 1150.4
+      },
+      "blocks": [
+        {
+          "id": "q13",
+          "left": 79.8,
+          "top": 111,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
+          "id": "q14",
+          "left": 79.8,
+          "top": 269,
+          "right": 963,
+          "bottom": 840.2
+        },
+        {
+          "id": "q15",
+          "left": 79.8,
+          "top": 864,
+          "right": 963,
+          "bottom": 992.4
+        },
+        {
+          "id": "q16",
+          "left": 79.8,
+          "top": 1022,
+          "right": 963,
+          "bottom": 1150.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 47.5,
+      "occupiedPercent": 79.7,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 22,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
         "left": 87.5,
         "top": 111.7,
-        "right": 955.2,
-        "bottom": 1314
+        "right": 963,
+        "bottom": 967.4
       },
       "blocks": [
         {
@@ -1228,29 +1239,52 @@
           "id": "project-water",
           "left": 89,
           "top": 170.5,
-          "right": 955.2,
+          "right": 963,
           "bottom": 377.4
         },
         {
           "id": "project-air",
           "left": 87.5,
           "top": 406.5,
-          "right": 933.1,
+          "right": 963,
           "bottom": 613.4
-        },
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.5448559139186,
+        "right": 121.72533603047485,
+        "bottom": 1495.8355207161803
+      },
+      "bottomGapMM": 80.4,
+      "occupiedPercent": 65.6,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 23,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 112.5,
+        "right": 963,
+        "bottom": 909.4
+      },
+      "blocks": [
         {
           "id": "project-rocks",
           "left": 89,
-          "top": 642.5,
-          "right": 952.6,
-          "bottom": 849.4
+          "top": 112.5,
+          "right": 963,
+          "bottom": 319.4
         },
         {
           "id": "project-club",
           "left": 87.5,
-          "top": 878.5,
-          "right": 944,
-          "bottom": 1085.4
+          "top": 348.5,
+          "right": 963,
+          "bottom": 555.4
         }
       ],
       "collisions": [],
@@ -1258,11 +1292,11 @@
       "folioBounds": {
         "left": 930.9630791276561,
         "top": 1457.5448559139113,
-        "right": 959.0367636581603,
+        "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 18.1,
-      "occupiedPercent": 92.2,
+      "bottomGapMM": 90.8,
+      "occupiedPercent": 61.2,
       "footerClearanceMM": 3.3
     }
   ]

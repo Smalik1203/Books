@@ -22,7 +22,7 @@ for(const ch of chapters){
   for(const e of body.querySelectorAll('p,h2,h3,table,td,th,figcaption,.g6-panel')){
    const r=e.getBoundingClientRect();if(r.left<br.left-1||r.right>br.right+1)report('horizontal-overflow',{text:e.textContent.slice(0,75)});
   }
-  const p=body.querySelector('p');if(p){const s=getComputedStyle(p);if(!s.fontFamily.includes('Source Serif 4')||s.textAlign!=='left')report('body-type',{font:s.fontFamily,align:s.textAlign});}
+  const p=body.querySelector('p');if(p){const s=getComputedStyle(p);if(!s.fontFamily.includes('Source Serif 4')||!['left','justify'].includes(s.textAlign)||s.hyphens!=='none')report('body-type',{font:s.fontFamily,align:s.textAlign,hyphens:s.hyphens});}
   for(const e of body.querySelectorAll('h2,h3')){
    const s=getComputedStyle(e);if(!s.fontFamily.includes('Source Sans 3')||s.fontVariantCaps!=='normal')report('heading-type',{font:s.fontFamily,caps:s.fontVariantCaps});
    if(e.getBoundingClientRect().bottom>last.bottom-32*u)report('detached-heading',{text:e.textContent});

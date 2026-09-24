@@ -6,6 +6,7 @@ from pathlib import Path
 from lxml import etree as E
 H=Path('assets/design-history/science-g6-modern')
 source=json.loads((H/'source-pages.json').read_text(encoding='utf8'))
+summary_revisions=json.loads(Path('assets/design-history/science-g6-format-rollout/summary-revisions.json').read_text(encoding='utf8'))
 painted_replacements={
     '../../figures/class-6/living-world/bose.jpg':'../../figures/class-6/living-world/bose-illustration.png',
     '../../figures/class-6/living-world/photo-garden.png':'../../figures/class-6/living-world/opener-illustration.png',
@@ -29,6 +30,9 @@ for ch in source:
             if any(k in c for k in ['running','footer','se-title','chapter-label','chapter-number','activity-tab-text','cue-title']):continue
             checked+=1
             if n in target:continue
+            revision=next((r for r in summary_revisions if str(r['chapter'])==ch['config']['number'] and r['source']==page['file'] and norm(r['original'])==n),None)
+            if revision and all(norm(s) in target for s in revision['replacement']):
+                allowed.append({'source':page['file'],'text':s,'reason':revision['reason']});continue
             if ch['config']['number']=='10' and s.startswith('In this invented picture record,') and all(norm(part) in target for part in s.split('. ',1)):
                 allowed.append({'source':page['file'],'text':s,'reason':'The unchanged first sentence introduces the record before the panel; the unchanged interpretation follows its title.'});continue
             # Explicit naming changes in the common design system.

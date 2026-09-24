@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 const catalog=JSON.parse(fs.readFileSync(new URL('../assets/design-history/science-page-images/catalog.json',import.meta.url),'utf8'));
-const reviewed=JSON.parse(fs.readFileSync(new URL('../assets/design-history/science-g7-image-repetition/page-art.json',import.meta.url),'utf8'));
+const reviewed=Object.assign({},...['science-g7-image-repetition','science-g6-format-rollout'].map(dir=>JSON.parse(fs.readFileSync(new URL(`../assets/design-history/${dir}/page-art.json`,import.meta.url),'utf8'))));
 const hashes=new Map();
 function assetHash(file){
  if(!hashes.has(file))hashes.set(file,createHash('sha256').update(fs.readFileSync(new URL('../'+file,import.meta.url))).digest('hex'));
@@ -39,7 +39,7 @@ export function pageIllustration(html,grade,chapter,{commit=false}={}){
   const score=(item.priorityTerms?.some(t=>plain.includes(t.toLowerCase()))?30:0)+item.terms.reduce((n,t)=>n+(plain.includes(t.toLowerCase())?t.split(' ').length:0)+(plain.slice(0,500).includes(t.toLowerCase())?3*t.split(' ').length:0),0)-(commit?uses*12:0);
   if(score>best){choice=item;best=score;}
  }
- if(!choice)throw Error(`No unused, nonconsecutive illustration available for ${key}; author another subject-specific figure.`);
+ if(!choice)throw Error(`No unused, nonconsecutive illustration available for ${key} (${[...anchors].join(', ')||plain.slice(0,180)}); author another subject-specific figure.`);
  if(commit){state.used.set(choice.file,(state.used.get(choice.file)||0)+1);state.last=choice.file;state.hashes.set(assetHash(choice.file),'supplement');selections.set(key,state);}
  const caption=choice.caption.split('|');
  const markup=`<g data-page-illustration="${escape(choice.file)}"><image class="science-illustration" href="../../${choice.file}" x="166" y="10" width="720" height="280" preserveAspectRatio="xMidYMid meet"><title>${escape(caption.join(' '))}</title></image><text class="se-caption" x="526" y="318" text-anchor="middle">${caption.map((s,i)=>`<tspan x="526"${i?' dy="27"':''}>${escape(s)}</tspan>`).join('')}</text></g>`;

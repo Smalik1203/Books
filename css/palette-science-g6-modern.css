@@ -114,3 +114,23 @@
 .page--g6-modern[data-science-chapter="10"] .g6-art > svg.g6-art-opener {max-height:calc(var(--g6-u) * 520);}
 .page--g6-modern[data-science-chapter="10"] .g6-photo-pair {display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--g6-u) * 28);align-items:start;}
 .page--g6-modern[data-science-chapter="10"] .g6-photo-pair .g6-block {padding-bottom:0;}
+
+/* Approved Class 7 formatting, measured by the Class 6 flow compositor. */
+.page--g6-modern .g6-content p,.page--g6-modern .g6-measure p {
+ text-align:justify;text-align-last:left;hyphens:none;overflow-wrap:normal;word-break:normal;
+}
+.g6-block--panel {padding-top:calc(var(--g6-u) * 12);padding-bottom:calc(var(--g6-u) * 32);}
+.g6-block--table {padding-top:calc(var(--g6-u) * 12);padding-bottom:calc(var(--g6-u) * 28);}
+.g6-content > .g6-block--panel:first-child,.g6-content > .g6-block--table:first-child {padding-top:0;}
+.g6-panel__body {padding-top:calc(var(--g6-u) * 24);padding-bottom:calc(var(--g6-u) * 12);}
+.page--g6-modern .g6-reference-columns p,.page--g6-modern .g6-panel--glossary p,
+.page--g6-modern .g6-media p {text-align:left;}
+.page--g6-modern .g6-figure figcaption,.page--g6-modern .g6-caption {font-weight:600;text-align:left;}
+.page--g6-modern table {border-collapse:separate;border-spacing:0;border-color:var(--v2-table-border);border-radius:calc(var(--g6-u) * 8);overflow:hidden;}
+.page--g6-modern td,.page--g6-modern th {border:0;border-right:calc(var(--g6-u) * .8) solid var(--v2-table-divider);border-bottom:calc(var(--g6-u) * .8) solid var(--v2-table-divider);}
+.page--g6-modern tr > :last-child {border-right:0;}
+.page--g6-modern tbody tr:last-child td {border-bottom:0;}
+.page--g6-modern th {background:var(--v2-table-wash);color:var(--v2-table-ink);}
+.page--g6-modern th:first-child {border-top-left-radius:calc(var(--g6-u) * 8);}
+.page--g6-modern th:last-child {border-top-right-radius:calc(var(--g6-u) * 8);}
+.page--g6-modern table caption {color:var(--v2-table-ink);}

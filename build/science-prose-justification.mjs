@@ -26,7 +26,7 @@ const revised=s=>s.replaceAll('acidic/acidic/acidic; neutral/basic/basic; basic/
   'Bhaskar sees green and cream areas on a leaf. He can compare these parts of the same variegated leaf.');
 const key=s=>['class','x'].map(a=>s.match(new RegExp('\\b'+a+'="([^"]*)"'))?.[1]).join('|')+'|'+revised(plain(s));
 
-export function justifiedProseLines(rows,x,y,cls,lead,size,{word,widths,replacements}){
+export function justifiedProseLines(rows,x,y,cls,lead,size,{word,widths,replacements,narrowMeasure=500}){
  const natural=`<text class="${cls}" x="${x}" y="${y+size}">${rows.map((r,i)=>`<tspan x="${x}"${i?` dy="${lead}"`:''}>${r.map(word).join(' ')}</tspan>`).join('')}</text>`;
  if(cls!=='se-copy'&&cls!=='se-copy v2-intro')return natural;
  const html=`<text class="${cls}" x="${x}" y="${y+size}" data-prose-align="justify">${rows.map((r,i)=>{
@@ -34,7 +34,7 @@ export function justifiedProseLines(rows,x,y,cls,lead,size,{word,widths,replacem
   if(r.paragraphEnd||r.length<2)return `<tspan ${pos} data-paragraph-end="true">${r.map(word).join(' ')}</tspan>`;
   // Narrow glossary columns and figure-side safety notes have their own small
   // measure. Natural setting keeps those technical terms readable.
-  if(r.measure<500)return `<tspan ${pos} data-narrow-prose="true">${r.map(word).join(' ')}</tspan>`;
+  if(r.measure<narrowMeasure)return `<tspan ${pos} data-narrow-prose="true">${r.map(word).join(' ')}</tspan>`;
   const naturalSpace=widths[r.face][' ']*r.scale;
   const used=r.reduce((n,t)=>n+t.reduce((sum,p)=>sum+widths[r.face==='n'?p.k:r.face][p.s]*r.scale,0),0)+(r.length-1)*naturalSpace;
   const extra=(r.measure-used)/(r.length-1);
@@ -68,7 +68,8 @@ export async function measureProseJustification(dir){
  const config=JSON.parse(await fs.readFile(dir+'/chapter.json','utf8'));
  const files=(await fs.readdir(dir)).filter(f=>/^p\d+\.html$/.test(f)).sort();
  const sources=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8')));
- const probe=`build/class-7/ch${config.number}-word-space-measure.html`;
+ const grade=config.class;
+ const probe=`build/class-${grade}/ch${config.number}-word-space-measure.html`;
  const sheets=['book','edition-'+config.edition,'palette-'+config.palette,'reference-fonts','food-reference','science-reference','science-editorial','science-locked','science-v2-fonts','science-v2'];
  const script=String.raw`<script>onload=async()=>{try{
   await document.fonts.ready;const result=[],wide=[];let count=0,maxError=0;
@@ -102,7 +103,7 @@ export async function measureProseJustification(dir){
   if(after!==sources[p])await writeSource(dir+'/'+files[p],after);
  }
  delete report.result;
- const history='assets/design-history/science-g7-table-rollout';await fs.mkdir(history,{recursive:true});
+ const history=`assets/design-history/science-g${grade}-table-rollout`;await fs.mkdir(history,{recursive:true});
  await fs.writeFile(`${history}/ch${config.number}-justification.json`,JSON.stringify(report,null,2));
  console.log(`Chapter ${config.number}: ${report.count} justified lines; ${report.wide.length} wide spaces to review; maximum edge error ${report.maxError.toFixed(3)}.`);
 }

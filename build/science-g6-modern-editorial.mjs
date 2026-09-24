@@ -95,6 +95,23 @@ export function editClass6(ch) {
    'The clock case is an extended worked explanation, not one short thinking pause. Set it as open teaching prose; retain every paragraph and its illustration. Restore the missing 1.3 section number.');
  }
  if(n==='3'){
+  const protein=ch.blocks.find(b=>b.id==='g6-3-155');
+  const precautions=protein.blocks[0];
+  replace([protein.id],[{...precautions,type:'paragraph'}, {...protein,blocks:protein.blocks.slice(1)}],
+   'Keep teacher precautions immediately before the complete Activity; retain every safety instruction at body size.');
+  const recap=[
+   'Regional foods reflect crops, soil, climate, culture, religion and taste. Technology, transport and communication change cooking practices, bringing benefits and losses.',
+   'Carbohydrates, fats, proteins, vitamins, minerals and water are nutrients. Food also supplies dietary fibre.',
+   'Carbohydrates and fats supply energy. Fat stores energy and provides more per gram; proteins build and repair tissues. Needs vary with growth and activity.',
+   'Deficiencies can cause disorders: vitamin C deficiency causes scurvy; iodine deficiency can cause goitre. Similar symptoms have other causes; seek medical assessment.',
+   'Our enzymes do not digest fibre, though gut microbes break down some. Fibre supports bowel function; water transports substances and regulates temperature.',
+   'Positive tests: starch turns blue-black with iodine; fat leaves a translucent paper patch; protein turns violet with copper sulfate and caustic soda.',
+   'Most foods contain several nutrients. A balanced diet meets individual needs, with enough fibre and water; age, sex, activity and health matter.',
+   'Frequent sugary or fatty snacks can displace needed nutrients. Millets supply carbohydrate, fibre and minerals; many tolerate relatively dry conditions.',
+   'Food miles records distance, not total environmental impact. Farming, transport and storage also matter. Wasting food wastes these resources.'
+  ];
+  replace(Array.from({length:11},(_,i)=>`g6-3-${195+i}`),recap.map(html=>({type:'paragraph',html:'• '+html})),
+   'Consolidate the recap without losing its scientific relationships, safety qualifications or food-system concepts; replace the tiny stock food thumbnail with a full figure area.');
   const bearExplanation=structuredClone(ch.blocks.find(b=>b.id==='g6-3-062'));
   replace(['g6-3-061','g6-3-062'],[fatSourceFigure(),{
    type:'media',keepNext:true,blocks:[bearExplanation],figure:{type:'figure',
@@ -136,6 +153,22 @@ export function editClass6(ch) {
   }],'Replace parallel nutrient cards with a comparison table; preserve all sources, roles, qualifications and illustrations.');
  }
  if(n==='2'){
+  const recap=[
+   'Biodiversity is the variety of living things in a region. Careful observation reveals more than a quick glance.',
+   'Living things depend on one another for food, shelter and other needs.',
+   'Grouping uses shared features. Apply each rule consistently to answer a particular question.',
+   'Woody stems and branching distinguish trees and shrubs from herbs. Climbing and trailing are overlapping growth habits.',
+   'Venation is the pattern of leaf veins; two common patterns are reticulate and parallel.',
+   'A taproot system has one main root; fibrous roots form a spreading bunch.',
+   'Flowering plants called dicots have two cotyledons; monocots have one.',
+   'Dicots generally have reticulate veins and taproots; monocots, parallel veins and fibrous roots. Check these predictions.',
+   'Animals can be grouped by their movement and body parts, or by other shared features.',
+   'Adaptations are inherited features aiding survival and reproduction. They evolve across generations, not through individual effort.',
+   'Habitats are terrestrial (land) or aquatic (water). Many amphibians use both; not every animal using both is an amphibian.',
+   'Habitat damage reduces biodiversity. Governments and communities protect habitats.'
+  ];
+  recap.forEach((html,i)=>replace([`g6-2-${String(185+i).padStart(3,'0')}`],[{type:'paragraph',html:'• '+html}],
+   'Tighten the summary while retaining each concept and qualification; reserve a full-size contextual illustration.'));
   compare(['g6-2-053','g6-2-054','g6-2-055'],['Trees','Shrubs','Herbs'],'Compare stems and branching');
   compare(['g6-2-061','g6-2-062'],['Climbers','Creepers'],'Compare growth habits');
   compare(['g6-2-075','g6-2-076'],['Reticulate venation','Parallel venation'],'Compare vein patterns');

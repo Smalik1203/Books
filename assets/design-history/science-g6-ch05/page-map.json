@@ -17,8 +17,8 @@
       2,
       3
     ],
-    "end": 1286,
-    "fill": 90,
+    "end": 1302,
+    "fill": 91,
     "breakReason": "Next body: The table has not changed length. Different-sized handspans can g",
     "blocks": [
       {
@@ -81,25 +81,16 @@
         "type": "table",
         "text": "One table, five reported measurements",
         "top": 886,
-        "bottom": 1222,
+        "bottom": 1302,
         "before": 0,
         "keepNext": false,
         "conceptId": "sample-handspans"
-      },
-      {
-        "id": "handspan-evidence-0",
-        "type": "body",
-        "text": "The table has not changed length. Different-sized handspans can give different counts: a smaller handspan usually fits more times along the same edge. Inconsistent placement can add another difference. Compare both the size of the chosen unit and how it was placed.",
-        "top": 1222,
-        "bottom": 1286,
-        "before": 0,
-        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "handspan-evidence-1",
+      "id": "handspan-evidence-0",
       "type": "body",
-      "height": 80,
+      "height": 64,
       "keepNext": false
     }
   },
@@ -112,16 +103,25 @@
       4,
       5
     ],
-    "end": 1231,
-    "fill": 86,
-    "breakReason": "Next table: Choose a convenient unit",
+    "end": 1151,
+    "fill": 80,
+    "breakReason": "Next body: One metre contains 100 centimetres. On a common school ruler, eac",
     "blocks": [
+      {
+        "id": "handspan-evidence-0",
+        "type": "body",
+        "text": "The table has not changed length. Different-sized handspans can give different counts: a smaller handspan usually fits more times along the same edge. Inconsistent placement can add another difference. Compare both the size of the chosen unit and how it was placed.",
+        "top": 112,
+        "bottom": 176,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "handspan-evidence-1",
         "type": "body",
         "text": "The table has not changed length. Different-sized handspans can give different counts: a smaller handspan usually fits more times along the same edge. Inconsistent placement can add another difference. Compare both the size of the chosen unit and how it was placed.",
-        "top": 112,
-        "bottom": 192,
+        "top": 176,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -129,8 +129,8 @@
         "id": "unit-definition-0",
         "type": "body",
         "text": "To **measure a length**, we compare it with an agreed length called a **unit**. A measurement needs a number and a unit. In “13 handspans”, 13 is the number and handspan is the unit. A number alone does not tell another person how long the table is.",
-        "top": 192,
-        "bottom": 256,
+        "top": 256,
+        "bottom": 320,
         "before": 0,
         "keepNext": false
       },
@@ -138,8 +138,8 @@
         "id": "unit-definition-1",
         "type": "body",
         "text": "To **measure a length**, we compare it with an agreed length called a **unit**. A measurement needs a number and a unit. In “13 handspans”, 13 is the number and handspan is the unit. A number alone does not tell another person how long the table is.",
-        "top": 256,
-        "bottom": 336,
+        "top": 320,
+        "bottom": 400,
         "before": 0,
         "keepNext": false
       },
@@ -147,8 +147,8 @@
         "id": "history-0",
         "type": "body",
         "text": "Angula (finger width), dhanusa and yojana occur in historical Indian measurement traditions. Traditional craftspeople still use some body-based measures. Objects with ruled markings have been excavated at Harappan sites. A named historical unit did not necessarily have exactly the same value in every period or region.",
-        "top": 336,
-        "bottom": 400,
+        "top": 400,
+        "bottom": 464,
         "before": 0,
         "keepNext": false
       },
@@ -156,8 +156,8 @@
         "id": "history-1",
         "type": "body",
         "text": "Angula (finger width), dhanusa and yojana occur in historical Indian measurement traditions. Traditional craftspeople still use some body-based measures. Objects with ruled markings have been excavated at Harappan sites. A named historical unit did not necessarily have exactly the same value in every period or region.",
-        "top": 400,
-        "bottom": 512,
+        "top": 464,
+        "bottom": 576,
         "before": 0,
         "keepNext": false
       },
@@ -165,8 +165,8 @@
         "id": "standard-head",
         "type": "heading",
         "text": "5.2 Standard Units",
-        "top": 524,
-        "bottom": 582,
+        "top": 588,
+        "bottom": 646,
         "before": 12,
         "keepNext": false
       },
@@ -174,8 +174,8 @@
         "id": "standard-definition-0",
         "type": "body",
         "text": "A **standard unit** is defined so that different people can use the same length for comparison. Countries use the **International System of Units**, abbreviated **SI**. The SI base unit of length is the **metre**, whose symbol is **m**. A standard unit makes results comparable; careful use of the measuring tool still matters.",
-        "top": 582,
-        "bottom": 646,
+        "top": 646,
+        "bottom": 710,
         "before": 0,
         "keepNext": false
       },
@@ -183,8 +183,8 @@
         "id": "standard-definition-1",
         "type": "body",
         "text": "A **standard unit** is defined so that different people can use the same length for comparison. Countries use the **International System of Units**, abbreviated **SI**. The SI base unit of length is the **metre**, whose symbol is **m**. A standard unit makes results comparable; careful use of the measuring tool still matters.",
-        "top": 646,
-        "bottom": 726,
+        "top": 710,
+        "bottom": 790,
         "before": 0,
         "keepNext": false
       },
@@ -193,34 +193,16 @@
         "type": "figure",
         "text": "A 15 cm ruler: numbered centimetres, with ten equal millimetre intervals in each centimetre. Illustrations are enlarged or reduced; do not use this printed picture as a calibrated ruler.",
         "artKey": "ruler",
-        "top": 726,
-        "bottom": 1087,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "divisions-0",
-        "type": "body",
-        "text": "One metre contains 100 centimetres. On a common school ruler, each centimetre is divided into ten equal intervals of one millimetre. A millimetre is therefore one-tenth of a centimetre. Count the spaces between marks, not just the marks themselves.",
-        "top": 1087,
+        "top": 790,
         "bottom": 1151,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "divisions-1",
-        "type": "body",
-        "text": "One metre contains 100 centimetres. On a common school ruler, each centimetre is divided into ten equal intervals of one millimetre. A millimetre is therefore one-tenth of a centimetre. Count the spaces between marks, not just the marks themselves.",
-        "top": 1151,
-        "bottom": 1231,
         "before": 0,
         "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "units-table",
-      "type": "table",
-      "height": 296,
+      "id": "divisions-0",
+      "type": "body",
+      "height": 64,
       "keepNext": false
     }
   },
@@ -229,24 +211,42 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
+      4,
       5,
-      6,
-      8
+      6
     ],
     "pageIllustration": {
-      "file": "figures/class-6/science/ch05/pencil.png",
-      "caption": "A pencil."
+      "file": "figures/class-7/science/ch01-v2/measuring-tools.png",
+      "caption": "Tools for observing and measuring."
     },
-    "end": 1408,
-    "fill": 99,
-    "breakReason": "Next heading: 5.3 Measuring Length Correctly",
+    "end": 1048,
+    "fill": 72,
+    "breakReason": "Next body: The smallest marked interval on the illustrated ruler is 1 mm. Th",
     "blocks": [
+      {
+        "id": "divisions-0",
+        "type": "body",
+        "text": "One metre contains 100 centimetres. On a common school ruler, each centimetre is divided into ten equal intervals of one millimetre. A millimetre is therefore one-tenth of a centimetre. Count the spaces between marks, not just the marks themselves.",
+        "top": 112,
+        "bottom": 176,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "divisions-1",
+        "type": "body",
+        "text": "One metre contains 100 centimetres. On a common school ruler, each centimetre is divided into ten equal intervals of one millimetre. A millimetre is therefore one-tenth of a centimetre. Count the spaces between marks, not just the marks themselves.",
+        "top": 176,
+        "bottom": 256,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "units-table",
         "type": "table",
         "text": "Choose a convenient unit",
-        "top": 112,
-        "bottom": 408,
+        "top": 256,
+        "bottom": 624,
         "before": 0,
         "keepNext": false,
         "conceptId": "units-table"
@@ -255,17 +255,50 @@
         "id": "least-division-0",
         "type": "body",
         "text": "The smallest marked interval on the illustrated ruler is 1 mm. That tells you the ruler’s graduation, not a guarantee that every measurement is exact to 1 mm. A fuzzy endpoint, a bent ruler or a slanting view can make the reading uncertain. Very thin paper may need a different method.",
-        "top": 408,
-        "bottom": 472,
+        "top": 624,
+        "bottom": 688,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Tools for observing and measuring.",
+        "artKey": "figures/class-7/science/ch01-v2/measuring-tools.png",
+        "top": 688,
+        "bottom": 1048
+      }
+    ],
+    "protectedNext": {
+      "id": "least-division-1",
+      "type": "body",
+      "height": 80,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 5,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      5,
+      6,
+      8
+    ],
+    "pageIllustration": {
+      "file": "figures/class-6/science/review/measuring-cloth.png",
+      "caption": "Measuring cloth with a flexible tape."
+    },
+    "end": 1068,
+    "fill": 73,
+    "breakReason": "Next heading: 5.3 Measuring Length Correctly",
+    "blocks": [
+      {
         "id": "least-division-1",
         "type": "body",
         "text": "The smallest marked interval on the illustrated ruler is 1 mm. That tells you the ruler’s graduation, not a guarantee that every measurement is exact to 1 mm. A fuzzy endpoint, a bent ruler or a slanting view can make the reading uncertain. Very thin paper may need a different method.",
-        "top": 472,
-        "bottom": 552,
+        "top": 112,
+        "bottom": 192,
         "before": 0,
         "keepNext": false
       },
@@ -273,8 +306,8 @@
         "id": "other-units-0",
         "type": "body",
         "text": "Some rulers also have an inch scale. One inch equals exactly 2.54 cm. Inches and feet remain in use in some settings, but do not mix readings from the two sides of a ruler. Check the unit before comparing two numbers.",
-        "top": 552,
-        "bottom": 664,
+        "top": 192,
+        "bottom": 304,
         "before": 0,
         "keepNext": false
       },
@@ -282,8 +315,8 @@
         "id": "unit-writing-0",
         "type": "body",
         "text": "Write the symbols **km, m, cm and mm** in lowercase, with a space between the number and symbol: for example, 12 cm. Do not add s to a symbol for the plural, and do not add a full stop unless it ends the sentence. Unit names normally begin with a lowercase letter, except at the start of a sentence.",
-        "top": 664,
-        "bottom": 728,
+        "top": 304,
+        "bottom": 368,
         "before": 0,
         "keepNext": false
       },
@@ -291,8 +324,8 @@
         "id": "unit-writing-1",
         "type": "body",
         "text": "Write the symbols **km, m, cm and mm** in lowercase, with a space between the number and symbol: for example, 12 cm. Do not add s to a symbol for the plural, and do not add a full stop unless it ends the sentence. Unit names normally begin with a lowercase letter, except at the start of a sentence.",
-        "top": 728,
-        "bottom": 808,
+        "top": 368,
+        "bottom": 448,
         "before": 0,
         "keepNext": false
       },
@@ -300,8 +333,8 @@
         "id": "units-think",
         "type": "panel",
         "text": "Two pupils report the same length as 125 cm and 1.25 m. Have they disagreed? Explain what must be checked before comparing the numbers. Then explain why kilometres are a convenient choice for the distance between cities, although that distance can also be written in metres.",
-        "top": 808,
-        "bottom": 1048,
+        "top": 448,
+        "bottom": 708,
         "before": 0,
         "keepNext": false,
         "conceptId": "units-think"
@@ -309,10 +342,10 @@
       {
         "id": "page-illustration",
         "type": "figure",
-        "text": "A pencil.",
-        "artKey": "figures/class-6/science/ch05/pencil.png",
-        "top": 1048,
-        "bottom": 1408
+        "text": "Measuring cloth with a flexible tape.",
+        "artKey": "figures/class-6/science/review/measuring-cloth.png",
+        "top": 708,
+        "bottom": 1068
       }
     ],
     "protectedNext": {
@@ -323,7 +356,7 @@
     }
   },
   {
-    "page": 5,
+    "page": 6,
     "title": "5.3 Measuring Length Correctly",
     "titleRole": "section",
     "sourcePages": [
@@ -407,7 +440,7 @@
     }
   },
   {
-    "page": 6,
+    "page": 7,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -496,12 +529,12 @@
     "protectedNext": {
       "id": "measure-task",
       "type": "activity",
-      "height": 468,
+      "height": 488,
       "keepNext": false
     }
   },
   {
-    "page": 7,
+    "page": 8,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -509,11 +542,11 @@
       9
     ],
     "pageIllustration": {
-      "file": "figures/class-6/science/ch05/tape.png",
-      "caption": "A flexible measuring tape."
+      "file": "figures/class-7/science/review/plant-measurement.png",
+      "caption": "Recording plant measurements."
     },
-    "end": 1362,
-    "fill": 96,
+    "end": 1382,
+    "fill": 97,
     "breakReason": "Next body: Lay a non-stretchy thread carefully along a drawn curve, beginnin",
     "blocks": [
       {
@@ -521,7 +554,7 @@
         "type": "activity",
         "text": "1. Choose a comb, pen, pencil and eraser. Check that your ruler is long enough for each object and identify its smallest marked division. 2. Measure each object along the length you chose. Keep the ruler straight, align an endpoint with a clear mark and read directly from above. 3. In your notebook, record the object, starting reading, ending reading, calculated length and unit. If you start at zero, still note that starting reading. 4. Ask a partner to measure the same objects independently. Compare results and investigate any differences in placement, endpoints or reading direction. Repeat a doubtful reading.",
         "top": 112,
-        "bottom": 580,
+        "bottom": 600,
         "before": 0,
         "keepNext": false,
         "conceptId": "measure-task"
@@ -530,8 +563,8 @@
         "id": "measurement-evidence-0",
         "type": "body",
         "text": "Close agreement supports the consistency of your method, but identical readings do not prove that a damaged tool is correct. If results differ, check the setup before averaging numbers or deciding that one person is wrong. State a sensible precision for the marks you can read.",
-        "top": 580,
-        "bottom": 644,
+        "top": 600,
+        "bottom": 664,
         "before": 0,
         "keepNext": false
       },
@@ -539,8 +572,8 @@
         "id": "measurement-evidence-1",
         "type": "body",
         "text": "Close agreement supports the consistency of your method, but identical readings do not prove that a damaged tool is correct. If results differ, check the setup before averaging numbers or deciding that one person is wrong. State a sensible precision for the marks you can read.",
-        "top": 644,
-        "bottom": 724,
+        "top": 664,
+        "bottom": 744,
         "before": 0,
         "keepNext": false
       },
@@ -548,8 +581,8 @@
         "id": "curve-head",
         "type": "heading",
         "text": "5.4 Measuring a Curved Line",
-        "top": 736,
-        "bottom": 794,
+        "top": 756,
+        "bottom": 814,
         "before": 12,
         "keepNext": false
       },
@@ -557,8 +590,8 @@
         "id": "curve-story-0",
         "type": "body",
         "text": "Anish’s family wants to decorate an arch with a string of lights. A straight line between its ends is shorter than the path along the arch. The required length follows the curve. For classroom work, model the arch on paper; leave real electrical fitting and work at height to adults.",
-        "top": 794,
-        "bottom": 858,
+        "top": 814,
+        "bottom": 878,
         "before": 0,
         "keepNext": false
       },
@@ -566,8 +599,8 @@
         "id": "curve-story-1",
         "type": "body",
         "text": "Anish’s family wants to decorate an arch with a string of lights. A straight line between its ends is shorter than the path along the arch. The required length follows the curve. For classroom work, model the arch on paper; leave real electrical fitting and work at height to adults.",
-        "top": 858,
-        "bottom": 938,
+        "top": 878,
+        "bottom": 958,
         "before": 0,
         "keepNext": false
       },
@@ -575,18 +608,18 @@
         "id": "curve-method-0",
         "type": "body",
         "text": "Lay a non-stretchy thread carefully along a drawn curve, beginning at one end. Mark the thread at the other endpoint. Straighten the marked section alongside a ruler without stretching it, and read its length. Repeat the placement to check whether it followed the entire curve. A suitable flexible tape can measure the same path directly.",
-        "top": 938,
-        "bottom": 1002,
+        "top": 958,
+        "bottom": 1022,
         "before": 0,
         "keepNext": false
       },
       {
         "id": "page-illustration",
         "type": "figure",
-        "text": "A flexible measuring tape.",
-        "artKey": "figures/class-6/science/ch05/tape.png",
-        "top": 1002,
-        "bottom": 1362
+        "text": "Recording plant measurements.",
+        "artKey": "figures/class-7/science/review/plant-measurement.png",
+        "top": 1022,
+        "bottom": 1382
       }
     ],
     "protectedNext": {
@@ -597,7 +630,7 @@
     }
   },
   {
-    "page": 8,
+    "page": 9,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -683,7 +716,7 @@
     }
   },
   {
-    "page": 9,
+    "page": 10,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -787,7 +820,7 @@
     }
   },
   {
-    "page": 10,
+    "page": 11,
     "title": "5.6 Moving Things",
     "titleRole": "section",
     "sourcePages": [
@@ -795,12 +828,12 @@
       13
     ],
     "pageIllustration": {
-      "file": "figures/class-6/science/ch05/bus.png",
-      "caption": "A moving bus."
+      "file": "figures/class-7/science/review/transport-motion.png",
+      "caption": "Different forms of transport."
     },
-    "end": 1372,
-    "fill": 97,
-    "breakReason": "Next body: A tree trunk may remain in the same place relative to the ground ",
+    "end": 1130,
+    "fill": 78,
+    "breakReason": "Next table: One passenger, two reference points",
     "blocks": [
       {
         "id": "moving-head",
@@ -816,7 +849,7 @@
         "type": "activity",
         "text": "1. Observe your surroundings safely from one place. Choose five objects that seem to move and five that seem to remain still. 2. For each object, name a reference point and observe it at two or more times. Do not rely only on whether it appears lively or makes a sound. 3. Make a notebook table with the headings Object, Reference point, Observation over time and Conclusion with reason. A tree trunk and a grazing cow can begin your list, but record what you actually observe. 4. Compare explanations. Did two people use different reference points, or look at different parts of the same object?",
         "top": 170,
-        "bottom": 606,
+        "bottom": 626,
         "before": 0,
         "keepNext": false,
         "conceptId": "rest-task"
@@ -825,8 +858,8 @@
         "id": "motion-definition-0",
         "type": "body",
         "text": "An object is in **motion** if its position changes with time relative to the chosen reference point. It is **at rest** if its position does not change relative to that point during the observation. Name both the reference and the time interval; “moving” is incomplete without that context.",
-        "top": 606,
-        "bottom": 670,
+        "top": 626,
+        "bottom": 690,
         "before": 0,
         "keepNext": false
       },
@@ -834,122 +867,24 @@
         "id": "motion-definition-1",
         "type": "body",
         "text": "An object is in **motion** if its position changes with time relative to the chosen reference point. It is **at rest** if its position does not change relative to that point during the observation. Name both the reference and the time interval; “moving” is incomplete without that context.",
-        "top": 670,
-        "bottom": 750,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "bus-table",
-        "type": "table",
-        "text": "One passenger, two reference points",
-        "top": 750,
-        "bottom": 1012,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "bus-table"
-      },
-      {
-        "id": "page-illustration",
-        "type": "figure",
-        "text": "A moving bus.",
-        "artKey": "figures/class-6/science/ch05/bus.png",
-        "top": 1012,
-        "bottom": 1372
-      }
-    ],
-    "protectedNext": {
-      "id": "parts-0",
-      "type": "body",
-      "height": 64,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 11,
-    "title": "",
-    "titleRole": "continuation",
-    "sourcePages": [
-      12,
-      13,
-      14
-    ],
-    "pageIllustration": {
-      "file": "figures/class-6/science/ch05/bus.png",
-      "caption": "A moving bus."
-    },
-    "end": 1158,
-    "fill": 80,
-    "breakReason": "Next activity: 1. A teacher ties a small soft foam ball securely to a short thre",
-    "blocks": [
-      {
-        "id": "parts-0",
-        "type": "body",
-        "text": "A tree trunk may remain in the same place relative to the ground while its leaves move in the wind. A grazing cow may move its head without walking. Say which object or part you are following, rather than assigning one description carelessly to everything in the scene.",
-        "top": 112,
-        "bottom": 176,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "parts-1",
-        "type": "body",
-        "text": "A tree trunk may remain in the same place relative to the ground while its leaves move in the wind. A grazing cow may move its head without walking. Say which object or part you are following, rather than assigning one description carelessly to everything in the scene.",
-        "top": 176,
-        "bottom": 256,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "types-head",
-        "type": "heading",
-        "text": "5.7 Types of Motion",
-        "top": 268,
-        "bottom": 326,
-        "before": 12,
-        "keepNext": false
-      },
-      {
-        "id": "linear-task",
-        "type": "activity",
-        "text": "1. Hold a small eraser a short distance above a clear tabletop or a tray. Keep feet and other people clear of the drop. 2. Release it without throwing it sideways. Watch the path before it strikes the surface. 3. Repeat and sketch the path you observed. Which reference point did you use? Compare it with the path of a toy car pushed along a straight guide.",
-        "top": 326,
-        "bottom": 654,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "linear-task"
-      },
-      {
-        "id": "linear-evidence-0",
-        "type": "body",
-        "text": "Motion along a straight path is called **linear motion**. A gently released eraser has an approximately straight downward path over this short distance. Marchers on a straight stretch of a parade route and a box pushed straight across a floor are further examples. The path, not the object’s name, decides the classification.",
-        "top": 654,
-        "bottom": 718,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "linear-evidence-1",
-        "type": "body",
-        "text": "Motion along a straight path is called **linear motion**. A gently released eraser has an approximately straight downward path over this short distance. Marchers on a straight stretch of a parade route and a box pushed straight across a floor are further examples. The path, not the object’s name, decides the classification.",
-        "top": 718,
-        "bottom": 798,
+        "top": 690,
+        "bottom": 770,
         "before": 0,
         "keepNext": false
       },
       {
         "id": "page-illustration",
         "type": "figure",
-        "text": "A moving bus.",
-        "artKey": "figures/class-6/science/ch05/bus.png",
-        "top": 798,
-        "bottom": 1158
+        "text": "Different forms of transport.",
+        "artKey": "figures/class-7/science/review/transport-motion.png",
+        "top": 770,
+        "bottom": 1130
       }
     ],
     "protectedNext": {
-      "id": "circle-task",
-      "type": "activity",
-      "height": 328,
+      "id": "bus-table",
+      "type": "table",
+      "height": 310,
       "keepNext": false
     }
   },
@@ -958,19 +893,118 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
+      13,
+      12,
+      14
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch08/opener.png",
+      "caption": "Observing motion."
+    },
+    "end": 1408,
+    "fill": 99,
+    "breakReason": "Next body: Motion along a straight path is called **linear motion**. A gentl",
+    "blocks": [
+      {
+        "id": "bus-table",
+        "type": "table",
+        "text": "One passenger, two reference points",
+        "top": 112,
+        "bottom": 422,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "bus-table"
+      },
+      {
+        "id": "parts-0",
+        "type": "body",
+        "text": "A tree trunk may remain in the same place relative to the ground while its leaves move in the wind. A grazing cow may move its head without walking. Say which object or part you are following, rather than assigning one description carelessly to everything in the scene.",
+        "top": 422,
+        "bottom": 486,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "parts-1",
+        "type": "body",
+        "text": "A tree trunk may remain in the same place relative to the ground while its leaves move in the wind. A grazing cow may move its head without walking. Say which object or part you are following, rather than assigning one description carelessly to everything in the scene.",
+        "top": 486,
+        "bottom": 566,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "types-head",
+        "type": "heading",
+        "text": "5.7 Types of Motion",
+        "top": 578,
+        "bottom": 636,
+        "before": 12,
+        "keepNext": false
+      },
+      {
+        "id": "linear-task",
+        "type": "activity",
+        "text": "1. Hold a small eraser a short distance above a clear tabletop or a tray. Keep feet and other people clear of the drop. 2. Release it without throwing it sideways. Watch the path before it strikes the surface. 3. Repeat and sketch the path you observed. Which reference point did you use? Compare it with the path of a toy car pushed along a straight guide.",
+        "top": 636,
+        "bottom": 984,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "linear-task"
+      },
+      {
+        "id": "linear-evidence-0",
+        "type": "body",
+        "text": "Motion along a straight path is called **linear motion**. A gently released eraser has an approximately straight downward path over this short distance. Marchers on a straight stretch of a parade route and a box pushed straight across a floor are further examples. The path, not the object’s name, decides the classification.",
+        "top": 984,
+        "bottom": 1048,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Observing motion.",
+        "artKey": "figures/class-7/science/ch08/opener.png",
+        "top": 1048,
+        "bottom": 1408
+      }
+    ],
+    "protectedNext": {
+      "id": "linear-evidence-1",
+      "type": "body",
+      "height": 80,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 13,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      13,
       14,
       15
     ],
-    "end": 1270,
-    "fill": 89,
+    "end": 1390,
+    "fill": 98,
     "breakReason": "Next figure: A firmly supported pendulum is another way to observe to-and-fro ",
     "blocks": [
+      {
+        "id": "linear-evidence-1",
+        "type": "body",
+        "text": "Motion along a straight path is called **linear motion**. A gently released eraser has an approximately straight downward path over this short distance. Marchers on a straight stretch of a parade route and a box pushed straight across a floor are further examples. The path, not the object’s name, decides the classification.",
+        "top": 112,
+        "bottom": 192,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "circle-task",
         "type": "activity",
         "text": "1. A teacher ties a small soft foam ball securely to a short thread and checks the knot. Keep a wide clear space around the demonstration. 2. The teacher moves the ball slowly around a circle, below shoulder height. Learners watch from outside the reach of the thread; nobody lets go. 3. Sketch the path and compare it with the path of one seat on a turning merry-go-round. Explain what is similar and what is different.",
-        "top": 112,
-        "bottom": 440,
+        "top": 192,
+        "bottom": 540,
         "before": 0,
         "keepNext": false,
         "conceptId": "circle-task"
@@ -979,8 +1013,8 @@
         "id": "circle-evidence-0",
         "type": "body",
         "text": "An object following a circular path has **circular motion**. A seat on a merry-go-round travels around its centre. A point on a rotating fan blade also follows a circle. Always identify the point or part being observed: the centre and the blade tip do not follow the same path.",
-        "top": 440,
-        "bottom": 504,
+        "top": 540,
+        "bottom": 604,
         "before": 0,
         "keepNext": false
       },
@@ -988,8 +1022,8 @@
         "id": "circle-evidence-1",
         "type": "body",
         "text": "An object following a circular path has **circular motion**. A seat on a merry-go-round travels around its centre. A point on a rotating fan blade also follows a circle. Always identify the point or part being observed: the centre and the blade tip do not follow the same path.",
-        "top": 504,
-        "bottom": 584,
+        "top": 604,
+        "bottom": 684,
         "before": 0,
         "keepNext": false
       },
@@ -998,8 +1032,8 @@
         "type": "figure",
         "text": "A straight path and a circular path describe different changes of position. The arrows show direction, not how fast the object moves.",
         "artKey": "paths",
-        "top": 584,
-        "bottom": 910,
+        "top": 684,
+        "bottom": 1010,
         "before": 0,
         "keepNext": false
       },
@@ -1007,8 +1041,8 @@
         "id": "swing-task",
         "type": "activity",
         "text": "1. Tie a small eraser securely to a thread. Hold the other end still, or have a teacher secure it to a firm support. Leave clear space below and around it. 2. Move the eraser a small distance to one side and release it without pushing. Watch until the motion becomes small. 3. Sketch its positions on either side of the central resting position. Compare its path with a swing, and note whether it travels all the way around a circle.",
-        "top": 910,
-        "bottom": 1270,
+        "top": 1010,
+        "bottom": 1390,
         "before": 0,
         "keepNext": false,
         "conceptId": "swing-task"
@@ -1022,15 +1056,15 @@
     }
   },
   {
-    "page": 13,
+    "page": 14,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
       15,
       16
     ],
-    "end": 1274,
-    "fill": 89,
+    "end": 1294,
+    "fill": 91,
     "breakReason": "Next body: The free end moves up and down around its resting position. This ",
     "blocks": [
       {
@@ -1066,7 +1100,7 @@
         "type": "activity",
         "text": "1. Ask a teacher to secure one end of a flexible ruler or a smooth-edged springy strip on a table, leaving part of it projecting beyond the edge. A strip about 50 cm long can be used; an adult must check any metal edges first. 2. Use a clamp or a stable book stack to hold it firmly. Keep faces away from the free end. Press that end down only slightly, then let go. 3. Observe the free end. Compare its movement with the part held on the table. Stop if the support loosens; do not bend the strip sharply.",
         "top": 618,
-        "bottom": 1274,
+        "bottom": 1294,
         "before": 0,
         "keepNext": false,
         "conceptId": "strip-task"
@@ -1080,7 +1114,7 @@
     }
   },
   {
-    "page": 14,
+    "page": 15,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1089,11 +1123,11 @@
       15
     ],
     "pageIllustration": {
-      "file": "figures/class-6/science/ch05/bus.png",
-      "caption": "A moving bus."
+      "file": "figures/class-7/science/ch08/pendulum-clock.png",
+      "caption": "Pendulum clock."
     },
-    "end": 1270,
-    "fill": 89,
+    "end": 1346,
+    "fill": 95,
     "breakReason": "Next activity: 1. Observe the playground illustration, or visit a park with an a",
     "blocks": [
       {
@@ -1119,7 +1153,7 @@
         "type": "table",
         "text": "Compare the path, not just the object",
         "top": 256,
-        "bottom": 558,
+        "bottom": 614,
         "before": 0,
         "keepNext": false,
         "conceptId": "motion-table"
@@ -1128,8 +1162,8 @@
         "id": "periodic-0",
         "type": "body",
         "text": "Motion is **periodic** when the motion repeats after equal time intervals. A steadily turning wheel or a regularly swinging pendulum can be approximately periodic. Circular or to-and-fro motion is not automatically periodic: stopping, changing speed irregularly or changing the pattern can destroy the equal-time repetition.",
-        "top": 558,
-        "bottom": 622,
+        "top": 614,
+        "bottom": 678,
         "before": 0,
         "keepNext": false
       },
@@ -1137,8 +1171,8 @@
         "id": "periodic-1",
         "type": "body",
         "text": "Motion is **periodic** when the motion repeats after equal time intervals. A steadily turning wheel or a regularly swinging pendulum can be approximately periodic. Circular or to-and-fro motion is not automatically periodic: stopping, changing speed irregularly or changing the pattern can destroy the equal-time repetition.",
-        "top": 622,
-        "bottom": 702,
+        "top": 678,
+        "bottom": 758,
         "before": 0,
         "keepNext": false
       },
@@ -1146,8 +1180,8 @@
         "id": "periodic-think",
         "type": "panel",
         "text": "A merry-go-round completes one turn, stops for a while, then turns faster. Its seat still follows a circle when it moves. Is that enough to call the whole motion periodic? State what else you would need to observe or measure.",
-        "top": 702,
-        "bottom": 910,
+        "top": 758,
+        "bottom": 986,
         "before": 0,
         "keepNext": false,
         "conceptId": "periodic-think"
@@ -1155,21 +1189,21 @@
       {
         "id": "page-illustration",
         "type": "figure",
-        "text": "A moving bus.",
-        "artKey": "figures/class-6/science/ch05/bus.png",
-        "top": 910,
-        "bottom": 1270
+        "text": "Pendulum clock.",
+        "artKey": "figures/class-7/science/ch08/pendulum-clock.png",
+        "top": 986,
+        "bottom": 1346
       }
     ],
     "protectedNext": {
       "id": "park-task",
       "type": "activity",
-      "height": 436,
+      "height": 456,
       "keepNext": false
     }
   },
   {
-    "page": 15,
+    "page": 16,
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
@@ -1177,8 +1211,8 @@
       17,
       18
     ],
-    "end": 1164,
-    "fill": 81,
+    "end": 1184,
+    "fill": 82,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
       {
@@ -1186,7 +1220,7 @@
         "type": "activity",
         "text": "1. Observe the playground illustration, or visit a park with an adult. Keep clear of moving equipment and use it only as intended. 2. Identify an object or a particular part and describe its path over a chosen interval. Look for straight, circular and to-and-fro motion. 3. Record Object or part, Reference point, Observed path, Category and Reason in your notebook. If the motion changes or combines types, describe the separate parts instead of forcing one label. 4. Discuss how a still picture limits your evidence. Which details would you need to watch over time?",
         "top": 112,
-        "bottom": 548,
+        "bottom": 568,
         "before": 0,
         "keepNext": false,
         "conceptId": "park-task"
@@ -1196,8 +1230,8 @@
         "type": "figure",
         "text": "Watch a particular seat, child or point over time. A still illustration suggests questions; actual motion needs observations at different times.",
         "artKey": "figure",
-        "top": 548,
-        "bottom": 1020,
+        "top": 568,
+        "bottom": 1040,
         "before": 0,
         "keepNext": false
       },
@@ -1205,8 +1239,8 @@
         "id": "connect-0",
         "type": "body",
         "text": "Measurement and motion share an important habit: state exactly what you compare. A length needs a unit and clear endpoints. A description of motion needs an object, a reference point and a time interval. Clear comparisons let other people check your result.",
-        "top": 1020,
-        "bottom": 1084,
+        "top": 1040,
+        "bottom": 1104,
         "before": 0,
         "keepNext": false
       },
@@ -1214,8 +1248,8 @@
         "id": "connect-1",
         "type": "body",
         "text": "Measurement and motion share an important habit: state exactly what you compare. A length needs a unit and clear endpoints. A description of motion needs an object, a reference point and a time interval. Clear comparisons let other people check your result.",
-        "top": 1084,
-        "bottom": 1164,
+        "top": 1104,
+        "bottom": 1184,
         "before": 0,
         "keepNext": false
       }
@@ -1223,17 +1257,17 @@
     "protectedNext": null
   },
   {
-    "page": 16,
+    "page": 17,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
       18
     ],
-    "end": 1123,
-    "fill": 78
+    "end": 1163,
+    "fill": 81
   },
   {
-    "page": 17,
+    "page": 18,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
@@ -1243,7 +1277,7 @@
     "fill": 77
   },
   {
-    "page": 18,
+    "page": 19,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
@@ -1252,12 +1286,12 @@
       21
     ],
     "pageIllustration": {
-      "file": "figures/class-6/science/ch05/tape.png",
-      "caption": "A flexible measuring tape."
+      "file": "figures/class-7/science/review/sports-timing.png",
+      "caption": "Measuring time during sport."
     },
-    "end": 1252,
+    "end": 1250,
     "fill": 87,
-    "breakReason": "Next question: Find different rulers or measuring tapes at home or school. Ident",
+    "breakReason": "Next question: Which is not a standard unit of length: millimetre, centimetre, k",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -1282,7 +1316,7 @@
         "type": "question",
         "text": "Match each length with a convenient unit from the second column. Each unit is to be used once.",
         "top": 250,
-        "bottom": 640,
+        "bottom": 732,
         "before": 0,
         "keepNext": false
       },
@@ -1290,96 +1324,22 @@
         "id": "q2",
         "type": "question",
         "text": "State whether each statement is true or false and correct the false ones. (a) A car travelling along a straight road has linear motion over that stretch. (b) An object changing position with time relative to a reference point is in motion. (c) 1 km = 100 cm.",
-        "top": 640,
-        "bottom": 798,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "q3",
-        "type": "question",
-        "text": "Which is not a standard unit of length: millimetre, centimetre, kilometre or handspan? Explain your choice.",
-        "top": 798,
-        "bottom": 892,
+        "top": 732,
+        "bottom": 890,
         "before": 0,
         "keepNext": false
       },
       {
         "id": "page-illustration",
         "type": "figure",
-        "text": "A flexible measuring tape.",
-        "artKey": "figures/class-6/science/ch05/tape.png",
-        "top": 892,
-        "bottom": 1252
+        "text": "Measuring time during sport.",
+        "artKey": "figures/class-7/science/review/sports-timing.png",
+        "top": 890,
+        "bottom": 1250
       }
     ],
     "protectedNext": {
-      "id": "q4",
-      "type": "question",
-      "height": 417,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 19,
-    "title": "",
-    "titleRole": "assessment",
-    "sourcePages": [
-      19,
-      20
-    ],
-    "end": 1334,
-    "fill": 94,
-    "breakReason": "Next question: Give two examples each of linear, circular and oscillatory motion",
-    "blocks": [
-      {
-        "id": "q4",
-        "type": "question",
-        "text": "Find different rulers or measuring tapes at home or school. Identify the smallest marked interval on each. Make a table of Tool, Unit shown and Smallest marked interval. Why does this interval not guarantee that every reading is perfectly accurate?",
-        "top": 112,
-        "bottom": 529,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "q5",
-        "type": "question",
-        "text": "The distance between a school and a home is 1.5 km. Express it in metres and show your conversion.",
-        "top": 529,
-        "bottom": 623,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "q6",
-        "type": "question",
-        "text": "Choose an unbroken tumbler or bottle. Measure the distance around its circular base with a flexible tape or thread. Record the method, result and unit. Explain why a straight measurement across the base is different.",
-        "top": 623,
-        "bottom": 1050,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "q7",
-        "type": "question",
-        "text": "With permission and an adult’s help, measure a friend’s height safely against a wall. Express the same height in metres, centimetres and millimetres. Do not rank or compare classmates’ bodies.",
-        "top": 1050,
-        "bottom": 1176,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "q8",
-        "type": "question",
-        "text": "Estimate how many identical coins placed edge to edge, without gaps, would cover one chosen side of a notebook. Check by measuring that side and one coin’s diameter with a 15 cm ruler. Explain how you would handle a remaining fraction of a coin’s width.",
-        "top": 1176,
-        "bottom": 1334,
-        "before": 0,
-        "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "q9",
+      "id": "q3",
       "type": "question",
       "height": 94,
       "keepNext": false
@@ -1390,19 +1350,93 @@
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
+      19,
+      20
+    ],
+    "end": 1270,
+    "fill": 89,
+    "breakReason": "Next question: Estimate how many identical coins placed edge to edge, without ga",
+    "blocks": [
+      {
+        "id": "q3",
+        "type": "question",
+        "text": "Which is not a standard unit of length: millimetre, centimetre, kilometre or handspan? Explain your choice.",
+        "top": 112,
+        "bottom": 206,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q4",
+        "type": "question",
+        "text": "Find different rulers or measuring tapes at home or school. Identify the smallest marked interval on each. Make a table of Tool, Unit shown and Smallest marked interval. Why does this interval not guarantee that every reading is perfectly accurate?",
+        "top": 206,
+        "bottom": 623,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q5",
+        "type": "question",
+        "text": "The distance between a school and a home is 1.5 km. Express it in metres and show your conversion.",
+        "top": 623,
+        "bottom": 717,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q6",
+        "type": "question",
+        "text": "Choose an unbroken tumbler or bottle. Measure the distance around its circular base with a flexible tape or thread. Record the method, result and unit. Explain why a straight measurement across the base is different.",
+        "top": 717,
+        "bottom": 1144,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q7",
+        "type": "question",
+        "text": "With permission and an adult’s help, measure a friend’s height safely against a wall. Express the same height in metres, centimetres and millimetres. Do not rank or compare classmates’ bodies.",
+        "top": 1144,
+        "bottom": 1270,
+        "before": 0,
+        "keepNext": false
+      }
+    ],
+    "protectedNext": {
+      "id": "q8",
+      "type": "question",
+      "height": 158,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 21,
+    "title": "",
+    "titleRole": "assessment",
+    "sourcePages": [
       20,
       21
     ],
-    "end": 1180,
-    "fill": 82,
+    "end": 1338,
+    "fill": 94,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
+      {
+        "id": "q8",
+        "type": "question",
+        "text": "Estimate how many identical coins placed edge to edge, without gaps, would cover one chosen side of a notebook. Check by measuring that side and one coin’s diameter with a 15 cm ruler. Explain how you would handle a remaining fraction of a coin’s width.",
+        "top": 112,
+        "bottom": 270,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "q9",
         "type": "question",
         "text": "Give two examples each of linear, circular and oscillatory motion. For every example, identify the part moving and the reference point.",
-        "top": 112,
-        "bottom": 206,
+        "top": 270,
+        "bottom": 364,
         "before": 0,
         "keepNext": false
       },
@@ -1410,8 +1444,8 @@
         "id": "q10",
         "type": "question",
         "text": "List three objects whose sizes are conveniently written in millimetres, three in centimetres and three in metres. Arrange them in a notebook table headed Unit and Objects. Explain why another unit could still be used.",
-        "top": 206,
-        "bottom": 332,
+        "top": 364,
+        "bottom": 490,
         "before": 0,
         "keepNext": false
       },
@@ -1419,8 +1453,8 @@
         "id": "q11",
         "type": "question",
         "text": "A ball enters the model track at A, moves through B and C, completes the loop through D, returns near E and leaves at F. Identify straight, circular and other curved portions. Does one trip through the loop necessarily make the motion periodic? Explain.",
-        "top": 332,
-        "bottom": 896,
+        "top": 490,
+        "bottom": 1054,
         "before": 0,
         "keepNext": false
       },
@@ -1428,8 +1462,8 @@
         "id": "q12",
         "type": "question",
         "text": "Tasneem wants to make a metre scale. She considers plywood, paper, cloth, stretchable rubber and steel. Which material is especially unsuitable because its length changes when pulled? What other precautions would make a scale from the remaining materials reliable?",
-        "top": 896,
-        "bottom": 1054,
+        "top": 1054,
+        "bottom": 1212,
         "before": 0,
         "keepNext": false
       },
@@ -1437,8 +1471,8 @@
         "id": "q13",
         "type": "question",
         "text": "Design a card game for converting units of length. Make matching cards such as equivalent lengths in different units, explain the rules, and include a way for players to check disputed pairs.",
-        "top": 1054,
-        "bottom": 1180,
+        "top": 1212,
+        "bottom": 1338,
         "before": 0,
         "keepNext": false
       }
@@ -1446,7 +1480,7 @@
     "protectedNext": null
   },
   {
-    "page": 21,
+    "page": 22,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [
@@ -1490,27 +1524,27 @@
     "protectedNext": {
       "id": "project3",
       "type": "project",
-      "height": 565,
+      "height": 300,
       "keepNext": false
     }
   },
   {
-    "page": 22,
+    "page": 23,
     "title": "",
     "titleRole": "projects",
     "sourcePages": [
       22
     ],
-    "end": 1252,
-    "fill": 87,
+    "end": 987,
+    "fill": 67,
     "breakReason": "Next project: Stand safely against a wall while an adult uses a flat book to ma",
     "blocks": [
       {
         "id": "project3",
         "type": "project",
-        "text": "Ask elders which length units they remember using, where they used them and how each was defined. With an adult, look for museum or archaeological information about ruled objects found at Indian sites. Record the source and distinguish measured evidence from an interpretation of what an ancient object was used for. Compare one traditional method with a metric measurement.",
+        "text": "Ask elders which length units they remember using, where they used them and how each was defined. With an adult, look for museum or archaeological information about ruled objects found at Indian sites. Record the source and distinguish measured evidence from an interpretation of what an ancient object was used for. Compare one traditional method with a metric measurement. Different tools and traditions can be compared by stating the unit and method clearly.",
         "top": 112,
-        "bottom": 677,
+        "bottom": 412,
         "before": 0,
         "keepNext": false,
         "conceptId": "project3"
@@ -1519,8 +1553,8 @@
         "id": "project4",
         "type": "project",
         "text": "Use a ruler to draw a maze with straight segments 1 cm or 2 cm long, or combinations of these lengths. Measure carefully from the marks, not the ruler’s end. Ask a partner to trace a route, add its segment lengths and check the total. The printed sketch is a design idea, not a full-size measurement template.",
-        "top": 677,
-        "bottom": 1252,
+        "top": 412,
+        "bottom": 987,
         "before": 0,
         "keepNext": false,
         "conceptId": "project4"
@@ -1534,7 +1568,7 @@
     }
   },
   {
-    "page": 23,
+    "page": 24,
     "title": "",
     "titleRole": "projects",
     "sourcePages": [
