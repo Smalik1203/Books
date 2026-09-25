@@ -510,3 +510,121 @@ h2 .badge { border-radius: var(--v2-radius); }
    subtract them). */
 .work--trace:has(+ .work--trace) { margin-bottom: 0; }
 .work--trace + .work--trace { margin-top: 0; }
+
+/* 17 — the polish pass of 26 September 2026 (the user: "fix all").
+
+   Question lists are set ragged-right, as examination papers set them:
+   justified without hyphenation, a short question line stretched its
+   spaces into gaps. Running prose stays justified. */
+.page__main .c-practice li,
+.page__main .c-reflect li { text-align: left; }
+
+/* Think and Reflect loses the last of the old furniture — the bulb disc
+   and the faded question mark — and its title becomes a plain tab on
+   the box, like the worked example's. */
+.c-reflect__icon,
+.c-reflect__mark { display: none; }
+.c-reflect { padding-top: 3.2mm; }
+.c-reflect__title { left: 5mm; top: -3.2mm; padding: 1.1mm 4.5mm; }
+.c-reflect__box { padding-top: 6.4mm; }
+
+/* Tables take the same radius as every other box. The rule grid is drawn
+   cell by cell (right and bottom hairlines) inside one rounded frame,
+   because a collapsed table cannot round its corners. */
+.page .page__main table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: var(--stroke-hair) solid var(--teal-soft);
+  border-radius: var(--v2-radius);
+  overflow: hidden;
+}
+.page .page__main table th,
+.page .page__main table td {
+  border: 0;
+  border-right: var(--stroke-hair) solid var(--teal-soft);
+  border-bottom: var(--stroke-hair) solid var(--teal-soft);
+}
+.page .page__main table tr > :last-child { border-right: 0; }
+.page .page__main table tbody tr:last-child > * { border-bottom: 0; }
+
+/* The diagrams' third quantity was a rose tint no palette carried: it
+   becomes a light vermilion, the palette's own. */
+:root:root { --dg-c: #e0592a; --dg-c-soft: #f8c6a6; }
+
+/* The chapter opener, redrawn in the language of the running head: a
+   full-bleed indigo panel with the sunflower rule under it, the numeral
+   in a sky square, the title reversed out in white, and the chapter's
+   sketch on a paper card so its diagram still reads. The old skewed
+   orange tab and rule are gone. */
+.chapterhead::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: calc(-1 * var(--bleed));
+  left: calc(-1 * var(--bleed));
+  right: calc(-1 * var(--bleed));
+  height: calc(37mm + var(--bleed));
+  background: var(--teal);
+}
+.chapterhead__rule {
+  z-index: 0;
+  top: 37mm;
+  bottom: auto;
+  left: calc(-1 * var(--bleed));
+  right: calc(-1 * var(--bleed));
+  height: 1.2mm;
+  background: var(--sun);
+  border-radius: 0;
+}
+.page--verso .chapterhead__rule { right: calc(-1 * var(--bleed)); }
+.chapterhead__rule::before { display: none; }
+.chapterhead__num {
+  z-index: 1;
+  left: var(--margin-outside);
+  top: 7mm;
+  width: 23mm;
+  height: 23mm;
+  padding: 0;
+  line-height: 23mm;
+  background: var(--sky);
+  border-radius: var(--v2-radius);
+}
+.chapterhead__title {
+  z-index: 1;
+  left: calc(var(--margin-outside) + 29mm);
+  top: 18.5mm;
+  color: var(--paper);
+}
+.chapterhead__sketch {
+  z-index: 1;
+  top: 18.5mm;
+  width: 40mm;
+  padding: 1.6mm;
+  background: var(--paper);
+  border-radius: var(--v2-radius);
+}
+/* maths-tables.css boxes every cell of the last row in violet, at a
+   specificity the cell rule above does not reach; answer it here. */
+.page .page__main table tbody tr:last-child > td,
+.page .page__main table tfoot td {
+  border: 0;
+  border-right: var(--stroke-hair) solid var(--teal-soft);
+}
+.page .page__main table tbody tr:last-child > td:last-child { border-right: 0; }
+
+/* Think and Reflect keeps an icon (user, 26 September 2026), now set in
+   the tab itself: the bulb in ink before the words, no disc round it. */
+.c-reflect .c-reflect__icon {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: 7.4mm;
+  top: 1.4mm;
+  width: 4.6mm;
+  height: 4.6mm;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.c-reflect .c-reflect__icon svg { width: 4.6mm; height: 4.6mm; stroke: var(--ink); stroke-width: 2; }
+.c-reflect__title { padding-left: 10.6mm; }

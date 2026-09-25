@@ -198,13 +198,7 @@ $9 \times 9 \times 9 = 729$.
    numbers**. So adding the cube numbers gives the squares of the
    triangular numbers.
 
-10. $1 + 3 = 4$, $3 + 5 = 8$, $5 + 7 = 12$, $7 + 9 = 16$, …, that is
-    **4, 8, 12, 16**, the multiples of 4. **Yes**, every answer is a
-    multiple of 4. Two odd numbers next to each other differ by 2, so
-    their sum is twice the even number between them, and that even
-    number is itself twice something.
-
-11. *Answers will vary.* One example: add each counting number to the one
+10. *Answers will vary.* One example: add each counting number to the one
    after it — $1 + 2 = 3$, $2 + 3 = 5$, $3 + 4 = 7$ — and you get the odd
    numbers from 3. Picture: a row of $n$ dots and a row of $n + 1$ dots
    placed together always leave one dot without a partner.
@@ -407,8 +401,8 @@ practice questions. Beyond's example numbers are its own: *Beyond Example
 | | 6 | 6 |
 | Matching | 7 | (c) P–2, Q–4, R–3, S–1 |
 | | 8 | (a) P–4, Q–3, R–1, S–2 |
-| Paragraph-based | 9 | (i) (b) 128; (ii) 255 |
-| | 10 | (i) (a) 21; (ii) 120 |
+| Paragraph-based | 9 | (i) (b) 128; (ii) 255; (iii) the 11th square |
+| | 10 | (i) (a) 21; (ii) 120; (iii) 10 |
 
 ### Practice
 

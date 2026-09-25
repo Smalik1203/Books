@@ -4,11 +4,11 @@
 
 **This supersedes every description of By the Book and Beyond the Book
 further down this log.** The chapter is the first in the maths-v2 design
-(`css/maths-v2.css`, palette `prism`, edition `196x276-large`), 29 pages:
+(`css/maths-v2.css`, palette `prism`, edition `196x276-large`), 28 pages:
 
 * **Body p001–p013**, NCERT's structure, ending on a **Summary** page
   (p013, `data-close`, `.c-summary`).
-* **By the Book p090–p095**, written to BY-THE-BOOK.md: 50 questions —
+* **By the Book p090–p094**, five pages, written to BY-THE-BOOK.md: 50 questions —
   very short 10, short 10, long 10, assertion and reason 5, case-based 5,
   objective 10 — part heads with a rule, no marks lines.
 * **Beyond the Book p101–p110**, by format: the tried-and-explained
@@ -18,14 +18,25 @@ further down this log.** The chapter is the first in the maths-v2 design
   is set in two-row runs so its pages fill.
 * ANSWERS.md's By the Book and Beyond sections rewritten to match.
 
-Checks at close: every arithmetic identity on every page recomputed (79,
-none wrong); no lone word on any last line; no stranded opener; no label
-collision; every option row fits. `check-numbers.mjs` still predates this
-layout — it was patched past one crash but its figure, Beyond and booklet
-sections describe the old chapter and it stops at §1.4's Example 1.
-Short pages left by design: p021, p025 and p026 of Beyond (a whole example
-or paragraph question waiting for the next page), p027 (the last practice
-page before Answers opens fresh).
+Polish pass, same day: question lists set ragged-right; the chapter opener
+redrawn as an indigo panel with a sunflower rule, the numeral in a sky
+square and the sketch on a paper card; Think and Reflect without its bulb
+disc and "?"; tables rounded like every other box; the diagrams' rose tint
+replaced by a light vermilion. Beyond's four short pages were filled with
+teaching, not padding: a check row on Examples 1, 8 and 9, and a third part
+on each paragraph-based example (9: the first square above 1000 grains;
+10: the staircase of 55 blocks).
+
+No exercise set is split over a page: Exercise Set 1.4 lost its Q10 (odd numbers added in pairs, added in this redesign and repeating §1.4), its Q6 and Q9 were each shortened by a line, and NCERT's starred question is now Q10. Section 1.6, the one section with no key idea or Think and Reflect, gained both ("Shapes and numbers"), which also fills the page before the Summary.
+
+Checks at close: `check-numbers.mjs`, rewritten for this layout, runs 258
+checks — every identity on every page and in ANSWERS.md, the key complete
+(By the Book 1–50, Beyond 1–15, every example ending in an Answer row), and
+every single-correct answer recomputed from its rule and matched to the
+option the key names — with none failing (a planted wrong value is caught).
+No lone word on any last line; no stranded opener; no label collision;
+every option row fits. Every page at 88% or more except the two closing
+pages allowed to end short (the Summary, and By the Book's last page).
 
 ## Solved examples in examination formats, 20 September 2026
 
