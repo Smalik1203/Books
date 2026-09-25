@@ -9,6 +9,9 @@ out=root/'tmp/g6-format/proofs';out.mkdir(parents=True,exist_ok=True)
 def proof(d):
  c=json.loads((d/'chapter.json').read_text());n=int(c['number']);dest=out/f'ch{n:02}';dest.mkdir(exist_ok=True)
  pdf=root/'build/class-6'/f'{d.name}.pdf'
+ for old in [*dest.glob('page-*.png'),*dest.glob('review-*.jpg')]:
+  assert old.resolve().parent==dest.resolve() and dest.resolve().is_relative_to(out.resolve())
+  old.unlink()
  subprocess.run([str(poppler),'-r','100','-png',str(pdf),str(dest/'page')],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
  files=sorted(dest.glob('page-*.png'))
  for start in range(0,len(files),9):

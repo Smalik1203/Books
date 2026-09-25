@@ -165,8 +165,8 @@
       "file": "figures/class-7/science/ch07/apparatus-aquifer.png",
       "caption": "Aquifer."
     },
-    "end": 1338,
-    "fill": 94,
+    "end": 1415,
+    "fill": 100,
     "breakReason": "Next table: Table 11.1 · Where could water be used more carefully?",
     "blocks": [
       {
@@ -212,7 +212,7 @@
         "text": "Aquifer.",
         "artKey": "figures/class-7/science/ch07/apparatus-aquifer.png",
         "top": 978,
-        "bottom": 1338
+        "bottom": 1415
       }
     ],
     "protectedNext": {
@@ -233,8 +233,8 @@
       "file": "figures/class-6/science/review/water-containers.png",
       "caption": "Water in containers of different shapes."
     },
-    "end": 1356,
-    "fill": 95,
+    "end": 1415,
+    "fill": 100,
     "breakReason": "Next body: Litter, untreated sewage and some industrial wastes can pollute w",
     "blocks": [
       {
@@ -261,7 +261,7 @@
         "text": "Water in containers of different shapes.",
         "artKey": "figures/class-6/science/review/water-containers.png",
         "top": 996,
-        "bottom": 1356
+        "bottom": 1415
       }
     ],
     "protectedNext": {
@@ -620,9 +620,9 @@
       "file": "figures/class-7/science/review/metal-technology.png",
       "caption": "Metal technology."
     },
-    "end": 1238,
-    "fill": 86,
-    "breakReason": "Next body: Petrol and diesel are made by refining **petroleum**, also called",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next body: Burial, heat, pressure and time contributed to these changes over",
     "blocks": [
       {
         "id": "rock-time",
@@ -653,18 +653,27 @@
         "conceptId": "transport-task"
       },
       {
+        "id": "fossil-origin",
+        "type": "body",
+        "text": "Petrol and diesel are made by refining **petroleum**, also called crude oil. Coal, petroleum and natural gas are **fossil fuels**. They formed from ancient organic matter that was buried and transformed over geological time. Coal formed mainly from ancient plant material; much petroleum formed from tiny organisms living in ancient seas.",
+        "top": 878,
+        "bottom": 1054,
+        "before": 0,
+        "keepNext": false
+      },
+      {
         "id": "page-illustration",
         "type": "figure",
         "text": "Metal technology.",
         "artKey": "figures/class-7/science/review/metal-technology.png",
-        "top": 878,
-        "bottom": 1238
+        "top": 1054,
+        "bottom": 1415
       }
     ],
     "protectedNext": {
-      "id": "fossil-origin",
+      "id": "fossil-time",
       "type": "body",
-      "height": 176,
+      "height": 144,
       "keepNext": false
     }
   },
@@ -673,33 +682,24 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      15,
       16,
+      15,
       17
     ],
     "pageIllustration": {
       "file": "figures/class-7/science/ch07/bukhari.png",
       "caption": "A room heater."
     },
-    "end": 1372,
-    "fill": 97,
-    "breakReason": "Next body: Burning fossil fuels releases carbon dioxide and may release harm",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next body: Smoke from burning wood, dung or coal can harm health, especially",
     "blocks": [
-      {
-        "id": "fossil-origin",
-        "type": "body",
-        "text": "Petrol and diesel are made by refining **petroleum**, also called crude oil. Coal, petroleum and natural gas are **fossil fuels**. They formed from ancient organic matter that was buried and transformed over geological time. Coal formed mainly from ancient plant material; much petroleum formed from tiny organisms living in ancient seas.",
-        "top": 112,
-        "bottom": 288,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "fossil-time",
         "type": "body",
         "text": "Burial, heat, pressure and time contributed to these changes over millions of years. A tank can be emptied in days, while the fuel it contained cannot be replaced on that timescale. Finding another deposit increases the stock people know about; it does not make fossil fuels renewable.",
-        "top": 288,
-        "bottom": 432,
+        "top": 112,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -707,8 +707,17 @@
         "id": "fuel-table",
         "type": "table",
         "text": "Table 11.4 · Fossil fuels and some uses",
-        "top": 432,
-        "bottom": 1012,
+        "top": 256,
+        "bottom": 836,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "fuel-effects",
+        "type": "body",
+        "text": "Burning fossil fuels releases carbon dioxide and may release harmful air pollutants. Natural gas can produce less carbon dioxide than coal for the same energy released, but it still produces carbon dioxide. Leaked methane also affects climate. “Cleaner” does not mean “without any environmental impact”.",
+        "top": 836,
+        "bottom": 980,
         "before": 0,
         "keepNext": false
       },
@@ -717,12 +726,12 @@
         "type": "figure",
         "text": "A room heater.",
         "artKey": "figures/class-7/science/ch07/bukhari.png",
-        "top": 1012,
-        "bottom": 1372
+        "top": 980,
+        "bottom": 1415
       }
     ],
     "protectedNext": {
-      "id": "fuel-effects",
+      "id": "cooking-effects",
       "type": "body",
       "height": 144,
       "keepNext": false
@@ -740,25 +749,16 @@
       "file": "figures/class-7/science/review/air-quality.png",
       "caption": "Air quality."
     },
-    "end": 904,
-    "fill": 61,
+    "end": 809.5168935955622,
+    "fill": 54,
     "breakReason": "Next heading: 11.7 Renewable Does Not Mean Endless",
     "blocks": [
-      {
-        "id": "fuel-effects",
-        "type": "body",
-        "text": "Burning fossil fuels releases carbon dioxide and may release harmful air pollutants. Natural gas can produce less carbon dioxide than coal for the same energy released, but it still produces carbon dioxide. Leaked methane also affects climate. “Cleaner” does not mean “without any environmental impact”.",
-        "top": 112,
-        "bottom": 256,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "cooking-effects",
         "type": "body",
         "text": "Smoke from burning wood, dung or coal can harm health, especially indoors. Gas appliances also need safe installation and ventilation. Students should not operate or test stoves, cylinders or fuels in this chapter. Compare information and observations made safely with an adult.",
-        "top": 256,
-        "bottom": 400,
+        "top": 112,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -766,8 +766,8 @@
         "id": "transport-care",
         "type": "body",
         "text": "Walking or cycling on a safe route, sharing a journey and using suitable public transport can reduce fuel use. Battery-electric vehicles have no exhaust emissions at the vehicle, but producing their electricity and materials still has environmental effects. Ask where energy comes from before comparing choices.",
-        "top": 400,
-        "bottom": 544,
+        "top": 256,
+        "bottom": 400,
         "before": 0,
         "keepNext": false
       },
@@ -776,8 +776,8 @@
         "type": "figure",
         "text": "Air quality.",
         "artKey": "figures/class-7/science/review/air-quality.png",
-        "top": 544,
-        "bottom": 904
+        "top": 400,
+        "bottom": 809.5168935955622
       }
     ],
     "protectedNext": {
@@ -799,9 +799,9 @@
       "file": "figures/class-7/science/ch07/water-cycle.png",
       "caption": "Water cycle."
     },
-    "end": 1216,
-    "fill": 85,
-    "breakReason": "Next body: A **renewable resource** can be replenished by natural processes ",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next panel: A town pumps underground water faster than local rain can replace",
     "blocks": [
       {
         "id": "renew-heading",
@@ -822,18 +822,27 @@
         "keepNext": false
       },
       {
+        "id": "renew-explain",
+        "type": "body",
+        "text": "A **renewable resource** can be replenished by natural processes on a useful human timescale, provided its use and condition allow this. A **non-renewable resource** is not replaced on that timescale. Neither label tells us that extraction or use has no costs. Recycling a metal conserves a stock; it does not make its mineral deposit renewable.",
+        "top": 856,
+        "bottom": 1032,
+        "before": 0,
+        "keepNext": false
+      },
+      {
         "id": "page-illustration",
         "type": "figure",
         "text": "Water cycle.",
         "artKey": "figures/class-7/science/ch07/water-cycle.png",
-        "top": 856,
-        "bottom": 1216
+        "top": 1032,
+        "bottom": 1415
       }
     ],
     "protectedNext": {
-      "id": "renew-explain",
-      "type": "body",
-      "height": 176,
+      "id": "renew-think",
+      "type": "panel",
+      "height": 260,
       "keepNext": false
     }
   },
@@ -842,93 +851,84 @@
     "title": "",
     "titleRole": "continuation",
     "sourcePages": [
-      18
-    ],
-    "pageIllustration": {
-      "file": "figures/class-7/science/ch07/apparatus-seepage.png",
-      "caption": "Water moving through soil."
-    },
-    "end": 908,
-    "fill": 61,
-    "breakReason": "Next heading: 11.8 Trace a Resource, Reduce Waste",
-    "blocks": [
-      {
-        "id": "renew-explain",
-        "type": "body",
-        "text": "A **renewable resource** can be replenished by natural processes on a useful human timescale, provided its use and condition allow this. A **non-renewable resource** is not replaced on that timescale. Neither label tells us that extraction or use has no costs. Recycling a metal conserves a stock; it does not make its mineral deposit renewable.",
-        "top": 112,
-        "bottom": 288,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "renew-think",
-        "type": "panel",
-        "text": "A town pumps underground water faster than local rain can replace it. Someone says, “Water is renewable, so the supply cannot run out.” Use the water cycle and the idea of a local supply to explain what is missing from this claim.",
-        "top": 288,
-        "bottom": 548,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "renew-think"
-      },
-      {
-        "id": "page-illustration",
-        "type": "figure",
-        "text": "Water moving through soil.",
-        "artKey": "figures/class-7/science/ch07/apparatus-seepage.png",
-        "top": 548,
-        "bottom": 908
-      }
-    ],
-    "protectedNext": {
-      "id": "daily-heading",
-      "type": "heading",
-      "height": 70,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 16,
-    "title": "11.8 Trace a Resource, Reduce Waste",
-    "titleRole": "section",
-    "sourcePages": [
       18,
-      19,
-      20
+      19
     ],
     "pageIllustration": {
       "file": "figures/class-6/science/review/recycling-bins.png",
       "caption": "Recycling bins."
     },
-    "end": 1370,
-    "fill": 97,
-    "breakReason": "End of lesson before reference pages",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next body: A useful plan links an action to a result that can be checked. “S",
     "blocks": [
+      {
+        "id": "renew-think",
+        "type": "panel",
+        "text": "A town pumps underground water faster than local rain can replace it. Someone says, “Water is renewable, so the supply cannot run out.” Use the water cycle and the idea of a local supply to explain what is missing from this claim.",
+        "top": 112,
+        "bottom": 372,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "renew-think"
+      },
       {
         "id": "daily-heading",
         "type": "heading",
         "text": "11.8 Trace a Resource, Reduce Waste",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 384,
+        "bottom": 442,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "daily-task",
         "type": "activity",
         "text": "1. List these activities in your notebook: washing clothes, making clay toys, collecting firewood, flying a kite and preparing breakfast. Treat firewood collection as a discussion, not a task to carry out. 2. For each, name a resource used directly. Then trace one less obvious resource: for example, making a kite needs paper, and making paper requires raw material, water and energy. 3. Choose one activity and suggest a change that avoids waste without reducing essential needs. Explain who would need to agree or help. 4. Decide what evidence would show improvement. Record a starting observation, try the agreed change, and compare again under similar conditions.",
-        "top": 170,
-        "bottom": 690,
+        "top": 442,
+        "bottom": 962,
         "before": 0,
         "keepNext": false,
         "conceptId": "daily-task"
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Recycling bins.",
+        "artKey": "figures/class-6/science/review/recycling-bins.png",
+        "top": 962,
+        "bottom": 1415
+      }
+    ],
+    "protectedNext": {
+      "id": "daily-evidence",
+      "type": "body",
+      "height": 144,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 16,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      19,
+      20
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch11/tree.png",
+      "caption": "A tree depends on soil, water and air."
+    },
+    "end": 1052,
+    "fill": 72,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
+      {
         "id": "daily-evidence",
         "type": "body",
         "text": "A useful plan links an action to a result that can be checked. “Save nature” is too broad to measure by itself. “Report the leaking tap, have an adult repair it, and check whether it still drips” names a problem, an action and evidence. Looking clean or smelling fresh alone cannot establish that air or water is safe.",
-        "top": 690,
-        "bottom": 834,
+        "top": 112,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -936,18 +936,18 @@
         "id": "shared",
         "type": "body",
         "text": "Ajji’s treasures connect. Trees depend on soil, water and air; people depend on those resources too. Responsible use means meeting needs, reducing avoidable waste and considering effects on others. Before choosing an action, ask: what resource is involved, how is it replenished, and what evidence will show that our action helped?",
-        "top": 834,
-        "bottom": 1010,
+        "top": 256,
+        "bottom": 432,
         "before": 0,
         "keepNext": false
       },
       {
         "id": "page-illustration",
         "type": "figure",
-        "text": "Recycling bins.",
-        "artKey": "figures/class-6/science/review/recycling-bins.png",
-        "top": 1010,
-        "bottom": 1370
+        "text": "A tree depends on soil, water and air.",
+        "artKey": "figures/class-7/science/ch11/tree.png",
+        "top": 432,
+        "bottom": 1052
       }
     ],
     "protectedNext": null
@@ -963,8 +963,8 @@
       "file": "figures/class-7/science/ch07/insulation.png",
       "caption": "Materials that slow heat transfer."
     },
-    "end": 1400,
-    "fill": 99
+    "end": 1415,
+    "fill": 100
   },
   {
     "page": 18,
@@ -989,9 +989,9 @@
       "file": "figures/class-7/science/ch07/ice-stupa.png",
       "caption": "Ice stupa."
     },
-    "end": 1146,
-    "fill": 79,
-    "breakReason": "Next question: Why is petroleum called non-renewable? Compare the timescale of i",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next question: List five daily activities that use natural resources. For each, ",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -1003,7 +1003,7 @@
         "keepNext": false
       },
       {
-        "id": "assessment-intro-0",
+        "id": "assessment-intro",
         "type": "body",
         "text": "Answer in your notebook, giving reasons.",
         "top": 170,
@@ -1048,16 +1048,34 @@
         "keepNext": false
       },
       {
+        "id": "q5",
+        "type": "question",
+        "text": "Why is petroleum called non-renewable? Compare the timescale of its formation with the timescale on which a vehicle uses fuel. Does discovering a new oil deposit change your answer?",
+        "top": 786,
+        "bottom": 912,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q6",
+        "type": "question",
+        "text": "Explain why regrowing a forest is harder than planting a row of trees. Include living organisms, soil and time in your answer.",
+        "top": 912,
+        "bottom": 1006,
+        "before": 0,
+        "keepNext": false
+      },
+      {
         "id": "page-illustration",
         "type": "figure",
         "text": "Ice stupa.",
         "artKey": "figures/class-7/science/ch07/ice-stupa.png",
-        "top": 786,
-        "bottom": 1146
+        "top": 1006,
+        "bottom": 1415
       }
     ],
     "protectedNext": {
-      "id": "q5",
+      "id": "q7",
       "type": "question",
       "height": 126,
       "keepNext": false
@@ -1068,36 +1086,19 @@
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
-      22
+      22,
+      23
     ],
-    "end": 1243,
-    "fill": 87,
-    "breakReason": "Next question: A family uses photovoltaic panels for electricity, a gas stove fo",
+    "end": 1181,
+    "fill": 82,
+    "breakReason": "Next question: Complete the resource tree in your notebook using these seven ter",
     "blocks": [
-      {
-        "id": "q5",
-        "type": "question",
-        "text": "Why is petroleum called non-renewable? Compare the timescale of its formation with the timescale on which a vehicle uses fuel. Does discovering a new oil deposit change your answer?",
-        "top": 112,
-        "bottom": 238,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "q6",
-        "type": "question",
-        "text": "Explain why regrowing a forest is harder than planting a row of trees. Include living organisms, soil and time in your answer.",
-        "top": 238,
-        "bottom": 332,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "q7",
         "type": "question",
         "text": "List five daily activities that use natural resources. For each, name the resource and suggest one way to reduce avoidable use or waste. Keep essential needs such as drinking and hygiene.",
-        "top": 332,
-        "bottom": 458,
+        "top": 112,
+        "bottom": 238,
         "before": 0,
         "keepNext": false
       },
@@ -1105,8 +1106,8 @@
         "id": "q8",
         "type": "question",
         "text": "Describe four activities or processes that depend on air. Distinguish examples needing moving air from examples depending on a gas within air.",
-        "top": 458,
-        "bottom": 552,
+        "top": 238,
+        "bottom": 332,
         "before": 0,
         "keepNext": false
       },
@@ -1114,8 +1115,8 @@
         "id": "q9",
         "type": "question",
         "text": "Prepare a plan to care for greenery in your locality. Include permission, suitable sites and species, care of existing plants and how you would check survival. Explain why planting trees everywhere would not be a sensible rule.",
-        "top": 552,
-        "bottom": 678,
+        "top": 332,
+        "bottom": 458,
         "before": 0,
         "keepNext": false
       },
@@ -1123,8 +1124,8 @@
         "id": "q10",
         "type": "question",
         "text": "The illustrated cooker heats a pot using a reflective dish. (a) What source of energy does it use? (b) Give one benefit and one limitation. (c) Why should children avoid touching the pot or looking at concentrated reflected light?",
-        "top": 678,
-        "bottom": 1023,
+        "top": 458,
+        "bottom": 803,
         "before": 0,
         "keepNext": false
       },
@@ -1132,8 +1133,8 @@
         "id": "q11",
         "type": "question",
         "text": "How can large-scale tree removal affect soil? Explain two links among roots, leaf litter, rainfall, erosion and soil organisms.",
-        "top": 1023,
-        "bottom": 1117,
+        "top": 803,
+        "bottom": 897,
         "before": 0,
         "keepNext": false
       },
@@ -1141,16 +1142,25 @@
         "id": "q12",
         "type": "question",
         "text": "Explain two ways human activities pollute air. Suggest one practical action to reduce a source of pollution, and describe what evidence could help evaluate it.",
-        "top": 1117,
-        "bottom": 1243,
+        "top": 897,
+        "bottom": 1023,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "q13",
+        "type": "question",
+        "text": "A family uses photovoltaic panels for electricity, a gas stove for cooking and a windmill to pump water. A cloudy week brings much less sunlight. Predict how each service might be affected. State what you need to know about stored electricity, gas supply and wind before making a definite prediction.",
+        "top": 1023,
+        "bottom": 1181,
         "before": 0,
         "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "q13",
+      "id": "q14",
       "type": "question",
-      "height": 158,
+      "height": 595,
       "keepNext": false
     }
   },
@@ -1161,25 +1171,16 @@
     "sourcePages": [
       23
     ],
-    "end": 1181,
-    "fill": 82,
+    "end": 1023,
+    "fill": 70,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
-      {
-        "id": "q13",
-        "type": "question",
-        "text": "A family uses photovoltaic panels for electricity, a gas stove for cooking and a windmill to pump water. A cloudy week brings much less sunlight. Predict how each service might be affected. State what you need to know about stored electricity, gas supply and wind before making a definite prediction.",
-        "top": 112,
-        "bottom": 270,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "q14",
         "type": "question",
         "text": "Complete the resource tree in your notebook using these seven terms: fossil fuels, forests, air, petroleum, coal, water, non-renewable resources. Letters show the spaces to fill; each term is used once. The tree shows selected examples, not every resource.",
-        "top": 270,
-        "bottom": 865,
+        "top": 112,
+        "bottom": 707,
         "before": 0,
         "keepNext": false
       },
@@ -1187,8 +1188,8 @@
         "id": "q15",
         "type": "question",
         "text": "Trees are cut to meet demands for housing and industry. Write a short report considering these needs alongside habitat, soil and water protection. Discuss reducing waste, reusing materials, appropriate alternatives and protecting existing forests; explain your recommendations.",
-        "top": 865,
-        "bottom": 1023,
+        "top": 707,
+        "bottom": 865,
         "before": 0,
         "keepNext": false
       },
@@ -1196,8 +1197,8 @@
         "id": "q16",
         "type": "question",
         "text": "Propose a school water-saving plan. Name the problem, people who can help, steps to take and how you would compare water use before and after. Explain how it could help the environment while preserving drinking water and hygiene.",
-        "top": 1023,
-        "bottom": 1181,
+        "top": 865,
+        "bottom": 1023,
         "before": 0,
         "keepNext": false
       }
@@ -1216,7 +1217,7 @@
       "file": "figures/class-7/science/ch07/apparatus-coast.png",
       "caption": "Land and water along a coast."
     },
-    "end": 1002,
+    "end": 996.6666666666667,
     "fill": 68,
     "breakReason": "Next project: Look for uses of rock or mineral-derived materials in buildings, ",
     "blocks": [
@@ -1255,7 +1256,7 @@
         "text": "Land and water along a coast.",
         "artKey": "figures/class-7/science/ch07/apparatus-coast.png",
         "top": 642,
-        "bottom": 1002
+        "bottom": 996.6666666666667
       }
     ],
     "protectedNext": {
@@ -1276,8 +1277,8 @@
       "file": "figures/class-7/science/ch04/samples.png",
       "caption": "Material samples."
     },
-    "end": 944,
-    "fill": 64,
+    "end": 1204,
+    "fill": 84,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
       {
@@ -1306,7 +1307,7 @@
         "text": "Material samples.",
         "artKey": "figures/class-7/science/ch04/samples.png",
         "top": 584,
-        "bottom": 944
+        "bottom": 1204
       }
     ],
     "protectedNext": null

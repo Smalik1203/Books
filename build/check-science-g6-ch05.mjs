@@ -9,7 +9,7 @@ const html=await Promise.all(files.map(f=>fs.readFile(dir+'/'+f,'utf8')));
 const norm=s=>s.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>').replaceAll('&quot;','"').replaceAll('*','').replace(/\s+/g,' ').trim();
 const pages=html.map(s=>norm([...s.replace(/<g\b[^>]*data-page-illustration=[\s\S]*?<\/g>/g,'').replace(/<text\b[^>]*class="[^"]*\bse-running\b[^"]*"[^>]*>[\s\S]*?<\/text>/g,'').matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join(' ')));
 const text=pages.join(' '),has=s=>assert.ok(text.includes(norm(s)),'Missing content: '+s);
-assert.equal(files.length,24,'Reviewed extent with an image on every page');
+assert.equal(files.length,25,'Reviewed extent with enlarged artwork and whole paragraphs');
 html.forEach((s,i)=>{scienceContract(files[i],s);assert.ok(s.includes(`data-folio="${i+1}"`));});
 opener.forEach(has);glossary.flat().forEach(has);summary.forEach(has);
 for(const b of lesson){
@@ -36,4 +36,4 @@ const ids=new Set(['opener',...lesson.map(b=>b.id),...exercises.map(q=>q.id),...
 for(const p of [...coverage.points,...coverage.corrections])for(const id of p.targets)assert.ok(ids.has(id));
 assert.ok(!/textLength=|lengthAdjust=|--head|--tail|style=/.test(html.join('')));
 const cfg=JSON.parse(await fs.readFile(dir+'/chapter.json','utf8'));assert.equal(cfg.subject,'Science');assert.equal(cfg.edition,'science-tall');
-console.log('Chapter 5 passed: 24 pages, 7 investigations, all 13 source questions and 6 projects; complete tables, panels and measurement explanations.');
+console.log(`Chapter 5 passed: ${files.length} pages, 7 investigations, all 13 source questions and 6 projects; complete tables, panels and measurement explanations.`);

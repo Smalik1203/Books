@@ -1,7 +1,7 @@
 // Refit the lesson's authored blocks, retaining exact type and artwork sizes.
 // The opener and dedicated reference pages are excluded by the caller.
 import {hasContentImage} from './science-page-illustrations.mjs';
-export function refitV2Lesson(plans,{imageReserve=0}={}){
+export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false}={}){
  const top=112,bottom=1415,capacity=bottom-top;
  const blocks=plans.flatMap(p=>p.blocks).map((b,i)=>({...b,id:b.atomId||`reading-${i}`,before:b.type==='heading'?12:0,h:b.h+(b.type==='heading'?12:0)}));
  const n=blocks.length,prefix=[0],images=[0];
@@ -11,13 +11,14 @@ export function refitV2Lesson(plans,{imageReserve=0}={}){
   images.push(images.at(-1)+(hasContentImage(b.html)?1:0));
  }
  function legal(start,end){
+  if(frontLoad&&end===n&&start>0&&prefix[end]-prefix[start]<320)return false;
   if(blocks[start].type==='rule')return false;
   const last=blocks[end-1],next=blocks[end];
   if(last.type==='heading')return false;
   if(next){
    if(next.type==='rule')return false;
    if(last.keepNext)return false;
-   if(/^The pictures show the three plants/.test(next.text||'')&&next.paragraphPart===0)return false;
+   if(/^The pictures show the three plants/.test(next.text||'')&&(next.paragraphPart===0||frontLoad&&next.paragraphPart===undefined))return false;
   }
   for(let i=start;i<end;i++)if(blocks[i].type==='heading'&&prefix[end]-prefix[i+1]<(blocks[i].completeUnitHeight??160))return false;
   return true;
@@ -32,8 +33,11 @@ export function refitV2Lesson(plans,{imageReserve=0}={}){
    const reserve=images[end]===images[start]?imageReserve:0;
    if(used+reserve>capacity)continue;
    const gap=capacity-used-reserve;
-   const proposal={pages:best[end].pages+1,cost:best[end].cost+gap*gap,end};
-   if(!best[start]||proposal.pages<best[start].pages||(proposal.pages===best[start].pages&&proposal.cost<best[start].cost))best[start]=proposal;
+   const proposal={pages:best[end].pages+1,cost:best[end].cost+gap*gap,end,gap};
+   // Class 6: fill the earlier leaf before balancing later leaves. This moves
+   // continuation prose forward without adding pages or splitting a panel.
+   if(!best[start]||proposal.pages<best[start].pages||(proposal.pages===best[start].pages&&
+    (frontLoad ? proposal.gap<best[start].gap || proposal.gap===best[start].gap&&proposal.cost<best[start].cost : proposal.cost<best[start].cost)))best[start]=proposal;
   }
  }
  if(!best[0])throw Error('V2 blocks cannot be fitted without dividing a protected component.');

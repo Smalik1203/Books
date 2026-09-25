@@ -4,13 +4,13 @@ import {scienceContract} from './science-contract.mjs';
 const dir='pages/class-6/ch02-diversity-in-the-living-world';
 const files=(await fs.readdir(dir)).filter(n=>/^p\d+\.html$/.test(n)).sort();
 const htmls=await Promise.all(files.map(n=>fs.readFile(dir+'/'+n,'utf8')));
-const textOf=s=>[...s.matchAll(/<text\b[^>]*>[\s\S]*?<\/text>/g)].map(m=>m[0].replace(/<tspan\b[^>]*\bdy="[^"]*"[^>]*>/g,' ').replace(/<[^>]*>/g,'')).join('\n');
+const textOf=s=>s.replace(/<svg class="g6-furniture"[\s\S]*?<\/svg>/g,'').replace(/<\/(?:p|div|li|h[1-6]|text|td|th)>/g,'\n').replace(/<[^>]*>/g,'').replaceAll('&amp;','&').replace(/[ \t]+/g,' ').replace(/\n\s*/g,'\n');
 const text=htmls.map(textOf).join('\n');
 for(let i=0;i<files.length;i++)scienceContract(files[i],htmls[i]);
 for(const banned of ['What Did You Notice?','Copy the headings into your notebook and add your own observations.','Three groups appear on their own','Sort your prints into two piles','Split one seed','This one explains the other two','What answer would each student be hoping for?'])assert.ok(!text.includes(banned),'Retired wording: '+banned);
 assert.equal((text.match(/Before the visit, copy the headings of Tables 2.1 and 2.2/g)||[]).length,1,'One fieldwork recording instruction');
-assert.equal((text.match(/^Think It Through$/gm)||[]).length,2,'Two substantial pauses');
-for(const s of htmls)assert.ok((textOf(s).match(/^Think It Through$/gm)||[]).length<=1,'Do not stack the repeated feature');
+assert.equal((text.match(/Think It Through/g)||[]).length,2,'Two substantial pauses');
+for(const s of htmls)assert.ok((textOf(s).match(/Think It Through/g)||[]).length<=1,'Do not stack the repeated feature');
 const md=await fs.readFile('assets/manuscripts/ch02-edited-reading-copy.md','utf8');
 const table=md.match(/\*\*Table 2\.3:[\s\S]*?(?=\*\*\[ PAGE)/)[0];assert.ok(!/\| (?:Tree|Shrub|Herb) \|/.test(table),'No classification giveaway');
 const summary=md.split('## Summary')[1].split('**[ PAGE')[0];assert.ok(summary.includes('inherited features')&&summary.includes('generations'),'Summary retains adaptation mechanism');
@@ -20,12 +20,12 @@ assert.ok(text.includes('Endosperm (food store)')&&text.includes('One cotyledon'
 assert.ok(text.includes('body parts')&&text.includes('only one group lose information'),'Overlapping classification addressed');
 assert.ok(text.includes('same length of time')&&text.includes('not proof of disappearance'),'Sampling limits retained');
 assert.ok(text.includes('shoot length and leaf colour')&&text.includes('seven days'),'Extension specifies observations and duration');
-const layout=JSON.parse(await fs.readFile('assets/design-history/ch02-page-audit.json','utf8'));
+const layout=JSON.parse(await fs.readFile('assets/design-history/science-g6-modern/ch02-diversity-in-the-living-world/page-map.json','utf8'));
 assert.equal(layout.length,htmls.length,'Layout audit matches current page count');
 // Content fill is diagnostic: never meet it by stretching paragraph gaps.
 console.log('Diversity lesson checks passed: sequence, repetition, definitions, anatomical labels, evidence limits and dedicated reference pages.');
 
-const glossaryPage=layout.find(p=>p.text[0]==='Keywords'),summaryPage=layout.find(p=>p.text[0]==='Summary');
-assert.ok(glossaryPage&&summaryPage&&summaryPage.page===glossaryPage.page+1,'Separate glossary and summary pages');
-assert.equal(htmls.filter(s=>s.includes('class="se-glossary-panel"')).length,1,'One boxed glossary');
-assert.equal(summaryPage.text.filter(s=>s.startsWith('•')).length,12,'Complete summary together');
+const summaryPages=htmls.filter(s=>s.includes('class="g6-summary"'));
+assert.equal(summaryPages.length,1,'Complete summary on one page');
+assert.equal((summaryPages[0].match(/class="g6-bullet"/g)||[]).length,12,'All twelve summary points together');
+assert.equal((htmls.join('').match(/g6-panel--glossary/g)||[]).length,2,'Both complete glossary panels retained');

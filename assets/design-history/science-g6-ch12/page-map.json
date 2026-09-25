@@ -15,11 +15,12 @@
     "titleRole": "section",
     "sourcePages": [
       2,
-      3
+      3,
+      5
     ],
-    "end": 1186,
-    "fill": 82,
-    "breakReason": "Next body: Astronomers now divide the whole sky into 88 defined regions call",
+    "end": 1330,
+    "fill": 93,
+    "breakReason": "Next figure: Fig. 12.2 · Selected stars near Orion and Taurus. Lines are guide",
     "blocks": [
       {
         "id": "stars-heading",
@@ -57,12 +58,21 @@
         "bottom": 1186,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "constellations",
+        "type": "body",
+        "text": "Astronomers now divide the whole sky into 88 defined regions called **constellations**. Familiar patterns often lie within these regions. A well-known pattern that is not itself an entire constellation is called an **asterism**. The Big Dipper, for example, is part of the constellation Ursa Major.",
+        "top": 1186,
+        "bottom": 1330,
+        "before": 0,
+        "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "constellations",
-      "type": "body",
-      "height": 144,
+      "id": "winter-map",
+      "type": "figure",
+      "height": 503,
       "keepNext": false
     }
   },
@@ -72,29 +82,20 @@
     "titleRole": "continuation",
     "sourcePages": [
       3,
-      5,
-      4
+      4,
+      5
     ],
     "end": 1079,
     "fill": 74,
-    "breakReason": "Next body: The Big Dipper’s seven main stars make a bowl and handle. It is a",
+    "breakReason": "Next heading: 12.2 Preparing to Watch the Sky",
     "blocks": [
-      {
-        "id": "constellations",
-        "type": "body",
-        "text": "Astronomers now divide the whole sky into 88 defined regions called **constellations**. Familiar patterns often lie within these regions. A well-known pattern that is not itself an entire constellation is called an **asterism**. The Big Dipper, for example, is part of the constellation Ursa Major.",
-        "top": 112,
-        "bottom": 256,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "winter-map",
         "type": "figure",
         "text": "Fig. 12.2 · Selected stars near Orion and Taurus. Lines are guides; orientations change as the sky turns.",
         "artKey": "winter",
-        "top": 256,
-        "bottom": 759,
+        "top": 112,
+        "bottom": 615,
         "before": 0,
         "keepNext": false
       },
@@ -102,8 +103,8 @@
         "id": "orion",
         "type": "body",
         "text": "Orion’s three belt stars form a short, nearly straight row. Betelgeuse lies towards one shoulder; Rigel marks one foot in the traditional figure. Nearby in the sky, Sirius belongs to Canis Major. Sirius is the brightest star in Earth’s night sky, although the Sun appears much brighter by day.",
-        "top": 759,
-        "bottom": 903,
+        "top": 615,
+        "bottom": 759,
         "before": 0,
         "keepNext": false
       },
@@ -111,58 +112,57 @@
         "id": "names",
         "type": "body",
         "text": "Different traditions give these objects different names. Betelgeuse is associated with Ardra, Aldebaran with Rohini, and the Pleiades star cluster with Krittika in Indian astronomical traditions. These examples do not make every traditional sky division identical to a modern constellation. Ask which actual star, group or sky region a name refers to.",
-        "top": 903,
+        "top": 759,
+        "bottom": 935,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "dippers",
+        "type": "body",
+        "text": "The Big Dipper’s seven main stars make a bowl and handle. It is also known as Saptarishi. The Little Dipper is part of Ursa Minor; Polaris, the **Pole Star**, is at the end of its handle. Polaris is also called Dhruva tara. Stories may help us remember the shapes, while measurements help us locate the stars.",
+        "top": 935,
         "bottom": 1079,
         "before": 0,
         "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "dippers",
-      "type": "body",
-      "height": 144,
+      "id": "watch-heading",
+      "type": "heading",
+      "height": 70,
       "keepNext": false
     }
   },
   {
     "page": 4,
-    "title": "",
-    "titleRole": "continuation",
+    "title": "12.2 Preparing to Watch the Sky",
+    "titleRole": "section",
     "sourcePages": [
-      5,
       6,
       7,
       13,
       9
     ],
-    "end": 1171,
-    "fill": 81,
+    "end": 1015,
+    "fill": 69,
     "breakReason": "Next heading: Finding the Pole Star",
     "blocks": [
-      {
-        "id": "dippers",
-        "type": "body",
-        "text": "The Big Dipper’s seven main stars make a bowl and handle. It is also known as Saptarishi. The Little Dipper is part of Ursa Minor; Polaris, the **Pole Star**, is at the end of its handle. Polaris is also called Dhruva tara. Stories may help us remember the shapes, while measurements help us locate the stars.",
-        "top": 112,
-        "bottom": 256,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "watch-heading",
         "type": "heading",
         "text": "12.2 Preparing to Watch the Sky",
-        "top": 268,
-        "bottom": 326,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "visibility",
         "type": "body",
         "text": "What you can see depends on your location, date, time, weather and view of the horizon. Buildings or trees may hide a target. Scattered light from lamps can wash out faint stars; bright moonlight can do so too. Not seeing a star on one night is not evidence that it has stopped shining.",
-        "top": 326,
-        "bottom": 470,
+        "top": 170,
+        "bottom": 314,
         "before": 0,
         "keepNext": false
       },
@@ -170,8 +170,8 @@
         "id": "light-pollution",
         "type": "body",
         "text": "Unwanted or excessive artificial light at night contributes to **light pollution**. Shielding lights downwards, choosing suitable brightness and using them only when needed can reduce it. Keep lighting required for safety. A dark-sky site protects useful darkness; it is not necessarily free of clouds or air pollution.",
-        "top": 470,
-        "bottom": 614,
+        "top": 314,
+        "bottom": 458,
         "before": 0,
         "keepNext": false
       },
@@ -180,8 +180,8 @@
         "type": "illustrated-prose",
         "text": "Fig. 12.3 · A small refracting telescope. An instrument does not replace careful identification.",
         "artKey": "telescope",
-        "top": 614,
-        "bottom": 1027,
+        "top": 458,
+        "bottom": 871,
         "before": 0,
         "keepNext": false
       },
@@ -189,8 +189,8 @@
         "id": "sun-safety",
         "type": "body",
         "text": "Never look directly at the Sun, or point binoculars or a telescope at it. Ordinary sunglasses do not make this safe. All observing activities here are for the night sky, with an adult present, from safe ground away from roads, roofs and steep edges.",
-        "top": 1027,
-        "bottom": 1171,
+        "top": 871,
+        "bottom": 1015,
         "before": 0,
         "keepNext": false
       }
@@ -490,8 +490,8 @@
       "file": "figures/class-7/science/review/uranus.png",
       "caption": "Uranus."
     },
-    "end": 1392,
-    "fill": 98,
+    "end": 1415,
+    "fill": 100,
     "breakReason": "Next heading: The Moon and Other Satellites",
     "blocks": [
       {
@@ -537,7 +537,7 @@
         "text": "Uranus.",
         "artKey": "figures/class-7/science/review/uranus.png",
         "top": 1032,
-        "bottom": 1392
+        "bottom": 1415
       }
     ],
     "protectedNext": {
@@ -555,8 +555,8 @@
       14,
       15
     ],
-    "end": 1344,
-    "fill": 95,
+    "end": 1415,
+    "fill": 100,
     "breakReason": "Next body: India launched Chandrayaan-1 in 2008 and Chandrayaan-2 in 2019. C",
     "blocks": [
       {
@@ -602,7 +602,7 @@
         "text": "Fig. 12.9 · Artist’s impression of a lunar lander and rover, not a construction diagram.",
         "artKey": "figure",
         "top": 989,
-        "bottom": 1344,
+        "bottom": 1415,
         "before": 0,
         "keepNext": false
       }
@@ -698,9 +698,9 @@
       16,
       17
     ],
-    "end": 1150,
-    "fill": 80,
-    "breakReason": "Next heading: 12.5 A Universe to Investigate",
+    "end": 1396,
+    "fill": 99,
+    "breakReason": "Next figure: Fig. 12.12 · Follow the membership chain. These are not relative ",
     "blocks": [
       {
         "id": "comet-process",
@@ -756,51 +756,51 @@
         "bottom": 1150,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "universe-heading",
-      "type": "heading",
-      "height": 70,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 13,
-    "title": "12.5 A Universe to Investigate",
-    "titleRole": "section",
-    "sourcePages": [
-      17
-    ],
-    "end": 1110,
-    "fill": 77,
-    "breakReason": "End of lesson before reference pages",
-    "blocks": [
+      },
       {
         "id": "universe-heading",
         "type": "heading",
         "text": "12.5 A Universe to Investigate",
-        "top": 112,
-        "bottom": 170,
-        "before": 0,
+        "top": 1162,
+        "bottom": 1220,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "universe",
         "type": "body",
         "text": "Many galaxies exist beyond the Milky Way. The **Universe** includes space, time and all the matter and energy within it. Telescopes and other instruments gather evidence from far beyond what unaided eyes can see. Diagrams that place Earth, the Solar System and the Milky Way inside larger groups show membership, not physical walls.",
-        "top": 170,
-        "bottom": 346,
+        "top": 1220,
+        "bottom": 1396,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "membership",
+      "type": "figure",
+      "height": 216,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 13,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      17
+    ],
+    "end": 876,
+    "fill": 59,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
       {
         "id": "membership",
         "type": "figure",
         "text": "Fig. 12.12 · Follow the membership chain. These are not relative sizes or distances.",
         "artKey": "membership",
-        "top": 346,
-        "bottom": 562,
+        "top": 112,
+        "bottom": 328,
         "before": 0,
         "keepNext": false
       },
@@ -808,8 +808,8 @@
         "id": "life-search",
         "type": "body",
         "text": "Scientists investigate whether life exists beyond Earth, including on worlds in our Solar System and on **exoplanets**, planets orbiting other stars. No life beyond Earth has yet been confirmed. Finding water or a possible chemical clue is not the same as confirming life; several explanations must be tested.",
-        "top": 562,
-        "bottom": 706,
+        "top": 328,
+        "bottom": 472,
         "before": 0,
         "keepNext": false
       },
@@ -817,8 +817,8 @@
         "id": "life-think",
         "type": "panel",
         "text": "A headline says, “Water detected on a distant world: life discovered!” Which part could be an observation, and which is an unsupported conclusion? Suggest one further question scientists would need to investigate.",
-        "top": 706,
-        "bottom": 934,
+        "top": 472,
+        "bottom": 700,
         "before": 0,
         "keepNext": false,
         "conceptId": "life-think"
@@ -827,8 +827,8 @@
         "id": "return",
         "type": "body",
         "text": "Yangdol and Dorjay cannot visit every world they have read about. They can still ask useful questions, compare predictions with observations, and change an explanation when evidence demands it. Their next clear evening begins with a small task: choose one object, check when it is visible, and make a careful record.",
-        "top": 934,
-        "bottom": 1110,
+        "top": 700,
+        "bottom": 876,
         "before": 0,
         "keepNext": false
       }
@@ -846,8 +846,8 @@
       "file": "figures/class-7/science/ch12/earth.png",
       "caption": "Earth."
     },
-    "end": 1336,
-    "fill": 94
+    "end": 1415,
+    "fill": 100
   },
   {
     "page": 15,
@@ -873,9 +873,9 @@
       "file": "figures/class-7/science/review/globe-lamp.png",
       "caption": "A globe and lamp model."
     },
-    "end": 1218,
-    "fill": 85,
-    "breakReason": "Next question: Which is not a member of our Solar System: Sirius, comets, astero",
+    "end": 1393.5168935955621,
+    "fill": 98,
+    "breakReason": "Next question: Which is not one of the eight planets: Jupiter, Pluto, Neptune or",
     "blocks": [
       {
         "id": "assessment-heading",
@@ -887,7 +887,7 @@
         "keepNext": false
       },
       {
-        "id": "assessment-intro-0",
+        "id": "assessment-intro",
         "type": "body",
         "text": "Answer in your notebook, giving reasons.",
         "top": 170,
@@ -914,18 +914,27 @@
         "keepNext": false
       },
       {
+        "id": "q3",
+        "type": "question",
+        "text": "Which is not a member of our Solar System: Sirius, comets, asteroids or Pluto? Give a reason that distinguishes a star outside our system from bodies belonging to it.",
+        "top": 858,
+        "bottom": 984,
+        "before": 0,
+        "keepNext": false
+      },
+      {
         "id": "page-illustration",
         "type": "figure",
         "text": "A globe and lamp model.",
         "artKey": "figures/class-7/science/review/globe-lamp.png",
-        "top": 858,
-        "bottom": 1218
+        "top": 984,
+        "bottom": 1393.5168935955621
       }
     ],
     "protectedNext": {
-      "id": "q3",
+      "id": "q4",
       "type": "question",
-      "height": 126,
+      "height": 94,
       "keepNext": false
     }
   },
@@ -934,28 +943,18 @@
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
-      19,
       20
     ],
-    "end": 1139,
-    "fill": 79,
+    "end": 1013,
+    "fill": 69,
     "breakReason": "Next question: In your notebook, connect the main stars of Orion in this field a",
     "blocks": [
-      {
-        "id": "q3",
-        "type": "question",
-        "text": "Which is not a member of our Solar System: Sirius, comets, asteroids or Pluto? Give a reason that distinguishes a star outside our system from bodies belonging to it.",
-        "top": 112,
-        "bottom": 238,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "q4",
         "type": "question",
         "text": "Which is not one of the eight planets: Jupiter, Pluto, Neptune or Saturn? State its correct category without saying it is outside the Solar System.",
-        "top": 238,
-        "bottom": 332,
+        "top": 112,
+        "bottom": 206,
         "before": 0,
         "keepNext": false
       },
@@ -963,8 +962,8 @@
         "id": "q5",
         "type": "question",
         "text": "Which appears brighter from Earth at night: Polaris or Sirius? Does greater apparent brightness alone prove that a star is closer? Explain.",
-        "top": 332,
-        "bottom": 426,
+        "top": 206,
+        "bottom": 300,
         "before": 0,
         "keepNext": false
       },
@@ -972,8 +971,8 @@
         "id": "q6",
         "type": "question",
         "text": "A learner puts these planet-name cards in order away from the Sun: Mercury, Earth, Venus, Mars, Jupiter, Uranus, Saturn, Neptune. Identify the misplaced pairs and write the complete corrected sequence. Why would equally spaced cards not make an accurate distance model?",
-        "top": 426,
-        "bottom": 584,
+        "top": 300,
+        "bottom": 458,
         "before": 0,
         "keepNext": false
       },
@@ -981,8 +980,8 @@
         "id": "q7",
         "type": "question",
         "text": "Copy this star field into your notebook. Join the stars making the Big Dipper and Little Dipper, and mark Polaris. Use Fig. 12.4 to check, then explain which two stars you would use as pointers.",
-        "top": 584,
-        "bottom": 1139,
+        "top": 458,
+        "bottom": 1013,
         "before": 0,
         "keepNext": false
       }
@@ -1052,13 +1051,9 @@
       21,
       22
     ],
-    "pageIllustration": {
-      "file": "figures/class-7/science/review/led-lamp.png",
-      "caption": "A lamp can direct light where it is needed."
-    },
-    "end": 1206,
-    "fill": 84,
-    "breakReason": "Next project: Use information from the Indian Institute of Astrophysics to inve",
+    "end": 1411,
+    "fill": 100,
+    "breakReason": "Next project: Choose a constellation pattern you have studied. Recreate its mai",
     "blocks": [
       {
         "id": "project-heading",
@@ -1100,18 +1095,20 @@
         "conceptId": "project-light"
       },
       {
-        "id": "page-illustration",
-        "type": "figure",
-        "text": "A lamp can direct light where it is needed.",
-        "artKey": "figures/class-7/science/review/led-lamp.png",
+        "id": "project-hanle",
+        "type": "project",
+        "text": "Use information from the Indian Institute of Astrophysics to investigate Hanle’s dry high-altitude setting and observing conditions. Explain why clear nights, darkness and atmospheric conditions matter. Find out how the Hanle Dark Sky Reserve involves local people. Record the date of your source; do not assume visitor access or event times remain unchanged.",
         "top": 846,
-        "bottom": 1206
+        "bottom": 1411,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "project-hanle"
       }
     ],
     "protectedNext": {
-      "id": "project-hanle",
+      "id": "project-art",
       "type": "project",
-      "height": 565,
+      "height": 204,
       "keepNext": false
     }
   },
@@ -1123,26 +1120,20 @@
       22,
       23
     ],
-    "end": 1207,
-    "fill": 84,
+    "pageIllustration": {
+      "file": "figures/class-6/science/review/star-craft.png",
+      "caption": "Check a model’s star positions against a chart."
+    },
+    "end": 1262,
+    "fill": 88,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
-      {
-        "id": "project-hanle",
-        "type": "project",
-        "text": "Use information from the Indian Institute of Astrophysics to investigate Hanle’s dry high-altitude setting and observing conditions. Explain why clear nights, darkness and atmospheric conditions matter. Find out how the Hanle Dark Sky Reserve involves local people. Record the date of your source; do not assume visitor access or event times remain unchanged.",
-        "top": 112,
-        "bottom": 677,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "project-hanle"
-      },
       {
         "id": "project-art",
         "type": "project",
         "text": "Choose a constellation pattern you have studied. Recreate its main stars with paper dots, thread or another craft material, using a chart to check their relative positions. Label the pattern and explain that the joining lines are imaginary. If using needles or scissors, work with appropriate adult help.",
-        "top": 677,
-        "bottom": 881,
+        "top": 112,
+        "bottom": 316,
         "before": 0,
         "keepNext": false,
         "conceptId": "project-art"
@@ -1151,8 +1142,8 @@
         "id": "closing-heading",
         "type": "heading",
         "text": "Keep Asking, Keep Checking",
-        "top": 893,
-        "bottom": 951,
+        "top": 328,
+        "bottom": 386,
         "before": 12,
         "keepNext": false
       },
@@ -1160,8 +1151,8 @@
         "id": "closing-0",
         "type": "body",
         "text": "This chapter closes the book, but leaves many questions open. Choose one observation from your science notebook that surprised you. What did you first think it meant? What evidence supported or changed your explanation?",
-        "top": 951,
-        "bottom": 1063,
+        "top": 386,
+        "bottom": 498,
         "before": 0,
         "keepNext": false
       },
@@ -1169,10 +1160,18 @@
         "id": "closing-1",
         "type": "body",
         "text": "Write one question you would like to investigate next. Decide what can be observed safely, what information you need, and how you would recognise an answer that does not fit your first idea. Curiosity grows stronger when it travels with careful evidence.",
-        "top": 1063,
-        "bottom": 1207,
+        "top": 498,
+        "bottom": 642,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Check a model’s star positions against a chart.",
+        "artKey": "figures/class-6/science/review/star-craft.png",
+        "top": 642,
+        "bottom": 1262
       }
     ],
     "protectedNext": null

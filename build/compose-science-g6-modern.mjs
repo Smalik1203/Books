@@ -37,8 +37,8 @@ const motif=(n,running=false)=>{
  return `<g class="g6-motif" transform="${running?'translate(22 8) scale(.48)':'translate(942 88) scale(.9)'}">${shapes}</g>`;
 };
 function art(a,opener=false){
- const labelled=/<text\b/.test(a.svg||''),limit=opener?(currentChapter==='10'?520:390):labelled?900:400;
- const scale=Math.min(874/a.w,limit/a.h,1),dimensions=`width="${a.w*scale*unit}" height="${a.h*scale*unit}"`;
+ const labelled=a.labelled||/<text\b/.test(a.svg||''),limit=opener?(currentChapter==='10'?520:390):labelled?900:(a.maxHeight||540);
+ const scale=Math.min(874/a.w,limit/a.h,a.displayScale||1),dimensions=`width="${a.w*scale*unit}" height="${a.h*scale*unit}"`;
  if(a.kind==='image')return `<svg class="g6-art-image${opener?' g6-art-opener':''}" ${dimensions} viewBox="0 0 ${a.w} ${a.h}" xmlns="http://www.w3.org/2000/svg"><image href="${E(a.src)}" x="0" y="0" width="${a.w}" height="${a.h}" preserveAspectRatio="xMidYMid meet"><title>${E(a.alt)}</title></image></svg>`;
  return a.svg.replace('<svg','<svg data-instructional-figure="original"').replace(/ data-original-bounds="[^"]*"/g,'').replace(/ data-justified="[^"]*"/g,'').replace(/\bdx="[^"]*"/g,'').replace(/<svg\b([^>]*)>/,(_,attrs)=>'<svg '+attrs.replace(/\s(?:width|height|x|y)="[^"]*"/g,'').replace(/class="[^"]*"/,'')+` ${dimensions} class="${currentChapter==='10'?(attrs.match(/class="([^"]*)"/)?.[1]||'')+' ':''}g6-source-art${labelled?' g6-art-labelled':''}${opener?' g6-art-opener':''}">`);
 }
@@ -113,8 +113,8 @@ for(const raw of chapters){
   if(!rest.some(b=>b.type==='panel'))g.blocks=[g.blocks[0],{id:`g6-${number}-glossary`,type:'reference-group',blocks:rest,source:rest.map(b=>b.source).join(',')}];
  }
  for(const g of groups)if(g.role==='summary')g.blocks=[{id:`g6-${number}-summary`,type:'summary-group',blocks:g.blocks,source:g.blocks.map(b=>b.source).join(',')}];
- // Food's brief keyword index belongs with the closing lesson, not on a mostly empty leaf.
- if(String(number)==='3')for(let i=1;i<groups.length;i++)if(groups[i].role==='glossary'&&groups[i-1].role==='lesson'){
+ // Pack keyword panels with the closing lesson while keeping each panel whole.
+ for(let i=1;i<groups.length;i++)if(groups[i].role==='glossary'&&groups[i-1].role==='lesson'){
   groups[i-1].blocks.push(...groups[i].blocks);groups.splice(i,1);break;
  }
  for(let i=0;i<groups.length-1;i++)if(groups[i].role==='glossary'&&groups[i+1].role==='summary'){
@@ -153,7 +153,7 @@ for(const raw of chapters){
    let height=0;for(let j=i+1;j<units.length&&units[j].type!=='heading';j++)height+=units[j].h;
    units[i].completeUnitHeight=Math.min(160,height);
   }
-  let packed;try{packed=refitV2Lesson([{blocks:units}],{imageReserve:pageImageReserve});}catch(e){throw Error(`Chapter ${number} / ${g.role}: ${e.message}`);}
+  let packed;try{packed=refitV2Lesson([{blocks:units}],{imageReserve:pageImageReserve,frontLoad:true});}catch(e){throw Error(`Chapter ${number} / ${g.role}: ${e.message}`);}
   for(const p of packed)pages.push({...p,role:g.role,bridge:g.bridge,blocks:p.blocks.map(b=>b.model)});
  }
  const band=chapterOpener({number,titleLines:titles[number],id:'g6-'+number,height:310,motif:'none',bleed:3*1052/189,image:{href:'opener-rendered-in-flow',aspect:2}}).html.replace(/<image\b[\s\S]*?<\/image>/,'').replace(/<image\b[^>]*\/?>/,'')+motif(number);
@@ -161,7 +161,7 @@ for(const raw of chapters){
  const map=[];let bridgeIndex=100,bodyIndex=0;
  for(const [i,p] of pages.entries()){
   let pageContent=p.blocks.map(b=>render(b)).join('\n');
-  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number,{commit:true});if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));pageContent+=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
+  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number,{commit:true,availableHeight:1415-p.end});if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));pageContent+=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
   const n=i+1,verso=n%2===0;const filename='p'+String(p.bridge?++bridgeIndex:++bodyIndex).padStart(3,'0')+'.html';
   const running=i===0?band:`<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>${motif(number,true)}${label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')}${label(ch.config.title+(p.bridge?' · Beyond the Book':''),960,40,'v2-running se-running','end')}<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>`;
   const footer=`<g class="v2-footer"><line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>${label('LEARNLAB · SCIENCE 6',verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')}<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>${label(n,verso?107:945,1487,'v2-folio se-running','middle')}</g>`;

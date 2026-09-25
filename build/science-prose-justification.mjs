@@ -104,6 +104,6 @@ export async function measureProseJustification(dir){
  }
  delete report.result;
  const history=`assets/design-history/science-g${grade}-table-rollout`;await fs.mkdir(history,{recursive:true});
- await fs.writeFile(`${history}/ch${config.number}-justification.json`,JSON.stringify(report,null,2));
+ await writeSource(`${history}/ch${config.number}-justification.json`,JSON.stringify(report,null,2));
  console.log(`Chapter ${config.number}: ${report.count} justified lines; ${report.wide.length} wide spaces to review; maximum edge error ${report.maxError.toFixed(3)}.`);
 }

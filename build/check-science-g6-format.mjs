@@ -6,7 +6,9 @@ import {pageIllustration,completeIllustratedPage,resetPageIllustrations,hasConte
 const history='assets/design-history/science-g6-format-rollout';
 const approved=JSON.parse(fs.readFileSync(history+'/instructional-reuse.json','utf8'));
 const report=[];
-const signature=group=>JSON.stringify(group.map(x=>({page:x.page,asset:x.asset})).sort((a,b)=>(a.page+a.asset).localeCompare(b.page+b.asset)));
+// Re-pagination changes folios, not the allowed asset or number of instructional uses.
+const signature=group=>JSON.stringify(group.map(x=>x.asset).sort());
+const sizes=JSON.parse(fs.readFileSync(history+'/image-sizes.json','utf8'));
 for(const name of fs.readdirSync('pages/class-6')){
  const dir='pages/class-6/'+name;if(!fs.existsSync(dir+'/chapter.json'))continue;
  const meta=JSON.parse(fs.readFileSync(dir+'/chapter.json','utf8'));if(meta.subject!=='Science')continue;
@@ -21,7 +23,11 @@ for(const name of fs.readdirSync('pages/class-6')){
   const headings=[...html.matchAll(/<g class="v2-panel-heading v2-panel-heading--setup".*?<\/g>|<div class="g6-panel g6-panel--setup">\s*<div class="g6-panel__title">.*?<\/div>/gs)];
   for(const [heading] of headings){const text=heading.replace(/<[^>]*>/g,'').trim();assert.equal(text,`Activity ${n}.${++activities}`,`${name}/${file}: activity sequence`);}
   if(supplement){
-   assert(/<image\b[^>]*width="720" height="280"/.test(supplement[0]),`${name}/${file}: reduced figure area`);
+   const frame=supplement[0].match(/<image\b[^>]*width="([\d.]+)" height="([\d.]+)"/);
+   assert(frame,`${name}/${file}: missing image dimensions`);
+   const [iw,ih]=sizes[supplement[1]],scale=Math.min(+frame[1]/iw,+frame[2]/ih);
+   assert(scale+1e-8>=Math.min(720/iw,280/ih),`${name}/${file}: artwork reduced below its previous size`);
+   assert(+frame[1]<=824&&+frame[2]<=540,`${name}/${file}: image outside the reviewed size steps`);
    const chosen=pageIllustration(html.replace(supplement[0],''),6,n,{commit:true});
    assert.equal(chosen.file,supplement[1],`${name}/${file}: artwork changed on regeneration`);
    assert(supplement[0].includes(chosen.caption.replaceAll('&','&amp;')),`${name}/${file}: outdated caption`);supplements++;

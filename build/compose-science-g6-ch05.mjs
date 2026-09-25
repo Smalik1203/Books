@@ -1,3 +1,4 @@
+import {writeScienceSource} from './write-science-source.mjs';
 import {justifiedProseLines,measureProseJustification} from './science-prose-justification.mjs';
 import {completeIllustratedPage,pageImageReserve} from './science-page-illustrations.mjs';
 import {roomyComparisonTableBlock as comparisonTableBlock} from './science-g7-comparison-tables.mjs';
@@ -43,7 +44,7 @@ function paragraph(s,{x=89,w=874,y=0,gap=16,cls='se-copy',scale=1,k='n',lead=32}
 const blocks=[];
 let activitySequence=0;
 function add(meta,html,h,extra={}){blocks.push({atomId:meta.id,type:meta.type,top:0,h,html,source:meta.source||[],text:meta.text||meta.caption||meta.paragraphs?.join(' ')||'',...extra});}
-function body(meta){const rows=wrap(meta.text),chunks=[];if(meta.keepWhole)return add(meta,lines(rows,89,0),rows.length*32+16,{keepNext:!!meta.keepNext});for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length,keepNext:!!meta.keepNext&&i===chunks.length-1}));}
+function body(meta){const rows=wrap(meta.text),chunks=[];if(meta.keepWhole||rows.length<=12)return add(meta,lines(rows,89,0),rows.length*32+16,{keepNext:!!meta.keepNext});for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length,keepNext:!!meta.keepNext&&i===chunks.length-1}));}
 function bulletList(items,x,w,y=0){let html='';for(const s of items){const p=paragraph(s,{x:x+23,w:w-23,y,gap:10});html+=label('•',x,y+24,'se-copy')+p.html;y+=p.h;}return {html,h:y};}
 function render(meta){
  if(meta.comparisonTable){const t=comparisonTableBlock(meta,{wrap,lines});return add(meta,t.html,t.h,{conceptId:meta.id});}
@@ -117,7 +118,7 @@ function render(meta){
 }
 for(const meta of lesson)render(meta);
 const lessonBlockCount=blocks.length;
-const fitted=refitV2Lesson([{blocks}],{imageReserve:pageImageReserve});
+const fitted=refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:true});
 const band=chapterOpener({id:'science-g6-ch05',number,titleLines:['Measurement of','Length and Motion'],bleed:Math.ceil(metrics.bleed*1052/metrics.trimW),image:{href:`../../figures/class-${grade}/science/ch05/opener.png`,aspect:1.5,alt:'Deepa and her mother watching a tailor measure cloth'}});
 const motif=scienceHeaderArt(grade,number);
 let openerHtml=band.html.replace(/(class="chapter-opener__number[^>]* y=")222"/,'$1242"').replace('<line class="chapter-opener__divider"',motif+'<line class="chapter-opener__divider"'),y=band.bodyTop;
@@ -138,24 +139,24 @@ blocks.length=0;
 render({id:'assessment-heading',type:'heading',text:'Let Us Enhance Our Learning',source:[19,20,21]});
 render({id:'assessment-intro',type:'body',text:'Use your notebook. Support each answer with evidence and explain any uncertainty.',source:[]});
 exercises.forEach((q,i)=>render({...q,type:'question',number:i+1}));
-pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve}).map(p=>({...p,titleRole:'assessment'})));
+pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:true}).map(p=>({...p,titleRole:'assessment'})));
 blocks.length=0;
 render({id:'project-heading',type:'heading',text:'Explore Further',source:[21,22]});
 for(const p of projects)render({...p,type:'project'});
-pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve}).map(p=>({...p,titleRole:'projects'})));
+pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:true}).map(p=>({...p,titleRole:'projects'})));
 const map=[];
 for(let i=0;i<pages.length;i++){
  const p=completeIllustratedPage(pages[i],grade,number),n=i+1,verso=n%2===0;
  const running=i===0?'':'<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>'+motifs(true)+''+label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')+label(shortTitle,960,40,'v2-running se-running','end')+'<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>';
  const foot='<g class="v2-footer">'+`<line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>`+label('LEARNLAB · SCIENCE '+grade,verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')+`<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>`+label(n,verso?107:945,1487,'v2-folio se-running','middle')+'</g>';
  const html=`<section class="page page--food page--science-editorial page--science-v2 page--g6-ch05${i===0?' page--opener':''}" data-folio="${n}"${i===pages.length-1?' data-close':''}><div class="page__body"><div class="page__main"><svg class="food-sheet science-sheet science-editorial" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 1514" aria-label="${title}, page ${n}">${running}${p.parts}${foot}</svg></div></div></section>`;
- scienceContract('Chapter 5 '+n,html);await fs.writeFile(`${dir}/p${String(n).padStart(3,'0')}.html`,html);
+ scienceContract('Chapter 5 '+n,html);await writeScienceSource(`${dir}/p${String(n).padStart(3,'0')}.html`,html);
  map.push({page:n,title:p.title,titleRole:p.titleRole,sourcePages:p.source,pageIllustration:p.pageIllustration?{file:p.pageIllustration.file,caption:p.pageIllustration.caption}:undefined,end:p.end,fill:Math.round((p.end-112)/1303*100),breakReason:p.breakReason,blocks:p.blockAudit,protectedNext:p.protectedNext});
 }
 for(const file of await fs.readdir(dir))if(/^p\d+\.html$/.test(file)&&+file.slice(1,-5)>pages.length)await fs.unlink(path.join(dir,file));
 await fs.mkdir(history,{recursive:true});
-await fs.writeFile(history+'/page-map.json',JSON.stringify(map,null,2));
-await fs.writeFile(history+'/editorial-ledger.json',JSON.stringify({opener:{source:[1],paragraphs:opener},lesson,glossary:{purpose:'Reference definitions for terms taught in the chapter',entries:glossary},summary,assessment:{purpose:'All thirteen source questions retained with safety and evidence qualifications',questions:exercises},projects},null,2));
+await writeScienceSource(history+'/page-map.json',JSON.stringify(map,null,2));
+await writeScienceSource(history+'/editorial-ledger.json',JSON.stringify({opener:{source:[1],paragraphs:opener},lesson,glossary:{purpose:'Reference definitions for terms taught in the chapter',entries:glossary},summary,assessment:{purpose:'All thirteen source questions retained with safety and evidence qualifications',questions:exercises},projects},null,2));
 console.log(`Chapter 5: ${pages.length} pages; ${fitted.length} lesson pages; ${lessonBlockCount} protected/prose blocks.\n`+map.map(p=>`p${p.page}: ${p.fill}% ${p.title||'continued lesson'}`).join('\n'));
 
 await measureProseJustification(dir);

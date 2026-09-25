@@ -58,7 +58,7 @@ export function measureDiagram(key){let html='',h=0;
   for(let i=0;i<18;i++)html+=line(286,72+i*5.8,674,72+i*5.8,'v2-measure-sheetline');
   html+=line(704,65,704,180)+line(693,65,715,65)+line(693,180,715,180)+text('Stack thickness',729,124)+text('Count sheets, not page faces',478,213,'middle');
  }else if(key==='maze'){
-  html=path('M200 70V30H850V145M850 190V220H200V115M330 30V140M460 110V220M590 30V140M720 110V220','v2-measure-track')+text('In',151,101,'middle')+text('Out',902,180,'middle')+pencil(292,258,500);h=322;
+  html=path('M200 95V30H850V220M850 275V320H200V155M330 30V210M460 140V320M590 30V210M720 140V320','v2-measure-track')+text('In',151,133,'middle')+text('Out',902,256,'middle')+pencil(222,358,640);h=440;
  }else if(key==='wheel'){
   h=292;html=circle(322,131,104,'v2-measure-tyre')+circle(322,131,92,'v2-measure-rim')+circle(322,131,12,'v2-measure-ball');
   for(let i=0;i<12;i++){const a=i*Math.PI/6;html+=line(322+15*Math.cos(a),131+15*Math.sin(a),322+91*Math.cos(a),131+91*Math.sin(a));}

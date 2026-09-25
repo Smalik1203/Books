@@ -198,12 +198,57 @@ export function editClass6(ch) {
   replace([b.id],[...materials,...safety,{...b,blocks:b.blocks.filter(x=>!figures.includes(x)&&!materials.includes(x)&&!safety.includes(x))},...figures],
    'Keep the nine-step investigation panel whole. Place materials and safety immediately before it, and attach the two setup illustrations after the complete procedure.');
  }
- // Small illustrations accompany the paragraph they explain at their original size.
+ // Attach this climbing detail before the lesson changes from stems to veins.
+ if(n==='2'){
+  const plantNote=ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-015'),1)[0];
+  ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-013')+1,0,plantNote);
+  const at=ch.blocks.findIndex(b=>b.id==='g6-2-064');
+  ch.blocks.splice(at+1,0,{id:'g6-2-tendril-detail',type:'figure',source:ch.blocks[at].source,
+   caption:'A tendril curls around a support.',art:[{kind:'image',src:'../../figures/class-6/living-world/tendril.jpg',alt:'A coiled plant tendril',w:600,h:400}]});
+ }
+ if(n==='3'){
+  const vitamins=ch.blocks.find(b=>b.id==='g6-3-112');
+  vitamins.art[0].labelled=true;
+  vitamins.art[0].svg=vitamins.art[0].svg.replace(/<text\b[^>]*>[\s\S]*?<\/text>/g,'');
+  vitamins.caption+='(c) Vitamin C (d) Vitamin D';
+  const captionIndex=ch.blocks.findIndex(b=>b.id==='g6-3-104');
+  const caption=ch.blocks.splice(captionIndex,1)[0];caption.keepNext=true;
+  const tableIndex=ch.blocks.findIndex(b=>b.type==='table'&&b.caption==='Nutrients: sources, roles and deficiency');
+  ch.blocks.splice(tableIndex,0,caption);
+ }
+ if(n==='10'){
+  const assessment=ch.blocks.find(b=>b.id==='g6-10-245');
+  assessment.art=[{kind:'image',src:'../../figures/class-6/science/review/animal-movement.png',alt:'A pigeon walking and flying',w:810,h:540}];
+  assessment.caption='Describe the movement, then use other evidence to judge whether something is living.';
+  ledger.push({reason:'Replace the small decorative leaf on the review page with a dimensional movement comparison tied to its first question.'});
+ }
+ if(n==='4')for(let i=0;i<ch.blocks.length-1;i++){
+  if(ch.blocks[i].type==='paragraph'&&ch.blocks[i+1].type==='table'&&/^\d+\./.test(ch.blocks[i].html))ch.blocks[i].keepNext=true;
+ }
+ // Small illustrations accompany the paragraph they explain.
  for(let i=0;i<ch.blocks.length-1;i++){
   const b=ch.blocks[i],next=ch.blocks[i+1];
   if(b.type==='figure'&&b.source!=='p001.html'&&b.art.length===1&&b.art[0].w<440&&b.art[0].h<350&&next.type==='paragraph'&&!/^\d+\./.test(next.html)&&next.source===b.source){
    replace([b.id,next.id],[{type:'media',figure:b,blocks:[next]}],'Keep the small illustration beside its explanatory paragraph, retaining the original artwork size.');
   }
  }
+ // Enlarge small teaching cutouts within the existing side-by-side component.
+ const enlarge=b=>{
+  if(b.type==='media')for(const a of b.figure.art){a.displayScale=1.8;a.maxHeight=300;}
+  if(b.id==='g6-3-173')for(const a of b.art||[]){a.h=490;a.maxHeight=490;}
+  if(['g6-2-013','g6-2-074','g6-2-087'].includes(b.id))for(const a of b.art||[]){
+   const image=a.svg.match(/<image\b[^>]*height="([\d.]+)"[^>]*>/);
+   const oldHeight=Number(image[1]),newHeight=450,delta=newHeight-oldHeight,ratio=newHeight/oldHeight;
+   a.h+=delta;
+   a.svg=a.svg.replace(/viewBox="([^"]+)"/,(_,v)=>{const box=v.split(' ').map(Number);box[3]+=delta;return `viewBox="${box.join(' ')}"`;})
+    .replace(image[0],image[0].replace(`height="${oldHeight}"`,`height="${newHeight}"`))
+    .replace(/<text\b([^>]+)>/g,(_,attrs)=>'<text'+attrs.replace(/ x="([\d.]+)"/,(_,x)=>` x="${526+(Number(x)-526)*ratio}"`).replace(/ y="([\d.]+)"/,(_,y)=>` y="${Number(y)+delta}"`)+'>');
+  }
+  if(b.type==='figure'&&b.art?.length===1&&b.art[0].w<300&&n==='3'){
+   b.art[0].displayScale=1.35;b.art[0].maxHeight=440;
+  }
+  for(const child of b.blocks||[])enlarge(child);
+ };
+ ch.blocks.forEach(enlarge);
  return {ch,ledger};
 }
