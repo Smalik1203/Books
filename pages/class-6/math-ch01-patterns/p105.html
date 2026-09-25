@@ -2,66 +2,29 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
-        <div class="c-example__body">
-          <p>Find $11 + 13 + 15 + \cdots + 29$.</p>
-          <p><strong>Solution.</strong> The sum does not start at 1. Start it at 1, and then take away what was added.</p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>29 is the 15th odd number, so $1 + 3 + \cdots + 29 = 15 \times 15 = 225$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>9 is the 5th odd number, so $1 + 3 + 5 + 7 + 9 = 5 \times 5 = 25$</span>
-              <span class="work__why">the part to remove</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$225 - 25 = 200$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>200</span></div>
-          </div>
-          <p>In the picture of L-shapes, this is a square of 15 rows with a square of 5 rows cut from its corner.</p>
-        </div>
+      <div class="c-example" data-question-type="Numerical answer"><div class="c-example__tab">Example 6</div><div class="c-example__body"><p>Every team in a tournament plays every other team exactly once. There are 15 matches. How many teams take part?</p><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>With 6 teams, the numbers of new pairings are 5, 4, 3, 2, 1.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>Their sum is 15. Adding any further team increases the count, so there are exactly 6 teams.</span></div><div class="work__row"><span class="work__label">Check</span><span>15 = 1 + 2 + 3 + 4 + 5 is a triangular number, as a handshake count must be.</span></div><div class="work__row"><span class="work__label">Answer</span><span>6</span></div></div></div></div>
+
+      <div class="c-practice">
+        <ol class="c-questions" data-start="9">
+          <li>A cube is built from small cubes, 5 along each edge. How many more small cubes are needed to make a cube with 6 along each edge?</li>
+        </ol>
       </div>
 
-      <h3>Type 4 &middot; Adding up and then down</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-          <p>Kiran adds the counting numbers up to some number and then back down to 1. His total is 169. What is the biggest number in his sum, and how many numbers does he add?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$169 = 13 \times 13$</span>
-              <span class="work__why">a square of 13 rows</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>the biggest number is 13</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>up: 1 to 13 is 13 numbers; down: 12 to 1 is 12 numbers</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$13 + 12 = 25$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>the biggest number is 13, and he adds 25 numbers</span></div>
-          </div>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="10">
+          <li>The square numbers 1, 4, 9, 16, … are added in order until the total is more than 100. How many square numbers are added?</li>
+        </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-          <p>Find $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1$, where 8 is written twice.</p>
-          <p><strong>Solution.</strong> Take away one of the two 8s. What is left goes up to 8 and down again.</p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$1 + 2 + \cdots + 8 + \cdots + 2 + 1 = 8 \times 8 = 64$</span>
-              <span class="work__why">up and then down</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>put the second 8 back: $64 + 8 = 72$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>72</span></div>
-          </div>
-          <p>The sum is two copies of $1 + 2 + \cdots + 8$, so it is also two triangles of 8 rows. They make a rectangle of 8 rows of 9, and $8 \times 9 = 72$.</p>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="11">
+          <li>A stacked triangles shape has 10 rows. How many of its small triangles point upwards?</li>
+        </ol>
       </div>
+
+      <div class="c-practice__sub">Matching</div>
+
+      <div class="c-example" data-question-type="Matching"><div class="c-example__tab">Example 7</div><div class="c-example__body"><p>Match List I with List II.</p><table><thead><tr><th>List I</th><th>List II</th></tr></thead><tbody><tr><td>(P) Sum of the first 7 odd numbers</td><td>(1) 27</td></tr><tr><td>(Q) Seventh triangular number</td><td>(2) 49</td></tr><tr><td>(R) Fourth power of 2</td><td>(3) 16</td></tr><tr><td>(S) Cube of 3</td><td>(4) 28</td></tr></tbody></table><ol class="c-parts c-parts--alpha"><li>P–2, Q–3, R–4, S–1</li><li>P–4, Q–2, R–3, S–1</li><li>P–2, Q–4, R–3, S–1</li><li>P–1, Q–4, R–3, S–2</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>The values are 7 × 7 = 49; 7 × 8 ÷ 2 = 28; 2 × 2 × 2 × 2 = 16; and 3 × 3 × 3 = 27.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(c) P–2, Q–4, R–3, S–1</span></div></div></div></div>
 
     </div>
   </div>

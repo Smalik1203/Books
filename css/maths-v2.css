@@ -1,0 +1,512 @@
+
+/* ============================================================
+   MATHS-V2 — the redesign trial, Class 6 Chapter 1 only.
+
+   Loaded after maths-clear.css by chapters that declare
+   "design": "maths-v2", so it keeps everything maths-clear does
+   (ragged-right text, chapter identity on the furniture, the
+   outline tip disc) and changes only what is written below.
+   Nothing else in the series moves until the trial is approved.
+
+   Set up on 25 September 2026 from a restyling the user brought
+   in, keeping what it did better and leaving what it did worse.
+
+   1. No brown anywhere. The palette is pine (css/palette-pine.css);
+      here the diagram tokens that the palettes do not reach lose
+      their tan and beige. The cube faces were cream, tan and beige,
+      three browns on every cube in the chapter; they become three
+      tints of the structure green, lightest facing the reader.
+   ============================================================ */
+
+/* 1 — diagrams without brown */
+:root {
+  --dg-c:          #d9602a;   /* the chapter's orange, not rust */
+  --dg-face-front: #eef3fa;
+  --dg-face-top:   #d9e4f3;
+  --dg-face-side: #b3c7e4;
+}
+
+/* 2 — the chapter title in the structure green. Orange is the
+   chapter's accent colour for things to act on; a title is read,
+   not acted on, and in orange it fought the numeral box for the
+   eye. */
+.chapterhead__title { color: var(--teal); }
+
+/* 3 — the key idea as a printed definition box: a double rule all
+   round, the title set into the top rule on a knock-out of the page,
+   and the idea itself one step up the type scale, so it reads as the
+   sentence to remember. Chosen by the user from three framed options
+   on 25 September 2026. Square, ruled, no tint: a tinted panel with
+   a side bar and rounded corners was tried first and removed, being
+   a website callout rather than book typography. The double rule is
+   a border, not an outline, so the packer measures what prints. */
+.c-keyidea {
+  position: relative;
+  display: flow-root;
+  margin: calc(var(--space-rest) + 1mm) 0 var(--space-rest);
+  padding: 6.5mm 5mm var(--space-step);
+  border: 1.2mm double var(--teal);
+}
+.c-keyidea__title {
+  position: absolute;
+  top: -3.2mm;
+  left: 4mm;
+  margin: 0;
+  padding: 0 2.2mm;
+  background: var(--paper);
+  text-align: left;
+}
+.c-keyidea > p {
+  font-size: var(--size-concept);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  text-wrap: pretty;    /* full lines, but never one word alone. balance halved
+                           every line and left the right of the box empty */
+}
+/* a key idea of more than one statement: each a point of its own,
+   marked with a small teal square, never a sentence broken in two */
+.c-keyidea__points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--size-concept);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+}
+.c-keyidea__points > li {
+  position: relative;
+  padding-left: 5mm;
+  text-wrap: pretty;
+}
+.c-keyidea__points > li + li { margin-top: var(--space-tight); }
+.c-keyidea__points > li::before {
+  content: "";
+  position: absolute;
+  left: 0.6mm;
+  top: 0.62em;
+  width: 1.6mm;
+  height: 1.6mm;
+  background: var(--teal);
+}
+
+/* 4 — an exercise set is one tinted field under an orange band.
+   Each question is its own block so a set can be packed, so the
+   field is drawn by every block of the set and closed by the first
+   and the last. The chapter's own sets only: By the Book and
+   Beyond the Book are runs of many pages, and a tint under all of
+   them is a great deal of ink. Square corners: a print tint, not
+   a card on a screen. */
+.page:not([data-board]):not([data-bridge]) .c-practice {
+  display: flow-root;
+  background: var(--rust-tint);
+  padding: 0 4.5mm;
+}
+.page:not([data-board]):not([data-bridge]) .c-practice--cont { margin-top: 0; padding-top: var(--space-hair); }
+.page:not([data-board]):not([data-bridge]) .c-practice:not(:has(+ .c-practice--cont)):not(:has(+ .c-figure + .c-practice--cont)) {
+  padding-bottom: var(--space-tight);
+  margin-bottom: var(--space-rest);
+}
+.page:not([data-board]):not([data-bridge]) .c-practice__head {
+  background: var(--rust);
+  margin-left: -4.5mm;
+  border-top-left-radius: var(--radius);
+}
+
+/* A figure set between two questions of one set stays inside the
+   field, so the set reads as one piece of work around it. */
+.page:not([data-board]):not([data-bridge]) .c-practice + .c-figure:has(+ .c-practice--cont) {
+  display: flow-root;
+  margin: 0;
+  padding: var(--space-tight) 4.5mm;
+  background: var(--rust-tint);
+}
+
+/* 5 — tables: a solid head row in the structure colour, the rows
+   ruled, the first column the name of the row. One step more
+   specific than maths-tables.css, which loads after this sheet. */
+.page .page__main table th {
+  background: var(--teal);
+  color: var(--paper);
+  border-color: var(--teal);
+  text-align: left;
+}
+.page .page__main table td:first-child { color: var(--teal-deep); font-weight: var(--weight-bold); }
+.page .page__main table,
+.page .page__main table td { border-color: var(--teal-soft); }
+.page .page__main table th { border-color: var(--teal); }
+.page .page__main table caption { color: var(--ink-soft); }
+
+/* 6 — the strip: four small drawings in a row, each with a line
+   under it. It stands where the chapter says "patterns are all
+   around you", so the claim is shown and not only made. Drawings,
+   not photographs: they print in the book's own inks, need no
+   licence, and each is drawn from the pattern it shows. The
+   sunflower's seeds sit on the golden angle, as a real sunflower's
+   do, which is why its spirals come in Virahanka numbers. */
+.c-strip {
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2mm;
+  margin: var(--space-step) 0 var(--space-rest);
+}
+.c-strip figure { margin: 0; }
+.c-strip svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.c-strip figcaption {
+  margin-top: 1.4mm;
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+  text-align: left;
+}
+
+/* the drawings' inks — every one a token the book already has */
+.art-sky        { fill: var(--dg-a-soft); }
+.art-sun        { fill: var(--dg-a); }
+.art-ray        { stroke: var(--dg-a); stroke-width: 1.6; stroke-linecap: round; }
+.art-sea        { fill: var(--teal); }
+.art-wave       { fill: none; stroke: var(--teal-soft); stroke-width: 0.9; stroke-linecap: round; }
+.art-glint      { fill: none; stroke: var(--dg-a); stroke-width: 1.4; stroke-linecap: round; }
+.art-night      { fill: var(--teal-deep); }
+.art-star       { fill: var(--dg-a-soft); }
+.art-moon-dark  { fill: var(--teal); }
+.art-moon-rim   { fill: none; stroke: var(--teal-soft); stroke-width: 0.6; }
+.art-moon-lit   { fill: var(--dg-a-soft); }
+.art-tile-a     { fill: var(--teal); }
+.art-tile-b     { fill: var(--teal-tint); }
+.art-tile-c     { fill: var(--rust); }
+.art-grout      { fill: none; stroke: var(--paper); stroke-width: 0.5; }
+.art-leafground { fill: var(--dg-b-soft); }
+.art-petal      { fill: var(--dg-a); }
+.art-disc       { fill: var(--teal-deep); }
+.art-seed       { fill: var(--dg-a-soft); }
+.art-seed-mark  { fill: var(--rust); }
+
+/* 7 — the text face. Source Serif 4, set heavier than the house 500
+   at the user's request (25 September 2026), from the variable cut
+   maths-fonts.css already vendors, so any weight is available. The
+   headings stay Vollkorn; sizes are untouched. One step more specific
+   than maths-fonts.css, which loads after this sheet. */
+:root:root {
+  --font-body: 'Maths Source Serif', Georgia, serif;
+  --weight-text: 560;
+}
+
+/* 8 — reading text is justified, as a printed book sets it: both
+   edges straight, the word spaces taking up the slack, and no word
+   ever broken with a hyphen. Justifying moves no line break, so it
+   refits nothing. Only running prose — centred work, captions,
+   tables and headings keep their own alignment. */
+.page__main > p,
+.page__main .c-example__body > p,
+.page__main .c-reflect li,
+.page__main .c-practice li {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* 9 — the chapter summary. Its own page, and it has to look like the
+   page a student turns back to: a square teal band with the word
+   reversed out, the points on a square-cornered pale field, each
+   number in a solid teal square, key terms in bold teal, hairlines
+   between. Square throughout — print, not a web card. */
+.c-summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--teal-tint);
+}
+.c-summary__title {
+  margin: 0;
+  padding: 2.4mm 5mm 2.2mm;
+  background: var(--teal);
+  color: var(--paper);
+  font-size: var(--size-section);
+  letter-spacing: var(--track-title);
+}
+.c-summary ol {
+  padding: var(--space-step) 5mm var(--space-step) 14mm;
+}
+.c-summary ol > li {
+  font-size: var(--size-body);
+  line-height: var(--lh-snug);
+  margin: 0;
+  padding: var(--space-tight) 0;
+  text-wrap: pretty;
+}
+.c-summary ol > li + li { border-top: var(--stroke-hair) solid var(--teal-soft); }
+.c-summary ol > li::before {
+  left: -9mm;
+  top: var(--space-tight);
+  width: 6mm;
+  height: 6mm;
+  line-height: 6mm;
+  text-align: center;
+  content: counter(key);
+  background: var(--teal);
+  color: var(--paper);
+  font-size: var(--size-note);
+}
+.c-summary strong { color: var(--teal-deep); }
+
+/* 10 — colour per component (25 September 2026, the user's choice for
+   the new design): each kind of box keeps one colour in every chapter,
+   so a reader learns what a colour means. Section heads and tables stay
+   pine; exercise sets stay orange. Three hues join them here — sky for
+   the key idea, violet (the palette's third ink) for the summary,
+   sunflower for Think and Reflect. No brown: sunflower carries ink
+   type, never a darkened ochre. */
+:root:root {
+  /* the three accents palette-prism.css leaves to this sheet */
+  --sky:        #2f9bd6;
+  --sky-deep:   #1f78ad;
+  --sky-tint:   #e6f4fb;
+  --berry:      #c23a6e;
+  --berry-deep: #9e2a57;
+  --sun:        #f2b31f;
+  --sun-tint:   #fff5d6;
+  --violet-rule: #cdc3ee;
+
+  /* diagrams: sunflower and sky for the two quantities, never green */
+  --dg-a:      #f2b31f;
+  --dg-a-soft: #fbe3a4;
+  --dg-b:      #2f9bd6;
+  --dg-b-soft: #bfe0f3;
+}
+
+/* key idea — berry */
+.c-keyidea { border-color: var(--berry); }
+.c-keyidea__title { color: var(--berry-deep); }
+.c-keyidea__points > li::before { background: var(--berry); }
+
+/* worked example — sky: the worked page is cool, the page you work on
+   (the exercise set) is its complement, vermilion. Square corners. */
+.c-example__tab { background: var(--sky-deep); border-radius: 0; }
+.c-example__body { background: var(--sky-tint); border-radius: 0; }
+
+/* summary — violet */
+.c-summary { background: var(--gold-tint); }
+.c-summary__title { background: var(--gold-deep); }
+.c-summary ol > li + li { border-top-color: var(--violet-rule); }
+.c-summary ol > li::before { background: var(--gold); }
+.c-summary strong { color: var(--gold-deep); }
+
+/* Think and Reflect — sunflower, and square: the rounded tray and pill
+   title were the last web-card shapes left in the chapter. */
+.c-reflect__box {
+  background: var(--sun-tint);
+  border: 0.5mm solid var(--sun);
+  border-radius: 0;
+}
+.c-reflect__title {
+  background: var(--sun);
+  color: var(--ink);
+  border-radius: 0;
+}
+.c-reflect__icon { border-color: var(--sun); }
+.c-reflect__icon svg { stroke: var(--ink); }
+.c-reflect__body ol li::marker { color: var(--ink); }
+.c-reflect__hint { border-top-color: var(--sun); }
+.c-reflect__mark { color: var(--sun); opacity: 0.35; }
+
+
+/* the exercise band and section badge were still rounded */
+.c-practice__head { border-radius: 0; }
+
+/* 11 — the parts of By the Book and of Beyond's practice. Each form
+   (very short answer, short answer … objective) opens with its head in
+   the division's vermilion and a fine rule run out to the margin, so
+   the page shows where one part ends and the next begins. Adds no
+   height: nothing needs refitting. */
+.page[data-board] .c-practice__sub,
+.page[data-bridge] .c-practice > .c-practice__sub {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  color: var(--rust-deep);
+}
+.page[data-board] .c-practice__sub::after,
+.page[data-bridge] .c-practice > .c-practice__sub::after {
+  content: "";
+  flex: 1;
+  border-top: var(--stroke-rule) solid var(--rust);
+  opacity: 0.55;
+}
+
+/* the summary's points start with a violet diamond, not a number:
+   they are a set to revise, not steps in an order */
+.c-summary ol > li::before {
+  content: "";
+  left: -7.4mm;
+  top: calc(var(--space-tight) + 0.42em);
+  width: 2.3mm;
+  height: 2.3mm;
+  line-height: normal;
+  transform: rotate(45deg);
+  background: var(--gold);
+}
+
+/* 12 — the two divisions after the chapter. A division band is the
+   top of the hierarchy there, so it is square, full width and in the
+   division's own colour: By the Book in vermilion, the practice ink,
+   and Beyond the Book in violet. By the Book has no "Practice
+   questions" band under it — the whole division is practice, and two
+   equal bands one above the other left neither in charge. */
+.c-bridge { border-radius: 0; }
+.page[data-board] .c-bridge { background: var(--rust-deep); }
+.page[data-bridge] .c-bridge { background: var(--gold-deep); }
+.page[data-board] .c-bridge + .c-practice .c-practice__sub:first-child { margin-top: var(--space-tight); }
+
+/* 13 — header and footer, chosen 26 September 2026 from three rendered
+   options (the user took A's head and B's foot). The same on every page
+   of every chapter:
+
+     head   a solid indigo band bleeding off the top, the running head in
+            white small capitals inside it, a sunflower rule under the
+            band, and a sky square at its outer end
+     foot   an indigo band bleeding off the bottom, the folio in white on
+            it at the outer edge
+
+   Both bands bleed past the trim, so the closed book shows indigo along
+   its head and its tail. Tried and rejected on 25 September: fore-edge
+   thumb tabs, colours that change by chapter or part, and a tapered
+   gradient wedge. The house slab and outline bar are hidden here. */
+.page__trim::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: calc(-1 * var(--bleed));
+  left: calc(-1 * var(--bleed));
+  right: calc(-1 * var(--bleed));
+  height: calc(10mm + var(--bleed));
+  background: var(--teal);
+}
+.page__trim::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 10mm;
+  left: calc(-1 * var(--bleed));
+  right: calc(-1 * var(--bleed));
+  height: 1.2mm;
+  background: var(--sun);
+}
+.page--opener .page__trim::before,
+.page--opener .page__trim::after { display: none; }
+
+.runhead { top: 0; height: 10mm; z-index: 3; border-bottom: 0; padding: 0.4mm 0 0; }
+.runhead__chapter {
+  color: var(--paper);
+  font-style: normal;
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+}
+.runhead__mark {
+  display: block;
+  position: absolute;
+  top: 0;
+  top: calc(-1 * var(--bleed));
+  right: calc(-1 * (var(--margin-outside) + var(--bleed)));
+  width: calc(12mm + var(--bleed));
+  height: calc(10mm + var(--bleed));
+  border-radius: 0;
+  background: var(--sky);
+}
+.page--verso .runhead__mark { right: auto; left: calc(-1 * (var(--margin-outside) + var(--bleed))); }
+
+.pagefoot__bar { display: none; }
+.pagefoot::after {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--bleed));
+  right: calc(-1 * var(--bleed));
+  bottom: calc(-1 * var(--bleed));
+  height: calc(8mm + var(--bleed));
+  background: var(--teal);
+}
+.pagefoot__folio {
+  z-index: 1;
+  bottom: 1.6mm;
+  color: var(--paper);
+  font-size: var(--size-note);
+}
+
+/* 14 — one radius on every box (user, 26 September 2026: "uniform radius
+   on every box, I don't want sharp designs anywhere"). This replaces the
+   square corners set in §3–§12, which followed an earlier reading of "no
+   web UI" as "no rounded corners". What stays out is the web card itself
+   — a side bar, a pill, a drop shadow — not the corner. One value
+   everywhere, so the book reads as one design; the bands that bleed off
+   the page keep straight cut edges, and only a corner left standing on
+   the page is rounded. */
+:root { --v2-radius: 2.4mm; }
+
+.c-keyidea,
+.c-reflect__box,
+.c-example__body,
+.c-summary,
+.c-bridge,
+.c-strip svg,
+.page:not([data-board]):not([data-bridge]) .c-practice:not(.c-practice--cont) { border-radius: var(--v2-radius); }
+
+.c-reflect__title,
+.c-example__tab,
+.c-practice__head,
+.c-stage__num,
+.c-practice__num,
+h2 .badge { border-radius: var(--v2-radius); }
+
+.c-summary { overflow: hidden; }
+
+/* an exercise set runs over several blocks: round the top of the first
+   and the foot of the last, square where two blocks meet */
+.page:not([data-board]):not([data-bridge]) .c-practice:not(.c-practice--cont):has(+ .c-practice--cont) { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.page:not([data-board]):not([data-bridge]) .c-practice--cont { border-radius: 0; }
+.page:not([data-board]):not([data-bridge]) .c-practice--cont:not(:has(+ .c-practice--cont)):not(:has(+ .c-figure + .c-practice--cont)) { border-bottom-left-radius: var(--v2-radius); border-bottom-right-radius: var(--v2-radius); }
+
+/* the chapter numeral box bleeds off the left: round the two corners
+   that stand on the page */
+.chapterhead__num { border-radius: 0 var(--v2-radius) var(--v2-radius) 0; }
+
+/* the sky square in the head: round the one corner left on the page */
+.runhead__mark { border-radius: 0 0 0 var(--v2-radius); }
+.page--verso .runhead__mark { border-radius: 0 0 var(--v2-radius) 0; }
+
+/* small marks soften to match */
+.c-keyidea__points > li::before { border-radius: 0.4mm; }
+
+/* 15 — Beyond the Book, standardised with By the Book (26 September 2026).
+   Under the violet division band come the tried-and-explained questions
+   with no head of their own, then five parts, one per competitive format,
+   each opening with the same head-and-rule as By the Book's forms, in
+   Beyond's violet, and holding its two solved examples followed by its
+   practice questions. The numbered stage bands are gone; Answers keeps
+   its stage head, without a numeral, because the packer opens a fresh
+   page on it. */
+.page[data-bridge] .page__main > .c-practice__sub {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  color: var(--gold-deep);
+}
+.page[data-bridge] .page__main > .c-practice__sub::after {
+  content: "";
+  flex: 1;
+  border-top: var(--stroke-rule) solid var(--gold);
+  opacity: 0.55;
+}
+
+/* 16 — the answer key is set in short runs of rows so the packer can fill
+   its pages; runs that follow one another close up and read as one list.
+   The gap is removed from both sides (the packer adds margins and cannot
+   subtract them). */
+.work--trace:has(+ .work--trace) { margin-bottom: 0; }
+.work--trace + .work--trace { margin-top: 0; }

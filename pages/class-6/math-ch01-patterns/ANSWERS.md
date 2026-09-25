@@ -105,18 +105,18 @@ $9 \times 9 \times 9 = 729$.
    12, 18, … dots around it. The next number is $37 + 24 = $ **61**.
 
 5. *Answers will vary.* The powers of 2 are drawn in the text after this
-   question (Fig. 1.4). For the powers of 3, one way is to make each
+   question (Fig. 1.5). For the powers of 3, one way is to make each
    picture from **3 copies** of the one before: 1 dot; 3 dots in a row; 3
    rows of 3, which is 9; 3 layers of 9, which is 27 small cubes. Another
    way uses triangles: 1 triangle; 3 triangles at the corners of a bigger
    one; 3 copies of that, which is 9 triangles; and so on.
 
-### Think and Reflect (after Fig. 1.4)
+### Think and Reflect (after Fig. 1.5)
 
 1. **32 corners.** Joining a shape to a copy of itself doubles the corners:
    $16 \times 2 = 32$.
 
-2. The dashed joining lines in Fig. 1.4 number **0, 1, 2, 4, 8**. After the
+2. The dashed joining lines in Fig. 1.5 number **0, 1, 2, 4, 8**. After the
    first shape, which has none, these are the **powers of 2**. Each shape
    needs one dashed line for each corner of the shape it copies, so the next
    shape has **16** dashed lines.
@@ -125,7 +125,7 @@ $9 \times 9 \times 9 = 729$.
 
 ## 1.4 Sequences That Are Connected
 
-### Think and Reflect (after Fig. 1.5)
+### Think and Reflect (after Fig. 1.6)
 
 1. The first 10 odd numbers make a square of 10 rows of 10, so their sum is
    $10 \times 10 = 100$.
@@ -184,7 +184,7 @@ $9 \times 9 \times 9 = 729$.
    each side, and each triangle is a triangular number of dots.
 
 8. $1$, $1 + 7 = 8$, $1 + 7 + 19 = 27$, $1 + 7 + 19 + 37 = 64$, …, the
-   **cube numbers**. **Using Fig. 1.6:** look at a cube of 27 small cubes
+   **cube numbers**. **Using Fig. 1.7:** look at a cube of 27 small cubes
    from one corner. You see 19 small cubes, and they make a hexagon of 19
    dots. Take them away, and what is left is a cube of $2 \times 2 \times 2
    = 8$ small cubes, since $27 - 19 = 8$. Seen from the same corner, that
@@ -192,7 +192,19 @@ $9 \times 9 \times 9 = 729$.
    built from hexagonal numbers, one layer inside another:
    $1 + 7 + 19 = 27$.
 
-9. *Answers will vary.* One example: add each counting number to the one
+9. $1$, $1 + 8 = 9$, $1 + 8 + 27 = 36$, $1 + 8 + 27 + 64 = 100$, …, that
+   is **1, 9, 36, 100, 225**. Every answer is a square number, and the
+   numbers being squared are $1, 3, 6, 10, 15$ — the **triangular
+   numbers**. So adding the cube numbers gives the squares of the
+   triangular numbers.
+
+10. $1 + 3 = 4$, $3 + 5 = 8$, $5 + 7 = 12$, $7 + 9 = 16$, …, that is
+    **4, 8, 12, 16**, the multiples of 4. **Yes**, every answer is a
+    multiple of 4. Two odd numbers next to each other differ by 2, so
+    their sum is twice the even number between them, and that even
+    number is itself twice something.
+
+11. *Answers will vary.* One example: add each counting number to the one
    after it — $1 + 2 = 3$, $2 + 3 = 5$, $3 + 4 = 7$ — and you get the odd
    numbers from 3. Picture: a row of $n$ dots and a row of $n + 1$ dots
    placed together always leave one dot without a partner.
@@ -216,6 +228,16 @@ $9 \times 9 \times 9 = 729$.
 The 5th Koch shape is too small in its detail to draw by hand at this size:
 each line is a third as long as before, and there are four times as many.
 That is a good answer to *if you cannot, say why*.
+
+3. *Answers will vary.* **What the answer must give:** three shapes in
+   order, and a rule that makes each one from the shape before it. One
+   example: a window grille of squares, where each step adds one square to
+   the row.
+
+4. **100 sides: yes.** A regular polygon can have any number of sides from
+   3 upwards, and each one is a little rounder than the last. **2 sides:
+   no.** Two straight lines joined at their ends cannot close a shape, so
+   the smallest regular polygon is the equilateral triangle, with 3 sides.
 
 ---
 
@@ -256,16 +278,114 @@ That is a good answer to *if you cannot, say why*.
 
 ---
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September 2026.
+The book's own key is in Beyond the Book's Answers stage; this is the same
+key, set out in full.
+
+### Very short answer
+
+1. Add 3 each time: $4 + 11 \times 3 = $ **37**.
+2. **No.** $1 + 2 + \cdots + 13 = 91$, and adding 14 gives 105, so 100 is
+   not a triangular number.
+3. $15 \times 15 = $ **225**.
+4. Multiply by 3 each time: **81** and **243**.
+5. $169 = 13 \times 13$, so **13** odd numbers.
+6. **Yes.** $64 = 8 \times 8$ and $64 = 4 \times 4 \times 4$.
+7. **81.** A sum that goes up to 9 and back down is $9 \times 9$.
+8. $6 + 5 + 4 + 3 + 2 + 1 = $ **21** lines.
+9. $8 + 13 = $ **21** and $13 + 21 = $ **34**.
+10. $36 \div 4 = 9$ sides: a **nonagon**.
+
+### Short answer
+
+11. The 10th odd number is **19**. The first 10 rows hold
+    $10 \times 10 = $ **100** chairs.
+12. Draw a 4 by 4 square of dots. A line just above the diagonal splits it
+    into a triangle of 3 rows (6 dots) and one of 4 rows (10 dots), so
+    $6 + 10 = 16 = 4 \times 4$.
+13. **300.** 39 is the 20th odd number and 19 is the 10th, so the sum is
+    $400 - 100 = 300$.
+14. After 8 folds, **256** layers. After 9 folds it is 512 and after 10
+    folds 1024, so **10** folds.
+15. $3 + 19 \times 2 = $ **41**. With 51: $51 - 3 = 48 = 24 \times 2$, so
+    $1 + 24 = $ **25** triangles.
+16. Add 3 each time; the 10th number is $2 + 9 \times 3 = $ **29**. **Yes**:
+    $50 = 2 + 16 \times 3$, the 17th number.
+17. **255.** The powers of 2 from 1 add up to 1 less than the next power of
+    2, and the next after 128 is 256.
+18. The squares that do not touch the edge make a 6 by 6 square, 36 of
+    them, so $64 - 36 = $ **28** touch the edge and **36** do not.
+19. Add the points one at a time: the 2nd joins 1 point, the 3rd joins 2,
+    and the 6th joins 5, so there are 15 lines. With 10 points:
+    $1 + 2 + \cdots + 9 = $ **45**.
+20. 3, 5, 7, 9: the **odd numbers**. The 12th square number is
+    $121 + 23 = $ **144**.
+
+### Long answer
+
+21. $1 + 2 + \cdots + 10 = 55$, and 11 rows would need 66. So **10** full
+    rows, with $60 - 55 = $ **5** tins left over. The 11th row needs 11
+    tins, so she needs $11 - 5 = $ **6** more.
+22. $1 + 6 + 12 + 18 + 24 + 30 = $ **91**. The rings hold
+    $6 \times (1 + 2 + 3 + 4 + 5) = 6 \times 15$, so $91 = 6 \times 15 + 1$.
+    With 10 rings: $6 \times 55 + 1 = $ **331**.
+23. 3, 12, 48, 192, 768, so the 5th shape has **768**. The next are 3072
+    and 12 288, so the **7th** shape is the first above 10 000.
+24. **₹512** on the 10th day. Total $1024 - 1 = 1023$, **₹1023**. After 9
+    days the total is ₹511, so the **10th** day.
+25. 1, 2, 3, 4, 3, 2, 1 make 16, which is $4 \times 4$. Tallest 15:
+    $15 \times 15 = $ **225** blocks. $400 = 20 \times 20$, so the tallest
+    column has **20** blocks.
+26. $6 + 24 \times 5 = $ **126**. The first hexagon needs 1 extra
+    matchstick, and every hexagon needs 5 more. $1 + 5 \times 19 = 96$, so
+    **19** hexagons with **4** matchsticks left over.
+27. The rows hold 1, 3, 5, … so the bottom row holds **19**. The whole
+    shape holds $10 \times 10 = $ **100**. The rows hold 1, 2, 3, …, 10
+    upward triangles, so **55** point upwards.
+28. SSSS, SSL, SLS, LSS, LL: 5 ways, and $5 = 2 + 3$. Then 8, 13, 21, 34:
+    **34** ways for 8 beats.
+29. $7 + 6 + 5 + 4 + 3 + 2 + 1 = $ **28**. A new person shakes hands once
+    with each person already there. $66 = 1 + 2 + \cdots + 11$, so **12**
+    people.
+30. A rectangle of 4 rows and 5 columns, 20 dots, so the triangle has 10.
+    The 20th is $20 \times 21 \div 2 = $ **210**; the 50th is
+    $50 \times 51 \div 2 = $ **1275**.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (a) · 34 (c) · 35 (d)
+
+### Case-based questions
+
+36. (i) **8** (ii) **36** (iii) **10** rows, since $1 + 2 + \cdots + 10 = 55$.
+37. (i) **5** (ii) $5 + 4 + 3 + 2 + 1 = $ **15** (iii) 8 teams play 28, so
+    $28 - 15 = $ **13** more.
+38. (i) **9** (ii) **144** (iii) a **14** by 14 square of 196 tiles, with
+    **4** tiles left over.
+39. (i) **8** (ii) the **powers of 2** (iii)
+    $1 + 2 + 4 + 8 + 16 + 32 + 64 = $ **127**.
+40. (i) day **28** (ii) about **108** days (iii) days **55** and **82**: the
+    moon is back on days 28, 55, 82, …, each 27 after the last, and 50 is
+    not one of them.
+
+### Objective questions
+
+41 (c) · 42 (a) · 43 (b) · 44 (c) · 45 (a) · 46 (b) · 47 (d) · 48 (c) · 49 (b) · 50 (d)
+
+---
+
 ## Beyond the Book
 
-Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets nineteen examples as steps,
-numbered from 1 as Beyond numbers them (Beyond Examples 1 to 19), and stage
-4 prints the key to stage 3. Repeated here so the booklet is complete.
-Beyond's example numbers are its own: *Beyond Example 1* is not the
-chapter's Example 1 in §1.4.
+Organised by format since 26 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own: *Beyond Example
+1* is not the chapter's Example 1 in §1.4.
 
-### Stage 1 · Using What You Know
+### Tried and explained (no head in the book)
 
 1. **64.** There are 8 odd numbers, and $8 \times 8 = 64$.
 2. 124 is not a square number, so it cannot be the sum. The sum of the
@@ -275,90 +395,35 @@ chapter's Example 1 in §1.4.
    rectangles, so the next is $6 \times 7 = 42$.
 5. **31 matchsticks.** $4 + 9 \times 3 = 31$, or $10 + 10 + 11 = 31$.
 
-### Stage 2 · Solved Examples
+### Solved examples
 
-The answers the book works, by Beyond's own example numbers.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (c) 21 |
+| | 2 | (b) Nonagon; 12 cm |
+| More than one correct | 3 | (a), (b), (d) |
+| | 4 | (b), (c), (d) |
+| Numerical answer | 5 | 200 |
+| | 6 | 6 |
+| Matching | 7 | (c) P–2, Q–4, R–3, S–1 |
+| | 8 | (a) P–4, Q–3, R–1, S–2 |
+| Paragraph-based | 9 | (i) (b) 128; (ii) 255 |
+| | 10 | (i) (a) 21; (ii) 120 |
 
-- Beyond Ex 1. **37 and 50.**
-- Beyond Ex 2. **72.**
-- Beyond Ex 3. **233.**
-- Beyond Ex 4. **66 dots**; the next triangle adds **12**.
-- Beyond Ex 5. **91 dots.**
-- Beyond Ex 6. **4 layers** of **16** small cubes; **8** small cubes have no paint.
-- Beyond Ex 7. **625.**
-- Beyond Ex 8. **21.**
-- Beyond Ex 9. **200.**
-- Beyond Ex 10. The biggest number is **13**, and **25** numbers are added.
-- Beyond Ex 11. **72.**
-- Beyond Ex 12. **210.**
-- Beyond Ex 13. **36 and 45.**
-- Beyond Ex 14. **1023.**
-- Beyond Ex 15. A regular **nonagon**; each side of the hexagon is **12 cm**.
-- Beyond Ex 16. **6 teams.**
-- Beyond Ex 17. **8 rows**; **36** triangles point up.
-- Beyond Ex 18. **768.**
-- Beyond Ex 19. **15 lines**, and **9** of them are not sides.
+### Practice
 
-### Stage 3 · Practice
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (b) 210 · 2 (a) 121 · 3 (a) 49 · 4 (b) 89 |
+| More than one correct | 5–8 | 5 (a), (b), (d) · 6 (a), (b), (c) · 7 (a), (b) · 8 (a), (c), (d) |
+| Numerical answer | 9–11 | 9 **91** · 10 **7** · 11 **55** |
+| Matching | 12–13 | 12 (a) · 13 (a) |
+| Paragraph-based | 14–15 | 14 (i) (b) 40; (ii) 14; (iii) 60 · 15 (i) (c) 25; (ii) 30; (iii) 55 |
 
-| | | | | | | | |
-|---|---|---|---|---|---|---|---|
-| 1 (c) | 2 (b) | 3 (a) | 4 (d) | 5 (c) | 6 (b) | 7 (a) | 8 (d) |
-| 9 (c) | 10 (b) | 11 (d) | 12 (a) | 13 (a) | 14 (b) | 15 (d) | 16 (c) |
-
-**The working behind the options.**
-
-- Q1. $27 = 3 \times 3 \times 3$. 9 and 16 are square numbers; 32 is a
-  power of 2.
-- Q2. $80$ lies between $8 \times 8 = 64$ and $9 \times 9 = 81$.
-- Q3. The 20th odd number is $2 \times 20 - 1 = 39$.
-- Q4. $4 \times 10 - 4 = 36$: each corner dot is on two sides.
-- Q5. The triangular numbers go 21, 28, 36, 45, 55, 66. 24, 35 and 64 are
-  not among them.
-- Q6. (i) and (ii) are true. (iii) is false: 3 is odd and not a square.
-- Q7. 39 is the 20th odd number, so the sum is $20 \times 20 = 400$.
-- Q8. The lines go 1, 3, 6, 10, 15, 21, 28, 36, 45 for 2 to 10 points.
-- Q9. (i) is false: 8 is a cube and not a square. $64 = 8 \times 8$ and
-  $64 = 4 \times 4 \times 4$. 1 is the first triangular, square and cube
-  number.
-- Q10. Every line becomes 4 lines: $48 \times 4 = 192$.
-- Q11. $256 = 16 \times 16$. 8, 32 and 128 are powers of 2 but not square
+- Q9. $6 \times 6 \times 6 - 5 \times 5 \times 5 = 216 - 125 = 91$.
+- Q10. $1 + 4 + 9 + 16 + 25 + 36 = 91$; adding 49 gives 140, so 7 square
   numbers.
-- Q12. Geometry (§1.5).
-- Q13. Both true; the L-shapes of Fig. 1.5 are exactly why, so (a).
-- Q14. $15 = 1 + 2 + 3 + 4 + 5$, and 15 is odd; being odd is not why it is
-  triangular (21 is also odd and triangular, 25 is odd and not), so (b).
-- Q15. A is false (4 is a square and not triangular), R is true, so (d).
-- Q16. $7 \times 7 = 49$, so A is true; 49 lies between 45 and 55, so R is
-  false, and the answer is (c).
-
-**Every other answer.**
-
-17. **48, 96.** The rule is: double each time.
-18. **No.** The triangular numbers go 78, 91, 105, and 100 falls between
-    91 and 105.
-19. **120.** Two copies make a rectangle of $15 \times 16 = 240$ dots, and
-    half of it is 120.
-20. The 14th odd number is **27**, and the sum of the first 14 odd numbers
-    is $14 \times 14 = 196$.
-21. $10 \times 10 \times 10 = 1000$.
-22. **300.** 39 is the 20th odd number and 19 is the 10th, so the sum is
-    $400 - 100 = 300$.
-23. The sum goes up to 10 and back down, so it is a square of 10 rows:
-    $10 \times 10 = 100$, not 110.
-24. **31.** The first triangle needs 3 matchsticks, and each of the other 14
-    triangles needs 2 more: $3 + 14 \times 2 = 31$.
-25. **128 layers.** Each fold doubles the layers: 2, 4, 8, 16, 32, 64, 128.
-26. **24.** The squares that do not touch the edge make a square of 5 rows,
-    so $49 - 25 = 24$.
-27. (a) **37** (b) **127** (c) $6 \times 21 + 1 = 127$ (d) Split each ring
-    into 6 equal pieces, one for each side. The pieces for one side hold
-    1, 2, 3, 4, 5, 6 dots, which make a triangle of 6 rows, or 21 dots.
-    Six such triangles and the centre give $6 \times 21 + 1 = 127$.
-28. (a) 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 (b) **6, 10, 28, 36**
-    (c) $6 = 2 \times 3$, $12 = 3 \times 4$, $20 = 4 \times 5$
-    (d) $30 \times 31 = 930$, and half of 930 is **465**.
-29. (a) **15** (b) **66** (c) **13** (d) the triangular numbers; the
-    complete graphs show them.
-30. (a) **9** (b) **144** (c) the square with **14** tiles on a side, which
-    uses 196 tiles, with **4** left over (d) **27**.
+- Q11. $1 + 2 + \cdots + 10 = 55$, since each row has one more upward
+  triangle than the row above.
+- Q14. (ii) 9 small, 4 middle-sized and 1 large square.
+- Q15. (ii) $1 + 4 + 9 + 16 = 30$; (iii) $30 + 25 = 55$.

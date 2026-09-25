@@ -393,7 +393,8 @@ inAns('T&R Fig. 1.4 Q2 next', `next\n   shape has **${FIG14.corners.at(-1)}** da
 // Fig. 1.8 — complete graphs: every pair joined exactly once
 const FIG18 = (() => {
   const svg = figure('Fig. 1.8');
-  const labels = texts(svg).map(t => ({ x: Number(t.x), n: Number(t.text.match(/\d+/)[0]) }));
+  // only the labels that carry a count; a figure may also carry a word
+  const labels = texts(svg).filter(t => /\d/.test(t.text)).map(t => ({ x: Number(t.x), n: Number(t.text.match(/\d+/)[0]) }));
   const nearest = (x) => labels.reduce((b, l) => Math.abs(l.x - x) < Math.abs(b.x - x) ? l : b);
   return labels.map(l => {
     const P = elements(svg, 'circle').filter(c => nearest(Number(c.cx)) === l).map(c => `${c.cx},${c.cy}`);

@@ -154,6 +154,8 @@ window.addEventListener('load', function () {
           // a block that only announces: a stage head, or an exercise
           // band with no questions of its own under it
           leads: !!el.querySelector('.c-stage__title')
+            // a part head standing on its own (Beyond the Book, by format)
+            || el.matches('.c-practice__sub')
             || (!!el.querySelector('.c-practice__head') && !el.querySelector('.c-questions')),
           // Beyond the Book's Answers stage always opens a page: set under
           // the last practice question, it put the key to half the stage

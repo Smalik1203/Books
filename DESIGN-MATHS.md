@@ -12,6 +12,12 @@ this was split from, so §6a is still Beyond the Book.
 
 ## 1. Colour — three working colours, used semantically
 
+**Maplitho matte print preparation:** see [PRINT-COLOUR.md](PRINT-COLOUR.md).
+The palettes are authored in sRGB. A bleed PDF is not automatically a CMYK
+PDF; final separation requires the printer's output profile and a paper proof.
+The provisional uncoated profile check is repeatable with
+`build/check-print-palettes.py`.
+
 | | | means |
 |---|---|---|
 | **teal** `--teal` `#12503f` | structure | mathematics, core concept, the spine of the book |
@@ -77,12 +83,16 @@ in the same chapter.
 
 | | | used for |
 |---|---|---|
-| **Spectral** `--font-body` | body | running text, equations, diagram labels |
+| **Source Serif 4** `--font-body` | body | running text and diagram labels; equations retain KaTeX |
 | **Vollkorn** `--font-display` | display | headings, component labels, captions |
 
-No third face may be introduced. Body sets at **500** — Spectral regular is too
-light at 10.5 pt on warm paper — so emphasis and headings sit at **700**; at 600
-they no longer outrank the text.
+Approved 18 September 2026 after comparing actual maths pages: Source Serif 4
+body at **500**, with the existing Vollkorn headings and labels retained.
+Emphasis and headings stay at **700**. `css/maths-fonts.css` loads only for
+maths chapters and bound maths volumes, leaving science unchanged. The roman
+face is variable, so 500 is a real medium weight. Optical sizing is disabled
+to match the approved preview. The shared tokens remain the fallback for other
+subjects; do not change them to apply this maths pairing.
 
 Numerals are **lining** throughout. Vollkorn defaults to oldstyle, which turns
 `Fig. 4.1` into `Fig. 4.ı`.
@@ -160,6 +170,16 @@ A reader should be able to name the level without reading the words.
 Size alone is not a signature. Each level differs in *kind*.
 
 ## 4. The component library — seven, locked
+
+**Reference tables, 20 September 2026:** in all mathematics classes, captions
+sit below tables and images. Figure captions already follow their artwork in
+source order; table captions use `caption-side: bottom`. Tables have a complete
+grid, including outside and internal cell borders. Their headers use the
+chapter's attention tint and deep attention ink, distinct from worked examples'
+action colour. This is implemented in `css/maths-tables.css`, loaded for both
+maths chapters and bound maths books. Existing cell padding and caption sizes
+remain on the shared scale. Prose references such as "see Table 1.1" stay in
+the prose; only the labelled caption belongs below the referenced object.
 
 | component | colour | panel? |
 |---|---|---|
@@ -534,6 +554,94 @@ a heavier or fainter line than its neighbour.
 
 ## 6a. Beyond the Book — a division, not a second book
 
+### By the Book, and Beyond the Book for competitive examinations — 25 September 2026
+
+Decided with the user, and built first in the specimen (`pages/_sample-2027-28/`);
+the class books have not been converted yet. A chapter now ends in **two**
+divisions, each with its own opener band and running head:
+
+    The chapter      unchanged (§5)
+    By the Book      p090–p099, data-board. Board-examination practice: one
+                     numbered run of 50 — Very short answer 10 · Short
+                     answer 10 · Long answer 10 · Assertion and reason 5 ·
+                     Case-based 5 · Objective 10 — aimed at CBSE
+                     Mathematics Standard. Opens with .c-bridge "By the
+                     Book" (no strap). How every question is framed, and
+                     how the division changes from Class 6 to 10, is in
+                     BY-THE-BOOK.md.
+    Beyond the Book  p101 up, data-bridge. Competitive examinations only:
+                     1 Using What You Know, 2 Solved Examples,
+                     3 Practice questions (the band reads "Practice questions")
+
+- **Beyond the Book is organised by format, like By the Book** (26 September
+  2026, maths-v2, Class 6 Chapter 1 first). Under the violet division band
+  come the tried-and-explained questions with no stage head; then five
+  parts — Single correct · More than one correct · Numerical answer ·
+  Matching · Paragraph-based — each a standalone `.c-practice__sub` head
+  with a rule, holding its two solved examples and then its practice
+  questions (4 · 4 · 3 · 2 · 2, numbered 1–15 through the division). No
+  numbered stage bands, no "Practice questions" band, no format tag on the
+  example tab and no "Choose one correct option" line: the part head says
+  it once. Answers keeps its stage head, without a numeral, because
+  `repack` opens a fresh page on it; a standalone part head counts as an
+  opener there, so it is never stranded at a page foot.
+- **Five formats, not four.** *Paragraph-based* joins single correct, more than
+  one correct, numerical answer and matching: one passage in a `.c-case`, then
+  two or three parts (`.c-parts c-parts--1`), at least one with options and
+  one numerical. Stage 2 ends on one paragraph-based example.
+- **Stage 3 Practice is in the same five formats**, grouped under a
+  `.c-practice__sub` naming the format, in the order of the examples. **No
+  levels** — Level 1/2/3 heads were tried and rejected by the user — and no
+  per-question format tag or note line: the sub-head names the format once.
+  The specimen sets ten: 3 single, 3 multiple, 2 numerical, 1 matching,
+  1 paragraph-based.
+- **Classes 6–8 lean to olympiad reasoning, 9–10 to multi-step entrance
+  problems**, always in the chapter's own mathematics. The page never names an
+  examination; the specimen guide says it once.
+- **The specimen is set larger.** It uses `css/edition-196x276-large.css`, which the class books adopt as they convert:
+  the 196 x 276 page with running text at 11pt, panels at 10pt and captions at
+  9pt; headings unchanged. The class books stay on `196x276`.
+- **No answers in the specimen.** The class books keep a key; where it goes
+  under this shape is still to be decided.
+
+The specimen also opens with a guide, **Part 1 · The ClassBridge Approach**
+(`c0-the-classbridge-approach`, `"order": 0`): how a chapter is built, how a
+topic is taught, each component shown as it prints with a note, one question
+of each By the Book form, the three Beyond stages, and a strand table from
+Class 6 to 10. Its frames are in `css/guide.css`: `.g-part`, `.g-note`,
+`.g-item` (a note and its first frame, one block, because the packer ignores
+`break-after`), `.g-specimen`, `.g-flow`, `.g-along`, `.g-table`.
+
+### Solved-example contract — 18 September 2026
+
+**Superseded 25 September 2026:** Beyond the Book now has **10 solved
+examples, two of each of the five formats** (single correct, more than one
+correct, numerical answer, matching, paragraph-based), and **15 practice
+questions** (4 · 4 · 3 · 2 · 2). The rest of this contract — how each format
+is written — still holds. Class 6 Chapter 1 is the first chapter on the new
+counts.
+
+The user had requested exactly **15 solved examples per chapter**, covering
+JEE-style question formats through concepts appropriate to each school class:
+6 single-correct MCQs, 4 multiple-correct MCQs, 3 numerical-answer questions,
+and 2 matching-list questions. This replaces the earlier open-response solved
+examples. The conversion is being completed class by class; do not infer that
+an unreviewed chapter already meets this contract.
+
+Every example names its format. Multiple-correct questions explicitly ask for
+all correct options; numerical questions specify units and rounding where
+needed; matching questions give all information before the solution and have
+one unambiguous correct combination. Each example retains a worked solution
+and an answer showing the correct option letter(s), matching combination, or
+number. Check every distractor, including equivalent expressions, and every
+statement in a multiple-correct set. Do not introduce class 11–12 prerequisites
+into a lower-class book merely to imitate an entrance examination.
+
+The chapter body, Using What You Know, and Practice questions retain their
+existing formats. The practice answer key must remain paired with its original
+questions. Do not restore the removed wrong-option commentary section. Refit
+only the bridge, keep panels whole, then check option widths and page fit.
+
 ### The shape since 15 September 2026
 
 Class 7 is built to this, and it overrides the older description below where
@@ -543,16 +651,19 @@ the two differ. Class 7 Chapter 1 is the built example.
                             first and explained in running text, so a student
                             sees how simple ideas become tricky questions.
                             Never recast as worked examples
-    2 Solved Examples       worked examples grouped under h3 "Type N · …",
-                            numbered from Example 1 whatever the body
-                            reached, each as Solution, Step 1, Step 2 … Answer in
-                            .work__row, the reason in two to four words in a
-                            .work__why. Stepped maths, not prose
+    2 Solved Examples       the 15 examples of the contract above, in the order
+                            6 single, 4 multiple, 3 numerical, 2 matching,
+                            numbered from Example 1 whatever the body reached,
+                            the tab naming the format ("Example 7 · Multiple
+                            correct"). Each is Solution, Step 1, Step 2 … Answer
+                            in .work__row. No "Type N" heads and no .work__why
+                            since the conversion. Stepped maths, not prose
     3 Practice              one numbered run in the forms school papers use —
                             multiple choice, assertion–reason, very short,
                             short, long, case-based — grouped by .c-practice__sub
-    4 Answers               the letter key, every other answer, and why the
-                            wrong options are wrong for a few questions
+    4 Answers               the letter key and every other answer to the
+                            practice questions, on a fresh page. Solved examples
+                            carry their own answers; no wrong-option commentary
 
 - **Nothing in the division repeats the chapter body, or answers it.** A
   question or example the chapter already sets is left out, whatever its
@@ -951,6 +1062,25 @@ what is wrong · what it needs*, worst first. Notes that span chapters go in
 
 ## 11. Class 6 trial — the `maths-clear` profile
 
+### Maths reference revision — 21 September 2026
+
+Figures and tables in all maths classes share a single chapter sequence in reading order:
+Figure 4.1, Table 4.2, Figure 4.3, for example. Keep the type in every label
+and update prose references together with captions. Repeated artwork gets
+a new identifier at its new location. This includes Beyond the Book;
+its figure and table numbers continue the chapter sequence.
+
+Use `.c-figure-context` to keep a dependent question, explanation or worked
+example with its visual as one fitting unit. It adds no border or new visual
+style and lives in the shared `css/maths-tables.css`. General introductions may lead into a following-page figure; a facing
+spread also keeps text and visual visible together. Recheck bound-book
+folios after any pagination change.
+
+The revised chapters opt out of keeping an entire exercise set together:
+sets may continue in their numbered continuation blocks, while the question
+and visual that depend on each other stay together. This avoids nearly empty
+pages before long exercise sets. Panels themselves still never split.
+
 Class 6 Mathematics is the first maths book set with three ideas taken from the
 science volumes. A chapter opts in with `"design": "maths-clear"` in
 `chapter.json`, which loads `css/maths-clear.css` after the house sheets.
@@ -1027,3 +1157,32 @@ and a question added to a Beyond the Book set needs its line in the answer key.
 **Sums are set as mathematics** — `$1 + 1$` — everywhere, in questions as well
 as in displays. Plain-text pluses beside KaTeX pluses print at two sizes on the
 same page.
+
+## 12. The maths-v2 trial — Class 6 Chapter 1 (25 September 2026)
+
+A redesign tried on one chapter before anything else moves. A chapter opts
+in with `"design": "maths-v2"`; it loads `maths-clear.css` and then
+`css/maths-v2.css`, so it keeps everything maths-clear does. Only Class 6
+Chapter 1 declares it. What it changes:
+
+- **No brown.** Palette `pine` (deep green, bright orange, violet), made
+  because every existing palette carries a brown or tan somewhere; the chapter
+  sets `"accent"` to the same green so the furniture follows. The diagram
+  tokens the palettes do not reach — the cube faces and `--dg-c` — are
+  re-inked in maths-v2.css.
+- **A drawn strip on the opener** (`.c-strip`): four small drawings in the
+  book's own inks, not photographs. Generated by script; the sunflower's seeds
+  sit on the golden angle.
+- **Key idea as a printed definition box:** a double rule all round, the title set
+  into the top rule, the idea one step up the type scale with balanced lines.
+  Chosen from three framed options. A tinted panel with a side bar and rounded
+  corners was tried first and removed as web UI; nothing in maths-v2 is rounded.
+- **Exercise sets as one square-cornered tinted field under an orange band**, chapter sets
+  only; By the Book and Beyond the Book keep the plain run.
+- **Tables** with a solid structure-colour head row.
+- **A split running head**: the verso names the chapter, the recto the
+  section in force (or By the Book / Beyond the Book). Built in `stampPages`,
+  only for maths-v2.
+
+If approved, it rolls out chapter by chapter with the three-part conversion,
+because each chapter has to be refit to it anyway.

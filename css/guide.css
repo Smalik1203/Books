@@ -1,0 +1,272 @@
+/* ============================================================
+   The guide — Part 1 of the specimen book
+   ------------------------------------------------------------
+   The specimen opens by explaining the series before it shows
+   it: how a chapter is built, how a topic is taught, and each
+   part of a page with a note on what it is for. The parts are
+   shown as they print — real components lifted from the sample
+   chapters — so these rules only frame them and never restyle
+   them. Nothing here names a colour or a size of its own.
+
+     .g-part       a part opener: the part's number, its name,
+                   and a paragraph on what the part holds
+     .g-note       a numbered note on one component: its name and
+                   what it does, set above the component itself
+     .g-specimen   the frame round a component shown as it prints
+     .g-flow       the chapter's three parts side by side, with
+                   what each is for and who it serves
+     .g-along      the strip under .g-flow: LearnLab beside all
+                   three
+   ============================================================ */
+
+/* ---- Part opener ------------------------------------------ */
+.g-part {
+  break-inside: avoid;
+  margin: 0 0 var(--space-rest);
+  padding: var(--space-step) 5mm var(--space-step);
+  background: var(--teal);
+  border-radius: var(--radius-lg);
+  color: var(--paper);
+}
+
+.g-part__kicker {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal-tint);
+}
+
+.g-part__title {
+  font-family: var(--font-display);
+  font-size: var(--size-chapter);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  margin: var(--space-hair) 0 var(--space-tight);
+}
+
+.g-part__lede {
+  font-family: var(--font-display);
+  font-size: var(--size-body);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--teal-tint);
+  margin: 0;
+}
+
+/* ---- A note on one component ------------------------------ */
+.g-note {
+  break-inside: avoid;
+  break-after: avoid;
+  display: flex;
+  align-items: flex-start;
+  gap: 3mm;
+  margin: var(--space-rest) 0 var(--space-tight);
+}
+
+.g-note__num {
+  flex: none;
+  width: 6.4mm;
+  height: 6.4mm;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  line-height: 6.4mm;
+  text-align: center;
+}
+
+.g-note__text { flex: 1; }
+
+.g-note__title {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 6.4mm;
+  color: var(--teal-deep);
+}
+
+.g-note__text p {
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* A note that stands alone, with no component under it, closes
+   on its own last line rather than on the space a component
+   would have taken. */
+.g-note--alone { break-after: auto; margin-bottom: 0; }
+
+/* ---- A component shown as it prints ----------------------- */
+.g-specimen {
+  /* flow-root keeps a last list's margin inside the frame. Without it
+     the margin escapes through the frame's foot, breaks the rule
+     between two frames, and is invisible to the packer, which then
+     under-measured every frame by 2mm and overran the page. */
+  display: flow-root;
+  break-inside: avoid;
+  margin: 0 0 var(--space-step) 3.2mm;
+  padding: var(--space-tight) 0 var(--space-hair) 4.4mm;
+  border-left: var(--stroke-rule) solid var(--teal-soft);
+}
+
+.g-specimen > :first-child { margin-top: 0; }
+.g-specimen > :last-child { margin-bottom: 0; }
+
+/* ---- The three parts of a chapter ------------------------- */
+.g-flow {
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5mm;
+  margin: var(--space-step) 0 var(--space-tight);
+}
+
+.g-flow__step {
+  position: relative;
+  border: var(--stroke-hair) solid var(--teal-soft);
+  border-radius: var(--radius);
+  overflow: visible;
+}
+
+/* the arrow in the gap between two parts */
+.g-flow__step + .g-flow__step::before {
+  content: "\2192";
+  position: absolute;
+  left: -4.4mm;
+  top: 5mm;
+  font-family: var(--font-display);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
+  color: var(--teal);
+}
+
+.g-flow__head {
+  background: var(--teal);
+  color: var(--paper);
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: var(--space-tight) 3mm var(--space-hair);
+}
+
+.g-flow__name {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: var(--lh-tight);
+}
+
+.g-flow__for {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--teal-tint);
+  margin-top: 0.6mm;
+}
+
+.g-flow__body {
+  padding: var(--space-tight) 3mm var(--space-tight);
+  text-align: left;
+  hyphens: none;
+  font-size: var(--size-caption);
+  line-height: var(--lh-snug);
+}
+
+.g-flow__body p { margin: 0 0 var(--space-hair); }
+.g-flow__body p:last-child { margin-bottom: 0; }
+
+.g-flow__body ul {
+  margin: 0;
+  padding-left: 3.2mm;
+  list-style: none;
+}
+
+.g-flow__body li { margin: 0 0 0.8mm; position: relative; }
+
+.g-flow__body li::before {
+  content: "\2022";
+  position: absolute;
+  left: -3.2mm;
+  color: var(--teal);
+}
+
+/* ---- LearnLab, beside all three --------------------------- */
+.g-along {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  margin: 0 0 var(--space-step);
+  padding: var(--space-tight) 3mm;
+  border: var(--stroke-hair) dashed var(--teal-soft);
+  border-radius: var(--radius);
+  font-size: var(--size-caption);
+  line-height: var(--lh-snug);
+}
+
+.g-along__name {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  color: var(--teal-deep);
+}
+
+.g-along__qr {
+  flex: none;
+  width: 16mm;
+  height: 16mm;
+}
+
+.g-along p { margin: 0; text-align: left; }
+
+/* A long specimen is set as several frames, one per block, so that
+   it can run over a page. Frames that follow one another close up
+   into one rule, and read as the single excerpt they are. The frame
+   above gives up its bottom margin rather than the one below taking a
+   negative top margin: the packer adds margins and cannot subtract. */
+.g-specimen:has(+ .g-specimen) { margin-bottom: 0; padding-bottom: 0; }
+.g-specimen + .g-specimen {
+  margin-top: 0;
+  padding-top: var(--space-hair);
+}
+
+/* ---- A table of short entries ----------------------------- */
+/* The strand table and the format table hold phrases, not sentences.
+   Justified in narrow cells they open rivers, so they set flush
+   left, a step smaller, on tighter cells. */
+.page__main table.g-table { font-size: var(--size-caption); line-height: var(--lh-snug); }
+.page__main table.g-table th,
+.page__main table.g-table td {
+  text-align: left;
+  hyphens: none;
+  padding: 1.2mm 2mm;
+  vertical-align: top;
+}
+
+/* ---- A note and the component it describes ---------------- */
+/* The packer moves whole blocks and does not read break-after, so a
+   note and the first frame it describes are one block. Frames that
+   continue the excerpt follow it as blocks of their own. */
+.g-item {
+  display: flow-root;
+  break-inside: avoid;
+  margin: var(--space-rest) 0 var(--space-step);
+}
+.g-item > .g-note { margin-top: 0; }
+.g-item > :last-child { margin-bottom: 0; }
+.g-item:has(+ .g-specimen) { margin-bottom: 0; }
+.g-item:has(+ .g-specimen) > .g-specimen { padding-bottom: 0; }
+.g-item + .g-specimen {
+  margin-top: 0;
+  padding-top: var(--space-hair);
+}

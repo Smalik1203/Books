@@ -1,0 +1,41 @@
+/* ============================================================
+   THE 196 x 276 LARGE EDITION — the 196 x 276 page with its text set
+   a step larger. Made for the specimen (pages/_sample-2027-28) on
+   25 September 2026, and adopted the same day for the class books
+   as they are converted to the three-part chapter, starting with
+   Class 6 Chapter 1.
+
+   Only the text sizes differ from edition-196x276.css — running
+   text, panel and exercise text, and captions. Headings keep their
+   sizes, so the hierarchy tightens rather than inflates. The trim,
+   margins and figure widths are copied, not imported: sheet.mjs
+   reads this file's own tokens for the trim, and does not follow an
+   @import. Change one and change the other.
+
+   A chapter moves onto it by declaring "edition": "196x276-large" and
+   being refit. A volume binds only when all its chapters share one
+   edition, so a class book is unbindable while it is half converted.
+   ============================================================ */
+
+:root {
+  --trim-w: 196mm;
+  --trim-h: 276mm;
+
+  --margin-top:     22.5mm;
+  --margin-bottom:  22.5mm;
+  --margin-inside:  18mm;
+  --margin-outside: 18mm;
+  --measure:        160mm;
+
+  --fig-sm:   47mm;
+  --fig-md:   57mm;
+  --fig-lg:   66mm;
+  --fig-xl:   79mm;
+  --fig-full: 141mm;
+
+  --size-caption:  9pt;
+  --size-note:    10pt;
+  --size-body:    11pt;
+}
+
+:root { --chapterhead-title-right: 64mm; }

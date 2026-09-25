@@ -1,5 +1,65 @@
 # Class 6 · Mathematics I · Chapter 1 — Looking for Patterns
 
+## The maths-v2 trial chapter, completed 26 September 2026
+
+**This supersedes every description of By the Book and Beyond the Book
+further down this log.** The chapter is the first in the maths-v2 design
+(`css/maths-v2.css`, palette `prism`, edition `196x276-large`), 29 pages:
+
+* **Body p001–p013**, NCERT's structure, ending on a **Summary** page
+  (p013, `data-close`, `.c-summary`).
+* **By the Book p090–p095**, written to BY-THE-BOOK.md: 50 questions —
+  very short 10, short 10, long 10, assertion and reason 5, case-based 5,
+  objective 10 — part heads with a rule, no marks lines.
+* **Beyond the Book p101–p110**, by format: the tried-and-explained
+  questions with no head, then Single correct · More than one correct ·
+  Numerical answer · Matching · Paragraph-based, each two solved examples
+  then its practice (4 · 4 · 3 · 2 · 2). Answers on a fresh page; the key
+  is set in two-row runs so its pages fill.
+* ANSWERS.md's By the Book and Beyond sections rewritten to match.
+
+Checks at close: every arithmetic identity on every page recomputed (79,
+none wrong); no lone word on any last line; no stranded opener; no label
+collision; every option row fits. `check-numbers.mjs` still predates this
+layout — it was patched past one crash but its figure, Beyond and booklet
+sections describe the old chapter and it stops at §1.4's Example 1.
+Short pages left by design: p021, p025 and p026 of Beyond (a whole example
+or paragraph question waiting for the next page), p027 (the last practice
+page before Answers opens fresh).
+
+## Solved examples in examination formats, 20 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 19 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-6/math-ch01-patterns/`.
+
+Source `build/jee-class6.mjs`; check `build/check-jee-class6.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (b) 37, 50 |
+| 2 | Single correct | (d) 233 |
+| 3 | Single correct | (a) 91 |
+| 4 | Single correct | (c) 21 |
+| 5 | Single correct | (b) Nonagon; 12 cm |
+| 6 | Single correct | (d) 768 |
+| 7 | Multiple correct | (a), (c) |
+| 8 | Multiple correct | (b), (c), (d) |
+| 9 | Multiple correct | (a), (d) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 625 |
+| 12 | Numerical answer | 200 |
+| 13 | Numerical answer | 6 |
+| 14 | Matching | (c) P–2, Q–4, R–3, S–1 |
+| 15 | Matching | (a) P–4, Q–3, R–1, S–2 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 The Beyond the Book syllabus audit made three findings about this chapter. All three were checked against the pages and fixed.
@@ -286,3 +346,11 @@ exercise was added inside the body. The six exercise sets, every Think and
 Reflect, and every figure are as they were. None of §5's unused components
 was introduced. Table 1.1 keeps its number, which Chapter 3's Ex 3.9 Q8
 refers to.
+
+
+## 20 September 2026 — reference numbering and reading order
+
+- Figures and tables now share one chapter sequence; caption labels and prose references were migrated together, including cross-chapter references within Class 6.
+- Dependent text and diagrams are kept together with c-figure-context where the revised layout needs it. The final bound-book audit distinguishes facing pages from page turns.
+- Source content was checked against build/_class6-reference-before. All questions, worked mathematics and illustrations were preserved. The Data Handling closing paragraph alone was shortened to avoid an isolated final page.
+- Validation and mapping: build/_class6-reference-checks; reproducible source check: build/check-class6-reference-revision.mjs.

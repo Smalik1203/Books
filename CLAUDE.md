@@ -3,7 +3,9 @@
 A print book, not a web app. Every decision below exists because getting it
 wrong wasted real time.
 
-**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** The design system is
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** Before writing any By the Book
+questions, read [BY-THE-BOOK.md](BY-THE-BOOK.md) — how CBSE frames each form,
+and how the division scales from Class 6 to 10. The design system is
 enforced by the builder, not by discipline — a page that invents its own
 colour, type, stroke or spacing fails the build.
 
@@ -62,6 +64,27 @@ The foot was reviewed this way and **left as it is**: the slab is long for
 one numeral and the outline bar carries nothing, but both bleeding off the
 edge is deliberate (§ the bleed sheet), and the skew ties the foot to the
 chapter openers. Reopen it with the tool rather than from memory.
+
+**The maths-v2 design has its own furniture** (chosen 26 September 2026
+from three options rendered on real pages): a solid indigo band bleeding
+off the head with the running head in white small capitals inside it, a
+sunflower rule under it and a sky square at its outer end; at the foot,
+an indigo band bleeding off the tail with the folio in white. The same on
+every page of every chapter. Tried and rejected, so do not bring them
+back: fore-edge thumb tabs, colours that change by chapter or part, and a
+tapered gradient wedge. It lives in `css/maths-v2.css` §13 and hides the
+slab and bar below, which the house design keeps.
+
+What did change is where it meets the cut. Both bars stopped dead on the
+trim with the folio 1.5mm above it, so a guillotine a millimetre out left
+a white hairline under the slab or took the foot off the number. They now
+run 3mm into the bleed at the foot too, and the folio's digits sit over
+3mm inside the trim.
+
+For a sample run printed in house, `--bleed --a4` also writes the press
+sheet laid on A4 (`-bleed-a4.pdf`). The press sheet itself is 216 x 296mm
+and does not fit A4: printed at actual size its marks fall off the paper,
+and fitted to the page it cuts 3% small. Print the A4 file at actual size.
 
 ## Five checks the builder does not do
 
@@ -284,6 +307,58 @@ number and ISBN is worse than a volume with no title page, and the warning
 names the title and part it looked for. One consequence worth knowing: the
 `pages` count in a `cover.json`, which the spine is computed from, is one
 volume's, and the bind's summary now reports it that way.
+
+### The specimen book
+
+`pages/_sample-2027-28/` is not a class: it is the specimen given to
+schools, one trimmed chapter from each of Classes 6–10, bound with
+`node build/build.mjs _sample-2027-28 --book --volume=Mathematics`. Its
+`book.json` (`"sample": true`) stands in for a cover and switches the binder
+to specimen mode: a ClassBridge title page, a note to schools, a contents page per class
+read from the real chapters, the opener's numeral box
+carrying the class instead of a chapter number, and *Specimen copy · Not
+for sale* at the foot of every page. Each chapter's `order` sets the
+sequence; its `source` names the real chapter it was cut from. **The cuts
+live only in the copies** — never trim a real chapter for the specimen. It
+prints no textbook or board names anywhere. **The books are ClassBridge;
+LearnLab is the experiential learning app beside them** — Powered by
+LearnLab, scan to explore — and never the book’s own name.
+
+**The specimen is two parts** (DESIGN-MATHS §6a, 25 September 2026). Part 1
+is a guide, `c0-the-classbridge-approach` (`"order": 0`, number 0, no class),
+built from `css/guide.css`; Part 2 is the five chapters, each ending in **By
+the Book** (`p090`–`p099`, `data-board`, board forms) and **Beyond the Book**
+(`p101` up, competitive formats only). `refit.mjs` takes `board` as a third
+part beside `body` and `bridge`, and stamps `data-board` back on. No answer
+keys anywhere in the specimen. **The specimen is set on
+`"edition": "196x276-large"`** (`css/edition-196x276-large.css`): the 196 x 276
+page with its text a step larger. The class books move onto it chapter by
+chapter as they take the three-part design (Class 6 Chapter 1 first); the
+rest stay on `196x276` until then, and a volume will not bind while its
+chapters are on two editions. `refit` switches `keepExerciseSets` off for
+the `board` and `bridge` runs: a whole practice run never fits one page.
+
+Three things bit while fitting the guide:
+
+* **`refit` runs `split-practice`, which splits every `.c-practice` it finds,
+  even one inside a `.g-specimen` frame** — it tore the frames apart and lost
+  a section. Keep one question per practice list in the guide; a longer
+  excerpt is several frames.
+* **The guide's last page, `p010`, is the Part 2 divider.** A body refit would
+  pack it into the flow; move it aside, refit, and put it back.
+* A frame that joins the one above does it by the *upper* frame dropping its
+  bottom margin (`:has(+ .g-specimen)`). A negative top margin prints right
+  but the packer adds margins and cannot subtract, so every such frame
+  measured 4mm taller than it was and would not go where it fitted. The
+  frame is also `display: flow-root`: without it a list's bottom margin
+  escaped through the frame's foot, broke the rule, and was invisible to the
+  packer, which then under-measured each frame by 2mm and overran the page.
+* **Never interrupt a refit.** It deletes a run's pages before it writes the
+  repacked ones; stopped between the two, the pages are simply gone. That is
+  how the guide lost its last two sections once. Its cover is
+`covers/_sample-2027-28/specimen` (direction `spectrum`, no ISBN:
+`"specimen": true` lets `cover.mjs` build without one), and the studio
+lists both under the `label` in `book.json`.
 
 ## The reference designs, and their face
 

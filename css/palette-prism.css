@@ -1,0 +1,47 @@
+/* ============================================================
+   PRISM — the maths-v2 palette (no green, no brown)
+
+   Made on 25 September 2026, when the user asked for a livelier,
+   multicolour book with no green, chosen by colour theory, and at
+   most seven or eight colours in a book. The reasoning:
+
+   * Colour coding helps only when it is systematic: one colour, one
+     meaning, the same in every chapter, and few of them. Seven inks
+     including the text ink, each owning one kind of thing.
+   * About one boy in twelve cannot separate red from green, so no
+     meaning rests on that pair, and the hues follow the Okabe-Ito
+     colour-universal set in spirit: they differ in lightness as well
+     as hue, so they still separate in greyscale and for CVD readers.
+   * 60-30-10: paper and ink dominate; indigo carries the structure;
+     every other hue is an accent confined to its own component.
+   * The hues sit round the wheel away from green: indigo 215°,
+     sky 200°, violet 262°, berry 338°, vermilion 15°, sunflower 42°.
+     Vermilion is indigo's complement — the worked page against the
+     page you work on. Sky and indigo are one family but far apart in
+     lightness, so they never read as the same ink.
+   * All values sit inside a coated CMYK gamut; tints are 8-12%.
+
+   Roles (the maths-v2 sheet assigns the components):
+     indigo     structure: section heads, tables, running head, folio
+     vermilion  action: exercise sets, By the Book practice
+     violet     the summary; this file's third token set (--gold)
+     sky, berry, sunflower   defined in maths-v2.css §10
+   ============================================================ */
+
+:root {
+  /* structure — indigo */
+  --teal:       #1e4e8c;
+  --teal-deep:  #143766;
+  --teal-soft:  #9db6d9;
+  --teal-tint:  #eaf0f8;
+
+  /* action — vermilion */
+  --rust:       #e0592a;
+  --rust-deep:  #c4461b;
+  --rust-tint:  #fdeee8;
+
+  /* third ink — violet */
+  --gold:       #6b4fb3;
+  --gold-deep:  #52399a;
+  --gold-tint:  #f0ecf9;
+}

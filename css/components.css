@@ -62,6 +62,18 @@
   line-height: var(--lh-tight);
   color: var(--rust);
 }
+/* NCERT's Class 9 titles come in two parts — "Predicting What Comes
+   Next: Exploring Sequences and Progressions" — and set whole at chapter
+   size the longest ran to four lines and off the top of the page. The
+   part after the colon is set a step down, on a line of its own. */
+.chapterhead__subtitle {
+  display: block;
+  margin-top: 1mm;
+  font-size: var(--size-concept);
+}
+/* Two-line titles break evenly rather than leave "Next:" or "Maybe:"
+   alone on the second line. */
+.chapterhead__title { text-wrap: balance; }
 .chapterhead__sketch {
   position: absolute;
   right: var(--margin-outside);
@@ -716,6 +728,26 @@ table:has(tfoot) tbody tr:last-child td { border-bottom: 0; }
 .c-questions[data-start="38"] { counter-reset: q 37; }
 .c-questions[data-start="39"] { counter-reset: q 38; }
 .c-questions[data-start="40"] { counter-reset: q 39; }
+.c-questions[data-start="41"] { counter-reset: q 40; }
+.c-questions[data-start="42"] { counter-reset: q 41; }
+.c-questions[data-start="43"] { counter-reset: q 42; }
+.c-questions[data-start="44"] { counter-reset: q 43; }
+.c-questions[data-start="45"] { counter-reset: q 44; }
+.c-questions[data-start="46"] { counter-reset: q 45; }
+.c-questions[data-start="47"] { counter-reset: q 46; }
+.c-questions[data-start="48"] { counter-reset: q 47; }
+.c-questions[data-start="49"] { counter-reset: q 48; }
+.c-questions[data-start="50"] { counter-reset: q 49; }
+.c-questions[data-start="51"] { counter-reset: q 50; }
+.c-questions[data-start="52"] { counter-reset: q 51; }
+.c-questions[data-start="53"] { counter-reset: q 52; }
+.c-questions[data-start="54"] { counter-reset: q 53; }
+.c-questions[data-start="55"] { counter-reset: q 54; }
+.c-questions[data-start="56"] { counter-reset: q 55; }
+.c-questions[data-start="57"] { counter-reset: q 56; }
+.c-questions[data-start="58"] { counter-reset: q 57; }
+.c-questions[data-start="59"] { counter-reset: q 58; }
+.c-questions[data-start="60"] { counter-reset: q 59; }
 
 /* A question whose parts carry on in a block of their own, so that a
    long list of word problems can run over a page break the way a set

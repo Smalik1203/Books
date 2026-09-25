@@ -4,9 +4,11 @@
 
      node build/refit.mjs class-9/ch05-circles bridge [--dry]
      node build/refit.mjs class-9/ch04-algebraic-identities body
+     node build/refit.mjs _sample-2027-28/c1-class-6-perimeter-and-area board
 
-   A chapter is two runs of pages that are fitted separately: the
-   chapter proper, p001 up, and Beyond the Book, p101 to p110. An
+   A chapter is up to three runs of pages that are fitted separately:
+   the chapter proper, p001 up; By the Book, the board-examination
+   division, p090 to p099; and Beyond the Book, p101 up. An
    edit that adds three lines to one page pushes three lines off
    the last one — silently, because a fixed page box clips.
 
@@ -33,11 +35,12 @@ const p = (...a) => path.join(ROOT, ...a);
 const rel = process.argv[2];
 const part = process.argv[3];
 const DRY = process.argv.includes('--dry');
-if (!rel || !['body', 'bridge'].includes(part)) {
-  console.error('usage: node build/refit.mjs <class-9/chapter-dir> body|bridge [--dry]');
+if (!rel || !['body', 'board', 'bridge'].includes(part)) {
+  console.error('usage: node build/refit.mjs <class-9/chapter-dir> body|board|bridge [--dry]');
   process.exit(1);
 }
 const BRIDGE = part === 'bridge';
+const BOARD = part === 'board';
 
 const cls = path.dirname(rel);
 const name = path.basename(rel);
@@ -49,11 +52,11 @@ const node = (...args) =>
   execFileSync(process.execPath, args.map(String), { cwd: ROOT, stdio: ['ignore', 'pipe', 'inherit'] }).toString();
 
 /* ---- the scratch chapter ---------------------------------- */
-// Beyond the Book is p101 up; the chapter proper is everything
-// below it. The two never mix.
-const isBridge = f => /^p1\d\d.*\.html$/.test(f);
+// Beyond the Book is p101 up, By the Book p090 to p099, and the
+// chapter proper is everything below. The three never mix.
+const partOf = f => /^p1\d\d.*\.html$/.test(f) ? 'bridge' : /^p09\d.*\.html$/.test(f) ? 'board' : 'body';
 const own = (await readdir(src))
-  .filter(f => /^p\d+.*\.html$/.test(f) && isBridge(f) === BRIDGE).sort();
+  .filter(f => /^p\d+.*\.html$/.test(f) && partOf(f) === part).sort();
 if (!own.length) { console.log(`  ${rel}: no ${part} pages`); process.exit(0); }
 
 await rm(scratch, { recursive: true, force: true });
@@ -61,6 +64,15 @@ await mkdir(scratch, { recursive: true });
 // The same edition and palette, so every measurement is the one
 // that will hold when the pages go back.
 await copyFile(path.join(src, 'chapter.json'), path.join(scratch, 'chapter.json'));
+// "keepExerciseSets" keeps a chapter's own exercise sets whole. By the
+// Book and Beyond the Book are one long numbered run each, which can
+// never fit a page whole, so kept whole it strands its band alone on a
+// page — By the Book's first page came out 15% full. Off for both.
+if (part !== 'body') {
+  const meta = JSON.parse(await readFile(path.join(scratch, 'chapter.json'), 'utf8'));
+  delete meta.keepExerciseSets;
+  await writeFile(path.join(scratch, 'chapter.json'), JSON.stringify(meta, null, 2) + '\n');
+}
 for (const [i, f] of own.entries()) {
   await copyFile(path.join(src, f), path.join(scratch, 'p' + String(i + 1).padStart(3, '0') + '.html'));
 }
@@ -80,14 +92,19 @@ if (DRY) { console.log('  --dry: the scratch chapter is left in place, nothing c
 /* ---- back to the chapter ----------------------------------- */
 const packed = (await readdir(scratch)).filter(f => /^p\d+.*\.html$/.test(f)).sort();
 for (const f of own) await rm(path.join(src, f));
-const named = i => BRIDGE ? 'p' + String(101 + i) : 'p' + String(i + 1).padStart(3, '0');
+const named = i => BRIDGE ? 'p' + String(101 + i)
+  : BOARD ? 'p' + String(90 + i).padStart(3, '0') : 'p' + String(i + 1).padStart(3, '0');
+if (BOARD && packed.length > 10) console.warn(`  ! By the Book came to ${packed.length} pages; p100 up is Beyond the Book's`);
 for (const [i, f] of packed.entries()) {
   let html = await readFile(path.join(scratch, f), 'utf8');
-  // data-bridge on every page of the division; data-close on the one
-  // page of the chapter proper that is allowed to end part-way down.
-  const want = BRIDGE ? 'data-bridge' : (i === packed.length - 1 ? 'data-close' : null);
-  if (want) html = html.replace(/<section class="page([^"]*)"([^>]*)>/, (m, c, a) =>
-    `<section class="page${c}"${a.includes(want) ? a : a + ' ' + want}>`);
+  // data-bridge on every page of Beyond the Book, data-board on every
+  // page of By the Book; data-close on the one page of the chapter
+  // proper, and of By the Book, that is allowed to end part-way down.
+  const last = i === packed.length - 1;
+  const want = BRIDGE ? ['data-bridge'] : BOARD ? ['data-board', ...(last ? ['data-close'] : [])]
+    : last ? ['data-close'] : [];
+  for (const w of want) html = html.replace(/<section class="page([^"]*)"([^>]*)>/, (m, c, a) =>
+    `<section class="page${c}"${a.includes(w) ? a : a + ' ' + w}>`);
   await writeFile(path.join(src, named(i) + '.html'), html);
 }
 await rm(scratch, { recursive: true, force: true });
