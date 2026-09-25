@@ -1,0 +1,112 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">6.8</span><span class="name">Area of a Triangle</span></h2>
+
+      <p>Next we work out a formula for the area of a triangle. You met the formula in
+      Class 8, so we go over the idea briefly. One way is to take a right-angled
+      triangle first, and then other triangles. In both cases we put the triangle inside a
+      rectangle, and use the formula for the area of a rectangle (Fig. 6.20A).</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="5 8 250 116" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Left: a right-angled triangle ABC inside the rectangle ABCD, with base b and height h. Right: a triangle EFG inside the rectangle HFGI, with E on HI. The perpendicular EJ splits the base FG into b1 and b2.">
+            <path class="dg-fill-a-soft" d="M20 25 L20 100 L80 100 Z"/>
+            <path class="dg-hidden" d="M20 25 L80 25 L80 100"/>
+            <path class="dg-line" d="M20 25 L20 100 L80 100 Z"/>
+            <path class="dg-thin" d="M20 94 H26 V100"/>
+            <text class="dg-label" x="16" y="22" text-anchor="end">A</text>
+            <text class="dg-label" x="84" y="22">D</text>
+            <text class="dg-label" x="16" y="112" text-anchor="end">B</text>
+            <text class="dg-label" x="84" y="112">C</text>
+            <text class="dg-dim-label" x="24" y="66">h</text>
+            <text class="dg-dim-label" x="50" y="96" text-anchor="middle">b</text>
+      
+            <path class="dg-fill-b-soft" d="M160 25 L110 100 L240 100 Z"/>
+            <path class="dg-hidden" d="M110 100 L110 25 L240 25 L240 100"/>
+            <path class="dg-line" d="M160 25 L110 100 L240 100 Z"/>
+            <path class="dg-thin" d="M160 25 L160 100 M160 94 H166 V100"/>
+            <text class="dg-label" x="106" y="22" text-anchor="end">H</text>
+            <text class="dg-label" x="160" y="19" text-anchor="middle">E</text>
+            <text class="dg-label" x="244" y="22">I</text>
+            <text class="dg-label" x="106" y="112" text-anchor="end">F</text>
+            <text class="dg-label" x="160" y="114" text-anchor="middle">J</text>
+            <text class="dg-label" x="244" y="112">G</text>
+            <text class="dg-dim-label" x="164" y="66">h</text>
+            <text class="dg-dim-label" x="135" y="96" text-anchor="middle">b<tspan class="dg-sub">1</tspan></text>
+            <text class="dg-dim-label" x="200" y="96" text-anchor="middle">b<tspan class="dg-sub">2</tspan></text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.20A</span> The area of a triangle is half
+          the area of the rectangle around it.</figcaption>
+        </figure>
+      </div>
+
+      <p>In the first case, the triangle $ABC$ is half of the rectangle $ABCD$. In the
+      second, the perpendicular $EJ$ cuts the rectangle $HFGI$ into two rectangles, and
+      the triangle $EFG$ is half of each. Here $FG = FJ + JG$, so $b = b_1 + b_2$. Either
+      way, a triangle with base $b$ units and height $h$ units has half the area of the
+      rectangle with base $b$ units and height $h$ units. That is, its area is
+      $\frac{1}{2}bh$ sq. units.</p>
+
+      <p>Is there a gap in this argument, as there was for the parallelogram? What would
+      we do if the angle $EFG$ were obtuse, and the triangle were shaped like the triangle
+      $EFG$ in Fig. 6.20B? Work out the answer to this question.</p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="-40 5 230 110" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle EFG in which the angle at F is obtuse, so E lies to the left of F, beyond the base FG.">
+            <path class="dg-fill-b-soft" d="M25 25 L60 95 L130 95 Z"/>
+            <path class="dg-line" d="M25 25 L60 95 L130 95 Z"/>
+            <text class="dg-label" x="21" y="22" text-anchor="end">E</text>
+            <text class="dg-label" x="58" y="109" text-anchor="middle">F</text>
+            <text class="dg-label" x="132" y="109" text-anchor="middle">G</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.20B</span> A triangle with an obtuse angle
+          at $F$.</figcaption>
+        </figure>
+      </div>
+
+      <p>A neater way to find the formula for the area of a triangle is to see that two
+      congruent copies of a triangle fit together to make a parallelogram. In
+      Fig. 6.21A, the triangles $ABC$ and $A'B'C'$ are congruent. They fit together as in
+      Fig. 6.21B to make a parallelogram.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 340 125" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Left: Two congruent triangles: ABC, and A′B′C′, which is the same triangle turned through half a turn. Right: The two triangles fitted together along AC to make the parallelogram ABCD, with the diagonal AC dashed.">
+            <g transform="translate(0 0)">
+            <path class="dg-fill-a-soft" d="M20 45 L40 115 L110 115 Z"/>
+            <path class="dg-line" d="M20 45 L40 115 L110 115 Z"/>
+            <path class="dg-fill-b-soft" d="M140 80 L120 10 L50 10 Z"/>
+            <path class="dg-line" d="M140 80 L120 10 L50 10 Z"/>
+          </g>
+            <text class="dg-label" x="15" y="44" text-anchor="end">A</text>
+            <text class="dg-label" x="38" y="124" text-anchor="end">B</text>
+            <text class="dg-label" x="114" y="124">C</text>
+            <text class="dg-label" x="145" y="86">A′</text>
+            <text class="dg-label" x="124" y="12">B′</text>
+            <text class="dg-label" x="46" y="12" text-anchor="end">C′</text>
+            <g transform="translate(180 0)">
+            <path class="dg-fill-a-soft" d="M40 45 L60 115 L130 115 Z"/>
+            <path class="dg-fill-b-soft" d="M40 45 L130 115 L110 45 Z"/>
+            <path class="dg-line" d="M40 45 L60 115 L130 115 L110 45 Z"/>
+            <path class="dg-hidden" d="M40 45 L130 115"/>
+          </g>
+            <text class="dg-label" x="215" y="44" text-anchor="end">A</text>
+            <text class="dg-label" x="294" y="42">D</text>
+            <text class="dg-label" x="238" y="124" text-anchor="end">B</text>
+            <text class="dg-label" x="314" y="124">C</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.21A</span> (left) Two congruent
+          triangles. <span class="fignum">Fig. 6.21B</span> (right) Together they make a
+          parallelogram.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

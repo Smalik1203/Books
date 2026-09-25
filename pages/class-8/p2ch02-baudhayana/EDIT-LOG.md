@@ -1,5 +1,37 @@
 # Class 8 · Mathematics II · Chapter 2 — Two Squares Make One
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 18 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch02-baudhayana/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 52 cm |
+| 2 | Single correct | (b) 63 |
+| 3 | Single correct | (c) 8 m |
+| 4 | Single correct | (d) 41 cm |
+| 5 | Single correct | (a) 33, 56, 65 |
+| 6 | Single correct | (b) 6 cm |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (c), (d) |
+| 9 | Multiple correct | (a), (b) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 24 |
+| 12 | Numerical answer | 1.3 |
+| 13 | Numerical answer | 36 |
+| 14 | Matching | (d) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (b) P–4, Q–1, R–3, S–2 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 Three findings from the Beyond the Book syllabus audit, all confirmed on the
@@ -260,3 +292,7 @@ Checked by script (PLAN §4.8) and accepted.
 | p010 § 2.6.2 vs p011 § 2.7 | M1 | "Two **Baudhāyana triples** went by on the way: $(3,4,5)$ across the floor and $(5,12,13)$ up to the corner." The term is defined on the next page — "Three whole numbers with $a^2+b^2=c^2$ are called a **Baudhāyana triple**" — in § 2.7, which is where the whole idea is introduced. So the reader meets the term one page before it exists, in the sentence that closes a worked example. | Either move that sentence into § 2.7 or say "two sets of whole numbers you will meet by name on the next page". A one-page forward reference, and the only one in the chapter. |
 | p110 (built page 24) | — | Runs 0.8mm into the bottom margin. **Pre-existing** — I verified by reverting all four of this page's word changes and rebuilding, and the overflow is identical. Under the 12mm clipping threshold, so nothing is cut. | Recorded so it is not later attributed to the language pass. Five such pages now across the two volumes. |
 | p012 | M2 | The triple-machine identity is given as one line: $(m^2-n^2)^2 + (2mn)^2 = m^4 - 2m^2n^2 + n^4 + 4m^2n^2 = m^4 + 2m^2n^2 + n^4 = (m^2+n^2)^2$. Expanding $(m^2-n^2)^2$ needs Part I Chapter 4's square-of-a-difference applied to squares rather than to letters — $a = m^2$, $b = n^2$ — which is exactly the substitution Part I § 4.6 warns is the hard step ("Writing down what $a$ and $b$ are before starting is the difference between using an identity and misremembering one"). Here nothing is written down; three expansions happen in one line. | Name the substitution, or split the line. The chapter is careful everywhere else; this is the one place it goes fast. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *The Baudhayana-Pythagoras Theorem*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

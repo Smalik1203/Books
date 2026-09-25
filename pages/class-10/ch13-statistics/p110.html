@@ -2,69 +2,88 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 8 &middot; The three measures together</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 15</div>
-        <div class="c-example__body">
-          <p>For a distribution, the median is 45 and the mode is 42. Estimate the mean.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$3 \times 45 = 42 + 2\,\text{Mean}$</span>
-              <span class="work__why">the empirical relationship</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$2\,\text{Mean} = 135 - 42 = 93$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>The mean is about 46.5</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>A shopkeeper counted the customers in his shop each day for 50 days. Find the mean, the median and the mode of the counts, and check them against the empirical relationship.</p>
-          <table class="table--data">
-            <thead><tr><th>Customers</th><th>10&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;30</th><th>30&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;50</th><th>50&nbsp;–&nbsp;60</th></tr></thead>
-            <tbody><tr><td>Number of days</td><td>6</td><td>10</td><td>16</td><td>12</td><td>6</td></tr></tbody>
-          </table>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$a = 35$, $h = 10$: &nbsp; $\sum f_iu_i = -12 - 10 + 0 + 12 + 12 = 2$</span>
-              <span class="work__why">$u_i$ from $-2$ to 2</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$\bar{x} = 35 + 10 \times \dfrac{2}{50} = 35.4$</span>
-              <span class="work__why">the mean</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>cumulative frequencies 6, 16, 32, 44, 50; $\frac{n}{2} = 25$, so the median class is 30&nbsp;–&nbsp;40</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$\text{Median} = 30 + \left(\dfrac{25 - 16}{16}\right) \times 10 = 35.63$</span>
-              <span class="work__why">the median</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>$\text{Mode} = 30 + \left(\dfrac{16 - 10}{32 - 10 - 12}\right) \times 10 = 36$</span>
-              <span class="work__why">the mode</span></div>
-            <div class="work__row"><span class="work__label">Step 6</span>
-              <span>$3 \times 35.63 = 106.89$ and $36 + 2 \times 35.4 = 106.8$</span>
-              <span class="work__why">nearly equal</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Mean 35.4, median 35.63 and mode 36 customers; the relationship holds roughly</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
-        <div class="c-practice__sub">Choose the correct option</div>
-        <ol class="c-questions">
-          <li>The class mark of the class 35&nbsp;–&nbsp;50 is<ol class="c-parts c-parts--alpha c-parts--4"><li>15</li><li>42.5</li><li>85</li><li>40</li></ol></li>
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Assertion and reason</div>
+        <p class="c-practice__note">In Questions 15 to 18, choose (a) if both A and R are true and R explains A; (b) if both are true but R does not explain A; (c) if A is true but R is false; (d) if A is false but R is true.</p>
+        <ol class="c-questions" data-start="15">
+          <li><p>Assertion (A): The mean found by the step-deviation method does not depend on the choice of $a$.</p><p>Reason (R): ${\bar{x} = a + h\bar{u}}$, and when $a$ changes, $h\bar{u}$ changes by the same amount the other way.</p></li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>In the step-deviation method, $u_i$ is<ol class="c-parts c-parts--alpha c-parts--4 c-parts--tall"><li>$x_i - a$</li><li>$h(x_i - a)$</li><li>$\dfrac{x_i - a}{h}$</li><li>$\dfrac{x_i + a}{h}$</li></ol></li>
+        <ol class="c-questions" data-start="16">
+          <li><p>Assertion (A): The classes 0&nbsp;–&nbsp;10, 10&nbsp;–&nbsp;20 and 20&nbsp;–&nbsp;30 have frequencies 4, 9 and 4, so the mode is 15.</p><p>Reason (R): The mode of grouped data is always the class mark of the modal class.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="17">
+          <li><p>Assertion (A): The median of grouped data can be found from a more than type cumulative frequency table.</p><p>Reason (R): The mean of grouped data is found by taking each class to be centred at its class mark.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="18">
+          <li><p>Assertion (A): If every frequency of a distribution is doubled, its mean is doubled.</p><p>Reason (R): The mean of grouped data is $\dfrac{\sum f_ix_i}{\sum f_i}$.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Very short answer</div>
+        <ol class="c-questions" data-start="19">
+          <li>The class marks of a distribution are 47, 52, 57 and 62. Write the classes.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="20">
+          <li>For a distribution, ${\sum f_i = 25}$ and ${\sum f_ix_i = 1015}$. Find the mean.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="21">
+          <li>A distribution has mode 24 and mean 30. Use the empirical relationship to estimate its median.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="22">
+          <li>The less than cumulative frequencies of the classes 0&nbsp;–&nbsp;5, 5&nbsp;–&nbsp;10, 10&nbsp;–&nbsp;15 and 15&nbsp;–&nbsp;20 are 6, 14, 29 and 35. Find the frequency of the class 10&nbsp;–&nbsp;15, and the median class.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Short answer</div>
+        <ol class="c-questions" data-start="23">
+          <li>Find the mean of the distribution below by the step-deviation method.
+            <table class="table--data">
+              <thead><tr><th>Class interval</th><th>100&nbsp;–&nbsp;120</th><th>120&nbsp;–&nbsp;140</th><th>140&nbsp;–&nbsp;160</th><th>160&nbsp;–&nbsp;180</th><th>180&nbsp;–&nbsp;200</th></tr></thead>
+              <tbody><tr><td>Frequency</td><td>10</td><td>14</td><td>20</td><td>9</td><td>7</td></tr></tbody>
+            </table>
+          </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="24">
+          <li>Find the mode of the distribution below.
+            <table class="table--data">
+              <thead><tr><th>Class interval</th><th>0&nbsp;–&nbsp;5</th><th>5&nbsp;–&nbsp;10</th><th>10&nbsp;–&nbsp;15</th><th>15&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;25</th><th>25&nbsp;–&nbsp;30</th></tr></thead>
+              <tbody><tr><td>Frequency</td><td>3</td><td>8</td><td>13</td><td>17</td><td>9</td><td>5</td></tr></tbody>
+            </table>
+          </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="25">
+          <li>The marks of 60 students are given below. Find the median mark.
+            <table class="table--data">
+              <thead><tr><th>Marks</th><th>0&nbsp;–&nbsp;20</th><th>20&nbsp;–&nbsp;40</th><th>40&nbsp;–&nbsp;60</th><th>60&nbsp;–&nbsp;80</th><th>80&nbsp;–&nbsp;100</th></tr></thead>
+              <tbody><tr><td>Number of students</td><td>7</td><td>13</td><td>20</td><td>16</td><td>4</td></tr></tbody>
+            </table>
+          </li>
         </ol>
       </div>
 

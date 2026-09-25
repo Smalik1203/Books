@@ -2,17 +2,55 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <div class="c-practice__sub">Case-based questions</div>
-        <ol class="c-questions" data-start="30">
-          <li><div class="c-case"><p>A laboratory counts the bacteria in a dish every hour. The number doubles each hour.</p><table><thead><tr><th>Hour</th><th>Bacteria</th></tr></thead><tbody><tr><td>0</td><td>500</td></tr><tr><td>1</td><td>1000</td></tr><tr><td>2</td><td>2000</td></tr><tr><td>3</td><td>4000</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>Write the number of bacteria after $n$ hours, using a power of $2$.</li><li>How many bacteria are there after $10$ hours? Give the answer in standard form.</li><li>After how many whole hours does the number first go past $10^6$?</li></ol></li>
-        </ol>
+      <div class="c-stage">
+        <div class="c-stage__num">4</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Answers</div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="31">
-          <li><div class="c-case"><p>Computer storage is counted in bytes. In this question, take each unit to be $2^{10}$ of the unit before it.</p><table><thead><tr><th>Unit</th><th>Bytes</th></tr></thead><tbody><tr><td>1 kilobyte (KB)</td><td>$2^{10}$</td></tr><tr><td>1 megabyte (MB)</td><td>$2^{20}$</td></tr><tr><td>1 gigabyte (GB)</td><td>$2^{30}$</td></tr><tr><td>1 terabyte (TB)</td><td>$2^{40}$</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>How many bytes are there in $16$ GB? Give the answer as a power of $2$.</li><li>A song takes $4$ MB. How many such songs fit in $16$ GB?</li><li>Using $2^{10} \approx 10^3$, about how many bytes are there in $1$ TB? Give the answer in standard form.</li></ol></li>
-        </ol>
+      <ol class="c-answers">
+        <li>
+          <span class="c-answers__stage">1&ndash;10</span>
+          <span class="c-answers__list"><span class="n">1</span> (d) &nbsp; <span class="n">2</span> (b) &nbsp; <span class="n">3</span> (a) &nbsp; <span class="n">4</span> (c) &nbsp; <span class="n">5</span> (d) &nbsp; <span class="n">6</span> (a) &nbsp; <span class="n">7</span> (b) &nbsp; <span class="n">8</span> (c) &nbsp; <span class="n">9</span> (d) &nbsp; <span class="n">10</span> (b)</span>
+        </li>
+        <li>
+          <span class="c-answers__stage">11&ndash;19</span>
+          <span class="c-answers__list"><span class="n">11</span> (a) &nbsp; <span class="n">12</span> (c) &nbsp; <span class="n">13</span> (d) &nbsp; <span class="n">14</span> (c) &nbsp; <span class="n">15</span> (b) &nbsp; <span class="n">16</span> (a) &nbsp; <span class="n">17</span> (b) &nbsp; <span class="n">18</span> (c) &nbsp; <span class="n">19</span> (d)</span>
+        </li>
+      </ol>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">20</span>
+          <span>$5^3 \times 5^2 \times 5^1 = 5^6$</span></div>
+        <div class="work__row"><span class="work__label">21</span>
+          <span>$\tfrac12 + 1 + \tfrac14 = \tfrac74$</span></div>
+        <div class="work__row"><span class="work__label">22</span>
+          <span>$3.05 \times 10^{-4}$</span></div>
+        <div class="work__row"><span class="work__label">23</span>
+          <span>$3^6 \times 3^3 \times 3^{-2} \div 3^8 = 3^{-1}$, which is $\tfrac13$</span></div>
+      </div>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">24</span>
+          <span>$x - 4 = 3$, so $x = 7$</span></div>
+        <div class="work__row"><span class="work__label">25</span>
+          <span>$26^2 \times 10^3 = 676\,000$ codes, which is $6.76 \times 10^5$</span></div>
+        <div class="work__row"><span class="work__label">26</span>
+          <span>$4$ hours is $12$ splits, so $2^{12} = 4096$ cells</span></div>
+        <div class="work__row"><span class="work__label">27</span>
+          <span>$(2^5)^2 = 2^{10}$ and $8^3 = 2^9$, so the value is $2^1 \times 7^1 \times 3^2 = 126$</span></div>
+      </div>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">28</span>
+          <span>$2^{75} = 8^{25}$ and $3^{50} = 9^{25}$, so $3^{50}$ is larger. $5 \lt 8$, so $5^{25} \lt 8^{25}$ and $2^{75}$ is larger</span></div>
+        <div class="work__row"><span class="work__label">29</span>
+          <span>$26$ kg is $2.6 \times 10^4$ g; $(2.6 \div 6.5) \times 10^{4-(-4)} = 0.4 \times 10^8$, about $4 \times 10^7$ grains, by the division law</span></div>
+        <div class="work__row"><span class="work__label">30</span>
+          <span>(a) $500 \times 2^n$ (b) $500 \times 1024 = 512\,000$, which is $5.12 \times 10^5$ (c) $2^n$ must pass $2000$: $2^{10} = 1024$ does not and $2^{11} = 2048$ does, so after 11 hours</span></div>
+        <div class="work__row"><span class="work__label">31</span>
+          <span>(a) $16 \times 2^{30} = 2^{34}$ (b) $2^{34} \div 2^{22} = 2^{12}$, which is 4096 songs (c) $(2^{10})^4 \approx (10^3)^4$, about $1 \times 10^{12}$ bytes</span></div>
       </div>
 
     </div>

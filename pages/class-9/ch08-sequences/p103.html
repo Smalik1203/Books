@@ -2,76 +2,90 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Behind Each Answer</div>
-          <div class="c-stage__for">The same questions, worked — and the reasoning that finds them.</div>
+      <p>
+        Every counting question of this shape comes apart the same way: find the first,
+        find the last, count the steps between them, add one. It does not matter
+        whether the question is about multiples of $9$, two-digit numbers divisible by
+        $3$, or the terms of an AP between two limits. Those are the same question in
+        different clothes, and the last of the four operations is the one that gets
+        left out.
+      </p>
+
+      <div class="c-try">
+        <p>A sequence is given by $t_1 = 1$ and $t_n = t_{n-1} + 2n - 1$ for $n \geq 2$.
+        Find its first five terms, and then say what sequence it is.</p>
+      </div>
+
+      <p>
+        The rule is $t_1 = 1$, $t_n = t_{n-1} + 2n - 1$. Walk it.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$t_2$</span>
+          <span>$= 1 + 3 = 4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$t_3$</span>
+          <span>$= 4 + 5 = 9$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$t_4$</span>
+          <span>$= 9 + 7 = 16$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$t_5$</span>
+          <span>$= 16 + 9 = 25$</span>
         </div>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Neither, and how to be sure</div>
-        <p>
-          The sequence is $2, 6, 12, 20, 30$. Run both tests rather than one.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">differences</span>
-            <span>$4,\ 6,\ 8,\ 10$ — not constant</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">ratios</span>
-            <span>$3,\ 2,\ \tfrac53,\ \tfrac32$ — not constant</span>
-          </div>
-        </div>
-        <p>
-          So it is neither. But the reason asked for is the one that survives a hundred
-          terms, and for that look at what the numbers are: $1 \times 2$, $2 \times 3$,
-          $3 \times 4$, $4 \times 5$, $5 \times 6$. The $n$th term is $n(n+1)$, which is
-          twice the $n$th triangular number.
-        </p>
-        <p>
-          That settles it for good. The differences of $n(n+1)$ are $2n$, which grows,
-          so no AP; and the ratios fall towards $1$, so no GP. Four differences would
-          have been evidence — the formula is a proof.
-        </p>
+      <p>
+        The square numbers — and the recursion says why, if you read what is being
+        added. The amount added at step $n$ is $2n - 1$, which is the $n$th odd number.
+        So this rule is the picture from the first section of the chapter written as
+        algebra: each square is the one before it plus an L of odd many dots.
+      </p>
+
+      <p>
+        It is worth noticing that the explicit rule, $t_n = n^2$, is far the simpler of
+        the two here — and that the recursive one is what you would have found first
+        from the picture. Neither is the better rule; they are answers to different
+        questions.
+      </p>
+
+      <div class="c-try">
+        <p>Two sequences begin $3, 6, \ldots$ and nothing more is said about either. Give
+        a third term for the first that makes it an AP, and a third term for the second
+        that makes it a GP. What does this show about predicting from two terms?</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">An AP from two facts</div>
-        <p>
-          Write both facts in terms of $a$ and $d$ and the question becomes a pair of
-          equations. The seventh term exceeding the fifth by $12$ is worth reading
-          carefully: it says $t_7 - t_5 = 12$, and $t_7 - t_5$ is two steps of $d$.
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label">given</span>
-            <span>$a + 2d = 16$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">and</span>
-            <span>$2d = 12$, so $d = 6$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label">then</span>
-            <span>$a = 16 - 12$</span>
-            <span class="chip">4</span>
-          </div>
-        </div>
-        <p>
-          The AP is $4, 10, 16, 22, \ldots$ Notice that the second fact never needed the
-          first: any two terms the same distance apart differ by that many $d$'s, whether
-          they are the fifth and seventh or the fiftieth and fifty-second.
-        </p>
-        <p>
-          That is worth keeping. In an AP the gap between two terms depends only on how
-          far apart they stand, never on where they stand. So a fact of the form "this
-          term exceeds that one by so much" is a fact about $d$ alone, and it can be read
-          off without touching $a$. Half the questions about APs are built on it.
-        </p>
-      </div>
+      <p>
+        For $3, 6, \ldots$ to be an AP the common difference is $3$, so the third term
+        is $9$. For it to be a GP the common ratio is $2$, so the third term is $12$.
+        Both continuations are perfectly legitimate.
+      </p>
+
+      <p>
+        And they are not the only two. The third term could be $7$, or $-40$, or
+        anything at all: some rule can be written to produce it. Two terms fix a
+        difference and a ratio, and that is all they fix.
+      </p>
+
+      <p>
+        Which is why a question that shows you a few terms and asks what comes next is
+        strictly speaking unanswerable, and why it is asked anyway. What is really
+        wanted is the <em>simplest</em> rule that fits — and simplest is a judgement,
+        not a calculation. That judgement is usually right, and it is worth knowing
+        that it is a judgement.
+      </p>
+
+      <p>
+        Three terms are no better in principle, but they are far better in practice,
+        because now the two tests can disagree. Given $3, 6, 9$ the differences are
+        equal and the ratios are not; given $3, 6, 12$ it is the other way round. With
+        only two terms both tests pass, which is precisely why two terms settle
+        nothing.
+      </p>
 
     </div>
   </div>

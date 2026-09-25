@@ -1,5 +1,38 @@
 # Class 10 · Mathematics I · Chapter 7 — Coordinate Geometry
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 14 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch07-coordinate-geometry/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $2\sqrt{2}$ |
+| 2 | Single correct | (b) $(1, 3)$ |
+| 3 | Single correct | (c) $(1.5, 1)$ |
+| 4 | Single correct | (d) $(-7, 0)$ |
+| 5 | Single correct | (a) $5 : 1$ |
+| 6 | Single correct | (b) 4 |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b), (d) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 13 |
+| 12 | Numerical answer | 13 |
+| 13 | Numerical answer | 24 |
+| 14 | Matching | (a) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (d) P–3, Q–4, R–1, S–2 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked from the brief built on

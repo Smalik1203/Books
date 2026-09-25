@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {pageBlocks} from './jee-tools.mjs';
+const get=(d,n)=>{const f=`pages/class-6/math-ch${d}/p${String(n).padStart(3,'0')}.html`,h=fs.readFileSync(f,'utf8');return {f,h,bs:pageBlocks(h)};};
+const save=p=>{const old=pageBlocks(p.h),s=p.h.indexOf(old[0]),e=p.h.indexOf(old.at(-1),s)+old.at(-1).length;fs.writeFileSync(p.f,p.h.slice(0,s)+p.bs.join('\n\n')+p.h.slice(e));};
+const group=(text,fig)=>`<div class="c-figure-context">\n${text}\n${fig}\n</div>`;
+const a=get('02-lines-and-angles',21),b=get('02-lines-and-angles',22);
+b.bs[0]=group(a.bs.pop(),b.bs[0]);save(a);save(b);
+const c=get('04-data-handling',10),d=get('04-data-handling',11),e=get('04-data-handling',12);
+e.bs.unshift(...d.bs.splice(6));d.bs[0]=group(c.bs.pop(),d.bs[0]);save(c);save(d);save(e);
+const f=get('04-data-handling',22),g=get('04-data-handling',23);
+g.bs[0]=group(f.bs.pop(),g.bs[0]);save(f);save(g);

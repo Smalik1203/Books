@@ -1,0 +1,100 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-try">
+        <p>The product of two numbers is $391$. When each number is increased by $1$, the
+        product becomes $432$. What is the sum of the two numbers?</p>
+      </div>
+
+      <p>
+        This is the question of Section 6.1.1 turned round. There the numbers were known
+        and the increase was asked for; here the increase is known. Increasing both
+        numbers by $1$ adds $a + b + 1$ to the product.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the increase</span>
+          <span>$(a + 1)(b + 1) - ab = a + b + 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">here</span>
+          <span>$a + b + 1 = 432 - 391 = 41$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$a + b = 40$</span>
+        </div>
+      </div>
+
+      <p>
+        The two numbers are in fact $17$ and $23$, and $18 \times 24 = 432$ agrees. The
+        sum came out without either number being found.
+      </p>
+
+      <div class="c-try">
+        <p>Simplify $(2x + 3)^2 - (2x - 3)^2$ without expanding either square.</p>
+      </div>
+
+      <p>
+        Two squares are being subtracted, so take $a = 2x + 3$ and $b = 2x - 3$ and use
+        $a^2 - b^2 = (a + b)(a - b)$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$a + b$</span>
+          <span>$= (2x + 3) + (2x - 3) = 4x$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$a - b$</span>
+          <span>$= (2x + 3) - (2x - 3) = 6$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">product</span>
+          <span>$= 4x \times 6 = 24x$</span>
+        </div>
+      </div>
+
+      <p>
+        Expanding both squares gives $4x^2 + 12x + 9 - (4x^2 - 12x + 9)$, which also
+        comes to $24x$, after six terms have been written and four of them have
+        cancelled. The identity did the cancelling in advance.
+      </p>
+
+      <div class="c-try">
+        <p>Two numbers $a$ and $b$ have $a^2 + b^2 = 20$ and $ab = 8$. Find
+        $a^4 + b^4$, again without finding $a$ or $b$.</p>
+      </div>
+
+      <p>
+        The expression asked for has fourth powers, and the one given has squares, so
+        square what you are given. Since $a^4 = (a^2)^2$, Identity 1A applies with $a^2$
+        and $b^2$ in the places of $a$ and $b$, and its middle term needs only the
+        product.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">square it</span>
+          <span>$(a^2 + b^2)^2 = a^4 + 2a^2b^2 + b^4 = 400$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">middle term</span>
+          <span>$2a^2b^2 = 2(ab)^2 = 2 \times 64 = 128$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$a^4 + b^4 = 400 - 128 = 272$</span>
+        </div>
+      </div>
+
+      <p>
+        The middle term became a plain number because $a^2b^2$ is $(ab)^2$, and $ab$ was
+        given. The numbers are in fact $2$ and $4$, and $16 + 256 = 272$ agrees.
+      </p>
+
+    </div>
+  </div>
+</section>

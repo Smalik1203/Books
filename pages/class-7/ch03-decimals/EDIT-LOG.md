@@ -1,5 +1,40 @@
 # Class 7 · Mathematics I · Chapter 3 — The Decimal Point
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 19 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/ch03-decimals/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p013: “in a different place each time. Which of them is the smallest, and which is the largest?” became “in a different place. Which is the smallest, and which the largest?”, to pull back the line that ran 1.9mm into the margin. Practice p109: its last question block moved to p110 (settle.mjs), which had room; no words changed.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (b) 3.05 |
+| 2 | Single correct | (a) 3.85 kg |
+| 3 | Single correct | (c) 0.054, 0.405, 0.45, 0.5 |
+| 4 | Single correct | (d) 3.75 |
+| 5 | Single correct | (b) 5:45 |
+| 6 | Single correct | (d) 6.09 |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (b), (d) |
+| 9 | Multiple correct | (a), (c) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 75 |
+| 12 | Numerical answer | 48.75 |
+| 13 | Numerical answer | 3.4 |
+| 14 | Matching | (a) P–2, Q–4, R–3, S–1 |
+| 15 | Matching | (c) P–3, Q–1, R–4, S–2 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Beyond the Book checked against what the chapter body teaches. The audit
@@ -338,3 +373,12 @@ The builder still prints `~ page 8 runs 1.1mm into the bottom margin`. The
 page is 90% full and its proof ends in several centimetres of white, so
 the notice is not about anything that prints; it is a `~`, not a `!`, and it
 was left.
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *A Peek Beyond the Point*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

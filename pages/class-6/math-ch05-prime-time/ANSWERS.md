@@ -505,6 +505,27 @@ question in running text, stage 2 sets fifteen examples as steps, numbered 1 to 
 5. **Yes, 84 and 275 are co-prime.** $84 = 2 \times 2 \times 3 \times 7$ and
    $275 = 5 \times 5 \times 11$ share no prime.
 
+### Stage 2 · Solved Examples
+
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (c) 10:12 *(single correct)*
+2. (a) 5 *(single correct)*
+3. (b) 25 *(single correct)*
+4. (d) 7 *(single correct)*
+5. (b) 420 *(single correct)*
+6. (a) 74 *(single correct)*
+7. (a), (c) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (c), (d) *(multiple correct)*
+10. (a), (c), (d) *(multiple correct)*
+11. 12 *(numerical answer)*
+12. 37 *(numerical answer)*
+13. 936 *(numerical answer)*
+14. (d) P–3, Q–2, R–4, S–1 *(matching)*
+15. (b) P–2, Q–4, R–1, S–3 *(matching)*
+
 ### Stage 3 · Practice
 
 | | | | | | | | |

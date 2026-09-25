@@ -2,6 +2,43 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 230 112" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A 3 by 3 grid with 5 in the centre. The four corner squares are shaded one colour and the four middle squares on the edges another.">
+      <rect class="dg-fill-a-soft" x="50" y="8" width="32" height="32"/>
+      <rect class="dg-line" x="50" y="8" width="32" height="32"/>
+      <rect class="dg-fill-c-soft" x="82" y="8" width="32" height="32"/>
+      <rect class="dg-line" x="82" y="8" width="32" height="32"/>
+      <rect class="dg-fill-a-soft" x="114" y="8" width="32" height="32"/>
+      <rect class="dg-line" x="114" y="8" width="32" height="32"/>
+      <rect class="dg-fill-c-soft" x="50" y="40" width="32" height="32"/>
+      <rect class="dg-line" x="50" y="40" width="32" height="32"/>
+      <rect class="dg-fill-b-soft" x="82" y="40" width="32" height="32"/>
+      <rect class="dg-line" x="82" y="40" width="32" height="32"/>
+      <rect class="dg-fill-c-soft" x="114" y="40" width="32" height="32"/>
+      <rect class="dg-line" x="114" y="40" width="32" height="32"/>
+      <rect class="dg-fill-a-soft" x="50" y="72" width="32" height="32"/>
+      <rect class="dg-line" x="50" y="72" width="32" height="32"/>
+      <rect class="dg-fill-c-soft" x="82" y="72" width="32" height="32"/>
+      <rect class="dg-line" x="82" y="72" width="32" height="32"/>
+      <rect class="dg-fill-a-soft" x="114" y="72" width="32" height="32"/>
+      <rect class="dg-line" x="114" y="72" width="32" height="32"/>
+      <text class="dg-label" x="98" y="60" text-anchor="middle">5</text>
+      <rect class="dg-fill-a-soft" x="168" y="34" width="10" height="10"/>
+      <text class="dg-note" x="184" y="43" text-anchor="start">corner</text>
+      <rect class="dg-fill-c-soft" x="168" y="58" width="10" height="10"/>
+      <text class="dg-note" x="184" y="67" text-anchor="start">middle</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.13</span> Corners and middle squares.</figcaption>
+                          </figure>
+                        </div>
+
+      <div class="work">
+        <p>Observation 3: 1 and 9 go in middle squares, on opposite sides of the centre.</p>
+      </div>
+
+      <p>So one row or column of the square is 1, 5, 9. Put 1 in the top middle square. The top row then needs two more numbers adding up to 14, other than 5 and 9, and those are 8 and 6. Now finish the square yourself.</p>
+
       <div class="c-practice">
         <div class="c-practice__head">Exercise Set 6.3</div>
         <ol class="c-questions">
@@ -40,7 +77,7 @@
 
       <h3>The general $3 \times 3$ magic square</h3>
 
-      <p>Take a magic square of consecutive numbers, and call the number in its centre $m$. Every other number is some amount more or less than $m$. In the square of 1 to 9, with 5 in the centre, 8 is $m + 3$ and 1 is $m - 4$. Writing every number in this way gives Fig. 6.13. Try it with your square of 2 to 10, where $m = 6$: there 9 is $m + 3$ and 2 is $m - 4$, just as before.</p>
+      <p>Take a magic square of consecutive numbers, and call the number in its centre $m$. Every other number is some amount more or less than $m$. In the square of 1 to 9, with 5 in the centre, 8 is $m + 3$ and 1 is $m - 4$. Writing every number in this way gives Fig. 6.14. Try it with your square of 2 to 10, where $m = 6$: there 9 is $m + 3$ and 2 is $m - 4$, just as before.</p>
 
       <div class="c-figure c-figure--md">
                           <figure>
@@ -64,22 +101,9 @@
       <rect class="dg-line" x="139" y="66" width="48" height="30"/>
       <text class="dg-label" x="163" y="85" text-anchor="middle">m − 3</text>
       </svg>
-                            <figcaption><span class="fignum">Fig. 6.13</span> The general magic square with centre $m$.</figcaption>
+                            <figcaption><span class="fignum">Fig. 6.14</span> The general magic square with centre $m$.</figcaption>
                           </figure>
                         </div>
-
-      <p>Check that every row, column and diagonal of Fig. 6.13 adds up to $3m$, whatever number $m$ is. In the top row, $(m + 3) + (m - 4) + (m + 1) = 3m$, because 3, $-4$ and 1 add up to 0. Check the other rows, the columns and both diagonals in the same way; each time, the three amounts added to $m$ come to 0.</p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>In any line through the centre of Fig. 6.13, the two outer numbers, such as $m + 3$ and $m - 3$, add up to $2m$. Why does that make the line add up to $3m$? Which lines do not pass through the centre?</p>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>

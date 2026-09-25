@@ -1,0 +1,58 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>Pairs to Make Fours</h3>
+
+      <p>Take a pair of even numbers and add them. Is the sum divisible by $4$?
+      Try this with several pairs of even numbers. When is the sum a multiple of
+      $4$, and when is it not? Is there a rule, or a pattern?</p>
+
+      <p>Even numbers are of two kinds, by the remainder they leave when divided
+      by $4$. Set them out in rows of four, as in Fig. 5.4.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 168" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two dot pictures of even numbers in rows of four: on the left every row is full, a multiple of 4; on the right the full rows have two dots left over below them"><g class="dg-fill-a"><circle cx="45" cy="26" r="7"/><circle cx="70" cy="26" r="7"/><circle cx="95" cy="26" r="7"/><circle cx="120" cy="26" r="7"/><circle cx="45" cy="46" r="7"/><circle cx="70" cy="46" r="7"/><circle cx="95" cy="46" r="7"/><circle cx="120" cy="46" r="7"/><circle cx="45" cy="92" r="7"/><circle cx="70" cy="92" r="7"/><circle cx="95" cy="92" r="7"/><circle cx="120" cy="92" r="7"/></g><g class="dg-thin"><circle cx="45" cy="26" r="7"/><circle cx="70" cy="26" r="7"/><circle cx="95" cy="26" r="7"/><circle cx="120" cy="26" r="7"/><circle cx="45" cy="46" r="7"/><circle cx="70" cy="46" r="7"/><circle cx="95" cy="46" r="7"/><circle cx="120" cy="46" r="7"/><circle cx="45" cy="92" r="7"/><circle cx="70" cy="92" r="7"/><circle cx="95" cy="92" r="7"/><circle cx="120" cy="92" r="7"/></g><g class="dg-fill-teal"><circle cx="82.5" cy="60" r="1.6"/><circle cx="82.5" cy="68" r="1.6"/><circle cx="82.5" cy="76" r="1.6"/></g><g class="dg-line"><rect x="20" y="10" width="125" height="98"/></g><g class="dg-fill-a"><circle cx="230" cy="26" r="7"/><circle cx="255" cy="26" r="7"/><circle cx="280" cy="26" r="7"/><circle cx="305" cy="26" r="7"/><circle cx="230" cy="46" r="7"/><circle cx="255" cy="46" r="7"/><circle cx="280" cy="46" r="7"/><circle cx="305" cy="46" r="7"/><circle cx="230" cy="92" r="7"/><circle cx="255" cy="92" r="7"/><circle cx="280" cy="92" r="7"/><circle cx="305" cy="92" r="7"/></g><g class="dg-thin"><circle cx="230" cy="26" r="7"/><circle cx="255" cy="26" r="7"/><circle cx="280" cy="26" r="7"/><circle cx="305" cy="26" r="7"/><circle cx="230" cy="46" r="7"/><circle cx="255" cy="46" r="7"/><circle cx="280" cy="46" r="7"/><circle cx="305" cy="46" r="7"/><circle cx="230" cy="92" r="7"/><circle cx="255" cy="92" r="7"/><circle cx="280" cy="92" r="7"/><circle cx="305" cy="92" r="7"/></g><g class="dg-fill-teal"><circle cx="267.5" cy="60" r="1.6"/><circle cx="267.5" cy="68" r="1.6"/><circle cx="267.5" cy="76" r="1.6"/></g><g class="dg-fill-b"><circle cx="230" cy="122" r="7"/><circle cx="255" cy="122" r="7"/></g><g class="dg-thin"><circle cx="230" cy="122" r="7"/><circle cx="255" cy="122" r="7"/></g><g class="dg-line"><path d="M205 10 H330 V108 H268 V136 H205 Z"/></g><text class="dg-note" x="82.5" y="160" text-anchor="middle">remainder 0</text><text class="dg-note" x="267.5" y="160" text-anchor="middle">remainder 2</text></svg>
+          <figcaption><span class="fignum">Fig. 5.4</span> Left: an even number
+          that is a multiple of $4$ leaves a remainder of $0$ when divided by
+          $4$. Right: an even number that is not a multiple of $4$ leaves a
+          remainder of $2$.</figcaption>
+        </figure>
+      </div>
+
+      <p>When will two even numbers add up to a multiple of $4$? The question is
+      like asking when two numbers add up to an even number. Can you see why?
+      There are three cases to look at. Table 5.5 sets out the first two.</p>
+
+      <table>
+        <caption>Table 5.5 Adding two even numbers</caption>
+        <thead>
+          <tr><th>the two numbers</th><th>algebra</th><th>examples</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>both multiples of $4$</td>
+            <td>$4p + 4q = 4(p + q)$</td>
+            <td>$12 + 16 = 4(3 + 4) = 28$<br>$16 + 28 = 4(4 + 7) = 44$</td>
+          </tr>
+          <tr>
+            <td>both even, neither a multiple of $4$</td>
+            <td>$(4p + 2) + (4q + 2)$<br>$= 4p + 4q + 4$<br>$= 4(p + q + 1)$</td>
+            <td>$2 + 6 = 8$<br>$6 + 10 = 16$<br>$22 + 6 = 28$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>In the first case, $p$ rows of four and $q$ rows of four make $p + q$
+      rows of four, so the sum is always a multiple of $4$. Some numbers of this
+      kind are $4, 12, 16, 24$ and $36$.</p>
+
+      <p>In the second case the sum is always a multiple of $4$ too, because the
+      two remainders of $2$ add up to $4$ and make one more full row. Some
+      numbers of this kind are $2, 6, 10, 18, 22$ and $42$. Fig. 5.6 shows the
+      rows.</p>
+
+    </div>
+  </div>
+</section>

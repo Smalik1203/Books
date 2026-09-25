@@ -314,6 +314,27 @@ $7.5$ cm; Q3 $\angle APB = 65^\circ$ and $\angle AQB = 115^\circ$; Q4
 $OP = 15$ cm ($OM = 12$ cm, $PM = 9$ cm); Q5 the circle has $AC$ as a
 diameter, and its centre is the midpoint of $AC$.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 2 *(single correct)*
+2. (b) $70^\circ$ *(single correct)*
+3. (c) outside the triangle *(single correct)*
+4. (d) 12 cm *(single correct)*
+5. (a) $50^\circ$ *(single correct)*
+6. (b) $40^\circ$ *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 50 *(numerical answer)*
+12. 20 *(numerical answer)*
+13. 30 *(numerical answer)*
+14. (b) P–3, Q–4, R–2, S–1 *(matching)*
+15. (c) P–3, Q–4, R–1, S–2 *(matching)*
+
 ### Stage 3 · Practice — the key, as the key prints it
 
 1 (d) &nbsp; 2 (b) &nbsp; 3 (c) &nbsp; 4 (a) &nbsp; 5 (d) &nbsp; 6 (a) &nbsp; 7 (b) &nbsp; 8 (c) &nbsp; 9 (a) &nbsp; 10 (d) &nbsp; 11 (c) &nbsp; 12 (a) &nbsp; 13 (b) &nbsp; 14 (c) &nbsp; 15 (d) &nbsp; 16 (a) &nbsp; 17 (b) &nbsp; 18 (d) &nbsp; 19 (c)

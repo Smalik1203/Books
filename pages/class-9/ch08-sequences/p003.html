@@ -2,57 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>That one is worth seeing rather than checking. Take a square of dots and add an
-      L-shaped border along two of its sides: the border is always an odd number of dots,
-      and what you get is the next square.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 200 62" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Square numbers built from odd numbers: each square gains an L-shaped border of 3, 5 then 7 dots">
-      
-            <!-- 1 -->
-            <g class="dg-fill-b"><circle cx="12" cy="50" r="3.2"/></g>
-            <text class="dg-note" x="12" y="60" text-anchor="middle">1</text>
-      
-            <!-- 4 = 1 + 3 -->
-            <g class="dg-fill-b"><circle cx="42" cy="50" r="3.2"/></g>
-            <g class="dg-fill-a">
-              <circle cx="52" cy="50" r="3.2"/>
-              <circle cx="42" cy="40" r="3.2"/><circle cx="52" cy="40" r="3.2"/>
-            </g>
-            <text class="dg-note" x="47" y="60" text-anchor="middle">4</text>
-      
-            <!-- 9 = 4 + 5 -->
-            <g class="dg-fill-b">
-              <circle cx="86" cy="50" r="3.2"/><circle cx="96" cy="50" r="3.2"/>
-              <circle cx="86" cy="40" r="3.2"/><circle cx="96" cy="40" r="3.2"/>
-            </g>
-            <g class="dg-fill-a">
-              <circle cx="106" cy="50" r="3.2"/><circle cx="106" cy="40" r="3.2"/>
-              <circle cx="86" cy="30" r="3.2"/><circle cx="96" cy="30" r="3.2"/>
-              <circle cx="106" cy="30" r="3.2"/>
-            </g>
-            <text class="dg-note" x="96" y="60" text-anchor="middle">9</text>
-      
-            <!-- 16 = 9 + 7 -->
-            <g class="dg-fill-b">
-              <circle cx="146" cy="50" r="3.2"/><circle cx="156" cy="50" r="3.2"/><circle cx="166" cy="50" r="3.2"/>
-              <circle cx="146" cy="40" r="3.2"/><circle cx="156" cy="40" r="3.2"/><circle cx="166" cy="40" r="3.2"/>
-              <circle cx="146" cy="30" r="3.2"/><circle cx="156" cy="30" r="3.2"/><circle cx="166" cy="30" r="3.2"/>
-            </g>
-            <g class="dg-fill-a">
-              <circle cx="176" cy="50" r="3.2"/><circle cx="176" cy="40" r="3.2"/><circle cx="176" cy="30" r="3.2"/>
-              <circle cx="146" cy="20" r="3.2"/><circle cx="156" cy="20" r="3.2"/>
-              <circle cx="166" cy="20" r="3.2"/><circle cx="176" cy="20" r="3.2"/>
-            </g>
-            <text class="dg-note" x="161" y="60" text-anchor="middle">16</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 8.2</span> Each square is the one before
-          it plus an L of $3$, then $5$, then $7$ dots — the odd numbers, in order.</figcaption>
-        </figure>
-      </div>
-
       <p>Two lists, then, that looked like separate curiosities, and each turns out to be
       the running total of a list you already had. That is the first hint of what this
       chapter is about: sequences are not a collection of tricks to be memorised one at a
@@ -99,6 +48,42 @@
       <p>are sequences too. The first shrinks towards nothing without ever reaching it;
       the second falls by $4$ each time and goes on past zero into the negatives. Both
       have a rule, and the rule is what makes them sequences rather than lists.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 8.1</div>
+        <ol class="c-questions">
+          <li>Write the next three terms of each sequence, and say in a sentence what
+              rule you used.
+              <ol class="c-parts c-parts--1">
+                <li>$2,\ 6,\ 10,\ 14,\ \ldots$</li>
+                <li>$1,\ 2,\ 4,\ 8,\ \ldots$</li>
+                <li>$100,\ 91,\ 82,\ 73,\ \ldots$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Using the notation above, write $t_5$, $t_6$, $t_7$ and $t_8$ for the
+            sequence of triangular numbers.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>The sixth square number is $36$ and the seventh is $49$. Without adding the
+            odd numbers from the start, say what the difference between them must be, and
+            why.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Give a finite sequence of four terms and an infinite one that begins with
+            the same four terms. What, if anything, in the numbers tells them apart?</li>
+        </ol>
+      </div>
 
     </div>
   </div>

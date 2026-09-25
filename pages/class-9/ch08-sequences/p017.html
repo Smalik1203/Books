@@ -2,73 +2,130 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The one difference that matters is what the constancy is measured on. To tell
-      which kind a sequence is, do both tests: take differences, and take ratios. One of
-      them will be constant, or neither.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>Which of these are geometric progressions, and what is the common ratio?</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">$1, 2, 4, 8, 16, \ldots$</span>
-              <span>ratios all $2$</span>
-              <span class="chip">GP, $r = 2$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$1, 3, 9, 27, 81, \ldots$</span>
-              <span>ratios all $3$</span>
-              <span class="chip">GP, $r = 3$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">$1, -1, 1, -1, \ldots$</span>
-              <span>ratios all $-1$</span>
-              <span class="chip">GP, $r = -1$</span>
-            </div>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>The tile pattern of Fig. 8.3 reaches $81$ tiles somewhere around stage
+            $21$. Where does the doubling pattern of Fig. 8.6 reach $81$?</p>
+            <p>Now ask the same question for a thousand tiles, and say what that
+            comparison tells you.</p>
           </div>
-          <p>The third is worth a moment. It neither grows nor shrinks — it alternates —
-          and it is a perfectly good GP. A negative ratio flips the sign at every step,
-          which is what a multiplier of $-1$ does.</p>
         </div>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 8</div>
-        <div class="c-example__body">
-          <p>Is $5,\ \tfrac{15}{4},\ \tfrac{45}{16},\ \tfrac{135}{64}, \ldots$ a
-          geometric progression? If so, find its $n$th term.</p>
-          <p>Take the ratio of each term to the one before it.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">$\dfrac{t_2}{t_1}$</span>
-              <span>$= \dfrac{15}{4} \div 5 = \dfrac{15}{20} = \dfrac34$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">$\dfrac{t_3}{t_2}$</span>
-              <span>$= \dfrac{45}{16} \div \dfrac{15}{4} = \dfrac{45}{16} \times \dfrac{4}{15} = \dfrac34$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">$\dfrac{t_4}{t_3}$</span>
-              <span>$= \dfrac{135}{64} \times \dfrac{16}{45} = \dfrac34$</span>
-            </div>
-          </div>
-          <p>The ratio is $\tfrac34$ throughout, so this is a GP with $a = 5$ and
-          $r = \tfrac34$. Its $n$th term is</p>
-          <div class="eq">
-            $$t_n = 5 \left(\frac34\right)^{n-1}$$
-          </div>
-          <p>Here the ratio is less than $1$, so the terms shrink. They never reach zero
-          — multiplying by $\tfrac34$ can make a positive number small but not nothing —
-          and that is a GP as much as a doubling one is.</p>
+      <p>The answer to that comparison is worth stating plainly, because it is the most
+      useful thing in this section. The tile pattern needs about twenty stages to reach
+      eighty-one tiles and about two hundred and fifty to reach a thousand. The doubling
+      pattern reaches eighty-one at its sixth stage and a thousand at its tenth.
+      Any GP with a ratio above $1$ will overtake any AP eventually, whatever head start
+      the AP is given, because the AP adds a fixed amount while the GP adds a share of a
+      total that is itself growing.</p>
+
+      <h3>8.6.2 A shape that is a progression</h3>
+
+      <p>Start with a paper triangle. Join the midpoints of its three sides, which cuts
+      it into four smaller triangles, and remove the middle one. Now do the same to each
+      of the three that remain. Then again, and again.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 240 66" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Stages 0 to 3 of the Sierpinski triangle, holding 1, 3, 9 and 27 black triangles">
+      
+            <!-- Stage 0 - 1: 0 holes -->
+            <path class="dg-fill-b" d="M30 12 L8 58 L52 58 Z"/>
+            <path class="dg-line" d="M30 12 L8 58 L52 58 Z"/>
+            <text class="dg-note" x="30" y="66" text-anchor="middle">Stage 0 &middot; 1</text>
+      
+            <!-- Stage 1 - 3: 1 holes -->
+            <path class="dg-fill-b" d="M88 12 L66 58 L110 58 Z"/>
+            <g class="dg-fill-d">
+              <path d="M77 35 L99 35 L88 58 Z"/>
+            </g>
+            <path class="dg-line" d="M88 12 L66 58 L110 58 Z"/>
+            <path class="dg-thin" d="M77 35 L99 35 L88 58 Z"/>
+            <text class="dg-note" x="88" y="66" text-anchor="middle">Stage 1 &middot; 3</text>
+      
+            <!-- Stage 2 - 9: 4 holes -->
+            <path class="dg-fill-b" d="M146 12 L124 58 L168 58 Z"/>
+            <g class="dg-fill-d">
+              <path d="M135 35 L157 35 L146 58 Z"/>
+              <path d="M140.5 23.5 L151.5 23.5 L146 35 Z"/>
+              <path d="M129.5 46.5 L140.5 46.5 L135 58 Z"/>
+              <path d="M151.5 46.5 L162.5 46.5 L157 58 Z"/>
+            </g>
+            <path class="dg-line" d="M146 12 L124 58 L168 58 Z"/>
+            <path class="dg-thin" d="M135 35 L157 35 L146 58 Z"/>
+            <text class="dg-note" x="146" y="66" text-anchor="middle">Stage 2 &middot; 9</text>
+      
+            <!-- Stage 3 - 27: 13 holes -->
+            <path class="dg-fill-b" d="M204 12 L182 58 L226 58 Z"/>
+            <g class="dg-fill-d">
+              <path d="M193 35 L215 35 L204 58 Z"/>
+              <path d="M198.5 23.5 L209.5 23.5 L204 35 Z"/>
+              <path d="M201.25 17.75 L206.75 17.75 L204 23.5 Z"/>
+              <path d="M195.75 29.25 L201.25 29.25 L198.5 35 Z"/>
+              <path d="M206.75 29.25 L212.25 29.25 L209.5 35 Z"/>
+              <path d="M187.5 46.5 L198.5 46.5 L193 58 Z"/>
+              <path d="M190.25 40.75 L195.75 40.75 L193 46.5 Z"/>
+              <path d="M184.75 52.25 L190.25 52.25 L187.5 58 Z"/>
+              <path d="M195.75 52.25 L201.25 52.25 L198.5 58 Z"/>
+              <path d="M209.5 46.5 L220.5 46.5 L215 58 Z"/>
+              <path d="M212.25 40.75 L217.75 40.75 L215 46.5 Z"/>
+              <path d="M206.75 52.25 L212.25 52.25 L209.5 58 Z"/>
+              <path d="M217.75 52.25 L223.25 52.25 L220.5 58 Z"/>
+            </g>
+            <path class="dg-line" d="M204 12 L182 58 L226 58 Z"/>
+            <path class="dg-thin" d="M193 35 L215 35 L204 58 Z"/>
+            <text class="dg-note" x="204" y="66" text-anchor="middle">Stage 3 &middot; 27</text>
+            </svg>
+          <figcaption><span class="fignum">Fig. 8.8</span> Four stages of the
+          Sierpiński triangle. Every shaded triangle becomes three at the next
+          stage.</figcaption>
+        </figure>
+      </div>
+
+      <p>The number of shaded triangles goes $1, 3, 9, 27, \ldots$ — a GP with $a = 1$
+      and $r = 3$, because each one is replaced by three. At stage $n$ there are $3^n$ of
+      them, and by stage $10$ that is $59\,049$.</p>
+
+      <p>Now ask about the area instead. Take the whole triangle at stage $0$ to be one
+      square unit. Cutting it into four and throwing one away leaves $\tfrac34$ of it. Do
+      the same again and $\tfrac34$ of <em>that</em> is left, and so on:</p>
+
+      <div class="work work--centred">
+        <p>$1, \quad \tfrac34, \quad \tfrac{9}{16}, \quad \tfrac{27}{64}, \ \ldots$</p>
+      </div>
+
+      <p>another GP, this one with $r = \tfrac34$, and its $n$th stage has area
+      $\left(\tfrac34\right)^n$.</p>
+
+      <p>So the same figure carries two progressions at once, running opposite ways. The
+      number of triangles multiplies by $3$ and races away; the area they cover
+      multiplies by $\tfrac34$ and dwindles towards nothing. More and more pieces, less
+      and less paper.</p>
+
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>A shape like this, which contains smaller copies of itself at every scale,
+          is called a <span class="term">fractal</span>. Zoom in on any corner of it and
+          you find the whole thing again.</p>
         </div>
       </div>
 
-
-      <p>Notice how the test was carried out. Three ratios were taken, not one. A
-      single ratio proves nothing at all — any two numbers have a ratio — and it is only
-      when the same one keeps coming back that the sequence has been shown to be
-      geometric. The same warning applies to an AP and its differences.</p>
     </div>
   </div>
 </section>

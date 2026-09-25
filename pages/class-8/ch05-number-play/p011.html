@@ -1,0 +1,70 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">5.2</span><span class="name">Checking Divisibility Quickly</span></h2>
+
+      <p>You have already learnt shortcuts for checking whether a number,
+      written in the Indian number system, is divisible by $2$, $4$, $5$, $8$
+      and $10$. Let us look at them again.</p>
+
+      <p><strong>Divisibility by 10, 5 and 2.</strong> If the units digit of a
+      number is $0$, the number is divisible by $10$. Algebra shows why.</p>
+
+      <p>We can write the general form of a number using letter-numbers for its
+      digits. For example, a five-digit number $edcba$ stands for
+      $e \times 10000 + d \times 1000 + c \times 100 + b \times 10 + a$. The
+      letter-numbers $e, d, c, b$ and $a$ are its five digits.</p>
+
+      <p>In general, a number $\ldots dcba$ has units digit $a$, tens digit $b$,
+      hundreds digit $c$, thousands digit $d$, and so on. As a sum of place
+      values it is</p>
+
+      <div class="work work--centred">
+        <p>$\ldots + 1000d + 100c + 10b + a$</p>
+      </div>
+
+      <p>For example, in the number $4075$, $d = 4$, $c = 0$, $b = 7$ and
+      $a = 5$. Every place value except the units place is a multiple of $10$,
+      so $10b, 100c, \ldots$ are all multiples of $10$. So the number is
+      divisible by $10$ if and only if its units digit $a$ is $0$.</p>
+
+      <p>In the same way, use algebra to explain why the shortcuts for $5$, $2$,
+      $4$ and $8$ work.</p>
+
+      <p>Now let us look at shortcuts for checking divisibility by some other
+      numbers, and see why they work.</p>
+
+      <h3>A Shortcut for Divisibility by 9</h3>
+
+      <p>Without calculating, can you say which of these numbers are divisible by
+      $9$: $999$, $909$, $900$, $90$, $990$? All of them are.</p>
+
+      <p>Is every number made only of the digits $0$ and $9$, in any order,
+      divisible by $9$? Yes. If each digit is $0$ or $9$, then each term of its
+      expanded form is $9 \times$ a place value or $0 \times$ a place value. So
+      each term is a multiple of $9$. For example,</p>
+
+      <div class="work work--centred">
+        <p>$99009 = 9 \times 10000 + 9 \times 1000 + 0 \times 100 + 0 \times 10 + 9 \times 1$</p>
+      </div>
+
+      <p>But this shortcut cannot find all the multiples of $9$. Unlike $2$, $5$
+      and $10$, we cannot spot the multiples of $9$ from the units digit alone.
+      $99$ and $109$ both have $9$ as their units digit, but $99$ is divisible
+      by $9$ and $109$ is not.</p>
+
+      <p>Is $10$ divisible by $9$? If not, what is the remainder? Check the
+      other multiples of $10$ — $10, 20, 30, \ldots$ — in the same way.</p>
+
+      <p>Each ten is $9 + 1$, so a number of tens is that many more than a
+      multiple of $9$: $30 = 27 + 3$, and $70 = 63 + 7$. Now look at the
+      multiples of $100$ — $100, 200, 300, \ldots$ — divided by $9$. What do you
+      notice? Each hundred is $99 + 1$, so a number of hundreds is that many
+      more than a multiple of $9$: $300 = 297 + 3$.</p>
+
+      <p>Use this to find the remainder when $427$ is divided by $9$.</p>
+
+    </div>
+  </div>
+</section>

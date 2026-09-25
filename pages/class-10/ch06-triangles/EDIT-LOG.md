@@ -1,5 +1,38 @@
 # Class 10 · Mathematics I · Chapter 6 — Triangles
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 15 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch06-triangles/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 6 cm |
+| 2 | Single correct | (b) 12 cm |
+| 3 | Single correct | (c) $3 : 5$ |
+| 4 | Single correct | (d) 30 m |
+| 5 | Single correct | (a) $DE \parallel BC$ |
+| 6 | Single correct | (b) $60^\circ$ |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 3.6 |
+| 12 | Numerical answer | 42 |
+| 13 | Numerical answer | 12 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (c) P–4, Q–1, R–2, S–3 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Findings from the Beyond the Book syllabus audit, each confirmed on the pages.
@@ -312,3 +345,8 @@ Set A c b b a a c b c; Set B a c a b b c; Set C c d a b c.
 | 6.1 | — | "Chapters 8 and 9 of this book" are taken to be the trigonometry chapters; the volume's chapter list was not checked | check against the contents |
 | 6.3 | — | Thales' dates are the source's 640–546 BCE; they are more often given as about 624–546 BCE | check if the dates are to be kept |
 | Beyond the Book, Stage 1 | — | the mirror question uses the law of reflection (equal angles), which is science, not this chapter | none, but the explanation states it |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. 6 dependent text/visual group(s) were kept together and the body refitted. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

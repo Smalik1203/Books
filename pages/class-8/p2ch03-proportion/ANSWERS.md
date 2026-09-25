@@ -184,6 +184,27 @@ on the page. The results, for reference: (1) 1000 g, that is 1 kg;
 (2) 8 days; (3) 1.5 cm; (4) 300 people; (5) ₹1,680; (6) 60 minutes;
 (7) 30 and 42; (8) 100 turns.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 12 *(single correct)*
+2. (b) ₹490 *(single correct)*
+3. (c) ₹1400 *(single correct)*
+4. (d) 225 km *(single correct)*
+5. (a) 5 hours *(single correct)*
+6. (b) 6 hours *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b), (c), (d) *(multiple correct)*
+11. 12 *(numerical answer)*
+12. 2160 *(numerical answer)*
+13. 3.2 *(numerical answer)*
+14. (c) P–2, Q–3, R–4, S–1 *(matching)*
+15. (a) P–3, Q–4, R–1, S–2 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

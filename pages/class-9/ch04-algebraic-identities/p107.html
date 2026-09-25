@@ -2,75 +2,9 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 9</div>
-        <div class="c-example__body">
-          <p>Factorise $6x^2 + 5x - 6$ by splitting the middle term.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$6 \times (-6) = -36$</span>
-              <span class="work__why">the two end coefficients multiplied</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$9 \times (-4) = -36$ and $9 + (-4) = 5$</span>
-              <span class="work__why">the pair whose sum is the middle coefficient</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$6x^2 + 5x - 6 = 6x^2 + 9x - 4x - 6$</span>
-              <span class="work__why">split $5x$ as $9x - 4x$</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$= 3x(2x + 3) - 2(2x + 3)$</span>
-              <span class="work__why">group in pairs</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$6x^2 + 5x - 6 = (2x + 3)(3x - 2)$</span></div>
-            <div class="work__row"><span class="work__label">Check</span>
-              <span>$(2x + 3)(3x - 2) = 6x^2 - 4x + 9x - 6 = 6x^2 + 5x - 6$</span></div>
-          </div>
-          <p>When the coefficient of $x^2$ is not $1$, the pair comes from the product of the two end coefficients, here $-36$, and not from the constant alone. That is the rule behind $(px + a)(qx + b)$ in Section 4.5.</p>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Matching"><div class="c-example__tab">Example 14 · Matching</div><div class="c-example__body"><p>Match List I with List II. Each entry has exactly one match.</p><table><thead><tr><th>List I</th><th>List II</th></tr></thead><tbody><tr><td>(P) $(a + b)^2 - (a - b)^2$</td><td>(1) $a^2 - b^2$</td></tr><tr><td>(Q) $(a + b)^2 + (a - b)^2$</td><td>(2) $6a^2b + 2b^3$</td></tr><tr><td>(R) $(a + b)(a - b)$</td><td>(3) $4ab$</td></tr><tr><td>(S) $(a + b)^3 - (a - b)^3$</td><td>(4) $2a^2 + 2b^2$</td></tr></tbody></table><p><em>Choose the correct combination.</em></p><ol class="c-parts c-parts--alpha"><li>P–3, Q–4, R–1, S–2</li><li>P–4, Q–3, R–1, S–2</li><li>P–3, Q–1, R–4, S–2</li><li>P–2, Q–4, R–1, S–3</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>Subtracting the squares leaves $4ab$ and adding gives $2a^2 + 2b^2$; the cubes leave $6a^2b + 2b^3$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(a) P–3, Q–4, R–1, S–2</span></div></div></div></div>
 
-      <h3>Type 6 &middot; Cubes of sums and differences</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-          <p>Find $998^3$ using an identity.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$998^3 = (1000 - 2)^3$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$= 1000^3 - 3 \times 1000^2 \times 2 + 3 \times 1000 \times 2^2 - 2^3$</span>
-              <span class="work__why">$(a - b)^3$ identity</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$= 1000000000 - 6000000 + 12000 - 8$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$998^3 = 994011992$</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 11</div>
-        <div class="c-example__body">
-          <p>Show that $27x^3 - 54x^2y + 36xy^2 - 8y^3$ is a perfect cube, and find what it is the cube of.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$27x^3 = (3x)^3$ and $8y^3 = (2y)^3$</span>
-              <span class="work__why">the cubes at the ends; the signs alternate</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$3(3x)^2(2y) = 54x^2y$</span>
-              <span class="work__why">the second term agrees</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$3(3x)(2y)^2 = 36xy^2$</span>
-              <span class="work__why">the third term agrees</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$27x^3 - 54x^2y + 36xy^2 - 8y^3 = (3x - 2y)^3$</span></div>
-          </div>
-          <p>Both middle terms have to be checked. With $30xy^2$ in place of $36xy^2$ the two ends would still match, and the expression would not be a cube.</p>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Matching"><div class="c-example__tab">Example 15 · Matching</div><div class="c-example__body"><p>Match List I with List II. Each entry has exactly one match.</p><table><thead><tr><th>List I</th><th>List II</th></tr></thead><tbody><tr><td>(P) $x^2 + 5x + 6$</td><td>(1) $(x - 3)(x + 2)$</td></tr><tr><td>(Q) $x^2 - x - 6$</td><td>(2) $(x + 3)(x - 2)$</td></tr><tr><td>(R) $x^2 + x - 6$</td><td>(3) $(x - 2)(x - 3)$</td></tr><tr><td>(S) $x^2 - 5x + 6$</td><td>(4) $(x + 2)(x + 3)$</td></tr></tbody></table><p><em>Choose the correct combination.</em></p><ol class="c-parts c-parts--alpha"><li>P–3, Q–1, R–2, S–4</li><li>P–1, Q–4, R–2, S–3</li><li>P–4, Q–2, R–1, S–3</li><li>P–4, Q–1, R–2, S–3</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>Two numbers with the right product and sum: $2, 3$; then $-3, 2$; then $3, -2$; then $-2, -3$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(d) P–4, Q–1, R–2, S–3</span></div></div></div></div>
 
     </div>
   </div>

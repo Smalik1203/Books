@@ -1,5 +1,96 @@
 # Class 9 · Mathematics I · Chapter 8 — What Comes Next
 
+## Converted to the Class 7 shape, 23 September 2026
+
+The Phase 5 conversion (PLAN-MATHS-CONSISTENCY.md §4), which had been stopped
+part-way, finished at the user's word. What was done:
+
+- **Page.** `"edition": "196x276"` was already set. The body was refit
+  (`refit.mjs … body`): 21 pages became 20, most of them 92–99% full. The last
+  body page, p020, carries `data-close` and holds the end of Exercise Set 8.6
+  (two blocks settled onto it so it is not a three-question stub).
+- **Examples.** All nine body examples were already set as steps.
+  `check-example-stepping.mjs` reports two, both checked by hand and neither
+  a loss: Example 8's old answer was a `$$…$$` display, which the checker's
+  `$`-pairing misreads (the $5$, $\frac34$ and $n - 1$ are all in the new Answer
+  row); Example 5 gains one expression, the $n$ in the step reason "$n$th term
+  of an AP".
+- **Beyond the Book** (`build/convert-c9-ch08-bridge.mjs`, which reads the
+  committed pages, so it can be rerun):
+  - *Stage 1* keeps its eight questions and its framing word for word, with
+    each question's worked answer from the old *Behind Each Answer* moved under
+    it as running text, as in Chapters 1–7. The answers' eight titles went
+    ("Neither, and how to be sure", …); nothing else did. "Every solution
+    overleaf" became "Every solution above".
+  - **Three Stage 1 questions repeated the chapter's own exercises and were
+    replaced with the same kind:** the AP from $t_3 = 16$, $t_7 - t_5 = 12$
+    (Exercise Set 8.6) became $t_4 = 19$, $t_9 - t_6 = 15$; the three-digit
+    multiples of $7$ (Set 8.6) became multiples of $9$ ($100$ of them); the runs
+    summing to $100$ (Set 8.6) became runs summing to $45$ (five ways, one per
+    odd factor of $90$ other than $1$). Each answer was reworked on the old
+    one's argument, and the old closing paragraphs were kept.
+  - *Stage 2*, Solved Examples: the 15 of the next entry.
+  - *Stage 3*, Practice: one numbered run of 39 in the six forms. All 27 old
+    Problem Set questions were kept except Set C Q9, which repeated Stage 1's
+    first question; Set B Q7 lost its hint. Set B's two assertion-reason items
+    were set in the book's A/R form, and two were added, with 3 very short, 4
+    short, 2 long and 2 case-based questions, all new.
+  - *Stage 4*, Answers: the letter key and the worked answers to 29–39. No
+    stage head carries a line under its name.
+- **ANSWERS.md** answers every question the chapter sets, body and Beyond.
+- **check-numbers.mjs** re-derives every value in it and every practice key:
+  149 checks, all passing.
+
+Acceptance greps (§4.8): `c-stage__for` 0, `c-case__label` 0,
+`c-practice__num` 1, `data-bridge` on all 15 `p1xx`, `data-close` on p020.
+Build: 35 pages, all fit, 0 stranded openers, every option row fits.
+
+**Two printed statements were wrong. Both were fixed the same day on the
+user's word** ("fix class 9"), and `check-numbers.mjs` now proves the new text:
+Set 8.2 Q5 asks for $331$, and p017 reads "reaches eighty-one at its sixth
+stage and a thousand at its tenth". What they were:
+
+1. **Exercise Set 8.2 Q5** asks "say which term is $332$" of $t_n = 3n + 7$.
+   $332 - 7 = 325$ is not a multiple of $3$, so $332$ is not a term. $331$ is
+   the $108$th, and may be what was meant.
+2. **p017** (the paragraph after the Think and Reflect on Fig. 8.3 and 8.6):
+   "The doubling pattern reaches eighty-one before its sixth stage and a
+   thousand before its ninth." The pattern $3 \times 2^{n-1}$ first passes $81$
+   at its sixth stage and $1000$ at its tenth. (Already on the deferred list.)
+
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 0 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch08-sequences/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p115; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 63 |
+| 2 | Single correct | (b) 37 |
+| 3 | Single correct | (c) $-486$ |
+| 4 | Single correct | (d) 1275 |
+| 5 | Single correct | (a) 41 |
+| 6 | Single correct | (b) 48 |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (a), (c) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (c), (d) |
+| 11 | Numerical answer | 816 |
+| 12 | Numerical answer | 32 |
+| 13 | Numerical answer | 98 |
+| 14 | Matching | (a) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (c) P–4, Q–1, R–2, S–3 |
+
+
 Language edit, 32 pages (p001–p022 chapter proper, p101–p110 Beyond the Book).
 Build after editing: 32 pages, all pages fit, 0 stranded openers, no label
 collisions, every option row fits. Every number re-derived — Examples 1–9, all
@@ -81,3 +172,7 @@ Worst first.
 | p012, p018, p022 vs Class 9 Ch 2 | C3 | **Chapter 2 points twice at this chapter, and this chapter never looks back.** Ch 2 p012 and p028 both say sequences of this kind "are taken further in the chapter on Sequences and Progressions", and p028 that it "takes that constant difference as the defining property" — which is exactly what § 8.4 does. Ch 8 § 8.4.1 then plots an AP, finds a straight line, and explains it — "a constant step sideways always buys the same step upwards, and that is exactly what a straight line is" — which is Ch 2's whole subject, from its own p005: "A linear polynomial steps by a constant, its graph is straight". Neither page mentions the other, and Ch 8 makes no reference to any other chapter of the book. (Ch 2 also calls this chapter by a title it does not have; that is flagged in Ch 2's log.) | A clause in § 8.4.1 naming Chapter 2. The two chapters prove the same thing from opposite ends and a reader who has done both is entitled to be told. |
 | p109 Set C | — | Questions 9 and 10 are two `<li>` in one `<ol data-start="9">`, where questions 1–8 of the same set each have their own `c-practice--cont` block — the same markup inconsistency as p021's questions 7–14, and the same one flagged in Ch 3 at p029–p032. The build passes and the pages fit. | Worth a look at a proof of pages 21 and 109 before print. Not language. |
 | p022, p110 | — | p022 is **66%** full (the eleven-point summary) and carries `data-close`; p110 is the last page at 85%. Both exempt, both reasonable closing leaves. Not a fault. | Nothing. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Predicting What Comes Next: Exploring Sequences and Progressions*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

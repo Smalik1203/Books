@@ -1,0 +1,103 @@
+<!-- ══════════════════ FRONT — ClassBridge Mathematics specimen, direction: spectrum ══════════════════
+     The series' front, in the specimen's own colours: the ClassBridge
+     imprint and a class badge at the head, MATHEMATICS large, and below
+     it the solids a student meets from Class 6 to Class 10 — a cube with a
+     sphere resting on it, a cylinder, a cone — shaded as solids and set in
+     front of two translucent discs, with the circle and its wave drawn in
+     fine line in the corner and dot clusters for rhythm, as the Class 9
+     cover sets its figures.
+
+     Drawn in printed millimetres on the 196 x 276 trim. The cube is
+     isometric with side 22; the cylinder is 28 wide and 46 tall; the cone
+     32 across and 56 tall; all three stand on y = 232.
+     ============================================================ -->
+<div class="jacket__front">
+
+  <div class="front__art">
+    <svg class="jk-art" viewBox="0 0 196 276" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="Three solids standing together — a cube with a sphere resting on it, a
+                     cylinder and a cone — in front of two overlapping translucent discs, with a
+                     small circle and its sine wave drawn in fine line above them.">
+      <defs>
+        <radialGradient id="sp-disc-a" cx="0.35" cy="0.3" r="0.8">
+          <stop offset="0" class="sp-st-bl"/><stop offset="1" class="sp-st-b"/>
+        </radialGradient>
+        <radialGradient id="sp-sphere" cx="0.34" cy="0.3" r="0.78">
+          <stop offset="0" class="sp-st-cl"/><stop offset="0.42" class="sp-st-c"/><stop offset="1" class="sp-st-cd"/>
+        </radialGradient>
+        <linearGradient id="sp-cyl" x1="0" x2="1">
+          <stop offset="0" class="sp-st-bd"/><stop offset="0.42" class="sp-st-bl"/><stop offset="1" class="sp-st-bd"/>
+        </linearGradient>
+        <linearGradient id="sp-cone" x1="0" x2="1">
+          <stop offset="0" class="sp-st-a"/><stop offset="0.45" class="sp-st-a3"/><stop offset="1" class="sp-st-a"/>
+        </linearGradient>
+      </defs>
+
+      <!-- two discs behind -->
+      <circle class="sp-disc-2" cx="148" cy="176" r="42"/>
+      <circle class="sp-disc-1" cx="58" cy="196" r="44" fill="url(#sp-disc-a)"/>
+
+      <!-- dot clusters -->
+      <g class="sp-dots-a">
+        <circle cx="160" cy="112" r="0.95"/><circle cx="166" cy="112" r="0.95"/><circle cx="172" cy="112" r="0.95"/><circle cx="178" cy="112" r="0.95"/>
+        <circle cx="160" cy="118" r="0.95"/><circle cx="166" cy="118" r="0.95"/><circle cx="172" cy="118" r="0.95"/><circle cx="178" cy="118" r="0.95"/>
+        <circle cx="160" cy="124" r="0.95"/><circle cx="166" cy="124" r="0.95"/><circle cx="172" cy="124" r="0.95"/>
+      </g>
+      <g class="sp-dots-b">
+        <circle cx="18" cy="140" r="0.95"/><circle cx="24" cy="140" r="0.95"/><circle cx="30" cy="140" r="0.95"/>
+        <circle cx="18" cy="146" r="0.95"/><circle cx="24" cy="146" r="0.95"/><circle cx="30" cy="146" r="0.95"/>
+      </g>
+
+      <!-- the circle and its wave, in fine line -->
+      <g class="sp-fine">
+        <path d="M96 134 H150"/>
+        <circle cx="108" cy="134" r="11"/>
+        <path d="M108 134 L115.07 125.57"/>
+        <path class="sp-fine--dash" d="M115.07 125.57 H124"/>
+        <path d="M124 125.57 L125 124.4 L126 123.6 L127 123.1 L128 123 L129 123.3 L130 124 L131 125.1 L132 126.5 L133 128.2 L134 130.1 L135 132.2 L136 134.3 L137 136.4 L138 138.4 L139 140.2 L140 141.8 L141 143.1 L142 144.1 L143 144.8 L144 145 L145 144.8 L146 144.2 L147 143.2 L148 141.9"/>
+      </g>
+      <circle class="sp-pt" cx="115.07" cy="125.57" r="1.1"/>
+      <text class="sp-fine-lbl" x="110.4" y="132.2">θ</text>
+
+      <!-- the solids, on one shadow -->
+      <ellipse class="sp-shadow" cx="100" cy="234" rx="82" ry="6.5"/>
+
+      <!-- cube, isometric, side 22 -->
+      <path class="sp-cube-top" d="M60 188 L79 199 L60 210 L41 199 Z"/>
+      <path class="sp-cube-l" d="M41 199 L60 210 L60 232 L41 221 Z"/>
+      <path class="sp-cube-r" d="M60 210 L79 199 L79 221 L60 232 Z"/>
+      <!-- sphere resting on the cube -->
+      <circle cx="60" cy="184" r="13" fill="url(#sp-sphere)"/>
+
+      <!-- cylinder -->
+      <rect x="92" y="186" width="28" height="46" fill="url(#sp-cyl)"/>
+      <ellipse class="sp-cyl-base" cx="106" cy="232" rx="14" ry="4.6"/>
+      <ellipse class="sp-cyl-top" cx="106" cy="186" rx="14" ry="4.6"/>
+
+      <!-- cone -->
+      <path d="M130 232 L146 176 L162 232 Z" fill="url(#sp-cone)"/>
+      <ellipse class="sp-cone-base" cx="146" cy="232" rx="16" ry="4.8"/>
+    </svg>
+  </div>
+
+  <div class="sp-head">
+    <div>
+      <div class="wordmark">ClassBridge</div>
+      <p class="sp-tagline">Textbooks for school mathematics.</p>
+    </div>
+    <div class="sp-badge">
+      <span class="jk-label">Classes</span>
+      <span class="sp-badge__num">6–10</span>
+      <span class="sp-badge__tag">Specimen</span>
+    </div>
+  </div>
+
+  <div class="front__title">
+    <h1>MATHEMATICS</h1>
+    <p class="sp-sub">Sample chapters from Classes 6 to 10</p>
+  </div>
+
+  <p class="sp-strap">Theory <span>·</span> Worked examples <span>·</span> Beyond the Book<br>
+    Powered by LearnLab</p>
+</div>

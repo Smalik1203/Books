@@ -162,6 +162,27 @@ on the page: (1) $x + y = 3$ and $x - y = 7$; (2) $k = 6$, and no $k$ gives
 no solution; (3) no — the pair has infinitely many solutions; (4) 4 square
 units; (5) the daughter is 17.5 years old and the mother 32.5.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $(9, 5)$ *(single correct)*
+2. (b) $-6$ *(single correct)*
+3. (c) coincident *(single correct)*
+4. (d) 31 *(single correct)*
+5. (a) ₹20 *(single correct)*
+6. (b) $(5, -2)$ *(single correct)*
+7. (a), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 30 *(numerical answer)*
+12. 20 *(numerical answer)*
+13. 3 *(numerical answer)*
+14. (a) P–2, Q–4, R–1, S–3 *(matching)*
+15. (d) P–2, Q–3, R–4, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

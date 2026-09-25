@@ -316,6 +316,27 @@ $210$, not $215$; Q4 the points are not on one line, since $y = 3x - 5$
 gives $16$ at $x = 7$, not $19$; Q5 $y = -2x + 6$, and $y = 4x - 10$ crosses
 the axes at $(0, -10)$ and $(2.5, 0)$.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 3 and $-3$ *(single correct)*
+2. (b) 10 *(single correct)*
+3. (c) 1 *(single correct)*
+4. (d) 17 *(single correct)*
+5. (a) $(0, 10)$ *(single correct)*
+6. (b) $-4$ *(single correct)*
+7. (a), (c) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b), (c), (d) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 9 *(numerical answer)*
+12. 9 *(numerical answer)*
+13. 115 *(numerical answer)*
+14. (c) P–4, Q–3, R–1, S–2 *(matching)*
+15. (a) P–2, Q–4, R–3, S–1 *(matching)*
+
 ### Stage 3 · Practice — the key, as the key prints it
 
 1 (b) &nbsp; 2 (d) &nbsp; 3 (a) &nbsp; 4 (c) &nbsp; 5 (a) &nbsp; 6 (b) &nbsp; 7 (c) &nbsp; 8 (d) &nbsp; 9 (b) &nbsp; 10 (a) &nbsp; 11 (d) &nbsp; 12 (b) &nbsp; 13 (c) &nbsp; 14 (b) &nbsp; 15 (a) &nbsp; 16 (c) &nbsp; 17 (a) &nbsp; 18 (b) &nbsp; 19 (d) &nbsp; 20 (c)

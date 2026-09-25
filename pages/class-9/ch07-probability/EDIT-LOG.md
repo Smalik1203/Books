@@ -1,5 +1,38 @@
 # Class 9 · Mathematics I · Chapter 7 — The Measure of Chance
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 15 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch07-probability/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p115; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $\frac{9}{20}$ |
+| 2 | Single correct | (b) $0.55$ |
+| 3 | Single correct | (c) 0.65 |
+| 4 | Single correct | (d) 0.4 |
+| 5 | Single correct | (a) $\frac{9}{25}$ |
+| 6 | Single correct | (b) 15 |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (c) |
+| 9 | Multiple correct | (a), (c), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 420 |
+| 12 | Numerical answer | 30 |
+| 13 | Numerical answer | 9 |
+| 14 | Matching | (c) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (b) P–4, Q–2, R–3, S–1 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked against the Class 9 brief with
@@ -269,3 +302,12 @@ Worst first.
 | p017 Exercise 7.4 Q1 | — | **A question that works only because the chapter warned about it, and is worth checking on a proof.** Basket A holds one apple and two oranges, Basket B one banana and one mango; the question asks for the sample space, $n(S)$, and $P(\text{apple and banana})$. Listed by *kind* the space has four entries and the answer comes out $\tfrac14$, which is wrong; listed by *fruit* it has six and the answer is $\tfrac16$, which is right. The chapter has armed the student for exactly this — p008's tip reads "Count outcomes, not names. Two Bs are two outcomes, however alike they look on the page" — so this is good design, not a fault. **Recorded because it is the one question in the chapter where a reasonable reader can produce a tidy wrong answer**, and because there is no answer key to catch it. | Nothing, unless an answer is wanted. If one is added, give both counts and say why six is the right one. |
 | p109 Set C4 | — | **Two options are the same number, and the note names only one of them.** Q4's options are (a) $\tfrac{8}{15}$, (b) $\tfrac{7}{15}$, (c) $\tfrac{16}{30}$, (d) $\tfrac13$ — and $\tfrac{16}{30} = \tfrac{8}{15}$, so (a) and (c) are one distractor in two forms. That is a device the chapter uses deliberately elsewhere: Set B Q5 offers $\tfrac25$ and $\tfrac{4}{10}$, and p110's note says so outright — "Options (b) and (c) are both $\tfrac25$". Here p110 says only "Option (c) is the uncorrected count", so a student who computes $\tfrac{16}{30}$ and reduces it — which every fraction habit demands, and which p003 has taught them is the same number "wearing three coats" — lands on (a) and finds it unmentioned. | One clause, matching Set B's: "Options (a) and (c) are the same number, the uncorrected count." |
 | p018, p110 | — | p018 is **87%** full and carries `data-close`; p110 is the last page at 95%. `gaps` reports every page at least 88% full, so nothing is short. Not a fault; recorded because 87 on the fill line reads like one. | Nothing. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *The Mathematics of Maybe: Introduction to Probability*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

@@ -1,0 +1,116 @@
+<section class="page page--opener page--haschead">
+
+<div class="chapterhead">
+    <div class="chapterhead__num">6</div>
+    <h1 class="chapterhead__title">Measuring Space:<span class="chapterhead__subtitle">Perimeter and Area</span></h1>
+
+    <div class="chapterhead__sketch">
+      <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- faint graph paper behind the sketch, as on the other openers -->
+        <g class="dg-grid">
+          <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
+                   M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
+          <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
+        </g>
+
+        <!-- a disc with one sector taken out of it, and a unit square beside it -->
+        <circle class="dg-fill-d" cx="92" cy="62" r="40"/>
+        <path class="dg-fill-c-soft" d="M92 62 L132 62 A40 40 0 0 0 112 27.36 Z"/>
+        <circle class="dg-sketch" cx="92" cy="62" r="40"/>
+        <path class="dg-sketch" d="M92 62 L132 62 M92 62 L112 27.36"/>
+        <circle class="dg-doodle" cx="92" cy="62" r="52"/>
+
+        <rect class="dg-fill-d" x="150" y="80" width="22" height="22"/>
+        <path class="dg-sketch" d="M150 80 H172 V102 H150 Z"/>
+
+        <path class="dg-dim" d="M92 62 L60 86"/>
+        <text class="dg-dim-label" x="68" y="68">r</text>
+        <circle class="dg-fill-teal" cx="92" cy="62" r="3.2"/>
+      </svg>
+    </div>
+
+    <div class="chapterhead__rule"></div>
+  </div>
+
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Fig. 6.1 shows the start of a $4 \times 100$ m relay race. The lanes are
+      marked out, and the first runner of each team is waiting at the start. Look at
+      where they are standing. They are not on one starting line.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 320 170" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A bend of a running track seen from above, with four lanes. The start mark in each lane is further round the bend than the start mark in the lane inside it.">
+            <path class="dg-fill-d" d="M150 12 A73 73 0 0 0 150 158 L300 158 L300 110 L150 110 A25 25 0 0 1 150 60 L300 60 L300 12 Z"/>
+            <path class="dg-line" d="M300 12 L150 12 A73 73 0 0 0 150 158 L300 158"/>
+            <path class="dg-line" d="M300 60 L150 60 A25 25 0 0 0 150 110 L300 110"/>
+            <path class="dg-thin" d="M300 24 L150 24 A61 61 0 0 0 150 146 L300 146"/>
+            <path class="dg-thin" d="M300 36 L150 36 A49 49 0 0 0 150 134 L300 134"/>
+            <path class="dg-thin" d="M300 48 L150 48 A37 37 0 0 0 150 122 L300 122"/>
+      
+            <!-- start marks, one per lane, further round the bend lane by lane -->
+            <path class="dg-dim" d="M144.8 60.5 L142.3 48.8"/>
+            <path class="dg-dim" d="M133.8 51.7 L128.5 41.0"/>
+            <path class="dg-dim" d="M117.9 48.0 L110.0 39.0"/>
+            <path class="dg-dim" d="M98.8 51.8 L88.8 45.2"/>
+      
+            <!-- the finish line, the same for every lane -->
+            <path class="dg-line" d="M262 110 L262 158"/>
+      
+            <text class="dg-note" x="92" y="32" text-anchor="end">start</text>
+            <text class="dg-note" x="262" y="104" text-anchor="middle">finish</text>
+            <text class="dg-note" x="226" y="54" text-anchor="middle">lane 1</text>
+            <text class="dg-note" x="226" y="20" text-anchor="middle">lane 4</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.1</span> The start of a $4 \times 100$ m
+          relay race, seen from above. Each start mark is further round the bend than the
+          one in the lane inside it, and the finish line is the same for every lane.</figcaption>
+        </figure>
+      </div>
+
+      <p>The runners in the outer lanes seem to start ahead of those in the inner lanes,
+      and yet all of them finish at the same line. Why? The distance between the
+      starting points of two lanes next to each other is called the
+      <span class="term">stagger</span>, and the stagger carries on all the way to the
+      outermost lane. Does the stagger give anyone an unfair advantage — the runners in
+      the outer lanes, or those in the inner lanes? And how do the organisers work out
+      how long each stagger should be?</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__body">
+            <p>My school playground is too small for a $400$ m track, so the school built
+            a $200$ m track instead. Does this mean we need a smaller stagger in the lanes
+            at school than the one used at the Olympics, for the same $4 \times 100$ m
+            relay race?</p>
+          </div>
+        </div>
+      </div>
+
+      <p>To answer questions about the stagger on an athletics track, we first need a way
+      to find the length around a circle. That is where this chapter begins.</p>
+
+      <h2><span class="badge">6.1</span><span class="name">Perimeter of a Shape</span></h2>
+
+      <p>Take any shape. Its <span class="term">perimeter</span> is the total length
+      around its border. Picture a tiny insect walking along the border, never turning
+      back, until it returns to where it started. The distance it walks is the
+      perimeter of the shape.</p>
+
+      <p>So a square with side $a$ units has perimeter $4a$ units, and an equilateral
+      triangle with side $a$ units has perimeter $3a$ units (Fig. 6.2A and 6.2B).</p>
+
+    </div>
+  </div>
+</section>

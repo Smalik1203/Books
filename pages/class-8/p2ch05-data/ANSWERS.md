@@ -202,7 +202,24 @@ $100$ mm not shown; (8) ₹4,300.
 
 ### Stage 2 · Solved Examples
 
-Worked on the page, Examples 1 to 13.
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 42 *(single correct)*
+2. (b) 24.5 *(single correct)*
+3. (c) 67.5 *(single correct)*
+4. (d) 15.5 *(single correct)*
+5. (a) 14 *(single correct)*
+6. (b) 45.9 *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (c) *(multiple correct)*
+11. 17 *(numerical answer)*
+12. 10 *(numerical answer)*
+13. 43 *(numerical answer)*
+14. (d) P–3, Q–4, R–1, S–2 *(matching)*
+15. (a) P–3, Q–4, R–2, S–1 *(matching)*
 
 ### Stage 3 · Practice
 

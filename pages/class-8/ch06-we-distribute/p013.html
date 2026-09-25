@@ -1,0 +1,87 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The pattern appears to be $a^2 - b^2 = (a + b) \times (a - b)$. Is this a true
+      identity? Using the distributive property,</p>
+
+      <div class="work work--centred">
+        <p>$(a + b) \times (a - b) = a^2 - ab + ba - b^2$</p>
+      </div>
+
+      <p>The like terms $-ab$ and $ba$ add to $0$, so the pattern does always hold.</p>
+
+      <div class="eq eq--anchor">$$\text{Identity 1C}\qquad (a + b) \times (a - b) = a^2 - b^2$$</div>
+
+      <p>You met this identity already, in Exercise Set 6.1, Question 5(i). Use
+      Identity 1C to work out $98 \times 102$ and $45 \times 55$.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Try This</div>
+          <div class="c-reflect__body">
+            <p>Show that $(a + b) \times (a - b) = a^2 - b^2$ with a figure. Hint: in
+            Fig. 6.7, what do you get when the piece on the right is moved?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <!--fig:diffsq-->
+          <svg viewBox="0 0 242 136" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rectangle a plus b wide and a minus b tall, made of a piece a wide and a piece b wide; the b piece is to be turned and moved into the strip below, leaving a square of side a with a small square of side b missing">
+            <g class="dg-fill-a"><rect x="52" y="20" width="90" height="62"/></g>
+            <g class="dg-fill-b"><rect x="142" y="20" width="28" height="62"/></g>
+            <g class="dg-ghost"><rect x="52" y="82" width="62" height="28"/><rect x="114" y="82" width="28" height="28"/></g>
+            <g class="dg-line"><rect x="52" y="20" width="118" height="62"/></g>
+            <g class="dg-thin"><path d="M142 20 L142 82"/></g>
+            <path class="dg-move" d="M174 51 C 210 61, 162 128, 93 114" marker-end="url(#dg-arrow)"/>
+            <text class="dg-note" x="190" y="92" text-anchor="start">this piece</text>
+            <text class="dg-note" x="190" y="102" text-anchor="start">is moved</text>
+            <line class="dg-dim" x1="52" y1="12" x2="142" y2="12" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="142" y1="12" x2="170" y2="12" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="97" y="8" text-anchor="middle">a</text>
+            <text class="dg-label" x="156" y="8" text-anchor="middle">b</text>
+            <line class="dg-dim" x1="42" y1="20" x2="42" y2="82" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="42" y1="82" x2="42" y2="110" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="36" y="54" text-anchor="end">a − b</text>
+            <text class="dg-label" x="34" y="99" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.7</span> A rectangle $a + b$ wide and
+          $a - b$ tall. Its right-hand piece is $b$ wide and $a - b$ tall.</figcaption>
+        </figure>
+      </div>
+
+      <p>Sridharacharya (750 CE) gave a neat way of squaring numbers quickly with
+      Identity 1C. He used it in a rearranged form:</p>
+
+      <div class="work work--centred">
+        <p>$a^2 = (a + b)(a - b) + b^2$</p>
+      </div>
+
+      <p>Why is this identity true? It lets us choose $b$ so that one of $a + b$ and
+      $a - b$ is a round number. For example, $31^2$ can be found by taking $a = 31$ and
+      $b = 1$, and $197^2$ by taking $a = 197$ and $b = 3$.</p>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label work__label--wide">$31^2$</span>
+          <span>$= (31 + 1)(31 - 1) + 1^2$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= 32 \times 30 + 1 = 961$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">$197^2$</span>
+          <span>$= (197 + 3)(197 - 3) + 3^2$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= 200 \times 194 + 9 = 38809$</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,5 +1,38 @@
 # Class 7 · Mathematics II · Chapter 4 — Another Peek Beyond the Point
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 15 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/p2ch04-decimals/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 0.006 |
+| 2 | Single correct | (b) ₹250.80 |
+| 3 | Single correct | (c) between the two numbers |
+| 4 | Single correct | (d) 90 |
+| 5 | Single correct | (a) 5 ÷ 12 |
+| 6 | Single correct | (b) 2100 |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (c) |
+| 9 | Multiple correct | (a), (c), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 1.575 |
+| 12 | Numerical answer | 2922 |
+| 13 | Numerical answer | 121.5 |
+| 14 | Matching | (d) P–3, Q–1, R–4, S–2 |
+| 15 | Matching | (a) P–3, Q–4, R–1, S–2 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Four findings, all fixed.
@@ -251,3 +284,8 @@ Builder: every page at 88% or more except the closing pages. `gaps`,
 Fitting took line-sized edits: sentences added to the recap, four Set 4.1
 questions and the leap-year count; Example 7 and the divisor rule trimmed; one
 sentence cut from the opening of Beyond the Book.
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

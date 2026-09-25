@@ -1,0 +1,92 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="work work--list">
+        <p>$\text{area}(\triangle ABC) = \dfrac{abc}{4R}$</p>
+        <p>$\text{area}(\triangle ABC) = \dfrac{r(a + b + c)}{2}$</p>
+      </div>
+
+      <p>Both formulas have a beautiful symmetry! The proof of the second one needs a
+      result that you will study in Class 10.</p>
+
+      <h3>Brahmagupta’s formula for the area of a cyclic 4-gon</h3>
+
+      <p>We have seen how to find the area of a triangle from the lengths of its three
+      sides. The natural next question is: how can we find the area of a 4-gon from the
+      lengths of its four sides?</p>
+
+      <p>Earlier we asked whether we can find the area of a parallelogram when we know
+      only the lengths of its sides. The answer is no. In the same way, can we find the
+      area of a 4-gon when we know only the lengths of its sides? Fig. 6.27 gives the
+      answer. It shows a 4-gon whose sides are $3$, $3$, $3$, $3$ — a
+      <span class="term">rhombus</span> — drawn three ways, and the three areas are
+      different. (The figures were drawn in GeoGebra and their areas found with its Area
+      tool. Try this yourself, or with four rods joined at their ends.)</p>
+
+      <div class="c-figure c-figure--full">
+        <figure>
+          <svg viewBox="0 10 520 120" data-size="full" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three rhombuses ABCD, each with all four sides 3 units. The first is a square with area 9, the second leans a little with area 8.01, and the third leans more with area 5.41.">
+            <path class="dg-fill-a-soft" d="M30 105 L105 105 L105 30 L30 30 Z"/>
+            <path class="dg-line" d="M30 105 L105 105 L105 30 L30 30 Z"/>
+            <text class="dg-label" x="26" y="26" text-anchor="end">A</text>
+            <text class="dg-label" x="109" y="26">D</text>
+            <text class="dg-label" x="26" y="118" text-anchor="end">B</text>
+            <text class="dg-label" x="109" y="118">C</text>
+            <text class="dg-note" x="67.5" y="72" text-anchor="middle">area = 9</text>
+      
+            <path class="dg-fill-a-soft" d="M170 105 L245 105 L279.2 38.25 L204.2 38.25 Z"/>
+            <path class="dg-line" d="M170 105 L245 105 L279.2 38.25 L204.2 38.25 Z"/>
+            <text class="dg-label" x="200" y="32" text-anchor="end">A</text>
+            <text class="dg-label" x="283" y="32">D</text>
+            <text class="dg-label" x="166" y="118" text-anchor="end">B</text>
+            <text class="dg-label" x="249" y="118">C</text>
+            <text class="dg-note" x="224.6" y="76" text-anchor="middle">area = 8.01</text>
+      
+            <path class="dg-fill-a-soft" d="M340 105 L415 105 L474.94 59.92 L399.94 59.92 Z"/>
+            <path class="dg-line" d="M340 105 L415 105 L474.94 59.92 L399.94 59.92 Z"/>
+            <text class="dg-label" x="396" y="54" text-anchor="end">A</text>
+            <text class="dg-label" x="479" y="54">D</text>
+            <text class="dg-label" x="336" y="118" text-anchor="end">B</text>
+            <text class="dg-label" x="419" y="118">C</text>
+            <text class="dg-note" x="407.5" y="87" text-anchor="middle">area = 5.41</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.27</span> The area of a 4-gon cannot be
+          found from the lengths of its sides alone.</figcaption>
+        </figure>
+      </div>
+
+      <p>So we cannot find the area of a 4-gon from the lengths of its four sides alone;
+      we need more information. It could be one angle of the 4-gon, or the length of one
+      diagonal, or the angle at which the diagonals cross, and so on. Or it could be a key
+      geometric property of the figure.</p>
+
+      <p>One such property is being a <span class="term">cyclic</span> 4-gon: a 4-gon
+      whose four vertices lie on one circle. In $628$ CE, Brahmagupta ($598$–$668$ CE)
+      discovered a wonderful formula for the area of a cyclic 4-gon.</p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="15 12 175 172" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A 4-gon ABCD with all four vertices on a circle. Its sides are AB = a, BC = b, CD = c and DA = d.">
+            <circle class="dg-fill-d" cx="100" cy="95" r="70"/>
+            <path class="dg-fill-a-soft" d="M42.66 54.85 L34.22 118.94 L168.94 107.16 L123.94 29.22 Z"/>
+            <circle class="dg-line" cx="100" cy="95" r="70"/>
+            <path class="dg-line" d="M42.66 54.85 L34.22 118.94 L168.94 107.16 L123.94 29.22 Z"/>
+            <text class="dg-label" x="37" y="50" text-anchor="end">A</text>
+            <text class="dg-label" x="29" y="130" text-anchor="end">B</text>
+            <text class="dg-label" x="174" y="114">C</text>
+            <text class="dg-label" x="126" y="24">D</text>
+            <text class="dg-dim-label" x="45" y="92">a</text>
+            <text class="dg-dim-label" x="100" y="126" text-anchor="middle">b</text>
+            <text class="dg-dim-label" x="140" y="72">c</text>
+            <text class="dg-dim-label" x="82" y="52" text-anchor="middle">d</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.28</span> A cyclic 4-gon.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

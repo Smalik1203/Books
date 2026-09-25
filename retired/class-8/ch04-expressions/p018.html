@@ -1,0 +1,140 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>Redraw Fig. 4.8 for the case $a = 5$, $b = 2$, marking each of the four
+              pieces with its area as a number. Check that they add to $49$.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 150 130" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a plus b cut into a square of area a squared, two rectangles each of area a b, and a square of area b squared (repeated)">
+
+            <rect class="dg-fill-a" x="32" y="20" width="70" height="70"/>
+            <rect class="dg-fill-b" x="102" y="20" width="30" height="70"/>
+            <rect class="dg-fill-b" x="32" y="90" width="70" height="30"/>
+            <rect class="dg-fill-c" x="102" y="90" width="30" height="30"/>
+
+            <rect class="dg-line" x="32" y="20" width="100" height="100"/>
+            <line class="dg-thin" x1="102" y1="20" x2="102" y2="120"/>
+            <line class="dg-thin" x1="32" y1="90" x2="132" y2="90"/>
+
+            <text class="dg-label" x="67" y="59" text-anchor="middle">a²</text>
+            <text class="dg-label dg-label--on-fill" x="117" y="59" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="67" y="109" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="117" y="109" text-anchor="middle">b²</text>
+
+            <line class="dg-dim" x1="32" y1="12" x2="102" y2="12"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="102" y1="12" x2="132" y2="12"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="67" y="7" text-anchor="middle">a</text>
+            <text class="dg-label" x="117" y="7" text-anchor="middle">b</text>
+
+            <line class="dg-dim" x1="24" y1="20" x2="24" y2="90"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="24" y1="90" x2="24" y2="120"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="16" y="58" text-anchor="middle">a</text>
+            <text class="dg-label" x="16" y="109" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.8</span> (repeated from Section 4.6,
+          for Exercise Set 4.5) The middle term is $2ab$ because there are two
+          rectangles.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="10">
+          <li>Why can Fig. 4.9 not be drawn when $b$ is larger than $a$? Show that the
+              identity $(a+b)(a-b) = a^2 - b^2$ holds anyway, by taking $a = 3$ and
+              $b = 7$.</li>
+        </ol>
+      </div>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 216 100" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a with a square of side b cut from one corner; the remaining L shape is cut in two and reassembled into a rectangle a plus b wide and a minus b tall (repeated)">
+
+            <rect class="dg-fill-b" x="12" y="16" width="40" height="20"/>
+            <rect class="dg-fill-a" x="12" y="36" width="60" height="40"/>
+            <rect class="dg-ghost"  x="52" y="16" width="20" height="20"/>
+
+            <path class="dg-line" d="M12 16 H52 V36 H72 V76 H12 Z"/>
+            <line class="dg-thin" x1="12" y1="36" x2="52" y2="36"/>
+
+            <text class="dg-note" x="32" y="30" text-anchor="middle">moves</text>
+            <text class="dg-note" x="42" y="60" text-anchor="middle">stays</text>
+            <text class="dg-label dg-label--sm" x="62" y="30" text-anchor="middle">b²</text>
+
+            <line class="dg-dim" x1="6" y1="16" x2="6" y2="76"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="2" y="49" text-anchor="start">a</text>
+
+            <line class="dg-dim" x1="52" y1="9" x2="72" y2="9"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="62" y="6" text-anchor="middle">b</text>
+
+            <line class="dg-move" x1="84" y1="46" x2="102" y2="46" marker-end="url(#dg-arrow)"/>
+
+            <rect class="dg-fill-a" x="114" y="26" width="60" height="40"/>
+            <rect class="dg-fill-b" x="174" y="26" width="20" height="40"/>
+            <rect class="dg-line"   x="114" y="26" width="80" height="40"/>
+            <line class="dg-thin" x1="174" y1="26" x2="174" y2="66"/>
+
+            <line class="dg-dim" x1="114" y1="74" x2="194" y2="74"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="154" y="82" text-anchor="middle">a + b</text>
+
+            <line class="dg-dim" x1="200" y1="26" x2="200" y2="66"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="208" y="46" text-anchor="middle"
+                  transform="rotate(-90 208 46)">a − b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.9</span> (repeated from Section 4.6,
+          for Exercise Set 4.5) The upper piece is turned and set beside the lower
+          one.</figcaption>
+        </figure>
+      </div>
+
+      <h2><span class="badge">4.7</span><span class="name">Putting Them to Work</span></h2>
+
+      <p>An identity is true for every value of its letters, and numbers are values. So
+      the three results are quick arithmetic too, if you can see the sum or the
+      difference in the numbers.</p>
+
+      <p>The trick, and the only one, is to write each number as a round number
+      plus or minus a small one.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Find $102^2$, $97^2$ and $103 \times 97$ without a written multiplication.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$102^2 = (100+2)^2 = 10000 + 400 + 4$</span>
+              <span class="work__why">square of a sum</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$97^2 = (100-3)^2 = 10000 - 600 + 9$</span>
+              <span class="work__why">square of a difference</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$103 \times 97 = (100+3)(100-3) = 10000 - 9$</span>
+              <span class="work__why">difference of squares</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$102^2 = 10404$, &nbsp; $97^2 = 9409$, &nbsp; $103 \times 97 = 9991$</span></div>
+          </div>
+          <p>The third is the striking one. Two three-figure numbers multiplied, and the
+          whole calculation is $10000 - 9$ — because they happen to sit the same distance
+          either side of $100$.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

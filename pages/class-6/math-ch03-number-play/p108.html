@@ -2,65 +2,7 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 15</div>
-        <div class="c-example__body">
-          <p>You add a 4-digit number and a 3-digit number. How many digits can the sum have?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>Smallest sum: $1000 + 100 = 1100$, which has 4 digits.</span>
-              <span class="work__why">smallest plus smallest</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>Largest sum: $9999 + 999 = 10{,}998$, which has 5 digits.</span>
-              <span class="work__why">largest plus largest</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>Any other sum, such as $4000 + 500 = 4500$, lies in between.</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>The sum has either 4 digits or 5 digits, and never 3 or 6.</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>A square pattern has 5 rows of 5 boxes. Every box holds 30, except the middle box, which holds 80. Find the total.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>if all $5 \times 5 = 25$ boxes held 30, the total would be $25 \times 30 = 750$</span>
-              <span class="work__why">all the same first</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>the middle box holds $80 - 30 = 50$ more</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$750 + 50 = 800$</span></div>
-          </div>
-        </div>
-      </div>
-
-      <h3>Type 9 &middot; The Collatz rule</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 17</div>
-        <div class="c-example__body">
-          <p>How many steps does the Collatz rule take to reach 1 from 24? How many from 48?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>24 is even, so the next number is 12</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>sequence (a) in Section 3.10 starts at 12 and takes 9 steps</span>
-              <span class="work__why">already worked out</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>so 24 takes $1 + 9 = 10$ steps</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>48 is even, and half of 48 is 24, so 48 takes $1 + 10 = 11$ steps</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>10 steps from 24, and 11 steps from 48</span></div>
-          </div>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Matching"><div class="c-example__tab">Example 15 · Matching</div><div class="c-example__body"><p>Match List I with List II.</p><table><thead><tr><th>List I</th><th>List II</th></tr></thead><tbody><tr><td>(P) One Collatz step from 18</td><td>(1) 0</td></tr><tr><td>(Q) One Collatz step from 9</td><td>(2) 999</td></tr><tr><td>(R) One Kaprekar step from 2111</td><td>(3) 28</td></tr><tr><td>(S) One Kaprekar step from 5555</td><td>(4) 9</td></tr></tbody></table><p>Each entry has exactly one match</p><p><em>Choose the correct combination.</em></p><ol class="c-parts c-parts--alpha"><li>P–3, Q–4, R–2, S–1</li><li>P–4, Q–3, R–2, S–1</li><li>P–4, Q–2, R–3, S–1</li><li>P–1, Q–3, R–2, S–4</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>18 ÷ 2 = 9 and 3 × 9 + 1 = 28.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>2111 − 1112 = 999; 5555 − 5555 = 0. Leading zeros are retained when arranging digits.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(b) P–4, Q–3, R–2, S–1</span></div></div></div></div>
 
     </div>
   </div>

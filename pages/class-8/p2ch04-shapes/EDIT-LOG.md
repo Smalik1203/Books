@@ -1,5 +1,40 @@
 # Class 8 · Mathematics II · Chapter 4 — Taking a Shape Apart
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 17 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch04-shapes/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+Fitting, same day. Practice p110: its last block moved to p111 (settle.mjs), which had room; no words changed.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 6 cm |
+| 2 | Single correct | (b) 7 |
+| 3 | Single correct | (c) 18 |
+| 4 | Single correct | (d) 12 |
+| 5 | Single correct | (a) $125 \text{ cm}^3$ |
+| 6 | Single correct | (b) an octagon |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b), (d) |
+| 9 | Multiple correct | (a), (c) |
+| 10 | Multiple correct | (a), (c), (d) |
+| 11 | Numerical answer | 15 |
+| 12 | Numerical answer | 81 |
+| 13 | Numerical answer | 5184 |
+| 14 | Matching | (c) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (b) P–2, Q–1, R–4, S–3 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two gap findings from the Beyond the Book syllabus audit, both confirmed and
@@ -242,3 +277,12 @@ Checked by script (PLAN §4.8) and accepted.
 | p003 (built page 3) | — | 86% full, 29mm of white at the foot. Pre-existing; p003 untouched. | `refit body` or one more line of prose. Recorded so it is not read later as a language edit. |
 | p002, p003, p004 | M1 | The area formulas are given as $\left(\tfrac89\right)^n$, $\left(\tfrac34\right)^n$ and $3\left(\tfrac43\right)^n$, and p002 says correctly that this is "Chapter 1's compounding, downwards". But a fraction raised to a power is new: Part I Chapter 2 § 2.2 squares and cubes fractions ($\left(\tfrac53\right)^2$, $\left(\tfrac46\right)^3$) and Chapter 1 of this volume uses decimal multipliers like $0.95^3$ — nowhere is $\left(\tfrac89\right)^n$ with a *letter* exponent established. | It is probably fine for a reader who has both chapters, but a half-line tying $\left(\tfrac89\right)^n$ to "eight ninths taken $n$ times" would cost nothing. The chapter says exactly that in words on p002; the formula just needs to be pinned to it. |
 | p007 | C5 | "That is not a coincidence, and it holds for every solid of this kind." The claim is $F + V - E = 2$, and *every solid of this kind* is never pinned down — prisms and pyramids are the only families defined, but the summary states the rule for "a solid with flat sides", and Exercise 4.2 Q3 applies it to a solid with 8 faces and 12 vertices that is neither. | Either say which solids it covers, or say that it is being assumed and is proved elsewhere — the honest signpost Part I Chapter 5 uses for the triangle angle sum. A reader cannot otherwise tell whether it is a rule about prisms or a rule about solids. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Exploring Some Geometric Themes*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

@@ -147,6 +147,27 @@ on the page. The results, for reference: (1) side 1 cm, 32768 squares;
 (6) $\tfrac{243}{1024} \approx 0.24$, more than a tenth; (7) 27 cubes, 1
 hidden; (8) 52 cm².
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 6 cm *(single correct)*
+2. (b) 7 *(single correct)*
+3. (c) 18 *(single correct)*
+4. (d) 12 *(single correct)*
+5. (a) $125 \text{ cm}^3$ *(single correct)*
+6. (b) an octagon *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (c) *(multiple correct)*
+10. (a), (c), (d) *(multiple correct)*
+11. 15 *(numerical answer)*
+12. 81 *(numerical answer)*
+13. 5184 *(numerical answer)*
+14. (c) P–3, Q–4, R–1, S–2 *(matching)*
+15. (b) P–2, Q–1, R–4, S–3 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

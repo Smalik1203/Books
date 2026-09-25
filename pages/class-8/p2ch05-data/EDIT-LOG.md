@@ -1,5 +1,40 @@
 # Class 8 · Mathematics II · Chapter 5 — Dots, and the Lines Between Them
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 13 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch05-data/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+Fitting, same day. Practice p110: its last block moved to p111 (settle.mjs), which had room; no words changed. Fig. 5.9 belonged to the old examples and was the last figure in the chapter, so nothing was renumbered.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 42 |
+| 2 | Single correct | (b) 24.5 |
+| 3 | Single correct | (c) 67.5 |
+| 4 | Single correct | (d) 15.5 |
+| 5 | Single correct | (a) 14 |
+| 6 | Single correct | (b) 45.9 |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (c) |
+| 11 | Numerical answer | 17 |
+| 12 | Numerical answer | 10 |
+| 13 | Numerical answer | 43 |
+| 14 | Matching | (d) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (a) P–3, Q–4, R–2, S–1 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, worked against Class 8 Chapter 1 as
@@ -228,3 +263,12 @@ Checked by script (PLAN §4.8) and accepted. The stepping check was re-run with 
 | p010, p011 Q5 | C7 | § 5.7 works out the household mean as $5.07$ and the median as $5$, and then Exercise 5.2 Q5 asks: "For the household data of section 5.7 the mean is $5.07$ and the median is $5$. Which is the larger, and what is it about the shape of the table that makes it so?" The question hands over both numbers and the comparison, leaving only the explanation — which is fine — but it is the fourth time those two figures appear on facing pages. | Ask for the two values, or ask only for the shape. As written the question does most of itself. |
 | p017 Q7 | M2 | "A quantity starts at $1$ and doubles every year for six years. Plot it as a line graph, and explain why joining the points with straight segments **overstates** the quantity at every moment in between." The claim is true and the reason is that doubling grows faster later in each year than earlier — but nothing in this chapter or in Mathematics II Chapter 1 establishes the shape of growth *between* two readings. The question asks a Class 8 student to reason about a curve the book never draws. | Either drop it or give the reader something to stand on: a half-year value, say, computed and plotted. The marked-hard flag does not make an unsupported step fair. |
 | p105 (built page 22) | — | 84% full, 33mm of white at the foot. Pre-existing; p105 untouched by this edit. | Recorded so it is not attributed to the language pass. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Tales by Dots and Lines*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

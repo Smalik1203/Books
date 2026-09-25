@@ -1,0 +1,78 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>Nowhere did that argument use the lengths of the sides, or where the corners
+      were, or whether the figure was leaning. It used one diagonal and the triangle
+      sum. That is why the four rods of the first page can be pushed into any shape they
+      like and still add to $360^\circ$: the proof does not know they have moved.</p>
+
+      <h3>4.3.2 Any number of sides</h3>
+
+      <p>The same trick works on a bigger figure, and it is worth doing on paper before
+      reading on. Choose one vertex and join it to every other vertex it is not already
+      joined to. The polygon falls into a fan of triangles, all of them meeting at the
+      vertex you chose. And as with the quadrilateral, the triangles' angles between them
+      account for the polygon's own angles exactly — the chosen vertex's angle arrives in
+      pieces, the two beside it whole, and the rest in two pieces each, with no angle
+      used twice and none left over.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 96" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A pentagon cut into three triangles and a hexagon cut into four, each by joining one vertex to all the others">
+      
+            <path class="dg-line" d="M18 78 L10 36 L46 12 L80 34 L70 76 Z"/>
+            <path class="dg-thin" d="M18 78 L46 12 M18 78 L80 34"/>
+            <circle class="dg-fill-teal" cx="18" cy="78" r="2.4"/>
+            <text class="dg-note" x="44" y="92" text-anchor="middle">5 sides, 3 triangles</text>
+      
+            <path class="dg-line" d="M126 80 L110 46 L128 14 L166 14 L186 46 L168 80 Z"/>
+            <path class="dg-thin" d="M126 80 L128 14 M126 80 L166 14 M126 80 L186 46"/>
+            <circle class="dg-fill-teal" cx="126" cy="80" r="2.4"/>
+            <text class="dg-note" x="148" y="92" text-anchor="middle">6 sides, 4 triangles</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.4</span> The two sides that meet at the
+          chosen vertex are already there, so the fan reaches three vertices out of five
+          and four out of six. Two sides never get a triangle of their own.</figcaption>
+        </figure>
+      </div>
+
+      <p>How many triangles? One for each side of the polygon except the two that meet
+      at the chosen vertex, so $n - 2$ of them. Each carries $180^\circ$.</p>
+
+      <div class="eq eq--anchor">$$\text{angle sum of an } n\text{-gon} = (n-2) \times 180^\circ$$</div>
+
+      <p>Check it against what you already know. A triangle gives $(3-2) \times 180^\circ
+      = 180^\circ$, which is the fact we started from; a quadrilateral gives
+      $2 \times 180^\circ = 360^\circ$, which is the last section.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">triangle</span>
+          <span>$180^\circ$</span><span class="work__label work__label--wide">heptagon</span>
+          <span>$900^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">quadrilateral</span>
+          <span>$360^\circ$</span><span class="work__label work__label--wide">octagon</span>
+          <span>$1080^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">pentagon</span>
+          <span>$540^\circ$</span><span class="work__label work__label--wide">nonagon</span>
+          <span>$1260^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">hexagon</span>
+          <span>$720^\circ$</span><span class="work__label work__label--wide">decagon</span>
+          <span>$1440^\circ$</span>
+        </div>
+      </div>
+
+      <p>Every entry is $180^\circ$ more than the one above it, which is the formula seen
+      from another side: adding a side adds a triangle.</p>
+
+    </div>
+  </div>
+</section>

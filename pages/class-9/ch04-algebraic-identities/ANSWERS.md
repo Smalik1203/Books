@@ -78,7 +78,7 @@ papers expect.
 
 ### Think and Reflect
 
-1. The nine pieces of Fig. 4.4 have areas $a^2$, $b^2$, $c^2$ down the
+1. The nine pieces of Fig. 4.3 have areas $a^2$, $b^2$, $c^2$ down the
    diagonal, and $ab$, $bc$, $ca$ twice each either side of it. They add to
    $a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$: every term of the identity, with
    each rectangle turning up twice.
@@ -126,7 +126,7 @@ papers expect.
    two factors are multiples of ten, their product ends in $00$, and $25$ is
    added.
 
-### Think and Reflect (Fig. 4.6)
+### Think and Reflect (Fig. 4.5)
 
 1. Compared by area, the two rows state
    $(a + b + c)^2 + (a + b - c)^2 + (a - b + c)^2 + (a - b - c)^2 = (2a)^2 + (2b)^2 + (2c)^2$.
@@ -152,7 +152,7 @@ papers expect.
 3. The constant is the product of the two numbers and the coefficient of $x$
    is their sum: $(x + a)(x + b) = x^2 + (a + b)x + ab$.
 
-4. Fig. 4.8 has six $x^2$-tiles, $2 + 9 = 11$ $x$-tiles and three unit
+4. Fig. 4.7 has six $x^2$-tiles, $2 + 9 = 11$ $x$-tiles and three unit
    tiles, so $(2x + 3)(3x + 1) = 6x^2 + 11x + 3$. In general
    $(px + a)(qx + b) = (pq)x^2 + (pb + qa)x + ab$.
 
@@ -334,6 +334,27 @@ $a^2 + b^2 = 15$ when $ab = 5$; Q3
 $x^4 + 4y^4 = \left(x^2 + 2y^2 - 2xy\right)\left(x^2 + 2y^2 + 2xy\right)$;
 Q4 the first is not an identity ($8$ against $2$), the second is; Q5 no such
 rectangle, since $(x - y)^2 = -1$.
+
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 23 *(single correct)*
+2. (b) $(x - 7)(x + 5)$ *(single correct)*
+3. (c) 27 *(single correct)*
+4. (d) 16380 *(single correct)*
+5. (a) 992016 *(single correct)*
+6. (b) 60 *(single correct)*
+7. (a), (b) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 994011992 *(numerical answer)*
+12. 13 *(numerical answer)*
+13. 91 *(numerical answer)*
+14. (a) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–4, Q–1, R–2, S–3 *(matching)*
 
 ### Stage 3 · Practice — the key, as the key prints it
 

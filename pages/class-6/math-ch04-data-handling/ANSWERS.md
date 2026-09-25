@@ -96,7 +96,7 @@ sizes in all: $3 + 9 + 10 + 4 + 1 = 27$.
 
 ## 4.2 Pictographs
 
-### Think and Reflect (after Fig. 4.2)
+### Think and Reflect (after Fig. 4.5)
 
 1. **School bus**, 11 students.
 2. **Cycle**, 3 students.
@@ -116,7 +116,7 @@ symbols can.
 
 ### Exercise Set 4.4
 
-1. From Fig. 4.7: Monday 5, Tuesday 4, Wednesday 2, Thursday 0, Friday 5,
+1. From Fig. 4.12: Monday 5, Tuesday 4, Wednesday 2, Thursday 0, Friday 5,
    Saturday 8.
    (i) **Thursday** (no books). (ii) **24** books:
    $5 + 4 + 2 + 0 + 5 + 8 = 24$. (iii) **Saturday**, 8 books. Reasons will
@@ -130,19 +130,19 @@ symbols can.
 
 ## 4.3 Bar Graphs
 
-### Think and Reflect (after Fig. 4.8)
+### Think and Reflect (after Fig. 4.14)
 
 1. **5** students. 2. **Class VIII**, 7 students. 3. **Class V** — its bar
    has height 0.
 
-### Think and Reflect (the scale of Fig. 4.9)
+### Think and Reflect (the scale of Fig. 4.15)
 
 With 1 unit for 1 vehicle the bars would be far too long to draw: the bar
 for 7 to 8 a.m. would be **1200** units long, instead of 12.
 
 ### Exercise Set 4.5
 
-Read from Fig. 4.9: 150, 1200, 1000, 800, 700 and 600 vehicles.
+Read from Fig. 4.15: 150, 1200, 1000, 800, 700 and 600 vehicles.
 
 1. **4450** vehicles: $150 + 1200 + 1000 + 800 + 700 + 600 = 4450$.
 2. **100** more: $800 - 700 = 100$.
@@ -163,7 +163,7 @@ Read from Fig. 4.9: 150, 1200, 1000, 800, 700 and 600 vehicles.
 
 ## 4.4 Drawing a Bar Graph
 
-### Think and Reflect (after Fig. 4.13)
+### Think and Reflect (after Fig. 4.22)
 
 1. The most on **food** (₹3400), the second most on **house rent**
    (₹3000).
@@ -208,11 +208,11 @@ bars lie on their side, 15, 17, 4, 2, 3 and 6 units long.
    $0 \times 2 + 1 \times 4 + 2 \times 6 + 3 \times 8 + 4 \times 3 + 5 \times 5 + 6 \times 1 + 7 \times 1 = 90$
    wickets.
 
-6. From Fig. 4.15: A 6, B 5, C 8, D 3, E 6. (i) **Village D**
+6. From Fig. 4.26: A 6, B 5, C 8, D 3, E 6. (i) **Village D**
    (ii) **Village C** (iii) **3** more: $8 - 5 = 3$. (iv) **Yes**: 3 is half of
    6. (v) **28**: $6 + 5 + 8 + 3 + 6 = 28$.
 
-7. From Fig. 4.16, with one symbol for 4 girls: Classes 1 to 8 have 24, 18,
+7. From Fig. 4.27, with one symbol for 4 girls: Classes 1 to 8 have 24, 18,
    20, 14, 10, 16, 12 and 6 girls. (i) **Class 8** (6 girls).
    (ii) **6**: $16 - 10 = 6$. (iii) Class 2 would have $18 + 2 = 20$ girls,
    so its half symbol becomes a whole one: **5 whole symbols**.
@@ -232,7 +232,7 @@ bars lie on their side, 15, 17, 4, 2, 3 and 6 units long.
    $15 \div 5 = 3$. (i) **Reading story books** (ii) **Listening to music**
    (iii) **30** more: $45 - 15 = 30$.
 
-10. From Fig. 4.17: 50, 40, 30, 40, 50, 60, 40. (i) **70**:
+10. From Fig. 4.28: 50, 40, 30, 40, 50, 60, 40. (i) **70**:
     $30 + 40 = 70$. (ii) **310**: $50 + 40 + 30 + 40 + 50 + 60 + 40 = 310$.
     (iii) The most on **Saturday**, the fewest on **Wednesday**. Reasons will
     vary: for example, more people were free on Saturday; rain or a school
@@ -248,7 +248,7 @@ bars lie on their side, 15, 17, 4, 2, 3 and 6 units long.
 
 ## 4.5 How a Graph Looks
 
-### The questions after Table 4.13
+### The questions after Table 4.31
 
 Everest is **6620 m** taller than Kosciuszko: $8848 - 2228 = 6620$. Denali
 and Kilimanjaro are **not very different**: $6194 - 5895 = 299$ m.
@@ -262,12 +262,12 @@ and Kilimanjaro are **not very different**: $6194 - 5895 = 299$ m.
    **What the table must show:** one river for each continent with its
    length, and bars lying on their side drawn to one scale.
 
-### Fig. 4.21 and Fig. 4.22
+### Fig. 4.34 and Fig. 4.35
 
 *Are taller mountains always wider?* **No.** The data gives only heights.
 
 *Is the picture correct?* **No.** Everest looks about twice as tall as
-Elbrus in Fig. 4.22, but it is not.
+Elbrus in Fig. 4.35, but it is not.
 
 ### Think and Reflect (Everest and Elbrus)
 
@@ -289,7 +289,24 @@ twice as tall; the team played 14 matches and scored 19 goals.
 
 ### 2 Solved Examples
 
-Beyond Examples 1 to 12 are worked in full on the page.
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (c) 5 *(single correct)*
+2. (a) 36 *(single correct)*
+3. (c) 1 symbol = 6 items *(single correct)*
+4. (d) 24 *(single correct)*
+5. (b) 7 *(single correct)*
+6. (d) The second count exceeds the first by 6 *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (c), (d) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (b), (c), (d) *(multiple correct)*
+11. 48 *(numerical answer)*
+12. 14 *(numerical answer)*
+13. 7 *(numerical answer)*
+14. (a) P–4, Q–1, R–3, S–2 *(matching)*
+15. (c) P–2, Q–1, R–4, S–3 *(matching)*
 
 ### 3 Practice — the key
 

@@ -18,116 +18,106 @@
    it sits in has to have that height to centre against */
 .page--front .page__main { height: 100%; }
 
-/* ---- Title page -------------------------------------------- */
 
-/* The title page is the cover restated in the book's own two faces.
-   It was five lines centred in an empty sheet — no rule, no marker,
-   nothing of the arrangement the jacket and every chapter opener
-   share, and two thirds of the page dead. So it now sets flush left
-   on the text block like the openers do, carries the class and part
-   at the head where the jacket carries them, and closes on the line
-   the jacket closes on. Nothing new is invented: the rule under the
-   title is the chapter opener's own rule, cap and all. */
-/* The title sits in the upper middle, where the jacket sets it, not
-   at the centre of the sheet: centred between a head and a foot it
-   floats, with eighty millimetres of nothing above it. The strapline
-   holds the foot; the white gathers between the two, which is where
-   a title page wants it. */
+
+/* A clear reading order: publisher and class, title and volume,
+   a compact student-details box, then the series promise. Spacing follows the
+   edition rhythm so the arrangement scales with the printed sheet. */
 .titlepage {
   height: 100%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 46mm 0 30mm;
+  padding: var(--space-break) 0;
 }
-.titlepage__main { margin-top: 28mm; }
-.titlepage__foot { margin-top: auto; }
 .titlepage__head {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 8mm;
+  gap: var(--space-rest);
+  padding-bottom: var(--space-rest);
+  border-bottom: var(--stroke-hair) solid var(--teal);
 }
-.titlepage__imprint {
-  font-family: var(--font-display);
-  font-size: var(--size-note);
-  font-weight: var(--weight-bold);
-  font-variant-caps: small-caps;
-  letter-spacing: var(--track-label);
-  color: var(--teal);
-}
-/* class and part, against a rule — the jacket's own marker */
-.titlepage__marker {
-  border-left: var(--stroke-rule) solid var(--teal-soft);
-  padding-left: 5mm;
-  text-align: left;
-}
+.titlepage__imprint,
 .titlepage__class {
-  display: block;
   font-family: var(--font-display);
-  font-size: var(--size-note);
+  font-size: var(--size-concept);
   font-weight: var(--weight-bold);
-  font-variant-caps: small-caps;
-  letter-spacing: var(--track-label);
   color: var(--teal);
 }
+.titlepage__imprint { letter-spacing: var(--track-title); }
+.titlepage__main { margin-top: calc(var(--space-break) * 4); }
 .titlepage__part {
-  display: inline-block;
-  margin-top: var(--space-hair);
   font-family: var(--font-display);
-  font-size: var(--size-caption);
+  font-size: var(--size-concept);
   font-weight: var(--weight-bold);
-  font-variant-caps: small-caps;
-  letter-spacing: var(--track-label);
-  color: var(--rust);
-  border: var(--stroke-rule) solid var(--rust);
-  border-radius: var(--radius);
-  padding: 0.6mm 2.4mm;
-}
-.titlepage__foot {
-  font-family: var(--font-display);
-  font-size: var(--size-caption);
-  font-weight: var(--weight-bold);
-  font-variant-caps: small-caps;
+  text-transform: uppercase;
   letter-spacing: var(--track-label);
   color: var(--teal-soft);
-}
-/* the chapter opener's rule: a teal band with the rust cap outdented
-   at its left, so the title page and a chapter head are plainly the
-   same book */
-.titlepage__rule {
-  position: relative;
-  height: var(--stroke-band);
-  background: var(--teal);
-  border-radius: 1mm;
-  margin: var(--space-rest) 0 0;
-}
-.titlepage__rule::before {
-  content: "";
-  position: absolute;
-  left: -8mm;
-  top: -1.6mm;
-  width: 9mm;
-  height: 4mm;
-  background: var(--rust);
-  border-radius: 1mm;
-  transform: skewX(-14deg);
+  margin-bottom: var(--space-rest);
 }
 .titlepage__title {
   font-family: var(--font-display);
   font-size: var(--size-numeral);
   font-weight: var(--weight-bold);
   line-height: var(--lh-tight);
-  color: var(--rust);
+  color: var(--teal);
   margin: 0;
 }
+.titlepage__rule {
+  width: 18%;
+  height: var(--stroke-band);
+  background: var(--teal);
+  margin: var(--space-break) 0 var(--space-rest);
+}
 .titlepage__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--size-concept);
+  color: var(--ink-soft);
+}
+.titlepage__student {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+  padding: var(--space-rest);
+  border-top: var(--stroke-band) solid var(--teal);
+  border-bottom: var(--stroke-hair) solid var(--teal-soft);
+  background: var(--teal-tint);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-rest);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  color: var(--ink-soft);
+}
+.titlepage__student-title {
+  grid-column: 1 / -1;
   font-family: var(--font-display);
-  font-size: var(--size-section);
+  font-size: var(--size-concept);
+  font-weight: var(--weight-bold);
   font-variant-caps: small-caps;
   letter-spacing: var(--track-title);
   color: var(--teal);
-  margin-top: var(--space-step);
+}
+.titlepage__field {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-tight);
+  min-width: 0;
+}
+.titlepage__field--name { grid-column: 1 / -1; }
+.titlepage__write {
+  flex: 1;
+  min-width: 0;
+  height: var(--space-rest);
+  border-bottom: var(--stroke-hair) solid var(--teal-soft);
+}
+.titlepage__foot {
+  margin-top: var(--space-rest);
+  padding-top: var(--space-rest);
+  font-family: var(--font-body);
+  font-size: var(--size-note);
+  color: var(--teal);
 }
 
 /* ---- Imprint ----------------------------------------------- */
@@ -235,3 +225,267 @@
   font-variant-numeric: lining-nums;
   color: var(--ink);
 }
+
+/* ---- The contents of a class, one page each ------------------ */
+.page--series .page__main { height: 100%; }
+.series__band {
+  display: flex;
+  align-items: center;
+  gap: 6mm;
+  padding: 2.4mm 6mm;
+  border-radius: 3mm;
+  background: var(--teal);
+  color: var(--paper);
+  margin-bottom: var(--space-tight);
+}
+.series__class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 6mm;
+  border-right: var(--stroke-rule) solid var(--teal-soft);
+}
+.series__kicker {
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal-tint);
+}
+.series__num {
+  font-family: var(--font-display);
+  font-size: calc(var(--size-chapter) * 1.2);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+  line-height: 1;
+}
+.series__book {
+  font-family: var(--font-display);
+  font-size: var(--size-section);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+}
+.series__count {
+  margin-top: 1mm;
+  font-size: var(--size-note);
+  color: var(--teal-tint);
+}
+.series__volume {
+  margin: var(--space-hair) 0 1mm;
+  padding-bottom: 1mm;
+  border-bottom: var(--stroke-rule) solid var(--teal);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.series__list { list-style: none; margin: 0; padding: 0; text-align: left; }
+.series__ch {
+  display: grid;
+  grid-template-columns: 7mm 1fr;
+  column-gap: 3mm;
+  align-items: start;
+  /* Tight rows: at the specimen's larger type, Class 8's fourteen
+     chapters overran the page by 18mm at 0.7mm. */
+  padding: 0.35mm 2mm;
+  border-bottom: var(--stroke-hair) solid var(--rule-soft);
+}
+.series__chnum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.4mm;
+  height: 6.4mm;
+  margin-top: 0.2mm;
+  border-radius: 50%;
+  background: var(--teal-tint);
+  color: var(--teal-deep);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: lining-nums;
+}
+/* Title and topics run on as one paragraph: the topics start on the
+   title's own line, which is what lets fifteen chapters sit on a page. */
+.series__chbody { line-height: var(--lh-tight); }
+.series__chtitle {
+  display: inline;
+  margin-right: 2mm;
+  font-family: var(--font-display);
+  font-size: var(--size-body);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+}
+.series__topics {
+  display: inline;
+  font-size: var(--size-caption);
+  line-height: var(--lh-tight);
+  color: var(--ink-soft);
+}
+.series__dot { color: var(--teal-soft); }
+
+/* ---- The opener's numeral box, carrying the class ------------ */
+.chapterhead__num--class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  gap: 0.8mm;
+}
+.chapterhead__kicker {
+  font-size: var(--size-caption);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal-tint);
+}
+
+/* ---- Specimen copy ------------------------------------------
+   A sample goes out free and says so on every leaf, in the foot margin:
+   12.5mm above the trim, between the top of the folio bar (9mm) and the
+   foot of the text block (22.5mm), so it can touch neither. Small and in
+   the chapter's own structure colour, so it reads as furniture rather
+   than a stamp across the page. The words are book.json's "specimen";
+   the binder writes them into the book's style block. The title page says it in its header instead. */
+[data-specimen] .page__body::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(12.5mm - var(--margin-bottom));
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--teal-soft);
+  pointer-events: none;
+}
+.page--title .page__body::after { content: none; }
+
+/* ---- Specimen title page -------------------------------------
+   A book's title page, not a screen: the title centred with a short
+   rule under it, the classes and a line of italic beneath, and the
+   imprint at the foot. Type and one rule; nothing boxed. */
+.page--sampletitle .page__main { height: 100%; }
+.sampletitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.sampletitle__kicker {
+  margin-top: var(--space-break);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.sampletitle__main { margin: auto 0; }
+.sampletitle__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: calc(var(--size-numeral) * 1.7);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--teal-deep);
+}
+.sampletitle__rule {
+  width: 22mm;
+  height: var(--stroke-band);
+  margin: var(--space-rest) auto;
+  background: var(--rust);
+}
+.sampletitle__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--size-section);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+}
+.sampletitle__tagline {
+  margin-top: var(--space-step);
+  font-family: var(--font-body);
+  font-size: var(--size-concept);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.sampletitle__foot { padding-bottom: var(--space-rest); }
+.sampletitle__brand {
+  font-family: var(--font-display);
+  font-size: var(--size-chapter);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+}
+.sampletitle__session {
+  margin-top: var(--space-hair);
+  font-size: var(--size-note);
+  letter-spacing: var(--track-title);
+  color: var(--ink-soft);
+}
+
+/* ---- A note to schools --------------------------------------
+   Written as a preface is written: running text in the book's own
+   face, a run-in head in small capitals where a paragraph turns to a
+   new point, and LearnLab's code as a small figure with its caption. */
+.page--why .page__main { height: 100%; }
+.about { display: flex; flex-direction: column; height: 100%; }
+.about__kicker {
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.about__title {
+  margin: var(--space-hair) 0 var(--space-rest);
+  padding-bottom: var(--space-step);
+  border-bottom: var(--stroke-rule) solid var(--teal);
+  font-family: var(--font-display);
+  font-size: var(--size-chapter);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-tight);
+  color: var(--teal-deep);
+}
+.about__p {
+  margin: 0 0 var(--space-step);
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+}
+.about__head {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--track-title);
+  color: var(--teal);
+}
+.about__lab {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  margin-top: auto;
+  padding-top: var(--space-step);
+  border-top: var(--stroke-hair) solid var(--rule);
+}
+.about__qr { flex: none; width: 20mm; height: 20mm; }
+.about__caption {
+  margin: 0;
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+  color: var(--ink-soft);
+}
+
+/* No line of a paragraph ends on a lone word. text-wrap: pretty makes
+   the browser rebalance a paragraph's breaks so its last line carries
+   company; a designer sets it by hand, and here the engine does. */
+.about__p, .about__caption, .sampletitle__tagline, .series__lead,
+.series__topics, .preface p { text-wrap: pretty; }

@@ -1,5 +1,40 @@
 # Class 9 · Mathematics I · Chapter 1 — Orienting Yourself: The Use of Coordinates
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch01-coordinates/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+Also, same day. Figs. 1.12 and 1.13 belonged to the old examples and were the last figures in the chapter, so nothing was renumbered.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $k \lt 3$ |
+| 2 | Single correct | (b) 17 |
+| 3 | Single correct | (c) $(-6, 4)$ |
+| 4 | Single correct | (d) $(0, -1)$ |
+| 5 | Single correct | (a) $(-1, -5)$ |
+| 6 | Single correct | (b) 8 |
+| 7 | Multiple correct | (a), (b) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b), (c), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 8 |
+| 12 | Numerical answer | 5 |
+| 13 | Numerical answer | 11 |
+| 14 | Matching | (b) P–3, Q–2, R–4, S–1 |
+| 15 | Matching | (c) P–3, Q–4, R–1, S–2 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Class 9 brief with
@@ -247,3 +282,8 @@ Worst first.
 | p014 Q9–Q13 | M2 | Five end-of-chapter questions rest on the **midpoint formula**, which the chapter never teaches. Q9 is fair — it gives a table and a hint asking the student to find the connection themselves, which is discovery. But Q11 needs trisection points found from two midpoint statements, and Q13's hint hands over a result ("Add two of the midpoints and subtract the third") that no reader could have derived from Q9. | Either a short section on the midpoint, or trim to Q9 and Q10. Q13's hint is doing the teaching that the chapter skipped, in eleven words, inside a hint. |
 | p010 vs p012, p013 | C3 | p010 makes a point of the modulus bars — "The bars matter. Subtract the other way round and the arithmetic hands you a negative number, and no length has ever been negative." Then p012 writes the general legs as $x_2 - x_1$ and $y_2 - y_1$ with no bars, and p013 explains that the squaring throws the sign away. Both are right, but the reader is told the bars are essential and then shown them dropped two pages later. | One sentence at the point of dropping them: the bars are unnecessary here *because* the value is about to be squared. p013 says it, but after the formula has already appeared without them. |
 | p002 | C5 | "it is *Cartesius* that survives in **Cartesian** — so every time the plane is named, it is named after him twice over." *Twice over* does not follow from what precedes it: the plane is named once, in disguise. | Either drop the clause or say what was meant. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

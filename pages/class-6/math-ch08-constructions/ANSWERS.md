@@ -137,7 +137,7 @@ $XY = 7$ cm. They are **farthest** when they are at opposite corners: $X$ on
 $A$ with $Y$ on $C$, or $X$ on $D$ with $Y$ on $B$. Then $XY$ is a diagonal,
 about **8 cm 1 mm**.
 
-### Table 8.1
+### Table 8.17
 
 | $X$ from $A$ | $Y$ from $B$ | $XY$ |
 |---|---|---|
@@ -148,7 +148,7 @@ about **8 cm 1 mm**.
 The shortest $XY$ is 7 cm, **the same as $AB$**. It happens whenever $X$
 and $Y$ are the same distance from $A$ and $B$.
 
-### Table 8.2, and the Think and Reflect after it
+### Table 8.18, and the Think and Reflect after it
 
 Every row gives **$XY = 7$ cm**.
 
@@ -176,7 +176,7 @@ each 4 cm wide.
 
 ### Exercise 8.4
 
-1. **A square inside a rectangle.** In Fig. 8.20 the square fills the
+1. **A square inside a rectangle.** In Fig. 8.22 the square fills the
    height of the rectangle, so **each side of the square is 4 cm**. That
    leaves $8 - 4 = 4$ cm of the length, shared equally, so **each corner of
    the square is 2 cm from the nearest corner of the rectangle**, along the
@@ -189,7 +189,7 @@ each 4 cm wide.
    fits in a 15 cm square.
 3. **Shadings.** *Lengths will vary.* **What the drawing must show:** the
    big square, and every smaller shape in it constructed as a square —
-   right angles by protractor and equal sides by compass — as in Fig. 8.22.
+   right angles by protractor and equal sides by compass — as in Fig. 8.24.
 4. **A square with a hole.** The needle goes at the **centre of the
    square**, the point where its two diagonals cross. Draw the diagonals
    lightly to find it.
@@ -202,7 +202,7 @@ each 4 cm wide.
    middle of that side and square to it, and all the same distance from
    their sides**, with one compass opening for all four curves. Then every
    curve bends in by the same amount. **A worked instance**, measured from
-   Fig. 8.23: with the compass open to 6 cm, each needle is about
+   Fig. 8.25: with the compass open to 6 cm, each needle is about
    4 cm 5 mm outside the middle of its side.
 
 ---
@@ -214,8 +214,8 @@ each 4 cm wide.
 - **The two diagonals are equal in length.**
 - $g$ and $h$ are **not equal**, and $c$ and $d$ are **not equal**, unless
   the rectangle is a square.
-- **The equal pairs** (Fig. 8.24): $a = d = e = h$ and $b = c = f = g$.
-  The two angles at any one corner add up to $90^\circ$. In Fig. 8.24, the
+- **The equal pairs** (Fig. 8.26): $a = d = e = h$ and $b = c = f = g$.
+  The two angles at any one corner add up to $90^\circ$. In Fig. 8.26, the
   smaller angles are each about $27^\circ$ and the larger about $63^\circ$.
 
 ### Think and Reflect (splitting a corner equally)
@@ -223,7 +223,7 @@ each 4 cm wide.
 Construct it as a **square**: a diagonal splits the opposite angles into
 two equal parts exactly when all four sides are equal.
 
-### Table 8.3
+### Table 8.27
 
 *Rows will vary* with the rectangles chosen. In every row, $a$, $d$, $e$
 and $h$ are equal, $b$, $c$, $f$ and $g$ are equal, and $a + b = 90^\circ$.
@@ -286,7 +286,7 @@ The upper crossing point is **5 cm from $B$** and **5 cm from $C$**.
    with its needle found as a point at a chosen distance from both ends of
    the curve — two arcs about the two ends, crossing — rather than by trial.
 3. **Yes: a 4-sided figure with all its sides equal that is not a square.**
-   Using the hint in Fig. 8.34, $AB = AC = 5$ cm with an angle at $A$ that
+   Using the hint in Fig. 8.37, $AB = AC = 5$ cm with an angle at $A$ that
    is not a right angle (about $55^\circ$ in the figure). Draw arcs of
    radius 5 cm about $B$ and about $C$. They cross at $A$ and at one more
    point, $D$. Join $B$ to $D$ and $C$ to $D$. **$ABDC$ has four sides of
@@ -312,23 +312,24 @@ the booklet is complete.
 
 ### Stage 2 · Solved Examples
 
-1. $A$ inside, $B$ on the circle, $C$ outside.
-2. $OA = OB = AB = 4$ cm.
-3. The moon is 2 cm wide, the same as the distance from $O$ to $P$.
-4. $XYZW$ and $ZYXW$.
-5. No — $\angle A$ is not $90^\circ$.
-6. On dots: $C$ is 1 dot left of $B$ and 3 up, and $D$ is 1 dot left of $A$ and 3 up.
-7. $SR$ measures 5 cm; $\angle R = \angle S = 90^\circ$.
-8. A square; $AD$, $BC$ and $DC$ measure 5 cm.
-9. 12 cm; 30 cm.
-10. 8 squares.
-11. 12 cm by 8 cm.
-12. The other part is $70^\circ$.
-13. No — the parts must add up to $90^\circ$.
-14. $BC$ measures 8 cm.
-15. No such rectangle — the circle of radius 7 cm about $D$ only touches $l$ at $C$, so a 5 cm arc never reaches $l$.
-16. $R$ with $PR = QR = 6$ cm; with 2 cm the arcs only touch, on $PQ$, so there is no such point above it.
-17. $AM$ measures 4 cm.
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (c) 9 cm *(single correct)*
+2. (a) 9 cm, 6 cm *(single correct)*
+3. (b) 1 *(single correct)*
+4. (c) 2 *(single correct)*
+5. (d) 7 cm *(single correct)*
+6. (b) AD is perpendicular to AB and AD = 6 cm *(single correct)*
+7. (a), (c), (d) *(multiple correct)*
+8. (a), (c), (d) *(multiple correct)*
+9. (a), (c) *(multiple correct)*
+10. (a), (d) *(multiple correct)*
+11. 8.5 *(numerical answer)*
+12. 15 *(numerical answer)*
+13. 1 *(numerical answer)*
+14. (a) P–3, Q–4, R–2, S–1 *(matching)*
+15. (c) P–3, Q–1, R–2, S–4 *(matching)*
 
 ### Stage 3 · Practice
 

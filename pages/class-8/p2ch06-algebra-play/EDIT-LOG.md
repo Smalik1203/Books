@@ -1,5 +1,37 @@
 # Class 8 · Mathematics II · Chapter 6 — Why the Trick Always Works
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 18 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch06-algebra-play/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p114; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 4 |
+| 2 | Single correct | (b) 14 |
+| 3 | Single correct | (c) 75 |
+| 4 | Single correct | (d) 9 |
+| 5 | Single correct | (a) 75 |
+| 6 | Single correct | (b) 40 |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b), (d) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b), (c), (d) |
+| 11 | Numerical answer | 8 |
+| 12 | Numerical answer | 15 |
+| 13 | Numerical answer | 576 |
+| 14 | Matching | (c) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (b) P–3, Q–4, R–2, S–1 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 Four findings from the Beyond the Book syllabus audit, all confirmed. §6.7
@@ -249,3 +281,12 @@ Checked by script (PLAN §4.8) and accepted. Every rupee amount written as `₹$
 | p017 Exercise 6.5 Q1 | C4 | "Three shrines each have a magical pond … dips his flowers in the first pond and leaves **some** at the first shrine; dips what is left in the second pond and leaves **the same number** at the second shrine; dips what is left in the third pond and leaves **all of them**." The question then asks for the smallest starting number. As written, *some* is never pinned down and *the same number* points back to it, so the reader has two unknowns and one equation — the puzzle only works if the number left at each shrine is the same at all three, which the wording half-says. | One clause: "leaves the same number of flowers at each of the three shrines". The intended answer (7 flowers, 8 at each shrine) needs that reading. |
 | p018 Q8 | M2 | The four-shrine version, then "Do the same for $n$ shrines, and say what the two numbers have to do with powers of two." Generalising to $n$ needs the pattern $2^n$ and a sum of a geometric kind that the chapter never sets up — § 6.10's $2^n(x-c)+c$ is the closest, and it is a different shape (one charge repeated, not one charge at each of $n$ stops). Marked hard, which is honest, but hard is not the same as supported. | Either give the three- and four-shrine answers and ask only for the pattern, or add the line that connects it to § 6.10. |
 | p106 (built page 28) | — | 87% full, 27mm of white at the foot. Pre-existing; p106 untouched. | Recorded so it is not attributed to the language pass. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Algebra Play*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

@@ -2,116 +2,137 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>8.6.2 A shape that is a progression</h3>
+      <div class="c-figure c-figure--lg">
+                    <figure>
+                      <svg viewBox="0 0 160 78" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+                           role="img" aria-label="Bar chart of the bounce heights, each three quarters of the one before, falling below a sixth of the drop height at the seventh bounce">
+                  
+                        <g class="dg-axis"><path d="M16 66 H152"/><path d="M16 66 V6"/></g>
+                  
+                        <!-- a sixth of the drop height -->
+                        <path class="dg-ghost" d="M16 56 H152"/>
+                        <text class="dg-note" x="152" y="53" text-anchor="end">a sixth of 24 ft</text>
+                  
+                        <g class="dg-fill-b">
+                          <rect x="22"  y="6"    width="10" height="60"/>
+                          <rect x="38"  y="21"   width="10" height="45"/>
+                          <rect x="54"  y="32.3" width="10" height="33.7"/>
+                          <rect x="70"  y="40.7" width="10" height="25.3"/>
+                          <rect x="86"  y="47"   width="10" height="19"/>
+                          <rect x="102" y="51.8" width="10" height="14.2"/>
+                        </g>
+                        <g class="dg-fill-a">
+                          <rect x="118" y="55.3" width="10" height="10.7"/>
+                          <rect x="134" y="58"   width="10" height="8"/>
+                        </g>
+                        <g class="dg-line">
+                          <rect x="22"  y="6"    width="10" height="60"/>
+                          <rect x="38"  y="21"   width="10" height="45"/>
+                          <rect x="54"  y="32.3" width="10" height="33.7"/>
+                          <rect x="70"  y="40.7" width="10" height="25.3"/>
+                          <rect x="86"  y="47"   width="10" height="19"/>
+                          <rect x="102" y="51.8" width="10" height="14.2"/>
+                          <rect x="118" y="55.3" width="10" height="10.7"/>
+                          <rect x="134" y="58"   width="10" height="8"/>
+                        </g>
+                  
+                        <text class="dg-note" x="27"  y="74" text-anchor="middle">24</text>
+                        <text class="dg-note" x="43"  y="74" text-anchor="middle">18</text>
+                        <text class="dg-note" x="59"  y="74" text-anchor="middle">13.5</text>
+                        <text class="dg-note" x="123" y="74" text-anchor="middle">4.3</text>
+                        <text class="dg-note" x="139" y="74" text-anchor="middle">3.2</text>
+                        <text class="dg-note" x="8"   y="12">ft</text>
+                      </svg>
+                      <figcaption><span class="fignum">Fig. 8.9</span> Each bounce reaches three
+                      quarters of the last. The seventh is the first below a sixth of the
+                      drop.</figcaption>
+                    </figure>
+                  </div>
 
-      <p>Start with a paper triangle. Join the midpoints of its three sides, which cuts
-      it into four smaller triangles, and remove the middle one. Now do the same to each
-      of the three that remain. Then again, and again.</p>
+      <p>The chart makes the shape of a GP plain in a way the numbers do not. Each bar is
+                  three quarters of the one to its left, so the fall is steep at first and then
+                  gentles: the ball loses six feet on its first bounce and only a foot on its
+                  seventh. It never stops bouncing in the arithmetic, however — three quarters of a
+                  positive height is always positive — and it is friction, not the sequence, that
+                  brings the real ball to rest.</p>
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 240 66" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Stages 0 to 3 of the Sierpinski triangle, holding 1, 3, 9 and 27 black triangles">
-      
-            <!-- Stage 0 - 1: 0 holes -->
-            <path class="dg-fill-b" d="M30 12 L8 58 L52 58 Z"/>
-            <path class="dg-line" d="M30 12 L8 58 L52 58 Z"/>
-            <text class="dg-note" x="30" y="66" text-anchor="middle">Stage 0 &middot; 1</text>
+      <div class="c-practice">
+                    <div class="c-practice__head">Exercise Set 8.6</div>
+                    <ol class="c-questions">
+                      <li>Find the $10$th and the $n$th terms of the GP $5, 25, 125, \ldots$</li>
+                    </ol>
+                  </div>
 
-            <!-- Stage 1 - 3: 1 holes -->
-            <path class="dg-fill-b" d="M88 12 L66 58 L110 58 Z"/>
-            <g class="dg-fill-d">
-              <path d="M77 35 L99 35 L88 58 Z"/>
-            </g>
-            <path class="dg-line" d="M88 12 L66 58 L110 58 Z"/>
-            <path class="dg-thin" d="M77 35 L99 35 L88 58 Z"/>
-            <text class="dg-note" x="88" y="66" text-anchor="middle">Stage 1 &middot; 3</text>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="2">
+                      <li>The $8$th term of a GP with common ratio $2$ is $192$. Find its $12$th
+                        term.</li>
+                    </ol>
+                  </div>
 
-            <!-- Stage 2 - 9: 4 holes -->
-            <path class="dg-fill-b" d="M146 12 L124 58 L168 58 Z"/>
-            <g class="dg-fill-d">
-              <path d="M135 35 L157 35 L146 58 Z"/>
-              <path d="M140.5 23.5 L151.5 23.5 L146 35 Z"/>
-              <path d="M129.5 46.5 L140.5 46.5 L135 58 Z"/>
-              <path d="M151.5 46.5 L162.5 46.5 L157 58 Z"/>
-            </g>
-            <path class="dg-line" d="M146 12 L124 58 L168 58 Z"/>
-            <path class="dg-thin" d="M135 35 L157 35 L146 58 Z"/>
-            <text class="dg-note" x="146" y="66" text-anchor="middle">Stage 2 &middot; 9</text>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="3">
+                      <li>Which term of the GP $2, 6, 18, \ldots$ is $4374$? Write both the explicit
+                        and the recursive rule for its $n$th term.</li>
+                    </ol>
+                  </div>
 
-            <!-- Stage 3 - 27: 13 holes -->
-            <path class="dg-fill-b" d="M204 12 L182 58 L226 58 Z"/>
-            <g class="dg-fill-d">
-              <path d="M193 35 L215 35 L204 58 Z"/>
-              <path d="M198.5 23.5 L209.5 23.5 L204 35 Z"/>
-              <path d="M201.25 17.75 L206.75 17.75 L204 23.5 Z"/>
-              <path d="M195.75 29.25 L201.25 29.25 L198.5 35 Z"/>
-              <path d="M206.75 29.25 L212.25 29.25 L209.5 35 Z"/>
-              <path d="M187.5 46.5 L198.5 46.5 L193 58 Z"/>
-              <path d="M190.25 40.75 L195.75 40.75 L193 46.5 Z"/>
-              <path d="M184.75 52.25 L190.25 52.25 L187.5 58 Z"/>
-              <path d="M195.75 52.25 L201.25 52.25 L198.5 58 Z"/>
-              <path d="M209.5 46.5 L220.5 46.5 L215 58 Z"/>
-              <path d="M212.25 40.75 L217.75 40.75 L215 46.5 Z"/>
-              <path d="M206.75 52.25 L212.25 52.25 L209.5 58 Z"/>
-              <path d="M217.75 52.25 L223.25 52.25 L220.5 58 Z"/>
-            </g>
-            <path class="dg-line" d="M204 12 L182 58 L226 58 Z"/>
-            <path class="dg-thin" d="M193 35 L215 35 L204 58 Z"/>
-            <text class="dg-note" x="204" y="66" text-anchor="middle">Stage 3 &middot; 27</text>
-            </svg>
-          <figcaption><span class="fignum">Fig. 8.8</span> Four stages of the
-          Sierpiński triangle. Every shaded triangle becomes three at the next
-          stage.</figcaption>
-        </figure>
-      </div>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="4">
+                      <li>Check whether each of these is a GP, and if so find its $n$th term.
+                          <ol class="c-parts c-parts--1">
+                            <li>$2,\ 10,\ 50,\ 250,\ \ldots$</li>
+                            <li>$4,\ 2,\ 1,\ \tfrac12,\ \ldots$</li>
+                            <li>$3,\ 6,\ 9,\ 12,\ \ldots$</li>
+                          </ol>
+                        </li>
+                    </ol>
+                  </div>
 
-      <p>The number of shaded triangles goes $1, 3, 9, 27, \ldots$ — a GP with $a = 1$
-      and $r = 3$, because each one is replaced by three. At stage $n$ there are $3^n$ of
-      them, and by stage $10$ that is $59\,049$.</p>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="5">
+                      <li>A ball is dropped from $80$ metres and bounces back to $60\%$ of the height
+                        it fell from each time.
+                          <ol class="c-parts c-parts--1">
+                            <li>What height does it reach after the $5$th bounce?</li>
+                            <li>What total vertical distance has it travelled by the time it hits the
+                            ground for the $6$th time?</li>
+                          </ol>
+                        </li>
+                    </ol>
+                  </div>
 
-      <p>Now ask about the area instead. Take the whole triangle at stage $0$ to be one
-      square unit. Cutting it into four and throwing one away leaves $\tfrac34$ of it. Do
-      the same again and $\tfrac34$ of <em>that</em> is left, and so on:</p>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="6">
+                      <li class="hard">A sequence is given by $t_1 = 2$ and $t_{n+1} = 3t_n - 2$ for
+                        $n \geq 1$. Which term of the sequence is $730$?</li>
+                    </ol>
+                  </div>
 
-      <div class="work work--centred">
-        <p>$1, \quad \tfrac34, \quad \tfrac{9}{16}, \quad \tfrac{27}{64}, \ \ldots$</p>
-      </div>
+      <div class="c-practice c-practice--cont">
+                    
+                    <ol class="c-questions" data-start="7">
+                      <li>Find the first term of an AP whose $11$th term is $38$ and whose $16$th
+                        term is $73$.</li>
+                    </ol>
+                  </div>
 
-      <p>another GP, this one with $r = \tfrac34$, and its $n$th stage has area
-      $\left(\tfrac34\right)^n$.</p>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="8">
+                      <li>Find the AP whose third term is $16$ and whose $7$th term exceeds the
+                        $5$th by $12$.</li>
+                    </ol>
+                  </div>
 
-      <p>So the same figure carries two progressions at once, running opposite ways. The
-      number of triangles multiplies by $3$ and races away; the area they cover
-      multiplies by $\tfrac34$ and dwindles towards nothing. More and more pieces, less
-      and less paper.</p>
+      <div class="c-practice c-practice--cont">
+                    <ol class="c-questions" data-start="9">
+                      <li>How many three-digit numbers are divisible by $7$?
+                        <p class="hint">They form an AP. Find the smallest and the largest of
+                        them.</p>
+                        </li>
+                    </ol>
+                  </div>
 
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>A shape like this, which contains smaller copies of itself at every scale,
-          is called a <span class="term">fractal</span>. Zoom in on any corner of it and
-          you find the whole thing again.</p>
-        </div>
-      </div>
-
-      <p>The figure is named for <strong>Wacław Sierpiński</strong> (1882–1969), the
-      Polish mathematician who described it in 1915. Fractals are not only a curiosity of
-      paper and scissors. The branching of a tree, the florets of a cauliflower, the arms
-      of a snowflake and the ragged edge of a coastline all repeat themselves at
-      different scales in much the same way.</p>
-
-
-      <p>The two sequences in the figure are worth keeping together in mind, because
-      between them they show what a common ratio does. A ratio greater than $1$ runs
-      away: three, nine, twenty-seven, and by stage twenty there are more than three
-      thousand million triangles. A ratio less than $1$ closes down: the paper left is
-      three quarters, then a little over a half, and it goes on shrinking without ever
-      quite reaching nothing. Same rule, same figure, opposite directions.</p>
     </div>
   </div>
 </section>

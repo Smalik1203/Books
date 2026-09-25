@@ -203,7 +203,24 @@ Each question is explained in the running text straight after it. In short:
 
 ### Stage 2 · Solved Examples
 
-Worked on the page.
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 820 *(single correct)*
+2. (b) ₹700 *(single correct)*
+3. (c) $26\%$ *(single correct)*
+4. (d) ₹13 891.50 *(single correct)*
+5. (a) $35\%$ *(single correct)*
+6. (b) $60\%$ *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 40 *(numerical answer)*
+12. 51200 *(numerical answer)*
+13. 30 *(numerical answer)*
+14. (a) P–2, Q–4, R–3, S–1 *(matching)*
+15. (c) P–3, Q–4, R–2, S–1 *(matching)*
 
 ### Stage 3 · Practice
 

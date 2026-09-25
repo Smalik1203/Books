@@ -135,7 +135,7 @@ away evenly.
 
 ### The question in the running text
 
-*From Table 13.11, the 50th observation is 28 and the 51st observation is
+*From Table 13.12, the 50th observation is 28 and the 51st observation is
 29. (Why?)* The cumulative frequency up to 25 marks is 26 and up to 28 marks
 is 50, so the 27th to the 50th observations are all 28. The cumulative
 frequency up to 29 is 78, so the 51st to the 78th are all 29.
@@ -194,6 +194,27 @@ on the page: (1) 72, and 124 when the class marks are doubled;
 (2) $p = 5$, $q = 3$; (3) the mode is about 36; (4) median class 20 – 30,
 median 23.85; (5) mean ₹888.57, median ₹540, and the median describes a
 typical wage better.
+
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 15 *(single correct)*
+2. (b) 4.6 *(single correct)*
+3. (c) 20–30 *(single correct)*
+4. (d) 24.4 *(single correct)*
+5. (a) 26 *(single correct)*
+6. (b) 20–30 *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 24 *(numerical answer)*
+12. 5 *(numerical answer)*
+13. 25.8 *(numerical answer)*
+14. (a) P–3, Q–4, R–2, S–1 *(matching)*
+15. (b) P–3, Q–4, R–1, S–2 *(matching)*
 
 ### Stage 3 · Practice
 

@@ -265,15 +265,22 @@ async function buildCover(rel) {
 
   /* ISBN. The thirteenth digit is arithmetic, not data: recompute it
      and say so rather than printing a barcode that will not scan. */
-  const raw = String(meta.isbn ?? '').replace(/[^0-9]/g, '');
-  if (raw.length !== 13) throw new Error(`isbn "${meta.isbn}" is not 13 digits`);
-  const check = eanCheckDigit(raw);
-  const digits = raw.slice(0, 12) + check;
-  if (Number(raw[12]) !== check) {
-    console.warn(`    ! isbn check digit is ${raw[12]}, should be ${check}`
-      + ` — the barcode and the printed ISBN both use ${check}`);
+  /* A specimen copy is given away, not sold, so it carries no ISBN and
+     no barcode: "specimen": true with no isbn, and its back simply has
+     no <!--BARCODE--> or <!--ISBN--> to fill. Anything else still has
+     to have all thirteen digits. */
+  let digits = null, isbnPretty = '';
+  if (!(meta.specimen && meta.isbn === undefined)) {
+    const raw = String(meta.isbn ?? '').replace(/[^0-9]/g, '');
+    if (raw.length !== 13) throw new Error(`isbn "${meta.isbn}" is not 13 digits`);
+    const check = eanCheckDigit(raw);
+    digits = raw.slice(0, 12) + check;
+    if (Number(raw[12]) !== check) {
+      console.warn(`    ! isbn check digit is ${raw[12]}, should be ${check}`
+        + ` — the barcode and the printed ISBN both use ${check}`);
+    }
+    isbnPretty = meta.isbn.replace(/[0-9](?=[^0-9]*$)/, String(check));
   }
-  const isbnPretty = meta.isbn.replace(/[0-9](?=[^0-9]*$)/, String(check));
 
   const qr = await qrSvg(meta);
   if (!qr.real) {
@@ -283,7 +290,7 @@ async function buildCover(rel) {
   }
 
   body = body
-    .replace('<!--BARCODE-->', eanSvg(digits))
+    .replace('<!--BARCODE-->', digits ? eanSvg(digits) : '')
     .replace('<!--QR-->', qr.svg)
     .replace('<!--ISBN-->', escapeHtml(isbnPretty))
     .replace('<!--URL-->', escapeHtml(meta.url ?? ''));

@@ -1,5 +1,38 @@
 # Class 7 · Mathematics I · Chapter 1 — Living with Large Numbers
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/ch01-large-numbers/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (c) 300 crore |
+| 2 | Single correct | (b) 5,00,00,000 |
+| 3 | Single correct | (a) 9 or 10 |
+| 4 | Single correct | (b) about 4 months |
+| 5 | Single correct | (d) 90,00,000 |
+| 6 | Single correct | (a) 6,99,93,000 |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 62000 |
+| 12 | Numerical answer | 23 |
+| 13 | Numerical answer | 36000 |
+| 14 | Matching | (c) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (a) P–4, Q–1, R–2, S–3 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Beyond the Book checked against what the chapter body teaches. The chapter
@@ -228,3 +261,12 @@ by merging the million/billion point into the first.
 
 `orphans`, `check-labels` and `fit-options` all clean; `fit-options --fix`
 narrowed six option lists once, early.
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Large Numbers Around Us*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

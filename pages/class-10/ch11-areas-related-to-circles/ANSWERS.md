@@ -109,6 +109,27 @@ unchanged; (3) $\frac{1}{11}$; (4) 77 cm²; (5) no — the two triangles are
 equal, $\frac{\sqrt{3}}{4}r^2$ each, so the $120^\circ$ segment is more than
 twice the $60^\circ$ one.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $38.5 \text{ cm}^2$ *(single correct)*
+2. (b) 22 cm *(single correct)*
+3. (c) $154 \text{ cm}^2$ *(single correct)*
+4. (d) $28.5 \text{ cm}^2$ *(single correct)*
+5. (a) 25 cm *(single correct)*
+6. (b) $60^\circ$ *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 308 *(numerical answer)*
+12. 44 *(numerical answer)*
+13. 56 *(numerical answer)*
+14. (a) P–3, Q–4, R–2, S–1 *(matching)*
+15. (b) P–3, Q–4, R–1, S–2 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

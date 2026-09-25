@@ -140,6 +140,27 @@ on the page: (1) 112 cm²; (2) the volumes are in the ratio $1 : 2 : 3$;
 (3) the cone is 2 cm tall; (4) the surface area is 4 times as large and the volume 8 times;
 (5) the surface area goes up, by $\pi r^2$.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $1540 \text{ cm}^3$ *(single correct)*
+2. (b) $66 \text{ cm}^3$ *(single correct)*
+3. (c) $19404 \text{ cm}^3$ *(single correct)*
+4. (d) $160 \text{ cm}^2$ *(single correct)*
+5. (a) $220 \text{ cm}^2$ *(single correct)*
+6. (b) 9 cm *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 616 *(numerical answer)*
+12. 1540 *(numerical answer)*
+13. 27 *(numerical answer)*
+14. (c) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

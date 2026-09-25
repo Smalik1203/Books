@@ -2,42 +2,6 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 8.1</div>
-        <ol class="c-questions">
-          <li>Write the next three terms of each sequence, and say in a sentence what
-              rule you used.
-              <ol class="c-parts c-parts--1">
-                <li>$2,\ 6,\ 10,\ 14,\ \ldots$</li>
-                <li>$1,\ 2,\ 4,\ 8,\ \ldots$</li>
-                <li>$100,\ 91,\ 82,\ 73,\ \ldots$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Using the notation above, write $t_5$, $t_6$, $t_7$ and $t_8$ for the
-            sequence of triangular numbers.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The sixth square number is $36$ and the seventh is $49$. Without adding the
-            odd numbers from the start, say what the difference between them must be, and
-            why.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Give a finite sequence of four terms and an infinite one that begins with
-            the same four terms. What, if anything, in the numbers tells them apart?</li>
-        </ol>
-      </div>
-
       <h2><span class="badge">8.2</span><span class="name">The Explicit Rule</span></h2>
 
       <p>Suppose you are asked for the $53$rd odd number. You could write the odd numbers
@@ -71,6 +35,51 @@
         <p>An explicit rule gives $t_n$ in terms of $n$ alone. Put a position in, get
         that term out — whatever the position, and without finding any other term
         first.</p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A sequence is given by $u_n = 2n - 1$. Write its first three terms.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$u_1 = 2 \times 1 - 1 = 1$</span>
+              <span class="work__why">substitute $n = 1$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$u_2 = 2 \times 2 - 1 = 3$</span>
+              <span class="work__why">then $2$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$u_3 = 2 \times 3 - 1 = 5$</span>
+              <span class="work__why">then $3$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The sequence begins $1, 3, 5$ — the odd numbers, as expected</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>8.2.1 Reading the rule backwards</h3>
+
+      <p>An explicit rule is an equation, and an equation can be read in either
+      direction. Forwards it turns a position into a term. Backwards it answers a
+      different and more interesting question: <em>is this number in the sequence at
+      all, and if so, where?</em></p>
+
+      <p>Take $137$. Is it an odd number — and if it is, which one? Solve $t_n = 137$:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">set</span>
+          <span>$2n - 1 = 137$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$2n = 138$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">and</span>
+          <span>$n = 69$</span>
+        </div>
       </div>
 
     </div>

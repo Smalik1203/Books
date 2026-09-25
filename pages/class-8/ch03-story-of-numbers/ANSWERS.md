@@ -294,6 +294,27 @@ base 12; one egg more than $3$ gross, $11$ dozen and $11$ is $400$ in base 12,
 which is $576$; (7) seven symbols against ten; (8)
 $212 = 1322_{\,5}$, the same digits largest landmark first.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) MDCXLIX *(single correct)*
+2. (b) 2496 *(single correct)*
+3. (c) 6561 *(single correct)*
+4. (d) 397 *(single correct)*
+5. (a) 53 *(single correct)*
+6. (b) $10201_{3}$ *(single correct)*
+7. (a), (c) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (c), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 14 *(numerical answer)*
+12. 6 *(numerical answer)*
+13. 700309 *(numerical answer)*
+14. (b) P–2, Q–4, R–3, S–1 *(matching)*
+15. (c) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

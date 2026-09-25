@@ -1,5 +1,40 @@
 # Class 7 · Mathematics II · Chapter 6 — Constructions and Tilings
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 18 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/p2ch06-constructions/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p110; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p009: “Remember the fact behind that method:” became “Recall why:”, and step 2 of the parallel-line construction was set as one sentence (“Draw an arc from A cutting m at C and l at D, and one of the same radius from B cutting l at F.”), to pull back the lines that ran 6.3mm into the margin.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 7 cm |
+| 2 | Single correct | (b) 75° |
+| 3 | Single correct | (c) a regular hexagon, each angle 120° |
+| 4 | Single correct | (d) the square in row 1, column 1 |
+| 5 | Single correct | (b) 2 |
+| 6 | Single correct | (d) 3 cm |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 4 |
+| 12 | Numerical answer | 24 |
+| 13 | Numerical answer | 22.5 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (a) P–3, Q–4, R–2, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two findings, both gaps, both fixed with a new Solved Example. The examples

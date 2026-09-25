@@ -155,7 +155,7 @@ same digits, but 9950 is 360 more.
 
 ## 3.4 Playing with Digits
 
-**Table 3.1.** There are **9** 1-digit numbers, **90** 2-digit numbers,
+**Table 3.10.** There are **9** 1-digit numbers, **90** 2-digit numbers,
 **900** 3-digit numbers, **9000** 4-digit numbers and **90,000** 5-digit
 numbers. Each count is ten times the one before.
 
@@ -275,7 +275,7 @@ again.
 
 ## 3.8 Mental Maths
 
-**Fig. 3.12, the other side numbers.** *Answers will vary.* One way for
+**Fig. 3.14, the other side numbers.** *Answers will vary.* One way for
 each:
 
 - $28000 = 25000 + 1500 + 1500$
@@ -285,7 +285,7 @@ each:
 - $19500 = 13000 + 1500 + 1500 + 1500 + 400 + 400 + 400 + 400 + 400$
 - $20900 = 13000 + 1500 + 1500 + 1500 + 1500 + 1500 + 400$
 
-### Think and Reflect (after Fig. 3.12)
+### Think and Reflect (after Fig. 3.14)
 
 1. **No.** Only 400 and 1,500 are smaller than 1,000. 400 twice is 800,
    400 three times is 1,200, and 1,500 alone is already too big, so 1,000
@@ -297,7 +297,7 @@ each:
    every larger thousand, so 1,000 is the only thousand that cannot be
    made.
 
-### Adding and subtracting (Table 3.3)
+### Adding and subtracting (Table 3.15)
 
 *Answers will vary.* One way for each:
 
@@ -472,29 +472,24 @@ and 5 and 32 in exactly 5 steps.
 
 ### Stage 2 · Solved Examples
 
-Beyond the Book numbers its examples from 1 again, as every Class 7
-chapter does; the chapter body keeps its own Examples 1 to 4. The book
-prints the working; these are the answers, as its Answer rows give them.
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
 
-1. 1, 0, 2, 0, 1, 1
-2. 7
-3. The 1st, 3rd or 5th child could be the tallest, and the 2nd or 4th the shortest
-4. 9, 8, 7 and 6
-5. 43, 44, 45, and so on up to 56: fourteen numbers
-6. 7,060 at the 1st mark and 7,150 at the 10th
-7. 6789
-8. $9 + 180 + 3 = 192$ digits
-9. 4 steps, ending at 4884
-10. 6336, and $6 + 3 + 3 + 6 = 18$
-11. 5 rounds
-12. 3:03, which is 11 minutes later
-13. 03/02/2030
-14. $26{,}900 = 10{,}000 + 10{,}000 + 2{,}500 + 2{,}500 + 2{,}500 - 600$
-15. The sum has either 4 digits or 5 digits, and never 3 or 6.
-16. $750 + 50 = 800$
-17. 10 steps from 24, and 11 steps from 48
-18. About 1400 people
-19. The first player, by saying 4, 10, 16, 22, 28, 34 and 40
+1. (b) 6462 *(single correct)*
+2. (a) 575 *(single correct)*
+3. (b) 4086 *(single correct)*
+4. (d) 5 *(single correct)*
+5. (b) 3 *(single correct)*
+6. (b) 4749 *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (c), (d) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 5 *(numerical answer)*
+12. 245 *(numerical answer)*
+13. 2 *(numerical answer)*
+14. (c) P–3, Q–4, R–2, S–1 *(matching)*
+15. (b) P–4, Q–3, R–2, S–1 *(matching)*
 
 ### Stage 3 · Practice
 

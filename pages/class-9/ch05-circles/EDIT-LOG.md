@@ -1,5 +1,40 @@
 # Class 9 · Mathematics I · Chapter 5 — Exploring Circles
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch05-circles/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+Also, same day. Figs. 5.18 to 5.21 belonged to the old examples and were the last figures in the chapter, so nothing was renumbered.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 2 |
+| 2 | Single correct | (b) $70^\circ$ |
+| 3 | Single correct | (c) outside the triangle |
+| 4 | Single correct | (d) 12 cm |
+| 5 | Single correct | (a) $50^\circ$ |
+| 6 | Single correct | (b) $40^\circ$ |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 50 |
+| 12 | Numerical answer | 20 |
+| 13 | Numerical answer | 30 |
+| 14 | Matching | (b) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (c) P–3, Q–4, R–1, S–2 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Chapter 6 model.
@@ -270,3 +305,12 @@ Worst first.
 | p022 Q2, p032 Q9 | M2 | **Two answers come out as surds in a chapter whose numbers are otherwise all Pythagorean triples.** Exercise Set 5.5 Q2: radius $7$, distance $6$, so the chord is $2\sqrt{13} \approx 7.21$ cm — the only question in that set of eight that does not resolve. End-of-Chapter Q9 is worse, because it is an instruction: "**Draw** a circle in which a chord of length $6$ cm stands $3$ cm from the centre. What must the radius be?" — $3\sqrt{2} \approx 4.24$ cm, to be set on a pair of compasses. Every worked example and every other exercise in the chapter uses 3-4-5, 5-12-13, 8-15-17, 7-24-25 or 20-21-29. | Either say the answer will not come out whole, or change the numbers. This is the same fault as Class 8 Part II Ch 7 Q9, and it has the same effect: a student who has met nothing but triples reads a surd as a mistake. |
 | p001, p006 | C3 | "In earlier **grades** you worked with triangles and quadrilaterals" (p001) and "You met the answer in an earlier **grade**" (p006). Class 8's volumes say *Class*. This is the **fourth** Class 9 chapter with the same slip — Ch 1 (four places), Ch 2, Ch 4, now Ch 5. | One word, book-wide. See CROSS-CHAPTER.md. |
 | p034, p113 | — | p034 is **57%** full (the twelve results plus the closing tip) and p113 is **45%** (four distractor notes). Both are exempt — p034 carries `data-close`, p113 is the last page — and both are reasonable closing leaves. **Not a fault**; recorded because the fill map makes them look like one. | Nothing, unless the twelve-result box would rather sit under the summary on p033, which is at 99%. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *I’m Up and Down, and Round and Round*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

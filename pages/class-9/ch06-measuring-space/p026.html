@@ -1,0 +1,123 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h3>The familiar formula in use today</h3>
+
+      <p>The ancient Greeks also knew that $\dfrac{A}{r^2}$ is a constant, but did not
+      know what that constant was. As you have seen, two different civilisations took it
+      to be about $\dfrac{256}{81}$.</p>
+
+      <p>Finally, in about $250$ BCE, Archimedes showed that the constant is exactly
+      $\pi$ — the same constant that appears in the formula for the perimeter of a
+      circle! So $A = \pi r^2$. He put it this way: “The area of a circle is equal to the
+      area of a right-angled triangle whose two shorter sides are equal to the radius and
+      to the circumference of the circle.” That is,</p>
+
+      <div class="eq eq--anchor">$$\text{area of circle} = \frac{1}{2} \times \text{circumference} \times \text{radius} = \frac{1}{2} \times 2\pi r \times r = \pi r^2.$$</div>
+
+      <p>Archimedes’ proof is very clever. It uses a property shared by all regular
+      polygons: the area of a regular polygon is half its perimeter times the radius of
+      the circle that fits tightly inside it (Fig. 6.36). (This is proved in the same way
+      as the formula for the area of a triangle in terms of the radius of its
+      incircle.)</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="5 25 355 110" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A regular triangle, a regular pentagon and a regular octagon, each with the circle that fits tightly inside it. In each, the radius r from the centre O to the middle of the bottom side is drawn.">
+            <path class="dg-fill-a-soft" d="M70 35 L121.96 125 L18.04 125 Z"/>
+            <path class="dg-fill-a-soft" d="M195 57.92 L230.27 83.54 L216.8 125 L173.2 125 L159.73 83.54 Z"/>
+            <path class="dg-fill-a-soft" d="M340 107.43 L322.43 125 L297.57 125 L280 107.43 L280 82.57 L297.57 65 L322.43 65 L340 82.57 Z"/>
+            <path class="dg-line" d="M70 35 L121.96 125 L18.04 125 Z"/>
+            <path class="dg-line" d="M195 57.92 L230.27 83.54 L216.8 125 L173.2 125 L159.73 83.54 Z"/>
+            <path class="dg-line" d="M340 107.43 L322.43 125 L297.57 125 L280 107.43 L280 82.57 L297.57 65 L322.43 65 L340 82.57 Z"/>
+            <circle class="dg-hidden" cx="70" cy="95" r="30"/>
+            <circle class="dg-hidden" cx="195" cy="95" r="30"/>
+            <circle class="dg-hidden" cx="310" cy="95" r="30"/>
+            <path class="dg-dim" d="M70 95 V125 M195 95 V125 M310 95 V125"/>
+            <circle class="dg-fill-teal" cx="70" cy="95" r="2"/>
+            <circle class="dg-fill-teal" cx="195" cy="95" r="2"/>
+            <circle class="dg-fill-teal" cx="310" cy="95" r="2"/>
+            <text class="dg-label" x="70" y="89" text-anchor="middle">O</text>
+            <text class="dg-label" x="195" y="89" text-anchor="middle">O</text>
+            <text class="dg-label" x="310" y="89" text-anchor="middle">O</text>
+            <text class="dg-dim-label" x="74" y="115">r</text>
+            <text class="dg-dim-label" x="199" y="115">r</text>
+            <text class="dg-dim-label" x="314" y="115">r</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.36</span> The area of a regular polygon is
+          $\frac{1}{2} \times$ perimeter of the polygon $\times$ radius.</figcaption>
+        </figure>
+      </div>
+
+      <p>Archimedes did a thought experiment. He asked what happens as the number of
+      sides of the regular polygon grows larger and larger. Working out the details, he
+      arrived at $A = \pi r^2$.</p>
+
+      <p>Perhaps the most visual and easy-to-understand explanation of why a circle of
+      radius $r$ has area $\pi r^2$ was first given by Nīlakaṇṭha Somayājī (c. $1500$), in
+      his commentary on the <em>Āryabhaṭīya</em> (Fig. 6.37).</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="5 10 300 105" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="(A) A circle cut into sixteen equal slices, shaded alternately. (B) The same sixteen slices laid side by side, alternately pointing up and down, making a shape close to a parallelogram whose base is half the circumference, pi r, and whose height is the radius r.">
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L105 62 A45 45 0 0 1 101.57 79.22 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L101.57 79.22 A45 45 0 0 1 91.82 93.82 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L91.82 93.82 A45 45 0 0 1 77.22 103.57 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L77.22 103.57 A45 45 0 0 1 60 107 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L60 107 A45 45 0 0 1 42.78 103.57 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L42.78 103.57 A45 45 0 0 1 28.18 93.82 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L28.18 93.82 A45 45 0 0 1 18.43 79.22 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L18.43 79.22 A45 45 0 0 1 15 62 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L15 62 A45 45 0 0 1 18.43 44.78 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L18.43 44.78 A45 45 0 0 1 28.18 30.18 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L28.18 30.18 A45 45 0 0 1 42.78 20.43 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L42.78 20.43 A45 45 0 0 1 60 17 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L60 17 A45 45 0 0 1 77.22 20.43 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L77.22 20.43 A45 45 0 0 1 91.82 30.18 Z"/>
+            <path class="dg-thin dg-fill-a-soft" d="M60 62 L91.82 30.18 A45 45 0 0 1 101.57 44.78 Z"/>
+            <path class="dg-thin dg-fill-c-soft" d="M60 62 L101.57 44.78 A45 45 0 0 1 105 62 Z"/>
+            <circle class="dg-line" cx="60" cy="62" r="45"/>
+            <g transform="translate(0 20)">
+              <path class="dg-thin dg-fill-a-soft" d="M140 20 L131.22 64.14 A45 45 0 0 0 148.78 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M148.78 65 L157.56 20.86 A45 45 0 0 0 140 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M157.56 20 L148.78 64.14 A45 45 0 0 0 166.34 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M166.34 65 L175.12 20.86 A45 45 0 0 0 157.56 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M175.12 20 L166.34 64.14 A45 45 0 0 0 183.9 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M183.9 65 L192.68 20.86 A45 45 0 0 0 175.12 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M192.67 20 L183.89 64.14 A45 45 0 0 0 201.45 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M201.45 65 L210.23 20.86 A45 45 0 0 0 192.67 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M210.23 20 L201.45 64.14 A45 45 0 0 0 219.01 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M219.01 65 L227.79 20.86 A45 45 0 0 0 210.23 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M227.79 20 L219.01 64.14 A45 45 0 0 0 236.57 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M236.57 65 L245.35 20.86 A45 45 0 0 0 227.79 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M245.35 20 L236.57 64.14 A45 45 0 0 0 254.13 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M254.13 65 L262.91 20.86 A45 45 0 0 0 245.35 20.86 Z"/>
+              <path class="dg-thin dg-fill-a-soft" d="M262.91 20 L254.13 64.14 A45 45 0 0 0 271.69 64.14 Z"/>
+              <path class="dg-thin dg-fill-c-soft" d="M271.69 65 L280.47 20.86 A45 45 0 0 0 262.91 20.86 Z"/>
+              <path class="dg-dim" d="M286 20 V65"/>
+            </g>
+            <text class="dg-dim-label" x="206" y="100" text-anchor="middle">πr</text>
+            <text class="dg-dim-label" x="290" y="66">r</text>
+            <text class="dg-note" x="14" y="24" text-anchor="middle">(A)</text>
+            <text class="dg-note" x="206" y="30" text-anchor="middle">(B)</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.37</span> The slices of a circle can be
+          rearranged into a shape close to a parallelogram.</figcaption>
+        </figure>
+      </div>
+
+      <p>As the slices are made thinner and thinner, the arcs in Fig. 6.37B come closer and
+      closer to straight lines. The figure comes closer and closer to a parallelogram
+      with</p>
+
+      <div class="work work--list">
+        <p>base $=$ half the circumference $= \pi r$ (why?),</p>
+        <p>height $=$ the radius $r$.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

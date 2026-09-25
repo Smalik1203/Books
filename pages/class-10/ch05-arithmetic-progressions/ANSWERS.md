@@ -292,6 +292,27 @@ and common difference 6; (4) no — the sum of the first $n$ even numbers is
 $n(n + 1)$, and 200 lies between 182 and 210; (5) the middle angle is
 $60^\circ$.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 47 *(single correct)*
+2. (b) 16 *(single correct)*
+3. (c) 590 *(single correct)*
+4. (d) $-2$ *(single correct)*
+5. (a) 203 *(single correct)*
+6. (b) 11 *(single correct)*
+7. (b), (c) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 4920 *(numerical answer)*
+12. 860 *(numerical answer)*
+13. 15 *(numerical answer)*
+14. (a) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–3, Q–1, R–4, S–2 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

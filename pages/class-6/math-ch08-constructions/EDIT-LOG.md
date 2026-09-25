@@ -1,5 +1,38 @@
 # Class 6 · Mathematics I · Chapter 8 — Playing with Constructions
 
+## Solved examples in examination formats, 20 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 17 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-6/math-ch08-constructions/`.
+
+Source `build/jee-class6.mjs`; check `build/check-jee-class6.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (c) 9 cm |
+| 2 | Single correct | (a) 9 cm, 6 cm |
+| 3 | Single correct | (b) 1 |
+| 4 | Single correct | (c) 2 |
+| 5 | Single correct | (d) 7 cm |
+| 6 | Single correct | (b) AD is perpendicular to AB and AD = 6 cm |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (a), (c), (d) |
+| 9 | Multiple correct | (a), (c) |
+| 10 | Multiple correct | (a), (d) |
+| 11 | Numerical answer | 8.5 |
+| 12 | Numerical answer | 15 |
+| 13 | Numerical answer | 1 |
+| 14 | Matching | (a) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (c) P–3, Q–1, R–2, S–4 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 The Beyond the Book audit made four findings here. I confirmed the first three against the pages and fixed them. The fourth (a gap row) named three topics: two now have examples, and the third is left, for the reason given below. The chapter body was not touched.
@@ -172,3 +205,11 @@ answer rows were shortened to keep the Answers page inside the margin.
 ### Not changed
 
 The body: every page, every figure, every step of every construction.
+
+
+## 20 September 2026 — reference numbering and reading order
+
+- Figures and tables now share one chapter sequence; caption labels and prose references were migrated together, including cross-chapter references within Class 6.
+- Dependent text and diagrams are kept together with c-figure-context where the revised layout needs it. The final bound-book audit distinguishes facing pages from page turns.
+- Source content was checked against build/_class6-reference-before. All questions, worked mathematics and illustrations were preserved. The Data Handling closing paragraph alone was shortened to avoid an isolated final page.
+- Validation and mapping: build/_class6-reference-checks; reproducible source check: build/check-class6-reference-revision.mjs.

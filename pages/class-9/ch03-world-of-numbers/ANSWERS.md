@@ -301,6 +301,27 @@ terminates; Q3 $x$ is irrational, since $\sqrt{2} = x^2 - 1$ otherwise; Q4
 $0.4\overline{27} = \tfrac{423}{990} = \tfrac{47}{110}$; Q5 no, $\tfrac{5}{14}$
 lies between $\tfrac{2}{7}$ and $\tfrac{3}{7}$.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 44 *(single correct)*
+2. (b) $\frac{13}{8}$ *(single correct)*
+3. (c) It terminates after 4 places. *(single correct)*
+4. (d) $\frac{41}{333}$ *(single correct)*
+5. (a) $\frac{106}{45}$ *(single correct)*
+6. (b) $(\sqrt{3} - \sqrt{2})(\sqrt{3} + \sqrt{2})$ *(single correct)*
+7. (a), (d) *(multiple correct)*
+8. (a), (c), (d) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 145 *(numerical answer)*
+12. 9 *(numerical answer)*
+13. 166464 *(numerical answer)*
+14. (d) P–3, Q–4, R–1, S–2 *(matching)*
+15. (b) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice — the key, as the key prints it
 
 1 (b) &nbsp; 2 (c) &nbsp; 3 (d) &nbsp; 4 (a) &nbsp; 5 (d) &nbsp; 6 (a) &nbsp; 7 (b) &nbsp; 8 (c) &nbsp; 9 (d) &nbsp; 10 (b) &nbsp; 11 (c) &nbsp; 12 (d) &nbsp; 13 (a) &nbsp; 14 (b) &nbsp; 15 (a) &nbsp; 16 (a) &nbsp; 17 (d) &nbsp; 18 (b) &nbsp; 19 (c)

@@ -156,6 +156,27 @@ Each of the five questions is answered in the running text that follows it
 on the page: (1) $AB = AC = 5$ and $BC = \sqrt{50}$, a right angle at A;
 (2) $(3, 4)$; (3) $3 : 4$; (4) $D(4, 3)$; (5) no such point.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $2\sqrt{2}$ *(single correct)*
+2. (b) $(1, 3)$ *(single correct)*
+3. (c) $(1.5, 1)$ *(single correct)*
+4. (d) $(-7, 0)$ *(single correct)*
+5. (a) $5 : 1$ *(single correct)*
+6. (b) 4 *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 13 *(numerical answer)*
+12. 13 *(numerical answer)*
+13. 24 *(numerical answer)*
+14. (a) P–3, Q–4, R–2, S–1 *(matching)*
+15. (d) P–3, Q–4, R–1, S–2 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

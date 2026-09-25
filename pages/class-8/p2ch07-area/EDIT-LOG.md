@@ -1,5 +1,40 @@
 # Class 8 · Mathematics II · Chapter 7 — The Same Area, a Different Shape
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 17 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch07-area/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p114; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p014: “That is exactly why” became “That is why”, to pull back a line that ran 4.5mm into the margin. Practice p112: its last block moved to p113 (settle.mjs); no words changed.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) the square, by $20.25 \text{ m}^2$ |
+| 2 | Single correct | (b) 180 |
+| 3 | Single correct | (c) 7.2 cm |
+| 4 | Single correct | (d) 6 cm |
+| 5 | Single correct | (a) $336 \text{ cm}^2$ |
+| 6 | Single correct | (b) 7 m |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 24 |
+| 12 | Numerical answer | 2 |
+| 13 | Numerical answer | 168 |
+| 14 | Matching | (a) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (d) P–3, Q–4, R–2, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two findings from the Beyond the Book syllabus audit, both confirmed and
@@ -264,3 +299,7 @@ Checked by script (PLAN §4.8) and accepted. The agent's stand-in files for the 
 | p001, p010, p014 | C5 | Part I is referred to three times as "**the first book**" — "The first book found the area of a trapezium by doubling it", "Two facts from the first book's chapter on quadrilaterals", "the first book turned into a parallelogram by doubling it". Every other chapter in this volume names Part I by chapter: "Chapter 6 of Part I said…" (Ch 1), "Part I's Chapter 5 established why" (Ch 3), "Part I's formula $2(lb+bh+hl)$" (Ch 4). A reader told *the first book* has a whole volume to search. | Name the chapters: Part I Chapter 7 for the trapezium and Part I Chapter 5 for the quadrilateral facts. |
 | p011 | M1 | "Chapter 2's theorem makes the side $\sqrt{100 + 56.25} = 12.5$" — correct, and the first place in this chapter that a surd-shaped root appears. It resolves to exactly 12.5, so nothing is left unresolved, but Exercise 7.2 Q5 then asks for the side of a rhombus with diagonals 24 and 10 (side 13, fine) and Q9 asks for the side of *any* rhombus of area 96 cm², where most choices of diagonal give a root that does not come out. | Q9 is marked hard and is a genuine investigation, so this may be intended — but it should say that the sides will mostly be awkward, or ask for them to two decimal places. As written a student may think they have gone wrong. |
 | p001, p002 (built pages 1 and 2) | — | 84% and 87% full, with 29mm and 27mm of white at the foot. **Pre-existing** — only p005 was touched by this edit. | Two short pages at the very start of the chapter, which is where they show most. `refit body` would close them. Recorded so they are not attributed to the language pass. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Area*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

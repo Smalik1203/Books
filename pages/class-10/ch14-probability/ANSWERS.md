@@ -118,7 +118,7 @@ equally likely outcomes, written in lowest terms.
     - (i) $\frac{124}{144} = \frac{31}{36}$
     - (ii) $\frac{20}{144} = \frac{5}{36}$
 
-22. - (i) From Table 14.1, the numbers of outcomes for the sums 2 to 12 are
+22. - (i) From Table 14.3, the numbers of outcomes for the sums 2 to 12 are
       1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, so the probabilities are
       $\frac{1}{36}$, $\frac{2}{36}$, $\frac{3}{36}$, $\frac{4}{36}$,
       $\frac{5}{36}$, $\frac{6}{36}$, $\frac{5}{36}$, $\frac{4}{36}$,
@@ -148,6 +148,27 @@ equally likely outcomes, written in lowest terms.
 Each of the five questions is answered in the running text that follows it
 on the page: (1) $\frac{3}{4}$; (2) $\frac{7}{13}$; (3) $\frac{3}{8}$;
 (4) 18 blue balls; (5) $\frac{1}{3}$.
+
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $\frac{1}{2}$ *(single correct)*
+2. (b) $\frac{3}{4}$ *(single correct)*
+3. (c) $\frac{1}{13}$ *(single correct)*
+4. (d) 0.65 *(single correct)*
+5. (a) $\frac{5}{36}$ *(single correct)*
+6. (b) $\frac{3}{8}$ *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b) *(multiple correct)*
+10. (a), (b), (c), (d) *(multiple correct)*
+11. 6 *(numerical answer)*
+12. 5 *(numerical answer)*
+13. 0.95 *(numerical answer)*
+14. (c) P–3, Q–4, R–2, S–1 *(matching)*
+15. (d) P–4, Q–1, R–3, S–2 *(matching)*
 
 ### Stage 3 · Practice
 

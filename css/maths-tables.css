@@ -1,0 +1,27 @@
+/* Maths reference material: a complete cell grid and a quiet header tint.
+   Shared by chapter proofs and bound books; science retains its own design. */
+.c-figure-context {
+  display: flow-root;
+  break-inside: avoid;
+}
+
+.page__main table {
+  border: var(--stroke-hair) solid var(--gold);
+}
+.page__main table th,
+.page__main table td,
+.page__main table tbody tr:last-child td,
+.page__main table tfoot td,
+.page__main table:has(tfoot) tbody tr:last-child td {
+  border: var(--stroke-hair) solid var(--gold);
+}
+.page__main table th {
+  background: var(--gold-tint);
+  color: var(--gold-deep);
+}
+.page__main table caption {
+  caption-side: bottom;
+  padding-top: var(--space-hair);
+  padding-bottom: 0;
+  color: var(--ink-soft);
+}

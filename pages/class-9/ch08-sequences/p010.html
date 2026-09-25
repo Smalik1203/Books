@@ -2,120 +2,103 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">8.4</span><span class="name">Arithmetic Progressions</span></h2>
-
-      <p>Some sequences follow no clear rule at all — the primes are the standing
-      example. Others follow the simplest rule there is. This section is about those:
-      the sequences that go up, or down, by the same amount every time.</p>
-
-      <p>Here is a pattern of tiles that grows in stages.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 240 76" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Four stages of a growing pattern of squares, holding 1, 5, 9 and 13 tiles">
-      
-            <!-- stage 1 -->
-            <rect class="dg-fill-b" x="20" y="34" width="8" height="8"/>
-            <rect class="dg-line"   x="20" y="34" width="8" height="8"/>
-            <text class="dg-note" x="24" y="60" text-anchor="middle">Stage 1</text>
-            <text class="dg-label dg-label--sm" x="24" y="72" text-anchor="middle">1</text>
-      
-            <!-- stage 2: four added at the corners -->
-            <rect class="dg-fill-b" x="76" y="34" width="8" height="8"/>
-            <rect class="dg-line"   x="76" y="34" width="8" height="8"/>
-            <g class="dg-fill-a">
-              <rect x="68" y="34" width="8" height="8"/><rect x="84" y="34" width="8" height="8"/>
-              <rect x="76" y="26" width="8" height="8"/><rect x="76" y="42" width="8" height="8"/>
-            </g>
-            <g class="dg-line">
-              <rect x="68" y="34" width="8" height="8"/><rect x="84" y="34" width="8" height="8"/>
-              <rect x="76" y="26" width="8" height="8"/><rect x="76" y="42" width="8" height="8"/>
-            </g>
-            <text class="dg-note" x="80" y="60" text-anchor="middle">Stage 2</text>
-            <text class="dg-label dg-label--sm" x="80" y="72" text-anchor="middle">5</text>
-      
-            <!-- stage 3 -->
-            <g class="dg-fill-b">
-              <rect x="140" y="34" width="8" height="8"/><rect x="132" y="34" width="8" height="8"/>
-              <rect x="148" y="34" width="8" height="8"/><rect x="140" y="26" width="8" height="8"/>
-              <rect x="140" y="42" width="8" height="8"/>
-            </g>
-            <g class="dg-fill-a">
-              <rect x="124" y="34" width="8" height="8"/><rect x="156" y="34" width="8" height="8"/>
-              <rect x="140" y="18" width="8" height="8"/><rect x="140" y="50" width="8" height="8"/>
-            </g>
-            <g class="dg-line">
-              <rect x="140" y="34" width="8" height="8"/><rect x="132" y="34" width="8" height="8"/>
-              <rect x="148" y="34" width="8" height="8"/><rect x="140" y="26" width="8" height="8"/>
-              <rect x="140" y="42" width="8" height="8"/>
-              <rect x="124" y="34" width="8" height="8"/><rect x="156" y="34" width="8" height="8"/>
-              <rect x="140" y="18" width="8" height="8"/><rect x="140" y="50" width="8" height="8"/>
-            </g>
-            <text class="dg-note" x="144" y="66" text-anchor="middle">Stage 3</text>
-      
-            <!-- stage 4 -->
-            <g class="dg-fill-b">
-              <rect x="208" y="34" width="8" height="8"/><rect x="200" y="34" width="8" height="8"/>
-              <rect x="216" y="34" width="8" height="8"/><rect x="208" y="26" width="8" height="8"/>
-              <rect x="208" y="42" width="8" height="8"/><rect x="192" y="34" width="8" height="8"/>
-              <rect x="224" y="34" width="8" height="8"/><rect x="208" y="18" width="8" height="8"/>
-              <rect x="208" y="50" width="8" height="8"/>
-            </g>
-            <g class="dg-fill-a">
-              <rect x="184" y="34" width="8" height="8"/><rect x="232" y="34" width="8" height="8"/>
-              <rect x="208" y="10" width="8" height="8"/><rect x="208" y="58" width="8" height="8"/>
-            </g>
-            <g class="dg-line">
-              <rect x="208" y="34" width="8" height="8"/><rect x="200" y="34" width="8" height="8"/>
-              <rect x="216" y="34" width="8" height="8"/><rect x="208" y="26" width="8" height="8"/>
-              <rect x="208" y="42" width="8" height="8"/><rect x="192" y="34" width="8" height="8"/>
-              <rect x="224" y="34" width="8" height="8"/><rect x="208" y="18" width="8" height="8"/>
-              <rect x="208" y="50" width="8" height="8"/>
-              <rect x="184" y="34" width="8" height="8"/><rect x="232" y="34" width="8" height="8"/>
-              <rect x="208" y="10" width="8" height="8"/><rect x="208" y="58" width="8" height="8"/>
-            </g>
-            <text class="dg-note" x="212" y="74" text-anchor="middle">Stage 4</text>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
           </svg>
-          <figcaption><span class="fignum">Fig. 8.3</span> A growing pattern of squares.
-          Four tiles are added at the tips at every stage.</figcaption>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Go back through every sequence in this chapter so far. Which are
+            arithmetic progressions and which are not?</p>
+            <p>For each one that is not, say what goes wrong — and be precise: it is not
+            enough to say the numbers grow differently.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>The recursive rule for an AP is even shorter than the explicit one, and it is
+      the rule the definition itself gives you:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">start</span>
+          <span>$t_1 = a$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">then</span>
+          <span>$t_n = t_{n-1} + d$ &nbsp; for $n \geq 2$</span>
+        </div>
+      </div>
+
+      <p>Written this way an AP says almost nothing: start here, and keep adding the same
+      amount. That is the whole of it. Everything else in this section — the formula for
+      the $n$th term, the straight line it draws, the way its terms can be summed in one
+      step — follows from those two lines and adds no new assumption.</p>
+
+      <p>It is worth noticing how little is being asked of the numbers. They need not be
+      whole, or positive, or increasing. A common difference of $-4$ gives a falling AP,
+      one of $0.5$ gives a sequence of halves, and one of $0$ gives the same number over
+      and over — which is a perfectly good, if dull, arithmetic progression.</p>
+
+      <h3>8.4.1 What an AP looks like</h3>
+
+      <p>Take the tile pattern again and set the stage number against the count:</p>
+
+      <div class="work work--centred">
+        <p>$(1, 1), \quad (2, 5), \quad (3, 9), \quad (4, 13), \quad (5, 17)$</p>
+      </div>
+
+      <p>Plot those five points and something worth noticing happens.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 150 108" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="The five points of the arithmetic progression plotted against stage number, lying on a straight line">
+      
+            <g class="dg-grid">
+              <path d="M40 8 V92 M62 8 V92 M84 8 V92 M106 8 V92 M128 8 V92"/>
+              <path d="M18 88 H140 M18 68 H140 M18 48 H140 M18 28 H140 M18 12 H140"/>
+            </g>
+      
+            <!-- the line the points fall on: through the first and the last of
+                 them, extended a little at each end -->
+            <path class="dg-ghost" d="M14 86.88 L112 13.51"/>
+      
+            <g class="dg-axis">
+              <path d="M18 92 H142"/><path d="M18 92 V8"/>
+            </g>
+      
+            <g class="dg-plot">
+              <circle cx="18"  cy="83.88" r="2.6"/>
+              <circle cx="40"  cy="67.41" r="2.6"/>
+              <circle cx="62"  cy="50.94" r="2.6"/>
+              <circle cx="84"  cy="34.47" r="2.6"/>
+              <circle cx="106" cy="18" r="2.6"/>
+            </g>
+      
+            <text class="dg-plot-label" x="23"  y="81">(1, 1)</text>
+            <text class="dg-plot-label" x="45"  y="64.5">(2, 5)</text>
+            <text class="dg-plot-label" x="67"  y="48">(3, 9)</text>
+            <text class="dg-plot-label" x="89"  y="31.5">(4, 13)</text>
+            <text class="dg-plot-label" x="111" y="15">(5, 17)</text>
+      
+            <text class="dg-note" x="142" y="102" text-anchor="end">stage</text>
+            <text class="dg-note" x="8" y="14">tiles</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 8.4</span> The points of an AP lie on a
+          straight line — the common difference is its steepness.</figcaption>
         </figure>
       </div>
 
-      <p>Counting the tiles gives $1, 5, 9, 13, \ldots$ — and the picture says why. At
-      every stage four tiles are added, one at each tip. So the counts can be written</p>
+      <p>They lie on a straight line. That is not a coincidence, and it is not special to
+      this AP. It happens for every one of them, because a constant step sideways always
+      buys the same step upwards, and that is exactly what a straight line is.</p>
 
-      <div class="work work--centred">
-        <p>$1, \quad 1 + 4, \quad 1 + 4 + 4, \quad 1 + 4 + 4 + 4, \ \ldots$</p>
-      </div>
-
-      <p>or, gathering the fours,</p>
-
-      <div class="work work--centred">
-        <p>$1, \quad 1 + 1 \times 4, \quad 1 + 2 \times 4, \quad 1 + 3 \times 4, \ \ldots$</p>
-      </div>
-
-      <p>Now the pattern is in plain sight. The number of fours is always one less than
-      the stage number, so</p>
-
-      <div class="eq eq--anchor">
-        $$t_n = 1 + (n - 1) \times 4$$
-      </div>
-
-      <p>which tidies to $t_n = 4n - 3$. The first six terms are $1, 5, 9, 13, 17, 21$,
-      and the difference between consecutive terms is $4$ every time.</p>
-
-      <p>A sequence like this — one where the difference between consecutive terms is the
-      same throughout — is an <span class="term">arithmetic progression</span>, or
-      <span class="term">AP</span>. The two numbers that describe it are the first term
-      and that fixed gap, which is called the
-      <span class="term">common difference</span>.</p>
-
-
-      <p>Both numbers are needed, and neither is enough alone. Told only that the common
-      difference is $4$ you would not know where the sequence starts; told only that it
-      starts at $1$ you would not know where it goes. Between them they fix every term,
-      which is why an AP can be written down in two numbers however long it runs.</p>
     </div>
   </div>
 </section>

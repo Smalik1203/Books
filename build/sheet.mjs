@@ -53,6 +53,28 @@ export async function sheetMetrics(root = ROOT, edition) {
   };
 }
 
+/* The in-house proof: the same press sheet laid on A4, for sample runs
+   printed on an office printer and cut by hand.
+
+   The press sheet is trim + 2 x (bleed + slug) — 216 x 296mm on the
+   196x276 trim, 6mm wider than A4. Printed at actual size its sides hang
+   off the paper; fitted to the page it shrinks by 3% and cuts to the
+   wrong size. Either way the marks sit in the outer millimetres, which
+   no office printer reaches, and they vanish. Here the trim is centred
+   on A4 at full size, the bleed kept, and whatever paper is left over
+   on each axis is the slug — 4mm at the sides and 7.5mm top and foot
+   on this trim. */
+export const A4 = { w: 210, h: 297 };
+
+export function onA4(s) {
+  const slugX = (A4.w - s.trimW) / 2 - s.bleed;
+  const slugY = (A4.h - s.trimH) / 2 - s.bleed;
+  if (slugX < 0 || slugY < 0) {
+    throw new Error(`a ${s.trimW} x ${s.trimH}mm trim with ${s.bleed}mm bleed does not fit on A4`);
+  }
+  return { ...s, a4: true, slugX, slugY, mediaW: A4.w, mediaH: A4.h };
+}
+
 /* The wrap a cover prints on, which is a different sheet from a
    page's and had drifted into three different answers.
 

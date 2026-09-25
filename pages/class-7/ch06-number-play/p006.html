@@ -2,7 +2,49 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Each circle holds the sum of its row or its column: $4 + 7 + 5 = 16$, and $4 + 6 + 3 = 13$. Fill each grid in Fig. 6.9 with the numbers 1 to 9, using each number once, so that the rows and columns have the sums shown. Is there only one way? Then make up a grid like this for a classmate.</p>
+      <h2><span class="badge">6.3</span><span class="name">Sums in Grids</span></h2>
+
+      <p>In Fig. 6.9 each of the numbers 1 to 9 appears once in a $3 \times 3$ grid. What do the circled numbers show?</p>
+
+      <div class="c-figure c-figure--md">
+                          <figure>
+                            <svg viewBox="0 0 230 124" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A 3 by 3 grid holding the numbers 1 to 9: first row 4, 7, 5; second row 6, 1, 2; third row 3, 9, 8. Circles to the right of the rows hold 16, 9 and 20; circles below the columns hold 13, 17 and 15.">
+      <rect class="dg-line" x="60" y="6" width="30" height="30"/>
+      <text class="dg-label" x="75" y="25" text-anchor="middle">4</text>
+      <rect class="dg-line" x="90" y="6" width="30" height="30"/>
+      <text class="dg-label" x="105" y="25" text-anchor="middle">7</text>
+      <rect class="dg-line" x="120" y="6" width="30" height="30"/>
+      <text class="dg-label" x="135" y="25" text-anchor="middle">5</text>
+      <rect class="dg-line" x="60" y="36" width="30" height="30"/>
+      <text class="dg-label" x="75" y="55" text-anchor="middle">6</text>
+      <rect class="dg-line" x="90" y="36" width="30" height="30"/>
+      <text class="dg-label" x="105" y="55" text-anchor="middle">1</text>
+      <rect class="dg-line" x="120" y="36" width="30" height="30"/>
+      <text class="dg-label" x="135" y="55" text-anchor="middle">2</text>
+      <rect class="dg-line" x="60" y="66" width="30" height="30"/>
+      <text class="dg-label" x="75" y="85" text-anchor="middle">3</text>
+      <rect class="dg-line" x="90" y="66" width="30" height="30"/>
+      <text class="dg-label" x="105" y="85" text-anchor="middle">9</text>
+      <rect class="dg-line" x="120" y="66" width="30" height="30"/>
+      <text class="dg-label" x="135" y="85" text-anchor="middle">8</text>
+      <circle class="dg-fill-c-soft" cx="164" cy="21" r="9"/>
+      <text class="dg-label" x="164" y="25" text-anchor="middle">16</text>
+      <circle class="dg-fill-c-soft" cx="164" cy="51" r="9"/>
+      <text class="dg-label" x="164" y="55" text-anchor="middle">9</text>
+      <circle class="dg-fill-c-soft" cx="164" cy="81" r="9"/>
+      <text class="dg-label" x="164" y="85" text-anchor="middle">20</text>
+      <circle class="dg-fill-c-soft" cx="75" cy="110" r="9"/>
+      <text class="dg-label" x="75" y="114" text-anchor="middle">13</text>
+      <circle class="dg-fill-c-soft" cx="105" cy="110" r="9"/>
+      <text class="dg-label" x="105" y="114" text-anchor="middle">17</text>
+      <circle class="dg-fill-c-soft" cx="135" cy="110" r="9"/>
+      <text class="dg-label" x="135" y="114" text-anchor="middle">15</text>
+      </svg>
+                            <figcaption><span class="fignum">Fig. 6.9</span> A grid of the numbers 1 to 9.</figcaption>
+                          </figure>
+                        </div>
+
+      <p>Each circle holds the sum of its row or its column: $4 + 7 + 5 = 16$, and $4 + 6 + 3 = 13$. Fill each grid in Fig. 6.10 with the numbers 1 to 9, using each number once, so that the rows and columns have the sums shown. Is there only one way? Then make up a grid like this for a classmate.</p>
 
       <div class="c-figure c-figure--xl">
                           <figure>
@@ -52,11 +94,11 @@
       <circle class="dg-fill-c-soft" cx="275" cy="110" r="9"/>
       <text class="dg-label" x="275" y="114" text-anchor="middle">23</text>
       </svg>
-                            <figcaption><span class="fignum">Fig. 6.9</span> Grids to fill.</figcaption>
+                            <figcaption><span class="fignum">Fig. 6.10</span> Grids to fill.</figcaption>
                           </figure>
                         </div>
 
-      <p>Now try Fig. 6.10. Why can nobody fill it? The smallest sum of three different numbers from 1 to 9 is $1 + 2 + 3 = 6$, and the largest is $7 + 8 + 9 = 24$. So no circle can hold 5 or 26.</p>
+      <p>Now try Fig. 6.11. Why can nobody fill it? The smallest sum of three different numbers from 1 to 9 is $1 + 2 + 3 = 6$, and the largest is $7 + 8 + 9 = 24$. So no circle can hold 5 or 26.</p>
 
       <div class="c-figure c-figure--md">
                           <figure>
@@ -83,37 +125,11 @@
       <circle class="dg-fill-c-soft" cx="135" cy="110" r="9"/>
       <text class="dg-label" x="135" y="114" text-anchor="middle">26</text>
       </svg>
-                            <figcaption><span class="fignum">Fig. 6.10</span> A grid that cannot be filled.</figcaption>
+                            <figcaption><span class="fignum">Fig. 6.11</span> A grid that cannot be filled.</figcaption>
                           </figure>
                         </div>
 
       <p>Look again at the grids you filled, and add up the three row sums of each. Then add up the three column sums. Kishor noticed that all six circled numbers of a grid always add up to 90, and Vidya that the three rows alone, or the three columns alone, always make 45. Why? Between them the three rows hold every number from 1 to 9 exactly once, so their sums add up to $1 + 2 + 3 + \cdots + 9 = 45$. The same is true of the columns.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Magic squares</div>
-        <p>A square grid of numbers is a <span class="term">magic square</span> if every row, every column and both diagonals have the same sum. That sum is the <span class="term">magic sum</span>.</p>
-      </div>
-
-      <div class="c-figure c-figure--md">
-                          <figure>
-                            <svg viewBox="0 0 230 112" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An empty 3 by 3 grid with its two diagonals drawn as dashed lines from corner to corner.">
-      <rect class="dg-line" x="60" y="8" width="32" height="32"/>
-      <rect class="dg-line" x="92" y="8" width="32" height="32"/>
-      <rect class="dg-line" x="124" y="8" width="32" height="32"/>
-      <rect class="dg-line" x="60" y="40" width="32" height="32"/>
-      <rect class="dg-line" x="92" y="40" width="32" height="32"/>
-      <rect class="dg-line" x="124" y="40" width="32" height="32"/>
-      <rect class="dg-line" x="60" y="72" width="32" height="32"/>
-      <rect class="dg-line" x="92" y="72" width="32" height="32"/>
-      <rect class="dg-line" x="124" y="72" width="32" height="32"/>
-      <path class="dg-hidden" d="M60 8 L156 104 M156 8 L60 104"/>
-      <text class="dg-note" x="166" y="42" text-anchor="start">rows, columns</text>
-      <text class="dg-note" x="166" y="56" text-anchor="start">and the two</text>
-      <text class="dg-note" x="166" y="70" text-anchor="start">diagonals</text>
-      </svg>
-                            <figcaption><span class="fignum">Fig. 6.11</span> The lines of a $3 \times 3$ magic square.</figcaption>
-                          </figure>
-                        </div>
 
     </div>
   </div>

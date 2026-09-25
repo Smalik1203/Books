@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import {pageBlocks} from './jee-tools.mjs';
+const get=(d,n)=>{const f=`pages/class-6/math-ch${d}/p${String(n).padStart(3,'0')}.html`,h=fs.readFileSync(f,'utf8');return {f,h,bs:pageBlocks(h)};};
+const save=p=>{const old=pageBlocks(p.h),s=p.h.indexOf(old[0]),e=p.h.indexOf(old.at(-1),s)+old.at(-1).length;fs.writeFileSync(p.f,p.h.slice(0,s)+p.bs.join('\n\n')+p.h.slice(e));};
+const a=get('04-data-handling',10),b=get('04-data-handling',11);
+const text=b.bs[0].match(/<p>([\s\S]*?)<\/p>/)[1];
+const split=text.indexOf('Look again');if(split<0)throw Error('Bar graph paragraph');
+a.bs.push('<p>'+text.slice(0,split).trim()+'</p>');b.bs[0]=b.bs[0].replace('<p>'+text+'</p>','<p>'+text.slice(split)+'</p>');save(a);save(b);
+const c=get('07-fractions',13),d=get('07-fractions',14);d.bs.unshift(c.bs.pop());save(c);save(d);
+const e=get('08-constructions',7),f=get('08-constructions',8),g=get('08-constructions',9);
+const inside=pageBlocks(f.bs[0].replace(/^<div class="c-figure-context">/,'<div class="page__main">'));
+if(inside.length!==10)throw Error('Construction group');
+const wrap=bs=>'<div class="c-figure-context">\n'+bs.join('\n\n')+'\n</div>';
+e.bs.push(wrap(inside.slice(0,6)));f.bs[0]=wrap(inside.slice(6));f.bs.push(...g.bs.splice(0,3));save(e);save(f);save(g);

@@ -2,64 +2,81 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 9 &middot; The opposite event</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 14</div>
-        <div class="c-example__body">
-          <p>Two dice are rolled. Find the probability that they show different numbers.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$6 \times 6 = 36$ equally likely pairs</span>
-              <span class="work__why">the first die, then the second</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>the same number on both: $(1, 1), (2, 2), \ldots, (6, 6)$, which is 6 pairs</span>
-              <span class="work__why">the opposite is easier</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$P(\text{same}) = \tfrac{6}{36} = \tfrac16$</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$P(\text{different}) = 1 - \tfrac16 = \tfrac56$</span>
-              <span class="work__why">$P(\text{not } E) = 1 - P(E)$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$\tfrac56$</span></div>
-            <div class="work__row"><span class="work__label">Check</span>
-              <span>$36 - 6 = 30$ pairs differ, and $\tfrac{30}{36} = \tfrac56$</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 15</div>
-        <div class="c-example__body">
-          <p>The probability that a certain train is late is $0.15$. Over 60 journeys, the number of times it can be expected to be on time is about</p>
-          <ol class="c-parts c-parts--alpha c-parts--4"><li>$9$</li><li>$45$</li><li>$51$</li><li>$85$</li></ol>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$1 - 0.15 = 0.85$</span>
-              <span class="work__why">on time is not late</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$0.85 \times 60 = 51$</span>
-              <span class="work__why">rate times journeys</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>(c)</span></div>
-          </div>
-          <p>Option (a) is $0.15 \times 60 = 9$, the late journeys. Option (b) is $60 - 15 = 45$, which takes the percentage away as if it were a count. Option (d) is $0.85 \times 100 = 85$, the percentage and not the number of journeys.</p>
-        </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
-        <div class="c-practice__sub">Choose the correct option</div>
-        <ol class="c-questions">
-          <li>A coin is tossed 60 times and gives 27 heads. The experimental probability of heads is<ol class="c-parts c-parts--alpha c-parts--4"><li>$0.27$</li><li>$0.5$</li><li>$0.45$</li><li>$0.55$</li></ol></li>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="17">
+          <li>Two dice are thrown. The probability that the sum is greater than 9 is<ol class="c-parts c-parts--alpha c-parts--4"><li>$\tfrac{1}{12}$</li><li>$\tfrac16$</li><li>$\tfrac{3}{11}$</li><li>$\tfrac14$</li></ol></li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Which of these cannot be a probability?<ol class="c-parts c-parts--alpha c-parts--4"><li>$0$</li><li>$0.999$</li><li>$\tfrac78$</li><li>$\tfrac54$</li></ol></li>
+        <ol class="c-questions" data-start="18">
+          <li>A coin is tossed 1000 times and gives 530 heads. Which of these must be true?
+            <ol class="c-parts c-parts--1"><li>The coin is biased.</li><li>The experimental probability of a head is $0.53$.</li><li>If the coin is fair, the theoretical probability of a head is $0.5$.</li></ol>
+            <ol class="c-parts c-parts--alpha c-parts--4"><li>(i) only</li><li>(ii) only</li><li>(ii) and (iii)</li><li>all three</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Assertion and reason</div>
+        <p class="c-practice__note">In Questions 19 to 22, choose (a) if both A and R are true and R explains A; (b) if both are true but R does not explain A; (c) if A is true but R is false; (d) if A is false but R is true.</p>
+        <ol class="c-questions" data-start="19">
+          <li><p>Assertion (A): When a fair die is rolled, the probability of a prime number is $\tfrac12$.</p><p>Reason (R): The primes on a die are 2, 3 and 5, three of the six faces.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="20">
+          <li><p>Assertion (A): The experimental probability of an event can change from one set of trials to the next.</p><p>Reason (R): The theoretical probability of an event depends on how many trials are made.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="21">
+          <li><p>Assertion (A): The probability of picking a vowel from the letters of the word <em>MATHS</em> is $\tfrac15$.</p><p>Reason (R): A probability always lies between 0 and 1.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="22">
+          <li><p>Assertion (A): An event with probability $0.5$ must happen exactly once in every two trials.</p><p>Reason (R): A probability of $0.5$ means an even chance.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Very short answer</div>
+        <ol class="c-questions" data-start="23">
+          <li>A die is rolled 40 times and shows a 6 on 9 of them. Write the experimental probability of a 6 as a decimal and as a percentage.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="24">
+          <li>A number is chosen at random from 1 to 20. Find the probability that it is a multiple of 4.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="25">
+          <li>A letter is picked at random from the word <em>MISSISSIPPI</em>. Find the probability that it is an S.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Short answer</div>
+        <ol class="c-questions" data-start="26">
+          <li>A bag holds red, white and blue balls. The probability of drawing a red one is $\tfrac14$ and of a white one $\tfrac13$, and there are 10 blue balls. How many balls of each colour are there?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="27">
+          <li>Two spinners each have three equal sectors marked 1, 2 and 3. Both are spun and the two numbers multiplied. List the sample space, and find the probability that the product is even.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="28">
+          <li>In a random sample of 250 households in a town, 90 keep a pet. The town has 8000 households. Estimate how many keep a pet and how many do not.</li>
         </ol>
       </div>
 

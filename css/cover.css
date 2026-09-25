@@ -2495,3 +2495,303 @@ body.bleed .jacket {
   font-style: normal;
   font-size: calc(var(--dg-type) * 1.35 * var(--dg-v) / var(--dg-w) * 1px);
 }
+
+/* ============================================================
+   DIRECTION — spectrum: the ClassBridge Mathematics specimen
+
+   One rich mid-tone carries the whole wrap — neither pale enough to
+   show a school's dust nor dark enough to feel heavy — and everything
+   else is set against it: solids shaded as solids (a cube in white and
+   the main colour's tint and shade, a yellow sphere, an accent
+   cylinder, a pale cone) in front of a large accent disc, fine-line
+   figures and dot clusters in white, a bold Archivo title in cream.
+   The back is the same colour with its own arrangement: the claims as
+   a two-by-two grid and a deeper band across the foot.
+
+   Two colours, a yellow and cream, and nothing else. A palette is the
+   block of --sp-* tokens below; every figure and every word reads them.
+   ============================================================ */
+.jacket--spectrum {
+  --jk-display: Archivo, 'Helvetica Neue', Arial, sans-serif;
+
+  /* the palette */
+  --sp-m:  #0f7c83;   /* main: the ground of the whole wrap */
+  --sp-md: #0a5157;   /* main, deep: the back's band, shadows, cube side */
+  --sp-ml: #8fd6d3;   /* main, light: secondary text, cube side */
+  --sp-b:  #ff6b57;   /* accent */
+  --sp-bd: #d9472f;
+  --sp-bl: #ffb4a7;
+  --sp-c:  #ffc53d;   /* the sphere, the stamp */
+  --sp-cd: #d99a00;
+  --sp-cl: #fff3c6;
+  --sp-w:  #fdf8ef;   /* cream: the type, the cube's lit face */
+
+  --jk-navy:      var(--sp-md);
+  --jk-navy-deep: var(--sp-md);
+  --jk-navy-soft: var(--sp-ml);
+  --jk-terra:     var(--sp-b);
+  --jk-sage:      var(--sp-ml);
+  --jk-gold:      var(--sp-c);
+  --jk-cream:     var(--sp-w);
+
+  --jk-ground:        var(--sp-m);
+  --jk-ground-ink:    var(--sp-w);
+  --jk-ground-soft:   var(--sp-ml);
+  --jk-ground-rule:   var(--sp-ml);
+  --jk-ground-accent: var(--sp-b);
+  --jk-ground-art:    none;
+
+  --jk-front:        var(--sp-m);
+  --jk-front-ink:    var(--sp-w);
+  --jk-front-soft:   var(--sp-ml);
+  --jk-front-mark:   var(--sp-b);
+  --jk-front-accent: var(--sp-b);
+  --jk-front-label:  var(--sp-c);
+}
+.jacket--spectrum { font-family: var(--jk-display); }
+
+/* ---- front: the figures ------------------------------------ */
+.sp-st-a  { stop-color: var(--sp-ml); }
+.sp-st-a3 { stop-color: var(--sp-w); }
+.sp-st-b  { stop-color: var(--sp-b); }
+.sp-st-bd { stop-color: var(--sp-bd); }
+.sp-st-bl { stop-color: var(--sp-bl); }
+.sp-st-c  { stop-color: var(--sp-c); }
+.sp-st-cd { stop-color: var(--sp-cd); }
+.sp-st-cl { stop-color: var(--sp-cl); }
+.sp-disc-1 { opacity: 1; }
+.sp-disc-2 { fill: var(--sp-w); opacity: 0.12; }
+.sp-shadow { fill: var(--sp-md); opacity: 0.55; }
+.sp-cube-top { fill: var(--sp-w); }
+.sp-cube-l   { fill: var(--sp-md); }
+.sp-cube-r   { fill: var(--sp-ml); }
+.sp-cyl-base { fill: var(--sp-bd); }
+.sp-cyl-top  { fill: var(--sp-bl); }
+.sp-cone-base { fill: var(--sp-ml); }
+.sp-dots-a circle { fill: var(--sp-c); }
+.sp-dots-b circle { fill: var(--sp-w); opacity: 0.5; }
+.sp-fine path, .sp-fine circle {
+  fill: none;
+  stroke: var(--sp-w);
+  stroke-width: 0.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sp-fine .sp-fine--dash { stroke: var(--sp-c); stroke-dasharray: 0.8 0.8; }
+.sp-pt { fill: var(--sp-c); }
+.sp-fine-lbl {
+  fill: var(--sp-w);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: calc(var(--dg-type-sm) * var(--dg-v) / var(--dg-w) * 1px);
+}
+
+/* ---- front: the type --------------------------------------- */
+.sp-head {
+  position: absolute;
+  top: var(--jk-top);
+  left: var(--jk-in);
+  right: var(--jk-out);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.jacket--spectrum .wordmark { font-weight: 700; letter-spacing: -0.02em; color: var(--sp-w); }
+.sp-tagline {
+  margin: 1.4mm 0 0;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  color: var(--sp-ml);
+}
+.sp-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 4mm;
+  border-left: 0.4mm solid var(--sp-c);
+}
+.sp-badge .jk-label { color: var(--sp-ml); letter-spacing: 0.16em; }
+.sp-badge__num {
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-numeral) * 0.72);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--sp-w);
+}
+.sp-badge__tag {
+  margin-top: 1.6mm;
+  padding: 0.5mm 1.8mm;
+  border-radius: 0.8mm;
+  background: var(--sp-c);
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sp-md);
+}
+.jacket--spectrum .front__title { top: calc(var(--jk-top) + var(--trim-h) * 0.135); }
+.jacket--spectrum .front__title h1 {
+  font-size: calc(var(--size-numeral) * 1.36);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  color: var(--sp-w);
+}
+.jacket--spectrum .front__title h1::after {
+  content: "";
+  display: block;
+  width: 26mm;
+  height: 0.9mm;
+  margin-top: 6mm;
+  background: var(--sp-c);
+}
+.sp-sub {
+  margin: 5mm 0 0;
+  font-family: var(--font-body);
+  font-size: calc(var(--size-concept) * 1.2);
+  color: var(--sp-w);
+}
+.sp-strap {
+  position: absolute;
+  left: var(--jk-in); right: var(--jk-out);
+  bottom: var(--jk-bottom);
+  margin: 0;
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 2;
+  text-transform: uppercase;
+  color: var(--sp-w);
+}
+.sp-strap span { color: var(--sp-c); }
+
+/* ---- spine ------------------------------------------------- */
+.jacket--spectrum .jacket__spine { background: var(--sp-md); color: var(--sp-w); }
+.jacket--spectrum .spine__mark { font-family: var(--jk-display); font-weight: 700; }
+.jacket--spectrum .spine__title { font-family: var(--jk-display); font-weight: 800; }
+.jacket--spectrum .spine__tick { background: var(--sp-c); }
+.jacket--spectrum .spine__class .jk-label { color: var(--sp-c); }
+
+/* ---- back -------------------------------------------------- */
+.jacket--spectrum .jacket__back { display: block; padding: 0; background: var(--sp-m); }
+.sp-band {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: calc(var(--jk-bottom) + 30mm);
+  background: var(--sp-md);
+}
+.sp-band::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 1.2mm;
+  background: var(--sp-c);
+}
+.sp-back {
+  position: absolute;
+  top: var(--jk-top);
+  left: var(--jk-out);
+  right: var(--jk-in);
+}
+.jacket--spectrum .sp-back .wordmark { color: var(--sp-w); }
+.sp-back__lede {
+  margin: 14mm 0 0;
+  font-family: var(--jk-display);
+  font-size: calc(var(--size-section) * 1.55);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  color: var(--sp-w);
+}
+.sp-back__blurb {
+  margin: 6mm 0 0;
+  max-width: 130mm;
+  font-family: var(--font-body);
+  font-size: calc(var(--size-body) * 1.06);
+  line-height: var(--lh-body);
+  color: var(--sp-ml);
+}
+.sp-grid4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15mm 9mm;
+  margin-top: 18mm;
+}
+.sp-claim__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11mm;
+  height: 11mm;
+  border-radius: 2.2mm;
+  background: var(--sp-b);
+}
+.sp-claim__mark svg { width: 6mm; height: 6mm; }
+.sp-claim__mark .jk-icon { stroke: #ffffff; }
+.sp-claim__term {
+  margin: 3.4mm 0 0;
+  font-family: var(--jk-display);
+  font-size: var(--size-body);
+  font-weight: 700;
+  color: var(--sp-w);
+}
+.sp-claim__def {
+  margin: 1.2mm 0 0;
+  font-family: var(--font-body);
+  font-size: var(--size-note);
+  line-height: var(--lh-snug);
+  color: var(--sp-ml);
+}
+.sp-back__foot {
+  position: absolute;
+  left: var(--jk-out);
+  right: var(--jk-in);
+  bottom: var(--jk-bottom);
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+}
+.sp-back__qr {
+  display: block;
+  width: 22mm;
+  height: 22mm;
+  padding: 1.8mm;
+  box-sizing: border-box;
+  border-radius: 1.4mm;
+  background: #ffffff;
+}
+.sp-back__qr svg, .sp-back__qr img { display: block; width: 100%; height: 100%; }
+.sp-back__pub {
+  font-family: var(--font-body);
+  font-size: var(--size-caption);
+  line-height: 1.6;
+  color: var(--sp-ml);
+}
+.sp-back__pub b {
+  display: block;
+  margin-bottom: 0.6mm;
+  font-family: var(--jk-display);
+  font-size: var(--size-note);
+  color: var(--sp-w);
+}
+.sp-back__stamp {
+  margin-left: auto;
+  padding: 2mm 3.4mm;
+  border-radius: 1.2mm;
+  background: var(--sp-c);
+  text-align: center;
+  font-family: var(--jk-display);
+  font-size: var(--size-caption);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--sp-md);
+}
+
+/* No lone word on the last line of any jacket paragraph. */
+.jacket p, .jacket .sp-claim__def, .jacket .front__promise { text-wrap: pretty; }

@@ -240,9 +240,11 @@ Still to settle:
 Started 17 September 2026. **Chapter 6 (Lines and Angles) was worked by
 hand as the model**, and Chapters 1–5 and 7 by Opus agents against a brief
 built from it, each checked by script (§4.8) and by reading proofs before it
-was accepted. **Chapter 8 is not done**: its agent was stopped part-way at
-the user's word, and its half-stepped pages are left uncommitted in the
-working tree. Until it is finished, Class 9 has two trims and will not bind.
+was accepted. **Chapter 8 was finished on 23 September 2026**, after its
+agent had been stopped part-way at the user's word: body refit, Beyond the
+Book rebuilt to the four stages by `build/convert-c9-ch08-bridge.mjs`,
+`ANSWERS.md` and `check-numbers.mjs` written. Its EDIT-LOG has the detail
+and two flagged wrong statements. Class 9 is on one trim and binds.
 
 **What Class 9 needed that Class 10 did not:** its examples already carried
 their working inside the panel, as prose, so stepping was a recast rather
@@ -353,3 +355,28 @@ beside it (Chapter 6); where Stage 1 answers a body question, the
 no-give-away rule wins, with the smallest edit (Chapters 2, 4, 9, and Class 7
 to be checked); a question with two right answers is reworded (Chapter 6).
 Still open: missing key ideas and terms; facts without a source.
+
+## 24 September 2026: chapters that were not NCERT's
+
+Every maths chapter's section heads were compared against the NCERT PDFs
+(Reprint 2026-27; Class 9 First Edition April 2026). 56 of 61 matched.
+Five did not, and none of the five had ever named a source: they were
+written on 1 and 5 September to the old syllabus's topics.
+
+- **Class 8 Part I** was rebuilt to NCERT's order: Ch 4 Quadrilaterals
+  (renumbered from 5), Ch 5 *Number Play*, Ch 6 *We Distribute, Yet Things
+  Multiply*, Ch 7 *Proportional Reasoning-1*, the last three written from
+  the NCERT PDFs. Ch 6 reuses figures and Beyond material from the old
+  expressions chapter.
+- **Class 9 Ch 6** is now NCERT's *Measuring Space: Perimeter and Area*.
+- The old expressions, linear equations and mensuration chapters (Class 8)
+  and lines and angles (Class 9) are in `retired/`, out of the build.
+- Nineteen chapters took NCERT's own titles in place of house titles
+  (Class 7 Part I, Class 8, Class 9 Ch 5, 7, 8).
+- Part II cross-references to Part I chapters were re-pointed; Stage 2
+  banks for the new chapters live beside their pages and are imported by
+  `build/jee-class8.mjs` and `jee-class9.mjs`.
+
+**Check a chapter against its NCERT PDF before accepting it.** A
+chapter's title is not evidence of its content — these five carried
+house titles, which is why nobody noticed.

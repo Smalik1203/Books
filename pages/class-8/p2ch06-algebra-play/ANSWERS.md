@@ -251,6 +251,27 @@ answers:
 7. $24$, $25$, $26$, $27$.
 8. $c = 48$.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 4 *(single correct)*
+2. (b) 14 *(single correct)*
+3. (c) 75 *(single correct)*
+4. (d) 9 *(single correct)*
+5. (a) 75 *(single correct)*
+6. (b) 40 *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (b), (c) *(multiple correct)*
+10. (a), (b), (c), (d) *(multiple correct)*
+11. 8 *(numerical answer)*
+12. 15 *(numerical answer)*
+13. 576 *(numerical answer)*
+14. (c) P–3, Q–4, R–1, S–2 *(matching)*
+15. (b) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Key, as the key prints it: 1 (c) 2 (b) 3 (c) 4 (a) 5 (a) 6 (d) 7 (a) 8 (b) 9 (c) 10 (d) 11 (b) 12 (c) 13 (d) 14 (b) 15 (a) 16 (d) 17 (a) 18 (b) 19 (c)

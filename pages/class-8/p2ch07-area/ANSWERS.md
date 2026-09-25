@@ -215,7 +215,24 @@ $36$ by $1$, and no longest without whole sides.
 
 ### Stage 2 · Solved Examples
 
-Worked in full on the page.
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) the square, by $20.25 \text{ m}^2$ *(single correct)*
+2. (b) 180 *(single correct)*
+3. (c) 7.2 cm *(single correct)*
+4. (d) 6 cm *(single correct)*
+5. (a) $336 \text{ cm}^2$ *(single correct)*
+6. (b) 7 m *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 24 *(numerical answer)*
+12. 2 *(numerical answer)*
+13. 168 *(numerical answer)*
+14. (a) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–3, Q–4, R–2, S–1 *(matching)*
 
 ### Stage 3 · Practice
 

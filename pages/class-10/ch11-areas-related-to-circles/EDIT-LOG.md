@@ -1,5 +1,37 @@
 # Class 10 · Mathematics I · Chapter 11 — Areas Related to Circles
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 12 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch11-areas-related-to-circles/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $38.5 \text{ cm}^2$ |
+| 2 | Single correct | (b) 22 cm |
+| 3 | Single correct | (c) $154 \text{ cm}^2$ |
+| 4 | Single correct | (d) $28.5 \text{ cm}^2$ |
+| 5 | Single correct | (a) 25 cm |
+| 6 | Single correct | (b) $60^\circ$ |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 308 |
+| 12 | Numerical answer | 44 |
+| 13 | Numerical answer | 56 |
+| 14 | Matching | (a) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (b) P–3, Q–4, R–1, S–2 |
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked by one agent from the Class 10
@@ -265,3 +297,12 @@ Set A c b c d b a b c; Set B a b b c a d; Set C b c d b d.
 | Set 11.1 Q5 (iii), Q7 | — | Q5 uses ${\pi = \frac{22}{7}}$ with no value for $\sqrt{3}$, so its answer stays in surd form, while Q6 and Q7 give $\sqrt{3} = 1.73$ | a value for $\sqrt{3}$ in Q5, or accept the surd |
 | Set 11.1 Q3 | M2 | the minute hand turning $6^\circ$ a minute is assumed, not stated | "the minute hand turns $360^\circ$ in 60 minutes" |
 | Summary | — | the source's summary has no point for the major sector or the major segment, which the chapter defines and uses | none |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. 1 dependent text/visual group(s) were kept together and the body refitted. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — page 3 refit
+
+Page 3 ran 1.1mm into the bottom margin, and it ends on Example 1, a panel that cannot be divided. Nothing on the page wrapped, so no line could be trimmed. Steps 1 and 2 of Example 1 are now one step: the old Step 1 only restated $\frac{\theta}{360} \times \pi r^2$, which is set two blocks above on the same page, so the new Step 1 substitutes straight into it and gives $\approx 4.19$ for "(approx.)". The major sector and NCERT's alternative ($\frac{330}{360} \times \pi r^2$) are unchanged, as Steps 2 and 3. Page 3 now fits.

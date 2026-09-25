@@ -3,6 +3,28 @@
     <div class="page__main">
 
       <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>One card is drawn from a well-shuffled deck of 52 cards. Find the probability that the card (i) is an ace, (ii) is not an ace.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the number of possible outcomes is 52</span>
+              <span class="work__why">shuffling makes them equally likely</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>(i) let E be <em>the card is an ace</em>; there are 4 aces in a deck, so 4 outcomes are favourable</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>(ii) let F be <em>the card is not an ace</em>; ${52 - 4 = 48}$ of the 52 outcomes are favourable</span>
+              <span class="work__why">every card but the aces</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>(i) ${P(E) = \frac{4}{52} = \frac{1}{13}}$ &nbsp; (ii) ${P(F) = \frac{48}{52} = \frac{12}{13}}$</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>Remark.</strong> F is the same event as $\overline{E}$. So P(F) can also be found as $P(F) = P(\overline{E}) = 1 - P(E) = 1 - \frac{1}{13} = \frac{12}{13}$.</p>
+
+      <div class="c-example">
         <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
           <p>Sangeeta and Reshma play a tennis match. The probability that Sangeeta wins the match is 0.62. What is the probability that Reshma wins the match?</p>
@@ -41,25 +63,6 @@
               <span>(ii) $P(\text{same birthday}) = 1 - P(\text{different birthdays}) = 1 - \dfrac{364}{365} = \dfrac{1}{365}$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
               <span>(i) $\dfrac{364}{365}$ &nbsp; (ii) $\dfrac{1}{365}$</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>Class 10 of a school has 40 students: 25 girls and 15 boys. The class teacher has to choose one student as class representative. She writes the name of each student on a separate card, all the cards being alike, puts the cards in a bag and mixes them well. Then she draws one card. What is the probability that the name on the card is (i) a girl's? (ii) a boy's?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>there are 40 students and one card is drawn: 40 possible outcomes</span>
-              <span class="work__why">one card a student</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>(i) 25 outcomes are favourable to a girl's name, so $P(\text{girl}) = \dfrac{25}{40} = \dfrac{5}{8}$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>(ii) 15 outcomes are favourable to a boy's name, so $P(\text{boy}) = \dfrac{15}{40} = \dfrac{3}{8}$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>(i) $\dfrac{5}{8}$ &nbsp; (ii) $\dfrac{3}{8}$</span></div>
           </div>
         </div>
       </div>

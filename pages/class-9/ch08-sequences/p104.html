@@ -2,73 +2,102 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-solution">
-        <div class="c-solution__turn">What a ratio of a half can and cannot do</div>
-        <p>
-          The classmate is wrong, and no arithmetic is needed to say so.
-        </p>
-        <p>
-          Every term of this GP is $\tfrac12$ times the one before it. Half of a positive
-          number is positive. So if the first term is positive every term after it is
-          positive too, however far the sequence runs — the terms fall towards zero and
-          never arrive, and they certainly never cross it.
-        </p>
-        <p>
-          What the classmate has done is confuse <em>shrinking</em> with
-          <em>decreasing past zero</em>. Only a negative ratio changes signs, and it
-          changes them at every single step: $r = -\tfrac12$ would give
-          $5, -\tfrac52, \tfrac54, -\tfrac58, \ldots$, alternating rather than descending.
-        </p>
+      <div class="c-try">
+        <p>Find all the ways of writing $45$ as a sum of two or more consecutive natural
+        numbers.</p>
       </div>
 
-      <div class="c-solution">
-        <div class="c-solution__turn">Counting three-digit multiples of seven</div>
-        <p>
-          The multiples of $7$ form an AP with $d = 7$, so the whole question is: where
-          does it start, where does it stop, and how many steps between?
-        </p>
-        <div class="work">
-          <div class="work__row">
-            <span class="work__label work__label--wide">first</span>
-            <span>$7 \times 15 = 105$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">last</span>
-            <span>$7 \times 142 = 994$</span>
-          </div>
-          <div class="work__row">
-            <span class="work__label work__label--wide">count</span>
-            <span>$142 - 15 + 1$</span>
-            <span class="chip">128</span>
-          </div>
+      <p>
+        Suppose the run has $k$ terms and starts at $a$. It is an AP with $d = 1$, so
+        by the rule from the chapter — first plus last, halved, times the count —
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">sum</span>
+          <span>$= \dfrac{k\,\bigl(2a + k - 1\bigr)}{2} = 45$</span>
         </div>
-        <p>
-          The $+1$ is the whole difficulty. From the fifteenth multiple to the
-          hundred-and-forty-second there are $127$ <em>steps</em> but $128$
-          <em>multiples</em>, because both ends are being counted. It is the same
-          off-by-one as the $n-1$ in $t_n = a + (n-1)d$, met from the other side.
-        </p>
-        <p>
-          The same could be had from the formula: solve $105 + (n-1)7 = 994$ to get
-          $n = 128$. The arithmetic is identical; the fence-post is just easier to see
-          when the multiples are numbered.
-        </p>
-        <p>
-          Finding the two ends is the part worth practising. The smallest three-digit
-          multiple of $7$ is not $100$ rounded somehow — it is the first multiple at or
-          above $100$, and $100 \div 7$ is a little over $14$, so it is the fifteenth.
-          The largest is found the same way from the top: $999 \div 7$ is a little over
-          $142$, so the hundred-and-forty-second, $994$, is the last one that fits.
-        </p>
-        <p>
-          Every counting question of this shape comes apart the same way: find the first,
-          find the last, count the steps between them, add one. It does not matter
-          whether the question is about multiples of $7$, two-digit numbers divisible by
-          $3$, or the terms of an AP between two limits. Those are the same question in
-          different clothes, and the last of the four operations is the one that gets
-          left out.
-        </p>
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$k\,(2a + k - 1) = 90$</span>
+        </div>
       </div>
+
+      <p>
+        Now look at the two brackets. If $k$ is even then $2a + k - 1$ is odd, and if
+        $k$ is odd then $2a + k - 1$ is even — one of the two factors is always odd.
+        And $90 = 2 \times 3^2 \times 5$ has plenty of odd factors: $1, 3, 5, 9, 15, 45$.
+        The smaller bracket is $k$, since $a$ is at least $1$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$k = 2$</span>
+          <span>$2a + 1 = 45$, so $a = 22$</span>
+          <span class="chip">22 + 23</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$k = 3$</span>
+          <span>$2a + 2 = 30$, so $a = 14$</span>
+          <span class="chip">14 + 15 + 16</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$k = 5$</span>
+          <span>$2a + 4 = 18$, so $a = 7$</span>
+          <span class="chip">7 + 8 + &hellip; + 11</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$k = 6$</span>
+          <span>$2a + 5 = 15$, so $a = 5$</span>
+          <span class="chip">5 + 6 + &hellip; + 10</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$k = 9$</span>
+          <span>$2a + 8 = 10$, so $a = 1$</span>
+          <span class="chip">1 + 2 + &hellip; + 9</span>
+        </div>
+      </div>
+
+      <p>
+        Any other $k$ leaves no whole $a$ or needs $a \lt 1$. So there are exactly
+        five ways — one for each odd factor of $90$ other than $1$ — and the reason
+        there are so many is that $90$ is rich in odd factors. A number with few, such
+        as a power of $2$, has no way at all.
+      </p>
+
+      <div class="c-try">
+        <p>The sum of the first three terms of a GP is $\tfrac{13}{12}$ and their product
+        is $-1$. Find the common ratio and the terms.</p>
+      </div>
+
+      <p>
+        Write the three terms as $\dfrac{a}{r}$, $a$, $ar$ rather than $a$, $ar$,
+        $ar^2$. It is the same GP, centred on its middle term, and the product
+        collapses at once:
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">product</span>
+          <span>$\dfrac{a}{r} \times a \times ar = a^3 = -1$, so $a = -1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">sum</span>
+          <span>$-\dfrac1r - 1 - r = \dfrac{13}{12}$</span>
+        </div>
+      </div>
+
+      <p>
+        That gives $12r^2 + 25r + 12 = 0$, whose roots are $r = -\tfrac34$ and
+        $r = -\tfrac43$. Either gives the same three numbers in opposite orders:
+        $\tfrac43,\ -1,\ \tfrac34$.
+      </p>
+
+      <p>
+        The choice of notation did the work. Written $a, ar, ar^2$ the product is
+        $a^3r^3$ and both unknowns remain; written about the middle, the $r$ cancels
+        and one of them falls out immediately.
+      </p>
 
     </div>
   </div>

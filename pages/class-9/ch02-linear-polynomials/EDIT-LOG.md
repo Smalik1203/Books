@@ -1,5 +1,40 @@
 # Class 9 · Mathematics I · Chapter 2 — Introduction to Linear Polynomials
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 17 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch02-linear-polynomials/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p114; the answers stage still opens a fresh page.
+
+Also, same day. Fig. 2.14 belonged to the old examples; the practice figures after it were renumbered down by one (Fig. 2.15 and 2.16 became 2.14 and 2.15, in page and snapshot). Body p010: the auto-rickshaw example now reads “₹25 for 2 km and ₹15 for each further km. Find the fare for 10 km.”, to pull back a line that ran 2.1mm into the margin; the fare and working are unchanged.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 3 and $-3$ |
+| 2 | Single correct | (b) 10 |
+| 3 | Single correct | (c) 1 |
+| 4 | Single correct | (d) 17 |
+| 5 | Single correct | (a) $(0, 10)$ |
+| 6 | Single correct | (b) $-4$ |
+| 7 | Multiple correct | (a), (c) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b), (c), (d) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 9 |
+| 12 | Numerical answer | 9 |
+| 13 | Numerical answer | 115 |
+| 14 | Matching | (c) P–4, Q–3, R–1, S–2 |
+| 15 | Matching | (a) P–2, Q–4, R–3, S–1 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Class 9 brief with
@@ -252,3 +287,8 @@ Worst first.
 | p021, p028 | C5 | "Slope is taken up properly in **the chapter on linear equations**", and again on p028, "The chapter on linear equations does." **There is no such chapter in this book.** Class 9 runs: coordinates, linear polynomials, world of numbers, algebraic identities, circles, lines and angles, probability, sequences. | Either name the real destination (Class 10, if that is what is meant) or drop the forward reference. Two readers in three will go looking. |
 | p012, p028 | C5 | "Sequences of this kind are taken further in **the chapter on Sequences and Progressions**", and p028 "**Sequences and Progressions** takes that constant difference as the defining property". The chapter exists — it is Class 9 Chapter 8 — but it is called **What Comes Next**. A reader scanning the contents page for "Sequences and Progressions" will not find it. | Use the chapter's own title, or its number. |
 | p002–p004 vs Class 8 Part I Ch 4 | C3 | *Terms*, *variables*, *coefficients*, *constant*, *polynomial* and *degree* are all defined here from scratch, and all six were defined in Class 8 Part I Chapter 4. The chapter opens "You have met algebraic expressions before" without saying where. Worse, *degree* now means two things: Class 8 defined it as the **sum** of the powers in a term (so $5x^2y$ has degree 3), while this chapter defines it as the **highest power** of the single variable. For univariate polynomials the two agree, and this chapter restricts itself to one variable — but nothing says so, and a reader who remembers the Class 8 rule will apply it. | Name Class 8 Chapter 4, and say that the definition is being narrowed because the chapter is about one variable. Two sentences. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

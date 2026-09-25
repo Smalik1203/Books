@@ -256,6 +256,27 @@ on the page. The results, for reference: (1) the fourth power of a prime —
 (5) 45 cm, since $44^2 = 1936$ and $45^2 = 2025$; ten sides, 45 to 54, since $54^2 = 2916$ and $55^2 = 3025$; (6) $(2k+1)^2 = 8m + 1$; (7) 3 or 4 digits;
 (8) 50.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (b) 3528 *(single correct)*
+2. (d) 1600 *(single correct)*
+3. (c) 50 *(single correct)*
+4. (a) 5 *(single correct)*
+5. (b) 62 *(single correct)*
+6. (c) 25 *(single correct)*
+7. (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (b), (c) *(multiple correct)*
+10. (a), (c), (d) *(multiple correct)*
+11. 42 *(numerical answer)*
+12. 3721 *(numerical answer)*
+13. 35 *(numerical answer)*
+14. (b) P–3, Q–4, R–2, S–1 *(matching)*
+15. (c) P–4, Q–2, R–3, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

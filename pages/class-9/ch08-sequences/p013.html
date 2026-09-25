@@ -2,90 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 8.4</div>
-        <ol class="c-questions">
-          <li>Find the $9$th and $26$th terms of the AP $3, 8, 13, 18, \ldots$</li>
-        </ol>
-      </div>
+      <p>The earliest written record of this result is in
+      <strong>Āryabhaṭa's</strong> <em>Āryabhaṭīya</em>, chapter 2, verse 19, from the
+      early sixth century. The verse gives two ways to reach it, and the second is the
+      one drawn above in other words: take the first term and the last, halve their sum,
+      and multiply by how many terms there are. For $1$ to $10$ that is
+      $\tfrac{1 + 10}{2} \times 10 = 55$.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Which term of the AP $21, 18, 15, \ldots$ is $-81$? Is $0$ a term of this
-            AP? Give reasons.</li>
-        </ol>
-      </div>
+      <p>Stated that way it is not a fact about the naturals at all. It is a fact about
+      any AP — first plus last, halved, times the count — and you will meet it again in
+      that form.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Find the $n$th term of the AP $11, 8, 5, 2, \ldots$ and write its recursive
-            rule as well.</li>
-        </ol>
-      </div>
+      <p>That is worth holding on to. An AP is symmetrical about its middle in exactly
+      the way the two written-out rows were: pair the first term with the last, the
+      second with the second-last, and every pair has the same total. Which is why the
+      average of the first and last terms is the average of all of them, and multiplying
+      that average by the count gives the sum.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Verify that each of these is an AP and write its $n$th term.
-              <ol class="c-parts c-parts--1">
-                <li>$2,\ 5,\ 8,\ 11,\ \ldots$</li>
-                <li>$-5,\ -1,\ 3,\ 7,\ \ldots$</li>
-                <li>$1.5,\ 3.5,\ 5.5,\ 7.5,\ \ldots$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <h3>8.5.1 Using it on a stretch in the middle</h3>
 
-      <h2><span class="badge">8.5</span><span class="name">Adding Up the Naturals</span></h2>
+      <p>The formula adds up from $1$. To add a stretch that starts somewhere else,
+      subtract the part you do not want.</p>
 
-      <p>What is $1 + 2 + 3 + \cdots + 10$? You can add them one at a time and get $55$
-      in half a minute. But there is a way of doing it that takes no adding to speak of,
-      and — this is the point — it goes on working when the ten becomes a hundred, or a
-      million.</p>
-
-      <p>Call the answer $S$ and write it out. Then write it out again backwards.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">$S$</span>
-          <span>$= 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$S$</span>
-          <span>$= 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Find $25 + 26 + 27 + \cdots + 58$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>this is everything up to $58$, less everything up to $24$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$S_{58} = \dfrac{58 \times 59}{2} = 29 \times 59 = 1711$</span>
+              <span class="work__why">sum of the naturals</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$S_{24} = \dfrac{24 \times 25}{2} = 12 \times 25 = 300$</span>
+              <span class="work__why">sum of the naturals</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$1711 - 300$</span>
+              <span class="work__why">the part not wanted</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The sum is 1411</span></div>
+          </div>
+          <p>The one thing to be careful of is the second subscript. It is $24$, not
+          $25$: the terms you are removing are the ones <em>before</em> the stretch
+          begins, and $25$ is wanted.</p>
         </div>
       </div>
 
-      <p>Now add the two lines <em>column by column</em>. The first column gives
-      $1 + 10 = 11$. The second gives $2 + 9 = 11$. So does every other: as one row
-      climbs by one, the other falls by one, and the total cannot move. Ten columns, each
-      worth $11$.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">so</span>
-          <span>$2S = 11 \times 10 = 110$</span>
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
         </div>
-        <div class="work__row">
-          <span class="work__label">and</span>
-          <span>$S = 55$</span>
-        </div>
-      </div>
-
-      <p>Nothing in that argument cared that the last number was $10$. Run it again with
-      $n$ in place of $10$:</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">$S$</span>
-          <span>$= 1 + 2 + \cdots + n$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$S$</span>
-          <span>$= n + (n-1) + \cdots + 1$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">so</span>
-          <span>$2S = n(n+1)$</span>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Find $S_{20}$, $S_{50}$ and $S_{1000}$.</p>
+            <p>Then use the formula to find the $10$th, $17$th and $80$th triangular
+            numbers — and say why you are entitled to.</p>
+          </div>
         </div>
       </div>
 

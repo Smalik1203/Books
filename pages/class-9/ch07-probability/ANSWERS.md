@@ -155,6 +155,27 @@ survey, $0.75$; Q6 exactly three heads, $\tfrac14$ against $\tfrac{1}{16}$;
 Q7 just as likely, $\tfrac{12}{20} = \tfrac35$ both times; Q8 26 students;
 Q9 $P(1) = \tfrac12$, $P(2) = \tfrac13$, $P(3) = \tfrac16$.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $\frac{9}{20}$ *(single correct)*
+2. (b) $0.55$ *(single correct)*
+3. (c) 0.65 *(single correct)*
+4. (d) 0.4 *(single correct)*
+5. (a) $\frac{9}{25}$ *(single correct)*
+6. (b) 15 *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (c) *(multiple correct)*
+9. (a), (c), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 420 *(numerical answer)*
+12. 30 *(numerical answer)*
+13. 9 *(numerical answer)*
+14. (c) P–3, Q–4, R–2, S–1 *(matching)*
+15. (b) P–4, Q–2, R–3, S–1 *(matching)*
+
 ### Stage 3 · Practice — the key, as the key prints it
 
 1 (c) &nbsp; 2 (d) &nbsp; 3 (a) &nbsp; 4 (b) &nbsp; 5 (b) &nbsp; 6 (c) &nbsp; 7 (d) &nbsp; 8 (d) &nbsp; 9 (c) &nbsp; 10 (a) &nbsp; 11 (d) &nbsp; 12 (a) &nbsp; 13 (c) &nbsp; 14 (a) &nbsp; 15 (b) &nbsp; 16 (d) &nbsp; 17 (b) &nbsp; 18 (c) &nbsp; 19 (a) &nbsp; 20 (c) &nbsp; 21 (b) &nbsp; 22 (d)

@@ -1,0 +1,103 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-try">
+        <p>When a three-digit number is multiplied by $11$, the product is $5357$. Find
+        the number without dividing.</p>
+      </div>
+
+      <p>
+        Section 6.1.2 showed that a three-digit number $cba$ times $11$ is written
+        $c$, $(b + c)$, $(a + b)$, $a$, with carrying from the right. So read the product
+        from the right and undo one digit at a time.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">units</span>
+          <span>$a = 7$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">tens</span>
+          <span>$a + b$ ends in $5$, so $a + b = 15$: $b = 8$, carry $1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">hundreds</span>
+          <span>$b + c + 1$ ends in $3$, so $b + c + 1 = 13$: $c = 4$, carry $1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">thousands</span>
+          <span>$c + 1 = 5$, which agrees</span>
+        </div>
+      </div>
+
+      <p>
+        The number is $487$, and $4870 + 487 = 5357$. The tens digit could not have been
+        $a + b = 5$, because that would make $b$ negative.
+      </p>
+
+      <div class="c-try">
+        <p>Show that $x^2 - 6x + 10$ is greater than zero for every value of $x$,
+        including the negative ones and the fractions.</p>
+      </div>
+
+      <p>
+        Trying values will not settle this, because there are too many to try. What
+        settles it is finding a square, because the square of a number is never
+        negative. The first two terms, $x^2 - 6x$, are the start of
+        $(x - 3)^2 = x^2 - 6x + 9$, so write the $10$ as $9 + 1$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">rewrite</span>
+          <span>$x^2 - 6x + 10 = (x^2 - 6x + 9) + 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">as a square</span>
+          <span>$= (x - 3)^2 + 1$</span>
+        </div>
+      </div>
+
+      <p>
+        Whatever $x$ is, $(x - 3)^2$ is zero or more, so the whole expression is $1$ or
+        more, and it is never zero. The original form does not show this at all; the
+        square does.
+      </p>
+
+      <div class="c-try">
+        <p>Multiply four consecutive whole numbers and add $1$. Try it with $3, 4, 5, 6$
+        and then with $7, 8, 9, 10$. Then show that the answer is always a perfect
+        square.</p>
+      </div>
+
+      <p>
+        The arithmetic first: $3 \times 4 \times 5 \times 6 = 360$, and $361 = 19^2$.
+        Then $7 \times 8 \times 9 \times 10 = 5040$, and $5041 = 71^2$. Two cases are not
+        a proof. Call the numbers $n$, $n + 1$, $n + 2$ and $n + 3$, and multiply the
+        outer two and the inner two.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">outer pair</span>
+          <span>$n(n + 3) = n^2 + 3n$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">inner pair</span>
+          <span>$(n + 1)(n + 2) = n^2 + 3n + 2$</span>
+        </div>
+      </div>
+
+      <p>
+        The two products differ by exactly $2$. Write $m$ for $n^2 + 3n$. The product of
+        all four is $m(m + 2)$, and adding $1$ gives $m^2 + 2m + 1$, which is $(m + 1)^2$,
+        that is, $(n^2 + 3n + 1)^2$. Check it at $n = 3$: $9 + 9 + 1 = 19$, and
+        $19^2 = 361$. Paired the other way, the two products differ by $3$, and nothing
+        tidy happens.
+      </p>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>
+        Each interior angle is $180^\circ - \dfrac{360^\circ}{n}$. The $180$ is already
+        whole, so the whole question is when $\dfrac{360}{n}$ is — that is, when $n$
+        divides $360$.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">in pairs</span>
+          <span>$1 \times 360,\ 2 \times 180,\ 3 \times 120,\ 4 \times 90,\ 5 \times 72,\ 6 \times 60$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$8 \times 45,\ 9 \times 40,\ 10 \times 36,\ 12 \times 30,\ 15 \times 24,\ 18 \times 20$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">divisors</span>
+          <span>$12$ pairs, so $24$ of them</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">drop $n = 1, 2$</span>
+          <span>$22$ values</span>
+        </div>
+      </div>
+
+      <p>
+        Numbers such as $7$ and $16$ are missing because they do not divide $360$. Only
+        $n = 1$ and $n = 2$ have to go, since no polygon has fewer than three sides.
+      </p>
+
+      <p>Listing the divisors in pairs is the move worth keeping. Each small divisor
+      brings a large partner, and the list is finished when the two meet — after
+      $18 \times 20$ the next divisor is $20$, already there — so none is missed and
+      none is counted twice.</p>
+
+      <p>
+        The fourth and fifth questions are the two that catch people out, and for
+        opposite reasons. The fourth looks as though both halves must have the same
+        answer, and they do not. The fifth looks as though the proof has broken, and it
+        has not — one diagonal fails, and a quadrilateral has two.
+      </p>
+
+      <p>
+        For the rest, the habit worth forming is to ask which of the two angle sums makes
+        the question easier. The interior sum grows with $n$ and is the one to use when
+        you are told a total. The exterior sum is fixed at $360^\circ$, so it is the one
+        to use when you are told about a single angle of a regular figure, or when you
+        need to know whether a figure can exist at all.
+      </p>
+
+      <div class="c-stage">
+        <div class="c-stage__num">2</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Solved Examples</div>
+        </div>
+      </div>
+
+      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 1 · Single correct</div><div class="c-example__body"><p>A polygon has 44 diagonals. How many sides has it?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>9</li><li>10</li><li>11</li><li>12</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>A polygon with $n$ sides has $\frac{n(n - 3)}{2}$ diagonals, so $n(n - 3) = 88$.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>$11 \times 8 = 88$, so $n = 11$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(c) 11</span></div></div></div></div>
+
+    </div>
+  </div>
+</section>

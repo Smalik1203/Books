@@ -1,5 +1,38 @@
 # Class 7 · Mathematics I · Chapter 4 — Letter-Numbers
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 15 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/ch04-letter-numbers/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (b) $100 - (4p + 3n)$ |
+| 2 | Single correct | (c) $3x + 3$ |
+| 3 | Single correct | (d) $4a + b$ |
+| 4 | Single correct | (a) 9 times the centre date |
+| 5 | Single correct | (d) $5h + 1$ |
+| 6 | Single correct | (b) 11 |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (c) |
+| 11 | Numerical answer | 210 |
+| 12 | Numerical answer | 150 |
+| 13 | Numerical answer | 29 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (d) P–2, Q–4, R–3, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Beyond the Book checked against what the chapter body teaches. The chapter
@@ -320,3 +353,12 @@ Proofs: the chapter title *Expressions with Letter-Numbers* ran into the
 opener sketch, so the chapter is titled *Letter-Numbers*. A formula at the
 end of a sentence in Example 12 pushed its full stop onto the next line;
 the sentence was rephrased.
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. 3 dependent text/visual group(s) were kept together and the body refitted. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Expressions using Letter-Numbers*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

@@ -1,0 +1,94 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Test Heron’s formula on a triangle with sides $3$ units, $4$ units and
+          $5$ units.</p>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="-40 5 240 118" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="A right-angled triangle ABC with the right angle at B. AB is 4 units, BC is 3 units and AC is 5 units.">
+                <path class="dg-fill-a-soft" d="M45 20 L45 104 L108 104 Z"/>
+                <path class="dg-line" d="M45 20 L45 104 L108 104 Z"/>
+                <path class="dg-thin" d="M45 98 H51 V104"/>
+                <text class="dg-label" x="45" y="15" text-anchor="middle">A</text>
+                <text class="dg-label" x="40" y="116" text-anchor="end">B</text>
+                <text class="dg-label" x="113" y="116">C</text>
+                <text class="dg-dim-label" x="39" y="66" text-anchor="end">4</text>
+                <text class="dg-dim-label" x="76" y="118" text-anchor="middle">3</text>
+                <text class="dg-dim-label" x="82" y="58">5</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 6.25</span> A triangle with sides $3$,
+              $4$ and $5$.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$s = \frac{1}{2}(3 + 4 + 5) = 6$</span>
+              <span class="work__why">semi-perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area $= \sqrt{6 \times (6 - 3) \times (6 - 4) \times (6 - 5)} = \sqrt{6 \times 3 \times 2} = 6$</span>
+              <span class="work__why">Heron’s formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$3^2 + 4^2 = 5^2$, so $\angle B = 90^\circ$</span>
+              <span class="work__why">converse of Baudhāyana–Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>base $= 3$, height $= 4$, area $= \frac{1}{2}(3 \times 4) = 6$</span>
+              <span class="work__why">half base times height</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Both ways give $6$ sq. units.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>The formula gives the right answer every time. You may wonder how Heron’s formula
+      is proved. Many proofs are known. One uses the Baudhāyana–Pythagoras theorem and the
+      difference of two squares, $a^2 - b^2 = (a - b)(a + b)$, several times over. You
+      will study some of these proofs in Class 10.</p>
+
+      <p>There are two more formulas like this for the area of a triangle, and both are
+      connected with circles (Fig. 6.26). Through the three vertices of any triangle
+      $ABC$ there passes exactly one circle, called the
+      <span class="term">circumcircle</span> of $\triangle ABC$. There is also exactly
+      one circle that fits tightly inside the triangle, touching all three sides. It is
+      called the <span class="term">incircle</span> of $\triangle ABC$.</p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="15 25 170 175" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle ABC with sides a, b and c. Its circumcircle, of radius R, passes through A, B and C. Its incircle, of radius r, touches all three sides.">
+            <circle class="dg-fill-d" cx="100" cy="113.51" r="79.54"/>
+            <path class="dg-fill-a-soft" d="M75 38 L25 140 L175 140 Z"/>
+            <circle class="dg-fill-d" cx="85.38" cy="102.36" r="37.64"/>
+            <circle class="dg-line" cx="100" cy="113.51" r="79.54"/>
+            <path class="dg-line" d="M75 38 L25 140 L175 140 Z"/>
+            <circle class="dg-thin" cx="85.38" cy="102.36" r="37.64"/>
+            <path class="dg-dim" d="M100 113.51 L175 140"/>
+            <path class="dg-dim" d="M85.38 102.36 L85.38 140"/>
+            <circle class="dg-fill-teal" cx="100" cy="113.51" r="2"/>
+            <circle class="dg-fill-teal" cx="85.38" cy="102.36" r="2"/>
+            <text class="dg-label" x="75" y="32" text-anchor="middle">A</text>
+            <text class="dg-label" x="20" y="146" text-anchor="end">B</text>
+            <text class="dg-label" x="180" y="146">C</text>
+            <text class="dg-label" x="42" y="86" text-anchor="end">c</text>
+            <text class="dg-label" x="130" y="84">b</text>
+            <text class="dg-label" x="120" y="154" text-anchor="middle">a</text>
+            <text class="dg-dim-label" x="140" y="118">R</text>
+            <text class="dg-dim-label" x="80" y="126" text-anchor="end">r</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.26</span> The circumcircle, radius $R$,
+          and the incircle, radius $r$, of $\triangle ABC$.</figcaption>
+        </figure>
+      </div>
+
+      <p>Let the sides of $\triangle ABC$ be $a$, $b$ and $c$, the radius of its
+      circumcircle $R$, and the radius of its incircle $r$. Then the area is given by
+      both of these formulas:</p>
+
+    </div>
+  </div>
+</section>

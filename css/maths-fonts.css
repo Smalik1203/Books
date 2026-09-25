@@ -1,0 +1,22 @@
+/* Approved maths pairing: Source Serif 4 medium body, Vollkorn display.
+   Kept separate from the shared tokens so science retains its own fonts.
+   Optical sizing is fixed to match the approved comparison proof. */
+@font-face {
+  font-family: 'Maths Source Serif';
+  src: url('../fonts/maths/SourceSerif4Variable-Roman.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Maths Source Serif';
+  src: url('../fonts/maths/SourceSerif4-It.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+:root {
+  --font-body: 'Maths Source Serif', Georgia, serif;
+  --weight-text: 500;
+}
+body { font-optical-sizing: none; }

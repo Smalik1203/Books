@@ -1,5 +1,37 @@
 # Class 8 · Mathematics I · Chapter 1 — The Shape of a Number
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 19 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/ch01-square-and-cube/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p114; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (b) 3528 |
+| 2 | Single correct | (d) 1600 |
+| 3 | Single correct | (c) 50 |
+| 4 | Single correct | (a) 5 |
+| 5 | Single correct | (b) 62 |
+| 6 | Single correct | (c) 25 |
+| 7 | Multiple correct | (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (b), (c) |
+| 10 | Multiple correct | (a), (c), (d) |
+| 11 | Numerical answer | 42 |
+| 12 | Numerical answer | 3721 |
+| 13 | Numerical answer | 35 |
+| 14 | Matching | (b) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (c) P–4, Q–2, R–3, S–1 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 From "Audit Class 8 Maths I Beyond". Both findings confirmed against the
@@ -338,3 +370,7 @@ Worst first.
 | p014, Fig. 1.5 | C7 | The caption reads "$1936$ falls in the shaded stretch, so its root is between $40$ and $45$", and the figure prints $45^2 = 2025$. At that point in the example the text has narrowed the root to $40$–$50$; narrowing it to $45$ is the step *after* the figure, and the example works $45^2$ two paragraphs later. The figure hands over the step the reader is about to take. | Draw and caption only what the step at that point has established. |
 | p001, p003 (Exercise 1.1) | M5 | The chapter opens on a corridor of 100 numbered lockers that students open and shut. Locker corridors are not a fixture of Indian schools; the puzzle is the classic one and the text does explain the mechanics, but the setting is the first thing a reader meets in the book and it is furniture they have never seen. | Author's call: keep (it is self-contained) or re-skin to something on the ground here — a row of switches, a line of gates, numbered shutters in a market. The maths does not change. |
 | p016, p024, p027 | M1 | "$n^3$ … the number you got by multiplying something by itself three times" (p024), and the summary's "A cube is a number multiplied by itself three times" (p027). Three copies multiplied is two multiplications. Consistent within the chapter and standard schoolbook usage, so not wrong in a way that misleads here — but Chapter 2 defines powers properly and will either have to repeat the looseness or contradict it. | One decision, taken once, for Chapter 1 and Chapter 2 together. See CROSS-CHAPTER.md. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *A Square and A Cube*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

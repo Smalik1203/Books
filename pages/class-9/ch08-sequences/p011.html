@@ -2,64 +2,83 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">An Arithmetic Progression</div>
-        <p>An AP with first term $a$ and common difference $d$ runs</p>
-        <p>$a, \ a + d, \ a + 2d, \ a + 3d, \ \ldots$</p>
-        <p>and its $n$th term is $t_n = a + (n - 1)d$.</p>
-      </div>
-
-      <p>Look at where the $(n-1)$ comes from. The first term has had no $d$ added to it
-      at all, the second has had one, the third two. By the $n$th you have taken $n - 1$
-      steps, not $n$. That single offset is where most mistakes with APs are made.</p>
-
-      <p>The common difference may be negative. In $11, 7, 3, -1, -5, \ldots$ the terms
-      fall by $4$ each time, so $a = 11$ and $d = -4$, and the sequence is an AP as much
-      as any rising one is.</p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Go back through every sequence in this chapter so far. Which are
-            arithmetic progressions and which are not?</p>
-            <p>For each one that is not, say what goes wrong — and be precise: it is not
-            enough to say the numbers grow differently.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>A taxi charges a fixed booking fee of <span class="nb">₹200</span>, plus <span class="nb">₹40</span> for every kilometre
+          travelled. Write the sequence of fares after $1$ km, $2$ km, $3$ km, and find
+          the fare for a journey of $10$ km.</p>
+          <p>Work the first few out plainly before reaching for anything general.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$200 + 40 = 240$</span>
+              <span class="work__why">after 1 km</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$200 + 80 = 280$</span>
+              <span class="work__why">after 2 km</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$200 + 120 = 320$</span>
+              <span class="work__why">after 3 km</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>the fares are $240, 280, 320, \ldots$ — an AP with $a = 240$ and $d = 40$</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>$t_n = 240 + (n-1) \times 40 = 200 + 40n$</span>
+              <span class="work__why">$n$th term of an AP</span></div>
+            <div class="work__row"><span class="work__label">Step 6</span>
+              <span>$t_{10} = 200 + 400$</span>
+              <span class="work__why">a journey of $10$ km</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The fare for $10$ km is <span class="nb">₹600</span></span></div>
           </div>
+          <p>The tidied form $200 + 40n$ is worth a second look: the <span class="nb">₹200</span> is the booking
+          fee and the $40n$ is the running charge, so the formula has come out saying
+          exactly what the fare card says.</p>
         </div>
       </div>
 
-      <p>The recursive rule for an AP is even shorter than the explicit one, and it is
-      the rule the definition itself gives you:</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">start</span>
-          <span>$t_1 = a$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">then</span>
-          <span>$t_n = t_{n-1} + d$ &nbsp; for $n \geq 2$</span>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 8.4</div>
+        <ol class="c-questions">
+          <li>Find the $9$th and $26$th terms of the AP $3, 8, 13, 18, \ldots$</li>
+        </ol>
       </div>
 
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Which term of the AP $21, 18, 15, \ldots$ is $-81$? Is $0$ a term of this
+            AP? Give reasons.</li>
+        </ol>
+      </div>
 
-      <p>Written this way an AP says almost nothing: start here, and keep adding the same
-      amount. That is the whole of it. Everything else in this section — the formula for
-      the $n$th term, the straight line it draws, the way its terms can be summed in one
-      step — follows from those two lines and adds no new assumption.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Find the $n$th term of the AP $11, 8, 5, 2, \ldots$ and write its recursive
+            rule as well.</li>
+        </ol>
+      </div>
 
-      <p>It is worth noticing how little is being asked of the numbers. They need not be
-      whole, or positive, or increasing. A common difference of $-4$ gives a falling AP,
-      one of $0.5$ gives a sequence of halves, and one of $0$ gives the same number over
-      and over — which is a perfectly good, if dull, arithmetic progression.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Verify that each of these is an AP and write its $n$th term.
+              <ol class="c-parts c-parts--1">
+                <li>$2,\ 5,\ 8,\ 11,\ \ldots$</li>
+                <li>$-5,\ -1,\ 3,\ 7,\ \ldots$</li>
+                <li>$1.5,\ 3.5,\ 5.5,\ 7.5,\ \ldots$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">8.5</span><span class="name">Adding Up the Naturals</span></h2>
+
+      <p>What is $1 + 2 + 3 + \cdots + 10$? You can add them one at a time and get $55$
+      in half a minute. But there is a way of doing it that takes no adding to speak of,
+      and — this is the point — it goes on working when the ten becomes a hundred, or a
+      million.</p>
+
+      <p>Call the answer $S$ and write it out. Then write it out again backwards.</p>
+
     </div>
   </div>
 </section>

@@ -1,5 +1,40 @@
 # Class 10 · Mathematics I · Chapter 13 — Statistics
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch13-statistics/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+**Body, p007.** The page ran 2.4mm into the foot margin. The female-teachers example now reads "by each of the three methods" and "Education Survey by NCERT" (was "methods of this section", "Survey conducted by NCERT"), which takes back one line. Nothing else changed.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 15 |
+| 2 | Single correct | (b) 4.6 |
+| 3 | Single correct | (c) 20–30 |
+| 4 | Single correct | (d) 24.4 |
+| 5 | Single correct | (a) 26 |
+| 6 | Single correct | (b) 20–30 |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 24 |
+| 12 | Numerical answer | 5 |
+| 13 | Numerical answer | 25.8 |
+| 14 | Matching | (a) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (b) P–3, Q–4, R–1, S–2 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Class 10 Chapter 1
@@ -285,3 +320,8 @@ Set A b c d c a b a d; Set B c a b d b c; Set C c b b a d.
 | Set 13.3 Q3 | C4 | "Below 20" with policies only from age 18 makes a first class 18 – 20, two years wide beside classes five years wide; the median is not affected | none needed for the answer |
 | 13.1 and Note to the Reader | C3 | promise and describe ogives, which the chapter does not teach | dropped here |
 | Example 3 | M5 | "the mean number of wickets … in one-day cricket is 152.89" reads as wickets per match | "wickets in their one-day careers" |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

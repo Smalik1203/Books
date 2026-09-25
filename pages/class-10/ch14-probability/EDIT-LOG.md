@@ -1,5 +1,39 @@
 # Class 10 · Mathematics I · Chapter 14 — Probability
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 15 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch14-probability/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+**Body, p001–p013.** Page 10 ran 3.7mm into the foot margin, and settling its last exercise forward overran the page after. The body was refit with `refit.mjs body`: the exercise questions are unchanged and have only moved between pages. It still ends on p013 with `data-close`.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $\frac{1}{2}$ |
+| 2 | Single correct | (b) $\frac{3}{4}$ |
+| 3 | Single correct | (c) $\frac{1}{13}$ |
+| 4 | Single correct | (d) 0.65 |
+| 5 | Single correct | (a) $\frac{5}{36}$ |
+| 6 | Single correct | (b) $\frac{3}{8}$ |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b) |
+| 10 | Multiple correct | (a), (b), (c), (d) |
+| 11 | Numerical answer | 6 |
+| 12 | Numerical answer | 5 |
+| 13 | Numerical answer | 0.95 |
+| 14 | Matching | (c) P–3, Q–4, R–2, S–1 |
+| 15 | Matching | (d) P–4, Q–1, R–3, S–2 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two borderline findings, both confirmed. **Pages: 26 before (13 body + 13
@@ -249,3 +283,8 @@ Set A b c d a c a b d; Set B b a a d b c; Set C c b a c d.
 | Q2 (iv) | M5 | "A baby is born. It is a boy or a girl" is expected to be equally likely, but birth ratios are not exactly equal | "roughly equally likely", or another example |
 | Q10 | M5 | 50 paise coins are no longer in everyday use | ₹1, ₹2, ₹5 and ₹10 coins |
 | Example 6 | C5 | treats the 365 birthdays as equally likely without comment; the solution states the assumption, which is kept | none |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

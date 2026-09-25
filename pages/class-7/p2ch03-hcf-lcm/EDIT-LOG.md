@@ -1,5 +1,37 @@
 # Class 7 · Mathematics II · Chapter 3 — Finding Common Ground
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/p2ch03-hcf-lcm/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (c) 42 |
+| 2 | Single correct | (b) 360 |
+| 3 | Single correct | (a) 60 |
+| 4 | Single correct | (a) 16 |
+| 5 | Single correct | (d) 11:00 a.m. |
+| 6 | Single correct | (b) 2 |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (c) |
+| 9 | Multiple correct | (a), (c), (d) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 247 |
+| 12 | Numerical answer | 70 |
+| 13 | Numerical answer | 3600 |
+| 14 | Matching | (b) P–2, Q–3, R–4, S–1 |
+| 15 | Matching | (d) P–3, Q–2, R–4, S–1 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two findings.

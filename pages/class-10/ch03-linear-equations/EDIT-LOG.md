@@ -1,5 +1,38 @@
 # Class 10 · Mathematics I · Chapter 3 — Pair of Linear Equations in Two Variables
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 14 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch03-linear-equations/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $(9, 5)$ |
+| 2 | Single correct | (b) $-6$ |
+| 3 | Single correct | (c) coincident |
+| 4 | Single correct | (d) 31 |
+| 5 | Single correct | (a) ₹20 |
+| 6 | Single correct | (b) $(5, -2)$ |
+| 7 | Multiple correct | (a), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 30 |
+| 12 | Numerical answer | 20 |
+| 13 | Numerical answer | 3 |
+| 14 | Matching | (a) P–2, Q–4, R–1, S–3 |
+| 15 | Matching | (d) P–2, Q–3, R–4, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two borderline findings, both confirmed. The body never teaches stream speed
@@ -302,3 +335,8 @@ a page break the way an exercise set does.
 | 3.2, ratio test | C6 | "the converse is also true" is asserted and never shown | none at this class |
 | Example 3 | M5 | the answer, 1 pair of pants and no skirts, reads oddly for a shopping story | none; it is the source's |
 | Stage 1, fifth question | — | the ages come out as 32.5 and 17.5 years; the explanation says so and uses it to make a point about checking | replace with whole-number ages if preferred |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

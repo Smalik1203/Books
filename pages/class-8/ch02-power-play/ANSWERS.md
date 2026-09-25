@@ -265,6 +265,27 @@ nearly five hundred years of the world's rice; (7) $0^n = 0$, and no value of
 $0^0$ keeps both patterns; (8) the fifth power ends in the digit it started
 with.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 0 *(single correct)*
+2. (b) 4 *(single correct)*
+3. (c) $3^{18}$ *(single correct)*
+4. (d) $\frac{12}{7}$ *(single correct)*
+5. (a) 0 *(single correct)*
+6. (b) 729 *(single correct)*
+7. (a), (c), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (c) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 6 *(numerical answer)*
+12. 2 *(numerical answer)*
+13. 12500 *(numerical answer)*
+14. (a) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

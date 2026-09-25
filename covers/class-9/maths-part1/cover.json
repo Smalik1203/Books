@@ -9,9 +9,9 @@
   "isbn": "978-93-00000-00-2",
   "url": "classbridge.in",
   "_finish": "None, deliberately. This carried \"finish\": \"night\" and rendered arc's palette anyway: a direction sets the same tokens a finish sets and comes later in cover.css, so it wins at equal specificity. Removing the line left the proof byte-identical, which is how that was confirmed rather than argued. Do not add one back expecting it to do anything — colour on a cover is the direction's, and if this volume wants a different palette it wants a different direction.",
-  "_spine": "Spine width is normally bulk, not a design choice: pages / 2 x caliper, plus the two covers. 236pp of 80gsm bookwove at 0.106mm bulks to 12.5mm, and 0.5mm of board and case takes it to 13.0. spineWidth overrides that arithmetic and is set to 15mm to the printer's specification, a bulkier stock than the caliper here describes. Keep pages and paperCaliper current anyway: cover.mjs prints the computed bulk beside the declared width, so a spine that has drifted from its stock is visible. Re-derive the count from --book before the cover goes to press and round up to a multiple of four.",
+  "_spine": "Spine width is normally bulk, not a design choice: pages / 2 x caliper, plus the two covers. 316pp of 80gsm bookwove at 0.106mm bulks to 16.7mm, and 0.5mm of board and case takes it to 17.2 (--book, 24 September 2026: four of front matter and 310 numbered, with Chapter 6 now NCERT’s Measuring Space). The printer’s 15mm below was quoted for the earlier, shorter extent and needs re-quoting. spineWidth overrides that arithmetic and is set to 15mm to the printer's specification, a bulkier stock than the caliper here describes. Keep pages and paperCaliper current anyway: cover.mjs prints the computed bulk beside the declared width, so a spine that has drifted from its stock is visible. Re-derive the count from --book before the cover goes to press and round up to a multiple of four.",
   "spineWidth": 15,
-  "pages": 236,
+  "pages": 316,
   "paperCaliper": 0.106,
   "caseAllowance": 0.5,
   "content": [

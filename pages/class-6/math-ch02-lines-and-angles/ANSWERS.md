@@ -416,7 +416,7 @@ more.
 
 ## 2.11 Types of Angles and their Measures
 
-### Figs. 2.54 to 2.56
+### Figs. 2.54, 2.55 and 2.56
 
 The printed measures match the drawings: 40°, 50° and 75° (acute), 110° and
 130° (obtuse). The reflex angles in Fig. 2.56 are drawn at **222°**
@@ -432,18 +432,18 @@ The printed measures match the drawings: 40°, 50° and 75° (acute), 110° and
    to the left gives an obtuse angle, and any angle marked the long way
    round gives a reflex angle. The acute angle already drawn is about 63°.
 
-2. In Fig. 2.58:
+2. In Fig. 2.59:
    - (i) $\angle PTR$ = **30°**, acute;
    - (ii) $\angle PTQ$ = **60°**, acute;
    - (iii) $\angle PTW$ = **102°**, obtuse;
    - (iv) $\angle WTP$ the long way round = $360 - 102 = 258$, **258°**, reflex.
 
-### Let's Explore (Fig. 2.59)
+### Let's Explore (Fig. 2.60)
 
 1. $\angle BET = 180 - 80 = 100$, **100°**.
 2. $\angle SET = 90 - 80 = 10$, **10°**.
 
-### Measuring a reflex angle (Fig. 2.60)
+### Measuring a reflex angle (Fig. 2.61)
 
 The two angles are drawn at 110° and 250°, and $110 + 250 = 360$.
 
@@ -452,7 +452,7 @@ The two angles are drawn at 110° and 250°, and $110 + 250 = 360$.
 1. Drawings must show (i) 140°, (ii) 82°, (iii) 195°, (iv) 70°, (v) 35°. For
    (iii), draw $360 - 195 = 165$, 165°, and mark the angle the long way round.
 
-2. Fig. 2.61: (a) **35°**, acute; (b) **160°**, obtuse; (c) **100°**, obtuse;
+2. Fig. 2.62: (a) **35°**, acute; (b) **160°**, obtuse; (c) **100°**, obtuse;
    (d) **25°**, acute; (e) **90°**, right; (f) **345°**, reflex (marked the
    long way round). Guesses will vary.
 
@@ -493,15 +493,24 @@ is acute); the second clock hand turns **315°**, and the short way back is
 
 ### Stage 2 · Solved Examples
 
-Beyond Examples 1 to 16 are worked in the book. Their answers: 1 — three
-segments, and the rays $\overrightarrow{PA}$ and $\overrightarrow{PB}$;
-2 — three angles at $A$, and at $D$ two angles and a straight angle; 3 —
-$\angle P$, by 15°; 4 — $\angle Y$ is the smallest, and $\angle X$ and
-$\angle Z$ are equal; 5 — it points to 3, three quarters of a turn; 6 — 30° and
-150°; 7 — 140°, obtuse; 8 — 85°; 9 — 18°, 5 parts; 10 — 36 parts, 18 of
-them; 11 — 210°, reflex; 12 — acute, obtuse, reflex, right, reflex, full turn;
-13 — 90°;
-14 — 135° and 260°; 15 — 90°; 16 — the drawing of 65° on the outer scale.
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (b) 10 *(single correct)*
+2. (c) 53° *(single correct)*
+3. (b) North-west *(single correct)*
+4. (d) 68° *(single correct)*
+5. (a) 80° *(single correct)*
+6. (c) 214° *(single correct)*
+7. (a), (c), (d) *(multiple correct)*
+8. (b), (c) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (c), (d) *(multiple correct)*
+11. 24 *(numerical answer)*
+12. 38 *(numerical answer)*
+13. 88 *(numerical answer)*
+14. (b) P–3, Q–4, R–2, S–1 *(matching)*
+15. (d) P–4, Q–3, R–1, S–2 *(matching)*
 
 ### Stage 3 · Practice
 
@@ -554,7 +563,7 @@ The assertion–reason questions:
     $70 + 35 = 105$.
 26. **Yes.** An acute angle is less than 90°, so twice it is less than 180°;
     a reflex angle is more than 180°.
-27. In Fig. 2.65, $\overrightarrow{OP}$, $\overrightarrow{OQ}$ and
+27. In Fig. 2.64, $\overrightarrow{OP}$, $\overrightarrow{OQ}$ and
     $\overrightarrow{OR}$ are at 150°, 105° and 45° from $\overrightarrow{OB}$.
     (a) $\angle ROB = 180 - 30 - 45 - 60 = 45$, **45°**;
     (b) $\angle AOQ = 30 + 45 = 75$, **75°**;

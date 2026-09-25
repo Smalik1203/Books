@@ -9,61 +9,11 @@
         </div>
       </div>
 
-      <h3>Type 1 &middot; Counting a carpet</h3>
+      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 1 · Single correct</div><div class="c-example__body"><p>A Sierpiński carpet is begun from a square of side 54 cm. At step 2, what is the side of each remaining square?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>6 cm</li><li>18 cm</li><li>2 cm</li><li>27 cm</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>At each step every square is cut into 9 squares with a third of its side, and the middle one is removed.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>After two steps the side is $54 \div 3 \div 3 = 6$ cm.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(a) 6 cm</span></div></div></div></div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>A Sierpiński carpet is begun from a square of side $54$ cm. At step $2$, find the side of each remaining square, how many there are, how many holes have been cut, and the area left.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$54 \div 3 \div 3 = 6$ cm</span>
-              <span class="work__why">a third each step</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$R_2 = 8^2 = 64$</span>
-              <span class="work__why">eight for each square</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$64 \times 6 \times 6 = 2304$ cm²</span>
-              <span class="work__why">count times one square</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$H_2 = H_1 + R_1 = 1 + 8 = 9$ holes</span>
-              <span class="work__why">one new hole per square</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>holes: $18 \times 18 + 8 \times 6 \times 6 = 612$ cm², and $54 \times 54 - 612 = 2304$ cm²</span>
-              <span class="work__why">check</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>64 squares of side 6 cm, 9 holes, and 2304 cm² left</span></div>
-          </div>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 2 · Single correct</div><div class="c-example__body"><p>At each step of a Sierpiński triangle, every triangle becomes 3 smaller ones. A Sierpiński triangle has 2187 triangles. Which step is it at?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>6</li><li>7</li><li>8</li><li>729</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>The counts are $1, 3, 9, 27, \ldots$: step $n$ has $3^n$ triangles.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>$2187 = 3^7$, so it is step 7.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(b) 7</span></div></div></div></div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>A square is cut into nine equal squares, and the four corner squares are thrown away, leaving a plus sign of five. The same is done to each square kept, step after step. Starting from an area of $1$, find the number of squares kept at step $3$ and the area left. Is it less than a fifth?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$5 \times 5 \times 5 = 125$ squares</span>
-              <span class="work__why">five for each square</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>each has side $\tfrac{1}{27}$ and area $\tfrac{1}{729}$</span>
-              <span class="work__why">a third each step</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$125 \times \tfrac{1}{729} = \tfrac{125}{729}$</span>
-              <span class="work__why">count times one square</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$\left(\tfrac59\right)^3 = \tfrac{125}{729}$</span>
-              <span class="work__why">check: five ninths kept</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>$\tfrac{125}{729} \approx 0.17$, and a fifth is $0.2$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>125 squares and an area of $\tfrac{125}{729}$, which is less than a fifth</span></div>
-          </div>
-          <p>The rule is new, but the counting is the carpet's with five in place of eight.</p>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 3 · Single correct</div><div class="c-example__body"><p>A pyramid has 10 vertices. How many edges has it?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>10</li><li>20</li><li>18</li><li>9</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>A pyramid has one apex, so its base has $10 - 1 = 9$ corners: it is a nonagonal pyramid.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>It has 9 base edges and 9 slant edges: $9 + 9 = 18$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(c) 18</span></div></div></div></div>
 
     </div>
   </div>

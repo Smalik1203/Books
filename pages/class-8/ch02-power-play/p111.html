@@ -2,68 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 9 &middot; Counting the possibilities</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 17</div>
-        <div class="c-example__body">
-          <p>A quiz has $6$ questions, and each has $3$ options. In how many ways can the answer sheet be filled in? If a fourth option is added to every question, by about what factor does the number grow?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$3^6 = 729$</span>
-              <span class="work__why">$3$ options, $6$ times</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$4^6 = 4096$</span>
-              <span class="work__why">$4$ options, $6$ times</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$4096 \div 729 \approx 5.6$</span>
-              <span class="work__why">compare the two</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$729$ ways; the number grows about $5.6$ times</span></div>
-          </div>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice questions</div>
+        <div class="c-practice__sub">Choose the correct option</div>
+        <ol class="c-questions">
+          <li>$2^5 \times 2^3$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$2^{15}$</li><li>$4^8$</li><li>$2^2$</li><li>$2^8$</li></ol></li>
+        </ol>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 18</div>
-        <div class="c-example__body">
-          <p>A locker code is three letters, each from A to E, followed by two digits. How many codes are there? Is the count a single power?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>letters: $5 \times 5 \times 5 = 5^3$</span>
-              <span class="work__why">$5$ options, $3$ slots</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>digits: $10 \times 10 = 10^2$</span>
-              <span class="work__why">$10$ options, $2$ slots</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$5^3 \times 10^2 = 125 \times 100$</span>
-              <span class="work__why">independent choices multiply</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$12\,500$ codes; a product of two powers, not a single power</span></div>
-          </div>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>$(5^2)^3$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$5^5$</li><li>$5^6$</li><li>$5^8$</li><li>$5^9$</li></ol></li>
+        </ol>
       </div>
 
-      <h3>Type 10 &middot; Estimating in standard form</h3>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>$7^9 \div 7^6$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$7^3$</li><li>$7^{15}$</li><li>$1^3$</li><li>$7^{54}$</li></ol></li>
+        </ol>
+      </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 19</div>
-        <div class="c-example__body">
-          <p>Estimate $2^{45}$ in standard form, using $2^{10} \approx 10^3$.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$2^{45} = 2^{40} \times 2^5 = (2^{10})^4 \times 32$</span>
-              <span class="work__why">split off the tens</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$\approx (10^3)^4 \times 32 = 32 \times 10^{12}$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>about $3.2 \times 10^{13}$</span></div>
-          </div>
-          <p>The exact value is about $3.5 \times 10^{13}$. The estimate is low because each $2^{10}$ is a little more than $10^3$.</p>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>$4^3 \times 5^3$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$9^3$</li><li>$20^6$</li><li>$20^3$</li><li>$4^{15}$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>$0.00058$ in standard form is<ol class="c-parts c-parts--alpha c-parts--4"><li>$58 \times 10^{-5}$</li><li>$5.8 \times 10^{4}$</li><li>$5.8 \times 10^{-3}$</li><li>$5.8 \times 10^{-4}$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>$\dfrac{3^5 \times 3^2}{3^4}$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$3^3$</li><li>$3^{11}$</li><li>$3^7$</li><li>$3^{-1}$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li>Which is the largest?<ol class="c-parts c-parts--alpha c-parts--4"><li>$4^7$</li><li>$2^{16}$</li><li>$8^5$</li><li>$16^3$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="8">
+          <li>$\left(\dfrac{2}{5}\right)^{-3}$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$\dfrac{8}{125}$</li><li>$-\dfrac{8}{125}$</li><li>$\dfrac{125}{8}$</li><li>$\dfrac{6}{15}$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="9">
+          <li>If $2^n = 32$, then $n$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$4$</li><li>$16$</li><li>$6$</li><li>$5$</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="10">
+          <li>Which is larger, $2^{40}$ or $3^{30}$?<ol class="c-parts c-parts--alpha"><li>$2^{40}$</li><li>$3^{30}$</li><li>they are equal</li><li>it cannot be decided</li></ol></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="11">
+          <li>The last digit of $3^{2024}$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$1$</li><li>$3$</li><li>$7$</li><li>$9$</li></ol></li>
+        </ol>
       </div>
 
     </div>

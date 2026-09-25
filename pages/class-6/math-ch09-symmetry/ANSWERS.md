@@ -352,7 +352,7 @@ windmill of Fig. 9.21 have none.
 7. *(checked)* (a) **Yes, 3 lines of symmetry**, each through the middle of
    a long side and the middle of the short side opposite it. (b) **Yes:**
    $120^\circ$, $240^\circ$ and $360^\circ$.
-8. The regular polygons of Fig. 1.7 have **3, 4, 5, 6, 7, 8, 9 and 10**
+8. The regular polygons of Fig. 1.8 have **3, 4, 5, 6, 7, 8, 9 and 10**
    lines of symmetry — the counting numbers from 3, the same as their
    numbers of sides. *(checked on Chapter 1's figure)*
 9. The same numbers again, **3, 4, 5, 6, 7, 8, 9, 10** angles of symmetry.
@@ -410,15 +410,24 @@ the booklet is complete.
 
 ### Stage 2 · Solved Examples
 
-Beyond Example 1: (a) 2, (b) 1. Beyond Example 2: no, 4 lines.
-Beyond Example 3: images 4, 1 and 3 squares right of the line.
-Beyond Example 4: 4 squares directly above B. Beyond Example 5: 6 cm and
-5 cm. Beyond Example 6: a T-shaped hole with 8 sides. Beyond Example 7:
-(a) order 4, (b) order 2, no lines. Beyond Example 8: $18^\circ$; yes and
-no. Beyond Example 9: $30^\circ$. Beyond Example 10: $24^\circ$, order 15.
-Beyond Example 11: 36 arms; yes and no. Beyond Example 12: order 4.
-Beyond Example 13: 0 and 8 have 2 lines and order 2; 2 and 5 have no line
-and order 2. *(all checked)*
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (b) 45° *(single correct)*
+2. (b) 2 *(single correct)*
+3. (d) 8 cm *(single correct)*
+4. (b) 5 *(single correct)*
+5. (c) The stated parallelogram *(single correct)*
+6. (a) 4 *(single correct)*
+7. (b), (c), (d) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (d) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 15 *(numerical answer)*
+12. 13 *(numerical answer)*
+13. 6.5 *(numerical answer)*
+14. (b) P–3, Q–4, R–2, S–1 *(matching)*
+15. (d) P–2, Q–4, R–1, S–3 *(matching)*
 
 ### Stage 3 · Practice
 

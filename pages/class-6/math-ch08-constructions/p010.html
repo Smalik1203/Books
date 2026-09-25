@@ -2,69 +2,33 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>If this seems hard, start with an easier problem. How would you construct a rectangle that can be divided into <em>two</em> identical squares? Try it first.</p>
+      <p>Now check your guesses. Place $X$ and $Y$ on the sides, and measure the length of the line $XY$. How does the shortest length of $XY$ compare with the length of $AB$? Try other places too. Are there other positions where $X$ and $Y$ are nearest or farthest? You can construct several copies of the rectangle to try more places.</p>
 
-      <p>It helps to plan before you construct. One way to plan is to draw a <span class="term">rough diagram</span> of the finished figure, as in Fig. 8.18. A rough diagram does not need correct lengths. It only needs to show how the parts fit together.</p>
-
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="0 0 190 100" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A rough drawing of rectangle ACDF split into two squares ABEF and BCDE; every one of the seven short sides carries one small mark to show they are equal">
-            <polygon class="dg-thin" points="35,20 155,20 155,80 35,80"/>
-            <line class="dg-thin" x1="95" y1="20" x2="95" y2="80"/>
-            <line class="dg-thin" x1="65" y1="16" x2="65" y2="24"/>
-            <line class="dg-thin" x1="125" y1="16" x2="125" y2="24"/>
-            <line class="dg-thin" x1="65" y1="76" x2="65" y2="84"/>
-            <line class="dg-thin" x1="125" y1="76" x2="125" y2="84"/>
-            <line class="dg-thin" x1="39" y1="50" x2="31" y2="50"/>
-            <line class="dg-thin" x1="99" y1="50" x2="91" y2="50"/>
-            <line class="dg-thin" x1="159" y1="50" x2="151" y2="50"/>
-            <text class="dg-label" x="35" y="14.77" text-anchor="middle">A</text>
-            <text class="dg-label" x="95" y="14.77" text-anchor="middle">B</text>
-            <text class="dg-label" x="155" y="14.77" text-anchor="middle">C</text>
-            <text class="dg-label" x="35" y="94.77" text-anchor="middle">F</text>
-            <text class="dg-label" x="95" y="94.77" text-anchor="middle">E</text>
-            <text class="dg-label" x="155" y="94.77" text-anchor="middle">D</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 8.18</span> A rough diagram. A small mark on a line shows which sides are equal.</figcaption>
-        </figure>
+      <div class="c-figure-context">
+      <p>How can you keep track of all your lengths? You could write a sentence for each try: <em>when $X$ is 5 mm from $A$ and $Y$ is 3 cm from $B$, $XY$ is</em> <span class="blank"></span>. But only three things change from one sentence to the next. So a table is much shorter. Copy Table 8.17, fill it in, and add rows of your own.</p>
+      
+      <table>
+              <caption>Table 8.17 Lengths of XY</caption>
+              <thead><tr><th>Distance of $X$ from $A$</th><th>Distance of $Y$ from $B$</th><th>Length of $XY$</th></tr></thead>
+              <tbody>
+                <tr><td>5 mm</td><td>3 cm</td><td></td></tr>
+                <tr><td>1 cm</td><td>1 cm</td><td></td></tr>
+                <tr><td>2 cm</td><td>4 cm</td><td></td></tr>
+              </tbody>
+            </table>
       </div>
 
-      <p>What does the rough diagram tell you? The two squares are identical, so $AB = BC$ and $FE = ED$. Also, $ABEF$ and $BCDE$ are squares, so all the sides of each square are equal:</p>
+      <p>What happens when $X$ is the same distance from $A$ as $Y$ is from $B$? Try the cases in Table 8.18, and some more of your own.</p>
 
-      <div class="work work--list">
-        <p>$AF = AB = BE = FE$</p>
-        <p>$BE = BC = CD = ED$</p>
-      </div>
-
-      <p>So all seven short lines are equal. To show that sides are equal in a drawing, we put the same small mark on each of them.</p>
-
-      <p>Now try the construction. No lengths were given, so you may choose the length of $AF$. Suppose you choose $AF = 4$ cm. How long must $AC$ be? Can you complete the rectangle?</p>
-
-      <p>You can even draw $AF$ without measuring it at all. Draw a perpendicular to $AF$ through $A$, long enough to hold the whole top side. Since $AB = AF$, you need to carry the length of $AF$ across to this line to find $B$. A compass does this without a ruler, as Fig. 8.19 shows.</p>
-
-      <div class="c-figure c-figure--sm">
-        <figure>
-          <svg viewBox="0 0 190 104" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A line AF going down from A and a line going right from A at a right angle; a dashed quarter circle about A carries F round to B on the second line, where a short compass arc crosses it">
-            <line class="dg-line" x1="40" y1="22" x2="178" y2="22"/>
-            <line class="dg-line" x1="40" y1="22" x2="40" y2="92"/>
-            <path class="dg-thin" d="M40 30 L48 30 L48 22"/>
-            <path class="dg-ghost" d="M40 92 A70 70 0 0 0 110 22"/>
-            <path class="dg-thin" d="M108.94 34.16 A70 70 0 0 0 108.94 9.84"/>
-            <circle class="dg-line" cx="40" cy="22" r="0.7"/>
-            <circle class="dg-line" cx="40" cy="22" r="1.45"/>
-            <circle class="dg-line" cx="40" cy="92" r="0.7"/>
-            <circle class="dg-line" cx="40" cy="92" r="1.45"/>
-            <circle class="dg-line" cx="110" cy="22" r="0.7"/>
-            <circle class="dg-line" cx="110" cy="22" r="1.45"/>
-            <text class="dg-label" x="35.05" y="20.82" text-anchor="end">A</text>
-            <text class="dg-label" x="33" y="95.77" text-anchor="end">F</text>
-            <text class="dg-label" x="119.96" y="17.42" text-anchor="start">B</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 8.19</span> With the needle at $A$ and the pencil at $F$, turn the compass round: the arc cuts the line at $B$, so $AB = AF$.</figcaption>
-        </figure>
-      </div>
-
-      <p>Use the same idea to mark $C$, and then complete the rectangle.</p>
+      <table>
+        <caption>Table 8.18 X and Y at the same distance from A and B</caption>
+        <thead><tr><th>Distance of $X$ from $A$</th><th>Distance of $Y$ from $B$</th><th>Length of $XY$</th></tr></thead>
+        <tbody>
+          <tr><td>5 mm</td><td>5 mm</td><td></td></tr>
+          <tr><td>1 cm</td><td>1 cm</td><td></td></tr>
+          <tr><td>1 cm 5 mm</td><td>1 cm 5 mm</td><td></td></tr>
+        </tbody>
+      </table>
 
       <div class="c-reflect">
         <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
@@ -73,11 +37,27 @@
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
           <ol>
-            <li>Now construct a rectangle that can be divided into three identical squares.</li>
-            <li>Give the side lengths of a rectangle that cannot be divided into two identical squares. Then give the side lengths of one that cannot be divided into three identical squares.</li>
+            <li>In each row of Table 8.18, how does the length of $XY$ compare with the length of $AB$?</li>
+            <li>What is the shape of the 4-sided figure $ABYX$ each time?</li>
+            <li>How does the greatest distance between $X$ and $Y$ compare with the length of the line $AC$? With the length of $BD$?</li>
           </ol>
           </div>
         </div>
+      </div>
+
+      <h3>Breaking rectangles</h3>
+
+      <p>Construct a rectangle that can be divided into 3 identical squares, as in Fig. 8.19.</p>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="0 0 190 62" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A long rectangle divided by two upright lines into three equal squares">
+            <polygon class="dg-line" points="20,6 170,6 170,56 20,56"/>
+            <line class="dg-line" x1="70" y1="6" x2="70" y2="56"/>
+            <line class="dg-line" x1="120" y1="6" x2="120" y2="56"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 8.19</span> A rectangle divided into 3 identical squares.</figcaption>
+        </figure>
       </div>
 
     </div>

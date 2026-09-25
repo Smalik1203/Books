@@ -16,7 +16,7 @@
 
 import { createServer } from 'node:http';
 import { readFile, stat, readdir } from 'node:fs/promises';
-import { existsSync, watch } from 'node:fs';
+import { existsSync, readFileSync, watch } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { contentWatcher } from './watch-content.mjs';
 import { execFile } from 'node:child_process';
@@ -107,6 +107,17 @@ async function sheet(edition) {
   };
 }
 
+/* What a class directory is called in the chooser. class-9 is "Class 9";
+   a directory that is not a class — the specimen bound from five of them,
+   pages/_sample-2027-28 — names itself in its book.json's "label". */
+function classLabel(cls) {
+  const f = path.join(ROOT, 'pages', cls, 'book.json');
+  if (existsSync(f)) {
+    try { const b = JSON.parse(readFileSync(f, 'utf8')); if (b.label) return b.label; } catch {}
+  }
+  return 'Class ' + cls.replace(/^class-/, '');
+}
+
 /* ---- What is in pages/ ------------------------------------ */
 async function library() {
   const classes = [];
@@ -136,8 +147,9 @@ async function library() {
         edition: (meta.edition || 'crown quarto').toUpperCase(),
       });
     }
-    chapters.sort((a, b) => String(a.meta.number)
-      .localeCompare(String(b.meta.number), 'en', { numeric: true }));
+    // a specimen gives each chapter an "order"; its numbers come from five books
+    chapters.sort((a, b) => String(a.meta.order ?? a.meta.number)
+      .localeCompare(String(b.meta.order ?? b.meta.number), 'en', { numeric: true }));
     if (chapters.length) classes.push({ cls, chapters });
   }
   return classes;
@@ -257,7 +269,7 @@ function libraryHtml(classes, coverClasses) {
 
   const card = (c) => `
     <a class="card" href="/read/${esc(c.target)}">
-      <div class="card__num">Chapter ${esc(c.meta.number)} &middot; ${esc(c.edition)}</div>
+      <div class="card__num">${c.meta.order ? 'Class ' + esc(c.meta.class) : 'Chapter ' + esc(c.meta.number)} &middot; ${esc(c.edition)}</div>
       <div class="card__title">${esc(c.meta.title)}</div>
       <div class="card__meta">
         <span>${c.pages} page${c.pages === 1 ? '' : 's'}</span>
@@ -338,7 +350,6 @@ function libraryHtml(classes, coverClasses) {
   const sections = names.map((cls) => {
     const chapters = (classes.find((c) => c.cls === cls) || { chapters: [] }).chapters;
     const covers = (coverClasses.find((c) => c.cls === cls) || { covers: [] }).covers;
-    const shown = esc(cls.replace(/^class-/, ''));
 
     const known = SUBJECTS.filter((sub) =>
       chapters.some((c) => c.subject === sub));
@@ -354,7 +365,7 @@ function libraryHtml(classes, coverClasses) {
       const chapterOnly = ['class-6', 'class-7'].includes(cls) && /^Science(?:\s|$)/i.test(sub);
       return `<section class="lib-set" hidden data-class="${esc(cls)}" data-subject="${esc(sub)}"`
         + ` data-count="${mine.length}">`
-        + `<div class="class-head">Class ${shown} &middot; ${esc(sub)}</div>`
+        + `<div class="class-head">${esc(classLabel(cls))} &middot; ${esc(sub)}</div>`
         + (mine.length ? `<div class="grid">${vol && vol.bindable && !chapterOnly ? bookCard(vol) : ''}${mine.map(card).join('')}</div>` : '')
         + `</section>`;
     }).join('');
@@ -397,7 +408,7 @@ function libraryHtml(classes, coverClasses) {
         <label class="lib-field">
           <span>Class</span>
           <select class="lib-select" id="pick-class">${
-            opts(names, 'Choose a class', (v) => 'Class ' + v.replace(/^class-/, ''))
+            opts(names, 'Choose a class', classLabel)
           }</select>
         </label>
         <label class="lib-field">
@@ -556,7 +567,7 @@ const asViewerItem = (vol) => ({
   base: vol.base,
   subject: vol.subject,
   meta: { class: vol.meta.class, title: vol.subject },
-  where: 'Class ' + esc(vol.meta.class) + ' &middot; whole book',
+  where: esc(classLabel(vol.cls)) + ' &middot; whole book',
   backHref: '/?class=' + encodeURIComponent(vol.cls) + '&amp;subject=' + encodeURIComponent(vol.subject),
 });
 

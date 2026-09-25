@@ -170,6 +170,27 @@ on the page: (1) $AB = \frac{120}{13}$ cm; (2) 7 cm, 5 cm and 3 cm;
 (3) no, since $5 + 9 = 14$ but $6 + 7 = 13$; (4) 12 cm and $6\sqrt{3}$ cm;
 (5) 1 cm.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 12 cm *(single correct)*
+2. (b) $90^\circ$ *(single correct)*
+3. (c) $100^\circ$ *(single correct)*
+4. (d) 0 *(single correct)*
+5. (a) 7 cm *(single correct)*
+6. (b) 8 cm *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 15 *(numerical answer)*
+12. 70 *(numerical answer)*
+13. 24 *(numerical answer)*
+14. (c) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–2, Q–1, R–4, S–3 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

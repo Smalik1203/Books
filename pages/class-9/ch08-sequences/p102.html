@@ -2,59 +2,88 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>
+        The AP is $4, 9, 14, 19, \ldots$ Notice that the second fact never needed the
+        first: any two terms the same distance apart differ by that many $d$'s, whether
+        they are the sixth and ninth or the sixtieth and sixty-third.
+      </p>
+
+      <p>
+        That is worth keeping. In an AP the gap between two terms depends only on how
+        far apart they stand, never on where they stand. So a fact of the form "this
+        term exceeds that one by so much" is a fact about $d$ alone, and it can be read
+        off without touching $a$. Half the questions about APs are built on it.
+      </p>
+
       <div class="c-try">
-        <p>Two sequences begin $3, 6, \ldots$ and nothing more is said about either. Give
-        a third term for the first that makes it an AP, and a third term for the second
-        that makes it a GP. What does this show about predicting from two terms?</p>
+        <p>A GP has first term $5$ and common ratio $\tfrac12$. A classmate says the
+        terms will eventually become negative. Is that right? Answer without finding
+        any term.</p>
       </div>
 
+      <p>
+        The classmate is wrong, and no arithmetic is needed to say so.
+      </p>
+
+      <p>
+        Every term of this GP is $\tfrac12$ times the one before it. Half of a positive
+        number is positive. So if the first term is positive every term after it is
+        positive too, however far the sequence runs — the terms fall towards zero and
+        never arrive, and they certainly never cross it.
+      </p>
+
+      <p>
+        What the classmate has done is confuse <em>shrinking</em> with
+        <em>decreasing past zero</em>. Only a negative ratio changes signs, and it
+        changes them at every single step: $r = -\tfrac12$ would give
+        $5, -\tfrac52, \tfrac54, -\tfrac58, \ldots$, alternating rather than descending.
+      </p>
+
       <div class="c-try">
-        <p>Find all the ways of writing $100$ as a sum of two or more consecutive natural
-        numbers.</p>
+        <p>How many three-digit numbers are divisible by $9$? You are not asked to list
+        them.</p>
       </div>
 
-      <div class="c-try">
-        <p>The sum of the first three terms of a GP is $\tfrac{13}{12}$ and their product
-        is $-1$. Find the common ratio and the terms.</p>
+      <p>
+        The multiples of $9$ form an AP with $d = 9$, so the whole question is: where
+        does it start, where does it stop, and how many steps between?
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">first</span>
+          <span>$9 \times 12 = 108$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">last</span>
+          <span>$9 \times 111 = 999$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">count</span>
+          <span>$111 - 12 + 1$</span>
+          <span class="chip">100</span>
+        </div>
       </div>
 
       <p>
-        A word about the third and the sixth. Both look like questions about particular
-        numbers, and both are really questions about what a rule is entitled to claim. A
-        GP with a positive first term and a positive ratio can shrink for ever without
-        changing sign. Two terms of a list settle nothing at all about the third. Those
-        two habits — asking what a rule forbids, and asking how much of a list you
-        actually need — catch most of the mistakes made in this subject.
+        The $+1$ is the whole difficulty. From the twelfth multiple to the
+        hundred-and-eleventh there are $99$ <em>steps</em> but $100$
+        <em>multiples</em>, because both ends are being counted. It is the same
+        off-by-one as the $n-1$ in $t_n = a + (n-1)d$, met from the other side.
       </p>
 
       <p>
-        None of the eight yields to a remembered formula on its own. Each turns on a
-        decision made before the formula: which kind of sequence this is, what is fixed
-        and what is being asked for, and whether the question has one answer or several.
-        Settle that and the arithmetic is a line or two.
+        The same could be had from the formula: solve $108 + (n-1)9 = 999$ to get
+        $n = 100$. The arithmetic is identical; the fence-post is just easier to see
+        when the multiples are numbered.
       </p>
 
       <p>
-        Two of them are worth attempting more than once. The seventh asks for
-        <em>all</em> the ways, which is a different demand from finding one — you have to
-        know when to stop, and knowing when to stop means understanding why the list is
-        finite at all. The eighth gives you a sum and a product rather than terms, and
-        the whole difficulty is choosing how to write the three unknowns down before any
-        algebra begins.
-      </p>
-
-      <p>
-        If a question resists, the useful move is to write out five or six terms by hand.
-        A pattern that is invisible in the rule is often obvious in the list, and the
-        list costs a minute. Every solution overleaf begins that way, even the ones that
-        end in algebra.
-      </p>
-
-      <p>
-        And one habit is worth more than any of these. Before answering, say out loud
-        what kind of sequence you are looking at — arithmetic, geometric, or neither —
-        and how you know. Half the wrong answers in this chapter are right answers to
-        the other kind of question.
+        Finding the two ends is the part worth practising. The smallest three-digit
+        multiple of $9$ is not $100$ rounded somehow — it is the first multiple at or
+        above $100$, and $100 \div 9$ is a little over $11$, so it is the twelfth.
+        The largest is found the same way from the top: $999 \div 9$ is exactly
+        $111$, so the hundred-and-eleventh, $999$ itself, is the last one that fits.
       </p>
 
     </div>

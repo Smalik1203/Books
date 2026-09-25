@@ -2,61 +2,114 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 10 &middot; Solving by factorising</h3>
+      <figure class="c-figure c-figure--sm">
+        <svg viewBox="0 -10 230 175" role="img"
+             aria-label="A square field of side a with a smaller square pond of side b cut from its top right corner">
+          <path class="dg-line dg-fill-a-soft" d="M30 18 H60 V108 H150 V138 H30 Z"/>
+          <rect class="dg-fill-c-soft" x="60" y="18" width="90" height="90"/>
+          <path class="dg-thin" d="M60 18 H150 V108"/>
+          <text class="dg-note" x="105" y="66" text-anchor="middle">pond</text>
+      
+          <line class="dg-dim" x1="18" y1="18" x2="18" y2="138"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="10" y="82" text-anchor="end">a</text>
+          <line class="dg-dim" x1="30" y1="152" x2="150" y2="152"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="90" y="163" text-anchor="middle">a</text>
+          <line class="dg-dim" x1="60" y1="8" x2="150" y2="8"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="105" y="4" text-anchor="middle">b</text>
+          <line class="dg-dim" x1="162" y1="18" x2="162" y2="108"
+                marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+          <text class="dg-label" x="170" y="66">b</text>
+        </svg>
+        <figcaption>
+          <span class="fignum">Fig. 4.11</span> &nbsp;A square field with a
+          square pond cut from one corner.
+        </figcaption>
+      </figure>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>The product of two consecutive positive odd numbers is $143$. Find the numbers.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>let the numbers be $x$ and $x + 2$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$x(x + 2) = 143$, so $x^2 + 2x - 143 = 0$</span>
-              <span class="work__why">$0$ on one side first</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$13 \times (-11) = -143$ and $13 + (-11) = 2$</span>
-              <span class="work__why">sum $2$, product $-143$</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$(x + 13)(x - 11) = 0$</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>$x = -13$ or $x = 11$</span>
-              <span class="work__why">a product is zero only if a factor is</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>the numbers are positive, so $x = 11$: they are $11$ and $13$</span></div>
-            <div class="work__row"><span class="work__label">Check</span>
-              <span>$11 \times 13 = 143$</span></div>
-          </div>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Assertion and reason</div>
+        <p class="c-practice__note">In Questions 18 to 21, choose (a) if both A and R are true and R explains A; (b) if both are true but R does not explain A; (c) if A is true but R is false; (d) if A is false but R is true.</p>
+        <ol class="c-questions" data-start="18">
+          <li><p>Assertion (A): $(a - b)^2 = (b - a)^2$ for every $a$ and $b$.</p><p>Reason (R): A number and its negative have the same square.</p></li>
+        </ol>
       </div>
 
-      <h3>Type 11 &middot; Proofs with identities</h3>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="19">
+          <li><p>Assertion (A): $x^3 + y^3 + z^3 = 3xyz$ for all $x$, $y$ and $z$ that are not zero.</p><p>Reason (R): $x^3 + y^3 + z^3 - 3xyz = (x + y + z)\left(x^2 + y^2 + z^2 - xy - yz - zx\right)$.</p></li>
+        </ol>
+      </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 17</div>
-        <div class="c-example__body">
-          <p>Prove that the product of four consecutive whole numbers, with $1$ added, is a perfect square.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>take the numbers $n$, $n + 1$, $n + 2$, $n + 3$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$n(n + 3) = n^2 + 3n$ and $(n + 1)(n + 2) = n^2 + 3n + 2$</span>
-              <span class="work__why">pair the outer two and the inner two</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>write $m$ for $n^2 + 3n$; the product with $1$ added is $m(m + 2) + 1$</span>
-              <span class="work__why">one quantity, as in Section 4.4</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$m(m + 2) + 1 = m^2 + 2m + 1 = (m + 1)^2$</span>
-              <span class="work__why">$(a + b)^2$ read backwards</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$n(n + 1)(n + 2)(n + 3) + 1 = \left(n^2 + 3n + 1\right)^2$, a perfect square</span></div>
-            <div class="work__row"><span class="work__label">Check</span>
-              <span>$1 \times 2 \times 3 \times 4 + 1 = 25 = 5^2$, and $1 + 3 + 1 = 5$</span></div>
-          </div>
-          <p>Pairing the first number with the last is what makes the two products differ only in their constant.</p>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="20">
+          <li><p>Assertion (A): $101 \times 99 = 9999$.</p><p>Reason (R): $(a + b)^2 = a^2 + 2ab + b^2$.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="21">
+          <li><p>Assertion (A): $x - 1$ is a factor of $x^3 - 1$.</p><p>Reason (R): $x^3 - 1 = (x - 1)\left(x^2 - x + 1\right)$.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Very short answer</div>
+        <ol class="c-questions" data-start="22">
+          <li>Find $1002^2 - 998^2$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="23">
+          <li>Find the value of $k$ for which $x^2 - 14x + k$ is a perfect square.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="24">
+          <li>Find $9.9^2$ using an identity.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Short answer</div>
+        <ol class="c-questions" data-start="25">
+          <li>Factorise $2x^2 - x - 15$ by splitting the middle term.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="26">
+          <li>$a$ and $b$ are positive, $a$ is the larger, $a^2 + b^2 = 29$ and $ab = 10$. Find $a + b$ and $a - b$, and then $a$ and $b$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="27">
+          <li>Simplify $\dfrac{x^2 + x - 12}{x^2 - 16}$, and say which values of $x$ must be ruled out.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="28">
+          <li>Factorise $125x^3 - 75x^2 + 15x - 1$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Long answer</div>
+        <ol class="c-questions" data-start="29">
+          <li>Prove that $(a + b + c)^3 - a^3 - b^3 - c^3 = 3(a + b)(b + c)(c + a)$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="30">
+          <li>The squares of two consecutive positive even numbers add to $340$. Write an equation for the smaller number, solve it by factorising, and find both numbers.</li>
+        </ol>
       </div>
 
     </div>

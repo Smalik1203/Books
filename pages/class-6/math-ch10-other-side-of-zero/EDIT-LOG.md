@@ -1,5 +1,38 @@
 # Class 6 · Mathematics I · Chapter 10 — The Other Side of Zero
 
+## Solved examples in examination formats, 20 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 18 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-6/math-ch10-other-side-of-zero/`.
+
+Source `build/jee-class6.mjs`; check `build/check-jee-class6.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) −1 |
+| 2 | Single correct | (c) 12°C |
+| 3 | Single correct | (c) 3 − (−8) |
+| 4 | Single correct | (a) −4 |
+| 5 | Single correct | (b) −3 |
+| 6 | Single correct | (d) 7 |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (a), (b), (c), (d) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b), (d) |
+| 11 | Numerical answer | 11 |
+| 12 | Numerical answer | 13 |
+| 13 | Numerical answer | 11 |
+| 14 | Matching | (a) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (c) P–3, Q–4, R–1, S–2 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 The Beyond the Book audit made one finding here. I confirmed it and fixed it. The chapter body was not touched.
@@ -252,3 +285,11 @@ key page does not overrun. Tested: Q27's printed answer changed from 23 to
 NCERT's structure in the body: no example, check or exercise added; every
 set, Think and Reflect and figure kept in order. None of §5's unused
 components introduced.
+
+
+## 20 September 2026 — reference numbering and reading order
+
+- Figures and tables now share one chapter sequence; caption labels and prose references were migrated together, including cross-chapter references within Class 6.
+- Dependent text and diagrams are kept together with c-figure-context where the revised layout needs it. The final bound-book audit distinguishes facing pages from page turns.
+- Source content was checked against build/_class6-reference-before. All questions, worked mathematics and illustrations were preserved. The Data Handling closing paragraph alone was shortened to avoid an isolated final page.
+- Validation and mapping: build/_class6-reference-checks; reproducible source check: build/check-class6-reference-revision.mjs.

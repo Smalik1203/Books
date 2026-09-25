@@ -305,6 +305,27 @@ on the page: (1) $x = 4$; (2) $AP^2 = PQ \cdot PR$, since △APD ~ △RPB and
 (4) yes, every such triangle has angles 45°, 45° and 90°; (5) the flagpole is
 30 m tall, with a shadow 40 m long.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 6 cm *(single correct)*
+2. (b) 12 cm *(single correct)*
+3. (c) $3 : 5$ *(single correct)*
+4. (d) 30 m *(single correct)*
+5. (a) $DE \parallel BC$ *(single correct)*
+6. (b) $60^\circ$ *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 3.6 *(numerical answer)*
+12. 42 *(numerical answer)*
+13. 12 *(numerical answer)*
+14. (b) P–3, Q–4, R–1, S–2 *(matching)*
+15. (c) P–4, Q–1, R–2, S–3 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

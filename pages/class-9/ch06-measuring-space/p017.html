@@ -1,0 +1,106 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>You may find this formula surprising, and strange to look at! Let us test it on
+      some triangles whose areas we can already find.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Test Heron’s formula on an equilateral triangle with side $a$ units.</p>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="-40 8 240 112" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="An equilateral triangle ABC with side a. The height AD from A meets BC at its midpoint D, so BD and DC are each a over 2.">
+                <path class="dg-fill-a-soft" d="M80 21.06 L30 107.66 L130 107.66 Z"/>
+                <path class="dg-line" d="M80 21.06 L30 107.66 L130 107.66 Z"/>
+                <path class="dg-hidden" d="M80 21.06 L80 107.66"/>
+                <path class="dg-thin" d="M80 101.66 H86 V107.66"/>
+                <text class="dg-label" x="80" y="16" text-anchor="middle">A</text>
+                <text class="dg-label" x="25" y="114" text-anchor="end">B</text>
+                <text class="dg-label" x="80" y="118" text-anchor="middle">D</text>
+                <text class="dg-label" x="135" y="114">C</text>
+                <text class="dg-dim-label" x="48" y="62" text-anchor="end">a</text>
+                <text class="dg-dim-label" x="112" y="62">a</text>
+                <text class="dg-dim-label" x="84" y="72">h</text>
+                <text class="dg-dim-label" x="55" y="102" text-anchor="middle">a/2</text>
+                <text class="dg-dim-label" x="105" y="102" text-anchor="middle">a/2</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 6.23</span> An equilateral triangle and
+              its height.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$s = \frac{1}{2}(a + a + a) = \frac{3}{2}a$, so $s - a = \frac{1}{2}a$ for each side</span>
+              <span class="work__why">semi-perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area $= \sqrt{\frac{3}{2}a \times \frac{1}{2}a \times \frac{1}{2}a \times \frac{1}{2}a} = \frac{\sqrt{3}}{4}a^2$</span>
+              <span class="work__why">Heron’s formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>height $h$: $a^2 - h^2 = \frac{a^2}{4}$, $\therefore h = \frac{\sqrt{3}}{2}a$</span>
+              <span class="work__why">Baudhāyana–Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\frac{1}{2} \times a \times \frac{\sqrt{3}}{2}a = \frac{\sqrt{3}}{4}a^2$</span>
+              <span class="work__why">half base times height</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Both ways give the same area, $\frac{\sqrt{3}}{4}a^2$ sq. units.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Look at the symbol $\therefore$ in Step 3. Mathematicians use it all the time. It
+      is read “therefore”.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Test Heron’s formula on an isosceles triangle whose equal sides are $a$ units
+          and whose base is $2b$ units.</p>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="-40 8 240 114" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="An isosceles triangle ABC with equal sides a and base BC of 2b. The height AD from A meets BC at its midpoint D, so BD and DC are each b.">
+                <path class="dg-fill-a-soft" d="M80 20 L40 107 L120 107 Z"/>
+                <path class="dg-line" d="M80 20 L40 107 L120 107 Z"/>
+                <path class="dg-hidden" d="M80 20 L80 107"/>
+                <path class="dg-thin" d="M80 101 H86 V107"/>
+                <text class="dg-label" x="80" y="15" text-anchor="middle">A</text>
+                <text class="dg-label" x="35" y="114" text-anchor="end">B</text>
+                <text class="dg-label" x="80" y="118" text-anchor="middle">D</text>
+                <text class="dg-label" x="125" y="114">C</text>
+                <text class="dg-dim-label" x="55" y="62" text-anchor="end">a</text>
+                <text class="dg-dim-label" x="105" y="62">a</text>
+                <text class="dg-dim-label" x="84" y="72">h</text>
+                <text class="dg-dim-label" x="60" y="102" text-anchor="middle">b</text>
+                <text class="dg-dim-label" x="100" y="102" text-anchor="middle">b</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 6.24</span> An isosceles triangle and its
+              height.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$s = \frac{1}{2}(a + a + 2b) = a + b$</span>
+              <span class="work__why">semi-perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area $= \sqrt{(a + b) \times b \times b \times (a - b)} = b\sqrt{a^2 - b^2}$</span>
+              <span class="work__why">Heron’s formula</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>height $h$: $a^2 = h^2 + b^2$, $\therefore h = \sqrt{a^2 - b^2}$</span>
+              <span class="work__why">Baudhāyana–Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\frac{1}{2} \times \sqrt{a^2 - b^2} \times 2b = b\sqrt{a^2 - b^2}$</span>
+              <span class="work__why">half base times height</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Both ways give $b\sqrt{a^2 - b^2}$ sq. units.</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,5 +1,38 @@
 # Class 10 · Mathematics I · Chapter 8 — Introduction to Trigonometry
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 15 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch08-trigonometry/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $\frac{4}{5}$ |
+| 2 | Single correct | (b) $\frac{13}{12}$ |
+| 3 | Single correct | (c) 1 |
+| 4 | Single correct | (d) $\frac{11}{4}$ |
+| 5 | Single correct | (a) $45^\circ$ |
+| 6 | Single correct | (b) 1 |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 2.5 |
+| 12 | Numerical answer | 8 |
+| 13 | Numerical answer | 60 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (c) P–4, Q–3, R–2, S–1 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked by one agent from the Class 10
@@ -259,3 +292,8 @@ Set A b a c d c b d c; Set B b c d b a b; Set C a b c d c.
 | 8.2, From history | — | *sinus* is given as meaning "curve"; the Latin word means a fold or a bay | check the gloss |
 | Set 8.2 Q4 (ii) | C4 | "sin θ increases as θ increases" is true only over the chapter's range, $0^\circ$ to $90^\circ$ | the key should give the range |
 | Set 8.1 Q9 | — | ${\tan A = \frac{1}{\sqrt{3}}}$ invites ${A = 30^\circ}$, which is not met until 8.3; the question is answerable from the sides | none |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. 1 dependent text/visual group(s) were kept together and the body refitted. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

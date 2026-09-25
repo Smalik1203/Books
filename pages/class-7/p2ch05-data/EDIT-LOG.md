@@ -1,5 +1,39 @@
 # Class 7 · Mathematics II · Chapter 5 — Connecting the Dots…
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/p2ch05-data/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p005: “For example,” dropped before “Wahapur has 2 prices”, to pull back the line that ran 2.1mm into the margin.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 25 |
+| 2 | Single correct | (c) 66 |
+| 3 | Single correct | (b) 4 |
+| 4 | Single correct | (d) The mean is greater than the median. |
+| 5 | Single correct | (b) the median, ₹14,000 |
+| 6 | Single correct | (c) How many hours do students in our class sleep on a school night? |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (b), (c) |
+| 10 | Multiple correct | (a), (c) |
+| 11 | Numerical answer | 26 |
+| 12 | Numerical answer | 11.5 |
+| 13 | Numerical answer | 1 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (c) P–3, Q–4, R–2, S–1 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 Three findings, all fixed.
@@ -305,3 +339,8 @@ table and graph, the school means, two Set 5.1 questions, and in Beyond the
 Book the last stage 1 answer, two solutions and two Set B stems; one sentence
 on describing data trimmed. `fit-options` narrowed six option lists in the
 problem sets.
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

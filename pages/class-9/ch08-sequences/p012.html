@@ -2,103 +2,118 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>8.4.1 What an AP looks like</h3>
-
-      <p>Take the tile pattern again and set the stage number against the count:</p>
-
-      <div class="work work--centred">
-        <p>$(1, 1), \quad (2, 5), \quad (3, 9), \quad (4, 13), \quad (5, 17)$</p>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1$</span>
+        </div>
       </div>
 
-      <p>Plot those five points and something worth noticing happens.</p>
+      <p>Now add the two lines <em>column by column</em>. The first column gives
+      $1 + 10 = 11$. The second gives $2 + 9 = 11$. So does every other: as one row
+      climbs by one, the other falls by one, and the total cannot move. Ten columns, each
+      worth $11$.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$2S = 11 \times 10 = 110$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">and</span>
+          <span>$S = 55$</span>
+        </div>
+      </div>
+
+      <p>Nothing in that argument cared that the last number was $10$. Run it again with
+      $n$ in place of $10$:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= 1 + 2 + \cdots + n$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$S$</span>
+          <span>$= n + (n-1) + \cdots + 1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">so</span>
+          <span>$2S = n(n+1)$</span>
+        </div>
+      </div>
+
+      <div class="eq eq--anchor">
+        $$1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}$$
+      </div>
+
+      <p>The same argument can be drawn rather than written. Set out $1 + 2 + \cdots + 6$
+      as a staircase of circles, then set a second copy of it upside down against the
+      first. The two together make a rectangle.</p>
 
       <div class="c-figure c-figure--lg">
         <figure>
-          <svg viewBox="0 0 150 108" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The five points of the arithmetic progression plotted against stage number, lying on a straight line">
+          <svg viewBox="0 0 176 84" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two staircases of circles fitted together to make a 7 by 6 rectangle, showing that twice the sum 1 to 6 is 7 times 6">
       
-            <g class="dg-grid">
-              <path d="M40 8 V92 M62 8 V92 M84 8 V92 M106 8 V92 M128 8 V92"/>
-              <path d="M18 88 H140 M18 68 H140 M18 48 H140 M18 28 H140 M18 12 H140"/>
+            <!-- the staircase: column k has k circles, from the bottom -->
+            <g class="dg-fill-b">
+              <circle cx="30" cy="70" r="4"/>
+              <circle cx="48" cy="70" r="4"/><circle cx="48" cy="58" r="4"/>
+              <circle cx="66" cy="70" r="4"/><circle cx="66" cy="58" r="4"/><circle cx="66" cy="46" r="4"/>
+              <circle cx="84" cy="70" r="4"/><circle cx="84" cy="58" r="4"/><circle cx="84" cy="46" r="4"/>
+              <circle cx="84" cy="34" r="4"/>
+              <circle cx="102" cy="70" r="4"/><circle cx="102" cy="58" r="4"/><circle cx="102" cy="46" r="4"/>
+              <circle cx="102" cy="34" r="4"/><circle cx="102" cy="22" r="4"/>
+              <circle cx="120" cy="70" r="4"/><circle cx="120" cy="58" r="4"/><circle cx="120" cy="46" r="4"/>
+              <circle cx="120" cy="34" r="4"/><circle cx="120" cy="22" r="4"/><circle cx="120" cy="10" r="4"/>
             </g>
       
-            <!-- the line the points fall on: through the first and the last of
-                 them, extended a little at each end -->
-            <path class="dg-ghost" d="M14 86.88 L112 13.51"/>
-      
-            <g class="dg-axis">
-              <path d="M18 92 H142"/><path d="M18 92 V8"/>
+            <!-- the same staircase turned about, filling the rest of the rectangle -->
+            <g class="dg-fill-a">
+              <circle cx="30" cy="58" r="4"/><circle cx="30" cy="46" r="4"/><circle cx="30" cy="34" r="4"/>
+              <circle cx="30" cy="22" r="4"/><circle cx="30" cy="10" r="4"/>
+              <circle cx="48" cy="46" r="4"/><circle cx="48" cy="34" r="4"/><circle cx="48" cy="22" r="4"/>
+              <circle cx="48" cy="10" r="4"/>
+              <circle cx="66" cy="34" r="4"/><circle cx="66" cy="22" r="4"/><circle cx="66" cy="10" r="4"/>
+              <circle cx="84" cy="22" r="4"/><circle cx="84" cy="10" r="4"/>
+              <circle cx="102" cy="10" r="4"/>
+              <circle cx="138" cy="70" r="4"/><circle cx="138" cy="58" r="4"/><circle cx="138" cy="46" r="4"/>
+              <circle cx="138" cy="34" r="4"/><circle cx="138" cy="22" r="4"/><circle cx="138" cy="10" r="4"/>
             </g>
       
-            <g class="dg-plot">
-              <circle cx="18"  cy="83.88" r="2.6"/>
-              <circle cx="40"  cy="67.41" r="2.6"/>
-              <circle cx="62"  cy="50.94" r="2.6"/>
-              <circle cx="84"  cy="34.47" r="2.6"/>
-              <circle cx="106" cy="18" r="2.6"/>
-            </g>
-      
-            <text class="dg-plot-label" x="23"  y="81">(1, 1)</text>
-            <text class="dg-plot-label" x="45"  y="64.5">(2, 5)</text>
-            <text class="dg-plot-label" x="67"  y="48">(3, 9)</text>
-            <text class="dg-plot-label" x="89"  y="31.5">(4, 13)</text>
-            <text class="dg-plot-label" x="111" y="15">(5, 17)</text>
-      
-            <text class="dg-note" x="142" y="102" text-anchor="end">stage</text>
-            <text class="dg-note" x="8" y="14">tiles</text>
+            <line class="dg-dim" x1="24" y1="80" x2="144" y2="80"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="84" y="76" text-anchor="middle">7</text>
+            <line class="dg-dim" x1="16" y1="6" x2="16" y2="74"
+                  marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-dim-label" x="10" y="42" text-anchor="end">6</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 8.4</span> The points of an AP lie on a
-          straight line — the common difference is its steepness.</figcaption>
+          <figcaption><span class="fignum">Fig. 8.5</span> Two copies of
+          $1 + 2 + \cdots + 6$ make a $7 \times 6$ rectangle, so the sum is
+          $\tfrac{7 \times 6}{2} = 21$.</figcaption>
         </figure>
       </div>
 
-      <p>They lie on a straight line. That is not a coincidence, and it is not special to
-      this AP. It happens for every one of them, because a constant step sideways always
-      buys the same step upwards, and that is exactly what a straight line is.</p>
+      <p>The rectangle is $7$ across and $6$ high, so it holds $42$ circles — and it is
+      made of two copies of the sum. That gives $1 + 2 + \cdots + 6 = 21$, and it gives
+      the general rule too: the rectangle for $1 + 2 + \cdots + n$ is always $n + 1$
+      across and $n$ high.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
-        <div class="c-example__body">
-          <p>A taxi charges a fixed booking fee of ₹200, plus ₹40 for every kilometre
-          travelled. Write the sequence of fares after $1$ km, $2$ km, $3$ km, and find
-          the fare for a journey of $10$ km.</p>
-          <p>Work the first few out plainly before reaching for anything general.</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label work__label--wide">after 1 km</span>
-              <span>$200 + 40 = 240$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">after 2 km</span>
-              <span>$200 + 80 = 280$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label work__label--wide">after 3 km</span>
-              <span>$200 + 120 = 320$</span>
-            </div>
-          </div>
-          <p>The fares are $240, 280, 320, \ldots$ — an AP with $a = 240$ and $d = 40$.
-          So</p>
-          <div class="work">
-            <div class="work__row">
-              <span class="work__label">$t_n$</span>
-              <span>$= 240 + (n-1) \times 40$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label"></span>
-              <span>$= 200 + 40n$</span>
-            </div>
-            <div class="work__row">
-              <span class="work__label">$t_{10}$</span>
-              <span>$= 200 + 400$</span>
-              <span class="chip">₹600</span>
-            </div>
-          </div>
-          <p>The tidied form $200 + 40n$ is worth a second look: the ₹200 is the booking
-          fee and the $40n$ is the running charge, so the formula has come out saying
-          exactly what the fare card says.</p>
-        </div>
+      <p>Writing $S_n$ for the sum of the first $n$ natural numbers,</p>
+
+      <div class="eq eq--anchor">
+        $$S_n = \frac{n(n+1)}{2}$$
       </div>
+
+      <p>And now look back at the triangular numbers from the first section. Their $n$th
+      term was the sum of the naturals up to $n$ — so it is this formula, and the two
+      pictures are the same picture. The tenth triangular number is
+      $\tfrac{10 \times 11}{2} = 55$.</p>
 
     </div>
   </div>

@@ -32,7 +32,7 @@ $\alpha\beta = \frac{c}{a}$.
 zeroes of a cubic polynomial to mean on a graph?* Both are answered in the
 text: the zeroes of $p(x)$ are the $x$-coordinates of the points where the
 graph of $y = p(x)$ meets the $x$-axis, for a cubic as for a quadratic
-(Fig. 2.6, where $x^3 - 4x$ meets it at $-2$, 0 and 2).
+(Fig. 2.8, where $x^3 - 4x$ meets it at $-2$, 0 and 2).
 
 ### Example 1, the "Why?" in each part
 
@@ -48,7 +48,7 @@ $x$-axis. The counts are:
 
 ### Exercise Set 2.1
 
-1. Count the points where each graph in Fig. 2.9 meets the $x$-axis.
+1. Count the points where each graph in Fig. 2.11 meets the $x$-axis.
    - (i) 0 — the line is parallel to the $x$-axis and never meets it.
    - (ii) 1
    - (iii) 3
@@ -116,7 +116,24 @@ $x^2 - 2x - 4$; (5) $x^2 + 6x + 8$.
 
 ### Stage 2 · Solved Examples
 
-Worked in full on the page.
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $4$ and $-2$ *(single correct)*
+2. (b) $x^2 + 3x + 2$ *(single correct)*
+3. (c) 13 *(single correct)*
+4. (d) 1 *(single correct)*
+5. (a) 3 *(single correct)*
+6. (b) $-\frac{7}{10}$ *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b), (d) *(multiple correct)*
+9. (a), (c) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 1 *(numerical answer)*
+12. 15 *(numerical answer)*
+13. 20 *(numerical answer)*
+14. (b) P–3, Q–4, R–1, S–2 *(matching)*
+15. (c) P–4, Q–3, R–2, S–1 *(matching)*
 
 ### Stage 3 · Practice
 
@@ -149,7 +166,7 @@ The working for each:
 21. $2 \times (-8) + 6 + 1 = -9$.
 22. $x^2 + \frac{3}{2}x - 1$, or $2x^2 + 3x - 2$. Check: $2x^2 + 3x - 2 = (2x - 1)(x + 2)$, zeroes $\frac{1}{2}$ and $-2$.
 23. $\alpha + \beta = -\frac{2}{3}$ and $\alpha\beta = -\frac{7}{3}$, so the answer is $-3$.
-24. The graph in Fig. 2.11 cuts the $x$-axis at $-3$, 1 and 2. Sum 0, sum of products two at a time $-3 + 2 - 6 = -7$, product $-6$. With $a = 1$: $b = 0$, $c = -7$, $d = 6$, so $p(x) = x^3 - 7x + 6$. Check: $p(0) = 6$, as the graph shows.
+24. The graph in Fig. 2.13 cuts the $x$-axis at $-3$, 1 and 2. Sum 0, sum of products two at a time $-3 + 2 - 6 = -7$, product $-6$. With $a = 1$: $b = 0$, $c = -7$, $d = 6$, so $p(x) = x^3 - 7x + 6$. Check: $p(0) = 6$, as the graph shows.
 25. $x^2 - 2\sqrt{2}x - 6 = (x - 3\sqrt{2})(x + \sqrt{2})$; zeroes $3\sqrt{2}$ and $-\sqrt{2}$. Sum $2\sqrt{2}$, product $-6$, as the coefficients give.
 26. $(\alpha - \beta)^2 = (\alpha + \beta)^2 - 4\alpha\beta = 4^2 - 4 \times 2 = 8$.
 27. $8 - 6 + k = 0$, so $k = -2$. Product $\frac{-2}{2} = -1$, so the other zero is $-\frac{1}{2}$. Check: sum $2 - \frac{1}{2} = \frac{3}{2}$, as the coefficients give.

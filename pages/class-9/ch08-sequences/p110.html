@@ -2,88 +2,9 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-stage">
-        <div class="c-stage__num">4</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Answers &amp; Takeaways</div>
-          <div class="c-stage__for">Check your answers, then read why the other options are wrong.</div>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Matching"><div class="c-example__tab">Example 14 · Matching</div><div class="c-example__body"><p>Match each rule with its fifth term. Each entry has exactly one match.</p><table><thead><tr><th>List I</th><th>List II</th></tr></thead><tbody><tr><td>(P) $t_n = 2n + 3$</td><td>(1) 31</td></tr><tr><td>(Q) $t_n = n^2 - 1$</td><td>(2) 81</td></tr><tr><td>(R) $t_1 = 1$, $t_n = 2t_{n-1} + 1$</td><td>(3) 13</td></tr><tr><td>(S) $t_n = 3^{n-1}$</td><td>(4) 24</td></tr></tbody></table><p><em>Choose the correct combination.</em></p><ol class="c-parts c-parts--alpha"><li>P–3, Q–4, R–1, S–2</li><li>P–4, Q–3, R–1, S–2</li><li>P–3, Q–1, R–4, S–2</li><li>P–2, Q–4, R–1, S–3</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>Put $n = 5$: $2 \times 5 + 3 = 13$, $25 - 1 = 24$ and $3^4 = 81$.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>The recursion gives $1, 3, 7, 15, 31$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(a) P–3, Q–4, R–1, S–2</span></div></div></div></div>
 
-      <ol class="c-answers">
-        <li>
-          <span class="c-answers__stage">Set A</span>
-          <span class="c-answers__list"><span class="n">1</span> (b) &nbsp;
-            <span class="n">2</span> (b) &nbsp; <span class="n">3</span> (b) &nbsp;
-            <span class="n">4</span> (c) &nbsp; <span class="n">5</span> (c) &nbsp;
-            <span class="n">6</span> (c) &nbsp; <span class="n">7</span> (c) &nbsp;
-            <span class="n">8</span> (c) &nbsp; <span class="n">9</span> (c) &nbsp;
-            <span class="n">10</span> (c)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set B</span>
-          <span class="c-answers__list"><span class="n">1</span> (d) &nbsp;
-            <span class="n">2</span> (a) &nbsp; <span class="n">3</span> (c) &nbsp;
-            <span class="n">4</span> (b) &nbsp; <span class="n">5</span> (b) &nbsp;
-            <span class="n">6</span> (b) &nbsp; <span class="n">7</span> (b)</span>
-        </li>
-        <li>
-          <span class="c-answers__stage">Set C</span>
-          <span class="c-answers__list"><span class="n">1</span> (b) &nbsp;
-            <span class="n">2</span> (c) &nbsp; <span class="n">3</span> (b) &nbsp;
-            <span class="n">4</span> (c) &nbsp; <span class="n">5</span> (c) &nbsp;
-            <span class="n">6</span> (b) &nbsp; <span class="n">7</span> (b) &nbsp;
-            <span class="n">8</span> (a) &nbsp; <span class="n">9</span> (c) &nbsp;
-            <span class="n">10</span> (a)</span>
-        </li>
-      </ol>
-
-      <h3>Why the other options are wrong</h3>
-
-      <div class="work work--trace">
-        <div class="work__row">
-          <span class="work__label">B1</span>
-          <span>R is true and A is false, so (d). Doubling is exactly what makes the
-            sequence geometric rather than arithmetic — the reason offered is correct
-            and it establishes the opposite of the claim. A true reason attached to a
-            false statement leaves the statement false.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">B3</span>
-          <span>The differences are $3, 5, 7, \ldots$, which are not constant, so (i)
-            fails and the squares are not an AP. That they are the odd numbers is (ii),
-            and $n^2$ is (iii) — both true, which leaves (c). The trap is reading "the
-            differences follow a pattern" as "it is an AP"; an AP needs the differences
-            to be <em>equal</em>, not merely orderly.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">B6</span>
-          <span>From $7$ to $205$ in steps of $6$ is $\tfrac{198}{6} = 33$ steps, and
-            $33$ steps visit $34$ terms. Option (a) is the step count — the same
-            fence-post that the $n-1$ in $t_n = a + (n-1)d$ exists to handle.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C3</span>
-          <span>Four steps take $2$ to $162$, so $r^4 = 81$ and $r = 3$. Option (a)
-            comes from dividing $162$ by $2$ and looking for a factor; option (d) from
-            solving $r^2 = 81$, which is the right equation for the third term and not
-            the fifth.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C7</span>
-          <span>Write them out: $x = ar^3$, $y = ar^9$, $z = ar^{15}$. Then
-            $y^2 = a^2r^{18}$ and $xz = a^2r^{18}$ as well, so (b). Option (a) is the
-            corresponding fact for an AP, where the middle term is the average of the
-            two either side — in a GP it is their geometric mean instead.</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">C8</span>
-          <span>The AP is $t_n = 4n$, reaching $1024$ at $n = 256$. The GP is
-            $t_n = 4 \times 2^{\,n-1}$, reaching it at $n = 9$. Option (c) pairs the
-            right number with the wrong sequence, which is the answer of somebody who
-            found both positions and then stopped reading.</span>
-        </div>
-      </div>
+      <div class="c-example" data-question-type="Matching"><div class="c-example__tab">Example 15 · Matching</div><div class="c-example__body"><p>Match List I with List II. Each entry has exactly one match.</p><table><thead><tr><th>List I</th><th>List II</th></tr></thead><tbody><tr><td>(P) $1 + 2 + \cdots + 30$</td><td>(1) 420</td></tr><tr><td>(Q) $2 + 4 + \cdots + 40$</td><td>(2) 225</td></tr><tr><td>(R) $1 + 3 + \cdots + 29$</td><td>(3) 275</td></tr><tr><td>(S) $5 + 10 + \cdots + 50$</td><td>(4) 465</td></tr></tbody></table><p><em>Choose the correct combination.</em></p><ol class="c-parts c-parts--alpha"><li>P–4, Q–2, R–1, S–3</li><li>P–1, Q–4, R–2, S–3</li><li>P–4, Q–1, R–2, S–3</li><li>P–3, Q–1, R–2, S–4</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>$\frac{30 \times 31}{2} = 465$, and $2 + 4 + \cdots + 40$ is twice $1 + \cdots + 20$: $2 \times 210 = 420$.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>The first 15 odd numbers add to $15^2 = 225$, and $5 + \cdots + 50$ is 5 times $1 + \cdots + 10$: 275.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(c) P–4, Q–1, R–2, S–3</span></div></div></div></div>
 
     </div>
   </div>

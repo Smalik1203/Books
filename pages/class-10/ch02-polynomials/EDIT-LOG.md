@@ -1,5 +1,37 @@
 # Class 10 · Mathematics I · Chapter 2 — Polynomials
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 13 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch02-polynomials/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $4$ and $-2$ |
+| 2 | Single correct | (b) $x^2 + 3x + 2$ |
+| 3 | Single correct | (c) 13 |
+| 4 | Single correct | (d) 1 |
+| 5 | Single correct | (a) 3 |
+| 6 | Single correct | (b) $-\frac{7}{10}$ |
+| 7 | Multiple correct | (a), (b), (c) |
+| 8 | Multiple correct | (a), (b), (d) |
+| 9 | Multiple correct | (a), (c) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 1 |
+| 12 | Numerical answer | 15 |
+| 13 | Numerical answer | 20 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (c) P–4, Q–3, R–2, S–1 |
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 4 of `PLAN-MATHS-CONSISTENCY.md`, worked to the brief built from
@@ -253,3 +285,8 @@ b c d b c a d a b; Set B a b d c a c; Set C b c b d a.
 | cubic relations | C6 | "it can be proved that" — the three relations for a cubic are stated without proof | none; the source does the same |
 | Figs. 2.8, 2.9 | C4 | the sketches are new drawings with the source's counts of zeroes, not copies of its curves | confirm the counts against the printed book: Example 1 1, 2, 3, 1, 1, 4; Set 2.1 0, 1, 3, 2, 4, 3 |
 | Set A Q9 | — | added to Beyond the Book to fill a page; its answer is in the key | none |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

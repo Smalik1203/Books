@@ -1,5 +1,38 @@
 # Class 9 · Mathematics I · Chapter 3 — The World of Numbers
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch03-world-of-numbers/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 44 |
+| 2 | Single correct | (b) $\frac{13}{8}$ |
+| 3 | Single correct | (c) It terminates after 4 places. |
+| 4 | Single correct | (d) $\frac{41}{333}$ |
+| 5 | Single correct | (a) $\frac{106}{45}$ |
+| 6 | Single correct | (b) $(\sqrt{3} - \sqrt{2})(\sqrt{3} + \sqrt{2})$ |
+| 7 | Multiple correct | (a), (d) |
+| 8 | Multiple correct | (a), (c), (d) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 145 |
+| 12 | Numerical answer | 9 |
+| 13 | Numerical answer | 166464 |
+| 14 | Matching | (d) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (b) P–3, Q–4, R–2, S–1 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Class 9 brief with
@@ -259,3 +292,8 @@ Worst first.
 | book-wide | M1 | **Fractional powers are still undefined.** Class 8 Part I Chapter 4 p003 explains why $\sqrt{x}$ is not a polynomial by asserting "$\sqrt{x}$ is $x^{1/2}$", and I flagged there that nothing in Class 8 defines a power with a fraction in it. I have now searched every Class 9 chapter: **no fractional exponent appears anywhere in the book.** This chapter handles roots entirely in $\sqrt{\ }$ notation, which is correct and self-consistent — so the gap is not here, but the one line in Class 8 Ch 4 that depends on it is now confirmed to have nothing behind it. | Fix it in Class 8 Chapter 4 by dropping the $x^{1/2}$ half of that sentence. Nothing in either class needs the notation. |
 | p029–p032 | — | **Markup inconsistency in the exercise sets.** Most question lists are wrapped in `<div class="c-practice c-practice--cont">`; p029's Q8–Q10, all four starred questions on p030, p031's Q9–Q13 and p032's Q14–Q15 are bare `<ol class="c-questions">` with no wrapper. The build passes and the pages fit, so this may render acceptably — but it is not what the rest of the book does, and the wrapper is what carries the exercise band. | Worth a look at a proof of pages 29–32 before print. I have not changed it: it is layout, not language. |
 | p033 | — | The closing page of the chapter proper is **8% full** — one three-line tip box ("Next year the line is left behind altogether…"). It carries `data-close`, so the fill check exempts it, and the tip is a good closing note. | Either lift the tip onto p032, which is at 100%, or accept a near-empty leaf. Recording it because the fill map makes it look like an error and it is a choice. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

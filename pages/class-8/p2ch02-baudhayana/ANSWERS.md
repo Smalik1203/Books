@@ -125,12 +125,24 @@ the square on it 3721 cm²; (3) 96; (4) 4 m; (5) area 1024, side 32;
 
 ### Stage 2 · Solved Examples
 
-Worked on the page. The answers, for reference: (1) 6 cm and 3 cm;
-(2) 25, and 7; (3) $1.7 < \sqrt3 < 1.8$ and $1.73 < \sqrt3 < 1.74$;
-(4) between 4.24 cm and 4.25 cm; (5) 52 cm; (6) 1.3 m; (7) 41 cm; (8) 63; (9) 8 m; (10) length 24 cm, diagonal 25 cm;
-(11) the triangle 33, 56, 65; (12) no, it should be 100 cm; (13) 7 cm;
-(14) 77; (15) a triple, not primitive; (16) (36, 105, 111); (17) (55, 48, 73);
-(18) $m = 7$, $n = 6$.
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 52 cm *(single correct)*
+2. (b) 63 *(single correct)*
+3. (c) 8 m *(single correct)*
+4. (d) 41 cm *(single correct)*
+5. (a) 33, 56, 65 *(single correct)*
+6. (b) 6 cm *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (c), (d) *(multiple correct)*
+9. (a), (b) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 24 *(numerical answer)*
+12. 1.3 *(numerical answer)*
+13. 36 *(numerical answer)*
+14. (d) P–3, Q–4, R–1, S–2 *(matching)*
+15. (b) P–4, Q–1, R–3, S–2 *(matching)*
 
 ### Stage 3 · Practice
 

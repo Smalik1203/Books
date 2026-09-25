@@ -97,9 +97,20 @@ body {
    A teal bar on the OUTER edge carrying the folio, and a rust
    outline on the inner side. Both are parallelograms made by
    skewing, not clipping: a clip-path would cut away the very
-   border that draws the outlined one. */
+   border that draws the outlined one.
+
+   Both bars run off the foot into the bleed as well as off the outer
+   edge, and the folio's digits stand over 3mm clear of the trim. They used to stop
+   dead on the trim with the numeral 1.5mm above it: a guillotine that
+   drifted a millimetre low left a white hairline under the slab, and
+   one that drifted high took the foot off the page number. */
 .pagefoot { position: absolute; left: 0; right: 0; bottom: 0; height: 10mm; }
-.pagefoot__bar { position: absolute; bottom: 0; height: 5.4mm; transform: skewX(-26deg); }
+.pagefoot__bar {
+  position: absolute;
+  bottom: calc(-1 * var(--bleed));
+  height: calc(9mm + var(--bleed));     /* 9mm of it on the page */
+  transform: skewX(-26deg);
+}
 .pagefoot__bar--fill { right: -12mm; width: 40%; background: var(--teal); }
 .pagefoot__bar--line {
   left: -12mm;
@@ -117,7 +128,7 @@ body {
 }
 .pagefoot__folio {
   position: absolute;
-  bottom: 0;
+  bottom: 1.8mm;                   /* centred in the 9mm: digits ~3.3mm above the trim */
   right: var(--margin-outside);
   height: 5.4mm;
   line-height: 5.4mm;
@@ -181,3 +192,12 @@ body.bleed .cropmarks {
   stroke: var(--mark);
   stroke-width: 0.09;            /* 0.25pt, in the millimetre viewBox */
 }
+
+/* The A4 proof (build.mjs --a4) carries both sets and shows its own.
+   Its marks cross the bleed to reach a printable margin, and are cut by
+   hand against a ruler rather than read by a press, so they are drawn
+   heavier: a 0.25pt hairline 2mm long is easy to lose on office paper. */
+body.bleed .cropmarks--a4 { display: none; }
+body.bleed.a4 .cropmarks { display: none; }
+body.bleed.a4 .cropmarks--a4 { display: block; }
+.cropmarks--a4 line { stroke-width: 0.2; }

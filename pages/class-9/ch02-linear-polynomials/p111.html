@@ -2,73 +2,96 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 9 &middot; Proofs about linear polynomials and their lines</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>Prove that for any linear polynomial $p(x) = ax + b$, the values $p(1), p(2), p(3), \ldots$ go up by the same amount each time, and that the amount is $a$.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>take any whole number $n$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$p(n) = an + b$ and $p(n + 1) = a(n + 1) + b$</span>
-              <span class="work__why">the rule at $n$ and at $n + 1$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$p(n + 1) - p(n) = an + a + b - an - b$</span>
-              <span class="work__why">opening the bracket</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$p(n + 1) - p(n) = a$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>whatever $n$ is, each value is $a$ more than the one before, so the values make a linear pattern with difference $a$</span></div>
-          </div>
-        </div>
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 390 405" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="A ruled coordinate grid from minus two to five across and minus two to six up, with one straight line drawn across it, crossing the y-axis one unit below the origin">
+            <path class="dg-grid" d="M45 15V375M90 15V375M135 15V375M180 15V375M225 15V375M270 15V375M315 15V375M360 15V375M45 15H360M45 60H360M45 105H360M45 150H360M45 195H360M45 240H360M45 285H360M45 330H360M45 375H360"/>
+            <path class="dg-axis" d="M45 285H360 M135 15V375"/>
+            <text class="dg-tick" x="45" y="300" text-anchor="middle">&minus;2</text>
+            <text class="dg-tick" x="90" y="300" text-anchor="middle">&minus;1</text>
+            <text class="dg-tick" x="180" y="300" text-anchor="middle">1</text>
+            <text class="dg-tick" x="225" y="300" text-anchor="middle">2</text>
+            <text class="dg-tick" x="270" y="300" text-anchor="middle">3</text>
+            <text class="dg-tick" x="315" y="300" text-anchor="middle">4</text>
+            <text class="dg-tick" x="360" y="300" text-anchor="middle">5</text>
+            <text class="dg-tick" x="127" y="334" text-anchor="end">&minus;1</text>
+            <text class="dg-tick" x="127" y="244" text-anchor="end">1</text>
+            <text class="dg-tick" x="127" y="199" text-anchor="end">2</text>
+            <text class="dg-tick" x="127" y="154" text-anchor="end">3</text>
+            <text class="dg-tick" x="127" y="109" text-anchor="end">4</text>
+            <text class="dg-tick" x="127" y="64" text-anchor="end">5</text>
+            <text class="dg-tick" x="127" y="19" text-anchor="end">6</text>
+            <text class="dg-label" x="370" y="280">x</text>
+            <text class="dg-label" x="141" y="24">y</text>
+            <path class="dg-plot" d="M112.5 375L292.5 15"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.15</span> One line on a ruled
+          grid. Everything the equation says is somewhere in this picture.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 17</div>
-        <div class="c-example__body">
-          <p>Prove that the lines $y = ax + b$ and $y = ax + c$, where $b \ne c$, never meet.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>suppose a point $(x, y)$ lies on both lines</span>
-              <span class="work__why">assume they meet</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>then $y = ax + b$ and $y = ax + c$</span>
-              <span class="work__why">it satisfies both</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$ax + b = ax + c$</span>
-              <span class="work__why">both equal $y$</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$b = c$</span>
-              <span class="work__why">take $ax$ from both sides</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>this contradicts $b \ne c$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>no point lies on both lines, so they never meet: they are parallel</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
-        <div class="c-practice__sub">Choose the correct option</div>
-        <ol class="c-questions">
-          <li>The degree of the polynomial $7 - 4x$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$0$</li><li>$1$</li><li>$4$</li><li>$7$</li></ol></li>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="16">
+          <li>One candle is $30$ cm long and burns down $2$ cm an hour. Another is $20$ cm long and burns down $1$ cm an hour. Both are lit together. They are the same height after<ol class="c-parts c-parts--alpha c-parts--4"><li>$5$ hours</li><li>$8$ hours</li><li>$10$ hours</li><li>never</li></ol></li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The slope of the line $y = 5 - 2x$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$5$</li><li>$2$</li><li>$-5$</li><li>$-2$</li></ol></li>
+        <div class="c-practice__sub">Assertion and reason</div>
+        <p class="c-practice__note">In Questions 17 to 20, choose (a) if both A and R are true and R explains A; (b) if both are true but R does not explain A; (c) if A is true but R is false; (d) if A is false but R is true.</p>
+        <ol class="c-questions" data-start="17">
+          <li><p>Assertion (A): The graph of $y = 5x$ passes through the origin.</p><p>Reason (R): Putting $x = 0$ in $y = ax$ gives $y = 0$, whatever $a$ is.</p></li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The line $y = 4x - 12$ crosses the $x$-axis at<ol class="c-parts c-parts--alpha c-parts--4"><li>$(3, 0)$</li><li>$(0, -12)$</li><li>$(-3, 0)$</li><li>$(12, 0)$</li></ol></li>
+        <ol class="c-questions" data-start="18">
+          <li><p>Assertion (A): The graphs of $y = 4x - 3$ and $y = -4x - 3$ meet on the $y$-axis.</p><p>Reason (R): The two lines have slopes $4$ and $-4$.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="19">
+          <li><p>Assertion (A): Any two readings of $y = ax + b$ fix $a$ and $b$.</p><p>Reason (R): Two unknowns need two independent equations to fix them.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="20">
+          <li><p>Assertion (A): A linear polynomial $ax + b$ has exactly one zero.</p><p>Reason (R): In a linear polynomial, $a$ may be $0$.</p></li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Very short answer</div>
+        <ol class="c-questions" data-start="21">
+          <li>Write the coefficient of $x$, the constant term and the degree of $9 - 4x$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="22">
+          <li>Find $p(-2)$ for $p(x) = x^{2} - 3x + 5$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="23">
+          <li>Find the slope and the $y$-intercept of the line $2y = 6x - 5$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <div class="c-practice__sub">Short answer</div>
+        <ol class="c-questions" data-start="24">
+          <li>The sum of three consecutive odd numbers is $81$. Find the numbers.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="25">
+          <li>Find the linear polynomial $p(x)$ with $p(0) = -4$ and $p(3) = 5$. Then find $p(10)$, and the zero of $p(x)$.</li>
         </ol>
       </div>
 

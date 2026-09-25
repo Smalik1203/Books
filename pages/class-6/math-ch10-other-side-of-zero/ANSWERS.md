@@ -200,7 +200,7 @@ $(+4) - (-6) = +10$.
 
 ## 10.3 Integers in Other Places
 
-### Think and Reflect (Table 10.1)
+### Think and Reflect (Table 10.13)
 
 1. The balance column reads **100, 160, 130, $-20$, 180**:
    $100 + 60 = 160$, $160 - 30 = 130$, $130 - 150 = -20$, $-20 + 200 = 180$.
@@ -287,7 +287,7 @@ $(+4) - (-6) = +10$.
    **$-14$**. (Down the diagonals: $7 + 1 + (-5) + (-11) = -8$ and
    $(-11) + (-6) + (-1) + 4 = -14$.)
 3. **Both** — it is the arrangement of the numbers. Each entry is a *row
-   number* plus a *column number*: in the first grid of Fig. 10.18 the row
+   number* plus a *column number*: in the first grid of Fig. 10.20 the row
    numbers are 0, $-9$, $-18$, $-27$ and the column numbers are 7, 10, 13,
    16. A game uses every row number once and every column number once, so
    it always gives $(0 + (-9) + (-18) + (-27)) + (7 + 10 + 13 + 16) = -8$.
@@ -371,26 +371,24 @@ the booklet is complete.
 
 ### Stage 2 · Solved Examples
 
-Beyond the Book's own numbering; each answer is the one on its *Answer* row.
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
 
-1. $-12 \lt -7 \lt -3 \lt 0 \lt 4 \lt 9$
-2. 2 and $-8$; $-8$ is further from 0.
-3. $-23$ m, that is, 23 m below sea level.
-4. $(-36) + 19 + (-14) + 25 = -6$
-5. $+230$ m, a rise of 230 m.
-6. (d), whose value is $-4$.
-7. $-13$
-8. 3 negative tokens are left, so $(+2) - (+5) = -3$.
-9. 4 positive tokens and 8 negative tokens.
-10. ₹75 at the end; below zero after each of the two debits.
-11. 9 °C
-12. 730 m
-13. 74 years
-14. Top middle $-2$, left middle 2.
-15. 3
-16. The 10th number is 34.
-17. $-10$
-18. $-6$, the 9th number.
+1. (a) −1 *(single correct)*
+2. (c) 12°C *(single correct)*
+3. (c) 3 − (−8) *(single correct)*
+4. (a) −4 *(single correct)*
+5. (b) −3 *(single correct)*
+6. (d) 7 *(single correct)*
+7. (a), (c), (d) *(multiple correct)*
+8. (a), (b), (c), (d) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b), (d) *(multiple correct)*
+11. 11 *(numerical answer)*
+12. 13 *(numerical answer)*
+13. 11 *(numerical answer)*
+14. (a) P–3, Q–4, R–1, S–2 *(matching)*
+15. (c) P–3, Q–4, R–1, S–2 *(matching)*
 
 ### Stage 3 · Practice
 

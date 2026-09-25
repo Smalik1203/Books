@@ -1,5 +1,38 @@
 # Class 8 · Mathematics II · Chapter 1 — Out of Every Hundred
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 18 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch01-percentages/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 820 |
+| 2 | Single correct | (b) ₹700 |
+| 3 | Single correct | (c) $26\%$ |
+| 4 | Single correct | (d) ₹13 891.50 |
+| 5 | Single correct | (a) $35\%$ |
+| 6 | Single correct | (b) $60\%$ |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 40 |
+| 12 | Numerical answer | 51200 |
+| 13 | Numerical answer | 30 |
+| 14 | Matching | (a) P–2, Q–4, R–3, S–1 |
+| 15 | Matching | (c) P–3, Q–4, R–2, S–1 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 3 of `PLAN-MATHS-CONSISTENCY.md`, done against the Class 8 Chapter 1
@@ -278,3 +311,7 @@ Worst first.
 | p012, p105 | M1 | The chapter deliberately avoids the syllabus names, saying "if the interest is paid out every year" and "if the interest is left in the account", and its formulas are labelled "without compounding" and "with compounding". That is clearer than *simple* and *compound interest* and I would not touch it — except that p105, in Beyond the Book, then writes "**Simple interest** would have taken it to ₹15,000 in exactly five as well", using a term the chapter never introduces, once. A reader meets the exam's word for the first time in a solution, undefined. | Either introduce both names in § 1.7 alongside the plain phrasing (they are what every exam paper and bank form will call them), or remove the term from p105. The first is better: the plain wording is the teaching, the names are the vocabulary a student will be marked on. |
 | p008 key idea, p110 | M1 | "**The base is where you started**", and later "Name the base out loud". This is the fourth distinct meaning of *base* in the book: the base of a power (Part I Ch 2), the base of a number system (Part I Ch 3), the base of a triangle or a cuboid (Part I Ch 7), and now the amount a percentage is taken of. Nothing acknowledges any of the others. | The chapter's own prose mostly says "the original amount", which is unambiguous and needs no gloss. Either use that consistently or note that *base* is being borrowed. See CROSS-CHAPTER.md. |
 | p013 | C5 | "the exponent is doing exactly what the repeated multiplication did in the table opposite" — the exponent notation $p(1+r)^t$ is Part I Chapter 2's, and this is the first place in Mathematics II that spends it. Every other borrowing in this chapter is credited by name ("Chapter 6 of Part I said that anything may be done to an equation…", p005). This one is not. | Name it, as p005 does. A reader who has forgotten what an exponent counts has nowhere to look. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Fractions in Disguise*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

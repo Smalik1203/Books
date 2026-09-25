@@ -1,5 +1,40 @@
 # Class 8 · Mathematics I · Chapter 3 — Ten Symbols, Every Number
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 19 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/ch03-story-of-numbers/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p114; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p010: “check it on the number $18$” became “check it on $18$”, to pull back a line that ran 2.6mm into the margin.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) MDCXLIX |
+| 2 | Single correct | (b) 2496 |
+| 3 | Single correct | (c) 6561 |
+| 4 | Single correct | (d) 397 |
+| 5 | Single correct | (a) 53 |
+| 6 | Single correct | (b) $10201_{3}$ |
+| 7 | Multiple correct | (a), (c) |
+| 8 | Multiple correct | (a), (b), (d) |
+| 9 | Multiple correct | (a), (c), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 14 |
+| 12 | Numerical answer | 6 |
+| 13 | Numerical answer | 700309 |
+| 14 | Matching | (b) P–2, Q–4, R–3, S–1 |
+| 15 | Matching | (c) P–3, Q–4, R–2, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 From "Audit Class 8 Maths I Beyond". Every finding was confirmed against the
@@ -338,3 +373,7 @@ Worst first.
 | p013 | M1 | "Between the third and tenth centuries CE the Maya wrote numbers with a dot for $1$ and a bar for $5$, making every number up to $19$." Then Exercise 3.4 Q4 asks the student to "Write $77$ and $361$ in Mayan style" — but $361$ needs three places under landmarks $1, 20, 360$, and the chapter never shows a Mayan numeral with more than one place, nor the shell placeholder in use. The worked figure for the Maya is on the chapter opener only. | Either a worked two-place Mayan numeral in § 3.6.2, or drop $361$ from the question. As written the second half of Q4 asks for something never demonstrated. |
 | p010 | M1 | "Multiplying by anything else works the same way, using the distributive law". The name is used without a reminder of what it says, and this book does not teach it — Chapter 4 (A Rectangle, Cut in Two) is where distribution over addition gets its treatment. | A half-line gloss, or a forward reference to Chapter 4. Class 7 met the property, but not under a name this chapter can lean on unexplained. |
 | p003, Fig. 3.2 | C7 | The caption reads "Most people see the first two immediately and have to count the last two", which answers the figure's own question ("how many in each, without counting?") before the reader has tried it. | Move the observation into the text after the figure, or make the caption name the boxes without reporting the result. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *A Story of Numbers*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

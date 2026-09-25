@@ -126,6 +126,27 @@ as close to $90^\circ$ as you like but never reaches it; (5) $60^\circ$, since
 the tangent is multiplied by 3, from $\frac{1}{\sqrt{3}}$ to $\sqrt{3}$; the angle
 doubles, and does not become three times as large.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 30 m *(single correct)*
+2. (b) $20\sqrt{3}$ m *(single correct)*
+3. (c) $30^\circ$ *(single correct)*
+4. (d) $30\sqrt{3}$ m *(single correct)*
+5. (a) $5\sqrt{3}$ m *(single correct)*
+6. (b) $45^\circ$ *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (b) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 50 *(numerical answer)*
+12. 60 *(numerical answer)*
+13. 17.32 *(numerical answer)*
+14. (a) P–3, Q–4, R–1, S–2 *(matching)*
+15. (b) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

@@ -200,7 +200,7 @@ $F$ and $G$ are 2 each; $A$ and $B$ are 4 each.
 
 ### Area on squared paper — Exercise Set 6.6
 
-1. Fig. 6.8 is printed again beside this set, so the shapes are the same
+1. The shapes from Fig. 6.8 are printed again as Fig. 6.13 beside this set, so the shapes are the same
    as in Exercise Set 6.3. Every sloping side cuts a square exactly in half,
    so the rules give the exact area:
    (a) **4**
@@ -226,7 +226,7 @@ $F$ and $G$ are 2 each; $A$ and $B$ are 4 each.
 A circle of diameter 3 units covers **about 7** squares by the rules.
 Answers will vary a little with where the circle is drawn.
 
-### Think and Reflect (after Fig. 6.13)
+### Think and Reflect (after Fig. 6.14)
 
 1. Triangles and rectangles can both cover a space with no gaps if they are
    laid the right way round. **Reasons the square is the best unit:** all
@@ -281,7 +281,7 @@ area of 48 sq m. A playground 60 m by 40 m has an area of 2400 sq m.
 2. Each triangle is **half** of the rectangle, or of the square, that it
    was cut from.
 
-### Fig. 6.14
+### Fig. 6.15
 
 The rectangle and the triangle have the same area: both are **12 square units**.
 The rectangle is 4 squares by 3. The line from the top
@@ -330,26 +330,26 @@ shares at least 8 sides.
    and no other extra shared side. The reason is the rule above: the
    perimeter depends only on how many sides are shared.
 
-### Fig. 6.18
+### Fig. 6.19
 
 **24 units**. The new square fills a corner space, so it touches the figure
 along 2 of its sides. It adds 2 new sides and covers 2, and the perimeter
 stays the same.
 
-### Think and Reflect (after Fig. 6.18)
+### Think and Reflect (after Fig. 6.19)
 
 1. It depends on how many sides the new square shares with the figure.
    - **Shares 1 side:** it adds 3 sides and covers 1. The perimeter goes up
      by 2. Most places round the figure are like this.
    - **Shares 2 sides:** it adds 2 and covers 2. The perimeter stays the
-     same, as in Fig. 6.18.
+     same, as in Fig. 6.19.
    - **Shares 3 sides:** it adds 1 and covers 3. The perimeter goes down by
      2. The figure has two such places, each a gap with a square on three
      sides of it.
 
 ### House plans
 
-### Think and Reflect (after Fig. 6.20)
+### Think and Reflect (after Fig. 6.21)
 
 1. Both bedrooms are 15 ft on one side. Charan's is 15 ft on the other side
    and Sharan's only 12 ft, so **Charan's is bigger**: 225 sq ft against
@@ -486,27 +486,24 @@ the perimeter; a 9 cm by 4 cm rectangle shows Riya is wrong; the border is
 
 ### 2 Solved Examples
 
-Beyond the Book numbers its examples again from 1, as Class 7 does; the
-chapter body's own examples are Examples 1 to 6. Beyond's Examples 1 to 15
-are worked in full on the page, and their answers are:
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
 
-| Beyond example | type | answer |
-|---|---|---|
-| 1 | perimeter of regular polygons | the square's side is 9 cm |
-| 2 | perimeter of rectangles | 95 cm of wood |
-| 3 | going round more than once | 7 rounds |
-| 4 | straight and diagonal units (Fig. 6.22) | perimeter $10s + 2d$ units; area 11 square units |
-| 5 | area of rectangles | ₹330 |
-| 6 | area of rectangles and squares | 96 tiles |
-| 7 | areas made of pieces | area 24 sq m; perimeter 22 m |
-| 8 | areas made of pieces | 76 sq m of grass |
-| 9 | areas made of pieces, compared by covering (Fig. 6.23) | A 8 sq cm, B 4 sq cm, C and D 2 sq cm each |
-| 10 | same perimeter, different areas | the square of side 5 cm, 25 sq cm |
-| 11 | adding a unit square (Fig. 6.24) | at P, 14 units; at Q, 16 units |
-| 12 | area of a triangle in a rectangle | 24 sq cm, 9 sq cm and 15 sq cm |
-| 13 | area of a triangle in a rectangle | 12 sq cm |
-| 14 | plans and area mazes | 10 ft; the hall is 900 sq ft |
-| 15 | plans and area mazes | 15 cm |
+1. (a) 322 cm² *(single correct)*
+2. (b) 16 cm² *(single correct)*
+3. (c) 56 m² *(single correct)*
+4. (d) 36 cm *(single correct)*
+5. (c) 96 *(single correct)*
+6. (a) 60 cm² *(single correct)*
+7. (a), (b), (c) *(multiple correct)*
+8. (a), (c), (d) *(multiple correct)*
+9. (a), (c), (d) *(multiple correct)*
+10. (a), (c), (d) *(multiple correct)*
+11. 1300 *(numerical answer)*
+12. 134 *(numerical answer)*
+13. 13 *(numerical answer)*
+14. (c) P–2, Q–4, R–3, S–1 *(matching)*
+15. (a) P–3, Q–4, R–1, S–2 *(matching)*
 
 ### 3 Practice — the key
 

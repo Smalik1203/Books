@@ -1,5 +1,40 @@
 # Class 7 · Mathematics I · Chapter 6 — Number Play
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 19 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-7/ch06-number-play/`.
+
+Source `build/jee-class7.mjs`; check `build/check-jee-class7.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p011: “Use the method to write out all 13.” became “Write out all 13 this way.”, to pull back the line that ran 1.6mm into the margin.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (b) always odd |
+| 2 | Single correct | (c) even and odd numbers in turn |
+| 3 | Single correct | (b) 45 |
+| 4 | Single correct | (a) 21 |
+| 5 | Single correct | (d) 11 |
+| 6 | Single correct | (b) 5 |
+| 7 | Multiple correct | (a), (b) |
+| 8 | Multiple correct | (a), (c) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (b), (d) |
+| 11 | Numerical answer | 34 |
+| 12 | Numerical answer | 75 |
+| 13 | Numerical answer | 72 |
+| 14 | Matching | (c) P–3, Q–1, R–4, S–2 |
+| 15 | Matching | (b) P–3, Q–4, R–2, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Beyond the Book checked against what the chapter body teaches. The audit
@@ -191,3 +226,8 @@ means tallest at the front, shortest at the back; the opposite corner is 2;
 Builder: 15 body pages, 9 Beyond the Book; the closing page carries
 `data-close`. `check-labels`, `orphans`, `fit-options` and the width probe
 report nothing. Every page proof was viewed.
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. 3 dependent text/visual group(s) were kept together and the body refitted. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

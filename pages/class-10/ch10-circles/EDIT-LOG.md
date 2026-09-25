@@ -1,5 +1,38 @@
 # Class 10 · Mathematics I · Chapter 10 — Circles
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 14 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch10-circles/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 12 cm |
+| 2 | Single correct | (b) $90^\circ$ |
+| 3 | Single correct | (c) $100^\circ$ |
+| 4 | Single correct | (d) 0 |
+| 5 | Single correct | (a) 7 cm |
+| 6 | Single correct | (b) 8 cm |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 15 |
+| 12 | Numerical answer | 70 |
+| 13 | Numerical answer | 24 |
+| 14 | Matching | (c) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (d) P–2, Q–1, R–4, S–3 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 One minor gap, confirmed: §10.3, the number of tangents through a point
@@ -259,3 +292,8 @@ Set A a b c c d c a b; Set B b c a c a b; Set C b a c d d.
 | Exercise 10.2 Q12 | M2 | the answer needs the area of the triangle two ways (Heron's formula, or joining the centre to the vertices), which no example in the chapter shows | a hint, or a worked example of area = radius × semi-perimeter |
 | Exercise 10.1 Q4 | C4 | asks for a tangent to be drawn, but drawing a tangent is not taught; only Remark 1 implies it (the perpendicular to the radius) | a pointer to Remark 1 |
 | Activity 1 | C6 | "This shows that a tangent exists at the point P" — the activity suggests it; Theorem 10.1 and Remark 1 are what show it | none at this level |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. 2 dependent text/visual group(s) were kept together and the body refitted. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

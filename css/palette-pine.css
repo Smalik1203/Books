@@ -1,0 +1,39 @@
+/* ============================================================
+   PINE — chapter palette (deep green, bright orange, violet)
+
+   Made on 25 September 2026 for the maths-v2 trial on Class 6
+   Chapter 1, whose ember palette put a dark brown on every head,
+   band and bar. The user asked for no brown at all, and every
+   existing palette carries one somewhere: ember's structure, and a
+   muted tan or rose-brown in the attention slot of fern, emerald
+   and teal.
+
+   The triad is the same shape as ember's — green, orange, violet,
+   about 120 degrees apart — with one change that matters: the
+   orange is light and saturated. An orange darker than this is what
+   the eye reads as brown, so no role here is allowed down there,
+   including the deep variants.
+
+   White on structure is about 7.6:1, on action about 3.6:1 (bold
+   band and tab text only), on attention about 4.4:1.
+
+   Assigned to Class 6 Chapter 1 during the trial.
+   ============================================================ */
+
+:root {
+  /* structure — headings, section tabs, discs, folio bar */
+  --teal:       #1f5c4b;
+  --teal-deep:  #123f33;
+  --teal-soft:  #8fb8aa;
+  --teal-tint:  #e8f3ee;
+
+  /* action — the worked example, the exercise band */
+  --rust:       #d9602a;
+  --rust-deep:  #c24f1f;
+  --rust-tint:  #fdefe7;
+
+  /* attention — the question put to the reader */
+  --gold:       #7a6fc0;
+  --gold-deep:  #5d539f;
+  --gold-tint:  #f1eefb;
+}

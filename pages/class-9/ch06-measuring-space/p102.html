@@ -1,0 +1,86 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>
+        No height is given, so half base times height cannot start. But Heron’s formula
+        needs only the sides: $s = \frac{1}{2}(13 + 20 + 21) = 27$, and the area is
+        $\sqrt{27 \times 14 \times 7 \times 6} = \sqrt{15876} = 126$ cm$^2$. Now every
+        altitude follows from $\frac{1}{2} \times \text{base} \times \text{height} = 126$.
+        The area is fixed, so the longest base goes with the shortest height: the altitude
+        to the $21$ cm side is $\frac{2 \times 126}{21} = 12$ cm. Heron’s formula gave the
+        area without a height, and the area then gave the heights.
+      </p>
+
+      <div class="c-try">
+        <p>In the 4-gon $ABCD$, $AB = 25$ cm, $BC = 60$ cm, $CD = 52$ cm and $DA = 39$ cm,
+          and the diagonal $AC$ is $65$ cm (Fig. 6.56). Find the area of $ABCD$.</p>
+      </div>
+
+      <div class="c-figure c-figure--sm">
+        <figure>
+          <svg viewBox="5 0 190 165" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A 4-gon ABCD with its diagonal AC drawn. AB is 25, BC is 60, CD is 52, DA is 39 and AC is 65, all in cm. B is below AC and D is above it.">
+            <path class="dg-fill-a-soft" d="M22 90 L45.08 145.38 L178 90 Z"/>
+            <path class="dg-fill-c-soft" d="M22 90 L78.16 15.12 L178 90 Z"/>
+            <path class="dg-line" d="M22 90 L45.08 145.38 L178 90 L78.16 15.12 Z"/>
+            <path class="dg-thin" d="M22 90 L178 90"/>
+            <text class="dg-label" x="16" y="94" text-anchor="end">A</text>
+            <text class="dg-label" x="42" y="159" text-anchor="middle">B</text>
+            <text class="dg-label" x="184" y="94">C</text>
+            <text class="dg-label" x="78" y="10" text-anchor="middle">D</text>
+            <text class="dg-dim-label" x="26" y="124" text-anchor="end">25</text>
+            <text class="dg-dim-label" x="118" y="130">60</text>
+            <text class="dg-dim-label" x="134" y="48">52</text>
+            <text class="dg-dim-label" x="44" y="48" text-anchor="end">39</text>
+            <text class="dg-dim-label" x="100" y="86" text-anchor="middle">65</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.56</span> The 4-gon $ABCD$ and its
+          diagonal $AC$. Lengths are in cm.</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        A 4-gon’s area cannot be found from its four sides alone — Fig. 6.27 showed that.
+        Here we also have a diagonal, which cuts the 4-gon into two triangles, and Heron’s
+        formula would work for each. But look at the numbers first.
+        $25^2 + 60^2 = 625 + 3600 = 4225 = 65^2$, so by the converse of the
+        Baudhāyana–Pythagoras theorem, $\angle B = 90^\circ$. And
+        $39^2 + 52^2 = 1521 + 2704 = 4225 = 65^2$, so $\angle D = 90^\circ$ too. The area is
+        $\frac{1}{2} \times 25 \times 60 + \frac{1}{2} \times 39 \times 52 = 750 + 1014 = 1764$
+        cm$^2$.
+      </p>
+
+      <p>
+        There is a check. Both right angles stand on $AC$, so $B$ and $D$ lie on the circle
+        with diameter $AC$, and $ABCD$ is cyclic. Brahmagupta’s formula applies:
+        $s = \frac{1}{2}(25 + 60 + 52 + 39) = 88$, and the area is
+        $\sqrt{63 \times 28 \times 36 \times 49} = \sqrt{3111696} = 1764$ cm$^2$. The two
+        methods agree.
+      </p>
+
+      <div class="c-try">
+        <p>A round plate of radius $14$ cm is to be cut along a circle with the same centre,
+          into an inner disc and an outer ring of equal area. What is the radius of the
+          cut?</p>
+      </div>
+
+      <p>
+        It is tempting to cut halfway, at $7$ cm. But a disc of radius $7$ cm has only a
+        quarter of the area, since area goes with the square of the radius. Let the cut
+        have radius $x$ cm. The inner disc must be half the plate:
+        $\pi x^2 = \frac{1}{2} \times \pi \times 14^2$, so $x^2 = 98$ and
+        $x = \sqrt{98} = 7\sqrt{2} \approx 9.9$ cm. Again $\pi$ cancels. For a plate of any
+        size, the cut that halves the area is at $\frac{1}{\sqrt{2}}$ of the radius, about
+        $0.71$ of the way out.
+      </p>
+
+      <p>
+        None of these questions needed a formula the chapter did not give. What each needed
+        was a question: what can I use from what I already know? The solved examples that
+        follow ask it again.
+      </p>
+
+    </div>
+  </div>
+</section>

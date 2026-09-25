@@ -1,0 +1,59 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>So $(3,4,5)$ alone gives $(6,8,10)$, $(9,12,15)$, $(30,40,50)$ and as many more
+      as you like: there is no last Baudhāyana triple. A triple whose three numbers have no common factor is called <span class="term">primitive</span>. It is not a larger copy of a smaller triple. Five of Baudhāyana's six are
+      primitive, and the sixth is $(5,12,13)$ multiplied by $3$.</p>
+
+      <p>Where do the primitive ones come from? Take any two whole numbers $m$ and $n$
+      with $m$ the larger, and build three numbers from them.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A machine for making triples</div>
+        <p>$m^2 - n^2$, $\ 2mn$, $\ m^2 + n^2$ is a Baudhāyana triple for
+        <em>every</em> choice of $m > n$. With $m=2, n=1$ it makes $(3, 4, 5)$; with
+        $m=3, n=2$, $\ (5, 12, 13)$; with $m=4, n=1$, $\ (15, 8, 17)$; with
+        $m=4, n=3$, $\ (7, 24, 25)$; and with $m=6, n=1$, $\ (35, 12, 37)$.</p>
+      </div>
+
+      <p>One rule gives every primitive triple on Baudhāyana's list. And the rule can be checked in three lines with the identities from Part I:</p>
+
+      <div class="eq">$$(m^2-n^2)^2 + (2mn)^2 = m^4 - 2m^2n^2 + n^4 + 4m^2n^2
+      = m^4 + 2m^2n^2 + n^4 = (m^2+n^2)^2.$$</div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 2.3</div>
+        <ol class="c-questions">
+          <li>Which of these are Baudhāyana triples? Show the arithmetic.
+              <ol class="c-parts c-parts--4">
+                <li>$(9, 12, 15)$</li>
+                <li>$(4, 5, 6)$</li>
+                <li>$(20, 21, 29)$</li>
+                <li>$(10, 24, 26)$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Use the machine on $m=5, n=2$ and on $m=5, n=4$. Check that both answers
+          make $a^2 + b^2 = c^2$ true.</li>
+        </ol>
+      </div>
+
+      <h2><span class="badge">2.8</span><span class="name">One Question, Three Hundred Years</span></h2>
+
+      <p>There are infinitely many triples of whole numbers whose squares add to a square. In the
+      1630s the French lawyer and mathematician Pierre de Fermat, reading a book about
+      exactly these triples, asked the next question: could it be done with cubes?
+      Are there whole numbers with $x^3 + y^3 = z^3$? With fourth powers? With hundredth powers?</p>
+
+      <p>He believed the answer was no. He said that</p>
+
+      <div class="eq eq--anchor">$$x^n + y^n = z^n$$</div>
+
+    </div>
+  </div>
+</section>

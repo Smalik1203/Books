@@ -1,5 +1,40 @@
 # Class 9 · Mathematics I · Chapter 4 — Exploring Algebraic Identities
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 18 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-9/ch04-algebraic-identities/`.
+
+Source `build/jee-class9.mjs`; check `build/check-jee-class9.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p112; the answers stage still opens a fresh page.
+
+Also, same day. Fig. 4.11 belonged to the old examples; the practice figure after it, Fig. 4.12, became Fig. 4.11 (page and snapshot).
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 23 |
+| 2 | Single correct | (b) $(x - 7)(x + 5)$ |
+| 3 | Single correct | (c) 27 |
+| 4 | Single correct | (d) 16380 |
+| 5 | Single correct | (a) 992016 |
+| 6 | Single correct | (b) 60 |
+| 7 | Multiple correct | (a), (b) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 994011992 |
+| 12 | Numerical answer | 13 |
+| 13 | Numerical answer | 91 |
+| 14 | Matching | (a) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (d) P–4, Q–1, R–2, S–3 |
+
+
 ## Brought to the Class 7 standard, 17 September 2026
 
 Phase 5 of `PLAN-MATHS-CONSISTENCY.md`, worked from the Class 9 brief with
@@ -257,3 +292,8 @@ Worst first.
 | p002, p011 | C3 | "You already know several identities from **earlier grades**" (p002) and "In **Grade 8** you met one more identity" (p011). The Class 8 volumes say *Class*. This is the second Class 9 chapter with the same slip — Chapter 1 has Grade 8, 9 and 10 in four places. | One word, book-wide. *Class* is the Indian usage and what the earlier volumes already use. See CROSS-CHAPTER.md. |
 | p011 vs Class 8 Part I Ch 4 | C3 | p011 says the difference of squares is the identity "you met in Grade 8", which is right — Class 8 Part I Chapter 4 § 4.6.3 derives it by cutting a corner from a square and rearranging the L-shape. But Class 8 taught **three** identities in that chapter ($(a+b)^2$, $(a-b)^2$, $a^2-b^2$), and this chapter re-derives the first two from scratch while crediting only the third to Class 8. | Say which of the four are revision and which are new. The chapter's own method — build each identity from the one before — makes that easy to state in a sentence. |
 | p012 | M5 | Śhrīdharāchārya's squaring method is dated "750 CE" in the key-idea title and the method is given correctly, but no source is named for it, unlike every other attribution in the chapter (Baudhāyana's Śulbasūtra, Āryabhaṭa's *āsanna*, Mādhava's series are all placed in a text elsewhere in this book). | A text or a treatise, as the other attributions have. As it stands a reader cannot follow it up, and the date is doing the work a citation should. |
+
+
+## 21 September 2026 — figure/table reference review
+
+Reviewed this chapter in the all-maths reference audit. Figures and tables now use one chapter sequence, including Beyond the Book; captions and references were updated together. Questions, calculations and artwork were preserved. The chapter and its volume were rebuilt; detailed layout checks and any remaining warnings are recorded in build/_all-maths-reference-checks/.

@@ -1,5 +1,38 @@
 # Class 10 · Mathematics I · Chapter 4 — Quadratic Equations
 
+## Solved examples in examination formats, 24 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-10/ch04-quadratic-equations/`.
+
+Source `build/jee-class10.mjs`; check `build/check-jee-class10.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) $3$ and $\frac{1}{2}$ |
+| 2 | Single correct | (b) $-8$ |
+| 3 | Single correct | (c) 9 |
+| 4 | Single correct | (d) two distinct irrational roots |
+| 5 | Single correct | (a) 17 |
+| 6 | Single correct | (b) $3$ and $-4$ |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (b), (c) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 5 |
+| 12 | Numerical answer | 13 |
+| 13 | Numerical answer | 40 |
+| 14 | Matching | (c) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (b) P–4, Q–3, R–1, S–2 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two borderline findings, both confirmed. **Pages: 22 before (9 body + 13

@@ -252,6 +252,27 @@ $CA^2 = 50$, so the triangle is right-angled at $B$ and isosceles; Q4 there
 is no such point, since a point $3$ from $O$ is at least $7$ from $(10, 0)$;
 Q5 $(3, 4)$ and $(3, -4)$.
 
+### Stage 2 · Solved Examples
+
+The 23 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $k \lt 3$ *(single correct)*
+2. (b) 17 *(single correct)*
+3. (c) $(-6, 4)$ *(single correct)*
+4. (d) $(0, -1)$ *(single correct)*
+5. (a) $(-1, -5)$ *(single correct)*
+6. (b) 8 *(single correct)*
+7. (a), (b) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b), (c), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 8 *(numerical answer)*
+12. 5 *(numerical answer)*
+13. 11 *(numerical answer)*
+14. (b) P–3, Q–2, R–4, S–1 *(matching)*
+15. (c) P–3, Q–4, R–1, S–2 *(matching)*
+
 ### Stage 3 · Practice — the key, as the key prints it
 
 1 (d) &nbsp; 2 (a) &nbsp; 3 (c) &nbsp; 4 (d) &nbsp; 5 (b) &nbsp; 6 (b) &nbsp; 7 (a) &nbsp; 8 (d) &nbsp; 9 (c) &nbsp; 10 (d) &nbsp; 11 (a) &nbsp; 12 (c) &nbsp; 13 (b) &nbsp; 14 (d) &nbsp; 15 (a) &nbsp; 16 (d) &nbsp; 17 (b) &nbsp; 18 (c)

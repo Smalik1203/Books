@@ -1,0 +1,65 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <h2><span class="badge">6.9</span><span class="name">Squaring a Rectangle</span></h2>
+
+      <p>In ancient times, to <span class="term">square</span> a shape meant to construct
+      a square with the same area as the shape. The shape could be a rectangle, a
+      triangle or a circle. Here we show how the ancient Indian mathematician Baudhāyana
+      squared a rectangle. His construction, from his <em>Śulbasūtra</em> ($800$ BCE),
+      squares a rectangle with sides $a$ units and $b$ units, where $a \gt b$. So we must
+      construct a square of area $ab$ sq. units. Here is a slightly simplified form of the
+      construction (Fig. 6.30).</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="10 35 180 130" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Rectangle ABCD with AD = a along the bottom and AB = b up the left side. E is on AD with AE = b, and F is the midpoint of ED. The square AFGH stands on AF, with H on AB produced. An arc with centre H runs from G down to A and cuts BC at K. The line through K parallel to AH meets GH at P. The square HPQS has side HP.">
+            <path class="dg-fill-a-soft" d="M30 150 L174 150 L174 96 L30 96 Z"/>
+                        <path class="dg-line" d="M30 150 L174 150 L174 96 L30 96 Z"/>
+            <path class="dg-thin" d="M30 96 L30 51 L129 51 L129 150"/>
+            <path class="dg-line" d="M30 51 L118.18 51 L118.18 139.18 L30 139.18 Z"/>
+            <path class="dg-hidden" d="M129 51 A99 99 0 0 1 30 150"/>
+            <path class="dg-thin" d="M30 51 L118.18 96"/>
+            <circle class="dg-fill-teal" cx="118.18" cy="96" r="2"/>
+            <text class="dg-label" x="26" y="160" text-anchor="end">A</text>
+            <text class="dg-label" x="26" y="100" text-anchor="end">B</text>
+            <text class="dg-label" x="178" y="92">C</text>
+            <text class="dg-label" x="178" y="160">D</text>
+            <text class="dg-label" x="84" y="161" text-anchor="middle">E</text>
+            <text class="dg-label" x="133" y="161" text-anchor="middle">F</text>
+            <text class="dg-label" x="133" y="47">G</text>
+            <text class="dg-label" x="26" y="47" text-anchor="end">H</text>
+            <text class="dg-label" x="116" y="47" text-anchor="end">P</text>
+            <text class="dg-label" x="122" y="92">K</text>
+            <text class="dg-label" x="122" y="135">Q</text>
+            <text class="dg-label" x="26" y="143" text-anchor="end">S</text>
+            <text class="dg-dim-label" x="36" y="126">b</text>
+            <text class="dg-dim-label" x="106" y="146" text-anchor="middle">a</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.30</span> Rectangle $ABCD$ with $AD = a$
+          and $AB = b$, and the square $HPQS$ of the same area.</figcaption>
+        </figure>
+      </div>
+
+      <div class="work work--list">
+        <p>Given: the rectangle $ABCD$ with $AD = a$ and $AB = b$, where $a \gt b$.</p>
+        <p>Mark $E$ on $AD$ so that $AE = AB$.</p>
+        <p>Mark the midpoint $F$ of $ED$.</p>
+        <p>Draw the square $AFGH$ with side $AF$ and with its vertex $H$ on $AB$
+        produced.</p>
+        <p>Draw the arc $AG$ with centre $H$. Let the arc cut the side $BC$ at $K$.</p>
+        <p>Draw a line through $K$ parallel to $AH$. Let it cut $GH$ at $P$.</p>
+        <p>Draw the square $HPQS$ with side $HP$.</p>
+        <p>Then the square $HPQS$ has the same area as the rectangle $ABCD$.</p>
+      </div>
+
+      <p>Try to work out why this method works. You will find that it is the geometry of
+      the formula</p>
+
+      <div class="eq">$$\left(\frac{a + b}{2}\right)^2 - \left(\frac{a - b}{2}\right)^2 = ab.$$</div>
+
+    </div>
+  </div>
+</section>

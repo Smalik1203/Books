@@ -2,65 +2,55 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Type 10 &middot; Coordinates on a map</h3>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 16</div>
-        <div class="c-example__body">
-          <p>On a town map, one unit is one kilometre and the streets run along the grid lines. A school stands at $S(2, 3)$ and a library at $L(8, 11)$. How far apart are they in a straight line, and how far is the shortest walk along the streets?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>shifts: $8 - 2 = 6$ km east and $11 - 3 = 8$ km north</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>straight line: $\sqrt{6^2 + 8^2} = \sqrt{100} = 10$</span>
-              <span class="work__why">distance formula</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>along the streets: $6 + 8 = 14$</span>
-              <span class="work__why">one shift, then the other</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$10$ km in a straight line; $14$ km along the streets</span></div>
-          </div>
-          <p>A walk along the grid lines is never shorter than the straight line, and is as short only when one of the two shifts is $0$.</p>
+      <div class="c-stage">
+        <div class="c-stage__num">4</div>
+        <div class="c-stage__text">
+          <div class="c-stage__title">Answers</div>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head"><span class="c-practice__num">3</span>Practice</div>
-        <div class="c-practice__sub">Choose the correct option</div>
-        <ol class="c-questions">
-          <li>The point $(0, -6)$ lies<ol class="c-parts c-parts--alpha"><li>in Quadrant III</li><li>in Quadrant IV</li><li>on the x-axis</li><li>on the y-axis</li></ol></li>
-        </ol>
+      <ol class="c-answers">
+        <li>
+          <span class="c-answers__stage">1&ndash;9</span>
+          <span class="c-answers__list"><span class="n">1</span> (d) &nbsp; <span class="n">2</span> (a) &nbsp; <span class="n">3</span> (c) &nbsp; <span class="n">4</span> (d) &nbsp; <span class="n">5</span> (b) &nbsp; <span class="n">6</span> (b) &nbsp; <span class="n">7</span> (a) &nbsp; <span class="n">8</span> (d) &nbsp; <span class="n">9</span> (c)</span>
+        </li>
+        <li>
+          <span class="c-answers__stage">10&ndash;18</span>
+          <span class="c-answers__list"><span class="n">10</span> (d) &nbsp; <span class="n">11</span> (a) &nbsp; <span class="n">12</span> (c) &nbsp; <span class="n">13</span> (b) &nbsp; <span class="n">14</span> (d) &nbsp; <span class="n">15</span> (a) &nbsp; <span class="n">16</span> (d) &nbsp; <span class="n">17</span> (b) &nbsp; <span class="n">18</span> (c)</span>
+        </li>
+      </ol>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">19</span>
+          <span>$(0, -7)$; its distance from $(24, 0)$ is $\sqrt{24^2 + 7^2} = \sqrt{625} = 25$</span></div>
+        <div class="work__row"><span class="work__label">20</span>
+          <span>the shifts are $4 - (-2) = 6$ and $5 - (-3) = 8$, so the distance is $\sqrt{36 + 64} = 10$</span></div>
+        <div class="work__row"><span class="work__label">21</span>
+          <span>$OA$ is $6$, $AB$ is $8$ and $OB$ is $\sqrt{6^2 + 8^2} = 10$, so the perimeter is $6 + 8 + 10 = 24$</span></div>
+        <div class="work__row"><span class="work__label">22</span>
+          <span>$(k - 1)^2 + 16 = (k - 7)^2 + 4$, so $-2k + 17 = -14k + 53$ and $12k = 36$: $k = 3$</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The distance between $(2, 3)$ and $(6, 6)$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$5$</li><li>$7$</li><li>$\sqrt{13}$</li><li>$25$</li></ol></li>
-        </ol>
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">23</span>
+          <span>the shift from $A$ to $M$ is $1 - (-3) = 4$ and $-2 - 4 = -6$; taken again from $M$ it reaches $B(5, -8)$</span></div>
+        <div class="work__row"><span class="work__label">24</span>
+          <span>the whole shift is $3 - (-6) = 9$ and $-2 - 10 = -12$, and a third of it is $3$ and $-4$; the points are $(-3, 6)$ and $(0, 2)$</span></div>
+        <div class="work__row"><span class="work__label">25</span>
+          <span>$PR^2$ and $QR^2$ are both $3^2 + 4^2 = 25$, so $PR = QR = 5$ and the triangle is isosceles. $PQ$ is $|4 - (-2)| = 6$, parallel to the x-axis, and $R$ is $5 - 1 = 4$ above it, so the area is $\tfrac{1}{2} \times 6 \times 4 = 12$ square units</span></div>
+        <div class="work__row"><span class="work__label">26</span>
+          <span>as far from $A$ as from $B$: $2x + y = 1$; as far from $A$ as from $C$: $x - 7y = 8$. So $x = 1$ and $y = -1$: the point is $(1, -1)$, and it is $\sqrt{3^2 + 4^2} = 5$ units from each house</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The distance of $(-7, 24)$ from the origin is<ol class="c-parts c-parts--alpha c-parts--4"><li>$17$</li><li>$31$</li><li>$25$</li><li>$625$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>$P(x, y)$ lies in Quadrant III. Then<ol class="c-parts c-parts--alpha c-parts--4"><li>$x > 0$, $y > 0$</li><li>$x < 0$, $y > 0$</li><li>$x > 0$, $y < 0$</li><li>$x < 0$, $y < 0$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>The distance between $(-3, 5)$ and $(4, 5)$ is<ol class="c-parts c-parts--alpha c-parts--4"><li>$1$</li><li>$7$</li><li>$10$</li><li>$\sqrt{74}$</li></ol></li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A rectangle has vertices $(0, 0)$, $(6, 0)$, $(6, 4)$ and $(0, 4)$. The length of its diagonal is<ol class="c-parts c-parts--alpha c-parts--4"><li>$10$</li><li>$2\sqrt{13}$</li><li>$24$</li><li>$52$</li></ol></li>
-        </ol>
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">27</span>
+          <span>$C$ is as far from $A$ as from $B$: $(x - 2)^2 = (x - 8)^2$ gives $x = 5$. Then $AC = AB = 6$: $3^2 + (y - 3)^2 = 36$, so $(y - 3)^2 = 27$. $C$ is $(5, 3 + \sqrt{27})$ or $(5, 3 - \sqrt{27})$</span></div>
+        <div class="work__row"><span class="work__label">28</span>
+          <span>(a) the whole shift is $12$ and $9$, a third is $4$ and $3$: $P(0, 1)$ and $Q(4, 4)$ (b) half the shift of $AB$ is $6$ and $4.5$, so its midpoint is $(2, 2.5)$; half the shift of $PQ$ is $2$ and $1.5$, and $(0 + 2, 1 + 1.5) = (2, 2.5)$ too (c) $PQ$ is $\sqrt{4^2 + 3^2} = 5$ and $AB$ is $\sqrt{12^2 + 9^2} = 15$</span></div>
+        <div class="work__row"><span class="work__label">29</span>
+          <span>(a) Quadrant III (b) $\sqrt{3^2 + 4^2} = 5$ km (c) $3 - (-5) = 8$ km (d) $6 + 8 = 14$ km along the streets; $\sqrt{8^2 + 6^2} = 10$ km in a straight line</span></div>
+        <div class="work__row"><span class="work__label">30</span>
+          <span>(a) $9 \times 12 = 108$ square metres (b) $\sqrt{3^2 + 4^2} = 5$ m (c) $\sqrt{9^2 + 12^2} = 15$ m (d) $(4.5, 12)$, half of $9$ along the wall</span></div>
       </div>
 
     </div>

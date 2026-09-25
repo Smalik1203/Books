@@ -1,5 +1,40 @@
 # Class 8 · Mathematics I · Chapter 2 — When Multiplying Takes Over
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 21 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/ch02-power-play/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p115; the answers stage still opens a fresh page.
+
+Fitting, same day. Body p015: “steps are the thing to spend on” became “steps are what to spend on”, to pull back a line that ran 0.8mm into the margin.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 0 |
+| 2 | Single correct | (b) 4 |
+| 3 | Single correct | (c) $3^{18}$ |
+| 4 | Single correct | (d) $\frac{12}{7}$ |
+| 5 | Single correct | (a) 0 |
+| 6 | Single correct | (b) 729 |
+| 7 | Multiple correct | (a), (c), (d) |
+| 8 | Multiple correct | (a), (b), (c) |
+| 9 | Multiple correct | (a), (c) |
+| 10 | Multiple correct | (a), (b) |
+| 11 | Numerical answer | 6 |
+| 12 | Numerical answer | 2 |
+| 13 | Numerical answer | 12500 |
+| 14 | Matching | (a) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (d) P–3, Q–4, R–2, S–1 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 From "Audit Class 8 Maths I Beyond". One finding, confirmed against the
@@ -352,3 +387,7 @@ Worst first.
 | p110, B2 | C5 | "(b) keeps the exponent while changing the base, which doubles the exponent's worth by mistake." Not followable. The error being described is writing $4^{10}$ for $2^{10}$, and the reason it is wrong is that changing base $2$ to $4$ without halving the exponent squares the value. "Doubles the exponent's worth" says neither. | A plain statement of what goes wrong. I have not rewritten it because any clear version states a relation the line does not contain, which would be new explanation. |
 | p103 | M3 | "each step doubles the first while the second grows by only $2n + 1$, and doubling wins the moment the total exceeds $2n+1$, which it has by then." The claim being proved is that $2^n \gt n^2$ for every $n \ge 5$, and this is the whole argument for it. "Which it has by then" is not a reason. | One extra line — at $n = 5$, $32 \gt 11$, and the gap only widens — or an honest admission that the table checks and does not prove. |
 | p003 tip, and throughout | M1 | "$n^a$ means $n$ multiplied by itself $a$ times", and the tip's "$3 \times 4$ … is $4$ added to itself three times". Both are the standard schoolbook looseness (three copies, two multiplications; three additions of 4 is $4+4+4$ only if you start from nothing). Consistent with Chapter 1, so nothing here contradicts anything — but this is the chapter that defines powers properly, so it is the chapter where the looseness costs the most. | Same single book-wide decision recorded for Chapter 1. See CROSS-CHAPTER.md. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Power Play*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

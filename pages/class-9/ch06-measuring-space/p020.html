@@ -1,0 +1,85 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Brahmagupta’s formula</div>
+        <p>If a cyclic 4-gon has sides $a$, $b$, $c$, $d$ and semi-perimeter
+        $s = \frac{1}{2}(a + b + c + d)$, then</p>
+        <div class="eq">$$\text{area of the 4-gon} = \sqrt{(s - a)(s - b)(s - c)(s - d)}.$$</div>
+      </div>
+
+      <p>It is an amazing and beautiful formula! Does it remind you of Heron’s formula for
+      the area of a triangle? We can check that it works in some special cases.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Check Brahmagupta’s formula for a rectangle.</p>
+          <p>Every rectangle is cyclic, so Brahmagupta’s formula should apply. Let the sides
+          of the rectangle be $a$ and $b$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$s = \frac{1}{2}(2a + 2b) = a + b$</span>
+              <span class="work__why">semi-perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>area $= \sqrt{(a + b - a)(a + b - b)(a + b - a)(a + b - b)} = \sqrt{ab \cdot ab} = ab$</span>
+              <span class="work__why">Brahmagupta’s formula</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The formula gives $ab$, which is correct.</span></div>
+          </div>
+          <p>Try the formula on other special cases too.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>Check Brahmagupta’s formula for an isosceles trapezium.</p>
+          <div class="c-figure c-figure--sm">
+            <figure>
+              <svg viewBox="-70 12 310 98" data-size="sm" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="An isosceles trapezium ABCD with AB = 2a at the top, DC = 2b at the bottom, and the two slanting sides each c. A dashed perpendicular of height h is dropped from B to DC.">
+                <path class="dg-fill-a-soft" d="M55 25 L115 25 L150 95 L20 95 Z"/>
+                <path class="dg-line" d="M55 25 L115 25 L150 95 L20 95 Z"/>
+                <path class="dg-hidden" d="M115 25 L115 95"/>
+                <path class="dg-thin" d="M115 89 H121 V95"/>
+                <text class="dg-label" x="51" y="21" text-anchor="end">A</text>
+                <text class="dg-label" x="119" y="21">B</text>
+                <text class="dg-label" x="155" y="104">C</text>
+                <text class="dg-label" x="15" y="104" text-anchor="end">D</text>
+                <text class="dg-dim-label" x="85" y="20" text-anchor="middle">2a</text>
+                <text class="dg-dim-label" x="85" y="107" text-anchor="middle">2b</text>
+                <text class="dg-dim-label" x="32" y="62" text-anchor="end">c</text>
+                <text class="dg-dim-label" x="138" y="58">c</text>
+                <text class="dg-dim-label" x="109" y="64" text-anchor="end">h</text>
+              </svg>
+              <figcaption><span class="fignum">Fig. 6.29</span> An isosceles
+              trapezium.</figcaption>
+            </figure>
+          </div>
+          <p><strong>Solution.</strong> Every isosceles trapezium is cyclic, so the
+          formula should apply.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>the perimeter is $2a + 2b + 2c$, so $s = a + b + c$</span>
+              <span class="work__why">semi-perimeter</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$s - 2a = c + b - a$, $s - 2b = c + a - b$, $s - c = a + b$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>area $= \sqrt{(s - 2a)(s - 2b)(s - c)(s - c)} = (a + b)\sqrt{c^2 - (b - a)^2}$</span>
+              <span class="work__why">Brahmagupta</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>the height from $B$ to $DC$ is $h = \sqrt{c^2 - (b - a)^2}$</span>
+              <span class="work__why">Baudhāyana–Pythagoras</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The formula gives $(a + b)h$: half the sum of the parallel sides times
+              the height, the area of the trapezium.</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

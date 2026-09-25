@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import {pageBlocks} from './jee-tools.mjs';
+const dir='pages/class-7/ch01-large-numbers';
+const af=`${dir}/p009.html`,bf=`${dir}/p010.html`;
+let a=fs.readFileSync(af,'utf8'),b=fs.readFileSync(bf,'utf8');
+const prompt='Read a few of the numbers aloud in lakhs and crores before you answer the questions. Mumbai, for example, had about 1 crore 24 lakh people in 2011, and New Delhi about 1 crore 10 lakh.';
+if(!a.includes(prompt))throw Error('Prompt not found');
+a=a.replace(' '+prompt,'');
+const first=pageBlocks(b)[0];b=b.replace(first,`<p>${prompt}</p>\n\n${first}`);
+fs.writeFileSync(af,a);fs.writeFileSync(bf,b);

@@ -1,5 +1,38 @@
 # Class 6 · Mathematics I · Chapter 7 — Fractions
 
+## Solved examples in examination formats, 20 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 19 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-6/math-ch07-fractions/`.
+
+Source `build/jee-class6.mjs`; check `build/check-jee-class6.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p111; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (c) 40 litres |
+| 2 | Single correct | (a) $\frac{11}{16}$ |
+| 3 | Single correct | (b) $\frac{4}{15}$ |
+| 4 | Single correct | (d) $\frac{11}{16}$ |
+| 5 | Single correct | (b) $\frac{7}{12}$ m |
+| 6 | Single correct | (a) $\frac{5}{8}$ of a cake |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (c) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (a), (b), (c) |
+| 11 | Numerical answer | 18 |
+| 12 | Numerical answer | 49 |
+| 13 | Numerical answer | 8 |
+| 14 | Matching | (b) P–3, Q–4, R–1, S–2 |
+| 15 | Matching | (d) P–2, Q–4, R–1, S–3 |
+
+
 ## Syllabus audit fixes, 17 September 2026
 
 The Beyond the Book audit made five findings here. I confirmed all five against the pages and fixed all five. The chapter body was not touched.
@@ -344,3 +377,11 @@ NCERT's structure in the chapter body. No example, check or exercise was
 added inside it. All 17 exercise sets, every Think and Reflect and every
 figure are as they were. Stage 1 of Beyond is word for word. None of
 §5's unused components was introduced.
+
+
+## 20 September 2026 — reference numbering and reading order
+
+- Figures and tables now share one chapter sequence; caption labels and prose references were migrated together, including cross-chapter references within Class 6.
+- Dependent text and diagrams are kept together with c-figure-context where the revised layout needs it. The final bound-book audit distinguishes facing pages from page turns.
+- Source content was checked against build/_class6-reference-before. All questions, worked mathematics and illustrations were preserved. The Data Handling closing paragraph alone was shortened to avoid an isolated final page.
+- Validation and mapping: build/_class6-reference-checks; reproducible source check: build/check-class6-reference-revision.mjs.

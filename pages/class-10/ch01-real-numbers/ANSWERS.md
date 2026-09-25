@@ -112,6 +112,27 @@ Each of the five questions is answered in the running text that follows it
 on the page: (1) LCM 720, and no pair has HCF 18 and LCM 380; (2) 625;
 (3) 1085; (4) not always — $\sqrt{2} \times \sqrt{8} = 4$; (5) irrational.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) 4 *(single correct)*
+2. (b) 360 *(single correct)*
+3. (c) 153 *(single correct)*
+4. (d) $3 + \sqrt{5}$ *(single correct)*
+5. (a) 72 *(single correct)*
+6. (b) $3^2 \times 5^2 \times 17$ *(single correct)*
+7. (a), (b) *(multiple correct)*
+8. (a), (c), (d) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 36 *(numerical answer)*
+12. 288 *(numerical answer)*
+13. 17 *(numerical answer)*
+14. (a) P–4, Q–1, R–2, S–3 *(matching)*
+15. (b) P–3, Q–4, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

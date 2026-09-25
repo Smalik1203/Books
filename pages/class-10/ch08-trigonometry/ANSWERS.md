@@ -240,6 +240,27 @@ by $\sqrt{2} + 1$; (3) $\theta = 60^\circ$ or $0^\circ$; (4) no — the sum is a
 least 2, and equals 2 only at $45^\circ$; (5) $\sec\theta - \tan\theta = \frac{1}{p}$
 and $\sec\theta = \frac{p^2 + 1}{2p}$.
 
+### Stage 2 · Solved Examples
+
+The 24 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
+
+1. (a) $\frac{4}{5}$ *(single correct)*
+2. (b) $\frac{13}{12}$ *(single correct)*
+3. (c) 1 *(single correct)*
+4. (d) $\frac{11}{4}$ *(single correct)*
+5. (a) $45^\circ$ *(single correct)*
+6. (b) 1 *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (b), (c) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b) *(multiple correct)*
+11. 2.5 *(numerical answer)*
+12. 8 *(numerical answer)*
+13. 60 *(numerical answer)*
+14. (b) P–3, Q–4, R–1, S–2 *(matching)*
+15. (c) P–4, Q–3, R–2, S–1 *(matching)*
+
 ### Stage 3 · Practice
 
 Multiple choice and assertion–reason, as the key prints it:

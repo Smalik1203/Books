@@ -134,7 +134,7 @@ squares' worth of area is $n$ twenty-fourths of it.
 
 ## 7.5 Mixed Fractions
 
-**Table 7.1.** Every fraction in the first column is less than 1 and every
+**Table 7.11.** Every fraction in the first column is less than 1 and every
 fraction in the second is more than 1.
 
 ### Exercise 7.5
@@ -175,7 +175,7 @@ fraction in the second is more than 1.
 
 ## 7.6 Equivalent Fractions
 
-**The fraction wall (Fig. 7.12).** $\frac{1}{3}$ and $\frac{2}{6}$ are
+**The fraction wall (Fig. 7.13).** $\frac{1}{3}$ and $\frac{2}{6}$ are
 equivalent: two pieces of $\frac{1}{6}$ are exactly as long as one piece of
 $\frac{1}{3}$.
 
@@ -211,7 +211,7 @@ $\frac{1}{3}$.
 4. **4 cakes.** Ten children are two groups of 5, so they need two groups
    of 2 cakes: $\frac{4}{10} = \frac{2}{5}$.
 
-### Think and Reflect (after Fig. 7.13)
+### Think and Reflect (after Fig. 7.14)
 
 1. *Answers will vary.* For example $\frac{4}{8}$, $\frac{5}{10}$ and
    $\frac{50}{100}$.
@@ -389,29 +389,24 @@ complete.
 
 ### Stage 2 · Solved Examples
 
-Beyond the Book numbers its examples from 1, as every Class 7 chapter
-does; the body's are Examples 1 to 8. The answers below are Beyond's
-own, worked in full on its pages.
+The 20 September 2026 examples, in examination formats. Each is worked in full on
+its page; these are the keys.
 
-1. $\frac{1}{10} < \frac{1}{7} < \frac{1}{5} < \frac{1}{3}$
-2. One row is $\frac{1}{5}$, three rows are $\frac{3}{5}$, and 15 squares are $\frac{1}{2}$ of the bar.
-3. The bar is $\frac{7}{4}$ units long, which is longer than 1 unit.
-4. $\frac{23}{6} = 3\frac{5}{6}$
-5. $5\frac{2}{7} = \frac{37}{7}$
-6. The boxes hold 12 and 35.
-7. Each child gets $\frac{4}{5}$ roti in one group and $\frac{8}{10}$ roti in the other. The shares are equal, so $\frac{4}{5} = \frac{8}{10}$.
-8. $\frac{108}{144} = \frac{3}{4}$
-9. $\frac{27}{64}$ is the one in lowest terms.
-10. $\frac{5}{12} < \frac{4}{9}$
-11. $\frac{7}{15}$ is less than $\frac{1}{2}$, by $\frac{1}{30}$.
-12. $\frac{3}{5} < \frac{5}{8} < \frac{2}{3}$
-13. $\frac{7}{12}$
-14. $4\frac{1}{6}$ km
-15. $\frac{5}{6}$ litre
-16. $\frac{5}{8}$
-17. $1\frac{5}{12}$
-18. $\frac{5}{6} = \frac{1}{2} + \frac{1}{3}$
-19. $1\frac{7}{12}$ cm
+1. (c) 40 litres *(single correct)*
+2. (a) $\frac{11}{16}$ *(single correct)*
+3. (b) $\frac{4}{15}$ *(single correct)*
+4. (d) $\frac{11}{16}$ *(single correct)*
+5. (b) $\frac{7}{12}$ m *(single correct)*
+6. (a) $\frac{5}{8}$ of a cake *(single correct)*
+7. (a), (b), (d) *(multiple correct)*
+8. (a), (c) *(multiple correct)*
+9. (a), (b), (d) *(multiple correct)*
+10. (a), (b), (c) *(multiple correct)*
+11. 18 *(numerical answer)*
+12. 49 *(numerical answer)*
+13. 8 *(numerical answer)*
+14. (b) P–3, Q–4, R–1, S–2 *(matching)*
+15. (d) P–2, Q–4, R–1, S–3 *(matching)*
 
 ### Stage 3 · Practice
 

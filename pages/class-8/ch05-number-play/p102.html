@@ -1,0 +1,87 @@
+<section class="page" data-bridge>
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-try">
+        <p>Find every two-digit number that is equal to $4$ times the sum of its
+        digits.</p>
+      </div>
+
+      <p>Write the number in its general form: tens digit $a$ and units digit
+      $b$ make $10a + b$. The condition is then an equation.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$10a + b = 4(a + b) = 4a + 4b$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$6a = 3b$, that is, $b = 2a$</span>
+        </div>
+      </div>
+
+      <p>The units digit is twice the tens digit. The tens digit cannot be $0$,
+      and $b$ must stay a single digit, so $a$ is $1$, $2$, $3$ or $4$. The
+      numbers are $12$, $24$, $36$ and $48$. Check one: $4 \times (3 + 6) = 36$.</p>
+
+      <div class="c-try">
+        <p>In the cryptarithm $\text{AB} + \text{BA} = 121$, find every possible
+        number AB.</p>
+      </div>
+
+      <p>Again, write both numbers in general form.</p>
+
+      <div class="work work--centred">
+        <p>$(10\text{A} + \text{B}) + (10\text{B} + \text{A}) = 11\text{A} + 11\text{B} = 11(\text{A} + \text{B})$</p>
+      </div>
+
+      <p>So $11(\text{A} + \text{B}) = 121$, and $\text{A} + \text{B} = 11$. Any
+      two digits with a sum of $11$ will do. Neither can be $0$, since each
+      starts a number, and they are different because $11$ is odd. So AB can be
+      $29, 38, 47, 56, 65, 74, 83$ or $92$: eight answers.</p>
+
+      <div class="c-try">
+        <p>Priya works out $347 \times 286$ and gets $99142$. Without doing the
+        multiplication, show that her answer is wrong.</p>
+      </div>
+
+      <p>A number and its digital root leave the same remainder when divided by
+      $9$, and remainders multiply along with the numbers. So the digital root of
+      a product must match the digital root of the product of the two digital
+      roots.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$347$</span>
+          <span>$3 + 4 + 7 = 14$, and $1 + 4 = 5$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$286$</span>
+          <span>$2 + 8 + 6 = 16$, and $1 + 6 = 7$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$5 \times 7$</span>
+          <span>$= 35$, and $3 + 5 = 8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$99142$</span>
+          <span>$9 + 9 + 1 + 4 + 2 = 25$, and $2 + 5 = 7$</span>
+        </div>
+      </div>
+
+      <p>The product must have digital root $8$, and $99142$ has $7$, so it is
+      wrong. The right product is $99242$, whose digits add to $26$, and
+      $2 + 6 = 8$. The check can only catch a mistake, though. An answer with
+      the right digital root may still be wrong: $99224$ also has digital root
+      $8$.</p>
+
+      <div class="c-try">
+        <p>Take any three-digit number and write it twice to make a six-digit
+        number, such as $527527$. Show that every number made this way is
+        divisible by $7$, by $11$ and by $13$.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,5 +1,39 @@
 # Class 8 · Mathematics II · Chapter 3 — What Stays the Same
 
+## Solved examples in examination formats, 23 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 16 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-8/p2ch03-proportion/`.
+
+Source `build/jee-class8.mjs`; check `build/check-jee-class8.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p113; the answers stage still opens a fresh page.
+
+Fitting, same day. Practice p111: its last block moved to p112 (settle.mjs), which had room; no words changed.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (a) 12 |
+| 2 | Single correct | (b) ₹490 |
+| 3 | Single correct | (c) ₹1400 |
+| 4 | Single correct | (d) 225 km |
+| 5 | Single correct | (a) 5 hours |
+| 6 | Single correct | (b) 6 hours |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (b) |
+| 9 | Multiple correct | (a), (b), (c) |
+| 10 | Multiple correct | (a), (b), (c), (d) |
+| 11 | Numerical answer | 12 |
+| 12 | Numerical answer | 2160 |
+| 13 | Numerical answer | 3.2 |
+| 14 | Matching | (c) P–2, Q–3, R–4, S–1 |
+| 15 | Matching | (a) P–3, Q–4, R–1, S–2 |
+
 ## Syllabus audit fixes, 17 September 2026
 
 Two findings from the Beyond the Book syllabus audit, both the same method
@@ -257,3 +291,7 @@ Checked by script (PLAN §4.8) and accepted. *Puneeth* on p009 is now *Puneet*, 
 | p007 § 3.5 | M5 | "$1 : 60{,}00{,}000$… one centimetre stands for $60$ km" is right, and the worked example is right, but the section never says **which** map. A reader who goes looking at the scale bar of an atlas will find $1:60{,}00{,}000$ on a full-page map of India and nothing like it on a district sheet, and the exercises then jump to $1:25{,}00{,}000$, $1:50$, $1:200$ and $1:50{,}000$ without saying what kind of thing is drawn at each. | A clause naming the scales: a country on one page, a classroom plan, a model ship, a walking map. The arithmetic is fine; the reader has nothing to picture. |
 | p011 | M1 | "which is Chapter 1's warning about **bases** turning up in new clothes". The word is being borrowed from Mathematics II Chapter 1 (where it meant the amount a percentage is taken of) into a chapter that does not otherwise use it. That is the fifth sense of *base* in this book. | Chapter 1's own prose mostly says "the original amount"; the same phrase works here. See CROSS-CHAPTER.md — this wants one pass across the book, not a patch here. |
 | p012 § 3.7.1 | M2 | The working-together method turns Shyam's hour and a half into a rate of $\tfrac{1}{1.5} = \tfrac23$ of a unit per hour. Dividing 1 by a decimal to get a fraction is the one arithmetic step in the chapter that is not shown, and it is the step the whole method rests on. Everything after it is addition and the rule of three. | One line: $1.5 = \tfrac32$, so $1 \div \tfrac32 = \tfrac23$. |
+
+## 24 September 2026 — NCERT title
+
+The chapter now carries NCERT's own title, *Proportional Reasoning-2*, taken from the chapter's first page in the NCERT textbook, in place of the house title it had. Changed in `chapter.json` and the opener heading in `p001.html`; nothing else in the chapter uses the title.

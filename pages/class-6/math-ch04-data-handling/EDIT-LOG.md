@@ -1,5 +1,38 @@
 # Class 6 · Mathematics I · Chapter 4 — Data Handling and Presentation
 
+## Solved examples in examination formats, 20 September 2026
+
+Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single
+correct, 4 multiple correct, 3 numerical answer and 2 matching, under the
+contract in DESIGN-MATHS §6a. **This supersedes every description of Stage 2
+further down this log**: the 12 examples it records, their `Type N` heads
+and the reasons set in `.work__why` are gone. Stage 1, the practice
+questions and the practice answers are unchanged, and are checked word for
+word against the pre-edit snapshot in `build/_jee-backups/class-6/math-ch04-data-handling/`.
+
+Source `build/jee-class6.mjs`; check `build/check-jee-class6.mjs`,
+which recomputes every option as well as the keyed one. The division was
+refit and now runs p101–p114; the answers stage still opens a fresh page.
+
+| Example | Format | Answer |
+|---:|---|---|
+| 1 | Single correct | (c) 5 |
+| 2 | Single correct | (a) 36 |
+| 3 | Single correct | (c) 1 symbol = 6 items |
+| 4 | Single correct | (d) 24 |
+| 5 | Single correct | (b) 7 |
+| 6 | Single correct | (d) The second count exceeds the first by 6 |
+| 7 | Multiple correct | (a), (b), (d) |
+| 8 | Multiple correct | (a), (c), (d) |
+| 9 | Multiple correct | (a), (b), (d) |
+| 10 | Multiple correct | (b), (c), (d) |
+| 11 | Numerical answer | 48 |
+| 12 | Numerical answer | 14 |
+| 13 | Numerical answer | 7 |
+| 14 | Matching | (a) P–4, Q–1, R–3, S–2 |
+| 15 | Matching | (c) P–2, Q–1, R–4, S–3 |
+
+
 ## Brought to the Class 7 standard, 16 September 2026
 
 Phase 1 of `PLAN-MATHS-CONSISTENCY.md`, following the model chapter
@@ -304,3 +337,11 @@ NCERT's structure in the chapter body. No example, check or exercise was
 added. The seven exercise sets, every Think and Reflect, and Figs 4.1–4.22
 are as they were, apart from Fig. 4.18's size step. None of §5's unused
 components was introduced.
+
+
+## 20 September 2026 — reference numbering and reading order
+
+- Figures and tables now share one chapter sequence; caption labels and prose references were migrated together, including cross-chapter references within Class 6.
+- Dependent text and diagrams are kept together with c-figure-context where the revised layout needs it. The final bound-book audit distinguishes facing pages from page turns.
+- Source content was checked against build/_class6-reference-before. All questions, worked mathematics and illustrations were preserved. The Data Handling closing paragraph alone was shortened to avoid an isolated final page.
+- Validation and mapping: build/_class6-reference-checks; reproducible source check: build/check-class6-reference-revision.mjs.

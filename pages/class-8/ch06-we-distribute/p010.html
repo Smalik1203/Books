@@ -1,0 +1,91 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <!--fig:sqab-->
+          <svg viewBox="0 0 150 128" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a plus b cut into a square of area a squared, two rectangles of area a b and b a, and a square of area b squared">
+            <g class="dg-fill-a"><rect x="32" y="20" width="70" height="70"/></g>
+            <g class="dg-fill-b"><rect x="102" y="20" width="30" height="70"/><rect x="32" y="90" width="70" height="30"/></g>
+            <g class="dg-fill-c"><rect x="102" y="90" width="30" height="30"/></g>
+            <g class="dg-line"><rect x="32" y="20" width="100" height="100"/></g>
+            <g class="dg-thin"><path d="M102 20 L102 120"/><path d="M32 90 L132 90"/></g>
+            <text class="dg-label" x="67" y="59" text-anchor="middle">a²</text>
+            <text class="dg-label dg-label--on-fill" x="117" y="59" text-anchor="middle">ab</text>
+            <text class="dg-label dg-label--on-fill" x="67" y="109" text-anchor="middle">ba</text>
+            <text class="dg-label dg-label--on-fill" x="117" y="109" text-anchor="middle">b²</text>
+            <line class="dg-dim" x1="32" y1="12" x2="102" y2="12" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="102" y1="12" x2="132" y2="12" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="67" y="8" text-anchor="middle">a</text>
+            <text class="dg-label" x="117" y="8" text-anchor="middle">b</text>
+            <line class="dg-dim" x1="24" y1="20" x2="24" y2="90" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <line class="dg-dim" x1="24" y1="90" x2="24" y2="120" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="16" y="58" text-anchor="middle">a</text>
+            <text class="dg-label" x="16" y="108" text-anchor="middle">b</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 6.5</span> A square of side $a + b$. The
+          middle term of its area is $2ab$ because there are two rectangles, one beside
+          the small square and one above it.</figcaption>
+        </figure>
+      </div>
+
+      <p>Using the distributive property, $(a + b)^2$ expands as</p>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label work__label--wide">$(a + b) \times (a + b)$</span>
+          <span>$= a \times a + a \times b + b \times a + b \times b$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= a^2 + 2ab + b^2$</span></div>
+      </div>
+
+      <p>which is what we found in Example 2.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Identity 1A: the square of a sum</div>
+        <p>$(a + b)^2 = a^2 + 2ab + b^2$. The square of the sum of two numbers is the
+        sum of their squares plus twice their product.</p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Math Talk</div>
+          <div class="c-reflect__body">
+            <p>If $a$ and $b$ are any two integers, is $(a + b)^2$ always greater than
+            $a^2 + b^2$? If not, when is it greater?</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Use Identity 1A to find $104^2$ and $37^2$. (Hint: split $104$ and $37$ into
+      sums or differences of numbers whose squares are easy to work out.) Use it also to
+      write the expressions for (i) $(m + 3)^2$ and (ii) $(6 + p)^2$.</p>
+
+      <p>Here is $(6x + 5)^2$ expanded both ways. On the first three rows the distributive
+      property does the work; on the last two the identity does it, with $a = 6x$ and
+      $b = 5$.</p>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label work__label--wide">distributive property</span>
+          <span>$(6x + 5)^2 = (6x + 5)(6x + 5)$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= (6x \times 6x) + (5 \times 6x) + (6x \times 5) + 5 \times 5$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= (6x)^2 + 2(6x \times 5) + 5^2 = 36x^2 + 60x + 25$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">Identity 1A</span>
+          <span>$(6x + 5)^2 = (6x)^2 + 5^2 + 2 \times (6x \times 5)$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= 36x^2 + 25 + 60x$</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
