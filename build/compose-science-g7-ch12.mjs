@@ -1,3 +1,5 @@
+import {completeIllustratedPage} from './science-page-illustrations.mjs';
+import {writeScienceSource} from './write-science-source.mjs';
 import {justifiedProseLines,applyExistingProse,measureProseJustification} from './science-prose-justification.mjs';
 import {roomyComparisonTableBlock as comparisonTableBlock} from './science-g7-comparison-tables.mjs';
 // Independent Grade 7 Chapter 12 authoring entry point. Shared Science typography,
@@ -8,11 +10,11 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {pathToFileURL} from 'node:url';
 import {title,shortTitle,opener,lesson,glossary,summary,exercises,projects} from './science-g7-ch12-content.mjs';
-import {spaceDiagram,pageVisual} from './science-g7-ch12-diagrams.mjs';
+import {spaceDiagram} from './science-g7-ch12-diagrams.mjs';
 import {chapterOpener} from './chapter-opener.mjs';
 import {scienceHeaderArt} from './science-header-art.mjs';
 import {v2PanelHeading} from './science-v2-cues.mjs';
-import {refitV2Lesson} from './refit-science-g7-ch12.mjs';
+import {refitClass7Lesson as refitV2Lesson} from './refit-science-g7-layout.mjs';
 import {scienceContract} from './science-contract.mjs';
 import {sheetMetrics} from './sheet.mjs';
 
@@ -114,7 +116,7 @@ function render(meta){
 }
 for(const meta of lesson)render(meta);
 const lessonBlockCount=blocks.length;
-const fitted=refitV2Lesson([{blocks}]);
+const fitted=refitV2Lesson([{blocks}],{chapter:number});
 const band=chapterOpener({id:'science-g7-ch12',number,titleLines:['Earth, Moon,','and the Sun'],bleed:Math.ceil(metrics.bleed*1052/metrics.trimW),image:{href:`../../figures/class-${grade}/science/ch12/opener.png`,aspect:1.5,alt:'Students and a teacher investigating a globe with a lamp and Moon model'}});
 const motif=scienceHeaderArt(grade,number);
 let openerHtml=band.html.replace(/(class="chapter-opener__number[^>]* y=")222"/,'$1242"').replace('<line class="chapter-opener__divider"',motif+'<line class="chapter-opener__divider"'),y=band.bodyTop;
@@ -134,27 +136,26 @@ blocks.length=0;
 render({id:'assessment-heading',type:'heading',text:'Let Us Enhance Our Learning',source:[16,17,18]});
 render({id:'assessment-intro',type:'body',text:'Use your notebook. Support each answer with evidence and explain any uncertainty.',source:[]});
 exercises.forEach((q,i)=>render({...q,type:'question',number:i+1}));
-pages.push(...refitV2Lesson([{blocks}]).map(p=>({...p,titleRole:'assessment'})));
+pages.push(...refitV2Lesson([{blocks}],{chapter:number}).map(p=>({...p,titleRole:'assessment'})));
 blocks.length=0;
 render({id:'project-heading',type:'heading',text:'Explore Further',source:[18,19]});
 for(const p of projects)render({...p,type:'project'});
-pages.push(...refitV2Lesson([{blocks}]).map(p=>({...p,titleRole:'projects'})));
+pages.push(...refitV2Lesson([{blocks}],{chapter:number}).map(p=>({...p,titleRole:'projects'})));
 if(process.argv.includes('--justify-existing')){await applyExistingProse(dir,typographyReplacements);process.exit(0);}
 const map=[];
 for(let i=0;i<pages.length;i++){
- const p=pages[i],n=i+1,verso=n%2===0;
- if(!p.parts.includes('<image ')){const v=pageVisual(p.source,p.title);if(p.end+v.h+20>1415)throw Error('No space for required image on page '+n);p.parts+=`<g transform="translate(0 ${p.end+20})">${v.html}</g>`;p.end+=v.h+20;}
+ const p=completeIllustratedPage(pages[i],grade,number),n=i+1,verso=n%2===0;
  if(!p.parts.includes('<image '))throw Error('Every page requires an image');
  const running=i===0?'':'<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>'+motifs(true)+''+label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')+label(shortTitle,960,40,'v2-running se-running','end')+'<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>';
  const foot='<g class="v2-footer">'+`<line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>`+label('LEARNLAB · SCIENCE '+grade,verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')+`<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>`+label(n,verso?107:945,1487,'v2-folio se-running','middle')+'</g>';
  const html=`<section class="page page--food page--science-editorial page--science-v2 page--g7-ch12${i===0?' page--opener':''}" data-folio="${n}"${i===pages.length-1?' data-close':''}><div class="page__body"><div class="page__main"><svg class="food-sheet science-sheet science-editorial" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 1514" aria-label="${title}, page ${n}">${running}${p.parts}${foot}</svg></div></div></section>`;
- scienceContract('Chapter 12 '+n,html);await fs.writeFile(`${dir}/p${String(n).padStart(3,'0')}.html`,html);
+ scienceContract('Chapter 12 '+n,html);await writeScienceSource(`${dir}/p${String(n).padStart(3,'0')}.html`,html);
  map.push({page:n,title:p.title,titleRole:p.titleRole,sourcePages:p.source,end:p.end,fill:Math.round((p.end-112)/1303*100),breakReason:p.breakReason,blocks:p.blockAudit,protectedNext:p.protectedNext});
 }
 for(const file of await fs.readdir(dir))if(/^p\d+\.html$/.test(file)&&+file.slice(1,-5)>pages.length)await fs.unlink(path.join(dir,file));
 await fs.mkdir(history,{recursive:true});
-await fs.writeFile(history+'/page-map.json',JSON.stringify(map,null,2));
-await fs.writeFile(history+'/editorial-ledger.json',JSON.stringify({opener:{source:[1],paragraphs:opener},lesson,glossary:{purpose:'Reference definitions for terms taught in the chapter',entries:glossary},summary,assessment:{purpose:'All twelve source questions retained with safety and evidence qualifications',questions:exercises},projects},null,2));
+await writeScienceSource(history+'/page-map.json',JSON.stringify(map,null,2));
+await writeScienceSource(history+'/editorial-ledger.json',JSON.stringify({opener:{source:[1],paragraphs:opener},lesson,glossary:{purpose:'Reference definitions for terms taught in the chapter',entries:glossary},summary,assessment:{purpose:'All twelve source questions retained with safety and evidence qualifications',questions:exercises},projects},null,2));
 console.log(`Chapter 12: ${pages.length} pages; ${fitted.length} lesson pages; ${lessonBlockCount} protected/prose blocks.\n`+map.map(p=>`p${p.page}: ${p.fill}% ${p.title||'continued lesson'}`).join('\n'));
 
 await measureProseJustification(dir);

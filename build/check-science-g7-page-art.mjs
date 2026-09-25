@@ -5,6 +5,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {pageIllustration,completeIllustratedPage,resetPageIllustrations} from './science-page-illustrations.mjs';
 const root='pages/class-7',report=[];
+const plan=JSON.parse(fs.readFileSync('assets/design-history/science-g7-layout-review/page-art.json','utf8'));
+const sizes=JSON.parse(fs.readFileSync('assets/design-history/science-g7-layout-review/image-sizes.json','utf8'));
 const approved=JSON.parse(fs.readFileSync('assets/design-history/science-g7-image-repetition/approved-instructional-reuse.json','utf8'));
 for(const directory of fs.readdirSync(root)){
  const dir=path.join(root,directory),metaPath=path.join(dir,'chapter.json');
@@ -27,17 +29,21 @@ for(const directory of fs.readdirSync(root)){
    const expected=`Activity ${chapter}.${++activities}`;
    assert(heading[0].includes(`>${expected}</text>`),`${directory}/${file}: expected ${expected}`);
   }
-  if(chapter>=2&&chapter<=11){
+  if(chapter>=2&&chapter<=12){
    if(supplement){
-    assert(/<image\b[^>]*width="720" height="280"/.test(supplement[0]),`${directory}/${file}: illustration was shrunk`);
-    const regenerated=pageIllustration(html.replace(supplement[0],''),7,chapter,{commit:true});
-    assert.equal(regenerated.file,supplement[1],`${directory}/${file}: regeneration changed the approved art`);supplements++;
+    const tag=supplement[0].match(/<image\b[^>]*>/)[0],w=+tag.match(/width="([^"]+)"/)[1],h=+tag.match(/height="([^"]+)"/)[1];
+    const dimensions=sizes[supplement[1]];
+    assert(w<=824&&h<=540&&h>=260,`${directory}/${file}: figure frame outside reviewed range`);
+    assert(Math.abs(w/h-dimensions[0]/dimensions[1])<.001,'Preserve natural figure proportions');
+    const selected=plan[`7-${chapter}`].find(a=>a.file===supplement[1]);
+    assert(selected,`${directory}/${file}: unreviewed art`);
+    assert(selected.anchors.some(id=>html.includes(`data-block="${id}"`))||!selected.anchors.length&&html.includes(selected.title),'Art has its teaching context');supplements++;
    }else completeIllustratedPage({parts:html},7,chapter);
   }
  }
  const repeats=[...byHash.values()].filter(list=>list.length>1);
  for(const list of repeats)assert(!list.some(x=>x.supplement),`${directory}: repeated filler ${list[0].asset}`);
- const signature=group=>JSON.stringify(group.map(x=>({page:x.page,asset:x.asset})).sort((a,b)=>(a.page+a.asset).localeCompare(b.page+b.asset)));
+ const signature=group=>JSON.stringify(group.map(x=>x.asset).sort());
  const allowed=new Set((approved[chapter]?.groups||[]).map(signature));
  for(const group of repeats)assert(allowed.has(signature(group)),`${directory}: unreviewed instructional reuse of ${group[0].asset}`);
  report.push({chapter,pages:illustrated,activities,supplements,retainedInstructionalReuse:repeats});
@@ -45,4 +51,4 @@ for(const directory of fs.readdirSync(root)){
 report.sort((a,b)=>a.chapter-b.chapter);
 assert.equal(report.length,12);
 fs.writeFileSync('assets/design-history/science-g7-image-repetition/after.json',JSON.stringify(report,null,2)+'\n');
-console.log(`${report.reduce((s,r)=>s+r.pages,0)} illustrated pages, ${report.reduce((s,r)=>s+r.activities,0)} numbered activities; no repeated supplementary images. Regeneration choices match the reviewed pages.`);
+console.log(`${report.reduce((s,r)=>s+r.pages,0)} illustrated pages, ${report.reduce((s,r)=>s+r.activities,0)} numbered activities; no repeated supplementary images. Figure sizes and topic anchors match the reviewed plan.`);

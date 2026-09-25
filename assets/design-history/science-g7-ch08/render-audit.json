@@ -84,7 +84,7 @@
         "left": -18.2,
         "top": -1591.9,
         "right": 963,
-        "bottom": 1413.4
+        "bottom": 1387
       },
       "blocks": [
         {
@@ -112,29 +112,15 @@
           "id": "old-clocks",
           "left": 89,
           "top": 314,
-          "right": 875.1,
-          "bottom": 649.2
+          "right": 894.3,
+          "bottom": 870.2
         },
         {
           "id": "clock-principles",
           "left": -18.2,
           "top": -1591.9,
           "right": 963,
-          "bottom": 1166
-        },
-        {
-          "id": "make-clock",
-          "left": 89,
-          "top": 1206.5,
-          "right": 417,
-          "bottom": 1246.3
-        },
-        {
-          "id": "water-intro",
-          "left": 87.5,
-          "top": 1253,
-          "right": 963,
-          "bottom": 1413.4
+          "bottom": 1387
         }
       ],
       "collisions": [],
@@ -145,8 +131,8 @@
         "right": 114.70875759294636,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 0.3,
-      "occupiedPercent": 99.9,
+      "bottomGapMM": 5,
+      "occupiedPercent": 97.9,
       "footerClearanceMM": 3.3
     },
     {
@@ -154,45 +140,31 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1353.4
+        "bottom": 1284
       },
       "blocks": [
         {
+          "id": "make-clock",
+          "left": 89,
+          "top": 112.5,
+          "right": 417,
+          "bottom": 152.3
+        },
+        {
+          "id": "water-intro",
+          "left": 87.5,
+          "top": 159,
+          "right": 963,
+          "bottom": 319.4
+        },
+        {
           "id": "water-task",
           "left": 89,
-          "top": 112,
+          "top": 336,
           "right": 963,
-          "bottom": 1060
-        },
-        {
-          "id": "water-evidence-0",
-          "left": 89,
-          "top": 1081,
-          "right": 963,
-          "bottom": 1145.4
-        },
-        {
-          "id": "water-evidence-1",
-          "left": 89,
-          "top": 1145,
-          "right": 963,
-          "bottom": 1209.4
-        },
-        {
-          "id": "water-flow-0",
-          "left": 87.5,
-          "top": 1225,
-          "right": 963,
-          "bottom": 1289.4
-        },
-        {
-          "id": "water-flow-1",
-          "left": 89,
-          "top": 1289,
-          "right": 963,
-          "bottom": 1353.4
+          "bottom": 1284
         }
       ],
       "collisions": [],
@@ -203,8 +175,8 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 11.1,
-      "occupiedPercent": 95.3,
+      "bottomGapMM": 23.5,
+      "occupiedPercent": 89.9,
       "footerClearanceMM": 3.3
     },
     {
@@ -212,73 +184,59 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112,
+        "top": 111,
         "right": 963,
-        "bottom": 1309.4
+        "bottom": 1264.4
       },
       "blocks": [
         {
+          "id": "water-evidence-0",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "water-evidence-1",
+          "left": 89,
+          "top": 175,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
+          "id": "water-flow-0",
+          "left": 87.5,
+          "top": 255,
+          "right": 963,
+          "bottom": 319.4
+        },
+        {
+          "id": "water-flow-1",
+          "left": 89,
+          "top": 319,
+          "right": 963,
+          "bottom": 383.4
+        },
+        {
           "id": "water-pause",
           "left": 89,
-          "top": 112,
+          "top": 400,
           "right": 963,
-          "bottom": 374
+          "bottom": 662
         },
         {
           "id": "history",
           "left": 89,
-          "top": 408.5,
+          "top": 696.5,
           "right": 306.9,
-          "bottom": 448.3
+          "bottom": 736.3
         },
         {
           "id": "indian-timekeeping-0",
           "left": 87.5,
-          "top": 455,
+          "top": 743,
           "right": 963,
-          "bottom": 519.4
-        },
-        {
-          "id": "indian-timekeeping-1",
-          "left": 89,
-          "top": 519,
-          "right": 963,
-          "bottom": 615.4
-        },
-        {
-          "id": "ghatika-0",
-          "left": 89,
-          "top": 631,
-          "right": 963,
-          "bottom": 695.4
-        },
-        {
-          "id": "ghatika-1",
-          "left": 87.5,
-          "top": 695,
-          "right": 963,
-          "bottom": 759.4
-        },
-        {
-          "id": "jantar-0",
-          "left": 87.5,
-          "top": 775,
-          "right": 963,
-          "bottom": 839.4
-        },
-        {
-          "id": "jantar-1",
-          "left": 89,
-          "top": 839,
-          "right": 963,
-          "bottom": 903.4
-        },
-        {
-          "id": "solar-time-0",
-          "left": 87.5,
-          "top": 919,
-          "right": 963,
-          "bottom": 983.4
+          "bottom": 807.4
         }
       ],
       "collisions": [],
@@ -289,8 +247,8 @@
         "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 19,
-      "occupiedPercent": 91.9,
+      "bottomGapMM": 27.1,
+      "occupiedPercent": 88.4,
       "footerClearanceMM": 3.3
     },
     {
@@ -300,64 +258,64 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1325.2
+        "bottom": 1261.2
       },
       "blocks": [
         {
-          "id": "solar-time-1",
+          "id": "indian-timekeeping-1",
           "left": 89,
           "top": 111,
           "right": 963,
-          "bottom": 175.4
+          "bottom": 207.4
+        },
+        {
+          "id": "ghatika-0",
+          "left": 89,
+          "top": 223,
+          "right": 963,
+          "bottom": 287.4
+        },
+        {
+          "id": "ghatika-1",
+          "left": 87.5,
+          "top": 287,
+          "right": 963,
+          "bottom": 351.4
+        },
+        {
+          "id": "jantar-0",
+          "left": 87.5,
+          "top": 367,
+          "right": 963,
+          "bottom": 431.4
+        },
+        {
+          "id": "jantar-1",
+          "left": 89,
+          "top": 431,
+          "right": 963,
+          "bottom": 495.4
+        },
+        {
+          "id": "solar-time-0",
+          "left": 87.5,
+          "top": 511,
+          "right": 963,
+          "bottom": 575.4
+        },
+        {
+          "id": "solar-time-1",
+          "left": 89,
+          "top": 575,
+          "right": 963,
+          "bottom": 639.4
         },
         {
           "id": "clock-history-art",
           "left": 87.5,
-          "top": 192,
-          "right": 855.4,
-          "bottom": 527.2
-        },
-        {
-          "id": "mechanical-clocks-0",
-          "left": 89,
-          "top": 553,
-          "right": 963,
-          "bottom": 617.4
-        },
-        {
-          "id": "mechanical-clocks-1",
-          "left": 89,
-          "top": 617,
-          "right": 963,
-          "bottom": 713.4
-        },
-        {
-          "id": "pendulum",
-          "left": 89,
-          "top": 741.7,
-          "right": 545.4,
-          "bottom": 791.8
-        },
-        {
-          "id": "pendulum-definition-0",
-          "left": 87.5,
-          "top": 799,
-          "right": 963,
-          "bottom": 863.4
-        },
-        {
-          "id": "pendulum-definition-1",
-          "left": 89,
-          "top": 863,
-          "right": 963,
-          "bottom": 927.4
-        },
-        {
-          "id": "pendulum-positions",
-          "left": 89,
-          "top": 944,
-          "right": 868.7,
-          "bottom": 1325.2
+          "top": 656,
+          "right": 931,
+          "bottom": 1261.2
         }
       ],
       "collisions": [],
@@ -368,8 +326,8 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 16.1,
-      "occupiedPercent": 93.1,
+      "bottomGapMM": 27.6,
+      "occupiedPercent": 88.2,
       "footerClearanceMM": 3.3
     },
     {
@@ -379,36 +337,71 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1319
+        "bottom": 1143.4
       },
       "blocks": [
         {
-          "id": "oscillation-0",
+          "id": "mechanical-clocks-0",
           "left": 89,
           "top": 111,
           "right": 963,
           "bottom": 175.4
         },
         {
-          "id": "oscillation-1",
-          "left": 87.5,
+          "id": "mechanical-clocks-1",
+          "left": 89,
           "top": 175,
           "right": 963,
-          "bottom": 239.4
+          "bottom": 271.4
+        },
+        {
+          "id": "pendulum",
+          "left": 89,
+          "top": 299.7,
+          "right": 545.4,
+          "bottom": 349.8
+        },
+        {
+          "id": "pendulum-definition-0",
+          "left": 87.5,
+          "top": 357,
+          "right": 963,
+          "bottom": 421.4
+        },
+        {
+          "id": "pendulum-definition-1",
+          "left": 89,
+          "top": 421,
+          "right": 963,
+          "bottom": 485.4
+        },
+        {
+          "id": "pendulum-positions",
+          "left": 89,
+          "top": 502,
+          "right": 868.7,
+          "bottom": 883.2
+        },
+        {
+          "id": "oscillation-0",
+          "left": 89,
+          "top": 903,
+          "right": 963,
+          "bottom": 967.4
+        },
+        {
+          "id": "oscillation-1",
+          "left": 87.5,
+          "top": 967,
+          "right": 963,
+          "bottom": 1031.4
         },
         {
           "id": "period-0",
           "left": 89,
-          "top": 255,
+          "top": 1047,
           "right": 963,
-          "bottom": 351.4
-        },
-        {
-          "id": "pendulum-task",
-          "left": 89,
-          "top": 368,
-          "right": 963,
-          "bottom": 1319
+          "bottom": 1143.4
         }
       ],
       "collisions": [],
@@ -419,54 +412,60 @@
         "right": 114.0184210880979,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 17.2,
-      "occupiedPercent": 92.6,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 48.8,
+      "occupiedPercent": 79.2,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 45.8,
+        "protectedGroup": [
+          {
+            "id": "pendulum-task",
+            "type": "activity",
+            "title": "1. With a teacher, use about 150 cm of strong thread and a small secure bob to make a pendulum about",
+            "height": 973
+          }
+        ],
+        "requiredMM": 174.8,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": -18.2,
-        "top": -9356.7,
+        "left": 89,
+        "top": 112,
         "right": 963,
-        "bottom": 1292.4
+        "bottom": 1307.2
       },
       "blocks": [
         {
+          "id": "pendulum-task",
+          "left": 89,
+          "top": 112,
+          "right": 963,
+          "bottom": 1063
+        },
+        {
           "id": "pendulum-evidence-0",
           "left": 89,
-          "top": 111,
+          "top": 1084,
           "right": 963,
-          "bottom": 175.4
+          "bottom": 1148.4
         },
         {
           "id": "pendulum-evidence-1",
           "left": 89,
-          "top": 175,
+          "top": 1148,
           "right": 963,
-          "bottom": 239.4
+          "bottom": 1212.4
         },
         {
           "id": "period-example",
           "left": 89,
-          "top": 256.5,
+          "top": 1229.5,
           "right": 852,
-          "bottom": 334.2
-        },
-        {
-          "id": "period-record",
-          "left": -18.2,
-          "top": -9356.7,
-          "right": 963,
-          "bottom": 689.2
-        },
-        {
-          "id": "timing-pause",
-          "left": 89,
-          "top": 715,
-          "right": 963,
-          "bottom": 945
+          "bottom": 1307.2
         }
       ],
       "collisions": [],
@@ -477,82 +476,54 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 22,
-      "occupiedPercent": 90.6,
+      "bottomGapMM": 19.4,
+      "occupiedPercent": 91.7,
       "footerClearanceMM": 3.3
     },
     {
       "page": 8,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 112.5,
+        "left": -18.2,
+        "top": -10909.7,
         "right": 963,
-        "bottom": 1163.2
+        "bottom": 1390.4
       },
       "blocks": [
         {
+          "id": "period-record",
+          "left": -18.2,
+          "top": -10909.7,
+          "right": 963,
+          "bottom": 448.2
+        },
+        {
+          "id": "timing-pause",
+          "left": 89,
+          "top": 474,
+          "right": 963,
+          "bottom": 704
+        },
+        {
           "id": "pendulum-variables",
           "left": 89,
-          "top": 112.5,
+          "top": 738.5,
           "right": 357.8,
-          "bottom": 152.3
+          "bottom": 778.3
         },
         {
           "id": "length-extension",
           "left": 89,
-          "top": 159,
+          "top": 785,
           "right": 963,
-          "bottom": 255.4
+          "bottom": 881.4
         },
         {
           "id": "mass-extension",
           "left": 87.5,
-          "top": 271,
+          "top": 897,
           "right": 963,
-          "bottom": 399.4
-        },
-        {
-          "id": "pendulum-conclusion-0",
-          "left": 89,
-          "top": 415,
-          "right": 963,
-          "bottom": 479.4
-        },
-        {
-          "id": "pendulum-conclusion-1",
-          "left": 89,
-          "top": 479,
-          "right": 963,
-          "bottom": 575.4
-        },
-        {
-          "id": "modern",
-          "left": 89,
-          "top": 604.5,
-          "right": 573.2,
-          "bottom": 644.3
-        },
-        {
-          "id": "modern-mechanisms-0",
-          "left": 89,
-          "top": 651,
-          "right": 963,
-          "bottom": 715.4
-        },
-        {
-          "id": "modern-mechanisms-1",
-          "left": 87.5,
-          "top": 715,
-          "right": 963,
-          "bottom": 811.4
-        },
-        {
-          "id": "accessible-clocks",
-          "left": 87.5,
-          "top": 828,
-          "right": 877.3,
-          "bottom": 1163.2
+          "bottom": 1025.4
         }
       ],
       "collisions": [],
@@ -563,22 +534,9 @@
         "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 45.2,
-      "occupiedPercent": 80.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 40.4,
-        "protectedGroup": [
-          {
-            "id": "clock-accuracy",
-            "type": "table",
-            "title": "Resolution and accuracy",
-            "height": 278
-          }
-        ],
-        "requiredMM": 49.9,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 9,
@@ -587,50 +545,57 @@
         "left": -18.2,
         "top": -12462.6,
         "right": 963,
-        "bottom": 1355.4
+        "bottom": 1389.2
       },
       "blocks": [
+        {
+          "id": "pendulum-conclusion-0",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "pendulum-conclusion-1",
+          "left": 89,
+          "top": 175,
+          "right": 963,
+          "bottom": 271.4
+        },
+        {
+          "id": "modern",
+          "left": 89,
+          "top": 300.5,
+          "right": 573.2,
+          "bottom": 340.3
+        },
+        {
+          "id": "modern-mechanisms-0",
+          "left": 89,
+          "top": 347,
+          "right": 963,
+          "bottom": 411.4
+        },
+        {
+          "id": "modern-mechanisms-1",
+          "left": 87.5,
+          "top": 411,
+          "right": 963,
+          "bottom": 507.4
+        },
+        {
+          "id": "accessible-clocks",
+          "left": 87.5,
+          "top": 524,
+          "right": 916.7,
+          "bottom": 1110.2
+        },
         {
           "id": "clock-accuracy",
           "left": -18.2,
           "top": -12462.6,
           "right": 963,
-          "bottom": 364.2
-        },
-        {
-          "id": "units",
-          "left": 89,
-          "top": 401.7,
-          "right": 401,
-          "bottom": 451.8
-        },
-        {
-          "id": "second-0",
-          "left": 89,
-          "top": 459,
-          "right": 963,
-          "bottom": 523.4
-        },
-        {
-          "id": "second-1",
-          "left": 89,
-          "top": 523,
-          "right": 963,
-          "bottom": 587.4
-        },
-        {
-          "id": "time-units",
-          "left": -18.2,
-          "top": -12462.6,
-          "right": 963,
-          "bottom": 940.2
-        },
-        {
-          "id": "unit-writing-0",
-          "left": 87.5,
-          "top": 965,
-          "right": 963,
-          "bottom": 1029.4
+          "bottom": 1389.2
         }
       ],
       "collisions": [],
@@ -641,68 +606,61 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 10.7,
-      "occupiedPercent": 95.4,
+      "bottomGapMM": 4.6,
+      "occupiedPercent": 98,
       "footerClearanceMM": 3.3
     },
     {
       "page": 10,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111,
+        "left": -18.2,
+        "top": -14015.6,
         "right": 963,
-        "bottom": 1327.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
+          "id": "units",
+          "left": 89,
+          "top": 111.7,
+          "right": 401,
+          "bottom": 161.8
+        },
+        {
+          "id": "second-0",
+          "left": 89,
+          "top": 169,
+          "right": 963,
+          "bottom": 233.4
+        },
+        {
+          "id": "second-1",
+          "left": 89,
+          "top": 233,
+          "right": 963,
+          "bottom": 297.4
+        },
+        {
+          "id": "time-units",
+          "left": -18.2,
+          "top": -14015.6,
+          "right": 963,
+          "bottom": 650.2
+        },
+        {
+          "id": "unit-writing-0",
+          "left": 87.5,
+          "top": 675,
+          "right": 963,
+          "bottom": 739.4
+        },
+        {
           "id": "unit-writing-1",
           "left": 89,
-          "top": 111,
+          "top": 739,
           "right": 963,
-          "bottom": 175.4
-        },
-        {
-          "id": "clock-task",
-          "left": 89,
-          "top": 192,
-          "right": 963,
-          "bottom": 918
-        },
-        {
-          "id": "clock-evidence-0",
-          "left": 89,
-          "top": 939,
-          "right": 963,
-          "bottom": 1003.4
-        },
-        {
-          "id": "clock-evidence-1",
-          "left": 89,
-          "top": 1003,
-          "right": 963,
-          "bottom": 1067.4
-        },
-        {
-          "id": "time-applications-0",
-          "left": 89,
-          "top": 1083,
-          "right": 963,
-          "bottom": 1147.4
-        },
-        {
-          "id": "time-applications-1",
-          "left": 89,
-          "top": 1157,
-          "right": 963,
-          "bottom": 1221.4
-        },
-        {
-          "id": "time-applications-2",
-          "left": 89,
-          "top": 1231,
-          "right": 963,
-          "bottom": 1327.4
+          "bottom": 803.4
         }
       ],
       "collisions": [],
@@ -713,82 +671,68 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 15.7,
-      "occupiedPercent": 93.3,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
       "page": 11,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": -18.2,
-        "top": -15568.5,
+        "left": 89,
+        "top": 112,
         "right": 963,
-        "bottom": 1404.4
+        "bottom": 1321.4
       },
       "blocks": [
         {
+          "id": "clock-task",
+          "left": 89,
+          "top": 112,
+          "right": 963,
+          "bottom": 838
+        },
+        {
+          "id": "clock-evidence-0",
+          "left": 89,
+          "top": 859,
+          "right": 963,
+          "bottom": 923.4
+        },
+        {
+          "id": "clock-evidence-1",
+          "left": 89,
+          "top": 923,
+          "right": 963,
+          "bottom": 987.4
+        },
+        {
+          "id": "time-applications-0",
+          "left": 89,
+          "top": 1003,
+          "right": 963,
+          "bottom": 1067.4
+        },
+        {
+          "id": "time-applications-1",
+          "left": 89,
+          "top": 1077,
+          "right": 963,
+          "bottom": 1141.4
+        },
+        {
+          "id": "time-applications-2",
+          "left": 89,
+          "top": 1151,
+          "right": 963,
+          "bottom": 1247.4
+        },
+        {
           "id": "time-applications-3",
           "left": 89,
-          "top": 111,
+          "top": 1257,
           "right": 963,
-          "bottom": 175.4
-        },
-        {
-          "id": "slow-fast",
-          "left": 89,
-          "top": 203.7,
-          "right": 367.2,
-          "bottom": 253.8
-        },
-        {
-          "id": "race-comparison-0",
-          "left": 87.5,
-          "top": 261,
-          "right": 963,
-          "bottom": 325.4
-        },
-        {
-          "id": "race-comparison-1",
-          "left": 87.5,
-          "top": 325,
-          "right": 963,
-          "bottom": 389.4
-        },
-        {
-          "id": "speed-comparison",
-          "left": -18.2,
-          "top": -15568.5,
-          "right": 963,
-          "bottom": 660
-        },
-        {
-          "id": "different-distances-0",
-          "left": 89,
-          "top": 687,
-          "right": 963,
-          "bottom": 783.4
-        },
-        {
-          "id": "speed",
-          "left": 89,
-          "top": 811.7,
-          "right": 434.1,
-          "bottom": 861.8
-        },
-        {
-          "id": "average-definition-0",
-          "left": 87.5,
-          "top": 869,
-          "right": 963,
-          "bottom": 965.4
-        },
-        {
-          "id": "speed-rule",
-          "left": 87.5,
-          "top": 982.5,
-          "right": 828,
-          "bottom": 1060.2
+          "bottom": 1321.4
         }
       ],
       "collisions": [],
@@ -799,68 +743,75 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 1.9,
-      "occupiedPercent": 99.2,
+      "bottomGapMM": 16.8,
+      "occupiedPercent": 92.8,
       "footerClearanceMM": 3.3
     },
     {
       "page": 12,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 112,
+        "left": -18.2,
+        "top": -17121.5,
         "right": 963,
-        "bottom": 1340
+        "bottom": 1390.4
       },
       "blocks": [
         {
-          "id": "cycling-art",
+          "id": "slow-fast",
           "left": 89,
-          "top": 112,
-          "right": 897.3,
-          "bottom": 447.2
+          "top": 111.7,
+          "right": 367.2,
+          "bottom": 161.8
         },
         {
-          "id": "example-one",
-          "left": 89,
-          "top": 486.5,
-          "right": 524.6,
-          "bottom": 526.3
-        },
-        {
-          "id": "swati-work",
-          "left": 89,
-          "top": 533,
+          "id": "race-comparison-0",
+          "left": 87.5,
+          "top": 169,
           "right": 963,
-          "bottom": 597.4
+          "bottom": 233.4
         },
         {
-          "id": "speed-units-0",
-          "left": 89,
-          "top": 613,
+          "id": "race-comparison-1",
+          "left": 87.5,
+          "top": 233,
           "right": 963,
-          "bottom": 677.4
+          "bottom": 297.4
         },
         {
-          "id": "speed-units-1",
-          "left": 89,
-          "top": 677,
+          "id": "speed-comparison",
+          "left": -18.2,
+          "top": -17121.5,
           "right": 963,
-          "bottom": 741.4
+          "bottom": 568
         },
         {
-          "id": "railways",
+          "id": "different-distances-0",
           "left": 89,
-          "top": 770.5,
-          "right": 426.1,
-          "bottom": 810.3
-        },
-        {
-          "id": "train-task",
-          "left": 89,
-          "top": 818,
+          "top": 595,
           "right": 963,
-          "bottom": 1340
+          "bottom": 691.4
+        },
+        {
+          "id": "speed",
+          "left": 89,
+          "top": 719.7,
+          "right": 434.1,
+          "bottom": 769.8
+        },
+        {
+          "id": "average-definition-0",
+          "left": 87.5,
+          "top": 777,
+          "right": 963,
+          "bottom": 873.4
+        },
+        {
+          "id": "speed-rule",
+          "left": 87.5,
+          "top": 890.5,
+          "right": 828,
+          "bottom": 968.2
         }
       ],
       "collisions": [],
@@ -871,24 +822,96 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 13.5,
-      "occupiedPercent": 94.2,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
       "page": 13,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": -18.2,
-        "top": -18674.5,
+        "left": 89,
+        "top": 112,
         "right": 963,
-        "bottom": 1383.4
+        "bottom": 1393
+      },
+      "blocks": [
+        {
+          "id": "cycling-art",
+          "left": 89,
+          "top": 112,
+          "right": 897.3,
+          "bottom": 500.2
+        },
+        {
+          "id": "example-one",
+          "left": 89,
+          "top": 539.5,
+          "right": 524.6,
+          "bottom": 579.3
+        },
+        {
+          "id": "swati-work",
+          "left": 89,
+          "top": 586,
+          "right": 963,
+          "bottom": 650.4
+        },
+        {
+          "id": "speed-units-0",
+          "left": 89,
+          "top": 666,
+          "right": 963,
+          "bottom": 730.4
+        },
+        {
+          "id": "speed-units-1",
+          "left": 89,
+          "top": 730,
+          "right": 963,
+          "bottom": 794.4
+        },
+        {
+          "id": "railways",
+          "left": 89,
+          "top": 823.5,
+          "right": 426.1,
+          "bottom": 863.3
+        },
+        {
+          "id": "train-task",
+          "left": 89,
+          "top": 871,
+          "right": 963,
+          "bottom": 1393
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 4,
+      "occupiedPercent": 98.3,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 14,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": -18.2,
+        "top": -20227.4,
+        "right": 963,
+        "bottom": 1330.9
       },
       "blocks": [
         {
           "id": "train-record",
           "left": -18.2,
-          "top": -18674.5,
+          "top": -20227.4,
           "right": 963,
           "bottom": 400.2
         },
@@ -933,71 +956,6 @@
           "top": 849.5,
           "right": 717.4,
           "bottom": 927.2
-        },
-        {
-          "id": "interval-check-0",
-          "left": 89,
-          "top": 945,
-          "right": 963,
-          "bottom": 1041.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.7252125241284,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 5.7,
-      "occupiedPercent": 97.6,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 14,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": -18.2,
-        "top": -20227.4,
-        "right": 963,
-        "bottom": 1163.2
-      },
-      "blocks": [
-        {
-          "id": "motion",
-          "left": 89,
-          "top": 111.7,
-          "right": 706.1,
-          "bottom": 161.8
-        },
-        {
-          "id": "linear-0",
-          "left": 89,
-          "top": 169,
-          "right": 963,
-          "bottom": 265.4
-        },
-        {
-          "id": "train-stages",
-          "left": 87.5,
-          "top": 303.4,
-          "right": 924.4,
-          "bottom": 506.2
-        },
-        {
-          "id": "motion-comparison",
-          "left": -18.2,
-          "top": -20227.4,
-          "right": 963,
-          "bottom": 857
-        },
-        {
-          "id": "instruments",
-          "left": -18.2,
-          "top": -20227.4,
-          "right": 963,
-          "bottom": 1163.2
         }
       ],
       "collisions": [],
@@ -1008,22 +966,9 @@
         "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 45.2,
-      "occupiedPercent": 80.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 40.6,
-        "protectedGroup": [
-          {
-            "id": "instrument-art",
-            "type": "figure",
-            "title": "Two instruments, two quantities: the dial indicates current speed; the odometer records accumulated ",
-            "height": 323
-          }
-        ],
-        "requiredMM": 58,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 15.1,
+      "occupiedPercent": 93.5,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 15,
@@ -1032,7 +977,72 @@
         "left": -18.2,
         "top": -21780.4,
         "right": 963,
-        "bottom": 1067.2
+        "bottom": 1287.2
+      },
+      "blocks": [
+        {
+          "id": "interval-check-0",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 207.4
+        },
+        {
+          "id": "motion",
+          "left": 89,
+          "top": 235.7,
+          "right": 706.1,
+          "bottom": 285.8
+        },
+        {
+          "id": "linear-0",
+          "left": 89,
+          "top": 293,
+          "right": 963,
+          "bottom": 389.4
+        },
+        {
+          "id": "train-stages",
+          "left": 87.5,
+          "top": 427.4,
+          "right": 924.4,
+          "bottom": 630.2
+        },
+        {
+          "id": "motion-comparison",
+          "left": -18.2,
+          "top": -21780.4,
+          "right": 963,
+          "bottom": 981
+        },
+        {
+          "id": "instruments",
+          "left": -18.2,
+          "top": -21780.4,
+          "right": 963,
+          "bottom": 1287.2
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 23,
+      "occupiedPercent": 90.2,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 16,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": -18.2,
+        "top": -23333.3,
+        "right": 963,
+        "bottom": 1188.4
       },
       "blocks": [
         {
@@ -1052,93 +1062,16 @@
         {
           "id": "motion-table",
           "left": -18.2,
-          "top": -21780.4,
+          "top": -23333.3,
           "right": 963,
           "bottom": 1067.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 62.5,
-      "occupiedPercent": 73.3,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 57.8,
-        "protectedGroup": [
-          {
-            "id": "motion-table-reading-0",
-            "type": "body",
-            "title": "X covers 20 km in each recorded interval; Y’s distances vary: 20, 15, 15, 25, 20 and 25 km. Y’s moti",
-            "height": 112
-          },
-          {
-            "id": "motion-pause",
-            "type": "panel",
-            "title": "Both trains cover 120 km between 10:00 and 11:00. Calculate each average speed. Can two journeys hav",
-            "height": 316
-          }
-        ],
-        "requiredMM": 76.9,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 16,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 111,
-        "right": 963,
-        "bottom": 1153.4
-      },
-      "blocks": [
+        },
         {
           "id": "motion-table-reading-0",
           "left": 87.5,
-          "top": 111,
+          "top": 1092,
           "right": 963,
-          "bottom": 207.4
-        },
-        {
-          "id": "motion-pause",
-          "left": 89,
-          "top": 224,
-          "right": 963,
-          "bottom": 518
-        },
-        {
-          "id": "everyday-motion-0",
-          "left": 89,
-          "top": 539,
-          "right": 963,
-          "bottom": 603.4
-        },
-        {
-          "id": "everyday-motion-1",
-          "left": 87.5,
-          "top": 603,
-          "right": 963,
-          "bottom": 667.4
-        },
-        {
-          "id": "time-questions-0",
-          "left": 89,
-          "top": 683,
-          "right": 963,
-          "bottom": 747.4
-        },
-        {
-          "id": "time-questions-1",
-          "left": 87.5,
-          "top": 747,
-          "right": 963,
-          "bottom": 811.4
+          "bottom": 1188.4
         }
       ],
       "collisions": [],
@@ -1149,33 +1082,69 @@
         "right": 121.03684222072395,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 47,
-      "occupiedPercent": 79.9,
+      "bottomGapMM": 40.7,
+      "occupiedPercent": 82.6,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 40.8,
+        "remainingMM": 37.7,
         "protectedGroup": [
           {
-            "id": "next-reference-page",
-            "type": "reference",
-            "title": "Keywords",
-            "height": 1004
+            "id": "motion-pause",
+            "type": "panel",
+            "title": "Both trains cover 120 km between 10:00 and 11:00. Calculate each average speed. Can two journeys hav",
+            "height": 316
           }
         ],
-        "requiredMM": 180.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "requiredMM": 56.8,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
       "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111.7,
+        "left": 87.5,
+        "top": 112,
         "right": 963,
-        "bottom": 1081.4
+        "bottom": 1311.4
       },
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "motion-pause",
+          "left": 89,
+          "top": 112,
+          "right": 963,
+          "bottom": 406
+        },
+        {
+          "id": "everyday-motion-0",
+          "left": 89,
+          "top": 427,
+          "right": 963,
+          "bottom": 491.4
+        },
+        {
+          "id": "everyday-motion-1",
+          "left": 87.5,
+          "top": 491,
+          "right": 963,
+          "bottom": 555.4
+        },
+        {
+          "id": "time-questions-0",
+          "left": 89,
+          "top": 571,
+          "right": 963,
+          "bottom": 635.4
+        },
+        {
+          "id": "time-questions-1",
+          "left": 87.5,
+          "top": 635,
+          "right": 963,
+          "bottom": 699.4
+        }
+      ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
@@ -1184,8 +1153,8 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 59.9,
-      "occupiedPercent": 74.4,
+      "bottomGapMM": 18.6,
+      "occupiedPercent": 92,
       "footerClearanceMM": 3.3
     },
     {
@@ -1195,7 +1164,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1245.4
+        "bottom": 1140.9
       },
       "blocks": [],
       "collisions": [],
@@ -1206,8 +1175,8 @@
         "right": 121.03684222072395,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 30.5,
-      "occupiedPercent": 87,
+      "bottomGapMM": 49.2,
+      "occupiedPercent": 79,
       "footerClearanceMM": 3.3
     },
     {
@@ -1217,7 +1186,29 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1077.4
+        "bottom": 1390.4
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.544855913915,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 20,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1221.4
       },
       "blocks": [
         {
@@ -1261,78 +1252,6 @@
           "top": 531,
           "right": 963,
           "bottom": 595.4
-        },
-        {
-          "id": "q5",
-          "left": 91.8,
-          "top": 625,
-          "right": 963,
-          "bottom": 721.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.544855913915,
-        "right": 959.0367636581603,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 60.7,
-      "occupiedPercent": 74.1,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 20,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 79.8,
-        "top": 111,
-        "right": 963,
-        "bottom": 1179.4
-      },
-      "blocks": [
-        {
-          "id": "q6",
-          "left": 91.8,
-          "top": 111,
-          "right": 963,
-          "bottom": 207.4
-        },
-        {
-          "id": "q7",
-          "left": 89,
-          "top": 237,
-          "right": 963,
-          "bottom": 478.2
-        },
-        {
-          "id": "q8",
-          "left": 91.8,
-          "top": 502,
-          "right": 963,
-          "bottom": 598.4
-        },
-        {
-          "id": "q9",
-          "left": 91.8,
-          "top": 628,
-          "right": 963,
-          "bottom": 724.4
-        },
-        {
-          "id": "q10",
-          "left": 79.8,
-          "top": 754,
-          "right": 963,
-          "bottom": 1027.2
-        },
-        {
-          "id": "q11",
-          "left": 79.8,
-          "top": 1051,
-          "right": 963,
-          "bottom": 1179.4
         }
       ],
       "collisions": [],
@@ -1343,18 +1262,90 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 42.3,
-      "occupiedPercent": 81.9,
+      "bottomGapMM": 34.8,
+      "occupiedPercent": 85.1,
       "footerClearanceMM": 3.3
     },
     {
       "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
+        "left": 79.8,
+        "top": 111,
+        "right": 963,
+        "bottom": 1305.4
+      },
+      "blocks": [
+        {
+          "id": "q5",
+          "left": 91.8,
+          "top": 111,
+          "right": 963,
+          "bottom": 207.4
+        },
+        {
+          "id": "q6",
+          "left": 91.8,
+          "top": 237,
+          "right": 963,
+          "bottom": 333.4
+        },
+        {
+          "id": "q7",
+          "left": 89,
+          "top": 363,
+          "right": 963,
+          "bottom": 604.2
+        },
+        {
+          "id": "q8",
+          "left": 91.8,
+          "top": 628,
+          "right": 963,
+          "bottom": 724.4
+        },
+        {
+          "id": "q9",
+          "left": 91.8,
+          "top": 754,
+          "right": 963,
+          "bottom": 850.4
+        },
+        {
+          "id": "q10",
+          "left": 79.8,
+          "top": 880,
+          "right": 963,
+          "bottom": 1153.2
+        },
+        {
+          "id": "q11",
+          "left": 79.8,
+          "top": 1177,
+          "right": 963,
+          "bottom": 1305.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 19.7,
+      "occupiedPercent": 91.6,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 22,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 964.4
+        "bottom": 1200.4
       },
       "blocks": [
         {
@@ -1412,92 +1403,27 @@
           "top": 900,
           "right": 963,
           "bottom": 964.4
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 81,
-      "occupiedPercent": 65.4,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 22,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 112.5,
-        "right": 963,
-        "bottom": 1185.4
-      },
-      "blocks": [
+        },
         {
           "id": "project-repeat-head",
           "left": 89,
-          "top": 112.5,
+          "top": 993.5,
           "right": 553.7,
-          "bottom": 152.3
+          "bottom": 1033.3
         },
         {
           "id": "project-repeat-0",
           "left": 89,
-          "top": 159,
+          "top": 1040,
           "right": 963,
-          "bottom": 223.4
+          "bottom": 1104.4
         },
         {
           "id": "project-repeat-1",
           "left": 87.5,
-          "top": 223,
+          "top": 1104,
           "right": 963,
-          "bottom": 319.4
-        },
-        {
-          "id": "project-swing-head",
-          "left": 89,
-          "top": 348.5,
-          "right": 463.5,
-          "bottom": 388.3
-        },
-        {
-          "id": "project-swing",
-          "left": 87.5,
-          "top": 395,
-          "right": 963,
-          "bottom": 587.4
-        },
-        {
-          "id": "project-swing-figure",
-          "left": 89,
-          "top": 604,
-          "right": 884.9,
-          "bottom": 939.2
-        },
-        {
-          "id": "project-olympics-head",
-          "left": 89,
-          "top": 978.5,
-          "right": 491.3,
-          "bottom": 1018.3
-        },
-        {
-          "id": "project-olympics-0",
-          "left": 89,
-          "top": 1025,
-          "right": 963,
-          "bottom": 1089.4
-        },
-        {
-          "id": "project-olympics-1",
-          "left": 89,
-          "top": 1089,
-          "right": 963,
-          "bottom": 1185.4
+          "bottom": 1200.4
         }
       ],
       "collisions": [],
@@ -1508,8 +1434,73 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161803
       },
-      "bottomGapMM": 41.2,
-      "occupiedPercent": 82.4,
+      "bottomGapMM": 38.6,
+      "occupiedPercent": 83.5,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 23,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 112.5,
+        "right": 963,
+        "bottom": 1219.4
+      },
+      "blocks": [
+        {
+          "id": "project-swing-head",
+          "left": 89,
+          "top": 112.5,
+          "right": 463.5,
+          "bottom": 152.3
+        },
+        {
+          "id": "project-swing",
+          "left": 87.5,
+          "top": 159,
+          "right": 963,
+          "bottom": 351.4
+        },
+        {
+          "id": "project-swing-figure",
+          "left": 89,
+          "top": 368,
+          "right": 931,
+          "bottom": 973.2
+        },
+        {
+          "id": "project-olympics-head",
+          "left": 89,
+          "top": 1012.5,
+          "right": 491.3,
+          "bottom": 1052.3
+        },
+        {
+          "id": "project-olympics-0",
+          "left": 89,
+          "top": 1059,
+          "right": 963,
+          "bottom": 1123.4
+        },
+        {
+          "id": "project-olympics-1",
+          "left": 89,
+          "top": 1123,
+          "right": 963,
+          "bottom": 1219.4
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 35.1,
+      "occupiedPercent": 85,
       "footerClearanceMM": 3.3
     }
   ]

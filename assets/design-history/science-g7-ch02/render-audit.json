@@ -68,7 +68,7 @@
         "alignedBaseline": true,
         "centredLabel": true,
         "numberTitleGap": 87.9900841665843,
-        "decorationGap": 34.897162004941606,
+        "decorationGap": 42.897155355399036,
         "headerImageGap": 35.99998412199085,
         "imageIntroGap": 35.82441966117733,
         "sharedReadingGrid": true
@@ -149,7 +149,7 @@
         "left": -18.2,
         "top": -3144.9,
         "right": 963,
-        "bottom": 1365.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -196,8 +196,8 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 8.9,
-      "occupiedPercent": 96.2,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -207,7 +207,7 @@
         "left": -18.2,
         "top": -4697.8,
         "right": 963,
-        "bottom": 1351.4
+        "bottom": 1356
       },
       "blocks": [
         {
@@ -268,8 +268,8 @@
         "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 11.4,
-      "occupiedPercent": 95.1,
+      "bottomGapMM": 10.6,
+      "occupiedPercent": 95.5,
       "footerClearanceMM": 3.3
     },
     {
@@ -354,7 +354,7 @@
           }
         ],
         "requiredMM": 93.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -364,7 +364,7 @@
         "left": -18.2,
         "top": -7803.7,
         "right": 963,
-        "bottom": 1131.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -387,6 +387,27 @@
           "top": 693,
           "right": 963,
           "bottom": 789.4
+        },
+        {
+          "id": "rose-head",
+          "left": 89,
+          "top": 818.5,
+          "right": 520.1,
+          "bottom": 858.3
+        },
+        {
+          "id": "rose-intro-0",
+          "left": 89,
+          "top": 865,
+          "right": 963,
+          "bottom": 929.4
+        },
+        {
+          "id": "rose-intro-1",
+          "left": 89,
+          "top": 929,
+          "right": 963,
+          "bottom": 1025.4
         }
       ],
       "collisions": [],
@@ -397,92 +418,61 @@
         "right": 114.0184210880979,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 51,
-      "occupiedPercent": 78.2,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 44.7,
-        "protectedGroup": [
-          {
-            "id": "rose-head",
-            "type": "heading",
-            "title": "Make an indicator from red roses",
-            "height": 48
-          },
-          {
-            "id": "rose-intro-0",
-            "type": "body",
-            "title": "Can a flower supply a useful indicator? A coloured liquid obtained from a plant is an **extract**. P",
-            "height": 64
-          },
-          {
-            "id": "rose-intro-1",
-            "type": "body",
-            "title": "Can a flower supply a useful indicator? A coloured liquid obtained from a plant is an **extract**. P",
-            "height": 112
-          },
-          {
-            "id": "rose-prepare",
-            "type": "activity",
-            "title": "1. Collect a handful of fallen red rose petals, without plucking flowers. Use clean, suitable petals",
-            "height": 744
-          }
-        ],
-        "requiredMM": 173.9,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 7,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 112.5,
+        "left": 87.5,
+        "top": 112,
         "right": 963,
-        "bottom": 1207.4
+        "bottom": 1191.4
       },
       "blocks": [
         {
-          "id": "rose-head",
-          "left": 89,
-          "top": 112.5,
-          "right": 520.1,
-          "bottom": 152.3
-        },
-        {
-          "id": "rose-intro-0",
-          "left": 89,
-          "top": 159,
-          "right": 963,
-          "bottom": 223.4
-        },
-        {
-          "id": "rose-intro-1",
-          "left": 89,
-          "top": 223,
-          "right": 963,
-          "bottom": 319.4
-        },
-        {
           "id": "rose-prepare",
           "left": 89,
-          "top": 336,
+          "top": 112,
           "right": 963,
-          "bottom": 1058
+          "bottom": 834
         },
         {
           "id": "extract-check-0",
           "left": 89,
-          "top": 1079,
+          "top": 855,
           "right": 963,
-          "bottom": 1143.4
+          "bottom": 919.4
         },
         {
           "id": "extract-check-1",
           "left": 89,
-          "top": 1143,
+          "top": 919,
           "right": 963,
-          "bottom": 1207.4
+          "bottom": 983.4
+        },
+        {
+          "id": "filter-explanation-0",
+          "left": 89,
+          "top": 999,
+          "right": 963,
+          "bottom": 1063.4
+        },
+        {
+          "id": "filter-explanation-1",
+          "left": 87.5,
+          "top": 1063,
+          "right": 963,
+          "bottom": 1127.4
+        },
+        {
+          "id": "filter-explanation-2",
+          "left": 87.5,
+          "top": 1127,
+          "right": 963,
+          "bottom": 1191.4
         }
       ],
       "collisions": [],
@@ -493,30 +483,12 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 37.3,
-      "occupiedPercent": 84.1,
+      "bottomGapMM": 40.2,
+      "occupiedPercent": 82.8,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 34.3,
+        "remainingMM": 37.2,
         "protectedGroup": [
-          {
-            "id": "filter-explanation-0",
-            "type": "body",
-            "title": "During filtration, the paper holds back larger pieces while the coloured liquid passes through. The ",
-            "height": 64
-          },
-          {
-            "id": "filter-explanation-1",
-            "type": "body",
-            "title": "During filtration, the paper holds back larger pieces while the coloured liquid passes through. The ",
-            "height": 64
-          },
-          {
-            "id": "filter-explanation-2",
-            "type": "body",
-            "title": "During filtration, the paper holds back larger pieces while the coloured liquid passes through. The ",
-            "height": 80
-          },
           {
             "id": "rose-test",
             "type": "activity",
@@ -524,47 +496,33 @@
             "height": 544
           }
         ],
-        "requiredMM": 135.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "requiredMM": 97.7,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
       "page": 8,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
+        "left": -18.2,
+        "top": -10909.7,
         "right": 963,
-        "bottom": 1189.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
-          "id": "filter-explanation-0",
-          "left": 89,
-          "top": 111,
-          "right": 963,
-          "bottom": 175.4
-        },
-        {
-          "id": "filter-explanation-1",
-          "left": 87.5,
-          "top": 175,
-          "right": 963,
-          "bottom": 239.4
-        },
-        {
-          "id": "filter-explanation-2",
-          "left": 87.5,
-          "top": 239,
-          "right": 963,
-          "bottom": 303.4
-        },
-        {
           "id": "rose-test",
           "left": 89,
-          "top": 320,
+          "top": 112,
           "right": 963,
-          "bottom": 842
+          "bottom": 634
+        },
+        {
+          "id": "rose-guide",
+          "left": -18.2,
+          "top": -10909.7,
+          "right": 963,
+          "bottom": 1022.2
         }
       ],
       "collisions": [],
@@ -575,74 +533,89 @@
         "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 40.5,
-      "occupiedPercent": 82.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 34.3,
-        "protectedGroup": [
-          {
-            "id": "rose-guide",
-            "type": "table",
-            "title": "Table 2.3  Read the rose test alongside the litmus test",
-            "height": 392
-          }
-        ],
-        "requiredMM": 70.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": -18.2,
-        "top": -12462.6,
+        "left": 87.5,
+        "top": 111,
         "right": 963,
-        "bottom": 1213.4
+        "bottom": 1414.4
       },
       "blocks": [
         {
-          "id": "rose-guide",
-          "left": -18.2,
-          "top": -12462.6,
-          "right": 963,
-          "bottom": 478.2
-        },
-        {
           "id": "rose-evidence-example-0",
           "left": 89,
-          "top": 503,
+          "top": 111,
           "right": 963,
-          "bottom": 567.4
+          "bottom": 175.4
         },
         {
           "id": "rose-evidence-example-1",
           "left": 89,
-          "top": 567,
+          "top": 175,
           "right": 963,
-          "bottom": 631.4
+          "bottom": 239.4
         },
         {
           "id": "rose-evidence-example-2",
           "left": 89,
-          "top": 631,
+          "top": 239,
           "right": 963,
-          "bottom": 695.4
+          "bottom": 303.4
         },
         {
           "id": "rose-colours-0",
           "left": 87.5,
-          "top": 711,
+          "top": 319,
           "right": 963,
-          "bottom": 775.4
+          "bottom": 383.4
         },
         {
           "id": "rose-colours-1",
           "left": 89,
-          "top": 775,
+          "top": 383,
           "right": 963,
-          "bottom": 871.4
+          "bottom": 479.4
+        },
+        {
+          "id": "rose-result",
+          "left": 89,
+          "top": 496,
+          "right": 833.9,
+          "bottom": 866.2
+        },
+        {
+          "id": "other-plants-0",
+          "left": 89,
+          "top": 892,
+          "right": 963,
+          "bottom": 956.4
+        },
+        {
+          "id": "other-plants-1",
+          "left": 89,
+          "top": 956,
+          "right": 963,
+          "bottom": 1020.4
+        },
+        {
+          "id": "hydrangea",
+          "left": 87.5,
+          "top": 1037.5,
+          "right": 963,
+          "bottom": 1330.2
+        },
+        {
+          "id": "plant-comparison-0",
+          "left": 87.5,
+          "top": 1350,
+          "right": 963,
+          "bottom": 1414.4
         }
       ],
       "collisions": [],
@@ -653,95 +626,68 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 36.2,
-      "occupiedPercent": 84.5,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 30,
-        "protectedGroup": [
-          {
-            "id": "rose-result",
-            "type": "figure",
-            "title": "Illustrative comparison after testing: green, unchanged purple and red-pink. These are reference col",
-            "height": 362
-          }
-        ],
-        "requiredMM": 65,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 0.1,
+      "occupiedPercent": 100,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 10,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112,
+        "top": 111,
         "right": 963,
-        "bottom": 1327.4
+        "bottom": 1395.4
       },
       "blocks": [
         {
-          "id": "rose-result",
-          "left": 89,
-          "top": 112,
-          "right": 833.9,
-          "bottom": 447.2
-        },
-        {
-          "id": "other-plants-0",
-          "left": 89,
-          "top": 473,
-          "right": 963,
-          "bottom": 537.4
-        },
-        {
-          "id": "other-plants-1",
-          "left": 89,
-          "top": 537,
-          "right": 963,
-          "bottom": 601.4
-        },
-        {
-          "id": "hydrangea",
-          "left": 87.5,
-          "top": 618.5,
-          "right": 963,
-          "bottom": 911.2
-        },
-        {
-          "id": "plant-comparison-0",
-          "left": 87.5,
-          "top": 931,
-          "right": 963,
-          "bottom": 995.4
-        },
-        {
           "id": "plant-comparison-1",
           "left": 89,
-          "top": 995,
+          "top": 111,
           "right": 963,
-          "bottom": 1091.4
+          "bottom": 207.4
         },
         {
           "id": "turmeric-head",
           "left": 89,
-          "top": 1120.5,
+          "top": 236.5,
           "right": 431,
-          "bottom": 1160.3
+          "bottom": 276.3
         },
         {
           "id": "turmeric-intro-0",
           "left": 89,
-          "top": 1167,
+          "top": 283,
           "right": 963,
-          "bottom": 1231.4
+          "bottom": 347.4
         },
         {
           "id": "turmeric-intro-1",
           "left": 87.5,
-          "top": 1231,
+          "top": 347,
           "right": 963,
-          "bottom": 1327.4
+          "bottom": 443.4
+        },
+        {
+          "id": "turmeric-task",
+          "left": 89,
+          "top": 460,
+          "right": 963,
+          "bottom": 1246
+        },
+        {
+          "id": "turmeric-result-0",
+          "left": 87.5,
+          "top": 1267,
+          "right": 963,
+          "bottom": 1331.4
+        },
+        {
+          "id": "turmeric-result-1",
+          "left": 89,
+          "top": 1331,
+          "right": 963,
+          "bottom": 1395.4
         }
       ],
       "collisions": [],
@@ -752,8 +698,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 15.7,
-      "occupiedPercent": 93.3,
+      "bottomGapMM": 3.5,
+      "occupiedPercent": 98.5,
       "footerClearanceMM": 3.3
     },
     {
@@ -763,36 +709,71 @@
         "left": 87.5,
         "top": 112,
         "right": 963,
-        "bottom": 1326
+        "bottom": 1390.4
       },
       "blocks": [
         {
-          "id": "turmeric-task",
+          "id": "turmeric-think",
           "left": 89,
           "top": 112,
           "right": 963,
-          "bottom": 898
+          "bottom": 374
         },
         {
-          "id": "turmeric-result-0",
+          "id": "turmeric-control-0",
           "left": 87.5,
-          "top": 919,
+          "top": 395,
           "right": 963,
-          "bottom": 983.4
+          "bottom": 459.4
         },
         {
-          "id": "turmeric-result-1",
+          "id": "turmeric-control-1",
+          "left": 89,
+          "top": 459,
+          "right": 963,
+          "bottom": 555.4
+        },
+        {
+          "id": "turmeric-life-0",
+          "left": 87.5,
+          "top": 571,
+          "right": 963,
+          "bottom": 635.4
+        },
+        {
+          "id": "turmeric-life-1",
+          "left": 87.5,
+          "top": 635,
+          "right": 963,
+          "bottom": 731.4
+        },
+        {
+          "id": "message-0",
+          "left": 87.5,
+          "top": 747,
+          "right": 963,
+          "bottom": 811.4
+        },
+        {
+          "id": "message-1",
+          "left": 87.5,
+          "top": 811,
+          "right": 963,
+          "bottom": 907.4
+        },
+        {
+          "id": "olfactory-head",
+          "left": 87.5,
+          "top": 936.5,
+          "right": 487.6,
+          "bottom": 976.3
+        },
+        {
+          "id": "olfactory-intro-0",
           "left": 89,
           "top": 983,
           "right": 963,
           "bottom": 1047.4
-        },
-        {
-          "id": "turmeric-think",
-          "left": 89,
-          "top": 1064,
-          "right": 963,
-          "bottom": 1326
         }
       ],
       "collisions": [],
@@ -803,8 +784,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 16,
-      "occupiedPercent": 93.2,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -814,78 +795,50 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1233.4
+        "bottom": 1379.4
       },
       "blocks": [
         {
-          "id": "turmeric-control-0",
-          "left": 87.5,
+          "id": "olfactory-intro-1",
+          "left": 89,
           "top": 111,
           "right": 963,
           "bottom": 175.4
         },
         {
-          "id": "turmeric-control-1",
+          "id": "olfactory-intro-2",
           "left": 89,
           "top": 175,
           "right": 963,
-          "bottom": 271.4
+          "bottom": 239.4
         },
         {
-          "id": "turmeric-life-0",
-          "left": 87.5,
-          "top": 287,
-          "right": 963,
-          "bottom": 351.4
-        },
-        {
-          "id": "turmeric-life-1",
-          "left": 87.5,
-          "top": 351,
-          "right": 963,
-          "bottom": 447.4
-        },
-        {
-          "id": "message-0",
-          "left": 87.5,
-          "top": 463,
-          "right": 963,
-          "bottom": 527.4
-        },
-        {
-          "id": "message-1",
-          "left": 87.5,
-          "top": 527,
-          "right": 963,
-          "bottom": 623.4
-        },
-        {
-          "id": "olfactory-head",
-          "left": 87.5,
-          "top": 652.5,
-          "right": 487.6,
-          "bottom": 692.3
-        },
-        {
-          "id": "olfactory-intro-0",
+          "id": "onion-task",
           "left": 89,
-          "top": 699,
+          "top": 256,
           "right": 963,
-          "bottom": 763.4
+          "bottom": 1118
         },
         {
-          "id": "olfactory-intro-1",
+          "id": "onion-explain-0",
           "left": 89,
-          "top": 763,
+          "top": 1139,
           "right": 963,
-          "bottom": 827.4
+          "bottom": 1203.4
         },
         {
-          "id": "olfactory-intro-2",
-          "left": 89,
-          "top": 827,
+          "id": "onion-explain-1",
+          "left": 87.5,
+          "top": 1203,
           "right": 963,
-          "bottom": 891.4
+          "bottom": 1299.4
+        },
+        {
+          "id": "smell-evidence-0",
+          "left": 89,
+          "top": 1315,
+          "right": 963,
+          "bottom": 1379.4
         }
       ],
       "collisions": [],
@@ -896,67 +849,61 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 32.6,
-      "occupiedPercent": 86.1,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 26.4,
-        "protectedGroup": [
-          {
-            "id": "onion-task",
-            "type": "activity",
-            "title": "This is a teacher-led demonstration using only approved food-based samples. Nobody is blindfolded. D",
-            "height": 884
-          }
-        ],
-        "requiredMM": 158.8,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 6.4,
+      "occupiedPercent": 97.3,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 13,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112,
+        "top": 111,
         "right": 963,
-        "bottom": 1331.4
+        "bottom": 1352
       },
       "blocks": [
         {
-          "id": "onion-task",
-          "left": 89,
-          "top": 112,
-          "right": 963,
-          "bottom": 974
-        },
-        {
-          "id": "onion-explain-0",
-          "left": 89,
-          "top": 995,
-          "right": 963,
-          "bottom": 1059.4
-        },
-        {
-          "id": "onion-explain-1",
-          "left": 87.5,
-          "top": 1059,
-          "right": 963,
-          "bottom": 1155.4
-        },
-        {
-          "id": "smell-evidence-0",
-          "left": 89,
-          "top": 1171,
-          "right": 963,
-          "bottom": 1235.4
-        },
-        {
           "id": "smell-evidence-1",
           "left": 87.5,
-          "top": 1235,
+          "top": 111,
           "right": 963,
-          "bottom": 1331.4
+          "bottom": 207.4
+        },
+        {
+          "id": "mix-head",
+          "left": 89,
+          "top": 235.7,
+          "right": 603.7,
+          "bottom": 285.8
+        },
+        {
+          "id": "mix-intro-0",
+          "left": 87.5,
+          "top": 293,
+          "right": 963,
+          "bottom": 357.4
+        },
+        {
+          "id": "mix-intro-1",
+          "left": 89,
+          "top": 357,
+          "right": 963,
+          "bottom": 421.4
+        },
+        {
+          "id": "mix-intro-2",
+          "left": 89,
+          "top": 421,
+          "right": 963,
+          "bottom": 485.4
+        },
+        {
+          "id": "mix-task",
+          "left": 89,
+          "top": 502,
+          "right": 963,
+          "bottom": 1352
         }
       ],
       "collisions": [],
@@ -967,8 +914,8 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 15,
-      "occupiedPercent": 93.6,
+      "bottomGapMM": 11.3,
+      "occupiedPercent": 95.2,
       "footerClearanceMM": 3.3
     },
     {
@@ -976,116 +923,9 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1228
-      },
-      "blocks": [
-        {
-          "id": "mix-head",
-          "left": 89,
-          "top": 111.7,
-          "right": 603.7,
-          "bottom": 161.8
-        },
-        {
-          "id": "mix-intro-0",
-          "left": 87.5,
-          "top": 169,
-          "right": 963,
-          "bottom": 233.4
-        },
-        {
-          "id": "mix-intro-1",
-          "left": 89,
-          "top": 233,
-          "right": 963,
-          "bottom": 297.4
-        },
-        {
-          "id": "mix-intro-2",
-          "left": 89,
-          "top": 297,
-          "right": 963,
-          "bottom": 361.4
-        },
-        {
-          "id": "mix-task",
-          "left": 89,
-          "top": 378,
-          "right": 963,
-          "bottom": 1228
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139113,
-        "right": 121.72533603047485,
-        "bottom": 1495.835520716173
-      },
-      "bottomGapMM": 33.6,
-      "occupiedPercent": 85.6,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 29.6,
-        "protectedGroup": [
-          {
-            "id": "neutralisation-meaning-0",
-            "type": "body",
-            "title": "In **neutralisation**, an acid reacts with a base. For the acid and hydroxide base used here, the re",
-            "height": 64
-          },
-          {
-            "id": "neutralisation-meaning-1",
-            "type": "body",
-            "title": "In **neutralisation**, an acid reacts with a base. For the acid and hydroxide base used here, the re",
-            "height": 80
-          },
-          {
-            "id": "equation",
-            "type": "equation",
-            "title": "Acid + hydroxide base → salt + water",
-            "height": 124
-          },
-          {
-            "id": "endpoint-0",
-            "type": "body",
-            "title": "Adding lime water reduces the acidic effect of the lemon juice. Enough added base can leave the mixt",
-            "height": 64
-          },
-          {
-            "id": "endpoint-1",
-            "type": "body",
-            "title": "Adding lime water reduces the acidic effect of the lemon juice. Enough added base can leave the mixt",
-            "height": 112
-          },
-          {
-            "id": "mixture-example-0",
-            "type": "body",
-            "title": "Think of each added drop as supplying another small amount of reactant. Early drops of base may reac",
-            "height": 64
-          },
-          {
-            "id": "mixture-example-1",
-            "type": "body",
-            "title": "Think of each added drop as supplying another small amount of reactant. Early drops of base may reac",
-            "height": 112
-          }
-        ],
-        "requiredMM": 111.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 15,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1057.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1136,6 +976,92 @@
           "top": 619,
           "right": 963,
           "bottom": 715.4
+        },
+        {
+          "id": "endpoint-think",
+          "left": 89,
+          "top": 732,
+          "right": 963,
+          "bottom": 1026
+        }
+      ],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.5448559139113,
+        "right": 121.72533603047485,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 15,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 87.5,
+        "top": 112.5,
+        "right": 963,
+        "bottom": 1187.2
+      },
+      "blocks": [
+        {
+          "id": "ray-head",
+          "left": 89,
+          "top": 112.5,
+          "right": 691,
+          "bottom": 152.3
+        },
+        {
+          "id": "ray-0",
+          "left": 87.5,
+          "top": 159,
+          "right": 963,
+          "bottom": 223.4
+        },
+        {
+          "id": "ray-1",
+          "left": 87.5,
+          "top": 223,
+          "right": 963,
+          "bottom": 287.4
+        },
+        {
+          "id": "ray-2",
+          "left": 87.5,
+          "top": 287,
+          "right": 963,
+          "bottom": 351.4
+        },
+        {
+          "id": "daily-head",
+          "left": 89,
+          "top": 379.7,
+          "right": 523.2,
+          "bottom": 429.8
+        },
+        {
+          "id": "soil-intro-0",
+          "left": 87.5,
+          "top": 437,
+          "right": 963,
+          "bottom": 501.4
+        },
+        {
+          "id": "soil-intro-1",
+          "left": 87.5,
+          "top": 501,
+          "right": 963,
+          "bottom": 565.4
+        },
+        {
+          "id": "soil-figure",
+          "left": 89,
+          "top": 582,
+          "right": 931,
+          "bottom": 1187.2
         }
       ],
       "collisions": [],
@@ -1146,158 +1072,11 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 64.2,
-      "occupiedPercent": 72.6,
+      "bottomGapMM": 40.9,
+      "occupiedPercent": 82.5,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 58,
-        "protectedGroup": [
-          {
-            "id": "endpoint-think",
-            "type": "panel",
-            "title": "One group says, “We mixed an acid with a base, so the result must be neutral.” Another says, “Our mi",
-            "height": 316
-          },
-          {
-            "id": "ray-head",
-            "type": "heading",
-            "title": "Prafulla Chandra Ray: research and education",
-            "height": 48
-          },
-          {
-            "id": "ray-0",
-            "type": "body",
-            "title": "Acharya Prafulla Chandra Ray (1861–1944) was a chemist, teacher and industrial pioneer, often called",
-            "height": 64
-          },
-          {
-            "id": "ray-1",
-            "type": "body",
-            "title": "Acharya Prafulla Chandra Ray (1861–1944) was a chemist, teacher and industrial pioneer, often called",
-            "height": 64
-          },
-          {
-            "id": "ray-2",
-            "type": "body",
-            "title": "Acharya Prafulla Chandra Ray (1861–1944) was a chemist, teacher and industrial pioneer, often called",
-            "height": 80
-          },
-          {
-            "id": "daily-head",
-            "type": "heading",
-            "title": "2.3  Chemistry in Daily Life",
-            "height": 58
-          },
-          {
-            "id": "soil-intro-0",
-            "type": "body",
-            "title": "A farmer notices poor growth. Is the soil too acidic, too basic, short of nutrients, too wet or affe",
-            "height": 64
-          },
-          {
-            "id": "soil-intro-1",
-            "type": "body",
-            "title": "A farmer notices poor growth. Is the soil too acidic, too basic, short of nutrients, too wet or affe",
-            "height": 80
-          },
-          {
-            "id": "soil-figure",
-            "type": "figure",
-            "title": "Compare a soil sample with a tested reference. Poor growth needs investigation before treatment.",
-            "height": 362
-          }
-        ],
-        "requiredMM": 208.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
-    },
-    {
-      "page": 16,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 87.5,
-        "top": 112,
-        "right": 963,
-        "bottom": 1245.2
-      },
-      "blocks": [
-        {
-          "id": "endpoint-think",
-          "left": 89,
-          "top": 112,
-          "right": 963,
-          "bottom": 406
-        },
-        {
-          "id": "ray-head",
-          "left": 89,
-          "top": 440.5,
-          "right": 691,
-          "bottom": 480.3
-        },
-        {
-          "id": "ray-0",
-          "left": 87.5,
-          "top": 487,
-          "right": 963,
-          "bottom": 551.4
-        },
-        {
-          "id": "ray-1",
-          "left": 87.5,
-          "top": 551,
-          "right": 963,
-          "bottom": 615.4
-        },
-        {
-          "id": "ray-2",
-          "left": 87.5,
-          "top": 615,
-          "right": 963,
-          "bottom": 679.4
-        },
-        {
-          "id": "daily-head",
-          "left": 89,
-          "top": 707.7,
-          "right": 523.2,
-          "bottom": 757.8
-        },
-        {
-          "id": "soil-intro-0",
-          "left": 87.5,
-          "top": 765,
-          "right": 963,
-          "bottom": 829.4
-        },
-        {
-          "id": "soil-intro-1",
-          "left": 87.5,
-          "top": 829,
-          "right": 963,
-          "bottom": 893.4
-        },
-        {
-          "id": "soil-figure",
-          "left": 89,
-          "top": 910,
-          "right": 838.6,
-          "bottom": 1245.2
-        }
-      ],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.03684222072395,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 30.5,
-      "occupiedPercent": 87,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 25.7,
+        "remainingMM": 36.1,
         "protectedGroup": [
           {
             "id": "soil-comparison",
@@ -1307,23 +1086,23 @@
           }
         ],
         "requiredMM": 99.5,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
-      "page": 17,
+      "page": 16,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": -18.2,
-        "top": -24886.3,
+        "top": -23333.3,
         "right": 963,
-        "bottom": 1327.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
           "id": "soil-comparison",
           "left": -18.2,
-          "top": -24886.3,
+          "top": -23333.3,
           "right": 963,
           "bottom": 638
         },
@@ -1366,23 +1145,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.7252125241284,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021966,
+        "top": 1457.544855913915,
+        "right": 121.03684222072395,
+        "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 15.7,
-      "occupiedPercent": 93.3,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 18,
+      "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1313.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1473,13 +1252,35 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
+      },
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 18,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1319.4
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
         "left": 92.96315769021966,
         "top": 1457.5448559139113,
         "right": 121.03684222072395,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 18.3,
-      "occupiedPercent": 92.2,
+      "bottomGapMM": 17.2,
+      "occupiedPercent": 92.7,
       "footerClearanceMM": 3.3
     },
     {
@@ -1489,7 +1290,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1049.4
+        "bottom": 1390.4
       },
       "blocks": [],
       "collisions": [],
@@ -1500,34 +1301,12 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 65.7,
-      "occupiedPercent": 71.9,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
       "page": 20,
-      "viewBoxHeight": 1514,
-      "contentBounds": {
-        "left": 89,
-        "top": 111.7,
-        "right": 963,
-        "bottom": 1171.4
-      },
-      "blocks": [],
-      "collisions": [],
-      "escapedPanels": [],
-      "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
-      },
-      "bottomGapMM": 43.8,
-      "occupiedPercent": 81.3,
-      "footerClearanceMM": 3.3
-    },
-    {
-      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1596,23 +1375,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.0367636581603,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021966,
+        "top": 1457.544855913915,
+        "right": 121.72533603047485,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 20.9,
       "occupiedPercent": 91.1,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 22,
+      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 79.8,
         "top": 111,
         "right": 963,
-        "bottom": 1193.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1661,23 +1440,23 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139186,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161803
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
       },
-      "bottomGapMM": 39.8,
-      "occupiedPercent": 83,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 23,
+      "page": 22,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1375.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1775,13 +1554,13 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
-        "top": 1457.5448559139113,
-        "right": 959.7252125241284,
-        "bottom": 1495.835520716173
+        "left": 92.96315769021966,
+        "top": 1457.5448559139186,
+        "right": 121.72533603047485,
+        "bottom": 1495.8355207161803
       },
-      "bottomGapMM": 7.1,
-      "occupiedPercent": 97,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     }
   ]

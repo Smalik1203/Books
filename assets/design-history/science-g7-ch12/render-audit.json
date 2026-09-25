@@ -633,7 +633,7 @@
           }
         ],
         "requiredMM": 43.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -810,7 +810,7 @@
           }
         ],
         "requiredMM": 88.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -820,7 +820,7 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1249.4
+        "bottom": 1169.4
       },
       "blocks": [
         {
@@ -857,13 +857,6 @@
           "top": 1073,
           "right": 963,
           "bottom": 1169.4
-        },
-        {
-          "id": "eclipse-myths-0",
-          "left": 89,
-          "top": 1185,
-          "right": 963,
-          "bottom": 1249.4
         }
       ],
       "collisions": [],
@@ -874,12 +867,18 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 29.8,
-      "occupiedPercent": 87.3,
+      "bottomGapMM": 44.1,
+      "occupiedPercent": 81.2,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 29.6,
+        "remainingMM": 41.1,
         "protectedGroup": [
+          {
+            "id": "eclipse-myths-0",
+            "type": "body",
+            "title": "There is no scientific evidence that an eclipse makes cooking, eating or ordinary outdoor activity h",
+            "height": 64
+          },
           {
             "id": "eclipse-myths-1",
             "type": "body",
@@ -917,14 +916,14 @@
             "height": 80
           },
           {
-            "id": "lunar-picture",
+            "id": "page-illustration",
             "type": "figure",
-            "title": "Lunar eclipse: Sun → Earth → Moon. Earth’s shadow extends beyond Earth; the Moon passes through it. ",
-            "height": 404
+            "title": "Two views of the Moon: ordinary full Moon and total lunar eclipse.",
+            "height": 620
           }
         ],
-        "requiredMM": 151.3,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "requiredMM": null,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -934,85 +933,57 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1225.4
+        "bottom": 1209.4
       },
       "blocks": [
         {
-          "id": "eclipse-myths-1",
+          "id": "eclipse-myths-0",
           "left": 89,
           "top": 111,
           "right": 963,
           "bottom": 175.4
         },
         {
-          "id": "eclipse-history-0",
+          "id": "eclipse-myths-1",
           "left": 89,
-          "top": 191,
+          "top": 175,
           "right": 963,
-          "bottom": 255.4
+          "bottom": 239.4
         },
         {
-          "id": "eclipse-history-1",
+          "id": "eclipse-history-0",
           "left": 89,
           "top": 255,
           "right": 963,
           "bottom": 319.4
         },
         {
+          "id": "eclipse-history-1",
+          "left": 89,
+          "top": 319,
+          "right": 963,
+          "bottom": 383.4
+        },
+        {
           "id": "lunar-head",
           "left": 89,
-          "top": 347.7,
+          "top": 411.7,
           "right": 439.5,
-          "bottom": 397.8
+          "bottom": 461.8
         },
         {
           "id": "lunar-definition-0",
           "left": 87.5,
-          "top": 405,
-          "right": 963,
-          "bottom": 469.4
-        },
-        {
-          "id": "lunar-definition-1",
-          "left": 89,
           "top": 469,
           "right": 963,
           "bottom": 533.4
         },
         {
-          "id": "lunar-picture",
+          "id": "lunar-definition-1",
           "left": 89,
-          "top": 556,
-          "right": 928,
-          "bottom": 933.2
-        },
-        {
-          "id": "red-moon-0",
-          "left": 87.5,
-          "top": 953,
+          "top": 533,
           "right": 963,
-          "bottom": 1017.4
-        },
-        {
-          "id": "red-moon-1",
-          "left": 89,
-          "top": 1017,
-          "right": 963,
-          "bottom": 1081.4
-        },
-        {
-          "id": "lunar-view-0",
-          "left": 87.5,
-          "top": 1097,
-          "right": 963,
-          "bottom": 1161.4
-        },
-        {
-          "id": "lunar-view-1",
-          "left": 89,
-          "top": 1161,
-          "right": 963,
-          "bottom": 1225.4
+          "bottom": 597.4
         }
       ],
       "collisions": [],
@@ -1023,21 +994,21 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 34.1,
-      "occupiedPercent": 85.4,
+      "bottomGapMM": 36.9,
+      "occupiedPercent": 84.2,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 31.1,
+        "remainingMM": 32.5,
         "protectedGroup": [
           {
-            "id": "eclipses-table",
-            "type": "table",
-            "title": "Comparing the two eclipses",
-            "height": 426
+            "id": "lunar-picture",
+            "type": "figure",
+            "title": "Lunar eclipse: Sun → Earth → Moon. Earth’s shadow extends beyond Earth; the Moon passes through it. ",
+            "height": 404
           }
         ],
-        "requiredMM": 76.5,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "requiredMM": 72.6,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -1047,71 +1018,50 @@
         "left": -18.2,
         "top": -18674.5,
         "right": 963,
-        "bottom": 1407.4
+        "bottom": 1202
       },
       "blocks": [
+        {
+          "id": "lunar-picture",
+          "left": 89,
+          "top": 118,
+          "right": 928,
+          "bottom": 495.2
+        },
+        {
+          "id": "red-moon-0",
+          "left": 87.5,
+          "top": 515,
+          "right": 963,
+          "bottom": 579.4
+        },
+        {
+          "id": "red-moon-1",
+          "left": 89,
+          "top": 579,
+          "right": 963,
+          "bottom": 643.4
+        },
+        {
+          "id": "lunar-view-0",
+          "left": 87.5,
+          "top": 659,
+          "right": 963,
+          "bottom": 723.4
+        },
+        {
+          "id": "lunar-view-1",
+          "left": 89,
+          "top": 723,
+          "right": 963,
+          "bottom": 787.4
+        },
         {
           "id": "eclipses-table",
           "left": -18.2,
           "top": -18674.5,
           "right": 963,
-          "bottom": 510
-        },
-        {
-          "id": "astronomy-head",
-          "left": 89,
-          "top": 550.5,
-          "right": 518.6,
-          "bottom": 590.3
-        },
-        {
-          "id": "astronomy-india-0",
-          "left": 89,
-          "top": 597,
-          "right": 963,
-          "bottom": 661.4
-        },
-        {
-          "id": "astronomy-india-1",
-          "left": 89,
-          "top": 661,
-          "right": 963,
-          "bottom": 757.4
-        },
-        {
-          "id": "prediction-0",
-          "left": 89,
-          "top": 773,
-          "right": 963,
-          "bottom": 837.4
-        },
-        {
-          "id": "prediction-1",
-          "left": 87.5,
-          "top": 837,
-          "right": 963,
-          "bottom": 933.4
-        },
-        {
-          "id": "system-picture",
-          "left": 89,
-          "top": 974,
-          "right": 898.2,
-          "bottom": 1259.2
-        },
-        {
-          "id": "closing-evidence-0",
-          "left": 89,
-          "top": 1279,
-          "right": 963,
-          "bottom": 1343.4
-        },
-        {
-          "id": "closing-evidence-1",
-          "left": 89,
-          "top": 1343,
-          "right": 963,
-          "bottom": 1407.4
+          "bottom": 1202
         }
       ],
       "collisions": [],
@@ -1122,20 +1072,120 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 1.4,
-      "occupiedPercent": 99.4,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 38.3,
+      "occupiedPercent": 83.7,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 33.2,
+        "protectedGroup": [
+          {
+            "id": "astronomy-head",
+            "type": "heading",
+            "title": "Observing, recording, predicting",
+            "height": 48
+          },
+          {
+            "id": "astronomy-india-0",
+            "type": "body",
+            "title": "Kodaikanal Solar Observatory, established in 1899 in the Palani hills, has a long record of observat",
+            "height": 64
+          },
+          {
+            "id": "astronomy-india-1",
+            "type": "body",
+            "title": "Kodaikanal Solar Observatory, established in 1899 in the Palani hills, has a long record of observat",
+            "height": 112
+          },
+          {
+            "id": "prediction-0",
+            "type": "body",
+            "title": "Use a planetarium programme such as Stellarium to explore a predicted eclipse for a selected place a",
+            "height": 64
+          },
+          {
+            "id": "prediction-1",
+            "type": "body",
+            "title": "Use a planetarium programme such as Stellarium to explore a predicted eclipse for a selected place a",
+            "height": 112
+          },
+          {
+            "id": "system-picture",
+            "type": "figure",
+            "title": "Three bodies, several linked ideas: rotation, revolution, illumination and shadows. Use each model t",
+            "height": 330
+          }
+        ],
+        "requiredMM": 131.1,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 14,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 89,
-        "top": 111.7,
+        "left": 87.5,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1269.4
+        "bottom": 969.4
       },
-      "blocks": [],
+      "blocks": [
+        {
+          "id": "astronomy-head",
+          "left": 89,
+          "top": 112.5,
+          "right": 518.6,
+          "bottom": 152.3
+        },
+        {
+          "id": "astronomy-india-0",
+          "left": 89,
+          "top": 159,
+          "right": 963,
+          "bottom": 223.4
+        },
+        {
+          "id": "astronomy-india-1",
+          "left": 89,
+          "top": 223,
+          "right": 963,
+          "bottom": 319.4
+        },
+        {
+          "id": "prediction-0",
+          "left": 89,
+          "top": 335,
+          "right": 963,
+          "bottom": 399.4
+        },
+        {
+          "id": "prediction-1",
+          "left": 87.5,
+          "top": 399,
+          "right": 963,
+          "bottom": 495.4
+        },
+        {
+          "id": "system-picture",
+          "left": 89,
+          "top": 536,
+          "right": 898.2,
+          "bottom": 821.2
+        },
+        {
+          "id": "closing-evidence-0",
+          "left": 89,
+          "top": 841,
+          "right": 963,
+          "bottom": 905.4
+        },
+        {
+          "id": "closing-evidence-1",
+          "left": 89,
+          "top": 905,
+          "right": 963,
+          "bottom": 969.4
+        }
+      ],
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
@@ -1144,9 +1194,15 @@
         "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 26.2,
-      "occupiedPercent": 88.8,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 80.1,
+      "occupiedPercent": 65.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 77.1,
+        "protectedGroup": [],
+        "requiredMM": 0,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 15,
@@ -1155,7 +1211,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1139.4
+        "bottom": 1390.4
       },
       "blocks": [],
       "collisions": [],
@@ -1166,12 +1222,34 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 49.5,
-      "occupiedPercent": 78.8,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
       "page": 16,
+      "viewBoxHeight": 1514,
+      "contentBounds": {
+        "left": 89,
+        "top": 111.7,
+        "right": 963,
+        "bottom": 1389.4
+      },
+      "blocks": [],
+      "collisions": [],
+      "escapedPanels": [],
+      "folioBounds": {
+        "left": 92.96315769021966,
+        "top": 1457.544855913915,
+        "right": 121.03684222072395,
+        "bottom": 1495.8355207161767
+      },
+      "bottomGapMM": 4.6,
+      "occupiedPercent": 98,
+      "footerClearanceMM": 3.3
+    },
+    {
+      "page": 17,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1219,17 +1297,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.03684222072395,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.7252125241284,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 54.5,
       "occupiedPercent": 76.7,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 17,
+      "page": 18,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
@@ -1270,9 +1348,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021966,
         "top": 1457.5448559139113,
-        "right": 959.7252125241284,
+        "right": 121.03684222072395,
         "bottom": 1495.835520716173
       },
       "bottomGapMM": 68.2,
@@ -1280,7 +1358,7 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 18,
+      "page": 19,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 79.8,
@@ -1328,17 +1406,17 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.5448559139113,
-        "right": 121.03684222072395,
-        "bottom": 1495.835520716173
+        "left": 930.9630791276561,
+        "top": 1457.544855913915,
+        "right": 959.0367636581603,
+        "bottom": 1495.8355207161767
       },
       "bottomGapMM": 68,
       "occupiedPercent": 70.9,
       "footerClearanceMM": 3.3
     },
     {
-      "page": 19,
+      "page": 20,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1372,9 +1450,9 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 930.9630791276561,
+        "left": 92.96315769021966,
         "top": 1457.544855913915,
-        "right": 959.0367636581603,
+        "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
       "bottomGapMM": 13.3,
@@ -1382,7 +1460,7 @@
       "footerClearanceMM": 3.3
     },
     {
-      "page": 20,
+      "page": 21,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
@@ -1409,10 +1487,10 @@
       "collisions": [],
       "escapedPanels": [],
       "folioBounds": {
-        "left": 92.96315769021966,
-        "top": 1457.544855913915,
-        "right": 121.72533603047485,
-        "bottom": 1495.8355207161767
+        "left": 930.9630791276561,
+        "top": 1457.5448559139113,
+        "right": 959.0367636581603,
+        "bottom": 1495.835520716173
       },
       "bottomGapMM": 29.4,
       "occupiedPercent": 87.4,

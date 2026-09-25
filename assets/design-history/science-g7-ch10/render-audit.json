@@ -135,7 +135,7 @@
         "left": -18.2,
         "top": -3144.9,
         "right": 963,
-        "bottom": 1259.4
+        "bottom": 1238.9
       },
       "blocks": [
         {
@@ -172,13 +172,6 @@
           "top": 789,
           "right": 963,
           "bottom": 853.4
-        },
-        {
-          "id": "growth-limits-1",
-          "left": 89,
-          "top": 853,
-          "right": 963,
-          "bottom": 917.4
         }
       ],
       "collisions": [],
@@ -189,54 +182,73 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 28,
-      "occupiedPercent": 88.1,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 31.6,
+      "occupiedPercent": 86.5,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 27.2,
+        "protectedGroup": [
+          {
+            "id": "growth-limits-1",
+            "type": "body",
+            "title": "One seedling per treatment gives limited evidence. Seedlings differ naturally, and a dark cupboard m",
+            "height": 80
+          },
+          {
+            "id": "growth-pause",
+            "type": "panel",
+            "title": "The dark-grown plant is tallest, but has a thin stem and pale leaves. Is height alone a sound measur",
+            "height": 316
+          }
+        ],
+        "requiredMM": 71.1,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 4,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 89,
-        "top": 112,
+        "top": 111,
         "right": 963,
-        "bottom": 1175.4
+        "bottom": 1285.4
       },
       "blocks": [
         {
+          "id": "growth-limits-1",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
           "id": "growth-pause",
           "left": 89,
-          "top": 112,
+          "top": 192,
           "right": 963,
-          "bottom": 406
+          "bottom": 486
         },
         {
           "id": "vrikshayurveda",
           "left": 89,
-          "top": 427,
+          "top": 507,
           "right": 963,
-          "bottom": 587.4
+          "bottom": 667.4
         },
         {
           "id": "food",
           "left": 89,
-          "top": 615.7,
+          "top": 695.7,
           "right": 639.6,
-          "bottom": 665.8
+          "bottom": 745.8
         },
         {
           "id": "food-origin-0",
           "left": 89,
-          "top": 673,
+          "top": 753,
           "right": 963,
-          "bottom": 737.4
-        },
-        {
-          "id": "food-origin-1",
-          "left": 89,
-          "top": 737,
-          "right": 963,
-          "bottom": 833.4
+          "bottom": 817.4
         }
       ],
       "collisions": [],
@@ -247,130 +259,82 @@
         "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 43,
-      "occupiedPercent": 81.6,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 36.8,
-        "protectedGroup": [
-          {
-            "id": "leaves",
-            "type": "heading",
-            "title": "10.2.1 Leaves and the Starch Test",
-            "height": 48
-          },
-          {
-            "id": "leaf-structure-0",
-            "type": "body",
-            "title": "Many leaves are broad and thin, exposing a large surface to light while keeping internal cells near ",
-            "height": 64
-          },
-          {
-            "id": "leaf-structure-1",
-            "type": "body",
-            "title": "Many leaves are broad and thin, exposing a large surface to light while keeping internal cells near ",
-            "height": 112
-          },
-          {
-            "id": "starch-question-0",
-            "type": "body",
-            "title": "Recall the iodine test from the animal-nutrition chapter. A blue-black colour provides evidence of d",
-            "height": 64
-          },
-          {
-            "id": "starch-question-1",
-            "type": "body",
-            "title": "Recall the iodine test from the animal-nutrition chapter. A blue-black colour provides evidence of d",
-            "height": 80
-          },
-          {
-            "id": "leaf-sampling-0",
-            "type": "body",
-            "title": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons t",
-            "height": 64
-          },
-          {
-            "id": "leaf-sampling-1",
-            "type": "body",
-            "title": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons t",
-            "height": 64
-          },
-          {
-            "id": "leaf-sampling-2",
-            "type": "body",
-            "title": "A leaf test is destructive: the same leaf cannot be tested again after a day in light. Comparisons t",
-            "height": 112
-          }
-        ],
-        "requiredMM": 109.2,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 23.3,
+      "occupiedPercent": 90.1,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 5,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 112.5,
+        "top": 111,
         "right": 963,
-        "bottom": 1045.4
+        "bottom": 1311.4
       },
       "blocks": [
         {
+          "id": "food-origin-1",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 207.4
+        },
+        {
           "id": "leaves",
           "left": 89,
-          "top": 112.5,
+          "top": 236.5,
           "right": 524.8,
-          "bottom": 152.3
+          "bottom": 276.3
         },
         {
           "id": "leaf-structure-0",
           "left": 89,
-          "top": 159,
+          "top": 283,
           "right": 963,
-          "bottom": 223.4
+          "bottom": 347.4
         },
         {
           "id": "leaf-structure-1",
           "left": 89,
-          "top": 223,
+          "top": 347,
           "right": 963,
-          "bottom": 319.4
+          "bottom": 443.4
         },
         {
           "id": "starch-question-0",
           "left": 89,
-          "top": 335,
+          "top": 459,
           "right": 963,
-          "bottom": 399.4
+          "bottom": 523.4
         },
         {
           "id": "starch-question-1",
           "left": 89,
-          "top": 399,
+          "top": 523,
           "right": 963,
-          "bottom": 463.4
+          "bottom": 587.4
         },
         {
           "id": "leaf-sampling-0",
           "left": 87.5,
-          "top": 479,
+          "top": 603,
           "right": 963,
-          "bottom": 543.4
+          "bottom": 667.4
         },
         {
           "id": "leaf-sampling-1",
           "left": 89,
-          "top": 543,
+          "top": 667,
           "right": 963,
-          "bottom": 607.4
+          "bottom": 731.4
         },
         {
           "id": "leaf-sampling-2",
           "left": 89,
-          "top": 607,
+          "top": 731,
           "right": 963,
-          "bottom": 703.4
+          "bottom": 827.4
         }
       ],
       "collisions": [],
@@ -381,22 +345,9 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 66.4,
-      "occupiedPercent": 71.6,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 60.2,
-        "protectedGroup": [
-          {
-            "id": "starch-task",
-            "type": "activity",
-            "title": "1. Teacher demonstration: soften a suitable leaf briefly in hot water using forceps. Place it in an ",
-            "height": 1018
-          }
-        ],
-        "requiredMM": 182.9,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 18.6,
+      "occupiedPercent": 92,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 6,
@@ -493,7 +444,7 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1029.4
+        "bottom": 1171.4
       },
       "blocks": [
         {
@@ -554,11 +505,11 @@
         "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 69.3,
-      "occupiedPercent": 70.4,
+      "bottomGapMM": 43.8,
+      "occupiedPercent": 81.3,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 63.1,
+        "remainingMM": 39.3,
         "protectedGroup": [
           {
             "id": "air",
@@ -586,7 +537,7 @@
           }
         ],
         "requiredMM": 201.6,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -650,7 +601,7 @@
           }
         ],
         "requiredMM": 70.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -660,7 +611,7 @@
         "left": -18.2,
         "top": -14015.6,
         "right": 963,
-        "bottom": 1307.4
+        "bottom": 1366.9
       },
       "blocks": [
         {
@@ -721,8 +672,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 19.3,
-      "occupiedPercent": 91.7,
+      "bottomGapMM": 8.6,
+      "occupiedPercent": 96.3,
       "footerClearanceMM": 3.3
     },
     {
@@ -783,7 +734,7 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1165.4
+        "bottom": 1307.4
       },
       "blocks": [
         {
@@ -837,46 +788,9 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 44.8,
-      "occupiedPercent": 80.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 38.6,
-        "protectedGroup": [
-          {
-            "id": "photosynthesis-equation",
-            "type": "equation",
-            "title": "Carbon dioxide + water → glucose + oxygen",
-            "height": 124
-          },
-          {
-            "id": "photosynthesis-materials-0",
-            "type": "body",
-            "title": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are",
-            "height": 64
-          },
-          {
-            "id": "photosynthesis-materials-1",
-            "type": "body",
-            "title": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are",
-            "height": 64
-          },
-          {
-            "id": "photosynthesis-materials-2",
-            "type": "body",
-            "title": "Separate matter from energy as you read the equation. Carbon dioxide and water supply atoms that are",
-            "height": 80
-          },
-          {
-            "id": "plant-map",
-            "type": "figure",
-            "title": "Carbon dioxide enters green tissues; roots supply water. Light energy supports food production. The ",
-            "height": 606
-          }
-        ],
-        "requiredMM": 168.5,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 19.3,
+      "occupiedPercent": 91.7,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 13,
@@ -885,7 +799,7 @@
         "left": 87.5,
         "top": 112.5,
         "right": 963,
-        "bottom": 1209.4
+        "bottom": 1289.4
       },
       "blocks": [
         {
@@ -936,6 +850,13 @@
           "top": 1113,
           "right": 963,
           "bottom": 1209.4
+        },
+        {
+          "id": "leaf-root-connection-0",
+          "left": 87.5,
+          "top": 1225,
+          "right": 963,
+          "bottom": 1289.4
         }
       ],
       "collisions": [],
@@ -946,76 +867,9 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 36.9,
-      "occupiedPercent": 84.2,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 34,
-        "protectedGroup": [
-          {
-            "id": "leaf-root-connection-0",
-            "type": "body",
-            "title": "A root can grow in darkness because it receives sugars from elsewhere in the plant. These sugars pro",
-            "height": 64
-          },
-          {
-            "id": "leaf-root-connection-1",
-            "type": "body",
-            "title": "A root can grow in darkness because it receives sugars from elsewhere in the plant. These sugars pro",
-            "height": 64
-          },
-          {
-            "id": "leaf-root-connection-2",
-            "type": "body",
-            "title": "A root can grow in darkness because it receives sugars from elsewhere in the plant. These sugars pro",
-            "height": 80
-          },
-          {
-            "id": "dastur",
-            "type": "body",
-            "title": "Rustom Hormusji Dastur (1896–1961) was an Indian plant scientist who investigated photosynthesis, in",
-            "height": 176
-          },
-          {
-            "id": "stomata",
-            "type": "heading",
-            "title": "10.2.4 How Do Leaves Exchange Gases?",
-            "height": 48
-          },
-          {
-            "id": "stomata-question-0",
-            "type": "body",
-            "title": "A leaf looks continuous to the unaided eye. A microscope reveals structures too small to see directl",
-            "height": 64
-          },
-          {
-            "id": "stomata-question-1",
-            "type": "body",
-            "title": "A leaf looks continuous to the unaided eye. A microscope reveals structures too small to see directl",
-            "height": 80
-          },
-          {
-            "id": "microscope-evidence-0",
-            "type": "body",
-            "title": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describ",
-            "height": 64
-          },
-          {
-            "id": "microscope-evidence-1",
-            "type": "body",
-            "title": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describ",
-            "height": 64
-          },
-          {
-            "id": "microscope-evidence-2",
-            "type": "body",
-            "title": "A microscope enlarges a very small field, not the entire leaf. Examine several fields before describ",
-            "height": 80
-          }
-        ],
-        "requiredMM": 143,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 22.6,
+      "occupiedPercent": 90.4,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 14,
@@ -1024,78 +878,71 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1233.4
+        "bottom": 1311.4
       },
       "blocks": [
         {
-          "id": "leaf-root-connection-0",
-          "left": 87.5,
+          "id": "leaf-root-connection-1",
+          "left": 89,
           "top": 111,
           "right": 963,
           "bottom": 175.4
         },
         {
-          "id": "leaf-root-connection-1",
+          "id": "leaf-root-connection-2",
           "left": 89,
           "top": 175,
           "right": 963,
           "bottom": 239.4
         },
         {
-          "id": "leaf-root-connection-2",
-          "left": 89,
-          "top": 239,
-          "right": 963,
-          "bottom": 303.4
-        },
-        {
           "id": "dastur",
           "left": 89,
-          "top": 319,
+          "top": 255,
           "right": 963,
-          "bottom": 479.4
+          "bottom": 415.4
         },
         {
           "id": "stomata",
           "left": 89,
-          "top": 508.5,
+          "top": 444.5,
           "right": 601.5,
-          "bottom": 548.3
+          "bottom": 484.3
         },
         {
           "id": "stomata-question-0",
           "left": 87.5,
+          "top": 491,
+          "right": 963,
+          "bottom": 555.4
+        },
+        {
+          "id": "stomata-question-1",
+          "left": 89,
           "top": 555,
           "right": 963,
           "bottom": 619.4
         },
         {
-          "id": "stomata-question-1",
-          "left": 89,
-          "top": 619,
+          "id": "microscope-evidence-0",
+          "left": 87.5,
+          "top": 635,
           "right": 963,
-          "bottom": 683.4
+          "bottom": 699.4
         },
         {
-          "id": "microscope-evidence-0",
+          "id": "microscope-evidence-1",
           "left": 87.5,
           "top": 699,
           "right": 963,
           "bottom": 763.4
         },
         {
-          "id": "microscope-evidence-1",
-          "left": 87.5,
+          "id": "microscope-evidence-2",
+          "left": 89,
           "top": 763,
           "right": 963,
           "bottom": 827.4
-        },
-        {
-          "id": "microscope-evidence-2",
-          "left": 89,
-          "top": 827,
-          "right": 963,
-          "bottom": 891.4
         }
       ],
       "collisions": [],
@@ -1106,22 +953,9 @@
         "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 32.6,
-      "occupiedPercent": 86.1,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 26.4,
-        "protectedGroup": [
-          {
-            "id": "peel-task",
-            "type": "activity",
-            "title": "1. Teacher demonstration: use forceps to peel a thin piece from the lower surface of a fresh Tradesc",
-            "height": 468
-          }
-        ],
-        "requiredMM": 84.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 18.6,
+      "occupiedPercent": 92,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 15,
@@ -1342,7 +1176,7 @@
           }
         ],
         "requiredMM": 64.3,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -1352,7 +1186,7 @@
         "left": -18.2,
         "top": -26439.2,
         "right": 963,
-        "bottom": 1041.4
+        "bottom": 1183.4
       },
       "blocks": [
         {
@@ -1392,11 +1226,11 @@
         "right": 121.03684222072395,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 67.1,
-      "occupiedPercent": 71.3,
+      "bottomGapMM": 41.6,
+      "occupiedPercent": 82.2,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 60.9,
+        "remainingMM": 37.2,
         "protectedGroup": [
           {
             "id": "seed-task",
@@ -1406,7 +1240,7 @@
           }
         ],
         "requiredMM": 171,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -1474,7 +1308,7 @@
         "left": -18.2,
         "top": -29545.2,
         "right": 963,
-        "bottom": 1335.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1521,8 +1355,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 14.3,
-      "occupiedPercent": 93.9,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1532,7 +1366,7 @@
         "left": 87.5,
         "top": 112,
         "right": 963,
-        "bottom": 1377.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1593,8 +1427,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 6.8,
-      "occupiedPercent": 97.1,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1604,7 +1438,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1313.4
+        "bottom": 1390.4
       },
       "blocks": [],
       "collisions": [],
@@ -1615,8 +1449,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161803
       },
-      "bottomGapMM": 18.3,
-      "occupiedPercent": 92.2,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1626,7 +1460,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1277.4
+        "bottom": 1350.6
       },
       "blocks": [],
       "collisions": [],
@@ -1637,8 +1471,8 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 24.7,
-      "occupiedPercent": 89.4,
+      "bottomGapMM": 11.6,
+      "occupiedPercent": 95.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1648,7 +1482,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1269.4
+        "bottom": 1342.6
       },
       "blocks": [
         {
@@ -1709,8 +1543,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 26.2,
-      "occupiedPercent": 88.8,
+      "bottomGapMM": 13,
+      "occupiedPercent": 94.4,
       "footerClearanceMM": 3.3
     },
     {

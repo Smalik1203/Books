@@ -12,21 +12,20 @@
   {
     "page": 2,
     "title": "8.1 Measurement of Time",
-    "titleRole": "lesson",
+    "titleRole": "section",
     "sourcePages": [
-      2,
-      3
+      2
     ],
-    "end": 1415.0,
+    "end": 1415,
     "fill": 100,
-    "breakReason": "Next activity: water-task",
+    "breakReason": "Next heading: Calibrating a water clock",
     "blocks": [
       {
         "id": "time",
         "type": "heading",
         "text": "8.1 Measurement of Time",
         "top": 112,
-        "bottom": 170.0,
+        "bottom": 170,
         "before": 0,
         "keepNext": false
       },
@@ -34,8 +33,8 @@
         "id": "natural-cycles-0",
         "type": "body",
         "text": "Sunrise and sunset, the Moon’s changing phases and the returning seasons gave people repeating patterns with which to organise days, months and years. A school lesson or a race needs a much smaller interval. A useful clock connects an observable change with a known duration.",
-        "top": 170.0,
-        "bottom": 234.0,
+        "top": 170,
+        "bottom": 234,
         "before": 0,
         "keepNext": false
       },
@@ -43,8 +42,8 @@
         "id": "natural-cycles-1",
         "type": "body",
         "text": "Sunrise and sunset, the Moon’s changing phases and the returning seasons gave people repeating patterns with which to organise days, months and years. A school lesson or a race needs a much smaller interval. A useful clock connects an observable change with a known duration.",
-        "top": 234.0,
-        "bottom": 314.0,
+        "top": 234,
+        "bottom": 314,
         "before": 0,
         "keepNext": false
       },
@@ -53,8 +52,8 @@
         "type": "figure",
         "text": "From left: a sundial, an outflow water clock, an hourglass and a marked candle clock. Their changing shadows, levels or lengths help indicate elapsed time.",
         "artKey": "figure",
-        "top": 314.0,
-        "bottom": 676.0,
+        "top": 314,
+        "bottom": 897,
         "before": 0,
         "keepNext": false
       },
@@ -62,66 +61,89 @@
         "id": "clock-principles",
         "type": "table",
         "text": "How early clocks mark time",
-        "top": 676.0,
-        "bottom": 1194.0,
+        "top": 897,
+        "bottom": 1415,
         "before": 0,
         "keepNext": false,
         "conceptId": "clock-principles"
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "make-clock",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 3,
+    "title": "Calibrating a water clock",
+    "titleRole": "subtopic",
+    "sourcePages": [
+      3
+    ],
+    "end": 1306,
+    "fill": 92,
+    "breakReason": "Next body: Compare the two runs before judging the clock. Did a given mark c",
+    "blocks": [
       {
         "id": "make-clock",
         "type": "heading",
         "text": "Calibrating a water clock",
-        "top": 1206.0,
-        "bottom": 1254.0,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "water-intro",
         "type": "body",
         "text": "To **calibrate** a device, compare its readings with a reference. Here a watch supplies the reference intervals; water levels become the scale. Predict whether successive minute marks will be equally far apart. Decide exactly when timing starts and how you will recognise each water level. A useful test also asks whether resetting the same device gives similar readings on another run.",
-        "top": 1254.0,
-        "bottom": 1415.0,
+        "top": 160,
+        "bottom": 336,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "water-task",
-      "type": "activity",
-      "height": 970.0,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 3,
-    "title": "",
-    "titleRole": "lesson",
-    "sourcePages": [
-      3,
-      4
-    ],
-    "end": 1370.0,
-    "fill": 97,
-    "breakReason": "Next panel: water-pause",
-    "blocks": [
+      },
       {
         "id": "water-task",
         "type": "activity",
         "text": "1. Ask an adult to cut a clean transparent plastic bottle of at least 0.5 L into two parts, pierce a tiny hole in its cap and cover sharp cut edges. Fit the capped upper part upside down inside the lower part, as shown. 2. Stand it securely in a tray. Fill the upper part to a chosen starting level with water; a little food colouring may help. Start timing as water begins to enter the empty lower part. 3. Use a watch to mark the collected water level after each minute until the upper part empties. Number these marks in your notebook and on the bottle. 4. Return the collected water to the upper part, using the same starting level and an empty lower part. Compare the marks with the watch during a second run. Keep water away from electrical devices. Adults handle all cutting and piercing; do not use heated tools. Wipe up spills.",
-        "top": 112,
-        "bottom": 1082.0,
+        "top": 336,
+        "bottom": 1306,
         "before": 0,
         "keepNext": false,
         "conceptId": "water-task"
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "water-evidence-0",
+      "type": "body",
+      "height": 64,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 4,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch01-v2/cutouts/sundial.png",
+      "caption": "A sundial uses the changing position of a shadow."
+    },
+    "end": 1289.0011123470522,
+    "fill": 90,
+    "breakReason": "Next body: Indian accounts of timekeeping include shadow measurements and ou",
+    "blocks": [
       {
         "id": "water-evidence-0",
         "type": "body",
         "text": "Compare the two runs before judging the clock. Did a given mark correspond to nearly the same time? If not, check the starting level, cap hole, leaks and the position of the upper bottle. Keep your actual readings; an inconsistent clock is still useful evidence about its design.",
-        "top": 1082.0,
-        "bottom": 1146.0,
+        "top": 112,
+        "bottom": 176,
         "before": 0,
         "keepNext": false
       },
@@ -129,8 +151,8 @@
         "id": "water-evidence-1",
         "type": "body",
         "text": "Compare the two runs before judging the clock. Did a given mark correspond to nearly the same time? If not, check the starting level, cap hole, leaks and the position of the upper bottle. Keep your actual readings; an inconsistent clock is still useful evidence about its design.",
-        "top": 1146.0,
-        "bottom": 1226.0,
+        "top": 176,
+        "bottom": 256,
         "before": 0,
         "keepNext": false
       },
@@ -138,8 +160,8 @@
         "id": "water-flow-0",
         "type": "body",
         "text": "As the water level above the hole falls, the outflow generally slows. Equal time intervals therefore need not produce equal rises in the collecting vessel; its shape matters too. Marks calibrated for this bottle and hole cannot simply be copied onto another device.",
-        "top": 1226.0,
-        "bottom": 1290.0,
+        "top": 256,
+        "bottom": 320,
         "before": 0,
         "keepNext": false
       },
@@ -147,42 +169,17 @@
         "id": "water-flow-1",
         "type": "body",
         "text": "As the water level above the hole falls, the outflow generally slows. Equal time intervals therefore need not produce equal rises in the collecting vessel; its shape matters too. Marks calibrated for this bottle and hole cannot simply be copied onto another device.",
-        "top": 1290.0,
-        "bottom": 1370.0,
+        "top": 320,
+        "bottom": 400,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "water-pause",
-      "type": "panel",
-      "height": 284.0,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 4,
-    "title": "",
-    "titleRole": "lesson",
-    "sourcePages": [
-      3,
-      4,
-      7
-    ],
-    "pageIllustration": {
-      "file": "figures/class-7/science/ch01-v2/cutouts/sundial.png",
-      "caption": "A sundial uses the changing position of a shadow."
-    },
-    "end": 1344.0,
-    "fill": 95,
-    "breakReason": "Next body: solar-time-1",
-    "blocks": [
+      },
       {
         "id": "water-pause",
         "type": "panel",
         "text": "Two learners mark their bottles differently. One copies equally spaced lines from a ruler; the other marks the water level every minute using a watch. Which procedure establishes a time scale? Explain. A new cap has a larger hole. Can the old time marks still be trusted? Describe a comparison that would test your answer.",
-        "top": 112,
-        "bottom": 396.0,
+        "top": 400,
+        "bottom": 684,
         "before": 0,
         "keepNext": false,
         "conceptId": "water-pause"
@@ -191,8 +188,8 @@
         "id": "history",
         "type": "heading",
         "text": "Clocks in history",
-        "top": 408.0,
-        "bottom": 456.0,
+        "top": 696,
+        "bottom": 744,
         "before": 12,
         "keepNext": false
       },
@@ -200,17 +197,46 @@
         "id": "indian-timekeeping-0",
         "type": "body",
         "text": "Indian accounts of timekeeping include shadow measurements and outflow water clocks in the Arthashastra, and water-clock descriptions in the Shardulakarnavadana. The astronomer Varahamihira discussed finding time from a stick’s shadow. A sinking-bowl clock, often called a ghatika-yantra, also appears in Indian astronomical traditions associated with Aryabhata.",
-        "top": 456.0,
-        "bottom": 520.0,
+        "top": 744,
+        "bottom": 808,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "A sundial uses the changing position of a shadow.",
+        "artKey": "figures/class-7/science/ch01-v2/cutouts/sundial.png",
+        "top": 808,
+        "bottom": 1289.0011123470522
+      }
+    ],
+    "protectedNext": {
+      "id": "indian-timekeeping-1",
+      "type": "body",
+      "height": 112,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 5,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      4,
+      7,
+      3
+    ],
+    "end": 1288,
+    "fill": 90,
+    "breakReason": "Next body: Mechanical clocks using weights, gears and later springs develope",
+    "blocks": [
+      {
         "id": "indian-timekeeping-1",
         "type": "body",
         "text": "Indian accounts of timekeeping include shadow measurements and outflow water clocks in the Arthashastra, and water-clock descriptions in the Shardulakarnavadana. The astronomer Varahamihira discussed finding time from a stick’s shadow. A sinking-bowl clock, often called a ghatika-yantra, also appears in Indian astronomical traditions associated with Aryabhata.",
-        "top": 520.0,
-        "bottom": 632.0,
+        "top": 112,
+        "bottom": 224,
         "before": 0,
         "keepNext": false
       },
@@ -218,8 +244,8 @@
         "id": "ghatika-0",
         "type": "body",
         "text": "Such devices served monasteries, palaces and towns; drums, conches or gongs could announce an interval. In a traditional division of the day, one ghati was 24 minutes and 60 ghatis made 24 hours. Historical devices and regional practices varied; a named unit does not make every clock equally accurate.",
-        "top": 632.0,
-        "bottom": 696.0,
+        "top": 224,
+        "bottom": 288,
         "before": 0,
         "keepNext": false
       },
@@ -227,8 +253,8 @@
         "id": "ghatika-1",
         "type": "body",
         "text": "Such devices served monasteries, palaces and towns; drums, conches or gongs could announce an interval. In a traditional division of the day, one ghati was 24 minutes and 60 ghatis made 24 hours. Historical devices and regional practices varied; a named unit does not make every clock equally accurate.",
-        "top": 696.0,
-        "bottom": 776.0,
+        "top": 288,
+        "bottom": 368,
         "before": 0,
         "keepNext": false
       },
@@ -236,8 +262,8 @@
         "id": "jantar-0",
         "type": "body",
         "text": "At Jaipur’s Jantar Mantar, an early eighteenth-century observatory and UNESCO World Heritage Site, the roughly 27 m high Samrat Yantra is a monumental sundial. Its shadow moves over finely marked scales. A fine graduation is different from a guarantee that every reading is accurate to that interval.",
-        "top": 776.0,
-        "bottom": 840.0,
+        "top": 368,
+        "bottom": 432,
         "before": 0,
         "keepNext": false
       },
@@ -245,8 +271,8 @@
         "id": "jantar-1",
         "type": "body",
         "text": "At Jaipur’s Jantar Mantar, an early eighteenth-century observatory and UNESCO World Heritage Site, the roughly 27 m high Samrat Yantra is a monumental sundial. Its shadow moves over finely marked scales. A fine graduation is different from a guarantee that every reading is accurate to that interval.",
-        "top": 840.0,
-        "bottom": 920.0,
+        "top": 432,
+        "bottom": 512,
         "before": 0,
         "keepNext": false
       },
@@ -254,39 +280,17 @@
         "id": "solar-time-0",
         "type": "body",
         "text": "A sundial indicates local solar time. Comparing it with Indian Standard Time requires corrections for location and the date. Clouds, alignment and reading the shadow’s edge also matter. The instrument invites careful observation as well as admiration.",
-        "top": 920.0,
-        "bottom": 984.0,
+        "top": 512,
+        "bottom": 576,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "solar-time-1",
-      "type": "body",
-      "height": 80.0,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 5,
-    "title": "",
-    "titleRole": "lesson",
-    "sourcePages": [
-      3,
-      4,
-      5,
-      7
-    ],
-    "end": 1346.0,
-    "fill": 95,
-    "breakReason": "Next body: oscillation-0",
-    "blocks": [
+      },
       {
         "id": "solar-time-1",
         "type": "body",
         "text": "A sundial indicates local solar time. Comparing it with Indian Standard Time requires corrections for location and the date. Clouds, alignment and reading the shadow’s edge also matter. The instrument invites careful observation as well as admiration.",
-        "top": 112,
-        "bottom": 192.0,
+        "top": 576,
+        "bottom": 656,
         "before": 0,
         "keepNext": false
       },
@@ -295,17 +299,37 @@
         "type": "figure",
         "text": "A pendulum clock counts repeated swings; many modern watches count oscillations of a quartz crystal. These are illustrative examples, not historical reconstructions.",
         "artKey": "figure",
-        "top": 192.0,
-        "bottom": 554.0,
+        "top": 656,
+        "bottom": 1288,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "mechanical-clocks-0",
+      "type": "body",
+      "height": 64,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 6,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      4,
+      5
+    ],
+    "end": 1160,
+    "fill": 80,
+    "breakReason": "Next activity: 1. With a teacher, use about 150 cm of strong thread and a small ",
+    "blocks": [
       {
         "id": "mechanical-clocks-0",
         "type": "body",
         "text": "Mechanical clocks using weights, gears and later springs developed over centuries. Galileo studied swinging pendulums; the familiar story of his timing a church lamp with his pulse is a historical tradition, not a securely documented experiment. Christiaan Huygens developed a pendulum clock in 1656, followed by its patent in 1657.",
-        "top": 554.0,
-        "bottom": 618.0,
+        "top": 112,
+        "bottom": 176,
         "before": 0,
         "keepNext": false
       },
@@ -313,8 +337,8 @@
         "id": "mechanical-clocks-1",
         "type": "body",
         "text": "Mechanical clocks using weights, gears and later springs developed over centuries. Galileo studied swinging pendulums; the familiar story of his timing a church lamp with his pulse is a historical tradition, not a securely documented experiment. Christiaan Huygens developed a pendulum clock in 1656, followed by its patent in 1657.",
-        "top": 618.0,
-        "bottom": 730.0,
+        "top": 176,
+        "bottom": 288,
         "before": 0,
         "keepNext": false
       },
@@ -322,8 +346,8 @@
         "id": "pendulum",
         "type": "heading",
         "text": "8.1.1 The Simple Pendulum",
-        "top": 742.0,
-        "bottom": 800.0,
+        "top": 300,
+        "bottom": 358,
         "before": 12,
         "keepNext": false
       },
@@ -331,8 +355,8 @@
         "id": "pendulum-definition-0",
         "type": "body",
         "text": "A **simple pendulum** models a small, heavy bob suspended by a light thread from a fixed support. Its length is measured from the point of suspension—the pivot—to the centre of the bob. At rest, the bob hangs at its **mean position**. When displaced and released, it swings to and fro.",
-        "top": 800.0,
-        "bottom": 864.0,
+        "top": 358,
+        "bottom": 422,
         "before": 0,
         "keepNext": false
       },
@@ -340,8 +364,8 @@
         "id": "pendulum-definition-1",
         "type": "body",
         "text": "A **simple pendulum** models a small, heavy bob suspended by a light thread from a fixed support. Its length is measured from the point of suspension—the pivot—to the centre of the bob. At rest, the bob hangs at its **mean position**. When displaced and released, it swings to and fro.",
-        "top": 864.0,
-        "bottom": 944.0,
+        "top": 422,
+        "bottom": 502,
         "before": 0,
         "keepNext": false
       },
@@ -350,37 +374,17 @@
         "type": "figure",
         "text": "O is the mean position; A and B are the extreme positions. The three bobs show successive positions of one bob, not three separate pendulums.",
         "artKey": "pendulum",
-        "top": 944.0,
-        "bottom": 1346.0,
+        "top": 502,
+        "bottom": 904,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "oscillation-0",
-      "type": "body",
-      "height": 64.0,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 6,
-    "title": "",
-    "titleRole": "lesson",
-    "sourcePages": [
-      5,
-      6
-    ],
-    "end": 1341.0,
-    "fill": 94,
-    "breakReason": "Next body: pendulum-evidence-0",
-    "blocks": [
+      },
       {
         "id": "oscillation-0",
         "type": "body",
         "text": "One complete **oscillation** returns the bob to the same position moving in the same direction. Starting at A, one oscillation is A → O → B → O → A. Starting at O towards A, it is O → A → O → B → O. Simply crossing the centre once is not a whole oscillation.",
-        "top": 112,
-        "bottom": 176.0,
+        "top": 904,
+        "bottom": 968,
         "before": 0,
         "keepNext": false
       },
@@ -388,8 +392,8 @@
         "id": "oscillation-1",
         "type": "body",
         "text": "One complete **oscillation** returns the bob to the same position moving in the same direction. Starting at A, one oscillation is A → O → B → O → A. Starting at O towards A, it is O → A → O → B → O. Simply crossing the centre once is not a whole oscillation.",
-        "top": 176.0,
-        "bottom": 256.0,
+        "top": 968,
+        "bottom": 1048,
         "before": 0,
         "keepNext": false
       },
@@ -397,50 +401,47 @@
         "id": "period-0",
         "type": "body",
         "text": "The **time period** is the time taken for one complete oscillation. You may have explored a hanging eraser in Class 6. Now measure repeated swings and ask how consistently they divide time.",
-        "top": 256.0,
-        "bottom": 368.0,
+        "top": 1048,
+        "bottom": 1160,
         "before": 0,
         "keepNext": false
-      },
-      {
-        "id": "pendulum-task",
-        "type": "activity",
-        "text": "1. With a teacher, use about 150 cm of strong thread and a small secure bob to make a pendulum about 100 cm long, measured from pivot to bob centre. Clamp the support firmly; clear the space around and below the bob. 2. Move the bob a little to one side and release it gently without a push. Keep the thread taut. Choose a fixed reference position and a direction for counting complete oscillations. 3. Time 10 oscillations with a stopwatch. Repeat three or four times using the same length and small release angle. One learner can count while another times. 4. In your notebook, record the measured length, trial number, time for 10 oscillations and that time divided by 10. Include seconds in both time columns. Use a compact bob that cannot detach. Keep faces and hands out of its path, and stop the bob before adjusting the apparatus.",
-        "top": 368.0,
-        "bottom": 1341.0,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "pendulum-task"
       }
     ],
     "protectedNext": {
-      "id": "pendulum-evidence-0",
-      "type": "body",
-      "height": 64.0,
+      "id": "pendulum-task",
+      "type": "activity",
+      "height": 973,
       "keepNext": false
     }
   },
   {
     "page": 7,
     "title": "",
-    "titleRole": "lesson",
+    "titleRole": "continuation",
     "sourcePages": [
+      5,
       6
     ],
-    "pageIllustration": {
-      "file": "figures/class-7/science/ch01-v2/measuring-tools.png",
-      "caption": "Measure length and time with suitable instruments."
-    },
-    "end": 1327.0,
+    "end": 1326,
     "fill": 93,
-    "breakReason": "Next heading: pendulum-variables",
+    "breakReason": "Next table: Reading repeated trials · illustrative measurements",
     "blocks": [
+      {
+        "id": "pendulum-task",
+        "type": "activity",
+        "text": "1. With a teacher, use about 150 cm of strong thread and a small secure bob to make a pendulum about 100 cm long, measured from pivot to bob centre. Clamp the support firmly; clear the space around and below the bob. 2. Move the bob a little to one side and release it gently without a push. Keep the thread taut. Choose a fixed reference position and a direction for counting complete oscillations. 3. Time 10 oscillations with a stopwatch. Repeat three or four times using the same length and small release angle. One learner can count while another times. 4. In your notebook, record the measured length, trial number, time for 10 oscillations and that time divided by 10. Include seconds in both time columns. Use a compact bob that cannot detach. Keep faces and hands out of its path, and stop the bob before adjusting the apparatus.",
+        "top": 112,
+        "bottom": 1085,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "pendulum-task"
+      },
       {
         "id": "pendulum-evidence-0",
         "type": "body",
         "text": "Compare your calculated periods. They will usually be close rather than identical. Starting late, miscounting a swing, changing the release angle or reading the length differently can affect the result. Record these possibilities alongside the measurements instead of replacing them with identical numbers.",
-        "top": 112,
-        "bottom": 176.0,
+        "top": 1085,
+        "bottom": 1149,
         "before": 0,
         "keepNext": false
       },
@@ -448,8 +449,8 @@
         "id": "pendulum-evidence-1",
         "type": "body",
         "text": "Compare your calculated periods. They will usually be close rather than identical. Starting late, miscounting a swing, changing the release angle or reading the length differently can affect the result. Record these possibilities alongside the measurements instead of replacing them with identical numbers.",
-        "top": 176.0,
-        "bottom": 256.0,
+        "top": 1149,
+        "bottom": 1229,
         "before": 0,
         "keepNext": false
       },
@@ -457,66 +458,69 @@
         "id": "period-example",
         "type": "equation",
         "text": "Time period = time for 10 oscillations ÷ 10",
-        "top": 256.0,
-        "bottom": 353.0,
+        "top": 1229,
+        "bottom": 1326,
         "before": 0,
         "keepNext": false
-      },
-      {
-        "id": "period-record",
-        "type": "table",
-        "text": "Reading repeated trials · illustrative measurements",
-        "top": 353.0,
-        "bottom": 715.0,
-        "before": 0,
-        "keepNext": false
-      },
-      {
-        "id": "timing-pause",
-        "type": "panel",
-        "text": "Why might timing 10 oscillations and dividing by 10 be more useful than timing one? Think about a small delay in pressing the stopwatch button. Does repeating the trial remove every error? Consider a ruler that is consistently read to the bottom of the bob instead of its centre.",
-        "top": 715.0,
-        "bottom": 967.0,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "timing-pause"
       }
     ],
     "protectedNext": {
-      "id": "pendulum-variables",
-      "type": "heading",
-      "height": 48.0,
+      "id": "period-record",
+      "type": "table",
+      "height": 362,
       "keepNext": false
     }
   },
   {
     "page": 8,
-    "title": "Change one variable",
-    "titleRole": "lesson",
+    "title": "",
+    "titleRole": "continuation",
     "sourcePages": [
-      1,
-      6,
-      7
+      6
     ],
-    "end": 1190.0,
-    "fill": 83,
-    "breakReason": "Next table: clock-accuracy",
+    "pageIllustration": {
+      "file": "figures/class-7/science/ch01-v2/measuring-tools.png",
+      "caption": "Measure length and time with suitable instruments."
+    },
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next body: For a simple pendulum making small swings at a given place, a lon",
     "blocks": [
+      {
+        "id": "period-record",
+        "type": "table",
+        "text": "Reading repeated trials · illustrative measurements",
+        "top": 112,
+        "bottom": 474,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "period-record"
+      },
+      {
+        "id": "timing-pause",
+        "type": "panel",
+        "text": "Why might timing 10 oscillations and dividing by 10 be more useful than timing one? Think about a small delay in pressing the stopwatch button. Does repeating the trial remove every error? Consider a ruler that is consistently read to the bottom of the bob instead of its centre.",
+        "top": 474,
+        "bottom": 726,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "timing-pause"
+      },
       {
         "id": "pendulum-variables",
         "type": "heading",
         "text": "Change one variable",
-        "top": 112,
-        "bottom": 160.0,
-        "before": 0,
+        "top": 738,
+        "bottom": 786,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "length-extension",
         "type": "body",
         "text": "Keep the same bob and try two or three different lengths. At each length, release from the same small angle, time 10 oscillations and repeat. Record the length and periods together. Compare the trend only after collecting the readings.",
-        "top": 160.0,
-        "bottom": 272.0,
+        "top": 786,
+        "bottom": 898,
         "before": 0,
         "keepNext": false
       },
@@ -524,17 +528,47 @@
         "id": "mass-extension",
         "type": "body",
         "text": "Next keep the pivot-to-centre length fixed and use secure bobs of different masses but similar size and shape. Keep the location and small release angle unchanged. Predict, test and compare. Do not change length and mass together if you want to distinguish their effects.",
-        "top": 272.0,
-        "bottom": 416.0,
+        "top": 898,
+        "bottom": 1042,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Measure length and time with suitable instruments.",
+        "artKey": "figures/class-7/science/ch01-v2/measuring-tools.png",
+        "top": 1042,
+        "bottom": 1415
+      }
+    ],
+    "protectedNext": {
+      "id": "pendulum-conclusion-0",
+      "type": "body",
+      "height": 64,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 9,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      6,
+      7,
+      1,
+      8
+    ],
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next heading: 8.1.2 Units of Time",
+    "blocks": [
+      {
         "id": "pendulum-conclusion-0",
         "type": "body",
         "text": "For a simple pendulum making small swings at a given place, a longer length gives a longer period. Changing the bob’s mass has little effect under these conditions. Large swings, friction, air resistance and changes in local gravity limit this simple description; the period is not universally constant for every pendulum.",
-        "top": 416.0,
-        "bottom": 480.0,
+        "top": 112,
+        "bottom": 176,
         "before": 0,
         "keepNext": false
       },
@@ -542,8 +576,8 @@
         "id": "pendulum-conclusion-1",
         "type": "body",
         "text": "For a simple pendulum making small swings at a given place, a longer length gives a longer period. Changing the bob’s mass has little effect under these conditions. Large swings, friction, air resistance and changes in local gravity limit this simple description; the period is not universally constant for every pendulum.",
-        "top": 480.0,
-        "bottom": 592.0,
+        "top": 176,
+        "bottom": 288,
         "before": 0,
         "keepNext": false
       },
@@ -551,8 +585,8 @@
         "id": "modern",
         "type": "heading",
         "text": "From swinging bobs to atomic clocks",
-        "top": 604.0,
-        "bottom": 652.0,
+        "top": 300,
+        "bottom": 348,
         "before": 12,
         "keepNext": false
       },
@@ -560,8 +594,8 @@
         "id": "modern-mechanisms-0",
         "type": "body",
         "text": "Clocks count repeating processes. In a pendulum clock, a mechanism maintains and counts swings. In a quartz clock, an electrical circuit counts regular vibrations of a quartz crystal. Atomic clocks use the stable frequencies associated with transitions in atoms; they do not count atoms swinging like tiny pendulum bobs.",
-        "top": 652.0,
-        "bottom": 716.0,
+        "top": 348,
+        "bottom": 412,
         "before": 0,
         "keepNext": false
       },
@@ -569,8 +603,8 @@
         "id": "modern-mechanisms-1",
         "type": "body",
         "text": "Clocks count repeating processes. In a pendulum clock, a mechanism maintains and counts swings. In a quartz clock, an electrical circuit counts regular vibrations of a quartz crystal. Atomic clocks use the stable frequencies associated with transitions in atoms; they do not count atoms swinging like tiny pendulum bobs.",
-        "top": 716.0,
-        "bottom": 828.0,
+        "top": 412,
+        "bottom": 524,
         "before": 0,
         "keepNext": false
       },
@@ -579,60 +613,59 @@
         "type": "figure",
         "text": "A wristwatch, stopwatch, tactile watch and talking clock offer different ways to read or hear time. Choose a device suited to the task and the user.",
         "artKey": "figure",
-        "top": 828.0,
-        "bottom": 1190.0,
+        "top": 524,
+        "bottom": 1137,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "clock-accuracy",
+        "type": "table",
+        "text": "Resolution and accuracy",
+        "top": 1137,
+        "bottom": 1415,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "clock-accuracy"
       }
     ],
     "protectedNext": {
-      "id": "clock-accuracy",
-      "type": "table",
-      "height": 278.0,
+      "id": "units",
+      "type": "heading",
+      "height": 70,
       "keepNext": false
     }
   },
   {
-    "page": 9,
-    "title": "",
-    "titleRole": "lesson",
+    "page": 10,
+    "title": "8.1.2 Units of Time",
+    "titleRole": "section",
     "sourcePages": [
-      7,
-      8
+      7
     ],
     "pageIllustration": {
       "file": "figures/class-6/science/ch05/tape.png",
       "caption": "Read the scale before recording a measurement."
     },
-    "end": 1390.0,
-    "fill": 98,
-    "breakReason": "Next body: unit-writing-1",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next activity: 1. Look closely at the clock face. Identify the hour, minute and ",
     "blocks": [
-      {
-        "id": "clock-accuracy",
-        "type": "table",
-        "text": "Resolution and accuracy",
-        "top": 112,
-        "bottom": 390.0,
-        "before": 0,
-        "keepNext": false,
-        "conceptId": "clock-accuracy"
-      },
       {
         "id": "units",
         "type": "heading",
         "text": "8.1.2 Units of Time",
-        "top": 402.0,
-        "bottom": 460.0,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "second-0",
         "type": "body",
         "text": "The SI unit of time is the **second**, symbol **s**. Its present definition uses a specified frequency associated with caesium-133 atoms. You do not need an atomic clock for a classroom investigation, but standard units let people compare measurements made in different places.",
-        "top": 460.0,
-        "bottom": 524.0,
+        "top": 170,
+        "bottom": 234,
         "before": 0,
         "keepNext": false
       },
@@ -640,8 +673,8 @@
         "id": "second-1",
         "type": "body",
         "text": "The SI unit of time is the **second**, symbol **s**. Its present definition uses a specified frequency associated with caesium-133 atoms. You do not need an atomic clock for a classroom investigation, but standard units let people compare measurements made in different places.",
-        "top": 524.0,
-        "bottom": 604.0,
+        "top": 234,
+        "bottom": 314,
         "before": 0,
         "keepNext": false
       },
@@ -649,55 +682,63 @@
         "id": "time-units",
         "type": "table",
         "text": "Time units and conversions",
-        "top": 604.0,
-        "bottom": 966.0,
+        "top": 314,
+        "bottom": 676,
         "before": 0,
-        "keepNext": false
+        "keepNext": false,
+        "conceptId": "time-units"
       },
       {
         "id": "unit-writing-0",
         "type": "body",
         "text": "Write unit names in lower case, except at the start of a sentence. Leave a space between a number and its unit symbol: 12 s, 5 min, 2 h. Symbols do not become plural: write 12 s, not 12 secs. A full stop belongs to the sentence, not to the symbol.",
-        "top": 966.0,
-        "bottom": 1030.0,
-        "before": 0,
-        "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "unit-writing-1",
-      "type": "body",
-      "height": 80.0,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 10,
-    "title": "",
-    "titleRole": "lesson",
-    "sourcePages": [
-      7,
-      8
-    ],
-    "end": 1338.0,
-    "fill": 94,
-    "breakReason": "Next bullet: time-applications-3",
-    "blocks": [
-      {
-        "id": "unit-writing-1",
-        "type": "body",
-        "text": "Write unit names in lower case, except at the start of a sentence. Leave a space between a number and its unit symbol: 12 s, 5 min, 2 h. Symbols do not become plural: write 12 s, not 12 secs. A full stop belongs to the sentence, not to the symbol.",
-        "top": 112,
-        "bottom": 192.0,
+        "top": 676,
+        "bottom": 740,
         "before": 0,
         "keepNext": false
       },
       {
+        "id": "unit-writing-1",
+        "type": "body",
+        "text": "Write unit names in lower case, except at the start of a sentence. Leave a space between a number and its unit symbol: 12 s, 5 min, 2 h. Symbols do not become plural: write 12 s, not 12 secs. A full stop belongs to the sentence, not to the symbol.",
+        "top": 740,
+        "bottom": 820,
+        "before": 0,
+        "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Read the scale before recording a measurement.",
+        "artKey": "figures/class-6/science/ch05/tape.png",
+        "top": 820,
+        "bottom": 1415
+      }
+    ],
+    "protectedNext": {
+      "id": "clock-task",
+      "type": "activity",
+      "height": 748,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 11,
+    "title": "",
+    "titleRole": "continuation",
+    "sourcePages": [
+      8
+    ],
+    "end": 1338,
+    "fill": 94,
+    "breakReason": "Next heading: 8.2 Slow or Fast?",
+    "blocks": [
+      {
         "id": "clock-task",
         "type": "activity",
         "text": "1. Look closely at the clock face. Identify the hour, minute and second hands using the key. Count the small intervals around the dial. 2. If the second hand completes one turn in one minute, what interval does one small division represent? Explain your calculation in your notebook. 3. Examine an available classroom clock or watch. What is the smallest interval you can read? Explain whether it would suit timing a short race or a lesson.",
-        "top": 192.0,
-        "bottom": 940.0,
+        "top": 112,
+        "bottom": 860,
         "before": 0,
         "keepNext": false,
         "conceptId": "clock-task"
@@ -706,8 +747,8 @@
         "id": "clock-evidence-0",
         "type": "body",
         "text": "The pictured dial has 60 equal small intervals. Since one revolution of the second hand takes 60 s, one interval represents 1 s. A stopwatch may display hundredths of a second, but the operator’s reaction delay can still be much larger than its last displayed digit.",
-        "top": 940.0,
-        "bottom": 1004.0,
+        "top": 860,
+        "bottom": 924,
         "before": 0,
         "keepNext": false
       },
@@ -715,8 +756,8 @@
         "id": "clock-evidence-1",
         "type": "body",
         "text": "The pictured dial has 60 equal small intervals. Since one revolution of the second hand takes 60 s, one interval represents 1 s. A stopwatch may display hundredths of a second, but the operator’s reaction delay can still be much larger than its last displayed digit.",
-        "top": 1004.0,
-        "bottom": 1084.0,
+        "top": 924,
+        "bottom": 1004,
         "before": 0,
         "keepNext": false
       },
@@ -724,8 +765,8 @@
         "id": "time-applications-0",
         "type": "bullet",
         "text": "**Sport:** closely timed finishes require equipment that can distinguish very short intervals.",
-        "top": 1084.0,
-        "bottom": 1158.0,
+        "top": 1004,
+        "bottom": 1078,
         "before": 0,
         "keepNext": false,
         "comparisonItems": [
@@ -739,8 +780,8 @@
         "id": "time-applications-1",
         "type": "bullet",
         "text": "**Medicine:** an electrocardiogram records the timing of electrical activity associated with heartbeats.",
-        "top": 1158.0,
-        "bottom": 1232.0,
+        "top": 1078,
+        "bottom": 1152,
         "before": 0,
         "keepNext": false,
         "comparisonItems": [
@@ -754,8 +795,8 @@
         "id": "time-applications-2",
         "type": "bullet",
         "text": "**Sound and computing:** digital sound is sampled many thousands of times a second; electronic operations can occur on microsecond or shorter time scales.",
-        "top": 1232.0,
-        "bottom": 1338.0,
+        "top": 1152,
+        "bottom": 1258,
         "before": 0,
         "keepNext": false,
         "comparisonItems": [
@@ -764,19 +805,34 @@
             "text": "**Sound and computing:** digital sound is sampled many thousands of times a second; electronic operations can occur on microsecond or shorter time scales."
           }
         ]
+      },
+      {
+        "id": "time-applications-3",
+        "type": "bullet",
+        "text": "**Space science:** precise timing helps coordinate signals, measurements and navigation.",
+        "top": 1258,
+        "bottom": 1338,
+        "before": 0,
+        "keepNext": false,
+        "comparisonItems": [
+          {
+            "id": "time-applications-3",
+            "text": "**Space science:** precise timing helps coordinate signals, measurements and navigation."
+          }
+        ]
       }
     ],
     "protectedNext": {
-      "id": "time-applications-3",
-      "type": "bullet",
-      "height": 80.0,
+      "id": "slow-fast",
+      "type": "heading",
+      "height": 70,
       "keepNext": false
     }
   },
   {
-    "page": 11,
-    "title": "",
-    "titleRole": "lesson",
+    "page": 12,
+    "title": "8.2 Slow or Fast?",
+    "titleRole": "section",
     "sourcePages": [
       8,
       9,
@@ -786,40 +842,25 @@
       "file": "figures/class-7/science/ch01-v2/runners.png",
       "caption": "Compare distance covered and time taken."
     },
-    "end": 1415.0,
+    "end": 1415,
     "fill": 100,
-    "breakReason": "Next figure: cycling-art",
+    "breakReason": "Next figure: Swati’s journey provides a distance and an elapsed time. Her spee",
     "blocks": [
-      {
-        "id": "time-applications-3",
-        "type": "bullet",
-        "text": "**Space science:** precise timing helps coordinate signals, measurements and navigation.",
-        "top": 112,
-        "bottom": 192.0,
-        "before": 0,
-        "keepNext": false,
-        "comparisonItems": [
-          {
-            "id": "time-applications-3",
-            "text": "**Space science:** precise timing helps coordinate signals, measurements and navigation."
-          }
-        ]
-      },
       {
         "id": "slow-fast",
         "type": "heading",
         "text": "8.2 Slow or Fast?",
-        "top": 204.0,
-        "bottom": 262.0,
-        "before": 12,
+        "top": 112,
+        "bottom": 170,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "race-comparison-0",
         "type": "body",
         "text": "When runners start together and cover the same 100 m, the one who finishes in less time has the greater average speed over the race. At an earlier instant, a runner farther from the common start has covered more distance in that elapsed time. That does not prove the runner is moving fastest at that particular instant.",
-        "top": 262.0,
-        "bottom": 326.0,
+        "top": 170,
+        "bottom": 234,
         "before": 0,
         "keepNext": false
       },
@@ -827,8 +868,8 @@
         "id": "race-comparison-1",
         "type": "body",
         "text": "When runners start together and cover the same 100 m, the one who finishes in less time has the greater average speed over the race. At an earlier instant, a runner farther from the common start has covered more distance in that elapsed time. That does not prove the runner is moving fastest at that particular instant.",
-        "top": 326.0,
-        "bottom": 406.0,
+        "top": 234,
+        "bottom": 314,
         "before": 0,
         "keepNext": false
       },
@@ -836,8 +877,8 @@
         "id": "speed-comparison",
         "type": "table",
         "text": "Comparing average speeds",
-        "top": 406.0,
-        "bottom": 688.0,
+        "top": 314,
+        "bottom": 596,
         "before": 0,
         "keepNext": false,
         "conceptId": "speed-comparison"
@@ -846,8 +887,8 @@
         "id": "different-distances-0",
         "type": "body",
         "text": "If both distance and time differ, neither number alone settles the comparison. A cyclist travelling farther may also have taken much longer. We need the distance covered per unit time.",
-        "top": 688.0,
-        "bottom": 800.0,
+        "top": 596,
+        "bottom": 708,
         "before": 0,
         "keepNext": false
       },
@@ -855,8 +896,8 @@
         "id": "speed",
         "type": "heading",
         "text": "8.3 Measuring Speed",
-        "top": 812.0,
-        "bottom": 870.0,
+        "top": 720,
+        "bottom": 778,
         "before": 12,
         "keepNext": false
       },
@@ -864,8 +905,8 @@
         "id": "average-definition-0",
         "type": "body",
         "text": "**Average speed** is the total distance travelled divided by the total time taken. It describes a whole chosen interval, including stops within it. The SI unit is metre per second, written m/s. Kilometre per hour, written km/h, is also common.",
-        "top": 870.0,
-        "bottom": 982.0,
+        "top": 778,
+        "bottom": 890,
         "before": 0,
         "keepNext": false
       },
@@ -873,30 +914,38 @@
         "id": "speed-rule",
         "type": "equation",
         "text": "Average speed = total distance ÷ total time",
-        "top": 982.0,
-        "bottom": 1079.0,
+        "top": 890,
+        "bottom": 987,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Compare distance covered and time taken.",
+        "artKey": "figures/class-7/science/ch01-v2/runners.png",
+        "top": 987,
+        "bottom": 1415
       }
     ],
     "protectedNext": {
       "id": "cycling-art",
       "type": "figure",
-      "height": 362.0,
+      "height": 362,
       "keepNext": false
     }
   },
   {
-    "page": 12,
+    "page": 13,
     "title": "",
-    "titleRole": "lesson",
+    "titleRole": "continuation",
     "sourcePages": [
-      9,
-      10
+      10,
+      9
     ],
-    "end": 1362.0,
-    "fill": 96,
-    "breakReason": "Next table: train-record",
+    "end": 1415,
+    "fill": 100,
+    "breakReason": "Next table: A timetable record · illustrative data only",
     "blocks": [
       {
         "id": "cycling-art",
@@ -904,7 +953,7 @@
         "text": "Swati’s journey provides a distance and an elapsed time. Her speed need not stay the same at every moment.",
         "artKey": "figure",
         "top": 112,
-        "bottom": 474.0,
+        "bottom": 527,
         "before": 0,
         "keepNext": false
       },
@@ -912,8 +961,8 @@
         "id": "example-one",
         "type": "heading",
         "text": "Example 8.1 · Swati’s bicycle ride",
-        "top": 486.0,
-        "bottom": 534.0,
+        "top": 539,
+        "bottom": 587,
         "before": 12,
         "keepNext": false
       },
@@ -921,8 +970,8 @@
         "id": "swati-work",
         "type": "body",
         "text": "Swati cycles 3.6 km in 15 min. Convert: 3.6 × 1000 = 3600 m; 15 × 60 = 900 s. Her average speed is 3600 m ÷ 900 s = 4 m/s.",
-        "top": 534.0,
-        "bottom": 614.0,
+        "top": 587,
+        "bottom": 667,
         "before": 0,
         "keepNext": false
       },
@@ -930,8 +979,8 @@
         "id": "speed-units-0",
         "type": "body",
         "text": "To change m/s into km/h, multiply by 3.6: there are 3600 seconds in an hour and 1000 metres in a kilometre. Thus 4 m/s = 14.4 km/h. To change km/h into m/s, divide by 3.6. Converting both measurements before dividing is another reliable route.",
-        "top": 614.0,
-        "bottom": 678.0,
+        "top": 667,
+        "bottom": 731,
         "before": 0,
         "keepNext": false
       },
@@ -939,8 +988,8 @@
         "id": "speed-units-1",
         "type": "body",
         "text": "To change m/s into km/h, multiply by 3.6: there are 3600 seconds in an hour and 1000 metres in a kilometre. Thus 4 m/s = 14.4 km/h. To change km/h into m/s, divide by 3.6. Converting both measurements before dividing is another reliable route.",
-        "top": 678.0,
-        "bottom": 758.0,
+        "top": 731,
+        "bottom": 811,
         "before": 0,
         "keepNext": false
       },
@@ -948,8 +997,8 @@
         "id": "railways",
         "type": "heading",
         "text": "Comparing train journeys",
-        "top": 770.0,
-        "bottom": 818.0,
+        "top": 823,
+        "bottom": 871,
         "before": 12,
         "keepNext": false
       },
@@ -957,8 +1006,8 @@
         "id": "train-task",
         "type": "activity",
         "text": "1. With an adult, consult an official railway timetable. Choose a nearby station, a next stop and four or five trains, including passenger, express or superfast services where available. 2. Record each train, next stop, departure, arrival and segment distance. For cumulative distances, subtract the two station readings. 3. Calculate elapsed time, including the date for a journey crossing midnight. Convert minutes to hours before finding km/h. 4. Divide each segment distance by its elapsed time. Compare the scheduled average speeds for these segments; note the timetable source and date. This is a timetable investigation. Do not go near tracks or moving trains to take measurements. Scheduled times are not observations of actual running times.",
-        "top": 818.0,
-        "bottom": 1362.0,
+        "top": 871,
+        "bottom": 1415,
         "before": 0,
         "keepNext": false,
         "conceptId": "train-task"
@@ -967,14 +1016,14 @@
     "protectedNext": {
       "id": "train-record",
       "type": "table",
-      "height": 314.0,
+      "height": 314,
       "keepNext": false
     }
   },
   {
-    "page": 13,
+    "page": 14,
     "title": "",
-    "titleRole": "lesson",
+    "titleRole": "continuation",
     "sourcePages": [
       10,
       11
@@ -983,25 +1032,26 @@
       "file": "figures/class-7/science/review/transport-motion.png",
       "caption": "Travel times can be compared with distances."
     },
-    "end": 1415.0,
-    "fill": 100,
-    "breakReason": "Next heading: motion",
+    "end": 1355.5168935955621,
+    "fill": 95,
+    "breakReason": "Next body: Multiplying km/h by hours gives kilometres; dividing kilometres b",
     "blocks": [
       {
         "id": "train-record",
         "type": "table",
         "text": "A timetable record · illustrative data only",
         "top": 112,
-        "bottom": 426.0,
+        "bottom": 426,
         "before": 0,
-        "keepNext": false
+        "keepNext": false,
+        "conceptId": "train-record"
       },
       {
         "id": "train-evidence-0",
         "type": "body",
         "text": "Which train has the greatest average speed for your segment? Service names alone cannot answer this: stops, route conditions and the interval matter. Compare matching station pairs where possible. A short-segment result does not describe every journey.",
-        "top": 426.0,
-        "bottom": 490.0,
+        "top": 426,
+        "bottom": 490,
         "before": 0,
         "keepNext": false
       },
@@ -1009,8 +1059,8 @@
         "id": "train-evidence-1",
         "type": "body",
         "text": "Which train has the greatest average speed for your segment? Service names alone cannot answer this: stops, route conditions and the interval matter. Compare matching station pairs where possible. A short-segment result does not describe every journey.",
-        "top": 490.0,
-        "bottom": 570.0,
+        "top": 490,
+        "bottom": 570,
         "before": 0,
         "keepNext": false
       },
@@ -1018,8 +1068,8 @@
         "id": "relationships",
         "type": "heading",
         "text": "8.3.1 Distance, Speed and Time",
-        "top": 582.0,
-        "bottom": 640.0,
+        "top": 582,
+        "bottom": 640,
         "before": 12,
         "keepNext": false
       },
@@ -1027,8 +1077,8 @@
         "id": "relationships-intro-0",
         "type": "body",
         "text": "The speed relationship can be rearranged. Use a speed that applies to the whole interval: either a constant speed, or the average speed for that interval. Keep distance, time and speed units compatible.",
-        "top": 640.0,
-        "bottom": 752.0,
+        "top": 640,
+        "bottom": 752,
         "before": 0,
         "keepNext": false
       },
@@ -1036,8 +1086,8 @@
         "id": "distance-rule",
         "type": "equation",
         "text": "Distance = speed × time",
-        "top": 752.0,
-        "bottom": 849.0,
+        "top": 752,
+        "bottom": 849,
         "before": 0,
         "keepNext": false
       },
@@ -1045,55 +1095,64 @@
         "id": "time-rule",
         "type": "equation",
         "text": "Time = distance ÷ speed",
-        "top": 849.0,
-        "bottom": 946.0,
+        "top": 849,
+        "bottom": 946,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "interval-check-0",
-        "type": "body",
-        "text": "Multiplying km/h by hours gives kilometres; dividing kilometres by km/h gives hours. This unit check can catch an error caused by using minutes with a speed given per hour.",
-        "top": 946.0,
-        "bottom": 1058.0,
-        "before": 0,
-        "keepNext": false
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Travel times can be compared with distances.",
+        "artKey": "figures/class-7/science/review/transport-motion.png",
+        "top": 946,
+        "bottom": 1355.5168935955621
       }
     ],
     "protectedNext": {
-      "id": "motion",
-      "type": "heading",
-      "height": 58.0,
+      "id": "interval-check-0",
+      "type": "body",
+      "height": 112,
       "keepNext": false
     }
   },
   {
-    "page": 14,
-    "title": "8.4 Uniform and Non-uniform Motion",
-    "titleRole": "lesson",
+    "page": 15,
+    "title": "",
+    "titleRole": "continuation",
     "sourcePages": [
+      11,
       12,
       13
     ],
-    "end": 1189.0,
-    "fill": 83,
-    "breakReason": "Next figure: instrument-art",
+    "end": 1313,
+    "fill": 92,
+    "breakReason": "Next figure: Two instruments, two quantities: the dial indicates current speed",
     "blocks": [
+      {
+        "id": "interval-check-0",
+        "type": "body",
+        "text": "Multiplying km/h by hours gives kilometres; dividing kilometres by km/h gives hours. This unit check can catch an error caused by using minutes with a speed given per hour.",
+        "top": 112,
+        "bottom": 224,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "motion",
         "type": "heading",
         "text": "8.4 Uniform and Non-uniform Motion",
-        "top": 112,
-        "bottom": 170.0,
-        "before": 0,
+        "top": 236,
+        "bottom": 294,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "linear-0",
         "type": "body",
         "text": "Motion along a straight line is **linear motion**. Imagine a train leaving station A, gathering speed towards B, travelling steadily from B to C and slowing to stop at D. Its speed can change even though its track remains straight.",
-        "top": 170.0,
-        "bottom": 282.0,
+        "top": 294,
+        "bottom": 406,
         "before": 0,
         "keepNext": false
       },
@@ -1102,8 +1161,8 @@
         "type": "figure",
         "text": "A straight journey can contain different kinds of motion. The arrows indicate travel direction, not equal times or a distance scale.",
         "artKey": "train-stages",
-        "top": 282.0,
-        "bottom": 527.0,
+        "top": 406,
+        "bottom": 651,
         "before": 0,
         "keepNext": false
       },
@@ -1111,8 +1170,8 @@
         "id": "motion-comparison",
         "type": "table",
         "text": "Uniform and non-uniform linear motion",
-        "top": 527.0,
-        "bottom": 885.0,
+        "top": 651,
+        "bottom": 1009,
         "before": 0,
         "keepNext": false,
         "conceptId": "motion-comparison"
@@ -1121,8 +1180,8 @@
         "id": "instruments",
         "type": "table",
         "text": "Speedometer and odometer",
-        "top": 885.0,
-        "bottom": 1189.0,
+        "top": 1009,
+        "bottom": 1313,
         "before": 0,
         "keepNext": false,
         "conceptId": "instruments"
@@ -1136,16 +1195,16 @@
     }
   },
   {
-    "page": 15,
+    "page": 16,
     "title": "",
-    "titleRole": "lesson",
+    "titleRole": "continuation",
     "sourcePages": [
       12,
       13
     ],
-    "end": 1093.0,
-    "fill": 75,
-    "breakReason": "Next body: motion-table-reading-0",
+    "end": 1205,
+    "fill": 84,
+    "breakReason": "Next panel: Both trains cover 120 km between 10:00 and 11:00. Calculate each ",
     "blocks": [
       {
         "id": "instrument-art",
@@ -1162,7 +1221,7 @@
         "type": "heading",
         "text": "Reading motion from a table",
         "top": 447,
-        "bottom": 495.0,
+        "bottom": 495,
         "before": 12,
         "keepNext": false
       },
@@ -1170,23 +1229,33 @@
         "id": "motion-table",
         "type": "table",
         "text": "Distances from a common start · trains X and Y",
-        "top": 495.0,
-        "bottom": 1093.0,
+        "top": 495,
+        "bottom": 1093,
+        "before": 0,
+        "keepNext": false,
+        "conceptId": "motion-table"
+      },
+      {
+        "id": "motion-table-reading-0",
+        "type": "body",
+        "text": "X covers 20 km in each recorded interval; Y’s distances vary: 20, 15, 15, 25, 20 and 25 km. Y’s motion is therefore non-uniform. X’s record is consistent with uniform motion at this sampling interval, but cannot reveal changes between readings.",
+        "top": 1093,
+        "bottom": 1205,
         "before": 0,
         "keepNext": false
       }
     ],
     "protectedNext": {
-      "id": "motion-table-reading-0",
-      "type": "body",
-      "height": 112.0,
+      "id": "motion-pause",
+      "type": "panel",
+      "height": 316,
       "keepNext": false
     }
   },
   {
-    "page": 16,
+    "page": 17,
     "title": "",
-    "titleRole": "lesson",
+    "titleRole": "continuation",
     "sourcePages": [
       13,
       16
@@ -1195,25 +1264,16 @@
       "file": "figures/class-7/science/ch06/movement.png",
       "caption": "Different activities involve different patterns of motion."
     },
-    "end": 1188.0,
-    "fill": 83,
+    "end": 1336,
+    "fill": 94,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
-      {
-        "id": "motion-table-reading-0",
-        "type": "body",
-        "text": "X covers 20 km in each recorded interval; Y’s distances vary: 20, 15, 15, 25, 20 and 25 km. Y’s motion is therefore non-uniform. X’s record is consistent with uniform motion at this sampling interval, but cannot reveal changes between readings.",
-        "top": 112,
-        "bottom": 224.0,
-        "before": 0,
-        "keepNext": false
-      },
       {
         "id": "motion-pause",
         "type": "panel",
         "text": "Both trains cover 120 km between 10:00 and 11:00. Calculate each average speed. Can two journeys have the same average speed but different patterns of motion? Could train X stop briefly and then speed up between two readings? Explain why equal 10 min distances do not prove that its speed was constant at every instant. What extra evidence would help?",
-        "top": 224.0,
-        "bottom": 540.0,
+        "top": 112,
+        "bottom": 428,
         "before": 0,
         "keepNext": false,
         "conceptId": "motion-pause"
@@ -1222,8 +1282,8 @@
         "id": "everyday-motion-0",
         "type": "body",
         "text": "Non-uniform motion is common: a bus stops, a cyclist accelerates and a runner slows. Uniform motion is a useful idealisation for analysing a steady interval. When speed changes, average speed still describes the whole interval, but does not tell us the speed at each instant.",
-        "top": 540.0,
-        "bottom": 604.0,
+        "top": 428,
+        "bottom": 492,
         "before": 0,
         "keepNext": false
       },
@@ -1231,8 +1291,8 @@
         "id": "everyday-motion-1",
         "type": "body",
         "text": "Non-uniform motion is common: a bus stops, a cyclist accelerates and a runner slows. Uniform motion is a useful idealisation for analysing a steady interval. When speed changes, average speed still describes the whole interval, but does not tell us the speed at each instant.",
-        "top": 604.0,
-        "bottom": 684.0,
+        "top": 492,
+        "bottom": 572,
         "before": 0,
         "keepNext": false
       },
@@ -1240,8 +1300,8 @@
         "id": "time-questions-0",
         "type": "body",
         "text": "Clocks help us state when something happens and how long it lasts, from a fraction of a second to centuries. Questions about time also reach into cosmology and philosophy. Our measurements here concern observable intervals; whether time itself had a beginning is not settled by a classroom clock.",
-        "top": 684.0,
-        "bottom": 748.0,
+        "top": 572,
+        "bottom": 636,
         "before": 0,
         "keepNext": false
       },
@@ -1249,16 +1309,24 @@
         "id": "time-questions-1",
         "type": "body",
         "text": "Clocks help us state when something happens and how long it lasts, from a fraction of a second to centuries. Questions about time also reach into cosmology and philosophy. Our measurements here concern observable intervals; whether time itself had a beginning is not settled by a classroom clock.",
-        "top": 748.0,
-        "bottom": 828.0,
+        "top": 636,
+        "bottom": 716,
         "before": 0,
         "keepNext": false
+      },
+      {
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Different activities involve different patterns of motion.",
+        "artKey": "figures/class-7/science/ch06/movement.png",
+        "top": 716,
+        "bottom": 1336
       }
     ],
     "protectedNext": null
   },
   {
-    "page": 17,
+    "page": 18,
     "title": "Keywords",
     "titleRole": "reference",
     "sourcePages": [
@@ -1275,11 +1343,11 @@
       "file": "figures/class-7/science/review/sports-timing.png",
       "caption": "Choose suitable instruments to measure distance and time."
     },
-    "end": 1116,
-    "fill": 77
+    "end": 1165.5168935955621,
+    "fill": 81
   },
   {
-    "page": 18,
+    "page": 19,
     "title": "Summary",
     "titleRole": "reference",
     "sourcePages": [
@@ -1289,11 +1357,11 @@
       "file": "figures/class-6/science/ch05/park.png",
       "caption": "Objects around us show different kinds of motion."
     },
-    "end": 1280,
-    "fill": 90
+    "end": 1415,
+    "fill": 100
   },
   {
-    "page": 19,
+    "page": 20,
     "title": "Let Us Enhance Our Learning",
     "titleRole": "assessment",
     "sourcePages": [
@@ -1304,16 +1372,16 @@
       "file": "figures/class-6/science/ch05/bus.png",
       "caption": "Use both distance and time when comparing journeys."
     },
-    "end": 1112.0,
-    "fill": 77,
-    "breakReason": "Next question: q6",
+    "end": 1246,
+    "fill": 87,
+    "breakReason": "Next question: In this example, a galloping horse moves at 18 m/s and a train at",
     "blocks": [
       {
         "id": "assessment-heading",
         "type": "heading",
         "text": "Let Us Enhance Our Learning",
         "top": 112,
-        "bottom": 170.0,
+        "bottom": 170,
         "before": 0,
         "keepNext": false
       },
@@ -1321,8 +1389,8 @@
         "id": "assessment-intro-0",
         "type": "body",
         "text": "Use your notebook. Support each answer with evidence and explain any uncertainty.",
-        "top": 170.0,
-        "bottom": 250.0,
+        "top": 170,
+        "bottom": 250,
         "before": 0,
         "keepNext": false
       },
@@ -1330,8 +1398,8 @@
         "id": "q1",
         "type": "question",
         "text": "A car travels 150 m in 10 s. Calculate its average speed and express the answer in km/h.",
-        "top": 250.0,
-        "bottom": 344.0,
+        "top": 250,
+        "bottom": 344,
         "before": 0,
         "keepNext": false
       },
@@ -1339,8 +1407,8 @@
         "id": "q2",
         "type": "question",
         "text": "One runner completes 400 m in 50 s and another in 45 s. Who has the greater average speed, and by how much? Give the difference in m/s.",
-        "top": 344.0,
-        "bottom": 438.0,
+        "top": 344,
+        "bottom": 438,
         "before": 0,
         "keepNext": false
       },
@@ -1348,8 +1416,8 @@
         "id": "q3",
         "type": "question",
         "text": "A train averages 25 m/s over 360 km. How much time does it take? Express the answer in seconds and hours.",
-        "top": 438.0,
-        "bottom": 532.0,
+        "top": 438,
+        "bottom": 532,
         "before": 0,
         "keepNext": false
       },
@@ -1357,46 +1425,54 @@
         "id": "q4",
         "type": "question",
         "text": "A train travels 180 km in 3 h. Find its average speed in (i) km/h and (ii) m/s. (iii) How far would it travel in 4 h if it maintained that speed throughout?",
-        "top": 532.0,
-        "bottom": 626.0,
+        "top": 532,
+        "bottom": 626,
         "before": 0,
         "keepNext": false
       },
       {
-        "id": "q5",
-        "type": "question",
-        "text": "In this example, a galloping horse moves at 18 m/s and a train at 72 km/h. Which is faster, and by how much in m/s? Do not treat the horse’s given speed as a record for all horses.",
-        "top": 626.0,
-        "bottom": 752.0,
-        "before": 0,
-        "keepNext": false
+        "id": "page-illustration",
+        "type": "figure",
+        "text": "Use both distance and time when comparing journeys.",
+        "artKey": "figures/class-6/science/ch05/bus.png",
+        "top": 626,
+        "bottom": 1246
       }
     ],
     "protectedNext": {
-      "id": "q6",
+      "id": "q5",
       "type": "question",
-      "height": 126.0,
+      "height": 126,
       "keepNext": false
     }
   },
   {
-    "page": 20,
+    "page": 21,
     "title": "",
     "titleRole": "assessment",
     "sourcePages": [
       14,
       15
     ],
-    "end": 1210.0,
-    "fill": 84,
+    "end": 1336,
+    "fill": 94,
     "breakReason": "End of lesson before reference pages",
     "blocks": [
+      {
+        "id": "q5",
+        "type": "question",
+        "text": "In this example, a galloping horse moves at 18 m/s and a train at 72 km/h. Which is faster, and by how much in m/s? Do not treat the horse’s given speed as a record for all horses.",
+        "top": 112,
+        "bottom": 238,
+        "before": 0,
+        "keepNext": false
+      },
       {
         "id": "q6",
         "type": "question",
         "text": "Compare a car maintaining a steady speed on a straight highway with one changing speed on a straight section of a busy city road. Which motion is uniform? Does an empty road alone prove uniform motion?",
-        "top": 112,
-        "bottom": 238.0,
+        "top": 238,
+        "bottom": 364,
         "before": 0,
         "keepNext": false
       },
@@ -1404,8 +1480,8 @@
         "id": "q7",
         "type": "question",
         "text": "An object moves uniformly along a straight line. Reproduce this table in your notebook and complete the missing entries. Explain the pattern you used.",
-        "top": 238.0,
-        "bottom": 503.0,
+        "top": 364,
+        "bottom": 629,
         "before": 0,
         "keepNext": false
       },
@@ -1413,8 +1489,8 @@
         "id": "q8",
         "type": "question",
         "text": "A car travels 60 km in its first hour, 70 km in its second and 50 km in its third. Is its motion uniform? Justify your answer and calculate its average speed over all three hours.",
-        "top": 503.0,
-        "bottom": 629.0,
+        "top": 629,
+        "bottom": 755,
         "before": 0,
         "keepNext": false
       },
@@ -1422,8 +1498,8 @@
         "id": "q9",
         "type": "question",
         "text": "Which is more common in daily life: uniform or non-uniform motion? Give three examples from your experience. Specify the interval and path you are describing.",
-        "top": 629.0,
-        "bottom": 755.0,
+        "top": 755,
+        "bottom": 881,
         "before": 0,
         "keepNext": false
       },
@@ -1431,8 +1507,8 @@
         "id": "q10",
         "type": "question",
         "text": "Use the recorded distances below to decide whether the motion is uniform or non-uniform. Find the average speed over the entire 100 s. Explain why the average alone cannot describe every interval.",
-        "top": 755.0,
-        "bottom": 1052.0,
+        "top": 881,
+        "bottom": 1178,
         "before": 0,
         "keepNext": false
       },
@@ -1440,8 +1516,8 @@
         "id": "q11",
         "type": "question",
         "text": "A vehicle travels 2 km along a straight line. It covers the first 500 m at 10 m/s and the next 500 m at 5 m/s. What constant speed is needed over the remaining distance to finish the whole journey in 200 s? What is its average speed for the journey?",
-        "top": 1052.0,
-        "bottom": 1210.0,
+        "top": 1178,
+        "bottom": 1336,
         "before": 0,
         "keepNext": false
       }
@@ -1449,23 +1525,23 @@
     "protectedNext": null
   },
   {
-    "page": 21,
+    "page": 22,
     "title": "Explore Further",
     "titleRole": "projects",
     "sourcePages": [
       15,
       16
     ],
-    "end": 981.0,
-    "fill": 67,
-    "breakReason": "Next heading: project-repeat-head",
+    "end": 1217,
+    "fill": 85,
+    "breakReason": "Next heading: Observe a playground swing",
     "blocks": [
       {
         "id": "project-heading",
         "type": "heading",
         "text": "Explore Further",
         "top": 112,
-        "bottom": 170.0,
+        "bottom": 170,
         "before": 0,
         "keepNext": false
       },
@@ -1473,8 +1549,8 @@
         "id": "project-bowl-head",
         "type": "heading",
         "text": "Build a sinking-bowl clock",
-        "top": 182.0,
-        "bottom": 230.0,
+        "top": 182,
+        "bottom": 230,
         "before": 12,
         "keepNext": false
       },
@@ -1482,8 +1558,8 @@
         "id": "project-bowl",
         "type": "body",
         "text": "With an adult, float a small bowl with a tiny hole in a larger water vessel and time how long it takes to sink. Adults make all holes and smooth sharp edges. Dry and empty the bowl before each trial; use a stable tray. Try different bowl sizes or hole sizes, changing one variable at a time. Can repeated trials approach an interval of 24 min? Record the actual times and limits of the design.",
-        "top": 230.0,
-        "bottom": 406.0,
+        "top": 230,
+        "bottom": 406,
         "before": 0,
         "keepNext": true
       },
@@ -1492,8 +1568,8 @@
         "type": "figure",
         "text": "Water enters the small hole while the bowl floats. Measure the interval until sinking; reset for each trial.",
         "artKey": "bowl-clock",
-        "top": 406.0,
-        "bottom": 713.0,
+        "top": 406,
+        "bottom": 713,
         "before": 0,
         "keepNext": false
       },
@@ -1501,8 +1577,8 @@
         "id": "project-pulse-head",
         "type": "heading",
         "text": "Could your pulse be a clock?",
-        "top": 725.0,
-        "bottom": 773.0,
+        "top": 725,
+        "bottom": 773,
         "before": 12,
         "keepNext": false
       },
@@ -1510,8 +1586,8 @@
         "id": "project-pulse-0",
         "type": "body",
         "text": "With teacher guidance, willing friends can count their own resting pulse for one minute using a clock. Place the index and middle fingertips gently on the inside of the wrist below the thumb. Keep results private; nobody needs to participate or share a number. This is a timing exercise, not a health test. Repeat and discuss why the count may vary. Invent a story about using pulse beats to estimate time, and identify what would make the estimate uncertain.",
-        "top": 773.0,
-        "bottom": 837.0,
+        "top": 773,
+        "bottom": 837,
         "before": 0,
         "keepNext": false
       },
@@ -1519,8 +1595,8 @@
         "id": "project-pulse-1",
         "type": "body",
         "text": "With teacher guidance, willing friends can count their own resting pulse for one minute using a clock. Place the index and middle fingertips gently on the inside of the wrist below the thumb. Keep results private; nobody needs to participate or share a number. This is a timing exercise, not a health test. Repeat and discuss why the count may vary. Invent a story about using pulse beats to estimate time, and identify what would make the estimate uncertain.",
-        "top": 837.0,
-        "bottom": 901.0,
+        "top": 837,
+        "bottom": 901,
         "before": 0,
         "keepNext": false
       },
@@ -1528,46 +1604,26 @@
         "id": "project-pulse-2",
         "type": "body",
         "text": "With teacher guidance, willing friends can count their own resting pulse for one minute using a clock. Place the index and middle fingertips gently on the inside of the wrist below the thumb. Keep results private; nobody needs to participate or share a number. This is a timing exercise, not a health test. Repeat and discuss why the count may vary. Invent a story about using pulse beats to estimate time, and identify what would make the estimate uncertain.",
-        "top": 901.0,
-        "bottom": 981.0,
+        "top": 901,
+        "bottom": 981,
         "before": 0,
         "keepNext": false
-      }
-    ],
-    "protectedNext": {
-      "id": "project-repeat-head",
-      "type": "heading",
-      "height": 48.0,
-      "keepNext": false
-    }
-  },
-  {
-    "page": 22,
-    "title": "Improve a pendulum measurement",
-    "titleRole": "projects",
-    "sourcePages": [
-      15,
-      16
-    ],
-    "end": 1202.0,
-    "fill": 84,
-    "breakReason": "End of lesson before reference pages",
-    "blocks": [
+      },
       {
         "id": "project-repeat-head",
         "type": "heading",
         "text": "Improve a pendulum measurement",
-        "top": 112,
-        "bottom": 160.0,
-        "before": 0,
+        "top": 993,
+        "bottom": 1041,
+        "before": 12,
         "keepNext": false
       },
       {
         "id": "project-repeat-0",
         "type": "body",
         "text": "Revisit your repeated periods from the pendulum activity. Choose a likely source of variation—counting, reaction delay, length reading or release angle—and improve the procedure. Repeat without changing the other conditions. Compare the spread of the old and new readings. A smaller spread is useful, but does it prove the measured length and timing are correct?",
-        "top": 160.0,
-        "bottom": 224.0,
+        "top": 1041,
+        "bottom": 1105,
         "before": 0,
         "keepNext": false
       },
@@ -1575,26 +1631,46 @@
         "id": "project-repeat-1",
         "type": "body",
         "text": "Revisit your repeated periods from the pendulum activity. Choose a likely source of variation—counting, reaction delay, length reading or release angle—and improve the procedure. Repeat without changing the other conditions. Compare the spread of the old and new readings. A smaller spread is useful, but does it prove the measured length and timing are correct?",
-        "top": 224.0,
-        "bottom": 336.0,
+        "top": 1105,
+        "bottom": 1217,
         "before": 0,
         "keepNext": false
-      },
+      }
+    ],
+    "protectedNext": {
+      "id": "project-swing-head",
+      "type": "heading",
+      "height": 60,
+      "keepNext": false
+    }
+  },
+  {
+    "page": 23,
+    "title": "Observe a playground swing",
+    "titleRole": "projects",
+    "sourcePages": [
+      15,
+      16
+    ],
+    "end": 1236,
+    "fill": 86,
+    "breakReason": "End of lesson before reference pages",
+    "blocks": [
       {
         "id": "project-swing-head",
         "type": "heading",
         "text": "Observe a playground swing",
-        "top": 348.0,
-        "bottom": 396.0,
-        "before": 12,
+        "top": 112,
+        "bottom": 160,
+        "before": 0,
         "keepNext": false
       },
       {
         "id": "project-swing",
         "type": "body",
         "text": "With an adult’s permission, time 10 small oscillations of a safe playground swing. Repeat with different willing riders, without weighing them or sharing body measurements. Keep the posture and small release angle similar; do not pump or stand. Stay outside the swing’s path. Compare approved swings with different suspension lengths; never alter playground equipment. Calculate periods and discuss why a moving rider and seat are only an approximate pendulum.",
-        "top": 396.0,
-        "bottom": 604.0,
+        "top": 160,
+        "bottom": 368,
         "before": 0,
         "keepNext": true
       },
@@ -1603,8 +1679,8 @@
         "type": "figure",
         "text": "Observe from outside the swing’s path. An adult supervises; the rider stays seated and holds both chains.",
         "artKey": "figure",
-        "top": 604.0,
-        "bottom": 966.0,
+        "top": 368,
+        "bottom": 1000,
         "before": 0,
         "keepNext": false
       },
@@ -1612,8 +1688,8 @@
         "id": "project-olympics-head",
         "type": "heading",
         "text": "Compare Olympic race records",
-        "top": 978.0,
-        "bottom": 1026.0,
+        "top": 1012,
+        "bottom": 1060,
         "before": 12,
         "keepNext": false
       },
@@ -1621,8 +1697,8 @@
         "id": "project-olympics-0",
         "type": "body",
         "text": "Use official results for the two most recent completed Summer Olympic Games. Record the years, source links and winning times for the men’s and women’s 100 m, 200 m and 400 m races. Calculate distance divided by time for all twelve results. Compare average speeds across distances and editions. These averages do not reveal the fastest instant in a race or explain why a particular athlete won.",
-        "top": 1026.0,
-        "bottom": 1090.0,
+        "top": 1060,
+        "bottom": 1124,
         "before": 0,
         "keepNext": false
       },
@@ -1630,8 +1706,8 @@
         "id": "project-olympics-1",
         "type": "body",
         "text": "Use official results for the two most recent completed Summer Olympic Games. Record the years, source links and winning times for the men’s and women’s 100 m, 200 m and 400 m races. Calculate distance divided by time for all twelve results. Compare average speeds across distances and editions. These averages do not reveal the fastest instant in a race or explain why a particular athlete won.",
-        "top": 1090.0,
-        "bottom": 1202.0,
+        "top": 1124,
+        "bottom": 1236,
         "before": 0,
         "keepNext": false
       }

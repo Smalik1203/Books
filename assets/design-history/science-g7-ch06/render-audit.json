@@ -81,10 +81,10 @@
       "page": 2,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": -18.2,
-        "top": -1591.9,
+        "left": 87.5,
+        "top": 111.7,
         "right": 963,
-        "bottom": 1406.2
+        "bottom": 996
       },
       "blocks": [
         {
@@ -114,13 +114,6 @@
           "top": 394,
           "right": 963,
           "bottom": 996
-        },
-        {
-          "id": "growth-table",
-          "left": -18.2,
-          "top": -1591.9,
-          "right": 963,
-          "bottom": 1406.2
         }
       ],
       "collisions": [],
@@ -131,89 +124,74 @@
         "right": 114.70875759294636,
         "bottom": 1495.8362398167003
       },
-      "bottomGapMM": 1.6,
-      "occupiedPercent": 99.3,
-      "footerClearanceMM": 3.3
+      "bottomGapMM": 75.3,
+      "occupiedPercent": 67.8,
+      "footerClearanceMM": 3.3,
+      "shortPageException": {
+        "remainingMM": 71.3,
+        "protectedGroup": [
+          {
+            "id": "growth-table",
+            "type": "table",
+            "title": "Table 6.1  Organising the class discussion",
+            "height": 414
+          }
+        ],
+        "requiredMM": 74.4,
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
+      }
     },
     {
       "page": 3,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
+        "left": -18.2,
+        "top": -3144.9,
         "right": 963,
-        "bottom": 1281.4
+        "bottom": 1374.9
       },
       "blocks": [
         {
+          "id": "growth-table",
+          "left": -18.2,
+          "top": -3144.9,
+          "right": 963,
+          "bottom": 500.2
+        },
+        {
           "id": "growth-variation-0",
           "left": 87.5,
-          "top": 111,
+          "top": 525,
           "right": 963,
-          "bottom": 207.4
+          "bottom": 621.4
         },
         {
           "id": "physical-head",
           "left": 89,
-          "top": 236.5,
+          "top": 650.5,
           "right": 356.7,
-          "bottom": 276.3
+          "bottom": 690.3
         },
         {
           "id": "body-changes-0",
           "left": 89,
-          "top": 283,
+          "top": 697,
           "right": 963,
-          "bottom": 347.4
+          "bottom": 761.4
         },
         {
           "id": "body-changes-1",
           "left": 89,
-          "top": 357,
+          "top": 771,
           "right": 963,
-          "bottom": 453.4
+          "bottom": 867.4
         },
         {
           "id": "body-changes-2",
           "left": 89,
-          "top": 463,
+          "top": 877,
           "right": 963,
-          "bottom": 559.4
-        },
-        {
-          "id": "variation-respect-0",
-          "left": 89,
-          "top": 575,
-          "right": 963,
-          "bottom": 671.4
-        },
-        {
-          "id": "voice-head",
-          "left": 89,
-          "top": 700.5,
-          "right": 409.2,
-          "bottom": 740.3
-        },
-        {
-          "id": "voice-0",
-          "left": 87.5,
-          "top": 747,
-          "right": 963,
-          "bottom": 811.4
-        },
-        {
-          "id": "voice-1",
-          "left": 89,
-          "top": 811,
-          "right": 963,
-          "bottom": 875.4
-        },
-        {
-          "id": "adams-apple-0",
-          "left": 89,
-          "top": 891,
-          "right": 963,
-          "bottom": 955.4
+          "bottom": 973.4
         }
       ],
       "collisions": [],
@@ -224,82 +202,103 @@
         "right": 952.7086790303828,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 24,
-      "occupiedPercent": 89.7,
+      "bottomGapMM": 7.2,
+      "occupiedPercent": 96.9,
       "footerClearanceMM": 3.3
     },
     {
       "page": 4,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": -18.2,
-        "top": -4697.8,
+        "left": 87.5,
+        "top": 111,
         "right": 963,
-        "bottom": 1334.2
+        "bottom": 1301.4
       },
       "blocks": [
         {
-          "id": "adams-apple-1",
+          "id": "variation-respect-0",
           "left": 89,
           "top": 111,
           "right": 963,
-          "bottom": 175.4
+          "bottom": 207.4
+        },
+        {
+          "id": "voice-head",
+          "left": 89,
+          "top": 236.5,
+          "right": 409.2,
+          "bottom": 276.3
+        },
+        {
+          "id": "voice-0",
+          "left": 87.5,
+          "top": 283,
+          "right": 963,
+          "bottom": 347.4
+        },
+        {
+          "id": "voice-1",
+          "left": 89,
+          "top": 347,
+          "right": 963,
+          "bottom": 411.4
+        },
+        {
+          "id": "adams-apple-0",
+          "left": 89,
+          "top": 427,
+          "right": 963,
+          "bottom": 491.4
+        },
+        {
+          "id": "adams-apple-1",
+          "left": 89,
+          "top": 491,
+          "right": 963,
+          "bottom": 555.4
         },
         {
           "id": "neck-figure",
           "left": 87.5,
-          "top": 196,
+          "top": 576,
           "right": 887.7,
-          "bottom": 537.2
+          "bottom": 917.2
         },
         {
           "id": "skin-head",
           "left": 89,
-          "top": 570.5,
+          "top": 950.5,
           "right": 398.2,
-          "bottom": 610.3
+          "bottom": 990.3
         },
         {
           "id": "acne-0",
           "left": 87.5,
-          "top": 617,
+          "top": 997,
           "right": 963,
-          "bottom": 681.4
+          "bottom": 1061.4
         },
         {
           "id": "acne-1",
           "left": 89,
-          "top": 681,
+          "top": 1061,
           "right": 963,
-          "bottom": 745.4
+          "bottom": 1125.4
         },
         {
           "id": "acne-care-0",
           "left": 87.5,
-          "top": 761,
+          "top": 1141,
           "right": 963,
-          "bottom": 825.4
+          "bottom": 1205.4
         },
         {
           "id": "acne-care-1",
           "left": 89,
-          "top": 825,
+          "top": 1205,
           "right": 963,
-          "bottom": 921.4
-        },
-        {
-          "id": "puberty-head",
-          "left": 89,
-          "top": 950.5,
-          "right": 488.5,
-          "bottom": 990.3
-        },
-        {
-          "id": "puberty",
-          "left": -18.2,
-          "top": -4697.8,
-          "right": 963,
-          "bottom": 1334.2
+          "bottom": 1301.4
         }
       ],
       "collisions": [],
@@ -310,68 +309,54 @@
         "right": 114.70875759294636,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 14.5,
-      "occupiedPercent": 93.8,
+      "bottomGapMM": 20.4,
+      "occupiedPercent": 91.3,
       "footerClearanceMM": 3.3
     },
     {
       "page": 5,
       "viewBoxHeight": 1514,
       "contentBounds": {
-        "left": 87.5,
-        "top": 111,
+        "left": -18.2,
+        "top": -6250.8,
         "right": 963,
-        "bottom": 1111.4
+        "bottom": 1302.9
       },
       "blocks": [
         {
+          "id": "puberty-head",
+          "left": 89,
+          "top": 112.5,
+          "right": 488.5,
+          "bottom": 152.3
+        },
+        {
+          "id": "puberty",
+          "left": -18.2,
+          "top": -6250.8,
+          "right": 963,
+          "bottom": 496.2
+        },
+        {
           "id": "secondary-0",
           "left": 89,
-          "top": 111,
+          "top": 521,
           "right": 963,
-          "bottom": 175.4
+          "bottom": 585.4
         },
         {
           "id": "secondary-1",
           "left": 89,
-          "top": 175,
+          "top": 585,
           "right": 963,
-          "bottom": 239.4
+          "bottom": 649.4
         },
         {
           "id": "timing-pause",
           "left": 89,
-          "top": 256,
+          "top": 666,
           "right": 963,
-          "bottom": 486
-        },
-        {
-          "id": "reproductive-head",
-          "left": 89,
-          "top": 519.7,
-          "right": 606.2,
-          "bottom": 569.8
-        },
-        {
-          "id": "internal-0",
-          "left": 89,
-          "top": 577,
-          "right": 963,
-          "bottom": 641.4
-        },
-        {
-          "id": "internal-1",
-          "left": 89,
-          "top": 641,
-          "right": 963,
-          "bottom": 705.4
-        },
-        {
-          "id": "menstruation-0",
-          "left": 87.5,
-          "top": 721,
-          "right": 963,
-          "bottom": 785.4
+          "bottom": 896
         }
       ],
       "collisions": [],
@@ -382,108 +367,117 @@
         "right": 952.0183425255343,
         "bottom": 1495.8362398167
       },
-      "bottomGapMM": 54.5,
-      "occupiedPercent": 76.7,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 48.3,
-        "protectedGroup": [
-          {
-            "id": "menstruation-1",
-            "type": "body",
-            "title": "The uterus develops an inner lining. When pregnancy does not occur, some of this lining leaves the b",
-            "height": 80
-          },
-          {
-            "id": "cycle-figure",
-            "type": "figure",
-            "title": "Count a menstrual cycle from the first day of one period to the first day of the next. The interval ",
-            "height": 316
-          }
-        ],
-        "requiredMM": 71.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 20.1,
+      "occupiedPercent": 91.4,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 6,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 111.7,
         "right": 963,
-        "bottom": 1067.4
+        "bottom": 1333.4
       },
       "blocks": [
         {
+          "id": "reproductive-head",
+          "left": 89,
+          "top": 111.7,
+          "right": 606.2,
+          "bottom": 161.8
+        },
+        {
+          "id": "internal-0",
+          "left": 89,
+          "top": 169,
+          "right": 963,
+          "bottom": 233.4
+        },
+        {
+          "id": "internal-1",
+          "left": 89,
+          "top": 233,
+          "right": 963,
+          "bottom": 297.4
+        },
+        {
+          "id": "menstruation-0",
+          "left": 87.5,
+          "top": 313,
+          "right": 963,
+          "bottom": 377.4
+        },
+        {
           "id": "menstruation-1",
           "left": 89,
-          "top": 111,
+          "top": 377,
           "right": 963,
-          "bottom": 175.4
+          "bottom": 441.4
         },
         {
           "id": "cycle-figure",
           "left": 89,
-          "top": 207.4,
+          "top": 473.4,
           "right": 905.7,
-          "bottom": 487.2
+          "bottom": 753.2
         },
         {
           "id": "cycle-variation-0",
           "left": 87.5,
-          "top": 507,
+          "top": 773,
           "right": 963,
-          "bottom": 571.4
+          "bottom": 837.4
         },
         {
           "id": "cycle-variation-1",
           "left": 89,
-          "top": 571,
+          "top": 837,
           "right": 963,
-          "bottom": 635.4
+          "bottom": 901.4
         },
         {
           "id": "period-support-0",
           "left": 89,
-          "top": 651,
+          "top": 917,
           "right": 963,
-          "bottom": 715.4
+          "bottom": 981.4
         },
         {
           "id": "period-support-1",
           "left": 87.5,
-          "top": 715,
+          "top": 981,
           "right": 963,
-          "bottom": 779.4
+          "bottom": 1045.4
         },
         {
           "id": "menopause-0",
           "left": 89,
-          "top": 795,
+          "top": 1061,
           "right": 963,
-          "bottom": 859.4
+          "bottom": 1125.4
         },
         {
           "id": "menopause-1",
           "left": 89,
-          "top": 859,
+          "top": 1125,
           "right": 963,
-          "bottom": 923.4
+          "bottom": 1189.4
         },
         {
           "id": "myths-0",
           "left": 89,
-          "top": 939,
+          "top": 1205,
           "right": 963,
-          "bottom": 1003.4
+          "bottom": 1269.4
         },
         {
           "id": "myths-1",
           "left": 87.5,
-          "top": 1003,
+          "top": 1269,
           "right": 963,
-          "bottom": 1067.4
+          "bottom": 1333.4
         }
       ],
       "collisions": [],
@@ -494,46 +488,9 @@
         "right": 114.0184210880979,
         "bottom": 1495.836239816701
       },
-      "bottomGapMM": 62.4,
-      "occupiedPercent": 73.3,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 59.5,
-        "protectedGroup": [
-          {
-            "id": "period-pause",
-            "type": "panel",
-            "title": "A learner misses a school activity because there is no private place to change a pad. Someone says t",
-            "height": 284
-          },
-          {
-            "id": "feelings-head",
-            "type": "heading",
-            "title": "6.3  Feelings and Behaviour",
-            "height": 58
-          },
-          {
-            "id": "feelings-0",
-            "type": "body",
-            "title": "Growing up may bring stronger feelings, changing interests, a wish for independence or increased sen",
-            "height": 64
-          },
-          {
-            "id": "feelings-1",
-            "type": "body",
-            "title": "Growing up may bring stronger feelings, changing interests, a wish for independence or increased sen",
-            "height": 80
-          },
-          {
-            "id": "feelings-task",
-            "type": "activity",
-            "title": "1. Discuss fictional situations: being left out of a game, excited about a hobby or upset after crit",
-            "height": 328
-          }
-        ],
-        "requiredMM": 148.4,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 14.7,
+      "occupiedPercent": 93.7,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 7,
@@ -542,7 +499,7 @@
         "left": 89,
         "top": 112,
         "right": 963,
-        "bottom": 1263.4
+        "bottom": 1322.9
       },
       "blocks": [
         {
@@ -589,8 +546,8 @@
         "right": 952.7086790303828,
         "bottom": 1495.8362398166992
       },
-      "bottomGapMM": 27.2,
-      "occupiedPercent": 88.4,
+      "bottomGapMM": 16.5,
+      "occupiedPercent": 92.9,
       "footerClearanceMM": 3.3
     },
     {
@@ -600,7 +557,7 @@
         "left": -18.2,
         "top": -10909.7,
         "right": 963,
-        "bottom": 1219.4
+        "bottom": 1345.4
       },
       "blocks": [
         {
@@ -616,20 +573,6 @@
           "top": 637,
           "right": 963,
           "bottom": 733.4
-        },
-        {
-          "id": "feelings-help-0",
-          "left": 89,
-          "top": 749,
-          "right": 963,
-          "bottom": 813.4
-        },
-        {
-          "id": "feelings-help-1",
-          "left": 89,
-          "top": 813,
-          "right": 963,
-          "bottom": 877.4
         }
       ],
       "collisions": [],
@@ -640,104 +583,75 @@
         "right": 114.0184210880979,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 35.1,
-      "occupiedPercent": 85,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 28.9,
-        "protectedGroup": [
-          {
-            "id": "wellbeing-head",
-            "type": "heading",
-            "title": "6.4  Caring for Health and Well-being",
-            "height": 58
-          },
-          {
-            "id": "wellbeing-0",
-            "type": "body",
-            "title": "Food, hygiene, movement, relationships and access to help contribute to well-being. Healthy habits t",
-            "height": 112
-          },
-          {
-            "id": "nutrition-head",
-            "type": "heading",
-            "title": "6.4.1  Meeting Nutritional Needs",
-            "height": 48
-          },
-          {
-            "id": "nutrition-0",
-            "type": "body",
-            "title": "A growing body needs a varied diet. Carbohydrates and fats supply energy; proteins support growth an",
-            "height": 64
-          },
-          {
-            "id": "nutrition-1",
-            "type": "body",
-            "title": "A growing body needs a varied diet. Carbohydrates and fats supply energy; proteins support growth an",
-            "height": 80
-          },
-          {
-            "id": "food-task",
-            "type": "activity",
-            "title": "1. List affordable local foods and seasonal choices in your notebook. Do not compare classmates’ lun",
-            "height": 328
-          }
-        ],
-        "requiredMM": 126.1,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 12.5,
+      "occupiedPercent": 94.7,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 9,
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111.7,
+        "top": 111,
         "right": 963,
-        "bottom": 1139.4
+        "bottom": 1378.6
       },
       "blocks": [
         {
+          "id": "feelings-help-0",
+          "left": 89,
+          "top": 111,
+          "right": 963,
+          "bottom": 175.4
+        },
+        {
+          "id": "feelings-help-1",
+          "left": 89,
+          "top": 175,
+          "right": 963,
+          "bottom": 239.4
+        },
+        {
           "id": "wellbeing-head",
           "left": 89,
-          "top": 111.7,
+          "top": 267.7,
           "right": 691.8,
-          "bottom": 161.8
+          "bottom": 317.8
         },
         {
           "id": "wellbeing-0",
           "left": 87.5,
-          "top": 169,
+          "top": 325,
           "right": 963,
-          "bottom": 265.4
+          "bottom": 421.4
         },
         {
           "id": "nutrition-head",
           "left": 89,
-          "top": 294.5,
+          "top": 450.5,
           "right": 507.3,
-          "bottom": 334.3
+          "bottom": 490.3
         },
         {
           "id": "nutrition-0",
           "left": 87.5,
-          "top": 341,
+          "top": 497,
           "right": 963,
-          "bottom": 405.4
+          "bottom": 561.4
         },
         {
           "id": "nutrition-1",
           "left": 87.5,
-          "top": 405,
+          "top": 561,
           "right": 963,
-          "bottom": 469.4
+          "bottom": 625.4
         },
         {
           "id": "food-task",
           "left": 89,
-          "top": 486,
+          "top": 642,
           "right": 963,
-          "bottom": 792
+          "bottom": 948
         }
       ],
       "collisions": [],
@@ -748,22 +662,9 @@
         "right": 952.0183425255343,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 49.5,
-      "occupiedPercent": 78.8,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 43.3,
-        "protectedGroup": [
-          {
-            "id": "food-table",
-            "type": "table",
-            "title": "Table 6.3  Foods, nutrients and their roles",
-            "height": 606
-          }
-        ],
-        "requiredMM": 108.9,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 6.5,
+      "occupiedPercent": 97.2,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 10,
@@ -772,7 +673,7 @@
         "left": -18.2,
         "top": -14015.6,
         "right": 963,
-        "bottom": 1187.4
+        "bottom": 1388.5
       },
       "blocks": [
         {
@@ -795,6 +696,20 @@
           "top": 781,
           "right": 963,
           "bottom": 845.4
+        },
+        {
+          "id": "meal-example-0",
+          "left": 87.5,
+          "top": 861,
+          "right": 963,
+          "bottom": 925.4
+        },
+        {
+          "id": "meal-example-1",
+          "left": 89,
+          "top": 925,
+          "right": 963,
+          "bottom": 1021.4
         }
       ],
       "collisions": [],
@@ -805,64 +720,9 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 40.9,
-      "occupiedPercent": 82.5,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 34.7,
-        "protectedGroup": [
-          {
-            "id": "meal-example-0",
-            "type": "body",
-            "title": "For example, a meal with roti or rice, dal, vegetables and curd combines foods with different contri",
-            "height": 64
-          },
-          {
-            "id": "meal-example-1",
-            "type": "body",
-            "title": "For example, a meal with roti or rice, dal, vegetables and curd combines foods with different contri",
-            "height": 112
-          },
-          {
-            "id": "anaemia-0",
-            "type": "body",
-            "title": "Too little iron or vitamin B12 can contribute to **anaemia**, in which the blood has too few healthy",
-            "height": 64
-          },
-          {
-            "id": "anaemia-1",
-            "type": "body",
-            "title": "Too little iron or vitamin B12 can contribute to **anaemia**, in which the blood has too few healthy",
-            "height": 80
-          },
-          {
-            "id": "nutrition-schemes-0",
-            "type": "body",
-            "title": "Find out how your school or local health centre supports good nutrition. India’s Weekly Iron and Fol",
-            "height": 64
-          },
-          {
-            "id": "nutrition-schemes-1",
-            "type": "body",
-            "title": "Find out how your school or local health centre supports good nutrition. India’s Weekly Iron and Fol",
-            "height": 112
-          },
-          {
-            "id": "hodgkin-0",
-            "type": "body",
-            "title": "Dorothy Crowfoot Hodgkin used X-ray studies to work out the structures of important molecules, inclu",
-            "height": 64
-          },
-          {
-            "id": "hodgkin-1",
-            "type": "body",
-            "title": "Dorothy Crowfoot Hodgkin used X-ray studies to work out the structures of important molecules, inclu",
-            "height": 112
-          }
-        ],
-        "requiredMM": 120.7,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 4.8,
+      "occupiedPercent": 98,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 11,
@@ -871,64 +731,71 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1109.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
-          "id": "meal-example-0",
+          "id": "anaemia-0",
           "left": 87.5,
           "top": 111,
           "right": 963,
           "bottom": 175.4
         },
         {
-          "id": "meal-example-1",
+          "id": "anaemia-1",
           "left": 89,
           "top": 175,
           "right": 963,
-          "bottom": 271.4
-        },
-        {
-          "id": "anaemia-0",
-          "left": 87.5,
-          "top": 287,
-          "right": 963,
-          "bottom": 351.4
-        },
-        {
-          "id": "anaemia-1",
-          "left": 89,
-          "top": 351,
-          "right": 963,
-          "bottom": 415.4
+          "bottom": 239.4
         },
         {
           "id": "nutrition-schemes-0",
           "left": 87.5,
+          "top": 255,
+          "right": 963,
+          "bottom": 319.4
+        },
+        {
+          "id": "nutrition-schemes-1",
+          "left": 89,
+          "top": 319,
+          "right": 963,
+          "bottom": 415.4
+        },
+        {
+          "id": "hodgkin-0",
+          "left": 89,
           "top": 431,
           "right": 963,
           "bottom": 495.4
         },
         {
-          "id": "nutrition-schemes-1",
+          "id": "hodgkin-1",
           "left": 89,
           "top": 495,
           "right": 963,
           "bottom": 591.4
         },
         {
-          "id": "hodgkin-0",
+          "id": "hygiene-head",
           "left": 89,
-          "top": 607,
-          "right": 963,
-          "bottom": 671.4
+          "top": 620.5,
+          "right": 586.8,
+          "bottom": 660.3
         },
         {
-          "id": "hodgkin-1",
+          "id": "body-hygiene-0",
           "left": 89,
-          "top": 671,
+          "top": 667,
           "right": 963,
-          "bottom": 767.4
+          "bottom": 731.4
+        },
+        {
+          "id": "body-hygiene-1",
+          "left": 89,
+          "top": 731,
+          "right": 963,
+          "bottom": 827.4
         }
       ],
       "collisions": [],
@@ -939,40 +806,9 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161749
       },
-      "bottomGapMM": 54.9,
-      "occupiedPercent": 76.5,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 48.7,
-        "protectedGroup": [
-          {
-            "id": "hygiene-head",
-            "type": "heading",
-            "title": "6.4.2  Personal and Menstrual Hygiene",
-            "height": 48
-          },
-          {
-            "id": "body-hygiene-0",
-            "type": "body",
-            "title": "Bathe regularly, change into clean clothes and wash hands at appropriate times. Gently clean areas w",
-            "height": 64
-          },
-          {
-            "id": "body-hygiene-1",
-            "type": "body",
-            "title": "Bathe regularly, change into clean clothes and wash hands at appropriate times. Gently clean areas w",
-            "height": 112
-          },
-          {
-            "id": "hygiene-art",
-            "type": "figure",
-            "title": "Clean pads, washing supplies and a covered bin are parts of practical menstrual hygiene support.",
-            "height": 362
-          }
-        ],
-        "requiredMM": 105.3,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 12,
@@ -981,64 +817,50 @@
         "left": -18.2,
         "top": -17121.5,
         "right": 963,
-        "bottom": 1271.4
+        "bottom": 1381.4
       },
       "blocks": [
         {
-          "id": "hygiene-head",
-          "left": 89,
-          "top": 112.5,
-          "right": 586.8,
-          "bottom": 152.3
-        },
-        {
-          "id": "body-hygiene-0",
-          "left": 89,
-          "top": 159,
-          "right": 963,
-          "bottom": 223.4
-        },
-        {
-          "id": "body-hygiene-1",
-          "left": 89,
-          "top": 223,
-          "right": 963,
-          "bottom": 319.4
-        },
-        {
           "id": "hygiene-art",
           "left": 89,
-          "top": 336,
-          "right": 849.7,
-          "bottom": 671.2
+          "top": 112,
+          "right": 931,
+          "bottom": 717.2
         },
         {
           "id": "pad-comparison",
           "left": -18.2,
           "top": -17121.5,
           "right": 963,
-          "bottom": 1036
+          "bottom": 1082
         },
         {
           "id": "hygiene-access-0",
           "left": 87.5,
-          "top": 1063,
+          "top": 1109,
           "right": 963,
-          "bottom": 1127.4
+          "bottom": 1173.4
         },
         {
           "id": "hygiene-access-1",
           "left": 89,
-          "top": 1127,
+          "top": 1173,
           "right": 963,
-          "bottom": 1191.4
+          "bottom": 1237.4
         },
         {
           "id": "pad-environment-0",
           "left": 89,
-          "top": 1207,
+          "top": 1253,
           "right": 963,
-          "bottom": 1271.4
+          "bottom": 1317.4
+        },
+        {
+          "id": "pad-environment-1",
+          "left": 89,
+          "top": 1317,
+          "right": 963,
+          "bottom": 1381.4
         }
       ],
       "collisions": [],
@@ -1049,8 +871,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 25.8,
-      "occupiedPercent": 89,
+      "bottomGapMM": 6,
+      "occupiedPercent": 97.4,
       "footerClearanceMM": 3.3
     },
     {
@@ -1058,87 +880,80 @@
       "viewBoxHeight": 1514,
       "contentBounds": {
         "left": 87.5,
-        "top": 111,
+        "top": 112.5,
         "right": 963,
-        "bottom": 1274.2
+        "bottom": 1388.2
       },
       "blocks": [
         {
-          "id": "pad-environment-1",
-          "left": 89,
-          "top": 111,
-          "right": 963,
-          "bottom": 175.4
-        },
-        {
           "id": "support-head",
           "left": 89,
-          "top": 204.5,
+          "top": 112.5,
           "right": 472.8,
-          "bottom": 244.3
+          "bottom": 152.3
         },
         {
           "id": "support-programmes-0",
           "left": 89,
-          "top": 251,
+          "top": 159,
           "right": 963,
-          "bottom": 315.4
+          "bottom": 223.4
         },
         {
           "id": "support-programmes-1",
           "left": 89,
-          "top": 325,
+          "top": 233,
           "right": 963,
-          "bottom": 421.4
+          "bottom": 329.4
         },
         {
           "id": "support-programmes-2",
           "left": 89,
-          "top": 431,
+          "top": 339,
           "right": 963,
-          "bottom": 495.4
+          "bottom": 403.4
         },
         {
           "id": "support-programmes-3",
           "left": 89,
-          "top": 505,
+          "top": 413,
           "right": 963,
-          "bottom": 601.4
+          "bottom": 509.4
         },
         {
           "id": "support-access-0",
           "left": 89,
-          "top": 617,
+          "top": 525,
           "right": 963,
-          "bottom": 713.4
+          "bottom": 621.4
         },
         {
           "id": "movement-head",
           "left": 89,
-          "top": 742.5,
+          "top": 650.5,
           "right": 420.9,
-          "bottom": 782.3
+          "bottom": 690.3
         },
         {
           "id": "movement-0",
           "left": 89,
-          "top": 789,
+          "top": 697,
           "right": 963,
-          "bottom": 853.4
+          "bottom": 761.4
         },
         {
           "id": "movement-1",
           "left": 89,
-          "top": 853,
+          "top": 761,
           "right": 963,
-          "bottom": 949.4
+          "bottom": 857.4
         },
         {
           "id": "movement-art",
           "left": 87.5,
-          "top": 966,
-          "right": 796.6,
-          "bottom": 1274.2
+          "top": 874,
+          "right": 883,
+          "bottom": 1388.2
         }
       ],
       "collisions": [],
@@ -1149,8 +964,8 @@
         "right": 959.7252125241284,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 25.3,
-      "occupiedPercent": 89.2,
+      "bottomGapMM": 4.8,
+      "occupiedPercent": 97.9,
       "footerClearanceMM": 3.3
     },
     {
@@ -1160,7 +975,7 @@
         "left": 87.5,
         "top": 111,
         "right": 963,
-        "bottom": 1237.4
+        "bottom": 1398.4
       },
       "blocks": [
         {
@@ -1230,15 +1045,15 @@
           "id": "support-art",
           "left": 87.5,
           "top": 780,
-          "right": 834.8,
-          "bottom": 1115.2
+          "right": 849.2,
+          "bottom": 1276.2
         },
         {
           "id": "online-help-0",
           "left": 87.5,
-          "top": 1141,
+          "top": 1302,
           "right": 963,
-          "bottom": 1237.4
+          "bottom": 1398.4
         }
       ],
       "collisions": [],
@@ -1249,22 +1064,9 @@
         "right": 121.72533603047485,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 31.9,
-      "occupiedPercent": 86.4,
-      "footerClearanceMM": 3.3,
-      "shortPageException": {
-        "remainingMM": 28.9,
-        "protectedGroup": [
-          {
-            "id": "digital-task",
-            "type": "activity",
-            "title": "1. Design a group poster or pamphlet about responsible social-media behaviour. Use fictional example",
-            "height": 360
-          }
-        ],
-        "requiredMM": 64.7,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
-      }
+      "bottomGapMM": 3,
+      "occupiedPercent": 98.7,
+      "footerClearanceMM": 3.3
     },
     {
       "page": 15,
@@ -1273,7 +1075,7 @@
         "left": -18.2,
         "top": -21780.4,
         "right": 963,
-        "bottom": 1323.4
+        "bottom": 1382.9
       },
       "blocks": [
         {
@@ -1299,8 +1101,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 16.5,
-      "occupiedPercent": 93,
+      "bottomGapMM": 5.8,
+      "occupiedPercent": 97.5,
       "footerClearanceMM": 3.3
     },
     {
@@ -1310,7 +1112,7 @@
         "left": 86.1,
         "top": 112,
         "right": 963,
-        "bottom": 1181.4
+        "bottom": 1240.9
       },
       "blocks": [
         {
@@ -1378,11 +1180,11 @@
         "right": 121.03684222072395,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 42,
-      "occupiedPercent": 82.1,
+      "bottomGapMM": 31.3,
+      "occupiedPercent": 86.6,
       "footerClearanceMM": 3.3,
       "shortPageException": {
-        "remainingMM": 35.8,
+        "remainingMM": 26.9,
         "protectedGroup": [
           {
             "id": "smoke-figure",
@@ -1392,7 +1194,7 @@
           }
         ],
         "requiredMM": 63.6,
-        "reason": "Protected activities, figures, tables and complete explanatory paragraphs are retained in teaching order. The compositor minimises page count, then balances lower margins without changing type, spacing or illustration size."
+        "reason": "The following protected unit and intervening prose exceed the remaining space. The compositor balances the break within that prose while keeping the unit whole; paragraph spacing is unchanged."
       }
     },
     {
@@ -1509,7 +1311,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1145.4
+        "bottom": 1390.4
       },
       "blocks": [],
       "collisions": [],
@@ -1520,8 +1322,8 @@
         "right": 121.03684222072395,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 48.4,
-      "occupiedPercent": 79.3,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1531,7 +1333,7 @@
         "left": 89,
         "top": 111.7,
         "right": 963,
-        "bottom": 1373.4
+        "bottom": 1390.4
       },
       "blocks": [],
       "collisions": [],
@@ -1542,8 +1344,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.8355207161767
       },
-      "bottomGapMM": 7.5,
-      "occupiedPercent": 96.8,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     },
     {
@@ -1625,7 +1427,7 @@
         "left": 79.8,
         "top": 111,
         "right": 963,
-        "bottom": 1259.4
+        "bottom": 1318.9
       },
       "blocks": [
         {
@@ -1672,8 +1474,8 @@
         "right": 959.0367636581603,
         "bottom": 1495.835520716173
       },
-      "bottomGapMM": 28,
-      "occupiedPercent": 88.1,
+      "bottomGapMM": 17.3,
+      "occupiedPercent": 92.6,
       "footerClearanceMM": 3.3
     },
     {
@@ -1683,7 +1485,7 @@
         "left": 87.5,
         "top": 111.7,
         "right": 963,
-        "bottom": 1235.4
+        "bottom": 1390.4
       },
       "blocks": [
         {
@@ -1772,8 +1574,8 @@
         "right": 121.72533603047485,
         "bottom": 1495.8355207161803
       },
-      "bottomGapMM": 32.3,
-      "occupiedPercent": 86.2,
+      "bottomGapMM": 4.4,
+      "occupiedPercent": 98.1,
       "footerClearanceMM": 3.3
     }
   ]

@@ -4,13 +4,15 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 const catalog=JSON.parse(fs.readFileSync(new URL('../assets/design-history/science-page-images/catalog.json',import.meta.url),'utf8'));
 const reviewed=Object.assign({},...['science-g7-image-repetition','science-g6-format-rollout'].map(dir=>JSON.parse(fs.readFileSync(new URL(`../assets/design-history/${dir}/page-art.json`,import.meta.url),'utf8'))));
+Object.assign(reviewed,JSON.parse(fs.readFileSync(new URL('../assets/design-history/science-g7-layout-review/page-art.json',import.meta.url),'utf8')));
 const hashes=new Map();
 const imageSizes=JSON.parse(fs.readFileSync(new URL('../assets/design-history/science-g6-format-rollout/image-sizes.json',import.meta.url),'utf8'));
+const class7ImageSizes=JSON.parse(fs.readFileSync(new URL('../assets/design-history/science-g7-layout-review/image-sizes.json',import.meta.url),'utf8'));
 function assetHash(file){
  if(!hashes.has(file))hashes.set(file,createHash('sha256').update(fs.readFileSync(new URL('../'+file,import.meta.url))).digest('hex'));
  return hashes.get(file);
 }
-// Reserve a minimum figure area before pagination; Class 6 may enlarge it into spare space.
+// Reserve a minimum figure area before pagination; Classes 6 and 7 may enlarge it into spare space.
 export const pageImageReserve=360;
 export function hasContentImage(html){
  return /data-instructional-figure="[^"]+"/.test(String(html)) || [...String(html).matchAll(/<(?:image|img)\b[^>]*(?:href|src)="([^"]+)"/g)].some(m=>!/(?:icon|cues\/|think-it-through)/i.test(m[1]));
@@ -43,20 +45,23 @@ export function pageIllustration(html,grade,chapter,{commit=false,availableHeigh
  }
  if(!choice)throw Error(`No unused, nonconsecutive illustration available for ${key} (${[...anchors].join(', ')||plain.slice(0,180)}); author another subject-specific figure.`);
  if(commit){state.used.set(choice.file,(state.used.get(choice.file)||0)+1);state.last=choice.file;state.hashes.set(assetHash(choice.file),'supplement');selections.set(key,state);}
+ return renderPageIllustration(choice,grade,availableHeight);
+}
+export function renderPageIllustration(choice,grade,availableHeight=pageImageReserve){
  const caption=choice.caption.split('|');
  let width=720,artHeight=280,captionY=318,height=pageImageReserve;
- if(Number(grade)===6){
-  const size=imageSizes[choice.file];
+ if([6,7].includes(Number(grade))){
+  const size=(Number(grade)===6?imageSizes:class7ImageSizes)[choice.file];
   if(!size)throw Error('Missing reviewed image dimensions: '+choice.file);
-  const ratio=size[0]/size[1];
-  width=824;artHeight=Math.min(540,availableHeight-80,width/ratio);
-  width=Math.min(width,artHeight*ratio);captionY=artHeight+48;height=artHeight+80;
+  const ratio=size[0]/size[1],captionSpace=Number(grade)===7&&caption.length>1?88:80;
+  width=824;artHeight=Math.min(540,availableHeight-captionSpace,width/ratio);
+  width=Math.min(width,artHeight*ratio);captionY=artHeight+48;height=artHeight+captionSpace;
  }
  const markup=`<g data-page-illustration="${escape(choice.file)}"><image class="science-illustration" href="../../${choice.file}" x="${526-width/2}" y="10" width="${width}" height="${artHeight}" preserveAspectRatio="xMidYMid meet"><title>${escape(caption.join(' '))}</title></image><text class="se-caption" x="526" y="${captionY}" text-anchor="middle">${caption.map((s,i)=>`<tspan x="526"${i?' dy="27"':''}>${escape(s)}</tspan>`).join('')}</text></g>`;
- return {html:markup,height,file:choice.file,caption:caption.join(' '),matchScore:best};
+ return {html:markup,height,file:choice.file,caption:caption.join(' ')};
 }
 export function completeIllustratedPage(page,grade,chapter){
- if(Number(grade)===6&&page.blocks?.length){
+ if([6,7].includes(Number(grade))&&page.blocks?.length){
   const last=page.blocks.at(-1),images=[...last.html.matchAll(/<image\b[^>]*>/g)];
   if(last.type==='figure'&&images.length===1&&!/<(?:path|line|rect|polygon|circle)\b/.test(last.html)){
    const tag=images[0][0],value=name=>Number(tag.match(new RegExp(`\\b${name}="([\\d.]+)"`))?.[1]);

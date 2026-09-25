@@ -20,10 +20,11 @@ export function completeChapter1Page(page){
  if(!key)throw Error('Author a meaningful Chapter 1 illustration for '+page.title+' ('+ids.join(', ')+')');
  const file=`figures/class-7/science/ch01-v2/${key}.png`,alt=chapter1PageArt[key],top=page.end;
  if(top+pageImageReserve>1415)throw Error('Chapter 1 illustration exceeds its reserved area');
+ const height=Math.min(440,1415-top-32),width=824;
  // The image is sufficiently self-explanatory; accessibility text stays in title.
  // Do not print an extra generic identification sentence beneath it.
- page.parts+=`<g transform="translate(0 ${top})"><g data-page-illustration="${file}"><image class="science-illustration" href="../../${file}" x="166" y="10" width="720" height="280" preserveAspectRatio="xMidYMid meet"><title>${alt}</title></image></g></g>`;
- page.end+=pageImageReserve;page.pageIllustration={file,caption:'',alt};
+ page.parts+=`<g transform="translate(0 ${top})"><g data-page-illustration="${file}"><image class="science-illustration" href="../../${file}" x="114" y="10" width="${width}" height="${height}" preserveAspectRatio="xMidYMid meet"><title>${alt}</title></image></g></g>`;
+ page.end+=height+32;page.pageIllustration={file,caption:'',alt};
  if(page.blockAudit)page.blockAudit.push({id:'page-illustration',type:'figure',text:'',artKey:file,top,bottom:page.end});
  return page;
 }

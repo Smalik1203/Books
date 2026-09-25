@@ -1,6 +1,7 @@
 // Finish word-space placement against the browser's actual glyph bounds.
 // Canvas advance widths alone miss the small overhang on letters such as f.
 import fs from 'node:fs/promises';
+import {writeScienceSource} from './write-science-source.mjs';
 import path from 'node:path';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
@@ -42,6 +43,6 @@ export async function measureChapter1Justification(){
  for(let p=0;p<files.length;p++){
   let i=0;const after=sources[p].replace(/<text\b[^>]*data-prose-align="justify"[^>]*>[\s\S]*?<\/text>/g,()=>result[p][i++]);
   if(i!==result[p].length)throw Error('Word-space text count mismatch');
-  if(after!==sources[p])await fs.writeFile(dir+'/'+files[p],after);
+  if(after!==sources[p])await writeScienceSource(dir+'/'+files[p],after);
  }
 }

@@ -35,7 +35,7 @@ onload=async()=>{
    }
    return result;
   };
-  const union=els=>{const b=els.map(box);return {left:Math.min(...b.map(b=>b.left)),top:Math.min(...b.map(b=>b.top)),right:Math.max(...b.map(b=>b.right)),bottom:Math.max(...b.map(b=>b.bottom))};};
+  const union=els=>{const b=els.filter(e=>!e.closest('defs,clipPath')).map(box);return {left:Math.min(...b.map(b=>b.left)),top:Math.min(...b.map(b=>b.top)),right:Math.max(...b.map(b=>b.right)),bottom:Math.max(...b.map(b=>b.bottom))};};
   const content=[...svg.querySelectorAll('text,image,rect,line,path,ellipse')].filter(e=>!e.closest('.v2-header,.v2-footer'));
   const blocks=[...svg.querySelectorAll('.v2-reading-block')].map(e=>({id:e.dataset.block,...union([...e.querySelectorAll('text,image,rect,line,path,ellipse')])}));
   // SVG client boxes include the font's unused ascender/descender allowance.

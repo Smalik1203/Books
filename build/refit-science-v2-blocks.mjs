@@ -1,7 +1,7 @@
 // Refit the lesson's authored blocks, retaining exact type and artwork sizes.
 // The opener and dedicated reference pages are excluded by the caller.
 import {hasContentImage} from './science-page-illustrations.mjs';
-export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false}={}){
+export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false,minLastHeight=320}={}){
  const top=112,bottom=1415,capacity=bottom-top;
  const blocks=plans.flatMap(p=>p.blocks).map((b,i)=>({...b,id:b.atomId||`reading-${i}`,before:b.type==='heading'?12:0,h:b.h+(b.type==='heading'?12:0)}));
  const n=blocks.length,prefix=[0],images=[0];
@@ -11,7 +11,7 @@ export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false}={}){
   images.push(images.at(-1)+(hasContentImage(b.html)?1:0));
  }
  function legal(start,end){
-  if(frontLoad&&end===n&&start>0&&prefix[end]-prefix[start]<320)return false;
+  if(frontLoad&&end===n&&start>0&&prefix[end]-prefix[start]<minLastHeight)return false;
   if(blocks[start].type==='rule')return false;
   const last=blocks[end-1],next=blocks[end];
   if(last.type==='heading')return false;
@@ -40,7 +40,10 @@ export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false}={}){
     (frontLoad ? proposal.gap<best[start].gap || proposal.gap===best[start].gap&&proposal.cost<best[start].cost : proposal.cost<best[start].cost)))best[start]=proposal;
   }
  }
- if(!best[0])throw Error('V2 blocks cannot be fitted without dividing a protected component.');
+ if(!best[0]){
+  const stop=best.findIndex(Boolean);
+  throw Error('V2 blocks cannot be fitted without dividing a protected component. Last blocked units: '+JSON.stringify(blocks.slice(Math.max(0,stop-3),stop+3).map(b=>({id:b.id,h:b.h,keepNext:b.keepNext,image:hasContentImage(b.html)}))));
+ }
  const result=[];
  for(let start=0;start<n;){
   const end=best[start].end,selected=blocks.slice(start,end);let y=top;
