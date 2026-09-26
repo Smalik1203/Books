@@ -2,6 +2,29 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-try">
+        <p>A king agrees to pay a debt in rice: one grain on the first square of a
+        chessboard, two on the second, four on the third, and so on to the
+        sixty-fourth. Roughly how many grains go on the sixty-fourth square alone, and
+        could anyone pay even that?</p>
+      </div>
+
+      <p>
+        The squares hold $1, 2, 4, 8, \ldots$, which is $2^0, 2^1, 2^2, 2^3, \ldots$: the
+        power is always one less than the number of the square. So the sixty-fourth
+        square holds
+      </p>
+
+      <div class="work work--centred">
+        <p>$2^{63} = (2^{10})^6 \times 2^3$</p>
+      </div>
+
+      <p>
+        Estimate it with the same trick as before: $(2^{10})^6 \times 2^3 \approx
+        (10^3)^6 \times 8 = 8 \times 10^{18}$, and the true value is about
+        $9.2 \times 10^{18}$.
+      </p>
+
       <p>
         Could it be paid? A grain of rice weighs about $0.025$ g, so that one square
         is around $2.3 \times 10^{14}$ kg, or $2.3 \times 10^{11}$ tonnes. The world
@@ -54,39 +77,6 @@
         digit of the answer with the last digit you started with. Try it on six
         different numbers, say what you find, and then explain it.</p>
       </div>
-
-      <p>
-        Try six of them and the pattern is clear.
-      </p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label">$2^5 = 32$</span><span>ends in $2$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$3^5 = 243$</span><span>ends in $3$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$4^5 = 1024$</span><span>ends in $4$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$7^5 = 16807$</span><span>ends in $7$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$8^5 = 32768$</span><span>ends in $8$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label">$9^5 = 59049$</span><span>ends in $9$</span>
-        </div>
-      </div>
-
-      <p>
-        Every time, the fifth power ends in the digit it started with. The reason is
-        the cycle of last digits, met in the question on $7^{100}$. Every digit's last-digit cycle
-        has length $1$, $2$ or $4$ — check them and see — and $5 - 1 = 4$ is a
-        multiple of all three. So raising to the fifth power always lands exactly one
-        step past a whole number of cycles, which is where it started.
-      </p>
 
     </div>
   </div>

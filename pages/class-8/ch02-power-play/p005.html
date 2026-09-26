@@ -2,127 +2,94 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 210 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A branching diagram: one king, three daughters, nine baskets, twenty-seven keys, each level three times the one above">
-      
-            <g class="dg-thin">
-              <path d="M100 15 L60 31 M100 15 L100 31 M100 15 L140 31"/>
-              <path d="M60 37 L44 53 M60 37 L60 53 M60 37 L76 53
-                       M100 37 L84 53 M100 37 L100 53 M100 37 L116 53
-                       M140 37 L124 53 M140 37 L140 53 M140 37 L156 53"/>
-              <path d="M44 59 L39 75 M44 59 L44 75 M44 59 L49 75
-                       M60 59 L55 75 M60 59 L60 75 M60 59 L65 75
-                       M76 59 L71 75 M76 59 L76 75 M76 59 L81 75
-                       M84 59 L79 75 M84 59 L84 75 M84 59 L89 75
-                       M100 59 L95 75 M100 59 L100 75 M100 59 L105 75
-                       M116 59 L111 75 M116 59 L116 75 M116 59 L121 75
-                       M124 59 L119 75 M124 59 L124 75 M124 59 L129 75
-                       M140 59 L135 75 M140 59 L140 75 M140 59 L145 75
-                       M156 59 L151 75 M156 59 L156 75 M156 59 L161 75"/>
-            </g>
-      
-            <g class="dg-fill-c">
-              <circle cx="100" cy="12" r="3"/>
-            </g>
-            <g class="dg-fill-a">
-              <circle cx="60" cy="34" r="2.6"/><circle cx="100" cy="34" r="2.6"/>
-              <circle cx="140" cy="34" r="2.6"/>
-            </g>
-            <g class="dg-fill-d">
-              <circle cx="44" cy="56" r="2.2"/><circle cx="60" cy="56" r="2.2"/>
-              <circle cx="76" cy="56" r="2.2"/><circle cx="84" cy="56" r="2.2"/>
-              <circle cx="100" cy="56" r="2.2"/><circle cx="116" cy="56" r="2.2"/>
-              <circle cx="124" cy="56" r="2.2"/><circle cx="140" cy="56" r="2.2"/>
-              <circle cx="156" cy="56" r="2.2"/>
-            </g>
-            <g class="dg-fill-b">
-              <circle cx="39" cy="78" r="1.3"/><circle cx="44" cy="78" r="1.3"/>
-              <circle cx="49" cy="78" r="1.3"/><circle cx="55" cy="78" r="1.3"/>
-              <circle cx="60" cy="78" r="1.3"/><circle cx="65" cy="78" r="1.3"/>
-              <circle cx="71" cy="78" r="1.3"/><circle cx="76" cy="78" r="1.3"/>
-              <circle cx="81" cy="78" r="1.3"/><circle cx="79" cy="78" r="1.3"/>
-              <circle cx="84" cy="78" r="1.3"/><circle cx="89" cy="78" r="1.3"/>
-              <circle cx="95" cy="78" r="1.3"/><circle cx="100" cy="78" r="1.3"/>
-              <circle cx="105" cy="78" r="1.3"/><circle cx="111" cy="78" r="1.3"/>
-              <circle cx="116" cy="78" r="1.3"/><circle cx="121" cy="78" r="1.3"/>
-              <circle cx="119" cy="78" r="1.3"/><circle cx="124" cy="78" r="1.3"/>
-              <circle cx="129" cy="78" r="1.3"/><circle cx="135" cy="78" r="1.3"/>
-              <circle cx="140" cy="78" r="1.3"/><circle cx="145" cy="78" r="1.3"/>
-              <circle cx="151" cy="78" r="1.3"/><circle cx="156" cy="78" r="1.3"/>
-              <circle cx="161" cy="78" r="1.3"/>
-            </g>
-      
-            <g class="dg-note">
-              <text x="170" y="15">1 king</text>
-              <text x="170" y="37">3 daughters</text>
-              <text x="170" y="59">9 baskets</text>
-              <text x="170" y="81">27 keys</text>
-            </g>
-            <g class="dg-dim-label" text-anchor="end">
-              <text x="30" y="26">× 3</text>
-              <text x="30" y="48">× 3</text>
-              <text x="30" y="70">× 3</text>
-            </g>
-          </svg>
-          <figcaption><span class="fignum">Fig. 2.1</span> Every level is three times the
-          one above it. Four levels down from the king there are $3^4 = 81$
-          rooms.</figcaption>
-        </figure>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 2.1</div>
+        <ol class="c-questions">
+          <li>Write each in exponential form.
+              <ol class="c-parts c-parts--3">
+                <li>$7 \times 7 \times 7$</li>
+                <li>$k \times k \times k \times k \times k$</li>
+                <li>$3 \times 3 \times 11 \times 11 \times 11$</li>
+                <li>$5 \times 5 \times p \times p \times p$</li>
+                <li>$x \times x \times y \times y \times y \times z$</li>
+                <li>$(-6) \times (-6) \times (-6) \times (-6)$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
-      <p>Now suppose each room held three tables, each table three necklaces, and each
-      necklace three diamonds. That is three more levels, so there are
-      $3^7$ diamonds.</p>
-
-      <p>You could work $3^7$ out from scratch, but there is no need. We already know
-      $3^4 = 81$ from the rooms. Three more levels multiplies by three three more
-      times, which is $3^3 = 27$. So</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$3^7$</span>
-          <span>$= 3^4 \times 3^3 = 81 \times 27$</span>
-          <span class="chip">$2187$</span>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write each as a product of powers of primes.
+              <ol class="c-parts c-parts--4">
+                <li>$392$</li>
+                <li>$675$</li>
+                <li>$1125$</li>
+                <li>$4900$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
-      <p>Nothing about $4$ and $3$ was special. Seven threes can be split anywhere at
-      all — $3^2 \times 3^5$, or $3^6 \times 3^1$ — because all that is happening is
-      that a row of seven threes is being divided into two shorter rows.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Multiplying powers of the same base</div>
-        <p>$n^a \times n^b = n^{a+b}$. A row of $a$ copies of $n$ set beside a row of
-        $b$ copies is a row of $a + b$ copies, and nothing else has happened.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Find the value of each.
+              <ol class="c-parts c-parts--3">
+                <li>$5 \times 10^4$</li>
+                <li>$3^3 \times 2^4$</li>
+                <li>$2 \times 5^3$</li>
+                <li>$(-2)^3 \times (-3)^2$</li>
+                <li>$6^2 \times 10^3$</li>
+                <li>$(-1)^9 \times 4^2$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
 
-      <p>Two warnings about that law, both of which cost marks every year. It is about
-      <em>multiplying</em>, so $n^a + n^b$ is not $n^{a+b}$ and is not usually anything
-      tidy at all. And the bases must match: $2^3 \times 5^4$ cannot be gathered into a
-      single power, because there is no single number being repeated.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>Simplify $p^4 \times p^6$, and then $2^3 \times 2^5 \times 2$.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$p^4 \times p^6 = (p\,p\,p\,p) \times (p\,p\,p\,p\,p\,p) = p^{10}$</span>
-              <span class="work__why">count the factors</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$2$ means $2^1$</span>
-              <span class="work__why">an invisible exponent $1$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$2^3 \times 2^5 \times 2^1 = 2^{3+5+1} = 2^9$</span>
-              <span class="work__why">add the exponents</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$p^{10}$, and $2^9 = 512$</span></div>
-          </div>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Which is larger in each pair, and by how much?
+              <ol class="c-parts c-parts--3">
+                <li>$4 \times 3$ or $4^3$</li>
+                <li>$2 \times 5$ or $2^5$</li>
+                <li>$3^5$ or $5^3$</li>
+              </ol>
+            </li>
+        </ol>
       </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Without finding the value, say whether each is positive or negative.
+              <ol class="c-parts c-parts--4">
+                <li>$(-5)^8$</li>
+                <li>$(-5)^9$</li>
+                <li>$-5^8$</li>
+                <li>$(-1)^{100}$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>Use your answer to Question 2 to decide whether $4900$ is a perfect
+              square. If it is, find its square root.</li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §2.2</p>
+      </div>
+
+      <h2><span class="badge">2.3</span><span class="name">The Laws of Indices</span></h2>
+
+      <p>On a festival morning, Asha sends a greeting to $3$ friends. An hour later,
+      each of them sends it on to $3$ new friends. Every hour, each person who got the
+      greeting in the last hour sends it to $3$ more people. How many people get it in
+      the fourth hour?</p>
+
+      <p>In the first hour, $3$ people get it. In the second hour, each of those $3$
+      sends it to $3$ more, so $9$ people get it. In the third hour $27$ people get it,
+      and in the fourth hour $81$. And $81 = 3^4$: one factor of $3$ for each
+      hour.</p>
 
     </div>
   </div>

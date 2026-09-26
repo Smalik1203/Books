@@ -2,77 +2,82 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Compare that law with the first one, and see how they divide the
-      work between them. The first gathers powers that share a <em>base</em> and adds
-      their exponents; this one gathers powers that share an <em>exponent</em> and
-      multiplies their bases. Between them they cover both ways two powers can be
-      alike. When two powers are alike in neither way, as $2^3$ and $5^4$ are,
-      there is nothing to be done and the expression is already as simple as it
-      gets.</p>
+      <h3>2.3.1 A power of a power</h3>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>Find $2^5 \times 5^5$.</p>
-          <p>Evaluating $32 \times 3125$ would work. Noticing the shared exponent is
-          quicker.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$2^5 \times 5^5 = (2 \times 5)^5$</span>
-              <span class="work__why">the exponents match</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$= 10^5$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$100000$</span></div>
-          </div>
-          <p>Whenever a pair of bases multiplies to something convenient — and $2$ and
-          $5$ almost always do, because they make $10$ — this is the law to look
-          for.</p>
-        </div>
-      </div>
-
-      <p>There is a matching law for division, which we will state properly
-      in a moment: $\dfrac{m^a}{n^a} = \left(\dfrac{m}{n}\right)^a$. The
-      argument is the same, with the pairs written as fractions.</p>
-
-      <h3>2.3.3 Dividing</h3>
-
-      <p>A line is $16$ units long — that is $2^4$ — and half of it is rubbed out. What
-      is left is $2^4 \div 2$, and it is easiest to see written as a fraction with the
-      cancelling shown:</p>
-
-      <div class="work work--centred">
-        <p>$\dfrac{2^4}{2^1} = \dfrac{2 \times 2 \times 2 \times 2}{2}
-           = 2 \times 2 \times 2 = 2^3 = 8$</p>
-      </div>
-
-      <p>Rub out half of what is left, twice more, and the same cancelling happens each
-      time:</p>
+      <p>A row of factors can also be split into equal groups. This gives the second
+      law. Here is $3^6$, split into two groups of three, and then into three groups
+      of two:</p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label">$2^4 \div 2^2$</span>
-          <span>$= 2^2 = 4$</span>
+          <span class="work__label work__label--wide">two groups of three</span>
+          <span>$(3 \times 3 \times 3) \times (3 \times 3 \times 3) = 3^3 \times 3^3 = (3^3)^2$</span>
         </div>
         <div class="work__row">
-          <span class="work__label">$2^4 \div 2^3$</span>
-          <span>$= 2^1 = 2$</span>
+          <span class="work__label work__label--wide">three groups of two</span>
+          <span>$(3 \times 3) \times (3 \times 3) \times (3 \times 3) = (3^2)^3$</span>
         </div>
       </div>
 
-      <p>Every factor on the bottom cancels one on the top, so the exponents subtract.
-      That is the third law, and it is the first law run backwards — which it has to be,
-      since division undoes multiplication.</p>
+      <p>Both are $729$, because both are six threes, however we group them. The
+      number of threes is the product of the two exponents:</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Dividing powers of the same base</div>
-        <p>$n^a \div n^b = n^{a-b}$, for any $n$ other than $0$. Multiplying adds the
-        exponents, so dividing subtracts them.</p>
+      <div class="work work--centred">
+        <p>$(3^3)^2 = 3^{3 \times 2} = 3^6 \qquad (3^2)^3 = 3^{2 \times 3} = 3^6$</p>
       </div>
 
-      <p>Ruling out $n = 0$ is not being fussy. Dividing by $0^b$ would be dividing
-      by zero, which is not defined, so the law has nothing to say there.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A power raised to a power</div>
+        <p>$(n^a)^b = n^{ab}$, and since $ab = ba$, this also equals $(n^b)^a$. Raising
+        to a power multiplies the exponents; multiplying powers adds them.</p>
+      </div>
+
+      <h3>2.3.2 The same exponent, different bases</h3>
+
+      <p>Anil plays a video game. He starts with $1$ point. His points double at each
+      of the first four levels, and triple at each of the next four levels.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">after four levels</span>
+          <span>$1 \times 2 \times 2 \times 2 \times 2 = 2^4 = 16$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after four more</span>
+          <span>$2^4 \times 3^4 = 16 \times 81$</span>
+          <span class="chip">$1296$</span>
+        </div>
+      </div>
+
+      <p>If the tripling levels came first, the answer would be $3^4 \times 2^4$, the
+      same number. But there is more to see. Write out all eight factors, and pair
+      each $2$ with a $3$:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$2^4 \times 3^4$</span>
+          <span>$= (2 \times 2 \times 2 \times 2) \times (3 \times 3 \times 3 \times 3)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$= (2 \times 3) \times (2 \times 3) \times (2 \times 3) \times (2 \times 3)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$= 6^4$</span>
+          <span class="chip">$1296$</span>
+        </div>
+      </div>
+
+      <p>We may regroup the factors because multiplication can be done in any order.
+      It works only because the two exponents are equal. There are as many twos as
+      threes, so every $2$ has a $3$ to pair with.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Powers with the same exponent</div>
+        <p>$m^a \times n^a = (mn)^a$. Read the other way, $(mn)^a = m^a n^a$: a power
+        of a product is the product of the powers.</p>
+      </div>
 
     </div>
   </div>

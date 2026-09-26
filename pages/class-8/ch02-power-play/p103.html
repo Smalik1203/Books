@@ -3,6 +3,13 @@
     <div class="page__main">
 
       <p>
+        Now they are comparable at a glance: same exponent, and $243 \gt 125$, so
+        $3^{500}$ is the larger. It is larger by a factor of $(243/125)^{100}$, which
+        works out at around $10^{29}$ — an enormous margin, from what had looked like
+        a close contest.
+      </p>
+
+      <p>
         The general recipe is worth keeping. To compare $a^m$ with $b^n$, take the
         highest common factor of $m$ and $n$, write both with that as the exponent,
         and compare the new bases. It converts an impossible arithmetic problem into
@@ -69,29 +76,6 @@
         spreads, how a chain letter travels, and how a video goes around the world
         overnight. In each case what looks like an explosion is only a modest number
         multiplied a modest number of times.
-      </p>
-
-      <div class="c-try">
-        <p>A king agrees to pay a debt in rice: one grain on the first square of a
-        chessboard, two on the second, four on the third, and so on to the
-        sixty-fourth. Roughly how many grains go on the sixty-fourth square alone, and
-        could anyone pay even that?</p>
-      </div>
-
-      <p>
-        The squares hold $1, 2, 4, 8, \ldots$, which is $2^0, 2^1, 2^2, 2^3, \ldots$: the
-        power is always one less than the number of the square. So the sixty-fourth
-        square holds
-      </p>
-
-      <div class="work work--centred">
-        <p>$2^{63} = (2^{10})^6 \times 2^3$</p>
-      </div>
-
-      <p>
-        Estimate it with the same trick as before: $(2^{10})^6 \times 2^3 \approx
-        (10^3)^6 \times 8 = 8 \times 10^{18}$, and the true value is about
-        $9.2 \times 10^{18}$.
       </p>
 
     </div>

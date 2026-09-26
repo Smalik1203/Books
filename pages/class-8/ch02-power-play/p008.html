@@ -2,102 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>Compare this law with the first one. The first law joins powers with the same
+      <em>base</em>, and adds the exponents. This law joins powers with the same
+      <em>exponent</em>, and multiplies the bases. When two powers share neither the
+      base nor the exponent, such as $2^3$ and $5^4$, neither of these laws can be used.</p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
-          <p>Simplify $\dfrac{2^{100}}{2^{25}}$ and $\dfrac{7^9 \times 7^4}{7^{11}}$.</p>
+          <p>Find $4^3 \times 25^3$ without a long multiplication.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$2^{100} \div 2^{25} = 2^{100-25} = 2^{75}$</span>
-              <span class="work__why">subtract the exponents</span></div>
+              <span>$4^3 \times 25^3 = (4 \times 25)^3$</span>
+              <span class="work__why">the exponents match</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$7^9 \times 7^4 = 7^{13}$</span>
-              <span class="work__why">gather the top first</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$7^{13} \div 7^{11} = 7^2$</span>
-              <span class="work__why">then subtract</span></div>
+              <span>$= 100^3$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$2^{75}$ and $49$</span></div>
+              <span>$1\,000\,000$</span></div>
           </div>
-          <p>The first is a subtraction and nothing more; writing out a hundred twos
-          would be a waste of an afternoon.</p>
+          <p>Look for this law when the bases multiply to a round number, such as $2$ and $5$ or $4$ and $25$, which make $10$ and $100$.</p>
         </div>
       </div>
 
-      <p>So far the exponents have all been counting numbers, and every law has been
-      argued by writing out rows of factors and rearranging them. That argument needs
-      the exponents to be counts of something. The next section asks what happens when
-      they are not — and the answer is decided for us.</p>
+      <p>There is a matching law for division:
+      $\dfrac{m^a}{n^a} = \left(\dfrac{m}{n}\right)^a$. The reason is the same, with
+      each pair written as a fraction.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.2</div>
-        <ol class="c-questions">
-          <li>Write each as a single power.
-              <ol class="c-parts c-parts--3">
-                <li>$5^3 \times 5^4$</li>
-                <li>$p^7 \times p$</li>
-                <li>$2^3 \times 2^3 \times 2^3$</li>
-                <li>$(3^4)^2$</li>
-                <li>$(m^5)^3$</li>
-                <li>$10^9 \div 10^4$</li>
-              </ol>
-            </li>
-        </ol>
+      <h3>2.3.3 Dividing</h3>
+
+      <p>A tank holds $32$ litres of water, which is $2^5$ litres. Half the water is
+      used. What is left is $2^5 \div 2$. It is easiest to see as a fraction, with the
+      cancelling shown:</p>
+
+      <div class="work work--centred">
+        <p>$\dfrac{2^5}{2^1} = \dfrac{2 \times 2 \times 2 \times 2 \times 2}{2}
+           = 2 \times 2 \times 2 \times 2 = 2^4 = 16$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write $8^6$ as a power of a power in two different ways, and then write
-              it as a power of $2$.</li>
-        </ol>
+      <p>Use half of what is left, and then half again. The same cancelling happens
+      each time:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$2^5 \div 2^2$</span>
+          <span>$= 2^3 = 8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$2^5 \div 2^3$</span>
+          <span>$= 2^2 = 4$</span>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Simplify, giving each answer as a single power.
-              <ol class="c-parts c-parts--3">
-                <li>$\dfrac{6^8 \times 6^3}{6^9}$</li>
-                <li>$\dfrac{(a^3)^4}{a^7}$</li>
-                <li>$4^5 \times 25^5$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>Each factor on the bottom cancels one factor on the top. So the exponents
+      subtract. This is the third law. It is the first law in reverse, because
+      dividing undoes multiplying.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Dividing powers of the same base</div>
+        <p>$n^a \div n^b = n^{a-b}$, for any $n$ other than $0$. Multiplying adds the
+        exponents, so dividing subtracts them.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        
-        <ol class="c-questions" data-start="4">
-          <li>Find the value of each without a long multiplication.
-                <ol class="c-parts c-parts--3">
-                  <li>$2^7 \times 5^7$</li>
-                  <li>$(2^3)^2 \times 2$</li>
-                  <li>$\dfrac{12^4}{4^4}$</li>
-                </ol>
-              </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Write $2^{12}$ as a power of $4$, and then as a power of $8$. Which
-              exponents are possible, and why is there no way to write it as a power of
-              $3$?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Explain in one sentence each why these are wrong.
-              <ol class="c-parts c-parts--1">
-                <li>$3^4 \times 3^2 = 3^8$</li>
-                <li>$2^5 + 2^5 = 2^{10}$</li>
-                <li>$5^6 \div 5^2 = 1^3$</li>
-                <li>$2^3 \times 5^4 = 10^7$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>We leave out $n = 0$ because dividing by $0^b$ would mean dividing by zero,
+      which has no meaning in arithmetic.</p>
 
     </div>
   </div>

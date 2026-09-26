@@ -2,40 +2,41 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">2.8</span><span class="name">A Note on Thought Experiments</span></h2>
+      <p>Multiply by $0.1$ mm. The thickness is about $4 \times 10^{11}$ mm, which is
+      $4 \times 10^{5}$ km. The exact value is $4.4 \times 10^5$ km, so the estimate is
+      out by less than a tenth. We found it without multiplying anything larger than
+      $4$.</p>
 
-      <p>Several questions in this chapter could not be answered exactly by anybody: how
-      thick a sheet folded forty-six times would be, how many bees there are, how much
-      clothing the world owns. They were answered anyway, and the method deserves a
-      name.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Ten doublings make about a thousand</div>
+        <p>$2^{10} = 1024$, which is a little more than $10^3$. So every ten doublings
+        multiply a number by a little more than a thousand.</p>
+      </div>
 
-      <p>The method is: write down what the answer depends on, make an honest guess at
-      each piece, and multiply. Nobody knows how many bees there are, but the number of
-      colonies is roughly known and the size of a colony is roughly known, and their
-      product is a great deal better than nothing. An answer got this way is called an
-      <span class="term">estimate</span>, and the point of standard form is that it lets
-      you say how much of it you believe.</p>
+      <p>Look at what this estimate did not need. It needed no calculator, no long
+      multiplication and no exact value of $2^{42}$. It needed only the fact that
+      $2^{10}$ is a little more than $10^3$. With this fact, you can change powers of
+      two into powers of ten in your head.</p>
 
-      <p>Two rules keep such an estimate honest.</p>
-
-      <p><strong>Write the assumptions down.</strong> If you assumed a colony holds
-      fifty thousand bees, say so. Then a reader who thinks it is twenty thousand can
-      correct your answer without redoing it, and you can see for yourself which
-      assumption the answer really rests on.</p>
-
-      <p><strong>Do not keep digits you have not earned.</strong> If the inputs are
-      known to one figure, the answer is known to one figure. Multiplying
-      $1 \times 10^8$ by $5 \times 10^4$ gives $5 \times 10^{12}$, and writing
-      $5\,000\,000\,000\,000$ instead would suggest a precision that nothing in the
-      calculation supports.</p>
-
-      <p>An estimate made this way is not a lesser kind of answer. It is often the only
-      kind available, and it is usually enough. A town planner deciding whether a bridge
-      will carry the traffic needs to know whether the answer is thousands or tens of
-      thousands, not the exact figure to the last vehicle. The habit worth taking from
-      this section is to ask <em>how big, roughly?</em> before asking <em>exactly how
-      much?</em> — because the first question can nearly always be answered, and the
-      second often cannot.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Use $2^{10} \approx 10^3$ to estimate $2^{25}$ and $2^{-20}$ in standard
+          form.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$2^{25} = (2^{10})^2 \times 2^5 \approx 10^6 \times 32 = 3.2 \times 10^7$</span>
+              <span class="work__why">split off tens</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$2^{-20} = (2^{10})^{-2} \approx (10^3)^{-2} = 10^{-6}$</span>
+              <span class="work__why">the same for negatives</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>about $3.2 \times 10^7$ and about $1 \times 10^{-6}$</span></div>
+          </div>
+          <p>The exact values are $33\,554\,432$ and about $9.5 \times 10^{-7}$. Each estimate is out by less than a tenth of the true value.</p>
+        </div>
+      </div>
 
       <div class="c-reflect">
         <div class="c-reflect__icon">
@@ -48,35 +49,37 @@
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-            <p>What date was one billion seconds ago? Estimate it before you calculate
-            it — a year, a decade, a century?</p>
-            <p>Then work it out: a year is about $3.15 \times 10^7$ seconds. Most people
-            are badly wrong on this one, and the reason is the same reason they were
-            wrong about the folded sheet.</p>
+          <ol>
+            <li>About how many times thicker is the sheet after $30$ folds than after $20$?</li>
+            <li>Estimate $2^{20}$. Is the true value larger or smaller than your estimate?</li>
+          </ol>
           </div>
         </div>
       </div>
 
-      <p>The reason, in both cases, is that we have no feel for repeated multiplication.
-      Our instincts were built for adding. A number that doubles forty-six times, or a
-      billion seconds laid end to end, is outside anything we have
-      ever seen. The only reliable way through is to stop guessing and let the notation
-      do the work.</p>
-
       <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.7</div>
+        <div class="c-practice__head">Exercise Set 2.6</div>
         <ol class="c-questions">
-          <li>Estimate the number of times your heart has beaten since you were born.
-              State your assumptions, give the answer in standard form, and say how many
-              of its digits you would defend.</li>
+          <li>Find the units digit of $3^{8} \times 9^{4}$ without finding either value.
+              Use $9 = 3^2$.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="2">
-          <li>A grain of rice takes up about $0.02$ cm³. Estimate how many grains fill a
-              one-litre jar. (A litre is $1000$ cm³.)</li>
+          <li>Three of these five are equal. Which three? Write their common value as a
+              power of $10$.
+              $\;2^5 \times 5^5, \quad 10^2 \times 10^3, \quad 1000^2,
+              \quad 10^{10} \div 10^5, \quad 2^3 \times 5^5$.</li>
         </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Show that $2^{20}$ is a little more than $10^6$, without finding the value
+              of $2^{20}$ in full.</li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §2.7</p>
       </div>
 
     </div>

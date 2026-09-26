@@ -2,6 +2,34 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h3>2.2.1 Negative bases</h3>
+
+      <p>The base can be a negative number. Look at what happens to the sign.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$(-3)^2$</span>
+          <span>$= (-3) \times (-3) = 9$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$(-3)^3$</span>
+          <span>$= (-3) \times (-3) \times (-3) = -27$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$(-1)^7$</span>
+          <span>$= -1$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$(-1)^{40}$</span>
+          <span>$= 1$</span>
+        </div>
+      </div>
+
+      <p>The minus signs cancel in pairs. So <strong>a negative base with an even
+      exponent gives a positive number, and with an odd exponent a negative
+      number</strong>. This is the rule you already know for squares and cubes, now
+      for every exponent.</p>
+
       <div class="c-tip">
         <div class="c-tip__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -9,101 +37,59 @@
           </svg>
         </div>
         <div class="c-tip__body">
-          <p>The brackets are not decoration. $(-4)^2 = 16$, but $-4^2 = -16$, because
-          without brackets the power applies to the $4$ alone and the minus sign is
-          applied afterwards.</p>
+          <p>The brackets matter. $(-3)^2 = 9$, but $-3^2 = -9$. Without brackets, the
+          power acts on the $3$ alone, and the minus sign comes after.</p>
         </div>
       </div>
 
-      <p>The exponent $0$ is a different kind of question, since $n$ multiplied by
-      itself no times is not something you can picture. We come to it in § 2.4,
-      where the laws of the next section will settle it for us, and settle it in only
-      one possible way.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.1</div>
-        <ol class="c-questions">
-          <li>Write each in exponential form.
-              <ol class="c-parts c-parts--3">
-                <li>$6 \times 6 \times 6 \times 6$</li>
-                <li>$b \times b \times b \times b$</li>
-                <li>$5 \times 5 \times 7 \times 7 \times 7$</li>
-                <li>$2 \times 2 \times a \times a$</li>
-                <li>$a \times a \times a \times c \times c \times d$</li>
-                <li>$(-3) \times (-3) \times (-3)$</li>
-              </ol>
-            </li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>Find the value of $(-2)^5$, $\;(-2)^4 \times (-1)^9$ and $-2^4$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$(-2)^5 = -32$</span>
+              <span class="work__why">odd exponent, so negative</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(-2)^4 \times (-1)^9 = 16 \times (-1) = -16$</span>
+              <span class="work__why">even, then odd</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$-2^4 = -(2 \times 2 \times 2 \times 2) = -16$</span>
+              <span class="work__why">no brackets</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$-32$, $\;-16$ and $-16$</span></div>
+          </div>
+          <p>The last two have the same value for different reasons. Always find the
+          sign first, and then the size.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write each as a product of powers of primes.
-              <ol class="c-parts c-parts--4">
-                <li>$648$</li>
-                <li>$405$</li>
-                <li>$540$</li>
-                <li>$3600$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>Notice that $3^2$ and $(-3)^2$ are both $9$. A square is never negative, whatever the sign of the number being squared.</p>
+
+      <p>What about the exponent $0$? What is $n$ multiplied by itself no times? We
+      come back to this in §&nbsp;2.4. The laws of the next section will decide it for
+      us.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Is $(-2)^{10}$ positive or negative? What about $(-2)^{11}$?</li>
+            <li>Which is larger, $2^5$ or $5^2$? Guess first, and then check.</li>
+            <li>Why is $10^6$ written as $1$ followed by six zeros?</li>
+          </ol>
+          </div>
+        </div>
       </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Find the value of each.
-              <ol class="c-parts c-parts--3">
-                <li>$2 \times 10^3$</li>
-                <li>$7^2 \times 2^3$</li>
-                <li>$3 \times 4^4$</li>
-                <li>$(-3)^2 \times (-5)^2$</li>
-                <li>$3^2 \times 10^4$</li>
-                <li>$(-2)^5$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Which is larger in each pair, and by how much?
-              <ol class="c-parts c-parts--3">
-                <li>$3 \times 4$ or $3^4$</li>
-                <li>$5 + 5 + 5$ or $5^3$</li>
-                <li>$2^6$ or $6^2$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Say whether each is positive or negative without evaluating it.
-              <ol class="c-parts c-parts--4">
-                <li>$(-7)^{10}$</li>
-                <li>$(-7)^{11}$</li>
-                <li>$-7^{10}$</li>
-                <li>$(-1)^{99}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Use the factorisation of $3600$ from question 2 to say whether it is a
-              perfect square, and give its root if it is.</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">2.3</span><span class="name">The Laws of Indices</span></h2>
-
-      <p>A king had three daughters. He gave each daughter three baskets. Each basket
-      held three keys, and each key opened three rooms. How many rooms were there?</p>
-
-      <p>Three daughters, three baskets each, so nine baskets. Three keys to a basket,
-      so twenty-seven keys. Three rooms to a key, so eighty-one rooms — and $81 = 3^4$,
-      one factor of three for each layer of the story.</p>
 
     </div>
   </div>

@@ -2,88 +2,87 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.5</div>
-        <ol class="c-questions">
-          <li>How many codes are possible for each lock?
-              <ol class="c-parts c-parts--1">
-                <li>Four slots, each a digit $0$–$9$.</li>
-                <li>Five slots, each a digit or a capital letter.</li>
-                <li>Three dice rolled in a row, each showing one of six faces.</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A dairy needs a unique code for each of $8.5$ billion milk packets a year,
-              using digits only. How many digits must the code have? Show why one fewer
-              will not do.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A canteen offers $3$ breads, $4$ fillings and $2$ sauces. How many
-              different rolls are possible? Is this a power? Say why or why not.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A password is four characters long and each character is a lower-case
-              letter. How many are there? If the rule changes to allow digits as well,
-              by what factor does the number grow?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Estu says a six-slot lock with $10$ options per slot has $10 \times 6$
-              codes. What has he done wrong, and what is the right answer?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A pincode in India has six digits and does not begin with $0$. How many
-              are possible?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">2.7</span><span class="name">Back to the Folded Sheet</span></h2>
-
-      <p>With the notation in hand, the opening question can be answered properly rather
-      than by reading a table. After $n$ folds the thickness is</p>
-
-      <div class="work work--centred">
-        <p>$0.001 \times 2^{n}$ cm</p>
-      </div>
-
-      <p>and the only work left is arithmetic on powers. After $46$ folds it is
-      $0.001 \times 2^{46}$ cm. We do not need to work out $2^{46}$ exactly to see what is
-      happening — the laws will do it approximately in two lines. Since $2^{10} = 1024$,
-      which is a little over $10^3$,</p>
-
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">$2^{46}$</span>
-          <span>$= 2^{40} \times 2^6 = (2^{10})^4 \times 64$</span>
+          <span class="work__label work__label--wide">$2$ dials</span>
+          <span>$10 \times 10 = 10^2 = 100$</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide"></span>
-          <span>$\approx (10^3)^4 \times 64 = 6.4 \times 10^{13}$</span>
+          <span class="work__label work__label--wide">$3$ dials</span>
+          <span>$10 \times 10 \times 10 = 10^3 = 1000$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$4$ dials</span>
+          <span>$10^4$</span>
+          <span class="chip">$10\,000$</span>
         </div>
       </div>
 
-      <p>Multiply by $0.001$ and the thickness is about $6.4 \times 10^{10}$ cm, which
-      is $6.4 \times 10^{5}$ km. The exact figure is $7.04 \times 10^5$ km, so the
-      estimate is out by about a tenth — and we got it without multiplying anything
-      larger than $64$.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Independent choices multiply</div>
+        <p>Suppose something is made by $a$ choices in turn, and each choice has $n$
+        options whatever the earlier choices were. Then there are $n^a$ possibilities.
+        Each new choice multiplies the count; it does not add to it.</p>
+      </div>
 
-      <p>That is what this chapter gives you. A number too big to write became a number
-      you could reason about, and the reasoning was three laws and a rounding.</p>
+      <p>Check that every choice has the same number of options. If the options
+      change, the count is a product but not a power. Farida has $5$ kurtas,
+      $3$ dupattas and $2$ pairs of sandals. She can dress in $5 \times 3 \times 2 = 30$
+      ways.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>A lock has five slots, and each slot takes a capital letter from A to Z.
+          How many codes are there? How does this compare with Meera's four-dial
+          lock?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>letters: $26^5 = 11\,881\,376$ $\approx 1.2 \times 10^7$</span>
+              <span class="work__why">26 options, 5 slots</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>digits: $10^4 = 10\,000$ $= 1 \times 10^4$</span>
+              <span class="work__why">10 options, 4 slots</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>the exponents are $7$ and $4$</span>
+              <span class="work__why">compare the exponents</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$11\,881\,376$ codes, about a thousand times as many</span></div>
+          </div>
+          <p>One more slot multiplies the count by $26$. One more letter multiplies it by
+          only $(27/26)^5$, about $1.2$. The exponent has the larger effect.</p>
+        </div>
+      </div>
+
+      <p>This is why a long password is much safer than a short one. Each extra
+      character multiplies the number of passwords that someone would have to
+      try.</p>
+
+      <p>A count is a single power only when every slot has the same options. A
+      four-digit PIN gives $10^4$ codes. A code of two letters followed by four
+      digits gives $26^2 \times 10^4$: a product of two powers, not a single
+      power.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>A coin is tossed $5$ times and each result is written as H or T. How many lists are possible?</li>
+            <li>Which lock has more codes: $3$ dials with $10$ digits each, or $10$ dials
+            with $3$ symbols each?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

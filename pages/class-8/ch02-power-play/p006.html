@@ -2,82 +2,124 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>2.3.1 A power of a power</h3>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 210 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A branching diagram: Asha, then 3 people in the first hour, 9 in the second and 27 in the third, each level three times the one above">
+      
+            <g class="dg-thin">
+              <path d="M100 15 L60 31 M100 15 L100 31 M100 15 L140 31"/>
+              <path d="M60 37 L44 53 M60 37 L60 53 M60 37 L76 53
+                       M100 37 L84 53 M100 37 L100 53 M100 37 L116 53
+                       M140 37 L124 53 M140 37 L140 53 M140 37 L156 53"/>
+              <path d="M44 59 L39 75 M44 59 L44 75 M44 59 L49 75
+                       M60 59 L55 75 M60 59 L60 75 M60 59 L65 75
+                       M76 59 L71 75 M76 59 L76 75 M76 59 L81 75
+                       M84 59 L79 75 M84 59 L84 75 M84 59 L89 75
+                       M100 59 L95 75 M100 59 L100 75 M100 59 L105 75
+                       M116 59 L111 75 M116 59 L116 75 M116 59 L121 75
+                       M124 59 L119 75 M124 59 L124 75 M124 59 L129 75
+                       M140 59 L135 75 M140 59 L140 75 M140 59 L145 75
+                       M156 59 L151 75 M156 59 L156 75 M156 59 L161 75"/>
+            </g>
+      
+            <g class="dg-fill-c">
+              <circle cx="100" cy="12" r="3"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="60" cy="34" r="2.6"/><circle cx="100" cy="34" r="2.6"/>
+              <circle cx="140" cy="34" r="2.6"/>
+            </g>
+            <g class="dg-fill-c-soft">
+              <circle cx="44" cy="56" r="2.2"/><circle cx="60" cy="56" r="2.2"/>
+              <circle cx="76" cy="56" r="2.2"/><circle cx="84" cy="56" r="2.2"/>
+              <circle cx="100" cy="56" r="2.2"/><circle cx="116" cy="56" r="2.2"/>
+              <circle cx="124" cy="56" r="2.2"/><circle cx="140" cy="56" r="2.2"/>
+              <circle cx="156" cy="56" r="2.2"/>
+            </g>
+            <g class="dg-fill-b">
+              <circle cx="39" cy="78" r="1.3"/><circle cx="44" cy="78" r="1.3"/>
+              <circle cx="49" cy="78" r="1.3"/><circle cx="55" cy="78" r="1.3"/>
+              <circle cx="60" cy="78" r="1.3"/><circle cx="65" cy="78" r="1.3"/>
+              <circle cx="71" cy="78" r="1.3"/><circle cx="76" cy="78" r="1.3"/>
+              <circle cx="81" cy="78" r="1.3"/><circle cx="79" cy="78" r="1.3"/>
+              <circle cx="84" cy="78" r="1.3"/><circle cx="89" cy="78" r="1.3"/>
+              <circle cx="95" cy="78" r="1.3"/><circle cx="100" cy="78" r="1.3"/>
+              <circle cx="105" cy="78" r="1.3"/><circle cx="111" cy="78" r="1.3"/>
+              <circle cx="116" cy="78" r="1.3"/><circle cx="121" cy="78" r="1.3"/>
+              <circle cx="119" cy="78" r="1.3"/><circle cx="124" cy="78" r="1.3"/>
+              <circle cx="129" cy="78" r="1.3"/><circle cx="135" cy="78" r="1.3"/>
+              <circle cx="140" cy="78" r="1.3"/><circle cx="145" cy="78" r="1.3"/>
+              <circle cx="151" cy="78" r="1.3"/><circle cx="156" cy="78" r="1.3"/>
+              <circle cx="161" cy="78" r="1.3"/>
+            </g>
+      
+            <g class="dg-note">
+              <text x="170" y="15">Asha</text>
+              <text x="170" y="37">3 in hour 1</text>
+              <text x="170" y="59">9 in hour 2</text>
+              <text x="170" y="81">27 in hour 3</text>
+            </g>
+            <g class="dg-dim-label" text-anchor="end">
+              <text x="30" y="26">× 3</text>
+              <text x="30" y="48">× 3</text>
+              <text x="30" y="70">× 3</text>
+            </g>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.1</span> Each hour, three times as many
+          people get the greeting as in the hour before. In the fourth hour,
+          $3^4 = 81$ people get it.</figcaption>
+        </figure>
+      </div>
 
-      <p>There is more than one way to split a row of factors, and looking at those
-      splits closely gives the second law. Here is $4^6$, cut into two rows of three and then
-      into three rows of two:</p>
+      <p>Suppose the greeting goes on for three more hours. That is three more factors
+      of $3$, so in the seventh hour $3^7$ people get it.</p>
+
+      <p>We do not need to start again to find $3^7$. We already know $3^4 = 81$.
+      Three more hours multiply by $3$ three more times, which is $3^3 = 27$. So</p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">two rows of three</span>
-          <span>$(4 \times 4 \times 4) \times (4 \times 4 \times 4) = 4^3 \times 4^3 = (4^3)^2$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">three rows of two</span>
-          <span>$(4 \times 4) \times (4 \times 4) \times (4 \times 4) = (4^2)^3$</span>
+          <span class="work__label work__label--wide">$3^7$</span>
+          <span>$= 3^4 \times 3^3 = 81 \times 27$</span>
+          <span class="chip">$2187$</span>
         </div>
       </div>
 
-      <p>Both are $4096$, because both are six fours however they are bracketed. And the
-      count of fours is what the two exponents multiply to:</p>
-
-      <div class="work work--centred">
-        <p>$(4^3)^2 = 4^{3 \times 2} = 4^6 \qquad (4^2)^3 = 4^{2 \times 3} = 4^6$</p>
-      </div>
+      <p>Nothing is special about $4$ and $3$ here. Seven threes can be split in any
+      way, such as $3^2 \times 3^5$ or $3^6 \times 3^1$. We are only cutting a row of
+      seven threes into two shorter rows.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">A power raised to a power</div>
-        <p>$(n^a)^b = n^{ab}$, and since $ab = ba$ this also equals $(n^b)^a$. Raising
-        to a power multiplies the exponents; multiplying powers adds them.</p>
+        <div class="c-keyidea__title">Multiplying powers of the same base</div>
+        <p>$n^a \times n^b = n^{a+b}$. A row of $a$ copies of $n$ next to a row of $b$
+        copies makes a row of $a + b$ copies.</p>
       </div>
 
-      <h3>2.3.2 The same exponent, different bases</h3>
+      <p>Take care with two things. First, the law is about multiplying. So
+      $n^a + n^b$ is not $n^{a+b}$. For example, $2^3 + 2^3 = 16$, but $2^6 = 64$.
+      Second, the bases must be the same. $2^3 \times 5^4$ cannot be written as a
+      single power, because no single number is repeated.</p>
 
-      <p>Damayanti keeps two ponds. In the first the lotuses double every day; in the
-      second they triple. She puts one lotus in the doubling pond, leaves it four days,
-      moves everything to the tripling pond, and leaves it four days more.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">after four days</span>
-          <span>$1 \times 2 \times 2 \times 2 \times 2 = 2^4 = 16$</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Simplify $k^5 \times k^3$, and then $3^2 \times 3^4 \times 3$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$k^5 \times k^3 = (k\,k\,k\,k\,k) \times (k\,k\,k) = k^8$</span>
+              <span class="work__why">count the factors</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$3$ means $3^1$</span>
+              <span class="work__why">a hidden exponent $1$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$3^2 \times 3^4 \times 3^1 = 3^{2+4+1} = 3^7$</span>
+              <span class="work__why">add the exponents</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$k^8$, and $3^7 = 2187$</span></div>
+          </div>
         </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">after four more</span>
-          <span>$2^4 \times 3^4 = 16 \times 81$</span>
-          <span class="chip">$1296$</span>
-        </div>
-      </div>
-
-      <p>If she had used the tripling pond first, the answer would be $3^4 \times 2^4$,
-      which is the same number — but there is more to see than that. Write the eight
-      factors out and pair them off one from each group:</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$2^4 \times 3^4$</span>
-          <span>$= (2 \times 2 \times 2 \times 2) \times (3 \times 3 \times 3 \times 3)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide"></span>
-          <span>$= (2 \times 3) \times (2 \times 3) \times (2 \times 3) \times (2 \times 3)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide"></span>
-          <span>$= 6^4$</span>
-          <span class="chip">$1296$</span>
-        </div>
-      </div>
-
-      <p>The regrouping is allowed because multiplication may be done in any order, and
-      it works only because the two exponents are equal — there were exactly as many
-      twos as threes, so every two found a partner.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Powers with a shared exponent</div>
-        <p>$m^a \times n^a = (mn)^a$. Read the other way it is often more useful:
-        $(mn)^a = m^a n^a$, so a power of a product is the product of the powers.</p>
       </div>
 
     </div>

@@ -3,111 +3,80 @@
     <div class="page__main">
 
       <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.6</div>
+        <div class="c-practice__head">Exercise Set 2.5</div>
         <ol class="c-questions">
-          <li>Find the units digit of $2^{24} \times 4^{32}$ without evaluating either.
-              <em>Hint: $4 = 2^2$.</em></li>
+          <li>How many codes are possible for each lock?
+              <ol class="c-parts c-parts--1">
+                <li>Three dials, each a digit from $0$ to $9$.</li>
+                <li>Four slots, each a capital letter or a digit.</li>
+                <li>A row of four dice, each showing one of six faces.</li>
+              </ol>
+            </li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="2">
-          <li>Write each number as a product of two or more powers, in three different
-              ways. The exponents may be any integers.
-              <ol class="c-parts c-parts--3">
-                <li>$64^3$</li>
-                <li>$192^8$</li>
-                <li>$32^{-5}$</li>
-              </ol>
-            </li>
+          <li>A company needs a different code for each of its $3.5$ crore customers,
+              using digits only. How many digits must each code have? Show that a code with one digit fewer is not enough.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="3">
-          <li>Always true, sometimes true, or never true? Give a reason for each.
-              <ol class="c-parts c-parts--1">
-                <li>A cube number is also a square number.</li>
-                <li>A fourth power is also a square number.</li>
-                <li>The fifth power of a number is divisible by its cube.</li>
-                <li>The product of two cube numbers is a cube number.</li>
-                <li>$q^{46}$ is both a fourth power and a sixth power, for $q$ prime.</li>
-              </ol>
-            </li>
+          <li>A tiffin shop offers $4$ kinds of roti, $5$ sabzis and $3$ kinds of dal.
+              How many different meals of one of each are possible? Is this count a
+              power? Say why or why not.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="4">
-          <li>Given that $12^2 = 144$, write down each of these without multiplying.
-              <ol class="c-parts c-parts--4">
-                <li>$(1.2)^2$</li>
-                <li>$(0.12)^2$</li>
-                <li>$(0.012)^2$</li>
-                <li>$120^2$</li>
-              </ol>
-            </li>
+          <li>A code has three characters, and each is a small letter from a to z. How
+              many codes are there? If the digits $0$ to $9$ are also allowed, by about
+              what factor does the number of codes grow?</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
-          <li>Three of these five are equal. Which three, and what is their common
-              value as a power of $6$?
-              $\;2^6 \times 3^6, \quad 6^4 \times 6^2, \quad 36^3, \quad 6^{12},
-              \quad 2^4 \times 3^6$.</li>
+          <li>Arjun says that a lock with five dials, each showing a digit from $0$ to
+              $9$, has $10 \times 5 = 50$ codes. What is his mistake? What is the
+              correct number?</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="6">
-          <li>Which is greater in each pair?
-              <ol class="c-parts c-parts--3">
-                <li>$4^3$ or $3^4$</li>
-                <li>$2^8$ or $8^2$</li>
-                <li>$100^2$ or $2^{100}$</li>
-              </ol>
-            </li>
+          <li>A school gives each student a four-digit roll number that does not begin
+              with $0$. How many roll numbers are possible?</li>
         </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §2.6</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>The world has about $10^9$ sheep and about $10^9$ goats. What is the total?
-              It is <em>not</em> $10^{18}$ — explain the error and give the right answer in
-              standard form.</li>
-        </ol>
+      <h2><span class="badge">2.7</span><span class="name">Back to the Folded Sheet</span></h2>
+
+      <p>Now we can answer the opening question with powers. After $n$ folds, the
+      thickness of the sheet is</p>
+
+      <div class="work work--centred">
+        <p>$0.1 \times 2^{n}$ mm</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        
-        <ol class="c-questions" data-start="8">
-          <li>There are about $10^8$ bee colonies in the world and about $5 \times 10^4$
-                bees in a colony. Give the number of bees in standard form.</li>
-        </ol>
-      </div>
+      <p>After forty-two folds it is $0.1 \times 2^{42}$ mm. We do not need the exact
+      value of $2^{42}$. The laws give a good estimate in two lines. Since
+      $2^{10} = 1024$, which is a little more than $10^3$,</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>The world has about $8 \times 10^9$ people. If each owns $30$ pieces of
-                clothing, how many pieces are there altogether? Give the answer in
-                standard form, and say how many of its digits you would defend.</li>
-        </ol>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$2^{42}$</span>
+          <span>$= 2^{40} \times 2^2 = (2^{10})^4 \times 4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide"></span>
+          <span>$\approx (10^3)^4 \times 4 = 4 \times 10^{12}$</span>
+        </div>
       </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li>Show that $2^{30}$ is a little more than $10^9$ without evaluating either
-                in full. <em>Hint: $2^{10}$ is a little more than $10^3$.</em></li>
-        </ol>
-      </div>
-
-      <p>The two lines of that estimate are worth reading again for what they did not
-      need. No calculator, no long multiplication, and no exact value of $2^{46}$ — only
-      the fact that $2^{10}$ is a little over $10^3$, which is the single most useful
-      thing to know about powers of two. Anyone who remembers it can move between powers
-      of two and powers of ten in their head, and that is most of what estimating large
-      numbers ever asks of you.</p>
 
     </div>
   </div>

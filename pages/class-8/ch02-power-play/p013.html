@@ -2,78 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>This is why every science writes its numbers this way. A chemist dealing with
-      $6.022 \times 10^{23}$ particles and an astronomer dealing with
-      $9.5 \times 10^{15}$ metres are not showing off. They are using the only notation
-      in which the two numbers can be held in the head at the same time. Written out in
-      full, one has twenty-four digits and the other sixteen, and nobody can compare
-      those by eye. Written in standard form, the difference is $23$ against $15$, and
-      the comparison is over before it began.</p>
+      <p>But the columns do not stop at the units. After the decimal point there are
+      more columns. If the exponents count down, what comes after $0$?</p>
 
-      <p>There is a second reason, less obvious and more practical. Multiplying two
-      numbers in standard form is easy: multiply the coefficients and add the exponents,
-      because the second half is just the first law of § 2.3. So
-      $(3 \times 10^8) \times (2 \times 10^5)$ is $6 \times 10^{13}$, done in one line
-      and in the head. Written out in full, the same multiplication is a page of
-      arithmetic and an excellent chance to lose a zero.</p>
+      <div class="work work--centred">
+        <p>$704.583 = (7 \times 10^2) + (0 \times 10^1) + (4 \times 10^0)
+          + (5 \times 10^{-1}) + (8 \times 10^{-2}) + (3 \times 10^{-3})$</p>
+      </div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Write $59\,853$ and $0.00042$ in standard form.</p>
-          <p>For the first, put the point after the leading digit and count how many
-          places it moved.</p>
-          <p>For the second the point moves the other way, so the exponent is
-          negative.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$59853 = 5.9853 \times 10^4$</span>
-              <span class="work__why">point moved $4$ places left</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$0.00042 = 4.2 \times 10^{-4}$</span>
-              <span class="work__why">point moved $4$ places right</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$5.9853 \times 10^4$ and $4.2 \times 10^{-4}$</span></div>
-          </div>
-          <p>A check worth doing every time: a number bigger than $10$ has a positive
-          exponent and a number smaller than $1$ has a negative one. If your sign
-          disagrees with the size of the number, the sign is wrong.</p>
+      <p>The exponents become negative, and they mean what §&nbsp;2.4 said:
+      $10^{-1}$ is $\tfrac{1}{10}$, $10^{-2}$ is $\tfrac{1}{100}$ and $10^{-3}$ is
+      $\tfrac{1}{1000}$. The tenths, hundredths and thousandths columns are negative
+      powers of ten. The decimal point marks the place where the exponent passes
+      zero.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The decimal point is a marker</div>
+        <p>Every column of a decimal numeral is a power of ten. The exponents count
+        down without a break: $\ldots, 10^2, 10^1, 10^0$, point, $10^{-1}, 10^{-2},
+        \ldots$</p>
+      </div>
+
+      <h3>2.5.1 Standard form</h3>
+
+      <p>Here are three distances, written in the usual way.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">round the Earth</span>
+          <span>$40\,075\,000$ m</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Earth to the Moon</span>
+          <span>$384\,400\,000$ m</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">Earth to the Sun</span>
+          <span>$149\,600\,000\,000$ m</span>
         </div>
       </div>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>A town's population is reported as $1\,42\,395$. Written as
-            $1.42395 \times 10^5$ that claims to be right down to the last person, which
-            no census ever is.</p>
-            <p>What does writing it as $1.42 \times 10^5$ claim instead? And
-            $1.4 \times 10^5$? What is the coefficient's length telling you?</p>
-          </div>
+      <p>These are hard to read. It is not easy to see how much larger one is than
+      another, and counting zeros by eye leads to mistakes. We want a way of writing a
+      number that shows its size first.</p>
+
+      <p>Any number can be written as a number from $1$ up to $10$, multiplied by a
+      power of ten. Take $7300$ as an example:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$7300$</span>
+          <span>$= 730 \times 10^1 = 73 \times 10^2 = 7.3 \times 10^3
+            = 0.73 \times 10^4$</span>
         </div>
       </div>
 
-      <p>The answer is that the coefficient's length is a statement about how well the
-      number is known. A census that is sure to the nearest thousand should be written
-      $1.42 \times 10^5$; one sure only to the nearest ten thousand should be written
-      $1.4 \times 10^5$. Writing more digits than you are sure of is not extra
-      precision, it is a false claim — and standard form makes the claim visible, which
-      the ordinary notation does not.</p>
+      <p>All four are correct, but only one is in standard form. The first part must
+      be at least $1$ and less than $10$. That picks out $7.3 \times 10^3$.</p>
 
-      <p>The same care applies at the small end. Physicists write the mass of an
-      electron as $9.11 \times 10^{-31}$ kg, and the three digits of that coefficient
-      are a claim that the value is known to about one part in a thousand. Writing
-      $9 \times 10^{-31}$ would have claimed less and been equally true. What you must never
-      do is add digits that were never measured.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Standard form</div>
+        <p>A number is in <span class="term">standard form</span>, also called
+        <span class="term">scientific notation</span>, when it is written
+        $x \times 10^y$ with $1 \le x \lt 10$ and $y$ an integer. The $x$ is the
+        <span class="term">coefficient</span> and $y$ is the exponent.</p>
+      </div>
+
+      <p>Now the three distances are easy to read.</p>
 
     </div>
   </div>

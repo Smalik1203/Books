@@ -1,4 +1,58 @@
-# Class 8 · Mathematics I · Chapter 2 — When Multiplying Takes Over
+# Class 8 · Mathematics I · Chapter 2 — Power Play
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, the exercises and Beyond the
+Book further down this log.** Converted with CONVERT-V2.md against Class 6
+Chapter 1. `chapter.json`: `design` maths-v2, palette `prism-denim`, accent
+`#2c5e7a`, edition `196x276-large`, `keepExerciseSets`. 40 pages:
+
+* **Body p001–p021** (20 pages and a Summary, p021, `data-close`). NCERT's
+  topics and order are kept; every context, data set, character and question
+  is new, because the old body leaned on NCERT's: the 0.001 cm sheet folded
+  46 times to the Moon (now a 0.1 mm sheet, 42 folds, with a new table), the
+  king's daughters, baskets, keys and rooms (now Asha's festival greeting,
+  Fig. 2.1 relabelled and off the beige `dg-fill-d`), Damayanti's lotus ponds
+  (a video game that doubles then triples), Estu and Roxie, the combination
+  lock, the stars/Sun/Saturn data, 47 561 and 561.903, the Earth and Moon
+  masses, bees, sheep and goats, clothing, heartbeats, a billion seconds,
+  people end to end, 64^3/192^8/32^-5 and the always-sometimes-never list.
+  Every section now has a key idea and a Think and Reflect (2.2, 2.3, 2.4,
+  2.6, 2.7 and 2.8 gained them; 2.2, 2.7 and 2.8 gained key ideas). New
+  worked examples: Example 2 (negative bases), Example 9 (estimating with
+  2^10 ≈ 10^3), Example 10 (grains of rice a year); examples renumbered 1–10.
+  Section 2.8 is renamed *A Note on Estimating*. Prose rewritten plain.
+* **Exercise sets 2.1–2.7**, all questions ours, each ending in
+  `c-practice__note` "NCERT, Figure it Out, §2.x". The NCERT page numbers
+  could not be established from anything in the chapter, so each set cites
+  the section it sits in (see the report). Sets were cut to fit whole on a
+  page: 2.2 to five questions, 2.6 to six, 2.7 to six.
+* **By the Book p090–p095**, 50 questions to BY-THE-BOOK.md at the Class 8
+  level: 10 · 10 · 10 · 5 · 5 · 10. The old board-form practice supplied
+  questions 11–14, 21–23, 31–34, 36–37 and 41–47 (reworded); the rest are
+  new, including a find-the-mistake short answer (16), algebraic *Show that*
+  (15, 27), *In the given figure* (24, a drawn box), (Take π = 22/7) (26), a
+  multi-statement MCQ (48) and a named student's claim (49). Case passages
+  are 50–60 words; three carry a table.
+* **Beyond the Book p101–p113.** The eight tried-and-explained questions
+  are kept word for word with the stage head removed, except two edits: the
+  sentence tying 2^10 ≈ 10^3 to the folded sheet now reads *forty-two
+  doublings are about four thousandfolds* (the body's new sheet), and *That
+  is the true value to three figures* became *That is the true value,
+  correct to three figures* to clear a lone word. Examples kept from the old
+  fifteen: single correct 4 and 5, more than one 7 and 8, numerical 11 and
+  13, matching 14 and 15, renumbered 1–8 with Check rows added to 1–6; two
+  new paragraph-based examples (last-digit cycles; the light-year). Fifteen
+  new practice questions (4 · 4 · 3 · 2 · 2); the matching practice
+  questions give their options as the numbers matched to P, Q, R, S in
+  order, so the options fit four across. Answers stage as the model.
+* ANSWERS.md and `check-numbers.mjs` rewritten for the new chapter.
+
+Checks at close: build all pages fit, every page ≥ 88% except the Summary
+(87%) and By the Book's last page (60%); lone-words 0; check-sums 23
+identities, 0 wrong; orphans 0; check-labels none collide; fit-options every
+option row fits; `check-numbers.mjs` 462 claims hold, 0 fail (planted wrong
+key letters and a wrong matching key are caught).
 
 ## Solved examples in examination formats, 23 September 2026
 

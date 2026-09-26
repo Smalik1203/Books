@@ -1,48 +1,60 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>If everybody in India lay end to end in a line, how long would the line
-              be? Give the answer in kilometres, in standard form, and compare it with the
-              distance to the Moon.</li>
-        </ol>
-      </div>
+      <h2><span class="badge">2.8</span><span class="name">A Note on Estimating</span></h2>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Estimate the total time a person spends eating in a lifetime, in seconds.
-              Then write it as a fraction of the total seconds in that lifetime.</li>
-        </ol>
-      </div>
+      <p>Some questions in this chapter have no exact answer. Nobody can fold paper
+      forty-two times, or count every leaf in a forest. We answered them anyway, and the method we used deserves a name.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>What date was one billion seconds ago? Take a year to be
-              $3.15 \times 10^7$ seconds.</li>
-        </ol>
-      </div>
+      <p>Here is the method. Write down what the answer depends on. Make a sensible
+      guess for each part. Then multiply. Nobody knows the exact number of leaves in a
+      forest. But we can estimate the number of trees and the number of leaves on one
+      tree, and their product is a useful answer. An answer found this way is called
+      an <span class="term">estimate</span>. Standard form lets you show how much of
+      it you trust.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A sheet of paper $0.001$ cm thick is folded $n$ times. Write an expression
-              for its thickness, and find the smallest $n$ for which it would pass the top
-              of a $100$ m building.</li>
-        </ol>
-      </div>
+      <p>Two rules keep an estimate honest.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>Two children play a game: in ten seconds, write down the largest number
-              you can using only digits and the ordinary operations. One writes
-              $10\,000\,000\,000\,000$ and the other writes
-              $999\,999 \times 999\,999$. Who wins, and how can you tell without
-              multiplying?</li>
-        </ol>
-      </div>
+      <p><strong>Write the assumptions down.</strong> If you assumed that a tree has
+      twenty thousand leaves, say so. A reader who thinks it has fifty thousand can then
+      correct your answer without starting all over again.</p>
 
-      
+      <p><strong>Do not keep digits you have not earned.</strong> If each input is
+      known to one digit, the answer is known to one digit. Multiplying
+      $4 \times 10^5$ by $2 \times 10^4$ gives $8 \times 10^9$. Writing
+      $8\,000\,000\,000$ instead would suggest an accuracy that the inputs do not
+      have.</p>
+
+      <p>An estimate is often the only answer we can get, and it is usually enough. A
+      town planner deciding how wide to make a road needs to know whether about a
+      thousand or about ten thousand vehicles use it each day. The exact figure is not
+      needed. So ask <em>how big, roughly?</em> before you ask <em>exactly how
+      much?</em></p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 10</div>
+        <div class="c-example__body">
+          <p>A family of four eats rice every day. Estimate the number of grains of rice
+          the family eats in a year.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>assume $200$ g a person a day, and $0.02$ g a grain</span>
+              <span class="work__why">write the assumptions</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$(2 \times 10^2) \div (2 \times 10^{-2}) = 10^4$ grains a person a day</span>
+              <span class="work__why">divide the powers</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$4 \times 10^4 \times 365 = 1.46 \times 10^7$</span>
+              <span class="work__why">four people, a year</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>about $1 \times 10^7$ grains, or one crore</span></div>
+          </div>
+          <p>Each assumption is known to one digit only, so the answer keeps one digit.
+          Writing $14\,600\,000$ would claim far more than we know.</p>
+        </div>
+      </div>
 
     </div>
   </div>

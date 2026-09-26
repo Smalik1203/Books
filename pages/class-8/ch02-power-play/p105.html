@@ -3,6 +3,39 @@
     <div class="page__main">
 
       <p>
+        Try six of them and the pattern is clear.
+      </p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label">$2^5 = 32$</span><span>ends in $2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$3^5 = 243$</span><span>ends in $3$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$4^5 = 1024$</span><span>ends in $4$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$7^5 = 16807$</span><span>ends in $7$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$8^5 = 32768$</span><span>ends in $8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label">$9^5 = 59049$</span><span>ends in $9$</span>
+        </div>
+      </div>
+
+      <p>
+        Every time, the fifth power ends in the digit it started with. The reason is
+        the cycle of last digits, met in the question on $7^{100}$. Every digit's last-digit cycle
+        has length $1$, $2$ or $4$ — check them and see — and $5 - 1 = 4$ is a
+        multiple of all three. So raising to the fifth power always lands exactly one
+        step past a whole number of cycles, which is where it started.
+      </p>
+
+      <p>
         Two things follow for free. The same is true of the ninth power, and the
         thirteenth, and every power of the form $4k + 1$. And the last digit of any
         power can be found by dividing the exponent by the length of its cycle and
@@ -49,15 +82,6 @@
         which is where they do the most work. A law you can only apply when the question
         is already in the right shape is half a law.
       </p>
-
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Solved Examples</div>
-        </div>
-      </div>
-
-      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 1 · Single correct</div><div class="c-example__body"><p>What is $(-2)^4 - 2^4$?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>0</li><li>32</li><li>$-32$</li><li>16</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>An even power of a negative number is positive: $(-2)^4 = 16$.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>$16 - 16 = 0$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(a) 0</span></div></div></div></div>
 
     </div>
   </div>

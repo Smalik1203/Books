@@ -2,42 +2,79 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="25">
-          <li>A school gives each student a code of two capital letters (A to Z) followed by three digits. How many codes are possible? Write the answer as a product of powers, and in standard form.</li>
-        </ol>
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">27</span>
+          <span>$2^{n+2} - 2^n = 4 \times 2^n - 2^n = 3 \times 2^n$. Value $\dfrac{3 \times 2^{10}}{3 \times 2^8} = 4$. $3 \times 2^n = 96$ gives $2^n = 32$, so $n = 5$</span></div>
+        <div class="work__row"><span class="work__label">28</span>
+          <span>$\dfrac{8.8 \times 10^3}{2 \times 10^{-4}} = 4.4 \times 10^7$ sheets. $2^{25} = 33\,554\,432$ is too few and $2^{26} = 67\,108\,864$ is enough, so $26$ folds</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="26">
-          <li>A cell splits into two every $20$ minutes. Starting from one cell, how many cells are there after $4$ hours? Give the answer as a power of $2$ and as a number.</li>
-        </ol>
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">29</span>
+          <span>$36^4 = 1\,679\,616$, about $1.68 \times 10^6$, so it takes about $1.7$ seconds. With $6$ characters the time grows by $36^2 = 1296$ times</span></div>
+        <div class="work__row"><span class="work__label">30</span>
+          <span>About $420$ people per km²; $2.1 \times 10^{11}$ L a day; about $7.7 \times 10^{13}$ L a year</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <div class="c-practice__sub">Long answer</div>
-        <ol class="c-questions" data-start="27">
-          <li>Find the value of $\dfrac{(2^5)^2 \times 7^3 \times 3^{-2}}{8^3 \times 7^2 \times 3^{-4}}$, showing each law you use.</li>
-        </ol>
+      <ol class="c-answers">
+        <li>
+          <span class="c-answers__stage">31&ndash;35</span>
+          <span class="c-answers__list"><span class="n">31</span> (a) &nbsp; <span class="n">32</span> (b) &nbsp; <span class="n">33</span> (c) &nbsp; <span class="n">34</span> (d) &nbsp; <span class="n">35</span> (a)</span>
+        </li>
+      </ol>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">36</span>
+          <span>(i) $500 \times 2^n$ (ii) $500 \times 2^{10} = 512\,000$, which is $5.12 \times 10^5$ (iii) $2^n$ must pass $2000$: $2^{10} = 1024$, $2^{11} = 2048$, so after $11$ hours</span></div>
+        <div class="work__row"><span class="work__label">37</span>
+          <span>(i) $16 \times 2^{30} = 2^{34}$ (ii) $2^{34} \div 2^{22} = 2^{12}$, which is $4096$ songs (iii) $2^{41} \div 2^{40} = 2$ TB; about $2 \times 10^{12}$ bytes</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="28">
-          <li>Without evaluating any of them, decide which is larger: $2^{75}$ or $3^{50}$; and then $2^{75}$ or $5^{25}$. Explain each step.</li>
-        </ol>
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">38</span>
+          <span>(i) $150\,000\,000$ km (ii) $\dfrac{4.5 \times 10^9}{1.5 \times 10^8} = 30$ times (iii) $4.5 \times 10^9 \div 10^7 = 450$ cm, which is $4.5$ m</span></div>
+        <div class="work__row"><span class="work__label">39</span>
+          <span>(i) $10^3 = 1000$ (ii) $26^3 = 17\,576$ (iii) $26^3 \times 10^3 = 17\,576\,000$, which is $1.7576 \times 10^7$</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="29">
-          <li>Suppose one grain of sand has a mass of $6.5 \times 10^{-4}$ g. About how many grains are there in a bag of $26$ kg of sand? Give the answer in standard form, and say which law of exponents you used.</li>
-        </ol>
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">40</span>
+          <span>(i) $4^5 = 2^{10} = 1024$ (ii) $64 \div 2^5 = 2$ cm (iii) the side is $2^{6-n}$, so $n = 7$ rounds, with $4^7 = 2^{14} = 16\,384$ pieces</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <div class="c-practice__sub">Case-based questions</div>
-        <ol class="c-questions" data-start="30">
-          <li><div class="c-case"><p>A laboratory counts the bacteria in a dish every hour. The number doubles each hour.</p><table><thead><tr><th>Hour</th><th>Bacteria</th></tr></thead><tbody><tr><td>0</td><td>500</td></tr><tr><td>1</td><td>1000</td></tr><tr><td>2</td><td>2000</td></tr><tr><td>3</td><td>4000</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>Write the number of bacteria after $n$ hours, using a power of $2$.</li><li>How many bacteria are there after $10$ hours? Give the answer in standard form.</li><li>After how many whole hours does the number first go past $10^6$?</li></ol></li>
-        </ol>
+      <ol class="c-answers">
+        <li>
+          <span class="c-answers__stage">41&ndash;50</span>
+          <span class="c-answers__list"><span class="n">41</span> (d) &nbsp; <span class="n">42</span> (b) &nbsp; <span class="n">43</span> (c) &nbsp; <span class="n">44</span> (a) &nbsp; <span class="n">45</span> (c) &nbsp; <span class="n">46</span> (d) &nbsp; <span class="n">47</span> (a) &nbsp; <span class="n">48</span> (c) &nbsp; <span class="n">49</span> (b) &nbsp; <span class="n">50</span> (a)</span>
+        </li>
+      </ol>
+
+      <div class="c-practice__sub">Beyond the Book</div>
+
+      <ol class="c-answers">
+        <li>
+          <span class="c-answers__stage">1&ndash;13</span>
+          <span class="c-answers__list">1 (c) &nbsp; 2 (b) &nbsp; 3 (a) &nbsp; 4 (d) &nbsp; 5 (a), (b), (d) &nbsp; 6 (b), (d) &nbsp; 7 (b), (c), (d) &nbsp; 8 (a), (c), (d) &nbsp; 9 5 &nbsp; 10 0 &nbsp; 11 3 &nbsp; 12 (a) &nbsp; 13 (c)</span>
+        </li>
+      </ol>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">9</span>
+          <span>$2^{12} \times 2^6 \div 2^{2n} = 2^8$, so $18 - 2n = 8$ and $n = 5$</span></div>
+        <div class="work__row"><span class="work__label">10</span>
+          <span>An odd power of 4 ends in 4 and every power of 6 ends in 6; $4 + 6 = 10$ ends in 0</span></div>
+      </div>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">11</span>
+          <span>Sixth powers: $1$, $2^6 = 64$ and $3^6 = 729$; $4^6 = 4096$ is too large. So 3</span></div>
+        <div class="work__row"><span class="work__label">14</span>
+          <span>(i) (a) 50 mg, after 4 halvings; (ii) $800 \div 12.5 = 64 = 2^6$, so 36 hours; (iii) $800 \div 3.125 = 256 = 2^8$, so $n = 8$</span></div>
+      </div>
+
+      <div class="work work--trace">
+        <div class="work__row"><span class="work__label">15</span>
+          <span>(i) (b) 6: 2, 4, 8, 16, 32, 64; (ii) 4: the exponents $2 + 10$, $3 + 9$, $4 + 8$, $5 + 7$; (iii) the exponents add to $1 + 2 + \cdots + 10 = 55$</span></div>
       </div>
 
     </div>

@@ -4,16 +4,16 @@
 
       <div class="c-keyidea">
         <div class="c-keyidea__title">Adding and multiplying grow differently</div>
-        <p>Repeatedly <em>adding</em> a fixed amount is
-        <span class="term">additive growth</span>, and it goes up in a straight line.
-        Repeatedly <em>multiplying</em> by a fixed amount is
+        <p>Adding the same amount again and again is
+        <span class="term">additive growth</span>: it goes up in equal steps.
+        Multiplying by the same amount again and again is
         <span class="term">multiplicative growth</span>, or
-        <span class="term">exponential growth</span>, and it does not.</p>
+        <span class="term">exponential growth</span>: its steps keep getting bigger.</p>
       </div>
 
-      <p>Set the two side by side and the difference is easier to see than to explain.
-      Suppose one stack of paper grows by a whole sheet at every step, and another
-      doubles at every step. Both start at one sheet.</p>
+      <p>Put the two kinds of growth side by side. One pile of coins gets one more
+      coin at each step. Another pile doubles at each step. Both piles start with one
+      coin.</p>
 
       <div class="work">
         <div class="work__row">
@@ -26,29 +26,29 @@
         </div>
       </div>
 
-      <p>By the tenth entry the first stack holds ten sheets and the second holds five
-      hundred and twelve. By the twentieth, the first holds twenty and the second holds
-      more than half a million. The gap is not just large; it grows wider at every
-      step.</p>
+      <p>At the tenth step, the first pile has $10$ coins and the second has $512$. At
+      the twentieth step, the first pile has $20$ coins and the second has more than
+      half a million. The gap between them grows wider at every step.</p>
 
       <h2><span class="badge">2.2</span><span class="name">Writing It Down</span></h2>
 
-      <p>The thickness after seven folds is</p>
+      <p>After seven folds, the thickness of the sheet in millimetres is</p>
 
       <div class="work work--centred">
-        <p>$0.001 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2$ cm</p>
+        <p>$0.1 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2$ mm</p>
       </div>
 
-      <p>and after forty-six it would take a line and a half of twos. That is not a
-      problem of arithmetic but of notation, and Chapter 1 has already shown the way
-      out: write down what is being multiplied, and how many times.</p>
+      <p>After forty-two folds we would need a whole line of twos. So we need a
+      shorter way to write it. Chapter 1 has shown the way: write the number being
+      multiplied, and how many times it is used.</p>
 
       <div class="work work--centred">
         <p>$2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 = 2^7 = 128$</p>
       </div>
 
-      <p>You have met $n^2$ and $n^3$ as a squared number and a cubed one. The raised
-      number was never limited to $2$ and $3$; it just counts the copies. So</p>
+      <p>You have met $n^2$ and $n^3$ as a square and a cube. The small raised number
+      can be any counting number. It tells us how many copies of $n$ are multiplied.
+      So</p>
 
       <div class="work">
         <div class="work__row">
@@ -65,29 +65,12 @@
         </div>
       </div>
 
-      <p>and in general $n^a$ means $n$ multiplied by itself $a$ times. In $5^4 = 625$,
-      the $5$ is the <span class="term">base</span> and the $4$ is the
-      <span class="term">exponent</span>, also called the
-      <span class="term">power</span> or the <span class="term">index</span>. The whole
-      thing is read <em>five to the power four</em>, and $625$ written as $5^4$ is in
+      <p>In general, $n^a$ means $a$ copies of $n$ multiplied together. In
+      $5^4 = 625$, the number $5$ is the <span class="term">base</span> and $4$ is the
+      <span class="term">exponent</span>. The exponent is also called the
+      <span class="term">power</span> or the <span class="term">index</span>. We read
+      $5^4$ as <em>five to the power four</em>. Writing $625$ as $5^4$ is writing it in
       <span class="term">exponential form</span>.</p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Do not confuse $3 \times 4$ with $3^4$. The first is $4$ added to itself
-          three times and comes to $12$; the second is $3$ multiplied by itself four
-          times and comes to $81$. Similarly $4 + 4 + 4 = 12$ while
-          $4 \times 4 \times 4 = 64$.</p>
-        </div>
-      </div>
-
-      <p>The notation extends to letters and to several bases at once. Whatever appears
-      repeatedly gets counted:</p>
 
     </div>
   </div>
