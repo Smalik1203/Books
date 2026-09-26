@@ -1,0 +1,123 @@
+/* The stage: the book's furniture and colour at 1920 x 1080.
+
+   Everything here is taken from the printed page, not invented for the
+   screen — the chapter ribbon at the head's left corner with its paler
+   slant behind it, the running title over a hairline, the foot line,
+   the sky example tab, the berry key idea, the mauve exercise band.
+   A video seen beside the book should read as the same book. Only the
+   sizes are the screen's: type is set for a phone held at arm's length
+   as much as for a classroom projector. */
+
+@font-face { font-family: 'CB Serif'; font-weight: 200 900; font-style: normal; src: url(../../fonts/maths/SourceSerif4Variable-Roman.ttf); }
+@font-face { font-family: 'CB Serif'; font-weight: 400; font-style: italic; src: url(../../fonts/maths/SourceSerif4-It.ttf); }
+@font-face { font-family: 'CB Sans'; font-weight: 400; src: url(../../fonts/science-v2/SourceSans3-Regular.ttf); }
+@font-face { font-family: 'CB Sans'; font-weight: 600; src: url(../../fonts/science-v2/SourceSans3-Semibold.ttf); }
+@font-face { font-family: 'CB Sans'; font-weight: 700; src: url(../../fonts/science-v2/SourceSans3-Bold.ttf); }
+
+:root {
+  --paper: #fffefb;
+  --ink: #1c211f;
+  --ink-soft: #4a524e;
+  --ink-faint: #7d837e;
+
+  /* structure: the chapter's own colour, set per video on .frame */
+  --ch: #3f597f;
+  --ch-deep: #2c3e59;
+  --ch-soft: #b2bdcc;
+  --ch-tint: #eef0f3;
+
+  /* boxes: one colour everywhere, as in print */
+  --sky: #2f9bd6;
+  --sky-deep: #1f78ad;
+  --sky-tint: #e6f4fb;
+  --berry: #c23a6e;
+  --berry-deep: #9e2a57;
+  --berry-tint: #fbeaf1;
+  --sun: #f2b31f;
+  --sun-soft: #fbe3a4;
+  --sun-tint: #fff5d6;
+  --mauve: #915074;
+  --mauve-deep: #74395a;
+  --mauve-tint: #faedf3;
+  --violet: #6b4fb3;
+
+  --serif: 'CB Serif', Georgia, serif;
+  --sans: 'CB Sans', 'Segoe UI', sans-serif;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+body { font-family: var(--serif); color: var(--ink); font-size: 46px; line-height: 1.35; -webkit-font-smoothing: antialiased; }
+/* No word left alone on a paragraph's last line, as in print. */
+body { text-wrap: pretty; }
+figcaption, .title-card__title { text-wrap: balance; }
+/* pretty does not always act on a two-line paragraph; tie the last
+   two words together with .nb where a proof shows one left alone. */
+.nb { white-space: nowrap; }
+svg * { transform-box: fill-box; transform-origin: center; }
+.katex { font-size: 1.04em; }
+
+.frame { position: relative; width: 1920px; height: 1080px; }
+
+/* ---- head: the chapter ribbon and the running title ---- */
+.rh { position: absolute; inset: 0 0 auto 0; height: 118px; }
+.rh__ribbon { position: absolute; left: 0; top: 0; width: 540px; height: 100px; overflow: visible; }
+.rh__underlay { fill: var(--ch-tint); }
+.rh__fill { fill: var(--ch); }
+.rh__motif path { fill: none; stroke: var(--ch-soft); stroke-width: 2.6; stroke-linecap: round; }
+.rh__motif circle { fill: var(--ch-soft); }
+.rh__tab { position: absolute; left: 112px; top: 30px; font: 700 34px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+.rh__title { position: absolute; right: 96px; top: 40px; font: 600 32px/1 var(--sans); color: var(--ch); letter-spacing: 0.02em; }
+.rh__rule { position: absolute; right: 96px; top: 86px; width: 1180px; height: 2px; background: var(--ch-soft); }
+
+/* ---- foot ---- */
+.pf { position: absolute; left: 96px; right: 96px; bottom: 36px; border-top: 2px solid var(--ch-soft); padding-top: 12px;
+      display: flex; justify-content: space-between; font: 400 26px/1 var(--sans); color: var(--ink-soft); }
+.pf b { font-weight: 600; color: var(--ch); }
+
+/* ---- the scene area between them ---- */
+.scene { position: absolute; left: 96px; right: 96px; top: 150px; bottom: 100px; }
+
+/* ---- the kind tab: which box of the book this video is ---- */
+.kind { display: inline-block; font: 700 30px/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase;
+        color: #fff; background: var(--sky-deep); padding: 14px 26px 13px; border-radius: var(--radius) var(--radius) 0 0; }
+.kind--mauve { background: var(--mauve); }
+.kind--ch { background: var(--ch); }
+.kind--berry { background: var(--berry); }
+
+.card { background: var(--sky-tint); border-radius: 0 var(--radius) var(--radius) var(--radius); padding: 30px 40px 32px; }
+.card--mauve { background: var(--mauve-tint); }
+.card--plain { background: transparent; padding-left: 0; }
+
+.q { font-size: 50px; line-height: 1.32; }
+.lead { font-size: 44px; color: var(--ink-soft); }
+
+/* ---- working, as the book's .work rows ---- */
+.work { display: grid; grid-template-columns: 190px 1fr; row-gap: 22px; align-items: baseline; }
+.work__label { font: 700 26px/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky-deep); }
+.work__label--ans { color: var(--berry-deep); }
+.work__why { display: block; font: italic 34px/1.2 var(--serif); color: var(--ink-faint); margin-top: 6px; }
+.row { display: contents; }
+
+/* ---- the answer, boxed as a key idea is ---- */
+.answer { display: inline-block; border: 4px solid var(--berry); border-radius: var(--radius); padding: 18px 34px 20px; background: #fff; }
+.answer__label { font: 700 26px/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--berry-deep); margin-bottom: 10px; }
+.answer__text { font-size: 54px; font-weight: 600; }
+
+.keyidea { border: 4px solid var(--berry); border-radius: var(--radius); padding: 26px 36px 30px; background: #fff; }
+.keyidea__title { font: 700 30px/1 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--berry-deep); margin-bottom: 14px; }
+
+/* ---- diagrams: sunflower and sky for the two quantities, as in print ---- */
+.dot { fill: var(--sky); }
+.dot--a { fill: var(--sun); }
+.dot--ghost { fill: var(--ch-tint); }
+.dg-label { font: 600 30px var(--sans); fill: var(--ink-soft); }
+.hl { color: var(--berry-deep); }
+.mark { background: var(--sun-soft); border-radius: 8px; box-shadow: 0 0 0 6px var(--sun-soft); }
+
+/* ---- title and end cards ---- */
+.title-card { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; }
+.title-card__kicker { font: 700 32px/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ch); margin-bottom: 24px; }
+.title-card__title { font-size: 96px; line-height: 1.08; font-weight: 600; color: var(--ink); }
+.title-card__sub { font-size: 44px; color: var(--ink-soft); margin-top: 22px; }
