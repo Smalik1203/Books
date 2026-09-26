@@ -3,7 +3,10 @@
 A print book, not a web app. Every decision below exists because getting it
 wrong wasted real time.
 
-**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** The design system is
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** **maths-v2 is the standard for every maths book**
+(DESIGN-MATHS §12); convert with [CONVERT-V2.md](CONVERT-V2.md), and see
+CLAUDE.md, which is the current version of these instructions. No NCERT
+expression is reproduced: the books have no NCERT licence. The design system is
 enforced by the builder, not by discipline — a page that invents its own
 colour, type, stroke or spacing fails the build.
 

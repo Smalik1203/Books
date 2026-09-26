@@ -1,5 +1,11 @@
 # Bringing every maths class to one standard
 
+> **Superseded, 27 September 2026.** The standard is now **maths-v2**
+> (DESIGN-MATHS.md §12), not Class 7. Every maths class is converted to it
+> with [CONVERT-V2.md](CONVERT-V2.md), Class 6 Chapter 1 as the model; Class 6
+> is done. This file is kept as the record of the September consistency pass
+> and is not the plan of work.
+
 Written 16 September 2026, after Class 7 was finished. **Class 7 is the
 standard**; Classes 6, 8, 9 and 10 are to match it, so that nothing is in one
 book and missing from another. This file is the plan of work. Start it by

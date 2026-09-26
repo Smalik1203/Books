@@ -3,9 +3,14 @@
 A print book, not a web app. Every decision below exists because getting it
 wrong wasted real time.
 
-**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** To convert a chapter to the maths-v2 design,
-follow [CONVERT-V2.md](CONVERT-V2.md) step by step; Class 6 Chapter 1 is the
-model. Before writing any By the Book
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** **maths-v2 is the standard for every maths book**
+(DESIGN-MATHS §12, 27 September 2026): the house design and `maths-clear`
+are what unconverted chapters still carry, and nothing new is built in them.
+To convert a chapter, follow [CONVERT-V2.md](CONVERT-V2.md) step by step;
+Class 6 Chapter 1 is the model and all of Class 6 is converted. **No NCERT
+expression is reproduced** — no wording, stories, characters, data, figures
+or question text; NCERT's exercises are cited by page and number, because
+the books have no NCERT licence. Before writing any By the Book
 questions, read [BY-THE-BOOK.md](BY-THE-BOOK.md) — how CBSE frames each form,
 and how the division scales from Class 6 to 10. The design system is
 enforced by the builder, not by discipline — a page that invents its own
@@ -261,9 +266,9 @@ exists, because its tried-then-explained questions are how a reader sees a
 simple idea become a tricky one; the Practice stage has no head of its own,
 its band carrying the stage numeral instead; no stage head has a line
 under its name; and **the Answers stage always opens a fresh page**, which
-`repack.mjs` enforces, so the key is never in view of the last question. **Its chapter body is NCERT's own structure** — the worked
-examples and examination-form practice a Cengage-style book puts in the
-chapter go here instead (§5).
+`repack.mjs` enforces, so the key is never in view of the last question.
+That is Class 7 as built; on conversion it takes the maths-v2 three parts
+(body, By the Book, Beyond the Book) like every other class.
 
 Classes 9 and 10 still carry the older four stages (questions tried and
 explained, worked problems, problem sets, answers), and a stage may start
@@ -348,10 +353,10 @@ the Book** (`p090`–`p099`, `data-board`, board forms) and **Beyond the Book**
 part beside `body` and `bridge`, and stamps `data-board` back on. No answer
 keys anywhere in the specimen. **The specimen is set on
 `"edition": "196x276-large"`** (`css/edition-196x276-large.css`): the 196 x 276
-page with its text a step larger. The class books move onto it chapter by
-chapter as they take the three-part design (Class 6 Chapter 1 first); the
-rest stay on `196x276` until then, and a volume will not bind while its
-chapters are on two editions. `refit` switches `keepExerciseSets` off for
+page with its text a step larger. It is the maths-v2 edition: every class
+book moves onto it as it converts (all of Class 6 is on it); the rest stay
+on `196x276` until then, and a volume will not bind while its chapters are
+on two editions or two designs. `refit` switches `keepExerciseSets` off for
 the `board` and `bridge` runs: a whole practice run never fits one page.
 
 Three things bit while fitting the guide:

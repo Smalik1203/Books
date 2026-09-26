@@ -18,9 +18,12 @@ sources and chapter files only.**
   BY-THE-BOOK.md, this file, or any other chapter. If the chapter needs
   something the design lacks, **stop and report it** — do not work round it
   with an inline style or a new class.
-* Change NCERT's body: its sections, teaching order, examples and exercise
-  questions stay (you may reword for plain English, and you may cut questions
-  that an earlier redesign *added*, never NCERT's own).
+* Reproduce NCERT's expression. The books have no NCERT licence (decided
+  27 September 2026), so NCERT's wording, stories and contexts, named
+  characters, data sets, distinctive figures and question text may not be
+  copied or closely paraphrased. Keep NCERT's topics, teaching order,
+  definitions and methods; write everything else ourselves, and cite NCERT's
+  exercises by page and number rather than printing them.
 * Commit, push, or create PDFs in the repo.
 * Interrupt a refit (it deletes pages before it writes them).
 * Add a tagline, strap, rubric or "how to answer" line under any head
@@ -53,19 +56,22 @@ re-breaks every page, so the body is refit in step 6.
 
 ## 2. The chapter body (p001 …)
 
-* NCERT's structure, in plain English (short sentences, no idiom).
+* NCERT's topics in NCERT's order, written in our own words with our own
+  contexts, characters, data, examples and questions, in plain English
+  (short sentences, no idiom). Where NCERT sets an exercise, add a one-line
+  reference to it ("NCERT, Figure it Out, p. 61, Q1–6") beside our own set.
 * **Every section has a key idea and a Think and Reflect.** Copy the markup
   from the model (p007 has both). A key idea is `.c-keyidea` with a
   `.c-keyidea__title` and either one `<p>` or a `ul.c-keyidea__points` of two
   one-line points. Think and Reflect keeps its `.c-reflect__icon` svg.
 * **No exercise set may split across a page.** `keepExerciseSets` keeps each
-  whole; if one is too long for any page, shorten wording or drop a question
-  added by an earlier redesign (check EDIT-LOG.md), never NCERT's.
+  whole; if one is too long for any page, shorten wording or drop a
+  question.
 * **The chapter ends on a Summary page**: its own file after the last body
   page, carrying `data-close`, one `.c-summary` with a `.c-summary__title`
-  "Summary" and an `<ol>` of 6–10 points, key terms in `<strong>`. Follow
-  NCERT's own summary points, in our words, with a small example where it
-  helps. Model: p013.
+  "Summary" and an `<ol>` of 6–10 points, key terms in `<strong>`. Cover the
+  chapter's ideas in our own words, with a small example where it helps.
+  Model: p013.
 
 ## 3. By the Book (p090 …, `data-board`)
 
@@ -170,4 +176,4 @@ out of date.
 * Page counts: body, By the Book, Beyond.
 * Anything that needs a shared change (design, tool), with the page it
   affects — do not make it yourself.
-* Any NCERT content you were unsure about keeping or rewording.
+* Anything that may still follow NCERT's expression too closely.
