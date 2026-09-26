@@ -2,78 +2,76 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>This is a real advance on grouping by a single size, and the reason is the
-      <em>sequence</em> of landmarks. Where a tally system offers you one group size, the
-      Roman system offers seven, so a large number can be built from a handful of symbols
-      instead of hundreds of strokes. Two thousand three hundred and sixty-seven takes
-      ten characters.</p>
-
-      <p>And it survives. Roman numerals still number the volumes of books, the acts of
-      plays, the faces of clocks and the Olympic Games — not because they are efficient,
-      but because they look formal, which is a use of its own.</p>
-
-      <p>Before leaving the Romans, it is worth being clear about what their system does
-      and does not have. It <em>does</em> group, and at several levels: a C is a
-      hundred ones, an M is ten Cs. It <em>does not</em> group at a constant rate — five
-      Is make a V but two Vs make an X — and there is no rule that generates the next
-      landmark from the last. The list $1, 5, 10, 50, 100, 500, 1000$ has to be
-      memorised, because nothing about it can be worked out.</p>
-
-      <p>That is the crack in the system, and the next section is entirely about
-      widening it.</p>
-
-      <h3>3.4.1 Where the Roman system runs out</h3>
-
-      <p>Adding in Roman numerals is not bad. Put the two numbers side by side, gather
-      the symbols of each kind, and trade upward whenever you have enough.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>Add CCXXXII and CCCCXIII without converting to our numerals.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>Cs: CC and CCCC make six</span>
-              <span class="work__why">gather like symbols</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>Xs: XXX and X make four</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>Is: II and III make five</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>five Is make a V</span>
-              <span class="work__why">trade upward</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>five Cs make a D, leaving one C over</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>DCXLV, which is $645$</span></div>
-          </div>
-          <p>Notice the trading: five Is became a V, but it takes <em>two</em> Vs to
-          make an X, and five Xs to make an L. The rate changes as you go up, and you
-          have to remember which is which.</p>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.1</div>
+        <ol class="c-questions">
+          <li>A language has words only for one and two, as in the table above. Write
+              how $9$ and $12$ would be said. How many words does each take?</li>
+        </ol>
       </div>
 
-      <p>Multiplying is where it stops working. What is $\text{VII} \times \text{IX}$?
-      There is no rule to reach for. You cannot say what a C times an X is without
-      knowing what number the answer wants to be called, and no symbol pattern
-      produces it. The landmarks $1, 5, 10, 50, 100, 500, 1000$ multiply into each
-      other in no orderly way at all.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$\text{V} \times \text{X}$</span>
-          <span>$= 50 = \text{L}$</span><span>— a landmark, by luck</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$\text{V} \times \text{V}$</span>
-          <span>$= 25 = \text{XXV}$</span><span>— not a landmark at all</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$\text{L} \times \text{L}$</span>
-          <span>$= 2500 = \text{MMD}$</span><span>— nor this</span>
-        </div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>A teacher gives each student a token as they enter a hall, and takes a
+              token back from each student who leaves. At the end of the day three
+              tokens have not come back. What does she know? What does she still not
+              know?</li>
+        </ol>
       </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Draw $38$ as a tally, with its marks in groups of five. How many full
+              groups are there, and how many marks are left over?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Rajesh groups $47$ marks in tens. His sister Leela groups the same marks in
+              fives. How many groups does each make, and how many marks are left over for
+              each?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>A shopkeeper's tally shows $9$ groups of five and $3$ loose marks. He then
+              sells $12$ more items and adds a mark for each. Describe the new tally.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>Invent a way of writing numbers with two symbols of your own: one for a
+              single item and one for a group. Write the numbers $1$ to $12$ in it. What
+              is your system worst at?</li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §3.3</p>
+      </div>
+
+      <h2><span class="badge">3.4</span><span class="name">Landmark Numbers</span></h2>
+
+      <p>Grouping by fives is a start, but a number like $1580$ written as three hundred
+      and sixteen groups of five and no more is not much of an improvement on writing
+      it in strokes. What is missing is a second level of grouping — groups of groups.</p>
+
+      <p>The Roman system does exactly that. It grew out of the older numerals of the Etruscans,
+      Rome's neighbours in Italy, and was used across Europe for nearly two thousand years.
+      It has a short list of numbers with symbols of their own:</p>
+
+      <table>
+        <thead>
+          <tr><th>I</th><th>V</th><th>X</th><th>L</th><th>C</th><th>D</th><th>M</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td><td>500</td><td>1000</td></tr>
+        </tbody>
+      </table>
+
+      <p>Call these the <span class="term">landmark numbers</span> of the system. To
+      write any number, take as many of the largest landmark as will fit, then as many of
+      the next, and so on down.</p>
 
     </div>
   </div>

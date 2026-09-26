@@ -2,120 +2,99 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>List the first six landmark numbers of a base-$7$ system. In general, what
-              are the landmarks of a base-$n$ system?</li>
-        </ol>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 190 82" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="The Egyptian symbols for one, ten, a hundred and a thousand, and the number three hundred and twenty-four written with three coils, two arches and four strokes">
+      
+            <g class="dg-line">
+              <g transform="translate(24 4)"><path d="M7 3 V15"/></g>
+              <g transform="translate(64 4)"><path d="M2 15 A 5 5 0 0 1 12 15"/></g>
+              <g transform="translate(104 4)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
+              <g transform="translate(144 4)">
+                <path d="M7 15 V7"/>
+                <path d="M7 7 C 2.5 7, 1.5 2, 4 1 C 6 0.2, 7 4, 7 7"/>
+                <path d="M7 7 C 11.5 7, 12.5 2, 10 1 C 8 0.2, 7 4, 7 7"/>
+              </g>
+            </g>
+            <g class="dg-note" text-anchor="middle">
+              <text x="31"  y="30">1</text>
+              <text x="71"  y="30">10</text>
+              <text x="111" y="30">100</text>
+              <text x="151" y="30">1000</text>
+            </g>
+      
+            <g class="dg-ghost"><path d="M8 38 H182"/></g>
+      
+            <g class="dg-line">
+              <g transform="translate(14 44)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
+              <g transform="translate(30 44)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
+              <g transform="translate(46 44)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
+              <g transform="translate(70 44)"><path d="M2 15 A 5 5 0 0 1 12 15"/></g>
+              <g transform="translate(86 44)"><path d="M2 15 A 5 5 0 0 1 12 15"/></g>
+              <g transform="translate(110 44)"><path d="M7 3 V15"/></g>
+              <g transform="translate(118 44)"><path d="M7 3 V15"/></g>
+              <g transform="translate(126 44)"><path d="M7 3 V15"/></g>
+              <g transform="translate(134 44)"><path d="M7 3 V15"/></g>
+            </g>
+            <g class="dg-note" text-anchor="middle">
+              <text x="38"  y="72">3 × 100</text>
+              <text x="86"  y="72">2 × 10</text>
+              <text x="130" y="72">4 × 1</text>
+            </g>
+            <text class="dg-label" x="166" y="60">= 324</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.3</span> The Egyptian landmarks are
+          $1, 10, 100, 1000, \ldots$ — each ten times the one before, so every one of
+          them is a power of ten.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Is there any whole number that cannot be written in the base-$5$ system?
-              Explain why, or give one.</li>
-        </ol>
+      <p>The order of the symbols does not matter, since each one carries its own value
+      wherever it stands. Three coils, two arches and four strokes make $324$ however
+      they are arranged on the stone, and Egyptian scribes did sometimes stack them or
+      write them right to left.</p>
+
+      <p>Now the important part. Because the landmarks were chosen by a rule, they are
+      not a chosen list at all — they are the powers of ten:</p>
+
+      <div class="work work--centred">
+        <p>$10^0 = 1, \quad 10^1 = 10, \quad 10^2 = 100, \quad 10^3 = 1000, \ \ldots$</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Can an Egyptian numeral ever need the same symbol ten or more times? Say
-              why not, in one sentence.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Give a simple rule for multiplying a number by $5$ in a base-$5$ system,
-              and check it on $18$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>In base $10$, the number $324$ needs $3 + 2 + 4 = 9$ symbols written
-              Egyptian-style. How many does it need in base $5$? Which base writes $324$
-              with fewer symbols, and is that true for every number?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">3.6</span><span class="name">Letting Position Do the Work</span></h2>
-
-      <p>A base fixes the arithmetic, but one problem remains, and it is the problem
-      this chapter opened with. Egypt needed a new picture for every new power of ten: a
-      stroke, an arch, a coil, a lotus, a finger, a tadpole, a kneeling figure — and
-      after a million, nothing. Push far enough and the system runs out of symbols, just
-      as the alphabet did.</p>
-
-      <p>The way out is surprising once you see it, and it was found more than once. Look
-      again at how a number is written:</p>
+      <p>And once you notice that, you notice that ten was a choice. Any number would
+      do. Start at $1$, decide that five of any landmark make the next, and you get a
+      different but perfectly workable system:</p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">$324$ in Egypt</span>
-          <span>coil coil coil, arch arch, stroke stroke stroke stroke</span>
+          <span class="work__label work__label--wide">landmarks</span>
+          <span>$1, \quad 5, \quad 25, \quad 125, \quad 625, \quad 3125, \ \ldots$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">that is</span>
+          <span>$5^0, \quad 5^1, \quad 5^2, \quad 5^3, \quad 5^4, \quad 5^5, \ \ldots$</span>
         </div>
       </div>
 
-      <p>Every symbol in that line is doing two jobs at once. It says <em>how many</em>
-      by being repeated, and it says <em>of what</em> by being the shape it is. Separate
-      the two jobs, and the second one can be done without a symbol at all — by
-      <strong>position</strong>.</p>
+      <p>That second line is the whole idea. The landmarks are no longer a list somebody
+      chose; they are generated, one from the last, by a rule you can state in seven
+      words. Ask for the tenth landmark and you do not have to ask anybody — it is
+      $5^9$. Ask the Romans for their tenth landmark and there is no answer, because
+      after M they simply stopped.</p>
 
-      <h3>3.6.1 Mesopotamia, and counting in sixties</h3>
-
-      <p>In what is now Iraq, from around four thousand years ago, scribes pressed
-      wedge-shaped marks into wet clay. Their system had two symbols — a narrow wedge
-      for $1$ and a sideways one for $10$ — and with those two they could write any
-      number from $1$ to $59$.</p>
-
-      <p>Fifty-nine, because their base was $60$. Nobody is sure why sixty. It may have come
-      from their calendar, or from how neatly a number with so many divisors divides up, or
-      from an older set of landmarks that happened to include it. What is certain is
-      that we still use it — sixty minutes in an hour, sixty seconds in a minute — four
-      thousand years later.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 190 68" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The number seven thousand five hundred and thirty written in Mesopotamian wedges: two wedges in the three-thousand-six-hundreds place, five in the sixties place, and three ten-wedges in the units place">
-      
-            <g class="dg-note" text-anchor="middle">
-              <text x="26"  y="12">3600s</text>
-              <text x="80"  y="12">60s</text>
-              <text x="142" y="12">1s</text>
-            </g>
-      
-            <g class="dg-fill-c">
-              <g transform="translate(20 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-              <g transform="translate(28 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-      
-              <g transform="translate(62 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-              <g transform="translate(70 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-              <g transform="translate(78 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-              <g transform="translate(86 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-              <g transform="translate(94 20)"><path d="M0 0 L4 0 L2 12 Z"/></g>
-      
-              <g transform="translate(126 21)"><path d="M8 0 L0 5 L8 10 Z"/></g>
-              <g transform="translate(138 21)"><path d="M8 0 L0 5 L8 10 Z"/></g>
-              <g transform="translate(150 21)"><path d="M8 0 L0 5 L8 10 Z"/></g>
-            </g>
-      
-            <g class="dg-ghost">
-              <path d="M50 8 V40 M112 8 V40"/>
-            </g>
-      
-            <g class="dg-label" text-anchor="middle">
-              <text x="26"  y="48">2</text>
-              <text x="80"  y="48">5</text>
-              <text x="142" y="48">30</text>
-            </g>
-            <text class="dg-note" x="95" y="64" text-anchor="middle">2 × 3600 + 5 × 60 + 30 = 7530</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3.4</span> The wedges say how many; where
-          they stand says of what. No symbol for $3600$ appears anywhere in the
-          numeral.</figcaption>
-        </figure>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A base</div>
+        <p>A number system whose first landmark is $1$ and whose every later landmark is
+        $n$ times the one before is a <span class="term">base-$n$</span> system. Its
+        landmarks are exactly the powers of $n$. Base $10$ is also called
+        <span class="term">decimal</span>.</p>
       </div>
+
+      <p>The smallest useful base is $2$. Its landmarks are $1, 2, 4, 8, 16, 32, \ldots$,
+      each double the one before. No landmark is ever used twice, because two of them
+      make the next. So every whole number is a sum of different landmarks of base $2$:
+      for example, $13 = 8 + 4 + 1$.</p>
 
     </div>
   </div>

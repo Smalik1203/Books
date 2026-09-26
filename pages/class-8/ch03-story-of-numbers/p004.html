@@ -2,74 +2,56 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Design a number system of your own, using symbols you invent, and write
-              the numbers $1$ to $12$ in it. Then say honestly what it is worst
-              at.</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">3.4</span><span class="name">Landmark Numbers</span></h2>
-
-      <p>Grouping by fives is a start, but a number like $1345$ written as two hundred
-      and sixty-nine groups of five and no more is not much of an improvement on writing
-      it in strokes. What is missing is a second level of grouping — groups of groups.</p>
-
-      <p>The Roman system does exactly that. It grew out of an older Greek one around the eighth
-      century BCE, and was used across Europe for the better part of two thousand years.
-      It has a short list of numbers with symbols of their own:</p>
+      <p>Some peoples grouped by two and went no further. They had a word for one and a
+      word for two, and they built every other number from those two words. Counting in
+      a language of that kind goes like this:</p>
 
       <table>
         <thead>
-          <tr><th>I</th><th>V</th><th>X</th><th>L</th><th>C</th><th>D</th><th>M</th></tr>
+          <tr><th>number</th><th>said as</th><th>what it means</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td><td>500</td><td>1000</td></tr>
+          <tr><td>1</td><td>one</td><td>one</td></tr>
+          <tr><td>2</td><td>two</td><td>two</td></tr>
+          <tr><td>3</td><td>two-one</td><td>two and one</td></tr>
+          <tr><td>4</td><td>two-two</td><td>two and two</td></tr>
+          <tr><td>5</td><td>two-two-one</td><td>two, two and one</td></tr>
+          <tr><td>6</td><td>two-two-two</td><td>two, two and two</td></tr>
         </tbody>
       </table>
 
-      <p>Call these the <span class="term">landmark numbers</span> of the system. To
-      write any number, take as many of the largest landmark as will fit, then as many of
-      the next, and so on down.</p>
+      <p>Anything beyond six was simply <em>many</em>. The names are built by repeating
+      the word for two, which is the idea of grouping showing up in speech rather than in
+      writing.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>Write $2367$ in Roman numerals.</p>
-          <p>Work down the landmarks, taking as many of each as will fit.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$2367$ $= 1000 + 1000 + 100 + 100 + 100 + 50 + 10 + 5 + 1 + 1$</span>
-              <span class="work__why">largest landmarks first</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>M M C C C L X V I I</span>
-              <span class="work__why">a symbol for each</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$1000 + 1000 + 100 \times 3 + 50 + 10 + 5 + 1 + 1 = 2367$</span>
-              <span class="work__why">add back to check</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>MMCCCLXVII</span></div>
-          </div>
-        </div>
+      <p>There is something strange about this kind of counting. It has been recorded
+      among peoples of the islands north of Australia, of South America and of southern
+      Africa. Three peoples on three continents, with no known contact between them,
+      arrived at the same arrangement. Historians disagree about why. One idea is that
+      the three peoples share a very old common ancestor, and the system travelled with
+      them. Another is simply that counting in twos is an obvious thing to do, and
+      obvious things get invented more than once.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Counting in groups</div>
+        <ul class="c-keyidea__points">
+          <li>Marks gathered into groups of one size can be read at a glance.</li>
+          <li>The usual group sizes are $2$, $5$, $10$ and $20$.</li>
+        </ul>
       </div>
 
-      <p>One extra rule is worth knowing. Rather than write $4$ as IIII, the Romans often
-      put the smaller symbol <em>before</em> the larger to mean subtraction: IV is $5-1$,
-      IX is $10-1$, XL is $50-10$, CM is $1000-100$. They were not consistent about it —
-      IIII appears on plenty of monuments and clock faces — but the rule shortens
-      the awkward cases.</p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 12 L12 7 M12 12 L15.5 14"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>The subtractive rule only ever borrows one step down: IV and IX are
-          allowed, IL and IC are not. So $49$ is XLIX — forty then nine — and not IL.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>People who count on their fingers often group by $5$ or by $10$. Why might that be?</li>
+            <li>A language counts only in twos, as in the table. Why would such a people stop at six and say <em>many</em>?</li>
+            <li>Why would it be hard to compare two large numbers said in the two-word language?</li>
+          </ol>
+          </div>
         </div>
       </div>
 

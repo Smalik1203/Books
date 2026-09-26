@@ -1,4 +1,96 @@
-# Class 8 · Mathematics I · Chapter 3 — Ten Symbols, Every Number
+# Class 8 · Mathematics I · Chapter 3 — A Story of Numbers
+
+## The maths-v2 conversion, 27 September 2026
+
+**This supersedes every description of the body's exercise sets, Beyond the
+Book and the answer key further down this log.** Converted with
+CONVERT-V2.md, Class 6 Chapter 1 as the model. `chapter.json`: design
+`maths-v2`, palette `prism-cobalt`, edition `196x276-large`,
+`keepExerciseSets`, accent `#41587f`. 42 pages:
+
+* **Body p001–p021** (20 pages and a **Summary**, p021, `data-close`, ten
+  points). Every section now has a key idea and a Think and Reflect: added
+  key ideas *One for one* (3.2), *Counting in groups* (3.3), *Landmark
+  numbers* (3.4); added Think and Reflects in 3.1, 3.3, 3.4, 3.5 and 3.7.
+* **By the Book p090–p096**, 50 questions to BY-THE-BOOK.md at the Class 8
+  level: 10 · 10 · 10 · 5 · 5 · 10; one algebraic *Show that* in each of
+  short and long answers (121 in base $n$ is $(n+1)^2$; the largest
+  three-place numeral is $n^3 - 1$; $10a + b$ against $8a + b$); a
+  find-the-mistake (Q13, the missing placeholder in $75 = 2210_3$); *In
+  the given figure* (Q26, a base-5 counting board, Fig. 3.7); case passages
+  of 48–60 words, each with a table or a figure (Figs. 3.8, 3.9); a
+  multi-statement MCQ (Q47) and a named student's claim (Q48). Objective
+  letters a 2, b 3, c 2, d 3; assertion–reason a, b, c, d, a. Seven pages,
+  not five: the case studies are two to a page. Long answers were
+  reordered once (the figure question moved from 24 to 26) so that page
+  p091 fills.
+* **Beyond the Book p101–p114**: the eight tried-and-explained questions
+  of the old Stage 1 under the band with no stage head, then Single
+  correct · More than one correct · Numerical answer · Matching ·
+  Paragraph-based, each two examples and its practice (4 · 4 · 3 · 2 · 2).
+  Examples kept from the old fifteen: 1 (1649), 6 (100 in base 3), 8
+  (10 000 seconds), 9 (base 4), 11 (Mayan $k$), 12 (4000 in sixties), 14
+  and 15 (matching), renumbered 1–8; tabs read *Example N*; the *Choose one
+  correct option* lines are gone. Two new paragraph examples (a base-5
+  wheel counter, Fig. 3.10; a base-6 token game). Fifteen new practice
+  questions (Fig. 3.11 in Q13). Answers on a fresh page: By the Book, then
+  Beyond.
+* The old practice run of 31 became raw material for By the Book; none is
+  printed as it was.
+
+### No NCERT expression
+
+The body keeps NCERT's topics, order and terms (landmark numbers, base,
+place value) and its historical facts, and changes every context:
+
+| was | now |
+|---|---|
+| cows and pebbles (3.2, the Think and Reflect, Fig. 3.6's label) | fishing boats and shells |
+| the Gumulgal table of number words (3.3) | the same structure in English words (*two-one*, *two-two*); the peoples named only by region |
+| Laplace's remark on the ten symbols (3.7) | dropped; the point made in our own voice (also clears the old flag on it) |
+| Example 1, 2367; Example 2, CCXXXII + CCCCXIII; Example 3, 143 in base 5; 1345 as groups of five | 2758; CCXXXIII + CCCCXXII; 187; 1580 |
+| all five exercise sets | new questions, our own names and numbers; each cites NCERT on its last line |
+
+Added teaching to close short pages: a paragraph on the systems ahead
+(3.1), the Roman counting board as place value in disguise (3.4), base 2
+(3.5), Example 2 (reading MCMLXXIV) and Example 6 (1206 in three systems).
+
+Corrections made on the way: the Roman system now grows out of the
+Etruscan numerals, not "an older Greek one"; Example 3's landmarks were
+counted from the wrong end (125 is the fourth landmark of base 5, not the
+third); the Brahmagupta tip no longer says he "said so honestly" — he gave
+$0 \div 0 = 0$, which is wrong; Fig. 3.2's caption no longer answers its
+own question; *distributive law* now carries a gloss.
+
+**Stage 1 was kept word for word except to remove lone words on last
+lines**, the smallest change each time: *exactly* dropped (*the Egyptians'
+problem was that…*); *leaves the reader to choose* → *the reader must
+choose*; *with the base as a letter, $n$, and the question answers itself*
+→ *with the base written as a letter $n$. The question then answers
+itself.*; *each power of ten it can reach* → *each power of ten*; *…as
+$4 \times 6^3 + \ldots$* → *… and look again*; *That step is where the
+general rule lives* → *The general rule lives in that step.*
+
+### NCERT citations
+
+The repository holds no NCERT page numbers for this chapter, so every set
+cites a section: *NCERT, Figure it Out, §3.3* to *§3.7*, using this
+chapter's section numbers. **To be checked against Ganita Prakash 8,
+Part I**, and replaced with page and question numbers.
+
+### Checks at close
+
+`build.mjs`: 42 pages, all fit, nothing into the margin; every page 88% or
+more except the Summary (83%), By the Book's last page (48%), both
+`data-close`. `lone-words`: 0 (run from a Linux copy with the Chromium
+path; the shared tool looks only for Windows browsers). `check-sums`: 0
+wrong. `orphans`: 0 stranded. `check-labels`: no collisions.
+`fit-options`: every row fits (one list narrowed by `--fix`).
+`check-numbers.mjs` rewritten for this layout: 360 checks, none failing —
+identities, the complete key, every single-correct option recomputed,
+and every Roman numeral, base conversion, place of sixty and Mayan place
+the chapter prints. A planted wrong key letter is caught; a wrong value
+printed in bold after an empty right-hand side in ANSWERS.md is not.
 
 ## Solved examples in examination formats, 23 September 2026
 

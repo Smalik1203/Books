@@ -2,107 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">3.5</span><span class="name">The Idea of a Base</span></h2>
+      <p>Before leaving the Romans, it is worth being clear about what their system does
+      and does not have. It <em>does</em> group, and at several levels: a C is a
+      hundred ones, an M is ten Cs. It <em>does not</em> group at a constant rate — five
+      Is make a V but two Vs make an X — and there is no rule that generates the next
+      landmark from the last. The list $1, 5, 10, 50, 100, 500, 1000$ has to be
+      memorised, because nothing about it can be worked out.</p>
 
-      <p>The trouble with the Roman landmarks is that they are a list somebody just chose. Fix
-      that, and almost everything else fixes itself.</p>
+      <p>That is the crack in the system, and the next section is entirely about
+      widening it.</p>
 
-      <p>Around 3000 BCE the Egyptians were using a system whose landmarks were chosen by
-      a rule rather than picked by hand. Start at $1$. Ten of those make the next landmark,
-      $10$. Ten of <em>those</em> make the next, $100$. Ten of those, $1000$ — and so on,
-      each landmark ten times the one before.</p>
+      <h3>3.4.1 Where the Roman system runs out</h3>
 
-      <p>Each landmark got a picture of its own — a stroke, a heel bone, a coil of rope,
-      a lotus — and a number was written by drawing as many of each as it contained.</p>
+      <p>Adding in Roman numerals is not bad. Put the two numbers side by side, gather
+      the symbols of each kind, and trade upward whenever you have enough.</p>
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 190 82" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The Egyptian symbols for one, ten, a hundred and a thousand, and the number three hundred and twenty-four written with three coils, two arches and four strokes">
-      
-            <g class="dg-line">
-              <g transform="translate(24 4)"><path d="M7 3 V15"/></g>
-              <g transform="translate(64 4)"><path d="M2 15 A 5 5 0 0 1 12 15"/></g>
-              <g transform="translate(104 4)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
-              <g transform="translate(144 4)">
-                <path d="M7 15 V7"/>
-                <path d="M7 7 C 2.5 7, 1.5 2, 4 1 C 6 0.2, 7 4, 7 7"/>
-                <path d="M7 7 C 11.5 7, 12.5 2, 10 1 C 8 0.2, 7 4, 7 7"/>
-              </g>
-            </g>
-            <g class="dg-note" text-anchor="middle">
-              <text x="31"  y="30">1</text>
-              <text x="71"  y="30">10</text>
-              <text x="111" y="30">100</text>
-              <text x="151" y="30">1000</text>
-            </g>
-      
-            <g class="dg-ghost"><path d="M8 38 H182"/></g>
-      
-            <g class="dg-line">
-              <g transform="translate(14 44)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
-              <g transform="translate(30 44)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
-              <g transform="translate(46 44)"><path d="M2 15 C 2 5, 12 4, 11 10 C 10.4 13.4, 6 13.4, 6.6 10"/></g>
-              <g transform="translate(70 44)"><path d="M2 15 A 5 5 0 0 1 12 15"/></g>
-              <g transform="translate(86 44)"><path d="M2 15 A 5 5 0 0 1 12 15"/></g>
-              <g transform="translate(110 44)"><path d="M7 3 V15"/></g>
-              <g transform="translate(118 44)"><path d="M7 3 V15"/></g>
-              <g transform="translate(126 44)"><path d="M7 3 V15"/></g>
-              <g transform="translate(134 44)"><path d="M7 3 V15"/></g>
-            </g>
-            <g class="dg-note" text-anchor="middle">
-              <text x="38"  y="72">3 × 100</text>
-              <text x="86"  y="72">2 × 10</text>
-              <text x="130" y="72">4 × 1</text>
-            </g>
-            <text class="dg-label" x="166" y="60">= 324</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3.3</span> The Egyptian landmarks are
-          $1, 10, 100, 1000, \ldots$ — each ten times the one before, so every one of
-          them is a power of ten.</figcaption>
-        </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>Add CCXXXIII and CCCCXXII without converting to our numerals.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Cs: CC and CCCC make six</span>
+              <span class="work__why">gather like symbols</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Xs: XXX and XX make five</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Is: III and II make five</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>five Is make a V, and five Xs make an L</span>
+              <span class="work__why">trade upward</span></div>
+            <div class="work__row"><span class="work__label">Step 5</span>
+              <span>five Cs make a D, leaving one C over</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>DCLV, which is $655$</span></div>
+          </div>
+          <p>Notice the trading: five Is became a V and five Xs an L, but it takes
+          <em>two</em> Vs to make an X and two Ls to make a C. The rate changes as you go
+          up, and each rate has to be remembered.</p>
+        </div>
       </div>
 
-      <p>The order of the symbols does not matter, since each one carries its own value
-      wherever it stands. Three coils, two arches and four strokes make $324$ however
-      they are arranged on the stone, and Egyptian scribes did sometimes stack them or
-      write them right to left.</p>
-
-      <p>Now the important part. Because the landmarks were chosen by a rule, they are
-      not a chosen list at all — they are the powers of ten:</p>
-
-      <div class="work work--centred">
-        <p>$10^0 = 1, \quad 10^1 = 10, \quad 10^2 = 100, \quad 10^3 = 1000, \ \ldots$</p>
-      </div>
-
-      <p>And once you notice that, you notice that ten was a choice. Any number would
-      do. Start at $1$, decide that five of any landmark make the next, and you get a
-      different but perfectly workable system:</p>
+      <p>Multiplying is where it stops working. What is $\text{VII} \times \text{IX}$?
+      There is no rule to reach for. You cannot say what a C times an X is without
+      knowing what number the answer wants to be called, and no symbol pattern
+      produces it. The landmarks $1, 5, 10, 50, 100, 500, 1000$ multiply into each
+      other in no orderly way at all.</p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">landmarks</span>
-          <span>$1, \quad 5, \quad 25, \quad 125, \quad 625, \quad 3125, \ \ldots$</span>
+          <span class="work__label work__label--wide">$\text{V} \times \text{X}$</span>
+          <span>$= 50 = \text{L}$</span><span>— a landmark, by luck</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">that is</span>
-          <span>$5^0, \quad 5^1, \quad 5^2, \quad 5^3, \quad 5^4, \quad 5^5, \ \ldots$</span>
+          <span class="work__label work__label--wide">$\text{V} \times \text{V}$</span>
+          <span>$= 25 = \text{XXV}$</span><span>— not a landmark at all</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$\text{L} \times \text{L}$</span>
+          <span>$= 2500 = \text{MMD}$</span><span>— nor this</span>
         </div>
       </div>
 
-      <p>That second line is the whole idea. The landmarks are no longer a list somebody
-      chose; they are generated, one from the last, by a rule you can state in seven
-      words. Ask for the tenth landmark and you do not have to ask anybody — it is
-      $5^9$. Ask the Romans for their tenth landmark and there is no answer, because
-      after M they simply stopped.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A base</div>
-        <p>A number system whose first landmark is $1$ and whose every later landmark is
-        $n$ times the one before is a <span class="term">base-$n$</span> system. Its
-        landmarks are exactly the powers of $n$. Base $10$ is also called
-        <span class="term">decimal</span>.</p>
-      </div>
+      <p>So multiplication had to be done on a machine. Merchants across the Roman world
+      used a counting board — an <span class="term">abacus</span> — with a line for each
+      power of ten, and only specially trained clerks could work one quickly. The
+      numerals recorded the answer; they were no help in finding it.</p>
 
     </div>
   </div>

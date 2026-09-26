@@ -2,125 +2,57 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 190 66" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The number two thousand six hundred and thirty-four in Chinese rod numerals, with vertical rods in the thousands and tens places and horizontal rods in the hundreds and units">
-      
-            <g class="dg-note" text-anchor="middle">
-              <text x="26"  y="12">1000s</text>
-              <text x="72"  y="12">100s</text>
-              <text x="118" y="12">10s</text>
-              <text x="164" y="12">1s</text>
-            </g>
-      
-            <g class="dg-line">
-              <path d="M22 20 V34 M30 20 V34"/>
-      
-              <path d="M60 20 H84 M60 24 H84 M60 28 H84 M60 32 H84 M60 36 H84
-                       M60 40 H84"/>
-      
-              <path d="M114 20 V34 M122 20 V34 M130 20 V34"/>
-      
-              <path d="M154 20 H178 M154 24 H178 M154 28 H178 M154 32 H178"/>
-            </g>
-      
-            <g class="dg-label" text-anchor="middle">
-              <text x="26"  y="52">2</text>
-              <text x="72"  y="52">6</text>
-              <text x="122" y="52">3</text>
-              <text x="166" y="52">4</text>
-            </g>
-            <text class="dg-note" x="95" y="62" text-anchor="middle">2 × 1000 + 6 × 100 + 3 × 10 + 4 = 2634</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3.5</span> Chinese rod numerals. Turning
-          the rods through a right angle at every other place keeps the columns apart
-          when a place is empty.</figcaption>
-        </figure>
-      </div>
-
-      <p>The alternation is a clever fix for the very problem that defeated Mesopotamia.
-      If a place is empty and left blank, the neighbouring digits are still told apart,
-      because one is a set of uprights and the other a set of bars. A blank between two
-      identical-looking runs would be unclear; a blank between uprights and bars is
-      not.</p>
-
-      <p>It is a good fix, and it is not the right one. A system that needs its digits to
-      alternate in order to be readable has got its clarity from a rule that has
-      nothing to do with counting. The right fix is smaller and stranger.</p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>Suppose the Chinese had used upright rods in every place instead of
-            alternating. How would $41$ have been written, and what else could that same
-            numeral have meant?</p>
-            <p>Now say, in one sentence, what a place value system actually needs in
-            order to be read without guesswork.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Multiply $324$ by $10$ in Egyptian symbols, without converting anything.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$324$ is three coils, two arches and four strokes</span>
+              <span class="work__why">read the symbols</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>coils become lotuses: $300 \to 3000$</span>
+              <span class="work__why">one landmark up</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>two arches become two coils: $20 \to 200$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>four strokes become four arches: $4 \to 40$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>three lotuses, two coils and four arches</span></div>
           </div>
+          <p>Every symbol simply moves one place up the ladder, and the answer is
+          $3240$ without a single calculation. That is what a base gives you, and it is why
+          you were taught to multiply by ten by adding a zero: the zero is the symbol
+          moving up.</p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.4</div>
-        <ol class="c-questions">
-          <li>Write these in the Mesopotamian way, giving the count in each place.
-              <ol class="c-parts c-parts--3">
-                <li>$63$</li>
-                <li>$132$</li>
-                <li>$200$</li>
-                <li>$3605$</li>
-                <li>$3600$</li>
-                <li>$7261$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>Multiplying by anything else works the same way, using the distributive law
+      (multiply each part, then add):
+      $324 \times 30$ is $324 \times 10$ promoted once more and then taken three times.
+      That gives $324 \times 30 = 9720$ without any table of products at all.
+      No such shortcut exists for the Romans, which is why they needed the abacus.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>In the Mesopotamian system, $1$ and $60$ were written the same way. Give
-              two other pairs of numbers that would look alike, and say what a reader
-              would need in order to tell them apart.</li>
-        </ol>
-      </div>
+      <p>Notice how much of Chapter 2 has just been used. The landmarks are powers of
+      ten. Multiplying them adds the exponents. So the product is another
+      landmark. Every one of those steps was proved there, about numbers, with no
+      thought of Egypt — and it turns out to be the reason a four-thousand-year-old
+      notation works. That is a common pattern in mathematics, and worth expecting: a
+      result established for one purpose explains something quite unrelated.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The Mayan landmarks are $1$, $20$, $360$, $7200$. Show that this is not a
-              true base-$20$ system, and say which property of § 3.5.1 it loses.</li>
-        </ol>
-      </div>
+      <p>It also settles a question the Egyptians could not have asked. <em>Any</em> base
+      gives the shortcut, so there is nothing mathematically special about base ten. It won because
+      we have ten fingers, and for no better reason than that.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Write $77$ and $361$ in Mayan style, using dots for $1$ and bars for $5$
-              within each place.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Read the rod numeral that has three uprights, then two bars, then one
-              upright, from left to right. What number is it?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>The hour is divided into $60$ minutes and the minute into $60$ seconds.
-              Give one advantage of $60$ over $10$ for dividing things up, using its
-              factors in your answer.</li>
-        </ol>
-      </div>
+      <p>That does not mean the choice makes no difference. A base with many
+      factors divides tidily: base $60$ splits into halves, thirds, quarters, fifths,
+      sixths, tenths, twelfths, fifteenths, twentieths and thirtieths without ever
+      leaving a fraction, which is why we still keep time in sixties. Base $10$ manages
+      only halves and fifths, which is why a third of an hour is twenty minutes but a
+      third of a metre is a decimal that never ends. And base $2$, with no factors at
+      all beyond itself, is the worst for dividing and the best for machines, because a
+      wire is either on or off.</p>
 
     </div>
   </div>

@@ -1,13 +1,15 @@
-# Class 8 · Mathematics I · Chapter 3 — Ten Symbols, Every Number
+# Class 8 · Mathematics I · Chapter 3 — A Story of Numbers
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
-book prints none of it except Beyond the Book's own key.
+book prints none of it except the key at the end of Beyond the Book.
 
-Numbered by set — *Exercise Set 3.2, Q4* — so it can be used beside the book
-without a contents page. **Every value below is re-derived by
-`check-numbers.mjs` beside this file.** A question renumbered in the book and
-not here is how this goes wrong.
+Rewritten on 27 September 2026 for the maths-v2 chapter: every exercise set
+is new (none of NCERT's question text is printed; each set cites NCERT's
+exercise instead), and By the Book and Beyond the Book replace the old
+four-stage division. Numbered by set — *Exercise Set 3.2, Q4* — so it can be
+used beside the book without a contents page. The numbers below are
+re-derived by `check-numbers.mjs` beside this file.
 
 Where a question asks the reader to choose, invent or explain, the answer
 gives one worked instance under *answers will vary*.
@@ -18,132 +20,124 @@ $10^6$.
 
 ---
 
+## 3.1 Introduction
+
+### Think and Reflect
+
+1. A week is 7 strokes and a year 365. Seven can be read at a glance; 365
+   strokes have to be counted one by one, and a friend is likely to lose
+   count.
+2. Answers will vary: Roman numerals on clock faces, on the chapters or
+   volumes of books, on monuments; tally marks on a score sheet.
+
 ## 3.2 Counting Without Numbers
 
-### Think and Reflect (the neighbour's herd)
+### Think and Reflect (the next village)
 
-Take one pebble from your bag for each of their cows, one for one, as the
-cows pass. If your bag empties before their cows run out, their herd is
-larger. To find **how many more**, put a fresh pebble aside for each of
-their cows still passing once your bag is empty. Those pebbles are the
-difference — still without counting either herd.
+Put one shell in a pot for each of our boats. Then take one shell out for
+each boat of the other village. If the pot empties before their boats run
+out, they have more boats. To find **how many more**, set a fresh shell
+aside for each of their boats still passing once the pot is empty. Those
+shells match the extra boats one for one, still without counting.
 
 ## 3.3 Counting in Groups
 
+### Think and Reflect
+
+1. One hand has five fingers and two hands have ten, so a group of five or
+   ten can be shown and checked on the hands.
+2. The names grow longer with every number — six is already three words —
+   so larger numbers become too long to say or to tell apart.
+3. Two long names can only be compared by counting their words, which is
+   the counting the names were meant to save.
+
 ### Exercise Set 3.1
 
-1. Two and one, grouped by twos:
-   - $7$: **ukasar-ukasar-ukasar-urapon** (two, two, two and one).
-   - $8$: **ukasar-ukasar-ukasar-ukasar** (four twos).
-   - $11$: **ukasar-ukasar-ukasar-ukasar-ukasar-urapon** (five twos and one).
-
-2. **Same size:** drop a pebble for each cow of the first herd, then take one
-   out for each cow of the second. The herds are the same size exactly when
-   the bag empties as the last cow passes. **How many more:** when the bag
-   empties, set a new pebble aside for each cow of the larger herd still to
-   pass; those pebbles match the extra cows one for one.
-
-3. Answers will vary. The eye sees about four or five at once, so a group of
-   five can be read at a glance, and a handful of gates can be too. With
-   fives, a flock of about **20 to 25** (four or five gates) can be read
-   without counting; with tens, groups of ten must themselves be counted, so
-   little is gained. Most readers prefer **fives**, because each group can be
-   seen rather than counted.
-
-4. Answers will vary. After $z$ come two-letter names in order,
-   $aa, ab, \ldots, az$, then $ba, bb, \ldots$, then three letters, and so on
-   for ever. In this extension the number after $az$ is **$ba$**. (With 26
-   single letters, $aa$ is 27 and $az$ is 52, so $ba$ is 53.)
-
-5. A number system is used to compare and to pass numbers on, so everyone
-   must count through the symbols in the same order. **Example:** if one
-   person counts $a, b, c$ and another $a, c, b$, a note saying "$c$ sheep"
-   means three to the first and two to the second.
-
+1. $9$ = **two-two-two-two-one** (5 words); $12$ =
+   **two-two-two-two-two-two** (6 words).
+2. She knows that **three students are still in the hall**, if each student
+   keeps the token until leaving. She does not know how many students came
+   in during the day, nor who the three are.
+3. $38 = 7 \times 5 + 3$: **7 full groups and 3 marks left over**.
+4. Rajesh: $47 = 4 \times 10 + 7$, **4 groups, 7 over**. Leela:
+   $47 = 9 \times 5 + 2$, **9 groups, 2 over**.
+5. The tally stands for $9 \times 5 + 3 = 48$. After 12 more,
+   $48 + 12 = 60 = 12 \times 5$: **12 groups of five and no loose marks**.
 6. Answers will vary. **Worked instance:** a stroke $|$ for one and a circle
    $\circ$ for five; $1$ to $12$ are $|$, $||$, $|||$, $||||$, $\circ$,
    $\circ|$, $\circ||$, $\circ|||$, $\circ||||$, $\circ\circ$, $\circ\circ|$,
-   $\circ\circ||$. Worst at: large numbers — $100$ needs twenty circles —
-   and it has no way to multiply.
+   $\circ\circ||$. Worst at: large numbers — $100$ needs twenty circles — and
+   it gives no help with multiplying.
 
 ## 3.4 Landmark Numbers
 
+Body Example 1: $2758$ = MMDCCLVIII. Example 2: MCMLXXIV = **1974**.
+Example 3: CCXXXIII + CCCCXXII = DCLV, which is $233 + 422 = 655$.
+
+### Think and Reflect
+
+1. **2088** = MMLXXXVIII, 10 symbols; no other year from 2000 to 2099 needs
+   as many.
+2. Doubling XXIII gives XXXXXXIIIIII, which trades to XXXXVI and is written
+   XLVI ($46$). Multiplying by 7 needs to know what each symbol times 7 is,
+   and the landmarks give no rule for that.
+3. A counter on the tens line is worth 10. Moved up one line it is worth
+   **100**.
+
 ### Exercise Set 3.2
 
-1. - $1222$ = **MCCXXII**
-   - $2999$ = **MMCMXCIX**
-   - $302$ = **CCCII**
-   - $715$ = **DCCXV**
-
-2. - MCMXLIV = $1000 + 900 + 40 + 4$ = **1944**
-   - CDLXXVIII = $400 + 50 + 20 + 8$ = **478**
-   - MMXXV = $2000 + 20 + 5$ = **2025**
-   - XCIX = $90 + 9$ = **99**
-
-3. LXXXVII and LXXVIII. Gather: Ls, two; Xs, three and two, five; Vs, two;
-   Is, two and three, five. Trade: five Is make a V, so three Vs; two Vs make
-   an X, so six Xs and one V; five Xs make an L, so three Ls and one X; two
-   Ls make a C, so one C and one L. Total **CLXV**, which is
-   $87 + 78 = 165$.
-
-4. - $\text{V} \times \text{L}$: $5 \times 50 = 250$ = CCL, **not a landmark**.
-   - $\text{L} \times \text{D}$: $50 \times 500 = 25\,000$, **not a landmark**
-     (the list stops at M).
-   - $\text{V} \times \text{D}$: $5 \times 500 = 2500$ = MMD, **not a landmark**.
-   - $\text{VII} \times \text{IX}$: $7 \times 9 = 63$ = LXIII, **not a landmark**.
-
-5. The subtractive rule only takes away the next power of ten below a
-   symbol: V and X take away I (IV, IX), L and C take away X (XL, XC), D and
-   M take away C (CD, CM). For L that symbol is X, and I is a further step
-   down, so IL is not allowed. By the rule, $49 = 40 + 9$ is XL then IX:
-   **XLIX**.
-
-6. $3888$ = MMMDCCCLXXXVIII, **15 symbols**. It is also the number below
-   $4000$ that needs the most: each of its digits, $3$ and $8$, takes the
-   most symbols a digit can (III and VIII). So **3888, with 15**.
-
-7. A Roman symbol carries its own value wherever it stands, so an empty
-   place never has to be shown — nothing is written for it. **A number system
-   needs a zero when position decides what a symbol is worth.**
-
-8. $1947$ = **MCMXLVII** (8 symbols), $2000$ = **MM** (2), $2026$ =
-   **MMXXVI** (6). The shortest is **MM**, although $1947$ is the smallest:
-   the length depends on how many landmarks a number is built from, not on its
-   size, and $2000$ is exactly two of one landmark.
+1. - $1386$ = **MCCCLXXXVI**
+   - $2649$ = **MMDCXLIX**
+   - $407$ = **CDVII**
+   - $3094$ = **MMMXCIV**
+2. - MDCCCLVII = $1000 + 800 + 50 + 7$ = **1857**
+   - CCCXCIV = $300 + 90 + 4$ = **394**
+   - MMXLVIII = $2000 + 40 + 8$ = **2048**
+   - LXXIX = $70 + 9$ = **79**
+3. LXVIII and CXXVII. Gather: C one; Ls one; Xs one and two, three; Vs one
+   and one, two; Is three and two, five. Trade: five Is make a V, so three
+   Vs; two Vs make an X, so four Xs and one V. That is C, L, XXXX, V, and L
+   with XXXX is XC. Total **CXCV**, which is $68 + 127 = 195$.
+4. - $\text{X} \times \text{X} = 100$ = C, **a landmark**.
+   - $\text{V} \times \text{C} = 500$ = D, **a landmark**.
+   - $\text{L} \times \text{XX} = 1000$ = M, **a landmark**.
+   - $\text{IX} \times \text{VI} = 54$ = LIV, **not a landmark**.
+5. I may stand only before V and X, one step down. $99 = 90 + 9$, which is
+   XC then IX: **XCIX**.
+6. **88** = LXXXVIII, with **8** symbols.
+7. $1005$ = **MV** and $1500$ = **MD**. Each Roman symbol carries its own
+   value wherever it stands, so an empty place is simply not written.
 
 ## 3.5 The Idea of a Base
 
+Body Example 4: $187 = 125 + 25 + 25 + 5 + 5 + 1 + 1$, seven symbols
+against $1 + 8 + 7 = 16$. Example 5: $324 \times 10 = 3240$.
+
+### Think and Reflect
+
+1. Each symbol moves **two landmarks up**: a stroke becomes a coil, an arch
+   a lotus, and so on.
+2. **999**, with $9 + 9 + 9 = 27$ symbols.
+
 ### Exercise Set 3.3
 
-1. - $1023$: **1 lotus, 2 arches, 3 strokes** (no coils).
-   - $2660$: **2 lotuses, 6 coils, 6 arches** (no strokes).
-   - $70\,707$: **7 fingers, 7 coils, 7 strokes**.
-
+1. - $2305$: **2 lotuses, 3 coils, 5 strokes**.
+   - $4080$: **4 lotuses, 8 arches**.
+   - $60\,606$: **6 fingers, 6 coils, 6 strokes**.
 2. The base-5 landmarks are $1, 5, 25, 125$.
-   - $15 = 5 + 5 + 5$: **three 5s**.
-   - $137 = 125 + 5 + 5 + 1 + 1$: **one 125, two 5s, two 1s**.
-   - $293 = 125 + 125 + 25 + 5 + 5 + 5 + 1 + 1 + 1$: **two 125s, one 25,
-     three 5s, three 1s**.
-
-3. **$1, 7, 49, 343, 2401, 16\,807$**, each seven times the one before. In
-   base $n$ the landmarks are **$n^0, n^1, n^2, n^3, \ldots$**
-
-4. **No.** Take as many of the largest base-5 landmark as fit, then the
-   next, down to the ones; whatever is left at each stage is smaller than
-   the landmark used, and the ones take the rest. So every whole number can
-   be written.
-
-5. **No:** ten of any symbol make one of the next symbol up, so a finished
-   numeral never has ten of the same symbol.
-
-6. **Rule:** each landmark moves up one place, so write the same digits with
-   a $0$ on the end. **Check:** $18 = 3 \times 5 + 3$, written $33$;
-   $18 \times 5 = 90 = 3 \times 25 + 3 \times 5$, written $330$.
-
-7. $324 = 2 \times 125 + 2 \times 25 + 4 \times 5 + 4$, so **12 symbols** in
-   base 5 ($2 + 2 + 4 + 4$). **Base 10 is shorter for 324** (9 symbols), but
-   not for every number: $99$ needs $9 + 9 = 18$ in base 10 and only
-   $3 + 4 + 4 = 11$ in base 5, since $99 = 3 \times 25 + 4 \times 5 + 4$.
+   - $40 = 25 + 5 + 5 + 5$: **one 25, three 5s**.
+   - $158 = 125 + 25 + 5 + 1 + 1 + 1$: **one 125, one 25, one 5, three 1s**.
+   - $312 = 2 \times 125 + 2 \times 25 + 2 \times 5 + 2$: **two of each**.
+3. Base 3: **$1, 3, 9, 27, 81$**. Base 8: **$1, 8, 64, 512, 4096$**. The
+   fourth landmark of base $n$ is **$n^3$**.
+4. Each landmark is six times the one before: **base 6**. A landmark can be
+   used **at most 5 times**, since six of them make the next.
+5. $2 \times 1000 + 7 \times 10 + 5 = $ **2075**. Ten times as large:
+   **2 fingers, 7 coils and 5 arches**, which is $20\,750$.
+6. $150 = 1 \times 125 + 1 \times 25$: **2 symbols** in base 5 against
+   $1 + 5 = 6$ in base 10. $223 = 1 \times 125 + 3 \times 25 + 4 \times 5 + 3$:
+   **11 symbols** in base 5 against $2 + 2 + 3 = 7$. So **Meera is wrong**:
+   the claim holds for 150 but fails for 223.
 
 ## 3.6 Letting Position Do the Work
 
@@ -157,215 +151,242 @@ everywhere, so that every place is marked**.
 
 ### Exercise Set 3.4
 
-1. - $63 = 1 \times 60 + 3$: **1 | 3**
-   - $132 = 2 \times 60 + 12$: **2 | 12**
-   - $200 = 3 \times 60 + 20$: **3 | 20**
-   - $3605 = 1 \times 3600 + 0 \times 60 + 5$: **1 | (empty) | 5**
-   - $3600 = 1 \times 3600$: **1 | (empty) | (empty)** — written as a single
-     wedge, like $1$ and $60$
-   - $7261 = 2 \times 3600 + 1 \times 60 + 1$: **2 | 1 | 1**
-
-2. Answers will vary. **Two pairs:** $2$ and $120$ (both two narrow wedges,
-   since $120 = 2 \times 60$); $5$ and $300$ (both five narrow wedges, since
-   $300 = 5 \times 60$). A reader needs **the context** — what the tablet is
-   about and how large a number is sensible — because the numeral does not
-   say which place the wedges are in.
-
-3. In a true base-20 system the third landmark would be $20 \times 20 = 400$,
-   but the Maya used $360$. ($7200 = 20 \times 360$ does follow the rule.) It
-   loses the property of § 3.5.1: **the product of two landmarks is no longer
-   a landmark** — $20 \times 20 = 400$ is not on the list.
-
-4. - $77 = 3 \times 20 + 17$: top place **three dots**; units **three bars
-     and two dots**.
-   - $361 = 1 \times 360 + 0 \times 20 + 1$: **one dot** in the 360 place, **a
-     shell** in the 20 place, **one dot** in the units.
-
-5. Three, two, one in the hundreds, tens and units: **$321$**.
-
-6. Answers will vary. $60$ has the factors $1, 2, 3, 4, 5, 6, 10, 12, 15,
-   20, 30, 60$, and $10$ has only $1, 2, 5, 10$. So an hour splits into
-   thirds, quarters and sixths as whole minutes — a third of an hour is 20
-   minutes — while a third of $10$ is not a whole number.
+1. - $75 = 1 \times 60 + 15$: **1 | 15**
+   - $150 = 2 \times 60 + 30$: **2 | 30**
+   - $3700 = 1 \times 3600 + 1 \times 60 + 40$: **1 | 1 | 40**
+   - $7200 = 2 \times 3600$: **2 | (empty) | (empty)**
+   - $3610 = 1 \times 3600 + 0 \times 60 + 10$: **1 | (empty) | 10**
+   - $7322 = 2 \times 3600 + 2 \times 60 + 2$: **2 | 2 | 2**
+2. **$3$, $180$ and $10\,800$** all look like three narrow wedges, since
+   $180 = 3 \times 60$ and $10\,800 = 3 \times 3600$. $183 = 3 \times 60 + 3$
+   is two groups of three and looks different.
+3. $20 \times 360 = 7200$, but $20 \times 20 = 400$, not $360$. The system
+   loses the property that **the product of two landmarks is a landmark**:
+   $20 \times 20 = 400$ is not on the list.
+4. - $45 = 2 \times 20 + 5$: **two dots** in the 20 place; **one bar** in the
+     units.
+   - $390 = 1 \times 360 + 1 \times 20 + 10$: **one dot**, **one dot**, **two
+     bars**.
+5. **402.** A careless reader who misses the empty tens place reads **42**.
+6. A third is **20 minutes**, a quarter **15** and a fifth **12**. With 10
+   parts, **a third and a quarter** cannot be found exactly; a fifth is 2
+   parts.
 
 ## 3.7 Zero, and the System We Use
 
+Body Example 6: $1206$ needs 9 Egyptian symbols, 5 Roman (MCCVI) and 4
+Hindu.
+
+### Think and Reflect
+
+1. $7 + 0 = 7$ and $7 \times 0 = 0$.
+2. Every number multiplied by zero gives zero, so the answer $0$ could have
+   come from any number.
+3. $0 + 0 = 0$ and $5 - 5 = 0$. The answers are amounts, so zero must be a
+   number that can be the result of a calculation, not only a gap.
+
 ### Exercise Set 3.5
 
-1. - $4072 = 4 \times 10^3 + 0 \times 10^2 + 7 \times 10^1 + 2 \times 10^0$
-   - $60\,300 = 6 \times 10^4 + 0 \times 10^3 + 3 \times 10^2 + 0 \times 10^1 + 0 \times 10^0$
-   - $1005 = 1 \times 10^3 + 0 \times 10^2 + 0 \times 10^1 + 5 \times 10^0$
-
-2. **Placeholder** — it marks an empty place so the other digits sit in the
-   right places; **number** — it is a quantity to add, subtract and multiply
-   with. Answers will vary for the number: **$305$** could not be written
-   without the placeholder (without it, it reads $35$).
-
-3. - Egyptian: **3 lotuses and 5 strokes**, 8 symbols.
-   - Roman: **MMMV**, 4 symbols.
-   - Hindu: **3005**, 4 symbols.
-
-   The **Egyptian** count depends most on the number: it is the sum of the
-   digits, and ranges from 1 (for 1000) to 36 (for 9999) among four-digit
-   numbers.
-
-4. A tally needs as many marks as the number; an Egyptian numeral needs the
-   sum of its digits; a Hindu numeral needs one mark a digit. For most
-   numbers the order, fewest first, is **Hindu, Egyptian, tally**. It is
-   **not the same for every number**: $10$ needs 2 Hindu digits but 1 Egyptian
-   arch, and $1$ needs one mark in all three.
-
+1. - $5030 = 5 \times 10^3 + 0 \times 10^2 + 3 \times 10^1 + 0 \times 10^0$
+   - $70\,009 = 7 \times 10^4 + 0 \times 10^3 + 0 \times 10^2 + 0 \times 10^1 + 9 \times 10^0$
+   - $800\,400 = 8 \times 10^5 + 0 \times 10^4 + 0 \times 10^3 + 4 \times 10^2 + 0 \times 10^1 + 0 \times 10^0$
+2. **60 209**.
+3. The first $0$ says there are **no hundreds**, the second **no units**.
+   Without them a reader sees **44**.
+4. Egyptian: **2 lotuses and 4 arches**, 6 symbols. Roman: **MMXL**, 4.
+   Hindu: **2040**, 4.
 5. | system | place value? | base? |
    |---|---|---|
    | Roman | no | no |
    | Egyptian | no | yes, 10 |
    | Mesopotamian | yes | yes, 60 |
    | Mayan | yes | not a true base (360 breaks the rule) |
-   | Chinese rod | yes | yes, 10 |
    | Hindu | yes | yes, 10 |
-
-6. $25 = 3 \times 8 + 1$ is **$31$** in base 8;
-   $25 = 1 \times 25$ is **$100$** in base 5;
-   $25 = 16 + 8 + 1$ is **$11001$** in base 2.
-   A base-8 system needs **8 digits**, $0$ to $7$.
-
-7. A base-2 system needs **2** symbols ($0$ and $1$); a base-60 system with
-   one symbol a digit would need **60**.
-
-8. *Arabic numerals* names the route, not the source: Europe met the
-   numerals in Arabic books, but they came from India, and the Arabic books
-   themselves called them *Hindu numerals*. The better names are **Indian
-   numerals** and **Hindu-Arabic numerals**. The misleading one became common
-   because European scholars named the numerals after the books they read.
-
-9. Answers will vary. **Worked instance:** In a base system the landmarks
-   are powers of one number. Multiplying two powers adds the exponents, so
-   **the product of two landmarks** is always another landmark, and
-   multiplying a numeral just moves its symbols up the ladder. The Roman
-   landmarks were chosen by hand, so the product of two landmarks is usually
-   nothing in particular — $\text{V} \times \text{V} = 25$ — and there is no
-   rule to follow. That is why the Romans needed an abacus.
-
-10. The five ideas: (1) match one for one, (2) count in groups, (3) landmark
+6. $30 = 16 + 8 + 4 + 2$ is **11110** in base 2; $30 = 1 \times 16 + 3 \times 4 + 2$
+   is **132** in base 4; $30 = 3 \times 8 + 6$ is **36** in base 8. The
+   systems need **2, 4 and 8** digits.
+7. Answers will vary: **$505$** or $1005$, where a zero sits between other
+   digits.
+8. *Arabic numerals* names the route, not the source: Europe met them in
+   Arabic books, and those books called them *Hindu numerals*. Better:
+   **Indian numerals** or **Hindu-Arabic numerals**, which name where they
+   came from.
+9. Factors of $60$: $1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$. Factors of
+   $10$: $1, 2, 5, 10$. A sixth of an hour is **10 minutes**. A metre is
+   100 cm, and 6 is not a factor of 100, so six equal parts are not whole
+   centimetres.
+10. Answers will vary in the symbols. With $0$, $1$, $2$: $1, 2, 10, 11, 12,
+    20, 21, 22, 100$ for $1$ to $9$, and $20 = 2 \times 9 + 0 \times 3 + 2$
+    is **202**. Check: $18 + 0 + 2 = 20$.
+11. The five ideas: (1) match one for one, (2) count in groups, (3) landmark
     numbers, (4) a base, (5) position with a mark for empty places.
     - a tally: **1, 2**
     - Roman: **1, 2, 3**
     - Egyptian: **1, 2, 3, 4**
     - Hindu: **1, 2, 3, 4, 5**
 
-11. Answers will vary in the symbols. **Worked instance** with $0$, $1$,
-    $2$ as the three symbols:
-    $1, 2, 10, 11, 12, 20, 21, 22, 100, 101$ for $1$ to $10$, and
-    $2025 = 2 \times 729 + 2 \times 243 + 1 \times 81$, written
-    **$2210000$**.
+---
 
-12. Factors of $60$: $1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$.
-    Factors of $10$: $1, 2, 5, 10$. An hour is 60 minutes, and 3, 4 and 6 are
-    factors of 60, so a third, a quarter or a sixth of an hour is a whole
-    number of minutes. A metre is 10 decimetres (or 100 cm, still a power of
-    ten), and 3 is not a factor, so a third of a metre is a decimal that
-    never ends.
+## By the Book
 
-13. A wire, a switch or a lamp has two states, on and off, which are exactly
-    the two digits of base 2; a machine never divides by hand, so few factors
-    costs it nothing. $10$ is **$1010$**, $16$ is **$10000$**
-    and $100$ is **$1100100$**.
+Fifty questions: very short answer (2 marks), short answer (3), long answer
+(5), assertion and reason (1), case-based (4), objective (1). Written to
+BY-THE-BOOK.md, 27 September 2026. The book's own key is in Beyond the
+Book's Answers stage; this is the same key, set out in full.
 
-14. **No.** Tallies, the Roman system and the Egyptian system all managed
-    without a zero, because in them a symbol's value does not depend on its
-    position. What they gave up was **place value**: Egypt needed a new symbol
-    for every power of ten and ran out after a million, and the Roman system
-    gave no help with arithmetic. The Mesopotamians used place value with only
-    a gap, and paid in numerals that could be read more than one way.
+### Very short answer
+
+1. $2946 = 2000 + 900 + 40 + 6$: MM, CM, XL, VI, so **MMCMXLVI**.
+2. $3 \times 125 + 2 \times 25 + 1 \times 5 + 4 = $ **434**.
+3. **No.** The landmarks are powers of 5: $625$ and then $3125$; $1000$ is
+   not one.
+4. $83 = 64 + 16 + 2 + 1$, so **1010011**.
+5. $100$ in base $n$ stands for $n^2$; $n^2 = 49$, so $n = $ **7**.
+6. $1947 - 1889 = 58$, which is **LVIII**.
+7. **407 060**; the ten-thousands, hundreds and units places are empty.
+8. $1 \times 3600 + 0 \times 60 + 25 = $ **3625**.
+9. $12 - 3 = 9$ arches, so $3 \times 1000 + 9 \times 10 = $ **3090**.
+10. **No.** Four of any landmark make one of the next, so no digit is more
+    than 3.
+
+### Short answer
+
+11. $250 = 1 \times 216 + 0 \times 36 + 5 \times 6 + 4$: **1054** in base 6.
+    The base-6 numeral 250 stands for $2 \times 36 + 5 \times 6 + 0 = $ **102**.
+12. $1 \times n^2 + 2 \times n + 1 = (n + 1)^2$. If $(n + 1)^2 = 64$ then
+    $n + 1 = 8$: **base 7**.
+13. **Step 5.** The units place is empty and needs a $0$:
+    $75 = 2 \times 27 + 2 \times 9 + 1 \times 3 + 0$, so **2210**.
+14. $468 = 3 \times 125 + 3 \times 25 + 3 \times 5 + 3$: **3 cartons, 3
+    packets, 3 boxes, 3 loose pencils**; **3333** in base 5.
+15. $424 + 288 = 712$, which is **DCCXII**.
+16. Smallest $8^3 = $ **512** (written 1000); largest $8^4 - 1 = $ **4095**
+    (written 7777).
+17. $3600 + 25 \times 60 + 40 = $ **5140** s.
+    $4750 = 1 \times 3600 + 19 \times 60 + 10$: **1 h 19 min 10 s**.
+18. $10^a \times 10^b = 10^{a+b}$, a power of ten: $10 \times 100 = 1000$.
+    The Roman landmarks follow no rule: $\text{V} \times \text{V} = 25$ is
+    not a landmark.
+19. $3b + 2 = 23$, so **$b = 7$**. $23 = 1 \times 16 + 1 \times 4 + 3$: **113**.
+20. $360 + 5 \times 20 + 12 = $ **472**. In base 20,
+    $400 + 100 + 12 = 512$: **larger, by 40**.
+
+### Long answer
+
+21. $32$ in base 5 is $3 \times 5 + 2 = 17$. $2b + 3 = 17$, so **$b = 7$**.
+    Check: $2 \times 7 + 3 = 17$. $17 = 16 + 1$: **10001** in base 2.
+22. $2 \times 1728 + 144p + 7 \times 12 + 9 = 3981$, so $144p = 432$ and
+    **$p = 3$**. In base 12: **2379**. $3 \times 1728 - 3981 = $ **1203**
+    more beads.
+23. $(n - 1)n^2 + (n - 1)n + (n - 1) = n^3 - n^2 + n^2 - n + n - 1 = n^3 - 1$.
+    Base 5: $5^3 - 1 = $ **124**. Base 8: $8^3 - 1 = $ **511**.
+24. $13\,675 = 3 \times 3600 + 47 \times 60 + 55$: **3 h 47 min 55 s**.
+    Seconds $35 + 55 = 90$, carry 1 min, leave 30; minutes
+    $48 + 47 + 1 = 96$, carry 1 h, leave 36; hours $6 + 3 + 1 = 10$.
+    Arrives at **10 h 36 min 30 s**.
+25. Strokes $6 + 8 = 14$: 1 arch and 4 strokes. Arches $1 + 9 + 1 = 11$: 1
+    coil and 1 arch. Coils $4 + 7 + 1 = 12$: 1 lotus and 2 coils. Lotuses
+    $3 + 1 + 1 = 5$. Total **5 lotuses, 2 coils, 1 arch, 4 strokes**, which
+    is $3416 + 1798 = $ **5214**, with **12** symbols.
+26. (i) $2 \times 125 + 4 \times 25 + 0 \times 5 + 3 = $ **353**. (ii) The 1
+    line holds $3 + 17 = 20$, which trade for 4 on the 5 line. The board
+    holds 2, 4, 4, 0: **2440** in base 5. Check:
+    $250 + 100 + 20 = 370 = 353 + 17$.
+27. $1983 - 1888 = 95$, **$n = 95$ = XCV**. $1888 + 150 = 2038$:
+    **MMXXXVIII**.
+28. Nisha reads $8a + b$; $(10a + b) - (8a + b) = 2a$. $2a = 10$ gives
+    $a = 5$, and $b = 9 - 5 = 4$: the digits are **5 and 4** (Arnav's 54,
+    Nisha's 44).
+29. $2 \times 7200 + 0 \times 360 + 20x + 11 = 14\,751$, so $20x = 340$ and
+    **$x = 17$**. The 20 place: **3 bars and 2 dots**; units: **2 bars and 1
+    dot**.
+30. Roman MMMDCXLVIII, 11 symbols: **₹132**. Egyptian $3 + 6 + 4 + 8 = 21$
+    symbols: **₹252**. Hindu 4 symbols: **₹48**. Saving
+    $252 - 48 = $ **₹204**.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (c) · 34 (d) · 35 (a)
+
+- 31: $1000$ in base 5 is $5^3 = 125$, and R gives the reason.
+- 32: both true; the missing zero does not explain the value.
+- 33: A is true; R is false — without a zero a numeral can be read more than
+  one way.
+- 34: A is false (the Mayan landmarks are 1, 20, 360, 7200, …); R is true.
+- 35: $8 + 4 + 2 + 1 = 15 = 16 - 1$; R explains A.
+
+### Case-based questions
+
+36. (i) **1 h 30 min** (ii) **3 h 30 min 0 s** (iii)
+    $9045 = 2 \times 3600 + 30 \times 60 + 45$, so it arrives at **9 h 45
+    min 45 s**.
+37. (i) **IV** (ii) **1897** (iii) $1897 + 150 = 2047$ = **MMXLVII**, **7**
+    symbols.
+38. (i) $8 + 2 + 1 = $ **11** (ii) **Peepal**, $16 + 8 + 1 = 25$ (Neem 22)
+    (iii) **31**; $40 = 32 + 8$ needs **6** lamps.
+39. (i) **13**, standing for $13 \times 60 = 780$ (ii)
+    $2 \times 3600 + 780 + 20 = $ **8000** (iii)
+    $5000 = 1 \times 3600 + 23 \times 60 + 20$: **1, 23, 20**.
+40. (i) **60** (ii) $4 \times 144 + 2 \times 12 + 9 = $ **609** (iii)
+    $700 = 4 \times 144 + 10 \times 12 + 4$: **4 crates, 10 trays, 4 loose**.
+
+### Objective questions
+
+41 (c) 499 · 42 (a) 64 · 43 (d) 343 · 44 (b) 9 · 45 (d) 60 507 ·
+46 (a) 7245 · 47 (b) · 48 (b) · 49 (c) 7 · 50 (d) 7500
 
 ---
 
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since 27 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own.
+
+### Tried and explained (no head in the book)
 
 Each of the eight questions is answered in the running text that follows it
-on the page. The results, for reference: (1) $1000 = 4344_{\,6}$, four
-digits; six symbols, $0$ to $5$; (2) $2025 = 11111101001_{\,2}$, and about
-twenty binary digits for a million; (3) $123$, $7203$, $7380$, $432\,003$;
-(4) every landmark would be $1$, so position means nothing; (5) $10$ stands for $2$, $5$, $9$
-and $11$ for $3$, $6$, $10$; $11$ is seven in base 6; (6) $499$ eggs, $357$ in
-base 12; one egg more than $3$ gross, $11$ dozen and $11$ is $400$ in base 12,
-which is $576$; (7) seven symbols against ten; (8)
+on the page. The results: (1) $1000 = 4344_{\,6}$, four digits; six
+symbols, $0$ to $5$; (2) $2025 = 11111101001_{\,2}$, and about twenty binary
+digits for a million; (3) $123$, $7203$, $7380$, $432\,003$; (4) every
+landmark would be $1$, so position means nothing; (5) $10$ stands for $2$,
+$5$, $9$ and $11$ for $3$, $6$, $10$; $11$ is seven in base 6; (6) $499$
+eggs, $357$ in base 12; one egg more than $3$ gross, $11$ dozen and $11$ is
+$400$ in base 12, which is $576$; (7) seven symbols against ten; (8)
 $212 = 1322_{\,5}$, the same digits largest landmark first.
 
-### Stage 2 · Solved Examples
+### Solved examples
 
-The 23 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (a) MDCXLIX |
+| | 2 | (b) $10201_{3}$ |
+| More than one correct | 3 | (a), (b), (d) |
+| | 4 | (a), (c), (d) |
+| Numerical answer | 5 | 14 |
+| | 6 | 6 |
+| Matching | 7 | (b) P–2, Q–4, R–3, S–1 |
+| | 8 | (c) P–3, Q–4, R–2, S–1 |
+| Paragraph-based | 9 | (i) (b) 123; (ii) 125; (iii) 97 |
+| | 10 | (i) (b) 465; (ii) 10; (iii) 2 |
 
-1. (a) MDCXLIX *(single correct)*
-2. (b) 2496 *(single correct)*
-3. (c) 6561 *(single correct)*
-4. (d) 397 *(single correct)*
-5. (a) 53 *(single correct)*
-6. (b) $10201_{3}$ *(single correct)*
-7. (a), (c) *(multiple correct)*
-8. (a), (b), (d) *(multiple correct)*
-9. (a), (c), (d) *(multiple correct)*
-10. (a), (b), (c) *(multiple correct)*
-11. 14 *(numerical answer)*
-12. 6 *(numerical answer)*
-13. 700309 *(numerical answer)*
-14. (b) P–2, Q–4, R–3, S–1 *(matching)*
-15. (c) P–3, Q–4, R–2, S–1 *(matching)*
+### Practice
 
-### Stage 3 · Practice
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (d) 2479 · 2 (c) 101 · 3 (b) 243 · 4 (a) 5 |
+| More than one correct | 5–8 | 5 (a), (b), (c) · 6 (a), (b), (d) · 7 (a), (c) · 8 (b), (c) |
+| Numerical answer | 9–11 | 9 **13** · 10 **201** · 11 **624** |
+| Matching | 12–13 | 12 (a) · 13 (b) |
+| Paragraph-based | 14–15 | 14 (i) (b) 197; (ii) 9; (iii) 21 · 15 (i) (a) 45; (ii) 4; (iii) 63 |
 
-Multiple choice and assertion–reason, as the key prints it:
-1 (d), 2 (a), 3 (b), 4 (c), 5 (d), 6 (a), 7 (b), 8 (c), 9 (d), 10 (a),
-11 (b), 12 (c), 13 (a), 14 (b), 15 (c), 16 (a), 17 (b), 18 (c), 19 (d).
-
-The working for each:
-
-1. XIV $= 10 + (5 - 1) = 14$.
-2. $1011_{\,2} = 8 + 0 + 2 + 1 = 11$.
-3. The $0$ in $305$ is in the tens place: no tens.
-4. $27 = 1 \times 25 + 0 \times 5 + 2$, so $102$.
-5. CDXLIV $= 400 + 40 + 4 = 444$.
-6. $255 = 256 - 1$, and $256 = 2^8$, so eight ones: $11111111$.
-7. $3^6 = 729$ fits in 1000 and $3^7 = 2187$ does not: 7 digits.
-8. $77_{\,8} = 7 \times 8 + 7 = 63$.
-9. By division, $\tfrac18 = 0.125$, $\tfrac1{16} = 0.0625$, $\tfrac1{20} = 0.05$; $1 \div 6 = 0.1666\ldots$ leaves remainder 4 at every step and never ends.
-10. $1000 = 1 \times 625 + 3 \times 125$, so $13000$.
-11. $121_{\,3} = 16$ and $121_{\,5} = 36$; they differ by $20$.
-12. $3 \times 4 \times 4 = 48$.
-13. $606_{\,7} = 6 \times 49 + 0 \times 7 + 6 = 300$.
-14. From $1000_{\,8} = 512$ to $7777_{\,8} = 4095$.
-15. $2 \times 360 + 0 \times 20 + 5 = 725$.
-16. (a) Both true, and nine of a landmark making the next is why no digit
-    reaches 9.
-17. (b) $100_{\,6} = 36$ is true and six symbols is true, but the symbol count
-    does not explain the value of the third place.
-18. (c) $33_{\,4} = 3 \times 4 + 3 = 15$, so A is true; the second place
-    is the fours place, not the sixteens, so R is false.
-19. (d) $1000_{\,2} = 8$, so A is false; R is true.
-20. $45 = 32 + 8 + 4 + 1$: $101101$.
-21. $2 \times 3600 + 30 \times 60 + 15 = 9015$.
-22. MMDCCCXLI $= 2000 + 800 + 40 + 1 = 2841$.
-23. $500 = 1 \times 256 + 3 \times 64 + 3 \times 16 + 1 \times 4 + 0$:
-    $13310$ in base 4.
-24. $3 \times 10\,000 + 4 \times 1000 + 1 \times 10 + 7 = 34\,017$, using
-    $15$ symbols; ten times as large is three tadpoles, four fingers, one coil
-    and seven arches, $340\,170$.
-25. $2 \times 7 + 1 = 15$, so base 7; in base 9, $2 \times 9 + 1 = 19$.
-26. $1101_{\,2} = 13$ and $111_{\,2} = 7$; $13 + 7 = 20 = 16 + 4$, so the
-    sum is $10100$ in base 2. Check: $1 \times 16 + 1 \times 4 = 20$.
-27. $2000 = 1 \times 1728 + 272$, $272 = 1 \times 144 + 128$,
-    $128 = 10 \times 12 + 8$: 1 crate, 1 carton, 10 boxes, 8 eggs loose.
-    Base 12.
-28. Mayan: $5000 = 13 \times 360 + 16 \times 20 + 0$, so $13 \mid 16 \mid 0$.
-    True base 20: $5000 = 12 \times 400 + 10 \times 20 + 0$, so
-    $12 \mid 10 \mid 0$. They differ because the third landmark is 360 in one
-    and 400 in the other.
-29. $333_{\,4} = 3 \times 16 + 3 \times 4 + 3 = 63$ and $1000_{\,4} = 64$.
-    In base 3: $2222_{\,3} = 2 \times 27 + 2 \times 9 + 2 \times 3 + 2 = 80$.
-30. (a) P: 1 h 2 min 5 s; Q: 1 h 30 min 0 s; R: 2 h 3 min 4 s
-    (b) Q (c) $7384 - 3725 = 3659$ s $= 1$ h $0$ min $59$ s.
-31. (a) X $= 44$, Y $= 31$, Z $= 50$ (b) $63$ (c) $8$ lamps: seven
-    lamps reach only $127$, one less than $2^7 = 128$, and eight reach $255$.
+Working: 1. $2000 + 400 + 50 + 20 + 9$. 2. $2 \times 36 + 4 \times 6 + 5$.
+3. $3^5 = 243$. 4. $b^3 + b = 130$ at $b = 5$. 5. $1100_2 = 12$,
+$22_5 = 12$, $110_3 = 12$, $15_8 = 13$. 6. 7200 is $20 \times 360$ and
+$2 \times 3600$; Roman numerals never need a zero. 7. MCMXCIX is 1999 and
+CDXLIV is 444; IM and XCX are not allowed. 8. $10 < n + 3 < 20$ gives
+$n = 8$ to $16$. 9. MDCCCLXXXVIII. 10. $3 \times 64 + 2 \times 4 + 1$.
+11. $4444_5 = 5^4 - 1$. 12. $110$ in bases 2, 3, 4, 5 is 6, 12, 20, 30.
+13. 7200; 3605; $3 \times 60 + 20 = 200$; 900. 14. $3 \times 64 + 5 = 197$;
+$100 = 1 \times 64 + 4 \times 8 + 4$; $511 = 7 \times 64 + 7 \times 8 + 7$.
+15. $32 + 8 + 4 + 1 = 45$; $58 = 32 + 16 + 8 + 2$; all six flags make 63.

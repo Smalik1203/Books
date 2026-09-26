@@ -3,16 +3,37 @@
     <div class="page__main">
 
       <p>
+        <em>Why it stops:</em> each division makes the number at least five times
+        smaller, and a whole number cannot shrink for ever. It must reach zero, and it
+        reaches it quickly — the number of steps is the number of digits.
+      </p>
+
+      <p>
+        <em>Why the remainders come out backwards:</em> the first division asks how
+        many are left over after taking out all the fives, which is precisely the units
+        digit. The second asks the same of the fives, which is the next digit up. Each
+        step peels off the lowest place, so the digits emerge in the reverse of the
+        order they are written.
+      </p>
+
+      <p>
+        A word about the third and the fourth, because they are a different kind of
+        question. Both ask you to show that something is <em>impossible</em> or
+        <em>unclear</em>, and neither can be settled by working an example. What
+        settles them is an argument that covers every case, and in both the argument is
+        two or three lines long once found.
+      </p>
+
+      <p>
         The others are conversions and rules, and each rewards the same habit: write the
         number in expanded form, with the powers showing, and look at what the base is
         doing. Almost every question about bases becomes easy the moment
-        you rewrite $4344_{\,6}$ as $4 \times 6^3 + 3 \times 6^2 + 4 \times 6 + 4$.
+        you rewrite $4344_{\,6}$ as $4 \times 6^3 + 3 \times 6^2 + 4 \times 6 + 4$ and look again.
       </p>
 
       <p>
         If you cannot get started, do it in base $10$ first, where you already know the
-        answer, and then ask which step used the fact that the base was ten. That step
-        is where the general rule lives.
+        answer, and then ask which step used the fact that the base was ten. The general rule lives in that step.
       </p>
 
       <p>
@@ -31,16 +52,9 @@
         point.
       </p>
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Solved Examples</div>
-        </div>
-      </div>
+      <div class="c-practice__sub">Single correct</div>
 
-      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 1 · Single correct</div><div class="c-example__body"><p>How is 1649 written in Roman numerals, using the subtractive rule wherever it shortens the numeral?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>MDCXLIX</li><li>MDCIL</li><li>MDCXLVIIII</li><li>MCDXLIX</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>$1649 = 1000 + 600 + 40 + 9$: M, DC, XL and IX.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>So 1649 is MDCXLIX. IL is not allowed (I may stand only before V and X), and MCD is 1400.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(a) MDCXLIX</span></div></div></div></div>
-
-      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 2 · Single correct</div><div class="c-example__body"><p>What number is MMCDXCVI?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>2596</li><li>2496</li><li>2694</li><li>2406</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>MM is 2000, CD is $500 - 100 = 400$ and XC is $100 - 10 = 90$.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>VI is 6, so the number is $2000 + 400 + 90 + 6 = 2496$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(b) 2496</span></div></div></div></div>
+      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 1</div><div class="c-example__body"><p>How is 1649 written in Roman numerals?</p><ol class="c-parts c-parts--alpha c-parts--4"><li>MDCXLIX</li><li>MDCIL</li><li>MDCXLVIIII</li><li>MCDXLIX</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>$1649 = 1000 + 600 + 40 + 9$: M, DC, XL and IX.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>IL is not allowed, and MCD is 1400.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(a) MDCXLIX</span></div></div></div></div>
 
     </div>
   </div>
