@@ -2,82 +2,74 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Check the theorem for the right-angled triangle with short sides 6 and 8.</li>
+            <li>Put $a = b$ in the theorem. Which result from Section 2.2 do you get?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+      <h2><span class="badge">2.6</span><span class="name">Finding a Side You Cannot Reach</span></h2>
+
+      <p>The theorem connects three lengths. So if we know any two of them, we can find the
+      third. Very often the third is a length that a measuring tape cannot reach.</p>
+
+      <p>First decide which side is the hypotenuse. It is the side opposite the right
+      angle, and it is always the longest side. If you know the hypotenuse, you subtract
+      squares. If you are looking for it, you add squares.</p>
+
       <div class="c-example">
-                                                                                <div class="c-example__tab">Example 4</div>
-                                                                                <div class="c-example__body">
-                                                                                  <p>The diagonals of a rhombus are $24$ and $70$ units long. Find the length of
-                                                                                  a side.</p>
-                                                                                  <p>Part I's Chapter 4 established that the diagonals of a rhombus cut each
-                                                                                  other in half and cross at right angles. So each side of the rhombus is the
-                                                                                  hypotenuse of a right triangle whose short sides are half of each diagonal.</p>
-                                                                                  <p><strong>Solution.</strong></p>
-                                                                                  <div class="work">
-                                                                                    <div class="work__row"><span class="work__label">Step 1</span>
-                                                                                      <span>half-diagonals $12$ and $35$</span>
-                                                                                      <span class="work__why">halve each diagonal</span></div>
-                                                                                    <div class="work__row"><span class="work__label">Step 2</span>
-                                                                                      <span>$s^2 = 12^2 + 35^2 = 144 + 1225 = 1369$</span>
-                                                                                      <span class="work__why">the theorem</span></div>
-                                                                                    <div class="work__row"><span class="work__label">Step 3</span>
-                                                                                      <span>$s = \sqrt{1369} = 37$</span>
-                                                                                      <span class="work__why">take the square root</span></div>
-                                                                                    <div class="work__row"><span class="work__label">Answer</span>
-                                                                                      <span>Each side of the rhombus is $37$ units.</span></div>
-                                                                                  </div>
-                                                                                  <p>All four sides come to $37$, which they had to: the four right triangles have
-                                                                                  the same two short sides.</p>
-                                                                                </div>
-                                                                              </div>
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A right-angled triangle has short sides $16$ cm and $30$ cm. Find its
+          hypotenuse.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$c^2 = 16^2 + 30^2 = 256 + 900 = 1156$</span>
+              <span class="work__why">the theorem</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$c = \sqrt{1156} = 34$ cm</span>
+              <span class="work__why">take the square root</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$34 > 30$, and $34 < 16 + 30$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The hypotenuse is $34$ cm.</span></div>
+          </div>
+        </div>
+      </div>
 
-      <h3>2.6.1 Is this triangle right-angled?</h3>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A right-angled triangle has a hypotenuse of $53$ m and one short side of
+          $45$ m. Find the other short side.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$45^2 + b^2 = 53^2$</span>
+              <span class="work__why">the theorem</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$b^2 = 2809 - 2025 = 784$</span>
+              <span class="work__why">subtract the known square</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$b = 28$ m</span>
+              <span class="work__why">take the square root</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The other short side is $28$ m.</span></div>
+          </div>
+        </div>
+      </div>
 
-      <p>The theorem also runs the other way, and that is the half of it the altar
-                                                                        builders relied on. If the three sides of a triangle happen to make
-                                                                        $a^2 + b^2 = c^2$ true, then the angle opposite the longest side <em>is</em> a right
-                                                                        angle. So a triangle can be tested for squareness with nothing but a tape measure
-                                                                        and some arithmetic.</p>
-
-      <div class="work work--list">
-                                                                          <div class="work__row">
-                                                                            <span class="work__label work__label--wide">$13$, $84$, $85$</span>
-                                                                            <span>$169 + 7056 = 7225 = 85^2$ — right-angled</span>
-                                                                          </div>
-                                                                          <div class="work__row">
-                                                                            <span class="work__label work__label--wide">$9$, $12$, $16$</span>
-                                                                            <span>$81 + 144 = 225$, but $16^2 = 256$ — not right-angled</span>
-                                                                          </div>
-                                                                        </div>
-
-      <p>The second is a near miss on purpose: $9$, $12$, $15$ would have been a right
-                                                                        angle, and lengthening the longest side by one centimetre opens the corner past
-                                                                        $90^\circ$. It is the same test a carpenter uses on a door frame — measure across
-                                                                        the two diagonals, and if they do not agree the frame is not square.</p>
-
-      <h3>2.6.2 Using it twice: the diagonal of a box</h3>
-
-      <p>A hall is $4$ m by $3$ m on the floor and $12$ m to the ceiling. How far is it
-                                                                        from one bottom corner to the opposite top corner — the longest straight line that
-                                                                        fits inside the room?</p>
-
-      <p>The floor diagonal is found first. It is then one short side of a second right
-                                                                        triangle whose other short side is the height, and whose hypotenuse is the line we
-                                                                        want.</p>
-
-      <div class="work">
-                                                                          <div class="work__row">
-                                                                            <span class="work__label work__label--wide">across the floor</span>
-                                                                            <span>$d^2 = 4^2 + 3^2 = 25$</span>
-                                                                          </div>
-                                                                          <div class="work__row">
-                                                                            <span class="work__label work__label--wide">then up</span>
-                                                                            <span>$D^2 = d^2 + 12^2 = 25 + 144 = 169$, so $D = 13$ m</span>
-                                                                          </div>
-                                                                        </div>
-
-      <p>The floor diagonal itself was never needed, only its square — which is why the
-                                                                        whole thing collapses into one line, $\ D^2 = l^2 + b^2 + h^2$. Two Baudhāyana
-                                                                        triples went by on the way: $(3,4,5)$ across the floor and $(5,12,13)$ up to the
-                                                                        corner.</p>
+      <p>Sometimes the unknown length is in a short side <em>and</em> in the hypotenuse.
+      The theorem still finds it.</p>
 
     </div>
   </div>

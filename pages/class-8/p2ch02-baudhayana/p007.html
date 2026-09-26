@@ -2,55 +2,79 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="eq eq--anchor">$$a^2 + 2ab + b^2 \;=\; 2ab + c^2$$</div>
-
-      <p>Take $2ab$ off both sides — the same to both sides, as always — and what is left
-      is the theorem.</p>
-
       <div class="c-keyidea">
-        <div class="c-keyidea__title">The Baudhāyana–Pythagoras theorem</div>
-        <p>In a right-angled triangle with short sides $a$ and $b$ and hypotenuse $c$,
-        $\ a^2 + b^2 = c^2$.</p>
-        <p>The square on the hypotenuse is the two squares on the other sides together.
-        It is named for Baudhāyana, who stated it around 800 BCE, and for Pythagoras, who
-        stated it in Greece some three centuries later.</p>
+        <div class="c-keyidea__title">The diagonal of a square</div>
+        <ul class="c-keyidea__points">
+          <li>A square of side $1$ has a diagonal of length $\sqrt{2}$.</li>
+          <li>$1.414 < \sqrt{2} < 1.415$, and its decimal never ends or repeats.</li>
+        </ul>
       </div>
 
-      <p>Read the picture rather than the letters and the theorem is a statement about
-      paper: cut up the two smaller squares, and the pieces will cover the larger one
-      exactly. The algebra is only a way of saying that without scissors.</p>
-
-      <h2><span class="badge">2.6</span><span class="name">Finding a Side You Cannot Reach</span></h2>
-
-      <p>The theorem is chiefly used backwards. It relates three lengths, so knowing any
-      two of them gives the third — and the third is very often the one you cannot get a
-      tape measure to.</p>
-
-      <p>One thing has to be settled before any arithmetic: which side is the hypotenuse.
-      It is the one opposite the right angle, and it is always the longest of the three.
-      If you know it, you subtract; if you are looking for it, you add.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>A right-angled triangle has short sides $9$ cm and $12$ cm. Find its
-          hypotenuse.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$c^2 = 9^2 + 12^2 = 81 + 144 = 225$</span>
-              <span class="work__why">the theorem</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$c = \sqrt{225} = 15$ cm</span>
-              <span class="work__why">take the square root</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>The hypotenuse is $15$ cm.</span></div>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Trap $\sqrt{3}$ between two numbers with one decimal place.</li>
+            <li>A square has side 5 cm, so its diagonal is $\sqrt{50}$ cm. Between which two whole numbers does the diagonal lie?</li>
+          </ol>
           </div>
-          <p>A check costs a second: $15$ is longer than both $9$ and $12$, as the
-          hypotenuse must be, and shorter than $9 + 12$, as any side of a triangle must
-          be.</p>
         </div>
       </div>
+
+      <h2><span class="badge">2.5</span><span class="name">Two Different Squares</span></h2>
+
+      <p>So far we have joined a square to a copy of itself. Baudhāyana next asks a harder
+      question. Given two squares of <em>different</em> sizes, can we build one square
+      whose area is the two areas together? His answer is the rule this chapter is named
+      after.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Śulbasūtra 1.12</div>
+        <p>A cord stretched along the diagonal of a rectangle makes a square equal to the
+        squares made by its length and its breadth together.</p>
+      </div>
+
+      <p>In other words: take the two side lengths, and make a right-angled triangle with
+      them as its two short sides. The square on the hypotenuse of that triangle has the
+      same area as the two squares on the short sides together.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 176 86" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A three by three grid of squares plus a four by four grid equals a five by five grid, counting nine plus sixteen equals twenty-five">
+      
+            <path class="dg-fill-a" d="M10 40 H40 V70 H10 Z"/>
+            <path class="dg-thin"   d="M20 40 V70 M30 40 V70 M10 50 H40 M10 60 H40"/>
+            <path class="dg-line"   d="M10 40 H40 V70 H10 Z"/>
+            <text class="dg-note" x="25" y="80" text-anchor="middle">9</text>
+      
+            <text class="dg-label" x="48" y="60" text-anchor="middle">+</text>
+      
+            <path class="dg-fill-a" d="M58 30 H98 V70 H58 Z"/>
+            <path class="dg-thin"   d="M68 30 V70 M78 30 V70 M88 30 V70 M58 40 H98 M58 50 H98 M58 60 H98"/>
+            <path class="dg-line"   d="M58 30 H98 V70 H58 Z"/>
+            <text class="dg-note" x="78" y="80" text-anchor="middle">16</text>
+      
+            <text class="dg-label" x="106" y="60" text-anchor="middle">=</text>
+      
+            <path class="dg-fill-b" d="M116 20 H166 V70 H116 Z"/>
+            <path class="dg-thin"   d="M126 20 V70 M136 20 V70 M146 20 V70 M156 20 V70
+                                       M116 30 H166 M116 40 H166 M116 50 H166 M116 60 H166"/>
+            <path class="dg-line"   d="M116 20 H166 V70 H116 Z"/>
+            <text class="dg-note" x="141" y="80" text-anchor="middle">25</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.6</span> Short sides $3$ and $4$ give a
+          hypotenuse of $5$. The three squares hold $9$, $16$ and $25$ unit squares, and the
+          first two together make the third.</figcaption>
+        </figure>
+      </div>
+
+      <p>The counts work for $3$, $4$ and $5$. That is a good sign, but it proves nothing
+      about other triangles. Why should it be true for <em>every</em> right-angled
+      triangle?</p>
 
     </div>
   </div>

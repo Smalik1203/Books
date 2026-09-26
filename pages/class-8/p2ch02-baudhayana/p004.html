@@ -2,87 +2,83 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 2.1</div>
-        <ol class="c-questions">
-          <li>A square has an area of $36$ cm<sup>2</sup>. What is the area of the square
-          built on its diagonal? What is the area of the square joining the midpoints of
-          its sides?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Starting from a square of area $1$, write down the areas of the next four
-          squares, each built on the diagonal of the one before it.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Doubling the side of a square multiplies its area by $4$. By what is the
-          area multiplied when the side is tripled? When it is halved?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Which is larger: the square built on the diagonal of a square of side $5$,
-          or a square of side $7$? By how much?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A square sheet of paper of area $64$ cm<sup>2</sup> has its four corners
-          folded in to the centre. What is the area of the folded square? What if you
-          fold the four new corners in as well?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A square has side $10$ cm. Write down the areas of the square on its
-          diagonal, and of the square on <em>that</em> square's diagonal. Which of the
-          three squares have sides you can write exactly?</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">2.4</span><span class="name">How Long Is the Diagonal?</span></h2>
-
-      <p>Baudhāyana's construction answers the question it was asked without ever saying
-      how long the new side is. That is a strength, not a gap — a rule you can carry out
-      with a cord and two pegs is worth more on a building site than a decimal. But the
-      length is interesting, and finding it needs nothing beyond what we have.</p>
-
-      <p>Take a square of side $1$, and cut it along a diagonal. Each half is a right
-      triangle with two sides of length $1$ and a longer third side. That longest side,
-      the one opposite the right angle, is called the
-      <span class="term">hypotenuse</span>. Call it $c$.</p>
-
-      <div class="c-figure c-figure--lg">
+      <div class="c-figure c-figure--md">
         <figure>
-          <svg viewBox="0 0 140 98" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A unit square shaded, with the square standing on its diagonal outlined and marked as having area 2 and side c">
+          <svg viewBox="0 0 140 106" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square with the midpoints of its sides joined, the four corner triangles shaded and dotted lines showing each corner folding in to the centre">
       
-            <path class="dg-fill-a" d="M30 12 H70 V52 H30 Z"/>
-            <path class="dg-line"   d="M30 12 H70 V52 H30 Z"/>
-            <path class="dg-line"   d="M30 52 L70 12 L110 52 L70 92 Z"/>
-            <path class="dg-thin"   d="M30 52 L70 12"/>
+            <path class="dg-fill-b" d="M30 12 H70 L30 52 Z"/>
+            <path class="dg-fill-b" d="M70 12 H110 V52 Z"/>
+            <path class="dg-fill-b" d="M110 52 V92 H70 Z"/>
+            <path class="dg-fill-b" d="M30 52 V92 H70 Z"/>
       
-            <text class="dg-label dg-label--sm" x="50" y="8" text-anchor="middle">1</text>
-            <text class="dg-label dg-label--sm" x="24" y="34" text-anchor="middle">1</text>
-            <text class="dg-label dg-label--sm" x="96" y="28">c</text>
-            <text class="dg-label dg-label--sm" x="86" y="66">area 2</text>
+            <path class="dg-line" d="M30 12 H110 V92 H30 Z"/>
+            <path class="dg-line" d="M30 52 L70 12 L110 52 L70 92 Z"/>
+            <path class="dg-ghost" d="M30 12 L110 92 M110 12 L30 92"/>
+      
+            <text class="dg-note" x="70" y="102" text-anchor="middle">the four corners fold in and fill the middle</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 2.5</span> The shaded square has area $1$,
-          so the square on its diagonal has area $2$. That square's side is the
-          hypotenuse $c$.</figcaption>
+          <figcaption><span class="fignum">Fig. 2.4</span> Each shaded corner is a quarter
+          of the inner square, so the four of them together make the whole of it. So the
+          inner square is half of the outer one.</figcaption>
         </figure>
       </div>
 
-      <p>We do not know $c$, but we know the area of the square built on it — Section 2.2
-      settled that, and it is $2$. A square of side $c$ has area $c \times c$, so</p>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 8h18"/>
+            <path d="M12 8v3"/>
+            <path d="M8.5 14h7"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Try this with paper. Cut out a square and fold each corner in to the centre.
+          The creases mark the square of half the area. Then cut a second square along both
+          its diagonals, and lay the four triangles around the first square. You have built
+          the square of twice the area, using scissors instead of a cord.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 1</div>
+        <div class="c-example__body">
+          <p>A square garden has an area of $72$ m<sup>2</sup>. A path joins the midpoints
+          of its sides and makes a smaller square. Find the area and the side of the
+          smaller square.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>area $= 72 \div 2 = 36$ m<sup>2</sup></span>
+              <span class="work__why">joining midpoints halves the area</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>side $= \sqrt{36} = 6$ m</span>
+              <span class="work__why">take the square root</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The smaller square has an area of $36$ m<sup>2</sup> and a side of $6$ m.</span></div>
+          </div>
+          <p>We never needed the side of the garden itself, which is not a whole number.</p>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Halving a square</div>
+        <p>Joining the midpoints of the sides of a square makes a square of half its area.</p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Join the midpoints of the sides of a square twice over. What part of the first square is the last one?</li>
+            <li>Why does the fold in Fig. 2.4 prove the result, when a drawing with a ruler would only suggest it?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

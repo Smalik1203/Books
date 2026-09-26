@@ -1,4 +1,89 @@
-# Class 8 · Mathematics II · Chapter 2 — Two Squares Make One
+# Class 8 · Mathematics II · Chapter 2 — The Baudhayana-Pythagoras Theorem
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body's examples and exercises,
+Beyond the Book and the answer key further down this log.** Converted to
+CONVERT-V2.md against Class 6 Chapter 1. `chapter.json`: `design: maths-v2`,
+`palette: prism-lapis`, `edition: 196x276-large`, `keepExerciseSets`,
+`accent: #365b7d`. 36 pages:
+
+* **Body p001–p016**: 15 pages of NCERT's sections in NCERT's order, then a
+  **Summary** page (p016, `data-close`, ten points).
+* **By the Book p090–p096**: seven pages, 50 questions (10 · 10 · 10 · 5 · 5 ·
+  10), written to BY-THE-BOOK.md's Class 8 column. Three figures ("In the given
+  figure", Q17, Q28; the rangoli grid of case Q40); one find-the-mistake short
+  answer (Q13); one multi-statement MCQ (Q48); case passages with tables (Q36,
+  Q38). No π appears in this chapter, so no (Take π = 22/7). Seven pages rather
+  than five: the long answers and cases with figures and tables need them.
+* **Beyond the Book p101–p113**: the tried-and-explained questions without a
+  stage head, then Single correct · More than one correct · Numerical answer ·
+  Matching · Paragraph-based, each with two examples and its practice
+  (4 · 4 · 3 · 2 · 2); Answers on a fresh page (p111–p113).
+
+### NCERT expression removed
+
+* **Śulbasūtra 1.9 and 1.12** are now our own translations ("A cord stretched
+  along the diagonal…").
+* **Bhāskarāchārya's lotus** (Līlāvatī, and NCERT's) is gone, with its figure.
+  The same method — the unknown in a short side and in the hypotenuse — is now
+  Example 4, a ladder that would stand 1 m above the top of a wall
+  (5, 12, 13), with a new Fig. 2.8.
+* **Every number in the body's examples changed**: Example 2 short sides
+  16, 30 → 34; Example 3 hypotenuse 53, side 45 → 28; Example 5 rhombus
+  diagonals 42, 40 → 29; the box of §2.6.2 is 12 × 9 × 8 → 17; the
+  right-angle test keeps (13, 84, 85) and the near miss is now 10, 24, 27.
+  Example 1 (a garden of 72 m², halved) is new, in §2.3.
+* **Every exercise question is new** (Sets 2.1–2.3), each set closing on an
+  NCERT reference line (`c-practice__note`).
+* Kept as history, not NCERT's expression: the Śulbasūtra's six triples,
+  Baudhāyana's value of √2, Fermat and Wiles (our own words).
+
+### Other changes to the body
+
+* Plain English throughout: long sentences split, idiom removed.
+* **Every section now has a key idea and a Think and Reflect.** New key ideas:
+  Doubling a square, Halving a square, The diagonal of a square, Using the
+  theorem, Fermat's Last Theorem; the theorem's key idea is two points. New
+  Think and Reflects in §§2.1–2.7; §2.8's gained a second item.
+* Additions that fill pages with teaching: an overview paragraph in §2.1; the
+  meaning of *hypotenuse* and *karṇa* and a first estimate of $c$ in §2.4; the
+  near miss $6^3 + 8^3 = 9^3 - 1$, the early cases (Fermat for fourth powers,
+  Euler for cubes) and why the question was useful in §2.8.
+* Fig. 2.4 and Fig. 2.8 set at `--md`; Fig. 2.7's middle square takes
+  `dg-fill-b` (it was `dg-fill-d`, which prints beige).
+* The forward reference *Two Baudhāyana triples went by* (§2.6.2) now says
+  §2.7 names such sets.
+* "whole numbers" in Fermat's claim is now "counting numbers" (0 would make
+  it false).
+
+### Beyond the Book
+
+* The tried-and-explained questions are **word for word** except: the stage
+  head and its third intro paragraph (*Each question is answered straight
+  after it…*) are gone; *as the depth of the lake was in Section 2.6* → *as the
+  height of the wall*; *half of $200 = 100$* → *$200 \div 2 = 100$*
+  (check-sums read the old one as an identity); *ten times over* → *ten
+  times*; *now a hypotenuse* → *now the hypotenuse of a right triangle*
+  (the last two to clear lone words).
+* Examples kept from the old fifteen: Single correct 2, 3; More than one
+  correct 9, 10; Numerical 11, 12; Matching 14, 15. Paragraph-based Examples
+  9 (a playground's diagonal) and 10 (folding a square napkin) are new.
+  Format tags and "Choose one correct option" lines removed.
+* Fifteen new practice questions. The old 33 board-form practice questions
+  became raw material for By the Book (kites, boxes, screens, cords, bamboo).
+
+### Checks at close
+
+`build.mjs`: all pages fit; every page at 88% or more except the Summary,
+By the Book's last page and the chapter's last page. `lone-words`: 0.
+`check-sums`: 35 identities, 0 wrong. `orphans`: 0 stranded. `check-labels`:
+no collisions. `fit-options`: every row fits (By the Book Q49 narrowed to one
+column). `check-numbers.mjs`, rewritten on the pattern of Class 6 Chapter 1's:
+379 checks, 0 failed — every identity and trap on every page and in
+ANSWERS.md, the key complete, every single-correct option recomputed, every
+Beyond example and practice answer and the body's examples recomputed. Two
+planted errors (a key letter, an identity in Example 3) were both caught.
 
 ## Solved examples in examination formats, 23 September 2026
 

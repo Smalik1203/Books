@@ -2,6 +2,15 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Doubling a square</div>
+        <p>The square built on the diagonal of a square has twice its area.</p>
+      </div>
+
+      <p>Once you can double a square, you can double it again, and again. Each new
+      square stands on the diagonal of the one before. Each is turned through half a
+      right angle from the last, and each has twice the area.</p>
+
       <div class="c-figure c-figure--lg">
         <figure>
           <svg viewBox="0 0 140 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
@@ -16,64 +25,37 @@
             <text class="dg-label dg-label--sm" x="70" y="24" text-anchor="middle">2</text>
             <text class="dg-label dg-label--sm" x="42" y="24" text-anchor="middle">4</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 2.3</span> Areas $1$, $2$ and $4$. The
-          corners of the middle square are the midpoints of the sides of the outer one,
-          which is the same fact seen from the other end.</figcaption>
+          <figcaption><span class="fignum">Fig. 2.3</span> Areas $1$, $2$ and $4$. The middle square's corners are the midpoints of the outer square's sides.</figcaption>
         </figure>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>The shaded square in Fig. 2.3 has area 25 cm². Find the areas of the two larger squares.</li>
+            <li>The outer square in Fig. 2.3 is upright again. If we go on doubling, is the fifth square upright or tilted?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
       <h2><span class="badge">2.3</span><span class="name">Halving a Square</span></h2>
 
-      <p>Baudhāyana's construction runs backwards just as well, and the picture above has
-      already given the answer away. To make a square of <em>half</em> the area of a
-      given one, join the midpoints of its four sides.</p>
+      <p>Baudhāyana's construction also works backwards, and Fig. 2.3 already shows how.
+      To make a square with <em>half</em> the area of a given square, join the midpoints of
+      its four sides.</p>
 
-      <p>Why is the inside square half? Because the four corners left over are four
-      triangles, and each of them is a quarter of the inside square — fold the four
-      corners inwards and they cover it exactly, with nothing over and nothing short.</p>
+      <p>Why is the inside square half? The four corners left over are four triangles.
+      Each of them is a quarter of the inside square. Fold the four corners inwards and
+      they cover the inside square exactly, with no gap and no overlap.</p>
 
-      <p>It is worth pausing on what does <em>not</em> work. Halving the side does not
-      halve the area; it quarters it, for the same reason that doubling the side
-      quadrupled it. Four squares of half the side fit inside the original.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 140 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A square with the midpoints of its sides joined, the four corner triangles shaded and dotted lines showing each corner folding in to the centre">
-      
-            <path class="dg-fill-b" d="M30 12 H70 L30 52 Z"/>
-            <path class="dg-fill-b" d="M70 12 H110 V52 Z"/>
-            <path class="dg-fill-b" d="M110 52 V92 H70 Z"/>
-            <path class="dg-fill-b" d="M30 52 V92 H70 Z"/>
-      
-            <path class="dg-line" d="M30 12 H110 V92 H30 Z"/>
-            <path class="dg-line" d="M30 52 L70 12 L110 52 L70 92 Z"/>
-            <path class="dg-ghost" d="M30 12 L110 92 M110 12 L30 92"/>
-      
-            <text class="dg-note" x="70" y="102" text-anchor="middle">the four corners fold in and fill the middle</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 2.4</span> Each shaded corner is a quarter
-          of the inner square, so the four of them together are the whole of it. The
-          inner square is therefore half of the outer one.</figcaption>
-        </figure>
-      </div>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 8h18"/>
-            <path d="M12 8v3"/>
-            <path d="M8.5 14h7"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>Do this one with paper. Cut a square, fold each corner in to the centre, and
-          the creases mark the half-area square. Then cut a second square along both
-          diagonals and lay the four triangles around the first square — what you have
-          built is the square of double the area, which is Baudhāyana's construction with
-          scissors instead of a compass.</p>
-        </div>
-      </div>
+      <p>Notice what does <em>not</em> work. Halving the side does not halve the area. It
+      makes the area a quarter, for the same reason that doubling the side made it four
+      times as large. Four squares of half the side fit inside the first square.</p>
 
     </div>
   </div>

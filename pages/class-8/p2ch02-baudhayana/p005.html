@@ -2,67 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="eq eq--anchor">$$c^2 = 2, \qquad\text{that is,}\qquad c = \sqrt{2}.$$</div>
-
-      <p>The diagonal of a square of side $1$ is $\sqrt{2}$. Which raises the obvious
-      question: what number is that?</p>
-
-      <p>It can be trapped. Squaring is the only tool needed: if $c^2 = 2$, then any
-      number whose square is below $2$ is too small, and any number whose square is above
-      $2$ is too big. Each line below traps $\sqrt{2}$ between two numbers a little
-      closer together than the last.</p>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$1^2 = 1$, $\ 2^2 = 4$</span>
-          <span>so $1 < \sqrt{2} < 2$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$1.4^2 = 1.96$, $\ 1.5^2 = 2.25$</span>
-          <span>so $1.4 < \sqrt{2} < 1.5$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$1.41^2 = 1.9881$, $\ 1.42^2 = 2.0164$</span>
-          <span>so $1.41 < \sqrt{2} < 1.42$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$1.414^2 = 1.999396$</span>
-          <span>so $1.414 < \sqrt{2} < 1.415$</span>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 2.1</div>
+        <ol class="c-questions">
+          <li>A square has an area of $50$ cm<sup>2</sup>. Find the area of the square
+          built on its diagonal. Also find the area of the square made by joining the
+          midpoints of its sides.</li>
+        </ol>
       </div>
 
-      <p>The trap can be tightened as long as you have patience, and it never shuts. The
-      decimal runs $1.41421356\ldots$ and goes on for ever without falling into a
-      repeating pattern. No fraction gives it exactly — which is a claim worth being
-      suspicious of, and one you will meet a proof of later.</p>
-
-      <p>Baudhāyana knew a value, and set it down as a sum of fractions rather than a
-      decimal, since decimals were still more than a thousand years away.</p>
-
-      <div class="eq">$$\sqrt{2} \;\approx\; 1 + \frac13 + \frac{1}{3 \times 4}
-      - \frac{1}{3 \times 4 \times 34} \;=\; 1.4142156\ldots$$</div>
-
-      <p>Compare that with $1.4142135\ldots$: he is right to five decimal places, which is
-      an error of about two parts in a million. On an altar ten metres across, that is a
-      fifth of a hair's breadth.</p>
-
-      <h2><span class="badge">2.5</span><span class="name">Two Different Squares</span></h2>
-
-      <p>Everything so far has combined a square with a copy of itself. Baudhāyana asks
-      the harder question next: given two squares of <em>different</em> sizes, can you
-      build a single square whose area is the two of them together? His answer is the
-      sentence this chapter is named after.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Śulbasūtra 1.12</div>
-        <p>The area of the square produced by the diagonal is the sum of the areas of the
-        squares produced by the two sides.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>A square has an area of $3$ cm<sup>2</sup>. Each new square is built on the
+          diagonal of the one before. Write the areas of the next four squares.</li>
+        </ol>
       </div>
 
-      <p>Unpacked: take the two side lengths, and make a right-angled triangle with them
-      as its two short sides. Then the square on that triangle's hypotenuse — the
-      diagonal of the rectangle those two sides make — is exactly the two squares
-      together.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>The side of a square is made $5$ times as long. By what number is its area
+          multiplied? By what number is it multiplied when the side is made a third as
+          long?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Which is larger: the square built on the diagonal of a square of side $6$ cm,
+          or a square of side $8$ cm? By how much?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Meera folds the four corners of a square paper napkin of area
+          $400$ cm<sup>2</sup> in to its centre. Find the area of the folded square. She
+          then folds the four new corners in to the centre. Find the area now.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>A square tile has a side of $4$ cm. Find the area of the square on its
+          diagonal, and of the square on <em>that</em> square's diagonal. Which of the three
+          squares has a side that is not a whole number of centimetres?</li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §2.3</p>
+      </div>
+
+      <h2><span class="badge">2.4</span><span class="name">How Long Is the Diagonal?</span></h2>
+
+      <p>Baudhāyana's construction makes the new square without ever saying how long its
+      side is. On a building site that is useful: a cord and two pegs are all you need. But
+      the length is still worth knowing, and we can find it with what we already have.</p>
+
+      <p>Take a square of side $1$ and cut it along a diagonal. Each half is a right
+      triangle. Two of its sides have length $1$, and the third side is longer. The longest
+      side, the one opposite the right angle, is called the
+      <span class="term">hypotenuse</span>. Call it $c$.</p>
+
+      <p>The word comes from Greek and means "stretching under": the side stretched
+      under the right angle. Indian mathematicians called it the <em>karṇa</em>.</p>
+
+      <p>Before calculating, we can say roughly how long $c$ is. It is longer than each
+      short side, so it is more than $1$. A straight line is the shortest path between two points, so $c$ is less than the two short sides together, which make 2.</p>
 
     </div>
   </div>

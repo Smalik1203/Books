@@ -2,94 +2,71 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 176 86" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A three by three grid of squares plus a four by four grid equals a five by five grid, counting nine plus sixteen equals twenty-five">
-      
-            <path class="dg-fill-a" d="M10 40 H40 V70 H10 Z"/>
-            <path class="dg-thin"   d="M20 40 V70 M30 40 V70 M10 50 H40 M10 60 H40"/>
-            <path class="dg-line"   d="M10 40 H40 V70 H10 Z"/>
-            <text class="dg-note" x="25" y="80" text-anchor="middle">9</text>
-      
-            <text class="dg-label" x="48" y="60" text-anchor="middle">+</text>
-      
-            <path class="dg-fill-a" d="M58 30 H98 V70 H58 Z"/>
-            <path class="dg-thin"   d="M68 30 V70 M78 30 V70 M88 30 V70 M58 40 H98 M58 50 H98 M58 60 H98"/>
-            <path class="dg-line"   d="M58 30 H98 V70 H58 Z"/>
-            <text class="dg-note" x="78" y="80" text-anchor="middle">16</text>
-      
-            <text class="dg-label" x="106" y="60" text-anchor="middle">=</text>
-      
-            <path class="dg-fill-b" d="M116 20 H166 V70 H116 Z"/>
-            <path class="dg-thin"   d="M126 20 V70 M136 20 V70 M146 20 V70 M156 20 V70
-                                       M116 30 H166 M116 40 H166 M116 50 H166 M116 60 H166"/>
-            <path class="dg-line"   d="M116 20 H166 V70 H116 Z"/>
-            <text class="dg-note" x="141" y="80" text-anchor="middle">25</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 2.6</span> Sides $3$ and $4$ give a
-          hypotenuse of $5$, and the three squares hold $9$, $16$ and $25$ unit squares.
-          The first two together are the third, with none left over.</figcaption>
-        </figure>
-      </div>
-
-      <p>That the counts come out right for $3$, $4$ and $5$ is encouraging and proves
-      nothing. Why should it be true for <em>every</em> pair of sides?</p>
-
-      <p>Here is an argument that settles it, and it needs one square, four copies of one
-      triangle, and an identity you already have.</p>
-
-      <p>Take the right-angled triangle with short sides $a$ and $b$ and hypotenuse $c$.
-      Draw a square of side $a + b$, and lay four copies of the triangle into its corners,
-      each turned a quarter-turn from the last.</p>
-
       <div class="c-figure c-figure--lg">
         <figure>
-          <svg viewBox="24 0 116 104" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A square of side a plus b holding four copies of a right triangle in its corners, with a tilted square of side c left in the middle">
+          <svg viewBox="0 0 140 98" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A unit square shaded, with the square standing on its diagonal outlined and marked as having area 2 and side c">
       
-            <path class="dg-fill-a" d="M40 8 H92 L40 40 Z"/>
-            <path class="dg-fill-a" d="M92 8 H124 V60 Z"/>
-            <path class="dg-fill-a" d="M124 60 V92 H72 Z"/>
-            <path class="dg-fill-a" d="M72 92 H40 V40 Z"/>
+            <path class="dg-fill-a" d="M30 12 H70 V52 H30 Z"/>
+            <path class="dg-line"   d="M30 12 H70 V52 H30 Z"/>
+            <path class="dg-line"   d="M30 52 L70 12 L110 52 L70 92 Z"/>
+            <path class="dg-thin"   d="M30 52 L70 12"/>
       
-            <path class="dg-fill-d" d="M92 8 L124 60 L72 92 L40 40 Z"/>
-            <path class="dg-line"   d="M92 8 L124 60 L72 92 L40 40 Z"/>
-            <path class="dg-line"   d="M40 8 H124 V92 H40 Z"/>
-      
-            <text class="dg-label dg-label--sm" x="66" y="5" text-anchor="middle">b</text>
-            <text class="dg-label dg-label--sm" x="108" y="5" text-anchor="middle">a</text>
-            <text class="dg-label dg-label--sm" x="35" y="26" text-anchor="middle">a</text>
-            <text class="dg-label dg-label--sm" x="35" y="70" text-anchor="middle">b</text>
-            <text class="dg-label dg-label--sm" x="98" y="38">c</text>
+            <text class="dg-label dg-label--sm" x="50" y="8" text-anchor="middle">1</text>
+            <text class="dg-label dg-label--sm" x="24" y="34" text-anchor="middle">1</text>
+            <text class="dg-label dg-label--sm" x="96" y="28">c</text>
+            <text class="dg-label dg-label--sm" x="86" y="66">area 2</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 2.7</span> Four copies of the same right
-          triangle, set into the corners of a square of side $a+b$. What is left in the
-          middle has all four sides equal to $c$.</figcaption>
+          <figcaption><span class="fignum">Fig. 2.5</span> The shaded square has area $1$,
+          so the square on its diagonal has area $2$. That square's side is the
+          hypotenuse $c$.</figcaption>
         </figure>
       </div>
 
-      <p>The shape left in the middle is a square. Its four sides are all hypotenuses, so
-      they are equal. Its corners are right angles too. At every point where two
-      triangles meet along an edge, the two angles they contribute are the triangle's two
-      acute angles, which add to $90^\circ$, leaving $90^\circ$ for the corner between
-      them.</p>
+      <p>We do not know $c$. But Section 2.2 told us the area of the square built on it:
+      that area is $2$. A square of side $c$ has area $c \times c$, so</p>
 
-      <p>Now count the area of the big square twice.</p>
+      <div class="eq eq--anchor">$$c^2 = 2, \qquad\text{that is,}\qquad c = \sqrt{2}.$$</div>
 
-      <div class="work">
+      <p>The diagonal of a square of side $1$ is $\sqrt{2}$. So what number is that?</p>
+
+      <p>We can trap it between two numbers, using only squaring. If $c^2 = 2$, then any
+      number whose square is less than $2$ is too small. Any number whose square is more
+      than $2$ is too big. Each line below traps $\sqrt{2}$ between two numbers that are
+      closer together than before.</p>
+
+      <div class="work work--list">
         <div class="work__row">
-          <span class="work__label work__label--wide">as one square</span>
-          <span>$(a+b)^2$</span>
+          <span class="work__label work__label--wide">$1^2 = 1$, $\ 2^2 = 4$</span>
+          <span>so $1 < \sqrt{2} < 2$</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">as its pieces</span>
-          <span>$4 \times \tfrac12 ab + c^2 = 2ab + c^2$</span>
+          <span class="work__label work__label--wide">$1.4^2 = 1.96$, $\ 1.5^2 = 2.25$</span>
+          <span>so $1.4 < \sqrt{2} < 1.5$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1.41^2 = 1.9881$, $\ 1.42^2 = 2.0164$</span>
+          <span>so $1.41 < \sqrt{2} < 1.42$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$1.414^2 = 1.999396$</span>
+          <span>so $1.414 < \sqrt{2} < 1.415$</span>
         </div>
       </div>
 
-      <p>The two counts are of the same paper, so they are equal. And Chapter 6 of Part I
-      cut a square into four to establish what $(a+b)^2$ comes to:</p>
+      <p>We can keep going for as long as we like, and the trap never closes. The decimal
+      begins $1.41421356\ldots$ and goes on for ever without repeating. No fraction is
+      exactly equal to it. You will see a proof of this in a later class.</p>
+
+      <p>Baudhāyana gave a value as a sum of fractions. Decimals were not used for more
+      than a thousand years after him.</p>
+
+      <div class="eq">$$\sqrt{2} \;\approx\; 1 + \frac13 + \frac{1}{3 \times 4}
+      - \frac{1}{3 \times 4 \times 34} \;=\; 1.4142156\ldots$$</div>
+
+      <p>Compare this with $1.4142135\ldots$. His value is right to five decimal places.
+      For the diagonal of a square of side 10 m, his error is about 0.02 mm, much less
+      than the width of a hair.</p>
 
     </div>
   </div>

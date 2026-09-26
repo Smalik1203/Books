@@ -2,92 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-              <div class="c-example__tab">Example 2</div>
-              <div class="c-example__body">
-                <p>A right-angled triangle has a hypotenuse of $41$ m and one short side of
-                $40$ m. Find the other.</p>
-                <p><strong>Solution.</strong></p>
-                <div class="work">
-                  <div class="work__row"><span class="work__label">Step 1</span>
-                    <span>$40^2 + b^2 = 41^2$</span>
-                    <span class="work__why">the theorem</span></div>
-                  <div class="work__row"><span class="work__label">Step 2</span>
-                    <span>$b^2 = 1681 - 1600 = 81$</span>
-                    <span class="work__why">subtract the known square</span></div>
-                  <div class="work__row"><span class="work__label">Step 3</span>
-                    <span>$b = 9$ m</span>
-                    <span class="work__why">take the square root</span></div>
-                  <div class="work__row"><span class="work__label">Answer</span>
-                    <span>The other short side is $9$ m.</span></div>
-                </div>
-                <p>Here the known long side went on the right of the equals sign, and the
-                working became a subtraction. Adding $40^2$ and $41^2$ would have answered a
-                question nobody asked.</p>
-              </div>
-            </div>
+      <p>Here is an argument that settles it. Take a right-angled triangle with short sides $a$ and $b$ and hypotenuse $c$.
+      Draw a square of side $a + b$. Place four copies of the triangle in its corners,
+      each turned through a right angle from the last.</p>
 
-      <p>Bhāskarāchārya set this in his <em>Līlāvatī</em>, in the twelfth century. No
-      depth is given.</p>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="24 0 116 104" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A square of side a plus b holding four copies of a right triangle in its corners, with a tilted square of side c left in the middle">
+      
+            <path class="dg-fill-a" d="M40 8 H92 L40 40 Z"/>
+            <path class="dg-fill-a" d="M92 8 H124 V60 Z"/>
+            <path class="dg-fill-a" d="M124 60 V92 H72 Z"/>
+            <path class="dg-fill-a" d="M72 92 H40 V40 Z"/>
+      
+            <path class="dg-fill-b" d="M92 8 L124 60 L72 92 L40 40 Z"/>
+            <path class="dg-line"   d="M92 8 L124 60 L72 92 L40 40 Z"/>
+            <path class="dg-line"   d="M40 8 H124 V92 H40 Z"/>
+      
+            <text class="dg-label dg-label--sm" x="66" y="5" text-anchor="middle">b</text>
+            <text class="dg-label dg-label--sm" x="108" y="5" text-anchor="middle">a</text>
+            <text class="dg-label dg-label--sm" x="35" y="26" text-anchor="middle">a</text>
+            <text class="dg-label dg-label--sm" x="35" y="70" text-anchor="middle">b</text>
+            <text class="dg-label dg-label--sm" x="98" y="38">c</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 2.7</span> Four copies of the same right
+          triangle, set into the corners of a square of side $a+b$. The shape left in the
+          middle has four sides, each equal to $c$.</figcaption>
+        </figure>
+      </div>
 
-      <div class="c-example">
-              <div class="c-example__tab">Example 3</div>
-              <div class="c-example__body">
-                <p>A lotus stands with the tip of its stem $1$ unit above the water. A breeze
-                pushes it over until the tip touches the water $3$ units from where it stood.
-                How deep is the lake?</p>
-            
-                <div class="c-figure c-figure--lg">
-                  <figure>
-                    <svg viewBox="0 0 180 100" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="A lotus stem rising one unit above the water, and the same stem pushed over so its tip touches the water three units away, making a right triangle">
-            
-                      <path class="dg-line" d="M10 38 H170"/>
-                      <path class="dg-ghost" d="M60 86 V26"/>
-                      <path class="dg-line"  d="M60 86 L96 38"/>
-                      <path class="dg-thin"  d="M60 38 H96"/>
-                      <path class="dg-thin"  d="M60 44 H66 V38"/>
-            
-                      <circle class="dg-fill-c" cx="60" cy="24" r="3"/>
-                      <circle class="dg-fill-c" cx="96" cy="38" r="3"/>
-            
-                      <text class="dg-label dg-label--sm" x="54" y="34" text-anchor="end">1</text>
-                      <text class="dg-label dg-label--sm" x="54" y="66" text-anchor="end">x</text>
-                      <text class="dg-label dg-label--sm" x="78" y="34" text-anchor="middle">3</text>
-                      <text class="dg-label dg-label--sm" x="86" y="70">x + 1</text>
-                      <text class="dg-note" x="150" y="34" text-anchor="middle">water</text>
-                    </svg>
-                    <figcaption><span class="fignum">Fig. 2.8</span> The stem does not stretch,
-                    so the slanting stem is as long as the upright one: $x$ below the water and
-                    $1$ above it.</figcaption>
-                  </figure>
-                </div>
-            
-                <p>Let $x$ be the depth. The stem is $x + 1$ long, and bending it over does not
-                change its length, so the slanting stem is the hypotenuse of a right triangle
-                with short sides $3$ and $x$.</p>
-                <p><strong>Solution.</strong></p>
-                <div class="work">
-                  <div class="work__row"><span class="work__label">Step 1</span>
-                    <span>$3^2 + x^2 = (x+1)^2$</span>
-                    <span class="work__why">the theorem</span></div>
-                  <div class="work__row"><span class="work__label">Step 2</span>
-                    <span>$9 + x^2 = x^2 + 2x + 1$</span>
-                    <span class="work__why">expand</span></div>
-                  <div class="work__row"><span class="work__label">Step 3</span>
-                    <span>$9 = 2x + 1$</span>
-                    <span class="work__why">take $x^2$ off both sides</span></div>
-                  <div class="work__row"><span class="work__label">Step 4</span>
-                    <span>$x = 4$</span>
-                    <span class="work__why">solve</span></div>
-                  <div class="work__row"><span class="work__label">Answer</span>
-                    <span>The lake is $4$ units deep.</span></div>
-                </div>
-                <p>The $x^2$ that vanished is the whole trick: the
-                unknown appears squared on both sides, and once it goes what is left is a
-                linear equation of the kind solved in Class 7.</p>
-              </div>
-            </div>
+      <p>The shape in the middle is a square. Its four sides are hypotenuses, so they are
+      equal. At each of its corners, the two acute angles of the triangle add up to
+      $90^\circ$, which leaves $90^\circ$ for the corner. Now find the area of the big
+      square in two ways.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">as one square</span>
+          <span>$(a+b)^2$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">as its pieces</span>
+          <span>$4 \times \tfrac12 ab + c^2 = 2ab + c^2$</span>
+        </div>
+      </div>
+
+      <p>Both are the area of the same square, so they are equal. In Chapter 6 of Part I
+      we found what $(a+b)^2$ is by cutting a square into four pieces:</p>
+
+      <div class="eq eq--anchor">$$a^2 + 2ab + b^2 \;=\; 2ab + c^2$$</div>
+
+      <p>Take $2ab$ away from both sides. What is left is the theorem.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The Baudhāyana–Pythagoras theorem</div>
+        <ul class="c-keyidea__points">
+          <li>In a right-angled triangle, $a^2 + b^2 = c^2$, where $c$ is the hypotenuse.</li>
+          <li>The square on the hypotenuse has the area of the other two squares together.</li>
+        </ul>
+      </div>
+
+      <p>The theorem is named after Baudhāyana, who stated it about 800 BCE, and after
+      Pythagoras, who stated it in Greece about three hundred years later.</p>
 
     </div>
   </div>

@@ -1,0 +1,65 @@
+<section class="page">
+  <div class="page__body">
+    <div class="page__main">
+
+      <p>The builders had a use for them. Tie knots in a cord to mark twelve equal lengths.
+      Peg it out on the ground as a triangle with sides $3$, $4$ and $5$. By the second half of
+      the theorem, the angle between the sides of $3$ and $4$ is a right angle. This is how the
+      altars got square corners.</p>
+
+      <p>One entry in the list is not like the others. Divide $(15, 36, 39)$
+      by $3$ and you get $(5, 12, 13)$, which is already on the list. It is the same
+      triangle, made three times as large.</p>
+
+      <p>So if $(a, b, c)$ is a triple, so is $(ka, kb, kc)$ for any counting number $k$:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">work it out</span>
+          <span>$(ka)^2 + (kb)^2 = k^2a^2 + k^2b^2 = k^2(a^2 + b^2)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">and $a^2+b^2 = c^2$</span>
+          <span>$= k^2c^2 = (kc)^2$</span>
+        </div>
+      </div>
+
+      <p>So $(3,4,5)$ alone gives $(6,8,10)$, $(9,12,15)$, $(30,40,50)$ and as many more as
+      you like. There is no last Baudhāyana triple. A triple whose three numbers have no
+      common factor other than 1 is called <span class="term">primitive</span>. Five of the six triples in the list are
+      primitive. The sixth is $(5,12,13)$ enlarged.</p>
+
+      <p>Where do the primitive triples come from? Take any two counting numbers $m$ and
+      $n$, with $m$ the larger, and build three numbers from them.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A machine for making triples</div>
+        <p>For <em>every</em> choice of $m > n$, the numbers $m^2 - n^2$, $\ 2mn$ and
+        $\ m^2 + n^2$ make a Baudhāyana triple. With $m=2, n=1$ it gives $(3, 4, 5)$; with
+        $m=3, n=2$, $\ (5, 12, 13)$; with $m=4, n=1$, $\ (15, 8, 17)$; with $m=4, n=3$,
+        $\ (7, 24, 25)$; and with $m=6, n=1$, $\ (35, 12, 37)$.</p>
+      </div>
+
+      <p>That is every primitive triple in the list, from one rule. We can check the rule
+      with the identities from Part I:</p>
+
+      <div class="eq">$$(m^2-n^2)^2 + (2mn)^2 = m^4 - 2m^2n^2 + n^4 + 4m^2n^2
+      = m^4 + 2m^2n^2 + n^4 = (m^2+n^2)^2.$$</div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>$(30, 40, 50)$ is $(3, 4, 5)$ multiplied by 10. Is $(13, 14, 15)$, which is $(3, 4, 5)$ with 10 added, a triple?</li>
+            <li>Use the machine with $m = 5$ and $n = 1$. Is the triple you get primitive?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
