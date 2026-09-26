@@ -2,57 +2,60 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Cutting a figure into pieces and rearranging them into a different figure of the
-      same area is called <span class="term">dissection</span>, and it is the method the
-      rest of this chapter runs on.</p>
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 196 94" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rectangle A B C D with both diagonals drawn, meeting at O, and the height from B to the diagonal A C">
+      
+            <path class="dg-fill-a" d="M40 15 L156 15 L98 47 Z M40 79 L156 79 L98 47 Z"/>
+            <path class="dg-fill-c" d="M156 15 L156 79 L98 47 Z M40 15 L40 79 L98 47 Z"/>
+            <path class="dg-line"   d="M40 15 H156 V79 H40 Z"/>
+            <path class="dg-thin"   d="M40 15 L156 79 M156 15 L40 79"/>
+            <path class="dg-dim"    d="M156 15 L128.9 64.1"/>
+      
+            <text class="dg-label" x="32" y="13">A</text>
+            <text class="dg-label" x="159" y="13">B</text>
+            <text class="dg-label" x="159" y="88">C</text>
+            <text class="dg-label" x="32" y="88">D</text>
+            <text class="dg-label" x="95" y="62">O</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.7</span> Triangles $AOB$ and $BOC$ stand on $AO$ and $OC$, the two equal halves of the diagonal $AC$. Both have the same height, from $B$ to $AC$.</figcaption>
+        </figure>
+      </div>
 
-      <p>Now read the rectangle's own measurements off the parallelogram. Its height is
-      $AX$, which is the perpendicular height of the parallelogram. Its width is $XY$,
-      and $XY$ is the same length as $DC$ — because $DX$ and $CY$ are the two congruent
-      triangles' short sides and are therefore equal, so adding the stretch $XC$ to each
-      of them gives $DC$ on one side and $XY$ on the other.</p>
+      <p>Take the two triangles that share the corner $B$. Their bases are the two halves of the diagonal $AC$. The diagonals of a rectangle cut each other in half, so these bases are equal. Both triangles have their top corner at $B$, so they have the same height from $B$ to $AC$. Equal bases and equal heights give equal areas. Going round the rectangle, each pair of neighbours is equal in the same way. So all four triangles have equal areas, a quarter of the rectangle each. A rectangle $10$ cm by $6$ cm has an area of $60$ cm<sup>2</sup>, so each of its four triangles has an area of $15$ cm<sup>2</sup>, even though two of them are tall and narrow and two are short and wide.</p>
 
-      <div class="eq eq--anchor">$$\text{area of a parallelogram} = \text{base} \times \text{height}.$$</div>
-
-      <p>Nothing in the argument singled out $DC$. Take $AD$ as the base instead, drop
-      the perpendicular onto it from $C$, and the same cut-and-carry turns the
-      parallelogram into a different rectangle — taller and narrower, and of the same
-      area. Either side will do, so long as the height used is the one measured square to
-      the side chosen.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>A parallelogram $PQRS$ has $SR = 12$ cm and $PQ = 12$ cm, and the
-          perpendicular from $P$ onto $SR$ is $6$ cm. Find its area, and then find the
-          perpendicular from $Q$ onto $PS$ if $PS = 7.6$ cm.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$12 \times 6 = 72$ cm<sup>2</sup></span>
-              <span class="work__why">on base SR</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$7.6 \times h = 72$</span>
-              <span class="work__why">same area, on base PS</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$h = 72 \div 7.6 \approx 9.47$ cm</span>
-              <span class="work__why">divide by 7.6</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Area 72 cm<sup>2</sup>; the perpendicular from $Q$ is about 9.47 cm</span></div>
-          </div>
-          <p>The same trade as in Example 1: the shorter side takes the longer height,
-          because the two must multiply to the same area. A parallelogram leaning far
-          over has a long side and very little height on it, and that is why a lean
-          costs area even though it costs no perimeter at all.</p>
+      <div class="c-tip">
+        <div class="c-tip__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 19h16"/>
+            <path d="M4 19L12 6l8 13"/>
+            <path d="M12 6v13"/>
+          </svg>
+        </div>
+        <div class="c-tip__body">
+          <p>Congruent shapes always have equal areas. Shapes with equal areas need not be congruent. The four triangles above have equal areas but not all the same shape.</p>
         </div>
       </div>
 
-      <p>Which answers a question the last section raised. Build a rectangle and a
-      parallelogram on the same base, with the other pair of sides the same length in
-      both. The perimeters are equal. The rectangle's height <em>is</em> its side; the
-      parallelogram's height is less, because a slanting side is longer than the
-      perpendicular it leans away from. So of two figures with the same four side
-      lengths, the rectangle is always the larger.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Any side can be the base</div>
+        <p>For a triangle, $\tfrac12 \times \text{base} \times \text{height}$ gives the same area whichever side is taken as the base. So when the area is known, the height to any side is twice the area divided by that side.</p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>In Fig. 7.6, find the height from $C$ to $AB$ if $AB$ is about $8.14$ units long. Is it more or less than $BY$? Why?</li>
+            <li>Can a triangle have a $12$ cm height on its $20$ cm side and a $9$ cm height on its $15$ cm side? Give a reason.</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

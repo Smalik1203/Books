@@ -2,67 +2,59 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Area is a count of unit squares</div>
-        <p>The area of a region is the number of unit squares that fit inside it, and
-        that number need not be a whole one — a region may hold three squares and half of
-        a fourth. For a rectangle the count comes out as a product without any counting
-        at all:</p>
-        <div class="eq eq--anchor">$$\text{area of a rectangle} = \text{length} \times \text{width}.$$</div>
-      </div>
+      <h2><span class="badge">7.2</span><span class="name">Counting Squares</span></h2>
 
-      <p>One consequence arrives immediately. A diagonal cuts a rectangle into two
-      triangles that fit exactly on top of each other, so each of them holds half the
-      squares. The $7$ cm by $4$ cm patch, cut corner to corner, gives two triangles of
-      $\tfrac12 \times 7 \times 4 = 14$ cm<sup>2</sup> apiece.</p>
+      <p>A school garden has two vegetable beds. One bed is $6$ m long and $5$ m wide. The other is $7$ m long and $4$ m wide. The gardener wants to spread compost evenly over both. Which bed needs more compost?</p>
 
-      <h2><span class="badge">7.3</span><span class="name">Why Perimeter Is Not Area</span></h2>
-
-      <p>Counting squares is slow work, and a shortcut suggests itself. The perimeter —
-      the length all the way round the edge — can be measured with a piece of string, and
-      a bigger region surely has a longer boundary. Why not use that?</p>
-
-      <p>Because it is not true. Here are three rectangles, all with whole-centimetre
-      sides.</p>
+      <p>To answer this, cover each bed with <em>unit squares</em>. Here a unit square is a square of side $1$ m. The squares must not overlap and must leave no gaps. Then count them.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="0 0 196 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Three rectangles standing on one line: a long thin eight by one, a five by four, and a three by three square">
+          <svg viewBox="0 0 196 82" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two rectangles ruled into unit squares: one six by five holding thirty squares, the other seven by four holding twenty-eight">
       
-            <path class="dg-fill-a" d="M10 51 H82 V60 H10 Z M98 24 H143 V60 H98 Z M159 33 H186 V60 H159 Z"/>
-            <path class="dg-thin"   d="M19 51 V60 M28 51 V60 M37 51 V60 M46 51 V60 M55 51 V60 M64 51 V60 M73 51 V60
-                                       M107 24 V60 M116 24 V60 M125 24 V60 M134 24 V60
-                                       M98 33 H143 M98 42 H143 M98 51 H143
-                                       M168 33 V60 M177 33 V60 M159 42 H186 M159 51 H186"/>
-            <path class="dg-line"   d="M10 51 H82 V60 H10 Z M98 24 H143 V60 H98 Z M159 33 H186 V60 H159 Z"/>
+            <text class="dg-note" x="43" y="14" text-anchor="middle">30 unit squares</text>
+            <text class="dg-note" x="143.5" y="14" text-anchor="middle">28 unit squares</text>
       
-            <text class="dg-dim-label" x="46" y="70" text-anchor="middle">8 by 1</text>
-            <text class="dg-dim-label" x="120.5" y="70" text-anchor="middle">5 by 4</text>
-            <text class="dg-dim-label" x="172.5" y="70" text-anchor="middle">3 by 3</text>
+            <path class="dg-fill-a" d="M16 22 H70 V67 H16 Z M112 31 H175 V67 H112 Z"/>
+            <path class="dg-thin"   d="M25 22 V67 M34 22 V67 M43 22 V67 M52 22 V67 M61 22 V67
+                                       M16 31 H70 M16 40 H70 M16 49 H70 M16 58 H70
+                                       M121 31 V67 M130 31 V67 M139 31 V67 M148 31 V67 M157 31 V67 M166 31 V67
+                                       M112 40 H175 M112 49 H175 M112 58 H175"/>
+            <path class="dg-line"   d="M16 22 H70 V67 H16 Z M112 31 H175 V67 H112 Z"/>
+      
+            <text class="dg-dim-label" x="43" y="78" text-anchor="middle">6 m</text>
+            <text class="dg-dim-label" x="12" y="47" text-anchor="end">5 m</text>
+            <text class="dg-dim-label" x="143.5" y="78" text-anchor="middle">7 m</text>
+            <text class="dg-dim-label" x="108" y="52" text-anchor="end">4 m</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 7.2</span> Drawn to one scale, and
-          standing on one line. The first is by far the longest way round and holds the
-          fewest squares.</figcaption>
+          <figcaption><span class="fignum">Fig. 7.1</span> There is no need to count the squares one by one. Six squares in a row and five rows make $6 \times 5$. Seven squares in a row and four rows make $7 \times 4$.</figcaption>
         </figure>
       </div>
 
-      <table>
-        <thead>
-          <tr><th>Rectangle</th><th>Perimeter (cm)</th><th>Area (cm<sup>2</sup>)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>$8$ by $1$</td><td>$18$</td><td>$8$</td></tr>
-          <tr><td>$5$ by $4$</td><td>$18$</td><td>$20$</td></tr>
-          <tr><td>$3$ by $3$</td><td>$12$</td><td>$9$</td></tr>
-        </tbody>
-      </table>
+      <p>The first bed holds $30$ unit squares and the second holds $28$. So the first bed needs more compost, even though the second bed is longer. We write these areas as $30$ m<sup>2</sup> and $28$ m<sup>2</sup>, read as <em>square metres</em>, because we counted squares of side $1$ m.</p>
 
-      <p>The first two settle the first question: equal perimeters, and one holds two and
-      a half times as much as the other. The first and third settle a stronger one. The
-      $8$ by $1$ rectangle has the <em>longer</em> boundary of the two — $18$ cm against
-      $12$ — and the <em>smaller</em> area. So a longer edge does not even guarantee more
-      inside it.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Area is a count of unit squares</div>
+        <p>The area of a region is the number of unit squares that fit inside it. This number need not be a whole number: a region may hold three squares and half of a fourth. For a rectangle, the count is a product:</p>
+        <div class="eq eq--anchor">$$\text{area of a rectangle} = \text{length} \times \text{width}.$$</div>
+      </div>
+
+      <p>One more fact follows at once. A diagonal cuts a rectangle into two triangles. Turn one triangle round and it fits exactly on the other, so each triangle holds half of the squares. The $6$ m by $5$ m bed, cut from corner to corner, gives two triangles of $\tfrac12 \times 6 \times 5 = 15$ m<sup>2</sup> each.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Does a bed $10$ m by $3$ m need more compost than the first bed?</li>
+            <li>How many squares of side $1$ cm cover a square of side $1$ m?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

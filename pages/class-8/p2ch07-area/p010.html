@@ -2,112 +2,53 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>A rhombus has diagonals $20$ cm and $15$ cm. Find its area, and then find
-          its height if its side is $12.5$ cm.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$\tfrac12 \times 20 \times 15 = 150$ cm<sup>2</sup></span>
-              <span class="work__why">half the diagonals' product</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$12.5 \times h = 150$</span>
-              <span class="work__why">as a parallelogram</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$h = 12$ cm</span>
-              <span class="work__why">divide by 12.5</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Area 150 cm<sup>2</sup>; height 12 cm</span></div>
-          </div>
-          <p>Two formulas for one shape, and the second question needed both: the
-          diagonals gave the area, and the area then gave a height that nothing in the
-          question had measured. The $12.5$ cm side is no accident either — a rhombus
-          with diagonals $20$ and $15$ has half-diagonals $10$ and $7.5$, and Chapter 2's
-          theorem makes the side $\sqrt{100 + 56.25} = 12.5$.</p>
-        </div>
+      <h2><span class="badge">7.6</span><span class="name">Cutting and Moving</span></h2>
+
+      <p>A parallelogram has no neat rows of unit squares inside it. But it has a spare corner at one end and a matching gap at the other end. Its area formula comes from seeing that the corner fits the gap.</p>
+
+      <p>In the parallelogram $ABCD$, drop a line $AX$ from $A$ to $DC$ at a right angle. This cuts a right-angled triangle $AXD$ off the left-hand end. Move it across to the right-hand end, and the parallelogram becomes a rectangle.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 88" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A parallelogram with a right-angled triangle cut from its left end, shown beside the rectangle that is made when the triangle is moved to the right end">
+      
+            <path class="dg-fill-a" d="M30 26 L90 26 L70 70 L30 70 Z"/>
+            <path class="dg-fill-c" d="M30 26 L30 70 L10 70 Z"/>
+            <path class="dg-ghost"  d="M90 26 L90 70 L70 70 Z"/>
+            <path class="dg-line"   d="M10 70 L70 70 L90 26 L30 26 Z"/>
+            <path class="dg-thin"   d="M30 26 V70 M70 70 H90 M90 26 V70"/>
+      
+            <path class="dg-fill-a" d="M126 26 L186 26 L166 70 L126 70 Z"/>
+            <path class="dg-fill-c" d="M186 26 L186 70 L166 70 Z"/>
+            <path class="dg-line"   d="M126 26 H186 V70 H126 Z"/>
+            <path class="dg-thin"   d="M186 26 L166 70"/>
+            <path class="dg-dim"    d="M120 26 V70"/>
+      
+            <text class="dg-label" x="6" y="78">D</text>
+            <text class="dg-label" x="27" y="78">X</text>
+            <text class="dg-label" x="67" y="78">C</text>
+            <text class="dg-label" x="88" y="78">Y</text>
+            <text class="dg-label" x="26" y="22">A</text>
+            <text class="dg-label" x="88" y="22">B</text>
+      
+            <text class="dg-dim-label" x="117" y="51" text-anchor="end">h</text>
+            <text class="dg-note" x="50" y="86" text-anchor="middle">moves</text>
+            <text class="dg-note" x="156" y="86" text-anchor="middle">a rectangle</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.8</span> Drop $BY$ as well. The gap at the right is triangle $BYC$, and triangle $AXD$ is congruent to it.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 7.2</div>
-        <ol class="c-questions">
-          <li>Find the area of each parallelogram. Lengths are in centimetres.
-                <ol class="c-parts c-parts--3">
-                  <li>base $7$, height $4$</li>
-                  <li>base $5$, height $3$</li>
-                  <li>base $4.8$, height $5$</li>
-                </ol>
-            </li>
-        </ol>
-      </div>
+      <p>We should not trust the eye that the piece fits. Three facts prove it. $BY$ equals $AX$, because $ABYX$ is a rectangle. Both triangles have a right angle, at $X$ and at $Y$. And $BC$ equals $AD$, because they are opposite sides of a parallelogram. A right angle, the hypotenuse and one other side: by the RHS rule, $\triangle AXD$ and $\triangle BYC$ are congruent. So one fits exactly over the other, with nothing left over.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A parallelogram has a side of $12$ cm with a perpendicular height of $6$ cm
-            on it. Its adjacent side is $7.6$ cm. Find the perpendicular height on that
-            side, to two decimal places.</li>
-        </ol>
-      </div>
+      <p>Cutting a figure into pieces and putting them together to make a different figure of the same area is called <span class="term">dissection</span>. The rest of this chapter uses this method again and again.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A rectangle and a parallelogram both have sides of $5$ cm and $4$ cm. Which
-            has the greater area, and why? Can the two ever be equal?</li>
-        </ol>
-      </div>
+      <p>Now read the rectangle's sides from the parallelogram. Its height is $AX$, which is the height of the parallelogram. Its width is $XY$. Since $DX$ and $CY$ are matching sides of the two congruent triangles, they are equal. Adding $XC$ to each gives $DC$ and $XY$, so $XY = DC$.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Find the area of a rhombus whose diagonals are
-                <ol class="c-parts c-parts--3">
-                  <li>$20$ cm and $15$ cm</li>
-                  <li>$24$ cm and $10$ cm</li>
-                  <li>$9$ cm and $6.4$ cm</li>
-                </ol>
-            </li>
-        </ol>
-      </div>
+      <div class="eq eq--anchor">$$\text{area of a parallelogram} = \text{base} \times \text{height}.$$</div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A rhombus has diagonals of $24$ cm and $10$ cm. Find its area, then its
-            side length, and then its perpendicular height.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A kite has diagonals of $16$ cm and $9$ cm crossing at right angles. Find
-            its area, and say which step of section 7.7 still applies to it and which does
-            not.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>A parallelogram and a rectangle stand on the same base and between the same
-            pair of parallel lines. What can you say about their areas? What can you say
-            about their perimeters?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>Give a method for drawing a rectangle whose area is exactly twice that of a
-            given triangle. Give a second method that is different in kind from the
-            first.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li class="hard">A rhombus of area $96$ cm<sup>2</sup> has one diagonal of
-            $16$ cm. Find the other diagonal, the side, and the height. Then investigate:
-            among all rhombuses of area $96$ cm<sup>2</sup>, which one has the shortest
-            side? Try several pairs of diagonals and say what you find.</li>
-        </ol>
-      </div>
+      <p>Nothing in the argument needed $DC$ in particular. Take $AD$ as the base instead, and drop a line to it from $C$ at a right angle. The same cut and move gives a different rectangle, taller and narrower, with the same area. Either side can be the base, as long as the height is measured at a right angle to that side.</p>
 
     </div>
   </div>

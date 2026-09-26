@@ -1,289 +1,348 @@
-# Class 8 · Mathematics II · Chapter 7 — The Same Area, a Different Shape
+# Class 8 · Mathematics II · Chapter 7 — Area
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
-book prints none of it except Beyond the Book's own key.
+book prints none of it except the key at the end of Beyond the Book.
 
-Numbered by set — *Exercise Set 7.2, Q5* — so it can be used beside the book
-without a contents page. **Every value below is re-derived by
-`check-numbers.mjs` beside this file.** A question renumbered in the book and
-not here is how this goes wrong.
+Numbered by section and set, *Exercise Set 7.2, Q5*, so it can be used
+beside the book without a contents page. `check-numbers.mjs` beside this
+file checks every identity set as maths here and on the pages.
 
 Where a question asks the reader to choose or explain, the answer gives one
 worked instance under *answers will vary*.
 
 ---
 
+## 7.1 Introduction
+
+### Think and Reflect
+
+1. **The same size.** The two triangles are the pieces of the square, so
+   the new shape has exactly the area of the square.
+2. The centre of a rectangle is the centre of a half-turn that takes the
+   rectangle onto itself. The half-turn takes each piece exactly onto the
+   other, so the two pieces are congruent and have equal areas.
+
 ## 7.2 Counting Squares
 
-### In the text (the two rangoli patches)
+### Think and Reflect
 
-Answered in the running text. The $7$ cm by $4$ cm patch holds
-$7 \times 4 = 28$ unit squares and the $8$ cm by $3$ cm patch
-$8 \times 3 = 24$, so the **first patch** takes more powder.
+1. **The same.** $10 \times 3 = 30$ m², the same as $6 \times 5 = 30$ m².
+2. $100 \times 100 = 10000$ squares.
 
 ## 7.3 Why Perimeter Is Not Area
 
-### In the text (why not use the perimeter?)
+### Think and Reflect
 
-Answered in the running text and the table: $8$ by $1$ and $5$ by $4$ both
-have perimeter $18$ cm and areas $8$ and $20$ cm², so a perimeter does not
-fix an area.
+1. $24$ by $1$ (perimeter $50$ cm), $12$ by $2$ ($28$ cm), $8$ by $3$
+   ($22$ cm), $6$ by $4$ ($20$ cm). **The $6$ by $4$ rectangle** has the
+   shortest perimeter.
+2. The sides add to $20$ m, so the square $10$ m by $10$ m is best:
+   **$100$ m²**.
+
+## 7.4 Same Base, Same Height
+
+### Think and Reflect
+
+1. The area **stays the same**, because the base and the height do not
+   change. The perimeter **grows**, because the sloping sides get longer.
+2. **The two shorter sides.** Each is at a right angle to the other, so
+   each is the height when the other is the base: area
+   $\tfrac12 \times 6 \times 8 = 24$ cm².
 
 ## 7.5 One Triangle, Three Ways
 
-### In the text (the four triangles in a rectangle)
+### Think and Reflect
 
-Answered in the running text: **yes**, all four have equal area, a quarter of
-the rectangle each, because adjacent triangles have equal bases (the
-diagonals bisect each other) and the same height.
+1. $2 \times 30 \div 8.14 \approx 7.37$ units. It is **less** than $BY = 8$,
+   because $AB$ is longer than $AC$, and the longer side has the shorter
+   height.
+2. **No.** Base times height must be twice the area on every side. But
+   $20 \times 12 = 240$ and $15 \times 9 = 135$, which are not equal.
 
 ### Exercise Set 7.1
 
-1. - (i) $\tfrac12 \times 12 \times 5 = 30$ cm²
-   - (ii) $\tfrac12 \times 9 \times 6.4 = 28.8$ cm²
-   - (iii) $\tfrac12 \times 2.5 \times 8 = 10$ cm²
+1. - (i) $\tfrac12 \times 14 \times 6 = 42$ cm²
+   - (ii) $\tfrac12 \times 7.5 \times 8 = 30$ cm²
+   - (iii) $\tfrac12 \times 11 \times 5.2 = 28.6$ cm²
+2. Height $2 \times 48 \div 16 = 6$ cm. To the $12$ cm side:
+   $2 \times 48 \div 12 = 8$ cm. The **$16$ cm side** has the shorter
+   height.
+3. *Answers will vary.* The sides add to $12$ m. For example $11$ by $1$
+   ($11$ m²) and $6$ by $6$ ($36$ m²) differ by $25$ m².
+4. - (i) $\tfrac12 \times 12 \times 8 = 48$ cm²
+   - (ii) $96 \div 4 = 24$ cm² each (section 7.5).
+5. Area $\tfrac12 \times 18 \times 10 = 90$ cm². Height from $C$ to $AB$:
+   $2 \times 90 \div 15 = 12$ cm.
+6. Each has area $\tfrac12 \times 9 \times 6 = 27$ cm². **No**: the
+   perimeters differ, because the sloping sides have different lengths.
+7. Area $\tfrac12 \times 16 \times 15 = 120$ cm². Height to each $17$ cm
+   side: $240 \div 17 \approx 14.12$ cm, which is less than $15$ cm.
+8. Height $2 \times 21 \div 6 = 7$ m. The second bed has area $42$ m² and
+   height $7$ m, so its base is $2 \times 42 \div 7 = 12$ m.
+9. $QP = PR$ and the two triangles $XQP$, $XPR$ have the same height from
+   $X$, so each is $25$ cm². $K$ is halfway up $XP$, so its height above
+   $QR$ is half the height of $X$: triangle $QKR$ has area
+   $\tfrac12 \times 50 = 25$ cm².
 
-2. On the $12$ cm base: $2 \times 54 \div 12 = 9$ cm. On the $18$ cm base:
-   $2 \times 54 \div 18 = 6$ cm.
+## 7.6 Cutting and Moving
 
-3. Answers will vary.
-   - Same perimeter, different areas: $5$ by $1$ and $3$ by $3$. Both have
-     perimeter $12$ cm; the areas are $5$ cm² and $9$ cm².
-   - Longer perimeter, smaller area: $10$ by $1$ (perimeter $22$ cm, area
-     $10$ cm²) and $4$ by $4$ (perimeter $16$ cm, area $16$ cm²).
+### Think and Reflect
 
-4. - (i) $\tfrac12 \times 10 \times 6 = 30$ cm².
-   - (ii) All four are equal (section 7.5): $60 \div 4 = 15$ cm² each.
+1. The area **gets smaller**, because the height gets smaller while the
+   base stays $15$ cm. The perimeter **stays** $50$ cm.
+2. **No.** The height from $B$ to $AD$ cannot be longer than $AB = 15$ cm.
+   Also $10 \times 16 = 160$, not $120$.
+3. **Yes.** The area is base times height, so the same base and the same
+   area give the same height.
 
-5. Area $\tfrac12 \times 14 \times 6 = 42$ cm². On the base $PR$:
-   $2 \times 42 \div 12 = 7$ cm. The perpendicular from $Q$ to $PR$ is
-   **7 cm**.
+## 7.7 The Rhombus and Its Diagonals
 
-6. **All three have the same area**, $\tfrac12 \times 8 \times 5 = 20$ cm²:
-   they share the base and their apexes are all $5$ cm from it, however the
-   triangles are shaped.
+### Think and Reflect
 
-7. Twice the area is $120$ m².
-   - On the $8$ m side: $120 \div 8 = 15$ m.
-   - On the $15$ m side: $120 \div 15 = 8$ m.
-   - On the $17$ m side: $120 \div 17 \approx 7.06$ m.
-
-   The longest side, $17$ m, carries the shortest height, $7.06$ m. (The
-   triangle is right-angled, since $8^2 + 15^2 = 17^2$, so two of its heights
-   are its own sides.)
-
-8. **One quarter.** Join $NY$.
-   - $XM = MY$, and triangles $XMN$ and $YMN$ have the same height from $N$,
-     so they have equal areas: $XMN$ is half of $XNY$.
-   - $XN = NZ$, and triangles $XNY$ and $ZNY$ have the same height from $Y$,
-     so $XNY$ is half of $XYZ$.
-   - So $XMN$ is $\tfrac12 \times \tfrac12 = \tfrac14$ of $XYZ$.
-
-## 7.6–7.7 Cutting and Moving; The Rhombus
+1. Both diagonals are $10$ cm: $\tfrac12 \times 10 \times 10 = 50$ cm².
+2. The diagonals of such a rectangle do not cross at right angles, so the
+   two half-diagonals are not heights.
 
 ### Exercise Set 7.2
 
-1. - (i) $7 \times 4 = 28$ cm²
-   - (ii) $5 \times 3 = 15$ cm²
-   - (iii) $4.8 \times 5 = 24$ cm²
+1. - (i) $9 \times 6 = 54$ cm²
+   - (ii) $6.5 \times 4 = 26$ cm²
+   - (iii) $12 \times 3.5 = 42$ cm²
+2. Area $16 \times 5 = 80$ cm², so the height is $80 \div 10 = 8$ cm.
+3. **The rectangle**, $7 \times 3 = 21$ cm². The parallelogram's height on
+   the $7$ cm side is less than $3$ cm, because its $3$ cm side slopes.
+4. - (i) $\tfrac12 \times 10 \times 8 = 40$ cm²
+   - (ii) $\tfrac12 \times 14 \times 9 = 63$ cm²
+   - (iii) $\tfrac12 \times 7.5 \times 6 = 22.5$ cm²
+5. Area $\tfrac12 \times 40 \times 30 = 600$ cm². Side
+   $\sqrt{400 + 225} = 25$ cm. Height $600 \div 25 = 24$ cm.
+6. $\tfrac12 \times 20 \times 11 = 110$ cm².
+7. **The square**, $36$ cm². The rhombus's height is at most $6$ cm, so its
+   area is at most $36$ cm². It **cannot** be $40$ cm².
+8. Half-diagonal $12$, so the other half is $\sqrt{169 - 144} = 5$: the
+   other diagonal is $10$ cm, and the area is
+   $\tfrac12 \times 24 \times 10 = 120$ cm². **The square** of side $13$ cm
+   has the greatest area, $169$ cm², because the height can never be more
+   than the side.
 
-2. Area $12 \times 6 = 72$ cm², so the height on the $7.6$ cm side is
-   $72 \div 7.6 \approx 9.47$ cm.
+## 7.8 Shapes Exchanged for Shapes
 
-3. **The rectangle**, with $5 \times 4 = 20$ cm². The parallelogram's height
-   on its $5$ cm side is less than $4$ cm, because its $4$ cm side slants, and
-   a slanting side is longer than the perpendicular between the same two
-   lines. So its area is less than $20$ cm². They are equal **only when the
-   parallelogram has a right angle**, that is, when it is the rectangle.
+### Think and Reflect
 
-4. - (i) $\tfrac12 \times 20 \times 15 = 150$ cm²
-   - (ii) $\tfrac12 \times 24 \times 10 = 120$ cm²
-   - (iii) $\tfrac12 \times 9 \times 6.4 = 28.8$ cm²
+1. $\tfrac12 h(a + a) = ah$. The trapezium is then a **parallelogram**.
+2. Cut along the line joining the midpoints of the two sloping sides and
+   give the top a half-turn: a parallelogram $10$ cm by $3$ cm high. Cut a
+   right triangle off one end and move it to the other: a **rectangle
+   $10$ cm by $3$ cm**, area $30$ cm².
 
-5. Area $\tfrac12 \times 24 \times 10 = 120$ cm². The half-diagonals are
-   $12$ cm and $5$ cm, so the side is $\sqrt{144 + 25} = 13$ cm. Height
-   $120 \div 13 \approx 9.23$ cm.
+## 7.9 Every Polygon Is Triangles
 
-6. Area $\tfrac12 \times 16 \times 9 = 72$ cm².
-   - Still applies: the two-triangle argument. Cut along one diagonal; both
-     triangles stand on it, and their heights add up to the other diagonal.
-     It needs only the right angle.
-   - Does not apply: *the diagonals cut each other in half*. In a kite only
-     one diagonal is cut in half, so the four quarters are not all the same
-     size — though each is still half of its own corner rectangle.
+### Think and Reflect
 
-7. **Their areas are equal**: the same base and the same height. **Their
-   perimeters are not**: the parallelogram's slanting sides are longer than
-   the rectangle's upright sides, so its perimeter is larger — unless the
-   parallelogram is the rectangle itself.
-
-8. Answers will vary.
-   - By measurement: on the triangle's base $b$, draw the rectangle whose
-     height is the triangle's height $h$. Its area $b \times h$ is twice
-     $\tfrac12 bh$.
-   - By cutting: make two copies of the triangle. Cut each along the line
-     joining the midpoints of the two sides that meet at its apex, and turn the top piece
-     about a midpoint (Fig. 7.9), giving a parallelogram of base $b$ and
-     height $\tfrac{h}{2}$. Cut a right triangle off one end of each and
-     move it to the other, giving two rectangles $b$ by $\tfrac{h}{2}$. Stand
-     one on top of the other.
-   - For example, a triangle of base $6$ cm and height $4$ cm has area
-     $12$ cm², and both methods give a $6$ cm by $4$ cm rectangle of
-     $24$ cm².
-
-9. The other diagonal is $2 \times 96 \div 16 = 12$ cm. The half-diagonals
-   are $8$ cm and $6$ cm, so the side is $\sqrt{64 + 36} = 10$ cm. Height
-   $96 \div 10 = 9.6$ cm.
-
-   Investigation (answers will vary in the pairs tried). The diagonals
-   multiply to $192$.
-   - $16$ and $12$: side $10$ cm.
-   - $24$ and $8$: side $\sqrt{144 + 16} = \sqrt{160} \approx 12.65$ cm.
-   - $32$ and $6$: side $\sqrt{256 + 9} = \sqrt{265} \approx 16.28$ cm.
-
-   The side shrinks as the diagonals come closer together, and is shortest
-   when they are equal — **the square**, with diagonals $\sqrt{192} \approx
-   13.86$ cm and side $\sqrt{96} \approx 9.80$ cm.
-
-## 7.8–7.9 Shapes Exchanged; Every Polygon Is Triangles
-
-### Think and Reflect (any two polygons of equal area)
-
-**Yes.** Any polygon can be cut into pieces that rebuild any other polygon
-of the same area (this is a theorem, proved in the 1830s by Wallace, Bolyai
-and Gerwien). The chapter shows why it is believable: every polygon cuts
-into triangles, every triangle becomes a parallelogram and then a rectangle,
-and a rectangle can be rebuilt as a square — so both polygons can be taken
-to the same square and one route run backwards.
-
-Worked instance: a triangle of base $8$ cm and height $4$ cm has area
-$16$ cm². The half-turn makes it a parallelogram $8$ cm by $2$ cm; moving
-one end makes a rectangle $8$ cm by $2$ cm. Cut that rectangle into two
-$4$ cm by $2$ cm halves and stack them: a square of side $4$ cm, area
-$16$ cm².
+**Yes.** Any polygon can be cut into pieces that make any other polygon of
+the same area (a theorem proved in the 1830s by Wallace, Bolyai and
+Gerwien). Every polygon cuts into triangles, every triangle becomes a
+rectangle, and a rectangle can be rebuilt as a square, so both polygons can
+be taken to the same square. Worked instance: a triangle of base $8$ cm and
+height $4$ cm ($16$ cm²) becomes a rectangle $8$ cm by $2$ cm; cut it into
+two $4$ by $2$ halves and stack them into a square of side $4$ cm.
 
 ## 7.10 Areas in Real Life
 
+### Think and Reflect
+
+1. $10 \times 10 = 100$ mm². $1$ km² is $100000 \times 100000$ cm², that
+   is $10^{10}$ cm².
+2. Every metric length factor is a power of ten, so its square is a power
+   of ten too, and changing units only moves the decimal point.
+3. $400 \times 300 = 120000$ cm².
+
 ### Exercise Set 7.3
 
-1. - (i) $5 \times 2.54 = 12.7$ cm
-   - (ii) $7.4 \times 2.54 = 18.796$ cm
-   - (iii) $5.08 \div 2.54 = 2$ in
-   - (iv) $11.43 \div 2.54 = 4.5$ in
+1. - (i) $8 \times 2.54 = 20.32$ cm
+   - (ii) $12.5 \times 2.54 = 31.75$ cm
+   - (iii) $15.24 \div 2.54 = 6$ in
+   - (iv) $3.81 \div 2.54 = 1.5$ in
+2. - (i) $6 \times 6.4516 = 38.7096$ cm²
+   - (ii) $51.6128 \div 6.4516 = 8$ in²
+   - (iii) $3 \times 144 = 432$ in²
+3. $\tfrac12 \times 6 \times (11 + 7) = 54$ cm². The rectangle is
+   $54 \div 6 = 9$ cm long.
+4. $400 \div 25 = 16$ and $300 \div 25 = 12$, so $16 \times 12 = 192$
+   tiles, which is $192 \div 16 = 12$ boxes.
+5. $43560 \div 2 = 21780$ ft². Length $21780 \div 132 = 165$ ft. Fence
+   $2 \times (132 + 165) = 594$ ft.
+6. $1$ ft² is $30.48 \times 30.48 = 929.0304$ cm², so $20$ ft² is
+   $18580.608$ cm². $2$ m² is $20000$ cm², so **$2$ m² is larger**, by
+   $20000 - 18580.608 = 1419.392$ cm².
+7. $120 + 150 + 90 = 360$ m². A seven-sided field gives $7 - 2 = 5$
+   triangles.
+8. $200 \times 200 = 40000$ m², which is $4$ hectares, and
+   $40000 \div 4047 \approx 9.9$, so about **$10$ acres**.
 
-2. - (i) $4 \times 6.4516 = 25.8064$ cm²
-   - (ii) $96.774 \div 6.4516 = 15$ in²
-   - (iii) $2 \times 144 = 288$ in²
+---
 
-3. $90 \times 60 = 5400$ cm², and $5400 \div 10\,000 = 0.54$ m². An A4 sheet
-   is $623.7$ cm², so it takes $5400 \div 623.7 \approx 8.66$ sheets. It is
-   not a whole number because the sheet's sides do not fit a whole number of
-   times along the tabletop's sides, so whole sheets leave a gap or overlap.
+## By the Book
 
-4. $12 \times 10 = 120$ ft², and $120 \times 144 = 17\,280$ in².
+Fifty questions: very short answer (2 marks), short answer (3), long answer
+(5), assertion and reason (1), case-based (4), objective (1). Written to
+BY-THE-BOOK.md, 26 September 2026. The book's own key is in Beyond the
+Book's Answers stage; this is the same key.
 
-5. $43\,560 \div 4 = 10\,890$ ft². The side is $\sqrt{10\,890} \approx 104.36$,
-   so **104 ft** to the nearest foot.
+### Very short answer
 
-6. $1$ ft² $= 30.48 \times 30.48 = 929.0304$ cm², so $10$ ft² is
-   $9290.304$ cm², which is about $0.929$ m². **One square metre is larger.**
+1. Height $6.5$ cm; area $\tfrac12 \times 13 \times 6.5 = 42.25$ cm².
+2. Height $91 \div 13 = 7$ cm; the triangle is half, $45.5$ cm².
+3. $\tfrac12 \times 11 \times 8 = 44$ cm². **Yes**: the square has
+   $6 \times 6 = 36$ cm².
+4. **Yes.** The sides add to $15$ cm: $5 \times 10 = 50$ and
+   $7 \times 8 = 56$.
+5. $\tfrac12 \times h \times 15 = 60$, so $h = 8$ cm.
+6. $1$ m is $100$ cm, so $1$ m² is $100 \times 100 = 10000$ cm²;
+   $3.5$ m² is **$35000$ cm²**.
+7. $16 \times 4 = 64 = 8 \times 8$: side **$8$ cm**. The square has the
+   shorter perimeter, $32$ cm against $40$ cm.
+8. $8 - 2 = 6$ triangles; $6 \times 12 = 72$ cm².
+9. $1$ ft is $12$ in, so $1$ ft² is $12 \times 12 = 144$ in²;
+   $5 \times 144 = 720$ in².
+10. $\tfrac12 \times b \times 9 = 36$, so $b = 8$ cm. **No**, $8$ cm is
+    less than $9$ cm.
 
-7. Answers will vary. Worked instance: the *gaj* is a square yard. A yard is
-   $0.9144$ m, so one gaj is $0.9144 \times 0.9144 = 0.83612736$ m², about
-   $0.84$ m².
+### Short answer
 
-8. $1$ km² $= 1000 \times 1000 = 1\,000\,000$ m², which is
-   $1\,000\,000 \div 10\,000 = 100$ hectares. One acre is
-   $43\,560 \times 0.09290304 \approx 4046.86$ m², so the field is
-   $1\,000\,000 \div 4046.86 \approx 247.1$, **247 acres**. The metric units
-   convert easily because every length factor is a power of ten, so its
-   square is a power of ten too, and converting only moves the decimal point.
+11. Bed $\tfrac12 \times 18 \times 12 = 108$ m²; garden
+    $18 \times 12 = 216$ m², so $108$ m² is left.
+12. The diagonals of a parallelogram cut each other in half. Two
+    neighbouring triangles have equal bases on one diagonal and the same
+    height from their shared corner, so they have equal areas. Going round,
+    all four are equal.
+13. $\tfrac12 \times 24 \times (50 + 34) = 1008$ m²;
+    $1008 \times 12 = 12096$, so **₹12,096**.
+14. **Step 1** is wrong: the area is half the product of the diagonals,
+    $\tfrac12 \times 12 \times 16 = 96$ cm². Then $h = 96 \div 10 = 9.6$ cm.
+15. Area $12 \times 7 = 84$ cm²; $BF = 84 \div 10 = 8.4$ cm.
+16. Half-diagonals $20$ and $\sqrt{841 - 400} = 21$, so the other diagonal
+    is $42$ cm; area $\tfrac12 \times 40 \times 42 = 840$ cm².
+17. The rhombus has diagonals $a$ and $b$ (they join the midpoints of
+    opposite sides) crossing at right angles, so its area is $\tfrac12 ab$.
+    With $a = 12$ and $b = 8$: $48$ cm².
+18. $5 \times 4 = 20$ m²; $20 \div 0.8 = 25$ m of carpet;
+    $25 \times 150 = 3750$, so **₹3750**.
+19. $2 \times (w + w + 5) = 50$, so $w = 10$. Width $10$ cm, length $15$ cm,
+    area $150$ cm².
+20. $2 \times 43560 = 87120$ ft²; $87120 \times 0.0929 \approx 8093$ m².
+
+### Long answer
+
+21. Park $60 \times 40 = 2400$ m²; inside the path $55 \times 35 = 1925$ m²;
+    path $2400 - 1925 = 475$ m²; cost $475 \times 80 = 38000$, **₹38,000**.
+22. Sides $3x$ and $5x$: $\tfrac12 \times 8 \times 8x = 32x = 192$, so
+    $x = 6$. The parallel sides are **$18$ cm and $30$ cm**.
+23. Proof: cut along one diagonal into two triangles on it; their heights
+    are the two parts of the other diagonal, which add to the whole
+    diagonal. Area $\tfrac12 \times 10 \times 24 = 120$ cm²; side
+    $\sqrt{25 + 144} = 13$ cm; height $120 \div 13 \approx 9.23$ cm.
+24. $28 \times 16 = 448$ m²; $AED$ is $\tfrac12 \times 10 \times 16 = 80$ m²;
+    $ABCE$ is $448 - 80 = 368$ m²; cost $368 \times 25 = 9200$, **₹9200**.
+25. $800 \times 0.09 = 72$ m². Width $w$: $2w \times w = 72$, so
+    $w \times w = 36$ and $w = 6$ (a width cannot be negative). **Width
+    $6$ m, length $12$ m.**
+26. $\tfrac12 \times 21 \times 8 = 84$ cm²; heights $168 \div 10 = 16.8$ cm
+    and $168 \div 17 \approx 9.88$ cm. The **$21$ cm side** has the
+    shortest height.
+27. Cut along the line joining the midpoints of the two slanting sides and
+    give the top a half-turn: a parallelogram on the $16$ cm base, $5$ cm
+    high. Move a right triangle from one end to the other: a rectangle
+    **$16$ cm by $5$ cm**, $80$ cm². Since $64 < 80 < 81$, the square's side
+    is between $8$ and $9$ cm, **nearer $9$**.
+28. P $150 \times 80 = 12000$ m², Q $\tfrac12 \times 200 \times 90 = 9000$
+    m², R $\tfrac12 \times 100 \times 200 = 10000$ m². **P** is largest.
+    Total $31000$ m², $3.1$ ha; seed $3.1 \times 20 = 62$ kg.
+29. $15 - 1.8 = 13.2$ m²; $13.2 \div 12 = 1.1$ litres;
+    $1.1 \times 240 = 264$, **₹264**.
+30. Square side $12$ cm, area $144$ cm². Rectangle:
+    $2 \times (w + w + 4) = 48$, so $w = 10$ and the area is
+    $10 \times 14 = 140$ cm². **The square, by $4$ cm².** A square of area
+    $140$ cm² has side $\sqrt{140} \approx 11.8$ cm.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (d) · 34 (c) · 35 (a)
+
+### Case-based questions
+
+36. (i) $\tfrac12 \times 3 \times 10 = 15$ m² (ii) $0.25$ m² (iii) $60$
+    tiles, so $6$ boxes, **₹2700**.
+37. (i) $3$ cm² (ii) $4 \times 4 = 16$ km² (iii) $3 \times 16 = 48$ km²;
+    **no**, $48$ is less than $50$.
+38. (i) $\tfrac12 \times 60 \times 40 = 1200$ cm² (ii) $60 \times 40 = 2400$
+    cm² (iii) $6000$ cm², so $60 \times 2 = 120$ rupees.
+39. (i) $30000$ m², **3 ha** (ii) $\tfrac12 \times 300 \times 120 = 18000$
+    m² (iii) **A**; $3 + 1.8 + 1 = 5.8$ ha.
+40. (i) $20 \times 9 = 180$ m² (ii) $180 \div 12 = 15$ m (iii)
+    $20 \times 12 = 240$, so $240 - 180 = 60$ m² more.
+
+### Objective questions
+
+41 (b) · 42 (c) · 43 (d) · 44 (a) · 45 (b) · 46 (c) · 47 (a) · 48 (b) · 49 (d) · 50 (a)
 
 ---
 
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since the maths-v2 conversion: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own.
 
-Each of the eight questions is answered in the running text that follows it
-on the page. The results, for reference: (1) $1 : 2$; (2) diagonal 16 cm,
-side 17 cm, height about 14.1 cm; (3) $PQ = 12$ cm and $PR = 20$ cm;
-(4) 240 m²; (5) the rectangle, by 2 cm;
-(6) about 18.5 cm; (7) nine times, ₹108; (8) shortest $6$ by $6$, longest
-$36$ by $1$, and no longest without whole sides.
+### Tried and explained (no head in the book)
 
-### Stage 2 · Solved Examples
+Each question is answered in the running text that follows it on the page:
+(1) $1 : 2$; (2) diagonal $16$ cm, side $17$ cm, height about $14.1$ cm;
+(3) $PQ = 12$ cm and $PR = 20$ cm; (4) $240$ m²; (5) the rectangle, by
+$2$ cm; (6) about $18.5$ cm; (7) nine times, ₹108; (8) shortest $6$ by $6$,
+longest $36$ by $1$, and no longest without whole sides.
 
-The 23 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+### Solved examples
 
-1. (a) the square, by $20.25 \text{ m}^2$ *(single correct)*
-2. (b) 180 *(single correct)*
-3. (c) 7.2 cm *(single correct)*
-4. (d) 6 cm *(single correct)*
-5. (a) $336 \text{ cm}^2$ *(single correct)*
-6. (b) 7 m *(single correct)*
-7. (a), (b), (c) *(multiple correct)*
-8. (a), (b) *(multiple correct)*
-9. (a), (b), (d) *(multiple correct)*
-10. (a), (b), (c) *(multiple correct)*
-11. 24 *(numerical answer)*
-12. 2 *(numerical answer)*
-13. 168 *(numerical answer)*
-14. (a) P–3, Q–4, R–1, S–2 *(matching)*
-15. (d) P–3, Q–4, R–2, S–1 *(matching)*
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (a) the square, by 20.25 m² |
+| | 2 | (c) 7.2 cm |
+| More than one correct | 3 | (a), (b), (c) |
+| | 4 | (a), (b), (c) |
+| Numerical answer | 5 | 2 |
+| | 6 | 168 |
+| Matching | 7 | (a) P–3, Q–4, R–1, S–2 |
+| | 8 | (d) P–3, Q–4, R–2, S–1 |
+| Paragraph-based | 9 | (i) (b) 150 m²; (ii) 600; (iii) 24000 |
+| | 10 | (i) (a) 84 m²; (ii) 11.2; (iii) 12.92 |
 
-### Stage 3 · Practice
+### Practice
 
-Multiple choice and assertion–reason, as the key prints it:
-1 (c), 2 (d), 3 (a), 4 (c), 5 (b), 6 (d), 7 (b), 8 (d), 9 (c), 10 (a),
-11 (a), 12 (b), 13 (b), 14 (c), 15 (d), 16 (c), 17 (a), 18 (d), 19 (b).
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (b) 48 cm · 2 (a) 14.4 cm · 3 (d) 24/25 · 4 (c) 12 m |
+| More than one correct | 5–8 | 5 (a), (b), (c) · 6 (a), (b), (d) · 7 (a), (c), (d) · 8 (b), (c), (d) |
+| Numerical answer | 9–11 | 9 **44** · 10 **9** · 11 **432** |
+| Matching | 12–13 | 12 (c) · 13 (d) |
+| Paragraph-based | 14–15 | 14 (i) (a) 1500 m²; (ii) 156; (iii) 1344 · 15 (i) (c) 96 m²; (ii) 12; (iii) 10 |
 
-The working for each:
-
-1. Area counts unit squares.
-2. The height is taken at right angles to the base.
-3. Same base and same height give equal areas.
-4. Base times height.
-5. Half the product of the diagonals.
-6. Dissection.
-7. $6 - 2 = 4$ triangles.
-8. Equal area forces none of the three.
-9. $12 \times 12 = 144$ in².
-10. The sides add to $10$; $5 \times 5 = 25$ is the largest.
-11. Only one dimension doubled, so the area doubles.
-12. $\tfrac12 \times 4 \times (9 + 5) = 28$ cm².
-13. $3 \times 5 \times 5 = 75$ km².
-14. A long rectangle's diagonals do not cross at right angles.
-15. $100 \times 100 = 10\,000$ cm².
-16. (c) A is true ($8$ by $1$ and $5$ by $4$); R is false by the same pair.
-17. (a) Both true, and R is why.
-18. (d) $1$ m² is $10\,000$ cm², so A is false; R is true.
-19. (b) $\tfrac12 \times 12 \times 8 = 48$; R is true but does not explain A.
-20. $\tfrac12 \times 7.5 \times 4 = 15$ cm².
-21. $9 - 2 = 7$ triangles.
-22. $5 \times 10\,000 = 50\,000$ cm².
-23. $180 \div 15 = 12$ cm on the $15$ cm side; $180 \div 20 = 9$ cm on the
-    $20$ cm side.
-24. Area $216$ cm²; side $\sqrt{81 + 144} = 15$ cm; height
-    $216 \div 15 = 14.4$ cm.
-25. Area $\tfrac12 \times 20 \times (45 + 35) = 800$ m²; cost
-    $800 \times 15 = 12\,000$, so ₹12 000.
-26. $12$ cm on the $10$ cm side and $7.5$ cm on the $16$ cm side; the
-    $16$ cm side carries the shorter height.
-27. $34 \times 24 = 816$ m², less $30 \times 20 = 600$ m², gives a path of
-    $216$ m²; cost $216 \times 25 = 5400$, so ₹5400.
-28. $173.2 + 2 \times 43.3 = 259.8$ cm²; $6 - 2 = 4$ triangles.
-29. A drawing must show the cut joining the midpoints of the two sides that
-    meet at the apex, the top piece turned half a circle, and a right
-    triangle moved from one end of the parallelogram to the other. The
-    rectangle is $12$ cm by $4$ cm, area $48$ cm². The square's side is
-    between $6$ cm and $7$ cm, nearer $7$ cm, since $48 - 36 = 12$ and
-    $49 - 48 = 1$.
-30. (a) hall $20 \times 12 = 240$ m², store $\tfrac12 \times 6 \times 5 = 15$ m²
-    (b) $\tfrac12 \times 4 \times (12 + 8) = 40$ m² (c) $40 \div 0.25 = 160$
-    tiles.
-31. (a) A $250 \times 160 = 40\,000$ m², B $300 \times 300 = 90\,000$ m²,
-    C $\tfrac12 \times 400 \times 150 = 30\,000$ m² (b) 4 ha, 9 ha, 3 ha
-    (c) $16 \times 25 = 400$ kg.
+- Q1. The square's area is $24 \times 6 = 144$ cm², so its side is $12$ cm
+  and its perimeter $48$ cm.
+- Q2. Area $\tfrac12 \times 16 \times 9 = 72$ cm²; $2 \times 72 \div 10 = 14.4$.
+- Q3. The other diagonal is $2 \times \sqrt{100 - 36} = 16$ cm, so the area
+  is $\tfrac12 \times 12 \times 16 = 96$ cm², and $96 \div 100 = 0.96$.
+- Q4. $\tfrac12 \times 12 \times (18 + x) = 180$, so $18 + x = 30$ and
+  $x = 12$.
+- Q5. Each of (a), (b), (c) is $48$ cm²; the square is $49$ cm².
+- Q8. Sides adding to $14$: $7 \times 7 = 49$, $6 \times 8 = 48$,
+  $13 \times 1 = 13$; no pair gives $50$.
+- Q9. $1.2 \times 1.2 = 1.44$, a rise of $44\%$.
+- Q10. $\tfrac12 \times b \times 18 = b \times h$, so $h = 9$ cm.
+- Q11. $360 \div 15 = 24$ and $270 \div 15 = 18$; $24 \times 18 = 432$.
+- Q12. P $63$, Q $72$, R $90$, S $54$.
+- Q14. (ii) $100 + 60 - 4 = 156$, the square where the paths cross counted
+  once; (iii) $1500 - 156 = 1344$.
+- Q15. (ii) $2 \times 96 \div 16 = 12$; (iii) $\sqrt{96} \approx 9.8$, so
+  $10$ m.

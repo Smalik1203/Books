@@ -2,90 +2,63 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>What makes it work here is that a triangle has three base-and-height pairs and
-      only one area. Three ways of writing one quantity give two equations for free, and
-      a question that names five of the six numbers involved has already told you the
-      sixth.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>A triangle has area $84$ cm<sup>2</sup>. One of its sides is $24$ cm and
-          another is $21$ cm. Find the perpendicular height to each of them.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$\tfrac12 \times 24 \times h = 84$, so $h = 7$ cm</span>
-              <span class="work__why">on the 24 cm side</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$\tfrac12 \times 21 \times h = 84$, so $h = 8$ cm</span>
-              <span class="work__why">on the 21 cm side</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>7 cm to the 24 cm side, and 8 cm to the 21 cm side</span></div>
-          </div>
-          <p>The longer side takes the shorter height, and it has to: their product is
-          fixed at twice the area, so one rises exactly as fast as the other falls. A
-          triangle's longest side always carries its smallest height.</p>
-        </div>
-      </div>
-
-      <p>Equal heights are worth looking out for, because they turn a question about
-      areas into a question about lengths. Draw both diagonals of a rectangle and they
-      cut it into four triangles, which are plainly not all the same shape. Are they the
-      same size?</p>
-
-      <p>Take two that sit side by side, sharing the vertex $B$. Their bases are the two
-      halves of the diagonal $AC$, and the diagonals of a rectangle bisect each other, so
-      those bases are equal. Both triangles have their apex at $B$, so both have the same
-      perpendicular height from $B$ down to $AC$. Equal bases and equal heights make
-      equal areas. Going round the figure, every adjacent pair matches, so all four are
-      equal — a quarter of the rectangle each, without a single measurement.</p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 19h16"/>
-            <path d="M4 19L12 6l8 13"/>
-            <path d="M12 6v13"/>
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 163 88" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle A B C with an obtuse angle at B, whose height from A meets the extended base at a point D outside B C">
+      
+            <path class="dg-fill-b-soft" d="M43 26 L43 70 L73 70 Z"/>
+            <path class="dg-fill-a" d="M43 26 L73 70 L153 70 Z"/>
+            <path class="dg-thin"   d="M43 70 H73"/>
+            <path class="dg-line"   d="M43 26 L73 70 L153 70 Z"/>
+            <path class="dg-dim"    d="M43 26 V70"/>
+      
+            <text class="dg-label" x="40" y="22">A</text>
+            <text class="dg-label" x="38" y="78">D</text>
+            <text class="dg-label" x="70" y="78">B</text>
+            <text class="dg-label" x="151" y="78">C</text>
+            <text class="dg-dim-label" x="47" y="50">h</text>
           </svg>
+          <figcaption><span class="fignum">Fig. 7.5</span> The foot $D$ of the height lies outside $BC$. Triangle $ABC$ is what is left when $ADB$ is taken away from $ADC$.</figcaption>
+        </figure>
+      </div>
+
+      <p>Both $ADC$ and $ADB$ have a right angle at $D$. So each of them fits in a rectangle, and each follows the formula already found. Take the smaller area away from the larger one.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the difference</span>
+          <span>$\tfrac12 h \times DC - \tfrac12 h \times DB$</span>
         </div>
-        <div class="c-tip__body">
-          <p>Congruent shapes have equal areas, and shapes of equal area need not be
-          congruent at all. Almost every argument in this chapter runs the second way
-          round: the four triangles above match in area and not in shape, and the
-          rearranged pieces of the next section match in area precisely because they are
-          the same pieces in different places.</p>
+        <div class="work__row">
+          <span class="work__label work__label--wide">common factor</span>
+          <span>$\tfrac12 h (DC - DB)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">and</span>
+          <span>$DC - DB = BC$, so the area is $\tfrac12 h \times BC$</span>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 7.1</div>
-        <ol class="c-questions">
-          <li>Find the area of each triangle. Lengths are in centimetres.
-                <ol class="c-parts c-parts--3">
-                  <li>base $12$, height $5$</li>
-                  <li>base $9$, height $6.4$</li>
-                  <li>base $2.5$, height $8$</li>
-                </ol>
-            </li>
-        </ol>
+      <p>This is the same formula, reached by a different route. In mathematics it is common to prove a result for the easy case first and then deal with the harder case separately.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>In Fig. 7.3, the top corner slides further and further to the right along the parallel line. What happens to the area? What happens to the perimeter?</li>
+            <li>A right-angled triangle has its two shorter sides $6$ cm and $8$ cm. Which of its sides can be used as the height, without drawing anything new?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A triangle of area $54$ cm<sup>2</sup> stands on a base of $12$ cm. Find
-            its height. If the same triangle were stood on a base of $18$ cm, what would
-            its height be?</li>
-        </ol>
-      </div>
+      <h2><span class="badge">7.5</span><span class="name">One Triangle, Three Ways</span></h2>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Find two rectangles with whole-centimetre sides that have the same
-            perimeter and different areas. Then find two where the one with the longer
-            perimeter has the smaller area.</li>
-        </ol>
-      </div>
+      <p>A triangle has three sides, and any of them may be called the base. Each base has its own height, drawn from the opposite corner at a right angle to that base. So a triangle has three base-and-height pairs. All three pairs must give the same answer, because the triangle has only one area. This simple fact is one of the most useful in the chapter. In Fig. 7.6, $BC$ is $10$ units and $AC$ is $7.5$ units, and we use the area to find the height $BY$.</p>
 
     </div>
   </div>

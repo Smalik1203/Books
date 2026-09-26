@@ -2,80 +2,53 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The general triangle does it in two halves at once. Draw the rectangle that just
-      encloses the triangle, and drop the perpendicular from the apex to the base.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Perimeter and area</div>
+        <ul class="c-keyidea__points">
+          <li>Rectangles with the same perimeter can have different areas.</li>
+          <li>For a fixed perimeter, the square has the largest area.</li>
+        </ul>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>List the rectangles with whole-centimetre sides and an area of $24$ cm<sup>2</sup>. Which has the shortest perimeter?</li>
+            <li>A farmer has $40$ m of fencing for a rectangular pen. What is the largest area the pen can have, in square metres?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+      <h2><span class="badge">7.4</span><span class="name">Same Base, Same Height</span></h2>
+
+      <p>Draw a straight line and mark a segment $PQ$ on it. Draw a second line parallel to the first. Choose any point on the second line and join it to $P$ and to $Q$. This makes a triangle. The three triangles in Fig. 7.3 were all made in this way.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="0 0 196 88" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangle A B C enclosed in a rectangle E B C D, with the perpendicular from A to the base dividing both into a left half and a right half">
+          <svg viewBox="0 0 196 84" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three triangles on one base P Q, with their top corners at different points on a line parallel to the base">
       
-            <path class="dg-fill-d" d="M98 26 L48 26 L48 70 Z M98 26 L148 26 L148 70 Z"/>
-            <path class="dg-fill-a" d="M48 70 L148 70 L98 26 Z"/>
-            <path class="dg-thin"  d="M48 26 H148 V70 H48 Z"/>
-            <path class="dg-line"  d="M48 70 L148 70 L98 26 Z"/>
-            <path class="dg-dim"   d="M98 26 V70"/>
+            <path class="dg-thin" d="M10 26 H186 M10 70 H186"/>
+            <path class="dg-line" d="M30 70 L110 70 L40 26 Z M30 70 L110 70 L86 26 Z M30 70 L110 70 L150 26 Z"/>
+            <path class="dg-dim"  d="M170 26 V70"/>
       
-            <text class="dg-label" x="96" y="22">A</text>
-            <text class="dg-label" x="42" y="78">B</text>
-            <text class="dg-label" x="146" y="78">C</text>
-            <text class="dg-label" x="42" y="22">E</text>
-            <text class="dg-label" x="146" y="22">D</text>
-            <text class="dg-label" x="96" y="78">X</text>
-            <text class="dg-dim-label" x="102" y="50">h</text>
-            <text class="dg-dim-label" x="98" y="86" text-anchor="middle">b</text>
+            <text class="dg-label" x="26" y="78">P</text>
+            <text class="dg-label" x="110" y="78">Q</text>
+            <text class="dg-label" x="38" y="22">K</text>
+            <text class="dg-label" x="84" y="22">L</text>
+            <text class="dg-label" x="148" y="22">M</text>
+            <text class="dg-dim-label" x="174" y="51">h</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 7.4</span> $AX$ cuts the rectangle
-          $EBCD$ into two smaller rectangles, and cuts the triangle into two pieces —
-          one being half of each. So the triangle is half of the whole.</figcaption>
+          <figcaption><span class="fignum">Fig. 7.3</span> $KPQ$, $LPQ$ and $MPQ$ all stand on $PQ$. Their top corners all lie on one line parallel to $PQ$, so each is the same distance $h$ from it.</figcaption>
         </figure>
       </div>
 
-      <p>Look at the left-hand rectangle on its own. Its diagonal is $AB$, and a diagonal
-      halves a rectangle, so the shaded piece $ABX$ is exactly half of it. The same
-      argument on the right makes $AXC$ half of the right-hand rectangle. Two halves of
-      two rectangles that together make $EBCD$ come to half of $EBCD$, and $EBCD$ has
-      area $b \times h$.</p>
-
-      <div class="eq eq--anchor">$$\text{area of a triangle} = \tfrac12 \times \text{base} \times \text{height}.$$</div>
-
-      <p>The height here is the <em>perpendicular</em> height — the distance from the
-      apex square to the base, not the length of a sloping side. Fig. 7.3 is the reason
-      for insisting: $ZDC$ has two long sides and the same area as the upright triangle
-      beside it, because what counts is how far $Z$ stands from the line $DC$, and
-      nothing else.</p>
-
-      <p>One case escapes that argument. If the triangle leans far enough over, the
-      perpendicular from the apex misses the base altogether and lands outside it, and no
-      rectangle can be drawn round the triangle with $BC$ as a side. The formula still
-      holds, and the reason is a subtraction rather than a halving.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 163 88" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="An obtuse triangle A B C whose altitude from A meets the extended base at a point D lying outside B C">
-      
-            <path class="dg-fill-d" d="M43 26 L43 70 L73 70 Z"/>
-            <path class="dg-fill-a" d="M43 26 L73 70 L153 70 Z"/>
-            <path class="dg-thin"   d="M43 70 H73"/>
-            <path class="dg-line"   d="M43 26 L73 70 L153 70 Z"/>
-            <path class="dg-dim"    d="M43 26 V70"/>
-      
-            <text class="dg-label" x="40" y="22">A</text>
-            <text class="dg-label" x="38" y="78">D</text>
-            <text class="dg-label" x="70" y="78">B</text>
-            <text class="dg-label" x="151" y="78">C</text>
-            <text class="dg-dim-label" x="47" y="50">h</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 7.5</span> The foot $D$ of the
-          perpendicular lies outside $BC$. The shaded triangle is what is left when
-          $ADB$ is taken away from $ADC$.</figcaption>
-        </figure>
-      </div>
-
-      <p>Both $ADC$ and $ADB$ are right-angled at $D$, so each of them <em>can</em> be
-      put in a rectangle and each obeys the formula already proved. Take the smaller from
-      the larger.</p>
+      <p>The three triangles have different shapes, but they have the same area. The reason is the height. The <span class="term">height</span> of a triangle is the distance from its top corner straight down to the base, meeting the base at a right angle. Two parallel lines are the same distance apart everywhere. So all three triangles have the same base and the same height, and that is all the area depends on. For example, if $PQ$ is $8$ cm and the lines are $5$ cm apart, each of the three triangles has an area of $\tfrac12 \times 8 \times 5 = 20$ cm<sup>2</sup>, however far it leans.</p>
 
     </div>
   </div>

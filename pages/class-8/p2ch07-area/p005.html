@@ -2,88 +2,44 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">the difference</span>
-          <span>$\tfrac12 h \times DC - \tfrac12 h \times DB$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">common factor</span>
-          <span>$\tfrac12 h (DC - DB)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">and</span>
-          <span>$DC - DB = BC$, so the area is $\tfrac12 h \times BC$</span>
-        </div>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two parallels fix the height</div>
+        <p>Triangles on the same base, with their top corners on one line parallel to that base, all have the same area. The top corner may slide anywhere along the line, even past the end of the base.</p>
       </div>
 
-      <p>Same formula, arrived at by a different route. That is worth noticing in itself:
-      a result proved for the easy case and then rescued for the awkward one is a
-      more common shape of argument in mathematics than a single proof that covers
-      everything.</p>
-
-      <h2><span class="badge">7.5</span><span class="name">One Triangle, Three Ways</span></h2>
-
-      <p>A triangle has three sides, and any of them may be called the base. Each choice
-      brings its own perpendicular height, and all three pairs must give the same answer
-      — because the triangle has only one area. That sounds like a fact with nothing in
-      it, and it is one of the most useful in the chapter.</p>
+      <p>Now slide the top corner until it is straight above one end of the base. The triangle becomes half of a rectangle, and section 7.2 has already found that area. So the area of any triangle is half of base times height. Here is a second way to see this, which works for any triangle directly. Draw the rectangle that just holds the triangle, and drop a line from the top corner to the base at a right angle.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="0 0 196 100" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Triangle A B C with the perpendicular of length three from A to B C, and a second perpendicular of unknown length from B to A C">
+          <svg viewBox="0 0 196 88" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle A B C inside a rectangle E B C D, with the perpendicular from A to the base dividing both into a left part and a right part">
       
-            <path class="dg-fill-a" d="M48 80 L148 80 L95 20 Z"/>
-            <path class="dg-line"   d="M48 80 L148 80 L95 20 Z"/>
-            <path class="dg-dim"    d="M95 20 V80 M48 80 L104 30"/>
+            <path class="dg-fill-b-soft" d="M98 26 L48 26 L48 70 Z M98 26 L148 26 L148 70 Z"/>
+            <path class="dg-fill-a" d="M48 70 L148 70 L98 26 Z"/>
+            <path class="dg-thin"  d="M48 26 H148 V70 H48 Z"/>
+            <path class="dg-line"  d="M48 70 L148 70 L98 26 Z"/>
+            <path class="dg-dim"   d="M98 26 V70"/>
       
-            <text class="dg-label" x="92" y="16">A</text>
-            <text class="dg-label" x="42" y="89">B</text>
-            <text class="dg-label" x="151" y="89">C</text>
-            <text class="dg-label" x="108" y="28">Y</text>
-      
-            <text class="dg-dim-label" x="99" y="53">3</text>
-            <text class="dg-dim-label" x="98" y="93" text-anchor="middle">5</text>
-            <text class="dg-dim-label" x="128" y="46">4</text>
-            <text class="dg-dim-label" x="68" y="48">?</text>
+            <text class="dg-label" x="96" y="22">A</text>
+            <text class="dg-label" x="42" y="78">B</text>
+            <text class="dg-label" x="146" y="78">C</text>
+            <text class="dg-label" x="42" y="22">E</text>
+            <text class="dg-label" x="146" y="22">D</text>
+            <text class="dg-label" x="96" y="78">X</text>
+            <text class="dg-dim-label" x="102" y="50">h</text>
+            <text class="dg-dim-label" x="98" y="86" text-anchor="middle">b</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 7.6</span> Two of the three
-          base-and-height pairs. Taking $BC$ as the base gives the area at once; taking
-          $AC$ as the base then gives $BY$, which was not measurable directly.</figcaption>
+          <figcaption><span class="fignum">Fig. 7.4</span> $AX$ cuts the rectangle $EBCD$ into two smaller rectangles. It also cuts the triangle into two parts, and each part is half of one small rectangle.</figcaption>
         </figure>
       </div>
 
-      <p>Take $BC$ as the base. The perpendicular height is $3$, so the area is
-      $\tfrac12 \times 5 \times 3 = 7.5$ square units, and that is now a fixed number.
-      Take $AC$ as the base instead. The same area must come out, and this time it is
-      written with $BY$ in it.</p>
+      <p>Look at the left-hand rectangle $EBXA$. Its diagonal is $AB$, and a diagonal cuts a rectangle in half. So triangle $ABX$ is half of that rectangle. In the same way, triangle $AXC$ is half of the right-hand rectangle. Together the two triangles make half of the whole rectangle $EBCD$, whose area is $b \times h$.</p>
 
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">the other way</span>
-          <span>$\tfrac12 \times 4 \times BY = 2 \, BY$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">so</span>
-          <span>$2 \, BY = 7.5$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">giving</span>
-          <span>$BY = 3.75$ units</span>
-        </div>
-      </div>
+      <div class="eq eq--anchor">$$\text{area of a triangle} = \tfrac12 \times \text{base} \times \text{height}.$$</div>
 
-      <p>A length has been found without measuring it, and without any construction
-      beyond drawing the perpendicular. The area acted as the go-between: it was worked
-      out from one pair and then spent on the other.</p>
+      <p>Remember that the height is measured at a right angle to the base. It is not the length of a sloping side. In Fig. 7.3, $MPQ$ has two long sloping sides, but its area is the same as that of $LPQ$, because $M$ is the same distance from $PQ$.</p>
 
-      <p>The move is worth naming because it is used again and again. Whenever a quantity
-      can be written two ways, the two expressions may be set equal, and whatever is
-      unknown in one of them is then found from what is known in the other. Here the
-      quantity was an area. In the last chapter it was the top of a pyramid, and in
-      Chapter 3 a share of a whole. The unknown does not have to be the thing the question
-      seems to be about.</p>
+      <p>There is one case this argument misses. If the triangle leans far over, the line from the top corner at a right angle to the base misses the base and lands outside it. Then no rectangle can be drawn round the triangle with $BC$ as one side. The formula still holds, but the reason is a subtraction.</p>
 
     </div>
   </div>

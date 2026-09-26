@@ -7,16 +7,12 @@
     <div class="chapterhead__sketch">
       <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 
-        <!-- faint graph paper behind the sketch, as on the other openers -->
         <g class="dg-grid">
           <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
                    M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
           <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
         </g>
 
-        <!-- A parallelogram with one end cut off and carried to the other,
-             which makes it a rectangle. Nothing is drawn left of x=110:
-             the title box runs into this one. -->
         <path class="dg-fill-a" d="M132 88 L172 88 L192 52 L132 52 Z"/>
         <path class="dg-fill-c" d="M112 88 L132 88 L132 52 Z"/>
         <path class="dg-ghost"  d="M172 88 L192 88 L192 52 Z"/>
@@ -37,67 +33,32 @@
 
       <h2><span class="badge">7.1</span><span class="name">Introduction</span></h2>
 
-      <p>Divide a square into four parts of equal area. Two ways come to anybody at once
-      — four strips, or four smaller squares — and a third, cutting along both diagonals,
-      comes almost as quickly. After that it begins to look as though the supply has run
-      out.</p>
+      <p>Take a rectangular sheet of paper and cut it into two pieces of the same size. The easy cuts are across the middle, down the middle, or along a diagonal. But there are many more. Any straight cut that passes through the centre of the sheet gives two pieces of equal size. The two pieces are not always the same shape, but each piece holds exactly half of the paper.</p>
 
-      <p>It has not. Take any of those divisions and push one of the cutting lines
-      sideways: whatever area a part loses along one edge it gains along the other, so
-      all four parts still match. The line can be pushed by any amount at all, so there
-      are infinitely many divisions, and hardly any of them make four congruent
-      pieces.</p>
+      <p>The amount of flat surface that a shape covers is called its <span class="term">area</span>. The paper shows the idea that this whole chapter uses. Area does not depend on shape. Cut a shape into pieces and put the pieces together in a new way. The new shape covers the same area as the old one, because no paper was added and none was thrown away.</p>
 
-      <p>That is the idea this whole chapter turns on. <span class="term">Area</span>
-      does not care what shape a region is in. Cut a shape into pieces and lay the pieces
-      down somewhere else, and the area you finish with is the area you began with,
-      because nothing was added and nothing thrown away.</p>
+      <p>Each area formula in this chapter comes from one such cut. Earlier, you found the area of a parallelogram with a rule. In this chapter you will see where that rule comes from: cut a triangle off one end of the parallelogram and move it to the other end. The picture at the top of this page shows the whole argument.</p>
 
-      <p>Every area formula in this chapter is a record of one such rearrangement. The
-      first book found the area of a trapezium by doubling it into a parallelogram, and
-      took the parallelogram's own rule on trust. Here that rule is earned, by cutting a
-      triangle off one end of the parallelogram and carrying it to the other. The picture
-      on this page is the whole argument.</p>
+      <p>This gives us a way to compare shapes that look very different. If the pieces of one shape can be laid down to cover another shape exactly, the two shapes have the same area. The rest of the chapter uses this idea again and again: it finds the area of a new shape by turning it into a shape whose area is already known.</p>
 
-      <h2><span class="badge">7.2</span><span class="name">Counting Squares</span></h2>
-
-      <p>A rangoli is to be filled in evenly with coloured powder, and there are two
-      patches to choose between: one $7$ cm by $4$ cm, the other $8$ cm by $3$ cm. Which
-      will take more powder?</p>
-
-      <p>The question is settled by covering each patch with unit squares — squares of
-      side $1$ cm — laid down without gaps and without overlaps, and counting them.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 72" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Two rectangles ruled into centimetre squares: one seven by four holding twenty-eight squares, the other eight by three holding twenty-four">
-      
-            <text class="dg-note" x="45.5" y="14" text-anchor="middle">28 unit squares</text>
-            <text class="dg-note" x="141" y="14" text-anchor="middle">24 unit squares</text>
-      
-            <path class="dg-fill-a" d="M14 20 H77 V56 H14 Z M105 29 H177 V56 H105 Z"/>
-            <path class="dg-thin"   d="M23 20 V56 M32 20 V56 M41 20 V56 M50 20 V56 M59 20 V56 M68 20 V56
-                                       M14 29 H77 M14 38 H77 M14 47 H77
-                                       M114 29 V56 M123 29 V56 M132 29 V56 M141 29 V56 M150 29 V56 M159 29 V56 M168 29 V56
-                                       M105 38 H177 M105 47 H177"/>
-            <path class="dg-line"   d="M14 20 H77 V56 H14 Z M105 29 H177 V56 H105 Z"/>
-      
-            <text class="dg-dim-label" x="45.5" y="66" text-anchor="middle">7 cm</text>
-            <text class="dg-dim-label" x="11" y="41" text-anchor="end">4 cm</text>
-            <text class="dg-dim-label" x="141" y="66" text-anchor="middle">8 cm</text>
-            <text class="dg-dim-label" x="102" y="45" text-anchor="end">3 cm</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 7.1</span> The squares do not have to be
-          counted one at a time: seven along a row and four rows make $7 \times 4$, and
-          eight along a row and three rows make $8 \times 3$.</figcaption>
-        </figure>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Area and shape</div>
+        <p>Cutting a shape into pieces and joining the pieces in a new way changes the shape but not the area.</p>
       </div>
 
-      <p>So the first patch takes $28$ unit squares of powder and the second $24$, and
-      the longer, narrower patch is the smaller of the two. Written down, the counts are
-      $28$ cm<sup>2</sup> and $24$ cm<sup>2</sup> — <em>square centimetres</em>, because
-      what is being counted is squares.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>A square is cut along one diagonal, and the two triangles are joined along a short side. Is the new shape bigger, smaller or the same size as the square?</li>
+            <li>Draw a rectangle and a straight line through its centre that is not a diagonal. Why are the two pieces equal in area?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

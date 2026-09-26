@@ -1,36 +1,58 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Which is the larger area — one square metre, or ten square feet? Show your
-            working, taking $1$ ft $= 30.48$ cm.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>Find out the local unit of land measurement used in your region, and how
-            many square metres it comes to. Compare your answer with a classmate whose
-            family is from elsewhere.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li class="hard">A square field has sides of $1$ km. Give its area in
-            m<sup>2</sup>, in hectares (a hectare is $10{,}000$ m<sup>2</sup>), and to the
-            nearest acre. Then explain, in one sentence, why the metric units convert so
-            much more easily than the others.</li>
-        </ol>
-      </div>
-
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 118" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A triangle cut along the line joining the midpoints of two sides, and the top piece given a half-turn so that the triangle becomes a parallelogram on the same base with half the height">
       
+            <path class="dg-fill-a" d="M73 38 L48 62 L148 62 L123 38 Z"/>
+            <path class="dg-fill-c" d="M98 14 L73 38 L123 38 Z"/>
+            <path class="dg-line"   d="M48 62 L148 62 L98 14 Z"/>
+            <path class="dg-thin"   d="M73 38 H123"/>
+      
+            <text class="dg-label" x="95" y="10">A</text>
+            <text class="dg-label" x="42" y="70">B</text>
+            <text class="dg-label" x="150" y="70">C</text>
+            <text class="dg-label" x="64" y="36">M</text>
+            <text class="dg-label" x="126" y="36">N</text>
+      
+            <text class="dg-note" x="98" y="78" text-anchor="middle">turned about N</text>
+      
+            <path class="dg-fill-a" d="M73 86 L48 110 L148 110 L123 86 Z"/>
+            <path class="dg-fill-c" d="M123 86 L148 110 L173 86 Z"/>
+            <path class="dg-line"   d="M73 86 L48 110 L148 110 L173 86 Z"/>
+            <path class="dg-thin"   d="M123 86 L148 110"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.11</span> $M$ and $N$ are the midpoints of $AB$ and $AC$. Cut along $MN$ and give the top piece a half-turn about $N$. Then $A$ lands on $C$, and the result is a parallelogram on the same base $BC$, half as tall.</figcaption>
+        </figure>
+      </div>
 
-      <p>The formulas in this chapter are worth remembering, but they are not what it was
-      about. Each of them is a set of cutting instructions written down as arithmetic,
-      and a reader who has forgotten one can get it back with a pair of scissors.</p>
+      <p>The half-turn about $N$ takes $A$ to $C$, because $N$ is the midpoint of $AC$. Nothing is lost and nothing overlaps, so the parallelogram has the same area as the triangle. It stands on the same base with half the height, so its area is $b \times \tfrac{h}{2}$, which is $\tfrac12 \times b \times h$ again.</p>
+
+      <p>Now the changes can be joined in a chain. A triangle becomes a parallelogram, and a parallelogram becomes a rectangle. So a triangle becomes a rectangle in two steps. A rhombus can be cut into two triangles and follow the same path, and so can a trapezium.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Give a method for changing a rectangle $9$ cm by $4$ cm into a triangle of the same area. How many such triangles are there?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$9 \times 4 = 36$ cm<sup>2</sup></span>
+              <span class="work__why">the area to keep</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\tfrac12 \times 9 \times h = 36$, so $h = 8$ cm</span>
+              <span class="work__why">a triangle on the same base</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Keep the base of $9$ cm and use twice the height. There are infinitely many such triangles</span></div>
+          </div>
+          <p>There are infinitely many because, by section 7.4, the top corner can be anywhere on a line $8$ cm above the base. The base can change too: a triangle with base $4$ cm and height $18$ cm also has an area of $36$ cm<sup>2</sup>.</p>
+        </div>
+      </div>
+
+      <p>A formula tells a builder how big the new shape must be. But the builder also has to <em>draw</em> it on the ground, with a rope and pegs. That is why the Śulbasūtras give cutting instructions rather than formulas.</p>
 
     </div>
   </div>

@@ -2,68 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Perimeter and area measure different things, and neither can stand in for the
-      other. A fence and the grass it encloses are bought separately for exactly this
-      reason: a field can be given more fence and less grass by making it long and thin,
-      which is why nobody does it.</p>
+      <h2><span class="badge">7.3</span><span class="name">Why Perimeter Is Not Area</span></h2>
 
-      <p>Something in the table is worth a second look, because it is the beginning of a
-      real result. Among the rectangles of perimeter $18$ cm, the $5$ by $4$ holds the
-      most. Try the others: $7$ by $2$ gives $14$, $6$ by $3$ gives $18$. The count
-      climbs as the two sides come closer together, peaking when the rectangle is as
-      close to square as whole numbers allow.</p>
+      <p>Counting squares is slow. The <em>perimeter</em>, the length all the way round the edge, is quicker to measure: a piece of string will do. It seems likely that a bigger region has a longer edge. So why not use the perimeter to compare areas?</p>
 
-      <p>That is a general truth and not a coincidence of these numbers. Of all
-      rectangles with a given perimeter, the square holds the most. Of all rectangles
-      with a given area, the square has the shortest perimeter. It is why a field is
-      fenced squarish, why a room is not built long and narrow if the floor is what is
-      wanted, and why the cheapest box for a given amount of card is close to a cube.</p>
-
-      <p>That is the first of several places in this chapter where the extreme case turns
-      out to be the symmetric one, and it is worth watching for. A shape that is as
-      regular as its constraints allow is very often the largest, or the smallest, or the
-      cheapest of its family.</p>
-
-      <h2><span class="badge">7.4</span><span class="name">Same Base, Same Height</span></h2>
-
-      <p>Draw a line, mark a segment $DC$ on it, and draw a second line parallel to the
-      first. Now pick any point on that second line and join it to $D$ and to $C$. The
-      three triangles below were all made that way, and they have the same area.</p>
+      <p>The answer is that it does not work. Look at these three rectangles. All their sides are whole numbers of centimetres.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
-          <svg viewBox="0 0 196 84" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Three triangles on one base D C, with their apexes at different points on a line parallel to the base">
+          <svg viewBox="0 0 196 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three rectangles standing on one line: a long thin nine by one, a six by four, and a four by four square">
       
-            <path class="dg-thin" d="M10 26 H186 M10 70 H186"/>
-            <path class="dg-line" d="M30 70 L110 70 L40 26 Z M30 70 L110 70 L86 26 Z M30 70 L110 70 L150 26 Z"/>
-            <path class="dg-dim"  d="M170 26 V70"/>
+            <path class="dg-fill-a" d="M8 52 H80 V60 H8 Z M96 28 H144 V60 H96 Z M158 28 H190 V60 H158 Z"/>
+            <path class="dg-thin"   d="M16 52 V60 M24 52 V60 M32 52 V60 M40 52 V60 M48 52 V60 M56 52 V60 M64 52 V60 M72 52 V60
+                                       M104 28 V60 M112 28 V60 M120 28 V60 M128 28 V60 M136 28 V60
+                                       M96 36 H144 M96 44 H144 M96 52 H144
+                                       M166 28 V60 M174 28 V60 M182 28 V60 M158 36 H190 M158 44 H190 M158 52 H190"/>
+            <path class="dg-line"   d="M8 52 H80 V60 H8 Z M96 28 H144 V60 H96 Z M158 28 H190 V60 H158 Z"/>
       
-            <text class="dg-label" x="26" y="78">D</text>
-            <text class="dg-label" x="110" y="78">C</text>
-            <text class="dg-label" x="38" y="22">X</text>
-            <text class="dg-label" x="84" y="22">Y</text>
-            <text class="dg-label" x="148" y="22">Z</text>
-            <text class="dg-dim-label" x="174" y="51">h</text>
+            <text class="dg-dim-label" x="44" y="72" text-anchor="middle">9 by 1</text>
+            <text class="dg-dim-label" x="120" y="72" text-anchor="middle">6 by 4</text>
+            <text class="dg-dim-label" x="174" y="72" text-anchor="middle">4 by 4</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 7.3</span> $XDC$, $YDC$ and $ZDC$ all
-          stand on $DC$, and every apex is the same distance $h$ from it, because the two
-          lines are parallel. The leaning of $ZDC$ costs it nothing.</figcaption>
+          <figcaption><span class="fignum">Fig. 7.2</span> Three rectangles drawn to one scale. The first has the longest edge and holds the fewest squares.</figcaption>
         </figure>
       </div>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Two parallels fix the height</div>
-        <p>Triangles on the same base, with their apexes on one line parallel to that
-        base, all have the same area. The apex may be slid anywhere along the line —
-        even past the end of the base — and nothing changes, because the distance
-        between two parallel lines is the same everywhere.</p>
-      </div>
+      <table>
+        <thead>
+          <tr><th>Rectangle</th><th>Perimeter (cm)</th><th>Area (cm<sup>2</sup>)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$9$ by $1$</td><td>$20$</td><td>$9$</td></tr>
+          <tr><td>$6$ by $4$</td><td>$20$</td><td>$24$</td></tr>
+          <tr><td>$4$ by $4$</td><td>$16$</td><td>$16$</td></tr>
+        </tbody>
+      </table>
 
-      <p>That is worth having on its own, but it also settles what the area actually
-      <em>is</em>. Slide the apex until it sits directly above one end of the base, and
-      the triangle becomes half of a rectangle — which section 7.2 has already
-      counted.</p>
+      <p>The first two rectangles have the same perimeter, but the second holds more than twice as many squares. Now compare the first and the third. The $9$ by $1$ rectangle has the <em>longer</em> edge, $20$ cm against $16$ cm, and the <em>smaller</em> area. So a longer edge does not even promise a bigger area.</p>
+
+      <p>Perimeter and area measure different things. One cannot be used in place of the other. This is why a fence and the grass inside it are bought separately.</p>
+
+      <p>There is more to see here. Take all the rectangles with a perimeter of $20$ cm and whole-centimetre sides. Their two sides always add up to $10$ cm. The $9$ by $1$ rectangle holds $9$ squares, $8$ by $2$ holds $16$, $7$ by $3$ holds $21$, $6$ by $4$ holds $24$ and $5$ by $5$ holds $25$. The area grows as the two sides come closer together. It is largest when the rectangle is a square.</p>
+
+      <p>This is true for every perimeter, not only for $20$ cm. Among all rectangles with the same perimeter, the square has the largest area. Turned round, among all rectangles with the same area, the square has the shortest perimeter. This is why a field that needs the least fencing is close to a square.</p>
 
     </div>
   </div>

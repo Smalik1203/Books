@@ -2,85 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">7.9</span><span class="name">Every Polygon Is Triangles</span></h2>
-
-      <p>A field is rarely a rectangle and almost never a rhombus. It is some shape with
-      five or six corners and no name at all, and there is no formula waiting for it —
-      but there does not need to be one.</p>
-
-      <div class="c-figure c-figure--xl">
+      <div class="c-figure c-figure--md">
         <figure>
-          <svg viewBox="0 0 196 92" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A quadrilateral divided by one diagonal into two triangles, and a pentagon divided from one vertex into three triangles">
+          <svg viewBox="0 0 196 96" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A kite P Q R S whose diagonals cross at right angles at O, with O much nearer to P than to R">
       
-            <path class="dg-fill-a" d="M20 25 L80 18 L14 68 Z"/>
-            <path class="dg-fill-d" d="M80 18 L88 72 L14 68 Z"/>
-            <path class="dg-thin"   d="M80 18 L14 68"/>
-            <path class="dg-line"   d="M20 25 L80 18 L88 72 L14 68 Z"/>
+            <path class="dg-fill-a" d="M98 8 L58 32 L98 88 L138 32 Z"/>
+            <path class="dg-line"   d="M98 8 L58 32 L98 88 L138 32 Z"/>
+            <path class="dg-thin"   d="M98 8 V88 M58 32 H138"/>
       
-            <path class="dg-fill-a" d="M112 44 L140 18 L178 32 Z"/>
-            <path class="dg-fill-d" d="M112 44 L178 32 L180 70 Z"/>
-            <path class="dg-fill-c" d="M112 44 L180 70 L126 80 Z"/>
-            <path class="dg-thin"   d="M112 44 L178 32 M112 44 L180 70"/>
-            <path class="dg-line"   d="M112 44 L140 18 L178 32 L180 70 L126 80 Z"/>
-      
-            <text class="dg-label" x="16" y="21">A</text>
-            <text class="dg-label" x="82" y="14">B</text>
-            <text class="dg-label" x="90" y="80">C</text>
-            <text class="dg-label" x="8" y="76">D</text>
-      
-            <text class="dg-note" x="49" y="90" text-anchor="middle">two triangles</text>
-            <text class="dg-note" x="146" y="90" text-anchor="middle">three triangles</text>
+            <text class="dg-label" x="95" y="6">P</text>
+            <text class="dg-label" x="48" y="35">Q</text>
+            <text class="dg-label" x="95" y="96">R</text>
+            <text class="dg-label" x="141" y="35">S</text>
+            <text class="dg-label" x="101" y="42">O</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 7.10</span> One diagonal cuts a
-          quadrilateral into two triangles; two diagonals from one corner cut a pentagon
-          into three. A polygon of $n$ sides gives $n - 2$ triangles this way.</figcaption>
+          <figcaption><span class="fignum">Fig. 7.10</span> In the kite $PQRS$ the diagonals cross at right angles at $O$, but only $QS$ is cut in half. The two triangles on $QS$ still have heights $PO$ and $RO$, which add up to $PR$, so the area is $\tfrac12 \times PR \times QS$.</figcaption>
         </figure>
       </div>
 
-      <p>Every triangle has an area that section 7.5 can find, so every polygon has an
-      area that a sum of them can find. That is the whole method, and it is the reason
-      the triangle got so much of this chapter: it is the piece all the others are made
-      of.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__body">
+          <p>A rhombus has diagonals of $24$ cm and $18$ cm. Find its area. Its side is $15$ cm. Find its height on that side.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\tfrac12 \times 24 \times 18 = 216$ cm<sup>2</sup></span>
+              <span class="work__why">half the product of the diagonals</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$15 \times h = 216$</span>
+              <span class="work__why">as a parallelogram</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$h = 14.4$ cm</span>
+              <span class="work__why">divide by 15</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Area 216 cm<sup>2</sup>; height 14.4 cm</span></div>
+          </div>
+          <p>The side of $15$ cm was given, but it can also be found from the diagonals. The half-diagonals are $12$ cm and $9$ cm, and they meet at a right angle. By the theorem of Chapter 2, the side is $\sqrt{144 + 81} = 15$ cm. So the diagonals alone give the area, the side and the height of a rhombus.</p>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Diagonals at right angles</div>
+        <p>If the diagonals of a quadrilateral cross at right angles, its area is half the product of the diagonals. This is true for a rhombus, a square and a kite.</p>
+      </div>
 
       <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
         <div class="c-reflect__box">
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-            <p>This chapter has cut a parallelogram into a rectangle, a triangle into a
-            parallelogram, and a rhombus into two triangles. Each time, one shape was
-            taken apart and the pieces made another of the same area.</p>
-            <p>Suppose you are handed any two polygons at all that happen to have the
-            same area — a long thin triangle, say, and a regular hexagon. Do you think
-            the first can always be cut into pieces that rebuild the second? Argue for
-            your answer, then try it on a triangle and a square of equal area.</p>
+          <ol>
+            <li>A square has a diagonal of $10$ cm. Use the rhombus formula to find its area.</li>
+            <li>Why does the formula not work for a rectangle that is not a square?</li>
+          </ol>
           </div>
         </div>
       </div>
-
-      <h2><span class="badge">7.10</span><span class="name">Areas in Real Life</span></h2>
-
-      <p>An A4 sheet is $21$ cm by $29.7$ cm, so it holds $623.7$ cm<sup>2</sup>. A
-      school desk is perhaps eight or nine of those laid out; a classroom floor is a few
-      hundred. Once the numbers get that large the unit changes, and changing an area
-      unit is not the same as changing a length unit.</p>
-
-      <p>Furniture in India is often measured in inches and feet, and an inch is
-      $2.54$ cm. A square inch is a square of side $2.54$ cm, so it holds</p>
-
-      <div class="eq">$$2.54 \times 2.54 = 6.4516 \text{ cm}^2.$$</div>
-
-      <p>That is the whole of the difficulty, and it catches people every time: doubling
-      a length multiplies an area by four, and multiplying a length by $2.54$ multiplies
-      an area by $6.45$. A conversion factor for lengths has to be <em>squared</em>
-      before it can be used on areas.</p>
 
     </div>
   </div>

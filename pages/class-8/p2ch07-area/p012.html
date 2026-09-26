@@ -2,56 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>Give a method for turning a rectangle $12$ cm by $5$ cm into a triangle of
-          the same area, and say how many such triangles there are.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$12 \times 5 = 60$ cm<sup>2</sup></span>
-              <span class="work__why">the area to keep</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$\tfrac12 \times 12 \times h = 60$, so $h = 10$ cm</span>
-              <span class="work__why">a triangle on the same base</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Keep the base $12$ cm and take twice the height. There are infinitely many such triangles</span></div>
-          </div>
-          <p>There are infinitely many because section 7.4 lets the apex slide
-          anywhere along a line $10$ cm above the base. Even the base is free: a triangle
-          with base $5$ cm and height $24$ cm has the same $60$ cm<sup>2</sup>. Going from
-          a rectangle to a triangle throws away information; going the other way does
-          not.</p>
+      <h2><span class="badge">7.7</span><span class="name">The Rhombus and Its Diagonals</span></h2>
+
+      <p>A rhombus is a parallelogram, so its area is base times height. But the height of a rhombus has to be drawn before it can be measured. Its two diagonals are easier: they can be measured straight across it with a ruler. Is there a way to find the area from the diagonals?</p>
+
+      <p>Two facts about a rhombus help. Its diagonals cut each other in half, and they cross at right angles. Draw the rectangle that just holds the rhombus, and the answer can be seen at once.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 163 96" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rhombus inside the rectangle made by its diagonals, with the four corner triangles outside the rhombus matching the four inside it">
+      
+            <path class="dg-fill-b-soft" d="M32 20 L82 20 L32 50 Z M82 20 L132 20 L132 50 Z
+                                       M132 50 L132 80 L82 80 Z M32 50 L32 80 L82 80 Z"/>
+            <path class="dg-fill-a" d="M82 20 L132 50 L82 80 L32 50 Z"/>
+            <path class="dg-thin"   d="M32 20 H132 V80 H32 Z M82 20 V80 M32 50 H132"/>
+            <path class="dg-line"   d="M82 20 L132 50 L82 80 L32 50 Z"/>
+      
+            <text class="dg-label" x="79" y="16">A</text>
+            <text class="dg-label" x="135" y="52">B</text>
+            <text class="dg-label" x="79" y="90">C</text>
+            <text class="dg-label" x="24" y="52">D</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 7.9</span> The rectangle is as wide as $BD$ and as tall as $AC$. The four pale triangles outside the rhombus match the four inside it. So the rhombus is half of the rectangle.</figcaption>
+        </figure>
+      </div>
+
+      <p>Each quarter of the rhombus is a right-angled triangle. It sits in a small rectangle, and its long side cuts that rectangle in half. So each quarter fills half of its own small rectangle. Four halves make half of the large rectangle, which measures $AC$ by $BD$.</p>
+
+      <div class="eq eq--anchor">$$\text{area of a rhombus} = \tfrac12 \times \text{product of the diagonals}.$$</div>
+
+      <p>The triangle formula gives the same answer, and this second way works even when the picture is harder to draw. Cut the rhombus along $BD$ into triangles $ABD$ and $CBD$. Both stand on $BD$. Let $O$ be the point where the diagonals cross. The height of the first triangle is $AO$ and the height of the second is $CO$.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the two triangles</span>
+          <span>$\tfrac12 \times BD \times AO \;+\; \tfrac12 \times BD \times CO$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">common factor</span>
+          <span>$\tfrac12 \times BD \times (AO + CO)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">and</span>
+          <span>$AO + CO = AC$, giving $\tfrac12 \times BD \times AC$</span>
         </div>
       </div>
 
-      <p>One thing separates what the Śulbasūtras wanted from what a formula gives. A
-      formula says how large the new shape must be. A builder needs to <em>draw</em> it —
-      with a cord and pegs, on the ground, exactly. That is why these texts give cutting
-      instructions rather than equations, and why the pictures in this chapter are the
-      mathematics rather than an illustration of it.</p>
-
-      <h3>The trapezium, in one cut</h3>
-
-      <p>The first book found the area of a trapezium by taking two copies, turning one
-      of them over, and fitting the pair together into a parallelogram. That works, and
-      it needs a second trapezium. The half-turn of Fig. 7.9 does the same job with one.</p>
-
-      <p>Let the parallel sides be $a$ at the top and $b$ at the bottom, with height $h$
-      between them. Join the midpoints of the two slanting sides and cut along that line.
-      Now turn the upper piece half a circle about one end of the cut, exactly as the
-      triangle's top was turned about $N$. The side of length $a$ swings round and comes
-      to rest in line with the side of length $b$, so what is left is a parallelogram —
-      of base $a + b$, and of height $\tfrac{h}{2}$, since the cut was halfway up.</p>
-
-      <div class="eq eq--anchor">$$\text{area of a trapezium} = \tfrac12 \, h \, (a + b).$$</div>
-
-      <p>And now look back at Fig. 7.9 with that in mind. A triangle is a trapezium whose
-      top side has shrunk to nothing — the case $a = 0$ — and the formula duly reads
-      $\tfrac12 h(0 + b)$, which is $\tfrac12 bh$. The two arguments were never different
-      arguments. The triangle was the trapezium all along, cut at the same halfway line
-      and turned about the same kind of point.</p>
+      <p>Notice that this argument did not use the fact that the diagonals cut each other in half. It used only two things: $AO$ and $CO$ add up to $AC$, and the diagonals meet at a right angle. Without the right angle, $AO$ would not be a height. So the formula holds for every quadrilateral whose diagonals cross at right angles. A kite and a square are two more examples of such shapes.</p>
 
     </div>
   </div>

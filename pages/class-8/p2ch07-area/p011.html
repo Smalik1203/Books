@@ -2,66 +2,48 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">7.8</span><span class="name">Shapes Exchanged for Shapes</span></h2>
-
-      <p>The <span class="term">Śulbasūtras</span> are ancient Indian texts on the
-      building of altars — the same texts Chapter 2 took the theorem of the diagonal
-      from. An altar had to be built to a prescribed shape <em>and</em> a prescribed
-      area, and the two requirements do not always arrive together, so the Śulbasūtras
-      are full of problems of one kind: given this shape, construct that one, with the
-      area unchanged.</p>
-
-      <p>Section 7.6 has already solved one of them — a parallelogram exchanged for a
-      rectangle. Here is a second, and it is the one that makes the rest easy: turn a
-      triangle into a parallelogram.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 118" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangle cut along the line joining the midpoints of two sides, and the top piece turned half a circle so that the triangle becomes a parallelogram of the same base and half the height">
-      
-            <path class="dg-fill-a" d="M73 38 L48 62 L148 62 L123 38 Z"/>
-            <path class="dg-fill-c" d="M98 14 L73 38 L123 38 Z"/>
-            <path class="dg-line"   d="M48 62 L148 62 L98 14 Z"/>
-            <path class="dg-thin"   d="M73 38 H123"/>
-      
-            <text class="dg-label" x="95" y="10">A</text>
-            <text class="dg-label" x="42" y="70">B</text>
-            <text class="dg-label" x="150" y="70">C</text>
-            <text class="dg-label" x="64" y="36">M</text>
-            <text class="dg-label" x="126" y="36">N</text>
-      
-            <text class="dg-note" x="98" y="78" text-anchor="middle">turned about N</text>
-      
-            <path class="dg-fill-a" d="M73 86 L48 110 L148 110 L123 86 Z"/>
-            <path class="dg-fill-c" d="M123 86 L148 110 L173 86 Z"/>
-            <path class="dg-line"   d="M73 86 L48 110 L148 110 L173 86 Z"/>
-            <path class="dg-thin"   d="M123 86 L148 110"/>
-          </svg>
-          <figcaption><span class="fignum">Fig. 7.9</span> $M$ and $N$ are the midpoints
-          of $AB$ and $AC$. Cut along $MN$ and turn the top piece half a circle about
-          $N$: $A$ lands on $C$, and what is left is a parallelogram on the same base
-          $BC$, half as tall.</figcaption>
-        </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 2</div>
+        <div class="c-example__body">
+          <p>A parallelogram $ABCD$ has $AB = 15$ cm, and the height from $D$ to $AB$ is $8$ cm. Find its area. If $AD = 10$ cm, find the height from $B$ to $AD$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$15 \times 8 = 120$ cm<sup>2</sup></span>
+              <span class="work__why">on base AB</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$10 \times h = 120$</span>
+              <span class="work__why">same area, on base AD</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$h = 12$ cm</span>
+              <span class="work__why">divide by 10</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Area 120 cm<sup>2</sup>; the height from $B$ to $AD$ is 12 cm</span></div>
+          </div>
+          <p>As in Example 1, the shorter side has the longer height, because the two must multiply to the same area.</p>
+        </div>
       </div>
 
-      <p>The turn about $N$ carries $A$ to $C$, because $N$ is the midpoint of $AC$ and a
-      half-turn about a midpoint swaps the two ends. Nothing is lost and nothing overlaps,
-      so the parallelogram has the triangle's area — and it stands on the same base with
-      half the height, which is $\tfrac12 \times b \times h$ over again.</p>
-
-      <p>With those two exchanges in hand, a chain becomes possible. A triangle turns
-      into a parallelogram, and a parallelogram turns into a rectangle, so a triangle
-      turns into a rectangle in two moves. A rhombus splits into two triangles and
-      follows the same road. So does a trapezium, which the first book turned into a
-      parallelogram by doubling it.</p>
+      <p>This also compares a rectangle with a parallelogram. Build both on the same base, with the other pair of sides the same length in both. Their perimeters are equal. The rectangle's height is its side. The parallelogram's height is less than its side, because a sloping side is longer than the straight-up distance it covers. So, of two figures with the same four side lengths, the rectangle always has the larger area. For example, a rectangle $15$ cm by $10$ cm has an area of $150$ cm<sup>2</sup>, but the parallelogram of Example 2, with the same sides, has only $120$ cm<sup>2</sup>.</p>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">Everything ends up a rectangle</div>
-        <p>A rectangle is where these chains stop, because a rectangle is the one shape
-        whose area can be read straight off a count of unit squares. Every formula in
-        this chapter is an instruction for reaching a rectangle, and the formula's
-        ingredients are the rectangle's two sides in disguise.</p>
+        <div class="c-keyidea__title">From parallelogram to rectangle</div>
+        <p>A parallelogram can be cut and moved into a rectangle with the same base and the same height. So its area is base times height, for either pair of sides.</p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>A frame made of four sticks, $15$ cm and $10$ cm, is pushed over so that it leans more and more. What happens to its area? What happens to its perimeter?</li>
+            <li>Could the parallelogram in Example 2 have a height of $16$ cm from $B$ to $AD$? Give a reason for your answer.</li>
+            <li>A parallelogram and a rectangle have the same base and the same area. Must they have the same height?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
     </div>

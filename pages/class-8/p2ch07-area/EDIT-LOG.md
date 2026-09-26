@@ -1,4 +1,67 @@
-# Class 8 · Mathematics II · Chapter 7 — The Same Area, a Different Shape
+# Class 8 · Mathematics II · Chapter 7 — Area
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the chapter's pages, Beyond the Book
+and its checker further down this log.** Converted with CONVERT-V2.md,
+Class 6 Chapter 1 as the model. `chapter.json`: design `maths-v2`, palette
+`prism-wine` (accent `#7a474d`), edition `196x276-large`,
+`keepExerciseSets`. 42 pages:
+
+* **Body p001–p021** (20 pages and the Summary, p021, `data-close`).
+  Rewritten in plain English, short sentences, in NCERT's topic order
+  (sections 7.1–7.10 unchanged). NCERT contexts replaced with our own: the
+  opening puzzle (dividing a square into four equal parts) became a sheet
+  cut through its centre; the rangoli patches became two garden beds,
+  6 m by 5 m and 7 m by 4 m (Fig. 7.1 redrawn); the perimeter table is now
+  9 by 1, 6 by 4, 4 by 4 (Fig. 7.2 redrawn); Fig. 7.6 has new lengths
+  (BC 10, height 6, AC 7.5, BY 8, geometry drawn to scale); the A4 sheet
+  became a floor tile. Every worked example has new numbers, and two
+  were added: Example 5 (a trapezium field), Example 7 (a playground in
+  hectares and acres). New figures: Fig. 7.7 (rectangle and its
+  diagonals), Fig. 7.10 (a kite), Fig. 7.13 (a square metre ruled into
+  10 cm squares); figures after 7.6 renumbered. `dg-fill-d` (beige) is gone.
+  **Every section now has a key idea and a Think and Reflect.**
+* **Exercise Sets 7.1–7.3** are all new questions (9, 8, 8), each whole on
+  one page, each ending with a `c-practice__note` citing NCERT by section
+  (see below).
+* **By the Book p090–p096**, 50 questions to BY-THE-BOOK.md at Class 8:
+  letters in word problems (19, 22, 25, 30), a short algebraic *Show that*
+  (17), two *In the given figure* questions with figures (15, 24), one
+  find-the-mistake short answer (14), case passages with a table (39),
+  one multi-statement MCQ (48), one named student's claim (49). The old
+  practice stage's board-form questions were raw material; none survives
+  unchanged. p096 carries `data-close`.
+* **Beyond the Book p101–p114**: the eight tried-and-explained questions
+  kept word for word with the stage head removed. Changes inside them,
+  for the checks only: `$2(16 + 9)$` and `$2(15 + 6)$` are now written
+  with `\times` (check-sums read the implicit product as a function call),
+  and two line ends are held by `.nb` spans (lone words at the new
+  measure). Examples: old 1 and 3 (single correct), 7 and 10 (more than
+  one), 12 and 13 (numerical), 14 and 15 (matching), renumbered 1–8, tabs
+  "Example N", the "Choose …" lines gone; Example 2's stem and Example 3's
+  options shortened to fit, Check rows added to Examples 4–6, a figure to
+  Example 6. Examples 9 and 10 (paragraph-based) are new. Practice 1–15 is
+  new (4 · 4 · 3 · 2 · 2); Q12 carries a figure. Answers on a fresh page,
+  By the Book then Beyond, as the model.
+* ANSWERS.md rewritten: body Think and Reflect, the three exercise sets,
+  By the Book 1–50 and Beyond.
+* `check-numbers.mjs` rewritten in the model's form: 368 checks (every
+  identity on every page and in ANSWERS.md, `\approx` to the places
+  printed; the key complete; every single-correct and objective option
+  recomputed; the body examples), none failing; a planted wrong option is
+  caught.
+
+**NCERT references.** No NCERT page numbers for this chapter were recorded
+anywhere in the chapter, so the three notes cite the section:
+*NCERT, Figure it Out, §7.5 / §7.7 / §7.10*. The page numbers are to be
+filled in from the Grade 8 Part II book.
+
+**Checks at close.** Build: all pages fit; every page at 88% or more except
+the Summary (84%), By the Book's last page (61%) and the chapter's last
+page. lone-words 0; check-sums 78 identities, 0 wrong; orphans 0 stranded;
+check-labels no collisions; fit-options every row fits (Practice Q5 was
+narrowed to one column by `--fix`); check-numbers 368 checks, 0 failed.
 
 ## Solved examples in examination formats, 23 September 2026
 
