@@ -1,83 +1,93 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <p>What discount would have left her exactly even? Ask for the $d$ that takes
-      $1.5x$ back to $x$:</p>
+      <p><strong>If the interest is paid out every year</strong>, the principal stays
+      <span class="nb">₹$8{,}000$</span> and earns <span class="nb">₹$800$</span> each
+      year. Interest worked out on the principal alone is called
+      <span class="term">simple interest</span>.</p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">the condition</span>
-          <span>$1.5x - d \times 1.5x = x$</span>
+          <span class="work__label work__label--wide">three years</span>
+          <span>$8{,}000 + 3 \times 800 = $ <span class="nb">₹$10{,}400$</span></span>
+        </div>
+      </div>
+
+      <p><strong>If the interest is left in the account</strong>, it becomes part of the
+      principal. Next year's $10\%$ is then taken of a larger amount. Each year is a
+      multiplication by $1.1$. Interest worked out this way is called
+      <span class="term">compound interest</span>.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">after year 1</span>
+          <span>$8{,}000 \times 1.1 = $ <span class="nb">₹$8{,}800$</span></span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">so</span>
-          <span>$d = \dfrac{0.5x}{1.5x} = \dfrac13 = 33.3\%$</span>
+          <span class="work__label work__label--wide">after year 2</span>
+          <span>$8{,}800 \times 1.1 = $ <span class="nb">₹$9{,}680$</span></span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after year 3</span>
+          <span>$9{,}680 \times 1.1 = $ <span class="nb">₹$10{,}648$</span></span>
         </div>
       </div>
 
-      <p>A markup of $50\%$ is undone by a discount of a third, not by a discount of a
-      half. The two percentages describe the same gap and disagree because they are
-      measured against different prices — the markup against what she paid, the discount
-      against what she asked.</p>
+      <p>The same rate, the same principal and the same three years give
+      <span class="nb">₹$248$</span> more. This is called
+      <span class="term">compounding</span>. It happens whenever a percentage is taken
+      of an amount that the percentage has already changed.</p>
 
-      <p>The same reversal catches a comparison. Ariba says: <em>the number of marbles I
-      have is $120\%$ of what Arun has.</em> What can Arun say about his?</p>
+      <p>With letters, both are short. Let $p$ be the principal, $r$ the rate as a
+      decimal (so $10\%$ is ${r = 0.1}$), and $t$ the number of years. The amount at the
+      end is</p>
 
-      <p>Not that he has $80\%$ of hers. Suppose Arun has $100$ marbles, so Ariba has
-      $120$. Then Arun's share of Ariba's is $\tfrac{100}{120} = 83.3\%$. Ariba has
-      $20\%$ more than Arun; Arun has $16.7\%$ fewer than Ariba. Both sentences are true
-      and the numbers in them differ, because <em>more than Arun</em> counts out of
-      Arun's marbles and <em>fewer than Ariba</em> counts out of Ariba's.</p>
+      <div class="eq eq--anchor">$$\text{simple interest} \quad p(1 + rt)
+      \qquad\qquad \text{compound interest} \quad p(1 + r)^{\,t}$$</div>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+      <p>The first adds the same interest $t$ times. The second multiplies by $(1+r)$,
+      $t$ times. The power $t$ does the same work as the repeated multiplication in the
+      year-by-year working. You met powers in Part I, Chapter 2.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 200 74" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Two rows of bars over three years: the upper row grows by equal steps, the lower row by steps that get larger each year">
+      
+            <text class="dg-label dg-label--sm" x="10" y="20">simple interest</text>
+            <path class="dg-fill-a-soft" d="M10 24 H70 V34 H10 Z"/>
+            <path class="dg-fill-a" d="M70 24 H88 V34 H70 Z"/>
+            <path class="dg-fill-a" d="M88 24 H106 V34 H88 Z"/>
+            <path class="dg-fill-a" d="M106 24 H124 V34 H106 Z"/>
+            <path class="dg-line"   d="M10 24 H124 V34 H10 Z"/>
+            <path class="dg-thin"   d="M70 24 V34 M88 24 V34 M106 24 V34"/>
+            <text class="dg-label dg-label--sm" x="130" y="32">₹10,400</text>
+      
+            <text class="dg-label dg-label--sm" x="10" y="52">compound interest</text>
+            <path class="dg-fill-a-soft" d="M10 56 H70 V66 H10 Z"/>
+            <path class="dg-fill-b" d="M70 56 H88 V66 H70 Z"/>
+            <path class="dg-fill-b" d="M88 56 H108 V66 H88 Z"/>
+            <path class="dg-fill-b" d="M108 56 H130 V66 H108 Z"/>
+            <path class="dg-line"   d="M10 56 H130 V66 H10 Z"/>
+            <path class="dg-thin"   d="M70 56 V66 M88 56 V66 M108 56 V66"/>
+            <text class="dg-label dg-label--sm" x="136" y="64">₹10,648</text>
+      
+            <text class="dg-note" x="40" y="73" text-anchor="middle">the principal, unchanged</text>
+            <path class="dg-hidden" d="M70 6 V68"/>
           </svg>
-        </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>A shop raises a price by $20\%$ and later cuts it by $20\%$. A second shop
-            cuts first and raises after, by the same two percentages.</p>
-            <p>Which shop's final price is lower — and can you say why without doing the
-            arithmetic twice?</p>
-          </div>
-        </div>
+          <figcaption><span class="fignum">Fig. 1.5</span> Three years at $10\%$ on
+          <span class="nb">₹$8{,}000$</span>. The steps are equal when the interest is
+          paid out each year. They grow when it is left in, because each year's $10\%$ is
+          taken of a longer bar.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 1.7</div>
-        <ol class="c-questions">
-          <li>A price of <span class="nb">₹$800$</span> is raised by $25\%$ and then cut by $25\%$. What is the
-          final price, and what single percentage change would have taken <span class="nb">₹$800$</span> there in
-          one step?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A shopkeeper marks up by $40\%$ and then offers $40\%$ off. Is this a
-          profit or a loss, and of what percentage?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Radha's height is $110\%$ of Meera's. What percentage of Radha's height is
-          Meera's? Give the answer to one decimal place.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>What discount undoes a markup of $25\%$? Of $100\%$? Write down a rule
-          connecting the markup and the discount that undoes it.</li>
-        </ol>
-      </div>
+      <p>Compounding is not only about money, and not only about growth. A quantity that
+      falls by the same percentage again and again is also compounding, with a
+      multiplier smaller than one. A car, a phone or a machine loses a part of its
+      value every year in this way, and each year it loses a part of a smaller
+      value.</p>
 
     </div>
   </div>

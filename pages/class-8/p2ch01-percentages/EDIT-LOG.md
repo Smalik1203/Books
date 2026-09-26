@@ -1,4 +1,73 @@
-# Class 8 · Mathematics II · Chapter 1 — Out of Every Hundred
+# Class 8 · Mathematics II · Chapter 1 — Fractions in Disguise
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, the exercises, By the Book
+and Beyond the Book further down this log.** Converted by CONVERT-V2.md
+against the Class 6 Chapter 1 model. `chapter.json`: design `maths-v2`,
+palette `prism-marine`, edition `196x276-large`, `keepExerciseSets`, accent
+`#226174`. 40 pages:
+
+* **Body p001–p019**: sections 1.1–1.8 in the old order, p019 the Summary
+  (`data-close`, nine points).
+* **By the Book p090–p096** (`data-board`): 50 questions, 10 · 10 · 10 · 5 ·
+  5 · 10, one numbered run; p096 (`data-close`) holds only Q50.
+* **Beyond the Book p101–p114** (`data-bridge`): the eight tried-and-explained
+  questions with no stage head, then Single correct · More than one correct ·
+  Numerical answer · Matching · Paragraph-based, two examples each and
+  4 · 4 · 3 · 2 · 2 practice; Answers (no numeral) on a fresh page, By the
+  Book key then Beyond key.
+
+### No NCERT expression
+
+Every context in the body was treated as NCERT's and replaced: Surya's paint
+(now Gauri, 3/5), Madhu and Madhav's biscuits (Pooja and Dev's juice), millet
+kanji (a 3 : 11 lemon sherbet), Eesha/Reema/Vishu's marks (Rohan, Anjali,
+Kiran), the badam drink table (two breakfast cereals), tomatoes and the
+cinema (onions, a bus route), the 1961/1991 town (a tree's height),
+Kishanlal's sweaters (Farida's school bags, ₹400/₹640/₹560), Shambhavi,
+Raghu, the shirts' GST bill, the ₹6,000 deposit (₹8,000), the television
+(a motorbike), Surbhi's 50/50 cookware (Harish, 40/40, even at 2/7) and
+Ariba/Arun's marbles (Salma/Vikram, 125%). The introduction's unsourced
+water fact is now "about 70% of the Earth's surface is covered by water".
+Every exercise question is new, and each set ends with
+`<p class="c-practice__note">NCERT, Figure it Out, §1.x</p>`; **no NCERT page
+number could be established**, so the sections cited are this chapter's own
+section numbers.
+
+### Added teaching
+
+Every section now has a key idea and a Think and Reflect (1.1, 1.4, 1.7 and
+1.8 gained key ideas; all but 1.8 gained Think and Reflect). §1.7 now names
+**simple interest** and **compound interest** (the older flag below) and
+credits powers to Part I, Chapter 2; it gained the interest as amount less
+principal and a six-monthly Think and Reflect. §1.8 gained Example 8 (a rise
+and fall undone by dividing by 0.96) and two questions in Exercise Set 1.7.
+Diagram fill `dg-fill-d` (beige, not used in maths-v2) became the soft fills.
+
+### Beyond the Book
+
+The tried-and-explained questions are word for word except: three
+"$x\%$ of $y = z$" spans now read "… is $z$" (check-sums read them as false
+identities); "a markup of 50% needed a discount of a third" now reads "40% …
+two sevenths", because the body example it points to changed; and `&nbsp;`
+binds a last word in three paragraphs. Kept from the old 15 examples: 2, 6
+(single), 8, 9 (multiple), 11, 13 (numerical), 14, 15 (matching), without
+their format tags or "Choose…" lines; Check rows added to several. Examples
+9–10 (shoes in a sale; fish in a lake) and all 15 practice questions are new.
+The old board-form practice became raw material for By the Book (A–R items,
+the school-shop and deposit cases, Q43–47).
+
+### Checks at close
+
+`build.mjs`: all pages fit, every page ≥ 88% except p019 (Summary), p096
+(By the Book's last) and p114 (last). `lone-words` 0; `check-sums` 79
+identities, 0 wrong; `orphans` 0 stranded; `check-labels` no collisions;
+`fit-options` every row fits. `check-numbers.mjs` rewritten for this layout
+(identities with fractions, per cent and rounding; key complete; every
+computable single-correct option recomputed; A–R and objective letters
+spread): 472 checks, 0 failed, and planted errors are caught.
+
 
 ## Solved examples in examination formats, 23 September 2026
 

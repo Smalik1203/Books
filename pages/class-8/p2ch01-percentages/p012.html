@@ -2,87 +2,79 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The same rate, the same principal, the same three years, and <span class="nb">₹$186$</span> more. That
-      difference is called <span class="term">compounding</span>, and it is what happens
-      whenever a percentage is taken of an amount that the percentage itself has already
-      changed.</p>
-
-      <p>Written with letters, the two are short. Let $p$ be the principal, $r$ the rate
-      as a decimal — $10\%$ is ${r = 0.1}$ — and $t$ the number of years.</p>
-
-      <div class="eq eq--anchor">$$\text{without compounding} \quad p(1 + rt)
-      \qquad\qquad \text{with compounding} \quad p(1 + r)^{\,t}$$</div>
-
-      <p>The first adds the same interest $t$ times. The second multiplies by $(1+r)$ $t$
-      times, and the exponent is doing exactly what the repeated multiplication did in
-      the year-by-year working.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 200 74" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Two rows of bars over three years: the upper row grows by equal steps, the lower row by steps that get larger each year">
-      
-            <text class="dg-label dg-label--sm" x="10" y="20">no compounding</text>
-            <path class="dg-fill-d" d="M10 24 H70 V34 H10 Z"/>
-            <path class="dg-fill-a" d="M70 24 H88 V34 H70 Z"/>
-            <path class="dg-fill-a" d="M88 24 H106 V34 H88 Z"/>
-            <path class="dg-fill-a" d="M106 24 H124 V34 H106 Z"/>
-            <path class="dg-line"   d="M10 24 H124 V34 H10 Z"/>
-            <path class="dg-thin"   d="M70 24 V34 M88 24 V34 M106 24 V34"/>
-            <text class="dg-label dg-label--sm" x="130" y="32">₹7,800</text>
-      
-            <text class="dg-label dg-label--sm" x="10" y="52">with compounding</text>
-            <path class="dg-fill-d" d="M10 56 H70 V66 H10 Z"/>
-            <path class="dg-fill-b" d="M70 56 H88 V66 H70 Z"/>
-            <path class="dg-fill-b" d="M88 56 H108 V66 H88 Z"/>
-            <path class="dg-fill-b" d="M108 56 H130 V66 H108 Z"/>
-            <path class="dg-line"   d="M10 56 H130 V66 H10 Z"/>
-            <path class="dg-thin"   d="M70 56 V66 M88 56 V66 M108 56 V66"/>
-            <text class="dg-label dg-label--sm" x="136" y="64">₹7,986</text>
-      
-            <text class="dg-note" x="40" y="73" text-anchor="middle">the principal, unchanged</text>
-            <path class="dg-hidden" d="M70 6 V68"/>
-          </svg>
-          <figcaption><span class="fignum">Fig. 1.5</span> Three years at $10\%$ on
-          <span class="nb">₹$6{,}000$</span>. The steps are equal when the interest is taken away each year and
-          grow when it is left in, because each year's $10\%$ is taken of a longer
-          bar.</figcaption>
-        </figure>
-      </div>
-
-      <p>Compounding is not only about money, and not only about growth. A quantity
-      that falls by the same percentage over and over is compounding downwards, with a
-      multiplier smaller than one.</p>
-
       <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
-          <p>A television bought for <span class="nb">₹$21{,}000$</span> loses $5\%$ of its value every year.
-          What is it worth after one year, and after three?</p>
+          <p>Nikhil buys pencil boxes at <span class="nb">₹$45$</span> each and sells
+          them at a profit of $20\%$. He sells water bottles at
+          <span class="nb">₹$90$</span> each, at a profit of $25\%$. Find the selling
+          price of a pencil box and the cost price of a water bottle.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$21{,}000 \times 0.95 = $ <span class="nb">₹$19{,}950$</span></span>
-              <span class="work__why">after 1 year</span></div>
+              <span>selling price $= 45 \times 1.2 = $ <span class="nb">₹$54$</span></span>
+              <span class="work__why">box: cost known</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$21{,}000 \times 0.95^3 = 18{,}004.875$</span>
-              <span class="work__why">after 3 years</span></div>
+              <span>$1.25 \times \text{cost} = 90$</span>
+              <span class="work__why">bottle: cost unknown</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>cost $= \dfrac{90}{1.25} = $ <span class="nb">₹$72$</span></span>
+              <span class="work__why">divide by the multiplier</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span><span class="nb">₹$19{,}950$</span> after one year; <span class="nb">₹$18{,}005$</span> after three, to the nearest rupee</span></div>
+              <span>A pencil box sells for <span class="nb">₹$54$</span>; a water bottle cost <span class="nb">₹$72$</span></span></div>
           </div>
-          <p>This loss of value with age and use is called
-          <span class="term">depreciation</span>. Note that three years did not take away
-          $15\%$: each year's $5\%$ was of a smaller television than the year
-          before.</p>
+          <p>Taking $25\%$ off <span class="nb">₹$90$</span> gives <span class="nb">₹$67.50$</span>,
+          which is wrong: a profit of <span class="nb">₹$22.50$</span> on
+          <span class="nb">₹$67.50$</span> is a third, not a quarter.</p>
         </div>
       </div>
 
-      <p>So one formula covers both directions, and the sign of the change is carried by
-      the multiplier rather than by a separate rule. Growth at $r$ and decline at $r$ are
-      $(1+r)^t$ and $(1-r)^t$, and a quantity falling by a fixed percentage never reaches
-      zero — it only ever loses a share of what is left. That is why an old television is
-      still worth something, and why the population of a village that keeps losing a
-      tenth of itself takes a very long time to empty.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Leela bought $20$ kg of dal at <span class="nb">₹$90$</span> a kilogram. The
+          dal was getting old, so she sold all of it for <span class="nb">₹$1{,}620$</span>.
+          What was her loss per cent?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$20 \times 90 = $ <span class="nb">₹$1{,}800$</span></span>
+              <span class="work__why">the cost</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$1800 - 1620 = $ <span class="nb">₹$180$</span></span>
+              <span class="work__why">the loss</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\dfrac{180}{1800} \times 100 = 10\%$</span>
+              <span class="work__why">loss on the cost</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>A loss of $10\%$</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>Tax is the third thing that changes a price</strong>, and it pushes the
+      price up. The Goods and Services Tax (GST) is given as a percentage. It is added
+      to the price you would otherwise pay, so it appears on the bill as a separate
+      line. The total is what you pay.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">three kurtas at <span class="nb">₹$800$</span></span>
+          <span><span class="nb">₹$2{,}400.00$</span></span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">GST at $5\%$</span>
+          <span><span class="nb">₹$120.00$</span></span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">to pay</span>
+          <span><span class="nb">₹$2{,}520.00$</span></span>
+        </div>
+      </div>
+
+      <p>This is $2400 \times 1.05$, the multiplier again. A bill prints the rate of tax
+      and the amount it is charged on, and the two should agree with the total. Look at
+      a bill at home and check that they do.</p>
 
     </div>
   </div>
