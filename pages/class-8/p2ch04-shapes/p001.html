@@ -36,72 +36,38 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">4.1</span><span class="name">Introduction</span></h2>
+      <h2><span class="badge">4.1</span><span class="name">Shapes Inside Shapes</span></h2>
 
-      <p>Look closely at a fern. A frond carries small leaves, and each leaf is shaped
-      like the frond; each leaf carries smaller leaflets, and each of those is shaped like
-      the leaf. The same form appears again at every scale, until the plant runs out of
-      room to keep going.</p>
+      <p>Pick up a fallen branch and hold it at arm's length. A thick stem runs up the middle. Thinner branches grow out of the stem, and still thinner twigs grow out of those. From a little way off, the branch looks like a small tree.</p>
 
-      <p>Trees do it — trunk, limb, branch, twig. So do clouds, coastlines, mountain
-      ridges and a fork of lightning. A shape built of smaller copies of itself is called
-      a <span class="term">fractal</span>, and the first half of this chapter is about
-      three of them that can be drawn exactly.</p>
+      <p>The same thing happens in many places. The veins of a peepal leaf split into smaller veins, and those split again. A river collects water from streams, and each stream collects water from smaller streams. In each case a part, looked at closely, has the same form as the whole, only smaller.</p>
 
-      <p>The second half is about solid shapes, and it is the same question turned round.
-      A fern is a shape you cannot draw in full because it never ends; a box is a shape
-      you cannot draw in full because paper is flat. Both are handled the same way — by
-      taking the shape apart into pieces you already understand, and reading it back from
-      them.</p>
-
-      <h2><span class="badge">4.2</span><span class="name">The Sierpiński Carpet</span></h2>
-
-      <p>The Polish mathematician Wacław Sierpiński described this one in 1916. Start
-      with a square. Divide it into nine equal squares and take the middle one away. Now
-      do the same to each of the eight squares that are left, and then to each of the
-      squares left after that, for ever.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Three steps of the Sierpinski carpet: a full square, the same square with its middle ninth removed, and then with the middle of each remaining ninth removed too">
-      
-            <path class="dg-fill-a" d="M5 8 h54 v54 h-54 Z"/>
-            <path class="dg-line"   d="M5 8 h54 v54 h-54 Z"/>
-            <text class="dg-note" x="32" y="73" text-anchor="middle">Step 0</text>
-      
-            <path class="dg-fill-a" fill-rule="evenodd"
-                  d="M71 8 h54 v54 h-54 Z M89 26 h18 v18 h-18 Z"/>
-            <path class="dg-line"   d="M71 8 h54 v54 h-54 Z M89 26 h18 v18 h-18 Z"/>
-            <text class="dg-note" x="98" y="73" text-anchor="middle">Step 1</text>
-      
-            <path class="dg-fill-a" fill-rule="evenodd"
-                  d="M137 8 h54 v54 h-54 Z M155 26 h18 v18 h-18 Z
-                     M143 14 h6 v6 h-6 Z M161 14 h6 v6 h-6 Z M179 14 h6 v6 h-6 Z
-                     M143 32 h6 v6 h-6 Z M179 32 h6 v6 h-6 Z
-                     M143 50 h6 v6 h-6 Z M161 50 h6 v6 h-6 Z M179 50 h6 v6 h-6 Z"/>
-            <path class="dg-line"
-                  d="M137 8 h54 v54 h-54 Z M155 26 h18 v18 h-18 Z
-                     M143 14 h6 v6 h-6 Z M161 14 h6 v6 h-6 Z M179 14 h6 v6 h-6 Z
-                     M143 32 h6 v6 h-6 Z M179 32 h6 v6 h-6 Z
-                     M143 50 h6 v6 h-6 Z M161 50 h6 v6 h-6 Z M179 50 h6 v6 h-6 Z"/>
-            <text class="dg-note" x="164" y="73" text-anchor="middle">Step 2</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 4.1</span> The first three steps. Step 2
-          holds eight copies of Step 1, each a third of the size — which is what
-          self-similarity means when it is written down exactly.</figcaption>
-        </figure>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Fractal</div>
+        <p>A shape that is made of smaller copies of itself is called a <span class="term">fractal</span>. Each part, seen close up, has the same form as the whole shape.</p>
       </div>
 
-      <p>Nobody can draw the carpet itself; every drawing is a step on the way to it. But
-      the steps can be counted, and counting them is where the mathematics is.</p>
+      <p>A fractal drawn by a mathematician goes further than any tree. Its rule is followed for ever. So however closely you look at it, you always find more detail of the same kind, and a small piece, made larger, looks just like the whole.</p>
 
-      <p>Write $R_n$ for the number of squares remaining at step $n$, and $H_n$ for the
-      number of holes. Every remaining square becomes eight remaining squares at the next
-      step, so</p>
+      <p>Fractals are useful as well as beautiful. Some mobile phone aerials are cut in a fractal shape, so that one small piece of metal can pick up signals of many different lengths. Doctors describe the branching of blood vessels in the lungs in the same way.</p>
 
-      <div class="eq eq--anchor">$$R_{n+1} = 8 R_n, \qquad\text{and since } R_0 = 1,
-      \qquad R_n = 8^{\,n}.$$</div>
+      <p>This chapter has two halves. The first half is about three fractals that can be drawn exactly, by following a rule. The second half is about solid shapes, such as boxes and pyramids.</p>
+
+      <p>The two halves use one method. A fractal can never be drawn in full, because it never ends. A box can never be drawn in full on paper, because paper is flat. In both cases we take the shape apart into simple pieces, and then read what we need from the pieces.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Name two things in your home or school whose parts look like the whole.</li>
+            <li>A real branch ends after a few levels of twigs. How is that different from a shape that follows a rule for ever?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

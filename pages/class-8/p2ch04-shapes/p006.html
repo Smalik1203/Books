@@ -2,80 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 180 72" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangular prism beside a square pyramid, drawn in three dimensions with their hidden edges dotted">
-      
-            <path class="dg-face-front" d="M10 58 L46 58 L28 26 Z"/>
-            <path class="dg-face-side"  d="M28 26 L46 58 L76 42 L58 10 Z"/>
-            <path class="dg-face-top"   d="M10 58 L28 26 L58 10 L40 42 Z"/>
-            <path class="dg-line" d="M10 58 L46 58 L28 26 Z M28 26 L58 10 M46 58 L76 42 L58 10"/>
-            <path class="dg-hidden" d="M10 58 L40 42 L58 10 M40 42 L76 42"/>
-            <text class="dg-note" x="43" y="68" text-anchor="middle">triangular prism</text>
-      
-            <path class="dg-face-front" d="M104 56 L140 56 L130 16 Z"/>
-            <path class="dg-face-side"  d="M140 56 L156 46 L130 16 Z"/>
-            <path class="dg-line" d="M104 56 L140 56 L130 16 Z M140 56 L156 46 L130 16"/>
-            <path class="dg-hidden" d="M104 56 L120 46 L156 46 M120 46 L130 16"/>
-            <text class="dg-note" x="130" y="68" text-anchor="middle">square pyramid</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 4.4</span> A prism has two matching
-          polygons for ends; a pyramid has one polygon and a point above it. The dotted
-          lines are the edges hidden behind the solid.</figcaption>
-        </figure>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A long edge round a small patch</div>
+        <p>The perimeter is multiplied by $\tfrac43$ at every step, so it grows without limit. It passes a hundred, then a million, then any number you name. The area does not grow like this. Each new bump is smaller than the last, and the whole snowflake stays inside a circle drawn round the first triangle.</p>
       </div>
 
-      <p>A <span class="term">prism</span> has two congruent polygons as opposite faces
-      and parallelograms all round the sides. A <span class="term">pyramid</span> has one
-      polygon as its base and a point above it, joined to every vertex of the base. Both
-      are named after that polygon: a triangular prism, a hexagonal pyramid. A triangular
-      pyramid has another name too — a tetrahedron, four faces of which any one can be
-      called the base.</p>
+      <p>So the finished snowflake would have an edge of endless length round an area that fits in a circle. You could never walk all the way round its edge, but you could paint its inside with one tin of paint.</p>
 
-      <p>Count the parts of a prism whose ends are $n$-sided and a pattern appears at
-      once. There are two end faces and $n$ side faces. The $n$ vertices of each end
-      make $2n$ in all. And the edges are the $n$ round each end plus the $n$ joining
-      them.</p>
+      <p>A coastline behaves a little like this. A ruler $100$ km long steps straight across the small bays of the coast of India. A ruler $10$ km long goes into many of them, and gives a longer total. The length depends on the ruler.</p>
 
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">$n$-sided prism</span>
-          <span>$n + 2$ faces, &nbsp; $3n$ edges, &nbsp; $2n$ vertices</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">$n$-sided pyramid</span>
-          <span>$n + 1$ faces, &nbsp; $2n$ edges, &nbsp; $n + 1$ vertices</span>
-        </div>
-      </div>
-
-      <p>A ten-sided prism therefore has $12$ faces, $30$ edges and $20$ vertices without
-      anyone having to draw it. Try adding the faces and vertices in each row and taking
-      the edges away: $12 + 20 - 30 = 2$, and $11 + 11 - 20 = 2$ as well. That is not a
-      coincidence, and it holds for every solid of this kind.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>A prism has $21$ edges. What are its ends, and how many faces and vertices
-          has it?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$3n = 21$, so $n = 7$</span>
-              <span class="work__why">a prism has $3n$ edges</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$9$ faces</span>
-              <span class="work__why">7 sides and 2 ends</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$14$ vertices</span>
-              <span class="work__why">7 at each end</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Seven-sided ends, 9 faces and 14 vertices</span></div>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Each step makes four sides out of one, and each new side is a third as long. What would happen to the perimeter if each new side were a quarter as long instead?</li>
+            <li>Look at Fig. 4.3. Does Step 2 still fit inside a circle drawn round Step 0? What does that tell you about the area?</li>
+          </ol>
           </div>
-          <p>And $9 + 14 - 21 = 2$, as it must be. A count that fails that test is a
-          count with a mistake in it.</p>
         </div>
+      </div>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 4.1</div>
+        <ol class="c-questions">
+          <li>On squared paper, draw steps $0$, $1$ and $2$ of the Sierpiński carpet from a square $9$ units wide, and of the Sierpiński triangle.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>For the Sierpiński carpet, find $R_4$ and $H_4$. How many holes are there at step $5$?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>At which step does the Sierpiński triangle first have more than $500$ triangles? How many holes does it have at that step?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>Taking the first area as $1$, find the area left at step $2$ of the carpet and of the triangle. Which is smaller, and why?</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>A Koch snowflake starts from a triangle of side $81$ cm. Find the number of its sides and its perimeter at step $4$.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>At which step is the perimeter of the Koch snowflake first more than $5$ times its starting perimeter?</li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §4.2–4.4</p>
       </div>
 
     </div>

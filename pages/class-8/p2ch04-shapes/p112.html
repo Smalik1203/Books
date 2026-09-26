@@ -2,18 +2,68 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <div class="c-practice__sub">Case-based questions</div>
-        <ol class="c-questions" data-start="30">
-          <li><div class="c-case"><p>An art class cuts a Sierpiński carpet from a square of card of side $81$ cm. The table shows the first steps.</p><table><thead><tr><th>Step</th><th>Squares left</th><th>Side of each</th></tr></thead><tbody><tr><td>0</td><td>1</td><td>81 cm</td></tr><tr><td>1</td><td>8</td><td>27 cm</td></tr><tr><td>2</td><td>64</td><td>9 cm</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>Write the row for step $3$.</li><li>How much card is left at step $2$?</li><li>What fraction of the card has been cut away by step $2$?</li></ol></li>
-        </ol>
-      </div>
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">19</span>
+                            <span>The front view is one cube high, so every square of the top view has one cube: $4$ cubes. Side view: $2$ squares side by side</span></div>
+                          <div class="work__row"><span class="work__label">20</span>
+                            <span>No. The holes are $0$, $1$, $9$, $73$, $585$, &hellip;, and $100$ lies between $73$ and $585$</span></div>
+                        </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="31">
-          <li><div class="c-case"><p>A shop sells three closed boxes. An ant walks over the surface of each, from one corner to the opposite corner.</p><table><thead><tr><th>Box</th><th>Length</th><th>Width</th><th>Height</th></tr></thead><tbody><tr><td>P</td><td>8 cm</td><td>3 cm</td><td>3 cm</td></tr><tr><td>Q</td><td>15 cm</td><td>4 cm</td><td>4 cm</td></tr><tr><td>R</td><td>24 cm</td><td>4 cm</td><td>3 cm</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>Find the ant's shortest route on each box.</li><li>On Box R, how much shorter is that route than walking along three edges?</li><li>How much card covers Box R?</li></ol></li>
-        </ol>
-      </div>
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">21</span>
+                            <span>$16$ against $7 + 5$: $\sqrt{256 + 144} = 20$ cm. $7$ against $21$: $\sqrt{490} \approx 22.1$ cm. $5$ against $23$: $\sqrt{554} \approx 23.5$ cm. Shortest $20$ cm; along three edges $28$ cm, so $8$ cm shorter</span></div>
+                          <div class="work__row"><span class="work__label">22</span>
+                            <span>$8H_4 = 8 + 64 + 512 + 4096$ and $H_4 = 1 + 8 + 64 + 512$; all but $4096$ and $1$ cancel, so $7H_4 = 4095$ and $H_4 = 585$. Then $H_6 = \tfrac{262144 - 1}{7} = 37449$</span></div>
+                        </div>
+
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">23</span>
+                            <span>$3n = 36$, so $n = 12$ and the prism uses $24$ balls. The pyramid's base has $14$ sides: $28$ straws and $15$ balls. Balls in all: $39$. Checks: $14 + 24 - 36 = 2$ and $15 + 15 - 28 = 2$ both hold</span></div>
+                          <div class="work__row"><span class="work__label">24</span>
+                            <span>Step 1: $12 \times 27 = 324$ cm. Step 2: $48 \times 9 = 432$ cm. Step 3: $192 \times 3 = 576$ cm, costing $5.76 \times 10 =$ &#8377;$57.60$. Step 4 needs $768$ cm and step 5 needs $1024$ cm, so step $5$</span></div>
+                        </div>
+
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">25</span>
+                            <span>Step 2: $16$ cm and $\tfrac{9}{16}$. Step 3: $27$ triangles and $\tfrac{27}{64}$. The side is $1$ cm at step $6$ and $\tfrac12$ cm at step $7$, so step $7$, with $3^7 = 2187$ triangles</span></div>
+                          <div class="work__row"><span class="work__label">26</span>
+                            <span>$2 \times (240 + 100 + 60) = 800$ cm². With $10\%$ extra, $880$ cm². For $50$ boxes, $44000$ cm² $= 4.4$ m²</span></div>
+                        </div>
+
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">27</span>
+                            <span>$4 + 3 + 2 + 1 = 10$ cubes. Front: a staircase of $10$ squares. Top: a row of $4$. Side: a column of $4$. Two deep: $20$ cubes; the front view does not change, and the top and side views become $8$ squares each</span></div>
+                          <div class="work__row"><span class="work__label">28</span>
+                            <span>$6 \times 3 = 18$ face edges, each counted twice: $9$ edges. Vertices $= 2 - 6 + 9 = 5$. Two triangular pyramids joined along their bases</span></div>
+                        </div>
+
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">29</span>
+                            <span>Holes: one of $60 \times 60 = 3600$ and eight of $20 \times 20 = 400$, total $6800$ cm². Check: $32400 \times \tfrac{17}{81} = 6800$. Cost $68 \times 2 =$ &#8377;$136$</span></div>
+                          <div class="work__row"><span class="work__label">30</span>
+                            <span>$8$ corner cubes (vertices), $12$ edge cubes (edges), $6$ face cubes (faces), $1$ hidden: $8 + 12 + 6 + 1 = 27$. For $4 \times 4 \times 4$: $8$, $12 \times 2 = 24$, $6 \times 4 = 24$ and $2^3 = 8$, which add to $64$</span></div>
+                        </div>
+
+      <ol class="c-answers">
+                          <li>
+                            <span class="c-answers__stage">31&ndash;35</span>
+                            <span class="c-answers__list"><span class="n">31</span> (a) &nbsp; <span class="n">32</span> (d) &nbsp; <span class="n">33</span> (b) &nbsp; <span class="n">34</span> (c) &nbsp; <span class="n">35</span> (a)</span>
+                          </li>
+                        </ol>
+
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">36</span>
+                            <span>(i) $3$, $512$, $2$ cm (ii) $9$ (iii) $64 \times 36 = 2304$ cm²; white $1 - \tfrac{64}{81} = \tfrac{17}{81}$</span></div>
+                          <div class="work__row"><span class="work__label">37</span>
+                            <span>(i) $\sqrt{64 + 36} = 10$ cm (ii) $\sqrt{576 + 49} = 25$ cm (iii) $\sqrt{225 + 64} = 17$ cm; $23 - 17 = 6$ cm shorter</span></div>
+                        </div>
+
+      <div class="work work--trace">
+                          <div class="work__row"><span class="work__label">38</span>
+                            <span>(i) $15$ straws, $10$ beads (ii) $2 - 5 + 8 = 5$ faces (iii) A prism, yes: $3n = 27$ gives $9$-sided ends and $18$ beads. A pyramid, no: $2n$ is always even</span></div>
+                          <div class="work__row"><span class="work__label">39</span>
+                            <span>(i) $12 \times 18 = 216$ cm (ii) $3$, $192$, $2$ cm (iii) $192 \times 2 = 384$ cm; $3.84 \times 25 =$ &#8377;$96$</span></div>
+                        </div>
 
     </div>
   </div>

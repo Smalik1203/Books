@@ -2,75 +2,64 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="eq">$$S_n = 3 \times 4^{\,n}, \qquad
-      \text{perimeter} = 3 \times 4^{\,n} \times \frac{1}{3^{\,n}}
-      = 3 \left(\frac43\right)^{\! n}.$$</div>
+      <h2><span class="badge">4.3</span><span class="name">The Sierpiński Triangle</span></h2>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 2</div>
-        <div class="c-example__body">
-          <p>A Koch snowflake is begun from a triangle of side $9$ cm. How many sides has
-          it at step $2$, and what is its perimeter?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$3 \times 4^2 = 48$ sides</span>
-              <span class="work__why">each side becomes four</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$9 \div 3 \div 3 = 1$ cm</span>
-              <span class="work__why">a third, twice</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$48 \times 1 = 48$ cm</span>
-              <span class="work__why">sides times length</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>48 sides, and a perimeter of 48 cm</span></div>
-          </div>
-          <p>It started at $27$ cm, so the perimeter is nearly twice what it was after
-          only two steps — and $27 \times \left(\tfrac43\right)^2 = 48$, as the formula
-          says.</p>
-        </div>
+      <p>The same idea works with a triangle. Take an equilateral triangle. Mark the midpoint of each side, join the three midpoints, and remove the middle triangle that this makes. Three triangles are left, each with sides half as long as the first. Do the same to each of them, and go on for ever.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 198 76" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three steps of the Sierpinski triangle: a full triangle, the same with its middle quarter removed, and then with the middle of each remaining quarter removed too">
+      
+            <path class="dg-fill-a" d="M5 56 L61 56 L33 8 Z"/>
+            <path class="dg-line"   d="M5 56 L61 56 L33 8 Z"/>
+            <text class="dg-note" x="33" y="71" text-anchor="middle">Step 0</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M71 56 L127 56 L99 8 Z M99 56 L113 32 L85 32 Z"/>
+            <path class="dg-line"   d="M71 56 L127 56 L99 8 Z M99 56 L113 32 L85 32 Z"/>
+            <text class="dg-note" x="99" y="71" text-anchor="middle">Step 1</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M137 56 L193 56 L165 8 Z M165 56 L179 32 L151 32 Z
+                     M151 56 L158 44 L144 44 Z M179 56 L186 44 L172 44 Z
+                     M165 32 L172 20 L158 20 Z"/>
+            <path class="dg-line"
+                  d="M137 56 L193 56 L165 8 Z M165 56 L179 32 L151 32 Z
+                     M151 56 L158 44 L144 44 Z M179 56 L186 44 L172 44 Z
+                     M165 32 L172 20 L158 20 Z"/>
+            <text class="dg-note" x="165" y="71" text-anchor="middle">Step 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.2</span> Three steps of the Sierpiński triangle. Each step keeps three copies of the step before, with sides half as long.</figcaption>
+        </figure>
       </div>
 
-      <p>Now look at what those two formulas say together, because it is one of the
-      strangest facts in school mathematics.</p>
+      <p>Why do the midpoints cut the triangle into four matching triangles? Look at a corner piece. Two of its sides are halves of the sides of the big triangle, and the angle between them is the big triangle's angle. So the three corner pieces are copies of one another. The middle piece has the three joining lines as its sides, and each of these is also half a side of the big triangle. So it matches the other three.</p>
+
+      <p>We count as we did for the carpet, with three where the carpet had eight. At step $n$ there are $3^{\,n}$ triangles left. One of every four matching triangles is removed at each step, so three quarters of the area is kept.</p>
+
+      <div class="eq">$$\text{area at step } n \;=\; \left(\frac34\right)^{\! n}.$$</div>
 
       <div class="c-keyidea">
-        <div class="c-keyidea__title">An endless edge round a small patch</div>
-        <p>The perimeter is multiplied by $\tfrac43$ at every step, so it grows without
-        limit — past a hundred, past a million, past any number you name. The area does
-        not: every bump added is smaller than the last, and the whole snowflake fits
-        comfortably inside a circle drawn round the first triangle.</p>
-        <p>So the Koch snowflake has a boundary of infinite length enclosing a finite
-        area. You could never walk its edge; you could paint its inside with one tin.</p>
+        <div class="c-keyidea__title">Counting the triangle</div>
+        <ul class="c-keyidea__points">
+          <li>At step $n$ there are $3^{\,n}$ triangles, with sides $\tfrac{1}{2^{\,n}}$ as long as the first.</li>
+          <li>The area left at step $n$ is $\left(\tfrac34\right)^{n}$ of the first triangle.</li>
+        </ul>
       </div>
 
-      <p>Coastlines behave a little like this, which is why the length of a country's
-      coast depends on the length of the ruler used to measure it. Measure Britain's
-      coast in hundred-kilometre steps and you get one figure. Measure it in
-      ten-kilometre steps, going into every bay the first ruler stepped over, and you get
-      a much larger one. The coast has not changed. The question was not as clear as
-      it looked.</p>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.1</div>
-        <ol class="c-questions">
-          <li>Draw the first three steps of the Sierpiński carpet on squared paper, and
-          the first three steps of the Sierpiński triangle.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>For the Sierpiński carpet, find $R_4$ and $H_4$. How many holes are there
-          at step $5$?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>How many triangles remain at step $4$ of the Sierpiński triangle, and how
-          many holes have been made in all by then?</li>
-        </ol>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>The first triangle has sides of $32$ cm. How long is each side of a triangle at step $3$?</li>
+            <li>How many holes does the Sierpiński triangle have at step $3$? Use the rule for the carpet's holes as a guide.</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
     </div>

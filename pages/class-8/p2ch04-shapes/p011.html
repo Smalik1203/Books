@@ -1,22 +1,51 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>On isometric paper, draw a $3 \times 1 \times 1$ block, first lying along
-          the length axis and then along the depth axis.</li>
-        </ol>
+      <p>Why does the first route win? Look at the two shorter sides each time: $9$ and $8$, then $12$ and $5$, then $14$ and $3$. Every pair adds up to $17$, because every unfolding lays out the same three measurements. Only the way they are shared between the two sides changes. When two numbers have a fixed total, the sum of their squares is smallest when the numbers are closest to each other.</p>
+
+      <p>So the shortest route comes from the most even pair. We get it by putting the longest measurement against the other two added together. This means we can usually name the winner before doing any arithmetic.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Straight on the net, shortest on the box</div>
+        <p>A net makes the surface flat, and on a flat surface a straight line is shortest. So the shortest route is a straight line on one of the nets. An endless search among paths becomes a short list of three to compare.</p>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Two solids have exactly the same front view and the same top view. Must
-          they be the same solid? Draw two that are not.</li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>A closed box is $6$ cm long, $4$ cm wide and $2$ cm high. An ant walks on its surface from one corner to the opposite corner. Which unfolding gives the shortest route, and how long is it?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\sqrt{36 + 36} = \sqrt{72} \approx 8.5$ cm</span>
+              <span class="work__why">sides $6$ and $4 + 2$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\sqrt{64 + 16} = \sqrt{80} \approx 8.9$ cm</span>
+              <span class="work__why">sides $6 + 2$ and $4$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\sqrt{100 + 4} = \sqrt{104} \approx 10.2$ cm</span>
+              <span class="work__why">sides $6 + 4$ and $2$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The first unfolding, about 8.5 cm</span></div>
+          </div>
+          <p>The rule named it in advance. Here the two sides always add up to $12$, and $6$ and $6$ is the most even way to share $12$.</p>
+        </div>
       </div>
 
-      
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Walking along three edges of the beetle's box takes $9 + 5 + 3 = 17$ cm. Why is a route that cuts across the faces always shorter?</li>
+            <li>A fly can go straight through the air inside the box. Is its route shorter or longer than the beetle's? Why?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

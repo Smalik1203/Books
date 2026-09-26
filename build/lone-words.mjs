@@ -7,9 +7,13 @@ import path from 'node:path';
 const arg = process.argv[2];
 if (!arg) { console.error('usage: node build/lone-words.mjs <class>/<chapter>'); process.exit(1); }
 const src = path.resolve('build', arg + '.html').split(path.sep).join('/');
-const chrome = ['C:/Program Files/Google/Chrome/Application/chrome.exe',
+const chrome = [process.env.CHROME, process.env.CHROME_PATH,
+  'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(existsSync);
+  'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
+  '/usr/bin/chromium', '/usr/bin/google-chrome'].find(c => c && existsSync(c));
+// Chrome will not start its sandbox as root, as in a CI container.
+const SANDBOX = process.getuid?.() === 0 ? ['--no-sandbox'] : [];
 const probe = `<script>addEventListener('load',()=>setTimeout(()=>{
   const out=[];
   const sel='.page__main p, .page__main li, .page__main figcaption, .page__main .work__row > span:not(.work__label)';
@@ -45,7 +49,7 @@ const probe = `<script>addEventListener('load',()=>setTimeout(()=>{
 },800));</script>`;
 const tmp = src.replace(/\.html$/, '-lone.html');
 writeFileSync(tmp, readFileSync(src, 'utf8').replace('</head>', probe + '</head>'));
-const dom = execFileSync(chrome, ['--headless=new', '--disable-gpu', '--window-size=900,1200',
+const dom = execFileSync(chrome, ['--headless=new', ...SANDBOX, '--disable-gpu', '--window-size=900,1200',
   '--virtual-time-budget=9000', '--dump-dom', 'file:///' + tmp.replace(/\\/g, '/')], { maxBuffer: 1 << 27 }).toString();
 rmSync(tmp);
 const t = dom.match(/<title>([^<]*)<\/title>/);

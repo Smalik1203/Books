@@ -2,9 +2,48 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Holes are easier to miscount. Every remaining square makes exactly one new hole
-      at the next step, and every hole already there stays. So $H_{n+1} = H_n + R_n$, and
-      the holes pile up as a sum rather than a single power.</p>
+      <h2><span class="badge">4.2</span><span class="name">The Sierpiński Carpet</span></h2>
+
+      <p>The Polish mathematician Wacław Sierpiński described this shape in 1916. Start with a square. Cut it into nine equal squares, like a noughts-and-crosses grid, and remove the middle one. Then do the same to each of the eight squares that are left. Then do it again to every square left after that, and go on for ever.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 196 78" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Three steps of the Sierpinski carpet: a full square, the same square with its middle ninth removed, and then with the middle of each remaining ninth removed too">
+      
+            <path class="dg-fill-a" d="M5 8 h54 v54 h-54 Z"/>
+            <path class="dg-line"   d="M5 8 h54 v54 h-54 Z"/>
+            <text class="dg-note" x="32" y="73" text-anchor="middle">Step 0</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M71 8 h54 v54 h-54 Z M89 26 h18 v18 h-18 Z"/>
+            <path class="dg-line"   d="M71 8 h54 v54 h-54 Z M89 26 h18 v18 h-18 Z"/>
+            <text class="dg-note" x="98" y="73" text-anchor="middle">Step 1</text>
+      
+            <path class="dg-fill-a" fill-rule="evenodd"
+                  d="M137 8 h54 v54 h-54 Z M155 26 h18 v18 h-18 Z
+                     M143 14 h6 v6 h-6 Z M161 14 h6 v6 h-6 Z M179 14 h6 v6 h-6 Z
+                     M143 32 h6 v6 h-6 Z M179 32 h6 v6 h-6 Z
+                     M143 50 h6 v6 h-6 Z M161 50 h6 v6 h-6 Z M179 50 h6 v6 h-6 Z"/>
+            <path class="dg-line"
+                  d="M137 8 h54 v54 h-54 Z M155 26 h18 v18 h-18 Z
+                     M143 14 h6 v6 h-6 Z M161 14 h6 v6 h-6 Z M179 14 h6 v6 h-6 Z
+                     M143 32 h6 v6 h-6 Z M179 32 h6 v6 h-6 Z
+                     M143 50 h6 v6 h-6 Z M161 50 h6 v6 h-6 Z M179 50 h6 v6 h-6 Z"/>
+            <text class="dg-note" x="164" y="73" text-anchor="middle">Step 2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 4.1</span> The first three steps. Step 2 is made of eight copies of Step 1, each one third as wide.</figcaption>
+        </figure>
+      </div>
+
+      <p>No drawing can show the finished carpet. Every drawing shows one step on the way to it. But we can count what each step contains, and that is where the mathematics is.</p>
+
+      <p>Let $R_n$ be the number of squares left at step $n$, and let $H_n$ be the number of holes. Each square that is left becomes eight squares at the next step. So</p>
+
+      <div class="eq eq--anchor">$$R_{n+1} = 8 R_n, \qquad\text{and since } R_0 = 1,
+      \qquad R_n = 8^{\,n}.$$</div>
+
+      <p>Holes need more care. At each step, every square that is left gets one new hole in its middle, and the old holes stay. So $H_{n+1} = H_n + R_n$. The holes add up as a sum, and not as a single power of $8$.</p>
 
       <div class="work work--list">
         <div class="work__row">
@@ -25,44 +64,9 @@
         </div>
       </div>
 
-      <p>The more interesting quantity is how much paper is left. Take the first square's
-      area to be $1$. At each step the square is cut into nine and one ninth is thrown
-      away, so eight ninths of the area survives — and that happens at every step, to
-      whatever is left.</p>
+      <p>Now look at the area. Take the area of the first square to be $1$. At each step, every square loses one ninth of its area, so eight ninths is left. At the next step, eight ninths of <em>that</em> is left, and so on.</p>
 
       <div class="eq">$$\text{area at step } n \;=\; \left(\frac89\right)^{\! n}.$$</div>
-
-      <p>That is Chapter 1's compounding, downwards: a fixed fraction of what remains
-      goes at every step. And it means the carpet has an area of nothing at all. Eight
-      ninths of eight ninths of eight ninths, taken for ever, shrinks below any figure
-      you care to name. At step $60$ it is under a thousandth, and at step $120$ under a
-      millionth. Yet the eight-copies rule keeps the pattern visible however far you
-      look in.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>A Sierpiński carpet is begun from a square of side $27$ cm. At step $3$, how
-          big is each remaining square, how many are there, and what area is left?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>side: $27 \to 9 \to 3 \to 1$ cm</span>
-              <span class="work__why">a third each step</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$R_3 = 8^3 = 512$</span>
-              <span class="work__why">eight for each square</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$512 \times 1 = 512$ cm<sup>2</sup></span>
-              <span class="work__why">each square is 1 cm²</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>512 squares, each of side 1 cm, leaving 512 cm²</span></div>
-          </div>
-          <p>The formula agrees: $729 \times \left(\tfrac89\right)^3 = 729 \times
-          \tfrac{512}{729} = 512$. Counting the little squares and taking eight ninths
-          three times are the same calculation written two ways.</p>
-        </div>
-      </div>
 
     </div>
   </div>

@@ -1,4 +1,70 @@
-# Class 8 · Mathematics II · Chapter 4 — Taking a Shape Apart
+# Class 8 · Mathematics II · Chapter 4 — Exploring Some Geometric Themes
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, Beyond the Book and the
+key further down this log.** Converted with CONVERT-V2.md against Class 6
+Chapter 1. `chapter.json`: design `maths-v2`, palette `prism-violet`,
+accent `#5c4f7a`, edition `196x276-large`, `keepExerciseSets`. 35 pages:
+
+* **Body p001–p015**: fourteen pages of NCERT's topics in NCERT's order
+  (fractals: carpet, triangle, Koch snowflake, fractals people built;
+  solids: faces/edges/vertices, prisms and pyramids, F + V − E = 2, nets,
+  the shortest route over a box, three views, isometric drawing), then a
+  **Summary** page (p015, `data-close`). Every section now has a key idea
+  and a Think and Reflect. Section 4.1 is renamed *Shapes Inside Shapes*.
+* **No NCERT expression.** All prose rewritten in plain English with our own
+  contexts: the fern opener became a fallen branch, peepal veins and river
+  streams; the ant-and-laddu box (12 × 4 × 3) became a beetle and a grain of
+  sugar on a 9 × 5 × 3 box, with Fig. 4.6 redrawn to match; the named-temple
+  list (Khajuraho, Madurai, Hampi …), Fulani blankets and Escher's print
+  were replaced by unnamed temple towers, rangoli/kolam and printed
+  textiles; the coastline example uses India with no figures. Body examples
+  have new numbers (Example 1 carpet from 45 cm; Example 2 Koch from 18 cm;
+  Example 3 a pyramid with 14 edges; Example 4 a 6 × 4 × 2 box). Every
+  exercise question is new, and each set ends with its NCERT line
+  (`c-practice__note`): §4.2–4.4, §4.6–4.8, §4.9–4.10. **These cite our own
+  section numbers: NCERT's page numbers and section numbers for Part II
+  Chapter 4 could not be established from anything in the repo.**
+  Exercise Set 4.3 went from six questions to five so the set fits whole.
+  The body `c-tip` on isometric flipping is folded into the prose.
+* **By the Book p090–p096**, seven pages, 50 questions to BY-THE-BOOK.md at
+  Class 8 level: algebraic *Show that* (Q11, Q12, Q22), find-the-mistake
+  (Q13, Arjun's area), a named-person word problem modelled with a letter
+  (Q23), *In the given figure* (Q21, and the top-view grid of case Q40),
+  case passages with tables and two small figures, one multi-statement MCQ
+  (Q49), one named student's claim (Q50), reverse questions throughout.
+  Assertion–reason letters a, d, b, c, a; objective letters spread
+  a2 b3 c3 d2. The old Stage 3 board-form practice was raw material only.
+* **Beyond the Book p101–p113**: the eight tried-and-explained questions of
+  the old Stage 1, with no stage head, word for word except two notation
+  changes forced by the checks — *the cuboid's total surface area* became
+  *its total surface area* (a lone word at the larger size) and
+  $2(6 + 12 + 8)$ became $2 \times (6 + 12 + 8)$ (`check-sums` cannot read
+  implied multiplication and crashes on it). Then the five formats, each two
+  examples then practice (4 · 4 · 3 · 2 · 2). Examples kept from the old
+  fifteen: old 2 and 6 (single), 7 and 10 (more than one), 11 and 13
+  (numerical), 14 and 15 (matching), renumbered 1–8, their format tags and
+  instruction lines removed; Example 8 gained a Check row, and Examples 3,
+  4, 5, 6, 7 had a clause reworded to clear lone words. Examples 9 and 10
+  (paragraph-based: a felt Sierpiński triangle; a ladybird on a gift box)
+  and all fifteen practice questions are new. Answers open p111, By the
+  Book then Beyond, as the model.
+* `ANSWERS.md` rewritten: body sets and every Think and Reflect, By the Book
+  1–50, Beyond. `check-numbers.mjs` rewritten for this layout (the old one
+  checked the 17-example Stage 2 and the 31-question practice): identities
+  on every page and in ANSWERS.md, every count recomputed (fractal steps,
+  prism/pyramid counts, box unfoldings, views of cube stacks, painted
+  cubes), the key complete, every By the Book objective and assertion–reason
+  answer and Beyond single-correct answer recomputed and matched to the
+  keyed option. 292 checks, none failing; a planted wrong letter is caught.
+
+Checks at close: build *all pages fit*; every page ≥ 88% except the Summary
+(79%) and the last page (35%); `lone-words` 0 (run with the Linux Chrome —
+the tool only looks for Windows paths); `check-sums` 0 wrong;
+`orphans` 0; `check-labels` no collisions; `fit-options` every row fits
+(three option lists narrowed to one column with `--fix`).
+
 
 ## Solved examples in examination formats, 23 September 2026
 
