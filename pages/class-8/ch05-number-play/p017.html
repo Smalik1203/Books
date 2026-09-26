@@ -3,83 +3,50 @@
     <div class="page__main">
 
       <div class="c-practice">
-              <div class="c-practice__head">Exercise Set 5.3</div>
-              <ol class="c-questions">
-                <li>The digital root of an $8$-digit number is $5$. What is the digital
-                root of the number that is $10$ more than it?</li>
-              </ol>
-            </div>
+        <div class="c-practice__head">Exercise Set 5.3</div>
+        <ol class="c-questions">
+          <li>A number has digital root $7$. Find the digital root of the number that is $5$ more than it, and of the number that is $15$ more than it.</li>
+        </ol>
+      </div>
 
       <div class="c-practice c-practice--cont">
-              <ol class="c-questions" data-start="2">
-                <li>Write any number. Make a sequence of numbers by adding $11$ again
-                and again. What are the digital roots of the numbers in this sequence?
-                Share what you observe.</li>
-              </ol>
-            </div>
+        <ol class="c-questions" data-start="2">
+          <li>Start at $4$ and keep adding $12$: $4, 16, 28, 40, \ldots$ Write the digital roots of the first eight numbers. What pattern do you see, and why?</li>
+        </ol>
+      </div>
 
       <div class="c-practice c-practice--cont">
-              <ol class="c-questions" data-start="3">
-                <li>What is the digital root of the number $9a + 36b + 13$, where $a$ and
-                $b$ are whole numbers?</li>
-              </ol>
-            </div>
+        <ol class="c-questions" data-start="3">
+          <li>Find the digital root of $18a + 27b + 23$, where $a$ and $b$ are whole numbers.</li>
+        </ol>
+      </div>
 
       <div class="c-practice c-practice--cont">
-              <ol class="c-questions" data-start="4">
-                <li>Make conjectures by looking for patterns or relations between
-                  <ol class="c-parts c-parts--1">
-                    <li>the parity of a number and its digital root;</li>
-                    <li>the digital root of a number and the remainder it leaves when
-                    divided by $3$ or by $9$.</li>
-                  </ol>
-                </li>
+        <ol class="c-questions" data-start="4">
+          <li>Look for patterns, and make a conjecture about
+              <ol class="c-parts c-parts--1">
+                <li>whether an even number must have an even digital root;</li>
+                <li>how the digital root of a number is linked to its remainder on division by $3$.</li>
               </ol>
-            </div>
+            </li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §5.2 (digital roots), Q1–4</p>
+      </div>
 
-      <h2><span class="badge">5.3</span><span class="name">Digits in Disguise</span></h2>
+      <h2><span class="badge">5.3</span><span class="name">Puzzles With Hidden Digits</span></h2>
 
-      <p>Last year we met <span class="term">cryptarithms</span>: puzzles in
-            which each letter stands for a digit, each digit is shown by at most one
-            letter, and the first digit of a number is never $0$.</p>
+      <p>In a <span class="term">cryptarithm</span>, letters hide the digits of a calculation. The same letter always stands for the same digit, different letters stand for different digits, and no number begins with $0$. The task is to find every digit, and to be sure that no other answer works. Solve the four sums in Fig. 5.13.</p>
 
-      <p>Solve the cryptarithms in Fig. 5.14.</p>
+      <p>Start each one with the units column. In (i), the units digits give $3 + \text{A} = 7$, so A is $4$. Then check the tens column: $4 + 3 = 7$, as it should be. In (iii), the units digits give $3 \times \text{L}$, which must end in L. Only two digits do that. Which are they?</p>
 
       <div class="c-figure c-figure--xl">
-              <figure>
-                <svg viewBox="0 0 355 112" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four addition cryptarithms: (i) A1 + 1B = B0; (ii) AB + 37 = 6A; (iii) ON + ON + ON = PO; (iv) QR + QR + QR = PRR"><text class="dg-note" x="62" y="38" text-anchor="end">A1</text><text class="dg-note" x="62" y="56" text-anchor="end">+ 1B</text><g class="dg-line"><path d="M14 63 H64"/></g><text class="dg-note" x="62" y="81" text-anchor="end">B0</text><text class="dg-note" x="40" y="106" text-anchor="middle">(i)</text><text class="dg-note" x="150" y="38" text-anchor="end">AB</text><text class="dg-note" x="150" y="56" text-anchor="end">+ 37</text><g class="dg-line"><path d="M102 63 H152"/></g><text class="dg-note" x="150" y="81" text-anchor="end">6A</text><text class="dg-note" x="128" y="106" text-anchor="middle">(ii)</text><text class="dg-note" x="238" y="20" text-anchor="end">ON</text><text class="dg-note" x="238" y="38" text-anchor="end">ON</text><text class="dg-note" x="238" y="56" text-anchor="end">+ ON</text><g class="dg-line"><path d="M190 63 H240"/></g><text class="dg-note" x="238" y="81" text-anchor="end">PO</text><text class="dg-note" x="216" y="106" text-anchor="middle">(iii)</text><text class="dg-note" x="326" y="20" text-anchor="end">QR</text><text class="dg-note" x="326" y="38" text-anchor="end">QR</text><text class="dg-note" x="326" y="56" text-anchor="end">+ QR</text><g class="dg-line"><path d="M278 63 H328"/></g><text class="dg-note" x="326" y="81" text-anchor="end">PRR</text><text class="dg-note" x="304" y="106" text-anchor="middle">(iv)</text></svg>
-                <figcaption><span class="fignum">Fig. 5.14</span> Four sums in
-                disguise. The same letter is the same digit throughout one
-                sum.</figcaption>
-              </figure>
-            </div>
+        <figure>
+          <svg viewBox="0 0 355 112" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four addition cryptarithms: (i) A3 + 3A = 77; (ii) PQ + 5P = Q2; (iii) KL + KL + KL = MKL; (iv) AB + B = BA"><text class="dg-note" x="62" y="38" text-anchor="end">A3</text><text class="dg-note" x="62" y="56" text-anchor="end">+ 3A</text><g class="dg-line"><path d="M14 63 H64"/></g><text class="dg-note" x="62" y="81" text-anchor="end">77</text><text class="dg-note" x="40" y="106" text-anchor="middle">(i)</text><text class="dg-note" x="150" y="38" text-anchor="end">PQ</text><text class="dg-note" x="150" y="56" text-anchor="end">+ 5P</text><g class="dg-line"><path d="M102 63 H152"/></g><text class="dg-note" x="150" y="81" text-anchor="end">Q2</text><text class="dg-note" x="128" y="106" text-anchor="middle">(ii)</text><text class="dg-note" x="238" y="20" text-anchor="end">KL</text><text class="dg-note" x="238" y="38" text-anchor="end">KL</text><text class="dg-note" x="238" y="56" text-anchor="end">+ KL</text><g class="dg-line"><path d="M190 63 H240"/></g><text class="dg-note" x="238" y="81" text-anchor="end">MKL</text><text class="dg-note" x="216" y="106" text-anchor="middle">(iii)</text><text class="dg-note" x="326" y="38" text-anchor="end">AB</text><text class="dg-note" x="326" y="56" text-anchor="end">+ B</text><g class="dg-line"><path d="M278 63 H328"/></g><text class="dg-note" x="326" y="81" text-anchor="end">BA</text><text class="dg-note" x="304" y="106" text-anchor="middle">(iv)</text></svg>
+          <figcaption><span class="fignum">Fig. 5.13</span> Four sums with hidden digits. The same letter is the same digit throughout one sum.</figcaption>
+        </figure>
+      </div>
 
-      <p>Now let us try some cryptarithms that use multiplication. Guna solved the first one like this.</p>
-
-      <div class="c-example">
-              <div class="c-example__tab">Example 5</div>
-              <div class="c-example__body">
-                <p>Solve $\text{PQ} \times 8 = \text{RS}$.</p>
-                <p><strong>Solution.</strong></p>
-                <div class="work">
-                  <div class="work__row"><span class="work__label">Step 1</span>
-                    <span>a two-digit number times $8$ gives a two-digit number</span></div>
-                  <div class="work__row"><span class="work__label">Step 2</span>
-                    <span>$10 \times 8 = 80$: the units digits of $10$ and $80$ are the same</span>
-                    <span class="work__why">Q and S must differ</span></div>
-                  <div class="work__row"><span class="work__label">Step 3</span>
-                    <span>$\text{PQ}$ cannot be $11$</span>
-                    <span class="work__why">P and Q must differ</span></div>
-                  <div class="work__row"><span class="work__label">Step 4</span>
-                    <span>$12 \times 8 = 96$ fits every condition</span></div>
-                  <div class="work__row"><span class="work__label">Step 5</span>
-                    <span>$13 \times 8 = 104$</span>
-                    <span class="work__why">three digits, as for every larger PQ</span></div>
-                  <div class="work__row"><span class="work__label">Answer</span>
-                    <span>$12 \times 8 = 96$: $\text{P} = 1$, $\text{Q} = 2$, $\text{R} = 9$, $\text{S} = 6$.</span></div>
-                </div>
-              </div>
-            </div>
+      <p>Cryptarithms with multiplication need the same reasoning, with a little more care. Nisha solved this one.</p>
 
     </div>
   </div>

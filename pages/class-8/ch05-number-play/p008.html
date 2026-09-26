@@ -2,76 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Picture $12m$ as $m$ rows of twelve. A factor of $12$ fills one row
-      exactly, so it fills all $m$ rows exactly. So the factors of a multiple of
-      $12$ include all the factors of $12$. For example, the factors of $24$ are
-      $1, 2, 3, 4, 6, 8, 12$ and $24$. Statement 4 is always true.</p>
+      <p>Decide for yourself whether the next two statements are always, sometimes or never true.</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Factors of a divisor</div>
-        <p>If $A$ is divisible by $k$, then $A$ is divisible by every factor of
-        $k$.</p>
-      </div>
+      <p><strong>Statement 6.</strong> If a number is divisible by both $5$ and $6$, then it is divisible by $30$.</p>
 
-      <p><strong>Statement 5.</strong> If a number is divisible by $7$, then it
-      is also divisible by any multiple of $7$.</p>
-
-      <p>A number divisible by $7$ is a multiple of $7$, say $7k$. A multiple of
-      $7$ is $7m$. Now $7k$ is divisible by $7m$ only when $m$ is a factor of
-      $k$. If $k = ym$, then</p>
-
-      <div class="work work--centred">
-        <p>$7k \div 7m = 7ym \div 7m = y$</p>
-      </div>
-
-      <p>For example, $42 = 7 \times 6$ is divisible by $7$, but it is not
-      divisible by $28 = 7 \times 4$. It is divisible by $14 = 7 \times 2$. So
-      Statement 5 is only sometimes true.</p>
-
-      <p>Decide for yourself whether each of the next two statements is always
-      true, sometimes true or never true.</p>
-
-      <p><strong>Statement 6.</strong> If a number is divisible by both $9$ and
-      $4$, it must be divisible by $36$.</p>
-
-      <p><strong>Statement 7.</strong> If a number is divisible by both $6$ and
-      $4$, it must be divisible by $24$.</p>
+      <p><strong>Statement 7.</strong> If a number is divisible by both $10$ and $4$, then it is divisible by $40$.</p>
 
       <div class="c-keyidea">
         <div class="c-keyidea__title">Divisible by two numbers</div>
-        <p>If $A$ is divisible by $k$ and $A$ is also divisible by $m$, then $A$
-        is divisible by the LCM of $k$ and $m$. This is because $A$ is a
-        multiple of $k$ and a multiple of $m$, so the prime factorisation of $A$
-        contains the prime factorisation of the LCM of $k$ and $m$.</p>
+        <p>If $A$ is divisible by $k$ and by $m$, then $A$ is divisible by the LCM of $k$ and $m$. This is because $A$ is a common multiple of $k$ and $m$, so its prime factorisation contains the prime factorisation of their LCM.</p>
       </div>
 
-      <p><strong>Statement 8.</strong> When you add an odd number to an even
-      number, you get a multiple of $6$.</p>
+      <p><strong>Statement 8.</strong> The sum of an odd number and an even number is a multiple of $4$.</p>
 
-      <p>All multiples of $6$ are even numbers. But the sum of an odd number and
-      an even number is an odd number. So this statement is never true.</p>
-
-      <p>We can also show this with algebra. Write the even number as $2n$ and
-      the odd number as $2m + 1$. Suppose their sum is a multiple of $6$, say
-      $6j$:</p>
+      <p>Every multiple of $4$ is even. But an odd number plus an even number is odd. So Statement 8 is never true. Algebra says the same. Write the even number as $2n$ and the odd number as $2m + 1$, and suppose their sum is a multiple of $4$, say $4j$:</p>
 
       <div class="work">
         <div class="work__row">
           <span class="work__label work__label--wide"></span>
-          <span>$(2n) + (2m + 1) = 6j$</span>
+          <span>$2n + (2m + 1) = 4j$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">then</span>
-          <span>$2n + 2m = 6j - 1$</span>
+          <span>$2n + 2m = 4j - 1$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">so</span>
-          <span>$2(n + m) = 6j - 1$</span>
+          <span>$2(n + m) = 4j - 1$</span>
         </div>
       </div>
 
-      <p>This says that $2(n + m)$, an even number, equals $6j - 1$, an odd
-      number. That can never happen.</p>
+      <p>The left side is even and the right side is odd. An even number can never equal an odd number, so no such sum exists.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Find the smallest number that is divisible by $10$ and by $4$ but not by $40$. What does it tell you about Statement 7?</li>
+            <li>Change one number in Statement 8 so that it becomes sometimes true.</li>
+            <li>Why does the key idea above need the LCM, and not the product, of $k$ and $m$?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+      <h3>Numbers With a Given Remainder</h3>
+
+      <p>Find a number that leaves a remainder of $4$ when divided by $6$. Then find a few more. Which of these expressions describe all such numbers?</p>
+
+      <ol class="c-parts c-parts--3">
+        <li>$4k + 6$</li>
+        <li>$6k + 4$</li>
+        <li>$6k$</li>
+        <li>$6k - 2$</li>
+        <li>$4k$</li>
+        <li>$6k - 4$</li>
+      </ol>
 
     </div>
   </div>

@@ -2,54 +2,58 @@
   <div class="page__body">
     <div class="page__main">
 
+      <ol class="c-parts c-parts--3">
+        <li>$297$</li>
+        <li>$518$</li>
+        <li>$616$</li>
+        <li>$4052$</li>
+        <li>$70514$</li>
+        <li>$924011$</li>
+      </ol>
+
+      <p>The same check can be done in one line, by giving the digits alternate signs.</p>
+
       <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__tab">Example 5</div>
         <div class="c-example__body">
-          <p>Use alternating signs to find how far $328105$ is from a multiple of
-          $11$.</p>
+          <p>Use alternating signs to find the remainder when $283916$ is divided by $11$.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$-3 + 2 - 8 + 1 - 0 + 5$</span>
-              <span class="work__why">signs alternate, $+$ before the units digit</span></div>
+              <span>$+6 - 1 + 9 - 3 + 8 - 2$</span>
+              <span class="work__why">start with $+$ at the units digit</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$-3 + 2 - 8 + 1 - 0 + 5 = -3$</span></div>
+              <span>$6 - 1 + 9 - 3 + 8 - 2 = 17$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$17 = 11 + 6$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$328105$ is $3$ less than a multiple of $11$, or $8$ more than one: the remainder is $8$.</span></div>
+              <span>The remainder is $6$.</span></div>
           </div>
         </div>
       </div>
 
-      <p>Is this method the same as the one in Example 3, or different?</p>
+      <p>Compare this with the method of Example 4. Are the two methods really different?</p>
 
       <div class="c-keyidea">
         <div class="c-keyidea__title">Divisibility by 11</div>
-        <p>Starting from the units digit, add and subtract the digits in turn. A
-        number is divisible by $11$ if and only if the result is $0$ or a multiple
-        of $11$. Otherwise the result tells you how far the number is from a
-        multiple of $11$.</p>
+        <p>Starting from the units digit, add and subtract the digits in turn. The number is divisible by $11$ if and only if the result is $0$ or a multiple of $11$. Otherwise the result tells you how far the number is from a multiple of $11$.</p>
       </div>
 
-      <p>Fill in Table 5.13. Is there a quick way to do it? The first row is done
-      for you.</p>
+      <p>Complete Table 5.12 using the tests. The first row is done for you. Look for ways to save work: a number divisible by $8$ is already divisible by $4$ and $2$.</p>
 
       <table>
-        <caption>Table 5.13 Which numbers divide each number?</caption>
+        <caption>Table 5.12 Which numbers divide each number?</caption>
         <thead>
           <tr><th rowspan="2">number</th><th colspan="9">divisible by</th></tr>
           <tr><th>$2$</th><th>$3$</th><th>$4$</th><th>$5$</th><th>$6$</th><th>$8$</th><th>$9$</th><th>$10$</th><th>$11$</th></tr>
         </thead>
         <tbody>
-          <tr><td>$128$</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td>$990$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$1586$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$275$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$6686$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$639210$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$429714$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$2856$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$3060$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>$406839$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>$216$</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+          <tr><td>$770$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>$1452$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>$4716$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>$528$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>$2310$</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         </tbody>
       </table>
 

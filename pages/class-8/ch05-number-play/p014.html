@@ -2,77 +2,56 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>A Shortcut for Divisibility by 11</h3>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Divisibility by 3</div>
+        <p>A number is divisible by $3$ if and only if the sum of its digits is divisible by $3$.</p>
+      </div>
 
-      <p>The shortcut for $11$ also comes from the remainders that the place
-      values leave. Table 5.12 shows how each place value compares with a
-      multiple of $11$.</p>
+      <h3>A Test for 11</h3>
+
+      <p>The test for $11$ also comes from what the place values leave. Table 5.11 compares each place value with the nearest multiple of $11$.</p>
 
       <table>
-        <caption>Table 5.12 Place values and the multiples of 11</caption>
+        <caption>Table 5.11 Place values and the multiples of 11</caption>
         <thead>
-          <tr><th>place</th><th>nearest multiple of $11$</th><th>place value</th><th>so the place value is</th></tr>
+          <tr><th>place value</th><th>nearest multiple of $11$</th><th>written with it</th><th>so the place value is</th></tr>
         </thead>
         <tbody>
-          <tr><td>units ($1$)</td><td>$11 \times 0 = 0$</td><td>$1 = 11 \times 0 + 1$</td><td>one more than a multiple of $11$</td></tr>
-          <tr><td>tens ($10$)</td><td>$11 \times 1 = 11$</td><td>$10 = 11 \times 1 - 1$</td><td>one less than a multiple of $11$</td></tr>
-          <tr><td>hundreds ($100$)</td><td>$11 \times 9 = 99$</td><td>$100 = 11 \times 9 + 1$</td><td>one more than a multiple of $11$</td></tr>
-          <tr><td>thousands ($1000$)</td><td>$11 \times 91 = 1001$</td><td>$1000 = 11 \times 91 - 1$</td><td>one less than a multiple of $11$</td></tr>
+          <tr><td>$1$</td><td>$0$</td><td>$1 = 0 + 1$</td><td>$1$ more than a multiple</td></tr>
+          <tr><td>$10$</td><td>$11$</td><td>$10 = 11 - 1$</td><td>$1$ less than a multiple</td></tr>
+          <tr><td>$100$</td><td>$99$</td><td>$100 = 99 + 1$</td><td>$1$ more than a multiple</td></tr>
+          <tr><td>$1000$</td><td>$1001$</td><td>$1000 = 1001 - 1$</td><td>$1$ less than a multiple</td></tr>
         </tbody>
       </table>
 
-      <p>This pattern — one more than a multiple of $11$, then one less —
-      carries on for the higher place values.</p>
+      <p>The pattern carries on: $10000 = 9999 + 1$, $100000 = 100001 - 1$, and so on, with $9999 = 11 \times 909$ and $100001 = 11 \times 9091$.</p>
 
-      <p>Since $400$ is $4$ hundreds, it is $4$ more than a multiple of $11$
-      ($396 + 4$). Since $60$ is $6$ tens, it is $6$ less than a multiple of
-      $11$ ($66 - 6$). And $2$ is $2$ units, so it is $2$ more than a multiple
-      of $11$ ($0 + 2$).</p>
-
-      <p>Using these, can you tell whether $462$ is divisible by $11$? What could
-      a general method, or shortcut, for checking divisibility by $11$ be?</p>
-
-      <p>The place values alternate between one more and one less than a
-      multiple of $11$. Example 3 turns this into three steps.</p>
+      <p>Now take $583$. Its $5$ hundreds are $5$ more than a multiple of $11$. Its $8$ tens are $8$ less than a multiple of $11$. Its $3$ units are $3$ more. Altogether it is $5 + 3 - 8 = 0$ away from a multiple of $11$, so $583$ is divisible by $11$. Indeed, $583 = 11 \times 53$.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
+        <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
-          <p>Find how far $320185$ is from a multiple of $11$, and so the
-          remainder when it is divided by $11$.</p>
+          <p>Find how far $416253$ is from a multiple of $11$, and the remainder when it is divided by $11$.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>places $1$, $100$, $10000$ hold $5$, $1$, $2$: excess $5 + 1 + 2 = 8$</span>
-              <span class="work__why">one more each</span></div>
+              <span>places $1$, $100$, $10000$ hold $3$, $2$, $1$: excess $3 + 2 + 1 = 6$</span>
+              <span class="work__why">1 more each</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>places $10$, $1000$, $100000$ hold $8$, $0$, $3$: short $8 + 0 + 3 = 11$</span>
-              <span class="work__why">one less each</span></div>
+              <span>places $10$, $1000$, $100000$ hold $5$, $6$, $4$: short $5 + 6 + 4 = 15$</span>
+              <span class="work__why">1 less each</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$8 - 11 = -3$</span>
+              <span>$6 - 15 = -9$</span>
               <span class="work__why">excess minus short</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$320185$ is $3$ short of a multiple of $11$, which is $8$ more than the multiple before it. The remainder is $8$.</span></div>
+              <span>$416253$ is $9$ less than a multiple of $11$, so it is $2$ more than the multiple before it. The remainder is $2$.</span></div>
           </div>
         </div>
       </div>
 
-      <p>If this difference is $0$, $11$ or a multiple of $11$, what does that
-      say about the remainder when the number is divided by $11$?</p>
+      <p>What does it mean for the remainder if the excess minus the short is $0$, or $11$, or $-22$?</p>
 
-      <p>Using this shortcut, find out whether each of these numbers is divisible
-      by $11$. If a number is not divisible by $11$, find the remainder.</p>
-
-      <ol class="c-parts c-parts--3">
-        <li>$158$</li>
-        <li>$841$</li>
-        <li>$481$</li>
-        <li>$5529$</li>
-        <li>$90904$</li>
-        <li>$857076$</li>
-      </ol>
-
-      <p>Here is another way to carry out the same check.</p>
+      <p>Use the test to decide which of these numbers are divisible by $11$. For each of the others, find the remainder.</p>
 
     </div>
   </div>

@@ -1,5 +1,77 @@
 # Class 8 · Mathematics I · Chapter 5 — Number Play
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, Beyond the Book and the
+checks further down this log.** Converted with CONVERT-V2.md, Class 6
+Chapter 1 as the model. `chapter.json`: design `maths-v2`, palette
+`prism-amethyst`, edition `196x276-large`, `keepExerciseSets`, accent
+`#644d75`. **38 pages**: body p001–p020 (20, Summary p020 `data-close`), By the
+Book p090–p095 (6, p095 `data-close`), Beyond the Book p101–p112 (12).
+
+**No NCERT expression.** The body keeps NCERT's topics, order, definitions and
+methods, and everything else is rewritten with our own contexts, numbers and
+names (Meher, Nisha, Kiran, Farid, Aarav, Ishita). Gone: Anshu, Guna,
+Tathagat, Snehal, Sreelatha, Deepak and their claims; the pebble and
+digital-root riddles; NCERT's statement list (8, 7, 12, 9 and 4, 6 and 4) —
+now 6, 5, 18, 5, 5 and 6, 10 and 4, 4; the tree for 3, 4, 5, 6 (now 7, 8, 9, 10
+with every leaf written); the token explanation and its figure; NCERT's
+cryptarithms (A1 + 1B, ON + ON + ON, PQ × 8, GH × H, BYE × 6 and the rest);
+the numbers 427, 7309, 320185, 328105, 462 and Table 5.13's rows; the
+Navakankari game corner. Section and subsection heads are in our own words
+(5.1 Reasoning About Multiples, 5.2 Quick Tests for Divisibility, 5.3 Puzzles
+With Hidden Digits). New figures in `.dg-*`: the sign tree, rows of six
+(Statement 1), blocks of five (Statement 3), 6k + 4, 538 in bars, four
+addition cryptarithms, Venn diagrams for 3, 6, 18; the two rows-of-four
+figures were kept. Figures and tables renumbered in one sequence (5.1–5.14)
+after the token figure went.
+
+Added teaching: sums of two and three consecutive numbers with letters; the
+term *counterexample*; the two parts of Statement 2 always going together; the
+test for 2 worked; a key idea and **Example 1** (the remainder of a sum) in
+§5.1; a fourth Think and Reflect question; Think and Reflect in §5.2 (digital
+roots) and §5.3. Body examples 1–6. Every section has a key idea and a Think
+and Reflect.
+
+**Exercise sets** 5.1 (8 Q), 5.2 (4), 5.3 (4), 5.4 (8) are all new questions,
+each kept whole on one page, each ending in a `.c-practice__note` citing NCERT
+by section — *NCERT, Figure it Out, §5.1, Q1–8*; *§5.2 (the test for 9),
+Q1–4*; *§5.2 (digital roots), Q1–4*; *§5.3, Q1–16*. Page numbers were not
+cited: the log below gives only scattered NCERT pages (125, 128, 129, 131,
+133, 135), not the start of each set.
+
+**By the Book** (p090–p095): 50 questions, 10 · 10 · 10 · 5 · 5 · 10, one
+numbered run, BY-THE-BOOK.md §4 Class 8: letters in word problems (Q16, 21, 26,
+27, 28), algebraic *Show that* (Q6, 10, 12, 22, 23, 25, 29, 30), *In the given
+figure* (Q17, a Venn diagram), a find-the-mistake short answer (Q14), a
+multi-statement MCQ (Q48), a named student's method (Q49), case passages of
+52–60 words, four with a table. Raw material from the old practice set: Q2–4,
+15, 24, 25, 31–34, 36–37, 41–44, 50. A–R keys a d b c a; objective keys a ×2,
+b ×3, c ×3, d ×2. Six pages, not five: the 50 questions came to 5.7 pages.
+
+**Beyond the Book** (p101–p112): the six tried-and-explained questions kept
+word for word with no stage head; then Single correct · More than one correct
+· Numerical answer · Matching · Paragraph-based. Examples kept from the old 15:
+old 1, 6 (single), 9, 10 (multiple), 12, 13 (numerical), 14 (matching); old 15
+(matching tests, 115 mm, would not pack) was replaced by a new matching example
+on remainders; two new paragraph-based examples (a locker code, a list rising
+by 8). Format tags and "Choose one correct option" lines removed; Check rows
+added to Examples 5, 6 and 10. Fifteen new practice questions (4 · 4 · 3 · 2 ·
+2). Answers stage without numeral on a fresh page: By the Book key in two-row
+`.work--trace` runs and `.c-answers` letters, then Beyond's key.
+
+`stage2-bank.mjs` is deleted (it generated the old Stage 2). `ANSWERS.md` and
+`check-numbers.mjs` are rewritten for this layout.
+
+**Checks at close.** `build.mjs`: all pages fit, every page ≥ 88% except the
+Summary, p095 and p112. `lone-words` 0; `check-sums` 149 identities, 0 wrong
+(three `4(2 + 5)` spans rewritten as `4 \times (2 + 5)`, which the tool cannot
+parse); `orphans` 0 stranded; `check-labels` no collisions; `fit-options` every
+row fits (two option lists narrowed with `--fix`). `check-numbers.mjs`: 449
+checks, 0 failed — identities, key completeness, every objective, A–R, single
+and multiple-correct option recomputed, every cryptarithm solved by brute
+force, exercise answers recomputed; a planted wrong key letter is caught.
+
 ## Written from the NCERT chapter, 24 September 2026
 
 The chapter did not exist: Class 8 Part I was found to be missing NCERT's

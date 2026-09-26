@@ -2,78 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>More on Divisibility Shortcuts</h3>
+      <h3>Combining Tests</h3>
 
-      <p>How can we find out whether a number is divisible by $6$? Will it work
-      to check divisibility by its factors $2$ and $3$? Use the shortcuts for $2$
-      and $3$ on the numbers $38$, $225$, $186$ and $64$. Then divide each number
-      by $6$ to check.</p>
+      <p>How can we test for $6$? Since $6 = 2 \times 3$, try the tests for $2$ and for $3$ on $54$, $111$, $244$ and $318$. Then divide each by $6$ to check.</p>
 
-      <p>What about divisibility by $24$? Will it work to check divisibility by
-      its factors $4$ and $6$? Why, or why not?</p>
+      <p>Now try to test for $36$ in the same way. Is it enough to check $3$ and $12$, since $3 \times 12 = 36$? No. The number $24$ is divisible by both $3$ and $12$, but not by $36$. Checking $4$ and $9$ does work. Use prime factorisation to explain why $4$ and $9$ work for $36$, but $3$ and $12$ do not.</p>
 
-      <p>Checking divisibility by $4$ and by $6$ does not settle divisibility by
-      $24$. For example, $12$ is divisible by both $4$ and $6$, but not by $24$.
-      To check divisibility by $24$, check divisibility by $3$ and by $8$
-      instead.</p>
-
-      <p>Use prime factorisation to explain why checking $3$ and $8$ works for
-      $24$, but checking $4$ and $6$ is not enough.</p>
-
-      <p>There are shortcuts like these for every number up to $100$, and for
-      some numbers beyond $100$. You can learn how they work in higher
-      classes.</p>
+      <p>There are tests like these for many other numbers, some of them beyond $100$. You will meet more of them in later classes.</p>
 
       <h3>Digital Roots</h3>
 
-      <p>Take a number. Add its digits, and keep adding the digits of the result
-      until you get a single-digit number. This single digit is called the
-      <span class="term">digital root</span> of the number. For example, the
-      digital root of $489710$ is $2$:</p>
+      <p>Take a number and add its digits. Then add the digits of the answer, and keep going until one digit is left. That digit is called the <span class="term">digital root</span> of the number. For example, the digital root of $758463$ is $6$:</p>
 
       <div class="work work--centred">
-        <p>$4 + 8 + 9 + 7 + 1 + 0 = 29 \qquad 2 + 9 = 11 \qquad 1 + 1 = 2$</p>
+        <p>$7 + 5 + 8 + 4 + 6 + 3 = 33 \qquad 3 + 3 = 6$</p>
       </div>
 
-      <p>What property do you think the digital root has? Recall that we did this
-      when we found the shortcut for divisibility by $9$.</p>
+      <p>We met this when we built the test for $9$. The digital root is the remainder on division by $9$, except that a multiple of $9$ has digital root $9$. So $758463$ leaves a remainder of $6$ when divided by $9$.</p>
 
-      <p>Between $600$ and $700$, which numbers have the digital root $5$? Which
-      have the digital root $7$? Which have $3$?</p>
+      <p>Try these. Which numbers between $300$ and $400$ have digital root $4$? Which have digital root $8$? Write the digital roots of $15$ consecutive numbers, starting anywhere, and describe the pattern. Then find the digital roots of several consecutive multiples of $3$, of $6$ and of $5$. Explain the patterns you find.</p>
 
-      <p>Write down the digital roots of any $12$ consecutive numbers. What do you
-      see?</p>
-
-      <p>We saw that the digital root of a multiple of $9$ is always $9$. Now find
-      the digital roots of some consecutive multiples of $3$, of $4$ and of
-      $6$.</p>
-
-      <p>What are the digital roots of numbers that are $1$ more than a multiple
-      of $6$? What do you notice? Try to explain the patterns you find.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Digital roots</div>
+        <ul class="c-keyidea__points">
+          <li>A number and its digital root leave the same remainder on division by $9$.</li>
+          <li>The digital root of a multiple of $9$ (other than $0$) is always $9$.</li>
+        </ul>
+      </div>
 
       <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
         <div class="c-reflect__box">
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-            <p>A riddle. Every digit of my number is the same, and it is the
-            smallest odd digit. How many digits I have, the sum of my digits, and
-            my digital root are all one number: the largest odd single-digit
-            number. What is my number, and how do you say it?</p>
+          <ol>
+            <li>I am a two-digit multiple of $7$, less than $50$, and my digital root is $5$. Which number am I?</li>
+            <li>Shuffle the digits of $758463$ in any order. Why does the digital root stay the same?</li>
+            <li>Why does the test for $11$ not work with a plain digit sum?</li>
+          </ol>
           </div>
         </div>
       </div>
 
-      <p>Aryabhata II, who lived around $950$ CE, describes in his work
-      <em>Mahāsiddhānta</em> how to find the digital root of a number by adding
-      its digits again and again until one digit is left. The method is known to
-      have been used to check the results of arithmetic.</p>
+      <p>Adding digits again and again is an old idea. The Indian mathematician Aryabhata II, who lived around $950$ CE, described it in his work <em>Mahāsiddhānta</em>, and it was used to check the answers of long calculations.</p>
 
     </div>
   </div>

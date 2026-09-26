@@ -2,31 +2,8 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Pairs to Make Fours</h3>
-
-      <p>Take a pair of even numbers and add them. Is the sum divisible by $4$?
-      Try this with several pairs of even numbers. When is the sum a multiple of
-      $4$, and when is it not? Is there a rule, or a pattern?</p>
-
-      <p>Even numbers are of two kinds, by the remainder they leave when divided
-      by $4$. Set them out in rows of four, as in Fig. 5.4.</p>
-
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 355 168" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two dot pictures of even numbers in rows of four: on the left every row is full, a multiple of 4; on the right the full rows have two dots left over below them"><g class="dg-fill-a"><circle cx="45" cy="26" r="7"/><circle cx="70" cy="26" r="7"/><circle cx="95" cy="26" r="7"/><circle cx="120" cy="26" r="7"/><circle cx="45" cy="46" r="7"/><circle cx="70" cy="46" r="7"/><circle cx="95" cy="46" r="7"/><circle cx="120" cy="46" r="7"/><circle cx="45" cy="92" r="7"/><circle cx="70" cy="92" r="7"/><circle cx="95" cy="92" r="7"/><circle cx="120" cy="92" r="7"/></g><g class="dg-thin"><circle cx="45" cy="26" r="7"/><circle cx="70" cy="26" r="7"/><circle cx="95" cy="26" r="7"/><circle cx="120" cy="26" r="7"/><circle cx="45" cy="46" r="7"/><circle cx="70" cy="46" r="7"/><circle cx="95" cy="46" r="7"/><circle cx="120" cy="46" r="7"/><circle cx="45" cy="92" r="7"/><circle cx="70" cy="92" r="7"/><circle cx="95" cy="92" r="7"/><circle cx="120" cy="92" r="7"/></g><g class="dg-fill-teal"><circle cx="82.5" cy="60" r="1.6"/><circle cx="82.5" cy="68" r="1.6"/><circle cx="82.5" cy="76" r="1.6"/></g><g class="dg-line"><rect x="20" y="10" width="125" height="98"/></g><g class="dg-fill-a"><circle cx="230" cy="26" r="7"/><circle cx="255" cy="26" r="7"/><circle cx="280" cy="26" r="7"/><circle cx="305" cy="26" r="7"/><circle cx="230" cy="46" r="7"/><circle cx="255" cy="46" r="7"/><circle cx="280" cy="46" r="7"/><circle cx="305" cy="46" r="7"/><circle cx="230" cy="92" r="7"/><circle cx="255" cy="92" r="7"/><circle cx="280" cy="92" r="7"/><circle cx="305" cy="92" r="7"/></g><g class="dg-thin"><circle cx="230" cy="26" r="7"/><circle cx="255" cy="26" r="7"/><circle cx="280" cy="26" r="7"/><circle cx="305" cy="26" r="7"/><circle cx="230" cy="46" r="7"/><circle cx="255" cy="46" r="7"/><circle cx="280" cy="46" r="7"/><circle cx="305" cy="46" r="7"/><circle cx="230" cy="92" r="7"/><circle cx="255" cy="92" r="7"/><circle cx="280" cy="92" r="7"/><circle cx="305" cy="92" r="7"/></g><g class="dg-fill-teal"><circle cx="267.5" cy="60" r="1.6"/><circle cx="267.5" cy="68" r="1.6"/><circle cx="267.5" cy="76" r="1.6"/></g><g class="dg-fill-b"><circle cx="230" cy="122" r="7"/><circle cx="255" cy="122" r="7"/></g><g class="dg-thin"><circle cx="230" cy="122" r="7"/><circle cx="255" cy="122" r="7"/></g><g class="dg-line"><path d="M205 10 H330 V108 H268 V136 H205 Z"/></g><text class="dg-note" x="82.5" y="160" text-anchor="middle">remainder 0</text><text class="dg-note" x="267.5" y="160" text-anchor="middle">remainder 2</text></svg>
-          <figcaption><span class="fignum">Fig. 5.4</span> Left: an even number
-          that is a multiple of $4$ leaves a remainder of $0$ when divided by
-          $4$. Right: an even number that is not a multiple of $4$ leaves a
-          remainder of $2$.</figcaption>
-        </figure>
-      </div>
-
-      <p>When will two even numbers add up to a multiple of $4$? The question is
-      like asking when two numbers add up to an even number. Can you see why?
-      There are three cases to look at. Table 5.5 sets out the first two.</p>
-
       <table>
-        <caption>Table 5.5 Adding two even numbers</caption>
+        <caption>Table 5.4 Adding two even numbers</caption>
         <thead>
           <tr><th>the two numbers</th><th>algebra</th><th>examples</th></tr>
         </thead>
@@ -34,24 +11,42 @@
           <tr>
             <td>both multiples of $4$</td>
             <td>$4p + 4q = 4(p + q)$</td>
-            <td>$12 + 16 = 4(3 + 4) = 28$<br>$16 + 28 = 4(4 + 7) = 44$</td>
+            <td>$8 + 20 = 4 \times (2 + 5) = 28$<br>$12 + 36 = 4 \times (3 + 9) = 48$</td>
           </tr>
           <tr>
-            <td>both even, neither a multiple of $4$</td>
+            <td>both $2$ more than a multiple of $4$</td>
             <td>$(4p + 2) + (4q + 2)$<br>$= 4p + 4q + 4$<br>$= 4(p + q + 1)$</td>
-            <td>$2 + 6 = 8$<br>$6 + 10 = 16$<br>$22 + 6 = 28$</td>
+            <td>$6 + 14 = 20$<br>$10 + 18 = 28$<br>$30 + 6 = 36$</td>
           </tr>
         </tbody>
       </table>
 
-      <p>In the first case, $p$ rows of four and $q$ rows of four make $p + q$
-      rows of four, so the sum is always a multiple of $4$. Some numbers of this
-      kind are $4, 12, 16, 24$ and $36$.</p>
+      <p>In the first case, $p$ rows of four and $q$ rows of four make $p + q$ rows of four. So the sum is always a multiple of $4$.</p>
 
-      <p>In the second case the sum is always a multiple of $4$ too, because the
-      two remainders of $2$ add up to $4$ and make one more full row. Some
-      numbers of this kind are $2, 6, 10, 18, 22$ and $42$. Fig. 5.6 shows the
-      rows.</p>
+      <p>In the second case, each number has two dots left over. The two pairs of leftover dots make one more full row, as Fig. 5.5 shows. So the sum is again a multiple of $4$.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 210" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two even numbers that are not multiples of 4, each drawn as full rows of four with two dots left over; put together, the two leftover pairs make one more full row, so the total is p + q + 1 rows of four"><g class="dg-fill-a"><circle cx="20" cy="20" r="5.2"/><circle cx="36" cy="20" r="5.2"/><circle cx="52" cy="20" r="5.2"/><circle cx="68" cy="20" r="5.2"/><circle cx="20" cy="36" r="5.2"/><circle cx="36" cy="36" r="5.2"/><circle cx="52" cy="36" r="5.2"/><circle cx="68" cy="36" r="5.2"/><circle cx="20" cy="72" r="5.2"/><circle cx="36" cy="72" r="5.2"/><circle cx="52" cy="72" r="5.2"/><circle cx="68" cy="72" r="5.2"/></g><g class="dg-thin"><circle cx="20" cy="20" r="5.2"/><circle cx="36" cy="20" r="5.2"/><circle cx="52" cy="20" r="5.2"/><circle cx="68" cy="20" r="5.2"/><circle cx="20" cy="36" r="5.2"/><circle cx="36" cy="36" r="5.2"/><circle cx="52" cy="36" r="5.2"/><circle cx="68" cy="36" r="5.2"/><circle cx="20" cy="72" r="5.2"/><circle cx="36" cy="72" r="5.2"/><circle cx="52" cy="72" r="5.2"/><circle cx="68" cy="72" r="5.2"/></g><g class="dg-fill-teal"><circle cx="44" cy="48" r="1.6"/><circle cx="44" cy="54" r="1.6"/><circle cx="44" cy="60" r="1.6"/></g><g class="dg-fill-a"><circle cx="20" cy="88" r="5.2"/><circle cx="36" cy="88" r="5.2"/></g><g class="dg-thin"><circle cx="20" cy="88" r="5.2"/><circle cx="36" cy="88" r="5.2"/></g><g class="dg-line"><path d="M10 10 H78 V80 H46 V96 H10 Z"/></g><g class="dg-fill-c"><circle cx="128" cy="20" r="5.2"/><circle cx="144" cy="20" r="5.2"/><circle cx="160" cy="20" r="5.2"/><circle cx="176" cy="20" r="5.2"/><circle cx="128" cy="36" r="5.2"/><circle cx="144" cy="36" r="5.2"/><circle cx="160" cy="36" r="5.2"/><circle cx="176" cy="36" r="5.2"/><circle cx="128" cy="72" r="5.2"/><circle cx="144" cy="72" r="5.2"/><circle cx="160" cy="72" r="5.2"/><circle cx="176" cy="72" r="5.2"/></g><g class="dg-thin"><circle cx="128" cy="20" r="5.2"/><circle cx="144" cy="20" r="5.2"/><circle cx="160" cy="20" r="5.2"/><circle cx="176" cy="20" r="5.2"/><circle cx="128" cy="36" r="5.2"/><circle cx="144" cy="36" r="5.2"/><circle cx="160" cy="36" r="5.2"/><circle cx="176" cy="36" r="5.2"/><circle cx="128" cy="72" r="5.2"/><circle cx="144" cy="72" r="5.2"/><circle cx="160" cy="72" r="5.2"/><circle cx="176" cy="72" r="5.2"/></g><g class="dg-fill-teal"><circle cx="152" cy="48" r="1.6"/><circle cx="152" cy="54" r="1.6"/><circle cx="152" cy="60" r="1.6"/></g><g class="dg-fill-c"><circle cx="128" cy="88" r="5.2"/><circle cx="144" cy="88" r="5.2"/></g><g class="dg-thin"><circle cx="128" cy="88" r="5.2"/><circle cx="144" cy="88" r="5.2"/></g><g class="dg-line"><path d="M118 10 H186 V80 H154 V96 H118 Z"/></g><text class="dg-note" x="98" y="58" text-anchor="middle">+</text><text class="dg-note" x="206" y="90" text-anchor="middle">=</text><text class="dg-label" x="44" y="118" text-anchor="middle">4p + 2</text><text class="dg-label" x="152" y="118" text-anchor="middle">4q + 2</text><g class="dg-fill-a"><circle cx="232" cy="20" r="5.2"/><circle cx="248" cy="20" r="5.2"/><circle cx="264" cy="20" r="5.2"/><circle cx="280" cy="20" r="5.2"/><circle cx="232" cy="36" r="5.2"/><circle cx="248" cy="36" r="5.2"/><circle cx="264" cy="36" r="5.2"/><circle cx="280" cy="36" r="5.2"/><circle cx="232" cy="72" r="5.2"/><circle cx="248" cy="72" r="5.2"/><circle cx="264" cy="72" r="5.2"/><circle cx="280" cy="72" r="5.2"/></g><g class="dg-thin"><circle cx="232" cy="20" r="5.2"/><circle cx="248" cy="20" r="5.2"/><circle cx="264" cy="20" r="5.2"/><circle cx="280" cy="20" r="5.2"/><circle cx="232" cy="36" r="5.2"/><circle cx="248" cy="36" r="5.2"/><circle cx="264" cy="36" r="5.2"/><circle cx="280" cy="36" r="5.2"/><circle cx="232" cy="72" r="5.2"/><circle cx="248" cy="72" r="5.2"/><circle cx="264" cy="72" r="5.2"/><circle cx="280" cy="72" r="5.2"/></g><g class="dg-fill-teal"><circle cx="256" cy="48" r="1.6"/><circle cx="256" cy="54" r="1.6"/><circle cx="256" cy="60" r="1.6"/></g><g class="dg-fill-a"><circle cx="232" cy="96" r="5.2"/><circle cx="248" cy="96" r="5.2"/></g><g class="dg-thin"><circle cx="232" cy="96" r="5.2"/><circle cx="248" cy="96" r="5.2"/></g><g class="dg-fill-c"><circle cx="264" cy="96" r="5.2"/><circle cx="280" cy="96" r="5.2"/></g><g class="dg-thin"><circle cx="264" cy="96" r="5.2"/><circle cx="280" cy="96" r="5.2"/></g><g class="dg-fill-c"><circle cx="232" cy="120" r="5.2"/><circle cx="248" cy="120" r="5.2"/><circle cx="264" cy="120" r="5.2"/><circle cx="280" cy="120" r="5.2"/><circle cx="232" cy="136" r="5.2"/><circle cx="248" cy="136" r="5.2"/><circle cx="264" cy="136" r="5.2"/><circle cx="280" cy="136" r="5.2"/><circle cx="232" cy="172" r="5.2"/><circle cx="248" cy="172" r="5.2"/><circle cx="264" cy="172" r="5.2"/><circle cx="280" cy="172" r="5.2"/></g><g class="dg-thin"><circle cx="232" cy="120" r="5.2"/><circle cx="248" cy="120" r="5.2"/><circle cx="264" cy="120" r="5.2"/><circle cx="280" cy="120" r="5.2"/><circle cx="232" cy="136" r="5.2"/><circle cx="248" cy="136" r="5.2"/><circle cx="264" cy="136" r="5.2"/><circle cx="280" cy="136" r="5.2"/><circle cx="232" cy="172" r="5.2"/><circle cx="248" cy="172" r="5.2"/><circle cx="264" cy="172" r="5.2"/><circle cx="280" cy="172" r="5.2"/></g><g class="dg-fill-teal"><circle cx="256" cy="148" r="1.6"/><circle cx="256" cy="154" r="1.6"/><circle cx="256" cy="160" r="1.6"/></g><g class="dg-line"><rect x="222" y="10" width="68" height="172"/></g><g class="dg-thin"><path d="M222 84 H290 M222 108 H290"/></g><text class="dg-dim-label" x="298" y="50" text-anchor="start">p rows</text><text class="dg-dim-label" x="298" y="100" text-anchor="start">1 row</text><text class="dg-dim-label" x="298" y="150" text-anchor="start">q rows</text><text class="dg-label" x="256" y="202" text-anchor="middle">4(p + q + 1)</text></svg>
+          <figcaption><span class="fignum">Fig. 5.5</span> The two leftover pairs make one more full row of four.</figcaption>
+        </figure>
+      </div>
+
+      <p>In the third case, one number is a multiple of $4$ and the other is not. Write the explanation, give examples and draw the rows yourself. The algebra is</p>
+
+      <div class="work work--centred">
+        <p>$4p + (4q + 2) = 4(p + q) + 2$</p>
+      </div>
+
+      <p>So this sum always has two dots left over, and it is never a multiple of $4$. Algebra and pictures of rows let us settle every case at once, instead of checking a few numbers.</p>
+
+      <h3>True Always, Sometimes or Never</h3>
+
+      <p>Here are some statements about factors and multiples. For each one we ask: is it <em>always true</em>, <em>sometimes true</em> or <em>never true</em>? One counterexample shows that a statement is not always true. To show that it is always true, we need a reason that covers every number.</p>
+
+      <p><strong>Statement 1.</strong> If $6$ divides each of two numbers, then $6$ divides their sum.</p>
+
+      <p>Numbers that $6$ divides are multiples of $6$, so we can write the two numbers as $6a$ and $6b$. Their sum is</p>
 
     </div>
   </div>

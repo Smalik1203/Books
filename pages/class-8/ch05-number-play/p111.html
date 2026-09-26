@@ -2,30 +2,19 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-              <ol class="c-questions" data-start="28">
-                <li>For a three-digit number $abc$, show that $100a + 10b + c$ and $2a + 3b + c$ leave the same remainder when divided by $7$. Use this to test whether $581$ and $692$ are divisible by $7$.</li>
-              </ol>
-            </div>
+      <div class="work work--trace"><div class="work__row"><span class="work__label">21</span><span>Each count is $2$ short of full rows, so the number of chairs plus $2$ is a common multiple of $6$, $8$ and $9$, whose LCM is $72$. The chairs number $72k - 2$: $70, 142, 214, \ldots$, so there are $142$. $142 = 9 \times 15 + 7$, so he needs $2$ more chairs</span></div><div class="work__row"><span class="work__label">22</span><span>$abc - (a + b + c) = 99a + 9b = 9(11a + b)$. So $abc$ and $a + b + c$ differ by a multiple of $9$, and one is a multiple of $9$ exactly when the other is. $4 + d + 7 = 11 + d = 18$, so $d = 7$: $477 = 9 \times 53$</span></div></div>
 
-      <div class="c-practice c-practice--cont">
-              <ol class="c-questions" data-start="29">
-                <li>A six-digit number uses each of the digits $1, 2, 3, 4, 5, 6$ once, in any order. Is it always, sometimes or never divisible by $3$? By $9$? By $11$? Explain each answer.</li>
-              </ol>
-            </div>
+      <div class="work work--trace"><div class="work__row"><span class="work__label">23</span><span>$100a + 10b + c - (a - b + c) = 99a + 11b = 11(9a + b)$. For $759$: $7 - 5 + 9 = 11$, remainder $0$. For $846$: $8 - 4 + 6 = 10$, remainder $10$</span></div><div class="work__row"><span class="work__label">24</span><span>$2178 \times 4 = 8712$. A is $1$ or $2$ for a four-digit product, and as the units digit of $4 \times \text{D}$ it is even, so A $= 2$. Then D is $8$ or $9$, and $4 \times \text{D}$ ends in $2$, so D $= 8$. The hundreds give B $= 1$, and then C $= 7$</span></div></div>
 
-      <div class="c-practice c-practice--cont">
-              <div class="c-practice__sub">Case-based questions</div>
-              <ol class="c-questions" data-start="30">
-                <li><div class="c-case"><p>A library gives every book a five-digit code, and a code is valid only if it is divisible by $11$. The clerk has written these codes.</p><table><thead><tr><th>Book</th><th>Code</th></tr></thead><tbody><tr><td>A</td><td>35728</td></tr><tr><td>B</td><td>47219</td></tr><tr><td>C</td><td>80916</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>Which of the three codes are valid?</li><li>A new code starts $6190$. What must its last digit be?</li><li>The clerk copies a valid code but swaps two neighbouring digits that are different. Show that the new code cannot be valid.</li></ol></li>
-              </ol>
-            </div>
+      <div class="work work--trace"><div class="work__row"><span class="work__label">25</span><span>The difference is $98a + 7b = 7(14a + b)$. For $581$: $10 + 24 + 1 = 35$, so it is divisible by $7$: $581 = 7 \times 83$. For $692$: $12 + 27 + 2 = 41 = 35 + 6$, so it leaves $6$ and is not divisible by $7$</span></div><div class="work__row"><span class="work__label">26</span><span>$a + b = 11$ and $(10b + a) - (10a + b) = 9(b - a) = 27$, so $b - a = 3$. Then $a = 4$ and $b = 7$: the number is $47$, and $74 - 47 = 27$</span></div></div>
 
-      <div class="c-practice c-practice--cont">
-              <ol class="c-questions" data-start="31">
-                <li><div class="c-case"><p>A second library uses five-digit codes too, but a code is valid only if it is divisible by $9$.</p><table><thead><tr><th>Book</th><th>Code</th></tr></thead><tbody><tr><td>P</td><td>26352</td></tr><tr><td>Q</td><td>58062</td></tr><tr><td>R</td><td>70236</td></tr></tbody></table></div><ol class="c-parts c-parts--alpha c-parts--1"><li>Which of the three codes are valid?</li><li>A new code starts $4731$. What must its last digit be?</li><li>A clerk swaps two digits of a valid code. Can this check always tell that a mistake was made? Give an example.</li></ol></li>
-              </ol>
-            </div>
+      <div class="work work--trace"><div class="work__row"><span class="work__label">27</span><span>$2n + (2n + 2) + (2n + 4) + (2n + 6) = 8n + 12 = 156$, so $n = 18$: $36, 38, 40, 42$. In general $8n + 12 = 8(n + 1) + 4$, and $156 = 8 \times 19 + 4$</span></div><div class="work__row"><span class="work__label">28</span><span>The marbles less $3$ make a common multiple of $5$ and $7$: $35k + 3$, which gives $318, 353, 388$. Only $388$ is a multiple of $4$. $388 = 9 \times 43 + 1$ and $388 = 11 \times 35 + 3$: $1$ and $3$ left over</span></div></div>
+
+      <div class="work work--trace"><div class="work__row"><span class="work__label">29</span><span>A number and a rearrangement of it have the same digit sum, so they leave the same remainder on division by $9$, and their difference is a multiple of $9$. $5283 - 3825 = 1458 = 9 \times 162$: the quotient is $162$</span></div><div class="work__row"><span class="work__label">30</span><span>Of two consecutive numbers one is even, so the product is even. $n^2 + n = n(n + 1)$ is even, so $n^2 + n + 1$ is odd. $n^2 + 5n + 7 = n(n + 1) + 4n + 6 + 1$ is odd: remainder $1$. For $n = 4$: $16 + 20 + 7 = 43 = 2 \times 21 + 1$</span></div></div>
+
+      <ol class="c-answers"><li><span class="c-answers__stage">31&ndash;35</span><span class="c-answers__list"><span class="n">31</span> (a) &nbsp; <span class="n">32</span> (d) &nbsp; <span class="n">33</span> (b) &nbsp; <span class="n">34</span> (c) &nbsp; <span class="n">35</span> (a)</span></li></ol>
+
+      <div class="work work--trace"><div class="work__row"><span class="work__label">36</span><span>(i) $5$ gaps: $2 \times 2 \times 2 \times 2 \times 2 = 32$ ways (ii) $-5$ (iii) No. $1 + 2 + \cdots + 6 = 21$ is odd, and every value has the parity of $21$, so no value is $0$</span></div><div class="work__row"><span class="work__label">37</span><span>(i) A and C: $8 - 2 + 7 - 5 + 3 = 11$ and $6 - 1 + 9 - 0 + 8 = 22$, but B gives $7$ (ii) $d - 0 + 9 - 1 + 6 = d + 14$ must be $22$: $d = 8$, code $61908$ (iii) swapping neighbours $x$ and $y$ changes the alternating sum by $2(x - y)$, which is even, not $0$ and less than $22$, so not a multiple of $11$</span></div></div>
 
     </div>
   </div>

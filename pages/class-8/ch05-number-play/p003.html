@@ -5,32 +5,23 @@
       <div class="work">
         <div class="work__row">
           <span class="work__label work__label--wide"></span>
-          <span>$(a + b - c - d) - (a - b - c - d)$</span>
+          <span>$(p + q - r - s) - (p - q - r - s)$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide"></span>
-          <span>$= a + b - c - d - a + b + c + d$</span>
+          <span>$= p + q - r - s - p + q + r + s$</span>
           <span class="work__why">each sign in the second bracket changes</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide"></span>
-          <span>$= 2b$</span>
+          <span>$= 2q$</span>
           <span class="work__why">an even number</span>
         </div>
       </div>
 
-      <p>If two numbers differ by an even number, can they have different
-      parities? No. Either both are even or both are odd.</p>
+      <p>Two numbers that differ by an even number have the same parity. So changing one sign never changes the parity of the value. Check that the same is true when a $-$ sign is changed to a $+$ sign. Any one expression can be turned into any other by changing signs one at a time, so all eight have the same parity.</p>
 
-      <p>Now see what happens when a $-$ sign is switched to a $+$ sign. Replace
-      any $-$ sign in $a + b - c - d$ with a $+$ sign, and find the difference
-      between the two values. What do you conclude?</p>
-
-      <p>Starting from any one expression, you can reach the other seven by
-      switching one or more signs. So all eight expressions have the same
-      parity.</p>
-
-      <p><strong>Explanation 2.</strong> We know the rules for parity:</p>
+      <p><strong>Explanation 2.</strong> Recall how parity behaves when two numbers are added or subtracted:</p>
 
       <div class="work work--list">
         <p>$\text{odd} \pm \text{odd} = \text{even}$</p>
@@ -38,29 +29,36 @@
         <p>$\text{odd} \pm \text{even} = \text{odd}$</p>
       </div>
 
-      <p>So $a + b$ and $a - b$ have the same parity, whatever the parities of
-      $a$ and $b$. In short, $a \pm b$ has one parity. By the same argument,
-      $a \pm b + c$ and $a \pm b - c$ have the same parity. Going one step
-      further, all the expressions $a \pm b \pm c \pm d$ have the same
-      parity.</p>
+      <p>In each line, the sum and the difference have the same parity. So $p + q$ and $p - q$ always have the same parity. By the same rule, $p \pm q + r$ and $p \pm q - r$ have the same parity, and so do the two ways of bringing in $s$. So every expression $p \pm q \pm r \pm s$ has the same parity.</p>
 
-      <p><strong>Explanation 3.</strong> This can also be explained with the
-      positive and negative tokens you used in the chapter on integers. Try to
-      see how. Fig. 5.3 shows the eight expressions for $a$, $b$, $c$ and
-      $d$.</p>
+      <p>For four consecutive numbers the sum is $n + (n + 1) + (n + 2) + (n + 3) = 4n + 6$, which is even. So all eight values are even. For $3, 8, 10$ and $15$ the sum is $36$, so all eight values are even there too. For $3, 8, 10$ and $14$ the sum is $35$, so all eight are odd.</p>
 
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 250 245" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The same tree of signs for four numbers a, b, c and d, with eight ends, one for each expression a ± b ± c ± d"><g class="dg-line"><path d="M31 125 L83 65 M31 125 L83 185 M101 65 L153 35 M101 65 L153 95 M101 185 L153 155 M101 185 L153 215 M171 35 L223 20 M171 35 L223 50 M171 95 L223 80 M171 95 L223 110 M171 155 L223 140 M171 155 L223 170 M171 215 L223 200 M171 215 L223 230"/></g><text class="dg-note" x="55" y="89" text-anchor="middle">+</text><text class="dg-note" x="55" y="170" text-anchor="middle">−</text><text class="dg-note" x="125" y="44" text-anchor="middle">+</text><text class="dg-note" x="125" y="95" text-anchor="middle">−</text><text class="dg-note" x="125" y="164" text-anchor="middle">+</text><text class="dg-note" x="125" y="215" text-anchor="middle">−</text><text class="dg-note" x="195" y="21.5" text-anchor="middle">+</text><text class="dg-note" x="195" y="57.5" text-anchor="middle">−</text><text class="dg-note" x="195" y="81.5" text-anchor="middle">+</text><text class="dg-note" x="195" y="117.5" text-anchor="middle">−</text><text class="dg-note" x="195" y="141.5" text-anchor="middle">+</text><text class="dg-note" x="195" y="177.5" text-anchor="middle">−</text><text class="dg-note" x="195" y="201.5" text-anchor="middle">+</text><text class="dg-note" x="195" y="237.5" text-anchor="middle">−</text><text class="dg-label" x="22" y="130" text-anchor="middle">a</text><text class="dg-label" x="92" y="70" text-anchor="middle">b</text><text class="dg-label" x="92" y="190" text-anchor="middle">b</text><text class="dg-label" x="162" y="40" text-anchor="middle">c</text><text class="dg-label" x="162" y="100" text-anchor="middle">c</text><text class="dg-label" x="162" y="160" text-anchor="middle">c</text><text class="dg-label" x="162" y="220" text-anchor="middle">c</text><text class="dg-label" x="232" y="25" text-anchor="middle">d</text><text class="dg-label" x="232" y="55" text-anchor="middle">d</text><text class="dg-label" x="232" y="85" text-anchor="middle">d</text><text class="dg-label" x="232" y="115" text-anchor="middle">d</text><text class="dg-label" x="232" y="145" text-anchor="middle">d</text><text class="dg-label" x="232" y="175" text-anchor="middle">d</text><text class="dg-label" x="232" y="205" text-anchor="middle">d</text><text class="dg-label" x="232" y="235" text-anchor="middle">d</text></svg>
-          <figcaption><span class="fignum">Fig. 5.3</span> The eight ways of
-          combining $a$, $b$, $c$ and $d$ with signs.</figcaption>
-        </figure>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Parity of sums and differences</div>
+        <ul class="c-keyidea__points">
+          <li>Odd $\pm$ odd and even $\pm$ even are even; odd $\pm$ even is odd.</li>
+          <li>So $p \pm q \pm r \pm s$ has the same parity for every choice of signs.</li>
+        </ul>
       </div>
 
-      <p>There are infinitely many ways to choose four numbers $a, b, c, d$ and
-      combine them with $+$ and $-$ signs. Reasoning proves that every
-      combination $a \pm b \pm c \pm d$ has the same parity, without going
-      through them one by one.</p>
+      <p>Does the same happen with five numbers, or with ten? A guess like this, made from examples and not yet proved, is called a <span class="term">conjecture</span>. Making a conjecture and then testing it is as much a part of mathematics as solving problems.</p>
+
+      <h3>Even Without Working It Out</h3>
+
+      <p>You can often tell whether an answer is even without finding the answer. Decide which of these are even, using only the parity rules.</p>
+
+      <ol class="c-parts c-parts--4">
+        <li>$57 + 29$</li>
+        <li>$614 - 283$</li>
+        <li>$5 \times 219 \times 7$</li>
+        <li>$906 - 358$</li>
+        <li>$441 + 368$</li>
+        <li>$127 \times 315$</li>
+        <li>$835 - 267$</li>
+        <li>$24 \times 111$</li>
+      </ol>
+
+      <p>The same rules work with letters. Which of these expressions give an even number for every integer value of the letters?</p>
 
     </div>
   </div>
