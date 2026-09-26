@@ -1,3 +1,5 @@
+import chapter2Illustrations from '../assets/design-history/science-g6-ch02-fitting/illustrations.json' with {type:'json'};
+import {fitFoodLesson} from './science-g6-ch03-fitting.mjs';
 // Explicit, reviewable changes on top of the immutable page transcription.
 // Every replacement carries its original IDs into the editorial ledger.
 import {fatSourceFigure} from './science-g6-food-fat-figure.mjs';
@@ -238,7 +240,7 @@ export function editClass6(ch) {
   if(b.id==='g6-3-173')for(const a of b.art||[]){a.h=490;a.maxHeight=490;}
   if(['g6-2-013','g6-2-074','g6-2-087'].includes(b.id))for(const a of b.art||[]){
    const image=a.svg.match(/<image\b[^>]*height="([\d.]+)"[^>]*>/);
-   const oldHeight=Number(image[1]),newHeight=450,delta=newHeight-oldHeight,ratio=newHeight/oldHeight;
+   const oldHeight=Number(image[1]),newHeight=b.id==='g6-2-013'?450:280,delta=newHeight-oldHeight,ratio=newHeight/oldHeight;
    a.h+=delta;
    a.svg=a.svg.replace(/viewBox="([^"]+)"/,(_,v)=>{const box=v.split(' ').map(Number);box[3]+=delta;return `viewBox="${box.join(' ')}"`;})
     .replace(image[0],image[0].replace(`height="${oldHeight}"`,`height="${newHeight}"`))
@@ -250,5 +252,199 @@ export function editClass6(ch) {
   for(const child of b.blocks||[])enlarge(child);
  };
  ch.blocks.forEach(enlarge);
+ if(n==='3')fitFoodLesson(ch,ledger);
+ if(n==='2'){
+  // Supplemental pictures are authored in the reading order before fitting,
+  // rather than enlarged into gaps after a page break has already been chosen.
+  for(const [i,item] of chapter2Illustrations.entries()){
+   if([5,9,11].includes(i))continue;
+   const at=ch.blocks.findIndex(b=>b.id===item.after);
+   if(at<0)throw Error('Missing illustration anchor '+item.after);
+   ch.blocks[at].keepNext=true;
+   ch.blocks.splice(at+1,0,{id:'g6-2-context-'+i,type:'figure',source:ch.blocks[at].source,caption:item.caption,
+    art:[{kind:'image',src:'../../'+item.file,alt:item.caption,w:824,h:313}]});
+  }
+  // Pair upright details with their explanations instead of reserving a
+  // separate full-width illustration row between topics.
+  for(const [figureId,ids] of [
+   ['g6-2-context-8',['077','078','079']],
+   ['g6-2-context-10',['090','091','092']],
+   ['g6-2-tendril-detail',['063','064']]
+  ]){
+   const figure=ch.blocks.find(b=>b.id===figureId);
+   const prose=ids.map(id=>ch.blocks.find(b=>b.id==='g6-2-'+id));
+   const at=ch.blocks.indexOf(prose[0]);
+   const textBlocks=['g6-2-tendril-detail','g6-2-context-10'].includes(figureId)?[{...prose[0],html:prose.map((b,i)=>i?'<span data-block="'+b.id+'">'+b.html+'</span>':b.html).join(' ')}]:prose;
+   for(const a of figure.art){a.w=300;a.h=figureId==='g6-2-tendril-detail'?200:figureId==='g6-2-context-10'?280:313;}
+   ch.blocks=ch.blocks.filter(b=>b!==figure&&!prose.includes(b));
+   ch.blocks.splice(at,0,{id:figureId+'-paired',type:'media',source:figure.source,blocks:textBlocks,figure});
+  }
+  ch.blocks.find(b=>b.id==='g6-2-082').keepNext=false;
+  // The rubbing demonstration belongs inside its activity, not on a new
+  // page between the method and the explanation of vein patterns.
+  const rubbing=ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-context-7'),1)[0];
+  rubbing.art[0].w=300;rubbing.art[0].h=200;
+  ch.blocks.find(b=>b.id==='g6-2-069').blocks.push(rubbing);
+  ch.blocks.find(b=>b.id==='g6-2-070').keepNext=false;
+  // Put the camel comparison directly after the sentence that asks readers
+  // to inspect it, before the longer discussion of the two climates.
+  const camels=ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-147'),1)[0];
+  ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-145')+1,0,camels);
+  // Keep teaching pictures with their actual introductions, including the
+  // tendril detail before the lesson moves from stems to leaves.
+  for(const id of ['012','013','028','029','030','050','051','052','058','059','060','063','064','072','073','085','086','136','144','145','146','147','157','158','198','200','201','206','208']) {
+   const b=ch.blocks.find(b=>b.id==='g6-2-'+id);if(b)b.keepNext=true;
+  }
+  // Comparison cells are lists of distinct observations, not prose walls.
+  for(const b of ch.blocks.filter(b=>b.type==='table'&&/^Compar/.test(b.caption||''))) {
+   for(const row of b.rows.slice(1))for(const [column,cell] of row.entries()) {
+    if(b.id==='g6-2-113'&&column===0)continue;
+    const sentences=cell.html.trim().split(/(?<=\.)\s+(?=[A-Z])/);
+    const counts={
+     'g6-2-053-r0':[[1,2],[1,2],[1,1]],
+     'g6-2-061-r0':[[3,2],[3,1]],
+     'g6-2-075-r0':[[1,1,1],[2,2,1]],
+     'g6-2-088-r0':[[2,2],[3,1]],
+     'g6-2-148-r0':[[1,2,1,1],[1,1,1,1]],
+     'g6-2-165-r0':[[1,2],[1,1]]
+    }[b.id]?.[column];
+    const points=counts?counts.map(count=>sentences.splice(0,count).join(' ')):sentences;
+    if(counts&&sentences.length)throw Error('Unassigned comparison sentences '+b.id);
+    cell.html='<ul class="g6-compare-points">'+points.map(p=>'<li>'+p+'</li>').join('')+'</ul>';
+   }
+  }
+  // Put each picture between its introduction and the discussion that uses it.
+  const moveAfter=(id,anchor)=>{
+   const at=ch.blocks.findIndex(b=>b.id===id),b=ch.blocks.splice(at,1)[0];
+   const oldPrevious=ch.blocks[at-1];if(oldPrevious)oldPrevious.keepNext=false;
+   const target=ch.blocks.findIndex(b=>b.id===anchor);
+   ch.blocks[target].keepNext=true;ch.blocks.splice(target+1,0,b);
+  };
+  for(const [id,anchor] of [
+   ['context-2','025'],['context-4','035'],['context-6','047'],
+   ['context-12','101'],['context-14','119'],['context-15','121'],
+   ['context-16','124'],['159','156']
+  ])moveAfter('g6-2-'+id,'g6-2-'+anchor);
+  ch.blocks.find(b=>b.id==='g6-2-157').keepNext=false;
+  // Compact reference pictures beside the prose they illuminate. The prose
+  // following each reference continues at the full reading measure.
+  for(const [figureId,ids] of [
+   ['context-2',['025']],['context-3',['029','030','031']],
+   ['context-4',['034','035']],['context-6',['046','047']],
+   ['context-12',['100','101']],['context-13',['107','108','109']],
+   ['context-14',['117','118','119']],['context-16',['124']],
+  ]){
+   const figure=ch.blocks.find(b=>b.id==='g6-2-'+figureId);
+   const prose=ids.map(id=>ch.blocks.find(b=>b.id==='g6-2-'+id));
+   const at=ch.blocks.indexOf(prose[0]);
+   figure.keepNext=false;
+   figure.art[0].w=300;figure.art[0].h=260;
+   ch.blocks=ch.blocks.filter(b=>b!==figure&&!prose.includes(b));
+   ch.blocks.splice(at,0,{id:figure.id+'-paired',type:'media',source:figure.source,blocks:prose,figure});
+  }
+  const rootMedia=ch.blocks.find(b=>b.id==='g6-2-context-10-paired');
+  const originalRootProse=rootMedia.blocks[0];
+  const rootParts=originalRootProse.html.split(/<span data-block="g6-2-091">/);
+  const openingRoot={...originalRootProse,html:rootParts[0].trim()};
+  rootMedia.blocks=[{...originalRootProse,id:'g6-2-091',html:rootParts[1].replace('</span>','')}];
+  rootMedia.figure.art[0].h=260;
+  ch.blocks.splice(ch.blocks.indexOf(rootMedia),0,openingRoot);
+  // The anatomical seed figure already illustrates the seed-opening explanation.
+  // Use the supplementary seed cutout beside the later comparison instead.
+  const seedMedia=ch.blocks.find(b=>b.id==='g6-2-context-13-paired');
+  ch.blocks.splice(ch.blocks.indexOf(seedMedia),1,...seedMedia.blocks.map(b=>({...b,keepNext:false})));
+  const seedNotes=['114','115'].map(id=>ch.blocks.find(b=>b.id==='g6-2-'+id));
+  const seedAt=ch.blocks.indexOf(seedNotes[0]);
+  ch.blocks=ch.blocks.filter(b=>!seedNotes.includes(b));
+  ch.blocks.splice(seedAt,0,{...seedMedia,blocks:seedNotes});
+  // Define adaptation before examining its plant and camel examples; retain
+  // the later cross-example recap in its original place.
+  const definition=['152','154','155'].map(id=>ch.blocks.find(b=>b.id==='g6-2-'+id));
+  ch.blocks=ch.blocks.filter(b=>!definition.includes(b));
+  ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-136'),0,...definition);
+  // The climber/creeper comparison needs a modest reference illustration,
+  // not an oversized image row competing with the tendril explanation.
+  const growthHabitArt=ch.blocks.find(b=>b.id==='g6-2-060').art[0];
+  const reducedHeight=40;
+  growthHabitArt.h-=reducedHeight;
+  growthHabitArt.svg=growthHabitArt.svg.replace(/viewBox="([^"]+)"/,(_,v)=>{const box=v.split(' ').map(Number);box[3]-=reducedHeight;return 'viewBox="'+box.join(' ')+'"';})
+   .replace(/(<image\b[^>]*height=")([\d.]+)(")/,(_,a,h,z)=>a+(Number(h)-reducedHeight)+z)
+   .replace(/(<text\b[^>]*\by=")([\d.]+)(")/g,(_,a,y,z)=>a+(Number(y)-reducedHeight)+z);
+  const plantComparison=['138','139','140','141'].map(id=>ch.blocks.find(b=>b.id==='g6-2-'+id));
+  const plantAt=ch.blocks.indexOf(plantComparison[0]);
+  ch.blocks=ch.blocks.filter(b=>!plantComparison.includes(b));
+  ch.blocks.splice(plantAt,0,{id:'g6-2-plant-comparison',type:'table',source:plantComparison[0].source,
+   rows:[
+    [plantComparison[0],plantComparison[2]].map(b=>({html:'<span data-block="'+b.id+'">'+b.html+'</span>'})),
+    [plantComparison[1],plantComparison[3]].map(b=>({html:'<ul class="g6-compare-points" data-block="'+b.id+'">'+b.html.trim().split(/(?<=\.)\s+(?=[A-Z])/).map(p=>'<li>'+p+'</li>').join('')+'</ul>'}))
+   ]});
+  const pigeon=ch.blocks.splice(ch.blocks.findIndex(b=>b.id==='g6-2-context-15'),1)[0];
+  ch.blocks.find(b=>b.id==='g6-2-121').keepNext=false;
+  ch.blocks.find(b=>b.id==='g6-2-120').blocks.splice(1,0,pigeon);
+  moveAfter('g6-2-context-17','g6-2-131');
+  // Set the parallel plant examples and the two seed definitions as lists.
+  // Their distinct entries are easier to compare than one running paragraph.
+  for(const [id,counts] of [['102',[1,1,1,1]],['110',[2,1]]]){
+   const at=ch.blocks.findIndex(b=>b.id==='g6-2-'+id),b=ch.blocks[at];
+   const sentences=b.html.trim().split(/(?<=\.)\s+/);
+   const entries=counts.map((count,i)=>({...b,id:b.id+(i?'-point-'+i:''),html:'• '+sentences.splice(0,count).join(' ')}));
+   if(sentences.length)throw Error('Unassigned list sentence '+id);
+   ch.blocks.splice(at,1,...entries);
+  }
+  for(const b of ch.blocks.find(b=>b.id==='g6-2-context-14-paired').blocks)b.html='• '+b.html;
+  const animalReference=ch.blocks.find(b=>b.id==='g6-2-context-14-paired');
+  animalReference.wideReference=true;animalReference.figure.art[0].w=340;
+  ledger.push({reason:'Move the adaptation definition before its examples, set the cactus/deodar differences as a bulleted comparison, put the pigeon within the movement activity, and follow the forest illustration with the class investigation.'});
+  ledger.push({reason:'Use bulleted comparison cells, position teaching illustrations within the associated explanation, and attach the duck/pigeon feet directly to their adaptation example. Retain every word and native picture.'});
+ }
+
+ if(n==='1'){
+  // Treat illustrated introductions as complete reading units.
+  for(const [mediaId,lead] of [
+   ['011-r0',['009','010']],['015-r0',['013','014']],['020-r0',['018','019']]
+  ]) {
+   const media=ch.blocks.find(b=>b.id==='g6-1-'+mediaId);
+   const prefix=lead.map(id=>ch.blocks.find(b=>b.id==='g6-1-'+id));
+   ch.blocks=ch.blocks.filter(b=>!prefix.includes(b));
+   media.blocks.unshift(...prefix);
+  }
+  for(const id of ['026','027','028','035','036','047','048','049','050','051','052','053','054','055','060','061'])ch.blocks.find(b=>b.id==='g6-1-'+id).keepNext=true;
+  for(const suffix of ['r0','r1','r2','r3'])ch.blocks.find(b=>b.id==='g6-1-046-'+suffix).keepNext=true;
+  const everydayIds=['g6-1-062-r0','g6-1-064-r0','g6-1-066-r0'];
+  const everyday=ch.blocks.filter(b=>everydayIds.includes(b.id));
+  ch.blocks.splice(ch.blocks.indexOf(everyday[0]),3,{
+   id:'g6-1-everyday-examples',type:'lesson-group',source:everyday[0].source,
+   blocks:[...everyday.flatMap(b=>b.blocks),{id:'g6-1-everyday-figures',type:'figure-row',figures:everyday.map(b=>b.figure)}]
+  });
+  ch.blocks.push({id:'g6-1-closing-scene',type:'figure',source:'p008.html',caption:'Everyday scenes can prompt scientific questions.',
+   art:[{kind:'image',src:'../../figures/class-7/science/ch01-v2/question-contexts.png',alt:'A cake and an envelope',w:735,h:280}]
+  });
+  ch.blocks.find(b=>b.id==='g6-1-080').keepNext=true;
+  ledger.push({reason:'Keep illustrated topic headings and introductions beside their art; protect evaporation, Earth and clock introductions; keep all three everyday examples with their illustration row on the same page.'});
+ }
+ // Review scoped to Chapters 1–3: ordinary topic explanations do not need
+ // a second, generic heading. Keep the labels explaining the food tests.
+ const redundantLabels={
+  '2':['g6-2-154'],
+  '3':['g6-3-026','g6-3-053','g6-3-058','g6-3-068','g6-3-094','g6-3-051']
+ }[n]||[];
+ const prune=blocks=>blocks.filter(b=>{
+  if(redundantLabels.includes(b.id)){
+   ledger.push({sourceIds:[b.id],resultIds:[],reason:b.id==='g6-3-051'
+    ?'Remove the redundant transition announcing the immediately following Carbohydrates heading.'
+    :'Remove a generic How It Works label interrupting an ordinary topic explanation; preserve the explanation.'});
+   return false;
+  }
+  if(b.blocks)b.blocks=prune(b.blocks);
+  return true;
+ });
+ ch.blocks=prune(ch.blocks);
+ if(n==='3'){
+  const fats=ch.blocks.find(b=>b.id==='g6-3-059');
+  const sources=ch.blocks.find(b=>b.id==='g6-3-060');
+  fats.keepNext=true;
+  sources.keepNext=false;
+  ledger.push({sourceIds:[fats.id,sources.id],resultIds:[fats.id,sources.id],reason:'User-requested page join: keep the full fats explanation and source paragraph together before the illustrated source reference on the next page.'});
+ }
  return {ch,ledger};
 }

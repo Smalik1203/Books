@@ -1,7 +1,7 @@
 // Refit the lesson's authored blocks, retaining exact type and artwork sizes.
 // The opener and dedicated reference pages are excluded by the caller.
 import {hasContentImage} from './science-page-illustrations.mjs';
-export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false,minLastHeight=320}={}){
+export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false,minLastHeight=320,requireImage=false}={}){
  const top=112,bottom=1415,capacity=bottom-top;
  const blocks=plans.flatMap(p=>p.blocks).map((b,i)=>({...b,id:b.atomId||`reading-${i}`,before:b.type==='heading'?12:0,h:b.h+(b.type==='heading'?12:0)}));
  const n=blocks.length,prefix=[0],images=[0];
@@ -11,6 +11,10 @@ export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false,minLastHeigh
   images.push(images.at(-1)+(hasContentImage(b.html)?1:0));
  }
  function legal(start,end){
+  if(blocks.slice(start+1,end).some(b=>b.breakBefore))return false;
+  // A continued paragraph needs at least two lines on either side of a turn.
+  if(blocks[start].paragraphLine>0&&blocks[start].paragraphLine===blocks[start].paragraphLines-1)return false;
+  if(blocks[end-1].paragraphLine===0&&blocks[end-1].paragraphLines>1)return false;
   if(frontLoad&&end===n&&start>0&&prefix[end]-prefix[start]<minLastHeight)return false;
   if(blocks[start].type==='rule')return false;
   const last=blocks[end-1],next=blocks[end];
@@ -27,9 +31,10 @@ export function refitV2Lesson(plans,{imageReserve=0,frontLoad=false,minLastHeigh
  // height between paragraphs or changing type and artwork sizes.
  const best=Array(n+1).fill(null);best[n]={pages:0,cost:0};
  for(let start=n-1;start>=0;start--){
-  for(let end=start+1;end<=n&&prefix[end]-prefix[start]-blocks[start].before<=capacity;end++){
+  for(let end=start+1;end<=n&&prefix[end]-prefix[start]-blocks[start].before-(blocks[end-1].endTrim||0)<=capacity;end++){
    if(!best[end]||!legal(start,end))continue;
-   const used=prefix[end]-prefix[start]-blocks[start].before;
+   const used=prefix[end]-prefix[start]-blocks[start].before-(blocks[end-1].endTrim||0);
+   if(requireImage&&images[end]===images[start]&&!blocks.slice(start,end).some(b=>b.allowSupplement))continue;
    const reserve=images[end]===images[start]?imageReserve:0;
    if(used+reserve>capacity)continue;
    const gap=capacity-used-reserve;

@@ -17,7 +17,12 @@ for ch in source:
     if sys.argv[1:] and str(ch['config']['number']) not in sys.argv[1:]:continue
     pages=sorted((Path('pages/class-6')/ch['dir']).glob('p*.html'))
     output='\n'.join(p.read_text(encoding='utf8') for p in pages)
-    root=E.HTML(output);target=norm(' '.join(root.itertext()))
+    root=E.HTML(output)
+    # A paragraph may now continue over a page turn. Running furniture is
+    # outside its reading sequence and must not interrupt the retention match.
+    for furniture in root.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," g6-furniture ")]'):
+        furniture.getparent().remove(furniture)
+    target=norm(' '.join(root.itertext()))
     missing=[];checked=0;allowed=[];image_missing=[]
     for page in ch['pages']:
         old=E.HTML(page['html'])
@@ -30,6 +35,8 @@ for ch in source:
             if any(k in c for k in ['running','footer','se-title','chapter-label','chapter-number','activity-tab-text','cue-title']):continue
             checked+=1
             if n in target:continue
+            if ch['config']['number']=='3' and n==norm('Begin with carbohydrates, one group of food components.'):
+                allowed.append({'source':page['file'],'text':s,'reason':'User-requested removal of the redundant transition immediately before the Carbohydrates heading.'});continue
             revision=next((r for r in summary_revisions if str(r['chapter'])==ch['config']['number'] and r['source']==page['file'] and norm(r['original'])==n),None)
             if revision and all(norm(s) in target for s in revision['replacement']):
                 allowed.append({'source':page['file'],'text':s,'reason':revision['reason']});continue
@@ -47,6 +54,8 @@ for ch in source:
                 if src.endswith('/think-it-through-icon.png'):allowed.append({'source':page['file'],'image':src,'reason':'Retired raster feature icon replaced by the shared live vector icon'})
                 elif ch['config']['number']=='10' and src in painted_replacements and painted_replacements[src] in output:
                     allowed.append({'source':page['file'],'image':src,'reason':'Documented painted PNG replacement; original file and photographic credit retained in the repository.'})
+                elif ch['config']['number']=='3' and src=='../../figures/reference/food/p002-diary.png' and '../../figures/reference/food/p002-diary-transparent.png' in output:
+                    allowed.append({'source':page['file'],'image':src,'reason':'User-requested transparent PNG notebook replacement; original retained. See science-g6-ch03-fitting/image-edit.md.'})
                 else:image_missing.append({'source':page['file'],'image':src})
     result={'chapter':ch['dir'],'originalPages':len(ch['pages']),'newPages':len(pages),'checkedTextUnits':checked,'documentedAliases':allowed,'missingText':missing,'missingImages':image_missing}
     results.append(result);print(ch['dir'],checked,'units;',len(missing),'missing text;',len(image_missing),'missing images')

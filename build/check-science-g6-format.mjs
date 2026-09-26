@@ -20,7 +20,7 @@ for(const name of fs.readdirSync('pages/class-6')){
   const supplement=html.match(/<g data-page-illustration="([^"]+)".*?<\/g>/s);
   const images=[...html.matchAll(/<(?:image|img)\b[^>]*(?:href|src)="\.\.\/\.\.\/(figures\/[^"]+)"/g)].filter(m=>!/(?:icon|cues\/)/.test(m[1]));
   for(const [,asset] of images){const hash=createHash('sha256').update(fs.readFileSync(asset)).digest('hex'),list=hashes.get(hash)||[];list.push({page:file,asset,supplement:supplement?.[1]===asset});hashes.set(hash,list);}
-  const headings=[...html.matchAll(/<g class="v2-panel-heading v2-panel-heading--setup".*?<\/g>|<div class="g6-panel g6-panel--setup">\s*<div class="g6-panel__title">.*?<\/div>/gs)];
+  const headings=[...html.matchAll(/<g class="v2-panel-heading v2-panel-heading--setup".*?<\/g>|<div class="g6-panel g6-panel--setup(?: [^"]+)?">\s*<div class="g6-panel__title">.*?<\/div>/gs)];
   for(const [heading] of headings){const text=heading.replace(/<[^>]*>/g,'').trim();assert.equal(text,`Activity ${n}.${++activities}`,`${name}/${file}: activity sequence`);}
   if(supplement){
    const frame=supplement[0].match(/<image\b[^>]*width="([\d.]+)" height="([\d.]+)"/);

@@ -11,6 +11,7 @@ import {scienceContract} from './science-contract.mjs';
 import {editClass6} from './science-g6-modern-editorial.mjs';
 import {v2PanelIconPath} from './science-v2-cues.mjs';
 import {scienceHeaderArt} from './science-header-art.mjs';
+import {paragraphLineProbe,expandParagraphLines,joinParagraphLines} from './science-g6-paragraph-flow.mjs';
 const history='assets/design-history/science-g6-modern';
 const chapters=JSON.parse(await fs.readFile(history+'/content.json','utf8'));
 async function writeSource(file,body){
@@ -54,21 +55,22 @@ function render(b,inside=false){
  else if(b.type==='feature')html=`<div class="g6-feature-label">${b.html}</div>`;
  else if(b.type==='figure')html=`<figure class="g6-figure"><div class="g6-art">${b.art.map(a=>art(a,b.opener)).join('')}</div>${b.caption?`<figcaption>${b.caption}</figcaption>`:''}</figure>`;
  else if(b.type==='figure-pair')html=`<div class="g6-photo-pair">${b.figures.map(x=>render(x,true)).join('')}</div>`;
- else if(b.type==='table')html=`<div class="g6-table-wrap"><table>${b.caption?`<caption>${b.caption}</caption>`:''}<thead><tr>${b.rows[0].map(c=>`<th scope="col">${c.html}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map(r=>'<tr>'+r.map(c=>`<td>${c.html}${(c.images||[]).map(a=>`<img class="g6-table-image" src="${E(a.src)}" alt="${E(a.alt||'')}"/>`).join('')}</td>`).join('')+'</tr>').join('')}</tbody></table></div>`;
+ else if(b.type==='figure-row')html=`<div class="g6-photo-row">${b.figures.map(x=>render(x,true)).join('')}</div>`;
+ else if(b.type==='table')html=`<div class="g6-table-wrap"><table${b.nutrientTable?' class="g6-nutrient-table"':''}>${b.caption?`<caption>${b.caption}</caption>`:''}<thead><tr>${b.rows[0].map(c=>`<th scope="col">${c.html}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map(r=>'<tr>'+r.map(c=>`<td>${c.html}${(c.images||[]).map(a=>`<img class="g6-table-image" src="${E(a.src)}" alt="${E(a.alt||'')}"/>`).join('')}</td>`).join('')+'</tr>').join('')}</tbody></table></div>`;
  else if(b.type==='panel'){
   let step=0;
   const children=b.blocks.map(x=>{
    if(b.kind==='setup'&&x.step){step++;return `<div class="g6-block"><div class="g6-step"><span class="g6-step__number">${step}.</span><p>${x.html}</p></div></div>`;}
    return render(x,true);
   }).join('');
-  html=`<div class="g6-panel g6-panel--${b.kind}">${b.kind==='glossary'?'':`<div class="g6-panel__title">${icon(b.kind)}${b.kind==='setup'?`Activity ${currentChapter}.${activityNumbers.get(b.id)}`:'Think It Through'}</div>`}<div class="g6-panel__body">${children}</div></div>`;
+  html=`<div class="g6-panel g6-panel--${b.kind}${b.inlineReference?' g6-panel--inline-reference':''}">${b.kind==='glossary'?'':`<div class="g6-panel__title">${icon(b.kind)}${b.kind==='setup'?`Activity ${currentChapter}.${activityNumbers.get(b.id)}`:'Think It Through'}</div>`}<div class="g6-panel__body">${children}</div></div>`;
  }else if(b.type==='reference-group')html=`<div class="g6-reference-columns">${b.blocks.map(x=>render(x,true)).join('')}</div>`;
- else if(b.type==='media')html=`<div class="g6-media"><div>${b.blocks.map(x=>render(x,true)).join('')}</div>${render(b.figure,true)}</div>`;
+ else if(b.type==='media')html=b.wrapReference?`<div class="g6-media-wrap">${render(b.figure,true)}${b.blocks.map(x=>render(x,true)).join('')}</div>`:`<div class="g6-media${b.wideReference?' g6-media--wide-reference':''}${b.dialogue?' g6-media--dialogue':''}"><div>${b.blocks.map(x=>render(x,true)).join('')}</div>${render(b.figure,true)}</div>`;
  else if(b.type==='summary-group'){
   html=`<div class="g6-summary">${b.blocks.map(x=>render(x,true)).join('')}</div>`;
  }
  else throw Error('Unknown content type '+b.type);
- return `<div class="g6-block${b.type==='panel'?' g6-block--panel':b.type==='table'?' g6-block--table':''}${b.type==='heading'?' g6-block--heading':''}${b.intro?' g6-intro':''}"${b.id?` data-block="${b.id}"`:''}>${html}</div>`;
+ return `<div class="g6-block${b.type==='panel'?' g6-block--panel':b.type==='table'?' g6-block--table':''}${b.type==='panel'&&b.kind==='think'&&['1','2','3'].includes(currentChapter)?' g6-block--think':''}${b.flowContinues?' g6-block--prose-continues':''}${b.type==='heading'?' g6-block--heading':''}${b.intro?' g6-intro':''}"${b.id?` data-block="${b.id}"`:''}>${html}</div>`;
 }
 const styles=`<link rel="stylesheet" href="../../css/book.css"><link rel="stylesheet" href="../../css/reference-fonts.css"><link rel="stylesheet" href="../../css/food-reference.css"><link rel="stylesheet" href="../../css/science-editorial.css"><link rel="stylesheet" href="../../css/science-locked.css"><link rel="stylesheet" href="../../css/edition-science-tall.css"><link rel="stylesheet" href="../../css/science-v2-fonts.css"><link rel="stylesheet" href="../../css/science-v2.css"><link rel="stylesheet" href="../../css/palette-science-g6-modern.css">`;
 const heading=s=>({type:'heading',level:2,html:s});
@@ -100,6 +102,11 @@ for(const raw of chapters){
   current.blocks.push(b);
  }
  if(current.blocks.length)groups.push(current);
+ // Chapter 3's short closing exercises can continue into Beyond the Book;
+ // retain its heading and complete projects instead of reserving an empty leaf.
+ if(number==='3')for(let i=0;i<groups.length-1;i++)if(groups[i].role==='assessment'&&groups[i+1].role==='projects'){
+  groups[i].blocks.push(...groups[i+1].blocks);groups.splice(i+1,1);
+ }
  for(let i=0;i<groups.length-1;i++)while(groups[i].blocks.at(-1)?.type==='heading')groups[i+1].blocks.unshift(groups[i].blocks.pop());
  // Keep reference pages together, including summaries previously divided over leaves.
  for(const g of groups)if(g.role==='glossary'){
@@ -125,9 +132,9 @@ for(const raw of chapters){
  const numberActivities=b=>{if(b.type==='panel'&&b.kind==='setup')activityNumbers.set(b.id,activityNumbers.size+1);for(const child of b.blocks||[])numberActivities(child);};
  all.forEach(numberActivities);
  const probe=`build/class-6/${ch.dir}-modern-measure.html`;
- await fs.writeFile(probe,`<!doctype html><html><meta charset="utf-8">${styles}<body><section class="page page--food page--science-editorial page--science-v2 page--g6-modern" data-science-chapter="${number}"><div class="g6-measure">${all.map(b=>render(b)).join('')}</div></section><script>onload=async()=>{await document.fonts.ready;const out=[...document.querySelector('.g6-measure').children].map(e=>({id:e.dataset.block,h:e.getBoundingClientRect().height}));document.body.textContent=JSON.stringify(out);};</script></body></html>`);
+ await fs.writeFile(probe,`<!doctype html><html><meta charset="utf-8">${styles}<body><section class="page page--food page--science-editorial page--science-v2 page--g6-modern" data-science-chapter="${number}"><div class="g6-measure">${all.map(b=>render(b)).join('')}</div></section><script>${paragraphLineProbe}onload=async()=>{await document.fonts.ready;const out=[...document.querySelector('.g6-measure').children].map(e=>({id:e.dataset.block,h:e.getBoundingClientRect().height,lines:paragraphLines(e),lineHeight:parseFloat(getComputedStyle(e).lineHeight),paddingBottom:parseFloat(getComputedStyle(e).paddingBottom)}));document.body.textContent=JSON.stringify(out);};</script></body></html>`);
  const {stdout}=await promisify(execFile)('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--disable-gpu','--virtual-time-budget=15000','--dump-dom',pathToFileURL(path.resolve(probe)).href],{maxBuffer:8e6});
- const measured=JSON.parse(stdout.match(/<body>([\s\S]*?)<\/body>/)[1]);await fs.unlink(probe);
+ const measured=JSON.parse(stdout.match(/<body>([\s\S]*?)<\/body>/)[1].replaceAll('&lt;','<').replaceAll('&gt;','>').replaceAll('&amp;','&'));await fs.unlink(probe);
  const heights=new Map(measured.map(x=>[x.id,x.h/unit]));
  await writeSource(record+'/measured-blocks.json',JSON.stringify(all.map(b=>({id:b.id,type:b.type,height:heights.get(b.id)})),null,2));
  const pages=[];let openerHeight=0;const first=[openerArt];
@@ -148,20 +155,22 @@ for(const raw of chapters){
  first.push(...groups[0].blocks.splice(0,take));
  pages.push({role:'opener',blocks:first,end:348+first.reduce((s,b)=>s+heights.get(b.id),0)});
  for(const g of groups){
-  const units=g.blocks.map((b,i)=>({atomId:b.id,type:b.type,top:0,h:heights.get(b.id)-(b.type==='heading'?12:0),html:render(b),text:text(b.html||b.caption||''),source:[b.source],keepNext:!!b.keepNext||b.type==='feature'||b.type==='paragraph'&&g.blocks[i+1]?.type==='figure'&&/^\d+\./.test(text(b.html)),model:b}));
+  if(['1','2','3'].includes(number))g.blocks=expandParagraphLines(g.blocks,measured,heights,unit);
+  const units=g.blocks.map((b,i)=>({allowSupplement:number==='2'&&/^g6-2-18[23]/.test(b.id)||number==='1'&&/^g6-1-(03[0-4]|07[0-9]|080)(-|$)/.test(b.id),endTrim:['2','3'].includes(number)?(measured.find(m=>m.id===b.id)?.paddingBottom||0)/unit:0,atomId:b.id,type:b.type,top:0,h:heights.get(b.id)-(b.type==='heading'?12:0),html:render(b),text:text(b.html||b.caption||''),source:[b.source],paragraphLine:b.paragraphLine,paragraphLines:b.paragraphLines,keepNext:!!b.keepNext||b.type==='feature'||b.type==='paragraph'&&g.blocks[i+1]?.type==='figure'&&/^\d+\./.test(text(b.html)),model:b}));
   for(let i=0;i<units.length;i++)if(units[i].type==='heading'){
    let height=0;for(let j=i+1;j<units.length&&units[j].type!=='heading';j++)height+=units[j].h;
    units[i].completeUnitHeight=Math.min(160,height);
   }
-  let packed;try{packed=refitV2Lesson([{blocks:units}],{imageReserve:pageImageReserve,frontLoad:true});}catch(e){throw Error(`Chapter ${number} / ${g.role}: ${e.message}`);}
-  for(const p of packed)pages.push({...p,role:g.role,bridge:g.bridge,blocks:p.blocks.map(b=>b.model)});
+  if(number==='2')for(const b of units)b.breakBefore=/^g6-2-18[23](?:-continued)?$/.test(b.id||b.atomId)&&b.type==='heading';
+  let packed;try{packed=refitV2Lesson([{blocks:units}],{imageReserve:pageImageReserve,requireImage:number==='1'||number==='3'&&g.role==='assessment'||['2','3'].includes(number)&&g.role==='lesson',frontLoad:!['2','3'].includes(number)||number==='3'&&g.role==='assessment',minLastHeight:number==='1'?0:320});}catch(e){throw Error(`Chapter ${number} / ${g.role}: ${e.message}`);}
+  for(const p of packed)pages.push({...p,role:g.role,bridge:g.bridge,blocks:joinParagraphLines(p.blocks.map(b=>b.model))});
  }
  const band=chapterOpener({number,titleLines:titles[number],id:'g6-'+number,height:310,motif:'none',bleed:3*1052/189,image:{href:'opener-rendered-in-flow',aspect:2}}).html.replace(/<image\b[\s\S]*?<\/image>/,'').replace(/<image\b[^>]*\/?>/,'')+motif(number);
  const label=(s,x,y,c,anchor='start')=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${anchor}">${E(s)}</text>`;
  const map=[];let bridgeIndex=100,bodyIndex=0;
  for(const [i,p] of pages.entries()){
   let pageContent=p.blocks.map(b=>render(b)).join('\n');
-  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number,{commit:true,availableHeight:1415-p.end});if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));pageContent+=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
+  if(!hasContentImage(pageContent)){const a=pageIllustration(pageContent,6,number,{commit:true,availableHeight:1415-p.end});if(p.end+a.height>1415)throw Error('Required image does not fit '+number+'/'+(i+1));const figure=`<svg class="g6-page-image" width="${874*unit}" height="${a.height*unit}" viewBox="89 0 874 ${a.height}" xmlns="http://www.w3.org/2000/svg">${a.html}</svg>`;const nextTopic=number==='1'&&p.blocks.find(b=>b.id==='g6-1-035');pageContent=nextTopic?pageContent.replace(render(nextTopic),figure+render(nextTopic)):pageContent+figure;p.end+=a.height;p.pageIllustration={file:a.file,caption:a.caption};}
   const n=i+1,verso=n%2===0;const filename='p'+String(p.bridge?++bridgeIndex:++bodyIndex).padStart(3,'0')+'.html';
   const running=i===0?band:`<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>${motif(number,true)}${label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')}${label(ch.config.title+(p.bridge?' · Beyond the Book':''),960,40,'v2-running se-running','end')}<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>`;
   const footer=`<g class="v2-footer"><line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>${label('LEARNLAB · SCIENCE 6',verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')}<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>${label(n,verso?107:945,1487,'v2-folio se-running','middle')}</g>`;

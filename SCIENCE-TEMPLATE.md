@@ -4,6 +4,19 @@ This is the current contract for all science chapters. It supersedes earlier pal
 
 ## Class 6 and Class 7 shared edition — 23 September 2026
 
+Class 6 Chapter 1 fitting revision (26 September 2026): run the modern
+compositor with argument `1`. Continue ordinary prose across page turns at
+measured line boundaries, retaining at least two lines on each side. Keep
+thinking and activity panels whole. Keep illustrations with their introducing
+text and topic headings. Never fill a page by leaving its referenced picture
+on the next page. Illustrated introductions use complete paired blocks;
+the three everyday examples and their picture row form one protected unit.
+Thinking panels have equal 32-unit external gaps, including at the page top;
+adjoining paragraph padding must not add to them. Keep the reading size and
+leading. Run `node build/check-science-g6-ch01-flow.mjs` to check retention,
+illustration associations, page fill and measured box spacing. Other chapters
+retain their existing spacing.
+
 Class 7 Chapter 1 pilot update (24 September): comparison tables use a pale
 lavender-grey header, muted plum heading and rules, and white body cells, distinct
 from teal activity panels. Rename the first-hand feature to **Activity 1.1**;
