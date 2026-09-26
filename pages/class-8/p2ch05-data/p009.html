@@ -2,96 +2,49 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>How often a value occurs is its <span class="term">frequency</span>, and the
-      table of those counts is a <span class="term">frequency table</span>. It is a
-      shorter thing than the raw list and holds everything the raw list holds, except the
-      order the answers arrived in — which nobody wanted.</p>
+      <p>The same idea joins two groups into one. The mean of the whole group is <em>not</em> always the mean of the two means.</p>
 
-      <p>Now find the average household size. There is a tempting short answer — add the
-      six different sizes and divide by six, giving $\tfrac{33}{6} = 5.5$ — and it is
-      wrong. The mean is the sum of all thirty <em>answers</em> divided by thirty, and a
-      household of five was given as an answer nine times over, so it must count nine
-      times.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">the sum</span>
-          <span>$(3 \times 4) + (4 \times 7) + (5 \times 9) + (6 \times 5) + (7 \times 3) + (8 \times 2)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">which is</span>
-          <span>$12 + 28 + 45 + 30 + 21 + 16 = 152$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">the mean</span>
-          <span>$152 \div 30 = 5.07$, to two places</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 7</div>
+        <div class="c-example__body">
+          <p>In a test, the $24$ students of Class 8A have a mean mark of $60$, and the $26$ students of Class 8B have a mean mark of $65$. Find the mean mark of all $50$ students.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Class 8A: $24 \times 60 = 1440$ marks. Class 8B: $26 \times 65 = 1690$ marks</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>All $50$ students: $1440 + 1690 = 3130$ marks</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$3130 \div 50 = 62.6$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$62.6$ lies between the two class means, $60$ and $65$, as it must</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The mean mark of all $50$ students is $62.6$</span></div>
+          </div>
+          <p>The mean of the two means is $62.5$, which is a little too low. Class 8B has more students, so it pulls the mean of the whole group a little closer to its own mean of $65$. The mean of the two means is right only when the two groups are the same size.</p>
         </div>
       </div>
 
-      <p>Each value is multiplied by its own frequency before anything is added, and the
-      divisor is the total of the frequencies rather than the number of rows. That is the
-      whole adjustment, and forgetting it is the most common mistake made with a frequency
-      table.</p>
+      <p>The same method works for three or more groups. Find the total for each group, add the totals, and divide by the number of values in all the groups together. The mean of the means will not do.</p>
 
-      <p>The median needs no multiplying at all, and it does not need the thirty answers
-      written out in order either. There are thirty values, so the median is the average
-      of the fifteenth and sixteenth. Add the frequencies from the top until those
-      positions are reached.</p>
-
-      <table>
-        <thead>
-          <tr><th>Household size</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Students</td><td>4</td><td>7</td><td>9</td><td>5</td><td>3</td><td>2</td></tr>
-          <tr><td>Running total</td><td>4</td><td>11</td><td>20</td><td>25</td><td>28</td><td>30</td></tr>
-        </tbody>
-      </table>
-
-      <p>The running total reaches $11$ after the fours and $20$ after the fives, so
-      positions $12$ to $20$ in the sorted list are all fives. The fifteenth and
-      sixteenth are among them, and the median is $5$.</p>
-
-      <div class="c-tip">
-        <div class="c-tip__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 19h16"/>
-            <path d="M9 19v-7"/>
-            <path d="M15 19v-11"/>
-          </svg>
-        </div>
-        <div class="c-tip__body">
-          <p>The running total is worth building whenever a median is wanted from a
-          table. It answers <em>what is the value in position $n$?</em> for any $n$ at
-          once, so the same column gives the median, the quarter marks, or anything else
-          that is defined by a position rather than by a total.</p>
-        </div>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The mean carries the total</div>
+        <p>The mean multiplied by the number of values gives the total. From the total we can find a missing value, correct a wrong one, or join two groups into one.</p>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.2</div>
-        <ol class="c-questions">
-          <li>Twenty-five students were asked how many siblings they have. The answers
-            were $1, 0, 2, 1, 3, 1, 0, 2, 1, 1, 4, 2, 0, 1, 2, 3, 1, 0, 2, 1, 1, 2, 0, 3,
-            1$. Make a frequency table, and find the mean and the median.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>In a dart competition the number of throws each student needed to hit the
-            bull's eye was recorded.
-            <table>
-              <thead>
-                <tr><th>Throws</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Students</td><td>1</td><td>0</td><td>0</td><td>1</td><td>4</td><td>9</td><td>12</td><td>15</td><td>10</td><td>10</td></tr>
-              </tbody>
-            </table>
-            Describe the data by its smallest value, its largest, its mean and its
-            median.</li>
-        </ol>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>One of $20$ values was written down $10$ too large. By how much is the mean wrong?</li>
+            <li>Can the median be corrected in the same way, from the old median alone? Try a small set of your own.</li>
+            <li>Two groups of the same size have means of $40$ and $50$. What is the mean of both groups together? Why did Example 7 not work out this way?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
     </div>

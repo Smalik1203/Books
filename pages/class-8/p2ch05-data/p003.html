@@ -2,66 +2,36 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">5.3</span><span class="name">What Moves the Mean</span></h2>
+      <h2><span class="badge">5.2</span><span class="name">What Moves the Mean</span></h2>
 
-      <p>Add a new value to a collection. Does the mean go up or down? The fair-share
-      description gives no quick answer — the total changes and so does the number of
-      shares, and which effect wins is not obvious. The balance picture answers it in a
-      sentence.</p>
+      <p>Suppose a new value joins a set of numbers. Does the mean go up or down? The fair share does not answer this quickly. The total changes, and so does the number of shares. The balance point answers it at once.</p>
 
-      <p>A new dot to the right of the fulcrum adds to the right-hand total and nothing
-      to the left, so the row tips that way and the fulcrum must slide right to restore
-      it. A new dot to the left does the opposite. So including a value bigger than the
-      mean raises the mean, and including one smaller lowers it — every time, whatever
-      the rest of the data is doing.</p>
+      <p>A new dot to the right of the support adds to the right-hand total and adds nothing to the left. The row tips to the right, so the support has to move right to balance it again. A new dot to the left does the opposite. So a new value larger than the mean raises the mean, and a new value smaller than the mean lowers it. This is true every time, whatever the other values are.</p>
 
-      <p>A value exactly equal to the mean is the interesting case. It sits on the
-      fulcrum, contributes nothing to either total, and leaves the balance where it was.
-      Adding the mean to a collection changes the mean not at all. That is worth
-      remembering, because it looks as though it should change something.</p>
-
-      <p>It has a use. A collection can be padded out to any size you like without
-      disturbing its mean, simply by adding copies of the mean. That is how you check
-      that a rule about means really is about the values, and not about how many of them
-      there happen to be.</p>
-
-      <p>Two things the balance picture does not say, and both are worth having straight.
-      The mean need not be one of the values: none of the four in Fig. 5.1 is $12$. It
-      need not even be a value the situation allows, which is how a survey ends up
-      reporting $2.4$ children per household without anybody owning four tenths of a
-      child.</p>
+      <p>A new value exactly equal to the mean sits on the support. It adds nothing to either total, so the balance does not change. <em>Including a value equal to the mean leaves the mean unchanged.</em></p>
 
       <div class="c-example">
         <div class="c-example__tab">Example 2</div>
         <div class="c-example__body">
-          <p>The mean of $10$, $10$, $11$, $17$ is $12$. What single value can be added
-          to leave it at $12$? What pairs can be?</p>
+          <p>The mean of $6$, $6$, $7$ and $13$ is $8$. Which single value can be added without changing the mean? Which pairs of values can be added?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>one new value must add nothing to either side</span>
-              <span class="work__why">it sits on the fulcrum</span></div>
+              <span>One new value must sit on the support</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>so the one value is $12$</span></div>
+              <span>So the single value is $8$, and no other</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>a pair must have its own mean of $12$, so its sum is $24$</span>
-              <span class="work__why">the pair balances itself</span></div>
+              <span>A pair must balance itself at $8$: its own mean is $8$, so its sum is $16$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>One value: $12$, and nothing else. A pair: any two that add to $24$ — $8$ and $16$, or $5$ and $19$</span></div>
+              <span>The single value $8$; or any pair adding to $16$, such as $5$ and $11$</span></div>
           </div>
-          <p>A pair adding to $24$ has its own mean of $12$, so between them the two new
-          dots add as much to the left as to the right. That is the general rule, and the
-          single value is only the case of it with one dot instead of two.</p>
+          <p>The pair $5$ and $11$ is $3$ below and $3$ above $8$, so it adds the same amount to each side. The single value is the case of this rule with one dot instead of two. Three new values would need a sum of $24$.</p>
         </div>
       </div>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">New values leave the mean alone when their own mean matches</div>
-        <p>Adding any collection of new values leaves the mean unchanged exactly when the
-        new values have that same mean themselves. Two below and one above will do it —
-        $10$, $11$ and $15$ have a mean of $12$ — and so will twenty values, provided
-        they balance among themselves.</p>
-      </div>
+      <p>Removing a value works the other way round. Remove a value above the mean and the mean falls. Remove a value below the mean and the mean rises. Remove a value equal to the mean and the mean stays where it is. In each case, ask which side of the support the value was on.</p>
+
+      <p>The mean need not be one of the values. None of the four values in Fig. 5.1 is $8$. The mean need not even be a value that is possible. A survey can find that the homes in a village have $1.8$ bicycles each, although no home has $0.8$ of a bicycle.</p>
 
     </div>
   </div>

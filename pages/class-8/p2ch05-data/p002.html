@@ -2,63 +2,47 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Measure how far each dot stands from $12$. The two tens are $2$ away each and
-      the eleven is $1$ away, so the dots on the left are $2 + 2 + 1 = 5$ away in total.
-      The seventeen, alone on the right, is $5$ away. The two totals match — and that is
-      the sense in which $12$ is the centre.</p>
-
       <div class="c-keyidea">
-        <div class="c-keyidea__title">The mean is where the distances balance</div>
-        <p>Add up how far every value below the mean falls short of it, and add up how
-        far every value above it overshoots. The two totals are always equal. That is a
-        second description of the same number the fair share gave, and for most of the
-        questions in this chapter it is the more useful one.</p>
+        <div class="c-keyidea__title">The mean is the balance point</div>
+        <p>Add up how far each value below the mean is from it. Add up how far each value above the mean is from it. The two totals are always equal.</p>
       </div>
 
-      <p>Could there be a second such point? Suppose someone proposes $13$ instead. Every
-      dot on the left is now further away than before — the two tens by one more each,
-      the eleven by one more — so the total below has grown from $5$ to $8$. And the
-      seventeen is now only $4$ away, so the total above has shrunk. The two no longer
-      match, and the row tips.</p>
+      <p>Could another point balance the row as well? Try $9$. The two sixes are now $3$ away each and the seven is $2$ away, so the total on the left is $8$. The thirteen is only $4$ away. The totals do not match, and the row tips. Moving the point to the right always makes the left total bigger and the right total smaller. Moving it to the left does the opposite. So the totals are equal at one point only. The mean is the <em>only</em> balance point.</p>
 
-      <p>The same thing happens for any point above $12$, and the mirror image for any
-      point below it: moving left grows the right-hand total and shrinks the left. So the
-      totals can agree in one place only. The mean is not merely <em>a</em> balancing
-      point; it is the only one there is.</p>
-
-      <p>The two descriptions are the same statement in different clothes, and a line of
-      algebra shows it. To say the balance holds at $m$ is to say that the overshoots and
-      the shortfalls cancel — that adding up $x - m$ over every value gives nothing at
-      all. Since there are $n$ values, that total is $(x_1 + \cdots + x_n) - nm$, so it
-      is zero exactly when $nm$ is the sum, which is exactly when $m$ is the sum divided
-      by $n$.</p>
+      <p>A line of algebra shows that the fair share and the balance point are the same number. Let the values be $x_1, x_2, \ldots, x_n$. The balance holds at a point $m$ when the differences $x - m$, some positive and some negative, add up to zero. Their total is $(x_1 + x_2 + \cdots + x_n) - nm$. This is zero exactly when $nm$ equals the sum of the values, that is, when $m$ is the sum divided by $n$.</p>
 
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
-          <p>Check by balancing that the mean of $4$, $7$, $8$, $8$ and $18$ is $9$.</p>
+          <p>Check by balancing that the mean of $3$, $6$, $7$, $7$ and $17$ is $8$.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>below 9: $5 + 2 + 1 + 1 = 9$</span>
-              <span class="work__why">four values fall short</span></div>
+              <span>Below $8$: $5 + 2 + 1 + 1 = 9$</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>above 9: $18$ overshoots by $9$</span>
-              <span class="work__why">one value above</span></div>
+              <span>Above $8$: $17 - 8 = 9$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>The two totals agree, so the mean is $9$</span></div>
+              <span>The two totals are equal, so the mean is $8$</span></div>
           </div>
-          <p>No adding up of the five values and dividing by five was needed. The check
-          works as a check because balance and mean are the same condition written two
-          ways.</p>
+          <p>We did not add the five values and divide by five. Balancing and dividing give the same answer, so either one can be used to check the other.</p>
         </div>
       </div>
 
-      <p>One thing the picture makes plain that the arithmetic hides: a single distant
-      value can hold up a great many near ones. In Fig. 5.1 three dots huddled near $11$
-      are balanced by one dot at $17$, and if that one were dragged out to $37$ the mean
-      would have to move five places to keep up. A mean is not a promise that most
-      of the data is near it.</p>
+      <p>The picture shows something the arithmetic hides. One value far away can balance many values close together. In Fig. 5.1, three dots near $6$ are balanced by one dot at $13$. If that one dot moved out to $33$, the mean would move $5$ places, from $8$ to $13$. So a mean does not tell us that most of the values are close to it.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Without adding, decide whether $10$ is the mean of $5$, $8$, $12$ and $15$.</li>
+            <li>Can the mean of a set of numbers be larger than every one of them? Use the balance point to explain why.</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

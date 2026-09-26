@@ -2,92 +2,45 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The next one is harder in an interesting way, because the individual values are
-      never given at all.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The median counts; the mean weighs</div>
+        <p>A large new value raises both averages. The mean asks each value how far away it is, but the median asks only which side of the middle it is on. So a value far from the rest pulls the mean a long way and hardly moves the median.</p>
+      </div>
+
+      <p>Go back to $6$, $6$, $7$ and $13$ from Section 5.1. Their mean is $8$. Their median is $\frac{6 + 7}{2} = 6.5$. Move the $13$ out to $33$. The mean goes up to $13$. But the order of the values has not changed, the two middle values are still $6$ and $7$, and the median is still $6.5$.</p>
+
+      <p>Neither average is the right one in every case. They answer two different questions. If one value is far from the rest because of a mistake or an unusual day, the median describes the other values better. If that value matters, as a large bill matters to a family's spending, the mean includes it and the median does not.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
-          <p>Venkayya records the coconut harvest from each of his $15$ trees and works
-          out an average of $25.6$ per tree. His son checks the counts and finds that one
-          tree's figure was written down as $3$ more than it should have been. What is
-          the correct average?</p>
+          <p>A tea stall earns ₹780, ₹820, ₹760, ₹850, ₹2200, ₹800 and ₹790 on the seven days of one week. The ₹2200 was on a festival day. Find the mean and the median. Which of the two better describes an ordinary day?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$25.6 \times 15 = 384$ coconuts</span>
-              <span class="work__why">the recorded total</span></div>
+              <span>The seven amounts add to $7000$, so the mean is $7000 \div 7 = 1000$ rupees</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$384 - 3 = 381$</span>
-              <span class="work__why">the true total</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$381 \div 15 = 25.4$</span>
-              <span class="work__why">share it out again</span></div>
+              <span>In order: $760, 780, 790, 800, 820, 850, 2200$. The 4th value is $800$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>The correct average is $25.4$ coconuts per tree</span></div>
+              <span>Mean ₹1000, median ₹800. The median describes an ordinary day better</span></div>
           </div>
-          <p>Fifteen numbers were never needed. The error was in the total by exactly
-          $3$, and $3$ shared among $15$ trees is $0.2$ — which is precisely how much the
-          average came down. Compare Example 3, where the error was in every value. Here
-          it was in one, so the effect on the mean is smaller by a factor of the number
-          of values.</p>
+          <p>The stall earned less than ₹1000 on six of the seven days. The festival day pulled the mean up. The median did not notice how large that day was, only that it was above the middle.</p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 5.1</div>
-        <ol class="c-questions">
-          <li>Find the mean of each, and say what you notice about the third answer
-            beside the first.
-                <ol class="c-parts c-parts--1">
-                  <li>the first $50$ natural numbers</li>
-                  <li>the first $50$ odd numbers</li>
-                  <li>the first $50$ multiples of $4$</li>
-                </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Check by balancing, without adding and dividing, that the mean of $5$, $6$,
-            $9$ and $12$ is $8$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>The mean of $8$, $13$, $10$, $4$, $5$, $20$, $y$ and $10$ is $10.375$. Find
-            $y$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>A set of $15$ values has a mean of $134$. Find the sum of the values.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>The mean of a collection is $20$. Two more values, $12$ and $28$, are added
-            to it. What is the new mean? Explain how you know without being told anything
-            else about the collection.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Find the median of $8$, $10$, $19$, $23$, $26$, $34$, $40$, $41$, $41$,
-            $48$, $51$, $55$, $70$, $84$, $91$, $92$.
-                <ol class="c-parts c-parts--1">
-                  <li>Which single values could be added without changing the median?</li>
-                  <li>Which single values could be removed without changing it?</li>
-                  <li>Explain what it is about this particular collection that makes your
-                  two answers so generous.</li>
-                </ol>
-            </li>
-        </ol>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Write five values whose median is $10$ and whose mean is $20$.</li>
+            <li>The median of $3$, $5$, $8$ and $10$ is $6.5$. Which single values can be included without changing the median?</li>
+            <li>Sixty values are put in order. Which two places give the median?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
     </div>

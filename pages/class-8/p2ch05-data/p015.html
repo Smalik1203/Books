@@ -1,78 +1,51 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Using Fig. 5.8, say when Manoj's school broke for lunch and for how long,
-            and how long his journey to school took. Then describe how a Sunday strip of
-            your own would differ from a school-day one.</li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>Using Fig. 5.4, find the mean of the six readings. Explain why the highest reading being at $3$ pm does not tell us that the day was hottest at $3$ pm.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>The six readings are $21, 25, 30, 33, 29, 24$</span>
+              <span class="work__why">read off the dots</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>They add to $162$, and $162 \div 6 = 27$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$27$ lies between the lowest reading, $21$, and the highest, $33$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The mean is $27^\circ$. The highest <em>reading</em> was at $3$ pm, but the hottest moment is not known</span></div>
+          </div>
+          <p>Nobody read the thermometer between noon and $3$ pm, or between $3$ pm and $6$ pm. The day's highest temperature was somewhere in that stretch, and it could have been at any moment in it. A graph of six readings can only tell us where the highest <em>reading</em> was. To find the hottest moment, the club would need to read the thermometer much more often, say every ten minutes.</p>
+        </div>
       </div>
 
-      <div class="c-figure c-figure--full">
-        <figure>
-          <svg viewBox="0 0 196 50" data-size="full" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A strip of forty-eight coloured boxes recording one day in half-hour steps, with a long sleeping block at each end, travel and school through the middle, and a short eating block inside the school stretch">
+      <p>If the readings are taken closer together, the line shows more, and our estimates between readings become better. With a reading every quarter of an hour, the short straight pieces begin to look like a smooth curve. The method is the same; there are only more dots. But more readings never turn the line into a measurement. Between any two readings, the line is still only an estimate of what happened.</p>
 
-            <path class="dg-fill-a" d="M8 6 H16 V12 H8 Z"/>
-            <path class="dg-line"   d="M8 6 H16 V12 H8 Z"/>
-            <text class="dg-note" x="19" y="11.5">sleep</text>
-            <path class="dg-fill-b" d="M44 6 H52 V12 H44 Z"/>
-            <path class="dg-line"   d="M44 6 H52 V12 H44 Z"/>
-            <text class="dg-note" x="55" y="11.5">eat</text>
-            <path class="dg-fill-c" d="M74 6 H82 V12 H74 Z"/>
-            <path class="dg-line"   d="M74 6 H82 V12 H74 Z"/>
-            <text class="dg-note" x="85" y="11.5">school</text>
-            <path class="dg-fill-teal" d="M114 6 H122 V12 H114 Z"/>
-            <path class="dg-line"   d="M114 6 H122 V12 H114 Z"/>
-            <text class="dg-note" x="125" y="11.5">travel</text>
-            <path class="dg-fill-d" d="M152 6 H160 V12 H152 Z"/>
-            <path class="dg-line"        d="M152 6 H160 V12 H152 Z"/>
-            <text class="dg-note" x="163" y="11.5">other</text>
-
-            <path class="dg-fill-a" d="M8 20 H53 V34 H8 Z M173 20 H188 V34 H173 Z"/>
-            <path class="dg-fill-d" d="M53 20 H60.5 V34 H53 Z M131.75 20 H150.5 V34 H131.75 Z
-                                            M158 20 H173 V34 H158 Z"/>
-            <path class="dg-fill-b" d="M60.5 20 H64.25 V34 H60.5 Z M98 20 H105.5 V34 H98 Z
-                                       M150.5 20 H158 V34 H150.5 Z"/>
-            <path class="dg-fill-teal" d="M64.25 20 H71.75 V34 H64.25 Z M124.25 20 H131.75 V34 H124.25 Z"/>
-            <path class="dg-fill-c" d="M71.75 20 H98 V34 H71.75 Z M105.5 20 H124.25 V34 H105.5 Z"/>
-
-            <path class="dg-thin" d="M44 12 L48 6 M48 12 L52 6 M60.5 34 L64.25 20 M98 34 L101.75 20 M101.75 34 L105.5 20 M150.5 34 L154.25 20 M154.25 34 L158 20"/>
-            <text class="dg-label dg-label--sm dg-label--on-fill" x="118" y="10.6" text-anchor="middle">&bull;</text>
-            <text class="dg-label dg-label--sm dg-label--on-fill" x="66.1" y="28.6" text-anchor="middle">&bull;</text>
-            <text class="dg-label dg-label--sm dg-label--on-fill" x="69.9" y="28.6" text-anchor="middle">&bull;</text>
-            <text class="dg-label dg-label--sm dg-label--on-fill" x="126.1" y="28.6" text-anchor="middle">&bull;</text>
-            <text class="dg-label dg-label--sm dg-label--on-fill" x="129.9" y="28.6" text-anchor="middle">&bull;</text>
-            <path class="dg-thin" d="M23 20 V34 M38 20 V34 M53 20 V34 M68 20 V34 M83 20 V34 M98 20 V34
-                                     M113 20 V34 M128 20 V34 M143 20 V34 M158 20 V34 M173 20 V34"/>
-            <path class="dg-line" d="M8 20 H188 V34 H8 Z"/>
-
-            <text class="dg-tick" x="4" y="44">midnight</text>
-            <text class="dg-tick" x="53" y="44" text-anchor="middle">6 am</text>
-            <text class="dg-tick" x="98" y="44" text-anchor="middle">noon</text>
-            <text class="dg-tick" x="143" y="44" text-anchor="middle">6 pm</text>
-            <text class="dg-tick" x="192" y="44" text-anchor="end">midnight</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.8</span> (repeated from Section 5.10, for Exercise Set 5.3, Question 6)</figcaption>
-        </figure>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Line graphs</div>
+        <ul class="c-keyidea__points">
+          <li>A line graph joins readings of a quantity that changes over time.</li>
+          <li>A value read between two dots is an estimate, not a measurement.</li>
+        </ul>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li class="hard">A quantity starts at $1$ and doubles every year for six years.
-            Plot it as a line graph, and explain why joining the points with straight
-            segments overstates the quantity at every moment in between.</li>
-        </ol>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>From Fig. 5.4, estimate when the temperature first reached $32^\circ$ in the afternoon. Explain how you read it from the graph.</li>
+            <li>Between which two readings did the temperature fall fastest? How fast did it fall?</li>
+            <li>Would a line graph suit the favourite fruits of $30$ students? Give a reason.</li>
+          </ol>
+          </div>
+        </div>
       </div>
-
-      
-
-      <p>Both halves of the chapter were about the same discipline. A mean, a median and
-      a line graph are all summaries, and each of them is worth having because it throws
-      something away. Knowing what a summary has thrown away is the difference between
-      reading it and being told what to think by it.</p>
 
     </div>
   </div>

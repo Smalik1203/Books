@@ -1,4 +1,85 @@
-# Class 8 · Mathematics II · Chapter 5 — Dots, and the Lines Between Them
+# Class 8 · Mathematics II · Chapter 5 — Tales by Dots and Lines
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body's examples and exercises,
+Beyond the Book, its practice and its key further down this log.** Converted
+by CONVERT-V2.md, with Class 6 Chapter 1 as the model. `chapter.json`:
+`maths-v2`, palette `prism-damson`, edition `196x276-large`,
+`keepExerciseSets: true`, accent `#6b4b6f`. 41 pages:
+
+* **Body p001–p020**, nine sections (the old 5.1 Introduction folded into
+  5.1 *The Point That Balances*): the mean as a balance point, what moves
+  the mean, changing every value, the median, a missing or wrong value,
+  frequency tables, line graphs, reading a graph carefully, pictures without
+  axes. **Summary** on p020 (`data-close`, nine points).
+* **By the Book p090–p096**, seven pages, 50 questions to BY-THE-BOOK.md at
+  the Class 8 level: letters in word problems (Q11, Q21, Q25, Q29), algebraic
+  *Show that* (Q19, Q24), *In the given figure* (Q16, a dot plot, Fig. 5.7),
+  find the mistake (Q13, Arjun divides by the rows), multi-statement MCQ
+  (Q47), a named student's claim (Q48), case passages with a table or figure
+  (Q37 the Pune bus poster, Fig. 5.8). Assertion–reason keys a b c d a;
+  objective keys b c a d c d b a b c.
+* **Beyond the Book p101–p114**: the eight tried-and-explained questions
+  with no stage head; then Single correct · More than one correct ·
+  Numerical answer · Matching · Paragraph-based, two examples and then
+  practice in each (4 · 4 · 3 · 2 · 2). Examples kept from the 23 September
+  set: old 3 and 6 (single), 7 and 10 (more than one), 11 and 12 (numerical),
+  14 and 15 (matching), with their format lines and tab tags removed and
+  Check rows or a closing remark added; two paragraph-based examples written
+  new (a Ludhiana cycle shop; Neha's height on her birthdays). The fifteen
+  practice questions are new. Answers open p112.
+* `ANSWERS.md` rewritten for the new body, By the Book and Beyond.
+  `check-numbers.mjs` rewritten (the old one checked figures and a key that
+  no longer exist): 278 checks, none failing, and a planted wrong key letter
+  is caught.
+
+### No NCERT expression
+
+Every context, name and data set in the body is new: Fig. 5.1 now shows
+6, 6, 7, 13 (mean 8); Fig. 5.2 shows 2 to 10; pocket money replaces the
+households; Farida's stopwatch replaces the shoe heights (Example 3); a tea
+stall (Example 4, new, the median against a festival day); Tenzin's plants
+replace Coach Balwan's kushti players (Example 5); Anjali's mangoes replace
+Venkayya's coconuts (Example 6); a combined mean of two classes (Example 7,
+new); library visits replace household sizes in the tally, the frequency
+table and Fig. 5.3; a hockey team's missing frequency (Example 8, new); a
+school weather club's readings (21, 25, 30, 33, 29, 24) redraw Fig. 5.4;
+dairy milk figures redraw Fig. 5.5; Kabir's day replaces Manoj's and Fig. 5.6
+is redrawn (a different day, hour numbers under the strip, no `dg-fill-d`);
+the six-city rainfall Think and Reflect became a zoo's visitors. All three
+exercise sets are our own questions, each ending in
+`c-practice__note` *NCERT, Figure it Out, §5.x*. **Stage 1 of Beyond** is
+word for word except: the shoe-heights item became the twelve runners of
+Example 3 (the body example it pointed to was rewritten); section references
+moved (5.3 → 5.2, 5.4 → 5.3); and nine small wording changes to clear lone
+words on a last line (*each one*, *how far away*, *of all fourteen runners*,
+*on the second graph*, *of the seven days*, *the old*).
+
+### Body: what else changed
+
+* **Key idea and Think and Reflect in every section**; new key ideas for
+  §5.3, §5.5, §5.6, §5.7 and §5.9, and Think and Reflect for §5.1–§5.7 and
+  §5.9.
+* **Plain English**: the idioms the old text used (*in different clothes*,
+  *worth having straight*, *guesses dressed as inferences*, *the gap between
+  those two is where mistakes live*) are gone; sentences are short.
+* New teaching to fill pages, all of it in the section's own line: the place
+  of the median, $\frac{n + 1}{2}$ (§5.4); the rate of change read from a
+  slope (§5.7); Example 10, reading the strip (§5.9).
+* Exercise sets: 5.1 has 8 questions, 5.2 has 7, 5.3 has 6; each fits one
+  page whole. The old flagged questions (the 5.07 borrowed from §5.7, the
+  question that printed its own answers, the doubling curve) are gone.
+
+### Checks at close
+
+Build: all pages fit. Fill: every page 88% or more except p020 (Summary,
+82%), p096 (By the Book's last, 71%) and p114 (the last page, 27%).
+`lone-words` 0; `check-sums` 117 identities, 0 wrong; `orphans` 0 stranded;
+`check-labels` no collisions; `fit-options` every row fits (four lists
+narrowed by `--fix`); `check-numbers.mjs` 278 checks, 0 failed.
+
+
 
 ## Solved examples in examination formats, 23 September 2026
 

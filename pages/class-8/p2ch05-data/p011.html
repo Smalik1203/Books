@@ -2,62 +2,73 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Bars would be wrong here. Six bars would say that the temperature stood at
-      $22^\circ$ for three hours, then at $26^\circ$ for three hours, then jumped again — six
-      flat stretches and five leaps, which is not what a morning does.</p>
+      <h2><span class="badge">5.6</span><span class="name">When the Data Comes in a Table</span></h2>
 
-      <p>Because the line is unbroken it can be read at places where nothing was
-      measured. At half past ten it stands a little over $28^\circ$, and that is a
-      reasonable estimate of the temperature then. It is an estimate and not a
-      measurement: the real temperature wandered about between the readings, and a
-      straight segment from one dot to the next is the simplest guess, not the truth.</p>
+      <p>The $30$ students of a class each say how many times they visited the school library last month. Their answers are written down in the order they are given.</p>
 
-      <p>The same graph also settles what a table cannot. The steepest climb is between
-      $9$ am and noon, and the eye reads a rate off a slope without subtracting anything. A
-      table of the same six numbers holds that information and hides it.</p>
+      <div class="eq">$$3 \quad 2 \quad 4 \quad 1 \quad 3 \quad 5 \quad 2 \quad 3 \quad 6
+      \quad 4 \quad 3 \quad 1 \quad 2 \quad 4 \quad 3$$</div>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Using Fig. 5.4, find the mean of the six readings, and say why the hottest
-          reading being at $3$ pm does not mean the day was hottest at $3$ pm.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>the six readings: $22, 26, 31, 34, 30, 25$</span>
-              <span class="work__why">read off the dots</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$168 \div 6 = 28^\circ$</span>
-              <span class="work__why">the readings add to 168</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Mean $28^\circ$. The largest reading was at $3$ pm; the hottest moment is unknown</span></div>
-          </div>
-          <p>And the peak is a peak among the six readings only. Nobody looked between
-          $12$ and $3$ pm, or between $3$ and $6$; the true maximum lies somewhere in
-          that stretch and could be at any moment in it. A graph of six readings can say
-          where the largest <em>reading</em> was, and no more.</p>
+      <div class="eq">$$5 \quad 2 \quad 3 \quad 4 \quad 1 \quad 3 \quad 6 \quad 2 \quad 4
+      \quad 5 \quad 3 \quad 1 \quad 4 \quad 2 \quad 5$$</div>
+
+      <p>Only six different answers appear, so we count them in one pass. For each answer, put a stroke in its row, and draw every fifth stroke across the four before it.</p>
+
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 163 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A tally sheet with six rows, one for each number of library visits from one to six, the strokes bundled in fives and the counts four, six, eight, six, four and two written beside them">
+      
+            <text class="dg-note" x="22" y="9" text-anchor="end">visits</text>
+            <text class="dg-note" x="150" y="9" text-anchor="end">students</text>
+      
+            <path class="dg-line" d="M34 14 V26 M40 14 V26 M46 14 V26 M52 14 V26
+                                     M34 28 V40 M40 28 V40 M46 28 V40 M52 28 V40 M32 40 L54 28 M63 28 V40
+                                     M34 42 V54 M40 42 V54 M46 42 V54 M52 42 V54 M32 54 L54 42 M63 42 V54 M69 42 V54 M75 42 V54
+                                     M34 56 V68 M40 56 V68 M46 56 V68 M52 56 V68 M32 68 L54 56 M63 56 V68
+                                     M34 70 V82 M40 70 V82 M46 70 V82 M52 70 V82
+                                     M34 84 V96 M40 84 V96"/>
+      
+            <text class="dg-tick" x="22" y="26" text-anchor="end">1</text>
+            <text class="dg-tick" x="22" y="40" text-anchor="end">2</text>
+            <text class="dg-tick" x="22" y="54" text-anchor="end">3</text>
+            <text class="dg-tick" x="22" y="68" text-anchor="end">4</text>
+            <text class="dg-tick" x="22" y="82" text-anchor="end">5</text>
+            <text class="dg-tick" x="22" y="96" text-anchor="end">6</text>
+      
+            <text class="dg-tick" x="150" y="26" text-anchor="end">4</text>
+            <text class="dg-tick" x="150" y="40" text-anchor="end">6</text>
+            <text class="dg-tick" x="150" y="54" text-anchor="end">8</text>
+            <text class="dg-tick" x="150" y="68" text-anchor="end">6</text>
+            <text class="dg-tick" x="150" y="82" text-anchor="end">4</text>
+            <text class="dg-tick" x="150" y="96" text-anchor="end">2</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 5.3</span> The thirty answers, tallied. The counts add up to $30$. If they added up to $29$, a stroke would be missing, and the only way to find it would be to count again.</figcaption>
+        </figure>
+      </div>
+
+      <p>The number of times a value occurs is its <span class="term">frequency</span>. A table of values and their frequencies is a <span class="term">frequency table</span>. It keeps everything in the list except the order of the answers, which we do not need.</p>
+
+      <p>Now find the mean number of visits. One quick answer is to add the six different values and divide by six: $\frac{1 + 2 + 3 + 4 + 5 + 6}{6} = 3.5$. This is wrong. The mean is the sum of all thirty <em>answers</em> divided by thirty. The answer $3$ was given by eight students, so it must be counted eight times in the sum.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">the sum</span>
+          <span>$(1 \times 4) + (2 \times 6) + (3 \times 8) + (4 \times 6) + (5 \times 4) + (6 \times 2)$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">which is</span>
+          <span>$4 + 12 + 24 + 24 + 20 + 12 = 96$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the mean</span>
+          <span>$96 \div 30 = 3.2$ visits</span>
         </div>
       </div>
 
-      <p>Readings taken closer together give a line with more in it. Take one every quarter
-      of an hour, and the segments joined at corners start to look like a curve. Nothing
-      about the method changed. Only the number of dots did.</p>
+      <p>Each value is multiplied by its frequency before the values are added. Then we divide by the total of the frequencies, not by the number of rows. Forgetting either step is the most common mistake with a frequency table.</p>
 
-      <h2><span class="badge">5.9</span><span class="name">Reading a Graph Honestly</span></h2>
-
-      <p>A graph is quicker to look at than a table and slower to read properly, and the
-      gap between those two is where mistakes live. It is worth doing deliberately, in
-      two steps that are easy to run together and should not be.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">First what is given, then what follows</div>
-        <p><strong>Step one:</strong> see how the graph is organised. What is on each
-        axis, in what unit, at what scale. Where the axis begins. Which points were
-        actually measured and which were joined. <strong>Step two:</strong> and only
-        then, say what the shape shows — where it rises, where it is steepest, which
-        lines cross. Anything said in step two is only as good as what was noticed in
-        step one.</p>
-      </div>
+      <p>The median needs no multiplying, and we do not have to write the thirty answers in order. With thirty values, the median is the mean of the 15th and the 16th. Add up the frequencies from the top until those places are reached.</p>
 
     </div>
   </div>

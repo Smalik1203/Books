@@ -2,89 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>Say whether each statement is always true, sometimes true, or never true,
-            and give an example either way.
-                <ol class="c-parts c-parts--1">
-                  <li>Removing a value less than the median will decrease the median.</li>
-                  <li>Including a value less than the mean will decrease the mean.</li>
-                  <li>Including any four values will not affect the median.</li>
-                  <li>Including four values less than the median will increase it.</li>
-                </ol>
-            </li>
-        </ol>
+      <h2><span class="badge">5.5</span><span class="name">An Average with a Piece Missing</span></h2>
+
+      <p>So far we have been given the values and asked for the average. Now we go the other way. The average is given, one value is unknown, and finding it means solving an equation.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Tenzin measures the heights, in centimetres, of $8$ plants in the school garden. Seven of them are $24$, $31$, $28$, $35$, $26$, $30$ and $33$. The eighth has been smudged, but the mean of all eight is written as $29.5$ cm. Find the missing height.</p>
+          <p><strong>Solution.</strong> Let the missing height be $h$ cm.</p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\dfrac{24 + 31 + 28 + 35 + 26 + 30 + 33 + h}{8} = 29.5$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>The seven add to $207$, so $207 + h = 8 \times 29.5 = 236$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$h = 236 - 207 = 29$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The missing height is $29$ cm</span></div>
+          </div>
+          <p>The mean was used backwards. Multiplying the mean by the number of values gave the total, and the missing value was the part of the total we could not see.</p>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>The values $12$, $47$, $8$, $73$, $18$, $35$, $39$, $8$, $29$, $25$ and $p$
-            have a median of $29$. Which of these could $p$ be: $10$, $25$, $29$, $30$,
-            $40$, $47$, $100$?</li>
-        </ol>
-      </div>
+      <p>In the next example, the values themselves are never given.</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li class="hard">A shopkeeper's daily takings for six days have a mean of
-            <span class="nb">₹$4{,}200$</span> and a median of <span class="nb">₹$3{,}900$</span>. On the seventh day he takes
-            <span class="nb">₹$11{,}000$</span>. Without knowing the six figures, say what happens to the mean and
-            what happens to the median, and which of the two you can pin down more
-            exactly.</li>
-        </ol>
-      </div>
-
-      <h2><span class="badge">5.7</span><span class="name">When the Data Comes in a Table</span></h2>
-
-      <p>A teacher asks each of her thirty students how many people live in their house,
-      and writes the answers down in the order they are called out.</p>
-
-      <div class="eq">$$5 \quad 4 \quad 6 \quad 5 \quad 3 \quad 7 \quad 4 \quad 5 \quad 8
-      \quad 4 \quad 6 \quad 5 \quad 3 \quad 4 \quad 5$$</div>
-
-      <div class="eq">$$6 \quad 7 \quad 4 \quad 5 \quad 3 \quad 8 \quad 5 \quad 4 \quad 6
-      \quad 5 \quad 3 \quad 7 \quad 4 \quad 6 \quad 5$$</div>
-
-      <p>Only six different answers appear, from $3$ to $8$, so the list repeats itself a
-      great deal. Counting how often each one turns up takes a single pass. Read the
-      list from the start and put a stroke against the right row. Lay every fifth
-      stroke across the four before it, so the marks arrive in bundles that can be counted
-      in fives.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 163 106" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A tally sheet with six rows, one for each household size from three to eight, the strokes bundled in fives and the counts written beside them">
-
-            <text class="dg-note" x="22" y="9" text-anchor="end">members</text>
-            <text class="dg-note" x="150" y="9" text-anchor="end">students</text>
-
-            <path class="dg-line" d="M34 14 V26 M40 14 V26 M46 14 V26 M52 14 V26
-                                     M34 28 V40 M40 28 V40 M46 28 V40 M52 28 V40 M32 40 L54 28 M63 28 V40 M69 28 V40
-                                     M34 42 V54 M40 42 V54 M46 42 V54 M52 42 V54 M32 54 L54 42 M63 42 V54 M69 42 V54 M75 42 V54 M81 42 V54
-                                     M34 56 V68 M40 56 V68 M46 56 V68 M52 56 V68 M32 68 L54 56
-                                     M34 70 V82 M40 70 V82 M46 70 V82
-                                     M34 84 V96 M40 84 V96"/>
-
-            <text class="dg-tick" x="22" y="26" text-anchor="end">3</text>
-            <text class="dg-tick" x="22" y="40" text-anchor="end">4</text>
-            <text class="dg-tick" x="22" y="54" text-anchor="end">5</text>
-            <text class="dg-tick" x="22" y="68" text-anchor="end">6</text>
-            <text class="dg-tick" x="22" y="82" text-anchor="end">7</text>
-            <text class="dg-tick" x="22" y="96" text-anchor="end">8</text>
-
-            <text class="dg-tick" x="150" y="26" text-anchor="end">4</text>
-            <text class="dg-tick" x="150" y="40" text-anchor="end">7</text>
-            <text class="dg-tick" x="150" y="54" text-anchor="end">9</text>
-            <text class="dg-tick" x="150" y="68" text-anchor="end">5</text>
-            <text class="dg-tick" x="150" y="82" text-anchor="end">3</text>
-            <text class="dg-tick" x="150" y="96" text-anchor="end">2</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.3</span> The thirty answers, tallied.
-          The counts add to $30$, which is the one check worth making: a total of $29$
-          means a stroke was missed, and there is no way to find it but to count
-          again.</figcaption>
-        </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Anjali counts the mangoes on each of $12$ trees in an orchard and finds a mean of $46.5$ mangoes per tree. A second count shows that she wrote down one tree's number as $6$ more than it really was. What is the correct mean?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$46.5 \times 12 = 558$ mangoes</span>
+              <span class="work__why">the total she wrote</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$558 - 6 = 552$</span>
+              <span class="work__why">the true total</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$552 \div 12 = 46$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The correct mean is $46$ mangoes per tree</span></div>
+          </div>
+          <p>We never needed the twelve counts. The total was wrong by $6$, and $6$ shared among $12$ trees is $0.5$, which is exactly how much the mean came down. In Example 3 the error was in every value, and the mean moved by the whole error. Here it was in one value out of $12$, so the mean moved by one twelfth of it.</p>
+        </div>
       </div>
 
     </div>

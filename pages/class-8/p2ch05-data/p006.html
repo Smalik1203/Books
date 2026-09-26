@@ -2,64 +2,39 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The direction of that change was forced. A value greater than the median arrives
-      on the upper side and unbalances the count — there are now more values above the
-      old median than below — so the middle must shift upwards to even the numbers again.
-      Including $2$ instead would have pushed it the other way, to $7$.</p>
-
-      <p>Notice that $8.5$ is not one of the values, and that it never was going to be:
-      with an even count the median is the average of two neighbours and lands between
-      them unless they happen to be equal. A median need not be a member of the
-      collection, and the mean need not be either.</p>
-
       <div class="c-keyidea">
-        <div class="c-keyidea__title">The median counts values; the mean weighs them</div>
-        <p>Both move up when a large value is added and down when a small one is. The
-        difference is by how much. The mean asks each value how far away it is; the
-        median asks only which side it is on. A value a long way out therefore drags the
-        mean and barely touches the median.</p>
+        <div class="c-keyidea__title">Changing every value</div>
+        <ul class="c-keyidea__points">
+          <li>Adding $c$ to every value adds $c$ to the mean.</li>
+          <li>Multiplying every value by $k$ multiplies the mean by $k$.</li>
+        </ul>
       </div>
 
-      <p>Section 5.2 had exactly such a set. The values $10$, $10$, $11$, $17$ have a
-      mean of $12$ and a median of $10.5$, the average of the two middle values. Drag the
-      $17$ out to $37$ and the mean climbs all the way to $17$ — but the sorted order is
-      unchanged, the two middle values are still $10$ and $11$, and the median stays at
-      $10.5$ exactly.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>A class's marks out of $25$ have a mean of $18$. The teacher changes every mark to a mark out of $100$. What is the new mean?</li>
+            <li>Every value in a set with mean $10$ is doubled, and then $3$ is taken away from it. What happens to the mean? Does the order of the two steps matter?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
-      <p>Neither is the right answer and neither is wrong. They are answers to two
-      questions, and which one a reader wants depends on whether the far-out value is the
-      point of the data or a distraction from it.</p>
+      <h2><span class="badge">5.4</span><span class="name">The Middle Value</span></h2>
 
-      <h2><span class="badge">5.6</span><span class="name">An Average with a Piece Missing</span></h2>
+      <p>The <span class="term">median</span> is a second kind of average. Put the values in order, from smallest to largest. The median is the value in the middle, with as many values below it as above it. When the number of values is even, there are two middle values. Then the median is the mean of those two.</p>
 
-      <p>Everything so far has run forwards: here is the data, find the average. Run it
-      backwards and the average becomes given information, with an unknown inside it — an
-      equation.</p>
+      <p>Take $4$, $7$, $9$, $12$ and $15$. There are five values, and the third is $9$. Two values lie below it and two above it, so the median is $9$. Now include $13$. In order, the values are $4$, $7$, $9$, $12$, $13$ and $15$. The two middle values are $9$ and $12$, so the median is $\frac{9 + 12}{2} = 10.5$.</p>
 
-      <div class="c-example">
-                      <div class="c-example__tab">Example 4</div>
-                      <div class="c-example__body">
-                        <p>Coach Balwan wrote down the weights, in kilograms, of his ten kushti
-                        players: $42$, $40$, $39$, $33$, $48$, $38$, $42$, $35$, $32$ and one more that
-                        has since been smudged. He also wrote that the mean was $39.2$ kg. What was the
-                        missing weight?</p>
-                        <p><strong>Solution.</strong></p>
-                        <div class="work">
-                          <div class="work__row"><span class="work__label">Step 1</span>
-                            <span>$\dfrac{42 + 40 + 39 + 33 + 48 + 38 + 42 + 35 + 32 + w}{10} = 39.2$</span>
-                            <span class="work__why">$w$ is missing</span></div>
-                          <div class="work__row"><span class="work__label">Step 2</span>
-                            <span>the nine add to $349$, so $349 + w = 392$</span>
-                            <span class="work__why">multiply both sides by 10</span></div>
-                          <div class="work__row"><span class="work__label">Step 3</span>
-                            <span>$w = 392 - 349 = 43$ kg</span></div>
-                          <div class="work__row"><span class="work__label">Answer</span>
-                            <span>The missing weight was $43$ kg</span></div>
-                        </div>
-                        <p>The mean was used in reverse: the known mean was multiplied by ten to recover
-      the total, and the total is what the missing value was hiding in.</p>
-                      </div>
-                    </div>
+      <p>The median went up, and it had to. The new value, $13$, is above the old median. It adds one more value above the middle, so the middle moves up. If we had included $2$ instead, the values in order would be $2$, $4$, $7$, $9$, $12$, $15$, and the median would have gone down to $8$, the mean of $7$ and $9$.</p>
+
+      <p>Notice that $10.5$ is not one of the values. When the number of values is even, the median is halfway between two values, and it is one of the values only when those two are equal. Like the mean, the median need not be a member of the set.</p>
+
+      <p>For a long list it helps to know where the middle is. With $n$ values in order, when $n$ is odd, the median is the value in place $\frac{n + 1}{2}$: for $25$ values, the 13th. When $n$ is even, the median is the mean of the values in places $\frac{n}{2}$ and $\frac{n}{2} + 1$: for $30$ values, the 15th and the 16th.</p>
 
     </div>
   </div>

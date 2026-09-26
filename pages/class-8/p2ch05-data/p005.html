@@ -2,7 +2,13 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Add a fixed number $c$ to every one of them and work out the new mean.</p>
+      <p>Every dot moved $10$ places to the right. The distances between the dots did not change, so the point that balanced them still balances them. It has also moved $10$ places, from $6$ to $16$.</p>
+
+      <p>Algebra shows that this always happens. Let the values be $x_1, x_2, \ldots, x_n$ and their mean be $a$. Then</p>
+
+      <div class="eq">$$\frac{x_1 + x_2 + \cdots + x_n}{n} = a.$$</div>
+
+      <p>Add the same number $c$ to every value, and find the new mean.</p>
 
       <div class="work">
         <div class="work__row">
@@ -19,10 +25,7 @@
         </div>
       </div>
 
-      <p>There were $n$ values and each gained $c$, so the total gained $nc$ — and $nc$
-      shared among $n$ values is $c$ each. Multiplying instead of adding goes the same
-      way. If every value is multiplied by $k$, the new sum is $k$ times the old sum by
-      the distributive property, and dividing by $n$ gives $ka$.</p>
+      <p>There were $n$ values and each one gained $c$, so the total gained $nc$. Shared among $n$ values, that is $c$ each. Multiplying works in the same way. If every value is multiplied by $k$, the new sum is $k$ times the old sum, by the distributive property. Dividing by $n$ gives a new mean of $ka$, which is $k$ times the old mean.</p>
 
       <div class="eq eq--anchor">$$\text{add } c \text{ to every value} \to \text{mean } a + c;
       \qquad \text{multiply every value by } k \to \text{mean } ka.$$</div>
@@ -30,44 +33,24 @@
       <div class="c-example">
         <div class="c-example__tab">Example 3</div>
         <div class="c-example__body">
-          <p>Shreyas measures the heights of all $24$ students in his class and reports
-          an average of $150.2$ cm. His teacher then notices that everyone was wearing
-          the school shoes, which add $1$ cm. Must all $24$ be measured again?</p>
+          <p>Farida times $12$ runners in a race and finds a mean time of $58.5$ seconds. Later she finds that her stopwatch started $1.5$ seconds late for every runner, so every time she wrote down is $1.5$ seconds too short. Must all $12$ runners run again?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>every height was recorded $1$ cm too large</span>
+              <span>Every time is $1.5$ s too short</span>
               <span class="work__why">the same error for all</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>so the mean is $1$ cm too large as well</span>
-              <span class="work__why">a shift moves the mean</span></div>
+              <span>So the mean is also $1.5$ s too short</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$150.2 - 1 = 149.2$ cm</span></div>
+              <span>$58.5 + 1.5 = 60$ seconds</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>No. The true average is $149.2$ cm</span></div>
+              <span>No. The true mean time is $60$ seconds</span></div>
           </div>
-          <p>Nobody need be measured again, and the twenty-four individual heights need
-          not even be known. A fixed error in every reading becomes the same fixed error
-          in the mean, and can be taken off at the end.</p>
+          <p>Nobody needs to run again, and we do not even need the twelve times. The same error in every value becomes the same error in the mean, and it can be put right at the end.</p>
         </div>
       </div>
 
-      <p>The warning inside that is worth stating. It works because the error was the
-      <em>same</em> for everybody. Had some students been in shoes and some barefoot,
-      nothing could be recovered from the average alone, and the measuring would have to
-      be done again.</p>
-
-      <h2><span class="badge">5.5</span><span class="name">The Middle Value</span></h2>
-
-      <p>The <span class="term">median</span> answers a different question about the same
-      pile of numbers. Sort them, and the median is the one in the middle — the value
-      with as many below it as above. An even count has no single middle, so the median
-      is taken as the average of the two that share the position.</p>
-
-      <p>Take $3$, $6$, $8$, $9$, $14$. There are five values, the third is $8$, and two
-      lie on either side of it, so the median is $8$. Now include $11$. Sorted, the
-      collection reads $3$, $6$, $8$, $9$, $11$, $14$, the two middle values are $8$ and
-      $9$, and the median is $8.5$.</p>
+      <p>This works only because the error was the <em>same</em> for every runner. If the stopwatch had been late for some runners and not for others, the mean alone could not be corrected. The race would have to be timed again.</p>
 
     </div>
   </div>

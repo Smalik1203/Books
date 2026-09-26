@@ -1,269 +1,145 @@
-# Class 8 · Mathematics II · Chapter 5 — Dots, and the Lines Between Them
+# Class 8 · Mathematics II · Chapter 5 — Tales by Dots and Lines
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
-book prints none of it except Beyond the Book's own key.
+book prints none of it except the key at the end of Beyond the Book.
 
-Numbered by set — *Exercise Set 5.2, Q4* — so it can be used beside the book
-without a contents page. **Every value below is re-derived by
-`check-numbers.mjs` beside this file.** A question renumbered in the book and
-not here is how this goes wrong.
-
-Where a question asks the reader to choose or explain, the answer gives one
-worked instance under *answers will vary*.
+Rewritten for the maths-v2 conversion, 26 September 2026: the body's
+examples, data and exercise questions are new, so every answer below is
+new. **Every value is re-derived by `check-numbers.mjs` beside this file.**
 
 ---
 
-## 5.1–5.6 The mean and the median
+## Think and Reflect
 
-### Exercise Set 5.1
-
-1. - (i) $1 + 2 + \cdots + 50 = 1275$, and $1275 \div 50 = 25.5$.
-   - (ii) $1 + 3 + \cdots + 99 = 2500$, and $2500 \div 50 = 50$.
-   - (iii) $4 + 8 + \cdots + 200 = 5100$, and $5100 \div 50 = 102$.
-   - The third mean is $4 \times 25.5 = 102$: every value of (iii) is $4$
-     times the matching value of (i), so the mean is $4$ times as large.
-
-2. Below $8$: $3 + 2 = 5$ (from $5$ and $6$). Above $8$: $1 + 4 = 5$ (from
-   $9$ and $12$). The totals balance, so the mean is $8$.
-
-3. $10.375 \times 8 = 83$ and $8 + 13 + 10 + 4 + 5 + 20 + 10 = 70$, so
-   **$y = 13$**.
-
-4. $15 \times 134 = 2010$.
-
-5. **$20$.** The two new values have their own mean $(12 + 28) \div 2 = 20$,
-   which is the collection's mean: $12$ is $8$ below and $28$ is $8$ above, so
-   they balance each other and the fulcrum does not move.
-
-6. Sixteen values: the median is the average of the 8th and 9th, which are
-   $41$ and $41$, so the **median is $41$**.
-   - (i) **Any value at all.** With seventeen values the median is the 9th.
-     A new value at or below $41$ pushes the old 8th ($41$) into 9th place;
-     one at or above $41$ leaves the old 9th ($41$) there.
-   - (ii) **Any value.** With fifteen values the median is the 8th. Removing
-     a value from the lower half makes the old 9th ($41$) the 8th; removing
-     one from the upper half leaves the old 8th ($41$) in place.
-   - (iii) The two middle values are equal. Whichever way the middle shifts
-     by one place, it lands on a $41$.
-
-7. - (i) **Never true.** Removing a value below the median can only move the
-     middle up or leave it. Example: $1, 5, 9$ has median $5$; remove $1$
-     and it is $(5 + 9) \div 2 = 7$.
-   - (ii) **Always true.** A value below the mean adds more to the left of the
-     balance than to the right. Example: $2, 4, 6$ has mean $4$; include $1$
-     and it is $13 \div 4 = 3.25$.
-   - (iii) **Sometimes true.** $1, 2, 3$ with $0, 0, 5, 5$ included keeps
-     median $2$; with $10, 10, 10, 10$ included the median is $10$.
-   - (iv) **Never true.** Four values below the median push the middle down
-     or leave it. Example: $4, 5, 6$ has median $5$; include $1, 1, 1, 1$
-     and the median is the 4th of seven, $1$.
-
-8. The ten known values sorted: $8, 8, 12, 18, 25, 29, 35, 39, 47, 73$. With
-   $p$ there are eleven, and the median is the 6th. For $p \ge 29$ the 6th is
-   $29$; for $p$ below $29$ the 6th is $25$ or $p$. So $p$ could be
-   **$29$, $30$, $40$, $47$ or $100$**, and not $10$ or $25$.
-
-9. The six days total $6 \times 4200 = 25200$ rupees. With the seventh the total
-   is $25200 + 11000 = 36200$, so the mean becomes $36200 \div 7$, about
-   ₹5,171.43 — **pinned down exactly**. The median of seven values is the 4th,
-   which is the upper of the old two middle values: at least ₹3,900, and it
-   **rises or stays**, but by how much cannot be said without the six figures.
-
-### Examples 1–6 (worked on the page)
-
-Example 1: balance $9$ both ways. Example 2: $12$; any pair adding to $24$.
-Example 3: $149.2$ cm. Example 4: $43$ kg. Example 5: $25.4$. Example 6:
-mean $28$ degrees; the peak is a peak among six readings only.
-
-## 5.7 When the Data Comes in a Table
-
-The thirty answers tally to $3$: 4, $4$: 7, $5$: 9, $6$: 5, $7$: 3, $8$: 2
-(Fig. 5.3). Mean $152 \div 30 = 5.07$; median $5$.
-
-### Exercise Set 5.2
-
-1. | Siblings | 0 | 1 | 2 | 3 | 4 |
-   |---|---|---|---|---|---|
-   | Students | 5 | 10 | 6 | 3 | 1 |
-
-   Sum $0 + 10 + 12 + 9 + 4 = 35$, so the **mean is $35 \div 25 = 1.4$**.
-   The median is the 13th value; the running totals are $5, 15, \ldots$, so
-   the **median is $1$**.
-
-2. $62$ students. Smallest $1$, largest $10$. Sum
-   $1 + 4 + 20 + 54 + 84 + 120 + 90 + 100 = 473$, so the **mean is
-   $473 \div 62 = 7.63$**, to two places. The median is the average of the
-   31st and 32nd; the running totals are $1, 1, 1, 2, 6, 15, 27, 42, \ldots$,
-   so both are $8$ and the **median is $8$**.
-
-3. - (i) Sum $0 + 5 + 8 + 9 + 4 = 26$, **mean $26 \div 15 = 1.73$**. The
-     median is the 8th; running totals $2, 7, 11$, so the **median is $2$**.
-   - (ii) Every value goes up by $1$, so the **mean is $41 \div 15 = 2.73$**
-     and the **median is $3$**.
-   - (iii) *Everyone used a cycle at least once* is **not valid**: two said
-     none. *Almost everyone used one a few times* is loose: $13$ of $15$
-     used one, but $5$ of those only once. Answers will vary on whether that
-     is *a few*.
-
-4. Sum $10 + 3f + 24 + 20 = 54 + 3f$ over $15 + f$ values, so
-   $54 + 3f = 3.5 \times (15 + f) = 52.5 + 3.5f$, giving $0.5f = 1.5$ and
-   **$f = 3$**.
-
-5. The **mean is larger**. The table has a long tail on the large side:
-   households of $7$ and $8$ are far above $5$ and pull the mean up, while
-   the median only counts them as *above*.
-
-6. $80 + 4x = 12 \times 12 = 144$, so $4x = 64$ and **$x = 16$**.
-
-7. **Yes.** The sum must be $20 \times 3 = 60$, and the average of the 10th
-   and 11th values must be $2$. Worked instance (answers will vary):
-
-   | Value | 1 | 2 | 3 | 4 | 5 |
-   |---|---|---|---|---|---|
-   | Frequency | 0 | 11 | 3 | 1 | 5 |
-
-   Sum $22 + 9 + 4 + 25 = 60$, mean $3$; the 10th and 11th are both $2$.
-
-## 5.8–5.10 Lines, graphs and pictures
-
-### In-text: three claims about Fig. 5.4
-
-Answered on the page: not settled; true; not settled.
-
-### Think and Reflect (rainfall in west-coast and east-coast cities)
-
-Answers will vary. Worked instance: *Is the pattern the same every year?*
-and *Do other cities on each coast follow it?* can be answered with more
-rainfall data of the same kind. *Why do the peaks fall in different months?*
-cannot: it needs data of another kind — the direction of the monsoon winds
-in each season, and where the mountains stand.
-
-### Exercise Set 5.3
-
-1. At 7:30 am the line is halfway between $22$ and $26$: **about $24$
-   degrees**. At 4:30 pm it is halfway between $34$ and $30$: **about $32$
-   degrees**. Answers will vary on which is closer; a good answer: the
-   **7:30 am** estimate, because the morning warms steadily, while the
-   afternoon stretch contains the day's true peak, which could lie anywhere
-   between the readings, so the line may be well off there.
-
-2. - (i) The drawing must show months January to June evenly spaced on the
-     horizontal axis, levels in metres on the vertical axis from $0$, the six
-     points $9, 8, 6, 3, 2, 1$ plotted, and joined by straight segments.
-   - (ii) The falls are $1, 2, 3, 1, 1$: fastest **in March** (from $6$ m on
-     1 March to $3$ m on 1 April). It is the steepest segment.
-   - (iii) About **$2.5$ m**, halfway between $3$ and $2$. It assumes the level
-     fell steadily through April.
-
-3. - (i) **Follows**: $34$ at 3 pm against $26$ at 9 am, both measured.
-   - (ii) **Does not follow**: the line reads a little over $28$ there, and it
-     is an estimate, not a measurement.
-   - (iii) **Not settled**: three readings rose, but nothing was measured in
-     between.
-   - (iv) **Not settled**: $34$ is the highest *reading*; the day may have been
-     hotter between readings.
-
-4. - (i) The axis does not start at $0$, so the bar lengths are not in
-     proportion to the scores and small differences look large.
-   - (ii) The gaps between the years are $20$, $10$ and $20$ years but are
-     drawn equal, so the slopes (the rates of growth) are wrong.
-   - (iii) Without a unit the values cannot be read — a reader cannot tell
-     what the numbers measure.
-
-5. Last year: $80 + 3 \times 10 = 110$. This year: $80 + 6 \times 10 = 140$.
-   The rise is $30$, which is $\tfrac{3}{11}$ of last year's (about $27$ per
-   cent), not double.
-
-6. The lunch break starts at **noon** and lasts **one hour** (two boxes).
-   The journey to school takes **one hour** (two boxes, 7:30 to 8:30 am).
-   Answers will vary for the Sunday strip; worked instance: no school or
-   travel blocks, a longer sleep in the morning, and more *other* boxes.
-
-7. The values are $1, 2, 4, 8, 16, 32, 64$. The drawing must show years
-   $0$ to $6$ and these seven points joined by straight segments. Halfway
-   through the first year the straight segment reads $(1 + 2) \div 2 = 1.5$,
-   but a quantity that doubles every year has grown only by the factor
-   $\sqrt{2}$ in half a year, about $1.41$. Each year's growth happens
-   faster at the end than at the start, so the curve sags below every
-   segment and the segments overstate it.
+- **§5.1** 1. Yes: below $10$ the distances are $5 + 2 = 7$, above it $2 + 5 = 7$.
+  2. No. Every value would be below it, so nothing would balance the left side.
+- **§5.2** 1. Up, by $(76 - 55) \div 21 = 1$, to $56$. 2. Still $8$: the new values have
+  their own mean of $8$.
+- **§5.3** 1. $18 \times 4 = 72$. 2. $10 \times 2 - 3 = 17$. Yes: taking $3$ away first
+  and then doubling gives $(10 - 3) \times 2 = 14$.
+- **§5.4** 1. *Answers will vary*, for example $1, 2, 10, 11, 76$. 2. Only $6.5$
+  itself. 3. The 30th and the 31st.
+- **§5.5** 1. $10 \div 20 = 0.5$. 2. No; *answers will vary*: $1, 5, 9$ has median
+  $5$, and writing $9$ as $19$ leaves the median at $5$, while writing $5$ as $15$
+  moves it to $9$. 3. $45$; the groups in Example 7 are not the same size.
+- **§5.6** 1. The rows for $5$ and $6$ visits, far above the middle. 2. $4.2$ and $4$.
+- **§5.7** 1. About $2$ pm: two thirds of the way from $30^\circ$ at noon to
+  $33^\circ$ at $3$ pm. 2. $6$ pm to $9$ pm, $5^\circ$ in $3$ hours, about
+  $1.7^\circ$ an hour. 3. No: a fruit has no value between two others to join.
+- **§5.8** *Answers will vary* (holidays, weather, school terms; more data of the
+  same kind cannot tell us *why*).
+- **§5.9** 1. $7{:}30$ to $2{:}00$, which is $6.5$ hours. 2. The two would not line
+  up: one box would mean different lengths of time.
 
 ---
+
+## Exercise Set 5.1
+
+1. The $19$ numbers pair off as $31 + 49 = 80$, $32 + 48 = 80$, and so on, so the
+   mean is $40$. The even numbers from $62$ to $98$ are those numbers doubled, so
+   their mean is $80$.
+2. $6 \times 11 = 66$ and $12 + 7 + 15 + 9 + 11 = 54$, so **$y = 12$**. In order:
+   $7, 9, 11, 12, 12, 15$; median $(11 + 12) \div 2 = 11.5$.
+3. **$35$.** The two new values have their own mean $(29 + 41) \div 2 = 35$.
+4. $15 \times 142 = 2130$ and $10 \times 137 = 1370$; $3500 \div 25 = 140$ cm.
+5. Median $(30 + 30) \div 2 = 30$.
+   - (i) **Any value.** With $13$ values the median is the 7th, which is the old
+     6th or the old 7th, and both are $30$.
+   - (ii) **Any value.** With $11$ values the median is the 6th, again the old 6th
+     or 7th.
+   - (iii) The two middle values are equal.
+6. (i) **Always**: $2, 4, 6$ has mean $4$; include $7$ and it is $19 \div 4 = 4.75$.
+   (ii) **Sometimes**: $1, 5, 5$ with $9$ keeps median $5$; $1, 2, 3$ with $10$
+   gives $2.5$. (iii) **Always**: the order is kept and every value doubles.
+   (iv) **Sometimes**: $1, 2, 3$ has median $2$; $1, 2$ has median $1.5$.
+7. In order without $q$: $9, 12, 14, 17, 20, 22, 26, 28, 31$. With $q$ the median
+   is the mean of the 5th and 6th. Only **$q = 18$** gives $(18 + 20) \div 2 = 19$.
+8. Mean: $(6 \times 180 + 257) \div 7 = 1337 \div 7 = 191$, exactly. Median: the
+   4th of seven, which is the old 4th value, at least $172$. It rises or stays;
+   it cannot be found exactly.
+
+## Exercise Set 5.2
+
+1. Frequencies: $0$ five times, $1$ nine times, $2$ five times, $3$ three times,
+   $4$ twice. Mean $36 \div 24 = 1.5$. Running totals $5, 14$: the 12th and 13th
+   are $1$, so the median is $1$.
+2. Smallest $1$, largest $8$, mean $164 \div 40 = 4.1$, median $4$ (running totals
+   $2, 7, 15, 25$).
+3. (i) Mean $33 \div 20 = 1.65$; the 10th is $1$ and the 11th is $2$, so the median
+   is $1.5$. (ii) $2.65$ and $2.5$. (iii) No: three students never ate out.
+4. $(3 + 10 + 3f + 8) \div (10 + f) = 2.5$ gives **$f = 8$**.
+5. $6 + 4 + 2 = 12$ visited more often, $4 + 6 + 8 = 18$ less often. The mean
+   balances distances, not numbers of values.
+6. $90 + 4x = 170$, so **$x = 20$**.
+7. **None exists.** The 5th and 6th values add to $4$, so at most the first six add
+   to $12$ and the last four to $16$: at most $28$, but a mean of $3$ needs $30$.
+
+## Exercise Set 5.3
+
+1. Gains $2, 3, 4, 3, 2$: most between the third and fourth Mondays. About
+   $11$ cm, which assumes the plant grew steadily that week.
+2. (i) line (ii) bar (iii) line (iv) bar.
+3. (i) follows (ii) not settled (iii) not settled (iv) goes against it.
+4. (i) a bar graph whose axis does not start at zero; (ii) unequal gaps drawn as
+   equal; (iii) a line joins categories that have nothing between them.
+5. $400 + 2 \times 25 = 450$ and $400 + 5 \times 25 = 525$; the rise is
+   $75 \div 450 = \frac{1}{6}$.
+6. $48 - 36 = 12$ boxes, which is $6$ hours; asleep $\frac{16}{48} = \frac{1}{3}$.
+
+---
+
+## By the Book
+
+1. Mean $13$, median $13$.
+2. $170 - 144 = 26$.
+3. Yes: $6 + 2 = 8$ below, $3 + 5 = 8$ above.
+4. $8 + 3 = 11$.
+5. $(27 + 30) \div 2 = 28.5$.
+6. $x = 12$.
+7. The 21st; then the 20th.
+8. $17 \div 10 = 1.7$.
+9. No: nothing below $10$ could balance the values above it.
+10. About $34.5$ cm, assuming a steady rise.
+11. $x = 87$. A mean of $80$ needs $112$ in the fifth test: not possible.
+12. $2400 \div 50 = 48$; Section B is larger, so the mean is nearer $50$.
+13. Step 3: divide by $20$, not $4$. Mean $69 \div 20 = 3.45$.
+14. $90 - 70 = 20$, above the old mean.
+15. Mean $45 \div 20 = 2.25$; median $2$.
+16. Mean $4$, median $3.5$; new mean $5$.
+17. $1146 \div 30 = 38.2$.
+18. $x = 22$; mean $120 \div 6 = 20$.
+19. The mean changes by $\frac{v - m}{n + 1}$; the rise is $1$.
+20. $4$ times; true rise $\frac{1}{7}$.
+21. $a = 19$; $5$ years younger.
+22. $f = 3$; $15$ values; median $15$.
+23. Least in the fifth month; mean gain $0.74$ kg.
+24. $70$; then $75$.
+25. $x = 18$; $42$ students.
+26. $x = 17$, $y = 25$; median $21$, mean $22$ larger.
+27. $2132 \div 41 = 52$.
+28. $5.5$ times; true ratio about $1.2$; mean $46$, median $45$; the last two years.
+29. $k = 6$; mean $26$.
+30. $f_1 = 8$, $f_2 = 7$; median $3$.
+31. (a) 32. (b) 33. (c) 34. (d) 35. (a)
+36. (i) $41$ (ii) $42$ (iii) $54$
+37. (i) $300$ (ii) $2.5$ (iii) $12.5\%$
+38. (i) $7$ (ii) $3.05$ (iii) $3.5$
+39. (i) $10$ am to noon (ii) about $30.5^\circ$C (iii) no
+40. (i) $7$ hours (ii) $\frac{1}{3}$ (iii) $4$ hours
+41. (b) 42. (c) 43. (a) 44. (d) 45. (c) 46. (d) 47. (b) 48. (a) 49. (b) 50. (c)
 
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+**Tried and explained.** Each is answered in the running text after it: $14$;
+$18$; $11$; median $20$, mean $21$; $x = 9$; $60.5$ s; the look of the slopes, and
+months under $100$ mm; ₹4,300.
 
-Each of the eight questions is answered in the running text that follows it
-on the page. The results, for reference: (1) $14$; (2) $18$; (3) $11$;
-(4) the median stays $20$, the mean rises to $21$; (5) $x = 9$;
-(6) $149.3$ cm; (7) same values, steeper-looking slopes, months under
-$100$ mm not shown; (8) ₹4,300.
+**Solved examples.** 1 (c) · 2 (b) · 3 (a), (b), (c) · 4 (a), (c) · 5 $17$ ·
+6 $10$ · 7 (d) · 8 (a) · 9 (i) (a) $8$, (ii) $8$, (iii) $12$ · 10 (i) (d),
+(ii) $138$, (iii) $6$.
 
-### Stage 2 · Solved Examples
-
-The 23 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
-
-1. (a) 42 *(single correct)*
-2. (b) 24.5 *(single correct)*
-3. (c) 67.5 *(single correct)*
-4. (d) 15.5 *(single correct)*
-5. (a) 14 *(single correct)*
-6. (b) 45.9 *(single correct)*
-7. (a), (b), (c) *(multiple correct)*
-8. (a), (b) *(multiple correct)*
-9. (a), (b), (c) *(multiple correct)*
-10. (a), (c) *(multiple correct)*
-11. 17 *(numerical answer)*
-12. 10 *(numerical answer)*
-13. 43 *(numerical answer)*
-14. (d) P–3, Q–4, R–1, S–2 *(matching)*
-15. (a) P–3, Q–4, R–2, S–1 *(matching)*
-
-### Stage 3 · Practice
-
-Multiple choice and assertion–reason, as the key prints it:
-1 (a), 2 (b), 3 (d), 4 (a), 5 (c), 6 (d), 7 (b), 8 (b), 9 (c), 10 (a),
-11 (a), 12 (c), 13 (b), 14 (d).
-
-The working for each:
-
-1. The distances below and above the mean balance.
-2. The median is the middle of the sorted data.
-3. A value equal to the mean sits on the fulcrum.
-4. Each value gains $6$, so the mean gains $6$.
-5. The sum is multiplied by $4$ and the count is not, so the mean is $4a$.
-6. Divide by the total of the frequencies.
-7. Sorted: $3, 5, 7, 9, 12, 13$; $(7 + 9) \div 2 = 8$.
-8. $6 \times 10 + 17 = 77$ and $77 \div 7 = 11$.
-9. The running total says which value is in each position.
-10. Time.
-11. (a) $4 + 9 + 11 + 16 = 40$ and $40 \div 4 = 10$; below: $6 + 1 = 7$,
-    above: $1 + 6 = 7$. R is why A holds.
-12. (c) A is true; R is false, since $3, 6, 8, 9, 11, 14$ has median $8.5$.
-13. (b) Both true ($110 \div 5 = 22$), but the mean does not decide the median.
-14. (d) $(2 \times 5 + 6 \times 1) \div 6 = 16 \div 6$, about $2.67$, not $4$;
-    R is true.
-15. Mean $35 \div 5 = 7$; median $7$.
-16. $8 \times 12.5 = 100$.
-17. $36 \div 4 = 9$.
-18. The 11th; for twenty, the average of the 10th and 11th.
-19. $135 - 100 = 35$.
-20. Mean $140 \div 10 = 14$; median $(14 + 15) \div 2 = 14.5$.
-21. Mean $36 \div 20 = 1.8$; median $2$.
-22. $1179 \div 30 = 39.3$.
-23. $414 - 385 = 29$.
-24. (a) A line graph of a few degrees' change: cutting the axis is allowed,
-    and must be marked. (b) 2 pm to 4 pm, a fall of $1.5$. (c) About
-    $102.75$. (d) $609 \div 6 = 101.5$. (e) No — $103$ is the highest reading
-    only. The drawing must show the six times evenly spaced (two hours
-    apart), the vertical axis marked from $98$, and the six points joined.
-25. (a) Mean $84 \div 12 = 7$; median $(7 + 8) \div 2 = 7.5$. (b) Mean
-    $91 \div 13 = 7$; median $7$. (c) The new score equals the mean, so the
-    mean stays; it is below the old median, so the median falls.
-26. (a) Mean $270 \div 6 = 45$; median $(42 + 45) \div 2 = 43.5$. (b) The mean,
-    because of Saturday's $56$. (c) Mean $315 \div 7 = 45$; median $45$.
-27. (a) $(160 + 220) \div 2 = 190$ mm. (b) Below: $70 + 40 = 110$; above:
-    $90 + 20 = 110$. (c) Bars of $30$ and $190$: July's looks more than $6$
-    times June's; really $290 \div 130$ is about $2.2$ times.
+**Practice.** 1 (c) · 2 (a) · 3 (d) · 4 (b) · 5 (a), (b), (c) · 6 (a), (b) ·
+7 (a), (c), (d) · 8 (b), (c), (d) · 9 $16.5$ · 10 $65$ · 11 $10$ · 12 (c) ·
+13 (d) · 14 (i) (b), (ii) $64$, (iii) $52$ · 15 (i) (b), (ii) $41.8$,
+(iii) $210$.

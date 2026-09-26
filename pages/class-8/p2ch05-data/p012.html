@@ -2,98 +2,58 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Here is why the order matters. A shop's sales over four years were $96$, $98$,
-      $101$ and $104$ lakh rupees, and the two graphs below are both of those four
-      numbers. Every bar in each is drawn to its own axis correctly, and no figure has
-      been altered.</p>
+      <table>
+        <thead>
+          <tr><th>Visits</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Students</td><td>4</td><td>6</td><td>8</td><td>6</td><td>4</td><td>2</td></tr>
+          <tr><td>Running total</td><td>4</td><td>10</td><td>18</td><td>24</td><td>28</td><td>30</td></tr>
+        </tbody>
+      </table>
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 196 118" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="The same four sales figures drawn twice: on an axis starting at zero the bars look almost equal, and on an axis starting at ninety-four they look wildly different">
+      <p>The running total is $10$ after the twos and $18$ after the threes. So the 11th to the 18th values in order are all $3$. The 15th and the 16th are among them, and the median is $3$. A table can also hide an unknown, and then the mean gives an equation.</p>
 
-            <path class="dg-grid" d="M16 60.4 H88 M16 26.7 H88 M108 69.3 H180 M108 44.7 H180"/>
-            <path class="dg-axis" d="M16 94 H88 M16 94 V20 M108 94 H180 M108 94 V20"/>
-
-            <path class="dg-fill-a" d="M20 29.4 H31 V94 H20 Z M38 28.1 H49 V94 H38 Z
-                                       M56 26 H67 V94 H56 Z M74 24 H85 V94 H74 Z
-                                       M112 81.7 H123 V94 H112 Z M130 69.3 H141 V94 H130 Z
-                                       M148 50.8 H159 V94 H148 Z M166 32.3 H177 V94 H166 Z"/>
-            <path class="dg-line"   d="M20 29.4 H31 V94 H20 Z M38 28.1 H49 V94 H38 Z
-                                       M56 26 H67 V94 H56 Z M74 24 H85 V94 H74 Z
-                                       M112 81.7 H123 V94 H112 Z M130 69.3 H141 V94 H130 Z
-                                       M148 50.8 H159 V94 H148 Z M166 32.3 H177 V94 H166 Z"/>
-
-            <text class="dg-tick" x="13" y="97" text-anchor="end">0</text>
-            <text class="dg-tick" x="13" y="63.4" text-anchor="end">50</text>
-            <text class="dg-tick" x="13" y="29.7" text-anchor="end">100</text>
-
-            <text class="dg-tick" x="105" y="97" text-anchor="end">94</text>
-            <text class="dg-tick" x="105" y="72.3" text-anchor="end">98</text>
-            <text class="dg-tick" x="105" y="47.7" text-anchor="end">102</text>
-            <text class="dg-tick" x="105" y="23" text-anchor="end">106</text>
-
-            <text class="dg-tick" x="25.5" y="101" text-anchor="middle">&rsquo;21</text>
-            <text class="dg-tick" x="43.5" y="101" text-anchor="middle">&rsquo;22</text>
-            <text class="dg-tick" x="61.5" y="101" text-anchor="middle">&rsquo;23</text>
-            <text class="dg-tick" x="79.5" y="101" text-anchor="middle">&rsquo;24</text>
-
-            <text class="dg-tick" x="117.5" y="101" text-anchor="middle">&rsquo;21</text>
-            <text class="dg-tick" x="135.5" y="101" text-anchor="middle">&rsquo;22</text>
-            <text class="dg-tick" x="153.5" y="101" text-anchor="middle">&rsquo;23</text>
-            <text class="dg-tick" x="171.5" y="101" text-anchor="middle">&rsquo;24</text>
-
-            <text class="dg-note" x="52" y="113" text-anchor="middle">from zero</text>
-            <text class="dg-note" x="144" y="113" text-anchor="middle">from ninety-four</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 5.5</span> One set of sales figures, two
-          bar graphs. The only difference between them is where the vertical axis
-          begins.</figcaption>
-        </figure>
-      </div>
-
-      <p>The left graph says the shop is steady. The right graph says the last bar is
-      five times the first, and a reader who skipped step one will believe it — because
-      that is what bars are for, comparing lengths without thinking. What has gone wrong
-      is that a bar means what it means only when its length is proportional to its
-      value, and an axis beginning at $94$ chops the same $94$ off every bar. The first
-      keeps $2$ of its $96$ and the last keeps $10$ of its $104$: five times, from a rise
-      of about eight per cent.</p>
-
-      <p>A cut axis is not always dishonest. A graph of body temperature through a fever
-      would be a flat line drawn from zero, and the interesting range is two degrees
-      wide. The rule is about bars in particular, because a bar carries the promise that
-      its length is the quantity. Cut the axis of a line graph when you must, and say so;
-      never cut the axis of a bar graph.</p>
-
-      <p>Step two has its own discipline. Given a graph, some statements follow from it,
-      some are contradicted by it, and some — the awkward ones — are simply not settled
-      either way. Look again at Fig. 5.4 and consider three claims.</p>
-
-      <div class="work work--list">
-        <div class="work__row">
-          <span class="work__label work__label--wide">the day warmed until 3 pm</span>
-          <span>not settled — nothing was measured between the readings</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">it was warmer at noon than at 6 pm</span>
-          <span>true, and read straight off the graph</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">the day never passed 34°</span>
-          <span>not settled — no reading did, which is a different claim</span>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>A hockey team scored $0$, $1$, $2$ or $3$ goals in each match of a season. The table shows the number of matches, but one number is missing. The mean is $1.4$ goals per match. Find the missing number, and the median.</p>
+          <table><thead><tr><th>Goals</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>Matches</td><td>4</td><td>7</td><td>$f$</td><td>3</td></tr></tbody></table>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Goals: $0 + 7 + 2f + 9 = 16 + 2f$. Matches: $14 + f$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$16 + 2f = 1.4(14 + f) = 19.6 + 1.4f$, so $0.6f = 3.6$ and $f = 6$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$20$ matches; running totals $4, 11, 17, 20$. The 10th and 11th values are both $1$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>The team scored $2$ goals in $6$ matches. The median is $1$ goal</span></div>
+          </div>
         </div>
       </div>
 
-      <p>The middle one is the only inference here, and the other two are guesses dressed
-      as inferences. Both are probably right, and probably right is not what a graph
-      offers: it offers what was measured, joined by a line that says nothing except that
-      the quantity got from one reading to the next somehow.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Averages from a frequency table</div>
+        <ul class="c-keyidea__points">
+          <li>Mean: multiply each value by its frequency, add, and divide by the total frequency.</li>
+          <li>Median: find the middle place with a running total of the frequencies.</li>
+        </ul>
+      </div>
 
-      <p><em>Not settled</em> is a legitimate answer and the most common correct one. It is
-      also the answer a reader is least willing to give, because a graph looks so
-      complete. The way to give it is to have done step one, where the six readings
-      were noticed to be six.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>The mean, $3.2$, is a little more than the median, $3$. Which rows of the table pull the mean above the median?</li>
+            <li>Next month every student visits the library once more than before. What are the new mean and median?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
