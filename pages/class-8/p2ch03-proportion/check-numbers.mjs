@@ -6,7 +6,7 @@
 
      node pages/class-8/p2ch03-proportion/check-numbers.mjs [--skipped]
 
-   Four parts:
+   Rewritten for the maths-v2 conversion, 26 September 2026. Four parts:
      A  every identity set as maths, on every page and in ANSWERS.md, whose
         sides all evaluate to numbers. Display maths $$...$$ is taken out
         first, so its delimiters cannot pair up with inline ones
@@ -113,304 +113,203 @@ for (const [f, src] of sources) {
   }
 }
 
+
 /* ---- B. claims arithmetic alone does not check ---------------- */
+// Rewritten for the maths-v2 conversion, 26 September 2026: every value is
+// computed here from the question's own data, and the page (or the key)
+// must print it.
+const has = (what, re, src = bodyText) => is(`${what}: page should match ${re}`, re.test(src));
+const mdHas = (what, re) => is(`ANSWERS.md ${what}: should match ${re}`, re.test(answersMd));
 
 // the body
-is('batters 6:3 and 4:2 agree', proportional(6, 3, 4, 2) && reduce(6, 3).join() === '2,1');
-is('12:10:8:6:4 reduces to 6:5:4:3:2', reduce(12, 10, 8, 6, 4).join() === '6,5,4,3,2');
-is('8:4:2:1 is already simplest', reduce(8, 4, 2, 1).join() === '8,4,2,1');
-is('Puneet halves the spice mix', [8, 4, 2, 1].map(x => x / 2).join() === '4,2,1,0.5');
-is('Ex 1: 9:15 and 21:35 both reduce to 3:5', proportional(9, 15, 21, 35) && reduce(9, 15).join() === '3,5' && reduce(21, 35).join() === '3,5');
-ok('Ex 2: workers', 5 * 18000 / 4500, 20);
-ok('Ex 3: paint', [...share(10 / 5 * 10, 2, 3, 5), 10 / 5 * 10], [4, 6, 10, 20]);
-ok('Ex 4: concrete from three bags', [1, 1.5, 3].map(x => x * 3), [3, 4.5, 9]);
-is('Ex 4: 1:1.5:3 is 2:3:6', proportional(1, 1.5, 2, 3) && proportional(1.5, 3, 3, 6));
-ok('Ex 5: 110 units', share(110, 1, 1.5, 3), [20, 30, 60]);
-ok('Ex 6: angles 1:3:5', share(180, 1, 3, 5), [20, 60, 100]);
-ok('Ex 7: first map', 5.5 * kmPerCm(6000000), 330);
-ok('Ex 7: second map', [330 / 22, 330 / 22 * 100000], [15, 1500000]);
-ok('sweets 12 in 2:1', share(12, 2, 1), [8, 4]);
-ok('1:60,00,000 is 60 km a cm', kmPerCm(6000000), 60);
-ok('pie: grades', [12, 10, 8, 6, 4].map(n => deg(n, 40)), [108, 90, 72, 54, 36]);
-ok('pie: grades after reducing', [360 / 20, reduce(12, 10, 8, 6, 4).reduce((a, b) => a + b)], [18, 20]);
-is('pie: A is under a third, A and B over half', deg(12, 40) < 120 && deg(12, 40) + deg(10, 40) > 180);
-ok('pie: A is 30%', 100 * 12 / 40, 30);
-ok('four ways of 90 km', [5, 15, 30, 60].map(v => 90 / v), [18, 6, 3, 1.5]);
-ok('wrong proportion gives six hours', 3 * 60 / 30, 6);
-ok('Ex 8', 20 * 4 / 10, 8);
-ok('Ex 9', 2 * 18 / 4, 9);
-ok('Ex 10', [80 + 20, 80 * 15 / 100], [100, 12]);
-is('Ex 10: a quarter more, a fifth less', near(20 / 80, 1 / 4) && near((15 - 12) / 15, 1 / 5));
-is('Ram and Shyam: 5/3 units, 36 minutes', near(1 + 1 / 1.5, 5 / 3) && near(60 / (1 + 1 / 1.5), 36));
-is('Ram and Shyam: not the average', (1 + 1.5) / 2 === 1.25);
+is('3.1 jugs 2:8 and 3:12 agree', proportional(2, 8, 3, 12) && reduce(2, 8).join() === '1,4');
+ok('T&R 3.1 Q1', 5 * 4, 20);
+is('T&R 3.1 Q2 sweeter', 14 / 4 < 4);
+is('T&R 3.2 Q1', proportional(2.5, 4, 5, 8));
+ok('T&R 3.2 Q2', 3 * 40 / 5, 24);
+is('T&R 3.2 Q3', !proportional(2, 3, 3, 4));
+ok('Ex 1', [8 * 35, 14 * 20, ...reduce(8, 14), ...reduce(20, 35)], [280, 280, 4, 7, 4, 7]);
+ok('Ex 2', 450 * 6 / 150, 18);
+ok('snack mix halved', [6, 3, 2, 1].map(x => x / 2), [3, 1.5, 1, 0.5]);
+ok('12:9:6:3 reduces', reduce(12, 9, 6, 3), [4, 3, 2, 1]);
+ok('Ex 3', [...share(600 / 4 * 9, 3, 2, 4), 600 / 4 * 9], [450, 300, 600, 1350]);
+ok('Ex 4', [1, 1.5, 2.5].map(x => x * 4).concat(4 * 5), [4, 6, 10, 20]);
+is('Ex 4: 1:1.5:2.5 is 2:3:5', proportional(1, 1.5, 2, 3) && proportional(1.5, 2.5, 3, 5));
+is('T&R 3.3 Q1', 3 / 6 === 0.5 && 1 / 3 !== 0.5);
+ok('T&R 3.3 Q2', reduce(15, 10, 25, 5), [3, 2, 5, 1]);
+ok('T&R 3.3 Q3', 500 / 2 * 9, 2250);
+ok('3.4 pencils', share(20, 3, 2), [12, 8]);
+ok('Ex 5', share(75, 1, 1.5, 2.5), [15, 22.5, 37.5]);
+ok('Ex 6', share(180, 2, 3, 7), [30, 45, 105]);
+ok('3.5: 1:40,00,000', kmPerCm(4000000), 40);
+ok('Ex 7', [6.5 * 40, 260 / 13, 260 / 13 * 100000], [260, 20, 2000000]);
+ok('3.6 pie', [24, 18, 12, 12, 6].map(n => deg(n, 72)), [120, 90, 60, 60, 30]);
+ok('3.6 reduced', [...reduce(24, 18, 12, 12, 6), 360 / 12], [4, 3, 2, 2, 1, 30]);
+ok('3.6 kabaddi', 100 * 18 / 72, 25);
+ok('T&R 3.6 Q3', [deg(5, 72), deg(25, 72), deg(1, 72)], [25, 125, 5]);
+ok('3.7 Suresh', [12 * 2, 12 * 2 / 36 * 60, 36 * 6 / 12], [24, 40, 18]);
+is('3.7 wrong proportion gives six hours', 2 * 36 / 12 === 6);
+ok('3.7 four ways', [5, 15, 30, 40].map(v => 60 / v), [12, 4, 2, 1.5]);
+ok('Ex 8', [18 * 5, 90 / 15], [90, 6]);
+ok('Ex 9', 3 * 16 / 4, 12);
+ok('Ex 10', [120 + 40, 120 * 20 / 160], [160, 15]);
+is('Ex 10: a third more, a quarter less', near(40 / 120, 1 / 3) && near(5 / 20, 1 / 4));
+ok('T&R 3.7 Q3 (Ex 8 in 3 days)', 90 / 3, 30);
+is('Lalita and Nandini: 72 minutes', near(1 / 2 + 1 / 3, 5 / 6) && near(60 * 6 / 5, 72));
+is('tap and drain: 6 hours', near(1 / 3 - 1 / 6, 1 / 6));
+is('Ex 11: 12 hours', near(1 / 4 - 1 / 6, 1 / 12));
 
-// Stage 1
-ok('S1 Q1: rice', [750 / 6, 750 / 6 * 8], [125, 1000]);
-ok('S1 Q2: wall', [12 * 10, 120 / 15], [120, 8]);
-is('S1 Q2: a quarter more workers, a fifth off the time', near((15 - 12) / 12, 1 / 4) && near((10 - 8) / 10, 1 / 5));
-ok('S1 Q3: two maps', [6 * 50000 / 100000, 6 * 50000 / 200000], [3, 1.5]);
-ok('S1 Q4: slice of 150', [150 / 360 * 720, Math.round(100 * 150 / 360)], [300, 42]);
-is('S1 Q4: a right angle and a half is less than 150', 90 * 1.5 < 150);
-ok('S1 Q4: 720 times 5/12 is 60 times 5', 720 / 12, 60);
-ok('S1 Q5: fuel', [240 / 15, 240 / 15 * 105, 240 / 30 * 105 * 2], [16, 1680, 1680]);
-is('S1 Q5: key says 1,680', /₹1,680/.test(beyondText));
-ok('S1 Q6: taps', [6 * 40, 6 * 40 / (6 - 2)], [240, 60]);
-ok('S1 Q6: two left would give', 6 * 40 / 2, 120);
-is('S1 Q6: page says a hundred and twenty', /given a hundred and twenty minutes/.test(beyondText));
-{ const x = [...Array(50)].map((_, i) => i + 1).find(x => (5 * x + 6) * 4 === (7 * x + 6) * 3);
-  ok('S1 Q7: numbers', [x, 5 * x, 7 * x, 5 * x + 6, 7 * x + 6], [6, 30, 42, 36, 48]); }
-ok('S1 Q8: wheels', 35 * 60 / 21, 100);
+// the body's exercise answers, as ANSWERS.md prints them
+mdHas('3.1 Q2', /\*\*32\*\*[\s\S]*\*\*4\*\*[\s\S]*\*\*18\*\*/); ok('3.1 Q2', [8 * 20 / 5, 12 * 9 / 27, 14 * 45 / 35], [32, 4, 18]);
+ok('3.1 Q3', [...share(450 / 3 * 10, 5, 3, 2), 1500], [750, 450, 300, 1500]);
+ok('3.1 Q4', [296 / 8 * 5, 444 / (296 / 8)], [185, 12]);
+ok('3.1 Q5', [240 * 2.5, 900 * 2.5, ...reduce(240, 900)], [600, 2250, 4, 15]);
+ok('3.2 Q1', [share(640, 3, 5), share(84, 1, 2, 4), share(360, 2, 3, 7)], [[240, 400], [12, 24, 48], [60, 90, 210]]);
+ok('3.2 Q2', share(360, 12, 2, 3, 1), [240, 40, 60, 20]);
+ok('3.2 Q3', [150, 30, 300], [120 / 4 * 5, 120 / 4, 120 / 4 * 10]);
+{ const [a, b, c] = share(60, 2, 3, 5); ok('3.2 Q4', 5 * a + 2 * b + c, 126); }
+is('3.2 Q5', 2 + 3 < 6);
+ok('3.2 Q6', [reduce((900 + 180) / 2, (900 - 180) / 2), reduce(600, 300)], [[3, 2], [2, 1]]);
+ok('3.2 Q7', 1200 / 4 * 11, 3300);
+ok('3.2 Q8', 8 * 9, 72);
+ok('3.3 Q1', [kmPerCm(2000000), 350 / 20], [20, 17.5]);
+ok('3.3 Q2', [2400 / 200, 3.5 * 200 / 100], [12, 7]);
+ok('3.3 Q3', 2500000 / 500000, 5);
+ok('3.3 Q4', [24 * 50 / 100, 5 * 50 / 100], [12, 2.5]);
+ok('3.3 Q5', 18 * 25000 / 100000, 4.5);
+ok('3.4 Q1', [60, 75, 45].map(n => deg(n, 180)), [120, 150, 90]);
+ok('3.4 Q2', [40, 30, 20, 10].map(p => 3.6 * p), [144, 108, 72, 36]);
+ok('3.4 Q3', [81 / 360 * 100, 81 / 360 * 32000], [22.5, 7200]);
+ok('3.4 Q4', [18, 12, 10, 5].map(n => deg(n, 45)), [144, 96, 80, 40]);
+ok('3.4 Q5', [150 / 360 * 240, deg(60, 240)], [100, 90]);
+ok('3.5 Q1', [[20 * 30, 40 * 15, 50 * 12], [8 * 9, 16 * 4.5, 24 * 4], [25 * 12, 50 * 6, 125 * 2.4]], [[600, 600, 600], [72, 72, 96], [300, 300, 300]]);
+ok('3.5 Q2', [144 / 24, 144 / 36], [6, 4]);
+ok('3.5 Q4', [8 * 45 / 6, 8 * 45 / 30], [60, 12]);
+ok('3.5 Q5', 60 * 12 / 80, 9);
+is('3.5 Q6', near(1 / (1 / 4 + 1 / 12), 3));
+ok('3.5 Q7', 5 * 48 / 4, 60);
+is('3.5 Q8', near(1 / (1 / 6 - 1 / 10), 15));
+is('3.5 Q9', near(60 / (1 / 5 - 1 / 20), 400));
 
-// Stage 2
-ok('Ex 1', [6 * 35, 15 * 14, ...reduce(6, 15), ...reduce(14, 35)], [210, 210, 2, 5, 2, 5]);
-ok('Ex 2', 7 * 36 / 21, 12);
-ok('Ex 3', 315 / 9 * 14, 490);
-is('Ex 3: answer ₹490', /Answer ₹490/.test(beyondText));
-ok('Ex 4', 1350 / 25 * 40, 2160);
-ok('Ex 5', [1.2 / 3 * 4, 1.2 / 3 * 1, 1.2 / 3 * 8].map(v => Math.round(v * 1e9) / 1e9), [1.6, 0.4, 3.2]);
-{ // Ex 6: the two batches, by matching quotients, and their simplest form
-  const q = [[6, 4], [9, 6], [15, 10]].map(([x, y]) => x / y);
-  ok('Ex 6: quotients', q, [1.5, 1.5, 1.5]);
-  const g = (x, y) => (y ? g(y, x % y) : x);
-  const g3 = (a, b, c) => { const k = g(g(a, b), c); return [a / k, b / k, c / k]; };
-  ok('Ex 6: simplest forms, dividing by 3 and by 2', [g3(6, 9, 15), g3(4, 6, 10), g(g(6, 9), 15), g(g(4, 6), 10)], [[2, 3, 5], [2, 3, 5], 3, 2]); }
-ok('Ex 7', share(3000, 3, 5, 7), [600, 1000, 1400]);
-is('Ex 7: answer', /₹600, ₹1,000 and ₹1,400/.test(beyondText));
-{ const [l, b] = share(84 / 2, 4, 3); ok('Ex 8', [l, b, l * b], [24, 18, 432]); }
-ok('Ex 9', [kmPerCm(3000000), 7.5 * kmPerCm(3000000), 540 / kmPerCm(3000000)], [30, 225, 18]);
-ok('Ex 10', [20 * 100 / 250, 0.48 * 250, 0.48 * 250 / 100], [8, 120, 1.2]);
-ok('Ex 11', [480, 300, 240, 180].map(n => deg(n, 1200)), [144, 90, 72, 54]);
-is('Ex 11: the groups make 1200', 480 + 300 + 240 + 180 === 1200);
-ok('Ex 12', [72 / 360 * 1250, 72 / 360 * 100], [250, 20]);
-ok('Ex 13', 40 * 6 / 48, 5);
-is('Ex 14: products all 60', [[3, 20], [5, 12], [12, 5]].every(([x, y]) => x * y === 60));
-ok('Ex 14', 60 / 4, 15);
-ok('Ex 15', Math.round(1e9 / (1 / 10 + 1 / 15)) / 1e9, 6);
-ok('Ex 16', Math.round(1 / (1 / 4 - 1 / 6)), 12);
-
-// the practice answers, read back out of the key rather than typed here
+// the key, read out of the Answers stage
 const keyRows = {};
-for (const m of beyond.matchAll(/<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) keyRows[m[1]] ??= text(m[2]);
-const row = (q) => {
-  const [, n, part] = String(q).match(/^(\d+)([a-d]?)$/);
-  const r = keyRows[n] || '';
-  if (!part) return r;
-  const m = r.match(new RegExp(`\\(${part}\\)([^(]*)`));
-  return m ? m[1] : '';
-};
-const esc = (v) => String(v).replace(/[.$]/g, '\\$&');
-const says = (q, ...vals) => { for (const v of vals) is(`key ${q} should say ${v}: "${row(q)}"`, new RegExp(`(^|[^\\d.,])${esc(v)}([^\\d]|$)`).test(row(q))); };
-const money = (n) => '₹' + n.toLocaleString('en-IN');
-{ const g = gcd(45, 120); says(20, 120, `${45 / g} : ${120 / g}`); }
-says(21, 28 / 4, 28 / 4 * 11);
-{ let n = 500000 * 1; says(22, '5,00,000'); is('Q22: 5 km in cm', n === 5 * 100000); }
-{ const r = [1 / 2, 1 / 3, 1 / 4].map(x => x * 12); const s = share(6500, ...r);
-  says(23, r.join(' : '), r.reduce((a, b) => a + b), money(6500 / 13), ...s.map(money)); }
-says(24, 75 * 4, 75 * 4 / 5);
-{ const x = [...Array(50)].map((_, i) => i + 1).find(x => (5 * x + 6) * 5 === (3 * x + 6) * 7);
-  says(25, x, 5 * x, 3 * x, `${5 * x + 6} : ${3 * x + 6}`); is('Q25: 21:15 is 7:5', proportional(21, 15, 7, 5)); }
-{ const save = 36000 - 9000 - 12000 - 6000; const d = [9000, 12000, 6000, save].map(n => deg(n, 36000));
-  says(26, money(save), ...d.map(x => x + '°')); is('Q26: angles add to 360', d.reduce((a, b) => a + b) === 360); }
-{ const job = 25 * 18, done = 25 * 6; says(27, job, done, job - done, 25 + 5, (job - done) / 30); }
-{ const rate = 1 / 20 + 1 / 30 - 1 / 15; says(28, Math.round(1 / rate)); is('Q28: the tank fills', rate > 0); }
-{ const k = kmPerCm(250000); says(29, k, 2 * k, 1.6 * k, 2 * k * 1.6 * k); }
-{ const f = 64 / 40; says('30a', f, 5 * f, 30 * f, 800 * f); says('30b', 12 / 5 * 40);
-  const g = gcd(5000, 800); says('30c', `${5000 / g} : ${800 / g}`); }
-{ const t = [[40, 9], [60, 6], [90, 4]]; is('Q31: table products are 360', t.every(([s, h]) => s * h === 360));
-  says('31a', 360); is('Q31a says inverse', /inverse/.test(row('31a')));
-  says('31b', 360 / 72); says('31c', 4 + 48 / 60, 360 / (4 + 48 / 60)); }
+const board = (() => { const i = beyond.indexOf('c-practice__sub">Beyond the Book'); return [beyond.slice(0, i), beyond.slice(i)]; })();
+for (const m of board[0].matchAll(/<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) keyRows['B' + m[1]] = text(m[2]);
+for (const m of board[1].matchAll(/<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) keyRows['Y' + m[1]] = text(m[2]);
+const says = (q, ...vals) => { for (const v of vals) is(`key ${q} should say ${v}: "${keyRows[q]}"`, (keyRows[q] || '').includes(String(v))); };
 
-// every worked example's rows, read off the page: the numbers each row
-// prints (outside and inside maths) must be exactly the ones computed here
-const exRows = (src) => {
-  const out = {};
-  for (const m of src.matchAll(/c-example__tab">Example (\d+)<\/div>([\s\S]*?)(?=c-example__tab"|$)/g)) {
-    out[m[1]] = {};
-    for (const r of m[2].matchAll(/<span class="work__label">(Step \d+|Answer)<\/span>\s*<span>([\s\S]*?)<\/span>/g))
-      out[m[1]][r[1]] = [...text(r[2]).replace(/(\d),(?=\d)/g, '$1').matchAll(/\d+(?:\.\d+)?/g)].map(Number);
-  }
-  return out;
-};
-const bodyEx = exRows(body), beyondEx = exRows(beyond);
-const rowIs = (where, set, n, label, want) => ok(`${where} Example ${n} ${label}`, want, (set[n] || {})[label]);
-// body
-rowIs('body', bodyEx, 1, 'Answer', reduce(9, 15));
-rowIs('body', bodyEx, 2, 'Answer', [5 * 18000 / 4500]);
-rowIs('body', bodyEx, 3, 'Step 2', [10 / 5]);
-rowIs('body', bodyEx, 3, 'Step 3', [2, 2 * 10 / 5]);
-rowIs('body', bodyEx, 3, 'Step 4', [3, 3 * 10 / 5]);
-rowIs('body', bodyEx, 3, 'Answer', [4, 6, 20]);
-rowIs('body', bodyEx, 4, 'Step 1', [3, 1]);
-rowIs('body', bodyEx, 4, 'Answer', [3 * 5.5]);
-rowIs('body', bodyEx, 5, 'Step 3', share(110, 1, 1.5, 3));
-rowIs('body', bodyEx, 5, 'Answer', share(110, 1, 1.5, 3));
-rowIs('body', bodyEx, 6, 'Step 2', [180 / 9]);
-rowIs('body', bodyEx, 6, 'Step 3', share(180, 1, 3, 5));
-rowIs('body', bodyEx, 6, 'Answer', share(180, 1, 3, 5));
-rowIs('body', bodyEx, 7, 'Step 2', [22, 330, 1, 330 / 22]);
-rowIs('body', bodyEx, 7, 'Answer', [330, 1, 330 / 22 * 100000]);
-rowIs('body', bodyEx, 8, 'Answer', [20 * 4 / 10]);
-rowIs('body', bodyEx, 9, 'Answer', [2 * 18 / 4]);
-rowIs('body', bodyEx, 10, 'Step 1', [100]);
-rowIs('body', bodyEx, 10, 'Answer', [80 * 15 / 100]);
-// Beyond
-rowIs('Beyond', beyondEx, 1, 'Answer', reduce(6, 15));
-rowIs('Beyond', beyondEx, 2, 'Answer', [7 * 36 / 21]);
-rowIs('Beyond', beyondEx, 3, 'Answer', [315 / 9 * 14]);
-rowIs('Beyond', beyondEx, 4, 'Answer', [1350 / 25 * 40]);
-rowIs('Beyond', beyondEx, 5, 'Step 1', [3, 1.2, 0.4]);
-rowIs('Beyond', beyondEx, 5, 'Answer', [1.6, 0.4, 3.2]);
-rowIs('Beyond', beyondEx, 6, 'Step 1', [6, 4, 1.5, 9, 6, 1.5, 15, 10, 1.5]);
-rowIs('Beyond', beyondEx, 6, 'Step 3', [6, 9, 15, 2, 3, 5, 4, 6, 10, 2, 3, 5]);
-rowIs('Beyond', beyondEx, 6, 'Answer', [2, 3, 5]);
-rowIs('Beyond', beyondEx, 7, 'Answer', share(3000, 3, 5, 7));
-rowIs('Beyond', beyondEx, 8, 'Step 3', [4, 6, 24, 3, 6, 18]);
-rowIs('Beyond', beyondEx, 8, 'Answer', [24 * 18]);
-rowIs('Beyond', beyondEx, 9, 'Step 1', [3000000, 30, 1, 30]);
-rowIs('Beyond', beyondEx, 9, 'Answer', [225, 18]);
-rowIs('Beyond', beyondEx, 10, 'Step 1', [20, 2000]);
-rowIs('Beyond', beyondEx, 10, 'Answer', [8, 120, 1.2]);
-rowIs('Beyond', beyondEx, 11, 'Step 1', [360, 1200, 0.3]);
-rowIs('Beyond', beyondEx, 11, 'Answer', [480, 300, 240, 180].map(n => deg(n, 1200)));
-rowIs('Beyond', beyondEx, 12, 'Answer', [250, 20]);
-rowIs('Beyond', beyondEx, 13, 'Answer', [40 * 6 / 48]);
-rowIs('Beyond', beyondEx, 14, 'Step 2', [60]);
-rowIs('Beyond', beyondEx, 14, 'Step 3', [4, 60, 15]);
-rowIs('Beyond', beyondEx, 14, 'Answer', [60, 15, 4]);
-rowIs('Beyond', beyondEx, 15, 'Step 3', [6]);
-rowIs('Beyond', beyondEx, 15, 'Answer', [6]);
-rowIs('Beyond', beyondEx, 16, 'Answer', [12]);
-is('the key to 31(c) ends on the speed', new RegExp(`so ${360 / 4.8} km/h`).test(row('31c')));
-is('the key to 24 ends on the speed', new RegExp(`so ${75 * 4 / 5} km/h`).test(row(24)));
-is('the key to 28 ends on the time', new RegExp(`fills in ${Math.round(1 / (1 / 20 + 1 / 30 - 1 / 15))} minutes`).test(row(28)));
+// By the Book
+says('B1', 10); ok('BtB 1', 6 * 25 / 15, 10);
+is('BtB 2', proportional(2.4, 3.6, 10, 15));
+ok('BtB 3', reduce(75, 200), [3, 8]); says('B3', '3 : 8');
+ok('BtB 4', [42 / 6, 91 / 7], [7, 13]); says('B4', 7, 13);
+says('B5', '1 : 8,00,000');
+ok('BtB 6', share(1560, 5, 7), [650, 910]); says('B6', '₹650', '₹910');
+ok('BtB 7', 8 * 15 / 20, 6);
+ok('BtB 8', share(180, 3, 4, 5)[2], 75);
+ok('BtB 9', 45 * 360 / 108, 150); says('B9', 150);
+is('BtB 10', !(near(3 / 12, 7 / 30)));
+ok('BtB 11', [2160 / 12 * 7.5, 3420 / 180], [1350, 19]); says('B11', '₹1,350', 19);
+ok('BtB 13', share(8100, 4, 3, 2), [3600, 2700, 1800]); says('B13', '₹3,600', '₹2,700', '₹1,800');
+ok('BtB 14', 12 * 15 / 20, 9); says('B14', 'Step 1', '9');
+{ const x = [...Array(50)].map((_, i) => i + 1).find(x => 3 * (2 * x + 12) === 9 * x + 12);
+  ok('BtB 15', [2 * x, 9 * x], [16, 72]); says('B15', 16, 72); }
+ok('BtB 16', [330 / 5, 330 / 60], [66, 5.5]); says('B16', 66, 5.5);
+ok('BtB 17', [7.2 * 2.5, 4.5 / 2.5], [18, 1.8]);
+ok('BtB 18', [share(240, 3, 2, 5), [3, 2, 5].map(p => 36 * p)], [[72, 48, 120], [108, 72, 180]]);
+is('BtB 19', near(1 / 1.25, 0.8));
+{ const x = [...Array(50)].map((_, i) => i + 1).find(x => 8 * (4 * x + 9) === 5 * (7 * x + 9));
+  ok('BtB 20', [4 * x, 7 * x], [36, 63]); says('B20', 36, 63); }
+ok('BtB 21', [450 * 20 / 360, 8 + 450 * 20 / 360], [25, 33]); says('B21', 25, 33);
+is('BtB 22', near(1 / (1 / 12 + 1 / 18 - 1 / 36), 9) && near(1 / (1 / 12 + 1 / 18), 7.2)); says('B22', '1.8');
+ok('BtB 23', [110000 / (2 * 22 / 7 * 35), 110000 / (2 * 22 / 7 * 28)], [500, 625]); says('B23', 500, 625);
+ok('BtB 24', [6 * 5, 4.2 * 5, 30 * 21, 2 * (30 + 21) * 120], [30, 21, 630, 12240]); says('B24', '₹12,240');
+ok('BtB 25', [63 * 100, 36000 - 10800 - 9000 - 6300 - 5400, 10800 / 100, 9000 / 100, 5400 / 100, 4500 / 100], [6300, 4500, 108, 90, 54, 45]);
+ok('BtB 26', [...share(50, 15, 3, 2), 36 / 15 * 20, 36 / 15 * 3, 36 / 15 * 2].map(v => Math.round(v * 1e9) / 1e9), [37.5, 7.5, 5, 48, 7.2, 4.8]);
+ok('BtB 27', [(5 * 84 - 3 * 84) / 1.5, Math.round((112 - 84) / 84 * 1e4) / 100], [112, 33.33]);
+is('BtB 28', proportional(4, 6, 10, 15) && proportional(14, 21, 2, 3));
+ok('BtB 29', (1 - 4 * (1 / 12 + 1 / 18)) * 18, 8); says('B29', 8, 12);
+ok('BtB 30', [2400 / 48, 3600 / (50 * 4)], [50, 18]); says('B30', 50, 18);
+ok('BtB 36', [...reduce(800, 400, 80), 80 / 8 * 20, 2500 / 50, 50 * 100 / 1000], [10, 5, 1, 200, 50, 5]);
+ok('BtB 37', [150 / 100, 150 / (5 / 3)], [1.5, 90]);
+ok('BtB 38', [3.3 * 40, 7 * 40, 700 / 40], [132, 280, 17.5]); says('B38', 132, 280, 17.5);
+ok('BtB 39', [360 - 135 - 90 - 90, 480 * 90 / 360, 480 * 135 / 360 * 10 - 480 * 45 / 360 * 20], [45, 120, 600]); says('B39', '₹600');
+is('BtB 40', near(1 / (1 / 10 + 1 / 15), 6) && near((1 - 2 / 6) / (1 / 10), 20 / 3));
 
-/* ---- C. multiple choice and assertion-reason ------------------ */
+says('B17', 18, '1.8'); says('B18', 72, 48, 120); says('B25', '₹6,300', '₹4,500'); says('B26', '37.5', '7.5', '48', '7.2', '4.8');
+says('B27', 420, 168, 112); says('B36', 200, 50); says('B37', '1.5', 90); says('B40', '6 hours 40 minutes'); says('B7', 6); says('B8', 75);
+// Beyond the Book examples
+ok('Beyond Ex 1', share(3000, 3, 5, 7), [600, 1000, 1400]);
+is('Beyond Ex 2', near(1 / (1 / 10 + 1 / 15), 6));
+ok('Beyond Ex 3', [72 / 360 * 1250, 144 / 360 * 1250, 90 / 360 * 1250], [250, 500, 312.5]);
+{ const [l, b] = share(42, 4, 3); ok('Beyond Ex 4', [l, b, l * b, Math.hypot(l, b)], [24, 18, 432, 30]); }
+is('Beyond Ex 5', near(1 / (1 / 4 - 1 / 6), 12));
+ok('Beyond Ex 6', Math.round(1.2 / 3 * 8 * 1e9) / 1e9, 3.2);
+ok('Beyond Ex 7', [20 * 100 / 250, 4 * 2.5, 12 * 2.5], [8, 10, 30]);
+ok('Beyond Ex 8', [480, 300, 240, 180].map(n => deg(n, 1200)), [144, 90, 72, 54]);
+ok('Beyond Ex 9', [...reduce(1500, 2500, 3000), 5600 / 14 * 6, 1800 / 3 * 14], [3, 5, 6, 2400, 8400]);
+ok('Beyond Ex 10', [120 / 5, 120 / 15, 10 + (120 - 30) / 6], [24, 8, 25]);
+// Beyond practice
+ok('Beyond 1', [9].filter(x => 5 * (x + 3) === 3 * (x + 11)), [9]);
+ok('Beyond 2', (2 * 25000 / 100000) ** 2, 0.25);
+ok('Beyond 3', (12 * 10 - 12 * 4) / 18, 4);
+ok('Beyond 4', 30 / 3 * 2 - 10, 10);
+is('Beyond 5', 6 * 20 === 120 && 120 / 15 !== 10 && 120 / 12 === 10 && 120 / 30 === 4);
+{ const [p, q, r] = share(2400, 3, 4, 5); is('Beyond 6', q === 800 && r - p === 400 && p + q > r && r !== 1200); }
+is('Beyond 7', proportional(0.6, 1.5, 4, 10) && !proportional(0.6, 1.5, 3, 8) && !proportional(0.6, 1.5, 6, 10) && proportional(0.6, 1.5, 9, 22.5));
+is('Beyond 8', 360 - 150 - 90 - 60 === 60 && 150 / 360 * 600 === 250 && 90 / 360 !== 1 / 3 && near(120 / 360, 1 / 3));
+ok('Beyond 9', 7 * [...Array(100)].map((_, i) => i + 1).find(x => 6 * 7 * x === 7 * (5 * x + 40)), 280); says('Y9', 280);
+ok('Beyond 10', 50 * 30 / 25, 60); says('Y10', 60);
+ok('Beyond 11', (1 - 6 * (1 / 20 + 1 / 30)) * 30, 15); says('Y11', 15);
+ok('Beyond 12', [3 * 2, 0.5 * 2, 12 / 2, 7.5 / 2], [6, 1, 6, 3.75]);
+ok('Beyond 13', [360 / 18, 360 / 40, 360 / 12, 360 / 45], [20, 9, 30, 8]);
+ok('Beyond 14', [4 * 4 / 8, 4 * 60 / 25, 3 / 0.5 * 25], [2, 9.6, 150]); says('Y14', 9.6, 150);
+ok('Beyond 15', [32 * 0.75, 24 / 40 * 60, 24 / 0.5], [24, 36, 48]); says('Y15', 36, 48);
 
-const qs = {};
-for (const m of beyond.matchAll(/<ol class="c-questions"(?: data-start="(\d+)")?>\s*<li>([\s\S]*?)<\/li>\s*<\/ol>\s*<\/div>/g)) {
-  if (!/c-practice/.test(beyond)) continue;
-  const n = Number(m[1] || 1);
-  // the first practice block is the one carrying the numeral
-  if (!m[1] && !/c-practice__num/.test(beyond.slice(Math.max(0, m.index - 400), m.index))) continue;
-  qs[n] = m[2];
+/* ---- C. the key is complete, and the letters are the right ones -- */
+const nums = (src) => [...src.matchAll(/<ol class="c-questions"(?: data-start="(\d+)")?>/g)].map(m => Number(m[1] || 1));
+const boardPages = pages.filter(f => /^p09/.test(f)).map(f => html[f]).join('\n');
+const beyondQ = beyond.slice(0, beyond.indexOf('c-stage__title">Answers'));
+ok('By the Book numbered 1-50', nums(boardPages), [...Array(50)].map((_, i) => i + 1));
+ok('Beyond practice numbered 1-15', nums(beyondQ), [...Array(15)].map((_, i) => i + 1));
+const letters = {};
+for (const m of board[0].matchAll(/<span class="n">(\d+)<\/span> (\([a-d]\))/g)) letters['B' + m[1]] = m[2];
+for (const m of board[1].replace(/<[^>]+>/g, ' ').matchAll(/(\d+) ((?:\([a-d]\)(?:, )?)+|\d+(?:\.\d+)?)/g)) letters['Y' + m[1]] ??= m[2].trim();
+for (let n = 1; n <= 50; n++) {
+  const inKey = (n <= 30 || (n >= 36 && n <= 40)) ? !!keyRows['B' + n] : !!letters['B' + n];
+  is(`By the Book ${n} is in the key`, inKey);
 }
-const optsOf = (n) => [...(qs[n] || '').replace(/^[\s\S]*?<ol class="c-parts[^"]*">/, '').matchAll(/<li>([\s\S]*?)<\/li>/g)].map(x => text(x[1]).trim());
-const num = (s) => Number(s.replace(/\$|\^\\circ|°|₹|,|\{,\}/g, '').replace(/\s*(days|hours|km|m)$/, '').trim());
-const pair = (s) => s.replace(/\$|₹/g, '').split(/\s*(?:and|:)\s*/).map(Number);
-const key = {};
-{ const a = beyond.indexOf('<ol class="c-answers">');
-  for (const m of text(beyond.slice(a, beyond.indexOf('</ol>', a))).matchAll(/\b(\d+) \(([a-d])\)/g)) key[m[1]] ??= m[2]; }
-
-const solve = {
-  1: o => o.map(num).map(v => proportional(4, 9, v, 27)),
-  2: o => o.map(s => s.replace(/\$/g, '').split(' and ').map(r => r.split(':').map(Number))).map(([[a, b], [c, d]]) => proportional(a, b, c, d)),
-  3: o => o.map(pair).map(([x, y]) => JSON.stringify([x, y]) === JSON.stringify(share(60, 2, 3))),
-  4: o => o.map(num).map(v => near(v, 18 / 6 * 11)),
-  5: o => o.map(num).map(v => near(v, 6 * 10 / 12)),
-  6: o => o.map(s => { const v = num(s); return /km/.test(s) ? v : v / 1000; }).map(v => near(v, kmPerCm(100000))),
-  7: o => o.map(s => ({ 'a sixth': 1 / 6, 'a third': 1 / 3, 'a quarter': 1 / 4, 'a twelfth': 1 / 12 })[s]).map(v => near(v, 60 / 360)),
-  8: o => o.map(num).map(v => near(v, 0.4 * 360)),
-  9: o => o.map(num).map(v => near(v, 4 * 6 / 8)),
-  10: o => o.map(num).map(v => near(v, Math.max(...share(180, 1, 2, 3)))),
-  11: o => o.map(s => /speed of a train/.test(s)),
-  12: o => o.map(num).map(v => near(v, 1 / (1 / 12 + 1 / 6))),
-  13: o => o.map(pair).map(([x, y]) => y - x === 25 && proportional(x, y, 2, 7)),
-  14: o => o.map(num).map(v => { const part = 12 / 3; return near(v, 2 * part + 5 * part); }),
-  15: o => o.map(s => s === 'halved'),
-};
-for (const [q, f] of Object.entries(solve)) {
-  const o = optsOf(q);
-  is(`Q${q} has four options: ${JSON.stringify(o)}`, o.length === 4);
-  const right = f(o).map((t, i) => (t ? 'abcd'[i] : null)).filter(Boolean);
-  ok(`Q${q}: the right option`, right, [key[q]]);
+for (let n = 1; n <= 15; n++) is(`Beyond ${n} is in the key`, !!letters['Y' + n] || !!keyRows['Y' + n]);
+// the right letters, from the questions' own options
+const want = { B31: '(a)', B32: '(d)', B33: '(b)', B34: '(c)', B35: '(a)', B41: '(a)', B42: '(c)', B43: '(d)', B44: '(b)', B45: '(d)',
+  B46: '(b)', B47: '(b)', B48: '(a)', B49: '(c)', B50: '(c)', Y1: '(a)', Y2: '(b)', Y3: '(c)', Y4: '(d)', Y5: '(a), (c), (d)',
+  Y6: '(a), (b), (c)', Y7: '(a), (d)', Y8: '(a), (b), (d)', Y12: '(a)', Y13: '(d)' };
+// assertion-reason, derived: A true?, R true?, R explains A?
+const ar = (a, r, x) => a && r ? (x ? '(a)' : '(b)') : a ? '(c)' : '(d)';
+ok('AR 31-35', [ar(15 * 8 === 10 * 12, true, true), ar(proportional(3, 4, 9, 16), true, false), ar(4 * 50000 / 100000 === 2, true, false),
+  ar(deg(30, 90) === 120, false, false), ar(12 / 3 * 5 === 20, true, true)], ['(a)', '(d)', '(b)', '(c)', '(a)']);
+// single-answer options: the keyed option is the computed value, and no other option is
+const optsOf = (src, n) => { const i = src.search(new RegExp(`<ol class="c-questions" data-start="${n}">`)); const s = src.slice(i, src.indexOf('</ol>\n', i));
+  const o = s.slice(s.lastIndexOf('<ol class="c-parts c-parts--alpha')); return [...o.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(x => text(x[1]).trim()); };
+const val = (s) => Number(s.replace(/[₹%°,]|km|m\b|litres|more days|days|kg|km2|\^\\circ|\\%/g, '').replace(/\\tfrac(\d)(\d)/, '$1/$2').replace(/\s/g, '').replace(/^(\d+)\/(\d+)$/, (m, a, b) => a / b));
+const single = { 41: 5 * 60 / 12, 42: 500, 43: 5, 44: 15, 45: 20, 46: 9, 47: 40, 48: 5 };
+for (const [n, v] of Object.entries(single)) {
+  const o = optsOf(boardPages, n).map(val); const hit = o.map((x, i) => near(x, v) ? i : -1).filter(i => i >= 0);
+  ok(`By the Book ${n}: one option is ${v}`, hit.length, 1); ok(`By the Book ${n} key`, letters['B' + n], '(' + 'abcd'[hit[0]] + ')');
 }
-// assertion-reason: [A true, R true, R explains A]
-const arLetter = ([a, r, x]) => (a && r ? (x ? 'a' : 'b') : a ? 'c' : r ? 'd' : 'e');
-const squareSide = [1, 2, 3], squareArea = squareSide.map(s => s * s);
-const AR = {
-  16: [8 * 9 === 4 * 18, true, true],
-  17: [proportional(2, 3, 4, 9), true, false],
-  18: [deg(3, 10) + deg(7, 10) === 360, true, false],
-  // R claims growing together means direct; the square grows together and is not direct
-  19: [!proportional(squareSide[0], squareArea[0], squareSide[1], squareArea[1]), false, false],
-};
-for (const [q, v] of Object.entries(AR)) ok(`Q${q}: assertion-reason`, arLetter(v), key[q]);
-is('Q19: side and area do grow together', squareArea[1] > squareArea[0]);
-const letters = Object.values(key);
-is(`key letters spread across a-d: ${letters.join('')}`, ['a', 'b', 'c', 'd'].every(l => letters.filter(x => x === l).length >= 3));
-ok('key covers 1-19', Object.keys(key).map(Number).sort((a, b) => a - b), [...Array(19)].map((_, i) => i + 1));
+const singleY = { 2: 2, 3: 3, 4: 4 };  // index of the right option, from the computations in B
+for (const [n, i] of Object.entries(singleY)) ok(`Beyond ${n} key`, letters['Y' + n], '(' + 'abcd'[i - 1] + ')');
+ok('Beyond 1 key', letters['Y1'], '(a)');
+for (const [k, v] of Object.entries(want)) ok(`key ${k}`, letters[k], v);
+{ const s = [...'aabbbccdd']; ok('objective letters spread', ['a', 'b', 'c', 'd'].map(c => Object.entries(want).filter(([k, v]) => /^B4\d|B50/.test(k) && v === `(${c})`).length), [2, 3, 3, 2]); }
 
-// numbering: one run 1..31, no repeats
-{ const starts = [...beyond.matchAll(/data-start="(\d+)"/g)].map(m => Number(m[1]));
-  ok('practice numbering runs 2..31', starts, [...Array(30)].map((_, i) => i + 2)); }
-{ const runs = body.split('c-practice__head').slice(1).map(s => [...s.split('c-practice__head')[0].matchAll(/data-start="(\d+)"/g)].map(m => Number(m[1])));
-  runs.forEach((r, i) => ok(`Exercise Set 3.${i + 1} numbering`, r, [...Array(r.length)].map((_, k) => k + 2))); }
-
-/* ---- D. ANSWERS.md prints the same key ------------------------ */
-
-const mdKey = {};
-const mdLine = answersMd.slice(answersMd.indexOf('as the key prints it'));
-for (const m of mdLine.slice(0, 400).matchAll(/\b(\d+) \(([a-d])\)/g)) mdKey[m[1]] = m[2];
-ok('ANSWERS.md key matches the page', mdKey, key);
-
-// ANSWERS.md, body exercise answers
-const md = answersMd;
-const mdHas = (what, re) => is(`ANSWERS.md ${what}: ${re}`, re.test(md));
-ok('Ex 3.1 Q1', [[3, 8, 9, 24], [5, 6, 20, 25], [14, 21, 6, 9], [2.5, 4, 10, 16]].map(x => proportional(...x)), [true, false, true, true]);
-mdHas('3.1 Q1 verdicts', /\(i\) \*\*Yes\*\*[\s\S]*\(ii\) \*\*No\*\*[\s\S]*\(iii\) \*\*Yes\*\*[\s\S]*\(iv\) \*\*Yes\*\*/);
-ok('Ex 3.1 Q2', [7 * 12 / 4, 9 * 8 / 12, 15 * 40 / 25], [21, 6, 24]);
-mdHas('3.1 Q2', /\*\*21\*\*[\s\S]*\*\*6\*\*[\s\S]*\*\*24\*\*/);
-ok('Ex 3.1 Q3', [6 * 9 / 3, 2 * 9 / 3, (6 + 3 + 2) * 9 / 3], [18, 6, 33]);
-ok('Ex 3.1 Q4', [1015 / 7 * 12, 580 / (1015 / 7)], [1740, 4]);
-mdHas('3.1 Q4', /12 m cost ₹1,740\*\*[\s\S]*₹580 buys 4 m/);
-ok('Ex 3.1 Q5', [300 * 10 / 4, 2 * 10 / 4, ...reduce(300, 2000)], [750, 5, 3, 20]);
-mdHas('3.1 Q5', /\*\*750 g of rice\*\*[\s\S]*\*\*5 litres of water\*\*/);
-ok('Ex 3.2 Q1', [share(450, 4, 5), share(96, 1, 2, 5), share(180, 2, 3, 4)], [[200, 250], [12, 24, 60], [40, 60, 80]]);
-mdHas('3.2 Q1', /\*\*₹200 and ₹250\*\*[\s\S]*\*\*12 kg, 24 kg, 60 kg\*\*[\s\S]*\*\*40°, 60°, 80°\*\*/);
-ok('Ex 3.2 Q2', share(150, 3, 4, 3, 5), [30, 40, 30, 50]);
-mdHas('3.2 Q2', /warm-up \*\*30\*\*, batting \*\*40\*\*, bowling \*\*30\*\*, fielding \*\*50\*\*/);
-ok('Ex 3.2 Q3', [288 / 3 * 2, 288 / 3, 288 / 3 * 6], [192, 96, 576]);
-mdHas('3.2 Q3', /\*\*192 Hindi\*\*[\s\S]*\*\*96 English\*\*[\s\S]*\*\*576 books\*\*/);
-{ const c = share(100, 4, 3, 2, 1); ok('Ex 3.2 Q4', [...c, c[0] * 10 + c[1] * 5 + c[2] * 2 + c[3]], [40, 30, 20, 10, 600]); mdHas('3.2 Q4', /\*\*₹600\*\*/); }
-is('Ex 3.2 Q5: 1:3:5 fails the triangle rule', 1 + 3 < 5);
-{ const e = (720 + 80) / 2, y = 720 - e; ok('Ex 3.2 Q6', [e, y, ...reduce(e, y), ...reduce((720 + 240) / 2, (720 - 240) / 2)], [400, 320, 5, 4, 2, 1]); }
-ok('Ex 3.2 Q7', 1250 / 5 * 8, 2000);
-mdHas('3.2 Q7', /\*\*₹2,000\*\*/);
-ok('Ex 3.3 Q1', [kmPerCm(2500000), 400 / kmPerCm(2500000)], [25, 16]);
-ok('Ex 3.3 Q2', [800 / 50, 2 * 50], [16, 100]);
-ok('Ex 3.3 Q3', [4000000 / 1000000, (4000000 / 1000000) ** 2], [4, 16]);
-ok('Ex 3.3 Q4', [85 * 200 / 100, 2 * 200 / 100], [170, 4]);
-mdHas('3.3 Q4', /\*\*170 m\*\*[\s\S]*\*\*4 m\*\*/);
-ok('Ex 3.3 Q5', 12 * kmPerCm(50000), 6);
-mdHas('3.3 Q5', /\*\*6 km\*\*/);
-ok('Ex 3.4 Q1', [360 - 90 - 120, deg(90, 360), deg(120, 360), deg(150, 360)], [150, 90, 120, 150]);
-mdHas('3.4 Q1', /\*\*summer 90°, rains 120°, winter 150°\*\*/);
-ok('Ex 3.4 Q2', [50, 25, 15, 10].map(p => 3.6 * p).map(Math.round), [180, 90, 54, 36]);
-mdHas('3.4 Q2', /\*\*Entertainment 180°, sport 90°, news 54°, information 36°\*\*/);
-ok('Ex 3.4 Q3', [100 * 126 / 360, 126 / 360 * 28000], [35, 9800]);
-mdHas('3.4 Q3', /\*\*₹9,800\*\*/);
-{ const rest = 60 - 25 - 20 - 9; ok('Ex 3.4 Q4', [rest, ...[25, 20, 9, rest].map(n => deg(n, 60))], [6, 150, 120, 54, 36]); }
-mdHas('3.4 Q4', /\*\*walk 150°, bus 120°, cycle 54°, driven 36°\*\*/);
-ok('Ex 3.4 Q5 instance', [72 / 360 * 30, 72 / 360 * 50], [6, 10]);
-ok('Lucknow to Kanpur', 30 * 3 / 60, 1.5);
-ok('Ex 3.5 Q1', [[40, 80, 25], [40, 80, 25], [30, 90, 150]].map((xs, i) => xs.map((x, k) => x * [[20, 10, 32], [20, 10, 12.5], [15, 5, 3]][i][k])), [[800, 800, 800], [800, 800, 312.5], [450, 450, 450]]);
-mdHas('3.5 Q1', /\(i\) \*\*Inverse\*\*[\s\S]*\(ii\) \*\*Not inverse\*\*[\s\S]*\(iii\) \*\*Inverse\*\*/);
-ok('Ex 3.5 Q2', [16 * 9 / 12, 16 * 9 / 48], [12, 3]);
-mdHas('3.5 Q2', /\*\*\$y = 12\$\*\*[\s\S]*\*\*\$x = 3\$\*\*/);
-ok('Ex 3.5 Q4', [6 * 80 / 8, 6 * 80 / 60], [60, 8]);
-mdHas('3.5 Q4', /\*\*1 hour\*\*[\s\S]*\*\*8 taps\*\*/);
-ok('Ex 3.5 Q5', [150 - 50, 150 * (45 - 15) / (150 - 50)], [100, 45]);
-mdHas('3.5 Q5', /\*\*100\*\* soldiers[\s\S]*= 45\$ \*\*more days\*\*/);
-ok('Ex 3.5 Q6', 1 / (1 / 6 + 1 / 3), 2);
-mdHas('3.5 Q6', /\*\*2 hours\*\*/);
-ok('Ex 3.5 Q7', 4 * 60 / 3, 80);
-mdHas('3.5 Q7', /\*\*80 km\/h\*\*/);
-mdHas('Stage 1 results', new RegExp(`\\(1\\) ${750 / 6 * 8} g[\\s\\S]*\\(2\\) ${120 / 15} days[\\s\\S]*\\(3\\) ${6 * 50000 / 200000} cm[\\s\\S]*\\(4\\) ${150 / 360 * 720} people[\\s\\S]*\\(5\\) ₹1,680[\\s\\S]*\\(6\\) ${240 / 4} minutes[\\s\\S]*\\(7\\) 30 and 42[\\s\\S]*\\(8\\) ${35 * 60 / 21} turns`));
-// ANSWERS.md practice lines carry the same answers as the key
-mdHas('Q23', /₹3,000, ₹2,000, ₹1,500/); mdHas('Q25', /\*\*15 and 9\*\*/);
-mdHas('Q26', /Rent 90°, food 120°, education 60°, savings 90°/); mdHas('Q27', /\*\*10 more days\*\*/);
-mdHas('Q28', /in 60 minutes/); mdHas('Q29', /\*\*5 km by 4 km\*\*, area \*\*20 km²\*\*/);
-mdHas('Q30', /8 kg rice, 48 lemons, 1280 g oil[\s\S]*96\$ \*\*students/); mdHas('Q31', /\*\*75 km\/h\*\*/);
+/* ---- D. ANSWERS.md prints the same key as the page ------------- */
+mdHas('AR', /31 \(a\) · 32 \(d\) · 33 \(b\) · 34 \(c\) · 35 \(a\)/);
+mdHas('objective', /41 \(a\) · 42 \(c\) · 43 \(d\) · 44 \(b\) · 45 \(d\) · 46 \(b\) · 47 \(b\) · 48 \(a\) ·\s*49 \(c\) · 50 \(c\)/);
+mdHas('Beyond practice', /5 \(a\), \(c\), \(d\) · 6 \(a\), \(b\), \(c\) · 7 \(a\), \(d\) · 8 \(a\), \(b\), \(d\)/);
+mdHas('Beyond numerical', /9 \*\*280\*\* · 10 \*\*60\*\* · 11 \*\*15\*\*/);
+mdHas('Tried and explained', /\(1\) 1000 g[\s\S]*\(2\) 8 days[\s\S]*\(3\) 1\.5 cm[\s\S]*\(4\) 300 people[\s\S]*\(6\) 60 minutes[\s\S]*\(8\) 100 turns/);
+ok('tried-and-explained values', [750 / 6 * 8, 120 / 15, 6 * 50000 / 200000, 150 / 360 * 720, 240 / 15 * 105, 240 / 4, 35 * 60 / 21], [1000, 8, 1.5, 300, 1680, 60, 100]);
 
 /* ---- report ---------------------------------------------------- */
 

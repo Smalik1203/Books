@@ -6,28 +6,21 @@
 
     <div class="chapterhead__sketch">
       <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-
-        <!-- faint graph paper behind the sketch, as on the other openers -->
         <g class="dg-grid">
           <path d="M17 0 V120 M39 0 V120 M61 0 V120 M83 0 V120 M105 0 V120
                    M127 0 V120 M149 0 V120 M171 0 V120 M193 0 V120"/>
           <path d="M0 5 H210 M0 27 H210 M0 49 H210 M0 71 H210 M0 93 H210 M0 115 H210"/>
         </g>
-
-        <!-- Two pies, cut in the same four shares. Nothing is drawn left
-             of x=73: the title box runs into this one. -->
         <path class="dg-fill-a" d="M90 66 L90 44 A22 22 0 0 1 102.93 83.80 Z"/>
         <path class="dg-fill-b" d="M90 66 L102.93 83.80 A22 22 0 0 1 69.08 72.80 Z"/>
         <path class="dg-fill-c" d="M90 66 L69.08 72.80 A22 22 0 0 1 77.07 48.20 Z"/>
-        <path class="dg-fill-d" d="M90 66 L77.07 48.20 A22 22 0 0 1 90 44 Z"/>
+        <path class="dg-fill-b-soft" d="M90 66 L77.07 48.20 A22 22 0 0 1 90 44 Z"/>
         <circle class="dg-line" cx="90" cy="66" r="22"/>
-
         <path class="dg-fill-a" d="M155 66 L155 32 A34 34 0 0 1 174.99 93.51 Z"/>
         <path class="dg-fill-b" d="M155 66 L174.99 93.51 A34 34 0 0 1 122.66 76.51 Z"/>
         <path class="dg-fill-c" d="M155 66 L122.66 76.51 A34 34 0 0 1 135.01 38.49 Z"/>
-        <path class="dg-fill-d" d="M155 66 L135.01 38.49 A34 34 0 0 1 155 32 Z"/>
+        <path class="dg-fill-b-soft" d="M155 66 L135.01 38.49 A34 34 0 0 1 155 32 Z"/>
         <circle class="dg-line" cx="155" cy="66" r="34"/>
-
         <text class="dg-dim-label" x="125" y="114" text-anchor="middle">the same shares, a different size</text>
       </svg>
     </div>
@@ -40,49 +33,37 @@
 
       <h2><span class="badge">3.1</span><span class="name">Introduction</span></h2>
 
-      <p>Idli batter is rice and urad dal ground together — two cups of rice to one cup of
-      dal, in one common version. Viswanath grinds six cups of rice with three of dal.
-      Puneet grinds four with two. Cooked the same way, do the two batters taste the
-      same?</p>
+      <p>Rose sherbet is made from rose syrup and cold water. Kavitha mixes $2$ cups of syrup with $8$ cups of water. Anwar mixes $3$ cups of syrup with $12$ cups of water. Anwar has made more sherbet. Do the two jugs taste the same?</p>
 
-      <p>They do, and the reason is worth saying carefully. Viswanath has made half again
-      as much batter as Puneet, so nothing about the two mixtures is equal in
-      <em>amount</em>. What is equal is the relation between the two ingredients: twice as
-      much rice as dal, in both bowls. A <span class="term">ratio</span> records that
-      relation and nothing else, which is why it is written $2 : 1$ and not in cups.</p>
+      <p>They do. The amounts are different, but in both jugs there is $4$ times as much water as syrup. That relation is the same in both jugs, and it is what decides the taste. A <span class="term">ratio</span> records this relation and nothing else. So both jugs are written $1 : 4$, syrup to water, and the ratio carries no units.</p>
 
-      <p>This chapter is about quantities that change together, and in every one of them
-      something refuses to change while they do. In a recipe, a map or a paint mix, it is
-      the ratio that holds still. In the last section it is something else — and working
-      out what stays the same tells you which kind of relationship you are looking at.</p>
+      <p>This chapter is about quantities that change together. In each case, something stays the same while they change. In a recipe, a map or a mix of colours, the ratio stays the same. In the last section, something else stays the same. Finding what stays the same tells you what kind of relation you are looking at.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">What a ratio records</div>
+        <p>A ratio compares two quantities: how many times one is of the other. It does not say how much there is of each.</p>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Anwar has $5$ cups of syrup. How much water keeps the same taste?</li>
+            <li>Rohan mixes $4$ cups of syrup with $14$ cups of water. Is his sherbet sweeter than Kavitha's, or less sweet?</li>
+            <li>Why can a ratio be written without any units?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
       <h2><span class="badge">3.2</span><span class="name">When Two Ratios Agree</span></h2>
 
-      <p>Viswanath's batter is $6 : 3$ and Puneet's is $4 : 2$. Both reduce to $2 : 1$,
-      which settles that particular case, but reducing is not always the quickest test
-      and it is not always possible in whole numbers. There is a check that always
-      works.</p>
+      <p>Kavitha's sherbet is $2 : 8$ and Anwar's is $3 : 12$. Both reduce to $1 : 4$, which settles this case. But reducing is not always the quickest test, and with awkward numbers it can be slow. There is a test that always works.</p>
 
-      <p>Two ratios $a : b$ and $c : d$ describe the same relation — they are
-      <span class="term">proportional</span> — exactly when</p>
-
-      <div class="eq eq--anchor">$$a \times d = b \times c, \qquad\text{equivalently}\qquad
-      \frac{a}{b} = \frac{c}{d}.$$</div>
-
-      <p>The two forms say one thing twice. Multiplying across the two ratios is quick
-      with awkward numbers; comparing the two quotients says <em>why</em> it works. For
-      the batter, $6 \times 2 = 12$ and $3 \times 4 = 12$, so the ratios agree; and
-      $\tfrac63 = \tfrac42 = 2$, which is the sentence <em>twice as much rice as dal</em>
-      written as a number.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The quotient is what holds still</div>
-        <p>Two quantities are in <span class="term">direct proportion</span> when one is
-        always the same multiple of the other. Double one and the other doubles;
-        multiply one by any factor at all and the other follows by the same factor. What
-        never changes is the quotient $\ y \div x$, and that fixed number is worth a name
-        — it is the <span class="term">constant</span> of the relationship.</p>
-      </div>
+      <p>Two ratios $a : b$ and $c : d$ describe the same relation exactly when</p>
 
     </div>
   </div>

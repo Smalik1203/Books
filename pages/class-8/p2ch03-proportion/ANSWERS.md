@@ -1,254 +1,290 @@
-# Class 8 · Mathematics II · Chapter 3 — What Stays the Same
+# Class 8 · Mathematics II · Chapter 3 — Proportional Reasoning-2
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
-book prints none of it except Beyond the Book's own key.
+book prints none of it except the key in Beyond the Book's Answers stage.
 
-Numbered by set — *Exercise Set 3.4, Q2* — so it can be used beside the book
-without a contents page. **Every value below is re-derived by
-`check-numbers.mjs` beside this file.** A question renumbered in the book and
-not here is how this goes wrong.
-
-Where a question asks the reader to choose, draw or explain, the answer gives
-what the drawing must show or one worked instance under *answers will vary*.
+Numbered by section and set — *Exercise Set 3.4, Q2* — so it can be used
+beside the book without a contents page. Rewritten for the maths-v2
+conversion, 26 September 2026: every context, number and question in the
+body is new, so nothing below carries over from the earlier file.
+**`check-numbers.mjs` beside this file re-derives the values.**
 
 ---
 
 ## 3.1 Introduction
 
-### In the text (the two batters)
+### In the text (the two jugs)
 
-Answered in the running text that follows it. Yes, they taste the same:
-$6 : 3$ and $4 : 2$ both reduce to $2 : 1$, twice as much rice as dal.
+Yes, they taste the same: $2 : 8$ and $3 : 12$ both reduce to $1 : 4$.
+
+### Think and Reflect
+
+1. Water is $4$ times the syrup: **20 cups**.
+2. $4 : 14 = 1 : 3.5$. There is less water for each cup of syrup than in
+   $1 : 4$, so Rohan's sherbet is **sweeter**.
+3. Both terms are in the same unit, so the unit cancels. A ratio says how
+   many times one quantity is of the other, and that number has no unit.
 
 ## 3.2 When Two Ratios Agree
 
-No exercise set; Examples 1 and 2 are worked on the page.
+### Think and Reflect
+
+1. **Yes.** $2.5 \times 8 = 20 = 4 \times 5$, and $\tfrac{2.5}{4} = 0.625 = \tfrac58$.
+2. $3 \times 40 = 5x$, so $x = $ **24**.
+3. **No.** $2 \times 4 = 8$ but $3 \times 3 = 9$; $\tfrac23$ is not $\tfrac34$.
+   Adding the same number to both terms changes the relation.
 
 ## 3.3 More Than Two Terms
 
+### Think and Reflect
+
+1. **No.** $\tfrac{6}{12} = \tfrac36 = \tfrac24 = 0.5$, but $\tfrac13$ is not
+   $0.5$: the cashews give it away.
+2. Divide by $5$: **$3 : 2 : 5 : 1$**.
+3. Red is $2$ parts $= 500$ g, so one part is $250$ g, and $9$ parts make
+   **2250 g**.
+
 ### Exercise Set 3.1
 
-1. (i) **Yes**: $3 \times 24 = 72$ and $8 \times 9 = 72$.
-   (ii) **No**: $5 \times 25 = 125$ but $6 \times 20 = 120$.
-   (iii) **Yes**: $14 \times 9 = 126$ and $21 \times 6 = 126$.
-   (iv) **Yes**: $2.5 \times 16 = 40$ and $4 \times 10 = 40$.
-
-2. (i) $4 \times \square = 7 \times 12 = 84$, so the missing term is **21**.
-   (ii) $\square \times 12 = 9 \times 8 = 72$, so it is **6**.
-   (iii) $15 \times 40 = 25 \times \square = 600$, so it is **24**.
-
-3. Chilli is $3$ parts and $9$ spoons, so one part is $3$ spoons.
-   Coriander $6 \times 3 = 18$ spoons, dal $2 \times 3 = 6$ spoons, and the
-   mix is $18 + 9 + 6 = 33$ spoons.
-
-4. One metre costs $1015 \div 7 = 145$ rupees. **12 m cost ₹1,740**
-   ($145 \times 12 = 1740$), and **₹580 buys 4 m** ($580 \div 145 = 4$).
-
-5. Ten people is $10 \div 4 = 2.5$ times four: **750 g of rice** and
-   **5 litres of water** ($300 \times 2.5 = 750$, $2 \times 2.5 = 5$).
-   Taking a litre of water as $1000$ g, rice to water is
-   $300 : 2000 = 3 : 20$ — the same for four people or ten.
+1. (i) **Yes**: $4 \times 27 = 108 = 9 \times 12$. (ii) **No**:
+   $6 \times 30 = 180$ but $7 \times 24 = 168$. (iii) **Yes**:
+   $18 \times 10 = 180 = 12 \times 15$.
+2. (i) $5 \times \square = 8 \times 20 = 160$: **32**. (ii)
+   $\square \times 27 = 12 \times 9 = 108$: **4**. (iii)
+   $14 \times 45 = 35 \times \square = 630$: **18**.
+3. Chana is $3$ parts $= 450$ g, so one part is $150$ g: peanuts **750 g**,
+   raisins **300 g**, and **1500 g** of mix.
+4. One metre costs $296 \div 8 = 37$ rupees. $5$ m cost **₹185**; ₹444 buys
+   $444 \div 37 = $ **12 m**.
+5. $15 \div 6 = 2.5$: **600 g of dal** and **2250 g of water**.
+   $240 : 900 = $ **4 : 15**, for 6 people or 15.
 
 ## 3.4 Dividing a Whole
 
+### Think and Reflect
+
+1. Each share would be $100 \div 3 = 33\tfrac13$, which is not a whole number:
+   $100$ is not a multiple of $3$.
+2. **$\tfrac38$** of the whole.
+3. Each angle is $60^\circ$: an **equilateral** triangle.
+
 ### Exercise Set 3.2
 
-1. (i) $4 + 5 = 9$ parts of ₹450, one part ₹50: **₹200 and ₹250**.
-   (ii) $1 + 2 + 5 = 8$ parts of 96 kg, one part 12 kg: **12 kg, 24 kg, 60 kg**.
-   (iii) $2 + 3 + 4 = 9$ parts of $180^\circ$, one part $20^\circ$:
-   **40°, 60°, 80°**.
-
-2. $3 + 4 + 3 + 5 = 15$ parts of 150 minutes, one part 10 minutes:
-   warm-up **30**, batting **40**, bowling **30**, fielding **50** minutes.
-
-3. Odia is 3 parts and 288 books, so one part is 96 books: **192 Hindi**,
-   **96 English**, and **576 books** in all.
-
-4. $4 + 3 + 2 + 1 = 10$ parts of 100 coins, so 40 ₹10 coins, 30 ₹5 coins,
-   20 ₹2 coins and 10 ₹1 coins. The money is
-   $400 + 150 + 40 + 10 = 600$: **₹600**.
-
-5. **No.** Answers will vary in how the attempt is drawn; what it must show:
-   with sides of 1, 3 and 5 units, the two short sides together make
-   $1 + 3 = 4$, which is less than 5, so they cannot meet over the long
-   side. Any two sides of a triangle must add to more than the third.
-
-6. The two shares add to 720 and differ by 80, so the elder gets
-   $(720 + 80) \div 2 = 400$ and the younger 320: **$400 : 320 = 5 : 4$**.
-   With a difference of 240 the shares are 480 and 240: **$2 : 1$**.
-
-7. The larger share is 5 parts, so one part is $1250 \div 5 = 250$ and the
-   whole is $8 \times 250 = 2000$: **₹2,000**.
+1. (i) $8$ parts of ₹80: **₹240 and ₹400**. (ii) $7$ parts of $12$ kg:
+   **12 kg, 24 kg, 48 kg**. (iii) $12$ parts of $30^\circ$:
+   **60°, 90°, 210°**.
+2. $18$ parts of $20$ minutes: lessons **240**, breaks **40**, games **60**,
+   assembly **20** minutes.
+3. Black is $4$ parts $= 120$, so one part is $30$: **150 blue**, **30 red**,
+   **300 pens**.
+4. $10$ parts of $6$ coins: $12$ ₹5 coins, $18$ ₹2 coins and $30$ ₹1 coins.
+   $60 + 36 + 30 = 126$: **₹126**.
+5. **No.** The two short sides make $2 + 3 = 5$, less than $6$, so they
+   cannot meet over the long side.
+6. The elder gets $(900 + 180) \div 2 = 540$ and the younger $360$:
+   **3 : 2**. With a difference of ₹300: $600 : 300 = $ **2 : 1**.
+7. $4$ parts are ₹1,200, so one part is ₹300; the whole is $11 \times 300 = $
+   **₹3,300**.
+8. The difference is $1$ part $= 8$, so the class is $9 \times 8 = $
+   **72 students**.
 
 ## 3.5 A Ratio on a Map
 
+### Think and Reflect
+
+1. **$1 : 50{,}000$**: the smaller number gives the larger drawing.
+2. $3$ km is $3{,}00{,}000$ cm: **$1 : 3{,}00{,}000$**.
+3. **No.** India is about $3000$ km across; at $1 : 500$ that is $6$ km of
+   paper.
+
 ### Exercise Set 3.3
 
-1. $25{,}00{,}000$ cm is 25 km, so **1 cm stands for 25 km**. 400 km is
-   $400 \div 25 = 16$, so **16 cm** on the paper.
-
-2. 8 m is 800 cm, and $800 \div 50 = 16$: **16 cm** on the plan. The desk is
-   $2 \times 50 = 100$ cm, that is **1 m**.
-
-3. **The $1 : 10{,}00{,}000$ map.** Each of its lengths is
-   $40{,}00{,}000 \div 10{,}00{,}000 = 4$ times as long, so the sheet is
-   **4 times as long and 4 times as wide** — 16 times the area. (Accept
-   *four times* when the answer says it is comparing lengths.)
-
-4. $85 \times 200 = 17000$ cm, so the ship is **170 m** long; the mast is
-   $2 \times 200 = 400$ cm, **4 m** across.
-
-5. $12 \times 50000 = 600000$ cm, so the road is **6 km** long. The towns are
-   4 km apart in a straight line; the road bends, and a map's scale
-   measures along whatever line is drawn, so the road is longer than the
-   straight distance.
+1. **20 km**; $350 \div 20 = $ **17.5 cm**.
+2. $2400 \div 200 = $ **12 cm**; $3.5 \times 200 = 700$ cm, **7 m**.
+3. On the **$1 : 5{,}00{,}000$** map, **5 times** as long.
+4. $24 \times 50 = 1200$ cm, **12 m** long; $5 \times 50 = 250$ cm, **2.5 m**
+   tall.
+5. $18 \times 25{,}000 = 4{,}50{,}000$ cm: **4.5 km**. The path bends, and a
+   scale measures along the line drawn, so it is longer than the $3$ km
+   straight line.
 
 ## 3.6 A Slice of the Pie
 
+### Think and Reflect
+
+1. One slice of $360^\circ$: the whole circle.
+2. **No.** A slice is part of a whole of $360^\circ$, so it cannot be more.
+3. Each student is $5^\circ$: chess falls to **25°** and cricket rises to
+   **125°**, a change of $5^\circ$ each.
+
 ### Exercise Set 3.4
 
-1. Winter is $360 - 90 - 120 = 150$ people. With 360 people, each person is
-   one degree: **summer 90°, rains 120°, winter 150°**. The drawing: a
-   circle, one radius, and the three angles measured in turn from it, each
-   slice labelled.
-
-2. **Entertainment 180°, sport 90°, news 54°, information 36°**
-   ($3.6$ degrees for each per cent). The drawing shows a half, a quarter
-   and two smaller slices, labelled.
-
-3. $\dfrac{126}{360} = \dfrac{7}{20} = 35\%$. The food bill is
-   $35\%$ of ₹28,000: **₹9,800**.
-
-4. The rest are $60 - 25 - 20 - 9 = 6$ students. Each student is
-   $360 \div 60 = 6$ degrees: **walk 150°, bus 120°, cycle 54°, driven 36°**,
-   and $150 + 120 + 54 + 36 = 360$.
-
-5. Answers will vary. What can be said: the two classes travel (or answer)
-   **in the same proportions** — the same fraction of each class is in each
-   slice. What cannot: **how many** are in any slice without the totals;
-   with them, a slice of 72° is 6 students in the class of 30 and 10 in the
-   class of 50.
+1. Each family is $2^\circ$; car is $45$ families: bus **120°**,
+   two-wheeler **150°**, car **90°**.
+2. $3.6^\circ$ for each per cent: wheat **144°**, rice **108°**, pulses
+   **72°**, vegetables **36°**.
+3. $\tfrac{81}{360} = 22.5\%$; $22.5\%$ of ₹32,000 is **₹7,200**.
+4. Car is $5$ students; each is $8^\circ$: walk **144°**, bus **96°**,
+   cycle **80°**, car **40°**; $144 + 96 + 80 + 40 = 360$.
+5. $\tfrac{150}{360} \times 240 = $ **100 votes**;
+   $\tfrac{60}{240} \times 360 = $ **90°**.
 
 ## 3.7 The Other Kind
 
-### In the text (Lucknow to Kanpur)
+### In the text
 
-Answered in the running text: speed and time are in inverse proportion, and
-$30 \times 3 = 60 \times t$ gives **1.5 hours**.
+Suresh's ride is $12 \times 2 = 24$ km, so the scooter takes
+$24 \div 36 = \tfrac23$ hour, **40 minutes**. Lalita and Nandini:
+$\tfrac12 + \tfrac13 = \tfrac56$ an hour, **72 minutes**. Tap and drain:
+$\tfrac13 - \tfrac16 = \tfrac16$, **6 hours**.
 
-### 3.7.1 Working together (Ram and Shyam)
+### Think and Reflect
 
-Worked on the page: $1 + \tfrac23 = \tfrac53$ units an hour, so
-**36 minutes**.
+1. **No.** Sixty workers would get in each other's way, and some tasks must
+   wait for others; the model stops fitting.
+2. **Direct**: twice the pages take twice the time.
+3. Their rates add, so together they do more in an hour than either alone,
+   and the whole tank takes less time.
 
 ### Exercise Set 3.5
 
-1. (i) **Inverse**: $40 \times 20 = 800$, $80 \times 10 = 800$,
-   $25 \times 32 = 800$.
-   (ii) **Not inverse**: $40 \times 20 = 800$ but $25 \times 12.5 = 312.5$.
-   (iii) **Inverse**: $30 \times 15 = 450$, $90 \times 5 = 450$,
-   $150 \times 3 = 450$.
-
-2. $xy = 16 \times 9 = 144$. When $x = 12$, **$y = 12$**; when $y = 48$,
-   **$x = 3$**.
-
-3. (i) **Direct** — twice the books, twice the money, at a fixed price.
-   (ii) **Inverse** — for taps of the same kind, the product is fixed.
-   (iii) **Neither** — height grows with age but not by the same factor, and
-   it stops.
-
-4. The job is $6 \times 80 = 480$ tap-minutes. Eight taps take
-   $480 \div 8 = 60$ minutes: **1 hour**. To fill it in 60 minutes needs
-   $480 \div 60 = 8$ taps: **8 taps**.
-
-5. After 15 days there is food for $150$ soldiers for $45 - 15 = 30$ days,
-   that is $150 \times 30 = 4500$ soldier-days. **100** soldiers remain, so it
-   lasts $4500 \div 100 = 45$ **more days**.
-
-6. In an hour the taps fill $\tfrac16 + \tfrac13 = \tfrac12$ of the tank, so
-   together they take **2 hours**, which is less than 3.
-
-7. The distance is $4 \times 60 = 240$ km, and $240 \div 3 = 80$: **80 km/h**.
-   The relationship is **inverse**: the distance is fixed, so speed times
-   time stays the same, and going faster takes less time.
+1. (i) **Inverse**: every product is $600$. (ii) **Not inverse**:
+   $72, 72, 96$. (iii) **Inverse**: every product is $300$.
+2. $xy = 144$: **$y = 6$**; **$x = 4$**.
+3. (i) **Direct**. (ii) **Inverse**. (iii) **Neither**.
+4. $8 \times 45 = 360$ machine-minutes: **60 minutes**; $360 \div 30 = $
+   **12 machines**.
+5. After $6$ days food is left for $60 \times 12 = 720$ hiker-days; $80$
+   hikers: **9 more days**.
+6. $\tfrac14 + \tfrac1{12} = \tfrac13$ a tank an hour: **3 hours**, less
+   than 4.
+7. $5 \times 48 = 240$ km; $240 \div 4 = $ **60 km/h**. **Inverse**: the
+   distance is fixed, so speed times time stays the same.
+8. $\tfrac16 - \tfrac1{10} = \tfrac1{15}$: **15 hours**.
+9. $\tfrac15 - \tfrac1{20} = \tfrac{3}{20}$: $\tfrac{20}{3}$ hours,
+   **6 hours 40 minutes**.
 
 ---
 
+## By the Book
+
+Fifty questions: very short answer (2 marks), short answer (3), long answer
+(5), assertion and reason (1), case-based (4), objective (1). Written to
+BY-THE-BOOK.md, 26 September 2026. The book's key is in Beyond the Book's
+Answers stage; this is the same key.
+
+### Very short answer
+
+1. $6 \times 25 = 15x$: **$x = 10$**.
+2. **Yes.** $2.4 \times 15 = 36 = 3.6 \times 10$.
+3. $75 : 200 = $ **3 : 8**.
+4. Constant **7**; $x = 91 \div 7 = $ **13**.
+5. **$1 : 8{,}00{,}000$**.
+6. $12$ parts of ₹130: **₹650 and ₹910**.
+7. $xy = 120$: **$y = 6$**.
+8. $12$ parts of $15^\circ$: **75°**.
+9. $\tfrac{108}{360} = \tfrac3{10}$: **150 students**.
+10. **No.** $\tfrac3{12} = \tfrac5{20} = 0.25$, but $\tfrac7{30}$ is not $0.25$.
+
+### Short answer
+
+11. ₹180 a metre: **₹1,350**; **19 m**.
+12. $\tfrac ab = \tfrac cd$; add $1$ to both sides: $\tfrac{a+b}{b} = \tfrac{c+d}{d}$.
+13. $4 : 3 : 2$, $9$ parts of ₹900: **₹3,600, ₹2,700, ₹1,800**.
+14. **Step 1** is wrong: the proportion is inverse. $12 \times 15 = 20x$:
+    **9 days**.
+15. $3(2x + 12) = 9x + 12$, $x = 8$: Aditi **16**, grandmother **72**.
+16. $330$ km: **66 km/h**; **5.5 hours**.
+17. **18 km**; **1.8 cm**.
+18. Tea **72**, coffee **48**, milk **120**; **108°, 72°, 180°**.
+19. $y$ becomes $\tfrac{k}{1.25x} = 0.8y$: a fall of **20%**.
+20. $8(4x + 9) = 5(7x + 9)$, $x = 9$: **36 and 63**.
+
+### Long answer
+
+21. $450 \times 20 = 9000$ student-days left; $360d = 9000$: **$d = 25$**;
+    **33 days** in all.
+22. $\tfrac1{12} + \tfrac1{18} - \tfrac1{36} = \tfrac19$: **9 minutes**; with C
+    shut $\tfrac5{36}$, $7.2$ minutes: **1.8 minutes** saved.
+23. Circumferences $220$ cm and $176$ cm; $1{,}10{,}000$ cm: **500** and
+    **625** turns; $35 \times 500 = 28 \times 625 = 17{,}500$.
+24. **30 m by 21 m**, area **630 m²**; perimeter $102$ m, fencing **₹12,240**.
+25. $1^\circ = $ ₹100: education **₹6,300**, savings **₹4,500**; food
+    **108°**, rent **90°**, other **54°**, savings **45°**.
+26. **37.5 g, 7.5 g, 5 g**; with 36 g gold: **48 g** alloy, silver **7.2 g**,
+    copper **4.8 g**.
+27. $420$ km; $168$ km left in $1.5$ h: **112 km/h**, **33⅓%** more.
+28. $a = kb$, $c = kd$ give $\tfrac{a+c}{b+d} = k$. Mix **2 : 3**;
+    $14 : 21 = 2 : 3$.
+29. $\tfrac59$ done in 4 days; $\tfrac t{18} = \tfrac49$: **$t = 8$**,
+    **12 days** in all.
+30. **50** bottles an hour; **18 machines**.
+
+### Assertion and reason
+
+31 (a) · 32 (d) · 33 (b) · 34 (c) · 35 (a)
+
+### Case-based questions
+
+36. (i) **10 : 5 : 1** (ii) **200 g** (iii) **50 glasses**, **5 kg** curd.
+37. (i) **150** in every column, the distance in km (ii) **1.5 hours**
+    (iii) **No**: $1$ h $40$ min needs $90$ km/h, more than $80$.
+38. (i) **40 km** (ii) **132 km** and **280 km** (iii) **Yes**: $17.5$ cm
+    is less than $30$ cm.
+39. (i) **45°** (ii) **120 tokens** (iii) food 180 tokens, ₹1,800; books 60
+    tokens, ₹1,200: **food, by ₹600**.
+40. (i) **$\tfrac1{10}$** (ii) **6 hours** (iii) $\tfrac13$ done in 2 hours;
+    **6 hours 40 minutes** more.
+
+### Objective questions
+
+41 (a) · 42 (c) · 43 (d) · 44 (b) · 45 (d) · 46 (b) · 47 (b) · 48 (a) ·
+49 (c) · 50 (c)
+
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since the maths-v2 conversion: the tried-and-explained
+questions first (no head), then five parts, each with two solved examples
+and its practice questions. Beyond's example numbers are its own.
 
-Each of the eight questions is answered in the running text that follows it
-on the page. The results, for reference: (1) 1000 g, that is 1 kg;
+### Tried and explained (no head in the book)
+
+Each is answered in the text after it: (1) 1000 g, that is 1 kg;
 (2) 8 days; (3) 1.5 cm; (4) 300 people; (5) ₹1,680; (6) 60 minutes;
 (7) 30 and 42; (8) 100 turns.
 
-### Stage 2 · Solved Examples
+### Solved examples
 
-The 23 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (c) ₹1400 |
+| | 2 | (b) 6 hours |
+| More than one correct | 3 | (a), (b), (c) |
+| | 4 | (a), (b), (c), (d) |
+| Numerical answer | 5 | 12 |
+| | 6 | 3.2 |
+| Matching | 7 | (c) P–2, Q–3, R–4, S–1 |
+| | 8 | (a) P–3, Q–4, R–1, S–2 |
+| Paragraph-based | 9 | (i) (a) 3 : 5 : 6; (ii) 2400; (iii) 8400 |
+| | 10 | (i) (a) 24 minutes; (ii) 8; (iii) 25 |
 
-1. (a) 12 *(single correct)*
-2. (b) ₹490 *(single correct)*
-3. (c) ₹1400 *(single correct)*
-4. (d) 225 km *(single correct)*
-5. (a) 5 hours *(single correct)*
-6. (b) 6 hours *(single correct)*
-7. (a), (b), (d) *(multiple correct)*
-8. (a), (b) *(multiple correct)*
-9. (a), (b), (c) *(multiple correct)*
-10. (a), (b), (c), (d) *(multiple correct)*
-11. 12 *(numerical answer)*
-12. 2160 *(numerical answer)*
-13. 3.2 *(numerical answer)*
-14. (c) P–2, Q–3, R–4, S–1 *(matching)*
-15. (a) P–3, Q–4, R–1, S–2 *(matching)*
+### Practice
 
-### Stage 3 · Practice
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (a) 9 · 2 (b) 0.25 km² · 3 (c) 4 more days · 4 (d) 10 litres |
+| More than one correct | 5–8 | 5 (a), (c), (d) · 6 (a), (b), (c) · 7 (a), (d) · 8 (a), (b), (d) |
+| Numerical answer | 9–11 | 9 **280** · 10 **60** · 11 **15** |
+| Matching | 12–13 | 12 (a) · 13 (d) |
+| Paragraph-based | 14–15 | 14 (i) (a) 2 kg; (ii) 9.6; (iii) 150 · 15 (i) (b) 24 km; (ii) 36; (iii) 48 |
 
-Multiple choice and assertion–reason, as the key prints it:
-1 (a), 2 (c), 3 (b), 4 (a), 5 (d), 6 (d), 7 (a), 8 (c), 9 (d), 10 (b),
-11 (c), 12 (d), 13 (b), 14 (c), 15 (d), 16 (a), 17 (d), 18 (b), 19 (c).
-
-The working for each:
-
-1. $4 \times 27 = 9x$, so $x = 108 \div 9 = 12$.
-2. $2 \times 12 = 24 = 3 \times 8$.
-3. Five parts of ₹60 is ₹12 a part: $2 \times 12 = 24$ and $3 \times 12 = 36$.
-4. $y = 3x$, so $y = 3 \times 11 = 33$.
-5. $xy = 60$, so $y = 60 \div 12 = 5$.
-6. $1{,}00{,}000$ cm is 1 km.
-7. $60 \div 360 = \tfrac16$.
-8. $40\%$ of $360^\circ$ is $0.4 \times 360 = 144$ degrees.
-9. $4 \times 6 = 24$ worker-days, and $24 \div 8 = 3$.
-10. Six parts of $180^\circ$ is $30^\circ$ a part; the largest is $3 \times 30 = 90$ degrees.
-11. (c): speed times time is the fixed distance. The other three are direct.
-12. $\tfrac{1}{12} + \tfrac16 = \tfrac14$, so 4 hours.
-13. The numbers are $2x$ and $7x$, differing by $5x = 25$, so $x = 5$: 10 and 35.
-14. $b$ is $3$ parts, so one part is $12 \div 3 = 4$: $a = 8$, $c = 20$ and $a + c = 28$.
-15. $xy$ stays $k$, so $y$ is halved.
-16. (a) $8 \times 9 = 72 = 4 \times 18$; R is why.
-17. (d) $2 \times 9 = 18$ but $3 \times 4 = 12$, so A is false; R is the true test.
-18. (b) Both true; the sum is $360^\circ$ because the slices fill the circle, not because of the ratio.
-19. (c) A square of side 1 has area 1 and of side 2 has area 4; R is false, as the square shows.
-20. $45 : 120 = 3 : 8$.
-21. The constant is $28 \div 4 = 7$, and $y = 7 \times 11 = 77$.
-22. 5 km is $5{,}00{,}000$ cm: $1 : 5{,}00{,}000$.
-23. $\tfrac12 : \tfrac13 : \tfrac14 = 6 : 4 : 3$ (times 12), 13 parts;
-    $6500 \div 13 = 500$. Shares **₹3,000, ₹2,000, ₹1,500**.
-24. $75 \times 4 = 300$ km, $300 \div 5 = 60$: **60 km/h**.
-25. $\dfrac{5x+6}{3x+6} = \dfrac75$ gives $x = 3$: **15 and 9**. Check:
-    $21 : 15 = 7 : 5$.
-26. Savings ₹9,000. **Rent 90°, food 120°, education 60°, savings 90°**
-    ($36000 \div 360 = 100$ rupees a degree).
-27. $25 \times 18 = 450$ worker-days; $25 \times 6 = 150$ done; $450 - 150 = 300$
-    left for 30 workers: **10 more days**.
-28. $\tfrac{1}{20} + \tfrac{1}{30} - \tfrac{1}{15} = \tfrac{1}{60}$ of the tank a
-    minute: **yes, in 60 minutes**.
-29. 1 cm is 2.5 km: **5 km by 4 km**, area **20 km²**.
-30. (a) $64 \div 40 = 1.6$: **8 kg rice, 48 lemons, 1280 g oil**
-    (b) $12 \div 5 \times 40 = 96$ **students** (c) $5000 : 800 = 25 : 4$.
-31. (a) **speed times time, 360**, in every column: **inverse** proportion
-    (b) $360 \div 72 = 5$ **hours** (c) 4 h 48 min is 4.8 h, and
-    $360 \div 4.8 = 75$: **75 km/h**.
+- Q1. $5(x + 3) = 3(x + 11)$, so $x = 9$.
+- Q2. $2$ cm is $500$ m, so the park is $0.5$ km square: $0.25$ km².
+- Q3. $120$ worker-days, $48$ done, $72 \div 18 = 4$.
+- Q4. Milk $30$ L, water $10$ L; $3 : 2$ needs $20$ L of water.
+- Q9. $\tfrac{7x}{5x + 40} = \tfrac76$, $x = 40$: $280$ boys.
+- Q10. $50 \times 30 = 1500$ cow-days; $1500 \div 25 = 60$.
+- Q11. $6 \times \tfrac5{60} = \tfrac12$ filled; the rest takes $15$ minutes.
+- Q12. $1$ cm is $2$ km: $6$ km, $1$ km, $6$ cm, $3.75$ cm.
+- Q13. $360$ worker-days: $20$, $9$, $30$, $8$.

@@ -1,5 +1,68 @@
 # Class 8 · Mathematics II · Chapter 3 — What Stays the Same
 
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, Beyond the Book and the
+practice set further down this log.** Converted with CONVERT-V2.md against
+Class 6 Chapter 1. `chapter.json`: design `maths-v2`, palette
+`prism-twilight`, accent `#4b557f`, edition `196x276-large`,
+`keepExerciseSets`. 35 pages:
+
+* **Body p001–p016** (15 pages + Summary). NCERT's topics and order kept
+  (ratio as a relation; proportional ratios and the rule of three; ratios of
+  more than two terms; dividing a whole; the scale of a map; pie charts;
+  inverse proportion and working together). **Every context, name, number,
+  figure and question is new**, on the assumption that the old ones followed
+  NCERT: idli batter, Viswanath and Puneet, the spice mix, Yasmin's paint,
+  the 1 : 1.5 : 3 concrete, the grades pie chart, Lucknow to Kanpur, Ram and
+  Shyam and every exercise question are gone. Now: rose sherbet (Kavitha,
+  Anwar), a trip snack mix (Harpreet, Tenzin; Fig. 3.1 redrawn), rangoli
+  colour, a floor dry mix 1 : 1.5 : 2.5, favourite games of 72 students
+  (Fig. 3.2 redrawn, 120/90/60/60/30), Suresh's ride, Lalita and Nandini.
+  Every section has a key idea and a Think and Reflect (3.1, 3.3, 3.5 and
+  3.6 gained key ideas; all seven gained a Think and Reflect; the two
+  multi-paragraph key ideas were cut to two points). New teaching in 3.7.1:
+  a tap against a drain, and Example 11 (finding one worker's time from the
+  joint time). Exercise Sets 3.1–3.5 rewritten (5, 8, 5, 5, 9 questions), each
+  ending in a `.c-practice__note` citing NCERT. The flagged items below
+  (Puneet/Puneeth, *bases in new clothes*, 1 ÷ 1.5, the concrete volumes,
+  the ambiguous map-size question) went with the old text. `.dg-fill-d`
+  (beige) replaced by `dg-fill-b-soft`/`c-soft` in the opener and figures.
+  Summary p016, `data-close`, ten points.
+* **By the Book p090–p096** (7 pages, the last `data-close`): 50 new
+  questions to BY-THE-BOOK.md, Class 8 column — letters in word problems
+  (Q15, 20, 21, 29), algebraic *Show that* (Q12, 19, 28), find the mistake
+  (Q14), *In the given figure* (Q24, a plan), (Take π = 22/7) (Q23), case
+  passages of 50–80 words each with a table or figure, one multi-statement
+  MCQ (Q49), one named student's claim (Q50). AR key (a) (d) (b) (c) (a);
+  objective letters a 2, b 3, c 3, d 2. Seven pages, not five: five case
+  studies of 50–80 words with a table or figure do not pack three to a
+  page, and the page fill rule decided the rest.
+* **Beyond the Book p101–p112**: the eight tried-and-explained questions
+  kept word for word without their stage head (only `&nbsp;` added between
+  the last two words of four paragraphs to stop lone words); then the five
+  parts. Kept from the 15 old examples: single correct 3 and 6, multiple
+  correct 9 and 10, numerical 11 and 13, matching 14 and 15 (tabs now
+  *Example N*, the *Choose…* lines dropped, a Step or Check row added to
+  four of them to fill pages). Two new paragraph-based examples (a stall's
+  profit; pumps on a roof tank). Fifteen new practice questions,
+  4 · 4 · 3 · 2 · 2. Answers on a fresh page (p111–p112): By the Book in
+  two-row traces and letter rows, then Beyond.
+* ANSWERS.md rewritten whole. `check-numbers.mjs` rewritten for this layout
+  (part A, the identity evaluator, kept): 470 claims, none failing; a planted
+  wrong key letter and a planted wrong number in a key row are both caught.
+
+Checks at close: build *all pages fit*, every page 88% or more except By
+the Book's last (47%); `lone-words` 0 (run through a local copy that takes
+`CHROME`, since the shared tool only looks for Windows browsers);
+`check-sums` 71 identities, 0 wrong; `orphans` 0; `check-labels` no
+collisions; `fit-options` every row fits.
+
+NCERT references are by section (`NCERT, Figure it Out, §3.3` … `§3.7`),
+taking this chapter's section numbers as NCERT's: no page number for Class 8
+*Ganita Prakash* Part 2 Chapter 3 is recorded anywhere in the chapter.
+
 ## Solved examples in examination formats, 23 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

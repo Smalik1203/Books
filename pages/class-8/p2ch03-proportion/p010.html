@@ -2,74 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Here are four ways of covering the same $90$ km.</p>
-
       <div class="work work--list">
-                                <div class="work__row">
-                                  <span class="work__label work__label--wide">on foot, $5$ km/h</span>
-                                  <span>$18$ hours &nbsp;&nbsp; $5 \times 18 = 90$</span>
-                                </div>
-                                <div class="work__row">
-                                  <span class="work__label work__label--wide">by bicycle, $15$ km/h</span>
-                                  <span>$6$ hours &nbsp;&nbsp; $15 \times 6 = 90$</span>
-                                </div>
-                                <div class="work__row">
-                                  <span class="work__label work__label--wide">by motorcycle, $30$ km/h</span>
-                                  <span>$3$ hours &nbsp;&nbsp; $30 \times 3 = 90$</span>
-                                </div>
-                                <div class="work__row">
-                                  <span class="work__label work__label--wide">by car, $60$ km/h</span>
-                                  <span>$1.5$ hours &nbsp;&nbsp; $60 \times 1.5 = 90$</span>
-                                </div>
-                              </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">A &middot; cricket, 24</span>
+          <span>$4 \times 30 = 120^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">B &middot; kabaddi, 18</span>
+          <span>$3 \times 30 = 90^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">C &middot; football, 12</span>
+          <span>$2 \times 30 = 60^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">D &middot; badminton, 12</span>
+          <span>$2 \times 30 = 60^\circ$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">E &middot; chess, 6</span>
+          <span>$1 \times 30 = 30^\circ$</span>
+        </div>
+      </div>
 
-      <p>The two quantities do change by the same factor — a bicycle is three times a
-                              walking pace, and it takes a third of the time — but they change in opposite
-                              directions. Multiply the speed by $n$ and the time is multiplied by
-                              $\tfrac1n$.</p>
+      <p>The five angles add to $360^\circ$. If they did not, something would be wrong. That is the check, and it should be done before picking up a protractor.</p>
 
-      <p>Look at the right-hand column and the reason is plain. Speed times time is $90$
-                              every time, because $90$ km is the distance and it is not changing. That product is
-                              what holds still here, exactly as the quotient held still in Section 3.2.</p>
+      <p>Drawing the chart needs a compass and a protractor, and no more arithmetic. Draw a circle and one radius. Then measure each angle in turn, starting from the last radius drawn.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 180 112" data-size="xl" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A pie chart of seventy-two students' favourite games, with slices of 120, 90, 60, 60 and 30 degrees labelled A to E">
+            <path class="dg-fill-a" d="M90 60 L90 18 A42 42 0 0 1 126.37 81 Z"/>
+            <path class="dg-fill-b" d="M90 60 L126.37 81 A42 42 0 0 1 69 96.37 Z"/>
+            <path class="dg-fill-c" d="M90 60 L69 96.37 A42 42 0 0 1 48 60 Z"/>
+            <path class="dg-fill-b-soft" d="M90 60 L48 60 A42 42 0 0 1 69 23.63 Z"/>
+            <path class="dg-fill-c-soft" d="M90 60 L69 23.63 A42 42 0 0 1 90 18 Z"/>
+            <circle class="dg-line" cx="90" cy="60" r="42"/>
+            <path class="dg-line" d="M90 60 L90 18 M90 60 L126.37 81 M90 60 L69 96.37 M90 60 L48 60 M90 60 L69 23.63"/>
+      
+            <text class="dg-label dg-label--sm" x="112" y="50" text-anchor="middle">A</text>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="97" y="89" text-anchor="middle">B</text>
+            <text class="dg-label dg-label--sm dg-label--on-fill" x="67" y="79" text-anchor="middle">C</text>
+            <text class="dg-label dg-label--sm" x="67" y="52" text-anchor="middle">D</text>
+            <text class="dg-label dg-label--sm" x="83" y="39" text-anchor="middle">E</text>
+      
+            <text class="dg-note" x="150" y="44" text-anchor="middle">120°</text>
+            <text class="dg-note" x="136" y="102" text-anchor="middle">90°</text>
+            <text class="dg-note" x="36" y="92" text-anchor="middle">60°</text>
+            <text class="dg-note" x="34" y="34" text-anchor="middle">60°</text>
+            <text class="dg-note" x="70" y="12" text-anchor="middle">30°</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.2</span> Favourite games of $72$ students: A cricket, B kabaddi, C football, D badminton, E chess. Slice A is $120^\circ$ because $24$ of the $72$ students named cricket.</figcaption>
+        </figure>
+      </div>
+
+      <p>The chart shows shares. Cricket took a third of the circle, and cricket and kabaddi together took more than half. The chart does not show how many students there were: the same chart would fit a group of seven hundred and twenty. That is why a pie chart is nearly always labelled with its total.</p>
+
+      <p>Percentages give the same angles. Kabaddi was named by $\tfrac{18}{72} = 25\%$ of the students, and $25\%$ of $360^\circ$ is $90^\circ$. The arithmetic of Chapter 1 and of this chapter is the same, with a different whole: a hundred there, three hundred and sixty here.</p>
 
       <div class="c-keyidea">
-                                <div class="c-keyidea__title">Two kinds of proportion</div>
-                                <p>$x$ and $y$ are in <span class="term">direct proportion</span> when their
-                                quotient is constant: $\ \dfrac{y}{x} = k$. Both grow together.</p>
-                                <p>They are in <span class="term">inverse proportion</span> when their
-                                <em>product</em> is constant: $\ xy = k$. One grows as the other shrinks. So for
-                                any two pairs of values, $\ x_1 y_1 = x_2 y_2$.</p>
-                              </div>
-
-      <p>Nothing about a pair of quantities tells you which it is except thinking about
-                              the situation. More workers, more bricks moved — direct. More workers, fewer days
-                              to finish — inverse. The same word <em>more</em> in both, pulling opposite ways.</p>
-
-      <div class="c-example">
-              <div class="c-example__tab">Example 8</div>
-              <div class="c-example__body">
-                <p>Twenty workers take four days to lay a stretch of road. How long would ten
-                workers take?</p>
-                <p>Fewer workers, more days: inverse. So the product stays the same.</p>
-                <p><strong>Solution.</strong></p>
-                <div class="work">
-                  <div class="work__row"><span class="work__label">Step 1</span>
-                    <span>$20 \times 4 = 80$ worker-days</span>
-                    <span class="work__why">the constant</span></div>
-                  <div class="work__row"><span class="work__label">Step 2</span>
-                    <span>$10 \times y = 80$</span>
-                    <span class="work__why">same product</span></div>
-                  <div class="work__row"><span class="work__label">Step 3</span>
-                    <span>$y = 8$</span>
-                    <span class="work__why">divide by ten</span></div>
-                  <div class="work__row"><span class="work__label">Answer</span>
-                    <span>$8$ days</span></div>
-                </div>
-                <p>Halving the workers doubled the days, and the constant has a meaning worth
-                keeping: eighty worker-days is the size of the job, however it is shared
-                out.</p>
-              </div>
-            </div>
+        <div class="c-keyidea__title">Angles of a pie chart</div>
+        <ul class="c-keyidea__points">
+          <li>A slice's angle is its fraction of the whole times $360^\circ$.</li>
+          <li>The angles of all the slices add to $360^\circ$; that is the check.</li>
+        </ul>
+      </div>
 
     </div>
   </div>
