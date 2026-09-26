@@ -64,15 +64,6 @@ corner of the grid as it is printed.
    | (d) | 1 | the slanting line through the inner and outer corners of the L |
    | (e) | 0 | — |
 
-3. *Answers will vary.* With a line of symmetry: a door, a blackboard, a
-   notebook, a chair seen from the front, a fan. With none: a pair of
-   scissors seen from the side, a shoe, a teacup with its handle.
-4. **No.** The two pieces have the same shape and size, but one is the
-   other **turned through a half turn**, not reflected. Folded along the
-   dashed line, the tab at the top of one piece lands where the other piece
-   has no tab. Two parts of the same shape and size do not make a line of
-   symmetry; they must be mirror halves.
-
 ### Think and Reflect (after Fig. 9.4)
 
 1. **No.** The four folds shown are the only ones.
@@ -113,6 +104,10 @@ symmetry. *(checked: 2 lines)*
 The whole design has **2 lines of symmetry**: the up-and-down line through
 its middle and the across line through its middle. Each small diamond has
 **2**; each eight-pointed star has **8**. *(checked)*
+
+### Example 1 (reflecting a triangle), added 26 September 2026
+
+Worked in the book: P stays where it is, and Q and R change places.
 
 ### Exercise Set 9.2
 
@@ -233,6 +228,13 @@ its middle and the across line through its middle. Each small diamond has
     | (d) | 1 left, 0 up |
     | (e) | 2 right, 5 up |
     | (f) | 2 left, 0 up |
+
+### Think and Reflect (after Exercise Set 9.2), added 26 September 2026
+
+1. The flag has **1** line of symmetry: the up-and-down line through its
+   middle. Each band and the Ashoka Chakra fold onto themselves along it.
+   The line across the middle is not a line of symmetry, because folding
+   along it puts the saffron band on the green band.
 
 ## 9.2 Rotational Symmetry
 
@@ -369,10 +371,15 @@ windmill of Fig. 9.21 have none.
     (b) and (c) *Answers will vary.* With 16 tiles in a 4 by 4 square: fill
     the left half with any tiles and reflect them into the right half for 1
     line; then reflect the top half into the bottom half as well for 2.
-13. **Yes.** Both have 3 lines of symmetry, and both have the angles of
-    symmetry $120^\circ$, $240^\circ$ and $360^\circ$. *(checked)*
 
 ### Think and Reflect (the game on a grid)
+
+*Item 2, added 26 September 2026:* **No.** A grid of 5 rows of 5 squares
+has a centre square, and a half turn about the centre leaves that square
+where it is. A line that covers the centre square lands on itself, so the
+second player cannot always copy the first player's move.
+
+*Item 1:*
 
 **The second player can always win.** After each move of the first
 player, the second player draws the line that the first player's line
@@ -383,94 +390,170 @@ player always has a move, and the first player runs out first.
 
 ---
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September
+2026. The book's own key is in Beyond the Book's Answers stage; this is the
+same key, set out in full.
+
+### Very short answer
+
+1. **6 cm.** The line is halfway between P and its reflection: $3 + 3 = 6$.
+2. $360 \div 20 = 18$ **arms**, so the order is **18**.
+3. **No.** The arms are $360^\circ \div 12 = 30^\circ$ apart, and 50 is not
+   a multiple of 30.
+4. $360^\circ \div 9 = 40^\circ$; order **9**.
+5. **No** line of symmetry. **Yes**, it looks the same after a half turn:
+   order 2.
+6. $360^\circ \div 4 = 90^\circ$; the others are $180^\circ$, $270^\circ$
+   and $360^\circ$.
+7. $360^\circ \div 20 = 18^\circ$. **Yes:** $54 = 3 \times 18$.
+8. **Yes.** W and O each have an up-and-down line of symmetry, and the word
+   reads the same from either end.
+9. **1** line, along the drawn radius; order **1**, since only a full turn
+   brings the radius back.
+10. **No.** Order 1 means $360^\circ$ is its only angle of symmetry.
+
+### Short answer
+
+11. A turn that fits must carry each angle between arms onto the next. An
+    angle of $80^\circ$ cannot fit on one of $140^\circ$, so only a full
+    turn works.
+12. *Answers will vary.* **T** has a line of symmetry but no rotational
+    symmetry; **S** has rotational symmetry of order 2 but no line of
+    symmetry.
+13. $360^\circ \div 30 = 12^\circ$. Red arms are $3 \times 12^\circ = 36^\circ$
+    apart: smallest angle $36^\circ$; $360 \div 36 = 10$, so order **10**.
+14. Three turns of $90^\circ$ make $270^\circ$, which fits. Then
+    $120^\circ + 270^\circ = 390^\circ = 360^\circ + 30^\circ$, and the full
+    turn brings the figure back, so a turn of $30^\circ$ fits.
+15. **4** lines (up-and-down, across and both diagonals); order **4**.
+16. **2** holes, $4 + 4 = 8$ cm apart, each **6 cm** from the top edge.
+17. $360^\circ \div 15 = 24^\circ$. $48 = 2 \times 24$ and
+    $120 = 5 \times 24$ fit; 90 is not a multiple of 24.
+18. 6 cm by $6 \div 2 = 3$ cm. Along its **2** diagonals.
+19. $360^\circ \div 10 = 36^\circ$, so **10** angles; the three largest are
+    $288^\circ$, $324^\circ$ and $360^\circ$.
+20. One painted arm: order **1**. Two opposite painted arms: a half turn
+    fits, so order **2**.
+
+### Long answer
+
+21. **4** holes. The fold is $20 \div 2 = 10$ cm from each side, so the
+    holes are 7 cm and 13 cm from the left edge: $3 + 3 = 6$ cm apart in
+    each row. The rows are 4 cm and 16 cm from the top. **2** lines of
+    symmetry: the fold, and the line across the middle of the sheet.
+22. $360^\circ \div 16 = 22\frac{1}{2}^\circ$. **Yes:**
+    $7 \times 22\frac{1}{2}^\circ = 157\frac{1}{2}^\circ$. The red spokes are
+    $4 \times 22\frac{1}{2}^\circ = 90^\circ$ apart: smallest angle
+    $90^\circ$, order **4**.
+23. $360^\circ \div 9 = 40^\circ$; $40^\circ$, $80^\circ$, $120^\circ$,
+    $160^\circ$. The red petals are $3 \times 40^\circ = 120^\circ$ apart:
+    smallest angle $120^\circ$, order **3**.
+24. Perimeter $8 \times 4 = 32$ cm. **4** lines, order **4**. With two
+    opposite triangles removed: **2** lines, order **2**.
+25. AB $= 5 - 2 = 3$ cm; A&prime;B&prime; $= 3$ cm; AB&prime; $= 2 + 5 = 7$
+    cm; BB&prime; $= 5 + 5 = 10$ cm.
+26. $360^\circ \div 12 = 30^\circ$; order **12**. With the minute hand:
+    **1** line (through 12 and 6), order **1**. From 12 to 4 the hand turns
+    $4 \times 30^\circ = 120^\circ$: **yes**, an angle of symmetry of the
+    ring of marks.
+27. $360^\circ \div 20 = 18^\circ$; red beads are $2 \times 18^\circ = 36^\circ$
+    apart, so the smallest angle is $36^\circ$. **10** lines, each through
+    two opposite beads (5 through red beads, 5 through white). A
+    $40^\circ$ turn moves on 2 beads, so beads are $20^\circ$ apart:
+    $360 \div 20 = 18$ **beads**.
+28. The hole is **4 cm by 2 cm**; area $4 \times 2 = 8$ sq cm; perimeter
+    $2 \times (4 + 2) = 12$ cm. **1** line of symmetry, the fold: the hole is
+    nearer the top edge, so the line across the middle is not one.
+29. **8** black tiles; **4** lines; order **4**. After the repair: **1**
+    line, the diagonal through the repaired tile; order **1**.
+30. PQ $= 3 + 3 = 6$ cm; QR $= 2 + 2 = 4$ cm; R is 3 cm right of $l$ and 2
+    cm below $m$. A half turn about O sends a point 3 cm left and 2 cm up
+    to 3 cm right and 2 cm down, which is R.
+
+### Assertion and reason
+
+31 (a) · 32 (a) · 33 (c) — T has one line but no rotational symmetry ·
+34 (d) — the angles are not equal · 35 (b) — equal sides alone do not give
+4 lines.
+
+### Case-based questions
+
+36. (i) $360^\circ \div 16 = 22\frac{1}{2}^\circ$ (ii) the colours repeat
+    every 4 parts: $4 \times 22\frac{1}{2}^\circ = 90^\circ$ (iii) 4 parts
+    make $120^\circ$, so each part is $30^\circ$: $360 \div 30 = 12$ parts.
+37. (i) $360^\circ \div 10 = 36^\circ$ (ii) 10 (iii) the two bells are
+    opposite each other: $180^\circ$, order 2.
+38. (i) 64 (ii) 2 (iii) **2**, the two diagonals. A line through the
+    middles of opposite sides would put a black square on a white one.
+39. (i) 16 (ii) 4 (iii) **2** lines, the two diagonals; order **2**.
+40. (i) T, O and Y (ii) S (iii) **No.** Folded top onto bottom, the curves
+    of S face opposite ways. S fits on itself only after a half turn.
+
+### Objective questions
+
+41 (b) · 42 (c) · 43 (a) · 44 (b) · 45 (c) · 46 (d) · 47 (d) · 48 (b) ·
+49 (c) · 50 (a)
+
 ## Beyond the Book
 
-Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets Beyond Examples 1 to 13 as steps,
-and stage 4 prints the key to stage 3. The key facts are repeated here so
-the booklet is complete.
+Organised by format since 26 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own.
 
-### Stage 1 · Using What You Know
+### Tried and explained (no head in the book)
 
 1. A circle with one diameter drawn has **2** lines of symmetry (the drawn
    diameter and the diameter at right angles to it), and its angles of
-   symmetry are **$180^\circ$ and $360^\circ$**. *(checked)*
+   symmetry are **$180^\circ$ and $360^\circ$**.
 2. Lines of symmetry: **A, E, H, T, X**. Rotational symmetry: **H, N, X,
-   Z** (order 2). *(checked on Fig. 9.34)*
+   Z** (order 2).
 3. **Yes** for $180^\circ$ and $270^\circ$: two and three quarter turns.
    **Not necessarily** for $45^\circ$: a square fits after $90^\circ$ but
-   not after $45^\circ$. *(checked)*
-4. **8, 9 and 12** arms; 11 arms give $32\frac{8}{11}$ degrees.
-   *(checked)*
-5. After a half turn: **SOS** only. In the mirror: **TOOT and MOM**.
-   *(checked)*
-6. **2** lines of symmetry (the line through both diagonals, and the line
-   through the shared corner at right angles to it); **yes**, rotational
-   symmetry of order 2. *(checked)*
+   not after $45^\circ$.
+4. **9, 10 and 12** arms: $360 \div 9 = 40$, $360 \div 10 = 36$,
+   $360 \div 12 = 30$. 11 arms give $32\frac{8}{11}$ degrees. (Changed on
+   26 September 2026 from 8, 9, 11, 12: eight arms give $45^\circ$, the
+   answer to Exercise Set 9.4 Q6(a).)
+5. Half turn: **SOS**. Mirror along an up-and-down line: **TOOT, MOM**.
+6. Two squares touching at a corner: **2** lines of symmetry; rotational
+   symmetry of order **2**.
 
-### Stage 2 · Solved Examples
+### Solved examples
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (d) 8 cm |
+| | 2 | (c) $90^\circ$ |
+| More than one correct | 3 | (a), (b), (d) |
+| | 4 | (a), (b), (c) |
+| Numerical answer | 5 | 6.5 |
+| | 6 | 12 |
+| Matching | 7 | (b) P–3, Q–1, R–4, S–2 |
+| | 8 | (d) P–3, Q–4, R–2, S–1 |
+| Paragraph-based | 9 | (i) (c) $90^\circ$; (ii) 4 |
+| | 10 | (i) (b) 12 cm apart; (ii) 14; (iii) 9 |
 
-1. (b) 45° *(single correct)*
-2. (b) 2 *(single correct)*
-3. (d) 8 cm *(single correct)*
-4. (b) 5 *(single correct)*
-5. (c) The stated parallelogram *(single correct)*
-6. (a) 4 *(single correct)*
-7. (b), (c), (d) *(multiple correct)*
-8. (a), (b), (d) *(multiple correct)*
-9. (a), (d) *(multiple correct)*
-10. (a), (b), (d) *(multiple correct)*
-11. 15 *(numerical answer)*
-12. 13 *(numerical answer)*
-13. 6.5 *(numerical answer)*
-14. (b) P–3, Q–4, R–2, S–1 *(matching)*
-15. (d) P–2, Q–4, R–1, S–3 *(matching)*
+### Practice
 
-### Stage 3 · Practice
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (b) $36^\circ$ · 2 (c) 3 · 3 (a) 5 cm below the line · 4 (d) |
+| More than one correct | 5–8 | 5 (a), (b), (d) · 6 (b), (c) · 7 (a), (c) · 8 (a), (b), (c) |
+| Numerical answer | 9–11 | 9 **45** · 10 **2** · 11 **10** |
+| Matching | 12–13 | 12 (c) P–2, Q–3, R–1, S–4 · 13 (b) P–4, Q–3, R–2, S–1 |
+| Paragraph-based | 14–15 | 14 (i) (b) $22\frac{1}{2}^\circ$; (ii) 90; (iii) 4 · 15 (i) (c) 4; (ii) 6; (iii) 14 |
 
-| | | | | | | | |
-|---|---|---|---|---|---|---|---|
-| 1 (b) | 2 (d) | 3 (a) | 4 (c) | 5 (b) | 6 (d) | 7 (a) | 8 (b) |
-| 9 (c) | 10 (c) | 11 (d) | 12 (a) | 13 (a) | 14 (c) | 15 (d) | 16 (b) |
+Working for the numerical and paragraph answers:
 
-17. $360^\circ$ only.
-18. *Answers will vary.* **V, W and Y**: each has one up-and-down line of
-    symmetry and no turn but the full turn. A, M and T work too.
-19. **72**, since $360 \div 5 = 72$.
-20. **No.** The smallest angle is $360^\circ \div 40 = 9^\circ$, and 100
-    is not a multiple of 9: $9 \times 11 = 99$ and $9 \times 12 = 108$.
-21. **2**: the line through both centres, and the line through the point
-    where the circles touch, at right angles to it. *(checked)*
-22. *Answers will vary.* A row of 3 squares with 2 more in a column under
-    the middle one has exactly 1 line of symmetry. A column of 3 squares
-    with one square to the left of the top one and one to the right of the
-    bottom one has order 2 and no line of symmetry. *(checked)*
-23. **No.** Exactly 3 angles means the smallest is
-    $360^\circ \div 3 = 120^\circ$, so the angles are $120^\circ$,
-    $240^\circ$ and $360^\circ$.
-24. After each turn of $80^\circ$ the figure looks as it did at the start,
-    so five turns of $80^\circ$ fit (Stage 1, question 3). In all
-    $80^\circ \times 5 = 400^\circ$, which is $360^\circ + 40^\circ$, and the
-    full turn brings every figure back. So a turn of $40^\circ$ fits.
-25. **3 squares to the left of B.** *(checked)*
-26. *Answers will vary.* Two lines from the top side to the bottom side,
-    one third and two thirds of the way across. The drawing then has
-    exactly 2 lines of symmetry. *(checked)*
-27. (a) **2** (b) **4 cm** (c) **4 cm** (d) the fold, the up-and-down line
-    through the middle, is its only line of symmetry; it has **no**
-    rotational symmetry, since a half turn would carry the holes to 3 cm
-    from the bottom edge. *(checked)*
-28. (a) $360^\circ \div 30 = 12^\circ$ (b) $24^\circ$, order 15
-    (c) $36^\circ$, order 10 (d) $72^\circ$ and $144^\circ$. *(checked)*
-29. *Answers will vary.* *(checked)* (a) the four corner squares (4 lines);
-    (b) the squares at (1, 0), (3, 1), (2, 3) and (0, 2), counted as
-    (across, down) from the top left square, which is (0, 0) (order 4, no
-    line); (c) the 2 by 2 block of squares in the top left corner (1 line,
-    the diagonal through that corner).
-30. (a) $30^\circ$ (b) 12 (c) **yes**, $150^\circ = 30^\circ \times 5$
-    (d) **12**. *(checked)*
-31. (a) P $30^\circ$, Q $24^\circ$, R $18^\circ$ (b) **Q and R**
-    (c) **P and R** (d) **30** spokes.
+9. $360 \div 8 = 45$ arms.
+10. 2: the line through 12 and 6, and the line through 3 and 9.
+11. $50 \div 5 = 10$ painted spokes, equally spaced, so they are
+    $360^\circ \div 10 = 36^\circ$ apart; $360 \div 36 = 10$ angles.
+14. Red seats are $4 \times 22\frac{1}{2}^\circ = 90^\circ$ apart. Lines:
+    two through opposite red seats and two halfway between red seats.
+15. Holes 3 cm and 7 cm on each side of the fold: $3 + 3 = 6$ and
+    $7 + 7 = 14$.

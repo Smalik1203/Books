@@ -2,29 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">3.10</span><span class="name">An Unsolved Mystery: the Collatz Conjecture</span></h2>
+      <h2><span class="badge">3.8</span><span class="name">Mental Maths</span></h2>
 
-      <p>Look at these four sequences. The same rule makes every one of them.</p>
+      <p>Look at Fig. 3.14. What can you say about the numbers and the arrows?</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 190" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three columns of boxes. The middle column holds 25,000, 400, 13,000, 1,500 and 60,000. The left column holds 38,800, 28,000, 61,600 and 31,000, the right column 3,400, 63,000, 19,500 and 20,900. Arrows run from 25,000, 400 twice and 13,000 to 38,800, and from 1,500 twice and 400 to 3,400">
+            <rect class="dg-fill-a-soft" x="138" y="6" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="138" y="6" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="178" y="23.2" text-anchor="middle">25,000</text>
+            <rect class="dg-fill-a-soft" x="138" y="44" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="138" y="44" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="178" y="61.2" text-anchor="middle">400</text>
+            <rect class="dg-fill-a-soft" x="138" y="82" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="138" y="82" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="178" y="99.2" text-anchor="middle">13,000</text>
+            <rect class="dg-fill-a-soft" x="138" y="120" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="138" y="120" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="178" y="137.2" text-anchor="middle">1,500</text>
+            <rect class="dg-fill-a-soft" x="138" y="158" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="138" y="158" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="178" y="175.2" text-anchor="middle">60,000</text>
+            <rect class="dg-fill-b-soft" x="4" y="16" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="4" y="16" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="44" y="33.2" text-anchor="middle">38,800</text>
+            <rect class="dg-fill-b-soft" x="4" y="62" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="4" y="62" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="44" y="79.2" text-anchor="middle">28,000</text>
+            <rect class="dg-fill-b-soft" x="4" y="108" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="4" y="108" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="44" y="125.2" text-anchor="middle">61,600</text>
+            <rect class="dg-fill-b-soft" x="4" y="154" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="4" y="154" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="44" y="171.2" text-anchor="middle">31,000</text>
+            <rect class="dg-fill-b-soft" x="271" y="16" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="271" y="16" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="311" y="33.2" text-anchor="middle">3,400</text>
+            <rect class="dg-fill-b-soft" x="271" y="62" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="271" y="62" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="311" y="79.2" text-anchor="middle">63,000</text>
+            <rect class="dg-fill-b-soft" x="271" y="108" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="271" y="108" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="311" y="125.2" text-anchor="middle">19,500</text>
+            <rect class="dg-fill-b-soft" x="271" y="154" width="80" height="26" rx="3"/>
+            <rect class="dg-thin" x="271" y="154" width="80" height="26" rx="3"/>
+            <text class="dg-tick" x="311" y="171.2" text-anchor="middle">20,900</text>
+            <line class="dg-move" x1="137" y1="19" x2="87" y2="22" marker-end="url(#dg-arrow)"/>
+            <line class="dg-move" x1="137" y1="53" x2="87" y2="27" marker-end="url(#dg-arrow)"/>
+            <line class="dg-move" x1="137" y1="61" x2="87" y2="32" marker-end="url(#dg-arrow)"/>
+            <line class="dg-move" x1="137" y1="95" x2="87" y2="37" marker-end="url(#dg-arrow)"/>
+            <line class="dg-move" x1="219" y1="57" x2="268" y2="23" marker-end="url(#dg-arrow)"/>
+            <line class="dg-move" x1="219" y1="129" x2="268" y2="30" marker-end="url(#dg-arrow)"/>
+            <line class="dg-move" x1="219" y1="137" x2="268" y2="36" marker-end="url(#dg-arrow)"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.14</span> Numbers in the middle column add up to the numbers at the sides. The arrows show two of the sums, for 38,800 and 3,400.</figcaption>
+        </figure>
+      </div>
+
+      <p>The numbers in the middle column are added in different ways to make the numbers at the sides. You may use a middle number as many times as you need. The arrows show two of the sums:</p>
 
       <div class="work work--list">
-        <p>(a) $12,\ 6,\ 3,\ 10,\ 5,\ 16,\ 8,\ 4,\ 2,\ 1$</p>
-        <p>(b) $17,\ 52,\ 26,\ 13,\ 40,\ 20,\ 10,\ 5,\ 16,\ 8,\ 4,\ 2,\ 1$</p>
-        <p>(c) $21,\ 64,\ 32,\ 16,\ 8,\ 4,\ 2,\ 1$</p>
-        <p>(d) $22,\ 11,\ 34,\ 17,\ 52,\ 26,\ 13,\ 40,\ 20,\ 10,\ 5,\ 16,\ 8,\ 4,\ 2,\ 1$</p>
+        <p>$38{,}800 = 25{,}000 + 400 + 400 + 13{,}000$</p>
+        <p>$3{,}400 = 1{,}500 + 1{,}500 + 400$</p>
       </div>
 
-      <p>Can you see the rule? Try to find it before you read on.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">The Collatz rule</div>
-        <p>Start with any counting number. If the number is even, take half of it. If the number is odd, multiply it by 3 and add 1. Do the same to the new number, and keep going.</p>
-      </div>
-
-      <p>Check the rule on sequence (a). 12 is even, so the next number is half of 12, which is 6. 6 is even, so the next number is 3. 3 is odd, so the next number is $3 \times 3 + 1 = 10$. Then 10 gives 5, and 5 gives $3 \times 5 + 1 = 16$.</p>
-
-      <p>All four sequences above end at 1. In 1937 a German mathematician, Lothar Collatz, guessed that this always happens: whatever counting number you start with, you reach 1 in the end. A guess like this, which nobody has yet shown to be true, is called a <span class="term">conjecture</span>.</p>
-
-      <p>Many mathematicians have worked on Collatz’s conjecture, but nobody knows yet whether it is true. People have used computers to check a huge number of starting numbers, and every one of them has reached 1. But checking many numbers is not the same as showing that it works for every number. It is one of the most famous unsolved problems in mathematics: easy to say, and very hard to solve.</p>
+      <p>Draw arrows to make the other numbers at the sides. Try to find each sum in your head before you write anything down.</p>
 
       <div class="c-reflect">
         <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
@@ -33,14 +76,26 @@
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
           <ol>
-            <li>Make some more Collatz sequences, starting with your favourite numbers. Do you always reach 1?</li>
-            <li>Do you believe Collatz’s conjecture, that every such sequence reaches 1 in the end? Why or why not?</li>
+            <li>Can you make 1,000 using the numbers in the middle? Why not?</li>
+            <li>Now make 14,000, 15,000 and 16,000. Each of them is possible.</li>
+            <li>Which thousands cannot be made at all?</li>
           </ol>
           </div>
         </div>
       </div>
 
-      <p>In the Kaprekar steps and in the Collatz rule, you followed a fixed set of steps exactly, one after another. Making up steps like these, and using them to work with numbers, is called <span class="term">computational thinking</span>.</p>
+      <h3>Adding and subtracting</h3>
+
+      <p>This time you may subtract as well as add. Use the numbers in Table 3.15, as many times as you need, to make each number below. The first one is done for you.</p>
+
+      <table>
+        <caption>Table 3.15 Six numbers</caption>
+        <thead><tr><th colspan="3">Use each as often as you need</th></tr></thead>
+        <tbody>
+          <tr><td>40,000</td><td>7,000</td><td>300</td></tr>
+          <tr><td>1,500</td><td>12,000</td><td>800</td></tr>
+        </tbody>
+      </table>
 
     </div>
   </div>

@@ -4,19 +4,19 @@
 
       <h3>The Sieve of Eratosthenes</h3>
 
-      <p>Can we list all the primes from 1 to 100? Here is a neat way to do it. Write the numbers from 1 to 100 in ten rows, and follow these steps.</p>
+      <p>Can we list all the primes from 1 to 100? Here is a quick way to do it. Write the numbers from 1 to 100 in ten rows, and follow these steps.</p>
 
       <div class="work work--list">
         <p><strong>Step 1.</strong> Cross out 1, because it is neither prime nor composite.</p>
         <p><strong>Step 2.</strong> Circle 2. Then cross out every multiple of 2 after it: 4, 6, 8, and so on.</p>
-        <p><strong>Step 3.</strong> The next number that is not crossed out is 3. Circle it. Then cross out every multiple of 3 after it: 6, 9, 12, and so on.</p>
-        <p><strong>Step 4.</strong> The next number that is not crossed out is 5. Circle it. Then cross out every multiple of 5 after it: 10, 15, 20, and so on.</p>
+        <p><strong>Step 3.</strong> Circle 3, the next number not crossed out. Cross out every multiple of 3 after it.</p>
+        <p><strong>Step 4.</strong> Circle 5, the next number not crossed out. Cross out every multiple of 5 after it.</p>
         <p><strong>Step 5.</strong> Carry on in the same way until every number is either circled or crossed out.</p>
       </div>
 
-      <div class="c-figure c-figure--xl">
+      <div class="c-figure c-figure--lg">
         <figure>
-          <svg viewBox="0 0 355 350" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The numbers 1 to 100 in ten rows after the sieve. The 25 primes are shaded and circled, and every other number is crossed out">
+          <svg viewBox="0 0 355 350" data-size="lg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The numbers 1 to 100 in ten rows after the sieve. The 25 primes are shaded and circled, and every other number is crossed out">
             <rect class="dg-fill-a-soft" x="41.5" y="5" width="34" height="34"/>
             <rect class="dg-fill-a-soft" x="75.5" y="5" width="34" height="34"/>
             <rect class="dg-fill-a-soft" x="143.5" y="5" width="34" height="34"/>
@@ -269,7 +269,7 @@
         </figure>
       </div>
 
-      <p>The circled numbers are the primes. The crossed-out numbers, except for 1, are the composite numbers. This method is called the <span class="term">Sieve of Eratosthenes</span>. A sieve keeps some things and lets the rest fall through, and this one keeps only the primes. Eratosthenes was a Greek mathematician who lived about 2200 years ago. His method works for numbers larger than 100 too.</p>
+      <p>The circled numbers are the primes, and the crossed-out numbers other than 1 are composite. This is the <span class="term">Sieve of Eratosthenes</span>, named after a Greek mathematician.</p>
 
       <div class="c-reflect">
         <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
@@ -277,14 +277,19 @@
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-          <p>Guna and Anshu wonder how such a simple method can find the primes. It is not magic, so there must be a reason why it works.</p>
-          <ol>
+                    <ol>
             <li>Read the steps again. What does each step remove from the grid?</li>
             <li>Why is every number that is left at the end a prime?</li>
           </ol>
           </div>
         </div>
       </div>
+
+      <h3>Primes through the ages</h3>
+
+      <p>Every whole number greater than 1 can be made by multiplying primes. People have studied primes for over 2000 years, and many questions about them still have no answer. Is there a largest prime? Euclid found the answer, and you will too, in a later class.</p>
+
+      <p>The largest prime that anyone has found would fill about 6500 pages if it were written out. It was found with the help of a computer.</p>
 
     </div>
   </div>

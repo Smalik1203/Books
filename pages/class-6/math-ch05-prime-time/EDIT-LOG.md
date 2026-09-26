@@ -1,5 +1,116 @@
 # Class 6 · Mathematics I · Chapter 5 — Prime Time
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its examples, its
+practice and its key further down this log.** Converted to CONVERT-V2.md,
+with Class 6 Chapter 1 as the model. `chapter.json` now reads `maths-v2`,
+palette `prism`, edition `196x276-large`, `keepExerciseSets`, accent
+`#1e4e8c`. 36 pages:
+
+* **Body p001–p021**: NCERT's six sections in NCERT's order (20 pages),
+  ending on a **Summary** page (p021, `data-close`, nine points, key terms
+  in bold, following NCERT's summary).
+* **By the Book p090–p094**, five pages, 50 questions written to
+  BY-THE-BOOK.md at Class 6: very short 10, short 10, long 10, assertion
+  and reason 5 (key a, b, d, c, a), case-based 5, objective 10 (key
+  c, a, a, d, b, c, c, d, b, d; one multi-statement item, one named
+  student's claim, one table item). Several reuse the old practice set's
+  board-form questions (co-prime 105/88, 980, 2016, the chairs and stools,
+  the three bells, Anshu's 4-and-6 claim, the 1–100 multiples count and
+  the 7248 and 35/48 assertion–reason pairs), recast as single modelled
+  problems; the rest are new. None copies a body exercise.
+* **Beyond the Book p101–p110**: the tried-and-explained questions with no
+  head, then Single correct · More than one correct · Numerical answer ·
+  Matching · Paragraph-based, each two solved examples then practice
+  (4 · 4 · 3 · 2 · 2). Answers opens p109 with no stage numeral: By the
+  Book's key, then Beyond's.
+
+### The body
+
+* **Key ideas.** Three that had two paragraphs (common factors, prime and
+  composite, prime factorisation) are now `c-keyidea__points` of two
+  points, as the model sets them. Two added, so every section has one:
+  5.5 *Divisibility tests* (the tests for 10, 5, 2, 4 and 8, after the
+  Think and Reflects that ask the reader to find them) and 5.6 *Numbers
+  and puzzles*. Every section already had a Think and Reflect.
+* **Plain English and fitting.** The larger edition put two pages at 31%
+  and 58% in front of Exercise Sets 5.2 and 5.3, which `keepExerciseSets`
+  holds whole, and set 5.2 no longer fitted one page. Both were closed by
+  tightening prose at the join, not by cutting anything NCERT asks: the
+  idli-vada rules and figure note, the Jump Jackpot set-up, "Take care not
+  to mix up…", the figs set-up, the sieve steps 3–4 (the example multiples
+  after "cross out every multiple of 3/5" dropped), the Sieve paragraph
+  (the "a sieve keeps some things" gloss and the 2200 years dropped),
+  "Primes through the ages" (two paragraphs made one), the 5.4 product
+  paragraphs, the 75/21 and 42/12 paragraphs, the divisibility-by-4
+  explorations and the 5.6 paragraphs. "neat way" became "quick way", and
+  "It is not magic" (C8) and "like building blocks" (simile) went.
+  Example 5's first two steps are now one row (both factorisations).
+* **Exercise wording shortened, questions unchanged**: 5.2 Q2 (Who am I?),
+  Q3 (perfect number), Q6, Q7, Q8, Q9 ("Is 40 the first of them?"), Q10
+  and Q11 ("the smallest multiple of every number from 1 to 10"); 5.3 Q11
+  ("3-digit primes … using each of 2, 4 and 5 once"); 5.4 Q2; 5.5 Q1 and
+  Q3. No NCERT question was cut.
+* **Figures**: Fig. 5.4 lg → md, Fig. 5.6 xl → lg, Fig. 5.12 xl → lg (the
+  class and `data-size`; viewBoxes unchanged, so their strokes print a
+  little finer). `check-labels` finds no collisions.
+
+### By the Book and Beyond
+
+* **Tried questions** kept word for word except one sentence: the 6-and-8
+  idli-vada explanation ended "This happened because 6 and 8 are not
+  co-prime: they share the factor 2", which answers the body's Think and
+  Reflect on when the first common multiple is the product (§6a: the
+  rule wins). It was deleted. The stage head went, as in the model.
+* **Examples.** From the old fifteen, kept and reworded: old 3 (exactly
+  three factors), old 7 (co-prime pairs), old 11 (factors of 72, now by
+  factor pairs, not by counting choices of primes), old 12 (remainder 1 on
+  4, 6 and 9, now by listing multiples of 9), old 14 (matching; "greatest
+  common factor" and "least common multiple" became "largest common
+  factor" and "first common multiple", the chapter's words) and old 15
+  (matching). Dropped: old 1, 5 and 13, which lean on the least common
+  multiple or on *co-prime numbers have their product as first common
+  multiple* (the answer to a body Think and Reflect, see 17 September);
+  old 2 and 10 (greatest common factor, LCM); old 4 (the test for 9, not
+  taught here); old 6 ("the only even prime is 2", the answer to Exercise
+  Set 5.3 Q1); old 8 and 9 (digit-sum test; statements). New: Example 2
+  (the smallest number to add to 1234 for 8), Example 4 (factors of
+  $2 \times 3 \times 3 \times 5$), and two paragraph-based examples (a 2 by
+  2 prime puzzle; two flashing lights). All fifteen practice questions are
+  new.
+* Formats are named once by the part head; no "Choose one correct option"
+  lines, no format on the tab.
+
+### Checks at close
+
+* `build.mjs`: all 36 pages fit; every page 88% or more except the Summary
+  (77%, `data-close`) and By the Book's last page (74%, `data-close`).
+  Pages 5, 9, 24 and 29 are at 88–89%.
+* `lone-words`: 0. `check-sums`: 141 identities, 0 wrong. `orphans`: 0
+  stranded in 36 pages. `check-labels`: no labels collide. `fit-options`:
+  every option row fits.
+* **`check-numbers.mjs` was rewritten** for this layout (the old 708-line
+  script is in git history; it also solved the body's prime puzzles A–D
+  from their SVGs, which the new one does not): 430 checks, 0 failed. It
+  recomputes every By the Book objective and assertion–reason answer,
+  every Beyond single, multiple-correct and matching answer, every
+  example's Answer row (the 2 by 2 puzzle is solved by search and has one
+  solution), and every number in both keys. Planted errors (a key letter,
+  a numerical key, a key value in a case answer, a shelf digit, a row
+  value) were all caught.
+* Fitting: `refit` body (twice, the Summary held aside so it keeps a page
+  of its own), `refit` board, `refit` bridge (twice), judged on the real
+  build; the scratch builds reported overruns the real build does not.
+
+### Flagged
+
+| where | what | what it needs |
+|---|---|---|
+| body 5.6 | "Here is one way to begin puzzle A" still gives the first two moves of Think and Reflect puzzle A (kept from before) | Decide whether a worked start is wanted there |
+| p006 | the source of "about 6500 pages" for the largest known prime is not recorded | A source |
+| Figs 5.4, 5.6, 5.12 | set one step smaller than their viewBoxes were drawn for | Redraw at the new step if the finer strokes read too light in proof |
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

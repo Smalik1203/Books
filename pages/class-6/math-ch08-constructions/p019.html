@@ -1,72 +1,122 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">Finding a point from two distances</div>
-        <p>To find a point at a given distance from each of two points, draw an arc of that radius about each point. Where the two arcs cross, the point is at the right distance from both.</p>
-      </div>
+      <h2><span class="badge">8.6</span><span class="name">Points Equidistant from Two Given Points</span></h2>
 
-      <p>Look again at Step 3, Method 1. The two circles cross at a second point, below $BC$. That point is also 5 cm from $B$ and 5 cm from $C$. A roof drawn up to it would point down into the house, so the upper point is the one you want. Two circles that cross always cross at two points, one on each side of the line that joins their centres. So there are exactly two points that are 5 cm from both $B$ and $C$.</p>
+      <p>Recreate the house in Fig. 8.34. All the lines round the border of the house are 5 cm&nbsp;long.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 8.6</div>
-        <ol class="c-questions">
-          <li>Construct a bigger house in which every line round the border is 7 cm long.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Draw the person, the wavy wave and the eyes from Section 8.1 again. This time, use the ideas from the house construction.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li class="hard">Is there a 4-sided figure with all its sides equal in length that is not a square? If there is, construct one.</li>
-        </ol>
-      </div>
-
-      <h3>Hints</h3>
-
-      <p><strong>The eyes.</strong> In the left part of Fig. 8.37, the dashed line is a light helping line. Each curve is drawn like the top of the person&rsquo;s body: the needle goes on $A$ for the lower curve and on $B$ for the upper one. Where must $A$ and $B$ be so that the two curves match?</p>
-
-      <div class="c-figure c-figure--full">
+      <div class="c-figure c-figure--sm">
         <figure>
-          <svg viewBox="0 0 570 124" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: an eye shape made of two arcs meeting on a light dashed line; A is a point above the eye and B a point below it. Right: two lines AB and AC, each 5 cm long, meeting at A">
-            <line class="dg-ghost" x1="18" y1="62" x2="172" y2="62"/>
-            <path class="dg-line" d="M150 62 A71.17 71.17 0 0 0 40 62"/>
-            <path class="dg-thin" d="M156.39 71.16 A71.17 71.17 0 0 0 150 62"/>
-            <path class="dg-thin" d="M40 62 A71.17 71.17 0 0 0 33.61 71.16"/>
-            <path class="dg-line" d="M40 62 A71.17 71.17 0 0 0 150 62"/>
-            <path class="dg-thin" d="M33.61 52.84 A71.17 71.17 0 0 0 40 62"/>
-            <path class="dg-thin" d="M150 62 A71.17 71.17 0 0 0 156.39 52.84"/>
-            <circle class="dg-line" cx="95" cy="107.17" r="0.7"/>
-            <circle class="dg-line" cx="95" cy="107.17" r="1.45"/>
-            <circle class="dg-line" cx="95" cy="16.83" r="0.7"/>
-            <circle class="dg-line" cx="95" cy="16.83" r="1.45"/>
-            <text class="dg-label" x="88" y="20.6" text-anchor="end">A</text>
-            <text class="dg-label" x="88" y="110.95" text-anchor="end">B</text>
-            <line class="dg-line" x1="340" y1="108" x2="435" y2="108"/>
-            <line class="dg-line" x1="340" y1="108" x2="394.49" y2="30.18"/>
-            <circle class="dg-line" cx="340" cy="108" r="0.7"/>
-            <circle class="dg-line" cx="340" cy="108" r="1.45"/>
-            <circle class="dg-line" cx="394.49" cy="30.18" r="0.7"/>
-            <circle class="dg-line" cx="394.49" cy="30.18" r="1.45"/>
-            <circle class="dg-line" cx="435" cy="108" r="0.7"/>
-            <circle class="dg-line" cx="435" cy="108" r="1.45"/>
-            <text class="dg-label" x="333.42" y="114.17" text-anchor="end">A</text>
-            <text class="dg-label" x="397.23" y="26.44" text-anchor="middle">B</text>
-            <text class="dg-label" x="441.58" y="114.17" text-anchor="start">C</text>
-            <text class="dg-dim-label" x="387.5" y="120.37" text-anchor="middle">5 cm</text>
-            <text class="dg-dim-label" x="360.69" y="67.87" text-anchor="end">5 cm</text>
+          <svg viewBox="0 0 190 204" data-size="sm" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A house: two upright walls BD and CE and a floor DE, each 5 cm, a door 1 cm wide and 2 cm high, a pointed roof AB and AC of 5 cm each, and a curve from B to C that dips below the roof line">
+            <path class="dg-line" d="M52 100 V185 H137 V100"/>
+            <path class="dg-line" d="M86 185 V151 H103 V185"/>
+            <line class="dg-line" x1="94.5" y1="26.39" x2="52" y2="100"/>
+            <line class="dg-line" x1="94.5" y1="26.39" x2="137" y2="100"/>
+            <circle class="dg-line" cx="94.5" cy="26.39" r="0.7"/>
+            <circle class="dg-line" cx="94.5" cy="26.39" r="1.45"/>
+            <text class="dg-label" x="94.5" y="14.16" text-anchor="middle">A</text>
+            <text class="dg-dim-label" x="66.32" y="62.56" text-anchor="end">5 cm</text>
+            <text class="dg-dim-label" x="122.68" y="62.56" text-anchor="start">5 cm</text>
+            <path class="dg-line" d="M52 100 A85 85 0 0 0 137 100"/>
+            <circle class="dg-line" cx="52" cy="100" r="0.7"/>
+            <circle class="dg-line" cx="52" cy="100" r="1.45"/>
+            <circle class="dg-line" cx="137" cy="100" r="0.7"/>
+            <circle class="dg-line" cx="137" cy="100" r="1.45"/>
+            <circle class="dg-line" cx="52" cy="185" r="0.7"/>
+            <circle class="dg-line" cx="52" cy="185" r="1.45"/>
+            <circle class="dg-line" cx="137" cy="185" r="0.7"/>
+            <circle class="dg-line" cx="137" cy="185" r="1.45"/>
+            <text class="dg-label" x="45" y="103.77" text-anchor="end">B</text>
+            <text class="dg-label" x="144" y="103.77" text-anchor="start">C</text>
+            <text class="dg-label" x="47.05" y="193.72" text-anchor="end">D</text>
+            <text class="dg-label" x="141.95" y="193.72" text-anchor="start">E</text>
+            <text class="dg-dim-label" x="44" y="145.87" text-anchor="end">5 cm</text>
+            <text class="dg-dim-label" x="145" y="145.87" text-anchor="start">5 cm</text>
+            <text class="dg-dim-label" x="94.5" y="197.37" text-anchor="middle">5 cm</text>
+            <text class="dg-dim-label" x="94.5" y="144.37" text-anchor="middle">1 cm</text>
+            <text class="dg-dim-label" x="81" y="171.37" text-anchor="end">2 cm</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 8.37</span> Left: hint for the eyes. The lower curve is drawn with the needle at $A$, and the upper curve with the needle at $B$. Right: hint for Exercise Set 8.6, Question 3.</figcaption>
+          <figcaption><span class="fignum">Fig. 8.34</span> The house. All the lines round its border are 5 cm&nbsp;long.</figcaption>
         </figure>
       </div>
 
-      <p><strong>Exercise Set 8.6, Question 3.</strong> Take the sides to be 5 cm long. The right part of Fig. 8.37 shows two sides, $AB$ and $AC$. One more corner, $D$, would make a 4-sided figure. $D$ must be 5 cm from $B$ and 5 cm from $C$. How can you find it? Which idea from the house helps here?</p>
+      <p>First decide in what order to draw the lines and the&nbsp;curve.</p>
+
+      <p><strong>Step 1.</strong> Draw the floor $DE$, the two walls $BD$ and $CE$, and the&nbsp;door.</p>
+
+      <p>Can you finish the figure? Try it. You need a point $A$ that is 5 cm from $B$ and also 5 cm from $C$. A point that is the same distance from two points is called <span class="term">equidistant</span> from them. You could find $A$ with a ruler, by trial and error, but there is a better way. Does this problem remind you of how you found $B$ in the last&nbsp;construction?</p>
+
+      <p><strong>Step 2.</strong> Draw a circle of radius 5 cm with centre $B$. Every point on it is 5 cm from $B$. Does this help you to find $A$? You need the point on this circle that is also 5 cm from $C$. You could hunt for it with a ruler. Can a compass find it&nbsp;instead?</p>
+
+      <p><strong>Step 3, Method 1.</strong> Draw a circle of radius 5 cm with centre $C$. Look at the points where the two circles cross. How far is the upper one from $B$? How far is it from $C$? That point is&nbsp;$A$.</p>
+
+      <div class="c-figure c-figure--full">
+        <figure>
+          <svg viewBox="0 0 570 184" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three steps. Step 1: the walls, the floor and the door of the house. Step 2: a circle of radius 5 cm with centre B. Step 3: a second circle of radius 5 cm with centre C, crossing the first circle above the walls and below">
+            <path class="dg-line" d="M45 90 V160 H115 V90"/>
+            <path class="dg-line" d="M73 160 V132 H87 V160"/>
+            <circle class="dg-line" cx="45" cy="90" r="0.7"/>
+            <circle class="dg-line" cx="45" cy="90" r="1.45"/>
+            <circle class="dg-line" cx="115" cy="90" r="0.7"/>
+            <circle class="dg-line" cx="115" cy="90" r="1.45"/>
+            <circle class="dg-line" cx="45" cy="160" r="0.7"/>
+            <circle class="dg-line" cx="45" cy="160" r="1.45"/>
+            <circle class="dg-line" cx="115" cy="160" r="0.7"/>
+            <circle class="dg-line" cx="115" cy="160" r="1.45"/>
+            <text class="dg-label" x="38" y="93.77" text-anchor="end">B</text>
+            <text class="dg-label" x="122" y="93.77" text-anchor="start">C</text>
+            <text class="dg-label" x="40.05" y="168.72" text-anchor="end">D</text>
+            <text class="dg-label" x="119.95" y="168.72" text-anchor="start">E</text>
+            <text class="dg-dim-label" x="37" y="128.37" text-anchor="end">5 cm</text>
+            <text class="dg-dim-label" x="123" y="128.37" text-anchor="start">5 cm</text>
+            <text class="dg-dim-label" x="80" y="172.37" text-anchor="middle">5 cm</text>
+            <text class="dg-dim-label" x="80" y="125.37" text-anchor="middle">1 cm</text>
+            <text class="dg-dim-label" x="68" y="149.37" text-anchor="end">2 cm</text>
+            <text class="dg-note" x="12" y="10" text-anchor="start">Step 1</text>
+            <path class="dg-line" d="M232 90 V160 H302 V90"/>
+            <path class="dg-line" d="M260 160 V132 H274 V160"/>
+            <circle class="dg-line" cx="232" cy="90" r="0.7"/>
+            <circle class="dg-line" cx="232" cy="90" r="1.45"/>
+            <circle class="dg-line" cx="302" cy="90" r="0.7"/>
+            <circle class="dg-line" cx="302" cy="90" r="1.45"/>
+            <circle class="dg-line" cx="232" cy="160" r="0.7"/>
+            <circle class="dg-line" cx="232" cy="160" r="1.45"/>
+            <circle class="dg-line" cx="302" cy="160" r="0.7"/>
+            <circle class="dg-line" cx="302" cy="160" r="1.45"/>
+            <text class="dg-label" x="225" y="93.77" text-anchor="end">B</text>
+            <text class="dg-label" x="307" y="85.11" text-anchor="start">C</text>
+            <text class="dg-label" x="227.05" y="168.72" text-anchor="end">D</text>
+            <text class="dg-label" x="306.95" y="168.72" text-anchor="start">E</text>
+            <text class="dg-dim-label" x="224" y="128.37" text-anchor="end">5 cm</text>
+            <text class="dg-dim-label" x="310" y="128.37" text-anchor="start">5 cm</text>
+            <text class="dg-dim-label" x="267" y="172.37" text-anchor="middle">5 cm</text>
+            <circle class="dg-thin" cx="232" cy="90" r="70"/>
+            <text class="dg-note" x="162" y="10" text-anchor="start">Step 2</text>
+            <path class="dg-line" d="M412 90 V160 H482 V90"/>
+            <path class="dg-line" d="M440 160 V132 H454 V160"/>
+            <circle class="dg-line" cx="412" cy="90" r="0.7"/>
+            <circle class="dg-line" cx="412" cy="90" r="1.45"/>
+            <circle class="dg-line" cx="482" cy="90" r="0.7"/>
+            <circle class="dg-line" cx="482" cy="90" r="1.45"/>
+            <circle class="dg-line" cx="412" cy="160" r="0.7"/>
+            <circle class="dg-line" cx="412" cy="160" r="1.45"/>
+            <circle class="dg-line" cx="482" cy="160" r="0.7"/>
+            <circle class="dg-line" cx="482" cy="160" r="1.45"/>
+            <text class="dg-label" x="407" y="85.11" text-anchor="end">B</text>
+            <text class="dg-label" x="487" y="85.11" text-anchor="start">C</text>
+            <text class="dg-label" x="407.05" y="168.72" text-anchor="end">D</text>
+            <text class="dg-label" x="486.95" y="168.72" text-anchor="start">E</text>
+            <text class="dg-dim-label" x="404" y="128.37" text-anchor="end">5 cm</text>
+            <text class="dg-dim-label" x="490" y="128.37" text-anchor="start">5 cm</text>
+            <text class="dg-dim-label" x="447" y="172.37" text-anchor="middle">5 cm</text>
+            <circle class="dg-thin" cx="412" cy="90" r="70"/>
+            <circle class="dg-thin" cx="482" cy="90" r="70"/>
+            <text class="dg-note" x="342" y="10" text-anchor="start">Step 3</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 8.35</span> Steps 1 to 3. The circle about $B$ holds every point 5 cm from $B$; the circle about $C$ holds every point 5 cm from&nbsp;$C$.</figcaption>
+        </figure>
+      </div>
 
     </div>
   </div>

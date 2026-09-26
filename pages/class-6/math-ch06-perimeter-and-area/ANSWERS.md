@@ -40,16 +40,6 @@ vary*.
 6. **2340 m**. One round is $2 \times (230 + 160) = 780$ m, and
    $3 \times 780 = 2340$.
 
-7. **Neither.** The square needs $4 \times 12 = 48$ m and the rectangle
-   $2 \times (15 + 9) = 48$ m. They need the same fencing.
-
-8. **560 m**. One round is $2 \times (80 + 60) = 280$ m, and
-   $2 \times 280 = 560$.
-
-9. length **10 cm**, breadth **5 cm**. Length and breadth add up to
-   $30 \div 2 = 15$. The length is two breadths, so three breadths make 15:
-   the breadth is 5 cm and the length 10 cm.
-
 ### Think and Reflect (after Fig. 6.4)
 
 1. The outer lanes are longer. A runner on the outside has further to go
@@ -122,7 +112,20 @@ which is more than 9 straight units.
    of a regular polygon is the number of sides times the length of one
    side.
 
-### Split and rejoin — Exercise Set 6.3
+### Split and rejoin — Think and Reflect (after Fig. 6.7)
+
+1. (b) **28 cm**, (c) **28 cm**, (d) **26 cm**. The two pieces together
+   have $2 \times (6 + 2) \times 2 = 32$ cm of edge. Wherever they touch,
+   that length is lost twice, once from each piece. In (b) and (c) they
+   touch along 2 cm, so $32 - 4 = 28$; in (d) along 3 cm, so
+   $32 - 6 = 26$.
+
+2. $32 - 22 = 10$ cm must be lost, so the pieces touch along 5 cm.
+   **What the drawing must show:** the two pieces side by side, with
+   5 cm of their long sides touching, one piece set 1 cm higher than the
+   other.
+
+### Exercise Set 6.3
 
 1. Reading the sides off Fig. 6.8:
    (a) $8s + 2d$
@@ -132,17 +135,6 @@ which is more than 9 straight units.
 
    In (d) the long sloping side crosses three squares, so it is 3 diagonal
    units.
-
-2. (b) **28 cm**, (c) **28 cm**, (d) **26 cm**. The two pieces together
-   have $2 \times (6 + 2) \times 2 = 32$ cm of edge. Wherever they touch,
-   that length is lost twice, once from each piece. In (b) and (c) they
-   touch along 2 cm, so $32 - 4 = 28$; in (d) along 3 cm, so
-   $32 - 6 = 26$.
-
-3. $32 - 22 = 10$ cm must be lost, so the pieces touch along 5 cm.
-   **What the drawing must show:** the two pieces side by side, with
-   5 cm of their long sides touching, one piece set 1 cm higher than the
-   other.
 
 ---
 
@@ -212,14 +204,6 @@ $F$ and $G$ are 2 each; $A$ and $B$ are 4 each.
 2. Answers will vary. **Worked instance:** a leaf covering 18 full
    squares, 7 more-than-half squares and 4 exactly half squares has an
    area of $18 + 7 + 2 = 27$ square units.
-
-3. $8 + 5 + \frac{1}{2} + \frac{1}{2} = 14$ square units. The 4 squares
-   less than half are left out.
-
-4. Answers will vary. **Worked instance:** a rectangle 4 units by 3 units
-   with one corner cut off by a line across a 2 by 2 square. The cut
-   triangle is half of 4 squares, so the area is $12 - 2 = 10$ square
-   units.
 
 ### Why do we measure area in squares?
 
@@ -349,25 +333,9 @@ stays the same.
 
 ### House plans
 
-### Think and Reflect (after Fig. 6.21)
+### Think and Reflect (after Fig. 6.20)
 
-1. Both bedrooms are 15 ft on one side. Charan's is 15 ft on the other side
-   and Sharan's only 12 ft, so **Charan's is bigger**: 225 sq ft against
-   180 sq ft.
-
-2. Two pairs of rooms have the same area, and each pair also has the same
-   perimeter, because the two rooms in a pair have the same sides:
-   - the **kitchen** and the **small bedroom**, both 15 ft by 12 ft: area
-     **180 sq ft** each, perimeter $2 \times (15 + 12) = 54$ ft each;
-   - the **utility room** and the **parking**, both 15 ft by 3 ft: area
-     **45 sq ft** each, perimeter $2 \times (15 + 3) = 36$ ft each. The
-     utility room's depth is not printed; it is $15 - 12 = 3$ ft, found in
-     Exercise Set 6.11.
-
-### Exercise Set 6.11
-
-1. **Charan's house.**
-   (a) The small bedroom is **15 ft by 12 ft**, since $180 \div 15 = 12$.
+1. The small bedroom is **15 ft by 12 ft**, since $180 \div 15 = 12$.
    The left side is 30 ft, so the garden is $30 - 15 - 12 = 3$ ft deep.
    The kitchen reaches down to the bottom of the master bedroom, so the
    utility room is $15 - 12 = 3$ ft deep; it is 15 ft wide, like the
@@ -377,10 +345,30 @@ stays the same.
    (50 sq ft). The hall is L-shaped: a block 20 ft wide and
    $27 - 10 = 17$ ft deep, less the 15 ft by 5 ft corner that belongs to
    the kitchen, so $340 - 75 =$ **265 sq ft**.
-   (b) **1050 sq ft**. $35 \times 30 = 1050$. Check:
+
+2. **1050 sq ft**. $35 \times 30 = 1050$. Check:
    $225 + 50 + 45 + 180 + 180 + 265 + 60 + 45 = 1050$.
 
-2. **Sharan's house.**
+3. Two pairs of rooms have the same area, and each pair also has the same
+   perimeter, because the two rooms in a pair have the same sides:
+   - the **kitchen** and the **small bedroom**, both 15 ft by 12 ft: area
+     **180 sq ft** each, perimeter $2 \times (15 + 12) = 54$ ft each;
+   - the **utility room** and the **parking**, both 15 ft by 3 ft: area
+     **45 sq ft** each, perimeter $2 \times (15 + 3) = 36$ ft each. The
+     utility room's depth is not printed; it is $15 - 12 = 3$ ft, found in
+     question 1.
+
+### Think and Reflect (after Fig. 6.21)
+
+1. Both bedrooms are 15 ft on one side. Charan's is 15 ft on the other side
+   and Sharan's only 12 ft, so **Charan's is bigger**: 225 sq ft against
+   180 sq ft.
+
+2. **They are the same**: $18 \times 10 = 180$ sq ft and $15 \times 12 = 180$ sq ft.
+
+### Exercise Set 6.11
+
+1. **Sharan's house.**
    (a) The utility room is 70 sq ft and, like the kitchen, 10 ft deep, so
    it is $70 \div 10 = 7$ ft wide. The toilet is
    $42 - 12 - 18 - 7 = 5$ ft wide and 10 ft deep. The plot is
@@ -390,12 +378,12 @@ stays the same.
    (b) **1050 sq ft**. $42 \times 25 = 1050$. Check:
    $180 + 50 + 180 + 70 + 120 + 345 + 105 = 1050$.
 
-3. The two houses have **the same area**, 1050 sq ft, but different
+2. The two houses have **the same area**, 1050 sq ft, but different
    perimeters: **130 ft** and **134 ft**, since $2 \times (35 + 30) = 130$
    and $2 \times (42 + 25) = 134$. Equal areas do not mean equal
    perimeters.
 
-4. Answers will vary. **Worked instance:** a classroom 9 m by 7 m,
+3. Answers will vary. **Worked instance:** a classroom 9 m by 7 m,
    63 sq m, with a store room 3 m by 2 m, 6 sq m.
 
 ### Area maze puzzles — Exercise Set 6.12
@@ -474,9 +462,139 @@ stays the same.
 
 ---
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September 2026.
+The book's own key is in Beyond the Book's Answers stage; this is the same
+key, set out in full.
+
+### Very short answer
+
+1. $2 \times (18 + 7) = $ **50 cm**.
+2. The side is $96 \div 4 = 24$ m, so the area is $24 \times 24 = $ **576 sq m**.
+3. $54 \div 6 = $ **9 cm**.
+4. **Yes.** $8 \times 2 = 16$ sq cm and $4 \times 4 = 16$ sq cm.
+5. The width is $91 \div 13 = 7$ cm, so the perimeter is
+   $2 \times (13 + 7) = $ **40 cm**.
+6. The rectangle is $14 \times 10 = 140$ sq cm, and the triangle is half of
+   it: **70 sq cm**.
+7. $12 + 6 + 2 = $ **20 square units**: the 4 exactly-half squares count as
+   2, and the 5 less-than-half squares are left out.
+8. **4s + 2d.** The two short sides are 2 straight units each; the third side
+   crosses 2 squares from corner to corner.
+9. One round is $2 \times (60 + 40) = 200$ m, so 4 rounds are **800 m**.
+10. 2 m = 200 cm takes 10 tiles and 1 m takes 5 tiles: $10 \times 5 = $
+    **50 tiles**.
+
+### Short answer
+
+11. Length + width $= 40 \div 2 = 20$ m, so the width is **8 m**. Area
+    $= 12 \times 8 = $ **96 sq m**.
+12. Both rectangles cover **6 squares**, so their areas are equal. Their
+    perimeters are $2 \times (6 + 1) = 14$ units and $2 \times (3 + 2) = 10$
+    units. **What the drawing must show:** the two rectangles on squared paper,
+    with the squares counted. The long thin rectangle has more of its sides on
+    the edge.
+13. Area $6 \times 4 = 24$ sq m, so the carpet costs $24 \times 250 = $
+    **₹6000**. Perimeter $2 \times (6 + 4) = 20$ m, so the strip costs
+    $20 \times 30 = $ **₹600**.
+14. The square has side $64 \div 4 = 16$ m and area 256 sq m. The rectangle
+    is $256 \div 32 = 8$ m wide, so its perimeter is $2 \times (32 + 8) = $
+    **80 m**.
+15. $25 \times 16 = 400$ sq m; inside the path $21 \times 12 = 252$ sq m; the
+    path is $400 - 252 = $ **148 sq m**.
+16. Length + width $= 48 \div 2 = 24$ cm, which is 4 widths. So the width is
+    **6 cm**, the length **18 cm**, and the area $18 \times 6 = $
+    **108 sq cm**.
+17. Area **6 square units**, perimeter $2 \times (6 + 1) = $ **14 units**. The
+    new square covers 1 side of the row and adds 3, so the new perimeter is
+    **16 units**.
+18. Triangle $ABD$ is half the rectangle: $10 \times 6 \div 2 = $
+    **30 sq cm**. Triangle $ABE$ also has $AB$ as its base and its top corner
+    on $DC$, so it is **30 sq cm** too.
+19. The perimeter is $4 \times 10 = 40$ cm. The pentagon's side is
+    $40 \div 5 = $ **8 cm**; the octagon's side is $40 \div 8 = $ **5 cm**.
+20. $30 \times 20 - 6 \times 6 = 600 - 36 = $ **564 sq m**; cost
+    $564 \times 15 = $ **₹8460**.
+
+### Long answer
+
+21. One round is $2 \times (120 + 80) = 400$ m, so Arjun runs
+    $5 \times 400 = $ **2000 m**. The square track is $4 \times 90 = 360$ m.
+    5 rounds make 1800 m, which is less than 2000 m; 6 rounds make 2160 m.
+    So his friend must run **6 rounds**.
+22. 15 m holds $1500 \div 50 = 30$ tiles and 12 m holds 24, so
+    $30 \times 24 = $ **720 tiles**. Cost $720 \times 40 = $ **₹28 800**.
+23. Perimeter $2 \times (50 + 30) = 160$ m; 4 rounds $= 640$ m; cost
+    $640 \times 12 = $ **₹7680**. Area $50 \times 30 = $ **1500 sq m**.
+24. Length + width $= 240 \div 2 = 120$ m, so the width is **50 m**. Area
+    $70 \times 50 = $ **3500 sq m**; cost $3500 \times 5 = $ **₹17 500**.
+25. Wall $6 \times 3 = 18$ sq m, door 2 sq m, window 2 sq m; painted
+    $18 - 4 = 14$ sq m; cost $14 \times 60 = $ **₹840**. Tape:
+    $2 \times (2 + 1) = 6$ m for each, **12 m** in all.
+26. Length + width $= 10$ m: 9 by 1 (9 sq m), 8 by 2 (16), 7 by 3 (21),
+    6 by 4 (24) and 5 by 5 (25). The largest is the **5 m by 5 m** square,
+    **25 sq m**.
+27. The flat is $40 \times 30 = 1200$ sq ft; the rooms are
+    $300 + 180 + 180 + 180 = 840$ sq ft; the rest is **360 sq ft**. Skirting
+    $2 \times (20 + 15) - 3 = $ **67 ft**.
+28. Library $12 \times 8 = 96$ sq m, laboratory $10 \times 9 = 90$ sq m, office
+    $6 \times 5 = 30$ sq m; total **216 sq m**; cost $216 \times 20 = $
+    **₹4320**. The **library** needs the most mat.
+29. Top: $4 \times 3 = 12$ and $6 \times 3 = 18$ sq cm. Bottom: $4 \times 4 = 16$
+    and $6 \times 4 = 24$ sq cm. $12 + 18 + 16 + 24 = 70 = 10 \times 7$.
+    **What the drawing must show:** the 10 cm by 7 cm rectangle with the two
+    lines and the four areas.
+30. The paths are $20 \times 2 = 40$ and $14 \times 2 = 28$ sq m, but the
+    2 m square where they cross is counted twice: $40 + 28 - 4 = $
+    **64 sq m**. Cost $64 \times 50 = $ **₹3200**.
+
+### Assertion and reason
+
+31 (a) · 32 (c) · 33 (b) · 34 (d) · 35 (a)
+
+- 32: both areas are 24 sq cm, but the perimeters are 20 cm and 22 cm, so R
+  is false.
+- 33: both are true, but the perimeter does not explain the area.
+- 34: a 1 by 4 rectangle and a 2 by 2 square both have area 4 and perimeters
+  10 and 8, so A is false.
+
+### Case-based questions
+
+36. (i) $4 \times 60 = $ **240 cm** (ii) $20 \times 20 = $ **400 sq cm**
+    (iii) $3600 - 400 = $ **3200 sq cm**
+37. (i) $2 \times (100 + 50) = $ **300 m** (ii) $4 \times 300 = $ **1200 m**
+    (iii) $1600 = 5 \times 300 + 100$: **5 full rounds**, and **100 m** past
+    the corner
+38. (i) $40 \times 25 = $ **1000 sq ft** (ii) $10 \times 12 = $ **120 sq ft**
+    (iii) $1000 - 300 - 120 - 180 = $ **400 sq ft**
+39. (i) $300 \div 25 = $ **12** (ii) $200 \div 25 = $ **8** (iii)
+    $12 \times 8 = $ **96 tiles**, costing $96 \times 30 = $ **₹2880**
+40. (i) $2 \times (60 + 45) = $ **210 m** (ii) $3 \times 210 = $ **630 m**
+    (iii) $60 \times 45 - 15 \times 15 = 2700 - 225 = $ **2475 sq m**
+
+### Objective questions
+
+41 (c) · 42 (b) · 43 (c) · 44 (d) · 45 (a) · 46 (b) · 47 (d) · 48 (a) ·
+49 (d) · 50 (b)
+
+- 41: perimeters P 20 cm, Q 18 cm, R 18 cm.
+- 48: $10 + 4 + 1 = 15$ square units.
+- 49: (i) is false; (ii) and (iii) are true.
+- 50: $2 \times (4 + 3) = 14$ cm; Tara multiplied $4 \times 3$.
+
+---
+
 ## Beyond the Book
 
-### 1 Using What You Know
+Organised by format since 26 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own: *Beyond Example
+1* is not the chapter's Example 1 in §6.1.
+
+### Tried and explained (no head in the book)
 
 Each question is answered in the running text that follows it on the page:
 the square, 49 sq cm, beats the rectangle, 45 sq cm; the square of area
@@ -484,81 +602,52 @@ the square, 49 sq cm, beats the rectangle, 45 sq cm; the square of area
 the perimeter; a 9 cm by 4 cm rectangle shows Riya is wrong; the border is
 450 sq cm; the triangle is 30 sq cm.
 
-### 2 Solved Examples
+### Solved examples
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (a) 322 sq cm |
+| | 2 | (d) 36 cm |
+| More than one correct | 3 | (a), (b), (c) |
+| | 4 | (a), (c), (d) |
+| Numerical answer | 5 | 134 |
+| | 6 | 13 |
+| Matching | 7 | (c) P–2, Q–4, R–3, S–1 |
+| | 8 | (a) P–3, Q–4, R–1, S–2 |
+| Paragraph-based | 9 | (i) (a) 70 sq m; (ii) 38 |
+| | 10 | (i) (a) 20 cm; (ii) 225; (iii) 216 |
 
-1. (a) 322 cm² *(single correct)*
-2. (b) 16 cm² *(single correct)*
-3. (c) 56 m² *(single correct)*
-4. (d) 36 cm *(single correct)*
-5. (c) 96 *(single correct)*
-6. (a) 60 cm² *(single correct)*
-7. (a), (b), (c) *(multiple correct)*
-8. (a), (c), (d) *(multiple correct)*
-9. (a), (c), (d) *(multiple correct)*
-10. (a), (c), (d) *(multiple correct)*
-11. 1300 *(numerical answer)*
-12. 134 *(numerical answer)*
-13. 13 *(numerical answer)*
-14. (c) P–2, Q–4, R–3, S–1 *(matching)*
-15. (a) P–3, Q–4, R–1, S–2 *(matching)*
+### Practice
 
-### 3 Practice — the key
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (a) 100 sq cm · 2 (b) 64 sq cm · 3 (c) 100 · 4 (d) 12 units |
+| More than one correct | 5–8 | 5 (a), (b), (d) · 6 (b), (c), (d) · 7 (a), (b) · 8 (a), (b), (d) |
+| Numerical answer | 9–11 | 9 **20** · 10 **136** · 11 **16** |
+| Matching | 12–13 | 12 (a) · 13 (c) |
+| Paragraph-based | 14–15 | 14 (i) (c) 80; (ii) 17; (iii) 2000 · 15 (i) (a) 48 sq cm; (ii) 24; (iii) 48 |
 
-1 (c) · 2 (a) · 3 (d) · 4 (d) · 5 (b) · 6 (c) · 7 (b) · 8 (d) ·
-9 (c) · 10 (a) · 11 (a) · 12 (b) · 13 (c) · 14 (a) · 15 (d) · 16 (b)
-
-1. $2 \times (15 + 10) = 50$ cm.
-2. $36 \div 4 = 9$ m.
-3. $9 \times 9 = 81$ sq cm.
-4. $6 \times 5 = 30$ cm.
-5. $40 \div 5 = 8$ cm.
-6. Two sides of the square and one diagonal: $2s + 1d$.
-7. The two diagonals cut the square into 4 equal triangles, so each is
-   $\frac{1}{4}$.
-8. 10 tiles along 5 m and 6 along 3 m: $10 \times 6 = 60$.
-9. $12 \times 3 = 36 = 6 \times 6$. The others are 24, 60 and 40.
-10. The path is 2 m by 15 m: 30 sq m.
-11. Triangle $ABE$ is half of 40 sq cm wherever $E$ is, so the other two
-    together are $40 - 20 = 20$ sq cm.
-12. A diagonal unit is longer than a straight unit, so $4s + 4d$ is longer.
-13. A true (36 and 36); R false (24 and 26).
-14. A true ($6 \times 4 \div 2 = 12$); R true, and it is the reason.
-15. A false: a side of 3 gives 9 and a side of 6 gives 36, four times as
-    much. R true.
-16. A true (20 cm against 16 cm); R true (16 sq cm each); but the equal
-    areas are not why the perimeters differ.
-
-### 3 Practice — the other answers
-
-17. **6 cm**. $4 \times 6 - 3 \times 6 = 24 - 18 = 6$.
-18. **49 sq cm**. Side $28 \div 4 = 7$ cm.
-19. **3**. $7 + 1\frac{1}{2} + 3 = 11\frac{1}{2}$.
-20. **20 cm**. The joined side is inside the new figure, so four 5 cm sides
-    are left.
-21. **35 sq cm**. Width $24 \div 2 - 7 = 5$ cm, and $7 \times 5 = 35$.
-22. **The rectangle, by 6 cm.** It is 12 cm by 3 cm, perimeter 30 cm; the
-    square is 6 cm by 6 cm, perimeter 24 cm.
-23. **36 sq m**. $12 \times 8 - 10 \times 6 = 96 - 60 = 36$.
-24. **No.** A row of 10 has perimeter 22 units, and so does the new figure.
-25. **17 m**. $2 \times (5 + 4) - 1 = 17$.
-26. **12 cm by 5 cm**. The sides add up to 17 and multiply to 60; no other
-    whole-number pair does both.
-27. **8 cm**. The rectangle is $2 \times 40 = 80$ sq cm, and
-    $80 \div 10 = 8$.
-28. (a) **₹3840**: perimeter 128 m, twice round 256 m,
-    $256 \times 15 = 3840$. (b) 960 sq m. (c) The square field, side 32 m,
-    area 1024 sq m, is bigger by 64 sq m.
-29. (a) 12 square units, perimeter 14 units. (b) 11 square units,
-    perimeter still 14. (c) Perimeter 16 units. (d) A corner square has two
-    sides on the edge, and taking it away uncovers two new sides. A middle
-    square has one side on the edge, and taking it away uncovers three.
-30. **What the drawing must show:** a square whose corners are at the
-    middles of the sides of a 4 by 4 square on the dot paper. (a) $8d$.
-    (b) 16 square units. (c) Four triangles of 2 each, 8 square units.
-    (d) $16 - 8 = 8$ square units.
-31. (a) 240 sq m. (b) $48 + 36 + 12 = 96$ sq m. (c) $240 - 96 = 144$ sq m.
-    (d) The fence is $2 \times (8 + 6) = 28$ m, and $28 \times 25 = 700$:
-    ₹700.
+- Q1. Length + breadth $= 25$ cm and the length is 4 breadths, so the breadth
+  is 5 cm and the length 20 cm: $20 \times 5 = 100$.
+- Q2. The perimeter is $2 \times (11 + 5) = 32$ cm, so the side is 8 cm and
+  the area $8 \times 8 = 64$.
+- Q3. 10 small squares fit along each side: $10 \times 10 = 100$.
+- Q4. Each of the four outer squares has 3 sides on the edge, and the middle
+  square none: $4 \times 3 = 12$.
+- Q5. $5 \times 6 = 30$, $3 \times 10 = 30$, $15 \times 2 = 30$; but
+  $4 \times 7 = 28$.
+- Q6. The side is 9 cm and the area 81 sq cm; $2 \times (10 + 8) = 36$.
+- Q7. The triangle is half of $8 \times 6 = 48$ whichever side is its base.
+- Q8. $24 \div 6 = 4$, $24 \div 4 = 6$, $24 \div 3 = 8$ sides; $24 \div 8 = 3$
+  sides is a triangle.
+- Q9. $15 \div 3 = 5$ along and $12 \div 3 = 4$ across: $5 \times 4 = 20$.
+- Q10. $22 \times 16 - 18 \times 12 = 352 - 216 = 136$.
+- Q11. A corner square has 2 sides on the edge; taking it away uncovers 2
+  new sides, so the perimeter stays $4 \times 4 = 16$.
+- Q12. P: side 5, area 25. Q: side 6, perimeter 24. R: 21. S: 20.
+- Q13. P: $42 \div 6 = 7$. Q: $54 \div 9 = 6$. R: 8. S: $26 \div 2 - 4 = 9$.
+- Q14. $10 \times 8 = 80$ tiles; $2 \times (5 + 4) - 1 = 17$ m;
+  $80 \times 25 = 2000$ rupees.
+- Q15. $ABE$ is half of $12 \times 8 = 96$. $DE = 6$ cm, so $ADE$ is half of
+  a 6 cm by 8 cm rectangle, 24 sq cm. $ADE$ and $BCE$ together are
+  $96 - 48 = 48$.

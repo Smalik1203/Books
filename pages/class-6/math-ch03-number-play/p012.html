@@ -2,44 +2,104 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>You subtract a 2-digit number from a 4-digit number. How many digits can the difference have?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>Smallest difference: $1000 - 99 = 901$, which has 3 digits.</span>
-              <span class="work__why">smallest minus largest</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>Largest difference: $9999 - 10 = 9989$, which has 4 digits.</span>
-              <span class="work__why">largest minus smallest</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>Any other difference, such as $5000 - 50 = 4950$, lies in between.</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>The difference has either 3 digits or 4 digits, and never 2 or 5.</span></div>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Start with 1000, and keep four digits all the way: the first C is 0999. How many rounds does 1000 take to reach 6174?</li>
+            <li>Do 6382 and 2836 take the same number of rounds to reach 6174? Why or why not?</li>
+          </ol>
           </div>
-          <p>Every other difference lies between 901 and 9989. We did not need to try any of the differences in between.</p>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.6</div>
-        <ol class="c-questions">
-          <li>Write an example for each of these, wherever you can.<ol class="c-parts c-parts--1"><li>Add two 5-digit numbers to get a 5-digit sum more than 90,250.</li><li>Add a 5-digit and a 3-digit number to get a 6-digit sum.</li><li>Add two 4-digit numbers to get a 6-digit sum.</li><li>Add two 5-digit numbers to get a 6-digit sum.</li><li>Add two 5-digit numbers to get 18,500.</li><li>Subtract a 5-digit number from a 5-digit number to get a difference less than 56,503.</li><li>Subtract a 3-digit number from a 5-digit number to get a 4-digit difference.</li><li>Subtract a 4-digit number from a 5-digit number to get a 4-digit difference.</li><li>Subtract a 5-digit number from a 5-digit number to get a 3-digit difference.</li><li>Subtract a 5-digit number from a 5-digit number to get 91,500.</li></ol></li>
-        </ol>
+      <h2><span class="badge">3.7</span><span class="name">Clock and Calendar Numbers</span></h2>
+
+      <p>Some times on a 12-hour clock make pretty patterns, such as 4:44, 10:10 and 12:21. In 4:44 every digit is the same. In 10:10 the hours and the minutes are the same. And 12:21 reads the same from both ends.</p>
+
+      <p>Manish was born on 20/12/2012. Look at the digits of his date of birth: 2, 0, 1, 2, and then 2, 0, 1, 2 again. His sister Meghana was born on 11/02/2011. Her date of birth reads the same from left to right and from right to left, just as the time 12:21 does. Fig. 3.13 shows how the digits pair up.</p>
+
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 86" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The time 12:21 and the date 11/02/2011 written digit by digit, with curved lines joining each digit to the matching digit at the other end">
+            <rect class="dg-fill-b-soft" x="22" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="22" y="6" width="22" height="26"/>
+            <text class="dg-label" x="33" y="23.8" text-anchor="middle">1</text>
+            <rect class="dg-fill-b-soft" x="44" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="44" y="6" width="22" height="26"/>
+            <text class="dg-label" x="55" y="23.8" text-anchor="middle">2</text>
+            <text class="dg-label" x="71" y="23.8" text-anchor="middle">:</text>
+            <rect class="dg-fill-b-soft" x="76" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="76" y="6" width="22" height="26"/>
+            <text class="dg-label" x="87" y="23.8" text-anchor="middle">2</text>
+            <rect class="dg-fill-b-soft" x="98" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="98" y="6" width="22" height="26"/>
+            <text class="dg-label" x="109" y="23.8" text-anchor="middle">1</text>
+            <path class="dg-thin" d="M33 35 Q71 75.32 109 35"/>
+            <path class="dg-thin" d="M55 35 Q71 61.24 87 35"/>
+            <rect class="dg-fill-b-soft" x="150" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="150" y="6" width="22" height="26"/>
+            <text class="dg-label" x="161" y="23.8" text-anchor="middle">1</text>
+            <rect class="dg-fill-b-soft" x="172" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="172" y="6" width="22" height="26"/>
+            <text class="dg-label" x="183" y="23.8" text-anchor="middle">1</text>
+            <text class="dg-label" x="199" y="23.8" text-anchor="middle">/</text>
+            <rect class="dg-fill-b-soft" x="204" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="204" y="6" width="22" height="26"/>
+            <text class="dg-label" x="215" y="23.8" text-anchor="middle">0</text>
+            <rect class="dg-fill-b-soft" x="226" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="226" y="6" width="22" height="26"/>
+            <text class="dg-label" x="237" y="23.8" text-anchor="middle">2</text>
+            <text class="dg-label" x="253" y="23.8" text-anchor="middle">/</text>
+            <rect class="dg-fill-b-soft" x="258" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="258" y="6" width="22" height="26"/>
+            <text class="dg-label" x="269" y="23.8" text-anchor="middle">2</text>
+            <rect class="dg-fill-b-soft" x="280" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="280" y="6" width="22" height="26"/>
+            <text class="dg-label" x="291" y="23.8" text-anchor="middle">0</text>
+            <rect class="dg-fill-b-soft" x="302" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="302" y="6" width="22" height="26"/>
+            <text class="dg-label" x="313" y="23.8" text-anchor="middle">1</text>
+            <rect class="dg-fill-b-soft" x="324" y="6" width="22" height="26"/>
+            <rect class="dg-thin" x="324" y="6" width="22" height="26"/>
+            <text class="dg-label" x="335" y="23.8" text-anchor="middle">1</text>
+            <path class="dg-thin" d="M161 35 Q248 106.68 335 35"/>
+            <path class="dg-thin" d="M183 35 Q248 92.6 313 35"/>
+            <path class="dg-thin" d="M215 35 Q253 75.32 291 35"/>
+            <path class="dg-thin" d="M237 35 Q253 61.24 269 35"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.13</span> A time and a date that read the same from both ends. Each curve joins a pair of matching digits.</figcaption>
+        </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Could you find an example for every case in Question 1? If not, think about why. Make up more questions like these, and try them on your classmates.</li>
-        </ol>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Palindromic times and dates</div>
+        <ul class="c-keyidea__points">
+          <li>A time or a date is a palindrome if its digits read the same from both ends.</li>
+          <li>Leave out the colon and the slashes: 11/02/2011 is read as 11022011.</li>
+        </ul>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li><em>Always, sometimes or never?</em> Decide whether each statement is always true, only sometimes true, or never true. Give your reasons, and discuss them with the class.<ol class="c-parts c-parts--1"><li>A 5-digit number plus a 5-digit number gives a 5-digit number.</li><li>A 4-digit number plus a 2-digit number gives a 4-digit number.</li><li>A 4-digit number plus a 2-digit number gives a 6-digit number.</li><li>A 5-digit number minus a 5-digit number gives a 5-digit number.</li><li>A 5-digit number minus a 2-digit number gives a 3-digit number.</li></ol></li>
-        </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 6</div>
+        <div class="c-example__body">
+          <p>Which of these times on a 12-hour clock read the same from both ends: 5:15, 11:11, 12:12 and 9:59?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Leave out the colons: 515, 1111, 1212 and 959.</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Read each from right to left: 515, 1111, 2121 and 959.</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Only 1212 has changed.</span>
+              <span class="work__why">not a palindrome</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>5:15, 11:11 and 9:59 read the same from both ends. 12:12 does not.</span></div>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -1,4 +1,4 @@
-# Class 6 · Mathematics I · Chapter 10 — The Other Side of Zero
+# Class 6 · Mathematics II · Chapter 10 — The Other Side of Zero
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
@@ -57,8 +57,6 @@ The floors of Bela's Building of Fun (Fig. 10.2), used throughout 10.1:
 3. *Answers will vary.* For example, $0 + (-5) = -5$, $(-1) + (-4) = -5$ and
    $(+6) + (-11) = -5$. From any starting floor the movement is
    Floor $-5$ minus the starting floor.
-4. $(-3) + (+5) = +2$. Rehana reaches the Art Centre.
-5. Press $-4$: $(+3) + (-4) = -1$.
 
 ### Exercise 10.2
 
@@ -142,6 +140,12 @@ Floor $-1$. **Binnu** is on the lowest floor.
 4. (a) $(-5) + 0 = -5$ (b) $7 + (-7) = 0$ (c) $(-10) + 20 = 10$
    (d) $10 - 20 = -10$ (e) $7 - (-7) = 14$ (f) $(-8) - (-10) = 2$
 
+### Think and Reflect (unmarked number line)
+
+1. $-250$ is further from 0. It is 250 steps to the left of 0, and $+100$
+   is 100 steps to the right of 0.
+2. $30 - (-70) = 100$: a jump of 100 to the right, that is, $+100$.
+
 ### Exercise 10.8
 
 1. (a) $(-125) + (-30) = -155$ (b) $(+105) - (-55) = 160$
@@ -153,6 +157,11 @@ Floor $-1$. **Binnu** is on the lowest floor.
 ### Example 2 (worked in the book)
 
 $-3 - 2 = -5$, and $(-3) + (-2) = -5$.
+
+### Think and Reflect (changing subtraction into addition)
+
+1. $(-6) + (-4) = -10$ and $(+3) + (+7) = +10$.
+2. $(+9) - (+2) = +7$, and $(+9) + (-2) = +7$ too: both give the same answer.
 
 ## 10.2 The Token Model
 
@@ -200,7 +209,7 @@ $(+4) - (-6) = +10$.
 
 ## 10.3 Integers in Other Places
 
-### Think and Reflect (Table 10.13)
+### Think and Reflect (Table 10.14)
 
 1. The balance column reads **100, 160, 130, $-20$, 180**:
    $100 + 60 = 160$, $160 - 30 = 130$, $130 - 150 = -20$, $-20 + 200 = 180$.
@@ -278,6 +287,14 @@ $(+4) - (-6) = +10$.
 5. *Answers will vary.* A puzzle needs enough numbers given that a solver
    can start — two numbers in one row or column is a good start.
 
+### Think and Reflect (the grid game)
+
+1. **No.** The top row becomes $5 + (-1) + (-3) = 1$ and the left column
+   $5 + (-3) + (-1) = 1$, but the bottom row and the right column still add
+   to 0.
+2. **5 numbers.** Each circle strikes out one row, and a 5 by 5 grid has
+   5 rows.
+
 ### Exercise 10.16
 
 1. **The sum is always $-1$**, whichever numbers are circled. Each row of
@@ -287,7 +304,7 @@ $(+4) - (-6) = +10$.
    **$-14$**. (Down the diagonals: $7 + 1 + (-5) + (-11) = -8$ and
    $(-11) + (-6) + (-1) + 4 = -14$.)
 3. **Both** — it is the arrangement of the numbers. Each entry is a *row
-   number* plus a *column number*: in the first grid of Fig. 10.20 the row
+   number* plus a *column number*: in the first grid of Fig. 10.21 the row
    numbers are 0, $-9$, $-18$, $-27$ and the column numbers are 7, 10, 13,
    16. A game uses every row number once and every column number once, so
    it always gives $(0 + (-9) + (-18) + (-27)) + (7 + 10 + 13 + 16) = -8$.
@@ -335,6 +352,13 @@ $(+4) - (-6) = +10$.
 
 $(-27) + 15 = -12$, $(-8) + (-14) = -22$ and $12 - (-8) = 20$.
 
+### Think and Reflect (after Example 5)
+
+1. Owing ₹3 and then borrowing ₹5 more means owing ₹8 in all:
+   $(-3) + (-5) = -8$.
+2. $(-9) + 9 = 0$ is addition rule 4. $0 - 6 = -6$ is subtraction rule 5:
+   taking a number from zero gives its inverse.
+
 ### Exercise 10.19
 
 1. *Answers will vary.* In the Building of Fun: adding two positives is
@@ -351,91 +375,113 @@ $(-27) + 15 = -12$, $(-8) + (-14) = -22$ and $12 - (-8) = 20$.
    $(-9) + 4 = -5$; $7 + (-7) = 0$; $(-8) + 0 = -8$; $9 - 4 = 5$;
    $4 - 9 = -5$; $5 - (-4) = 9$; $(-6) - (-6) = 0$; $0 - (-7) = 7$.
 
+### Think and Reflect (the timeline, Fig. 10.23)
+
+1. From 300 BCE to 1 BCE is 299 years, and from 1 BCE to 628 CE is 628 more:
+   $299 + 628 = 927$ years.
+2. About 6 centuries: from 628 CE to the 13th century, the 1200s.
+3. The Nine Chapters (1st–2nd century CE) came before the Bakhshālī
+   manuscript (about 300 CE). The latest date is Carnot's, in the 18th century.
+
+---
+
+## By the Book
+
+Fifty questions in six forms: very short answer (2 marks), short answer (3),
+long answer (5), assertion and reason (1), case-based (4), objective (1).
+Written to BY-THE-BOOK.md at Class 6, 26 September 2026. The book prints
+the same key in Beyond the Book’s Answers stage.
+
+### Very short answer
+
+1. $(-9) + (+4) + (+5) = 0$.
+2. $-101$. It lies to the left of $-99$ on the number line.
+3. The inverse of $-12$ is 12, and the inverse of 12 is $-12$.
+4. $25 - (-10) = 25 + 10 = 35$ m.
+5. $-7$, $-10$, $-13$. The rule is: take away 3 each time.
+6. $(-7) - (-18) = 11$.
+7. $-11$ and $-9$. Their sum is $(-11) + (-9) = -20$.
+8. $(-4) + 7 = 3$, so 3 °C.
+9. Yes. Subtracting a negative number is the same as adding the matching positive number: both are $-5$.
+10. 6 zero pairs cancel and 4 negative tokens are left: $-4$.
+
+### Short answer
+
+11. $40 - (-75) = 115$, a credit of ₹115. Then $40 - 60 = -20$ rupees.
+12. $-18 \lt -4 \lt 12$. $12 - (-18) = 30$ m.
+13. 5 positive and 3 negative tokens are left: $+2$. It shows $0 - (-2) = +2$.
+14. Top middle $(-5) - (4 + (-6)) = -3$. Right middle $(-5) - ((-6) + 1) = 0$.
+15. $7 - (-16) = 23$ degrees. Evening: $7 - 12 = -5$, so $-5$ °C.
+16. Start at 3 and jump 5 steps to the left: 3 steps reach 0, and 2 more reach $-2$.
+17. $-4$, 4, $-18$, 18. $-4$ and 4 are inverses, and so are $-18$ and 18.
+18. $4 - 9 + 3 = -2$: Floor $-2$. One press of $(-2) - (+4) = -6$.
+19. 2 and $-5$: $2 + (-5) = -3$ and $2 - (-5) = 7$.
+20. $(-35) + 20 = -15$ (addition rule 3). $20 - (-35) = 20 + 35 = 55$ (subtraction rule 3).
+
+### Long answer
+
+21. 23, 17, 11, 5, $-1$: $-1$ is the 5th number. $23 - 10 \times 6 = -37$, so $-37$ is the 11th number.
+22. Floors $+5$, $-3$, $-1$, $-7$, $-3$; the lowest is $-7$. $(+5) + (-8) + (+2) + (-6) + (+4) = -3$, the last floor. Press $(+5) - (-3) = +8$.
+23. Rows 1, 3, 8; $-6$, $-4$, 1; $-3$, $-1$, 4. For example $1 + (-4) + 4 = 1$ and $8 + (-6) + (-1) = 1$. A game takes each row number and each column number once, so the sum is always $(3 - 4 - 1) + (-2 + 0 + 5) = 1$.
+24. $250 - 400 = -150$; $-150 + 120 = -30$; $-30 - 90 = -120$; $-120 + 300 = 180$. Below zero after the first three entries; the final balance is ₹180.
+25. $40 - 90 = -50$; $-50 + 35 = -15$; $-15 - 60 = -75$. The lowest level is $-75$ m, and $40 - (-75) = 115$ m below the start.
+26. Leh, Manali, Srinagar, Shimla, Mussoorie. $1 - (-14) = 15$ degrees. Manali $-6 - 3 = -9$ °C; Mussoorie $1 - 3 = -2$ °C.
+27. Put down 4 zero pairs and take away 4 negative tokens: 6 positive tokens are left, $+6$. Also $(+2) + (+4) = +6$, and from $-4$ to 2 is 6 steps to the right.
+28. Border sum $(-3) + 4 + 1 = 2$. Bottom middle $2 - ((-1) + (-5)) = 8$. Right middle $2 - (1 + (-5)) = 6$.
+29. $180 + 320 - 1 = 499$ years. $180 + 250 = 430$, so 430 BCE.
+30. $+250$, $+130$, $-170$, $+10$, $-30$: lowest after day 3. $100 - (-30) = 130$, a profit of ₹130.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (c) · 34 (d) · 35 (a)
+
+31: $(-8) + 3 = -5$, and R is the rule used. 32: both true, but the order of $-10$ and $-2$ is not explained by $10 \gt 2$ (it is the other way round). 33: A is true; R is false, since $-8$ is further from 0. 34: A is false, since $-5$ lies to the left of $-2$. 35: $(-6) + (+6) = 0$ because each is the inverse of the other.
+
+### Case-based questions
+
+36. (i) S (ii) $3 - (-11) = 14$ degrees (iii) P is $-7 + 9 = 2$ °C and S is $-11 + 5 = -6$ °C, so P is warmer, by 8 degrees.
+37. (i) $420 - (-65) = 485$ m (ii) $(-65) - (-18) = -47$ m (iii) the bird is at $35 + 30 = 65$ m, so $65 - (-65) = 130$ m above the sea bed.
+38. (i) $+7$ (ii) $-3$ (iii) $-4$. $7 + (-3) + (-4) = 0$, because she ends on the floor where she began.
+39. (i) $500 - 650 = -150$ rupees (ii) $-150 + 200 - 120 = -70$ rupees (iii) $100 - (-70) = 170$, so ₹170.
+40. (i) 20 (ii) $20 + (-18) = 2$ (iii) Arjun scores $15 + (-21) = -6$, so Riya scores more, by 8 points.
+
+### Objective questions
+
+41 (c) · 42 (b) · 43 (a) · 44 (d) · 45 (d) · 46 (a) · 47 (a) · 48 (c) · 49 (c) · 50 (b)
+
 ---
 
 ## Beyond the Book
 
-Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets eighteen examples as steps
-(numbered 1 to 18 afresh, as Class 7 does — they are not the body's
-Examples 1 to 5), and stage 4 prints the key to stage 3. Repeated here so
-the booklet is complete.
+### Tried and explained (no head in the book)
 
-### Stage 1 · Using What You Know
+Kept word for word from the earlier chapter; only the stage head went. The
+answers are in the running text after each question: the lift stops on Floor
+$-2$; $-3$ °C; neither is larger, both are $-28$; 21; the correct value is
+$-13$.
 
-1. $(-7) + (+2) = -5$ and $(+3) + (-5) = -2$. The lift stops on **Floor $-2$**.
-2. $6 + (-9) = -3$: **$-3$ °C**, 3 degrees below 0 °C.
-3. **Neither.** Both are $-28$.
-4. **21.** Every number from $-20$ to 20 pairs with its inverse.
-5. The answer must be less than $-8$. The correct value is $-13$.
+### Solved examples
 
-### Stage 2 · Solved Examples
+1. (a) $-4$. 2. (b) $-3$. 3. (a), (c), (d). 4. (a), (b), (d). 5. 13. 6. 11.
+7. (a) P–3, Q–4, R–1, S–2. 8. (c) P–2, Q–1, R–3, S–4.
+9. (i) (a) $-1$ °C; (ii) 11; (iii) $-4$. 10. (i) (c) $+5$; (ii) 0; (iii) 5.
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+### Practice
 
-1. (a) −1 *(single correct)*
-2. (c) 12°C *(single correct)*
-3. (c) 3 − (−8) *(single correct)*
-4. (a) −4 *(single correct)*
-5. (b) −3 *(single correct)*
-6. (d) 7 *(single correct)*
-7. (a), (c), (d) *(multiple correct)*
-8. (a), (b), (c), (d) *(multiple correct)*
-9. (a), (b), (d) *(multiple correct)*
-10. (a), (b), (d) *(multiple correct)*
-11. 11 *(numerical answer)*
-12. 13 *(numerical answer)*
-13. 11 *(numerical answer)*
-14. (a) P–3, Q–4, R–1, S–2 *(matching)*
-15. (c) P–3, Q–4, R–1, S–2 *(matching)*
+1 (a) · 2 (c) · 3 (d) · 4 (b) · 5 (a), (b), (d) · 6 (b), (c) · 7 (a), (c), (d) · 8 (a), (b), (c) · 9: 3 · 10: 10 · 11: $-12$ · 12 (d) · 13 (b) · 14 (i) (a), (ii) $-5$, (iii) 8 · 15 (i) (b), (ii) $-45$, (iii) $-55$
 
-### Stage 3 · Practice
-
-| | | | | | | | |
-|---|---|---|---|---|---|---|---|
-| 1 (c) | 2 (b) | 3 (a) | 4 (d) | 5 (b) | 6 (a) | 7 (a) | 8 (d) |
-| 9 (c) | 10 (b) | 11 (c) | 12 (c) | 13 (a) | 14 (b) | 15 (c) | 16 (d) |
-
-Questions 22, 27 and 28 were in the chapter body until the body was made
-NCERT's alone: 22 was Exercise 10.18's last question, 27 the one before it,
-and 28 the last question of Exercise 10.17, which pointed at that set's
-fourth question and now carries its own six expressions.
-
-15. **(c).** A is true: $-3$ lies to the right of $-8$. R is false: $-3$ is 3
-    steps from 0 and $-8$ is 8 steps, so $-8$ is the one further away.
-
-17. **$-12$.** The inverse of $-12$ is 12, and the inverse of 12 is $-12$.
-18. **$-101$.** It lies to the left of $-99$ on the number line.
-19. $(-9) + (+4) + (+5) = 0$.
-20. **35 m.** $25 - (-10) = 35$.
-21. *Answers will vary.* For example, 2 and $-5$: $2 + (-5) = -3$.
-22. $-7$, $-10$, $-13$. Each number is 3 less than the one before it.
-23. **₹115.** $40 - (-75) = 115$.
-24. $-18 \lt -4 \lt 12$. The bottom of the well is **30 m** below the roof:
-    $12 - (-18) = 30$.
-25. **$+2$.** The pocket was worth 0; 5 positive and 3 negative tokens are
-    left. It shows $0 - (-2) = +2$.
-26. Top middle: $4 + (-6) = -2$ and $(-5) - (-2) = -3$. Right middle:
-    $(-6) + 1 = -5$ and $(-5) - (-5) = 0$. **$-3$ and 0.**
-27. **23 degrees.** $7 - (-16) = 23$.
-28. *Answers will vary.* The six values are $7 - 11 = -4$, $(-7) - 11 = -18$,
-    $(-11) - (-7) = -4$, $11 - 7 = 4$, $11 - (-7) = 18$ and
-    $(-7) - (-11) = 4$. Two more pairs: $(-7) - 11$ with $11 - (-7)$, and
-    $(-11) - (-7)$ with $(-7) - (-11)$. ($7 - 11$ with $(-7) - (-11)$, and
-    $(-11) - (-7)$ with $11 - 7$, also work.) Swapping the two numbers in a
-    subtraction gives the inverse of the value.
-29. (a) $-1$, $-7$, $-13$, $-19$ (b) **$-1$** (c) **Yes.** Counting on gives
-    $-25$, $-31$, $-37$, so $-37$ is the 11th number.
-30. (a) $+5$, $-3$, $-1$, $-7$, $-3$ (b) **$-7$**
-    (c) $(+5) + (-8) + (+2) + (-6) + (+4) = -3$ — **yes**, the last floor
-    (d) $(+5) - (-3) = +8$: press **$+8$**.
-31. (a) rows **1, 3, 8** and **$-6$, $-4$, 1** and **$-3$, $-1$, 4**
-    (b) *answers will vary*: $1 + (-4) + 4 = 1$ and $8 + (-6) + (-1) = 1$
-    (c) a game uses each row number once and each column number once, so it
-    always gives $(3 + (-4) + (-1)) + ((-2) + 0 + 5) = 1$.
-32. (a) **S** (b) **S, P, R, Q** (c) $3 - (-11) = 14$ degrees
-    (d) $(-7) + 9 = 2$ °C.
-33. (a) $420 - (-65) = 485$ m (b) $(-65) - (-18) = -47$ m (c) **the village
-    and the reef**: $35 - (-18) = 53$ (d) $35 + 30 = 65$, so $+65$ m, and
-    $65 - (-65) = 130$ m above the sea bed.
+1. $-15 + 8 = -7$; $-7 + 10 = 3$; $3 + (-6) = -3$.
+2. The inverse of $-9$ is 9, and $9 + 4 = 13$.
+3. $-6 + 3 + (-5) = -8$.
+4. From $-8$ to 8 the numbers pair with their inverses; $-10$ and $-9$ are left: $-19$.
+5. $(-9) + 5 = -4$; $3 - 7 = -4$; $(-1) - (-5) = 4$; $(-6) - (-2) = -4$.
+6. $-3 \lt 2$, so (a) is false; $-12 \gt -13$, so (d) is false.
+7. $-2 + 7 - 2 = 3$; $-2 + 2 + 2 - 2 = 0$; $-2 + 5 = 3$; $-2 + 3 + 3 - 1 = 3$.
+8. $(-4) - (-9) = 5$; $(-2) + 7 = 5$; $6 - (-1) = 7$; $(-5) - 3 = -8$.
+9. After 2 hours it is $-8 + 6 = -2$ °C, and after 3 hours $-8 + 9 = 1$ °C: 3 hours.
+10. Ten pairs, each worth 1: $(-1) + 2 = 1$, and so on up to $(-19) + 20 = 1$.
+11. The four side sums make $4 \times (-4) = -16$. The corners add to $(-3) + 5 + 2 + (-6) = -2$, and each corner is in two sums, so the middles add to $-16 - (-4) = -12$.
+12. $-15$, 3, 15, $-3$: P–3, Q–2, R–4, S–1.
+13. $-25$, $-26$, $+25$, $-24$: P–3, Q–1, R–2, S–4.
+14. (i) $4 + (-6) = -2$ (ii) $-2 - 3 = -5$ (iii) $3 - (-5) = 8$ positive tokens.
+15. (i) $35 - (-15) = 50$ m (ii) $(-60) - (-15) = -45$ (iii) $-60 + 5 = -55$.

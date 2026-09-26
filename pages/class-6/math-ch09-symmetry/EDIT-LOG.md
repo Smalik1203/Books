@@ -1,5 +1,138 @@
 # Class 6 · Mathematics I · Chapter 9 — Symmetry
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its examples, its
+practice and its key further down this log.** Converted by CONVERT-V2.md,
+with Class 6 Chapter 1 as the model. `chapter.json`: `maths-v2`, palette
+`prism`, edition `196x276-large`, `keepExerciseSets: true`, accent
+`#1e4e8c` (subject stays Mathematics II). **37 pages** (32 before, on the
+old edition):
+
+* **Body p001–p020**: NCERT's two sections, its one example (the strip),
+  its activities and every NCERT exercise question, in NCERT's order,
+  ending on a new **Summary** page (p020, `data-close`, ten points after
+  NCERT's six summary points).
+* **By the Book p090–p095**, six pages: 50 questions to BY-THE-BOOK.md, all
+  new — very short 10, short 10, long 10, assertion and reason 5 (keys a a
+  c d b), case-based 5 (pookalam, Diwali star lantern, chessboard, kolam,
+  a TOYS signboard), objective 10 (keys b c a b c d d b c a; one
+  multi-statement item, Q48; one named student's claim, Q49). No figures:
+  every shape is described in words. p095 carries `data-close`.
+* **Beyond the Book p101–p111**: the six tried-and-explained questions
+  with no stage head, then Single correct · More than one correct ·
+  Numerical answer · Matching · Paragraph-based, two solved examples and
+  then practice in each (4 · 4 · 3 · 2 · 2). Answers open p110 and end on
+  p111 (By the Book key, then Beyond key, traces in runs of two).
+
+### Body: what changed
+
+* **Questions an earlier redesign added, cut** (checked against the NCERT
+  source, `assets/sources/class-6/maths/Chapter 9.pdf`, whose first Figure
+  it Out has two questions and whose last set has eleven plus the tiles):
+  Exercise Set 9.1 Q3 (three things in the classroom) and Q4 (is the
+  dashed line of Fig. 9.2(b) a line of symmetry?), and Exercise Set 9.4
+  Q13 (the Parliament outline against a triangle with equal sides). Their
+  answers are gone from ANSWERS.md. The idea of the old 9.1 Q4 is now said
+  in the running text after Fig. 9.2(b), where the two pieces are named as
+  equal in shape and size but not mirror halves.
+* **`dg-fill-d` removed** (it prints beige in maths-v2). Every sheet of
+  paper, the cloud of Fig. 9.1, the arms of Figs 9.24 and 9.25 and the
+  Parliament outline are now `dg-fill-b-soft` (pale sky). In Fig. 9.25 the
+  shaded arm stays `dg-fill-a` (sunflower), so the turned arm is still a
+  different class from the others. No green or brown fill is left.
+* **Exercise figures moved inside their questions' `<li>`**: Figs 9.3,
+  9.10–9.20, 9.26–9.28 and 9.30–9.33. The `c-figure-context` wrappers
+  round Ex. 9.2 Q5 and Q12 went with them.
+* **Key ideas.** New: *Symmetry* (the opener), *Reflection symmetry*
+  (replacing the sentence that defined it), *Radial arms* (two points,
+  after the 5, 6 and 7 arms Think and Reflect). *Rotational symmetry* is
+  now two one-line points. Every section (and the opener) has a key idea
+  and a Think and Reflect.
+* **Added, as teaching at the joins** (to fill pages on the larger
+  edition, none of it answers an exercise): **Example 1** in *Reflection*,
+  a triangle PQR with PQ = PR reflected in its line of symmetry (stepped,
+  with a Check row; the strip is now **Example 2**); a paragraph after Fig.
+  9.2(b); a Think and Reflect after Exercise Set 9.2 (the national flag's
+  one line of symmetry); a second item in the game's Think and Reflect (a 5
+  by 5 grid); one sentence each on the opener, on the full turn, on the
+  square's centre (a pin through a paper square) and on the circle (it has
+  no smallest angle of symmetry, which NCERT says in its own words).
+* **Figure sizes**: Fig. 9.17 md → sm, Fig. 9.23 md → sm, Fig. 9.29 lg →
+  xl, Fig. 9.31 sm → md, Fig. 9.32 sm → xl, Fig. 9.33 md → xl.
+  `check-labels` finds no collision at any size.
+* **Plain English / fitting**: Ex. 9.2 Q6, Q7 and Q11 shortened (Q11's
+  "drawing (a) is done for you" moved into the Fig. 9.18 caption); the
+  order sentence after the key idea shortened. The last two words of
+  every paragraph, item and step row are joined by a no-break space, so no
+  word stands alone.
+
+### Beyond the Book
+
+* **Tried and explained, word for word, with one change.** The radial arms
+  question offered 8, 9, 11 and 12 arms, and its answer printed
+  $360 \div 8 = 45$: eight equal arms have $45^\circ$ as their smallest
+  angle, which is the answer to Exercise Set 9.4 Q6(a) (*can a figure have
+  $45^\circ$ as its smallest angle of symmetry?*). By DESIGN-MATHS §6a the
+  "answers a body question" rule wins, so 8 became **10**: *9, 10, 11, 12*,
+  and *$360 \div 9 = 40$, $360 \div 10 = 36$ and $360 \div 12 = 30$, so 9,
+  10 and 12 arms work.* Nothing else was touched. The letters item (H and
+  X) and the two squares at a corner are figures with both kinds of
+  symmetry, and so could serve as answers to the open Ex. 9.4 Q2; they
+  were kept, as the 16 September repair (user's decision) kept them.
+* **Examples.** Of the 20 September set, only old 3 (a point 4 cm from the
+  mirror line), old 8 (statements about reflection) and old 13 (13 cm →
+  6.5 cm) were kept, in plain English. The rest were replaced because they
+  answer the body: old 1 and 14 (the regular octagon's $45^\circ$ and the
+  regular polygons' turns — Ex. 9.4 Q6(a), Q9), old 2 and 15 (a
+  rectangle's two lines — the rectangle Think and Reflect; the triangles —
+  Ex. 9.2 Q9), old 5 (a parallelogram — Ex. 9.4 Q3(c)), old 6 (two folds,
+  four holes — Ex. 9.2 Q3), old 9 and 12 (the square, triangle and hexagon
+  — Ex. 9.2 Q6), old 10 (smallest angle $60^\circ$ — Ex. 9.4 Q4), old 11
+  (sides from the smallest turn — Ex. 9.4 Q9). New: 20 arms with every
+  fifth red; two lines exactly (plus sign, oval, two touching circles);
+  36 spokes with every third painted; two matching (arms to angles; shapes
+  of four squares to lines); two paragraph-based (a 12-petal rangoli in
+  three colours, two parts; a 40 cm strip folded and punched, three
+  parts). Tabs read "Example N"; no format lines.
+* **Practice**, 15 new questions in the five formats. Numbers were chosen
+  to avoid 5, 6, 7 and 8 equal arms and 24 spokes, whose angles answer the
+  body's Think and Reflects, Ex. 9.4 Q6 and the Ashoka Chakra.
+
+### Checks at close
+
+`build.mjs`: all pages fit, nothing in the margin. Fill 1:89 2:89 3:94
+4:97 5:93 6:89 7:99 8:97 9:96 10:93 11:94 12:90 13:97 14:99 15:95 16:90
+17:91 18:90 19:92 20:93 (Summary, close) 21:95 22:88 23:98 24:100 25:98
+26:74 (By the Book, close) 27:98 28:91 29:89 30:100 31:98 32:90 33:93 34:99
+35:95 36:95 37:95 (last). `lone-words`: 0. `check-sums`: 0 wrong.
+`orphans`: 0 stranded. `check-labels`: no collisions. `fit-options`: every
+option row fits (six lists narrowed with `--fix`). `gaps`: every page at
+least 88% full.
+
+**The key's stub page pulled back** (main-session review, same day): the
+Answers had run onto a third page (p112, 14%). Five worked-answer rows were
+shortened in the book's key, with the same values (By the Book 21, 23, 27,
+29; Beyond 11 and 14), and p112's rows joined p111 in two-row blocks.
+ANSWERS.md keeps the fuller working. The Answers now end on p111 (95%).
+
+**`check-numbers.mjs` updated to the new layout** (515 checks, 0 failed).
+It had failed at HEAD since the 20 September examples (it looked for Figs
+9.35–9.43, which that rewrite removed). Kept: the arithmetic sweep, every
+body figure read from its SVG, stage 1 read back (now from the tried
+questions before the first part head, with 9, 10, 11, 12 arms), and the
+ANSWERS.md body values. Chapter 1's figures are now Figs 1.8 and 1.11, as
+Ex. 9.4 Q8–Q10 print. New section E: By the Book's numbering 1–50 and the
+six forms in order; every objective option tested, exactly one right and
+equal to the printed key; the five assertion–reason keys from the truth
+of A and R; the written answers recomputed; grids, floors, the
+chessboard, the kolam, the garland, the pookalam, the lanterns and the
+shapes of squares built as figures and their lines and orders found;
+Beyond's parts, counts (4 · 4 · 3 · 2 · 2), examples and practice
+recomputed and the printed key read back; ANSWERS.md agrees. Planted
+breaks (key 43 changed to (b); the truth of reason 32) were caught.
+
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

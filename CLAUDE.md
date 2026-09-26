@@ -3,7 +3,9 @@
 A print book, not a web app. Every decision below exists because getting it
 wrong wasted real time.
 
-**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** Before writing any By the Book
+**Read [DESIGN.md](DESIGN.md), then [DESIGN-MATHS.md](DESIGN-MATHS.md) or [DESIGN-SCIENCE.md](DESIGN-SCIENCE.md) for the subject, before touching a page.** To convert a chapter to the maths-v2 design,
+follow [CONVERT-V2.md](CONVERT-V2.md) step by step; Class 6 Chapter 1 is the
+model. Before writing any By the Book
 questions, read [BY-THE-BOOK.md](BY-THE-BOOK.md) — how CBSE frames each form,
 and how the division scales from Class 6 to 10. The design system is
 enforced by the builder, not by discipline — a page that invents its own
@@ -65,15 +67,29 @@ one numeral and the outline bar carries nothing, but both bleeding off the
 edge is deliberate (§ the bleed sheet), and the skew ties the foot to the
 chapter openers. Reopen it with the tool rather than from memory.
 
-**The maths-v2 design has its own furniture** (chosen 26 September 2026
-from three options rendered on real pages): a solid indigo band bleeding
-off the head with the running head in white small capitals inside it, a
-sunflower rule under it and a sky square at its outer end; at the foot,
-an indigo band bleeding off the tail with the folio in white. The same on
-every page of every chapter. Tried and rejected, so do not bring them
-back: fore-edge thumb tabs, colours that change by chapter or part, and a
-tapered gradient wedge. It lives in `css/maths-v2.css` §13 and hides the
-slab and bar below, which the house design keeps.
+**The maths-v2 design has its own furniture**, taken from the science-v2
+pages on 27 September 2026: a chapter tab bleeding off the head's left
+corner with a slanted end and a paler slant behind it, holding a small
+line motif and CHAPTER N in white capitals; the running title at the
+right over a hairline; at the foot, *ClassBridge · Mathematics N* over a
+hairline and the folio in a matching slanted tab at the outer corner. The
+builder writes the markup (`v2Runhead`, `v2Pagefoot` in `build.mjs`) and
+`css/maths-v2.css` §13 sizes science's own paths in millimetres. It
+replaced the full-width indigo bands of 26 September. Tried and rejected,
+so do not bring them back: fore-edge thumb tabs and a tapered gradient
+wedge. The science pages print *LearnLab · Science 6* in that foot; the
+maths books say ClassBridge, which is the books' name.
+
+**Each maths-v2 chapter has its own colour** (27 September 2026, which
+reversed the earlier one-colour rule). Only the structure colour changes —
+tabs, section heads, tables, running title, folio: the `--teal` family in
+`css/palette-prism-<name>.css`. Every chapter's colour sits at one
+lightness and one low chroma (OKLCH L 0.46, C 0.07) and only the hue
+moves; hand-picked vivid colours were tried and rejected. The boxes keep
+one colour everywhere so a colour keeps its meaning: sky examples,
+sunflower Think and Reflect, berry key ideas, violet summary, and
+exercise sets and By the Book in Class 7's muted mauve (`#915074` on
+`#faedf3`), which replaced prism's vermilion.
 
 What did change is where it meets the cut. Both bars stopped dead on the
 trim with the folio 1.5mm above it, so a guillotine a millimetre out left

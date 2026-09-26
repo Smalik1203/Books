@@ -2,7 +2,30 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Is 42 divisible by 12? The prime factorisations are $42 = 2 \times 3 \times 7$ and $12 = 2 \times 2 \times 3$. Every prime factor of 12 is also a prime factor of 42. But 2 appears twice in the factorisation of 12, and only once in the factorisation of 42. So the prime factorisation of 12 is not included in that of 42, and 42 is not divisible by 12. Dividing shows the same thing: $42 = 12 \times 3 + 6$, which leaves a remainder of 6.</p>
+      <h3>Using prime factorisation to check divisibility</h3>
+
+      <p>How can we check whether one number is divisible by another, without a long division? Prime factorisation helps again.</p>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Is 168 divisible by 12?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$168 = 2 \times 2 \times 2 \times 3 \times 7$ and $12 = 2 \times 2 \times 3$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$168 = (2 \times 2 \times 3) \times (2 \times 7) = 12 \times 14$</span>
+              <span class="work__why">group 168’s primes</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes, 168 is divisible by 12</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Now try 75 and 21: $75 = 3 \times 5 \times 5$ and $21 = 3 \times 7$. If 75 were a multiple of 21, every prime factor of 21 would be a prime factor of 75. But 7 is not, so 75 is not divisible by 21. Dividing shows the same: $75 = 21 \times 3 + 12$.</p>
+
+      <p>Is 42 divisible by 12? $42 = 2 \times 3 \times 7$ and $12 = 2 \times 2 \times 3$. Every prime of 12 is in 42, but 2 appears twice in 12 and only once in 42. So 42 is not divisible by 12. Dividing shows the same: $42 = 12 \times 3 + 6$.</p>
 
       <div class="c-keyidea">
         <div class="c-keyidea__title">Checking divisibility</div>
@@ -12,7 +35,7 @@
       <div class="c-practice">
         <div class="c-practice__head">Exercise Set 5.5</div>
         <ol class="c-questions">
-          <li>Are these pairs of numbers co-prime? Guess first. Then use prime factorisation to check your answer.<ol class="c-parts c-parts--4"><li>30 and 45</li><li>57 and 85</li><li>121 and 1331</li><li>343 and 216</li></ol></li>
+          <li>Are these pairs co-prime? Guess first, then check with prime factorisation.<ol class="c-parts c-parts--4"><li>30 and 45</li><li>57 and 85</li><li>121 and 1331</li><li>343 and 216</li></ol></li>
         </ol>
       </div>
 
@@ -24,7 +47,7 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="3">
-          <li>One number has the prime factorisation $2 \times 3 \times 7$. Another has the prime factorisation $3 \times 7 \times 11$. Are the two numbers co-prime? Does one of them divide the other?</li>
+          <li>One number is $2 \times 3 \times 7$ and another is $3 \times 7 \times 11$. Are the two numbers co-prime? Does one of them divide the other?</li>
         </ol>
       </div>
 
@@ -33,18 +56,6 @@
           <li>Guna says, “Any two prime numbers are co-prime.” Is he right?</li>
         </ol>
       </div>
-
-      <h2><span class="badge">5.5</span><span class="name">Divisibility Tests</span></h2>
-
-      <p>So far, we have found the factors of numbers for many reasons: to find out whether a number is prime, and whether two numbers are co-prime. Finding the factors of a small number is easy. How do we find the factors of a large number?</p>
-
-      <p>Take 8560. Does it have any factors from 2 to 10? For some of these numbers, you can find out without doing a long division. Can you find which ones?</p>
-
-      <h3>Divisibility by 10</h3>
-
-      <p>Is 8560 divisible by 10? This is another way of asking whether 10 is a factor of 8560. To find out, look for a pattern in the multiples of 10.</p>
-
-      <p>The first few multiples of 10 are 10, 20, 30, 40, … Carry on the list and look at it closely. What pattern do you see? Is 125 a multiple of 10? Will 125 ever appear in the list? Why, or why not? Which of 70, 705 and 7000 are multiples of 10? Write down a multiple of 10 that is larger than 1000, and one smaller than 1000. Now, is 8560 divisible by 10?</p>
 
     </div>
   </div>

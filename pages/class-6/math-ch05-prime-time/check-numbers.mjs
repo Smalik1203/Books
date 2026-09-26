@@ -1,708 +1,265 @@
 #!/usr/bin/env node
-/* Re-derive every number this chapter prints.
-   Nothing here restates a printed value: each claim is computed from
-   first principles — trial division, divisor lists, common multiples —
-   and then compared with what is on the page.
+/* Re-derive the numbers this chapter prints.
 
      node pages/class-6/math-ch05-prime-time/check-numbers.mjs
 
-   Three parts:
-     A  every arithmetic identity set as maths anywhere in the chapter
-     B  the claims arithmetic alone cannot check: that a factor is prime,
-        that a list of factors is complete, that a count is right
-     C  every multiple-choice and assertion-reason question — exactly one
-        option is right, and it is the one the printed key gives
+   Rewritten on 26 September 2026 for the maths-v2 chapter (summary page,
+   By the Book in six forms, Beyond the Book by format), after the model of
+   Chapters 1 and 3. The version before it checked a layout that no longer
+   exists (Beyond's "Type" heads, Fig. 5.14, its practice run of 31, the
+   old page numbers) and is in git history; that version also solved the
+   body's prime puzzles A-D from their SVGs, which this one does not.
 
-   Exits non-zero on the first thing that does not hold up. */
+   A  every arithmetic identity set as maths ($...$) on every page and in
+      ANSWERS.md
+   B  the key is complete: By the Book 1-50, Beyond practice 1-15, every
+      solved example ends in an Answer row; example tabs run 1, 2, 3, ...
+   C  every objective, assertion-reason, multiple-correct and matching
+      question: the right option is computed here and must be the one
+      the key (or the example's Answer row) names
+   D  every other number the By the Book and Beyond keys print is computed
+      here and must appear in its key row
 
-import fs from 'node:fs';
+   Exits 1 on any failure. */
+import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
-let pass = 0;
-const fails = [];
+const B = String.fromCharCode(92);
+const PAGES = readdirSync(DIR).filter(f => /^p\d{3}\.html$/.test(f)).sort();
+const HTML = Object.fromEntries(PAGES.map(f => [f, readFileSync(path.join(DIR, f), 'utf8').replace(/\r\n/g, '\n')]));
+const ANSWERS = readFileSync(path.join(DIR, 'ANSWERS.md'), 'utf8').replace(/\r\n/g, '\n');
+let fails = 0, checks = 0;
+const ok = (label, cond, detail = '') => { checks++; if (!cond) { fails++; console.log(`  x ${label}${detail ? '  ' + detail : ''}`); } };
+const text = h => h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&ndash;/g, '–').replace(/&hellip;/g, '…')
+  .replace(/&ldquo;|&rdquo;/g, '"').replace(/&rsquo;/g, '’').replace(/\s+/g, ' ').trim();
 
-function ok(what, got, want) {
-  const same = JSON.stringify(got) === JSON.stringify(want);
-  if (same) pass++;
-  else fails.push(`${what}\n      computed ${JSON.stringify(got)}\n      printed  ${JSON.stringify(want)}`);
-}
-function is(what, cond) {
-  if (cond) pass++; else fails.push(what);
-}
-
-/* ---- the mathematics, computed ------------------------------ */
-
-const isPrime = (n) => {
-  if (!Number.isInteger(n) || n < 2) return false;
-  for (let d = 2; d * d <= n; d++) if (n % d === 0) return false;
-  return true;
-};
-const factorise = (n) => {
-  const out = [];
-  for (let d = 2; d * d <= n; d++) while (n % d === 0) { out.push(d); n /= d; }
-  if (n > 1) out.push(n);
-  return out;
-};
-const divisors = (n) => {
-  const out = [];
-  for (let d = 1; d <= n; d++) if (n % d === 0) out.push(d);
-  return out;
-};
+/* ---- the chapter's mathematics -------------------------------------- */
+const isPrime = n => { if (!Number.isInteger(n) || n < 2) return false; for (let d = 2; d * d <= n; d++) if (n % d === 0) return false; return true; };
+const factorise = n => { const o = []; for (let d = 2; d * d <= n; d++) while (n % d === 0) { o.push(d); n /= d; } if (n > 1) o.push(n); return o; };
+const divisors = n => { const o = []; for (let d = 1; d <= n; d++) if (n % d === 0) o.push(d); return o; };
 const common = (a, b) => divisors(a).filter(d => b % d === 0);
 const gcd = (a, b) => (b ? gcd(b, a % b) : a);
 const lcm = (...xs) => xs.reduce((a, b) => a * b / gcd(a, b));
 const coprime = (a, b) => gcd(a, b) === 1;
-const primesUpTo = (n) => { const o = []; for (let i = 2; i <= n; i++) if (isPrime(i)) o.push(i); return o; };
-const countMultiples = (m, lo, hi) => { let c = 0; for (let i = lo; i <= hi; i++) if (i % m === 0) c++; return c; };
-
-/* ---- A. every arithmetic identity on the page ---------------- */
-
-const pages = fs.readdirSync(DIR).filter(f => /^p\d+\.html$/.test(f)).sort();
-
-/* A maths span is arithmetic we can check only when every side of it
-   parses to a number. A span with a placeholder in it (\square, ???) or
-   with words in it is skipped, and the count of skips is reported so a
-   silent drop cannot hide a wrong line. */
-function toExpr(side) {
-  let s = side
-    .replace(/\\times/g, '*')
-    .replace(/\\div/g, '/')
-    .replace(/\\cdot/g, '*')
-    .replace(/\\,/g, '')
-    .replace(/\\ /g, ' ')
-    .replace(/\\quad/g, ' ')
-    .replace(/\{,\}/g, '')
-    .replace(/[{}]/g, '')
-    .replace(/\s+/g, '');
-  if (!s || !/^[-+*/()0-9.]+$/.test(s)) return null;
-  return s;
-}
-
-let checked = 0;
-const skipped = [];
-
-for (const f of pages) {
-  const html = fs.readFileSync(path.join(DIR, f), 'utf8');
-  for (const m of html.matchAll(/\$([^$]+)\$/g)) {
-    let span = m[1];
-    if (!span.includes('=')) continue;
-    // "A \quad \text{and} \quad B" is two independent statements
-    const parts = span.includes('\\text{and}')
-      ? span.split(/\\quad\s*\\text\{and\}\s*\\quad/)
-      : [span];
-    for (const part of parts) {
-      const sides = part.split('=').map(s => s.trim()).filter(Boolean);
-      if (sides.length < 2) continue;
-      const vals = sides.map(toExpr);
-      if (vals.some(v => v === null)) { skipped.push(`${f}: $${part.trim()}$`); continue; }
-      const nums = vals.map(v => {
-        try { return Function(`"use strict";return (${v})`)(); } catch { return NaN; }
-      });
-      if (nums.some(n => !Number.isFinite(n))) { skipped.push(`${f}: $${part.trim()}$`); continue; }
-      checked++;
-      const first = nums[0];
-      if (nums.some(n => Math.abs(n - first) > 1e-9))
-        fails.push(`${f}: $${part.trim()}$ — sides are ${nums.join(' and ')}`);
-      else pass++;
-    }
-  }
-}
-
-/* An expectation typed out by hand drifts from the page the moment the
-   page is corrected — which happened once already, to the factors of 252.
-   So the answer rows are read back out of the pages instead: the row is
-   found by its question number, and the numbers in it are compared with
-   the numbers computed here. */
-const ANSWER_ROWS = (() => {
-  const rows = {};
-  for (const f of pages) {
-    const html = fs.readFileSync(path.join(DIR, f), 'utf8');
-    for (const m of html.matchAll(
-      /<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span>/g))
-      rows[m[1]] = m[2];
-  }
-  return rows;
-})();
-
-const printedRowHtml = (q) => ANSWER_ROWS[String(q)] ?? '';
-function printedNumbers(q) {
-  const row = ANSWER_ROWS[String(q)];
-  if (row === undefined) { fails.push(`no printed answer row for question ${q}`); return null; }
-  return [...row.replace(/<[^>]+>/g, ' ').matchAll(/\d+/g)].map(x => Number(x[0]));
-}
-
-/* The list a question asks for, as printed, ignoring any number that is
-   part of the reasoning rather than of the list. */
-function okPrintedList(what, q, want) {
-  const got = printedNumbers(q);
-  if (got === null) return;
-  const missing = want.filter(n => !got.includes(n));
-  if (missing.length) fails.push(`${what} — the page leaves out ${missing.join(', ')}`);
-  else pass++;
-}
-
-/* A whole-row check is not enough for a lettered answer: changing the 42
-   in part (c) of question 30 left the 42 in part (b) standing, and the
-   row still contained every number it should. So each part is read out
-   on its own and its numbers compared exactly. */
-function printedPart(q, letter) {
-  const row = ANSWER_ROWS[String(q)];
-  if (row === undefined) { fails.push(`no printed answer row for question ${q}`); return null; }
-  const flat = row.replace(/<[^>]+>/g, ' ');
-  const re = new RegExp(`\\(${letter}\\)([\\s\\S]*?)(?=\\([a-e]\\)|$)`);
-  const m = flat.match(re);
-  if (!m) { fails.push(`question ${q} has no part (${letter})`); return null; }
-  return [...m[1].matchAll(/\d+/g)].map(x => Number(x[0]));
-}
-
-function okPart(what, q, letter, want) {
-  const got = printedPart(q, letter);
-  if (got === null) return;
-  const w = [].concat(want);
-  if (JSON.stringify(got) !== JSON.stringify(w))
-    fails.push(`${what}\n      computed ${JSON.stringify(w)}\n      printed  ${JSON.stringify(got)} in part (${letter}) of question ${q}`);
-  else pass++;
-}
-
-/* ---- B. the claims arithmetic cannot check ------------------- */
-
-// body, section 5.3 and 5.4 — the five worked examples
-ok('Ex1 factors of 15', divisors(15), [1, 3, 5, 15]);
-ok('Ex1 factors of 39', divisors(39), [1, 3, 13, 39]);
-ok('Ex1 factors of 4', divisors(4), [1, 2, 4]);
-ok('Ex1 factors of 9', divisors(9), [1, 3, 9]);
-is('Ex1 15 and 39 are not co-prime', !coprime(15, 39));
-is('Ex1 4 and 9 are co-prime', coprime(4, 9));
-ok('Ex2 prime factorisation of 180', factorise(180), [2, 2, 3, 3, 5]);
-ok('Ex3 prime factorisation of 40', factorise(40), [2, 2, 2, 5]);
-ok('Ex3 prime factorisation of 231', factorise(231), [3, 7, 11]);
-is('Ex3 40 and 231 are co-prime', coprime(40, 231));
-ok('Ex4 prime factorisation of 242', factorise(242), [2, 11, 11]);
-ok('Ex4 prime factorisation of 195', factorise(195), [3, 5, 13]);
-is('Ex4 242 and 195 are co-prime', coprime(195, 242));
-ok('Ex5 prime factorisation of 168', factorise(168), [2, 2, 2, 3, 7]);
-is('Ex5 168 is divisible by 12', 168 % 12 === 0);
-
-// body prose the examples lean on
-is('75 is not divisible by 21', 75 % 21 !== 0);
-ok('75 divided by 21 leaves', 75 % 21, 12);
-ok('42 divided by 12 leaves', 42 % 12, 6);
-ok('prime factorisation of 56', factorise(56), [2, 2, 2, 7]);
-ok('prime factorisation of 63', factorise(63), [3, 3, 7]);
-ok('prime factorisation of 80', factorise(80), [2, 2, 2, 2, 5]);
-is('56 and 63 are not co-prime', !coprime(56, 63));
-is('80 and 63 are co-prime', coprime(80, 63));
-ok('prime factorisation of 36', factorise(36), [2, 2, 3, 3]);
-ok('prime factorisation of 72', factorise(72), [2, 2, 2, 3, 3]);
-ok('prime factorisation of 30', factorise(30), [2, 3, 5]);
-ok('prime factorisation of 225', factorise(225), [3, 3, 5, 5]);
-ok('prime factorisation of 84 (summary)', factorise(84), [2, 2, 3, 7]);
-ok('common multiples of 3 and 5, first four',
-  [15, 30, 45, 60].filter(n => n % 3 === 0 && n % 5 === 0), [15, 30, 45, 60]);
-ok('common factors of 14 and 36', common(14, 36), [1, 2]);
-ok('factors of 24 (Jump Jackpot)', divisors(24), [1, 2, 3, 4, 6, 8, 12, 24]);
-ok('28 is perfect', divisors(28).reduce((a, b) => a + b, 0), 56);
-
-// Beyond, stage 1 — kept word for word, so its numbers are checked too
-ok('idli-vada with 6 and 8 up to 100',
-  [...Array(100)].map((_, i) => i + 1).filter(n => n % 6 === 0 && n % 8 === 0), [24, 48, 72, 96]);
-ok('first common multiple of 6 and 8', lcm(6, 8), 24);
-ok('laddoos between 40 and 50, multiple of 4 and 6',
-  [...Array(11)].map((_, i) => i + 40).filter(n => n % 4 === 0 && n % 6 === 0), [48]);
-is('391 is composite', !isPrime(391));
-ok('391 factorised', factorise(391), [17, 23]);
-ok('391 divided by 7, 11, 13', [391 % 7, 391 % 11, 391 % 13], [6, 6, 1]);
-ok('digits d with 73d4 divisible by 8',
-  [...Array(10).keys()].filter(d => (7304 + d * 10) % 8 === 0), [0, 4, 8]);
-ok('prime factorisation of 275', factorise(275), [5, 5, 11]);
-is('84 and 275 are co-prime', coprime(84, 275));
-
-// Beyond, stage 2 — its own Examples 1 to 14 (Class 7 numbers Beyond's
-// examples afresh, not on from the body)
-{
-  const tabs = (files) => files.flatMap(f => [...fs.readFileSync(path.join(DIR, f), 'utf8')
-    .matchAll(/c-example__tab">Example (\d+)</g)].map(m => Number(m[1])));
-  ok('body examples numbered 1 to 5', tabs(pages.filter(f => /^p0/.test(f))), [1, 2, 3, 4, 5]);
-  ok('Beyond examples numbered 1 to 15', tabs(pages.filter(f => /^p1/.test(f))),
-    Array.from({ length: 15 }, (_, k) => k + 1));
-}
-const BEYOND_HTML = pages.filter(f => /^p1/.test(f)).map(f => fs.readFileSync(path.join(DIR, f), 'utf8')).join('\n');
-const flatText = (h) => h.replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&hellip;/g, '…').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ');
-const beyondExample = (n) => {
-  const at = BEYOND_HTML.indexOf(`<div class="c-example__tab">Example ${n}</div>`);
-  const end = BEYOND_HTML.indexOf('<div class="c-example__tab">', at + 10);
-  return at < 0 ? '' : BEYOND_HTML.slice(at, end < 0 ? undefined : end);
-};
-const stepText = (n, s) => { const m = beyondExample(n).match(new RegExp(`work__label">${s}</span>\\s*<span>([\\s\\S]*?)</span>`)); return m ? flatText(m[1]) : ''; };
-const numsOf = (s) => [...s.replace(/\\[a-z]+/g, ' ').matchAll(/\d+/g)].map(m => Number(m[0]));
-ok('Beyond Ex1 smallest multiple of 4, 6 and 10', lcm(4, 6, 10), 60);
-{
-  // Ex1 is found by listing the multiples of the largest number, not from prime factorisations
-  const m10 = [1, 2, 3, 4, 5, 6].map(k => 10 * k);
-  ok('Beyond Ex1 step 1: the multiples of 10 listed', numsOf(stepText(1, 'Step 1')), [10, ...m10]);
-  ok('Beyond Ex1 step 2: the ones that are not multiples of 4', numsOf(stepText(1, 'Step 2')), [...m10.filter(x => x % 4 !== 0), 4]);
-  ok('Beyond Ex1 step 3: multiples of 4 but not of 6', numsOf(stepText(1, 'Step 3')), [...m10.filter(x => x % 4 === 0 && x % 6 !== 0), 4, 6]);
-  is('Beyond Ex1: 60 is the first multiple of 10 that passes both', m10.find(x => x % 4 === 0 && x % 6 === 0) === 60);
-  ok('Beyond Ex1 answer row', numsOf(stepText(1, 'Answer')), [lcm(4, 6, 10)]);
-  is('Beyond Ex1 no longer uses "most of each prime"', !/most of each prime/.test(beyondExample(1)));
-}
-ok('Beyond Ex2 count of multiples of both 4 and 6 in 1..100', countMultiples(lcm(4, 6), 1, 100), 8);
-ok('Beyond Ex2 first common multiple of 4 and 6', lcm(4, 6), 12);
-ok('Beyond Ex2 the eight of them',
-  [...Array(100)].map((_, i) => i + 1).filter(n => n % 12 === 0),
-  [12, 24, 36, 48, 60, 72, 84, 96]);
-ok('Beyond Ex3 factors of 48', divisors(48), [1, 2, 3, 4, 6, 8, 12, 16, 24, 48]);
-ok('Beyond Ex3 factors of 60', divisors(60), [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60]);
-ok('Beyond Ex3 common factors of 48 and 60', common(48, 60), [1, 2, 3, 4, 6, 12]);
-is('Beyond Ex4 187 is composite', !isPrime(187));
-ok('Beyond Ex4 187 factorised', factorise(187), [11, 17]);
-ok('Beyond Ex4 187 mod 3 and mod 7', [187 % 3, 187 % 7], [1, 5]);
-ok('Beyond Ex5 primes between 60 and 80',
-  primesUpTo(80).filter(p => p > 60), [61, 67, 71, 73, 79]);
-ok('Beyond Ex5 the composites left after sieving evens and fives',
-  [61, 63, 67, 69, 71, 73, 77, 79].filter(n => !isPrime(n)), [63, 69, 77]);
-ok('Beyond Ex6 36 as a sum of two primes',
-  primesUpTo(36).filter(p => p * 2 <= 36 && isPrime(36 - p)).map(p => [p, 36 - p]),
-  [[5, 31], [7, 29], [13, 23], [17, 19]]);
-is('Beyond Ex6 33 and 25 are not prime', !isPrime(33) && !isPrime(25));
-ok('Beyond Ex7 prime factorisation of 360', factorise(360), [2, 2, 2, 3, 3, 5]);
-ok('Beyond Ex7 360 from 8 and 45', [factorise(8), factorise(45)], [[2, 2, 2], [3, 3, 5]]);
-ok('Beyond Ex8 the number 2*2*3*5*5', [2, 2, 3, 5, 5].reduce((a, b) => a * b), 300);
-is('Beyond Ex8 300 is divisible by 15', 300 % 15 === 0);
-ok('Beyond Ex9 prime factorisation of 84 x 50', factorise(84 * 50), [2, 2, 2, 3, 5, 5, 7]);
-ok('Beyond Ex9 84 x 50', 84 * 50, 4200);
-ok('Beyond Ex10 which pair is co-prime',
-  [[21, 35], [39, 91], [25, 36], [33, 55]].filter(([a, b]) => coprime(a, b)), [[25, 36]]);
-ok('Beyond Ex10 the shared primes',
-  [factorise(21), factorise(35), factorise(39), factorise(91), factorise(25), factorise(36), factorise(33), factorise(55)],
-  [[3, 7], [5, 7], [3, 13], [7, 13], [5, 5], [2, 2, 3, 3], [3, 11], [5, 11]]);
-is('Beyond Ex11 8 and 9 are composite and co-prime', !isPrime(8) && !isPrime(9) && coprime(8, 9));
-ok('Beyond Ex12 which of the four is divisible by 8',
-  [7324, 6136, 5148, 9420].filter(n => n % 8 === 0), [6136]);
-ok('Beyond Ex12 the remainders of the last three digits',
-  [324 % 8, 136 % 8, 148 % 8, 420 % 8], [4, 0, 4, 4]);
-is('Beyond Ex12 all four are divisible by 4', [7324, 6136, 5148, 9420].every(n => n % 4 === 0));
-is('Beyond Ex13 3492 is divisible by 4 and not by 8', 3492 % 4 === 0 && 3492 % 8 !== 0);
-ok('Beyond Ex13 492 mod 8', 492 % 8, 4);
-{
-  // Ex14 works from the tests for 5 and 8 alone, without the co-prime product fact
-  let largest = 0; for (let n = 9999; n >= 1000; n--) if (n % 5 === 0 && n % 8 === 0) { largest = n; break; }
-  ok('Beyond Ex14 largest 4-digit number divisible by 5 and 8', numsOf(stepText(14, 'Answer')), [largest]);
-  ok('Beyond Ex14 999 = 8 x 124 + 7, and 9992 is the largest 4-digit multiple of 8',
-    numsOf(stepText(14, 'Step 2')), [999, 8, Math.floor(999 / 8), 999 % 8, Math.floor(9999 / 8) * 8, 4, 8]);
-  const down = []; for (let n = Math.floor(9999 / 8) * 8; ; n -= 8) { down.push(n); if (n % 10 === 0) break; }
-  ok('Beyond Ex14 step 3: counting down in 8s to the first that ends in 0', numsOf(stepText(14, 'Step 3')), [8, ...down]);
-  is('Beyond Ex14: a multiple of 8 never ends in 5', [...Array(125)].every((_, k) => (8 * k) % 10 !== 5));
-  is('Beyond Ex14 does not lean on co-prime numbers', !/co-prime/.test(beyondExample(14)));
-}
-is('Beyond: no item uses "co-prime, so the first common multiple is the product" (the body leaves it open)',
-  !/co-prime, so (the number must be a multiple|their first common multiple|the first common multiple)/.test(flatText(BEYOND_HTML)));
-
-// Beyond, stage 3 — the answers to every question that is not an option
-ok('Q17 factors of 45', divisors(45), [1, 3, 5, 9, 15, 45]);
-ok('Q18 first three common multiples of 8 and 12',
-  [1, 2, 3].map(k => k * lcm(8, 12)), [24, 48, 72]);
-ok('Q19 the number of factors of 1', divisors(1).length, 1);
-ok('Q20 prime factorisation of 98', factorise(98), [2, 7, 7]);
-ok('Q21 smallest prime above 50', primesUpTo(60).find(p => p > 50), 53);
-ok('Q21 51 factorised', factorise(51), [3, 17]);
-is('Q22 105 and 88 are co-prime', coprime(105, 88));
-ok('Q22 the two factorisations', [factorise(105), factorise(88)], [[3, 5, 7], [2, 2, 2, 11]]);
-ok('Q23 largest 3-digit multiple of 20', Math.floor(999 / 20) * 20, 980);
-ok('Q23 20 x 49', 20 * 49, 980);
-is('Q24 2016 is divisible by 8', 2016 % 8 === 0);
-ok('Q24 prime factorisation of 2016', factorise(2016), [2, 2, 2, 2, 2, 3, 3, 7]);
-ok('Q26 prime factorisation of 1800', factorise(1800), [2, 2, 2, 3, 3, 5, 5]);
-is('Q26 8 x 225 = 1800 and they are co-prime', 8 * 225 === 1800 && coprime(8, 225));
-is('Q26 9 x 200 = 1800 and they are co-prime', 9 * 200 === 1800 && coprime(9, 200));
-is('Q26 25 x 72 = 1800 and they are co-prime', 25 * 72 === 1800 && coprime(25, 72));
-ok('Q27 the number 2*2*3*3*7', [2, 2, 3, 3, 7].reduce((a, b) => a * b), 252);
-okPrintedList('Q27 factors of 252 above 10', 27, divisors(252).filter(d => d > 10));
-is('Q27 252 is divisible by 14', 252 % 14 === 0);
-ok('Q27 252 / 14', 252 / 14, 18);
-is('Q28 12 is divisible by 4 and 6 but not 24', 12 % 4 === 0 && 12 % 6 === 0 && 12 % 24 !== 0);
-is('Q28 36 is divisible by 4 and 6 but not 24', 36 % 4 === 0 && 36 % 6 === 0 && 36 % 24 !== 0);
-is('Q28 48 is divisible by all three', 48 % 4 === 0 && 48 % 6 === 0 && 48 % 24 === 0);
-ok('Q28 lcm of 4 and 6', lcm(4, 6), 12);
-ok('Q29a multiples of 5 in 1..100', countMultiples(5, 1, 100), 20);
-ok('Q29b multiples of 8 in 1..100', countMultiples(8, 1, 100), 12);
-ok('Q29c multiples of both 5 and 8 in 1..100', countMultiples(lcm(5, 8), 1, 100), 2);
-ok('Q29c the two of them',
-  [...Array(100)].map((_, i) => i + 1).filter(n => n % 40 === 0), [40, 80]);
-ok('Q30a prime factorisation of 84 and 126', [factorise(84), factorise(126)],
-  [[2, 2, 3, 7], [2, 3, 3, 7]]);
-ok('Q30b common factors of 84 and 126', common(84, 126), [1, 2, 3, 6, 7, 14, 21, 42]);
-is('Q30 no longer asks for the largest row length', !/largest row length/.test(flatText(BEYOND_HTML)));
-is('Q30 asks about rows of 14 and of 4', /With rows of 14 seats/.test(BEYOND_HTML) && /Can the rows hold 4 seats each\?/.test(BEYOND_HTML));
-is('Q30 14 is a common factor, 4 is not', common(84, 126).includes(14) && !common(84, 126).includes(4));
-is('Q30(d) 126 has one 2 and 84 has two', factorise(126).filter(p => p === 2).length === 1 && factorise(84).filter(p => p === 2).length === 2);
-okPrintedList('Q17 factors of 45', 17, divisors(45));
-okPrintedList('Q18 common multiples of 8 and 12', 18, [1, 2, 3].map(k => k * lcm(8, 12)));
-is('Q25 the second treasure: 12, 36, 60 and 84 all give exactly the factors of 12',
-  [12, 36, 60, 84].every(x => JSON.stringify(common(24, x)) === JSON.stringify(divisors(12))));
-is('Q25 24 itself would not work', JSON.stringify(common(24, 24)) !== JSON.stringify(divisors(12)));
-okPrintedList('Q25 the numbers printed', 25, [12, 36, 60, 84]);
-okPrintedList('Q30 common factors of 84 and 126', 30, common(84, 126));
-ok('Q31b when all three ring together again', lcm(6, 8, 12), 24);
-is('Q31 asks for the multiples of 12 to be listed', /List the multiples of 12, the longest gap, up to 60\./.test(BEYOND_HTML));
-ok('Q31d times in the hour after 9:00, not counting it',
-  [...Array(60)].map((_, i) => i + 1).filter(n => n % 24 === 0), [24, 48]);
-
-// every lettered part of every long-answer and case-based answer
-okPart('Q27(a) the number', 27, 'a', [2, 2, 3, 3, 7].reduce((a, b) => a * b));
-okPart('Q29(a) multiples of 5', 29, 'a', countMultiples(5, 1, 100));
-okPart('Q29(b) multiples of 8', 29, 'b', countMultiples(8, 1, 100));
-okPart('Q29(c) multiples of both', 29, 'c',
-  [countMultiples(lcm(5, 8), 1, 100), 40, 80]);
-okPart('Q30(b) the possible row lengths', 30, 'b', common(84, 126));
-okPart('Q30(c) rows of 14: chairs and stools', 30, 'c', [84, 14, 84 / 14, 126, 14, 126 / 14]);
-okPart('Q30(d) 4 is not a factor of 126', 30, 'd', [4, 2, 2, 126, 2, 4, 126]);
-{
-  const m12 = [1, 2, 3, 4, 5].map(k => 12 * k);
-  okPart('Q31(a) the multiples of 12 up to 60', 31, 'a', m12);
-  okPart('Q31(b) the common ones, the others, and the minutes', 31, 'b',
-    [...m12.filter(x => x % 6 === 0 && x % 8 === 0), ...m12.filter(x => x % 8 !== 0), 8, m12.find(x => x % 6 === 0 && x % 8 === 0)]);
-  is('Q31(b): every multiple of 12 is already a multiple of 6', m12.every(x => x % 6 === 0));
-}
-{
-  // Q29(d) lists the multiples of 8 until one ends in 0 or 5
-  const up = []; for (let n = 8; ; n += 8) { up.push(n); if (n % 5 === 0) break; }
-  okPart('Q29(d) the multiples of 8 listed, then the next common multiples', 29, 'd', [8, 0, 5, ...up, 40, 40, 80, 80, 40, 120, 100]);
-}
-okPart('Q31(c) the time', 31, 'c', [9, 24]);
-
-// the "why the other options are wrong" notes
-ok('note 5: 18 as 6x3 and 9x2', [6 * 3, 9 * 2], [18, 18]);
-is('note 5: 36 and 54 are common multiples of 6 and 9',
-  36 % 6 === 0 && 36 % 9 === 0 && 54 % 6 === 0 && 54 % 9 === 0);
-is('note 5: 3 is a common factor of 6 and 9', 6 % 3 === 0 && 9 % 3 === 0);
-is('note 10: 3 is not a factor of 91, and 9 is not prime', 91 % 3 !== 0 && !isPrime(9));
-is('note 13: 4 and 6 are composite and share 2', !isPrime(4) && !isPrime(6) && gcd(4, 6) === 2);
-ok('note 13: prime factorisation of 35 and 48', [factorise(35), factorise(48)],
-  [[5, 7], [2, 2, 2, 2, 3]]);
-{
-  const note16 = flatText(printedRowHtml('16'));
-  ok('note 16: the numbers it prints', numsOf(note16), [221, 13, 17, 13, 17, 221, 1, 221]);
-  is('note 16: 221 = 13 x 17, both prime, so 221 has more than two factors', 13 * 17 === 221 && isPrime(13) && isPrime(17) && divisors(221).length === 4);
-  is('note 16 ends on (a)', /the answer is \(a\)/.test(note16));
-}
-
-/* ---- C. one right option, and the key says so ---------------- */
-
-const MCQ = [
-  { n: 1, opts: [51, 57, 59, 91], right: (o) => isPrime(o), key: 'c' },
-  { n: 2, opts: [[1, 2, 3, 6], [1, 2, 3, 4, 6], [2, 3, 6], [1, 2, 3, 6, 12]],
-    right: (o) => JSON.stringify(o) === JSON.stringify(common(18, 24)), key: 'a' },
-  { n: 3, opts: [8, 9, 6, 10], right: (o) => o === divisors(36).length, key: 'b' },
-  { n: 4, opts: [2, 9, 1, 11], right: (o) => !isPrime(o) && divisors(o).length <= 2, key: 'c' },
-  { n: 5, opts: [54, 36, 3, 18], right: (o) => o === lcm(6, 9), key: 'd' },
-  { n: 6, opts: [1234, 5132, 3418, 7542], right: (o) => o % 4 === 0, key: 'b' },
-  { n: 7, opts: [[2, 42], [4, 3, 7], [2, 2, 3, 7], [2, 3, 14]],
-    right: (o) => o.every(isPrime) && o.reduce((a, b) => a * b) === 84, key: 'c' },
-  { n: 8, opts: [[41, 43], [51, 53], [7, 9], [23, 29]],
-    right: ([a, b]) => isPrime(a) && isPrime(b) && b - a === 2, key: 'a' },
-  { n: 9, opts: [7, 2, 3, 4], right: (o) => o === 2347 % 5, key: 'b' },
-  { n: 10, opts: [3, 9, 13, 7], right: (o) => o === factorise(91)[0], key: 'd' },
-  { n: 11, opts: [16, 40, 90, 36], right: (o) => o % 6 === 0 && o % 10 === 0, key: 'c' },
-  { n: 12, opts: [999, 992, 996, 984],
-    right: (o) => o === Math.floor(999 / 8) * 8, key: 'b' },
-];
-
-const LETTERS = ['a', 'b', 'c', 'd'];
-for (const q of MCQ) {
-  const right = q.opts.map((o, i) => q.right(o) ? LETTERS[i] : null).filter(Boolean);
-  if (right.length !== 1) fails.push(`Q${q.n}: ${right.length} right options (${right.join(', ') || 'none'})`);
-  else if (right[0] !== q.key) fails.push(`Q${q.n}: the right option is (${right[0]}), the key prints (${q.key})`);
-  else pass++;
-}
-
-/* An assertion-reason question is graded on three facts: is A true,
-   is R true, and does R explain A. The first two are computed; the
-   third is the judgement the question is testing, and is stated. */
-const AR = [
-  { n: 13, A: () => coprime(35, 48), R: () => !isPrime(35) && !isPrime(48), explains: false, key: 'b' },
-  { n: 14, A: () => 7248 % 8 === 0, R: () => 248 % 8 === 0, explains: true, key: 'a' },
-  { n: 15, A: () => primesUpTo(50).every(p => p % 2 === 1), R: () => isPrime(2), explains: false, key: 'd' },
-  { n: 16, A: () => !isPrime(221) && divisors(221).length > 2, R: () => 13 * 17 === 221, explains: true, key: 'a' },
-];
-/* The truth values above are only worth checking against the question
-   actually printed under that number, so each entry is tied to its text. */
-const AR_TEXT = {
-  13: ['35 and 48 are co-prime.', '35 and 48 are both composite numbers.'],
-  14: ['7248 is divisible by 8.', '248 is divisible by 8.'],
-  15: ['Every prime number is odd.', '2 is a prime number.'],
-  16: ['221 is a composite number.', '$221 = 13 \\times 17$.'],
-};
-const printedAR = {};
-for (const f of pages) {
-  const html = fs.readFileSync(path.join(DIR, f), 'utf8');
-  for (const m of html.matchAll(/data-start="(\d+)">\s*<li><p>Assertion \(A\): ([^<]*)<\/p><p>Reason \(R\): ([^<]*)<\/p>/g))
-    printedAR[m[1]] = [m[2], m[3]];
-}
-for (const [n, want] of Object.entries(AR_TEXT)) ok(`Q${n} printed assertion and reason`, printedAR[n], want);
-
-for (const q of AR) {
-  const a = q.A(), r = q.R();
-  const want = a && r ? (q.explains ? 'a' : 'b') : a && !r ? 'c' : !a && r ? 'd' : '?';
-  if (want === '?') fails.push(`Q${q.n}: both A and R are false, which is not an option`);
-  else if (want !== q.key) fails.push(`Q${q.n}: A is ${a}, R is ${r} → (${want}), the key prints (${q.key})`);
-  else pass++;
-}
-
-// the key must use all four letters, so no reader can guess a pattern
-const letters = [...MCQ, ...AR].map(q => q.key);
-const spread = LETTERS.map(l => [l, letters.filter(x => x === l).length]);
-is(`the key uses all four letters (${spread.map(([l, c]) => l + ':' + c).join(' ')})`,
-  spread.every(([, c]) => c > 0));
-
-/* ---- D. ANSWERS.md ------------------------------------------- */
-
-/* The booklet's source is checked the same way the pages are: every value
-   is recomputed, and then looked for in the file. An answer that drifts
-   from the question it answers is how this goes wrong (§5, The
-   companions), and reading the file alone cannot catch it. */
-
-const ANSWERS = fs.readFileSync(path.join(DIR, 'ANSWERS.md'), 'utf8');
-
-function inAnswers(what, needle) {
-  if (ANSWERS.includes(needle)) pass++;
-  else fails.push(`${what} — ANSWERS.md does not contain "${needle}"`);
-}
-
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
-const countIn = (m, lo, hi) => range(lo, hi).filter(n => n % m === 0).length;
+const rects = n => divisors(n).filter(d => d * d <= n).length;   // a square counts once
+const L = 'abcd';
+const pick = (opts, f) => opts.map((o, i) => f(o) ? L[i] : null).filter(Boolean).join(',');
 
-// 5.1
-ok('A 5.1 Q1 tenth idli-vada', 10 * lcm(3, 5), 150);
-ok('A 5.1 Q2 counts to 90', [countIn(3, 1, 90), countIn(5, 1, 90), countIn(15, 1, 90)], [30, 18, 6]);
-ok('A 5.1 Q3 counts to 900', [countIn(3, 1, 900), countIn(5, 1, 900), countIn(15, 1, 900)], [300, 180, 60]);
-inAnswers('A 5.1 Q3', '**300**, **180** and **60**');
-ok('A 5.1 Q4 overlap to 60', range(1, 60).filter(n => n % 15 === 0), [15, 30, 45, 60]);
-inAnswers('A 5.1 Q4 overlap', 'holds **15, 30, 45, 60**');
-ok('A 5.1 activity first common multiples', [lcm(2, 5), lcm(3, 7), lcm(4, 6)], [10, 21, 12]);
-ok('A 5.1 Meena, the only number that works', [2, 3, 5, 8, 10].filter(n => n % 4 === 0), [8]);
-ok('A T&R jump sizes onto 15 and 30', common(15, 30), [1, 3, 5, 15]);
-inAnswers('A T&R 15 and 30', '**1, 3, 5 and 15**');
-ok('A Fig 5.3 shaded, multiples of 3', range(31, 70).filter(n => n % 3 === 0),
-  [33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69]);
-ok('A Fig 5.3 circled, multiples of 4', range(31, 70).filter(n => n % 4 === 0),
-  [32, 36, 40, 44, 48, 52, 56, 60, 64, 68]);
-ok('A Fig 5.3 both', range(31, 70).filter(n => n % 12 === 0), [36, 48, 60]);
-inAnswers('A Fig 5.3 both', '**36, 48 and 60**');
-
-// 5.2
-ok('A 5.2 Q1', range(310, 410).filter(n => n % 40 === 0), [320, 360, 400]);
-ok('A 5.2 Q2a', range(1, 39).filter(n => n % 7 === 0
-  && String(n).split('').reduce((a, b) => a + Number(b), 0) === 8), [35]);
-ok('A 5.2 Q2b', range(10, 99).filter(n => n % 15 === 0
-  && Number(String(n)[1]) - Number(String(n)[0]) === 1), [45]);
-ok('A 5.2 Q3 perfect number 1..10',
-  range(1, 10).filter(n => divisors(n).reduce((a, b) => a + b, 0) === 2 * n), [6]);
-ok('A 5.2 Q4 common factors',
-  [common(20, 28), common(35, 50),
-    divisors(4).filter(d => 8 % d === 0 && 12 % d === 0),
-    divisors(5).filter(d => 15 % d === 0 && 25 % d === 0)],
-  [[1, 2, 4], [1, 5], [1, 2, 4], [1, 5]]);
-ok('A 5.2 Q6 pairs below 10 whose first common multiple is past 50',
-  (() => { const o = []; for (let a = 2; a < 10; a++) for (let b = a + 1; b < 10; b++)
-    if (lcm(a, b) > 50) o.push([a, b, lcm(a, b)]); return o; })(),
-  [[7, 8, 56], [7, 9, 63], [8, 9, 72]]);
-ok('A 5.2 Q7 jump sizes onto 28 and 70', common(28, 70), [1, 2, 7, 14]);
-ok('A 5.2 Q9 first three common multiples of 4 and 10',
-  [1, 2, 3].map(k => k * lcm(4, 10)), [20, 40, 60]);
-is('A 5.2 Q9 the product is not the first', lcm(4, 10) !== 40);
-ok('A 5.2 Q10 smallest multiple of 1..10 except 7', lcm(1, 2, 3, 4, 5, 6, 8, 9, 10), 360);
-ok('A 5.2 Q11 smallest multiple of 1..10', lcm(...range(1, 10)), 2520);
-
-// 5.3
-const P100 = primesUpTo(100);
-ok('A 5.2 T&R primes 21..30', range(21, 30).filter(isPrime), [23, 29]);
-ok('A 5.2 T&R composites 21..30', range(21, 30).filter(n => !isPrime(n)).length, 8);
-const gapsBetween = P100.slice(1).map((p, i) => p - P100[i]);
-ok('A 5.3 Q2 smallest and largest gap',
-  [Math.min(...gapsBetween), Math.max(...gapsBetween)], [1, 8]);
-ok('A 5.3 Q3 primes in each row of ten',
-  range(0, 9).map(r => P100.filter(p => p > r * 10 && p <= r * 10 + 10).length),
-  [4, 4, 2, 2, 3, 2, 2, 3, 2, 1]);
-ok('A 5.3 Q4 which are prime', [23, 51, 37, 26].filter(isPrime), [23, 37]);
-ok('A 5.3 Q6 reversal pairs',
-  P100.filter(p => { const r = Number(String(p).split('').reverse().join(''));
-    return r > p && r < 100 && isPrime(r); })
-    .map(p => [p, Number(String(p).split('').reverse().join(''))]),
-  [[13, 31], [17, 71], [37, 73], [79, 97]]);
-is('A 5.3 Q7 90 to 96 are seven composites in a row',
-  range(90, 96).every(n => !isPrime(n)) && 91 === 7 * 13);
-ok('A 5.3 Q8 twin primes to 100',
-  P100.filter(p => isPrime(p + 2)).map(p => [p, p + 2]),
-  [[3, 5], [5, 7], [11, 13], [17, 19], [29, 31], [41, 43], [59, 61], [71, 73]]);
-is('A 5.3 Q9a no prime ends in 4', P100.every(p => p % 10 !== 4));
-is('A 5.3 Q9e after 2 no prime has a prime successor',
-  P100.filter(p => p > 2).every(p => !isPrime(p + 1)));
-ok('A 5.3 Q10 product of exactly three different primes',
-  [45, 60, 91, 105, 330].filter(n => { const f = [...new Set(factorise(n))];
-    return f.length === 3 && f.reduce((a, b) => a * b) === n; }), [105]);
-const from245 = (() => { const o = [];
-  for (const a of [2, 4, 5]) for (const b of [2, 4, 5]) for (const c of [2, 4, 5])
-    if (a !== b && b !== c && a !== c) o.push(a * 100 + b * 10 + c);
-  return o.sort((x, y) => x - y); })();
-ok('A 5.3 Q11 the six numbers', from245, [245, 254, 425, 452, 524, 542]);
-ok('A 5.3 Q11 how many of them are prime', from245.filter(isPrime), []);
-inAnswers('A 5.3 Q11 is none', '11. **None.**');
-ok('A 5.3 Q12 primes p with 2p+1 prime',
-  P100.filter(p => isPrime(2 * p + 1)).slice(0, 8), [2, 3, 5, 11, 23, 29, 41, 53]);
-
-// 5.4
-for (const [n, want] of [[64, 6], [104, 4], [105, 3], [243, 5], [320, 7], [141, 2],
-  [1728, 9], [729, 6], [1024, 10], [1331, 3], [1000, 6]])
-  ok(`A 5.4 Q1 ${n} has ${want} prime factors`, factorise(n).length, want);
-ok('A 5.4 Q1 141 is not prime', factorise(141), [3, 47]);
-ok('A 5.4 Q2 one 2, two 3s and one 11', 2 * 3 * 3 * 11, 198);
-ok('A 5.4 Q3 three primes under 30 with product 1955', factorise(1955), [5, 17, 23]);
-is('A 5.4 Q3 all three are under 30', factorise(1955).every(p => p < 30));
-ok('A 5.4 Q4 the three products', [56 * 25, 108 * 75, 1000 * 81], [1400, 8100, 81000]);
-ok('A 5.4 Q4a', factorise(1400), [2, 2, 2, 5, 5, 7]);
-ok('A 5.4 Q4b', factorise(8100), [2, 2, 3, 3, 3, 3, 5, 5]);
-ok('A 5.4 Q4c', factorise(81000), [2, 2, 2, 3, 3, 3, 3, 5, 5, 5]);
-ok('A 5.4 Q5 smallest with three and four different primes',
-  [2 * 3 * 5, 2 * 3 * 5 * 7], [30, 210]);
-
-// 5.5
-ok('A 5.5 Q1 which pairs are co-prime',
-  [[30, 45], [57, 85], [121, 1331], [343, 216]].map(([a, b]) => coprime(a, b)),
-  [false, true, false, true]);
-ok('A 5.5 Q1c largest common factor of 121 and 1331', gcd(121, 1331), 121);
-ok('A 5.5 Q2 which divide',
-  [[225, 27], [96, 24], [343, 17], [999, 99]].map(([a, b]) => a % b === 0),
-  [false, true, false, false]);
-ok('A 5.5 Q2b 96 divided by 24', 96 / 24, 4);
-ok('A 5.5 Q3 the two numbers', [2 * 3 * 7, 3 * 7 * 11], [42, 231]);
-ok('A 5.5 Q3 their largest common factor', gcd(42, 231), 21);
-is('A 5.5 Q3 neither divides the other', 231 % 42 !== 0 && 42 % 231 !== 0);
-
-// the co-prime think-and-reflects
-ok('A T&R safe pairs', [[15, 39], [4, 15], [18, 29], [20, 55]].map(([a, b]) => coprime(a, b)),
-  [false, true, true, false]);
-ok('A T&R co-prime pairs',
-  [[18, 35], [15, 37], [30, 415], [17, 69], [81, 18]].map(([a, b]) => coprime(a, b)),
-  [true, true, false, true, false]);
-ok('A T&R largest common factor of 81 and 18', gcd(81, 18), 9);
-ok('A T&R thread art reaches every peg',
-  [[15, 10], [10, 7], [14, 6], [8, 3]].map(([p, g]) => coprime(p, g)),
-  [false, true, false, true]);
-ok('A T&R thread art, pegs reached',
-  [[15, 10], [10, 7], [14, 6], [8, 3]].map(([p, g]) => p / gcd(p, g)), [3, 10, 7, 8]);
-ok('A Fig 5.7 pegs reached',
-  [[12, 4], [13, 3], [16, 6], [24, 6]].map(([p, g]) => p / gcd(p, g)), [3, 13, 8, 4]);
-ok('A T&R 48 has four 2s', factorise(48).filter(p => p === 2).length, 4);
-ok('A T&R 60 splits to the same primes', factorise(60), [2, 2, 3, 5]);
-
-// 5.6
-const leap = (y) => y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
-ok('A 5.6 Q1b leap years 2024 to 2099', range(2024, 2099).filter(leap).length, 19);
-is('A 5.6 Q1a 2000 is a leap year and 1900 is not', leap(2000) && !leap(1900));
-const palis = (() => { const o = [];
-  for (let a = 1; a < 10; a++) for (let b = 0; b < 10; b++) {
-    const n = a * 1001 + b * 110; if (n % 4 === 0) o.push(n); }
-  return o; })();
-ok('A 5.6 Q2 smallest and largest palindrome divisible by 4',
-  [Math.min(...palis), Math.max(...palis)], [2112, 8888]);
-ok('A 5.6 Q4 the remainder table',
-  [78, 99, 173, 572, 980, 1111, 2345].map(n => [n % 10, n % 5, n % 2]),
-  [[8, 3, 0], [9, 4, 1], [3, 3, 1], [2, 2, 0], [0, 0, 0], [1, 1, 1], [5, 0, 1]]);
-is('A 5.6 Q5 14560 is divisible by all five', [2, 4, 5, 8, 10].every(d => 14560 % d === 0));
-ok('A 5.6 Q6 which are divisible by all five',
-  [572, 2352, 5600, 6000, 77622160].filter(n => [2, 4, 5, 8, 10].every(d => n % d === 0)),
-  [5600, 6000, 77622160]);
-ok('A 5.6 Q7 the only pair with no units zero',
-  (() => { const o = []; for (let a = 2; a * a <= 10000; a++)
-    if (10000 % a === 0 && a % 10 !== 0 && (10000 / a) % 10 !== 0) o.push([a, 10000 / a]);
-    return o; })(), [[16, 625]]);
-
-/* The prime puzzles: solved from the row and column products printed on
-   Fig. 5.13, and checked to have the one solution the chapter claims. */
-function solvePuzzle(rows, cols) {
-  const primesOf = (n) => [...new Set(factorise(n))];
-  const sols = [], g = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
-  (function go(i) {
-    if (i === 9) {
-      for (let r = 0; r < 3; r++) if (g[r].reduce((a, b) => a * b) !== rows[r]) return;
-      for (let c = 0; c < 3; c++) if (g[0][c] * g[1][c] * g[2][c] !== cols[c]) return;
-      sols.push(g.map(r => r.slice()));
-      return;
+/* ---- A: identities -------------------------------------------------- */
+const strip = t => [['times', '*'], ['div', '/'], ['quad', ' '], ['thinsp', ''], [' ', '']]
+  .reduce((s, [k, v]) => s.split(B + k).join(v), t).replace(/\\text\{[^}]*\}/g, '|').replace(/[{} ]/g, '');
+const identities = (label, src) => {
+  for (const m of src.matchAll(/\$([^$]+)\$/g)) {
+    if (m[1].includes('cdots') || m[1].includes('???') || m[1].includes('square')) continue;
+    for (const part of strip(m[1]).split('|')) {
+      if (!part.includes('=')) continue;
+      const sides = part.split('=').filter(s => s !== '');
+      if (sides.length < 2 || sides.some(s => !/^[\d+\-*/().]+$/.test(s))) continue;
+      const vals = sides.map(s => Function(`return (${s})`)());
+      ok(`${label}: $${m[1]}$`, vals.every(v => Math.abs(v - vals[0]) < 1e-9), vals.join(' vs '));
     }
-    const r = Math.floor(i / 3), c = i % 3;
-    for (const p of primesOf(rows[r])) {
-      if (cols[c] % p !== 0) continue;
-      g[r][c] = p; go(i + 1); g[r][c] = 0;
-    }
-  })(0);
-  return sols;
-}
-const PUZZLES = {
-  'the worked one': [[75, 42, 102], [170, 30, 63], [[5, 5, 3], [2, 3, 7], [17, 2, 3]]],
-  A: [[105, 20, 30], [28, 125, 18], [[7, 5, 3], [2, 5, 2], [2, 5, 3]]],
-  B: [[8, 105, 70], [30, 70, 28], [[2, 2, 2], [3, 5, 7], [5, 7, 2]]],
-  C: [[63, 27, 190], [45, 42, 171], [[3, 7, 3], [3, 3, 3], [5, 2, 19]]],
-  D: [[343, 66, 44], [28, 154, 231], [[7, 7, 7], [2, 11, 3], [2, 2, 11]]],
+  }
 };
-for (const [name, [rows, cols, want]] of Object.entries(PUZZLES)) {
-  const s = solvePuzzle(rows, cols);
-  is(`A puzzle ${name} has exactly one solution (found ${s.length})`, s.length === 1);
-  ok(`A puzzle ${name}`, s[0], want);
-  is(`A puzzle ${name}: every entry is prime`, s[0].flat().every(isPrime));
-}
+for (const f of PAGES) identities(f, HTML[f]);
+identities('ANSWERS.md', ANSWERS);
 
-/* Beyond Ex 15: the puzzle is read off Fig. 5.14, solved, and compared
-   with the Answer row and every step. */
-{
-  const ex = beyondExample(15);
-  const svg = (ex.match(/<svg[\s\S]*?<\/svg>/) || [''])[0];
-  const ticks = [...svg.matchAll(/<text class="dg-tick" x="([\d.]+)" y="([\d.]+)"[^>]*>(\d+)<\/text>/g)].map(m => ({ x: +m[1], y: +m[2], v: +m[3] }));
-  const rowsP = ticks.filter(t => t.x === Math.max(...ticks.map(u => u.x))).sort((a, b) => a.y - b.y).map(t => t.v);
-  const colsP = ticks.filter(t => t.y === Math.max(...ticks.map(u => u.y))).sort((a, b) => a.x - b.x).map(t => t.v);
-  ok('Beyond Ex15 Fig. 5.14 row and column products', [rowsP, colsP], [[30, 28, 99], [42, 18, 110]]);
-  ok('Beyond Ex15 Fig. 5.14 prints only the six products', ticks.length, 6);
-  const s = solvePuzzle(rowsP, colsP);
-  is(`Beyond Ex15 has exactly one solution (found ${s.length})`, s.length === 1);
-  if (!s.length) s.push([[0, 0, 0], [0, 0, 0], [0, 0, 0]]);   // report the rest rather than stop
-  const ans = numsOf(stepText(15, 'Answer'));
-  ok('Beyond Ex15 answer row', ans, s[0].flat());
-  is('Beyond Ex15 every entry is prime', s[0].flat().every(isPrime));
-  is('Beyond Ex15 is none of the body puzzles', Object.values(PUZZLES).every(([r, c]) => JSON.stringify([r, c]) !== JSON.stringify([rowsP, colsP])));
-  ok('Beyond Ex15 step 1 factorisations', numsOf(stepText(15, 'Step 1')), [rowsP[2], ...factorise(rowsP[2]), colsP[2], ...factorise(colsP[2]), 11]);
-  is('Beyond Ex15 step 1: 11 is only in the bottom row and the last column', [0, 1].every(r => rowsP[r] % 11 !== 0) && [0, 1].every(c => colsP[c] % 11 !== 0));
-  ok('Beyond Ex15 step 2: 28 has no 5, and the last column', numsOf(stepText(15, 'Step 2')), [rowsP[1], ...factorise(rowsP[1]), 5, ...s[0].map(r => r[2])]);
-  is('Beyond Ex15 step 2: 28 has no 5', rowsP[1] % 5 !== 0);
-  ok('Beyond Ex15 step 3: the bottom row and the middle column', numsOf(stepText(15, 'Step 3')), [...s[0][2], colsP[1], ...factorise(colsP[1]), 3, 2, rowsP[1], 3]);
-  ok('Beyond Ex15 step 3 leaves the top row a 3 in the middle', s[0][0][1], 3);
-  is('Beyond Ex15 step 3: 28 has no 3', rowsP[1] % 3 !== 0);
-  ok('Beyond Ex15 step 4: the first squares', numsOf(stepText(15, 'Step 4')), [rowsP[0], s[0][0][1], s[0][0][2], s[0][0][0], rowsP[1], s[0][1][1], s[0][1][2], s[0][1][0]]);
-  const check = flatText((ex.match(/<p>Check the first column:[\s\S]*?<\/p>/) || [''])[0]);
-  ok('Beyond Ex15 the check on the first column', numsOf(check), [s[0][0][0], s[0][1][0], s[0][2][0], colsP[0]]);
-  is('Fig. 5.14 is captioned for Example 15', /Fig\. 5\.14<\/span> For Example 15\./.test(ex));
-  is('Beyond has a Type 6 head for the prime puzzles', /<h3>Type 6 &middot; Prime puzzles<\/h3>/.test(BEYOND_HTML));
-}
-inAnswers('A Beyond: fifteen examples', 'stage 2 sets fifteen examples as steps, numbered 1 to 15 on their own');
-inAnswers('A Q29(d)', 'multiples of 8 until one ends in 0 or 5: 8, 16, 24, 32, 40');
-inAnswers('A Q30(c)', `**${84 / 14} rows of chairs and ${126 / 14} rows of stools**`);
-inAnswers('A Q31(b)', `again after **${lcm(6, 8, 12)} minutes**`);
-inAnswers('A AR 16', `$221 = ${13} \\times ${17}$, so 221 has more than\ntwo factors and is composite; R is the reason A is true, so **(a)**.`);
-is('ANSWERS.md Beyond: no "co-prime, so their first common multiple"', !/co-prime, so their first common multiple/.test(ANSWERS.slice(ANSWERS.indexOf('## Beyond the Book'))));
+/* ---- read the divisions --------------------------------------------- */
+const board = PAGES.filter(f => /^p09\d/.test(f)).map(f => HTML[f]).join('\n');
+const bridge = PAGES.filter(f => /^p1\d\d/.test(f)).map(f => HTML[f]).join('\n');
+const keyAt = bridge.indexOf('c-stage__title">Answers');
+ok('the Answers stage exists', keyAt > 0);
+const beyond = bridge.slice(0, keyAt), key = bridge.slice(keyAt);
+const beyondKeyAt = key.indexOf('c-practice__sub">Beyond the Book');
+ok('the key has a Beyond the Book part', beyondKeyAt > 0);
+const boardKey = key.slice(0, beyondKeyAt), bridgeKey = key.slice(beyondKeyAt);
 
-/* ---- report -------------------------------------------------- */
+// questions: number -> inner html of its <li>
+const questions = src => {
+  const out = {};
+  for (const m of src.matchAll(/<ol class="c-questions"( data-start="(\d+)")?>\s*<li[^>]*>([\s\S]*?)<\/li>\s*<\/ol>\s*<\/div>/g)) out[m[2] ? +m[2] : 1] = m[3];
+  return out;
+};
+const BQ = questions(board), XQ = questions(beyond);
+ok('By the Book has 50 questions, 1-50', JSON.stringify(Object.keys(BQ).map(Number)) === JSON.stringify(range(1, 50)), Object.keys(BQ).join(','));
+ok('Beyond has 15 practice questions, 1-15', JSON.stringify(Object.keys(XQ).map(Number)) === JSON.stringify(range(1, 15)), Object.keys(XQ).join(','));
+const opts = li => { const m = li.match(/<ol class="c-parts c-parts--alpha[^"]*">([\s\S]*?)<\/ol>/); return m ? [...m[1].matchAll(/<li>([\s\S]*?)<\/li>/g)].map(x => text(x[1])) : []; };
+const nums = li => opts(li).map(o => +o.replace(/[^\d]/g, ''));
 
-console.log(`\nClass 6 · Chapter 5 · Prime Time`);
-console.log(`  ${checked} arithmetic identities read off the pages and evaluated`);
-if (skipped.length) {
-  console.log(`  ${skipped.length} maths span(s) not arithmetic, so not evaluated:`);
-  for (const s of skipped) console.log(`      ${s}`);
-}
-console.log(`  ${pass} check(s) passed`);
-if (fails.length) {
-  console.log(`\n  ${fails.length} FAILED:`);
-  for (const f of fails) console.log(`    ! ${f}`);
-  process.exit(1);
-}
-console.log(`  all clear\n`);
+// key rows: label -> text
+const rows = src => Object.fromEntries([...src.matchAll(/work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)].map(m => [+m[1], text(m[2])]));
+const letters = src => {
+  const out = {};
+  for (const m of src.matchAll(/<span class="c-answers__list">([\s\S]*?)<\/span>\s*<\/li>/g)) {
+    const t = text(m[1]);
+    for (const x of t.matchAll(/(\d+)\s+((?:\([a-d]\)(?:,\s*)?)+|\d+)/g)) out[+x[1]] = x[2].replace(/[()\s]/g, '');
+  }
+  return out;
+};
+const BR = rows(boardKey), BL = letters(boardKey), XR = rows(bridgeKey), XL = letters(bridgeKey);
+for (const n of range(1, 50)) ok(`By the Book ${n} is in the key`, n in BR || n in BL);
+for (const n of range(1, 15)) ok(`Beyond ${n} is in the key`, n in XL || n in XR);
+
+/* ---- examples: tabs and answers ------------------------------------- */
+const exOf = src => [...src.matchAll(/c-example__tab">Example (\d+)<\/div><div class="c-example__body">([\s\S]*?)<\/div><\/div><\/div><\/div>/g)].map(m => ({ n: +m[1], body: m[2] }));
+const EX = exOf(beyond);
+ok('Beyond examples run 1-10', JSON.stringify(EX.map(e => e.n)) === JSON.stringify(range(1, 10)), EX.map(e => e.n).join(','));
+const exAns = n => { const e = EX.find(x => x.n === n); const m = e && e.body.match(/work__label">Answer<\/span><span>([\s\S]*?)<\/span>/); return m ? text(m[1]) : ''; };
+for (const e of EX) ok(`Example ${e.n} ends in an Answer row`, exAns(e.n) !== '');
+const bodyTabs = PAGES.filter(f => /^p0[0-8]\d/.test(f)).flatMap(f => [...HTML[f].matchAll(/c-example__tab">Example (\d+)/g)].map(m => +m[1]));
+ok('body examples run 1-5', JSON.stringify(bodyTabs) === JSON.stringify(range(1, 5)), bodyTabs.join(','));
+const exOpts = n => opts(EX.find(x => x.n === n).body);
+
+/* ---- C: By the Book objective and assertion-reason ------------------ */
+const want = {};
+want[41] = pick(nums(BQ[41]), isPrime);
+want[42] = pick(nums(BQ[42]), x => x === divisors(36).length);
+want[43] = pick(opts(BQ[43]), o => { const f = o.split(/[^\d]+/).filter(Boolean).map(Number); return f.every(isPrime) && f.reduce((a, b) => a * b, 1) === 84; });
+{ const ds = range(0, 9).filter(d => (5102 + 10 * d) % 4 === 0); want[44] = pick(nums(BQ[44]), x => x === Math.max(...ds)); }
+want[45] = pick(nums(BQ[45]), x => x === 2347 % 5);
+want[46] = pick(nums(BQ[46]), k => k < 10 && k !== 6 && lcm(6, k) === 18);
+want[47] = pick(nums(BQ[47]), x => [60, 84, 90].every(n => n % x === 0));
+{ const s1 = primesTo(100).every(p => p % 2 === 1), s2 = !isPrime(1), s3 = primesTo(100).every(p => primesTo(100).every(q => p === q || coprime(p, q)));
+  const truth = ['i', 'ii', 'iii'].filter((_, i) => [s1, s2, s3][i]);
+  const names = ['(i) only', '(ii) only', '(i) and (ii)', '(ii) and (iii)'];
+  const as = [['i'], ['ii'], ['i', 'ii'], ['ii', 'iii']];
+  want[48] = L[as.findIndex(a => JSON.stringify(a) === JSON.stringify(truth))];
+  ok('48: options read as printed', JSON.stringify(opts(BQ[48])) === JSON.stringify(names)); }
+function primesTo(n) { return range(2, n).filter(isPrime); }
+want[49] = (1001 % 7 === 0 && 7 * 143 === 1001 && !isPrime(1001) && 1001 % 2 === 1 && 1001 % 10 !== 0) ? 'b' : '?';
+want[50] = pick(nums(BQ[50]), x => x % 8 === 0);
+// assertion-reason: [A true, R true, R explains A]
+const test8 = range(1, 9999).every(n => (n % 8 === 0) === ((n % 1000) % 8 === 0));
+const code = (a, r, ex) => a && r ? (ex ? 'a' : 'b') : a ? 'c' : r ? 'd' : '?';
+want[31] = code(7248 % 8 === 0, test8, true);
+want[32] = code(coprime(35, 48), !isPrime(35) && !isPrime(48), false);
+want[33] = code(isPrime(91), true, false);
+want[34] = code(isPrime(2), primesTo(100).every(p => p % 2), false);
+want[35] = code(divisors(1).length === 1, divisors(1).length === 1, true);
+for (const n of [...range(31, 35), ...range(41, 50)]) ok(`By the Book ${n}: key ${BL[n]}, computed ${want[n]}`, BL[n] === want[n]);
+{ const all = [...range(31, 35), ...range(41, 50)].map(n => BL[n]); ok('By the Book letters use all of a-d', 'abcd'.split('').every(l => all.includes(l))); }
+
+/* ---- C: Beyond practice --------------------------------------------- */
+const X = {};
+X[1] = pick(nums(XQ[1]), x => x === [61, 67, 71, 73, 77, 79].filter(isPrime).length);
+ok('Q1: the table is what is left of 61-80 after 2, 3 and 5', JSON.stringify(range(61, 80).filter(n => n % 2 && n % 3 && n % 5)) === JSON.stringify([61, 67, 71, 73, 77, 79]));
+X[2] = pick(nums(XQ[2]), x => x === [4, 6, 8, 9, 10, 15].filter(d => 60 % d === 0).length);
+X[3] = pick(nums(XQ[3]), x => x === range(0, 3).find(k => (2025 + k) % 4 === 0));
+X[4] = pick(nums(XQ[4]), x => x === common(42, 70).length - 1);
+X[5] = pick(nums(XQ[5]), x => coprime(x, 36));
+X[6] = pick(nums(XQ[6]), x => x % 8 === 0);
+X[7] = pick(opts(XQ[7]).map(o => o.split(' and ').map(Number)), ([a, b]) => a % 6 === 0 && b % 6 === 0);
+X[8] = pick(nums(XQ[8]), x => !isPrime(x));
+X[9] = String(range(1, 100).filter(n => n % 4 === 0 && n % 6 === 0).length);
+X[10] = String(range(1, 50).filter(n => coprime(n, 10)).length);
+X[11] = String([...new Set(factorise(2431))].reduce((a, b) => a + b, 0));
+ok('Q11: 2431 = 11 × 221', 11 * 221 === 2431);
+// matching: compute the right pairing, then find its option
+const matchOpt = (li, pairs) => { const target = pairs.map(([p, v]) => `${p}–${v}`).join(', '); return pick(opts(li), o => o === target); };
+X[12] = matchOpt(XQ[12], [['P', [6, 7, 8, 20, 9].indexOf(primesTo(19).length) + 1], ['Q', [6, 7, 8, 20, 9].indexOf(divisors(18).length) + 1], ['R', [6, 7, 8, 20, 9].indexOf(factorise(91)[0]) + 1], ['S', [6, 7, 8, 20, 9].indexOf(lcm(4, 10)) + 1]]);
+{ const II = [2135, 97, 1348, 3120, 91];
+  const idx = f => II.findIndex(f) + 1;
+  ok('Q13: each List I row has exactly one match', [x => x % 8 === 0, x => x % 4 === 0 && x % 8, x => x % 5 === 0 && x % 2, isPrime].every(f => II.filter(f).length === 1));
+  X[13] = matchOpt(XQ[13], [['P', idx(x => x % 8 === 0)], ['Q', idx(x => x % 4 === 0 && x % 8)], ['R', idx(x => x % 5 === 0 && x % 2)], ['S', idx(isPrime)]]); }
+for (const n of range(1, 13)) ok(`Beyond ${n}: key ${XL[n]}, computed ${X[n]}`, XL[n] === X[n]);
+// paragraph-based practice
+{ const p14 = opts(XQ[14]).map(Number);
+  ok('Beyond 14 (i)', XR[14]?.includes(`(${L[p14.indexOf(rects(48))]}) ${rects(48)}`), XR[14]);
+  ok('Beyond 14 (ii)', XR[14]?.includes(`(ii) ${range(49, 100).find(n => rects(n) === 1)}`));
+  ok('Beyond 14 (iii)', XR[14]?.includes(`(iii) ${rects(60)}`));
+  const cards = range(2, 13);
+  const with12 = cards.filter(c => c !== 12 && coprime(c, 12));
+  const p15 = opts(XQ[15]).map(Number);
+  ok('Beyond 15 (i)', XR[15]?.includes(`(${L[p15.indexOf(with12.length)]}) ${with12.length}: ${with12.slice(0, -1).join(', ')} and ${with12.at(-1)}`), XR[15]);
+  ok('Beyond 15 (ii)', XR[15]?.includes(`(ii) ${cards.filter(c => c !== 13 && coprime(c, 13)).length}`));
+  const with14 = cards.filter(c => coprime(c, 14));
+  ok('Beyond 15 (iii)', XR[15]?.includes(`(iii) ${with14.length}: ${with14.slice(0, -1).join(', ')} and ${with14.at(-1)}`)); }
+ok('Beyond key row 9', XR[9]?.includes(`12 ${B}times 8 = 96`) && lcm(4, 6) === 12);
+ok('Beyond key row 11', XR[11]?.includes('41'));
+
+/* ---- C: Beyond examples --------------------------------------------- */
+const exWant = {
+  1: pick(exOpts(1).map(Number), x => divisors(x).length === 3),
+  2: pick(exOpts(2).map(Number), x => x === range(0, 8).find(k => (1234 + k) % 8 === 0)),
+  3: pick(exOpts(3).map(o => o.split(' and ').map(Number)), ([a, b]) => coprime(a, b)),
+  4: pick(exOpts(4).map(Number), x => 90 % x === 0),
+};
+for (const n of [1, 2, 3, 4]) ok(`Example ${n}: ${exAns(n)} vs ${exWant[n]}`, exAns(n).replace(/[()\s]/g, '').startsWith(exWant[n]));
+ok('Example 4: the number is 90', 2 * 3 * 3 * 5 === 90);
+ok('Example 5: 12 factors of 72', exAns(5) === String(divisors(72).length));
+ok('Example 6: 37', exAns(6) === String(range(2, 1000).find(n => n % 4 === 1 && n % 6 === 1 && n % 9 === 1)));
+{ const t7 = [8, 36, 2, 4], II = [4, 36, 8, 2];
+  ok('Example 7 values', gcd(24, 40) === t7[0] && lcm(12, 18) === t7[1] && divisors(13).length === t7[2] && range(2, 20).find(n => !isPrime(n)) === t7[3]);
+  const combo = 'P–' + (II.indexOf(t7[0]) + 1) + ', Q–' + (II.indexOf(t7[1]) + 1) + ', R–' + (II.indexOf(t7[2]) + 1) + ', S–' + (II.indexOf(t7[3]) + 1);
+  ok('Example 7 answer', exAns(7) === `(${L[exOpts(7).indexOf(combo)]}) ${combo}`, exAns(7)); }
+{ const P = [2 * 2 * 3 * 7, 2 * 3 * 3 * 5, 27, 32], II = [27, 84, 32, 90];
+  const combo = ['P', 'Q', 'R', 'S'].map((k, i) => `${k}–${II.indexOf(P[i]) + 1}`).join(', ');
+  ok('Example 8 answer', exAns(8) === `(${L[exOpts(8).indexOf(combo)]}) ${combo}`, exAns(8)); }
+{ // the 2 by 2 prime puzzle: rows 6, 35; columns 10, 21 — solve by search
+  const ps = primesTo(50), sols = [];
+  for (const a of ps) for (const b of ps) for (const c of ps) for (const d of ps)
+    if (a * b === 6 && c * d === 35 && a * c === 10 && b * d === 21) sols.push([a, b, c, d]);
+  ok('Example 9: the puzzle has one solution', sols.length === 1);
+  const [a, b, c, d] = sols[0] || [];
+  ok('Example 9 answer', exAns(9) === `(i) (${L[exOpts(9).map(Number).indexOf(a)]}) ${a}; (ii) ${a * b * c * d}; (iii) ${a + b + c + d}`, exAns(9)); }
+{ const f = lcm(4, 6), times = range(1, 60).filter(t => t % f === 0).length, all = lcm(4, 6, 10);
+  ok('Example 10 answer', exAns(10) === `(i) (${L[exOpts(10).map(o => parseInt(o)).indexOf(f)]}) ${f} seconds; (ii) ${times}; (iii) ${all}`, exAns(10)); }
+
+/* ---- D: By the Book written answers --------------------------------- */
+const has = (n, ...vals) => { const r = BR[n] || ''; for (const v of vals) ok(`By the Book ${n} shows ${v}`, r.includes(String(v)), r); };
+has(1, common(36, 60).slice(0, -1).join(', ') + ' and ' + common(36, 60).at(-1));
+{ const m = range(1, 200).filter(x => x % 8 === 0 && x % 12 === 0).slice(0, 3); has(2, `${m[0]}, ${m[1]} and ${m[2]}`); }
+has(4, factorise(98).join(` ${B}times `));
+has(5, range(51, 100).find(isPrime));
+ok('BtB 6: 7236 by 4 yes, by 8 no', 7236 % 4 === 0 && 7236 % 8 !== 0 && /By 4, yes/.test(BR[6]) && /By 8, no/.test(BR[6]));
+ok('BtB 7: 45 and 64 co-prime', coprime(45, 64) && /^Yes/.test(BR[7]));
+has(8, String(range(1, 9).filter(k => lcm(4, k) === 28)));
+has(9, `remainder is ${3457 % 5}`, `remainder is ${3457 % 2}`);
+has(10, `${divisors(49).length} factors`);
+{ const v = Math.max(...range(100, 999).filter(n => n % 20 === 0)); ok(`By the Book 12 opens with ${v}`, (BR[12] || "").startsWith(String(v))); }
+ok('BtB 13: 2016 divisible by 8', 2016 % 8 === 0 && /^Yes/.test(BR[13]));
+has(14, common(48, 72).slice(0, -1).join(', ') + ' and ' + common(48, 72).at(-1), `largest jump size is ${Math.max(...common(48, 72))}`);
+ok('BtB 15: pairs co-prime with product 1800', coprime(8, 225) && coprime(9, 200) && coprime(25, 72) && 9 * 200 === 1800 && 25 * 72 === 1800);
+ok('BtB 16: 21 has four factors', divisors(21).length === 4);
+{ const n = range(51, 99).filter(x => x % 12 === 0 && String(x).split('').reduce((a, b) => a + +b, 0) === 9); ok('BtB 17: one answer, 72', n.length === 1 && n[0] === 72 && /^72/.test(BR[17])); }
+has(18, lcm(6, 9, 12), range(101, 999).find(x => x % lcm(6, 9, 12) === 0));
+has(19, [2, 4, 5, 10].filter(d => 2340 % d === 0).join(', ').replace(/, (\d+)$/, ' and $1'));
+ok('BtB 19: 8 does not divide 2340', 2340 % 8 !== 0);
+{ const p = range(81, 99).filter(isPrime); has(20, p.slice(0, -1).join(', ') + ' and ' + p.at(-1), `= ${19 - p.length}`); }
+has(21, common(84, 126).slice(0, -1).join(', ') + ' or ' + common(84, 126).at(-1), `${84 / 14} rows of chairs`, `${126 / 14} of stools`);
+{ const f = lcm(6, 8, 12); ok('BtB 22: every 24 minutes, 5 times', f === 24 && range(1, 120).filter(t => t % f === 0).length === 5 && /5 times/.test(BR[22])); }
+has(23, `: ${lcm(4, 6)}`);
+{ const a = Math.floor(200 / 6), b = Math.floor(200 / 8), c = Math.floor(200 / lcm(6, 8)); has(24, `${a} multiples of 6`, `${b} of 8`, `${c} of both`, `= ${a + b - c}`); }
+{ const n = 2 * 2 * 3 * 3 * 7; has(25, n, `= 14 ${B}times ${n / 14}`); ok('BtB 25: not by 8', n % 8 !== 0); }
+{ const p = range(101, 129).filter(isPrime); has(26, p.slice(0, -1).join(', ') + ' and ' + p.at(-1), `${p.length} primes`); }
+has(27, `36 figs: ${rects(36)} rectangles`, `37 figs: ${rects(37)}`, `40 figs: ${rects(40)}`);
+{ const prs = divisors(420).filter(d => d > 1 && d * d < 420 && coprime(d, 420 / d)); ok('BtB 28: 7 co-prime pairs, all printed', prs.length === 7 && prs.every(d => BR[28].includes(`${d} ${B}times ${420 / d}`) || BR[28].includes(`${420 / d} ${B}times ${d}`)), prs.join(',')); }
+{ const m = lcm(2, 4, 5, 8, 10), fours = range(1000, 9999).filter(x => x % m === 0); has(29, fours[0], fours.at(-1)); }
+ok('BtB 30', factorise(45 * 56).join(' ') === '2 2 2 3 3 5 7' && (45 * 56) % 12 === 0 && (45 * 56) % 35 === 0 && (45 * 56) % 27 !== 0);
+has(36, `${gcd(48, 60)} teams`, `${48 / gcd(48, 60)} girls and ${60 / gcd(48, 60)} boys`, `${48 / 12 + 60 / 12} children`);
+ok('BtB 36 (ii): 8 does not divide 60', 60 % 8 !== 0);
+ok('BtB 37', lcm(15, 20) === 60 && /7:00 am/.test(BR[37]) && [0, 60, 120, 180, 240].length === 5 && /5 times/.test(BR[37]));
+{ const left = range(51, 70).filter(n => n % 2 && n % 3 && n % 5 && n % 7);
+  has(38, `${left.length} numbers, ${left.slice(0, -1).join(', ')} and ${left.at(-1)}`, range(2, 1000).find(n => !isPrime(n) && n % 2 && n % 3 && n % 5 && n % 7));
+  ok('BtB 38: all left are primes', left.every(isPrime)); }
+{ const both = range(2025, 2100).filter(y => (y - 2024) % lcm(3, 4) === 0); has(39, '2027 and 2030', both[0], `${both.length} times`); }
+{ const ds = range(0, 9).filter(d => (7130 + d) % 8 === 0); ok('BtB 40', 4520 % 8 === 0 && 2316 % 4 === 0 && 2316 % 8 !== 0 && ds.length === 1 && BR[40].includes(`Only ${ds[0]}`) && BR[40].includes('Shelf A') && BR[40].includes('Shelf B')); }
+
+/* ---- the body's worked examples and a few body claims --------------- */
+ok('Ex 1: 15, 39 not co-prime; 4, 9 co-prime', !coprime(15, 39) && coprime(4, 9));
+ok('Ex 2: 180', factorise(180).join(' ') === '2 2 3 3 5');
+ok('Ex 3: 40 and 231 co-prime', coprime(40, 231) && factorise(231).join(' ') === '3 7 11');
+ok('Ex 4: 242 and 195 co-prime', coprime(242, 195) && factorise(242).join(' ') === '2 11 11' && factorise(195).join(' ') === '3 5 13');
+ok('Ex 5: 168 = 12 × 14', 168 % 12 === 0 && factorise(168).join(' ') === '2 2 2 3 7');
+ok('Fig. 5.6: 25 primes up to 100', primesTo(100).length === 25);
+ok('the largest multiple of 4 test', range(1, 9999).every(n => (n % 4 === 0) === ((n % 100) % 4 === 0)));
+
+/* ---- ANSWERS.md carries the same keys -------------------------------- */
+ok('ANSWERS.md objective key', ANSWERS.includes(range(41, 50).map(n => `${n} (${BL[n]})`).join(' · ')));
+ok('ANSWERS.md A-R key', ANSWERS.includes(range(31, 35).map(n => `${n} (${BL[n]})`).join(' · ')));
+ok('ANSWERS.md Beyond Q11', ANSWERS.includes('11 **41**'));
+
+console.log(`\n  ${checks} checks, ${fails} failed`);
+process.exit(fails ? 1 : 0);

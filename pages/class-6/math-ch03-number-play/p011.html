@@ -2,54 +2,62 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-          <ol>
-            <li>Can you make 1,000 using the numbers in the middle? Why not?</li>
-            <li>Now make 14,000, 15,000 and 16,000. Each of them is possible.</li>
-            <li>Which thousands cannot be made at all?</li>
-          </ol>
+      <div class="c-figure c-figure--xl">
+        <figure>
+          <svg viewBox="0 0 355 196" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A flowchart: take a 4-digit number; make the largest number from its digits, A; make the smallest, B; subtract to get C; then use the digits of C and repeat from the largest-number step">
+            <rect class="dg-fill-c-soft" x="14" y="6" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="6" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="26.2" text-anchor="middle">Take a 4-digit number.</text>
+            <line class="dg-move" x1="132" y1="39" x2="132" y2="54" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-c-soft" x="14" y="56" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="56" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="76.2" text-anchor="middle">Make the largest number from its digits: A</text>
+            <line class="dg-move" x1="132" y1="89" x2="132" y2="104" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-c-soft" x="14" y="106" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="106" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="126.2" text-anchor="middle">Make the smallest number from its digits: B</text>
+            <line class="dg-move" x1="132" y1="139" x2="132" y2="154" marker-end="url(#dg-arrow)"/>
+            <rect class="dg-fill-c-soft" x="14" y="156" width="236" height="32" rx="3"/>
+            <rect class="dg-thin" x="14" y="156" width="236" height="32" rx="3"/>
+            <text class="dg-note" x="132" y="176.2" text-anchor="middle">Subtract: C = A − B</text>
+            <path class="dg-move" d="M251 172 H272 V72 H253" marker-end="url(#dg-arrow)"/>
+            <text class="dg-note" x="282" y="108" text-anchor="start">use the</text>
+            <text class="dg-note" x="282" y="122" text-anchor="start">digits</text>
+            <text class="dg-note" x="282" y="136" text-anchor="start">of C</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.12</span> The Kaprekar steps. After each subtraction, start again with the digits of C.</figcaption>
+        </figure>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Start with 6382. Follow the Kaprekar steps.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Round 1: $A = 8632$, $B = 2368$, $C = 8632 - 2368 = 6264$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Round 2: $A = 6642$, $B = 2466$, $C = 6642 - 2466 = 4176$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>Round 3: $A = 7641$, $B = 1467$, $C = 7641 - 1467 = 6174$</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>$6174 + 1467 = 7641$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>6382 reaches 6174 in 3 rounds.</span></div>
           </div>
+          <p>The digits of 6174 give $A = 7641$ and $B = 1467$ again, so every round after this gives 6174 once more.</p>
         </div>
       </div>
 
-      <h3>Adding and subtracting</h3>
+      <p>Now take some 4-digit numbers of your own, and follow the steps. What happens? Try at least three different numbers, and check with your friends what they got.</p>
 
-      <p>This time you may subtract as well as add. Use the numbers in Table 3.15, as many times as you need, to make each number below. The first one is done for you.</p>
-
-      <table>
-        <caption>Table 3.15 Six numbers</caption>
-        <thead><tr><th colspan="3">Use each as often as you need</th></tr></thead>
-        <tbody>
-          <tr><td>40,000</td><td>7,000</td><td>300</td></tr>
-          <tr><td>1,500</td><td>12,000</td><td>800</td></tr>
-        </tbody>
-      </table>
-
-      <p>To make 39,800, start from 40,000, which is close to it. 40,000 is 200 too big. Taking away 800 and adding back 300 twice takes away exactly 200, because $800 - 300 - 300 = 200$. Try to start each of the others from a number close to it, and then fix the difference with the smaller numbers. When you have an answer, check it by working it out from left to right.</p>
-
-      <div class="work work--list">
-        <p>$39{,}800 = 40{,}000 - 800 + 300 + 300$</p>
-        <p>$45{,}000 =$ <span class="blank blank--lg"></span></p>
-        <p>$5{,}900 =$ <span class="blank blank--lg"></span></p>
-        <p>$17{,}500 =$ <span class="blank blank--lg"></span></p>
-        <p>$21{,}400 =$ <span class="blank blank--lg"></span></p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The Kaprekar constant</div>
+        <p>Start with any 4-digit number whose digits are not all the same, and repeat the steps. You always reach 6174. This number is called the <span class="term">Kaprekar constant</span>.</p>
       </div>
 
-      <h3>Digits and operations</h3>
-
-      <p>Adding two 5-digit numbers can give another 5-digit number. Subtracting one 5-digit number from another can also give a 5-digit number. Here is an example of each, and in both of them every number has exactly 5 digits.</p>
-
-      <div class="work work--list">
-        <p>$12{,}350 + 24{,}545 = 36{,}895$</p>
-        <p>$48{,}952 - 24{,}547 = 24{,}405$</p>
-      </div>
-
-      <p>Does this always happen? To find out how many digits an answer can have, look at the smallest and the largest answers that are possible. Example 3 shows how to do this when the two numbers have different numbers of digits.</p>
+      <p>What about 3-digit numbers? Follow the same steps with a few 3-digit numbers, such as 321. Which number starts to repeat? Keep three digits all the way: 99 is read as 099. Compare what you find with a friend.</p>
 
     </div>
   </div>

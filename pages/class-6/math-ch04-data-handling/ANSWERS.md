@@ -14,6 +14,7 @@ Where a question asks the reader to collect data, draw or choose, the answer
 says what the table or drawing must show, or gives one worked instance under
 *answers will vary*. Beyond the Book's worked examples are called *Beyond
 Example N*, so they cannot be confused with the chapter's own Examples 1–3.
+By the Book's key, 1–50, and Beyond the Book's are at the end.
 
 ---
 
@@ -135,10 +136,11 @@ symbols can.
 1. **5** students. 2. **Class VIII**, 7 students. 3. **Class V** — its bar
    has height 0.
 
-### Think and Reflect (the scale of Fig. 4.15)
+### Think and Reflect (the scale of the traffic graph)
 
 With 1 unit for 1 vehicle the bars would be far too long to draw: the bar
-for 7 to 8 a.m. would be **1200** units long, instead of 12.
+for the 1200 vehicles of 7 to 8 a.m. would be **1200** units long, instead
+of 12.
 
 ### Exercise Set 4.5
 
@@ -171,8 +173,15 @@ Read from Fig. 4.15: 150, 1200, 1000, 800, 700 and 600 vehicles.
 3. **Yes.** One-fourth of ₹3400 is ₹850, and education is ₹800, which is
    less.
 
-*Try drawing Imran's bar graph this way:* the items go up the page and the
-bars lie on their side, 15, 17, 4, 2, 3 and 6 units long.
+### Think and Reflect (bars lying on their side)
+
+1. **What the drawing must show:** the items go up the page and the bars
+   lie on their side, 15, 17, 4, 2, 3 and 6 units long. The scale is now
+   on the **line across**.
+2. $3100 \div 200 = 15.5$, so the bar is **15 and a half units** long.
+3. **House rent and food.** The family spends
+   $3000 + 3400 + 800 + 400 + 600 + 1200 = 9400$ rupees, and half of that
+   is 4700; rent and food together are $3000 + 3400 = 6400$.
 
 ### Exercise Set 4.6
 
@@ -253,6 +262,14 @@ bars lie on their side, 15, 17, 4, 2, 3 and 6 units long.
 Everest is **6620 m** taller than Kosciuszko: $8848 - 2228 = 6620$. Denali
 and Kilimanjaro are **not very different**: $6194 - 5895 = 299$ m.
 
+### Think and Reflect (the column graph)
+
+1. **Kilimanjaro and Elbrus**: $5895 - 5642 = 253$ m, less than any other
+   pair next to each other in height (Denali and Kilimanjaro differ by
+   299 m). It is easier to see in the column graph, where their columns
+   are nearly level.
+2. **About 4 times**: $2228 \times 4 = 8912$, a little more than 8848.
+
 ### Exercise Set 4.7
 
 1. **Standing up.** A height is measured upwards from the ground.
@@ -271,14 +288,133 @@ Elbrus in Fig. 4.35, but it is not.
 
 ### Think and Reflect (Everest and Elbrus)
 
-$5642 \times 2 = 11284$. **No**: Everest is 8848 m, much less than
-11284 m. It is only about one and a half times as tall as Elbrus.
+1. $5642 \times 2 = 11284$. **No**: Everest is 8848 m, much less than
+   11284 m. It is only about one and a half times as tall as Elbrus.
+2. **No.** Everest's triangle is about 4 times as tall **and** about 4
+   times as wide as Kosciuszko's, so it covers about $4 \times 4 = 16$
+   times as much of the page. The picture makes the difference look far
+   bigger than it is.
+
+---
+
+## By the Book
+
+Fifty questions in the order of the NCERT exercises: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September
+2026. The book's own key is in Beyond the Book's Answers stage; this is the
+same key, set out in full.
+
+### Very short answer
+
+1. 4 groups of five and **3** marks, since $23 = 4 \times 5 + 3$.
+2. 3, 3, 3, 5, 5, 7, 8, 9. The value **3** appears most often, 3 times.
+3. $4 \times 6 = 24$ and half of 6 is 3, so $24 + 3 = 27$: **27** books.
+4. $140 \div 20 = 7$: **7 units**.
+5. **Yes.** 4 whole symbols show 40, and half a symbol shows 5;
+   $40 + 5 = 45$.
+6. **1 unit for 40 kg**: $360 \div 9 = 40$.
+7. $36 - (9 + 12 + 7) = 36 - 28 = 8$: **8**.
+8. $5 \times 8 = 40$ and $2 \times 8 + 4 = 20$; $40 + 20 = 60$: **60**
+   mangoes.
+9. $18 = 4 \times 4 + 2$, and 2 is half of 4: **4 and a half** symbols.
+10. **Bus**, with 12. $8 + 12 + 10 = 30$: **30** students.
+
+### Short answer
+
+11. Marks 5, 6, 7, 8, 9 and 10 have frequencies 2, 6, 5, 4, 2 and 1, which
+    add up to 20. More than 7: $4 + 2 + 1 = 7$: **7** students.
+12. **3, 4 and a half, 2 and 3 and a half** symbols.
+    $30 + 45 + 20 + 35 = 130$: **130** notebooks.
+13. Only the height of a bar should show its number. If the bar for 20
+    were drawn wider, it could look bigger than the bar for 40, though 40
+    is twice 20.
+14. **1 symbol for 20** bicycles: $70 \div 3.5 = 20$. $90 = 4 \times 20 + 10$,
+    so **4 and a half** symbols.
+15. **1 unit for 12** glasses: $72 \div 6 = 12$. Tuesday:
+    $9 \times 12 = 108$: **108** glasses.
+16. 1 child: 4 families; 2: 7; 3: 3; 4: 1. Most common: **2** children.
+    More than 2: $3 + 1 = 4$: **4** families.
+17. **1 unit for 50**: bars of 8, 15, 12 and 5 units. With 25 the 750 bar
+    is 30 units, too tall; with 100 it is 7 and a half, not on a mark.
+18. $4 + 7 + 5 + 4 = 20$ children. 10 years or younger: $4 + 7 = 11$, so
+    **11/20**.
+19. **No.** 7 symbols show $7 \times 5 = 35$ people. 12 is not a multiple of
+    5, or of 2 and a half, so it **cannot** be shown exactly.
+20. $7 \times 5 + 3 = 38$. $50 - 38 = 12$ more marks; $50 = 10 \times 5$,
+    so **10** groups.
+
+### Long answer
+
+21. With 1 unit for 5 books, bars of 9, 6, 11, 4 and 10 units. Most on
+    **Wednesday**, fewest on **Thursday**. $45 + 30 + 55 + 20 + 50 = 200$
+    books in all; $55 - 20 = 35$ more.
+22. With a key of 10, the rows for 45 and 75 need 4 and a half and 7 and a
+    half symbols. With 15 every row is whole: 4, 3, 5 and 2 symbols.
+    $60 + 45 + 75 + 30 = 210$ coconuts. **Week 1**, since
+    $60 = 2 \times 30$.
+23. Mango 10, banana 6, apple 5, guava 3 ($10 + 6 + 5 + 3 = 24$); bars of
+    10, 6, 5 and 3 units. **Mango** is the most popular, with
+    $10 - 5 = 5$ more than apple.
+24. Above 200 the bars are $300 - 200 = 100$ and $450 - 200 = 250$ tall, so
+    April looks **2 and a half** times as tall. From 0, with 1 unit for 50,
+    the bars are 6 and 9 units. Really April sold only **1 and a half**
+    times as many: $450 = 300 + 150$.
+25. 6A: walk 20, bus 14, bicycle 8; **42** students. 6B: walk 18, bus 15,
+    bicycle 9; **42** students. **6B** has more by bus, by $15 - 14 = 1$.
+26. **Lying on their side**, because the distances lie along the ground.
+    Bars of 3, 4 and a half, 2 and 6 units. $12 - 4 = 8$: **8 km** farther.
+27. A whole symbol shows 10 and a half symbol 5, so every row shows a
+    number of fives. 35: 3 and a half symbols; 60: 6; 75: 7 and a half.
+    **42** is not a multiple of 5 and cannot be shown.
+28. $40 - (6 + 10 + 9 + 5) = 10$: **10** students read 2 books. Books:
+    $0 + 10 + 20 + 27 + 20 = 77$. At least 2 books: $10 + 9 + 5 = 24$
+    students.
+29. 60, 90, 75 and 105 trees; **330** in all. $420 - 330 = 90$ more, a bar
+    $90 \div 15 = 6$ units tall.
+30. With 1 square for 10 the 360 bar is 36 squares, and with 20 it is 18:
+    both more than 15. With **1 square for 40**: 3, 7, 9, 5 and 4 squares.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (c) · 34 (d) · 35 (a)
+
+33: R is false; the number a bar stands for is its height **times** the
+scale. 34: A is false; 10 books need 2 and a half symbols.
+
+### Case-based questions
+
+36. (i) **50** (ii) **Thursday** (iii) $40 + 25 + 50 + 15 + 30 = 160$;
+    $200 - 160 = 40$ more.
+37. (i) $36 \div 6 = 6$ (ii) $24 + 36 + 30 + 42 = 132$ kg (iii) With 12 kg
+    the rows are 2, 3, 2 and a half, and 3 and a half symbols: **Weeks 3
+    and 4**.
+38. (i) $23 = 4 \times 5 + 3$: **4** (ii) $17 + 23 + 8 + 32 = 80$
+    (iii) **2/5**, which is more than 1/3, since 2/5 = 6/15 and
+    1/3 = 5/15.
+39. (i) **July** (ii) $26 + 28 + 25 + 21 = 100$ (iii) **June, August and
+    September**: 26, 25 and 21 are not multiples of 4.
+40. (i) $6 \times 50 = 300$ (ii) **Wednesday**, 200, twice Friday's 100
+    (iii) **No**: $150 + 250 + 200 + 300 + 100 + 350 = 1350$, which is 150
+    short.
+
+### Objective questions
+
+41 (b) · 42 (c) · 43 (d) · 44 (a) · 45 (b) · 46 (d) · 47 (a) · 48 (c) · 49 (b) · 50 (a)
+
+43: $7 \times 30 = 210$. 46: $90 \div 6 = 15$. 47:
+$(24 + 36 + 18 + 30) \div 6 = 18$. 49: $65 = 6 \times 10 + 5$.
 
 ---
 
 ## Beyond the Book
 
-### 1 Using What You Know
+Organised by format since 26 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own: *Beyond Example
+1* is not the chapter's Example 1 in §4.2.
+
+### Tried and explained (no head in the book)
 
 Each question is answered in the running text that follows it on the page:
 17 tally marks are 3 groups and 2 marks, 30 are 6 groups; Tuesday's row
@@ -287,86 +423,46 @@ kites, and the bar for 150 kites is 3 units; the row needs 3 and a half
 symbols; the scale should be 1 square for 20 pencils; Shop B's bar looks
 twice as tall; the team played 14 matches and scored 19 goals.
 
-### 2 Solved Examples
+### Solved examples
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (c) 1 symbol for 6 items |
+| | 2 | (d) 24 |
+| More than one correct | 3 | (a), (b), (d) |
+| | 4 | (a), (b), (d) |
+| Numerical answer | 5 | 48 |
+| | 6 | 14 |
+| Matching | 7 | (a) P–4, Q–1, R–3, S–2 |
+| | 8 | (c) P–2, Q–1, R–4, S–3 |
+| Paragraph-based | 9 | (i) (c) 6; (ii) 240; (iii) 5 |
+| | 10 | (i) (c) Zoya; (ii) 78; (iii) 3 |
 
-1. (c) 5 *(single correct)*
-2. (a) 36 *(single correct)*
-3. (c) 1 symbol = 6 items *(single correct)*
-4. (d) 24 *(single correct)*
-5. (b) 7 *(single correct)*
-6. (d) The second count exceeds the first by 6 *(single correct)*
-7. (a), (b), (d) *(multiple correct)*
-8. (a), (c), (d) *(multiple correct)*
-9. (a), (b), (d) *(multiple correct)*
-10. (b), (c), (d) *(multiple correct)*
-11. 48 *(numerical answer)*
-12. 14 *(numerical answer)*
-13. 7 *(numerical answer)*
-14. (a) P–4, Q–1, R–3, S–2 *(matching)*
-15. (c) P–2, Q–1, R–4, S–3 *(matching)*
+### Practice
 
-### 3 Practice — the key
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (b) 195 · 2 (a) 3; 4 · 3 (c) 28 · 4 (d) 4 |
+| More than one correct | 5–8 | 5 (a), (b), (d) · 6 (a), (c), (d) · 7 (a), (b), (c) · 8 (a), (b) |
+| Numerical answer | 9–11 | 9 **174** · 10 **3** · 11 **18** |
+| Matching | 12–13 | 12 (a) · 13 (c) |
+| Paragraph-based | 14–15 | 14 (i) (c) Friday; (ii) 167; (iii) 12 · 15 (i) (a) 3; (ii) 6; (iii) 360 |
 
-1 (b) · 2 (c) · 3 (d) · 4 (a) · 5 (c) · 6 (d) · 7 (a) · 8 (b) ·
-9 (c) · 10 (d) · 11 (b) · 12 (a) · 13 (a) · 14 (b) · 15 (c) · 16 (d)
-
-1. Four groups of five and 2 marks: $4 \times 5 + 2 = 22$.
-2. The number of times an item appears is its frequency.
-3. $27 = 4 \times 6 + 3$, and 3 is half of 6: 4 and a half symbols.
-4. $6 \times 25 = 150$ students.
-5. $140 \div 20 = 7$ units.
-6. The scale of a bar graph starts from 0.
-7. (i) and (iii) are true; (ii) is false, because the gaps must be equal.
-8. $10 + 5 + 2 = 17$ homes.
-9. Only a scale from 0 in equal steps is right.
-10. $36 \div 12 = 3$, $48 \div 12 = 4$, $60 \div 12 = 5$,
-    $24 \div 12 = 2$. The others fail: $36 \div 5$, $36 \div 8$ and
-    $36 \div 10$ are not whole numbers.
-11. Hina $6 \times 5 = 30$, Tara $4 \times 8 = 32$: Tara has 2 more.
-12. $2 \times 50 = 100$ people.
-13. A true, R true, and R is the reason: (a).
-14. A true, R true, but equal widths are not why a 0 has no bar: (b).
-15. A true ($6 \times 20 = 120$); R false, since the height is the value
-    divided by the scale: (c).
-16. A false — the fifth mark goes across the first four; R true: (d).
-
-### 3 Practice — the other answers
-
-17. **175** trees: $3 \times 50 + 25 = 175$.
-18. **9 units**: $225 \div 25 = 9$.
-19. 3, 3, 3, 5, 7, 9, 9; **3** appears most often.
-20. **6**: $40 - 15 - 11 - 8 = 6$.
-21. Only the height or length of a bar shows its number. A wider bar would
-    look bigger without standing for more.
-22. **What the table must show:** 2 people in 2 homes, 3 people in 5
-    homes, 4 people in 7 homes, 5 people in 4 homes, 6 people in 2 homes,
-    with tally marks; $2 + 5 + 7 + 4 + 2 = 20$. **6** homes have more than
-    4 people: $4 + 2 = 6$.
-23. Class 6 has $4 \times 20 + 10 = 90$ books, Class 7
-    $3 \times 20 = 60$ and Class 8 $5 \times 20 + 10 = 110$. **260** in
-    all; Class 8 has **50** more than Class 7.
-24. **200, 300, 120 and 240** people: $5 \times 40 = 200$,
-    $7 \times 40 + 20 = 300$, $3 \times 40 = 120$, $6 \times 40 = 240$.
-    **860** altogether.
-25. **15** symbols with 10 kg; **6** symbols with 25 kg. The row of 6 is
-    easier to draw and to read.
-26. (a) **4 times**: the bars are $600 - 400 = 200$ and $450 - 400 = 50$
-    tall, and $200 \div 50 = 4$. (b) **150** more: $600 - 450 = 150$.
-    (c) **9 units** and **12 units**: $450 \div 50 = 9$, $600 \div 50 = 12$.
-27. (a) Answers will vary. With 1 unit for 5 plates the bars are 7, 10, 4,
-    9, 12 and 6 units; with 1 unit for 10 plates they are 3 and a half, 5,
-    2, 4 and a half, 6 and 3 units. (b) The most on **Friday**, the fewest
-    on **Wednesday**. (c) **40**: $60 - 20 = 40$. (d) **240**:
-    $35 + 50 + 20 + 45 + 60 + 30 = 240$.
-28. (a) $25 = 20 + 5$ and $35 = 20 + 15$; neither 5 nor 15 is half of 20.
-    (b) **4, 2 and a half, 3 and a half, 5 and 3** symbols.
-    (c) **180**: $40 + 25 + 35 + 50 + 30 = 180$. (d) **Week 4**:
-    $2 \times 25 = 50$.
-29. (a) $12 + 8 + 10 = 30$, the days of June. (b) **6, 4 and 5**
-    symbols. (c) **4**: $12 - 8 = 4$. (d) **20**: $12 + 8 = 20$.
-30. (a) **4, 3, 5, 2, 6 and 7** units. (b) **810**:
-    $120 + 90 + 150 + 60 + 180 + 210 = 810$. (c) **Monday**:
-    $2 \times 60 = 120$.
+- Q1. $6 \times 30 + 15 = 195$ trees.
+- Q3. $3.5 \times 8 = 28$.
+- Q4. 4 divides 16, 28 and 40; 8 and 12 do not divide 28, and 2 uses more
+  symbols.
+- Q6. A half symbol stands for 3, so a row shows multiples of 3: 15, 27
+  and 33, not 20.
+- Q7. (d) is wrong: $150 \div 40 = 3.75$.
+- Q9. $3 + 4.5 + 2 + 5 = 14.5$ symbols; $14 \times 12 + 6 = 174$ books.
+- Q10. $16 + 14 = 30$, so $45 - 30 = 15$ came by cycle: 3 groups of five.
+- Q11. $4 + 7 + 5 + 9 = 25$ units; $450 \div 25 = 18$ people.
+- Q12. P $3 \times 20 = 60$, Q $2 \times 20 + 10 = 50$, R
+  $4 \times 20 + 10 = 90$, S $20 + 10 = 30$.
+- Q13. P $4 \times 15 = 60$, Q $6 \times 15 = 90$, R $45 \div 15 = 3$
+  units, S $105 \div 15 = 7$ units.
+- Q14. (i) 20 is not a number of threes; (ii)
+  $18 + 24 + 12 + 30 + 20 + 27 + 36 = 167$; (iii) $36 \div 3 = 12$.
+- Q15. (i) Above 60 the bars are 60 and 20 tall; (ii) $120 \div 20 = 6$;
+  (iii) $120 + 80 + 100 + 60 = 360$ bags.

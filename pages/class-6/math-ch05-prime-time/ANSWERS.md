@@ -489,89 +489,191 @@ Multiplying along every row and every column is the check.
 
 ---
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September 2026.
+The book's own key is in Beyond the Book's Answers stage; this is the same
+key, set out in full.
+
+### Very short answer
+
+1. $36 = 2 \times 2 \times 3 \times 3$ and $60 = 2 \times 2 \times 3 \times 5$.
+   The common factors are **1, 2, 3, 4, 6 and 12**.
+2. The multiples of 12 are 12, 24, 36, …; the first that is a multiple of 8
+   is 24. So **24, 48 and 72**.
+3. **No.** 1 has only one factor, and a prime has exactly two.
+4. $98 = 2 \times 7 \times 7$.
+5. **53.** $51 = 3 \times 17$ and 52 is even; 53 has only the factors 1 and
+   53.
+6. **Divisible by 4**, since its last two digits make $36 = 4 \times 9$.
+   **Not divisible by 8**, since its last three digits make
+   $236 = 8 \times 29 + 4$.
+7. **Yes.** $45 = 3 \times 3 \times 5$ and
+   $64 = 2 \times 2 \times 2 \times 2 \times 2 \times 2$ share no prime.
+8. **7.** The multiples of 4 are 4, 8, …, 28, and 28 is the first multiple
+   of 7 among them. (14 and 28 also work but are not less than 10.)
+9. Remainder **2** on dividing by 5 (last digit 7), and **1** on dividing by
+   2 (7 is odd).
+10. **3 factors**: 1, 7 and 49. So 49 is **composite**.
+
+### Short answer
+
+11. $105 = 3 \times 5 \times 7$ and $88 = 2 \times 2 \times 2 \times 11$. No
+    prime is in both, so they are **co-prime**.
+12. **980.** The common multiples of 4 and 5 are the multiples of 20;
+    $20 \times 49 = 980$ and $20 \times 50 = 1000$ has four digits.
+13. **Yes.** The last three digits make $16 = 8 \times 2$. Also
+    $2016 = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3 \times 7$,
+    which has at least three 2s, so 8 divides it: $2016 = 8 \times 252$.
+14. **1, 2, 3, 4, 6, 8, 12 and 24**; the largest jump size is **24**.
+15. $8 = 2 \times 2 \times 2$ and $225 = 3 \times 3 \times 5 \times 5$ share
+    no prime, and $8 \times 225 = 1800$. Another pair: **$9 \times 200$** or
+    **$25 \times 72$**.
+16. A factor of $21 = 3 \times 7$ is made from none, one or both of its
+    primes: 1, 3, 7 and 21. No other number divides it, so there are
+    exactly **4** factors. The same holds for any two different primes.
+17. **72.** It is a multiple of 3 and of 4, so of 12: 60, 72, 84 or 96.
+    Only $7 + 2 = 9$.
+18. **36**: the multiples of 12 are 12, 24, 36, and 36 is the first that is
+    a multiple of 9 (and of 6). The next are 72 and **108**.
+19. **2, 4, 5 and 10.** It ends in 0 (2, 5, 10); $40 = 4 \times 10$ (4).
+    Not 8: $340 = 8 \times 42 + 4$.
+20. **83, 89 and 97.** From 81 to 99 there are 19 numbers, so
+    $19 - 3 = 16$ are **composite**.
+
+### Long answer
+
+21. $84 = 2 \times 2 \times 3 \times 7$, $126 = 2 \times 3 \times 3 \times 7$.
+    A row length must divide both: **1, 2, 3, 6, 7, 14, 21 or 42** seats.
+    With 14: $84 \div 14 = $ **6 rows of chairs**, $126 \div 14 = $ **9 rows
+    of stools**.
+22. The multiples of 12 are 12, 24, …; 24 is the first that is a multiple of
+    8 (and of 6). They ring together every 24 minutes: **9:24 am**, then
+    9:48, 10:12, 10:36 and 11:00 am — **5 more times**.
+23. 12 and 36 are divisible by 4 and 6 but not by 24; 48 is divisible by all
+    three. So Anshu is wrong. $4 = 2 \times 2$ and $6 = 2 \times 3$ share a 2,
+    so a number divisible by both needs only two 2s and one 3: **12**.
+24. Multiples of 6: **33** ($6 \times 33 = 198$). Of 8: **25**
+    ($8 \times 25 = 200$). Of both, the multiples of 24: **8**
+    ($24 \times 8 = 192$). Of 6 or 8: $33 + 25 - 8 = $ **50**.
+25. **252.** $14 = 2 \times 7$ is included, so it is **divisible by 14**:
+    $252 = 14 \times 18$. $8 = 2 \times 2 \times 2$ needs three 2s and 252
+    has two, so it is **not divisible by 8**.
+26. **101, 103, 107, 109, 113 and 127** — **6** primes.
+    $119 = 7 \times 17$ and $121 = 11 \times 11$.
+27. 36: $1 \times 36$, $2 \times 18$, $3 \times 12$, $4 \times 9$,
+    $6 \times 6$ — **5**. 37: only $1 \times 37$ — **1**. 40: $1 \times 40$,
+    $2 \times 20$, $4 \times 10$, $5 \times 8$ — **4**. **37** is the prime:
+    only one rectangle means only two factors.
+28. $420 = 2 \times 2 \times 3 \times 5 \times 7$. If the 2s were split, 2
+    would be a common factor. Group 4, 3, 5 and 7: **$4 \times 105$,
+    $3 \times 140$, $5 \times 84$, $7 \times 60$, $12 \times 35$,
+    $20 \times 21$, $28 \times 15$** — 7 pairs.
+29. It must end in 0 (for 10, 5, 2) and be a multiple of 8, so it is a
+    multiple of 40 (the multiples of 8 end in 0 first at 40). Smallest:
+    $40 \times 25 = $ **1000**. Largest: $40 \times 249 = $ **9960**.
+30. $45 \times 56 = 3 \times 3 \times 5 \times 2 \times 2 \times 2 \times 7 = 2520$.
+    $12 = 2 \times 2 \times 3$ and $35 = 5 \times 7$ are included; 27 needs
+    three 3s and there are two.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (d) · 34 (c) · 35 (a)
+
+- 31: $248 = 8 \times 31$, and R is the test that explains A.
+- 32: 35 and 48 share no prime (A true); both are composite (R true) but
+  that is not why.
+- 33: $91 = 7 \times 13$, so A is false; R is the definition.
+- 34: A is true; R is false, because 2 is an even prime.
+- 35: R is exactly why 1 is neither.
+
+### Case-based questions
+
+36. (i) $48 = 2 \times 2 \times 2 \times 2 \times 3$, $60 = 2 \times 2 \times 3 \times 5$.
+    (ii) **No**: 8 is not a factor of 60. (iii) **12 teams**, each of 4 girls
+    and 5 boys — **9 children**.
+37. (i) 6:15, 6:30, 6:45 and 7:00 am. (ii) **7:00 am** (60 is the first
+    multiple of 20 that is a multiple of 15). (iii) 6:00, 7:00, 8:00, 9:00,
+    10:00 — **5 times**.
+38. (i) **Yes, by 3**: $57 = 3 \times 19$. (ii) **4**: 53, 59, 61 and 67,
+    the **primes**. (iii) **121** $= 11 \times 11$.
+39. (i) **2027 and 2030**. (ii) **2036**. (iii) Every 12 years: 2036, 2048,
+    2060, 2072, 2084, 2096 — **6 times**.
+40. (i) **Shelf A**: $520 = 8 \times 65$. (ii) **Shelf B**: $16 = 4 \times 4$,
+    but $316 = 8 \times 39 + 4$. (iii) Only **6** (7136): of 130 to 139, only
+    $136 = 8 \times 17$.
+
+### Objective questions
+
+41 (c) · 42 (a) · 43 (a) · 44 (d) · 45 (b) · 46 (c) · 47 (c) · 48 (d) · 49 (b) · 50 (d)
+
+---
+
 ## Beyond the Book
 
-Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets fifteen examples as steps, numbered 1 to 15 on their own, and stage
-4 prints the key to stage 3. Repeated here so the booklet is complete.
+Organised by format since 26 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own.
 
-### Stage 1 · Using What You Know
+### Tried and explained (no head in the book)
 
 1. Idli-vada is said **4 times** — at 24, 48, 72 and 96. The first common
-   multiple of 6 and 8 is 24, not $6 \times 8 = 48$, because they share 2.
+   multiple of 6 and 8 is 24, not $6 \times 8 = 48$.
 2. **48 laddoos.**
 3. **No, Ravi is wrong.** $391 = 17 \times 23$, so it is composite.
 4. The digit can be **0, 4 or 8**.
 5. **Yes, 84 and 275 are co-prime.** $84 = 2 \times 2 \times 3 \times 7$ and
    $275 = 5 \times 5 \times 11$ share no prime.
 
-### Stage 2 · Solved Examples
+### Solved examples
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (b) 25 |
+| | 2 | (c) 6 |
+| More than one correct | 3 | (a), (c) |
+| | 4 | (a), (c), (d) |
+| Numerical answer | 5 | 12 |
+| | 6 | 37 |
+| Matching | 7 | (d) P–3, Q–2, R–4, S–1 |
+| | 8 | (b) P–2, Q–4, R–1, S–3 |
+| Paragraph-based | 9 | (i) (a) 2; (ii) 210; (iii) 17 |
+| | 10 | (i) (b) 12 seconds; (ii) 5; (iii) 60 |
 
-1. (c) 10:12 *(single correct)*
-2. (a) 5 *(single correct)*
-3. (b) 25 *(single correct)*
-4. (d) 7 *(single correct)*
-5. (b) 420 *(single correct)*
-6. (a) 74 *(single correct)*
-7. (a), (c) *(multiple correct)*
-8. (a), (b), (c) *(multiple correct)*
-9. (a), (c), (d) *(multiple correct)*
-10. (a), (c), (d) *(multiple correct)*
-11. 12 *(numerical answer)*
-12. 37 *(numerical answer)*
-13. 936 *(numerical answer)*
-14. (d) P–3, Q–2, R–4, S–1 *(matching)*
-15. (b) P–2, Q–4, R–1, S–3 *(matching)*
+### Practice
 
-### Stage 3 · Practice
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (c) 5 · 2 (b) 4 · 3 (a) 3 · 4 (d) 3 |
+| More than one correct | 5–8 | 5 (a), (b), (d) · 6 (a), (d) · 7 (b), (c) · 8 (a), (c), (d) |
+| Numerical answer | 9–11 | 9 **8** · 10 **20** · 11 **41** |
+| Matching | 12–13 | 12 (c) · 13 (a) |
+| Paragraph-based | 14–15 | 14 (i) (b) 5; (ii) 53; (iii) 6 · 15 (i) (c) 4; (ii) 11; (iii) 5 |
 
-| | | | | | | | |
-|---|---|---|---|---|---|---|---|
-| 1 (c) | 2 (a) | 3 (b) | 4 (c) | 5 (d) | 6 (b) | 7 (c) | 8 (a) |
-| 9 (b) | 10 (d) | 11 (c) | 12 (b) | 13 (b) | 14 (a) | 15 (d) | 16 (a) |
-
-17. 1, 3, 5, 9, 15, 45.
-18. 24, 48, 72.
-19. **No.** 1 has only one factor, and a prime has exactly two.
-20. $98 = 2 \times 7 \times 7$.
-21. **53.** $51 = 3 \times 17$ and 52 is even.
-22. **Yes.** $105 = 3 \times 5 \times 7$ and
-    $88 = 2 \times 2 \times 2 \times 11$; no prime appears in both.
-23. **980.** It must be a multiple of 20, and $20 \times 49 = 980$, while
-    $20 \times 50 = 1000$ has four digits.
-24. **Yes.** The last three digits give $16 = 8 \times 2$; and
-    $2016 = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3 \times
-    7$, which holds three 2s and more, so $8$ divides it.
-25. *Answers will vary.* The common factors have to be exactly the factors
-    of 12, so the second treasure is a multiple of 12 that is not a multiple
-    of 24: **12, 36, 60 and 84** all work. 24 itself does not, because then
-    the common factors would be all eight factors of 24.
-26. *Answers will vary.*
-    $1800 = 2 \times 2 \times 2 \times 3 \times 3 \times 5 \times 5$, so all
-    three 2s must go into one number: **$8 \times 225$**, and likewise
-    $9 \times 200$ and $25 \times 72$.
-27. (a) **252.** (b) Any three of 12, 14, 18, 21, 28, 36, 42, 63, 84, 126,
-    252. (c) **Yes.** $14 = 2 \times 7$, and 252 has both, so
-    $252 = 14 \times 18$.
-28. (a) 12 and 36 are divisible by 4 and by 6 but not by 24; 48 is divisible
-    by all three. (b) **No.** (c) $4 = 2 \times 2$ and $6 = 2 \times 3$
-    share a 2, so between them they call for only two 2s and one 3 — which
-    is 12, not 24.
-29. (a) **20.** (b) **12.** (c) **2** — namely 40 and 80. (d) List the
-    multiples of 8 until one ends in 0 or 5: 8, 16, 24, 32, 40. The next
-    common multiple is $40 + 40 = 80$, and $80 + 40 = 120$ is past 100.
-30. (a) $84 = 2 \times 2 \times 3 \times 7$ and
-    $126 = 2 \times 3 \times 3 \times 7$. (b) 1, 2, 3, 6, 7, 14, 21 and 42.
-    (c) **6 rows of chairs and 9 rows of stools**: $84 \div 14 = 6$ and
-    $126 \div 14 = 9$. (d) **No.** $4 = 2 \times 2$, but 126 has only one 2
-    in its prime factorisation, so 4 is not a factor of 126.
-31. (a) 12, 24, 36, 48, 60. (b) 24 and 48 are also multiples of 6 and of
-    8; 12, 36 and 60 are not multiples of 8. So the bells ring together
-    again after **24 minutes**. (c) **9:24 am.** (d) **Twice**, at 9:24 am
-    and 9:48 am.
-
-The note on assertion–reason 16: $221 = 13 \times 17$, so 221 has more than
-two factors and is composite; R is the reason A is true, so **(a)**.
+- Q1. 61, 67, 71, 73 and 79 are primes; $77 = 7 \times 11$ is not.
+- Q2. The number is 60: 4, 6, 10 and 15 divide it; 8 and 9 do not.
+- Q3. $2025 + 3 = 2028$, and $28 = 4 \times 7$.
+- Q4. The common factors of 42 and 70 are 1, 2, 7 and 14; without 1, three.
+- Q5. $36 = 2 \times 2 \times 3 \times 3$; $39 = 3 \times 13$ shares 3.
+- Q6. $128 = 8 \times 16$ and $16 = 8 \times 2$; 140 and 332 leave 4.
+- Q7. 18 and 30, and 24 and 42, are both multiples of 6; 20 and 45 are not.
+- Q8. $111 = 3 \times 37$, $117 = 3 \times 3 \times 13$, $123 = 3 \times 41$;
+  113 is a prime.
+- Q9. The common multiples of 4 and 6 are the multiples of 12, and
+  $12 \times 8 = 96$.
+- Q10. The numbers that are not multiples of 2 or of 5: 25 odd numbers,
+  less the 5 odd multiples of 5.
+- Q11. $221 = 13 \times 17$, so $2431 = 11 \times 13 \times 17$ and
+  $11 + 13 + 17 = 41$.
+- Q12. P 8 primes (2, 3, 5, 7, 11, 13, 17, 19); Q 18 has 6 factors;
+  R $91 = 7 \times 13$; S 20.
+- Q13. P $120 = 8 \times 15$ gives 3120; Q $48 = 4 \times 12$ but
+  $348 = 8 \times 43 + 4$ gives 1348; R 2135 ends in 5 and is odd; S 97.
+- Q14. (i) $1 \times 48$, $2 \times 24$, $3 \times 16$, $4 \times 12$,
+  $6 \times 8$. (ii) 49, 50, 51 and 52 are composite; 53 is the first prime.
+  (iii) $1 \times 60$, $2 \times 30$, $3 \times 20$, $4 \times 15$,
+  $5 \times 12$, $6 \times 10$.
+- Q15. (i) 5, 7, 11 and 13. (ii) 13 is a prime and no other card is a
+  multiple of it. (iii) $14 = 2 \times 7$: 3, 5, 9, 11 and 13.

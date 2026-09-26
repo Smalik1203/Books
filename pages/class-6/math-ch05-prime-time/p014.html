@@ -2,6 +2,16 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h3>Using prime factorisation to check for co-primes</h3>
+
+      <p>Prime factorisation is very useful in the study of numbers. Here are two ways to use it. The first is the method we were looking for, to check whether two numbers are co-prime. Take 56 and 63 again, and find the prime factorisation of each.</p>
+
+      <div class="eq">$56 = 2 \times 2 \times 2 \times 7 \quad \text{and} \quad 63 = 3 \times 3 \times 7$</div>
+
+      <p>7 is a prime factor of 56 and also of 63. So 56 and 63 are not co-prime.</p>
+
+      <p>What about 80 and 63? Their prime factorisations are $80 = 2 \times 2 \times 2 \times 2 \times 5$ and $63 = 3 \times 3 \times 7$. No prime appears in both. Can we now say that they are co-prime? Suppose they had a common factor that was composite. Would the prime factors of that common factor appear in the prime factorisations of 80 and 63? They would, in both. But no prime appears in both, so there is no such common factor.</p>
+
       <p>So if two numbers have no common prime factor, they are co-prime.</p>
 
       <div class="c-example">
@@ -24,7 +34,7 @@
         </div>
       </div>
 
-      <p>The numbers do not have to be small. The same check works just as quickly for larger numbers.</p>
+      <p>The numbers need not be small. The check works just as quickly for larger numbers.</p>
 
       <div class="c-example">
         <div class="c-example__tab">Example 4</div>
@@ -45,31 +55,6 @@
           </div>
         </div>
       </div>
-
-      <h3>Using prime factorisation to check divisibility</h3>
-
-      <p>48 is divisible by 12, because dividing 48 by 12 leaves a remainder of 0. How can we check whether one number is divisible by another, without doing a long division? Prime factorisation helps again.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
-        <div class="c-example__body">
-          <p>Is 168 divisible by 12?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$168 = 2 \times 2 \times 2 \times 3 \times 7$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$12 = 2 \times 2 \times 3$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$168 = (2 \times 2 \times 3) \times (2 \times 7) = 12 \times 14$</span>
-              <span class="work__why">group 168’s primes</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Yes, 168 is divisible by 12</span></div>
-          </div>
-        </div>
-      </div>
-
-      <p>Now try 75 and 21. Their prime factorisations are $75 = 3 \times 5 \times 5$ and $21 = 3 \times 7$. If 75 were a multiple of 21, every prime factor of 21 would also be a prime factor of 75. But 7 is a prime factor of 21, and it is not a prime factor of 75. So 75 is not divisible by 21. Dividing shows the same thing: $75 = 21 \times 3 + 12$.</p>
 
     </div>
   </div>

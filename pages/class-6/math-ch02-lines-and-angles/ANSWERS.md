@@ -15,12 +15,32 @@ answer says what the drawing or the result must show, or gives one worked
 instance under *answers will vary*. A measured angle is exact on the page;
 a student's protractor reading within a degree or two of it is correct.
 
-The body's worked examples are *Example 1* and *Example 2*. Beyond the
+The body's worked examples are *Example 1*, *Example 2* and *Example 3*. Beyond the
 Book numbers its own from 1 again; they are called *Beyond Example N* here.
 
 ---
 
 ## 2.1–2.4 Point, Line Segment, Line and Ray
+
+### Think and Reflect (§2.1, Point)
+
+**Yes, always.** A point has no size, so between any two points, however
+close, there is room for another point, and then another between those.
+
+### Think and Reflect (§2.2, Line segment)
+
+Answers will vary: the edge of a ruler, the edge of the blackboard, a side
+of a window frame or a desk, each with two end points.
+
+### Think and Reflect (§2.3, Line)
+
+1. A line goes on without end in both directions, so we can draw only a
+   part of it; the arrowheads say that it carries on. A line segment stops
+   at its two end points, so it has none.
+
+### Think and Reflect (§2.4, Ray)
+
+**Two**: one in each direction along the line.
 
 ### Exercise Set 2.1
 
@@ -62,6 +82,13 @@ Book numbers its own from 1 again; they are called *Beyond Example N* here.
    the other way, through $O$.
 
 ## 2.5 Angle
+
+### Think and Reflect (after naming an angle)
+
+1. Answers will vary. Both names have the vertex in the middle, for example
+   $\angle DBE$ and $\angle EBD$.
+2. **No.** An angle is two rays with a *common* starting point. Two rays
+   that start at different points do not make an angle.
 
 ### The size of an angle (Fig. 2.10)
 
@@ -156,7 +183,20 @@ $B$ lies inside the second angle, so the second crane opens its beak wider.
 The slit is drawn at 50°. The narrower arms are at 36° and the wider at 68°;
 only the arms at 50° pass through.
 
+**Think and Reflect.** 1. Their angles are **equal**: each is equal to the
+slit's angle. 2. Trace one angle and lay the tracing on the other, vertex on
+vertex and one arm along one arm. If the other arms lie along each other, the
+angles are equal. The lengths of the arms do not matter.
+
 ## 2.8 Special Types of Angles
+
+### Think and Reflect (after the key idea *Right angles*)
+
+1. **Four.** The two creases are perpendicular, so they make four right
+   angles where they cross.
+2. **No.** It is a right angle only if it is exactly half of a straight
+   angle. Check it by folding a straight angle in half, or with the corner
+   of a page.
 
 ### Exercise Set 2.4
 
@@ -227,10 +267,19 @@ $360 \div 5 = 72$°; 6 parts $360 \div 6 = 60$°; 8 parts $360 \div 8 = 45$°;
 $360 \div 12 = 30$°. The marked curve in each circle is drawn at exactly that
 angle.
 
+Item 2: the circle of **9** parts has parts of 40°, since $360 \div 9 = 40$;
+the circle of **10** parts has parts of 36°, since $360 \div 10 = 36$.
+
 ### Example 1 (worked in the book)
 
 $\angle KAL = 30°$. In Fig. 2.33 the rays are drawn at 30° ($T$), 70° ($W$),
 120° ($L$) and 150° ($K$) from the right end of the base.
+
+**Think and Reflect (after Example 1).** 1. **One** medium mark, halfway
+between them; two long marks next to each other are **10** units of 1°
+apart. 2. Each long mark stands for 10 units and each medium mark for 5, so
+one mark counts 10 or 5 units at once. Single units are still counted when an
+arm falls between two marks, for example at 38°.
 
 ### Exercise Set 2.6
 
@@ -282,6 +331,14 @@ straight angle $\angle AOI$, which is 180°, and $180 \div 8 = 22.5$.
 
 $\angle AOB$ is drawn at 70° and the crease at 35°, so each part is
 $70 \div 2 = 35$ degrees.
+
+**Think and Reflect (bisecting).** 1. $90 \div 2 = 45$, then
+$45 \div 2 = 22.5$: each smallest angle is **22½°**. 2. **Yes.** Fold so that
+one arm lies on the other; each half is $180 \div 2 = 90$, a **right angle**.
+3. **45°** (fold 180° in half twice) and **135°** (three of those 45° parts,
+$3 \times 45 = 135$). **Not 60°**: halving from 180° gives 90°, 45°, 22.5°, …,
+and no number of equal parts of these sizes makes exactly 60°.
+4. **Three times**: $180 \div 2 = 90$, $90 \div 2 = 45$, $45 \div 2 = 22.5$.
 
 ### Exercise Set 2.7
 
@@ -337,8 +394,7 @@ For $V$, $120 - 30 = 90$: the two arms cross the inner scale at 30 and 120.
 For $W$ and $Y$, the wrong readings are $180 - 120 = 60$ and $180 - 30 = 150$.
 
 **Think and Reflect.** 1. Answers as in the table. 2. The correct measures
-are the last column. 3. Answers will vary; reading the wrong scale is the
-most common. Deciding first whether the angle is acute or obtuse catches it.
+are the last column.
 
 ### Exercise Set 2.8
 
@@ -373,6 +429,12 @@ most common. Deciding first whether the angle is acute or obtuse catches it.
 
 $\angle PQR = 125°$, drawn on the inner scale. The wrong drawing described
 in the book is $180 - 125 = 55$, 55°.
+
+### Example 3 (worked in the book)
+
+$\angle XYZ = 40°$, drawn on the outer scale, because the base points to the
+left and its 0 is on the outer scale. The wrong drawing described in the book
+is $180 - 40 = 140$, 140°.
 
 ### Guessing well (Fig. 2.51)
 
@@ -410,9 +472,6 @@ more.
 6. $\angle AOC$ measures **110°**, and $70 + 110 = 180$: the two angles add up
    to 180°, because together they make the straight angle $\angle AOB$.
 
-7. Each new angle is $90 \div 2 = 45$, **45°**. If they are unequal, the
-   bisector was drawn at the wrong reading (not at 45 on the scale that is
-   0 on the base), or the vertex was not on the centre.
 
 ## 2.11 Types of Angles and their Measures
 
@@ -421,6 +480,13 @@ more.
 The printed measures match the drawings: 40°, 50° and 75° (acute), 110° and
 130° (obtuse). The reflex angles in Fig. 2.56 are drawn at **222°**
 ($\angle PAB$) and **295°** ($\angle TMS$).
+
+### Think and Reflect (after Table 2.57)
+
+1. **No.** The two angles add up to 360°. Two obtuse angles are each less
+   than 180°, so together they are less than 360°.
+2. The **straight angle**: both ways round it is 180°.
+3. **No.** A reflex angle is less than 360°; a full turn is exactly 360°.
 
 ### Exercise Set 2.10
 
@@ -440,8 +506,7 @@ The printed measures match the drawings: 40°, 50° and 75° (acute), 110° and
 
 ### Let's Explore (Fig. 2.60)
 
-1. $\angle BET = 180 - 80 = 100$, **100°**.
-2. $\angle SET = 90 - 80 = 10$, **10°**.
+$\angle BET = 180 - 80 = 100$, **100°**, and $\angle SET = 90 - 80 = 10$, **10°**.
 
 ### Measuring a reflex angle (Fig. 2.61)
 
@@ -449,8 +514,8 @@ The two angles are drawn at 110° and 250°, and $110 + 250 = 360$.
 
 ### Exercise Set 2.11
 
-1. Drawings must show (i) 140°, (ii) 82°, (iii) 195°, (iv) 70°, (v) 35°. For
-   (iii), draw $360 - 195 = 165$, 165°, and mark the angle the long way round.
+1. Drawings must show 140°, 82°, 195°, 70° and 35°. For 195°, draw
+   $360 - 195 = 165$, 165°, and mark the angle the long way round.
 
 2. Fig. 2.62: (a) **35°**, acute; (b) **160°**, obtuse; (c) **100°**, obtuse;
    (d) **25°**, acute; (e) **90°**, right; (f) **345°**, reflex (marked the
@@ -481,100 +546,182 @@ The two angles are drawn at 110° and 250°, and $110 + 250 = 360$.
    at least 19°. Two and three times are then acute as well. The angle can
    be **19°, 20°, 21° or 22°**. Check: $4 \times 22 = 88$ and $5 \times 19 = 95$.
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September 2026.
+The book's own key is in Beyond the Book's Answers stage; this is the same
+key, set out in full.
+
+### Very short answer
+
+1. $360 \div 4 \times 3 = $ **270°**, a **reflex** angle.
+2. **2** and **4**. A right angle is 90°; $2 \times 90 = 180$ and
+   $4 \times 90 = 360$.
+3. **No.** A reflex angle is more than 180°. An angle of 180° is a
+   **straight angle**.
+4. $180 - 65 = $ **115°**.
+5. $360 - 235 = $ **125°**, an **obtuse** angle.
+6. $\overline{AB}$, $\overline{AC}$, $\overline{AD}$, $\overline{BC}$,
+   $\overline{BD}$, $\overline{CD}$: **6** line segments.
+7. $180 \div 4 = $ **45°**, an **acute** angle.
+8. $2 \times 35 = $ **70°**, **acute**.
+9. Vertex **$Q$**; arms $\overrightarrow{QP}$ and $\overrightarrow{QR}$;
+   also named **$\angle RQP$**.
+10. A quarter turn, **90°**, a **right** angle.
+
+### Short answer
+
+11. $\angle COD = 180 - 40 - 60 = $ **80°**; $\angle AOD = 40 + 80 = $
+    **120°**, **obtuse**.
+12. Fold the paper through $O$ so that $\overrightarrow{OB}$ lies on
+    $\overrightarrow{OA}$. The fold lays one angle exactly on the other, so the
+    two angles are equal, and together they fill the straight angle. Each is
+    $180 \div 2 = 90$, a **right angle**.
+13. First step: **70°** and **70°**. Second step: **35°** and **35°**. All four
+    angles are **acute**.
+14. $360 \div 36 = $ **10** spokes. Two spokes between means 3 gaps:
+    $3 \times 36 = $ **108°**.
+15. $360 - 70 = $ **290°**, **reflex**. **No:** an obtuse angle is less than
+    180°, so two obtuse angles together are less than 360°.
+16. **No.** She must read the scale whose 0 is on the arm, which is the
+    outer scale: **50°**.
+17. $360 - (80 + 95 + 110) = 360 - 285 = $ **75°**. **No** angle is 90°, so
+    none is a right angle.
+18. It is **less than 45°**, because its double is less than 90°. Example:
+    $2 \times 50 = 100$, obtuse (any acute angle of 46° to 89° works).
+19. A reflex angle is **more than 180°**, and an obtuse angle is **less than
+    180°**, so the reflex angle is always the bigger.
+20. From 4:10 to 4:35 is 25 minutes: $25 \times 6 = $ **150°**, **obtuse**.
+
+### Long answer
+
+21. $\angle AOC + \angle COB = 180$ and $\angle AOC = \angle COB + 40$, so
+    two copies of $\angle COB$ make $180 - 40 = 140$: $\angle COB = $ **70°**
+    and $\angle AOC = $ **110°**. $\angle DOC = 110 \div 2 = 55$, so
+    $\angle DOB = 55 + 70 = $ **125°**, **obtuse**.
+22. $360 \div 36 = $ **10°**. A right angle is $90 \div 10 = $ **9** gaps
+    apart; a straight angle is $180 \div 10 = $ **18** gaps apart.
+23. $\angle XOP = 180 - 50 = $ **130°**. $\overrightarrow{OQ}$ bisects it, so
+    $\angle POQ = 65°$, and $\angle YOQ = 50 + 65 = $ **115°**, **obtuse**.
+    The drawing must show the line, the 50° angle, and the bisector.
+24. After $90 + 45 = 135$ the way the hands move, the robot faces halfway
+    between 3 and 6; turning back 180° leaves it facing **halfway between
+    9 and 12**. The smallest turn back to the 12 is **45°, the way a
+    clock's hands move** (the other way round it would be 315°).
+25. $\angle BOC + \angle COD = 360 - 90 - 60 = 210$. $\angle BOC$ is two
+    copies of $\angle COD$, so three copies make 210: $\angle COD = $
+    **70°** and $\angle BOC = $ **140°**. $\angle AOB$ **right**,
+    $\angle BOC$ **obtuse**, $\angle COD$ **acute**, $\angle DOA$ **acute**.
+26. The first point joins 4 others; the next adds 3 new segments, then 2,
+    then 1: $4 + 3 + 2 + 1 = 10$. With 8 points:
+    $7 + 6 + 5 + 4 + 3 + 2 + 1 = $ **28**.
+27. $360 \div 60 = $ **6°** a minute. From 9:05 to 9:50 is 45 minutes:
+    $45 \times 6 = $ **270°**, **reflex**. A straight angle takes
+    $180 \div 6 = 30$ minutes: at **9:35**.
+28. $\angle PQS = \angle SQR = 60°$ and $\angle SQT = 30°$, so
+    $\angle PQT = 60 + 30 = $ **90°**, a **right** angle. Reflex
+    $\angle PQT = 360 - 90 = $ **270°**.
+29. $180 \div 10 = $ **18°** a section. Four sections: $4 \times 18 = $
+    **72°**, **acute**. Obtuse for **6, 7, 8 or 9** sections (108°, 126°,
+    144°, 162°); 5 sections make 90°, a right angle.
+30. Scores: $49 - 40 = 9$, $95 - 90 = 5$, $142 - 130 = 12$, $25 - 20 = 5$,
+    $70 - 64 = 6$; total **37**. **Team 1** won, because the lower score wins
+    and $31 < 37$.
+
+### Assertion and reason
+
+31 (a) · 32 (a) · 33 (b) · 34 (c) · 35 (d)
+
+Q34: R is false: $2 \times 20 = 40$ is acute. Q35: A is false: through two
+points there is exactly one line.
+
+### Case-based questions
+
+36. (i) $15 \times 6 = $ **90°** (ii) $40 \times 6 = 240$, **reflex**
+    (iii) **3:30**, since $180 \div 6 = 30$; **4:00**, since $360 \div 6 = 60$.
+37. (i) $360 \div 8 = $ **45°** (ii) **90°**, a **right** angle (iii)
+    $360 \div 40 = $ **9** spokes. **No:** a straight angle would need
+    $180 \div 40$ gaps, which is not a whole number.
+38. (i) **acute** (ii) $3 \times 35 = $ **105°** (iii) $180 - 105 = $ **75°**
+    more, since the gate stops at a straight angle.
+39. (i) $360 \div 3 = $ **120°** (ii) $360 \div 45 = $ **8** seconds (iii)
+    $5 \times 45 = $ **225°**, **reflex**.
+40. (i) $360 \div 12 = $ **30°** (ii) $90 \div 30 = $ **3** places (iii)
+    $180 + 120 = $ **300°**, which is $300 \div 30 = $ **10** places.
+
+### Objective questions
+
+41 (b) · 42 (c) · 43 (a) · 44 (d) · 45 (a) · 46 (d) · 47 (c) · 48 (a) · 49 (b) · 50 (d)
+
+---
+
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since 26 September 2026: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own: *Beyond Example
+1* is not the chapter's Example 1 in §2.9.
+
+### Tried and explained (no head in the book)
 
 The answers are worked in the book, in the text after each question:
-the first clock hand turns **225°**; the two angles are **65° and 115°**; five rays give
-**10** angles (and six give 15); Meena is **not right** ($2 \times 20 = 40$
-is acute); the second clock hand turns **315°**, and the short way back is
-**45°**, since $315 + 45 = 360$.
+1. the clock hand turns **225°**;
+2. the two angles are **65° and 115°**;
+3. five rays give **10** angles (and six give 15);
+4. Meena is **not right** ($2 \times 20 = 40$ is acute);
+5. the second clock hand turns **315°**, and the short way back is **45°**,
+   since $315 + 45 = 360$.
 
-### Stage 2 · Solved Examples
+### Solved examples
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (b) 140° |
+| | 2 | (c) 214° |
+| More than one correct | 3 | (b), (c) |
+| | 4 | (a), (c), (d) |
+| Numerical answer | 5 | 38 |
+| | 6 | 88 |
+| Matching | 7 | (d) P–4, Q–3, R–1, S–2 |
+| | 8 | (a) P–2, Q–1, R–4, S–3 |
+| Paragraph-based | 9 | (i) (b) 18; (ii) 240; (iii) 9 |
+| | 10 | (i) (b) 36°; (ii) 108; (iii) 5 |
 
-1. (b) 10 *(single correct)*
-2. (c) 53° *(single correct)*
-3. (b) North-west *(single correct)*
-4. (d) 68° *(single correct)*
-5. (a) 80° *(single correct)*
-6. (c) 214° *(single correct)*
-7. (a), (c), (d) *(multiple correct)*
-8. (b), (c) *(multiple correct)*
-9. (a), (b), (d) *(multiple correct)*
-10. (a), (c), (d) *(multiple correct)*
-11. 24 *(numerical answer)*
-12. 38 *(numerical answer)*
-13. 88 *(numerical answer)*
-14. (b) P–3, Q–4, R–2, S–1 *(matching)*
-15. (d) P–4, Q–3, R–1, S–2 *(matching)*
+### Practice
 
-### Stage 3 · Practice
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (c) 80° · 2 (a) 60° · 3 (b) 108° · 4 (d) 225° |
+| More than one correct | 5–8 | 5 (a), (c), (d) · 6 (a), (c) · 7 (a), (b), (c) · 8 (a), (b) |
+| Numerical answer | 9–11 | 9 **45** · 10 **60** · 11 **39** |
+| Matching | 12–13 | 12 (c) · 13 (b) |
+| Paragraph-based | 14–15 | 14 (i) (c) 120°; (ii) 450; (iii) 2 · 15 (i) (b) 8; (ii) 45; (iii) 5 |
 
-**Key.** 1 (a) 2 (b) 3 (d) 4 (c) 5 (b) 6 (c) 7 (d) 8 (b) 9 (a) 10 (d)
-11 (d) 12 (c) 13 (c) 14 (a) 15 (b) 16 (a)
-
-The working for the multiple-choice questions:
-
-1. A segment stops at both ends: two end points.
-2. The vertex is the middle letter, $Q$.
-3. Four right angles make a full turn, so one is a quarter of it.
-4. $135°$ is more than 90° and less than 180°: obtuse.
-5. $200°$ is more than 180° and less than 360°: reflex.
-6. A straight angle is 180°, so it holds 180 units of 1°.
-7. From 12, the opposite way to a clock's hands: 9 (90°), 6 (180°), 3 (270°).
-8. Only 210° is between 180° and 360°. 170° is obtuse, 180° is straight and
-   90° is right.
-9. The bisector halves the straight angle: $180 \div 2 = 90$.
-10. $180 \div 3 = 60$, so $\angle COB = 60°$ and $\angle AOC = 120°$.
-11. $360 - 290 = 70$.
-12. $64 \div 2 = 32$, $32 \div 2 = 16$, and $64 - 16 = 48$.
-
-The assertion–reason questions:
-
-13. A is true — it is the definition of an angle. R is false: the length of
-    the arms does not change an angle. **(c)**
-14. A is true: from 9 to 12 is 3 of the 12 parts, $3 \times 30 = 90$. R is
-    true, and a quarter of a full turn is a right angle, so R explains A.
-    **(a)**
-15. A is true: an obtuse angle is less than 180°, so half of it is less than
-    90°. R is true, but it is about reflex angles, so it does not explain A.
-    **(b)**
-16. Both are true, and the turn deciding the size is exactly why arm length
-    does not matter. **(a)**
-
-17. **4.** $4 \times 90 = 360$.
-18. **285°.** $360 - 75 = 285$.
-19. **270°**, a **reflex** angle. $360 \div 4 \times 3 = 270$.
-20. **30°.** $180 \div 6 = 30$.
-21. **60°.** The minute hand turns 360° in 60 minutes, which is 6° a minute,
-    and $10 \times 6 = 60$.
-22. **30°.** $\angle COD = 2 \times 50 = 100$, and
-    $\angle DOB = 180 - 50 - 100 = 30$.
-23. **50° and 130°.** $180 - 80 = 100$, $100 \div 2 = 50$ and
-    $50 + 80 = 130$.
-24. **18 spokes.** Two spokes with two others between them are 3 gaps
-    apart, so one gap is $60 \div 3 = 20$ degrees, and $360 \div 20 = 18$.
-    **No:** the angles between spokes are multiples of 20°, and 90 is not.
-25. **105°**, obtuse. $140 \div 2 = 70$, $70 \div 2 = 35$ and
-    $70 + 35 = 105$.
-26. **Yes.** An acute angle is less than 90°, so twice it is less than 180°;
-    a reflex angle is more than 180°.
-27. In Fig. 2.64, $\overrightarrow{OP}$, $\overrightarrow{OQ}$ and
-    $\overrightarrow{OR}$ are at 150°, 105° and 45° from $\overrightarrow{OB}$.
-    (a) $\angle ROB = 180 - 30 - 45 - 60 = 45$, **45°**;
-    (b) $\angle AOQ = 30 + 45 = 75$, **75°**;
-    (c) $\angle POR = 45 + 60 = 105$, **105°**;
-    (d) **$\angle POQ$ and $\angle ROB$** (both 45°), or **$\angle POR$ and
-    $\angle QOB$** (both 105°);
-    (e) $\angle AOR = 30 + 45 + 60 = 135$, **135°**, obtuse.
-28. (a) **No.** 360 is not a multiple of 7. (b) **No.** $360 \div 16$ is 22
-    with 8 left over. (c) **18 parts of 20°** and **20 parts of 18°**;
-    17 and 19 do not work.
-29. (a) **the 6** (b) **halfway between 3 and 6** (c) **halfway between 9
-    and 12** (d) Answers will vary: L; or R, R, R; or H, H, H, H, H, H. Each
-    list turns the robot 90° the opposite way to a clock's hands, or 270°
-    the way they move.
+- Q1. Undo the bisections: $20 \times 2 \times 2 = 80$.
+- Q2. The two angles make 360°, and together they are 6 copies of the
+  smaller one: $360 \div 6 = 60$.
+- Q3. Each angle is $180 \div 5 = 36$; the first and last rays are 3 gaps
+  apart: $3 \times 36 = 108$.
+- Q4. $3 \times 90 - 45 = 225$.
+- Q5. 210° is reflex, not obtuse; $210 + 150 = 360$; $210 - 180 = 30$.
+- Q6. $170 \div 2 = 85$ (acute); $2 \times 50 = 100$ (obtuse);
+  $180 \div 3 = 60$ (acute); $360 \div 4 = 90$ (right).
+- Q7. The pairs are AB, AC, AD, BC, BD, CD: 6 segments. AB, AC and BC lie
+  on one line, so the lines are that line and DA, DB, DC: 4 lines.
+  $B$ is between $A$ and $C$, so $\angle ABC$ is straight; $D$ is off the line.
+- Q8. Three copies of $\angle SQR$ make 90°, so $\angle SQR = 30°$ and
+  $\angle PQS = 60°$, which is acute; the two parts are not equal.
+- Q9. $360 \div 8 = 45$.
+- Q10. Take away the extra $10 + 20 + 30 = 60$: $180 - 60 = 120$, and
+  $120 \div 4 = 30$. The largest is $30 + 30 = 60$.
+- Q11. $234 \div 6 = 39$ minutes.
+- Q12. $4 \times 90 = 360$, $2 \times 90 = 180$, $90 \div 2 = 45$,
+  $3 \times 90 = 270$: P–4, Q–3, R–1, S–2.
+- Q13. $360 \div 10 = 36$, $360 \div 8 = 45$, $360 \div 6 = 60$,
+  $360 \div 5 = 72$: P–3, Q–4, R–1, S–2.
+- Q14. (i) $360 \div 3 = 120$; (ii) $90 + 180 + 180 = 450$;
+  (iii) $90 + 4 \times 180 = 810$, which is 2 full turns and 90° more.
+- Q15. (i) Three folds in half make $2 \times 2 \times 2 = 8$ parts;
+  (ii) $360 \div 8 = 45$; (iii) $225 \div 45 = 5$.

@@ -1,5 +1,94 @@
 # Class 6 · Mathematics I · Chapter 4 — Data Handling and Presentation
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its practice and
+its key further down this log.** Converted by CONVERT-V2.md, with Class 6
+Chapter 1 as the model. `chapter.json`: `maths-v2`, palette `prism`,
+edition `196x276-large`, `keepExerciseSets: true`, accent `#1e4e8c`.
+43 pages:
+
+* **Body p001–p026**, NCERT's sections, examples and exercise questions in
+  NCERT's order, ending on a **Summary** page (p026, `data-close`, nine
+  points after NCERT's own nine).
+* **By the Book p090–p095**, six pages: 50 questions to BY-THE-BOOK.md —
+  very short 10, short 10, long 10, assertion and reason 5 (keys a b c d a),
+  case-based 5, objective 10 (keys b c d a b d a c b a). Two new figures,
+  Fig. 4.36 (a mango pictograph, one symbol for 10) and Fig. 4.37 (a bar
+  graph of science-fair visitors, 1 unit for 50), each inside its case
+  question.
+* **Beyond the Book p101–p111**: the seven tried-and-explained questions
+  with no stage head, then Single correct · More than one correct ·
+  Numerical answer · Matching · Paragraph-based, two solved examples and
+  then practice in each (4 · 4 · 3 · 2 · 2). Examples kept from the 20
+  September set: old 3 and 4 (single), 7 and 9 (more than one), 11 and 12
+  (numerical), 14 and 15 (matching), reworded in plain English with their
+  "Choose one correct option" lines and format tags removed; two
+  paragraph-based examples written new (poha sales; a class vote in tally
+  marks). The fifteen practice questions are new. Answers open p110.
+
+### Body: what changed
+
+* **Key idea and Think and Reflect in every section.** Added key ideas
+  *Bar graphs* (§4.3) and *Showing data fairly* (§4.5); *Frequency* and
+  *Drawing a bar graph* recast as two one-line points. Added Think and
+  Reflect: Imran's graph with bars on their side, the rent at ₹3100 and the
+  two largest items (§4.4); the closest two mountains and Everest against
+  Kosciuszko (§4.5); a second part to the Everest–Elbrus Think and Reflect
+  on why a triangle 4 times as tall and 4 times as wide looks 16 times as
+  big. The sentence *Try drawing Imran's bar graph this way* became the
+  first of those questions.
+* **Plain English.** *at a glance*, *stand out*, *catch your eye*, *go
+  further*, *pleasant to look at*, *mixed up* replaced. NCERT's longer
+  closing paragraph on infographics restored in our words.
+* **Fitting, layout only.** Tables 4.13, 4.17, 4.21, the tree table and the
+  free-time table set across the page; the parts of Exercise Set 4.2 Q1,
+  4.3 Q1 and 4.3 Q4 two across; Figs 4.6, 4.8, 4.10, 4.11 stay `lg`, Figs
+  4.30 and 4.32 `xl`, Fig. 4.33 `md`, Fig. 4.34 `lg`. Check rows added to
+  Examples 2 and 3; three `.work__why` notes removed from Examples 1–3
+  because they wrapped to one word; the Smriti text and table go inside
+  Example 2's figure context. A blank tally table added to Exercise Set 4.6
+  Q4 (the die), which asks for one.
+* **Wording shortened in NCERT questions, nothing cut:** Exercise Set 4.1
+  Q1, Q3, Q4 and Q5's stem; 4.2 Q1's parts (*How many chose jalebi?*); 4.3
+  Q1's blanks, Q4 and Q5 (the news item; part (iii) and (vi) shortened);
+  4.5 Q2; the Sangita and Jarina sentences in §4.2.
+* **Colour.** The Kosciuszko triangle in Fig. 4.34 used `dg-fill-d`, a
+  beige; it is `dg-fill-teal` (indigo) now. Every chart uses sunflower,
+  sky, vermilion or indigo; no green.
+
+### Checks at close
+
+`build.mjs`: all pages fit. Fill 1:96 2:99 3:97 4:98 5:89 6:96 7:92 8:98
+9:97 10:88 11:88 12:95 13:89 14:89 15:89 16:88 17:96 18:96 19:90 20:94
+21:93 22:88 23:99 24:96 25:91 26:84 (Summary, close) 27:94 28:100 29:99
+30:99 31:93 32:91 (By the Book, close) 33:92 34:99 35:91 36:98 37:96 38:99
+39:88 40:93 41:97 42:93 43:98. `lone-words`: 0. `check-sums`: 110
+identities, 0 wrong. `orphans`: 0 stranded. `check-labels`: no collisions.
+`fit-options`: every option row fits.
+
+**`check-numbers.mjs` rewritten** (624 checks, 0 failed). The old script
+had read the figure and table numbers from before the 20 September
+renumbering and stopped at its first figure; its readers are kept. It reads
+every table, counts every tally stroke and pictograph symbol and measures
+every bar, for the body and for Figs 4.36–4.37; recomputes every By the
+Book written answer it can from the question's own numbers; recomputes
+every objective, assertion-reason, more-than-one-correct, numerical and
+matching answer and checks the keyed option; checks the key has 1–50 and
+1–15; and checks that every question, Think and Reflect, example or try
+naming a figure or table prints on the same page or the facing one. A
+planted wrong key letter and a planted wrong table cell were each caught.
+
+### Flagged
+
+| where | what | why it stays |
+|---|---|---|
+| Exercise Set 4.6, p017–p022 | runs over six pages | NCERT's eleven questions with four figures; no page can hold it. It starts at the top of p017, and each question prints beside its figure |
+| Exercise Set 4.5, p012 | its questions read Fig. 4.15, which is overleaf on p011 | as before this conversion. The Think and Reflect that named the figure now gives the scale in its own words |
+| Beyond, tried and explained | the opening sentence *Try each question before you read what follows it* now ends *before you read on* | its last word sat alone on a line; the only change to the kept text |
+| Opener | no drawn strip (`.c-strip`) as Chapter 1 has | the recipe does not ask for one, and the opener keeps its sketch |
+| Case question 39 | *Meghalaya gets a lot of rain* | a general statement; the rainy-day counts are made-up school data |
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

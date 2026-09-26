@@ -131,6 +131,15 @@
   text-align: left;
 }
 .page .page__main table td:first-child { color: var(--teal-deep); font-weight: var(--weight-bold); }
+/* A grid of raw data (a supercell grid, a list of vehicles seen) has no
+   row names, so its first column is set like the rest. */
+.page .page__main table.table--raw td:first-child { color: inherit; font-weight: inherit; }
+
+/* A figure set inside a question inherits the question's
+   text-align-last: left (§ justified prose, below), and a one-line
+   caption is all last line — so it sat left under a centred drawing.
+   Centre it as every other caption is. */
+.page .page__main li figcaption { text-align: center; text-align-last: center; }
 .page .page__main table,
 .page .page__main table td { border-color: var(--teal-soft); }
 .page .page__main table th { border-color: var(--teal); }
@@ -364,80 +373,135 @@
 .page[data-bridge] .c-bridge { background: var(--gold-deep); }
 .page[data-board] .c-bridge + .c-practice .c-practice__sub:first-child { margin-top: var(--space-tight); }
 
-/* 13 — header and footer, chosen 26 September 2026 from three rendered
-   options (the user took A's head and B's foot). The same on every page
-   of every chapter:
+/* 13 — header and footer, taken from the science-v2 pages on
+   27 September 2026 at the user's request (it replaces the full-width
+   indigo bands chosen on 26 September). The same on every page:
 
-     head   a solid indigo band bleeding off the top, the running head in
-            white small capitals inside it, a sunflower rule under the
-            band, and a sky square at its outer end
-     foot   an indigo band bleeding off the bottom, the folio in white on
-            it at the outer edge
+     head   a tab in the chapter colour bleeding off the top-left corner,
+            its end slanted, a paler slant behind it; a small line motif
+            and CHAPTER N in white capitals inside it; the running title
+            in the chapter colour at the right, over a hairline that runs
+            from the tab to the margin
+     foot   the book's name in small capitals over a hairline, and the
+            folio in white in a matching slanted tab bleeding off the
+            outer bottom corner
 
-   Both bands bleed past the trim, so the closed book shows indigo along
-   its head and its tail. Tried and rejected on 25 September: fore-edge
-   thumb tabs, colours that change by chapter or part, and a tapered
-   gradient wedge. The house slab and outline bar are hidden here. */
-.page__trim::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: calc(-1 * var(--bleed));
-  left: calc(-1 * var(--bleed));
-  right: calc(-1 * var(--bleed));
-  height: calc(10mm + var(--bleed));
-  background: var(--teal);
-}
-.page__trim::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: 10mm;
-  left: calc(-1 * var(--bleed));
-  right: calc(-1 * var(--bleed));
-  height: 1.2mm;
-  background: var(--sun);
-}
-.page--opener .page__trim::before,
-.page--opener .page__trim::after { display: none; }
-
-.runhead { top: 0; height: 10mm; z-index: 3; border-bottom: 0; padding: 0.4mm 0 0; }
-.runhead__chapter {
-  color: var(--paper);
-  font-style: normal;
-  font-weight: var(--weight-bold);
-  font-variant-caps: small-caps;
-  letter-spacing: var(--track-title);
-}
-.runhead__mark {
+   The builder writes the markup (v2Runhead, v2Pagefoot). The shapes are
+   science-v2's own paths in its 1052-unit page width; every measure here
+   is that page's position scaled to 196mm (0.1863mm a unit). The tab
+   stays at the head's left on both sides, as science's does; the foot
+   tab goes to the outer edge. */
+.runhead--v2,
+.page--verso .runhead--v2 {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 11.74mm;
+  z-index: 3;
   display: block;
+  padding: 0;
+  border-bottom: 0;
+}
+.runhead__ribbon {
   position: absolute;
   top: 0;
-  top: calc(-1 * var(--bleed));
-  right: calc(-1 * (var(--margin-outside) + var(--bleed)));
-  width: calc(12mm + var(--bleed));
-  height: calc(10mm + var(--bleed));
-  border-radius: 0;
-  background: var(--sky);
+  left: 0;
+  width: 63.35mm;             /* 340 units, the paler slant's reach */
+  height: 11.74mm;            /* 63 units */
+  overflow: visible;          /* the paths run on into the bleed */
 }
-.page--verso .runhead__mark { right: auto; left: calc(-1 * (var(--margin-outside) + var(--bleed))); }
-
-.pagefoot__bar { display: none; }
-.pagefoot::after {
+.runhead__underlay { fill: var(--teal-tint); }
+.runhead__fill     { fill: var(--teal); }
+.runhead__motif {
+  fill: none;
+  stroke: var(--teal-soft);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+.runhead__motif circle { fill: var(--teal-soft); stroke: none; }
+.runhead__tab {
+  position: absolute;
+  left: 17.9mm;               /* 96 units */
+  top: 0;
+  height: 11.74mm;
+  display: flex;
+  align-items: center;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.runhead--v2 .runhead__chapter {
+  position: absolute;
+  right: var(--margin-outside);
+  bottom: 3.7mm;              /* on the tab's baseline, 40 units down */
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-size: var(--size-note);
+  font-style: normal;
+  line-height: 1;
+}
+.page--verso .runhead--v2 .runhead__chapter { right: var(--margin-inside); }
+/* the hairline: from the paler slant's end to the margin, 58 units down */
+.runhead--v2::after {
   content: "";
   position: absolute;
-  left: calc(-1 * var(--bleed));
-  right: calc(-1 * var(--bleed));
-  bottom: calc(-1 * var(--bleed));
-  height: calc(8mm + var(--bleed));
-  background: var(--teal);
+  top: 10.81mm;
+  left: 63.35mm;
+  right: var(--margin-outside);
+  border-top: var(--stroke-hair) solid var(--teal);
 }
-.pagefoot__folio {
+.page--verso .runhead--v2::after { right: var(--margin-inside); }
+
+.pagefoot--v2 { height: 11mm; }
+.pagefoot--v2::before {       /* the hairline, 29 units above the trim */
+  content: "";
+  position: absolute;
+  bottom: 5.4mm;
+  left: var(--margin-inside);
+  right: 35.4mm;              /* stops short of the tab: 862 units */
+  border-top: var(--stroke-hair) solid var(--teal);
+}
+.page--verso .pagefoot--v2::before { left: 35.4mm; right: var(--margin-inside); }
+.pagefoot__label {
+  position: absolute;
+  bottom: 7.4mm;
+  left: var(--margin-inside);
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-size: var(--size-caption);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.page--verso .pagefoot__label { left: auto; right: var(--margin-inside); }
+.pagefoot__ribbon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 33.35mm;             /* 179 units, from the paler slant's foot */
+  height: 10.99mm;            /* 59 units */
+  overflow: visible;
+}
+.page--verso .pagefoot__ribbon { right: auto; left: 0; transform: scaleX(-1); }
+.pagefoot__underlay { fill: var(--teal-tint); }
+.pagefoot__fill     { fill: var(--teal); }
+.pagefoot--v2 .pagefoot__folio {
   z-index: 1;
-  bottom: 1.6mm;
+  right: 14.94mm;             /* centred 107 units in from the edge */
+  bottom: 3.2mm;
+  width: 10mm;
+  height: auto;
+  line-height: 1;
+  text-align: center;
   color: var(--paper);
-  font-size: var(--size-note);
+  font-size: var(--size-body);
 }
+.page--verso .pagefoot--v2 .pagefoot__folio { right: auto; left: 14.94mm; }
 
 /* 14 — one radius on every box (user, 26 September 2026: "uniform radius
    on every box, I don't want sharp designs anywhere"). This replaces the
@@ -475,10 +539,6 @@ h2 .badge { border-radius: var(--v2-radius); }
 /* the chapter numeral box bleeds off the left: round the two corners
    that stand on the page */
 .chapterhead__num { border-radius: 0 var(--v2-radius) var(--v2-radius) 0; }
-
-/* the sky square in the head: round the one corner left on the page */
-.runhead__mark { border-radius: 0 0 0 var(--v2-radius); }
-.page--verso .runhead__mark { border-radius: 0 0 var(--v2-radius) 0; }
 
 /* small marks soften to match */
 .c-keyidea__points > li::before { border-radius: 0.4mm; }

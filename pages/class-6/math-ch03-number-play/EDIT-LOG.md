@@ -1,5 +1,119 @@
 # Class 6 · Mathematics I · Chapter 3 — Number Play
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its practice and
+its key further down this log.** Converted to CONVERT-V2.md, with Class 6
+Chapter 1 as the model. `chapter.json` now reads `maths-v2`, palette
+`prism`, edition `196x276-large`, `keepExerciseSets`, accent `#1e4e8c`.
+40 pages:
+
+* **Body p001–p024**, NCERT's twelve sections in NCERT's order, ending on a
+  **Summary** page (p024, `data-close`, ten points, key terms in bold,
+  following NCERT's three summary points and the chapter's terms).
+* **By the Book p090–p094**, five pages, 50 questions written to
+  BY-THE-BOOK.md at Class 6: very short 10, short 10, long 10, assertion
+  and reason 5 (key a, d, b, c, a), case-based 5, objective 10 (key
+  c, a, d, a, c, b, d, a, b, d; one multi-statement item, one named
+  student's claim, one table item).
+* **Beyond the Book p101–p111**: the tried-and-explained questions with no
+  head, then Single correct · More than one correct · Numerical answer ·
+  Matching · Paragraph-based, each two solved examples then practice
+  (4 · 4 · 3 · 2 · 2). Answers opens p110 with no stage numeral: By the
+  Book's key, then Beyond's.
+
+### The body
+
+* **Every section now has a key idea and a Think and Reflect.** New key
+  ideas: 3.3 *Comparing numbers*, 3.4 *Digit sum*, 3.5 *Palindromes*, 3.7
+  *Palindromic times and dates*, 3.8 *How many digits?*, 3.9 *Adding a
+  pattern*, 3.11 *Estimates*, 3.12 *Winning strategies*. New Think and
+  Reflects: 3.1 (three items, after the rule), 3.2 (after Example 1), 3.3,
+  3.6 (Kaprekar from 1000; 6382 and 2836), 3.9, 3.11. Answers are in
+  ANSWERS.md.
+* **Five worked examples added**, stepped (Solution, Step rows, Answer),
+  to teach what the exercises then ask and to close white left by
+  exercise sets that must start a page: supercells in a row (Ex 1, §3.2),
+  labelling equally spaced marks (Ex 2, §3.3), comparing digit sums (Ex 3,
+  §3.4), which clock times are palindromes (Ex 6, §3.7) and a smaller
+  winning-strategy game worked backwards (Ex 9, §3.12). NCERT's four keep
+  their content and are now Examples 4, 5, 7 and 8; the one text reference
+  ("Example 7 shows how") was updated. Example 5 gained a Check row and
+  lost its two "digits of the last C" reasons (they wrapped one word to a
+  line); Example 7's reasons became "3 digits" / "4 digits".
+* **Plain English.** "something magical", "beautiful patterns" and "It is
+  fun, and you may be surprised…" went (C8). Lone-word fixes reworded a
+  dozen sentences and question stems without changing what is asked.
+* **Additions made only to fill a line at a page foot**, each true and
+  teaching: 7500 as an edge cell with three neighbours (p005); "123 is not
+  a palindrome"; "89 needs 24 steps"; what A and B are in the Kaprekar
+  steps; the birthday hint for Jeevan's calendar; a closing sentence on
+  proving Collatz. Exercise stems lengthened by a clause: 3.2 Q4 ("compare
+  with a classmate's"), 3.6 Q2 ("explain why no example is possible"), 3.9
+  Q5 and Q7 ("say how", "show how its total can be found quickly"). No
+  NCERT question was cut or changed in what it asks. 3.6 Q1(f) now reads
+  "Subtract two 5-digit numbers…".
+* Exercise Set 3.9 Q11 (smallest and largest 5-digit numbers with digit
+  sum 9) is **not NCERT's** (NCERT's set ends at Q10); it was added in the
+  first build and is not logged anywhere. It was kept, since the set fits.
+
+### By the Book and Beyond
+
+* By the Book is new; nothing in it copies a body exercise. Long answers
+  are single modelled problems (supercell grid, Kaprekar from 2019, a
+  palindromic locker code, making numbers with ±, a library estimate,
+  Collatz from 15, a game to 25, page digits, a number line, a box pattern).
+* Beyond: the old 15 examples were cut to ten. Kept and reworded: old 1
+  (0, 2, 5, 8), 2 (palindrome, digit sum 17; the letter *a* removed), 9
+  (Collatz statements), 10 (digit sums), 11 (palindromes, digit sum 12;
+  letters removed), 12 (number line 125 to 305), 14 and 15 (matching;
+  15's S changed from 5555 to 5553, since 5555 is a tried question).
+  Dropped: old 5, whose Step 2 said end cells are never supercells,
+  contradicting the chapter's definition; old 6 (rounding to hundreds,
+  not taught here); old 13 (the game to 22), which answers Exercise Set
+  3.9 Q10. Two paragraph-based examples written (houses as lookouts;
+  reverse and add from 39), and all fifteen practice questions are new.
+  Fig. 3.20 (a ten-mark number line) belongs to practice Q10.
+* **Tried questions, repaired where they answered the body** (§6a, the
+  rule wins over word for word): the 7-cell supercell try no longer asks
+  for the smallest number of supercells, which answered Exercise Set 3.2
+  Q6–Q7; the 3-digit palindrome try lost its last sentence, which gave the
+  §3.5 "palindromes from 1, 2 and 3" answer (9); the game-of-21 try, which
+  gave the Game 1 Think and Reflect's answer, was replaced by one of the
+  same kind (add 1 or 2, first to 10). The rest is word for word, except
+  "Try them on 5555" → "Try the steps on 5555" (a lone word).
+
+### Checks at close
+
+* `build.mjs`: all 40 pages fit; every page 88% or more except the Summary
+  (84%, `data-close`). Pages 4, 5, 13, 15, 20, 22, 27 and 36 are at 88%,
+  on the bar.
+* `lone-words`: 0. `check-sums`: 103 identities, 0 wrong. `orphans`: 0
+  stranded in 40 pages. `check-labels`: no labels collide. `fit-options`:
+  every option row fits.
+* **`check-numbers.mjs` was rewritten** for this layout (the old 84 KB
+  script checked Beyond's Type heads and old practice, and is in git
+  history): 498 checks, 0 failed. It recomputes every By the Book and
+  Beyond objective, multiple-correct and matching answer from the
+  chapter's rules (supercells, digit sums, palindromes, Kaprekar, Collatz,
+  winning numbers) and every other number in both keys, every example's
+  Answer row, the new Think and Reflect answers and several older
+  exercise answers. Five planted errors (a key letter, an option, a key
+  value, an identity, a key row) were all caught.
+* Fitting was planned with a scratch simulation of `repack` fed with the
+  builder's own block heights, then refit (`body`, `board`, `bridge`).
+  The scratch builds inside `refit` reported overruns that the real build
+  does not show (a measurement difference in the scratch chapter), so every
+  fit was judged on the real build.
+
+### Flagged
+
+| where | what | what it needs |
+|---|---|---|
+| Exercise Set 3.9 Q11 | not NCERT's, and never logged as added | Keep or cut in a later pass |
+| Beyond tried questions | the 7-cell try still shows the alternating method that Exercise Set 3.2 Q5 asks the reader to find | A replacement of the same kind, if the rule is to be applied strictly |
+| p010 | "In 1949" for Kaprekar's discovery still has no source (flagged before) | A source |
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

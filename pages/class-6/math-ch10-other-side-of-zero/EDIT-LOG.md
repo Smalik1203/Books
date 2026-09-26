@@ -1,4 +1,123 @@
-# Class 6 · Mathematics I · Chapter 10 — The Other Side of Zero
+# Class 6 · Mathematics II · Chapter 10 — The Other Side of Zero
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body's page breaks, Beyond the
+Book, its examples, its practice, its key and `check-numbers.mjs` further
+down this log.** Converted to CONVERT-V2.md, with Class 6 Chapter 1 as the
+model. `chapter.json` now reads `maths-v2`, palette `prism`, edition
+`196x276-large`, `keepExerciseSets`, accent `#1e4e8c` (subject left as
+Mathematics II). 42 pages:
+
+* **Body p001–p027**: NCERT's five sections in NCERT's order (26 pages),
+  ending on a new **Summary** page (p027, `data-close`, ten points following
+  NCERT's own summary, key terms in bold).
+* **By the Book p090–p094**, five pages, 50 questions written to
+  BY-THE-BOOK.md at Class 6: very short 10, short 10, long 10 (one modelled
+  problem each), assertion and reason 5 (key a, b, c, d, a), case-based 5,
+  objective 10 (key c, b, a, d, d, a, a, c, c, b; one table item, one
+  multi-statement item, one named student's claim). Board-style questions
+  from the old practice run were reused where they met the guide (recast as
+  single demands with marks-sized steps); the rest is new. No question
+  copies a body exercise.
+* **Beyond the Book p101–p110**: the five tried questions with no stage head,
+  then Single correct · More than one correct · Numerical answer · Matching ·
+  Paragraph-based, each two solved examples then practice (4 · 4 · 3 · 2 · 2).
+  Answers opens p109 with no stage numeral: By the Book's key, then Beyond's.
+
+### The body
+
+* **Colour.** The tokens print sky blue (positive) and vermilion (negative)
+  in maths-v2, so "green positive tokens and red negative tokens" now reads
+  "blue … orange", in the text, the aria-labels and the history paragraph.
+* **Every section has a key idea and a Think and Reflect.** Added: key ideas
+  *Adding with tokens* and *Subtracting with tokens* (10.2; the second
+  replaces the earlier *Tokens and zero pairs*), *Integers in daily life*
+  (10.3), *Border sum* (10.4); Think and Reflects in 10.1 (*Using an
+  unmarked number line*; *Changing subtraction into addition*), 10.4 (after
+  the grid game) and 10.5 (after Example 5, and after the timeline). The
+  two-paragraph key idea *Positive and negative numbers* is now two points.
+  Every new item is answered in ANSWERS.md.
+* **Two figures added, so figure and table numbers moved.** Fig. 10.6 (the
+  walk from −4 to 2, drawn for the paragraph that describes it) and
+  Fig. 10.23 (a timeline of the dates in A Pinch of History, with a short
+  paragraph on years BCE and CE and "no year 0"). Old Figs 10.6–10.12 are
+  10.7–10.13, Table 10.13 is 10.14, Figs 10.14–10.15 are 10.15–10.16,
+  Table 10.16 is 10.17, Figs 10.17–10.21 are 10.18–10.22. Captions, prose
+  references and ANSWERS.md renumbered together by script.
+* **Figure sizes changed to fit pages**: Figs 10.9 and 10.18 lg→xl; 10.10
+  and 10.13 full→xl (token rows, legible in proof); 10.21 xl→lg.
+* **Teaching added at joins** (no exercise or example added): the 10.3
+  opening paragraph (choose a zero; above it is positive, below negative);
+  Check rows in body Examples 2, 3 and 5; the opening of 10.1 split so that
+  Fig. 10.2 shares its page with the question about it.
+* **Trimmed, meaning kept**: the paragraph after the key idea on positive
+  and negative numbers; "Why does this work?" in 10.1; Example 1's three
+  cases now read "Floor −2 to Floor −1" and sit in one row; Example 2 has
+  three steps (its *first way* / *second way* labels moved into the step
+  text, because Beyond's second tried question refers to them); the
+  lowest-floor Think and Reflect has two items (the same four people); two
+  comparison paragraphs merged; the lift-attendant paragraphs merged;
+  `work__why` notes that wrapped to one word were removed where the step
+  text already gives the reason.
+* **Cut: Exercise 10.1 Q4 and Q5** (Rehana; Book Store to Toy Store). Neither
+  is NCERT's (NCERT's set is Q1–Q3); an earlier redesign added them.
+  ANSWERS.md updated. Exercise 10.1 Q2(h) and Exercise 10.2 Q2 are also not
+  NCERT's and were kept.
+* Lone-word lines closed with a non-breaking space or a `.nb` span round the
+  last words and their sum; no wording changed for them.
+
+### By the Book and Beyond
+
+* **Tried questions** kept word for word; only the stage head went. None
+  answers a body exercise or Think and Reflect. One mark-up change: Riya's
+  deliberately wrong sum is set `$(-8) - (+5) = {-3}$`, which prints the same
+  but is not read as an identity by `check-sums` (it has no allow-list).
+* **Examples.** Kept from the old fifteen, reworded and set in LaTeX: old 4
+  (tokens) and 5 (halfway) as single correct; old 7 (inequalities, options
+  now symbols) and 10 (diver) as more than one correct; old 12 and 13 as
+  numerical; old 14 and 15 as matching (15's "opposite" is now "inverse", and
+  its List II reordered so no two matching items share a combination).
+  Dropped: old 1–3, 6, 8, 9 (it used a letter $a$ for "all integers") and 11
+  (it solved an equation in $x$). Both paragraph-based examples are new
+  (Kargil temperatures; two pockets of tokens). Check rows added to Examples
+  1, 2 and 5–9. Tabs read "Example N"; no "Choose one correct option",
+  "Select all", "Enter the numerical value" or "Each entry has exactly one
+  match" lines; matching items keep "Match List I with List II." All fifteen
+  practice questions are new; the matching practice lists carry a spare fifth
+  entry, as the model's do.
+
+### Checks at close
+
+* `build.mjs`: all 42 pages fit, no `~`, no `!`. Every page 88% or more
+  except the Summary (83%, `data-close`). By the Book's last page is 93% and
+  the chapter's last page 88%.
+* `lone-words`: 0. `check-sums`: 156 identities, 0 wrong. `orphans`: 0
+  stranded in 42 pages. `check-labels`: no labels collide. `fit-options`:
+  every option row fits. `gaps`: every page at least 88% full.
+* **`check-numbers.mjs` rewritten** for this layout (the old 1,138-line
+  script, which read the old figures and Beyond's four stages, is in git
+  history): 676 checks, 0 failed. It evaluates every =, < and > in the pages
+  and ANSWERS.md (Riya's sum, assertion 34, Aman's claim and the wrong
+  options must stay false), recomputes every By the Book objective and
+  assertion–reason answer, every Beyond single, multiple-correct, numerical
+  and matching answer from the options read off the page, every example's
+  Answer row, and the numbers in both keys. Planted errors (a key letter, a
+  matching key, a number in a key row) were all caught.
+* Fitting: the body was packed by hand from measured block heights (one
+  `refit … body`, then a page plan); By the Book by `refit … board` and then
+  by hand into five pages; Beyond by `refit … bridge` and then by hand.
+  Body pages 5, 7, 8 and 21 sit at 99–100%; the builder reports them as
+  fitting.
+
+### Flagged
+
+| where | what | what it needs |
+|---|---|---|
+| p026, Fig. 10.23 | the timeline uses NCERT's own dates, placed to scale by hand | a look in proof |
+| p101 → p102 | the fourth tried question ends p101; its explanation is overleaf | acceptable; the reader tries it first |
+| Ex. 10.13 Q4, Q5 | the facts still have no recorded source (see below) | a source |
+| Ex. 10.18 Q1 | the answer depends on the present year | the booklet's year |
 
 ## Solved examples in examination formats, 20 September 2026
 

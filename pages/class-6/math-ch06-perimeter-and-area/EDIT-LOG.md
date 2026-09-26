@@ -1,5 +1,103 @@
 # Class 6 · Mathematics I · Chapter 6 — Perimeter and Area
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its practice and
+its key further down this log.** Converted by CONVERT-V2.md, with Class 6
+Chapter 1 as the model. `chapter.json`: `maths-v2`, palette `prism`,
+edition `196x276-large`, `keepExerciseSets: true`, accent `#1e4e8c`
+(subject stays Mathematics II). 38 pages:
+
+* **Body p001–p022**, NCERT's three sections, examples and exercise
+  questions in NCERT's order, ending on a new **Summary** page (p022,
+  `data-close`, ten points after NCERT's own summary).
+* **By the Book p090–p095**, six pages: 50 questions to BY-THE-BOOK.md —
+  very short 10, short 10, long 10, assertion and reason 5 (keys a c b d a),
+  case-based 5, objective 10 (keys c b c d a b d a d b). All new; no figure.
+* **Beyond the Book p101–p110**: the six tried-and-explained questions word
+  for word (stage heads removed; none answers a body question), then Single
+  correct · More than one correct · Numerical answer · Matching ·
+  Paragraph-based, two solved examples and then practice in each
+  (4 · 4 · 3 · 2 · 2). Examples kept from the 20 September set: old 1 and 4
+  (single), 7 and 10 (more than one), 12 and 13 (numerical), 14 and 15
+  (matching), in plain English, with "Choose one correct option" and the
+  other format lines and tab tags removed, and "cm²" written "sq cm" as in
+  the body. Two paragraph-based examples written new (a carpet in a hall; a
+  60 cm wire bent into shapes; the carpet example has two parts, the wire
+  example three). The fifteen practice questions are new.
+  Answers open p109.
+
+### Body: what changed
+
+* **Questions an earlier redesign added, cut** (checked against the NCERT
+  source, `assets/sources/class-6/maths/Chapter 6.pdf`): Exercise Set 6.1
+  Q7–Q9 (the two gardens, Shabnam's walk, length twice the breadth);
+  Exercise Set 6.6 Q3–Q4 (counting a shape; drawing an area of 10). Their
+  answers are gone from ANSWERS.md.
+* **Two exercise questions became Think and Reflect, where NCERT has them
+  in the running text:** the split-and-rejoin questions (old Exercise 6.3
+  Q2 and Q3) now follow Fig. 6.7 on its own page, so Exercise Set 6.3 is
+  the dot-paper question alone; and Charan's house questions (old Exercise
+  6.11 Q1 (a) and (b)) now follow Fig. 6.20, with the "which rooms have the
+  same area" item moved beside them. Exercise Set 6.11 is now Sharan's house,
+  the comparison and the reader's own plan (Q1–Q3). Why: at the larger
+  edition both questions landed a page turn from their figure, and no break
+  kept them together. NCERT's wording and order are unchanged.
+* **Added, as teaching that belongs at the join:** a second way to find
+  arrangement (a)'s perimeter (add the pieces, take away the sides that
+  touch) after Fig. 6.7; **Example 5** in §6.3 (a flower bed that is a
+  triangle in a 12 m by 9 m garden; the area maze examples are now 6 and 7);
+  Check rows in Examples 2, 5, 6 and 7; a Think and Reflect item comparing
+  the two kitchens (18 by 10 and 15 by 12, both 180 sq ft); one sentence
+  each in the tangram, squared-paper, estimate-and-check and area-maze
+  paragraphs. The trailing sentence inside the area-maze example moved out
+  of the panel into the prose after it.
+* **Key ideas** in the model's two forms: *Area of a rectangle and a square*
+  and *Counting squares* are two one-line points (the four counting rules in
+  two points). Every section already had a key idea and a Think and Reflect.
+* **Fig. 6.13**, the repeat of Fig. 6.8, moved inside Exercise Set 6.6
+  after Q1 and recaptioned *The four shapes of Fig. 6.8, repeated here.*
+* **Plain English / fitting:** Exercise 6.1 Q2 and Q5 shortened (Q5's parts
+  one to a line); two p002 sentences shortened; Exercise 6.12 Q4 shortened;
+  last two words of every paragraph and item joined by a no-break space, so
+  no word stands alone.
+
+### Checks at close
+
+`build.mjs`: all pages fit. Fill 1:98 2:98 3:90 4:97 5:91 6:94 7:99 8:89
+9:94 10:88 11:91 12:92 13:100 14:90 15:88 16:96 17:99 18:89 19:89 20:99
+21:89 22:82 (Summary, close) 23:97 24:93 25:92 26:90 27:96 28:48 (By the
+Book, close) 29:96 30:88 31:96 32:90 33:89 34:97 35:99 36:93 37:98 38:77
+(last). Every page but the three closing pages is at least 88%.
+`lone-words`: 0. `check-sums`: 27 identities, 0 wrong. `orphans`: 0
+stranded. `check-labels`: no labels collide. `fit-options`: every option
+row fits.
+
+**How Beyond was brought to 88%** (review, same day; it first shipped with
+p102 80%, p105 83%, p107 68%, p109 47%): Example 1 set out in full (a
+fuller stem, the half-perimeter, the breadth, and $23 	imes 14$ worked as
+$230 + 92$); Examples 5 and 6 given one more step each (the corner area on
+its own row; the side as perimeter divided by 8); the carpet example cut to
+two parts (the strip-width part and its step and Check went) and its passage
+to one line; the two matching practice questions set as four-by-four lists,
+their fifth distractor rows dropped and the options that used it changed.
+That brought the Paragraph-based head and Example 9 up under the matching
+practice, Example 10 up with the last two practice questions, and Beyond
+from 11 pages to 10. Answers settled by one block (`settle.mjs`).
+
+**`check-numbers.mjs` updated to the new layout** (595 checks, 0 failed). It
+had failed at HEAD since the 20 September renumbering (it looked for the Fig.
+6.8 repeat under its old caption). Kept: the arithmetic sweep, every body
+figure read from its SVG (figure numbers moved to the new sequence), and the
+ANSWERS.md exercise answers. New: Fig. 6.13 is Fig. 6.8 drawn again and sits
+on Exercise 6.6 Q1's page; ten question–figure pairs are on the same page or
+facing; the seven body and ten Beyond Answer rows; every By the Book
+objective and every Beyond option question has exactly the right option(s)
+and the printed key agrees; the five assertion–reason keys from the truth of
+A and R; every By the Book written answer row recomputed; the 1–50 numbering
+and the six forms in order. A planted wrong key letter (Q42) was caught.
+
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

@@ -1,5 +1,111 @@
 # Class 6 · Mathematics I · Chapter 8 — Playing with Constructions
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its examples,
+practice and answers further down this log.** Converted by CONVERT-V2.md,
+with Class 6 Chapter 1 as the model. `chapter.json` now declares `maths-v2`,
+palette `prism`, edition `196x276-large`, `keepExerciseSets: true` and
+accent `#1e4e8c`. **40 pages**:
+
+* **Body p001–p022**, NCERT's sections, construction steps and exercise
+  questions in NCERT's order, ending on a **Summary** page (p022,
+  `data-close`, nine points following NCERT's four, in our words).
+* **By the Book p090–p095**, six pages (the fifty questions would not go
+  into five without cutting the long answers), written to BY-THE-BOOK.md at
+  Class 6: very short 10, short 10, long 10, assertion and reason 5,
+  case-based 5, objective 10. Constructions are asked as steps of
+  construction with a justification and a measurement.
+* **Beyond the Book p101–p112**: tried and explained (no stage head), then
+  Single correct · More than one correct · Numerical answer · Matching ·
+  Paragraph-based, each two solved examples and its practice (4 · 4 · 3 · 2
+  · 2). Answers on a fresh page (p110–p112): By the Book key, then Beyond.
+
+### The body
+
+* **Every section now has a key idea and a Think and Reflect.** New key
+  ideas: *Constructing a rectangle* (8.3), *Recording in a table*, *A rough
+  diagram* and *Carrying a length* (8.4), *A rectangle from a side and a
+  diagonal* (8.5), *Two circles that cross* (8.6, taking the sentence that
+  said it out of the paragraph). New Think and Reflects: the designs of
+  Fig. 8.1 (8.1), turned squares and rectangles (8.2), a side of 7 cm with a
+  diagonal of 5 cm (8.5), and points equidistant from $B$ and $C$ (8.6).
+  8.3's questions after the construction (*Why must $PS$ be 6 cm? Measure
+  $RS$, $\angle R$, $\angle S$*) were running text and are now its Think and
+  Reflect, word for word. The three-squares Think and Reflect in 8.4 gained
+  an item (*how many times its width is its length*). Every new answer is
+  in ANSWERS.md.
+* **Exercise figures moved into their questions** (Figs 8.13, 8.22–8.25),
+  so each set is one tinted field. Q4–Q6 of Exercise 8.4 share Fig. 8.25,
+  which sits in Q4 with the three held together.
+* **Fig. 8.16 redrawn smaller** (four 7 by 4 rectangles at 12 units to the
+  centimetre, same positions of $X$ and $Y$), so that it seats under the 8.4
+  opening. Fig. 8.21 set a step larger (md). Tables 8.17 and 8.18 take
+  `table--raw`.
+* **Plain-English and fitting edits, wording only:** a sentence each added
+  in the house construction (*Short arcs are quicker to draw…*, *These two
+  lines are the sides of the roof*, *Check it: measure every line round its
+  border*, *Measure its distance from each of them…*) and Exercise 8.6 Q2
+  (*Where must the needle go for each curve?*); Fig. 8.21, Fig. 8.26 and
+  Step 4 Method 1 reworded at their ends so no line ends on a lone word.
+  Every paragraph's last two words are bound with a no-break space.
+* No NCERT section, construction step, exercise question or hint was cut.
+
+### By the Book
+
+New, to BY-THE-BOOK.md. Settings: Onam rangoli, a kabaddi court, a Jaipur
+window grill, a village hut, a Republic Day flag. Long answers are single
+constructions set out as steps, justified and measured (a rectangle from its
+sides, the house, a rectangle from a diagonal's angle, a garden plan, a
+divided rectangle, two equidistant points, a rectangle from a side and a
+diagonal, two arcs in a square, falling squares, two circles through each
+other's centres). Measured answers use 3-4-5, 6-8-10, 5-12-13 and 9-12-15
+so they come out whole. Assertion–reason a, d, c, b, a; objective answers
+a 3 · b 2 · c 2 · d 3, one multi-statement item (Q49) and one named
+student's claim (Q50). About one in five works backwards (Q8, Q9, Q16, Q40,
+LA 29).
+
+### Beyond the Book
+
+* **Tried and explained, kept word for word, with two changes.** The
+  sentence *A rectangle 10 cm long and 4 cm wide cannot be divided like
+  this, because $10 \div 4$ is not a whole number* was cut: it answers the
+  8.4 Think and Reflect (*give the side lengths of a rectangle that cannot
+  be divided into … identical squares*). The opening paragraph (not a
+  question) was shortened by a line so the page fills.
+* **Examples kept from the 20 September fifteen:** the 4 + 3 = 7 circles and
+  the square's fourth corner (single correct); every rectangle's properties
+  and the circle of radius 6 (more than one correct), both recast — the
+  first had *the diagonals have equal length*, which answers the 8.5
+  question *are the two diagonals the same length?*, and the second used
+  *diameter*, a word the chapter does not teach; the touching circles and
+  the perimeter (numerical); the lengths match (recast in the chapter's own
+  words, with Fig. 8.38, new) and the circle-separation match. **Dropped:**
+  the 4.5 cm diameter and the 8.5 cm compass opening (decimals, not taught
+  in Class 6), the rectangle's half-diagonal (*diagonals bisect each other*
+  is not taught and answers the same 8.5 question), the perpendicular
+  bisector (not taught), and *sufficient to determine* (Class 7 wording).
+  **Written new:** two paragraph-based examples (a house front, Leela's
+  card), each with an options part and two numerical parts.
+* Check rows were added to Examples 2–6 and 9; they teach, and they close
+  the short pages.
+* Fifteen new practice questions in competitive formats.
+
+### Checks at close
+
+* build: **all pages fit**, 40 pages, no `!` and no `~`. Every page 88% or
+  more except the Summary (p022, 76%, `data-close`), By the Book's last
+  page (p095, 44%, `data-close`) and the chapter's last page (p112, 57%).
+* `lone-words` 0 · `check-sums` 36 identities, 0 wrong · `orphans` 0 ·
+  `check-labels` no collision · `fit-options` every option row fits.
+* `check-numbers.mjs` **rewritten** for the new layout (the old one
+  measured figure numbers from before the reference revision and already
+  failed): 59 identities and 273 checks, 0 failed. It recomputes every
+  single-correct option, every assertion–reason code, every multi-correct,
+  numerical and matching key, every measured length and angle in the key
+  from coordinates, and reads Figs 8.7, 8.13, 8.16, 8.19, 8.22, 8.23 and
+  8.38 from their drawings.
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

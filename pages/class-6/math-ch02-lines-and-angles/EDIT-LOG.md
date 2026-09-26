@@ -1,5 +1,144 @@
 # Class 6 · Mathematics I · Chapter 2 — Lines and Angles
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its practice run and
+its answers further down this log.** Converted by CONVERT-V2.md, with Class 6
+Chapter 1 as the model. `chapter.json` now declares `maths-v2`, palette
+`prism`, edition `196x276-large`, `keepExerciseSets: true` and accent
+`#1e4e8c`. **51 pages** (43 before, on the old edition):
+
+* **Body p001–p035**, NCERT's structure and teaching order, ending on a
+  **Summary** page (p035, `data-close`, `.c-summary`, 9 points following
+  NCERT's own summary). No NCERT section, example, activity or exercise
+  question was cut.
+* **By the Book p090–p094**, five pages, written to BY-THE-BOOK.md: very
+  short 10, short 10, long 10, assertion and reason 5, case-based 5,
+  objective 10. No note line except the assertion–reason key.
+* **Beyond the Book p101–p111**: the tried-and-explained questions (word for
+  word, with no stage head), then Single correct · More than one correct ·
+  Numerical answer · Matching · Paragraph-based, each two solved examples and
+  then its practice (4 · 4 · 3 · 2 · 2). Answers on a fresh page (p110–p111), By the Book key then Beyond key, traces
+  in two-row runs.
+
+### The body
+
+* **Key ideas and Think and Reflects.** Every section has a key idea. New:
+  *Point* (2.1), *Line segment* (2.2), *Segment, ray and line* (2.4, replacing
+  the closing sentence it states), *Naming an angle* (2.5), *Comparing angles*
+  (2.6), *Arms and angles* (2.7, replacing the section-2.6 tip that said the
+  same thing), *Drawing an angle* (2.10). New Think and Reflects in 2.1, 2.3,
+  2.2, 2.3, 2.4, 2.5, 2.7, 2.8, 2.9 (after Example 1, and after bisecting),
+  and 2.11 (after Table 2.57); the Fig. 2.32 one gained a second item. Every
+  section now has a key idea and a Think and Reflect. 2.11 keeps NCERT's
+  *Let's Explore* as well.
+* **Example 3** (2.10, new): drawing $\angle XYZ = 40^\circ$ with the base
+  pointing left, on the outer scale — the mirror of Example 2. Stepped, with
+  a Check line. Body Examples 1 and 2 were already stepped; their step rows
+  now start with a capital.
+* **Exercise figures moved into their questions.** In maths-v2 an exercise
+  set is one tinted field; a figure standing between two question blocks was
+  printed outside the field, and a set ending on a figure lost its foot. Each
+  figure now sits inside the `<li>` of the question that names it, so the
+  question and its figure are one block and can never part. Two pairs are
+  set side by side with `c-figure--pair` (Figs 2.5–2.6, 2.7–2.8, 2.13–2.14)
+  and Figs 2.54–2.55; Figs 2.12 (lg), 2.27, 2.47, 2.48, 2.56 (xl) were set a
+  step smaller, and the viewBoxes of Figs 2.34 and 2.63 were cropped of
+  empty margin. `check-labels` finds no collision at any of these sizes.
+* **`dg-fill-d` removed** (coordinator, 26 September): it prints beige in
+  maths-v2. Fig. 2.21's straws are now `dg-fill-teal` (indigo).
+* **Exercise Set 2.9 lost its Q7** (bisect a right angle and check each part
+  is 45°), added by an earlier redesign and repeating Q4. NCERT's set is Q1–3;
+  Q4–Q6 are also earlier additions and stay.
+* **Plain-English and fitting edits**, wording only: the 2.6 crocodile and
+  Fig. 2.15 paragraphs; the 2.7 slit paragraphs; the protractor paragraphs in
+  2.9 (the "labelled protractor" intro, the subtraction paragraph); the two
+  angle games' rules (same rules, shorter sentences); the Mind-the-mistake
+  paragraph and its Think and Reflect (item 3 cut); the Let's Explore's two
+  questions set as one; Exercise 2.11 Q1 (the five measures inline), Q4
+  (letter M), Q6 (Ashoka Chakra) and Q7 (the puzzle) shortened; Exercise
+  2.1 Q1 and Q6(ii), 2.6 Q7 and 2.8 Q4 shortened. Fig. 2.15's caption now says
+  *some* of the angles are close in size, which closes the C3 flag below.
+* **Figures kept with the questions about them.** Fig. 2.2 and its
+  paragraph, Fig. 2.34 with the *labelled protractor* head and its Think and
+  Reflect, and Fig. 2.37 with its Think and Reflect are each a
+  `c-figure-context`. A script checked every *Fig. 2.N* in the chapter: each
+  prints on its figure's page or the facing page, except the p020 paragraph
+  that describes Fig. 2.34 (a statement, not a question), overleaf from it.
+
+### By the Book
+
+Written new to BY-THE-BOOK.md at Class 6: two-step VSAs, three-step short
+answers with one *Explain why* (Q12) and one mistake read from a protractor
+(Q16, Leela), long answers as single modelled problems (a straight angle cut
+and bisected, spokes of a wheel, a drawn and bisected angle, a robot's turns,
+angles round a point, segments on a line, clock minutes, a double bisection,
+a folding fan, a game's score table). Case passages in Indian settings (a
+market clock tower, a Diwali rangoli, a school gate, Jaisalmer's wind
+turbines, a Dussehra giant wheel), each (i) 1 · (ii) 1 · (iii) 2. Objective
+answers spread a 3 · b 2 · c 2 · d 3; assertion–reason a, a, b, c, d; one
+multi-statement item (Q49) and one named student's claim (Q50). About one in
+five works backwards (Q5, Q8, Q14, Q18, Q45, Q46). Nothing repeats an
+exercise question.
+
+### Beyond the Book
+
+The old Stage 2 examples kept: 124° (multiple correct), 42°/68°/x°, 152°
+bisected twice, the fourth angle round a point, the 89°/90°/179°/181° match,
+and the 146° reflex angle. **Replaced:** Example 1 (five points on a line —
+now in By the Book's form), the robot compass (Ex 3) and the clockwise
+pointer (Ex 9), because the chapter never teaches compass directions or
+*clockwise* (the 17 September audit's finding); the 2 : 3 : 4 ratio (Ex 5),
+because ratio is not in this chapter; the complement/supplement match
+(Ex 14), because neither word is taught — it is now the same four numbers
+described in the chapter's own words. New: Example 1 (a straight angle with
+two equal angles either side of 100°, Fig. 2.64), and two paragraph-based
+examples (a lighthouse beam, a cake cut from the centre). Fifteen new
+practice questions, three with new figures (Figs 2.65–2.67, drawn with the
+chapter's own vocabulary). Check rows were added to Examples 2, 8 and 9 to
+fill short pages with teaching.
+
+### Review fixes, same day
+
+The main session's review asked for two things. **(1) No page may run into
+the bottom margin at all.** Page 11 (the §2.7 slit paragraph, now one line
+shorter) and page 42 (Beyond Example 1's first step, now one line shorter)
+each ran 1.1 mm in. **(2) Every section has a Think and Reflect.** §2.2's is
+back (*Name three things in your classroom that give the idea of a line
+segment*). To keep §2.1–2.4 on three pages under it, these changed: the §2.2 key idea
+is one sentence pair instead of two points; Fig. 2.3 is a step smaller (lg);
+the §2.3 Think and Reflect lost its item on lines of different lengths; three
+§2.1–2.4 paragraphs were reworded shorter (the line paragraph, the ray
+paragraph, and a sentence of the points paragraph). The body was refit
+once; no page after p004 changed its break.
+
+### Checks at close
+
+* build: **all pages fit** — 51 pages, no `!` and no `~`. Fill: every page 88% or more except
+  the Summary (83%, `data-close`) and the chapter's last page.
+* `lone-words`: 0. `check-sums`: 29 identities, 0 wrong. `orphans`: 0.
+  `check-labels`: no collision. `fit-options`: every option row fits.
+* `check-numbers.mjs` **rewritten** for this layout (the old one, 1130 lines,
+  checked the old Beyond and the old practice run; its figure checks are in
+  git history): every identity on every page and in ANSWERS.md, degrees
+  included; the key complete (By the Book 1–50 in order, Beyond 1–15, every
+  example ending in an Answer row, both divisions' parts in order); every
+  single-correct option recomputed and matched to the keyed letter, with
+  exactly one option printing it; assertion–reason and multi-correct keys
+  recomputed from each statement's truth; matching keys recomputed. **321
+  checks, 0 failed.** Five values planted wrong in a scratch copy (a page
+  identity, an ANSWERS.md sum, a By the Book letter, a Beyond multi-correct
+  key and a matching key) were all caught.
+
+### Logged, not fixed
+
+| where | what | why |
+|---|---|---|
+| Exercise Set 2.7 (p023–p025) | runs over three pages | NCERT's own nine questions with seven measuring figures come to about 490 mm, two full pages and more. It starts at the top of a page and its question–figure pairs never part. Shrinking the figures would make them too small to measure with a protractor |
+| p020 | describes Fig. 2.34, which is overleaf on p019 | a statement, not a question; the question about the figure (its Think and Reflect) prints with it |
+| case passages | 25–40 words, against 40–60 in BY-THE-BOOK §4 | lengthened to 40+ they pushed By the Book to a sixth page holding one question |
+
+
 ## Solved examples in examination formats, 20 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

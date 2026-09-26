@@ -9,7 +9,7 @@
    the drawing (symmetry-geometry.mjs, beside this file). The printed claim
    is then read back out of the page or out of ANSWERS.md and compared.
 
-   Four parts:
+   Five parts (E added for the maths-v2 conversion, 26 September 2026):
      A  every arithmetic identity set as maths, on the pages and in
         ANSWERS.md
      B  the figures: every count of lines, every angle and order of
@@ -18,6 +18,7 @@
      C  every multiple-choice and assertion-reason question — exactly one
         option is right, and it is the one the printed key gives
      D  ANSWERS.md: its tables and its values, read back and recomputed
+     E  By the Book and Beyond the Book, recomputed; the keys read back
 
    Exits non-zero if anything does not hold up. */
 
@@ -569,11 +570,11 @@ for (const [n, list] of [[2, [180, 360]], [3, [120, 240, 360]], [4, [90, 180, 27
 // ---- Chapter 1's figures: Exercise 9.4 Q8 to Q10
 {
   const polys = (n) => G.elements(G.figureSvg(CH1, n).svg).filter(e => e.kind === 'polygon' && e.cls === 'dg-line');
-  const reg = polys('1.7').map(e => { const s = symOf(G.primitives([e])); return [e.pts.length, s.lines, s.order]; });
-  ok('Fig. 1.7: sides, lines, angles of each regular polygon', reg, [3, 4, 5, 6, 7, 8, 9, 10].map(n => [n, n, n]));
+  const reg = polys('1.8').map(e => { const s = symOf(G.primitives([e])); return [e.pts.length, s.lines, s.order]; });
+  ok('Fig. 1.8: sides, lines, angles of each regular polygon', reg, [3, 4, 5, 6, 7, 8, 9, 10].map(n => [n, n, n]));
   is('ANSWERS Q8', ANSWERS.includes('**3, 4, 5, 6, 7, 8, 9 and 10**') && ANSWERS.includes('**3, 4, 5, 6, 7, 8, 9, 10** angles'));
-  const koch = polys('1.10').map(e => { const s = symOf(G.primitives([e])); return [s.lines, s.order]; });
-  ok('Fig. 1.10: Koch shapes', koch, [[3, 3], [6, 6], [6, 6], [6, 6]]);
+  const koch = polys('1.11').map(e => { const s = symOf(G.primitives([e])); return [s.lines, s.order]; });
+  ok('Fig. 1.11: Koch shapes', koch, [[3, 3], [6, 6], [6, 6], [6, 6]]);
   is('ANSWERS Q10', ANSWERS.includes('(a triangle) has **3** lines and\n    **3** angles') && ANSWERS.includes('**6** lines and **6**\n    angles'));
 }
 
@@ -591,8 +592,8 @@ for (const [n, list] of [[2, [180, 360]], [3, [120, 240, 360]], [4, [90, 180, 27
   is('ANSWERS stage 1 letters', ANSWERS.includes(`**${withLine.join(', ')}**`) && ANSWERS.includes(`**${turning.join(', ').replace(', X, ', ', X,\n   ')}**`));
   // Stage 1 was repaired on 16 September 2026 so that nothing in it answers
   // a body question. Its values are read back from the two pages.
-  const S1 = flat(read('p101.html') + ' ' + read('p102.html'));
-  const S1RAW = read('p101.html') + read('p102.html');
+  const S1RAW = BEYOND.slice(0, BEYOND.indexOf('<div class="c-practice__sub">'));
+  const S1 = flat(S1RAW);
   // 1. a circle with one diameter
   const cd = symOf([{ c: [0, 0], r: 30, cls: 'dg-line' }, ...polyPrims([[-30, 0], [30, 0]], 'dg-line', false)], [0, 0]);
   ok('stage 1: a circle with one diameter, lines', cd.lines, Number(S1.match(/So there are (\d+) lines of symmetry/)?.[1]));
@@ -605,7 +606,7 @@ for (const [n, list] of [[2, [180, 360]], [3, [120, 240, 360]], [4, [90, 180, 27
   is('stage 1: two and three quarter turns are 180 and 270', 2 * 90 === 180 && 3 * 90 === 270 && S1.includes('three quarter turns make $270'));
   // 4. equal arms, equally spaced
   const offered = S1.match(/whole number of degrees: ([\d, ]+)\?/)?.[1].split(',').map(Number);
-  ok('stage 1: the arms offered', offered, [8, 9, 11, 12]);
+  ok('stage 1: the arms offered', offered, [9, 10, 11, 12]);
   ok('stage 1: arms giving a whole number of degrees', offered.filter(n => 360 % n === 0),
     S1.match(/so ([\d, and]+) arms work/)?.[1].split(/, | and /).map(Number));
   // 5. the words: each letter is drawn with straight lines and placed in turn
@@ -650,282 +651,6 @@ for (const [n, list] of [[2, [180, 360]], [3, [120, 240, 360]], [4, [90, 180, 27
     hx.every(g => { const s = symOf(g.flatMap(p => polyPrims(p, 'dg-line', false)), [10, 20]); return s.lines === 2 && s.order === 2; }));
 }
 
-// ---- Beyond: the worked examples, read back from their Answer rows
-const EXAMPLES = {};
-const EXAMPLES_RAW = {};
-{
-  const blocks = BEYOND.split('<div class="c-example">').slice(1);
-  for (const b of blocks) {
-    const n = Number(b.match(/c-example__tab">Example (\d+)/)[1]);
-    const rows = {};
-    for (const m of b.matchAll(/<span class="work__label">([^<]+)<\/span>\s*<span>([\s\S]*?)<\/span>(?:\s*<span class="work__why">([\s\S]*?)<\/span>)?<\/div>/g))
-      rows[m[1]] = flat(m[2]) + (m[3] ? ' | ' + flat(m[3]) : '');
-    EXAMPLES[n] = rows;
-    EXAMPLES_RAW[n] = b.split('Answer</span>')[1] || '';
-  }
-  ok('Beyond examples are numbered 1 to 13, in order', Object.keys(EXAMPLES).map(Number), [...Array(13)].map((_, i) => i + 1));
-  ok('the body has one example, Example 1', [...ALL.slice(0, ALL.indexOf('data-bridge')).matchAll(/c-example__tab">Example (\d+)/g)].map(m => m[1]), ['1']);
-  const figs = [...ALL.matchAll(/<span class="fignum">Fig\. 9\.(\d+)<\/span>/g)].map(m => Number(m[1]));
-  ok('figures numbered 9.1 to 9.43 in order, none twice', figs, [...Array(43)].map((_, i) => i + 1));
-}
-const ans = (n) => EXAMPLES[n]?.Answer || '';
-{
-  const E = fig('9.35');
-  const a = panel(E, [0, 95]), b = panel(E, [95, 190]);
-  ok('Beyond Example 1: (a) and (b)', [a.lines, b.lines], nums(ans(1)).filter((_, i) => i % 1 === 0));
-  const oct = panel(fig('9.36'), [0, 190]);
-  ok('Beyond Example 2: lines of the cut square (not 8)', [oct.lines, 8], nums(ans(2)));
-  const sides = fig('9.36').find(e => e.cls === 'dg-line').pts.map((p, k, P) => Math.hypot(P[(k + 1) % 8][0] - p[0], P[(k + 1) % 8][1] - p[1]));
-  is('Beyond Example 2: long and short sides take turns', sides.every((s, k) => Math.abs(s - sides[k % 2]) < 1e-9) && sides[0] !== sides[1]);
-
-  // Example 3: distances from the line, read from the steps
-  const E37 = fig('9.37');
-  const tri = E37.find(e => e.cls === 'dg-line').pts;
-  const mx = E37.find(e => e.cls === 'dg-plot').pts[0][0];
-  const dist = tri.map(p => (mx - p[0]) / 12);
-  ok('Beyond Example 3: P, Q, R squares from the line', dist, ['Step 1', 'Step 2', 'Step 3'].map(s => nums(EXAMPLES[3][s])[0]));
-  const labels = Object.fromEntries(E37.filter(e => e.kind === 'text').map(e => [e.text, e.at]));
-  is('Fig. 9.37: labels P, Q, R sit beside their corners', ['P', 'Q', 'R'].every((n, k) => Math.hypot(labels[n][0] - tri[k][0], labels[n][1] - tri[k][1]) < 14));
-
-  // Example 4
-  const E38 = fig('9.38');
-  const [m1, m2] = E38.find(e => e.cls === 'dg-plot').pts;
-  const dots = E38.filter(e => e.c).map(e => e.c);
-  const B = dots[0], A = dots[1];
-  is('Fig. 9.38: B is on the line, A is 4 squares to its right', Math.abs(reflectPt(B, m1, m2)[0] - B[0]) < 1e-6 && A[0] - B[0] === 48 && A[1] === B[1]);
-  const A2 = reflectPt(A, m1, m2);
-  ok('Beyond Example 4: the reflection of A, from B (squares right, squares down)', [(A2[0] - B[0]) / 12, (A2[1] - B[1]) / 12].map(v => Math.round(v * 1e6) / 1e6), [0, -nums(ans(4))[0]]);
-  is('Beyond Example 4 says "directly above B"', ans(4).includes('directly above B'));
-  let steps = 0, P = A.slice();
-  while (Math.abs(reflectPt(P, m1, m2)[0] - P[0]) > 1e-6) { P = [P[0] - 12, P[1] - 12]; steps++; }
-  ok('Beyond Example 4: diagonal steps to the line', steps, nums(EXAMPLES[4]['Step 1'])[2]);
-
-  // Example 5 (the 16 cm sheet)
-  const fold = 16 / 2, h1 = fold - 3, h2 = fold + 3;
-  ok('Beyond Example 5: apart, and from the nearer side', [h2 - h1, Math.min(h1, 16 - h2)], nums(ans(5)));
-
-  // Example 6: the T-shaped hole
-  const E39 = fig('9.39');
-  const cut = E39.find(e => e.cls === 'dg-hidden').pts;
-  const opened = E39.find(e => e.kind === 'polygon' && e.cls === 'dg-line').pts;
-  const foldX = 16, openFold = E39.find(e => e.cls === 'dg-ghost').pts[0][0];
-  const fromCut = [...cut, ...cut.slice().reverse().slice(1, -1).map(([x, y]) => [2 * foldX - x, y])].map(([x, y]) => [x - foldX + openFold, y]);
-  const drop = (pts) => pts.filter((p, k) => { const a = pts[(k - 1 + pts.length) % pts.length], b = pts[(k + 1) % pts.length]; return Math.abs((p[0] - a[0]) * (b[1] - p[1]) - (p[1] - a[1]) * (b[0] - p[0])) > 1e-9; });
-  const same = (X, Y) => X.length === Y.length && X.every(p => Y.some(q => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-6));
-  is('Fig. 9.39: the opened hole drawn is the cut and its mirror image', same(drop(fromCut), opened));
-  const t = symOf(polyPrims(opened));
-  ok('Beyond Example 6: sides and lines of the hole', [opened.length, t.lines], [nums(ans(6))[0], 1]);
-  ok('Beyond Example 6: bar and stem widths', [(opened[1][0] - opened[0][0]) / 10, (opened[4][0] - opened[5][0]) / 10], nums(EXAMPLES[6]['Step 3']));
-
-  // Example 7
-  const E40 = fig('9.40');
-  const a7 = panel(E40, [0, 95], { dot: true }), b7 = panel(E40, [95, 190], { dot: true });
-  const la = panel(E40, [0, 95]).lines, lb = panel(E40, [95, 190]).lines;
-  ok('Beyond Example 7: orders; lines', [a7.order, b7.order, la, lb], [...nums(ans(7)).slice(0, 2), 0, 0]);
-  is('Beyond Example 7 says neither has a line', ans(7).includes('neither has a line of symmetry'));
-
-  // Example 8
-  const n8 = nums(ans(8));
-  ok('Beyond Example 8', [360 / 20, 126 % 18 === 0, 100 % 18 === 0], [n8[0], ans(8).includes('126°') || /\$126\^\\circ\$ is an angle/.test(EXAMPLES_RAW[8]), !/\$100\^\\circ\$ is not/.test(EXAMPLES_RAW[8])]);
-  // Example 9: 120 + 270 = 390 = 360 + 30; the angles are then multiples of 30
-  ok('Beyond Example 9', [(120 + 3 * 90) - 360, 360 / 30], [nums(ans(9))[0], 12]);
-  {
-    // the working derives the result: 120 fits; from there 3 quarter turns
-    // (270) fit, as Stage 1 showed; 390 = 360 + 30 and the full turn
-    // brings every figure back. Each printed step is checked.
-    const E9 = EXAMPLES[9];
-    is('Beyond Example 9 step 1: 120 fits, the start picture again', E9['Step 1'].includes('turn it by $120^\\circ$: it looks exactly as it did at the start'));
-    is('Beyond Example 9 step 2: three quarter turns from there, 270, cites Stage 1',
-      E9['Step 2'].includes('three of them, $270^\\circ$') && /as in Stage 1/.test(E9['Step 2']) && 3 * 90 === 270);
-    ok('Beyond Example 9 step 3: 120 + 270 = 390', nums(E9['Step 3']).slice(0, 3), [120, 270, 120 + 270]);
-    ok('Beyond Example 9 step 4: 390 = 360 + 30', nums(E9['Step 4']).slice(0, 3), [390, 360, 390 - 360]);
-    is('Beyond Example 9 step 4 uses the full turn from the chapter', /the full turn brings every figure back/.test(E9['Step 4'])
-      && flat(ALL).includes('A full turn of $360^\\circ$ brings every figure back to where it started'));
-    is('Beyond Example 9: at least 12 angles, from repeating 30', /every multiple of \$30\^\\circ\$ up to \$360\^\\circ\$\. So this figure has at least 12 angles/.test(BEYOND) && 360 / 30 === 12);
-    // Stage 1 question 3 is where "a turn that fits can be repeated" is shown
-    is('Stage 1 shows that a turn that fits can be repeated', BEYOND.includes('a second quarter turn gives the same picture again'));
-  }
-  // Example 10, 11, 12
-  ok('Beyond Example 10', [360 / 15, 48, 72, 15], nums(ans(10)).slice(0, 5).filter((_, k) => k !== 1));
-  ok('Beyond Example 11', [360 / 10, 90 % 10 === 0, 45 % 10 === 0], [nums(ans(11))[0], true, false]);
-  const E41 = fig('9.41');
-  const s41 = panel(E41, [0, 190], { dot: true });
-  ok('Beyond Example 12: order of the eight arms', [s41.order, 360 / s41.order], [nums(ans(12)).at(-1), nums(ans(12))[0]]);
-  // Example 13: digits
-  const E42 = fig('9.42');
-  const d = [[0, 70], [70, 120], [120, 170], [170, 230]].map(b => panel(E42, b));
-  ok('Beyond Example 13: lines and orders of 0, 2, 5, 8', d.map(s => [s.lines, s.order]), [[2, 2], [0, 2], [0, 2], [2, 2]]);
-  is('Beyond Example 13 answer', ans(13) === '0 and 8: 2 lines, order 2; 2 and 5: no line, order 2');
-}
-
-// ---- Beyond practice: the written answers, read back from the answer page
-const ROW = {};
-for (const m of BEYOND.matchAll(/<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) ROW[m[1]] ??= flat(m[2]);
-const part = (q, l) => (ROW[q] || '').match(new RegExp(`\\(${l}\\)(.*?)(?=\\([a-e]\\)|$)`))?.[1] || '';
-const letters = {
-  A: [[[0, 40], [10, 0], [20, 40]], [[5, 20], [15, 20]]],
-  H: [[[0, 0], [0, 40]], [[20, 0], [20, 40]], [[0, 20], [20, 20]]],
-  M: [[[0, 40], [0, 0], [10, 24], [20, 0], [20, 40]]],
-  N: [[[0, 40], [0, 0], [20, 40], [20, 0]]],
-  T: [[[0, 0], [20, 0]], [[10, 0], [10, 40]]],
-  V: [[[0, 0], [10, 40], [20, 0]]],
-  W: [[[0, 0], [5, 40], [10, 10], [15, 40], [20, 0]]],
-  X: [[[0, 0], [20, 40]], [[0, 40], [20, 0]]],
-  Y: [[[0, 0], [10, 18], [20, 0]], [[10, 18], [10, 40]]],
-  Z: [[[0, 0], [20, 0], [0, 40], [20, 40]]],
-};
-const letter = (c) => symOf(letters[c].flatMap(p => polyPrims(p, 'dg-line', false)));
-const squares = (cells) => cells.flatMap(([i, j]) => polyPrims([[i * 10, j * 10], [i * 10 + 10, j * 10], [i * 10 + 10, j * 10 + 10], [i * 10, j * 10 + 10]]));
-{
-  ok('Q17: order 1 means 360 only', nums(ROW[17]), [360]);
-  const three = (ROW[18].match(/\b([A-Z]), ([A-Z]) and ([A-Z])\b/) || []).slice(1);
-  is(`Q18: ${three.join(', ')} each have a line and no turn`, three.length === 3 && three.every(c => letter(c).lines >= 1 && letter(c).order === 1));
-  ok('Q19', 360 / 5, nums(ROW[19])[0]);
-  ok('Q20', [360, 40, 360 / 40], nums(ROW[20]).slice(0, 3));
-  ok('Q20: the multiples of 9 either side of 100', [9 * 11, 9 * 12], [nums(ROW[20]).at(-4), nums(ROW[20]).at(-1)]);
-  is('Q20: 100 is not a multiple of 9', 100 % 9 !== 0 && ROW[20].startsWith('No'));
-  const circles = [{ c: [0, 0], r: 10, cls: 'dg-line' }, { c: [20, 0], r: 10, cls: 'dg-line' }];
-  ok('Q21: two touching circles', symOf(circles).lines, nums(ROW[21])[0]);
-  ok('Q22: T of five squares, Z of five squares', [symOf(squares([[0, 0], [1, 0], [2, 0], [1, 1], [1, 2]])).lines,
-    symOf(squares([[0, 0], [1, 0], [1, 1], [1, 2], [2, 2]])).lines, symOf(squares([[0, 0], [1, 0], [1, 1], [1, 2], [2, 2]])).order], [1, 0, 2]);
-  ok('Q23', [360 / 3, 240, 360], nums(ROW[23]).slice(-3));
-  is('Q23: 90 is not among them', ![120, 240, 360].includes(90) && ROW[23].startsWith('No'));
-  is('Q24: 80 x 5 = 400 = 360 + 40 is printed', [80 * 5, 360, 40].every(v => nums(ROW[24]).includes(v)) && 80 * 5 === 360 + 40);
-  is('Q24: the row repeats the turn (Stage 1) and uses the full turn', /five such turns still fit, as in Stage 1/.test(ROW[24]) && /the full turn brings it back/.test(ROW[24])
-    && ROW[24].includes('$80^\\circ \\times 5 = 400^\\circ = 360^\\circ + 40^\\circ$'));
-  is('ANSWERS 24 cites Stage 1 and the full turn', ANSWERS.includes('(Stage 1, question 3)') && ANSWERS.includes('full turn brings every figure back. So a turn of $40^\\circ$ fits.'));
-  const A25 = reflectPt([0, 3], [0, 0], [1, -1]);
-  ok('Q25: 3 squares directly below B reflects to 3 squares left of B', A25.map(v => Math.round(v * 1e9) / 1e9), [-nums(ROW[25])[0], 0]);
-  is('Q25 says left', ROW[25].includes('to the left of B'));
-  const sq26 = [...polyPrims([[0, 0], [30, 0], [30, 30], [0, 30]]), ...polyPrims([[10, 0], [10, 30]], 'dg-line', false), ...polyPrims([[20, 0], [20, 30]], 'dg-line', false)];
-  ok('Q26: a square with two lines at the thirds', symOf(sq26).lines, 2);
-  // Q27
-  const side = 12, f27 = side / 2, holes = [f27 - 2, f27 + 2];
-  ok('Q27 (a) (b) (c)', [holes.length, holes[1] - holes[0], Math.min(holes[0], side - holes[1])],
-    [nums(part(27, 'a'))[0], nums(part(27, 'b'))[0], nums(part(27, 'c'))[0]]);
-  const sheet = [...polyPrims([[0, 0], [120, 0], [120, 120], [0, 120]]), ...holes.map(x => ({ c: [x * 10, 30], r: 3, cls: 'dg-line' }))];
-  const s27 = symOf(sheet, [60, 60]);
-  ok('Q27 (d): one line, no rotational symmetry', [G.linesOfSymmetry(G.figure(sheet), [60, 60]).count, s27.order], [1, 1]);
-  is('Q27 (d) ANSWERS says no', part(27, 'd').includes('no, a half turn'));
-  // Q28
-  const arms = (n, longEvery) => [...Array(n)].flatMap((_, k) => {
-    const a = k * 2 * Math.PI / n, len = k % longEvery === 0 ? 40 : 25;
-    return polyPrims([[0, 0], [len * Math.cos(a), len * Math.sin(a)]], 'dg-line', false);
-  });
-  const b28 = symOf(arms(30, 2), [0, 0]), c28 = symOf(arms(30, 3), [0, 0]);
-  ok('Q28 (a)', 360 / 30, nums(part(28, 'a'))[2]);
-  ok('Q28 (b)', [360 / b28.order, b28.order], nums(part(28, 'b')).slice(-2));
-  ok('Q28 (c)', [360 / c28.order, c28.order], nums(part(28, 'c')).slice(-2));
-  const both = [72, 120, 144].filter(t => t % (360 / b28.order) === 0 && t % (360 / c28.order) === 0);
-  ok('Q28 (d)', both, nums(part(28, 'd')).slice(0, 2));
-  is('Q28 (d): 120 fits (b) only', 120 % (360 / b28.order) === 0 && 120 % (360 / c28.order) !== 0);
-  // Q29, checked against the cells ANSWERS.md names
-  const grid = [];
-  for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) grid.push(...polyPrims([[i * 10, j * 10], [i * 10 + 10, j * 10], [i * 10 + 10, j * 10 + 10], [i * 10, j * 10 + 10]], 'dg-thin'));
-  const crosses = (cells) => cells.flatMap(([i, j]) => [...polyPrims([[i * 10 + 2, j * 10 + 2], [i * 10 + 8, j * 10 + 8]], 'dg-line', false), ...polyPrims([[i * 10 + 8, j * 10 + 2], [i * 10 + 2, j * 10 + 8]], 'dg-line', false)]);
-  const g = (cells) => symOf([...grid, ...crosses(cells)], [20, 20]);
-  const s29a = g([[0, 0], [3, 0], [0, 3], [3, 3]]);
-  const bCells = parsePts(ANSWERS.match(/\(b\) the squares at ([^;]*?) counted/)?.[1]);
-  const s29b = g(bCells);
-  const s29c = g([[0, 0], [1, 0], [0, 1], [1, 1]]);
-  ok('Q29 (a) lines; (b) order, lines, count; (c) lines', [s29a.lines, s29b.order, s29b.lines, bCells.length, s29c.lines], [4, 4, 0, 4, 1]);
-  is('Q29 (b) on the page names the same squares', part(29, 'b').includes('second square of the top row') && bCells.some(p => p[0] === 1 && p[1] === 0));
-  // Q30 and Q31
-  const marks = [...Array(12)].flatMap((_, k) => { const a = k * Math.PI / 6; return polyPrims([[40 * Math.cos(a), 40 * Math.sin(a)], [46 * Math.cos(a), 46 * Math.sin(a)]], 'dg-line', false); });
-  const s30 = symOf(marks, [0, 0]);
-  ok('Q30 (a) (b) (d)', [360 / 12, s30.order, s30.lines], [nums(part(30, 'a')).at(-1), nums(part(30, 'b'))[0], nums(part(30, 'd'))[0]]);
-  ok('Q30 (c): 12 to 5 is five marks', [30 * 5, (30 * 5) % 30 === 0], [nums(part(30, 'c')).at(-2) ?? 0, part(30, 'c').startsWith(' yes')]);
-  const spokes = { P: 12, Q: 15, R: 20 };
-  const printedSpokes = Object.fromEntries([...BEYOND.matchAll(/<tr><td>([PQR])<\/td><td>(\d+)<\/td><\/tr>/g)].map(m => [m[1], Number(m[2])]));
-  ok('Q31 table as printed', printedSpokes, spokes);
-  ok('Q31 (a)', Object.values(printedSpokes).map(n => 360 / n), nums(part(31, 'a')).filter((_, k) => k % 3 === 2));
-  const fits = (t) => Object.keys(printedSpokes).filter(k => t % (360 / printedSpokes[k]) === 0);
-  ok('Q31 (b)', fits(72).join(' and '), part(31, 'b').match(/([PQR] and [PQR])/)?.[1]);
-  ok('Q31 (c)', fits(90).join(' and '), part(31, 'c').match(/([PQR] and [PQR])/)?.[1]);
-  ok('Q31 (d)', 360 / 12, nums(part(31, 'd')).at(-1));
-}
-
-/* ================================================================
-   C. one right option, and the key says so
-   ================================================================ */
-const KEY = Object.fromEntries([...BEYOND.matchAll(/<span class="n">(\d+)<\/span> \(([a-d])\)/g)].map(m => [m[1], m[2]]));
-const QUESTIONS = {};
-for (const m of BEYOND.matchAll(/data-start="(\d+)">\s*<li>([\s\S]*?)<\/li>\s*<\/ol>\s*<\/div>/g)) QUESTIONS[m[1]] = m[2];
-{
-  const first = BEYOND.match(/c-practice__num">3<\/span>Practice[\s\S]*?<li>([\s\S]*?)<\/li>\s*<\/ol>\s*<\/div>/);
-  QUESTIONS[1] = first[1];
-}
-ok('practice is numbered 1 to 31 with no gap', Object.keys(QUESTIONS).map(Number).sort((a, b) => a - b), [...Array(31)].map((_, i) => i + 1));
-const subs = [...BEYOND.matchAll(/c-practice__sub">([^<]+)</g)].map(m => m[1]);
-ok('the six forms, in order', subs, ['Choose the correct option', 'Assertion and reason', 'Very short answer', 'Short answer', 'Long answer', 'Case-based questions']);
-is('no Case study label', !/c-case__label|Case study/.test(BEYOND));
-const optionsOf = (n) => [...(QUESTIONS[n].match(/<ol class="c-parts c-parts--alpha[^"]*">([\s\S]*?)<\/ol>/)?.[1] || '').matchAll(/<li>([\s\S]*?)<\/li>/g)].map(m => flat(m[1]));
-const deg = (s) => { const t = s.replace(/\$|\^\\circ/g, ''); const m = t.match(/^(\d+)\\frac\{(\d+)\}\{(\d+)\}$/); return m ? Number(m[1]) + m[2] / m[3] : Number(t); };
-const E43 = fig('9.43');
-const shape43 = { P: [0, 64], Q: [64, 128], R: [128, 210], S: [210, 266] };
-const s43 = Object.fromEntries(Object.entries(shape43).map(([k, b]) => [k, panel(E43, [...b, 0, 50])]));
-const rect42 = symOf(polyPrims([[0, 0], [40, 0], [40, 20], [0, 20]]));
-const square = symOf(polyPrims([[0, 0], [20, 0], [20, 20], [0, 20]]));
-const MCQ = {
-  1: (o) => s43[o].order > 1 && s43[o].lines === 0,
-  2: (o) => s43[o].order === 1 && s43[o].lines === 0,
-  3: (o) => s43[o].lines === 1,
-  4: (o) => Number(o) === s43.R.lines,
-  5: (o) => Number(o) === 360 / 8,
-  6: (o) => letter(o).lines === 1,
-  7: (o) => { const r = reflectPt([-3, 0], [0, 0], [0, 1]); return o === `${r[0]} squares to the right of the line, in the same row`; },
-  8: (o) => Number(o.split(' ')[0]) === (10 + 4) - (10 - 4),
-  9: (o) => Math.abs(deg(o) - 360 / 32) < 1e-9,
-  10: (o) => deg(o) % 180 === 0,
-  11: (o) => ({ 'a rectangle 4 cm by 2 cm': rect42, 'the letter H': letter('H'), 'the letter N': letter('N'), 'a square': square })[o].order % 4 === 0,
-  12: (o) => deg(o) === 360 / 30,
-};
-for (const [n, right] of Object.entries(MCQ)) {
-  const opts = optionsOf(n);
-  const hits = opts.map((o, i) => right(o) ? 'abcd'[i] : null).filter(Boolean);
-  if (opts.length !== 4) fails.push(`Q${n}: ${opts.length} options`);
-  else if (hits.length !== 1) fails.push(`Q${n}: ${hits.length} right options (${hits.join(', ') || 'none'})`);
-  else if (hits[0] !== KEY[n]) fails.push(`Q${n}: the right option is (${hits[0]}), the key prints (${KEY[n]})`);
-  else pass++;
-}
-/* Assertion-reason: A and R are computed; whether R explains A is the
-   judgement being tested, and is stated. Each is tied to its printed text. */
-const AR = {
-  13: { A: ['A figure whose smallest angle of symmetry is 30° has 12 angles of symmetry.', () => 360 / 30 === 12],
-    R: ['$30 \\times 12 = 360$.', () => 30 * 12 === 360], explains: true },
-  14: { A: ['A circle has rotational symmetry.', () => G.angles(G.figure([{ c: [0, 0], r: 20, cls: 'dg-line' }]), [0, 0]).order > 1],
-    R: ['A circle has exactly 360 angles of symmetry.', () => G.angles(G.figure([{ c: [0, 0], r: 20, cls: 'dg-line' }]), [0, 0]).order === 360], explains: false },
-  15: { A: ['A figure made of three equal radial arms, with angles of 100°, 130° and 130° between them, has rotational symmetry.', () => {
-      const pr = [0, 100, 230].flatMap(d => polyPrims([[0, 0], [30 * Math.cos(d * Math.PI / 180), 30 * Math.sin(d * Math.PI / 180)]], 'dg-line', false));
-      return symOf(pr, [0, 0]).order > 1; }],
-    R: ['These three angles add up to 360°.', () => 100 + 130 + 130 === 360], explains: false },
-  16: { A: ['The letter H, drawn with straight lines, has rotational symmetry of order 2.', () => letter('H').order === 2],
-    R: ['The letter H has a line of symmetry.', () => letter('H').lines >= 1], explains: false },
-};
-const txt = (s) => flat(s.replace(/\$(\d+)\^\\circ\$/g, '$1°'));
-for (const [n, q] of Object.entries(AR)) {
-  const m = QUESTIONS[n].match(/<p>Assertion \(A\): ([\s\S]*?)<\/p><p>Reason \(R\): ([\s\S]*?)<\/p>/);
-  ok(`Q${n}: printed assertion and reason`, m ? [txt(m[1]), q.R[0].includes('$') ? m[2] : txt(m[2])] : null, [q.A[0], q.R[0]]);
-  const a = q.A[1](), r = q.R[1]();
-  const want = a && r ? (q.explains ? 'a' : 'b') : a ? 'c' : r ? 'd' : '?';
-  ok(`Q${n}: A ${a}, R ${r}, so the key`, KEY[n], want);
-}
-is('the assertion-reason note names Questions 13 to 16', BEYOND.includes('In Questions 13 to 16, choose (a) if both A and R are true and R explains A;'));
-const spread = 'abcd'.split('').map(l => Object.values(KEY).filter(k => k === l).length);
-is(`the key uses all four letters (${spread.join(' ')})`, spread.every(c => c > 0));
-ok('the key covers 1 to 16', Object.keys(KEY).map(Number), [...Array(16)].map((_, i) => i + 1));
-
-// the "why the other options are wrong" notes
-{
-  const why = BEYOND.slice(BEYOND.indexOf('Why the other options are wrong'));
-  const note = (n) => flat(why.match(new RegExp(`work__label">${n}</span>\\s*<span>([\\s\\S]*?)</span>`))?.[1] || '');
-  ok('note 5: the multiples of 8 up to 360, and 360 - 8', [8, 360, 360 / 8], [nums(note(5))[0], nums(note(5))[1], nums(note(5))[4]]);
-  ok('note 5: option (d) is 360 - 8', 360 - 8, deg(optionsOf(5)[3]));
-  ok('note 9', [360 / 32, 12, 360 / 12, 10, 360 / 10], [nums(note(9))[2] + nums(note(9))[3] / nums(note(9))[4], ...nums(note(9)).slice(5, 9)]);
-  ok('note 15', 100 + 130 + 130, nums(note(15))[3]);
-  is('note 14 and 15 name the right answers', note(14).endsWith('(c).') && note(15).endsWith('(d).') && KEY[14] === 'c' && KEY[15] === 'd');
-}
-
 /* ================================================================
    D. ANSWERS.md values
    ================================================================ */
@@ -946,20 +671,208 @@ ok('the key covers 1 to 16', Object.keys(KEY).map(Number), [...Array(16)].map((_
   inA('stage 1 circle', 'A circle with one diameter drawn has **2** lines of symmetry');
   inA('stage 1 circle angles', 'symmetry are **$180^\\circ$ and $360^\\circ$**');
   inA('stage 1 turns', '**Not necessarily** for $45^\\circ$');
-  inA('stage 1 arms', '**8, 9 and 12** arms');
-  inA('stage 1 words', 'After a half turn: **SOS** only. In the mirror: **TOOT and MOM**.');
-  inA('stage 1 squares', '6. **2** lines of symmetry');
-  // the key table in ANSWERS matches the page's key
-  const akey = Object.fromEntries([...ANSWERS.matchAll(/\| (\d+) \(([a-d])\)/g)].map(m => [m[1], m[2]]));
-  ok('ANSWERS key = printed key', akey, KEY);
-  // practice answers in ANSWERS agree with the page
-  for (const [n, want] of [[19, 360 / 5], [20, 9], [21, 2], [25, 3]]) {
-    const line = ANSWERS.match(new RegExp(`^${n}\\. (.*)$`, 'm'))?.[1] || '';
-    is(`ANSWERS ${n} states ${want}`, nums(line).includes(want) || line.includes(`**${want}**`) || line.includes(`${want} squares`));
+  inA('stage 1 arms', '**9, 10 and 12** arms');
+  inA('stage 1 words', 'Half turn: **SOS**. Mirror along an up-and-down line: **TOOT, MOM**.');
+  inA('stage 1 squares', '6. Two squares touching at a corner: **2** lines of symmetry');
+}
+
+/* ================================================================
+   E. By the Book and Beyond the Book (maths-v2, 26 September 2026)
+
+   Every answer is recomputed from the question's own numbers, and every
+   option question is tested option by option: exactly the keyed option
+   (or options) must be right. The printed key on the Answers pages and
+   the ANSWERS.md key are read back and compared with what is computed.
+   ================================================================ */
+const BOARD = pages.filter(f => /^p09\d/.test(f)).map(read).join('\n');
+const qText = (html, n) => {
+  const m = html.match(new RegExp(`<ol class="c-questions"${n === 1 ? '' : ` data-start="${n}"`}>\\s*<li>([\\s\\S]*?)</li>\\s*</ol>\\s*</div>`));
+  return m ? m[1] : null;
+};
+const optsOf = (li) => [...(li.match(/<ol class="c-parts c-parts--alpha[^"]*">([\s\S]*?)<\/ol>/)?.[1] || '').matchAll(/<li>([\s\S]*?)<\/li>/g)].map(m => flat(m[1]).replace(/&nbsp;/g, ' '));
+const letter = (i) => '(' + 'abcd'[i] + ')';
+// the maths answers, computed
+const arms = (n) => 360 / n;                                  // smallest angle, equal arms
+const fitsArms = (n, t) => (t * n) % 360 === 0;              // a turn fits n equal arms
+const markedOrder = (n, every) => n / every;                  // order when every k-th arm is marked
+const linesOfEqualArms = (n) => n;                            // n equal arms, equally spaced
+{
+  // ---- the division's shape
+  ok('By the Book numbers 1 to 50', [...BOARD.matchAll(/data-start="(\d+)"/g)].map(m => +m[1]), [...Array(49)].map((_, i) => i + 2));
+  ok('By the Book forms in order', [...BOARD.matchAll(/c-practice__sub">([^<]+)</g)].map(m => m[1]),
+    ['Very short answer', 'Short answer', 'Long answer', 'Assertion and reason', 'Case-based questions', 'Objective questions']);
+  const subAt = (name) => { const i = BOARD.indexOf(`c-practice__sub">${name}`); return Number(BOARD.slice(i).match(/data-start="(\d+)"/)?.[1] || 1); };
+  ok('By the Book form starts', ['Short answer', 'Long answer', 'Assertion and reason', 'Case-based questions', 'Objective questions'].map(subAt), [11, 21, 31, 36, 41]);
+  ok('one note line only (the assertion-reason key)', (BOARD.match(/c-practice__note/g) || []).length, 1);
+  ok('five case passages with the fixed line', (BOARD.match(/Based on the above information, answer the following(?: |&nbsp;)questions\./g) || []).length, 5);
+
+  // ---- objective questions: the right option, computed
+  const want = {
+    41: { opts: ['5', '10', '20', '36'], right: String(linesOfEqualArms(10)) },
+    42: { right: '$30^\\circ$', calc: 360 / 12 },
+    43: { right: '3.5 cm', calc: 7 / 2 },
+    44: { right: 'S' },
+    45: { right: '30', calc: 360 / 12 },
+    46: { right: '$60^\\circ$', calc: [36, 54, 90, 60].filter(t => !fitsArms(20, t)) },
+    47: { right: 'P, Q and R', calc: [9, 12, 15].filter(n => fitsArms(n, 120)).length },
+    48: { right: '(i) and (ii)' },
+    49: { right: 'No: arms with' },
+    50: { right: '4', calc: [20, 40, 60, 80, 100].filter(t => t < 100 && t % 20 === 0).length },
+  };
+  ok('Q42 30 degrees', want[42].calc, 30);
+  ok('Q43 3.5 cm', want[43].calc, 3.5);
+  ok('Q45 30 arms', want[45].calc, 30);
+  ok('Q46 only 60 fails', want[46].calc, [60]);
+  ok('Q47 all three fit 120', want[47].calc, 3);
+  ok('Q50 four angles below 100', want[50].calc, 4);
+  const objKey = {};
+  for (let n = 41; n <= 50; n++) {
+    const li = qText(BOARD, n); const o = optsOf(li);
+    const idx = o.findIndex(x => x.startsWith(flat(want[n].right).replace(/&nbsp;/g, ' ')) || x === want[n].right);
+    is(`Q${n}: exactly one option matches the computed answer`, idx >= 0 && o.filter(x => x.startsWith(flat(want[n].right))).length === 1);
+    objKey[n] = letter(idx);
   }
-  ok('ANSWERS 27', [2, 4, 4], nums(ANSWERS.match(/^27\. (.*)$/m)[1]).slice(0, 3));
-  ok('ANSWERS 30', [30, 12, 150, 30, 5, 12], nums(ANSWERS.match(/^30\. [\s\S]*?\*\*12\*\*/m)[0]).slice(1));
-  ok('ANSWERS 31', [30, 24, 18, 30], nums(ANSWERS.match(/^31\. [\s\S]*?spokes\./m)[0]).filter((_, k) => k > 0));
+  const printedObj = Object.fromEntries([...BEYOND.matchAll(/<span class="n">(\d+)<\/span> (\([a-d]\))/g)].map(m => [m[1], m[2]]));
+  for (let n = 41; n <= 50; n++) ok(`key ${n}`, printedObj[n], objKey[n]);
+  const spread = Object.values(objKey).reduce((a, k) => (a[k] = (a[k] || 0) + 1, a), {});
+  is('objective keys use all four letters', Object.keys(spread).length === 4);
+
+  // ---- assertion and reason: truth values
+  const AR = {
+    31: [360 / 9 === 40, true, true],       // A true, R true, R explains
+    32: [4 + 4 === 8, true, true],
+    33: [true, false, false],               // T: one line, no turn; R false (T itself)
+    34: [false, true, false],               // 90, 90, 180 unequal; a full turn is 360
+    35: [true, true, false],                // equal sides alone do not give 4 lines
+  };
+  const code = ([a, r, ex]) => a && r ? (ex ? '(a)' : '(b)') : a ? '(c)' : r ? '(d)' : '?';
+  for (const n of [31, 32, 33, 34, 35]) ok(`assertion-reason ${n}`, printedObj[n], code(AR[n]));
+  is('assertion-reason key line under its sub-head, word for word', BOARD.includes('Choose (a) if A and R are both true and R is the correct explanation of A; (b) if A and R are both true but R is not the correct explanation of A; (c) if A is true but R is false; (d) if A is false but R is&nbsp;true.'));
+
+  // ---- written answers, recomputed and read back from the Answers pages
+  const row = (n) => flat(BEYOND.match(new RegExp(`work__label">${n}</span>\\s*<span>([\\s\\S]*?)</span>`))?.[1] || '');
+  const has = (n, ...needles) => is(`By the Book ${n}: answer row has ${needles.join(', ')}`, needles.every(x => row(n).includes(x)));
+  has(1, '6 cm'); ok('BtB 1', 3 + 3, 6);
+  ok('BtB 2', [360 / 20], [18]); has(2, '18');
+  ok('BtB 3', fitsArms(12, 50), false); has(3, 'No');
+  ok('BtB 4', [arms(9)], [40]); has(4, 'order 9');
+  ok('BtB 6', [360 / 4, 180, 270, 360], [90, 180, 270, 360]);
+  ok('BtB 7', [arms(20), 54 % arms(20)], [18, 0]);
+  ok('BtB 13', [arms(30), 3 * arms(30), 360 / (3 * arms(30))], [12, 36, 10]);
+  ok('BtB 14', [3 * 90, 120 + 270 - 360], [270, 30]);
+  ok('BtB 17', [arms(15), 48 % 24, 90 % 24 === 0, 120 % 24], [24, 0, false, 0]);
+  ok('BtB 18', [6, 6 / 2], [6, 3]);
+  ok('BtB 19', [arms(10), 360 - 2 * 36, 360 - 36], [36, 288, 324]);
+  ok('BtB 21', [20 / 2 - 3, 20 / 2 + 3, 6, 20 - 4], [7, 13, 6, 16]);
+  ok('BtB 22', [arms(16), 7 * arms(16), 4 * arms(16), 360 / 90], [22.5, 157.5, 90, 4]);
+  ok('BtB 23', [arms(9), [1, 2, 3, 4].map(k => 40 * k), 3 * 40, 360 / 120], [40, [40, 80, 120, 160], 120, 3]);
+  ok('BtB 24', 8 * 4, 32);
+  ok('BtB 25', [5 - 2, 5 - 2, 2 + 5, 5 + 5], [3, 3, 7, 10]);
+  ok('BtB 26', [arms(12), 4 * 30, fitsArms(12, 120)], [30, 120, true]);
+  ok('BtB 27', [arms(20), 2 * 18, 360 / 20], [18, 36, 18]);
+  ok('BtB 28', [2 * 2, 4 * 2, 2 * (4 + 2)], [4, 8, 12]);
+  ok('BtB 30', [3 + 3, 2 + 2], [6, 4]);
+  ok('BtB 36', [arms(16), 4 * 22.5, 360 / (120 / 4)], [22.5, 90, 12]);
+  ok('BtB 37', [arms(10), 10, 5 * 36], [36, 10, 180]);
+
+  // grids and tiles, built and measured: the 3 by 3 X, the 4 by 4 floor,
+  // the chessboard, the kolam, the garland, the star with triangles
+  const Z = 20;
+  const cells = (list, size) => list.flatMap(([i, j]) => polyPrims([[i * Z, j * Z], [(i + 1) * Z, j * Z], [(i + 1) * Z, (j + 1) * Z], [i * Z, (j + 1) * Z]], 'dg-fill-a'))
+    .concat(polyPrims([[0, 0], [size * Z, 0], [size * Z, size * Z], [0, size * Z]]));
+  const sx = symOf(cells([[0, 0], [2, 0], [1, 1], [0, 2], [2, 2]], 3), [1.5 * Z, 1.5 * Z]);
+  ok('BtB 15: the shaded X', [sx.lines, sx.order], [4, 4]);
+  const floor = [[0, 0], [1, 1], [2, 2], [3, 3], [3, 0], [2, 1], [1, 2], [0, 3]];
+  const f1 = symOf(cells(floor, 4), [2 * Z, 2 * Z]);
+  const f2 = symOf(cells(floor.filter(([i, j]) => !(i === 0 && j === 0)), 4), [2 * Z, 2 * Z]);
+  ok('BtB 29: floor, then one corner white', [floor.length, f1.lines, f1.order, f2.lines, f2.order], [8, 4, 4, 1, 1]);
+  const black = []; for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) if ((i + j) % 2 === 0) black.push([i, j]);
+  const cb = symOf(cells(black, 8), [4 * Z, 4 * Z]);
+  ok('BtB 38: chessboard', [64, cb.order, cb.lines], [64, 2, 2]);
+  const kolam = [...polyPrims([[0, 0], [60, 0], [60, 60], [0, 60]]), ...polyPrims([[20, 20], [40, 20], [40, 40], [20, 40]])];
+  const k1 = symOf(kolam, [30, 30]); const k2 = symOf([...kolam, ...polyPrims([[0, 0], [60, 60]], 'dg-line', false)], [30, 30]);
+  ok('BtB 39: kolam, then one diagonal', [16, k1.lines, k2.lines, k2.order], [16, 4, 2, 2]);
+  // radial arms with marks, as figures: arm k at angle 360k/n, marked arms longer
+  const armFig = (n, marked) => [...Array(n)].flatMap((_, k) => {
+    const t = 2 * Math.PI * k / n, r = marked(k) ? 30 : 20;
+    return polyPrims([[0, 0], [r * Math.cos(t), r * Math.sin(t)]], 'dg-line', false);
+  });
+  const g = symOf(armFig(20, k => k % 2 === 0), [0, 0]);
+  ok('BtB 27: garland of 20, every second marked', [g.order, g.lines], [10, 10]);
+  const bells = symOf(armFig(10, k => k % 5 === 0), [0, 0]);
+  ok('BtB 37 (iii): bells on every fifth point', bells.order, 2);
+  const armCls = (n, clsOf) => [...Array(n)].flatMap((_, k) => { const t = 2 * Math.PI * k / n; return polyPrims([[0, 0], [20 * Math.cos(t), 20 * Math.sin(t)]], clsOf(k), false); });
+  const pook = symOf(armCls(16, k => ['dg-fill-a', 'dg-fill-b', 'dg-fill-c', 'dg-fill-b'][k % 4]), [0, 0]);
+  ok('BtB 36 (ii): pookalam repeats every 4 parts', pook.order, 4);
+  const clock = symOf(armFig(12, k => k === 0), [0, 0]);
+  ok('BtB 26: one hand at 12', [clock.lines, clock.order], [1, 1]);
+  const star = [...polyPrims([[-2, -2], [2, -2], [2, 2], [-2, 2]]), ...polyPrims([[-2, -2], [2, -2], [0, -2 - 2 * Math.sqrt(3)]]), ...polyPrims([[2, -2], [2, 2], [2 + 2 * Math.sqrt(3), 0]]),
+    ...polyPrims([[2, 2], [-2, 2], [0, 2 + 2 * Math.sqrt(3)]]), ...polyPrims([[-2, 2], [-2, -2], [-2 - 2 * Math.sqrt(3), 0]])];
+  const st = symOf(star, [0, 0]);
+  ok('BtB 24: square with four triangles', [st.lines, st.order], [4, 4]);
+
+  // ---- Beyond the Book: parts, counts, keys
+  ok('Beyond parts in order', [...BEYOND.matchAll(/<div class="c-practice__sub">([^<]+)<\/div>/g)].map(m => m[1]).filter(x => x !== 'By the Book' && x !== 'Beyond the Book'),
+    ['Single correct', 'More than one correct', 'Numerical answer', 'Matching', 'Paragraph-based']);
+  ok('Beyond examples 1 to 10', [...BEYOND.matchAll(/c-example__tab">Example (\d+)</g)].map(m => +m[1]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  ok('Beyond practice numbered 2 to 15', [...BEYOND.matchAll(/c-questions" data-start="(\d+)"/g)].map(m => +m[1]), [...Array(14)].map((_, i) => i + 2));
+  ok('Beyond practice split 4 4 3 2 2', (() => {
+    const at = (name) => BEYOND.indexOf(`c-practice__sub">${name}`);
+    const parts = ['Single correct', 'More than one correct', 'Numerical answer', 'Matching', 'Paragraph-based'].map(at).concat(BEYOND.indexOf('c-stage__title">Answers'));
+    return parts.slice(0, 5).map((s, i) => (BEYOND.slice(s, parts[i + 1]).match(/<ol class="c-questions"/g) || []).length);
+  })(), [4, 4, 3, 2, 2]);
+  is('no "Choose one correct option" line and no format tag on a tab', !/Choose one correct option|Select all correct|c-example__tab">Example \d+ ·/.test(BEYOND));
+
+  // examples, recomputed
+  ok('Beyond Ex 1', 4 + 4, 8);
+  ok('Beyond Ex 2', [arms(20), 5 * 18, 360 / 90], [18, 90, 4]);
+  ok('Beyond Ex 5', 13 / 2, 6.5);
+  ok('Beyond Ex 6', [arms(36), 3 * 10, 360 / 30, 36 / 3], [10, 30, 12, 12]);
+  ok('Beyond Ex 7', [18, 36, 72, 90].map(arms), [20, 10, 5, 4]);
+  const tet = (sq) => symOf(sq.flatMap(([i, j]) => polyPrims([[i * 20, j * 20], [(i + 1) * 20, j * 20], [(i + 1) * 20, (j + 1) * 20], [i * 20, (j + 1) * 20]])));
+  ok('Beyond Ex 8 / Practice 4: shapes of squares, lines', [
+    tet([[0, 0], [1, 0], [2, 0], [3, 0]]).lines, tet([[0, 0], [1, 0], [0, 1], [1, 1]]).lines,
+    tet([[0, 0], [1, 0], [2, 0], [1, 1]]).lines, tet([[0, 0], [1, 0], [2, 0], [0, 1]]).lines], [2, 4, 1, 0]);
+  const S5 = tet([[0, 1], [1, 1], [2, 1], [0, 0], [2, 2]]);
+  ok('Practice 4: the S of five squares', [S5.lines, S5.order], [0, 2]);
+  ok('Practice 4: the others each have a line', [tet([[0, 0], [1, 0], [0, 1], [1, 1]]).lines > 0, tet([[0, 0], [1, 0], [2, 0], [1, 1]]).lines > 0, tet([[0, 0], [1, 0], [2, 0], [3, 0]]).lines > 0], [true, true, true]);
+  const rang = symOf(armCls(12, k => ['dg-fill-a', 'dg-fill-b', 'dg-fill-c'][k % 3]), [0, 0]);
+  ok('Beyond Ex 9: red, yellow, blue petals', [rang.order, 360 / rang.order], [4, 90]);
+  ok('Beyond Ex 10', [6 + 6, 40 / 2 - 6, 18 / 2], [12, 14, 9]);
+  ok('Practice 1', 4 * arms(40), 36);
+  ok('Practice 6', [45, 66, 90, 100].map(t => fitsArms(60, t)), [false, true, true, false]);
+  const bow = [...polyPrims([[0, 0], [40, 0], [40, 40], [0, 40]]), ...polyPrims([[0, 0], [20, 20], [0, 40]], 'dg-fill-a'), ...polyPrims([[40, 0], [20, 20], [40, 40]], 'dg-fill-a'),
+    ...polyPrims([[0, 0], [40, 40]], 'dg-line', false), ...polyPrims([[40, 0], [0, 40]], 'dg-line', false)];
+  const bw = symOf(bow, [20, 20]);
+  ok('Practice 7: the square with left and right shaded', [bw.lines, bw.order], [2, 2]);
+  ok('Practice 9', 360 / 8, 45);
+  const clk2 = symOf(armFig(12, k => k === 0 || k === 6), [0, 0]);
+  ok('Practice 10: marks at 12 and 6', clk2.lines, 2);
+  ok('Practice 11', [50 / 5, 360 / (50 / 5), 360 / 36], [10, 36, 10]);
+  ok('Practice 13', [12, 12 / 3, 12 / 4, 12 / 6].map(o => 12 / (12 / o)), [12, 4, 3, 2]);
+  const wheel = symOf(armFig(16, k => k % 4 === 0), [0, 0]);
+  ok('Practice 14: 16 spokes, 4 red', [arms(16), 360 / wheel.order, wheel.lines], [22.5, 90, 4]);
+  ok('Practice 15', [3 + 3, 7 + 7], [6, 14]);
+
+  // the printed Beyond key, and ANSWERS.md
+  const bKey = BEYOND.match(/c-answers__stage">1&ndash;13<\/span>\s*<span class="c-answers__list">([\s\S]*?)<\/span>\s*<\/li>/)?.[1] || '';
+  const printed = Object.fromEntries(bKey.split(/&nbsp;/).map(x => x.replace(/<[^>]+>/g, ' ').trim()).filter(Boolean).map(x => { const m = x.match(/^(\d+) (.*)$/); return [m[1], m[2].trim()]; }));
+  ok('Beyond key as printed', printed, { 1: '(b)', 2: '(c)', 3: '(a)', 4: '(d)', 5: '(a), (b), (d)', 6: '(b), (c)', 7: '(a), (c)', 8: '(a), (b), (c)', 9: '45', 10: '2', 11: '10', 12: '(c)', 13: '(b)' });
+  // single correct and matching practice: the keyed option is the computed one
+  const B = (n) => optsOf(qText(BEYOND, n) || '');
+  is('Practice 1 keyed option is 36 degrees', B(1)[1].includes('36'));
+  ok('Practice 2 keyed option (3 letters of MOON)', B(2)[2], '3');
+  ok('Practice 3 keyed option', B(3)[0], '5 cm below the line');
+  ok('Practice 12 keyed option', B(12)[2], 'P–2, Q–3, R–1, S–4');
+  ok('Practice 13 keyed option', B(13)[1], 'P–4, Q–3, R–2, S–1');
+  for (const [n, rightIdx] of [[12, 2], [13, 1]]) is(`Practice ${n}: one option only`, new Set(B(n)).size === 4 && B(n).filter((_, i) => i === rightIdx).length === 1);
+  // ANSWERS.md agrees
+  for (let n = 41; n <= 50; n++) is(`ANSWERS.md objective ${n}`, ANSWERS.includes(`${n} ${objKey[n]}`));
+  for (const n of [31, 32, 33, 34, 35]) is(`ANSWERS.md assertion-reason ${n}`, ANSWERS.includes(`${n} ${code(AR[n])}`));
+  is('ANSWERS.md Beyond practice keys', ['1 (b)', '2 (c) 3', '5 (a), (b), (d)', '6 (b), (c)', '7 (a), (c)', '8 (a), (b), (c)', '9 **45**', '10 **2**', '11 **10**', '12 (c)', '13 (b)'].every(x => ANSWERS.includes(x)));
+  // nothing in either division repeats a giveaway of a body question
+  for (const gone of ['octagon', '51\\frac{3}{7}', 'second player', 'rhombus', '8, 9, 11, 12', '$360 \\div 8 = 45$, $360 \\div 9'])
+    is('Beyond does not print "' + gone + '"', !BEYOND.includes(gone));
 }
 
 /* ---- report ---------------------------------------------------- */

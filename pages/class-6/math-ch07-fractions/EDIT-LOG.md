@@ -1,4 +1,127 @@
-# Class 6 · Mathematics I · Chapter 7 — Fractions
+# Class 6 · Mathematics II · Chapter 7 — Fractions
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of Beyond the Book, its examples, its
+practice, its key and the body's page breaks further down this log.**
+Converted to CONVERT-V2.md, with Class 6 Chapter 1 as the model.
+`chapter.json` now reads `maths-v2`, palette `prism`, edition
+`196x276-large`, `keepExerciseSets`, accent `#1e4e8c` (subject left as
+Mathematics II, which is what `chapter.json` already said). 40 pages:
+
+* **Body p001–p025**: NCERT's nine sections in NCERT's order (24 pages),
+  ending on a **Summary** page (p025, `data-close`, ten points, key terms in
+  bold, following NCERT's summary).
+* **By the Book p090–p094**, five pages, 50 questions written to
+  BY-THE-BOOK.md at Class 6: very short 10, short 10, long 10, assertion
+  and reason 5 (key a, d, b, c, a), case-based 5, objective 10 (key b, a,
+  c, d, a, d, c, d, b, c; one table item, one multi-statement item, one
+  named student's claim). The old practice set's water tank (Q27) is
+  reused as long answer 29 with new numbers; the rest is new. No question
+  copies a body exercise.
+* **Beyond the Book p101–p110**: the tried-and-explained questions with no
+  head, then Single correct · More than one correct · Numerical answer ·
+  Matching · Paragraph-based, each two solved examples then practice
+  (4 · 4 · 3 · 2 · 2). Answers opens p109 with no stage numeral: By the
+  Book's key, then Beyond's.
+
+### The body
+
+* **Every section now has a key idea and a Think and Reflect.** Added:
+  a Think and Reflect in 7.1 (1/7 against 1/10; can a unit be bigger than
+  1/2?), 7.5 (after Exercise 7.7: 9/9, 17/5 between 3 and 4, 7/4 against
+  1 1/2) and 7.7 (after Exercise 7.14: 90 as a common denominator; 3/5
+  against 3/8); key ideas in 7.2 (*Naming a piece of a whole*), 7.4
+  (*Fractions on the number line*) and 7.9 (*Fractions in history*). The
+  key ideas that had two or three paragraphs (fractional units, numerator
+  and denominator, comparing, both Brahmagupta methods) are now
+  `c-keyidea__points` of two points, as the model sets them. Every new
+  reflect item is answered in ANSWERS.md.
+* **Two figures added, so the figure numbers moved.** Fig. 7.2 (one roti
+  shared by 5 and by 9, for the Beni–Arvin question) and Fig. 7.7 (halves
+  of a roti counted one at a time, after the table of halves; it shows the
+  first four lines only, so Exercise 7.3 Q1 stays open). Old Figs 7.2–7.5
+  are 7.3–7.6, old 7.6–7.18 are 7.8–7.20, and Table 7.11 is Table 7.13.
+  Captions, prose references and ANSWERS.md were renumbered together by
+  script. The Meena chikki figure (now Fig. 7.17) went from `sm` to `md`.
+* **Teaching added at joins**, to fill pages the larger edition left short
+  (no exercise, example or question added): a sentence and a list of three
+  readings under *Reading fractions*; one line each in 7.7 (the 189 against
+  63 remark; "only the numerators had to be compared"), 7.8 (Meena's two
+  pieces; the same-unit remark; "subtract the numerators and keep the
+  denominator"; the opening line of subtraction with different
+  denominators) and a Check row in body Example 7. Second items in three
+  7.8 reflects (1/2 + 1/4 on a strip; 3/8 + 4/8 by jumps; 5/6 − 1/6 by
+  jumps back).
+* **Trimmed**: the Pinch of History second paragraph was split and
+  tightened (every date and name kept); its puzzle paragraph lost a clause;
+  "This method works for any fractions" and the Brahmagupta sentence became
+  one; "Mukta compares 1/2 and 5/8" went (Shabnam's comparison follows it);
+  "We also read it as" became "and read it as" on the opener.
+* **No NCERT question, example or section was cut or moved.** The new
+  Think and Reflects of 7.5 and 7.7 sit after the section's last exercise
+  set, because `keepExerciseSets` would otherwise leave 40 mm holes.
+* Lone-word lines were closed with a non-breaking space between the last
+  two words, which leaves the wording untouched; parts made only of maths
+  (Exercises 7.12, 7.14, 7.17 Q2) are now one expression each, so a pair
+  cannot wrap apart. Figure numbers carry a non-breaking space.
+
+### By the Book and Beyond
+
+* **Tried questions** kept word for word, with the stage head removed as in
+  the model, except one sentence: the halfway-fraction explanation ended
+  "Cutting each unit into smaller equal parts always makes room for a
+  fraction in between", which answers Exercise 7.4 Q3 (how many fractions
+  lie between 0 and 1). It was deleted (§6a: that rule wins).
+* **Examples.** Kept from the old fifteen, reworded and stepped: old 1
+  (tank, now with a Check row), old 2 (between 5/8 and 3/4), old 9
+  (equalities, with a Check row), old 10 (twelfths on a number line, with a
+  Check row), old 11 (48 students, three steps and a Check), old 12 (7/12
+  in 84ths, extended to 84ths and 120ths: answer 119), old 14 and old 15
+  (matching). Dropped: old 3 (the same form as By the Book Q16), old 4–8,
+  and old 13 (cutting a rope into 3/4 m pieces is division by a fraction).
+  Both paragraph-based examples are new (a cake in twelfths; a strip marked
+  in eighths and sixths). All fifteen practice questions are new. Tabs read
+  "Example N" only; no "Choose one correct option", "Select all" or "Each
+  entry has exactly one match" lines. The two matching examples keep the
+  question stem "Match List I with List II.", as the model does; to fit it
+  on p106 each example's working is now one Step row listing the four
+  values, as the model's Example 7 is set (restored at the coordinator's
+  review, 26 September 2026).
+* The matching practice questions have four entries in each list, with no
+  spare fifth, so that Q13, the Paragraph-based head and Example 9 fit one
+  page.
+
+### Checks at close
+
+* `build.mjs`: all 40 pages fit, no `~`, no `!`. Every page 88% or more
+  except the Summary (81%, `data-close`) and the chapter's last page (81%).
+  Pages 2, 10, 13 and 18 are at 88%.
+* `lone-words`: 0. `check-sums`: 33 identities, 0 wrong. `orphans`: 0
+  stranded in 40 pages. `check-labels`: no labels collide. `fit-options`:
+  every option row fits (By the Book Q50 and Beyond Q14 were narrowed with
+  `--fix`).
+* **`check-numbers.mjs` was rewritten** for this layout (the old script is in
+  git history; it also measured Figs 7.4 and 7.9–7.12 off their SVGs, which
+  the new one does not): 724 checks, 438 relations, 0 failed. It evaluates
+  every =, < and > in the pages and ANSWERS.md in exact fractions (three
+  sums are false on purpose and must stay false), recomputes every By the
+  Book objective and assertion–reason answer, every Beyond single,
+  multiple-correct, numerical and matching answer, every example's Answer
+  row, and the numbers in the By the Book key. Planted errors (a key
+  letter, a mixed number in a key row, a numerical key, a paragraph part)
+  were all caught.
+* Fitting: the body by `refit … body` (several rounds, the Summary held
+  aside); By the Book and Beyond by hand from measured block heights,
+  because the scratch refit reported overruns the real build does not.
+
+### Flagged
+
+| where | what | what it needs |
+|---|---|---|
+| Beyond practice 12 and 13 | both count a mixed number in smaller units; a fraction table for Q13 did not fit | A second type, if a page can be found for it |
+| p024 Pinch of History | the dates (Bakshali, Aryabhata, Sridharacharya, Mahaviracharya, Al-Hassar) still have no source recorded | A source |
+| p001, p005 | Figs 7.2 and 7.7 are new artwork | A look in proof |
 
 ## Solved examples in examination formats, 20 September 2026
 

@@ -2,89 +2,50 @@
   <div class="page__body">
     <div class="page__main">
 
+      <h2><span class="badge">3.5</span><span class="name">Pretty Palindromic Patterns</span></h2>
+
+      <p>Look at these numbers: 66, 848, 575, 797 and 1111. What do they have in common? Read each one from left to right, and then from right to left. You get the same number both ways. A number like this is called a <span class="term">palindrome</span>, or a palindromic number.</p>
+
       <div class="c-keyidea">
-        <div class="c-keyidea__title">The Kaprekar constant</div>
-        <p>Start with any 4-digit number whose digits are not all the same, and repeat the steps. You always reach 6174. This number is called the <span class="term">Kaprekar constant</span>.</p>
+        <div class="c-keyidea__title">Palindromes</div>
+        <p>A number is a palindrome if it reads the same from left to right and from right to left. 575 and 1111 are palindromes, but 578 is not.</p>
       </div>
 
-      <p>What about 3-digit numbers? Follow the same steps with a few 3-digit numbers, such as 321. Which number starts to repeat? Keep three digits all the way: 99 is read as 099.</p>
+      <h3>Palindromes from 1, 2 and 3</h3>
 
-      <h2><span class="badge">3.7</span><span class="name">Clock and Calendar Numbers</span></h2>
+      <p>The numbers 121, 313 and 222 are 3-digit palindromes made from the digits 1, 2 and 3. A digit may be used more than once, and a palindrome does not have to use all three digits. But 123 is not a palindrome, because it reads 321 from right to left.</p>
 
-      <p>Some times on a 12-hour clock make pretty patterns, such as 4:44, 10:10 and 12:21. In 4:44 every digit is the same. In 10:10 the hours and the minutes are the same. And 12:21 reads the same from both ends.</p>
+      <p>Write down every 3-digit palindrome that uses only the digits 1, 2 and 3. How can you be sure that you have found them all? You could start with the palindromes that begin with 1, then those that begin with 2.</p>
 
-      <p>Manish was born on 20/12/2012. Look at the digits of his date of birth: 2, 0, 1, 2, and then 2, 0, 1, 2 again. His sister Meghana was born on 11/02/2011. Her date of birth reads the same from left to right and from right to left, just as the time 12:21 does. Fig. 3.13 shows how the digits pair up.</p>
+      <h3>Reverse and add</h3>
 
-      <div class="c-figure c-figure--xl">
-        <figure>
-          <svg viewBox="0 0 355 86" data-size="xl" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The time 12:21 and the date 11/02/2011 written digit by digit, with curved lines joining each digit to the matching digit at the other end">
-            <rect class="dg-fill-b-soft" x="22" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="22" y="6" width="22" height="26"/>
-            <text class="dg-label" x="33" y="23.8" text-anchor="middle">1</text>
-            <rect class="dg-fill-b-soft" x="44" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="44" y="6" width="22" height="26"/>
-            <text class="dg-label" x="55" y="23.8" text-anchor="middle">2</text>
-            <text class="dg-label" x="71" y="23.8" text-anchor="middle">:</text>
-            <rect class="dg-fill-b-soft" x="76" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="76" y="6" width="22" height="26"/>
-            <text class="dg-label" x="87" y="23.8" text-anchor="middle">2</text>
-            <rect class="dg-fill-b-soft" x="98" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="98" y="6" width="22" height="26"/>
-            <text class="dg-label" x="109" y="23.8" text-anchor="middle">1</text>
-            <path class="dg-thin" d="M33 35 Q71 75.32 109 35"/>
-            <path class="dg-thin" d="M55 35 Q71 61.24 87 35"/>
-            <rect class="dg-fill-b-soft" x="150" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="150" y="6" width="22" height="26"/>
-            <text class="dg-label" x="161" y="23.8" text-anchor="middle">1</text>
-            <rect class="dg-fill-b-soft" x="172" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="172" y="6" width="22" height="26"/>
-            <text class="dg-label" x="183" y="23.8" text-anchor="middle">1</text>
-            <text class="dg-label" x="199" y="23.8" text-anchor="middle">/</text>
-            <rect class="dg-fill-b-soft" x="204" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="204" y="6" width="22" height="26"/>
-            <text class="dg-label" x="215" y="23.8" text-anchor="middle">0</text>
-            <rect class="dg-fill-b-soft" x="226" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="226" y="6" width="22" height="26"/>
-            <text class="dg-label" x="237" y="23.8" text-anchor="middle">2</text>
-            <text class="dg-label" x="253" y="23.8" text-anchor="middle">/</text>
-            <rect class="dg-fill-b-soft" x="258" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="258" y="6" width="22" height="26"/>
-            <text class="dg-label" x="269" y="23.8" text-anchor="middle">2</text>
-            <rect class="dg-fill-b-soft" x="280" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="280" y="6" width="22" height="26"/>
-            <text class="dg-label" x="291" y="23.8" text-anchor="middle">0</text>
-            <rect class="dg-fill-b-soft" x="302" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="302" y="6" width="22" height="26"/>
-            <text class="dg-label" x="313" y="23.8" text-anchor="middle">1</text>
-            <rect class="dg-fill-b-soft" x="324" y="6" width="22" height="26"/>
-            <rect class="dg-thin" x="324" y="6" width="22" height="26"/>
-            <text class="dg-label" x="335" y="23.8" text-anchor="middle">1</text>
-            <path class="dg-thin" d="M161 35 Q248 106.68 335 35"/>
-            <path class="dg-thin" d="M183 35 Q248 92.6 313 35"/>
-            <path class="dg-thin" d="M215 35 Q253 75.32 291 35"/>
-            <path class="dg-thin" d="M237 35 Q253 61.24 269 35"/>
-          </svg>
-          <figcaption><span class="fignum">Fig. 3.13</span> A time and a date that read the same from both ends. Each curve joins a pair of matching digits.</figcaption>
-        </figure>
-      </div>
+      <p>Here is a way to make palindromes. Start with a 2-digit number. Reverse its digits, and add the two numbers. If the answer is a palindrome, stop. If it is not, reverse the answer and add again. Keep going until you reach a palindrome.</p>
 
-      <p>Jeevan was looking at this year’s calendar. He wondered why people buy a new calendar every year. Could an old calendar be used again? Last year’s calendar was different from this year’s, and next year’s will be different again. But will a year’s calendar ever come back, with every date falling on the same day of the week? Think about how many days there are in a year, and how many weeks that makes.</p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-          <ol>
-            <li>Find all the times on a 12-hour clock that follow each pattern: like 4:44, like 10:10 and like 12:21.</li>
-            <li>Find some other dates from the past whose digits repeat in the same way as 20/12/2012.</li>
-            <li>Find all the dates from the past that read the same from both ends, like 11/02/2011.</li>
-            <li>Will a year’s calendar come back after some years? Will every date and day match exactly?</li>
-          </ol>
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Start with 34, 29, 48 and 76. Reverse and add until you reach a palindrome.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$34 + 43 = 77$</span>
+              <span class="work__why">a palindrome</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$29 + 92 = 121$</span>
+              <span class="work__why">a palindrome</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$48 + 84 = 132$, then $132 + 231 = 363$</span>
+              <span class="work__why">one step more</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$76 + 67 = 143$, then $143 + 341 = 484$</span>
+              <span class="work__why">one step more</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>34 and 29 reach a palindrome in one step. 48 and 76 need two steps.</span></div>
           </div>
         </div>
       </div>
+
+      <p>Try the same steps with other 2-digit numbers. You will find that some numbers need many more steps than these.</p>
 
     </div>
   </div>

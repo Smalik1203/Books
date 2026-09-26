@@ -33,6 +33,16 @@ matches the rule: each child says how many of their neighbours are taller.
 In Fig. 3.1, the third and fourth children both say 1, and the sixth child,
 the shortest, says 2.
 
+### Think and Reflect (after the rule)
+
+1. **No.** Nobody is taller than the tallest child, so the tallest child
+   always says 0.
+2. **No.** Every neighbour of the shortest child is taller. In the middle
+   of the line it says **2**; at an end it says **1**.
+3. In Fig. 3.2 the **3rd and 6th** children say 2. **No:** a child who says
+   2 is shorter than its two neighbours, but it need not be one of the
+   shortest children in the whole line.
+
 ### Exercise Set 3.1
 
 1. **No.** A child at the end of the line has only one neighbour, so the
@@ -60,6 +70,13 @@ the shortest, says 2.
 
 **Fig. 3.3.** The coloured cells are the ones whose number is bigger than
 the numbers in the cells next to them.
+
+### Think and Reflect (after Example 1)
+
+1. **80.** The new number must be bigger than both neighbours, 79 and 63.
+   (79 then stops being a supercell.)
+2. With 70 in place of 10 the row is 43, 79, 75, 63, 70, 29, 28, 34, and
+   the supercells are **79, 70 and 34**.
 
 ### Exercise Set 3.2
 
@@ -132,6 +149,13 @@ middle of 3000 and 4000. 5030 is just after 5000, and 5300 a little further
 on. 8400 is a little before the middle of 8000 and 9000. 9590 is past the
 middle of 9000 and 10,000, and 9950 almost at 10,000. 9950 and 9590 use the
 same digits, but 9950 is 360 more.
+
+### Think and Reflect (after the key idea)
+
+1. Closest together: **5030 and 5300**, which are 270 apart. Furthest
+   apart: **1050 and 9950**, which are 8900 apart.
+2. 3050 lies between **3000 and 4000**. It is nearer to **3000**: it is
+   50 from 3000 and 950 from 4000.
 
 ### Exercise Set 3.3
 
@@ -225,6 +249,13 @@ $8532 - 2358 = 6174$, which is 3 rounds.
 $321 - 123 = 198$, then $981 - 189 = 792$, $972 - 279 = 693$,
 $963 - 369 = 594$ and $954 - 459 = 495$. After that, $954 - 459 = 495$
 again.
+
+### Think and Reflect (after the 3-digit numbers)
+
+1. **5 rounds.** $1000 - 1 = 999$, read as 0999; then $9990 - 999 = 8991$,
+   $9981 - 1899 = 8082$, $8820 - 288 = 8532$ and $8532 - 2358 = 6174$.
+2. **Yes.** 2836 uses the same four digits as 6382, so every round has the
+   same A and the same B. Both take **3 rounds**.
 
 ---
 
@@ -353,6 +384,13 @@ The totals, and one quick way to find each:
 
 Pattern (f) has the largest total.
 
+### Think and Reflect (after the key idea)
+
+1. **Pattern (f)**, with 7250. Whether the guess was right will vary.
+2. *Answers will vary.* Pattern (a) row by row is
+   $3 \times 160 + 2 \times 250 = 480 + 500 = 980$; counted as twelve 40s
+   and ten 50s it is again $480 + 500 = 980$. Both ways give the same total.
+
 ---
 
 ## 3.10 An Unsolved Mystery: the Collatz Conjecture
@@ -371,6 +409,15 @@ number, multiply by 3 and add 1.
 ---
 
 ## 3.11 Simple Estimation
+
+### Think and Reflect (after the key idea)
+
+1. *Answers will vary.* The estimate is far out if the other classes are
+   not like Class 6: for example, if Class 10 has only one section, or if
+   each section of Classes 7 to 10 has 50 children.
+2. *Answers will vary.* An exact number is needed for the change a shop
+   gives back or for a phone number. An estimate is enough for the number
+   of people at a fair.
 
 ### Exercise Set 3.7
 
@@ -461,86 +508,213 @@ second player wins by saying 5, 10, 15, and so on.
 
 ---
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September 2026.
+The book's own key is in Beyond the Book's Answers stage; this is the same
+key, set out in full.
+
+### Very short answer
+
+1. **57**, which is bigger than 42 and 31, and **90**, which is bigger than
+   68 and 74. 42 and 74 are at the ends, and each has a bigger neighbour.
+2. Just before: **5885**. Just after: **6006**.
+3. $A = 9542$, $B = 2459$ and $C = 9542 - 2459 = 7083$.
+4. 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1: **14** steps.
+5. The digits add up to 11 and differ by 3, so the units digit is
+   $(11 - 3) \div 2 = 4$ and the tens digit is 7: **74**.
+6. 9 one-digit numbers and 21 two-digit numbers (10 to 30):
+   $9 + 21 \times 2 = 51$ digits.
+7. $400 + 300 + 600 = 1300$. The exact sum is $412 + 289 + 596 = 1297$,
+   which is **less**.
+8. **9876**, and its digit sum is $9 + 8 + 7 + 6 = 30$.
+9. Largest **97,310**; smallest **10,379**, because 0 cannot come first.
+10. The gap is $4275 - 4250 = 25$, so the next marks are **4300** and
+    **4325**.
+
+### Short answer
+
+11. $68 + 86 = 154$, $154 + 451 = 605$ and $605 + 506 = 1111$: **3** steps,
+    reaching **1111**.
+12. **22 and 30**. *Answers will vary* for the change: with 26 in place of
+    12 the row is 15, 22, 18, 30, 25, 26, and 22, 30 and 26 are supercells.
+13. Each of the two would have to be bigger than the other, which cannot
+    happen. So supercells need at least one cell between them, and in 11
+    cells the most is cells 1, 3, 5, 7, 9 and 11: **6**.
+14. **1199**: every number from 1000 to 1198 has a digit sum of 19 or less,
+    and $1 + 1 + 9 + 9 = 20$. The largest is **9920**.
+15. Smallest $1000 - 999 = 1$; largest $9999 - 100 = 9899$. So the
+    difference can have **1, 2, 3 or 4 digits**.
+16. About $50 \times 20 = 1000$ rupees. Exact cost $48 \times 21 = 1008$
+    rupees, which is **₹8** more than the estimate.
+17. Before 10: **20**, because half of 20 is 10, and **3**, because
+    $3 \times 3 + 1 = 10$. Before 3: **only 6**. An odd number always gives
+    an even number next, so 3 can only come from halving 6.
+18. $8730 - 378 = 8352$ and $8532 - 2358 = 6174$: **2 rounds**.
+19. **Go second**, and say **4, 8, 12, 16 and 20**. Whatever the other
+    player adds, 1, 2 or 3, add enough to make 4 in that turn. 20 is a
+    multiple of 4, and the first player can never say 4.
+20. 247, 274, 427, 472, 724 and 742. $742 + 247 = 989$.
+
+### Long answer
+
+21. Each cell is compared with the cells above, below, left and right. The
+    supercells are **45, 51, 62 and 70**. The centre must be bigger than
+    45, 51, 62 and 70, so the smallest whole number is **71**. Then 45, 51,
+    62 and 70 each have the bigger centre beside them, and no corner is a
+    supercell, so the grid has **1** supercell.
+22. $9210 - 129 = 9081$, $9810 - 189 = 9621$, $9621 - 1269 = 8352$ and
+    $8532 - 2358 = 6174$: **4 rounds**. The next round is
+    $7641 - 1467 = 6174$ again.
+23. The code reads 9 _ _ _ 9. The two 9s make 18, so the middle three digits
+    add up to $25 - 18 = 7$; the 2nd and 4th digits are equal and the middle
+    digit is odd. The codes are **90709, 91519, 92329 and 93139**. Largest
+    **93,139**; smallest **90,709**.
+24. *Answers will vary.* $5000 + 2000 + 300 + 50 + 50 + 50 = 7450$ and
+    $5000 - 2000 + 300 + 300 + 50 = 3650$. 5000, 2000, 300 and 50 are all
+    multiples of 50, so every answer is a multiple of 50 and ends in 00 or
+    50. 125 is not a multiple of 50, so it cannot be made.
+25. Estimate $200 + 200 + 200 + 300 = 900$. Exact total
+    $187 + 212 + 196 + 318 = 913$. The library needs $1200 - 913 = 287$
+    more books.
+26. 15, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1:
+    **17 steps**, and the largest number is **160**. 30 halves to 15, so it
+    takes **18** steps, and 60 halves to 30, so it takes **19**.
+27. Each pair of turns can be made to add up to 5, so the winning numbers
+    are **5, 10, 15, 20 and 25**. 25 is a multiple of 5, so **go second**.
+    For 27 the winning numbers are 2, 7, 12, 17, 22 and 27, so the first
+    player says **2** first.
+28. Pages 1 to 9 use 9 digits, 10 to 99 use $90 \times 2 = 180$, and 100 to
+    150 use $51 \times 3 = 153$: $9 + 180 + 153 = 342$ digits. For the
+    second book, $492 - 189 = 303 = 101 \times 3$, so it has
+    $99 + 101 = 200$ pages.
+29. 11 marks make 10 gaps, and $37500 - 36500 = 1000$, so each gap is
+    **100**. The 4th mark is **36,800** and the 8th is **37,200**. 37,150
+    lies between the **7th** mark (37,100) and the **8th** (37,200),
+    halfway between them.
+30. Five 40s in each of 3 rows and four 25s in each of 3 rows:
+    $15 \times 40 + 12 \times 25 = 600 + 300 = 900$. Changing every 25 to
+    50 adds $12 \times 25 = 300$, so the new total is **1200**.
+
+### Assertion and reason
+
+31 (a) · 32 (d) · 33 (b) · 34 (c) · 35 (a)
+
+- 31. Both true, and the rule in R is why 9 is a supercell.
+- 32. A is false: 5555 gives $5555 - 5555 = 0$ and never reaches 6174. R is
+  true.
+- 33. Both true, but a digit sum says nothing about reading the same from
+  both ends.
+- 34. A is true: 16, 8, 4, 2, 1. R is false: an odd number gives an even
+  number next.
+- 35. Both true, and R is the reason 500 is the largest.
+
+### Case-based questions
+
+36. (i) Hills **2, 4 and 6** (ii) $2010 - 980 = 1030$ m (iii) Hills **4
+    and 6**. Hill 3, now 1600 m, is higher than hill 2 (1510 m) but lower
+    than hill 4 (1730 m), so neither hill 2 nor hill 3 is a peak.
+37. (i) **Yes**: $3 + 4 + 2 + 1 = 10$ (ii) **1009** (iii) **10**. From 1000
+    to 1099 the number is 10 _ _, so the last two digits add up to 9: 09,
+    18, 27, …, 90, which is 10 numbers. 1100 has digit sum 2.
+38. (i) $120 + 100 + 100 + 90 = 410$ (ii) $118 + 96 + 104 + 89 = 407$
+    (iii) $16 \times 24 = 384$ is too few and $17 \times 24 = 408$ is
+    enough, so **17 packs**.
+39. (i) $87 + 78 = 165$ (ii) **No**: 165 read from right to left is 561
+    (iii) $165 + 561 = 726$, $726 + 627 = 1353$ and $1353 + 3531 = 4884$:
+    **4 steps**, reaching **4884**.
+40. (i) A = **5220** and B = **0225** (ii) $5220 - 225 = 4995$ (iii) 4995,
+    5355, 1998, 8082, 8532, 6174: **6 rounds**.
+
+### Objective questions
+
+41 (c) · 42 (a) · 43 (d) · 44 (a) · 45 (c) · 46 (b) · 47 (d) · 48 (a) · 49 (b) · 50 (d)
+
+- 41. $7 + 0 + 8 + 0 + 9 = 24$.
+- 42. The end digits add up to $7 - 3 = 4$, so each is 2: 232.
+- 43. The first two digits add up to 5; the largest first digit is 5: 5005.
+  5500 and 9001 are not palindromes.
+- 44. $5322 - 2235 = 3087$.
+- 45. 28 is even: $28 \div 2 = 14$.
+- 46. The marks are 50 apart: $600 - 50 = 550$.
+- 47. To the nearest ten, $40 + 40 + 30 = 110$; the exact total is 109.
+- 48. (i) is true, since both digits are the same. (ii) is false:
+  $5000 - 4999 = 1$. (iii) is false: 212 is even.
+- 49. $999 + 999 = 1998$ has 4 digits, so Farhan is wrong; but $234 + 512$
+  is 746, and $100 + 100 = 200$ has 3 digits.
+- 50. The winning numbers are 5 apart, so each turn adds from 1 up to 4.
+
+---
+
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since the maths-v2 conversion, 26 September 2026: the
+tried-and-explained questions first, then five parts, each with two solved
+examples and its practice questions. Beyond's example numbers are its own:
+*Beyond Example 1* is not the chapter's Example 1 in §3.2.
 
-Each question is answered in the running text beneath it. The values are
-re-derived by the script: 4 and 1 supercells in 7 cells, 2 in a 2 by 2
-grid, 5 numbers with digit sum 5, 90 palindromes, 19 Collatz steps from 9,
-and 5 and 32 in exactly 5 steps.
+### Tried and explained (no head in the book)
 
-### Stage 2 · Solved Examples
+1. **4** supercells in 7 cells, for example 9, 1, 8, 2, 7, 3, 6.
+2. **2** supercells in a 2 by 2 grid.
+3. **5** two-digit numbers: 14, 23, 32, 41 and 50.
+4. **90** three-digit palindromes: $9 \times 10 = 90$.
+5. With 5555, $C = 5555 - 5555 = 0$, and every round after gives 0.
+6. **9**, with 19 steps: 9, 28, 14, 7, and then 7's 16 steps.
+7. **32 and 5**.
+8. Say **4**: the winning numbers are 1, 4, 7 and 10.
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+### Solved examples
 
-1. (b) 6462 *(single correct)*
-2. (a) 575 *(single correct)*
-3. (b) 4086 *(single correct)*
-4. (d) 5 *(single correct)*
-5. (b) 3 *(single correct)*
-6. (b) 4749 *(single correct)*
-7. (a), (b), (d) *(multiple correct)*
-8. (a), (b), (c) *(multiple correct)*
-9. (a), (c), (d) *(multiple correct)*
-10. (a), (b), (d) *(multiple correct)*
-11. 5 *(numerical answer)*
-12. 245 *(numerical answer)*
-13. 2 *(numerical answer)*
-14. (c) P–3, Q–4, R–2, S–1 *(matching)*
-15. (b) P–4, Q–3, R–2, S–1 *(matching)*
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (b) 6462 |
+| | 2 | (a) 575 |
+| More than one correct | 3 | (a), (c), (d) |
+| | 4 | (a), (b), (d) |
+| Numerical answer | 5 | 5 |
+| | 6 | 245 |
+| Matching | 7 | (c) P–3, Q–4, R–2, S–1 |
+| | 8 | (b) P–4, Q–3, R–2, S–1 |
+| Paragraph-based | 9 | (i) (b) 3; (ii) 6; (iii) 3 |
+| | 10 | (i) (a) 132; (ii) 2; (iii) 2 |
 
-### Stage 3 · Practice
+### Practice
 
-**Key.** 1 (b), 2 (c), 3 (a), 4 (d), 5 (b), 6 (a), 7 (c), 8 (b), 9 (d),
-10 (a), 11 (c), 12 (d), 13 (a), 14 (d), 15 (b), 16 (c).
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (b) 91019 · 2 (c) 6 · 3 (d) 3 · 4 (a) 1300 |
+| More than one correct | 5–8 | 5 (a), (c), (d) · 6 (a), (b), (c) · 7 (a), (b), (d) · 8 (b), (c) |
+| Numerical answer | 9–11 | 9 **1027** · 10 **1850** · 11 **2** |
+| Matching | 12–13 | 12 (a) · 13 (c) |
+| Paragraph-based | 14–15 | 14 (i) (c) 3; (ii) 10; (iii) 16 · 15 (i) (b) 140 kg; (ii) 137; (iii) 1644 |
 
-**Working for the options.**
-
-1. $4 + 0 + 9 + 6 = 19$.
-2. 12321 reads the same from both ends; 1231, 4545 and 1223 do not.
-3. $57 + 75 = 132$, then $132 + 231 = 363$.
-4. 5 is odd, so the next number is $3 \times 5 + 1 = 16$.
-5. The end digits add up to $12 - 6 = 6$, so each is 3: 363. 606 and 444
-   have the wrong middle digit, and 336 is not a palindrome.
-6. 2332 is a palindrome and $2 + 3 + 3 + 2 = 10$. 4224 is a palindrome with
-   digit sum 12. 5050 and 1234 are not palindromes.
-7. 04/02/2040. Its day and month, 0402, are 2040 written backwards, so
-   04022040 reads the same from both ends. The other three, read from the
-   right, are 04024002, 04024042 and 04024020.
-8. 5. No two supercells stand side by side, and the four corners and the
-   centre are the most cells with no two side by side. The grid 9, 1, 8 and
-   2, 7, 3 and 6, 4, 5 has 5 supercells.
-9. There are 4 equal gaps from 3,400 to 3,600, each of
-   $200 \div 4 = 50$, so the first mark is 3,450.
-10. 6. Each pair of neighbours adds 1, and 7 children make 6 pairs.
-11. $300 \times 20 = 6000$.
-12. 500. It is smaller than 800 and 5,000, and 300 alone gives 300 and 600.
-    The others are $5000 + 800 + 300 = 6100$, $800 + 800 + 300 = 1900$ and
-    $5000 + 300 + 300 = 5600$.
-13. Both true; the largest number is bigger than its neighbours, so R
-    explains A.
-14. A is false: 6174 read backwards is 4716. R is true:
-    $7641 - 1467 = 6174$.
-15. Both true, but a digit sum says nothing about being a palindrome.
-16. A is true, because 5 children make 4 pairs. R is false: the tallest
-    child says 0.
-
-**The other answers**, as printed in the book:
-
-17. 5005
-18. 510
-19. 22 and 11
-20. $4311 - 1134 = 3177$
-21. 9
-22. 1
-23. 65 to 70, and 72 to 99
-24. $2000 + 2000 - 500 - 70 - 70 = 3360$ (answers will vary)
-25. about ₹2000; exact $38 \times 49 = 1862$, which is less
-26. (a) 15, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1
-    (b) 17 (c) 160 (d) 18
-27. (a) 5 (b) 2, 7, 12, 17, 22, 27, 32 (c) first (d) second
-28. (a) 91 (b) 9 (c) no
-29. (a) 115 (b) about 340 (c) 330 (d) 8 buses
-30. (a) hills 2, 4 and 6 (b) hill 5 (c) 1030 m (d) hills 4 and 6
+- Q1. The palindrome is 9 _ _ _ 9 with the 2nd and 4th digits equal:
+  twice the 2nd digit plus the middle digit is $20 - 18 = 2$. So 91019 or
+  90209, and 91019 is larger.
+- Q2. 102, 111, 120, 201, 210 and 300: 6 numbers.
+- Q3. 3, 10, 5, 16, 8, 4, 2, 1 is 7 steps. 6 takes 8, 12 takes 9 and 7
+  takes 16.
+- Q4. $700 + 300 + 300 = 1300$. 800, 1100 and 500 cannot be made.
+- Q5. 58 is bigger than 31 and 44, 72 is bigger than 44 and 16, and 29 is
+  bigger than its one neighbour, 16.
+- Q6. 7641 and 1467 have the digits of 6174, and $7641 - 1467 = 6174$.
+  8352 gives $8532 - 2358 = 6174$. 3087 gives $8730 - 378 = 8352$.
+- Q7. 333, 1111 and 02122120 read the same both ways; 1212 does not.
+- Q8. The smallest sum is $100 + 10 = 110$ and the largest is
+  $999 + 99 = 1098$, so 3 or 4 digits.
+- Q9. Start with 1 and 0. The other two digits are different and add up to
+  9, and 2 and 7 give the smallest number: **1027**.
+- Q10. 4 gaps make $1650 - 1450 = 200$, so each gap is 50. The 10th mark
+  is $1650 + 4 \times 50 = 1850$.
+- Q11. Each pair of turns can be made to add up to 6. The winning numbers
+  are 50, 44, 38, 32, 26, 20, 14, 8 and 2, so Rohit says **2**.
+- Q12. P: $9 \times 5 = 45$ (3). Q: 11, 22, …, 99, 9 of them (2). R:
+  $7110 - 117 = 6993$ (4). S: $3 \times 15 + 1 = 46$ (1).
+- Q13. P: 10001 (4). Q: 987 (3). R: 999 (1). S: 1001 (2).
+- Q14. 24, 12, 6, 3, 10, 5, 16, 8, 4, 2, 1: the first odd number is 3, it
+  takes 10 steps, and the largest number after 24 is 16.
+- Q15. (i) $40 + 40 + 60 = 140$ kg (ii) $38 + 42 + 57 = 137$ kg (iii)
+  $137 \times 12 = 1644$ rupees.

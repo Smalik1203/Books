@@ -2,107 +2,111 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 3.3</div>
-        <ol class="c-questions">
-          <li>Each number line in Fig. 3.9 has ten marks, spaced equally. Some of the marks are labelled. Work out the numbers at the other marks, and label them.</li>
-        </ol>
-      </div>
+      <h3>Supercells in a grid</h3>
 
-      <div class="c-figure c-figure--full">
+      <p>Supercells also work in a table with more than one row. In a grid, the cells next to a cell are the ones just to its left and right, and just above and below it. The rule stays the same: a cell is a supercell if its number is bigger than the numbers in all the cells next to it.</p>
+
+      <div class="c-figure c-figure--md">
         <figure>
-          <svg viewBox="0 0 634 190" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four number lines, each with ten equally spaced marks. Line a labels 2010 and 2020, line b labels 9996 and 9997, line c labels 15,077, 15,078 and 15,083, and line d labels 86,705 and 87,705">
-            <text class="dg-note" x="10" y="20" text-anchor="start">(a)</text>
-            <line class="dg-line" x1="46" y1="16" x2="614" y2="16"/>
-            <line class="dg-line" x1="72" y1="10" x2="72" y2="22"/>
-            <line class="dg-line" x1="130" y1="10" x2="130" y2="22"/>
-            <line class="dg-line" x1="188" y1="10" x2="188" y2="22"/>
-            <line class="dg-line" x1="246" y1="10" x2="246" y2="22"/>
-            <line class="dg-line" x1="304" y1="10" x2="304" y2="22"/>
-            <text class="dg-tick" x="304" y="37" text-anchor="middle">2010</text>
-            <line class="dg-line" x1="362" y1="10" x2="362" y2="22"/>
-            <line class="dg-line" x1="420" y1="10" x2="420" y2="22"/>
-            <text class="dg-tick" x="420" y="37" text-anchor="middle">2020</text>
-            <line class="dg-line" x1="478" y1="10" x2="478" y2="22"/>
-            <line class="dg-line" x1="536" y1="10" x2="536" y2="22"/>
-            <line class="dg-line" x1="594" y1="10" x2="594" y2="22"/>
-            <text class="dg-note" x="10" y="64" text-anchor="start">(b)</text>
-            <line class="dg-line" x1="46" y1="60" x2="614" y2="60"/>
-            <line class="dg-line" x1="72" y1="54" x2="72" y2="66"/>
-            <line class="dg-line" x1="130" y1="54" x2="130" y2="66"/>
-            <line class="dg-line" x1="188" y1="54" x2="188" y2="66"/>
-            <line class="dg-line" x1="246" y1="54" x2="246" y2="66"/>
-            <text class="dg-tick" x="246" y="81" text-anchor="middle">9996</text>
-            <line class="dg-line" x1="304" y1="54" x2="304" y2="66"/>
-            <text class="dg-tick" x="304" y="81" text-anchor="middle">9997</text>
-            <line class="dg-line" x1="362" y1="54" x2="362" y2="66"/>
-            <line class="dg-line" x1="420" y1="54" x2="420" y2="66"/>
-            <line class="dg-line" x1="478" y1="54" x2="478" y2="66"/>
-            <line class="dg-line" x1="536" y1="54" x2="536" y2="66"/>
-            <line class="dg-line" x1="594" y1="54" x2="594" y2="66"/>
-            <text class="dg-note" x="10" y="108" text-anchor="start">(c)</text>
-            <line class="dg-line" x1="46" y1="104" x2="614" y2="104"/>
-            <line class="dg-line" x1="72" y1="98" x2="72" y2="110"/>
-            <text class="dg-tick" x="72" y="125" text-anchor="middle">15,077</text>
-            <line class="dg-line" x1="130" y1="98" x2="130" y2="110"/>
-            <text class="dg-tick" x="130" y="125" text-anchor="middle">15,078</text>
-            <line class="dg-line" x1="188" y1="98" x2="188" y2="110"/>
-            <line class="dg-line" x1="246" y1="98" x2="246" y2="110"/>
-            <line class="dg-line" x1="304" y1="98" x2="304" y2="110"/>
-            <line class="dg-line" x1="362" y1="98" x2="362" y2="110"/>
-            <line class="dg-line" x1="420" y1="98" x2="420" y2="110"/>
-            <text class="dg-tick" x="420" y="125" text-anchor="middle">15,083</text>
-            <line class="dg-line" x1="478" y1="98" x2="478" y2="110"/>
-            <line class="dg-line" x1="536" y1="98" x2="536" y2="110"/>
-            <line class="dg-line" x1="594" y1="98" x2="594" y2="110"/>
-            <text class="dg-note" x="10" y="152" text-anchor="start">(d)</text>
-            <line class="dg-line" x1="46" y1="148" x2="614" y2="148"/>
-            <line class="dg-line" x1="72" y1="142" x2="72" y2="154"/>
-            <line class="dg-line" x1="130" y1="142" x2="130" y2="154"/>
-            <line class="dg-line" x1="188" y1="142" x2="188" y2="154"/>
-            <line class="dg-line" x1="246" y1="142" x2="246" y2="154"/>
-            <text class="dg-tick" x="246" y="169" text-anchor="middle">86,705</text>
-            <line class="dg-line" x1="304" y1="142" x2="304" y2="154"/>
-            <text class="dg-tick" x="304" y="169" text-anchor="middle">87,705</text>
-            <line class="dg-line" x1="362" y1="142" x2="362" y2="154"/>
-            <line class="dg-line" x1="420" y1="142" x2="420" y2="154"/>
-            <line class="dg-line" x1="478" y1="142" x2="478" y2="154"/>
-            <line class="dg-line" x1="536" y1="142" x2="536" y2="154"/>
-            <line class="dg-line" x1="594" y1="142" x2="594" y2="154"/>
+          <svg viewBox="0 0 256 112" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A grid of 4 rows and 4 columns of 4-digit numbers. The cells holding 7500, 9870, 8632, 5785 and 6034 are coloured">
+            <rect class="dg-thin" x="28" y="4" width="50" height="26"/>
+            <text class="dg-tick" x="53" y="21.2" text-anchor="middle">2430</text>
+            <rect class="dg-fill-b-soft" x="78" y="4" width="50" height="26"/>
+            <rect class="dg-line" x="78" y="4" width="50" height="26"/>
+            <text class="dg-tick" x="103" y="21.2" text-anchor="middle">7500</text>
+            <rect class="dg-thin" x="128" y="4" width="50" height="26"/>
+            <text class="dg-tick" x="153" y="21.2" text-anchor="middle">7350</text>
+            <rect class="dg-fill-b-soft" x="178" y="4" width="50" height="26"/>
+            <rect class="dg-line" x="178" y="4" width="50" height="26"/>
+            <text class="dg-tick" x="203" y="21.2" text-anchor="middle">9870</text>
+            <rect class="dg-thin" x="28" y="30" width="50" height="26"/>
+            <text class="dg-tick" x="53" y="47.2" text-anchor="middle">3115</text>
+            <rect class="dg-thin" x="78" y="30" width="50" height="26"/>
+            <text class="dg-tick" x="103" y="47.2" text-anchor="middle">4795</text>
+            <rect class="dg-thin" x="128" y="30" width="50" height="26"/>
+            <text class="dg-tick" x="153" y="47.2" text-anchor="middle">9124</text>
+            <rect class="dg-thin" x="178" y="30" width="50" height="26"/>
+            <text class="dg-tick" x="203" y="47.2" text-anchor="middle">9230</text>
+            <rect class="dg-thin" x="28" y="56" width="50" height="26"/>
+            <text class="dg-tick" x="53" y="73.2" text-anchor="middle">4580</text>
+            <rect class="dg-fill-b-soft" x="78" y="56" width="50" height="26"/>
+            <rect class="dg-line" x="78" y="56" width="50" height="26"/>
+            <text class="dg-tick" x="103" y="73.2" text-anchor="middle">8632</text>
+            <rect class="dg-thin" x="128" y="56" width="50" height="26"/>
+            <text class="dg-tick" x="153" y="73.2" text-anchor="middle">8280</text>
+            <rect class="dg-thin" x="178" y="56" width="50" height="26"/>
+            <text class="dg-tick" x="203" y="73.2" text-anchor="middle">3446</text>
+            <rect class="dg-fill-b-soft" x="28" y="82" width="50" height="26"/>
+            <rect class="dg-line" x="28" y="82" width="50" height="26"/>
+            <text class="dg-tick" x="53" y="99.2" text-anchor="middle">5785</text>
+            <rect class="dg-thin" x="78" y="82" width="50" height="26"/>
+            <text class="dg-tick" x="103" y="99.2" text-anchor="middle">1944</text>
+            <rect class="dg-thin" x="128" y="82" width="50" height="26"/>
+            <text class="dg-tick" x="153" y="99.2" text-anchor="middle">5805</text>
+            <rect class="dg-fill-b-soft" x="178" y="82" width="50" height="26"/>
+            <rect class="dg-line" x="178" y="82" width="50" height="26"/>
+            <text class="dg-tick" x="203" y="99.2" text-anchor="middle">6034</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 3.9</span> Four number lines with ten equally spaced marks. Only some marks are labelled.</figcaption>
+          <figcaption><span class="fignum">Fig. 3.6</span> A grid of numbers with its supercells coloured.</figcaption>
         </figure>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>On each number line, draw a circle around the smallest number and a box around the largest number.</li>
-        </ol>
+      <p>In Fig. 3.6, 8632 is a supercell. It has four neighbours: 4795 above it, 1944 below it, 4580 to its left and 8280 to its right. 8632 is bigger than all four. A cell at the edge of the grid has fewer neighbours. The corner cell 5785 has only two, 4580 and 1944, and it is bigger than both. A cell on an edge, but not in a corner, has three neighbours. The cell 7500 has 2430, 7350 and 4795 next to it, and it is bigger than all three, so it is a supercell too.</p>
+
+      <p>The grid in Fig. 3.7 is only partly filled. Every number in it is a 5-digit number made from the digits 1, 0, 6, 3 and 9, each used once.</p>
+
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 256 112" data-size="md" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A grid of 4 rows and 4 columns, partly filled with 5-digit numbers such as 96,301 and 60,319. Five cells are coloured, two of them empty">
+            <rect class="dg-fill-b-soft" x="16" y="4" width="56" height="26"/>
+            <rect class="dg-line" x="16" y="4" width="56" height="26"/>
+            <rect class="dg-thin" x="72" y="4" width="56" height="26"/>
+            <text class="dg-tick" x="100" y="21.2" text-anchor="middle">96,301</text>
+            <rect class="dg-thin" x="128" y="4" width="56" height="26"/>
+            <text class="dg-tick" x="156" y="21.2" text-anchor="middle">36,109</text>
+            <rect class="dg-fill-b-soft" x="184" y="4" width="56" height="26"/>
+            <rect class="dg-line" x="184" y="4" width="56" height="26"/>
+            <rect class="dg-thin" x="16" y="30" width="56" height="26"/>
+            <rect class="dg-thin" x="72" y="30" width="56" height="26"/>
+            <text class="dg-tick" x="100" y="47.2" text-anchor="middle">13,609</text>
+            <rect class="dg-fill-b-soft" x="128" y="30" width="56" height="26"/>
+            <rect class="dg-line" x="128" y="30" width="56" height="26"/>
+            <text class="dg-tick" x="156" y="47.2" text-anchor="middle">60,319</text>
+            <rect class="dg-thin" x="184" y="30" width="56" height="26"/>
+            <text class="dg-tick" x="212" y="47.2" text-anchor="middle">19,306</text>
+            <rect class="dg-thin" x="16" y="56" width="56" height="26"/>
+            <rect class="dg-thin" x="72" y="56" width="56" height="26"/>
+            <rect class="dg-thin" x="128" y="56" width="56" height="26"/>
+            <text class="dg-tick" x="156" y="73.2" text-anchor="middle">60,193</text>
+            <rect class="dg-thin" x="184" y="56" width="56" height="26"/>
+            <rect class="dg-thin" x="16" y="82" width="56" height="26"/>
+            <rect class="dg-fill-b-soft" x="72" y="82" width="56" height="26"/>
+            <rect class="dg-line" x="72" y="82" width="56" height="26"/>
+            <text class="dg-tick" x="100" y="99.2" text-anchor="middle">10,963</text>
+            <rect class="dg-thin" x="128" y="82" width="56" height="26"/>
+            <rect class="dg-fill-b-soft" x="184" y="82" width="56" height="26"/>
+            <rect class="dg-line" x="184" y="82" width="56" height="26"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.7</span> A grid to complete. Only the coloured cells may be supercells.</figcaption>
+        </figure>
       </div>
 
-      <h2><span class="badge">3.4</span><span class="name">Playing with Digits</span></h2>
+      <p>Copy the grid, and fill its empty cells with 5-digit numbers made from the digits 1, 0, 6, 3 and 9, so that only the coloured cells are supercells. Do not use any number twice. Write each number with a comma after the thousands digit, as in 96,301.</p>
 
-      <p>When you count 1, 2, 3, and so on, the first nine numbers have only one digit. So there are nine 1-digit numbers. How many numbers have 2 digits? How many have 3, 4 and 5 digits? Find out, and complete Table 3.10.</p>
-
-      <table>
-        <caption>Table 3.10 How many numbers have each number of digits</caption>
-        <thead><tr><th>1-digit numbers</th><th>2-digit numbers</th><th>3-digit numbers</th><th>4-digit numbers</th><th>5-digit numbers</th></tr></thead>
-        <tbody>
-          <tr><td>9 (from 1 to 9)</td><td><span class="blank"></span></td><td><span class="blank"></span></td><td><span class="blank"></span></td><td><span class="blank"></span></td></tr>
-        </tbody>
-      </table>
-
-      <h3>Digit sums</h3>
-
-      <p>Komal adds up the digits of some numbers. She notices that different numbers can give the same total. The total you get by adding the digits of a number is called its <span class="term">digit sum</span>.</p>
-
-      <div class="work work--centred">
-        <p>$6 + 8 = 14$</p>
-        <p>$1 + 7 + 6 = 14$</p>
-        <p>$5 + 4 + 5 = 14$</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>When your grid is complete, the biggest number in it is <span class="blank blank--lg"></span>.</li>
+            <li>The smallest even number in your grid is <span class="blank blank--lg"></span>.</li>
+            <li>The smallest number in your grid that is bigger than 50,000 is <span class="blank blank--lg"></span>.</li>
+          </ol>
+          </div>
+        </div>
       </div>
-
-      <p>So 68, 176 and 545 all have the same digit sum, 14.</p>
 
     </div>
   </div>

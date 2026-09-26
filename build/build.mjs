@@ -322,16 +322,17 @@ function stampPages(body, meta) {
     const board = /\sdata-board(?=[\s=]|$)/.test(attrs);
     const division = bridge ? ' &middot; Beyond the Book' : board ? ' &middot; By the Book' : '';
     // v2: verso the chapter, recto the section or the part
+    // (the chapter number is in the v2 tab, so the verso names the title alone)
     const v2head = !v2 ? null : verso
-      ? `Chapter ${escapeHtml(meta.number)} &middot; ${escapeHtml(meta.title)}`
+      ? escapeHtml(meta.title)
       : bridge ? 'Beyond the Book' : board ? 'By the Book' : (here || escapeHtml(meta.title));
-    const runhead = opener && meta.design !== 'living-world' ? '' : `
+    const runhead = opener && meta.design !== 'living-world' ? '' : v2 ? v2Runhead(meta, v2head) : `
       <div class="runhead">
         <span class="runhead__chapter">${v2head ?? `${escapeHtml(meta.title)}${division}`}</span>
         <i class="runhead__mark" aria-hidden="true"></i>
       </div>`;
 
-    const foot = `\n      ${pagefoot(n)}`;
+    const foot = `\n      ${v2 ? v2Pagefoot(n, meta) : pagefoot(n)}`;
 
     return `<section class="${classes}" data-folio="${n}"${attrs}><div class="page__bleed"><div class="page__trim">${foot}${runhead}`;
   });
@@ -396,12 +397,47 @@ const pagefoot = (n) => '<div class="pagefoot">'
   + '<i class="pagefoot__bar pagefoot__bar--line" aria-hidden="true"></i>'
   + `<span class="pagefoot__folio">${n}</span></div>`;
 
+/* maths-v2 furniture, taken from the science-v2 pages (27 September
+   2026, at the user's request): a chapter tab bleeding off the head
+   with a paler slant behind it, the running title over a hairline, and
+   at the foot the book's name over a hairline with the folio in a
+   matching slanted tab at the outer edge. The shapes are science-v2's
+   own paths, in its 1052-unit page width; css/maths-v2.css §13 sizes
+   them in millimetres. Each path runs on past the trim into the bleed. */
+const V2_MOTIF = '<g class="runhead__motif">'
+  + '<path d="M30 13v14M23 20h14M43 20h14M25 36l10 10M35 36l-10 10M43 41h14"/>'
+  + '<circle cx="50" cy="35.5" r="1.7"/><circle cx="50" cy="46.5" r="1.7"/></g>';
+const v2Runhead = (meta, title) => `
+      <div class="runhead runhead--v2">
+        <svg class="runhead__ribbon" viewBox="0 0 340 63" aria-hidden="true"><path class="runhead__underlay" d="M-40 -40H340V0L317 51Q312 63 291 63H-40Z"/><path class="runhead__fill" d="M-40 -40H321V0L300 49Q295 63 274 63H-40Z"/>${V2_MOTIF}</svg>
+        <span class="runhead__tab">Chapter ${escapeHtml(meta.number)}</span>
+        <span class="runhead__chapter">${title}</span>
+      </div>`;
+const v2Pagefoot = (n, meta) => '<div class="pagefoot pagefoot--v2">'
+  + `<span class="pagefoot__label">ClassBridge &middot; Mathematics ${escapeHtml(meta.class ?? '')}</span>`
+  + '<svg class="pagefoot__ribbon" viewBox="-20 0 179 59" aria-hidden="true">'
+  + '<path class="pagefoot__underlay" d="M200 0H22Q7 0 -1 15L-38 101H200Z"/>'
+  + '<path class="pagefoot__fill" d="M200 0H42Q27 0 19 15L-18 101H200Z"/></svg>'
+  + `<span class="pagefoot__folio">${n}</span></div>`;
+
 /* The tab says what the book is. `subject` carries the volume —
    "Mathematics II", "Science" — and the volume numeral belongs to
    the binder, not to a browser tab, so it comes off here. Without
    this a science chapter announced itself as maths. */
 const subjectName = (s) => (s || 'Mathematics').replace(/\s+(I{1,3}|IV)$/, '');
 const usesMathsFonts = (meta) => /^Mathematics\b/.test(meta.subject || 'Mathematics I');
+
+/* The stylesheets a chapter's `design` brings. Shared by the chapter
+   shell and the book shell: the book shell once carried none of them,
+   so every bound maths-clear or maths-v2 volume was set in the house
+   design — other type, other spacing — and clipped pages that fitted
+   when the chapter was built alone. */
+const designSheets = (meta, cssHref) => `${['food-reference', 'science-reference', 'science-editorial'].includes(meta.design) ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'reference-fonts.css')}">
+<link rel="stylesheet" href="${cssHref.replace('book.css', 'food-reference.css')}">` : ''}
+${meta.design === 'science-reference' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-reference.css')}">` : ''}
+${meta.design === 'science-editorial' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'science-reference.css')}"><link rel="stylesheet" href="${cssHref.replace('book.css', 'science-editorial.css')}">` : ''}
+${meta.design === 'maths-clear' || meta.design === 'maths-v2' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'maths-clear.css')}">` : ''}
+${meta.design === 'maths-v2' ? `<link rel="stylesheet" href="${cssHref.replace('book.css', 'maths-v2.css')}">` : ''}`;
 
 /* ---- Shell ------------------------------------------------ */
 const shell = (meta, body, cssHref = '../../css/book.css', sheet = null, trim = null) => ((theme) => `<!doctype html>
@@ -449,6 +485,7 @@ const bookShell = (meta, body, scopes, sheet = null, trim = null) => `<!doctype 
 <link rel="stylesheet" href="../../css/book.css">${meta.edition ? `
 <link rel="stylesheet" href="../../css/edition-${meta.edition}.css">` : ``}
 <link rel="stylesheet" href="../../css/frontmatter.css">
+${designSheets(meta, '../../css/book.css')}
 ${usesMathsFonts(meta) ? '<link rel="stylesheet" href="../../css/maths-fonts.css"><link rel="stylesheet" href="../../css/maths-tables.css">' : ''}
 <style>
 ${scopes.join('\n')}
@@ -1114,7 +1151,16 @@ async function bindVolume(cls, subject, chapters) {
     return null;
   }
 
+  // One book, one design: the stylesheets are the book's, not the page's.
+  const designs = [...new Set(chapters.map((c) => c.meta.design || 'house'))];
+  if (designs.length > 1) {
+    console.error(`  ${cls} · ${subject}: chapters use different designs (${designs.join(', ')})`
+      + ` — a book is set in one`);
+    return null;
+  }
+
   const edition = chapters[0].meta.edition;
+  const design = chapters[0].meta.design;
   const sheet = await sheetMetrics(ROOT, edition);
   const figMM = await figWidths(ROOT, edition);
 
@@ -1193,7 +1239,7 @@ async function bindVolume(cls, subject, chapters) {
   const meta = {
     class: chapters[0].meta.class,
     number: '', title: (book && book.title) || subject,
-    edition, palette: null, subject,
+    edition, design, palette: null, subject,
   };
 
   const outDir = p('build', cls);

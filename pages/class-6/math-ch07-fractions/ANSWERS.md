@@ -1,4 +1,4 @@
-# Class 6 · Mathematics I · Chapter 7 — Fractions
+# Class 6 · Mathematics II · Chapter 7 — Fractions
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*). The student
@@ -18,6 +18,14 @@ will vary*.
 ---
 
 ## 7.1 Fractional Units and Equal Shares
+
+### Think and Reflect (after the key idea on fractional units)
+
+1. $\frac{1}{7}$ is bigger. One roti shared among 7 children gives each a
+   bigger share than the same roti shared among 10 children.
+2. **No.** The fewest equal parts a whole can be cut into is 2, which
+   gives halves. Any other fractional unit cuts the whole into more parts,
+   so each part is smaller than $\frac{1}{2}$.
 
 ### Exercise 7.1
 
@@ -40,7 +48,7 @@ will vary*.
 
 ## 7.2 Fractional Units as Parts of a Whole
 
-### Think and Reflect (after Fig. 7.3)
+### Think and Reflect (after Fig. 7.4)
 
 1. **Yes, they are the same size.** Each square piece is 2 small squares by
    2, which is 4 small squares. Each triangle is half of a strip 2 squares
@@ -53,7 +61,7 @@ will vary*.
 
 ### Exercise 7.2
 
-The whole chikki in Fig. 7.4 has 24 small squares. A piece with $n$ small
+The whole chikki in Fig. 7.5 has 24 small squares. A piece with $n$ small
 squares' worth of area is $n$ twenty-fourths of it.
 
 1. Each piece:
@@ -103,9 +111,9 @@ squares' worth of area is $n$ twenty-fourths of it.
 
 ## 7.4 Marking Fraction Lengths on the Number Line
 
-**Fig. 7.7.** The bar is $\frac{1}{2}$ unit long.
+**Fig. 7.9.** The bar is $\frac{1}{2}$ unit long.
 
-### Think and Reflect (Fig. 7.8)
+### Think and Reflect (Fig. 7.10)
 
 1. The bar in line (i) is $\frac{2}{3}$ unit long.
 2. The bars in line (ii) are $\frac{2}{5}$ and $\frac{4}{5}$ unit long.
@@ -134,7 +142,7 @@ squares' worth of area is $n$ twenty-fourths of it.
 
 ## 7.5 Mixed Fractions
 
-**Table 7.11.** Every fraction in the first column is less than 1 and every
+**Table 7.13.** Every fraction in the first column is less than 1 and every
 fraction in the second is more than 1.
 
 ### Exercise 7.5
@@ -173,9 +181,17 @@ fraction in the second is more than 1.
    - (v) $2\frac{3}{11} = \frac{25}{11}$
    - (vi) $3\frac{9}{10} = \frac{39}{10}$
 
+### Think and Reflect (after Exercise 7.7)
+
+1. **Equal to 1.** Nine ninths make one whole: $\frac{9}{9} = 1$.
+2. **Yes.** $\frac{15}{5} = 3$ and $\frac{20}{5} = 4$, and 17 lies between 15
+   and 20. So $\frac{17}{5} = 3\frac{2}{5}$, which is between 3 and 4.
+3. $\frac{7}{4}$ is more. $\frac{7}{4} = 1\frac{3}{4}$ and $1\frac{1}{2} = 1\frac{2}{4}$, and
+   3 quarters is more than 2 quarters.
+
 ## 7.6 Equivalent Fractions
 
-**The fraction wall (Fig. 7.13).** $\frac{1}{3}$ and $\frac{2}{6}$ are
+**The fraction wall (Fig. 7.15).** $\frac{1}{3}$ and $\frac{2}{6}$ are
 equivalent: two pieces of $\frac{1}{6}$ are exactly as long as one piece of
 $\frac{1}{3}$.
 
@@ -211,7 +227,7 @@ $\frac{1}{3}$.
 4. **4 cakes.** Ten children are two groups of 5, so they need two groups
    of 2 cakes: $\frac{4}{10} = \frac{2}{5}$.
 
-### Think and Reflect (after Fig. 7.14)
+### Think and Reflect (after Fig. 7.16)
 
 1. *Answers will vary.* For example $\frac{4}{8}$, $\frac{5}{10}$ and
    $\frac{50}{100}$.
@@ -287,16 +303,28 @@ $\frac{1}{3}$.
    - (i) $\frac{13}{4}$, $\frac{25}{16}$, $\frac{7}{8}$, $\frac{17}{32}$. In thirty-seconds they are $\frac{104}{32}$, $\frac{50}{32}$, $\frac{28}{32}$, $\frac{17}{32}$
    - (ii) $\frac{12}{5}$, $\frac{5}{4}$, $\frac{3}{4}$, $\frac{7}{12}$. In sixtieths they are $\frac{144}{60}$, $\frac{75}{60}$, $\frac{45}{60}$, $\frac{35}{60}$
 
+### Think and Reflect (after Exercise 7.14)
+
+1. **Yes, and the answer is the same.** 90 is a common multiple of 5 and 9:
+   $\frac{4}{5} = \frac{72}{90}$ and $\frac{7}{9} = \frac{70}{90}$, so $\frac{4}{5} > \frac{7}{9}$ again.
+2. Both fractions share 3 things. $\frac{3}{5}$ shares them among 5 and
+   $\frac{3}{8}$ among 8. Fewer people get bigger shares, so $\frac{3}{5} > \frac{3}{8}$.
+
 ## 7.8 Addition and Subtraction of Fractions
 
 ### Think and Reflect (Meena's chikki)
 
 1. $\frac{1}{4}$ of the chikki is left, since $1 - \frac{3}{4} = \frac{1}{4}$.
+2. **What the drawing must show:** a strip folded into 4 equal parts, with
+   2 quarters shaded for the half and 1 more quarter shaded: 3 quarters,
+   $\frac{1}{2} + \frac{1}{4} = \frac{3}{4}$.
 
 ### Think and Reflect (jumps in sevenths)
 
 1. **Yes.** Four jumps of $\frac{1}{7}$ and then six more land on the tenth
    mark, which is $\frac{10}{7} = 1\frac{3}{7}$.
+2. Three jumps of $\frac{1}{8}$ and then four more land on the seventh mark:
+   $\frac{3}{8} + \frac{4}{8} = \frac{7}{8}$.
 
 ### Exercise 7.15
 
@@ -321,6 +349,8 @@ $\frac{1}{3}$.
 
 1. Four jumps of $\frac{1}{7}$ back from the sixth mark land on the second
    mark: $\frac{6}{7} - \frac{4}{7} = \frac{2}{7}$ again.
+2. One jump of $\frac{1}{6}$ back from the fifth mark lands on the fourth:
+   $\frac{5}{6} - \frac{1}{6} = \frac{4}{6} = \frac{2}{3}$.
 
 ### Exercise 7.16
 
@@ -368,71 +398,95 @@ $\frac{1}{3}$.
 
 ---
 
+## By the Book
+
+Fifty questions in six forms: very short answer (2 marks), short answer (3),
+long answer (5), assertion and reason (1), case-based (4), objective (1).
+Written to BY-THE-BOOK.md at Class 6, 26 September 2026. The book prints
+the same key in Beyond the Book’s Answers stage.
+
+### Very short answer
+
+1. $23 = 3 \times 6 + 5$, so $\frac{23}{6} = 3\frac{5}{6}$.
+2. $4 \times 7 + 2 = 30$, so $4\frac{2}{7} = \frac{30}{7}$.
+3. No. 18 and 24 have the common factor 6, and $\frac{18}{24} = \frac{3}{4}$.
+4. $40 = 8 \times 5$, so the box holds $5 \times 5 = 25$.
+5. $\frac{5}{7} = \frac{50}{70}$ and $\frac{7}{10} = \frac{49}{70}$, so $\frac{5}{7}$ is greater.
+6. $\frac{9}{24} + \frac{4}{24} = \frac{13}{24}$.
+7. $\frac{25}{30} - \frac{9}{30} = \frac{16}{30} = \frac{8}{15}$.
+8. $\frac{6}{8} = \frac{3}{4}$.
+9. $\frac{7}{8} - \frac{2}{8} = \frac{5}{8}$.
+10. $\frac{8}{4} - \frac{3}{4} = \frac{5}{4} = 1\frac{1}{4}$ m.
+
+### Short answer
+
+11. In thirtieths they are 18, 21 and 20, so $\frac{3}{5} < \frac{2}{3} < \frac{7}{10}$. The difference is $\frac{21}{30} - \frac{18}{30} = \frac{3}{30} = \frac{1}{10}$.
+12. Cut one strip into 2 equal parts and the other into 6. Three sixths line up exactly with one half, so $\frac{1}{2} = \frac{3}{6}$.
+13. $\frac{6}{4} + \frac{11}{4} = \frac{17}{4} = 4\frac{1}{4}$ km. By bus he goes $\frac{11}{4} - \frac{6}{4} = \frac{5}{4} = 1\frac{1}{4}$ km farther.
+14. For example $\frac{8}{18}$, $\frac{12}{27}$ and $\frac{16}{36}$. $63 = 9 \times 7$, so $\frac{28}{63}$.
+15. $\frac{20}{60} + \frac{15}{60} + \frac{12}{60} = \frac{47}{60}$. Less than 1, by $\frac{13}{60}$.
+16. $\frac{2}{9} + \frac{3}{9} = \frac{5}{9}$ eaten, and $\frac{4}{9}$ left.
+17. $\frac{11}{3} = 3\frac{2}{3}$ and $\frac{17}{5} = 3\frac{2}{5}$. Since $\frac{2}{3} = \frac{10}{15}$ and $\frac{2}{5} = \frac{6}{15}$, $\frac{11}{3}$ is greater.
+18. $\frac{84}{126} = \frac{42}{63} = \frac{14}{21} = \frac{2}{3}$, dividing by 2, then by 3, then by 7.
+19. $\frac{3}{8}$ is the share when 3 rotis are shared among 8 children, and $\frac{3}{5}$ when they are shared among 5. More children means smaller shares.
+20. $\frac{5}{4}$ is the 5th mark and $2\frac{3}{4} = \frac{11}{4}$ is the 11th. They are 6 parts apart: $\frac{6}{4} = 1\frac{1}{2}$ units.
+
+### Long answer
+
+21. $\frac{4}{12} + \frac{3}{12} + \frac{2}{12} = \frac{9}{12}$ is used, so $\frac{3}{12} = \frac{1}{4}$ is open. The garden is $\frac{2}{12}$, so the open part is bigger, by $\frac{1}{12}$.
+22. Two sixths and four twelfths each line up with one third. $\frac{8}{12} + \frac{5}{12} = \frac{13}{12} = 1\frac{1}{12}$.
+23. $\frac{20}{12} + \frac{27}{12} = \frac{47}{12}$ m is used, so $\frac{60}{12} - \frac{47}{12} = \frac{13}{12} = 1\frac{1}{12}$ m is left. Not enough: $1\frac{1}{4} = \frac{15}{12}$, so it is $\frac{2}{12} = \frac{1}{6}$ m short.
+24. In twentieths A repairs 6, B 5 and C 8, so team C. In all $\frac{19}{20}$; still to be repaired $\frac{1}{20}$.
+25. 4 squares and 3 squares are shaded: $\frac{7}{12}$ shaded and $\frac{5}{12}$ not shaded.
+26. $\frac{7}{3} = 2\frac{1}{3}$ rotis each. Then 10 rotis for 5 children, 2 rotis each. Less, by $\frac{1}{3}$ roti.
+27. $\frac{5}{12} = \frac{10}{24}$ and $\frac{3}{8} = \frac{9}{24}$, so $\frac{5}{12}$ is greater, by $\frac{1}{24}$. With 96: $\frac{40}{96} - \frac{36}{96} = \frac{4}{96} = \frac{1}{24}$.
+28. In sixths they are 2, 5, 9 and 11. Descending: $\frac{11}{6}$, $1\frac{1}{2}$, $\frac{5}{6}$, $\frac{1}{3}$. The distance is $\frac{9}{6} = 1\frac{1}{2}$.
+29. $\frac{5}{8} - \frac{2}{8} = \frac{3}{8}$, then $\frac{3}{8} + \frac{4}{8} = \frac{7}{8}$ full. Not full: $\frac{1}{8}$ is empty.
+30. $\frac{4}{8} + \frac{2}{8} + \frac{1}{8} + \frac{1}{8} = 1$. So $1 - \frac{1}{2} - \frac{1}{4} = \frac{1}{4}$, and $\frac{7}{8} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8}$.
+
+### Assertion and reason
+
+31 (a) · 32 (d) · 33 (b) · 34 (c) · 35 (a)
+
+31: both true, and sharing among more people is why $\frac{3}{10}$ is smaller. 32: $\frac{2}{3} + \frac{1}{5} = \frac{13}{15}$, so A is false. 33: both are $\frac{3}{4}$, but the multiples of 4 do not explain it. 34: $\frac{9}{4} = 2\frac{1}{4}$; R has the rule backwards. 35: dividing both by 12 gives $\frac{2}{3}$.
+
+### Case-based questions
+
+36. (i) $\frac{4}{16} = \frac{1}{4}$ (ii) $\frac{8}{16} = \frac{1}{2}$ (iii) 4 squares are white, $\frac{1}{4}$: equal to the red part.
+37. (i) $\frac{3}{6} + \frac{2}{6} = \frac{5}{6}$ (ii) $\frac{1}{6}$ (iii) longer: the bus part is $\frac{2}{6}$ and the car part $\frac{1}{6}$, so by $\frac{1}{6}$.
+38. (i) $\frac{13}{4}$ (ii) Tuesday (iii) $\frac{10}{4} + \frac{13}{4} + \frac{11}{4} = \frac{34}{4} = 8\frac{1}{2}$ kg.
+39. (i) the $\frac{1}{4}$ litre glass (ii) $\frac{5}{20} + \frac{4}{20} = \frac{9}{20}$ litre (iii) $\frac{11}{20}$ litre is left. Yes: two glasses take $\frac{10}{20}$, and $\frac{1}{20}$ litre is left over.
+40. (i) $\frac{14}{3}$ (ii) Tuesday (iii) $\frac{60}{6} - \frac{21}{6} - \frac{28}{6} = \frac{11}{6} = 1\frac{5}{6}$ m.
+
+### Objective questions
+
+41 (b) · 42 (a) · 43 (c) · 44 (d) · 45 (a) · 46 (d) · 47 (c) · 48 (d) · 49 (b) · 50 (c)
+
 ## Beyond the Book
 
-Stages 1, 2 and 4 are worked in the book itself: stage 1 explains each
-question in running text, stage 2 sets Examples 1 to 19 as steps, and
-stage 4 prints the key to stage 3. Repeated here so the booklet is
-complete.
+### Tried and explained (no head in the book)
 
-### Stage 1 · Using What You Know
+Kept word for word from the earlier chapter, except one sentence cut from the
+fourth (the halfway fraction): it answered Exercise 7.4 Q3. The answers are in
+the running text that follows each question: $\frac{6}{7} > \frac{5}{6}$; Rohan’s
+sum must be more than $\frac{1}{3}$ and is $\frac{7}{12}$; $3\frac{1}{2} = \frac{14}{4} = \frac{28}{8}$;
+$\frac{5}{12}$; less than half the cake, $\frac{7}{20}$, is left.
 
-1. $\frac{6}{7}$ is greater. It is $\frac{1}{7}$ short of a whole and
-   $\frac{5}{6}$ is $\frac{1}{6}$ short, and $\frac{1}{7} < \frac{1}{6}$.
-   Check: $\frac{36}{42} > \frac{35}{42}$.
-2. A sum is more than either part, so it must be more than $\frac{1}{3}$,
-   but $\frac{6}{21} < \frac{7}{21}$ shows that $\frac{2}{7}$ is less.
-   The sum is $\frac{3}{12} + \frac{4}{12} = \frac{7}{12}$.
-3. **14 quarters**, since $3\frac{1}{2} = \frac{14}{4}$, or 28 eighths, since $3\frac{1}{2} = \frac{28}{8}$.
-4. $\frac{5}{12}$, since $\frac{1}{3} = \frac{4}{12}$ and $\frac{1}{2} = \frac{6}{12}$.
-5. **No.** They eat $\frac{8}{20} + \frac{5}{20} = \frac{13}{20}$, so $\frac{7}{20}$ is left, which is less than a half, $\frac{10}{20}$.
+### Solved examples
 
-### Stage 2 · Solved Examples
+1. (c) 40 litres. 2. (a) $\frac{11}{16}$. 3. (a), (b), (d). 4. (a), (b), (c).
+5. 18. 6. 119. 7. (b) P–3, Q–4, R–1, S–2. 8. (d) P–2, Q–4, R–1, S–3.
+9. (i) (a) 3; (ii) 5. 10. (i) (b); (ii) 3; (iii) 5.
 
-The 20 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+### Practice
 
-1. (c) 40 litres *(single correct)*
-2. (a) $\frac{11}{16}$ *(single correct)*
-3. (b) $\frac{4}{15}$ *(single correct)*
-4. (d) $\frac{11}{16}$ *(single correct)*
-5. (b) $\frac{7}{12}$ m *(single correct)*
-6. (a) $\frac{5}{8}$ of a cake *(single correct)*
-7. (a), (b), (d) *(multiple correct)*
-8. (a), (c) *(multiple correct)*
-9. (a), (b), (d) *(multiple correct)*
-10. (a), (b), (c) *(multiple correct)*
-11. 18 *(numerical answer)*
-12. 49 *(numerical answer)*
-13. 8 *(numerical answer)*
-14. (b) P–3, Q–4, R–1, S–2 *(matching)*
-15. (d) P–2, Q–4, R–1, S–3 *(matching)*
+1 (c) · 2 (a) · 3 (b) · 4 (d) · 5 (a), (c), (d) · 6 (a), (b) · 7 (b), (d) · 8 (a), (b), (c) · 9: 5 · 10: 37 · 11: 16 · 12 (a) · 13 (c) · 14 (i) (b), (ii) 4, (iii) 5 · 15 (i) (b), (ii) 7, (iii) 6
 
-### Stage 3 · Practice
-
-| | | | | | | | | |
-|---|---|---|---|---|---|---|---|---|
-| 1 (d) | 2 (b) | 3 (a) | 4 (d) | 5 (c) | 6 (b) | 7 (c) | 8 (a) | 9 (d) |
-| 10 (a) | 11 (b) | 12 (c) | 13 (a) | 14 (d) | 15 (a) | 16 (b) | 17 (c) | |
-
-18. **3 and 4**, since $\frac{29}{8} = 3\frac{5}{8}$.
-19. **15**, since $2\frac{1}{2} = \frac{15}{6}$.
-20. $\frac{15}{28}$. $15 = 3 \times 5$ and $28 = 2 \times 2 \times 7$ share
-    no prime, but 15 and 27 share 3, and $\frac{15}{27} = \frac{5}{9}$.
-21. $\frac{3}{10}$, since $\frac{7}{10} - \frac{4}{10} = \frac{3}{10}$.
-22. **Closer to $\frac{1}{2}$.** $\frac{5}{8} - \frac{1}{2} = \frac{1}{8}$, but
-    $1 - \frac{5}{8} = \frac{3}{8}$.
-23. $\frac{7}{12}$, $\frac{2}{3}$, $\frac{3}{4}$, $\frac{5}{6}$. The difference is
-    $\frac{5}{6} - \frac{7}{12} = \frac{3}{12} = \frac{1}{4}$.
-24. Read $\frac{1}{3} + \frac{2}{5} = \frac{11}{15}$. Still to be read
-    $1 - \frac{11}{15} = \frac{4}{15}$.
-25. $\frac{24}{40}$. In the list $\frac{3}{5}$, $\frac{6}{10}$, $\frac{9}{15}$, ...
-    the numerator and denominator add up to 8, 16, 24, ..., going up by 8
-    each time. $64 = 8 \times 8$, so it is the eighth fraction in the list:
-    both numbers of $\frac{3}{5}$ multiplied by the same number, and that number is 8.
-26. **Less, by $\frac{1}{5}$.** $\frac{1}{2} + \frac{1}{5} + \frac{1}{10} = \frac{4}{5}$.
-27. (a) $\frac{3}{4} - \frac{1}{3} = \frac{5}{12}$ (b) $\frac{5}{12} + \frac{5}{12} = \frac{5}{6}$ (c) $1 - \frac{5}{6} = \frac{1}{6}$
-28. (a) $\frac{1}{4} < \frac{1}{3}$: she is right for this pair. (b) $\frac{3}{4} > \frac{1}{2}$: she is wrong, since the bigger denominator belongs to the bigger fraction. (c) She is always right when the two fractions have the same numerator.
-29. (a) $2\frac{3}{5} = \frac{13}{5}$ and $1\frac{7}{10} = \frac{17}{10}$ (b) $2\frac{3}{5} + 1\frac{7}{10} = 4\frac{3}{10}$ (c) $2\frac{3}{5} - 1\frac{7}{10} = \frac{9}{10}$
-30. (a) $\frac{3}{8} = \frac{9}{24}$, $\frac{1}{4} = \frac{6}{24}$, $\frac{1}{6} = \frac{4}{24}$ (b) the vegetables (c) $1 - \frac{3}{8} - \frac{1}{4} - \frac{1}{6} = \frac{5}{24}$ (d) the path, by $\frac{5}{24} - \frac{4}{24} = \frac{1}{24}$
-31. (a) $1\frac{3}{4} = \frac{7}{4}$, $1\frac{2}{3} = \frac{5}{3}$, $1\frac{5}{6} = \frac{11}{6}$ (b) Bala, Asha, Chitra (c) $1\frac{5}{6} - 1\frac{2}{3} = \frac{1}{6}$ km (d) $1\frac{3}{4} + 1\frac{2}{3} + 1\frac{5}{6} = 5\frac{1}{4}$ km
+8. Walk $\frac{6}{15}$, bus $\frac{5}{15}$, cycle $\frac{4}{15}$. The class must be a multiple of 15 students, so it cannot have 25.
+9. $\frac{3}{4} = \frac{9}{12}$, so the numerator must be more than 9: $5 + 5 = 10$ works and $5 + 4 = 9$ does not.
+10. $\frac{21}{24} - \frac{8}{24} = \frac{13}{24}$, and $13 + 24 = 37$.
+11. $\frac{8}{16} + \frac{4}{16} + \frac{2}{16} + \frac{1}{16} = \frac{15}{16}$, and $1 - \frac{15}{16} = \frac{1}{16}$.
+12. $2\frac{1}{2} = \frac{15}{6}$, $4\frac{1}{4} = \frac{17}{4}$, $\frac{5}{7} = \frac{20}{28}$, $\frac{3}{5} = \frac{27}{45}$: P–3, Q–1, R–4, S–2.
+13. $3\frac{1}{2} = \frac{7}{2}$, $2\frac{2}{3} = \frac{8}{3}$, $2\frac{1}{4} = \frac{9}{4}$, $2\frac{1}{5} = \frac{11}{5}$: P–3, Q–4, R–1, S–2.
+14. (i) (b) Dev (ii) $\frac{3}{12} + \frac{4}{12} + \frac{2}{12} = \frac{9}{12}$, so $\frac{3}{12} = \frac{1}{4}$ is left: 4 (iii) $3 + 2 = 5$ panels.
+15. (i) (b) $\frac{12}{10} = 1\frac{1}{5}$ (ii) 6 jumps reach $\frac{18}{10}$ and 7 jumps $\frac{21}{10}$: 7 (iii) the frogs land on 3, 6, 9, … and 2, 4, 6, … tenths: 6.

@@ -2,70 +2,107 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h3>Reverse and add</h3>
-
-      <p>Here is a way to make palindromes. Start with a 2-digit number. Reverse its digits, and add the two numbers. If the answer is a palindrome, stop. If it is not, reverse the answer and add again. Keep going until you reach a palindrome.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 1</div>
-        <div class="c-example__body">
-          <p>Start with 34, 29, 48 and 76. Reverse and add until you reach a palindrome.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$34 + 43 = 77$</span>
-              <span class="work__why">a palindrome</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$29 + 92 = 121$</span>
-              <span class="work__why">a palindrome</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$48 + 84 = 132$, then $132 + 231 = 363$</span>
-              <span class="work__why">one step more</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$76 + 67 = 143$, then $143 + 341 = 484$</span>
-              <span class="work__why">one step more</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>34 and 29 reach a palindrome in one step. 48 and 76 need two steps.</span></div>
-          </div>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 3.3</div>
+        <ol class="c-questions">
+          <li>Each number line in Fig. 3.9 has ten marks, spaced equally. Some of the marks are labelled. Work out the numbers at the other marks, and label them.</li>
+        </ol>
       </div>
 
-      <p>Try the same steps with other 2-digit numbers. You will find that some numbers need many more steps than these.</p>
-
-      <div class="c-reflect">
-        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-          <ol>
-            <li>Are there numbers that never reach a palindrome, however many times you reverse and add?</li>
-            <li>If you start with a 2-digit number, will you always reach a palindrome in the end? Explore and find out.</li>
-          </ol>
-          </div>
-        </div>
+      <div class="c-figure c-figure--full">
+        <figure>
+          <svg viewBox="0 0 634 190" data-size="full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four number lines, each with ten equally spaced marks. Line a labels 2010 and 2020, line b labels 9996 and 9997, line c labels 15,077, 15,078 and 15,083, and line d labels 86,705 and 87,705">
+            <text class="dg-note" x="10" y="20" text-anchor="start">(a)</text>
+            <line class="dg-line" x1="46" y1="16" x2="614" y2="16"/>
+            <line class="dg-line" x1="72" y1="10" x2="72" y2="22"/>
+            <line class="dg-line" x1="130" y1="10" x2="130" y2="22"/>
+            <line class="dg-line" x1="188" y1="10" x2="188" y2="22"/>
+            <line class="dg-line" x1="246" y1="10" x2="246" y2="22"/>
+            <line class="dg-line" x1="304" y1="10" x2="304" y2="22"/>
+            <text class="dg-tick" x="304" y="37" text-anchor="middle">2010</text>
+            <line class="dg-line" x1="362" y1="10" x2="362" y2="22"/>
+            <line class="dg-line" x1="420" y1="10" x2="420" y2="22"/>
+            <text class="dg-tick" x="420" y="37" text-anchor="middle">2020</text>
+            <line class="dg-line" x1="478" y1="10" x2="478" y2="22"/>
+            <line class="dg-line" x1="536" y1="10" x2="536" y2="22"/>
+            <line class="dg-line" x1="594" y1="10" x2="594" y2="22"/>
+            <text class="dg-note" x="10" y="64" text-anchor="start">(b)</text>
+            <line class="dg-line" x1="46" y1="60" x2="614" y2="60"/>
+            <line class="dg-line" x1="72" y1="54" x2="72" y2="66"/>
+            <line class="dg-line" x1="130" y1="54" x2="130" y2="66"/>
+            <line class="dg-line" x1="188" y1="54" x2="188" y2="66"/>
+            <line class="dg-line" x1="246" y1="54" x2="246" y2="66"/>
+            <text class="dg-tick" x="246" y="81" text-anchor="middle">9996</text>
+            <line class="dg-line" x1="304" y1="54" x2="304" y2="66"/>
+            <text class="dg-tick" x="304" y="81" text-anchor="middle">9997</text>
+            <line class="dg-line" x1="362" y1="54" x2="362" y2="66"/>
+            <line class="dg-line" x1="420" y1="54" x2="420" y2="66"/>
+            <line class="dg-line" x1="478" y1="54" x2="478" y2="66"/>
+            <line class="dg-line" x1="536" y1="54" x2="536" y2="66"/>
+            <line class="dg-line" x1="594" y1="54" x2="594" y2="66"/>
+            <text class="dg-note" x="10" y="108" text-anchor="start">(c)</text>
+            <line class="dg-line" x1="46" y1="104" x2="614" y2="104"/>
+            <line class="dg-line" x1="72" y1="98" x2="72" y2="110"/>
+            <text class="dg-tick" x="72" y="125" text-anchor="middle">15,077</text>
+            <line class="dg-line" x1="130" y1="98" x2="130" y2="110"/>
+            <text class="dg-tick" x="130" y="125" text-anchor="middle">15,078</text>
+            <line class="dg-line" x1="188" y1="98" x2="188" y2="110"/>
+            <line class="dg-line" x1="246" y1="98" x2="246" y2="110"/>
+            <line class="dg-line" x1="304" y1="98" x2="304" y2="110"/>
+            <line class="dg-line" x1="362" y1="98" x2="362" y2="110"/>
+            <line class="dg-line" x1="420" y1="98" x2="420" y2="110"/>
+            <text class="dg-tick" x="420" y="125" text-anchor="middle">15,083</text>
+            <line class="dg-line" x1="478" y1="98" x2="478" y2="110"/>
+            <line class="dg-line" x1="536" y1="98" x2="536" y2="110"/>
+            <line class="dg-line" x1="594" y1="98" x2="594" y2="110"/>
+            <text class="dg-note" x="10" y="152" text-anchor="start">(d)</text>
+            <line class="dg-line" x1="46" y1="148" x2="614" y2="148"/>
+            <line class="dg-line" x1="72" y1="142" x2="72" y2="154"/>
+            <line class="dg-line" x1="130" y1="142" x2="130" y2="154"/>
+            <line class="dg-line" x1="188" y1="142" x2="188" y2="154"/>
+            <line class="dg-line" x1="246" y1="142" x2="246" y2="154"/>
+            <text class="dg-tick" x="246" y="169" text-anchor="middle">86,705</text>
+            <line class="dg-line" x1="304" y1="142" x2="304" y2="154"/>
+            <text class="dg-tick" x="304" y="169" text-anchor="middle">87,705</text>
+            <line class="dg-line" x1="362" y1="142" x2="362" y2="154"/>
+            <line class="dg-line" x1="420" y1="142" x2="420" y2="154"/>
+            <line class="dg-line" x1="478" y1="142" x2="478" y2="154"/>
+            <line class="dg-line" x1="536" y1="142" x2="536" y2="154"/>
+            <line class="dg-line" x1="594" y1="142" x2="594" y2="154"/>
+          </svg>
+          <figcaption><span class="fignum">Fig. 3.9</span> Four number lines with ten equally spaced marks. Only some marks are labelled.</figcaption>
+        </figure>
       </div>
 
-      <h3>Puzzle time</h3>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>On each number line, draw a circle around the smallest number and a box around the largest number.</li>
+        </ol>
+      </div>
 
-      <p>Use the clues to find the mystery number. In the place-value chart, tth stands for ten thousands, th for thousands, h for hundreds, t for tens and u for units.</p>
+      <h2><span class="badge">3.4</span><span class="name">Playing with Digits</span></h2>
+
+      <p>When you count 1, 2, 3, and so on, the first nine numbers have only one digit. So there are nine 1-digit numbers. How many numbers have 2 digits? How many have 3, 4 and 5 digits? Find out, and complete Table 3.10.</p>
 
       <table>
-        <caption>Table 3.11 A place-value chart for the mystery number</caption>
-        <thead><tr><th>tth</th><th>th</th><th>h</th><th>t</th><th>u</th></tr></thead>
+        <caption>Table 3.10 How many numbers have each number of digits</caption>
+        <thead><tr><th>1-digit numbers</th><th>2-digit numbers</th><th>3-digit numbers</th><th>4-digit numbers</th><th>5-digit numbers</th></tr></thead>
         <tbody>
-          <tr><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td><td><span class="blank blank--sm"></span></td></tr>
+          <tr><td>9 (from 1 to 9)</td><td><span class="blank"></span></td><td><span class="blank"></span></td><td><span class="blank"></span></td><td><span class="blank"></span></td></tr>
         </tbody>
       </table>
 
-      <div class="work work--list">
-        <p>I am a 5-digit palindrome.</p>
-        <p>I am an odd number.</p>
-        <p>My t digit is double my u digit.</p>
-        <p>My h digit is double my t digit.</p>
+      <h3>Digit sums</h3>
+
+      <p>Komal adds up the digits of some numbers. She notices that different numbers can give the same total. The total you get by adding the digits of a number is called its <span class="term">digit sum</span>.</p>
+
+      <div class="work work--centred">
+        <p>$6 + 8 = 14$</p>
+        <p>$1 + 7 + 6 = 14$</p>
+        <p>$5 + 4 + 5 = 14$</p>
       </div>
 
-      <p>Who am I? Fill in the chart, and then write the number in figures and in words.</p>
+      <p>So 68, 176 and 545 all have the same digit sum, 14.</p>
 
     </div>
   </div>
