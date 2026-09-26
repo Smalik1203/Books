@@ -1,5 +1,68 @@
 # Class 8 · Mathematics I · Chapter 4 — Quadrilaterals
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, By the Book and Beyond the
+Book further down this log.** The chapter is now on the maths-v2 design
+(`chapter.json`: `design` maths-v2, palette `prism-iris`, accent `#54527e`,
+edition `196x276-large`, `keepExerciseSets`), 38 pages:
+
+* **Body p001–p020**, eight sections in the chapter's existing order
+  (introduction, polygons, angle sum, exterior angles, kinds of
+  quadrilaterals, parallelogram properties, rhombus/rectangle/square, why
+  frames need triangles), rewritten in plain English, ending on a **Summary**
+  page (p020, `data-close`, ten points). The opener numeral was 5; it is 4.
+  Every section now has a key idea and a Think and Reflect.
+* **No NCERT expression.** Every exercise question is new (NCERT's own
+  exercises are cited by a `c-practice__note` line at the end of each set),
+  every worked example has new numbers (old Example 3's "exterior angle 24°"
+  was NCERT's), and the six sets are shorter (7, 7, 7, 6, 8, 8 questions) so
+  each prints whole. Figures are the chapter's own line drawings, recaptioned.
+* **Old flags closed.** Pythagoras is gone from the body (old Example 7 and
+  Ex 5.6 Q2–Q4 used it before Mathematics II teaches it): Example 8 now finds
+  the angles of a rhombus from its diagonals. The parallelogram proof names
+  ASA; the rhombus right angle is proved by SSS instead of the unstated
+  locus fact; the rectangle proof names SAS; the "Chapter 2's arithmetic"
+  pointer is gone; the `c-tip` (a side-bar callout) became prose. Examples
+  3 (exterior angles of a quadrilateral) and 9 (rectangle diagonals) are new
+  teaching, added where the sections needed a worked instance and the pages
+  needed filling.
+* **By the Book p090–p095**, 50 questions to BY-THE-BOOK.md at Class 8:
+  10 · 10 · 10 · 5 · 5 · 10; letters in word problems, short algebraic
+  *Show that* (Q14, Q18), one find-the-mistake (Q20), "In the given figure"
+  (Q30, with the parallelogram figure), case passages with a table (Q37),
+  one multi-statement MCQ (Q45), one named student's claim (Q46), reverse
+  questions throughout. No π in this chapter. Six pages, not five: the last
+  (p095, `data-close`) ends at 64%.
+* **Beyond the Book p101–p112**: the old Using What You Know, word for word,
+  with no stage head (only `&nbsp;` added in four places to stop a lone word,
+  and "$20 \times 180^\circ$" set as plain text in one sentence for the
+  same reason); then Single correct · More than one correct · Numerical
+  answer · Matching · Paragraph-based, each two examples then its practice
+  (4 · 4 · 3 · 2 · 2). Kept from the old fifteen: Examples 1, 2, 7, 10
+  (statement (c) changed from a 9-gon, whose exterior angle answered body
+  Ex 4.2 Q7), 12, 13, 14 (P, Q, S changed so it answers no body question),
+  15 (cut to three rows). Two paragraph-based examples are new; all fifteen
+  practice questions are new. Answers on a fresh page, key in two-row runs.
+* ANSWERS.md rewritten for every question; `check-numbers.mjs` rewritten
+  (276 checks: identities on every page and in ANSWERS.md, the key complete,
+  every single-correct option recomputed, the body examples and a sample of
+  exercise answers recomputed). A planted wrong option, a wrong identity in
+  ANSWERS.md and a wrong Example 1 answer were all caught.
+
+Checks at close: `build` all pages fit; `lone-words` 0; `check-sums` 44
+identities, 0 wrong; `orphans` 0; `check-labels` no collisions;
+`fit-options` every row fits; `check-numbers` 276 checks, 0 failed. Every
+page at 88% or more except the Summary (p020, 81%), By the Book's last page
+(p095, 64%); the chapter's last page is 95%.
+
+**Unsure, for the author.** The NCERT references cite this chapter's own
+section numbers ("NCERT, Figure it Out, §4.2" …) because no *Ganita Prakash*
+page number could be established from the chapter; and the body keeps the
+chapter's existing topic order (polygons, exterior angles …), which may not
+match the *Ganita Prakash* Grade 8 chapter's own sections.
+
+
 ## Solved examples in examination formats, 23 September 2026
 
 Stage 2 of Beyond the Book is now 15 solved examples in the order 6 single

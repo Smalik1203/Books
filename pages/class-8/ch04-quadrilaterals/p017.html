@@ -1,57 +1,72 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">4.8</span><span class="name">Why Three Rods Hold and Four Do Not</span></h2>
-
-      <p>Back to the strips of card at the start of the chapter. Three of them, pinned
-      into a triangle, cannot be pushed into any other shape at all. Four of them can be
-      pushed into infinitely many. The reason has nothing to do with the card, or with
-      how tight the pins are, or with friction; a triangle of steel and a triangle of
-      paper behave the same way. It is about how much three lengths decide, and how much
-      four lengths do not.</p>
-
-      <p>Give somebody three lengths and ask them to build a triangle. There is only one
-      triangle they can build — they may lay it down turned round or flipped over, but
-      its angles are settled before they start. Give somebody four lengths and the
-      question has no single answer: the four rods make a whole family of
-      quadrilaterals, and pushing one corner walks you along that family.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 200 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangle that does not move when pushed, a quadrilateral leaning into a new shape when pushed, and the same quadrilateral held still by a diagonal brace">
-      
-            <path class="dg-line" d="M14 74 L52 74 L33 30 Z"/>
-            <line class="dg-move" x1="33" y1="14" x2="33" y2="25" marker-end="url(#dg-arrow)"/>
-            <text class="dg-note" x="33" y="88" text-anchor="middle">rigid</text>
-      
-            <path class="dg-ghost" d="M78 70 H114 L128 36 H92 Z"/>
-            <path class="dg-line" d="M78 70 H114 V34 H78 Z"/>
-            <line class="dg-move" x1="64" y1="34" x2="75" y2="34" marker-end="url(#dg-arrow)"/>
-            <text class="dg-note" x="100" y="88" text-anchor="middle">gives way</text>
-      
-            <path class="dg-line" d="M148 70 H184 L196 36 H160 Z"/>
-            <path class="dg-line" d="M148 70 L196 36"/>
-            <text class="dg-note" x="172" y="88" text-anchor="middle">braced</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 4.10</span> A diagonal turns one
-          quadrilateral into two triangles, and two triangles that cannot move cannot let
-          the frame round them move either.</figcaption>
-        </figure>
+      <div class="c-example">
+        <div class="c-example__tab">Example 8</div>
+        <div class="c-example__body">
+          <p>The diagonals of rhombus $ABCD$ meet at $O$, and $\angle ABC = 110^\circ$. Find $\angle AOB$, $\angle ABO$ and $\angle BAO$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$\angle AOB = 90^\circ$</span>
+              <span class="work__why">diagonals of a rhombus</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle ABO = 110^\circ \div 2 = 55^\circ$</span>
+              <span class="work__why">$BD$ halves $\angle B$</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle BAO = 180^\circ - 90^\circ - 55^\circ = 35^\circ$</span>
+              <span class="work__why">triangle $AOB$</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle AOB = 90^\circ$, $\angle ABO = 55^\circ$, $\angle BAO = 35^\circ$</span></div>
+          </div>
+        </div>
       </div>
 
-      <p>That is also the cure, and it is the diagonal again. Nail one across a gate and
-      the gate becomes two triangles; neither can change shape, so neither can the gate.
-      Look at a roof truss, a pylon, a crane's arm or the frame of a bicycle and you will
-      find the same thing: they are built of triangles, or of quadrilaterals with a
-      diagonal put in.</p>
+      <div class="c-example">
+        <div class="c-example__tab">Example 9</div>
+        <div class="c-example__body">
+          <p>The diagonals of rectangle $PQRS$ meet at $O$, and $\angle OPQ = 35^\circ$. Find the angles $\angle POQ$ and $\angle OQR$.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$OP = OQ$</span>
+              <span class="work__why">equal diagonals, bisecting each other</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>$\angle OQP = \angle OPQ = 35^\circ$</span>
+              <span class="work__why">triangle $OPQ$ is isosceles</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$\angle POQ = 180^\circ - 35^\circ - 35^\circ = 110^\circ$</span></div>
+            <div class="work__row"><span class="work__label">Step 4</span>
+              <span>$\angle OQR = 90^\circ - 35^\circ = 55^\circ$</span>
+              <span class="work__why">$\angle PQR$ is a right angle</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>$\angle POQ = 110^\circ$ and $\angle OQR = 55^\circ$</span></div>
+          </div>
+        </div>
+      </div>
 
-      <p>So the diagonal has done three jobs in this chapter. It cut the quadrilateral
-      into two triangles and gave the angle sum. It made the congruent triangles that
-      proved everything about the parallelogram. And it is what a builder nails across a
-      frame to stop it leaning. They are the same fact seen three times — that a
-      triangle is decided by its sides, and a quadrilateral is not.</p>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Diagonals</div>
+        <ul class="c-keyidea__points">
+          <li>The diagonals of a rhombus cross at right angles; those of a rectangle are equal.</li>
+          <li>The diagonals of a square are equal and cross at right angles.</li>
+        </ul>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Can the diagonals of a rectangle cross at right angles? If so, what can you say about the&nbsp;rectangle?</li>
+            <li>Why are the diagonals of a rhombus not usually equal? Draw a rhombus with one very small angle to see.</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

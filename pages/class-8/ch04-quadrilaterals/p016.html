@@ -2,106 +2,69 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 7</div>
-        <div class="c-example__body">
-          <p>The diagonals of a rhombus are $16$ cm and $12$ cm. Find the length of a
-          side.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>half-diagonals $8$ cm and $6$ cm</span>
-              <span class="work__why">the diagonals bisect each other</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>each side is the hypotenuse of a right-angled triangle with these legs</span>
-              <span class="work__why">they cross at right angles</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$8^2 + 6^2 = 64 + 36 = 100$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>side $= 10$ cm</span></div>
-          </div>
-          <p>All four sides come out at $10$, which they had to: the four small triangles
-          have the same two legs, so they are the same triangle four times over.</p>
+      <h2><span class="badge">4.7</span><span class="name">Rhombus, Rectangle and Square</span></h2>
+
+      <p>A rhombus, a rectangle and a square are all parallelograms. So all four properties of Section 4.6 are true for each of them. Each one also has an extra property, and in each case it is about the diagonals.</p>
+
+      <div class="c-figure c-figure--lg">
+              <figure>
+      <svg viewBox="0 0 200 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+                     role="img" aria-label="A rhombus whose diagonals cross at right angles, a rectangle whose diagonals are equal, and a square with both properties">
+            
+                  <path class="dg-line" d="M34 20 L58 48 L34 76 L10 48 Z"/>
+                  <path class="dg-thin" d="M34 20 V76 M10 48 H58"/>
+                  <path class="dg-dim" d="M34 42 H40 V48"/>
+                  <text class="dg-note" x="34" y="88" text-anchor="middle">rhombus</text>
+            
+                  <path class="dg-line" d="M76 26 H124 V70 H76 Z"/>
+                  <path class="dg-thin" d="M76 26 L124 70 M124 26 L76 70"/>
+                  <g class="dg-dim">
+                    <path d="M85.3 39.9 L90.7 34.1"/>
+                    <path d="M109.3 34.1 L114.7 39.9"/>
+                  </g>
+                  <text class="dg-note" x="100" y="88" text-anchor="middle">rectangle</text>
+            
+                  <path class="dg-line" d="M148 30 H184 V66 H148 Z"/>
+                  <path class="dg-thin" d="M148 30 L184 66 M184 30 L148 66"/>
+                  <g class="dg-dim">
+                    <path d="M170.2 43.8 L174.5 48 L170.2 52.2"/>
+                    <path d="M155.4 39.8 L160.6 34.2"/>
+                    <path d="M171.4 34.2 L176.6 39.8"/>
+                  </g>
+                  <text class="dg-note" x="166" y="88" text-anchor="middle">square</text>
+                </svg>
+                <figcaption><span class="fignum">Fig. 4.9</span> The diagonals of a rhombus cross at right angles. The diagonals of a rectangle are equal. The diagonals of a square do both.</figcaption>
+              </figure>
+            </div>
+
+      <p><strong>In a rhombus the diagonals cross at right angles.</strong> Let the diagonals of rhombus $ABCD$ meet at $O$. Compare triangles $AOB$ and $COB$. Here $AB = CB$, since all the sides of a rhombus are equal. $AO = CO$, since the diagonals bisect each other. The side $OB$ is common. By the SSS rule the triangles are congruent, so $\angle AOB = \angle COB$. These two angles lie on the straight line $AC$, so they add to $180^\circ$. Each of them is therefore $90^\circ$.</p>
+
+      <p>The same congruent triangles show one more fact: $\angle ABO = \angle CBO$. So each diagonal of a rhombus cuts the angles at its ends in half.</p>
+
+      <p><strong>In a rectangle the diagonals are equal.</strong> Compare triangles $ABC$ and $BAD$ in rectangle $ABCD$. The side $AB$ is common. $BC = AD$, since opposite sides are equal. The angles at $B$ and $A$ are both right angles. By the SAS rule the triangles are congruent, so $AC = BD$.</p>
+
+      <p><strong>In a square the diagonals are equal and cross at right angles.</strong> A square is both a rhombus and a rectangle, so it has both properties. Its diagonals also cut each corner angle in half, into two angles of $45^\circ$.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">parallelogram</span>
+          <span>diagonals bisect each other</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">rhombus</span>
+          <span>and cross at right angles</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">rectangle</span>
+          <span>and are equal in length</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">square</span>
+          <span>and are equal and cross at right angles</span>
         </div>
       </div>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 4.6</div>
-        <ol class="c-questions">
-          <li>Name every figure in the family that has each property.
-              <ol class="c-parts c-parts--1">
-                <li>Diagonals bisect each other.</li>
-                <li>Diagonals are equal.</li>
-                <li>Diagonals cross at right angles.</li>
-                <li>Diagonals are equal and cross at right angles.</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>The diagonals of a rhombus are $10$ cm and $24$ cm. Find its side and its
-              perimeter.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A rectangle is $8$ cm by $15$ cm. Find the length of each diagonal.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>The side of a rhombus is $13$ cm and one diagonal is $10$ cm. Find the
-              other diagonal.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>In a square of side $7$ cm, the diagonals meet at $O$. Find $\angle AOB$
-              and $\angle OAB$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>A quadrilateral's diagonals bisect each other and are equal, but do not
-              cross at right angles. What is it? Draw one.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>A quadrilateral's diagonals cross at right angles but do not bisect each
-              other. Show that it need not be a rhombus by drawing one that is not.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>Explain why the diagonals of a rectangle are equal but do not usually cross
-              at right angles, while those of a rhombus cross at right angles but are not
-              usually equal.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="9">
-          <li>A rhombus has a side of $10$ cm and one angle of $60^\circ$. Find the
-              length of the shorter diagonal without any calculation, by identifying a
-              triangle you already know.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="10">
-          <li>Both diagonals of a quadrilateral divide it into two triangles of equal
-              area. Must the figure be a parallelogram? Try a kite before answering.</li>
-        </ol>
-      </div>
+      <p>These facts also work as tests. If the diagonals of a quadrilateral bisect each other, it is a parallelogram. If they also cross at right angles, it is a rhombus. If they bisect each other and are equal, it is a rectangle.</p>
 
     </div>
   </div>

@@ -2,391 +2,394 @@
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
-book prints none of it except Beyond the Book's own key.
+book prints none of it except the key at the end of Beyond the Book.
 
 Numbered by set — *Exercise Set 4.3, Q4* — so it can be used beside the book
-without a contents page. **Every value below is re-derived by
-`check-numbers.mjs` beside this file**, which reads the answers back out of
-this file set by set and question by question. A question renumbered in the
-book and not here is how this goes wrong.
+without a contents page. Rewritten for the maths-v2 conversion, 26 September
+2026: every exercise question in the chapter is new, and so is every answer
+below. `check-numbers.mjs` beside this file evaluates every identity set as
+maths here and on the pages, and recomputes the key.
 
 Where a question asks the reader to draw or explain, the answer says what the
 drawing must show, and gives one worked instance under *answers will vary*.
 
 ---
 
+## 4.1 Introduction
+
+### Think and Reflect
+
+1. *Answers will vary.* For example: a desk top, a door, a book cover, a
+   window pane. The desk top, the door and the book cover have four right
+   angles.
+2. The lengths of the sides stay the same. The angles change. The **sum of the
+   angles stays $360^\circ$**.
+
+---
+
 ## 4.2 Polygons
+
+### Think and Reflect
+
+1. From one vertex of a hexagon: $6 - 3 = 3$ diagonals. In all:
+   $\frac{6 \times 3}{2} = 9$.
+2. **No.** It would need $n(n - 3) = 14$. But $n = 5$ gives $5 \times 2 = 10$
+   and $n = 6$ gives $6 \times 3 = 18$, and the product only grows after that.
 
 ### Exercise Set 4.1
 
-1. (i) **hexagon** (ii) **octagon** (iii) **pentagon** (iv) **decagon**.
+1. (i) heptagon (ii) nonagon (iii) quadrilateral (iv) hexagon.
+2. **13** sides, and $\frac{13 \times 10}{2} = 65$, so **65** diagonals.
+3. *What the drawing must show.* A "bow-tie": four straight sides, closed, in
+   which two sides cross in the middle. It is not a polygon because two sides
+   meet at a point that is not an end of either side.
+4. (i) $\frac{7 \times 4}{2} = 14$ (ii) $\frac{9 \times 6}{2} = 27$
+   (iii) $\frac{15 \times 12}{2} = 90$ (iv) $\frac{20 \times 17}{2} = 170$.
+5. $n(n - 3) = 108 = 12 \times 9$, so **12** sides.
+6. *What the drawing must show.* A pentagon with one corner pushed inwards
+   (an "arrowhead" shape), with the angle inside that corner marked; it is
+   more than $180^\circ$.
+7. **No.** Its angles are all $90^\circ$, but its sides are 6 cm and 4 cm, so
+   they are not all equal.
 
-2. A heptagon has **7** vertices. A figure with fourteen vertices has
-   **14** sides, since a polygon has as many sides as vertices.
-
-3. Answers will vary. The drawing must show a closed figure made of straight
-   segments that fails one of the three conditions. For example, four
-   segments joined into a bow-tie, with two of its sides crossing in the
-   middle: it is closed and its sides are straight, but **two sides meet at a
-   point that is not an end of either**, so it is not a polygon.
-
-4. Using $\dfrac{n(n-3)}{2}$:
-   - (i) hexagon: $\dfrac{6 \times 3}{2} = 9$
-   - (ii) octagon: $\dfrac{8 \times 5}{2} = 20$
-   - (iii) decagon: $\dfrac{10 \times 7}{2} = 35$
-   - (iv) $12$-gon: $\dfrac{12 \times 9}{2} = 54$
-
-5. $\dfrac{n(n-3)}{2} = 35$, so $n(n-3) = 70$. Two whole numbers three apart
-   with product 70 are 10 and 7, so $n = 10$: the polygon has **10** sides.
-
-6. A polygon is concave exactly when one of its angles is bigger than
-   $180^\circ$. A triangle's three angles add to $180^\circ$, so no one of
-   them can be as large as $180^\circ$. So a triangle is **never concave**.
-
-7. The drawing must show a quadrilateral $ABCD$ with one angle, say at $D$,
-   bigger than $180^\circ$, marked; and both diagonals. The diagonal $BD$,
-   **from the reflex vertex**, lies inside. The diagonal $AC$, **joining the
-   two neighbours of the reflex vertex**, falls outside: the corner $D$ is
-   pushed in past the line $AC$, so the segment $AC$ passes across the dent,
-   outside the figure.
-
-8. - (i) a square: **regular** — sides all equal and angles all right.
-   - (ii) a rhombus: **not regular** unless it is a square — its sides are
-     equal but its angles need not be.
-   - (iii) an equilateral triangle: **regular** — its sides are equal and so
-     are its angles, each $60^\circ$.
-   - (iv) a rectangle: **not regular** unless it is a square — its angles
-     are equal but its sides need not be.
-
-9. **No** to both. A rhombus that is not a square has all its sides equal and
-   is not regular. A rectangle that is not a square has all its angles equal
-   and is not regular.
-
-10. $n$ and $n - 3$ differ by 3, an odd number, so one of them is even and
-    the other odd. So their product $n(n-3)$ is **always even**, and half of
-    it is a whole number. For example $n = 7$: $7 \times 4 = 28$.
+---
 
 ## 4.3 The Angle Sum
 
+### Think and Reflect
+
+1. **No.** Four acute angles add to less than $4 \times 90^\circ = 360^\circ$,
+   but the angles of a quadrilateral add to exactly $360^\circ$.
+2. **No.** The other diagonal also cuts the quadrilateral into two triangles
+   whose angles together are the four angles of the quadrilateral, so the sum
+   is again $2 \times 180^\circ = 360^\circ$.
+3. $540 - 3 \times 90 = 270$, so the other two angles add to **$270^\circ$**.
+
 ### Exercise Set 4.2
 
-1. (i) pentagon: $3 \times 180 = 540$, so $540^\circ$
-   (ii) octagon: $6 \times 180 = 1080$, so $1080^\circ$
-   (iii) $15$-gon: $13 \times 180 = 2340$, so $2340^\circ$
-   (iv) $100$-gon: $98 \times 180 = 17640$, so $17640^\circ$
+1. (i) $4 \times 180 = 720$, so $720^\circ$ (ii) $7 \times 180 = 1260$, so
+   $1260^\circ$ (iii) $10 \times 180 = 1800$, so $1800^\circ$
+   (iv) $28 \times 180 = 5040$, so $5040^\circ$.
+2. (i) $360 - 290 = 70$, so $70^\circ$ (ii) $360 - 270 = 90$, so $90^\circ$
+   (iii) $360 - 295 = 65$, so $65^\circ$.
+3. (i) $1080 \div 180 = 6$, so **8** sides (ii) $1980 \div 180 = 11$, so
+   **13** (iii) $2880 \div 180 = 16$, so **18** (iv) $3240 \div 180 = 18$, so
+   **20**.
+4. (i) $1440 \div 10 = 144$ (ii) $2340 \div 15 = 156$ (iii) $2880 \div 18 = 160$
+   (iv) $5040 \div 30 = 168$; in degrees.
+5. $9x = 360$, so $x = 40$. The angles are **$40^\circ$, $80^\circ$,
+   $80^\circ$ and $160^\circ$**.
+6. **No.** Four obtuse angles add to more than $4 \times 90^\circ = 360^\circ$.
+7. Each exterior angle is $180 - 140 = 40$, and $360 \div 40 = 9$, so **9**
+   sides. (Or $(n - 2) \times 180 = 140n$, so $40n = 360$.)
 
-2. (i) $360 - (70 + 95 + 105) = 90$, so $90^\circ$
-   (ii) $360 - (60 + 60 + 120) = 120$, so $120^\circ$
-   (iii) $360 - (90 + 90 + 58) = 122$, so $122^\circ$
+---
 
-3. Divide by 180 and add 2.
-   (i) $900 \div 180 = 5$, so **7** sides
-   (ii) $1620 \div 180 = 9$, so **11** sides
-   (iii) $2340 \div 180 = 13$, so **15** sides
-   (iv) $1000 \div 180$ is not a whole number, so **no polygon** has this angle sum.
+## 4.4 Exterior Angles
 
-4. Each angle is $\dfrac{(n-2) \times 180}{n}$.
-   (i) 8 sides: $1080 \div 8 = 135$, so $135^\circ$
-   (ii) 9 sides: $1260 \div 9 = 140$, so $140^\circ$
-   (iii) 12 sides: $1800 \div 12 = 150$, so $150^\circ$
-   (iv) 20 sides: $3240 \div 20 = 162$, so $162^\circ$
+### Think and Reflect
 
-5. $1 + 2 + 3 + 4 = 10$ parts make $360^\circ$, so one part is $36^\circ$.
-   The angles are **$36^\circ$, $72^\circ$, $108^\circ$ and $144^\circ$**.
-
-6. $(360 - 120) \div 3 = 80$, so each of the three is **$80^\circ$**.
-
-7. Each exterior angle is $180 - 150 = 30$, and $360 \div 30 = 12$, so it
-   has **12** sides.
-
-8. **Three obtuse angles: yes.** Three angles just over $90^\circ$ add to just
-   over $270^\circ$, which leaves a fourth angle less than $90^\circ$ but
-   more than nothing, as long as the three add to less than $360^\circ$. For
-   example $100^\circ$, $100^\circ$, $100^\circ$ and $60^\circ$.
-   **Four obtuse angles: no.** Four angles each more than $90^\circ$ add to
-   more than $360^\circ$, and a quadrilateral's angles add to exactly
-   $360^\circ$.
-
-9. The drawing must show a quadrilateral cut by the diagonal not used in the
-   text, the two triangles' angles marked, and the total $360^\circ$. The
-   choice cannot matter, because either diagonal cuts the figure into two
-   triangles whose angles are exactly the four angles of the quadrilateral:
-   $180 + 180 = 360$ both times.
-
-10. For each angle to be $145^\circ$, each exterior angle would be
-    $180 - 145 = 35$, and $360 \div 35$ is not a whole number, so there is
-    **no such polygon**. The nearest possible values are **$144^\circ$**
-    below (10 sides, exterior angle $36^\circ$) and **$147\tfrac{3}{11}^\circ$**
-    above (11 sides, exterior angle $32\tfrac{8}{11}^\circ$).
-
-## 4.4 Turning the Corners
+1. Each exterior angle, $\frac{360^\circ}{n}$, gets **smaller** and closer to
+   $0^\circ$. Each interior angle gets **larger** and closer to $180^\circ$,
+   but never reaches it.
+2. **No.** $360 \div 100 = 3.6$ is not a whole number. (A regular polygon also
+   needs at least 3 sides, so its exterior angle is at most $120^\circ$.)
 
 ### Exercise Set 4.3
 
-1. (i) $360 \div 4 = 90$, so $90^\circ$ (ii) $360 \div 6 = 60$, so $60^\circ$
-   (iii) $360 \div 10 = 36$, so $36^\circ$ (iv) $360 \div 18 = 20$, so $20^\circ$
+1. (i) $360 \div 5 = 72$ (ii) $360 \div 8 = 45$ (iii) $360 \div 20 = 18$
+   (iv) $360 \div 36 = 10$; in degrees.
+2. (i) $360 \div 60 = 6$ (ii) $360 \div 36 = 10$ (iii) $360 \div 20 = 18$
+   (iv) $360 \div 15 = 24$ sides.
+3. The fifth exterior angle is $360 - 290 = 70$, so $70^\circ$. The interior
+   angles are $110^\circ$, $120^\circ$, $95^\circ$, $105^\circ$ and
+   $110^\circ$; check: $110 + 120 + 95 + 105 + 110 = 540$.
+4. Each exterior angle is $180 - 165 = 15$, and $360 \div 15 = 24$, so **24**
+   sides.
+5. **No** to both. $360 \div 50 = 7.2$ is not a whole number. An interior
+   angle of $110^\circ$ means an exterior angle of $70^\circ$, and
+   $360 \div 70$ is not a whole number either.
+6. Interior + exterior $= 4 \times$ exterior $= 180^\circ$, so each exterior
+   angle is $45^\circ$ and $360 \div 45 = 8$: **8** sides.
+7. $12x = 360$, so $x = 30$. The smallest exterior angle is $30^\circ$, so the
+   largest interior angle is $180 - 30 = 150$, that is **$150^\circ$**.
 
-2. (i) $360 \div 45 = 8$ sides (ii) $360 \div 30 = 12$ sides
-   (iii) $360 \div 18 = 20$ sides (iv) $360 \div 5 = 72$ sides
+---
 
-3. The fifth exterior angle is $360 - (65 + 80 + 70 + 55) = 90$, so
-   $90^\circ$. The interior angles are $180$ less each:
-   **$115^\circ$, $100^\circ$, $110^\circ$, $125^\circ$ and $90^\circ$**.
-   Check: $115 + 100 + 110 + 125 + 90 = 540$.
+## 4.5 Kinds of Quadrilaterals
 
-4. Each exterior angle is $180 - 162 = 18$, and $360 \div 18 = 20$, so it
-   has **20** sides.
+### Think and Reflect
 
-5. $360 \div 7$ is not a whole number, so no regular polygon has an exterior
-   angle of $7^\circ$. An interior angle of $130^\circ$ means an exterior
-   angle of $180 - 130 = 50$, and $360 \div 50 = 7.2$ is not a whole
-   number either.
-
-6. The interior angle is $180 - 45 = 135$ and three times the exterior angle
-   is $3 \times 45 = 135$. **They are equal.** It happens because the two
-   are equal exactly when the exterior angle is a quarter of $180^\circ$,
-   which is $45^\circ$ — and that is the octagon's.
-
-7. Interior and exterior add to $180^\circ$, and the interior is five times
-   the exterior, so six exterior angles make $180^\circ$: each is
-   $180 \div 6 = 30$, and $360 \div 30 = 12$. It has **12** sides.
-
-8. From the interior formula: $2160 \div 180 = 12$, so $n - 2 = 12$ and
-   $n = 14$. From the exterior angles: all the interior and exterior angles
-   together make $180n$, and the exterior ones make $360$, so
-   $180n = 2160 + 360 = 2520$ and $2520 \div 180 = 14$. **14** sides both
-   ways.
-
-9. Each exterior angle is $\dfrac{360^\circ}{n}$. As $n$ grows this gets
-   smaller and smaller, but it is never zero. The interior angle is
-   $180^\circ$ less that, so it gets closer and closer to $180^\circ$ and
-   never reaches it.
-
-10. If $k$ copies meet at a point, each angle is $360 \div k$. An angle of a
-    regular polygon is at least $60^\circ$ and less than $180^\circ$, so $k$
-    is 3, 4, 5 or 6.
-    - $k = 3$: $120^\circ$, the **regular hexagon**.
-    - $k = 4$: $90^\circ$, the **square**.
-    - $k = 5$: $72^\circ$, which would need an exterior angle of $108^\circ$,
-      and $360 \div 108$ is not a whole number — no polygon.
-    - $k = 6$: $60^\circ$, the **equilateral triangle**.
-
-## 4.5 A Family, Not a List
-
-### Think and Reflect (which are always true)
-
-- A rhombus is a kite: **always** — its two pairs of adjacent sides are equal.
-- A kite is a rhombus: **only sometimes** — the drawing shows a kite with
-  sides 3, 3, 5, 5, which is not a rhombus.
-- A rectangle is a square: **only sometimes** — the drawing shows a
-  rectangle 2 by 5.
-- A square is a rhombus: **always**.
+1. A rhombus is a kite: **always**. A kite is a rhombus: **sometimes**. A
+   rectangle is a square: **sometimes**. A square is a rhombus: **always**.
+2. *What the drawings must show.* A kite with sides 3 cm, 3 cm, 5 cm, 5 cm
+   (not a rhombus); a rectangle 6 cm by 4 cm (not a square).
 
 ### Exercise Set 4.4
 
-1. (i) **always** (ii) **sometimes** — only when its sides are equal
-   (iii) **always** — both pairs of opposite sides are parallel, so one pair is
-   (iv) **sometimes** — only when the kite is a rhombus
+1. (i) always (ii) sometimes (iii) sometimes, only when it is a square
+   (iv) sometimes, only when both pairs of opposite sides are parallel.
+2. (i) rectangle (ii) rhombus (iii) trapezium (iv) kite.
+3. **No.** A rectangle 6 cm by 3 cm has four right angles but is not a square.
+4. A **square**. Its angles are all right angles, so it is a rectangle, and
+   its opposite sides are equal. A kite also has adjacent sides equal, so all
+   four sides are equal.
+5. $PQ$ is parallel to $SR$ and $PS$ crosses them, so $\angle P$ and
+   $\angle S$ are interior angles on the same side and add to $180^\circ$.
+   $\angle S = 180 - 64 = 116$, that is **$116^\circ$**.
+6. *Answers will vary.* For example, sides 3 cm, 4 cm, 5 cm and 6 cm with no
+   two sides parallel. **None** of the six names fits: it is only a
+   quadrilateral.
 
-2. (i) **square** (ii) **parallelogram** (it may be a rhombus, but it is not a
-   rectangle or a square) (iii) **trapezium** (iv) **kite**
+---
 
-3. **No.** It must be a rhombus, and a rhombus need not have right angles.
-   The drawing must show a rhombus leaning over, with no right angle.
+## 4.6 Properties of a Parallelogram
 
-4. **No.** Four equal angles are each $90^\circ$, so it is a rectangle, and a
-   rectangle need not have equal sides. The drawing must show a rectangle
-   that is not a square.
+### Think and Reflect
 
-5. **Two**: all four sides equal (which makes a rhombus, and so a
-   parallelogram), and one angle a right angle (which in a parallelogram
-   makes every angle right).
-
-6. Its two pairs of equal sides must also be equal to each other, so that
-   all four sides are equal.
-
-7. $AB$ and $DC$ are parallel and $AD$ crosses them, so $\angle A$ and
-   $\angle D$ are interior angles on the same side of $AD$, and add to
-   $180^\circ$. So $\angle D = 180 - 72 = 108$, which is **$108^\circ$**.
-
-8. **No** — a parallelogram has two pairs of parallel sides, not exactly
-   one. The fact that changes is *every parallelogram is a trapezium*: the
-   parallelograms, and with them the rhombus, rectangle and square, would no
-   longer sit under the trapezium.
-
-9. Answers will vary. The drawing must show four unequal sides with no two
-   parallel, for example sides of 2, 3, 4 and 5 cm with no pair parallel.
-   It shows that the six names cover only a small part of all
-   quadrilaterals: most have no special name.
-
-## 4.6 What a Parallelogram Guarantees
+1. **No.** Opposite angles of a parallelogram are equal, but $70^\circ$ and
+   $80^\circ$ (the angles opposite each other in that list) are not.
+2. All three are **$90^\circ$**: the opposite angle is $90^\circ$, and each
+   adjacent angle is $180 - 90 = 90$. The figure is a **rectangle**.
 
 ### Exercise Set 4.5
 
-1. Adjacent angles add to $180^\circ$ and opposite angles are equal.
-   (i) $50^\circ$: $130^\circ$, $50^\circ$, $130^\circ$
-   (ii) $90^\circ$: $90^\circ$, $90^\circ$, $90^\circ$
-   (iii) $128^\circ$: $52^\circ$, $128^\circ$, $52^\circ$
-   (iv) $37^\circ$: $143^\circ$, $37^\circ$, $143^\circ$
+1. (i) $105^\circ$, $75^\circ$, $105^\circ$ (ii) $68^\circ$, $112^\circ$,
+   $68^\circ$ (iii) $90^\circ$, $90^\circ$, $90^\circ$ (iv) $136^\circ$,
+   $44^\circ$, $136^\circ$.
+2. $RS = 12$ cm and $SP = 7$ cm; perimeter $2 \times (12 + 7) = 38$, so
+   **38 cm**.
+3. $4 + 5 = 9$ parts of $180^\circ$, so $20^\circ$ each: **$80^\circ$,
+   $100^\circ$, $80^\circ$, $100^\circ$**.
+4. $AC = 2 \times 6 = 12$, so **12 cm**; $BO = 14 \div 2 = 7$, so **7 cm**.
+5. $3a - 5 = a + 7$, so $2a = 12$ and $a = 6$. $KL = 3 \times 6 - 5 = 13$, so
+   **13 cm**.
+6. Two adjacent sides make half the perimeter, 28 cm: $x + (x - 6) = 28$, so
+   $x = 17$. The sides are **17 cm** and **11 cm**.
+7. $x + (2x - 30) = 180$, so $3x = 210$ and $x = 70$. The angles are
+   **$70^\circ$, $110^\circ$, $70^\circ$, $110^\circ$**.
+8. $2y + 10 = 3y - 25$, so $y = 35$. Then $\angle A = 80^\circ$ and
+   $\angle B = 180 - 80 = 100$, that is **$100^\circ$**.
 
-2. $CD = 9$ cm and $DA = 5$ cm; the perimeter is $2 \times (9 + 5) = 28$ cm.
+---
 
-3. $2 + 3 = 5$ parts make $180^\circ$, so one part is $36^\circ$. The angles
-   are **$72^\circ$, $108^\circ$, $72^\circ$ and $108^\circ$**.
+## 4.7 Rhombus, Rectangle and Square
 
-4. The diagonals bisect each other: $PR = 2 \times 7 = 14$ cm and
-   $QS = 2 \times 4 = 8$ cm.
+### Think and Reflect
 
-5. $2y + 1 = y + 8$, so $y = 7$ and $AB = 2 \times 7 + 1 = 15$ cm.
-
-6. Call the shorter side $a$. Then $2 \times (a + a + 3) = 48$, so
-   $4a + 6 = 48$ and $a = 10.5$. The sides are **10.5 cm** and **13.5 cm**.
-
-7. Two equal angles that add to $180^\circ$ are each $90^\circ$, and then
-   the opposite angles are $90^\circ$ too. So the figure is a
-   **rectangle**. There is no other answer, because the two conditions fix
-   every angle at $90^\circ$.
-
-8. Let $AB$ be equal and parallel to $DC$, and draw the diagonal $AC$. In
-   triangles $ABC$ and $CDA$: $AB = CD$ (given), $AC$ is common, and
-   $\angle BAC = \angle DCA$ (alternate angles, since $AB$ is parallel to
-   $DC$). So the triangles are congruent (SAS), and
-   $\angle BCA = \angle DAC$. These are alternate angles for the lines $BC$
-   and $AD$, so $BC$ is parallel to $AD$. Both pairs of opposite sides are
-   parallel: the figure is a **parallelogram**.
-
-9. $O$ is the midpoint of each diagonal, so it is half a diagonal away from
-   each end. It is the same distance from all four vertices **only when the
-   two diagonals are equal** — that is, when the parallelogram is a
-   rectangle (or a square). Otherwise it is nearer the ends of the shorter
-   diagonal.
-
-10. The angle next to the right angle is $180 - 90 = 90$, and opposite
-    angles are equal, so all four angles are $90^\circ$. The figure is a
-    **rectangle**.
-
-## 4.7 Three Special Parallelograms
+1. **Yes**, when the rectangle is a **square**: then it is also a rhombus.
+2. A rhombus with one very small angle has one long diagonal and one very
+   short one. The diagonals are equal only when the angles are all right
+   angles, that is, when the rhombus is a square.
 
 ### Exercise Set 4.6
 
-1. (i) parallelogram, rhombus, rectangle, square
-   (ii) rectangle, square
-   (iii) kite, rhombus, square
-   (iv) square
+1. (i) rectangle, square (ii) rhombus, square (iii) rectangle, square
+   (iv) rhombus, square.
+2. $QS = PR = 16$ cm; $OQ = 16 \div 2 = 8$, so **8 cm**.
+3. $\angle AOB = 90^\circ$; $\angle ABO = 180 - 90 - 32 = 58$, so
+   $58^\circ$; $\angle ABC = 2 \times 58 = 116$, so **$116^\circ$**.
+4. $\angle WOX = 90^\circ$ and $\angle OWX = 45^\circ$.
+5. $OA = OB$, so $\angle OAB = (180 - 100) \div 2 = 40$, that is $40^\circ$.
+   $\angle OBA = 40^\circ$ too, so $\angle OBC = 90 - 40 = 50$, that is
+   **$50^\circ$**.
+6. **No.** Diagonals that bisect each other and are equal make a
+   **rectangle**. *What the drawing must show:* a rectangle that is not a
+   square, for example one whose diagonals cross at $60^\circ$.
+7. A **kite** (for example sides 3, 3, 5, 5 cm). It is not a rhombus, because
+   its diagonals do not bisect each other.
+8. $KL = LM$, since all sides of a rhombus are equal, so triangle $KLM$ is
+   isosceles. $\angle LKM = (180 - 124) \div 2 = 28$, that is **$28^\circ$**.
 
-2. The half-diagonals are 5 cm and 12 cm, and $5^2 + 12^2 = 25 + 144 = 169 = 13^2$.
-   The side is **13 cm** and the perimeter $4 \times 13 = 52$ cm.
+---
 
-3. $8^2 + 15^2 = 64 + 225 = 289 = 17^2$, so each diagonal is **17 cm**.
+## 4.8 Why Frames Need Triangles
 
-4. Half the known diagonal is 5 cm, and $13^2 - 5^2 = 169 - 25 = 144 = 12^2$.
-   The other half-diagonal is 12 cm, so the other diagonal is **24 cm**.
+### Think and Reflect
 
-5. The diagonals of a square cross at right angles, so
-   $\angle AOB = 90^\circ$. They cut the corner angles in half, so
-   $\angle OAB = 90 \div 2 = 45$, which is $45^\circ$. (The side of 7 cm is
-   not needed.)
+1. **2** braces, making **3** triangles ($5 - 3 = 2$ and $5 - 2 = 3$).
+2. *Answers will vary.* For example: a bicycle frame, a roof truss, the legs
+   of a folding stool, an electricity tower.
 
-6. A **rectangle** that is not a square. The drawing must show a rectangle
-   with its equal diagonals crossing at an angle other than $90^\circ$.
+---
 
-7. Answers will vary. A **kite** does it: for example, diagonals of 6 cm and
-   8 cm crossing at right angles, with the 8 cm one cut at its midpoint and
-   the 6 cm one cut into 2 cm and 4 cm. Its sides are not all equal, so it
-   is not a rhombus.
+## By the Book
 
-8. In a rectangle, triangles $ABC$ and $BAD$ are congruent, which makes the
-   diagonals equal; but the diagonals cross at right angles only when the
-   sides are all equal, which makes it a square. In a rhombus, the equal
-   sides make the diagonals cross at right angles; but the diagonals are
-   equal only when the angles are right, which again makes it a square.
+Fifty questions in the six board forms: very short answer (2 marks), short
+answer (3), long answer (5), assertion and reason (1), case-based (4),
+objective (1). Written to BY-THE-BOOK.md, 26 September 2026. The book's own
+key is in Beyond the Book's Answers stage; this is the same key.
 
-9. The shorter diagonal joins the ends of the two 10 cm sides that make the
-   $60^\circ$ angle. That triangle has two equal sides, so its other two
-   angles are equal, and each is $(180 - 60) \div 2 = 60$. It is
-   equilateral, so the shorter diagonal is **10 cm**.
+### Very short answer
 
-10. **Yes, it must be a parallelogram.** In a kite, the diagonal along its
-    line of symmetry does divide it into two triangles of equal area, but
-    the other diagonal usually does not, so a kite does not meet the
-    condition. If diagonal $AC$ halves the area, then $B$ and $D$ are the
-    same distance from $AC$, so $AC$ passes through the midpoint of $BD$. In
-    the same way $BD$ passes through the midpoint of $AC$. So the diagonals
-    meet at the midpoint of each: they bisect each other, and the figure is
-    a parallelogram.
+1. $360 \div 72 = 5$ sides, so $\frac{5 \times 2}{2} = 5$ diagonals.
+2. **No.** $1530 \div 180 = 8.5$ is not a whole number.
+3. $3 + 4 + 5 + 6 = 18$ parts, $360 \div 18 = 20$. Largest:
+   $6 \times 20 = 120$, so **$120^\circ$**.
+4. $\angle A + \angle B = 180^\circ$: $8x + 20 = 180$, so $x = 20$ and
+   $\angle A = 80^\circ$.
+5. 8 exterior angles make $180^\circ$, so each is $22.5^\circ$;
+   $360 \div 22.5 = 16$ sides.
+6. The exterior angle would be $35^\circ$, and 35 does not divide 360
+   ($35 \times 10 = 350$, $35 \times 11 = 385$).
+7. $OP = OQ$: $2y + 3 = 4y - 5$, so $y = 4$. $OP = 11$ cm, so
+   $PR = 22$ cm.
+8. $n(n - 3) = 70 = 10 \times 7$, so **10** sides.
+9. $x + (x + 40) = 180$, so $x = 70$: $70^\circ$, $110^\circ$, $70^\circ$,
+   $110^\circ$.
+10. **No.** $80 + 95 + 105 + 90 = 370$, but exterior angles add to
+    $360^\circ$.
+
+### Short answer
+
+11. $6x + 120 = 720$, so $x = 100$. Smallest exterior angle:
+    $180 - 140 = 40$, that is $40^\circ$.
+12. $360 \div 8 = 45$ sides; each angle $172^\circ$; sum
+    $(45 - 2) \times 180 = 7740$, so $7740^\circ$.
+13. $2 \times (3x + 1 + 2x - 1) = 60$, so $10x = 60$ and $x = 6$.
+    $PQ = 19$ cm, $QR = 11$ cm.
+14. $(180 - a) + (180 - b) + (180 - c) = 540 - (a + b + c) = 540 - 180 = 360$.
+15. $\angle ABC = 116^\circ$; $AB = AD$, so $\angle ABD = 58^\circ$;
+    $\angle AOB = 90^\circ$.
+16. $8x + 40 = 360$, so $x = 40$: $80^\circ$, $120^\circ$, $70^\circ$,
+    $90^\circ$ — exactly one right angle.
+17. **No**: $360 \div 80 = 4.5$. **Yes**: $360 \div 24 = 15$ sides.
+18. $AB = DC$, $BC$ common, $AC = DB$: congruent (SSS). So
+    $\angle B = \angle C$; they are adjacent angles, which add to
+    $180^\circ$, so each is $90^\circ$.
+19. $120^\circ$, $60^\circ$, $120^\circ$; perimeter
+    $2 \times (30 + 20) = 100$ cm. Equal diagonals: a **rectangle**.
+20. *Find the mistake.* **Step 3.** $(n - 2) \times 180 = 180n - 360$, not
+    $180n - 2$. So $30n = 360$ and $n = 12$.
+
+### Long answer
+
+21. $x + (x + 16) = 64$, so $x = 24$: $BC = 24$ m, $AB = 40$ m. Fencing
+    costs ₹5760, since $128 \times 45 = 5760$.
+22. A diagonal cuts the quadrilateral into two triangles whose angles make up
+    its four angles: $2 \times 180^\circ = 360^\circ$. Then
+    $\angle P + 2\angle P + \angle P + 2\angle P + 30 = 360$, so
+    $\angle P = 55^\circ$, $\angle Q = 110^\circ$, $\angle R = 55^\circ$,
+    $\angle S = 140^\circ$.
+23. Interior and exterior angles together: $180n$. So the exterior angles
+    add to $180n - (n - 2) \times 180 = 360$. Exterior angle
+    $180 - 176 = 4$, so $360 \div 4 = 90$ sides.
+24. $OR = PR \div 2$: $3a + 4 = 2(a + 5)$, so $a = 6$ and $PR = 22$ cm.
+    $\angle QPS = 180 - 108 = 72$, so $\angle QPO = 36^\circ$ and
+    $\angle PQO = 54^\circ$; $\angle POQ = 180 - 36 - 54 = 90$.
+25. $6x + 30 = 180$, so $x = 25$: $\angle AOB = 112^\circ$,
+    $\angle BOC = 68^\circ$. $\angle OAB = (180 - 112) \div 2 = 34$ and
+    $\angle OBC = (180 - 68) \div 2 = 56$; $34 + 56 = 90$.
+26. $I + E = 180$ and $I - E = 162$, so $I = 171^\circ$, $E = 9^\circ$.
+    $360 \div 9 = 40$ sides, with $\frac{40 \times 37}{2} = 740$ diagonals.
+27. $\angle P + \angle S = 180^\circ$: $3x + 30 = 180$, so $x = 50$.
+    $\angle P = 110^\circ$, $\angle S = 70^\circ$, $\angle Q = 145^\circ$,
+    $\angle R = 35^\circ$; $110 + 145 + 35 + 70 = 360$.
+28. $AB = AD$, $CB = CD$, $AC$ common: congruent (SSS), so
+    $\angle ABC = \angle ADC$. Each is $(360 - 120 - 60) \div 2 = 90$, that
+    is $90^\circ$.
+29. $2x + 230 = 360$, so $x = 65$. Exterior angles 45, 70, 65, 65, 55, 60;
+    interior angles 135, 110, 115, 115, 125, 120 (degrees), and
+    $135 + 110 + 115 + 115 + 125 + 120 = 720$. Largest at $A$.
+30. $\angle ACB = \angle DAC = 30^\circ$ (alternate angles).
+    $\angle AOB = 180 - 35 - 40 = 105$, so $105^\circ$.
+    $\angle ABC = 180 - 65 = 115$, so $115^\circ$. $\angle CBD = 115 - 40 = 75$,
+    and $\angle ADB = \angle CBD = 75^\circ$ (alternate angles).
+
+### Assertion and reason
+
+31 (a) · 32 (c) · 33 (b) · 34 (d) · 35 (a)
+
+### Case-based questions
+
+36. (i) **9** (ii) **$120^\circ$** (iii) exterior angle $40^\circ$, so 9 sides
+    and $\frac{9 \times 6}{2} = 27$ lines.
+37. (i) **$540^\circ$** (ii) $540 - 425 = 115$, so **$115^\circ$** (iii)
+    $70^\circ$, $80^\circ$, $60^\circ$, $85^\circ$, $65^\circ$
+    ($70 + 80 + 60 + 85 + 65 = 360$); the most at **$D$**.
+38. (i) $CD = 45$ cm, $DA = 30$ cm (ii) **$110^\circ$** (iii)
+    $\angle ACD = 30^\circ$ (alternate angles, $AB$ parallel to $DC$);
+    $\angle DAC = 70 - 30 = 40$, so **$40^\circ$**.
+39. (i) $CD$ (ii) $360 - 110 - 50 = 200$, so **$200^\circ$** (iii)
+    **$100^\circ$**, since $\angle ABC = \angle ADC$.
+40. (i) $360 \div 16 = 22.5$, so **$22.5^\circ$** (ii) **$157.5^\circ$**
+    (iii) $3 \times 360 = 1080$, so **$1080^\circ$**, passing **48** corners.
+
+### Objective questions
+
+41 (b) · 42 (a) · 43 (c) · 44 (d) · 45 (c) · 46 (c) · 47 (a) · 48 (b) · 49 (d) · 50 (b)
+
+- 41. $n(n - 3) = 154 = 14 \times 11$. 43. $6x = 360$. 44. $4\angle B = 180$,
+  so $\angle B = 45^\circ$ and $\angle C = \angle A = 135^\circ$. 45. I and
+  III are true; the diagonals of a rhombus are equal only in a square.
+  46. Equal diagonals that also bisect each other make a rectangle; a kite
+  can have equal diagonals. 47. $360 - 290 = 70$. 48. $2160 \div 180 = 12$,
+  so 14 sides. 49. $12x = 360$. 50. $(180 - 80) \div 2 = 50$.
 
 ---
 
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since the maths-v2 conversion: the tried-and-explained
+questions first (no head in the book), then five parts, each with two solved
+examples and its practice questions. Beyond's example numbers are its own.
 
-Each of the eight questions is answered in the running text that follows it
-on the page. The results, for reference: (1) $3240^\circ$; (2) the
-quadrilateral, $n = 4$; (3) with the diagonal $BD$, the two triangles would need
-$20 < 3 + 4 + 5 = 12$; (4) the fourth must be $90^\circ$, but a
-pentagon with four right angles cannot exist; (5) the other diagonal lies
-inside, so the sum is still $360^\circ$; (6) triangles $AOB$ and $COD$ are
-congruent, so $AB$ is parallel to $CD$, and likewise $BC$ to $AD$; (7) the
-square; (8) 22 values (the divisors of 360, listed in pairs, less 1 and 2).
+### Tried and explained (no head in the book)
 
-### Stage 2 · Solved Examples
+Each question is answered in the running text under it, word for word as
+before the conversion:
 
-The 23 September 2026 examples, in examination formats. Each is worked in full on
-its page; these are the keys.
+1. $3240^\circ$ ($20 \times 180 - 360$).
+2. The quadrilateral, and only the quadrilateral.
+3. $20 < AB + BC + CD = 12$ is false, so no quadrilateral exists.
+4. The fourth angle must be $90^\circ$; a pentagon's fifth angle would be
+   $180^\circ$, so no such pentagon exists.
+5. The diagonal that lies inside still gives $180 + 180 = 360$.
+6. Triangles $AOB$ and $COD$ are congruent, so $AB$ is parallel to $CD$; the
+   same for $BC$ and $AD$.
+7. The square.
+8. $22$ values of $n$ (the divisors of 360 except 1 and 2).
 
-1. (c) 11 *(single correct)*
-2. (a) $160^\circ$ *(single correct)*
-3. (b) 30 *(single correct)*
-4. (d) $110^\circ$ *(single correct)*
-5. (a) 24 *(single correct)*
-6. (b) $35^\circ$ *(single correct)*
-7. (a), (c) *(multiple correct)*
-8. (a), (b), (d) *(multiple correct)*
-9. (a), (b), (c) *(multiple correct)*
-10. (a), (c), (d) *(multiple correct)*
-11. 13 *(numerical answer)*
-12. 128 *(numerical answer)*
-13. 18 *(numerical answer)*
-14. (a) P–3, Q–4, R–2, S–1 *(matching)*
-15. (c) P–3, Q–4, R–1, S–2 *(matching)*
+### Solved examples
 
-### Stage 3 · Practice
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (c) 11 |
+| | 2 | (a) $160^\circ$ |
+| More than one correct | 3 | (a), (c) |
+| | 4 | (a), (c), (d) |
+| Numerical answer | 5 | 128 |
+| | 6 | 18 |
+| Matching | 7 | (a) P–3, Q–4, R–2, S–1 |
+| | 8 | (c) P–2, Q–3, R–1 |
+| Paragraph-based | 9 | (i) (b) $135^\circ$; (ii) 4; (iii) 3 |
+| | 10 | (i) (b) 62 cm; (ii) 122; (iii) 45 |
 
-Multiple choice and assertion–reason, as the key prints it:
-1 (c), 2 (a), 3 (d), 4 (b), 5 (c), 6 (c), 7 (d), 8 (a), 9 (b), 10 (d),
-11 (b), 12 (d), 13 (a), 14 (c), 15 (b), 16 (d), 17 (c), 18 (b), 19 (a).
+### Practice
 
-The working for each:
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (d) 9 · 2 (a) 252 · 3 (c) $40^\circ$ · 4 (b) trapezium |
+| More than one correct | 5–8 | 5 (a), (c) · 6 (a), (b), (d) · 7 (a), (c), (d) · 8 (a), (c) |
+| Numerical answer | 9–11 | 9 **9** · 10 **15** · 11 **90** |
+| Matching | 12–13 | 12 (d) P–3, Q–2, R–1 · 13 (b) P–3, Q–2, R–1 |
+| Paragraph-based | 14–15 | 14 (i) (a) $120^\circ$; (ii) 80; (iii) 5 · 15 (i) (b) 130 cm; (ii) 65; (iii) 134 |
 
-1. $(13 - 2) \times 180 = 1980$.
-2. $\dfrac{7 \times 4}{2} = 14$.
-3. $360 \div 45 = 8$.
-4. $360 \div 60 = 6$ and $180 - 6 = 174$.
-5. $360 \div 72 = 5$: a pentagon.
-6. $360 \div 80 = 4.5$ is not a whole number. ($360 \div 15 = 24$, $360 \div 90 = 4$, $360 \div 60 = 6$.)
-7. The kite's definition: two pairs of adjacent sides equal.
-8. Opposite angles are equal: $\angle C = 58^\circ$.
-9. $AO = 18 \div 2 = 9$ and $BD = 2 \times 5 = 10$.
-10. $AO = 18 \div 2 = 9$ cm; a rhombus's diagonals cross at right angles, so $\angle AOB = 90^\circ$.
-11. $(180 - 120) \div 2 = 30$.
-12. Triangle $ABC$ needs $AC < 3 + 4 = 7$ and $4 < 3 + AC$; triangle $ACD$ needs $AC < 6 + 8 = 14$ and $8 < 6 + AC$. So $AC$ is more than 2 cm and less than 7 cm: only 5 cm. (1 cm is too short, 7 cm lays triangle $ABC$ flat, 10 cm is too long.)
-13. $360 \div 12 = 30$, and $2 \times 30 = 60$.
-14. $n(n-3) = 130 = 13 \times 10$, so $n = 13$.
-15. $7 \times 360 = 2520$, $2520 \div 180 = 14$, so $n = 16$.
-16. (d) $360 \div 70$ is not a whole number, so A is false; R is true.
-17. (c) opposite angles are equal, so A is true; adjacent angles add to $180^\circ$, so R is false.
-18. (b) both true; the number of diagonals does not explain the angle sum.
-19. (a) With the 9 cm rod as $DA$ and the diagonal $BD$, the two triangles need $9 < AB + BD$ and $BD < BC + CD$, so $9 < 2 + 3 + 4 = 9$, which is false. So A is true, and R is why.
-20. $15 - 3 = 12$ diagonals and $15 - 2 = 13$ triangles.
-21. $(22 - 2) \times 180 = 3600$, so $3600^\circ$.
-22. $\angle B = 180 - 64 = 116$, so $116^\circ$; $\angle C = 64^\circ$.
-23. $3060 \div 180 = 17$, so 19 sides.
-24. Yes: $180 - 171 = 9$ and $360 \div 9 = 40$, so 40 sides.
-25. $6x + 14 = 38$, $x = 4$; $AB = 11$ cm, $BC = 8$ cm. Check: $2 \times (11 + 8) = 38$.
-26. $3y - 2 = 2y + 5$, $y = 7$; $PR = 19$ cm, so $OQ = 9.5$ cm.
-27. Interior $170^\circ$, exterior $10^\circ$; $360 \div 10 = 36$ sides; sum $(36 - 2) \times 180 = 6120$, so $6120^\circ$.
-28. $AO = 15$ cm, $BO = 8$ cm, $\angle AOB = 90^\circ$, $\angle ABO = 180 - 90 - 28 = 62$, so $62^\circ$. Each triangle has legs 15 cm and 8 cm with a right angle between them, so they are the same triangle.
-29. (a) each triangle has $90^\circ$, $37^\circ$ and $180 - 90 - 37 = 53$, so $53^\circ$ (in the top one the $37^\circ$ is an alternate angle) (b) two triangles, each fixed by its sides (c) $6 - 3 = 3$ braces, $6 - 2 = 4$ triangles.
-30. (a) $540 - 430 = 110$, so $110^\circ$ (b) $60^\circ$, $85^\circ$, $70^\circ$, $75^\circ$, $70^\circ$; $60 + 85 + 70 + 75 + 70 = 360$ (c) at $B$, $85^\circ$.
-31. (a) $CD = 40$ cm, $DA = 25$ cm, perimeter 130 cm (b) $\angle B = 115^\circ$, $\angle C = 65^\circ$, $\angle D = 115^\circ$ (c) a rectangle, every angle $90^\circ$, perimeter still 130 cm.
+- Q1. $\frac{n(n - 3)}{2} = 3n$, so $n - 3 = 6$ and $n = 9$.
+- Q2. $3960 \div 180 = 22$, so $n = 24$ and $\frac{24 \times 21}{2} = 252$.
+- Q3. $180 \div 18 = 10$: $\angle R = 70^\circ$, $\angle S = 110^\circ$.
+- Q4. $4x + 120 = 360$, so $x = 60$: $60^\circ$, $80^\circ$, $100^\circ$,
+  $120^\circ$. $\angle A + \angle D = 180^\circ$, so $AB$ is parallel to
+  $DC$; $\angle A + \angle B = 140^\circ$, so $AD$ is not parallel to $BC$.
+- Q5. $360 \div 12 = 30$ and $360 \div 15 = 24$; $360 \div 14$ and
+  $360 \div 16 = 22.5$ are not whole numbers.
+- Q7. $\angle Q = (360 - 200) \div 2 = 80$; $\angle P + \angle S = 180^\circ$
+  gives $PQ$ parallel to $SR$.
+- Q8. $1260 \div 180 = 7$ and $2700 \div 180 = 15$; $1350 \div 180 = 7.5$.
+- Q9. A polygon with 3 more sides has $3n$ more diagonals; $3n = 27$.
+- Q10. $\frac{360}{n} - \frac{360}{2n} = \frac{180}{n} = 12$, so $n = 15$.
+- Q11. $\angle A + \angle B = 180^\circ$, so their halves add to $90^\circ$.
+- Q12. $17 \times 14 = 238$; $360 \div 2 = 180$; $25 - 2 = 23$.
+- Q14. $720 - 480 = 240$, so $E = F = 120^\circ$; exterior angles 80, 50,
+  40, 70, 60, 60; $1800 \div 360 = 5$.
+- Q15. $QS = PR = 130$ cm; $OQ = 65$ cm; $\angle POQ = 180 - 23 - 23 = 134$.
