@@ -2,77 +2,67 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">6.3</span><span class="name">A Date in One Number</span></h2>
+      <h2><span class="badge">6.2</span><span class="name">A Date in One Number</span></h2>
 
-      <p>The next trick does something the first one did not: it gets two numbers back
-      out of one. Ask somebody to think of a date — Republic Day, say, which is the
-      twenty-sixth of the first month. Then:</p>
+      <p>The next trick gets two numbers back out of one. Ask a friend to think of a date, such as Children&rsquo;s Day, the $14$th day of the $11$th month. Then ask them to follow these steps.</p>
 
       <div class="work work--list">
         <div class="work__row">
-          <span class="work__label work__label--wide">multiply the month by 5</span>
-          <span>$1 \times 5 = 5$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">add 6</span>
-          <span>$5 + 6 = 11$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">multiply by 4</span>
+          <span class="work__label work__label--wide">multiply the month by 4</span>
           <span>$11 \times 4 = 44$</span>
         </div>
         <div class="work__row">
-          <span class="work__label work__label--wide">add 9</span>
-          <span>$44 + 9 = 53$</span>
+          <span class="work__label work__label--wide">add 7</span>
+          <span>$44 + 7 = 51$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">multiply by 5</span>
-          <span>$53 \times 5 = 265$</span>
+          <span>$51 \times 5 = 255$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">add 3</span>
+          <span>$255 + 3 = 258$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">multiply by 5</span>
+          <span>$258 \times 5 = 1290$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">add the day</span>
-          <span>$265 + 26 = 291$</span>
+          <span>$1290 + 14 = 1304$</span>
         </div>
       </div>
 
-      <p>Told only that the answer is $291$, you subtract $165$ and get $126$ — and read
-      it as the first month, twenty-sixth day. Follow the same steps with a month $m$ and
-      a day $d$ and it is no longer surprising.</p>
+      <p>Your friend tells you only the answer, $1304$. Take away $190$ to get $1114$, and read it as month $11$, day $14$. To see why this works, follow the same steps with a month $m$ and a day $d$.</p>
 
       <div class="work">
         <div class="work__row">
           <span class="work__label work__label--wide">after the first three</span>
-          <span>$(5m + 6) \times 4 = 20m + 24$</span>
+          <span>$(4m + 7) \times 5 = 20m + 35$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">then</span>
-          <span>$(20m + 24 + 9) \times 5 = 100m + 165$</span>
+          <span>$(20m + 35 + 3) \times 5 = 100m + 190$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">and the day</span>
-          <span>$100m + 165 + d$</span>
+          <span>$100m + 190 + d$</span>
         </div>
       </div>
 
-      <p>So the $165$ is there to be taken off, and what is left is $100m + d$. Two
-      choices in the design are doing all the work, and both are worth naming. The three
-      multipliers are $5$, $4$ and $5$, whose product is $100$ — which is why the month
-      ends up in the hundreds. And a day is never more than $31$, so $d$ cannot reach
-      $100$ and spill over into the month's place. Read $126$ as <em>one hundred, and
-      twenty-six left over</em> and the date falls out.</p>
+      <p>So the $190$ is there to be taken away, and what is left is $100m + d$. Two choices make the trick work. First, the three multipliers are $4$, $5$ and $5$, and $4 \times 5 \times 5 = 100$. So the month ends up in the hundreds. Second, a day is never more than $31$. So $d$ is always less than $100$, and it cannot spill over into the month&rsquo;s place.</p>
 
-      <p>Which raises a fair question about the other two steps. If the whole design is
-      the $\times 5$, $\times 4$, $\times 5$, what are the <em>add 6</em> and the
-      <em>add 9</em> for? They contribute nothing but the $165$ that has to be taken off
-      again. They are camouflage. Strip them out and the instructions read
-      <em>multiply the month by five, then by four, then by five, and add the day</em>.
-      Now anybody can see that the month has merely been multiplied by a
-      hundred, and the trick is over before it starts.</p>
+      <p>What are the steps <em>add 7</em> and <em>add 3</em> for? They only put in the $190$ that is taken away later. They hide the design. Without them, the steps would be: multiply the month by $4$, then by $5$, then by $5$, and add the day. Anyone could then see that the month has just been multiplied by $100$. If you change <em>add 7</em> to <em>add 8</em>, the number to take away changes from $190$ to $215$.</p>
 
-      <p>The same design packs any two numbers into one, so long as the multiplier is
-      chosen larger than anything the second number can reach. A month and a day need a
-      hundred. A month, a day and a two-digit year would need ten thousand — and a
-      trick built to hide three numbers is a trick with a great many steps.</p>
+      <p>The same design packs any two numbers into one, as long as the multiplier is bigger than the second number can ever be.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two numbers in one</div>
+        <ul class="c-keyidea__points">
+          <li>In $100m + d$, the month $m$ sits in the hundreds and the day $d$ in the last two places.</li>
+          <li>This works because the day $d$ is always less than $100$.</li>
+        </ul>
+      </div>
 
     </div>
   </div>

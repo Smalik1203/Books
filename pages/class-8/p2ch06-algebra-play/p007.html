@@ -2,10 +2,9 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">6.5</span><span class="name">What the Top Counts</span></h2>
+      <h2><span class="badge">6.4</span><span class="name">What the Top Counts</span></h2>
 
-      <p>A pyramid can be climbed without filling in any of the middle. Put
-      letter-numbers along the bottom row and work upwards.</p>
+      <p>You can find the top of a pyramid without filling in the middle. Put letter-numbers along the bottom row and work up.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
@@ -22,22 +21,13 @@
             <text class="dg-label" x="122" y="46" text-anchor="middle">b + c</text>
             <text class="dg-label" x="98" y="24" text-anchor="middle">a + 2b + c</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 6.3</span> The top of a three-row pyramid
-          is $a + 2b + c$. The middle letter is counted twice because it feeds both boxes
-          in the row above it, and the two ends feed only one each.</figcaption>
+          <figcaption><span class="fignum">Fig. 6.3</span> The top of a three-row pyramid is $a + 2b + c$. The middle letter is counted twice, because it feeds both boxes above it.</figcaption>
         </figure>
       </div>
 
-      <p>So the top comes straight from the bottom row, with no pyramid drawn: for a
-      bottom row of $4$, $13$, $8$ it is $4 + 26 + 8 = 38$. Carry the same working up one
-      more row and the four bottom entries $a$, $b$, $c$, $d$ give a top of
-      $a + 3b + 3c + d$ — so a bottom row of $8$, $19$, $21$, $13$ has
-      $8 + 57 + 63 + 13 = 141$ at its peak.</p>
+      <p>So the top comes straight from the bottom row. For the bottom row $5$, $12$, $6$, the top is $5 + 24 + 6 = 35$. Work up one more row, and a bottom row $a$, $b$, $c$, $d$ gives the top $a + 3b + 3c + d$. So the bottom row $3$, $10$, $7$, $9$ has the top $3 + 30 + 21 + 9 = 63$.</p>
 
-      <p>The interesting part is the run of multipliers. One row gives $1$; two give $1$,
-      $1$; three give $1$, $2$, $1$; four give $1$, $3$, $3$, $1$. Each of those rows is
-      built from the one before it in exactly the way the pyramid is — by adding
-      neighbours in pairs.</p>
+      <p>Now look at the multipliers. One row gives $1$. Two rows give $1$, $1$. Three rows give $1$, $2$, $1$. Four rows give $1$, $3$, $3$, $1$. Each row is made from the row before by adding neighbours in pairs, just as the pyramid is.</p>
 
       <div class="c-figure c-figure--md">
         <figure>
@@ -60,17 +50,19 @@
             <text class="dg-tick" x="82" y="72" text-anchor="middle">3</text>
             <text class="dg-tick" x="106" y="72" text-anchor="middle">1</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 6.4</span> The multipliers for pyramids
-          of one, two, three and four rows. Each row is made by adding neighbours in the
-          row above, which is the pyramid's own rule again.</figcaption>
+          <figcaption><span class="fignum">Fig. 6.4</span> The multipliers for pyramids of one, two, three and four rows. Each row is made by adding neighbours in the row above.</figcaption>
         </figure>
       </div>
 
-      <p>There is a reason those numbers count what they count. A multiplier says how
-      many separate routes lead from that bottom box up to the peak, because every route
-      carries the number once more into the total. In a three-row pyramid the middle box
-      can go up-left or up-right and still arrive, so it is counted twice; the two end
-      boxes have one route each.</p>
+      <p>There is a reason for these numbers. A multiplier counts the routes from a bottom box up to the top. Each route carries the number into the total once more. In a three-row pyramid, the middle box can go up-left or up-right and still reach the top, so it is counted twice. Each end box has only one route.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The top of a pyramid</div>
+        <ul class="c-keyidea__points">
+          <li>With three rows, the bottom row $a$, $b$, $c$ gives the top $a + 2b + c$.</li>
+          <li>With four rows, the bottom row $a$, $b$, $c$, $d$ gives the top $a + 3b + 3c + d$.</li>
+        </ul>
+      </div>
 
     </div>
   </div>

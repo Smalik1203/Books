@@ -1,4 +1,77 @@
-# Class 8 · Mathematics II · Chapter 6 — Why the Trick Always Works
+# Class 8 · Mathematics II · Chapter 6 — Algebra Play
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the pages, Beyond the Book and its
+practice further down this log.** Converted with CONVERT-V2.md against the
+Class 6 Chapter 1 model. `chapter.json`: `design` maths-v2, `palette`
+prism-mulberry, `edition` 196x276-large, `keepExerciseSets`, `accent`
+#75485f. 41 pages:
+
+* **Body p001–p020** (19 pages and the Summary, p020, `data-close`). Ten
+  sections in NCERT's order; the old 6.1 Introduction is folded into 6.1
+  Think of a Number. Every section now has a key idea and a Think and
+  Reflect. The prose was rewritten in plain English (short sentences, the
+  idioms gone). Two worked examples were added where a page needed teaching:
+  Example 5 (a shapes grid where no row has one shape, solved by
+  substitution) and Example 7 (a number from its sum and difference with its
+  reverse). Examples now run 1–8. The two reprinted figures (multipliers,
+  calendar) are gone: the questions that needed them were made
+  self-contained, so figures run Fig. 6.1–6.6, and Fig. 6.7 is in By the Book.
+  `dg-fill-d` (beige) was replaced by `dg-fill-b-soft` in the pyramids.
+* **No NCERT expression.** Replaced: Mukta and Shubham (now Tanvi and Irfan;
+  the trick is now double, add 10, halve → 5); the date trick's steps
+  (now ×4, +7, ×5, +3, ×5, take away 190; Children's Day and Teachers' Day
+  in place of Republic and Independence Day); every pyramid's numbers and
+  the opener sketch (3, 8, 5 → 24); the Virahānka–Fibonacci Think and
+  Reflect (now the same number along the bottom); the calendar, now July
+  2026 with 8, 9, 15, 16 shaded; the shapes grid numbers; the digits of the
+  largest-product section (4, 6, 7) and its example; the reversal numbers;
+  482482 → 736736; the genie and Karim (now a doubling game at a school
+  fair, Farhan, fee 16, start 14); and every exercise question — pilgrim and
+  ponds → Kavya's stickers, horses and hens → cows and ducks, the mother's
+  age, Gauri and Naina, the dosa cart and the 1/3 fraction pattern all
+  replaced. Each exercise set ends in `c-practice__note` citing NCERT
+  *Figure it Out* by section (§6.2, §6.3 and §6.4, §6.5 and §6.6, §6.7 and
+  §6.8, §6.9): no NCERT page number could be established from the chapter's
+  files.
+* **By the Book p090–p096** (`data-board`, last `data-close`): 50 questions,
+  10 · 10 · 10 · 5 · 5 · 10, written to BY-THE-BOOK.md at Class 8 — letters in
+  every word problem, algebraic *Show that* (Q11, Q17, Q18, Q20, Q29), one
+  find-the-mistake (Q15, order of operations), one *In the given figure*
+  (Q30, Fig. 6.7), case passages with a small table, one multi-statement MCQ
+  (Q49), a named student's claim (Q50). Four of the old practice questions
+  were kept (old 23–26 → Q12–Q16). Seven pages, not five: the long answers
+  and cases are long.
+* **Beyond the Book p101–p114**: the eight tried-and-explained questions
+  kept word for word under the band, with no stage head, except two edits
+  forced by the body: question 2 now uses this chapter's date trick
+  ($1415 - 190 = 1225$ in place of $1390 - 165$), and question 8's genie and
+  coins became a game stall and tokens (numbers unchanged, $c = 48$). Then the
+  five parts: examples kept from the old fifteen — old 2 and 5 (single),
+  8 and 9 (more than one), 11 and 13 (numerical), 14 and 15 (matching) — and
+  two new paragraph-based (Examples 9 and 10). Old Example 13's step 2 was
+  wrong (it said the other arrangements give at most 174; 27 × 8 = 216) and
+  now lists them. Check rows added to Examples 2, 5, 7, 8, 9. Fifteen new
+  practice questions, 4 · 4 · 3 · 2 · 2. Answers on a fresh page, as the model.
+* ANSWERS.md rewritten throughout for the new questions.
+
+Fitting: body, board and bridge each refit; short pages closed by cutting
+wording (the date-trick tip, a paragraph on faults in 6.3, the ten-day-week
+paragraph moved into a Think and Reflect) and by the two new body examples.
+Lone words fixed with `&nbsp;` or rewording.
+
+Checks at close: build all pages fit, every page ≥ 88% except the Summary
+(79%), By the Book's last page (40%) and the chapter's last page (29%);
+`lone-words` 0;
+`check-sums` 124 identities, 0 wrong; `orphans` 0; `check-labels` no
+collisions; `fit-options` every row fits (Q50 narrowed to one column).
+`check-numbers.mjs` rewritten for the new chapter — every identity, every
+exercise, By the Book and Beyond answer re-derived by search, every MCQ and
+assertion–reason key recomputed, ANSWERS.md keys compared — 522 claims,
+none failing; planted wrong values (a key letter, a written answer) are
+caught.
+
 
 ## Solved examples in examination formats, 23 September 2026
 

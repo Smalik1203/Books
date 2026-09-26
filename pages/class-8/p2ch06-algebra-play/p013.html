@@ -2,67 +2,64 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>To compare the last two, split each product into a tens part and a units part.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$64 \times 7$</span>
+          <span>$(60 \times 7) + (4 \times 7) = 420 + 28$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$74 \times 6$</span>
+          <span>$(70 \times 6) + (4 \times 6) = 420 + 24$</span>
+        </div>
+      </div>
+
+      <p>The tens parts are equal. In both, the tens digit and the multiplier are the two largest digits, so both tens parts are $10 \times 6 \times 7$. So the answer depends on the units parts. There, the smallest digit $4$ is multiplied by $7$ or by $6$, and it is better to multiply it by the larger one.</p>
+
+      <p>This argument used only the order of the digits, so it works for any three digits. Let the digits be $p$, $q$ and $r$, with $p < q < r$. After dropping the smaller product in each pair, we are left with $rq \times p$, $rp \times q$ and $qp \times r$. Write each one out.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$rq \times p$</span>
+          <span>$10rp + qp$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$rp \times q$</span>
+          <span>$10rq + pq$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$qp \times r$</span>
+          <span>$10qr + pr$</span>
+        </div>
+      </div>
+
+      <p>The first two share the term $pq$. So we compare $10rp$ with $10rq$, and since $q > p$ the second is larger. The second and third share $10qr$. So we compare $pq$ with $pr$, and since $r > q$ the third is larger.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">The largest product</div>
+        <p>To make $\square\,\square \times \square$ as large as possible, use the largest digit as the multiplier. Put the other two in decreasing order: $qp \times r$ when $p < q < r$.</p>
+      </div>
+
       <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__tab">Example 6</div>
         <div class="c-example__body">
-          <p>Arrange $3$, $5$ and $9$ to make the largest product, and check the rule
-          against the runner-up.</p>
+          <p>Arrange $2$, $5$ and $8$ to make the largest product, and compare it with the next largest.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$r = 9$, and $q = 5$, $p = 3$</span>
+              <span>$r = 8$, $q = 5$ and $p = 2$</span>
               <span class="work__why">by the rule</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$53 \times 9 = 477$</span>
+              <span>$52 \times 8 = 416$</span>
               <span class="work__why">largest digit multiplies</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$93 \times 5 = 465$</span>
-              <span class="work__why">the runner-up</span></div>
+              <span>$82 \times 5 = 410$</span>
+              <span class="work__why">the next largest</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$53 \times 9 = 477$ is the largest</span></div>
+              <span>$52 \times 8 = 416$ is the largest</span></div>
           </div>
-          <p>Both use $10 \times 5 \times 9 = 450$ for the tens part, and the $12$ that
-          separates them is $3 \times 9$ against $3 \times 5$. The gap between first and
-          second is exactly $3 \times (9 - 5)$, which is the argument again in
-          numbers.</p>
-        </div>
-      </div>
-
-      <h2><span class="badge">6.9</span><span class="name">Turning a Number Round</span></h2>
-
-      <p>It is Mukta's turn again. Choose a two-digit number whose digits differ, she
-      says, and keep it to yourself. Reverse the digits to make a second number. Subtract
-      the smaller from the larger. Now divide by $9$ — and there will be no
-      remainder.</p>
-
-      <p>Shubham takes $47$, reverses it to $74$, and finds $74 - 47 = 27$, which is
-      $3$ nines exactly. He tries $52$: reversed it is $25$, the difference is $27$
-      again, and again it divides. He tries $91$ and $19$ and gets $72$, which is
-      $8$ nines. Whatever he starts with, the nine is there.</p>
-
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">A two-digit number is $10a + b$</div>
-        <p>The digits $a$ and $b$ written side by side do not mean $a$ times $b$. They
-        mean $10a + b$, because the left digit counts tens. Writing that down is the one
-        move every trick in this section needs, and without it there is nothing algebra
-        can get hold of.</p>
-      </div>
-
-      <p>With the number written as $10a + b$, its reverse is $10b + a$, and the
-      subtraction is three lines of collecting.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">the difference</span>
-          <span>$(10b + a) - (10a + b)$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">collecting</span>
-          <span>$10b - b - 10a + a = 9b - 9a$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">factorising</span>
-          <span>$9(b - a)$</span>
+          <p>Both have the tens part $10 \times 5 \times 8 = 400$. The difference of $6$ comes from $2 \times 8$ against $2 \times 5$, that is, $2 \times (8 - 5)$.</p>
         </div>
       </div>
 

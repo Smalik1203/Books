@@ -2,36 +2,7 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 4</div>
-        <div class="c-example__body">
-          <p>A friend says their square adds to $70$. Find the dates. Another says
-          theirs adds to $50$. What do you tell them?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>first friend: $4a + 16 = 70$, so $4a = 54$</span>
-              <span class="work__why">not a whole number</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>second friend: $4a + 16 = 50$, so $4a = 34$</span>
-              <span class="work__why">not a whole number either</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Neither total can come from a square: both friends added wrongly</span></div>
-          </div>
-          <p>Both have added up wrongly, and you can say so without seeing the calendar.
-          Every possible total is $4a + 16$, which is a multiple of $4$; a total of $70$
-          or $50$ cannot come from any square anywhere on any calendar page. The trick
-          checks its own input, which no amount of trying out squares would have told
-          you.</p>
-        </div>
-      </div>
-
-      <p>The same handful of lines settles a bigger square. A $3 \times 3$ block holds
-      $a$, $a+1$, $a+2$ across the top, then the same three plus $7$, then plus $14$,
-      and those nine add to $9a + 72$. That factorises as $9(a + 8)$ — and $a + 8$ is the
-      date in the middle of the block. So the nine dates in any $3 \times 3$ square on a
-      calendar come to nine times the one at its centre, which is quicker to say than to
-      believe until you have seen the algebra.</p>
+      <p>The same few lines work for a bigger square. A $3 \times 3$ square holds $a$, $a + 1$ and $a + 2$ in its top row. The next row holds the same three dates plus $7$, and the last row the same three plus $14$. The nine dates add to $9a + 72$, which is $9(a + 8)$. And $a + 8$ is the date in the middle. So the nine dates in any $3 \times 3$ square add to nine times the middle date.</p>
 
       <div class="c-tip">
         <div class="c-tip__icon">
@@ -42,25 +13,40 @@
           </svg>
         </div>
         <div class="c-tip__body">
-          <p>Two things the algebra does not know: that a square must not run off the
-          right-hand edge of the week, and that it must not run past the end of the
-          month. The expression $4a + 16$ is happy with $a = 30$ in August and gives
-          $136$, which no square can produce. A formula answers the question it was
-          given, and the question of whether the square fits on the page has to be
-          asked separately.</p>
+          <p>The algebra does not know that a square must not run off the edge of a week, or past the end of the month. The expression $4a + 16$ gives $136$ for $a = 30$, but no square in July can start on the $30$th. Check separately that the square fits on the page.</p>
         </div>
       </div>
 
-      <h2><span class="badge">6.7</span><span class="name">Shapes That Stand for Numbers</span></h2>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Calendar squares</div>
+        <ul class="c-keyidea__points">
+          <li>A $2 \times 2$ square with top-left date $a$ adds to $4a + 16$.</li>
+          <li>A $3 \times 3$ square adds to nine times its middle date.</li>
+        </ul>
+      </div>
 
-      <p>A letter-number need not be a letter. In the grid below each shape stands for a
-      number — the same number every time it appears — and the figure at the end of each
-      row is the total of that row.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>The total of a $2 \times 2$ square is always a multiple of $4$. Is it always a multiple of $8$? Give an&nbsp;example.</li>
+            <li>On a calendar with a ten-day week, a $2 \times 2$ square adds to $62$. Which four dates are in it?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+      <h2><span class="badge">6.6</span><span class="name">Shapes That Stand for Numbers</span></h2>
+
+      <p>A letter-number does not have to be a letter. In the grid below, each shape stands for a number. A shape has the same number every time it appears. The number at the end of each row is the total of that row.</p>
 
       <div class="c-figure c-figure--xl">
         <figure>
           <svg viewBox="0 0 196 66" data-size="xl" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A two-row grid: the first row holds three triangles and totals twenty-seven, the second holds two circles and a triangle and totals nineteen">
+               role="img" aria-label="A two-row grid: the first row holds three triangles and totals twenty-four, the second holds two circles and a triangle and totals twenty-two">
       
             <text class="dg-note" x="133" y="11" text-anchor="middle">row total</text>
       
@@ -77,18 +63,14 @@
             <circle class="dg-line"   cx="31" cy="49" r="6"/>
             <circle class="dg-line"   cx="65" cy="49" r="6"/>
       
-            <text class="dg-tick" x="133" y="31" text-anchor="middle">27</text>
-            <text class="dg-tick" x="133" y="53" text-anchor="middle">19</text>
+            <text class="dg-tick" x="133" y="31" text-anchor="middle">24</text>
+            <text class="dg-tick" x="133" y="53" text-anchor="middle">22</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 6.7</span> Each shape is a number, the
-          same number wherever it appears. The first row settles the triangle; the
-          triangle then settles the circle.</figcaption>
+          <figcaption><span class="fignum">Fig. 6.6</span> Each shape stands for a number, the same number wherever it appears. The first row gives the triangle, and the triangle then gives the circle.</figcaption>
         </figure>
       </div>
 
-      <p>The order matters, and choosing it is the whole skill. The top row contains only
-      one kind of shape, so it is an equation in one unknown and gives its answer at
-      once. Once the triangle is known, the second row has one unknown too.</p>
+      <p>The order in which you work matters. The top row has only one kind of shape, so it gives its answer at once. Once the triangle is known, the second row has only one unknown too.</p>
 
     </div>
   </div>

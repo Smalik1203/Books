@@ -3,22 +3,15 @@
     <div class="page__main">
 
       <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
         <div class="c-reflect__box">
           <div class="c-reflect__mark">?</div>
           <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-            <p>Write the first three Virahānka–Fibonacci numbers $1$, $2$, $3$
-            along the bottom of a three-row pyramid, where each number is the sum of the
-            two before it, and fill it in.</p>
-            <p>Every entry that appears is itself a Virahānka–Fibonacci
-            number. Say why that had to happen — and then say which of them stands at the
-            top of a pyramid with four rows, and with twenty-nine.</p>
+          <ol>
+            <li>Put the same number $n$ in every box of the bottom row of a three-row pyramid. What is at the top? What if the pyramid has four rows?</li>
+            <li>Why do the multipliers in each row add up to twice the total of the row before?</li>
+          </ol>
           </div>
         </div>
       </div>
@@ -26,11 +19,11 @@
       <div class="c-practice">
         <div class="c-practice__head">Exercise Set 6.2</div>
         <ol class="c-questions">
-          <li>Without building the pyramid, find the topmost number for each bottom row.
+          <li>Without building the pyramid, find the top of the three-row pyramid with each bottom row.
                 <ol class="c-parts c-parts--3">
-                  <li>$4$, $13$, $8$</li>
-                  <li>$7$, $11$, $3$</li>
-                  <li>$10$, $14$, $25$</li>
+                  <li>$6$, $11$, $9$</li>
+                  <li>$8$, $15$, $2$</li>
+                  <li>$12$, $7$, $20$</li>
                 </ol>
             </li>
         </ol>
@@ -38,48 +31,19 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="2">
-          <li>Do the same for these bottom rows of four.
+          <li>Do the same for these four-row pyramids.
                 <ol class="c-parts c-parts--3">
-                  <li>$8$, $19$, $21$, $13$</li>
-                  <li>$7$, $18$, $19$, $6$</li>
-                  <li>$9$, $7$, $5$, $11$</li>
+                  <li>$5$, $9$, $14$, $2$</li>
+                  <li>$10$, $4$, $8$, $3$</li>
+                  <li>$6$, $13$, $1$, $12$</li>
                 </ol>
             </li>
         </ol>
       </div>
 
-      <div class="c-figure c-figure--md">
-        <figure>
-          <svg viewBox="0 0 140 78" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A triangle of multipliers: one; one and one; one, two, one; one, three, three, one">
-
-            <path class="dg-thin" d="M67 20 L61 30 M73 20 L79 30
-                                     M55 38 L49 48 M55 38 L67 48 M85 38 L91 48 M85 38 L73 48
-                                     M43 56 L37 66 M43 56 L55 66 M97 56 L103 66 M97 56 L85 66
-                                     M67 56 L61 66 M73 56 L79 66"/>
-
-            <text class="dg-tick" x="70" y="18" text-anchor="middle">1</text>
-            <text class="dg-tick" x="58" y="36" text-anchor="middle">1</text>
-            <text class="dg-tick" x="82" y="36" text-anchor="middle">1</text>
-            <text class="dg-tick" x="46" y="54" text-anchor="middle">1</text>
-            <text class="dg-tick" x="70" y="54" text-anchor="middle">2</text>
-            <text class="dg-tick" x="94" y="54" text-anchor="middle">1</text>
-            <text class="dg-tick" x="34" y="72" text-anchor="middle">1</text>
-            <text class="dg-tick" x="58" y="72" text-anchor="middle">3</text>
-            <text class="dg-tick" x="82" y="72" text-anchor="middle">3</text>
-            <text class="dg-tick" x="106" y="72" text-anchor="middle">1</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 6.5</span> (repeated from Section 6.5,
-          for Questions 3 and 7) The multipliers for pyramids of one, two, three and four
-          rows.</figcaption>
-        </figure>
-      </div>
-
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="3">
-          <li>Write the expression for the top of a five-row pyramid in terms of its
-            bottom row $a$, $b$, $c$, $d$, $e$. Check your multipliers against Fig. 6.5 by
-            extending it one row.</li>
+          <li>Write the top of a five-row pyramid in terms of its bottom row $a$, $b$, $c$, $d$, $e$. Find the multipliers by adding neighbours in the row $1$, $3$, $3$, $1$.</li>
         </ol>
       </div>
 
@@ -87,9 +51,9 @@
         <ol class="c-questions" data-start="4">
           <li>Complete each three-row pyramid.
                 <ol class="c-parts c-parts--1">
-                  <li>Top $50$, bottom ends $4$ and $6$.</li>
-                  <li>Top $40$, bottom ends $5$ and $7$.</li>
-                  <li>Top $36$, bottom ends $9$ and $7$.</li>
+                  <li>Top $52$, bottom ends $5$ and $9$.</li>
+                  <li>Top $44$, bottom ends $8$ and $6$.</li>
+                  <li>Top $30$, bottom ends $11$ and $3$.</li>
                 </ol>
             </li>
         </ol>
@@ -97,26 +61,21 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
-          <li>A three-row pyramid has $2$, $5$ and $2$ along the bottom, and another has
-            $4$, $4$ and $2$. Both tops are $14$. Find a third bottom row of whole numbers
-            that also gives $14$, and explain how you found it.</li>
+          <li>Two three-row pyramids have the bottom rows $3$, $4$, $5$ and $2$, $6$, $2$. Both tops are $16$. Find a third bottom row of whole numbers with the top $16$, and explain how you found it.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="6">
-          <li class="hard">A four-row pyramid has $100$ at the top, and its bottom row is
-            $6$, $x$, $x$, $10$. Find $x$. Then explain why no such pyramid can have $101$
-            at the top.</li>
+          <li class="hard">A four-row pyramid has $90$ at the top and the bottom row $4$, $x$, $x$, $8$. Find $x$. Then explain why no such pyramid can have $91$ at the top.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="7">
-          <li>Extend Fig. 6.5 by one more row, for a five-row pyramid. Which box in the
-          bottom row has the most routes to the top, and how many? If you may raise just
-          one bottom entry by $1$, which one lifts the top the most?</li>
+          <li>In a five-row pyramid, which box of the bottom row has the most routes to the top, and how many? If you may add $1$ to just one bottom number, which one raises the top the most?</li>
         </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §6.3 and §6.4</p>
       </div>
 
     </div>

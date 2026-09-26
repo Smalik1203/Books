@@ -2,87 +2,59 @@
   <div class="page__body">
     <div class="page__main">
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 6.5</div>
-        <ol class="c-questions">
-          <li>Three shrines each have a magical pond before them, and flowers dipped in
-            any of the ponds double in number. A pilgrim dips his flowers in the first pond
-            and leaves some at the first shrine; dips what is left in the second pond and
-            leaves the same number at the second shrine; dips what is left in the third
-            pond and leaves all of them at the third shrine. What is the smallest number of
-            flowers he could have started with, and how many did each shrine
-            receive?</li>
-        </ol>
+      <p>Farhan started with $14$ tokens. Each step was undone in reverse order: a doubling by halving, and a fee by adding it back.</p>
+
+      <p>Algebra can do the same job going forwards. Call the starting number of tokens $x$, and follow the story.</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">after round 1</span>
+          <span>$2x - 16$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">after round 2</span>
+          <span>$2(2x - 16) - 16 = 4x - 48$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">the third doubling</span>
+          <span>$2(4x - 48) = 8x - 96$, and this is $16$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">so</span>
+          <span>$8x = 112$, giving $x = 14$</span>
+        </div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>A farm keeps horses and hens. Between them the animals have $55$ heads and
-            $150$ legs. How many are horses?
-                <ol class="c-parts c-parts--1">
-                  <li>Answer it with a letter-number.</li>
-                  <li>Answer it again without one, by first working out how many legs
-                  there would be if every animal were a hen.</li>
-                </ol>
-            </li>
-        </ol>
+      <p>Both ways give $14$. Here the backward way is shorter. But the forward way tells us more, because $2x - 16$, $4x - 48$ and $8x - 96$ describe the game for every player.</p>
+
+      <p>Is the game worth playing? After one round a player has $2x - 16$ in place of $x$. This is more than $x$ only when $x > 16$. So Farhan, with $14$ tokens, lost on every round.</p>
+
+      <p>Now let the fee be $c$. The same working gives $2x - c$ after one round and $4x - 3c$ after two. After $n$ rounds, the player has</p>
+
+      <div class="eq">$$2^{\,n}(x - c) + c.$$</div>
+
+      <p>If $x$ is more than $c$, the bracket is positive and the player gains every round. If $x$ equals $c$, nothing changes. If $x$ is less than $c$, as for Farhan, each round doubles how far behind the player is.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two ways to undo</div>
+        <ul class="c-keyidea__points">
+          <li>Backwards: undo each step, in reverse order.</li>
+          <li>Forwards: call the start $x$, and solve the equation at the end.</li>
+        </ul>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A mother is five times her daughter's age. In six years she will be three
-            times her daughter's age. How old is the daughter now?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Gauri and Naina pass on the road with their cows. Gauri says,
-            &ldquo;You have twice as many cows as I do.&rdquo; Naina says, &ldquo;True —
-            but if I gave you three of mine we would have the same number.&rdquo; How many
-            cows has each?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>A dosa cart costs <span class="nb">₹$5{,}000$</span> a day to rent, and each dosa costs <span class="nb">₹$10$</span> to
-            make.
-                <ol class="c-parts c-parts--1">
-                  <li>Selling $100$ dosas a day, what price gives a profit of
-                  <span class="nb">₹$2{,}000$</span>?</li>
-                  <li>If customers will pay only <span class="nb">₹$50$</span>, how many dosas a day are needed
-                  for the same profit?</li>
-                </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Work out each of these fractions.
-            $$\dfrac{1}{3}, \qquad \dfrac{1 + 3}{5 + 7}, \qquad
-            \dfrac{1 + 3 + 5}{7 + 9 + 11}$$
-            What do you notice? Write the next one in the pattern, and use what you know
-            about the sum of the first $n$ odd numbers to explain why it happens.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>In the story of Karim and the genie, suppose the charge had been sixteen
-            coins instead of eight, and that he still ended the third round holding exactly
-            what he owed. How many coins did he start with?</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li class="hard">A pilgrim visits four shrines with four magical ponds, under
-            the same rule as question $1$. What is the smallest number of flowers he can
-            start with? Do the same for $n$ shrines, and say what the two numbers have to
-            do with powers of two.</li>
-        </ol>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>The stall wants a player with $x$ tokens to have nothing left after exactly three rounds. Use $2^{\,n}(x - c) + c$ to find the fee $c$. Check it with $x = 14$.</li>
+            <li>What fee leaves a player with nothing after exactly two rounds?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
     </div>

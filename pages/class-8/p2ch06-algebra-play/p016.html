@@ -2,76 +2,80 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Karim began with seven coins. Every step of that was an undoing: a doubling was
-      undone by halving, a payment by adding back, and the steps were taken in reverse
-      order because the last thing done is the first thing to unpick.</p>
-
-      <p>Algebra does the same job facing forwards. Call the starting number of coins
-      $x$, follow the story through in order, and read off what the last line must
-      equal.</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">after round 1</span>
-          <span>$2x - 8$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">after round 2</span>
-          <span>$2(2x - 8) - 8 = 4x - 24$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">the third doubling</span>
-          <span>$2(4x - 24) = 8x - 48$, and this is $8$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">so</span>
-          <span>$8x = 56$, giving $x = 7$</span>
-        </div>
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 6.4</div>
+        <ol class="c-questions">
+          <li>Put the digits into $\square\,\square \times \square$ to make the largest product possible.
+                <ol class="c-parts c-parts--3">
+                  <li>$1$, $4$, $6$</li>
+                  <li>$3$, $5$, $8$</li>
+                  <li>$2$, $7$, $9$</li>
+                </ol>
+            </li>
+        </ol>
       </div>
 
-      <p>Both roads reach seven, and for this question the backwards one is shorter. The
-      forwards one is the one to have as soon as the question changes — because $2x - 8$,
-      $4x - 24$, $8x - 48$ is not an answer about Karim but a description of the deal,
-      and it can be asked things the story never asked.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Using the same three digits, which arrangement gives the <em>smallest</em> product? State the rule, and explain it the way the chapter explained the largest.</li>
+        </ol>
+      </div>
 
-      <p>Here is one. Was the deal ever worth taking? After a single round Karim holds
-      $2x - 8$ where he held $x$, so he is better off exactly when $2x - 8 > x$, which is
-      to say when $x > 8$. The bargain is good for anybody who starts with more than
-      eight coins and bad for everybody else, and Karim, with seven, was one coin short
-      of breaking even. Had he started with eight he would have walked round the tree all
-      day and come away with eight.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A two-digit number minus its reverse is $54$. What can you say about the digits? Give three numbers that work.</li>
+        </ol>
+      </div>
 
-      <p>Replace the eight by a charge of $c$ and the same working gives $2x - c$ after
-      one round, $4x - 3c$ after two, and after $n$ rounds</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="4">
+          <li>A two-digit number added to its reverse gives $121$. What is the sum of its digits? Which numbers are possible?</li>
+        </ol>
+      </div>
 
-      <div class="eq">$$2^{\,n}(x - c) + c.$$</div>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="5">
+          <li>Show, using algebra, that a three-digit number minus the number made by reversing all three of its digits is always a multiple of $99$.</li>
+        </ol>
+      </div>
 
-      <p>Everything about the deal is in that expression. If $x$ is bigger than $c$ the
-      bracket is positive and the doubling runs away with it, so Karim gets rich. If $x$
-      equals $c$ the bracket is zero and he stays where he is for ever. And if $x$ is
-      smaller than $c$ — Karim's case — the bracket is negative, and each round doubles
-      how far behind he is. The genie did not need luck. Knowing that Karim had seven
-      coins, it had only to name a charge above seven, and eight was the smallest whole
-      number that would do.</p>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="6">
+          <li>A three-digit number and the two numbers made by moving its digits round add to $1665$. What is the sum of its digits? Name one number it could be.</li>
+        </ol>
+      </div>
 
-      <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="7">
+          <li class="hard">Writing a two-digit number twice makes a four-digit number: $52$ becomes $5252$. Show that every such number is divisible by $101$. Why can $101$ not be split into smaller factors, as $1001$ was?</li>
+        </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §6.7 and §6.8</p>
+      </div>
+
+      <h2><span class="badge">6.9</span><span class="name">Undoing What Was Done</span></h2>
+
+      <p>At a school fair, one stall runs a doubling game. In each round, the stall doubles the tokens a player has. The player then pays a fee of $16$ tokens to go on. Farhan plays three rounds.</p>
+
+      <p>Twice, his tokens double and he pays $16$. After the third doubling he has exactly $16$ tokens, the fee he owes. He pays it and has nothing left.</p>
+
+      <p>How many tokens did Farhan start with? The only number we know is the $16$ at the end. So walk back through the story, and undo each step.</p>
+
+      <div class="work work--list">
+        <div class="work__row">
+          <span class="work__label work__label--wide">at the end</span>
+          <span>$16$ tokens, just after the third doubling</span>
         </div>
-        <div class="c-reflect__box">
-          <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Think and Reflect</div>
-          <div class="c-reflect__body">
-            <p>The genie wanted Karim cleaned out on the third round exactly — not the
-            second, and not the fourth.</p>
-            <p>Using $2^{\,n}(x - c) + c$, work out what charge would take everything
-            from a traveller with $x$ coins in exactly three rounds. Check your answer
-            against $x = 7$ and $c = 8$. What charge would do it in two rounds
-            instead, and why is the greedier genie the one that waits?</p>
-          </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">before that doubling</span>
+          <span>$16 \div 2 = 8$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">before the second fee</span>
+          <span>$8 + 16 = 24$, so before that doubling $12$</span>
+        </div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">before the first fee</span>
+          <span>$12 + 16 = 28$, so before that doubling $14$</span>
         </div>
       </div>
 

@@ -2,69 +2,51 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>So the difference is not merely a multiple of $9$ — it is $9$ times the gap
-      between the digits, which is a second trick hidden inside the first. Shubham's
-      $47$ gave $27$, and the quotient $3$ is exactly $7 - 4$. If $a$ is the larger digit
-      the working is the same with the two lines the other way round, giving $9(a - b)$,
-      and the quotient is again the gap. And if the digits are equal the gap is zero, the
-      difference is zero, and Mukta's insistence that the digits differ was there to keep
-      the trick from being dull rather than from being wrong.</p>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Use the rule to find the largest product from the digits $1$, $2$ and $3$. Is the largest digit in the tens place?</li>
+            <li>Find three digits for which the largest product and the next largest differ by exactly $3$.</li>
+          </ol>
+          </div>
+        </div>
+      </div>
 
-      <p>Adding instead of subtracting gives a different divisor and the same kind of
-      answer. Since $(10a + b) + (10b + a) = 11a + 11b = 11(a + b)$, the sum of a
-      two-digit number and its reverse is always a multiple of $11$, and the quotient is
-      the sum of the digits.</p>
+      <h2><span class="badge">6.8</span><span class="name">Turning a Number Round</span></h2>
 
-      <p>Three digits give more room to play in. Take any three-digit number $abc$ and
-      make two more by cycling the digits round — $bca$ and $cab$ — then add all
-      three.</p>
+      <p>Now it is Irfan&rsquo;s turn to set a trick. &ldquo;Choose a two-digit number whose digits are different,&rdquo; he tells Tanvi. &ldquo;Reverse its digits to make a second number. Take the smaller number from the larger. Now divide by $9$. There will be no remainder.&rdquo;</p>
+
+      <p>Tanvi takes $26$. Reversed, it is $62$, and $62 - 26 = 36$, which is $4$ nines. She tries $73$. Reversed, it is $37$, and $73 - 37 = 36$ again. She tries $81$ and $18$, and gets $63$, which is $7$ nines. The nine is always there.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">A two-digit number is $10a + b$</div>
+        <p>The digits $a$ and $b$ written side by side do not mean $a \times b$. They mean $10a + b$, because the left digit counts tens.</p>
+      </div>
+
+      <p>With the number written as $10a + b$, its reverse is $10b + a$. If $b$ is the larger digit, the difference is found like this.</p>
 
       <div class="work">
         <div class="work__row">
-          <span class="work__label work__label--wide">written out</span>
-          <span>$(100a + 10b + c) + (100b + 10c + a) + (100c + 10a + b)$</span>
+          <span class="work__label work__label--wide">the difference</span>
+          <span>$(10b + a) - (10a + b)$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">collecting</span>
-          <span>$111a + 111b + 111c$</span>
+          <span>$10b - b - 10a + a = 9b - 9a$</span>
         </div>
         <div class="work__row">
           <span class="work__label work__label--wide">factorising</span>
-          <span>$111(a + b + c)$</span>
+          <span>$9(b - a)$</span>
         </div>
       </div>
 
-      <p>Each digit has taken every position exactly once, so each is counted once as a
-      hundred, once as a ten and once as a unit — which is $111$ of it. And $111$ is
-      $3 \times 37$, so the total is always divisible by $3$ and always divisible by
-      $37$. Neither of those is a fact about the number chosen; both are facts about the
-      cycling.</p>
+      <p>So the difference is $9$ times the gap between the digits. For $26$, the gap is $6 - 2 = 4$, and $36 = 9 \times 4$. If $a$ is the larger digit, the difference is $9(a - b)$. If the digits are equal, the difference is $0$, which is why Irfan asked for different digits.</p>
 
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Take a three-digit number, write it twice over to make a six-digit number —
-          $482$ becomes $482482$ — and divide by $7$, then by $11$, then by $13$. Why
-          does it come out exactly, and what is left at the end?</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$482482 = 482 \times 1000 + 482 = 482 \times 1001$</span>
-              <span class="work__why">what repeating does</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$1001 = 7 \times 11 \times 13$</span>
-              <span class="work__why">three small primes</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>the three divisions undo the $1001$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>It divides exactly, and $482$ is left: the number you started with</span></div>
-          </div>
-          <p>The number you started with comes back, which is what makes this one feel
-          like magic. Repeating a three-digit number is multiplying it by $1001$, and
-          $1001$ happens to be the product of those three small primes — so the three
-          divisions are just that multiplication taken apart again.</p>
-        </div>
-      </div>
+      <p>Adding gives another pattern: $(10a + b) + (10b + a) = 11(a + b)$. So a number plus its reverse is $11$ times the sum of its digits. For example, $47 + 74 = 121$. The digits of $47$ add to $11$, and $121 = 11 \times 11$.</p>
 
     </div>
   </div>

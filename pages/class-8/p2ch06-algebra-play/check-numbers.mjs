@@ -83,11 +83,11 @@ const SAMPLES = [1, 2, 3, 4, 5, 6, 7, 8].map(randomV);
 // equations printed with letters on both sides that are conditions, not
 // identities: they hold only for the numbers the question is about
 const CONDITIONS = new Set([
-  '10a+b=4(a+b)', 't=21-2c', '5d+6=3(d+6)', '2g-3=g+3', 'a=b', '10a+b=4a+4b', '6a=3b', 'b=2a', '12+c=a', 'c+8=b',
-  '8x=7c', '4x=3c', 'c=8x/7', 'c=4x/3', 'c=\\dfrac{8x}{7}', 'c=\\dfrac{4x}{3}', '2^{n}x=(2^{n}-1)c',
-  'x=17', 's=5',
-  // the substitution in Beyond Examples 11 and 13 and Practice Q25
-  't=12-s', 'b=12-a', 'b=11-a',
+  // equations to be solved, each checked by search in part B
+  '9 + c = a', 'c + 7 = b', 'm = 17 - 2s', 'b = 10 - a', '10a + b = 7(a + b)', '3a = 6b', 'a = 2b', '10a + b = 6(a + b) + 4', 'a = b + 2', '4d + 5 = 3(d + 5)', '40 - y = 7(10 - y)', 's = 18 - 2c', 's = 21 - 3m', 't = 19 - 2c', '3s + 10 = 2(s + 10)', '3h - 4 = h + 4', '10a + b = 8(a + b)', '2a = 7b',
+  'b = 12 - a', 'b = 11 - a', '8x = 7c', '4x = 3c', 'c=\\dfrac{8x}{7}', 'c=\\dfrac{4x}{3}', '2^{n}x=(2^{n}-1)c',
+  // Beyond, tried-and-explained question 5
+  '10a + b = 4(a + b)', '10a + b = 4a + 4b', '6a = 3b', 'b = 2a',
 ].map(s => s.replace(/\s+/g, '')));
 // assertions printed to be judged, and false on purpose: none in this chapter
 const FALSE_ON_PURPOSE = [];
@@ -143,346 +143,311 @@ for (const [f, src0] of sources) {
 
 /* ---- B. claims arithmetic alone does not check ---------------- */
 
-// the tricks, run on every allowed start
-const mukta = (x, add) => (2 * x + add) / 2 - x;
-is('Mukta ends at 2 for every start 1..10000', range(1, 10000).every(x => mukta(x, 4) === 2));
-is('the Mukta table: 7 -> 14, 18, 9, 2', JSON.stringify([7 * 2, 7 * 2 + 4, (7 * 2 + 4) / 2, (7 * 2 + 4) / 2 - 7]) === '[14,18,9,2]');
-is('add 2k ends at k', range(1, 50).every(k => range(1, 200).every(x => mukta(x, 2 * k) === k)));
-is('Example 1: ends at 7 for every start', range(-200, 1000).every(x => ((x + 3) * 3 - 3 * x) / 3 + 4 === 7));
-is('think-of-a-number without cancelling is not constant', mukta(1, 4) + 1 * 0 !== (2 * 2 + 8));
-const dateTrick = (m, d, a1 = 6, a2 = 9) => ((m * 5 + a1) * 4 + a2) * 5 + d;
+const bodyText = plain(body);
+const has = (where, src, phrase) => is(`${where} should print "${phrase}"`, src.replace(/\s+/g, '').includes(phrase.replace(/\s+/g, '')));
+
+// §6.1 Tanvi's trick, run on every start
+const tanvi = (x, add) => (2 * x + add) / 2 - x;
+is('Tanvi ends at 5 for every start', range(-500, 5000).every(x => tanvi(x, 10) === 5));
+ok('the Tanvi table: 7 -> 14, 24, 12, 5', [7 * 2, 7 * 2 + 10, (7 * 2 + 10) / 2, (7 * 2 + 10) / 2 - 7], [14, 24, 12, 5]);
+is('add 2k ends at k', range(1, 50).every(k => range(1, 200).every(x => tanvi(x, 2 * k) === k)));
+ok('add 6 and add 20', [tanvi(9, 6), tanvi(9, 20)], [3, 10]);
+is('Example 1 ends at 6 for every start', range(-200, 1000).every(x => ((x + 4) * 3 - 3 * x) / 2 === 6));
+ok('T&R 6.1: add 16', tanvi(3, 16), 8);
+is('T&R 6.1: halving first is not constant', new Set(range(1, 9).map(x => x / 2 + 10 - x)).size > 1);
+
+// §6.2 the date trick
+const dateTrick = (m, d, [k1, a1, k2, a2, k3] = [4, 7, 5, 3, 5]) => ((m * k1 + a1) * k2 + a2) * k3 + d;
 const days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const allDates = days.flatMap((n, i) => range(1, n).map(d => [i + 1, d]));
-is('date trick recovers every date of the year', allDates.every(([m, d]) => { const r = dateTrick(m, d) - 165; return Math.floor(r / 100) === m && r % 100 === d; }));
-ok('date trick on 26 January', [5, 11, 44, 53, 265, dateTrick(1, 26), dateTrick(1, 26) - 165], [1 * 5, 5 + 6, 11 * 4, 44 + 9, 53 * 5, 291, 126]);
-ok('Example 2 chain', [8 * 5, 40 + 6, 46 * 4, 184 + 9, 193 * 5, dateTrick(8, 15)], [40, 46, 184, 193, 965, 980]);
-ok('tip: add 7 gives 185', dateTrick(0, 0, 7), 185);
-ok('Ex 6.1 Q4: add 11', dateTrick(0, 0, 6, 11), 175);
-ok('Ex 6.1 Q5: 879', [Math.floor((879 - 165) / 100), (879 - 165) % 100], [7, 14]);
-ok('Ex 6.1 Q3', range(1, 500).map(x => (2 * (x + 5) - 4) / 2 - x).filter((v, i, a) => a.indexOf(v) === i), [3]);
-ok('Ex 6.1 Q1', [12, 9, 0].map(k => mukta(3, k)), [6, 4.5, 0]);
-{ // Q6: 5, 2, 2 multipliers collide; the printed pair
-  const key = (m, d) => 20 * m + d; ok('Ex 6.1 Q6: 21 Jan and 1 Feb collide', key(1, 21), key(2, 1));
-  is('Ex 6.1 Q6: some two dates always collide', allDates.some(([m, d]) => allDates.some(([n, e]) => (m !== n || d !== e) && key(m, d) === key(n, e))));
-}
-// pyramids
+is('date trick recovers every date of the year', allDates.every(([m, d]) => { const r = dateTrick(m, d) - 190; return Math.floor(r / 100) === m && r % 100 === d; }));
+ok('Children\'s Day chain', [11 * 4, 44 + 7, 51 * 5, 255 + 3, 258 * 5, dateTrick(11, 14), dateTrick(11, 14) - 190], [44, 51, 255, 258, 1290, 1304, 1114]);
+ok('Example 2 chain', [9 * 4, 36 + 7, 43 * 5, 215 + 3, 218 * 5, dateTrick(9, 5), dateTrick(9, 5) - 190], [36, 43, 215, 218, 1090, 1095, 905]);
+ok('add 8 in place of add 7 gives 215', dateTrick(0, 0, [4, 8, 5, 3, 5]), 215);
+ok('T&R 6.2: 435 is no date', [Math.floor((435 - 190) / 100), (435 - 190) % 100], [2, 45]);
+is('T&R 6.2: 435 is no date', !allDates.some(([m, d]) => dateTrick(m, d) === 435));
+ok('T&R 6.2: multipliers 2, 5, 10 take away 380', dateTrick(0, 0, [2, 7, 5, 3, 10]), 380);
+is('T&R 6.2: multipliers 2, 5, 10 still work', allDates.every(([m, d]) => dateTrick(m, d, [2, 7, 5, 3, 10]) - 380 === 100 * m + d));
+ok('Ex 6.1 Q1', [14, 7, 0].map(k => tanvi(3, k)), [7, 3.5, 0]);
+ok('Ex 6.1 Q3', [...new Set(range(1, 500).map(x => (2 * (x + 6) - 2) / 2 - x))], [5]);
+ok('Ex 6.1 Q4: add 5', dateTrick(0, 0, [4, 7, 5, 5, 5]), 200);
+ok('Ex 6.1 Q5: 1003', [Math.floor((1003 - 190) / 100), (1003 - 190) % 100], [8, 13]);
+{ const key = (m, d) => 20 * m + d; ok('Ex 6.1 Q6: 21 Jan and 1 Feb collide', key(1, 21), key(2, 1)); }
+
+// §6.3–6.4 pyramids
 const up = (row) => row.slice(1).map((x, i) => x + row[i]);
 const top = (row) => { while (row.length > 1) row = up(row); return row[0]; };
 const binom = (n) => { let r = [1]; for (let i = 1; i < n; i++) r = [1, ...up(r), 1]; return r; };
+const midFor = (l, r, t) => range(-100, 300).filter(c => top([l, c, r]) === t);
 ok('multipliers 1..5 rows', [1, 2, 3, 4, 5].map(binom), [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]);
-ok('opener pyramid', [up([1, 9, 4]), top([1, 9, 4])], [[10, 13], 23]);
-ok('Fig 6.1', [up([1, 3, 3]), top([1, 3, 3])], [[4, 6], 10]);
-ok('Fig 6.2: c from the equations', (() => { for (let c = 0; c < 100; c++) if ((12 + c) + (c + 8) === 60) return [c, 12 + c, c + 8]; })(), [20, 32, 28]);
-ok('Example 3', (() => { for (let c = 0; c < 100; c++) if (top([7, c, 9]) === 44) return [c, ...up([7, c, 9])]; })(), [14, 21, 23]);
-is('no pyramid has top 44 over 7, 10, 9', top([7, 10, 9]) !== 44);
-ok('4, 13, 8 and 8, 19, 21, 13', [top([4, 13, 8]), top([8, 19, 21, 13])], [38, 141]);
-ok('Ex 6.2 Q1', [[4, 13, 8], [7, 11, 3], [10, 14, 25]].map(top), [38, 32, 63]);
-ok('Ex 6.2 Q2', [[8, 19, 21, 13], [7, 18, 19, 6], [9, 7, 5, 11]].map(top), [141, 124, 56]);
-ok('Ex 6.2 Q4', [[50, 4, 6], [40, 5, 7], [36, 9, 7]].map(([t, l, r]) => { const c = (t - l - r) / 2; return [c, ...up([l, c, r])]; }), [[20, 24, 26], [14, 19, 21], [10, 19, 17]]);
-ok('Ex 6.2 Q5', [[2, 5, 2], [4, 4, 2], [6, 3, 2], [1, 6, 1], [3, 4, 3]].map(top), [14, 14, 14, 14, 14]);
-ok('Ex 6.2 Q6', range(0, 100).filter(x => top([6, x, x, 10]) === 100), [14]);
-is('Ex 6.2 Q6: no top of 101', range(0, 1000).every(x => top([6, x, x, 10]) !== 101));
-{ const V = [0n, 1n, 2n]; for (let i = 3; i <= 60; i++) V[i] = V[i - 1] + V[i - 2];
-  const topB = (row) => { while (row.length > 1) row = row.slice(1).map((x, i) => x + row[i]); return row[0]; };
-  const printed = md.replace(/\s(?=\d{3}\b)/g, '');
-  ok('T&R Virahanka pyramids', [topB(V.slice(1, 4)), topB(V.slice(1, 5)), topB(V.slice(1, 30))].map(String),
-    [/the top is [\d +]+= (\d+)/.exec(printed)?.[1], /top (\d+),? the 7th/.exec(printed)?.[1], /= 57, which is ([\d ]*\d)/.exec(md)?.[1].replace(/ /g, '')]);
-  is('T&R: every entry a V-F number', (() => { let r = V.slice(1, 30); const set = new Set(V.map(String)); while (r.length > 1) { r = r.slice(1).map((x, i) => x + r[i]); if (!r.every(x => set.has(String(x)))) return false; } return true; })());
-  is('ANSWERS.md prints the 29-row top', /591\\,286\\,729\\,879/.test(answersMd)); }
+ok('opener pyramid', [up([3, 8, 5]), top([3, 8, 5])], [[11, 13], 24]);
+ok('Fig 6.1', [up([2, 3, 4]), top([2, 3, 4])], [[5, 7], 12]);
+ok('Fig 6.2', midFor(9, 7, 50).map(c => [c, ...up([9, c, 7])]), [[17, 26, 24]]);
+ok('Example 3', midFor(6, 12, 56).map(c => [c, ...up([6, c, 12])]), [[19, 25, 31]]);
+ok('6, 20, 12 is no pyramid with top 56', top([6, 20, 12]), 58);
+ok('text tops', [top([5, 12, 6]), top([3, 10, 7, 9])], [35, 63]);
+ok('T&R 6.3 rows', [top([2, 12, 4]), top([5, 10, 5])], [30, 30]);
+ok('T&R 6.3: no whole middle', midFor(5, 6, 20), []);
+ok('T&R 6.4: same n', [top([7, 7, 7]), top([7, 7, 7, 7])], [28, 56]);
+ok('Ex 6.2 Q1', [[6, 11, 9], [8, 15, 2], [12, 7, 20]].map(top), [37, 40, 46]);
+ok('Ex 6.2 Q2', [[5, 9, 14, 2], [10, 4, 8, 3], [6, 13, 1, 12]].map(top), [76, 49, 60]);
+ok('Ex 6.2 Q4', [[5, 9, 52], [8, 6, 44], [11, 3, 30]].map(([l, r, t]) => midFor(l, r, t).map(c => [c, ...up([l, c, r])])[0]), [[19, 24, 28], [15, 23, 21], [8, 19, 11]]);
+ok('Ex 6.2 Q5', [[3, 4, 5], [2, 6, 2], [4, 5, 2], [1, 7, 1], [6, 4, 2]].map(top), [16, 16, 16, 16, 16]);
+ok('Ex 6.2 Q6', range(0, 100).filter(x => top([4, x, x, 8]) === 90), [13]);
+is('Ex 6.2 Q6: no top of 91', range(0, 1000).every(x => top([4, x, x, 8]) !== 91));
 ok('Ex 6.2 Q7: most routes', Math.max(...binom(5)), 6);
-// calendar squares on a real August 2025 page (1st a Friday)
-const aug = (d) => ({ row: Math.floor((d + 4) / 7), col: (d + 4) % 7 });
-const squares = (n, w, h, first = 5) => range(1, 31).filter(a => ((a + first - 1) % 7) + w - 1 <= 6 && a + (h - 1) * 7 + w - 1 <= n)
+
+// §6.5 calendar squares, on July 2026 and on every month shape
+is('July 2026 begins on a Wednesday', new Date(Date.UTC(2026, 6, 1)).getUTCDay() === 3);
+const squares = (n, w, h, first) => range(1, n).filter(a => ((a + first - 1) % 7) + w - 1 <= 6 && a + (h - 1) * 7 + w - 1 <= n)
   .map(a => range(0, h - 1).flatMap(r => range(0, w - 1).map(c => a + 7 * r + c)));
-is('August 2025 starts on a Friday: 6 is a Wednesday', aug(6).col === 3 && aug(1).col === 5);
-const aug22 = squares(31, 2, 2);
-is('every 2x2 August square totals 4a + 16', aug22.every(s => s.reduce((x, y) => x + y) === 4 * s[0] + 16));
-ok('Fig 6.5 square', [6, 7, 13, 14].reduce((x, y) => x + y), 40);
-ok('total 36', (36 - 16) / 4, 5);
-is('Example 4: 70 and 50 are no total', [70, 50].every(t => (t - 16) % 4 !== 0));
-is('tip: a = 30 gives 136, which no August square gives', 4 * 30 + 16 === 136 && !aug22.some(s => s.reduce((x, y) => x + y) === 136));
-const aug33 = squares(31, 3, 3);
-is('every 3x3 square is nine times its centre', aug33.every(s => s.reduce((x, y) => x + y) === 9 * s[4]));
-ok('ten-day week', [0, 1, 10, 11].reduce((x, y) => x + y), 22);
-const anyMonth = [28, 29, 30, 31].flatMap(n => range(0, 6).flatMap(f => squares(n, 2, 2, f)));
-const totals22 = [...new Set(anyMonth.map(s => s.reduce((x, y) => x + y)))];
-ok('Ex 6.3 Q1', [60, 96, 84].map(t => anyMonth.find(s => s.reduce((x, y) => x + y) === t)), [[11, 12, 18, 19], [20, 21, 27, 28], [17, 18, 24, 25]]);
-ok('Ex 6.3 Q2', [44, 58, 76, 92].filter(t => totals22.includes(t)), [44, 76, 92]);
-ok('Ex 6.3 Q3', (() => { const s = aug33.find(q => q[4] === 19); return [s, s.reduce((x, y) => x + y)]; })(), [[11, 12, 13, 18, 19, 20, 25, 26, 27], 171]);
-ok('Ex 6.3 Q4', [...new Set(squares(31, 2, 3).map(s => s.reduce((x, y) => x + y) - 6 * s[0]))], [45]);
-ok('Ex 6.3 Q7', [...new Set(anyMonth.filter(s => s.reduce((x, y) => x + y) % 100 === 0).map(String))], ['21,22,28,29']);
-ok('Ex 6.3 Q5, Q6', [[18 / 3, (22 - 18 / 3) / 2], (() => { for (let c = 0; c < 50; c++) for (let t = 0; t < 50; t++) if (2 * c + t === 21 && c + 2 * t === 18) return [c, t]; })()], [[6, 8], [8, 5]]);
-ok('Fig 6.6', [27 / 3, (19 - 9) / 2], [9, 5]);
-// largest and smallest products, every triple of digits
+const sum = (s) => s.reduce((x, y) => x + y, 0);
+const july22 = squares(31, 2, 2, 3), july33 = squares(31, 3, 3, 3);
+const any22 = [28, 29, 30, 31].flatMap(n => range(0, 6).flatMap(f => squares(n, 2, 2, f)));
+const any33 = [28, 29, 30, 31].flatMap(n => range(0, 6).flatMap(f => squares(n, 3, 3, f)));
+is('Fig 6.5: 8, 9, 15, 16 is a July square', july22.some(s => s.join() === '8,9,15,16'));
+ok('Fig 6.5 total', sum([8, 9, 15, 16]), 48);
+is('every 2x2 square totals 4a + 16', any22.every(s => sum(s) === 4 * s[0] + 16));
+is('every 3x3 square totals 9 times its middle', any33.every(s => sum(s) === 9 * s[4]));
+ok('total 60 gives 11, 12, 18, 19', any22.filter(s => sum(s) === 60).map(s => s.join()).filter((v, i, a) => a.indexOf(v) === i), ['11,12,18,19']);
+is('Example 4: no square totals 78 or 54', !any22.some(s => sum(s) === 78 || sum(s) === 54));
+is('no July square starts on the 30th', !july22.some(s => s[0] === 30));
+ok('T&R 6.5: a = 5 gives 36', 4 * 5 + 16, 36);
+ok('T&R 6.5: ten-day week, total 62', range(1, 40).filter(a => 4 * a + 22 === 62), [10]);
+ok('Ex 6.3 Q1', [56, 104, 72].map(t => any22.filter(s => sum(s) === t)[0]?.join()), ['10,11,17,18', '22,23,29,30', '14,15,21,22']);
+ok('Ex 6.3 Q2', [52, 66, 80, 98].filter(t => any22.some(s => sum(s) === t)), [52, 80]);
+{ const s = any33.find(s => s[4] === 20); ok('Ex 6.3 Q3', [s.join(), sum(s)], ['12,13,14,19,20,21,26,27,28', 180]); }
+is('Ex 6.3 Q4: 6a + 45', [28, 29, 30, 31].flatMap(n => range(0, 6).flatMap(f => squares(n, 2, 3, f))).every(s => sum(s) === 6 * s[0] + 45));
+ok('Ex 6.3 Q7', [...new Set(any22.filter(s => sum(s) % 100 === 0).map(s => s.join()))], ['21,22,28,29']);
+
+// §6.6 shapes
+ok('grid: triangle and circle', [24 / 3, (22 - 24 / 3) / 2], [8, 7]);
+const pairs = (f) => range(0, 60).flatMap(a => range(0, 60).map(b => [a, b])).filter(([a, b]) => f(a, b));
+ok('Example 5: star and moon', pairs((s, m) => 2 * s + m === 17 && s + 3 * m === 21), [[6, 5]]);
+ok('Ex 6.3 Q5', pairs((q, s) => 3 * q === 21 && q + 2 * s === 25), [[7, 9]]);
+ok('Ex 6.3 Q6', pairs((c, t) => 2 * c + t === 19 && c + 2 * t === 17), [[7, 5]]);
+
+// §6.7 largest and smallest products
 const arr = (d) => [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]].map(([i, j, k]) => [(10 * d[i] + d[j]) * d[k], `${d[i]}${d[j]}x${d[k]}`]);
-const best = (d, sign) => arr(d).sort((x, y) => sign * (y[0] - x[0]))[0];
+const ranked = (d, sign = 1) => arr(d).sort((x, y) => sign * (y[0] - x[0]));
+ok('4, 6, 7: the six products', arr([4, 6, 7]).map(p => p[0]).sort((a, b) => a - b), [268, 282, 304, 322, 444, 448]);
+ok('4, 6, 7: best two', ranked([4, 6, 7]).slice(0, 2), [[448, '64x7'], [444, '74x6']]);
+ok('Example 6: 2, 5, 8', ranked([2, 5, 8]).slice(0, 2), [[416, '52x8'], [410, '82x5']]);
+ok('T&R 6.7: 1, 2, 3', ranked([1, 2, 3])[0], [63, '21x3']);
+ok('T&R 6.7: gaps of 3', [[1, 4, 7], [3, 5, 6]].map(d => ranked(d)[0][0] - ranked(d)[1][0]), [3, 3]);
 const triples = range(1, 9).flatMap(p => range(p + 1, 9).flatMap(q => range(q + 1, 9).map(r => [p, q, r])));
-is('largest rule qp x r holds for every triple', triples.every(([p, q, r]) => best([p, q, r], 1)[0] === (10 * q + p) * r));
-is('smallest rule qr x p holds for every triple', triples.every(([p, q, r]) => best([p, q, r], -1)[0] === (10 * q + r) * p));
-ok('2, 3, 5 all six', arr([2, 3, 5]).map(x => x[0]).sort((a, b) => a - b), [70, 75, 106, 115, 156, 160].sort((a, b) => a - b));
-ok('Example 5', [best([3, 5, 9], 1), arr([3, 5, 9]).sort((x, y) => y[0] - x[0])[1]], [[477, '53x9'], [465, '93x5']]);
-ok('Ex 6.4 Q1', [[1, 3, 7], [2, 6, 8], [4, 5, 9]].map(d => best(d, 1)), [[217, '31x7'], [496, '62x8'], [486, '54x9']]);
-ok('Ex 6.4 Q2', [[1, 3, 7], [2, 6, 8], [4, 5, 9]].map(d => best(d, -1)), [[37, '37x1'], [136, '68x2'], [236, '59x4']]);
-// digits
+is('rule: qp x r is largest for every triple', triples.every(([p, q, r]) => ranked([p, q, r])[0][1] === `${q}${p}x${r}`));
+is('rule: qr x p is smallest for every triple', triples.every(([p, q, r]) => ranked([p, q, r], -1)[0][1] === `${q}${r}x${p}`));
+ok('Ex 6.4 Q1', [[1, 4, 6], [3, 5, 8], [2, 7, 9]].map(d => ranked(d)[0]), [[246, '41x6'], [424, '53x8'], [648, '72x9']]);
+ok('Ex 6.4 Q2', [[1, 4, 6], [3, 5, 8], [2, 7, 9]].map(d => ranked(d, -1)[0]), [[46, '46x1'], [174, '58x3'], [158, '79x2']]);
+
+// §6.8 turning a number round
 const two = range(10, 99), rev = (n) => Number(String(n).split('').reverse().join(''));
-is('difference from reverse is 9 times the gap, every two-digit number', two.every(n => n - rev(n) === 9 * (Math.floor(n / 10) - n % 10)));
-is('sum with reverse is 11 times the digit sum', two.every(n => n + rev(n) === 11 * (Math.floor(n / 10) + n % 10)));
-ok('Shubham', [74 - 47, 52 - 25, 91 - 19, 27 / 9, 72 / 9], [27, 27, 72, 3, 8]);
 const three = range(100, 999), dsum = (n) => String(n).split('').reduce((a, b) => a + Number(b), 0);
 const cyc = (n) => { const s = String(n); return n + Number(s.slice(1) + s[0]) + Number(s.slice(2) + s.slice(0, 2)); };
-is('cycling sum is 111 x digit sum, every three-digit number', three.every(n => cyc(n) === 111 * dsum(n)));
-is('repeating is x1001 and 7, 11, 13 undo it', three.every(n => Number(`${n}${n}`) / 7 / 11 / 13 === n));
-is('two-digit repeated is x101', two.every(n => Number(`${n}${n}`) === 101 * n));
-is('101 is prime', range(2, 100).every(d => 101 % d));
-is('three-digit minus its reverse is a multiple of 99', three.every(n => (n - rev(n)) % 99 === 0));
-ok('Ex 6.4 Q3', two.filter(n => Math.abs(n - rev(n)) === 45), [16, 27, 38, 49, 50, 61, 72, 83, 94]);
-ok('Ex 6.4 Q4', two.filter(n => n + rev(n) === 132), [39, 48, 57, 66, 75, 84, 93]);
-ok('Ex 6.4 Q6', [1554 / 111, cyc(158)], [14, 1554]);
-ok('3737', 37 * 101, 3737);
-is('invent: (10a+b)-(a+b) = 9a for every two-digit number', two.every(n => n - dsum(n) === 9 * Math.floor(n / 10)));
-ok('47 - 11', [47 - dsum(47), 36 / 9], [36, 4]);
-// the genie, and the shrines
-const genie = (x, c, n) => { for (let i = 0; i < n; i++) x = 2 * x - c; return x; };
-is('2^n(x-c)+c for n <= 6', range(0, 30).every(x => range(0, 30).every(c => range(0, 6).every(n => genie(x, c, n) === 2 ** n * (x - c) + c))));
-ok('Karim backwards', [8 / 2, 4 + 8, 12 / 2, 6 + 8, 14 / 2], [4, 12, 6, 14, 7]);
-ok('Karim: holds 8 after the third doubling', 2 * genie(7, 8, 2), 8);
-is('Karim better off exactly when x > 8', range(0, 100).every(x => (2 * x - 8 > x) === (x > 8)));
-is('x = c stands still', range(1, 50).every(c => genie(c, c, 10) === c));
-ok('smallest charge above 7', range(1, 20).find(c => c > 7), 8);
-const emptyIn = (n, maxX = 200) => range(1, maxX).map(x => [x, range(1, 400).find(c => genie(x, c, n) === 0)]).filter(p => p[1]);
-ok('T&R: three rounds c = 8x/7', emptyIn(3).every(([x, c]) => 7 * c === 8 * x) && emptyIn(3)[0], [7, 8]);
-ok('T&R: two rounds c = 4x/3', emptyIn(2).every(([x, c]) => 3 * c === 4 * x) && emptyIn(2)[0], [3, 4]);
-is('T&R: waiting collects more', 3 * 8 / 7 > 2 * 4 / 3);
-ok('Ex 6.5 Q1: shrines', emptyIn(3)[0], [7, 8]);
-ok('Ex 6.5 Q1: the steps', [14 - 8, 12 - 8, 8 - 8], [6, 4, 0]);
-ok('Ex 6.5 Q2', range(0, 55).filter(h => 4 * h + 2 * (55 - h) === 150), [20]);
-ok('Ex 6.5 Q3', range(1, 50).filter(d => 5 * d + 6 === 3 * (d + 6)), [6]);
-ok('Ex 6.5 Q4', range(1, 50).filter(g => 2 * g - 3 === g + 3), [6]);
-ok('Ex 6.5 Q5', [range(1, 500).find(p => 100 * p - 5000 - 1000 === 2000), range(1, 1000).find(n => 50 * n - 5000 - 10 * n === 2000)], [80, 175]);
-is('Ex 6.5 Q6: every such fraction is 1/3', range(1, 30).every(n => { const o = range(1, 2 * n).map(k => 2 * k - 1); const t = o.slice(0, n).reduce((a, b) => a + b); const b = o.slice(n).reduce((a, b) => a + b); return 3 * t === b; }));
-ok('Ex 6.5 Q7', range(1, 100).filter(x => 2 * genie(x, 16, 2) === 16), [14]);
-ok('Ex 6.5 Q8: four shrines, then n', [emptyIn(4)[0], [1, 2, 3, 4, 5, 6].map(n => emptyIn(n, 100)[0])], [[15, 16], [1, 2, 3, 4, 5, 6].map(n => [2 ** n - 1, 2 ** n])]);
+ok('26, 73, 81', [62 - 26, 73 - 37, 81 - 18], [36, 36, 63]);
+is('a number minus its reverse is 9 times the gap', two.every(n => Math.abs(n - rev(n)) === 9 * Math.abs(Math.floor(n / 10) - n % 10)));
+is('a number plus its reverse is 11 times the digit sum', two.filter(n => n % 10).every(n => n + rev(n) === 11 * dsum(n)));
+ok('47 + 74', 47 + 74, 121);
+ok('Example 7', two.filter(n => n % 10 && n + rev(n) === 110 && n - rev(n) === 54), [82]);
+is('cycling gives 111 times the digit sum', three.every(n => cyc(n) === 111 * dsum(n)));
+ok('Example 8', [736736 / 7 / 11 / 13, 7 * 11 * 13], [736, 1001]);
+ok('T&R 6.8: totals 100-200', [...new Set(two.filter(n => n % 10).map(n => n + rev(n)).filter(t => t > 100 && t < 200))].sort((a, b) => a - b), range(10, 18).map(k => 11 * k));
+ok('T&R 6.8: an odd total', 23 + 32, 55);
+ok('Ex 6.4 Q3', [...new Set(two.filter(n => Math.abs(n - rev(n)) === 54 && n % 10).map(n => Math.min(n, rev(n))))], [17, 28, 39]);
+ok('Ex 6.4 Q4', two.filter(n => n % 10 && n + rev(n) === 121), [29, 38, 47, 56, 65, 74, 83, 92]);
+is('Ex 6.4 Q5', three.every(n => (n - rev(n)) % 99 === 0));
+ok('Ex 6.4 Q6', [1665 / 111, cyc(159)], [15, 1665]);
+ok('Ex 6.4 Q7', [5252 / 101, range(2, 100).filter(d => 101 % d === 0)], [52, []]);
 
-// Stage 1, each question searched rather than solved
-ok('S1 Q1', range(-50, 50).filter(k => range(1, 30).every(x => (2 * (x + k) - 8) / 2 - x === 6)), [10]);
-ok('S1 Q2', allDates.filter(([m, d]) => dateTrick(m, d) === 1390), [[12, 25]]);
-ok('S1 Q3', range(0, 100).filter(a => top([a, a + 1, a + 2]) === 100), [24]);
-is('S1 Q3: no top of 102 or 103', range(0, 200).every(a => ![102, 103].includes(top([a, a + 1, a + 2]))));
-ok('S1 Q3: 49 + 51', up([24, 25, 26]), [49, 51]);
-ok('S1 Q4', [40, 68].map(t => anyMonth.find(s => s.reduce((x, y) => x + y) === t)[0]), [6, 13]);
-ok('S1 Q5', two.filter(n => n === 4 * dsum(n)), [12, 24, 36, 48]);
-{ const all = triples.flatMap(t => arr(t)).sort((x, y) => y[0] - x[0]);
-  ok('S1 Q6: largest of all, and the near miss', [all[0], all[1]], [[783, '87x9'], [776, '97x8']]); }
-ok('S1 Q7', range(0, 100).filter(a => top([a, a + 1, a + 2, a + 3]) === 204), [24]);
-ok('S1 Q8', range(1, 500).filter(c => genie(45, c, 4) === 0), [48]);
+// §6.9 undoing
+const game = (x, c, n) => { for (let i = 0; i < n; i++) x = 2 * x - c; return x; };
+ok('Farhan: start 14, fee 16', [range(1, 100).filter(x => 2 * (2 * (2 * x - 16) - 16) === 16), game(14, 16, 3)], [[14], 0]);
+is('2^n(x - c) + c', range(0, 6).every(n => range(0, 40).every(x => range(0, 40).every(c => game(x, c, n) === 2 ** n * (x - c) + c))));
+is('a player gains only when x > 16', range(0, 60).every(x => (game(x, 16, 1) > x) === (x > 16)));
+ok('T&R 6.9', [8 * 14 / 7, 4 * 3 / 3], [16, 4]);
+const emptyIn = (n) => range(1, 200).map(x => [x, range(1, 400).find(c => game(x, c, n) === 0 && range(1, n - 1).every(k => game(x, c, k) > 0))]).filter(p => p[1]);
+ok('Ex 6.5 Q1: stickers, three days', emptyIn(3)[0], [7, 8]);
+ok('Ex 6.5 Q8: four days', emptyIn(4)[0], [15, 16]);
+ok('Ex 6.5 Q2', range(0, 40).filter(h => 4 * h + 2 * (40 - h) === 110), [15]);
+ok('Ex 6.5 Q3', range(1, 60).filter(s => 3 * s + 10 === 2 * (s + 10)), [10]);
+ok('Ex 6.5 Q4', range(1, 60).filter(h => 3 * h - 4 === h + 4), [4]);
+ok('Ex 6.5 Q5', [(800 + 80 * 15 + 1200) / 80, (800 + 1200) / (35 - 15)], [40, 100]);
+ok('Ex 6.5 Q6', [4 * 4 - 3 * 5, 8 * 8 - 7 * 9, 11 * 11 - 10 * 12], [1, 1, 1]);
+ok('Ex 6.5 Q7', range(1, 100).filter(x => 2 * (2 * (2 * x - 24) - 24) === 24), [21]);
 
-// printed values in the running text, read back: each phrase is built from
-// the computed value, so a changed number on the page is caught
-const bodyText = plain(body), beyondText = plain(beyond);
-const has = (where, src, phrase) => is(`${where} should print "${phrase}"`, src.replace(/\s+/g, '').includes(phrase.replace(/\s+/g, '')));
-{ const c = range(0, 99).find(c => (12 + c) + (c + 8) === 60);
-  has('Fig 6.2 working', bodyText, `c = ${c} , and then a = ${12 + c} and b = ${c + 8}`);
-  const c3 = range(0, 99).find(c => top([7, c, 9]) === 44);
-  has('Example 3', bodyText, `giving c = ${c3}`); has('Example 3', bodyText, `bottom row 7 , ${c3} , 9 ; second row ${7 + c3} , ${c3 + 9}`);
-  has('Example 3', bodyText, `the row above is ${7 + c3} and ${c3 + 9}`);
-  has('Karim', bodyText, `giving x = ${range(0, 99).find(x => 2 * genie(x, 8, 2) === 8)}`);
-  has('Karim', bodyText, `before that doubling ${(4 + 8) / 2}`); has('Karim', bodyText, `before that doubling ${(6 + 8) / 2}`);
-  has('total 36', bodyText, `a = ${(36 - 16) / 4} , so the square is ${[0, 1, 7, 8].map(k => (36 - 16) / 4 + k).join(' , ')}`);
-  has('Fig 6.6 working', bodyText, `so a triangle is ${27 / 3}`); has('Fig 6.6 working', bodyText, `a circle is ${(19 - 27 / 3) / 2}`);
-  has('Example 5', bodyText, `${best([3, 5, 9], 1)[1].replace('x', ' × ')} = ${best([3, 5, 9], 1)[0]} is the largest`);
-  has('6.8', bodyText, `The winner is ${best([2, 3, 5], 1)[1].replace('x', ' × ')} = ${best([2, 3, 5], 1)[0]}`);
-  has('Mukta table', bodyText, `Think of a number 7 x Double it ${7 * 2} 2x Add four ${7 * 2 + 4} 2x + 4 Divide by two ${(7 * 2 + 4) / 2} x + 2 Subtract the original number ${mukta(7, 4)} ${mukta(1, 4)}`);
-  has('date trick', bodyText, `the answer is ${dateTrick(1, 26)} , you subtract 165 and get ${dateTrick(1, 26) - 165}`);
-  has('Example 2', bodyText, `${dateTrick(8, 15) - 165} = ${dateTrick(8, 15) - 165}`.replace(/^(\d+) = /, '980 - 165 = '));
-  has('6.5 text', bodyText, `4 , 13 , 8 it is 4 + 26 + 8 = ${top([4, 13, 8])}`);
-  has('6.5 text', bodyText, `8 , 19 , 21 , 13 has 8 + 57 + 63 + 13 = ${top([8, 19, 21, 13])}`);
-  has('Shubham', bodyText, `which is 3 nines exactly`); is('Shubham: 27 is 3 nines', 27 / 9 === 3);
-  has('invent', bodyText, `47 - 11 = ${47 - dsum(47)}`);
-  { const off3 = [0, 1, 2, 7, 8, 9, 14, 15, 16], s3 = off3.reduce((x, y) => x + y);
-    has('3x3 block', bodyText, `add to 9a + ${s3} . That factorises as 9(a + ${s3 / 9}) — and a + ${off3[4]} is the date in the middle`);
-    const s2 = [0, 1, 7, 8].reduce((x, y) => x + y);
-    has('2x2 square', bodyText, `a + (a+1) + (a+7) + (a+8) = 4a + ${s2}`);
-    has('ten-day week', bodyText, `a total of 4a + ${[0, 1, 10, 11].reduce((x, y) => x + y)}`);
-    has('summary', bodyText, `totals 4a + ${s2}`); }
-  has('Fig 6.1 caption', bodyText, `10 - 4 = 6 , then 4 - 1 = 3 , then 6 - 3 = 3`); ok('Fig 6.1 fills', [10 - 4, 4 - 1, 6 - 3], [up([1, 3, 3])[1], 3, 3]);
-}
-{ // Stage 1
-  has('S1 Q1', beyondText, `so k = ${range(-50, 50).find(k => range(1, 30).every(x => (2 * (x + k) - 8) / 2 - x === 6))}`);
-  const [m, d] = allDates.find(([m, d]) => dateTrick(m, d) === 1390);
-  has('S1 Q2', beyondText, `1225 = 100 × ${m} + ${d}`); is('S1 Q2 names the date', m === 12 && d === 25 && beyondText.includes('The twenty-fifth of December'));
-  const a3 = range(0, 100).find(a => top([a, a + 1, a + 2]) === 100);
-  has('S1 Q3', beyondText, `giving a = ${a3}`); has('S1 Q3', beyondText, `${a3} , ${a3 + 1} , ${a3 + 2} — and ${2 * a3 + 1} + ${2 * a3 + 3} = 100`);
-  const [s1, s2] = [40, 68].map(t => (t - 16) / 4);
-  has('S1 Q4', beyondText, `= 40 , so a = ${s1}`); has('S1 Q4', beyondText, `= 68 , so a = ${s2}`); has('S1 Q4', beyondText, `The dates differ by ${s2 - s1}`);
-  has('S1 Q5', beyondText, `giving ${two.filter(n => n === 4 * dsum(n)).join(' , ').replace(/ , (\d+)$/, ' and $1')}`);
-  const all = triples.flatMap(t => arr(t)).sort((x, y) => y[0] - x[0]);
-  has('S1 Q6', beyondText, `${all[0][1].replace('x', ' × ')} = ${all[0][0]}`); has('S1 Q6', beyondText, `${all[1][1].replace('x', ' × ')} = ${all[1][0]}`);
-  const a7 = range(0, 100).find(a => top([a, a + 1, a + 2, a + 3]) === 204);
-  has('S1 Q7', beyondText, `giving a = ${a7}`); has('S1 Q7', beyondText, `The row is ${a7} , ${a7 + 1} , ${a7 + 2} , ${a7 + 3}`);
-  has('S1 Q8', beyondText, `giving c = ${range(1, 500).find(c => genie(45, c, 4) === 0)}`);
-}
+// §6.10
+ok('26 - 8 = 18', [26 - dsum(26), 90 - dsum(90), 55 - dsum(55)], [18, 81, 45]);
+is('a number minus its digit sum is 9 times the tens digit', two.every(n => n - dsum(n) === 9 * Math.floor(n / 10)));
 
-// Solved Examples: the printed Answer row of each, read back
+// the printed values in the body, read back
+for (const p of ['12 - 5 = 7', '5 - 2 = 3', '7 - 3 = 4', '2c + 16 = 50', 'c = 17', 'a = 26', 'b = 24', '2c + 18 = 56', 'c = 19',
+  '4 \\times 8 + 16 = 48', '64 \\times 7 = 448', '52 \\times 8 = 416', '82 \\times 5 = 410', '8x = 112', 'x = 14'])
+  has('body', body, p);
+
+/* ---- the keys at the end of Beyond the Book ------------------- */
+
+const ansStart = beyond.indexOf('<div class="c-stage__title">Answers</div>');
+is('Answers stage present', ansStart > 0);
+const answers = beyond.slice(ansStart);
+const cut = answers.indexOf('<div class="c-practice__sub">Beyond the Book</div>');
+const btbAns = answers.slice(0, cut), beyAns = answers.slice(cut);
+const rowsOf = (src) => { const r = {}; for (const m of src.matchAll(/<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) r[m[1]] = plain(m[2]); return r; };
+const btbRow = rowsOf(btbAns), beyRow = rowsOf(beyAns);
+const lettersOf = (src) => { const k = {}; for (const m of text(src).matchAll(/\b(\d+) \(([a-d])\)((?:, \([a-d]\))*)/g)) k[m[1]] ??= [m[2], ...[...m[3].matchAll(/\(([a-d])\)/g)].map(x => x[1])].join(''); return k; };
+const btbKey = lettersOf(btbAns.slice(btbAns.indexOf('c-answers')));
+const beyKey = lettersOf(beyAns);
+const says = (rows, q, ...vals) => { for (const v of vals) is(`key ${q} should say ${v}: "${rows[q]}"`, new RegExp(`(^|[^\\d])${String(v).replace(/[.()+]/g, '\\$&')}([^\\d]|$)`).test(rows[q] || '')); };
+
+// By the Book, every written answer
+says(btbRow, 1, top([7, 9, 4]));
+says(btbRow, 3, 4 * 13 + 16);
+says(btbRow, 4, ...any22.find(s => sum(s) === 88));
+says(btbRow, 7, ranked([3, 6, 8])[0][0]);
+says(btbRow, 8, midFor(9, 11, 40)[0]);
+says(btbRow, 9, 472 + 724 + 247, cyc(472));
+says(btbRow, 10, range(0, 50).find(x => 2 * x - 6 === 20));
+says(btbRow, 11, 23, 24, 25);
+says(btbRow, 12, 30);
+{ const x = range(1, 50).find(x => top([x, 2 * x, x + 6]) === 48); says(btbRow, 13, x, ...up([x, 2 * x, x + 6])); }
+says(btbRow, 14, two.find(n => dsum(n) === 11 && rev(n) - n === 27));
+says(btbRow, 15, dateTrick(6, 23), dateTrick(6, 23) - 190);
+says(btbRow, 16, range(1, 500).find(m => ((m / 2 - 10) / 2 - 10) === 6));
+says(btbRow, 17, 144 / 9);
+says(btbRow, 18, top([6, 10, 9, 5]));
+is('Q18: the given top is 60', top([5, 9, 8, 4]) === 60);
+says(btbRow, 19, range(0, 25).find(t => 20 * t + 10 * (25 - t) === 360));
+ok('Q20', two.filter(n => n === 7 * dsum(n)), [21, 42, 63, 84]);
+says(btbRow, 21, range(0, 100).find(x => 2 * (3 * x + 8) - 4 * x === 46));
+{ const s = any33.find(s => s[0] + s[8] === 44); says(btbRow, 22, s[4], sum(s)); }
+says(btbRow, 23, range(0, 100).find(x => game(x, 10, 3) === 26));
+says(btbRow, 24, two.find(n => n === 6 * dsum(n) + 4 && n - rev(n) === 18));
+{ const f = range(0, 40).find(f => 5 * f + 3 * (40 - f) === 164); says(btbRow, 25, f, 40 - f, 200 - 164); }
+{ const d = range(1, 50).find(d => 4 * d + 5 === 3 * (d + 5)); says(btbRow, 26, d, 4 * d, range(0, d).find(y => 4 * d - y === 7 * (d - y))); }
+is('Q27: Pooja\'s trick', allDates.every(([m, d]) => ((2 * m + 5) * 50 + d) === 100 * m + 250 + d));
+says(btbRow, 27, 928, 1034);
+{ const [[s, c]] = pairs((s, c) => 2 * s + 3 * c === 31 && s + 2 * c === 18); says(btbRow, 28, s, c, 3 * s + c); }
+says(btbRow, 29, three.find(n => cyc(n) === 1332 && /^(\d)(\d)(\d)$/.test(n) && Number(String(n)[0]) - Number(String(n)[1]) === 1 && Number(String(n)[1]) - Number(String(n)[2]) === 1));
+{ const x = range(0, 100).find(x => top([3, x, 2 * x, 5]) === 98); let r = [3, x, 2 * x, 5]; const rows = [r]; while (r.length > 1) { r = up(r); rows.push(r); } says(btbRow, 30, x, ...rows[2]); }
+says(btbRow, 36, midFor(8, 6, 50)[0], top([10, 20, 8]) - top([8, 18, 6]));
+says(btbRow, 37, ...any22.find(s => sum(s) === 52));
+is('Q37: Uday is the one wrong', [52, 100, 90].map(t => any22.some(s => sum(s) === t)).join() === 'true,true,false');
+says(btbRow, 38, game(80, 50, 2), range(0, 500).find(x => game(x, 50, 3) === 250));
+says(btbRow, 39, ranked([2, 5, 9])[0][0], ranked([3, 4, 6])[0][0]);
+is('Q39: Zubin multiplies by 8', ranked([1, 7, 8])[0][1].endsWith('x8'));
+says(btbRow, 40, two.find(n => n + rev(n) === 88 && n - rev(n) === 36));
+is('Q40: no sum is 90', !two.some(n => n + rev(n) === 90));
+
+// Beyond: the tried-and-explained questions
+has('Beyond', beyond, '$1415 - 190 = 1225$');
+ok('tried 2: 1415 is 25 December', [Math.floor((1415 - 190) / 100), (1415 - 190) % 100], [12, 25]);
+ok('tried 1: k', range(0, 50).filter(k => range(1, 30).every(x => (2 * (x + k) - 8) / 2 - x === 6)), [10]);
+ok('tried 3', range(0, 100).filter(a => top([a, a + 1, a + 2]) === 100), [24]);
+ok('tried 4', [(40 - 16) / 4, (68 - 16) / 4], [6, 13]);
+ok('tried 5', two.filter(n => n === 4 * dsum(n)), [12, 24, 36, 48]);
+ok('tried 6', ranked([7, 8, 9]).slice(0, 2), [[783, '87x9'], [776, '97x8']]);
+ok('tried 7', range(0, 100).filter(a => top([a, a + 1, a + 2, a + 3]) === 204), [24]);
+ok('tried 8', range(1, 200).filter(c => game(45, c, 4) === 0), [48]);
+
+// Beyond: the solved examples' Answer rows
 const exRow = (n) => { const m = beyond.match(new RegExp(`Example ${n}</div>[\\s\\S]*?work__label">Answer</span>\\s*<span>([\\s\\S]*?)</span></div>`)); return m ? plain(m[1]) : ''; };
-const exSays = (n, ...vals) => { for (const v of vals) is(`Example ${n} should print ${v}: "${exRow(n)}"`, new RegExp(`(^|[^\\d])${String(v)}([^\\d]|$)`).test(exRow(n))); };
-exSays(1, range(-100, 100).map(x => (3 * x + 12) / 3 - x).find(() => true));
-is('Ex 1 is constant', new Set(range(-100, 100).map(x => (3 * x + 12) / 3 - x)).size === 1);
-exSays(2, range(-100, 100).find(k => range(1, 20).every(x => (4 * x + k) / 2 - 2 * x === 9)));
-{ const found = []; for (let A = 1; A <= 120; A++) for (let h = 1; h <= 99; h++) if ((2 * A + 5) * 50 + h === 1537) found.push([A, h]);
-  ok('Ex 3: the only age and house', found, [[12, 87]]); exSays(3, 12, 87);
-  is('Ex 3: every age and house comes back', range(1, 120).every(A => range(1, 99).every(h => { const r = (2 * A + 5) * 50 + h - 250; return Math.floor(r / 100) === A && r % 100 === h; }))); }
-{ const t4 = (m, d) => (4 * m + 3) * 25 + d;
-  is('Ex 4: every date comes back after subtracting 75', allDates.every(([m, d]) => t4(m, d) - 75 === 100 * m + d));
-  ok('Ex 4: 1004', allDates.filter(([m, d]) => t4(m, d) === 1004), [[9, 29]]); exSays(4, 75); is('Ex 4 says September', /twenty-ninth of September/.test(exRow(4))); }
-{ const r = []; for (let a = 0; a < 40; a++) for (let b = 0; b < 40; b++) { const [l, rr] = up([a, b, 6]); if (l === 20 && l + rr === 35) r.push([a, b, 6]); }
-  ok('Ex 5', r, [[11, 9, 6]]); exSays(5, 11, 9, 6, 20, 15, 35); }
-ok('Ex 6', range(0, 50).filter(x => top([x, 2 * x, 3 * x]) === 40), [5]); exSays(6, 5, 40);
-ok('Ex 6 middle row', up([5, 10, 15]), [15, 25]);
-ok('Ex 7', [top([2, 4, 6, 8]), up([2, 4, 6, 8]), up(up([2, 4, 6, 8]))], [40, [6, 10, 14], [16, 24]]); exSays(7, 40);
-{ const perms = (xs) => xs.length <= 1 ? [xs] : xs.flatMap((x, i) => perms([...xs.slice(0, i), ...xs.slice(i + 1)]).map(p => [x, ...p]));
-  const tops = perms([1, 2, 3, 4]).map(top); exSays(8, Math.max(...tops), Math.min(...tops)); }
-ok('Ex 9', anyMonth.filter(s => s.reduce((x, y) => x + y) === 104).map(String).filter((v, i, a) => a.indexOf(v) === i), ['22,23,29,30']); exSays(9, 22, 23, 29, 30);
-ok('Ex 10', [...new Set(squares(31, 3, 3, 0).concat(aug33).filter(s => s.reduce((x, y) => x + y) === 153).map(String))], ['9,10,11,16,17,18,23,24,25']);
-ok('Ex 10 rows', [9 + 10 + 11, 16 + 17 + 18, 23 + 24 + 25], [30, 51, 72]); exSays(10, 9, 11, 16, 18, 23, 25);
-{ const r = []; for (let s = 0; s < 30; s++) for (let t = 0; t < 30; t++) if (s + t === 12 && 2 * s + t === 17) r.push([s, t]);
-  ok('Ex 11', r, [[5, 7]]); exSays(11, 5, 7); }
-{ const a = arr([2, 7, 8]).sort((x, y) => y[0] - x[0]); ok('Ex 12', [a[0], a[1]], [[576, '72x8'], [574, '82x7']]); exSays(12, 576, 2); }
-{ const t = plain(beyond);
-  for (const x of ['t = 12 - s', '2s + (12 - s) = 17', 's + 12 = 17', 'b = 12 - a', 'a - (12 - a) = 2', '2a - 12 = 2', 'b = 12 - 7 = 5'])
-    is(`Examples 11 and 13 print the substitution "${x}"`, t.replace(/\s+/g, ' ').includes(x));
-  is('Ex 11 by substitution', range(0, 20).filter(s2 => 2 * s2 + (12 - s2) === 17)[0] === 5 && 12 - 5 === 7);
-  is('Ex 13 by substitution', range(0, 9).filter(a => a - (12 - a) === 2)[0] === 7 && 2 * 7 - 12 === 2);
-  { const a = range(0, 9).filter(a => 11 - 2 * a === 3)[0];
-    ok('Q25 by substitution', [a, 11 - a], [4, 7]);
-    is(`key 25 prints the substitution and a = ${a}`, t.replace(/\s+/g, ' ').includes(`With b = 11 - a , 11 - 2a = 3 , giving a = ${a} and b = ${11 - a}`) || t.replace(/\s+/g, ' ').includes(`11 - 2a = 3, giving a = ${a} and b = ${11 - a}`)); } }
-ok('Ex 13', two.filter(n => dsum(n) === 12 && n - rev(n) === 18), [75]); exSays(13, 75);
-ok('Ex 14', [2220 / 111, cyc(488), dsum(488), cyc(596), cyc(875)], [20, 2220, 20, 2220, 2220]); exSays(14, 20, 488);
-ok('Ex 16', range(-50, 50).filter(x => 2 * (3 * x - 5) === 38), [8]); exSays(16, 8);
-{ // Ex 15: written twice, divided by 77, gives 6019
-  const three = range(100, 999).filter(n => Number(`${n}${n}`) / 77 === 6019);
-  ok('Ex 15: the only three-digit number', three, [463]);
-  ok('Ex 15: 1001 = 77 x 13 = 7 x 11 x 13', [7 * 11 * 13, 77 * 13, 6019 / 13, 463 * 1001], [1001, 1001, 463, 463463]);
-  exSays(15, 463, 463463); }
-ok('Ex 17', range(0, 100).filter(x => genie(x, 10, 2) === 22), [13]); exSays(17, 13);
-ok('Ex 17 chain', [26 - 10, 32 - 10], [16, 22]);
-ok('Ex 18', range(0, 20).filter(b => 2 * b + 3 * (20 - b) === 48).map(b => [b, 20 - b]), [[12, 8]]); exSays(18, 12, 8);
-ok('Beyond has 18 examples, numbered in order', [...beyond.matchAll(/c-example__tab">Example (\d+)/g)].map(m => +m[1]), range(1, 18));
-ok('body examples numbered in order', [...body.matchAll(/c-example__tab">Example (\d+)/g)].map(m => +m[1]), range(1, 6));
+ok('Ex 1: k', range(0, 50).filter(k => range(1, 20).every(n => (4 * n + k) / 2 - 2 * n === 7)), [14]); has('Ex 1', exRow(1), '(b) 14');
+ok('Ex 2', two.filter(n => dsum(n) === 12 && n - rev(n) === 18), [75]); has('Ex 2', exRow(2), '(a) 75');
+ok('Ex 3', 2220 / 111, 20); has('Ex 3', exRow(3), '(a), (b), (d)');
+ok('Ex 4', any22.filter(s => sum(s) === 104).map(s => [s[0], s[3]])[0], [22, 30]); has('Ex 4', exRow(4), '(a), (b), (c)');
+ok('Ex 5', range(0, 50).filter(n => (3 * n - 5) * 2 === 38), [8]); has('Ex 5', exRow(5), '8');
+ok('Ex 6', ranked([2, 7, 8])[0][0], 576); has('Ex 6', exRow(6), '576');
+ok('Ex 7: x', range(1, 20).filter(x => top([x, 2 * x, 3 * x]) === 40), [5]); has('Ex 7', exRow(7), '(c) P–3, Q–4, R–1, S–2');
+ok('Ex 8', [10 / 2, 12 / 3, 30 / 5, range(1, 9).map(n => (2 * (n + 7) - 14) / 2 - n)[0]], [5, 4, 6, 0]); has('Ex 8', exRow(8), '(b) P–3, Q–4, R–2, S–1');
+ok('Ex 9', [range(0, 50).find(y => top([2, 7, y, 3]) === 50), up(up([2, 7, 8, 3]))[0]], [8, 24]); has('Ex 9', exRow(9), '(i) (b); (ii) 8; (iii) 24');
+ok('Ex 10', [game(13, 10, 3), range(1, 100).find(c => game(21, c, 3) === 0), range(1, 20).find(n => game(25, 24, n) > 100)], [34, 24, 7]); has('Ex 10', exRow(10), '(i) (a); (ii) 24; (iii) 7');
 
-// the practice answers, read back out of the key rather than typed here
-const keyRows = {};
-for (const m of beyond.matchAll(/<span class="work__label">(\d+)<\/span>\s*<span>([\s\S]*?)<\/span><\/div>/g)) keyRows[m[1]] ??= plain(m[2]);
-const row = (q) => {
-  const [, n, part] = String(q).match(/^(\d+)([a-d]?)$/);
-  const r = keyRows[n] || '';
-  if (!part) return r;
-  const m = r.match(new RegExp(`\\(${part}\\)(.*?)(?=\\([a-d]\\)|$)`));
-  return m ? m[1] : '';
-};
-const says = (q, ...vals) => { for (const v of vals) is(`key ${q} should say ${v}: "${row(q)}"`, new RegExp(`(^|[^\\d])${String(v).replace('.', '\\.')}([^\\d]|$)`).test(row(q))); };
-says(20, 4 * 9 + 16);
-is('key 21 prints both numbers', /10x \+ y/.test(row(21)) && /10y \+ x/.test(row(21)));
-says(22, top([1, 1, 1, 1]));
-{ const f = (add) => new Set(range(1, 60).map(x => (6 * x + add) / 3 - 2 * x)); ok('Q23: always 6', [...f(18)], [6]);
-  const add = range(0, 100).find(a => f(a).size === 1 && [...f(a)][0] === 10); says(23, 6, add); }
-{ const x = range(0, 50).find(x => top([x, 2 * x, x + 6]) === 48); says(24, x, 2 * x, x + 6, ...up([x, 2 * x, x + 6]), 48); }
-{ const n = two.filter(n => dsum(n) === 11 && rev(n) - n === 27); ok('Q25 has one answer', n.length, 1); says(25, n[0]); }
-{ const s = range(1, 500).filter(m => { const a = m / 2 - 10; const b = a / 2 - 10; return b === 6; }); ok('Q26 has one answer', s.length, 1); says(26, s[0]); }
-{ const s = [...new Set(squares(31, 3, 3, 0).concat(aug33).filter(q => q.reduce((x, y) => x + y) === 117).map(String))]; ok('Q27', s, ['5,6,7,12,13,14,19,20,21']); says(27, 13, 5, 21, 117); }
-{ const x = range(0, 100).filter(x => top([x, 3, 5, x]) === 60); ok('Q28 has one x', x.length, 1);
-  says(28, x[0], ...up([x[0], 3, 5, x[0]]), ...up(up([x[0], 3, 5, x[0]])));
-  is(`key 28 should say the top rises by ${top([x[0] + 1, 3, 5, x[0] + 1]) - 60}: "${row(28)}"`, row(28).includes(`raises the top by ${top([x[0] + 1, 3, 5, x[0] + 1]) - 60}`)); }
-{ says('29b', range(0, 100).find(x => genie(x, 12, 3) === 52));
-  is('Q29 (a): the three expressions', range(0, 20).every(x => genie(x, 12, 1) === 2 * x - 12 && genie(x, 12, 2) === 4 * x - 36 && genie(x, 12, 3) === 8 * x - 84));
-  says('29c', range(0, 100).filter(x => genie(x, 12, 1) > x)[0] - 1); }
-{ const t = (m, d) => (2 * m + 3) * 50 + d;
-  is('Q30 (a): every date is 100m + 150 + d', allDates.every(([m, d]) => t(m, d) === 100 * m + 150 + d));
-  const bd = (v) => allDates.filter(([m, d]) => t(m, d) === v);
-  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  for (const v of [979, 465, 1181]) { const r = bd(v); ok(`Q30 ${v} is one date`, r.length, 1); is(`key 30b should say ${r[0][1]}(st|th) of ${MONTHS[r[0][0] - 1]}: "${row('30b')}"`, new RegExp(`${r[0][1]}(st|nd|rd|th) of ${MONTHS[r[0][0] - 1]}`).test(row('30b'))); }
-  ok('Q30 (c): 1250 is no date', bd(1250).length, 0); says('30c', 1250 - 150); }
-says('31a', top([4, 6, 5]));
-says('31b', range(0, 100).find(x => top([3, x, 7]) === 34));
-says('31c', top([2, 5, 2, 6]));
+// Beyond: the practice answers
+says(beyRow, 9, top([1, 2, 3, 4, 5]));
+says(beyRow, 10, range(0, 100).find(n => (3 * (n + 4) - 6) / 2 === 21));
+says(beyRow, 11, range(0, 100).find(x => game(x, 20, 3) === 36));
+{ const a = any22.find(s => sum(s) === 64)[0]; const s33 = any33.find(s => s[0] === a); says(beyRow, 14, sum(s33), 4 * (any33.find(s => sum(s) === 171)[0]) + 16); }
+says(beyRow, 15, 1178 - 48 - 1100, 100 + 48 + 1);
+is('P15: Rekha\'s trick is 100m + 48 + d', allDates.every(([m, d]) => (5 * m + 2) * 20 + 8 + d === 100 * m + 48 + d));
+is('P14: 3x3 minus 2x2 is 5a + 56', any33.every(s => sum(s) - (4 * s[0] + 16) === 5 * s[0] + 56));
 
 /* ---- C. multiple choice and assertion-reason ------------------ */
 
-const qs = {};
-for (const m of beyond.matchAll(/<ol class="c-questions"(?: data-start="(\d+)")?>\s*<li>([\s\S]*?)<\/li>\s*<\/ol>\s*<\/div>/g)) qs[Number(m[1] || 1)] = m[2];
-ok('practice numbered 1..31 with no repeats', Object.keys(qs).map(Number).sort((a, b) => a - b), range(1, 31));
-ok('practice data-start in order on the pages', [...beyond.matchAll(/c-questions"(?: data-start="(\d+)")?/g)].map(m => Number(m[1] || 1)), range(1, 31));
-const optsOf = (n) => [...(qs[n] || '').matchAll(/<li>([\s\S]*?)<\/li>/g)].map(x => plain(x[1]).trim());
+const board = pages.filter(f => /^p09/.test(f)).map(f => html[f]).join('\n');
+const qsOf = (src) => { const q = {}; for (const m of src.matchAll(/<ol class="c-questions"(?: data-start="(\d+)")?>\s*<li>([\s\S]*?)<\/li>\s*<\/ol>\s*(?:<p class="c-practice__note">[^<]*<\/p>\s*)?<\/div>/g)) q[Number(m[1] || 1)] = m[2]; return q; };
+const bq = qsOf(board), pq = qsOf(beyond.slice(0, ansStart));
+ok('By the Book numbered 1..50', Object.keys(bq).map(Number), range(1, 50));
+ok('Beyond practice numbered 1..15', Object.keys(pq).map(Number), range(1, 15));
+const optsOf = (li) => { const m = li.match(/<ol class="c-parts c-parts--alpha[^"]*">([\s\S]*?)<\/ol>/); return m ? [...m[1].matchAll(/<li>([\s\S]*?)<\/li>/g)].map(x => plain(x[1]).trim()) : []; };
 const num = (s) => Number(s.replace(/[^\d.-]/g, ''));
-const key = {};
-{ const a = beyond.indexOf('<ol class="c-answers">');
-  for (const m of text(beyond.slice(a, beyond.indexOf('</ol>', a))).matchAll(/\b(\d+) \(([a-d])\)/g)) key[m[1]] ??= m[2]; }
-const MON = { May: 5, October: 10 };
-const solve = {
-  1: o => o.map(num).map(v => range(-20, 20).every(x => (2 * (x + 7) - 4) / 2 - x === v)),
-  2: o => o.map(s => { const [d, mo] = s.split(' '); return dateTrick(MON[mo], Number(d)) === 1170; }),
-  3: o => o.map(num).map(v => v === top([5, 8, 3])),
-  4: o => o.map(num).map(v => { const b = v; const bl = 7; const ml = bl + b; return ml === 18 && range(0, 50).some(r => ml + (b + r) === 30); }),
-  5: o => o.map(s => { const k = Number(s.replace(/\s/g, '').replace('a', '')); return range(1, 31).filter(a => ((a + 4) % 7) > 0 && a + 6 <= 31).every(a => aug(a + k).row === aug(a).row + 1 && aug(a + k).col === aug(a).col - 1); }),
-  6: o => o.map(num).map(v => anyMonth.filter(s => s.reduce((x, y) => x + y) === 72).every(s => Math.max(...s) === v)),
-  7: o => o.map(num).map(v => [28, 29, 30, 31].flatMap(n => range(0, 6).flatMap(f => squares(n, 3, 3, f))).some(s => s.reduce((x, y) => x + y) === v)),
-  8: o => o.map(num).map(v => { const c = 21 / 3; return c + 2 * v === 19; }),
-  9: o => o.map(s => { const [a, b] = s.split('×').map(Number); return a * b === best([4, 6, 7], 1)[0] && `${a}x${b}` === best([4, 6, 7], 1)[1]; }),
-  10: o => o.map(num).map(v => two.filter(n => n - rev(n) === 63).every(n => Math.floor(n / 10) - n % 10 === v)),
-  11: o => o.map(num).map(v => two.filter(n => n + rev(n) === 143).every(n => dsum(n) === v)),
-  12: o => o.map(num).map(v => three.every(n => cyc(n) % v === 0)),
-  13: o => { const zs = two.filter(n => n - rev(n) === 0);
-    const tests = [n => n % 10 === 0, n => dsum(n) === 9, n => n % 2 === 1, n => Math.floor(n / 10) === n % 10];
-    return tests.map(t => zs.every(t)); },
-  14: o => o.map(num).map(v => (4 * v - 6) / 2 === 15),
-  15: o => o.map(num).map(v => genie(6, 6, 3) === v),
+const MON = { August: 8, October: 10 };
+const checkMcq = (where, qs, keyMap, solve) => {
+  for (const [q, f] of Object.entries(solve)) {
+    const o = optsOf(qs[q]);
+    is(`${where} Q${q} has four options`, o.length === 4);
+    const right = f(o).map((t, i) => (t ? 'abcd'[i] : '')).join('');
+    ok(`${where} Q${q}: the right option(s)`, right, keyMap[q]);
+  }
 };
-for (const [q, f] of Object.entries(solve)) {
-  const o = optsOf(q);
-  is(`Q${q} has four options`, o.length === 4);
-  const right = f(o).map((t, i) => (t ? 'abcd'[i] : null)).filter(Boolean);
-  ok(`Q${q}: the right option`, right, [key[q]]);
-}
-// assertion-reason: [A true, R true, R explains A]
+checkMcq('By the Book', bq, btbKey, {
+  41: o => o.map(num).map(v => range(-20, 20).every(x => (2 * (x + 9) - 6) / 2 - x === v)),
+  42: o => o.map(s => s.replace(/\s/g, '') === '10b+a'),
+  43: o => o.map(s => { const [d, mo] = s.split(' '); return dateTrick(MON[mo], Number(d)) === 1005; }),
+  44: o => o.map(num).map(v => v === top([1, 2, 3, 4])),
+  45: o => o.map(num).map(k => range(1, 20).every(x => (5 * x + k) / 5 - x === 7)),
+  46: o => o.map(num).map(v => any22.filter(s => sum(s) === 76).every(s => s[0] === v)),
+  47: o => o.map(num).map(v => two.filter(n => n - rev(n) === 45).every(n => Math.floor(n / 10) - n % 10 === v)),
+  48: o => o.map(num).map(v => top([9, v, 13]) === 44 && 9 + v === 20),
+  49: o => { const t = [two.every(n => (n + rev(n)) % 11 === 0), two.every(n => (n - rev(n)) % 11 === 0), any22.every(s => sum(s) % 4 === 0)];
+    return [[true, false, false], [false, true, false], [true, false, true], [false, true, true]].map(c => c.every((x, i) => x === t[i])); },
+  50: o => [537 % 37 === 0 && cyc(537) % 37 === 0, cyc(537) % 37 === 0 && 537 % 37 !== 0, cyc(537) % 37 !== 0, false],
+});
+ok('Q50: moving the digits of 537', [375 + 753 + 537, cyc(537)], [1665, 1665]);
 const arLetter = ([a, r, x]) => (a && r ? (x ? 'a' : 'b') : a ? 'c' : r ? 'd' : 'e');
 const AR = {
-  16: [two.some(n => n - rev(n) === 35), two.every(n => (n - rev(n)) % 9 === 0), false],
-  17: [aug22.concat(anyMonth).every(s => s.reduce((x, y) => x + y) % 2 === 0), anyMonth.every(s => s.reduce((x, y) => x + y) === 4 * (s[0] + 4)), true],
-  18: [two.every(n => (n + rev(n)) % 11 === 0), range(2, 10).every(d => 11 % d), false],
-  19: [best([1, 2, 3], 1)[0] === 63 && best([1, 2, 3], 1)[1] === '21x3', triples.every(t => Math.floor(Number(best(t, 1)[1].slice(0, 2)) / 10) === t[2]), false],
+  31: [two.some(n => n + rev(n) === 132), two.filter(n => n % 10).every(n => n + rev(n) === 11 * dsum(n)), true],
+  32: [any22.some(s => sum(s) === 70), any22.every(s => sum(s) === 4 * s[0] + 16), true],
+  33: [ranked([1, 2, 3])[0][1] === '21x3', triples.every(t => Math.floor(Number(ranked(t)[0][1].slice(0, 2)) / 10) === t[2]), false],
+  34: [top([4, 6, 5]) === 21, binom(3)[1] === 2, true],
+  35: [845845 % 13 === 0, range(2, 12).every(d => 13 % d), false],
 };
-for (const [q, v] of Object.entries(AR)) ok(`Q${q}: assertion-reason`, arLetter(v), key[q]);
-const letters = Object.values(key);
-is(`key letters spread across a-d: ${letters.join('')}`, ['a', 'b', 'c', 'd'].every(l => letters.filter(x => x === l).length >= 3));
-ok('key covers 1-19', Object.keys(key).map(Number).sort((a, b) => a - b), range(1, 19));
+for (const [q, v] of Object.entries(AR)) ok(`By the Book Q${q}: assertion-reason`, arLetter(v), btbKey[q]);
+checkMcq('Beyond', pq, beyKey, {
+  1: o => o.map(num).map(v => range(-20, 20).every(x => ((x + 3) * 4 - 8) / 4 - x === v)),
+  2: o => o.map(num).map(v => any33.filter(s => sum(s) === 207).every(s => s[8] === v)),
+  3: o => o.map(num).map(v => two.filter(n => n === 8 * dsum(n)).length === v),
+  4: o => o.map(num).map(v => top([v, 1, 2, v]) === 45),
+  5: o => o.map(num).map(v => v + rev(v) === 154),
+  6: o => o.map(s => top(s.split(',').map(Number)) === 36),
+  7: o => [range(1, 6).every(n => game(12, 12, n) === 12), game(15, 12, 2) === 21, game(10, 12, 3) === 0 && game(10, 12, 2) > 0, range(0, 40).every(x => (game(x, 12, 1) > x) === (x > 12))],
+  8: o => o.map(num).map(v => any33.some(s => sum(s) === v)),
+});
+{ // matching practice, from the tables
+  const m12 = { P: 3, Q: 1, R: 4, S: 2 };
+  is('P12: the pairs hold', two.filter(n => n % 10).every(n => n + rev(n) === 11 * dsum(n) && n - rev(n) === 9 * (Math.floor(n / 10) - n % 10) && n - dsum(n) === 9 * Math.floor(n / 10)));
+  const m13 = [any22.find(s => sum(s) === 44)[0], any22.find(s => sum(s) === 96)[3], any33.find(s => sum(s) === 117)[4], any33.find(s => sum(s) === 180)[0]];
+  ok('P13: the values', m13, [7, 28, 13, 12]);
+  ok('P12, P13 letters', [beyKey[12], beyKey[13]], ['a', 'c']);
+  is('P12 option (a) is P–3, Q–1, R–4, S–2', optsOf(pq[12])[0].replace(/\s/g, '') === 'P–3,Q–1,R–4,S–2' && Object.entries(m12).length === 4);
+  is('P13 option (c) is P–1, Q–4, R–3, S–2', optsOf(pq[13])[2].replace(/\s/g, '') === 'P–1,Q–4,R–3,S–2');
+}
+{ const a = Object.values(btbKey).filter((v, i, arr) => true);
+  const obj = range(41, 50).map(q => btbKey[q]);
+  is(`objective letters spread: ${obj.join('')}`, ['a', 'b', 'c', 'd'].every(l => obj.filter(x => x === l).length >= 2));
+  const ar = range(31, 35).map(q => btbKey[q]);
+  is(`assertion-reason letters spread: ${ar.join('')}`, ['a', 'b', 'c', 'd'].every(l => ar.includes(l))); }
+
+// every question has an answer in the key
+ok('By the Book keyed 1..50', range(1, 50).filter(q => !(q in btbRow) && !(q in btbKey)), []);
+ok('Beyond practice keyed 1..15', range(1, 15).filter(q => !(q in beyKey) && !(q in beyRow) && !new RegExp(`(^|\\s)${q} \\(i\\)`).test(text(beyAns))), []);
+ok('every example ends in an Answer row', range(1, 10).filter(n => !exRow(n)), []);
 
 /* ---- D. ANSWERS.md prints the same key ------------------------ */
 
-const mdKey = {};
-const mdLine = answersMd.slice(answersMd.indexOf('as the key prints it'));
-for (const m of mdLine.slice(0, 400).matchAll(/\b(\d+) \(([a-d])\)/g)) mdKey[m[1]] = m[2];
-ok('ANSWERS.md key matches the page', mdKey, key);
-
-// ANSWERS.md printed answers, read back one at a time
-const mdSection = (head, next) => { const a = md.indexOf(head); const b = next ? md.indexOf(next, a + 1) : md.length; return a < 0 ? '' : md.slice(a, b); };
-const mdHas = (sec, what, ...vals) => { for (const v of vals) is(`ANSWERS.md ${what} should print ${v}`, sec.includes(String(v))); };
-{ const s = mdSection('Exercise Set 6.1', '6.4 Number Pyramids');
-  mdHas(s, '6.1', 'add 12: 6', 'add 9: 4.5', 'add 0: 0', 'Subtract 175', 'fourteenth of July', '21 January and 1 February'); }
-{ const s = mdSection('Exercise Set 6.2', '6.6 A Square');
-  mdHas(s, '6.2 Q1', '= 38', '= 32', '= 63'); mdHas(s, '6.2 Q2', '= 141', '= 124', '= 56');
-  mdHas(s, '6.2 Q4', '4, 20, 6', '24, 26', '5, 14, 7', '19, 21', '9, 10, 7', '19, 17');
-  mdHas(s, '6.2 Q6', 'x = 14', '6x = 85'); mdHas(s, '6.2 Q7', '1, 4, 6, 4, 1'); }
-{ const s = mdSection('Exercise Set 6.3', '6.8 The Largest');
-  mdHas(s, '6.3 Q1', '11, 12, 18, 19', '20, 21, 27, 28', '17, 18, 24, 25');
-  mdHas(s, '6.3', '44, 76 and 92', 'square is 6', 'star is 8', 'circle is 8', 'triangle is 5', '21, 22, 28, 29', '6a + 45', '9 × 19 = 171'); }
-{ const s = mdSection('Exercise Set 6.4', '6.10 Undoing');
-  mdHas(s, '6.4', '31 × 7 = 217', '62 × 8 = 496', '54 × 9 = 486', '37 × 1 = 37', '68 × 2 = 136', '59 × 4 = 236',
-    'differ by 5', '16, 27, 38', '39, 48, 57, 66, 75, 84, 93', '1554 ÷ 111 = 14', '158'); }
-{ const s = mdSection('Exercise Set 6.5', 'Beyond the Book');
-  mdHas(s, '6.5', '7 flowers, with 8', '20 horses', '6 years', 'Gauri 6, Naina 12', '₹80', '175 dosas', '14 coins', '15 flowers, with 16', '(16)/(48)'); }
-{ const s = mdSection('Stage 1', 'Stage 3');
-  mdHas(s, 'Stage 1', 'k = 10', 'twenty-fifth of December', '24, 25, 26.', '6 and 13', '12, 24, 36 and 48', '87 × 9 = 783', '24, 25, 26, 27', 'c = 48'); }
-{ const s = mdSection('Stage 3', null);
-  mdHas(s, 'practice', 'fifth of October', 'a + 6', 'a = 14', 'x = 7', 'number is 47', '₹84', 'x = 18', 'x = 17', 'x > 12', '29 August', '15 March', '31 October', 'x = 12', '= 29'); }
+const mdLetters = (head) => { const a = answersMd.indexOf(head); const k = {}; for (const m of answersMd.slice(a, a + 400).matchAll(/\b(\d+) \(([a-d])\)((?:, \([a-d]\))*)/g)) k[m[1]] = [m[2], ...[...m[3].matchAll(/\(([a-d])\)/g)].map(x => x[1])].join(''); return k; };
+ok('ANSWERS.md assertion-reason key', mdLetters('Key: 31'), Object.fromEntries(range(31, 35).map(q => [q, btbKey[q]])));
+ok('ANSWERS.md objective key', mdLetters('Key: 41'), Object.fromEntries(range(41, 50).map(q => [q, btbKey[q]])));
+{ const k = mdLetters('as the key prints it'); ok('ANSWERS.md Beyond key', k, Object.fromEntries(Object.entries(beyKey).filter(([q]) => q in k))); ok('ANSWERS.md Beyond key covers the letters', Object.keys(k).length, Object.keys(beyKey).length); }
 
 /* ---- report ---------------------------------------------------- */
 

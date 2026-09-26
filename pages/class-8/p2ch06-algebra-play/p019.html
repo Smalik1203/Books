@@ -1,14 +1,42 @@
-<section class="page" data-close>
+<section class="page">
   <div class="page__body">
     <div class="page__main">
 
-      
+      <h2><span class="badge">6.10</span><span class="name">Inventing Your Own</span></h2>
 
-      <p>Every section of this chapter began with something that looked like cleverness
-      and ended with something that looked like bookkeeping. That is the whole
-      transaction. A trick is a piece of arithmetic arranged so that what you cannot see
-      cancels out, and once it is written in letters there is nothing left to see
-      through.</p>
+      <p>Every trick in this chapter has the same parts. There is a number the other person knows and you do not. There are steps that make that number cancel, or push it into a place of its own. And there is a number, chosen by you, that decides the answer.</p>
+
+      <p>So build a trick backwards. Write the algebra first, and turn it into steps afterwards. Here is a new trick made that way. A two-digit number is $10a + b$, and the sum of its digits is $a + b$. Take one from the other.</p>
+
+      <div class="eq">$$(10a + b) - (a + b) = 9a$$</div>
+
+      <p>The $b$ has gone, and what is left is nine times the tens digit. So the trick is: <em>think of a two-digit number, add its two digits, and take that sum away from the number.</em> The answer is always a multiple of $9$. If you are told the answer, divide it by $9$ to get the tens digit. For example, $26$ gives $26 - 8 = 18$, and $18 \div 9 = 2$.</p>
+
+      <p>Before you show a trick to anyone, test the awkward cases: a number with a zero in it, a number whose digits are equal, and the largest number allowed. That is where a trick most often goes wrong.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Building a trick</div>
+        <ul class="c-keyidea__points">
+          <li>Write the algebra first, and turn it into steps afterwards.</li>
+          <li>Make the unknown cancel, then choose a number to set the answer.</li>
+        </ul>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Test the trick in this section on $90$ and on $55$. Does it still give the tens digit?</li>
+            <li>Start from $(10a + b) - (10b + a) = 9(a - b)$. Turn it into a trick whose answer tells you the gap between the two digits.</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
+      <p>Every section of this chapter began with something that looked clever and ended with some simple algebra. A trick is arithmetic arranged so that the number you cannot see cancels out. Once the trick is written in letters, nothing is hidden. So the next time someone shows you a trick, write it in letters and see how it works.</p>
 
     </div>
   </div>
