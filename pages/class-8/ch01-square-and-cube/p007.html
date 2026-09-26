@@ -2,6 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 170 76" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Squares of side one to four built from L-shaped borders of one, three, five and seven unit tiles">
+      
+            <!-- the first gnomon: one tile, in every square -->
+            <g class="dg-fill-b">
+              <rect x="12" y="55" width="7" height="7"/>
+              <rect x="40" y="55" width="7" height="7"/>
+              <rect x="76" y="55" width="7" height="7"/>
+              <rect x="119" y="55" width="7" height="7"/>
+            </g>
+            <!-- the second: three tiles -->
+            <g class="dg-fill-a">
+              <rect x="47" y="55" width="7" height="7"/>
+              <rect x="40" y="48" width="7" height="7"/><rect x="47" y="48" width="7" height="7"/>
+              <rect x="83" y="55" width="7" height="7"/>
+              <rect x="76" y="48" width="7" height="7"/><rect x="83" y="48" width="7" height="7"/>
+              <rect x="126" y="55" width="7" height="7"/>
+              <rect x="119" y="48" width="7" height="7"/><rect x="126" y="48" width="7" height="7"/>
+            </g>
+            <!-- the third: five tiles -->
+            <g class="dg-fill-c-soft">
+              <rect x="90" y="55" width="7" height="7"/><rect x="90" y="48" width="7" height="7"/>
+              <rect x="76" y="41" width="7" height="7"/><rect x="83" y="41" width="7" height="7"/>
+              <rect x="90" y="41" width="7" height="7"/>
+              <rect x="133" y="55" width="7" height="7"/><rect x="133" y="48" width="7" height="7"/>
+              <rect x="119" y="41" width="7" height="7"/><rect x="126" y="41" width="7" height="7"/>
+              <rect x="133" y="41" width="7" height="7"/>
+            </g>
+            <!-- the fourth: seven tiles -->
+            <g class="dg-fill-b-soft">
+              <rect x="140" y="55" width="7" height="7"/><rect x="140" y="48" width="7" height="7"/>
+              <rect x="140" y="41" width="7" height="7"/>
+              <rect x="119" y="34" width="7" height="7"/><rect x="126" y="34" width="7" height="7"/>
+              <rect x="133" y="34" width="7" height="7"/><rect x="140" y="34" width="7" height="7"/>
+            </g>
+      
+            <g class="dg-thin">
+              <path d="M47 48 V62 M40 55 H54"/>
+              <path d="M83 41 V62 M90 41 V62 M76 48 H97 M76 55 H97"/>
+              <path d="M126 34 V62 M133 34 V62 M140 34 V62 M119 41 H147 M119 48 H147 M119 55 H147"/>
+            </g>
+            <g class="dg-line">
+              <rect x="12" y="55" width="7" height="7"/>
+              <rect x="40" y="48" width="14" height="14"/>
+              <rect x="76" y="41" width="21" height="21"/>
+              <rect x="119" y="34" width="28" height="28"/>
+            </g>
+      
+            <text class="dg-note" x="15.5" y="72" text-anchor="middle">1</text>
+            <text class="dg-note" x="47"   y="72" text-anchor="middle">4</text>
+            <text class="dg-note" x="86.5" y="72" text-anchor="middle">9</text>
+            <text class="dg-note" x="133"  y="72" text-anchor="middle">16</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.3</span> Each square is the one before
+          it with an L added along two sides. The L holds $3$, then $5$, then $7$
+          tiles — the odd numbers, in order.</figcaption>
+        </figure>
+      </div>
+
+      <p>To grow a square of side $n$ into one of side $n+1$, you add a column of $n$
+      down one side, a row of $n$ along another, and a single tile at the corner where
+      they meet: $n + n + 1 = 2n + 1$ tiles, which is odd whatever $n$ is. That is the
+      argument, and the picture is the argument — nothing has been left out of it.</p>
+
       <div class="c-keyidea">
         <div class="c-keyidea__title">The sum of the odd numbers</div>
         <p>The first $n$ odd numbers add up to $n^2$:
@@ -10,10 +76,10 @@
 
       <p>Keep both the picture and the formula. The picture is what
       convinces; the formula is what calculates. Asked for
-      $1 + 3 + 5 + \cdots + 99$, you do not want to draw anything — you want to notice
-      that $99 = 2 \times 50 - 1$, so this is the first fifty odd numbers, so the answer
-      is $50^2 = 2500$. Fifty numbers added in one line, because you saw the shape of
-      the sum instead of doing the sum.</p>
+      $1 + 3 + 5 + \cdots + 59$, you do not want to draw anything. You want to notice
+      that $59 = 2 \times 30 - 1$, so this is the first thirty odd numbers, and the
+      answer is $30^2 = 900$. Thirty numbers are added in one line, because you saw the
+      shape of the sum instead of doing the sum.</p>
 
       <p>That single fact does two jobs. The first is a test. If every square is
       $1 + 3 + 5 + \cdots$, then subtracting the odd numbers in order from a square must
@@ -22,52 +88,24 @@
       <div class="c-example">
         <div class="c-example__tab">Example 2</div>
         <div class="c-example__body">
-          <p>Is $25$ a perfect square? Is $38$?</p>
-          <p>Subtract $1$, then $3$, then $5$, and keep going.</p>
+          <p>Is $36$ a perfect square? Is $45$?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>from 25: $24,\ 21,\ 16,\ 9,\ 0$</span>
-              <span class="work__why">zero after $5$ steps</span></div>
+              <span>from 36: $35,\ 32,\ 27,\ 20,\ 11,\ 0$</span>
+              <span class="work__why">zero after $6$ steps</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$25 = 1+3+5+7+9$, so $25 = 5^2$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>from 38: $37,\ 34,\ 29,\ 22,\ 13,\ 2,\ -11$</span>
-              <span class="work__why">overshot, from $2$ to $-11$</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$6^2 = 36$ and $7^2 = 49$, and $38$ is stuck between them</span>
-              <span class="work__why">no square between</span></div>
+              <span>from 45: $44,\ 41,\ 36,\ 29,\ 20,\ 9,\ -4$</span>
+              <span class="work__why">overshot, from $9$ to $-4$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$25$ is a perfect square; $38$ is not</span></div>
+              <span>$36 = 6^2$ is a perfect square; $45$ is not</span></div>
           </div>
-          <p>The count of steps is the root, which is a useful extra: the
-          method does not only say <em>yes</em>, it says <em>five</em>.</p>
         </div>
       </div>
 
-      <p>The second job is arithmetic. If you already know one square, the next one is a
-      single addition away.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 3</div>
-        <div class="c-example__body">
-          <p>Given that $35^2 = 1225$, find $36^2$ without multiplying.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$1225$ is the sum of the first $35$ odd numbers</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>36th odd number $= 2 \times 36 - 1 = 71$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$36^2 = 1225 + 71$</span>
-              <span class="work__why">sum of the first $36$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$36^2 = 1296$</span></div>
-          </div>
-          <p>The same step run the other way is just as useful: the $35$th odd number
-          is $69$, so $34^2 = 1225 - 69$.</p>
-        </div>
-      </div>
+      <p>The count of steps is the root: the method does not only say <em>yes</em>,
+      it says <em>six</em>. And $45$ is stuck between $6^2 = 36$ and $7^2 = 49$, with
+      no square between them.</p>
 
     </div>
   </div>

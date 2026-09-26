@@ -2,104 +2,85 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-figure c-figure--md">
+        <figure>
+          <svg viewBox="0 0 190 52" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A number line from 2500 to 3600 showing 2704 lying between 50 squared and 55 squared">
+            
+            <g class="dg-fill-a-soft">
+              <rect x="15" y="24" width="76.4" height="8"/>
+            </g>
+            <g class="dg-axis">
+              <path d="M15 28 H175"/>
+            </g>
+            <g class="dg-line">
+              <path d="M15 22 V34 M91.4 22 V34 M175 22 V34"/>
+            </g>
+            <g class="dg-fill-c">
+              <circle cx="44.7" cy="28" r="3"/>
+            </g>
+            
+            <text class="dg-note" x="15"  y="16">50² = 2500</text>
+            <text class="dg-note" x="91.4" y="16" text-anchor="middle">55² = 3025</text>
+            <text class="dg-note" x="175" y="16" text-anchor="end">60² = 3600</text>
+            <text class="dg-label" x="44.7" y="46" text-anchor="middle">2704</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.5</span> $2704$ falls in the shaded
+          stretch, so its root is between $50$ and $55$.</figcaption>
+        </figure>
+      </div>
+
+      <p>No factorisation was needed. Notice what each step did. The first narrowed
+      the candidates to ten, the second narrowed ten to two, and the third chose between
+      the two. Each step threw away most of what was left, which is what makes the
+      method quick.</p>
+
+      <p>The same trapping works when there is no exact answer to find, and then it is
+      the only thing that works. Most numbers are not perfect squares, so most of the
+      roots you will ever want cannot be written down exactly at all — and a question
+      about the real world hardly ever hands you a perfect square.</p>
+
       <div class="c-example">
         <div class="c-example__tab">Example 9</div>
         <div class="c-example__body">
-          <p>A square of cloth has an area of $125$ cm². Can a square handkerchief of
-          side $15$ cm be cut from it? What is the largest square handkerchief with a
-          whole-number side that can be?</p>
+          <p>A square sheet of card has an area of $150$ cm². Can a square tile of side
+          $13$ cm be cut from it? What is the largest square tile with a whole-number
+          side that can be cut from it?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>a side of $15$ cm needs $15^2 = 225$ cm², and there is only $125$</span>
+              <span>a side of $13$ cm needs $13^2 = 169$ cm², and there is only $150$</span>
               <span class="work__why">so no</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>either side of $\sqrt{125}$: $11^2 = 121$</span>
-              <span class="work__why">fits, $4$ cm² to spare</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$12^2 = 144$</span>
-              <span class="work__why">too big</span></div>
+              <span>$12^2 = 144$ is less than $150$</span>
+              <span class="work__why">fits, $6$ cm² to spare</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>No. The largest whole-number side is $11$ cm</span></div>
+              <span>No. The largest whole-number side is $12$ cm</span></div>
           </div>
-          <p>Notice that the first part was answered by squaring rather than by taking
-          a root.</p>
         </div>
       </div>
 
-      <p>Sometimes only the nearest whole number is wanted. To estimate $\sqrt{250}$:
-      it lies between $\sqrt{225} = 15$ and $\sqrt{256} = 16$, and since $250$ is much
-      closer to $256$ than to $225$, the root is a little under $16$. That is a good
-      enough answer to a question that has no exact one — $250$ is not a perfect square,
-      and no whole number will ever be its root.</p>
+      <p>Sometimes only the nearest whole number is wanted. To estimate $\sqrt{200}$:
+      it lies between $\sqrt{196} = 14$ and $\sqrt{225} = 15$. Since $200$ is much
+      closer to $196$ than to $225$, the root is a little over $14$. That is a good
+      answer to a question that has no exact one, because $200$ is not a perfect
+      square.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 1.4</div>
-        <ol class="c-questions">
-          <li>Find the square root of each by prime factorisation.
-              <ol class="c-parts c-parts--4">
-                <li>$225$</li>
-                <li>$1156$</li>
-                <li>$3025$</li>
-                <li>$7056$</li>
-              </ol>
-            </li>
-        </ol>
+      <p>The same trap can be closed further. Square numbers just above $14$, one decimal place at a time, and compare:</p>
+
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$14.1^2$</span>
+          <span>$= 198.81$</span>
+          <span class="work__why">less than $200$</span></div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$14.2^2$</span>
+          <span>$= 201.64$</span>
+          <span class="work__why">more than $200$</span></div>
       </div>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Find the length of the side of a square whose area is $441$ m².</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>Show by factorisation that $2800$ is not a perfect square, and find the
-              smallest number it must be multiplied by to make one.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="4">
-          <li>Find the smallest number by which $2925$ must be divided to leave a
-              perfect square, and give the root of the result.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="5">
-          <li>Find the smallest perfect square that is divisible by $14$, $20$ and
-              $35$.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="6">
-          <li>Estimate each root to the nearest whole number, and say which two squares
-              you trapped it between.
-              <ol class="c-parts c-parts--3">
-                <li>$\sqrt{80}$</li>
-                <li>$\sqrt{300}$</li>
-                <li>$\sqrt{1000}$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="7">
-          <li>$\sqrt{4489}$ is a whole number. Find it using only the two facts that
-              $60^2 = 3600$, $70^2 = 4900$, and the last-digit rule.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="8">
-          <li>A square hall has an area of $1444$ m² and is to be edged with a skirting
-              board. How many metres are needed?</li>
-        </ol>
-      </div>
+      <p>So $\sqrt{200}$ lies between $14.1$ and $14.2$. Each round of this kind gives
+      one more decimal place, and the trapping can go on for as long as you need.</p>
 
     </div>
   </div>

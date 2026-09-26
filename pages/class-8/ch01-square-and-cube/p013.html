@@ -2,6 +2,42 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Testing for a square</div>
+        <ul class="c-keyidea__points">
+          <li>A number is a perfect square when every prime in it appears an even number of times.</li>
+          <li>Its square root takes one prime from each pair: $\sqrt{784} = 2 \times 2 \times 7 = 28$.</li>
+        </ul>
+      </div>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+            <p>Example 6 asks what to <em>multiply</em> by. What is the smallest number
+            you could <em>divide</em> $3920$ by to leave a perfect square?</p>
+            <p>Is the answer the same number? Should you expect it to be?</p>
+          </div>
+        </div>
+      </div>
+
+      <p>One more thing follows from the factorisation, and it is worth noticing even
+      though nothing here depends on it. If a number is not a perfect square then its
+      root is not a whole number — that much is now obvious, since a stray prime cannot
+      be paired. What is far less obvious is that the root is not a fraction either.
+      There is no fraction whose square is $2$, and the reason is the pairing argument
+      run once more. That is a fact about the number line rather than a gap in our
+      methods, and it has a chapter of its own further on. For now it explains why
+      estimating a root well is a real skill and not second best: for most numbers
+      an estimate is the only answer there is.</p>
+
       <h3>1.3.1 Estimating a root you do not know</h3>
 
       <p>Factorising a large number takes time, and often it is not needed. Two facts
@@ -11,67 +47,29 @@
       <div class="c-example">
         <div class="c-example__tab">Example 8</div>
         <div class="c-example__body">
-          <p>Find $\sqrt{1936}$ without factorising.</p>
+          <p>Find $\sqrt{2704}$ without factorising.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$40^2 = 1600$ and $50^2 = 2500$, so the root of $1936$ is between $40$ and $50$</span>
+              <span>$50^2 = 2500$ and $60^2 = 3600$: the root is between $50$ and $60$</span>
               <span class="work__why">trap it</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$1936$ ends in $6$, so the root ends in $4$ or $6$: $44$ or $46$</span>
+              <span>$2704$ ends in $4$, so the root ends in $2$ or $8$: $52$ or $58$</span>
               <span class="work__why">use the last digit</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$45^2 = (40 + 5)(40 + 5) = 1600 + 400 + 25 = 2025$</span>
+              <span>$55^2 = (50 + 5)(50 + 5) = 2500 + 500 + 25 = 3025$</span>
               <span class="work__why">split the difference</span></div>
             <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$2025$ is more than $1936$, so the root is below $45$: $44$</span></div>
+              <span>$3025$ is more than $2704$, so the root is below $55$: $52$</span></div>
             <div class="work__row"><span class="work__label">Step 5</span>
-              <span>$44^2 = 1936$</span>
+              <span>$52^2 = 2704$</span>
               <span class="work__why">check</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$\sqrt{1936} = 44$</span></div>
-          </div>
-          <div class="c-figure c-figure--md">
-            <figure>
-              <svg viewBox="0 0 190 52" data-size="md" xmlns="http://www.w3.org/2000/svg"
-                   role="img" aria-label="A number line from 1600 to 2500 showing 1936 lying between 40 squared and 45 squared">
-      
-                <g class="dg-fill-a-soft">
-                  <rect x="15" y="24" width="75.6" height="8"/>
-                </g>
-                <g class="dg-axis">
-                  <path d="M15 28 H175"/>
-                </g>
-                <g class="dg-line">
-                  <path d="M15 22 V34 M90.6 22 V34 M175 22 V34"/>
-                </g>
-                <g class="dg-fill-c">
-                  <circle cx="74.7" cy="28" r="3"/>
-                </g>
-      
-                <text class="dg-note" x="15"  y="16">40² = 1600</text>
-                <text class="dg-note" x="90.6" y="16" text-anchor="middle">45² = 2025</text>
-                <text class="dg-note" x="175" y="16" text-anchor="end">50² = 2500</text>
-                <text class="dg-label" x="74.7" y="46" text-anchor="middle">1936</text>
-              </svg>
-              <figcaption><span class="fignum">Fig. 1.5</span> $1936$ falls in the shaded
-              stretch, so its root is between $40$ and $45$.</figcaption>
-            </figure>
+              <span>$\sqrt{2704} = 52$</span></div>
           </div>
       
         </div>
       </div>
-
-      <p>Three lines and no factorisation. Notice what each line contributed: the first
-      narrowed fifty candidates to ten, the second narrowed ten to two, and the third
-      chose between the two. Each step threw away most of what was left, which is what
-      makes the method quick — and it is a kind of argument you will meet whenever a
-      search has to be made short.</p>
-
-      <p>The same trapping works when there is no exact answer to find, and then it is
-      the only thing that works. Most numbers are not perfect squares, so most of the
-      roots you will ever want cannot be written down exactly at all — and a question
-      about the real world hardly ever hands you a perfect square.</p>
 
     </div>
   </div>

@@ -2,69 +2,65 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>Take any number and break it into primes. Now square it: every prime that
+      appeared once now appears twice, every prime that appeared three times now appears
+      six. Squaring doubles how many times each prime appears — so <strong>the prime factorisation of a
+      perfect square has every prime an even number of times</strong>, and the primes can
+      be dealt out into two identical piles.</p>
+
+      <p>It is worth seeing that this is a rule about the primes and not about the
+      number's appearance. Nothing on the outside of $1024$ suggests a square: it does
+      not look like one, and no digit of it helps. But $1024 = 2^{10}$, ten $2$s, which
+      deal into two piles of five, so it is $32^2$, and it could not have been anything else.
+      Meanwhile $1000$ looks tidy and is not a square at all: $2^3 \times 5^3$ leaves an
+      odd count of each. Once you can see inside a number, the way it looks no longer matters.</p>
+
       <div class="c-example">
-        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__tab">Example 4</div>
         <div class="c-example__body">
-          <p>Is $156$ a perfect square?</p>
+          <p>Is $784$ a perfect square? If so, what is its square root?</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$156 = 2 \times 2 \times 3 \times 13$</span></div>
+              <span>$784 = 2 \times 2 \times 2 \times 2 \times 7 \times 7$</span>
+              <span class="work__why">divide repeatedly</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>the two $2$s pair, but $3$ and $13$ are each alone</span>
+              <span>$(2 \times 2)$ and $(2 \times 2)$ and $(7 \times 7)$</span>
+              <span class="work__why">every prime pairs</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>$784 = (2 \times 2 \times 7) \times (2 \times 2 \times 7) = 28^2$</span>
+              <span class="work__why">two identical piles</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>Yes. $\sqrt{784} = 28$</span></div>
+          </div>
+          <p>Notice that the method hands over the root as part of the answer. Take one
+          member from each pair and multiply: $2 \times 2 \times 7 = 28$.</p>
+        </div>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 5</div>
+        <div class="c-example__body">
+          <p>Is $294$ a perfect square?</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>$294 = 2 \times 3 \times 7 \times 7$</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>the two $7$s pair, but $2$ and $3$ are each alone</span>
               <span class="work__why">no two identical piles</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>No. $156$ is not a perfect square</span></div>
+              <span>No. $294$ is not a perfect square</span></div>
           </div>
-          <p>The last digit would not have caught this one: $156$ ends in $6$, which is a
-          perfectly good ending for a square. The factorisation settles it.</p>
+          <p>The last digit would not have caught this one: $294$ ends in $4$, which is a
+          good ending for a square. The factorisation settles it.</p>
         </div>
       </div>
 
       <p>The unpaired primes are worth a close look, because they say exactly what is
-      missing. In $156$ the strays are $3$ and $13$; multiply by $3 \times 13 = 39$ and
-      the result, $6084$, is a square — it is $78^2$. That turns a test into a
+      missing. In $294$ the strays are $2$ and $3$. Multiply by $2 \times 3 = 6$ and
+      the result, $1764$, is a square: it is $42^2$. That turns a test into a
       construction.</p>
-
-      <p>It is worth being clear about why this third method replaces the other two
-      rather than sitting beside them. Listing and subtracting both take more work the
-      bigger the number is: testing a six-digit number by subtraction takes about a
-      thousand subtractions. Factorising takes more work only when the
-      <em>factors</em> are large, which is a different and usually much smaller thing — and it
-      answers questions the other two cannot answer at all, as the next two examples
-      show.</p>
-
-      <p>There is also a habit here that will serve you long after this chapter. Neither
-      example below is solved by remembering a procedure. Both are solved by writing the
-      number in a form where the answer is visible — and choosing that form is the whole
-      of the work. A number written as $9408$ tells you nothing; the same number written
-      as $2^6 \times 3 \times 7^2$ tells you everything the question was asking.</p>
-
-      <div class="c-example">
-        <div class="c-example__tab">Example 6</div>
-        <div class="c-example__body">
-          <p>Find the smallest number by which $9408$ must be multiplied to give a
-          perfect square, and find the square root of the product.</p>
-          <p>Factorise, then look for the primes that have no partner.</p>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$9408 = 2^6 \times 3 \times 7^2$</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>six $2$s make three pairs, two $7$s make one; the single $3$ is the only stray</span>
-              <span class="work__why">multiply by $3$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$9408 \times 3 = 2^6 \times 3^2 \times 7^2 = (2^3 \times 3 \times 7)^2$</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$8 \times 3 \times 7 = 168$</span>
-              <span class="work__why">one of each pair</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>Multiply by 3. $28224 = 168^2$, so the root is 168</span></div>
-          </div>
-          <p>Nothing smaller than $3$ will do, because that $3$ has to be paired
-          somehow.</p>
-        </div>
-      </div>
 
     </div>
   </div>

@@ -2,6 +2,36 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>
+        To be sure nothing smaller works, go up through the numbers in order. For each
+        one, run the smaller square from $1^2$ upwards, stopping when it passes half
+        the number — beyond that point you would only be finding the same pair the
+        other way round. Ask whether what remains is a square. Most numbers give no
+        pair at all; some, such as $25$, $34$ and $45$, give exactly one; $50$ is the
+        first to give two. </p>
+
+      <div class="work">
+        <div class="work__row"><span class="work__label work__label--wide">$25$</span><span>$= 3^2 + 4^2$</span><span class="work__why">one pair</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">$34$</span><span>$= 3^2 + 5^2$</span><span class="work__why">one pair</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">$45$</span><span>$= 3^2 + 6^2$</span><span class="work__why">one pair</span></div>
+        <div class="work__row"><span class="work__label work__label--wide">$50$</span><span>$= 1^2 + 7^2 = 5^2 + 5^2$</span><span class="work__why">two pairs</span></div>
+      </div>
+
+      <p>
+        That stopping rule is the whole art of it. Without it the search never ends;
+        with it, testing all fifty numbers takes a few minutes on paper. A search you
+        can prove has finished is worth far more than one you just got tired of.
+      </p>
+
+      <p>
+        A word about the third, because it is a different kind of
+        question from the rest. It asks you to show that something is
+        <em>impossible</em>, and you cannot do that by checking cases — there are
+        infinitely many and you would never finish. What settles an impossibility is an
+        argument that covers every case at once, and here the argument is
+        short. Finding it is the work; writing it down takes three lines.
+      </p>
+
       <p> The others are more ordinary, but each has one idea that does the work. The first turns on counting factors rather than listing them. The second is a subtraction of two squares in disguise. The fourth asks what a number must look like in its factorised form, which is the chapter's main move; the fifth traps two numbers between squares, and the seventh compares the two ends of a range. And the last is a search, so the question is not whether you can do it but whether you can organise it so that it ends. </p>
 
       <p>
@@ -14,16 +44,6 @@
 
       <p> That is the end of the eight questions. Read back over the eight and notice how few of them needed a calculation of any size. Three were settled by comparing sizes, two by counting primes, and one by choosing where to stop searching. The arithmetic in this chapter is easy. Deciding which of the chapter's few facts a question is really about is the part worth practising, and the examples and practice that follow are arranged to give you that practice rather than more sums. </p>
 
-      <div class="c-stage">
-        <div class="c-stage__num">2</div>
-        <div class="c-stage__text">
-          <div class="c-stage__title">Solved Examples</div>
-        </div>
-      </div>
-
-      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 1 · Single correct</div><div class="c-example__body"><p>Which of these cannot be a perfect square?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>6724</li><li>3528</li><li>1296</li><li>7056</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>A perfect square never ends in 2, 3, 7 or 8, so 3528 is ruled out at once.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>The others are squares: $82^2 = 6724$, $36^2 = 1296$ and $84^2 = 7056$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(b) 3528</span></div></div></div></div>
-
-      <div class="c-example" data-question-type="Single correct"><div class="c-example__tab">Example 2 · Single correct</div><div class="c-example__body"><p>What is $1 + 3 + 5 + \cdots + 79$?</p><p><em>Choose one correct option.</em></p><ol class="c-parts c-parts--alpha c-parts--4"><li>1560</li><li>1640</li><li>3200</li><li>1600</li></ol><p><strong>Solution.</strong></p><div class="work"><div class="work__row"><span class="work__label">Step 1</span><span>$79 = 2 \times 40 - 1$, so 79 is the 40th odd number.</span></div><div class="work__row"><span class="work__label">Step 2</span><span>The sum of the first 40 odd numbers is $40^2 = 1600$.</span></div><div class="work__row"><span class="work__label">Answer</span><span>(d) 1600</span></div></div></div></div>
 
     </div>
   </div>

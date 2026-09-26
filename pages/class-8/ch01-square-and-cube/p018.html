@@ -2,61 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The middle number is the key, and it is worth checking it yourself on the
-      fourth block. Its numbers are 13, 15, 17, 19, which average to 16 — and 16 is
-      $4^2$. Four numbers averaging $4^2$ total $4 \times 4^2 = 4^3$, and the block
-      does indeed come to 64. Nothing about the arrangement is accidental: the blocks
-      were cut to lengths 1, 2, 3, ... precisely so that each would land centred on the
-      next square.</p>
+      <p>The word doing the work in his answer is <em>smallest</em>. To check that
+                              $1729$ is a sum of two cubes in two ways takes two lines. To say that it is the
+                              <em>first</em> such number is a claim about all $1728$ numbers below it. You
+                              could check that claim yourself: for each number, run through the cubes that fit
+                              inside it, and see whether what is left is a cube too.</p>
+
+      <div class="c-reflect">
+                                <div class="c-reflect__icon">
+                                  <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M9.2 17.2h5.6M10 20.4h4"/>
+                                    <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+                                  </svg>
+                                </div>
+                                <div class="c-reflect__box">
+                                  <div class="c-reflect__mark">?</div>
+                                  <div class="c-reflect__title">Think and Reflect</div>
+                                  <div class="c-reflect__body">
+                                  <ol>
+                                    <li>$91 = 3^3 + 4^3$. Find two cubes whose <em>difference</em> is also $91$.</li>
+                                    <li>List every number below $100$ that is a sum of two different cubes. Is
+                                    any of them a sum of two cubes in two ways?</li>
+                                  </ol>
+                                  </div>
+                                </div>
+                              </div>
+
+      <h3>1.4.2 Cubes are sums of odd numbers too</h3>
+
+      <p>Squares turned out to be the running totals of the odd numbers. Cubes are made
+                              of the odd numbers as well, but cut into blocks rather than added one at a time.</p>
+
+      <p>Write the odd numbers out in one long row and then chop the row into blocks —
+                              one number, then two, then three, then four, and so on. Add up each block.</p>
+
+      <div class="work work--centred">
+                                <p>$1 = 1 = 1^3$</p>
+                                <p>$3 + 5 = 8 = 2^3$</p>
+                                <p>$7 + 9 + 11 = 27 = 3^3$</p>
+                                <p>$13 + 15 + 17 + 19 = 64 = 4^3$</p>
+                                <p>$21 + 23 + 25 + 27 + 29 = 125 = 5^3$</p>
+                              </div>
+
+      <p>Every odd number is used, none is used twice, and the blocks come out as the
+                              cubes in order. To see why, look at the middle of each block. The third block is $7, 9, 11$ and its middle number is $9 = 3^2$. The fourth
+                              averages $16 = 4^2$. The fifth has middle $25 = 5^2$. A block of $n$ numbers spread
+                              evenly around $n^2$ adds up to $n \times n^2$, which is $n^3$.</p>
 
       <div class="c-example">
-        <div class="c-example__tab">Example 10</div>
-        <div class="c-example__body">
-          <p>Without adding, find the value of</p>
-          <div class="work work--centred">
-            <p>$91 + 93 + 95 + 97 + 99 + 101 + 103 + 105 + 107 + 109$</p>
-          </div>
-          <p><strong>Solution.</strong></p>
-          <div class="work">
-            <div class="work__row"><span class="work__label">Step 1</span>
-              <span>ten consecutive odd numbers: a block of ten</span></div>
-            <div class="work__row"><span class="work__label">Step 2</span>
-              <span>the tenth block is centred on $10^2 = 100$</span></div>
-            <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$91$ to $109$: five below $100$ and five above</span>
-              <span class="work__why">it is the tenth block</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>sum $= 10 \times 100$</span></div>
-            <div class="work__row"><span class="work__label">Answer</span>
-              <span>$10^3 = 1000$</span></div>
-          </div>
-          <p>Step 3 is the check that these are the tenth block, and not ten odd
-          numbers picked from somewhere else.</p>
-        </div>
-      </div>
-
-      <p>Put the two facts about odd numbers side by side, because together they say
-      something neither says alone. The odd numbers added one at a time give the
-      squares; the same odd numbers taken in blocks of $1, 2, 3, \ldots$ give the cubes.
-      One list, read two ways, produces both of the families this chapter is about — and
-      a coincidence like that usually turns out not to be a coincidence at all. The reason
-      is visible in the block: a block of $n$ odd numbers centred on $n^2$ has total
-      $n \times n^2$, and $n \times n^2$ is what a cube is.</p>
-
-      <h2><span class="badge">1.5</span><span class="name">Cube Roots</span></h2>
-
-      <p>If $y = x^3$ then $x$ is the <span class="term">cube root</span> of $y$, written
-      $\sqrt[3]{y}$. Since $2^3 = 8$ we have $\sqrt[3]{8} = 2$, and since $10^3 = 1000$,
-      $\sqrt[3]{1000} = 10$.</p>
-
-      <p>There is no $\pm$ to worry about this time. A number has exactly one cube root,
-      because a positive number has a positive cube and a negative number has a negative
-      one — so $\sqrt[3]{-27} = -3$, and there is no second candidate.</p>
-
-      <p>The test for a cube is the test for a square with one word changed. Cubing a
-      number uses each of its primes three times, so <strong>the prime factorisation of
-      a perfect cube has every prime a multiple of three times</strong>, and the primes
-      can be dealt into three identical piles instead of two.</p>
+                          <div class="c-example__tab">Example 10</div>
+                          <div class="c-example__body">
+                            <p>Without adding, find $73 + 75 + 77 + 79 + 81 + 83 + 85 + 87 + 89$.</p>
+                            <p><strong>Solution.</strong></p>
+                            <div class="work">
+                              <div class="work__row"><span class="work__label">Step 1</span>
+                                <span>nine odd numbers in a row, with $81 = 9^2$ in the middle</span></div>
+                              <div class="work__row"><span class="work__label">Step 2</span>
+                                <span>four below $81$ and four above, so this is the ninth block</span></div>
+                              <div class="work__row"><span class="work__label">Step 3</span>
+                                <span>sum $= 9 \times 81 = 9^3$</span></div>
+                              <div class="work__row"><span class="work__label">Answer</span>
+                                <span>$729$</span></div>
+                            </div>
+                          </div>
+                        </div>
 
     </div>
   </div>

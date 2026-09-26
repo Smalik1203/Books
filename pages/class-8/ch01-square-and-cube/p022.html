@@ -2,61 +2,107 @@
   <div class="page__body">
     <div class="page__main">
 
-      <h2><span class="badge">1.6</span><span class="name">Where the Words Came From</span></h2>
+      <h3>1.5.2 Taking differences again and again</h3>
 
-      <p>The oldest lists of squares and cubes we have are Babylonian, pressed into clay
-      around 1700 BCE. They were not made for fun. A scribe who had to work out how much
-      earth a canal would move, or lay out a field of a given area, wanted the answer
-      quickly, and a table on the desk was quicker than a calculation. Tables of squares
-      and cubes are among the earliest mathematical objects anybody made, and they were
-      made because somebody needed them.</p>
+      <p>Section 1.2.2 took the differences of the squares once and found the odd
+                                                                                                                                          numbers. There is no reason to stop after one round. Take the differences of the
+                                                                                                                                          differences:</p>
 
-      <p>The words we use are older than the notation, and they are worth taking apart,
-      because each one is a picture.</p>
+      <div class="work">
+                                                                                                                                            <div class="work__row">
+                                                                                                                                              <span class="work__label work__label--wide">squares</span>
+                                                                                                                                              <span>$1 \qquad 4 \qquad 9 \qquad 16 \qquad 25 \qquad 36$</span>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="work__row">
+                                                                                                                                              <span class="work__label work__label--wide">first</span>
+                                                                                                                                              <span>$3 \quad\ \ 5 \quad\ \ 7 \quad\ \ \ 9 \quad\ \ 11$</span>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="work__row">
+                                                                                                                                              <span class="work__label work__label--wide">second</span>
+                                                                                                                                              <span>$2 \quad\ \ 2 \quad\ \ 2 \quad\ \ \ 2$</span>
+                                                                                                                                            </div>
+                                                                                                                                          </div>
 
-      <p>In Sanskrit mathematical writing — in use from at least the third century BCE —
-      the word <em>varga</em> meant a square figure, and the area of that figure, and the
-      operation of multiplying a number by itself. All three, with no attempt to keep
-      them apart. Āryabhaṭa, writing in 499 CE, defines it in both senses at once:
-      a four-sided figure with equal sides is a varga, and so is the product of two
-      equal numbers. The fourth power was <em>varga-varga</em>, the square of the
-      square.</p>
+      <p>After two rounds the squares have gone flat. Try the same on the cubes and see
+                                                                                                                                          how many rounds they take.</p>
 
-      <p>For solids the word was <em>ghana</em>, meaning thick or solid or compact —
-      again both the cube you could hold and the number you got by multiplying something
-      by itself three times.</p>
+      <div class="c-figure c-figure--lg">
+                                                        <figure>
+                                                          <svg viewBox="0 0 170 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+                                                               role="img" aria-label="A difference table for the cubes: the cubes, then first differences, then second, then third differences which are all six">
+                                                      
+                                                            <g class="dg-thin">
+                                                              <path d="M39 21 L43 31 M53 21 L49 31 M63 21 L67 31 M77 21 L73 31
+                                                                       M87 21 L91 31 M101 21 L97 31 M111 21 L115 31 M125 21 L121 31
+                                                                       M135 21 L139 31 M149 21 L145 31"/>
+                                                              <path d="M51 43 L55 53 M65 43 L61 53 M75 43 L79 53 M89 43 L85 53
+                                                                       M99 43 L103 53 M113 43 L109 53 M123 43 L127 53 M137 43 L133 53"/>
+                                                              <path d="M63 65 L67 75 M77 65 L73 75 M87 65 L91 75 M101 65 L97 75
+                                                                       M111 65 L115 75 M125 65 L121 75"/>
+                                                            </g>
+                                                      
+                                                            <g class="dg-note">
+                                                              <text x="2" y="16">cubes</text>
+                                                              <text x="2" y="38">first</text>
+                                                              <text x="2" y="60">second</text>
+                                                              <text x="2" y="82">third</text>
+                                                            </g>
+                                                      
+                                                            <g class="dg-note" text-anchor="middle">
+                                                              <text x="34"  y="16">1</text><text x="58"  y="16">8</text>
+                                                              <text x="82"  y="16">27</text><text x="106" y="16">64</text>
+                                                              <text x="130" y="16">125</text><text x="154" y="16">216</text>
+                                                      
+                                                              <text x="46"  y="38">7</text><text x="70"  y="38">19</text>
+                                                              <text x="94"  y="38">37</text><text x="118" y="38">61</text>
+                                                              <text x="142" y="38">91</text>
+                                                      
+                                                              <text x="58"  y="60">12</text><text x="82"  y="60">18</text>
+                                                              <text x="106" y="60">24</text><text x="130" y="60">30</text>
+                                                            </g>
+                                                            <g class="dg-label" text-anchor="middle">
+                                                              <text x="70"  y="82">6</text><text x="94"  y="82">6</text>
+                                                              <text x="118" y="82">6</text>
+                                                            </g>
+                                                          </svg>
+                                                          <figcaption><span class="fignum">Fig. 1.7</span> The cubes go flat after three
+                                                          rounds of taking differences, and the constant they settle on is $6$.</figcaption>
+                                                        </figure>
+                                                      </div>
 
-      <p>So the title of this chapter is not a metaphor anyone invented for it. For a
-      very long time a squared number and a square figure were the same word, because
-      they were felt to be the same thing.</p>
+      <p>Three rounds, and the constant is $6$. The squares took two rounds and settled
+                                                      on $2$. That is not a coincidence: the squares are $n^2$ and $2 = 1 \times 2$; the
+                                                      cubes are $n^3$ and $6 = 1 \times 2 \times 3$. Take differences of the fourth powers four
+                                                      times and they settle on $1 \times 2 \times 3 \times 4 = 24$. You can check
+                                                      this from $1, 16, 81, 256, 625, 1296$.</p>
 
-      <div class="c-keyidea">
-        <div class="c-keyidea__title">One word, one picture</div>
-        <p><em>Varga</em>: a square, its area, and the second power. <em>Ghana</em>: a
-        solid, and the third power. The arithmetic and the geometry were never separated
-        because nobody thought they were separate.</p>
-      </div>
+      <p>The count of rounds is the useful part. A list that goes flat after three
+                                                      rounds is behaving like a cube; one that goes flat after two is behaving like a
+                                                      square. For example, $2, 6, 12, 20, 30$ has differences $4, 6, 8, 10$
+      and then $2, 2, 2$. It goes flat after two rounds, so it behaves like a square,
+      and indeed it is $1^2 + 1$, $2^2 + 2$, $3^2 + 3$, and so on. Given a run of numbers
+      and no rule, taking differences is the first thing to try.</p>
 
-      <p>Undoing the operation got a picture of its own, and a stranger one. The Sanskrit
-      word <em>mūla</em> means the root of a plant, and from there the base, cause or
-      origin. A square root was the <em>varga-mūla</em> — the origin of the square — and
-      a cube root the <em>ghana-mūla</em>. The word is used this way from at least the first
-      century BCE. Another word used the same way was <em>pada</em>, a foot or a base.
-      Brahmagupta, writing in 628 CE, explains that the pada of a square is the thing it
-      is the square of.</p>
-
-      <p>That plant picture then travelled. Sanskrit mathematics reached the Arabic
-      world in the eighth and ninth centuries, and the translators did not invent a new
-      word: they used <em>jidhr</em>, which also means the root of a plant. When Arabic
-      mathematics reached Latin Europe some centuries later, the translators did the same
-      again with <em>radix</em>. From <em>radix</em> come the English words
-      <em>root</em> and <em>radical</em>, and the modern sign $\sqrt{\phantom{n}}$ is
-      often explained as a curled letter r standing for it.</p>
-
-      <p>Three languages and something like fifteen hundred years, and each set of
-      translators looked at the operation and chose the same picture — the thing
-      underground that the visible thing grew out of. When you write $\sqrt{49} = 7$ you
-      are saying that $7$ is what $49$ grew from.</p>
+      <div class="c-reflect">
+                                                        <div class="c-reflect__icon">
+                                                          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+                                                            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+                                                          </svg>
+                                                        </div>
+                                                        <div class="c-reflect__box">
+                                                          <div class="c-reflect__mark">?</div>
+                                                          <div class="c-reflect__title">Think and Reflect</div>
+                                                          <div class="c-reflect__body">
+                                                          <ol>
+                                                            <li>Take differences of $2, 8, 18, 32, 50, 72$ until they go flat. How many
+                                                            rounds does it take, and what does that tell you?</li>
+                                                            <li>A list goes flat after three rounds, and the constant is $12$. Guess how
+                                                            it was made from the cubes, and test your guess.</li>
+                                                          </ol>
+                                                          </div>
+                                                        </div>
+                                                      </div>
 
     </div>
   </div>

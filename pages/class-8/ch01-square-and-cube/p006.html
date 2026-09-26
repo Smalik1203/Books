@@ -2,25 +2,54 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 1.2</div>
+        <ol class="c-questions">
+          <li>Say which of these cannot be perfect squares, and give the reason in each
+              case.
+              <ol class="c-parts c-parts--4">
+                <li>$5287$</li>
+                <li>$3490$</li>
+                <li>$2116$</li>
+                <li>$7438$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Write four numbers between $5000$ and $6000$ that you can rule out as
+              squares from the last digit alone.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>A perfect square ends in $9$. What can the last digit of its square root
+              be?</li>
+        </ol>
+      </div>
+
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="4">
-          <li>How many zeros are at the end of $(4000)^2$? Answer without
+          <li>How many zeros are at the end of $(50\,000)^2$? Answer without
               multiplying.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
-          <li>Is $441$ odd or even? Is its square root odd or even? Say how you knew the
-              second without finding the root.</li>
+          <li>Is $1296$ odd or even? Is its square root odd or even? Say how you knew
+              the second without finding the root.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="6">
-          <li>Which of $64^2$, $108^2$, $292^2$ and $36^2$ end in the digit $4$? Use the
-              last-digit rule rather than a calculation.</li>
+          <li>Which of $52^2$, $77^2$, $118^2$ and $43^2$ end in the digit $4$? Use the last-digit rule.</li>
         </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §1.2</p>
       </div>
 
       <h3>1.2.2 Every square is a sum of odd numbers</h3>
@@ -43,13 +72,10 @@
       stop after one and you have $1$, stop after two and you have $4$, and the running
       total is a square at every step and never at any other moment.</p>
 
-      <p>Taking differences is a habit worth picking up, and it is useful well
-      beyond this chapter. Faced with a list you do not understand, the useful question
-      is often not <em>what are these numbers?</em> but <em>by how much is each one
-      bigger than the last?</em> A list that looks random can have differences that are
-      in perfect order, and then the differences are the thing to explain. Here the
-      squares — which grow in uneven jumps, faster and faster — turn out to be built from a
-      list as plain as the odd numbers.</p>
+      <p>Faced with a list you do not understand, a useful question is often not
+      <em>what are these numbers?</em> but <em>by how much is each one bigger than the
+      last?</em> Here the squares, which grow in bigger and bigger jumps, turn out to be
+      built from a list as plain as the odd numbers.</p>
 
       <div class="work work--centred">
         <p>$1 = 1$</p>
@@ -61,72 +87,6 @@
 
       <p>You could check another twenty lines and they would all work, and you would
       still not know why. The reason is easier to see in a picture.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 170 76" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="Squares of side one to four built from L-shaped borders of one, three, five and seven unit tiles">
-      
-            <!-- the first gnomon: one tile, in every square -->
-            <g class="dg-fill-b">
-              <rect x="12" y="55" width="7" height="7"/>
-              <rect x="40" y="55" width="7" height="7"/>
-              <rect x="76" y="55" width="7" height="7"/>
-              <rect x="119" y="55" width="7" height="7"/>
-            </g>
-            <!-- the second: three tiles -->
-            <g class="dg-fill-a">
-              <rect x="47" y="55" width="7" height="7"/>
-              <rect x="40" y="48" width="7" height="7"/><rect x="47" y="48" width="7" height="7"/>
-              <rect x="83" y="55" width="7" height="7"/>
-              <rect x="76" y="48" width="7" height="7"/><rect x="83" y="48" width="7" height="7"/>
-              <rect x="126" y="55" width="7" height="7"/>
-              <rect x="119" y="48" width="7" height="7"/><rect x="126" y="48" width="7" height="7"/>
-            </g>
-            <!-- the third: five tiles -->
-            <g class="dg-fill-c-soft">
-              <rect x="90" y="55" width="7" height="7"/><rect x="90" y="48" width="7" height="7"/>
-              <rect x="76" y="41" width="7" height="7"/><rect x="83" y="41" width="7" height="7"/>
-              <rect x="90" y="41" width="7" height="7"/>
-              <rect x="133" y="55" width="7" height="7"/><rect x="133" y="48" width="7" height="7"/>
-              <rect x="119" y="41" width="7" height="7"/><rect x="126" y="41" width="7" height="7"/>
-              <rect x="133" y="41" width="7" height="7"/>
-            </g>
-            <!-- the fourth: seven tiles -->
-            <g class="dg-fill-d">
-              <rect x="140" y="55" width="7" height="7"/><rect x="140" y="48" width="7" height="7"/>
-              <rect x="140" y="41" width="7" height="7"/>
-              <rect x="119" y="34" width="7" height="7"/><rect x="126" y="34" width="7" height="7"/>
-              <rect x="133" y="34" width="7" height="7"/><rect x="140" y="34" width="7" height="7"/>
-            </g>
-      
-            <g class="dg-thin">
-              <path d="M47 48 V62 M40 55 H54"/>
-              <path d="M83 41 V62 M90 41 V62 M76 48 H97 M76 55 H97"/>
-              <path d="M126 34 V62 M133 34 V62 M140 34 V62 M119 41 H147 M119 48 H147 M119 55 H147"/>
-            </g>
-            <g class="dg-line">
-              <rect x="12" y="55" width="7" height="7"/>
-              <rect x="40" y="48" width="14" height="14"/>
-              <rect x="76" y="41" width="21" height="21"/>
-              <rect x="119" y="34" width="28" height="28"/>
-            </g>
-      
-            <text class="dg-note" x="15.5" y="72" text-anchor="middle">1</text>
-            <text class="dg-note" x="47"   y="72" text-anchor="middle">4</text>
-            <text class="dg-note" x="86.5" y="72" text-anchor="middle">9</text>
-            <text class="dg-note" x="133"  y="72" text-anchor="middle">16</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 1.3</span> Each square is the one before
-          it with an L added along two sides. The L holds $3$, then $5$, then $7$
-          tiles — the odd numbers, in order.</figcaption>
-        </figure>
-      </div>
-
-      <p>To grow a square of side $n$ into one of side $n+1$, you add a column of $n$
-      down one side, a row of $n$ along another, and a single tile at the corner where
-      they meet: $n + n + 1 = 2n + 1$ tiles, which is odd whatever $n$ is. That is the
-      argument, and the picture is the argument — nothing has been left out of it.</p>
 
     </div>
   </div>

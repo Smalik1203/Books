@@ -5,35 +5,35 @@
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
-          <p>Which of $2032$, $2048$, $1027$ and $1089$ are certainly not perfect
+          <p>Which of $5382$, $7043$, $6917$ and $2209$ are certainly not perfect
           squares?</p>
           <p>Read the last digit of each and check it against the six that are
           possible.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$2032$ ends in $2$</span>
+              <span>$5382$ ends in $2$</span>
               <span class="work__why">impossible</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$2048$ ends in $8$</span>
+              <span>$7043$ ends in $3$</span>
               <span class="work__why">impossible</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$1027$ ends in $7$</span>
+              <span>$6917$ ends in $7$</span>
               <span class="work__why">impossible</span></div>
             <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$1089$ ends in $9$</span>
+              <span>$2209$ ends in $9$</span>
               <span class="work__why">possible, so look further</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$2032$, $2048$ and $1027$</span></div>
+              <span>$5382$, $7043$ and $6917$</span></div>
           </div>
           <p>Three are settled without a calculation. The fourth is not settled at all;
-          as it happens $1089 = 33^2$, but the last digit could never have told us
+          in fact $2209 = 47^2$, but the last digit could never have told us
           that.</p>
         </div>
       </div>
 
-      <p>Two more habits of squares are worth knowing. Both come from the
-      same place, and both save work later.</p>
+      <p>Two more habits of squares are worth knowing. Both save work
+      later.</p>
 
       <p><strong>Zeros come in pairs.</strong> Squaring $10$ gives $100$: one zero
       becomes two. Squaring $200$ gives $40\,000$: two zeros become four.</p>
@@ -59,36 +59,24 @@
       <p><strong>Squaring keeps a number odd or even.</strong> An even number is $2k$, and
       $(2k)^2 = 4k^2$, which is even. An odd number is $2k+1$, and its square is
       $4k^2 + 4k + 1$, which is odd. So a square is even exactly when the number it came
-      from is even — $6^2 = 36$, $7^2 = 49$ — and there are no
-      exceptions.</p>
+      from is even — $6^2 = 36$, $7^2 = 49$ — and there are no exceptions at all.</p>
 
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 1.2</div>
-        <ol class="c-questions">
-          <li>Say which of these cannot be perfect squares, and give the reason in each
-              case.
-              <ol class="c-parts c-parts--4">
-                <li>$4093$</li>
-                <li>$6250$</li>
-                <li>$1444$</li>
-                <li>$8877$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
+      <p>Both habits can be read backwards to rule numbers out, or to spot a square
+      quickly:</p>
 
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Write five numbers, each of at least four digits, that you can rule out as
-              squares by looking at the last digit alone.</li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="3">
-          <li>A perfect square ends in $6$. What are the possible last digits of the
-              number it is the square of?</li>
-        </ol>
+      <div class="work">
+        <div class="work__row">
+          <span class="work__label work__label--wide">$25\,000$</span>
+          <span>three zeros, an odd run</span>
+          <span class="work__why">not a square</span></div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$250\,000$</span>
+          <span>four zeros, and $25 = 5^2$</span>
+          <span class="work__why">$= 500^2$</span></div>
+        <div class="work__row">
+          <span class="work__label work__label--wide">$4900$</span>
+          <span>two zeros, and $49 = 7^2$</span>
+          <span class="work__why">$= 70^2$, an even root</span></div>
       </div>
 
     </div>

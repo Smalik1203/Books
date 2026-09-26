@@ -2,22 +2,84 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-figure c-figure--lg">
+        <figure>
+          <svg viewBox="0 0 170 86" data-size="lg" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="Square arrays of dots split along the diagonal into two triangular numbers: three and six making nine, six and ten making sixteen">
+      
+            <g class="dg-fill-b">
+              <circle cx="20" cy="38" r="3.6"/>
+              <circle cx="20" cy="52" r="3.6"/><circle cx="34" cy="52" r="3.6"/>
+              <circle cx="20" cy="66" r="3.6"/><circle cx="34" cy="66" r="3.6"/><circle cx="48" cy="66" r="3.6"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="34" cy="38" r="3.6"/><circle cx="48" cy="38" r="3.6"/>
+              <circle cx="48" cy="52" r="3.6"/>
+            </g>
+            <text class="dg-note" x="34" y="82" text-anchor="middle">6 + 3 = 9</text>
+      
+            <g class="dg-fill-b">
+              <circle cx="100" cy="24" r="3.6"/>
+              <circle cx="100" cy="38" r="3.6"/><circle cx="114" cy="38" r="3.6"/>
+              <circle cx="100" cy="52" r="3.6"/><circle cx="114" cy="52" r="3.6"/><circle cx="128" cy="52" r="3.6"/>
+              <circle cx="100" cy="66" r="3.6"/><circle cx="114" cy="66" r="3.6"/>
+              <circle cx="128" cy="66" r="3.6"/><circle cx="142" cy="66" r="3.6"/>
+            </g>
+            <g class="dg-fill-a">
+              <circle cx="114" cy="24" r="3.6"/><circle cx="128" cy="24" r="3.6"/><circle cx="142" cy="24" r="3.6"/>
+              <circle cx="128" cy="38" r="3.6"/><circle cx="142" cy="38" r="3.6"/>
+              <circle cx="142" cy="52" r="3.6"/>
+            </g>
+            <text class="dg-note" x="121" y="82" text-anchor="middle">10 + 6 = 16</text>
+          </svg>
+          <figcaption><span class="fignum">Fig. 1.4</span> A square array cut along its
+          diagonal falls into two triangles — one with the diagonal, one without — and
+          those are consecutive triangular numbers.</figcaption>
+        </figure>
+      </div>
+
+      <p>Cut a square array of dots along its diagonal. The half that keeps the
+      diagonal is a triangle of $1 + 2 + \cdots + n$ dots, and the other half is a
+      triangle one row shorter. Together they hold every dot, so two consecutive
+      triangular numbers always add to a square. Counting one set of dots in two ways
+      is a move mathematicians use often.</p>
+
+      <div class="c-reflect">
+        <div class="c-reflect__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.2 17.2h5.6M10 20.4h4"/>
+            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
+          </svg>
+        </div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Two consecutive triangular numbers add up to $121$. Which two are they?</li>
+            <li>Fig. 1.3 grows a square of side $n$ into a square of side $n + 1$. How
+            many tiles must be added to grow it into a square of side $n + 2$?</li>
+          </ol>
+          </div>
+        </div>
+      </div>
+
       <div class="c-practice">
         <div class="c-practice__head">Exercise Set 1.3</div>
         <ol class="c-questions">
-          <li>Given that $125^2 = 15625$, find $126^2$ by adding a single number, and
-              say which number and why.</li>
+          <li>Given that $85^2 = 7225$, find $86^2$ by adding a single number. Say which
+              number you added, and why.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="2">
-          <li>Use successive subtraction of odd numbers to decide whether each is a
-              perfect square, and give the root where there is one.
+          <li>Subtract the odd numbers in order to decide whether each number is a
+              perfect square. Give the root where there is one.
               <ol class="c-parts c-parts--3">
-                <li>$49$</li>
-                <li>$60$</li>
-                <li>$81$</li>
+                <li>$64$</li>
+                <li>$72$</li>
+                <li>$121$</li>
               </ol>
             </li>
         </ol>
@@ -25,11 +87,11 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="3">
-          <li>How many numbers lie strictly between the squares of
+          <li>How many whole numbers lie strictly between the squares of
               <ol class="c-parts c-parts--3">
-                <li>$16$ and $17$</li>
-                <li>$40$ and $41$</li>
-                <li>$99$ and $100$</li>
+                <li>$12$ and $13$</li>
+                <li>$35$ and $36$</li>
+                <li>$75$ and $76$</li>
               </ol>
             </li>
         </ol>
@@ -37,58 +99,19 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="4">
-          <li>The triangular numbers begin $1, 3, 6, 10, 15, 21$. Continue to the tenth,
-              then use them to write down four square numbers.</li>
+          <li>Write the triangular numbers up to the twelfth. Use them to write four
+              square numbers greater than $50$.</li>
         </ol>
       </div>
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
-          <li>Fill in the missing entries, and describe the pattern in a sentence.
-              <div class="work work--centred">
-                <p>$1^2 + 2^2 + 2^2 = 3^2$</p>
-                <p>$2^2 + 3^2 + 6^2 = 7^2$</p>
-                <p>$3^2 + 4^2 + 12^2 = 13^2$</p>
-                <p>$4^2 + 5^2 + \underline{\quad}^2 = \underline{\quad}^2$</p>
-              </div>
-            </li>
+          <li>Continue the pattern $3^2 + 4^2 = 5^2$, $5^2 + 12^2 = 13^2$,
+              $7^2 + 24^2 = 25^2$ to the next line, which starts with $9^2$. Describe
+              the pattern in a sentence.</li>
         </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §1.2</p>
       </div>
-
-      <h2><span class="badge">1.3</span><span class="name">Square Roots</span></h2>
-
-      <p>A square patch of ground has an area of $49$ m². How long is its side?</p>
-
-      <p>The question runs the other way from everything so far. We have been given a
-      side and asked for an area; now we are given the area and asked for the side. Since
-      $7 \times 7 = 49$, the side is $7$ m, and we call $7$ a
-      <span class="term">square root</span> of $49$.</p>
-
-      <p>In general, if $y = x^2$ then $x$ is a square root of $y$. Undoing a squaring is
-      the whole business of this section, and there is one wrinkle in it to settle first.</p>
-
-      <p>What is the square root of $64$? Eight, because $8 \times 8 = 64$. But
-      $-8 \times -8 = 64$ as well, so $-8$ has an equal claim:</p>
-
-      <div class="work work--centred">
-        <p>$8^2 = 64 \qquad \text{and} \qquad (-8)^2 = 64$</p>
-      </div>
-
-      <p><strong>Every perfect square has two square roots</strong>, one positive and
-      one negative, and they differ only in sign. Zero is the single exception: its only
-      square root is itself.</p>
-
-      <p>Writing both every time would be slow, so the symbol $\sqrt{\phantom{n}}$
-      is taken to mean the positive one:</p>
-
-      <div class="work work--centred">
-        <p>$\sqrt{64} = 8, \qquad \sqrt{100} = 10, \qquad \sqrt{441} = 21$</p>
-      </div>
-
-      <p>When the negative root is wanted it is written $-\sqrt{64} = -8$, and when both
-      are wanted, $\pm\sqrt{64} = \pm 8$. In this chapter we want the positive one all
-      through, since a side length of $-8$ m is not a side length. So from here on
-      <em>the</em> square root means the positive square root.</p>
 
     </div>
   </div>

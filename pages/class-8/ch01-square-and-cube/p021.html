@@ -2,15 +2,70 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="c-example">
+                                                                                                                                <div class="c-example__tab">Example 12</div>
+                                                                                                                                <div class="c-example__body">
+                                                                                                                                  <p>Given that $10\,648$ is a perfect cube, find $\sqrt[3]{10\,648}$ without
+                                                                                                                                  factorising.</p>
+                                                                                                                                  <p><strong>Solution.</strong></p>
+                                                                                                                                  <div class="work">
+                                                                                                                                    <div class="work__row"><span class="work__label">Step 1</span>
+                                                                                                                                      <span>$10\,648$ ends in $8$, so the root ends in $2$</span>
+                                                                                                                                      <span class="work__why">the units digit</span></div>
+                                                                                                                                    <div class="work__row"><span class="work__label">Step 2</span>
+              <span>strike out the last three digits to leave $10$; $2^3 = 8$ fits in it and $3^3 = 27$ does not</span>
+              <span class="work__why">the tens digit is $2$</span></div>
+                                                                                                                                    <div class="work__row"><span class="work__label">Step 3</span>
+                                                                                                                                      <span>$22^3 = 10\,648$</span>
+                                                                                                                                      <span class="work__why">check</span></div>
+                                                                                                                                    <div class="work__row"><span class="work__label">Answer</span>
+                                                                                                                                      <span>$\sqrt[3]{10\,648} = 22$</span></div>
+                                                                                                                                  </div>
+                                                                                                                                </div>
+                                                                                                                              </div>
+
+      <p>Striking out three digits divides by $1000 = 10^3$, so it finds the tens part of the root. Try it on two more. $29\,791$ ends in $1$, so the root ends in $1$. Strike
+                                                                                                                              three digits to leave $29$, and $3^3 = 27$ fits where $4^3 = 64$ does not, so
+                                                                                                                              the root is $31$. And $110\,592$ ends in $2$, so the root ends in $8$. Here
+                                                                                                                              $110$ leaves $4^3 = 64$ as the largest cube that fits, so the root is $48$. Given $8200$, which is not a cube, the method
+      would wrongly answer $20$: it finds a root, but it does not test for one.</p>
+
+      <div class="c-practice">
+        <div class="c-practice__head">Exercise Set 1.5</div>
+        <ol class="c-questions">
+          <li>Find each cube root by prime factorisation.
+              <ol class="c-parts c-parts--4">
+                <li>$\sqrt[3]{343}$</li>
+                <li>$\sqrt[3]{1728}$</li>
+                <li>$\sqrt[3]{64\,000}$</li>
+                <li>$\sqrt[3]{2197}$</li>
+              </ol>
+            </li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="2">
+          <li>Find the smallest number by which $1080$ must be multiplied to give a
+              perfect cube. Give the cube root of the result.</li>
+        </ol>
+      </div>
+
+      <div class="c-practice c-practice--cont">
+        <ol class="c-questions" data-start="3">
+          <li>Find the smallest number by which $6750$ must be divided to leave a
+              perfect cube.</li>
+        </ol>
+      </div>
+
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="4">
-          <li>True or false, with a reason in each case.
+          <li>True or false? Give a reason in each case.
               <ol class="c-parts c-parts--1">
-                <li>The cube of an odd number is even.</li>
-                <li>No perfect cube ends in $8$.</li>
-                <li>The cube of a two-digit number may have three digits.</li>
-                <li>The cube of a two-digit number may have seven digits.</li>
-                <li>Cube numbers have an odd number of factors.</li>
+                <li>The cube of an even number is odd.</li>
+                <li>A perfect cube can end in the digit $7$.</li>
+                <li>The cube of a three-digit number may have ten digits.</li>
+                <li>Every perfect cube has an even number of factors.</li>
               </ol>
             </li>
         </ol>
@@ -18,90 +73,11 @@
 
       <div class="c-practice c-practice--cont">
         <ol class="c-questions" data-start="5">
-          <li>Which is greater, $67^3 - 66^3$ or $43^3 - 42^3$? And which of
-              $67^2 - 66^2$ and $43^2 - 42^2$? Answer without working out the cubes.</li>
+          <li>Find $11^3 - 10^3$ and $10^3 - 9^3$. Is the difference of two
+              consecutive cubes always odd? Give a reason.</li>
         </ol>
+        <p class="c-practice__note">NCERT, Figure it Out, §1.5</p>
       </div>
-
-      <h3>1.5.2 Taking differences again and again</h3>
-
-      <p>Section 1.2.2 took the differences of the squares once and found the odd
-      numbers. There is no reason to stop after one round. Take the differences of the
-      differences:</p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">squares</span>
-          <span>$1 \qquad 4 \qquad 9 \qquad 16 \qquad 25 \qquad 36$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">first</span>
-          <span>$3 \quad\ \ 5 \quad\ \ 7 \quad\ \ \ 9 \quad\ \ 11$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">second</span>
-          <span>$2 \quad\ \ 2 \quad\ \ 2 \quad\ \ \ 2$</span>
-        </div>
-      </div>
-
-      <p>After two rounds the squares have gone flat. Try the same on the cubes and see
-      how many rounds they take.</p>
-
-      <div class="c-figure c-figure--lg">
-        <figure>
-          <svg viewBox="0 0 170 92" data-size="lg" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A difference table for the cubes: the cubes, then first differences, then second, then third differences which are all six">
-      
-            <g class="dg-thin">
-              <path d="M39 21 L43 31 M53 21 L49 31 M63 21 L67 31 M77 21 L73 31
-                       M87 21 L91 31 M101 21 L97 31 M111 21 L115 31 M125 21 L121 31
-                       M135 21 L139 31 M149 21 L145 31"/>
-              <path d="M51 43 L55 53 M65 43 L61 53 M75 43 L79 53 M89 43 L85 53
-                       M99 43 L103 53 M113 43 L109 53 M123 43 L127 53 M137 43 L133 53"/>
-              <path d="M63 65 L67 75 M77 65 L73 75 M87 65 L91 75 M101 65 L97 75
-                       M111 65 L115 75 M125 65 L121 75"/>
-            </g>
-      
-            <g class="dg-note">
-              <text x="2" y="16">cubes</text>
-              <text x="2" y="38">first</text>
-              <text x="2" y="60">second</text>
-              <text x="2" y="82">third</text>
-            </g>
-      
-            <g class="dg-note" text-anchor="middle">
-              <text x="34"  y="16">1</text><text x="58"  y="16">8</text>
-              <text x="82"  y="16">27</text><text x="106" y="16">64</text>
-              <text x="130" y="16">125</text><text x="154" y="16">216</text>
-      
-              <text x="46"  y="38">7</text><text x="70"  y="38">19</text>
-              <text x="94"  y="38">37</text><text x="118" y="38">61</text>
-              <text x="142" y="38">91</text>
-      
-              <text x="58"  y="60">12</text><text x="82"  y="60">18</text>
-              <text x="106" y="60">24</text><text x="130" y="60">30</text>
-            </g>
-            <g class="dg-label" text-anchor="middle">
-              <text x="70"  y="82">6</text><text x="94"  y="82">6</text>
-              <text x="118" y="82">6</text>
-            </g>
-          </svg>
-          <figcaption><span class="fignum">Fig. 1.7</span> The cubes go flat after three
-          rounds of taking differences, and the constant they settle on is $6$.</figcaption>
-        </figure>
-      </div>
-
-      <p>Three rounds, and the constant is $6$. The squares took two rounds and settled
-      on $2$. That is not a coincidence: the squares are $n^2$ and $2 = 1 \times 2$; the
-      cubes are $n^3$ and $6 = 1 \times 2 \times 3$. Take differences of the fourth powers four
-      times and they settle on $1 \times 2 \times 3 \times 4 = 24$ — which you can check
-      from $1, 16, 81, 256, 625, 1296$ if you have the patience.</p>
-
-      <p>The count of rounds is the useful part. A list that goes flat after three
-      rounds is behaving like a cube; one that goes flat after two is behaving like a
-      square. Given a run of numbers and no rule, taking differences is the first thing to
-      try — and it is a trick you will meet again whenever you have to work out a
-      sequence rather than remember it.</p>
 
     </div>
   </div>

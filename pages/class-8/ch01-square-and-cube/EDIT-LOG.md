@@ -1,4 +1,60 @@
-# Class 8 · Mathematics I · Chapter 1 — The Shape of a Number
+# Class 8 · Mathematics I · Chapter 1 — A Square and A Cube
+
+
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, Beyond the Book and the
+answers further down this log.** Converted with CONVERT-V2.md on the model of
+Class 6 Chapter 1. `chapter.json`: design `maths-v2`, palette `prism-harbour`
+(accent `#1b626e`), edition `196x276-large`, `keepExerciseSets`. 44 pages:
+
+* **Body p001–p025**, NCERT's sections in NCERT's order, ending on a
+  **Summary** page (p025, `data-close`, ten points).
+* **By the Book p090–p095**, six pages, 50 questions to BY-THE-BOOK.md at the
+  Class 8 level: letters in word problems (21, 25, 29), algebraic *Show that*
+  (12, 23, 29), *In the given figure* (24, 27, each with a drawn figure), one
+  find-the-mistake (15), one multi-statement MCQ (48), a named student's claim
+  (49), case passages of 50–60 words with a table. π does not occur in the
+  chapter, so no constant is given.
+* **Beyond the Book p101–p113**: the old Stage 1 with no stage head, then
+  Single correct · More than one correct · Numerical answer · Matching ·
+  Paragraph-based, two examples and 4 · 4 · 3 · 2 · 2 new practice questions
+  each; Answers on a fresh page (p112–p113).
+
+**No NCERT expression.** The locker puzzle (NCERT's opening story) became a
+board of 150 light switches pressed by students before the annual day, with
+Fig. 1.2 redrawn as lights; the taxicab Think and Reflect that set NCERT's
+4104 and 13 832 question was replaced (91 as a sum and as a difference of
+cubes; sums of two cubes below 100). Every example and exercise number that
+matched an NCERT or older-NCERT question was changed (9408, 1323, 8640,
+4913/12 167/32 768, 35² = 1225, 324, 156, 1936, 4, 9, 10 …), and every
+exercise set was rewritten as our own questions. Each set ends with a
+`c-practice__note` reference, **cited by section, not page** ("NCERT, Figure
+it Out, §1.2"): no NCERT page number could be established from the chapter's
+files. Section numbers are ours, which follow NCERT's order.
+
+**Structure.** Every section now has a key idea and a Think and Reflect
+(added: T&R in §1.2, §1.5 and §1.6; key ideas *Testing for a square* and
+*Testing for a cube*). §1.6 was cut to one page. Exercise Set 1.4 lost a
+question (area 676) and 1.5 a true/false part, and 1.6 went from 19 questions
+to 10, so that no set divides. Fig. 1.5 moved out of Example 8. `dg-fill-d`
+(beige) replaced by `dg-fill-b-soft`. Stage 1's `.chip` marks (pills) became
+`.work__why`; its words are unchanged except five tiny lone-word repairs
+("such numbers", "as well", "as here"). p105 was filled by a four-row `.work` block under the sum-of-two-squares search (25, 34, 45 with one pair; 50 with two), showing the search the paragraph describes; no meta text.
+
+**Beyond examples kept** from the old fifteen: single correct 4 and 5,
+multiple correct 8 and 9, numerical 13 and 11 (now √3136, since the body
+prints 1764 = 42²), matching 14 and 15; the locker example was dropped. Two
+paragraph-based examples written (a tiled floor; the odd-number blocks).
+
+**Checks at close:** build *all pages fit*, every page ≥ 88% except the
+Summary (89%) and By the Book's last page; `lone-words` 0; `check-sums` 52
+identities, 0 wrong; `orphans` 0; `check-labels` no collisions;
+`fit-options` every row fits; `check-numbers.mjs` **rewritten** on the
+model's pattern (identities on every page and in ANSWERS.md, key complete
+1–50 and 1–15, every single-correct option recomputed, Beyond's numerical
+answers recomputed): 169 checks, 0 failed, and a planted wrong letter and a
+planted wrong number are both caught. ANSWERS.md rewritten in full.
 
 ## Solved examples in examination formats, 23 September 2026
 
