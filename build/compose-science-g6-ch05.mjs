@@ -11,6 +11,7 @@ import {promisify} from 'node:util';
 import {pathToFileURL} from 'node:url';
 import {title,shortTitle,opener,lesson,glossary,summary,exercises,projects} from './science-g6-ch05-content.mjs';
 import {measureDiagram} from './science-g6-ch05-diagrams.mjs';
+import {pageExtensions,referenceChecks} from './science-g6-ch05-page-review.mjs';
 import {chapterOpener} from './chapter-opener.mjs';
 import {scienceHeaderArt} from './science-header-art.mjs';
 import {v2PanelHeading} from './science-v2-cues.mjs';
@@ -29,7 +30,7 @@ const E=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('
 function tokens(s){let bold=false,italic=false;return s.split(/\s+/).filter(Boolean).map(w=>{const parts=[];for(const p of w.split(/(\*\*|\*)/)){if(p==='**')bold=!bold;else if(p==='*')italic=!italic;else if(p)parts.push({s:p,k:bold?'b':italic?'i':'n'});}return parts;});}
 const labels='Keywords Summary Let Us Enhance Our Learning Use your notebook. Support each answer with evidence and explain any uncertainty. Explore Further';
 const strings=value=>typeof value==='string'?[value]:value&&typeof value==='object'?Object.values(value).flatMap(strings):[];
-const terms=new Set([' ','—']);for(const w of tokens(strings({title,opener,lesson,glossary,summary,exercises,projects}).join(' ')+' '+labels))for(const p of w)terms.add(p.s);
+const terms=new Set([' ','—','•']);for(const w of tokens(strings({title,opener,lesson,glossary,summary,exercises,projects,pageExtensions,referenceChecks}).join(' ')+' '+labels))for(const p of w)terms.add(p.s);
 const probe=path.resolve('build/_g6-ch05-type-measure.html');
 const faces={n:'400 24px "Source Serif 4"',b:'700 24px "Source Serif 4"',i:'italic 400 24px "Source Serif 4"',h:'700 30px "Source Sans 3"',s:'600 24px "Source Sans 3"'};
 await fs.writeFile(probe,`<html><head><meta charset="utf-8"><link rel="stylesheet" href="../css/science-v2-fonts.css"></head><body><script>onload=async()=>{const faces=${JSON.stringify(faces)};await Promise.all(Object.values(faces).map(f=>document.fonts.load(f)));const c=document.createElement('canvas').getContext('2d'),out={};for(const [k,f] of Object.entries(faces)){c.font=f;out[k]={};for(const s of ${JSON.stringify([...terms])})out[k][s]=c.measureText(s).width;}document.title='METRICS'+JSON.stringify(out);};</script></body></html>`);
@@ -39,15 +40,21 @@ const word=parts=>parts.map(p=>p.k==='n'?E(p.s):`<tspan class="${p.k==='b'?'se-b
 const typographyReplacements=new Map();
 function lines(rows,x,y,cls='se-copy',lead=32,size=24){return justifiedProseLines(rows,x,y,cls,lead,size,{word,widths,replacements:typographyReplacements,narrowMeasure:600});}
 const label=(s,x,y,cls='se-caption',anchor='start')=>`<text class="${cls}" x="${x}" y="${y}" text-anchor="${anchor}">${E(s)}</text>`;
-const caption=(s,y)=>{const rows=wrap(s,874,'n',.87);return {html:lines(rows,89,y,'se-caption',27,20.88),h:rows.length*27};};
+const caption=(s,y)=>{const rows=wrap(s,874,'n',.87);return {html:lines(rows,526,y,'se-caption',27,20.88).replace('<text ', '<text text-anchor="middle" '),h:rows.length*27};};
 function paragraph(s,{x=89,w=874,y=0,gap=16,cls='se-copy',scale=1,k='n',lead=32}={}){const rows=wrap(s,w,k,scale);return {html:lines(rows,x,y,cls,lead,24*scale),h:rows.length*lead+gap};}
 const blocks=[];
 let activitySequence=0;
-function add(meta,html,h,extra={}){blocks.push({atomId:meta.id,type:meta.type,top:0,h,html,source:meta.source||[],text:meta.text||meta.caption||meta.paragraphs?.join(' ')||'',...extra});}
-function body(meta){const rows=wrap(meta.text),chunks=[];if(meta.keepWhole||rows.length<=12)return add(meta,lines(rows,89,0),rows.length*32+16,{keepNext:!!meta.keepNext});for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length,keepNext:!!meta.keepNext&&i===chunks.length-1}));}
+function add(meta,html,h,extra={}){blocks.push({atomId:meta.id,type:meta.type,top:0,h,html,source:meta.source||[],text:meta.text||meta.caption||meta.paragraphs?.join(' ')||'',keepNext:!!meta.keepNext,...extra});}
+function body(meta){const rows=wrap(meta.text),chunks=[];if(meta.keepWhole||rows.length<=4)return add(meta,lines(rows,89,0),rows.length*32+16,{keepNext:!!meta.keepNext});for(let i=0;i<rows.length;){const n=rows.length-i>3?2:rows.length-i;chunks.push(rows.slice(i,i+n));i+=n;}chunks.forEach((rows,i)=>add({...meta,id:meta.id+'-'+i},lines(rows,89,0),rows.length*32+(i===chunks.length-1?16:0),{paragraphPart:i,paragraphParts:chunks.length,keepNext:!!meta.keepNext&&i===chunks.length-1}));}
 function bulletList(items,x,w,y=0){let html='';for(const s of items){const p=paragraph(s,{x:x+23,w:w-23,y,gap:10});html+=label('•',x,y+24,'se-copy')+p.html;y+=p.h;}return {html,h:y};}
 function render(meta){
- if(meta.comparisonTable){const t=comparisonTableBlock(meta,{wrap,lines});return add(meta,t.html,t.h,{conceptId:meta.id});}
+ if(meta.type==='media'){
+  const p=paragraph(meta.text,{x:89,w:480,gap:12});
+  const rows=wrap(meta.caption,350,'n',.87),captionY=244;
+  const cap=lines(rows,788,captionY,'se-caption',27,20.88).replace('<text ','<text text-anchor="middle" ');
+  return add(meta,p.html+photo(meta.figure,613,0,350,228)+cap,Math.max(p.h,captionY+rows.length*27)+22);
+ }
+ if(meta.comparisonTable){const display=['bus-table','motion-table'].includes(meta.id)?{...meta,rows:meta.rows.map((row,i)=>row.map((cell,j)=>i&&j?'• '+cell:cell))}:meta;const t=comparisonTableBlock(display,{wrap,lines});return add(meta,t.html,t.h,{conceptId:meta.id});}
  if(meta.type==='project'){
   const rows=wrap(meta.title,874,'h');let y=rows.length*36+12;
   const p=paragraph(meta.text,{y});let html=lines(rows,89,0,'se-heading',36,30)+p.html;y+=p.h;
@@ -65,7 +72,7 @@ function render(meta){
  if(meta.type==='panel'){
   const paragraphs=meta.paragraphs;
   let y=78,html='';for(const [index,s] of paragraphs.entries()){const match=s.match(/^(\d+)\. (.*)$/),p=paragraph(match?match[2]:s,{x:match?146:113,w:match?793:826,y,gap:12});if(match)html+=label(match[1]+'.',132,y+24,'se-activity-step','end');html+=p.html;y+=p.h;}
-  if(meta.figure){html+=photo(meta.figure,176,y,700,215);y+=225;const rows=wrap(meta.figureCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
+  if(meta.figure){html+=photo(meta.figure,176,y,700,215);y+=225;const rows=wrap(meta.figureCaption,826,'n',.87);html+=lines(rows,526,y,'se-caption',27,20.88).replace('<text ','<text text-anchor="middle" ');y+=rows.length*27+12;}
   if(meta.diagram){const d=measureDiagram(meta.diagram);html+=`<g transform="translate(0 ${y})"><g data-instructional-figure="${meta.diagram}">${d.html}</g></g>`;y+=d.h+12;const rows=wrap(meta.diagramCaption,826,'n',.87);html+=lines(rows,113,y,'se-caption',27,20.88);y+=rows.length*27+12;}
   const h=y+10,kind=meta.kind==='setup'?'se-activity-panel':'se-prompt se-thought-panel';
   return add({...meta,type:meta.kind==='setup'?'activity':'panel'},`<rect class="${kind}" x="89" y="0" width="874" height="${h}" rx="18"/>`+(meta.kind==='setup'?`<path class="v2-activity-header" d="M107 0H945Q963 0 963 18V58H89V18Q89 0 107 0Z"/>`:'')+v2PanelHeading(meta.kind,113,39,meta.kind==='setup'?{activityNumber:`${number}.${++activitySequence}`}:{})+html,h+32,{conceptId:meta.id});
@@ -116,9 +123,24 @@ function render(meta){
  if(meta.note){const rows=wrap(meta.note,874,'n',.87);html+=lines(rows,89,y,'v2-table-note',26,20.88);y+=rows.length*26+6;}
  return add({...meta,type:'figure'},html,y+18,{artKey:meta.type});
 }
-for(const meta of lesson)render(meta);
+const paired=new Map([['tool-choice','tape-picture'],['milestones','bus-picture'],['pendulum-picture','oscillation']]);
+const pairedChildren=new Set(paired.values());
+for(const [i,meta] of lesson.entries()){
+ if(pairedChildren.has(meta.id))continue;
+ if(paired.has(meta.id)){
+  const other=lesson.find(b=>b.id===paired.get(meta.id)),picture=meta.figure?meta:other,prose=meta.text?meta:other;
+  render({...meta,id:meta.id+'-paired',type:'media',text:prose.text,figure:picture.figure,caption:picture.caption,source:[...new Set([...meta.source,...other.source])]});
+ }else render({...meta,keepNext:meta.keepNext||['park-task','rest-task','circle-task'].includes(meta.id)||meta.type==='body'&&['diagram','figure'].includes(lesson[i+1]?.type)});
+}
 const lessonBlockCount=blocks.length;
-const fitted=refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:true});
+if(process.argv.includes('--analyse-flow')){
+ for(const reserve of [0,pageImageReserve])for(const frontLoad of [false,true]){
+  const trial=refitV2Lesson([{blocks}],{imageReserve:reserve,frontLoad});
+  console.log(JSON.stringify({reserve,frontLoad,pages:trial.map(p=>({end:p.end,blocks:p.blockAudit.map(b=>b.id)}))}));
+ }
+ process.exit(0);
+}
+const fitted=refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:false});
 const band=chapterOpener({id:'science-g6-ch05',number,titleLines:['Measurement of','Length and Motion'],bleed:Math.ceil(metrics.bleed*1052/metrics.trimW),image:{href:`../../figures/class-${grade}/science/ch05/opener.png`,aspect:1.5,alt:'Deepa and her mother watching a tailor measure cloth'}});
 const motif=scienceHeaderArt(grade,number);
 let openerHtml=band.html.replace(/(class="chapter-opener__number[^>]* y=")222"/,'$1242"').replace('<line class="chapter-opener__divider"',motif+'<line class="chapter-opener__divider"'),y=band.bodyTop;
@@ -129,17 +151,18 @@ const pages=[{title:'',titleRole:'opener',source:[1],parts:openerHtml,end:y},...
 let ref=label('Keywords',89,150,'v2-title'),top=174,refBottom=top,refContents='';
 for(let col=0;col<2;col++){let yy=top+24;for(const [term,meaning] of glossary.slice(col*7,(col+1)*7)){const p=paragraph('**'+term+'** — '+meaning,{x:113+col*428,w:398,y:yy,gap:20});refContents+=p.html;yy+=p.h;}refBottom=Math.max(refBottom,yy+10);}
 ref+=`<rect class="se-glossary-panel" x="89" y="${top}" width="874" height="${refBottom-top}" rx="18"/>`+refContents;
+const glossaryCheck=paragraph(referenceChecks.glossary,{y:refBottom+20});ref+=glossaryCheck.html;refBottom+=glossaryCheck.h+20;
 ref+=photo('review-glossary',166,refBottom+35,720,280);refBottom+=335;
 if(refBottom>1415)throw Error('Glossary overflow');
 pages.push({title:'Keywords',titleRole:'reference',source:[18],parts:ref,end:refBottom});
-let sum=label('Summary',89,150,'v2-title');const sp=bulletList(summary,89,874,180);sum+=sp.html;sum+=photo('review-summary',226,sp.h+35,600,330);sp.h+=385;
+let sum=label('Summary',89,150,'v2-title');const sp=bulletList(summary,89,874,180);sum+=sp.html;const summaryCheck=paragraph(referenceChecks.summary,{y:sp.h+12});sum+=summaryCheck.html;sp.h+=summaryCheck.h+12;sum+=photo('review-summary',226,sp.h+35,600,330);sp.h+=385;
 if(sp.h>1415)throw Error('Summary overflow');
 pages.push({title:'Summary',titleRole:'reference',source:[18],parts:sum,end:sp.h});
 blocks.length=0;
 render({id:'assessment-heading',type:'heading',text:'Let Us Enhance Our Learning',source:[19,20,21]});
 render({id:'assessment-intro',type:'body',text:'Use your notebook. Support each answer with evidence and explain any uncertainty.',source:[]});
 exercises.forEach((q,i)=>render({...q,type:'question',number:i+1}));
-pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:true}).map(p=>({...p,titleRole:'assessment'})));
+pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:false}).map(p=>({...p,titleRole:'assessment'})));
 blocks.length=0;
 render({id:'project-heading',type:'heading',text:'Explore Further',source:[21,22]});
 for(const p of projects)render({...p,type:'project'});
@@ -147,6 +170,15 @@ pages.push(...refitV2Lesson([{blocks}],{imageReserve:pageImageReserve,frontLoad:
 const map=[];
 for(let i=0;i<pages.length;i++){
  const p=completeIllustratedPage(pages[i],grade,number),n=i+1,verso=n%2===0;
+ const extension=pageExtensions.find(e=>e.page===n);
+ if(extension){
+  if(!p.blockAudit?.some(b=>b.id===extension.anchor))throw Error(`Review anchor moved on page ${n}: ${extension.anchor}`);
+  const note=paragraph(extension.text,{y:p.end+8,gap:0}),top=p.end+8;
+  p.parts+=`<g data-page-review="${extension.anchor}">${note.html}</g>`;
+  p.end=top+note.h;
+  p.blockAudit.push({id:'review-'+extension.anchor,type:'body',text:extension.text,top,bottom:p.end});
+  if(p.end>1415)throw Error(`Page ${n} review paragraph overflows: ${p.end}`);
+ }
  const running=i===0?'':'<g class="v2-header"><path class="v2-ribbon-underlay" d="M0 0H340L317 51Q312 63 291 63H0Z"/><path class="v2-ribbon" d="M0 0H321L300 49Q295 63 274 63H0Z"/>'+motifs(true)+''+label('CHAPTER '+number,96,41,'v2-ribbon-label se-running')+label(shortTitle,960,40,'v2-running se-running','end')+'<line class="v2-furniture-rule" x1="340" x2="963" y1="58" y2="58"/></g>';
  const foot='<g class="v2-footer">'+`<line class="v2-furniture-rule" x1="${verso?190:89}" x2="${verso?963:862}" y1="1485" y2="1485"/>`+label('LEARNLAB · SCIENCE '+grade,verso?963:89,1465,'v2-foot-label se-running',verso?'end':'start')+`<path class="v2-ribbon-underlay" d="${verso?'M0 1455H137Q152 1455 160 1470L179 1514H0Z':'M1052 1455H915Q900 1455 892 1470L873 1514H1052Z'}"/><path class="v2-ribbon" d="${verso?'M0 1455H117Q132 1455 140 1470L159 1514H0Z':'M1052 1455H935Q920 1455 912 1470L893 1514H1052Z'}"/>`+label(n,verso?107:945,1487,'v2-folio se-running','middle')+'</g>';
  const html=`<section class="page page--food page--science-editorial page--science-v2 page--g6-ch05${i===0?' page--opener':''}" data-folio="${n}"${i===pages.length-1?' data-close':''}><div class="page__body"><div class="page__main"><svg class="food-sheet science-sheet science-editorial" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1052 1514" aria-label="${title}, page ${n}">${running}${p.parts}${foot}</svg></div></div></section>`;

@@ -1,5 +1,6 @@
 // Objects are painted PNGs; measurement divisions and geometric paths are exact.
 import fs from 'node:fs';
+import {measurementProjection} from './science-g6-ch05-projections.mjs';
 const assets=JSON.parse(fs.readFileSync('assets/design-history/science-g6-ch05/artwork.json','utf8'));
 const E=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;');
 const text=(s,x,y,anchor='start')=>`<text class="v2-measure-label" x="${x}" y="${y}" text-anchor="${anchor}">${E(s)}</text>`;
@@ -17,6 +18,8 @@ function ruler(x,y,{start=0,end=15,step=48,broken=false}={}){
 }
 function pencil(x,y,width){return picture('pencil',x,y,width,width*.105);}
 export function measureDiagram(key){let html='',h=0;
+ const projection=measurementProjection(key,{text,line,path,arrow,pencil});
+ if(projection)return {...projection,html:`<g class="v2-measure-diagram" data-diagram="${key}">${projection.html}</g>`};
  if(key==='handspan'){
   h=310;html=picture('hand',340,0,370,258)+text('Thumb tip ↔ little-finger tip',526,298,'middle');
  }else if(key==='ruler'){
