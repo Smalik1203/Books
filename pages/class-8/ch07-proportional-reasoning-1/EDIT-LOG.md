@@ -1,5 +1,83 @@
 # Class 8 · Mathematics I · Chapter 7 — Proportional Reasoning-1
 
+## The maths-v2 conversion, 26 September 2026
+
+**This supersedes every description of the body, Beyond the Book and the
+checks further down this log.** Converted to CONVERT-V2.md with Class 6
+Chapter 1 as the model. `chapter.json` now reads `maths-v2`, palette
+`prism-garnet`, edition `196x276-large`, `keepExerciseSets`, accent
+`#784756`. 36 pages:
+
+* **Body p001–p018** (18 pages), NCERT's six sections in NCERT's order,
+  ending on a **Summary** page (p018, `data-close`, nine points).
+* **By the Book p090–p095** (6 pages, the last `data-close`): 50 questions to
+  BY-THE-BOOK.md at Class 8 — very short 10, short 10 (Q12 an algebraic
+  *Show that*, Q13 find-the-mistake), long 10 (Q21 and Q29 modelled with a
+  letter, Q24 *In the given figure*), assertion and reason 5 (a, b, d, c, a),
+  case-based 5 (each with a table), objective 10 (a, b, c, d, a, b, c, c, b, d;
+  Q48 multi-statement, Q49 a named student's claim, Q47 a table). The old
+  practice set's board-form questions were the raw material (the shadow, the
+  16 : 9 screen, the sharing questions); none copies a body exercise.
+* **Beyond the Book p101–p112** (12 pages): the old *Using What You Know*
+  questions with no stage head, then Single correct · More than one correct
+  · Numerical answer · Matching · Paragraph-based, two examples and then
+  practice (4 · 4 · 3 · 2 · 2) each. Examples 1–8 are the old Examples 1, 4,
+  7, 10, 11, 13, 14 and 15 (the two matching ones cut to three rows so the
+  part fits); Examples 9 and 10 (paint shades; the tanker) are new; the 15
+  practice questions are new. Answers opens a fresh page (p111): By the
+  Book's key, then Beyond's.
+
+### No NCERT expression
+
+The earlier draft kept NCERT's contexts and every exercise question. All of
+them are replaced with our own: the resized pictures (tiger photographs in
+NCERT) are now Aarav's sailing-boat drawing, P to T, with new sizes and a new
+Fig. 7.1; lemonade, the cement walls, the teachers' ratio, the blackboard,
+Neelima's age, the 14 : 21 example, filter coffee, the mid-day rice, the car,
+the tea prices, the dish for guests, the Earth's orbit and the house plan,
+Puneeth's father, the shampoo, the 12 and 42 counters, the food cart and the
+sand-cement mixture are now kheer, painting groups, two schools, a notice
+board, Sanjay and his grandfather, 12 : 18, Gopal's sherbet (Fig. 7.4 new),
+the hostel atta, a goods train, honey, counting steps, heartbeats and a
+garden wall, Divya's mother, toothpaste (Table 7.6), 20 and 63 counters
+(Figs. 7.7–7.8), Tenzin and Rukhsar's stall and a 60 kg mixture. Every
+exercise question is new, and each set ends with a
+`c-practice__note` citing NCERT's *Figure it Out* by section and question
+range. The Āryabhaṭa / *trairāśika* history and the conversion table are
+facts, rewritten. Removed: the NCERT rectangle, brick-wall and house-plan
+figures, the *Līlāvatī* saffron problem, the body-proportion task and the
+**Binairo puzzle page** (NCERT's grids; not syllabus). Using What You Know
+is kept word for word except three cross-references to the body (Picture T,
+Sanjay's age) and "in this stage", which no longer exists.
+
+### Also
+
+* Every section now has a key idea (7.6 gained *Units first*) and a Think
+  and Reflect (7.1, 7.2, 7.3, 7.5, 7.6 gained one).
+* Exercise Set 7.1 is five questions and 7.4 eleven, so that each set fits
+  one page whole.
+* `stage2-bank.mjs` deleted: it wrote the old fifteen examples into pages
+  that no longer have that shape.
+* `check-numbers.mjs` rewritten on the model's pattern: every identity on
+  every page and in ANSWERS.md, the key complete (By the Book 1–50, Beyond
+  1–15, every example ending in an Answer row), and each single-correct
+  question recomputed and matched to the keyed option (unique among the
+  options on By the Book). **263 checks, 0 failed.**
+
+### Checks at close
+
+`build.mjs` all pages fit; every page 88% or more except the Summary (75%),
+By the Book's last page (76%) and the chapter's last page. `lone-words` 0;
+`check-sums` 104 identities, 0 wrong; `orphans` 0 stranded; `check-labels`
+no collisions; `fit-options` every row fits; no exercise set split.
+
+### Open for the user
+
+* NCERT page numbers for the four *Figure it Out* sets could not be
+  established from the chapter's files, so the notes cite sections
+  (§7.4, §7.4 rule of three, §7.5, §7.6).
+* The Binairo puzzle page was dropped rather than redrawn.
+
 ## Written from NCERT, 24 September 2026
 
 A new chapter. Class 8 Mathematics I was found to lack the NCERT chapter
