@@ -1,0 +1,38 @@
+/* ============================================================
+   PRISM · MARINE — the Class 8 Mathematics II Chapter 1 palette (maths-v2)
+
+   Prism with its own structure colour, marine: the head and foot
+   bands, the opener, section heads, tables and the folio. Every box
+   keeps one colour in every chapter (sky examples, sunflower Think
+   and Reflect, berry key ideas, violet summary), so a box colour
+   means the same thing throughout. Exercise sets and By the Book
+   take Class 7's muted mauve (#915074 on #faedf3), not prism's
+   vermilion: the user asked for that on 27 September 2026.
+
+   Made 27 September 2026, when the user asked for each chapter to have
+   its own palette, and for colours that are pleasing, not vivid.
+   Class 8 is fourteen chapters in two volumes. Each volume's seven
+   colours sit 25 degrees apart over the arc that is neither green nor
+   brown (210 to 360 degrees of OKLCH hue); Mathematics II takes the
+   hues half a step round from Mathematics I, so no two chapters in the
+   class share one. Lightness 0.46 and chroma 0.07 as Class 6, so white
+   type on it reads at about 7:1. Only the hue changes.
+   ============================================================ */
+
+:root {
+  /* structure — marine, OKLCH 0.46 / 0.07 / 222.5 */
+  --teal:       #226174;
+  --teal-deep:  #184452;
+  --teal-soft:  #abbfc7;
+  --teal-tint:  #edf1f2;
+
+  /* action — mauve, as Class 7 */
+  --rust:       #915074;
+  --rust-deep:  #74395a;
+  --rust-tint:  #faedf3;
+
+  /* third ink — violet */
+  --gold:       #6b4fb3;
+  --gold-deep:  #52399a;
+  --gold-tint:  #f0ecf9;
+}
