@@ -1,3 +1,4 @@
+import {fitMagnetsLesson} from './science-g6-ch04-fitting.mjs';
 import chapter2Illustrations from '../assets/design-history/science-g6-ch02-fitting/illustrations.json' with {type:'json'};
 import {fitFoodLesson} from './science-g6-ch03-fitting.mjs';
 // Explicit, reviewable changes on top of the immutable page transcription.
@@ -253,6 +254,7 @@ export function editClass6(ch) {
  };
  ch.blocks.forEach(enlarge);
  if(n==='3')fitFoodLesson(ch,ledger);
+ if(n==='4')fitMagnetsLesson(ch,ledger);
  if(n==='2'){
   // Supplemental pictures are authored in the reading order before fitting,
   // rather than enlarged into gaps after a page break has already been chosen.

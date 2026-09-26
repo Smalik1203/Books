@@ -197,3 +197,39 @@
 .page--g6-modern[data-science-chapter="3"] .g6-panel--inline-reference .g6-panel__body {display:flow-root;}
 .page--g6-modern[data-science-chapter="3"] .g6-panel--inline-reference .g6-panel__body > .g6-block:has(> .g6-figure) {float:right;width:calc(var(--g6-u) * 280);margin:0 0 calc(var(--g6-u) * 12) calc(var(--g6-u) * 28);}
 .page--g6-modern[data-science-chapter="3"] .g6-media--dialogue {grid-template-columns:1fr calc(var(--g6-u) * 180);align-items:center;}
+
+/* Chapter 4 uses the approved fitting rhythm and comparison bullets. */
+.page--g6-modern[data-science-chapter="4"] .g6-art > .g6-source-art {overflow:hidden;}
+.page--g6-modern[data-science-chapter="4"] .g6-photo-pair {display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--g6-u) * 28);align-items:end;}
+.page--g6-modern[data-science-chapter="4"] .g6-photo-pair .g6-block {padding-bottom:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-figure figcaption,
+.page--g6-modern[data-science-chapter="4"] .g6-caption {text-align:center;text-align-last:center;}
+.page--g6-modern[data-science-chapter="4"] .g6-block--lesson-group > .g6-block {padding-bottom:calc(var(--g6-u) * 8);}
+.page--g6-modern[data-science-chapter="4"] .g6-block--lesson-group > .g6-block:last-child {padding-bottom:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-numeric-table td,
+.page--g6-modern[data-science-chapter="4"] .g6-numeric-table th {padding-top:calc(var(--g6-u) * 10);padding-bottom:calc(var(--g6-u) * 10);}
+.page--g6-modern[data-science-chapter="4"] .g6-content > .g6-block:not(.g6-block--panel):not(.g6-block--table):not(.g6-block--heading),
+.page--g6-modern[data-science-chapter="4"] .g6-measure > .g6-block:not(.g6-block--panel):not(.g6-block--table):not(.g6-block--heading) {padding-bottom:calc(var(--g6-u) * var(--g6-prose-gap,8));}
+.page--g6-modern[data-science-chapter="4"] .g6-content > .g6-block:has(+ .g6-block--think),
+.page--g6-modern[data-science-chapter="4"] .g6-measure > .g6-block:has(+ .g6-block--think) {--g6-prose-gap:0;padding-bottom:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-block--think {padding-top:calc(var(--g6-u) * 32);padding-bottom:calc(var(--g6-u) * 32);}
+.page--g6-modern[data-science-chapter="4"] .g6-block--think + .g6-block--heading {padding-top:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-block--prose-continues {--g6-prose-gap:0;padding-bottom:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-block--prose-continues > p {text-align-last:justify;}
+.page--g6-modern[data-science-chapter="4"] .g6-content > .g6-block--think:first-child {padding-top:calc(var(--g6-u) * 32);}
+.page--g6-modern[data-science-chapter="4"] .g6-content > .g6-block:last-child:has(> .g6-media) {--g6-prose-gap:0;padding-bottom:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-media {grid-template-columns:1fr calc(var(--g6-u) * 300);}
+.page--g6-modern[data-science-chapter="4"] .g6-media--wide-reference {grid-template-columns:1fr calc(var(--g6-u) * 400);}
+.page--g6-modern[data-science-chapter="4"] .g6-content > .g6-block:last-child {--g6-prose-gap:0;padding-bottom:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-compare-points {margin:0;padding:0 0 0 calc(var(--g6-u) * 20);font:inherit;list-style:disc;}
+.page--g6-modern[data-science-chapter="4"] .g6-compare-points li {margin:0;padding:0;}
+.page--g6-modern[data-science-chapter="4"] .g6-compare-points li + li {margin-top:calc(var(--g6-u) * 4);}
+.page--g6-modern[data-science-chapter="4"] .g6-media-wrap {display:flow-root;}
+.page--g6-modern[data-science-chapter="4"] .g6-media-wrap > .g6-block:not(:has(> .g6-figure)) {display:block;}
+.page--g6-modern[data-science-chapter="4"] .g6-media-wrap > .g6-block:has(> .g6-figure) {float:right;width:calc(var(--g6-u) * 280);margin:0 0 calc(var(--g6-u) * 12) calc(var(--g6-u) * 28);}
+.page--g6-modern[data-science-chapter="4"] [data-block="g6-4-game-138-paired"] > .g6-media {grid-template-columns:1fr calc(var(--g6-u) * 440);}
+.page--g6-modern[data-science-chapter="4"] [data-block="g6-4-game-139-paired"] > .g6-media-wrap > .g6-block:has(> .g6-figure) {width:calc(var(--g6-u) * 440);}
+.page--g6-modern[data-science-chapter="4"] [data-block="g6-4-game-140-paired"] > .g6-media-wrap > .g6-block:has(> .g6-figure),
+.page--g6-modern[data-science-chapter="4"] [data-block="g6-4-game-141-paired"] > .g6-media-wrap > .g6-block:has(> .g6-figure) {width:calc(var(--g6-u) * 400);}
+.page--g6-modern[data-science-chapter="4"] .g6-panel--inline-reference .g6-panel__body {display:flow-root;}
+.page--g6-modern[data-science-chapter="4"] .g6-panel--inline-reference .g6-panel__body > .g6-block:has(> .g6-figure) {float:right;width:calc(var(--g6-u) * 280);margin:0 0 calc(var(--g6-u) * 12) calc(var(--g6-u) * 28);}
