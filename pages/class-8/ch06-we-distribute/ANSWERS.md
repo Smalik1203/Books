@@ -2,401 +2,355 @@
 
 Every question this chapter sets, answered. This file is the source for the
 volume's answers booklet (DESIGN-MATHS §5, *The companions*); the student
-book prints none of it except Beyond the Book's own key.
+book prints none of it except the key at the end of Beyond the Book.
 
-Numbered by section and set — *Exercise Set 6.3, Q5* — so it can be used
+Numbered by section and set — *Exercise Set 6.3, Q4* — so it can be used
 beside the book without a contents page. The questions put in the running
-text (Think and Reflect, Math Talk, Try This, and the plain questions between
-them) are answered under the section they sit in, in the order they come.
-**Every value below is re-derived by `check-numbers.mjs` beside this file.**
+text (Think and Reflect, and the plain questions between them) are answered
+under the section they sit in, in the order they come. **Every value below is
+re-derived by `check-numbers.mjs` beside this file.**
 
-Where a question asks the reader to choose or explain, the answer gives one
-worked instance under *answers will vary*.
+Rewritten for the maths-v2 conversion, 26 September 2026: every context,
+number and question in the body is now the book's own (see EDIT-LOG.md).
 
 ---
 
 ## 6.1 Some Properties of Multiplication
 
-### 6.1.1 Think and Reflect (increments in $23 \times 27$)
+### 6.1.1 Think and Reflect (how $24 \times 35$ changes)
 
-(i) The product increases by **27**: $24 \times 27 = 23 \times 27 + 27$, one more
-group of 27. (ii) By **23**: $23(27 + 1) = 23 \times 27 + 23$. (iii) By
-**51**: $(23 + 1)(27 + 1) = 23 \times 27 + 23 + 27 + 1$. The pattern: increasing
-one number by 1 adds the *other* number; increasing both adds their sum and 1.
+1. By **35**: $25 \times 35 = 24 \times 35 + 35$, one more group of 35.
+2. By **24**: $24 \times 36 = 24 \times 35 + 24$.
+3. By **60**: $25 \times 36 = 900$ and $24 \times 35 = 840$, and
+   $24 + 35 + 1 = 60$.
+
+The rule: increasing one number by 1 adds the *other* number; increasing both
+adds their sum and 1.
 
 ### Expanding $(a + 1)(b + 1)$ with $(b + 1)$ as the single term
 
-$(a + 1)(b + 1) = a(b + 1) + 1(b + 1) = ab + a + b + 1$ — the same expression.
+$(a + 1)(b + 1) = a(b + 1) + 1(b + 1) = ab + a + b + 1$, the same expression.
 
-### Think and Reflect (will the product always increase?)
+### Think and Reflect (does the product always go up?)
 
-**No.** When one number goes up by 1 and the other down by 1, the change is
-$b - a - 1$, which is negative whenever $b$ is not more than $a$. Answers will
-vary; three examples:
-
-- $a = 5$, $b = 3$: $15$ becomes $6 \times 2 = 12$, a decrease of 3.
-- $a = 10$, $b = 10$: $100$ becomes $11 \times 9 = 99$, a decrease of 1.
-- $a = 7$, $b = 2$: $14$ becomes $8 \times 1 = 8$, a decrease of 6.
-
-Increasing both numbers by 1 can also decrease the product when the numbers
-are negative: the increase $a + b + 1$ is negative when $a + b < -1$.
-
-**Negative integers.** The identities still hold. With $a = -5$, $b = 8$:
-$ab = -40$ and $(a + 1)(b + 1) = -4 \times 9 = -36$, an increase of
-$4 = a + b + 1$. With $a = -4$, $b = -5$: $ab = 20$ and
-$(a + 1)(b + 1) = -3 \times -4 = 12$, a change of $-8 = a + b + 1$.
+1. **No.** The change is $b - a - 1$, which is negative or zero whenever $b$ is
+   not more than $a$. *Answers will vary*, for example: $5 \times 3 = 15$
+   becomes $6 \times 2 = 12$; $8 \times 8 = 64$ becomes $9 \times 7 = 63$;
+   $9 \times 2 = 18$ becomes $10 \times 1 = 10$.
+2. **Yes, the rules hold.** With $a = -6$, $b = 9$: $ab = -54$;
+   $(a + 1)(b + 1) = -5 \times 10 = -50$, a change of $4 = a + b + 1$; and
+   $(a + 1)(b - 1) = -5 \times 8 = -40$, a change of $14 = b - a - 1$.
+   With $a = -3$, $b = -7$: $ab = 21$; $(a + 1)(b + 1) = -2 \times -6 = 12$, a
+   change of $-9 = a + b + 1$; and $(a + 1)(b - 1) = -2 \times -8 = 16$, a change
+   of $-5 = b - a - 1$.
 
 ### Think and Reflect (using Identity 1)
 
-1. (i) $(a - 2)(b + 3) = ab + 3a - 2b - 6$: the product changes by
-   $3a - 2b - 6$.
-2. (ii) $(a - 3)(b - 4) = ab - 4a - 3b + 12$: the product changes by
-   $-4a - 3b + 12$.
+1. $(a - 3)(b + 2) = ab + 2a - 3b - 6$: the product changes by $2a - 3b - 6$.
+   With $a = 12$, $b = 10$: $9 \times 12 = 108 = 120 + 24 - 30 - 6$.
+2. $(a - 2)(b - 5) = ab - 5a - 2b + 10$: the product changes by
+   $-5a - 2b + 10$. With $a = 12$, $b = 10$: $10 \times 5 = 50 = 120 - 60 - 20 + 10$.
 
-Checked without turning subtractions into additions, for instance with
-$a = 10$, $b = 7$: (i) $8 \times 10 = 80 = 70 + 30 - 14 - 6$;
-(ii) $7 \times 3 = 21 = 70 - 40 - 21 + 12$.
+### Example 3 (why is $x \times x^2 = x^3$?)
 
-### Expanding $(a - u)(b + v)$ and $(a - u)(b - v)$
+$x \times x^2 = x \times (x \times x)$, three $x$s multiplied together, which is
+$x^3$.
 
-Answered in the text: $ab - ub + av - uv$ and $ab - ub - av + uv$.
+### Think and Reflect (multiplication by parts)
 
-### Example 3 (why is $a \times a^2 = a^3$?)
-
-$a \times a^2 = a \times (a \times a)$, three $a$s multiplied together, which is
-$a^3$.
+1. $37 \times 26 = 37 \times 20 + 37 \times 6 = 740 + 222 = 962$, and
+   $37 \times 26 = 37 \times 30 - 37 \times 4 = 1110 - 148 = 962$.
+2. *Answers will vary.*
 
 ### Exercise Set 6.1
 
-1. With $pq$ in the middle, the row above has first number $p - 1$ and the row
-   below $p + 1$; the column to the left has second number $q - 1$ and the
-   column to the right $q + 1$:
-
-   | | | |
-   |---|---|---|
-   | $(p - 1)(q - 1)$ | $(p - 1)q$ | $(p - 1)(q + 1)$ |
-   | $p(q - 1)$ | $pq$ | $p(q + 1)$ |
-   | $(p + 1)(q - 1)$ | $(p + 1)q$ | $(p + 1)(q + 1)$ |
-
-   In Fig. 6.3, $p = 4$ and $q = 6$, and the nine products are $15, 18, 21, 20,
-   24, 28, 25, 30, 35$.
-
-2. (i) $3v - 9 + uv - 3u$ (ii) $10 + 4a$ (iii) $100ac + 10ad + 10bc + bd$
-   (iv) $-x^2 + 9x - 18$ (v) $-5ac - 5ad + bc + bd$ (vi) $5y + 45 + yz + 9z$
-
-3. Answers will vary. For $(a + 2)(b - 4) = ab$ we need
-   $ab - 4a + 2b - 8 = ab$, that is $b = 2a + 4$. Three examples:
-   $1 \times 6 = 3 \times 2 = 6$; $2 \times 8 = 4 \times 4 = 16$;
-   $3 \times 10 = 5 \times 6 = 30$.
-
-4. (i) $4a + 5ab - 12b^2 + ab^2 - 3b^3$ (working: $4(a + ab - 3b^2) +
-   b(a + ab - 3b^2) = 4a + 4ab - 12b^2 + ab + ab^2 - 3b^3$)
-   (ii) $4y^2 + 44yz - 5y + 77z - 21$ (working: $4y^2 + 44yz - 12y + 7y + 77z - 21$)
-
-5. (i) $a^2 - b^2$ (ii) $a^3 - b^3$ (iii) $a^4 - b^4$. The pattern: $(a - b)$ times
-   the sum of all the terms $a^{n-1}, a^{n-2}b, \ldots, b^{n-1}$ gives
-   $a^n - b^n$, because every middle product cancels with its neighbour. The next
-   identity says that $(a - b)(a^4 + a^3b + a^2b^2 + ab^3 + b^4)$ is $a^5 - b^5$; expanding,
-   the ten products are $a^5, a^4b, a^3b^2, a^2b^3, ab^4$ and
-   $-a^4b, -a^3b^2, -a^2b^3, -ab^4, -b^5$, and all but $a^5$ and $-b^5$ cancel.
+1. (i) $4n - 8 + mn - 2m$ (ii) $6 + 9b$ (iii) $-x^2 + 7x - 10$
+   (iv) $-3pr - 3ps + qr + qs$ (v) $7z + 28 + yz + 4y$
+   (vi) $8ac + 2ad - 12bc - 3bd$
+2. $(a + 3)(b - 2) = ab - 2a + 3b - 6$, so the product stays the same when
+   $3b = 2a + 6$. *Answers will vary*: $3 \times 4 = 6 \times 2 = 12$;
+   $6 \times 6 = 9 \times 4 = 36$; $9 \times 8 = 12 \times 6 = 72$.
+3. (i) $2x^2 + xy + 5x + 4y - 12$ (ii) $-p^3 + 5p^2 - 11p + 15$
+4. $x^2 + 3x + 2$, $x^2 + 5x + 6$ and $x^2 + 7x + 12$. The middle number is the
+   sum of the two numbers in the brackets and the last is their product. So
+   $(x + 9)(x + 10)$ is $x^2 + 19x + 90$.
+5. $(45 + 2)(60 + 3) = 45 \times 60 + 3 \times 45 + 2 \times 60 + 6$, so it is more
+   by $135 + 120 + 6 = 261$. (Indeed $2961 - 2700 = 261$.)
 
 ### 6.1.2 Fast multiplication
 
-- (a) $3874 \times 11 = 42614$ (worked in the text). (b) $5678 \times 11 = 62458$:
-  from the right, 8; $7 + 8 = 15$, write 5 carry 1; $6 + 7 + 1 = 14$, write 4
-  carry 1; $5 + 6 + 1 = 12$, write 2 carry 1; $5 + 1 = 6$.
+- (a) $4786 \times 11 = 52646$ (worked in the text). (b) $6395 \times 11 = 70345$:
+  from the right, 5; $9 + 5 = 14$, write 4, carry 1; $3 + 9 + 1 = 13$, write 3,
+  carry 1; $6 + 3 + 1 = 10$, write 0, carry 1; $6 + 1 = 7$.
 
-**Math Talk (the rule for 11).** Write the last digit of the number. Then,
-moving left, write each digit plus the digit on its right, carrying as usual.
-Finish with the first digit plus any carry. (i) $94 \times 11 = 1034$
-(ii) $495 \times 11 = 5445$ (iii) $3279 \times 11 = 36069$
-(iv) $4791256 \times 11 = 52703816$.
+**Think and Reflect (the rule for 11).** Write the last digit. Then, moving
+left, write each digit plus the digit on its right, carrying as usual. Finish
+with the first digit plus any carry. $86 \times 11 = 946$,
+$572 \times 11 = 6292$, $4958 \times 11 = 54538$ and
+$3620917 \times 11 = 39830087$.
 
-**Multiplying by 101.** $3874 \times 101 = 391274$: the digits are
-$3, 8, (7 + 3), (4 + 8), 7, 4$, that is $3, 8, 10, 12, 7, 4$, and carrying from
-the right gives $391274$. The rule: add the number to itself moved two places to
-the left, so each digit is added to the digit two places to its right. For
-$1001$ the number is moved three places, for $10001$ four places, and so on.
+**Multiplying by 101.** $4786 \times 101 = 478600 + 4786 = 483386$. Each digit is
+added to the digit two places to its right. For $1001$ the number is moved
+three places, for $10001$ four places, and so on.
 
-**Math Talk (using the rules).** (i) $89 \times 101 = 8989$
-(ii) $949 \times 101 = 95849$ (iii) $265831 \times 1001 = 266096831$
-(iv) $1111 \times 1001 = 1112111$ (v) $9734 \times 99 = 973400 - 9734 = 963666$
-(vi) $23478 \times 999 = 23478000 - 23478 = 23454522$. For (v) and (vi) the
-multiplier is $100 - 1$ and $1000 - 1$, so the number is subtracted rather than
-added.
+**Think and Reflect (using the rules).** (i) $76 \times 101 = 7676$
+(ii) $358 \times 101 = 36158$ (iii) $412736 \times 1001 = 413148736$
+(iv) $2323 \times 1001 = 2325323$ (v) $6857 \times 99 = 685700 - 6857 = 678843$
+(vi) $31694 \times 999 = 31694000 - 31694 = 31662306$.
 
 ## 6.2 Special Cases of the Distributive Property
 
-### The square of side 65
+### The square of side 43
 
-The four parts are $3600$, $25$, $300$ and $300$; together $4225$.
-$(30 + 35)^2 = 900 + 2100 + 1225 = 4225$ and $(52 + 13)^2 = 2704 + 1352 + 169 =
-4225$. A drawing shows a square of side 65 cut at 30 (or at 52): a square of 30
-(of 52), a square of 35 (of 13), and two rectangles 30 by 35 (52 by 13).
+The four parts are $1600$, $9$, $120$ and $120$; together $1849$.
+$(20 + 23)^2 = 400 + 920 + 529 = 1849$ and $(33 + 10)^2 = 1089 + 660 + 100 = 1849$.
 
-### Math Talk (is $(a + b)^2$ always greater than $a^2 + b^2$?)
+### Think and Reflect (is $(a + b)^2$ always more than $a^2 + b^2$?)
 
-$(a + b)^2 - (a^2 + b^2) = 2ab$. So $(a + b)^2$ is greater exactly when $ab > 0$,
-that is when $a$ and $b$ are both positive or both negative. It is equal when
-$a$ or $b$ is 0, and smaller when they have opposite signs: $(3 + (-2))^2 = 1$
-but $9 + 4 = 13$.
+$(a + b)^2 - (a^2 + b^2) = 2ab$. With $a = 4$, $b = -1$: $(a + b)^2 = 9$ but
+$a^2 + b^2 = 17$, so **no**. It is more exactly when $ab$ is positive (both
+numbers positive or both negative), equal when $a$ or $b$ is 0, and less when
+they have opposite signs.
 
 ### Using Identity 1A
 
-$104^2 = (100 + 4)^2 = 10000 + 800 + 16 = 10816$; $37^2 = (30 + 7)^2 = 900 + 420 +
-49 = 1369$. (i) $(m + 3)^2 = m^2 + 6m + 9$ (ii) $(6 + p)^2 = 36 + 12p + p^2$.
-
-$(3j + 2k)^2 = 9j^2 + 12jk + 4k^2$ both ways: $(3j)^2 + 2 \times 3j \times 2k +
-(2k)^2$, and $(3j + 2k)(3j + 2k) = 9j^2 + 6jk + 6jk + 4k^2$.
+$103^2 = 10000 + 600 + 9 = 10609$; $52^2 = 2500 + 200 + 4 = 2704$.
+(i) $(n + 4)^2 = n^2 + 8n + 16$ (ii) $(7 + q)^2 = 49 + 14q + q^2$.
+$(5p + 2q)^2 = 25p^2 + 20pq + 4q^2$ both ways.
 
 ### Think and Reflect (Identity 1B)
 
-- **Geometry.** Draw a square of side $a$ and mark a square of side $a - b$ in
-  one corner. Take away the two strips $a$ by $b$ along the other two sides:
-  $a^2 - ab - ab$. The strips overlap in a square $b$ by $b$, which has gone
-  twice, so add it back once: $(a - b)^2 = a^2 - 2ab + b^2$.
-- (a) $99^2 = (100 - 1)^2 = 10000 - 200 + 1 = 9801$
-  (b) $58^2 = (60 - 2)^2 = 3600 - 240 + 4 = 3364$.
-- (i) $(b - 6)^2 = b^2 - 12b + 36$ (ii) $(-2a + 3)^2 = 4a^2 - 12a + 9$
-  (iii) $\left(7y - \frac{3}{4z}\right)^2 = 49y^2 - \frac{21y}{2z} + \frac{9}{16z^2}$.
-  By the distributive property each is the bracket times itself, for example
-  $(b - 6)(b - 6) = b^2 - 6b - 6b + 36$.
+1. Draw a square of side $a$ with a square of side $a - b$ in one corner. Take
+   away the two strips $a$ by $b$: $a^2 - ab - ab$. The strips overlap in a
+   square $b$ by $b$, taken away twice, so add it back once:
+   $(a - b)^2 = a^2 - 2ab + b^2$.
+2. $98^2 = 10000 - 400 + 4 = 9604$; $69^2 = 4900 - 140 + 1 = 4761$.
+3. $(c - 5)^2 = c^2 - 10c + 25$; $(-3m + 2)^2 = 9m^2 - 12m + 4$;
+   $\left(5x - \frac{2}{3y}\right)^2 = 25x^2 - \frac{20x}{3y} + \frac{4}{9y^2}$.
 
 ### Pattern 1
 
-Answers will vary. For 4 and 7: $2(16 + 49) = 130 = 121 + 9 = 11^2 + 3^2$. Twice
-the sum of the squares of two numbers is the square of their sum plus the square
-of their difference, $2(a^2 + b^2) = (a + b)^2 + (a - b)^2$, as shown in the text.
+*Answers will vary.* For 5 and 2: $2(25 + 4) = 58 = 49 + 9 = 7^2 + 3^2$.
 
-### Pattern 2, and using Identity 1C
+### Identity 1C
 
-The pattern is $a^2 - b^2 = (a + b)(a - b)$, shown in the text.
-$98 \times 102 = (100 - 2)(100 + 2) = 10000 - 4 = 9996$;
-$45 \times 55 = (50 - 5)(50 + 5) = 2500 - 25 = 2475$.
+$97 \times 103 = 10000 - 9 = 9991$; $36 \times 44 = 1600 - 16 = 1584$.
 
-### Try This (Fig. 6.7)
+### Think and Reflect (Fig. 6.6)
 
-The rectangle is $(a + b)$ by $(a - b)$. Cut off the piece $b$ wide on the right
-and turn it through a right angle: it is $a - b$ long and $b$ wide, and fits in
-the strip below the left piece. The shape made is a square of side $a$ with a
-square of side $b$ missing from one corner, of area $a^2 - b^2$. Nothing was
-added or lost, so $(a + b)(a - b) = a^2 - b^2$.
+Cut off the right-hand piece, $b$ wide and $a - b$ tall, and turn it through a
+right angle. It fits along the bottom of the left-hand piece, and the shape
+made is a square of side $a$ with a square of side $b$ missing from one
+corner, of area $a^2 - b^2$. Nothing was added or lost, so
+$(a + b)(a - b) = a^2 - b^2$.
 
 ### Sridharacharya's identity
 
-$a^2 = (a + b)(a - b) + b^2$ because $(a + b)(a - b) = a^2 - b^2$ by Identity 1C;
-adding $b^2$ to both sides gives it.
+$(a + b)(a - b) = a^2 - b^2$ by Identity 1C; adding $b^2$ to both sides gives
+$a^2 = (a + b)(a - b) + b^2$.
 
 ### Exercise Set 6.2
 
-1. **They are equal.** $b - a = -(a - b)$, and a number and its negative have
-   the same square: $(b - a)^2 = b^2 - 2ab + a^2 = (a - b)^2$.
+1. $(p^2 + 2pq + q^2) - (p^2 - 2pq + q^2) = 4pq$. With $p = 50$ and $q = 25$:
+   $75^2 - 25^2 = 4 \times 50 \times 25 = 5000$.
+2. $48 = 7^2 - 1^2 = 8^2 - 4^2 = 13^2 - 11^2$ (any two; these are the only
+   three ways in whole numbers).
+3. $502^2 = 252004$; $89^2 = 8100 - 180 + 1 = 7921$; $215^2 = 46225$;
+   $998^2 = 996004$; $61^2 = 3600 + 120 + 1 = 3721$.
+4. **Yes.** $\left(\frac{3}{2}\right)^2 - \left(\frac{1}{2}\right)^2 = \frac{9}{4} - \frac{1}{4} = 2$,
+   and $\left(\frac{3}{2} + \frac{1}{2}\right)\left(\frac{3}{2} - \frac{1}{2}\right) = 2 \times 1 = 2$.
+   It must hold, because it was proved from the distributive property, which
+   holds for fractions too.
 
-2. $100 = 26^2 - 24^2$, since $(26 + 24)(26 - 24) = 50 \times 2$. (Also
-   $100 = 10^2 - 0^2$; these are the only two ways with whole numbers.)
+## 6.3 Finding and Fixing Mistakes
 
-3. $406^2 = (400 + 6)^2 = 160000 + 4800 + 36 = 164836$;
-   $72^2 = (70 + 2)^2 = 4900 + 280 + 4 = 5184$;
-   $145^2 = (140 + 5)^2 = 19600 + 1400 + 25 = 21025$;
-   $1097^2 = (1100 - 3)^2 = 1210000 - 6600 + 9 = 1203409$;
-   $124^2 = (125 - 1)^2 = 15625 - 250 + 1 = 15376$.
+1. **Wrong.** $4a$ must multiply both terms fully: $8a^2 - 12ab$.
+2. **Wrong.** $-2 \times -1 = +2$: $3y + 6 - 2y + 2$, which is $y + 8$.
+3. **Wrong.** The middle term is missing: $p^2 + 6p + 9$.
+4. **Correct:** $4m^2 - 4mn + n^2$.
+5. **Wrong.** $5k$ and $2k^2$ are not like terms: $2k^2 + 5k$ is already simplest.
+6. **Correct:** $a^2 + 2a - 15$.
 
-4. **They hold for all numbers** — negative integers and fractions included —
-   because both are identities, proved from the distributive property, which
-   holds for all numbers. For example $a = -3$, $b = 5$: $2(9 + 25) = 68 = 2^2 +
-   (-8)^2$, and $9 - 25 = -16 = 2 \times (-8)$.
+**Think and Reflect.** 1. With every letter 1, Item 2 gives $9$ against $5$,
+so the test finds it; Items 1 and 5 agree at 1 ($-4$ and $-4$; $7$ and $7$)
+and are found only with 2 ($8$ against $4$; $18$ against $56$). 2. **No.**
+$x^2 + x$ and $2x$ agree at $x = 1$ but not at $x = 2$ ($6$ against $4$). One
+value can show a mistake; it cannot prove an identity.
 
-## 6.3 Mind the Mistake, Mend the Mistake
+## 6.4 Many Ways to See One Pattern
 
-1. **Wrong.** $-3p$ must multiply both terms, and it was left out of the
-   products: $-3p \times -5p = 15p^2$ and $-3p \times 2q = -6pq$. Correct:
-   $15p^2 - 6pq$.
-2. **Wrong.** The 2 and the 3 multiply only the first term in each bracket.
-   $2x - 2 + 3x + 12$, so correct: $5x + 10$.
-3. **Wrong.** $y$ was treated as a bracket multiplying $(y + 2)$. It is added:
-   $y + 2y + 4$, so correct: $3y + 4$.
-4. **Wrong.** The middle term $2 \times 5m \times 6n$ is missing. Correct:
-   $25m^2 + 60mn + 36n^2$.
-5. **Correct:** $q^2 - 4q + 4$ (the square of $-q$ is $q^2$).
-6. **Wrong.** $3a$ multiplied both factors of a product, as though it were a sum.
-   $3a \times 2b \times 3c$, so correct: $18abc$.
-7. **Correct:** $5s$.
-8. **Wrong.** $5w^2$ and $6w$ are not like terms and cannot be added. Correct
-   (already simplest): $5w^2 + 6w$.
-9. **Wrong.** $6a^2b$ and $6ab^2$ are not like terms, and adding them does not
-   multiply the letters. Correct: $5a^3 + 6a^2b + 6ab^2$.
-10. **Correct:** $x^2 + 7x + 10$.
-11. **Wrong.** Only two of the four products were kept. Correct:
-    $ab + 4a + 2b + 8$.
-12. **Correct:** $ab(a + b + ab)$ — expanding gives $a^2b + ab^2 + a^2b^2$.
+**Think and Reflect (the plus pattern).** Step 4 has $16 + 16 = 32$ dots,
+Step 10 has $100 + 40 = 140$, and Step $k$ has $k^2 + 4k$. Step 15:
+$225 + 60 = 285$.
 
-## 6.4 This Way or That Way, All Ways Lead to the Bay
+**Think and Reflect (the tiles).** Steps 1, 2, 3 have **10, 16, 22** tiles;
+Step 4 has **28** and Step 10 has **64**. Step $n$ has $6n + 4$. Two ways
+(*answers will vary*): the whole rectangle less the space,
+$(n + 2)(2n + 2) - 2n^2$; or two long rows of $2n + 2$ and two short columns of
+$n$, $2(2n + 2) + 2n$. Both simplify to $6n + 4$.
 
-### Math Talk (the circles)
+**Farah and Kiran.** $(m + n)^2 - 4mn = m^2 - 2mn + n^2 = (n - m)^2$. With
+$m = 2$, $n = 5$: $49 - 40 = 9$.
 
-Step 4 is a $5 \times 5$ square of circles with one corner missing: **24**
-circles. Step 10 has $11^2 - 1 = $ **120**. Step $k$ has $(k + 1)^2 - 1 = k^2 + 2k$.
-(Answers will vary in form; any of the four methods is right.)
+**Example 4** is worked in the text: all three are $2xy - y^2$, and the
+painted area is $204$ cm².
 
-**Step 15:** $15^2 + 2 \times 15 = 255$ circles.
-
-### Math Talk (the tiles)
-
-Steps 1, 2, 3 have **8, 12, 16** tiles. Step 4 has **20**, Step 10 has **44**.
-Step $n$ has $(n + 2)^2 - n^2 = 4n + 4$ tiles. Other ways (answers will vary):
-four sides of $n + 1$ tiles each, $4(n + 1)$; or two rows of $n + 2$ and two
-columns of $n$, $2(n + 2) + 2n$. All simplify to $4n + 4$.
-
-### Tadang and Yusuf
-
-$(m + n)^2 - 4mn = m^2 + 2mn + n^2 - 4mn = m^2 - 2mn + n^2$, and
-$(n - m)^2 = n^2 - 2mn + m^2$: the same.
-
-### Anusha, Vaishnavi and Aditya
-
-$x^2 - xy$; $x(x + 2y) - 3xy = x^2 + 2xy - 3xy = x^2 - xy$; $x(x - y) = x^2 - xy$.
-All three are $x^2 - xy$. With $x = 8$ and $y = 3$ the area is
-$64 - 24 = 40$ square units.
-
-### Math Talk (the region with slanting lines, Fig. 6.14)
-
-It is a rectangle $(s - r)$ wide and $(p - r)$ tall, so its area is
-$(s - r)(p - r) = ps - pr - rs + r^2$. Another way: the whole rectangle $ps$
-less the strip, which is $rs$ along the bottom and $r(p - r)$ up the side:
-$ps - rs - r(p - r) = ps - pr - rs + r^2$. With $p = 6$, $r = 3.5$, $s = 9$:
-$5.5 \times 2.5 = 13.75$ square units.
+**Think and Reflect (the rug).** The floor less the rug:
+$lb - (l - 2r)(b - 2r) = 2lr + 2br - 4r^2$. Or two strips $l$ by $r$ and two
+strips $(b - 2r)$ by $r$: $2lr + 2r(b - 2r)$, the same. With $l = 5$, $b = 4$,
+$r = 0.5$: $20 - 4 \times 3 = 8$ m².
 
 ### Exercise Set 6.3
 
-1. (i) $46^2 = (40 + 6)^2 = 1600 + 480 + 36 = 2116$
-   (ii) $397 \times 403 = (400 - 3)(400 + 3) = 160000 - 9 = 159991$
-   (iii) $91^2 = (100 - 9)^2 = 10000 - 1800 + 81 = 8281$
-   (iv) $43 \times 45 = (44 - 1)(44 + 1) = 1936 - 1 = 1935$
-
-2. (i) $p^2 + 10p - 11$ (ii) $9a^2 - 81b^2$ (iii) $-6y^2 - 23y - 20$
-   (iv) $36x^2 + 60xy + 25y^2$ (v) $4x^2 - 2x + \frac{1}{4}$ (vi) $21p^2r + 42pr$
-
-3. (i) **$s^2 + 2$** (option (c)).
-   (ii) **$m^2 + (m + 1)^2$** (option (d)). Also correct, and worth accepting:
-   $m^2 + (m - 1)^2$ (option (e)), the squares of $m - 1$ and $m$, and
-   $(2m)^2 + (2m + 1)^2$ (option (g)), the squares of $2m$ and $2m + 1$, which are
-   consecutive too (though only when the first is even). NCERT's key gives (d)
-   alone; see EDIT-LOG.
-
-4. The two diagonal products always differ by **7**. With $a$, $a + 1$ on top
-   and $a + 7$, $a + 8$ below: $(a + 1)(a + 7) - a(a + 8) = a^2 + 8a + 7 - a^2 - 8a
-   = 7$. For example $5 \times 11 - 4 \times 12 = 55 - 48 = 7$, and
-   $4 \times 10 - 3 \times 11 = 7$.
-
-5. (i) **False.** $(k + 1)(k + 2) - (k + 3) = k^2 + 2k - 1$, which is 2 only when
-   $k = 1$ (for $k = 2$ it is 7). (ii) **False.** $(2q + 1)(2q - 3) = 4q^2 - 4q - 3$,
-   which is odd. (iii) **True.** $(2m)^2 = 4m^2$; $(2m + 1)^2 = 4m^2 + 4m + 1 =
-   4m(m + 1) + 1$, and $m(m + 1)$ is even, so this is 1 more than a multiple of 8.
-   (iv) **False.** $(6n + 2)^2 - (4n + 3)^2 = 20n^2 - 5$; adding 5 gives $20n^2$,
-   which is not a square for $n = 1, 2, 3, \ldots$
-
-6. Write the numbers $7a + 3$ and $7b + 5$. Sum: $7(a + b) + 8 = 7(a + b + 1) + 1$,
-   remainder **1**. Difference, second less first: $7(b - a) + 2$, remainder
-   **2** (first less second leaves remainder 5). Product:
-   $49ab + 35a + 21b + 15 = 7(7ab + 5a + 3b + 2) + 1$, remainder **1**.
-
-7. The answer is always **1**. Answers will vary: $5^2 - 4 \times 6 = 1$,
-   $10^2 - 9 \times 11 = 1$. As an equation, $n^2 - (n - 1)(n + 1) = 1$; expanding,
-   $(n - 1)(n + 1) = n^2 - 1$, so the left side is $n^2 - n^2 + 1 = 1$.
-
-8. For numbers $a$ and $b$: $(a + b) \times \frac{a + b}{2} = \frac{(a + b)^2}{2}$,
-   which is half the square of the sum.
-
-9. (i) $16 \times 24$ is larger, by 20: $14 \times 26 = (16 - 2)(24 + 2) = 16
-   \times 24 + 32 - 48 - 4$. (Or $20^2 - 6^2 < 20^2 - 4^2$.) (ii) $26 \times 74$
-   is larger, by 49: $25 \times 75 = (26 - 1)(74 + 1) = 26 \times 74 + 26 - 74 - 1$.
-
-10. The park is $w + g + 2w + g + w = 2g + 4w$ feet long and $g + 2w$ feet wide.
-    Tiled area $= (2g + 4w)(g + 2w) - 2g^2 = 8gw + 8w^2 = 8w(w + g)$ square feet.
-
-11. (a) Step 4 has a middle block 6 wide and 4 tall, with a column of 6 up from
-    its right end and one of 6 down from its left end: 36 units. Step 10:
-    $(10 + 2)^2 = 144$. Step $y$: $(y + 2)^2$, since the block is $y(y + 2)$ and
-    the columns add $2(y + 2)$.
-    (b) Step 4 is a $5 \times 5$ square with a row of 4 below it: 29 units.
-    Step 10: $11^2 + 10 = 131$. Step $y$: $(y + 1)^2 + y$.
-
-### Puzzle time: Coin Conjoin
-
-**3 moves for 10 coins:** move the top coin to below the middle of the bottom
-row, and the two end coins of the bottom row to the two ends of the second row.
-The rows are now 4, 3, 2, 1 from the top. For 15 coins the fewest moves is
-**5**; for 21 coins, 7; for 28, 9. In general the fewest moves for a triangle
-of $T$ coins is the whole-number part of $T \div 3$. (Answers will vary in how
-the moves are found; the counts do not.)
+1. $53^2 = 2500 + 300 + 9 = 2809$; $79^2 = 6400 - 160 + 1 = 6241$;
+   $296 \times 304 = 90000 - 16 = 89984$; $61 \times 63 = 3844 - 1 = 3843$.
+2. (i) $q^2 + 11q - 26$ (ii) $16m^2 - 49n^2$ (iii) $-3x^2 - 17x - 10$
+   (iv) $25a^2 + 30ab + 9b^2$ (v) $9y^2 - 2y + \frac{1}{9}$ (vi) $8s^2t - 24st$
+3. $(n + 5)^2 - (n - 5)^2 = (n^2 + 10n + 25) - (n^2 - 10n + 25) = 20n$.
+4. (i) **True**: $m^2 + 5m + 6 - m^2 - 5m = 6$. (ii) **False**:
+   $4k^2 + 8k + 3 = 2(2k^2 + 4k + 1) + 1$ is odd. (iii) **False**:
+   $(n + 4)^2 - (n + 2)^2 = 4n + 12$, which is 12 at $n = 0$. (iv) **True**:
+   $(3p + 1)^2 - (3p - 1)^2 = 12p$.
+5. $(2m + 1)(2n + 1) = 4mn + 2m + 2n + 1 = 2(2mn + m + n) + 1$, which is odd.
+6. $(10n + 5)^2 = 100n^2 + 100n + 25 = 100n(n + 1) + 25$.
+   $65^2 = 100 \times 42 + 25 = 4225$; $105^2 = 100 \times 110 + 25 = 11025$.
+7. (i) $35 \times 45 = 1600 - 25 = 1575$ is larger than
+   $32 \times 48 = 1600 - 64 = 1536$, by 39. (ii) $59 \times 61 = 3599$ is
+   larger than $58 \times 62 = 3596$, by 3.
+8. Whole less lawn: $(x + 5)(x + 2) - x^2 = 7x + 10$. Pieces: a strip 5 by
+   $(x + 2)$ and a strip $x$ by 2: $5x + 10 + 2x = 7x + 10$. At $x = 4$:
+   $9 \times 6 - 16 = 38$ and $5 \times 6 + 8 = 38$.
+9. $\big((a + b) + c\big)^2 = (a + b)^2 + 2(a + b)c + c^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ca$.
 
 ---
 
+## By the Book
+
+Fifty questions in the order of NCERT's practice: very short answer (2
+marks), short answer (3), long answer (5), assertion and reason (1),
+case-based (4), objective (1). Written to BY-THE-BOOK.md, 26 September 2026.
+The book's own key is in Beyond the Book's Answers stage; this is the same
+key, set out in full.
+
+### Very short answer
+
+1. $3x^2 + 15x - 2x - 10 = 3x^2 + 13x - 10$.
+2. $(100 + 4) \times (100 - 4) = 10000 - 16 = 9984$.
+3. It is $(a + b)^2 = 40^2 = 1600$.
+4. **No.** At $y = 1$ the sides are $4$ and $-8$; $(y - 3)^2 = y^2 - 6y + 9$.
+5. $(a + 1)b = ab + b$, so $b = 195 - 180 = 15$.
+6. $(7.2 + 2.8) \times (7.2 - 2.8) = 10 \times 4.4 = 44$.
+7. $(x + y)^2 - 2xy = 81 - 28 = 53$.
+8. **39292**: 2; $7 + 2 = 9$; $5 + 7 = 12$, carry 1; $3 + 5 + 1 = 9$; 3.
+9. $(m^2 + 12m + 36) - (m^2 - 12m + 36) = 24m$.
+10. $x^2 + (4 - k)x - 4k$, so $4 - k = 1$ and $-4k = -12$: $k = 3$.
+
+### Short answer
+
+11. $2a^2 + 3ab - 2b^2 + 3a + 6b$; at $a = b = 1$ both sides are 12.
+12. $48p$; at $p = 5$ it is 240.
+13. (i) $100 + 6 + 0.09 = 106.09$ (ii) $2500 - 0.25 = 2499.75$.
+14. $16n$, a multiple of 16; $16n = 144$ gives $n = 9$.
+15. $x^2 + 4x - 12$ m²; at $x = 10$, $16 \times 8 = 128$ m².
+16. **Step 2**: $(2x)^2 = 4x^2$, not $2x^2$. Correct: $4x^2 - 12x + 9$; at
+    $x = 2$, $16 - 24 + 9 = 1$.
+17. $a^2 + b^2 = 25 + 48 = 73$; $(a + b)^2 = 73 + 48 = 121$.
+18. $504700 + 5047 = 509747$; $63800 - 638 = 63162$.
+19. $6s + 9 = 57$, so the side was **8 cm**.
+20. $2 \times 37 + 55 + 2 = 131$.
+
+### Long answer
+
+21. $(x + 5)(x - 5) = x^2 - 25$: down by 25 m². $x^2 = 144$, $x = 12$ (a side is
+    not negative). The new plot is 17 m by 7 m.
+22. Card $(2x + 5)$ by $(x + 7)$: $2x^2 + 19x + 35$. Photograph:
+    $2x^2 + 7x + 3$. Border $12x + 32$. At $x = 5$: **92 cm²**, and
+    $180 - 88 = 92$.
+23. $(p + 3)^2 = p^2 + 3p + 3p + 9 = p^2 + 6p + 9$. $p = 7$, so the area is
+    **100 cm²**.
+24. $4ab$; $289 - 49 = 240$, so $ab = 60$; the numbers are 12 and 5.
+25. $(2n + 1)^2 = 4n(n + 1) + 1$, and $n(n + 1)$ is even. Remainder **1**:
+    $1369 = 8 \times 171 + 1$.
+26. $x^2 - 64$, which is 64 less than $x \times x$. $x^2 = 400$, $x = 20$:
+    **12 notebooks at ₹28**.
+27. $x^2 + 8x + 16$ and $x^2 + 8x + 7$: the square is larger by **9 cm²**. At
+    $x = 6$: $100 - 91 = 9$.
+28. $(n + 3)^2 - 9 = n^2 + 6n$; divided by $n$, $n + 6$; less 6, $n$. With 7:
+    $100 - 9 = 91$, $91 \div 7 = 13$, $13 - 6 = 7$.
+29. $12x$ m²; $12x = 96$ gives $x = 8$: hall 11 m, carpet 5 m.
+30. $(10a + b)(10 + 1) = 100a + 10(a + b) + b$. $400 + 70 + 3 = 473$;
+    $700 + 130 + 6 = 836$, the 1 of 13 carried to the hundreds.
+
+### Assertion and reason
+
+31 (a) · 32 (b) · 33 (c) · 34 (d) · 35 (a)
+
+- 31: $200^2 - 3^2 = 39991$, by R.
+- 32: $500^2 - 1^2 = 249999$ is true, and R is a true identity, but the one used
+  is Identity 1C.
+- 33: R is false; the number part is squared too.
+- 34: A is false ($4p$ and $5q$ are unlike terms); R is true.
+- 35: R with $a = b = x$ gives $x + x + 1 = 2x + 1$.
+
+### Case-based questions
+
+36. (i) $x^2 - 9$ (ii) 225 cm² (iii) $12x$; $x = 15$.
+37. (i) Identity 1C (ii) 5041 (iii) **No**: $99^2 = 10000 - 200 + 1 = 9801$.
+38. (i) ₹2673 (ii) ₹6358 (iii) ₹20559.
+39. (i) $(a + 2b)$ m (ii) $(a + 2b)^2 - a^2 = 4ab + 4b^2$ (iii) 176 m², ₹8800.
+40. (i) 40 (ii) $n^2 + 5n + 4$ (iii) Step 6.
+
+### Objective questions
+
+41 (c) · 42 (a) · 43 (d) · 44 (b) · 45 (d) · 46 (c) · 47 (a) · 48 (b) ·
+49 (b) · 50 (c)
+
 ## Beyond the Book
 
-### Stage 1 · Using What You Know
+Organised by format since the maths-v2 conversion: the tried-and-explained
+questions first, then five parts, each with two solved examples and its
+practice questions. Beyond's example numbers are its own: *Beyond Example 1*
+is not the chapter's Example 1 in §6.1.
 
-Each of the eight questions is answered in the running text that follows it on
-the page. The results, for reference: (1) $a^2 + b^2 = 58$, $(a - b)^2 = 16$;
-(2) 2499 and 24.99; (3) the sum is 40 (the numbers are 17 and 23); (4) $24x$;
-(5) 272; (6) 487; (7) $x^2 - 6x + 10 = (x - 3)^2 + 1$, which is 1 or more;
-(8) the answer is $(n^2 + 3n + 1)^2$.
+### Tried and explained (no head in the book)
 
-### Stage 2 · Solved Examples
+Each is answered in the running text after it: (1) $a^2 + b^2 = 58$,
+$(a - b)^2 = 16$; (2) 2499 and 24.99; (3) the sum is 40 (the numbers are 17
+and 23); (4) $24x$; (5) 272; (6) 487; (7) $x^2 - 6x + 10 = (x - 3)^2 + 1$, which
+is 1 or more; (8) the answer is $(n^2 + 3n + 1)^2$.
 
-The fifteen examples, in examination formats, from `stage2-bank.mjs`. Each is
-worked in full on its page; these are the keys.
+### Solved examples
 
-1. (b) it increases by 8 *(single correct)*
-2. (c) $3a^2 + 10ab - 8b^2$ *(single correct)*
-3. (d) 3481 *(single correct)*
-4. (a) 15 *(single correct)*
-5. (b) 70224 *(single correct)*
-6. (c) $y^2 - 4y - 21$ *(single correct)*
-7. (a), (b) *(multiple correct)*
-8. (a), (b), (c) *(multiple correct)*
-9. (a), (b), (d) *(multiple correct)*
-10. (a), (b), (c) *(multiple correct)*
-11. 62.41 *(numerical answer)*
-12. 4 *(numerical answer)*
-13. 24 *(numerical answer)*
-14. (b) P–3, Q–2, R–4, S–1 *(matching)*
-15. (d) P–2, Q–4, R–3, S–1 *(matching)*
+| Part | Example | Key |
+|---|---|---|
+| Single correct | 1 | (b) it increases by 8 |
+| | 2 | (a) 15 |
+| More than one correct | 3 | (a), (b), (c) |
+| | 4 | (a), (b), (c) |
+| Numerical answer | 5 | 62.41 |
+| | 6 | 24 |
+| Matching | 7 | (b) P–3, Q–2, R–4, S–1 |
+| | 8 | (d) P–2, Q–4, R–3, S–1 |
+| Paragraph-based | 9 | (i) (c) $4a + 4$; (ii) 289; (iii) 20 |
+| | 10 | (i) (a) 11128; (ii) 9118; (iii) 10094 |
 
-### Stage 3 · Practice
+### Practice
 
-Multiple choice and assertion–reason, as the key prints it:
-1 (b), 2 (c), 3 (d), 4 (b), 5 (c), 6 (a), 7 (a), 8 (d), 9 (d), 10 (a),
-11 (c), 12 (d), 13 (b), 14 (c), 15 (b), 16 (a), 17 (b), 18 (c), 19 (d).
+| Part | Questions | Key |
+|---|---|---|
+| Single correct | 1–4 | 1 (b) 11 · 2 (c) 4000 · 3 (a) 7 · 4 (d) 12 |
+| More than one correct | 5–8 | 5 (a), (b), (c) · 6 (a), (b) · 7 (a), (b), (d) · 8 (b), (c), (d) |
+| Numerical answer | 9–11 | 9 **100** · 10 **1** · 11 **26** |
+| Matching | 12–13 | 12 (a) · 13 (c) |
+| Paragraph-based | 14–15 | 14 (i) (a); (ii) 96; (iii) 176 · 15 (i) (a) 21; (ii) 120; (iii) the 25th |
 
-The working for each:
-
-1. The term is $-5xy$, so the coefficient is $-5$.
-2. $47 \times 11 = 470 + 47 = 517$: the digits 4, $4 + 7$, 7.
-3. $-5yz$ and $\frac{1}{2}zy$ have the same letters, since $zy = yz$.
-4. $7x - 2 - 3x + 5 = 4x + 3$.
-5. $-6a^2 + 10a$.
-6. $x^2 + 18x + 81$.
-7. $9y^2 - 16$.
-8. $p^2 + 9p - 2p - 18 = p^2 + 7p - 18$.
-9. $(40 - 2)(40 + 2) = 1600 - 4 = 1596$.
-10. $(78 + 22)(78 - 22) = 100 \times 56 = 5600$.
-11. $25 - 2 \times 6 = 13$.
-12. $29 - 2 \times 10 = 9$.
-13. $1234 \times 101 = 123400 + 1234 = 124634$.
-14. $(x - 7)^2 = x^2 - 14x + 49$.
-15. $(x + 5)(x + k) = x^2 + (5 + k)x + 5k$, so $5 + k = 2$ and $5k = -15$: $k = -3$.
-16. (a) A is true, and R shows it: one value where the sides differ is enough.
-17. (b) $999 \times 1001 = (1000 - 1)(1000 + 1) = 999999$ is true, and R is a true
-    identity, but the one used is Identity 1C, not the square of a sum.
-18. (c) A is true; R is false, since the coefficient is squared too:
-    $(3x)^2 = 9x^2$, not $3x^2$.
-19. (d) A is false ($2x$ and $3y$ are unlike terms); R is true.
-20. to 31. As the key prints them, in full on the Answers page. The worked
-    values: 20 — coefficient $-3$, constant 5; 21 — 100; 22 — $2x^2 + 3x - 4$;
-    23 — $2x^3 + x^2 - 7x + 3$, check $-1$; 24 — $12a + 8$; 25 — 990025;
-    26 — area $2x^2 + x - 3$ cm², perimeter $6x + 4$ cm, 75 cm² at $x = 6$;
-    27 — the difference is 4, and $225 - 221 = 4$; 28 — less by 9 m², $x = 11$;
-    29 — $8n$, the numbers 23 and 25; 30 — $x^2 + 4x + 4$, $x^2 - 4x + 4$,
-    $x^2 - 4$; $8x$ cm²; 144, 64 and 96 cm²; 31 — Identities 1C, 1A, 1B; 2484,
-    3721, 39601; yes, $2500 - 16 = 2484$.
+- Q1. $\left(x - \frac{1}{x}\right)^2 = x^2 - 2 + \frac{1}{x^2} = 9$, so the sum is 11.
+- Q6. (c) is $2n^2 + 2$, which is 10 at $n = 2$; (d) is 5 at $n = 1$.
+- Q8. $59 \times 61 = 3599$; (a) is 3601.
+- Q9. $\frac{100 \times 74}{74} = 100$.
+- Q10. $2ab = 225 - 113 = 112$, so $(a - b)^2 = 113 - 112 = 1$ (the numbers are 8
+  and 7).
+- Q11. $(n + 5)^2 - (n - 5)^2 = 20n$, first more than 500 at $n = 26$.
+- Q14. The base is $(a + 2)$ by $(a - 2)$: $12 \times 8 = 96$; the card left is
+  $16 \times 12 - 4 \times 4 = 176$.
+- Q15. $(n + 1)^2 - n^2 = 2n + 1$; the first ten add to $11^2 - 1^2 = 120$.

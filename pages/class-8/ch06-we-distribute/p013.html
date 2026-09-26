@@ -2,33 +2,41 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>The pattern appears to be $a^2 - b^2 = (a + b) \times (a - b)$. Is this a true
-      identity? Using the distributive property,</p>
+      <div class="work work--centred">
+        <p>$6 \times 6 - 2 \times 2 = 8 \times 4$</p>
+        <p>$9 \times 9 - 5 \times 5 = 14 \times 4$</p>
+        <p>$11 \times 11 - 3 \times 3 = 14 \times 8$</p>
+        <p>$7 \times 7 - 4 \times 4 = 11 \times 3$</p>
+      </div>
+
+      <p>In each line, the numbers on the right are the sum and the difference of the
+      numbers on the left. So the pattern seems to be
+      $a^2 - b^2 = (a + b) \times (a - b)$. Is this an identity? Using the distributive
+      property,</p>
 
       <div class="work work--centred">
         <p>$(a + b) \times (a - b) = a^2 - ab + ba - b^2$</p>
       </div>
 
-      <p>The like terms $-ab$ and $ba$ add to $0$, so the pattern does always hold.</p>
+      <p>The like terms $-ab$ and $ba$ add to $0$, so the pattern always holds.</p>
 
-      <div class="eq eq--anchor">$$\text{Identity 1C}\qquad (a + b) \times (a - b) = a^2 - b^2$$</div>
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Identity 1C: a sum times a difference</div>
+        <p>$(a + b)(a - b) = a^2 - b^2$. The sum of two numbers times their difference
+        is the difference of their squares.</p>
+      </div>
 
-      <p>You met this identity already, in Exercise Set 6.1, Question 5(i). Use
-      Identity 1C to work out $98 \times 102$ and $45 \times 55$.</p>
+      <p>Use Identity 1C to work out $97 \times 103$ and $36 \times 44$. Each pair of
+      numbers is the same distance either side of a round number.</p>
 
       <div class="c-reflect">
-        <div class="c-reflect__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9.2 17.2h5.6M10 20.4h4"/>
-            <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-          </svg>
-        </div>
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
         <div class="c-reflect__box">
           <div class="c-reflect__mark">?</div>
-          <div class="c-reflect__title">Try This</div>
+          <div class="c-reflect__title">Think and Reflect</div>
           <div class="c-reflect__body">
-            <p>Show that $(a + b) \times (a - b) = a^2 - b^2$ with a figure. Hint: in
-            Fig. 6.7, what do you get when the piece on the right is moved?</p>
+          <p>Show that $(a + b)(a - b) = a^2 - b^2$ with a figure. In Fig. 6.6, what shape
+          do you get when the piece on the right is cut off and moved?</p>
           </div>
         </div>
       </div>
@@ -55,31 +63,16 @@
             <text class="dg-label" x="36" y="54" text-anchor="end">a − b</text>
             <text class="dg-label" x="34" y="99" text-anchor="middle">b</text>
           </svg>
-          <figcaption><span class="fignum">Fig. 6.7</span> A rectangle $a + b$ wide and
+          <figcaption><span class="fignum">Fig. 6.6</span> A rectangle $a + b$ wide and
           $a - b$ tall. Its right-hand piece is $b$ wide and $a - b$ tall.</figcaption>
         </figure>
       </div>
 
-      <p>Sridharacharya (750 CE) gave a neat way of squaring numbers quickly with
+      <p>Sridharacharya (750 CE) gave a quick way of squaring numbers with
       Identity 1C. He used it in a rearranged form:</p>
 
       <div class="work work--centred">
         <p>$a^2 = (a + b)(a - b) + b^2$</p>
-      </div>
-
-      <p>Why is this identity true? It lets us choose $b$ so that one of $a + b$ and
-      $a - b$ is a round number. For example, $31^2$ can be found by taking $a = 31$ and
-      $b = 1$, and $197^2$ by taking $a = 197$ and $b = 3$.</p>
-
-      <div class="work">
-        <div class="work__row"><span class="work__label work__label--wide">$31^2$</span>
-          <span>$= (31 + 1)(31 - 1) + 1^2$</span></div>
-        <div class="work__row"><span class="work__label work__label--wide"></span>
-          <span>$= 32 \times 30 + 1 = 961$</span></div>
-        <div class="work__row"><span class="work__label work__label--wide">$197^2$</span>
-          <span>$= (197 + 3)(197 - 3) + 3^2$</span></div>
-        <div class="work__row"><span class="work__label work__label--wide"></span>
-          <span>$= 200 \times 194 + 9 = 38809$</span></div>
       </div>
 
     </div>

@@ -2,78 +2,75 @@
   <div class="page__body">
     <div class="page__main">
 
+      <div class="work work--centred">
+        <p>painted area $= x^2 - (x - y)^2$</p>
+      </div>
+
+      <div class="c-example">
+        <div class="c-example__tab">Example 4</div>
+        <div class="c-example__body">
+          <p>Show that the three expressions for the painted area are equal. Find the
+          painted area when $x = 20$ cm and $y = 6$ cm.</p>
+          <p><strong>Solution.</strong></p>
+          <div class="work">
+            <div class="work__row"><span class="work__label">Step 1</span>
+              <span>Neha: $2xy - y^2$. Arjun: $xy + y(x - y) = xy + xy - y^2 = 2xy - y^2$.</span></div>
+            <div class="work__row"><span class="work__label">Step 2</span>
+              <span>Sana: $x^2 - (x - y)^2 = x^2 - (x^2 - 2xy + y^2) = 2xy - y^2$.</span>
+              <span class="work__why">Identity 1B</span></div>
+            <div class="work__row"><span class="work__label">Step 3</span>
+              <span>With $x = 20$ and $y = 6$: $2 \times 20 \times 6 - 6^2 = 240 - 36 = 204$.</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>Sana’s way: $20^2 - 14^2 = 400 - 196 = 204$.</span></div>
+            <div class="work__row"><span class="work__label">Answer</span>
+              <span>All three equal $2xy - y^2$; the painted area is $204$ cm².</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Two ways to find an area</div>
+        <ul class="c-keyidea__points">
+          <li>Add the areas of pieces that do not overlap.</li>
+          <li>Or take the missing pieces away from a larger shape that is easy to measure.</li>
+        </ul>
+      </div>
+
       <div class="c-figure-context">
         <div class="c-reflect">
-          <div class="c-reflect__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9.2 17.2h5.6M10 20.4h4"/>
-              <path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/>
-            </svg>
-          </div>
+          <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
           <div class="c-reflect__box">
             <div class="c-reflect__mark">?</div>
-            <div class="c-reflect__title">Math Talk</div>
+            <div class="c-reflect__title">Think and Reflect</div>
             <div class="c-reflect__body">
-              <p>Write an expression for the area of the region with slanting lines in
-              Fig. 6.14. Use more than one method to reach the answer. Then put
-              $p = 6$, $r = 3.5$ and $s = 9$, and work out the area.</p>
+            <p>A rug lies on a floor $l$ metres long and $b$ metres wide, leaving a bare
+            strip $r$ metres wide all round, as in Fig. 6.12. Write an expression for the
+            area of the bare floor. Find it in more than one way. Then put $l = 5$,
+            $b = 4$ and $r = 0.5$, and work out the area.</p>
             </div>
           </div>
         </div>
-      
         <div class="c-figure c-figure--md">
           <figure>
-            <!--fig:lshape-->
-          <svg viewBox="0 0 160 124" data-size="md" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="An L-shaped strip of width r along the bottom and right of a rectangle s wide and p tall; the rest of the rectangle, above and to the left of the strip, is marked with slanting lines">
-            <g class="dg-thin"><path d="M30 38 L51 75.8"/><path d="M30 28 L56.5 75.7"/><path d="M30 18 L62 75.6"/><path d="M36 18.8 L67.5 75.5"/><path d="M41.5 18.7 L73 75.4"/><path d="M47 18.6 L78.5 75.3"/><path d="M52.5 18.5 L84 75.2"/><path d="M58 18.4 L90 76"/><path d="M63.5 18.3 L95.5 75.9"/><path d="M69 18.2 L101 75.8"/><path d="M74.5 18.1 L106.5 75.7"/><path d="M80 18 L112 75.6"/><path d="M86 18.8 L112 65.6"/><path d="M91.5 18.7 L112 55.6"/><path d="M97 18.6 L112 45.6"/><path d="M102.5 18.5 L112 35.6"/><path d="M108 18.4 L112 25.6"/></g>
-            <g class="dg-ghost"><path d="M30 18 L112 18"/><path d="M30 18 L30 76"/></g>
-            <path class="dg-fill-b" d="M30 76 H112 V18 H130 V94 H30 Z"/>
-            <path class="dg-line" d="M30 76 H112 V18 H130 V94 H30 Z"/>
-            <line class="dg-dim" x1="112" y1="10" x2="130" y2="10" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-label" x="121" y="7" text-anchor="middle">r</text>
-            <line class="dg-dim" x1="138" y1="18" x2="138" y2="94" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-label" x="146" y="59" text-anchor="middle">p</text>
-            <line class="dg-dim" x1="22" y1="76" x2="22" y2="94" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-label" x="15" y="88" text-anchor="middle">r</text>
-            <line class="dg-dim" x1="30" y1="102" x2="130" y2="102" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
-            <text class="dg-label" x="80" y="113" text-anchor="middle">s</text>
+            <!--fig:rug-->
+            <svg viewBox="0 0 180 112" data-size="md" xmlns="http://www.w3.org/2000/svg"
+               role="img" aria-label="A rectangular floor l long and b wide with a rug on it that leaves a bare strip r wide all round">
+            <g class="dg-fill-b-soft"><rect x="30" y="16" width="120" height="84"/></g>
+            <g class="dg-fill-a-soft"><rect x="44" y="30" width="92" height="56"/></g>
+            <g class="dg-line"><rect x="30" y="16" width="120" height="84"/></g>
+            <g class="dg-thin"><rect x="44" y="30" width="92" height="56"/></g>
+            <text class="dg-note" x="90" y="61" text-anchor="middle">rug</text>
+            <line class="dg-dim" x1="30" y1="10" x2="150" y2="10" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="90" y="7" text-anchor="middle">l</text>
+            <line class="dg-dim" x1="22" y1="16" x2="22" y2="100" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="15" y="61" text-anchor="middle">b</text>
+            <line class="dg-dim" x1="157" y1="86" x2="157" y2="100" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+            <text class="dg-label" x="164" y="96" text-anchor="middle">r</text>
           </svg>
-            <figcaption><span class="fignum">Fig. 6.14</span> A strip of width $r$ runs
-            along the bottom and up the right of a rectangle $s$ wide and $p$
-            tall.</figcaption>
+            <figcaption><span class="fignum">Fig. 6.12</span> A rug that leaves a bare
+            strip $r$ wide all round a floor $l$ by $b$.</figcaption>
           </figure>
         </div>
-      </div>
-
-      <div class="c-practice">
-        <div class="c-practice__head">Exercise Set 6.3</div>
-        <ol class="c-questions">
-          <li>Work out these products using the identity given.
-              <ol class="c-parts c-parts--1">
-                <li>$46^2$, using Identity 1A for $(a + b)^2$</li>
-                <li>$397 \times 403$, using Identity 1C for $(a + b)(a - b)$</li>
-                <li>$91^2$, using Identity 1B for $(a - b)^2$</li>
-                <li>$43 \times 45$, using Identity 1C for $(a + b)(a - b)$</li>
-              </ol>
-            </li>
-        </ol>
-      </div>
-
-      <div class="c-practice c-practice--cont">
-        <ol class="c-questions" data-start="2">
-          <li>Use a suitable identity or the distributive property to find each of the
-              following products.
-              <ol class="c-parts c-parts--tall c-parts--3">
-                <li>$(p - 1)(p + 11)$</li>
-                <li>$(3a - 9b)(3a + 9b)$</li>
-                <li>$-(2y + 5)(3y + 4)$</li>
-                <li>$(6x + 5y)^2$</li>
-                <li>$\left(2x - \frac{1}{2}\right)^2$</li>
-                <li>$(7p) \times (3r) \times (p + 2)$</li>
-              </ol>
-            </li>
-        </ol>
       </div>
 
     </div>

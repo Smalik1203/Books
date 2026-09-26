@@ -2,6 +2,11 @@
   <div class="page__body">
     <div class="page__main">
 
+      <p>
+        The middle term became a plain number because $a^2b^2$ is $(ab)^2$, and $ab$ was
+        given. The numbers are in fact $2$ and $4$, and $16 + 256 = 272$ agrees.
+      </p>
+
       <div class="c-try">
         <p>When a three-digit number is multiplied by $11$, the product is $5357$. Find
         the number without dividing.</p>
@@ -9,8 +14,7 @@
 
       <p>
         Section 6.1.2 showed that a three-digit number $cba$ times $11$ is written
-        $c$, $(b + c)$, $(a + b)$, $a$, with carrying from the right. So read the product
-        from the right and undo one digit at a time.
+        $c$, $(b + c)$, $(a + b)$, $a$, with carrying from the right. So read the product from the right and work back to each digit in turn.
       </p>
 
       <div class="work">
@@ -77,25 +81,6 @@
         Then $7 \times 8 \times 9 \times 10 = 5040$, and $5041 = 71^2$. Two cases are not
         a proof. Call the numbers $n$, $n + 1$, $n + 2$ and $n + 3$, and multiply the
         outer two and the inner two.
-      </p>
-
-      <div class="work">
-        <div class="work__row">
-          <span class="work__label work__label--wide">outer pair</span>
-          <span>$n(n + 3) = n^2 + 3n$</span>
-        </div>
-        <div class="work__row">
-          <span class="work__label work__label--wide">inner pair</span>
-          <span>$(n + 1)(n + 2) = n^2 + 3n + 2$</span>
-        </div>
-      </div>
-
-      <p>
-        The two products differ by exactly $2$. Write $m$ for $n^2 + 3n$. The product of
-        all four is $m(m + 2)$, and adding $1$ gives $m^2 + 2m + 1$, which is $(m + 1)^2$,
-        that is, $(n^2 + 3n + 1)^2$. Check it at $n = 3$: $9 + 9 + 1 = 19$, and
-        $19^2 = 361$. Paired the other way, the two products differ by $3$, and nothing
-        tidy happens.
       </p>
 
     </div>

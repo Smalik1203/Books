@@ -5,65 +5,62 @@
       <div class="c-example">
         <div class="c-example__tab">Example 3</div>
         <div class="c-example__body">
-          <p>Expand $(a + b)(a^2 + 2ab + b^2)$.</p>
+          <p>Expand $(x - 2)(x^2 + 3x - 1)$.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$(a + b)(a^2 + 2ab + b^2) = (a + b)a^2 + (a + b) \times 2ab + (a + b)b^2$</span></div>
+              <span>$(x - 2)(x^2 + 3x - 1) = x(x^2 + 3x - 1) - 2(x^2 + 3x - 1)$</span>
+</div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$= (a \times a^2) + ba^2 + (a \times 2ab) + (b \times 2ab) + ab^2 + (b \times b^2)$</span></div>
+              <span>$= x^3 + 3x^2 - x - 2x^2 - 6x + 2$</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$a \times a^2 = a^3$, &nbsp; $ba^2 = a^2b$, &nbsp; $a \times 2ab = 2a^2b$, &nbsp; $b \times 2ab = 2ab^2$, &nbsp; $b \times b^2 = b^3$</span>
-              <span class="work__why">each term simplified</span></div>
-            <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$= a^3 + a^2b + 2a^2b + 2ab^2 + ab^2 + b^3$</span></div>
-            <div class="work__row"><span class="work__label">Step 5</span>
-              <span>$a^2b + 2a^2b = (1 + 2)a^2b = 3a^2b$, &nbsp; $ab^2 + 2ab^2 = (1 + 2)ab^2 = 3ab^2$</span>
+              <span>$3x^2 - 2x^2 = x^2$, &nbsp; $-x - 6x = -7x$</span>
               <span class="work__why">like terms</span></div>
+            <div class="work__row"><span class="work__label">Check</span>
+              <span>At $x = 1$: $(1 - 2) \times (1 + 3 - 1) = -3$, and $1 + 1 - 7 + 2 = -3$.</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$(a + b)(a^2 + 2ab + b^2) = a^3 + 3a^2b + 3ab^2 + b^3$</span></div>
+              <span>$(x - 2)(x^2 + 3x - 1) = x^3 + x^2 - 7x + 2$</span></div>
           </div>
         </div>
       </div>
 
-      <p>In Step 3, why is $a \times a^2 = a^3$? Write out what each side means:
-      $a \times a^2$ is $a \times (a \times a)$, which is three $a$s multiplied
+      <p>In Step 2, why is $x \times x^2 = x^3$? Write out what each side means:
+      $x \times x^2$ is $x \times (x \times x)$, which is three $x$s multiplied
       together.</p>
+
+      <div class="c-keyidea">
+        <div class="c-keyidea__title">Multiplying expressions</div>
+        <ul class="c-keyidea__points">
+          <li>Multiply every term of one bracket by every term of the other.</li>
+          <li>Then add the like terms. Terms that are not alike stay apart.</li>
+        </ul>
+      </div>
 
       <h3>A pinch of history</h3>
 
-      <p>The distributive property was used, without being stated, in the calculations
-      of mathematicians in many old civilisations, among them those of Egypt,
-      Mesopotamia, Greece, China and India. Euclid used it in the form of geometry, and
-      Āryabhaṭa in the form of algebra, all through their mathematical and scientific
-      work. The first time it was stated in words was by Brahmagupta, in Verse 12.55 of
-      his <em>Brāhmasphuṭasiddhānta</em>. He called its use in multiplication
-      <em>khaṇḍa-guṇanam</em>, multiplication by parts. His verse says, in
-      short: break the multiplier into two or more parts that add up to it, multiply
-      the multiplicand by each part, and add the results. With two parts, that is the
-      identity $(a + b)c = ac + bc$. In the next verse, 12.56, Brahmagupta gives a
-      quick way of multiplying that uses the same property. We look at it in the next
-      section.</p>
+      <p>Mathematicians in many old civilisations used the distributive property in
+      their calculations without stating it, among them those of Egypt, Mesopotamia,
+      Greece, China and India. Euclid used it in geometry, and Āryabhaṭa in algebra.
+      The first known statement of it in words is by Brahmagupta, in Verse 12.55 of his
+      <em>Brāhmasphuṭasiddhānta</em> (628 CE). He called it
+      <em>khaṇḍa-guṇanam</em>, multiplication by parts: break the multiplier into parts
+      that add up to it, multiply by each part, and add the results. With two parts,
+      that is $(a + b)c = ac + bc$. His next verse, 12.56, gives quick ways of
+      multiplying that use the same property. We look at some of them next.</p>
 
-      <div class="c-figure c-figure--full">
-        <figure>
-          <!--fig:grid-->
-          <svg viewBox="0 0 370 146" data-size="full" xmlns="http://www.w3.org/2000/svg"
-               role="img" aria-label="A multiplication grid from 1 to 10 with the three by three frame 15, 18, 21, 20, 24, 28, 25, 30, 35 marked; beside it the frame written as 3 times 5 up to 5 times 7, and an empty frame with p q in its middle square">
-            <g class="dg-fill-b-soft"><rect x="4" y="4" width="198" height="12.5"/><rect x="4" y="16.5" width="18" height="125"/></g>
-            <g class="dg-fill-a-soft"><rect x="94" y="41.5" width="54" height="37.5"/></g>
-            <g class="dg-thin"><path d="M4 4 L4 141.5"/><path d="M4 4 L202 4"/><path d="M22 4 L22 141.5"/><path d="M4 16.5 L202 16.5"/><path d="M40 4 L40 141.5"/><path d="M4 29 L202 29"/><path d="M58 4 L58 141.5"/><path d="M4 41.5 L202 41.5"/><path d="M76 4 L76 141.5"/><path d="M4 54 L202 54"/><path d="M94 4 L94 141.5"/><path d="M4 66.5 L202 66.5"/><path d="M112 4 L112 141.5"/><path d="M4 79 L202 79"/><path d="M130 4 L130 141.5"/><path d="M4 91.5 L202 91.5"/><path d="M148 4 L148 141.5"/><path d="M4 104 L202 104"/><path d="M166 4 L166 141.5"/><path d="M4 116.5 L202 116.5"/><path d="M184 4 L184 141.5"/><path d="M4 129 L202 129"/><path d="M202 4 L202 141.5"/><path d="M4 141.5 L202 141.5"/></g>
-            <g class="dg-line"><rect x="94" y="41.5" width="54" height="37.5"/></g>
-            <g class="dg-tick" text-anchor="middle"><text x="13" y="13">×</text><text x="31" y="13">1</text><text x="49" y="13">2</text><text x="67" y="13">3</text><text x="85" y="13">4</text><text x="103" y="13">5</text><text x="121" y="13">6</text><text x="139" y="13">7</text><text x="157" y="13">8</text><text x="175" y="13">9</text><text x="193" y="13">10</text><text x="13" y="25.5">1</text><text x="31" y="25.5">1</text><text x="49" y="25.5">2</text><text x="67" y="25.5">3</text><text x="85" y="25.5">4</text><text x="103" y="25.5">5</text><text x="121" y="25.5">6</text><text x="139" y="25.5">7</text><text x="157" y="25.5">8</text><text x="175" y="25.5">9</text><text x="193" y="25.5">10</text><text x="13" y="38">2</text><text x="31" y="38">2</text><text x="49" y="38">4</text><text x="67" y="38">6</text><text x="85" y="38">8</text><text x="103" y="38">10</text><text x="121" y="38">12</text><text x="139" y="38">14</text><text x="157" y="38">16</text><text x="175" y="38">18</text><text x="193" y="38">20</text><text x="13" y="50.5">3</text><text x="31" y="50.5">3</text><text x="49" y="50.5">6</text><text x="67" y="50.5">9</text><text x="85" y="50.5">12</text><text x="103" y="50.5">15</text><text x="121" y="50.5">18</text><text x="139" y="50.5">21</text><text x="157" y="50.5">24</text><text x="175" y="50.5">27</text><text x="193" y="50.5">30</text><text x="13" y="63">4</text><text x="31" y="63">4</text><text x="49" y="63">8</text><text x="67" y="63">12</text><text x="85" y="63">16</text><text x="103" y="63">20</text><text x="121" y="63">24</text><text x="139" y="63">28</text><text x="157" y="63">32</text><text x="175" y="63">36</text><text x="193" y="63">40</text><text x="13" y="75.5">5</text><text x="31" y="75.5">5</text><text x="49" y="75.5">10</text><text x="67" y="75.5">15</text><text x="85" y="75.5">20</text><text x="103" y="75.5">25</text><text x="121" y="75.5">30</text><text x="139" y="75.5">35</text><text x="157" y="75.5">40</text><text x="175" y="75.5">45</text><text x="193" y="75.5">50</text><text x="13" y="88">6</text><text x="31" y="88">6</text><text x="49" y="88">12</text><text x="67" y="88">18</text><text x="85" y="88">24</text><text x="103" y="88">30</text><text x="121" y="88">36</text><text x="139" y="88">42</text><text x="157" y="88">48</text><text x="175" y="88">54</text><text x="193" y="88">60</text><text x="13" y="100.5">7</text><text x="31" y="100.5">7</text><text x="49" y="100.5">14</text><text x="67" y="100.5">21</text><text x="85" y="100.5">28</text><text x="103" y="100.5">35</text><text x="121" y="100.5">42</text><text x="139" y="100.5">49</text><text x="157" y="100.5">56</text><text x="175" y="100.5">63</text><text x="193" y="100.5">70</text><text x="13" y="113">8</text><text x="31" y="113">8</text><text x="49" y="113">16</text><text x="67" y="113">24</text><text x="85" y="113">32</text><text x="103" y="113">40</text><text x="121" y="113">48</text><text x="139" y="113">56</text><text x="157" y="113">64</text><text x="175" y="113">72</text><text x="193" y="113">80</text><text x="13" y="125.5">9</text><text x="31" y="125.5">9</text><text x="49" y="125.5">18</text><text x="67" y="125.5">27</text><text x="85" y="125.5">36</text><text x="103" y="125.5">45</text><text x="121" y="125.5">54</text><text x="139" y="125.5">63</text><text x="157" y="125.5">72</text><text x="175" y="125.5">81</text><text x="193" y="125.5">90</text><text x="13" y="138">10</text><text x="31" y="138">10</text><text x="49" y="138">20</text><text x="67" y="138">30</text><text x="85" y="138">40</text><text x="103" y="138">50</text><text x="121" y="138">60</text><text x="139" y="138">70</text><text x="157" y="138">80</text><text x="175" y="138">90</text><text x="193" y="138">100</text></g>
-            <g class="dg-fill-a-soft"><rect x="238" y="8" width="126" height="54"/></g>
-            <g class="dg-thin"><path d="M238 8 L238 62"/><path d="M238 8 L364 8"/><path d="M238 76 L238 130"/><path d="M238 76 L364 76"/><path d="M280 8 L280 62"/><path d="M238 26 L364 26"/><path d="M280 76 L280 130"/><path d="M238 94 L364 94"/><path d="M322 8 L322 62"/><path d="M238 44 L364 44"/><path d="M322 76 L322 130"/><path d="M238 112 L364 112"/><path d="M364 8 L364 62"/><path d="M238 62 L364 62"/><path d="M364 76 L364 130"/><path d="M238 130 L364 130"/></g>
-            <g class="dg-tick" text-anchor="middle"><text x="259" y="20.5">3 × 5</text><text x="301" y="20.5">3 × 6</text><text x="343" y="20.5">3 × 7</text><text x="259" y="38.5">4 × 5</text><text x="301" y="38.5">4 × 6</text><text x="343" y="38.5">4 × 7</text><text x="259" y="56.5">5 × 5</text><text x="301" y="56.5">5 × 6</text><text x="343" y="56.5">5 × 7</text></g>
-            <text class="dg-label" x="301" y="106" text-anchor="middle">pq</text>
-          </svg>
-          <figcaption><span class="fignum">Fig. 6.3</span> A $3 \times 3$ frame in the
-          multiplication grid, written out as products, and the same frame with $pq$ as
-          its middle number.</figcaption>
-        </figure>
+      <div class="c-reflect">
+        <div class="c-reflect__icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 17.2h5.6M10 20.4h4"/><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.2h6.4v-2.2A5.6 5.6 0 0 0 12 3.4z"/></svg></div>
+        <div class="c-reflect__box">
+          <div class="c-reflect__mark">?</div>
+          <div class="c-reflect__title">Think and Reflect</div>
+          <div class="c-reflect__body">
+          <ol>
+            <li>Find $37 \times 26$ by parts, writing $26$ as $20 + 6$. Find it again,
+            writing $26$ as $30 - 4$.</li>
+            <li>Which way of breaking up $26$ was quicker for you? Why?</li>
+          </ol>
+          </div>
+        </div>
       </div>
 
     </div>

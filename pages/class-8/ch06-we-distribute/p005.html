@@ -2,68 +2,72 @@
   <div class="page__body">
     <div class="page__main">
 
-      <p>Check that this is what Identity 1 gives with $m = u$ and $n = -v$. As before,
-      the product is the sum of the products of each term of $a + u$ (that is, $a$ and
-      $u$) with each term of $b - v$ (that is, $b$ and $-v$). The sign of each product
-      comes from the usual rules for multiplying integers. A subtraction is an addition of a
-      negative number, so this one identity covers every way of increasing or decreasing
-      the two numbers.</p>
+      <p>We can do the same in general and find the product $(a + u)(b - v)$:</p>
 
-      <p>Expand (i) $(a - u)(b + v)$ and (ii) $(a - u)(b - v)$ in the same way. We
-      get</p>
+      <div class="work">
+        <div class="work__row"><span class="work__label work__label--wide">$(a + u)(b - v)$</span>
+          <span>$= (a + u)b - (a + u)v$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= ab + ub - (av + uv)$</span></div>
+        <div class="work__row"><span class="work__label work__label--wide"></span>
+          <span>$= ab + ub - av - uv$</span></div>
+      </div>
+
+      <p>This is Identity 1 with $m = u$ and $n = -v$, using the usual rules for signs.
+      In the same way,</p>
 
       <div class="work work--centred">
         <p>$(a - u)(b + v) = ab - ub + av - uv$</p>
         <p>$(a - u)(b - v) = ab - ub - av + uv$</p>
       </div>
 
-      <p>The distributive property is not limited to two terms inside a bracket. The
-      number outside multiplies every term inside, however many there are.</p>
+      <p>The number outside a bracket multiplies every term inside, however many there
+      are.</p>
 
       <div class="c-example">
         <div class="c-example__tab">Example 1</div>
         <div class="c-example__body">
-          <p>Expand $\dfrac{3a}{2}\left(a - b + \dfrac{1}{5}\right)$.</p>
+          <p>Expand $\dfrac{2x}{3}\left(x + 3y - \dfrac{1}{4}\right)$.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$\frac{3a}{2}\left(a - b + \frac{1}{5}\right) = \left(\frac{3a}{2} \times a\right) - \left(\frac{3a}{2} \times b\right) + \left(\frac{3a}{2} \times \frac{1}{5}\right)$</span></div>
+              <span>$\frac{2x}{3}\left(x + 3y - \frac{1}{4}\right) = \left(\frac{2x}{3} \times x\right) + \left(\frac{2x}{3} \times 3y\right) - \left(\frac{2x}{3} \times \frac{1}{4}\right)$</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$\frac{3a}{2} \times a = \frac{3}{2} \times (a \times a) = \frac{3}{2}a^2$</span>
+              <span>$\frac{2x}{3} \times x = \frac{2}{3} \times (x \times x) = \frac{2}{3}x^2$</span>
               <span class="work__why">exponent notation</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$\frac{3a}{2} \times b = \frac{3}{2} \times (a \times b) = \frac{3}{2}ab$</span></div>
+              <span>$\frac{2x}{3} \times 3y = \left(\frac{2}{3} \times 3\right) \times (x \times y) = 2xy$</span></div>
             <div class="work__row"><span class="work__label">Step 4</span>
-              <span>$\frac{3a}{2} \times \frac{1}{5} = \left(\frac{3}{2} \times \frac{1}{5}\right)a = \frac{3}{10}a$</span></div>
+              <span>$\frac{2x}{3} \times \frac{1}{4} = \left(\frac{2}{3} \times \frac{1}{4}\right)x = \frac{1}{6}x$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$\frac{3}{2}a^2 - \frac{3}{2}ab + \frac{3}{10}a$</span></div>
+              <span>$\frac{2}{3}x^2 + 2xy - \frac{1}{6}x$</span></div>
           </div>
         </div>
       </div>
 
-      <p>Can any two of these terms be added to make a single term? Can $\frac{3}{2}a^2$
-      and $\frac{3}{10}a$ be added, for instance? No two of the terms have exactly the
-      same letter-numbers, so none of them can be joined, and the expression cannot be
-      simplified further. Recall that terms with exactly the same letter-numbers are
-      called <span class="term">like terms</span>; only like terms can be added into
-      one.</p>
+      <p>Can any two of these terms be added to make a single term? Can
+      $\frac{2}{3}x^2$ and $\frac{1}{6}x$ be added, for instance? Terms with exactly the
+      same variables, each raised to the same power, are called
+      <span class="term">like terms</span>, and only like terms can be added into one.
+      No two of the terms here are like terms, so the expression cannot be simplified
+      further.</p>
 
       <div class="c-example">
         <div class="c-example__tab">Example 2</div>
         <div class="c-example__body">
-          <p>Expand $(a + b)(a + b)$.</p>
+          <p>Expand $(x + y)(x + y)$.</p>
           <p><strong>Solution.</strong></p>
           <div class="work">
             <div class="work__row"><span class="work__label">Step 1</span>
-              <span>$(a + b)(a + b) = (a + b)a + (a + b)b$</span>
-              <span class="work__why">$(a + b)$ as one term</span></div>
+              <span>$(x + y)(x + y) = (x + y)x + (x + y)y$</span>
+              <span class="work__why">$(x + y)$ as one term</span></div>
             <div class="work__row"><span class="work__label">Step 2</span>
-              <span>$= a \times a + b \times a + a \times b + b \times b = a^2 + ba + ab + b^2$</span></div>
+              <span>$= x \times x + y \times x + x \times y + y \times y = x^2 + yx + xy + y^2$</span></div>
             <div class="work__row"><span class="work__label">Step 3</span>
-              <span>$ba + ab = ab + ab = 2ab$</span>
-              <span class="work__why">like terms, since $ba = ab$</span></div>
+              <span>$yx + xy = xy + xy = 2xy$</span>
+              <span class="work__why">like terms, since $yx = xy$</span></div>
             <div class="work__row"><span class="work__label">Answer</span>
-              <span>$(a + b)(a + b) = a^2 + 2ab + b^2$</span></div>
+              <span>$(x + y)(x + y) = x^2 + 2xy + y^2$</span></div>
           </div>
         </div>
       </div>
